@@ -127,8 +127,9 @@ Figure 1 is the schematic of the system board. Figure 2 shows a completed board 
 
 **PC Board design files:**
 
-| Eagle CAD and Gerber files `schematic and board files <https://wiki.analog.com/_media/university/courses/eps/power_system_adg.zip>`_
-| **Parts List:**
+Eagle CAD and Gerber files `schematic and board files <https://wiki.analog.com/_media/university/courses/eps/power_system_adg.zip>`_
+
+**Parts List:**
 
 Table 1 lists the required parts to build out the EPS system board. Suggested sources with part numbers for the various parts are included. Table 2 lists the generic passive devices needed.
 
@@ -215,14 +216,7 @@ The same 9V DC motors are available from DigiKey, part number P14356-ND, for $3.
 Supplier web site links:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-| http://www.analog.com/
-| http://www.jameco.com/
-| http://www.bgmicro.com/
-| http://www.goldmine-elec-products.com/
-| http://www.kjmagnetics.com/
-| http://www.digikey.com/
-| http://www.elexp.com/
-| http://www.radioshack.com/
+http://www.analog.com/ http://www.jameco.com/ http://www.bgmicro.com/ http://www.goldmine-elec-products.com/ http://www.kjmagnetics.com/ http://www.digikey.com/ http://www.elexp.com/ http://www.radioshack.com/
 
 Construction directions:
 ~~~~~~~~~~~~~~~~~~~~~~~~

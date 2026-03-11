@@ -84,6 +84,6 @@ Vibration response of a gyro = Linear-g X-Axis Acceleration + (VRE X-Axis Accele
 Additional Resources!
 =====================
 
-\* Information on Allan Variance for Gyros: http://www.alexandertrusov.com/uploads/pdf/2011-UCI-trusov-whitepaper-noise.pdf
+- Information on Allan Variance for Gyros: http://www.alexandertrusov.com/uploads/pdf/2011-UCI-trusov-whitepaper-noise.pdf
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/2021-07-22_09_29_19-adis16135_rev._f_.png

@@ -39,10 +39,7 @@ In order to run this example, you need:
 -  A recent :doc:`Zynq image </wiki-migration/resources/tools-software/linux-software/zynq_images>` for the AD-FMCOMMS3-EBZ board.
 -  A good understanding of how the :adi:`AD9361` works. At a minimum, you should read over a basic intro for the :doc:`AD9361 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`. If you have issues understanding some filtering needs/concepts described below, refer back to the `basic intro <https://wiki.analog.com/[[/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`_. You need to understand the device, since just like the traditional instruments have a setup that must be understood, the AD9361/64 device setup is critical to getting the proper measurements. There are many things about the device that can negatively effect the results, only a few are mentioned below.
 
-.. tip::
-
-   If you want to enable a static IP, use the script found :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/applications/shell_scripts>`
-
+If you want to enable a static IP, use the script found :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/applications/shell_scripts>`
 
 Methods
 -------
@@ -68,7 +65,7 @@ For this example, we will be creating an LTE10 signal and filter settings. There
 
 The details can be found on the :doc:`MATLAB AD9361 Filter Wizard </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/filters>` section, but it should be a simple matter of selecting LTE10, designing the Tx and Rx filters, and connecting to the target, and writing the coefficients to the target.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/15tozynq.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/resources/eval/user-guides/ad-fmcomms2-ebz/software/15tozynq.png
    :alt: Block diagram
    :width: 600px
 
@@ -200,29 +197,29 @@ At the end of the simulation, you will get the RSSI values on both channels, EVM
 
 -  Time Scope
 
-.. image:: https://wiki.analog.com/_media/time.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/time.png
    :alt: Block diagram
 
 -  Spectrum Analyzer (``hsa`` object)
 
-.. image:: https://wiki.analog.com/_media/hsa.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/hsa.png
    :alt: Block diagram
 
 -  Constellation Diagram of recovered symbols (``hcd`` object)
 
-.. image:: https://wiki.analog.com/_media/hcd.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/hcd.png
    :alt: Block diagram
 
 -  EVM (``plots`` object)
 
-.. image:: https://wiki.analog.com/_media/evm.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/evm.png
    :alt: Block diagram
 
 One other important feature of this example is to calculate the EVM of the Tx and Rx, which provides a performance metric of the system. In this example, the EVM is calculated by *PDSCHEVM* function, which is based on `PDSCH Error Vector Magnitude (EVM) Measurement <https://www.mathworks.com/help/lte/ug/pdsch-error-vector-magnitude-evm-measurement.html>`_.
 
 In the command window, the average EVM for a downlink RMC is displayed. First the results for low and high edge EVM are calculated for each subframe within a frame and their averages are displayed. The max of these averages is the EVM per frame. The final EVM for the downlink RMC is the average of the EVM across all frames, as highlighted below. According to the experiment, when the digital Tx - digital Rx loopback is used (RF bypassed), the overall EVM is around 0.077%. When a loopback cable is used between Tx and Rx (RF included), the overall EVM is below 2%.
 
-.. image:: https://wiki.analog.com/_media/6evmresults.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/6evmresults.png
    :alt: Block diagram
    :width: 300px
 

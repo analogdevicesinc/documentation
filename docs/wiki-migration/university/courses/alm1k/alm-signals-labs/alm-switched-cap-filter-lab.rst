@@ -87,14 +87,7 @@ The next step is to build an example circuit using the Switched Capacitor as a r
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 1 – LTC1043 Switched Capacitor Building Block (used as SPDT analog switch)
-| 1 – 4.7 nF capacitor (472)
-| 1 – 470 pF capacitor (471)
-| 2 – 39 pF capacitors
-| 1 – 100 pF capacitor (101)
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 – LTC1043 Switched Capacitor Building Block (used as SPDT analog switch) 1 – 4.7 nF capacitor (472) 1 – 470 pF capacitor (471) 2 – 39 pF capacitors 1 – 100 pF capacitor (101)
 
 Below in figure 3 is the schematic and pinout for the LTC1043. The LTC1043 contains four SPDT CMOS switches all driven from the same non-overlapping clock source.
 
@@ -162,8 +155,6 @@ High Pass Filter:
 
 The switched capacitor resistor and capacitor can be interchanged to form the equivalent RC high pass filter shown in figure 6.
 
-.. _procedure-1:
-
 Procedure:
 ~~~~~~~~~~
 
@@ -193,8 +184,6 @@ Note that the amplitude curve for highest switching frequency (no C\ :sub:`OSC`)
 
 Are your results consistent with the LTC1043 internal oscillator equation and an external 100 pF C\ :sub:`OSC`?
 
-.. _questions-1:
-
 Questions:
 ~~~~~~~~~~
 
@@ -221,8 +210,6 @@ Other analog switches can be substituted for the LTC1043 in the event one is not
 
 To use any of these alternatives in this Lab you will need to supply an external clock source. **For Further Reading:**
 
-| :adi:`Take the Mystery Out of the Switched-Capacitor Filters <media/en/technical-documentation/application-notes/an40f.pdf>`
-| `Low Pass Filters <https://en.wikipedia.org/wiki/Low-pass_filter>`_
-| `High Pass Filters <https://en.wikipedia.org/wiki/High-pass_filter>`_
+:adi:`Take the Mystery Out of the Switched-Capacitor Filters <media/en/technical-documentation/application-notes/an40f.pdf>` `Low Pass Filters <https://en.wikipedia.org/wiki/Low-pass_filter>`_ `High Pass Filters <https://en.wikipedia.org/wiki/High-pass_filter>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**

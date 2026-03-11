@@ -37,17 +37,11 @@ User Notes
 
 To use the AD7403 model, ensure all the above packages are installed and download the zip file `here <http://download.analog.com/behavioral-models/mathworks/ad7403_mathworks.zip>`_. Extract the files to a convenient location.
 
-In order to set up the paths, first navigate to the extracted directory and run
-
-::
-
-   InstallMe.m
-
-.
+In order to set up the paths, first navigate to the extracted directory and run <file>InstallMe.m</code>.
 
 This is necessary for every new session of MATLAB.
 
-Next, navigate to the AD7403 directory and double click on ``AD7403.slx``.
+Next, navigate to the AD7403 directory and double click on <file>AD7403.slx</code>.
 
 On opening Simulink, the following block diagram will appear.
 

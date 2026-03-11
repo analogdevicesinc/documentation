@@ -19,7 +19,7 @@ Boards and Accessories required
 
 a.) EV-COG-AD3029LZ (left) b.) AD-GEAR-DISPLAY1Z (middle) c.) ADF7030 Daughter card (Right)
 
-\* Two of each is required. One for the Transmitter setup and the other for the Receiver setup.
+- Two of each is required. One for the Transmitter setup and the other for the Receiver setup.
 
 Hardware interface
 ------------------
@@ -32,7 +32,7 @@ Connection Diagram
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_adf7030_connection.png
    :width: 700px
 
-\* The AD-GEAR-DISPLAY1Z board is required as it acts as the interface between EV-COG-AD3029LZ and ADF7030-1 Daughter Card.
+- The AD-GEAR-DISPLAY1Z board is required as it acts as the interface between EV-COG-AD3029LZ and ADF7030-1 Daughter Card.
 
 Board Interface
 ~~~~~~~~~~~~~~~
@@ -84,7 +84,7 @@ The example software provided consists of the following,
 
 -  ADF7030-1 specific driver source files.
 
-\* The example application requires ADuCM302x-Rel2.0.0 BSP for IAR to be installed.
+- The example application requires ADuCM302x-Rel2.0.0 BSP for IAR to be installed.
 
 Software Architecture
 ~~~~~~~~~~~~~~~~~~~~~
@@ -94,11 +94,11 @@ The software architecture for the ADF7030-1 applications is depicted below
 
 |image3|
 
-\* The system specific APIs like SPI, UART, GPIO etc and present in the ADuCM302x-Rel2.0.0 BSP .
+- The system specific APIs like SPI, UART, GPIO etc and present in the ADuCM302x-Rel2.0.0 BSP .
 
-\* The Radio control APIs are found in the Driver files provided within the project application folder.
+- The Radio control APIs are found in the Driver files provided within the project application folder.
 
-\* The 3 different projects (OfflineCalibration, RX_packet and TX_packet) share the same workspace but only one of them can be set as active at a time.
+- The 3 different projects (OfflineCalibration, RX_packet and TX_packet) share the same workspace but only one of them can be set as active at a time.
 
 IDE Setup and example application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

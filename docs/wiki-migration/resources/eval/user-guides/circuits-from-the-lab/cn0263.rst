@@ -1,13 +1,13 @@
 CN0263 User Guide (DEPRECATED)
 ==============================
 
-|
-
 .. important::
 
-   | This reference design has been **RETIRED** or **DEPRECATED**, which means this board is no longer supported or being sold by Analog Devices.
-   | This page is here for historical/reference purposes only.
-   |
+   
+   This reference design has been **RETIRED** or **DEPRECATED**, which means this board is no longer supported or being sold by Analog Devices.
+   
+   This page is here for historical/reference purposes only.
+   
 
 
 Overview
@@ -21,9 +21,13 @@ Overview
 
 The :adi:`ADV7180` and :adi:`ADA4830-1` are fully automotive qualified, which makes both products ideal for infotainment and visionbased safety systems for automotive applications.
 
-| The :adi:`EVAL-CN0263-EB1Z Board <EVAL-CN0263-EB1Z>` connects to mini-USB connector and is powered by a +7.5 V supply or +7.5 V “wall wart”.
-| |image1|
-| ----
+The :adi:`EVAL-CN0263-EB1Z Board <EVAL-CN0263-EB1Z>` connects to mini-USB connector and is powered by a +7.5 V supply or +7.5 V “wall wart”.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/cn0263-hw-1024.jpg
+   :align: center
+   :width: 800px
+
+--------------
 
 Required Equipment
 ------------------
@@ -63,7 +67,9 @@ General Setup
 Block assignments
 ~~~~~~~~~~~~~~~~~
 
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/4.png
+   :align: center
+   :width: 600px
 
 -  The :adi:`EVAL-CN0263-EB1Z Board <EVAL-CN0263-EB1Z>` **(CN-0263 Board)** connects to the PC via USB connection
 -  Terminal block **J1** is RCA jack for the video output
@@ -86,18 +92,27 @@ Block assignments
 -  Terminal block **J18** is the jumper for grounding second positive differential input of ADA4830-2
 -  Terminal block **J19** is the jumper for grounding second negative differential input of ADA4830-2
 
-| 
-| ==== Jumper settings ==== See the table in the image below for the jumper settings. Values in red are the default settings for the :adi:`EVAL-CN0263-SDPZ <CN0263>`.
+Jumper settings
+~~~~~~~~~~~~~~~
 
-| |image3|
-| **Jumper 8** is for the P7 to P0 Output/Input Pin Mapping of ADV7180. Table below summarizes the output/input mapping depending on chosen format and mode of operation.
+See the table in the image below for the jumper settings. Values in red are the default settings for the :adi:`EVAL-CN0263-SDPZ <CN0263>`.
 
-| |image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/5.png
+   :align: center
+   :width: 850px
+
+**Jumper 8** is for the P7 to P0 Output/Input Pin Mapping of ADV7180. Table below summarizes the output/input mapping depending on chosen format and mode of operation.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/6.png
+   :align: center
+   :width: 850px
 
 Test setup
 ~~~~~~~~~~
 
-| |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/9.png
+   :align: center
+   :width: 600px
 
 -  Connect the output of the power supply or wall wart to the +7.5V DC connector jumper on the :adi:`EVAL-CN0263-SDPZ Evaluation Board <CN0263>`
 -  Flick the switch next to the “+7.5V DC” connector so that the nearby LED turns on. The :adi:`EVAL-CN0263-SDPZ Evaluation Board <CN0263>` board is now powered up.
@@ -117,15 +132,15 @@ Installing the Evaluation Software
    \ **NOTE:** It is recommended that you install the software to the default directory path **C:\\Program Files (x86)\\Analog Devices\\ADV Register Control 7.0\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-   |image6|
+   |image1|
 
-   \* Click **Next** to view the installation review page
+-  Click **Next** to view the installation review page
 
-   |image7|
+|image2|
 
    \* Click **Next** to start the installation
 
-   |image8|
+   |image3|
 
 --------------
 
@@ -135,8 +150,13 @@ Using the Evaluation Software
 Main Tab
 ~~~~~~~~
 
-| |image9|
-| |image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/12.png
+   :align: center
+   :width: 650px
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/13.png
+   :align: center
+   :width: 600px
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
@@ -168,23 +188,9 @@ Registration
 
 *End of Document*
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/cn0263-hw-1024.jpg
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/4.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/5.png
-   :width: 850px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/6.png
-   :width: 850px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/9.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/1.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/1.png
    :width: 550px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/2.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/2.png
    :width: 550px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/3.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/3.png
    :width: 550px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/12.png
-   :width: 650px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/13.png
-   :width: 600px

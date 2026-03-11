@@ -1,7 +1,86 @@
 AD7780 - No-OS Driver for Microchip Microcontroller Platforms
 =============================================================
 
-.. include:: ../ad7780.rst
+
+Supported Devices
+=================
+
+-  :adi:`AD7780`
+
+Evaluation Boards
+=================
+
+-  PmodAD3
+
+Overview
+========
+
+
+The :adi:`AD7780` is a complete low power front-end solution for bridge sensor products, including weigh scales, strain gages, and pressure sensors. It contains a precision, low power, 24-bit sigma-delta (Σ-Δ) ADC; an on-chip, low noise programmable gain amplifier (PGA); and an on-chip oscillator.
+
+Consuming only 330 μA, the :adi:`AD7780` is particularly suitable for portable or battery-operated products where very low power is required. The :adi:`AD7780` also has a power-down mode that allows the user to switch off the power to the bridge sensor and power down the :adi:`AD7780` when not converting, thus increasing the battery life of the product.
+
+For ease of use, all the features of the :adi:`AD7780` are controlled by dedicated pins. Each time a data read occurs, eight status bits are appended to the 24-bit conversion. These status bits contain a pattern sequence that can be used to confirm the validity of the serial transfer.
+
+The on-chip PGA has a gain of 1 or 128, supporting a full-scale differential input of ±5 V or ±39 mV. The device has two filter response options. The filter response at the 16.7 Hz update rate provides superior dynamic performance. The settling time is 120 ms at this update rate. At the 10 Hz update rate, the filter response provides greater than −45 dB of stop-band attenuation. In load cell applications, this stop-band rejection is useful to reject low frequency mechanical vibrations of the load cell. The settling time is 300 ms at this update rate. Simultaneous 50 Hz/60 Hz rejection occurs at both the 10 Hz and 16.7 Hz update rates.
+
+The :adi:`AD7780` operates with a power supply from 2.7 V to 5.25 V. It is available in a narrow body, 14-lead SOIC package and a 16-lead TSSOP package.
+
+Applications
+------------
+
+-  Weigh scales
+-  Pressure Measurement
+-  Industrial Process Control
+-  Portable instrumentation
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad7780_pmod_ad3.jpg
+   :align: center
+
+
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the AD7780 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7780 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7780 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD7780 driver:
+
++----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Function                                                                               | Description                                                                   |
++========================================================================================+===============================================================================+
+| char AD7780_Init(void)                                                                 | Initializes the communication peripheral and checks if the device is present. |
++----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| char AD7780_WaitRdyGoLow(void)                                                         | Waits for DOUT/RDY pin to go low.                                             |
++----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| long AD7780_ReadSample(unsigned char\* pStatus)                                        | Reads a 24-bit sample from the ADC.                                           |
++----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| float AD7780_ConvertToVoltage(unsigned long rawSample, float vRef, unsigned char gain) | Converts the 24-bit raw value to volts.                                       |
++----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+
+
 
 **HW Platform(s):**
 
@@ -15,9 +94,9 @@ Downloads
 
    
    -  `AD7780 chipKIT Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/ad7780_arduino.zip>`_
-   -  \**AD7780 Driver: \*\* :git-no-OS:`drivers/adc/ad7780`
-   -  \**PmodAD3 Demo for PIC32MX320F128H: \*\* :git-no-OS:`Microchip/PIC32MX320F128H/PmodAD3`
-   -  \**PIC32MX320F128H Common Drivers: \*\* :git-no-OS:`Microchip/PIC32MX320F128H/Common`
+   -  **AD7780 Driver:** :git-no-OS:`drivers/adc/ad7780`
+   -  **PmodAD3 Demo for PIC32MX320F128H:** :git-no-OS:`Microchip/PIC32MX320F128H/PmodAD3`
+   -  **PIC32MX320F128H Common Drivers:** :git-no-OS:`Microchip/PIC32MX320F128H/Common`
    
 
 
@@ -106,18 +185,16 @@ The following image shows a generic list of commands in a serial terminal connec
 
 |image1|
 
-|
-
 .. important::
 
+   
+   -  Reference voltage is 3300 mV default. If using another reference voltage, please check that the jumpers are properly set on the PmodAD3, and modify the constant V_REF value in the ‘PmodAD3 Demo’.
+   
 
-   ..
-
-| \* Reference voltage is 3300 mV default. If using another reference voltage, please check that the jumpers are properly set on the PmodAD3, and modify the constant V_REF value in the ‘PmodAD3 Demo’.
-   |
 
 Software Project Setup
 ----------------------
+
 
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -159,12 +236,11 @@ This section presents the steps for developing a software application that will 
    :align: center
 
 
+
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
 ==========================================================
 
 This section contains a description of the steps required to run the AD7780 chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
-
-.. _required-hardware-1:
 
 Required Hardware
 -----------------
@@ -172,14 +248,10 @@ Required Hardware
 -  `Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
 -  PmodAD3
 
-.. _required-software-1:
-
 Required Software
 -----------------
 
 -  `MPIDE <https://github.com/chipKIT32/chipKIT32-MAX/downloads>`_
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -188,8 +260,6 @@ A PmodAD3 has to be connected to the JE connector of Cerebot MX3cK development b
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad3_pic32_arduino.jpg
    :align: center
-
-.. _reference-project-overview-1:
 
 Reference Project Overview
 --------------------------
@@ -225,10 +295,9 @@ The following image shows a list of commands in the serial monitor.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_arduino.png
    :align: center
 
-.. _software-project-setup-1:
-
 Software Project Setup
 ----------------------
+
 
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -254,8 +323,10 @@ This section presents the steps for developing a chipKIT application that will r
    :align: center
 
 
+
 More information
 ================
+
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
@@ -263,6 +334,7 @@ More information
 |//ez.analog.com/community/feeds/allcontent/atom|
 
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

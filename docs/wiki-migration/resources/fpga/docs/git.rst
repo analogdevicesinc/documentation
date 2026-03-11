@@ -126,7 +126,7 @@ Repository Releases and Branches
 
 The repository may contain multiple branches and tags. The :git-hdl:`tree/master` branch is the development branch (latest sources, but not stable). If you check out this branch, some builds may fail. If you are not into any kind of experimentation, you should only check out one of the release branch.
 
-All our release branches have the following naming convention: **hdl\_**\ [year_of_release]\ **\_r**\ [1 or 2]. (e.g. :git-hdl:`tree/hdl_2014_r2`)
+All our release branches have the following naming convention: **hdl\_**[year_of_release]**\_r**\ [1 or 2]. (e.g. :git-hdl:`tree/hdl_2014_r2`)
 
 ADI does two releases each year when all the projects get an update to support the latest tools and get additional new features. \*\* The master branch is always synchronized with the latest release.*\* If you are in doubt, ask us on :ez:`FPGA Engineer Zone <community/fpga>`.
 
@@ -144,5 +144,5 @@ Need help?
 
 -  :ez:`FPGA Reference Designs support forum <community/fpga>`
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#intro
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#intro
    :alt: Introduction#hdl|Main page#releases|Releases and supported tool versions

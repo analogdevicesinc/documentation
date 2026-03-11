@@ -45,21 +45,21 @@ Specifications
    Figure 2. Block Diagram of the FMC Xmicrowave bridge
 
 
-+-------------------------+--------------------------------------------------------------------------------------------------+
-| Key Features            |                                                                                                  |
-+=========================+==================================================================================================+
-| **User interfaces**     | FMC standard connector for connection to FMC development kit (from Xilinx or Intel)​             |
-+-------------------------+--------------------------------------------------------------------------------------------------+
-|                         | RaspberryPi 40pin header for connection to X-MW controller                                       |
-+-------------------------+--------------------------------------------------------------------------------------------------+
-| **Voltage translation** | Control of modules with different voltage requirements while allowing compatibility between ICs​ |
-+-------------------------+--------------------------------------------------------------------------------------------------+
-| **Power Supplies**      | Access to power supplies available in the FMC​                                                   |
-+-------------------------+--------------------------------------------------------------------------------------------------+
-|                         | Create new power rails suitable to power LDOs and create bias voltages in the prototyping area​  |
-+-------------------------+--------------------------------------------------------------------------------------------------+
-| **Connectivity**        | Provide a bridge between X-MW protoplate and an FMC development kit​                             |
-+-------------------------+--------------------------------------------------------------------------------------------------+
++-------------------------+-------------------------------------------------------------------------------------------------+
+| Key Features            |                                                                                                 |
++=========================+=================================================================================================+
+| **User interfaces**     | FMC standard connector for connection to FMC development kit (from Xilinx or Intel)             |
++-------------------------+-------------------------------------------------------------------------------------------------+
+|                         | RaspberryPi 40pin header for connection to X-MW controller                                      |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Voltage translation** | Control of modules with different voltage requirements while allowing compatibility between ICs |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Power Supplies**      | Access to power supplies available in the FMC                                                   |
++-------------------------+-------------------------------------------------------------------------------------------------+
+|                         | Create new power rails suitable to power LDOs and create bias voltages in the prototyping area  |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Connectivity**        | Provide a bridge between X-MW protoplate and an FMC development kit                             |
++-------------------------+-------------------------------------------------------------------------------------------------+
 
 Connectivity and User interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

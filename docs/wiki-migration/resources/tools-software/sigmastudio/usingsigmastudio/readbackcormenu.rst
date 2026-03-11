@@ -1,7 +1,7 @@
 Continuous ReadBack Menu Options
 ================================
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
 
 DSP Readback
 ------------

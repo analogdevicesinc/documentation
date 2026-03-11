@@ -3,8 +3,7 @@
 EVAL-ADAU1466Z
 ==============
 
-| 
-| Evaluation Hardware for the ADAU1466 processor
+Evaluation Hardware for the ADAU1466 processor
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/evaladau1466.png
    :width: 500px

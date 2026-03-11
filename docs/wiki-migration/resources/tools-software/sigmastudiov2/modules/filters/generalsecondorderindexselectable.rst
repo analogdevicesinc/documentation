@@ -3,18 +3,26 @@
 2nd Order Index Selectable
 ==========================
 
-| 
-| |genindxselectfilt.png|
-| |isifform.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/genindxselectfilt.png
+   :alt: genindxselectfilt.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/isifform.png
+   :alt: isifform.png
 
 Description
 -----------
 
-| The General (2nd-Order / Index Selectable) block provides a wide variety of 2nd-order filter algorithms. This block extends the functionality of the General (2nd-Order / Lookup) filter with an enhanced graphical filter design tool. In addition, each of this filter's response curves can be designed independently, allowing you to use complex filter configurations to match your desired system response.
-| ===== Usage ===== To open the graphical window, click on the icon button. This filter provides:
+The General (2nd-Order / Index Selectable) block provides a wide variety of 2nd-order filter algorithms. This block extends the functionality of the General (2nd-Order / Lookup) filter with an enhanced graphical filter design tool. In addition, each of this filter's response curves can be designed independently, allowing you to use complex filter configurations to match your desired system response.
 
-| Selection from a set of filter responses via external control input pin. Graphical design of filter response curves. Independent filter type and settings for each response curve. Loading of filter coefficients from a text file containing the same.
-| ===== Targets Supported =====
+Usage
+-----
+
+To open the graphical window, click on the icon button. This filter provides:
+
+Selection from a set of filter responses via external control input pin. Graphical design of filter response curves. Independent filter type and settings for each response curve. Loading of filter coefficients from a text file containing the same.
+
+Targets Supported
+-----------------
 
 +----------------------------+------------+------------------+---------------+------------------+
 | Name                       | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -44,7 +52,7 @@ Name    Type  Description
 Output0 Audio The filtered output
 ======= ===== ===================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+-------------------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -97,6 +105,3 @@ Output0 Audio The filtered output
 +----------------+----------------------------------------------------------------+------------------------+---------------+
 | slew_mode      | Slew value for the filter                                      | NA                     | Integer32     |
 +----------------+----------------------------------------------------------------+------------------------+---------------+
-
-.. |genindxselectfilt.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/genindxselectfilt.png
-.. |isifform.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/isifform.png

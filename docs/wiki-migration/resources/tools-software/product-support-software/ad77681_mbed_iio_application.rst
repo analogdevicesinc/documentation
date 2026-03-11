@@ -8,7 +8,7 @@ This page gives an overview of using the ARM Mbed platform supported firmware ex
 
 The AD7768-1 is a low power, high performance, Σ-Δ analog-to-digital converter (ADC), with a Σ-Δ modulator and digital filter for precision conversion of both ac and dc signals. The AD7768-1 is a single-channel version of the AD7768, an 8-channel, simultaneously sampling, Σ-Δ ADC.
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
 
 --------------
@@ -16,7 +16,7 @@ The AD7768-1 is a low power, high performance, Σ-Δ analog-to-digital converter
 Useful Links
 ------------
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :git-no-OS:`AD7768-1 No-OS Drivers <drivers/adc/ad7768-1>`
@@ -45,7 +45,7 @@ Connection Details:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7768-1_detailed_hw_connection.png
    :align: center
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
 
 --------------
@@ -53,7 +53,7 @@ Connection Details:
 Software Downloads
 ------------------
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
 
 IIO Oscilloscope (Client)
@@ -76,7 +76,7 @@ This is a GUI (Graphical User Interface) based IIO client application for data v
 Evaluating AD7768-1 Using IIO Ecosystem
 ---------------------------------------
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
 
 Running IIO Oscilloscope ( Client )
@@ -119,9 +119,9 @@ Using Register Map Settings to read register values
 How to read and write register values:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  To '\**Read a register \*\*', simply populate the **Address** textbox with the desired address to be read and press '**Read**' button on left side.
--  To '\**Write a register \*\*', populate the **Address** textbox with the desired address to be read and populate also the **Value** text box with the value base on the datasheet and press the '**write**' button on the left.
--  To '\**AutoRead a register \*\*', Tick the **Enable AutoRead** check box and populate the Address textbox with the desired address to be read.
+-  To '\**Read a register**', simply populate the **Address** textbox with the desired address to be read and press '**Read**' button on left side.
+-  To '\**Write a register**', populate the **Address** textbox with the desired address to be read and populate also the **Value** text box with the value base on the datasheet and press the '**write**' button on the left.
+-  To '\**AutoRead a register**', Tick the **Enable AutoRead** check box and populate the Address textbox with the desired address to be read.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7768-1_reg_map_settings.png
    :align: center
@@ -233,4 +233,3 @@ The functionality related with no-OS drivers is covered in below 2 files:
    It is hoped that the most common functions of the AD7768-1 are coded, but it's likely that some special functionality is not implemented. Feel free to consult Analog Devices :adi:`Engineer-Zone <engineerzone>` for feature requests, feedback, bug-reports etc.
 
 
---------------

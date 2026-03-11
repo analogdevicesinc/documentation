@@ -9,17 +9,18 @@ Dynamic Bass Boost
 Description
 -----------
 
-| 
-| The Dynamic Bass Boost block provides a boost that varies with input signal level. A lower level of signals requires and receives more bass than a higher level of signals. By using a variable Q filter this block dynamically adjusts the amount of boost required for an input signal.
+The Dynamic Bass Boost block provides a boost that varies with input signal level. A lower level of signals requires and receives more bass than a higher level of signals. By using a variable Q filter this block dynamically adjusts the amount of boost required for an input signal.
 
-| The filter calculates its bass boost between the Threshold and minimum Gain settings. A fixed maximum bass is applied to inputs above the minimum gain and below the Threshold level.
-| ===== Variants =====
+The filter calculates its bass boost between the Threshold and minimum Gain settings. A fixed maximum bass is applied to inputs above the minimum gain and below the Threshold level.
+
+Variants
+--------
 
 -  Dynamic Bass Boost Mono
 -  Dynamic Bass Boost Stereo
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +---------------------------+------------------+------------------+---------------+------------------+
 | Name                      | ADSP-214xx       | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -52,7 +53,7 @@ Output0 Audio Output channel0
 Output1 Audio Output channel1 (only for stereo)
 ======= ===== =================================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+

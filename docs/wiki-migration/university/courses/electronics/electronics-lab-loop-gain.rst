@@ -86,17 +86,7 @@ The frequency response of the transformer and the dynamic range of the network a
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 2 - 10 Ω resistors
-| 1 - 100 Ω resistor
-| 2 - 1 KΩ resistors
-| 1 - 10 KΩ resistor
-| 1 - OP27 op-amp
-| 1 - OP37 op-amp
-| 1 - OP97 op-amp
-| 1 - HPH1-1400L transformer ( or transformers, T1-6T from Minicircuits, WB1010 from Coilcraft )
-| 2 - 0.1 uF Capacitors (used to de-couple the Vp and Vn power supplies)
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 2 - 10 Ω resistors 1 - 100 Ω resistor 2 - 1 KΩ resistors 1 - 10 KΩ resistor 1 - OP27 op-amp 1 - OP37 op-amp 1 - OP97 op-amp 1 - HPH1-1400L transformer ( or transformers, T1-6T from Minicircuits, WB1010 from Coilcraft ) 2 - 0.1 uF Capacitors (used to de-couple the Vp and Vn power supplies)
 
 Directions:
 -----------
@@ -172,11 +162,7 @@ Why did the unity gain frequency change for the case with R\ :sub:`2` equal to 1
 
 **For Further Reading:**
 
-| Measurement of loop gain in feedback systems. Middlebrook, R.D. s.l. : International Journal of Electronics, 1975, Bd. 38. http:*scholar.google.com/scholar?cluster=5040596387593898653
-  http:*\ en.wikipedia.org/wiki/Nyquist_stability_criterion
-| http:*en.wikipedia.org/wiki/Phase_margin
-  http:*\ en.wikipedia.org/wiki/Bode_plot#Gain_margin_and_phase_margin
-| http://www.edn.com/electronics-blogs/analog-bytes/4434609/Loop-gain-measurements-
+Measurement of loop gain in feedback systems. Middlebrook, R.D. s.l. : International Journal of Electronics, 1975, Bd. 38. http://scholar.google.com/scholar?cluster=5040596387593898653 http://en.wikipedia.org/wiki/Nyquist_stability_criterion http://en.wikipedia.org/wiki/Phase_margin http://en.wikipedia.org/wiki/Bode_plot#Gain_margin_and_phase_margin http://www.edn.com/electronics-blogs/analog-bytes/4434609/Loop-gain-measurements-
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 

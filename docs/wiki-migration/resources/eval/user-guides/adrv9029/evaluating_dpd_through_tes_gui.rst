@@ -32,10 +32,7 @@ CONFIGURING THE ADRV9029 TRANSCEIVER
    :align: center
    :width: 600px
 
--  <fc #ff0000>\ **Please turn off the PA before programming the device so that the PA is not damaged by high amplitude tones transmitted by the ADRV9029 during initial calibration**.</fc>
-
-
-| 
+-  **Please turn off the PA before programming the device so that the PA is not damaged by high amplitude tones transmitted by the ADRV9029 during initial calibration**.
 
 PROGRAMMING THE ADRV9029 TRANSCEIVER
 ------------------------------------
@@ -46,13 +43,11 @@ After configuring the ADRV9029 transceiver settings as shown in the previous sec
    :align: center
    :width: 600px
 
-On successful completion of ADRV9029 transceiver programming, the TES GUI will display a "<fc #00ff00>\ **Programmed Successfully**\ </fc>" message on the bottom right hand corner of the ADRV9029 TES GUI as shown below.
+On successful completion of ADRV9029 transceiver programming, the TES GUI will display a "**Programmed Successfully**" message on the bottom right hand corner of the ADRV9029 TES GUI as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_programmingsuccessful.png
    :align: center
    :width: 600px
-
-|
 
 EVALUATING DPD ON THE ADRV9029 TRANSCEIVER
 ------------------------------------------
@@ -81,20 +76,27 @@ Adjust the digital scaling if required and hit the "Submit" button to load the w
 
 ::
 
-         {{ :resources:eval:user-guides:adrv9029:adrv9029_dpd_modelload.png?800 |}} 
-         
-         
-   * Configure ‘DPD Tracking Config’ parameters (default values provide a good starting point).
-         
-         {{ :resources:eval:user-guides:adrv9029:adrv9029_dpdtrackingconfig.png?400 |}} 
-         
-   * In the "DPD functions" window under the DFE Tab of ADRV9029 TES GUI, select desired Tx channel to apply settings(In this example Tx1 is selected).   
-     * Apply DPD model on the M and C tables using ‘Apply Model on Device from M Table’ and ‘Apply Model on Device from C Table’ buttons. The C-Table is a low power model only applicable in DPD Mode 2.
-       * Apply DPD tracking configuration by clicking on ‘Apply Tracking Config’ button.
-         * Run Path Delay initial calibration using ‘Run Path Delay Init Cal’ button.
-           * Click ‘Enable DPD on selected channels (only)’ to enable DPD Tracking.
-            
-           {{ :resources:eval:user-guides:adrv9029:adrv9029_dpdtrackingcal_enable.png?400 |}} 
+         {{ :resources:eval:user-guides:adrv9029:adrv9029_dpd_modelload.png?800 |}}
+
+-  Configure ‘DPD Tracking Config’ parameters (default values provide a good starting point).
+
+::
+
+         {{ :resources:eval:user-guides:adrv9029:adrv9029_dpdtrackingconfig.png?400 |}}
+
+-  In the "DPD functions" window under the DFE Tab of ADRV9029 TES GUI, select desired Tx channel to apply settings(In this example Tx1 is selected).
+
+   -  Apply DPD model on the M and C tables using ‘Apply Model on Device from M Table’ and ‘Apply Model on Device from C Table’ buttons. The C-Table is a low power model only applicable in DPD Mode 2.
+
+      -  Apply DPD tracking configuration by clicking on ‘Apply Tracking Config’ button.
+
+         -  Run Path Delay initial calibration using ‘Run Path Delay Init Cal’ button.
+
+            -  Click ‘Enable DPD on selected channels (only)’ to enable DPD Tracking.
+
+::
+
+           {{ :resources:eval:user-guides:adrv9029:adrv9029_dpdtrackingcal_enable.png?400 |}}
 
 -  Now the DPD tracking must be enabled and running. The DPD status can be monitored by selecting the Tx channel and clicking the "Get DPD Status and Statistics" button. Ensure that the error status returns "No Error" and the "Iteration Count" and "Update Count" fields are incrementing
 
@@ -102,5 +104,5 @@ Adjust the digital scaling if required and hit the "Submit" button to load the w
    :align: center
    :width: 300px
 
-.. image:: https://wiki.analog.com/_media/navigation ADRV9029 DPD USER GUIDE#prerequisites
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation ADRV9029 DPD USER GUIDE#prerequisites
    :alt: Getting Started#resources:eval:user-guides:adrv9029|main page#dpd_error_troubleshooting|DPD error troubleshooting

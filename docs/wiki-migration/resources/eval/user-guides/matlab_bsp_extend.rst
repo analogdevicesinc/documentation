@@ -12,7 +12,7 @@ Directly Addressing Attributes
 
 ::
 
-   rx = 
+   rx =
 
      adi.AD9361.Rx with properties:
 
@@ -56,7 +56,7 @@ Now under the standard methods scope the following set method is added
 
 ::
 
-           % Check RFPort 
+           % Check RFPort
            function set.RFPort (obj, value)
                obj.RFPort = value;
                if obj.ConnectedToDevice
@@ -69,7 +69,7 @@ Now when the class is expanded the new property is populated:
 
 ::
 
-   rx = 
+   rx =
 
      adi.AD9361.Rx with properties:
 

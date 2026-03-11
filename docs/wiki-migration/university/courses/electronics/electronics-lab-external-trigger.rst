@@ -14,16 +14,7 @@ The ADALM2000 scope module is most often triggered from one of the analog input 
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - AD8561 comparator ( or AD790 alternate with slightly different pinout )
-| 1 - 74HC04 Hex CMOS inverter ( or CD4007 see Appendix )
-| 3 - 1 KΩ resistors
-| 1 - 1 megaΩ resistor
-| 1 - 10 KΩ potentiometer
-| 1 - 0.1 uF capacitor
-| 1 - 0.0047 uF capacitor
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - AD8561 comparator ( or AD790 alternate with slightly different pinout ) 1 - 74HC04 Hex CMOS inverter ( or CD4007 see Appendix ) 3 - 1 KΩ resistors 1 - 1 megaΩ resistor 1 - 10 KΩ potentiometer 1 - 0.1 uF capacitor 1 - 0.0047 uF capacitor
 
 Directions:
 -----------

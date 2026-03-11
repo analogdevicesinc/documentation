@@ -6,31 +6,31 @@ Preface
 
 This user guide describes the :adi:`AD9680`/:adi:`AD9234` evaluation board which provides all of the support circuitry required to operate the ADC in its various modes and configurations. Users wanting to evaluate the single channel :adi:`AD9690` should utilize/evaluate Channel A on the AD9680-1250EBZ, or AD9680-1000EBZ. The application software used to interface with the devices is also described. This user guide wiki applies to the following evaluation boards:
 
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| Evaluation Board Part Number      | Description                                                                   | Board Revision             |
-+===================================+===============================================================================+============================+
-| <fc #9400d3>AD9680-1250EBZ</fc>   | <fc #9400d3>Evaluation board for AD9680-1250; Full Bandwidth</fc>             | <fc #9400d3>9680CE04B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #9400d3>AD9680-1000EBZ</fc>   | <fc #9400d3>Evaluation board for AD9680-1000; Full Bandwidth</fc>             | <fc #9400d3>9680CE04B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #9400d3>AD9680-820EBZ</fc>    | <fc #9400d3>Evaluation board for AD9680-820; Full Bandwidth</fc>              | <fc #9400d3>9680CE04B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #9400d3>AD9680-500EBZ</fc>    | <fc #9400d3>Evaluation board for AD9680-500; Full Bandwidth</fc>              | <fc #9400d3>9680CE04B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #008000>AD9234-1000EBZ</fc>   | <fc #008000>Evaluation board for AD9234-1000; Full Bandwidth</fc>             | <fc #008000>9680CE04B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #008000>AD9234-500EBZ</fc>    | <fc #008000>Evaluation board for AD9234-500; Full Bandwidth</fc>              | <fc #008000>9680CE04B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #4682b4>AD9680-LF1000EBZ</fc> | <fc #4682b4>Evaluation board for AD9680-1000; up to 1GHz Input Bandwidth</fc> | <fc #4682b4>9680CE02B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #4682b4>AD9680-LF820EBZ</fc>  | <fc #4682b4>Evaluation board for AD9680-820; up to 1GHz Input Bandwidth</fc>  | <fc #4682b4>9680CE02B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #4682b4>AD9680-LF500EBZ</fc>  | <fc #4682b4>Evaluation board for AD9680-500; up to 1GHz Input Bandwidth</fc>  | <fc #4682b4>9680CE02B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| AD9234-LF1000EBZ                  | Evaluation board for AD9234-1000; up to 1GHz Input Bandwidth                  | 9680CE02B                  |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| AD9234-LF500EBZ                   | Evaluation board for AD9234-500; up to 1GHz Input Bandwidth                   | 9680CE02B                  |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
++------------------------------+--------------------------------------------------------------+----------------+
+| Evaluation Board Part Number | Description                                                  | Board Revision |
++==============================+==============================================================+================+
+| AD9680-1250EBZ               | Evaluation board for AD9680-1250; Full Bandwidth             | 9680CE04B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD9680-1000EBZ               | Evaluation board for AD9680-1000; Full Bandwidth             | 9680CE04B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD9680-820EBZ                | Evaluation board for AD9680-820; Full Bandwidth              | 9680CE04B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD9680-500EBZ                | Evaluation board for AD9680-500; Full Bandwidth              | 9680CE04B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD9234-1000EBZ               | Evaluation board for AD9234-1000; Full Bandwidth             | 9680CE04B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD9234-500EBZ                | Evaluation board for AD9234-500; Full Bandwidth              | 9680CE04B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD9680-LF1000EBZ             | Evaluation board for AD9680-1000; up to 1GHz Input Bandwidth | 9680CE02B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD9680-LF820EBZ              | Evaluation board for AD9680-820; up to 1GHz Input Bandwidth  | 9680CE02B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD9680-LF500EBZ              | Evaluation board for AD9680-500; up to 1GHz Input Bandwidth  | 9680CE02B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD9234-LF1000EBZ             | Evaluation board for AD9234-1000; up to 1GHz Input Bandwidth | 9680CE02B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD9234-LF500EBZ              | Evaluation board for AD9234-500; up to 1GHz Input Bandwidth  | 9680CE02B      |
++------------------------------+--------------------------------------------------------------+----------------+
 
 | 
 | The :adi:`ad9680`, :adi:`ad9234`, and :adi:`ad9690` data sheets provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`High-Speed Converter Data Source/Capture Boards <en/resources/evaluation-hardware-and-software/evaluation-development-platforms/high-speed-adc-data-capture-boards.html>`. For additional information or questions, send an email to highspeed.converters@analog.com.
@@ -42,14 +42,14 @@ AD9680/AD9234 Evaluation Board
 
 .. container:: centeralign
 
-   \ *Figure 1.* :adi:`AD9680`\ */*\ :adi:`AD9234` *Evaluation Board for full 2GHz Input Bandwidth*\
+   \ *Figure 1.* :adi:`AD9680`\ */*\ :adi:`AD9234`\ *Evaluation Board for full 2GHz Input Bandwidth*\
 
 
    |image2|
 
 .. container:: centeralign
 
-   \ *Figure 2.* :adi:`AD9680`\ */*\ :adi:`AD9234` *Low Frequency Evaluation Board up to 1GHz Input Bandwidth*\
+   \ *Figure 2.* :adi:`AD9680`\ */*\ :adi:`AD9234`\ *Low Frequency Evaluation Board up to 1GHz Input Bandwidth*\
 
 
 Figure 3 below compares the bandwidth available on the AD9680/AD9234 normal evaluation boards and the **"LF"** boards.
@@ -73,7 +73,7 @@ The :adi:`AD9680-1250EBZ <AD9680>`/:adi:`AD9234-1000EBZ <AD9234>` can be evaluat
 
 .. container:: centeralign
 
-   \ *Figure 4. Evaluation Board Connection—*\ :adi:`AD9680-1250EBZ <AD9680>`\ */*\ :adi:`AD9234-1000EBZ <AD9234>` *(on Left) and* :adi:`ADS7-V1EBZ <eval-ads7-v1>` *(on Right)*\
+   \ *Figure 4. Evaluation Board Connection—*\ :adi:`AD9680-1250EBZ <AD9680>`\ */*\ :adi:`AD9234-1000EBZ <AD9234>`\ *(on Left) and* :adi:`ADS7-V1EBZ <eval-ads7-v1>` *(on Right)*\
 
 
 .. important::
@@ -85,7 +85,7 @@ The :adi:`AD9680-1250EBZ <AD9680>`/:adi:`AD9234-1000EBZ <AD9234>` can be evaluat
 
 .. container:: centeralign
 
-   \ *Figure 5. Evaluation Board Connection—*\ :adi:`AD9680-LF1000EBZ <AD9680>`\ */*\ :adi:`AD9234-LF1000EBZ <AD9234>` *(on Left) and* :adi:`ADS7-V2EBZ <eval-ads7-v2>` *(on Right)*\
+   \ *Figure 5. Evaluation Board Connection—*\ :adi:`AD9680-LF1000EBZ <AD9680>`\ */*\ :adi:`AD9234-LF1000EBZ <AD9234>`\ *(on Left) and* :adi:`ADS7-V2EBZ <eval-ads7-v2>` *(on Right)*\
 
 
 Features
@@ -212,10 +212,10 @@ Software Setup
 
 .. raw:: html
 
-   <details><summary>ACE Setup</summary>
+   <details><summary>ACE Setup
 
 -  Download and install ACE if it is not already installed.
-   -  The AD9680 ACE plug-in can be found under the :adi:`AD9680 Evaluation Board Software Section <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9680.html#eb-relatedsoftware>`, or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).<WRAP>
+   -  The AD9680 ACE plug-in can be found under the :adi:`AD9680 Evaluation Board Software Section <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9680.html#eb-relatedsoftware>`, or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).
    
    .. tip::
 
@@ -233,14 +233,14 @@ Software Setup
    \ |image7|\ *Figure 7. ACE's AD9680 Plug-in*\
 
 
--  If the AD9680 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.<WRAP>
+-  If the AD9680 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.
 
 .. note::
 
    Note: Differences may occur between ACE plug-in versions, including the version number seen in Figure 7 above or components in any of the other images below - however, these will not affect the performance of the part, nor the fundamental features described in this user guide.
 
 
-</WRAP>
+
 
 -  Double click on the plug-in to open it. This will open the AD9680 Board View.
 
@@ -249,14 +249,14 @@ Software Setup
    \ |image8|\ *Figure 8. AD9680 Board View*\
 
 
-<WRAP>
+
 
 .. note::
 
    Note: ACE will automatically program the FPGA (FPGA_DONE LED should be lit up) and load the default full bandwidth configuration.
 
 
-</WRAP>
+
 
 -  Double click on the blue AD9680 chip (in the middle of the board) to open up the Chip View.
 
@@ -273,7 +273,7 @@ Software Setup
 
 .. raw:: html
 
-   <details><summary>Visual Analog & SPI Controller Setup</summary>
+   <details><summary>Visual Analog & SPI Controller Setup
 
 **Visual Analog Setup**
 
@@ -285,67 +285,67 @@ Software Setup
    //Figure 10. Selecting the :adi:`AD9680` canvas *
 
 
-\* At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in figure 11. Programming the FPGA will provide power to the evaluation board.\ \
+- At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in figure 11. Programming the FPGA will provide power to the evaluation board.\ \
 
 .. container:: centeralign
 
-   *\ Figure 11. Programming the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_\ *
+   *Figure 11. Programming the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_*
 
 
-\* If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 12)\ \
-
-.. container:: centeralign
-
-   *\ Figure 12. Expanding Display in VisualAnalog\ *
-
-
-\* Click the* **Settings** *button in the* **ADC Data Capture** *block as shown in Figure 13\ \
+- If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 12)\ \
 
 .. container:: centeralign
 
-   *\ Figure 13. Changing the ADC Capture Settings\ *
+   *Figure 12. Expanding Display in VisualAnalog*
 
 
-\* On the* **General** *tab make sure the clock frequency is set to the appropriate sample rate (eg.* **1250 MHz or 1000 MHz**\ *). The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The ADS7-V2 FPGA software supports up to 2M FFT capture (1M per channel)\ \
-
-.. container:: centeralign
-
-   *\ Figure 14. Setting the clock frequency and Capture length\ *
-
-
-\* On the* **Device** *tab. Make sure that* **Enable Alternate REFCLK** *option is unchecked.\ \
+- Click the **Settings** button in the **ADC Data Capture** block as shown in Figure 13\ \
 
 .. container:: centeralign
 
-   *\ Figure 15. Setting the clock frequency and capture length\ *
+   *Figure 13. Changing the ADC Capture Settings*
 
 
-\* Click* **OK**\ **SPI Controller Setup**\ *\* Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController \* Select the appropriate configuration file when prompted. \* In the* **Global** *tab, under the* **Generic Read/Write** *section, write* **0x81** *to register* **0x000**\ *. This issues a* **Soft Reset** *for the DUT or just click* **Reset** *at* **CHIP PORT CFG(0)**\ *.\ \
-
-.. container:: centeralign
-
-   *\ Figure 16. Sending a Soft Reset to the AD9680\ *
-
-
-\* Individual Channel control for* **ADC A** *and* **ADC B** *are done using the* **Device Index Register (0x008)** *in the Global tab.\ \
+- On the **General** tab make sure the clock frequency is set to the appropriate sample rate (eg.**1250 MHz or 1000 MHz**\ *). The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The ADS7-V2 FPGA software supports up to 2M FFT capture (1M per channel)\ \
 
 .. container:: centeralign
 
-   *\ Figure 17. Device Index for ADC Channel A and Channel B\ *
+   *Figure 14. Setting the clock frequency and Capture length*
 
 
-\* Under* **ADC A** *and* **ADC B** *tabs the options for Channel A and B are listed. Default settings have been programmed to ensure optimal performance for the input bandwidth and sample rate. Only the following options need to be operated with: \** **Chip Configuration Register (0x002)**\ *: This option allows the channel to be powered on. \** **Buffer Current Setting (0x018)**\ *: This option allows the buffer current to change to enable better harmonic performance at different frequencies. At high analog input frequencies, the buffer current may need to be increased to optimize harmonic distortion performance (HD2, HD3). Keep in mind that at high frequencies, the performance is also jitter limited. So increasing the buffer currents may lead to diminishing returns with higher power consumption. Refer to the datasheet to understand the relationship between I\ AVDD3 and Buffer Current Setting. \** **Analog Input Differential Termination (0x016)**\ *: This sets the input termination. Recommended settings are 500, 200, 100, 50 ohms. At lower termination settings, the harmonic distortion performance may show improvement, but the analog input signal amplitude will be reduced. \** **Input Full Scale Range (0x025)**\ *: At high input frequencies, in order to preserve the linearity of the input buffer, it may be beneficial to reduce the input full-scale range in order to get more harmonic distortion performance. This in turn may negatively affect the SNR of the ADC.\ \
+- On the **Device** tab. Make sure that **Enable Alternate REFCLK** option is unchecked.\ \
 
 .. container:: centeralign
 
-   *\ Figure 18. SPI Controller Channel A and B Options//
+   *Figure 15. Setting the clock frequency and capture length*
+
+
+- Click **OK***SPI Controller Setup**\* Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController \* Select the appropriate configuration file when prompted. \* In the **Global** tab, under the **Generic Read/Write** section, write **0x81** to register **0x000**. This issues a **Soft Reset** for the DUT or just click **Reset** at **CHIP PORT CFG(0)**.\ \
+
+.. container:: centeralign
+
+   *Figure 16. Sending a Soft Reset to the AD9680*
+
+
+- Individual Channel control for **ADC A** and **ADC B** are done using the **Device Index Register (0x008)** in the Global tab.\ \
+
+.. container:: centeralign
+
+   *Figure 17. Device Index for ADC Channel A and Channel B*
+
+
+- Under **ADC A** and **ADC B** tabs the options for Channel A and B are listed. Default settings have been programmed to ensure optimal performance for the input bandwidth and sample rate. Only the following options need to be operated with: \** **Chip Configuration Register (0x002)**: This option allows the channel to be powered on. ** **Buffer Current Setting (0x018)**: This option allows the buffer current to change to enable better harmonic performance at different frequencies. At high analog input frequencies, the buffer current may need to be increased to optimize harmonic distortion performance (HD2, HD3). Keep in mind that at high frequencies, the performance is also jitter limited. So increasing the buffer currents may lead to diminishing returns with higher power consumption. Refer to the datasheet to understand the relationship between I\ AVDD3 and Buffer Current Setting. ** **Analog Input Differential Termination (0x016)**: This sets the input termination. Recommended settings are 500, 200, 100, 50 ohms. At lower termination settings, the harmonic distortion performance may show improvement, but the analog input signal amplitude will be reduced. ** **Input Full Scale Range (0x025)**\ *: At high input frequencies, in order to preserve the linearity of the input buffer, it may be beneficial to reduce the input full-scale range in order to get more harmonic distortion performance. This in turn may negatively affect the SNR of the ADC.\ \
+
+.. container:: centeralign
+
+   *Figure 18. SPI Controller Channel A and B Options*
 
 .. raw:: html
 
    </details>
 
 
-</WRAP>
+
 
 Sample Configuration 1: Full Bandwidth Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -358,7 +358,7 @@ Sample Configuration 1: Full Bandwidth Mode
 
 .. raw:: html
 
-   <details><summary>ACE Configuration</summary>
+   <details><summary>ACE Configuration
 
 -  Under **Initial Configuration** at board view, set the clock input to 1250 MHz. Change the **Clock Divide Ratio** to divide by 1. Change the **Chip Operation Mode** to full bandwidth mode. Change the number of **Lane** to 4. Change the number of **Virtual Converter** to 2. Change the number of **Octets per Frame** to 1. Click **Apply** to apply the chip settings. Set the reference clock to 625 MHz to match these settings.\ |image11|\
    
@@ -367,7 +367,7 @@ Sample Configuration 1: Full Bandwidth Mode
       \ *Figure 19. Chip Settings*\
 
    
-   <WRAP>
+   
    
    .. note::
 
@@ -425,14 +425,14 @@ Sample Configuration 1: Full Bandwidth Mode
    \ *Figure 26. Display FFTs and Run once*\
 
 
-<WRAP>
+
 
 .. tip::
 
    Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE's data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.
 
 
-</WRAP>
+
 
 -  **Channel A** and **Channel B** can be selected individually to display their **FFTs**.\ |image19|\
 
@@ -459,7 +459,7 @@ Sample Configuration 1: Full Bandwidth Mode
 
 .. raw:: html
 
-   <details><summary>Visual Analog & SPI Controller Configuration</summary>
+   <details><summary>Visual Analog & SPI Controller Configuration
 
 **SPI Controller Configuration**
 
@@ -537,7 +537,7 @@ Sample Configuration 1: Full Bandwidth Mode
    </details>
 
 
-</WRAP>
+
 
 Sample Configuration 2: Two ADCs Plus Two DDCs, Decimate by 4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -550,7 +550,7 @@ Sample Configuration 2: Two ADCs Plus Two DDCs, Decimate by 4
 
 .. raw:: html
 
-   <details><summary>ACE Configuration</summary>
+   <details><summary>ACE Configuration
 
 -  Under **Initial Configuration** at board view, set the clock input to 1250 MHz. Change the **Clock Divide Ratio** to divide by 1. Change the **Chip Operating Mode** for two DDCs. The DDC settings will become available, set the **Decimation Ratio** select "HB1_HB2 Complex" - two half-band filters, and set the **Output Select** select complex. i.e. Decimate-by-4. Set the number of **Lanes** to 2, the number of **Virtual Converters** to 4, and the number of **Octets per Frame** to 4. Click **Apply** to apply the settings. Set the reference clock to 625 MHz to match these settings.\ |image30|\
    
@@ -627,7 +627,7 @@ Sample Configuration 2: Two ADCs Plus Two DDCs, Decimate by 4
 
 .. raw:: html
 
-   <details><summary>Visual Analog & SPI Controller Configuration</summary>
+   <details><summary>Visual Analog & SPI Controller Configuration
 
 **Visual Analog & SPI Controller Configuration**
    
@@ -740,7 +740,7 @@ Troubleshooting Tips
 
 ::
 
-   *<WRAP>
+   *
 
 ======== ========== ===============
 Domain   Test Point Approx. Voltage
@@ -753,11 +753,11 @@ DVDD     TP407      1.25 V
 DRVDD    TP410      1.25 V
 ======== ========== ===============
 
-</WRAP>
+
 
 -  If a short is detected between any of the supply domains and ground, or an open is detected across fuse chip F400 or F401, a component may have been damaged.
 
-\*\* Evaluation board is not communicating with the ADS7-V2 / No SPI communication **\* Make sure that the FPGA on the ADS7-V2 has been programmed - a lit LED DS15 (**\ FPGA_DONE*\*) on the top of the ADS7-V2 and a powered fan are good indicators of the FPGA being programmed.
+\*\* Evaluation board is not communicating with the ADS7-V2 / No SPI communication **\* Make sure that the FPGA on the ADS7-V2 has been programmed - a lit LED DS15 (**FPGA_DONE**) on the top of the ADS7-V2 and a powered fan are good indicators of the FPGA being programmed.
 
 -  Check the common mode voltage on the JESD204B traces. On the evaluation board, the common mode voltage should be roughly two-thirds of DRVDD_1. On the ADS7-V2, the common mode voltage should be around 1.2 volts.
 -  To test SPI operation, attempt to both read and write to register 0x00A (Scratch Pad) using ACE's Register Debugger (Tools -> Register Debugger). This register is an open register available for testing memory reads and writes. If the register reads back the same value written to it, SPI is operational.
@@ -775,14 +775,23 @@ DRVDD    TP410      1.25 V
    -  Check the Reference Clock and make sure it matches your JESD settings.
    -  Make sure P100 (Power Down / Standby Jumper) is not jumped.
 
-\*\* VisualAnalog displays a blank FFT when the RUN button is clicked **\* Ensure that the clock to the ADC is supplied. Using SPIController ADCBase0 tab the status of the clock can be read out. See figure 57.\ \
+\*\* VisualAnalog displays a blank FFT when the RUN button is clicked \*\*
+
+-  Ensure that the clock to the ADC is supplied. Using SPIController ADCBase0 tab the status of the clock can be read out. See figure 57.\ |image49|\
 
 .. container:: centeralign
 
-   \ Figure 57. Clock Detection Status Register\
+   \ *Figure 57. Clock Detection Status Register*\
 
 
-\* Ensure that the ADC's PLL is locked by checking the status of the PLL lock detect register 0x56F. This can be done using SPIController (see figure 34 or 55).** VisualAnalog indicates that the “FIFO capture timed out” or "FIFO not ready for read back" **\* Make sure all power and USB connections are secure. \* Make sure that the Reference Clock is ON and set to the appropriate frequency.** FFT plot appears abnormal \*\*
+-  Ensure that the ADC's PLL is locked by checking the status of the PLL lock detect register 0x56F. This can be done using SPIController (see figure 34 or 55).
+
+\*\* VisualAnalog indicates that the “FIFO capture timed out” or "FIFO not ready for read back" \*\*
+
+-  Make sure all power and USB connections are secure.
+-  Make sure that the Reference Clock is ON and set to the appropriate frequency.
+
+\*\* FFT plot appears abnormal \*\*
 
 -  If you see a normal noise floor when you disconnect the signal generator from the analog input, be sure you are not overdriving the ADC. Reduce input level if necessary.
 -  In ACE Analysis tab under CAPTURE -> General -> Encoding (see figure 26), check that the encoding is set to correct number format (two's compliment by default).
@@ -902,3 +911,4 @@ DRVDD    TP410      1.25 V
 .. |image47| image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_pll.png
    :width: 400px
 .. |image48| image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_fft.png
+.. |image49| image:: https://wiki.analog.com/_media/resources/eval/fig17_clockdetect.png

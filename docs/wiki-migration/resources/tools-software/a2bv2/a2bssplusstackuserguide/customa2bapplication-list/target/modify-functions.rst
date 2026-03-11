@@ -67,7 +67,7 @@ The code snippet shows a sample implementation of this callback function.
                results = (a2b_NetDiscovery*)a2b_msgGetPayload(msg);
                if ( A2B_SUCCEEDED(results->resp.status) )
                {
-                   printf("Discovery succeeded with %d nodes discovered\n", 
+                   printf("Discovery succeeded with %d nodes discovered\n",
                           results->resp.numNodes);
                    gNumSlaveNodes = results->resp.numNodes;
                }
@@ -348,8 +348,6 @@ The code snippet shows a simple implementation of this callback function.
            A2B_APP_LOG("\n\rPeripheral configuration failed with I2C address 0x%x on node %d\n\r", I2CError->I2CAddr, I2CError->nodeAddr);
        }
    }
-
-| 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2bapp_ondiscoverycomplete_callback_function.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2bapp_onpowerfault_callback_registration.png

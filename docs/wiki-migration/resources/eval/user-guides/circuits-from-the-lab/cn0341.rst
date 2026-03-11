@@ -1,13 +1,12 @@
 CN0341 -- Magneto Resistive Linear Position Measurement User Guide (DEPRECATED)
 ===============================================================================
 
-|
-
 .. important::
 
    This reference design has been **RETIRED** or **DEPRECATED**, which means it is no longer supported nor being sold by Analog Devices. This page is here for historical/reference purposes only.
 
-   |
+   
+
 
 Overview
 --------
@@ -26,7 +25,7 @@ General Setup
    *One Neodymium magnet, approximately two inches in length. magnetized along the length of the magnet.
    *One of the following:
      *6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
-     *DC power supply with a 0-6V output.  (HP6236B) 
+     *DC power supply with a 0-6V output.  (HP6236B)
 
 Minimum PC/System Requirements
 ------------------------------

@@ -13,8 +13,6 @@ ADI_ADRV9025_DPD_NO_PATHDELAY_ERROR
 -  Ensure that there exists a valid signal path from Tx to ORx
 -  Run the external path delay init cal with mask value 0x200000 and enable the DPD tracking cal post successful execution of the external path delay init cal.
 
-| 
-
 ADI_ADRV9025_DPD_ORX_SIGNAL_TOO_SMALL_ERROR
 -------------------------------------------
 
@@ -26,8 +24,6 @@ ADI_ADRV9025_DPD_ORX_SIGNAL_TOO_SMALL_ERROR
 -  Increase ORx gain to see if this error disappears.
 -  Decrease Tx Front End attenuation/baseband digital backoff if the error persists despite ORx gain adjustment.
 -  A combination of both(Tx atten and ORx gain adjustment) of the above
-
-|
 
 ADI_ADRV9025_DPD_ORX_SIGNAL_SATURATING_ERROR
 --------------------------------------------
@@ -41,8 +37,6 @@ ADI_ADRV9025_DPD_ORX_SIGNAL_SATURATING_ERROR
 -  Adjust Digital Backoff if required
 -  A combination of both of the above
 
-| 
-
 ADI_ADRV9025_DPD_TX_SIGNAL_TOO_SMALL_ERROR
 ------------------------------------------
 
@@ -54,10 +48,6 @@ ADI_ADRV9025_DPD_TX_SIGNAL_TOO_SMALL_ERROR
 -  Verify CFR settings if ADRV9029 CFR is turned on.
 -  Review CLGC or DPD reported Tx power.
 
-|
-
-.. _adi_adrv9025_dpd_tx_signal_too_small_error-1:
-
 ADI_ADRV9025_DPD_TX_SIGNAL_TOO_SMALL_ERROR
 ------------------------------------------
 
@@ -68,8 +58,6 @@ ADI_ADRV9025_DPD_TX_SIGNAL_TOO_SMALL_ERROR
 -  Increase digital baseband power.
 -  Verify CFR settings if ADRV9029 CFR is turned on.
 -  Review CLGC or DPD reported Tx power.
-
-| 
 
 ADI_ADRV9025_DPD_TX_SIGNAL_SATURATING_ERROR
 -------------------------------------------
@@ -81,8 +69,6 @@ ADI_ADRV9025_DPD_TX_SIGNAL_SATURATING_ERROR
 -  Decrease digital baseband power.
 -  Verify CFR settings to ensure that a high PAR is not causing the DAC to overrange.
 -  Review DPD reported Tx power via adi_adrv9010_DpdStatusGet( ) API.
-
-|
 
 ADI_ADRV9025_DPD_AM_AM_OUTLIERS_ERROR
 -------------------------------------
@@ -100,43 +86,40 @@ ADI_ADRV9025_DPD_AM_AM_OUTLIERS_ERROR
 -  Ensure that other cals like TxLOL, TxQEC are functioning correctly (sometimes image performance can cause AM-AM issues).
 -  Turn off DPD and see if the AM-AM issues persist.
 
-| 
-
 ADI_ADRV9025_DPD_ACT_I_ASSIGNMENT_CONFLICT_ERROR
 ------------------------------------------------
 
 **ROOT CAUSE** : The DPD model supplied to guide the internal DPD adaptation via DpdModelConfigSet() contains memory terms that cannot be accomodated due to hardware limitations
 
-| **RECOMMENDED RECOVERY ACTIONS** Please refer to the DPD actuator LUT limitations in the ADRV9029 user guide while generating DPD models.
+**RECOMMENDED RECOVERY ACTIONS** Please refer to the DPD actuator LUT limitations in the ADRV9029 user guide while generating DPD models.
 
 ADI_ADRV9025_DPD_ACT_K_ASSIGNMENT_EXCEED_LIMIT_ERROR
 ----------------------------------------------------
 
 **ROOT CAUSE** : The degree of non-linearity for the DPD model supplied to guide the internal DPD adaptation via DpdModelConfigSet() cmd cannot be synthesized into the actuator Look Up Tables
 
-| **RECOMMENDED RECOVERY ACTIONS** Please refer to the DPD actuator LUT limitations in the ADRV9029 user guide while generating prior DPD models to guide adaptation
+**RECOMMENDED RECOVERY ACTIONS** Please refer to the DPD actuator LUT limitations in the ADRV9029 user guide while generating prior DPD models to guide adaptation
 
 ADI_ADRV9025_DPD_ACT_MULTIPLIER_ROW_ASSIGNMENT_CONFLICT_ERROR
 -------------------------------------------------------------
 
 **ROOT CAUSE** : The DPD model supplied to guide internal DPD adaptation via DpdModelConfigSet() violates the restrictions imposed by the DPD actuator hardware for memory(i) and cross terms(i)
 
-| **RECOMMENDED RECOVERY ACTIONS** Please refer to the DPD actuator LUT limitations in the ADRV9029 user guide while generating prior DPD models to guide adaptation
+**RECOMMENDED RECOVERY ACTIONS** Please refer to the DPD actuator LUT limitations in the ADRV9029 user guide while generating prior DPD models to guide adaptation
 
 ADI_ADRV9025_DPD_ACT_LUT_OUT_OF_RANGE_ERROR
 -------------------------------------------
 
 **ROOT CAUSE** : The DPD model supplied to guide internal DPD adaptation via DpdModelConfigSet() violates the restrictions imposed by the DPD actuator hardware for LUT usage
 
-| **RECOMMENDED RECOVERY ACTIONS** Please refer to the DPD actuator LUT limitations in the ADRV9029 user guide while generating prior DPD models to guide adaptation
+**RECOMMENDED RECOVERY ACTIONS** Please refer to the DPD actuator LUT limitations in the ADRV9029 user guide while generating prior DPD models to guide adaptation
 
 ADI_ADRV9010_DPD_ACT_NO_FREE_MULTIPLIER_ERROR
 ---------------------------------------------
 
 **ROOT CAUSE** : The DPD model supplied to guide internal DPD adaptation via DpdModelConfigSet() violates the restrictions imposed by the DPD actuator hardware for roaming LUTs.
 
-
-| **RECOMMENDED RECOVERY ACTIONS** Please refer to the DPD actuator LUT limitations in the ADRV9029 user guide while generating prior DPD models to guide adaptation
+**RECOMMENDED RECOVERY ACTIONS** Please refer to the DPD actuator LUT limitations in the ADRV9029 user guide while generating prior DPD models to guide adaptation
 
 ADI_ADRV9025_DPD_ADP_WRITE_LUT_ERROR
 ------------------------------------
@@ -148,8 +131,6 @@ ADI_ADRV9025_DPD_ADP_WRITE_LUT_ERROR
 -  Disable DPD tracking cal via TrackingCalsEnableSet() command and reset DPD via DpdReset() command to put the actuator in unity gain mode
 -  Might require a full firmware reset if error persists despite DPD reset
 
-|
-
 ADI_ADRV9025_DPD_HARDWARE_IN_USE_ERROR
 --------------------------------------
 
@@ -159,8 +140,6 @@ ADI_ADRV9025_DPD_HARDWARE_IN_USE_ERROR
 
 -  Full DPD reset
 -  Might require a full firmware reset if the error persists despite DPD reset.
-
-| 
 
 ADI_ADRV9025_DPD_DATA_CAPTURE_ERROR
 -----------------------------------
@@ -175,8 +154,6 @@ ADI_ADRV9025_DPD_DATA_CAPTURE_ERROR
 -  Enable DPD tracking cal
 -  Might require a full system reset if the error persists
 
-|
-
 ADI_ADRV9025_DPD_DATA_XACC_ERROR
 --------------------------------
 
@@ -190,14 +167,12 @@ ADI_ADRV9025_DPD_DATA_XACC_ERROR
 -  Enable DPD tracking cal
 -  Might require a full system reset if the error persists
 
-| 
-
 ADI_ADRV9025_DPD_STABILITY_ERROR
 --------------------------------
 
 **ROOT CAUSE** : The DPD algorithm has encountered one or more of the following
 
--  The Direct EVM(ORx and Pre-DPD actuator data) and Indirect EVM(ORx and Post-DPD actuator data) has exceeded the limits. By default, a 5% limit on direct EVM and an 8% limit on indirect EVM is imposed. 
+-  The Direct EVM(ORx and Pre-DPD actuator data) and Indirect EVM(ORx and Post-DPD actuator data) has exceeded the limits. By default, a 5% limit on direct EVM and an 8% limit on indirect EVM is imposed.
 -  An underflow OR overflow of pre-DPD Tx RMS power/ post-DPD Tx RMS power/ORx RMS power has occured. The threshold is configurable via adi_adrv9010_DpdFaultConditionsSet( ) API
 -  An underflow OR overflow of pre-DPD Tx Peak power/ post-DPD Tx Peak power/ORx Peak power has occured. The threshold is configurable via adi_adrv9010_DpdFaultConditionsSet( ) API
 
@@ -206,14 +181,12 @@ ADI_ADRV9025_DPD_STABILITY_ERROR
 -  For EVM errors, please ensure that there is no interference in the ORx path such that it could cause a large enough error b/w the Tx and ORx samples.
 -  The DPD stability statistics can be retrieved via adi_adrv9010_DpdStatusGet() API for examination.
 -  The stability fault conditions including EVM errors and power level thresholds for triggering a stability error is configurable via adi_adrv9010_DpdFaultConditionsSet() API. The thresholds can be relaxed to see if DPD recovers from the error condition.
--  Finally, the recovery actions on occurence of fault conditions is configurable via adi_adrv9010_DpdRecoveryActionSet() API. 
-
-|
+-  Finally, the recovery actions on occurence of fault conditions is configurable via adi_adrv9010_DpdRecoveryActionSet() API.
 
 ADI_ADRV9025_DPD_TRACK_CLGC_SYNC_ERROR
 --------------------------------------
 
-**ROOT CAUSE** :A semaphore based synchronization mechanism was introduced b/w DPD and CLGC algorithms in SW 3.0 to ensure that there is no race condition between the two. With the synchronization mechanism, CLGC is always guarenteed to finish execution before DPD. The DPD-CLGC syncrhonization error indicates that DPD and CLGC semaphores were not exchanged successfully causing this error. 
+**ROOT CAUSE** :A semaphore based synchronization mechanism was introduced b/w DPD and CLGC algorithms in SW 3.0 to ensure that there is no race condition between the two. With the synchronization mechanism, CLGC is always guarenteed to finish execution before DPD. The DPD-CLGC syncrhonization error indicates that DPD and CLGC semaphores were not exchanged successfully causing this error.
 
 **RECOMMENDED RECOVERY ACTIONS**
 
@@ -222,24 +195,19 @@ ADI_ADRV9025_DPD_TRACK_CLGC_SYNC_ERROR
 -  If error persists, disable both CLGC and DPD and re-enable them again.
 -  If the error still persists, a full firmware reset is required.
 
-| 
+ADI_ADRV9025_DPD_ACT_LUT_ENTRY_SAT_ERROR
+----------------------------------------
+
+**ROOT CAUSE** :This error occurs when the degree of GMP polynomial (especially the power term 'k') plus the Tx sample magnitude is high causing an overlflow of the calculated LUT entry.
+
+**RECOMMENDED RECOVERY ACTIONS** The user can try modifying the DPD model programmed via DpdModelConfigSet() command to reduce the no. of Sum of Product terms in the GMP polynomial used to model the PA(DPD Model) assigned to a LUT.
 
 ADI_ADRV9025_DPD_ACT_LUT_ENTRY_SAT_ERROR
 ----------------------------------------
 
 **ROOT CAUSE** :This error occurs when the degree of GMP polynomial (especially the power term 'k') plus the Tx sample magnitude is high causing an overlflow of the calculated LUT entry.
 
-| **RECOMMENDED RECOVERY ACTIONS** The user can try modifying the DPD model programmed via DpdModelConfigSet() command to reduce the no. of Sum of Product terms in the GMP polynomial used to model the PA(DPD Model) assigned to a LUT.
-
-.. _adi_adrv9025_dpd_act_lut_entry_sat_error-1:
-
-ADI_ADRV9025_DPD_ACT_LUT_ENTRY_SAT_ERROR
-----------------------------------------
-
-**ROOT CAUSE** :This error occurs when the degree of GMP polynomial (especially the power term 'k') plus the Tx sample magnitude is high causing an overlflow of the calculated LUT entry.
-
-
-| **RECOMMENDED RECOVERY ACTIONS** The user can try modifying the DPD model to reduce the no. of Sum of Product terms in the GMP polynomial used to model the PA(DPD Model).
+**RECOMMENDED RECOVERY ACTIONS** The user can try modifying the DPD model to reduce the no. of Sum of Product terms in the GMP polynomial used to model the PA(DPD Model).
 
 ADI_ADRV9025_DPD_RPC_FAILED_ERROR
 ---------------------------------
@@ -247,19 +215,17 @@ ADI_ADRV9025_DPD_RPC_FAILED_ERROR
 ADI_ADRV9025_DPD_MESSAGE_WAIT_TIMEOUT_ERROR
 -------------------------------------------
 
-**ROOT CAUSE** :This error occurs when the Inter-processor communication between ARM-C to ARM-D fails. 
+**ROOT CAUSE** :This error occurs when the Inter-processor communication between ARM-C to ARM-D fails.
 
 **RECOMMENDED RECOVERY ACTIONS**
 
 -  Ensure that ARM-D has booted up correctly and is still alive. One way to check is to verify that the DPD iteration count retrieved via adi_adrv9025_DpdStatusGet( ) is incrementing.
--  If ARM-D has crashed, a full system reset might be necessary 
-
-|
+-  If ARM-D has crashed, a full system reset might be necessary
 
 ADI_ADRV9025_DPD_MUTEX_CREATION_ERROR
 -------------------------------------
 
-**ROOT CAUSE** : This error occurs when DPD and CLGC are both enabled. The DPD and CLGC tracking cals are internally synchronized through a semaphore mechanism. 
+**ROOT CAUSE** : This error occurs when DPD and CLGC are both enabled. The DPD and CLGC tracking cals are internally synchronized through a semaphore mechanism.
 
 **RECOMMENDED RECOVERY ACTIONS**
 
@@ -267,19 +233,15 @@ ADI_ADRV9025_DPD_MUTEX_CREATION_ERROR
 -  Disable CLGC tracking and DPD tracking via TrackingCalsEnableSet() cmd and enable DPD tracking cal only. If the DPD updates are happening correctly, enable CLGC tracking. If the error persists move to next step
 -  Disable all tracking calibrations via TrackingCalsEnableSet() cmd and bringup one cmd at a time. If the error persists a full system reset might be required
 
-| 
-
 ADI_ADRV9025_DPD_DATA_CAPTURE_TIMEOUT_ERROR
 -------------------------------------------
 
-**ROOT CAUSE** : Error to convey that the DPD capture has timed out waiting for 1 second or more for a scheduled DPD capture to finish.  
+**ROOT CAUSE** : Error to convey that the DPD capture has timed out waiting for 1 second or more for a scheduled DPD capture to finish.
 
 **RECOMMENDED RECOVERY ACTIONS**
 
 -  Review the test vector under to make sure there are no discrepancies
 -  Ensure that there are no peaks in the last 4096 samples of the test vector before Tx EN goes low in TDD mode.
-
-|
 
 ADI_ADRV9025_DPD_LDL_SOLVER_ERROR
 ---------------------------------
@@ -294,8 +256,6 @@ ADI_ADRV9025_DPD_CHOL_SOLVER_ERROR
 -  Ensure that the path delay value is correct. Run path delay calibration again if required.
 -  Reduce the degree of the polynomial in the DPD model by reducing the value of 'k'
 
-| 
-
 ADI_ADRV9025_DPD_UNITY_MODEL_UNAVAILABLE_ERROR
 ----------------------------------------------
 
@@ -308,20 +268,17 @@ ADI_ADRV9025_DPD_UNITY_MODEL_UNAVAILABLE_ERROR
 
 |image1|
 
-| 
-
 ADI_ADRV9025_DPD_UNKNOWN_RPC_ERROR
 ----------------------------------
 
-**ROOT CAUSE** : It is very unlikely that the transceiver gets into this state and ARM entered into an unknown error state.  
+**ROOT CAUSE** : It is very unlikely that the transceiver gets into this state and ARM entered into an unknown error state.
 
 **RECOMMENDED RECOVERY ACTIONS**
 
 -  Reset the Transceiver which means complete re-initialization of the system.
 
-| 
-| |TES GUI#resources:eval:user-guides:adrv9029|main page#none|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation ADRV9029 DPD USER GUIDE#evaluating_dpd_through_tes_gui
+   :alt: TES GUI#resources:eval:user-guides:adrv9029|main page#none
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/madurdpdmodel.jpg
    :width: 400px
-.. |TES GUI#resources:eval:user-guides:adrv9029|main page#none| image:: navigation ADRV9029 DPD USER GUIDE#evaluating_dpd_through_tes_gui

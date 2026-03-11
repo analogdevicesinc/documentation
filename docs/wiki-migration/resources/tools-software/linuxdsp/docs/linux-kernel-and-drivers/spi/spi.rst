@@ -67,7 +67,7 @@ Enable SPI slave driver (for example spi flash w25q128)
 
 ::
 
-   Device Drivers  ---> 
+   Device Drivers  --->
        <*> Memory Technology Device (MTD) support  --->
            <*>   SPI-NOR device support  --->
            Self-contained MTD device drivers  --->
@@ -77,10 +77,9 @@ Enable spidev driver if you want to use user space API.
 
 ::
 
-   Device Drivers  ---> 
+   Device Drivers  --->
        [*] SPI support  --->
             <*>   User mode SPI device driver support
-            
 
 Configure Device tree
 ~~~~~~~~~~~~~~~~~~~~~
@@ -147,16 +146,16 @@ Test example as:
 
 ::
 
-   # spidev_test -D /dev/spidev0.44 -b 8 -H -O 
-   spi mode: 0x3 
-   bits per word: 8 
+   # spidev_test -D /dev/spidev0.44 -b 8 -H -O
+   spi mode: 0x3
+   bits per word: 8
    max speed: 500000 Hz (500 KHz)
-   FF 80 00 00 3F FF 
-   40 00 00 00 02 00 
-   3F FF FF FF FF 80 
-   00 00 3F FF FF FF 
-   FF 80 00 00 3F FF 
-   DE AD BE 80 00 00 
+   FF 80 00 00 3F FF
+   40 00 00 00 02 00
+   3F FF FF FF FF 80
+   00 00 3F FF FF FF
+   FF 80 00 00 3F FF
+   DE AD BE 80 00 00
    30 0D
 
 --------------

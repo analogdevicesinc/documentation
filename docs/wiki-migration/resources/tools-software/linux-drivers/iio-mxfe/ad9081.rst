@@ -67,10 +67,45 @@ Files
 Example device trees
 ~~~~~~~~~~~~~~~~~~~~
 
-| 
-| .. include:: ../../../eval/user-guides/ad9081_fmca_ebz/quickstart/zynq.rst
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                                      |
++==========+===========================================================================================================================================================+
+| dtsi     | :git-linux:`arch/arm/boot/dts/adi-ad9081-fmc-ebz.dtsi`                                                                                                    |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/arm/boot/dts/socfpga_arria10_socdk_ad9081.dts`                                                                                           |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/arm/boot/dts/socfpga_arria10_socdk_ad9081_np12.dts`                                                                                      |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/arm/boot/dts/zynq-zc706-adv7511-ad9081-np12.dts`                                                                                         |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/arm/boot/dts/zynq-zc706-adv7511-ad9081.dts`                                                                                              |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. include:: ../../../eval/user-guides/ad9081_fmca_ebz/quickstart/microblaze.rst
+
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                                                                                 |
++==========+======================================================================================================================================================================================================+
+| dtsi     | :git-linux:`arch/microblaze/boot/dts/adi-ad9081-fmc-ebz.dtsi`                                                                                                                                        |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/microblaze/boot/dts/vcu118_ad9081.dts`                                                                                                                                              |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_10_rxmode_11.dts`                                                                                                                     |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_10_rxmode_11_lr_24_75Gbps.dts`                                                                                                        |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_23_rxmode_25.dts`                                                                                                                     |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_23_rxmode_25_lr_24_75Gbps.dts`                                                                                                        |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_23_rxmode_25_vcxo100.dts`                                                                                                             |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_24_rxmode_26_lr_24_75Gbps.dts`                                                                                                        |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/microblaze/boot/dts/vcu118_ad9081_m8_l4.dts`                                                                                                                                        |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/microblaze/boot/dts/vcu118_ad9082_204c_txmode_18_rxmode_19_lr_24_75Gbps.dts`                                                                                                        |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Interrelated Device Drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -161,12 +196,12 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            -*-     Industrial I/O lock free software ring
            -*-   Enable triggered sampling support
 
-                 *** Analog to digital converters ***
+                 ** Analog to digital converters **
            [--snip--]
 
            -*- Analog Devices High-Speed AXI ADC driver core
                    <*> Analog Devices AD9081 and similar Mixed Signal Front End (MxFE)
-                   < > Analog Devices AD9208 and similar high speed ADCs  
+                   < > Analog Devices AD9208 and similar high speed ADCs
                    < > Analog Devices AD9361, AD9364 RF Agile Transceiver driver
            < > Analog Devices AD9371 RF Transceiver driver
            < > Analog Devices ADRV9009/ADRV9008 RF Transceiver driver
@@ -174,28 +209,27 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            < > Analog Devices AD9467, AD9680, etc. high speed ADCs
 
            [--snip--]
-           
+
 
        Frequency Synthesizers DDS/PLL  --->
                Direct Digital Synthesis  --->
                <*> Analog Devices CoreFPGA AXI DDS driver
-           Clock Generator/Distribution  --->  
-               < > Analog Devices AD9508 Clock Fanout Buffer                 
-               < > Analog Devices AD9523 Low Jitter Clock Generator          
-               < > Analog Devices AD9528 Low Jitter Clock Generator          
+           Clock Generator/Distribution  --->
+               < > Analog Devices AD9508 Clock Fanout Buffer
+               < > Analog Devices AD9523 Low Jitter Clock Generator
+               < > Analog Devices AD9528 Low Jitter Clock Generator
                < > Analog Devices AD9548 Network Clock Generator/Synchronizer
-               < > Analog Devices AD9517 12-Output Clock Generator 
+               < > Analog Devices AD9517 12-Output Clock Generator
                            <*> Analog Devices HMC7044, HMC7043 Clock Jitter Attenuator with JESD204B
                            < > Analog Devices LTC6952 Clock Ultralow Jitter with JESD204B/C
 
        <*>   JESD204 High-Speed Serial Interface Support  --->
-           --- JESD204 High-Speed Serial Interface Support  
-           < >   Altera Arria10 JESD204 PHY Support         
-           <*>   Analog Devices AXI ADXCVR PHY Support      
-           < >   Generic AXI JESD204B configuration driver  
-           <*>   Analog Devices AXI JESD204B TX Support     
-           <*>   Analog Devices AXI JESD204B RX Support  
-               
+           --- JESD204 High-Speed Serial Interface Support
+           < >   Altera Arria10 JESD204 PHY Support
+           <*>   Analog Devices AXI ADXCVR PHY Support
+           < >   Generic AXI JESD204B configuration driver
+           <*>   Analog Devices AXI JESD204B TX Support
+           <*>   Analog Devices AXI JESD204B RX Support
 
 Device tree customization
 =========================
@@ -206,16 +240,16 @@ The AD9081 Linux IIO device driver is configured and customized using device tre
 
    &spi {
        trx0_ad9081: ad9081@0 {
-       
+
            // Device common properties
 
            adi,tx-dacs {
                // Tx/DAC properties and child-nodes
-           
+
            };
-           
+
            adi,rx-adcs {
-               // Rx/ADC properties and child-nodes        
+               // Rx/ADC properties and child-nodes
            };
        };
    };
@@ -235,7 +269,7 @@ Each of these child nodes handle certain aspects of either the digital-to-analog
        };
 
        adi,jesd-links {
-       
+
        };
    };
 
@@ -275,7 +309,7 @@ Each of these child nodes handle certain aspects of either the digital-to-analog
    adi,jesd-links {
 
        ad9081_tx_jesd_l0: link@0 {
-       
+
        };
    };
 
@@ -607,8 +641,6 @@ ADC Global Properties
 | ``adi,nyquist-zone``     | u32  | 0,1    | Global Nyquist zone (0=odd, 1=even), default: 0 |
 +--------------------------+------+--------+-------------------------------------------------+
 
-.. _main-data-paths-adimain-data-paths-1:
-
 Main Data Paths (adi,main-data-paths)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -640,14 +672,10 @@ Per-ADC Properties (adc@N)
 -  2: Fs/4 Hz IF Mode (AD9081_ADC_NCO_FS_4_IF)
 -  3: Test Mode (AD9081_ADC_NCO_TEST)
 
-.. _channelizer-paths-adichannelizer-paths-1:
-
 Channelizer Paths (adi,channelizer-paths)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Contains configuration for up to 8 channels (channel@0 through channel@7).
-
-.. _per-channel-properties-channeln-1:
 
 Per-Channel Properties (channel@N)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -669,8 +697,6 @@ Per-Channel Properties (channel@N)
 +--------------------------------+------+-------------+-----------------------------------+
 | ``adi,complex-to-real-enable`` | u32  | 0,1         | Enable complex-to-real conversion |
 +--------------------------------+------+-------------+-----------------------------------+
-
-.. _jesd-links-adijesd-links-1:
 
 JESD Links (adi,jesd-links)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -732,7 +758,7 @@ Notes
 Device Tree Example
 -------------------
 
-.. code:: c
+.. code:: dts
 
 
    #include <dt-bindings/iio/adc/adi,ad9081.h>
@@ -947,10 +973,7 @@ Controlling the MxFE is done via the IIO sysfs interface. For convenience users 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1233,10 +1256,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1255,15 +1275,12 @@ Read only attribute which returns the RX ADC rate Hz.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device2> **cat in_voltage_adc_frequency** 
+      root:/sys/bus/iio/devices/iio:device2> **cat in_voltage_adc_frequency**
       4000000000
    
 
@@ -1279,15 +1296,12 @@ in_voltage_sampling_frequency = in_voltage_adc_frequency / (MAIN_decimation \* C
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device2> **cat in_voltage_sampling_frequency** 
+      root:/sys/bus/iio/devices/iio:device2> **cat in_voltage_sampling_frequency**
       250000000
    
 
@@ -1301,15 +1315,12 @@ Read only attribute which returns the TX DAC rate Hz.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device2> **cat out_voltage_dac_frequency** 
+      root:/sys/bus/iio/devices/iio:device2> **cat out_voltage_dac_frequency**
       12000000000
    
 
@@ -1325,15 +1336,12 @@ out_voltage_sampling_frequency = fDAC / (MAIN_interpolation \* CHANNEL_interpola
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device2> **cat out_voltage_sampling_frequency** 
+      root:/sys/bus/iio/devices/iio:device2> **cat out_voltage_sampling_frequency**
       250000000
    
 
@@ -1341,8 +1349,7 @@ out_voltage_sampling_frequency = fDAC / (MAIN_interpolation \* CHANNEL_interpola
 ADC Nyquist Zone Control
 ------------------------
 
-| **What:** ``in_voltageX_nyquist_zone``
-| **What:** ``in_voltage_nyquist_zone_available``
+**What:** ``in_voltageX_nyquist_zone`` **What:** ``in_voltage_nyquist_zone_available``
 
 Calibration is used to reduce residual spurious artifacts that are common among interleaving ADC architectures because of sub ADC timing, gain, and offsets mismatches. The ADCs are initially factory calibrated, and background calibration is also employed to further improve and maintain the performance across device operating conditions.
 
@@ -1358,10 +1365,7 @@ The current Nyquist Zone can be queried and controlled via the ``in_voltage_nyqu
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1382,27 +1386,24 @@ Main Data Path
 
 **What:** ``[in|out]_voltageX_[i|q]_main_nco_frequency``
 
-| Sets the main data path (CDDC/CDUC) NCO frequency (fCARRIER) in Hz
-| **out_voltageX_i_main_nco_frequency Range is:** −fDAC/2 ≤ fCARRIER < +fDAC/2
-| **in_voltageX_i_main_nco_frequency Range is:** −fADC/2 ≤ fCARRIER < +fADC/2
+Sets the main data path (CDDC/CDUC) NCO frequency (fCARRIER) in Hz
+
+**out_voltageX_i_main_nco_frequency Range is:** −fDAC/2 ≤ fCARRIER < +fDAC/2 **in_voltageX_i_main_nco_frequency Range is:** −fADC/2 ≤ fCARRIER < +fADC/2
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1000000000 > out_voltage0_i_main_nco_frequency **
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_main_nco_frequency **
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1000000000 > out_voltage0_i_main_nco_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_main_nco_frequency**
       **1000000000**
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 300000000 > in_voltage0_i_main_nco_frequency **
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat in_voltage0_i_main_nco_frequency **
-      **300000000 **
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 300000000 > in_voltage0_i_main_nco_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat in_voltage0_i_main_nco_frequency**
+      **300000000**
    
 
 
@@ -1411,17 +1412,13 @@ Channel Data Path
 
 **What:** ``[in|out]_voltageX_[i|q]_channel_nco_frequency``
 
-| Sets the channel data path (FDDC/FDUC) NCO frequency (fCARRIER) in Hz
-| **out_voltageX_i_channel_nco_frequency Range is:** −(fDAC/MAIN_interpolation)/2 ≤ fCARRIER < +(fDAC/MAIN_interpolation)/2
-| **in_voltageX_i_channel_nco_frequency Range is:** −(fADC/MAIN_decimation)/2 ≤ fCARRIER < +(fADC/MAIN_decimation)/2
-|
+Sets the channel data path (FDDC/FDUC) NCO frequency (fCARRIER) in Hz
+
+**out_voltageX_i_channel_nco_frequency Range is:** −(fDAC/MAIN_interpolation)/2 ≤ fCARRIER < +(fDAC/MAIN_interpolation)/2 **in_voltageX_i_channel_nco_frequency Range is:** −(fADC/MAIN_decimation)/2 ≤ fCARRIER < +(fADC/MAIN_decimation)/2
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1432,70 +1429,62 @@ Channel Data Path
    
       root@analog:/sys/bus/iio/devices/iio:device2# **echo 300000000 > out_voltage0_i_channel_nco_frequency **
       root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_frequency**
-      **300000000 **
+      **300000000**
    
 
 
 NCO Phase Control
 -----------------
 
-.. _main-data-path-1:
-
 Main Data Path
 ~~~~~~~~~~~~~~
 
 **What:** ``[in|out]_voltageX_[i|q]_main_nco_phase``
 
-| Sets the main data path (CDDC/CDUC) NCO phase offset in milli degrees
-| **Range is**: −180° ≤ Degrees Offset ≤ +180° (Values are in milli degrees.)
+Sets the main data path (CDDC/CDUC) NCO phase offset in milli degrees
+
+**Range is**: −180° ≤ Degrees Offset ≤ +180° (Values are in milli degrees.)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 66000 > out_voltage0_i_main_nco_phase **
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_main_nco_phase **
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 66000 > out_voltage0_i_main_nco_phase**
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_main_nco_phase**
       **66000**
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo -42000 > in_voltage0_i_main_nco_phase **
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat in_voltage0_i_main_nco_phase **
-      **-42000 **
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo -42000 > in_voltage0_i_main_nco_phase**
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat in_voltage0_i_main_nco_phase**
+      **-42000**
    
 
-
-.. _channel-data-path-1:
 
 Channel Data Path
 ~~~~~~~~~~~~~~~~~
 
 **What:** ``[in|out]_voltageX_[i|q]_channel_nco_phase``
 
-| Sets the channel data path (FDDC/FDUC) NCO phase offset in milli degrees
-| **Range is**: −180° ≤ Degrees Offset ≤ +180° (Values are in milli degrees.)
+Sets the channel data path (FDDC/FDUC) NCO phase offset in milli degrees
+
+**Range is**: −180° ≤ Degrees Offset ≤ +180° (Values are in milli degrees.)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 13123 > out_voltage0_i_channel_nco_phase **
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 13123 > out_voltage0_i_channel_nco_phase**
       root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_phase**
       **13123**
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 13123 > out_voltage0_i_channel_nco_phase **
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 13123 > out_voltage0_i_channel_nco_phase**
       root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_phase**
-      **13123 **
+      **13123**
    
 
 
@@ -1510,10 +1499,7 @@ The input data into each channelizer stage can be rescaled prior to additional p
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1525,8 +1511,7 @@ The input data into each channelizer stage can be rescaled prior to additional p
 TX NCO Test Tone Modes
 ----------------------
 
-| **What:** ``out_voltageX_[i|q]_[channel|main]_nco_test_tone_en``
-| **What:** ``out_voltageX_[i|q]_[channel|main]_nco_test_tone_scale``
+**What:** ``out_voltageX_[i|q]_[channel|main]_nco_test_tone_en`` **What:** ``out_voltageX_[i|q]_[channel|main]_nco_test_tone_scale``
 
 The Test Tone Mode can be enabled using the ``out_voltageX_[i|q]_[channel|main]_nco_test_tone_en`` attributes in order to provide a complex, single-tone output. The tone is generated using a programmable internal dc amplitude level that is injected into the complex modulator input to generate an unmodulated single tone. The dc amplitude level is controlled by the ``out_voltageX_[i|q]_[channel|main]_nco_test_tone_scale`` attributes which corresponds to a full-scale tone.
 
@@ -1538,10 +1523,7 @@ The ``out_voltageX_[i|q]_channel_nco_test_tone_en`` mode is most useful for appl
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1559,11 +1541,7 @@ The complex NCOs used in both the transmit and receive datapaths support FFH mod
 Transmit Main Path FFH NCO Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| **What:** ``out_voltageX_[i|q]_main_nco_ffh_frequency``
-| **What:** ``out_voltageX_[i|q]_main_nco_ffh_index``
-| **What:** ``out_voltageX_[i|q]_main_nco_ffh_select``
-| **What:** ``out_voltageX_[i|q]_main_ffh_mode``
-| **What:** ``out_voltage_main_ffh_gpio_mode_en``
+**What:** ``out_voltageX_[i|q]_main_nco_ffh_frequency`` **What:** ``out_voltageX_[i|q]_main_nco_ffh_index`` **What:** ``out_voltageX_[i|q]_main_nco_ffh_select`` **What:** ``out_voltageX_[i|q]_main_ffh_mode`` **What:** ``out_voltage_main_ffh_gpio_mode_en``
 
 The FFH NCO associated with each main datapath is implemented with 31 additional 32-bit NCOs. Each NCO can be configured with a unique frequency tuning word FTWx where x is a value between 0 and 30. These FTWs can be preloaded into the hopping frequency register bank using the ``out_voltageX_[i|q]_main_nco_ffh_index`` and ``out_voltageX_[i|q]_main_nco_ffh_frequency`` attributes.
 
@@ -1572,14 +1550,9 @@ The user first addresses hopping frequency register bank by setting its index us
 Receive Main Path FFH NCO Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| **What:** ``in_voltageX_[i|q]_main_nco_frequency``
-| **What:** ``in_voltageX_[i|q]_main_nco_phase``
-| **What:** ``in_voltageX_[i|q]_main_nco_ffh_index``
-| **What:** ``in_voltageX_[i|q]_main_nco_ffh_select``
-| **What:** ``in_voltageX_[i|q]_main_ffh_mode``
-| **What:** ``in_voltageX_[i|q]_main_ffh_trig_hop_en``
-| **What:** ``in_voltageX_[i|q]_main_ffh_gpio_mode_en``
-| Each main data path (CDDC) NCO contains 16 channel registers sets, that can be programmed with unique Frequency (PIW) and Phase (POW) settings. The user sets the channel index using ``in_voltageX_[i|q]_main_nco_ffh_index``, followed by setting the frequency and phase using ``in_voltageX_[i|q]_main_nco_frequency`` and ``in_voltageX_[i|q]_main_nco_phase``. The index attribute accepts values between 0 and 15. The user repeats these steps until all required FTWs are programmed. Once this is done, the pre-configured NCO can be selected via the channels ``in_voltageX_[i|q]_main_nco_ffh_select`` select attribute, which also accepts values between 0..15. Alternatively, GPIO based hopping can be configured using the ``in_voltageX_[i|q]_main_ffh_mode`` attribute. The ``in_voltageX_[i|q]_main_ffh_mode`` attribute options are instantaneous_update, synchronous_update_by_transfer_bit and synchronous_update_by_gpio. Using ``in_voltageX_[i|q]_main_ffh_gpio_mode_en`` the GPIO controlled mode is enabled, the mode switches between the mode set in the devicetree using ``adi,nco-channel-select-mode`` and software/SPI control using ``in_voltageX_[i|q]_main_nco_ffh_select``.
+**What:** ``in_voltageX_[i|q]_main_nco_frequency`` **What:** ``in_voltageX_[i|q]_main_nco_phase`` **What:** ``in_voltageX_[i|q]_main_nco_ffh_index`` **What:** ``in_voltageX_[i|q]_main_nco_ffh_select`` **What:** ``in_voltageX_[i|q]_main_ffh_mode`` **What:** ``in_voltageX_[i|q]_main_ffh_trig_hop_en`` **What:** ``in_voltageX_[i|q]_main_ffh_gpio_mode_en``
+
+Each main data path (CDDC) NCO contains 16 channel registers sets, that can be programmed with unique Frequency (PIW) and Phase (POW) settings. The user sets the channel index using ``in_voltageX_[i|q]_main_nco_ffh_index``, followed by setting the frequency and phase using ``in_voltageX_[i|q]_main_nco_frequency`` and ``in_voltageX_[i|q]_main_nco_phase``. The index attribute accepts values between 0 and 15. The user repeats these steps until all required FTWs are programmed. Once this is done, the pre-configured NCO can be selected via the channels ``in_voltageX_[i|q]_main_nco_ffh_select`` select attribute, which also accepts values between 0..15. Alternatively, GPIO based hopping can be configured using the ``in_voltageX_[i|q]_main_ffh_mode`` attribute. The ``in_voltageX_[i|q]_main_ffh_mode`` attribute options are instantaneous_update, synchronous_update_by_transfer_bit and synchronous_update_by_gpio. Using ``in_voltageX_[i|q]_main_ffh_gpio_mode_en`` the GPIO controlled mode is enabled, the mode switches between the mode set in the devicetree using ``adi,nco-channel-select-mode`` and software/SPI control using ``in_voltageX_[i|q]_main_nco_ffh_select``.
 
 Programmable FIR Filter
 -----------------------
@@ -1599,15 +1572,12 @@ Filter configurations can be written as follows:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat /root/pfilt.cfg > filter_fir_config **
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat /root/pfilt.cfg > filter_fir_config**
    
 
 
@@ -1649,7 +1619,7 @@ A filter configuration file is an ASCII textfile with LF line-endings, and suppo
 
    -  Lines containing filter coefficients are not prefixed, and should either contain two or four 16-bit integers in decimal notation, where four values are required when ``I_MODE == matrix``.
 
-The parser can be found here: :git-linux:`ad9081_parse_fir <drivers/iio/adc/ad9081.c#L2430-L2647>`
+The parser can be found here: `ad9081_parse_fir <https://github.com/analogdevicesinc/linux/blob/d9dc5b364e5a589f6156834dec2dfb0fb55033bd/drivers/iio/adc/ad9081.c#L2430-L2647>`_
 
 Examples
 ^^^^^^^^
@@ -1690,10 +1660,7 @@ The **direct loopback** path loops the ADC output data directly back into a spec
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1711,10 +1678,7 @@ The device contains a Temperature Monitoring Unit (TMU) that functions as a digi
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1752,15 +1716,12 @@ Reading ``status`` returns a status string.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **cat status** 
+      root@analog:/sys/kernel/debug/iio/iio:device2# **cat status**
       **JESD TX (JRX) Link1 0xF lanes in DATA
       JESD TX (JRX) Link1 TPL Phase Difference Read 0, Set 3
       JESD RX (JTX) Link1 in DATA, SYNC deasserted, PLL locked, PHASE established, MODE valid**
@@ -1777,15 +1738,12 @@ Writing ``dac-full-scale-current-ua`` controls the DAC full scale current in uA.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 40000 > dac-full-scale-current-ua** 
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 40000 > dac-full-scale-current-ua**
       root@analog:/sys/kernel/debug/iio/iio:device2#
    
 
@@ -1818,19 +1776,16 @@ Value Comment
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 15 1 > bist_prbs_select_jrx** 
-      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_select_jrx** 
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 15 1 > bist_prbs_select_jrx**
+      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_select_jrx**
       **15**
       root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_error_counters_jrx**
-      **0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1** 
+      **0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1**
    
 
 
@@ -1853,16 +1808,13 @@ Format is: <errors>/<pass>
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_error_counters_jrx**
-      **0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1** 
+      **0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1**
    
 
 
@@ -1884,16 +1836,13 @@ Value Comment
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 31 > bist_prbs_select_jtx** 
-      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_select_jtx** 
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 31 > bist_prbs_select_jtx**
+      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_select_jtx**
       **31**
    
 
@@ -1924,10 +1873,7 @@ Value PRBS type
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1954,10 +1900,7 @@ QUART_RATE        > 16 Gbps   +/- 16
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -2002,15 +1945,12 @@ Value PRBS type
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:~# echo 7 > /sys/bus/platform/devices/84b60000.axi-adxcvr-tx/prbs_select 
+      root@analog:~# echo 7 > /sys/bus/platform/devices/84b60000.axi-adxcvr-tx/prbs_select
       root@analog:~# iio_attr -D axi-ad9081-rx-hpc bist_2d_eyescan_jrx "1 7 10"
       # lane 1 spo_steps 64 rate 10000000
       -1,204,-204
@@ -2044,7 +1984,347 @@ Example from: `pyadi-iio <https://github.com/pyadi-iio>`_
 Low level register access via debugfs (direct_reg_access)
 =========================================================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+This page contains a few lose documentation snippets used in various spots.
+
+IIO device files
+================
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+IIO devices with trigger consumer interface
+===========================================
+
+If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
+
+
+
+.. hint::
+
+   **Trigger Consumers:**
+
+   | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
+
+
+**Description:** Read name of triggerY
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      irqtrig56
+   
+
+
+**Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ), to current trigger of deviceX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+   
+
+
+**Description:** Read current trigger source of deviceX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      irqtrig56
+   
+
+
+Standalone trigger drivers
+==========================
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| name                                          | description                                                                   |
++===============================================+===============================================================================+
+| iio-trig-gpio                                 | Provides support for using GPIO pins as IIO triggers.                         |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| iio-trig-rtc                                  | Provides support for using periodic capable real time clocks as IIO triggers. |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-sysfs <iio-trig-sysfs>`_            | Provides support for using SYSFS entry as IIO triggers.                       |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-bfin-timer <iio-trig-bfin-timer>`_  | Provides support for using a Blackfin timer as IIO triggers.                  |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+Buffer management
+=================
+
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+
+Every buffer implementation features a set of files:
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **length_align_bytes**
+| Using the high-speed interface. DMA buffers may have an alignment requirement for the buffer length. Newer versions of the kernel will report the alignment requirements associated with a device through the \`length_align_bytes\` property.
+
+| **scan_elements**
+| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+
+Typical ADC scan elements
+=========================
+
+| **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in_voltageX_type / in_voltageX-voltageY_type / timestamp_type:**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space. Form is [s|u]bits/storage-bits. s or u specifies if signed (2's complement) or unsigned. bits is the number of bits of data and storage-bits is the space (after padding) that it occupies in the buffer. Note that some devices will have additional information in the unused bits so to get a clean value, the bits value must be used to mask the buffer output value appropriately. The storage-bits value also specifies the data alignment. So u12/16 will be a unsigned 12 bit integer stored in a 16 bit location aligned to a 16 bit boundary. For other storage combinations this attribute will be extended appropriately.
+
+| **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
+
+Event Management
+================
+
+The Industrial I/O subsystem provides support for passing hardware generated events up to userspace.
+
+In IIO events are not used for passing normal readings from the sensing devices to userspace, but rather for out of band information. Normal data reaches userspace through a low overhead character device - typically via either software or hardware buffer. The stream format is pseudo fixed, so is described and controlled via sysfs rather than adding headers to the data describing what is in it.
+
+Pretty much all IIO events correspond to thresholds on some value derived from one or more raw readings from the sensor. They are provided by the underlying hardware.
+
+**Examples include:**
+
+-  Straight crossing a voltage threshold
+-  Moving average crosses a threshold
+-  Motion detectors (lots of ways of doing this).
+-  Thresholds on sum squared or rms values.
+-  Rate of change thresholds.
+-  Lots more variants...
+
+Events have timestamps.
+
+**The Interface:**
+
+-  Single user at a time.
+
+-  Simple chrdev per device (aggregation across devices doesn't really make sense for IIO as you tend to really care which sensor caused the event rather than just that it happened.)
+
+**The format is:**
+
+.. code:: c
+
+   /**
+    * struct iio_event_data - The actual event being pushed to userspace
+    * @id:     event identifier
+    * @timestamp:  best estimate of time of event occurrence (often from
+    *      the interrupt handler)
+    */
+   struct iio_event_data {
+       u64 id;
+       s64 timestamp;
+   };
+
+Typical event attributes
+========================
+
+| **/sys/bus/iio/devices/iio:deviceX/events**
+| Configuration of which hardware generated events are passed up to user-space.
+
+-  **Threshold Events:**
+
+| **<type>Z[\_name]_thresh[\_rising|falling]_en**
+| Event generated when channel passes a threshold in the specified (\_rising|_falling) direction. If the direction is not specified, then either the device will report an event which ever direction a single threshold value is called in (e.g. <type>[Z][\_name]\_<raw|input>_thresh_value) or <type>[Z][\_name]\_<raw|input>_thresh_rising_value and <type>[Z][\_name]\_<raw|input>_thresh_falling_value may take different values, but the device can only enable both thresholds or neither. Note the driver will assume the last p events requested are to be enabled where p is however many it supports (which may vary depending on the exact set requested. So if you want to be sure you have set what you think you have, check the contents of these attributes after everything is configured. Drivers may have to buffer any parameters so that they are consistent when a given event type is enabled a future point (and not those for whatever event was previously enabled).
+
+| **<type>Z[\_name]_thresh[\_rising|falling]_value**
+| Specifies the value of threshold that the device is comparing against for the events enabled by <type>Z[\_name]_thresh[\_rising|falling]_en. If separate attributes exist for the two directions, but direction is not specified for this attribute, then a single threshold value applies to both directions. The raw or input element of the name indicates whether the value is in raw device units or in processed units (as \_raw and \_input do on sysfs direct channel read attributes).
+
+-  **Rate of Change Events:**
+
+| **<type>[Z][\_name]_roc[\_rising|falling]_en**
+| Event generated when channel passes a threshold on the rate of change (1st differential) in the specified (\_rising|_falling) direction. If the direction is not specified, then either the device will report an event which ever direction a single threshold value is called in (e.g. <type>[Z][\_name]\_<raw|input>_roc_value) or <type>[Z][\_name]\_<raw|input>_roc_rising_value and <type>[Z][\_name]\_<raw|input>_roc_falling_value may take different values, but the device can only enable both rate of change thresholds or neither. Note the driver will assume the last p events requested are to be enabled where p is however many it supports (which may vary depending on the exact set requested. So if you want to be sure you have set what you think you have, check the contents of these attributes after everything is configured. Drivers may have to buffer any parameters so that they are consistent when a given event type is enabled a future point (and not those for whatever event was previously enabled).
+
+| **<type>[Z][\_name]_roc[\_rising|falling]_value**
+| Specifies the value of rate of change threshold that the device is comparing against for the events enabled by <type>[Z][\_name]_roc[\_rising|falling]_en. If separate attributes exist for the two directions, but direction is not specified for this attribute, then a single threshold value applies to both directions. The raw or input element of the name indicates whether the value is in raw device units or in processed units (as \_raw and \_input do on sysfs direct channel read attributes).
+
+-  **Magnitude Events:**
+
+| **<type>Z[\_name]_mag[\_rising|falling]_en**
+| Similar to in_accel_x_thresh[\_rising|_falling]_en, but here the magnitude of the channel is compared to the threshold, not its signed value.
+
+| **<type>Z[\_name]_mag[\_rising|falling]_value**
+| The value to which the magnitude of the channel is compared. If number or direction is not specified, applies to all channels of this type.
+
+-  **Temporal Conditions:**
+
+| **<type>[Z][\_name][\_thresh|_roc][\_rising|falling]_period**
+| Period of time (in seconds) for which the condition must be met before an event is generated. If direction is not specified then this period applies to both directions.
+
+Low level register access via debugfs (direct_reg_access)
+=========================================================
+
+Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver.
+
+.. tip::
+
+   To simplify direct register access you may want to use the libiio :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command line utility.
+
+
+Accessing debugfs requires root privileges.
+
+In order to identify if the IIO device in question feature this option you first need to identify the IIO device number.
+
+Therefore read the name attribute of each IIO device
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# grep "" /sys/bus/iio/devices/iio\:device*/name
+      /sys/bus/iio/devices/iio:device0/name:ad7291
+      /sys/bus/iio/devices/iio:device1/name:ad9361-phy
+      /sys/bus/iio/devices/iio:device2/name:xadc
+      /sys/bus/iio/devices/iio:device3/name:adf4351-udc-rx-pmod
+      /sys/bus/iio/devices/iio:device4/name:adf4351-udc-tx-pmod
+      /sys/bus/iio/devices/iio:device5/name:cf-ad9361-dds-core-lpc
+      /sys/bus/iio/devices/iio:device6/name:cf-ad9361-lpc
+      root@analog:~# 
+   
+
+
+Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the direct_reg_access file exists.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# cd /sys/kernel/debug/iio/iio\:device1
+      root@analog:/sys/kernel/debug/iio/iio:device1# ls direct_reg_access 
+      direct_reg_access
+   
+
+
+**Reading**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 0x7 > direct_reg_access                                                                                                                                 
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
+      0x40
+   
+
+
+**Writing**
+
+Write ADDRESS VALUE
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 0x7 0x50  > direct_reg_access                                                                                                                            
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
+      0x50
+   
+
+
+**Accessing HDL CORE registers**
+
+| Special ADI device driver convention for devices that have both:
+| \* a SPI/I2C control interface
+
+-  and some sort of HDL Core with registers (AXI)
+
+In this case when accessing the HDL Core Registers always set BIT31.
+
+The register map for typical ADI HDL cores can be found here: :doc:`Register Map </wiki-migration/resources/fpga/docs/hdl/regmap>`
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device6# echo 0x80000000 > direct_reg_access                                                                                                                           
+      root@analog:/sys/kernel/debug/iio/iio:device6# cat direct_reg_access 
+      0x80062
+   
+
+
+IIO pointers
+============
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-mxfe/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+
 
 Special Access Modes
 --------------------

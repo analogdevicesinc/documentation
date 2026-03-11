@@ -104,7 +104,6 @@ In the case shown only the internal 220 Ω resistors are used. If the 7 220 Ω r
 
 **For Further Reading:**
 
-| :doc:`ADALM1000 Python Tutorials </wiki-migration/university/tools/python-tutorial/table-of-contents>`
-| :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
+:doc:`ADALM1000 Python Tutorials </wiki-migration/university/tools/python-tutorial/table-of-contents>` :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`\ **.**

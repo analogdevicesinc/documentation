@@ -53,8 +53,6 @@ Building QNX A2B Stack for a different platform involves minimal modifications t
 
 While most of the settings are quite suitable for nearly all QNX platforms, these files shall be inspected and adapted as necessary for a different QNX system. For e.g., the path for the I2C device connected to the A2B chip can be specified in the macro A2B_CONF_DEFAULT_I2C_DEVICE_PATH in platform.h.
 
-.. _momentics-based-build-1:
-
 Momentics based build
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -65,8 +63,6 @@ The specifics of the target on the custom platform must be specified in the Targ
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/target_cpu_selcetor.png
    :align: center
    :width: 600px
-
-.. _makefile-based-build-1:
 
 Makefile based build
 ~~~~~~~~~~~~~~~~~~~~

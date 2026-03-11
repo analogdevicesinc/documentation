@@ -1,18 +1,26 @@
 Register Control Window
 =======================
 
-| :doc:`Click here to return to the Hardware Windows page. </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
-| The Register Control windows provides access to the internal registers and core settings for the DSP and IC blocks inserted in the Hardware configuration window.
+:doc:`Click here to return to the Hardware Windows page. </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
+
+The Register Control windows provides access to the internal registers and core settings for the DSP and IC blocks inserted in the Hardware configuration window.
 
 To access the Register Control window:
 
 -  Click the Hardware Configuration tab at the top of the workspace.
 -  Click the Register Control tab (1) at the bottom of the Hardware Configuration window or Right-click on the DSP processor block and select Register Window (2) from the menu.
 
-| |regpic1.png|
-| The controls and settings available in the Register Control window are different for each Processor (IC/DSP) block, depending on the hardware's capability. Any changes made in the register control window are immediately sent to the hardware when there is an active USB communication channel.
-| Following is a description of the AD1940 Register Control window. For information about these or other IC register settings, please see the refer to your part's datasheet: www.analog.com/sigmadsp
-| |regpic2.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/regpic1.png
+   :alt: regpic1.png
+   :align: center
+
+The controls and settings available in the Register Control window are different for each Processor (IC/DSP) block, depending on the hardware's capability. Any changes made in the register control window are immediately sent to the hardware when there is an active USB communication channel.
+
+Following is a description of the AD1940 Register Control window. For information about these or other IC register settings, please see the refer to your part's datasheet: www.analog.com/sigmadsp
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/regpic2.png
+   :alt: regpic2.png
+   :align: center
 
 **1. Internal Registers** This area lists addresses 2642 - 2646 and their status. As you make changes in the other areas of the window, you'll see the results here. If you know the register bit locations you want to change, you can change them here as well, and the buttons in the other areas of the window will be updated accordingly.
 
@@ -30,8 +38,9 @@ To access the Register Control window:
 -  In TDM mode, when this bit is set to 0, data are clocked in starting with the next appropriate BCLK edge following a falling edge on the LRCLK_IN pin. When the bit is set to 1 (in TDM mode), the input data are valid on the BCLK edge following a rising edge on LRCLK_IN.
 -  **TDM Input (Bit 5)** - Setting this bit to 0 puts the AD1940/-41 into dual 8-channel TDM input mode, with the two streams coming in on SDATA_IN2 and SDATA_IN3. Setting it to 1 puts the part into 16-channel TDM input mode, input on pin SDATA_IN2.
 
-| **3. Ram Modulo** - *affects the ram-configuration register (address 2643)*
-| The AD1940/1941 uses a modulo RAM-addressing scheme to allow filters and other blocks to be coded easily without requiring filter data to be explicitly moved during the filtering operation. The default value is 12 where the entire 6144 (6k) RAM is treated as modulo memory with auto-incrementing address-offset registers. Each LSB of this register corresponds to 512 RAM locations. A modulo value of 11 would give you 5632 datawords of modulo memory and 512 in a non-modulo portion.
+**3. Ram Modulo** - *affects the ram-configuration register (address 2643)*
+
+The AD1940/1941 uses a modulo RAM-addressing scheme to allow filters and other blocks to be coded easily without requiring filter data to be explicitly moved during the filtering operation. The default value is 12 where the entire 6144 (6k) RAM is treated as modulo memory with auto-incrementing address-offset registers. Each LSB of this register corresponds to 512 RAM locations. A modulo value of 11 would give you 5632 datawords of modulo memory and 512 in a non-modulo portion.
 
 **4. DSP Core** - affects DSP core control register (address 2642)
 
@@ -58,6 +67,3 @@ The controls in this register set the operation of the AD1940/-41's DSP core.
 -  **LRCLK Polarity (Bit 13)** - When set to 0, the left-channel data are clocked when LRCLK is low, and the right data clocked when LRCLK is high. When set to 1, this is reversed.
 -  **Link TDM Streams (Bit 14, Serial Output Control Register 1)** - When this bit is set to 1, the TDM output streams a linked to output a single 16-channel stream on SDATA_OUT0. When set to 0, TDM data are output on two independent 8-channel streams, on pins SDATA_OUT0 and SDATA_OUT4.
 -  **Dither-Enable (Bit 15)** - Setting this bit to 1 enables dither on the appropriate channels.
-
-.. |regpic1.png| image:: https://wiki.analog.com/_media/regpic1.png
-.. |regpic2.png| image:: https://wiki.analog.com/_media/regpic2.png

@@ -11,6 +11,7 @@ It contains three main sections:
 
 -  :doc:`Driver Installation for On-board Debugger (CMSIS DAP) </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/tools/hardware_usb>` - Provides detailed information on how to load pre-compiled .HEX or .BIN files using the USB drive of the EV-COG-AD3029LZ board.
 
-| 
+
 | End Document
-| :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
+
+:doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`

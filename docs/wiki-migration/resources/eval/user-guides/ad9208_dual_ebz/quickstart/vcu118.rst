@@ -87,8 +87,7 @@ Instructions on how to build the MicroBlaze Linux kernel and devicetrees from so
 3. Program the board
 ~~~~~~~~~~~~~~~~~~~~
 
-| First we need to prepare a working directory where we will gather all the required binary files.
-| From the HDL build directory locate the system_top.bit and copy it to the working directory. From the Linux build directory locate the simpleImage and copy it to the working directory.
+First we need to prepare a working directory where we will gather all the required binary files. From the HDL build directory locate the system_top.bit and copy it to the working directory. From the Linux build directory locate the simpleImage and copy it to the working directory.
 
 ::
 
@@ -116,14 +115,11 @@ Linux BOOT messages
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -449,10 +445,7 @@ The following devices should be present:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -497,7 +490,8 @@ More Information
 -  :doc:`AD9208-DUAL-EBZ HDL reference design </wiki-migration/resources/eval/user-guides/ad9208_dual_ebz/ad9208_dual_ebz_hdl>`
 -  :doc:`AD9208 ADC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad9208>`
 
-.. include:: ../ad9208_dual_ebz_hdl.rst
+Analog Devices will provide limited online support for anyone using the core with Analog Devices components (ADC, DAC, Video, Audio, etc) via the :ez:`EngineerZone <community/fpga>`.
+
 
 .. |Subclass 0| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/subclass0_waves.png
    :width: 800px

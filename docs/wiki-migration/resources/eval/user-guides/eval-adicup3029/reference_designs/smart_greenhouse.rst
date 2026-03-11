@@ -67,7 +67,7 @@ Setting up the Hardware
 
 -  The ESP8266 Enable Pin needs to be tied directly to 3.3V or pulled high to the GPIO via a 10K ohm resistor. Because this is not currently on the Rev B or Rev C version of the ADICUP3029, you will need to solder a small fly wire from the 3.3V pin to the enable pin.
    |image2| |image3|
--  Plug the **ESP8266** in the **P1** connector on the **EVAL-ADICUP3029**.
+   \* Plug the **ESP8266** in the **P1** connector on the **EVAL-ADICUP3029**.
 -  Configure the EVAL-CN0398-ARDZ CS option by setting the pin jumper of **P5** to **pin 1** and **2**. Set **P8** moisture power supply to **3V3** and **VIN** Supply to **5V**.
 
 |image4|
@@ -108,7 +108,7 @@ The software for the **ADuCM3029_IBMWatson_Greenhouse** can be found here:
    
    Complete IBM Watson Greenhouse Source Files
    
-   -  :git-EVAL-ADICUP3029:`ADucM3029_IBMWatson_Greenhouse Source Code <projects/ADuCM3029_IBMWatson_Greenhouse>`
+   -  :git-EVAL-ADICUP3029:`ADucM3029_IBMWatson_Greenhouse Source Code <projects/ADuCM3029_IBMWatson_Greenhouse>` \|
    
 
 
@@ -222,8 +222,6 @@ For nodered documentation follow https://nodered.org/.
 Serial Terminal Smart Greenhouse
 --------------------------------
 
-.. _demo-requirements-1:
-
 Demo Requirements
 ~~~~~~~~~~~~~~~~~
 
@@ -255,8 +253,6 @@ The following is a list of items needed in order to replicate this demo.
    -  ADuCM302x DFP (2.0.0 or higher)
    -  ADICUP3029 BSP (1.0.0 or higher)
    -  Putty or Tera Term or other serial terminal program
-
-.. _setting-up-the-hardware-1:
 
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -306,7 +302,7 @@ The software for the **ADuCM3029_Local_Greenhouse** can be found here:
    
    Complete Local Greenhouse Source Files
    
-   -  :git-EVAL-ADICUP3029:`ADucM3029_Local_Greenhouse Source Code <projects/ADuCM3029_Local_Greenhouse>`
+   -  :git-EVAL-ADICUP3029:`ADucM3029_Local_Greenhouse Source Code <projects/ADuCM3029_Local_Greenhouse>` \|
    
 
 
@@ -337,8 +333,6 @@ The hardware part is composed of the shields stacked on top of each other, which
 The communication layer configures the shields and is responsible for transferring information from and to the desired device. Data is then available for processing and transmitting to the cloud.
 
 ADICUP3029 ensures the logic for all the operations and once the data is available, it is being sent over UART and made available for the user. The user can also send commands to the device to control the leds intensity.
-
-.. _output-data-1:
 
 Output Data
 ~~~~~~~~~~~

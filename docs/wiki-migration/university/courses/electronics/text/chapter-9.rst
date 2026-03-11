@@ -22,10 +22,10 @@ The transistor, as we have seen in the previous chapter, is a three-terminal dev
 Building-block amplifier stages:
 
 -   Inverting voltage amplifier (also called Common emitter or Common source amplifier)
-   \* Current Follower (also called Common base or Common gate or cascode)
-   \* Voltage Follower (also called Common collector or Common drain amplifier)
-   \* Series feedback (more commonly: emitter/source degeneration)
-   \* Shunt feedback
+-   Current Follower (also called Common base or Common gate or cascode)
+-   Voltage Follower (also called Common collector or Common drain amplifier)
+-   Series feedback (more commonly: emitter/source degeneration)
+-   Shunt feedback
 
 9.2 The inverting voltage amplifier or Common emitter/source
 ------------------------------------------------------------
@@ -183,12 +183,9 @@ Again looking at the small signal models in figure 9.2.4 we see that for both th
 9.2.5 common emitter and source Lab Activities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| **ADALM1000 Lab Activity 5,** :doc:`Common emitter amplifier </wiki-migration/university/courses/alm1k/alm-lab-5>`
-| **ADALM1000 Lab Activity 5M,** :doc:`Common source amplifier </wiki-migration/university/courses/alm1k/alm-lab-5m>`
+**ADALM1000 Lab Activity 5,** :doc:`Common emitter amplifier </wiki-migration/university/courses/alm1k/alm-lab-5>` **ADALM1000 Lab Activity 5M,** :doc:`Common source amplifier </wiki-migration/university/courses/alm1k/alm-lab-5m>`
 
-| **ADALM2000 Lab Activity 5,** :doc:`Common emitter amplifier </wiki-migration/university/courses/electronics/electronics-lab-5>`
-| **ADALM2000 Lab Activity 5M,** :doc:`Common source amplifier </wiki-migration/university/courses/electronics/electronics-lab-5m>`
-| **ADALM2000 Lab Activity 5FR,** :doc:`Amplifier Frequency Response </wiki-migration/university/courses/electronics/electronics-lab-5fr>`
+**ADALM2000 Lab Activity 5,** :doc:`Common emitter amplifier </wiki-migration/university/courses/electronics/electronics-lab-5>` **ADALM2000 Lab Activity 5M,** :doc:`Common source amplifier </wiki-migration/university/courses/electronics/electronics-lab-5m>` **ADALM2000 Lab Activity 5FR,** :doc:`Amplifier Frequency Response </wiki-migration/university/courses/electronics/electronics-lab-5fr>`
 
 9.3 The Current Follower also known as Common base or gate amplifier
 --------------------------------------------------------------------
@@ -243,9 +240,7 @@ It is also important to note here that 100% (neglecting I\ :sub:`B` in the BJT c
 
 Again looking at the small signal models in figure 9.3.1 we see that for both the BJT case and the MOS case the output impedance is the parallel combination of R\ :sub:`L` and r\ :sub:`o`. We can generally assume this is true if we consider that V\ :sub:`in` is driven from a low impedance (nearly ideal) voltage source. If this is not the case then the finite output impedance must be added in series with r\ :sub:`o`. If the input of the current follower is driven by the relatively high output impedance of a transconductance amplifier such as the common emitter or source amplifier from earlier then the output impedance for the combined amplifier can be very high. For most practical applications we can ignore r\ :sub:`o` because it is very often much larger than R\ :sub:`L`.
 
-| **ADALM1000 Lab Activity,** :doc:`BJT Common Base Amplifier </wiki-migration/university/courses/alm1k/alm-lab-cb>`
-| **ADALM1000 Lab Activity,** :doc:`BJT Common Gate Amplifier </wiki-migration/university/courses/alm1k/alm-lab-cg>`
-| **ADALM1000 Lab Activity,** :doc:`Folded Cascode Amplifier </wiki-migration/university/courses/alm1k/alm-lab-fca>`
+**ADALM1000 Lab Activity,** :doc:`BJT Common Base Amplifier </wiki-migration/university/courses/alm1k/alm-lab-cb>` **ADALM1000 Lab Activity,** :doc:`BJT Common Gate Amplifier </wiki-migration/university/courses/alm1k/alm-lab-cg>` **ADALM1000 Lab Activity,** :doc:`Folded Cascode Amplifier </wiki-migration/university/courses/alm1k/alm-lab-fca>`
 
 9.4 Voltage followers (also called Emitter or Source follower or Common collector or drain amplifiers)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -336,11 +331,9 @@ Referring back to our gain example in figure 9.4.2, we can also calculate the ou
 9.4.5 Voltage Follower (common collector or drain) Lab Activities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| **ADALM1000 Lab Activity 11,** :doc:`BJT Emitter follower </wiki-migration/university/courses/alm1k/alm-lab-11>`
-| **ADALM1000 Lab Activity 11M,** :doc:`MOS Source follower </wiki-migration/university/courses/alm1k/alm-lab-11m>`
+**ADALM1000 Lab Activity 11,** :doc:`BJT Emitter follower </wiki-migration/university/courses/alm1k/alm-lab-11>` **ADALM1000 Lab Activity 11M,** :doc:`MOS Source follower </wiki-migration/university/courses/alm1k/alm-lab-11m>`
 
-| **ADALM2000 Lab Activity 11,** :doc:`BJT Emitter follower </wiki-migration/university/courses/electronics/electronics-lab-11>`
-| **ADALM2000 Lab Activity 11m,** :doc:`MOS Source follower </wiki-migration/university/courses/electronics/electronics-lab-11m>`
+**ADALM2000 Lab Activity 11,** :doc:`BJT Emitter follower </wiki-migration/university/courses/electronics/electronics-lab-11>` **ADALM2000 Lab Activity 11m,** :doc:`MOS Source follower </wiki-migration/university/courses/electronics/electronics-lab-11m>`
 
 9.5 Series Feedback: emitter/source degeneration
 ------------------------------------------------
@@ -362,9 +355,7 @@ It is much less common to include a degeneration resistor in MOS designs. This i
 
 There are some BJT biasing rules of thumb:
 
-| 1. Set I\ :sub:`E` not I\ :sub:`B` or V\ :sub:`BE` : less dependence on β and temperature (V\ :sub:`T`)
-| 2. Allow 1/3V\ :sub:`CC` across R\ :sub:`C`, V\ :sub:`CE` and R\ :sub:`B2`
-| 3. Save power by allowing only 10% of I\ :sub:`E` in R\ :sub:`B`
+1. Set I\ :sub:`E` not I\ :sub:`B` or V\ :sub:`BE` : less dependence on β and temperature (V\ :sub:`T`) 2. Allow 1/3V\ :sub:`CC` across R\ :sub:`C`, V\ :sub:`CE` and R\ :sub:`B2` 3. Save power by allowing only 10% of I\ :sub:`E` in R\ :sub:`B`
 
 We are given the following for circuit in figure 9.5.1, V\ :sub:`CC` = 20V ; I\ :sub:`E` = 2mA ; β = 100. From our rules of thumb we set V\ :sub:`B` = 1/3\*V\ :sub:`CC` = 6.7 V.
 
@@ -481,10 +472,7 @@ For our example problem with R\ :sub:`E1` = 1K , R\ :sub:`E2` = 2K and C\ :sub:`
 9.5.5 Summary - performing small-signal analyses:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 1. Find DC operating point.
-| 2. Calculate small-signal parameters: g\ :sub:`m`, r\ :sub:``, r\ :sub:`e` etc.
-| 3. Replace DC voltage sources with AC grounds and DC current sources with open circuits.
-| 4. Replace transistor with small-signal model (hybrid-π model or T model)
+1. Find DC operating point. 2. Calculate small-signal parameters: g\ :sub:`m`, r\ :sub:``, r\ :sub:`e` etc. 3. Replace DC voltage sources with AC grounds and DC current sources with open circuits. 4. Replace transistor with small-signal model (hybrid-π model or T model)
 
 9.6 Miller’s Theorem
 --------------------
@@ -601,9 +589,9 @@ which is the case when:
 :math:`βR_L >> R_F`
 
 -   As β is fixed (and generally not known precisely) for a given transistor, this relation can be satisfied either by keeping R\ :sub:`L` fairly large or making R\ :sub:`F` very low.
-   \* If R\ :sub:`L` is large, a high V\ :sub:`+` is necessary, which increases cost as well as precautions necessary while handling.
-   \* If R\ :sub:`F` is low, the reverse bias of the collector–base region is small, which limits the range of collector voltage swing that leaves the transistor in active mode.
-   \* The resistor R\ :sub:`F` causes an AC feedback, reducing the voltage gain of the amplifier. This undesirable effect is a trade-off for greater quiescent operating point stability.
+-   If R\ :sub:`L` is large, a high V\ :sub:`+` is necessary, which increases cost as well as precautions necessary while handling.
+-   If R\ :sub:`F` is low, the reverse bias of the collector–base region is small, which limits the range of collector voltage swing that leaves the transistor in active mode.
+-   The resistor R\ :sub:`F` causes an AC feedback, reducing the voltage gain of the amplifier. This undesirable effect is a trade-off for greater quiescent operating point stability.
 
 **Usage:** The feedback also decreases the input impedance of the amplifier as seen from the base, which can be advantageous. Due to the gain reduction from feedback, this biasing form is used only when the trade-off for stability is warranted.
 
@@ -721,9 +709,9 @@ Chapter Summary:
 ----------------
 
 -   The Common Emitter stage has high gain but low input and high output impedance.
-   \* R\ :sub:`E` emitter degeneration improves input impedance and provides negative feedback to stabilize DC operating point but with some loss in gain.
-   \* The Common Base stage has low input, high output impedance but is good at high frequencies. Good current buffer sometimes called the current follower.
-   \* The Common Collector or Emitter follower can be biased with large input impedance, low output impedance but has approximately unity gain. Good voltage buffer.
+-   R\ :sub:`E` emitter degeneration improves input impedance and provides negative feedback to stabilize DC operating point but with some loss in gain.
+-   The Common Base stage has low input, high output impedance but is good at high frequencies. Good current buffer sometimes called the current follower.
+-   The Common Collector or Emitter follower can be biased with large input impedance, low output impedance but has approximately unity gain. Good voltage buffer.
 
 Appendix: Source absorption theorem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

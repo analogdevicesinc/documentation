@@ -69,8 +69,6 @@ The screenshot below shows the HT DAQ Viewer Signal Analysis screen capture for 
    :align: center
    :width: 700px
 
-.. _c-signal-analysis-1:
-
 200°C Signal Analysis
 ~~~~~~~~~~~~~~~~~~~~~
 

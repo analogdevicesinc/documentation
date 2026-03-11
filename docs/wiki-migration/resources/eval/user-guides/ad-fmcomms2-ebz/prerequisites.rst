@@ -10,7 +10,12 @@ What you need, depends on what you are trying to do. As a minimum, you need to s
    -  The `Xilinx ZC706 <https://www.xilinx.com/zc706>`_. The fabric on this device is much larger, and if you are looking at targeting - this is the recommended option.
    -  The `Arrow SoCKit <https://www.arrow.com/en/products/sockit/arrow-development-tools>`_. This is a low cost board, which can be used for basic HDL designs, or just for looking at the AD9361.
    -  There are a few more boards, which do work, and are supported, but they are just not tested as often (most of the full time developers who work with the AD9361/AD9364 based boards use the Zed or the ZC706). The experience of the fabric only solutions is very close to the ARM/FPGA SoC based solutions, but the GUI runs on a host PC (Windows or Linux).
-   -  
+
+::
+
+     *
+
+
 .. note::
 
    See `quickstart <https://wiki.analog.com/quickstart#supported_carriers>`_

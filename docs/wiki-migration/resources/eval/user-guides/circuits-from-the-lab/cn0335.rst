@@ -65,11 +65,11 @@ Installing the Software
 
 |image2|
 
--  Click **Next** to start the installation
+   \* Click **Next** to start the installation
 
-|image3|
+   |image3|
 
--  Upon completion of the installation of the **CN0335 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+   \* Upon completion of the installation of the **CN0335 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
 .. tip::
 
@@ -82,7 +82,7 @@ Installing the Software
 
 |image4|
 
--  Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
 .. tip::
 
@@ -133,9 +133,9 @@ Connecting the Hardware
 
 |image11|
 
--  Connect the :adi:`EVAL-CN0335-PMDZ` **(CN0335 Board)** to the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** via the 12 pin header PMOD connector.
+   \* Connect the :adi:`EVAL-CN0335-PMDZ` **(CN0335 Board)** to the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** via the 12 pin header PMOD connector.
 
-|image12|
+   |image12|
 
    \* Connect the input current source (Current calibrator) to J2 Terminal Block. The polarity is shown on the picture below
 
@@ -156,7 +156,7 @@ Software Control and Indicator Descriptions
 ::
 
    -**Connect/Reconnect Button**
-   * When this button is pressed, the SDP-B Board makes a USB connection to the CN0335 Board.  A connection to the SDP-B Board must be made to use the software.   
+   * When this button is pressed, the SDP-B Board makes a USB connection to the CN0335 Board.  A connection to the SDP-B Board must be made to use the software.
    -**Run Button**
    * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
    -**Stop Button**
@@ -164,7 +164,7 @@ Software Control and Indicator Descriptions
    -**Clear Data Button**
    * When this button is pressed, the software will clear all data collected from the chart history.
    -**Save Data Button**
-   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.   
+   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
    -**Control Tabs**
    * __Acquire DataMain__ - Clicking this tab brings the data collection graph to the front.
    * __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
@@ -174,13 +174,13 @@ Software Control and Indicator Descriptions
    -**Graph**
    * This graph displays the collected data. The units on the graph depend on the chosen graph units (10).
    -**Graph Controls**
-   * These controls allow the user to zoon in, zoom out, and pan through the data collected. 
+   * These controls allow the user to zoon in, zoom out, and pan through the data collected.
    -**Graph Units Radio Buttons**
-   * This control determines the units of the data displayed in the chart and the numerical indicator. 
+   * This control determines the units of the data displayed in the chart and the numerical indicator.
    -**System Status String Indicator**
    * This indicator displays a message to the user detailing the current state of the software.
    -**System Status LED Indicator**
-   * This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0335:using_sw_12inactive.png?nolink|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0335:using_sw_12busy.png?nolink|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0335:using_sw_12error.png?nolink|}}Error\\  {{:resources:eval:user-guides:circuits-from-the-lab:cn0335:using_sw_12waiting.png?nolink|}}Waiting for user action\\
+   * This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0335:using_sw_12inactive.png?nolink|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0335:using_sw_12busy.png?nolink|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0335:using_sw_12error.png?nolink|}}Error\\  {{:resources:eval:user-guides:circuits-from-the-lab:cn0335:using_sw_12waiting.png?nolink|}}Waiting for user action
    -**Calibrate System Controls**
    * These controls allow the user to calibrate the CN0335 Board. For the calibration two voltage inputs in the range ±10V are required. For best performance the inputs have to be selected “-10V” and “+10V”. To perform the calibration follow the instructions on the screen
    -**SDP Firmware Revision**
@@ -201,13 +201,13 @@ Establishing a USB Connection Link
    **C:\\Program Files\\Analog Devices\\CN0335\\CN0335.exe**\
 
 
--  Click the **Connect/Reconnect Button**. A window with a progress bar will load.
+- Click the **Connect/Reconnect Button**. A window with a progress bar will load.
 
 
 
 |image17|
 
--  Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
+   \* Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
 
 Calibrating the CN0335 Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -237,13 +237,13 @@ Saving Data to a Spreadsheet File
 
 |image18|
 
--  Click the **OK Button**.
+   \* Click the **OK Button**.
 -  Browse to the directory location where the spreadsheet file is to be saved.
 -  Name the file.
 -  Click the **OK Button**.
 -  Open with Notepad or similar. The saved data shows the ADC Codes (decimal)
 
-|
+
 
 .. note::
 

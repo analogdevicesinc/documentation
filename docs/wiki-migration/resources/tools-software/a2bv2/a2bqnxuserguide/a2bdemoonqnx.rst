@@ -68,13 +68,13 @@ IFS image modifications for BeagleBone Black
 
 Refer Build the BSP (IDE) section under Chapter 5 in the `QNX BeagleBone Black BSP User Guide <https://support7.qnx.com/download/download/30074/SDP7_BSP_UG_TI_AM335xBB.pdf>`_ for steps to modify and rebuild the images. Following changes need to be made in the .build file for this demo:
 
--  I2C driver: The a2b application on QNX uses i2c1 device. Add the following two lines in the I2C driver section. ``i2c-omap35xx -j5 -i 70 -p0x4802A000 –u1 
+-  I2C driver: The a2b application on QNX uses i2c1 device. Add the following two lines in the I2C driver section. ``i2c-omap35xx -j5 -i 70 -p0x4802A000 –u1
    waitfor /dev/i2c1``
 -  Remote debugging support: The Momentics IDE uses qconn daemon to connect to target and debug applications. Add the following lines REMOTE_DEBUG section. Note that this must be added only after the Network Drivers section. ``devc-pty
    waitfor /dev/pttyp0 4
-   waitfor /dev/socket 4 
+   waitfor /dev/socket 4
    qconn port=8000``
--  HDMI Audio driver: The HDMI audio driver drives the Frame Sync that is required for the a2b network setup. Add the following lines to enable this. ``io-audio -d mcasp-dm814x_tda19988 
+-  HDMI Audio driver: The HDMI audio driver drives the Frame Sync that is required for the a2b network setup. Add the following lines to enable this. ``io-audio -d mcasp-dm814x_tda19988
    waitfor /dev/snd/pcmC0D0p``
 -  This also needs the following libraries to be added in the Shared Libraries section ``libasound.so
    deva-ctrl-mcasp-dm814x_tda19988.so``

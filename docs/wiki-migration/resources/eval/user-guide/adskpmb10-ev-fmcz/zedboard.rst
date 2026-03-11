@@ -73,7 +73,7 @@ Installing the PowerhouseApp
 
 
 -  Install **PowerhouseApp** by typing in ``pip install powerhouse-1.15.0-py3-none-any.whl``.
-   <fc #c0c0c0>\ *Note: The wheel (.whl) file will find the installation path of the Python directory defined in the Windows environment variable path.*\ </fc>
+   *Note: The wheel (.whl) file will find the installation path of the Python directory defined in the Windows environment variable path.*
 
 .. container:: centeralign
 

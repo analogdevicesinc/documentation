@@ -3,18 +3,23 @@
 Sweep Input
 ===========
 
-| |linear_sweep.png|
-| ===== Description =====
-| The Sweep block generates a sinewave that sweeps from a start frequency to an end frequency. The sweep rate is determined by the number of sweep steps and cycles per step. In case of the linear sweep, the frequency sweep is linear across time whereas in the case of log sweep input, the frequency sweeps logarithmically cross time. The following variants of the module are available:
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/linear_sweep.png
+   :alt: linear_sweep.png
+
+Description
+-----------
+
+The Sweep block generates a sinewave that sweeps from a start frequency to an end frequency. The sweep rate is determined by the number of sweep steps and cycles per step. In case of the linear sweep, the frequency sweep is linear across time whereas in the case of log sweep input, the frequency sweeps logarithmically cross time. The following variants of the module are available:
 
 -  Linear Sweep Input
 -  Linear Sweep With Input Tone Burst
 -  Log Sweep Input
 -  Log Sweep With Input Tone Burst
 
-| 
-| ===== Usage =====
-| Enter the desired start and stop frequency and step size using the edit controls:
+Usage
+-----
+
+Enter the desired start and stop frequency and step size using the edit controls:
 
 -  **Start Freq**
 
@@ -64,7 +69,7 @@ Name   Type  Description
 Output Audio Output channel
 ====== ===== ==============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+------------------------+-----------------------------------------------------------------------+
@@ -98,10 +103,13 @@ Output Audio Output channel
 
 | 
 | ===== DSP Parameter Computation ===== start_freq= StartFrequency/(FS/2)
-| freq_increment= EndFrequency/(FS/2)
-| numsteps= Steps
-| numcycles_per_step = Cycles
-| freq_increment = (StartFrequency-StopFrequency)/(Steps-1)
-| FS, Where fs is frequency and FS is the sampling rate
 
-.. |linear_sweep.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/linear_sweep.png
+freq_increment= EndFrequency/(FS/2)
+
+numsteps= Steps
+
+numcycles_per_step = Cycles
+
+freq_increment = (StartFrequency-StopFrequency)/(Steps-1)
+
+FS, Where fs is frequency and FS is the sampling rate

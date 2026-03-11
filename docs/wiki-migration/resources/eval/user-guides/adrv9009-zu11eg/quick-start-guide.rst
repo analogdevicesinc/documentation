@@ -28,7 +28,7 @@ Please use the :doc:`Please use the Image 28 July 2021 release candidate (2019_R
 
 .. raw:: html
 
-   <details><summary>Older Bootfiles (Click to expand)</summary>
+   <details><summary>Older Bootfiles (Click to expand)
 
 -  `ADRV9009-ZU11EG-14-06-2019.zip HW Rev.A <http://swdownloads.analog.com/cse/share/ADRV9009-ZU11EG-14-06-2019.zip>`_
 -  `ADRV9009-ZU11EG-RevB-10-09-2019.zip HW Rev.B <http://swdownloads.analog.com/cse/share/ADRV9009-ZU11EG-RevB-10-09-2019.zip>`_
@@ -91,20 +91,17 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
 
    .. raw:: html
 
-      <details><summary>Boot log (click to expand)</summary>
+      <details><summary>Boot log (click to expand)
 
    ::
    
-      Xilinx Zynq MP First Stage Boot Loader 
+      Xilinx Zynq MP First Stage Boot Loader
       Release 2021.1   Aug  3 2022  -  11:00:01
    
    
@@ -115,7 +112,7 @@ Messages
       EL Level:       EL2
       Chip ID:        zu11eg
       MMC:   sdhci@ff170000: 0 (SD)
-      *** Warning - bad CRC, using default environment
+      ** Warning - bad CRC, using default environment
    
       In:    serial@ff010000
       Out:   serial@ff010000
@@ -131,13 +128,13 @@ Messages
    
       Warning: ethernet@ff0e0000 (eth0) using random MAC address - aa:cd:e8:38:80:de
       , eth0: ethernet@ff0e0000
-      Hit any key to stop autoboot:  0 
+      Hit any key to stop autoboot:  0
       switch to partitions #0, OK
       mmc0 is current device
       Device: sdhci@ff170000
       Manufacturer ID: 41
       OEM: 3432
-      Name: SD16G 
+      Name: SD16G
       Tran Speed: 50000000
       Rd Block Len: 512
       SD version 3.0
@@ -266,7 +263,7 @@ Messages
       [    2.305344] raid6: using algorithm neonx4 gen() 2400 MB/s
       [    2.309298] raid6: .... xor() 1717 MB/s, rmw enabled
       [    2.314233] raid6: using neon recovery algorithm
-      [    2.319145] iommu: Default domain type: Translated 
+      [    2.319145] iommu: Default domain type: Translated
       [    2.323858] SCSI subsystem initialized
       [    2.327513] usbcore: registered new interface driver usbfs
       [    2.332854] usbcore: registered new interface driver hub
@@ -498,7 +495,7 @@ Messages
       [    5.838432] hmc7044 spi1.2: PLL1: Locked, CLKIN1 @ 30720000 Hz, PFD: 30720 kHz - PLL2: Locked @ 2949.120000 MHz
       [    5.849324] macb ff0b0000.ethernet: Not enabling partial store and forward
       [    5.859757] mmc0: new high speed SDHC card at address 0001
-      [    5.865588] mmcblk0: mmc0:0001 SD16G 14.6 GiB 
+      [    5.865588] mmcblk0: mmc0:0001 SD16G 14.6 GiB
       [    5.871588] libphy: MACB_mii_bus: probed
       [    5.875571] macb ff0b0000.ethernet eth1: Cadence GEM rev 0x50070106 at 0xff0b0000 irq 20 (c6:bd:2a:d9:e2:01)
       [    5.887653]  mmcblk0: p1 p2 p3
@@ -852,10 +849,7 @@ Make sure all devices are present
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -881,10 +875,7 @@ Check clock chip lock status (SoM)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -900,7 +891,7 @@ Check clock chip lock status (SoM)
       SYSREF Status:  Valid & Locked
       SYNC Status:    Unsynchronized
       Lock Status:    PLL1 & PLL2 Locked
-      root@analog:~# 
+      root@analog:~#
    
 
 
@@ -912,10 +903,7 @@ Check clock chip lock status (Carrier)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -942,10 +930,7 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -984,8 +969,7 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
 Video Configuration
 -------------------
 
-| The default configuration for most of the projects is to use the HDMI output, but for this project the DisplayPort is used. In order for it to work, you should follow the steps described here: :doc:`DisplayPort No Picture </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
-| After following the steps, the board should be rebooted.
+The default configuration for most of the projects is to use the HDMI output, but for this project the DisplayPort is used. In order for it to work, you should follow the steps described here: :doc:`DisplayPort No Picture </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>` After following the steps, the board should be rebooted.
 
 IIO Oscilloscope Remote
 -----------------------

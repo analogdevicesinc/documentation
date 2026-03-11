@@ -1,8 +1,9 @@
 A2B Software Stack
 ==================
 
-| :doc:`Click here to return to the A2B SSPLUS STACK USER GUIDE </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide>`
-| A2B Software Stack or simply referred as A2B Stack is a collection of functional blocks designed to efficiently configure, troubleshoot, and deploy A2B networks. The below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2bsoftwarestack>` shows the architecture of the stack software.
+:doc:`Click here to return to the A2B SSPLUS STACK USER GUIDE </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide>`
+
+A2B Software Stack or simply referred as A2B Stack is a collection of functional blocks designed to efficiently configure, troubleshoot, and deploy A2B networks. The below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2bsoftwarestack>` shows the architecture of the stack software.
 
 A2b Software Stack Architecture
 -------------------------------

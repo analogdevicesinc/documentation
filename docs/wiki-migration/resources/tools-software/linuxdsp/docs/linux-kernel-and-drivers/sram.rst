@@ -57,8 +57,6 @@ Test Example
    Used sram: 0 KB
    Avail sram: 236 KB
 
-.. _sram-driver-1:
-
 SRAM driver
 -----------
 
@@ -85,7 +83,7 @@ These 2 dts part will generate 2 memory pools from sram using "mmio-sram" driver
        reg = <0x20080000 0x1000>;
        ranges = <0 0x20080000 0x1000>;
    };
-    
+
    sram1: sram-reserved@20084000 {
        compatible = "mmio-sram";
        #address-cells = <1>;
@@ -115,15 +113,16 @@ If users want to allocate their own sram memory from sram pool in linux kernel, 
            pr_err("Unable to get sram pool!\n");
            return -ENODEV;
    }
-    
+
    /* Get the allocated virtual memory from sram pool */
    vaddr = gen_pool_alloc(sram_pool, sram_size);
    if (!vaddr) {
        pr_warn("Faied to alloc sram from sram pool!\n");
    }
-    
+
    /* Remember: When you finish all the operations, free the allocated addr */
    gen_pool_free(sram_pool, vaddr, sram_size);
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

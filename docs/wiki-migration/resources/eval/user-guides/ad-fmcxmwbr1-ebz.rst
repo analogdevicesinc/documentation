@@ -6,7 +6,8 @@ Introduction
 
 The :adi:`AD-FMCXMWBR1-EBZ` is a FMC-compatible level translator and power supply board. It provides a direct connection between a compatible controller/FPGA device and `X-Microwave <https://www.xmicrowave.com/>`_ blocks. It is powered from the FMC connector but has the option to add an external supply for applications that require higher load currents. This increases flexibility and allows for multiple supply voltages with high current capability. These can be used to bias the X-MW blocks or other IC’s in a prototype design, allowing multiple level translated digital communications paths between the controller board and the front-end.
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz_top.jpg
+   :width: 400px
 
 Features
 ~~~~~~~~
@@ -26,8 +27,6 @@ Applications
 -  Point to point communication systems
 -  Multiple input/multiple output (MIMO) radios
 -   Automated test equipment
-
-| 
 
 Hardware
 --------
@@ -63,7 +62,7 @@ Based on this example, the user can modify the software and adapt it for their s
 Videos
 ------
 
-.. image:: https://wiki.analog.com/_media/youtube>3MH8Y6joSeE
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>3MH8Y6joSeE
    :alt: youtube>3MH8Y6joSeE
 
 Production Testing Process
@@ -83,13 +82,8 @@ For questions and more information please contact us on the Analog Devices Engin
    :ez:`EngineerZone <>`
 
 
-   | 
-|
 
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz_top.jpg
-   :width: 400px

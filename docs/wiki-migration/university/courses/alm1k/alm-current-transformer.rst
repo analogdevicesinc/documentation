@@ -48,12 +48,7 @@ We can use the 6 winding coils from the ADALP2000 Parts kit to examine the basic
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less Breadboard
-| Jumper wires
-| 1 - HPH1-1400L 202 uH 6 winding coil
-| 1 - HPH1-0190L 27 uH 6 winding coil
-| 1 – 6.2 ohm power resistor
+ADALM1000 hardware module Solder-less Breadboard Jumper wires 1 - HPH1-1400L 202 uH 6 winding coil 1 - HPH1-0190L 27 uH 6 winding coil 1 – 6.2 ohm power resistor
 
 Directions:
 ~~~~~~~~~~~
@@ -124,18 +119,10 @@ We can potentially make a higher turns ratio CT by wrapping a single turn of wir
    Figure 6 Simulation schematic
 
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 2.5 inches of solid core jumper wire
-| 1 – 10 mH inductor
-| 1 – 10 uH inductor
-| 1 – 1 uH inductor
-| 1 – AC coupling capacitor, any combination greater than 2200 uF
-| 1 – 1 KΩ resistor
-| 1 – AD8542 dual R-R op-amp (or AD8541 single op-amp)
+2.5 inches of solid core jumper wire 1 – 10 mH inductor 1 – 10 uH inductor 1 – 1 uH inductor 1 – AC coupling capacitor, any combination greater than 2200 uF 1 – 1 KΩ resistor 1 – AD8542 dual R-R op-amp (or AD8541 single op-amp)
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig7.png
    :align: center

@@ -3,8 +3,8 @@
 Nth Order Filter
 ================
 
-| 
-| |nthordfilt.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/nthordfilt.png
+   :alt: nthordfilt.png
 
 Description
 -----------
@@ -17,9 +17,11 @@ The available filter types are:
 -  Chebyshev 1 Low-Pass / High-Pass
 -  Chebyshev 2 Low-Pass / High-Pass
 
-| 
-| ===== Usage =====
-| ===== Targets Supported =====
+Usage
+-----
+
+Targets Supported
+-----------------
 
 +------------------+------------+------------------+---------------+------------------+
 | Name             | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -48,7 +50,7 @@ Name    Type  Description
 Output0 Audio Output channel 0
 ======= ===== ================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+-------------------+-----------------------------------------------------------------------------------+
@@ -94,6 +96,4 @@ Output0 Audio Output channel 0
 | B2_StageX      | Filter coefficient B2 of bi-quad stage X | Float                  | FixPoint8d24  |
 +----------------+------------------------------------------+------------------------+---------------+
 
-| Note - X indicates filter stage index
-
-.. |nthordfilt.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/nthordfilt.png
+Note - X indicates filter stage index

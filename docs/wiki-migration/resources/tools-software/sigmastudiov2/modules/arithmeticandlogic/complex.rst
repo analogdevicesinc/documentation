@@ -9,8 +9,9 @@ Complex Magnitude
 Description
 -----------
 
-| Conjugate Magnitude takes the Complex Signal(x + j y) of input signal and compute the magnitude (squareroot(x^2 + y^2)) of input signal and pass to output. This is a block based module.
-| Note: The Context Menu “Input Source” option added to this module to select the algorithm for Complex FFT and Real FFT
+Conjugate Magnitude takes the Complex Signal(x + j y) of input signal and compute the magnitude (squareroot(x^2 + y^2)) of input signal and pass to output. This is a block based module.
+
+Note: The Context Menu “Input Source” option added to this module to select the algorithm for Complex FFT and Real FFT
 
 Targets Supported
 -----------------

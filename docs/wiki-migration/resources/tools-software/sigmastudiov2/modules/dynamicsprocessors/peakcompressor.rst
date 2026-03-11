@@ -3,21 +3,26 @@
 Peak Compressor
 ===============
 
-| 
-| |peakcomp.png|
-| |peakcompgraph.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcomp.png
+   :alt: peakcomp.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcompgraph.png
+   :alt: peakcompgraph.png
+   :width: 450px
 
 Description
 -----------
 
-| The Peak Compressor block computes the peak level of the input signal, if peak of the signal is more than the threshold level, signal level immediately changes to new peak level and if the peak level is below the threshold level, it slowly reaches the new peak level by accounting to the hold and decay time.
-| ===== Variants =====
+The Peak Compressor block computes the peak level of the input signal, if peak of the signal is more than the threshold level, signal level immediately changes to new peak level and if the peak level is below the threshold level, it slowly reaches the new peak level by accounting to the hold and decay time.
+
+Variants
+--------
 
 -  Peak Compressor
 -  Peak Compressor with Gain Out
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +-------------------------------+------------+------------------+---------------+------------------+
 | Name                          | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -48,7 +53,7 @@ Name    Type  Description
 Output1 Audio Output channel1
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+-----------------------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,10 +83,7 @@ Decay          Decay value  Float                  8.24 format
 Table          Table values Float                  8.24 format
 ============== ============ ====================== =============
 
-| 
-| ===== DSP Parameter Computation ===== Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear) Hold = FS \* Hold/1000
-| Where FS is the sampling rate
 
-.. |peakcomp.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcomp.png
-.. |peakcompgraph.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcompgraph.png
-   :width: 450px
+| ===== DSP Parameter Computation ===== Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear) Hold = FS \* Hold/1000
+
+Where FS is the sampling rate

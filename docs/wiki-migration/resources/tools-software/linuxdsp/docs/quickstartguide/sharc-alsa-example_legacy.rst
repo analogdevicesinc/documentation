@@ -13,8 +13,10 @@ SHARC-ALSA Example (legacy)
 
 SHARC-ALSA is a framework designed to make a SHARC appear as an audio device in `ALSA <https://alsa-project.org/wiki/Main_Page>`_. It uses `RPMsg <https://www.kernel.org/doc/html/latest/staging/rpmsg.html>`_ for the communication between the ARM Core and the SHARC Core. When playing audio through ALSA the audio samples are transferred to the SHARC where additional processing can take place before the audio is played.
 
-| 
-| ==== Programming the SHARC ==== An example SHARC image providing 2-channel playback is present in the /lib/firmware folder on the target. The SHARC can be programmed with this image using the sysfs interface to remoteproc as shown below:
+Programming the SHARC
+---------------------
+
+An example SHARC image providing 2-channel playback is present in the /lib/firmware folder on the target. The SHARC can be programmed with this image using the sysfs interface to remoteproc as shown below:
 
 ::
 
@@ -23,8 +25,8 @@ SHARC-ALSA is a framework designed to make a SHARC appear as an audio device in 
 
 When executing the "echo start" command you will notice the LEDs on the SOMCRR-EZKIT flashing and then settle on LED7 remaining on. This indicates that the image on the SHARC is running.
 
-| 
-| ==== Playing Audio ====
+Playing Audio
+-------------
 
 -  The audio from the SHARC is routed to DAC1/2. Connect a set of speakers to J17 also labelled as DAC1/2.
 
@@ -39,8 +41,10 @@ Play back the audio sample file stored in /usr/share/sounds/alsa/
 
 You will hear a 440Hz tone on the left channel and a 200Hz tone on the right channel being played for 6 seconds.
 
-| 
-| === Adding a Tone to a Channel === The SHARC can be instructed to add a tone to the audio played using aplay. This is done through a command interface which also uses RPMsg for passing on the instructions to the SHARC Core. A helper tool for simplifying this is installed on the target. The tool creates a character device which will accept a channel number and a frequency to be added to the audio as strings allowing for simple interaction from the command line.
+Adding a Tone to a Channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The SHARC can be instructed to add a tone to the audio played using aplay. This is done through a command interface which also uses RPMsg for passing on the instructions to the SHARC Core. A helper tool for simplifying this is installed on the target. The tool creates a character device which will accept a channel number and a frequency to be added to the audio as strings allowing for simple interaction from the command line.
 
 ::
 

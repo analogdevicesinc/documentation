@@ -41,15 +41,9 @@ Directions:
 
 It is assumed that the reader is somewhat familiar with the functionality and capabilities of the ADALM1000 hardware. For more on the ADALM1000 hardware please refer to the following documents:
 
-| :doc:`ADALM1000 Voltmeter User's Guide </wiki-migration/university/tools/m1k/alice/voltmeter-users-guide>`
-| :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` ( especially useful )
-| :doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>`
-| :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>`
-| :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>`
+:doc:`ADALM1000 Voltmeter User's Guide </wiki-migration/university/tools/m1k/alice/voltmeter-users-guide>` :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` ( especially useful ) :doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>` :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>` :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>`
 
-| First a few notes on nomenclature used in this document:
-| CA-V refers to the Channel A voltage signal
-| CB-V refers to the Channel B voltage signal
+First a few notes on nomenclature used in this document: CA-V refers to the Channel A voltage signal CB-V refers to the Channel B voltage signal
 
 Screen Setup:
 ~~~~~~~~~~~~~
@@ -162,8 +156,6 @@ The series resistance of the switch, which is approximately 1 Ohm, must be inclu
 Both ways can be used in this version of the Ohm meter tool:
 
 `ohm-meter-vdiv.py(w) <https://wiki.analog.com/_media/university/tools/ohm-meter-tool.zip>`_
-
-.. _calibrating-the-ohmmeter-1:
 
 Calibrating the Ohmmeter
 ~~~~~~~~~~~~~~~~~~~~~~~~

@@ -20,7 +20,7 @@ Equipment Included with Quad MxFE Kits
 -  1x FMC+ Extender
 -  2x 6" MMCX-to-MMCX cables
 -  3x Board Standoffs
--  4x Fan/Heat Sinks - **<fc #ff0000>Install Prior to First Use Per** :doc:`Fan Installation Directions </wiki-migration/resources/eval/user-guides/quadmxfe/boardhardwaredetails>`\ **!!!</fc>**
+-  4x Fan/Heat Sinks - **Install Prior to First Use Per** :doc:`Fan Installation Directions </wiki-migration/resources/eval/user-guides/quadmxfe/boardhardwaredetails>`\ **!!!**
 
 **See unboxing video here:** :adi:`Quad MxFE Unboxing Video <en/education/education-library/videos/6257116746001.html>`
 
@@ -151,12 +151,12 @@ The main tool used for programming the FPGA is the Xilinx Software Commandline T
 
 ::
 
-   ****** Xilinx Software Commandline Tool (XSCT) v2019.1
-     **** Build date : May 24 2019-15:06:52
+   ***** Xilinx Software Commandline Tool (XSCT) v2019.1
+     *** Build date : May 24 2019-15:06:52
        ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
    xsct% **cd Desktop/Quad_Mxfe_Files**
-   xsct% **source run.vcu118_quad_ad9081_204c_txmode_11_rxmode_4_revc.tcl** 
+   xsct% **source run.vcu118_quad_ad9081_204c_txmode_11_rxmode_4_revc.tcl**
 
 --------------
 
@@ -224,7 +224,7 @@ Once these are powered up, program the FPGA:
 
 |image2|
 
--  Wait for the build to boot completely by checking the Putty terminal window. The putty window shows the progress of the Linux image booting. Wait for the login prompt as shown at the bottom. |image3| This example output is from the Txmode 11 Rxmode 4 image output. At this point, the image is ready to use in MATLAB or additional debug steps can be performed. To log into the image, the username and password are ``UN: root 
+-  Wait for the build to boot completely by checking the Putty terminal window. The putty window shows the progress of the Linux image booting. Wait for the login prompt as shown at the bottom. |image3| This example output is from the Txmode 11 Rxmode 4 image output. At this point, the image is ready to use in MATLAB or additional debug steps can be performed. To log into the image, the username and password are ``UN: root
    PW: analog``
 -  At this point the FPGA has booted and all of the blue PLL lights should be illuminated. The FPGA is ready to be controlled from MATLAB or from IIO Oscilloscope.
 -  To work in IIO Oscilloscope, open IIO Oscilloscope and use the GUI
@@ -252,7 +252,7 @@ The control interface for the Quad-MxFE is implemented using standard system obj
 
    >> tx = adi.QuadMxFE.Tx()
 
-   tx = 
+   tx =
 
      adi.QuadMxFE.Tx with properties:
 
@@ -289,7 +289,7 @@ The control interface for the Quad-MxFE is implemented using standard system obj
 
    >> rx = adi.QuadMxFE.Rx()
 
-   rx = 
+   rx =
 
      adi.QuadMxFE.Rx with properties:
 
@@ -410,7 +410,7 @@ This script is to be used with the Analog Devices Quad-MxFE Platform to demonstr
 
 The output of this script are a few pFIR configuration files with a filename, for example ``QuadMxFE_DualReal_CH0and1_3.2GHz.cfg``, for all the Rx channels. Additionally, many figures are plotted to aid with system analysis:
 
-| **Figure 1**: The Tx phase-alignment results are shown using the pulsed baseband waveform in which only one Tx channel is output at a time but still uses the same Tx waveform matrix. After combining all the Tx channels however using the 16Tx/16Rx Calibration Board, and then injecting this signal into the first Rx channel of each MxFE (Rx0, Rx4, Rx8, and Rx12), the :adi:`ADF4371` phases are adjusted to ensure that the pulse phases of Tx0, Tx4, Tx8, and Tx12 are aligned. The top plots show the time response of received pulse trains, whereas the bottom plots show the cross-correlation of these signals with respect to Rx0.
+**Figure 1**: The Tx phase-alignment results are shown using the pulsed baseband waveform in which only one Tx channel is output at a time but still uses the same Tx waveform matrix. After combining all the Tx channels however using the 16Tx/16Rx Calibration Board, and then injecting this signal into the first Rx channel of each MxFE (Rx0, Rx4, Rx8, and Rx12), the :adi:`ADF4371` phases are adjusted to ensure that the pulse phases of Tx0, Tx4, Tx8, and Tx12 are aligned. The top plots show the time response of received pulse trains, whereas the bottom plots show the cross-correlation of these signals with respect to Rx0.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/pll_phase_alignment_results.png
    :width: 800px
@@ -464,24 +464,24 @@ The test setup is the same as that used for the QuadMxFE_SystemAlignmentFIR.m sc
 
 The output of this script includes a .mat file containing the script execution results with a filename dependent on the system configuration and date of execution; for example 3.2GHz_AlignADF4371s_1_AlignPLLRxs_0_1.9531MHzOffset_14_56_24\__11_11_2020.mat. Additionally, many figures are plotted to aid with system analysis:
 
-| **Figure 1**: The :adi:`ADF4371` PLL/synthesizer calibration results are shown on the top-left two plots, showing the alignment of each zeroth Tx channel on each MxFE in the platform. The two right plots show the time domain data capture after injecting a CW tone into each Tx channel, the corresponding normalized cross-correlation for each Rx channel after calibration, the FFT of that time domain capture, and the combined 16-channel FFT showing the improved noise floor performance.
+**Figure 1**: The :adi:`ADF4371` PLL/synthesizer calibration results are shown on the top-left two plots, showing the alignment of each zeroth Tx channel on each MxFE in the platform. The two right plots show the time domain data capture after injecting a CW tone into each Tx channel, the corresponding normalized cross-correlation for each Rx channel after calibration, the FFT of that time domain capture, and the combined 16-channel FFT showing the improved noise floor performance.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/mcs_1.jpg
    :align: center
 
-| **Figure 2**: The Tx phase-alignment results are shown using the pulsed baseband waveform in which only one Tx channel is output at a time but still uses the same Tx waveform matrix. After combining all the Tx channels however using the 16Tx/16Rx Calibration Board, and then injecting this signal into the first Rx channel of each MxFE (Rx0, Rx4, Rx8, and Rx12), the :adi:`ADF4371` phases are adjusted to ensure that the pulse phases of Tx0, Tx4, Tx8, and Tx12 are aligned. The top plots show the time response of received pulse trains, whereas the bottom plots show the cross-correlation of these signals with respect to Rx0.
+**Figure 2**: The Tx phase-alignment results are shown using the pulsed baseband waveform in which only one Tx channel is output at a time but still uses the same Tx waveform matrix. After combining all the Tx channels however using the 16Tx/16Rx Calibration Board, and then injecting this signal into the first Rx channel of each MxFE (Rx0, Rx4, Rx8, and Rx12), the :adi:`ADF4371` phases are adjusted to ensure that the pulse phases of Tx0, Tx4, Tx8, and Tx12 are aligned. The top plots show the time response of received pulse trains, whereas the bottom plots show the cross-correlation of these signals with respect to Rx0.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/mcs_2.jpg
    :align: center
 
-| **Figure 3**: If attached, Figure 3 shows the 16Tx/16Rx Calibration Board's adjacent loopback performance.
+**Figure 3**: If attached, Figure 3 shows the 16Tx/16Rx Calibration Board's adjacent loopback performance.
 
-| **Figure 4**: A full I/Q band chirp signal is injected into each Tx channel and a corresponding data capture is performed. Then a single-frequency CW signal is injected into each Tx channel and a corresponding data capture is performed. The left side of the figure shows the individual time domain and frequency domain results, as well as the combined Rx performance. The right side shows similar results for the single-frequency CW signal.
+**Figure 4**: A full I/Q band chirp signal is injected into each Tx channel and a corresponding data capture is performed. Then a single-frequency CW signal is injected into each Tx channel and a corresponding data capture is performed. The left side of the figure shows the individual time domain and frequency domain results, as well as the combined Rx performance. The right side shows similar results for the single-frequency CW signal.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/mcs_3.jpg
    :align: center
 
-| **Figure 5**: The MCS results from running the script are shown. The left-most plot shows the comparison between the new (solid dots) and baseline (open circles) Rx NCO phase offsets. The second-from-the-left plot shows the comparison between the new (solid dots) and baseline (open circles) Tx NCO phase offsets. If MCS is functioning as expected the solid dots should be inside the open circles. The second-from-the-right plot shows the phase adjustment applied to each :adi:`ADF4371` PLL/synthesizer IC on the system and the corresponding thermal gradients measured for each MxFE and PLL chip. The right-most plot shows the SYSREF phase stability at different portions of the script's execution.
+**Figure 5**: The MCS results from running the script are shown. The left-most plot shows the comparison between the new (solid dots) and baseline (open circles) Rx NCO phase offsets. The second-from-the-left plot shows the comparison between the new (solid dots) and baseline (open circles) Tx NCO phase offsets. If MCS is functioning as expected the solid dots should be inside the open circles. The second-from-the-right plot shows the phase adjustment applied to each :adi:`ADF4371` PLL/synthesizer IC on the system and the corresponding thermal gradients measured for each MxFE and PLL chip. The right-most plot shows the SYSREF phase stability at different portions of the script's execution.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/mcs_4.jpg
    :align: right

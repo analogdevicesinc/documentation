@@ -116,8 +116,6 @@ In case there is a communication problem with the board the follwing actions can
 -  In uC-Probe refresh the symbols file by right-clicking on the **System Browser** window and selecting **Refresh Symbols**.
 -  If the communication problem persists even after performing the previous steps, restart the uC-Probe application and try to run the interface again.
 
-.. _more-information-1:
-
 More information
 ================
 

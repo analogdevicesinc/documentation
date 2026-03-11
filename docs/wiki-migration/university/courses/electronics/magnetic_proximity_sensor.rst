@@ -16,15 +16,7 @@ The 100 μH inductor contained in the ADALP2000 Analog Parts Kit can be used to 
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 4 100 Ω resistors
-| 1 100 uH inductor 1 AD22151 magnetic field transducer
-| 2 470 Ω resistors
-| 1 100 kΩ resistor
-| 1 0.1 uF capacitor
-| 1 10 uF capacitor
-| 1 200 kΩ resistor 1 LED
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 4 100 Ω resistors 1 100 uH inductor 1 AD22151 magnetic field transducer 2 470 Ω resistors 1 100 kΩ resistor 1 0.1 uF capacitor 1 10 uF capacitor 1 200 kΩ resistor 1 LED
 
 Hardware setup
 --------------

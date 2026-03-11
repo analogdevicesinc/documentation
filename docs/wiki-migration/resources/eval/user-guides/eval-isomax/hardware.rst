@@ -11,9 +11,6 @@ The **EVAL-ISOMAX** is an integrated dual isoSPI adapter and microcontroller boa
 
 The EVAL-ISOMAX also features reversible isoSPI, which enables a redundant path to the peripheral units. The PCB components and DuraClik connectors are optimized for low electromagnetic interference (EMI) susceptibility and emissions.
 
-
-| 
-
 Hardware Setup when using EVAL-ISOMAX as a Standalone MCU with Other BMS Boards
 -------------------------------------------------------------------------------
 
@@ -21,9 +18,8 @@ This section describes the procedure for establishing hardware connection betwee
 
 Before you proceed with the system setup, make sure you have the following:
 
-|
-
-| ==== Equipment Needed ====
+Equipment Needed
+~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
@@ -48,31 +44,28 @@ Before you proceed with the system setup, make sure you have the following:
 -  ► Digital power supply (such as the Keysight e3631A 0 V to 6 V power supply)
 -  ► 2x wall plugs (to plug USB cable from DC2472A to provide power)
 
-| 
-| ==== Software Needed ====
+Software Needed
+~~~~~~~~~~~~~~~
 
 .. container:: indent
 
    The BMS Broadmarket Browser GUI is a PC browser-based graphical user interface (GUI) tool designed to work in conjunction with the ADI Broad Market BMS devices.
 
+   
+   **MyAnalog.com account is required in downloading the BMS Browser GUI** from below link:
 
-   | **MyAnalog.com account is required in downloading the BMS Browser GUI** from below link:
-
-
-|
 
 .. admonition:: Download
    :class: download
 
    :adi:`BMS Broad Market GUI <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
+   
+   When software updates or new versions of the software are available, an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.
 
-   | When software updates or new versions of the software are available, an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.
 
-
-|
-
-| ==== Programming the MCU using the MAX32625PICO Adapter ====
+Programming the MCU using the MAX32625PICO Adapter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
 
@@ -84,7 +77,7 @@ Before you proceed with the system setup, make sure you have the following:
 
 .. container:: indent
 
-   \**Follow these steps if the EVAL-ISOMAX is used as a standalone MCU: \*\*
+   **Follow these steps if the EVAL-ISOMAX is used as a standalone MCU:**
 
 
 -   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 MCU <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
@@ -100,23 +93,22 @@ Before you proceed with the system setup, make sure you have the following:
 -  Connect the EVAL-ISOMAX to the Host PC using a USB cable.
 -  A ``DAPLINK`` drive should appear in Windows Explorer.
 
-| 
-| === Uploading the EVAL-ISOMAX Firmware into the Broadmarket BMS Browser GUI Installer ===
+Uploading the EVAL-ISOMAX Firmware into the Broadmarket BMS Browser GUI Installer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Download and extract the `EVAL-ISOMAX folder <https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax.zip>`_ in the host PC.
 -  Copy and paste the entire **EVAL-ISOMAX folder** into the ``USB_TO_SPI directory`` inside the Broadmarket BMS GUI installation folder.
-   <fc #6495ed> **Location: C:\\Analog Devices\\BMS_Browser_GUI_Broadmarket-Rel2.0.0\\USB_TO_SPI_Firmware**\ </fc>
+   **Location: C:\\Analog Devices\\BMS_Browser_GUI_Broadmarket-Rel2.0.0\\USB_TO_SPI_Firmware**
 
    |image2|
 
--  Make sure that the copied folder contains the <fc #6495ed>\ **isomax32670-usb-to-spi.hex**\ </fc> file.
+-  Make sure that the copied folder contains the **isomax32670-usb-to-spi.hex** file.
 
 |image3|
 
 -  The EVAL-ISOMAX board is now ready to be used with the Broadmarket BMS Browser GUI. Refer to the next sections for procedure on how to set up the hardware for evaluation.
 
-| 
-| ----
+--------------
 
 Battery Cell Monitoring (EVAL-ISOMAX + EVAL-ADBMS6830BMSW)
 ----------------------------------------------------------
@@ -143,8 +135,6 @@ Check the :doc:`EVAL-ADBMS6830BMSW User Guide </wiki-migration/resources/eval/us
 -  Connect the 10-pin SWD debugger cable to port P12 of the EVAL-ISOMAX. Connect the other end of the SWD debugger cable to the MAX32625PICO. Observe correct polarity when connecting the SWD cable.
 -  Use the micro-USB to USB cable to connect the MAX32625PICO to the PC/Laptop.
 
-| 
-
 Testing the Setup
 ~~~~~~~~~~~~~~~~~
 
@@ -156,14 +146,14 @@ Testing the Setup
 
 |image4|
 
-   \* Upon launching, the **``Quick Measure``** tab will open. **Note:** this utility only supports a single BMS product in a daisy chain.
+-  Upon launching, the **``Quick Measure``** tab will open. **Note:** this utility only supports a single BMS product in a daisy chain.
    Click **``Start Quick Measure``** to begin measurements.
 
    |image5|
 
-   \* Check the Total PEC Status on the 3rd row under the Memory Map. This indicates the status of the isoSPI link between the EVAL-ISOMAX and the EVAL-ADBMS6830BMSW.
+-  Check the Total PEC Status on the 3rd row under the Memory Map. This indicates the status of the isoSPI link between the EVAL-ISOMAX and the EVAL-ADBMS6830BMSW.
 
-   -  Ensure the EVAL-ADBMS6830BMSW board is powered correctly, indicated by the <fc #6495ed>Blue LED</fc> on the DC2472A emulator board being illuminated.
+   -  Ensure the EVAL-ADBMS6830BMSW board is powered correctly, indicated by the Blue LED on the DC2472A emulator board being illuminated.
 
       -  Verify the connection of the twisted cable between the EVAL-ISOMAX and the EVAL-ADBMS6830BMSW.
 
@@ -181,8 +171,6 @@ Testing the Setup
 
 Battery Pack Monitoring (EVAL-ISOMAX + EVAL-ADBMS2950-BASIC)
 ------------------------------------------------------------
-
-.. _hardware-connection-1:
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
@@ -204,10 +192,6 @@ Hardware Connection
 -  Attach the MAX32625PICO programmer to the EVAL-ISOMAX using the 10-pin ribbon SWD cable. Observe correct polarity when connecting the SWD cable.
 -  Connect one end of the USB cable to EVAL-ISOMAX (P15) and the other end to the host PC.
 
-| 
-
-.. _testing-the-setup-1:
-
 Testing the Setup
 ~~~~~~~~~~~~~~~~~
 
@@ -219,18 +203,14 @@ Testing the Setup
 
 |image8|
 
-   \* Upon launching, the **``Quick Measure``** tab will open. **Note:** it can only handle one BMS product in a Daisy Chain.
+-  Upon launching, the **``Quick Measure``** tab will open. **Note:** it can only handle one BMS product in a Daisy Chain.
    Click **``Start Quick Measure``** to begin measurements.
 -  Check the Total PEC Status on the Memory Map. It should reflect **true**, indicating a successful isoSPI link between the EVAL-ISOMAX and the EVAL-ADBMS2950-BASIC. If false, there is an error in the signal chain.
-
-| 
 
 Complete Daisy Chain
 --------------------
 
 Once familiar with the setup for each of the individual boards the entire signal chain can be verified.
-
-.. _hardware-connection-2:
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
@@ -247,19 +227,19 @@ Hardware Connection
 -  Attach the MAX32625PICO programmer to the EVAL-ISOMAX using the 10-pin ribbon SWD cable. Observe correct polarity when connecting the SWD cable.
 -  Connect one end of the USB cable to EVAL-ISOMAX (P2) and the other end to the host PC.
 
-| 
-| ==== Testing the Setup ====
+Testing the Setup
+~~~~~~~~~~~~~~~~~
 
 -  Launch the BMS Browser GUI following the previous instructions and choose the appropriate **COM port** associated to the EVAL-ISOMAX.
 -  Set up the **``Daisy Chain``** according to the diagram provided. The EVAL-ADBMS2950-BASIC is positioned at the top, indicating it is the initial device on the chain. The first EVAL-ADBMS6830BMSW connects to the EVAL-ADBMS2950-BASIC, while the second EVAL-ADBMS6830BMSW is linked to the first one via the isoSPI cable.
 
 |image10|
 
-   \* Click on the **``Launch``** button to initiate the GUI. After the GUI launches in the browser, go to the **``Sequences``** tab located in the top toolbar, this will open the **Sequence Configuration** page.
+-  Click on the **``Launch``** button to initiate the GUI. After the GUI launches in the browser, go to the **``Sequences``** tab located in the top toolbar, this will open the **Sequence Configuration** page.
 
-   |image11|
+|image11|
 
-   \* In the **``Files``**, select **ADBMS6830-ADBMS2950.json**. This action will load a preconfigured sequence into the tool.
+-  In the **``Files``**, select **ADBMS6830-ADBMS2950.json**. This action will load a preconfigured sequence into the tool.
 
    -   Click on **``Initialization Sequence``** followed by **``General Initialization``** under the **``Sequences``** column to load the defined sequences from the **ADBMS6830-ADBMS2950.json** file into the tool.
 
@@ -271,7 +251,7 @@ Hardware Connection
 
 |image12|
 
-   \* The **``Plots``** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to four plots simultaneously.
+-  The **``Plots``** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to four plots simultaneously.
    In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EVAL-ADBMS6830BMSW as Device 2, and the third EVAL-ADBMS6830BMSW as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages for the first EVAL-ADBMS6830MSW on Plot 2, and the averaged cell voltages for the third EVAL-ADBMS6830BMSW on Plot 3.
    Simply choose the desired Plot number from the dropdown menu under each device to display the relevant data.
 
@@ -279,18 +259,14 @@ Hardware Connection
 
    |image14|
    |image15|
-   \* Plot settings can be saved to the PC to be reloaded for future session to save time.
-
-   | 
-|
+-  Plot settings can be saved to the PC to be reloaded for future session to save time.
 
 .. tip::
 
    The EVAL-ISOMAX comes complete and easy-to-use application GUI. Access the software resources and see the setup procedure in the :doc:`EVAL-ISOMAX Software User Guide </wiki-migration/resources/eval/user-guides/eval-isomax/software>`.
 
 
-| 
-| ----
+--------------
 
 Hardware Setup when using EVAL-ISOMAX as a Secondary Device to Other MCU Boards
 -------------------------------------------------------------------------------
@@ -299,8 +275,8 @@ This section describes how to configure EVAL-ISOMAX as a secondary device to ano
 
 Before you proceed with the system setup, make sure you have the following:
 
-| 
-| ==== Equipment Needed ====
+Equipment Needed
+~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
@@ -326,28 +302,25 @@ Before you proceed with the system setup, make sure you have the following:
 -  ► Digital power supply (such as the Keysight e3631A 0 V to 6 V power supply)
 -  ► 2x wall plugs (to plug USB cable from DC2472A to provide power)
 
-| 
-| ==== Software Needed ====
+Software Needed
+~~~~~~~~~~~~~~~
 
 .. container:: indent
 
    The BMS Browser is a PC browser based Graphical User Interface (GUI) tool designed to work in conjunction with the Broad Market BMS devices. **MyAnalog.com account is required in downloading the BMS Browser GUI** from below link:
 
 
-|
-
 .. admonition:: Download
    :class: download
 
    :adi:`BMS Broad Market GUI <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
+   
+   When software updates or new versions of the software are available an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.
 
-   | When software updates or new versions of the software are available an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.
 
-
-|
-
-| ==== MCU Configuration ====
+MCU Configuration
+~~~~~~~~~~~~~~~~~
 
 .. important::
 
@@ -357,11 +330,11 @@ Before you proceed with the system setup, make sure you have the following:
    Make sure that you have downloaded and installed the BMS Browser GUI to the host PC before programming the MCU.
 
 
-<WRAP indent>
+
 
 .. container:: indent
 
-   **<fc #6495ed>Follow these instructions if the** :adi:`AD-APARD32690-SL` **is used as the main controller board:</fc>**
+   **Follow these instructions if the** :adi:`AD-APARD32690-SL` **is used as the main controller board:**
 
 
 -   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32690 MCU <raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`
@@ -375,29 +348,22 @@ Before you proceed with the system setup, make sure you have the following:
 -  A DAPLINK drive should appear in Windows Explorer.
 -  Locate the firmware HEX file to be programmed on the MCU board in the installation folder of the BMS Browser GUI Broadmarket.
    Location: **C:\\Analog Devices\\BMS_Browser_GUI_Broadmarket-Rel2.0.0\\USB_TO_SPI_Firmware**
--  Drag and drop the <fc #6495ed>\ **usb-to-spi-max32690.hex**\ </fc> file to the DAPLINK drive to flash the firmware needed by the BMS Browser GUI.
+-  Drag and drop the **usb-to-spi-max32690.hex** file to the DAPLINK drive to flash the firmware needed by the BMS Browser GUI.
 -  A normal copy progress dialog will appear. Once the progress bar is completed, the dialog window will close, and the DAPLINK drive will reconnect.
 -  Check the DAPLINK directory and make sure there is no **FAIL.TXT** file. In case there is, repeat the drag and drop step. Otherwise, the MAX32625PICO can now be disconnected from the AD-APARD32690-SL, since the firmware update is complete.
 
-| 
-|
-
 .. container:: indent
 
-   **<fc #6495ed>Follow these steps if the** :adi:`SDP-K1` **is used as the main controller board:</fc>**
+   **Follow these steps if the** :adi:`SDP-K1` **is used as the main controller board:**
 
 
 -  Connect the SDP-K1 microcontroller board to the host PC using a USB cable.
 -  Locate the firmware HEX file to be programmed on the MCU board in the installation folder of the BMS Browser GUI Broadmarket.
    Location: **C:\\Analog Devices\\BMS_Browser_GUI_Broadmarket-Rel2.0.0\\USB_TO_SPI_Firmware**
--  Drag and drop the <fc #6495ed>\ **SDP_K1_PyBMS_USB_TO_SPI_Bytes_Debug_USB_Port.hex**\ </fc> file onto the corresponding SDP-K1 drive to update the firmware.
-
-| 
+-  Drag and drop the **SDP_K1_PyBMS_USB_TO_SPI_Bytes_Debug_USB_Port.hex** file onto the corresponding SDP-K1 drive to update the firmware.
 
 Battery Cell Monitoring
 -----------------------
-
-.. _hardware-connection-3:
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
@@ -447,9 +413,8 @@ Check the :doc:`EVAL-ADBMS6830BMSW User Guide </wiki-migration/resources/eval/us
    -  Connect the 10-pin SWD debugger cable to the AD-APARD32690-SL (or SDP-K1).
    -  Connect the other end of the SWD debugger to the MAX32625PICO.
 
-|
-
-| ==== Testing the Setup ====
+Testing the Setup
+~~~~~~~~~~~~~~~~~
 
 -  **Open the BMS Browser GUI**.
 -  **Select the COM Port**:
@@ -479,13 +444,10 @@ Check the :doc:`EVAL-ADBMS6830BMSW User Guide </wiki-migration/resources/eval/us
    -  Monitor the voltage channels on the **``Quick Measure Utility``** graph.
    -  Select which signals to display on the graph under the **``Plot All Devices``** column.
 
-| 
-| ----
+--------------
 
 Battery Pack Monitoring
 -----------------------
-
-.. _hardware-connection-4:
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
@@ -518,11 +480,8 @@ Hardware Connection
    5. **Connect to PC**:
    
    -  Use a USB cable to connect the AD-APARD32690-SL (or SDP-K1) to the host PC.
-
    
-   | 
 
-.. _testing-the-setup-2:
 
 Testing the Setup
 ~~~~~~~~~~~~~~~~~
@@ -547,17 +506,17 @@ Testing the Setup
 
    -  Verify the Total PEC Status on the Memory Map. It should reflect true, indicating a successful isoSPI link between the EVAL-ISOMAX and the EVAL-ADBMS2950-BASIC. If it shows false, there is an error in the signal chain.
 
-|
+Complete Daisy Chain
+--------------------
 
-| ===== Complete Daisy Chain ===== Once familiar with the setup for each of the individual boards the entire signal chain can be verified.
-
-.. _hardware-connection-5:
+Once familiar with the setup for each of the individual boards the entire signal chain can be verified.
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
-| 
-| |image16|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/daisychain_with_isomax_and_apard.png
+   :align: center
+   :width: 1000px
 
 -  Connect the hardware using the DuraClik isoSPI cables.
 -  Power each DC2472A using a 5 V external source connected to J1 through the USB cable.
@@ -567,8 +526,8 @@ Hardware Connection
 -  Attach the MAX32625PICO to the AD-APARD32690-SL (or SDP-K1 if this is used) using the 10-pin ribbon SWD cable. Observe correct polarity when connecting the SWD cable.
 -  Connect a USB cable to the AD-APARD32690-SL (or SDP-K1 if this is used) and the other end of the cable to the host PC.
 
-| 
-| ==== Testing the Setup ====
+Testing the Setup
+~~~~~~~~~~~~~~~~~
 
 -  Launch the BMS Browser GUI following the previous instructions.
 
@@ -577,13 +536,13 @@ Hardware Connection
 -  Set up the **``Daisy Chain``** according to the diagram provided. The EVAL-ADBMS2950-BASIC is positioned at the top, indicating it is the initial device on the chain. The first EVAL-ADBMS6830BMSW connects to the EVAL-ADBMS2950-BASIC, while the second EVAL-ADBMS6830BMSW is linked to the first one via the isoSPI cable.
 
 
+|image16|
+
+-  Click on **``Launch``** to initiate the GUI. After the GUI launches in the Browser, go to the **``Sequences``** tab located in the top toolbar, which will open the *Sequence Configuration* page.
+
 |image17|
 
-   \* Click on **``Launch``** to initiate the GUI. After the GUI launches in the Browser, go to the **``Sequences``** tab located in the top toolbar, which will open the *Sequence Configuration* page.
-
-   |image18|
-
-   \* In the **``Files``** column, select **ADBMS6830-ADBMS2950.json**. This action will load a preconfigured sequence into the tool.
+-  In the **``Files``** column, select **ADBMS6830-ADBMS2950.json**. This action will load a preconfigured sequence into the tool.
 
    -   Click on **``Initialization Sequence``** followed by **``General Initialization``** under the **``Sequences``** column to load the defined sequences from the **ADBMS6830-ADBMS2950.json** file into the tool.
 
@@ -593,27 +552,24 @@ Hardware Connection
 -  During free run mode, the Initialization Sequence is performed once initially. Subsequently, the loop sequence continues to run continuously until the **``Stop Freerun``** button is clicked.
 -  After activating freerun mode, navigate to the **``Memory Map``** tab. This section displays a numerical representation of the ongoing command loop. Additional details can be accessed in the GUI's help section. The accompanying screenshot illustrates this output.
 
-|image19|
+|image18|
 
-   \* The **``Plots``** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to four plots simultaneously.
+-  The **``Plots``** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to four plots simultaneously.
    In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EVAL-ADBMS6830BMSW as Device 2, and the third EVAL-ADBMS6830BMSW as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages for the first EVAL-ADBMS6830BMSW on Plot 2, and the averaged cell voltages for the third EVAL-ADBMS6830BMSW on Plot 3.
    Simply choose the desired Plot number from the dropdown menu under each device to display the relevant data.
 
+   |image19|
+
    |image20|
-
    |image21|
-   |image22|
-   \* Plot settings can be saved to the PC to be reloaded for future session to save time.
-
-   | 
-|
+-  Plot settings can be saved to the PC to be reloaded for future session to save time.
 
 .. tip::
 
    The EVAL-ISOMAX comes complete and easy-to-use application GUI. Access the software resources and see the setup procedure in the :doc:`EVAL-ISOMAX Software User Guide </wiki-migration/resources/eval/user-guides/eval-isomax/software>`.
 
 
-   | ----
+--------------
 
 Resources
 =========
@@ -626,9 +582,8 @@ Resources
 -  :doc:`EVAL-ADBMS6830BMSW User Guide </wiki-migration/resources/eval/user-guides/eval-adbms6830bmsw>`
 -  :doc:`EVAL-ADBMS2950-BASIC User Guide </wiki-migration/resources/eval/user-guides/eval-adbms2950-basic>`
 
-|
-
-| ==== Design and Integration Files ====
+Design and Integration Files
+----------------------------
 
 .. admonition:: Download
    :class: download
@@ -643,16 +598,18 @@ Resources
    
 
 
-| 
-| ==== Help and Support ==== For questions and more information, please visit the Analog Devices Engineer Zone.
+Help and Support
+----------------
+
+For questions and more information, please visit the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-| 
-| |Overview #:resources:eval:user-guides:eval-isomax:software|EVAL-ISOMAX Software User Guide#none|
+.. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/eval-isomax
+   :alt: Overview #:resources:eval:user-guides:eval-isomax:software|EVAL-ISOMAX Software User Guide#none
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
    :width: 200px
@@ -684,18 +641,15 @@ Resources
    :width: 2000px
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot3.png
    :width: 2000px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/daisychain_with_isomax_and_apard.png
-   :width: 1000px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_launch.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_launch.png
    :width: 2000px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_sequences.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_sequences.png
    :width: 2000px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_memory_map.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_memory_map.png
    :width: 2000px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot1.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot1.png
    :width: 2000px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot2.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot2.png
    :width: 2000px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot3.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot3.png
    :width: 2000px
-.. |Overview #:resources:eval:user-guides:eval-isomax:software|EVAL-ISOMAX Software User Guide#none| image:: /navigation #/resources/eval/user-guides/eval-isomax

@@ -36,16 +36,11 @@ Directions:
 
 It is assumed that the reader is somewhat familiar with the functionality and capabilities of the ADALM1000 hardware. For more on the ADALM1000 hardware please refer to the following documents:
 
-| :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` ( especially useful )
-| :doc:`ADALM1000 Voltmeter Tool </wiki-migration/university/tools/m1k/alice/voltmeter-users-guide>` ( for calibration procedure )
-| :doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>`
-| :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>`
-| :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>`
+:doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` ( especially useful ) :doc:`ADALM1000 Voltmeter Tool </wiki-migration/university/tools/m1k/alice/voltmeter-users-guide>` ( for calibration procedure ) :doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>` :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>` :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>`
 
 First a few notes on nomenclature used in this document:
 
-| CA-V refers to the Channel A voltage signal
-| CB-V refers to the Channel B voltage signal
+CA-V refers to the Channel A voltage signal CB-V refers to the Channel B voltage signal
 
 Screen Setup:
 -------------

@@ -42,8 +42,6 @@ This mode allows users to drag and drop (or copy and paste) a .BIN or .HEX [Inte
 
    -  Alternatively you could unplug the micro USB cable from the USB port (P5) of the EV-COG-AD3029LZ, and then reconnect it.
 
-| 
-
 Maintenance Drive
 -----------------
 
@@ -64,13 +62,8 @@ When the EV-COG-AD3029LZ emulator is connected to the MK20DX128VFM5 (by holding 
 
 -  Unplug the micro USB cable from the USB port of the EV-COG-AD3029LZ, and then reconnect the USB cable to the USB port to “reboot” the board.
 
-
-| 
-
 EV-COG-AD3029LZ Interface File Downloads
 ----------------------------------------
-
-|
 
 .. admonition:: Download
    :class: download

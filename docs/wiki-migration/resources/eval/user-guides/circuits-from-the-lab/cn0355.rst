@@ -51,23 +51,23 @@ How to Install the Evaluation Software
 
 |image1|
 
--  Click **"Next"** to view the installation review page
+   \* Click **"Next"** to view the installation review page
 
-|image2|
+   |image2|
 
--  Click **"Next"** to start the installation
+   \* Click **"Next"** to start the installation
 
-|image3|
+   |image3|
 
--  Upon completion of the installation of the `CN0355 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0355>`_, the installer for the **ADI SDP Drivers** will execute.\
+   \* Upon completion of the installation of the `CN0355 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0355>`_, the installer for the **ADI SDP Drivers** will execute.\
 
-|image4|
+   |image4|
 
--  Click **"Next"** to finish the installation.
+   \* Click **"Next"** to finish the installation.
 
-|image5|
+   |image5|
 
--  Click **“Next”** to set the installation location for the SDP Drivers.
+   \* Click **“Next”** to set the installation location for the SDP Drivers.
 
 .. tip::
 
@@ -80,18 +80,17 @@ How to Install the Evaluation Software
 | |image6|
 | \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software.
 | |image7|
-
--  Click **“Finish”** when done.
+| \* Click **“Finish”** when done.
 
 --------------
 
 STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 ----------------------------------------------------
 
-| 
-| |image8|
 
--  Plug the mini end of the USB cable into connector J1 of the :adi:`EVAL-SDP-CB1Z` and connect the other end of the USB cable into the Laptop or PC.
+| |image8|
+| \* Plug the mini end of the USB cable into connector J1 of the :adi:`EVAL-SDP-CB1Z` and connect the other end of the USB cable into the Laptop or PC.
+
 -  Connect the 120-pin connector of the :adi:`SDP-PMD-IB1Z` circuit board to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board. Nylon hardware should be used to firmly secure the two boards, using the holes provided at the ends of the 120-pin connectors.
 -  Populate a jumper across JP1 to give +3.3V voltage out in PMOD terminal as seen in the label found in :adi:`SDP-PMD-IB1Z`.
 -  Connect the 12-pin right angle male pin header of :adi:`EVAL-CN0355-PMDZ` to the 12-pin right angle female pin header of :adi:`SDP-PMD-IB1Z`.
@@ -104,7 +103,7 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
    \ **NOTE:** jumper pin configuration to set up the RTD sensor can be seen at the back of :adi:`EVAL-CN0355-PMDZ` eval board.
 
 
--  Connect the Pressure transducer in P1 of :adi:`EVAL-CN0355-PMDZ`.
+- Connect the Pressure transducer in P1 of :adi:`EVAL-CN0355-PMDZ`.
 -  Set P5, P6 and P7 jumper configuration to the desired Bridge type transducer voltage drive
 
 .. tip::
@@ -112,14 +111,14 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
    \ **NOTE:** jumper pin configuration to set up the Bridge type transducer voltage drive can be seen at the back of :adi:`EVAL-CN0355-PMDZ` eval board.
 
 
--  Plug in the wall wart and connect it to connector P8 of the :adi:`EVAL-CN0355-PMDZ`.
+- Plug in the wall wart and connect it to connector P8 of the :adi:`EVAL-CN0355-PMDZ`.
 
 --------------
 
 RTD AND BRIDGE TYPE TRANSDUCER INTERFACING DIAGRAM
 --------------------------------------------------
 
-| 
+
 | |image9|
 | \* Interface the RTD and Bridge type transducer to the :adi:`EVAL-CN0355-PMDZ` as shown in the diagram above.
 
@@ -128,7 +127,7 @@ RTD AND BRIDGE TYPE TRANSDUCER INTERFACING DIAGRAM
 OPENING AND ENABLING THE EVALUATION SOFTWARE
 --------------------------------------------
 
-| 
+
 | |image10|
 | \* Launch the executable found at **C:\\Program Files\\Analog Devices\\CN0355**.
 
@@ -140,7 +139,7 @@ OPENING AND ENABLING THE EVALUATION SOFTWARE
 STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
 ------------------------------------------------------
 
-| 
+
 | |image11|
 | Below are the list of available software controls grouped according to their location in the software GUI:
 
@@ -164,7 +163,7 @@ STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
    \ **NOTE:** The chosen calibration settings will be enabled for configuration and the other calibration will be disabled and greyed out.
 
 
--  **2 – Point Calibration** – This button defines the values of the parameters to be used to calculate for the pressure read by the transducer using two data points calibration system without temperature compensation.
+- **2 – Point Calibration** – This button defines the values of the parameters to be used to calculate for the pressure read by the transducer using two data points calibration system without temperature compensation.
 
          -  **Voltage Drive** – Defines the voltage use to drive the bridge type transducer.
 
@@ -180,8 +179,7 @@ STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
    \ **NOTE:** This information can be found in the transducer `datasheet <http://sensing.honeywell.com/product%20page?pr_id=141960>`_\
 
 
--  **4 – Point Calibration** – This button defines the values of the parameters to be used to calculate for the pressure read by the transducer using four data points calibration system with temperature compensation.
-
+- **4 – Point Calibration** – This button defines the values of the parameters to be used to calculate for the pressure read by the transducer using four data points calibration system with temperature compensation.
          -  **Pressure 1** – define the first pressure value point.
          -  **Pressure 2** – define the second pressure value point.
          -  **Pressure Full Scale** – define the maximum operating pressure range.
@@ -212,7 +210,7 @@ CALIBRATION PROCEDURE
 ---------------------
 
 | This section explains the steps required to properly calibrate the :adi:`EVAL-CN0355-PMDZ`.
-|
+
 
 .. tip::
 
@@ -229,25 +227,13 @@ CALIBRATION PROCEDURE
    -  All units is in PSI
    -  Sensitivity is usually found in the datasheet of the transducer to be used.
    
-   |
+
 
 
 | **2 – Point Calibration**
-| **Step 1** - Set the voltage use to drive the transducer.
-| **Step 2** - Set the minimum and maximum operating range of the sensor in PSI.
-| **Step 3** - Set the sensitivity of the transducer that will be used.
-| **Step 4** - Go to Data Graph panel to view the measurement.
-
+| **Step 1** - Set the voltage use to drive the transducer. **Step 2** - Set the minimum and maximum operating range of the sensor in PSI. **Step 3** - Set the sensitivity of the transducer that will be used. **Step 4** - Go to Data Graph panel to view the measurement.
 | **4 – Point Calibration**
-| **Step 1** - Define any two known pressure points where the calibration condition will be done and where the 4 – points will define.
-| **Step 2** - Set the temperature chamber at temp 1.
-| **Step 3** - Under the options on Pressure Setting, choose ‘Pressure 1 @ temp 1’ while the pressure at the chamber is set to the stated value in Pressure 1.
-| **Step 4** - Click ‘Set Calibration Point @ temp 1’ button to read the voltage generated by the transducer and the temperature voltage generated across the RTD.
-| **Step 5** - Set the chamber pressure to the stated value in Pressure 2 and then choose ‘Pressure 2 @ temp 1’ under the options on Pressure Setting.
-| **Step 6** - Click ‘Set Calibration Point @ temp 1’ button to read the voltage generated by the transducer and the temperature voltage generated across the RTD.
-| **Step 7** - Click ‘Set Calibration Point @ temp 1’ button to read the voltage generated by the transducer.
-| **Step 8** - Set the temperature chamber at temp 2.
-| **Step 9** - Do Step 3 to Step 7 under column Temperature 2.
+| **Step 1** - Define any two known pressure points where the calibration condition will be done and where the 4 – points will define. **Step 2** - Set the temperature chamber at temp 1. **Step 3** - Under the options on Pressure Setting, choose ‘Pressure 1 @ temp 1’ while the pressure at the chamber is set to the stated value in Pressure 1. **Step 4** - Click ‘Set Calibration Point @ temp 1’ button to read the voltage generated by the transducer and the temperature voltage generated across the RTD. **Step 5** - Set the chamber pressure to the stated value in Pressure 2 and then choose ‘Pressure 2 @ temp 1’ under the options on Pressure Setting. **Step 6** - Click ‘Set Calibration Point @ temp 1’ button to read the voltage generated by the transducer and the temperature voltage generated across the RTD. **Step 7** - Click ‘Set Calibration Point @ temp 1’ button to read the voltage generated by the transducer. **Step 8** - Set the temperature chamber at temp 2. **Step 9** - Do Step 3 to Step 7 under column Temperature 2.
 
 Registration
 ------------

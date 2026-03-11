@@ -47,13 +47,7 @@ The OP97 amplifier has a pin ( pin 5 ) which allows the user to connect an exter
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solderless breadboard and jumper wires
-| 1 – OP97 op-amp
-| 1 – 100 KΩ resistor
-| 1 – 47 KΩ resistor
-| 2 – 100 Ω resistors
-| Various other op-amps from parts kit
+ADALM1000 hardware module Solderless breadboard and jumper wires 1 – OP97 op-amp 1 – 100 KΩ resistor 1 – 47 KΩ resistor 2 – 100 Ω resistors Various other op-amps from parts kit
 
 Directions:
 ~~~~~~~~~~~
@@ -104,15 +98,6 @@ Note: the ADTL082 amplifier requires a minimum of 8 volts for the power supply a
 
 Here is a good technical paper on how to make :adi:`Simple Op Amp Measurements <en/analog-dialogue/articles/simple-op-amp-measurements.html>`.
 
-| :adi:`OP97 datasheet <media/en/technical-documentation/data-sheets/OP97.pdf>`
-| :adi:`OP27 datasheet <media/en/technical-documentation/data-sheets/OP27.pdf>`
-| :adi:`OP37 datasheet <media/en/technical-documentation/data-sheets/OP37.pdf>`
-| :adi:`OP484 datasheet <media/en/technical-documentation/data-sheets/OP184_284_484.pdf>`
-| :adi:`OP482 datasheet <media/en/technical-documentation/data-sheets/OP282_482.pdf>`
-| :adi:`AD8541 datasheet <media/en/technical-documentation/data-sheets/AD8541_8542_8544.pdf>`
-| :adi:`ADTL082 datasheet <media/en/technical-documentation/data-sheets/ADTL082_084.pdf>`
-| :adi:`MT-033 <media/en/training-seminars/tutorials/MT-033.pdf>`
-| :adi:`MT-045 <media/en/training-seminars/tutorials/MT-045.pdf>`
-| `Gain-Bandwidth Product <https://en.wikipedia.org/wiki/Gain%E2%80%93bandwidth_product>`_
+:adi:`OP97 datasheet <media/en/technical-documentation/data-sheets/OP97.pdf>` :adi:`OP27 datasheet <media/en/technical-documentation/data-sheets/OP27.pdf>` :adi:`OP37 datasheet <media/en/technical-documentation/data-sheets/OP37.pdf>` :adi:`OP484 datasheet <media/en/technical-documentation/data-sheets/OP184_284_484.pdf>` :adi:`OP482 datasheet <media/en/technical-documentation/data-sheets/OP282_482.pdf>` :adi:`AD8541 datasheet <media/en/technical-documentation/data-sheets/AD8541_8542_8544.pdf>` :adi:`ADTL082 datasheet <media/en/technical-documentation/data-sheets/ADTL082_084.pdf>` :adi:`MT-033 <media/en/training-seminars/tutorials/MT-033.pdf>` :adi:`MT-045 <media/en/training-seminars/tutorials/MT-045.pdf>` `Gain-Bandwidth Product <https://en.wikipedia.org/wiki/Gain%E2%80%93bandwidth_product>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

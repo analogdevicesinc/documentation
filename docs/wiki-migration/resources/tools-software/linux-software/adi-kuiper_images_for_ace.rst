@@ -82,7 +82,7 @@ Cora Z7
 
 .. raw:: html
 
-   <details><summary>Older Releases, Zedboard(Click to expand)</summary>
+   <details><summary>Older Releases, Zedboard(Click to expand)
 
 .. admonition:: Download
    :class: download

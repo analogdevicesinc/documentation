@@ -4,9 +4,15 @@ Lab 2: Steering Angle
 Training Objective
 ------------------
 
-| 
-| In this lab, we’ll explore the relationship between the element to element phase shift and the resulting electrical steering angle
-| ==== Instructions ==== 1- Open the file "cn0566_gui.py" in the Thonny IDE (This guide uses the Thonny IDE, but the file should run on other IDEs as well) |image1|
+In this lab, we’ll explore the relationship between the element to element phase shift and the resulting electrical steering angle
+
+Instructions
+------------
+
+1- Open the file "cn0566_gui.py" in the Thonny IDE (This guide uses the Thonny IDE, but the file should run on other IDEs as well)
+
+
+|image1|
 
 2- Press the green “Run” button
 
@@ -38,7 +44,7 @@ Training Objective
 
 10- Move the Steering Angle slider bar again.
 
-\**11- Does the amplitude move in a predictable way? What do you think is happening? \*\*
+**11- Does the amplitude move in a predictable way? What do you think is happening?**
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/steeringangle_1.png
    :width: 600px

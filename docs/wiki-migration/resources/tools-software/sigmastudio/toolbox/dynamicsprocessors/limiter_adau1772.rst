@@ -1,15 +1,16 @@
 Limiter (ADAU1772)
 ==================
 
-| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| ----------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
 | The limiter in the ADAU1772 compares the input signal against the setting of the threshold to make adjustments to the output gain. When the input signal level is greater than or equal to the threshold level, the output gain is set to the 'Min Gain' gain setting. When the input signal level is less than the threshold setting, the output gain is set to the 'Max Gain' gain setting. The rate of gain change between the Min and Max settings is determined by the 'Attack' and 'Decay' parameters. | |limiter1.png| |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
 
 | 
-|
+
 
 .. important::
 
@@ -20,11 +21,13 @@ Limiter (ADAU1772)
 
    In order to use the limiter on the ADAU1772 the 'Limiter Enable' bit must set high.
 
-   | Core Enable register; address 0x000B; bit [1].
    
-   | In SigmaStudio this switch can be found in the Chip Control tab of the Hardware Configuration section of the project.
-   | |limiteren.png|
+   Core Enable register; address 0x000B; bit [1].
+   
+   In SigmaStudio this switch can be found in the Chip Control tab of the Hardware Configuration section of the project.
 
+   
+   |limiteren.png|
 
 Input Pins
 ----------

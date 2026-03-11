@@ -233,14 +233,15 @@ Ideally, if both inputs of an op amp are at exactly the same voltage, then the o
 
 
 -   Offset Voltage: The differential voltage which must be applied to the input of an op amp to produce zero output.
-   \* Ranges:
-   \* Chopper Stabilized / Auto-zeroed Op Amps:<1µV
-   \* General Purpose Precision Op Amps:50-500µV
-   \* Best Bipolar Op Amps:10-25µV
-   \* Best JFET Input Op Amps:100-1,000µV
-   \* High Speed Op Amps:100-2,000µV
-   \* Untrimmed CMOS Op Amps: 5,000 - 50,000µV
-   \* DigiTrim(tm) CMOS Op Amps: 100µV - 1,000µV
+-   Ranges:
+
+   -   Chopper Stabilized / Auto-zeroed Op Amps:<1µV
+   -   General Purpose Precision Op Amps:50-500µV
+   -   Best Bipolar Op Amps:10-25µV
+   -   Best JFET Input Op Amps:100-1,000µV
+   -   High Speed Op Amps:100-2,000µV
+   -   Untrimmed CMOS Op Amps: 5,000 - 50,000µV
+   -   DigiTrim(tm) CMOS Op Amps: 100µV - 1,000µV
 
 Chopper stabilized (also called auto-zero) op amps have a V\ :sub:`OS` which is less than 1 µV (examples, AD8538, AD8551, AD8571, AD8628, AD8630), and the best precision bipolar op amps (super-beta or bias stabilized) can have maximum offsets as low as 25 µV (OP177F). The very best trimmed JFET input types have about 100 µV of offset (AD8610B, AD8620B), and untrimmed CMOS op amps can range from 5 to 50 mV.
 
@@ -305,10 +306,10 @@ Many single op amps have pins available for optional offset null. To make use of
 
 
 -   Wiper connection may be to either +V\ :sub:`S` or -V\ :sub:`S` depending on the op amp.
-   \* Values for R\ :sub:`1` and R\ :sub:`2` depend on op amp, consult manufacturer's data sheet.
-   \* Use to null out the op amp input offset voltage, not the overall system offsets.
-   \* There may be high gain from offset pins to output - Keep them quiet!
-   \* Nulling offset causes increase in offset temperature coefficient, approximately 4 µV/°C for 1mV offset null for FET input amplifiers
+-   Values for R\ :sub:`1` and R\ :sub:`2` depend on op amp, consult manufacturer's data sheet.
+-   Use to null out the op amp input offset voltage, not the overall system offsets.
+-   There may be high gain from offset pins to output - Keep them quiet!
+-   Nulling offset causes increase in offset temperature coefficient, approximately 4 µV/°C for 1mV offset null for FET input amplifiers
 
 As was mentioned above, the offset drift of an op amp with temperature will vary with the setting of its offset adjustment. The internal adjustment terminals should therefore be used only to adjust the op amp's own offset, not to correct any system offset errors, since doing so would be at the expense of increased temperature drift. The drift penalty for a FET input op amp is in the order of 4 µV/°C for each millivolt of nulled offset voltage. It is generally better to control offset voltage by proper device/grade selection.
 
@@ -419,10 +420,10 @@ Ideally, no current flows into the input terminals of an op amp. In practice, th
 
 
 -   I\ :sub:`B` is a very variable parameter!
-   \* I\ :sub:`B` can vary from 60 fA(1 electron every 3 µs) to many µA, depending on the device.
-   \* Some structures have well-matched I\ :sub:`B`, others do not.
-   \* Some structures' I\ :sub:`B` varies little with temperature, but a JFET op amp's I\ :sub:`B` doubles with every 10°C rise in temperature.
-   \* Some structures have I\ :sub:`B` which may flow in either direction.
+-   I\ :sub:`B` can vary from 60 fA(1 electron every 3 µs) to many µA, depending on the device.
+-   Some structures have well-matched I\ :sub:`B`, others do not.
+-   Some structures' I\ :sub:`B` varies little with temperature, but a JFET op amp's I\ :sub:`B` doubles with every 10°C rise in temperature.
+-   Some structures have I\ :sub:`B` which may flow in either direction.
 
 Values of I\ :sub:`B` range from 60 fA (about one electron every three microseconds) in an electrometer op amp (such as the AD549), to tens of microamperes in some high speed op amps. Op amps with simple input structures using bipolar junction transistors (BJT) or FET long-tailed pair have bias currents that flow in one direction. More complex input structures (bias-compensated and current feedback op amps) may have bias currents that are the difference between two or more internal current sources, and may flow in either direction.
 
@@ -452,16 +453,19 @@ By providing this necessary bias currents via an internal current source, as in 
 
 
 -   Pros
-   \* Low Offset Voltage: As low as 10 µV
-   \* Low Offset Drift: As low as 0.1 µV/ºC
-   \* Temperature Stable I\ :sub:`Bias`
-   \* Low Bias Currents: <0.5 - 10nA
-   \* Low Voltage Noise: As low as 1nV/✔Hz
-   \* Cons
-   \* Poor Bias Current Match (Currents May Even Flow in Opposite Directions)
-   \* Higher Current Noise
-   \* Not Very Useful at high frequencies
-   \* Matching source impedances makes offset error due to bias current worse because of additional impedance
+
+   -   Low Offset Voltage: As low as 10 µV
+   -   Low Offset Drift: As low as 0.1 µV/ºC
+   -   Temperature Stable I\ :sub:`Bias`
+   -   Low Bias Currents: <0.5 - 10nA
+   -   Low Voltage Noise: As low as 1nV/✔Hz
+
+-   Cons
+
+   -   Poor Bias Current Match (Currents May Even Flow in Opposite Directions)
+   -   Higher Current Noise
+   -   Not Very Useful at high frequencies
+   -   Matching source impedances makes offset error due to bias current worse because of additional impedance
 
 Most modern precision bipolar input stage op amps use some means of internal bias current compensation, examples would be the familiar OP07 and OP27 series.
 
@@ -569,13 +573,14 @@ The RTI value is useful in comparing the cumulative op amp offset error to the i
 
 In any case, the RTO value is simply obtained by multiplying the RTI value by the stage noise gain, which is 1 + R\ :sub:`2`/R\ :sub:`1`.
 
-| Before departing the topic of offset errors, some simple rules towards minimization bear repeating:
-| \* Keep input/feedback resistance values as low as practical, to minimize offset voltage due to bias current effects.
-| \* Use a bias compensation resistance with VFB op amps not designed with internal bias compensation. Bypass this resistance, for lowest noise pickup.
-| \* If a VFB op amp does use internal bias current compensation, don't use the compensation resistance.
-| \* When necessary, use external offset trim networks, for lowest induced drift.
-| \* Choose an appropriate precision op amp specified for low offset and drift, as opposed to trimming.
-| \* For high performance, low drift circuitry, watch out for thermocouple effects (which occur when two dissimilar metals are used to make electrical connections) and use balanced, low thermal error PCB layouts.
+Before departing the topic of offset errors, some simple rules towards minimization bear repeating:
+
+-   Keep input/feedback resistance values as low as practical, to minimize offset voltage due to bias current effects.
+-   Use a bias compensation resistance with VFB op amps not designed with internal bias compensation. Bypass this resistance, for lowest noise pickup.
+-   If a VFB op amp does use internal bias current compensation, don't use the compensation resistance.
+-   When necessary, use external offset trim networks, for lowest induced drift.
+-   Choose an appropriate precision op amp specified for low offset and drift, as opposed to trimming.
+-   For high performance, low drift circuitry, watch out for thermocouple effects (which occur when two dissimilar metals are used to make electrical connections) and use balanced, low thermal error PCB layouts.
 
 **Return to** :doc:`Previous Chapter </wiki-migration/university/courses/electronics/text/chapter-2>`
 

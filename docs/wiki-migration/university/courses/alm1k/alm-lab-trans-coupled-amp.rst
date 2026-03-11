@@ -57,7 +57,7 @@ Giving us the equation finding the reflected impedance,
 where
 
 -   n is the ratio of primary to secondary turns of the step-down transformer
-   \* R\ :sub:`Lp` is the reflected impedance in the primary
+-   R\ :sub:`Lp` is the reflected impedance in the primary
 
 The efficiency of a conventional class A power amplifier is about 30% whereas it can be improved to about 50% by using a transformer coupled configured class A power amplifier. Increased efficiency is one of the advantages of this configuration but aside from that the following are the other advantages of transformer coupled class A power amplifier,
 
@@ -76,18 +76,7 @@ But this configuration is not perfect thus having the following disadvantages,
 Materials
 ---------
 
-| ADALM1000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 NPN transistor (2N3904)
-| 1 10k resistor
-| 1 20k resistor
-| 1 1k resistor
-| 1 6.8k resistor
-| 1 100 Ω resistor
-| 1 47 Ω resistor
-| 1 10uF capacitor
-| 1 1uF capacitor
-| 1 HPH1-1400L 6 winding transformer
+ADALM1000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 NPN transistor (2N3904) 1 10k resistor 1 20k resistor 1 1k resistor 1 6.8k resistor 1 100 Ω resistor 1 47 Ω resistor 1 10uF capacitor 1 1uF capacitor 1 HPH1-1400L 6 winding transformer
 
 Hardware Setup
 --------------

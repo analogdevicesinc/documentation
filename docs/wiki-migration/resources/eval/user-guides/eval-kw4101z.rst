@@ -45,8 +45,8 @@ LTspice Simulation Circuits
 All LTspice Circuits used are available at TBD
 
 
-| 
-|
+
+
 
 .. tip::
 

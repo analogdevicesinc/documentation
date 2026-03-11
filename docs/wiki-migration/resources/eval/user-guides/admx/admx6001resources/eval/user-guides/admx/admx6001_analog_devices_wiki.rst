@@ -176,8 +176,6 @@ Find the UART COM port of the Xilinx VCU118 board by opening Device Manager and 
    *Figure 9. Find UART COM Port Number*
 
 
-.. _program-the-xilinx-vcu118-board-1:
-
 PROGRAM THE XILINX VCU118 BOARD
 -------------------------------
 
@@ -247,10 +245,7 @@ Password: **analog**
 
 .. container:: centeralign
 
-   *Figure 14. Xilinx VCU118 Booting and Login—Tera Term: Login*
-
-
-**Note the following:**
+   *Figure 14. Xilinx VCU118 Booting and Login—Tera Term: Login **Note the following:**
 
 ♦ For the Xilinx Vivado Lab version, only xsdb.bat is available (C:\\Xilinx\\Vivado_Lab\\2024\\bin\\xsdb.bat).
 

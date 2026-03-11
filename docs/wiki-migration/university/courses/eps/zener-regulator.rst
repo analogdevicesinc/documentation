@@ -14,11 +14,7 @@ A voltage regulator is a circuit used to maintain a constant output voltage at a
 Materials:
 ----------
 
-| Analog Discovery Instrument
-| Solder-less Breadboard
-| 1 - 1 KΩ Resistor (R\ :sub:`S`)
-| 1 - 5 KΩ Variable resistor, potentiometer (R\ :sub:`L`)
-| 1 - 4.7V Zener diode (1N5230 or similar)
+Analog Discovery Instrument Solder-less Breadboard 1 - 1 KΩ Resistor (R\ :sub:`S`) 1 - 5 KΩ Variable resistor, potentiometer (R\ :sub:`L`) 1 - 4.7V Zener diode (1N5230 or similar)
 
 Directions:
 -----------
@@ -37,11 +33,7 @@ Build the circuit shown in figure 1 on your solder-less breadboard using the 1N5
 Measurements:
 -------------
 
-| 1. Monitor and report the load voltage V\ :sub:`L` by using the Waveforms Voltmeter instrument to measure V\ :sub:`L` for R\ :sub:`L` equal to:
-| (a) Open circuit
-| (b) 10 kΩ
-| (c) 1 kΩ
-| (d) 100 Ω
+1. Monitor and report the load voltage V\ :sub:`L` by using the Waveforms Voltmeter instrument to measure V\ :sub:`L` for R\ :sub:`L` equal to: (a) Open circuit (b) 10 kΩ (c) 1 kΩ (d) 100 Ω
 
 2. Replace the load R\ :sub:`L` with a 5KΩ potentiometer, and adjust the potentiometer to determine the minimum value of R\ :sub:`L` for which V\ :sub:`L` remains within 10% of the zener voltage V\ :sub:`Z`. Measure and report the resistance you set the potentiometer to. How does this resistance relate to the value of R\ :sub:`S`?
 
@@ -59,9 +51,7 @@ As we saw in the simple zener diode regulator in figure 1, the maximum load curr
    :align: center
    :width: 550px
 
-<WRAP centeralign> Figure 2, Adding a current amplifier stage </WARP>
-
-.. _directions-1:
+ Figure 2, Adding a current amplifier stage 
 
 Directions:
 -----------
@@ -70,8 +60,6 @@ Build either of the circuits shown in figure 2 on your solder-less breadboard us
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/Zener_diode
-  http:*\ www.mathworks.com/help/physmod/powersys/examples/zener-diode-regulator.html
-| http://www.analog.com/static/imported-files/tutorials/MT-087.pdf
+http://en.wikipedia.org/wiki/Zener_diode http://www.mathworks.com/help/physmod/powersys/examples/zener-diode-regulator.html http://www.analog.com/static/imported-files/tutorials/MT-087.pdf
 
 **Return to EPS Activity** :doc:`Table of Contents. </wiki-migration/university/courses/eps/main-page>`

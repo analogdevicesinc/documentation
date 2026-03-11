@@ -4,11 +4,7 @@ Activity: An Ohm's Law Experiment - ADALM2000
 Objective:
 ----------
 
-| Covered in this Lab Activity:
-| How electrical charge relates to voltage, current, and resistance.
-| What voltage, current, and resistance are.
-| What Ohm's Law is and how to use it to understand electricity.
-| A simple experiment to demonstrate these concepts.
+Covered in this Lab Activity: How electrical charge relates to voltage, current, and resistance. What voltage, current, and resistance are. What Ohm's Law is and how to use it to understand electricity. A simple experiment to demonstrate these concepts.
 
 Electricity Basics:
 -------------------
@@ -22,9 +18,7 @@ Electricity is the movement (flow) of electrons. Electrons are atomic particles 
 
 The three basic principles for this activity can be explained using electrons, or more specifically, the charge they create:
 
-| 1. Voltage is the difference in charge (more electrons, less electrons) between two points in space.
-| 2. Current is the rate at which charge (electrons) is flowing between two points usually through some material.
-| 3. Resistance is a material's tendency to resist the flow of charge (electrical current). Materials with very low resistance are called conductors. Materials with a very high resistance are called insulators.
+1. Voltage is the difference in charge (more electrons, less electrons) between two points in space. 2. Current is the rate at which charge (electrons) is flowing between two points usually through some material. 3. Resistance is a material's tendency to resist the flow of charge (electrical current). Materials with very low resistance are called conductors. Materials with a very high resistance are called insulators.
 
 So, when we talk about these values, we're really describing the movement of charge, and thus, the behavior of electrons. A circuit is a closed loop that allows charge to move from one place to another. Components in the circuit allow us to control this charge and use it to do work.
 
@@ -46,9 +40,7 @@ We define voltage as the amount of potential energy between two points on a circ
 
 When describing electrical properties like voltage, current, and resistance, a common analogy is a water tank. In this analogy, charge is analogous to the volume water, voltage is represented by the water pressure (depth of the water), and current is represented by the water flow. So for this analogy, remember:
 
-| Water = Charge
-| Pressure = Voltage
-| Flow = Current
+Water = Charge Pressure = Voltage Flow = Current
 
 Consider a water tank at a certain height above the ground. At the bottom of this tank there is a hose. The pressure at the end of the hose can represent voltage. The water in the tank represents charge. The more water in the tank, the higher the charge, and the more pressure is measured at the end of the hose.
 
@@ -65,10 +57,7 @@ In electrical terms, the current through the narrower hose is less than the curr
 
 Now we're starting establish the relationship between voltage and current. But there is a third factor to be considered here: the diameter of the hose. In this analogy, the diameter of the hose determines the resistance to the flow of water (charge). This means we need to add another term to our model:
 
-| Water = Charge (measured in Coulombs)
-| Pressure = Voltage (measured in Volts)
-| Flow = Current (measured in Amperes, or “Amps” for short)
-| Hose Diameter = Resistance
+Water = Charge (measured in Coulombs) Pressure = Voltage (measured in Volts) Flow = Current (measured in Amperes, or “Amps” for short) Hose Diameter = Resistance
 
 Resistance
 ~~~~~~~~~~
@@ -88,10 +77,7 @@ Combining the elements of voltage, current, and resistance, Ohm developed the fo
 
 :math:`V=I \times R`
 
-| Where:
-| V = Voltage in volts
-| I = Current in amps
-| R = Resistance in ohms
+Where: V = Voltage in volts I = Current in amps R = Resistance in ohms
 
 This is called Ohm's law. For example, say that we have a circuit with the potential of 1 volt, a current of 1 amp, and resistance of 1 ohm. Using Ohm's Law we can say:
 
@@ -119,11 +105,9 @@ We will be using the +5V power supply from the ADALM2000 as the voltage source.
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 LED, the longer of the two leads is the anode (+) and the shorter lead is the cathode (-)
-| 1 Resistor
-| NOTE: LEDs are known as “non-ohmic” devices. This means that the equation for the current flowing through the LED itself is not the simple linear relationship V=IR. The LED is a special kind of diode. All diodes have something called an internal “voltage drop”. However, in this experiment we are simply trying to protect the LED from conducting too much current, so we can neglect the non-ohmic current characteristics of the LED for the moment and choose the resistor value using just Ohm's Law in order insure that the current through the LED will be safely less than 20mA.
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 LED, the longer of the two leads is the anode (+) and the shorter lead is the cathode (-) 1 Resistor
+
+NOTE: LEDs are known as “non-ohmic” devices. This means that the equation for the current flowing through the LED itself is not the simple linear relationship V=IR. The LED is a special kind of diode. All diodes have something called an internal “voltage drop”. However, in this experiment we are simply trying to protect the LED from conducting too much current, so we can neglect the non-ohmic current characteristics of the LED for the moment and choose the resistor value using just Ohm's Law in order insure that the current through the LED will be safely less than 20mA.
 
 For this example, we have the V+ output of the ADALM2000 configured to generate 5V and a (red) LED with a current rating of 20 milliamps, or 0.020 amps. To be safe, we would rather not drive the LED at its maximum current but rather its suggested current, which is listed on its datasheet as 18mA, or 0.018 amps. If we simply connect the LED directly to the battery, the values for Ohm's law look like this:
 
@@ -231,8 +215,9 @@ Start the Scopy Voltmeter tool. The interface looks like this.
    Voltmeter tool screen
 
 
-| Click on the green Run button and the circuit voltages will be displayed. The Channel 1 Voltage should display the actual value of the +5 V power supply. The Channel 2 Voltage should display the actual voltage across the LED diode. In this example for a red LED the voltage was 1.84 volts. The difference between these two voltages, Channel 1-Channel 2 V, will be the voltage across the resistor which in this example was 3.12 volts.
-| We can use Ohm's law to calculate the current in the resistor:
+Click on the green Run button and the circuit voltages will be displayed. The Channel 1 Voltage should display the actual value of the +5 V power supply. The Channel 2 Voltage should display the actual voltage across the LED diode. In this example for a red LED the voltage was 1.84 volts. The difference between these two voltages, Channel 1-Channel 2 V, will be the voltage across the resistor which in this example was 3.12 volts.
+
+We can use Ohm's law to calculate the current in the resistor:
 
 :math:`I=V/R`
 

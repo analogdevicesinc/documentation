@@ -11,16 +11,20 @@ Setting Up Your Host PC
 
 The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-bit.
 
-| 
-| ==== Installing Required Packages ==== In order to build and deploy Linux to your ADSP-SC598-EZKIT development board you will need to install the following packages on your host PC.
+Installing Required Packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to build and deploy Linux to your ADSP-SC598-EZKIT development board you will need to install the following packages on your host PC.
 
 .. code:: bash
 
    $ sudo apt-get update
    $ sudo apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm u-boot-tools openssl curl tftpd-hpa python zstd liblz4-tool
 
-| 
-| ==== Configuring TFTP Service==== A TFTP server on the host is used to transfer images to the development board. Install and configure.
+Configuring TFTP Service
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+A TFTP server on the host is used to transfer images to the development board. Install and configure.
 
 .. code:: bash
 
@@ -37,8 +41,10 @@ The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-
    $ sudo chmod 777 /tftpboot
    $ sudo service tftpd-hpa restart
 
-| 
-| ==== Configure Minicom ==== In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
+Configure Minicom
+~~~~~~~~~~~~~~~~~
+
+In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
 
 On the host PC open a terminal and execute the following commands:
 
@@ -67,7 +73,7 @@ On the host PC open a terminal and execute the following commands:
         Set Serial Device to /dev/ttyUSB0
         Set Bps/Par/Bits to 115200 8N1
         Set Hardware Flow Control to No
-        
+
         Close the Serial port setup option by press Esc
     Select Save setup as dfl
     Select Exit
@@ -77,10 +83,12 @@ On the host PC open a terminal and execute the following commands:
    \ ``/dev/ttyUSB0`` might not correspond to the serial port of the board on every system. You can determine which ``/dev`` entry your board uses by running ``ls -l /dev/ttyUSB*`` twice, once when the serial port of the board is plugged in, and once when it isn't.
 
 
-| 
-| ==== Installing the Sources ==== The example is fully contained in the Analog Devices Yocto Linux github repositories.
+Installing the Sources
+~~~~~~~~~~~~~~~~~~~~~~
 
-To install the sources: 
+The example is fully contained in the Analog Devices Yocto Linux github repositories.
+
+To install the sources:
 
 .. code:: bash
 
@@ -95,8 +103,8 @@ To install the sources: 
       -m release-yocto-3.0.0.xml
    $ ./bin/repo sync
 
-| 
-| ====== Building the Image ======
+Building the Image
+------------------
 
 Preparing the buildtool
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,8 +122,10 @@ Sourcing the script will configure your build environment and create a build fol
    Note that the build environment needs to be sourced once only before building.  If later working in a different terminal the setup-environment script should be sourced again.  If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
 
 
-| 
-| ==== Building the example ==== You can build two different versions of the root file system; minimal and full. To build the example images invoke bitbake from within the build directory created previously.
+Building the example
+~~~~~~~~~~~~~~~~~~~~
+
+You can build two different versions of the root file system; minimal and full. To build the example images invoke bitbake from within the build directory created previously.
 
 .. code:: bash
 
@@ -166,8 +176,8 @@ Invoke the self-extracting archive. It will default to installing to ``/opt/adi-
 .. code:: bash
 
    $ ./adi-distro-glibc-glibc-x86_64-adsp-sc5xx-minimal-cortexa55-adsp-sc598-som-ezkit-toolchain-3.0.0.sh
-   Analog Devices Inc Reference Distro (glibc) SDK installer version 3.0.0
-   =======================================================================
+   **Analog Devices Inc Reference Distro (glibc) SDK installer version 3.0.0**
+
    Enter target directory for SDK (default: /opt/adi-distro-glibc/3.0.0):
    You are about to install the SDK to "/opt/adi-distro-glibc/3.0.0". Proceed [Y/n]?
    Extracting SDK....................................................................................................................done
@@ -259,7 +269,17 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
    ;''**Terminal3: GDB**''
    : <code bash>
 
-$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/aarch64-adi_glibc-linux/aarch64-adi_glibc-linux-gdb u-boot-spl-sc598-som-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x000000000000352c in ?? () (gdb) load Loading section .text, size 0x153b0 lma 0x20080000 Loading section .rodata, size 0x312b lma 0x200953b0 Loading section .dtb.init.rodata, size 0x19e0 lma 0x200984e0 Loading section .data, size 0xaed lma 0x20099ec0 Loading section .u_boot_list, size 0x1720 lma 0x2009a9b0 Start address 0x20080000, load size 114888 Transfer rate: 29 KB/sec, 11488 bytes/write. (gdb) c Continuing. ^C Program received signal SIGINT, Interrupt. </code>
+$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/aarch64-adi_glibc-linux/aarch64-adi_glibc-linux-gdb u-boot-spl-sc598-som-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x000000000000352c in ?? () (gdb) load Loading section .text, size 0x153b0 lma 0x20080000 Loading section .rodata, size 0x312b lma 0x200953b0 Loading section .dtb.init.rodata, size 0x19e0 lma 0x200984e0 Loading section .data, size 0xaed lma 0x20099ec0 Loading section .u_boot_list, size 0x1720 lma 0x2009a9b0 Start address 0x20080000, load size 114888 Transfer rate: 29 KB/sec, 11488 bytes/write. (gdb) c Continuing.
+
++---+
+
+
+| C |
+
++===+
++---+
+
+Program received signal SIGINT, Interrupt. </code>
 
 You will see a message on Terminal 1 running minicom, informing you that you can now load U-Boot Proper
 
@@ -311,13 +331,12 @@ CPU: ADSP ADSP-SC598-0.0 (spi slave boot) Model: ADI sc598-som-ezkit DRAM: 224 M
 Flash U-Boot to SPI Flash
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| 
-| In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot loader files (``stage1-boot.ldr`` & ``stage2-boot.ldr``) on TFTP.
+In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot loader files (``stage1-boot.ldr`` & ``stage2-boot.ldr``) on TFTP.
 
 ::
 
    ;''**Terminal1: minicom**''
-   :  
+   :
 
 .. code:: bash
 
@@ -422,7 +441,7 @@ If your network **does NOT support** DHCP, in the U-Boot console configure the b
    => setenv ipaddr <IPADDR>
    => edit start_update_spi
    => edit: <remove "run init_ethernet;" from here> sf probe ${sfdev}; sf erase 0 ${sfsize}; run update_spi_uboot; run update_spi_fit; run update_spi_rfs; sleep 3; saveenv
-   => run update_spi 
+   => run update_spi
 
 After removing "run init_ethernet;" from update_spi, issue the "run update_spi" command as above.
 
@@ -466,14 +485,14 @@ You should see output similar to the following.
    TFTP from server 10.37.33.116; our IP address is 10.37.33.113
    Filename 'fitImage'.
    Load address: 0x96000000
-   Loading: #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #####################################################
+   **Loading: #################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
             2.5 MiB/s
    done
    Bytes transferred = 7456974 (71c8ce hex)
@@ -485,32 +504,32 @@ You should see output similar to the following.
    TFTP from server 10.37.33.116; our IP address is 10.37.33.113
    Filename 'adsp-sc5xx-minimal-adsp-sc598-som-ezkit.jffs2'.
    Load address: 0x96000000
-   Loading: #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #########
+   **Loading: #################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
             3.2 MiB/s
    done
    Bytes transferred = 23986176 (16e0000 hex)
@@ -556,7 +575,7 @@ The U-Boot image, root filesystem and Linux kernel are now stored in QSPI. Adjus
 
    adsp-sc598-som-ezkit login: root
    Password: adi
-   root@adsp-sc598-som-ezkit:~# 
+   root@adsp-sc598-som-ezkit:~#
 
 The username is **root** and the password is **adi**.
 
@@ -581,7 +600,7 @@ There is an issue with devtool in this version of bitbake - apply the following 
    @@ -36,6 +36,8 @@ python () {
         if externalsrcbuild and not externalsrcbuild.startswith("/"):
             bb.error("EXTERNALSRC_BUILD must be an absolute path")
-    
+
    +    srcpv = d.getVar('SRCPV')
    +
         # If this is the base recipe and EXTERNALSRC is set for it or any of its
@@ -590,7 +609,7 @@ There is an issue with devtool in this version of bitbake - apply the following 
 
 Edit workspace/source/u-boot-adi/arch/arm/dts/sc598-som.dtsi
 
-.. code:: bash
+.. code:: diff
 
    --- a/arch/arm/dts/sc598-som.dtsi
    +++ b/arch/arm/dts/sc598-som.dtsi
@@ -657,8 +676,10 @@ Format the SD card to EXT filesystem
 
    $ sudo mkfs.ext4 /dev/sdb1
 
-| 
-| === Writing the kernel and file system to the SD Card === Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card. To allow the choice of booting using ramboot and sdcard boot we copy the ramboot image to the SD card as well as extract the minimal image to the SD card.
+Writing the kernel and file system to the SD Card
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card. To allow the choice of booting using ramboot and sdcard boot we copy the ramboot image to the SD card as well as extract the minimal image to the SD card.
 
 .. code:: bash
 
@@ -673,8 +694,10 @@ Format the SD card to EXT filesystem
 
 The file system and kernel image are now installed on to the SD Card. The SD Card can now be safely removed from the Host PC.
 
-| 
-| === Booting Linux from the SD card === Set U-boot environment variables
+Booting Linux from the SD card
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set U-boot environment variables
 
 .. code:: bash
 
@@ -702,7 +725,7 @@ Follow the steps to enable SD card boot. This step include enabling emmc periphe
 
 Modify build/workspace/source/linux-adi/arch/arm64/boot/dts/adi/sc598-som.dtsi
 
-.. code:: bash
+.. code:: diff
 
    @@ -297,14 +297,14 @@ uart0-flow-en {
                    emmc {
@@ -712,7 +735,7 @@ Modify build/workspace/source/linux-adi/arch/arm64/boot/dts/adi/sc598-som.dtsi
    +                       output-high;
                            line-name = "emmc-en";
                    };
-    
+
                    emmc-som-en {
                            gpio-hog;
                            gpios = <9 0x0>;
@@ -741,9 +764,6 @@ Rebuild the Linux kernel
    $ devtool build linux-adi
 
 Copy the new generated fitImage to boot folder on SD card.
-
-
-| 
 
 Booting Linux from USB Mass Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -816,16 +836,19 @@ And type to boot
 
 Now the rootfs is set to your USB stick and amount of space equals of size of partition on USB stick.
 
-|
+Booting Linux Using TFTP
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-| ==== Booting Linux Using TFTP ==== In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc598>` and a copy of the fitImage should be copied into the **/tftpboot** directory.
+In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc598>` and a copy of the fitImage should be copied into the **/tftpboot** directory.
 
 .. code:: bash
 
    $ cp tmp/deploy/images/adsp-sc598-som-ezkit/fitImage /tftpboot/
 
-| 
-| === NFS Boot === For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
+NFS Boot
+^^^^^^^^
+
+For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
 
 .. code:: bash
 
@@ -870,8 +893,10 @@ The root filesystem should then be copied to /romfs.
 
    $ sudo tar -xf tmp/deploy/images/adsp-sc598-som-ezkit/adsp-sc5xx-full-adsp-sc598-som-ezkit.tar.xz -C /romfs
 
-| 
-| === Booting into Linux from TFTP === Next, on the target, from u-boot, run the following command:
+Booting into Linux from TFTP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Next, on the target, from u-boot, run the following command:
 
 .. code:: bash
 
@@ -906,7 +931,7 @@ The root filesystem should then be copied to /romfs.
 
    adsp-sc598-som-ezkit login: root
    Password: adi
-   root@adsp-sc598-som-ezkit:~# 
+   root@adsp-sc598-som-ezkit:~#
 
 --------------
 

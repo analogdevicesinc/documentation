@@ -24,19 +24,12 @@ The software pack can be downloaded in following way.
 
    -  It is **recommended** to download the Connectivity software pack through from the tools program you are using. That way, all the files, directories structure, and project structure for the various applications is properly saved and accessed. For a detailed description on how to download the Connectivity software pack through CrossCore Embedded Studio please see our :doc:`Cross Core Embedded Studio Quickstart User Guide </wiki-migration/resources/eval/user-guides/eval-cog-ad3029lz/tools/cces_guide>`.
 
-
-   | 
-
-|
-
 .. admonition:: Download
    :class: download
 
    Download the Connectivity Software Pack.
 
-
-   | `ADI-BLESoftware pack 1.0.0 <http://download.analog.com/tools/BLE_Software/Releases/>`_
+   
+   `ADI-BLESoftware pack 1.0.0 <http://download.analog.com/tools/BLE_Software/Releases/>`_
    
 
-
-|

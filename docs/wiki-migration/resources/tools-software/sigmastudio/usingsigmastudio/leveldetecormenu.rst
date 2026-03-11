@@ -1,8 +1,15 @@
 Level Detectors Menu Options
 ============================
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| =====Level Detectors===== The Level Detector blocks calculate the input signal level, reading directly from the hardware in real time, and display the level graphically in meter displays. The Single-Level Detector calculates and displays the rms level of the signal, shown in dB. |image1|
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+
+Level Detectors
+---------------
+
+The Level Detector blocks calculate the input signal level, reading directly from the hardware in real time, and display the level graphically in meter displays. The Single-Level Detector calculates and displays the rms level of the signal, shown in dB.
+
+
+|image1|
 
 Enable All Level Detectors
 --------------------------

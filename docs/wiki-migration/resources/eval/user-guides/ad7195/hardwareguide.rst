@@ -188,7 +188,7 @@ AVDD (JP2) selection
 
    -  5V regulator supplies AVDD :adi:`ADP7142 <en/products/adp7142.html>`
 
--  \**3.3V supply \*\*
+-  **3.3V supply**
 
    -  3.3V regulator supplies AVDD :adi:`ADP150 <en/products/adp150.html>`
 
@@ -234,11 +234,10 @@ Serial communication options
 
 ::
 
-     *When using the SDP-B connection (120 pin) The evaluation board connects via the serial peripheral interface (SPI) to the Blackfin® [[:adi:`en/products/adsp-bf527`.html|ADSP-BF527]] on the SDP-B board. 
-   * Arduino connection SDP-K1 
+     *When using the SDP-B connection (120 pin) The evaluation board connects via the serial peripheral interface (SPI) to the Blackfin® [[:adi:`en/products/adsp-bf527`.html|ADSP-BF527]] on the SDP-B board.
+   * Arduino connection SDP-K1
    * PMOD connector
    * Standalone mode
-      
 
 For an introduction to the Serial Peripheral Interface (SPI), click :adi:`here <en/analog-dialogue/articles/introduction-to-spi-interface.html>`
 

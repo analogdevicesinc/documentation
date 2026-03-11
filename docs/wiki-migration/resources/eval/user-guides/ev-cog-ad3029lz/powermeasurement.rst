@@ -54,7 +54,7 @@ The following figure shows jumpers which connect the on board components to the 
 Measuring overall board current
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section briefs about the jumper settings and wire connections to measure the overall board current. The <fc #ff0000>default jumper settings</fc> on the COG board before the measurement is shown in the following figure. |image2| The following figure shows the connection to measure the overall board current. Remove the jumper on TH1 and connect an ammeter across the test points.
+This section briefs about the jumper settings and wire connections to measure the overall board current. The default jumper settings on the COG board before the measurement is shown in the following figure. |image2| The following figure shows the connection to measure the overall board current. Remove the jumper on TH1 and connect an ammeter across the test points.
 
 
 |image3|

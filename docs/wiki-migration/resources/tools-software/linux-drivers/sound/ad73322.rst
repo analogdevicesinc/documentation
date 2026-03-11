@@ -10,17 +10,17 @@ To add support for the AD73322 to the kernel build system, a few things must be 
 
 ::
 
-    Linux Kernel Configuration 
-       Sound  ---> 
+    Linux Kernel Configuration
+       Sound  --->
          [*] Sound card support
           Advanced Linux Sound Architecture  --->
            [ ] OSS Sequencer API
-           [*] OSS Mixer API 
+           [*] OSS Mixer API
            [*] OSS PCM (digital audio) API
            ALSA Blackfin devices  --->
-              <*> Cascaded AD73322 Audio support for BF53x 
-              (2)   Blackfin Audio SPORT port 
-              (10)  PF pin for AD73322 Chip Select on SPORT0 
+              <*> Cascaded AD73322 Audio support for BF53x
+              (2)   Blackfin Audio SPORT port
+              (10)  PF pin for AD73322 Chip Select on SPORT0
               (14)  PF pin for AD73322 Chip Select on SPORT1
               (12)  PF pin for AD73322 Chip Reset
 
@@ -86,7 +86,7 @@ Since AD73322 card has at least two pairs of ADC/DAC(also called input/output de
                @func refer
                name defaults.pcm.subdevice
            }
-       }       
+       }
        type plug
        slave.pcm {
            type mmap_emul
@@ -108,12 +108,12 @@ Since AD73322 card has at least two pairs of ADC/DAC(also called input/output de
 
    Example for running record and playback at the same time:
    root:/> arecord -D plughw:0,0|aplay -D plughw:0,0
-   Recording from card 0 device 0 and playbacking to card 0 device 0. 
+   Recording from card 0 device 0 and playbacking to card 0 device 0.
    Card 0 device 0 also called default device,so, command as above is equal to:
 
    root:/> arecord|aplay
    root:/> arecord -D plughw:0,4|aplay -D plughw:1,0
-   Recording from card 0 device 4 and playbacking to card 1 device 0. 
+   Recording from card 0 device 4 and playbacking to card 1 device 0.
 
    Example for running playback/record only
    root:/> arecord -D plughw:0,1 -d 5 a.wav

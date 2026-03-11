@@ -1,11 +1,16 @@
 Real Time Variant
 =================
 
-| :doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
-| The Variant Editor is a SigmaStudio tool that helps the users utilize different variations(variants) of their original audio program flow already programmed into an external memory.
-| A Variant is a set of parameters from the current schematic. Real Time variant module allows users to create multiple variants. Parameters selection for a variant can be done through drag and drop from capture window to the variant configuration form. The parameter addresses and values in the variant are stored in the EEPROM after the self boot image. Address for each of the variant in EEPROM can be either updated by the users or can be generated automatically.
-| Module allows users to select a variant dynamically through external input pin. It takes an input index in 32.0 format to select the current variant from EEPROM. The module will read the variant (parameter set) corresponding to the input index from the EEPROM and replaces the actual parameters in the run-time whenever input index is changed.
-| |image1|
+:doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
+
+The Variant Editor is a SigmaStudio tool that helps the users utilize different variations(variants) of their original audio program flow already programmed into an external memory.
+
+A Variant is a set of parameters from the current schematic. Real Time variant module allows users to create multiple variants. Parameters selection for a variant can be done through drag and drop from capture window to the variant configuration form. The parameter addresses and values in the variant are stored in the EEPROM after the self boot image. Address for each of the variant in EEPROM can be either updated by the users or can be generated automatically.
+
+Module allows users to select a variant dynamically through external input pin. It takes an input index in 32.0 format to select the current variant from EEPROM. The module will read the variant (parameter set) corresponding to the input index from the EEPROM and replaces the actual parameters in the run-time whenever input index is changed.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/realtimevariant.jpg
+   :align: center
 
 Input Pins
 ----------
@@ -22,16 +27,20 @@ Input Pins
 Grow Algorithm
 --------------
 
-| The module currently does not support grow/add functionality and only one instance is supported.
-| ===== Configurations ===== Follow the steps shown below to configure real time variant module.
-| \* Create a SigmaStudio audio flow that compiles without any errors.
+The module currently does not support grow/add functionality and only one instance is supported.
 
+Configurations
+--------------
+
+Follow the steps shown below to configure real time variant module.
+
+-  Create a SigmaStudio audio flow that compiles without any errors.
 -  Drag and drop 'Real Time Variant' module and connect a DC source to it. Then change the fixed point format of DC source to 32.0
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/rtv1.jpg
    :align: center
 
--  Click on the image |image2| to open variant editor window.
+-  Click on the image |image1| to open variant editor window.
 -  Clear capture window in the SigmaStudio. Then modify any module's parameter to the desired value. The parameter changes will be displayed in capture window.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/rtv2.png
@@ -100,7 +109,7 @@ The GPIOs can be used to select the variants instead of a DC module.
 
 -  Configure the used GPIO pins in register window as input multipurpose pin.
 
-|image3| The table below captures the GPIO value to the variant selection.
+|image2| The table below captures the GPIO value to the variant selection.
 
 ====== ====== =============================== =====================
 GPIO_0 GPIO_1 BinToDec module's output (32.0) Variant Mode Selected
@@ -116,6 +125,5 @@ Supported ICs
 
 -  ADAU145x
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/realtimevariant.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/black.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/rtv13.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/black.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/rtv13.jpg

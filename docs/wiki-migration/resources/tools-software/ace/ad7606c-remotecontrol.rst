@@ -86,16 +86,16 @@ Along the different examples, a set of variables are used to define the AD7606C 
 
 ::
 
-   ***generic**            →Either AD7606B, AD7606C-18 or AD7606C-16, depending on the Hardware used
-   ***mode**                →True=Software mode; False=Hardware mode
-   ***range**              →range=3-->+/-10V Single Ended Range, see register summary in datasheet
-   ***ref_sel**            →True= Internal Reference; False = External reference
-   ***par_serb**           →True=Parallel Interface; False = Serial Interface
-   ***throughput**         → sample frequency in kSPS
-   ***no_samples**            →number of samples on each DataSet
-   ***OSR**                  → Oversampling Ratio= 2^OSR
-   ***sdo_lines**          → number of SDO lines, in serial interface
-   ***graph**             →Either 'histogram, 'waverform' or 'FFT
+   **generic**            →Either AD7606B, AD7606C-18 or AD7606C-16, depending on the Hardware used
+   **mode**                →True=Software mode; False=Hardware mode
+   **range**              →range=3-->+/-10V Single Ended Range, see register summary in datasheet
+   **ref_sel**            →True= Internal Reference; False = External reference
+   **par_serb**           →True=Parallel Interface; False = Serial Interface
+   **throughput**         → sample frequency in kSPS
+   **no_samples**            →number of samples on each DataSet
+   **OSR**                  → Oversampling Ratio= 2^OSR
+   **sdo_lines**          → number of SDO lines, in serial interface
+   **graph**             →Either 'histogram, 'waverform' or 'FFT
 
 Oversampling Benefits
 ~~~~~~~~~~~~~~~~~~~~~

@@ -25,8 +25,8 @@ ACE is designed to allow you to evaluate a product using the ACE plug-in, in a m
 .. container:: centeralign
 
    
-   Fig. 1: ACE Start Screen
-   ^^^^^^^^^^^^^^^^^^^^^^^^
+   **Fig. 1: ACE Start Screen**
+
    
 
 
@@ -67,8 +67,8 @@ Plug-in Installed No Plug-in Found
 .. container:: centeralign
 
    
-   Fig. 2: Attached Hardware Visual Style
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Fig. 2: Attached Hardware Visual Style**
+
    
 
 
@@ -94,8 +94,8 @@ Before continuing with the attached hardware example and explaining what a subsy
 .. container:: centeralign
 
    
-   Fig. 3: No Installed Plug-in Found in Search
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Fig. 3: No Installed Plug-in Found in Search**
+
    
 
 
@@ -109,8 +109,8 @@ Clicking the button in the on-screen prompt will launch the plug-in manager with
 .. container:: centeralign
 
    
-   Fig. 4: Available Plug-ins Search
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Fig. 4: Available Plug-ins Search**
+
    
 
 

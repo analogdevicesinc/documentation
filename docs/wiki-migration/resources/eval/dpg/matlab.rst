@@ -68,7 +68,7 @@ The array *hardwarePlugins* now contains a list of all the hardware interfaces t
 .. code:: matlab
 
    >> hardwarePlugins(1).FriendlyName
-   ans = 
+   ans =
    DPG2 Interface
 
 This example will connect to a DPG2:

@@ -6,7 +6,7 @@ Using the Serial Peripheral Interface on the AD5758
    The **AD5758/ADFS5758/AD5753/AD5423/AD5413** contain the same serial peripheral interface and follow the below guide.
 
 
-| The AD5758 is controlled over a 4-wire serial interface with an 8-bit cyclic redundancy check (CRC-8) enabled by default. The input shift register is 32 bits wide, and data is loaded into the device MSB first under the control of a serial clock input, SCLK. Data is clocked in on the falling edge of SCLK. If CRC is disabled, the serial interface is reduced to 24 bits; a 32-bit frame is still accepted but the last 8 bits are ignored. The purpose of this guide is to explain how the AD5758 SPI works and show examples of the first required SPI writes including CRC as recommended in Figure 90 of the AD5758 datasheet.
+The AD5758 is controlled over a 4-wire serial interface with an 8-bit cyclic redundancy check (CRC-8) enabled by default. The input shift register is 32 bits wide, and data is loaded into the device MSB first under the control of a serial clock input, SCLK. Data is clocked in on the falling edge of SCLK. If CRC is disabled, the serial interface is reduced to 24 bits; a 32-bit frame is still accepted but the last 8 bits are ignored. The purpose of this guide is to explain how the AD5758 SPI works and show examples of the first required SPI writes including CRC as recommended in Figure 90 of the AD5758 datasheet.
 
 SPI Modes
 ---------
@@ -31,7 +31,7 @@ SPI Mode Table
 SPI Cyclic Redundancy Check (CRC)
 ---------------------------------
 
-| To verify that data has been received correctly in noisy environments, the AD5758 offers the option of CRC based on a CRC-8. The device controlling the AD5758 generates an 8-bit frame check sequence using the following polynomial:
+To verify that data has been received correctly in noisy environments, the AD5758 offers the option of CRC based on a CRC-8. The device controlling the AD5758 generates an 8-bit frame check sequence using the following polynomial:
 
 -  :math:`C(x) = x^8 + x^2 + x^1 + 1`
 
@@ -53,7 +53,7 @@ D31      D30:D29      D28:D24          D23:D8 D7:D0
 Slip Bit Address Bits Register Address Data   CRC
 ======== ============ ================ ====== =====
 
-| With CRC enabled (default state), the input shift register is 32 bits wide. Data is loaded into the device MSB first, under the control of a serial clock input, SCLK. Data is clocked in on the falling edge of SCLK. If CRC is disabled, the serial interface is reduced to 24 bits; a 32-bit frame is still accepted but the last 8 bits are ignored.
+With CRC enabled (default state), the input shift register is 32 bits wide. Data is loaded into the device MSB first, under the control of a serial clock input, SCLK. Data is clocked in on the falling edge of SCLK. If CRC is disabled, the serial interface is reduced to 24 bits; a 32-bit frame is still accepted but the last 8 bits are ignored.
 
 Reading a Register
 ------------------
@@ -85,14 +85,8 @@ Slip Bit Address Bits Register Address Data   CRC
 
 For the second write the data has changed to 0xFA51 and the CRC changed to 0x31.
 
-| The oscilloscope plots below show each of the 4 SPI wire data:
-| <fc #ff00ff>\ **SCLK**\ </fc> --> SPI clock
-| <fc #008000>\ **SYNC**\ </fc> --> SYNC signal (must be taken low to initiate SPI transfer)
-| <fc #f0e68c>\ **SDI**\ </fc> --> Serial Data In (Top line of S1 serial bus)
-| <fc #6495ed>\ **SDO**\ </fc> --> Serial Data Out (Bottom line of S1 serial bus)
-| **In the following examples the software driver is configured for SPI mode 1 and the CRC is enabled.**
-
-|image1|
+| The oscilloscope plots below show each of the 4 SPI wire data: **SCLK** --> SPI clock **SYNC** --> SYNC signal (must be taken low to initiate SPI transfer) **SDI** --> Serial Data In (Top line of S1 serial bus) **SDO** --> Serial Data Out (Bottom line of S1 serial bus) **In the following examples the software driver is configured for SPI mode 1 and the CRC is enabled.**
+| |image1|
 
 .. container:: centeralign
 

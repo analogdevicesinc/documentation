@@ -132,11 +132,11 @@ The following is a detailed description of how to configure jumpers LK0 - LK15 f
 
 ::
 
-     -When LK6 is unpopulated, the channel B +VSense input is left floating and should be connected to the high side of the load resistance external to the board. 
-   * When LK8 is populated, the +Vsense input is connected directly to VOUTC. 
+     -When LK6 is unpopulated, the channel B +VSense input is left floating and should be connected to the high side of the load resistance external to the board.
+   * When LK8 is populated, the +Vsense input is connected directly to VOUTC.
      * When LK8 is unpopulated, the channel C+VSense input is left floating and should be connected to the high side of the load resistance external to the board.
-   * When LK10 is populated, the +Vsense input is connected directly to VOUTD. 
-     -When LK10 is unpopulated, the channel D +VSense input is left floating and should be connected to the high side of the load resistance external to the board. 
+   * When LK10 is populated, the +Vsense input is connected directly to VOUTD.
+     -When LK10 is unpopulated, the channel D +VSense input is left floating and should be connected to the high side of the load resistance external to the board.
 
 **-VSense Connections** - LK5, LK7, LK9, LK11 connect the -Vsense input to ground for Channel A, Channel B, Channel C and Channel D respectively.
 

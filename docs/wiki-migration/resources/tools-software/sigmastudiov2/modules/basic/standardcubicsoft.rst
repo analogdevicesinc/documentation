@@ -3,14 +3,16 @@
 Soft Clipper - Standard Cubic
 =============================
 
-| 
-| |standardcubic.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/standardcubic.png
+   :alt: standardcubic.png
 
 Description
 -----------
 
-| The Standard Cubic block is a soft clipper that uses a cubic function to clip the level of the input signal. As the input signal reaches the clip threshold, the algorithm rounds the edges for a smoother clipped output.
-| ===== Targets Supported =====
+The Standard Cubic block is a soft clipper that uses a cubic function to clip the level of the input signal. As the input signal reaches the clip threshold, the algorithm rounds the edges for a smoother clipped output.
+
+Targets Supported
+-----------------
 
 +----------------------+------------+------------------+---------------+------------------+
 | Name                 | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -24,27 +26,27 @@ Description
 Input
 ~~~~~
 
-======================= ===== ===============
-Name                    Type  Description
-======================= ===== ===============
-Input<fc #ff0000>X</fc> Audio Input channel X
-======================= ===== ===============
+====== ===== ===============
+Name   Type  Description
+====== ===== ===============
+InputX Audio Input channel X
+====== ===== ===============
 
 Output
 ~~~~~~
 
-======================== ===== ================
-Name                     Type  Description
-======================== ===== ================
-Output<fc #ff0000>X</fc> Audio Output channel X
-======================== ===== ================
+======= ===== ================
+Name    Type  Description
+======= ===== ================
+OutputX Audio Output channel X
+======= ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +--------------------+---------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | GUI Parameter Name | Default Value | Range        | Function Description                                                                                                                                                                |
@@ -71,5 +73,3 @@ DSP Parameter Computation
 -------------------------
 
 Alpha = 10^(Alpha in dB / 20)
-
-.. |standardcubic.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/standardcubic.png

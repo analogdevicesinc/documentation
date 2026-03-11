@@ -107,21 +107,13 @@ Messages
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
-
-   .. raw:: html
-
-      <details><summary>Boot log (click to expand)</summary>
-
    ::
    
       Starting kernel ...
@@ -351,7 +343,7 @@ Messages
       [    3.398037] zynqmp_clk_mux_get_parent() getparent failed for clock: lpd_wdt, ret = -22
       [    3.400712] alg: No test for xilinx-zynqmp-aes (zynqmp-aes)
       [    3.405938] zynqmp_aes zynqmp_aes: AES Successfully Registered
-      [    3.405938] 
+      [    3.405938]
       [    3.413356] alg: No test for xilinx-keccak-384 (zynqmp-keccak-384)
       [    3.419561] alg: No test for xilinx-zynqmp-rsa (zynqmp-rsa)
       [    3.425099] usbcore: registered new interface driver usbhid
@@ -453,7 +445,7 @@ Messages
       [    5.638728] macb ff0b0000.ethernet: Not enabling partial store and forward
       [    5.646107] libphy: MACB_mii_bus: probed
       [    5.692486] mmc0: new high speed SDHC card at address e624
-      [    5.698455] mmcblk0: mmc0:e624 SU08G 7.40 GiB 
+      [    5.698455] mmcblk0: mmc0:e624 SU08G 7.40 GiB
       [    5.704132]  mmcblk0: p1 p2 p3
       [    5.726748] Marvell 88E1510 ff0e0000.ethernet-ffffffff:01: attached PHY driver [Marvell 88E1510] (mii_bus:phy_addr=ff0e0000.ethernet-ffffffff:01, irq=POLL)
       [    5.740657] macb ff0b0000.ethernet eth1: Cadence GEM rev 0x50070106 at 0xff0b0000 irq 12 (ba:3f:2a:7d:83:a3)
@@ -558,10 +550,10 @@ Messages
       Mount failed for selinuxfs on /sys/fs/selinux:  No such file or directory
       [   23.101760] init: hwclock main process (2333) terminated with status 1
       [   24.291153] systemd-udevd[3420]: could not open moddep file '/lib/modules/4.19.0-14271-g4f88022/modules.dep.bin'
-      [ OK ]ting up X socket directories...        
+      [ OK ]ting up X socket directories...
         * STARTDISTCC is set to false in /etc/default/distcc
         * /usr/bin/distccd not starting
-      [ OK ]rting IIO Daemon iiod        
+      [ OK ]rting IIO Daemon iiod
    
       Last login: Thu Jan  1 00:00:26 UTC 1970 on ttyPS0
       Welcome to Linaro 14.04 (GNU/Linux 4.19.0-14271-g4f88022 aarch64)
@@ -573,11 +565,6 @@ Messages
    
       root@analog:~#
 
-
-   .. raw:: html
-
-      </details>
-
 .. raw:: html
 
    </details>
@@ -588,10 +575,7 @@ Make sure all devices are present
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -620,10 +604,7 @@ Check clock chip lock status on SoM, FMCOMMS8 and Carrier
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -678,10 +659,7 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -764,8 +742,6 @@ ZCU102
 
 For ZCU102, FMCOMMS8 board connects to the HPC0 connector. The carrier setup requires power, UART (115200), ethernet (Linux), DisplayPort and/or JTAG connections.
 
-.. _messages-1:
-
 Messages
 ^^^^^^^^
 
@@ -773,24 +749,16 @@ Messages
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
-
-   .. raw:: html
-
-      <details><summary>Boot log (click to expand)</summary>
-
    ::
    
-      Xilinx Zynq MP First Stage Boot Loader 
+      Xilinx Zynq MP First Stage Boot Loader
       Release 2019.1   Aug 25 2020  -  23:57:00
       NOTICE:  ATF running on XCZU9EG/silicon v4/RTL5.1 at 0xfffea000
       NOTICE:  BL31: Secure code at 0x0
@@ -807,7 +775,7 @@ Messages
       EL Level:       EL2
       Chip ID:        zu9eg
       MMC:   sdhci@ff170000: 0 (SD)
-      *** Warning - bad CRC, using default environment
+      ** Warning - bad CRC, using default environment
    
       In:    serial@ff000000
       Out:   serial@ff000000
@@ -817,13 +785,13 @@ Messages
    
       Warning: ethernet@ff0e0000 using MAC address from ROM
       eth0: ethernet@ff0e0000
-      Hit any key to stop autoboot:  0 
+      Hit any key to stop autoboot:  0
       switch to partitions #0, OK
       mmc0 is current device
       Device: sdhci@ff170000
       Manufacturer ID: 3
       OEM: 5344
-      Name: SU08G 
+      Name: SU08G
       Tran Speed: 50000000
       Rd Block Len: 512
       SD version 3.0
@@ -1057,7 +1025,7 @@ Messages
       [    3.362949] zynqmp_clk_mux_get_parent() getparent failed for clock: lpd_wdt, ret = -22
       [    3.365642] alg: No test for xilinx-zynqmp-aes (zynqmp-aes)
       [    3.370817] zynqmp_aes zynqmp_aes: AES Successfully Registered
-      [    3.370817] 
+      [    3.370817]
       [    3.378296] alg: No test for xilinx-keccak-384 (zynqmp-keccak-384)
       [    3.384425] alg: No test for xilinx-zynqmp-rsa (zynqmp-rsa)
       [    3.389992] usbcore: registered new interface driver usbhid
@@ -1134,7 +1102,7 @@ Messages
       [    8.177998] zynqmp-display fd4a0000.zynqmp-display: ZynqMP DisplayPort Subsystem driver probed
       [    8.186979] xilinx-psgtr fd400000.zynqmp_phy: Lane:3 type:3 protocol:2 pll_locked:yes
       [    8.204919] ahci-ceva fd0c0000.ahci: AHCI 0001.0301 32 slots 2 ports 6 Gbps 0x3 impl platform mode
-      [    8.213885] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst 
+      [    8.213885] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst
       [    8.224308] scsi host0: ahci-ceva
       [    8.227888] scsi host1: ahci-ceva
       [    8.231352] ata1: SATA max UDMA/133 mmio [mem 0xfd0c0000-0xfd0c1fff] port 0x100 irq 37
@@ -1281,7 +1249,7 @@ Messages
       [    9.528945] jesd204: /fpga-axi@0/axi-jesd204-tx@85a30000,jesd204:8,parent=85a30000.axi-jesd204-tx: Possible instantiation for multiple chips; HDL lanes 8, Link[0] lanes 4
       [    9.545248] adrv9009 spi1.0: ADIHAL_resetHw
       [    9.654212] mmc0: new ultra high speed DDR50 SDHC card at address e624
-      [    9.661237] mmcblk0: mmc0:e624 SU08G 7.40 GiB 
+      [    9.661237] mmcblk0: mmc0:e624 SU08G 7.40 GiB
       [    9.666861]  mmcblk0: p1 p2 p3
       [    9.870976] adrv9009 spi1.1: ADIHAL_resetHw
       [   10.193595] random: crng init done
@@ -1340,10 +1308,10 @@ Messages
       [   21.180981] Run /sbin/init as init process
       Mount failed for selinuxfs on /sys/fs/selinux:  No such file or directory
       [   22.422854] systemd-udevd[3428]: could not open moddep file '/lib/modules/4.19.0-14271-g4f88022/modules.dep.bin'
-      [ OK ]ting up X socket directories...        
+      [ OK ]ting up X socket directories...
         * STARTDISTCC is set to false in /etc/default/distcc
         * /usr/bin/distccd not starting
-      [ OK ]rting IIO Daemon iiod        
+      [ OK ]rting IIO Daemon iiod
    
       Last login: Fri Aug 28 10:31:43 UTC 2020 on ttyPS0
       Welcome to Linaro 14.04 (GNU/Linux 4.19.0-14271-g4f88022 aarch64)
@@ -1352,27 +1320,17 @@ Messages
    
       root@analog:~#
 
-
-   .. raw:: html
-
-      </details>
-
 .. raw:: html
 
    </details>
 
-
-.. _make-sure-all-devices-are-present-1:
 
 Make sure all devices are present
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1397,10 +1355,7 @@ Check clock chip lock status on FMCOMMS8
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1419,14 +1374,10 @@ Check clock chip lock status on FMCOMMS8
    
 
 
-.. _synchronizing-the-adrv9009s-1:
-
 Synchronizing the ADRV9009s
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Using the :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>` the tranceivers should always be in a synchronized state.
-
-.. _check-jesd204b-link-status-1:
 
 Check JESD204B Link Status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1435,10 +1386,7 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1475,8 +1423,7 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
 Video Configuration
 -------------------
 
-| The default configuration for most of the projects is to use the HDMI output, but for this project the DisplayPort is used. In order for it to work, you should follow the steps described here: :doc:`DisplayPort No Picture </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
-| After following the steps, the board should be rebooted.
+The default configuration for most of the projects is to use the HDMI output, but for this project the DisplayPort is used. In order for it to work, you should follow the steps described here: :doc:`DisplayPort No Picture </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>` After following the steps, the board should be rebooted.
 
 IIO Oscilloscope Remote
 -----------------------

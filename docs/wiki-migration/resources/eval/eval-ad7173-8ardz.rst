@@ -70,8 +70,7 @@ The sample count in the top left area of the Waveform Analysis tab sets the numb
 Hardware Guide
 ==============
 
-| :doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/hardware_guide>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/hardware_guide>` **Contents of the Hardware guide:**
 
 -  :doc:`Description </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/hardware_guide>`
 -  :doc:`Set Up Procedures </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/hardware_guide>`
@@ -87,8 +86,7 @@ Hardware Guide
 Software Guide
 ==============
 
-| :doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/software>`
-| **Contents of the Software guide:**
+:doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/software>` **Contents of the Software guide:**
 
 -  :doc:`ACE Software </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/software>`
 

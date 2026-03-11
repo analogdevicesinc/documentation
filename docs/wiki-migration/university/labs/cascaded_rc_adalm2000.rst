@@ -38,14 +38,7 @@ A simulation was run sweeping the frequency from 100 Hz to 20 KHz. As we can see
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 3 1 KΩ resistors
-| 1 10 KΩ resistor
-| 1 100 KΩ resistor
-| 3 0.1 uF capacitors (marked 104)
-| 1 0.01 uF capacitor (marked 103)
-| 1 0.001 uF capacitor (marked 102)
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 3 1 KΩ resistors 1 10 KΩ resistor 1 100 KΩ resistor 3 0.1 uF capacitors (marked 104) 1 0.01 uF capacitor (marked 103) 1 0.001 uF capacitor (marked 102)
 
 First order RC filter
 ---------------------
@@ -86,8 +79,6 @@ In network analyzer you will do a logarithmic sweep. Set the start frequency to 
 Second order RC filter
 ----------------------
 
-.. _hardware-setup-1:
-
 Hardware setup
 ~~~~~~~~~~~~~~
 
@@ -108,8 +99,6 @@ Add a second RC low pass section to the prevoius filter as shown in Figure 6.
    Figure 7: Second order RC filter breadboard connections
 
 
-.. _procedure-1:
-
 Procedure
 ~~~~~~~~~
 
@@ -125,8 +114,6 @@ Keep the same parameters set in the network analizer. Put the oscilloscope chann
 
 Third order RC filter
 ---------------------
-
-.. _hardware-setup-2:
 
 Hardware setup
 ~~~~~~~~~~~~~~
@@ -148,27 +135,29 @@ As a further extension of this cascade of RC low pass filter sections add a thir
    Figure 10: Breadboard connections of the third order RC filter
 
 
-.. _procedure-2:
-
 Procedure
 ~~~~~~~~~
 
-| Keep the same parameters set in the network analizer. Put the oscilloscope channel 2 after the first RC stage ( point A shown in figure 10) and do a single sweep. This will be the reference sweep an can be kept on the plot by pressing the Snapshot button in the Reference section of the Network analizer General Settings. Move the oscilloscope channel 2 after the second RC stage (point B) and do another sweep and press the Snapshot button. You should see on the plot the frequency response after both RC stages. To obtain the frequency response of the third stage put the oscilloscope channel 2 in point C and do another sweep. You should see all three responses as in figure 11. |image9|
+Keep the same parameters set in the network analizer. Put the oscilloscope channel 2 after the first RC stage ( point A shown in figure 10) and do a single sweep. This will be the reference sweep an can be kept on the plot by pressing the Snapshot button in the Reference section of the Network analizer General Settings. Move the oscilloscope channel 2 after the second RC stage (point B) and do another sweep and press the Snapshot button. You should see on the plot the frequency response after both RC stages. To obtain the frequency response of the third stage put the oscilloscope channel 2 in point C and do another sweep. You should see all three responses as in figure 11.
+
+
+|image9|
 
 .. container:: centeralign
 
    Figure 11: Third order RC filter frequency response
 
 
-| Follow the same steps you just did on the 2nd order filter with R4 = R5 = R6 and C4 = C5 = C6, and again with R4 = 1KΩ, R5 = 10KΩ, R6 = 100KΩ and C4 = 0.1uF, C5 = 0.01uF, C6 = 0.001uF and plot the frequency response for this cascaded filter.
+Follow the same steps you just did on the 2nd order filter with R4 = R5 = R6 and C4 = C5 = C6, and again with R4 = 1KΩ, R5 = 10KΩ, R6 = 100KΩ and C4 = 0.1uF, C5 = 0.01uF, C6 = 0.001uF and plot the frequency response for this cascaded filter.
 
 Questions
 ---------
 
-| 1. What are the differences between the plots in second order filter? (One plot obtained with 2+ in point A and the other with 2+ in point B).
-| 2. What are the differences between the plots in third order filter? (The plots obtained by the same procedure, the third one being obtained with 2+ in point C).
-| 3.How do your measured results compare to your simulation results (as in figure 2)? Explain any differences.
-|
+1. What are the differences between the plots in second order filter? (One plot obtained with 2+ in point A and the other with 2+ in point B).
+
+2. What are the differences between the plots in third order filter? (The plots obtained by the same procedure, the third one being obtained with 2+ in point C).
+
+3.How do your measured results compare to your simulation results (as in figure 2)? Explain any differences.
 
 .. admonition:: Download
    :class: download

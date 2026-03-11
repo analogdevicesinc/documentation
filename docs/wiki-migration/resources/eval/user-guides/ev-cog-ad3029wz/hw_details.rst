@@ -9,6 +9,7 @@ The following boards are currently available:
 -  :doc:`EV-COG-BLEINTP1Z Connectivity Cog </wiki-migration/resources/eval/user-guides/ev-cog-bleintp1z>`
 -  :doc:`EV-GEAR-EXPANDER1Z Expander Gear </wiki-migration/resources/eval/user-guides/ev-gear-expander1z>`
 
-| 
+
 | End Document
-| :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz>`
+
+:doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz>`

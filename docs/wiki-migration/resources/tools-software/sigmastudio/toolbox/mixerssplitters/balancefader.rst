@@ -20,7 +20,7 @@ Name          ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
 Balance Fader NA         Block            NA
 ============= ========== ================ =============
 
-| 
+
 | ===== Pins =====
 
 Input

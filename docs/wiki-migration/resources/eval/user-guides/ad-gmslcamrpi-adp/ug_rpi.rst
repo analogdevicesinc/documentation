@@ -9,9 +9,7 @@ Required hardware
 -  :adi:`AD-GMSLCAMRPI-ADP# GMSL EV Kit Adapter Board <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-gmslcamrpi-adp.html>`
 -  :adi:`MAX96724 GMSL Deserializer Evaluation Kit (EVK) <en/products/max96724.html>`
 -  :adi:`MAX96717 GMSL Serializer Evaluation Kit (EVK) <en/products/max96717.html>` or *GMSL camera*
--  `Raspberry Pi 4 Model B <https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>`_ *(2GB of RAM or more preferred)*
-
-**Supported image sensors & cameras**
+-  `Raspberry Pi 4 Model B <https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>`_ *(2GB of RAM or more preferred)**Supported image sensors & cameras**
 
 -  `IMX219 Raspberry Pi Camera Module 2 <https://www.raspberrypi.com/products/camera-module-v2/>`_
 
@@ -22,22 +20,8 @@ Required hardware
    Do not use the 15-pin ribbon cable included with the Raspberry Pi camera since that is an opposite sided cable.
 
 
--  15 Pin Type A (**
-
-.. container:: hi
-
-   same side
-
-
-**) Flexible Ribbon Cable, P/N: MP-FFCA10152003A or `Similar <https://www.amazon.com/dp/B07RVD2MZV>`_
--  22 Pin Type B (**
-
-.. container:: hi
-
-   opposite side
-
-
-**) Flexible Ribbon Cable, P/N: MP-FFCA05222002B or `Similar <https://www.amazon.com/dp/B07S1BSPYD>`_
+-  15 Pin Type A (**same side**) Flexible Ribbon Cable, P/N: MP-FFCA10152003A or `Similar <https://www.amazon.com/dp/B07RVD2MZV>`_
+-  22 Pin Type B (**opposite side**) Flexible Ribbon Cable, P/N: MP-FFCA05222002B or `Similar <https://www.amazon.com/dp/B07S1BSPYD>`_
 -  FAKRA Jack to FAKRA Jack coaxial cable, provided in EV kits
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/adaptor_block_diagram.png
@@ -58,13 +42,9 @@ CFG0 **0** – I2C, ROR, 0x80     **0** – I2C, 0x4E
 CFG1 **7** – Coax, 6Gbps, Pixel **0** – Coax, GMSL2, 6Gbps
 ==== ========================== ==========================
 
-.. important::
+It is required to set the CFG pins to the indicated levels for this setup.
 
-   It is required to set the CFG pins to the indicated levels for this setup.
-
-
-| For more information about the default CFG configuration of each evaluation board, please visit the respective datasheet documentation: :adi:`MAX96717EVKIT Datasheet <media/en/technical-documentation/data-sheets/max96717ev.pdf>`
-| :adi:`MAX96724EVKIT Datasheet <media/en/technical-documentation/data-sheets/max96724-bak-evk-max96724r-bak-evk.pdf>`
+For more information about the default CFG configuration of each evaluation board, please visit the respective datasheet documentation: :adi:`MAX96717EVKIT Datasheet <media/en/technical-documentation/data-sheets/max96717ev.pdf>` :adi:`MAX96724EVKIT Datasheet <media/en/technical-documentation/data-sheets/max96724-bak-evk-max96724r-bak-evk.pdf>`
 
 **GMSL Deserializer Evaluation Kit**
 
@@ -201,7 +181,7 @@ Running the evaluation application
 
 Once Linux boots you'll see on the HDMI monitor the Linux desktop and on the top left corner a shortcut to the script named **video_cfg.sh**. Double-clicking on the icon will start the media-ctl configuration script to connect to the V4L2 media pipeline. It may not appear that anything happens but the script runs in background without any pop ups.
 
-.. image:: https://wiki.analog.com/_media/:`Raspberry Pi latest SD card image <resources/eval/user-guides/ad-gmslcamrpi-adp/rpi_video_cfg.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/:`Raspberry Pi latest SD card image <resources/eval/user-guides/ad-gmslcamrpi-adp/rpi_video_cfg.png
    :align: center
    :width: 600px
 
@@ -237,15 +217,15 @@ Tips for Troubleshooting
 There are a few key commands in the Linux environment that can help identify if the expected connections and communications have been made.
 
 -  In the Linux environment, you can check to see if the Rpi I2C is detecting the GMSL boards by sending a I2C detect command  [1]_ as follows: ``$ sudo i2cdetect -y 10``\ The Result should look as follows in the terminal:``analog@kuiper-gmsl:~$ sudo i2cdetect -y 10
-   [sudo] password for analog: 
+   [sudo] password for analog:
         0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-   00:                         -- -- -- -- -- -- -- -- 
-   10: UU -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-   20: -- -- -- -- -- -- -- UU -- -- -- -- -- -- -- -- 
-   30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-   40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-   50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-   60: -- -- -- -- 64 -- -- -- -- -- -- -- -- -- -- -- 
+   00:                         -- -- -- -- -- -- -- --
+   10: UU -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+   20: -- -- -- -- -- -- -- UU -- -- -- -- -- -- -- --
+   30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+   40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+   50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+   60: -- -- -- -- 64 -- -- -- -- -- -- -- -- -- -- --
    70: -- -- -- -- -- -- -- --``
 -  You can also confirm that the video for Linux application is detecting the camera and GMSL devices by using the following command:``$ v4l2-ctl --list-devices``\ The response should look like the following:``analog@kuiper-gmsl:~$ v4l2-ctl --list-devices
    bcm2835-codec-decode (platform:bcm2835-codec):

@@ -1,15 +1,14 @@
-| :doc:`Click here to return to the SigmaStudio+ documentation landing page </wiki-migration/resources/tools-software/sigmastudiov2>`
+:doc:`Click here to return to the SigmaStudio+ documentation landing page </wiki-migration/resources/tools-software/sigmastudiov2>`
 
 SigmaStudio - SigmaStudio+ Comparison
 =====================================
 
-| 
-| \| \| |image1| \| |image2|
-| **SigmaStudio+** \|
-
++-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+|                                                           | |image9|                                                                                               | |image10|                                                                                                           |
+|                                                           |                                                                                                        | **SigmaStudio+**                                                                                                    |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | OS, Installer, Supported Targets                          |                                                                                                        |                                                                                                                     |
-+===========================================================+========================================================================================================+=====================================================================================================================+
++-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | **OS Supported**                                          | Only Windows                                                                                           | Only Windows                                                                                                        |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | **Installers**                                            | \* ADI_SigmaStudio-Relx.y-x64.exe - SigmaDSP, Codecs and Power Amps support                            | Single installer ADI_SigmaStudioPlus-Relx.y.z.exe for tool, SigmaDSP, SHARC, Griffin, Codecs and Power Amps support |
@@ -36,8 +35,8 @@ SigmaStudio - SigmaStudio+ Comparison
 | User Interface                                            |                                                                                                        |                                                                                                                     |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | **Visual Design**                                         | Outdated                                                                                               | Modern                                                                                                              |
-|                                                           | |image9|                                                                                               | |image11|                                                                                                           |
-|                                                           | |image10|                                                                                              | |image12|                                                                                                           |
+|                                                           | |image11|                                                                                              | |image13|                                                                                                           |
+|                                                           | |image12|                                                                                              | |image14|                                                                                                           |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | **Color Themes**                                          | Not supported                                                                                          | Possible. Currently only one theme (Dark) supported                                                                 |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
@@ -56,7 +55,7 @@ SigmaStudio - SigmaStudio+ Comparison
 | **Search Functionality**                                  | Not supported                                                                                          | Supported                                                                                                           |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | **Support for Module Variants**                           | Separately listed. Difficult to select or switch                                                       | Consolidated into a single module. Easy to use                                                                      |
-|                                                           | |image13|                                                                                              | |image14|                                                                                                           |
+|                                                           | |image15|                                                                                              | |image16|                                                                                                           |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | **Alternate Signal Flow Diagrams**                        | Not supported                                                                                          | Supported. Unlimited signal flow diagrams can be added and one of the diagrams can be set as active                 |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
@@ -91,15 +90,19 @@ SigmaStudio - SigmaStudio+ Comparison
    :width: 250px
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/algo_lib_ssp.jpg
    :width: 250px
-.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_dynamicbass.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_splash.png
+   :width: 300px
+.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssplus_splash.png
+   :width: 300px
+.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_dynamicbass.png
    :width: 150px
-.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_leveldetector.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_leveldetector.png
    :width: 200px
-.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssp_dynamicbass.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssp_dynamicbass.png
    :width: 200px
-.. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssp_leveldetector.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssp_leveldetector.png
    :width: 200px
-.. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/algo_lib_ss.jpg
+.. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/algo_lib_ss.jpg
    :width: 250px
-.. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/algo_lib_ssp.jpg
+.. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/algo_lib_ssp.jpg
    :width: 250px

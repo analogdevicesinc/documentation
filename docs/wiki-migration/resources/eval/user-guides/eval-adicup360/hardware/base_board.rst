@@ -15,7 +15,7 @@ This page describes the hardware connectors, the jumpers and switches configurat
 Getting Started Video
 ---------------------
 
-.. image:: https://wiki.analog.com/_media/analogTV>4784514204001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/analogTV>4784514204001
    :alt: analogTV>4784514204001
 
 Connectors
@@ -29,15 +29,25 @@ The following connectors are populated on the base board:
 ::
 
      * DC Power Jack:    Core positive, accepts +7V to +12V DC supply voltage;
-     
+
+::
+
      * DEBUG USB:        Used for flash programming and debug interface;
-     
-     * USER USB:         Provides a Virtual serial port connection to ADuCM360 microcontroller; 
-     
+
+::
+
+     * USER USB:         Provides a Virtual serial port connection to ADuCM360 microcontroller;
+
+::
+
      * PMOD_SPI:         12-pin SPI PMOD connector;
-     
+
+::
+
      * PMOD_I2C:         8-pin I2C PMOD connector;
-     
+
+::
+
      * Six Arduino connectors described in the table below.
 
 +---------------+---------+----------+----------------------------------------------------+----------------------+
@@ -199,8 +209,7 @@ The following connectors are populated on the base board:
 Jumper Configuration
 --------------------
 
-| 
-| There are **3 jumpers groups** on the EVAL-ADICUP360 base board:
+There are **3 jumpers groups** on the EVAL-ADICUP360 base board:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/hw_rev1_1_jumpers.png
    :width: 600px
@@ -248,8 +257,7 @@ Jumpers J1, J2, J3, J4, J5
 USB/Connector Multiplexer
 -------------------------
 
-| 
-| There are **4 switches** on the EVAL-ADICUP360 base board, which are used to multiplex pairs of pins **(P0.1/P0.2, and P0.6/P0.7)** to various different connectors on the board. Depending on how the pins are configured you may route them to the **USB ports**, use them for **SPI communication** or for **UART communication**.
+There are **4 switches** on the EVAL-ADICUP360 base board, which are used to multiplex pairs of pins **(P0.1/P0.2, and P0.6/P0.7)** to various different connectors on the board. Depending on how the pins are configured you may route them to the **USB ports**, use them for **SPI communication** or for **UART communication**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/hw_rev1_1_switches.png
    :width: 600px
@@ -257,8 +265,7 @@ USB/Connector Multiplexer
 Switches S1, S2, S3, S4
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| The **S1, S2, S3, S4 switches** are used to route the P0.1/SCLK1/SCL/SIN, P0.2/MOSI1/SDA/SOUT, P0.6/IRQ2/SIN and P0.7/POR/SOUT pins when they have been assigned a UART function to either the **Arduino I/O** and the **PMOD** connectors or to the Virtual Serial ports implemented via the **USER USB** or the **DEBUG USB** connectors. Each pin can be routed separately, but the routing is usually done for the pairs TxD/RxD.
+The **S1, S2, S3, S4 switches** are used to route the P0.1/SCLK1/SCL/SIN, P0.2/MOSI1/SDA/SOUT, P0.6/IRQ2/SIN and P0.7/POR/SOUT pins when they have been assigned a UART function to either the **Arduino I/O** and the **PMOD** connectors or to the Virtual Serial ports implemented via the **USER USB** or the **DEBUG USB** connectors. Each pin can be routed separately, but the routing is usually done for the pairs TxD/RxD.
 
 Most commonly used configurations are given in the table below. For any other more 'exotic' configuration, consult with the :doc:`Schematics and the Layout </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/base_board>` of the board.
 
@@ -283,8 +290,7 @@ Most commonly used configurations are given in the table below. For any other mo
 Switch Schematic
 ~~~~~~~~~~~~~~~~
 
-| 
-| Here is the schematic of the switching network, the switches allow to route the P0.1/P0.2 and P0.6/P0.7 signals to multiple connector depending how you want to configure the pins. Above are the common configurations, but for complete details please reference the diagram.
+Here is the schematic of the switching network, the switches allow to route the P0.1/P0.2 and P0.6/P0.7 signals to multiple connector depending how you want to configure the pins. Above are the common configurations, but for complete details please reference the diagram.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_schematic.png
    :width: 1000px
@@ -292,8 +298,7 @@ Switch Schematic
 Buttons
 -------
 
-| 
-| The EVAL-ADICUP360 base board provides two buttons **RESET** and **BOOT**.
+The EVAL-ADICUP360 base board provides two buttons **RESET** and **BOOT**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/hw_rev1_1_buttons.png
    :width: 600px
@@ -329,8 +334,7 @@ Software examples
 
 -  :doc:`CLI demo </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cli>`
 
-| 
-| *End of Document*
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/P12_Close.png
    :width: 32px

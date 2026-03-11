@@ -1,16 +1,22 @@
 Toxic Gas Detector using the Arduino Uno
 ========================================
 
-| The **CN0357_example** is a toxic gas(CO) detector demo project for the Arduino Uno base board with additional :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield, created using the Arduino IDE.
+The **CN0357_example** is a toxic gas(CO) detector demo project for the Arduino Uno base board with additional :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield, created using the Arduino IDE.
 
 General Description/Overview
 ----------------------------
 
-| This user guide gives a detailed explanation about **CN0357_example** toxic gas (CO) detection project for Arduino base board and :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` gas sensor shield. The gas sensor shield consists of portable gas detector circuit.
-| |image1|
-| The :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield circuit provides a potentiostatic circuit for biasing the electrochemical sensor and 16-bit Sigma-Delta ADC. The small currents passing in the sensor is being converted to a voltage that can be read by the ADC. The 16-bit ADC value is received via SPI interface of the EVAL-ADICUP3029 board, where the gas concentration is computed.
-| The **CN0357_example** application configures the necessary components, processes ADC output value and make all necessary conversions in order to provide the gas concentration. A UART interface (9600 baud rate and 8-bits data length) is used to send the results to terminal window: CO Concentration in **Parts Per Million(PPM)** are the outputs provided in the terminal window.
-| At the start of the project, the software computes the necessary parameters and configure the digital rheostat(AD5270) . The required parameters are the sensor sensitivity and feedback resistor range. These can be modified by changing the values of the constants **ui16sensorRange** and **ui16sensitivity** found in the **CN0357_example.ino** file of the project.
+This user guide gives a detailed explanation about **CN0357_example** toxic gas (CO) detection project for Arduino base board and :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` gas sensor shield. The gas sensor shield consists of portable gas detector circuit.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_154523.jpg
+   :align: center
+   :width: 600px
+
+The :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield circuit provides a potentiostatic circuit for biasing the electrochemical sensor and 16-bit Sigma-Delta ADC. The small currents passing in the sensor is being converted to a voltage that can be read by the ADC. The 16-bit ADC value is received via SPI interface of the EVAL-ADICUP3029 board, where the gas concentration is computed.
+
+The **CN0357_example** application configures the necessary components, processes ADC output value and make all necessary conversions in order to provide the gas concentration. A UART interface (9600 baud rate and 8-bits data length) is used to send the results to terminal window: CO Concentration in **Parts Per Million(PPM)** are the outputs provided in the terminal window.
+
+At the start of the project, the software computes the necessary parameters and configure the digital rheostat(AD5270) . The required parameters are the sensor sensitivity and feedback resistor range. These can be modified by changing the values of the constants **ui16sensorRange** and **ui16sensitivity** found in the **CN0357_example.ino** file of the project.
 
 Demo Requirements
 -----------------
@@ -39,18 +45,16 @@ Setting up the Hardware
 -  Connect your carbon monoxide(CO) sensor to the EVAL-CN0357-ARDZ via (**P1**).\
 
 
-|image2|
+|image1|
 
 -   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the other end into the PC or laptop.
-
-|
 
 .. important::
 
    **Rev B** EVAL-CN0357-ARDZ boards **REQUIRE** an external power supply, plugged into the DC barrel jack of the Arduino Uno. If not supplied, the board **WILL NOT WORK PROPERLY.**
 
-
-   | Rev C Eval-CN0357-ARDZ boards do not require this extra power supply.
+   
+   Rev C Eval-CN0357-ARDZ boards do not require this extra power supply.
 
 
 Obtaining the Source Code
@@ -95,9 +99,7 @@ In *CN0357_example.ino* file the user can configure parameters:
 
 ::
 
-       uint16_t ui16sensitivity =  65;         //value is in units (nA/ppm)  
-
-|
+       uint16_t ui16sensitivity =  65;         //value is in units (nA/ppm)
 
 Compiling, Verifying, and Programming
 -------------------------------------
@@ -134,8 +136,6 @@ You may need to configure the serial terminal depending on the current settings 
      Stop: 1 bit
      Flow Control: none
 
-| 
-
 Tools Download and Help
 -----------------------
 
@@ -151,7 +151,5 @@ For more information on how to use the tool basics, please check out the `Arduin
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_154523.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_154407.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_154407.jpg
    :width: 500px

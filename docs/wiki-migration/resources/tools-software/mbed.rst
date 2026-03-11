@@ -56,17 +56,20 @@ Mbed Setup
 
 |image3|
 
-   \* Add SDP-K1 board to your compiler by going to https://os.mbed.com/platforms/SDP_K1/ and click on Add to your Mbed Compiler button on the bottom right.
+-  Add SDP-K1 board to your compiler by going to https://os.mbed.com/platforms/SDP_K1/ and click on Add to your Mbed Compiler button on the bottom right.
 
-   |image4|
+|image4|
 
-   ==== Running Code on Mbed ====
+Running Code on Mbed
+~~~~~~~~~~~~~~~~~~~~
+
 -  On the product web page, find the link to Mbed example code, say EVAL-AD1234. Click Import Into Compiler. This should import the entire project, along with libraries.
+
 
 |image5|
 
 -  Click Compile. This should download a binary file, <<program_name>>.SDP_K1.bin. Find the file in your Downloads folder.
--  To program the SDP-K1 board, connect the SDP-K1 board to your computer using the USB cable provided. You should see the board as a new drive on your computer. Copy the binary file into the Mbed enabled board drive. You can also drag and drop the file, like a USB stick.  
+-  To program the SDP-K1 board, connect the SDP-K1 board to your computer using the USB cable provided. You should see the board as a new drive on your computer. Copy the binary file into the Mbed enabled board drive. You can also drag and drop the file, like a USB stick.
 -  Connect the evaluation board and follow the demo manual for the evaluation board to set up the board as required.
 -  To communicate with the board, use your favorite Terminal program, like `Putty <https://putty.org>`_, `Tera Term <http://ttssh2.osdn.jp/>`_ etc. To use Putty, download and install Putty from `here <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_. Here are some `installation instructions <https://www.ssh.com/ssh/putty/windows/install>`_. Open Putty and select Serial connection type. Enter the serial port number and baud rate. Click Open.
    NOTE: You can find the serial port (which constantly changes, every time you plug a device in), by checking device manager.

@@ -81,11 +81,17 @@ If programming was successful, you should be seeing messages appear on the termi
 
 After patterns and prbs sequences are verified, if no errors are present, you may use the chipscope busplot to see the captured signal (see below). The ADC data is available on pins [11:0] of the chipscope signal. Individual channels may be enabled through the processor. The reference design runs internally at 160MHz, so two samples will appear on chipscope for default capture of the signal. The capture may be qualified with the internal data select signal (set trigger to 0x01 as the storage condition).
 
-| Chipscope capture (raw):
-| |Chipscope Busplot (raw)|
+Chipscope capture (raw):
 
-| Chipscope capture (storage qualified):
-| |Chipscope Busplot (qualified)|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9279_ebz_chipscope_1.jpg
+   :alt: Chipscope Busplot (raw)
+   :width: 200px
+
+Chipscope capture (storage qualified):
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9279_ebz_chipscope_2.jpg
+   :alt: Chipscope Busplot (qualified)
+   :width: 200px
 
 Using the reference design
 --------------------------
@@ -157,8 +163,4 @@ More information
 
    |//ez.analog.com/community/feeds/allcontent/atom|
 
-.. |Chipscope Busplot (raw)| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9279_ebz_chipscope_1.jpg
-   :width: 200px
-.. |Chipscope Busplot (qualified)| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9279_ebz_chipscope_2.jpg
-   :width: 200px
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

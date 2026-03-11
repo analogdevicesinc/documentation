@@ -3,14 +3,16 @@
 Pink Filter
 ===========
 
-| 
-| |pinkfilter.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/pinkfilter.png
+   :alt: pinkfilter.png
 
 Description
 -----------
 
-| The classic use of this type of filter is to convert white noise, which is equal energy per hertz, to pink noise, which is equal energy per proportional or constant-percentage (e.g., logarithmic) band. Such energy displays as flat on any log scale graph when bundled (integrated) appropriately. The Pinking Filter takes any broadband input and outputs a signal with a 3dB drop per octave. The classic use of this filter is to convert white noise (equal energy per hertz) to pink noise (equal energy per constant percentage, e.g., log bundling, as with an octave or subdivision). To the human ear, which has an approximately logarithmic frequency response, white noise is distinctly trebly, while pink noise sounds broad and smooth, more like a waterfall.
-| ===== Targets Supported =====
+The classic use of this type of filter is to convert white noise, which is equal energy per hertz, to pink noise, which is equal energy per proportional or constant-percentage (e.g., logarithmic) band. Such energy displays as flat on any log scale graph when bundled (integrated) appropriately. The Pinking Filter takes any broadband input and outputs a signal with a 3dB drop per octave. The classic use of this filter is to convert white noise (equal energy per hertz) to pink noise (equal energy per constant percentage, e.g., log bundling, as with an octave or subdivision). To the human ear, which has an approximately logarithmic frequency response, white noise is distinctly trebly, while pink noise sounds broad and smooth, more like a waterfall.
+
+Targets Supported
+-----------------
 
 ========== ========== ================ ============= ================
 Name       ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -18,7 +20,7 @@ Name       ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 PinkFilter S          B/S              S             B
 ========== ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -39,7 +41,7 @@ Name      Type  Description
 PinkNoise Audio Output Channel0
 ========= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+----------+---------------------------------+
@@ -64,5 +66,3 @@ PinkNoise Audio Output Channel0
 +----------------+---------------------------------+------------------------+---------------+
 
 | 
-
-.. |pinkfilter.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/pinkfilter.png

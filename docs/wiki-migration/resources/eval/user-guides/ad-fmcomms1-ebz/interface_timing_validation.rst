@@ -5,7 +5,9 @@ Digital Interface Timing Verification
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- Both the :adi:`AD9122` and the :adi:`AD9643` have very tight FPGA <-> converter digital interface timing requirements. Ensuring that things work over voltage, temperature with different PCB carrier boards is a challenge. To meet this challenge, we use the on-chip verification of both the ADC and the DAC to ensure that good data is sent and received.
+
+
+Both the :adi:`AD9122` and the :adi:`AD9643` have very tight FPGA <-> converter digital interface timing requirements. Ensuring that things work over voltage, temperature with different PCB carrier boards is a challenge. To meet this challenge, we use the on-chip verification of both the ADC and the DAC to ensure that good data is sent and received.
 
 The way that this is done is to send a known sequence, and then verify it on the other end. If things don't work, adjust the timing, and try again.
 

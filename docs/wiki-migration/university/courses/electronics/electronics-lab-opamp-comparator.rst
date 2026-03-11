@@ -49,16 +49,10 @@ Two main types of voltage comparators are to be considered:
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 3 10 kΩ resistor
-| 1 20 kΩ resistor
-| 1 OP97 ( Low slew rate amplifier supplied with the recent versions of ADALP2000 Analog Parts Kit )
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 3 10 kΩ resistor 1 20 kΩ resistor 1 OP97 ( Low slew rate amplifier supplied with the recent versions of ADALP2000 Analog Parts Kit )
 
 Simple Comparator
 -----------------
-
-.. _background-1:
 
 Background:
 ~~~~~~~~~~~
@@ -125,8 +119,6 @@ The input signal triggers the switching of the output, switching process being s
 Non-inverting hysteresis Comparator
 -----------------------------------
 
-.. _background-2:
-
 Background:
 ~~~~~~~~~~~
 
@@ -165,8 +157,6 @@ Considering v\ :sub:`D`\ =0, v\ :sub:`in`->V\ :sub:`Th`, we obtain the following
    :math:`V_ThH = -(R_1/R_2)V_OL`
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
@@ -181,8 +171,6 @@ Build the following breadboard circuit for the non-inverting hysteresis comparat
 
    Figure 5. Non-Inverting hysteresis comparator breadboard circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -215,8 +203,6 @@ In Figure 7. you can observe the voltage transfer charactersitic of the non-inve
 
 Inverting Hysteresis Comparator
 -------------------------------
-
-.. _background-3:
 
 Background:
 ~~~~~~~~~~~
@@ -256,8 +242,6 @@ Considering v\ :sub:`D`\ =0, v\ :sub:`in`->V\ :sub:`Th`, we obtain the following
    :math:`V_ThH = (R_1/(R_1+R_2))V_OH`
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
@@ -272,8 +256,6 @@ Build the following breadboard circuit for the inverting hysteresis comparator.
 
    Figure 9. Inverting hysteresis comparator breadboard circuit
 
-
-.. _procedure-2:
 
 Procedure:
 ~~~~~~~~~~
@@ -306,8 +288,6 @@ In Figure 11. you can observe the voltage transfer characteristic of the non-inv
 
 Inverting Hysteresis Comparator with asymmetric thresholds
 ----------------------------------------------------------
-
-.. _background-4:
 
 Background:
 ~~~~~~~~~~~
@@ -345,8 +325,6 @@ Considering v\ :sub:`D`\ =0, v\ :sub:`in`->V\ :sub:`Th`, we obtain the following
    :math:`V_ThH = (R_1/(R_1+R_2))V_OH + (R_2/(R_1+R_2))v_Ref`
 
 
-.. _hardware-setup-3:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
@@ -361,8 +339,6 @@ Build the following breadboard circuit for the inverting hysteresis comparator.
 
    Figure 13. Inverting hysteresis comparator with asymmetric thresholds breadboard
 
-
-.. _procedure-3:
 
 Procedure:
 ~~~~~~~~~~
@@ -415,19 +391,12 @@ You can also extend the above example to a circuit with multiple voltage levels 
    Figure 16. Voltage Level Indicator using LEDs
 
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 3 470 Ω resistor
-| 1 10 kΩ resistor
-| 2 20 kΩ resistor
-| 3 LED (red, green, yellow)
-| 1 ADTL082 (2 integrated Op-amps)
-| The circuit uses a divider (R\ :sub:`1`, R\ :sub:`2`, R\ :sub:`3`) to obtain one threshold for each of the two comparators. Based on these thresholds and the input voltage, one LED (D\ :sub:`1`, D\ :sub:`2`, D\ :sub:`3`) at a time will be on.
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 3 470 Ω resistor 1 10 kΩ resistor 2 20 kΩ resistor 3 LED (red, green, yellow) 1 ADTL082 (2 integrated Op-amps)
+
+The circuit uses a divider (R\ :sub:`1`, R\ :sub:`2`, R\ :sub:`3`) to obtain one threshold for each of the two comparators. Based on these thresholds and the input voltage, one LED (D\ :sub:`1`, D\ :sub:`2`, D\ :sub:`3`) at a time will be on.
 
 Exercises:
 

@@ -19,11 +19,7 @@ Simple Common Emitter Amplifier
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| 4 - Resistors
-| 1 - 50 KΩ Variable resistor, potentiometer
-| 1 - small signal NPN transistor (2N3904)
+ADALM1000 hardware module Solder-less breadboard 4 - Resistors 1 - 50 KΩ Variable resistor, potentiometer 1 - small signal NPN transistor (2N3904)
 
 Directions:
 ~~~~~~~~~~~
@@ -62,8 +58,6 @@ The small signal emitter resistance is 1/g\ :sub:`m` and can be viewed as being 
 Self-biased configuration with negative feedback.
 -------------------------------------------------
 
-.. _objective-1:
-
 Objective:
 ~~~~~~~~~~
 
@@ -86,8 +80,6 @@ How does adding negative feedback help to stabilize the DC operating point
 Adding emitter degeneration
 ---------------------------
 
-.. _objective-2:
-
 Objective:
 ~~~~~~~~~~
 
@@ -97,8 +89,6 @@ Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
 1 - 5KΩ Variable resistor, potentiometer (500Ω if one is available)
-
-.. _directions-1:
 
 Directions:
 ~~~~~~~~~~~
@@ -113,8 +103,6 @@ Disconnect the emitter of Q\ :sub:`1` from ground and insert R\ :sub:`E`, a 5KΩ
 
    Figure 3 Emitter degeneration added
 
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~

@@ -36,7 +36,7 @@ Software Needed
 General Description
 ===================
 
-| The EVAL-AD7380-4FMCZ is a fully-featured evaluation board designed to evaluate all features of the :adi:`AD7380-4` analog-to-digital converter (ADC). The *<fc #0000FF>EVAL-AD7380-4FMCZ</fc>* can be controlled by the high-speed, system demonstration platform, :adi:`EVAL-SDP-H1` controller board via the 160-way system demonstration platform (SDP) connector, P7. The SDP-H1 board controls the EVAL-AD7380-4FMCZ through the USB port of the PC using the analysis, control, evaluation (ACE) software, which is available for download on the ACE software page. Note that the EVAL-AD7380-4FMCZ can also be used to evaluate the :adi:`AD7389-4` by moving JP4 to Position 3 and removing R5 to select the internal reference. The EVAL-AD7380-4FMCZ can also be used to evaluate the :adi:`AD7381-4` by adjusting the number of clock cycles in the software. Complete specifications for the AD7380-4, AD7389-4, and AD7381-4 are provided in the :adi:`AD7380-4`, :adi:`AD7389-4`, and :adi:`AD7381-4` datasheets. Consult the appropriate data sheet in conjunction with this user guide when using the EVAL-AD7380-4FMCZ. Full details on the SDP-H1 board are available on the SDP-H1 product page. The comprehensive ACE user guide is available on the ACE software page.
+The EVAL-AD7380-4FMCZ is a fully-featured evaluation board designed to evaluate all features of the :adi:`AD7380-4` analog-to-digital converter (ADC). The *EVAL-AD7380-4FMCZ* can be controlled by the high-speed, system demonstration platform, :adi:`EVAL-SDP-H1` controller board via the 160-way system demonstration platform (SDP) connector, P7. The SDP-H1 board controls the EVAL-AD7380-4FMCZ through the USB port of the PC using the analysis, control, evaluation (ACE) software, which is available for download on the ACE software page. Note that the EVAL-AD7380-4FMCZ can also be used to evaluate the :adi:`AD7389-4` by moving JP4 to Position 3 and removing R5 to select the internal reference. The EVAL-AD7380-4FMCZ can also be used to evaluate the :adi:`AD7381-4` by adjusting the number of clock cycles in the software. Complete specifications for the AD7380-4, AD7389-4, and AD7381-4 are provided in the :adi:`AD7380-4`, :adi:`AD7389-4`, and :adi:`AD7381-4` datasheets. Consult the appropriate data sheet in conjunction with this user guide when using the EVAL-AD7380-4FMCZ. Full details on the SDP-H1 board are available on the SDP-H1 product page. The comprehensive ACE user guide is available on the ACE software page.
 
 .. container:: centeralign
 
@@ -45,36 +45,28 @@ General Description
 
 |image1|
 
-   |
-   
-   .. container:: centeralign
-
-      //\**Figure 1. EVAL-AD7380-4FMCZ EVALUATION BOARD (LEFT) CONNECTED TO SDP-H1 BOARD (RIGHT) \*\* //
-
-   
+   //\**Figure 1. EVAL-AD7380-4FMCZ EVALUATION BOARD (LEFT) CONNECTED TO SDP-H1 BOARD (RIGHT)** //
 
 
 Evaluation Board Quick Start Guide
 ==================================
 
-The EVAL-AD7380-4FMCZ is powered by the *<fc #0000FF>SDP-H1</fc>* board by default. External power supplies can be applied. See Table 1 for a description of connectors required and Table 2 for the link configuration required. To evaluate the AD7380-4 with the EVAL-AD7380-4FMCZ, take the following steps:
+The EVAL-AD7380-4FMCZ is powered by the *SDP-H1* board by default. External power supplies can be applied. See Table 1 for a description of connectors required and Table 2 for the link configuration required. To evaluate the AD7380-4 with the EVAL-AD7380-4FMCZ, take the following steps:
 
 ::
 
       -  Download and install the ACE software, which is available on the AD7380-4 product page. Installation details are found on the internal label of the EVAL-AD7380-4FMCZ box. Ensure that the SDP-H1 board is disconnected from the USB port of the PC when installing the ACE software. The PC may need to be restarted after the installation.
       -  Ensure that the link options are configured as detailed in Table 2.
-      -  Connect the //<fc #0000FF>SDP-H1</fc>// board to the EVAL-AD7380-4FMCZ via the 160-way connector, as shown in Table 2.
-      -  Connect the //<fc #0000FF>SDP-H1</fc>// board to the PC via the USB cable. 
-      -  If using Windows® XP, search for the //<fc #0000FF>SDP-H1</fc>// drivers. Choose to automatically search for the drivers for the SDP-H1 board if prompted by the operating system. 
-      -  Copy the ACE plugins file, **Board.AD738x**, and the **Chip.AD738x** file from the EVAL-AD7380-4FMCZ evaluation board page to the **C:\ProgramData\Analog Devices\ACE\Plugins** folder. 
+      -  Connect the //SDP-H1// board to the EVAL-AD7380-4FMCZ via the 160-way connector, as shown in Table 2.
+      -  Connect the //SDP-H1// board to the PC via the USB cable.
+      -  If using Windows® XP, search for the //SDP-H1// drivers. Choose to automatically search for the drivers for the SDP-H1 board if prompted by the operating system.
+      -  Copy the ACE plugins file, **Board.AD738x**, and the **Chip.AD738x** file from the EVAL-AD7380-4FMCZ evaluation board page to the **C:\ProgramData\Analog Devices\ACE\Plugins** folder.
       -  Connect a −2.5V external power supply on the AMP− of the P6 connector terminal.
-      -  Launch the ACE software from the //<fc #0000FF>ACE</fc>// subfolder in the **Analog Devices** folder in the **All Programs** menu. 
+      -  Launch the ACE software from the //ACE// subfolder in the **Analog Devices** folder in the **All Programs** menu.
       -  Connect an input signal to Channel A, Channel B, Channel C, or Channel D.
 
 Evaluation Board Connection Diagram
 -----------------------------------
-
-|
 
 .. container:: centeralign
 
@@ -83,13 +75,7 @@ Evaluation Board Connection Diagram
 
 |image2|
 
-   |
-   
-   .. container:: centeralign
-
-      //\**Figure 2. Typical Setup of the EVAL-AD7380-4FMCZ and the SDP-H1 Board \*\* //
-
-   
+   //\**Figure 2. Typical Setup of the EVAL-AD7380-4FMCZ and the SDP-H1 Board** //
 
 
 Evaluation Board Hardware
@@ -98,7 +84,7 @@ Evaluation Board Hardware
 Power Supplies
 --------------
 
-Ensure that all link positions are set according to the required operating mode before applying power and signals to the *<fc #0000FF>EVAL-AD7380-4FMCZ</fc>*. See Table 2 for the complete list of link options. The *<fc #0000FF>EVAL-AD7380-4FMCZ</fc>* is powered by the *<fc #0000FF>SDP-H1</fc>* board by default. External power supplies can also be applied to the board. See Table 1 for a description of the connectors used and Table 2 for the link configurations required. Figure 3 shows the functional block diagram of the *<fc #0000FF>EVAL-AD7380-4FMCZ</fc>* with the onboard AD7380-4.
+Ensure that all link positions are set according to the required operating mode before applying power and signals to the *EVAL-AD7380-4FMCZ*. See Table 2 for the complete list of link options. The *EVAL-AD7380-4FMCZ* is powered by the *SDP-H1* board by default. External power supplies can also be applied to the board. See Table 1 for a description of the connectors used and Table 2 for the link configurations required. Figure 3 shows the functional block diagram of the *EVAL-AD7380-4FMCZ* with the onboard AD7380-4.
 
 **Table 1. Optional External Power Supplies**
 
@@ -122,8 +108,6 @@ Ensure that all link positions are set according to the required operating mode 
 | EXT_AMP_PWR- | P6-3      | -2.5 +/- 5%   | Amplifier negative power supply                            |
 +--------------+-----------+---------------+------------------------------------------------------------+
 
-|
-
 .. container:: centeralign
 
 
@@ -131,13 +115,7 @@ Ensure that all link positions are set according to the required operating mode 
 
 |image3|
 
-   |
-   
-   .. container:: centeralign
-
-      //**Figure 3. EVAL-AD7380-4FMCZ Functional Block Diagram** //
-
-   
+   //**Figure 3. EVAL-AD7380-4FMCZ Functional Block Diagram** //
 
 
 Link Configuration Options
@@ -229,110 +207,60 @@ Evaluation Board Software
 Software Installation Procedure
 -------------------------------
 
-Download the *<fc #0000FF>ACE</fc>* software from the AD7380-4 product page and install the ACE software on the PC before using the EVAL-AD7380-4FMCZ. The installation process consists of the *<fc #0000FF>ACE</fc>* software installation and the SDP-H1 driver installation. To ensure that the evaluation system is recognized when it is connected to the PC, install the ACE software and SDP-H1 driver before connecting the EVAL-AD7380-4FMCZ and the SDP-H1 board to the USB port of the PC. Note that all functionality is the same for the AD7389-4 and AD7381-4 with the chip view specific to the AD7389-4 or AD7381-4.
+Download the *ACE* software from the AD7380-4 product page and install the ACE software on the PC before using the EVAL-AD7380-4FMCZ. The installation process consists of the *ACE* software installation and the SDP-H1 driver installation. To ensure that the evaluation system is recognized when it is connected to the PC, install the ACE software and SDP-H1 driver before connecting the EVAL-AD7380-4FMCZ and the SDP-H1 board to the USB port of the PC. Note that all functionality is the same for the AD7389-4 and AD7381-4 with the chip view specific to the AD7389-4 or AD7381-4.
 
 Installing the ACE Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To install the *<fc #0000FF>ACE</fc>* software, take the following steps:
+To install the *ACE* software, take the following steps:
 
--  Download the *<fc #0000FF>ACE</fc>* software to a Windows-based PC.
+-  Download the *ACE* software to a Windows-based PC.
 -  Double click the **ACEInstall.exe** file to begin the installation. By default, the software is saved to the following location: **C:\\Program Files (x86)\\Analog Devices\\ACE**.
 -  A window appears asking for permission to allow the program to make changes to the PC. Click **Yes** to begin the installation process.
 -  Click **Next** > to continue the installation, as shown in Figure 4.
 
 .. container:: centeralign
 
-   \ |image4|\
-
-   
-   .. container:: centeralign
-
-      //**Figure 4. ACE Software Installation Confirmation** *
-
-   
+   \ |image4|//**Figure 4. ACE Software Installation Confirmation** *
 
 
-\* Read the software license agreement and click* **I Agree** *(see Figure 5).
+- Read the software license agreement and click **I Agree** *(see Figure 5).
 
 .. container:: centeralign
 
-   \ \
-
-   
-   .. container:: centeralign
-
-      *\ **Figure 5. License Agreement** *
-
-   
+   \ **Figure 5. License Agreement**
 
 
-\* Choose an installation location and click* **Next** *> (see Figure 6).
+- Choose an installation location and click **Next** *> (see Figure 6).
 
 .. container:: centeralign
 
-   \ \
-
-   
-   .. container:: centeralign
-
-      *\ **Figure 6. Choose Installation Location** *
-
-   
+   \ **Figure 6. Choose Installation Location**
 
 
-\* Select the* **PreRequisites** *checkbox to include the installation of the SDP-H1 driver and click* **Install** *(see Figure 7).
+- Select the **PreRequisites** checkbox to include the installation of the SDP-H1 driver and click **Install** *(see Figure 7).
 
 .. container:: centeralign
 
-   \ \
-
-   
-   .. container:: centeralign
-
-      *\ **Figure 7. Choose Components Section** *
-
-   
+   \ **Figure 7. Choose Components Section**
 
 
-\* The* **Windows Security** *window appears. Click* **Install** *(see Figure 8). The installation is in progress. No action is required (see Figure 9).
+- The **Windows Security** window appears. Click **Install** *(see Figure 8). The installation is in progress. No action is required (see Figure 9).
 
 .. container:: centeralign
 
-   \ \
-
-   
-   .. container:: centeralign
-
-      *\ **Figure 8. Windows Security Window** *
-
-   
+   \ **Figure 8. Windows Security Window**
 
 
 .. container:: centeralign
 
-   \ \
+   \ **Figure 9. Installation in Progress**
 
-   
-   .. container:: centeralign
-
-      *\ **Figure 9. Installation in Progress** *
-
-   
-
-
-\* When the installation is complete (see Figure 10), click* **Next** *> and then click* **Finish** *to complete.
+-  When the installation is complete (see Figure 10), click **Next** > and then click **Finish** to complete.
 
 .. container:: centeralign
 
-   \ \
-
-   
-   .. container:: centeralign
-
-      *\ **Figure 10. Installation Completed** //
-
-   
+   \ |image5|//**Figure 10. Installation Completed** //
 
 
 Evaluation Board Setup Procedures
@@ -357,18 +285,13 @@ To verify the board connection, take the following steps:
 
 ::
 
-     - When the SDP-H1 board is plugged into the PC, allow the **Found New Hardware Wizard** to run. If using Windows XP, search for the SDP-H1 drivers. If prompted by the operating system, choose to automatically search for the drivers for the SDP-H1 board. 
+     - When the SDP-H1 board is plugged into the PC, allow the **Found New Hardware Wizard** to run. If using Windows XP, search for the SDP-H1 drivers. If prompted by the operating system, choose to automatically search for the drivers for the SDP-H1 board.
      - A window may appear asking for permission to allow the program to make changes to the computer. In this case, click **Yes**. The **Computer Management** window opens.
      - Under System Tools, click **Device Manager** and use the **Device Manager** window to ensure that the SDP-H1 board is connected to the PC properly. If the SDP-H1 driver software is installed and the board is connected to the PC properly, **Analog Devices SDP-H1** appears under **ADI Development Tools** in the **Device Manager window**, as shown in Figure 11.
 
 .. container:: centeralign
 
-   {{ :resources:eval:user-guides:ad7380-4_fig-011.jpg?nolink&600 |}}
-
-   
-   .. container:: centeralign
-
-      //**Figure 11. Device Manager Window ** //
+   {{ :resources:eval:user-guides:ad7380-4_fig-011.jpg?nolink&600 |}}//**Figure 11. Device Manager Window** //
 
    
 
@@ -388,7 +311,7 @@ When the EVAL-AD7380-4FMCZ and SDP-H1 boards are properly connected to the PC, l
 
 ::
 
-     - From the **Start** menu, select **All Programs** > **Analog Devices** > **ACE** > **ACE.exe** to open the main software window, as shown in Figure 12. 
+     - From the **Start** menu, select **All Programs** > **Analog Devices** > **ACE** > **ACE.exe** to open the main software window, as shown in Figure 12.
      - The **AD7380-4 Eval Board** icon appears in the **Attached Hardware** section. If the EVAL-AD7380-4FMCZ is not connected to the USB port via the SDP-H1 board when the software is launched, the AD7380-4 Eval Board icon does not appear in the Attached Hardware section. In this case, connect the EVAL-AD7380-4FMCZ and SDP-H1 board to the USB port of the PC, wait a few seconds, and then continue following these instructions.
      - Double click the **AD7380-4 Eval Board** icon to open the window shown in Figure 13.
      - Double click the **AD7380-4** chip icon to open the window shown in Figure 14.
@@ -396,27 +319,15 @@ When the EVAL-AD7380-4FMCZ and SDP-H1 boards are properly connected to the PC, l
 
 .. container:: centeralign
 
-   {{ :resources:eval:user-guides:ad7380-4_fig-012.jpg?nolink&600 |}}\\
+   {{ :resources:eval:user-guides:ad7380-4_fig-012.jpg?nolink&600 |}}
 
    
-   .. container:: centeralign
-
-      //**Figure 12. ACE Software Main Window** *
-
-   
+   //**Figure 12. ACE Software Main Window** *
 
 
 .. container:: centeralign
 
-   \
-
-   
-   .. container:: centeralign
-
-      *\ **Figure 13. EVAL-AD7380-4FMCZ View** //
-
-   
-
+   \ **Figure 13. EVAL-AD7380-4FMCZ View**
 
 Chip View
 ~~~~~~~~~
@@ -426,37 +337,18 @@ When the software installation procedures and the evaluation board setup procedu
 ::
 
      - Block icons that are dark blue are programmable blocks. Click a dark blue block icon to open a configurable pop-up window that allows customization for data capture, as shown in the oversampling block in Figure 15.
-     - Enter the reference voltage value in the **Reference Voltage** box at the top of the window when External Reference is selected. The default value for the **external reference** is set to 3.3 V. 
+     - Enter the reference voltage value in the **Reference Voltage** box at the top of the window when External Reference is selected. The default value for the **external reference** is set to 3.3 V.
 
-| See the Software Installation Procedures section and the Evaluation Board Setup Procedures section for additional information.
+See the Software Installation Procedures section and the Evaluation Board Setup Procedures section for additional information.
 
 .. container:: centeralign
 
-   \
-
-
-   |image5|
-
-   |
-   
-   .. container:: centeralign
-
-      //**Figure 14. Chip View** *
-
-   
+   \ |image6| //**Figure 14. Chip View** *
 
 
 .. container:: centeralign
 
-   \
-
-   
-   .. container:: centeralign
-
-      *\ **Figure 15. Pop-Up Configurable Window** //
-
-   
-
+   \ **Figure 15. Pop-Up Configurable Window**
 
 Memory Map Window Features
 --------------------------
@@ -496,51 +388,25 @@ Click **Diff** to check for differences in register values between the ACE softw
 Software Defaults
 ~~~~~~~~~~~~~~~~~
 
-| To revert all register values back to the default values, click **Software Defaults** and then click **Apply Changes** to write to the AD7380-4.
+To revert all register values back to the default values, click **Software Defaults** and then click **Apply Changes** to write to the AD7380-4.
 
 .. container:: centeralign
 
-   \
+   \ |image7| //**Figure 16. Memory Map View** *
 
 
-   |image6|
-
-   |
-   
-   .. container:: centeralign
-
-      //**Figure 16. Memory Map View** *
-
-   
-
-
-===== Analysis View ===== Click* **Proceed to Analysis** *in the bottom right corner of the chip view window (see Figure 14) to open the analysis view window shown in Figure 17. The analysis view contains the* **Waveform tab**\ *,* **Histogram tab**\ *, and* **FFT tab.** *
+===== Analysis View ===== Click **Proceed to Analysis** in the bottom right corner of the chip view window (see Figure 14) to open the analysis view window shown in Figure 17. The analysis view contains the **Waveform tab**,**Histogram tab**, and **FFT tab.** *
 
 .. container:: centeralign
 
-   \
-
-   
-   .. container:: centeralign
-
-      *\ **Figure 17. Analysis View** *
-
-   
+   \ **Figure 17. Analysis View**
 
 
-==== Waveform Tab ==== The* **Waveform** *tab displays data in the form of time vs. discrete data values with the results, as shown in Figure 18. The* **Capture** *pane contains the capture settings, which reflect onto the registers automatically before data capture.
+==== Waveform Tab ==== The **Waveform** tab displays data in the form of time vs. discrete data values with the results, as shown in Figure 18. The **Capture** pane contains the capture settings, which reflect onto the registers automatically before data capture.
 
 .. container:: centeralign
 
-   \
-
-   
-   .. container:: centeralign
-
-      *\ **Figure 18. Waveform Tab** //
-
-   
-
+   \ **Figure 18. Waveform Tab**
 
 Capture Pane
 ~~~~~~~~~~~~
@@ -572,43 +438,21 @@ The data waveform graph shows each successive sample of the ADC output. The user
 Histogram Tab
 ~~~~~~~~~~~~~
 
-| The **Histogram** tab contains the histogram graph and the **Results** pane, as shown in Figure 19. The **Results** pane displays the information related to the ADC performance. The histogram graph displays the number of hits per code within the sampled data. This graph is useful for dc analysis and indicates the noise performance of the device.
+The **Histogram** tab contains the histogram graph and the **Results** pane, as shown in Figure 19. The **Results** pane displays the information related to the ADC performance. The histogram graph displays the number of hits per code within the sampled data. This graph is useful for dc analysis and indicates the noise performance of the device.
 
 .. container:: centeralign
 
-   \
-
-
-   |image7|
-
-   |
-   
-   .. container:: centeralign
-
-      //**Figure 19. Histogram Tab** //
-
-   
+   \ |image8| //**Figure 19. Histogram Tab** //
 
 
 FFT Tab
 ~~~~~~~
 
-| The **FFT** tab displays FFT information for the last batch of samples gathered, as shown in Figure 20.
+The **FFT** tab displays FFT information for the last batch of samples gathered, as shown in Figure 20.
 
 .. container:: centeralign
 
-   \
-
-
-   |image8|
-
-   |
-   
-   .. container:: centeralign
-
-      //**Figure 20. FFT Tab** //
-
-   
+   \ |image9| //**Figure 20. FFT Tab** //
 
 
 Analysis Pane
@@ -639,11 +483,13 @@ Board schematic, layout and BOM files. `eval-ad7380-4fmcz_design_files.zip <http
    :width: 600px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-004.jpg
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-014.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-010.jpg
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-016.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-014.jpg
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-019.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-016.jpg
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-020.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-019.jpg
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-020.jpg
    :width: 600px

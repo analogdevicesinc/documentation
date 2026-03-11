@@ -3,21 +3,26 @@
 Peak w/Ext Detector
 ===================
 
-| 
-| |peakcompext.png|
-| |peakcompextgraph.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcompext.png
+   :alt: peakcompext.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcompextgraph.png
+   :alt: peakcompextgraph.png
+   :width: 450px
 
 Description
 -----------
 
-| The Peak w/Ext Detector Compressor block computes the peak level of the control signal, if peak of the signal is more than threshold, signal level is changes to new peak level and if the peak level is below the threshold level, it slowly reaches reaches the new peak level by accounting the hold and decay time.
-| ===== Variants =====
+The Peak w/Ext Detector Compressor block computes the peak level of the control signal, if peak of the signal is more than threshold, signal level is changes to new peak level and if the peak level is below the threshold level, it slowly reaches reaches the new peak level by accounting the hold and decay time.
+
+Variants
+--------
 
 -  Peak w/Ext Detector
 -  Peak w/Ext Detector with Gain Out
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +-----------------------------------+------------+------------------+---------------+------------------+
 | Name                              | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -49,7 +54,7 @@ Name    Type  Description
 Output1 Audio Output channel1
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+------------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -79,10 +84,7 @@ Decay          Decay value  Float                  8.24 format
 Table          Table values Float                  8.24 format
 ============== ============ ====================== =============
 
-| 
-| ===== DSP Parameter Computation ===== Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear) Hold = FS \* Hold/1000
-| Where FS is the sampling rate
 
-.. |peakcompext.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcompext.png
-.. |peakcompextgraph.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcompextgraph.png
-   :width: 450px
+| ===== DSP Parameter Computation ===== Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear) Hold = FS \* Hold/1000
+
+Where FS is the sampling rate

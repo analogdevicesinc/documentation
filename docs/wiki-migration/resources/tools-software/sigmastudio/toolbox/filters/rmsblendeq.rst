@@ -8,9 +8,12 @@ The 'RMS Blend EQ ' block blends the filter coefficients of two second order fil
 
 |image1|
 
-| 
-| The blend factor calculation is based on the RMS value of the detect signal, as shown in the figure below: |image2|
-| This block gives access to a wide variety of 2nd-order (biquad)filter algorithms. The blend factor(0-1) is obtained as input through the control pin. The Slew time can be entered in seconds (0-1) to slew from the initial blend factor to the target value. The available filter types are:
+The blend factor calculation is based on the RMS value of the detect signal, as shown in the figure below:
+
+
+|image2|
+
+This block gives access to a wide variety of 2nd-order (biquad)filter algorithms. The blend factor(0-1) is obtained as input through the control pin. The Slew time can be entered in seconds (0-1) to slew from the initial blend factor to the target value. The available filter types are:
 
 -  Parametric
 -  Shelving
@@ -54,10 +57,12 @@ Output Pins
 | Pin 0: Filter Out1 | decimal - audio                    | Filtered output      |
 +--------------------+------------------------------------+----------------------+
 
---------------
 
-| 
-| ====Configuration==== |image3|
+Configuration
+-------------
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/rmsblendcell.png
+   :align: center
 
 +--------------------------+---------------+---------------+--------------------------------------------------------------------------------------------------------+
 | GUI Control Name         | Default Value | Range         | Function Description                                                                                   |
@@ -88,8 +93,9 @@ Output Pins
 | 
 | Note: The range for upper threshold and lower threshold values for ADSPSC5xx will be -90 to 24dB.
 
-| Click on the |image4| icon to configure the filters. Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
-| The GUI controls for various types of filters are given below.
+Click on the |image3| icon to configure the filters. Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+
+The GUI controls for various types of filters are given below.
 
 Parameteric
 -----------
@@ -107,7 +113,6 @@ Parameteric
 | Q                | 1.41          | 0-16        | Q Factor for filter calculations    |
 +------------------+---------------+-------------+-------------------------------------+
 
---------------
 
 Shelving
 --------
@@ -151,7 +156,6 @@ General
 | Q                | 1.41            | 0-16                                 | Q Factor for filter calculations   |
 +------------------+-----------------+--------------------------------------+------------------------------------+
 
---------------
 
 Butterworth/Bessel
 ------------------
@@ -169,7 +173,6 @@ Butterworth/Bessel
 | Gain             | 0dB             | -15 - 15 dB                                                                 | dB gain of the filter coefficients |
 +------------------+-----------------+-----------------------------------------------------------------------------+------------------------------------+
 
---------------
 
 Tone Control
 ------------
@@ -189,7 +192,6 @@ Tone Control
 | Bass Gain        | 0dB           | -15 - 15 dB | Bass dB gain of the filter coefficients   |
 +------------------+---------------+-------------+-------------------------------------------+
 
---------------
 
 IIR Coefficient
 ---------------
@@ -229,7 +231,6 @@ First Order Filters
 | Q                | 1.41                                        | 0-16              | Q Factor for filter calculations       |
 +------------------+---------------------------------------------+-------------------+----------------------------------------+
 
---------------
 
 All Pass,Peaking,Notch
 ----------------------
@@ -247,7 +248,6 @@ All Pass,Peaking,Notch
 | Q                | 1.41          | 0-16        | Q Factor for filter calculations   |
 +------------------+---------------+-------------+------------------------------------+
 
---------------
 
 Chebyshev
 ---------
@@ -272,52 +272,55 @@ Chebyshev
 Transfer function
 -----------------
 
-| The RMS Blend EQ module supports viewing transfer function with the help of Stimuli and Probe modules as shown below: |image5| The blendfactor to calculate the transfer function is obtained from the slider on the cell. To enable this slider, please click on "Enable Transfer Function" option in the context menu as shown below: |image6|
+The RMS Blend EQ module supports viewing transfer function with the help of Stimuli and Probe modules as shown below: |image4| The blendfactor to calculate the transfer function is obtained from the slider on the cell. To enable this slider, please click on "Enable Transfer Function" option in the context menu as shown below:
+
+
+|image5|
 
 --------------
 
-| 
-| ====DSP Parameter Information====
+DSP Parameter Information
+-------------------------
 
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| GUI Control Name  | Compiler Name                                                                                    | Function Description                                                                                                                                               |
-+===================+==================================================================================================+====================================================================================================================================================================+
-| F1_B2\_           | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F1_B2\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B2 for filter 1                                                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F1_B1\_           | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F1_B1\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B1 for filter 1                                                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F1_B0\_           | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F1_B0\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B0 for filter 1                                                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F1_A2\_           | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F1_A2\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient A2 for filter 1                                                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F1_A1\_           | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F1_A1\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient A1 for filter 1                                                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F2_B2\_           | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F2_B2\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B2 for filter 2                                                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F2_B1\_           | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F2_B1\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B1 for filter 2                                                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F2_B0\_           | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F2_B0\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B0 for filter 2                                                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F2_A2\_           | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F2_A2\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient A2 for filter 2                                                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F2_A1\_           | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F2_A1\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient A1 for filter 2                                                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Lambda\_          | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>lambda\_</fc><fc #800000>1</fc> | time_constant = slew_time/(PI \* 2),Lambda\_= exp(-1/(time_constant\*FS)) where,slew_time is the time required to slew from initial to final value of coefficient. |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Lower threshold   | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>lowerThreshold</fc>             | Lower threshold for blend factor calculation                                                                                                                       |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Upper threshold   | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>upperThreshold</fc>             | Upper threshold for blend factor calculation                                                                                                                       |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Inverse threshold | <fc #008000>RMSBlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>invThreshold</fc>               | invThreshold = 1/(upperThreshold - lowerThreshold)                                                                                                                 |
-+-------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| GUI Control Name  | Compiler Name                     | Function Description                                                                                                                                               |
++===================+===================================+====================================================================================================================================================================+
+| F1_B2\_           | RMSBlendEQExtSPAlg1F1_B2_1        | Bi-quad filter coefficient B2 for filter 1                                                                                                                         |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F1_B1\_           | RMSBlendEQExtSPAlg1F1_B1_1        | Bi-quad filter coefficient B1 for filter 1                                                                                                                         |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F1_B0\_           | RMSBlendEQExtSPAlg1F1_B0_1        | Bi-quad filter coefficient B0 for filter 1                                                                                                                         |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F1_A2\_           | RMSBlendEQExtSPAlg1F1_A2_1        | Bi-quad filter coefficient A2 for filter 1                                                                                                                         |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F1_A1\_           | RMSBlendEQExtSPAlg1F1_A1_1        | Bi-quad filter coefficient A1 for filter 1                                                                                                                         |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F2_B2\_           | RMSBlendEQExtSPAlg1F2_B2_1        | Bi-quad filter coefficient B2 for filter 2                                                                                                                         |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F2_B1\_           | RMSBlendEQExtSPAlg1F2_B1_1        | Bi-quad filter coefficient B1 for filter 2                                                                                                                         |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F2_B0\_           | RMSBlendEQExtSPAlg1F2_B0_1        | Bi-quad filter coefficient B0 for filter 2                                                                                                                         |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F2_A2\_           | RMSBlendEQExtSPAlg1F2_A2_1        | Bi-quad filter coefficient A2 for filter 2                                                                                                                         |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F2_A1\_           | RMSBlendEQExtSPAlg1F2_A1_1        | Bi-quad filter coefficient A1 for filter 2                                                                                                                         |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Lambda\_          | RMSBlendEQExtSPAlg1lambda_1       | time_constant = slew_time/(PI \* 2),Lambda\_= exp(-1/(time_constant\*FS)) where,slew_time is the time required to slew from initial to final value of coefficient. |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Lower threshold   | RMSBlendEQExtSPAlg1lowerThreshold | Lower threshold for blend factor calculation                                                                                                                       |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Upper threshold   | RMSBlendEQExtSPAlg1upperThreshold | Upper threshold for blend factor calculation                                                                                                                       |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Inverse threshold | RMSBlendEQExtSPAlg1invThreshold   | invThreshold = 1/(upperThreshold - lowerThreshold)                                                                                                                 |
++-------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
 | Here,
 
--  <fc #008000> Green</fc> - Algorithm Name
--  <fc #ff0000> Red</fc> - Instance Number (Changes for each instance)
--  <fc #000080> Blue</fc> - Parameter Name
--  <fc #800000> Brown</fc> - Stage number
+-   Green - Algorithm Name
+-   Red - Instance Number (Changes for each instance)
+-   Blue - Parameter Name
+-   Brown - Stage number
 
 Note: The algorithm names for different algorithms for this module are:
 
@@ -336,7 +339,6 @@ Supported ICs
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/rmsblendtree.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/rmsblendcalc.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/rmsblendcell.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/filter_icon.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/rmstf.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/rmsblendcontextmenu.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/filter_icon.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/rmstf.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/rmsblendcontextmenu.png

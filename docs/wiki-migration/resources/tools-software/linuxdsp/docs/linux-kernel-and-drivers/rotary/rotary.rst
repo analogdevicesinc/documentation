@@ -11,7 +11,7 @@ A 32-bit up/down counter is provided that can sense 2-bit quadrature or binary c
 Hardware Setup
 --------------
 
-An ADSP-SC5xx EZ-Board: 
+An ADSP-SC5xx EZ-Board:
 
 -  ADSP-SC584 Ezkit v1.0 and above, or,
 -  ADSP-SC573 Ezkit v1.2 (BOM 1.8) and above
@@ -27,13 +27,13 @@ Software Configuration
 Configure Linux kernel
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You need to enable the ADI rotary driver in Linux kernel. 
+You need to enable the ADI rotary driver in Linux kernel.
 
 ::
 
    Device Drivers  --->
        Input device support  --->
-           <*>   Event interface    
+           <*>   Event interface
            [*]   Miscellaneous devices  --->
                <*>   ADI Rotary support
 
@@ -61,7 +61,7 @@ Disable MSI function in Linux kernel
        MMC/SD/SDIO card support  --->
            [*] Synopsys DesignWare Memory Card Interface
              [*]    Synopsys Designware MCI Support as platform device
-             <N>    ADI specific extensions for Synopsys DW Memory Card Interface  
+             <N>    ADI specific extensions for Synopsys DW Memory Card Interface
 
 ADSP-SC584 EZ-Board
 ~~~~~~~~~~~~~~~~~~~
@@ -88,18 +88,18 @@ Disable Ethernet PHY device driver in Linux kernel
    Device Drivers  --->
        [*] Network device support  --->
            -*-   PHY Device support and infrastructure  --->
-               <N>  National Semiconductor PHYs 
+               <N>  National Semiconductor PHYs
 
 The driver provides two options. It can either send Key (KEY) or Relative (REL) events.
 
-**Option 1** – send Key events: Provide two KEY Codes for: 
+**Option 1** – send Key events: Provide two KEY Codes for:
 
 ::
 
    rotary_up_key  =  KEY_PLUS
    rotary_down_key =  KEY_MINUS
 
-**Option 2** – send REL events: Provide one REL event type: 
+**Option 2** – send REL events: Provide one REL event type:
 
 ::
 
@@ -130,7 +130,7 @@ Example
 
 ::
 
-   # evtest /dev/input/event0 
+   # evtest /dev/input/event0
    Input driver version is 1.0.1
    Input device ID: bus 0x19 vendor 0x1 product 0x1 version 0x100
    Input device name: "3100b000.cnt"

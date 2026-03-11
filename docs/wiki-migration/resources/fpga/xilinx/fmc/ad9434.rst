@@ -191,7 +191,7 @@ Hardware related:
 
 HDL related:
 
-:git-hdl:`AD9434_fmc HDL project <projects/ad9434_fmc>`
+`AD9434_fmc HDL project <https://github.com/analogdevicesinc/hdl/tree/f81532d1d792d9104e3d2290155c0155893e3d7f/projects/ad9434_fmc>`_
 
 .. container:: box
 
@@ -199,19 +199,19 @@ HDL related:
    +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | IP name      | Source code link                                                                                                                  | Documentation link                                                            |
    +==============+===================================================================================================================================+===============================================================================+
-   | axi_ad9434   | :git-hdl:`axi_ad9434 HDL <library/axi_ad9434>`                                                                                    | -                                                                             |
+   | axi_ad9434   | `axi_ad9434 HDL <https://github.com/analogdevicesinc/hdl/tree/f81532d1d792d9104e3d2290155c0155893e3d7f/library/axi_ad9434>`_      | -                                                                             |
    +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | axi_dmac     | :git-hdl:`axi_dmac HDL <library/axi_dmac>`                                                                                        | `axi_dmac doc <:doc:`/wiki-migration/resources/fpga/docs/axi_dmac`>`_         |
+   | axi_dmac     | `axi_dmac HDL <https://github.com/analogdevicesinc/hdl/tree/f81532d1d792d9104e3d2290155c0155893e3d7f/library/axi_dmac>`_          | `axi_dmac doc <:doc:`/wiki-migration/resources/fpga/docs/axi_dmac`>`_         |
    +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | axi_clkgen   | :git-hdl:`axi_clkgen HDL <library/axi_clkgen>`                                                                                    | `axi_clkgen doc <:doc:`/wiki-migration/resources/fpga/docs/axi_clkgen`>`_     |
+   | axi_clkgen   | `axi_clkgen HDL <https://github.com/analogdevicesinc/hdl/tree/f81532d1d792d9104e3d2290155c0155893e3d7f/library/axi_clkgen>`_      | `axi_clkgen doc <:doc:`/wiki-migration/resources/fpga/docs/axi_clkgen`>`_     |
    +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | axi_hdmi_tx  | :git-hdl:`axi_hdmi_tx HDL <library/axi_hdmi_tx>`                                                                                  | `axi_hdmi_tx doc <:doc:`/wiki-migration/resources/fpga/docs/axi_hdmi_tx`>`_   |
+   | axi_hdmi_tx  | `axi_hdmi_tx HDL <https://github.com/analogdevicesinc/hdl/tree/f81532d1d792d9104e3d2290155c0155893e3d7f/library/axi_hdmi_tx>`_    | `axi_hdmi_tx doc <:doc:`/wiki-migration/resources/fpga/docs/axi_hdmi_tx`>`_   |
    +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | axi_spdif_tx | :git-hdl:`axi_spdif_tx HDL <library/axi_spdif_tx>`                                                                                | -                                                                             |
+   | axi_spdif_tx | `axi_spdif_tx HDL <https://github.com/analogdevicesinc/hdl/tree/f81532d1d792d9104e3d2290155c0155893e3d7f/library/axi_spdif_tx>`_  | -                                                                             |
    +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | axi_sysid    | :git-hdl:`axi_sysid HDL <library/axi_sysid>`                                                                                      | `System ID doc <:doc:`/wiki-migration/resources/fpga/docs/axi_sysid`>`_       |
+   | axi_sysid    | `axi_sysid HDL <https://github.com/analogdevicesinc/hdl/tree/f81532d1d792d9104e3d2290155c0155893e3d7f/library/axi_sysid>`_        | `System ID doc <:doc:`/wiki-migration/resources/fpga/docs/axi_sysid`>`_       |
    +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | sysid_rom    | :git-hdl:`sysid_rom HDL <library/sysid_rom>`                                                                                      | `System ID doc <:doc:`/wiki-migration/resources/fpga/docs/axi_sysid`>`_       |
+   | sysid_rom    | `sysid_rom HDL <https://github.com/analogdevicesinc/hdl/tree/f81532d1d792d9104e3d2290155c0155893e3d7f/library/sysid_rom>`_        | `System ID doc <:doc:`/wiki-migration/resources/fpga/docs/axi_sysid`>`_       |
    +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    
 
@@ -222,6 +222,6 @@ Software related:
 
    
    -  :git-linux:`Linux device tree <arch/arm/boot/dts/zynq-zc706-adv7511-ad9434-fmc-500ebz.dts>`
-   -  :git-linux:`AD9434 driver <drivers/iio/adc/ad9467.c#L143>`
+   -  `AD9434 driver <https://github.com/analogdevicesinc/linux/blob/9197af5e6cfe0f804df581581348cbb81e5f0190/drivers/iio/adc/ad9467.c#L143>`_
    
 

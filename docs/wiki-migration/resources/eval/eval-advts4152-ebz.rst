@@ -71,7 +71,6 @@ Section 1: This section functions as a Fault Protection that is mainly driven by
 ::
 
                                                    Section 1: LT4356-1 Schematic
-                   
 
 Section 2: This section function as step-down regulator in the board and is mainly catered by the LT8609A IC – a highly efficiency and high speed synchronous monolithic step-down switching regulator which keeps the output level at a constant voltage of 5V a max current of 3A.The LT8609A burst mode operation enables high efficiency down to very low output current while keeping the output ripple below 10mVpeak-peak.
 
@@ -84,7 +83,6 @@ LT8609A has a SYNC pin that allows synchronization to an external clock or sprea
 ::
 
                                                    Section 2: LT8609A Schematic
-                   
 
 Section 3: This section function as a back-up supply or battery back-up power manager in the board. Mainly catered by the LTC4040 IC – a high-current step-up DC-to-DC regulator to back up the supply from a single-cell Lithium Ion or Lithium-Iron-Phosphate battery.
 
@@ -97,7 +95,6 @@ When the main input supply is available, the LTC4040 chip step-up regulator oper
 ::
 
                                                    Section 3: LTC4040 Schematic
-                   
 
 --------------
 

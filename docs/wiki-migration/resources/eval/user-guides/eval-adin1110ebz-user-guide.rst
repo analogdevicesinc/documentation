@@ -5,7 +5,6 @@ User Guide for EVAL-ADIN1110EBZ
 
    
    General Description
-   -------------------
    
    The EVAL-ADIN1110EBZ is a flexible platform enabling quick evaluation of the ADIN1110, robust, low power 10BASE-T1L MAC-PHY. It provides 10Mbit per second Single Pair Ethernet (SPE) connections with devices across 1.7km of cable.
    
@@ -25,16 +24,16 @@ User Guide for EVAL-ADIN1110EBZ
       \ *Figure 1. EVAL-ADIN1110-EBZ – Simplified Block Diagram*\
 
    
-   Features
-   ~~~~~~~~
+   **Features**
+
    
    -  User friendly access to all ADIN1110 features
    -  Stand-alone hardware configured operation
    -  Flexible power supplies and prototyping options
    -  On-board ARM Cortex-M4 STM32L4S5QII3P ultra-low-power Microcontroller
    
-   Equipment Needed
-   ~~~~~~~~~~~~~~~~
+   **Equipment Needed**
+
    
    -  Link partner with 10BASE-T1L interface
       Recommended to use ADIN1100EBZ Evaluation Board(RJ45 Ethernet interface to use as media converter between 10BASE-T1L and 10BASE-T)
@@ -159,7 +158,7 @@ The EVAL-ADIN1110EBZ board is provided with links (jumper) and DIP switches that
 | J302 | 3.3V          | uC Power. 3.3V or 1.8V                                                                                              |
 +------+---------------+---------------------------------------------------------------------------------------------------------------------+
 
-\**Table 2. ADIN1110 Hardware Configuration , Schematics Ref. S201 \*\*
+**Table 2. ADIN1110 Hardware Configuration , Schematics Ref. S201**
 
 +----------+------------+----------+-----------------------------------------------+
 | Switch   | Switch     | Default  | Description                                   |
@@ -188,27 +187,27 @@ The EVAL-ADIN1110EBZ board is provided with links (jumper) and DIP switches that
 
 **Table 3. Board LED indicators**
 
-+--------------+-------------------------+------------+-----------------------------------------------------------------------+
-| Name         | Colour                  | Schematics | Description                                                           |
-| (silkscreen) |                         | Ref.       |                                                                       |
-+==============+=========================+============+=======================================================================+
-| uC0          | <fc #008000>Green</fc>  | LED400     | In media converter mode: Media Converter working - both PHYs links up |
-+--------------+-------------------------+------------+-----------------------------------------------------------------------+
-| uC1          | <fc #FF0000>Red</fc>    | LED401     | OFF: No error                                                         |
-|              |                         |            | ON: Error detected by firmware                                        |
-+--------------+-------------------------+------------+-----------------------------------------------------------------------+
-| uC2          | <fc #808000>Yellow</fc> | LED402     | Short flash: Heartbeat.                                               |
-|              |                         |            | Long flash or ON: Receiving UART commands                             |
-+--------------+-------------------------+------------+-----------------------------------------------------------------------+
-| uC3          | <fc #0000FF>Blue</fc>   | LED403     | Reserved                                                              |
-+--------------+-------------------------+------------+-----------------------------------------------------------------------+
-| LED_0        | <fc #008000>Green</fc>  | LED200     | ON/Flashing: 10BASE-T1L link up/activity                              |
-+--------------+-------------------------+------------+-----------------------------------------------------------------------+
-| LED_1        | <fc #808000>Yellow</fc> | LED201     | OFF: 10BASE-T1L TX amplitude 1.0V p-p                                 |
-|              |                         |            | ON: 10BASE-T1L TX amplitude 2.4V p-p                                  |
-+--------------+-------------------------+------------+-----------------------------------------------------------------------+
-| POWER        | <fc #008000>Green</fc>  | LED1       | Board 3.3V power supply is present                                    |
-+--------------+-------------------------+------------+-----------------------------------------------------------------------+
++--------------+--------+------------+-----------------------------------------------------------------------+
+| Name         | Colour | Schematics | Description                                                           |
+| (silkscreen) |        | Ref.       |                                                                       |
++==============+========+============+=======================================================================+
+| uC0          | Green  | LED400     | In media converter mode: Media Converter working - both PHYs links up |
++--------------+--------+------------+-----------------------------------------------------------------------+
+| uC1          | Red    | LED401     | OFF: No error                                                         |
+|              |        |            | ON: Error detected by firmware                                        |
++--------------+--------+------------+-----------------------------------------------------------------------+
+| uC2          | Yellow | LED402     | Short flash: Heartbeat.                                               |
+|              |        |            | Long flash or ON: Receiving UART commands                             |
++--------------+--------+------------+-----------------------------------------------------------------------+
+| uC3          | Blue   | LED403     | Reserved                                                              |
++--------------+--------+------------+-----------------------------------------------------------------------+
+| LED_0        | Green  | LED200     | ON/Flashing: 10BASE-T1L link up/activity                              |
++--------------+--------+------------+-----------------------------------------------------------------------+
+| LED_1        | Yellow | LED201     | OFF: 10BASE-T1L TX amplitude 1.0V p-p                                 |
+|              |        |            | ON: 10BASE-T1L TX amplitude 2.4V p-p                                  |
++--------------+--------+------------+-----------------------------------------------------------------------+
+| POWER        | Green  | LED1       | Board 3.3V power supply is present                                    |
++--------------+--------+------------+-----------------------------------------------------------------------+
 
 Microcontroller Modes of operation
 ----------------------------------
@@ -272,8 +271,7 @@ Therefore, to change the mode of operation, the board must be reset by pressing 
 Software
 ~~~~~~~~
 
-| The EVAL-ADIN1110EBZ can be used as a stand-alone board, with the firmware already pre-programmed in the microcontroller flash memory.
-| The mode of operation can be set using the S303 "uC Config" DIP switch and the link status is indicated by LEDs. There is no software required for this stand-alone use case.
+The EVAL-ADIN1110EBZ can be used as a stand-alone board, with the firmware already pre-programmed in the microcontroller flash memory. The mode of operation can be set using the S303 "uC Config" DIP switch and the link status is indicated by LEDs. There is no software required for this stand-alone use case.
 
 The EVAL-ADIN1110EBZ can also be interfaced with a host computer via the USB port. The full set of ADIN1110 PHY and MAC registers and features such as link quality monitoring can be accessed via the command line interface.
 
@@ -310,114 +308,96 @@ The EVAL-ADIN1110EBZ firmware works with the common serial terminals. It has bee
 Initial Welcome Message
 -----------------------
 
-| When the EVAL-ADIN1110EBZ is correctly connected via the USB Virtual COM Port using the terminal software, the firmware sends an initial welcome message as displayed below.
-| Note that a hardware reset of the board (using S501 "RESET" button) or the 'info' command will also display the welcome message. This can be useful to check the ADIN1110 information and link status.
+When the EVAL-ADIN1110EBZ is correctly connected via the USB Virtual COM Port using the terminal software, the firmware sends an initial welcome message as displayed below. Note that a hardware reset of the board (using S501 "RESET" button) or the 'info' command will also display the welcome message. This can be useful to check the ADIN1110 information and link status.
 
-| <fc #008000> ================================================
-| ANALOG DEVICES 10BASE-T1L Demo Serial Interface
-| ================================================
-| (c) 2021 Analog Devices Inc. All rights reserved
-| ================================================
-| Firmware ver.: 1.1.0
-| Board Name: EVAL-ADIN1110EBZ
-| Board revision: B
-| Board Serial Number: AVAS146613
-| uC CFG3-2-1-0: OFF-OFF-OFF-OFF (Mode 15)
-| Board Configuration:TCP/IP Stack+Web Server,DHCP,MAC Addr1
-| SPI Access to ADIN1110: Success
-| MAC address: 00:e0:22:fe:da:c9
-| IP Address: not assigned
-| Link status: Down
-| Master/Slave: Not run
-| Tx Level: Not run
-| ================================================
-| Type '<?><new line>' for a list of commands
-| ================================================</fc>
+================================================ ANALOG DEVICES 10BASE-T1L Demo Serial Interface ================================================ (c) 2021 Analog Devices Inc. All rights reserved ================================================ Firmware ver.: 1.1.0 Board Name: EVAL-ADIN1110EBZ Board revision: B Board Serial Number: AVAS146613 uC CFG3-2-1-0: OFF-OFF-OFF-OFF (Mode 15) Board Configuration:TCP/IP Stack+Web Server,DHCP,MAC Addr1 SPI Access to ADIN1110: Success
+
+MAC address: 00:e0:22:fe:da:c9 IP Address: not assigned Link status: Down Master/Slave: Not run Tx Level: Not run ================================================ Type '<?><new line>' for a list of commands ================================================
 
 Terminal Commands
 -----------------
 
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| Command       | Description                                                                                                                                | Use                                                               |
-+===============+============================================================================================================================================+===================================================================+
-| macwrite      | Write in MAC registers.                                                                                                                    | <fc #008000>macwrite <RegAddress>,<Data><newLine></fc>            |
-|               | <regAddress> and <Data> in hex                                                                                                             |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| macread       | Read MAC registers.                                                                                                                        | <fc #008000>macread <RegAddress><newLine></fc>                    |
-|               | <regAddress> in hex                                                                                                                        |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| phywrite      | Write in PHY registers.                                                                                                                    | <fc #008000>phywrite <RegAddress>,<Data><newLine></fc>            |
-|               | <regAddress> and <Data> in hex                                                                                                             |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| phyread       | Read in PHY registers.                                                                                                                     | <fc #008000>phyread <RegAddress>,<Data><newLine></fc>             |
-|               | <regAddress> in hex                                                                                                                        |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| machwreset    | ADIN1110 Hardware Reset                                                                                                                    | <fc #008000>machwreset<newLine></fc>                              |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| macswreset    | ADIN1110 Software Reset                                                                                                                    | <fc #008000>macswreset<newLine></fc>                              |
-|               | Similar to hardware reset without the power up sequence                                                                                    |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| changemac     | Change MAC address.                                                                                                                        | <fc #008000>changemac <xx>:<xx>:<xx>:<xx>:<xx>:<xx><newLine></fc> |
-|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                                   |
-|               | All digits in hex                                                                                                                          |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| changeip      | Change IP address.                                                                                                                         | <fc #008000>changeip <xxx>.<xxx>.<xxx>.<xxx><newLine></fc>        |
-|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                                   |
-|               | <xxx> digits in dec                                                                                                                        |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| changegw      | Change gateway, all numbers in dec.                                                                                                        | <fc #008000>changegw <xxx>.<xxx>.<xxx>.<xxx><newLine></fc>        |
-|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                                   |
-|               | <xxx> digits in dec                                                                                                                        |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| changenm      | Change network mask,all numbers in dec.                                                                                                    | <fc #008000>changenm <xxx>.<xxx>.<xxx>.<xxx><newLine></fc>        |
-|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                                   |
-|               | <xxx> digits in hex                                                                                                                        |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| changebrdname | Change board name.                                                                                                                         | <fc #008000>changebrdname <custom text><newLine></fc>             |
-|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                                   |
-|               | Warning: Predefined in factory. Lost if overwritten                                                                                        |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| changebrdrev  | Change board revision                                                                                                                      | <fc #008000>changebrdrev <custom text><newLine></fc>              |
-|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                                   |
-|               | Warning: Predefined in factory. Lost if overwritten                                                                                        |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| changebrdsn   | Change board serial number                                                                                                                 | <fc #008000>changebrdsn <custom text><newLine><newLine></fc>      |
-|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                                   |
-|               | Warning: Predefined in factory. Lost if overwritten.                                                                                       |                                                                   |
-|               | Serial Number matches the label on the bottom of the board                                                                                 |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| eraseflash    | Erase the internal flash memory.                                                                                                           | <fc #008000>eraseflash<newLine></fc>                              |
-|               | Warning:resets the board parameters to default values                                                                                      |                                                                   |
-|               | Also erases board name,board serial number and board revision                                                                              |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| savetoflash   | Save configuration to flash.                                                                                                               | <fc #008000>savetoflash<newLine></fc>                             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| reset_dut     | ADIN1110 Physical Hardware Reset                                                                                                           | <fc #008000>reset_dut<newLine></fc>                               |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| reset         | Microcontroller software reset.                                                                                                            | <fc #008000>reset<newLine></fc>                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| start         | Start sending periodic diagnostics.                                                                                                        | <fc #008000>start<newLine></fc>                                   |
-|               | Also provide statistics when used in Frame Generator\\checker mode (9)                                                                     |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| stop          | Stop sending periodic diagnostics.                                                                                                         | <fc #008000>stop<newLine></fc>                                    |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| clear         | Clear/reset the diagnostics counters                                                                                                       | <fc #008000>clear<newLine></fc>                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| tempread      | Read the ambiant temperature from the onboard sensor                                                                                       | <fc #008000>tempread<newLine></fc>                                |
-|               | Result in ºC                                                                                                                               |                                                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| testram       | Execute the onboard RAM test                                                                                                               | <fc #008000>testram<newLine></fc>                                 |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| mode          | Overwrite the board mode in software. After MCU reset or board reset, the mode is set to hardware configuration defined by the switch S303 | <fc #008000>mode <number><newLine></fc>                           |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| modes         | List the board modes available                                                                                                             | <fc #008000>modes<newLine></fc>                                   |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| info          | Display the board information (welcome message)                                                                                            | <fc #008000>info<newLine></fc>                                    |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| getbuildnb    | Get the firmware build number                                                                                                              | <fc #008000>getbuildnb<newLine></fc>                              |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| ?             | Display the list of commands available                                                                                                     | <fc #008000>?<newLine></fc>                                       |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| Command       | Description                                                                                                                                | Use                                              |
++===============+============================================================================================================================================+==================================================+
+| macwrite      | Write in MAC registers.                                                                                                                    | macwrite <RegAddress>,<Data><newLine>            |
+|               | <regAddress> and <Data> in hex                                                                                                             |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| macread       | Read MAC registers.                                                                                                                        | macread <RegAddress><newLine>                    |
+|               | <regAddress> in hex                                                                                                                        |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| phywrite      | Write in PHY registers.                                                                                                                    | phywrite <RegAddress>,<Data><newLine>            |
+|               | <regAddress> and <Data> in hex                                                                                                             |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| phyread       | Read in PHY registers.                                                                                                                     | phyread <RegAddress>,<Data><newLine>             |
+|               | <regAddress> in hex                                                                                                                        |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| machwreset    | ADIN1110 Hardware Reset                                                                                                                    | machwreset<newLine>                              |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| macswreset    | ADIN1110 Software Reset                                                                                                                    | macswreset<newLine>                              |
+|               | Similar to hardware reset without the power up sequence                                                                                    |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| changemac     | Change MAC address.                                                                                                                        | changemac <xx>:<xx>:<xx>:<xx>:<xx>:<xx><newLine> |
+|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                  |
+|               | All digits in hex                                                                                                                          |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| changeip      | Change IP address.                                                                                                                         | changeip <xxx>.<xxx>.<xxx>.<xxx><newLine>        |
+|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                  |
+|               | <xxx> digits in dec                                                                                                                        |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| changegw      | Change gateway, all numbers in dec.                                                                                                        | changegw <xxx>.<xxx>.<xxx>.<xxx><newLine>        |
+|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                  |
+|               | <xxx> digits in dec                                                                                                                        |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| changenm      | Change network mask,all numbers in dec.                                                                                                    | changenm <xxx>.<xxx>.<xxx>.<xxx><newLine>        |
+|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                  |
+|               | <xxx> digits in hex                                                                                                                        |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| changebrdname | Change board name.                                                                                                                         | changebrdname <custom text><newLine>             |
+|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                  |
+|               | Warning: Predefined in factory. Lost if overwritten                                                                                        |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| changebrdrev  | Change board revision                                                                                                                      | changebrdrev <custom text><newLine>              |
+|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                  |
+|               | Warning: Predefined in factory. Lost if overwritten                                                                                        |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| changebrdsn   | Change board serial number                                                                                                                 | changebrdsn <custom text><newLine><newLine>      |
+|               | Applies after 'savetoflash' and reset.                                                                                                     |                                                  |
+|               | Warning: Predefined in factory. Lost if overwritten.                                                                                       |                                                  |
+|               | Serial Number matches the label on the bottom of the board                                                                                 |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| eraseflash    | Erase the internal flash memory.                                                                                                           | eraseflash<newLine>                              |
+|               | Warning:resets the board parameters to default values                                                                                      |                                                  |
+|               | Also erases board name,board serial number and board revision                                                                              |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| savetoflash   | Save configuration to flash.                                                                                                               | savetoflash<newLine>                             |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| reset_dut     | ADIN1110 Physical Hardware Reset                                                                                                           | reset_dut<newLine>                               |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| reset         | Microcontroller software reset.                                                                                                            | reset<newLine>                                   |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| start         | Start sending periodic diagnostics.                                                                                                        | start<newLine>                                   |
+|               | Also provide statistics when used in Frame Generator\\checker mode (9)                                                                     |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| stop          | Stop sending periodic diagnostics.                                                                                                         | stop<newLine>                                    |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| clear         | Clear/reset the diagnostics counters                                                                                                       | clear<newLine>                                   |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| tempread      | Read the ambiant temperature from the onboard sensor                                                                                       | tempread<newLine>                                |
+|               | Result in ºC                                                                                                                               |                                                  |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| testram       | Execute the onboard RAM test                                                                                                               | testram<newLine>                                 |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| mode          | Overwrite the board mode in software. After MCU reset or board reset, the mode is set to hardware configuration defined by the switch S303 | mode <number><newLine>                           |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| modes         | List the board modes available                                                                                                             | modes<newLine>                                   |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| info          | Display the board information (welcome message)                                                                                            | info<newLine>                                    |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| getbuildnb    | Get the firmware build number                                                                                                              | getbuildnb<newLine>                              |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| ?             | Display the list of commands available                                                                                                     | ?<newLine>                                       |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 Microcontroller Firmware Update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -468,7 +448,7 @@ Using the Microcontroller bootloader
 Using the ST-LINK JTAG programmer
 ---------------------------------
 
-| The ST-LINK JTAG programmer provides a robust solution for programming and debugging source code. It is also faster to program the microcontroller using the JTAG interface.
+The ST-LINK JTAG programmer provides a robust solution for programming and debugging source code. It is also faster to program the microcontroller using the JTAG interface.
 
 -  Connect the ST-LINK programmer to the EVAL-ADIN1110EBZ using the ARM-20 JTAG connector P410 "uC JTAG"
 -  Select the ST-LINK interface in previous STEP 1 and follow the same instructions to program the board with the provided firmware.
@@ -487,8 +467,7 @@ Demo Web Page
 -------------
 
 | The EVAL-ADIN1110EBZ firmware runs a webserver that can be used to access the Demo webpage to visualize the board information, link status and onboard temperature readings.
-| This feature demonstrates how the 10BASE-T1L MAC-PHY can be connected to a 10BASE-T network and accessed using conventional HTTP requests.
-| A media converter board (e.g. **EVAL-ADIN1100EBZ**, see the user guide for more details) is required to interface the
+| This feature demonstrates how the 10BASE-T1L MAC-PHY can be connected to a 10BASE-T network and accessed using conventional HTTP requests. A media converter board (e.g. **EVAL-ADIN1100EBZ**, see the user guide for more details) is required to interface the
 | **EVAL-ADIN1110EBZ** to a 10BASE-T network (using RJ45 cable).
 | A simple setup is shown below:
 
@@ -533,25 +512,7 @@ To run the frame generator/checker demo (mode 9 ):
 -  Enter the 'stop' command to stop the test
    The output should be as follow, note that the test stops automatically once 10,000 frames have been received:
 
-| <fc #008000>start
-| </fc><fc #4682b4>OK</fc>
-| <fc #008000>MSE -37.2 dB Rx 0, Diff 0, Err 0
-| MSE -37.2 dB Rx 500, Diff 0, Err 0
-| MSE -37.2 dB Rx 1000, Diff 0, Err 0
-| MSE -37.2 dB Rx 1500, Diff 0, Err 0
-| MSE -37.2 dB Rx 2000, Diff 0, Err 0
-| MSE -37.2 dB Rx 2500, Diff 0, Err 0
-| MSE -37.2 dB Rx 3000, Diff 0, Err 0
-| MSE -37.2 dB Rx 3500, Diff 0, Err 0
-| MSE -37.2 dB Rx 4000, Diff 0, Err 0
-| MSE -37.2 dB Rx 4500, Diff 0, Err 0
-| MSE -37.2 dB Rx 5000, Diff 0, Err 0
-| MSE -37.2 dB Rx 5500, Diff 0, Err 0
-| MSE -37.2 dB Rx 6000, Diff 0, Err 0
-| MSE -37.2 dB Rx 6500, Diff 0, Err 0
-| MSE -37.2 dB Rx 7000, Diff 0, Err 0</fc>
-| <fc #4682b4>stop</fc>
-| <fc #008000>OK</fc>
+start OK MSE -37.2 dB Rx 0, Diff 0, Err 0 MSE -37.2 dB Rx 500, Diff 0, Err 0 MSE -37.2 dB Rx 1000, Diff 0, Err 0 MSE -37.2 dB Rx 1500, Diff 0, Err 0 MSE -37.2 dB Rx 2000, Diff 0, Err 0 MSE -37.2 dB Rx 2500, Diff 0, Err 0 MSE -37.2 dB Rx 3000, Diff 0, Err 0 MSE -37.2 dB Rx 3500, Diff 0, Err 0 MSE -37.2 dB Rx 4000, Diff 0, Err 0 MSE -37.2 dB Rx 4500, Diff 0, Err 0 MSE -37.2 dB Rx 5000, Diff 0, Err 0 MSE -37.2 dB Rx 5500, Diff 0, Err 0 MSE -37.2 dB Rx 6000, Diff 0, Err 0 MSE -37.2 dB Rx 6500, Diff 0, Err 0 MSE -37.2 dB Rx 7000, Diff 0, Err 0 stop OK
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
@@ -587,8 +548,8 @@ No link established (2-boards setup)
 -  Ensure that the EVAL-ADIN1110EBZ board and the link partner are powered properly
 -  Ensure that the EVAL-ADIN1110EBZ onboard Microcontroller power supply selection (J302) and the onboard ADIN1110 power supply selection (J204) are the same (1.8V or 3.3V)
 -  Ensure the ADIN1110 communication is working (Showns in the welcome message: SPI Access to ADIN1110:Success)
-   \* If the SPI access to ADIN1110 reports a fault(from terminal welcome message), check that the ADIN1110 power rails selection is matching the intended transmit level set on S201 pin 4 (TX2P4_EN_N).
 
+   -  If the SPI access to ADIN1110 reports a fault(from terminal welcome message), check that the ADIN1110 power rails selection is matching the intended transmit level set on S201 pin 4 (TX2P4_EN_N).
    -  Check that the SPI is configured to Open Alliance with protection on S201 pin 1 and 2
 
 -  Ensure 10BASE-T1L cable is properly connected between P101 and the link partner board
@@ -606,7 +567,7 @@ Notes
 
 By using the evaluation board discussed herein (together with any tools, components documentation or support materials, the “Evaluation Board”), you are agreeing to be bound by the terms and conditions set forth below (“Agreement”) unless you have purchased the Evaluation Board, in which case the Analog Devices Standard Terms and Conditions of Sale shall govern. Do not use the Evaluation Board until you have read and agreed to the Agreement. Your use of the Evaluation Board shall signify your acceptance of the Agreement. This Agreement is made by and between you (“Customer”) and Analog Devices, Inc. (“ADI”), with its principal place of business at One Technology Way, Norwood, MA 02062, USA. Subject to the terms and conditions of the Agreement, ADI hereby grants to Customer a free, limited, personal, temporary, non-exclusive, non-sublicensable, non-transferable license to use the Evaluation Board FOR EVALUATION PURPOSES ONLY. Customer understands and agrees that the Evaluation Board is provided for the sole and exclusive purpose referenced above, and agrees not to use the Evaluation Board for any other purpose. Furthermore, the license granted is expressly made subject to the following additional limitations: Customer shall not (i) rent, lease, display, sell, transfer, assign, sublicense, or distribute the Evaluation Board; and (ii) permit any Third Party to access the Evaluation Board. As used herein, the term “Third Party” includes any entity other than ADI, Customer, their employees, affiliates and in-house consultants. The Evaluation Board is NOT sold to Customer; all rights not expressly granted herein, including ownership of the Evaluation Board, are reserved by ADI. CONFIDENTIALITY. This Agreement and the Evaluation Board shall all be considered the confidential and proprietary information of ADI. Customer may not disclose or transfer any portion of the Evaluation Board to any other party for any reason. Upon discontinuation of use of the Evaluation Board or termination of this Agreement, Customer agrees to promptly return the Evaluation Board to ADI. ADDITIONAL RESTRICTIONS. Customer may not disassemble, decompile or reverse engineer chips on the Evaluation Board. Customer shall inform ADI of any occurred damages or any modifications or alterations it makes to the Evaluation Board, including but not limited to soldering or any other activity that affects the material content of the Evaluation Board. Modifications to the Evaluation Board must comply with applicable law, including but not limited to the RoHS Directive. TERMINATION. ADI may terminate this Agreement at any time upon giving written notice to Customer. Customer agrees to return to ADI the Evaluation Board at that time. LIMITATION OF LIABILITY. THE EVALUATION BOARD PROVIDED HEREUNDER IS PROVIDED “AS IS” AND ADI MAKES NO WARRANTIES OR REPRESENTATIONS OF ANY KIND WITH RESPECT TO IT. ADI SPECIFICALLY DISCLAIMS ANY REPRESENTATIONS, ENDORSEMENTS, GUARANTEES, OR WARRANTIES, EXPRESS OR IMPLIED, RELATED TO THE EVALUATION BOARD INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS. IN NO EVENT WILL ADI AND ITS LICENSORS BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES RESULTING FROM CUSTOMER’S POSSESSION OR USE OF THE EVALUATION BOARD, INCLUDING BUT NOT LIMITED TO LOST PROFITS, DELAY COSTS, LABOR COSTS OR LOSS OF GOODWILL. ADI’S TOTAL LIABILITY FROM ANY AND ALL CAUSES SHALL BE LIMITED TO THE AMOUNT OF ONE HUNDRED US DOLLARS ($100.00). EXPORT. Customer agrees that it will not directly or indirectly export the Evaluation Board to another country, and that it will comply with all applicable United States federal laws and regulations relating to exports. GOVERNING LAW. This Agreement shall be governed by and construed in accordance with the substantive laws of the Commonwealth of Massachusetts (excluding conflict of law rules). Any legal action regarding this Agreement will be heard in the state or federal courts having jurisdiction in Suffolk County, Massachusetts, and Customer hereby submits to the personal jurisdiction and venue of such courts. The United Nations Convention on Contracts for the International Sale of Goods shall not apply to this Agreement and is expressly disclaimed.
 
-©2021 Analog Devices, Inc. All rights reserved. Trademarks and  registered trademarks are the property of their respective owners.
+©2021 Analog Devices, Inc. All rights reserved. Trademarks and registered trademarks are the property of their respective owners.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig1_t1l_adin1110.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig2_t1l_adin1110.png

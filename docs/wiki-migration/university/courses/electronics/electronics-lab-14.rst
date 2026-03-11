@@ -28,12 +28,7 @@ When used in what is referred to as "voltage mode" legs the R-2R resistor ladder
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 9 - 20 KΩ Resistors
-| 9 - 10 KΩ Resistors
-| 1 - OP27 amplifier
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 9 - 20 KΩ Resistors 9 - 10 KΩ Resistors 1 - OP27 amplifier
 
 Directions:
 ~~~~~~~~~~~
@@ -91,8 +86,6 @@ Here are some pre-made waveform files you can try: Sine, Triangle, Gaussian puls
 AD5626 12-bit nanoDAC
 ---------------------
 
-.. _background-1:
-
 Background
 ----------
 
@@ -121,21 +114,10 @@ This mode of operation is the basic mode for AD5626. You can verify the god func
    Figure 7. Unipolar code table of AD5626
 
 
-.. _materials-1:
-
 Materials
 ~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - AD5626 12-bit nanoDAC
-| 1 - 2.2 KΩ resistor
-| 1 - 0.001 uF capacitor
-| 1 - 0.1 uF capacitor
-| 1 - 10 uF capcitor
-
-.. _hardware-setup-1:
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - AD5626 12-bit nanoDAC 1 - 2.2 KΩ resistor 1 - 0.001 uF capacitor 1 - 0.1 uF capacitor 1 - 10 uF capcitor
 
 Hardware setup
 ~~~~~~~~~~~~~~
@@ -156,8 +138,6 @@ Connect the pins of AD5626 as shown in figure 8.
 
    Figure 9. AD5626 breadboard connections
 
-
-.. _procedure-1:
 
 Procedure
 ~~~~~~~~~
@@ -209,46 +189,37 @@ Although the AD5626 has been designed for single-supply operation, bipolar opera
    Figure 13. Bipolar output operation without trim
 
 
-   | This circuit can be used for applications that do not require high accuracy. The output voltage is coded in offset binary and is given by:
-|
+This circuit can be used for applications that do not require high accuracy. The output voltage is coded in offset binary and is given by:
 
 .. container:: centeralign
 
    :math:`Vo = 1mV \times Digital Code \times (R4/(R3+R4)) \times (1+R2/R1)-2.5 \times (R2/R1)`
 
 
-| 
-| For the ±5V output range and the circuit values shown in the table in figure 13 the transfer equation becomes:
-|
+For the ±5V output range and the circuit values shown in the table in figure 13 the transfer equation becomes:
 
 .. container:: centeralign
 
    :math:`Vo=2.44 mV \times Digital Code- 5V`
 
 
-.. _materials-2:
-
 Materials
 ~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - AD5626 12-bit nanoDAC
-| 1 - 0.1 uF capacitor
-| 1 - 1 KΩ resistor
-| 1 - 20 KΩ resistor
-| 2 - 10 KΩ resistors
-| 1 - 47 KΩ resistor
-| 1 - 470 KΩ resistor
-| ====Hardware setup==== Build the circuit presented in figure 13 on your solderless breadboard. |image8|
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - AD5626 12-bit nanoDAC 1 - 0.1 uF capacitor 1 - 1 KΩ resistor 1 - 20 KΩ resistor 2 - 10 KΩ resistors 1 - 47 KΩ resistor 1 - 470 KΩ resistor
+
+Hardware setup
+~~~~~~~~~~~~~~
+
+Build the circuit presented in figure 13 on your solderless breadboard.
+
+
+|image8|
 
 .. container:: centeralign
 
    Figure 14. AD5626 Bipolar output operation breadboard connections
 
-
-.. _procedure-2:
 
 Procedure
 ~~~~~~~~~

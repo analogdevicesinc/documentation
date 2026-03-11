@@ -7,7 +7,8 @@ Hardware Setup Guide
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mc_system.jpg
+   :width: 600px
 
 Supported Carriers
 ------------------
@@ -70,6 +71,3 @@ Getting Started
 
 .. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#none#../
    :alt: Overview#zynq|Linux on ZYNQ
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mc_system.jpg
-   :width: 600px

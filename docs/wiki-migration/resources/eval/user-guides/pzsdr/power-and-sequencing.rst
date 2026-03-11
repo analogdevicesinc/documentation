@@ -73,7 +73,7 @@ In the command line of your favorite terminal program, enter the following:
    Checking connectivity... done.
    root@analog:~# cd PicoZed-sdr/
    root@analog:~# cd SDR2_ADM1166_updates/
-   root@analog:~# chmod +x ./adm1166_eeprom 
+   root@analog:~# chmod +x ./adm1166_eeprom
    root@analog:~# ./adm1166_eeprom ADM1166.hex
    Starting to reprogramm the AD1166 EEPROM.
    Reading f800 ... success
@@ -136,8 +136,6 @@ Reboot the board and the new EEPROM configuration will be implemented.
 
 Using the USB-SDP-CABLEZ serial I/O Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. _required-items-1:
 
 Required items
 ^^^^^^^^^^^^^^
@@ -462,7 +460,7 @@ The default file that comes pre-loaded when you order hardware can be found on `
 
 This file is also updated on occasion to include new features, tweaks or other items which pop up as systems are developed.
 
-.. image:: https://wiki.analog.com/_media/navigation PicoZed_SDR#none#resources/eval/user-guides/picozed_sdr
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/navigation PicoZed_SDR#none#resources/eval/user-guides/picozed_sdr
    :alt: PicoZed_SDR#none#
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/ad9361_timing_diagram.jpg

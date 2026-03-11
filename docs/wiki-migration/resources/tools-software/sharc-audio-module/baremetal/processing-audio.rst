@@ -26,8 +26,10 @@ Both cores rely on the same style of audio callback so audio processing code can
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/dual-core-config.png
    :alt: Dual core audio flow
 
-| As described above, the DMA system is moving audio data around in the background while both SHARC cores are processing blocks of audio.
-| |Dual core audio latency|
+As described above, the DMA system is moving audio data around in the background while both SHARC cores are processing blocks of audio.
+
+
+|Dual core audio latency|
 
 Audio Callbacks
 ~~~~~~~~~~~~~~~
@@ -90,7 +92,7 @@ For example, if the processor is running at 450MHz, the audio sampling rate is 4
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#configuring-the-framework
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#configuring-the-framework
    :alt: Configuring the Framework#.|Bare Metal Framework#audio-frameworks|Selecting Between HW Platforms
 
 .. |Dual core audio latency| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/dual-core-latency.png

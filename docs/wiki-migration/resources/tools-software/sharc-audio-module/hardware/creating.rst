@@ -48,7 +48,7 @@ UART (UART0 / UART1 / UART2)
 
 ::
 
-   *** UART1 and UART2 are unused so either or both may be used on a Fin board.**
+   ** UART1 and UART2 are unused so either or both may be used on a Fin board.**
 
 Analog audio signals
 ~~~~~~~~~~~~~~~~~~~~

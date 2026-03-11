@@ -68,7 +68,7 @@ You are all set!
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad4050lz/quickstart>`
 
-| 
+
 | End Document
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_1.png

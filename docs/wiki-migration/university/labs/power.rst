@@ -9,8 +9,9 @@ Lab Preparation
 Circuit Simulation
 ~~~~~~~~~~~~~~~~~~
 
-| Basic information and material on :doc:`circuit simulation </wiki-migration/university/courses/electronics/circuitsimulationnotes>`, including tool links and usage information.
-| Most of the labs are populated with :adi:`LTspice <en/design-center/design-tools-and-calculators/ltspice-simulator.html>` resource files which contain the schematics of the circuits discussed at a specific topic. A zip file with all M1K-specific and M2K-specific LTspice files for all lab exercises can be downloaded here:
+Basic information and material on :doc:`circuit simulation </wiki-migration/university/courses/electronics/circuitsimulationnotes>`, including tool links and usage information.
+
+Most of the labs are populated with :adi:`LTspice <en/design-center/design-tools-and-calculators/ltspice-simulator.html>` resource files which contain the schematics of the circuits discussed at a specific topic. A zip file with all M1K-specific and M2K-specific LTspice files for all lab exercises can be downloaded here:
 
 +----------+-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | Course   | ADALM1000 (M1K)                                                                                     | ADALM2000 (M2K)                                                                                     |
@@ -18,7 +19,7 @@ Circuit Simulation
 | All Labs | :git-education_tools:`M1K LTspice files <m1k/ltspice>`                                              | :git-education_tools:`M2K LTspice files <m2k/ltspice>`                                              |
 +----------+-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
-| An LTspice file containing the ADALM2000 connections for the schematics can be found here: :git-education_tools:`m2k/ltspice/m2k_conn_ltspice`.
+An LTspice file containing the ADALM2000 connections for the schematics can be found here: :git-education_tools:`m2k/ltspice/m2k_conn_ltspice`.
 
 Lab Hardware and Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~

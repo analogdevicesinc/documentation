@@ -141,5 +141,5 @@ The code snippet below shows how to log an event
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#peripheral-and-system-drivers
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#peripheral-and-system-drivers
    :alt: Using Peripheral and System Drivers#.|Bare Metal Framework#audioproj-tutorial|Using the Audio Project Fin

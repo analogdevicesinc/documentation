@@ -20,7 +20,7 @@ Hardware Setup
 -  A USB memory stick
 -  A USB adapter cable (provided in the ezkit box)
 
-Connect USB stick to the USB OTG port, via the USB adapter cable, as following, and reset the board 
+Connect USB stick to the USB OTG port, via the USB adapter cable, as following, and reset the board
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/das-u-boot/dasu-loading_file-hw_setup.jpg
    :width: 600px
@@ -64,7 +64,7 @@ Copy files in it
    $ sudo cp build/tmp/deploy/images/<MACHINE>/zImage /mnt/boot/
    $ sudo umount /mnt
 
-Then plug the USB stick to the USB OTG port in board, via the USB adapter cable, and reset the board 
+Then plug the USB stick to the USB OTG port in board, via the USB adapter cable, and reset the board
 
 Start the USB
 ~~~~~~~~~~~~~
@@ -77,8 +77,6 @@ Run "start usb" In the u-boot console:
    (Re)start USB...
    USB0:   scanning bus 0 for devices... 1 USB Device(s) found
           scanning usb for storage devices... 1 Storage Device(s) found
-
- 
 
 Run "fatls usb 0:1" In the u-boot console:
 
@@ -372,8 +370,6 @@ There are more command available for USB in u-boot:
                Capacity: 1897.0 MB = 1.8 GB (3885056 x 512)
    Filesystem: FAT32 "           "
 
- 
-
 Appendix: Macro Definition
 ==========================
 
@@ -389,7 +385,7 @@ Appendix: Macro Definition
 | adsp-sc573-ezkit | sc573-ezkit.dtb | adsp-sc5xx-full-adsp-sc573-ezkit.tar.xz | adsp-sc5xx-minimal-adsp-sc573-ezkit.tar.xz | adsp-sc5xx-ramdisk-adsp-sc573-ezkit.cpio.xz.u-boot |
 +------------------+-----------------+-----------------------------------------+--------------------------------------------+----------------------------------------------------+
 
-|  
+| 
 | ----
 
 .. container:: group
@@ -397,16 +393,12 @@ Appendix: Macro Definition
    
    .. container:: half column
 
-      \**Pre: :doc:`Ethernet Driver in U-Boot on SC5xx-EZKIT </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot/ethernet_driver_in_uboot>`\ **
+      **Pre: :doc:`Ethernet Driver in U-Boot on SC5xx-EZKIT </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot/ethernet_driver_in_uboot>`\ **
 
    
    .. container:: half column
 
-      **\ Next: \*\*\ :doc:`Mobile Storage Interface (MSI) </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot/mobile_storage_interface>`
+      **Next: *\*\ :doc:`Mobile Storage Interface (MSI) </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot/mobile_storage_interface>`
 
    
 
-
- 
-
- 

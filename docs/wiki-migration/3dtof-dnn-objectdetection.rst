@@ -40,7 +40,7 @@ To run the application, run the dnn.py script either from your Python IDE or dir
 
 ::
 
-   python3 dnn.py --prototxt \pathTo\MobileNetSSD_deploy.prototxt  
+   python3 dnn.py --prototxt \pathTo\MobileNetSSD_deploy.prototxt
            --weights \pathTo\MobileNetSSD_deploy.caffemodel
 
 The example provides the option to run it both locally and on network backend. If you want to run it on network, you must give the device’s ip as an argument with the --ip option.

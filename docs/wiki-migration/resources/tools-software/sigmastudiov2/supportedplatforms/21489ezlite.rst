@@ -3,8 +3,7 @@
 EVAL-21489-EZLITE
 =================
 
-| 
-| EZ-Kit Lite evaluation hardware evaluating the ADSP-2148x SHARC processor family
+EZ-Kit Lite evaluation hardware evaluating the ADSP-2148x SHARC processor family
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/adzs-21489-ezlite.png
    :width: 400px

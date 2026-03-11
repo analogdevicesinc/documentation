@@ -1,24 +1,25 @@
 AD-APARD32690-SL User Guide
 ===========================
 
-|
-
 .. important::
 
    **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-apard32690-sl/index.html
-   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
-   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+   https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-apard32690-sl/index.html
+   
+   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   
+   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
    
 
 
 Introduction
 ------------
 
-| The :adi:`AD-APARD32690-SL` is an Arduino Form-factor Development Platform based on :adi:`MAX32690` ARM Cortex-M4 Microcontroller, targeted for prototyping intelligent, secure, and connected industrial field devices. Some of the main features and benefits include:
-| \* Arduino Mega-compatible form factor
+The :adi:`AD-APARD32690-SL` is an Arduino Form-factor Development Platform based on :adi:`MAX32690` ARM Cortex-M4 Microcontroller, targeted for prototyping intelligent, secure, and connected industrial field devices. Some of the main features and benefits include:
 
+-  Arduino Mega-compatible form factor
 -  Two Pmod™-compatible connectors
 -  ARM Cortex-M4 Ultra Efficient Microcontroller with integrated Bluetooth 5.2 LE
 -  WiFi connectivity

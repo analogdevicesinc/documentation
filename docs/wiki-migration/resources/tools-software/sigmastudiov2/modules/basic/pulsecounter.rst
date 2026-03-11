@@ -9,8 +9,9 @@ Pulse Counter
 Description
 -----------
 
-| The Pulse Counter block, counts the number of inputs received. There is a start/stop pin to initiate and pause the count, and also a reset pin to set the count back to zero. Any non-zero input on the pulse input pin, is considered a pulse and will be counted when the count is enabled.
-| The pulse counter is to count the number of pulses in specified amount of time. The time is dictated by the signal on StartStop input pin. When the StartStop pin is high, counter starts counting pulses, otherwise the last count value is output. The Reset pin clears the count value and start from zero when StartStop pin is high.
+The Pulse Counter block, counts the number of inputs received. There is a start/stop pin to initiate and pause the count, and also a reset pin to set the count back to zero. Any non-zero input on the pulse input pin, is considered a pulse and will be counted when the count is enabled.
+
+The pulse counter is to count the number of pulses in specified amount of time. The time is dictated by the signal on StartStop input pin. When the StartStop pin is high, counter starts counting pulses, otherwise the last count value is output. The Reset pin clears the count value and start from zero when StartStop pin is high.
 
 Targets Supported
 -----------------
@@ -44,4 +45,4 @@ Name        Type    Description
 CountResult Control Outputs the count of non zero inputs to the counter
 =========== ======= ===================================================
 
-| 
+

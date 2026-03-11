@@ -28,12 +28,7 @@ Background:
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Active Learning module
-| 1 – 1 KΩ resistor
-| 2 – 2 KΩ resistors (each can be made from 2 1 KΩ resistors in series)
-| 2 – 10 KΩ resistors
-| 2 – small signal NPN transistor (2N3904 Q\ :sub:`1` Q\ :sub:`3`)
-| 2 – small signal PNP transistor (2N3906 Q\ :sub:`2` Q\ :sub:`4`)
+ADALM1000 Active Learning module 1 – 1 KΩ resistor 2 – 2 KΩ resistors (each can be made from 2 1 KΩ resistors in series) 2 – 10 KΩ resistors 2 – small signal NPN transistor (2N3904 Q\ :sub:`1` Q\ :sub:`3`) 2 – small signal PNP transistor (2N3906 Q\ :sub:`2` Q\ :sub:`4`)
 
 Directions:
 ~~~~~~~~~~~
@@ -78,8 +73,7 @@ The crossover distortion is really apparent with a very low input signal. Attach
 
 Lab Report:
 
-| (1) With no input, show that the quiescent operating point for Vout is 2.5V.
-| (2) Demonstrate operation of your amplifier showing cross over distortion.
+(1) With no input, show that the quiescent operating point for Vout is 2.5V. (2) Demonstrate operation of your amplifier showing cross over distortion.
 
 Reducing the cross over distortion:
 -----------------------------------
@@ -89,9 +83,7 @@ We can reduce the voltage range where both output transistors are off by changin
 Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
-| 2 – 4.7 KΩ resistors
-| 1 – small signal NPN transistor (2N3904 Q\ :sub:`6`)
-| 1 – small signal PNP transistor (2N3906 Q\ :sub:`5`)
+2 – 4.7 KΩ resistors 1 – small signal NPN transistor (2N3904 Q\ :sub:`6`) 1 – small signal PNP transistor (2N3906 Q\ :sub:`5`)
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-mstage-f3.png
    :align: center

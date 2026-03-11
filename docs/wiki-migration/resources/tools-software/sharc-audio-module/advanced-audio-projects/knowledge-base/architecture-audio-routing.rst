@@ -51,7 +51,7 @@ Well the TDM settings themselves are often dictated by physical clocking paramet
 
 Revisiting our routing solution then, if we wanted to copy the left and right channels from the analog input and place them into the left and right channels of the analog output, we would use the following command:
 
-*route 0 codec* **0** *codec* **0** *2 20*
+*route 0 codec **0** codec **0** 2 20*
 
 The source and destination offsets start mapping from TDM slots 0 with 2 channels of audio:
 
@@ -60,7 +60,7 @@ The source and destination offsets start mapping from TDM slots 0 with 2 channel
 
 Or if we want to route the left channel (*src offset = 0*) of the analog input to the right channel (*dst offset = 1*) of the analog output, we could use the following command:
 
-*route 0 codec* **0** *codec* **1** *1 20*
+*route 0 codec **0** codec **1** 1 20*
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/routeexample5.jpg
    :width: 600px
@@ -69,7 +69,7 @@ Noting that the above channels marked in blue are simply filled with zeroes (mut
 
 Or if we attempt to copy TDM slots beyond the capability of the physical hardware, we will simply hear no audio. For example:
 
-*route 0 codec* **0** *codec* **2** *2 20*
+*route 0 codec **0** codec **2** 2 20*
 
 Tries to copy to ADC channels starting at destination offset of 2, which doesn't go anywhere on the hardware. Oops :-D
 

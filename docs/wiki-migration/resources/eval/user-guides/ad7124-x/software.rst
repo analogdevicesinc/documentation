@@ -271,8 +271,7 @@ The Documentation section shows information relating to the different bit fields
 AD7124 Eval+ Demo Modes
 =======================
 
-| :doc:`Visit the demo mode section here </wiki-migration/resources/eval/user-guides/ad7124-x/software/demo_modes>`
-| **Contents of the demo modes section:**
+:doc:`Visit the demo mode section here </wiki-migration/resources/eval/user-guides/ad7124-x/software/demo_modes>` **Contents of the demo modes section:**
 
 -  :doc:`Noise Test Demo </wiki-migration/resources/eval/user-guides/ad7124-x/software/demo_modes>`
 -  :doc:`2 Wire RTD Demo </wiki-migration/resources/eval/user-guides/ad7124-x/software/demo_modes>`
@@ -293,7 +292,7 @@ This page provides a step by step guide to launching and using ADI's new Virtual
 
 |image10|
 
-   \* Now you are ready to start using the tool.
+-  Now you are ready to start using the tool.
 
 Tutorial
 --------
@@ -303,8 +302,7 @@ There is an online video walkthrough on using the tool in conjunction with the A
 
 |image11|
 
-| :doc:`Continue to Hardware Guide </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>`
-| :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad7124-x>`
+:doc:`Continue to Hardware Guide </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>` :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad7124-x>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install_1.png
    :width: 800px

@@ -50,14 +50,7 @@ The Analog Parts Kit does not include an SCR but we can emulate one by building 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less Breadboard and jumper wire kit
-| 1 - 1 KΩ Resistor
-| 1 - 100 Ω Resistor
-| 2 - 100 KΩ Resistors
-| 1 - 0.1 uF capacitor (marked 104)
-| 1 - small signal NPN transistor (2N3904)
-| 1 - small signal PNP transistor (2N3906)
+ADALM1000 hardware module Solder-less Breadboard and jumper wire kit 1 - 1 KΩ Resistor 1 - 100 Ω Resistor 2 - 100 KΩ Resistors 1 - 0.1 uF capacitor (marked 104) 1 - small signal NPN transistor (2N3904) 1 - small signal PNP transistor (2N3906)
 
 Directions:
 ~~~~~~~~~~~
@@ -179,8 +172,6 @@ Where η is the intrinsic standoff ratio and VB is the total voltage across the 
 
 η = R\ :sub:`1`/(R\ :sub:`1`\ +R\ :sub:`2`).
 
-.. _directions-1:
-
 Directions:
 ~~~~~~~~~~~
 
@@ -194,8 +185,6 @@ Modify your circuit from figure 2 to look like figure 7.
 
    Figure 7 PUT test circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -238,21 +227,10 @@ Ramp Generator:
 
 We can make a linear ramp generator by substituting a current source for R\ :sub:`T` so that the capacitor C\ :sub:`T` charges at a constant rate.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 2 – NPN transistors ( 2N3904 )
-| 3 – PNP transistors ( 2N3906 )
-| 2 – 4.7 KΩ resistors
-| 3 – 10 KΩ resistors
-| 1 – 200 KΩ resistor
-| 1 – 68 KΩ resistor
-| 1 – 10 KΩ potentiometer
-| 1 – 10 nF capacitor
-
-.. _directions-2:
+2 – NPN transistors ( 2N3904 ) 3 – PNP transistors ( 2N3906 ) 2 – 4.7 KΩ resistors 3 – 10 KΩ resistors 1 – 200 KΩ resistor 1 – 68 KΩ resistor 1 – 10 KΩ potentiometer 1 – 10 nF capacitor
 
 Directions:
 ~~~~~~~~~~~
@@ -270,8 +248,6 @@ Build the circuit of the ramp generator with PUT (SCR) trigger as shown in figur
 
 Resistor R\ :sub:`4` sets the minimum holding current when the “PUT” is in the ON state. This minimum current must be larger than the charging current from Q\ :sub:`2` in order for the circuit to return to the OFF state and oscillate. If R\ :sub:`3` is made smaller, increasing the charging current, R\ :sub:`4` will also need to be made smaller increasing the holding current by a similar amount. If your circuit fails to oscillate you may need to adjust R3 and/or R4 to satisfy this condition ( based on the betas of your particular Q\ :sub:`3` and Q\ :sub:`4` ).
 
-.. _procedure-2:
-
 Procedure:
 ~~~~~~~~~~
 
@@ -281,13 +257,10 @@ On channel B you should see the trigger voltage go up and down as R\ :sub:`6` is
 
 Temporarily move CH-A to the emitter of PNP Q\ :sub:`3` and compare the ramp seen there to the trigger level seen at the wiper of R6. When does the “PUT” trigger?
 
-.. _questions-1:
-
 Questions:
 ~~~~~~~~~~
 
-| What is the purpose for resistors R\ :sub:`1` and R\ :sub:`2` in the current mirror?
-| How linear is the ramp and what factors in the circuit would effect the linearity
+What is the purpose for resistors R\ :sub:`1` and R\ :sub:`2` in the current mirror? How linear is the ramp and what factors in the circuit would effect the linearity
 
 Stair Step Waveform Generator:
 ------------------------------
@@ -314,25 +287,18 @@ The LTspice simulation results are shown in figure 12. A 3.5 V step at the input
    Figure 12, Simulated input and output waveforms.
 
 
-.. _procedure-3:
-
 Procedure:
 ~~~~~~~~~~
 
 Build the circuit in figure 11 on your solder-less breadboard. Use AWG A to produce the input square wave. Change the amplitude of the waveform to see how it effects the step size in the output waveform. Try different values for capacitors C4 and C5 to see how their ratio changes the step size.
 
-.. _questions-2:
-
 Questions:
 ~~~~~~~~~~
 
-| What other circuits could be used to generate the input waveform and does it have to be a square wave?
-| Will the ramp generator from figure 10, with it’s sharp falling edge, work as the input to the stair step generator? Would it need to be modified in anyway?
+What other circuits could be used to generate the input waveform and does it have to be a square wave? Will the ramp generator from figure 10, with it’s sharp falling edge, work as the input to the stair step generator? Would it need to be modified in anyway?
 
 **For Further Reading:**
 
-| http://en.wikipedia.org/wiki/Silicon-controlled_rectifier
-| :adi:`Electrically Induced Damage to Standard Linear Integrated Circuits <static/imported-files/application_notes/AN-397.pdf>`
-| :adi:`Winning the Battle Against Latch-up in CMOS Analog Switches <library/analogDialogue/archives/35-05/latchup/latchup.pdf>`
+http://en.wikipedia.org/wiki/Silicon-controlled_rectifier :adi:`Electrically Induced Damage to Standard Linear Integrated Circuits <static/imported-files/application_notes/AN-397.pdf>` :adi:`Winning the Battle Against Latch-up in CMOS Analog Switches <library/analogDialogue/archives/35-05/latchup/latchup.pdf>`
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

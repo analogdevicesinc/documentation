@@ -1,8 +1,9 @@
 DSP Readback
 ============
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| -------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+--------------
 
 |dspreadbackpic1.png| The DSP Readback block lets you read values back from the DSP at any point in your schematic design.
 

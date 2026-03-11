@@ -70,5 +70,5 @@ Utilities
 -  `UTIL_WFIFO <https://wiki.analog.com/resources/fpga/docs/util_wfifo>`_
 -  :doc:`UTIL_VAR_FIFO </wiki-migration/resources/fpga/docs/util_var_fifo>`
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#arch
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#arch
    :alt: Architecture#hdl|Main page#tips|Using and modifying the HDL design

@@ -68,7 +68,7 @@ Required Hardware
 Testing
 =======
 
-.. image:: https://wiki.analog.com/_media/page>wiki/common#esd_warning&nofooter&noheader
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/page>wiki/common#esd_warning&nofooter&noheader
    :alt: page>wiki/common#esd_warning&nofooter&noheader
 
 .. image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
@@ -115,7 +115,7 @@ Messages
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 .. container:: box bggreen
 
@@ -134,7 +134,7 @@ Messages
       DRAM:  ECC disabled 1 GiB
       MMC:   zynq_sdhci: 0
       SF: Detected S25FL128S_64K with page size 512 Bytes, erase size 128 KiB, total 32 MiB
-      *** Warning - bad CRC, using default environment
+      ** Warning - bad CRC, using default environment
    
       In:    serial
       Out:   serial
@@ -626,14 +626,113 @@ Required Hardware
    See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
 
 
-.. include:: ../quickstart.rst
+ADRV9001/2 Quick Start Guides
+-----------------------------
+
+The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` and :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` boards on various FPGA development boards. They will discuss how to program the bitstream, run a no-OS program or boot a Linux distribution.
+
+Supported Carriers
+~~~~~~~~~~~~~~~~~~
+
+The :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` and :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` is, by definition a "FPGA mezzanine card" (FMC), that means it needs a carrier to plug into. The carriers we support are:
+
++----------------------------------------------------------------------------------------------------------------------+-------------------------------------+--------------------+
+| Board                                                                                                                | ADRV9002NP                          |                    |
++======================================================================================================================+=====================================+====================+
+|                                                                                                                      | **CMOS inteface**                   | **LVDS interface** |
++----------------------------------------------------------------------------------------------------------------------+-------------------------------------+--------------------+
+| `ZCU102 <https://www.xilinx.com/ZCU102>`_                                                                            | √                                   | √                  |
++----------------------------------------------------------------------------------------------------------------------+-------------------------------------+--------------------+
+| `ZC706 <https://www.xilinx.com/ZC706>`_                                                                              | √ **<fc #ff0000>VADJ 1.8V</fc>**\ ¹ | N/A²               |
++----------------------------------------------------------------------------------------------------------------------+-------------------------------------+--------------------+
+| `Zed Board <http://zedboard.org/product/zedboard>`_                                                                  | √ **<fc #ff0000>VADJ 1.8V</fc>**    | N/A²               |
++----------------------------------------------------------------------------------------------------------------------+-------------------------------------+--------------------+
+| `Arria 10 SoC <https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html>`_  | √                                   | N/A³               |
++----------------------------------------------------------------------------------------------------------------------+-------------------------------------+--------------------+
+
+| ¹ Instruction for reprogramming the VADJ can be found `here <https://www.xilinx.com/Attachment/ZC706_Power_Controllers_Reprogramming_Steps.pdf>`_ and `here <https://forums.xilinx.com/t5/Xilinx-Evaluation-Boards/ZC706-Doesn-t-work-with-VADJ-at-1-8v/td-p/430086>`_
+| ² See :doc:`Cmos only operation </wiki-migration/resources/eval/user-guides/adrv9002/quickstart>` section
+| ³ Not supported due sub-optimal mapping of the clock pins from the source synchronous interfaces.
+
+CMOS only operation
+~~~~~~~~~~~~~~~~~~~
+
+On the ZC706 / ZedBoard platforms the FMC connectors map to HR IO banks. The HR banks have a limitation that when using LVDS I/O standard you must set the bank VCCO voltage to 2.5V, however the ADRV9001 evaluation board is using IO supplies of 1.8V and does not have level shifters for the single ended lines. Therefore the VCCO of the banks must be set to 1.8 V (VADJ) and limiting the operation to CMOS mode only. More information on the limitation see `7 Series Select IO guide <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_ section 'LVDS and LVDS_25' and Table 1-43
+
+Supported Environments
+~~~~~~~~~~~~~~~~~~~~~~
+
+The supported OS are:
+
++----------------------------------------------------------------------------------------------------------------------+-----+----------------+----------------+--------------------------+
+| Board                                                                                                                | HDL | Linux Software | No-OS Software | Required Minimum Release |
++======================================================================================================================+=====+================+================+==========================+
+| `ZCU102 <https://www.xilinx.com/ZCU102>`_                                                                            | √   | √              | √              | 2019-R2                  |
++----------------------------------------------------------------------------------------------------------------------+-----+----------------+----------------+--------------------------+
+| `ZC706 <https://www.xilinx.com/ZC706>`_                                                                              | √   | √              | √              | 2020-R1                  |
++----------------------------------------------------------------------------------------------------------------------+-----+----------------+----------------+--------------------------+
+| `Zed Board <http://zedboard.org/product/zedboard>`_                                                                  | √   | √              | √              | 2019-R2                  |
++----------------------------------------------------------------------------------------------------------------------+-----+----------------+----------------+--------------------------+
+| `Arria 10 SoC <https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html>`_  | √   | √              | N/A            | 2020-R1                  |
++----------------------------------------------------------------------------------------------------------------------+-----+----------------+----------------+--------------------------+
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+In most carriers, the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` and :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` boards connects to the HPC1 connector (unless otherwise noted). The carrier setup requires power, UART (115200), ethernet (Linux), DisplayPort or HDMI (if available) and/or JTAG (no-OS) connections. A few typical setups are shown below.
+
+Identify your hardware
+^^^^^^^^^^^^^^^^^^^^^^
+
+Evaluation boards were equipped with different silicon revisions. All boards built since the middle of December 2020 have C0 silicon, older ones use B0 silicon these are no longer shipped. You can identify the board you have based on its label.
+
+======== ================
+Label    Silicon Revision
+======== ================
+|image1| **B0**
+|image2| **B0**
+|image3| **C0**
+|image4| **C0**
+======== ================
+
+.. tip::
+
+   Each revision of silicon requires its corresponding software support files in the later steps.
+
+
+ZCU102 + ADRV9002NP
+~~~~~~~~~~~~~~~~~~~
+
+:doc:`ADRV9002 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynqmp>`
+
+ZC706 + ADRV9002NP
+~~~~~~~~~~~~~~~~~~
+
+:doc:`ADRV9002 Zynq SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynq>`
+
+Zed Board + ADRV9002NP
+~~~~~~~~~~~~~~~~~~~~~~
+
+:doc:`ADRV9002 Zynq Zed Board Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zed>`
+
+============
+
+|common##More information&nofooter&noeditbtn| |common##Support&nofooter&noeditbtn|
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002xbcz_c0_np_w1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002xbcz_c0_np_w2.png
+.. |common##More information&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/adrv9002/common##More information&nofooter&noeditbtn
+.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/adrv9002/common##Support&nofooter&noeditbtn
+
 
 Testing
 =======
 
 .. warning::
 
-   **<fc #ff0000>Before executing below steps, VADJ must be set to 1.8V.</fc>**
+   **Before executing below steps, VADJ must be set to 1.8V.**
 
    
    This can be done by changing VADJ jumper (JP18) from default (2V5) to 1V8 (see picture below).
@@ -663,9 +762,7 @@ Testing
 -  Wait ~ 15 seconds. The blue Done LED (LD12) should illuminate.
 -  Observe kernel and serial console messages on your terminal.
 
-**Note!!**
-
-*USB-OTG* feature: To use USB peripheral devices with ZedBoard, install jumpers JP2 and JP3.
+**Note!!** USB-OTG* feature: To use USB peripheral devices with ZedBoard, install jumpers JP2 and JP3.
 
 For more detailed information on the ZedBoard jumper settings, check out the *ZedBoard Hardware User Guide*, available on the `ZedBoard doc page <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard>`_, the *Jumper Settings* chapter.
 
@@ -676,14 +773,11 @@ Messages
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -695,17 +789,17 @@ Messages
       DRAM:  ECC disabled 512 MiB
       MMC:   zynq_sdhci: 0
       SF: Detected S25FL256S_64K with page size 256 Bytes, erase size 64 KiB, total 32 MiB
-      *** Warning - bad CRC, using default environment
+      ** Warning - bad CRC, using default environment
    
       In:    serial
       Out:   serial
       Err:   serial
       Net:   Gem.e000b000
-      Hit any key to stop autoboot:  3  2  1  0 
+      Hit any key to stop autoboot:  3  2  1  0
       Device: zynq_sdhci
       Manufacturer ID: 3
       OEM: 5344
-      Name: SB16G 
+      Name: SB16G
       Tran Speed: 50000000
       Rd Block Len: 512
       SD version 3.0
@@ -919,7 +1013,7 @@ Messages
       fpga_manager fpga0: Xilinx Zynq FPGA Manager registered
       usbcore: registered new interface driver snd-usb-audio
       mmc0: new high speed SDHC card at address aaaa
-      mmcblk0: mmc0:aaaa SB16G 14.8 GiB 
+      mmcblk0: mmc0:aaaa SB16G 14.8 GiB
       NET: Registered protocol family 10
       Segment Routing with IPv6
       sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
@@ -1144,10 +1238,7 @@ These devices should be present:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1189,7 +1280,65 @@ Once the application is launched goto Settings -> Connect and enter the IP addre
 
    |image2|
 
-.. include:: ../common.rst .. include:: ../common.rst
+More Information
+----------------
+
+-  :doc:`ADRV9001/2 Quick Start Guides </wiki-migration/resources/eval/user-guides/adrv9002/quickstart>`
+
+   -  :doc:`ADRV9002 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynqmp>`
+   -  :doc:`ADRV9002 Zynq SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynq>`
+   -  :doc:`ADRV9002 Zynq Zed Board Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zed>`
+   -  :doc:`ADRV9002 Arria10 SoC Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/a10soc>`
+
+-  :doc:`ADRV9001/ADRV9002 HDL Reference Design </wiki-migration/resources/eval/user-guides/adrv9002/reference_hdl>`
+
+   -  :doc:`AXI_ADRV9001/AXI_ADRV9002 Interface Core </wiki-migration/resources/eval/user-guides/adrv9002/axi_adrv9002>`
+   -  :doc:`Building HDL how-to, ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
+
+-  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+-  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
+
+Software resources
+------------------
+
+-  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+-  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
+
+More Information
+----------------
+
+-  :doc:`ADRV9001/2 Quick Start Guides </wiki-migration/resources/eval/user-guides/adrv9002/quickstart>`
+
+   -  :doc:`ADRV9002 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynqmp>`
+   -  :doc:`ADRV9002 Zynq SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynq>`
+   -  :doc:`ADRV9002 Zynq Zed Board Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zed>`
+   -  :doc:`ADRV9002 Arria10 SoC Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/a10soc>`
+
+-  :doc:`ADRV9001/ADRV9002 HDL Reference Design </wiki-migration/resources/eval/user-guides/adrv9002/reference_hdl>`
+
+   -  :doc:`AXI_ADRV9001/AXI_ADRV9002 Interface Core </wiki-migration/resources/eval/user-guides/adrv9002/axi_adrv9002>`
+   -  :doc:`Building HDL how-to, ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
+
+-  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+-  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
+
+Software resources
+------------------
+
+-  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+-  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/zed_sw.png
    :width: 300px

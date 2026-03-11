@@ -3,14 +3,20 @@
 Param Update
 ============
 
-| |paramupdate.png|
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/paramupdate.png
+   :alt: paramupdate.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/paramupdatepopup.png
 
 Description
 -----------
 
-| The parameter update block allows user to update the module's parameter value dynamically. The selected parameters are updated with the value coming from the input pins
-| ===== Configuration ===== The selection of the parameter will be enabled only when the schematic compilation is completed successfully. The user can select the module for which the parameter needs to be updated. After selecting the module, the parameter within the module should be selected for which value should be updated. The value of the selected parameter will be updated with the given input value for each sample once the schematic is downloaded. User can also change the parameter selection when the schematic is downloaded. It will start updating the newly selected parameter once the parameter selection window is closed.
+The parameter update block allows user to update the module's parameter value dynamically. The selected parameters are updated with the value coming from the input pins
+
+Configuration
+-------------
+
+The selection of the parameter will be enabled only when the schematic compilation is completed successfully. The user can select the module for which the parameter needs to be updated. After selecting the module, the parameter within the module should be selected for which value should be updated. The value of the selected parameter will be updated with the given input value for each sample once the schematic is downloaded. User can also change the parameter selection when the schematic is downloaded. It will start updating the newly selected parameter once the parameter selection window is closed.
 
 Targets Supported
 -----------------
@@ -21,7 +27,7 @@ Name         ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Param Update NA         NA               S             NA
 ============ ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -33,33 +39,30 @@ Name  Type    Description
 Input Control Input Channel
 ===== ======= =============
 
-| 
+
 | ===== Configurable Parameters =====
 
-+--------------------+---------------+-----------------------------------+-----------------------------------------------------------+
-| GUI Parameter      | Default Value | Range                             | Function Description                                      |
-+====================+===============+===================================+===========================================================+
-| Control Index      | Param1        | Param1 to Param<fc #ff0000>X</fc> | Select the control index. <fc #ff0000>X</fc> - NumChannel |
-+--------------------+---------------+-----------------------------------+-----------------------------------------------------------+
-| Memory             | NA            | DM0 / DM1                         | Select the DSP memory                                     |
-+--------------------+---------------+-----------------------------------+-----------------------------------------------------------+
-| ModuleSelection    | NA            | NA                                | Module can be selected which present in the schematic     |
-+--------------------+---------------+-----------------------------------+-----------------------------------------------------------+
-| ParameterSelection | NA            | NA                                | Name of the parameter in the selected module              |
-+--------------------+---------------+-----------------------------------+-----------------------------------------------------------+
++--------------------+---------------+------------------+-------------------------------------------------------+
+| GUI Parameter      | Default Value | Range            | Function Description                                  |
++====================+===============+==================+=======================================================+
+| Control Index      | Param1        | Param1 to ParamX | Select the control index. X - NumChannel              |
++--------------------+---------------+------------------+-------------------------------------------------------+
+| Memory             | NA            | DM0 / DM1        | Select the DSP memory                                 |
++--------------------+---------------+------------------+-------------------------------------------------------+
+| ModuleSelection    | NA            | NA               | Module can be selected which present in the schematic |
++--------------------+---------------+------------------+-------------------------------------------------------+
+| ParameterSelection | NA            | NA               | Name of the parameter in the selected module          |
++--------------------+---------------+------------------+-------------------------------------------------------+
 
 | 
 | ===== DSP Parameters =====
 
-+-------------------------+--------------------------------------------+------------------------+---------------+
-| Parameter Name          | Description                                | ADSP-214xx/SC5xx/215xx | ADAU145x/146x |
-+=========================+============================================+========================+===============+
-| write<fc #ff0000>X</fc> | Parameter update value for channel index X | NA                     | Integer32     |
-+-------------------------+--------------------------------------------+------------------------+---------------+
-| ReadyFlag               | Flag value update                          | NA                     | Integer32     |
-+-------------------------+--------------------------------------------+------------------------+---------------+
-| DataRAMStartAddr        | RAM starting address                       | NA                     | Integer32     |
-+-------------------------+--------------------------------------------+------------------------+---------------+
-
-.. |paramupdate.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/paramupdate.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/paramupdatepopup.png
++------------------+--------------------------------------------+------------------------+---------------+
+| Parameter Name   | Description                                | ADSP-214xx/SC5xx/215xx | ADAU145x/146x |
++==================+============================================+========================+===============+
+| writeX           | Parameter update value for channel index X | NA                     | Integer32     |
++------------------+--------------------------------------------+------------------------+---------------+
+| ReadyFlag        | Flag value update                          | NA                     | Integer32     |
++------------------+--------------------------------------------+------------------------+---------------+
+| DataRAMStartAddr | RAM starting address                       | NA                     | Integer32     |
++------------------+--------------------------------------------+------------------------+---------------+

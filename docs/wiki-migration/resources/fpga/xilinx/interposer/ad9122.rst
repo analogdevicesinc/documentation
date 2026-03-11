@@ -111,7 +111,7 @@ FPGA Referece Designs:
    :class: download
 
    
-   -  \**ML605 \*\* `cf_ad9122_ebz_edk_14_4_2013_03_12.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_edk_14_4_2013_03_12.tar.gz>`_
+   -  **ML605** `cf_ad9122_ebz_edk_14_4_2013_03_12.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_edk_14_4_2013_03_12.tar.gz>`_
    -  **Software** `cf_ad9122_ebz_edk_14_4_sw.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_edk_14_4_sw.tar.gz>`_
    
 

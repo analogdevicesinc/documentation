@@ -1,8 +1,9 @@
 Copy/Paste
 ==========
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| SigmaStudio supports clipboard operations in the Schematic Tab window:
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+
+SigmaStudio supports clipboard operations in the Schematic Tab window:
 
 **Copy:**
 
@@ -25,12 +26,13 @@ Blocks and wires on the can be pasted from the clipboard within the same schemat
 
 **Paste Special:**
 
-| By default, a pasted block's algorithm(s) are assigned to the same IC as the source block. For designs that use multiple processors it is possible to specify the target DSP IC by using the Paste Special operation. The Paste Special command can be accessed in the main application menu, **Edit - Paste Special...** This will open the Paste Special dialog where each block and algorithm in the clipboard is listed in the left column. In the right column, select the desired DSP IC to associate with each block or algorithm.
-| |copypastepic1.png|
+By default, a pasted block's algorithm(s) are assigned to the same IC as the source block. For designs that use multiple processors it is possible to specify the target DSP IC by using the Paste Special operation. The Paste Special command can be accessed in the main application menu, **Edit - Paste Special...** This will open the Paste Special dialog where each block and algorithm in the clipboard is listed in the left column. In the right column, select the desired DSP IC to associate with each block or algorithm.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/copypastepic1.png
+   :alt: copypastepic1.png
+   :align: center
 
 .. hint::
 
    Note: this dialog will be opened automatically when pasting between projects that have different IC types or names, which requires the DSP associations to be defined.
 
-
-.. |copypastepic1.png| image:: https://wiki.analog.com/_media/copypastepic1.png

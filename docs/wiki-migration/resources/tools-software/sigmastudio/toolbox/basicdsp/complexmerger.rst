@@ -3,9 +3,11 @@ Complex Merger
 
 Complex Merger takes the real and imaginary part of input signal and merges to complex output signal. This is a block based module.
 
-| 
-| |image1|
-| ====Input Pins====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/compexmerge.jpg
+   :align: center
+
+Input Pins
+----------
 
 +-----------------------+------------------------------------+------------------------------------+
 | Name                  | Format [int/dec] - [control/audio] | Function Description               |
@@ -26,6 +28,8 @@ Complex Merger takes the real and imaginary part of input signal and merges to c
 
 | 
 | ====Grow Algorithm==== Grow algorithm not supported for the module.
-| ====Supported DSPs===== ADAU145x (Block Schematic only)
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/compexmerge.jpg
+Supported DSPs
+--------------
+
+ADAU145x (Block Schematic only)

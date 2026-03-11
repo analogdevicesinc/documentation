@@ -31,8 +31,7 @@ Required Software
 
 Microblaze gnu toolchain from Xilinx is no longer available on git. Please use gnu tools from Vitis installation as below:
 
-| ~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/::math:`PATH\\ ~/linux` export ARCH=microblaze
-| ~/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
+~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/::math:`PATH ~/linux` export ARCH=microblaze ~/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
 
 .. tip::
 
@@ -52,10 +51,7 @@ Get Linux kernel source
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
+   This specifies any shell prompt running on the development host
 
    
    ::
@@ -65,9 +61,7 @@ Get Linux kernel source
       remote: Counting objects: 2757163, done.
       remote: Compressing objects: 100% (495484/495484), done.
       remote: Total 2757163 (delta 2296596), reused 2687337 (delta 2234506)
-      Receiving objects: 100% (2757163/2757163), 782.04 MiB
-
-      | 1.39 MiB/s, done.
+      Receiving objects: 100% (2757163/2757163), 782.04 MiB | 1.39 MiB/s, done.
       Resolving deltas: 100% (2296596/2296596), done.
    
 
@@ -77,10 +71,7 @@ Checkout main branch
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
+   This specifies any shell prompt running on the development host
 
    
    ::
@@ -98,10 +89,7 @@ Set Environmental Variables
 
 .. container:: box
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
+   This specifies any shell prompt running on the development host
 
    
    ::
@@ -112,13 +100,15 @@ Set Environmental Variables
    
 
 
-|
-
 .. tip::
 
    Instead of sourcing the Vivado settings64.sh script you can alternatively add your microblaze gcc toolchain directly to your PATH variable:
 
-   | ``~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/:$PATH``
+   
+   ::
+   
+      ~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/:$PATH
+   
 
 
 Configure Kernel
@@ -126,10 +116,7 @@ Configure Kernel
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
+   This specifies any shell prompt running on the development host
 
    
    ::
@@ -146,19 +133,11 @@ Get Root File-System
 
 The root file system or rootfs contains everything (besides the Linux kernel itself) needed to support a full Linux system. It contains all the (user) applications, configurations, services, data, etc. Without the rootfs your Linux system cannot run. You can either just download the pre-build image or build it yourself. Instructions can be found here: :doc:`Building with buildroot </wiki-migration/resources/tools-software/linux-build/generic/buildroot>`
 
-`rootfs.cpio.gz <https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz>`_
-
-.. tip::
-
-   rootfs.cpio.gz must be placed in the root of your kernel tree. (~/linux/rootfs.cpio.gz)
-
+`rootfs.cpio.gz <https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz>`_ rootfs.cpio.gz must be placed in the root of your kernel tree. (~/linux/rootfs.cpio.gz)
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -171,7 +150,7 @@ The root file system or rootfs contains everything (besides the Linux kernel its
       Length: 6772207 (6,5M) [application/x-gzip]
       Saving to: ‘rootfs.cpio.gz’
    
-      rootfs.cpio.gz                                     100%[===============================================================================================================>]   6,46M  3,32MB/s    in 1,9s    
+      rootfs.cpio.gz                                     100%[===============================================================================================================>]   6,46M  3,32MB/s    in 1,9s
    
       2022-01-18 09:52:12 (3,32 MB/s) - ‘rootfs.cpio.gz’ saved [6772207/6772207]
    
@@ -198,10 +177,7 @@ To see what device-trees for the different FPGA carrier and FMC module combinati
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::

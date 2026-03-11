@@ -20,14 +20,7 @@ To use the LED as an optical detector, do not forward bias the LED into quadrant
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 2N3904 NPN transistors ( or SSM2212 NPN matched pair )
-| 1 - 100KΩ resistor
-| 1 - 2.2KΩ resistor
-| 3 - LEDs ( multiple red, yellow and green colors )
-| 1 - Infrared LED ( QED-123 )
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 2N3904 NPN transistors ( or SSM2212 NPN matched pair ) 1 - 100KΩ resistor 1 - 2.2KΩ resistor 3 - LEDs ( multiple red, yellow and green colors ) 1 - Infrared LED ( QED-123 )
 
 Directions:
 -----------
@@ -151,8 +144,6 @@ How does the sensitivity of the Darlington connected configuration compare to th
 
 **For Further Reading:**
 
-| https:*en.wikipedia.org/wiki/LED
-  https:*\ en.wikipedia.org/wiki/LED_circuit
-| https://en.wikipedia.org/wiki/Photodiode
+https://en.wikipedia.org/wiki/LED https://en.wikipedia.org/wiki/LED_circuit https://en.wikipedia.org/wiki/Photodiode
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**

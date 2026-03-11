@@ -418,7 +418,7 @@ AD74413R IIO driver initialization example
    ret = ad74413r_iio_init(&ad74413r_iio_desc, &ad74413r_iio_ip);
    if (ret)
            return ret;
-           
+
    struct iio_app_device iio_devices[] = {
            {
                    .name = "ad74413r",

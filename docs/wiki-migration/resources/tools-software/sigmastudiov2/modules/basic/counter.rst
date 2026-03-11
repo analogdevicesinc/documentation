@@ -3,14 +3,14 @@
 Counter
 =======
 
-| 
-| |counter.png| |counterwint.png|
+|counter.png| |counterwint.png|
 
 Description
 -----------
 
-| The Counter block can be used with a State Machine to process your input at a particular time interval, in ms. The counter starts from 0 by default or any other user-defined value if specified.
-| The Counter with Interval module has 2 input pins. First input is for Start/Hold the Counter and second input is used to Reset the counter value.
+The Counter block can be used with a State Machine to process your input at a particular time interval, in ms. The counter starts from 0 by default or any other user-defined value if specified.
+
+The Counter with Interval module has 2 input pins. First input is for Start/Hold the Counter and second input is used to Reset the counter value.
 
 Varaints
 --------

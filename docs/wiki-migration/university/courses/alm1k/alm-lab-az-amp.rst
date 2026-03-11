@@ -43,14 +43,7 @@ Switches pins S3A and S4A perform the same function alternately connecting the A
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 – LTC1043 analog switch
-| 1 – CMOS Inverter (CD4007 array, CD4069AUB or 74HCU04 un-buffered hex CMOS inverters)
-| 2 – 100 KΩ resistors
-| 2 – 20 KΩ resistors
-| 2 – 1 uF capacitors
-| 2 – 1 nF capacitors
-| 2 – 100 pF capacitors
+ADALM1000 hardware module 1 – LTC1043 analog switch 1 – CMOS Inverter (CD4007 array, CD4069AUB or 74HCU04 un-buffered hex CMOS inverters) 2 – 100 KΩ resistors 2 – 20 KΩ resistors 2 – 1 uF capacitors 2 – 1 nF capacitors 2 – 100 pF capacitors
 
 Directions
 ~~~~~~~~~~
@@ -127,9 +120,7 @@ Appendix:
 
 Optionally a CMOS inverter could be constructed from the discrete NMOS and PMOS transistors from ADALP2000:
 
-| 1 – VZN2110A NMOS transistor
-| 1 – VZP2110A PMOS transistor
-| 1 – 1.5KΩ resistor
+1 – VZN2110A NMOS transistor 1 – VZP2110A PMOS transistor 1 – 1.5KΩ resistor
 
 As shown in figure A1, NMOS transistor M\ :sub:`1` is a VZN2110A and PMOS transistor M\ :sub:`2` is a VZP2110A. Because the NMOS transistor is much stronger (with V\ :sub:`DD`/2 as the gate source voltage) than the PMOS transistor, a 1.5 KΩ resistor, R\ :sub:`4`, is added in series with its source. Everything else is the same as in figure 2.
 
@@ -165,9 +156,7 @@ LTspice compatible model files for the ZVN2110A and ZVP2110A are include below:
    .MODEL MN2110b NMOS VTO=0.9 RS=2 KP=0.1 PB=1 LAMBDA=2.6E-3
    .MODEL DN2110a D IS=1E-12 RS=0.37
    .ENDS ZVN2110A
-   *
-
-**ZVP2110A Spice Model .lib file**
+   **ZVP2110A Spice Model .lib file**
 
 ::
 
@@ -196,9 +185,7 @@ LTspice compatible model files for the ZVN2110A and ZVP2110A are include below:
    .MODEL Rmod1 RES (TC1=8e-3 TC2=4.2E-5)
    .MODEL Rmod2 RES (TC1=-2e-3 TC2=3e-6)
    .ENDS ZVP2110A
-   *
-
-**For Further Reading:**
+   **For Further Reading:**
 
 :adi:`Chopper Stabilized (Auto-Zero) Precision Op Amps (MT-055) <MT-055>`
 

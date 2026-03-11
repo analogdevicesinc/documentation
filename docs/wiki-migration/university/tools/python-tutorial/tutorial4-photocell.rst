@@ -31,9 +31,7 @@ It will then be possible to add the 20 values and calculate an average for examp
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 - CdS Photo Cell
-| 1 - 6.8 KΩ resistor
+ADALM1000 hardware module 1 - CdS Photo Cell 1 - 6.8 KΩ resistor
 
 Directions:
 ~~~~~~~~~~~
@@ -73,8 +71,6 @@ Modify the program to graph the voltage measured, which represents the ambient l
 
 **For Further Reading:**
 
-| `Photoresistor <https://en.wikipedia.org/wiki/Photoresistor>`_
-| `Lux <https://en.wikipedia.org/wiki/Lux>`_
+`Photoresistor <https://en.wikipedia.org/wiki/Photoresistor>`_ `Lux <https://en.wikipedia.org/wiki/Lux>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`

@@ -1,8 +1,7 @@
 AD9783 Evaluation Board, DAC-FMC Interposer & Xilinx Reference Design
 =====================================================================
 
-| The :adi:`AD9783 <en/products/ad9783.html>` includes pin-compatible, high dynamic range, dual digital-to-analog converters (DACs) with 16-bit resolution, and sample rate of up to 500 MSPS.
-| The device includes specific features for direct conversion transmit applications, including gain and offset compensation, interfacing seamlessly with analog quadrature modulators.
+The :adi:`AD9783 <en/products/ad9783.html>` includes pin-compatible, high dynamic range, dual digital-to-analog converters (DACs) with 16-bit resolution, and sample rate of up to 500 MSPS. The device includes specific features for direct conversion transmit applications, including gain and offset compensation, interfacing seamlessly with analog quadrature modulators.
 
 Supported Devices
 -----------------
@@ -32,15 +31,15 @@ Description
 Creating the constraints
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-| When creating the constraints file for this project, the AD9783-EBZ, AD-DAC-FMC-ADP and ZCU102 schematics were used, because we have to make a correspondence between the signals from one side and the other.
-| First, we look in the AD9783-EBZ schematic and we spot the signals we have to use in the HDL design, like D[15:0] LVDS pairs, DCI_P and \_N, DCO_P and \_N, and the SPI signals (SDIO, SDO, SCLK and CSB).
-| Then, we check which pins are their correspondents in the AD-DAC-FMC-ADP schematic.
-| Example:
-| **AD9783-EBZ schematic**: D15P is connected to J17 plug header, at A3
-| **AD-DAC-FMC-ADP schematic**: J17 plug header pin A3 is called TXI_DATA_P15 and is connected to CLK1_M2C_P pin from P1 FMC header
-| **ZCU102 schematic**: pin CLK1_M2C_P is pin T8 in FMC HP0
-| Thus we have this constraint:
-| ``set_property -dict {PACKAGE_PIN  T8 IOSTANDARD LVDS} [get_ports data_p[15]] ; ## G2 FMC_HPC0_CLK1_M2C_P``
+When creating the constraints file for this project, the AD9783-EBZ, AD-DAC-FMC-ADP and ZCU102 schematics were used, because we have to make a correspondence between the signals from one side and the other. First, we look in the AD9783-EBZ schematic and we spot the signals we have to use in the HDL design, like D[15:0] LVDS pairs, DCI_P and \_N, DCO_P and \_N, and the SPI signals (SDIO, SDO, SCLK and CSB). Then, we check which pins are their correspondents in the AD-DAC-FMC-ADP schematic.
+
+Example:
+
+**AD9783-EBZ schematic**: D15P is connected to J17 plug header, at A3 **AD-DAC-FMC-ADP schematic**: J17 plug header pin A3 is called TXI_DATA_P15 and is connected to CLK1_M2C_P pin from P1 FMC header **ZCU102 schematic**: pin CLK1_M2C_P is pin T8 in FMC HP0 Thus we have this constraint:
+
+::
+
+   set_property -dict {PACKAGE_PIN  T8 IOSTANDARD LVDS} [get_ports data_p[15]] ; ## G2 FMC_HPC0_CLK1_M2C_P
 
 Quick Start Guide
 -----------------
@@ -87,7 +86,7 @@ Setup
      * From **zynqmp-zcu102-rev10-ad9783** folder of the **boot** partition, copy the **system.dtb** and **BOOT.BIN** files into the root folder of the partition
    * Insert the SD card into the ZCU102 SD card slot
    * Connect clock source for the clock input at J1 on the evaluation board via a SMA cable, and DAC output at J5 (IOUT1P) or J9 (IOUT2P) via a SMA cable to a spectrum analyzer
-   * Connect the UART port on ZCU102 via USB Micro-B to PC 
+   * Connect the UART port on ZCU102 via USB Micro-B to PC
    * Set the clock input to 500MHz, +3dBm
    * Connect the evaluation board to a 5Vdc 1A power supply on P5 and P6
    * Power on the evaluation board, clock generator and ZCU102

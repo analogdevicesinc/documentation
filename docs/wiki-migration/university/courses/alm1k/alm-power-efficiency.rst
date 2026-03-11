@@ -41,19 +41,7 @@ With that in mind, let's do some experiments, and try not to burn our fingers in
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Active Learning Module
-| Or Optionally - digital multimeters, preferably with a 1A current range
-| Solder-less breadboard
-| Jumper wires
-| PC/Mac running LTspice and ALICE desktop tools
-| 4 AA batteries and holder (or "battery eliminator" see Appendix)
-| LT3080 LDO regulator
-| LTM8067 Isolated Switching Regulator (on BOB)
-| 6.2Ω, 10W power resistor
-| TO-220 heat sink, Aavid 7021 or similar, or various sizes of double-sided, copper-clad PCB material.
-| Heat sink compound / thermal grease
-| AD592 Temperature Sensor (soldered to extention wires
-| Optional: Infrared thermometer
+ADALM1000 Active Learning Module Or Optionally - digital multimeters, preferably with a 1A current range Solder-less breadboard Jumper wires PC/Mac running LTspice and ALICE desktop tools 4 AA batteries and holder (or "battery eliminator" see Appendix) LT3080 LDO regulator LTM8067 Isolated Switching Regulator (on BOB) 6.2Ω, 10W power resistor TO-220 heat sink, Aavid 7021 or similar, or various sizes of double-sided, copper-clad PCB material. Heat sink compound / thermal grease AD592 Temperature Sensor (soldered to extention wires Optional: Infrared thermometer
 
 Thermal Resistance Primer:
 --------------------------
@@ -300,10 +288,7 @@ The block diagram from the datasheet shows a basic isolated flyback circuit. Wit
 
 Setup for this experiment is straightforward; the LTM8067 BOB has four pairs of pins, and the pins of each pair are the same node. Note that with the adjustment potentiometer on the left:
 
-| \* Input positive is at the top left corner
-| \* Input ground is at the lower left corner
-| \* Output positive is bottom center
-| \* Output negative is top center.
+- Input positive is at the top left corner \* Input ground is at the lower left corner \* Output positive is bottom center \* Output negative is top center.
 
 Also note that the output current capability of the LTM8067 varies with input voltage as shown below:
 

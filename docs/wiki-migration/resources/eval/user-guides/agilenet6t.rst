@@ -1,7 +1,7 @@
 AgileNet 6T (AN6T) Wireless Networking Protocol Solutions
 =========================================================
 
-AgileNet 6T is a long range Sub-GHz wireless networking solution for Emergency Lighting, ​Commercial Agriculture and Commercial Environment monitoring Applications ​which are highly reflective and have multi-path environments.
+AgileNet 6T is a long range Sub-GHz wireless networking solution for Emergency Lighting, Commercial Agriculture and Commercial Environment monitoring Applications which are highly reflective and have multi-path environments.
 
 AgileNet 6T is based on 6TiSCH. 6TiSCH is combining the performance of IEEE802.15.4e TSCH with an IPv6-enabled upper stack. The IEEE 802.15.4 standard uses different frequency band, and each frequency band is separated in channels. In TSCH, communications are done using those different channels and at different times. However, IEEE 802.15.4 standard does not define how to build and maintain the communication schedule. AN6T Wireless networking solution defines to organize the communication schedule in a distributed way.
 

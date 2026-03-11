@@ -11,8 +11,8 @@
 EVAL-LTPA-KIT (LTpowerAnalyzer Kit)
 ===================================
 
-| 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/kitangle.gif
+   :width: 600px
 
 Overview
 --------
@@ -21,8 +21,8 @@ The **EVAL-LTPA-KIT or LTpowerAnalyzer Kit** is a low-cost, high performance, co
 
 The LTpowerAnalyzer Software offers a user-friendly interface with documentations for ease of usage. It comes with four different current probes for 1A, 10A, 50A, and 100A. Immediately kick-off using the kit with the LT8642S-based demo board as the device under test (DUT).
 
-| 
-| ==== Features ====
+Features
+~~~~~~~~
 
 -  Low-cost, high performance, compact, all-in-one, laboratory tool kit for evaluating and characterizing power designs
 -  Capable of measuring Bode response, transient response, and output impedance
@@ -33,23 +33,22 @@ The LTpowerAnalyzer Software offers a user-friendly interface with documentation
 -  Offers four (4) current probe variations for transient measurements: 1A, 10A, 50A, and 100A
 -  Each current probe can be used as a DC load of up to 8W in still air
 
-| 
-| ==== Applications ====
+Applications
+~~~~~~~~~~~~
 
 -  Laboratory Instrumentation
 
-| 
-| ==== System Architecture ====
-| |image2|
-|
+System Architecture
+~~~~~~~~~~~~~~~~~~~
 
-.. container:: center
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/system1_2.png
+   :align: center
+   :width: 600px
 
-   <fc #000000>\ **EVAL-LTPA-KIT Simplified System Block Diagram**\ </fc>
+**EVAL-LTPA-KIT Simplified System Block Diagram**
 
-
-| 
-| ==== Specifications ====
+Specifications
+~~~~~~~~~~~~~~
 
 .. container:: center
 
@@ -89,18 +88,24 @@ The LTpowerAnalyzer Software offers a user-friendly interface with documentation
    
 
 
-| 
-| ==== What's Inside the Box? ==== The EVAL-LTPA-KIT comes with the following boards and accessories:
+What's Inside the Box?
+~~~~~~~~~~~~~~~~~~~~~~
 
-| |image3|
-| ----
+The EVAL-LTPA-KIT comes with the following boards and accessories:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/eval-ltpa-kit_package_contents.png
+   :align: center
+   :width: 1000px
+
+--------------
 
 Components and Connections
 ==========================
 
-| 
-| ==== Power Analyzer Board Connections ==== The LTpowerAnalyzer Main Board (LB3031A) extends the electrical capabilities of the ADALM2000 Active Learning Module (M2K) by providing an analog signal chain interface that can accommodate ±100 VDC of differential input voltage at its ports. This enables a broader range of power supply DUTs that can be evaluated with the ADALM2000.
-|
+Power Analyzer Board Connections
+--------------------------------
+
+The LTpowerAnalyzer Main Board (LB3031A) extends the electrical capabilities of the ADALM2000 Active Learning Module (M2K) by providing an analog signal chain interface that can accommodate ±100 VDC of differential input voltage at its ports. This enables a broader range of power supply DUTs that can be evaluated with the ADALM2000.
 
 .. container:: center
 
@@ -129,14 +134,12 @@ Components and Connections
    | **W1**           | Pass-through for ADALM2000 W1 Waveform Generator                   |
    +------------------+--------------------------------------------------------------------+
 
-   |image4|
+   |image1|
 
 .. container:: center
 
    **LTpowerAnalyzer Board (LB3031A) Pinout**
 
-
-| 
 
 Current Probe Connection
 ------------------------
@@ -144,15 +147,14 @@ Current Probe Connection
 The current probes are used to generate a current pulse for the transient measurement, and a sine wave current for the impedance measurement. There are four versions of the LB3058A: 1A, 10A, 50A, and 100A full scale with a 20 V maximum output voltage. Each probe has three current sources in parallel to provide a wide dynamic range and distribute the power dissipation at full scale. The probes are connected to the Power Analyzer board using a 14-pin ribbon cable, which is the same as the DC590. The probe is designed to work for positive voltages only, and the FET body diode will turn on if the + pin is pulled below -. The software will automatically recognize which probe is connected, and adjust the current range accordingly. The probes are not designed to generate a continuous DC current due to their small size.
 
 
-|image5|
+|image2|
 
 .. container:: center
 
    **LB3058A Current Probe Modules: 1A, 10A, 50A, and 100A**
 
 
-| 
-| The minimum resolution of the current probe is determined by the maximum offset of the amplifier driving the MOSFET in each of the three power stages (2 mV) and is equal to the maximum current for each power stage divided by 100. For example, the 10 A current probe has a maximum current limit of 12 A and will have the following minimum resolution:
+The minimum resolution of the current probe is determined by the maximum offset of the amplifier driving the MOSFET in each of the three power stages (2 mV) and is equal to the maximum current for each power stage divided by 100. For example, the 10 A current probe has a maximum current limit of 12 A and will have the following minimum resolution:
 
 .. container:: center
 
@@ -173,20 +175,23 @@ The current probe connection to the board must be made to minimize the parasitic
 .. container:: center
 
    
-   +-----------------------------------------------+-----------------------------------------------+
-   | |image10| Minus Side Solder Braid Connection  | |image11|\ Plus Side Solder Braid Connection  |
-   +-----------------------------------------------+-----------------------------------------------+
-   | |image12| Low Current Turret Connection       | |image13| Socket Connection                   |
-   +-----------------------------------------------+-----------------------------------------------+
+   +----------------------------------------------+----------------------------------------------+
+   | |image7| Minus Side Solder Braid Connection  | |image8|\ Plus Side Solder Braid Connection  |
+   +----------------------------------------------+----------------------------------------------+
+   | |image9| Low Current Turret Connection       | |image10| Socket Connection                  |
+   +----------------------------------------------+----------------------------------------------+
    
 
 
 For smaller currents, the probe can be connected via turrets or wire to the board. The current probe can also be mated with the 60-pin surface mount connector from Samtec, model HSEC8-130-01-S-DV-A, Digikey #SAM9504-ND. The solder mask can be scraped off and the socket soldered to the board power planes.
 
-| 
-| ==== Standard Kelvin Connection ==== The Bode Plot for a typical power supply is generated by injecting a small AC signal through a transformer across a small resistor (Rs), which is inserted into the external feedback resistor string. At each frequency, the AC differential voltage at IN and OUT is measured and the gain and phase are calculated using a Fast Fourier Transform (FFT) algorithm. The typical connection ties IN- and OUT- to GND. By making the signal injector and input signal amplifiers AC-coupled, a ±100 VDC common-mode voltage can be accommodated with a frequency range of 100 Hz to 10 MHz. 
+Standard Kelvin Connection
+--------------------------
 
-|image14|
+The Bode Plot for a typical power supply is generated by injecting a small AC signal through a transformer across a small resistor (Rs), which is inserted into the external feedback resistor string. At each frequency, the AC differential voltage at IN and OUT is measured and the gain and phase are calculated using a Fast Fourier Transform (FFT) algorithm. The typical connection ties IN- and OUT- to GND. By making the signal injector and input signal amplifiers AC-coupled, a ±100 VDC common-mode voltage can be accommodated with a frequency range of 100 Hz to 10 MHz.
+
+
+|image11|
 
 .. container:: center
 
@@ -201,8 +206,10 @@ The LB3058A current probe must be connected to the DUT board with a minimum of s
 
 The ground plane of the DUT must be connected to the GND pin on the terminal block.
 
-| 
-| === Kelvin vs. Two-Wire Connection === An example is shown below where 6-inches of 30 gauge twisted pair wire was used for the two-wire and kelvin connections. 
+Kelvin vs. Two-Wire Connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+An example is shown below where 6-inches of 30 gauge twisted pair wire was used for the two-wire and kelvin connections.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/system2.png
    :align: center
@@ -215,8 +222,6 @@ The ground plane of the DUT must be connected to the GND pin on the terminal blo
 
 The results below 5 kHz are quite different because the voltage drop across the wires swamps out the signal at the input, which is very low because of the high open loop gain. The two sweeps merge as the open loop gain drops and the input signal level increases. Notice however, that the phase margin and gain margin are the same for the two sweeps.
 
-| 
-
 Module Connection
 -----------------
 
@@ -227,28 +232,29 @@ To measure the true loop gain, another dummy resistor divider, R3 and R4, is con
 Follow below configuration to set up the system using Module Connection:
 
 
-|image15|
+|image12|
 
 .. container:: center
 
    **Bode Plot Module Connection**
 
 
-| 
-| ==== LED Driver Connection ==== In this type of connection, the test voltage is injected across Rs which is in series with the ISN current sense line, and input and output voltage must be measured differentially from the respective Rs connection to the ISP current sense line.
+LED Driver Connection
+---------------------
+
+In this type of connection, the test voltage is injected across Rs which is in series with the ISN current sense line, and input and output voltage must be measured differentially from the respective Rs connection to the ISP current sense line.
 
 The common-mode range of the LTPowerAnalyzer is ±100 V, and Rs is typically 20 Ω to 40 Ω.
 
 
-|image16|
+|image13|
 
 .. container:: center
 
    **Bode Plot LED Driver Connection**
 
 
-| 
-| ----
+--------------
 
 Getting Started
 ===============
@@ -263,47 +269,42 @@ Getting Started
    
 
 
-| 
-| ====== Help and Support ====== For questions and more information, please visit the Analog Devices Engineer Zone.
+Help and Support
+================
+
+For questions and more information, please visit the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-| 
-| |Overview #:resources:eval:user-guides:eval-ltpa-kit:hardware|EVAL-LTPA-KIT Hardware Guide #:resources:eval:user-guides:eval-ltpa-kit:software|EVAL-LTPA-KIT Software User #none|
+.. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/eval-ltpa-kit
+   :alt: Overview #:resources:eval:user-guides:eval-ltpa-kit:hardware|EVAL-LTPA-KIT Hardware Guide #:resources:eval:user-guides:eval-ltpa-kit:software|EVAL-LTPA-KIT Software User #none
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/kitangle.gif
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/power_analyzer_board_pinout.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/system1_2.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/current_probes.jpg
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/eval-ltpa-kit_package_contents.png
-   :width: 1000px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/power_analyzer_board_pinout.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/current_probes.jpg
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/minus_side_solder_braid_connection.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/minus_side_solder_braid_connection.png
    :width: 300px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/plus_side_solder_braid_connection.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/plus_side_solder_braid_connection.png
    :width: 300px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/low_current_turret_connection.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/low_current_turret_connection.png
    :width: 200px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/socket_connection.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/socket_connection.png
    :width: 250px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/minus_side_solder_braid_connection.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/minus_side_solder_braid_connection.png
    :width: 300px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/plus_side_solder_braid_connection.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/plus_side_solder_braid_connection.png
    :width: 300px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/low_current_turret_connection.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/low_current_turret_connection.png
    :width: 200px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/socket_connection.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/socket_connection.png
    :width: 250px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/voutrangeextension.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/voutrangeextension.png
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/modulebodesetup.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/modulebodesetup.png
    :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ledriver2.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ledriver2.jpg
    :width: 700px
-.. |Overview #:resources:eval:user-guides:eval-ltpa-kit:hardware|EVAL-LTPA-KIT Hardware Guide #:resources:eval:user-guides:eval-ltpa-kit:software|EVAL-LTPA-KIT Software User #none| image:: /navigation #/resources/eval/user-guides/eval-ltpa-kit

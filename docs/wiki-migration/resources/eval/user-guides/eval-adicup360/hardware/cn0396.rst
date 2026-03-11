@@ -9,7 +9,9 @@ An ADT7310 16-Bit Digital SPI Temperature Sensor is also included in the circuit
 
 The EVAL-CN0396-ARDZ Shield is designed to be compatible with the Arduino R3 shield form factor. It is compatible with either 5V or 3.3V processor boards.
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0396/cn0396_board_wiki.png
+   :align: center
+   :width: 600px
 
 --------------
 
@@ -64,8 +66,10 @@ Pin Compatible Sensors:
 -  `Alphasense SOH-A2 <https://www.alphasense.com/WEB1213/wp-content/uploads/2017/03/SO2-H2S.pdf>`_
 -  DD-Scientific GS+4DT
 
-| **Sensor Socket Connection**
-| |image2|
+**Sensor Socket Connection**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0396/sensorsocket.png
+   :width: 200px
 
 ======== =======================================================
 Pin Name Description
@@ -150,8 +154,3 @@ Registration
 
 
 *End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0396/cn0396_board_wiki.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0396/sensorsocket.png
-   :width: 200px

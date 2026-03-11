@@ -26,7 +26,7 @@ If you’ve selected the right folder, a list of files, including the ADuCM350 M
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/select.jpg
 
-The model file should be named ``ADuCM350_<version>.slx`` and double clicking it will launch Simulink and load the model file so that you can run simulations. Simulink may take up to a few minutes to launch. Once Simulink has loaded the model, it will open in a new window and display some blocks of the model. The model explorer bar, running across the top of the model view, will show the current model block being viewed. For now, we’re only interested in the top level view.
+The model file should be named <file>ADuCM350\_<version>.slx</code> and double clicking it will launch Simulink and load the model file so that you can run simulations. Simulink may take up to a few minutes to launch. Once Simulink has loaded the model, it will open in a new window and display some blocks of the model. The model explorer bar, running across the top of the model view, will show the current model block being viewed. For now, we’re only interested in the top level view.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/level.jpg
 

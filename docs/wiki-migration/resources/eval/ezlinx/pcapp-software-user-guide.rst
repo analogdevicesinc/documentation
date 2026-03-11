@@ -4,16 +4,19 @@
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
-| 
-| :doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
-| ====== ezLINX Sample PC Application Software User Guide ====== :doc:`ezLINX Sample PC Application Installation Guide </wiki-migration/resources/eval/ezlinx/pcapp-installation-guide>`
+:doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
+
+ezLINX Sample PC Application Software User Guide
+================================================
+
+:doc:`ezLINX Sample PC Application Installation Guide </wiki-migration/resources/eval/ezlinx/pcapp-installation-guide>`
 
 :doc:`Isolated USB ethernet gadget network adapter configuration </wiki-migration/resources/eval/ezlinx/usb-ip-config>`
 
 Introduction
-============
+------------
 
-The *ez*\ LINX *i*\ Coupler Isolated Interface Development Environment provides users with a convenient, cost-effective method of evaluating various isolated communication standards. This significantly reduces design and evaluation time for designers who are using Analog Devices isolated transceivers in their design. The *ez*\ LINX hardware platform contains an Analog Devices ADSP-BF548 processor which runs the open source uCLinux kernel and *ez*\ LINX embedded sample application. A Sample PC Application is also provided, which integrates with the *ez*\ LINX hardware platform via isolated USB, allowing for a complete plug and play evaluation and development experience with 8 isolated communication interfaces:
+The *ez*LINX*i*Coupler Isolated Interface Development Environment provides users with a convenient, cost-effective method of evaluating various isolated communication standards. This significantly reduces design and evaluation time for designers who are using Analog Devices isolated transceivers in their design. The*ez*LINX hardware platform contains an Analog Devices ADSP-BF548 processor which runs the open source uCLinux kernel and*ez*LINX embedded sample application. A Sample PC Application is also provided, which integrates with the*ez*\ LINX hardware platform via isolated USB, allowing for a complete plug and play evaluation and development experience with 8 isolated communication interfaces:
 
 -  Isolated USB
 -  Isolated CAN
@@ -36,7 +39,7 @@ The embedded software application is written in C and the Sample PC Application 
 The open source nature of both the PC Application and the embedded software allow the user to view and edit the source code of the application to obtain the best use of the ezLINX hardware system for their application. The source code and Sample PC Application can be downloaded :doc:`here </wiki-migration/resources/eval/ezlinx>`.
 
 Main Window
-===========
+-----------
 
 Upon starting the ezLINX Sample PC Application the Main System window is displayed:
 
@@ -72,7 +75,7 @@ The View Configuration button opens the Configuration Window, which displays the
 The Configure button opens the Board Configuration Window to configure the IP address to connect to, change the IP configuration of the connected ezLINX hardware, or apply updates to the embedded software of the ezLINX hardware. The Board Configuration Window can also be accessed at any time by clicking on the image of the ezLINX hardware at the bottom left of the application.
 
 Board Configuration Window
-==========================
+--------------------------
 
 There are two possibilities to open the Board Configuration Window:
 
@@ -99,31 +102,20 @@ There are two possibilities to open the Board Configuration Window:
 
 The Configuration Window is divided into three boxes:
 
--
-
-.. container:: em
-
-   Network Features Box
-
-
-: Modify the network features of the ezLINX hardware platform.
-
+- Network Features Box: Modify the network features of the ezLINX hardware platform.
 
 
 |image3|
 
 .. container:: centeralign
 
-   \ *Figure 4: Network features box*\
-
-
-\**Connect to IP Address: \*\*
+   \ *Figure 4: Network features box*\**Connect to IP Address: *\*
 
 The IP address of the ezLINX hardware platform which the PC Application will connect to when the **Connect** button is pressed.
 
 The default address is 192.168.3.21.
 
-\**Set New Address To: \*\*
+**Set New Address To:**
 
 Modify the IP address of the connected ezLINX hardware platform. You must check the **Set New Address** To box and connect to a hardware platform to use this and the two functions below.
 
@@ -135,45 +127,26 @@ Specify a new Subnet Mask for the connected ezLINX hardware platform.
 
 Specify a new IP Gateway for the connected ezLINX hardware platform.
 
--
-
-.. container:: em
-
-   Firmware Upgrade Box
-
-
-: In order to facilitate the update of the embedded software flashed on the ezLINX hardware platform, the application gives this function to easily load newer firmware versions, by using the **Send** button to select the new embedded software version to be loaded to the ezLINX hardware platform.For information on how to perform a firmware update refer to the section on Updating Embedded Firmware later in this guide. The Firmware Upgrade Box also provides the functionality to check the current PC Application software and the embedded firmware versions on the ezLINX hardware platform.
-
+- Firmware Upgrade Box: In order to facilitate the update of the embedded software flashed on the ezLINX hardware platform, the application gives this function to easily load newer firmware versions, by using the **Send** button to select the new embedded software version to be loaded to the ezLINX hardware platform.For information on how to perform a firmware update refer to the section on Updating Embedded Firmware later in this guide. The Firmware Upgrade Box also provides the functionality to check the current PC Application software and the embedded firmware versions on the ezLINX hardware platform.
 
 
 |image4|
 
 .. container:: centeralign
 
-   \ *Figure 5: Firmware Upgrade box*\
-
-
-\**PC Version: \*\*
+   \ *Figure 5: Firmware Upgrade box*\**PC Version: *\*
 
 The current PC Software Application version.
 
-\**Embedded Version: \*\*
+**Embedded Version:**
 
 The embedded software version on the ezLINX hardware platform. Click the \*Check\* button to request which version is currently on the hardware platform.
 
-\**DLL Version: \*\*
+**DLL Version:**
 
 The current DLL version.
 
--
-
-.. container:: em
-
-   Enable/Disable Box
-
-
-:this box can be used to switch any of the transceivers on the ezLINX hardware platform on or off. To enable or disable an interface check the box next to the interface name.
-
+- Enable/Disable Box:this box can be used to switch any of the transceivers on the ezLINX hardware platform on or off. To enable or disable an interface check the box next to the interface name.
 
 
 |image5|
@@ -195,12 +168,12 @@ A notification message will be displayed above the checked transceiver indicatin
 
 
 Isolated RS-232
-===============
+---------------
 
 The isolated RS-232 interface on the ezLINX development platform is implemented using Analog Devices :adi:`adm3252e` driver/receiver. For more information on the hardware implementation of the RS-232 interface click :doc:`here </wiki-migration/resources/eval/ezlinx/isolated-rs232>`.
 
 RS-232 Configuration Window
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To open the RS-232 configuration menu select it from the button on the top right of the Application. This opens the RS-232 Configuration Window:
 
@@ -216,15 +189,7 @@ To configure the RS-232 for use, check the **Transceiver Enable** box (seen abov
 
 The RS-232 Configuration Window is divided into three boxes:
 
--
-
-.. container:: em
-
-   Interface Settings Box
-
-
-: To select the appropriate communication interface for RS-232 transceiver.
-
+- Interface Settings Box: To select the appropriate communication interface for RS-232 transceiver.
 
 
 |image8|
@@ -236,15 +201,7 @@ The RS-232 Configuration Window is divided into three boxes:
 
 Select UART3 from the drop-down interface menu.
 
--
-
-.. container:: em
-
-   RS-232 Settings Box
-
-
-: To communicate with ezLINX hardware board through the RS-232 port, you need to configure the device using the following features:
-
+- RS-232 Settings Box: To communicate with ezLINX hardware board through the RS-232 port, you need to configure the device using the following features:
 
 
 |image9|
@@ -276,15 +233,7 @@ Select whether the application sends 7 bit words or 8 bit words.
 
 Select whether or not to use flow control. When connected to the ezLINX hardware platform no flow control should be selected.
 
--
-
-.. container:: em
-
-   RS-232 Routing Box
-
-
-: The RS-232 interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.
-
+- RS-232 Routing Box: The RS-232 interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.
 
 
 |image10|
@@ -295,7 +244,7 @@ Select whether or not to use flow control. When connected to the ezLINX hardware
 
 
 RS-232 Send/Receive Window
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Shown below is the send/receive window for the RS-232 protocol. The window consists of two main sections; a send window on the left and a receive window on the right. To send data from the RS-232 port, type the data to be sent into the left hand text box. Click **Send Data** button to transmit the contents of the text box. Data sent to the RS-232 port will automatically appear in the right hand receive window in real time.
 
@@ -343,19 +292,19 @@ Opens a create .txt file window. Once created all received data will be saved to
 
 Click again to toggle the Save To File function.
 
-\**Log To File: \*\*
+**Log To File:**
 
 Opens a create .txt file window. Once created all received data will be logged to this file with a timestamp. Click again to toggle the Log to File function.
 
 To close the Send /Receive Window simply turn the transceiver off and click on a different interface button, or deselect the RS-232 interface button from the sidebar to return to the RS-232 Configuration Window.
 
 Isolated RS – 485 / RS – 422
-============================
+----------------------------
 
 Both the isolated RS-485 and isolated RS-422 interfaces on the ezLINX development platform were implemented using Analog Devices :adi:`adm2587e` transceiver. For more information on the hardware implementation of the RS-485 / RS-422 interfaces click :doc:`here </wiki-migration/resources/eval/ezlinx/isolated-rs485-rs422>`.
 
 RS-485/ RS-422 Configuration Window
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the ezLINX Sample PC Application both the RS-485 and the RS-422 protocols are implemented in the same section. To open this interface menu select it using the button on the top left of the Application. This opens the RS-485 / RS-422 configuration window:
 
@@ -371,15 +320,7 @@ To configure the RS-485/RS-422 for use, check the **Transceiver Enable** box (se
 
 The RS-485/RS-422 Configuration Window is divided into three boxes:
 
--
-
-.. container:: em
-
-   Interface Settings Box
-
-
-: To select the appropriate interface for RS-485 transceiver.
-
+- Interface Settings Box: To select the appropriate interface for RS-485 transceiver.
 
 
 |image13|
@@ -391,15 +332,7 @@ The RS-485/RS-422 Configuration Window is divided into three boxes:
 
 Select UART2 from the drop-down interface menu.
 
--
-
-.. container:: em
-
-   RS-485 Settings Box
-
-
-: to communicate with ezLINX hardware board through RS-485 port, you need to configure the device using the following features:
-
+- RS-485 Settings Box: to communicate with ezLINX hardware board through RS-485 port, you need to configure the device using the following features:
 
 
 |image14|
@@ -433,15 +366,7 @@ Select whether or not to use flow control. When connected to the ezLINX hardware
 
 Choose between half and full duplex operation. If using half duplex operation jumpers JP3, JP4 and JP40 should be connected on the ezLINX hardware
 
--
-
-.. container:: em
-
-   RS-485 / RS-422 Routing Box
-
-
-: The RS-485 / RS-422 interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the **Enable Routing** box and select the interface to route to from the drop down menu. To route to RS-232 select UART3 from the drop down menu.
-
+- RS-485 / RS-422 Routing Box: The RS-485 / RS-422 interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the **Enable Routing** box and select the interface to route to from the drop down menu. To route to RS-232 select UART3 from the drop down menu.
 
 
 |image15|
@@ -452,7 +377,7 @@ Choose between half and full duplex operation. If using half duplex operation ju
 
 
 RS-485 / RS-422 Send/Receive Window
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Shown below is the transmit/receive window for the RS-485/RS-422 protocol. The window is identical to the RS-232 send/receive window. The left hand text box is used to transmit data via the Send Data button, and the right hand text box is used to receive real time data.
 
@@ -500,19 +425,19 @@ Opens a create .txt file window. Once created all received data will be saved to
 
 Click again to toggle the Save To File function.
 
-\**Log To File: \*\*
+**Log To File:**
 
 Opens a create .txt file window. Once created all received data will be logged to this file with a timestamp. Click again to toggle the Log to File function.
 
 To close the Send/Receive window simply turn the transceiver off and click on a different interface button, or deselect the RS-485/RS-422 interface button from the sidebar to return to the RS—485/RS-422 Configuration Window.
 
 Isolated I2C
-============
+------------
 
 The isolated Inter-Integrated Circuit (I2C) interface on the ezLINX development platform is implemented using Analog Devices :adi:`adum1250` and :adi:`adum5000`. For more information on the I2C hardware implementation click :doc:`here </wiki-migration/resources/eval/ezlinx/isolated-i2c>`.
 
 I2C Configuration Window
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 To open the I2C interface select it from the left hand sidebar. This will open the I2C configuration window:
 
@@ -528,15 +453,7 @@ To configure the I2C for use, check the **Transceiver Enable** box (seen above).
 
 The I2C Configuration Window is divided into two boxes:
 
--
-
-.. container:: em
-
-   Interface Settings Box
-
-
-: to select the appropriate interface for I2C transceiver.
-
+- Interface Settings Box: to select the appropriate interface for I2C transceiver.
 
 
 |image18|
@@ -548,15 +465,7 @@ The I2C Configuration Window is divided into two boxes:
 
 Select TWI1 from the drop-down interface menu.
 
--
-
-.. container:: em
-
-   I2C Settings Box
-
-
-: to communicate with ezLINX hardware board through I2C protocol, you need to configure the device using the following features:
-
+- I2C Settings Box: to communicate with ezLINX hardware board through I2C protocol, you need to configure the device using the following features:
 
 
 |image19|
@@ -585,7 +494,7 @@ Select whether the device is performing a read or write operation.
 To confirm your selection click the **Use Changes** button. If you are connected to an ezLINX hardware platform and the **Enable Transceiver** box is checked, this will open the I2C Transmit/Receive window.
 
 I2C Send/Receive Window
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Shown below is the transmit/receive window for the I2C protocol. The left hand text box is used to transmit data via the **Send Data** button, and the right hand text box is used to receive real time data.
 
@@ -605,7 +514,7 @@ The following functions are also available:
 
 Turns the transceiver on or off. When off the I2C transceiver is disconnected.
 
-\**Send Data: \*\*
+**Send Data:**
 
 Transmit the text written in the Send box.
 
@@ -627,21 +536,21 @@ Opens a create .txt file window. Once created all received data will be saved to
 
 Click again to toggle the Save To File function.
 
-\**Log To File: \*\*
+**Log To File:**
 
 Opens a create .txt file window. Once created all received data will be logged to this file with a timestamp. Click again to toggle the Log to File function.
 
 To close the Send/Receive window simply turn the transceiver off and click on a different interface button, or deselect the I2C interface button from the sidebar to return to the I2C Configuration Window.
 
 Isolated SPI
-============
+------------
 
 The two isolated Serial Peripheral Interface (SPI) ports on the ezLINX development platform are implemented using Analog Devices :adi:`adum3401`, :adi:`adum3402` and :adi:`adum5000` signal and power isolators. For more information on the SPI hardware implementation click :doc:`here </wiki-migration/resources/eval/ezlinx/isolated-spi>`.
 
 .
 
 SPI Configuration Window
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 To open the SPI menu select it using the button on the right hand sidebar of the Application. This opens the SPI configuration window:
 
@@ -657,15 +566,7 @@ To configure the SPI for use, check the **Transceiver Enable** box (seen above).
 
 The SPI Configuration interface is divided into three boxes:
 
--
-
-.. container:: em
-
-   Interface Settings Box
-
-
-: To select the appropriate interface for SPI transceiver.
-
+- Interface Settings Box: To select the appropriate interface for SPI transceiver.
 
 
 |image22|
@@ -677,15 +578,7 @@ The SPI Configuration interface is divided into three boxes:
 
 Select SPI0, SPI1 or SPI2 from the drop-down interface menu.
 
--
-
-.. container:: em
-
-   SPI Settings Box
-
-
-: to communicate with ezLINX hardware board through SPI protocol, you need to choose the following parameters:
-
+- SPI Settings Box: to communicate with ezLINX hardware board through SPI protocol, you need to choose the following parameters:
 
 
 |image23|
@@ -699,7 +592,7 @@ Select SPI0, SPI1 or SPI2 from the drop-down interface menu.
 
 Specifies the max speed (in bps) that the SPI interface will operate at. The maximum baud rate that can be used it 32.81 MHz.
 
-\**LSB First: \*\*
+**LSB First:**
 
 Activate the LSB (Least Significant Byte) First mode.
 
@@ -719,15 +612,7 @@ Select whether the device is operating as a master as a slave.
 
 This is only available when the Operation Mode selected is Master. This selects which slave device to connect to, via the slave select lines. The ezLINX hardware platform has 3 slave select lines and a master can thus be connected to up to 3 slave devices. To confirm your selection click the Use Changes button. If you are connected to an ezLINX hardware platform and the Enable Transceiver box is checked, this will open the SPI Send/Receive window
 
--
-
-.. container:: em
-
-   SPI Routing Box
-
-
-: The SPI interfaces support hardware routing to the outputs of other interfaces. To enable hardware routing check the **Enable Routing** box and select the interface to route to from the drop down menu. To route to RS-232 select UART3 from the drop down menu.
-
+- SPI Routing Box: The SPI interfaces support hardware routing to the outputs of other interfaces. To enable hardware routing check the **Enable Routing** box and select the interface to route to from the drop down menu. To route to RS-232 select UART3 from the drop down menu.
 
 
 |image24|
@@ -740,7 +625,7 @@ This is only available when the Operation Mode selected is Master. This selects 
 To confirm your selection click the Use Changes button. If you are connected to an ezLINX hardware platform and the Enable Transceiver box is checked, this will open the SPI Send/Receive window.
 
 SPI Send/Receive Window
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Shown below is the transmit/receive window for the SPI protocol. The left hand text box is used to transmit data via the Send Data button, and the right hand text box is used to receive real time data.
 
@@ -789,12 +674,12 @@ Opens a create .txt file window. Once created all received data will be logged t
 To close the Send /Receive window simply turn the transceiver off and click on a different interface button, or deselect the SPI interface button from the sidebar to return to the SPI Configuration Window.
 
 Isolated CAN
-============
+------------
 
 The isolated Controller Area Network (CAN) interface on the ezLINX development platform is implemented using Analog Devices :adi:`adm3053` transceiver. For more information on the CAN hardware implementation click :doc:`here </wiki-migration/resources/eval/ezlinx/isolated-can>`.
 
 CAN Configuration Window
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 To open the CAN menu select it from the sidebar on the left hand side of the Application. The CAN button on the right hand side of the application is unimplemented and can’t be selected. Selecting CAN from the left hand sidebar opens the CAN configuration window shown below:
 
@@ -808,15 +693,7 @@ To open the CAN menu select it from the sidebar on the left hand side of the App
 
 To configure the CAN for use, check the “Transceiver Enable” box (seen above). The Transceiver Enable box is present on all the configuration windows, and is used to enable or disable the transceivers on the ezLINX hardware. The CAN Configuration interface is divided into three boxes:
 
--
-
-.. container:: em
-
-   Interface Settings Box
-
-
-: to select the appropriate interface for CAN transceiver.
-
+- Interface Settings Box: to select the appropriate interface for CAN transceiver.
 
 
 |image27|
@@ -828,15 +705,7 @@ To configure the CAN for use, check the “Transceiver Enable” box (seen above
 
 Select CAN0 from the drop-down interface menu.
 
--
-
-.. container:: em
-
-   CAN Settings Box
-
-
-:to communicate with ezLINX hardware board through CAN protocol, you need to specify the following data:
-
+- CAN Settings Box:to communicate with ezLINX hardware board through CAN protocol, you need to specify the following data:
 
 
 |image28|
@@ -894,15 +763,7 @@ Mask for standard frame (11 bit identifier).
 
 Mask for extended frame (29 bit identifier).
 
--
-
-.. container:: em
-
-   CAN Routing Box
-
-
-: The CAN interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.
-
+- CAN Routing Box: The CAN interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.
 
 
 |image29|
@@ -915,7 +776,7 @@ Mask for extended frame (29 bit identifier).
 To confirm your selection click the Use Changes button. If you are connected to an ezLINX hardware platform and the Enable Transceiver box is checked, this will open the CAN Send/Receive window.
 
 CAN Send/Receive Window
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Shown below is the transmit/receive window for the CAN protocol. The left hand text box is used to transmit data via the Send Data button, and the right hand text box is used to receive real time data.
 
@@ -962,19 +823,19 @@ Opens a create .txt file window. Once created all received data will be saved to
 
 Click again to toggle the Save To File function.
 
-\**Log To File: \*\*
+**Log To File:**
 
 Opens a create .txt file window. Once created all received data will be logged to this file with a timestamp. Click again to toggle the Log to File function.
 
 To close the Send/Receive window simply turn the transceiver off and click on a different interface button, or deselect the CAN interface button from the sidebar to return to the CAN Configuration Window.
 
 Isolated LVDS
-=============
+-------------
 
 The isolated LVDS interface on the ezLINX hardware platform is implemented using the :adi:`adum3442` and :adi:`adum5000` signal and power isolators, and the :adi:`adn4663` and :adi:`adn4664` LVDS receivers and drivers. For more information on the LVDS implementation click :doc:`here </wiki-migration/resources/eval/ezlinx/isolated-lvds>`.
 
 LVDS Configuration Window
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To open the Low Voltage Differential Signalling (LVDS) menu select it from the sidebar on the right hand side of the Application. This opens the LVDS configuration window shown below:
 
@@ -990,15 +851,7 @@ To configure the LVDS interface for use, check the **Transceiver Enable** box (s
 
 The LVDS Configuration interface is divided into two boxes:
 
--
-
-.. container:: em
-
-   Interface Settings Box
-
-
-: To select the appropriate interface for LVDS transceiver.
-
+- Interface Settings Box: To select the appropriate interface for LVDS transceiver.
 
 
 |image33|
@@ -1010,15 +863,7 @@ The LVDS Configuration interface is divided into two boxes:
 
 Select SPORT2 from the drop-down interface menu.
 
--
-
-.. container:: em
-
-   LVDS Settings Box
-
-
-: to configure the LVDS interface:
-
+- LVDS Settings Box: to configure the LVDS interface:
 
 
 |image34|
@@ -1058,15 +903,7 @@ Select whether to use the internal clock to drive the LVDS receiver, or to trigg
 
 Select whether to enable the second LVDS channel (Pins 17 – 32). Select 1 to enable this channel or 0 to disable it.
 
--
-
-.. container:: em
-
-   LVDS Routing Box
-
-
-: The LVDS interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.
-
+- LVDS Routing Box: The LVDS interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.
 
 
 |image35|
@@ -1079,7 +916,7 @@ Select whether to enable the second LVDS channel (Pins 17 – 32). Select 1 to e
 To confirm your selection click the **Use Changes** button. If you are connected to an ezLINX hardware platform and the **Enable Transceiver** box is checked, this will open the LVDS Send/Receive window.
 
 LVDS Send/Receive Window
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Shown below is the transmit/receive window for the LVDS protocol. The window is identical to the RS -232 send/receive window. The left hand text box is used to transmit data via the **Send Data** button, and the right hand text box is used to receive real time data.
 
@@ -1128,7 +965,7 @@ Opens a create .txt file window. Once created all received data will be logged t
 To close the Send /Receive window simply turn the transceiver off and click on a different interface button, or deselect the LVDS interface button from the sidebar to return to the LVDS Configuration Window.
 
 GPIO (LEDs)
-===========
+-----------
 
 The Sample PC Application also has GPIO functionality, through which you can control 6 LED’s on the ezLINX hardware platform. To access the GPIO interface, select the GPIO button from the left hand sidebar of the application. This opens the GPIO Interface Settings window.
 
@@ -1144,15 +981,7 @@ To enable a GPIO pin, check the GPIO box on the left hand side of the screen.
 
 The GPIO Configuration Window is divided into two boxes:
 
--
-
-.. container:: em
-
-   Interface Settings Box
-
-
-: to select the appropriate interface for GPIO transceiver.
-
+- Interface Settings Box: to select the appropriate interface for GPIO transceiver.
 
 
 |image38|
@@ -1164,15 +993,7 @@ The GPIO Configuration Window is divided into two boxes:
 
 Select GPIO from the drop-down interface menu.
 
--
-
-.. container:: em
-
-   GPIO Settings Box
-
-
-: to configure GPIO pins:
-
+- GPIO Settings Box: to configure GPIO pins:
 
 
 |image39|
@@ -1197,7 +1018,7 @@ Select the binary value for the GPIO pin.
 By checking multiple GPIO enable boxes, you can use multiple GPIO pins together. To confirm your settings click the Use Changes box at the bottom of the screen.
 
 Firmware Update
-===============
+---------------
 
 To update the embedded software version on the evaluation board, there are a number of steps you must follow. First the application FTPServer.exe must be allowed through Windows Firewall. To do this, go to:
 
@@ -1241,7 +1062,7 @@ The software application prompts you to restart the application.
 Close the application and wait approximately 2 – 3 minutes for the the application to erase the hardware platform and download and extract the new firmware version. **WARNING: Do not reset the ezLINX hardware during the update.** You will know the transfer is complete when the data sent counter at the bottom right of the Quick ‘n Easy FTP Server application is equal to the size of the update file. The board must then be reset and the PC application started. To confirm that the firmware update was downloaded correctly, go to the board configuration window and click the Check button next to the Embedded Version box. This should display the new version.
 
 Transceiver Status Window
-=========================
+-------------------------
 
 The Transceivers Status window (shown below) allows the user to monitor the status of each interface as it transmits data. To access the Transceivers Status window click on the word STATUS on the bottom left hand side of the application. The enabled transceivers will show up with a checked box, and the amount of data sent and received through each interface during the current session is shown in the boxes in kilobytes. The Tx box displays the amount of kilobytes of data that has been sent through that transceiver, and the Rx box displays the amount of kilobytes of data has been received. To refresh the figures you must close and reopen the Transceivers Status window as the figures do not update in real-time.
 
@@ -1254,7 +1075,7 @@ The Transceivers Status window (shown below) allows the user to monitor the stat
 
 
 Transceivers Configuration Window
-=================================
+---------------------------------
 
 To access the Transceiver Configuration window (shown below) select the View Configuration button at the bottom of the application. The Transceivers Configuration window allows the user to view the global configuration of all transceivers and GPIO on the ezLINX hardware platform. From here you can see which transceivers are enabled, what hardware routing is active and the settings of each individual interface. The configuration can not be modified from this window, however the application supports loading and saving configurations as an XML file. To save your current configuration simply click the Save button and choose a name. To load a previously saved configuration press Load and select the desired XML config file.
 

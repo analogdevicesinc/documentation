@@ -212,7 +212,9 @@ The following figure presents the **uC-Probe** interface that can be used for mo
 
 **Section E** is used to display the DAC’s output voltage in the numeric box having the label *Output voltage*. This value is computed based on the Vref+ and Vref- values.
 
-**Section F** is used to control the hardware pins, by toggling the switches under the label *Hardware pins*. When the switch is active, the corresponding pin will be activated (will be toggled LOW). 
+**Section F** is used to control the hardware pins, by toggling the switches under the label *Hardware pins*. When the switch is active, the corresponding pin will be activated (will be toggled LOW).
+
+
 .. note::
 
    See `troubleshooting <https://wiki.analog.com/troubleshooting>`_

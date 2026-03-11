@@ -61,8 +61,6 @@ Delay to account for the ADC reset pulse is introduced in this schematic. In thi
 -  .param reset_delay 1u = 1 usec
 -  .param cnv_delay = reset_delay +50u (here, the cnv_delay is also accommodating the delay for the AFE to settle RESET glitch)
 
-.. _channel-sequencing-1:
-
 Channel Sequencing:
 ~~~~~~~~~~~~~~~~~~~
 
@@ -88,42 +86,38 @@ Analyzing Settling Performance
 The purpose of this section is to guide users in analyzing the settling performance of the ADC using LTspice simulation and graphs. Proceed with the following steps in order to get the simulation results.
 
 Simulation Setup
-----------------
 
---------------
 
 1 - Parameter Verification
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Before proceeding with the simulation, ensure that all the necessary parameters are set to their required values. This includes the specifications of the ADC model, kickback filter components, AFE circuitry, and any other relevant parameters.
 
 2 - LTspice Simulation Command
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 Define the values and parameters in the LTspice simulation command statement. Verify that the simulation parameters align with the desired settling time and duration.
 
 3 - Running the Simulation
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Execute the simulation by clicking the "Run" button. Allow sufficient time for the simulation to complete, which will be displayed at the bottom of the terminal window or you can start seeing the real time results as well as soon as the first few samples get sampled by the ADC model.
 
 Settling Error Measurements
----------------------------
 
---------------
 
 1 - Settling Error Measurement
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 After the simulation has completed, navigate to the Settling Error Measurements box on the schematic. In this example, we will consider channels 0 and 1, so locate the in0_err and in1_err outlets within the schematic.
 
 2 - Probe Settling Error Outlets
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 Place the probe on the in0_err and in1_err outlets to measure the settling error in volts. This will indicate the difference between the sampled voltages and the actual voltage fed into the ADC.
 
 3 - Viewing Settling Error
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 To observe the settling error, the user should wait for the settling tails in in0_err and in1_err to reach a steady state value. With this available graph user can perform signal conditioning and gain adjustment to their system.
 
@@ -134,9 +128,7 @@ Appended below is an example simulation where the RC filters are too slow, and s
    :align: center
    :width: 600px
 
---------------
 
---------------
 
 Sample Circuit
 ==============

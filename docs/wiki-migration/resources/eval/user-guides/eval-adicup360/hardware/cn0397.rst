@@ -3,19 +3,26 @@ EVAL-CN0397-ARDZ Shield
 
 :adi:`CN0397` is an Arduino compatible shield that is optimized for smart agriculture utilizing wavelength specific photodiodes. Photosynthetic response of plants vary due to the wavelength and intensity of light received. Photodiodes used in this circuit has peak sensitivities over the wavelengths of interest, red and blue region, and over the green region which is mainly rejected by the leaves of the plant.
 
-| 
-| The circuit shown below uses :adi:`ad8500`, a low power, precision CMOS op amp with a low input bias current of a typical 1pA which is used in a transimpedance amplifier configuration to convert the current output of the photodiodes into voltage. It also features :adi:`ad7798` a 3-channel, low noise, low power 16-bit ADC that converts the analog voltage into digital data in for the processing of data into light intensity. Gain resistor for each of the channel had been calculated to maximize the full scale of the ADC and additional filtering to remove unwanted signals.
-| |image1|
+The circuit shown below uses :adi:`ad8500`, a low power, precision CMOS op amp with a low input bias current of a typical 1pA which is used in a transimpedance amplifier configuration to convert the current output of the photodiodes into voltage. It also features :adi:`ad7798` a 3-channel, low noise, low power 16-bit ADC that converts the analog voltage into digital data in for the processing of data into light intensity. Gain resistor for each of the channel had been calculated to maximize the full scale of the ADC and additional filtering to remove unwanted signals.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0397/cn0397_v1.png
 
 Connectors and Jumper Configurations
 ------------------------------------
 
-| 
-| ==== Chip Select ==== |image2| The chip select is configurable to be routed to 3 general purpose I/O pins of the board, digital pins 8, 9 and 10, allowing multiple boards using SPI communications protocol to be stacked up.\ |image3|
-| The chip select pin of the AD7798 is routed by CS1 to GPIO pin 10, CS2 to GPIO 9, and CS3 to GPIO 8, which could be moved by placing the shunt across the corresponding CS on connector P1.
+Chip Select
+~~~~~~~~~~~
 
-| The shunt is placed across CS1 by default, however it can be configured to any of the 3 chip select on the software.
-| ==== Sensor Footprint ====
+|image1| The chip select is configurable to be routed to 3 general purpose I/O pins of the board, digital pins 8, 9 and 10, allowing multiple boards using SPI communications protocol to be stacked up.\ |image2|
+
+The chip select pin of the AD7798 is routed by CS1 to GPIO pin 10, CS2 to GPIO 9, and CS3 to GPIO 8, which could be moved by placing the shunt across the corresponding CS on connector P1.
+
+The shunt is placed across CS1 by default, however it can be configured to any of the 3 chip select on the software.
+
+Sensor Footprint
+~~~~~~~~~~~~~~~~
+
+
 
 .. note::
 
@@ -79,6 +86,5 @@ Registration
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0397/cn0397_v1.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0397/cn0397_chip_select.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0397/cs_config.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0397/cn0397_chip_select.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0397/cs_config.jpg

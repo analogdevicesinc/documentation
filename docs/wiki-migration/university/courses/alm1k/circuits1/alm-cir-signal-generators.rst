@@ -78,15 +78,7 @@ The ADALP2000 Analog Parts Kit includes an AD654 voltage to frequency converter 
 Materials:
 ~~~~~~~~~~
 
-| 1 – 10Ω resistor
-| 2 – 220 Ω resistors
-| 1 – 1.5 KΩ resistor
-| 1 – 4.7 KΩ resistor
-| 1 – 5 KΩ potentiometer
-| 1 – 2.2 nF capacitor (222)
-| 1 – 0.56 uF capacitor (564)
-| 1 – 10 uF capacitor
-| 1 – AD654 Voltage-to-frequency Converter
+1 – 10Ω resistor 2 – 220 Ω resistors 1 – 1.5 KΩ resistor 1 – 4.7 KΩ resistor 1 – 5 KΩ potentiometer 1 – 2.2 nF capacitor (222) 1 – 0.56 uF capacitor (564) 1 – 10 uF capacitor 1 – AD654 Voltage-to-frequency Converter
 
 Directions:
 ~~~~~~~~~~~
@@ -112,8 +104,7 @@ The AD654 voltage-to-frequency converter IC can also be the basis of a triangle 
 Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
-| 1 – 68 KΩ or 100 KΩ gain set resistor (and optional 50 KΩ pot)
-| 1 – AD8226 instrumentation amplifier
+1 – 68 KΩ or 100 KΩ gain set resistor (and optional 50 KΩ pot) 1 – AD8226 instrumentation amplifier
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig3.png
    :align: center
@@ -131,19 +122,10 @@ Option 2, AD8561:
 
 The ADALP2000 Analog Parts Kit includes two AD8561 high speed differential comparators. This IC can be configured as a Schmitt trigger oscillator circuit to generate an adjustable output frequency based on a timing resistor and capacitor. The AD8561 provides true and complement open collector outputs.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 3 – 1.0 KΩ resistors
-| 1 – 20 KΩ resistor
-| 1 – 47 KΩ resistor
-| 1 – 5 KΩ potentiometer
-| 1 – 4.7 nF capacitor (472)
-| 1 – AD8561 Voltage Comparator
-
-.. _directions-1:
+3 – 1.0 KΩ resistors 1 – 20 KΩ resistor 1 – 47 KΩ resistor 1 – 5 KΩ potentiometer 1 – 4.7 nF capacitor (472) 1 – AD8561 Voltage Comparator
 
 Directions:
 ~~~~~~~~~~~
@@ -166,19 +148,10 @@ Option 3, LTC1485:
 
 The ADALP Analog Parts Kit includes an LTC1485 high speed differential line driver/receiver. The differential receiver part can be configured as a Schmitt trigger oscillator circuit to generate an adjustable output frequency based on a timing resistor and capacitor.
 
-.. _materials-2:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 – 4.7 KΩ resistors
-| 1 – 20 KΩ resistor
-| 1 – 47 KΩ resistor
-| 1 – 5 KΩ potentiometer
-| 1 – 0.1 uF capacitor (104)
-| 1 – LTC1485 differential receiver
-
-.. _directions-2:
+1 – 4.7 KΩ resistors 1 – 20 KΩ resistor 1 – 47 KΩ resistor 1 – 5 KΩ potentiometer 1 – 0.1 uF capacitor (104) 1 – LTC1485 differential receiver
 
 Directions:
 ~~~~~~~~~~~
@@ -203,16 +176,10 @@ The CAP+ pin of the LT1054 switches between ground and the V+ supply voltage at 
 
 The frequency can be increased by adding an external capacitor (C\ :sub:`2`, figure 6, in the range of 5pF to 20pF) from Pin 2 to Pin 7. This capacitor will couple charge into Ct at the switch transitions, which will shorten the charge and discharge time, raising the oscillator frequency. Synchronization can be accomplished by adding an external resistive pull-up from Pin 7 to the reference pin (Pin 6). A 20k pull-up is recommended. An open collector/drain logic gate or an NPN/NMOS transistor can then be used to drive the oscillator pin at the external clock frequency. Pulling up Pin 7 to an external voltage or driving with an external logic level is not recommended.
 
-.. _materials-3:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 – LT1054 Switch Cap DC-DC converter
-| 1 – 5 KΩ potentiometer (optional for frequency adjustment)
-| 2 – 39 pF capacitors (or other values for optional frequency adjustment)
-
-.. _directions-3:
+1 – LT1054 Switch Cap DC-DC converter 1 – 5 KΩ potentiometer (optional for frequency adjustment) 2 – 39 pF capacitors (or other values for optional frequency adjustment)
 
 Directions:
 ~~~~~~~~~~~
@@ -272,11 +239,6 @@ In figure 8 is an example 1.5 KHz 5th order LC low pass filter. In this Pi confi
 
 **For Further Reading:**
 
-| :adi:`AD5626 datasheet <AD5626>`
-| :adi:`AD654 datasheet <AD654>`
-| :adi:`AD8561 datasheet <AD8561>`
-| :adi:`LTC1485 datasheet <LTC1485>`
-| :adi:`LT1054 datasheet <en/products/power-management/inductorless-charge-pump-dc-dc-converters/regulated-step-up-charge-pumps/lt1054.html>`
-| :adi:`LTC1043 datasheet <LTC1043>`
+:adi:`AD5626 datasheet <AD5626>` :adi:`AD654 datasheet <AD654>` :adi:`AD8561 datasheet <AD8561>` :adi:`LTC1485 datasheet <LTC1485>` :adi:`LT1054 datasheet <en/products/power-management/inductorless-charge-pump-dc-dc-converters/regulated-step-up-charge-pumps/lt1054.html>` :adi:`LTC1043 datasheet <LTC1043>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

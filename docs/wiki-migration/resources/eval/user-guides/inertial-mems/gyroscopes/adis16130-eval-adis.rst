@@ -50,8 +50,6 @@ Install the interface cable onto J2 of the interface board. In this particular e
 EVAL-ADIS Setup
 ---------------
 
-.. _step-1-1:
-
 Step #1
 ~~~~~~~
 
@@ -60,8 +58,6 @@ Set JP1 to use the EXT (external supply option) option.
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/eval-adis-jp1-ext.jpg
    :width: 300px
 
-.. _step-2-1:
-
 Step #2
 ~~~~~~~
 
@@ -69,8 +65,6 @@ Hook an external power supply up to J3. Set the supply for +5V (verify with a me
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/eval-adis-j3.png
    :width: 500px
-
-.. _step-3-1:
 
 Step #3
 ~~~~~~~
@@ -227,9 +221,7 @@ Click on the following file to see the result of this test on a lab unit. In thi
 
 `adis16130-noisetest-01.xlsx <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/adis16130-noisetest-01.xlsx>`_
 
---------------
 
---------------
 
 EXAMPLE #2: Sensitivity
 -----------------------
@@ -258,9 +250,7 @@ Here is the spreadsheet file which contains the data and analysis, which produce
 
 :ez:`Click on this Engineer Zone post <docs/DOC-2181>` to see another example of this type of sensitivity (or scale factor) test on a gyroscope.
 
---------------
 
---------------
 
 EXAMPLE #3: Bias vs Temperature
 -------------------------------
@@ -307,9 +297,7 @@ Click on the following file name to download the MS Excel file for this test run
 
 `adis16130-biastemp-1.xlsx <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/adis16130-biastemp-1.xlsx>`_
 
---------------
 
---------------
 
 SUPPORTING DETAILS (UNDER CONSTRUCTION)
 =======================================

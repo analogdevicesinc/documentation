@@ -190,8 +190,8 @@ FPGA Referece Designs:
    :class: download
 
    
-   -  \**ML605 (source files) \*\* `cf_ad9789_ebz_edk_14_4_2013_03_25.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_edk_14_4_2013_03_25.tar.gz>`_
-   -  \**ML605 (bit/sw files) \*\* `cf_ad9789_ebz_sw_14_4_2013_03_25.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_sw_14_4_2013_03_25.tar.gz>`_
+   -  **ML605 (source files)** `cf_ad9789_ebz_edk_14_4_2013_03_25.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_edk_14_4_2013_03_25.tar.gz>`_
+   -  **ML605 (bit/sw files)** `cf_ad9789_ebz_sw_14_4_2013_03_25.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_sw_14_4_2013_03_25.tar.gz>`_
    
 
 

@@ -8,9 +8,9 @@ Devicetree: What Is It & Why Use It?
 
 The Devicetree is an abstract data structure. It's purpose is to describe and configure the hardware connected to a system. The reason this is useful is that embedded developers usually spend a lot (too much) of their time wrestling with the configuration of hardware features, pin maps, and peripheral settings instead of approaching the actual processing of the target signals and data within an application. The devicetree creates a structure that can be pulled into application code to determine the connected hardware at compile time (Zephyr) or boot/runtime (Linux) so long as the device tree has the correct configuration. This means a couple things:
 
--  Application code can be much more portable between multiple hardware boards, and multiple separate revisions. This is because the driver C code is abstracted a layer above the hardware by the device tree. 
+-  Application code can be much more portable between multiple hardware boards, and multiple separate revisions. This is because the driver C code is abstracted a layer above the hardware by the device tree.
 -  Hardware configuration no longer needs to happen in C code. It instead happens in the Devicetree.
--  Peripheral boards can be slotted in via overlay files which attach to an existing Devicetree, so they too can be slotted in without much additional driver code configuration. 
+-  Peripheral boards can be slotted in via overlay files which attach to an existing Devicetree, so they too can be slotted in without much additional driver code configuration.
 
 How do I read this?
 -------------------
@@ -20,16 +20,16 @@ Devicetree has its own syntax...this can be a little tough to read at first, but
 The Root Node
 ~~~~~~~~~~~~~
 
-The Devicetree is comprised of one or more nodes, delimited by brackets {}. Every Devicetree file must at the very least have a root node, named with a forward slash ("/"). 
+The Devicetree is comprised of one or more nodes, delimited by brackets {}. Every Devicetree file must at the very least have a root node, named with a forward slash ("/").
 
 **Devicetree Root Node**
 
-.. code:: syntaxhighlighter-pre
+::
 
    / {
    };
 
-The root node mostly serves the purpose of containing individual subnodes. 
+The root node mostly serves the purpose of containing individual subnodes.
 
 Nodes & Subnodes
 ~~~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ Subnodes are similarly delimited in a hierarchy starting from the root. Here's a
 
 **Devicetree Source Example**
 
-.. code:: syntaxhighlighter-pre
+::
 
    / {
        example_node {
@@ -56,15 +56,17 @@ The above devicetree source contains 3 nodes:
 
       -  example_subnode
 
-If we look closer at the example subnode, we'll notice it has a **label** and a **property**. 
+If we look closer at the example subnode, we'll notice it has a **label** and a **property**.
 
--  A label is a simple shorthand name that can be used to refer to a node elsewhere in the device tree, Any node may have 0, 1, or more labels. 
--  A property is a name/value pair that is associated with a given node. A property can be an array of strings, numbers, bytes, or even a mixture of types. 
+-  A label is a simple shorthand name that can be used to refer to a node elsewhere in the device tree, Any node may have 0, 1, or more labels.
+-  A property is a name/value pair that is associated with a given node. A property can be an array of strings, numbers, bytes, or even a mixture of types.
 
-   -  A boolean property may have an empty value. For these, the simple presence or absence of the property conveys sufficient information. 
-   -  The size and type of a property is implied by the enclosing brackets ("<>" in the case of the integer subnode_property above)
+::
 
-Each node has a **path** and can be indexed by appending it's parent nodes with forward slashes, such as in Linux. For example, the path to the example_subnode is "/example_node/example_subnode". 
+     * A boolean property may have an empty value. For these, the simple presence or absence of the property conveys sufficient information.
+     * The size and type of a property is implied by the enclosing brackets ("<>" in the case of the integer subnode_property above)
+
+Each node has a **path** and can be indexed by appending it's parent nodes with forward slashes, such as in Linux. For example, the path to the example_subnode is "/example_node/example_subnode".
 
 Aliases
 ~~~~~~~
@@ -73,7 +75,7 @@ One may see an "aliases" node contained within a device tree source file. The al
 
 **Aliases Node**
 
-.. code:: syntaxhighlighter-pre
+::
 
    / {
        aliases {
@@ -81,11 +83,11 @@ One may see an "aliases" node contained within a device tree source file. The al
        };
    };
 
-These aliases which can be referenced by C/C++ application code to make it more portable. For example, an "led0" alias may be used to identify a connected LED without having to directly reference it's GPIO pin or otherwise tether the application code to a particular board.  
+These aliases which can be referenced by C/C++ application code to make it more portable. For example, an "led0" alias may be used to identify a connected LED without having to directly reference it's GPIO pin or otherwise tether the application code to a particular board.
 
 **A "Real" Aliases Node**
 
-.. code:: syntaxhighlighter-pre
+::
 
    / {
        aliases {
@@ -104,11 +106,11 @@ Devicetree bindings declare both the required and optional properties of a devic
 "compatible"
 ~~~~~~~~~~~~
 
-The "compatible" property binds a devicetree node to a group of requirements. If a node is contained in the devicetree containing a "compatible" property that matches one given in the devicetree bindings YAML files, it must have the required properties given in the YAML file or the devicetree will fail to compile. 
+The "compatible" property binds a devicetree node to a group of requirements. If a node is contained in the devicetree containing a "compatible" property that matches one given in the devicetree bindings YAML files, it must have the required properties given in the YAML file or the devicetree will fail to compile.
 
 **Devicetree Bindings (YAML) : "compatible"**
 
-.. code:: syntaxhighlighter-pre
+::
 
    compatible: "adi,max32xxx"
    properties:
@@ -118,19 +120,19 @@ The "compatible" property binds a devicetree node to a group of requirements. If
 
 **Devicetree source (.dts or .dtsi): "compatible"**
 
-.. code:: syntaxhighlighter-pre
+::
 
    node0 {
        compatible: "adi,max32xxx";
        num-leds = <4>;
    };
 
-In the above file, "node0" maps to the devicetree bindings via the "compatible" property. Therefore, it must contain the property "num-leds" or else the devicetree will fail to compile. 
+In the above file, "node0" maps to the devicetree bindings via the "compatible" property. Therefore, it must contain the property "num-leds" or else the devicetree will fail to compile.
 
 How Does the Devicetree Get Used?
 ---------------------------------
 
-Information can be extracted from the Devicetree to use in application code – that means device drivers now will have a component located in the Devicetree as well, and application C/C++ code will frequently reference the Devicetree to extract information about connected hardware. This adds an additional layer of complexity with the benefit of allowing hardware to be described at runtime rather than directly within the application firmware. This ultimately should mean that more application code is portable to more hardware variants given that the application code can afford to be more hardware-agnostic, provided the target hardware meets the minimum requirements of the application. 
+Information can be extracted from the Devicetree to use in application code – that means device drivers now will have a component located in the Devicetree as well, and application C/C++ code will frequently reference the Devicetree to extract information about connected hardware. This adds an additional layer of complexity with the benefit of allowing hardware to be described at runtime rather than directly within the application firmware. This ultimately should mean that more application code is portable to more hardware variants given that the application code can afford to be more hardware-agnostic, provided the target hardware meets the minimum requirements of the application.
 
 Devicetree in Embedded Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,20 +150,20 @@ Below is the classic "Blinky" sample code given in Zephyr. It uses the Devicetre
 -  Include Zephyr kernel and GPIO driver API
 -  Extract the first connected LED from a devicetree alias. This could also be done using a Devicetree node label.
 
-   -  The LED is given the type "const struct **gpio_dt_spec**", which is defined by the Zephyr GPIO API. 
+   -  The LED is given the type "const struct **gpio_dt_spec**", which is defined by the Zephyr GPIO API.
    -  Most objects extracted from the devicetree will be a type defined by an API or type "const struct device" (e.g. "const struct device \*uart")
 
 -  Utilize the Zephyr GPIO API to...
 
    -  Check if the GPIO port is ready
    -  Configure & enable the pin as a GPIO output
-   -  Toggle the LED within a while loop. 
+   -  Toggle the LED within a while loop.
 
 The code is located here: https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/basic/blinky/src/main.c and documented here: `README.rst <https://github.com/zephyrproject-rtos/zephyr/blob/main//samples/basic/blinky/README.rst>`_
 
 **Zephyr "Blinky"**
 
-.. code:: syntaxhighlighter-pre
+::
 
    /*
      * Copyright (c) 2016 Intel Corporation

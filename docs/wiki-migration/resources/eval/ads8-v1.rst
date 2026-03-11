@@ -34,14 +34,16 @@ ADS8-V1EBZ Features
    *Figure 2. ADS8-V1EBZ High Speed Evaluation Board (Bottom)*
 
 
-| 
-| ====== Using the ADS8-V1EBZ to evaluate High Speed A/D Converters ======
+Using the ADS8-V1EBZ to evaluate High Speed A/D Converters
+==========================================================
 
 Overview
 --------
 
-| When connected to a specified Analog Devices high speed adc evaluation board, the ADS8-V1 works as a data acquistion board. Designed to support the highest speed JESD204B A/D Converters, the FPGA on the ADS8-V1 acts as the data receiver, while the ADC is the data transmitter. A typical test setup is shown below.
-| |image3|
+When connected to a specified Analog Devices high speed adc evaluation board, the ADS8-V1 works as a data acquistion board. Designed to support the highest speed JESD204B A/D Converters, the FPGA on the ADS8-V1 acts as the data receiver, while the ADC is the data transmitter. A typical test setup is shown below.
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -69,12 +71,12 @@ Design and Integration Files
 
 -  Schematic, BOM, & Cadence BRD File Archive, `20_041151d.zip <https://wiki.analog.com/_media/resources/eval/20_041151d.zip>`_
 
-| The ADC data sheets and User Guides provide additional product specific information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`High Speed ADC Eval Boards <hsadcevalboard>`. For additional information or questions, send an email to highspeed.converters@analog.com.
+The ADC data sheets and User Guides provide additional product specific information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`High Speed ADC Eval Boards <hsadcevalboard>`. For additional information or questions, send an email to highspeed.converters@analog.com.
 
 ADS8-V1EBZ Supported ADC Evaluation Boards
 ------------------------------------------
 
-| Refer to the Analog Devices High Speed ADC capture board product page at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for a table of ADS8-V1EBZ compatible ADC evaluation boards.
+Refer to the Analog Devices High Speed ADC capture board product page at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for a table of ADS8-V1EBZ compatible ADC evaluation boards.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ads8-v1ebztop.jpg
    :width: 600px

@@ -10,9 +10,9 @@ Features
 
 ::
 
-   *[[http://www.anaheimautomation.com/products/brushless/brushless-motor-item.php?sID=143&pt=i&tID=96&cID=22|Two BLDC motors connected in a dyno setup (BLY171S-24V-4000 and BLY171D-24V-4000)]]\\
+   *[[http://www.anaheimautomation.com/products/brushless/brushless-motor-item.php?sID=143&pt=i&tID=96&cID=22|Two BLDC motors connected in a dyno setup (BLY171S-24V-4000 and BLY171D-24V-4000)]]
    * Electronically adjustable load – the load value is set using the onboard buttons + LCD
-   * Programmable step and ramp load changes 
+   * Programmable step and ramp load changes
    * Measurement and display of load motor phase currents
    * Measurement and display of load motor speed
 
@@ -137,7 +137,7 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON2-EBZ#signal_chain
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/navigation AD-FMCMOTCON2-EBZ#signal_chain
    :alt: Signal Measurement Chain#..:\|Overview#none
 
 .. |Dyno menu| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/Dyno_Menu.png

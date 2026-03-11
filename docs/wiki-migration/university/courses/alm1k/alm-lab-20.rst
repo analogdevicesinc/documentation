@@ -33,15 +33,7 @@ A CMOS inverter can also be viewed as a high gain amplifier. It consists of one 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 3 - 100KΩ Resistors
-| 1 - 10KΩ Resistor
-| 1 - 4.7KΩ Resistor
-| 2 - 47 KΩ Resistors
-| 2 - 1uF capacitor
-| 1 - 10 pF capacitor
-| 1 - CD4069A, CD4069UB or 74HCU04 unbuffered hex inverter (be sure not to use the buffered 74HC04 version) Alternatively a simple CMOS inverter can be built using the CD4007 transistor array. Note the appendix at the end.
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 3 - 100KΩ Resistors 1 - 10KΩ Resistor 1 - 4.7KΩ Resistor 2 - 47 KΩ Resistors 2 - 1uF capacitor 1 - 10 pF capacitor 1 - CD4069A, CD4069UB or 74HCU04 unbuffered hex inverter (be sure not to use the buffered 74HC04 version) Alternatively a simple CMOS inverter can be built using the CD4007 transistor array. Note the appendix at the end.
 
 Directions:
 ~~~~~~~~~~~
@@ -90,14 +82,10 @@ On your solder-less breadboard construct the amplifier circuit shown in figure 4
    Figure 4 single stage amplifier
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Configure the channel A voltage generator for a 200 Hz sine wave with 2 V Min value and 3 V Max value. Both scope channels should be set to 0.5V/Div.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -125,21 +113,15 @@ On your solder-less breadboard construct the amplifier circuit shown in figure 5
    Figure 5 three stage amplifier
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Configure the channel A voltage generator for a 200 Hz sine wave with 2 V Min value and 3 V Max value. Both scope channels should be set to 0.5V/Div.
 
-.. _procedure-2:
-
 Procedure:
 ~~~~~~~~~~
 
 Apply a sinusoidal signal (best to center the DC average of the signal on the nominal offset measured previously) to the input and measure the gain of the entire system from 10 Hz to 10 KHz.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~

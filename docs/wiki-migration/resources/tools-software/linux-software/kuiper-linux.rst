@@ -178,7 +178,7 @@ The example boot messages may change based on your specific platform, but when c
 
 .. raw:: html
 
-   <details><summary>**Complete Boot Log** (Click to expand)</summary>
+   <details><summary>**Complete Boot Log** (Click to expand)
 
 ::
 
@@ -187,7 +187,6 @@ The example boot messages may change based on your specific platform, but when c
     Escape character: Ctrl-\ (ASCII 28, FS): enabled
    Type the escape character followed by C to get back,
    or followed by ? to see other options.
-   ----------------------------------------------------
 
    U-Boot SPL 2021.07-16360-gee63370553-dirty (Jun 09 2022 - 23:13:35 +0300)
    FPGA: Checking FPGA configuration setting ...
@@ -761,7 +760,7 @@ So if your setup is running Kuiper Linux and you can see the device drivers from
 Powering Down
 -------------
 
-|
+
 
 .. important::
 
@@ -770,7 +769,7 @@ Powering Down
    | ``sudo shutdown -h now``
    | or
    | ``sudo poweroff``
-   |
+   
 
 
 Advanced Information For Power Users

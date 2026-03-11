@@ -4,8 +4,9 @@ HSC-ADC-EVALEZ HIGH SPEED ADC CONVERTER EVALUATION PLATFORM
 Preface
 -------
 
-| This user guide describes the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` JESD-204B Data Capture eval board with a single FMC High Pin Count (HPC) interface. The application software tools used to interface with the product specific ADC Eval boards are also described.
-| The ADC data sheets and User Guides provide additional product specific information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`High Speed ADC Eval Boards <hsadcevalboard>`. For additional information or questions, send an email to highspeed.converters@analog.com.
+This user guide describes the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` JESD-204B Data Capture eval board with a single FMC High Pin Count (HPC) interface. The application software tools used to interface with the product specific ADC Eval boards are also described.
+
+The ADC data sheets and User Guides provide additional product specific information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`High Speed ADC Eval Boards <hsadcevalboard>`. For additional information or questions, send an email to highspeed.converters@analog.com.
 
 Product Highlights
 ------------------
@@ -29,7 +30,7 @@ Typical Data Capture Setup
 
 .. container:: centeralign
 
-   *Figure 1. Evaluation Board Connection—*\ :adi:`AD9656EBZ <AD9656>` *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
+   *Figure 1. Evaluation Board Connection—*\ :adi:`AD9656EBZ <AD9656>`\ *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
 
 
 Features
@@ -126,12 +127,12 @@ EASY START Steps
 
 8. Make sure the evaluation boards are powered on before connecting the analog input and clock. Connect the appropriate analog input (which should be filtered with a band-pass filter) and low jitter clock signal.
 
-| 9. Refer to the VisualAnalog User Manual at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for detailed software operating instructions.
+9. Refer to the VisualAnalog User Manual at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for detailed software operating instructions.
 
 HSC-ADC-EVALEZ Supported ADC Evaluation Boards
 ----------------------------------------------
 
-| Refer to the Analog Devices High Speed ADC capture board product page at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for a table of HSC-ADC-EVALEZ compatible ADC evaluation boards.
+Refer to the Analog Devices High Speed ADC capture board product page at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for a table of HSC-ADC-EVALEZ compatible ADC evaluation boards.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/AD9656-125EBZ_top_level.png
    :width: 600px

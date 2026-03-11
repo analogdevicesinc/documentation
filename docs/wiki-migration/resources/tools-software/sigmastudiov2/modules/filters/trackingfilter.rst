@@ -9,8 +9,10 @@ Tracking Filter
 Description
 -----------
 
-| Tracking Filters are useful for dynamic shifting of filtering. The tracking filter allows for the center frequency to be determined by an external input. Control Input is calculated as (2\*fc)/fs, where fc is the center frequency and fs is the Schematic Sampling Rate
-| ===== Targets Supported =====
+Tracking Filters are useful for dynamic shifting of filtering. The tracking filter allows for the center frequency to be determined by an external input. Control Input is calculated as (2\*fc)/fs, where fc is the center frequency and fs is the Schematic Sampling Rate
+
+Targets Supported
+-----------------
 
 +-----------------+------------+------------------+---------------+------------------+
 | Name            | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -41,7 +43,7 @@ Name           Type  Description
 FilteredOutput Audio Filtered Output Signal
 ============== ===== ======================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------------+-------------------------------+
@@ -72,5 +74,6 @@ FilteredOutput Audio Filtered Output Signal
 DSP Parameter Computation
 -------------------------
 
-| Gain = 10^(Gain / 20)
-| Boost = 10^(Boost / 40)
+Gain = 10^(Gain / 20)
+
+Boost = 10^(Boost / 40)

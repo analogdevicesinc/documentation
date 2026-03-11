@@ -1,7 +1,7 @@
 Smoke Detector Demo (w/ EVAL-CN0537-ADRZ)
 =========================================
 
-The **ADuCM3029_demo_cn0537** project provides a solution to implement a smoke detector with the capability to pass **UL-217 specification**, using the **EVAL-CN0537-ARDZ** and the **EVAL-ADICUP3029**. The Arduino shield uses a \**ADPD188BI \*\* to control the LEDs and photodiodes, a temperature sensor for compensation, heater resistors to correct condensation and an SD card adapter to log operation data when not attended by a user terminal. The program can be controlled using a **UART** **CLI**.
+The **ADuCM3029_demo_cn0537** project provides a solution to implement a smoke detector with the capability to pass **UL-217 specification**, using the **EVAL-CN0537-ARDZ** and the **EVAL-ADICUP3029**. The Arduino shield uses a \**ADPD188BI** to control the LEDs and photodiodes, a temperature sensor for compensation, heater resistors to correct condensation and an SD card adapter to log operation data when not attended by a user terminal. The program can be controlled using a **UART** **CLI**.
 
 General Description/Overview
 ----------------------------
@@ -31,8 +31,10 @@ Using the **'stream'** command the process switches to **streaming mode** where 
 
 In **streaming mode**, if the serial terminal is connected, the application will display **temperature compensated** code values or **PTR values** at users' choice, timestamped. The **timestamp** is in seconds relative to the start of the application. The alarm state is also displayed on the terminal while streaming.
 
-| 
-| ===== Demo Requirements ===== The following is a list of items needed in order to replicate this demo.
+Demo Requirements
+-----------------
+
+The following is a list of items needed in order to replicate this demo.
 
 -  Hardware
 
@@ -58,8 +60,10 @@ Setting up the Hardware
 
 |image3|
 
-| 
-| ===== Programming the Firmware ===== This application software is used with the ADICUP3029 to demonstrate the capabilities of the CN0537 evaluation board. To upload the CN0537 software to the ADICUP3029, connect both boards together through the Arduino form factor connectors (P1 to P4 on the CN0537) and plug them to a computer through USB.
+Programming the Firmware
+------------------------
+
+This application software is used with the ADICUP3029 to demonstrate the capabilities of the CN0537 evaluation board. To upload the CN0537 software to the ADICUP3029, connect both boards together through the Arduino form factor connectors (P1 to P4 on the CN0537) and plug them to a computer through USB.
 
 Upon connection, the hardware should appear as a DAPLINK drive on the computer. Drag and drop the ADuCM3029_demo_cn0537.hex file to the DAPLINK drive to program the ADICUP3029.
 

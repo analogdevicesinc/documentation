@@ -1,7 +1,7 @@
 A Simple Magnetic Proximity Sensor
 ==================================
 
-.. image:: https://wiki.analog.com/_media/analogTV>5032143786001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>5032143786001
    :alt: analogTV>5032143786001
    :align: right
 

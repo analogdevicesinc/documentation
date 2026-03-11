@@ -95,40 +95,28 @@ Read Operations
 General Operations
 ^^^^^^^^^^^^^^^^^^
 
-| **Name**: Switch to Burst Mode
-| **Type**: Write
-| **Description**: This command has to be executed before executing any burst mode commands.
-| **Operations**:
+**Name**: Switch to Burst Mode **Type**: Write **Description**: This command has to be executed before executing any burst mode commands. **Operations**:
 
 ===== ======
 Write 0x0019
 Write 0x0000
 ===== ======
 
-| **Name**: Communications Test Register
-| **Type**: Read
-| **Description**: This register is used to check if the communication channel between the host and ADSD3500 is active.
-| **Operations**:
+**Name**: Communications Test Register **Type**: Read **Description**: This register is used to check if the communication channel between the host and ADSD3500 is active. **Operations**:
 
 ===== ======
 Write 0x0112
 Read  0x5931
 ===== ======
 
-| **Name**: Read ADSD3500 Chip Id
-| **Type**: Read
-| **Description**: Reads the Depth ISP (ADSD3500) Chip Id
-| **Operations**:
+**Name**: Read ADSD3500 Chip Id **Type**: Read **Description**: Reads the Depth ISP (ADSD3500) Chip Id **Operations**:
 
 ===== ======
 Write 0x0113
 Read  0x3500
 ===== ======
 
-| **Name**: Read Imager Chip Id
-| **Type**: Read
-| **Description**: Reads the Imager Chip Id.
-| **Operations**:
+**Name**: Read Imager Chip Id **Type**: Read **Description**: Reads the Imager Chip Id. **Operations**:
 
 ===== ========================================================
 Write 0x0115
@@ -136,10 +124,7 @@ Read  0x5931 - ADSD3100
       0xBD6y - ADSD3030, where 'y' denotes the revision number
 ===== ========================================================
 
-| **Name**: Reset the ADSD3500
-| **Type**: Write
-| **Description**: Performs a soft reset of the ADSD3500.
-| **Operations**:
+**Name**: Reset the ADSD3500 **Type**: Write **Description**: Performs a soft reset of the ADSD3500. **Operations**:
 
 ===== ======
 Write 0x0024
@@ -149,30 +134,21 @@ Write 0x0000
 Control Operations
 """"""""""""""""""
 
-| **Name**: Stream On
-| **Type**: Write
-| **Description**: Starts the imager and consequently the ASDSD3500 from streaming frames.
-| **Operations**:
+**Name**: Stream On **Type**: Write **Description**: Starts the imager and consequently the ASDSD3500 from streaming frames. **Operations**:
 
 ===== ======
 Write 0x00AD
 Write 0x00C5
 ===== ======
 
-| **Name**: Stream Off
-| **Type**: Write
-| **Description**: Stops the imager and consequently the ASDSD3500 from streaming frames.
-| **Operations**:
+**Name**: Stream Off **Type**: Write **Description**: Stops the imager and consequently the ASDSD3500 from streaming frames. **Operations**:
 
 ===== ======
 Write 0x000C
 Write 0x0002
 ===== ======
 
-| **Name**: Set imager Mode
-| **Type**: Write
-| **Description**: Sets the imager Mode , number of MIPI lanes of ADSD3500 and configures depth, AB and confidence bits.
-| **Operations**:
+**Name**: Set imager Mode **Type**: Write **Description**: Sets the imager Mode , number of MIPI lanes of ADSD3500 and configures depth, AB and confidence bits. **Operations**:
 
 ===== ======================================================
 Write 0xDA\ **XX**
@@ -202,10 +178,7 @@ Write 0x\ **YYYY**
       Bit 15,14: Reserved
 ===== ======================================================
 
-| **Name**: Read imager Mode
-| **Type**: Read
-| **Description**: Reads the current mode of the imager.
-| **Operations**:
+**Name**: Read imager Mode **Type**: Read **Description**: Reads the current mode of the imager. **Operations**:
 
 +-------+----------------------------------------------------------------------+
 | Write | 0x0012                                                               |
@@ -213,10 +186,7 @@ Write 0x\ **YYYY**
 | Read  | Returns the current imager mode. Value returned is between 0 and 10. |
 +-------+----------------------------------------------------------------------+
 
-| **Name**: Get Status
-| **Type**: Read
-| **Description**: Reads the status of ADSD3500.
-| **Operations**:
+**Name**: Get Status **Type**: Read **Description**: Reads the status of ADSD3500. **Operations**:
 
 +-------+-----------------------------------------------------------------------------------------------------+
 | Write | 0x0020                                                                                              |
@@ -269,39 +239,28 @@ Write 0x\ **YYYY**
 |       | \* 0x2D ADI_STATUS_CONFIG_CFG_CRC_MISMATCH                                                          |
 +-------+-----------------------------------------------------------------------------------------------------+
 
-| **Name**: Get imager Error Code
-| **Type**: Read
-| **Description**: Reads the imager Error code.
-| **Operations**:
+**Name**: Get imager Error Code **Type**: Read **Description**: Reads the imager Error code. **Operations**:
 
 ===== =============================================
 Write 0x0038
 Read  Reads 16-bit error code from ADSD3100 imager.
 ===== =============================================
 
-| **Name**: Set Framerate
-| **Type**: Write
-| **Description**: Sets the Frame rate of the imager.
-| **Operations**:
+**Name**: Set Framerate **Type**: Write **Description**: Sets the Frame rate of the imager. **Operations**:
 
 ===== ===================
 Write 0x0022
 Write Desried frame rate.
 ===== ===================
 
-| **Name**: Get Framerate
-| **Type**: Read
-| **Description**: Reads the frame rate.
-| **Operations**:
+**Name**: Get Framerate **Type**: Read **Description**: Reads the frame rate. **Operations**:
 
 ===== ===========================
 Write 0x0023
 Read  The current frame rate set.
 ===== ===========================
 
-| **Name**: Enable FSYNC Trigger Control
-| **Type**: Write
-| **Description**: Command to start or stop triggering frame sync (FSYNC). **Operations**:
+**Name**: Enable FSYNC Trigger Control **Type**: Write **Description**: Command to start or stop triggering frame sync (FSYNC). **Operations**:
 
 +-------+----------------------------------------------------------------------------------+
 | Write | 0x0025                                                                           |
@@ -311,10 +270,7 @@ Read  The current frame rate set.
 |       | \* 0x0002 - ADSD3500 Firmware set FSYNC signal to high impedance state.          |
 +-------+----------------------------------------------------------------------------------+
 
-| **Name**: Get FSYNC Trigger Control Status.
-| **Type**: Read
-| **Description**: Reads the FSYNC Trigger Control Status.
-| **Operations**:
+**Name**: Get FSYNC Trigger Control Status. **Type**: Read **Description**: Reads the FSYNC Trigger Control Status. **Operations**:
 
 +-------+----------------------------------------------------------------------------------+
 | Write | 0x0097                                                                           |
@@ -324,20 +280,14 @@ Read  The current frame rate set.
 |       | \* 0x0002 - ADSD3500 Firmware set FSYNC signal to high impedance state.          |
 +-------+----------------------------------------------------------------------------------+
 
-| **Name**: Manually trigger FSYNC
-| **Type**: Write
-| **Description**: This command triggers the FSYNC. **Enable FSYNC Trigger Control** command must be called with data = 0x00, prior to calling this command. otherwise ADSD3500 just ignores this command.
-| **Operations**:
+**Name**: Manually trigger FSYNC **Type**: Write **Description**: This command triggers the FSYNC. **Enable FSYNC Trigger Control** command must be called with data = 0x00, prior to calling this command. otherwise ADSD3500 just ignores this command. **Operations**:
 
 ===== ======
 Write 0x0026
 Write 0x0000
 ===== ======
 
-| **Name**: Get imager Type and CCB Version
-| **Type**: Read
-| **Description**: Reads the imager type and CCB version.
-| **Operations**:
+**Name**: Get imager Type and CCB Version **Type**: Read **Description**: Reads the imager type and CCB version. **Operations**:
 
 ===== ================
 Write 0x0032
@@ -349,20 +299,14 @@ Read  0:7 CCB Version
       \* 2 - ADSD3030
 ===== ================
 
-| **Name**: Get CCB Header Version
-| **Type**: Read
-| **Description**: Reads the CCB Header version.
-| **Operations**:
+**Name**: Get CCB Header Version **Type**: Read **Description**: Reads the CCB Header version. **Operations**:
 
 ===== =======================
 Write 0x0039
 Read  0:15 CCB Header Version
 ===== =======================
 
-| **Name**: Enable/Disable Output metadata Header in AB Frame
-| **Type**: Write
-| **Description**: Option to Enable or Disable the output Metadata header oin AB Frame.
-| **Operations**:
+**Name**: Enable/Disable Output metadata Header in AB Frame **Type**: Write **Description**: Option to Enable or Disable the output Metadata header oin AB Frame. **Operations**:
 
 ===== ===========================================
 Write 0x0036
@@ -370,10 +314,7 @@ Write \* 0 - Disable metadata header in AB Frame.
       \* 1 - Enable metadata header in AB Frame.
 ===== ===========================================
 
-| **Name**: Get Output metadata Header in AB Frame status
-| **Type**: Read
-| **Description**: Reads the status of enable/disable metadata header in AB Frame.
-| **Operations**:
+**Name**: Get Output metadata Header in AB Frame status **Type**: Read **Description**: Reads the status of enable/disable metadata header in AB Frame. **Operations**:
 
 ===== ====================================================
 Write 0x0037
@@ -381,10 +322,7 @@ Read  \* 0x0000 - metadata header in AB Frame is Disabled.
       \* 0x0001 - metadata header in AB Frame is Enabled.
 ===== ====================================================
 
-| **Name**: Set MIPI output speed
-| **Type**: Write
-| **Description**: Sets the ADSD3500 output MIPI speed.
-| **Operations**:
+**Name**: Set MIPI output speed **Type**: Write **Description**: Sets the ADSD3500 output MIPI speed. **Operations**:
 
 +-------+--------------------------------------------------------------------------------+
 | Write | 0x0031                                                                         |
@@ -401,10 +339,7 @@ Read  \* 0x0000 - metadata header in AB Frame is Disabled.
 |       | 0x08 - 250 Mbps                                                                |
 +-------+--------------------------------------------------------------------------------+
 
-| **Name**: Get MIPI output speed
-| **Type**: Read
-| **Description**: Reads the ADSD3500 output MIPI speed.
-| **Operations**:
+**Name**: Get MIPI output speed **Type**: Read **Description**: Reads the ADSD3500 output MIPI speed. **Operations**:
 
 ===== ====================================
 Write 0x0034
@@ -419,33 +354,24 @@ Read  Returns one of the following values:
       0x08 - 250 Mbps
 ===== ====================================
 
-| **Name**: Set Acquisition Delay
-| **Type**: Write
-| **Description**: Sets the Acquisition Delay.
-| Acquisition Delay × (Integration Time + [10us to 20us]) = Delay from FSYNC
-| **Operations**:
+| **Name**: Set Acquisition Delay **Type**: Write **Description**: Sets the Acquisition Delay.
+| Acquisition Delay × (Integration Time + [10us to 20us]) = Delay from FSYNC **Operations**:
 
 ===== ====================================================
 Write 0x0066
 Write Write the 16-bit value that controls delay of VCSEL.
 ===== ====================================================
 
-| **Name**: Get Delay from FSYNC
-| **Type**: Read
-| **Description**: Reads the Delay from FSYNC.
-| Acquisition Delay × (Integration Time + [10us to 20us]) = Delay from FSYNC
-| **Operations**:
+| **Name**: Get Delay from FSYNC **Type**: Read **Description**: Reads the Delay from FSYNC.
+| Acquisition Delay × (Integration Time + [10us to 20us]) = Delay from FSYNC **Operations**:
 
 ===== =========================================================
 Write 0x0068
 Read  Reads the 16-bit delay value from Imager sensor register.
 ===== =========================================================
 
-| **Name**: Get Acquisition Delay
-| **Type**: Read
-| **Description**: Reads the Acquisition Delay.
-| Acquisition Delay × (Integration Time + [10us to 20us]) = Delay from FSYNC
-| **Operations**:
+| **Name**: Get Acquisition Delay **Type**: Read **Description**: Reads the Acquisition Delay.
+| Acquisition Delay × (Integration Time + [10us to 20us]) = Delay from FSYNC **Operations**:
 
 ===== ====================================================
 Write 0x00B3
@@ -455,12 +381,9 @@ Read  Reads the 16-bit value that controls delay of VCSEL.
 Depth Control Operations
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-| **Name**: Set AB Invalidation Threshold
-| **Type**: Write
-| **Description**: Sets the AB Invalidation Threshold value.
+| **Name**: Set AB Invalidation Threshold **Type**: Write **Description**: Sets the AB Invalidation Threshold value.
 | Any pixel with at least one per-frequency active brightness value below AB Invalidation Threshold value will have an invalid depth value. To turn off per-frequency active brightness invalidation, set AB Invalidation Threshold value as 0.
-| If AB Invalidation Threshold value is increased the invalidation increases, while noise and range decrease and vice-versa.
-| **Operations**:
+| If AB Invalidation Threshold value is increased the invalidation increases, while noise and range decrease and vice-versa. **Operations**:
 
 +-------+------------------------------------------------------------------------------------------------------------+
 | Write | 0x0010                                                                                                     |
@@ -468,43 +391,31 @@ Depth Control Operations
 | Write | 0 to 0xFFFFF - the 16-bit AB Invalidation to be set. Threshold value would be scaled by Number of Freqs/2. |
 +-------+------------------------------------------------------------------------------------------------------------+
 
-| **Name**: Get AB Invalidation Threshold
-| **Type**: Read
-| **Description**: Reads the AB Invalidation Threshold value.
-| **Operations**:
+**Name**: Get AB Invalidation Threshold **Type**: Read **Description**: Reads the AB Invalidation Threshold value. **Operations**:
 
 ===== ==============================================================
 Write 0x0015
 Read  Invalidation threshold. Returned value is between 0 to 0xFFFF.
 ===== ==============================================================
 
-| **Name**: Set Confidence Threshold
-| **Type**: Write
-| **Description**: Sets the Confidence Threshold value.
+| **Name**: Set Confidence Threshold **Type**: Write **Description**: Sets the Confidence Threshold value.
 | Any pixel with a phase unwrapping confidence value larger than Confidence Threshold will have an invalid depth value. To turn off, set confidence Threshold to 255 (maximum value - FFFF).
-| If Confidence threshold value is increased the invalidation decreases while depth error may increase and vice-versa.
-| **Operations**:
+| If Confidence threshold value is increased the invalidation decreases while depth error may increase and vice-versa. **Operations**:
 
 ===== ===========
 Write 0x0011
 Write 0 to 0xFFFF
 ===== ===========
 
-| **Name**: Get Confidence Threshold
-| **Type**: Read
-| **Description**: Reads the Confidence Threshold value.
-| **Operations**:
+**Name**: Get Confidence Threshold **Type**: Read **Description**: Reads the Confidence Threshold value. **Operations**:
 
 ===== ============================================================
 Write 0x0016
 Read  Confidence threshold. Returned value is between 0 to 0xFFFF.
 ===== ============================================================
 
-| **Name**: Enable/Disable JBLF Filter
-| **Type**: Write
-| **Description**: Option to enable or disable JBLF Filter.
-| A flag to determine whether to apply edge-preserving, and noise-reducing smoothing Joint Bilateral Filtering technique on the input data.
-| **Operations**:
+| **Name**: Enable/Disable JBLF Filter **Type**: Write **Description**: Option to enable or disable JBLF Filter.
+| A flag to determine whether to apply edge-preserving, and noise-reducing smoothing Joint Bilateral Filtering technique on the input data. **Operations**:
 
 ===== ================================
 Write 0x0013
@@ -512,10 +423,7 @@ Write \* 0x0000 - Disable JBLF filter.
       \* 0x0001 - Enable JBLF filter.
 ===== ================================
 
-| **Name**: Get JBLF Filter Status
-| **Type**: Read
-| **Description**: Read the JBLF Filter enable/disable status.
-| **Operations**:
+**Name**: Get JBLF Filter Status **Type**: Read **Description**: Read the JBLF Filter enable/disable status. **Operations**:
 
 ===== =================================
 Write 0x0017
@@ -523,43 +431,31 @@ Read  \* 0x0000 - JBLF filter disabled.
       \* 0x0001 - JBLF filter enabled.
 ===== =================================
 
-| **Name**: Set JBLF Filter Size
-| **Type**: Write
-| **Description**: Sets the JBLF Filter Size
-| Size of spatial or gaussian kernel is set to JBLF (Filter Size x JBLF Filter Size) pixels. Increasing the size will further reduce noise at the expense of computation cost (compute power).
-| **Operations**:
+| **Name**: Set JBLF Filter Size **Type**: Write **Description**: Sets the JBLF Filter Size
+| Size of spatial or gaussian kernel is set to JBLF (Filter Size x JBLF Filter Size) pixels. Increasing the size will further reduce noise at the expense of computation cost (compute power). **Operations**:
 
 ===== =============================
 Write 0x0014
 Write JBLF filter size = 3, 5 or 7.
 ===== =============================
 
-| **Name**: Get JBLF Filter Size
-| **Type**: Read
-| **Description**: The JBLF Filter Size.
-| **Operations**:
+**Name**: Get JBLF Filter Size **Type**: Read **Description**: The JBLF Filter Size. **Operations**:
 
 ===== ====================================
 Write 0x0018
 Read  Current JBLF filter size; 3, 5 or 7.
 ===== ====================================
 
-| **Name**: Set JBLF Max Edge Threshold
-| **Type**: Write
-| **Description**: Sets the JBLF Max Edge Threshold.
-| It defines the depth “edgeness” above which a pixel depth value is invalid.
-| **Operations**:
+| **Name**: Set JBLF Max Edge Threshold **Type**: Write **Description**: Sets the JBLF Max Edge Threshold.
+| It defines the depth “edgeness” above which a pixel depth value is invalid. **Operations**:
 
 ===== =======================================================
 Write 0x0074
 Write 0xZZZZ is the 16-bit jblf Max Edge threshold to be set.
 ===== =======================================================
 
-| **Name**: Set JBLF AB Threshold
-| **Type**: Write
-| **Description**: Sets the JBLF AB Threshold.
-| If a pixel per-frequency active brightness is below jblfABThreshold, jblfMaxEdgeThreshold it disables edge invalidation for that pixel.
-| **Operations**:
+| **Name**: Set JBLF AB Threshold **Type**: Write **Description**: Sets the JBLF AB Threshold.
+| If a pixel per-frequency active brightness is below jblfABThreshold, jblfMaxEdgeThreshold it disables edge invalidation for that pixel. **Operations**:
 
 +-------+---------------------------------------------------------------------------------------------------------+
 | Write | 0x0075                                                                                                  |
@@ -567,115 +463,82 @@ Write 0xZZZZ is the 16-bit jblf Max Edge threshold to be set.
 | Write | 0xZZZZ is the 16-bit JBLF AB threshold to be set. Threshold value would be scaled by Number of Freqs/2. |
 +-------+---------------------------------------------------------------------------------------------------------+
 
-| **Name**: Get JBLF Gaussian Sigma
-| **Type**: Read
-| **Description**: Reads the JBLF Gaussian Sigma value.
-| **Operations**:
+**Name**: Get JBLF Gaussian Sigma **Type**: Read **Description**: Reads the JBLF Gaussian Sigma value. **Operations**:
 
 ===== =================================
 Write 0x0069
 Read  16-bit JBLF Gaussian sigma value.
 ===== =================================
 
-| **Name**: Set JBLF Gaussian Sigma
-| **Type**: Write
-| **Description**: Sets the JBLF Gaussian Sigma value.
+| **Name**: Set JBLF Gaussian Sigma **Type**: Write **Description**: Sets the JBLF Gaussian Sigma value.
 | It defines the width of the Gaussian kernel in the noise reduction filter.
-| Setting a small value effectively disables the noise reduction. Setting a value much larger than JBLF Filter Size (such as 100) provides the largest amount of noise reduction (increases depth range) at the expense of a blurrier depth image.
-| **Operations**:
+| Setting a small value effectively disables the noise reduction. Setting a value much larger than JBLF Filter Size (such as 100) provides the largest amount of noise reduction (increases depth range) at the expense of a blurrier depth image. **Operations**:
 
 ===== ==============================
 Write 0x006B
 Write Set JBLF Gaussian sigma value.
 ===== ==============================
 
-| **Name**: Get JBLF Exponential Term
-| **Type**: Read
-| **Description**: Reads the JBLF Exponential Term.
-| **Operations**:
+**Name**: Get JBLF Exponential Term **Type**: Read **Description**: Reads the JBLF Exponential Term. **Operations**:
 
 ===== =============================
 Write 0x006A
 Read  16-bit JBLF Exponential Term.
 ===== =============================
 
-| **Name**: Set JBLF Exponential Term
-| **Type**: Write
-| **Description**: Sets the JBLF Exponential Term.
-| It defines the amount of depth edge preservation in the noise reduction filter. Set JBLF Exponential Term as 0 to disable edge preservation. Set large value to preserve more depth edges.
-| **Operations**:
+| **Name**: Set JBLF Exponential Term **Type**: Write **Description**: Sets the JBLF Exponential Term.
+| It defines the amount of depth edge preservation in the noise reduction filter. Set JBLF Exponential Term as 0 to disable edge preservation. Set large value to preserve more depth edges. **Operations**:
 
 ===== =============================
 Write 0x006C
 Write JBLF Exponential Term to set.
 ===== =============================
 
-| **Name**: Get Radial Threshold Minimum
-| **Type**: Read
-| **Description**: Reads the Radial Threshold Minimum value.
-| **Operations**:
+**Name**: Get Radial Threshold Minimum **Type**: Read **Description**: Reads the Radial Threshold Minimum value. **Operations**:
 
 ===== ====================================================
 Write 0x0028
 Read  Reads a 16-bit radial threshold min value to be set.
 ===== ====================================================
 
-| **Name**: Set Radial Threshold Minimum
-| **Type**: Write
-| **Description**: Sets the Radial Threshold Minimum value.
-| Radial Threshold value is used to invalidate the depth output based on the value of radial depth. If the radial depth value is less than the Radial Threshold Minimum, then the depth output will be invalidated.
-| **Operations**:
+| **Name**: Set Radial Threshold Minimum **Type**: Write **Description**: Sets the Radial Threshold Minimum value.
+| Radial Threshold value is used to invalidate the depth output based on the value of radial depth. If the radial depth value is less than the Radial Threshold Minimum, then the depth output will be invalidated. **Operations**:
 
 ===== =====================================================
 Write 0x0027
 Write Writes a 16-bit radial threshold min value to be set.
 ===== =====================================================
 
-| **Name**: Get Radial Threshold Maximum
-| **Type**: Read
-| **Description**: Reads the Radial Threshold Maximum value.
-| **Operations**:
+**Name**: Get Radial Threshold Maximum **Type**: Read **Description**: Reads the Radial Threshold Maximum value. **Operations**:
 
 ===== ====================================================
 Write 0x0030
 Read  Reads a 16-bit radial threshold max value to be set.
 ===== ====================================================
 
-| **Name**: Set Radial Threshold Maximum
-| **Type**: Write
-| **Description**: Sets the Radial Threshold Maximum value.
-| If the radial depth value is greater than the Radial Threshold Maximum, then the depth output will be invalidated.
-| **Operations**:
+| **Name**: Set Radial Threshold Maximum **Type**: Write **Description**: Sets the Radial Threshold Maximum value.
+| If the radial depth value is greater than the Radial Threshold Maximum, then the depth output will be invalidated. **Operations**:
 
 ===== =====================================================
 Write 0x0029
 Write Writes a 16-bit radial threshold max value to be set.
 ===== =====================================================
 
-| **Name**: Get Sensor Temperature
-| **Type**: Read
-| **Description**: Reads the sensor Temperature.
-| **Operations**:
+**Name**: Get Sensor Temperature **Type**: Read **Description**: Reads the sensor Temperature. **Operations**:
 
 ===== =============================================
 Write 0x0054
 Read  Reads 16-bit Sensor temperature in degrees C.
 ===== =============================================
 
-| **Name**: Get Laser Temperature
-| **Type**: Read
-| **Description**: Reads the Laser Temperature.
-| **Operations**:
+**Name**: Get Laser Temperature **Type**: Read **Description**: Reads the Laser Temperature. **Operations**:
 
 ===== ============================================
 Write 0x0055
 Read  Reads 16-bit Laser temperature in degrees C.
 ===== ============================================
 
-| **Name**: Enable/Disable Phase Value Invalidation
-| **Type**: Write
-| **Description**: Option to Enable or Disable phase invalidation.
-| **Operations**:
+**Name**: Enable/Disable Phase Value Invalidation **Type**: Write **Description**: Option to Enable or Disable phase invalidation. **Operations**:
 
 ===== ============================================
 Write 0x0072
@@ -683,10 +546,7 @@ Write \* 0x0000 - Disable Phase Value Invalidation
       \* 0x0001 - Enable Phase Value Invalidation
 ===== ============================================
 
-| **Name**: Get Enable/Disable Phase Value Invalidation
-| **Type**: Read
-| **Description**: Option to Read Enable or Disable phase value invalidation.
-| **Operations**:
+**Name**: Get Enable/Disable Phase Value Invalidation **Type**: Read **Description**: Option to Read Enable or Disable phase value invalidation. **Operations**:
 
 ===== =============================================
 Write 0x009E
@@ -694,12 +554,9 @@ Read  \* 0x0000 - Disabled Phase Value Invalidation
       \* 0x0001 - Enabled Phase Value Invalidation
 ===== =============================================
 
-| **Name**: Enable/Disable Edge Confidence
-| **Type**: Write
-| **Description**: Option to enable or disable the JBLF Edge confidence
+| **Name**: Enable/Disable Edge Confidence **Type**: Write **Description**: Option to enable or disable the JBLF Edge confidence
 | When JBLF Egde confidence is enabled
-| Confidence 8 bits -> Dealias confidence - MSB 4 bits and JBLF Edge confidence - LSB 4 bits.
-| **Operations**:
+| Confidence 8 bits -> Dealias confidence - MSB 4 bits and JBLF Edge confidence - LSB 4 bits. **Operations**:
 
 ===== ====================================
 Write 0x0062
@@ -707,12 +564,9 @@ Write \* 0x0000 - Disable Edge Confidence.
       \* 0x0001 - Enable Edge Confidence.
 ===== ====================================
 
-| **Name**: Get Enable/Disable Edge Confidence
-| **Type**: Read
-| **Description**: Option to get enable or disable status of the JBLF Edge confidence
+| **Name**: Get Enable/Disable Edge Confidence **Type**: Read **Description**: Option to get enable or disable status of the JBLF Edge confidence
 | When JBLF Egde confidence is enabled
-| Confidence 8 bits -> Dealias confidence - MSB 4 bits and JBLF Edge confidence - LSB 4 bits.
-| **Operations**:
+| Confidence 8 bits -> Dealias confidence - MSB 4 bits and JBLF Edge confidence - LSB 4 bits. **Operations**:
 
 ===== =====================================
 Write 0x009F
@@ -720,10 +574,7 @@ Read  \* 0x0000 - Disabled Edge Confidence.
       \* 0x0001 - Enabled Edge Confidence.
 ===== =====================================
 
-| **Name**: Enable/Disable Temperature Compensation
-| **Type**: Write
-| **Description**: Option to enable or disable the temperature compensation.
-| **Operations**:
+**Name**: Enable/Disable Temperature Compensation **Type**: Write **Description**: Option to enable or disable the temperature compensation. **Operations**:
 
 ===== =============================================
 Write 0x0021
@@ -731,10 +582,7 @@ Write \* 0x0000 - Disable temperature compensation.
       \* 0x0001 - Enable temperature compensation.
 ===== =============================================
 
-| **Name**: Get Temperature Compensation Status
-| **Type**: Read
-| **Description**: Reads the temperature compensation status.
-| **Operations**:
+**Name**: Get Temperature Compensation Status **Type**: Read **Description**: Reads the temperature compensation status. **Operations**:
 
 ===== =================================================
 Write 0x0076
@@ -742,10 +590,7 @@ Read  \* 0x0000 - Temperature Compensation is Disabled.
       \* 0x00001 - Temperature Compensation is Enabled.
 ===== =================================================
 
-| **Name**: Enable/Disable 1PPS Timer Mode
-| **Type**: Write
-| **Description**: Option to enable or disable 1PPS Timer mode.
-| **Operations**:
+**Name**: Enable/Disable 1PPS Timer Mode **Type**: Write **Description**: Option to enable or disable 1PPS Timer mode. **Operations**:
 
 ===== ===============================
 Write 0x006D
@@ -753,10 +598,7 @@ Write \* 0x0000 - Free-Wheeling mode.
       \* 0x0001 - 1PPS Mode.
 ===== ===============================
 
-| **Name**: Enable/Disable Dynamic Mode Switching
-| **Type**: Write
-| **Description**: Option to enable or disable Dynamic Mode switching. **MUST BE ENABLED BEFORE CONFIGURING OTHER DYNAMIC MODE SWITCHING REGISTERS**
-| **Operations**:
+**Name**: Enable/Disable Dynamic Mode Switching **Type**: Write **Description**: Option to enable or disable Dynamic Mode switching. **MUST BE ENABLED BEFORE CONFIGURING OTHER DYNAMIC MODE SWITCHING REGISTERS** **Operations**:
 
 +-------+--------------------------------------------------------------------------------------------+
 | Write | 0x0080                                                                                     |
@@ -764,11 +606,8 @@ Write \* 0x0000 - Free-Wheeling mode.
 | Write | \* 0x0000 - Disable dynamic mode switching. \\\\\* 0x0001 - Enable dynamic mode switching. |
 +-------+--------------------------------------------------------------------------------------------+
 
-| **Name**: Set Dynamic Sequence Composition0
-| **Type**: Write
-| **Description**: This command is applicable only when Dynamic mode switching is enabled.
-| This field shows first four mode numbers of the sequence in dynamic mode switching.
-| **Operations**:
+| **Name**: Set Dynamic Sequence Composition0 **Type**: Write **Description**: This command is applicable only when Dynamic mode switching is enabled.
+| This field shows first four mode numbers of the sequence in dynamic mode switching. **Operations**:
 
 ===== ==============================================
 Write 0x0081
@@ -776,11 +615,8 @@ Write 0xYYYY
       modes m3 [12:15], m2 [11:8], m1 [7:4] m0 [3:0]
 ===== ==============================================
 
-| **Name**: Set Dynamic Sequence Composition1
-| **Type**: Write
-| **Description**: These commands is applicable only when Dynamic mode switching is enabled.
-| This field shows next four mode numbers of the sequence in dynamic mode switching.
-| **Operations**:
+| **Name**: Set Dynamic Sequence Composition1 **Type**: Write **Description**: These commands is applicable only when Dynamic mode switching is enabled.
+| This field shows next four mode numbers of the sequence in dynamic mode switching. **Operations**:
 
 ===== ========================================
 Write 0x0082
@@ -788,11 +624,8 @@ Write 0xYYYY
       m7 [12:15], m6 [11:8], m5 [7:4] m4 [3:0]
 ===== ========================================
 
-| **Name**: Set Dynamic Sequence Repeat Count0
-| **Type**: Write
-| **Description**: This command is valid only for ADSD3030 and when dynamic mode switch is enabled
-| This fields indicate the number of times the specified mode should repeat before going to the next mode in sequence0 mode selection. (i.e., repeat counts- rc).
-| **Operations**:
+| **Name**: Set Dynamic Sequence Repeat Count0 **Type**: Write **Description**: This command is valid only for ADSD3030 and when dynamic mode switch is enabled
+| This fields indicate the number of times the specified mode should repeat before going to the next mode in sequence0 mode selection. (i.e., repeat counts- rc). **Operations**:
 
 +-------+------------------------------------------------------------------------------------+
 | Write | 0x0083                                                                             |
@@ -802,12 +635,9 @@ Write 0xYYYY
 |       | m3_rc [12:15], m2 \_rc[11:8], m1_rc [7:4] m0_rc [3:0]                              |
 +-------+------------------------------------------------------------------------------------+
 
-| **Name**: Set Dynamic Sequence Repeat Count1
-| **Type**: Write
-| **Description**: This command is valid only for ADSD3030 and when dynamic mode switch is enabled
+| **Name**: Set Dynamic Sequence Repeat Count1 **Type**: Write **Description**: This command is valid only for ADSD3030 and when dynamic mode switch is enabled
 | This fields indicate the number of times the specified mode should repeat before going to the next mode in sequence1 mode selection. (i.e., repeat counts).
-| Note: In ADTF3175, the repeat count (using the Set Dynamic Sequence Repeat Count0 and Set Dynamic Sequence Repeat Count1) commands are not used. Even if the user programs these commands, the ADSD3500 firmware ignores them, and the dynamic sequence pattern will be given using ADI_SET_DYNAMIC_SEQUENCE_COMPOSITION0 and ADI_SET_DYNAMIC_SEQUENCE_COMPOSITION1. Maximum sequence Length supported is 8.
-| **Operations**:
+| Note: In ADTF3175, the repeat count (using the Set Dynamic Sequence Repeat Count0 and Set Dynamic Sequence Repeat Count1) commands are not used. Even if the user programs these commands, the ADSD3500 firmware ignores them, and the dynamic sequence pattern will be given using ADI_SET_DYNAMIC_SEQUENCE_COMPOSITION0 and ADI_SET_DYNAMIC_SEQUENCE_COMPOSITION1. Maximum sequence Length supported is 8. **Operations**:
 
 +-------+---------------------------------------------------------------------------------+
 | Write | 0x0084                                                                          |
@@ -825,10 +655,7 @@ Write 0xYYYY
 |       | 655222333322222 655222                                                          |
 +-------+---------------------------------------------------------------------------------+
 
-| **Name**: Get dynamic mode switching enable\\disable status
-| **Type**: Read
-| **Description**: Reads dynamic mode switching status
-| **Operations**:
+**Name**: Get dynamic mode switching enable\\disable status **Type**: Read **Description**: Reads dynamic mode switching status **Operations**:
 
 ===== ===============================================
 Write 0x0085
@@ -836,21 +663,15 @@ Read  \* 0x0000 - Dynamic mode switching is Disabled.
       \* 0x00001 - Dynamic mode switching is Enabled.
 ===== ===============================================
 
-| **Name**: Get Invalid Phase Value
-| **Type**: Read
-| **Description**: Read the Phase Invalid value.
-| **Operations**:
+**Name**: Get Invalid Phase Value **Type**: Read **Description**: Read the Phase Invalid value. **Operations**:
 
 ===== =====================================================
 Write 0x0091
 Read  Reads the value assigned for the Invalid Phase Value.
 ===== =====================================================
 
-| **Name**: Set Invalid Phase Value
-| **Type**: Write
-| **Description**: Sets the Phase Invalid value.
-| The pixels are invalidated based on this value.
-| **Operations**:
+| **Name**: Set Invalid Phase Value **Type**: Write **Description**: Sets the Phase Invalid value.
+| The pixels are invalidated based on this value. **Operations**:
 
 ===== ===================================================
 Write 0x0090
@@ -858,10 +679,7 @@ Write Writes a value 0x0YYY to the Invalid Phase Value.
       Where the maximum value of 0x0YYY is 0x0FFF (4095).
 ===== ===================================================
 
-| **Name**: Enable/Disable Raw Data Bypass Mode
-| **Type**: Write
-| **Description**: Option to enable or disable Raw Data Bypass Mode.
-| **Operations**:
+**Name**: Enable/Disable Raw Data Bypass Mode **Type**: Write **Description**: Option to enable or disable Raw Data Bypass Mode. **Operations**:
 
 ===== =========================================
 Write 0x0033
@@ -869,10 +687,7 @@ Write \* 0x0000 - Disable Raw Data Bypass Mode.
       \* 0x0001 - Enable Raw Data Bypass Mode.
 ===== =========================================
 
-| **Name**: Get Raw Data Bypass Enable/Disable Status
-| **Type**: Read
-| **Description**: It reads the Raw Data Bypass Enable/Disable Status
-| **Operations**:
+**Name**: Get Raw Data Bypass Enable/Disable Status **Type**: Read **Description**: It reads the Raw Data Bypass Enable/Disable Status **Operations**:
 
 ===== =============================================
 Write 0x00B4
@@ -880,10 +695,7 @@ Read  \* 0x0000 - Raw Data Bypass Mode is Disabled.
       \* 0x0001 - Raw Data Bypass Mode is Enabled.
 ===== =============================================
 
-| **Name**: Enable/Disable Only AB Mode
-| **Type**: Write
-| **Description**: Option to enable or disable Only AB Mode.
-| **Operations**:
+**Name**: Enable/Disable Only AB Mode **Type**: Write **Description**: Option to enable or disable Only AB Mode. **Operations**:
 
 ===== =================================
 Write 0x006E
@@ -891,10 +703,7 @@ Write \* 0x0000 - Disable Only AB Mode.
       \* 0x0001 - Enable Only AB Mode.
 ===== =================================
 
-| **Name**: Enable/Disable Output metadata Header in Raw Frame
-| **Type**: Write
-| **Description**: Option to Enable or Disable the output Metadata header in Raw Frame.
-| **Operations**:
+**Name**: Enable/Disable Output metadata Header in Raw Frame **Type**: Write **Description**: Option to Enable or Disable the output Metadata header in Raw Frame. **Operations**:
 
 ===== =================================================
 Write 0x0077
@@ -902,10 +711,7 @@ Write \* 0x0000 - Disable metadata header in Raw Frame.
       \* 0x0001 - Enable metadata header in Raw Frame.
 ===== =================================================
 
-| **Name**: Get Output metadata Header in Raw Frame status
-| **Type**: Read
-| **Description**: Reads the status of enable/disable metadata header in Raw Frame.
-| **Operations**:
+**Name**: Get Output metadata Header in Raw Frame status **Type**: Read **Description**: Reads the status of enable/disable metadata header in Raw Frame. **Operations**:
 
 ===== =====================================================
 Write 0x0078
@@ -913,10 +719,7 @@ Read  \* 0x0000 - metadata header in Raw Frame is Disabled.
       \* 0x0001 - metadata header in Raw Frame is Enabled.
 ===== =====================================================
 
-| **Name**: Get Firmware Boot Section
-| **Type**: Read
-| **Description**: Gives the section where ADSD3500 is booted from.
-| **Operations**:
+**Name**: Get Firmware Boot Section **Type**: Read **Description**: Gives the section where ADSD3500 is booted from. **Operations**:
 
 +-------+-----------------------------------------------------------------------------+
 | Write | 0x0092                                                                      |
@@ -927,10 +730,7 @@ Read  \* 0x0000 - metadata header in Raw Frame is Disabled.
 |       | \* 0x0005 - ADSD3500 booted from Factory Firmware (Forced via Host Command) |
 +-------+-----------------------------------------------------------------------------+
 
-| **Name**: Get Ping/Pong Section Status
-| **Type**: Read
-| **Description**: Gives the section where ADSD3500 is booted from.
-| **Operations**:
+**Name**: Get Ping/Pong Section Status **Type**: Read **Description**: Gives the section where ADSD3500 is booted from. **Operations**:
 
 ===== ==============================================
 Write 0x0094
@@ -938,10 +738,7 @@ Read  \* 0x0000 - ADSD3500 booted from Ping Section.
       \* 0x0001 - ADSD3500 booted from Pong Section
 ===== ==============================================
 
-| **Name**: Force ADS3500 to boot from Factory/Current Section
-| **Type**: Write
-| **Description**: Option to Force ADS3500 to boot from Factory/Current Section.
-| **Operations**:
+**Name**: Force ADS3500 to boot from Factory/Current Section **Type**: Write **Description**: Option to Force ADS3500 to boot from Factory/Current Section. **Operations**:
 
 ===== =======================================================
 Write 0x0093
@@ -949,20 +746,14 @@ Write \* 0x0000 - Force ADS3500 to boot from Current Section.
       \* 0x0001 - Force ADS3500 to boot from Factory Section.
 ===== =======================================================
 
-| **Name**: Add Flash status chunk
-| **Type**: Write
-| **Description**: Option to add Flash status chunk at the end of Flash to support init version - 2.0.
-| **Operations**:
+**Name**: Add Flash status chunk **Type**: Write **Description**: Option to add Flash status chunk at the end of Flash to support init version - 2.0. **Operations**:
 
 ===== =========
 Write 0x0095
 Write \* 0x0000
 ===== =========
 
-| **Name**: Get Init Firmware Version
-| **Type**: Read
-| **Description**: Gives the init firmware version.
-| **Operations**:
+**Name**: Get Init Firmware Version **Type**: Read **Description**: Gives the init firmware version. **Operations**:
 
 ===== =============================
 Write 0x0096
@@ -970,11 +761,8 @@ Read  \* 0x0001 - Init Version 1.0.
       \* 0x0002 - Init Version 2.0.
 ===== =============================
 
-| **Name**: Enable/Disable All Frequency AB Frame
-| **Type**: Write
-| **Description**: Option to enable or disable all frequency AB frame along with phase frame.
-| (2/3 phase frame + 2/3 AB frame).
-| **Operations**:
+| **Name**: Enable/Disable All Frequency AB Frame **Type**: Write **Description**: Option to enable or disable all frequency AB frame along with phase frame.
+| (2/3 phase frame + 2/3 AB frame). **Operations**:
 
 ===== ===========================================
 Write 0x0098
@@ -982,10 +770,7 @@ Write \* 0x0000 - Disable All Frequency AB Frame.
       \* 0x0001 - Enable All Frequency AB Frame.
 ===== ===========================================
 
-| **Name**: Get All Frequency AB Frame Status
-| **Type**: Read
-| **Description**: Read the All Frequency AB Frame enable/disable status.
-| **Operations**:
+**Name**: Get All Frequency AB Frame Status **Type**: Read **Description**: Read the All Frequency AB Frame enable/disable status. **Operations**:
 
 ===== ============================================
 Write 0x0099
@@ -993,10 +778,7 @@ Read  \* 0x0000 - All Frequency AB Frame disabled.
       \* 0x0001 - All Frequency AB Frame enabled.
 ===== ============================================
 
-| **Name**: Enable/Disable Filtered AB
-| **Type**: Write
-| **Description**: Option to selected filtered or unfiltered AB frame.
-| **Operations**:
+**Name**: Enable/Disable Filtered AB **Type**: Write **Description**: Option to selected filtered or unfiltered AB frame. **Operations**:
 
 ===== ==========================
 Write 0x009C
@@ -1004,10 +786,7 @@ Write \* 0x0000 - Unfiltered AB.
       \* 0x0001 - Filtered AB.
 ===== ==========================
 
-| **Name**: Get Enable/Disable Filtered AB Status
-| **Type**: Read
-| **Description**: Read the status of filtered/unfiltered AB.
-| **Operations**:
+**Name**: Get Enable/Disable Filtered AB Status **Type**: Read **Description**: Read the status of filtered/unfiltered AB. **Operations**:
 
 ===== =================================================
 Write 0x009D
@@ -1015,10 +794,7 @@ Read  \* 0x0000 - Unfiltered AB will be sent as output.
       \* 0x0001 - Filtered AB will be sent as output.
 ===== =================================================
 
-| **Name**: Set ABA Weights for Active Brightness Computation.
-| **Type**: Write
-| **Description**: Set ABA Weights for Active Brightness Computation.
-| **Operations**:
+**Name**: Set ABA Weights for Active Brightness Computation. **Type**: Write **Description**: Set ABA Weights for Active Brightness Computation. **Operations**:
 
 ===== ========================================
 Write 0x00A1 - Set ABA_WEIGHT_1
@@ -1027,10 +803,7 @@ Write 0x00A1 - Set ABA_WEIGHT_1
 Write 0xXXXX - Set value between 0x000 - 0x3FF
 ===== ========================================
 
-| **Name**: Get ABA Weights for Active Brightness Computation.
-| **Type**: Read
-| **Description**: Get ABA Weights for Active Brightness Computation.
-| **Operations**:
+**Name**: Get ABA Weights for Active Brightness Computation. **Type**: Read **Description**: Get ABA Weights for Active Brightness Computation. **Operations**:
 
 ===== ==============================================
 Write 0x00A5 - Get ABA_WEIGHT_1
@@ -1039,10 +812,7 @@ Write 0x00A5 - Get ABA_WEIGHT_1
 Read  0xXXXX - Returns the Set Value for ABA_WEIGHTS
 ===== ==============================================
 
-| **Name**: Set ABA Scale Factor for Active Brightness Computation.
-| **Type**: Write
-| **Description**: Set ABA Scale Factor for Active Brightness Computation.
-| **Operations**:
+**Name**: Set ABA Scale Factor for Active Brightness Computation. **Type**: Write **Description**: Set ABA Scale Factor for Active Brightness Computation. **Operations**:
 
 +-------+---------------------------------------------------------------------------+
 | Write | 0x00A4                                                                    |
@@ -1051,10 +821,7 @@ Read  0xXXXX - Returns the Set Value for ABA_WEIGHTS
 |       | 0x0001 - Extract the LSB Bits from the Calculated AB Data - LSB Selection |
 +-------+---------------------------------------------------------------------------+
 
-| **Name**: Get ABA Scale Factor for Active Brightness Computation.
-| **Type**: Read
-| **Description**: Get ABA Scale Factor for Active Brightness Computation.
-| **Operations**:
+**Name**: Get ABA Scale Factor for Active Brightness Computation. **Type**: Read **Description**: Get ABA Scale Factor for Active Brightness Computation. **Operations**:
 
 ===== ==================================
 Write 0x00A8
@@ -1062,44 +829,27 @@ Read  0x0000 - Output AB is MSB Selected
       0x0001 - Output AB is LSB Selected
 ===== ==================================
 
-| **Name**: Get Micro Sequencer Firmware version - LSB Bits
-| **Type**: Read
-| **Description**: Get Micro Sequencer Firmware version - LSB Bits
-| **Operations**:
+**Name**: Get Micro Sequencer Firmware version - LSB Bits **Type**: Read **Description**: Get Micro Sequencer Firmware version - LSB Bits **Operations**:
 
 ===== =======================================
 Write 0x00B1
 Read  0xXXXX - Returns the Version's LSB Bits
 ===== =======================================
 
-| **Name**: Get Micro Sequencer Firmware version - MSB Bits
-| **Type**: Read
-| **Description**: Get Micro Sequencer Firmware version - MSB Bits
-| **Operations**:
+**Name**: Get Micro Sequencer Firmware version - MSB Bits **Type**: Read **Description**: Get Micro Sequencer Firmware version - MSB Bits **Operations**:
 
 ===== =======================================
 Write 0x00B2
 Read  0xXXXX - Returns the Version's MSB Bits
 ===== =======================================
 
-| **Name**: Configure GPIO with feature
-| **Type**: Write
-| **Description**: Host command specific to the GPIO number has been added so that user can select the features which they would need.
-| List of Features:
-| SET_SOF_PROGRAMMABLE_DELAY = 1
-| 1PPS_TIMER = 2
-| SECOND_INTERRUPT_SENSOR = 3
-| List of GPIO Pins:
-| I2C: 8, 10, 11, 14, 15, 18, 16, 17, 20, 21
-| SPI: 8, 10, 11, 14, 15, 18, 12, 19
-| Example: Command to Configure GPIO8 with SET_SOF_PROGRAMMABLE_DELAY Feature.
-| Write: W 00 B5
-| Data : 0xXX YY
-| where ‘YY’ represents feature and ‘XX’ represents Enable /Disable.
-| YY is 01 for SOF PROGRAMMABLE DELAY Feature, XX is 01 for Enabling the feature.
-| W 00 B5 01 01 : ENABLE
-| W 00 B5 00 01 : DISABLE
-| **Operations**:
+**Name**: Configure GPIO with feature **Type**: Write **Description**: Host command specific to the GPIO number has been added so that user can select the features which they would need.
+
+List of Features: SET_SOF_PROGRAMMABLE_DELAY = 1 1PPS_TIMER = 2 SECOND_INTERRUPT_SENSOR = 3
+
+List of GPIO Pins: I2C: 8, 10, 11, 14, 15, 18, 16, 17, 20, 21 SPI: 8, 10, 11, 14, 15, 18, 12, 19
+
+Example: Command to Configure GPIO8 with SET_SOF_PROGRAMMABLE_DELAY Feature. Write: W 00 B5 Data : 0xXX YY where ‘YY’ represents feature and ‘XX’ represents Enable /Disable. YY is 01 for SOF PROGRAMMABLE DELAY Feature, XX is 01 for Enabling the feature. W 00 B5 01 01 : ENABLE W 00 B5 00 01 : DISABLE **Operations**:
 
 ========= ====== ======
 GPIO Port Write  Data
@@ -1116,21 +866,13 @@ GPIO20    0x00BE 0xXXYY
 GPIO21    0x00BF 0xXXYY
 ========= ====== ======
 
-| **Name**: Get Status of GPIO configured with feature
-| **Type**: Read
-| **Description**: Reads respective GPIO feature, along with Enable/Disable Status.
-| Where Data represents: 0xXXYY: where ‘YY’ represents feature and ‘XX’ represents Enable/Disable
-| List of Features:
-| SET_SOF_PROGRAMMABLE_DELAY = 1
-| 1PPS_TIMER = 2
-| SECOND_INTERRUPT_SENSOR = 3
-| List of GPIO Pins:
-| I2C: 8, 10, 11, 14, 15, 18, 16, 17, 20, 21
-| SPI: 8, 10, 11, 14, 15, 18, 12, 19
-| Example: Command to read GPIO8 feature along with enable/disable status: R 00 F5
-| Value Returned: 01 01 -> SET_SOF_PROGRAMMABLE_DELAY - Enabled
-| Value Returned: 00 01 -> SET_SOF_PROGRAMMABLE_DELAY - Disabled
-| **Operations**:
+**Name**: Get Status of GPIO configured with feature **Type**: Read **Description**: Reads respective GPIO feature, along with Enable/Disable Status. Where Data represents: 0xXXYY: where ‘YY’ represents feature and ‘XX’ represents Enable/Disable
+
+List of Features: SET_SOF_PROGRAMMABLE_DELAY = 1 1PPS_TIMER = 2 SECOND_INTERRUPT_SENSOR = 3
+
+List of GPIO Pins: I2C: 8, 10, 11, 14, 15, 18, 16, 17, 20, 21 SPI: 8, 10, 11, 14, 15, 18, 12, 19
+
+Example: Command to read GPIO8 feature along with enable/disable status: R 00 F5 Value Returned: 01 01 -> SET_SOF_PROGRAMMABLE_DELAY - Enabled Value Returned: 00 01 -> SET_SOF_PROGRAMMABLE_DELAY - Disabled **Operations**:
 
 ========= ======
 GPIO Port Read
@@ -1147,10 +889,7 @@ GPIO20    0x00FE
 GPIO21    0x00FF
 ========= ======
 
-| **Name**: Set MIPI Continuous HS Clock Register.
-| **Type**: Write
-| **Description**: Sets the MIPI Continuous HS Clock Register.
-| **Operations**:
+**Name**: Set MIPI Continuous HS Clock Register. **Type**: Write **Description**: Sets the MIPI Continuous HS Clock Register. **Operations**:
 
 ===== =============================================
 Write 0x00A9
@@ -1158,10 +897,7 @@ Write \* 0x0000 - Disable MIPI Continuous HS Clock.
       \* 0x0001 - Enable MIPI Continuous HS Clock.
 ===== =============================================
 
-| **Name**: Get MIPI Continuous HS Clock Register.
-| **Type**: Read
-| **Description**: Reads MIPI Continuous HS Clock Register.
-| **Operations**:
+**Name**: Get MIPI Continuous HS Clock Register. **Type**: Read **Description**: Reads MIPI Continuous HS Clock Register. **Operations**:
 
 ===== =================================================
 Write 0x00AA
@@ -1169,10 +905,7 @@ Read  \* 0x0000 - MIPI Continuous HS Clock is Disabled.
       \* 0x0001 - MIPI Continuous HS Clock is Enabled.
 ===== =================================================
 
-| **Name**: Set Enable Deskew at Stream On.
-| **Type**: Write
-| **Description**: Set Enable Deskew at Stream On.
-| **Operations**:
+**Name**: Set Enable Deskew at Stream On. **Type**: Write **Description**: Set Enable Deskew at Stream On. **Operations**:
 
 ===== ===========================
 Write 0x00AB
@@ -1180,10 +913,7 @@ Write \* 0x0000 - Disable Deskew.
       \* 0x0001 - Enable Deskew.
 ===== ===========================
 
-| **Name**: Get Status of Deskew at Stream On.
-| **Type**: Read
-| **Description**: Reads the Status of Deskew at Stream On.
-| **Operations**:
+**Name**: Get Status of Deskew at Stream On. **Type**: Read **Description**: Reads the Status of Deskew at Stream On. **Operations**:
 
 ===== ===============================
 Write 0x00AC
@@ -1191,30 +921,21 @@ Read  \* 0x0000 - Disabled - Default.
       \* 0x0001 - Enabled.
 ===== ===============================
 
-| **Name**: Set GPIO High to Low after SOF with Programmable delay
-| **Type**: Write
-| **Description**: Set the delay after which the GPIOx [Configured for programmable delay] will go low starting at high from SOF.
-| **Operations**:
+**Name**: Set GPIO High to Low after SOF with Programmable delay **Type**: Write **Description**: Set the delay after which the GPIOx [Configured for programmable delay] will go low starting at high from SOF. **Operations**:
 
 ===== ===============================
 Write 0x009A
 Write 0 to 0xFFFF - the 16-bit value.
 ===== ===============================
 
-| **Name**: Set GPIO High to Low after SOF with Programmable delay
-| **Type**: Read
-| **Description**: Read the delay of GPIOx [Configured for programmable delay] high to low.
-| **Operations**:
+**Name**: Set GPIO High to Low after SOF with Programmable delay **Type**: Read **Description**: Read the delay of GPIOx [Configured for programmable delay] high to low. **Operations**:
 
 ===== ======================================
 Write 0x009B
 Read  Returned value is between 0 to 0xFFFF.
 ===== ======================================
 
-| **Name**: Read the last two ADSD3500 System States
-| **Type**: Read
-| **Description**: ADSD3500 stores the last two System states. User can read the same via the host command.
-| **Operations**:
+**Name**: Read the last two ADSD3500 System States **Type**: Read **Description**: ADSD3500 stores the last two System states. User can read the same via the host command. **Operations**:
 
 +-------+---------------------------------------------------------------------------------------------------+
 | Write | 0x00C0                                                                                            |
@@ -1222,41 +943,28 @@ Read  Returned value is between 0 to 0xFFFF.
 | Read  | 0xXXYY - It returns 0xXXYY: XX represents recent Error State, YY represents previous Error State. |
 +-------+---------------------------------------------------------------------------------------------------+
 
-| **Name**: Clear the Interrupt and System Status
-| **Type**: Write
-| **Description**: It will clear the ADSD3500 current system status and interrupt [Host Interrupt] if raised.
-| Note: It will not clear the last two System States.
-| **Operations**:
+**Name**: Clear the Interrupt and System Status **Type**: Write **Description**: It will clear the ADSD3500 current system status and interrupt [Host Interrupt] if raised. Note: It will not clear the last two System States. **Operations**:
 
 ===== ======
 Write 0x00C1
 Write 0x0000
 ===== ======
 
-| **Name**: Set PCIR (Phase Coding Interference Reduction) Seed Value
-| **Type**: Write
-| **Description**: Sets the PCIR Seed value of the imager.
-| **Operations**:
+**Name**: Set PCIR (Phase Coding Interference Reduction) Seed Value **Type**: Write **Description**: Sets the PCIR Seed value of the imager. **Operations**:
 
 ===== =============================================
 Write 0x00C3
 Write 0xXXXX - Any random seed value to be written.
 ===== =============================================
 
-| **Name**: Get PCIR (Phase Coding Interference Reduction) Seed Value
-| **Type**: Read
-| **Description**: Reads PCIR Seed Value of the Imager.
-| **Operations**:
+**Name**: Get PCIR (Phase Coding Interference Reduction) Seed Value **Type**: Read **Description**: Reads PCIR Seed Value of the Imager. **Operations**:
 
 ===== =====================================
 Write 0x00C4
 Read  0xXXXX - Returns the PCIR seed value.
 ===== =====================================
 
-| **Name**: Get Second ADSD3500 Interrupt Reason
-| **Type**: Read
-| **Description**: Reads Second ADSD3500 Interrupt Reason.
-| **Operations**:
+**Name**: Get Second ADSD3500 Interrupt Reason **Type**: Read **Description**: Reads Second ADSD3500 Interrupt Reason. **Operations**:
 
 ===== =======================================================
 Write 0x0056
@@ -1265,10 +973,7 @@ Read  Returns the reason for the Second ADSD3500 Interrupt.
       0x0002 - Stream off Interrupt from the second ADSD3500.
 ===== =======================================================
 
-| **Name**: Get Second ADSD3500 System Status
-| **Type**: Read
-| **Description**: Reads Second ADSD3500 System Status.
-| **Operations**:
+**Name**: Get Second ADSD3500 System Status **Type**: Read **Description**: Reads Second ADSD3500 System Status. **Operations**:
 
 ===== ===========================================================
 Write 0x0057
@@ -1276,20 +981,14 @@ Read  0xXXXX - Returns the System Status for the Second ADSD3500.
       Same as Get System Status Command 0x0020.
 ===== ===========================================================
 
-| **Name**: Get Imager Micro Sequencer Status
-| **Type**: Read
-| **Description**: Reads the Imager Micro Sequencer Status.
-| **Operations**:
+**Name**: Get Imager Micro Sequencer Status **Type**: Read **Description**: Reads the Imager Micro Sequencer Status. **Operations**:
 
 ===== ============================================
 Write 0x0058
 Read  0xXXXX - Returns the Imager Micro Sequencer.
 ===== ============================================
 
-| **Name**: Get Is Dual ADSD3500 Enabled
-| **Type**: Read
-| **Description**: Reads the Dual ADSD3500 Enabled Status.
-| **Operations**:
+**Name**: Get Is Dual ADSD3500 Enabled **Type**: Read **Description**: Reads the Dual ADSD3500 Enabled Status. **Operations**:
 
 ===== ===============================
 Write 0x005A
@@ -1331,22 +1030,22 @@ Upon reception of this command, Firmware sends 56 Bytes CAMERA INSTRINSIC struct
 
 ::
 
-   typedef struct { 
-     float fx; 
-     float fy; 
-     float cx; 
-     float cy; 
-     float codx; 
-     float cody; 
-     float k1; 
-     float k2; 
-     float k3; 
-     float k4; 
-     float k5; 
-     float k6; 
-     float p2; 
-     float p1; 
-   } CameraIntrinsics; 
+   typedef struct {
+     float fx;
+     float fy;
+     float cx;
+     float cy;
+     float codx;
+     float cody;
+     float k1;
+     float k2;
+     float k3;
+     float k4;
+     float k5;
+     float k6;
+     float p2;
+     float p1;
+   } CameraIntrinsics;
 
 Get Dealias Parameters
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -1364,19 +1063,19 @@ Upon reception of this command, Firmware send 32-byte dealias parameter structur
 
 ::
 
-   typedef struct { 
-     int n_rows; 
-     int n_cols; 
-     uint8_t n_freqs; 
-     uint8_t row_bin_factor; 
-     uint8_t col_bin_factor; 
-     uint16_t n_offset_rows; 
-     uint16_t n_offset_cols; 
-     uint16_t n_sensor_rows; 
-     uint16_t n_sensor_cols; 
-     uint8_t FreqIndex[3]; 
-     uint16_t Freq[3]; 
-   } DealiasDataStructure; 
+   typedef struct {
+     int n_rows;
+     int n_cols;
+     uint8_t n_freqs;
+     uint8_t row_bin_factor;
+     uint8_t col_bin_factor;
+     uint16_t n_offset_rows;
+     uint16_t n_offset_cols;
+     uint16_t n_sensor_rows;
+     uint16_t n_sensor_cols;
+     uint8_t FreqIndex[3];
+     uint16_t Freq[3];
+   } DealiasDataStructure;
 
 Firmware Upgrade Command
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1430,7 +1129,7 @@ Upon reception of this command, upon reception of this command, Firmware retriev
 Switch to Standard Mode
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-This command switches the protocol mode of the ADSD3500 Firmware from BURST MODE to STANDARD MODE. After this command, ADSD3500 supports only STANDARD MODE commands. 
+This command switches the protocol mode of the ADSD3500 Firmware from BURST MODE to STANDARD MODE. After this command, ADSD3500 supports only STANDARD MODE commands.
 
 +--------+---------+--------+---------+---------------------------------------------+-------------+
 | ID     | Size    | Cmd    | Address | Header Checksum                             | Custom Data |
@@ -1559,7 +1258,7 @@ Upon reception of this command, Firmware sends 40 Bytes Mode Map structure as fo
 
 
     uint8_t INIIndex;
-     uint8_t rsvd;                              // for byte alignment of following fields 
+     uint8_t rsvd;                              // for byte alignment of following fields
      uint16_t abThreshMin;
      uint16_t confThresh;
      uint16_t radialThreshMin;
@@ -1581,20 +1280,14 @@ Upon reception of this command, Firmware sends 40 Bytes Mode Map structure as fo
      uint16_t spare8;
    };
 
-| **Name**: Read Calibration File Version
-| **Type**: Standard Read
-| **Description**: Get calibration mode from ADSD3500.
-| **Operations**:
+**Name**: Read Calibration File Version **Type**: Standard Read **Description**: Get calibration mode from ADSD3500. **Operations**:
 
 ===== ===========================================================
 Write 0x0032
 Read  0x0203 - ADSD3500 configured to support CCB as master. \\\\
 ===== ===========================================================
 
-| **Name**: Reset INI Parameters
-| **Type**: Write
-| **Description**: Reset INI table for all modes to default values.
-| **Operations**:
+**Name**: Reset INI Parameters **Type**: Write **Description**: Reset INI table for all modes to default values. **Operations**:
 
 ===== ======
 Write 0x0040
@@ -1628,15 +1321,15 @@ See the ctrl_app source code in GitHub: :git-ToF:`tools/debug_apps/ctrl_app/ctrl
 
 See the NVM Tools in GitHub: :git-ToF:`tools/nvm_tools`
 
-:git-ToF:`Connect to Camera via V4L2 <tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L75>`
+`Connect to Camera via V4L2 <https://github.com/analogdevicesinc/ToF/blob/5c75db5a83c41291a17452bdb9e0710d50f20257/tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L75>`_
 
-:git-ToF:`Hard Reset the ADSD3500 <tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L88>`
+`Hard Reset the ADSD3500 <https://github.com/analogdevicesinc/ToF/blob/5c75db5a83c41291a17452bdb9e0710d50f20257/tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L88>`_
 
-:git-ToF:`Switch to Burst Mode <tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L90>`
+`Switch to Burst Mode <https://github.com/analogdevicesinc/ToF/blob/5c75db5a83c41291a17452bdb9e0710d50f20257/tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L90>`_
 
-:git-ToF:`Get ADSD3500 Firmware Version and GitHash <tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L92>`
+`Get ADSD3500 Firmware Version and GitHash <https://github.com/analogdevicesinc/ToF/blob/5c75db5a83c41291a17452bdb9e0710d50f20257/tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L92>`_
 
-:git-ToF:`Firmware Upgrade Command <tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L94>` -> :git-ToF:`Write Firmware Data Packets <tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L101>`
+`Firmware Upgrade Command <https://github.com/analogdevicesinc/ToF/blob/5c75db5a83c41291a17452bdb9e0710d50f20257/tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L94>`_ -> `Write Firmware Data Packets <https://github.com/analogdevicesinc/ToF/blob/5c75db5a83c41291a17452bdb9e0710d50f20257/tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L101>`_
 
 Sample Code: C
 ~~~~~~~~~~~~~~
@@ -1761,7 +1454,7 @@ Example 2:
            std::cout << "Failed to open the camera" << std::endl;
            return -1;
        }
-       
+
        std::ifstream infile("infile.txt");
        std::string line;
 
@@ -1769,7 +1462,7 @@ Example 2:
            std::cout << "File infile.txt not found\n";
            return -1;
        }
-       
+
        printf("Burst Control app version: %d.%d.%d\n", VER_MAJ, VER_MIN, VER_PATCH);
 
        while (std::getline(infile, line))
@@ -1801,7 +1494,7 @@ Example 2:
            data[1] = i >> 8;
            data[2] = i & 0xFF;
 
-           v4l2_ctrl_set(fd, 0x009819e1, data);        
+           v4l2_ctrl_set(fd, 0x009819e1, data);
            if ((r_w == "R") && (i != 2) && (i != 4)) {
                data[0] = 0;
                data[1] = data[4];
@@ -1838,171 +1531,171 @@ Sample Code: Python Code
 
 .. code:: python
 
-   from i2chw_d import * 
-   import binascii 
-   from binascii import hexlify 
-   import os 
-   import ctypes 
-   import time  
+   from i2chw_d import *
+   import binascii
+   from binascii import hexlify
+   import os
+   import ctypes
+   import time
 
-   def hexstring(values): 
-       """ 
-       Convert a bytes like object to a hex string 
-       :param values : bytes like object 
-       :return: hex string representing the value 
-       """ 
-       return hexlify(bytearray(values)).decode("ascii") 
+   **def hexstring(values):**
 
-   def intstring(values): 
-       """ 
-       Convert a bytes like object to a hex string 
-       :param values : bytes like object 
-       :return: hex string representing the value 
-       """ 
-       return hexlify(bytearray(values)).decode("int") 
+       Convert a bytes like object to a hex string
+       :param values : bytes like object
+       **:return: hex string representing the value**
 
-   if __name__ == "__main__": 
+       return hexlify(bytearray(values)).decode("ascii")
+
+   **def intstring(values):**
+
+       Convert a bytes like object to a hex string
+       :param values : bytes like object
+       **:return: hex string representing the value**
+
+       return hexlify(bytearray(values)).decode("int")
+
+   if __name__ == "__main__":
        global ft4222_handle
-        
-       I2C_FREQ = 0 
-       n = len(sys.argv) 
-       print("Total arguments passed:", n) 
-       I2C_FREQ = sys.argv[1] 
-       print(I2C_FREQ)  
-       i2cInit(int(I2C_FREQ)) 
-       count = 0 
-       i2c_fifo_depth = 1 
-       i2c_fifo_word_size = 1 
 
-       ########################################################################################## 
-       #Get chip id CMD : 0x0112 - This is READ command. ADSD3500 returns 2 BYTE chip ID (0x5931) 
-       data_out_list_append = [] 
-       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1): 
-           data_out_list_append.extend(int(0x0112).to_bytes(2,byteorder="big")) 
+       I2C_FREQ = 0
+       n = len(sys.argv)
+       print("Total arguments passed:", n)
+       I2C_FREQ = sys.argv[1]
+       print(I2C_FREQ)
+       i2cInit(int(I2C_FREQ))
+       count = 0
+       i2c_fifo_depth = 1
+       i2c_fifo_word_size = 1
 
-       data_out = bytes(data_out_list_append) 
-       print('I2C data written') 
-       print(hexlify(data_out)) 
-       count = i2cWrite(0x38, data_out)     
-       count, rx_data = i2cRead(0x38, 2) 
-       print('I2C data read') 
-       print(hexlify(rx_data)) 
-       print("Number of data bytes read: %2d bytes\n" % (count)) 
-       time.sleep(0.5) 
+       ##########################################################################################
+       #Get chip id CMD : 0x0112 - This is READ command. ADSD3500 returns 2 BYTE chip ID (0x5931)
+       data_out_list_append = []
+       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1):
+           data_out_list_append.extend(int(0x0112).to_bytes(2,byteorder="big"))
 
-       ######################################################################################### 
-       #Stream on : CMD : 0x00AD DATA : 0x00C5 
-       data_out_list_append = [] 
-       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1): 
-           data_out_list_append.extend(int(0x00AD).to_bytes(2,byteorder="big")) 
-           data_out_list_append.extend(int(0x00C5).to_bytes(2,byteorder="big")) 
+       data_out = bytes(data_out_list_append)
+       print('I2C data written')
+       print(hexlify(data_out))
+       count = i2cWrite(0x38, data_out)
+       count, rx_data = i2cRead(0x38, 2)
+       print('I2C data read')
+       print(hexlify(rx_data))
+       print("Number of data bytes read: %2d bytes\n" % (count))
+       time.sleep(0.5)
 
-       data_out = bytes(data_out_list_append) 
-       print('I2C data written') 
-       print(hexlify(data_out)) 
-       count = i2cWrite(0x38, data_out)     
-       print("Number of data bytes written: %2d bytes \n" % (count)) 
-       time.sleep(0.5)  
+       #########################################################################################
+       #Stream on : CMD : 0x00AD DATA : 0x00C5
+       data_out_list_append = []
+       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1):
+           data_out_list_append.extend(int(0x00AD).to_bytes(2,byteorder="big"))
+           data_out_list_append.extend(int(0x00C5).to_bytes(2,byteorder="big"))
 
-       ########################################################################################## 
-       #Stream off : CMD : 0x000C DATA : 0x0002 
-       data_out_list_append = [] 
-       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1): 
-           data_out_list_append.extend(int(0x000C).to_bytes(2,byteorder="big")) 
-           data_out_list_append.extend(int(0x0002).to_bytes(2,byteorder="big")) 
+       data_out = bytes(data_out_list_append)
+       print('I2C data written')
+       print(hexlify(data_out))
+       count = i2cWrite(0x38, data_out)
+       print("Number of data bytes written: %2d bytes \n" % (count))
+       time.sleep(0.5)
 
-       data_out = bytes(data_out_list_append) 
-       print('I2C data written') 
-       print(hexlify(data_out)) 
-       count = i2cWrite(0x38, data_out)     
-       print("Number of data bytes written: %2d bytes \n" % (count)) 
-       time.sleep(0.5) 
-        
-       ########################################################################################## 
-       #Set Imager mode CMD : 0xDA07 DATA : 0x2021 (Depth is enabled, 12 bit depth, Virtual Channel is enabled, 2 o/p MIPI lanes) 
-       data_out_list_append = [] 
-       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1): 
-           data_out_list_append.extend(int(0xDA07).to_bytes(2,byteorder="big")) 
-           data_out_list_append.extend(int(0x00FF).to_bytes(2,byteorder="big")) 
-           
-       data_out = bytes(data_out_list_append) 
-       print('I2C data written') 
-       print(hexlify(data_out)) 
-       count = i2cWrite(0x38, data_out)     
-       print("Number of data bytes written: %2d bytes \n" % (count)) 
-       #time.sleep(0.5) 
+       ##########################################################################################
+       #Stream off : CMD : 0x000C DATA : 0x0002
+       data_out_list_append = []
+       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1):
+           data_out_list_append.extend(int(0x000C).to_bytes(2,byteorder="big"))
+           data_out_list_append.extend(int(0x0002).to_bytes(2,byteorder="big"))
 
-       #read transaction 
+       data_out = bytes(data_out_list_append)
+       print('I2C data written')
+       print(hexlify(data_out))
+       count = i2cWrite(0x38, data_out)
+       print("Number of data bytes written: %2d bytes \n" % (count))
+       time.sleep(0.5)
 
-       count, rx_data = i2cRead(0x38, 2) 
-       print('I2C data read') 
-       print(hexlify(rx_data)) 
-       print("Number of data bytes read: %2d bytes\n" % (count)) 
-       time.sleep(0.5) 
+       ##########################################################################################
+       #Set Imager mode CMD : 0xDA07 DATA : 0x2021 (Depth is enabled, 12 bit depth, Virtual Channel is enabled, 2 o/p MIPI lanes)
+       data_out_list_append = []
+       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1):
+           data_out_list_append.extend(int(0xDA07).to_bytes(2,byteorder="big"))
+           data_out_list_append.extend(int(0x00FF).to_bytes(2,byteorder="big"))
 
-       ######################################################################################### 
-       #Stream on CMD : 0x00AD DATA : 0x00C5 
-       data_out_list_append = [] 
-       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1): 
-           data_out_list_append.extend(int(0x00AD).to_bytes(2,byteorder="big")) 
-           data_out_list_append.extend(int(0x00C5).to_bytes(2,byteorder="big")) 
+       data_out = bytes(data_out_list_append)
+       print('I2C data written')
+       print(hexlify(data_out))
+       count = i2cWrite(0x38, data_out)
+       print("Number of data bytes written: %2d bytes \n" % (count))
+       #time.sleep(0.5)
 
-       data_out = bytes(data_out_list_append) 
-       print('I2C data written') 
-       print(hexlify(data_out)) 
-       count = i2cWrite(0x38, data_out)     
-       print("Number of data bytes written: %2d bytes \n" % (count)) 
-       time.sleep(0.5) 
+       #read transaction
 
-       ########################################################################################## 
-       #Stream off CMD : 0x000C DATA : 0x0002 
-       data_out_list_append = [] 
-       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1): 
-           data_out_list_append.extend(int(0x000C).to_bytes(2,byteorder="big")) 
-           data_out_list_append.extend(int(0x0002).to_bytes(2,byteorder="big")) 
+       count, rx_data = i2cRead(0x38, 2)
+       print('I2C data read')
+       print(hexlify(rx_data))
+       print("Number of data bytes read: %2d bytes\n" % (count))
+       time.sleep(0.5)
 
-       data_out = bytes(data_out_list_append) 
-       print('I2C data written') 
-       print(hexlify(data_out)) 
-       count = i2cWrite(0x38, data_out)     
-       print("Number of data bytes written: %2d bytes \n" % (count)) 
-       time.sleep(0.5) 
-       
-       ########################################################################################## 
-       #Set Framerate command CMD : 0x0022 DATA : 0x20 (32 FPS)  
-       data_out_list_append = [] 
-       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1): 
-           data_out_list_append.extend(int(0x0022).to_bytes(2,byteorder="big")) 
-           data_out_list_append.extend(int(0x0020).to_bytes(2,byteorder="big")) 
-           
-       data_out = bytes(data_out_list_append) 
-       print('I2C data written') 
-       print(hexlify(data_out)) 
-       count = i2cWrite(0x38, data_out)     
-       print("Number of data bytes written: %2d bytes \n" % (count)) 
-       #time.sleep(0.5) 
+       #########################################################################################
+       #Stream on CMD : 0x00AD DATA : 0x00C5
+       data_out_list_append = []
+       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1):
+           data_out_list_append.extend(int(0x00AD).to_bytes(2,byteorder="big"))
+           data_out_list_append.extend(int(0x00C5).to_bytes(2,byteorder="big"))
 
-       #read transaction 
-       count, rx_data = i2cRead(0x38, 2) 
-       print('I2C data read') 
-       print(hexlify(rx_data)) 
-       print("Number of data bytes read: %2d bytes\n" % (count)) 
-       time.sleep(0.5)  
+       data_out = bytes(data_out_list_append)
+       print('I2C data written')
+       print(hexlify(data_out))
+       count = i2cWrite(0x38, data_out)
+       print("Number of data bytes written: %2d bytes \n" % (count))
+       time.sleep(0.5)
 
-       ######################################################################################### 
-       #Stream on CMD : 0x00AD DATA : 0x00C5 
-       data_out_list_append = [] 
-       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1): 
-           data_out_list_append.extend(int(0x00AD).to_bytes(2,byteorder="big")) 
-           data_out_list_append.extend(int(0x00C5).to_bytes(2,byteorder="big")) 
+       ##########################################################################################
+       #Stream off CMD : 0x000C DATA : 0x0002
+       data_out_list_append = []
+       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1):
+           data_out_list_append.extend(int(0x000C).to_bytes(2,byteorder="big"))
+           data_out_list_append.extend(int(0x0002).to_bytes(2,byteorder="big"))
 
-       data_out = bytes(data_out_list_append) 
-       print('I2C data written') 
-       print(hexlify(data_out)) 
-       count = i2cWrite(0x38, data_out)     
-       print("Number of data bytes written: %2d bytes \n" % (count)) 
-       time.sleep(0.5) 
-       ######################################################################################### 
+       data_out = bytes(data_out_list_append)
+       print('I2C data written')
+       print(hexlify(data_out))
+       count = i2cWrite(0x38, data_out)
+       print("Number of data bytes written: %2d bytes \n" % (count))
+       time.sleep(0.5)
+
+       ##########################################################################################
+       #Set Framerate command CMD : 0x0022 DATA : 0x20 (32 FPS)
+       data_out_list_append = []
+       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1):
+           data_out_list_append.extend(int(0x0022).to_bytes(2,byteorder="big"))
+           data_out_list_append.extend(int(0x0020).to_bytes(2,byteorder="big"))
+
+       data_out = bytes(data_out_list_append)
+       print('I2C data written')
+       print(hexlify(data_out))
+       count = i2cWrite(0x38, data_out)
+       print("Number of data bytes written: %2d bytes \n" % (count))
+       #time.sleep(0.5)
+
+       #read transaction
+       count, rx_data = i2cRead(0x38, 2)
+       print('I2C data read')
+       print(hexlify(rx_data))
+       print("Number of data bytes read: %2d bytes\n" % (count))
+       time.sleep(0.5)
+
+       #########################################################################################
+       #Stream on CMD : 0x00AD DATA : 0x00C5
+       data_out_list_append = []
+       for i in range(1, i2c_fifo_word_size * i2c_fifo_depth+1):
+           data_out_list_append.extend(int(0x00AD).to_bytes(2,byteorder="big"))
+           data_out_list_append.extend(int(0x00C5).to_bytes(2,byteorder="big"))
+
+       data_out = bytes(data_out_list_append)
+       print('I2C data written')
+       print(hexlify(data_out))
+       count = i2cWrite(0x38, data_out)
+       print("Number of data bytes written: %2d bytes \n" % (count))
+       **time.sleep(0.5)**
+
 
 Metadata
 --------

@@ -14,7 +14,7 @@ Supported Boards
 Description
 -----------
 
-.. image:: https://wiki.analog.com/_media/scrape>adi>ADF4030#additional-details__paragraph
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-synchronizer/scrape>adi>ADF4030#additional-details__paragraph
    :alt: scrape>adi>ADF4030#additional-details\__paragraph
 
 Source Code
@@ -174,7 +174,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        <*>     Industrial I/O support --->
            --- Industrial I/O support
                     Frequency Synthesizers DDS/PLL --->
-                                *** Phase-Locked Loop (PLL) frequency synthesizers ***
+                                ** Phase-Locked Loop (PLL) frequency synthesizers **
                                 <*> Analog Devices ADF4030 10-Channel Precision Synchronizer
 
 Hardware configuration
@@ -183,14 +183,12 @@ Hardware configuration
 Driver testing
 ==============
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -248,10 +246,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -264,15 +259,13 @@ Show device name
 Read BSYNC frequency
 --------------------
 
-| **What:** ``out_altvoltageX_[<adi,extended-name>]_frequency``
-| Returns the BSYNC frequency set via devicetree property ``adi,bsync-frequency-hz``
+**What:** ``out_altvoltageX_[<adi,extended-name>]_frequency``
+
+Returns the BSYNC frequency set via devicetree property ``adi,bsync-frequency-hz``
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -285,8 +278,9 @@ Read BSYNC frequency
 Set Reference Channel
 ---------------------
 
-| **What:** ``out_altvoltageX_[<adi,extended-name>]_reference_channel``
-| Set reference channel for TDC measurement and BSYNC alignment.
+**What:** ``out_altvoltageX_[<adi,extended-name>]_reference_channel``
+
+Set reference channel for TDC measurement and BSYNC alignment.
 
 ====== ======
 Value  Input
@@ -306,10 +300,7 @@ Value  Input
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -321,15 +312,13 @@ Value  Input
 Read TDC Measurement
 --------------------
 
-| **What:** ``out_altvoltageX_[<adi,extended-name>]_phase``
-| Measure the time difference between this and the reference channel using the time-to-digital converter (TDC). Results are counted in femtoseconds (fs)
+**What:** ``out_altvoltageX_[<adi,extended-name>]_phase``
+
+Measure the time difference between this and the reference channel using the time-to-digital converter (TDC). Results are counted in femtoseconds (fs)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -342,15 +331,13 @@ Read TDC Measurement
 Set Time Delay Offset
 ---------------------
 
-| **What:** ``out_altvoltageX_[<adi,extended-name>]_phase``
-| Set the desired time delay offset for the Single-Channel Alignment in femtoseconds (fs).
+**What:** ``out_altvoltageX_[<adi,extended-name>]_phase``
+
+Set the desired time delay offset for the Single-Channel Alignment in femtoseconds (fs).
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -362,15 +349,13 @@ Set Time Delay Offset
 Start Single-Channel Alignment
 ------------------------------
 
-| **What:** ``out_altvoltageX_[<adi,extended-name>]_autoalign_enable``
-| Writing ``1`` starts the Single-Channel Alignment procedure.
+**What:** ``out_altvoltageX_[<adi,extended-name>]_autoalign_enable``
+
+Writing ``1`` starts the Single-Channel Alignment procedure.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -384,15 +369,13 @@ Start Single-Channel Alignment
 Channel Direction Control
 -------------------------
 
-| **What:** ``out_altvoltageX_[<adi,extended-name>]_output_enable``
-| Writing this attribute with ``1`` enables the BSYNC driver (output), writing it with ``0`` enables the BSYNC receiver (input). Care must be taken to avoid that both ends drive the signal.
+**What:** ``out_altvoltageX_[<adi,extended-name>]_output_enable``
+
+Writing this attribute with ``1`` enables the BSYNC driver (output), writing it with ``0`` enables the BSYNC receiver (input). Care must be taken to avoid that both ends drive the signal.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -404,8 +387,9 @@ Channel Direction Control
 Alignment Cycles Control
 ------------------------
 
-| **What:** ``out_altvoltage_autoalign_iteration``
-| Sets the Number of Alignment Cycles (iterations) in the single-channel alignment procedures. For best performance set to ``7``
+**What:** ``out_altvoltage_autoalign_iteration``
+
+Sets the Number of Alignment Cycles (iterations) in the single-channel alignment procedures. For best performance set to ``7``
 
 ===== ======================
 Value Mode
@@ -422,10 +406,7 @@ Value Mode
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -437,15 +418,13 @@ Value Mode
 Alignment Threshold Control
 ---------------------------
 
-| **What:** ``out_altvoltage_autoalign_threshold``
-| The threshold alignment procedure repeats the alignment until either the alignment becomes lower than a desired threshold or the alignment cycles reach the maximum number of alignment cycles set with ``out_altvoltage_autoalign_iteration``. Values are in femtoseconds (fs).
+**What:** ``out_altvoltage_autoalign_threshold``
+
+The threshold alignment procedure repeats the alignment until either the alignment becomes lower than a desired threshold or the alignment cycles reach the maximum number of alignment cycles set with ``out_altvoltage_autoalign_iteration``. Values are in femtoseconds (fs).
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -465,10 +444,7 @@ This attribute returns this temperature in milli-degrees Celsius.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -481,4 +457,21 @@ This attribute returns this temperature in milli-degrees Celsius.
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-synchronizer/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

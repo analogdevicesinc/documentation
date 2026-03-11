@@ -40,8 +40,7 @@ To prepare the SD-card for the DE10-Nano board:
 
       -  :doc:`Format and flash the SD Card using Linux </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
 
-| 
-| Once microSD card has been imaged, safely remove the hardware from the SD card writer, and insert the card directly into the microSD card slot on the DE10-Nano.
+Once microSD card has been imaged, safely remove the hardware from the SD card writer, and insert the card directly into the microSD card slot on the DE10-Nano.
 
 | |image1|\ |image2|
 

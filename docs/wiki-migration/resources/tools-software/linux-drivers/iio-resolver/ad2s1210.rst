@@ -71,7 +71,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                    -*-     Industrial I/O lock free software ring
                    -*-   Enable triggered sampling support
 
-                         *** Resolver to digital converters ***
+                         ** Resolver to digital converters **
                    [--snip--]
 
                    <*>   Analog Devices AD2S1210 driver
@@ -122,10 +122,7 @@ Accessing a list of channels:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -147,10 +144,7 @@ For example, to get position channel **angl0**:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -168,10 +162,7 @@ Or velocity channel **anglvel0**:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -190,10 +181,7 @@ Alternatively, you can read and write data directly from the device path in /sys
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -302,15 +290,12 @@ Hysteresis can be enabled or disabled this way. To do so, first check the output
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@setup-2-zed:/sys/bus/iio/devices/iio:device1# cat in_angl0_hysteresis_available 
+      root@setup-2-zed:/sys/bus/iio/devices/iio:device1# cat in_angl0_hysteresis_available
       0 1
    
 
@@ -319,10 +304,7 @@ To turn hysteresis off, write the first value from the output to in_angl0_hyster
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -335,10 +317,7 @@ To turn it on, write the second value (which is dependent on the assigned bits f
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -354,10 +333,7 @@ To generate samples using the triggered buffer, you will need a trigger. You can
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -439,10 +415,7 @@ For other apps, we probably want a high sample rate. You can change the rate lik
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -574,4 +547,21 @@ See :doc:`ad2s1210_sdz </wiki-migration/resources/eval/user-guides/ad2s1210_sdz>
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-resolver/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

@@ -48,18 +48,18 @@ GUI Controls
 DSP Parameter Information
 =========================
 
-+------------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| GUI Control Name | Compiler Name                                                                          | Function Description                                     |
-+==================+========================================================================================+==========================================================+
-| isRounded        | <fc #008000>PulseAlg_withInputPinS300</fc><fc #ff0000>1</fc><fc #000080>isRounded</fc> | To round/unround the no of samples T-OFF period of Pulse |
-+------------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
++------------------+-------------------------------------+----------------------------------------------------------+
+| GUI Control Name | Compiler Name                       | Function Description                                     |
++==================+=====================================+==========================================================+
+| isRounded        | PulseAlg_withInputPinS3001isRounded | To round/unround the no of samples T-OFF period of Pulse |
++------------------+-------------------------------------+----------------------------------------------------------+
 
 | 
 | Here,
 
--  <fc #008000> Green</fc> - Algorithm Name
--  <fc #ff0000> Red</fc> - Instance Number (Changes for each instance)
--  <fc #000080> Blue</fc> - Parameter Name
+-   Green - Algorithm Name
+-   Red - Instance Number (Changes for each instance)
+-   Blue - Parameter Name
 
 Supported IC's
 ==============

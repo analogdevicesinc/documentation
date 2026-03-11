@@ -39,13 +39,14 @@ Software Links:
 
 http://www.simetrix.co.uk/site/index.html
 
-| **ADIsimPE:**
-| \* Extensive library of ADI IC models and application schematics.
-| \* Full schematics capture and editing capabilities with easy waveform viewing and analysis.
-| \* SPICE mode SIMetrix simulation ideal for op-amps, references, Linear Regulators, and more.
-| \* SIMPLIS mode simulation optimized for switching power supplies, PLLs, and more.
-| \* Integration capability with ADIsimPower design tools.
-| \* Supported by EngineerZone.
+**ADIsimPE:**
+
+-   Extensive library of ADI IC models and application schematics.
+-   Full schematics capture and editing capabilities with easy waveform viewing and analysis.
+-   SPICE mode SIMetrix simulation ideal for op-amps, references, Linear Regulators, and more.
+-   SIMPLIS mode simulation optimized for switching power supplies, PLLs, and more.
+-   Integration capability with ADIsimPower design tools.
+-   Supported by EngineerZone.
 
 http://www.analog.com/en/content/adisimpe/fca.html
 
@@ -61,16 +62,13 @@ Qucs is an integrated circuit simulator with the ability to setup a circuit with
 
 http://qucs.sourceforge.net/index.html
 
-| NgSpice (Circuit Simulation)
-| http://ngspice.sourceforge.net/
+NgSpice (Circuit Simulation) http://ngspice.sourceforge.net/
 
-| Electric VLSI Design System (Schematic Capture / net listing)
-| http://www.staticfreesoft.com/index.html
+Electric VLSI Design System (Schematic Capture / net listing) http://www.staticfreesoft.com/index.html
 
-| TinyCAD (Schematic Capture / net listing)
-| http://sourceforge.net/apps/mediawiki/tinycad/index.php?title=Main_Page
+TinyCAD (Schematic Capture / net listing) http://sourceforge.net/apps/mediawiki/tinycad/index.php?title=Main_Page
 
-| Cadence/ OrCAD PSpice 9.1 Student version: (Schematic Capture / net listing / circuit simulation)
+Cadence/ OrCAD PSpice 9.1 Student version: (Schematic Capture / net listing / circuit simulation)
 
 Acknowledgements:
 ~~~~~~~~~~~~~~~~~

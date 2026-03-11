@@ -1,8 +1,9 @@
 Linear Gain
 ===========
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| ------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+--------------
 
 |lineargainpic1.png| The Linear Gain block scales the signal by the value specified in the text field.
 

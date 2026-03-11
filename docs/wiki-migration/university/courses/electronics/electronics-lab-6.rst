@@ -9,13 +9,7 @@ The goal of this activity is to study the BJT current source or current mirror. 
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 1KΩ Resistors (values matched as close as possible, or measured to 3 digits or better)
-| 2 - small signal NPN transistors (2N3904 or SSM2212)
-| 1 - Dual Op AMP ( such as ADTL082 )
-| 2 - 4.7uF decoupling capacitors
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 1KΩ Resistors (values matched as close as possible, or measured to 3 digits or better) 2 - small signal NPN transistors (2N3904 or SSM2212) 1 - Dual Op AMP ( such as ADTL082 ) 2 - 4.7uF decoupling capacitors
 
 Directions:
 -----------
@@ -70,10 +64,9 @@ Two identical transistors with the same base to emitter voltage will have the sa
    :align: center
    :width: 200px
 
-| where I\ :sub:`S` = the saturation current, and is a constant
-| V\ :sub:`BE` is the base emitter voltage
-| The thermal voltage, KT/q = 25.8 mV at room temperature
-| Identical transistors by definition have the same I\ :sub:`S`. In the simple current mirror, both transistors have the same V\ :sub:`BE`. Thus, both transistors will have the same I\ :sub:`C` and if base currents are ignored, Iin = Iout. Actually I\ :sub:`C1`\ is I\ :sub:`in` - (I\ :sub:`B1` + I\ :sub:`B2`).
+where I\ :sub:`S` = the saturation current, and is a constant V\ :sub:`BE` is the base emitter voltage The thermal voltage, KT/q = 25.8 mV at room temperature
+
+Identical transistors by definition have the same I\ :sub:`S`. In the simple current mirror, both transistors have the same V\ :sub:`BE`. Thus, both transistors will have the same I\ :sub:`C` and if base currents are ignored, Iin = Iout. Actually I\ :sub:`C1`\ is I\ :sub:`in` - (I\ :sub:`B1` + I\ :sub:`B2`).
 
 Plot the two waveforms using the Oscilloscope provided by the Scopy tool.
 
@@ -103,8 +96,6 @@ Modify the simple mirror circuit by adding the base current compensation transis
    Figure 6 Current Mirror with Base Current Compensation
 
 
-.. _hardware-setup-1:
-
 Hardware Setup
 --------------
 
@@ -115,8 +106,6 @@ Hardware Setup
 
    Figure 7 Breadboard Connection of Current Mirror with Base Current Compensation
 
-
-.. _procedure-1:
 
 Procedure
 ---------
@@ -130,8 +119,6 @@ Repeat the same procedure you followed for the simple mirror circuit.
 
    Figure 8 Current Mirror waveforms, W2 at 10kHz Sample Rate
 
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -159,8 +146,6 @@ Modify the simple mirror into a Wilson Mirror as shown below in figure 9. Repeat
    Figure 9 Wilson current mirror
 
 
-.. _hardware-setup-2:
-
 Hardware Setup
 --------------
 
@@ -171,8 +156,6 @@ Hardware Setup
 
    Figure 10 Breadboard Connection of Wilson current mirror
 
-
-.. _procedure-2:
 
 Procedure
 ---------
@@ -187,16 +170,12 @@ Repeat the same procedure you followed for the simple mirror circuit.
    Figure 11 Current Mirror waveforms, W2 at 10kHz Sample Rate
 
 
-.. _questions-2:
-
 Questions:
 ----------
 
 In addition to the same quantities and graphs, does your data indicate any advantage to this circuit? Any disadvantages?
 
 Add questions more here:
-
-.. _references-further-reading-1:
 
 References, further reading:
 ----------------------------
@@ -217,8 +196,6 @@ Modify the simple mirror into a Widlar Mirror as shown below in figure 12. Repea
    Figure 12 Widlar current mirror
 
 
-.. _hardware-setup-3:
-
 Hardware Setup
 --------------
 
@@ -229,8 +206,6 @@ Hardware Setup
 
    Figure 13 Breadboard Connection of Widlar current mirror
 
-
-.. _procedure-3:
 
 Procedure
 ---------
@@ -245,8 +220,6 @@ Repeat the same procedure you followed for the simple mirror circuit.
    Figure 14 Current Mirror waveforms, W2 at 10kHz Sample Rate
 
 
-.. _questions-3:
-
 Questions:
 ----------
 
@@ -259,8 +232,6 @@ Questions:
 
 How accurately does this formula predict the output impedance of the Widlar current mirror you constructed? 4. If base currents are not ignored, how is I\ :sub:`out` related to Iin in the simple current mirror? 5. If I need a second (or third) copy of I\ :sub:`in` how would I make it?
 
-.. _references-further-reading-2:
-
 References, further reading:
 ----------------------------
 
@@ -269,24 +240,15 @@ http://en.wikipedia.org/wiki/Widlar_current_source
 low Input Headroom Mirror
 =========================
 
-.. _objective-1:
-
 Objective:
 ----------
 
 The goal of this activity is to study BJT current source or current mirror with lower input headroom requirements.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 2 - 1K Resistors
-| 1 - 150K Resistor (or a 100K? in series with a 47K?)
-| 2 - small signal NPN transistor (2N3904 or SSM2212)
-| 1 - small signal PNP transistor (2N3096)
-
-.. _directions-1:
+2 - 1K Resistors 1 - 150K Resistor (or a 100K? in series with a 47K?) 2 - small signal NPN transistor (2N3904 or SSM2212) 1 - small signal PNP transistor (2N3096)
 
 Directions:
 -----------
@@ -302,8 +264,6 @@ The diode configuration with nearly zero turn on voltage from activity 2 is used
    Figure 15 Low input head room mirror
 
 
-.. _hardware-setup-4:
-
 Hardware Setup
 --------------
 
@@ -314,8 +274,6 @@ Hardware Setup
 
    Figure 16 Breadboard Connection of Low input head room mirror
 
-
-.. _procedure-4:
 
 Procedure
 ---------

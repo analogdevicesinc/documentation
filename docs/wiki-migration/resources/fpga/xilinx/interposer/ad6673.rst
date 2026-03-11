@@ -74,16 +74,17 @@ Please do the following modifications on the AD6673 evaluation board.
 -  **Populate R549**\ \*
 -  **Populate R550**\ \*
 
-\* The reference design uses REFCLK2 as the reference clock source. If the board defaults to REFCLK1, follow these instructions to switch to REFCLK2.
+- The reference design uses REFCLK2 as the reference clock source. If the board defaults to REFCLK1, follow these instructions to switch to REFCLK2.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| To begin make the following connections (see image below):
+To begin make the following connections (see image below):
 
 .. tip::
 
-   | For proper operation, it is important that the steps must be done in this exact order
+   
+   For proper operation, it is important that the steps must be done in this exact order
 
 
 -  Connect the AD6673-EBZ board to the FMC Interposer board.
@@ -226,7 +227,7 @@ Below is presented a short description of all the functions provided in the driv
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | int32_t **ad6673_nsr_bandwidth_mode**\ (int32_t mode)                                         | Selects the NSR Bandwidth mode. Receives as parameter the mode option(0 - 22%, 1 - 33%). Returns negative error code or the status of the mode bit.                                                                                                                                                                     |
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| int32_t **ad6673_nsr_tuning_freq**\ (int64_t tuneFreq, int64_t fAdc, ad6673_typeBand \*pBand) | Sets the NSR frequency range. Receives as parameters the center frequency of noise transfer function(NTF), the ADC sample rate and a pointer to a ad6673_typeBand structure that acts as an output parameter by returning the values of the center frequency, f0 frequency and f1 frequency. Returns the set tune word. |
+| int32_t **ad6673_nsr_tuning_freq**(int64_t tuneFreq, int64_t fAdc, ad6673_typeBand *pBand)    | Sets the NSR frequency range. Receives as parameters the center frequency of noise transfer function(NTF), the ADC sample rate and a pointer to a ad6673_typeBand structure that acts as an output parameter by returning the values of the center frequency, f0 frequency and f1 frequency. Returns the set tune word. |
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Software Setup
@@ -273,14 +274,14 @@ The example code is located in the ”\ *main.c*\ ” file and the implementatio
 Downloads
 ---------
 
-| The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices github.
-|
+The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices github.
 
 .. important::
 
    Only Xilinx coregen xco files are provided with the HDL Reference Design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
 
-   | The software project contains 2 components: the AD6673-EBZ reference design files and the AD6673 driver. All the components have to be downloaded from the links below.
+   
+   The software project contains 2 components: the AD6673-EBZ reference design files and the AD6673 driver. All the components have to be downloaded from the links below.
 
 
 **HDL Reference Designs:**
@@ -289,49 +290,40 @@ Downloads
    :class: download
 
    
-   -  \**KC705 HDL Reference Design: \*\* `cf_ad6673_ebz_edk_14_4_2013_02_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_edk_14_4_2013_02_04.tar.gz>`_
-   -  \**VC707 HDL Reference Design: \*\* `cf_ad6673_ebz_vc707_edk_14_4_2013_02_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_vc707_edk_14_4_2013_02_04.tar.gz>`_
-   -  \**ZC706 HDL Reference Design: \*\* `cf_ad6673_ebz_zc706_edk_14_4_2013_02_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_zc706_edk_14_4_2013_02_04.tar.gz>`_
+   -  **KC705 HDL Reference Design:** `cf_ad6673_ebz_edk_14_4_2013_02_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_edk_14_4_2013_02_04.tar.gz>`_
+   -  **VC707 HDL Reference Design:** `cf_ad6673_ebz_vc707_edk_14_4_2013_02_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_vc707_edk_14_4_2013_02_04.tar.gz>`_
+   -  **ZC706 HDL Reference Design:** `cf_ad6673_ebz_zc706_edk_14_4_2013_02_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_zc706_edk_14_4_2013_02_04.tar.gz>`_
    
 
 
-| **no-OS Software:**
+**no-OS Software:**
 
 .. admonition:: Download
    :class: download
 
-   | \* \**AD6673 Driver: \*\* :git-no-OS:`drivers/adc/ad6673`
    
-   -  \**AD6673-EBZ Reference Design: \*\* :git-no-OS:`AD6673-EBZ`
+   -  **AD6673 Driver:** :git-no-OS:`drivers/adc/ad6673`
+   -  **AD6673-EBZ Reference Design:** :git-no-OS:`AD6673-EBZ`
    
-   |
-
-   |
 
 
-| **Board Files:**
+**Board Files:**
 
 .. admonition:: Download
    :class: download
 
-   | \* `Rev C Schematics for the card <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/ad6673_schematic_02_12008.pdf>`_
    
+   -  `Rev C Schematics for the card <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/ad6673_schematic_02_12008.pdf>`_
    -  `AD6673-250EBZ Gerber/Layout Fabrication Files <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/ad6673_gerber_20_012008b.zip>`_
    
-   |
 
-   |
-
-
-|
 
 .. hint::
 
+   
+   -  Questions? :ez:`Ask Help & Support <fpga>`.
+   
 
-   ..
-
-| \* Questions? :ez:`Ask Help & Support <fpga>`.
-   |
 
 Reference Design Contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -377,18 +369,10 @@ Reference Design Contents
 More information
 ----------------
 
-|
-
 .. hint::
 
-
-   ..
-
-| \* `VITA's FMC info <http://www.vita.com/fmc>`_
    
+   -  `VITA's FMC info <http://www.vita.com/fmc>`_
    -  :ez:`Ask questions about the FPGA reference design <community/fpga>`
    
-   |
-
-   |
 

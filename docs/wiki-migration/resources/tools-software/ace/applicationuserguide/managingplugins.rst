@@ -6,7 +6,7 @@ You can return to the ACE Application User Guide Homepage here: :doc:`Applicatio
 Managing Plug-ins
 -----------------
 
-The ACE application uses component plug-ins to give you the ability to analyse, configure and evaluate components.  The ACE installation program installs a number of plug-ins.  You can remove plug-ins if you wish, and you can install additional plug-ins directly from ACE.
+The ACE application uses component plug-ins to give you the ability to analyse, configure and evaluate components.  The ACE installation program installs a number of plug-ins. You can remove plug-ins if you wish, and you can install additional plug-ins directly from ACE.
 
 Removing ACE Plug-ins
 ---------------------
@@ -40,11 +40,9 @@ Customizing Plug-in Management
 
 To customize ACE’s plug-in management click the “Settings…” button, or open Tools / Settings in the main ACE application.
 
-You can add additional sources for plug-in packages that will allow you to share plug-ins with others.  The sources can be local or network folders, or they can be acezip files that contain plug-in packages.  In either case, simply click the appropriate      add button tell ACE the name and source you want to add.
+You can add additional sources for plug-in packages that will allow you to share plug-ins with others.  The sources can be local or network folders, or they can be acezip files that contain plug-in packages.  In either case, simply click the appropriate add button tell ACE the name and source you want to add.
 
 You can also choose whether let ACE check for updates automatically, or if you’d rather open the plug-in manager and check for updates manually.
 
-
-|Settings.png|
-
-.. |Settings.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguide/Settings.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguide/Settings.png
+   :alt: Settings.png

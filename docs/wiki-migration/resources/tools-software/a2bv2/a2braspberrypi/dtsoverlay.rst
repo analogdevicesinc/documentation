@@ -86,19 +86,15 @@ The overlay file rpi-ad242x-overlay.dts is provided below to enable the Codec on
 
 To integrate the AD242x Codec with the Raspberry Pi, follow these steps:
 
-| **Compile the Overlay File:**
-| This overlay is based on the reference from `i2smaster.dts <https://github.com/AkiyukiOkayasu/RaspberryPi_I2S_Master/blob/master/i2smaster.dts>`_. Compile the overlay file using the following command: ``dtc -@ -H epapr -O dtb -o rpi-ad242x.dtbo -Wno-unit_address_vs_reg rpi-ad242x-overlay.dts``
+**Compile the Overlay File:** This overlay is based on the reference from `i2smaster.dts <https://github.com/AkiyukiOkayasu/RaspberryPi_I2S_Master/blob/master/i2smaster.dts>`_. Compile the overlay file using the following command: ``dtc -@ -H epapr -O dtb -o rpi-ad242x.dtbo -Wno-unit_address_vs_reg rpi-ad242x-overlay.dts``
 
-| **Copy the Overlay File:**
-| Copy the compiled overlay file to the /boot/overlays folder:``sudo cp rpi-ad242x.dtbo /boot/overlays/``
+**Copy the Overlay File:** Copy the compiled overlay file to the /boot/overlays folder:``sudo cp rpi-ad242x.dtbo /boot/overlays/``
 
-| **Update the Configuration File:**
-| Edit the /boot/config.txt file to enable the necessary hardware interfaces. Add or uncomment the following lines: ``dtparam=i2s=on
-  dtoverlay=rpi-ad242x``
+**Update the Configuration File:** Edit the /boot/config.txt file to enable the necessary hardware interfaces. Add or uncomment the following lines: ``dtparam=i2s=on
+dtoverlay=rpi-ad242x``
 
 Save the changes and reboot the Raspberry Pi to apply them.
 
-| **Check the Loaded Module:**
-| Ensure that the required module is loaded by running: ``lsmod | grep snd_soc_simple_card``
+**Check the Loaded Module:** Ensure that the required module is loaded by running: ``lsmod | grep snd_soc_simple_card``
 
 **PREV :** :doc:`Building the Kernel and Running Application </wiki-migration/resources/tools-software/a2bv2/a2braspberrypi/buildingkernel>` **NEXT :** :doc:`Migrating Latest A2B stack </wiki-migration/resources/tools-software/a2bv2/a2braspberrypi/migratinga2bstack>`

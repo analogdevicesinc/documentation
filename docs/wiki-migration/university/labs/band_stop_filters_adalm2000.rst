@@ -4,7 +4,7 @@ Activity: Band Stop Filters
 Objective:
 ----------
 
-| The objective of this Lab activity is to construct a Band Stop Filter by combining a low pass filter and a high pass filter and obtain the frequency response of the filter. A Series LC circuit will be used.
+The objective of this Lab activity is to construct a Band Stop Filter by combining a low pass filter and a high pass filter and obtain the frequency response of the filter. A Series LC circuit will be used.
 
 Background:
 -----------
@@ -48,7 +48,7 @@ OR
 
 :math:`f_o = 1/(2pi sqrtLC)` Hertz (4)
 
-\**Frequency Response: \*\*
+**Frequency Response:**
 
 To show how a circuit responds to a range of frequencies a plot of the magnitude ( amplitude ) of the output voltage of the filter as a function of the frequency can be drawn. It is generally used to characterize the range of frequencies in which the filter is designed to operate within. Figure 2 shows a typical frequency response of a Band Pass filter.
 
@@ -64,11 +64,7 @@ To show how a circuit responds to a range of frequencies a plot of the magnitude
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 1.0 KΩ resistor
-| 1 0.1 µF Capacitor(marked 104)
-| 1 20 mH inductor or 2 (10 mH in series)
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 1.0 KΩ resistor 1 0.1 µF Capacitor(marked 104) 1 20 mH inductor or 2 (10 mH in series)
 
 Hardware setup
 --------------
@@ -117,7 +113,7 @@ In the Signal Generator tool, on Channel 1, generate a waveform with the frequen
 Questions
 ---------
 
-| Compute the cut-off frequencies for each Band reject filter constructed using the formula in equations (1) and (2). Compare these theoretical values to the ones obtained from the experiment and provide suitable explanation for any differences.
+Compute the cut-off frequencies for each Band reject filter constructed using the formula in equations (1) and (2). Compare these theoretical values to the ones obtained from the experiment and provide suitable explanation for any differences.
 
 .. admonition:: Download
    :class: download

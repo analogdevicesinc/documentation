@@ -47,7 +47,7 @@ Setting up the Hardware
 
 -  The ESP8266 Enable Pin needs to be tied directly to 3.3V or pulled high to the GPIO via a 10K ohm resistor. Because this is not currently on the Rev B or Rev C version of the ADICUP3029, you will need to solder a small fly wire from the 3.3V pin to the enable pin.
    |image2|\ |image3|
--  Plug the **ESP8266** in the **P1** connector on the **EVAL-ADICUP3029**.
+   \* Plug the **ESP8266** in the **P1** connector on the **EVAL-ADICUP3029**.
 -  Plug the **EVAL-ADXL362-ARDZ** shield in the **EVAL-ADICUP3029** base board.
 
 |image4|
@@ -114,9 +114,9 @@ Configuring the Software (parameters.h)
 
 ::
 
-   #define WIFI_SSID       "****" 
-   #define WIFI_PASS       "****" 
-   #define SERVER_ADDR     "****" 
+   #define WIFI_SSID       "***"
+   #define WIFI_PASS       "***"
+   #define SERVER_ADDR     "***"
 
 Using an MQTT Broker
 --------------------

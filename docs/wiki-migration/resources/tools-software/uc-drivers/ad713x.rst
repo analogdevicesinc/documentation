@@ -64,54 +64,35 @@ The AD7134 driver contains the following:
 
 The following functions are implemented as API in this version of AD7134 driver:
 
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| Function                                                        | Description                                         |
-+=================================================================+=====================================================+
-| ``int32_t ad713x_spi_reg_read(struct ad713x_dev *dev,           | Read from device.                                   |
-|        uint8_t reg_addr,                                        |                                                     |
-|        uint8_t *reg_data)``                                     |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_spi_reg_write(struct ad713x_dev *dev,          | Write to device.                                    |
-|         uint8_t reg_addr,                                       |                                                     |
-|         uint8_t reg_data)``                                     |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_spi_write_mask(struct ad713x_dev *dev,         | SPI write to device using a mask.                   |
-|         uint8_t reg_addr,                                       |                                                     |
-|         uint32_t mask,                                          |                                                     |
-|         uint8_t data)``                                         |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_set_power_mode(struct ad713x_dev *dev,         | Device power mode control.                          |
-|         enum ad713x_power_mode mode)``                          |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_set_out_data_frame(struct ad713x_dev *dev,     | ADC conversion data output frame control.           |
-|         enum ad713x_adc_data_len adc_data_len,                  |                                                     |
-|         enum ad713x_crc_header crc_header)``                    |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_dout_format_config(struct ad713x_dev *dev,     | DOUTx output format configuration.                  |
-|         enum ad713x_doutx_format format)``                      |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_mag_phase_clk_delay(struct ad713x_dev *dev,    | Magnitude and phase at 2 clock delay.               |
-|         bool clk_delay_en)``                                    |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_dig_filter_sel_ch(struct ad713x_dev *dev,      | Digital filter type selection for each channel.     |
-|         enum ad713x_dig_filter_sel filter,                      |                                                     |
-|         enum ad713x_channels ch)``                              |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_clkout_output_en(struct ad713x_dev *dev,       | Enable/Disable CLKOUT output.                       |
-|         bool enable)``                                          |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_ref_gain_correction_en(struct ad713x_dev *dev, | Enable/Disable reference gain correction.           |
-|         bool enable)``                                          |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_wideband_bw_sel(struct ad713x_dev *dev,        | Select the wideband filter bandwidth for a channel. |
-|         enum ad713x_channels ch,                                |                                                     |
-|         uint8_t wb_opt)``                                       |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_init(struct ad713x_dev **device,               | Initialize the device.                              |
-|         struct ad713x_init_param *init_param)``                 |                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------+
-| ``int32_t ad713x_remove(struct ad713x_dev *dev)``               | Free the resources allocated by ad713x_init().      |
-+-----------------------------------------------------------------+-----------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Function                                                                                                                                | Description                                         |
++=========================================================================================================================================+=====================================================+
+| ``int32_t ad713x_spi_reg_read(struct ad713x_dev *dev, uint8_t reg_addr, uint8_t *reg_data)``                                            | Read from device.                                   |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_spi_reg_write(struct ad713x_dev *dev, uint8_t reg_addr, uint8_t reg_data)``                                            | Write to device.                                    |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_spi_write_mask(struct ad713x_dev *dev, uint8_t reg_addr, uint32_t mask, uint8_t data)``                                | SPI write to device using a mask.                   |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_set_power_mode(struct ad713x_dev *dev, enum ad713x_power_mode mode)``                                                  | Device power mode control.                          |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_set_out_data_frame(struct ad713x_dev *dev, enum ad713x_adc_data_len adc_data_len, enum ad713x_crc_header crc_header)`` | ADC conversion data output frame control.           |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_dout_format_config(struct ad713x_dev *dev, enum ad713x_doutx_format format)``                                          | DOUTx output format configuration.                  |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_mag_phase_clk_delay(struct ad713x_dev *dev, bool clk_delay_en)``                                                       | Magnitude and phase at 2 clock delay.               |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_dig_filter_sel_ch(struct ad713x_dev *dev, enum ad713x_dig_filter_sel filter, enum ad713x_channels ch)``                | Digital filter type selection for each channel.     |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_clkout_output_en(struct ad713x_dev *dev, bool enable)``                                                                | Enable/Disable CLKOUT output.                       |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_ref_gain_correction_en(struct ad713x_dev *dev, bool enable)``                                                          | Enable/Disable reference gain correction.           |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_wideband_bw_sel(struct ad713x_dev *dev, enum ad713x_channels ch, uint8_t wb_opt)``                                     | Select the wideband filter bandwidth for a channel. |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_init(struct ad713x_dev **device, struct ad713x_init_param *init_param)``                                               | Initialize the device.                              |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_remove(struct ad713x_dev *dev)``                                                                                       | Free the resources allocated by ad713x_init().      |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 The driver has to be instantiated by using an initialization structure with the following composition:
 

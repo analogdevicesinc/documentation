@@ -13,8 +13,12 @@ The General 1st-Order block allows you to design 1st-order lowpass and highpass 
 
 Drag the block into the workspace and it's ready to use. As with other blocks, there's the option to increase the stage count to this algorithm. Observe, however, that with this module adding another stage the algorithm will add another frequency band to the block, which is equivalent to having two filters in series.
 
-| To switch among highpass, lowpass, and flat, click the filter type icon. This can be done in real time, without needing to recompile the project. Enter your desired values in the text fields to set the cutoff frequency and overall gain (sometimes called scale gain) of the filter. Or click the arrows to increment values for these parameters. To increment them very quickly, click and hold.
-| ==== Calculating Filter Coefficients ==== Use the following formulas to calculate the coefficients for first order filters.
+To switch among highpass, lowpass, and flat, click the filter type icon. This can be done in real time, without needing to recompile the project. Enter your desired values in the text fields to set the cutoff frequency and overall gain (sometimes called scale gain) of the filter. Or click the arrows to increment values for these parameters. To increment them very quickly, click and hold.
+
+Calculating Filter Coefficients
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the following formulas to calculate the coefficients for first order filters.
 
 Variables:
 
@@ -41,8 +45,8 @@ For allpass filters,
 -  B0 = -gain \* A1
 -  B1 = gain
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +---------------------+------------+------------------+---------------+------------------+
 | Name                | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -71,7 +75,7 @@ Name   Type  Description
 Output Audio Filter Output
 ====== ===== =============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+--------------+------------------------------------------------------------------+
@@ -90,8 +94,10 @@ Output Audio Filter Output
 | Enabled_StageX     | true          | true/false   | Filter Enabled/Bypassed for individual filter stage              |
 +--------------------+---------------+--------------+------------------------------------------------------------------+
 
-| Note : \_StageX - Refers to parameters of each stage. X represents the stage index.
-| ===== DSP Parameters =====
+Note : \_StageX - Refers to parameters of each stage. X represents the stage index.
+
+DSP Parameters
+--------------
 
 ============== ===================== =============
 Parameter Name Description           ADAU145x/146x
@@ -101,4 +107,4 @@ B1_StageX      B1 Filter Coefficient 8.24
 A1_StageX      A1 Filter Coefficient 8.24
 ============== ===================== =============
 
-| Note: X- Stage Number (Changes for each stage coefficients)
+Note: X- Stage Number (Changes for each stage coefficients)

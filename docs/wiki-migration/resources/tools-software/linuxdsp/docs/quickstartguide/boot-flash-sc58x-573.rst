@@ -61,8 +61,8 @@ Invoke the self-extracting archive. It will default to installing to /opt/adi-di
 .. code:: bash
 
    $ ./adi-distro-musl-x86_64-adsp-sc5xx-minimal-cortexa5t2hf-neon-adsp-sc589-ezkit-toolchain-3.0.0.sh
-   Analog Devices Inc Reference Distro SDK installer version 3.0.0
-   ===============================================================
+   **Analog Devices Inc Reference Distro SDK installer version 3.0.0**
+
    Enter target directory for SDK (default: /opt/adi-distro-musl/3.0.0):
    You are about to install the SDK to "/opt/adi-distro-musl/3.0.0". Proceed [Y/n]? y
    Extracting SDK........................................................................done
@@ -85,10 +85,10 @@ Copy the U-Boot binary & loader files to the tftp directory:
 
 .. code:: bash
 
-   $ cp tmp/deploy/images/adsp-sc584-ezkit/u-boot-spl-sc584-ezkit.elf /tftpboot/ 
-   $ cp tmp/deploy/images/adsp-sc584-ezkit/u-boot-proper-sc584-ezkit.elf /tftpboot/ 
-   $ cp tmp/deploy/images/adsp-sc584-ezkit/stage1-boot.ldr /tftpboot/ 
-   $ cp tmp/deploy/images/adsp-sc584-ezkit/stage2-boot.ldr /tftpboot/ 
+   $ cp tmp/deploy/images/adsp-sc584-ezkit/u-boot-spl-sc584-ezkit.elf /tftpboot/
+   $ cp tmp/deploy/images/adsp-sc584-ezkit/u-boot-proper-sc584-ezkit.elf /tftpboot/
+   $ cp tmp/deploy/images/adsp-sc584-ezkit/stage1-boot.ldr /tftpboot/
+   $ cp tmp/deploy/images/adsp-sc584-ezkit/stage2-boot.ldr /tftpboot/
 
 Before installing the software on to the development board, ensure that the following cables are connected:
 
@@ -151,7 +151,17 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
    ;''**Terminal3: GDB**''
    : <code bash>
 
-$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc584-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9c0c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089c0c Loading section .dtb.init.rodata, size 0x1460 lma 0x2008adb0 Loading section .data, size 0x514 lma 0x2008c210 Loading section .u_boot_list, size 0xa50 lma 0x2008c724 Start address 0x20080000, load size 53608 Transfer rate: 29 KB/sec, 7658 bytes/write. (gdb) c Continuing. ^C Program received signal SIGINT, Interrupt. </code>
+$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc584-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9c0c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089c0c Loading section .dtb.init.rodata, size 0x1460 lma 0x2008adb0 Loading section .data, size 0x514 lma 0x2008c210 Loading section .u_boot_list, size 0xa50 lma 0x2008c724 Start address 0x20080000, load size 53608 Transfer rate: 29 KB/sec, 7658 bytes/write. (gdb) c Continuing.
+
++---+
+
+
+| C |
+
++===+
++---+
+
+Program received signal SIGINT, Interrupt. </code>
 
 You will see a message on Terminal 1 running minicom, informing you that you can now load U-Boot Proper
 
@@ -203,14 +213,15 @@ CPU: ADSP ADSP-SC584-0.1 (spi flash boot) Detected Revision: 1.1 Model: ADI sc58
 
 In: serial@0x31003000 Out: serial@0x31003000 Err: serial@0x31003000 Net: eth0: eth0 Hit any key to stop autoboot: 0 => </code>
 
-| 
-| == Flash U-Boot to SPI Flash ==
-| In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot loader files (``stage1-boot.ldr`` & ``stage2-boot.ldr``) on TFTP.
+Flash U-Boot to SPI Flash
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot loader files (``stage1-boot.ldr`` & ``stage2-boot.ldr``) on TFTP.
 
 ::
 
    ;''**Terminal1: minicom**''
-   :  
+   :
 
 .. code:: bash
 
@@ -287,9 +298,6 @@ In order to store the ``serverip`` and the DHCP or otherwise assigned IP address
 
 At this point the U-Boot binary is stored in flash. You can now disconnect the ICE-1000 or ICE-2000 from the development board and make sure to switch the BMODE to position 1. You will only need to reconnect this if your board fails to boot and you need to re-follow these instructions.
 
-
-| 
-
 Booting Linux from SPI Flash
 ----------------------------
 
@@ -310,12 +318,12 @@ In order to flash the kernel on the flash, run the below command and observe a s
    TFTP from server 10.37.33.116; our IP address is 10.37.33.113
    Filename 'fitImage'.
    Load address: 0x89000000
-   Loading: #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
+   **Loading: #################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
             ################################
             2.2 MiB/s
    done
@@ -334,16 +342,16 @@ Now run the following command to also flash the root filesystem:
    TFTP from server 10.37.33.116; our IP address is 10.37.33.113
    Filename 'adsp-sc5xx-tiny-adsp-sc584-ezkit.jffs2'.
    Load address: 0x89000000
-   Loading: #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
+   **Loading: #################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
             ##
             2.1 MiB/s
    done
@@ -412,5 +420,3 @@ You are now ready to boot into Linux, by entering ``run spiboot`` on the U-Boot 
    adsp-sc584-ezkit login: root
    Password: adi
    root@adsp-sc584-ezkit:~#
-
-|

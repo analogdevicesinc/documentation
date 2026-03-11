@@ -36,9 +36,9 @@ Instructions to build the toolbox from terminal
 ::
 
    >git clone https://github.com/analogdevicesinc/HighSpeedConverterToolbox.git
-   > cd HighSpeedConverterToolbox 
-   ../HighSpeedConverterToolbox> git submodule update --init --recursive 
-   ../HighSpeedConverterToolbox > git checkout cn0585_v1 
+   > cd HighSpeedConverterToolbox
+   ../HighSpeedConverterToolbox> git submodule update --init --recursive
+   ../HighSpeedConverterToolbox > git checkout cn0585_v1
 
 To avoid tool mismatches, before opening MATLAB set this variable in the terminal:
 
@@ -50,15 +50,15 @@ Build according to the branch
 
 ::
 
-   ../HighSpeedConverterToolbox > cd CI/scripts 
-   ../HighSpeedConverterToolbox/CI/scripts > make build HDLBRANCH=cn0585_v1 
+   ../HighSpeedConverterToolbox > cd CI/scripts
+   ../HighSpeedConverterToolbox/CI/scripts > make build HDLBRANCH=cn0585_v1
 
 \*\* 1.2*\* In Matlab current folder list select navigate to the folder where the files had been copied from previous step. Launch MATLAB in the root of the HighSpeedConverterToolbox folder:
 
 ::
 
-   ../HighSpeedConverterToolbox/CI/scripts > cd ../../ 
-   ../HighSpeedConverterToolbox > matlab . 
+   ../HighSpeedConverterToolbox/CI/scripts > cd ../../
+   ../HighSpeedConverterToolbox > matlab .
 
 Creating BOOT.BIN from Simulink Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,9 +66,7 @@ Creating BOOT.BIN from Simulink Model
 .. image:: https://wiki.analog.com/_media/playground/figure3.png
    :width: 400px
 
-*Figure 3. HighSpeedConverterToolbox Sources*
-
-**2.1** Right click on test -> Add to Path -> Selected folders and subfolders. Right click on hdl -> Add to Path -> Selected folders and subfolders. **2.2** In the Matlab command window set the path to Vivado installation folder. The tool path should be replaced with the user’s Vivado path.
+*Figure 3. HighSpeedConverterToolbox Sources **2.1** Right click on test -> Add to Path -> Selected folders and subfolders. Right click on hdl -> Add to Path -> Selected folders and subfolders. **2.2** In the Matlab command window set the path to Vivado installation folder. The tool path should be replaced with the user’s Vivado path.
 
 e.g. <code> hdlsetuptoolpath(‘ToolName’, ‘Xilinx Vivado’, ’ToolPath’, ‘</opt/Xilinx/Vivado/2021.1/bin/vivado>’) </code>
 
@@ -77,9 +75,7 @@ e.g. <code> hdlsetuptoolpath(‘ToolName’, ‘Xilinx Vivado’, ’ToolPath’
 
 |image2|
 
-*Figure 4. Simulink Test Model*
-
-**2.4** After opening the Simulink model, right click on the HDL_DUT and launch the HDL Workflow Advisor as shown in Figure 5, and Figure 6.
+*Figure 4. Simulink Test Model **2.4** After opening the Simulink model, right click on the HDL_DUT and launch the HDL Workflow Advisor as shown in Figure 5, and Figure 6.
 
 .. image:: https://wiki.analog.com/_media/playground/figure6.png
    :width: 600px
@@ -89,16 +85,12 @@ e.g. <code> hdlsetuptoolpath(‘ToolName’, ‘Xilinx Vivado’, ’ToolPath’
 .. image:: https://wiki.analog.com/_media/playground/figure5.png
    :width: 600px
 
-*Figure 6. HDL Workflow Advisor Launching*
-
-**2.5** Close this expected warning that will appear, as shown in Figure 7.
+*Figure 6. HDL Workflow Advisor Launching **2.5** Close this expected warning that will appear, as shown in Figure 7.
 
 .. image:: https://wiki.analog.com/_media/playground/figure7.png
    :width: 600px
 
-*Figure 7. Expected HDL Workflow Advisor Warning*
-
-**2.6** Select IP Core Generation, choose the desired project and carrier from the dropdown list and check the Allow unsupported version box. Change the project folder name if desired. Finally press the Run this Task button.
+*Figure 7. Expected HDL Workflow Advisor Warning **2.6** Select IP Core Generation, choose the desired project and carrier from the dropdown list and check the Allow unsupported version box. Change the project folder name if desired. Finally press the Run this Task button.
 
 .. image:: https://wiki.analog.com/_media/playground/figure8.png
    :width: 600px
@@ -110,9 +102,7 @@ e.g. <code> hdlsetuptoolpath(‘ToolName’, ‘Xilinx Vivado’, ’ToolPath’
 .. image:: https://wiki.analog.com/_media/playground/figure9.png
    :width: 600px
 
-*Figure 9. Set Target Reference Design*
-
-**2.8** Assign the data ports as described in Figure 10 and Figure 11, add as many Input/Output registers as you need. Figure 9 and Figure 10 shows data ports for TX configuration. For RX and RX-TX port assignment is done similarly according to Table 2 and Table 3. Table 1 shows port descriptions for HDL DUT Tx Reference Design. AXI registers are defined in the Simulink model as input or output ports (AXI-lite option is selected in “Target Platform Interfaces” column. Register addresses are set in “Interface Mapping” column and written like x”<100, or another 9-bit hex address>”.) AXI registers that are input ports are write-only, and AXI registers that are output ports are read-only. If you connect those two together in the model, you now have a read-only register connected to the write-only register so it is readable, but at a different address.
+*Figure 9. Set Target Reference Design **2.8** Assign the data ports as described in Figure 10 and Figure 11, add as many Input/Output registers as you need. Figure 9 and Figure 10 shows data ports for TX configuration. For RX and RX-TX port assignment is done similarly according to Table 2 and Table 3. Table 1 shows port descriptions for HDL DUT Tx Reference Design. AXI registers are defined in the Simulink model as input or output ports (AXI-lite option is selected in “Target Platform Interfaces” column. Register addresses are set in “Interface Mapping” column and written like x”<100, or another 9-bit hex address>”.) AXI registers that are input ports are write-only, and AXI registers that are output ports are read-only. If you connect those two together in the model, you now have a read-only register connected to the write-only register so it is readable, but at a different address.
 
 .. image:: https://wiki.analog.com/_media/playground/figure10.png
    :width: 600px
@@ -145,44 +135,32 @@ e.g. <code> hdlsetuptoolpath(‘ToolName’, ‘Xilinx Vivado’, ’ToolPath’
 .. image:: https://wiki.analog.com/_media/playground/table4.png
    :width: 600px
 
-*Table 4. AD3552R DAC Output Span Configuration*
-
-**2.9** Run the task, as shown in Figure 12.
+*Table 4. AD3552R DAC Output Span Configuration **2.9** Run the task, as shown in Figure 12.
 
 .. image:: https://wiki.analog.com/_media/playground/figure12.png
    :width: 600px
 
-*Figure 12. Check Model Settings*
-
-**2.10** Select Verilog for the HDL Code Generation Settings, then run task as shown in Figure 13.
+*Figure 12. Check Model Settings **2.10** Select Verilog for the HDL Code Generation Settings, then run task as shown in Figure 13.
 
 .. image:: https://wiki.analog.com/_media/playground/figure13.png
    :width: 600px
 
-*Figure 13. Set HDL Options*
-
-**2.11** Check the Enable readback on AXI4 slave write registers as described in Figure 14. Then run task.
+*Figure 13. Set HDL Options **2.11** Check the Enable readback on AXI4 slave write registers as described in Figure 14. Then run task.
 
 .. image:: https://wiki.analog.com/_media/playground/figure14.png
    :width: 600px
 
-*Figure 14. Generate RTL code and IP Core*
-
-**2.12** Run the task (this will create the Vivado block design in the hdl_prj/vivado_ip_prj folder, or the project folder name that was chosen in 1.6), as shown in Figure 15.
+*Figure 14. Generate RTL code and IP Core **2.12** Run the task (this will create the Vivado block design in the hdl_prj/vivado_ip_prj folder, or the project folder name that was chosen in 1.6), as shown in Figure 15.
 
 .. image:: https://wiki.analog.com/_media/playground/figure15.png
    :width: 600px
 
-*Figure 15. Create Project*
-
-**2.13** Run the task in Figure 16.
+*Figure 15. Create Project **2.13** Run the task in Figure 16.
 
 .. image:: https://wiki.analog.com/_media/playground/figure16.png
    :width: 600px
 
-*Figure 16. Generate Software Interface*
-
-**2.14** Choose the “Custom” option for the Tcl file synthesis build, then Browse for the adi_build.tcl file located under HighSpeedConverterToolbox/CI/scripts, as shown in Figure 17. A bash prompt will open, and you can see the entire build process log file, as shown in Figure 17 and Figure 18. This step usually takes about an hour or more.
+*Figure 16. Generate Software Interface **2.14** Choose the “Custom” option for the Tcl file synthesis build, then Browse for the adi_build.tcl file located under HighSpeedConverterToolbox/CI/scripts, as shown in Figure 17. A bash prompt will open, and you can see the entire build process log file, as shown in Figure 17 and Figure 18. This step usually takes about an hour or more.
 
 .. image:: https://wiki.analog.com/_media/playground/figure17.png
    :width: 600px
@@ -218,7 +196,7 @@ Tab 4.4 in the HDL Workflow Advisor is incompatible with The ADI SD card flow. I
 
 ::
 
-    scp BOOT.BIN root@<your_board_ip>:/boot 
+    scp BOOT.BIN root@<your_board_ip>:/boot
 
 Finally, reboot the board.
 
@@ -235,25 +213,25 @@ Get the PyADI-IIO repo, and switch to the compatible branch.
 ::
 
    git clone https://github.com/analogdevicesinc/pyadi-iio.git
-   cd pyadi-iio  
-   git checkout cn0585_v1     
+   cd pyadi-iio
+   git checkout cn0585_v1
 
 Setup Python and run the example file. The path in the first line should be replaced with the location where you cloned the pyadi-iio repository.
 
 ::
 
-   export PYTHONPATH=C:/work/python_LLDK/documentation_clone/pyadi-iio/  
-   > ../pyadi-iio > pip install .  
-   > ../pyadi-iio > pip install -r requirements.txt  
-   > ../pyadi-iio > pip install -r requirements_dev.txt  
-   > ../pyadi-iio> python examples/cn0585_fmcz_example.py ip:<your_board_ip> 
+   export PYTHONPATH=C:/work/python_LLDK/documentation_clone/pyadi-iio/
+   > ../pyadi-iio > pip install .
+   > ../pyadi-iio > pip install -r requirements.txt
+   > ../pyadi-iio > pip install -r requirements_dev.txt
+   > ../pyadi-iio> python examples/cn0585_fmcz_example.py ip:<your_board_ip>
 
 The console output will contain these 2 new lines:
 
 ::
 
-   AXI4-Lite 0x108 register value: 0x2 
-   AXI4-Lite 0x10c register value: 0xB 
+   AXI4-Lite 0x108 register value: 0x2
+   AXI4-Lite 0x10c register value: 0xB
 
 These are the functions that were added to be able to access the HDL_DUT IP registers trough AXI4-Lite:
 
@@ -289,9 +267,9 @@ These are the functions that were added to be able to access the HDL DUT IP regi
 
 ::
 
-   write_reg = soc.libiio.aximm.WriteHost(devName='mwipcore0:mmwrchannel0',IPAddress=board_ip); 
-   read_reg = soc.libiio.aximm.WriteHost(devName='mwipcore0:mmrdchannel1',IPAddress=board_ip); 
-   write_reg.writeReg(hex2dec('100'),85) 
+   write_reg = soc.libiio.aximm.WriteHost(devName='mwipcore0:mmwrchannel0',IPAddress=board_ip);
+   read_reg = soc.libiio.aximm.WriteHost(devName='mwipcore0:mmrdchannel1',IPAddress=board_ip);
+   write_reg.writeReg(hex2dec('100'),85)
    write_reg.writeReg(hex2dec('104'),22)
 
 Simulink

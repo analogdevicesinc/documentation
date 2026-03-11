@@ -31,11 +31,11 @@ Each source or header file should include a license header - this will allow cus
 
 .. code:: c
 
-   /***************************************************************************//**
+   /**************************************************************************//**
      *   @file   ad1234.c
      *   @brief  Implementation of AD1234 Driver
-     *   @author Your Name (your.name@analog.com)
-   ********************************************************************************
+     ***   @author Your Name (your.name@analog.com)**
+
      * Copyright 2022(c) Analog Devices, Inc.
     *
      * All rights reserved.
@@ -68,7 +68,7 @@ Each source or header file should include a license header - this will allow cus
      * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
      * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
      * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-   *******************************************************************************/
+   ******************************************************************************/
 
 Include Guards
 ~~~~~~~~~~~~~~
@@ -178,16 +178,16 @@ It creates the device handler, initializes the communication peripherals, reques
          ret = no_os_spi_init(&dev->spi_desc, &init_param.spi_init);
          if (ret)
             goto error_2;
-         
+
          dev->some_settings = init_param->some_settings;
          ret =  ad1234_setup(dev);
          if (ret)
             goto error_3;
 
          *device = dev;
-         
+
          return 0;
-         
+
          error_3:
             spi_remove(dev->spi_desc);
          error_2:
@@ -215,7 +215,7 @@ It frees the resources allocated by the initialization function.
 
       {
          int ret;
-         
+
          ret = spi_remove(dev->spi_desc);
          ret |= gpio_remove(dev->gpio_reset);
 

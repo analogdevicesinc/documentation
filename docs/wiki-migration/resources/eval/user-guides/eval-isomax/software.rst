@@ -3,17 +3,27 @@ EVAL-ISOMAX Software User Guide
 
 This software guide provides the essential steps for firmware installation, launching the GUI, configuring the launcher, establishing interface connections, and utilizing various tabs for effective device evaluation. This covers tasks such as daisy chain configuration, quick measurements, custom command sequences, scheduling, memory mapping, plotting, data recall, diagnostics, and EIS measurements.
 
-| 
-| ===== Prerequisite =====
-| **MyAnalog.com account is required to download the BMS software resources**.
+Prerequisite
+------------
+
+**MyAnalog.com account is required to download the BMS software resources**.
 
 Follow the steps below to create a MyAnalog account:
 
-| 1. Go to :adi:`MyAnalog <en/index.html>` and create an account using email. Select the "**Register with email**" option to get started. |image1|
-| 2. Once you have a MyAnalog account, log in to :adi:`MyAnalog <en/index.html>` using your credentials. |image2|
+1. Go to :adi:`MyAnalog <en/index.html>` and create an account using email. Select the "**Register with email**" option to get started.
 
-| 
-| ===== Request for BMS Embedded Drivers ===== This reference design comes with no-OS BMS Embedded Drivers designed to run BMS measurements using a serial terminal.
+
+|image1|
+
+2. Once you have a MyAnalog account, log in to :adi:`MyAnalog <en/index.html>` using your credentials.
+
+
+|image2|
+
+Request for BMS Embedded Drivers
+--------------------------------
+
+This reference design comes with no-OS BMS Embedded Drivers designed to run BMS measurements using a serial terminal.
 
 The example projects feature the ADI Broad Market BMS boards such as the EVAL-ADBMS6830BMSW cell monitor and EVAL-ADBMS2950-BASIC pack monitor, the AD-APARD32690-SL as the microcontroller, and the DC2472A battery emulator for cell voltage input.
 
@@ -23,7 +33,7 @@ The example projects feature the ADI Broad Market BMS boards such as the EVAL-AD
    *The BMS Embedded Drivers Installer is available upon request.*
    
    | To request for access, send the following details to this email address:
-   | ✉ <fc #6495ed>\ **BM_BMSSoftwareSupport@analog.com**\ </fc>
+   | ✉ **BM_BMSSoftwareSupport@analog.com**
    
    -  Email address used for MyAnalog account creation
    -  Company/School
@@ -31,18 +41,13 @@ The example projects feature the ADI Broad Market BMS boards such as the EVAL-AD
    -  Purpose/Name of Project
    
    You will receive an email confirmation that you have been granted access to the BMS Embedded Installer Package. Follow the steps below to download and properly install the file to your host PC.
-
    
-   | 
+
 
 Downloading the BMS Embedded Drivers Installer
-----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
 
-|
-
-<WRAP indent>
 
 1. Click this link: `BMS Embedded Drivers Version 1.0.0 <https://download.analog.com/secure/bms-drivers-early-access/bmsed-00/1-0-0/no-os-bms-examples-rel1.0.0_beta.exe>`_.
 
@@ -55,8 +60,6 @@ Downloading the BMS Embedded Drivers Installer
    :align: center
    :width: 1000px
 
-   | 
-
 3. Click the **Download** button to download the installer package.
 
 .. admonition:: Download
@@ -67,15 +70,12 @@ Downloading the BMS Embedded Drivers Installer
    
 
 
-|
-
-| ----
+--------------
 
 Installing the no-OS BMS Embedded Drivers
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| 1. Install the **no-OS-BMS-Examples-Rel1.0.0.exe** file. Default installation path will be on **C:\\Analog\\**
+1. Install the **no-OS-BMS-Examples-Rel1.0.0.exe** file. Default installation path will be on **C:\\Analog\\**
 
 2. Download and install `MaximSDK for Maxim MCUs <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_.
 
@@ -83,16 +83,12 @@ Installing the no-OS BMS Embedded Drivers
 
    
    **NOTE**: Make sure that the location has NO WHITESPACES! For example, a typical installation location for the Maxim SDK could be “\ **C:\\MaximSDK**\ ” (Windows file location notation)
-
-
    
-   | 
+
 
 3. While MaximSDK installation is in progress, set up the no-OS-BMS-Examples by going to the no-OS-BMS-Examples directory:
 
 -  Examples Directory: **C:\\Analog\\no-OS-BMS-Examples-Rel1.0.0**
-
-|
 
 4. Select the **run_setup.bat file** and run it as administrator.
 
@@ -100,33 +96,23 @@ Installing the no-OS BMS Embedded Drivers
 
    
    NOTE: This process will take a few minutes. Please ensure you have a stable internet connection.
-
-
    
-   | 
+
 
 5. During this process, the Git Bash application will pop up (running as admin).
-
-|
 
 6. Wait for the setup to complete.
 
 -  A message "**Set-up completed! with no error message**" will be displayed on the command line if the setup is successful.
 -  Press **ANY KEY** to close the command prompt.
 
-| 
-
 7. Double check if the MaximSDK is successfully installed.
 
 -  Click the **Finish** button once installation is complete.
 
-|
-
 8. Open the no-OS-BMS-Examples file on VS Code or any other code editor.
 
 -  Examples Directory: **C:\\Analog\\no-OS-BMS-Examples-Rel1.0.0**
-
-| 
 
 9. Open the Makefile inside **C:\\Analog\\no-OS-BMS-Examples-Rel1.0.0\\examples** folder.
 
@@ -135,11 +121,7 @@ Installing the no-OS BMS Embedded Drivers
 
 |image3|
 
-| 
-| 10. Configure the Makefile on your desired example project.
-
-| 
-|
+10. Configure the Makefile on your desired example project.
 
 .. container:: indent
 
@@ -154,8 +136,7 @@ Installing the no-OS BMS Embedded Drivers
    
 
 
-| 
-| ----
+--------------
 
 Graphical User Interface
 ========================
@@ -169,34 +150,32 @@ Downloading the GUI Installer
    
    Evaluation GUI for ADI Broad Market BMS products:
    
-   | :adi:`BMS Browser GUI Version 2.0.0 <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
-   | *When software updates or new versions of the software are available an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.*
+   :adi:`BMS Browser GUI Version 2.0.0 <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
+   
+   *When software updates or new versions of the software are available an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.*
    
 
 
 Launching the GUI
------------------
+~~~~~~~~~~~~~~~~~
 
--  To launch the GUI, navigate to the <fc #6495ed>BMS_BROWSER_GUI_BroadMarket_V2.0.0</fc> directory.
--  Double-click <fc #6495ed>BMS_BROWSER_GUI_BroadMarket_V2.0.0.exe</fc>.
+-  To launch the GUI, navigate to the BMS_BROWSER_GUI_BroadMarket_V2.0.0 directory.
+-  Double-click BMS_BROWSER_GUI_BroadMarket_V2.0.0.exe.
 
 |image4|
-
-| 
-|
 
 .. container:: indent
 
    
-   Launcher Configuration
-   ^^^^^^^^^^^^^^^^^^^^^^
+   **Launcher Configuration**
+
    
    -  Use the launcher page to configure a daisy chain of ADBMS devices.
    -  Select an appropriately flashed microcontroller board (for this example, SDP-K1).
    -  Launch the evaluation GUI.
    
-   | 
-   | === Establishing Interface Connection ===
+   **Establishing Interface Connection**
+
    
    -  The Interface Connection section displays available devices on the left.
    -  Left-side selection determines the device for launching the evaluation GUI with the Launch Button.
@@ -206,9 +185,14 @@ Launching the GUI
 
    |image5|
 
-   | 
-   | === Daisy Chain Connection === The Daisy Chain section facilitates the creation of a daisy chain using compatible ADBMS devices. This process involves selecting a generation of ADBMS devices, adding devices to the daisy chain, and configuring the setup for the evaluation GUI. |image6|
+   **Daisy Chain Connection**
+
    
+   The Daisy Chain section facilitates the creation of a daisy chain using compatible ADBMS devices. This process involves selecting a generation of ADBMS devices, adding devices to the daisy chain, and configuring the setup for the evaluation GUI.
+
+   
+   |image6|
+
    -  **Select ADBMS Generation:**
    
       -  Navigate to the Daisy Chain section.
@@ -236,14 +220,13 @@ Launching the GUI
    
 
 
-| 
-| ----
+--------------
 
 GUI Tabs
-~~~~~~~~
+--------
 
 Quick Measure
--------------
+~~~~~~~~~~~~~
 
 The Quick Measure tab simplifies metric measurement with a preloaded command sequence. Note that it supports a single device in the daisy chain, and key features enhance configuration and visualization.
 
@@ -277,8 +260,13 @@ The Quick Measure tab simplifies metric measurement with a preloaded command seq
    -  Initiate and terminate the measurement loop with the top button.
    -  The button turns yellow during loop activation and green when deactivated.
 
-| 
-| ==== Sequences ==== The Sequences tab enables the creation and management of custom command sequences. Load and save sequences, divided into Init and Loop lists. The Init list initializes the daisy chain once, while the Loop list runs continuously until stopped. Toggle between lists using the corresponding buttons at the top. |image8|
+Sequences
+~~~~~~~~~
+
+The Sequences tab enables the creation and management of custom command sequences. Load and save sequences, divided into Init and Loop lists. The Init list initializes the daisy chain once, while the Loop list runs continuously until stopped. Toggle between lists using the corresponding buttons at the top.
+
+
+|image8|
 
 -  **Load Existing Sequence:**
 
@@ -316,116 +304,182 @@ The Quick Measure tab simplifies metric measurement with a preloaded command seq
    -  Below the SPI Bus and SPI CS Select bars, use the optional Map Key field to apply a label to the command.
    -  Labels organize output data, grouping commands with the same label together for focused data analysis.
 
-| 
-| ==== Scheduler ==== The Scheduler tab provides insights into the execution time of sequences from the Sequences tab. It allows combining sequences for a complete execution loop. Key features enable precise timing adjustments and visualization. |image9|
-| \* **Timing Adjustments:**
+Scheduler
+~~~~~~~~~
 
-::
+The Scheduler tab provides insights into the execution time of sequences from the Sequences tab. It allows combining sequences for a complete execution loop. Key features enable precise timing adjustments and visualization.
 
-     * Utilize the SPI Clock field to adjust timings based on the system SPI clock frequency (kHz).
-     * The MCU Command To Command Overhead field adjusts timing between commands to accommodate MCU transaction timings.
-     * The FDTI field represents the total loop time, used for margin calculations.
-   * **Initialization and Sequence Management:**
-     * Choose the Initialization field to pick the sequence for daisy chain initialization.
-     * The Available Cycle Sequences list displays all available sequences for scheduling.
-     * Use the Add button to add selected cycles to the schedule.
-   * **Hardware Timers and Timing Verification:**
-     * Add hardware timers to cycle sequences with the Add Cycle Timers field for timing verification in freerun mode.
-   * **Schedule Management:**
-     * Remove and Clear buttons allow removal of cycles from the schedule.
-     * Drag and drop cycles to rearrange them within the schedule.
-   * **Schedule Overview:**
-     * The schedule table displays added cycles, their execution time, and margin for the selected daisy chain.
-     * The plot at the bottom visually represents the same information in a waterfall format.
-   * **Transfer for Real Hardware Timing:**
-     * Use the Transfer button to move all cycles into a single sequence in the Sequences tab.
-     * Run the transferred sequence to assess real hardware timing.
 
-| 
-| ==== Memory Map ==== The Memory Map tab provides a numerical output for the active command loop, organized into tables for user convenience. It offers customization and error highlighting for effective data analysis. |image10|
-| \* **Organized Data Display:**
+|image9|
 
-::
+-  **Timing Adjustments:**
 
-     * Access the Memory Map tab for a numerical output of the currently running command loop.
-     * Multiple tables organize the data into useful groups.
-   * **Table Management:**
-     * Each table can be minimized for a more streamlined view.
-   * **Default View and Map Key Selection:**
-     * The default view presents all data from the command list.
-     * Use the Map Key select bar to switch to a specific group of data for focused analysis.
-   * **Device-specific Data:**
-     * Tables contain data returned by all devices in the daisy chain.
-   * **Error Highlighting:**
-     * Rows highlight in orange if data returned with a PEC error.
-     * Valid data does not have any highlighting for easy differentiation.
+   -  Utilize the SPI Clock field to adjust timings based on the system SPI clock frequency (kHz).
+   -  The MCU Command To Command Overhead field adjusts timing between commands to accommodate MCU transaction timings.
+   -  The FDTI field represents the total loop time, used for margin calculations.
 
-| 
-| ==== Plots ==== The Plots tab provides a graphical representation of data collected through the running command loop. It offers customization options for focused analysis and allows for the export of captured data for further analysis. |image11|
-| \* **Plot Selection:**
+-  **Initialization and Sequence Management:**
 
-::
+   -  Choose the Initialization field to pick the sequence for daisy chain initialization.
+   -  The Available Cycle Sequences list displays all available sequences for scheduling.
+   -  Use the Add button to add selected cycles to the schedule.
 
-     * Use the Plot Selection area at the top to control the central Plot.
-     * Checkboxes in the Plot Filter area at the bottom filter data for the Plot.
-   * **Metric Plotting:**
-     * Check the Plot Filter checkboxes for desired metrics and device numbers.
-     * Additional checkboxes allow for plotting all devices for a metric, all metrics for a device, or all metrics for all devices.
-   * **Save and Load Filter Setups:**
-     * Save a filter setup for future use by providing a name in the Save Plot Filter text box and clicking Save.
-     * Load existing filter setups using the Load Plot Filter select.
-   * **Map Key Group Selection:**
-     * Narrow data to a specific map key group using the Map Key select in the Plot Selection area.
-   * **Plot Options:**
-     * Choose between line chart and histogram using the Plot Selection Type select.
-   * **Export Data:**
-     * Click the Export Data button to export captured data as a CSV file for further analysis.
-     * Data is exported to the data directory, grouped by map key.
+-  **Hardware Timers and Timing Verification:**
 
-| 
-| ==== Data Recall ==== The Data Recall tab allows you to retrieve and plot data from previous freerun sessions stored in a database file. The interface is similar to the Plots tab with added functionality for selecting the database file and test run. |image12|
-| \* **Access Data Recall Tab:**
+   -  Add hardware timers to cycle sequences with the Add Cycle Timers field for timing verification in freerun mode.
 
-::
+-  **Schedule Management:**
 
-     * Navigate to the Data Recall tab for recalling and plotting data from previous freerun sessions.
-   * **Database File Selection:**
-     * Click on the select box under the Database Names label.
-     * Choose the desired database file; the default is data.db.
-   * **Test Run Selection:**
-     * Click on the select box under the Test Run IDs label.
-     * Pick the specific test run from the list, arranged chronologically and UTC timestamped.
-   * **Load Test Run:**
-     * Click the Load Test Run button to recall data from the selected database file and test run.
-   * **Customize Plot:**
-     * After loading the test run, customize the plot using the same methods as the Plots tab.
+   -  Remove and Clear buttons allow removal of cycles from the schedule.
+   -  Drag and drop cycles to rearrange them within the schedule.
 
-| 
-| ==== Diagnostics ==== The Diagnostics tab offers a straightforward way to execute on-device diagnostics following the device's safety manual. It displays available diagnostics, test logs, and results for a single device. |image13|
-| \* **Access Diagnostics Tab:**
+-  **Schedule Overview:**
 
-::
+   -  The schedule table displays added cycles, their execution time, and margin for the selected daisy chain.
+   -  The plot at the bottom visually represents the same information in a waterfall format.
 
-     * Navigate to the Diagnostics tab for on-device diagnostics execution.
-   * **Device Selection:**
-     * Use the Device Selection bar to switch between devices.
-   * **Run Diagnostics:**
-     * In the Functions section on the left, click on the button with the name of the desired diagnostic.
-     * The diagnostic runs, and results are displayed on the right side: highlighted green for pass and red for failure.
-   * **Diagnostic Log:**
-     * A log of diagnostic-specific data appears in the center of the screen.
-     * The log provides context for understanding why a diagnostic may have failed.
+-  **Transfer for Real Hardware Timing:**
 
-| 
-| ----
-| ===== Custom GUI Configuration ===== The configuration settings in the GUI's <fc #6495ed>config.json</fc> file allow users to tailor the software to their specific needs, providing a more customized and efficient experience.
-| This section explores the three key settings: <fc #6495ed>auto_detect_sdp</fc>, <fc #6495ed>limit_usb_polling</fc>, and <fc #6495ed>display_user_manual_on_start</fc> - that users can adjust to better align the software to their intended applications.
+   -  Use the Transfer button to move all cycles into a single sequence in the Sequences tab.
+   -  Run the transferred sequence to assess real hardware timing.
+
+Memory Map
+~~~~~~~~~~
+
+The Memory Map tab provides a numerical output for the active command loop, organized into tables for user convenience. It offers customization and error highlighting for effective data analysis.
+
+
+|image10|
+
+-  **Organized Data Display:**
+
+   -  Access the Memory Map tab for a numerical output of the currently running command loop.
+   -  Multiple tables organize the data into useful groups.
+
+-  **Table Management:**
+
+   -  Each table can be minimized for a more streamlined view.
+
+-  **Default View and Map Key Selection:**
+
+   -  The default view presents all data from the command list.
+   -  Use the Map Key select bar to switch to a specific group of data for focused analysis.
+
+-  **Device-specific Data:**
+
+   -  Tables contain data returned by all devices in the daisy chain.
+
+-  **Error Highlighting:**
+
+   -  Rows highlight in orange if data returned with a PEC error.
+   -  Valid data does not have any highlighting for easy differentiation.
+
+Plots
+~~~~~
+
+The Plots tab provides a graphical representation of data collected through the running command loop. It offers customization options for focused analysis and allows for the export of captured data for further analysis.
+
+
+|image11|
+
+-  **Plot Selection:**
+
+   -  Use the Plot Selection area at the top to control the central Plot.
+   -  Checkboxes in the Plot Filter area at the bottom filter data for the Plot.
+
+-  **Metric Plotting:**
+
+   -  Check the Plot Filter checkboxes for desired metrics and device numbers.
+   -  Additional checkboxes allow for plotting all devices for a metric, all metrics for a device, or all metrics for all devices.
+
+-  **Save and Load Filter Setups:**
+
+   -  Save a filter setup for future use by providing a name in the Save Plot Filter text box and clicking Save.
+   -  Load existing filter setups using the Load Plot Filter select.
+
+-  **Map Key Group Selection:**
+
+   -  Narrow data to a specific map key group using the Map Key select in the Plot Selection area.
+
+-  **Plot Options:**
+
+   -  Choose between line chart and histogram using the Plot Selection Type select.
+
+-  **Export Data:**
+
+   -  Click the Export Data button to export captured data as a CSV file for further analysis.
+   -  Data is exported to the data directory, grouped by map key.
+
+Data Recall
+~~~~~~~~~~~
+
+The Data Recall tab allows you to retrieve and plot data from previous freerun sessions stored in a database file. The interface is similar to the Plots tab with added functionality for selecting the database file and test run.
+
+
+|image12|
+
+-  **Access Data Recall Tab:**
+
+   -  Navigate to the Data Recall tab for recalling and plotting data from previous freerun sessions.
+
+-  **Database File Selection:**
+
+   -  Click on the select box under the Database Names label.
+   -  Choose the desired database file; the default is data.db.
+
+-  **Test Run Selection:**
+
+   -  Click on the select box under the Test Run IDs label.
+   -  Pick the specific test run from the list, arranged chronologically and UTC timestamped.
+
+-  **Load Test Run:**
+
+   -  Click the Load Test Run button to recall data from the selected database file and test run.
+
+-  **Customize Plot:**
+
+   -  After loading the test run, customize the plot using the same methods as the Plots tab.
+
+Diagnostics
+~~~~~~~~~~~
+
+The Diagnostics tab offers a straightforward way to execute on-device diagnostics following the device's safety manual. It displays available diagnostics, test logs, and results for a single device.
+
+
+|image13|
+
+-  **Access Diagnostics Tab:**
+
+   -  Navigate to the Diagnostics tab for on-device diagnostics execution.
+
+-  **Device Selection:**
+
+   -  Use the Device Selection bar to switch between devices.
+
+-  **Run Diagnostics:**
+
+   -  In the Functions section on the left, click on the button with the name of the desired diagnostic.
+   -  The diagnostic runs, and results are displayed on the right side: highlighted green for pass and red for failure.
+
+-  **Diagnostic Log:**
+
+   -  A log of diagnostic-specific data appears in the center of the screen.
+   -  The log provides context for understanding why a diagnostic may have failed.
+
+--------------
+
+Custom GUI Configuration
+------------------------
+
+The configuration settings in the GUI's config.json file allow users to tailor the software to their specific needs, providing a more customized and efficient experience.
+
+This section explores the three key settings: auto_detect_sdp, limit_usb_polling, and display_user_manual_on_start - that users can adjust to better align the software to their intended applications.
 
 Key Settings
-------------
+~~~~~~~~~~~~
 
 auto_detect_sdp:
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 -  **Purpose:** Determines whether the software automatically connects to all comports or requires manual selection of the NUCLEO comport.
 -  **Default Setting:** true
@@ -436,7 +490,7 @@ auto_detect_sdp:
    -  Save the changes.
 
 limit_usb_polling:
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 -  **Purpose:** Controls the poll rate of the NUCLEO comport, balancing CPU usage and sample rate.
 -  **Default Setting:** false
@@ -447,7 +501,7 @@ limit_usb_polling:
    -  Save the changes.
 
 display_user_manual_on_start:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  **Purpose:** Governs whether the user manual is displayed each time the software starts.
 -  **Default Setting:** true
@@ -462,11 +516,10 @@ display_user_manual_on_start:
    By adjusting these configuration settings in the config.json file, users can optimize the software's behavior to better suit their requirements. Whether it's fine-tuning comport connections, managing CPU usage, or controlling the display of the user manual, these settings provide a flexible approach to enhancing the software's usability. Make sure to save your changes and restart the software for the modifications to take effect.
 
 
-| 
-| ----
+--------------
 
 Further Help
-~~~~~~~~~~~~
+------------
 
 For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
 
@@ -475,8 +528,8 @@ For questions and more information about this product, connect with us through t
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-| 
-| |Overview #:resources:eval:user-guides:eval-isomax:hardware|EVAL-ISOMAX Hardware User Guide#none|
+.. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/eval-isomax
+   :alt: Overview #:resources:eval:user-guides:eval-isomax:hardware|EVAL-ISOMAX Hardware User Guide#none
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/creating_myanalog_account.png
    :width: 600px
@@ -504,4 +557,3 @@ For questions and more information about this product, connect with us through t
    :width: 2000px
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/diagnostics.png
    :width: 2000px
-.. |Overview #:resources:eval:user-guides:eval-isomax:hardware|EVAL-ISOMAX Hardware User Guide#none| image:: /navigation #/resources/eval/user-guides/eval-isomax

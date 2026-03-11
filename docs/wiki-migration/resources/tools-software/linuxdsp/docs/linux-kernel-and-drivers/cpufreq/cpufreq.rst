@@ -16,8 +16,8 @@ Hardware Setup
 
 The ADSP-SC5xx processors have Clock Generation Unit (CGU) support. The CGU allows program to change the PLL clock frequency and the CCLKn, SYSCLK, SCLKn, and OUTCLK clock scaling.
 
-| 
-| ===== Software Configuration =====
+Software Configuration
+----------------------
 
 Enabling CPU Frequency Driver in Linux Kernel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -26,23 +26,23 @@ Run "**bitbake linux-adi -c menuconfig**" and configure the kernel as follows:
 
 ::
 
-   CPU Power Management  --->      
-           CPU Frequency scaling  --->   
-           [*] CPU Frequency scaling  
-           <*>   CPU frequency translation statistics 
-           [*]   CPU frequency translation statistics details      
+   CPU Power Management  --->
+           CPU Frequency scaling  --->
+           [*] CPU Frequency scaling
+           <*>   CPU frequency translation statistics
+           [*]   CPU frequency translation statistics details
                  Default CPUFreq governor (performance)  --->
-           -*-   'performance' governor 
-           < >   'powersave' governor     
-           <*>   'userspace' governor for userspace frequency scaling     
-           < >   'ondemand' cpufreq policy governor  
+           -*-   'performance' governor
+           < >   'powersave' governor
+           <*>   'userspace' governor for userspace frequency scaling
+           < >   'ondemand' cpufreq policy governor
            < >   'conservative' cpufreq governor
-                 *** CPU frequency scaling drivers ***
+                 ** CPU frequency scaling drivers **
            < >   Generic DT based cpufreq driver
-           [*]   SC58X CPUFreq support   
+           [*]   SC58X CPUFreq support
 
-| 
-| ===== How to Change the CPU Frequency =====
+How to Change the CPU Frequency
+-------------------------------
 
 Preferred Interface: sysfs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,9 +51,9 @@ The preferred interface is located in the sysfs filesystem. If you mounted it at
 
 ::
 
-   cpuinfo_min_freq :      This file shows the minimum operating frequency the processor can run at (in kHz) 
+   cpuinfo_min_freq :      This file shows the minimum operating frequency the processor can run at (in kHz)
 
-   cpuinfo_max_freq :      This file shows the maximum operating frequency the processor can run at (in kHz) 
+   cpuinfo_max_freq :      This file shows the maximum operating frequency the processor can run at (in kHz)
 
    scaling_driver :        This file shows what cpufreq driver is used to set the frequency on this CPU
 
@@ -71,10 +71,9 @@ The preferred interface is located in the sysfs filesystem. If you mounted it at
    scaling_setspeed :
                    By "echoing" a new frequency into this file you can change the speed of the CPU,
                    but only within the limits of scaling_min_freq and scaling_max_freq.
-    
 
-| 
-| ===== What Is A CPUFreq Governor? =====
+What Is A CPUFreq Governor?
+---------------------------
 
 Governors In the Linux Kernel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,8 +117,6 @@ freq_step: This describes what percentage steps the cpu freq should be increased
 
 down_threshold: Same as the 'up_threshold' found for the “ondemand” governor but for the opposite direction. For example when set to its default value of '20' it means that if the CPU usage needs to be below 20% between samples to have the frequency decreased.
 
- 
-
 Change Core Clock Frequency via cpufreq-utils
 ---------------------------------------------
 
@@ -127,7 +124,7 @@ In order to modify frequency settings with cpufreq-utils, you need to have the 
 
 ::
 
-   # cpufreq-info 
+   # cpufreq-info
    cpufrequtils 005: cpufreq-info (C) Dominik Brodowski 2004-2006
    Report errors and bugs to cpufreq@vger.kernel.org, please.
    analyzing CPU 0:
@@ -141,11 +138,11 @@ In order to modify frequency settings with cpufreq-utils, you need to have the 
                      within this range.
      current CPU frequency is 450 MHz (asserted by call to hardware).
      cpufreq stats: 450 MHz:0.00%, 225 MHz:0.00%, 113 MHz:0.00%
-   # 
+   #
 
 
    # cpufreq-set -f 225000
-   # cpufreq-info 
+   # cpufreq-info
    cpufrequtils 005: cpufreq-info (C) Dominik Brodowski 2004-2006
    Report errors and bugs to cpufreq@vger.kernel.org, please.
    analyzing CPU 0:
@@ -160,5 +157,6 @@ In order to modify frequency settings with cpufreq-utils, you need to have the 
      current CPU frequency is 225 MHz (asserted by call to hardware).
      cpufreq stats: 450 MHz:0.00%, 225 MHz:0.00%, 113 MHz:0.00%  (1)
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

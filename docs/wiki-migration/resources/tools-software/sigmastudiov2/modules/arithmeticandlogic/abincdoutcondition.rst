@@ -3,16 +3,20 @@
 AB-In CD-Out Condition
 ======================
 
-| 
-| |abincdout.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/abincdout.png
+   :alt: abincdout.png
 
 Description
 -----------
 
 The AB In-CD Out Condition block lets you compare the sample-by-sample level of two incoming signals (A & B) and output the sample of one of two new signals (C & D), depending on the condition.
 
-| This algorithm works only for DSP's with conditional instruction.
-| ===== Usage ===== Click the icon in the block to select the condition you want to check:
+This algorithm works only for DSP's with conditional instruction.
+
+Usage
+-----
+
+Click the icon in the block to select the condition you want to check:
 
 -  Greater than
 -  Less than
@@ -20,8 +24,10 @@ The AB In-CD Out Condition block lets you compare the sample-by-sample level of 
 -  Less than or equal to
 -  Equal to
 
-| When the condition is true, output sample is C; otherwise, it's D.
-| ===== Targets Supported =====
+When the condition is true, output sample is C; otherwise, it's D.
+
+Targets Supported
+-----------------
 
 ============ ========== ================ ============= ================
 Name         ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -29,7 +35,7 @@ Name         ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 AB-In CD-Out B/S        B/S              S             B
 ============ ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -62,5 +68,3 @@ DSP Parameters
 --------------
 
 NO DSP parameters
-
-.. |abincdout.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/abincdout.png

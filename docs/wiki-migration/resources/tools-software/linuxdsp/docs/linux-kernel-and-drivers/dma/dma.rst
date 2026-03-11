@@ -28,15 +28,14 @@ If you are writing a portable device driver, make sure to use the generic DMA AP
 ::
 
    void *dma_alloc_coherent(struct device *dev, size_t size, dma_addr_t *dma_handle, gfp_t gfp);
-    
+
    void dma_free_coherent(struct device *dev, size_t size, void *vaddr, dma_addr_t dma_handle);
-    
+
    dma_addr_t dma_map_single(struct device *dev, void *ptr, size_t size, enum dma_data_direction dir)
-    
+
    dma_addr_t dma_map_page(struct device *dev, struct page *page, unsigned long offset, size_t size, enum dma_data_direction dir)
-    
+
    int dma_map_sg(struct device *dev, struct scatterlist *sg, int nents, enum dma_data_direction dir);
-    
 
 What is a bus address
 ~~~~~~~~~~~~~~~~~~~~~
@@ -160,19 +159,19 @@ The extended DMA manipulation API allows for increased flexibility in SC5xx:
 
    unsigned long gen_dma_config2(char direction, char flow_mode, char intr_mode, char dma_mode, char mem_width, char syncmode, char peri_width)
    unsigned long gen_dma_config(char direction, char flow_mode, char intr_mode, char dma_mode, char mem_width, char syncmode)
-   void set_dma_start_addr(unsigned int channel, unsigned long addr) 
-   void set_dma_next_desc_addr(unsigned int channel, unsigned long addr) 
-   void set_dma_x_count(unsigned int channel, unsigned short x_count) 
-   void set_dma_x_modify(unsigned int channel, short x_modify) 
-   void set_dma_y_count(unsigned int channel, unsigned short y_count) 
-   void set_dma_y_modify(unsigned int channel, short y_modify) 
+   void set_dma_start_addr(unsigned int channel, unsigned long addr)
+   void set_dma_next_desc_addr(unsigned int channel, unsigned long addr)
+   void set_dma_x_count(unsigned int channel, unsigned short x_count)
+   void set_dma_x_modify(unsigned int channel, short x_modify)
+   void set_dma_y_count(unsigned int channel, unsigned short y_count)
+   void set_dma_y_modify(unsigned int channel, short y_modify)
    void set_dma_config(unsigned int channel, unsigned short config)
-   unsigned short set_bfin_dma_config(char direction, char flow_mode, char intr_mode, char dma_mode, char width) 
-   unsigned short get_dma_curr_irqstat(unsigned int channel) 
-   unsigned short get_dma_curr_xcount(unsigned int channel) 
-   unsigned short get_dma_curr_ycount(unsigned int channel) 
-   void set_dma_sg(unsigned int channel, struct dmasg_t *sg, int nr_sg) 
-   void dma_disable_irq(unsigned int channel) 
+   unsigned short set_bfin_dma_config(char direction, char flow_mode, char intr_mode, char dma_mode, char width)
+   unsigned short get_dma_curr_irqstat(unsigned int channel)
+   unsigned short get_dma_curr_xcount(unsigned int channel)
+   unsigned short get_dma_curr_ycount(unsigned int channel)
+   void set_dma_sg(unsigned int channel, struct dmasg_t *sg, int nr_sg)
+   void dma_disable_irq(unsigned int channel)
    void dma_disable_irq_nosync(unsigned int channel)
    void dma_enable_irq(unsigned int channel)
    void clear_dma_irqstat(unsigned int channel)
@@ -188,25 +187,25 @@ This is a simple DMA example taken from the adsp-spidac.c driver. This is gettin
    #define SPI0_RX_DMA_CH 23
    #define BUF_SIZE 1024 * 32
    static usigned char mybuffer[BUF_SIZE];
-    
+
    int mydmatest(struct device *dev)
    {
        int ret;
        dma_addr_t dma_addr;
-    
+
        // Ask for the DMA channel
        ret = request_dma(SPI0_RX_DMA_CH,"SPI RX Test");
        if ( ret < 0 ) {
            printk(" Unable to get SPI0 RX DMA channel\n");
            return 1;
        }
-    
+
        // Turn off the DMA channel
        disable_dma(SPI0_RX_DMA_CH);
-    
+
        // Set the IRQ callback
        set_dma_callback(SPI0_RX_DMA_CH, myirq, mydata);
-    
+
        // Map the memory for DMA device access
        dma_addr = dma_map_single(dev, mybuffer, BUF_SIZE, DMA_FROM_DEVICE);
        if (dma_mapping_error(dev, dma_handle)) {
@@ -214,24 +213,22 @@ This is a simple DMA example taken from the adsp-spidac.c driver. This is gettin
            printk(" Unable to map DMA region\n");
            return 1;
        }
-    
+
        // Set up the dma config
        // WNR We are going to write to memory
        // RESTART throw away any old data in the fifo
        // Enable Interrupts
-       set_dma_config(SPI0_RX_DMA_CH, ( WNR | RESTART
+       set_dma_config(SPI0_RX_DMA_CH, ( WNR | RESTART | DI_EN ));
 
-       | DI_EN ));
-    
        // Set address to drop data into
        set_dma_start_address(SPI0_RX_DMA_CH, dma_addr);
-    
+
        // Set the transfer size in bytes
        set_dma_x_count(SPI0_RX_DMA_CH,size);
-    
+
        // Set the X modify ( dont worry about Y for this one )
        set_dma_x_modify(SPI0_RX_DMA_CH,1);
-    
+
        // Off we go
        enable_dma(SPI0_RX_DMA_CH);
    }
@@ -244,19 +241,19 @@ The IRQ routine could look like this. It simply clears the IRQ status.
    {
        unsigend short mystat;
        struct device *dev = (struct device*)data;
-    
+
       mystat = get_dma_curr_irqstat(SPI0_RX_DMA_CH);
        clear_dma_irqstat(SPI0_RX_DMA_CH);
-    
+
        // Unmap the DMA memory for processor access
        dma_unmap_single(dev, mybuffer, BUF_SIZE, DMA_TO_DEVICE);
        free_dma(SPI0_RX_DMA_CH);
-     
+
        wake_up_interruptible(&mywaiting_task);
-    
+
        return IRQ_HANDLED;
    }
 
-|
+--------------
 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

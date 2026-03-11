@@ -5,5 +5,5 @@ ADI Documentation on SDR Signal Chains
 -  :adi:`Software calibrated, 1 MHZ to 8 GHZ, 60 DB RF Power Measurement System using the AD8318 Logarithmic Detector (CN0150) <cn0150>`
 -  :adi:`Software calibrated, 50 MHZ TO 9 GHZ, RF Power Measurement System (CN0178) <cn0178>`
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS1-EBZ#testing
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/navigation AD-FMCOMMS1-EBZ#testing
    :alt: Production Testing Process#.:\|Overview#Help and Support

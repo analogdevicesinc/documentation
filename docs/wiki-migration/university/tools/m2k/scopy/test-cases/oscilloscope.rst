@@ -1,8 +1,8 @@
-| 
-| ====== Oscilloscope - Test Case ======
+Oscilloscope - Test Case
+========================
 
 Initial Setup
-=============
+-------------
 
 In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
@@ -14,14 +14,16 @@ Open the Oscilloscope instrument. The interface must look like the picture below
 Press multiple times on the "Run" button to check if the instrument works.
 
 Test Case
-=========
+---------
 
-| 
-| ==== A. Channel 1 Operation==== 
+A. Channel 1 Operation
+~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                                     | Test Steps                                                                                                                                                                                                                                                   | Steps Resources | Expected Results                                                                                                                                                                                                                       |
@@ -217,13 +219,13 @@ Test Case
 
 
 B. Channel 2 Operation
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                                     | Test Steps                                                                                                                                                                                                                                                   | Steps Resources | Expected Results                                                                                                                                                                                                                       |
@@ -419,13 +421,13 @@ B. Channel 2 Operation
 
 
 C. Math Channel Operation
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                  | Test Steps                                                                                                                                              | Steps Resources       | Expected Results                                                                                                                                                                                                                                                                                 |
@@ -481,13 +483,13 @@ C. Math Channel Operation
 
 
 D. Other Features
------------------
+~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                     | Test Steps                                                                                                                                                                                                                                                                 | Steps Resources                                                                                              | Expected Results                                                                                                                                                                                                       |
@@ -672,8 +674,7 @@ D. Other Features
 
 Test Results will be recorded in the following document:`Oscilloscope Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/oscilloscope_-_test_case.xlsx>`_
 
-| 
-| **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
+**Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A1a.JPG
    :width: 100px

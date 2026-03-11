@@ -379,13 +379,13 @@ Set the external MCLK frequency to be used when an external clock source is sele
    :align: center
    :width: 600px
 
-*\**Figure 7.* **Configuration** *Tab of the* :adi:`AD7175-2` *Eval+ software in Hardware Evaluation Mode*\**
+*\**Figure 7.**\ Configuration** Tab of the* :adi:`AD7175-2` *Eval+ software in Hardware Evaluation Mode*\**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/configuration_overview_fm_mode.png
    :align: center
    :width: 600px
 
-*\**Figure 8.* **Configuration** *Tab of the* :adi:`AD7175-2` *Eval+ Software in Functional Model Evaluation Mode*\**
+*\**Figure 8.**\ Configuration** Tab of the* :adi:`AD7175-2` *Eval+ Software in Functional Model Evaluation Mode*\**
 
 Waveform Tab (15)
 -----------------

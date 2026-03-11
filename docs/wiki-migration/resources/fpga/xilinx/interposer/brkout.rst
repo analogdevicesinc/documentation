@@ -70,8 +70,6 @@ The testing of the FMC-SDP adapter board is carried out by checking the connecti
 
 -  A new test can be run by pressing any key.
 
-.. _more-information-1:
-
 More information
 ================
 

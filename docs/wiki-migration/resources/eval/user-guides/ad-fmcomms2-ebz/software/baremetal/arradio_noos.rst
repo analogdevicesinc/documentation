@@ -73,7 +73,7 @@ The card must be partitioned in certain way (need raw and fat). The commands to 
 
 ::
 
-   [~/github/no-OS/arradio/c5soc]> sudo sfdisk /dev/sdb < format.sfdisk 
+   [~/github/no-OS/arradio/c5soc]> sudo sfdisk /dev/sdb < format.sfdisk
    Checking that no-one is using this disk right now ... OK
 
    Disk /dev/sdb: 7.5 GiB, 8026849280 bytes, 15677440 sectors
@@ -96,7 +96,7 @@ The card must be partitioned in certain way (need raw and fat). The commands to 
    >>> Created a new DOS disklabel with disk identifier 0xa9d78a8b.
    Created a new partition 1 of type 'W95 FAT32' and of size 500 MiB.
    /dev/sdb2: Created a new partition 3 of type 'Unknown' and of size 1 MiB.
-   /dev/sdb4: 
+   /dev/sdb4:
    New situation:
 
    Device     Boot   Start     End Sectors  Size Id Type
@@ -115,19 +115,19 @@ We may need to format the newly created partition.
 
 ::
 
-   [~/github/no-OS/arradio/c5soc]> sudo mkfs -t vfat /dev/sdb1 
+   [~/github/no-OS/arradio/c5soc]> sudo mkfs -t vfat /dev/sdb1
    mkfs.fat 3.0.28 (2015-05-16)
 
 Unmount and eject the sd-card. It is only formatted now. You don't need to format the same SD card again, simply copy the files if you have one already formatted.
 
 ::
 
-   [some-dir]> sudo udisksctl unmount -b /dev/sdX1 
+   [some-dir]> sudo udisksctl unmount -b /dev/sdX1
    [some-dir]> sudo udisksctl power-off -b /dev/sdX
 
 ::
 
-   [~/github/no-OS/arradio/c5soc]> sudo udisksctl unmount -b /dev/sdb1 
+   [~/github/no-OS/arradio/c5soc]> sudo udisksctl unmount -b /dev/sdb1
    Unmounted /dev/sdb1.
    [~/github/no-OS/arradio/c5soc]> sudo udisksctl power-off -b /dev/sdb
 
@@ -143,7 +143,7 @@ Insert the formatted SD card in your PC. The u-boot binary goes into the raw par
 
 ::
 
-   [~/github/no-OS/arradio/c5soc]> sudo dd if=bsp/arradio_c5soc_uboot.bin of=/dev/sdb3 
+   [~/github/no-OS/arradio/c5soc]> sudo dd if=bsp/arradio_c5soc_uboot.bin of=/dev/sdb3
    977+1 records in
    977+1 records out
    500468 bytes (500 kB, 489 KiB) copied, 0.0619104 s, 8.1 MB/s
@@ -153,12 +153,12 @@ Unmount and eject the sd-card.
 
 ::
 
-   [some-dir]> sudo udisksctl unmount -b /dev/sdX1 
+   [some-dir]> sudo udisksctl unmount -b /dev/sdX1
    [some-dir]> sudo udisksctl power-off -b /dev/sdX
 
 ::
 
-   [~/github/no-OS/arradio/c5soc]> sudo udisksctl unmount -b /dev/sdb1 
+   [~/github/no-OS/arradio/c5soc]> sudo udisksctl unmount -b /dev/sdb1
    Unmounted /dev/sdb1.
    [~/github/no-OS/arradio/c5soc]> sudo udisksctl power-off -b /dev/sdb
 
@@ -189,12 +189,12 @@ Unmount and eject the sd-card.
 
 ::
 
-   [some-dir]> sudo udisksctl unmount -b /dev/sdX1 
+   [some-dir]> sudo udisksctl unmount -b /dev/sdX1
    [some-dir]> sudo udisksctl power-off -b /dev/sdX
 
 ::
 
-   [~/github/no-OS/arradio/c5soc]> sudo udisksctl unmount -b /dev/sdb1 
+   [~/github/no-OS/arradio/c5soc]> sudo udisksctl unmount -b /dev/sdb1
    Unmounted /dev/sdb1.
    [~/github/no-OS/arradio/c5soc]> sudo udisksctl power-off -b /dev/sdb
 
@@ -232,7 +232,7 @@ Insert the sd-card into the Cyclone V SoC kit and power cycle the board. You sho
    I2C:   ready
    DRAM:  1 GiB
    MMC:   ALTERA DWMMC: 0
-   *** Warning - bad CRC, using default environment
+   ** Warning - bad CRC, using default environment
 
    In:    serial
    Out:   serial

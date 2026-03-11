@@ -95,158 +95,189 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``typedef enum {                               |
+    typedef enum {
+     ADXL372_X_AXIS,
+     ADXL372_Y_AXIS,
+     ADXL372_Z_AXIS
+    } adxl372_axis;
 
-|     ADXL372_X_AXIS,                            |
-|     ADXL372_Y_AXIS,                            |
-|     ADXL372_Z_AXIS                             |
-| } adxl372_axis;                                |
-|                                                |
-| typedef enum {                                 |
-|     ADXL372_STANDBY,                           |
-|     ADXL372_WAKE_UP,                           |
-|     ADXL372_INSTANT_ON,                        |
-|     ADXL372_FULL_BW_MEASUREMENT                |
-| } adxl372_op_mode;                             |
-|                                                |
-| typedef enum {                                 |
-|     ADXL372_BW_200HZ,                          |
-|     ADXL372_BW_400HZ,                          |
-|     ADXL372_BW_800HZ,                          |
-|     ADXL372_BW_1600HZ,                         |
-|     ADXL372_BW_3200HZ                          |
-| } adxl372_bandwidth;                           |
-|                                                |
-| typedef enum {                                 |
-|     ADXL372_DEFAULT,                           |
-|     ADXL372_LINKED,                            |
-|     ADXL372_LOOPED                             |
-| } adxl372_act_proc_mode;                       |
-|                                                |
-| typedef enum {                                 |
-|     ADXL372_ODR_400HZ,                         |
-|     ADXL372_ODR_800HZ,                         |
-|     ADXL372_ODR_1600HZ,                        |
-|     ADXL372_ODR_3200HZ,                        |
-|     ADXL372_ODR_6400HZ                         |
-| } adxl372_odr;                                 |
-|                                                |
-| typedef enum {                                 |
-|     ADXL372_INSTANT_ON_LOW_TH,                 |
-|     ADXL372_INSTANT_ON_HIGH_TH                 |
-| } adxl372_instant_on_th_mode;                  |
-|                                                |
-| typedef enum {                                 |
-|     ADXL372_WUR_52ms,                          |
-|     ADXL372_WUR_104ms,                         |
-|     ADXL372_WUR_208ms,                         |
-|     ADXL372_WUR_512ms,                         |
-|     ADXL372_WUR_2048ms,                        |
-|     ADXL372_WUR_4096ms,                        |
-|     ADXL372_WUR_8192ms,                        |
-|     ADXL372_WUR_24576ms                        |
-| } adxl372_wakeup_rate;                         |
-|                                                |
-| typedef enum {                                 |
-|     ADXL372_ACTIVITY,                          |
-|     ADXL372_ACTIVITY2,                         |
-|     ADXL372_INACTIVITY                         |
-| } adxl372_th_activity;                         |
-|                                                |
-| typedef enum {                                 |
-|     ADXL372_FILTER_SETTLE_370,                 |
-|     ADXL372_FILTER_SETTLE_16                   |
-| } adxl372_filter_settle;                       |
-|                                                |
-| typedef enum {                                 |
-|     ADXL372_XYZ_FIFO,                          |
-|     ADXL372_X_FIFO,                            |
-|     ADXL372_Y_FIFO,                            |
-|     ADXL372_XY_FIFO,                           |
-|     ADXL372_Z_FIFO,                            |
-|     ADXL372_XZ_FIFO,                           |
-|     ADXL372_YZ_FIFO,                           |
-|     ADXL372_XYZ_PEAK_FIFO,                     |
-| } adxl372_fifo_format;                         |
-|                                                |
-| typedef enum {                                 |
-|     ADXL372_FIFO_BYPASSED,                     |
-|     ADXL372_FIFO_STREAMED,                     |
-|     ADXL372_FIFO_TRIGGERED,                    |
-|     ADXL372_FIFO_OLD_SAVED                     |
-| } adxl372_fifo_mode;                           |
-|                                                |
-| typedef struct {                               |
-|     adxl372_fifo_mode fifo_mode;               |
-|     adxl372_fifo_format fifo_format;           |
-|     uint16_t fifo_samples;                     |
-| } adxl372_fifo_config;                         |
-|                                                |
-| typedef struct {                               |
-|     uint16_t thresh;                           |
-|     bool referenced;                           |
-|     bool enable;                               |
-| } adxl372_activity_threshold;                  |
-|                                                |
-| typedef struct {                               |
-|     uint16_t x;                                |
-|     uint16_t y;                                |
-|     uint16_t z;                                |
-| } adxl372_xyz_accel_data;                      |
-|                                                |
-| typedef struct {                               |
-|     bool data_rdy;                             |
-|     bool fifo_rdy;                             |
-|     bool fifo_full;                            |
-|     bool fifo_ovr;                             |
-|     bool inactivity;                           |
-|     bool activity;                             |
-|     bool awake;                                |
-|     bool low_operation;                        |
-| } adxl372_irq_config;                          |
-|                                                |
-| typedef struct {                               |
-|     /* SPI */                                  |
-|     spi_desc            *spi_desc;             |
-|     /* GPIO */                                 |
-|     gpio_desc           *gpio_int1;            |
-|     gpio_desc           *gpio_int2;            |
-|     /* Device Settings */                      |
-|     adxl372_bandwidth       bw;                |
-|     adxl372_odr         odr;                   |
-|     adxl372_wakeup_rate     wur;               |
-|     adxl372_act_proc_mode       act_proc_mode; |
-|     adxl372_instant_on_th_mode  th_mode;       |
-|     adxl372_fifo_config     fifo_config;       |
-| } adxl372_dev;                                 |
-|                                                |
-| typedef struct {                               |
-|     /* SPI */                                  |
-|     spi_init_param          spi_init;          |
-|     /* GPIO */                                 |
-|     int8_t              gpio_int1;             |
-|     int8_t              gpio_int2;             |
-|     /* Device Settings */                      |
-|     adxl372_bandwidth       bw;                |
-|     adxl372_odr         odr;                   |
-|     adxl372_wakeup_rate     wur;               |
-|     adxl372_act_proc_mode       act_proc_mode; |
-|     adxl372_instant_on_th_mode  th_mode;       |
-|     adxl372_activity_threshold  activity_th;   |
-|     adxl372_activity_threshold  activity2_th;  |
-|     adxl372_activity_threshold  inactivity_th; |
-|     uint8_t             activity_time;         |
-|     uint16_t            inactivity_time;       |
-|     adxl372_filter_settle       filter_settle; |
-|     adxl372_fifo_config     fifo_config;       |
-|     adxl372_irq_config      int1_config;       |
-|     adxl372_irq_config      int2_config;       |
-|     adxl372_op_mode         op_mode;           |
-| } adxl372_init_param;``                        |
-+------------------------------------------------+
+::
+
+    typedef enum {
+     ADXL372_STANDBY,
+     ADXL372_WAKE_UP,
+     ADXL372_INSTANT_ON,
+     ADXL372_FULL_BW_MEASUREMENT
+    } adxl372_op_mode;
+
+::
+
+    typedef enum {
+     ADXL372_BW_200HZ,
+     ADXL372_BW_400HZ,
+     ADXL372_BW_800HZ,
+     ADXL372_BW_1600HZ,
+     ADXL372_BW_3200HZ
+    } adxl372_bandwidth;
+
+::
+
+    typedef enum {
+     ADXL372_DEFAULT,
+     ADXL372_LINKED,
+     ADXL372_LOOPED
+    } adxl372_act_proc_mode;
+
+::
+
+    typedef enum {
+     ADXL372_ODR_400HZ,
+     ADXL372_ODR_800HZ,
+     ADXL372_ODR_1600HZ,
+     ADXL372_ODR_3200HZ,
+     ADXL372_ODR_6400HZ
+    } adxl372_odr;
+
+::
+
+    typedef enum {
+     ADXL372_INSTANT_ON_LOW_TH,
+     ADXL372_INSTANT_ON_HIGH_TH
+    } adxl372_instant_on_th_mode;
+
+::
+
+    typedef enum {
+     ADXL372_WUR_52ms,
+     ADXL372_WUR_104ms,
+     ADXL372_WUR_208ms,
+     ADXL372_WUR_512ms,
+     ADXL372_WUR_2048ms,
+     ADXL372_WUR_4096ms,
+     ADXL372_WUR_8192ms,
+     ADXL372_WUR_24576ms
+    } adxl372_wakeup_rate;
+
+::
+
+    typedef enum {
+     ADXL372_ACTIVITY,
+     ADXL372_ACTIVITY2,
+     ADXL372_INACTIVITY
+    } adxl372_th_activity;
+
+::
+
+    typedef enum {
+     ADXL372_FILTER_SETTLE_370,
+     ADXL372_FILTER_SETTLE_16
+    } adxl372_filter_settle;
+
+::
+
+    typedef enum {
+     ADXL372_XYZ_FIFO,
+     ADXL372_X_FIFO,
+     ADXL372_Y_FIFO,
+     ADXL372_XY_FIFO,
+     ADXL372_Z_FIFO,
+     ADXL372_XZ_FIFO,
+     ADXL372_YZ_FIFO,
+     ADXL372_XYZ_PEAK_FIFO,
+    } adxl372_fifo_format;
+
+::
+
+    typedef enum {
+     ADXL372_FIFO_BYPASSED,
+     ADXL372_FIFO_STREAMED,
+     ADXL372_FIFO_TRIGGERED,
+     ADXL372_FIFO_OLD_SAVED
+    } adxl372_fifo_mode;
+
+::
+
+    typedef struct {
+     adxl372_fifo_mode fifo_mode;
+     adxl372_fifo_format fifo_format;
+     uint16_t fifo_samples;
+    } adxl372_fifo_config;
+
+::
+
+    typedef struct {
+     uint16_t thresh;
+     bool referenced;
+     bool enable;
+    } adxl372_activity_threshold;
+
+::
+
+    typedef struct {
+     uint16_t x;
+     uint16_t y;
+     uint16_t z;
+    } adxl372_xyz_accel_data;
+
+::
+
+    typedef struct {
+     bool data_rdy;
+     bool fifo_rdy;
+     bool fifo_full;
+     bool fifo_ovr;
+     bool inactivity;
+     bool activity;
+     bool awake;
+     bool low_operation;
+    } adxl372_irq_config;
+
+::
+
+    typedef struct {
+     /* SPI */
+     spi_desc            *spi_desc;
+     /* GPIO */
+     gpio_desc           *gpio_int1;
+     gpio_desc           *gpio_int2;
+     /* Device Settings */
+     adxl372_bandwidth       bw;
+     adxl372_odr         odr;
+     adxl372_wakeup_rate     wur;
+     adxl372_act_proc_mode       act_proc_mode;
+     adxl372_instant_on_th_mode  th_mode;
+     adxl372_fifo_config     fifo_config;
+    } adxl372_dev;
+
+::
+
+    typedef struct {
+     /* SPI */
+     spi_init_param          spi_init;
+     /* GPIO */
+     int8_t              gpio_int1;
+     int8_t              gpio_int2;
+     /* Device Settings */
+     adxl372_bandwidth       bw;
+     adxl372_odr         odr;
+     adxl372_wakeup_rate     wur;
+     adxl372_act_proc_mode       act_proc_mode;
+     adxl372_instant_on_th_mode  th_mode;
+     adxl372_activity_threshold  activity_th;
+     adxl372_activity_threshold  activity2_th;
+     adxl372_activity_threshold  inactivity_th;
+     uint8_t             activity_time;
+     uint16_t            inactivity_time;
+     adxl372_filter_settle       filter_settle;
+     adxl372_fifo_config     fifo_config;
+     adxl372_irq_config      int1_config;
+     adxl372_irq_config      int2_config;
+     adxl372_op_mode         op_mode;
+    } adxl372_init_param;
 
 No-OS Downloads
 ---------------

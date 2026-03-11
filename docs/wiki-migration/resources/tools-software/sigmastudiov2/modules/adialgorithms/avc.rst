@@ -3,10 +3,21 @@
 Automatic Volume Control
 ========================
 
-| |avc.png|
-| ===== Description ===== This algorithm is intended for TV sound applications. The perceived volume level often changes considerably from channel to channel, and also within a channel, especially for commercials. This algorithm will automatically compensate for the different levels.
-| ===== Usage ===== This algorithm supports growing the input channels for 5.1/7.1 applications. However, the volume detection is calculated from the first 2 inputs only (left and right) and the resulting level compensation and delay is applied to all other channels.
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/avc.png
+   :alt: avc.png
+
+Description
+-----------
+
+This algorithm is intended for TV sound applications. The perceived volume level often changes considerably from channel to channel, and also within a channel, especially for commercials. This algorithm will automatically compensate for the different levels.
+
+Usage
+-----
+
+This algorithm supports growing the input channels for 5.1/7.1 applications. However, the volume detection is calculated from the first 2 inputs only (left and right) and the resulting level compensation and delay is applied to all other channels.
+
+Targets Supported
+-----------------
 
 ==== ========== ================ ============= ================
 Name ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -14,11 +25,11 @@ Name ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 AVC  S          S                S             NA
 ==== ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
------
+~~~~~
 
 ====== ===== ====================
 Name   Type  Description
@@ -28,7 +39,7 @@ Input1 Audio Second input channel
 ====== ===== ====================
 
 Output
-------
+~~~~~~
 
 ======= ===== =====================
 Name    Type  Description
@@ -37,7 +48,7 @@ Output0 Audio First output channel
 Output1 Audio Second output channel
 ======= ===== =====================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +-----------------+--------------------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -120,7 +131,7 @@ ADSP-215xx 3718         648          292
 ========== ============ ============ =============
 
 MIPS (Delay = Block size )
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 ========== ============= ============== ==============
 Processor  Default(2 Ch) 4 Growth(4 Ch) 8 Growth(8 Ch)
@@ -130,9 +141,6 @@ ADSP-214xx 18.6          20.91          25.24
 ========== ============= ============== ==============
 
 ADSP-215xx Example Schematic
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
-| |image1|
-
-.. |avc.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/avc.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/exampleschematic.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/exampleschematic.png

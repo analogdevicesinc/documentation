@@ -3,15 +3,21 @@
 Square Summation
 ================
 
-| 
-| |sqsum.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/sqsum.png
+   :alt: sqsum.png
 
 Description
 -----------
 
-| The Square Summation block adds the square of the input to the sum of previous square of inputs and outputs the result of sum.
-| ===== Usage ===== The Reset pin is available to reset the summation result. Other than the zero to reset pin, resets the summation value.
-| ===== Targets Supported =====
+The Square Summation block adds the square of the input to the sum of previous square of inputs and outputs the result of sum.
+
+Usage
+-----
+
+The Reset pin is available to reset the summation result. Other than the zero to reset pin, resets the summation value.
+
+Targets Supported
+-----------------
 
 +------------------+------------+------------------+---------------+------------------+
 | Name             | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -54,5 +60,3 @@ DSP Parameters
 --------------
 
 No DSP parameters
-
-.. |sqsum.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/sqsum.png

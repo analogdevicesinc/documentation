@@ -9,8 +9,6 @@ The AD-FMCOMMS[2345]-EBZ and ARRADIO cards are a high-speed analog modules desig
 
 The difference between the AD9361 (2 Rx, 2 Tx) and AD9364 (1 Rx, 1 Tx) is the number of channels. Software, HDL, pinout, etc - is all exactly the same.
 
-| 
-
 Available Hardware
 ------------------
 

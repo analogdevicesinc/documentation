@@ -21,7 +21,7 @@ Supported Processors and EZ-KITs
 
 The following processors and silicon revisions are supported by the Yocto Linux for ADSP-SC5xx product.
 
-\* ADSP-SC594 SOM-EZ in combination with the ADSP-EZKIT-CRR Carrier Board
+- ADSP-SC594 SOM-EZ in combination with the ADSP-EZKIT-CRR Carrier Board
 
 System Requirements
 -------------------
@@ -71,5 +71,6 @@ This is the first release of the Yocto Linux for ADSP-SC594 Processor. This is a
 
 -  Profiling support via oProfiler, Ftrace, Strace and perf
 
-| 
-| ---- \**HOME PAGE: \*\* :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`
+--------------
+
+**HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`

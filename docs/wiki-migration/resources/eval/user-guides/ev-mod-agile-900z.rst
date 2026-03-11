@@ -57,8 +57,6 @@ Other notable features of AgileNet IP are:
 
 This module is connected to the EV-COG-AGILE-900Z base board through the castellation pins. There are 51 castellation pins which are soldered down to the EV-COG-AGILE-900Z board. These castellations bring out UART, I2C, SPI and GPIO lines from the module to the COG board. The power supply from the COG is routed to the module as well. The MMCX connector on the module is used to connect the antenna.
 
-.. _ev-mod-agile-900z-1:
-
 EV-MOD-AGILE-900Z
 ~~~~~~~~~~~~~~~~~
 

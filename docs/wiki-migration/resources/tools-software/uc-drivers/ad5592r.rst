@@ -98,7 +98,7 @@ Downloads
    :class: download
 
    
-   -  \**AD5592R Driver: \*\* :git-no-OS:`drivers/adc-dac/ad5592r`
+   -  **AD5592R Driver:** :git-no-OS:`drivers/adc-dac/ad5592r`
    -  **Generic Platform Drivers** :git-no-OS:`drivers/platform/generic`
    
 
@@ -106,8 +106,7 @@ Downloads
 Using the API
 -------------
 
-| The driver can only work together with a structure that holds the state of a device, where state means all information about the device. This structure will henceforth be referred as an instance of a driver.
-| All driver functions take a handler of a driver instance as the first argument. This allows the driver to be used with multiple devices simultaneously, without the need to replicate the .c and .h files.
+The driver can only work together with a structure that holds the state of a device, where state means all information about the device. This structure will henceforth be referred as an instance of a driver. All driver functions take a handler of a driver instance as the first argument. This allows the driver to be used with multiple devices simultaneously, without the need to replicate the .c and .h files.
 
 Before using any API call, an instance of the driver must first be created and then initialized using the ad5592r_init() which has the following parameters:
 

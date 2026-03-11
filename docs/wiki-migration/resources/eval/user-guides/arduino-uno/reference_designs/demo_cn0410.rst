@@ -3,11 +3,11 @@ EVAL-CN0410-ARDZ Shield Demo
 
 :adi:`CN0410` is an Arduino compatible shield that is optimized for smart agriculture to control current passing through LED's. The :adi:`CN0410` is used along the the CFTL-LED Bar that has LED's with specific wavelengths that plants utilize.
 
-| 
-| The circuit shown below is a complete 3-channel single-supply, 16-bit unbuffered voltage output DAC that maintains ±2 LSB integral and differential nonlinearity by utilizing a CMOS DAC. This circuit has a voltage to current conversion that controls the amount of current passing through an LED by using a MOSFET in its configuration. The circuit also has an isoSPI repeater that allows multiple boards to be controlled with a single master.
+The circuit shown below is a complete 3-channel single-supply, 16-bit unbuffered voltage output DAC that maintains ±2 LSB integral and differential nonlinearity by utilizing a CMOS DAC. This circuit has a voltage to current conversion that controls the amount of current passing through an LED by using a MOSFET in its configuration. The circuit also has an isoSPI repeater that allows multiple boards to be controlled with a single master.
 
-| 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0410.jpg
+   :align: center
+   :width: 600px
 
 Demo Requirements
 -----------------
@@ -82,8 +82,6 @@ Following is the UART configuration.
      Both NL and CR
      9600 baud
 
-| 
-
 Obtaining the Source Code
 -------------------------
 
@@ -107,6 +105,3 @@ The CN0410_example is a C++ Arduino sketch.
 All files are in the same folder as the .ino file and include the source and header files related to CN0411 software application that implement the CLI interface and functionality.
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0410.jpg
-   :width: 600px

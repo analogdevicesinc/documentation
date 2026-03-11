@@ -48,17 +48,17 @@ SPI PMOD Connector (P1)
 Connector Pin No. Pin Name ADuCM3029 Pin Function   ADuCM3029 Port No.
 ========= ======= ======== ======================== ==================
 SPI_PMOD  1       CS       SPI1_CS0/GPIO25          P1_09
-:::       2       MOSI     SPI1_MOSI/GPIO23         P1_07
-:::       3       MISO     SPI1_MISO/GPIO24         P1_08
-:::       4       SCLK     SPI1_SCLK/GPIO22         P1_06
-:::       5       DGND     DGND                     
-:::       6       3.3V     +3.3V                    
-:::       7       IO16     XINT1_WAKE2/GPIO16       P1_00
-:::       8       RESET    SYS_HWRST_N              
-:::       9       RDY      SPI1_RDY/TMR0_OUT/GPIO14 P0_14
-:::       10      IO12     SPT0_AD0/GPIO12          P0_12
-:::       11      DGND     DGND                     
-:::       12      3.3V     +3.3V                    
+          2       MOSI     SPI1_MOSI/GPIO23         P1_07
+          3       MISO     SPI1_MISO/GPIO24         P1_08
+          4       SCLK     SPI1_SCLK/GPIO22         P1_06
+          5       DGND     DGND                     
+          6       3.3V     +3.3V                    
+          7       IO16     XINT1_WAKE2/GPIO16       P1_00
+          8       RESET    SYS_HWRST_N              
+          9       RDY      SPI1_RDY/TMR0_OUT/GPIO14 P0_14
+          10      IO12     SPT0_AD0/GPIO12          P0_12
+          11      DGND     DGND                     
+          12      3.3V     +3.3V                    
 ========= ======= ======== ======================== ==================
 
 Test Points
@@ -176,8 +176,6 @@ Setting up the Hardware
 
 |switch_config.png|
 
-<wrap center 30%>
-
 4. From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
 
 
@@ -201,8 +199,6 @@ System Setup Using Raspberry Pi
 -------------------------------
 
 The \*\* EVAL-AD5592R-PMDZ \*\* can be used with a Raspberry Pi.
-
-.. _demo-requirements-1:
 
 Demo Requirements
 ~~~~~~~~~~~~~~~~~
@@ -238,8 +234,6 @@ Follow the configuration procedure under **Configuring the SD Card for Raspberry
 ::
 
    dtoverlay=rpi-ad5592r
-
-.. _setting-up-the-hardware-1:
 
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -280,8 +274,7 @@ To be able to connect your device, the software must be able to create a context
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-
-| Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to access it.
 
 For RPI Direct Local Access:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -323,9 +316,7 @@ Example:
 
    analog@analog:~$ iio_attr -a -C
 
-|
-
-| The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the ADICUP3029 platform.
+The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the ADICUP3029 platform.
 
 ::
 
@@ -339,14 +330,12 @@ Example:
 
    iio_reg -u ip:<ip address> ad5592r 0x02
 
-| 
-
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
@@ -376,8 +365,9 @@ Access the DMM panel to see the instantaneous reading of the device temperature 
 PyADI-IIO
 ~~~~~~~~~
 
-| :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a Python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO Python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
-| Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
+:doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a Python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO Python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+
+Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
 
 Running the example
 ^^^^^^^^^^^^^^^^^^^

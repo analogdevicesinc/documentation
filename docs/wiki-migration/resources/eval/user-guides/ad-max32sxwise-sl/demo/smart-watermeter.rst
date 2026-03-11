@@ -110,13 +110,13 @@ Sensor Board Assembly
    For the needed components for this phase, see **Microcontroller/Sensors** and **Microcontroller/Sensor Setup** under :doc:`Hardware Requirements </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
 
 
--  <WRAP> Insert one **CR123A battery (3 V to 4.7 V)** into the battery holder (BT1) of the :adi:`MAX32670-SX-ARDZ` Base Board.
+-   Insert one **CR123A battery (3 V to 4.7 V)** into the battery holder (BT1) of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
-|image2| To **check for the battery polarity** in the BT1 connector, refer to the figure above (right). The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.</WRAP>
+|image2| To **check for the battery polarity** in the BT1 connector, refer to the figure above (right). The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.
 
--  <WRAP> Connect the :adi:`EV-FLOWMETER-ARDZ` Sensor Node to the :adi:`MAX32670-SX-ARDZ` Base Board by aligning the corresponding Arduino headers on each board.
+-   Connect the :adi:`EV-FLOWMETER-ARDZ` Sensor Node to the :adi:`MAX32670-SX-ARDZ` Base Board by aligning the corresponding Arduino headers on each board.
 
-|image3| </WRAP>
+|image3| 
 
 -  Connect the :adi:`MAX32625PICO` programming adapter to the :adi:`MAX32670-SX-ARDZ` Base Board through the 10-pin ribbon cable.
 
@@ -129,7 +129,7 @@ Sensor Board Assembly
 
 .. raw:: html
 
-   <details><summary>**How to flash the firmware image in the MAX32625PICO**</summary>
+   <details><summary>**How to flash the firmware image in the MAX32625PICO**
 
 -  Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
    -  Do not connect the :adi:`MAX32625PICO` to the :adi:`MAX32670-SX-ARDZ` Base Board yet.
@@ -149,9 +149,9 @@ Sensor Board Assembly
    
 
 
--  <WRAP> Connect the :adi:`MAX32625PICO` programming adapter to the Host PC using the micro USB to USB cable.
+-   Connect the :adi:`MAX32625PICO` programming adapter to the Host PC using the micro USB to USB cable.
 
-|image5| </WRAP>
+|image5| 
 
 .. container:: indent
 
@@ -183,9 +183,9 @@ Gateway Assembly
 |image7|
 
 -  Connect the Raspberry Pi to the Host PC using the LAN cable.
--  <WRAP> Power on the Raspberry Pi using the Raspberry Pi 4 Power Supply Adapter.
+-   Power on the Raspberry Pi using the Raspberry Pi 4 Power Supply Adapter.
 
-</WRAP>
+
 
 .. container:: indent
 
@@ -217,7 +217,7 @@ Environment Assembly
    
 
 
--  <WRAP> Connect the wires of the **Flow Transducer with Pipe** and the **resistive temperature detector (RTD)** to the sensor board.
+-   Connect the wires of the **Flow Transducer with Pipe** and the **resistive temperature detector (RTD)** to the sensor board.
 
 |image8| Follow the connections shown above. Repeat this step for the other sensor board and transducer.
 
@@ -226,9 +226,9 @@ Environment Assembly
    An **RTD** or a **dummy sensor (1.0 kΩ resistor)** is required for each terminal in order for the board to run and capture the flow rate.
 
 
-</WRAP>
 
--  <WRAP> Set up the **water container** as shown below.
+
+-   Set up the **water container** as shown below.
 
 |image9| |image10|
 
@@ -239,7 +239,7 @@ Environment Assembly
    
 
 
-</WRAP>
+
 
 .. container:: indent
 
@@ -293,24 +293,24 @@ Configuring the Sensor Board
    
 
 
--  <WRAP> If `AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`_ is already downloaded, extracted, and installed, go to **C:\\Analog Devices\\AD-MAX32WISE-SLZ-Rel1.0.0\\Software\\ad_max32wise_src\\bin\\flow**.
+-   If `AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`_ is already downloaded, extracted, and installed, go to **C:\\Analog Devices\\AD-MAX32WISE-SLZ-Rel1.0.0\\Software\\ad_max32wise_src\\bin\\flow**.
 
 The **flow folder** should contain the BIN, ELF, and HEX file.
 
-|image11| </WRAP>
+|image11| 
 
--  <WRAP> Go to My Computer and search for the **DAPLINK drive**. Drag and drop (or copy and paste) the **.bin firmware file** directly into the DAPLINK drive.
+-   Go to My Computer and search for the **DAPLINK drive**. Drag and drop (or copy and paste) the **.bin firmware file** directly into the DAPLINK drive.
 
 .. tip::
 
    To check if the flashing is successful, check the DAPLINK directory and make sure there is no **FAIL.TXT** file. In case there is, repeat the drag and drop step.
 
 
-</WRAP>
 
--  <WRAP> Reset the :adi:`MAX32670-SX-ARDZ` Base Board by pressing the **S1 reset button**. </WRAP>
 
--  <WRAP> Open the `Real Term serial monitor <http://sourceforge.net/project/showfiles.php?group_id=67297>`_ to check if the firmware has been loaded correctly. Make sure to use the following settings:
+-   Reset the :adi:`MAX32670-SX-ARDZ` Base Board by pressing the **S1 reset button**. 
+
+-   Open the `Real Term serial monitor <http://sourceforge.net/project/showfiles.php?group_id=67297>`_ to check if the firmware has been loaded correctly. Make sure to use the following settings:
 
 .. container:: center round box
 
@@ -327,10 +327,10 @@ The **flow folder** should contain the BIN, ELF, and HEX file.
 
    |image12|
 
-</WRAP>
+
 
 -  Once configured, open the serial monitor by clicking **Open** on the **Port** tab.
--  <WRAP> Take note of the **DevEUI (64-bit end-device identifier)**. This will be used later during the gateway setup.
+-   Take note of the **DevEUI (64-bit end-device identifier)**. This will be used later during the gateway setup.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/deveui.png
    :align: center
@@ -341,7 +341,7 @@ The **flow folder** should contain the BIN, ELF, and HEX file.
    To **redisplay the DevEUI** on the screen, **reset the** :adi:`MAX32670-SX-ARDZ` **Base Board** by pressing the S1 button.
 
 
-</WRAP>
+
 
 Imaging the SD Card with ChirpStack OS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -365,7 +365,7 @@ Imaging the SD Card with ChirpStack OS
 -  Navigate to the location where the downloaded `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_ is saved.
 -  Select target and choose the targeted micro SD card drive.
 -  Click **Flash** to start the burning process of the image in the chosen SD card.
--  <WRAP> Wait until it is done.
+-   Wait until it is done.
 
 |image14|
 
@@ -374,7 +374,7 @@ Imaging the SD Card with ChirpStack OS
    In case the **flashing fails**, consult this guide to resolve the issue: `Balena Etcher FAQs <https://etcher.balena.io/#FAQs>`_.
 
 
-</WRAP>
+
 
 .. container:: indent
 
@@ -405,31 +405,31 @@ Configuring the Gateway
 
 
 -  Insert the imaged SD card on the designated slot on the Raspberry Pi.
--  <WRAP> Connect the Host PC to ChirpStack WiFi.
+-   Connect the Host PC to ChirpStack WiFi.
 
 .. tip::
 
    When prompted to enter password, use **ChirpStackAP** (case-sensitive).
 
 
-</WRAP>
+
 
 -  Open command prompt or terminal on the Host PC.
--  <WRAP> On the terminal, enter: <code> ssh admin@192.168.0.1 </code> </WRAP>
+-   On the terminal, enter: <code> ssh admin@192.168.0.1 </code> 
 
--  <WRAP> SSH connection will ask for the password input. Use below credentials:
+-   SSH connection will ask for the password input. Use below credentials:
 -  **Username:** admin
 -  **Password:** admin
 -  **StaticIP:** 192.168.0.1
 
-</WRAP>
+
 
 -  Once connected, check the assigned ChirpStack IP by typing **ifconfig**.
 
 
 |image15|
 
--  <WRAP> This will show all configs, look for **eth0** and **save the IP address assigned to it**.
+-   This will show all configs, look for **eth0** and **save the IP address assigned to it**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/eth0_ip.png
    :align: center
@@ -440,13 +440,13 @@ Configuring the Gateway
    In this example, the IP assigned is **169.254.117.207**. This will be used in **Installing the GUI and Accessing the Gateway** under :doc:`Setting up a Self-Hosted Application Server </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
 
 
-</WRAP>
 
--  <WRAP> Open the Raspberry Pi terminal, then enter:
+
+-   Open the Raspberry Pi terminal, then enter:
 
 <code> sudo gateway-config </code> This will **open an SSH client** to configure the gateway.
 
-</WRAP>
+
 
 .. container:: indent
 
@@ -458,9 +458,9 @@ Configuring the Gateway
 -  Choose **AU915**. Click **OK**.
 -  Choose **Channels 0 to 7 + 64**. Click **OK**.
 -  The concentrator restarts and goes back to the main menu.
--  <WRAP> Quit the main menu.
+-   Quit the main menu.
 
-</WRAP>
+
 
 .. container:: indent
 
@@ -489,25 +489,25 @@ Setting up a Self-Hosted Application Server
    **Configuring the Host PC for the Gateway**
 
 
--  <WRAP> Access **Advance Firewall settings** in your computer.
+-   Access **Advance Firewall settings** in your computer.
 
-|\|| </WRAP>
+|\|| 
 
--  <WRAP> Create a new **Inbound Rule**.
+-   Create a new **Inbound Rule**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/inbound_rule_1.png
    :align: center
    :width: 700px
 
-</WRAP>
 
--  <WRAP> **Configure the Inbound Rule** as shown below.
+
+-   **Configure the Inbound Rule** as shown below.
 
 
 
 .. raw:: html
 
-   <details><summary>**Step-by-step configuration of a new ChirpStack Inbound Rule**</summary>
+   <details><summary>**Step-by-step configuration of a new ChirpStack Inbound Rule**
 
 |image16| |image17| |image18| |image19| |image20| |image21| |image22|
 
@@ -516,9 +516,7 @@ Setting up a Self-Hosted Application Server
    </details>
 
 
-   | </WRAP>
 
-|
 
 .. container:: indent
 
@@ -526,7 +524,7 @@ Setting up a Self-Hosted Application Server
 
 
 -  Run the `ADI Wireless Sensor Hub Standalone Software <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`_ with administrator privileges. This will start the initialization process and run the process on your PC.
--  <WRAP> Check and **save the IP address assigned to the Raspberry Pi gateway**. The server will show all connections available; select the IP of the connector you used.
+-   Check and **save the IP address assigned to the Raspberry Pi gateway**. The server will show all connections available; select the IP of the connector you used.
 
 .. tip::
 
@@ -539,9 +537,9 @@ Setting up a Self-Hosted Application Server
    This information will be used in **Setting up a Local Host URL for the Application Server** under :doc:`Connecting a Sensor Node to the Gateway </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` to integrate data from the gateway to the GUI.
 
 
-</WRAP>
 
--  <WRAP> Use the assigned ChirpStack IP address saved earlier to access its configuration interface **by adding the ChirpStack Port (8080)** to the end of IP address. Open a page in the browser using **[saved IP address]:8080** as the URL.
+
+-   Use the assigned ChirpStack IP address saved earlier to access its configuration interface **by adding the ChirpStack Port (8080)** to the end of IP address. Open a page in the browser using **[saved IP address]:8080** as the URL.
 
 .. tip::
 
@@ -551,7 +549,7 @@ Setting up a Self-Hosted Application Server
    If you haven't saved the IP address, **revisit steps 3 to 7** in **Opening the SSH Client** under :doc:`Configuring the Gateway </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
 
 
-</WRAP>
+
 
 -  This will open the login page. Enter the same credentials we used to establish an SSH connection with the ChirpStack Gateway.
 
@@ -580,7 +578,7 @@ Connecting a Sensor Node to the Gateway
 
 |image24|
 
--  <WRAP> Answer all required information under the **General** tab, and then click **Submit** once done.
+-   Answer all required information under the **General** tab, and then click **Submit** once done.
 
 The following shows the configuration required to add a sensor node:
 
@@ -609,7 +607,7 @@ The following shows the configuration required to add a sensor node:
    
 
 
-</WRAP>
+
 
 .. container:: indent
 
@@ -622,7 +620,7 @@ The following shows the configuration required to add a sensor node:
 
 |image25|
 
--  <WRAP> Open the Application created and **add a device**.
+-   Open the Application created and **add a device**.
 
 The following details are also needed:
 
@@ -635,9 +633,9 @@ The following details are also needed:
    In naming the devices, you must include a **specific keyword** (not case-sensitive) to distinguish the sensor nodes shown on the GUI. In this case, the two sensor nodes can be named **flow-1** and **flow-2** respectively.
 
 
-|image26| </WRAP>
+|image26| 
 
--  <WRAP> Once done, click **Submit**. Then, **repeat steps 5 and 6** for the other sensor board.
+-   Once done, click **Submit**. Then, **repeat steps 5 and 6** for the other sensor board.
 
 .. tip::
 
@@ -647,9 +645,9 @@ The following details are also needed:
    If you do not see a JoinRequest and JoinAccept, click on the **Flush OTAA devices** button.
 
 
-</WRAP>
 
--  <WRAP> Enter the **Application key** and hit **Submit** once done.
+
+-   Enter the **Application key** and hit **Submit** once done.
 
 
 |image27|
@@ -662,7 +660,7 @@ The following details are also needed:
    The App Key included in the LoraMAC was used as is for the purpose of evaluation. Users can generate the App Key and add it in the source code on their own.
 
 
-</WRAP>
+
 
 .. container:: indent
 
@@ -670,12 +668,12 @@ The following details are also needed:
 
 
 -  In the Applications tab, select and open **WiSe_Sensors**.
--  <WRAP> Inside the **ADI_SENSOR_NODE** application, navigate to the **Integrations** tab.
+-   Inside the **ADI_SENSOR_NODE** application, navigate to the **Integrations** tab.
 
-|image28| </WRAP>
+|image28| 
 
 -  In the **Integrations** tab, select the **edit** button in the **HTTP Configuration** section.
--  <WRAP> Change the **Event Endpoint URL** to the IP of the adapter your gateway is connected.
+-   Change the **Event Endpoint URL** to the IP of the adapter your gateway is connected.
 
 |image29|
 
@@ -687,7 +685,7 @@ The following details are also needed:
    If you haven't saved the IP address, **revisit steps 1 to 2** in **Installing the GUI and Accessing the Gateway** under :doc:`Setting up a Self-Hosted Application Server </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
 
 
-</WRAP>
+
 
 -  After updating the HTTP Integration endpoint URL, submit the changes by pressing **Submit**.
 -  A pop-up message will appear saying **HTTP Integration updated**.
@@ -726,24 +724,26 @@ Resources
 
 -  :doc:`EV-FLOWMETER-ARDZ Sensor for Flow Rate Metering </wiki-migration/resources/eval/user-guides/ev-flowmeter-ardz>`
 
-| 
-| ===== Design and Integration Files =====
+Design and Integration Files
+----------------------------
 
 .. admonition:: Download
    :class: download
 
    
-   | `AD-MAX32SXWISE-SL Design Support Package <https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ad-max32sxwise-sl-designsupport.zip>`_
-   | \* Schematic
+   `AD-MAX32SXWISE-SL Design Support Package <https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ad-max32sxwise-sl-designsupport.zip>`_
    
+   -  Schematic
    -  Bill of Materials
    -  Layout
    -  Fabrication Files
    
 
 
-| 
-| ===== Help and Support ===== For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
 
 .. hint::
 

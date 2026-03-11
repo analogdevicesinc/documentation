@@ -66,7 +66,7 @@ Connections to M2k
    1- - AD831 GND (outer part of the SMA connector)
      2+ -
      2- -
-     W1 –  
+     W1 –
      DIO0 - ADF4351 CLK
      DIO1 - ADF4351 DATA
      DIO2 - ADF4351 LE
@@ -105,7 +105,7 @@ Controlling the radio implies controlling the output voltage frequency of ADF435
 
 -  Install libm2k. Instructions can be found :doc:`here </wiki-migration/university/tools/m2k/libm2k/libm2k>`.
 -  Compile the gr-m2k blocks for your PC. Check the steps :doc:`here </wiki-migration/university/tools/m2k/libm2k/gr-m2k>`.
--  Download the ADF4350 driver from :git-no-OS:`no-OS page <drivers/frequency/adf4350>`.
+-  Download the ADF4350 driver from `no-OS page <https://github.com/analogdevicesinc/no-OS/tree/d00cc225a264d03807cafc4bf6a133af69affa36/drivers/frequency/adf4350>`_.
 
 The steps to implement a GRC block:
 
@@ -214,14 +214,20 @@ Initialize the adf4350 structure with the given parameters. The first parameter,
 ::
 
      pmt::pmt_t key;
-     
+
+::
+
      if (!is_pair(pdu)) {
          throw std::runtime_error("Message not a pair!\n");
      }
-     
+
+::
+
      key = pmt::car(pdu);
      std::string skey = pmt::symbol_to_string(key);
-     
+
+::
+
      if (skey == "frequency") {
          long long frequency;
          pmt::pmt_t freq = pmt::cdr(pdu);
@@ -241,10 +247,14 @@ In swig directory is a file called *m2k_swig.i*. Include the block's header in t
     ...
     #include "m2k/adf4350_sink.h"
     %}
-    
+
+::
+
     ...
     %include "m2k/adf4350_sink.h"
-    
+
+::
+
     ...
     GR_SWIG_BLOCK_MAGIC2(m2k, adf4350_sink);
 
@@ -286,7 +296,7 @@ The source code can be found on the gr-m2k :git-gr-m2k>`__. In order to build it
 GNURadio-Companion Flowgraph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/:`github page <university/tools/m2k/tutorials/m2k_fm.png
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/tutorials/:`github page <university/tools/m2k/tutorials/m2k_fm.png
 
 The file `m2k_fm.zip <https://wiki.analog.com/_media/university/tools/m2k/tutorials/m2k_fm.zip>` contains the gnuradio flowgraph. The gnuradio flowgraph acquires the data from the M2K and sets the ADF4350 PLL frequency. When changing the PLL frequency slider, the gnuradio ADF4350 block that we just written, encodes SPI messages to the PLL in order to change the frequency that is fed into the mixer. The data acquired from the mixer is captured by the M2k using GNURadio. The flow then shifts the frequency by a smaller offset in the "offset" slider. The offset slider allows fine tuning of the signal before it gets demodulated by the WBFM receiver block. Eventually the data is sent to an audio sink which plays back the radio in the speakers.
 

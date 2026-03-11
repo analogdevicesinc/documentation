@@ -4,10 +4,7 @@ Evaluation Board for the AD8417 Current Sense Amplifier
 Features
 --------
 
-**Enables quick breadboarding/protoyping
-Easily configurable for unidirectional or bidirectional operation
-Includes provision for current sense resistor
-Easy connection to test equipment**
+**Enables quick breadboarding/protoyping Easily configurable for unidirectional or bidirectional operation Includes provision for current sense resistor Easy connection to test equipment**
 
 General Description
 -------------------
@@ -103,15 +100,19 @@ Ordering Information
 Bill of Materials
 ~~~~~~~~~~~~~~~~~
 
-| **Table 1. Bill of Materials**
-| ^Quantity^Reference Designator^Package^Description^
+**Table 1. Bill of Materials**
 
-= ====== ========================== =========================
-1 C1     C1206                      Capacitor, 0.1 μF
-1 C3     C3528                      Capacitor, 10 μF
-2 P1, P2 CNSAMTEC2X3H330LD36        6-pin header
-1 U1     8-lead MSOP or 8-lead SOIC AD8417WBRMZ or AD8417WBRZ
-= ====== ========================== =========================
++----------+----------------------+----------------------------+---------------------------+
+| Quantity | Reference Designator | Package                    | Description               |
++==========+======================+============================+===========================+
+| 1        | C1                   | C1206                      | Capacitor, 0.1 μF         |
++----------+----------------------+----------------------------+---------------------------+
+| 1        | C3                   | C3528                      | Capacitor, 10 μF          |
++----------+----------------------+----------------------------+---------------------------+
+| 2        | P1, P2               | CNSAMTEC2X3H330LD36        | 6-pin header              |
++----------+----------------------+----------------------------+---------------------------+
+| 1        | U1                   | 8-lead MSOP or 8-lead SOIC | AD8417WBRMZ or AD8417WBRZ |
++----------+----------------------+----------------------------+---------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ component side of evaluation board.png
    :width: 400px

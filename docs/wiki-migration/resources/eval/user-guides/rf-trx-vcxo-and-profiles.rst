@@ -38,7 +38,7 @@ Physically replace the onboard VCXO
    
    ::
    
-      &clk0_ad9528 {  
+      &clk0_ad9528 {
           /* PLL1 config */
           adi,pll1-bypass-enable;
           adi,osc-in-diff-enable;
@@ -78,12 +78,12 @@ Please also see:
 
 ::
 
-   &clk0_ad9528 { 
+   &clk0_ad9528 {
        /* Manual divider configuration /
            adi,vcxo-freq = <80000000>;
        adi,pll2-vco-div-m1 = <3>;
        adi,pll2-n2-div = <15>;
-       adi,pll2-r1-div = <1>; 
+       adi,pll2-r1-div = <1>;
    }
 
 Automatic configuration
@@ -93,14 +93,14 @@ Or to use the device driver automatic configuration. This way you only need to s
 
 ::
 
-   &clk0_ad9528 { 
+   &clk0_ad9528 {
            adi,vcxo-freq = <80000000>;
        * Valid ranges based on VCO locking range:
        *   1150.000 MHz - 1341.666 MHz
        *    862.500 MHz - 1006.250 MHz
        *    690.000 MHz -  805.000 MHz
        */
-       
+
            adi,pll2-m1-frequency = <1200000000>;
    }
 
@@ -135,8 +135,7 @@ Some typical example below, where TX and ORX run at the same baseband rate, and 
 
    -  Lane Rate = (M x S x N' x 10/8 x FC)/L = **4800Mbit/s**
 
-| 
-| **So here Device Clock == FMC Clock = Lane rate / 40 = 120 MHz would be a perfect match. We choose 120MHz in this configuration.**
+**So here Device Clock == FMC Clock = Lane rate / 40 = 120 MHz would be a perfect match. We choose 120MHz in this configuration.**
 
 Once we have changed the clock chip distribution clock, we must also update the default transceiver profile, which is configured for initial setup. Failure to do so can result in the transceiver device driver asking for a clock tree which is not achievable since the AD9528 clock chip driver dynamically controls the output divider but not the PLL2 VCO and distribution clock.
 
@@ -176,7 +175,7 @@ ZYNQ & SoC FPGA linux/arch/arm/boot/dts/
 ZYNQMP          linux/arch/arm64/boot/dts/xilinx/
 =============== ===============================================
 
-| Instructions to build and deploy your new/modified devicetree can be found here:
+Instructions to build and deploy your new/modified devicetree can be found here:
 
 -  :doc:`Building the Zynq Linux kernel and devicetrees from source </wiki-migration/resources/tools-software/linux-build/generic/zynq>`
 -  :doc:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source </wiki-migration/resources/tools-software/linux-build/generic/zynqmp>`
@@ -339,7 +338,7 @@ Requesting [deframer|framer] lanerate failed
    adrv9009 spi1.1: adrv9009_probe : enter
    adrv9009 spi1.1: Request deframer lanerate 4800000 kHz failed (-22)
    adrv9009 spi1.1: Request deframer lanerate 4800000 kHz failed (-22)
-   adrv9009: probe of spi1.1 failed with error -22 
+   adrv9009: probe of spi1.1 failed with error -22
 
 ::
 
@@ -358,7 +357,7 @@ For example GTX QPLL actually have two none overlapping frequency bands with a h
 -  Or using CPLL for both links can help, but only in case both links require the same rate.
 -  Sometimes the requested value is just a bit out of the specified range. Hacking the driver to exceed the limits might work, but is **not recommended!**
 
-.. code:: c
+.. code:: diff
 
    index e425c12..81e86e9 100644
    --- a/drivers/iio/jesd204/xilinx_transceiver.c
@@ -421,7 +420,7 @@ ERROR: 321: Tx Profile IQrate and filter settings are not possible with current 
 
    adrv9009 spi1.0: ERROR: 321: Tx Profile IQrate and filter settings are not possible with current CLKPLL frequency
 
-This error originates here::git-linux:`drivers/iio/adc/talise/talise.c <drivers/iio/adc/talise/talise.c#L2230]>`
+This error originates here:`drivers/iio/adc/talise/talise.c <https://github.com/analogdevicesinc/linux/blob/dce31cdd28bb67462af01cc72d396bf00a7896c5/drivers/iio/adc/talise/talise.c#L2230]>`_
 
 And typically means that either the profile wizard created an invalid profile or that an typo was introduced in the device tree.
 
@@ -429,7 +428,7 @@ In one particular case the issue was with the **adi,dig-clocks-clk-pll-hs-div** 
 
 In the device tree we use the enum values:
 
--  :git-linux:`talise_types.h <drivers/iio/adc/talise/talise_types.h#L28>`
+-  `talise_types.h <https://github.com/analogdevicesinc/linux/blob/dce31cdd28bb67462af01cc72d396bf00a7896c5/drivers/iio/adc/talise/talise_types.h#L28>`_
 
 So for hs-div=2.0 must use a value of **0** and NOT 2!
 

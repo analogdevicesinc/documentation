@@ -1,13 +1,13 @@
 EVAL-CN0409-ARDZ Shield Overview
 ================================
 
-| :adi:`CN0409` uses the ADPD105 photometric front end and a network of 860nm Infrared emitters and silicon PIN photodiodes to achieve a water turbidity measurement system. The system can measure low to high water turbidity levels ranging from 0 FTU to 1000 FTU (limited by available solution). The IR LED and photodiode network is arranged in such a way that it can support two of the most recognized turbidity measurement standards – ISO7027 (both ratio and non-ratio) and GLI Method. With three-point calibration, the typical accuracy that the system can achieve is ± 0.50 FTU or ±5% of the reading – whichever is greater. This accuracy combined with the 0.05 FTU noise level makes the measurements obtained using this system very reliable.
-| The ADPD105’s ambient light rejection feature makes this circuit ideal for applications where accurate, robust, and non-contact turbidity measurements are critical. Applications include chemical analysis and monitoring natural bodies of water, wastewater and drinking water.
+:adi:`CN0409` uses the ADPD105 photometric front end and a network of 860nm Infrared emitters and silicon PIN photodiodes to achieve a water turbidity measurement system. The system can measure low to high water turbidity levels ranging from 0 FTU to 1000 FTU (limited by available solution). The IR LED and photodiode network is arranged in such a way that it can support two of the most recognized turbidity measurement standards – ISO7027 (both ratio and non-ratio) and GLI Method. With three-point calibration, the typical accuracy that the system can achieve is ± 0.50 FTU or ±5% of the reading – whichever is greater. This accuracy combined with the 0.05 FTU noise level makes the measurements obtained using this system very reliable.
 
-| 
+The ADPD105’s ambient light rejection feature makes this circuit ideal for applications where accurate, robust, and non-contact turbidity measurements are critical. Applications include chemical analysis and monitoring natural bodies of water, wastewater and drinking water.
 
-| 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/adicup360_cn0409_stacked.jpg
+   :align: center
+   :width: 600px
 
 Turbidity Measurement
 ---------------------
@@ -42,12 +42,12 @@ The turbidity calibration and sample vials are held in a mechanical holder that 
 The photodiodes(DS1 and DS2) and LEDs(D1 and D2) should be bend slightly backwards to allow placement of the vial holder. Once in place carefully bend the photodiodes and LEDs into the holes of vial holder, until they are snug and secure.\
 
 
-|image2|
+|image1|
 
 The test vial should be screwed into the EVAL-CN0409-ARDZ board, by lining up the holes in the vial holder with the holes in the board, using the screws provided.\
 
 
-|image3|
+|image2|
 
 .. admonition:: Download
    :class: download
@@ -163,9 +163,7 @@ Registration
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/adicup360_cn0409_stacked.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/cn0409_holder_mounted_led_pd.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/cn0409_holder_mounted_led_pd.jpg
    :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/cn0409_holder_screwed_in.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/cn0409_holder_screwed_in.jpg
    :width: 300px

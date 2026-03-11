@@ -7,16 +7,17 @@ Mute
 | When enabled, the Mute block "mutes" the input signal so that their is no output (a 0.0 value DC signal). This is useful when powering up or down and when switching program flow. | |mute.jpg| |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
-| **To Enable/Disable the mute:** Click the check box; the signal is muted when the box is checked.
-| The mute block is available as a Slew or Non-Slew algorithm. The Slew version of the algorithm will smoothly transition the gain to its target value, eliminating any click or pops, but require more system resources.
-| **Algorithms:**
+**To Enable/Disable the mute:** Click the check box; the signal is muted when the box is checked.
+
+The mute block is available as a Slew or Non-Slew algorithm. The Slew version of the algorithm will smoothly transition the gain to its target value, eliminating any click or pops, but require more system resources.
+
+**Algorithms:**
 
 -  *No Slew (Standard)* - The default mute algorithm is a "no slew" type algorithm which mutes the signal immediately when enabled, there is no gain ramping, this algorithm requires less resources than the slew algorithms, but it can result in discontinuities (clicks and pops) when toggled in real-time.
 -  *HW (RCtype Slew)* - The AD1940 / 1941 include support for mute controls that use a target/slew RAM hardware to slew (smoothly transition) from 0dB gain to muted.
 -  *SW (RCtype Slew)* - Slew type algorithm that smoothly transitions from 0dB gain to muted and muted to 0dB gain. This slew algorithm is implemented in software, "SW", and thus requires more instructions than the No Slew algorithm.
 
-| 
-| This block supports both Grow Algorithm (adds additional inputs and outputs) and Add Algorithm (adds an independent mute algorithm plus associated inputs and outputs).
+This block supports both Grow Algorithm (adds additional inputs and outputs) and Add Algorithm (adds an independent mute algorithm plus associated inputs and outputs).
 
 Controlling Mute from a Microcontroller
 =======================================

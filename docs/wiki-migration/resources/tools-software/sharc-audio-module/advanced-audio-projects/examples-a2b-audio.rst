@@ -60,7 +60,6 @@ EV-SC594-SOM/EV-SC598-SOM + Carrier
 | 5. Proceed to the software setup instructions *(common for all hardware variants)*                                                                                                                                                                                                                                                                                                                                      | NA        |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 Software Setup
 --------------
@@ -70,9 +69,7 @@ Software Setup
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
 
-*This tutorial uses TeraTerm as the serial interface to your hardware.*
-
-**Follow the instructions below to set up a connection to your hardware:**
+*This tutorial uses TeraTerm as the serial interface to your hardware.**Follow the instructions below to set up a connection to your hardware:**
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | 1. Open TeraTerm and connect to a new Serial Session, connecting to the Port labeled *SC5xx Communications Port* or *FTDI COMxx Port*.                                                | |image24| |image25| OR |image26| |
@@ -163,7 +160,6 @@ Audio Connection Setup: Downstream Audio
 | 4. Enable the analog audio source connected to the 3.5mm stereo cable. Audio should now be heard from the *AUDIO OUT* on the WBZ board, sourced from *LIN IN* on the SAM board.                                                                                                               |           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 .. important::
 

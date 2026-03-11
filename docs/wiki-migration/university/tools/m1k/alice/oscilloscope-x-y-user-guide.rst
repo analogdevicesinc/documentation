@@ -217,7 +217,7 @@ A second example would be the gain of a circuit where channel A is considered th
 
 A third example is to calculate the rms value of just the AC portion of a signal. The ALM1000 inputs only accept positive voltages thus all "AC" signals must have some DC offset. The built-in True RMS calculation includes this DC component. To remove the DC portion and just display the rms value of the AC portion of Channel A you can use the following formula:
 
-math.sqrt(SV1**2 - DCV1**2)
+math.sqrt(SV1**2 - DCV1**\ 2)
 
 The Crest factor can be calculated which is the ratio of peak-to-RMS values. The crest factor for single frequency sine waves is 1.414 (1/0.707), but can be as high as five or more for random noise. The crest factor for the channel A waveform would be the ratio of the Max and RMS values:
 
@@ -229,52 +229,21 @@ MaxV1/DCV1
 
 Two more examples are to calculate the Peak positive and negative slew rates. The Numpy ediff1d function takes the differences between consecutive elements of an array. We can use this to calculate the dv/dt or the time rate of change between samples. Each sample is 10 uSec apart so we get V/10uS or we can divide by 10 for V/uS or multiply by 100 for V/mS. We can then use the Numpy max or min function to find the positive ( maximum ) slew rate or the negative ( minimum ) Slew Rate using the following formulas:
 
-| numpy.max(numpy.ediff1d(VBuffA))*100 or
-| numpy.min(numpy.ediff1d(VBuffA))*100
+numpy.max(numpy.ediff1d(VBuffA))*100 or numpy.min(numpy.ediff1d(VBuffA))*100
 
 We can extend this calculation to estimate the rise and fall times for square wave signals assuming a more or less constant ( peak ) slew rate between the 10% to 90% levels. If we divide 0.8 ( 80% ) times the peak-to-peak value of the waveform by the peak slew rate we get the rise or fall times.
 
-| (MaxV1-MinV1)*0.8 / (numpy.max(numpy.ediff1d(VBuffA))*100) or
-| (MaxV1-MinV1)*0.8 / (numpy.min(numpy.ediff1d(VBuffA))*100)
+(MaxV1-MinV1)*0.8 / (numpy.max(numpy.ediff1d(VBuffA))*100) or (MaxV1-MinV1)*0.8 / (numpy.min(numpy.ediff1d(VBuffA))*100)
 
 If the waveform has significant overshoot or undershoot you could alternatively use the VATop and VABase values rather than the Max and Min values.
 
 **Waveform calculated Vertical measurement scalars:**
 
-| DCV1 is the channel A Average voltage
-| MinV1 is the channel A Minimum voltage
-| MaxV1 is the channel A Maximum voltage
-| VATop is the channel A Top voltage
-| VABase is the channel A Base voltage
-| SV1 is the channel A RMS voltage
-| DCV2 is the channel B Average voltage
-| MinV2 is the channel B Minimum voltage
-| MaxV2 is the channel B Maximum voltage
-| VBTop is the channel B Top voltage
-| VBBase is the channel B Base voltage
-| SV2 is the channel B RMS voltage
-| DCI1is the channel A Average current in mA
-| MinI1 is the channel A Minimum current in mA
-| MaxI1 is the channel A Maximum current in mA
-| SI1 is the channel A RMS current in mA
-| DCI2 is the channel B Average current in mA
-| MinI2 is the channel B Minimum current in mA
-| MaxI2 is the channel B Maximum current in mA
-| SI2 is the channel A RMS current in mA
+DCV1 is the channel A Average voltage MinV1 is the channel A Minimum voltage MaxV1 is the channel A Maximum voltage VATop is the channel A Top voltage VABase is the channel A Base voltage SV1 is the channel A RMS voltage DCV2 is the channel B Average voltage MinV2 is the channel B Minimum voltage MaxV2 is the channel B Maximum voltage VBTop is the channel B Top voltage VBBase is the channel B Base voltage SV2 is the channel B RMS voltage DCI1is the channel A Average current in mA MinI1 is the channel A Minimum current in mA MaxI1 is the channel A Maximum current in mA SI1 is the channel A RMS current in mA DCI2 is the channel B Average current in mA MinI2 is the channel B Minimum current in mA MaxI2 is the channel B Maximum current in mA SI2 is the channel A RMS current in mA
 
 Waveform calculated Horizontal measurement constants:
 
-| CHAHW is the channel A High Pulse Width
-| CHALW is the channel A Low Pulse Width
-| CHADCy is the channel A Duty Cycle
-| CHAperiod is the channel A Period
-| CHAfreq is the channel A Frequency
-| CHABphase is the channel A to channel B relative phase angle
-| CHBHW is the channel B High Pulse Width
-| CHBLW is the channel B Low Pulse Width
-| CHBDCy is the channel B Duty Cycle
-| CHBperiod is the channel B Period
-| CHBfreq is the channel B Frequency
+CHAHW is the channel A High Pulse Width CHALW is the channel A Low Pulse Width CHADCy is the channel A Duty Cycle CHAperiod is the channel A Period CHAfreq is the channel A Frequency CHABphase is the channel A to channel B relative phase angle CHBHW is the channel B High Pulse Width CHBLW is the channel B Low Pulse Width CHBDCy is the channel B Duty Cycle CHBperiod is the channel B Period CHBfreq is the channel B Frequency
 
 The Math menu button, figure 4, opens a control screen that lists which sample point by sample point calculated waveform combining the Channel A and B voltage and current signals is to be displayed vs time.
 
@@ -365,13 +334,9 @@ It would be nice to not have to use a compensation capacitor, adjustable or othe
 
 The software frequency compensation for each channel consists of a cascade of two adjustable `first order high pass filters <https://en.wikipedia.org/wiki/High-pass_filter#Algorithmic_implementation>`_. The time constant and the gain of each stage can be adjusted. Normal first order high pass filters do not pass DC so a DC gain of 1 path is added to the overall second order high pass software compensation filter. This structure is often called a shelving filter because of the shape of its frequency response.
 
-|
-
 .. tip::
 
-   **Exponential compensation**
-
-   | An Exponential compensation technique adds one or more exponentially decaying terms to a step in the signal. With 2 available stages, ALICE can correct for multiple spurious inductances and capacitances in the input divider circuit. Exponential compensation works best for overshoots and undershoots smaller than about 10% of the step height. In this case, a sum of exponential terms is an accurate generic model for such defects.
+   **Exponential compensation** An Exponential compensation technique adds one or more exponentially decaying terms to a step in the signal. With 2 available stages, ALICE can correct for multiple spurious inductances and capacitances in the input divider circuit. Exponential compensation works best for overshoots and undershoots smaller than about 10% of the step height. In this case, a sum of exponential terms is an accurate generic model for such defects.
 
 
 In figure In2 we show the new controls for the input compensation. To turn on and off the compensation for Channels A and B check boxes are added under the Curves drop down menu. Turning on compensation applies to both the Scope and Spectrum tools (time and frequency measurements). The filter time constant and gain settings can be set using new entry slots in the Settings Controls screen. The DC gain and offset adjust controls are unchanged.
@@ -438,8 +403,7 @@ As we can see the DC gain setting is slightly more than 6 based on the internal 
 
 For more on the use of input attenuators please refer to the following two documents:
 
-| :doc:`M1K Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
-| :doc:`M1K Breadboard Adapters </wiki-migration/university/tools/m1k/breadboard-adapter>`
+:doc:`M1K Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` :doc:`M1K Breadboard Adapters </wiki-migration/university/tools/m1k/breadboard-adapter>`
 
 The Bottom Menu Section
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -499,25 +463,11 @@ In addition to the pre-programed Math traces, ALICE Desktop provides a method of
 
 Waveform Buffers:
 
-| VBuffA is the Channel A voltage sample array ( in volts )
-| VBuffB is the Channel B voltage sample array ( in volts )
-| IBuffA is the Channel A current sample array ( in amps, multiply by 1000 for mA )
-| IBuffB is the Channel B current sample array ( in amps, multiply by 1000 for mA )
-| VmemoryA is the Channel A voltage memory array used for Trace Averaging
-| VmemoryB is the Channel B voltage memory array used for Trace Averaging
-| ImemoryA is the Channel A current memory array used for Trace Averaging
-| ImemoryB is the Channel B current memory array used for Trace Averaging
-| AWGAwaveform is the Channel A AWG waveform memory array (used for non-built in waveforms)
-| AWGBwaveform is the Channel B AWG waveform memory array (used for non-built in waveforms)
-| t is the time index ( 10 uSec per point )
-| SAMPLErate is the sampling rate, 100000 samples per Sec, or 10 uSec per sample
+VBuffA is the Channel A voltage sample array ( in volts ) VBuffB is the Channel B voltage sample array ( in volts ) IBuffA is the Channel A current sample array ( in amps, multiply by 1000 for mA ) IBuffB is the Channel B current sample array ( in amps, multiply by 1000 for mA ) VmemoryA is the Channel A voltage memory array used for Trace Averaging VmemoryB is the Channel B voltage memory array used for Trace Averaging ImemoryA is the Channel A current memory array used for Trace Averaging ImemoryB is the Channel B current memory array used for Trace Averaging AWGAwaveform is the Channel A AWG waveform memory array (used for non-built in waveforms) AWGBwaveform is the Channel B AWG waveform memory array (used for non-built in waveforms) t is the time index ( 10 uSec per point ) SAMPLErate is the sampling rate, 100000 samples per Sec, or 10 uSec per sample
 
 Vertical Position variables:
 
-| CHAOffset is the value in the channel A voltage position entry window
-| CHBOffset is the value in the channel B voltage position entry window
-| CHAIOffset is the value in the channel A current position entry window
-| CHBIOffset is the value in the channel B current position entry window
+CHAOffset is the value in the channel A voltage position entry window CHBOffset is the value in the channel B voltage position entry window CHAIOffset is the value in the channel A current position entry window CHBIOffset is the value in the channel B current position entry window
 
 As a simple example, to plot the difference between the channel A and B voltage waveforms the following formula would be used:
 
@@ -689,11 +639,7 @@ To turn the plot of V\ :sub:`CE` into I\ :sub:`C` we can use the gain and offset
 
 :math:`V_dis = (V_raw – Offset ) \times Gain`
 
-| Where:
-| Vdis is the "adjusted" ( scaled by some gain factor ) value to be displayed
-| Vraw is the measured value
-| Offset is the "adjustment" value entered for offset
-| Gain is the "adjustment" value entered for gain or scale factor
+Where: Vdis is the "adjusted" ( scaled by some gain factor ) value to be displayed Vraw is the measured value Offset is the "adjustment" value entered for offset Gain is the "adjustment" value entered for gain or scale factor
 
 If we set the Offset equal to the actual value of the +5 V supply divided by the Gain adjustment (1.0) factor and change the sign of the Gain factor ( i.e. make it -1.0) we have the formula for I\ :sub:`C` from figure E3. After changing the channel B offset and gain factors press the green Run button and you should see something like figure E7.
 

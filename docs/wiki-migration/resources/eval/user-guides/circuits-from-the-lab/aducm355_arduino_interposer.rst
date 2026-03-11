@@ -32,8 +32,14 @@ EVAL-M355-ARDZ-INT Sensor Connector
 
 The EVAL-M355-ARDZ-INT takes customized connectors to the ADuCM355 sensor surf boards, and allows up to four channels of sensor boards to be used with the EVAL-ADICUP3029 platform. Because the ADICUP3029 is an Arduino form factor compatible development board, many other equivalent Arduino form factor compatible development board can also be used simply by writing custom code. Below is the pinout of the custom connector of the sensor surf boards.
 
-| |image3|
-| ===== EVAL-M355-ARDZ-INT Power Rails ===== EVAL-M355-ARDZ-INT provides 3.3V power supply to an ADuCM355 base sensor shield board modules from ADICUP3029 development board or any equivalent Arduino MCU controller boards.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/sensor_board_connector_header.png
+   :align: center
+   :width: 600px
+
+EVAL-M355-ARDZ-INT Power Rails
+------------------------------
+
+EVAL-M355-ARDZ-INT provides 3.3V power supply to an ADuCM355 base sensor shield board modules from ADICUP3029 development board or any equivalent Arduino MCU controller boards.
 
 Switch Matrix
 -------------
@@ -66,14 +72,10 @@ The debugger from the ADICuP3029 can be used and can be linked to the interposer
    :align: center
    :width: 400px
 
-|image4| |image5|
+|image3| |image4|
 
-| There is a way to cut the SWD traces on the ADICUP3029 board right at the break away section of the board. By cutting the trace for the SWD_DIO, SWD_CLK and SWD_RST located near P12. There are two(2) traces on the top of the board that must be cut using a knife, and one(1) trace found at the bottom of ADICUP3029 (the outter most trace), This allows customers to program both the ADICUP3029 and M355-INT boards without losing the ability to stream serial data back to the USB port. |image6|\ |image7|
-
-Debug/Programming Channel Selector for ADuCM355 Sensor Surf Boards
-------------------------------------------------------------------
-
-The EVAL-M355-ARDZ-INT can accommodate up to four ADuCM355 sensor surf board and communicate to these boards at the same time through SPI communication protocol. Debugging and programming is being done independently for each channel by configuring the following switch matrix labeled SWD_DEBUG_CH_SW (S1) found on the silkscreen of the interposer board and with a corresponding LED indicator of which senor board is being accessed.
+| There is a way to cut the SWD traces on the ADICUP3029 board right at the break away section of the board. By cutting the trace for the SWD_DIO, SWD_CLK and SWD_RST located near P12. There are two(2) traces on the top of the board that must be cut using a knife, and one(1) trace found at the bottom of ADICUP3029 (the outter most trace), This allows customers to program both the ADICUP3029 and M355-INT boards without losing the ability to stream serial data back to the USB port. |image5|\ |image6|
+| ===== Debug/Programming Channel Selector for ADuCM355 Sensor Surf Boards ===== The EVAL-M355-ARDZ-INT can accommodate up to four ADuCM355 sensor surf board and communicate to these boards at the same time through SPI communication protocol. Debugging and programming is being done independently for each channel by configuring the following switch matrix labeled SWD_DEBUG_CH_SW (S1) found on the silkscreen of the interposer board and with a corresponding LED indicator of which senor board is being accessed.
 
 =============== ===
 SWD_DEBUG_CH_SW LED
@@ -105,11 +107,11 @@ If you are using the ADICUP3029 development board with the EVAL-M355-ARDZ-INT ad
 -  Set the UART switch(S2) on the EVAL-ADICUP3029 to the "USB" position in order to stream data back to the serial terminal.
 -  Place EVAL-M355-ARDZ-INT on top of the EVAL-ADICUP3029\
 
-|image8|
+|image7|
 
 -  Placed on the desired number of ADuCM355 sensor daughter board on top of the interposer board(up to 4).
 
-|image9|
+|image8|
 
 -  Plug in EVAL-ADICUP3029 into USB port of computer using the micro USB cable. (You may need to wait for the ADICUP3029 device drivers to install if this is the first time the device was plugged in.)
 
@@ -161,17 +163,15 @@ Registration
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/arduino_shield_board_actual.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/sensor_board_connector_header.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/jtag_swd_10_connector.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/jtag_swd_10_connector.png
    :width: 300px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/swd_debugger_connectors_actual_1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/swd_debugger_connectors_actual_1.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/adicup3029_primary_cut.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/adicup3029_primary_cut.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/adicup3029_secondary_cut.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/adicup3029_secondary_cut.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/shield_board_to_adicup_connections_actual.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/shield_board_to_adicup_connections_actual.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/sensor_shield_connections_actual.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/sensor_shield_connections_actual.png
    :width: 600px

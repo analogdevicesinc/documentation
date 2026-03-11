@@ -24,7 +24,7 @@ General Setup
    *[[:adi:`EVAL-SDP-CB1Z|EVAL-SDP-CB1Z]]` Evaluation board
    *CN0303 Evaluation Software
    *One 6V wallwart.  (EVAL-CFTL-6V-PWRZ)
-   *One DC power supply with a 0-6V output.  (HP6236B) 
+   *One DC power supply with a 0-6V output.  (HP6236B)
    *One USB Type-A plug to USB Mini-B plug cable.
 
 Minimum PC/System Requirements

@@ -1,8 +1,9 @@
 SPI Read (ADAU145X)
 ===================
 
-| :doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
-| There are two different versions of the SPI Read module.
+:doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
+
+There are two different versions of the SPI Read module.
 
 -  SPI Periodic Read
 -  SPI Read with External Trigger
@@ -15,8 +16,8 @@ The 'SPI Periodic Read' block reads a particular sub address from any SPI slave 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/spiperiodicread.png
    :align: center
 
-| 
-| ====Output Pins====
+Output Pins
+~~~~~~~~~~~
 
 +-----------------+------------------------------------+----------------------------+
 | Name            | Format [int/dec] - [control/audio] | Function Description       |
@@ -33,18 +34,18 @@ The 'SPI Periodic Read' block reads a particular sub address from any SPI slave 
 To monitor multiple registers in the same slave, create multiple instances of the cell.
 
 Support for Different Slave Select
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration → ICx - ADAU145x Register Controls → MULTIPURPOSE/AUXADC)
 
-| |image2|
-| \* Slave Select Channel -> 'Slave Select Channel x'
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
+   :align: center
 
+-  Slave Select Channel -> 'Slave Select Channel x'
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-| 
-| The following table shows the mapping between the module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
+The following table shows the mapping between the module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
 
 +----------------------------------------+------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register control |
@@ -119,15 +120,16 @@ Supported ICs
 
 -  ADAU145x
 
-| 
-
 SPI Read with external Trigger
 ------------------------------
 
 The 'SPI Read with external Trigger' block reads a particular sub address from any I2C slave when a rising edge is detected in the input pin.
 
-| |image3|
-| ====Input Pins====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/spireadexttrig.png
+   :align: center
+
+Input Pins
+~~~~~~~~~~
 
 +----------------+------------------------------------+--------------------------------------------+
 | Name           | Format [int/dec] - [control/audio] | Function Description                       |
@@ -145,28 +147,26 @@ The 'SPI Read with external Trigger' block reads a particular sub address from a
 +-----------------+------------------------------------+----------------------------+
 
 | 
-| ====Configuration==== Click on |image4| to configure the parameters for SPI read.
+| ====Configuration==== Click on |image2| to configure the parameters for SPI read.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/spi_exttrig_config.png
    :align: center
 
 Create Multiple instances for monitoring multiple slaves/ multiple sub address from same slave.
 
-.. _support-for-different-slave-select-1:
-
 Support for Different Slave Select
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration → ICx - ADAU145x Register Controls → MULTIPURPOSE/AUXADC)
 
-| |image5|
-| \* Slave Select Channel -> 'Slave Select Channel x'
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
+   :align: center
 
+-  Slave Select Channel -> 'Slave Select Channel x'
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-| 
-| The following table shows the mapping between module's parameter and the register control window.
+The following table shows the mapping between module's parameter and the register control window.
 
 +----------------------------------------+------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register control |
@@ -232,15 +232,10 @@ If the device to be programmed is selected through MP0 (the /SS_M pin), no confi
 | Read Instruction  | SPIReadExtTriggerAlg1readInstruction | Instruction value for a read operation (0x1 for ADI audio devices, typically 0x3 for eeprom/flash) |
 +-------------------+--------------------------------------+----------------------------------------------------------------------------------------------------+
 
-.. _supported-ics-1:
-
 Supported ICs
 -------------
 
 -  ADAU145x
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/spi.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/spireadexttrig.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/spi.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/spi.png

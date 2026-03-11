@@ -1,8 +1,9 @@
 TCP/IP Channels (ADAU144x / ADAU145x / ADAU146x)
 ================================================
 
-| :doc:`Click here to return to the Using SigmaStudio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| The TCP/IP channel can be used to connect with the SigmaDSP in case the SigmaDSP is present at a different location and cannot be physically connected the the PC that is running SigmaStudio. SigmaStudio communicates with a server connected to the SigmaDSP using TCP/IP.
+:doc:`Click here to return to the Using SigmaStudio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+
+The TCP/IP channel can be used to connect with the SigmaDSP in case the SigmaDSP is present at a different location and cannot be physically connected the the PC that is running SigmaStudio. SigmaStudio communicates with a server connected to the SigmaDSP using TCP/IP.
 
 The TCPIP channel is present under the Communication Channels tree as shown in the figure below:
 
@@ -28,8 +29,11 @@ Write Data Format
 
 SigmaStudio sends the code and parameter information to the server connected to SigmaDSP in the following format:
 
-| |image2|
-| ====Fields ====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/writeformat.jpg
+   :align: center
+
+Fields
+~~~~~~
 
 +----------------------------+------------------------------------------------------------------------------------------------+
 | Field                      | Description                                                                                    |
@@ -91,8 +95,8 @@ The server connected to SigmaDSP has to respond to the read request in the follo
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/readresponse2.jpg
    :align: center
 
-| 
-| ===Fields ===
+Fields
+^^^^^^
 
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | Field             | Description                                                                                                                            |
@@ -115,4 +119,3 @@ The server connected to SigmaDSP has to respond to the read request in the follo
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/tcpip_146x_support.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/writeformat.jpg

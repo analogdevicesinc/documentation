@@ -3,14 +3,15 @@
 NLMS Filter
 ===========
 
-| 
-| |nlmsfilter.png| |fxnlms.png|
+|nlmsfilter.png| |fxnlms.png|
 
 Description
 -----------
 
-| This implementation of NLMS is a block based implementation. The weight update happens at the end of every processing block.
-| ===== Variants =====
+This implementation of NLMS is a block based implementation. The weight update happens at the end of every processing block.
+
+Variants
+--------
 
 -  NLMSFilter
 -  FxNLMSFilter
@@ -25,7 +26,7 @@ NLMSFilter   B          B                S             B
 FxNLMSFilter NA         NA               S             NA
 ============ ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input

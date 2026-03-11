@@ -10,7 +10,7 @@ A single channel can be sampled at up to 1.33 MSPS with 18-bit resolution. A cha
 
 The signal processing circuit combined with a simple 4-bit up-down binary counter provides a simple and cost effective way to realize channel-to-channel switching without an FPGA, CPLD or high speed processor. The counter can be programmed to count up or count down for sequentially sampling multiple channels, or can be loaded with a fixed binary word for sampling a single channel.
 
-| 
+
 | |image1|
 
 Required Equipment
@@ -58,11 +58,11 @@ Installing the Software
 
 |image4|
 
--  Click **Next** to start the installation.
+   \* Click **Next** to start the installation.
 
-|image5|
+   |image5|
 
--  Upon completion of the installation of the **CN0269 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute.
+   \* Upon completion of the installation of the **CN0269 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute.
 
 .. tip::
 
@@ -94,7 +94,7 @@ Connecting the Hardware
 
 |image9|
 
--  Connect the USB Cable to the SDP-B Board and leave the other side of the cable unconnected.
+   \* Connect the USB Cable to the SDP-B Board and leave the other side of the cable unconnected.
 -  Connect the 6V DC power to CN2 and +/-12V DC power to CN1 and Turn on the DC power supply to power up the board.
 -  Connect the USB Cable to PC
 
@@ -111,7 +111,8 @@ Software Control and Indicator Descriptions
 Software Overview
 ^^^^^^^^^^^^^^^^^
 
-| |image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269_sw_fp_label.png
+   :width: 700px
 
 -  **Connect Button**
 
@@ -130,15 +131,14 @@ Software Overview
    \ **NOTE:** If the CN0269 SDP Evaluation Software is installed in the default directory, the data files could be found in **C:\\Program files\\Analog Devices\\CN0269\\**.
 
 
--  **Control Tabs**
-
+- **Control Tabs**
    -  *Configuration Tab*: All the configuration items through :adi:`EVAL-SDP-CB1Z <en/system-demonstration-platform/controller-boards/evaluation/SDP-B/eb.html>` Board to :adi:`EVAL-CN0269-SDPZ <CN0269>` board are organized on this tab. More details about **Configuration Tab** will be introduced in the following Section.
 
       -  *Multi-Channel Tab*: This tab shows all the signals on one tab which is convenient to compare the signals from different channels. More details about **Multi-Channel Tab** will be introduced in the following Section.
       -  *Single Channel Tab*: This tab shows the specific channel which is more clearer than Multi-Channel Tab. More details about **Single Channel Tab** will be introduced in the following Section.
       -  *SDP Information*: The Firmware version of :adi:`EVAL-SDP-CB1Z <en/system-demonstration-platform/controller-boards/evaluation/SDP-B/eb.html>` Board is shown on this tab.
 
-      |image12|
+      |image11|
 
 -  **Configuration Items**
 
@@ -155,9 +155,9 @@ Software Overview
 -  **System Status LED Indicator**
 
    -  This indicator displays the current state of the software in the form of an LED. There are four status LED colors.
-      |image13| busy.
-      |image14| error.
-      |image15| inactive.
+      |image12| busy.
+      |image13| error.
+      |image14| inactive.
 
 Configuration Tab
 ^^^^^^^^^^^^^^^^^
@@ -218,7 +218,8 @@ Configuration Tab
 Multi-Channel Tab
 ^^^^^^^^^^^^^^^^^
 
-| |image16|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269_sw_mulch_label.png
+   :width: 700px
 
 -  **Multi-Channel Graph**
 
@@ -246,7 +247,8 @@ Multi-Channel Tab
 Single Channel Tab
 ^^^^^^^^^^^^^^^^^^
 
-| |image17|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269_sw_singlech_label.png
+   :width: 700px
 
 -  **Time Domain Sub Tab**
 
@@ -282,12 +284,12 @@ Establishing a USB Connection Link
    **C:\\Program Files\\Analog Devices\\CN0269\\CN0269.exe**\
 
 
-\* Select the connector to use from the **SDP Connector Dropdown Menu**.
+- Select the connector to use from the **SDP Connector Dropdown Menu**.
 -  Click the **Connect to SDP-B Board Button**. A window with a progress bar will load.
 
-|image18|
+|image15|
 
--  Upon success, the **System Status String Indicator** will display *SDP-B Ready to Acquire Data(s)*
+   \* Upon success, the **System Status String Indicator** will display *SDP-B Ready to Acquire Data(s)*
 
 Making a Single Capture
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -335,15 +337,9 @@ Registration
    :width: 800px
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/hardware_connection.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269_sw_fp_label.png
-   :width: 700px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_info.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_info.png
    :width: 300px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-busy.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-error.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-inactive.png
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269_sw_mulch_label.png
-   :width: 700px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269_sw_singlech_label.png
-   :width: 700px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-wait.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-busy.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-error.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-inactive.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-wait.png

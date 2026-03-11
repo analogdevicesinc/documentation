@@ -3,40 +3,46 @@
 xSPI Delay
 ==========
 
-| |xspidelay.png|
-| **Please find the prerequisite for running the xSPI delay modules using external RAM** :doc:`xSPI Integration </wiki-migration/resources/tools-software/sigmastudiov2/modules/basic/xspiintegration>`
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspidelay.png
+   :alt: xspidelay.png
+   :align: center
+
+**Please find the prerequisite for running the xSPI delay modules using external RAM** :doc:`xSPI Integration </wiki-migration/resources/tools-software/sigmastudiov2/modules/basic/xspiintegration>`
 
 Description
 -----------
 
-| The xSPI Delay block outputs a delayed version of the input signal using external RAM connected with xSPI. The input is delayed by the number of samples reflected in the Cur numeric text box. The top Max numeric text box represents the largest amount of delay that could be applied to the input signal. If you select a new Max value in the drop-down menu, you will be forced to recompile.
-| The maximum delay available for a particular delay block depends on the total available external RAM memory, which is specified in external RAM datasheet. Setting the Max control's value, allocates memory on the external RAM, reserving that memory for use by this particular block.
-| ===== Pins =====
+The xSPI Delay block outputs a delayed version of the input signal using external RAM connected with xSPI. The input is delayed by the number of samples reflected in the Cur numeric text box. The top Max numeric text box represents the largest amount of delay that could be applied to the input signal. If you select a new Max value in the drop-down menu, you will be forced to recompile.
+
+The maximum delay available for a particular delay block depends on the total available external RAM memory, which is specified in external RAM datasheet. Setting the Max control's value, allocates memory on the external RAM, reserving that memory for use by this particular block.
+
+Pins
+----
 
 Input
 ~~~~~
 
-======================== ===== ===============
-Name                     Type  Description
-======================== ===== ===============
-Input <fc #ff0000>X</fc> Audio Input channel X
-======================== ===== ===============
+======= ===== ===============
+Name    Type  Description
+======= ===== ===============
+Input X Audio Input channel X
+======= ===== ===============
 
 Output
 ~~~~~~
 
-========================= ===== ================
-Name                      Type  Description
-========================= ===== ================
-Output <fc #ff0000>X</fc> Audio Output channel X
-========================= ===== ================
+======== ===== ================
+Name     Type  Description
+======== ===== ================
+Output X Audio Output channel X
+======== ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +--------------------+---------------+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | GUI Parameter Name | Default Value | Range                                                              | Function Description                                                                                                                                 |
@@ -58,7 +64,7 @@ Delay          Current Delay value in Words. (Cur \* 4) Integer32
 MaxDelay       Maximum number of Delay value            Integer32
 ============== ======================================== ==========
 
-| 
+
 | ===== Memory =====
 
 ============ ================= ===================
@@ -67,7 +73,7 @@ Code (Bytes) Coeff(Bytes)      Data32(Bytes)
 2314         8 + 96(Framework) 552(internal state)
 ============ ================= ===================
 
-| 
+
 | ===== MIPS (Delay = Block size )=====
 
 ============= ============== ================
@@ -76,23 +82,24 @@ Default(1 Ch) 2 Growth(2 Ch) 32 Growth(32 Ch)
 6             13             264
 ============= ============== ================
 
-| 
-|
+
+
 
 .. note::
 
    To enhance performance, the Max or Current (Cur) delay values can be increased in steps of 8 samples. Optimal performance is typically achieved when these values are divisible by the schematic block size.
 
    
-   | If additional delay is required in the range of 1 to 7 samples, we can insert internal delay modules, as the main delay module only supports increments of 8 samples.
+   If additional delay is required in the range of 1 to 7 samples, we can insert internal delay modules, as the main delay module only supports increments of 8 samples.
 
 
-| ====== Example Schematic ====== |xspidelay_schema.png|
+Example Schematic
+=================
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspidelay_schema.png
+   :alt: xspidelay_schema.png
 
 Supported Processor
 ===================
 
 -  ADSP-21568
-
-.. |xspidelay.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspidelay.png
-.. |xspidelay_schema.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspidelay_schema.png

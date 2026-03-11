@@ -3,8 +3,12 @@
 TCP/IP
 ======
 
-| The TCP/IP communication adaptor can be used to connect with a target in case the target is present at a different location and cannot be physically connected the the PC that is running SigmaStudio+. SigmaStudio+ communicates with a server connected to the target using TCP/IP. The TCP/IP is present under the Communication Adaptors tree within the toolbox.
-| ===== Settings ===== Following options are available on the settings window, which can be launched by double clicking on the TCP/IP shape in canvas
+The TCP/IP communication adaptor can be used to connect with a target in case the target is present at a different location and cannot be physically connected the the PC that is running SigmaStudio+. SigmaStudio+ communicates with a server connected to the target using TCP/IP. The TCP/IP is present under the Communication Adaptors tree within the toolbox.
+
+Settings
+========
+
+Following options are available on the settings window, which can be launched by double clicking on the TCP/IP shape in canvas
 
 -  IP Address - IP address on which the server connected to target is listening
 -  Port - Port number on which the server connected to target is listening
@@ -13,13 +17,19 @@ TCP/IP
 -  Register ASAP Connection - Establish connection without performing the background operations
 -  Max Buffer Size - Maximum data buffer size
 
-| Once the server is connected, SigmaStudio is free to send and receive data to and from the server.
-| ===== Write Data Format ===== SigmaStudio+ sends the code and parameter information to the server connected to target in the following format:
+Once the server is connected, SigmaStudio is free to send and receive data to and from the server.
 
-| |image1|
-| ^Field ^Description ^
+Write Data Format
+=================
+
+SigmaStudio+ sends the code and parameter information to the server connected to target in the following format:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/writeformat.jpg
+   :align: center
 
 +----------------------------------------+------------------------------------------------------------------------------------------------+
+| Field                                  | Description                                                                                    |
++========================================+================================================================================================+
 | -------------------------------------- | ---------------------------------------------------------                                      |
 +----------------------------------------+------------------------------------------------------------------------------------------------+
 | Control                                | This is the control bit that is used to indicate that it is a write packet. Its value is 0x09  |
@@ -42,10 +52,12 @@ TCP/IP
 | 
 | ===== Read Request format ===== In order to achieve readback, SigmaStudio+ send a read request. The read request format is as shown
 
-| |image2|
-| ^Field ^Description ^
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/readresponseformat.jpg
+   :align: center
 
 +----------------------------------------+-----------------------------------------------------------------------------------------------+
+| Field                                  | Description                                                                                   |
++========================================+===============================================================================================+
 | -------------------------------------- | ---------------------------------------------------------                                     |
 +----------------------------------------+-----------------------------------------------------------------------------------------------+
 | Control                                | This is the control bit that is used to indicate that it is a read packet. Its value is 0x0A  |
@@ -64,10 +76,12 @@ TCP/IP
 | 
 | ===== Read Response Format ===== The server connected to target must respond to the read request with a read response in the following format:
 
-| |image3|
-| ^Field ^Description ^
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/readresponse2.jpg
+   :align: center
 
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Field                              | Description                                                                                                                            |
++====================================+========================================================================================================================================+
 | ---------------------------------- | ---------------------------------------------------------                                                                              |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | Control                            | This is the control bit that is used to indicate that it is a read response packet. Its value is 0x0B                                  |
@@ -86,7 +100,3 @@ TCP/IP
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | Data                               | This is the data read from the address                                                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/writeformat.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/readresponseformat.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/readresponse2.jpg

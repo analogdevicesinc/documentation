@@ -1,7 +1,7 @@
 CN0584 User Guide
 =================
 
-|
+
 
 .. important::
 
@@ -274,9 +274,7 @@ You will need to:
 -  Plug the Power Supply into the 12V Power ZedBoard input connector (J20) (DO NOT turn the device on).
 -  Plug USB-C power supply to :adi:`EVAL-CN0585-FMCZ <CN0585>` (revB only)
 -  Set the jumpers as seen in Figure 6 |zed_jumpers.jpg|\ *Figure 6. ZedBoard Jumper Settings*
--  Connect the DAC output connectors to the negative ADC input connectors as shown in Figure 7 using coax cables (i.e. DAC0 to ADC0-neg, DAC1 to ADC1-neg, etc.). Terminate the positive ADC connectors with 50ohms SMA terminators |cn0584_loopback_connection.png| //Figure 7. EVAL-CN0584-EBZ Loopback Connection on AFE *\* Turn the ZedBoard on. \* Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.The hardware set up is now complete. setup_cn0585_diagram.png*\ Figure 8. Example System Setup//
-
-
+-  Connect the DAC output connectors to the negative ADC input connectors as shown in Figure 7 using coax cables (i.e. DAC0 to ADC0-neg, DAC1 to ADC1-neg, etc.). Terminate the positive ADC connectors with 50ohms SMA terminators |cn0584_loopback_connection.png| //Figure 7. EVAL-CN0584-EBZ Loopback Connection on AFE *\* Turn the ZedBoard on. \* Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.The hardware set up is now complete. setup_cn0585_diagram.png*Figure 8. Example System Setup*
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
@@ -300,7 +298,7 @@ Libiio is a library used for interfacing with IIO devices and must be installed 
 
 To connect to your device, the IIO Osciloscope software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the :adi:`EVAL-CN0585-FMCZ <CN0585>` is attached. The ZedBoard running ADI Kuiper Linux is currently the only platform supported for the CN0585.
 
-| The user needs to supply a **URI** (Uniform Resource Identifier) which will be used in the context creation. To get the URI, use the command iio_info in the terminal. The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.Upon installation, simply enter the command on the terminal command line to access it.
+The user needs to supply a **URI** (Uniform Resource Identifier) which will be used in the context creation. To get the URI, use the command iio_info in the terminal. The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.Upon installation, simply enter the command on the terminal command line to access it.
 
 For FPGA(ZedBoard) Direct Local Access:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -332,7 +330,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 1. Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope. If there's only one platform is connected, the IIO Oscilloscope will find URI automatically; If more than one platforms are connected, the user needs to supply the specific URI. The instructions to obtain the URI can be found in the previous section. Note: the "Serial Context" connection method is not enabled.
@@ -344,12 +342,12 @@ IIO Oscilloscope
 
 *Figure 9. IIO Oscilloscope Connection*
 
-3. After the board is connected, select the **one-bit-adc-dac-device**, which is the controller for the MAX7301ATL+ I/O Expander. Then configure pins values of output voltages 0 through 9, by setting the \**raw value to 1 \*\*. Press **Write** to confirm.
+3. After the board is connected, select the **one-bit-adc-dac-device**, which is the controller for the MAX7301ATL+ I/O Expander. Then configure pins values of output voltages 0 through 9, by setting the \**raw value to 1**. Press **Write** to confirm.
 
 |image5| *Figure 10. MAX7301ATL Output Channels Configuration*
 
 ====================================== =================
-\**one-bit-adc-dac device channel \*\* **Schematic PIN**
+**one-bit-adc-dac device channel***Schematic PIN**
 ====================================== =================
 Voltage0                               GPIO0_VIO
 Voltage1                               GPIO1_VIO
@@ -430,8 +428,9 @@ Select the desired input source for both AD3552R devices axi-ad3552r-0 and axi-a
 PyADI-IIO
 ~~~~~~~~~
 
-| The CN0584 can be interfaced to Python using the :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`. PyADI-IIO is a Python abstraction module to simplify interaction with IIO drivers on ADI hardware. This module provides device-specific APIs built on top of the current libIIO Python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
-| Follow the step-by-step procedure on how to install, configure, and set up PyADI-IIO and install the necessary packages/modules needed by referring to :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
+The CN0584 can be interfaced to Python using the :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`. PyADI-IIO is a Python abstraction module to simplify interaction with IIO drivers on ADI hardware. This module provides device-specific APIs built on top of the current libIIO Python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+
+Follow the step-by-step procedure on how to install, configure, and set up PyADI-IIO and install the necessary packages/modules needed by referring to :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
 
 Running the example
 ^^^^^^^^^^^^^^^^^^^
@@ -439,7 +438,7 @@ Running the example
 .. admonition:: Download
    :class: download
 
-   Github link for the Python sample script: :git-pyadi-iio:`CN0585 Python Example <examples/cn0585_fmcz_example.py>`
+   Github link for the Python sample script: `CN0585 Python Example <https://github.com/analogdevicesinc/pyadi-iio/blob/cn0585_v1/examples/cn0585_fmcz_example.py>`_
 
 
 1. Download or git clone :git-pyadi-iio.git>`__ to your local drive.
@@ -458,7 +457,7 @@ Running the example
 
 ::
 
-   D:\pyadi-iio>set PYTHONPATH=D:/pyadi-iio/ 
+   D:\pyadi-iio>set PYTHONPATH=D:/pyadi-iio/
    D:\pyadi-iio>python examples/cn0585_fmcz_example.py ip:your_board_ip
 
 Press enter and lines below will be observed:
@@ -521,16 +520,13 @@ MATLAB and Simulink
    -  `HDL Coder <https://www.mathworks.com/products/hdl-coder.html>`_
    -  `SoC Blockset Support Package for Xilinx devices <https://www.mathworks.com/matlabcentral/fileexchange/70616-soc-blockset-support-package-for-xilinx-devices?s_tid=srchtitle>`_
    -  `SoC Blockset <https://www.mathworks.com/products/soc.html>`_
+   
 
-   |
-
-
-|
 
 .. admonition:: Download
    :class: download
 
-   Github link for the Matlab sample script: :git-HighSpeedConverterToolbox:`test/CN0585StreamingTest.m`
+   Github link for the Matlab sample script: `CN0585StreamingTest.m <https://github.com/analogdevicesinc/HighSpeedConverterToolbox/blob/cn0585_v1/test/CN0585StreamingTest.m>`_
 
 
 The steps described in the :doc:`Analog Devices Transceiver Toolbox For MATLAB and Simulink </wiki-migration/resources/tools-software/transceiver-toolbox>` page have to be followed to configure the Matlab/Simulink project using the `MathWorks HDL Workflow Advisor <https://www.mathworks.com/help/hdlcoder/examples/getting-started-with-hardware-software-codesign-workflow-for-xilinx-zynq-platform.html>`_.
@@ -538,7 +534,7 @@ The steps described in the :doc:`Analog Devices Transceiver Toolbox For MATLAB a
 Device Control and Data Streaming
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Remote data streaming to and from hardware is made available through system object interfaces, which are unique for each component or platform. The hardware interfacing system objects provide a class to both configure a given platform and move data back and forth from the device. To run the :git-HighSpeedConverterToolbox:`test/CN0585StreamingTest.m` example, the following steps must be completed first.
+Remote data streaming to and from hardware is made available through system object interfaces, which are unique for each component or platform. The hardware interfacing system objects provide a class to both configure a given platform and move data back and forth from the device. To run the `CN0585StreamingTest.m <https://github.com/analogdevicesinc/HighSpeedConverterToolbox/blob/cn0585_v1/test/CN0585StreamingTest.m>`_ example, the following steps must be completed first.
 
 1. Ensure MATLAB package “Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio” is installed from Matlab Add-Ons.
 
@@ -546,10 +542,10 @@ Remote data streaming to and from hardware is made available through system obje
 
 ::
 
-   git clone https://github.com/analogdevicesinc/HighSpeedConverterToolbox.git 
-   cd HighSpeedConverterToolbox 
-   git submodule update --init --recursive 
-   git checkout cn0585_v1 
+   git clone https://github.com/analogdevicesinc/HighSpeedConverterToolbox.git
+   cd HighSpeedConverterToolbox
+   git submodule update --init --recursive
+   git checkout cn0585_v1
 
 3. Open Matlab from the HighSpeedConverterToolbox directory.
 

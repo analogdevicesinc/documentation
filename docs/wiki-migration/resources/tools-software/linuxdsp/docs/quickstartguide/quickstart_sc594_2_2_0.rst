@@ -16,16 +16,20 @@ Setting Up Your Host PC
 
 The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-bit.
 
-| 
-| ==== Installing Required Packages ==== In order to build and deploy Linux to your ADSP-SC594-EZKIT development board you will need to install the following packages on your host PC.
+Installing Required Packages
+----------------------------
+
+In order to build and deploy Linux to your ADSP-SC594-EZKIT development board you will need to install the following packages on your host PC.
 
 ::
 
    $ sudo apt-get update
    $ sudo apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm u-boot-tools openssl curl tftpd-hpa python
 
-| 
-| ==== Installing CrossCore Embedded Studio ==== CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into RAM for the first initial boot of the device. The tools are created for 32-bit architecture and therefore requires a 32-bit libz package to run. Download and install it.
+Installing CrossCore Embedded Studio
+------------------------------------
+
+CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into RAM for the first initial boot of the device. The tools are created for 32-bit architecture and therefore requires a 32-bit libz package to run. Download and install it.
 
 ::
 
@@ -33,8 +37,10 @@ The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-
    $ sudo dpkg -i ./adi-CrossCoreEmbeddedStudio-linux-x86-2.11.0.deb
    $ sudo apt install lib32z1
 
-| 
-| ==== Configuring TFTP Service==== A TFTP server on the host is used to transfer images to the development board. Install and configure.
+Configuring TFTP Service
+------------------------
+
+A TFTP server on the host is used to transfer images to the development board. Install and configure.
 
 ::
 
@@ -51,8 +57,10 @@ The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-
    $ sudo chmod 777 /tftpboot
    $ sudo service tftpd-hpa restart
 
-| 
-| ==== Configure Minicom ==== In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
+Configure Minicom
+-----------------
+
+In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
 
 On the host PC open a terminal and execute the following commands:
 
@@ -81,7 +89,7 @@ On the host PC open a terminal and execute the following commands:
         Set Serial Device to /dev/ttyUSB0
         Set Bps/Par/Bits to 115200 8N1
         Set Hardware Flow Control to No
-        
+
         Close the Serial port setup option by press Esc
     Select Save setup as dfl
     Select Exit
@@ -93,15 +101,12 @@ On the host PC open a terminal and execute the following commands:
 
 </code>
 
-| 
-| ==== Installing the Sources ==== The example is fully contained in the Analog Devices Yocto Linux github repositories.
+Installing the Sources
+----------------------
 
-To install the sources:
+The example is fully contained in the Analog Devices Yocto Linux github repositories.
 
-.. container:: hide
-
-   TODO: Make sure its the correct repo, branch, manifest file etc
-
+To install the sources: TODO: Make sure its the correct repo, branch, manifest file etc
 
 ::
 
@@ -116,8 +121,8 @@ To install the sources:
       -m develop-yocto-2.2.0.xml
    $ ./bin/repo sync
 
-| 
-| ===== Building the Image =====
+Building the Image
+==================
 
 Preparing the buildtool
 -----------------------
@@ -134,8 +139,6 @@ Sourcing the script will configure your build environment and create a build fol
 
    Note that the build environment needs to be sourced once only before building. If later working in a different terminal the setup-environment script should be sourced again. If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
 
-
-   | 
 
 Building the example
 --------------------
@@ -167,7 +170,7 @@ Copy the U-Boot SPL and Proper elf files to the tftp directory:
 
 ::
 
-   $ cp tmp/deploy/images/adsp-sc594-som-ezkit/u-boot-spl-sc594-som-ezkit.elf /tftpboot/ 
+   $ cp tmp/deploy/images/adsp-sc594-som-ezkit/u-boot-spl-sc594-som-ezkit.elf /tftpboot/
    $ cp tmp/deploy/images/adsp-sc594-som-ezkit/u-boot-proper-sc594-som-ezkit.elf /tftpboot/
 
 Before installing the software on to the development board, ensure that the following cables are connected:
@@ -265,9 +268,10 @@ Model: ADI sc594-som-ezkit
 
 I2C: ready DRAM: 224 MiB MMC: mmc@310C7000: 0 Loading Environment from SPIFlash... SF: Detected is25lp512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB OK In: serial@0x31003000 Out: serial@0x31003000 Err: serial@0x31003000 Net: eth0: eth@0x31040000 Hit any key to stop autoboot: 0 => </code>
 
-|
+Booting the minimal image from QSPI
+-----------------------------------
 
-| ==== Booting the minimal image from QSPI ==== The U-Boot console is used to copy U-Boot (SPL and Proper), the minimal root filesystem image and the fitImage (which contains the kernel image and dtb file) into RAM and then write them to Flash. Copy the required files from <BUILD DIR>/tmp/deploy/images to your /tftpboot directory.
+The U-Boot console is used to copy U-Boot (SPL and Proper), the minimal root filesystem image and the fitImage (which contains the kernel image and dtb file) into RAM and then write them to Flash. Copy the required files from <BUILD DIR>/tmp/deploy/images to your /tftpboot directory.
 
 ::
 
@@ -276,13 +280,12 @@ I2C: ready DRAM: 224 MiB MMC: mmc@310C7000: 0 Loading Environment from SPIFlash.
    $ cp tmp/deploy/images/adsp-sc594-som-ezkit/fitImage /tftpboot/
    $ cp tmp/deploy/images/adsp-sc594-som-ezkit/adsp-sc5xx-minimal-adsp-sc594-som-ezkit.jffs2 /tftpboot
 
-| 
-| In the U-Boot console, set the IP address of the Host Linux PC that hosts the binary files on TFTP. Also, set the same address to the variable ``serverip``
+In the U-Boot console, set the IP address of the Host Linux PC that hosts the binary files on TFTP. Also, set the same address to the variable ``serverip``
 
 ::
 
    ;''**Terminal1: minicom**''
-   :  
+   :
 
 ::
 
@@ -307,7 +310,7 @@ If your network **does NOT support** DHCP, in the U-Boot console configure the b
    => setenv ipaddr <IPADDR>
    => edit update_spi_sc594
    => edit: <remove "run init_ethernet;" from here> sf probe ${sfdev}; sf erase 0 ${sfsize}; run update_spi_uboot; run update_spi_fit; run update_spi_rfs; sleep 3; saveenv
-   => run update_qspi_sc594 
+   => run update_qspi_sc594
 
 After removing "run init_ethernet;" from update_spi_sc594, issue the "run update_qspi_sc594" command as above.
 
@@ -456,7 +459,7 @@ The U-Boot image, root filesystem and Linux kernel are now stored in QSPI. Adjus
 
    adsp-sc594-som-ezkit login: root
    Password: adi
-   root@adsp-sc594-som-ezkit:~# 
+   root@adsp-sc594-som-ezkit:~#
 
 The username is **root** and the password is **adi**.
 
@@ -532,23 +535,29 @@ And type to boot
 
 Now the rootfs is set to your USB stick and amount of space equals of size of partition on USB stick.
 
-| 
-| ==== Booting Linux Using TFTP ==== In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc594>` and (for both NFS and RAM boot) a copy of the kernel image and dtb file should be copied into the **/tftpboot** directory.
+Booting Linux Using TFTP
+------------------------
+
+In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc594>` and (for both NFS and RAM boot) a copy of the kernel image and dtb file should be copied into the **/tftpboot** directory.
 
 ::
 
    $ cp tmp/deploy/images/adsp-sc594-som-ezkit/Image /tftpboot
    $ cp tmp/deploy/images/adsp-sc594-som-ezkit/sc594-som-ezkit.dtb /tftpboot
 
-| 
-| === RAM Boot === For RAM boot a copy of the image containing the filesystem needs copied to the /tftpboot directory.
+RAM Boot
+~~~~~~~~
+
+For RAM boot a copy of the image containing the filesystem needs copied to the /tftpboot directory.
 
 ::
 
    $ cp tmp/deploy/images/adsp-sc594-som-ezkit/adsp-sc5xx-ramdisk-adsp-sc594-som-ezkit.cpio.xz.u-boot /tftpboot/ramdisk.cpio.xz.u-boot
 
-| 
-| === NFS Boot === For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
+NFS Boot
+~~~~~~~~
+
+For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
 
 ::
 
@@ -593,8 +602,10 @@ The root filesystem should then be copied to /romfs.
 
    $ sudo tar -xf tmp/deploy/images/adsp-sc594-som-ezkit/adsp-sc5xx-full-adsp-sc594-som-ezkit.tar.xz -C /romfs
 
-| 
-| === Booting into Linux from TFTP === Next, on the target, from u-boot, run one of the following command:
+Booting into Linux from TFTP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Next, on the target, from u-boot, run one of the following command:
 
 ::
 
@@ -631,11 +642,9 @@ The root filesystem should then be copied to /romfs.
 
    adsp-sc594-som-ezkit login: root
    Password: adi
-   root@adsp-sc594-som-ezkit:~# 
+   root@adsp-sc594-som-ezkit:~#
 
-| 
-| ==== Building the SDK ==== To build the SDK follow the instructions here :doc:`Building the SDK </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/building-the-sdk>`.
+Building the SDK
+----------------
 
-| 
-
-| 
+To build the SDK follow the instructions here :doc:`Building the SDK </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/building-the-sdk>`.

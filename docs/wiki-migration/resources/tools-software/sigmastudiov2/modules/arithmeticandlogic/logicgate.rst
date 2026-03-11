@@ -3,14 +3,18 @@
 Logic Gate
 ==========
 
-| 
-| |logicgate.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/logicgate.png
+   :alt: logicgate.png
 
 Description
 -----------
 
-| The Logic block applies one of five selectable logic operations to the two input signals and outputs the result on the output pin.
-| ===== Usage ===== Click on the icon button, each click will toggle the active operator which is shown in the icon image and label.
+The Logic block applies one of five selectable logic operations to the two input signals and outputs the result on the output pin.
+
+Usage
+-----
+
+Click on the icon button, each click will toggle the active operator which is shown in the icon image and label.
 
 -  AND
 -  NAND
@@ -18,8 +22,8 @@ Description
 -  NOR
 -  XOR
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 ========= ========== ================ ============= ================
 Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -27,7 +31,7 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 LogicGate B/S        B/S              S             B
 ========= ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -58,5 +62,3 @@ DSP Parameters
 --------------
 
 NO DSP parameters
-
-.. |logicgate.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/logicgate.png

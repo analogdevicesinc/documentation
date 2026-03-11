@@ -87,7 +87,7 @@ The ADC settings are located in the accordion menu on the left hand side within 
 
 `timing_fsm.mp4 <https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/timing_fsm.mp4>`_
 
-\**5. What are the main settings that will impact the timing? \*\*
+**5. What are the main settings that will impact the timing?**
 
 .. important::
 
@@ -189,11 +189,7 @@ The first conversion on each channel needs to take into account the filter laten
    
    with 5 channels enabled:
    
-   *Throughput rate = 600/5 = 120 SPS*
-   
-
-
-**How to Calculate the Throughput Rate using the Timing Tool**
+   *Throughput rate = 600/5 = 120 SPS **How to Calculate the Throughput Rate using the Timing Tool**
 
 The sequencer timing diagram in continuous conversion mode or duty cycling mode allows us to calculate our throughput rate.
 
@@ -340,8 +336,10 @@ Analysis Window
 
 The Analysis Window is used for making measurements using a physical hardware. An AD4130-8 Evaluation board is needed to capture data. Data is captured by clicking on 'Run Once' or 'Run Continuously'.
 
-| The **Histogram** or **Waveform** sections (3) display the results of the noise analysis or the waveform for the selected analysis channel, including both noise and resolution measurements.
-| |screenshot_2021-04-09_122534.png|
+The **Histogram** or **Waveform** sections (3) display the results of the noise analysis or the waveform for the selected analysis channel, including both noise and resolution measurements.
+
+
+|screenshot_2021-04-09_122534.png|
 
 -  The data graph (1) shows each successive sample of the ADC output. Zoom in on the data in the graphusing the scroll wheel on your mouse or by selecting the magnifying glass.
 -  The **Result** section (2) shows the analysis of the channel selected.

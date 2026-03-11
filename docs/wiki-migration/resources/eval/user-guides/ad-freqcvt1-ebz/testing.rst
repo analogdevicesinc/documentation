@@ -20,7 +20,7 @@ See the following example diff for required changes to the launcher to run the t
    --- ./.config/autostart/config_autostart_osc.desktop    2013-12-09 15:55:41.774730469 -0500
    +++ ./.config/autostart/config_autostart_osc.desktop    2012-12-31 19:20:18.000000000 -0500
    @@ -1,11 +1,11 @@
-    
+
     [Desktop Entry]
     Type=Application
    -Exec=/usr/local/bin/osc

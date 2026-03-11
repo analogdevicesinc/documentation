@@ -238,8 +238,6 @@ To run the sample demo, the following setup connections are to be made.
 Bus power sub-nodes
 ~~~~~~~~~~~~~~~~~~~
 
-.. _evaluation-boards-1:
-
 Evaluation boards
 ^^^^^^^^^^^^^^^^^
 

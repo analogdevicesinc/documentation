@@ -19,7 +19,7 @@ Hardware requirements
    -  4x SMA cables for of same length and type for > 6GHz (synchrona to jupiter)
    -  1x SMA cable (Jupiter_sdr Tx to splitter input)
 
-|
+
 
 .. tip::
 
@@ -33,7 +33,7 @@ Hardware requirements
       2x 30.72 MHz, (LVPECL)
       2x MCS pulse, at request (LVPECL)
    
-   |
+
 
    | 2. The trace length should be equal for all mcs and clock paths, from reference to the systems inputs. This is if you can afford to delay the MCS in regard to the clock, otherwise the MCS cables should be longer than the clock ones.
 
@@ -73,7 +73,7 @@ Setting Synchrona for MCS setup
 
 -  Power up the system/Wait for it to boot(1min).
 -  Using a UART terminal, read the IP address of the Pi(synchrona). Enter ifconfig
--  Copy the device-tree rpi-ad9545-hmc7044.dtbo on the synchrona SD card via scp (or locally on a different machine) on the boot partition in /boot/overlays. <fc #ff0000>Loading the devicetree object in the GUI might get the desired frequency but it will not wait for a synq request</fc>.
+-  Copy the device-tree rpi-ad9545-hmc7044.dtbo on the synchrona SD card via scp (or locally on a different machine) on the boot partition in /boot/overlays. Loading the devicetree object in the GUI might get the desired frequency but it will not wait for a synq request.
 -  Reboot Synchrona
 -  To check if the configuration was set, after reboot, you can enter in a browser enter the IP address. In the GUI that will open in browser, log in with User ”admin”, pass: “analog”
 
@@ -110,7 +110,7 @@ None of the jumpers should be connected on Synchrona's ADD-ON board
    :class: download
 
    
-   -  \**22 June 2022 release \*\*
+   -  **22 June 2022 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/synchrona_test/synchrona_production_small.zip>`_
    
 
@@ -120,18 +120,18 @@ Connecting Jupiter SDR with Synchrona
 
 |image2| |image3|
 
-======================= =========== ====== ========= ========
-Synchrona SMA           Jupiter SMA Signal Frequency Standard
-======================= =========== ====== ========= ========
-<fc #9acd32>ch9_p</fc>  Ref Clk     Clock  30.72 MHz LVPECL
-<fc #9acd32>ch10_p</fc> Ref Clk     Clock  30.72 MHz LVPECL
-<fc #9acd32>ch5_p</fc>  MCS         MCS    640 KHz   CMOS
-<fc #9acd32>ch8_p</fc>  MCS         MCS    640 KHz   CMOS
-======================= =========== ====== ========= ========
+============= =========== ====== ========= ========
+Synchrona SMA Jupiter SMA Signal Frequency Standard
+============= =========== ====== ========= ========
+ch9_p         Ref Clk     Clock  30.72 MHz LVPECL
+ch10_p        Ref Clk     Clock  30.72 MHz LVPECL
+ch5_p         MCS         MCS    640 KHz   CMOS
+ch8_p         MCS         MCS    640 KHz   CMOS
+============= =========== ====== ========= ========
 
 .. important::
 
-   <fc #ff0000>ch9_n</fc> and <fc #ff0000>ch10_n</fc> must have 50 ohm SMA terminations.
+   ch9_n and ch10_n must have 50 ohm SMA terminations.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter_sdr/sma-termination.jpg
@@ -142,20 +142,20 @@ Configuring Synchrona in a 4 Jupiter SDR syncronization setup
 
 Not all channels can be used, some channels have the option for sync request, others don't. Below is a table with the possible sync scheme, sine channels require soldering components on Synchrona. More info on :doc:`ad-synchrona14-ebz </wiki-migration/resources/eval/user-guides/ad-synchrona14-ebz>`
 
-====================== =========== ====== ========= ========
-Synchrona SMA          Jupiter SMA Signal Frequency Standard
-====================== =========== ====== ========= ========
-<fc #ff0000>ch1_p</fc> MCS         MCS    640 KHz   CMOS
-<fc #ff0000>ch2_p</fc> Ref Clk     Clock  30.72 MHz LVPECL
-<fc #ff0000>ch3_p</fc> Ref Clk     Clock  30.72 MHz LVPECL
-<fc #ff0000>ch4_p</fc> MCS         MCS    640 KHz   CMOS
-ch5_p                  MCS         MCS    640 KHz   CMOS
-<fc #ff0000>ch6_p</fc> Ref Clk     -      30.72 MHz -
-<fc #ff0000>ch7_p</fc> Ref Clk     -      30.72 MHz -
-ch8                    MCS         MCS    640 KHz   CMOS
-ch9_p                  Ref Clk     Clock  30.72 MHz LVPECL
-ch10_p                 Ref Clk     Clock  30.72 MHz LVPECL
-====================== =========== ====== ========= ========
+============= =========== ====== ========= ========
+Synchrona SMA Jupiter SMA Signal Frequency Standard
+============= =========== ====== ========= ========
+ch1_p         MCS         MCS    640 KHz   CMOS
+ch2_p         Ref Clk     Clock  30.72 MHz LVPECL
+ch3_p         Ref Clk     Clock  30.72 MHz LVPECL
+ch4_p         MCS         MCS    640 KHz   CMOS
+ch5_p         MCS         MCS    640 KHz   CMOS
+ch6_p         Ref Clk     -      30.72 MHz -
+ch7_p         Ref Clk     -      30.72 MHz -
+ch8           MCS         MCS    640 KHz   CMOS
+ch9_p         Ref Clk     Clock  30.72 MHz LVPECL
+ch10_p        Ref Clk     Clock  30.72 MHz LVPECL
+============= =========== ====== ========= ========
 
 .. important::
 
@@ -175,7 +175,7 @@ You also need to have :git-libiio>`__ and `pyadi-iio <https::`libiio </github.co
 
 ::
 
-   sudo apt-get update 
+   sudo apt-get update
    sudo apt install git
    sudo apt-get install build-essential
    sudo apt-get install libxml2-dev libzstd-dev bison flex libcdk5-dev cmake
@@ -240,7 +240,7 @@ Expected results
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. code:: shell
 
@@ -327,8 +327,8 @@ Resources
 
 -  Branches:
 
-   -  :git-pyadi-iio:`jupiter-sync/examples/adrv9002_mcs_sync`
-   -  :git-linux:`adrv9002-mcs-updates`
+   -  `adrv9002_mcs_sync <https://github.com/analogdevicesinc/pyadi-iio/tree/tfcollins/jupiter-sync/examples/adrv9002_mcs_sync>`_
+   -  `adrv9002-mcs-updates <https://github.com/analogdevicesinc/linux/tree/staging/adrv9002-mcs-updates>`_
    -  :git-hdl:`tree/dev_jupiter_sdr_sync_update`
 
 -  Jupiter SDR boot partition files for MCS sync example:

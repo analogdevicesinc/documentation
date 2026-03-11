@@ -9,8 +9,10 @@ Beep Generator
 Description
 -----------
 
-| The Beep Generator module uses an internal oscillator to generate tones. Set the frequency in the text field and click on the Beep button to enable the tone generator. This tone is only active while the beep button is pressed.
-| ===== Targets Supported =====
+The Beep Generator module uses an internal oscillator to generate tones. Set the frequency in the text field and click on the Beep button to enable the tone generator. This tone is only active while the beep button is pressed.
+
+Targets Supported
+-----------------
 
 +----------------+------------+-----------------------+---------------+------------------+
 | Name           | ADSP-214xx | ADSP-215xx/ADSP-SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -30,7 +32,7 @@ Name   Type    Description
 Output Control Output channel 0
 ====== ======= ================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+------------+-----------------------------------------+

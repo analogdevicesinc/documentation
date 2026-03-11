@@ -47,8 +47,7 @@ At first glance one sees that absolute temperature, T, appears in the equation a
    :align: center
    :width: 220px
 
-| Note: E\ :sub:`g`\ is the energy gap of Silicon
-| M represents the temperature dependence of mobility
+Note: E\ :sub:`g`\ is the energy gap of Silicon M represents the temperature dependence of mobility
 
 If we use this equation for I\ :sub:`S` and insert it in the V\ :sub:`BE` equation and then differentiate with respect to temperature we get the following relationship for a constant I\ :sub:`C`.
 
@@ -190,9 +189,7 @@ If we can configure a circuit, usually through negative feedback, that adjusts V
 
 The basic principle of the Bandgap reference is examined here using the circuit originally proposed by Robert Widlar in 1971 and is shown in figure 14.10. The fundamental idea Widlar used was to compensate the negative TC of the base emitter voltage V\ :sub:`BE` by summing it with a second voltage V(R\ :sub:`2`) which has a positive TC.
 
-| All Bandgap references use two basic elements:
-| 1. Two BJT's working at different current densities
-| 2. Adding a V\ :sub:`BE` (-TC) and a PTAT voltage drop (+TC)
+All Bandgap references use two basic elements: 1. Two BJT's working at different current densities 2. Adding a V\ :sub:`BE` (-TC) and a PTAT voltage drop (+TC)
 
 The problem is that in order to compensate the large negative TC of V\ :sub:`BE` a rather large ΔV\ :sub:`BE` on the order of 600mV would be required. This cannot be done with the simple circuit of figure 14.8.
 
@@ -232,11 +229,9 @@ The bandgap cell reference voltage V\ :sub:`BG` appears at the combined base of 
 
 However, because of the presence of the R\ :sub:`5`/R\ :sub:`6` resistor divider and the op amp, the actual voltage appearing at V\ :sub:`OUT` can be scaled higher, in this case 2.5 V. Following this general principle, V\ :sub:`OUT` can be raised to almost any other practical level, such as for example with selectable taps for precise 2.5, 5, 7.5, and 10 V output values. The buffer amplifier can often provide up to 10 mA output current while operating from supplies between 4.5 and 30 V. These kinds of references can have output tolerances as low as 0.4%, with TCs as low as 10 ppm/°C.
 
-| **ADALM1000 Lab Activity 9,** :doc:`Bandgap reference </wiki-migration/university/courses/alm1k/alm-lab-9>`
-| **ADALM1000 Lab Activity 10,** :doc:`Shunt Bandgap reference </wiki-migration/university/courses/alm1k/alm-lab-10>`
+**ADALM1000 Lab Activity 9,** :doc:`Bandgap reference </wiki-migration/university/courses/alm1k/alm-lab-9>` **ADALM1000 Lab Activity 10,** :doc:`Shunt Bandgap reference </wiki-migration/university/courses/alm1k/alm-lab-10>`
 
-| **ADALM2000 Lab Activity 9,** :doc:`Bandgap reference </wiki-migration/university/courses/electronics/electronics-lab-9>`
-| **ADALM2000 Lab Activity 10,** :doc:`Shunt Bandgap reference </wiki-migration/university/courses/electronics/electronics-lab-10>`
+**ADALM2000 Lab Activity 9,** :doc:`Bandgap reference </wiki-migration/university/courses/electronics/electronics-lab-9>` **ADALM2000 Lab Activity 10,** :doc:`Shunt Bandgap reference </wiki-migration/university/courses/electronics/electronics-lab-10>`
 
 14.4 Buried (sub-surface) Zener References
 ------------------------------------------

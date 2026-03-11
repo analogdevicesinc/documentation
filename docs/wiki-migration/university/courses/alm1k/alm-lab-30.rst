@@ -48,11 +48,7 @@ The CD4007 like many CMOS integrated circuits, it is easily damaged by static di
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less Breadboard and jumper wire kit
-| 1 CD4007 ( CMOS array)
-| 2 ZVN2110A NMOS transistors
-| 2 ZVP2110A PMOS transistors
+ADALM1000 hardware module Solder-less Breadboard and jumper wire kit 1 CD4007 ( CMOS array) 2 ZVN2110A NMOS transistors 2 ZVP2110A PMOS transistors
 
 Directions:
 ~~~~~~~~~~~
@@ -117,8 +113,6 @@ A phase detector for square wave signals can be made from an exclusive-OR (XOR) 
 
 When an XOR gate phase detector is used in a phase locked loop ( PLL ) system it generally locks near a 90° phase difference in the middle of the phase detection range. At 90° the XOR has a 50% duty cycle square-wave output at twice the frequency of the input. The square-wave changes duty-cycle in proportion to the phase difference of the two input signals. Passing the output of the XOR gate through a low-pass filter results in an analog voltage that is proportional to the phase difference between the two signals. It requires inputs that are symmetrical square waves. If the duty cycle of one input is slightly different than the duty cycle of the other, the low pass filtered output will have an offset from the ideal middle of the range at 90° of phase difference.
 
-.. _directions-1:
-
 Directions:
 ~~~~~~~~~~~
 
@@ -133,14 +127,10 @@ Add the RC low pass filter shown in figure 4 to your XOR breadboard circuit. Con
    Figure 4, XOR Gate phase detector
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Configure both output channels in the Split I/O mode with the termination set to +2.5V. Connect the A logic input (pin 6) to the channel A output pin CA-Out, and connect the B logic input (pins 1,9) to the channel B output pin CB-Out. Set the shape as square waves with -50 mA Min value and +50 mA Max value (0 to 5 V swing). Set channel A to a frequency of 1 KHz and channel B to a frequency of 1 KHz. Also be sure to start with the phase of both CA and CB set to 0°.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -162,8 +152,6 @@ CA Phase CB Phase Output Voltage
 
 Table 2 Phase detector output vs phase
 
-.. _questions-1:
-
 Questions:
 ~~~~~~~~~~
 
@@ -176,9 +164,6 @@ The pair of inverters made using the four individual NMOS and PMOS transistors (
 
 **For Further Reading:**
 
-| [1] Build :doc:`CMOS Logic Functions Using CD4007 Array </wiki-migration/university/courses/alm1k/alm-lab-28>`
-| `Exclusive OR logic gate <https://en.wikipedia.org/wiki/XOR_gate>`_
-| `Exclusive NOR logic gate <https://en.wikipedia.org/wiki/XNOR_gate>`_
-| `Phase detector <https://en.wikipedia.org/wiki/Phase_detector>`_
+[1] Build :doc:`CMOS Logic Functions Using CD4007 Array </wiki-migration/university/courses/alm1k/alm-lab-28>` `Exclusive OR logic gate <https://en.wikipedia.org/wiki/XOR_gate>`_ `Exclusive NOR logic gate <https://en.wikipedia.org/wiki/XNOR_gate>`_ `Phase detector <https://en.wikipedia.org/wiki/Phase_detector>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**

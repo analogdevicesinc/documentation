@@ -18,19 +18,25 @@ Only HD format is supported for **ADV7511**, so connect an HDMI cable to a TV to
 
 |image2|
 
-| 
-| ===== Software Configuration ===== The following configuration should be done on top of the sc589-ezkit/sc573-ezkit default configuration.
+Software Configuration
+----------------------
 
-| 
-| ==== Package Configuration ==== Add the v4l2-video-test package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
+The following configuration should be done on top of the sc589-ezkit/sc573-ezkit default configuration.
+
+Package Configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+Add the v4l2-video-test package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
 
 ::
 
    vim build/conf/local.conf
    IMAGE_INSTALL_append = "v4l2-video-test"
 
-| 
-| ==== Kernel Configuration ==== Run "**bitbake linux-adi -c menuconfig**" to configure the linux kernel. Due to the conflicts with audio module, users should disable the audio driver before enable video drivers.
+Kernel Configuration
+~~~~~~~~~~~~~~~~~~~~
+
+Run "**bitbake linux-adi -c menuconfig**" to configure the linux kernel. Due to the conflicts with audio module, users should disable the audio driver before enable video drivers.
 
 -  **Disable audio driver**
 
@@ -47,7 +53,7 @@ Only HD format is supported for **ADV7511**, so connect an HDMI cable to a TV to
        I2C support  --->
            I2C Hardware Bus support  --->
                    <*> ADI TWI I2C support
-                   (50) ADI TWI I2C clock (kHz) 
+                   (50) ADI TWI I2C clock (kHz)
 
 -  **Enable Microchip MCP23xxx I/O expander support**
 
@@ -75,7 +81,7 @@ As there is only one PPI on the ADSP-SC5xx board, **please don't select V4L2 ca
                  <*> ADV7343 video encoder
    or
                  <*> Analog Devices ADV7511 encoder
-                 [*]   Enable Analog Devices ADV7511 CEC support 
+                 [*]   Enable Analog Devices ADV7511 CEC support
 
 -  \*\* Disable SPI Driver*\*
 
@@ -87,8 +93,10 @@ As the PPI hardware pin conflicts with SPI on the **ADSP-SC573 EZ-Board**, you s
        [*] SPI support  --->
            <>   SPI controller v3 for ADI
 
-| 
-| ==== Device Tree ==== Run "**bitbake linux-adi -c devshell**" to enter into the kernel source code and then change the device tree files.
+Device Tree
+~~~~~~~~~~~
+
+Run "**bitbake linux-adi -c devshell**" to enter into the kernel source code and then change the device tree files.
 
 -  **Device node for soft switch on Video Encoder EI3 Extender Board**
 
@@ -116,8 +124,10 @@ Please add following child node ssw2 to i2c0 master node in the device tree(sc5
         reg = <0x11>;
    };
 
-| 
-| ===== ADV7511 HDMI Transmitter Test ===== One thing to note here is that the ADSP-SC573 can support up to 56.25MHz ppi clock when transmitting data or frame sync, however, ADSP-SC589 can support up to 75MHz ppi clock, and there are two different ppi clock generators on Video Encoder EI3 Extender Board: 27MHz and 74MHz, so we can enable 27MHz clock both for ADSP-SC573 EZ-Board and ADSP-SC589 EZ-Board, and 74MHz clock only for ADSP-SC589 EZ-Board. For more information, please refer to the data sheets of ADSP-SC573/ADSP-SC589 and the Video Encoder EI3 Extender Board Manual.
+ADV7511 HDMI Transmitter Test
+-----------------------------
+
+One thing to note here is that the ADSP-SC573 can support up to 56.25MHz ppi clock when transmitting data or frame sync, however, ADSP-SC589 can support up to 75MHz ppi clock, and there are two different ppi clock generators on Video Encoder EI3 Extender Board: 27MHz and 74MHz, so we can enable 27MHz clock both for ADSP-SC573 EZ-Board and ADSP-SC589 EZ-Board, and 74MHz clock only for ADSP-SC589 EZ-Board. For more information, please refer to the data sheets of ADSP-SC573/ADSP-SC589 and the Video Encoder EI3 Extender Board Manual.
 
 Setup Soft Switch
 ~~~~~~~~~~~~~~~~~
@@ -165,10 +175,8 @@ You can use "v4l2_video_display" provided to play HD yuv file and output the HD
 
    # v4l2_video_display -F 720p60.yuv
 
-| 
-| ===== ADV7341 Video Encoder Test =====
-
-.. _setup-soft-switch-1:
+ADV7341 Video Encoder Test
+--------------------------
 
 Setup Soft Switch
 ~~~~~~~~~~~~~~~~~
@@ -189,12 +197,10 @@ The state of pins from IO expander is "uncertain" after we enable Soft Switch 
 
 ::
 
-   # echo 468 > /sys/class/gpio/export    
+   # echo 468 > /sys/class/gpio/export
    # echo low > /sys/class/gpio/gpio468/direction
    # echo 470 > /sys/class/gpio/export
    # echo low > /sys/class/gpio/gpio470/direction
-
-.. _display-video-images-1:
 
 Display Video Images
 ~~~~~~~~~~~~~~~~~~~~
@@ -203,10 +209,11 @@ You can use "v4l2_video_display" provided to play pal yuv file and output the c
 
 ::
 
-   # v4l2_video_display -F pal.yuv 
+   # v4l2_video_display -F pal.yuv
 
-| 
-| ---- **Back to** :doc:`Linux Video Driver </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/linux_video_driver>`  
+--------------
+
+**Back to** :doc:`Linux Video Driver </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/linux_video_driver>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/encoder.jpg
    :width: 600px

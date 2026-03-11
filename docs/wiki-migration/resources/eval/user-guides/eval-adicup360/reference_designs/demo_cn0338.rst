@@ -3,58 +3,58 @@ CO2 Gas Measurement Demo
 
 The **ADuCM360_demo_cn0338** is a CO2 gas measurement demo project for the EVAL-ADICUP360 base board with additional EVAL-CN0338-ARDZ shield, created using the GNU ARM Eclipse Plug-ins in Eclipse environment.
 
-| 
-| ===== General description =====
-| This project is a good example for how to use :doc:`EVAL-ADICUP360 board </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/base_board>` in different combinations with shield boards. It expand the list of possible applications that can be done with the base board.
+General description
+-------------------
 
-The **ADuCM360_demo_cn0338** project uses the :adi:`EVAL-CN0338-ARDZ shield <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/cn0338>` which is a complete thermopile-based gas sensor using the nondispersive infrared (<fc #008000>NDIR</fc>) principle.
+This project is a good example for how to use :doc:`EVAL-ADICUP360 board </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/base_board>` in different combinations with shield boards. It expand the list of possible applications that can be done with the base board.
 
-| |image1|
-| The CN0338 circuit uses **24-bit**, Σ-Δ **ADCs** of the <fc #008080>ADuCM360</fc> microcontroller for simultaneous sampling of a dual element thermopile at programmable rates of **3.5 Hz** to **3.906 kHz**.
+The **ADuCM360_demo_cn0338** project uses the :adi:`EVAL-CN0338-ARDZ shield <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/cn0338>` which is a complete thermopile-based gas sensor using the nondispersive infrared (NDIR) principle.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0338_hw_combined.png
+   :align: left
+   :width: 550px
+
+The CN0338 circuit uses **24-bit**, Σ-Δ **ADCs** of the ADuCM360 microcontroller for simultaneous sampling of a dual element thermopile at programmable rates of **3.5 Hz** to **3.906 kHz**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0338_demo_21.png
    :align: right
    :width: 650px
 
-The **ADuCM360_demo_cn0338** application perform ADC reads, processes them and make all necessary calculations in order to provide gas concentration. Beside this it provide an interactive **<fc #008000>command line interpreter</fc>** which offer the possibility to the user to customize his CN0338 shield. The **UART interface** (<fc #008000>1 start bit, 8-bits data length, no parity bits and 2 stop bits</fc>) is used to send(and to receive) data to (from) a terminal window. <fc #008000>Default</fc> value of UART <fc #008000>baud rate</fc> is **115200 Hz**, but you have the possibility to change it at run time from command line.
+The **ADuCM360_demo_cn0338** application perform ADC reads, processes them and make all necessary calculations in order to provide gas concentration. Beside this it provide an interactive **command line interpreter** which offer the possibility to the user to customize his CN0338 shield. The **UART interface** (1 start bit, 8-bits data length, no parity bits and 2 stop bits) is used to send(and to receive) data to (from) a terminal window. Default value of UART baud rate is **115200 Hz**, but you have the possibility to change it at run time from command line.
 
-To start the application you need first to press <fc #008000>ENTER</fc> key (CR) from the keyboard. A welcome message will pop-up, after that you can type '**<fc #008000>\ help\ </fc>**' to find out which are the available commands.
+To start the application you need first to press ENTER key (CR) from the keyboard. A welcome message will pop-up, after that you can type '**help**' to find out which are the available commands.
 
-
-| The project offers two calibration techniques based on **<fc #008000>Beer-Lambert Law</fc>**. Find which one is more closer to your application (see :doc:`Calibration Procedure </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cn0338>`).
-|
+The project offers two calibration techniques based on **Beer-Lambert Law**. Find which one is more closer to your application (see :doc:`Calibration Procedure </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cn0338>`).
 
 .. note::
 
-   When you will want to use for a <fc #008080>first time</fc> CN0338 shield, please be aware that all environment variables are set to default and the CN0338 requires <fc #008080>calibaration</fc>.
+   When you will want to use for a first time CN0338 shield, please be aware that all environment variables are set to default and the CN0338 requires calibaration.
 
 
-You can check current values of the system variables using '<fc #008000>\ **printsettings**\ </fc>' command and also have the possibility to reset system variables to default values - '<fc #008000>\ **resetTodefault**\ </fc>'.
-
-.. note::
-
-   The UART <fc #008080>baud rate</fc> can be reset to default value using terminal <fc #008080>command</fc> or pressing <fc #008080>RESET</fc> button from EVAL-ADICUP360 board.
-
-
-To start CN0338 measurements use '<fc #008000>\ **run**\ </fc>' command. This one will display **<fc #008000>CO2 concentration</fc>**; <fc #008000>\ **temperature**\ </fc>; low, high and diff voltage values for <fc #008000>\ **REF**\ </fc> (peak-to-peak output of the <fc #008000>reference</fc> detector), <fc #008000>\ **ACT**\ </fc> (peak-to-peak output of the <fc #008000>active</fc> detector) and <fc #008000>\ **FA**\ </fc> (fractional absorbance).
-
-
-
-| From command line you can set following parameters: <fc #008000>ADC</fc> sample <fc #008000>frequency</fc>; serial port <fc #008000>baud rate</fc>; <fc #008000>falling</fc> and <fc #008000>rising</fc> edge <fc #008000>time</fc> for NDIR signal; <fc #008000>NDIR</fc> light source <fc #008000>frequency</fc>.
-|
+You can check current values of the system variables using '**printsettings**' command and also have the possibility to reset system variables to default values - '**resetTodefault**'.
 
 .. note::
 
-   To abort any running command you need to use '<fc #008000>\ **Ctrl + c**\ </fc>' key combination.
+   The UART baud rate can be reset to default value using terminal command or pressing RESET button from EVAL-ADICUP360 board.
 
 
-| 
-| ==== Calibration procedure ====
-| The CN0338 need to be calibrated before first use to archive best performance. There have two calibrate algorithm in CN0338 firmware, customer can choice one of algorithm to apply in calibrate procedure. The two algorithm is: Beer-Lambert Law and Modified Beer-Lambert Law, for more details about those two algorithm, please reference the circuit note in www.analog.com/cn0338.
+To start CN0338 measurements use '**run**' command. This one will display **CO2 concentration**; **temperature**; low, high and diff voltage values for **REF** (peak-to-peak output of the reference detector), **ACT** (peak-to-peak output of the active detector) and **FA** (fractional absorbance).
+
+From command line you can set following parameters: ADC sample frequency; serial port baud rate; falling and rising edge time for NDIR signal; NDIR light source frequency.
+
+.. note::
+
+   To abort any running command you need to use '**Ctrl + c**' key combination.
+
+
+Calibration procedure
+~~~~~~~~~~~~~~~~~~~~~
+
+The CN0338 need to be calibrated before first use to archive best performance. There have two calibrate algorithm in CN0338 firmware, customer can choice one of algorithm to apply in calibrate procedure. The two algorithm is: Beer-Lambert Law and Modified Beer-Lambert Law, for more details about those two algorithm, please reference the circuit note in www.analog.com/cn0338.
 
 **Beer-Lambert Law calibrate procedure**
 
--  input the command: **<fc #008000>\ sbllcalibrate\ </fc>**
+-  input the command: **sbllcalibrate**
 -  Inject low concentration or zero gas (nitrogen) to the chamber, please maker sure the gas is full filling with chamber.
 -  wait for gas evenly dispersion
 -  input the low concentration gas's concentration in terminal
@@ -63,11 +63,9 @@ To start CN0338 measurements use '<fc #008000>\ **run**\ </fc>' command. This on
 -  input the high concentration gas's concentration in terminal
 -  wait for the system to complete the calibration
 
-| 
-
 **Modified Beer-Lambert Law calibrate procedure**
 
--  input the command: **<fc #008000>\ mbllcalibrate\ </fc>**
+-  input the command: **mbllcalibrate**
 -  input the constant parameter **b**
 -  input the constant parameter **c**
 -  Inject low concentration or zero gas (nitrogen) to the chamber, please maker sure the gas is full filling with chamber.
@@ -78,9 +76,7 @@ To start CN0338 measurements use '<fc #008000>\ **run**\ </fc>' command. This on
 -  input the high concentration gas's concentration in terminal
 -  wait for the system to complete the calibration
 
-|
-
-| After above calibrate procedure the CN0338 is ready to use.
+After above calibrate procedure the CN0338 is ready to use.
 
 Demo Requirements
 -----------------
@@ -111,7 +107,7 @@ Setting up the hardware
 -  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
 
 
-|image2|
+|image1|
 
 -  Connect the **EVAL-CN0338-ARDZ** to the Arduino connectors **P2, P3, P5, P6, P7, P8, P9** of the **EVAL-ADICUP360** board.
 -  Plug in the DC Power supply into the DC barrel jack (P11) on the EVAL-ADICUP360.
@@ -153,14 +149,14 @@ The software for the **ADuCM360_demo_cn0338** demo can be found here:
 Configuring the Software Parameters
 -----------------------------------
 
--  **Thermopile output data processing algorithm** - <fc #008080>ALGORITHM_PEAK2PEAK</fc> for peak-to-peak algorithm or <fc #008080>ALGORITHM_AVERAGE</fc> for averaging algorithm(*ADC.h*).
+-  **Thermopile output data processing algorithm** - ALGORITHM_PEAK2PEAK for peak-to-peak algorithm or ALGORITHM_AVERAGE for averaging algorithm(*ADC.h*).
 
 ::
 
-      #define ALGORITHM_PEAK2PEAK  
+      #define ALGORITHM_PEAK2PEAK
 
--  If the <fc #008080>ALGORITHM_AVERAGE</fc> is defined, the system will use the average value of all ADC sample point in half IR chop period as the input.
--  If the <fc #008080>ALGORITHM_PEAK2PEAK</fc> is defined, the system will use the maximum value of all ADC sample point in IR high period and minimum value of all ADC sample point in IR low period as the input.
+-  If the ALGORITHM_AVERAGE is defined, the system will use the average value of all ADC sample point in half IR chop period as the input.
+-  If the ALGORITHM_PEAK2PEAK is defined, the system will use the maximum value of all ADC sample point in IR high period and minimum value of all ADC sample point in IR low period as the input.
 
 Outputting Data
 ---------------
@@ -171,8 +167,6 @@ Serial Terminal Output
 -  In order to view the data, you must flash the program to the EVAL-ADICUP360.
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
-
-| 
 
 Following is the UART configuration.
 
@@ -185,8 +179,6 @@ Following is the UART configuration.
      Start: 1 bit
      Stop: 2 bit
      Flow Control: none
-
-|
 
 -  The user must press the **<ENTER>** key to get the welcome message for this demo.
 -  The user then must type in the word **<help>** to bring up the application menu.
@@ -223,19 +215,14 @@ This project contains: system initialization part - disabling watchdog, setting 
    :align: left
    :width: 310px
 
-| 
-| In the **src** and **include** folders you will find the source and header files related to CN0338 software application. The *Communication.cpp/h* files contain UART specific data, meanwhile the *CN0338.cpp/h* files contain the calculation part, the *ADC.cpp/h* files contain ADC channels handling and *Flash.cpp/h* provide memory management. The entire '<fc #008000>\ **command line interpreter**\ </fc>' is summarize in *Cmd.cpp/h*, *Cmd_settings.cpp/h* and *Cmd_calibrate.cpp/h* files. Because most of the parameters can be set at run time, not need to configure so much values before you start application.
+In the **src** and **include** folders you will find the source and header files related to CN0338 software application. The *Communication.cpp/h* files contain UART specific data, meanwhile the *CN0338.cpp/h* files contain the calculation part, the *ADC.cpp/h* files contain ADC channels handling and *Flash.cpp/h* provide memory management. The entire '**command line interpreter**' is summarize in *Cmd.cpp/h*, *Cmd_settings.cpp/h* and *Cmd_calibrate.cpp/h* files. Because most of the parameters can be set at run time, not need to configure so much values before you start application.
 
-| 
-| The **RTE** folder contains device and system related files:
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| // End of Document //
+// End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0338_hw_combined.png
-   :width: 550px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_3.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_3.png
    :width: 500px

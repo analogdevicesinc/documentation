@@ -80,12 +80,7 @@ Sometimes it can be difficult to navigate all of the documentation to install th
 
 --------------
 
-.. important::
-
-   If you run into any questions, please ask on this Support Forum: :ez:`ez>adieducation/university-program/f/q-a <adieducation/university-program/f/q-a>`
-
-
-.
+If you run into any questions, please ask on this Support Forum: :ez:`ez>adieducation/university-program/f/q-a <adieducation/university-program/f/q-a>` .
 
 .. |image1| image:: https://wiki.analog.com/_media/grc_windows_test.png
    :width: 400px

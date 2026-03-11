@@ -4,7 +4,7 @@ IIO Oscilloscope Profile Guidelines
 About
 -----
 
-| Profiles are `INI <https://en.wikipedia.org/wiki/INI_file>`_ files that can configure the IIO-Oscilloscope software or manipulate its behavior.
+Profiles are `INI <https://en.wikipedia.org/wiki/INI_file>`_ files that can configure the IIO-Oscilloscope software or manipulate its behavior.
 
 Using Profiles
 --------------
@@ -43,9 +43,7 @@ The *cycle* instruction runs (cycles) the software for a given number of microse
 
    cycle=[microseconds]
 
-| **Where:**
-| [microseconds] - Number of microseconds. Type: unsigned int.
-| **Applies in section:** [IIO Oscilloscope - Capture Window<N>]
+**Where:** [microseconds] - Number of microseconds. Type: unsigned int. **Applies in section:** [IIO Oscilloscope - Capture Window<N>]
 
 Quit
 ~~~~
@@ -67,9 +65,7 @@ The *capture* instruction signals the software to start capturing data or to sto
 
    capture=[state]
 
-| **Where:**
-| [state] - State of the capture process. It can be 0 or 1.
-| **Applies in section:** [IIO Oscilloscope - Capture Window<N>]
+**Where:** [state] - State of the capture process. It can be 0 or 1. **Applies in section:** [IIO Oscilloscope - Capture Window<N>]
 
 Loops
 -----
@@ -89,12 +85,7 @@ The sequence of numbers the *SEQ* loop iterates through, starts from [first] and
    <SEQ> [var] [first] [increment] []
    </SEQ>
 
-| **Where:**
-| [var] - The name of the loop variable. Type: string. Longer names that 127 characters will be truncated.
-| [first] - Type: long long.
-| [increment] - Type: long long.
-| [last] - Type: long long.
-| **Applies in section:** All sections.
+**Where:** [var] - The name of the loop variable. Type: string. Longer names that 127 characters will be truncated. [first] - Type: long long. [increment] - Type: long long. [last] - Type: long long. **Applies in section:** All sections.
 
 FOR
 ~~~
@@ -106,13 +97,9 @@ The *FOR* loop iterates through the values specified within the curly brackets. 
    <FOR> [var] in {[space-separated values]}
    </FOR>
 
-| **Where:**
-| [var] - The name of the loop variable. Type: string. Longer names that 127 characters will be truncated.
-| [space-separated values] - strings without the space character.
-| **Applies in section:** All sections.
+**Where:** [var] - The name of the loop variable. Type: string. Longer names that 127 characters will be truncated. [space-separated values] - strings without the space character. **Applies in section:** All sections.
 
-| Loops can be nested. Any combination is possible and the nesting level is not limited.
-| Usage example:
+Loops can be nested. Any combination is possible and the nesting level is not limited. Usage example:
 
 ::
 
@@ -150,13 +137,7 @@ The instructions below will test if markers and iio attributes values are within
 
    test.[device].[attribute].[type]=[min] [max]
 
-| **Where:**
-| [m] - The index of the marker.
-| [device] - The name of the iio device.
-| [attribute] - The name of the iio attribute of the iio device.
-| [type] - Any of the following: int, double.
-| [min] - Type: double.
-| [max] - Type: double.
+**Where:** [m] - The index of the marker. [device] - The name of the iio device. [attribute] - The name of the iio attribute of the iio device. [type] - Any of the following: int, double. [min] - Type: double. [max] - Type: double.
 
 Popup Messages
 ~~~~~~~~~~~~~~
@@ -167,8 +148,7 @@ The *test.message* instruction will display a popup window with the message spec
 
    test.message=[message to display]
 
-| **Where:**
-| [message] - Any string message. **Applies in section:** [IIO Oscilloscope - Capture Window<N>]
+**Where:** [message] - Any string message. **Applies in section:** [IIO Oscilloscope - Capture Window<N>]
 
 Logging
 -------
@@ -187,6 +167,4 @@ The *save_png* instruction signals the software to terminate its execution.
 
    save_png=[filename].png
 
-| **Where:**
-| [filename] - The name of the file the image should be saved.
-| **Applies in section:** [IIO Oscilloscope - Capture Window<N>]
+**Where:** [filename] - The name of the file the image should be saved. **Applies in section:** [IIO Oscilloscope - Capture Window<N>]

@@ -60,9 +60,9 @@ When U-Boot with Falcon Mode support has been built and flashed onto the board, 
       Verifying Hash Integrity ... sha1+ sha1,rsa2048:dev- OK
       Loading ramdisk from 0x965a1e50 to 0x9c000000
    ## Loading fdt from FIT Image at 96000000 ...
-      Using 'conf-1' configuration 
+      Using 'conf-1' configuration
       Verifying Hash Integrity ... OK
-      Trying 'fdt-2' fdt subimage  
+      Trying 'fdt-2' fdt subimage
       Verifying Hash Integrity ... sha1+ sha1,rsa2048:dev- OK
       Loading fdt from 0x9659ac00 to 0x99000000
    [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x412fd050]

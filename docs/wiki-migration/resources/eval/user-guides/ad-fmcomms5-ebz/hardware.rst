@@ -1,11 +1,11 @@
 AD-FMCOMMS5-EBZ Hardware
 ========================
 
-| 
-| ===== Schematic, PCB Layout, Bill of Materials =====
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
 
 Rev. C
-------
+~~~~~~
 
 .. admonition:: Download
    :class: download
@@ -21,7 +21,7 @@ Rev. C
 
 
 Rev. B
-------
+~~~~~~
 
 .. admonition:: Download
    :class: download
@@ -44,26 +44,26 @@ Rev. B
          |AD-FMCOMMS5-EBZ Rev B ADF5355 rework|
 
 I/O Voltage
-~~~~~~~~~~~
+-----------
 
 The :adi:`AD-FMCOMMS5-EBZ` (AD9361) assumes a VDD_INTERFACE voltage between 1.71V and 2.625V (1.8 to 2.5 +/- 5%), so on your FPGA carrier board, you should ensure that V\ :sub:`ADJ` is between these levels. Setting things to 3.3V will damage the part.
 
 Phase Synchronization
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 Traces between baluns and SMAs are not phase-matched on REV-A and REV-B which can cause phase misalignment with the libad9361-iio ad9361_fmcomms5_phase_sync solution. This is corrected on REV-C. Therefore, phase alignment performance can vary over frequency. The RF switches on REV-A/B are also not designed to work above 900 MHz. Higher frequency switches are available on REV-C.
 
 Below are some preliminary results using Release 2018-R1 with equal length but unmatched cables
 
 Rev B
-^^^^^
+~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms5-ebz/fm5_phase_performance_rev_b.svg
    :alt: Rev B
    :align: center
 
 Rev C
-^^^^^
+~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms5-ebz/fm5_phase_performance_rev_c.svg
    :alt: Rev C

@@ -9,8 +9,7 @@ ADRV9009/ADRV9008 Device Driver Customization
    If unsure please see the manual or don't change!
 
 
-| The Linux platform allows you to examine and determine optimal settings for your target application:
-| See here: :doc:`ADRV9009/ADRV9008 Advanced Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_advanced_plugin>`
+The Linux platform allows you to examine and determine optimal settings for your target application: See here: :doc:`ADRV9009/ADRV9008 Advanced Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_advanced_plugin>`
 
 AGC Settings
 ------------
@@ -647,8 +646,6 @@ Clocks
 | adi,dig-clocks-rf-pll-phase-sync-mode | 0       | Set RF PLL phase synchronization mode. Adds extra time to lock RF PLL when PLL frequency changed. See enum for options |
 +---------------------------------------+---------+------------------------------------------------------------------------------------------------------------------------+
 
-.. _rx-1:
-
 RX
 ~~
 
@@ -697,8 +694,6 @@ RX
 +-----------------------------+---------+---------------------------------------------------------+
 | adi,rx-settings-rx-channels | 3       | The desired Rx Channels to enable during initialization |
 +-----------------------------+---------+---------------------------------------------------------+
-
-.. _orx-1:
 
 ORX
 ~~~

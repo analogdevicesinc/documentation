@@ -312,7 +312,7 @@ The attributes are:
 
 ::
 
-   converted_accel [m/s^2] = (raw + calibbias) * scale 
+   converted_accel [m/s^2] = (raw + calibbias) * scale
 
 Temperature channel
 ^^^^^^^^^^^^^^^^^^^
@@ -329,7 +329,7 @@ The channel has 3 attributes, as follows:
 
 ::
 
-   converted_temp [degrees Celsius] = (raw + offset) * scale 
+   converted_temp [degrees Celsius] = (raw + offset) * scale
 
 Device buffers
 ~~~~~~~~~~~~~~

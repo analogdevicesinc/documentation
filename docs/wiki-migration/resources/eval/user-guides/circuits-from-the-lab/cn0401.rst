@@ -13,13 +13,12 @@ With the :adi:`ADM3055E` CAN FD transceiver, the circuit provides reinforced sig
 |image1|
 
 Hardware Connection and Jumper Configurations
----------------------------------------------
 
---------------
 
 The :adi:`CN0401` connects to the :adi:`ADICUP3029 <EVAL-ADICUP3029>` or any Arduino Uno form-factor development platform using the mating headers. Shown below are the hardware connections and jumper headers which configure the operation of the board.
 
-| |image2|
+
+|image2|
 
 .. important::
 
@@ -27,9 +26,8 @@ The :adi:`CN0401` connects to the :adi:`ADICUP3029 <EVAL-ADICUP3029>` or any Ard
 
 
 Power Supply Connections and Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
---------------
 
 | The required power supply sources for both the logic and dc-to-dc converter can be independently configured via P20 and P11 jumpers to source power from either the underlying development platform or external power supplies.
 | **P6 External Supply Terminal Block Pin Assignment**
@@ -63,9 +61,8 @@ Pin Description
 +--------------------+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 CAN Bus Connections
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
---------------
 
 | The board can be connected to the CAN bus via the CAN bus terminal block or the standard CAN port: CiA 303-1 male 9-pin sub-D port.
 | **CAN Bus Terminal Block Pin Assignment**
@@ -78,7 +75,7 @@ Pin Description
 3   GND2
 === ===========
 
-\**CiA 303-1 Male 9-pin Sub-D Port \*\*
+**CiA 303-1 Male 9-pin Sub-D Port**
 
 === ===========================================================
 Pin Description
@@ -95,9 +92,8 @@ Pin Description
 === ===========================================================
 
 SPI Interface Chip Select Pin Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
---------------
 
 | The board's SPI Interface has a configurable pin assignment for its chip select to support multiple shield stack-up on the same development platform. The chip select signal can be routed to one of four different Arduino pins via mechanical shunt on the P2 header.
 | **P2 Header Shunt Positions for Setting SPI Chip Select Pin**
@@ -112,9 +108,8 @@ Shunt pins 7 and 8 |image14| Board uses Arduino pin D7 as chip select
 ================== ========= =========================================
 
 Silent Mode and Interrupt Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
---------------
 
 | Silent mode of :adi:`ADM3055E` transceiver is accessible to the development platform through the Arduino Uno D4 header pin. The CAN FD controller issues service requests to the development platform as interrupts through the mechanical shunt on P7.
 | **P5 and P7 Shunt Placement**
@@ -128,9 +123,8 @@ Silent Mode and Interrupt Configuration
 +---------------+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Slope Control and Full Speed Mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
---------------
 
 | The :adi:`ADM3055E` can be set to full speed mode, slope control mode or standby mode via mechanical shunt position P19. In full-speed mode, the transition times of the signal transmitted to the CAN bus supports all data rates up to the maximum data rate. In slope control mode, the slew rate of the CAN bus lines is decreased to reduce emissions from fast edges and will only be used for lower data rates. If the mechanical shunt on P19 is removed and the RS signal allowed to float, the transceiver will enter standby mode.
 | **P19 Shunt Position for Setting Slope Control and Full Speed Mode**
@@ -164,8 +158,7 @@ Schematic, PCB Layout, Bill of Materials
    
 
 
-| 
-| *End of Document*
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0401/img_20191202_092114.jpg
    :width: 600px

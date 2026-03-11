@@ -34,8 +34,6 @@ To open the Debugger in Scopy tool, its visibility must be enbled in the Instrum
 
 Now open Scopy:
 
-|
-
 .. container:: centeralign
 
    \
@@ -43,11 +41,9 @@ Now open Scopy:
 
    |image2|
 
-| Connect to ADALM2000 device and open the Debugger Instrument.
+Connect to ADALM2000 device and open the Debugger Instrument.
 
 To load a script press "Load Script" button and select the folder path of the file.
-
-|
 
 .. container:: centeralign
 
@@ -56,7 +52,7 @@ To load a script press "Load Script" button and select the folder path of the fi
 
    |image3|
 
-| After the location is set, to run the script press the "Run" button placed on the left side of the "Load Script" button.
+After the location is set, to run the script press the "Run" button placed on the left side of the "Load Script" button.
 
 Available Commands
 ------------------

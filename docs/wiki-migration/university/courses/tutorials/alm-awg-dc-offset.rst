@@ -53,8 +53,6 @@ If the need is to produce a test signal riding on top of a DC offset, but requir
 
 A limitation of using this technique is that the current available to the load is limited to the output current of the AWG generator, since the load current must flow through both the power supply and AWG output. Also, the ADALM2000 generator has a 50Ω output impedance, meaning any load current flows through this resistance. This resistance forms a voltage divider with the load impedance, so be sure to adjust the DC power supply output voltage accordingly.
 
-.. _measurement-tip-1:
-
 Measurement Tip
 ~~~~~~~~~~~~~~~
 

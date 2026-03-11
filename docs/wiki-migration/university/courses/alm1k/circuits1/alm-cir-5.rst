@@ -74,9 +74,7 @@ Where Vo is the initial voltage stored in capacitor at t = 0. The product RC is 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Resistors ( 2.2 KΩ, 10 KΩ)
-| Capacitors (1 µF, 0.01 µF)
+ADALM1000 hardware module Resistors ( 2.2 KΩ, 10 KΩ) Capacitors (1 µF, 0.01 µF)
 
 Procedure:
 ~~~~~~~~~~
@@ -147,11 +145,9 @@ Questions:
 
 **For Further Reading:**
 
-| :doc:`ALICE Oscilloscope User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
-| :doc:`Oscilloscope Terminology </wiki-migration/university/courses/alm1k/intro/oscilloscope-terminology>`
+:doc:`ALICE Oscilloscope User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` :doc:`Oscilloscope Terminology </wiki-migration/university/courses/alm1k/intro/oscilloscope-terminology>`
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/breadboard_rc.png
    :width: 400px

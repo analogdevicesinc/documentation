@@ -3,9 +3,16 @@
 General 2nd Order with Var Param Lookup Slew
 ============================================
 
-| |gsoicon.png|
-| |gso.png|
-| =====Description===== The General (2nd-Order / Lookup) block gives access to a wide variety of 2nd-order IIR (infinite impulse response) filter algorithms. See General 2nd-Order Filters (in Algorithm Information) for details about the algorithms driving these blocks.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/gsoicon.png
+   :alt: gsoicon.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/gso.png
+   :alt: gso.png
+
+Description
+===========
+
+The General (2nd-Order / Lookup) block gives access to a wide variety of 2nd-order IIR (infinite impulse response) filter algorithms. See General 2nd-Order Filters (in Algorithm Information) for details about the algorithms driving these blocks.
 
 The filters available are: Tone Peaking General LP/HP Butterworth LP/HP Bessel LP/HP Chebyshev LP/HP
 
@@ -18,8 +25,10 @@ Click the icon button:. The curve is defined using the Tone Control window (show
 
 Enter the number of curves desired in the # Curves field. Enter Boosts, (overall) Gain, and Q in their fields. Enter the desired cutoff or center (peaking filters) frequency in the Frequency fields. Other parameters to enter will vary with filter type.
 
-| The variety and range of filters are remarkable, as can be seen from the many examples in the General (2nd-Order / Lookup) topic page.
-| ===== Targets Supported =====
+The variety and range of filters are remarkable, as can be seen from the many examples in the General (2nd-Order / Lookup) topic page.
+
+Targets Supported
+=================
 
 ============= ========== ================ ============= ================
 Name          ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -49,7 +58,7 @@ Name    Type  Description
 Output0 Audio The filtered output
 ======= ===== ===================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -91,6 +100,3 @@ Output0 Audio The filtered output
 +-------------------------+----------------------------------------------------------------+------------------------+---------------+
 | slew_mode               | Filter Slew Value                                              | NA                     | Integer32     |
 +-------------------------+----------------------------------------------------------------+------------------------+---------------+
-
-.. |gsoicon.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/gsoicon.png
-.. |gso.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/gso.png

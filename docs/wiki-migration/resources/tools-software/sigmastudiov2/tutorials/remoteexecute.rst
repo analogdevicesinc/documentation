@@ -1,6 +1,7 @@
-| 
-| :doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/tutorials>`
-| ======Remotely Download and Tune Target Platform======
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/tutorials>`
+
+Remotely Download and Tune Target Platform
+==========================================
 
 .. note::
 
@@ -12,8 +13,10 @@ SigmaStudio+ can remotely download and tune target platforms. SigmaStudio+ suppo
 -  **Remote setup using Scripting**: The SigmaStudio+ is running on remote machine ‘A’ and hardware is connected to the same machine. This can be accessed from another machine ‘B’ on the same network using Scripting.
 -  **Remote setup using TCP/IP**: Hardware is connected to a remote machine ‘A’ and SigmaStudio+ is running on machine ‘B’. It is possible to download and tune the target connected to a remote machine 'A' from SigmaStudio running on machine 'B' using TCP/IP communication.
 
-| 
-| ====Remote setup using Scripting==== While using scripting, SigmaStudio+ with hardware setup will be running on machine ‘A’ (remote machine) and will act as the scripting server. A scripting client application should be hosted in machine ‘B’. Refer to :doc:`scripting </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/scripting>` for more details on scripting. Example client applications implemented in C# and Python are provided as part of the package. These example applications (CSharp client / Python client) can be launched using windows command prompt or any suitable IDE.
+Remote setup using Scripting
+----------------------------
+
+While using scripting, SigmaStudio+ with hardware setup will be running on machine ‘A’ (remote machine) and will act as the scripting server. A scripting client application should be hosted in machine ‘B’. Refer to :doc:`scripting </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/scripting>` for more details on scripting. Example client applications implemented in C# and Python are provided as part of the package. These example applications (CSharp client / Python client) can be launched using windows command prompt or any suitable IDE.
 
 IP Address and Port Number of the remote machine should be entered are arguments in the client application to establish connection. Default port number is 9090. A different port number for connection can be setup in SigmaStudio+ under the Settings window. Below message appears after a successful connection.
 
@@ -35,8 +38,12 @@ This command will open the project in the remote machine. Use API name along wit
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/remote4.png
    :align: center
 
-| Use ‘Exit’ keyword to terminate the client application.
-| ====Remote setup using TCP/IP==== SigmaStudio+ supports TCP/IP communication to establish remote connection where hardware is connected to the remote machine ‘A’ and SigmaStudio+ application is running on the host machine ‘B’. ‘SimpleServer’ TCPIP example server is provided as an example. This application running on the remote machine will receive the TCP/IP packets from SigmaStudio and convert them into SPI packets using USBi.
+Use ‘Exit’ keyword to terminate the client application.
+
+Remote setup using TCP/IP
+-------------------------
+
+SigmaStudio+ supports TCP/IP communication to establish remote connection where hardware is connected to the remote machine ‘A’ and SigmaStudio+ application is running on the host machine ‘B’. ‘SimpleServer’ TCPIP example server is provided as an example. This application running on the remote machine will receive the TCP/IP packets from SigmaStudio and convert them into SPI packets using USBi.
 
 .. important::
 

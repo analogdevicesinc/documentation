@@ -56,7 +56,7 @@ The board provides three (some modification maybe necessary) possible clock path
 Default clock input
 ^^^^^^^^^^^^^^^^^^^
 
-| The **default clock input** circuitry is derived from a simple transformer-coupled circuit using a high bandwidth 1:1 impedance ratio transformer (T201) that adds a very low amount of jitter to the clock path. The clock input (J201) is 50 Ω terminated and AC-coupled to handle single-ended sine wave types of inputs. The transformer converts the single-ended input to a differential signal that is clipped before entering the ADC clock inputs.
+The **default clock input** circuitry is derived from a simple transformer-coupled circuit using a high bandwidth 1:1 impedance ratio transformer (T201) that adds a very low amount of jitter to the clock path. The clock input (J201) is 50 Ω terminated and AC-coupled to handle single-ended sine wave types of inputs. The transformer converts the single-ended input to a differential signal that is clipped before entering the ADC clock inputs.
 
 Crystal oscillator
 ^^^^^^^^^^^^^^^^^^
@@ -66,7 +66,7 @@ The evaluation board can be set up to be clocked from the **crystal oscillator**
 -  Install C205 and C206
 -  Remove C202
 
-| Jumper P200 is used to disable the oscillator from running.
+Jumper P200 is used to disable the oscillator from running.
 
 Clock generator AD9517
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -76,8 +76,7 @@ A **differential LVPECL or LVDS clock driver** can also be used to clock the ADC
 -  Populate (C304, C305) for LVPECL clock driver **or** (C306, C307) for LVDS clock driver, with 0.1 µF capacitors
 -  Remove C209 and C210 to disconnect the default clock path inputs
 
-| The AD9517 has many SPI-selectable options that are set to a default mode of operation. Consult the AD9517 data sheet for more information about these and other options.
-|
+The AD9517 has many SPI-selectable options that are set to a default mode of operation. Consult the AD9517 data sheet for more information about these and other options.
 
 .. important::
 

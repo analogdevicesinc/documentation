@@ -1,11 +1,18 @@
-| :doc:`Click here to return to the Sources page </wiki-migration/resources/tools-software/sigmastudiov2/modules/sources>`
-| ====== Pink Noise ====== |pinknoise.png|
+:doc:`Click here to return to the Sources page </wiki-migration/resources/tools-software/sigmastudiov2/modules/sources>`
+
+Pink Noise
+==========
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/pinknoise.png
+   :alt: pinknoise.png
 
 Description
-===========
+-----------
 
-| This module generates white noise and passes it through a sixth-order IIR filter with a 1/f power response. Pink noise has a power falloff of 1/f.
-| ===== Targets Supported =====
+This module generates white noise and passes it through a sixth-order IIR filter with a 1/f power response. Pink noise has a power falloff of 1/f.
+
+Targets Supported
+-----------------
 
 ========= ========== ================ ============= ================
 Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -13,11 +20,11 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 PinkNoise B          B                S             B
 ========= ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Output
-------
+~~~~~~
 
 ========== ===== ================
 Name       Type  Description
@@ -25,7 +32,7 @@ Name       Type  Description
 Pink Noise Audio Output channel 0
 ========== ===== ================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+--------------+------------------------------------------+
@@ -47,5 +54,3 @@ Pink Noise Audio Output channel 0
 
 | 
 | ===== DSP Parameter Computation ===== DSP_Gain = 0.25 \* Math.Pow(10, (Configurable_gain / 20))
-
-.. |pinknoise.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/pinknoise.png

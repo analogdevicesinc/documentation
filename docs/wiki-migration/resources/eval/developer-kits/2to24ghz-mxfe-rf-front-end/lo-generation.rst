@@ -3,9 +3,12 @@
 LO Generation Options
 =====================
 
-| The 2-24GHz RF Front End has two different sets of LO specifications and requirements- one for the fixed LO sources and a second for the wideband, tunable LOs. Additionally, LO performance requirements vary widely across the instrumentation, communications, and aerospace & defense application space, so while a one-size-fits-all solution for the LO generation circuitry may not be practical, Analog Devices offers numerous, flexible options for wideband frequency synthesizers.
-| =====Fixed LO Source=====
-| The 18GHz, fixed LO source can be supplied by any integrated PLL/VCO such as the :adi:`ADF4371`, or a discrete LO implementation using ADI PLLs and quad-band VCOs for applications requiring lower phase noise. The frequency synthesizer circuit detailed in CN0568 (shown below), provides one possible solution for a discrete LO implementation using the :adi:`ADF41513` PLL and :adi:`HMC8362` quad-band VCO.
+The 2-24GHz RF Front End has two different sets of LO specifications and requirements- one for the fixed LO sources and a second for the wideband, tunable LOs. Additionally, LO performance requirements vary widely across the instrumentation, communications, and aerospace & defense application space, so while a one-size-fits-all solution for the LO generation circuitry may not be practical, Analog Devices offers numerous, flexible options for wideband frequency synthesizers.
+
+Fixed LO Source
+---------------
+
+The 18GHz, fixed LO source can be supplied by any integrated PLL/VCO such as the :adi:`ADF4371`, or a discrete LO implementation using ADI PLLs and quad-band VCOs for applications requiring lower phase noise. The frequency synthesizer circuit detailed in CN0568 (shown below), provides one possible solution for a discrete LO implementation using the :adi:`ADF41513` PLL and :adi:`HMC8362` quad-band VCO.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/cn0568synthesizerdiagram.png
    :align: center
@@ -30,8 +33,10 @@ The following table summarizes the data in the plot above:
 
 The full simulation file created in ADI SimPLL can be requested with the instructions provided at the bottom of this page.
 
-| 
-| =====Tunable LO Source===== The tunable LO synthesizer has a more complex set of requirements, many of which directly impact the system-level functionality of the signal chain, such as tuning speed and frequency coverage. The wideband frequency synthesizer circuit shown in the figure below uses the :adi:`ADF4371` integrated PLL/VCO, which is one potential option for the tunable LO source, enabling low phase-noise tuning across the RF signal chain’s full operating range. The tunable filtering on the :adi:`ADF4371` outputs is optional and dependent on the LO spurious requirements of the end system. The SPDT switch selects between the two :adi:`ADF4371` outputs and the :adi:`HMC383` driver amp ensure sufficient LO drive level at the mixer for optimal performance.
+Tunable LO Source
+-----------------
+
+The tunable LO synthesizer has a more complex set of requirements, many of which directly impact the system-level functionality of the signal chain, such as tuning speed and frequency coverage. The wideband frequency synthesizer circuit shown in the figure below uses the :adi:`ADF4371` integrated PLL/VCO, which is one potential option for the tunable LO source, enabling low phase-noise tuning across the RF signal chain’s full operating range. The tunable filtering on the :adi:`ADF4371` outputs is optional and dependent on the LO spurious requirements of the end system. The SPDT switch selects between the two :adi:`ADF4371` outputs and the :adi:`HMC383` driver amp ensure sufficient LO drive level at the mixer for optimal performance.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tunable_lo_block_diagram.png
 
@@ -57,27 +62,19 @@ The following table summarizes the data in the plot above:
 
 Simulation files have been created for these circuits in ADI SimPLL. Two files can be provided by following the instructions at the bottom of this page, one for each output of the :adi:`ADF4371`.
 
-|
-
 .. admonition:: Download
    :class: download
 
    To request the SimPLL files that simulation the performance of these circuits, please send a request `here <https://support.analog.com/en-US/technical-support/create-case-techsupport/>`_ and include the following info:
 
-
-   | \* Name
    
+   -  Name
    -  Job Title
    -  Company Name
    -  Company Location
    -  Application/Use Case
    
-   |
 
-   |
-
-
-| 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/fixed_lo_block_diagram.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/18g.png

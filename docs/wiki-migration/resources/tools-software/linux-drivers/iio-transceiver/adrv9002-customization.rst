@@ -18,8 +18,8 @@ The two main categories are combined DMA mode, which we refer to as MIMO mode, a
 
 For examples of these arrangements, look at the following devicetrees:
 
--  :git-linux:`MIMO (combined) mode <arch/arm64/boot/dts/xilinx>`
--  :git-linux:`Split mode <arch/arm64/boot/dts/xilinx>`
+-  `MIMO (combined) mode <https://github.com/analogdevicesinc/linux/blob/e2d92f9152d49473a887aad70486855e5843faa5/arch/arm64/boot/dts/xilinx>`_
+-  `Split mode <https://github.com/analogdevicesinc/linux/blob/e2d92f9152d49473a887aad70486855e5843faa5/arch/arm64/boot/dts/xilinx>`_
 
 RX
 ==
@@ -204,9 +204,9 @@ The following attributes are valid for both TX1 and TX2. The user needs to defin
    adi,channels {
        #address-cells = <1>;
        #size-cells = <0>;
-           
+
            ...
-           
+
        tx@0 {
            reg = <0>;
            adi,port = <1>;
@@ -219,8 +219,6 @@ The following attributes are valid for both TX1 and TX2. The user needs to defin
            adi,pinctrl = <&tx_pinctrl1>;
        };
    };
-
-.. _base-settings-1:
 
 Base Settings
 -------------
@@ -265,7 +263,7 @@ All the gpios configurations should be done under adi,gpios node as shown in the
                    reg = <0>;
                    adi,signal = <2>;
                    adi,polarity = <1>;
-                   adi,master = <2>;        
+                   adi,master = <2>;
            };
    };
 

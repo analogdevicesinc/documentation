@@ -3,22 +3,28 @@ Weigh Scale Measurement Demo
 
 The **ADuCM360_demo_cn0216** is a weigh scale measurement demo project for the EVAL-ADICUP360 base board with additional :adi:`EVAL-CN0216-ARDZ shield <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0216-ARDZ.html>`, created using the CrossCore Embedded Studios Interactive Development Environment(IDE).
 
-| 
-| ===== General description =====
-| This project is a good example for how to use :doc:`EVAL-ADICUP360 board </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/base_board>` in different combinations with various shield boards. It expand the list of possible applications that can be done with the base board.
-| The **ADuCM360_demo_cn0216** project uses the :adi:`EVAL-CN0216-ARDZ shield <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0216-ARDZ.html>` which is a precision weigh scale system using a **24-bits** sigma-delta converter, and auto-zero amplifiers providing high gain for the bridge sensor input
+General description
+-------------------
 
-| |image1|
-| The CN0216 circuit translates the resistance changes on the bridge into very small voltages. The bridge is excited by a regulated 5V and that determines the full scale range of the bridge output. Those values are passed through very low noise, auto zero amplifiers to remove as many error sources as possible before being gained up to levels that will be compatible with the ADC. The 24-bit ADC value is received via SPI interface of the EVAL-ADICUP360 board.
+This project is a good example for how to use :doc:`EVAL-ADICUP360 board </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/base_board>` in different combinations with various shield boards. It expand the list of possible applications that can be done with the base board.
 
-| |image2|
-| The **ADuCM360_demo_cn0216** application processes ADC output value and make all necessary conversions in order to provide the weight results. A UART interface (9600 baud rate and 8-bits data length) is used to send the results to terminal window: ADC Data Register **codes**, ADC Input Voltage **volts**, and Sensor Input Weight **grams** are the outputs provided in the terminal window.
+The **ADuCM360_demo_cn0216** project uses the :adi:`EVAL-CN0216-ARDZ shield <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0216-ARDZ.html>` which is a precision weigh scale system using a **24-bits** sigma-delta converter, and auto-zero amplifiers providing high gain for the bridge sensor input
 
-| 
-| At the start of the project, a calibration of the upper and lower input range of the weigh scale is taken to remove both offset and gain errors in the circuit, providing the most accurate weigh scale measurements possible. Make sure you open up the serial terminal to your PC in order to do the calibration. Once the program is running, it will ask you to make the zero scale calibration, you **MUST** press <ENTER> to begin the zero scale calibration(takes about 5 seconds). Once that calibration has taken place, the serial terminal will prompt you to add the calibration weight to the scale and then press <ENTER> to make the full scale calibration(again takes about 5 seconds). Those measurements are averaged over 100 samples and then stored into memory as the upper and lower calibration coefficients.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_stacked.jpg
+   :align: left
+   :width: 550px
 
-| 
-| Once calibration is complete, measurements of the output values (weights and conversion information) are displayed every time you press <ENTER> key from the keyboard. Measurements should be between the lower and upper calibration limit can be made at the beginning of the program.
+The CN0216 circuit translates the resistance changes on the bridge into very small voltages. The bridge is excited by a regulated 5V and that determines the full scale range of the bridge output. Those values are passed through very low noise, auto zero amplifiers to remove as many error sources as possible before being gained up to levels that will be compatible with the ADC. The 24-bit ADC value is received via SPI interface of the EVAL-ADICUP360 board.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_putty_output.png
+   :align: right
+   :width: 550px
+
+The **ADuCM360_demo_cn0216** application processes ADC output value and make all necessary conversions in order to provide the weight results. A UART interface (9600 baud rate and 8-bits data length) is used to send the results to terminal window: ADC Data Register **codes**, ADC Input Voltage **volts**, and Sensor Input Weight **grams** are the outputs provided in the terminal window.
+
+At the start of the project, a calibration of the upper and lower input range of the weigh scale is taken to remove both offset and gain errors in the circuit, providing the most accurate weigh scale measurements possible. Make sure you open up the serial terminal to your PC in order to do the calibration. Once the program is running, it will ask you to make the zero scale calibration, you **MUST** press <ENTER> to begin the zero scale calibration(takes about 5 seconds). Once that calibration has taken place, the serial terminal will prompt you to add the calibration weight to the scale and then press <ENTER> to make the full scale calibration(again takes about 5 seconds). Those measurements are averaged over 100 samples and then stored into memory as the upper and lower calibration coefficients.
+
+Once calibration is complete, measurements of the output values (weights and conversion information) are displayed every time you press <ENTER> key from the keyboard. Measurements should be between the lower and upper calibration limit can be made at the beginning of the program.
 
 Demo Requirements
 -----------------
@@ -50,7 +56,7 @@ Setting up the hardware
 -  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
 
 
-|image3|
+|image1|
 
 -  Connect the **EVAL-CN0216-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Connect your weigh scale to the EVAL-CN0216-ARDZ via **()**, make sure you pay attention to the pinout which can be found on the :doc:`CN0216 hardware page </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0216>`.
@@ -121,8 +127,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -133,8 +137,6 @@ Following is the UART configuration.
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-|
 
 -  At the start of the project, a calibration of the upper and lower input range of the weigh scale is taken to remove both offset and gain errors in the circuit, providing the most accurate weigh scale measurements possible.
 
@@ -166,26 +168,22 @@ For more detailed instructions on importing this application/demo example into t
 Project structure
 -----------------
 
-| 
-| The **ADuCM360_demo_cn0216** project use ADuCM36x C/C++ Project structure.
+The **ADuCM360_demo_cn0216** project use ADuCM36x C/C++ Project structure.
 
 This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI1, UART via P0.6/P0.7; SPI, UART read/write functions; AD7791 control and weight conversions.
 
-| In the **src** and **include** folders you will find the source and header files related to CN0216 software application. The *Communication.c/h* files contain SPI and UART specific data, meanwhile the *AD7791.c/h* files contain the ADC control data and the *CN0216.c/h* files contain the calibration and measurements management.
-| |image4|
-| The **RTE** folder contains device and system related files:
+In the **src** and **include** folders you will find the source and header files related to CN0216 software application. The *Communication.c/h* files contain SPI and UART specific data, meanwhile the *AD7791.c/h* files contain the ADC control data and the *CN0216.c/h* files contain the calibration and measurements management.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_project_window.png
+   :align: left
+   :width: 340px
+
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| // End of Document //
+// End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_stacked.jpg
-   :width: 550px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_putty_output.png
-   :width: 550px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_project_window.png
-   :width: 340px

@@ -9,24 +9,36 @@ FFT
 Description
 -----------
 
-.. _fft-1:
-
 FFT
 ~~~
 
-| N-point FFT is performed on the samples, where N is configurable and should be a power of 2, greater than or equal to 16. The twiddle coefficients are calculated within the code and output is given as PCMx samples, the BlockSize of which is 3 \* Schematic Block Size. The first Schematic BlockSize number of samples in a PCMx output contains the header information to be carried on to the next Module (say in this case IFFT). The header information contains fields such as PCMx type (Windowing done), N, Count (if N>Schematic BlockSize). Since memory size depends on the value of N, downloading the Schematic (Link-Compile-Download) is necessary when N value is changed.
-| == FFT Windowed == In the Windowed FFT version, Raised Cosine window is used for windowing samples. Windowing is done for samples before calculating FFT and ‘overlap and add’ is done after IFFT. Here the windowing is done for 2N samples and therefore FFT done for 2N samples.
-| == Real FFT == Real FFT is a block processing module which computes the FFT of real signals. It is for reduced memory and Mips.
-| == Complex FFT == Complex FFT is a block processing module which performs N point complex FFT of the input signal, where N stands for BlockSize.
-| ===== Variants =====
+N-point FFT is performed on the samples, where N is configurable and should be a power of 2, greater than or equal to 16. The twiddle coefficients are calculated within the code and output is given as PCMx samples, the BlockSize of which is 3 \* Schematic Block Size. The first Schematic BlockSize number of samples in a PCMx output contains the header information to be carried on to the next Module (say in this case IFFT). The header information contains fields such as PCMx type (Windowing done), N, Count (if N>Schematic BlockSize). Since memory size depends on the value of N, downloading the Schematic (Link-Compile-Download) is necessary when N value is changed.
+
+FFT Windowed
+~~~~~~~~~~~~
+
+In the Windowed FFT version, Raised Cosine window is used for windowing samples. Windowing is done for samples before calculating FFT and ‘overlap and add’ is done after IFFT. Here the windowing is done for 2N samples and therefore FFT done for 2N samples.
+
+Real FFT
+~~~~~~~~
+
+Real FFT is a block processing module which computes the FFT of real signals. It is for reduced memory and Mips.
+
+Complex FFT
+~~~~~~~~~~~
+
+Complex FFT is a block processing module which performs N point complex FFT of the input signal, where N stands for BlockSize.
+
+Variants
+--------
 
 -  FFT
 -  FFT Windowed
 -  Real FFT
 -  Complex FFT
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 ============ ========== ================ ============= ================
 Name         ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -37,11 +49,11 @@ Real FFT     NA         NA               B             NA
 Complex FFT  NA         NA               B             NA
 ============ ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
-^^^^^
+~~~~~
 
 ====== ===== ===========================================
 Name   Type  Description
@@ -52,7 +64,7 @@ Input  Audio Input channel (Real FFT and Complex FFT)
 ====== ===== ===========================================
 
 Output
-^^^^^^
+~~~~~~
 
 ======= ======= ============================================
 Name    Type    Description
@@ -63,7 +75,7 @@ Output  Audio   Output channel (Real FFT)
 Output  Complex Output channel (Complex FFT)
 ======= ======= ============================================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +----------------+----------------+-----------------------------------+-------------------------------------------------------------------------------------+

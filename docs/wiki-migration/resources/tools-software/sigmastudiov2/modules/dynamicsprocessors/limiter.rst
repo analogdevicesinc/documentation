@@ -3,14 +3,16 @@
 Limiter
 =======
 
-| 
-| |limiter.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/limiter.png
+   :alt: limiter.png
 
 Description
 -----------
 
-| The Limiter block computes the RMS level of the incoming audio signal and attempts to prevent it from exceeding the threshold by automatically reducing it's gain.
-| ===== Targets Supported =====
+The Limiter block computes the RMS level of the incoming audio signal and attempts to prevent it from exceeding the threshold by automatically reducing it's gain.
+
+Targets Supported
+-----------------
 
 ======= ========== ================ ============= ================
 Name    ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -18,7 +20,7 @@ Name    ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Limiter B          B                S             B
 ======= ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -71,6 +73,5 @@ Output
 
 | 
 | ===== DSP Parameter Computation ===== Decay = 1/10^(Decay/(10 \* (FS + 0.000001)))
-| Where FS is the sampling rate
 
-.. |limiter.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/limiter.png
+Where FS is the sampling rate

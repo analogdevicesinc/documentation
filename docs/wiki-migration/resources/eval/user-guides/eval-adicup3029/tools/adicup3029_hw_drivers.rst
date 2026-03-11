@@ -40,8 +40,6 @@ This mode allows users to drag and drop (or copy and paste) a .BIN or .HEX [Inte
 
    -  Alternatively you could unplug the micro USB cable from the USB port (P10) of the EVAL-ADICUP3029, and then reconnect it.
 
-| 
-
 Maintenance Drive
 ~~~~~~~~~~~~~~~~~
 
@@ -62,13 +60,8 @@ When the ADICUP3029 emulator is connected to the MK20DX128VFM5 (by holding down 
 
 -  Unplug the micro USB cable from the USB port (P10) of the EVAL-ADICUP3029, and then reconnect the USB cable to the USB port (P10) to “reboot” the board.
 
-
-| 
-
 ADICUP3029 Interface File Downloads
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|
 
 .. admonition:: Download
    :class: download

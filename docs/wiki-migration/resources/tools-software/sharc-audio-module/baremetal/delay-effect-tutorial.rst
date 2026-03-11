@@ -232,5 +232,5 @@ Note that the delay length will only increase *after* the zeroing of both delay 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#ring-modulator-effect-tutorial
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#ring-modulator-effect-tutorial
    :alt: Implementing a Ring Modulator Effect#.|Bare Metal Framework#audio-elements\|"Audio Elements" and "Audio Effects"

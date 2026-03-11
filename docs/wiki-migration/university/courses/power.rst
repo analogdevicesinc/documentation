@@ -32,15 +32,11 @@ Table of Contents:
 +-------------------+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
-| Online Texts:
-| :adi:`Practical Design Techniques for Power and Thermal Management, 1998 <en/education/education-library/practical-design-techniques-power-thermal-management.html>`
-| :adi:`Practical Power Solutions, 2009. <en/education/education-library/practical-power-solutions.html>`
+| Online Texts: :adi:`Practical Design Techniques for Power and Thermal Management, 1998 <en/education/education-library/practical-design-techniques-power-thermal-management.html>` :adi:`Practical Power Solutions, 2009. <en/education/education-library/practical-power-solutions.html>`
 
 **Power Lab Exercises**
 
 -  :doc:`Power Lab Activity Material </wiki-migration/university/labs/power>`
-
-| 
 
 Other Resources
 ---------------
@@ -64,7 +60,7 @@ Analog Device Supplied Content
 **Blogs and FAQs**
 
 -  :adi:`Ask the Applications Engineer: Op Amp Issues <library/analogDialogue/Anniversary/6.html>` – Discusses different types of operational amplifier and the reasons for those differences.
-   \* :adi:`Analog Computation in the Digital Age <media/en/analog-dialogue/raqs/computation.pdf>`
+-  :adi:`Analog Computation in the Digital Age <media/en/analog-dialogue/raqs/computation.pdf>`
 
 Wikipedia
 ~~~~~~~~~

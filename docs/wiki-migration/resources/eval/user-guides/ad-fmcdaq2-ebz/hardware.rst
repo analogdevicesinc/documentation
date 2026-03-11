@@ -25,8 +25,12 @@ Size
 
 The size of the board (not including the SMA connectors, which project beyond the edge of the board) is 3.12 inches by 2.72 inches (or about 79mm x 69mm).
 
-| |image3|
-| ===== Schematic, PCB Layout, Bill of Materials =====
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq2_dimensions.png
+   :align: left
+   :width: 350px
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
 
 .. admonition:: Download
    :class: download
@@ -45,5 +49,3 @@ The size of the board (not including the SMA connectors, which project beyond th
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/assbly_top_bot.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq2_dimensions.png
-   :width: 350px

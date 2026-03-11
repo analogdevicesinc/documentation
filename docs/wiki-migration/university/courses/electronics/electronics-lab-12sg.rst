@@ -15,18 +15,7 @@ Where I\ :sub:`o` is the differential pair tail current, V\ :sub:`in` is the dif
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 10 KΩ resistor
-| 4 - 4.7 KΩ resistors
-| 1 - 2.2 KΩ resistor
-| 2 - 220 Ω resistors
-| 1 - 390 Ω resistor
-| 1 - 500 Ω potentiometer
-| 1 - 100 pF capacitor
-| 2 - Small signal NPN transistors (SSM2212 NPN matched pair)
-| 1 - Opamp (OP27 )
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - 10 KΩ resistor 4 - 4.7 KΩ resistors 1 - 2.2 KΩ resistor 2 - 220 Ω resistors 1 - 390 Ω resistor 1 - 500 Ω potentiometer 1 - 100 pF capacitor 2 - Small signal NPN transistors (SSM2212 NPN matched pair) 1 - Opamp (OP27 )
 
 Description:
 ------------
@@ -36,12 +25,14 @@ Construct the circuit in figure 1 on your solder-less breadboard. The +5 V ( pin
 Procedure:
 ----------
 
-| Set the AWG 1 to the Following:
-| \* Amplitude (peak-to-peak) = 3.6V
-| \* Offset = 0V
-| \* Frequency = 1KHz
-| \* Triangle wave
-| Adjust the 500 Ω potentiometer, R\ :sub:`6`, for the best symmetry in the output sine wave shape. Using the FFT display and looking for the minimum even order distortion may be a good way to test the quality of the output sine wave. You may want to adjust the amplitude and DC offset of the input triangle wave to see if that can improve the odd order harmonics in the output.
+Set the AWG 1 to the Following:
+
+-  Amplitude (peak-to-peak) = 3.6V
+-  Offset = 0V
+-  Frequency = 1KHz
+-  Triangle wave
+
+Adjust the 500 Ω potentiometer, R\ :sub:`6`, for the best symmetry in the output sine wave shape. Using the FFT display and looking for the minimum even order distortion may be a good way to test the quality of the output sine wave. You may want to adjust the amplitude and DC offset of the input triangle wave to see if that can improve the odd order harmonics in the output.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_f1.png
    :align: center
@@ -105,22 +96,10 @@ Triangle Wave Generator
 
 To make a stand-alone sine wave generator we need to replace the ADALM2000 module AWG with a triangle wave generator. The AD654 voltage-to-frequency converter IC will be the basis of the triangle wave generator. The normal output of the AD654 is an open collector digital square wave signal. The internal timing circuit of the AD654 however uses a ramp generator and this internal ramp waveform is available in differential form across the external timing capacitor connected to pins 6 and 7 in figure 2. We cannot use this triangle wave signal directly without disturbing the internal timing of the AD654. We can use the AD8226 instrumentation amplifier to buffer and convert the differential signal to a single ended signal. By adjusting the amplitude of this triangle wave signal, we can use it to drive the triangle wave to sine wave converter circuit from figure 1.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 2 - 1 KΩ resistors
-| 1 - 47 KΩ resistor
-| 1 - 6.8 KΩ resistor
-| 1 - 220 Ω resistor
-| 1 - 5 KΩ potentiometer
-| 1 - 0.1 uF capacitor
-| 1 - 1 uF capacitor
-| 1 - Red LED
-| 1 - AD654 V-to-F converter
-| 1 - AD8226 IN-AMP
-| 1 - Small signal NPN transistor (2N3904)
+2 - 1 KΩ resistors 1 - 47 KΩ resistor 1 - 6.8 KΩ resistor 1 - 220 Ω resistor 1 - 5 KΩ potentiometer 1 - 0.1 uF capacitor 1 - 1 uF capacitor 1 - Red LED 1 - AD654 V-to-F converter 1 - AD8226 IN-AMP 1 - Small signal NPN transistor (2N3904)
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_f2.png
    :align: center
@@ -132,8 +111,6 @@ Materials:
 
 
 When connecting the triangle wave output from the AD8226 to the input of the triangle to sine converter, replace the 2.2 KΩ fixed resistor R\ :sub:`1` with a 5 KΩ potentiometer to adjust the signal amplitude for optimal sine wave shape.
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -173,8 +150,7 @@ With the use of M2K, the output s shown below. We can adjust the gain resistor o
 For further reading:
 ~~~~~~~~~~~~~~~~~~~~
 
-| Wikipedia page on the hyperbolic tangent, http://en.wikipedia.org/wiki/Hyperbolic_function
-| Application Note: http://www.analog.com/static/imported-files/application_notes/444186898AN278.pdf
+Wikipedia page on the hyperbolic tangent, http://en.wikipedia.org/wiki/Hyperbolic_function Application Note: http://www.analog.com/static/imported-files/application_notes/444186898AN278.pdf
 
 **Return to Lab Activities** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 

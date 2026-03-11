@@ -87,14 +87,14 @@ It's a simple matter of configuring the ethernet on the FPGA platform:
 
    # **ifconfig eth0 192.168.1.2 up**
    # **ifconfig eth0**
-   eth0      Link encap:Ethernet  HWaddr 00:0A:35:69:1C:00  
+   eth0      Link encap:Ethernet  HWaddr 00:0A:35:69:1C:00
              inet addr:192.168.1.2  Bcast:192.168.1.255  Mask:255.255.255.0
              UP BROADCAST RUNNING  MTU:1500  Metric:1
              RX packets:11 errors:0 dropped:0 overruns:0 frame:0
              TX packets:1 errors:0 dropped:0 overruns:0 carrier:0
-             collisions:0 txqueuelen:1000 
+             collisions:0 txqueuelen:1000
              RX bytes:3506 (3.4 KiB)  TX bytes:322 (322.0 B)
-             Interrupt:10 Memory:40e00000-40e0ffff 
+             Interrupt:10 Memory:40e00000-40e0ffff
 
 (or by running the udhcpc client)
 
@@ -181,10 +181,7 @@ Dump FRU Board Information
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -205,10 +202,7 @@ Dump FRU Power Information
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -271,10 +265,7 @@ Dump FRU Connector Information
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -300,10 +291,7 @@ Query best match calibration set for a given Frequency
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

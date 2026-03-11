@@ -22,7 +22,7 @@ Status
 +---------------------------------------------------------------------------------------------------+------------------------------------+
 | Source                                                                                            | Mainlined?                         |
 +===================================================================================================+====================================+
-| :git-linux:`git <sound/soc/codecs/adau1860.c>`                                                    | `no <https://wiki.analog.com/no>`_ |
+| `git <https://github.com/analogdevicesinc/linux/blob/adau1860_dev/sound/soc/codecs/adau1860.c>`_  | `no <https://wiki.analog.com/no>`_ |
 +---------------------------------------------------------------------------------------------------+------------------------------------+
 
 Files
@@ -31,15 +31,15 @@ Files
 +----------+-----------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                              |
 +==========+===================================================================================================================================+
-| driver   | :git-linux:`sound/soc/codecs/adau1860.c`                                                                                          |
+| driver   | `sound/soc/codecs/adau1860.c <https://github.com/analogdevicesinc/linux/blob/adau1860_dev/sound/soc/codecs/adau1860.c>`_          |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------+
-| driver   | :git-linux:`sound/soc/codecs/adau1860-i2c.c`                                                                                      |
+| driver   | `sound/soc/codecs/adau1860-i2c.c <https://github.com/analogdevicesinc/linux/blob/adau1860_dev/sound/soc/codecs/adau1860-i2c.c>`_  |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------+
-| driver   | :git-linux:`sound/soc/codecs/adau1860-spi.c`                                                                                      |
+| driver   | `sound/soc/codecs/adau1860-spi.c <https://github.com/analogdevicesinc/linux/blob/adau1860_dev/sound/soc/codecs/adau1860-spi.c>`_  |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------+
-| include  | :git-linux:`sound/soc/codecs/adau1860.h`                                                                                          |
+| include  | `sound/soc/codecs/adau1860.h <https://github.com/analogdevicesinc/linux/blob/adau1860_dev/sound/soc/codecs/adau1860.h>`_          |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------+
-| include  | :git-linux:`include/sound/adau1860.h`                                                                                             |
+| include  | `include/sound/adau1860.h <https://github.com/analogdevicesinc/linux/blob/adau1860_dev/include/sound/adau1860.h>`_                |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 Example device initialization

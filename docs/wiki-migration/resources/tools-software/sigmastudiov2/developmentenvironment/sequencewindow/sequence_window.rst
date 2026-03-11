@@ -1,14 +1,17 @@
-| :doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/developmentenvironment>`
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/developmentenvironment>`
 
 Sequence Window
 ===============
 
-| |image1|
-| The Sequence window in SigmaStudio+ allows the users to define custom sequence of data read/write actions between SigmaStudio+ and the hardware device connected via USB. User can either send commands from the capture window to sequence window or create them manually. These sequences are separate from user's SigmaStudio+ project and can be saved for later use.
-| By default, the Sequence window is docked at the bottom. Users can create a distinct packet, specifying the address where the data packet should be written and the protocol to be used (typically SPI or I2C). The left tab in the Sequence window represents a sequence mode or group, and users can rename it to organize their sequences. Once the sequence is set up, clicking the download button in the Sequence window will send the packet to the target device.
-| Following options are present on the sequence window. Right clicking in the sequence window opens a context menu with options similar to the utility buttons. The description of each button is given below:
-| \* **New Sequence** - Clears all the content of the current sequence tab and creates a fresh sequence file
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/developmentenvironment/sequencewindow/sequencewindow.png
 
+The Sequence window in SigmaStudio+ allows the users to define custom sequence of data read/write actions between SigmaStudio+ and the hardware device connected via USB. User can either send commands from the capture window to sequence window or create them manually. These sequences are separate from user's SigmaStudio+ project and can be saved for later use.
+
+By default, the Sequence window is docked at the bottom. Users can create a distinct packet, specifying the address where the data packet should be written and the protocol to be used (typically SPI or I2C). The left tab in the Sequence window represents a sequence mode or group, and users can rename it to organize their sequences. Once the sequence is set up, clicking the download button in the Sequence window will send the packet to the target device.
+
+Following options are present on the sequence window. Right clicking in the sequence window opens a context menu with options similar to the utility buttons. The description of each button is given below:
+
+-  **New Sequence** - Clears all the content of the current sequence tab and creates a fresh sequence file
 -  **Open Sequence File** - Opens the selected sequence file of xml format
 -  **Save Sequence File** - Saves the contents of the sequence window modes as an xml file
 -  **Add Mode** - Adds a new sequence mode (tab). Each mode contains a sequence of read/write/delay packs which can be downloaded to the target
@@ -25,5 +28,3 @@ Sequence Window
 -  **Move Down** - Reorders the sequence entry or tab down the list. The choice of type of sequence entry or mode is decided by the Reorder combobox.
 -  **Address in hex** - ticking this checkbox displays the device address and register address in hex format. This also saves the addresses in hex in the export file.
 -  **Force Download** - When the sequence download aborts midway due to an error, this flag can be used to push through the error and download the entire sequence list. The individual error can be seen in the capture window.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/developmentenvironment/sequencewindow/sequencewindow.png

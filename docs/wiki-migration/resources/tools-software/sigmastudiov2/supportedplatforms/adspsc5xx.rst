@@ -1,9 +1,12 @@
-| :doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/supportedplatforms>`
-| =====ADSP-SC5xx=====
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/supportedplatforms>`
 
-| 
-| This processor can be inserted on to the custom platform and configured as one of the supported SHARC processor with two SHARC+ core.
-| ==Configurable Targets==
+ADSP-SC5xx
+==========
+
+This processor can be inserted on to the custom platform and configured as one of the supported SHARC processor with two SHARC+ core.
+
+Configurable Targets
+--------------------
 
 -  ADSP-21571
 -  ADSP-21573
@@ -22,8 +25,8 @@
 -  ADSP-SC594
 -  ADSP-SC598
 
-| 
-| ==Processor Settings==
+Processor Settings
+------------------
 
 -  **Build Mode (Release/Debug)** - This field is an input to the CCES compiler, indicating whether the code should be compiled in Debug or Release mode.
 -  **Enable IPA** - Inter-procedural optimization can be enabled to reduce the MIPS consumption for a schematic. This will affect the time taken to compile and link the schematic.
@@ -32,8 +35,8 @@
 -  **CCES Version** - All the supported tool-chains which are installed on the PC are listed in this drop-down box. The user can select a tool-chain from this drop-down box for every Schematic. The latest installed version of CrossCore Embedded Studio is the default selection. The selected tool-chain is used by SigmaStudio+ to compile the Schematics and process the Plug-Ins.
 -  **Schematic Mode (Single Core/Dual Core)** - This field indicates whether the schematic is required to have a single signal chain for both the SHARC cores (Dual Core Mode) or the schematic is required to have two independent signal chains for each of the SHARC cores (Single Core Mode).
 
-| 
-| ==Core Settings==
+Core Settings
+-------------
 
 -  **Process Mode** - This field indicates as to how the signal block instances are connected and processed on the SHARC+ core. This field is not applicable in case of a dual-core schematic. The following Process Modes are supported:
 

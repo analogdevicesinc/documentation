@@ -3,8 +3,7 @@
 First Order with Variable Param/Lookup/Slew
 ===========================================
 
-| 
-| |firstorderwithvarparamlookupslew.png| |firstorderlookupslewwindow.png|
+|firstorderwithvarparamlookupslew.png| |firstorderlookupslewwindow.png|
 
 Description
 ===========
@@ -46,7 +45,7 @@ Name    Type  Description
 Output0 Audio Output channel 0
 ======= ===== ================
 
-| 
+
 
 .. |firstorderwithvarparamlookupslew.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/firstorderwithvarparamlookupslew.png
 .. |firstorderlookupslewwindow.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/firstorderlookupslewwindow.png

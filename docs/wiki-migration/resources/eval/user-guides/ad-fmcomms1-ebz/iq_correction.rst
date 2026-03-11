@@ -67,13 +67,13 @@ Simulink Model
 
 A Simulink model is created to calculate the parameters of the correction matrix. The top level of the model is shown in the figure below:
 
-.. image:: https://wiki.analog.com/_media/model_top.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/model_top.jpg
    :alt: Model diagram
    :width: 600px
 
 In this model, the amplitude, phase and DC offset of the I and Q signals are specified by the users. These two signals are :math:`I prime(t)` and :math:`Q prime(t)` in the previous section, which serve as the input to the IQcorrect subsystem. In real-world application, these two inputs can be captured data from users' systems. For example, the output data from ADC on the receiver side. The output of the IQcorrect subsystem are the parameters of the correction matrix (A, C, D). The structure of this subsystem is shown below:
 
-.. image:: https://wiki.analog.com/_media/subsystem.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/subsystem.jpg
    :alt: Subsystem diagram
    :width: 900px
 

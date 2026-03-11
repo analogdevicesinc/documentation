@@ -11,8 +11,10 @@ Description
 
 The Up sampling module is mainly used to get the input samples to a higher sampling rates after processing the audio at lower sampling rates.For example the bass of the audio can be processed at lower sampling rates and then taken to the higher sampling rates.
 
-| This module takes the upsample factor from the GUI parameters and upsample the input accordingly.
-| ===== Targets Supported =====
+This module takes the upsample factor from the GUI parameters and upsample the input accordingly.
+
+Targets Supported
+-----------------
 
 ========== ========== ================ ============= ================
 Name       ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -20,7 +22,7 @@ Name       ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Up-Sampler B          B                S             B
 ========== ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -41,7 +43,7 @@ Name   Type  Description
 Output Audio Up sampled output
 ====== ===== =================
 
-| 
+
 | ===== Configurable Parameters =====
 
 ADSP-214xx/ADSP-215xx/ADSP-SC5xx

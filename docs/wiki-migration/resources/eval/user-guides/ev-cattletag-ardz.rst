@@ -1,7 +1,7 @@
 EV-CATTLETAG-ARDZ Sensor for Livestock Tracking and Health Monitoring
 =====================================================================
 
-|
+
 
 .. important::
 
@@ -13,9 +13,13 @@ EV-CATTLETAG-ARDZ Sensor for Livestock Tracking and Health Monitoring
 Overview
 --------
 
-| The :adi:`EV-CATTLETAG-ARDZ` is an Arduino board with a fully integrated solution for harvesting energy from single-/multi-cell solar sources. The device includes battery chargers for small lithium-ion systems, and a digital temperature sensor for applications such as Wearables and IoT.
-| The system is consisting of a :adi:`MAX20361` power harvester, :adi:`MAX20335 BMS`, and a :adi:`MAX30210` temperature sensor and a buzzer with an option for vibration motor.
-| |image1|
+The :adi:`EV-CATTLETAG-ARDZ` is an Arduino board with a fully integrated solution for harvesting energy from single-/multi-cell solar sources. The device includes battery chargers for small lithium-ion systems, and a digital temperature sensor for applications such as Wearables and IoT.
+
+The system is consisting of a :adi:`MAX20361` power harvester, :adi:`MAX20335 BMS`, and a :adi:`MAX30210` temperature sensor and a buzzer with an option for vibration motor.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz.jpg
+   :align: center
+   :width: 500px
 
 Features
 ~~~~~~~~
@@ -25,8 +29,8 @@ Features
 -  Gathers and analyzes historical data to identify trends in cattle health or to track the spread of illness.
 -  Monitors readiness to mate or give birth, preventing the loss of new calves and optimizing breeding practices.
 
-| 
-| ==== Applications ====
+Applications
+~~~~~~~~~~~~
 
 -  Asset location
 -  Asset recovery
@@ -34,11 +38,14 @@ Features
 -  Inventory management
 -  Asset loss and theft prevention
 
-| 
-| ===== System Architecture ===== |image2|
+System Architecture
+-------------------
 
-| 
-| ----
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_block_diagram.png
+   :align: center
+   :width: 800px
+
+--------------
 
 Hardware Design
 ===============
@@ -63,54 +70,56 @@ When using the board, the power supply may come from different sources, and thes
    When using an external power source, it is required to disconnect the on-board solar panel by removing the resistor **R30**\
 
 
-   |image3|
+   |image1|
 
 -  P8 Terminal block - external power supply, between 3 V to 4.2 V allowable input
 -  Battery holder - 2xAAA battery is required
 -  Arduino Power - external power supply that comes directly from the host board it is connected to.
-
-|
 
 .. important::
 
    When power supply directly from the host board is used, it is required to remove the **R84** resistor and placed a 0 Ω resistor at **R86**\
 
 
-   |image4|
+   |image2|
 
-| ==== Digital Interface (Arduino) ==== The Arduino interface is a standardized digital interface for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Arduino, which is hardware and software company. Complete details on the PMOD specification can be found `here <https://www.arduino.cc/en/hardware>`_.
+Digital Interface (Arduino)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The pin map for the Arduino pins is described in the table and its schematic diagram below.
-| |image5|
+The Arduino interface is a standardized digital interface for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Arduino, which is hardware and software company. Complete details on the PMOD specification can be found `here <https://www.arduino.cc/en/hardware>`_.
 
-| 
+The pin map for the Arduino pins is described in the table and its schematic diagram below.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_arduino_connector.png
+   :align: center
+   :width: 700px
 
 --------------
 
 Applications
 ============
 
-|
-
 .. tip::
 
    The :adi:`EV-CATTLETAG-ARDZ` can be used with the :adi:`MAX32670-LR-ARDZ` Base Board, which is a long-range wireless radio development platform based on MAX32670 ultralow power Arm Cortex-M4 microcontroller and LR1110 RF transceiver.
 
-   | Using these platforms together enables users to design solutions based on low-power, long range proprietary radio communication technique that is suitable for customized heat/flow meters.
-   | To learn more about the Long Range Wireless Radio solution developed by Analog Devices, visit the :doc:`AD-MAX32LRWISE-SL Long Range Wireless Radio Development Kit User Guide </wiki-migration/resources/eval/user-guides/ad-max32lrwise-sl>`
+   
+   Using these platforms together enables users to design solutions based on low-power, long range proprietary radio communication technique that is suitable for customized heat/flow meters.
+   
+   To learn more about the Long Range Wireless Radio solution developed by Analog Devices, visit the :doc:`AD-MAX32LRWISE-SL Long Range Wireless Radio Development Kit User Guide </wiki-migration/resources/eval/user-guides/ad-max32lrwise-sl>`
    
 
 
-| 
-| ====== System Setup ======
+System Setup
+============
 
 PHASE 1: Hardware Setup
 -----------------------
 
 Note that this setup only applies for MAX32670-LR-ARDZ Base Board. Users may use a different base board or microcontroller, however the firmware built for this demo application cannot be used as this is specifically designed for the MAX32670-LR-ARDZ.
 
-| 
-| ==== Equipment Needed ====
+Equipment Needed
+~~~~~~~~~~~~~~~~
 
 -  One (1) :adi:`MAX32670-LR-ARDZ` Base Board
 -  One (1) :adi:`EV-CATTLETAG-ARDZ` Sensor Node
@@ -122,22 +131,24 @@ Note that this setup only applies for MAX32670-LR-ARDZ Base Board. Users may use
 
 ::
 
-      *** Note that this is not included in the kit**
+      ** Note that this is not included in the kit**
    * One (1) Micro USB to USB cable
    * Host PC (Windows 10 or later)
 
-| 
-| |image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/hardware_setup.png
+   :align: center
+   :width: 800px
 
-| 
-| \* Insert one CR123A battery (3 V to 4.7 V) into the battery holder (BT1 connector) of the :adi:`MAX32670-LR-ARDZ` Base Board.
+-  Insert one CR123A battery (3 V to 4.7 V) into the battery holder (BT1 connector) of the :adi:`MAX32670-LR-ARDZ` Base Board.
 
 .. container:: center round box
 
+   
    **Make sure to check for the battery polarity in the BT1 connector, refer to the figure below. The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.**\
 
 
-   |image7|
+   
+   |image3|
 
 -  Connect the :adi:`EV-CATTLETAG-ARDZ` Sensor Node to the :adi:`MAX32670-LR-ARDZ` Base Board by aligning the corresponding Arduino headers on each board.
 -  Connect the :adi:`MAX32625PICO` programming adapter to the :adi:`MAX32670-LR-ARDZ` Base Board through the 10-pin ribbon cable.
@@ -149,14 +160,14 @@ Note that this setup only applies for MAX32670-LR-ARDZ Base Board. Users may use
 
 .. raw:: html
 
-   <details><summary>**How to flash the firmware image in the MAX32625PICO**</summary>
+   <details><summary>**How to flash the firmware image in the MAX32625PICO**
 
 -   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
    -   Do not connect the MAX32625PICO to the :adi:`MAX32670-LR-ARDZ` Base Board yet.
    -   Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
    -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.\
 
-   |image8|
+   |image4|
 
    -   Release the button once the MAINTENANCE drive is mounted.
    -   Drag and drop (to the MAINTENANCE drive) the firmware image.
@@ -175,19 +186,13 @@ Note that this setup only applies for MAX32670-LR-ARDZ Base Board. Users may use
    
 
 
-|image9|
-
-| 
-|
+|image5|
 
 .. note::
 
    
    **Once you have completed this setup, proceed to PHASE 2 found in**\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
-
-
    
-   |
 
 
 --------------
@@ -199,17 +204,16 @@ Resources
 -  :adi:`MAX20335 Product Page <MAX20335>`
 -  :adi:`MAX30210 Product Page <MAX30210>`
 
-|
-
-| ===== Design and Integration Files =====
+Design and Integration Files
+----------------------------
 
 .. admonition:: Download
    :class: download
 
    `EV-CATTLETAG-ARDZ Design Support Package <https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz-designsupport.zip>`_
 
-
-   | **REV C**
+   
+   **REV C**
    
    -  Schematic
    -  Bill of Materials
@@ -228,23 +232,13 @@ For questions and more information about this product, connect with us through t
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-|
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz.jpg
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_block_diagram.png
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_solar_panel_option.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_solar_panel_option.png
    :width: 550px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_power_source_option.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_power_source_option.png
    :width: 550px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_arduino_connector.png
-   :width: 700px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/hardware_setup.png
-   :width: 800px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-lr-ardz_with_battery.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-lr-ardz_with_battery.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
    :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-LR-ardz_to_maxpico.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-LR-ardz_to_maxpico.png
    :width: 1500px

@@ -1,9 +1,9 @@
 EV-COG-AD3029WZ with IAR Embedded Workbench for ARM
 ===================================================
 
-<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. </WRAP>
+<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. 
 
-First, install mBed windows serial driver from [[https://developer.mbed.org/handbook/Windows-serial-configuration%7Chttps://developer.mbed.org/handbook/Windows-serial-configuration]]
+First, install mBed windows serial driver from https://developer.mbed.org/handbook/Windows-serial-configuration
 
 IDE Setup
 ---------

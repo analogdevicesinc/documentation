@@ -16,8 +16,10 @@ EV-GEAR-EXPANDER1Z is a "Gear" (expansion add-on board) for MCU Cogs (EV-COG-AD3
       -  Additional Gears connectivity
       -  "Arduino uno" compatible shields
 
-| This user guide describes the connectors details and jumper settings.
-| ======Hardware details======
+This user guide describes the connectors details and jumper settings.
+
+Hardware details
+================
 
 Board image
 -----------
@@ -44,8 +46,7 @@ Secondary-side
 Power option
 ------------
 
-| The EV-GEAR-EXPANDER1Z board is powered by means of VDD supply from MCU cog through connector C1. The VDD supply is shared between various connectors for PMOD interfaces, SD card reader, Arduino shields and gears.
-| Alternately MCU cog can be powered from EV-GEAR-EXPANDER1Z.
+The EV-GEAR-EXPANDER1Z board is powered by means of VDD supply from MCU cog through connector C1. The VDD supply is shared between various connectors for PMOD interfaces, SD card reader, Arduino shields and gears. Alternately MCU cog can be powered from EV-GEAR-EXPANDER1Z.
 
 -  Power supply header P1 can be used to supply 5V
 -  Pin 10 of header P8 can be used to supply 3V
@@ -84,43 +85,43 @@ The headers A1, A2, A3, A4 and A5 support the shields that are Arduino Uno compa
 Connector name Connector reference Pin_number Signal_name
 ============== =================== ========== =================
 Arduino        A1                  1          SPI0_MISO
-:::            :::                 2          FT_EXT_VDD_OUT
-:::            :::                 3          SPI0_CLK
-:::            :::                 4          SPI0_MOSI
-:::            :::                 5          TT_EXT_RESET_IN
-:::            :::                 6          GND
-:::            A2                  1          ADC0
-:::            :::                 2          EXT_ADC1
-:::            :::                 3          EXT_ADC2
-:::            :::                 4          ADC3
-:::            :::                 5          SPI2_CS3
-:::            :::                 6          EXT_GPIO42
-:::            A3                  1          NC
-:::            :::                 2          FT_EXT_VDD_OUT
-:::            :::                 3          TT_EXT_RESET_IN
-:::            :::                 4          FT_EXT_VDD_OUT
-:::            :::                 5          FT_EXT_SUPPLY_OUT
-:::            :::                 6          GND
-:::            :::                 7          GND
-:::            :::                 8          N.C
-:::            A4                  1          P8_12
-:::            :::                 2          GPIO27
-:::            :::                 3          P33_43
-:::            :::                 4          EXT_SPI2_CS1
-:::            :::                 5          EXT_INT_WAKE2
-:::            :::                 6          INT_WAKE0
-:::            :::                 7          EXT_UART0_RXD
-:::            :::                 8          EXT_UART0_TXD
-:::            A5                  1          I2C0_SCL
-:::            :::                 2          I2C0_SDA
-:::            :::                 3          VREF_ADC
-:::            :::                 4          GND
-:::            :::                 5          SPI0_CLK
-:::            :::                 6          SPI0_MISO
-:::            :::                 7          SPI0_MOSI
-:::            :::                 8          SPI0_CS2
-:::            :::                 9          EXT_GPIO30
-:::            :::                 10         GPIO28
+\                                  2          FT_EXT_VDD_OUT
+\                                  3          SPI0_CLK
+\                                  4          SPI0_MOSI
+\                                  5          TT_EXT_RESET_IN
+\                                  6          GND
+\              A2                  1          ADC0
+\                                  2          EXT_ADC1
+\                                  3          EXT_ADC2
+\                                  4          ADC3
+\                                  5          SPI2_CS3
+\                                  6          EXT_GPIO42
+\              A3                  1          NC
+\                                  2          FT_EXT_VDD_OUT
+\                                  3          TT_EXT_RESET_IN
+\                                  4          FT_EXT_VDD_OUT
+\                                  5          FT_EXT_SUPPLY_OUT
+\                                  6          GND
+\                                  7          GND
+\                                  8          N.C
+\              A4                  1          P8_12
+\                                  2          GPIO27
+\                                  3          P33_43
+\                                  4          EXT_SPI2_CS1
+\                                  5          EXT_INT_WAKE2
+\                                  6          INT_WAKE0
+\                                  7          EXT_UART0_RXD
+\                                  8          EXT_UART0_TXD
+\              A5                  1          I2C0_SCL
+\                                  2          I2C0_SDA
+\                                  3          VREF_ADC
+\                                  4          GND
+\                                  5          SPI0_CLK
+\                                  6          SPI0_MISO
+\                                  7          SPI0_MOSI
+\                                  8          SPI0_CS2
+\                                  9          EXT_GPIO30
+\                                  10         GPIO28
 ============== =================== ========== =================
 
 PMOD interfaces
@@ -132,31 +133,31 @@ The EV-GEAR-EXPANDER1Z board offers connectors with PMOD SPI, PMOD I2C and PMOD 
 Connector name         Connector reference Pin_number Signal_name
 ====================== =================== ========== ==============
 SensorStrobe connector P3                  1          SS_IO_01
-:::                    :::                 2          SS_IO_02
-:::                    :::                 3          SS_IO_03
-:::                    :::                 4          SS_IO_04
-:::                    :::                 5          GND
-:::                    :::                 6          FT_EXT_VDD_OUT
+\                                          2          SS_IO_02
+\                                          3          SS_IO_03
+\                                          4          SS_IO_04
+\                                          5          GND
+\                                          6          FT_EXT_VDD_OUT
 PMOD SPI               P4                  1          SPI1_CS0
-:::                    :::                 2          SPI1_MOSI
-:::                    :::                 3          SPI1_MISO
-:::                    :::                 4          SPI1_CLK
-:::                    :::                 5          GND
-:::                    :::                 6          FT_EXT_VDD_OUT
-:::                    :::                 7          INT_WAKE0
-:::                    :::                 8          PMOD_8
-:::                    :::                 9          GPIO14
-:::                    :::                 10         ADXL_ANALOG
-:::                    :::                 11         GND
-:::                    :::                 12         FT_EXT_VDD_OUT
+\                                          2          SPI1_MOSI
+\                                          3          SPI1_MISO
+\                                          4          SPI1_CLK
+\                                          5          GND
+\                                          6          FT_EXT_VDD_OUT
+\                                          7          INT_WAKE0
+\                                          8          PMOD_8
+\                                          9          GPIO14
+\                                          10         ADXL_ANALOG
+\                                          11         GND
+\                                          12         FT_EXT_VDD_OUT
 PMOD I2C               P5                  1          I2C0_SCL
-:::                    :::                 2          I2C0_SCL
-:::                    :::                 3          I2C0_SDA
-:::                    :::                 4          I2C0_SDA
-:::                    :::                 5          GND
-:::                    :::                 6          GND
-:::                    :::                 7          FT_EXT_VDD_OUT
-:::                    :::                 8          FT_EXT_VDD_OUT
+\                                          2          I2C0_SCL
+\                                          3          I2C0_SDA
+\                                          4          I2C0_SDA
+\                                          5          GND
+\                                          6          GND
+\                                          7          FT_EXT_VDD_OUT
+\                                          8          FT_EXT_VDD_OUT
 ====================== =================== ========== ==============
 
 Debug headers
@@ -168,29 +169,29 @@ The Debug headers P6, P7 and P8 can be used to probe certain MCU GPIOs. The head
 Connector name Connector reference Pin_number Signal_name
 ============== =================== ========== =============
 Debug header 1 P6                  1          SPI2_RDY
-:::            :::                 2          SPI2_CLK
-:::            :::                 3          SPI2_MOSI
-:::            :::                 4          SPI2_MISO
-:::            :::                 5          SPI2_CS0
-:::            :::                 6          EXT_INT_WAKE1
-:::            :::                 7          GPIO14
-:::            :::                 8          EXT_GPIO34
-:::            :::                 9          GPIO29
-:::            :::                 10         GPIO41
+\                                  2          SPI2_CLK
+\                                  3          SPI2_MOSI
+\                                  4          SPI2_MISO
+\                                  5          SPI2_CS0
+\                                  6          EXT_INT_WAKE1
+\                                  7          GPIO14
+\                                  8          EXT_GPIO34
+\                                  9          GPIO29
+\                                  10         GPIO41
 Debug header 2 P7                  1          ADF_GPIO0
-:::            :::                 2          ADF_GPIO1
-:::            :::                 3          ADF_GPIO2
-:::            :::                 4          RF_RTC_OPC1
+\                                  2          ADF_GPIO1
+\                                  3          ADF_GPIO2
+\                                  4          RF_RTC_OPC1
 Debug header 3 P8                  1          EXT_SPI1_CS3
-:::            :::                 2          SPI1_CS0
-:::            :::                 3          SPI1_MISO
-:::            :::                 4          SPI1_MOSI
-:::            :::                 5          SPI1_CLK
-:::            :::                 6          EXT_RTC1_SS1
-:::            :::                 7          GPIO12
-:::            :::                 8          GPIO32
-:::            :::                 9          GPIO31
-:::            :::                 10         TT_EXT_VDD_IN
+\                                  2          SPI1_CS0
+\                                  3          SPI1_MISO
+\                                  4          SPI1_MOSI
+\                                  5          SPI1_CLK
+\                                  6          EXT_RTC1_SS1
+\                                  7          GPIO12
+\                                  8          GPIO32
+\                                  9          GPIO31
+\                                  10         TT_EXT_VDD_IN
 ============== =================== ========== =============
 
 Design Files
@@ -209,9 +210,10 @@ Design Files
    
 
 
-| 
+
 | End Document
-| :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
+
+:doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picture8.png
    :width: 600px

@@ -205,7 +205,7 @@ The communication with the board is activated / deactivated by toggling the **ON
 
 The value of the AD5791 *DAC Register* is changed using the slider located under the **DAC Register Value (20-bit)** label. The selected value is displayed in the red numeric box located next to the slider.
 
-The value of the AD5791 Clearcode Register is changed using the slider located under the \*\*\ *Clearcode Register Value (20-bit)*\** label. The selected value is displayed in the red numeric box located next to the slider.
+The value of the AD5791 Clearcode Register is changed using the slider located under the \*\**Clearcode Register Value (20-bit)** label. The selected value is displayed in the red numeric box located next to the slider.
 
 The sliders **Vref+** and **Vref-** are used to specify the reference voltages set on the evaluation board.
 

@@ -117,8 +117,9 @@ The first time you launch CrossCore Embedded Studio, you will be prompted to inp
 .. important::
 
    
-   | **EVAL-ADICUP360 CrossCore Serial Number**
-   | EZK-CCES-5JNP-FQH2-IAZZ-IJY4-E4HG-YIY6-JE01
+   **EVAL-ADICUP360 CrossCore Serial Number**
+   
+   EZK-CCES-5JNP-FQH2-IAZZ-IJY4-E4HG-YIY6-JE01
    
 
 

@@ -3,7 +3,26 @@ Linux
 
 The JESD204 Interface Framework provides out of the box linux support for many of the ADI JESD204 based converters, clock chips and both Xilinx and Altera FPGA transceivers.
 
-.. include:: ../../jesd204.rst
+-  :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+-  :doc:`JESD204B/C Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`: Linux driver for the JESD204B transmit core.
+-  :doc:`JESD204B/C Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`: Linux driver for the JESD204B receive core.
+-  :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+-  :doc:`JESD204B Statistical Eyescan Application </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
+-  :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>`
+-  :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+
+   -  :doc:`AD9172 DAC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/ad9172>`
+   -  :doc:`AD9081 MxFE Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+   -  :doc:`ADRV9009, ADRV9008 highly integrated, wideband RF transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   -  :doc:`AD9371, AD9375 highly integrated, wideband RF transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9371>`
+
+-  :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+
+   -  :doc:`AD9208 ADC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad9208>`
+   -  :doc:`AD9081 MxFE Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+   -  :doc:`ADRV9009, ADRV9008 highly integrated, wideband RF transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   -  :doc:`AD9371, AD9375 highly integrated, wideband RF transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9371>`
+
 
 Kernel Configuration
 --------------------
@@ -57,7 +76,7 @@ Transport layer support, implementing ADC/DAC chip configuration and HDL IP conf
            <*>   Analog Devices AD9467 AD9643 High-Speed AXI ADC driver
            [--snip--]
 
-           *** Direct Digital Synthesis ***
+           ** Direct Digital Synthesis **
            <*>   Analog Devices CoreFPGA AXI DDS driver
            <*>   Analog Devices AD9122 DAC
            [--snip--]
@@ -68,7 +87,7 @@ Clock device support:
 
        Device Drivers  --->
        <*>  Industrial I/O support --->
-                Frequency Synthesizers DDS/PLL  ---> 
+                Frequency Synthesizers DDS/PLL  --->
                     Clock Generator/Distribution  --->
                     <*>  Analog Devices AD9528 Low Jitter Clock Generator
 
@@ -88,19 +107,9 @@ Physical Layer
 
 Initially, the physical layer needs to be configured. The parameters depend on the HDL implementation and what clock is used as device clock.
 
-| Required properties:
-| **compatible**: Must always be “adi,axi-adxcvr-1.00”
-| **reg**: Base address and register area size. This parameter expects a register range
-| **clock-names**: List of input clock names - “s_axi_aclk”, “device_clk”
-| **clocks**: Clock phandles and specifiers (See clock bindings for details on clock-names and clocks)
-| **clock-output-names**: Generated clocks
-| **adi,sys-clk-select**: 2 bit variable. For ultrascale, it selects the PLL reference clock source to be forwarded to the OUTCLK MUX: 0-CPLL, 3-QPLL0. Check RX/TXSYSCLKSEL parameter in the transceiver documentation for the FPGA you're using
-| **adi,out-clk-select**: 3 bit variable. Controls the OUTCLKSEL multiplexer, controlling what will be forwarded to OUTCLK pin. Check RX/TXOUTCLKSEL parameter in the transceiver documentation for the FPGA you're using
-| Optional properties:
-| **adi,use-lpm-enable**: If set, the transceiver will be used in LPM mode. Otherwise, will be used in DFE mode. See transceiver documentation for details
-| **adi,use-cpll-enable**: If set, the CPLL will be used for these transceivers
+Required properties: **compatible**: Must always be “adi,axi-adxcvr-1.00” **reg**: Base address and register area size. This parameter expects a register range **clock-names**: List of input clock names - “s_axi_aclk”, “device_clk” **clocks**: Clock phandles and specifiers (See clock bindings for details on clock-names and clocks) **clock-output-names**: Generated clocks **adi,sys-clk-select**: 2 bit variable. For ultrascale, it selects the PLL reference clock source to be forwarded to the OUTCLK MUX: 0-CPLL, 3-QPLL0. Check RX/TXSYSCLKSEL parameter in the transceiver documentation for the FPGA you're using **adi,out-clk-select**: 3 bit variable. Controls the OUTCLKSEL multiplexer, controlling what will be forwarded to OUTCLK pin. Check RX/TXOUTCLKSEL parameter in the transceiver documentation for the FPGA you're using Optional properties: **adi,use-lpm-enable**: If set, the transceiver will be used in LPM mode. Otherwise, will be used in DFE mode. See transceiver documentation for details **adi,use-cpll-enable**: If set, the CPLL will be used for these transceivers
 
-.. code:: tcl
+.. code:: dts
 
    axi_ad9680_adxcvr: axi-ad9680-adxcvr@44a50000 {
        compatible = "adi,axi-adxcvr-1.0";
@@ -136,20 +145,9 @@ Initially, the physical layer needs to be configured. The parameters depend on t
 Data Link Layer
 ~~~~~~~~~~~~~~~
 
-| Required properties:
-| **compatible**: Must always be “adi,axi-jesd204b-tx-1.00.a” or “adi,axi-jesd204b-tx-1.00.a”
-| **reg**: Base address and register area size. This parameter expects a register range
-| **interrupts**: Property with a value describing the interrupt number
-| **clock-names**: List of input clock names - “s_axi_aclk”, “device_clk”
-| **clocks**: Clock phandles and specifiers (See clock bindings for details on clock-names and clocks)
-| **adi,frames-per-multiframe**: Number of frames per multi-frame (K)
-| **adi,octets-per-frame**: Number of octets per frame (F)
-| Optional properties:
-| **adi,converter-resolution**: Converter resolution (N)
-| **adi,bits-per-sample**: Number of bits per sample (N')
-| **adi,high-density**: If specified the JESD204B link is configured for high density (HD) operation
+Required properties: **compatible**: Must always be “adi,axi-jesd204b-tx-1.00.a” or “adi,axi-jesd204b-tx-1.00.a” **reg**: Base address and register area size. This parameter expects a register range **interrupts**: Property with a value describing the interrupt number **clock-names**: List of input clock names - “s_axi_aclk”, “device_clk” **clocks**: Clock phandles and specifiers (See clock bindings for details on clock-names and clocks) **adi,frames-per-multiframe**: Number of frames per multi-frame (K) **adi,octets-per-frame**: Number of octets per frame (F) Optional properties: **adi,converter-resolution**: Converter resolution (N) **adi,bits-per-sample**: Number of bits per sample (N') **adi,high-density**: If specified the JESD204B link is configured for high density (HD) operation
 
-.. code:: tcl
+.. code:: dts
 
    axi_ad9144_jesd: axi-jesd204-tx@44a90000 {
        compatible = "adi,axi-jesd204-tx-1.0";
@@ -183,7 +181,7 @@ Transport Layer
 
 when instantiating the transport layer, a DMA IP should also be instantiated for both the RX and TX path.
 
-.. code:: tcl
+.. code:: dts
 
    axi_ad9680_core: axi-ad9680-hpc@44a10000 {
        compatible = "adi,axi-ad9680-1.0";
@@ -208,7 +206,7 @@ when instantiating the transport layer, a DMA IP should also be instantiated for
        #dma-cells = <1>;
        interrupts = <0 57 0>;
        clocks = <&clkc 16>;
-       
+
        dma-channel {
            adi,source-bus-width = <64>;
            adi,destination-bus-width = <64>;
@@ -222,7 +220,7 @@ when instantiating the transport layer, a DMA IP should also be instantiated for
        #dma-cells = <1>;
        interrupts = <0 56 0>;
        clocks = <&clkc 16>;
-       
+
        dma-channel {
            adi,source-bus-width = <128>;
            adi,destination-bus-width = <128>;
@@ -241,7 +239,7 @@ Clock chip
 
 Depending on the schematic and available reference clock, the boot configuration should be done in the device-tree. Depending on the schematic, each output may have different functions. This configuration can be modified at runtime.
 
-.. code:: tcl
+.. code:: dts
 
        clk0_ad9523: ad9523-1@0 {
            #address-cells = <1>;
@@ -354,14 +352,14 @@ DAC AD9144 chip
 
 Instantiation the AD9144 chip, noting which clocks are connected to the chip.
 
-.. code:: tcl
+.. code:: dts
 
    dac0_ad9144: ad9144@1 {
        compatible = "adi,ad9144";
        reg = <1>;
-       
+
        spi-max-frequency = <1000000>;
-       
+
        clocks = <&axi_ad9144_jesd>, <&clk0_ad9523 1>, <&clk0_ad9523 8>;
        clock-names = "jesd_dac_clk", "dac_clk", "dac_sysref";
    };
@@ -371,14 +369,14 @@ ADC AD9680 chip
 
 Instantiating the AD9680 chip, noting which clocks are connected to the chip.
 
-.. code:: tcl
+.. code:: dts
 
    adc0_ad9680: ad9680@2 {
        compatible = "adi,ad9680";
        reg = <2>;
-       
+
        spi-max-frequency = <1000000>;
-       
+
        clocks = <&axi_ad9680_jesd>, <&clk0_ad9523 13>, <&clk0_ad9523 5>;
        clock-names = "jesd_adc_clk", "adc_clk", "adc_sysref";
    };
@@ -512,11 +510,4 @@ The second option is to use :doc:`libiio </wiki-migration/resources/eval/user-gu
 References
 ----------
 
-| https:*wiki.analog.com/resources/tools-software/linux-build/generic/zynq
-  https:*\ wiki.analog.com/resources/tools-software/linux-build/generic/zynqmp
-| https:*wiki.analog.com/resources/tools-software/linux-software/altera_soc_images
-  https:*\ wiki.analog.com/resources/tools-software/linux-drivers/platforms/nios2
-| https:*wiki.analog.com/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/microblaze_kc705
-  https:*\ github.com/analogdevicesinc/linux/blob/master/arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-fmcdaq2.dts
-| https:*github.com/analogdevicesinc/linux/blob/altera_4.9/arch/arm/boot/dts/socfpga_arria10_socdk_daq2.dts
-  https:*\ github.com/analogdevicesinc/linux/blob/master/arch/arm64/boot/dts/xilinx/adi-daq2.dtsi
+:doc:`/wiki-migration/resources/tools-software/linux-build/generic/zynq` :doc:`/wiki-migration/resources/tools-software/linux-build/generic/zynqmp` :doc:`/wiki-migration/resources/tools-software/linux-software/altera_soc_images` :doc:`/wiki-migration/resources/tools-software/linux-drivers/platforms/nios2` :doc:`/wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/microblaze_kc705` :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-fmcdaq2`.dts :git-linux:`blob/altera_4`.9/arch/arm/boot/dts/socfpga_arria10_socdk_daq2.dts :git-linux:`arch/arm64/boot/dts/xilinx/adi-daq2`.dtsi

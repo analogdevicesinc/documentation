@@ -17,9 +17,7 @@ Version
 
 The FreeRTOS Add-In automatically downloads the most up to date version of the FreeRTOS sources that are available. This is done by the Repository having a **Tag Structure** that follows a specific naming convention. This convention will always be as follows
 
-**REL-ADIFRTOS-**\ *<ADI-FreeRTOS-version>*\ **\_FREERTOSv**\ *<FreeRTOS-Kernel-Version>*\ **\_**\ *<architecture>*
-
-**REL-ADIFRTOS-2.0.0_FREERTOSv10.4.3_SHARC**
+**REL-ADIFRTOS-**<ADI-FreeRTOS-version>**\_FREERTOSv**<FreeRTOS-Kernel-Version>**\_**\ *<architecture>**REL-ADIFRTOS-2.0.0_FREERTOSv10.4.3_SHARC**
 
 --------------
 

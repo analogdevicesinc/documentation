@@ -39,7 +39,7 @@ There are a number of things to keep in mind when considering the use of a trans
 
 ::
 
-   * 
+   -
 
 We now take a look at some candidate transformers that might be used in a voltage step-up mode for increasing the voltage swing.
 

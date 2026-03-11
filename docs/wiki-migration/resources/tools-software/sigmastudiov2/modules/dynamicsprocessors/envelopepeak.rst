@@ -3,20 +3,21 @@
 Envelope Peak
 =============
 
-| 
-| |peakenv.png| |peakenvext.png|
+|peakenv.png| |peakenvext.png|
 
 Description
 -----------
 
-| The Envelope Peak block measures the absolute peak value of the input signal and holds the peak level of the incoming signal for the specified time before starts decaying the ramp, when signal level falls.
-| ===== Variants =====
+The Envelope Peak block measures the absolute peak value of the input signal and holds the peak level of the incoming signal for the specified time before starts decaying the ramp, when signal level falls.
+
+Variants
+--------
 
 -  Envelope Peak
 -  Envelope Peak with Ext Decay
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +------------------------------+------------+------------------+---------------+------------------+
 | Name                         | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -49,7 +50,7 @@ Name   Type  Description
 Output Audio Output channel
 ====== ===== ==============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +-------------------------+---------------+-----------+------------------------------------------------------------------------------------------------------------------------+
@@ -73,8 +74,10 @@ Output Audio Output channel
 
 | 
 | ===== DSP Parameter Computation ===== Hold = (int) FS \* Hold/1000
-| Decay = 1/10^(Decay \* 2/(10 \* (FS + 0.000001)))
-| Where FS is the sampling rate
+
+Decay = 1/10^(Decay \* 2/(10 \* (FS + 0.000001)))
+
+Where FS is the sampling rate
 
 .. |peakenv.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakenv.png
 .. |peakenvext.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakenvext.png

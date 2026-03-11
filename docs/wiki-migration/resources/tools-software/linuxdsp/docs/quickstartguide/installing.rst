@@ -23,20 +23,22 @@ First you should make sure the U-boot has been written into the flash. You shoul
           Watchdog enabled
    I2C:   ready
    DRAM:  224 MiB
-   MMC:   SC5XX SDH: 0                                                                                                        
-   SF: Detected IS25LP512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB                                           
-   In:    serial                                                                                                              
-   Out:   serial                                                                                                              
-   Err:   serial                                                                                                              
-   other init                                                                                                                 
-   Net:   dwmac.3100c000                                                                                                      
-   Hit any key to stop autoboot:  0                                                                                           
+   MMC:   SC5XX SDH: 0
+   SF: Detected IS25LP512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB
+   In:    serial
+   Out:   serial
+   Err:   serial
+   other init
+   Net:   dwmac.3100c000
+   Hit any key to stop autoboot:  0
    sc #
 
 If no output please refer this page :doc:`Installing U-boot </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing_uboot>` to build and write the U-Boot onto flash.
 
-| 
-| ==== Boot Commands in U-Boot Environemt ==== When you run **printenv** in u-Boot console, there will be 4 boot methods in the U-boot.
+Boot Commands in U-Boot Environemt
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you run **printenv** in u-Boot console, there will be 4 boot methods in the U-boot.
 
 -  nfsboot=tftp ${loadaddr} ${nfsfile};tftp ${dtbaddr} ${dtbfile};run nfsargs;run addip;bootz ${loadaddr} - ${dtbaddr}
 -  norboot=tftp ${loadaddr} ${ramfile};tftp ${dtbaddr} ${dtbfile};run ramargs;run addip;bootz ${loadaddr} - ${dtbaddr}
@@ -46,11 +48,15 @@ If no output please refer this page :doc:`Installing U-boot </wiki-migration/res
 
 The default boot command is **run ramboot**.
 
-| 
-| ===== Booting Linux ===== Currently ADI provides some deploy methods to load linux kernel and boot into console. The default deploy method is ramboot.
+Booting Linux
+-------------
 
-| 
-| ==== RAM Boot ==== In order to boot Linux, a copy of the **image file** should be copied into the **/tftpboot** directory. This file will be downloaded by U-Boot when the board begins to boot. In a console, in the **build** directory of your workspace issue the following commands:
+Currently ADI provides some deploy methods to load linux kernel and boot into console. The default deploy method is ramboot.
+
+RAM Boot
+~~~~~~~~
+
+In order to boot Linux, a copy of the **image file** should be copied into the **/tftpboot** directory. This file will be downloaded by U-Boot when the board begins to boot. In a console, in the **build** directory of your workspace issue the following commands:
 
 ::
 
@@ -60,8 +66,7 @@ The default boot command is **run ramboot**.
 
 Where the macros in the above command are listed at the bottom of this page in **Appendix**.
 
-| 
-| Next, reboot the board and Linux will be downloaded to the target board and boot. When boot is successful you will be presented by the ADI logo and the login prompt:
+Next, reboot the board and Linux will be downloaded to the target board and boot. When boot is successful you will be presented by the ADI logo and the login prompt:
 
 ::
 
@@ -70,8 +75,8 @@ Where the macros in the above command are listed at the bottom of this page in *
    or
    sc # dhcp
    sc #
-   sc # boot 
-   or 
+   sc # boot
+   or
    sc # run ramboot
    ......
    Starting syslogd/klogd: done
@@ -80,7 +85,7 @@ Where the macros in the above command are listed at the bottom of this page in *
 
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@     
+        @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@     @@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@            @@@@@@@@@@@@@@@@@@@
@@ -100,17 +105,21 @@ Where the macros in the above command are listed at the bottom of this page in *
            Analog Devices Yocto Distribution
                     www.analog.com
                  www.yoctoproject.org
-        
+
    adsp-sc589-mini login: root
    Password: adi
 
 The default username is **root** and the password is **adi**.
 
-| 
-| ==== NFS Boot ==== This boot method would finally use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. For how to boot Linux via NFS, please refer to ":doc:`How to Boot Linux From NFS </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing/installing_nfsboot>`".
+NFS Boot
+~~~~~~~~
 
-| 
-| ==== SD Card Boot ==== There are two kinds of boot commands for booting Linux from SD card.
+This boot method would finally use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. For how to boot Linux via NFS, please refer to ":doc:`How to Boot Linux From NFS </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing/installing_nfsboot>`".
+
+SD Card Boot
+~~~~~~~~~~~~
+
+There are two kinds of boot commands for booting Linux from SD card.
 
 ::
 
@@ -121,11 +130,13 @@ And please make sure there are 500 MB at least in SD card to store zImge, dtb an
 
 For how to boot Linux via SD card, please refer to ":doc:`How to Boot Linux From SD Card </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing/installing_sdcardboot>`"
 
-| 
-| ==== NOR Boot ==== Due to the limited flash size, currently we can only support NOR boot the Linux kernel image(zImage) and device tree file(dtb). Put the filesystem in local HOST or SD Card is suggested.
+NOR Boot
+~~~~~~~~
 
-| 
-| ====== Appendix: Macro Definition ======
+Due to the limited flash size, currently we can only support NOR boot the Linux kernel image(zImage) and device tree file(dtb). Put the filesystem in local HOST or SD Card is suggested.
+
+Appendix: Macro Definition
+==========================
 
 +------------------+-----------------+----------------------------------------------------+
 | ``MACHINE``      | ``DTB_FILE``    | ``RAMDISK_FILE``                                   |

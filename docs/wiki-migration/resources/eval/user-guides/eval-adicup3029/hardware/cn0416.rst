@@ -4,7 +4,6 @@ EVAL-CN0416-ARDZ Shield Overview
 | :adi:`CN0416` is an isolated and non-isolated RS-485 transceiver board which allows easy implementation of asynchronous serial (UART) data transmission between multiple Arduino form factor systems or nodes, especially over long distances. The circuit uses the :adi:`ADM2682E` RS-485 transceiver for isolated communications and the :adi:`LTC2865` for non-isolated RS-485 communications. Both can be configured to either full-duplex or half duplex operation and with open or terminated transmission lines. The circuit has on-board RJ-45 ports which allows the use of the common CAT5 cable for fast physical wiring of nodes. The termination resistance is catered by default to the CAT5 cable characteristic impedance of 100 ohms but can be configured to support the standard RS485 cable impedance of 120 ohms. The cable also carries power supply lines which are by default unpowered but can be connected to a 3.3V supply from the board's low-dropout voltage regulator, :adi:`ADP7102`. The system has an on-board 10-pin connector compatible with the :adi:`ADALM-UARTJTAG` which allows for serial connections to a PC or other device.
 | The :adi:`ADM2682E` is capable of a data rate up to 16 Mbps and has true fail-safe receiver inputs with adjusted differential voltage threshold. It provides 5 kV signal isolation using the iCoupler data channel and 5 kV power isolation using the isoPower integrated dc-to-dc converter.
 | The :adi:`LTC2865` is capable of a data rate up to 20 Mbps and has full fail-safe receiver inputs. An internal window comparator determines the fail-safe condition without the need to adjust the differential input voltage thresholds.
-
 | |image1|
 
 RS-485 Communications
@@ -35,19 +34,52 @@ Summary of Switch Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | In summary, all switch positions for the configurable settings of the :adi:`CN0416` in RS-485 communications are shown below. (Switch positions that do not matter for a setting are NA)
-| ^ RS-485 Configuration ^ Switch Positions ^^^^^ ^ ::: ^ S2 ^ S4 ^ S5 ^ S6 ^ S7 ^ \| Isolated, Full Duplex, and Terminated \| 2 \| NA \| 2 \| NA \| 2 \| \| Isolated, Full Duplex, and Open \| 2 \| NA \| 2 \| NA \| 1 \| \| Isolated, Half Duplex, and Terminated \| 1 \| NA \| 1 \| NA \| 2 \| \| Isolated, Half Duplex, and Open \| 1 \| NA \| 1 \| NA \| 1 \| \| Non-Isolated, Full Duplex, and Terminated \| 3 \| 2 \| NA \| 2 \| NA \| \| Non-isolated, Full Duplex, and Open \| 3 \| 2 \| NA \| 1 \| NA \| \| Non-isolated, Half Duplex, and Terminated \| 4 \| 1 \| NA \| 2 \| NA \| \| Non-isolated, Half Duplex, and Open \| 4 \| 1 \| NA \| 1 \| NA \|
+| ^ RS-485 Configuration ^ Switch Positions ^^^^^
+
+========================================= == == == == ==
+                                          S2 S4 S5 S6 S7
+========================================= == == == == ==
+Isolated, Full Duplex, and Terminated     2  NA 2  NA 2
+Isolated, Full Duplex, and Open           2  NA 2  NA 1
+Isolated, Half Duplex, and Terminated     1  NA 1  NA 2
+Isolated, Half Duplex, and Open           1  NA 1  NA 1
+Non-Isolated, Full Duplex, and Terminated 3  2  NA 2  NA
+Non-isolated, Full Duplex, and Open       3  2  NA 1  NA
+Non-isolated, Half Duplex, and Terminated 4  1  NA 2  NA
+Non-isolated, Half Duplex, and Open       4  1  NA 1  NA
+========================================= == == == == ==
 
 Isolated vs Non-Isolated RS-485 Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :adi:`CN0416` can be configured to use either the :adi:`ADM2682E` or the :adi:`LTC2865` for Half/Full Duplex RS-485 transmission. The difference between the part selected is that the :adi:`ADM2682E` provides complete signal and power isolation, where as the :adi:`LTC2865` does not isolate the standard RS-485 transmission.
-| ^ Switch S2 Position ^ Duplex Mode ^ Operation ^ Part Used ^ \| Position 1 \| HALF Duplex (Isolated) \| Signal and Power Isolated RS-485 \| :adi:`ADM2682E` \| \| Position 2 \| FULL Duplex (Isolated) \| Signal and Power Isolated RS-485 \| :adi:`ADM2682E` \| \| Position 3 \| HALF Duplex (Non-Isolated) \| Non-Isolated RS-485 \| :adi:`LTC2865` \| \| Position 4 \| FULL Duplex (Non-Isolated) \| Non-Isolated RS-485 \| :adi:`LTC2865` \|
+| ^ Switch S2 Position ^ Duplex Mode ^ Operation ^ Part Used ^
+
++------------+----------------------------+----------------------------------+------------------+
+| Position 1 | HALF Duplex (Isolated)     | Signal and Power Isolated RS-485 | :adi:`ADM2682E`  |
++------------+----------------------------+----------------------------------+------------------+
+| Position 2 | FULL Duplex (Isolated)     | Signal and Power Isolated RS-485 | :adi:`ADM2682E`  |
++------------+----------------------------+----------------------------------+------------------+
+| Position 3 | HALF Duplex (Non-Isolated) | Non-Isolated RS-485              | :adi:`LTC2865`   |
++------------+----------------------------+----------------------------------+------------------+
+| Position 4 | FULL Duplex (Non-Isolated) | Non-Isolated RS-485              | :adi:`LTC2865`   |
++------------+----------------------------+----------------------------------+------------------+
 
 Full Duplex or Half Duplex Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :adi:`CN0416` can be configured to either full-duplex operation or half-duplex operation depending on the application. Switch S4 and S5 controls this setting with the differential RS-485 lines, and switch S2 controls the driver and receiver Enable.
-| ^ Mode ^ Operation ^ Switch Position Requirements ^ \| Isolated \| Half-Duplex RS-485 \| S5 = Position 1 (HALF) & S2 = Position 1 (HALF ISO) \| \| \| Full-Duplex RS-485 \| S5 = Position 2 (FULL) & S2 = Position 2 (FULL ISO) \| \| Non-Isolated \| Full-Duplex RS-485 \| S4 = Position 2 (FULL) & S2 = Position 3 (FULL NON_ISO) \| \| \| Half-Duplex RS-485 \| S4 = Position 1 (HALF) & S2 = Position 4 (HALF NON_ISO) \|
+| ^ Mode ^ Operation ^ Switch Position Requirements ^
+
++--------------+--------------------+---------------------------------------------------------+
+| Isolated     | Half-Duplex RS-485 | S5 = Position 1 (HALF) & S2 = Position 1 (HALF ISO)     |
++--------------+--------------------+---------------------------------------------------------+
+|              | Full-Duplex RS-485 | S5 = Position 2 (FULL) & S2 = Position 2 (FULL ISO)     |
++--------------+--------------------+---------------------------------------------------------+
+| Non-Isolated | Full-Duplex RS-485 | S4 = Position 2 (FULL) & S2 = Position 3 (FULL NON_ISO) |
++--------------+--------------------+---------------------------------------------------------+
+|              | Half-Duplex RS-485 | S4 = Position 1 (HALF) & S2 = Position 4 (HALF NON_ISO) |
++--------------+--------------------+---------------------------------------------------------+
 
 .. important::
 
@@ -65,12 +97,19 @@ Cable Length and Termination Selection
 
 The type of termination also depends on the cable length as well as the cable characteristic impedance. The ordinary CAT5/CAT5E cable has a characteristic impedance of 100 ohms while the RS-485 standard cable has 120 ohms.
 
-| By default, the parallel termination resistance is 100 ohms which supports CAT5/CATE cables. But, this can be reconfigured to 120 ohms by disconnecting solder jumpers JP4, JP6, JP8 and, JP10 and shorting solder jumpers JP3, JP5, JP7, JP9.
+By default, the parallel termination resistance is 100 ohms which supports CAT5/CATE cables. But, this can be reconfigured to 120 ohms by disconnecting solder jumpers JP4, JP6, JP8 and, JP10 and shorting solder jumpers JP3, JP5, JP7, JP9.
 
-| |image4|\ |image5|
+|image4|\ |image5|
 
 | Switch S6 and S7 controls the type of termination of the RS-485 lines.
-| ^ Mode ^ Switch S6 and S7 Position ^ Termination Type ^ \| Isolated \| S7 = Position 1 (OPEN) \| No Line Termination \| \| \| S7 = Position 2 (TERM) \| Parallel Resistance Termination \| \| Non-Isolated \| S6 = Position 1 (OPEN) \| No Line Termination \| \| \| S6 = Position 2 (TERM) \| Parallel Resistance Termination \|
+| ^ Mode ^ Switch S6 and S7 Position ^ Termination Type ^
+
+============ ====================== ===============================
+Isolated     S7 = Position 1 (OPEN) No Line Termination
+\            S7 = Position 2 (TERM) Parallel Resistance Termination
+Non-Isolated S6 = Position 1 (OPEN) No Line Termination
+\            S6 = Position 2 (TERM) Parallel Resistance Termination
+============ ====================== ===============================
 
 .. important::
 
@@ -84,12 +123,33 @@ Hex Switch Addressing
 ~~~~~~~~~~~~~~~~~~~~~
 
 | The hex switch can be used to easily setup node addressing when the :adi:`CN0416` is connected to a microcontroller via the Arduino headers. Bits are connected to analog inputs A0-A3 by default, which can be read as digital inputs by most Arduino platforms. Alternative bit mapping can be selected by resistor-stuff options on the :adi:`CN0416`, shown in parentheses. The bit values of the gpio pins used in node addressing are shown below.
-| ^ ::: ^ GPIO / Arduino Pin Connection ^^^^ ^ S1 Hex Switch Position \| AIN0 (D7) \| AIN1 (D6) \| AIN2 (D5) \| AIN3 (D4) \| \| 0 \| Low \| Low \| Low \| Low \| \| 1 \| Low \| Low \| Low \| High \| \| 2 \| Low \| Low \| High \| Low \| \| 3 \| Low \| Low \| High \| High \| \| 4 \| Low \| High \| Low \| Low \| \| 5 \| Low \| High \| Low \| High \| \| 6 \| Low \| High \| High \| Low \| \| 7 \| Low \| High \| High \| High \| \| 8 \| High \| Low \| Low \| Low \| \| 9 \| High \| Low \| Low \| High \| \| A \| High \| Low \| High \| Low \| \| B \| High \| Low \| High \| High \| \| C \| High \| High \| Low \| Low \| \| D \| High \| High \| Low \| High \| \| E \| High \| High \| High \| Low \| \| F \| High \| High \| High \| High \|
+| ^     ^ GPIO / Arduino Pin Connection ^^^^
+
+====================== ========= ========= ========= =========
+S1 Hex Switch Position AIN0 (D7) AIN1 (D6) AIN2 (D5) AIN3 (D4)
+====================== ========= ========= ========= =========
+0                      Low       Low       Low       Low
+1                      Low       Low       Low       High
+2                      Low       Low       High      Low
+3                      Low       Low       High      High
+4                      Low       High      Low       Low
+5                      Low       High      Low       High
+6                      Low       High      High      Low
+7                      Low       High      High      High
+8                      High      Low       Low       Low
+9                      High      Low       Low       High
+A                      High      Low       High      Low
+B                      High      Low       High      High
+C                      High      High      Low       Low
+D                      High      High      Low       High
+E                      High      High      High      Low
+F                      High      High      High      High
+====================== ========= ========= ========= =========
 
 RJ-45 Connection and Wiring Multi-Node Systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The :adi:`CN0416` has four RJ-45 ports, P4 and P5 for isolated communications and P6 and P24 for non-isolated communications. Each pair has a cross-over connection with each other. This facilitates the use of either a straight-through or crossover CAT5 cable.
+The :adi:`CN0416` has four RJ-45 ports, P4 and P5 for isolated communications and P6 and P24 for non-isolated communications. Each pair has a cross-over connection with each other. This facilitates the use of either a straight-through or crossover CAT5 cable.
 
 .. important::
 
@@ -102,9 +162,7 @@ RJ-45 Connection and Wiring Multi-Node Systems
 
 
 | Below shows illustrations of connecting multiple nodes using either a straight-through or a crossover cable for both isolated and non-isolated communications.
-
 | For Isolated Communications: |image6|
-
 | For Non-Isolated Communications |image7|
 
 ADALM-UARTJTAG Connection
@@ -126,7 +184,7 @@ Schematic, PCB Layout, Bill of Materials
    :class: download
 
    
-   | :adi:`EVAL-CN0416-ARDZ Design & Integration Files <cn0416-designsupport>`
+   :adi:`EVAL-CN0416-ARDZ Design & Integration Files <cn0416-designsupport>`
    
    -  Schematics
    -  PCB Layout

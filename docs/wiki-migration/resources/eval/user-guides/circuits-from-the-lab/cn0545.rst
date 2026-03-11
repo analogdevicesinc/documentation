@@ -6,7 +6,7 @@ Overview
 
 :adi:`CN-0545 <CN0545>` is a completely an integrated 0.1°C thermistor measurement system based on a low power, low noise, integrated 24-bit Σ-Δ analog-to-digital converter (ADC). The system can achieve high resolution, low non-linearity and low noise performance as well as very high 50 Hz and 60 Hz rejection. For temperatures in the range of -50°C to +150°C, thermistors provide an excellent combination of sensitivity, accuracy, cost, and simplicity.
 
-The :adi:`AD7124-4 <en/products/ad7124-4.html>` can be configured for 4 differential or 7 pseudo differential input channels, while the :adi:`AD7124-8 <en/products/ad7124-8.html>` can be configured for 8 differential or 15 pseudo differential channels. The on-chip programmable gain array (PGA) ensures that signals of small amplitude can be interfaced directly to the ADC. The system integrates several important system building blocks required to support thermistor measurements, including the constant current source, programmable gain amplifier (PGA), internal reference, and the analog and reference input buffers ideal for resistance measurements. This allows direct interface with the sensor, greatly simplifying the design while reducing PCB size, cost and power consumption. 
+The :adi:`AD7124-4 <en/products/ad7124-4.html>` can be configured for 4 differential or 7 pseudo differential input channels, while the :adi:`AD7124-8 <en/products/ad7124-8.html>` can be configured for 8 differential or 15 pseudo differential channels. The on-chip programmable gain array (PGA) ensures that signals of small amplitude can be interfaced directly to the ADC. The system integrates several important system building blocks required to support thermistor measurements, including the constant current source, programmable gain amplifier (PGA), internal reference, and the analog and reference input buffers ideal for resistance measurements. This allows direct interface with the sensor, greatly simplifying the design while reducing PCB size, cost and power consumption.
 
 Several options of the on-chip digital filtering, integrated diagnostics, and three power modes provide application flexibility. The current consumed in low power mode is only 255 µA and 930 µA in full power mode. In power-down mode, the complete ADC along with its auxiliary functions are powered down so that the device consumes 1 µA typical. The power options make the device suitable for battery powered applications, loop powered application, and non-power critical applications.
 
@@ -139,9 +139,9 @@ Calibrations
 
    4. Perform an internal zero-scale calibration.
    * Click the **Mode** bitfield of the ADC control register.
-   * In the **Mode** bitfield, select the internal zero-scale calibration option. 
+   * In the **Mode** bitfield, select the internal zero-scale calibration option.
    * Check the calibrations performed by clicking the **Offset0** register in the register tree, and check that the coefficients have changed.
-   5. When calibrations are complete, change the power mode to the required mode of operation, and ensure that the ADC is set to continuous conversion mode by selecting **Continuous** from the drop-down box in the *Mode* bit field of the **ADC_Control** register. 
+   5. When calibrations are complete, change the power mode to the required mode of operation, and ensure that the ADC is set to continuous conversion mode by selecting **Continuous** from the drop-down box in the *Mode* bit field of the **ADC_Control** register.
 
 Thermistor Measurements
 ~~~~~~~~~~~~~~~~~~~~~~~

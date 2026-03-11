@@ -3,18 +3,23 @@
 Sweep Input with Switch
 =======================
 
-| |log_swwep_switch_ssp.png|
-| ===== Description =====
-| The Sweep block generates a sinewave that sweeps from a start frequency to an end frequency. The sweep rate is determined by the number of sweep steps and cycles per step. In case of the linear sweep, the frequency sweep is linear across time whereas in the case of log sweep input, the frequency sweeps logarithmically cross time. The following variants of the module are available:
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/log_swwep_switch_ssp.png
+   :alt: log_swwep_switch_ssp.png
+
+Description
+-----------
+
+The Sweep block generates a sinewave that sweeps from a start frequency to an end frequency. The sweep rate is determined by the number of sweep steps and cycles per step. In case of the linear sweep, the frequency sweep is linear across time whereas in the case of log sweep input, the frequency sweeps logarithmically cross time. The following variants of the module are available:
 
 -  Linear Sweep Switch
 -  Linear Sweep With Switch Tone Burst
 -  Log Sweep Switch
 -  Log Sweep With Switch Tone Burst
 
-| 
-| ===== Usage =====
-| Enter the desired start and stop frequency and step size using the edit controls:
+Usage
+-----
+
+Enter the desired start and stop frequency and step size using the edit controls:
 
 -  **Start Freq**
 
@@ -59,7 +64,7 @@ Name    Type  Description
 Output0 Audio Output channel 0
 ======= ===== ================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+------------------------+-----------------------------------------------------------------------+
@@ -97,11 +102,15 @@ Output0 Audio Output channel 0
 
 | 
 | ===== DSP Parameter Computation ===== start_freq= StartFrequency/(FS/2)
-| freq_increment= EndFrequency/(FS/2)
-| numsteps= Steps
-| numcycles_per_step = Cycles
-| freq_increment = (StartFrequency-StopFrequency)/(Steps-1)
-| ison = Sweep
-| FS, Where fs is frequency and FS is the sampling rate
 
-.. |log_swwep_switch_ssp.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/log_swwep_switch_ssp.png
+freq_increment= EndFrequency/(FS/2)
+
+numsteps= Steps
+
+numcycles_per_step = Cycles
+
+freq_increment = (StartFrequency-StopFrequency)/(Steps-1)
+
+ison = Sweep
+
+FS, Where fs is frequency and FS is the sampling rate

@@ -31,9 +31,8 @@ Enter the desired start and stop frequency and step size using the edit controls
 
 The graph below shows a sweep from 10 Hz to 300 Hz achieved in four steps with two cycles in each one.
 
-| 
-| |image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sweeplogonoff011.jpg
+   :align: center
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sweeplogonoff010.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sweeplogonoff010.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sweeplogonoff011.jpg

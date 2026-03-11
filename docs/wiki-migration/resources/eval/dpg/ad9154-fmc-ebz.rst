@@ -72,9 +72,7 @@ Initial Set-Up
 | 2. Plug the AD9154-FMC-EBZ into port FMC_1 of the ADS7 System. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB as shown in Figure 1.
 | 3. Connect the ADS7 unit to your PC via USB and turn on the ADS7.
 | 4. Connect SMA connector J5 to a spectrum analyzer, connect SMA connectors J17, J4 and J14 to an oscilloscope.
-
-Single Tone Demonstration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+| ==== Single Tone Demonstration ====
 
 Single Tone Demo Lab Bench Configuration Procedure:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -101,13 +99,13 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 1. Run DPG Downloader from Start->Analog Devices->DPG->DPG Downloader. The DPG Downloader GUI will say Evaluation Board: AD9154 and Port Configuration: JESD204B as shown in Figure 3. At this point, the ADS7 FMC power supplies will be turned on.
-|
 
-<WRAP center> 2. Open SPIPro from Start->Analog Devices->AD9154->AD9154 SPI. It will say AD9154-FMC-EBZ in the upper left hand corner.
+
+ 2. Open SPIPro from Start->Analog Devices->AD9154->AD9154 SPI. It will say AD9154-FMC-EBZ in the upper left hand corner.
 
 
 | 3. Select single link, JESD mode 0, Interpolation 2. Leave all other settings in their default state. Press ‘Configure DAC and Clock’ button. JESD204B PLL lock will turn green.
-|
+
 
 .. container:: center
 

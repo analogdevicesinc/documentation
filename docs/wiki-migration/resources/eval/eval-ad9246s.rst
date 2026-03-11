@@ -4,8 +4,9 @@ EVALUATING THE AD9246S ANALOG-TO-DIGITAL CONVERTER
 Preface
 -------
 
-| This user guide describes the :adi:`ad9246S` evaluation board which provides all of the support circuitry required to operate this product in its various modes and configurations. The application software used to interface with the devices is also described. The evaluation board has Tyco connectors that mate to the :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` data capture board.
-| The :adi:`ad9246S` and :adi:`ad9246` data sheets provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`. For additional information or questions, send an email to aero@analog.com.
+This user guide describes the :adi:`ad9246S` evaluation board which provides all of the support circuitry required to operate this product in its various modes and configurations. The application software used to interface with the devices is also described. The evaluation board has Tyco connectors that mate to the :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` data capture board.
+
+The :adi:`ad9246S` and :adi:`ad9246` data sheets provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`. For additional information or questions, send an email to aero@analog.com.
 
 Typical Measurement Setup
 -------------------------
@@ -44,10 +45,22 @@ Evaluation Board Files
 
 The evaluation board layout, BOM, and schematic files for the :adi:`EVAL-AD9246S <AD9246S>` board can be downloaded from the links below.
 
-| **DISCLAIMER: The footprint used for layout on the evaluation board is provided for general reference only. The exact footprint required for mounting this device onto a printed circuit board will depend on the device lead forming and may differ from what is provided herein. It is recommended to generate specific footprint information from the users lead forming specifications when placing this device on the application printed circuit board.**
-| ==== Artwork: ==== `09-046595-01a.zip <https://wiki.analog.com/_media/resources/eval/09-046595-01a.zip>`_
-| ==== BOM: ==== `05-046595-01-a.zip <https://wiki.analog.com/_media/resources/eval/05-046595-01-a.zip>`_
-| ==== Schematic: ==== `02_046595a_top_wiki.pdf <https://wiki.analog.com/_media/resources/eval/02_046595a_top_wiki.pdf>`_
+**DISCLAIMER: The footprint used for layout on the evaluation board is provided for general reference only. The exact footprint required for mounting this device onto a printed circuit board will depend on the device lead forming and may differ from what is provided herein. It is recommended to generate specific footprint information from the users lead forming specifications when placing this device on the application printed circuit board.**
+
+Artwork:
+~~~~~~~~
+
+`09-046595-01a.zip <https://wiki.analog.com/_media/resources/eval/09-046595-01a.zip>`_
+
+BOM:
+~~~~
+
+`05-046595-01-a.zip <https://wiki.analog.com/_media/resources/eval/05-046595-01-a.zip>`_
+
+Schematic:
+~~~~~~~~~~
+
+`02_046595a_top_wiki.pdf <https://wiki.analog.com/_media/resources/eval/02_046595a_top_wiki.pdf>`_
 
 Equipment Needed
 ----------------
@@ -61,17 +74,23 @@ Equipment Needed
 -  :adi:`EVAL-AD9246S <AD9246S>` board
 -  :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` FPGA-based data capture kit
 
-| 
-| ===== Visual Analog Canvases and FPGA File Needed ===== The canvas files required to run the :adi:`EVAL-AD9246S <AD9246S>` board need to be downloaded, unzipped, and saved to an accessible location.
-| The canvas files can be downloaded from here:
-| `ad9246s_va_canvases.zip <https://wiki.analog.com/_media/resources/eval/ad9246s_va_canvases.zip>`_
-| The FPGa file can be download from here:
-| `ad9265_cmos.zip <https://wiki.analog.com/_media/resources/eval/ad9265_cmos.zip>`_
+Visual Analog Canvases and FPGA File Needed
+-------------------------------------------
+
+The canvas files required to run the :adi:`EVAL-AD9246S <AD9246S>` board need to be downloaded, unzipped, and saved to an accessible location.
+
+The canvas files can be downloaded from here:
+
+`ad9246s_va_canvases.zip <https://wiki.analog.com/_media/resources/eval/ad9246s_va_canvases.zip>`_
+
+The FPGa file can be download from here:
+
+`ad9265_cmos.zip <https://wiki.analog.com/_media/resources/eval/ad9265_cmos.zip>`_
 
 Getting Started
 ---------------
 
-| This section provides quick start procedures for using the :adi:`EVAL-AD9246S <AD9246S>` board. Both the default and optional settings are described.
+This section provides quick start procedures for using the :adi:`EVAL-AD9246S <AD9246S>` board. Both the default and optional settings are described.
 
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
@@ -93,16 +112,23 @@ Before using the software for testing, configure the evaluation board as follows
 Evaluation Board Hardware
 -------------------------
 
-| The evaluation board provides the support circuitry required to operate the :adi:`AD9246S` in its various modes and configurations. Figure 1 shows the typical bench characterization setup used to evaluate AC performance. It is critical that the signal sources used for the analog input and clock have very low phase noise (<1 ps rms jitter) to realize the optimum performance of the signal chain. Proper filtering of the analog input signal to remove harmonics and lower the integrated or broadband noise at the input is necessary to achieve the specified noise performance.
-| See the evaluation board page linked from the :adi:`AD9246S` product page for the complete schematics and bill of materials (BOM). The evaluation board layout is available upon request. The layout diagrams demonstrate the routing and grounding techniques that should be applied at the system level when designing application boards using this converter.
-| ==== Power Supplies ==== This evaluation board comes with a wall-mountable switching power supply that provides a 6 V, 2 A maximum output. Connect the supply to a 100 V ac to 240 V ac, 47 Hz to 63 Hz wall outlet. The output from the supply is provided through a 2.1 mm inner diameter jack that connects to the printed circuit board (PCB) at P200. The 6 V supply is fused and conditioned on the PCB before connecting to the low dropout linear regulators that supply the proper bias to each of the various sections on the board.
-| The evaluation board can be powered in a nondefault condition using external bench power supplies. To do this, remove the all the jumpers listed above (and in Table 1) to disconnect the outputs from the on-board LDOs. This enables the user to bias each section of the board individually. Use P202 and P201 to connect a different supply for each section. A 1.8 V, 0.5 A supply is needed for 1.8 V_AVDD, a 2.5 V, 0.5 A supply is needed for DRVDD, a 2.5 V 0.5 A supply is needed for V-DIG, and a 3.3 V, 0.5 A supply is needed for 3P3V.
+The evaluation board provides the support circuitry required to operate the :adi:`AD9246S` in its various modes and configurations. Figure 1 shows the typical bench characterization setup used to evaluate AC performance. It is critical that the signal sources used for the analog input and clock have very low phase noise (<1 ps rms jitter) to realize the optimum performance of the signal chain. Proper filtering of the analog input signal to remove harmonics and lower the integrated or broadband noise at the input is necessary to achieve the specified noise performance.
+
+See the evaluation board page linked from the :adi:`AD9246S` product page for the complete schematics and bill of materials (BOM). The evaluation board layout is available upon request. The layout diagrams demonstrate the routing and grounding techniques that should be applied at the system level when designing application boards using this converter.
+
+Power Supplies
+~~~~~~~~~~~~~~
+
+This evaluation board comes with a wall-mountable switching power supply that provides a 6 V, 2 A maximum output. Connect the supply to a 100 V ac to 240 V ac, 47 Hz to 63 Hz wall outlet. The output from the supply is provided through a 2.1 mm inner diameter jack that connects to the printed circuit board (PCB) at P200. The 6 V supply is fused and conditioned on the PCB before connecting to the low dropout linear regulators that supply the proper bias to each of the various sections on the board.
+
+The evaluation board can be powered in a nondefault condition using external bench power supplies. To do this, remove the all the jumpers listed above (and in Table 1) to disconnect the outputs from the on-board LDOs. This enables the user to bias each section of the board individually. Use P202 and P201 to connect a different supply for each section. A 1.8 V, 0.5 A supply is needed for 1.8 V_AVDD, a 2.5 V, 0.5 A supply is needed for DRVDD, a 2.5 V 0.5 A supply is needed for V-DIG, and a 3.3 V, 0.5 A supply is needed for 3P3V.
 
 Input Signals
 ~~~~~~~~~~~~~
 
-| When connecting the ADC clock and analog source, use clean signal generators with low phase noise, such as the Rohde & Schwarz SMA signal generator or an equivalent. Use a 1 m shielded, RG-58, 50 Ω coaxial cable for connecting to the evaluation board. Enter the desired frequency and amplitude (see the Specifications section in the :adi:`ad9246S` data sheet). When connecting the analog input source, use of a multipole, narrow-band band-pass filter with 50 Ω terminations is recommended. Analog Devices uses band-pass filters from TTE and K&L Microwave, Inc. Connect the filters directly to the evaluation board.
-| If an external clock source is used, it should also be supplied with a clean signal generator as previously specified. Analog Devices evaluation boards typically can accept ~2.8 V p-p or 13 dBm sine wave input for the clock.
+When connecting the ADC clock and analog source, use clean signal generators with low phase noise, such as the Rohde & Schwarz SMA signal generator or an equivalent. Use a 1 m shielded, RG-58, 50 Ω coaxial cable for connecting to the evaluation board. Enter the desired frequency and amplitude (see the Specifications section in the :adi:`ad9246S` data sheet). When connecting the analog input source, use of a multipole, narrow-band band-pass filter with 50 Ω terminations is recommended. Analog Devices uses band-pass filters from TTE and K&L Microwave, Inc. Connect the filters directly to the evaluation board.
+
+If an external clock source is used, it should also be supplied with a clean signal generator as previously specified. Analog Devices evaluation boards typically can accept ~2.8 V p-p or 13 dBm sine wave input for the clock.
 
 Output Signals
 ~~~~~~~~~~~~~~
@@ -112,7 +138,7 @@ The :adi:`ad9246S` evaluation board uses the Analog Devices high speed converter
 Jumper Settings
 ---------------
 
-| Set the jumper settings/link options on the evaluation board for the required operating modes before powering on the board. The functions of the jumpers for the board are described in Table 1. Figures 2 shows the default jumper settings.
+Set the jumper settings/link options on the evaluation board for the required operating modes before powering on the board. The functions of the jumpers for the board are described in Table 1. Figures 2 shows the default jumper settings.
 
 Table 1. Jumper Settings for the AD9246S Evaluation Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,12 +168,12 @@ Table 1. Jumper Settings for the AD9246S Evaluation Board
 Power
 ~~~~~
 
-| Plug the switching power supply into a wall outlet rated at 100 V ac to 240 V ac, 47 Hz to 63 Hz. Connect the DC output connector to P200 on the evaluation board.
+Plug the switching power supply into a wall outlet rated at 100 V ac to 240 V ac, 47 Hz to 63 Hz. Connect the DC output connector to P200 on the evaluation board.
 
 Analog Input
 ~~~~~~~~~~~~
 
-| The analog input on the evaluation board is set up for a double balun-coupled analog input with a 50 Ω impedance. The default analog input configuration supports analog input frequencies of up to ~300 MHz. For additional information on recommended input networks, see the :adi:`AD9246S` data sheet.
+The analog input on the evaluation board is set up for a double balun-coupled analog input with a 50 Ω impedance. The default analog input configuration supports analog input frequencies of up to ~300 MHz. For additional information on recommended input networks, see the :adi:`AD9246S` data sheet.
 
 Clock
 ~~~~~
@@ -160,7 +186,7 @@ How To Use The Software For Testing
 Setting up the ADC Data Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| After configuring the board, set up the ADC data capture using the following steps:
+After configuring the board, set up the ADC data capture using the following steps:
 
 -  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – Existing Canvas** window. Navigate to the location where the AD9246S canvases have been store and select the template that corresponds to the type of testing to be performed (see Figure 3a). Click the "Open" button. |image3|\
 
@@ -207,7 +233,7 @@ Evaluation And Test
 Setting up the SPI Controller Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
+After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
 
 -  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 6). |image7|\
 
@@ -220,10 +246,7 @@ Setting up the SPI Controller Software
 
 .. container:: centeralign
 
-   \ *Figure 7. SPI Controller, New DUT Button*\
-
-
--  In the **ADCBase 0** tab of the **SPIController** window, various selections can be made to change the device settings for the :adi:`ad9246S`. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.\
+   \ *Figure 7. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, various selections can be made to change the device settings for the :adi:`ad9246S`. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.\
 
 
 

@@ -71,7 +71,7 @@ Build and install libiio from source:
    mkdir build
    cd build
    cmake .. -DPYTHON_BINDINGS=ON
-   make 
+   make
    sudo make install
    cd ../..
 
@@ -87,7 +87,7 @@ Build and install libiio from source:
    mkdir build
    cd build
    cmake .. -DPYTHON_BINDINGS=ON
-   make 
+   make
    sudo make install
    cd ../..
 
@@ -129,7 +129,7 @@ On Ubuntu 16.04 or newer GNU Radio can be installed from the package management.
    git clone https::`gr-iio mainline gnuradio </github.com/analogdevicesinc/gr-iio.git
    cd gr-iio
    cmake .
-   make 
+   make
    sudo make install
    cd ..
    sudo ldconfig
@@ -152,7 +152,7 @@ Build and install gr-iio from source:
    git clone -b upgrade-3.8 https://github.com/analogdevicesinc/gr-iio.git
    cd gr-iio
    cmake .
-   make 
+   make
    sudo make install
    cd ..
    sudo ldconfig
@@ -294,15 +294,11 @@ Using the PlutoSDR blocks
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/pluto.png
    :align: center
 
-.. _common-1:
-
 Common
 ~~~~~~
 
 -  **IIO context URI**: Set to "local:" if using GNU Radio locally on the target e.g. Zedboard. If using GNU Radio remote on a PC, set the target IP address using ip:XXX.XXX.XXX.XXX (some boards like the PlutoSDR run a Zeroconf/Avahi deamon so the the URI may look like this: ip:pluto.local) or via USB using the URI usb:XX.XX.XX
 -  **Buffer size**: Size of the internal buffer in samples. The IIO blocks will only input/output one buffer of samples at a time.
-
-.. _source-block-1:
 
 Source Block
 ~~~~~~~~~~~~
@@ -324,8 +320,6 @@ Source Block
 -  **Gain Mode:** Selects one of the available modes: manual, slow_attack, hybrid and fast_attack. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 -  **Filter:** Allows a FIR filter configuration to be loaded from a file. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 -  **Filter auto** When enabled loads a default filter and thereby enables lower sampling / baseband rates.
-
-.. _sink-block-1:
 
 Sink Block
 ~~~~~~~~~~

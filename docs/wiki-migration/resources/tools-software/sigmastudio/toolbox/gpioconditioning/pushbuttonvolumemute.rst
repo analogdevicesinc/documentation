@@ -1,7 +1,7 @@
 Pushbutton Volume, Mute
 =======================
 
-| :doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
+:doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 | The PushButton Volume block can be used with the GPIO push buttons to control the volume of an input audio signal. This block has the functionality of the Push and Hold, Up/Down Control, Index lookup Table, and SW External Volume control all in one block. The user has the flexibility to define a custom volume curve, used for taper, that is indexed through the pushbuttons. | |pushvolmutepic1.png| |
@@ -86,8 +86,10 @@ For the PushButton Volume with Mute, there is the additional functionality that 
 Example
 -------
 
-| The following image shows how two GPIO inputs are used to control the volume algorithm in the PushButton Volume block. The PushButton Volume algorithm has been grown in order to support stereo audio. A mux switch allows comparison between the direct signal from the Inputs, and the volume adjusted signal, routed to the Outputs. The Interface Read and Write blocks allow the last volume level to be saved and recalled.
-| |pushvolmutepic2.png|
+The following image shows how two GPIO inputs are used to control the volume algorithm in the PushButton Volume block. The PushButton Volume algorithm has been grown in order to support stereo audio. A mux switch allows comparison between the direct signal from the Inputs, and the volume adjusted signal, routed to the Outputs. The Interface Read and Write blocks allow the last volume level to be saved and recalled.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/pushvolmutepic2.png
+   :alt: pushvolmutepic2.png
 
 Algorithm Details
 -----------------
@@ -131,5 +133,4 @@ Algorithm Growth Information
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 .. |pushvolmutepic1.png| image:: https://wiki.analog.com/_media/pushvolmutepic1.png
-.. |pushvolmutepic2.png| image:: https://wiki.analog.com/_media/pushvolmutepic2.png
 .. |pushvolmutepic3.png| image:: https://wiki.analog.com/_media/pushvolmutepic3.png

@@ -74,15 +74,16 @@ If you can't remember the username/password, if it is the default, it will be on
    root@192.168.2.1's password: **analog**
    Welcome to:
    %%______ _       _        _________________
-   | ___ \ |     | |      /  ___|  _  \ ___ \
-   | |_/ / |_   _| |_ ___ \ `--.| | | | |_/ /
-   |  __/| | | | | __/ _ \ `--. \ | | |    /
-   | |   | | |_| | || (_) /\__/ / |/ /| |\ \
+   | ___ \ |     | |      /  ___|  _  \ ___ \ |
+   | |_/ / |_   _| |_ ___ \ `--.| | | | |_/ / |
+   |  __/| | | | | __/ _ \ `--. \ | | |    / |
+   | |   | | |_| | || (_) /\__/ / |/ /| |\ \ |
+
    \_|   |_|\__,_|\__\___/\____/|___/ \_| \_|
 
    v0.31
    http://wiki.analog.com/university/tools/pluto%%
-   # 
+   #
 
 The version on this devices is ``0.31``
 
@@ -179,7 +180,7 @@ It's exactly the same as the GUI instructions, copy it, and then eject it, then 
    
       analog@imhotep:~/pluto$ **cp ./pluto.frm /media/analog/PlutoSDR/**
       analog@imhotep:~/pluto$ **mount | grep PlutoSDR | awk '{print $1}'**
-      /dev/sdb1 
+      /dev/sdb1
       analog@imhotep:~/pluto$ **sudo eject /dev/sdb**
       analog@imhotep:~/pluto$ **echo "WAIT 4 minutes for firmware to update!!!! Do not unplug the device."**
    
@@ -196,10 +197,11 @@ Many people remotely deploy their PlutoSDR, (via a USB <-> Ethernet dongle), and
    root@192.168.1.104's password: **analog**
    Welcome to:
    %%______ _       _        _________________
-   | ___ \ |     | |      /  ___|  _  \ ___ \
-   | |_/ / |_   _| |_ ___ \ `--.| | | | |_/ /
-   |  __/| | | | | __/ _ \ `--. \ | | |    /
-   | |   | | |_| | || (_) /\__/ / |/ /| |\ \
+   | ___ \ |     | |      /  ___|  _  \ ___ \ |
+   | |_/ / |_   _| |_ ___ \ `--.| | | | |_/ / |
+   |  __/| | | | | __/ _ \ `--. \ | | |    / |
+   | |   | | |_| | || (_) /\__/ / |/ /| |\ \ |
+
    \_|   |_|\__,_|\__\___/\____/|___/ \_| \_|
 
    v0.33
@@ -221,7 +223,7 @@ Many people remotely deploy their PlutoSDR, (via a USB <-> Ethernet dongle), and
    saving to 'plutosdr-fw-v0.34.zip'
    plutosdr-fw-v0.34.zip 100% |* * * * * * * * *| 19.2M  0:00:00 ETA
    'plutosdr-fw-v0.34.zip' saved
-   # **unzip -l plutosdr-fw-v0.34.zip** 
+   # **unzip -l plutosdr-fw-v0.34.zip**
    Archive:  plutosdr-fw-v0.34.zip
      Length      Date    Time    Name
    ---------  ---------- -----   ----
@@ -291,7 +293,7 @@ on Linux
 ::
 
    analog@imhotep:~$ **lsusb | grep 0456**
-   Bus 003 Device 008: ID 0456:b673 Analog Devices, Inc. 
+   Bus 003 Device 008: ID 0456:b673 Analog Devices, Inc.
 
 And in DFU mode:
 
@@ -312,8 +314,6 @@ Update using DFU mode
 ~~~~~~~~~~~~~~~~~~~~~
 
 How to update the firmware using DFU mode? How to rewrite the default uboot environment?
-
-.. _windows-1:
 
 Windows
 ^^^^^^^
@@ -360,8 +360,6 @@ The PlutoSDR/M2K driver package bundles also a dfu utility. There is a windows c
    Done!
 
    C:\tmp>
-
-.. _linux-1:
 
 Linux
 ^^^^^
@@ -426,7 +424,7 @@ Here it found one device, with 5 "partitions" in the flash map.
 ::
 
    rgetz@brain:~/$ **sudo dfu-util --list**
-   [sudo] password for rgetz: 
+   [sudo] password for rgetz:
    dfu-util 0.9
 
    Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
@@ -439,7 +437,7 @@ Here it found one device, with 5 "partitions" in the flash map.
    Found DFU: [0456:b674] ver=0221, devnum=104, cfg=1, intf=0, path="3-1.6.6", alt=2, name="uboot-extra-env.dfu", serial="UNKNOWN"
    Found DFU: [0456:b674] ver=0221, devnum=104, cfg=1, intf=0, path="3-1.6.6", alt=1, name="firmware.dfu", serial="UNKNOWN"
    Found DFU: [0456:b674] ver=0221, devnum=104, cfg=1, intf=0, path="3-1.6.6", alt=0, name="boot.dfu", serial="UNKNOWN"
-   rgetz@brain:~/$ 
+   rgetz@brain:~/$
 
 If this doesn't show up, try again. ``dfu-utils`` is known to work better the 2nd time.
 

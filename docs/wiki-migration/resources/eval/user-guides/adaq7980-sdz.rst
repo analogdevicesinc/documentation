@@ -74,34 +74,35 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``typedef struct {                       |
+    typedef struct {
+     /* SPI */
+     spi_device          spi_dev;
+     /* GPIO */
+     gpio_device         gpio_dev;
+     int8_t              gpio_pd_ldo;
+     int8_t              gpio_ref_pd;
+     int8_t              gpio_rbuf_pd;
+    } adaq7980_dev;
 
-|     /* SPI */                            |
-|     spi_device          spi_dev;         |
-|     /* GPIO */                           |
-|     gpio_device         gpio_dev;        |
-|     int8_t              gpio_pd_ldo;     |
-|     int8_t              gpio_ref_pd;     |
-|     int8_t              gpio_rbuf_pd;    |
-| } adaq7980_dev;                          |
-|                                          |
-| typedef struct {                         |
-|     /* SPI */                            |
-|     uint8_t             spi_chip_select; |
-|     spi_mode            spi_mode;        |
-|     spi_type            spi_type;        |
-|     uint32_t            spi_device_id;   |
-|     /* GPIO */                           |
-|     gpio_type           gpio_type;       |
-|     uint32_t            gpio_device_id;  |
-|     int8_t              gpio_pd_ldo;     |
-|     int8_t              gpio_ref_pd;     |
-|     int8_t              gpio_rbuf_pd;    |
-| } adaq7980_init_param;``                 |
-+------------------------------------------+
+::
+
+    typedef struct {
+     /* SPI */
+     uint8_t             spi_chip_select;
+     spi_mode            spi_mode;
+     spi_type            spi_type;
+     uint32_t            spi_device_id;
+     /* GPIO */
+     gpio_type           gpio_type;
+     uint32_t            gpio_device_id;
+     int8_t              gpio_pd_ldo;
+     int8_t              gpio_ref_pd;
+     int8_t              gpio_rbuf_pd;
+    } adaq7980_init_param;
 
 Create the SDK Project
 ----------------------

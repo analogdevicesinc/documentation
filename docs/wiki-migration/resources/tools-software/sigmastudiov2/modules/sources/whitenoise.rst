@@ -9,8 +9,7 @@ White Noise
 Description
 -----------
 
-| 
-| The White Noise block generates a signal that contains equal energy per frequency domain(hertz or similar increament).This random time-varying signal can be useful for testing equipment, although for audio situations white noise is commonly run through a pinking filter, to better simulate the behavior and response of the human ear.
+The White Noise block generates a signal that contains equal energy per frequency domain(hertz or similar increament).This random time-varying signal can be useful for testing equipment, although for audio situations white noise is commonly run through a pinking filter, to better simulate the behavior and response of the human ear.
 
 A simple on/off toggle (right) controls the cell output.
 

@@ -49,6 +49,7 @@ Running the evaluation application
 
 Once Linux boots you'll see on the HDMI monitor the Linux desktop and on the top left corner a shortcut to the evaluation application. Double clicking on the icon will start the evaluation application. A console window will open to show the application's status and, after a few seconds, the evaluation application GUI will be displayed.
 
+
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/aditof_demo.png
    :alt: aditof-demo
    :align: center
@@ -73,7 +74,7 @@ The evaluation application also displays the temperature in deg C of the camera 
 The framerate at which data is acquired from the system is constantly updated on the GUI. The camera board outputs data at 30 frames per second (fps), but due to USB connection limitations, the host PC acquires the frames at a lower rate.
 
 Enabling the point cloud display in aditof-demo
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================
 
 -  The demo application has the capability to display a point cloud image if it detects an OpenCV module called viz.
 
@@ -92,11 +93,12 @@ Unfortunately OpenCV does not provide binaries for this module so a manual build
 
 
 Troubleshooting
-~~~~~~~~~~~~~~~
+===============
 
 -  The demo application hangs after closing the main window
 
    -  Due to some limitations the application always hangs if it is closed using the regular X button from the window top bar (title bar). To avoid this unpleasant hang, we've made available a second X button in the top right corner right above the title bar that can be used to safely close the demo application. We hope this to be a temporary workaround.
+
 
 
 .. image:: https://wiki.analog.com/_media/navigation AD-96TOF1-EBZ#none#./

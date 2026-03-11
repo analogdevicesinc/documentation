@@ -1,15 +1,16 @@
 EV-STRUCTURAL-ARDZ Sensor for Structural Monitoring
 ===================================================
 
-|
-
 .. important::
 
    **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html
-   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
-   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+   https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html
+   
+   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   
+   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
    
 
 
@@ -78,8 +79,8 @@ Features
    
 
 
-| 
-| ==== Applications ====
+Applications
+~~~~~~~~~~~~
 
 -  Smart motor sensor
 -  Tilt sensing, inclinometers
@@ -87,69 +88,71 @@ Features
 -  Motion/position measurement
 -  Monitor/alarm devices (security, medical, safety)
 
-| 
-| ==== Block Diagram ====
-| |image1|
+Block Diagram
+~~~~~~~~~~~~~
 
-| 
-| ----
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-structural-ardz_block_diagram.png
+   :align: center
+   :width: 500px
+
+--------------
 
 Hardware Design
 ===============
 
-| 
-| ===== Components and Connections =====
+Components and Connections
+--------------------------
 
 Digital Interface (Arduino)
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
    The Arduino interface is a standardized digital interface for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Arduino, which is hardware and software company. Complete details on the PMOD specification can be found `here <https://www.arduino.cc/en/hardware>`_.
 
    
-   The pin map for the Arduino pins is described in the table and its schematic diagram below. |image2|
+   The pin map for the Arduino pins is described in the table and its schematic diagram below. |image1|
 
 
    
-   |image3|
+   |image2|
 
-| 
-| ==== Sensor Device ====
+Sensor Device
+~~~~~~~~~~~~~
 
 .. container:: indent
 
    The board comes with the :adi:`ADXL343` 3-Axis MEMS Accelerometers, :adi:`ADIS16203` Programmable 360° Inclinometer, and :adi:`MAX30210` ±0.1°C Accurate, 16-Bit Digital I2C Temperature Sensor.
 
 
-   |image4|
+   |image3|
 
 --------------
 
 Applications
 ============
 
-|
-
 .. tip::
 
    The :adi:`EV-STRUCTURAL-ARDZ` can be used with the :adi:`MAX32670-SX-ARDZ` Base Board, which is a long-range wireless radio development platform based on MAX32670 ultralow power ARM Cortex-M4 microcontroller and SX1261 RF transceiver.
 
-   | Using these platforms together enables users to design solutions based on low-power, long range proprietary radio communication technique.
-   | To learn more about the Long Range Wireless Radio solution developed by Analog Devices, visit the :doc:`AD-MAX32SXWISE-SL Long Range Wireless Radio Development Kit User Guide </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl>`
+   
+   Using these platforms together enables users to design solutions based on low-power, long range proprietary radio communication technique.
+   
+   To learn more about the Long Range Wireless Radio solution developed by Analog Devices, visit the :doc:`AD-MAX32SXWISE-SL Long Range Wireless Radio Development Kit User Guide </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl>`
    
 
 
-| 
-| ====== System Setup ======
+System Setup
+============
 
 PHASE 1: Hardware Setup
 -----------------------
 
 Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use a different base board or microcontroller, however the firmware built for this demo application cannot be used as this is specifically designed for the MAX32670-SX-ARDZ.
 
-| 
-| ==== Equipment Needed ====
+Equipment Needed
+~~~~~~~~~~~~~~~~
 
 -  One (1) :adi:`MAX32670-SX-ARDZ` Base Board
 -  One (1) :adi:`EV-STRUCTURAL-ARDZ` Sensor Node
@@ -161,22 +164,24 @@ Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use
 
 ::
 
-      *** Note that this is not included in the kit**
+      ** Note that this is not included in the kit**
    * One (1) Micro USB to USB cable
    * Host PC (Windows 10 or later)
 
-| 
-| |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/hardware_setup.png
+   :align: center
+   :width: 800px
 
-| 
-| \* Insert one CR123A battery (3 V to 4.7 V) into the battery holder (BT1 connector) of the :adi:`MAX32670-SX-ARDZ` Base Board.
+-  Insert one CR123A battery (3 V to 4.7 V) into the battery holder (BT1 connector) of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
 .. container:: center round box
 
+   
    **Make sure to check for the battery polarity in the BT1 connector, refer to the figure below. The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.**\
 
 
-   |image6|
+   
+   |image4|
 
 -  Connect the :adi:`EV-STRUCTURAL-ARDZ` Sensor Node to the :adi:`MAX32670-SX-ARDZ` Base Board by aligning the corresponding Arduino headers on each board.
 -  Connect the :adi:`MAX32625PICO` programming adapter to the :adi:`MAX32670-SX-ARDZ` Base Board through the 10-pin ribbon cable.
@@ -188,14 +193,14 @@ Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use
 
 .. raw:: html
 
-   <details><summary>**How to flash the firmware image in the MAX32625PICO**</summary>
+   <details><summary>**How to flash the firmware image in the MAX32625PICO**
 
 -   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
    -   Do not connect the MAX32625PICO to the :adi:`MAX32670-SX-ARDZ` Base Board yet.
    -   Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
    -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.\
 
-   |image7|
+   |image5|
 
    -   Release the button once the MAINTENANCE drive is mounted.
    -   Drag and drop (to the MAINTENANCE drive) the firmware image.
@@ -214,10 +219,7 @@ Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use
    
 
 
-|image8|
-
-| 
-|
+|image6|
 
 .. note::
 
@@ -235,15 +237,16 @@ Resources
 -  :adi:`MAX30210 Product Page <MAX30210>`
 -  :adi:`ADXL343 Product Page <ADXL343>`
 
-| 
-| ===== Design and Integration Files =====
+Design and Integration Files
+----------------------------
 
 .. admonition:: Download
    :class: download
 
    
-   | `EV-STRUCTURAL-ARDZ Design Support Package <https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-structural-ardz-designsupport.zip>`_
-   | **REV. B**
+   `EV-STRUCTURAL-ARDZ Design Support Package <https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-structural-ardz-designsupport.zip>`_
+   
+   **REV. B**
    
    -  Schematic
    -  Bill of Materials
@@ -262,21 +265,15 @@ For questions and more information about this product, connect with us through t
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-| 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-structural-ardz_block_diagram.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-structural-ardz_revb.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-structural-ardz_revb.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/hardware/sms/arduino_interface.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/hardware/sms/arduino_interface.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-structural-ardz_revb2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-structural-ardz_revb2.png
    :width: 800px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/hardware_setup.png
-   :width: 800px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/base_board_with_battery.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/base_board_with_battery.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_to_maxpico.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_to_maxpico.png
    :width: 1500px

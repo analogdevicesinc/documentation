@@ -1,6 +1,8 @@
-| :doc:`Click here to return to the Toolbox section. </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
-| The Volume Controls category of the ToolBox gives you access to blocks that control signal levels: mute, gain sliders, and envelopes.
-| Following is a list of the available blocks:
+:doc:`Click here to return to the Toolbox section. </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
+
+The Volume Controls category of the ToolBox gives you access to blocks that control signal levels: mute, gain sliders, and envelopes.
+
+Following is a list of the available blocks:
 
 Volume Controls
 ===============
@@ -31,5 +33,3 @@ Surround
 ========
 
 -  :doc:`Surround Sound Volume Control </wiki-migration/resources/tools-software/sigmastudio/toolbox/volumecontrols/surroundsoundvolumecontrol>`
-
-| 

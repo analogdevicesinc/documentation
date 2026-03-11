@@ -4,11 +4,15 @@
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
+
 AD-FMCOMMS1-EBZ HDL Reference Design
 ====================================
 
-.. image:: https://wiki.analog.com/_media/page>/wiki/common#retired&nofooter&noheader
-   :alt: page>/wiki/common#retired&nofooter&noheader
+
+.. note::
+
+   See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
+
 
 Supported Devices
 -----------------
@@ -50,5 +54,6 @@ FPGA Reference Designs on GitHub :
    
    -  Questions? :ez:`Ask Help & Support <community/fpga>`.
    
+
 
 

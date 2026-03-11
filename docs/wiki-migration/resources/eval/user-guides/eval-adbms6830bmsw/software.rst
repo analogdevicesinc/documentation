@@ -1,11 +1,12 @@
 EVAL-ADBMS6830BMSW Software User Guide
 ======================================
 
-| 
-| This software guide provides the essential steps for USB-to-SPI firmware installation, launching the GUI, configuring the launcher, establishing interface connections, and utilizing various tabs for effective device evaluation. This covers tasks such as daisy chain configuration, quick measurements, custom command sequences, scheduling, memory mapping, plotting, data recall, diagnostics, and EIS measurements.
+This software guide provides the essential steps for USB-to-SPI firmware installation, launching the GUI, configuring the launcher, establishing interface connections, and utilizing various tabs for effective device evaluation. This covers tasks such as daisy chain configuration, quick measurements, custom command sequences, scheduling, memory mapping, plotting, data recall, diagnostics, and EIS measurements.
 
-| 
-| ===== Downloads ===== Evaluation GUI for ADI Broadmarket BMS products:
+Downloads
+---------
+
+Evaluation GUI for ADI Broadmarket BMS products:
 
 .. admonition:: Download
    :class: download
@@ -13,33 +14,31 @@ EVAL-ADBMS6830BMSW Software User Guide
    :adi:`BMS Browser GUI Broadmarket <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
 
-| 
-| ===== Firmware =====
+Firmware
+--------
 
 Installing the Firmware
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Connect the microcontroller board (for this example, SDP-K1) to the host PC.
--  Go to the <fc #6495ed>USB_TO_SPI_FIRMWARE directory</fc> and find the latest firmware.
--  Drag and drop the appropriate firmware file (e.g., <fc #6495ed>SDP_K1_PyBMS_USB_TO_SPI_Bytes_Debug_USB_Port.hex or usb-to-spi-max32690.hex</fc>) onto the corresponding MCU's USB drive (e.g., SDP USB drive) to update the firmware.
+-  Go to the USB_TO_SPI_FIRMWARE directory and find the latest firmware.
+-  Drag and drop the appropriate firmware file (e.g., SDP_K1_PyBMS_USB_TO_SPI_Bytes_Debug_USB_Port.hex or usb-to-spi-max32690.hex) onto the corresponding MCU's USB drive (e.g., SDP USB drive) to update the firmware.
 
 |image1|
-
-| 
-|
 
 .. tip::
 
    This software setup uses the SDP-K1 as microcontroller board, but users may also use the :adi:`AD-APARD32690-SL`.
 
-   | In order to flash the firmware image on the :adi:`AD-APARD32690-SL` MCU board, it needs to be connected to the :adi:`MAX32625PICO` programming adapter board.
+   
+   In order to flash the firmware image on the :adi:`AD-APARD32690-SL` MCU board, it needs to be connected to the :adi:`MAX32625PICO` programming adapter board.
 
 
 
 
 .. raw:: html
 
-   <details><summary>**Click here for instructions on how to flash the firmware image using the MAX32625PICO**</summary>
+   <details><summary>**Click here for instructions on how to flash the firmware image using the MAX32625PICO**
 
 -  Access the `MAX32625PICO Firmware Repository <https://github.com/analogdevicesinc/max32625pico-firmware-images>`_ and download the image for the specific MCU (e.g., MAX32690).
 -  Do not connect the MAX32625PICO from the PC and the MCU board that you are using (e.g., AD-APARDMAX32690-SL, MAX32670 MCU base board).
@@ -57,8 +56,7 @@ Installing the Firmware
    </details>
 
 
-| 
-| ----
+--------------
 
 Application Software (GUI)
 ==========================
@@ -68,21 +66,22 @@ The EVAL-ADBMS6830BMSW comes with a graphical user interface (GUI) that continuo
 Launching the Graphical User Interface
 --------------------------------------
 
--  To launch the GUI, navigate to the <fc #6495ed>BMS_BROWSER_GUI_BroadMarket_V2.0.0</fc> directory.
--  Double-click <fc #6495ed>BMS_BROWSER_GUI_BroadMarket_V2.0.0.exe</fc>.
+-  To launch the GUI, navigate to the BMS_BROWSER_GUI_BroadMarket_V2.0.0 directory.
+-  Double-click BMS_BROWSER_GUI_BroadMarket_V2.0.0.exe.
 
-| 
-| |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/bms_bm_browser_gui.png
+   :align: center
+   :width: 700px
 
-| 
-| === Launcher Configuration ===
+Launcher Configuration
+~~~~~~~~~~~~~~~~~~~~~~
 
 -  Use the launcher page to configure a daisy chain of ADBMS devices.
 -  Select an appropriately flashed microcontroller board (for this example, SDP-K1).
 -  Launch the evaluation GUI.
 
-| 
-| === Establishing Interface Connection ===
+Establishing Interface Connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  The Interface Connection section displays available SDP-K1 devices on the left.
 -  Left-side selection determines the device for launching the evaluation GUI with the Launch Button.
@@ -94,8 +93,13 @@ Launching the Graphical User Interface
    :align: center
    :width: 800px
 
-| 
-| === Daisy Chain Connection === The Daisy Chain section facilitates the creation of a daisy chain using compatible ADBMS devices. This process involves selecting a generation of ADBMS devices, adding devices to the daisy chain, and configuring the setup for the evaluation GUI. |image4|
+Daisy Chain Connection
+~~~~~~~~~~~~~~~~~~~~~~
+
+The Daisy Chain section facilitates the creation of a daisy chain using compatible ADBMS devices. This process involves selecting a generation of ADBMS devices, adding devices to the daisy chain, and configuring the setup for the evaluation GUI.
+
+
+|image3|
 
 -  **Select ADBMS Generation:**
 
@@ -122,20 +126,18 @@ Launching the Graphical User Interface
    -  Configure the daisy chain in the Daisy Chain section.
    -  Click on the launch button to initiate the evaluation GUI.
 
-| 
-
 --------------
 
 Graphical User Interface Tabs
 -----------------------------
 
 Quick Measure
--------------
+~~~~~~~~~~~~~
 
 The Quick Measure tab simplifies metric measurement with a preloaded command sequence. Note that it supports a single device in the daisy chain, and key features enhance configuration and visualization.
 
 
-|image5|
+|image4|
 
 -  **Preloaded Commands:**
 
@@ -164,8 +166,13 @@ The Quick Measure tab simplifies metric measurement with a preloaded command seq
    -  Initiate and terminate the measurement loop with the top button.
    -  The button turns yellow during loop activation and green when deactivated.
 
-| 
-| ==== Sequences ==== The Sequences tab enables the creation and management of custom command sequences. Load and save sequences, divided into Init and Loop lists. The Init list initializes the daisy chain once, while the Loop list runs continuously until stopped. Toggle between lists using the corresponding buttons at the top. |image6|
+Sequences
+~~~~~~~~~
+
+The Sequences tab enables the creation and management of custom command sequences. Load and save sequences, divided into Init and Loop lists. The Init list initializes the daisy chain once, while the Loop list runs continuously until stopped. Toggle between lists using the corresponding buttons at the top.
+
+
+|image5|
 
 -  **Load Existing Sequence:**
 
@@ -203,8 +210,13 @@ The Quick Measure tab simplifies metric measurement with a preloaded command seq
    -  Below the SPI Bus and SPI CS Select bars, use the optional Map Key field to apply a label to the command.
    -  Labels organize output data, grouping commands with the same label together for focused data analysis.
 
-| 
-| ==== Scheduler ==== The Scheduler tab provides insights into the execution time of sequences from the Sequences tab. It allows combining sequences for a complete execution loop. Key features enable precise timing adjustments and visualization. |image7|
+Scheduler
+~~~~~~~~~
+
+The Scheduler tab provides insights into the execution time of sequences from the Sequences tab. It allows combining sequences for a complete execution loop. Key features enable precise timing adjustments and visualization.
+
+
+|image6|
 
 -  **Timing Adjustments:**
 
@@ -237,8 +249,13 @@ The Quick Measure tab simplifies metric measurement with a preloaded command seq
    -  Use the Transfer button to move all cycles into a single sequence in the Sequences tab.
    -  Run the transferred sequence to assess real hardware timing.
 
-| 
-| ==== Memory Map ==== The Memory Map tab provides a numerical output for the active command loop, organized into tables for user convenience. It offers customization and error highlighting for effective data analysis. |image8|
+Memory Map
+~~~~~~~~~~
+
+The Memory Map tab provides a numerical output for the active command loop, organized into tables for user convenience. It offers customization and error highlighting for effective data analysis.
+
+
+|image7|
 
 -  **Organized Data Display:**
 
@@ -263,8 +280,13 @@ The Quick Measure tab simplifies metric measurement with a preloaded command seq
    -  Rows highlight in orange if data returned with a PEC error.
    -  Valid data does not have any highlighting for easy differentiation.
 
-| 
-| ==== Plots ==== The Plots tab provides a graphical representation of data collected through the running command loop. It offers customization options for focused analysis and allows for the export of captured data for further analysis. |image9|
+Plots
+~~~~~
+
+The Plots tab provides a graphical representation of data collected through the running command loop. It offers customization options for focused analysis and allows for the export of captured data for further analysis.
+
+
+|image8|
 
 -  **Plot Selection:**
 
@@ -294,8 +316,13 @@ The Quick Measure tab simplifies metric measurement with a preloaded command seq
    -  Click the Export Data button to export captured data as a CSV file for further analysis.
    -  Data is exported to the data directory, grouped by map key.
 
-| 
-| ==== Data Recall ==== The Data Recall tab allows you to retrieve and plot data from previous freerun sessions stored in a database file. The interface is similar to the Plots tab with added functionality for selecting the database file and test run. |image10|
+Data Recall
+~~~~~~~~~~~
+
+The Data Recall tab allows you to retrieve and plot data from previous freerun sessions stored in a database file. The interface is similar to the Plots tab with added functionality for selecting the database file and test run.
+
+
+|image9|
 
 -  **Access Data Recall Tab:**
 
@@ -319,8 +346,13 @@ The Quick Measure tab simplifies metric measurement with a preloaded command seq
 
    -  After loading the test run, customize the plot using the same methods as the Plots tab.
 
-| 
-| ==== Diagnostics ==== The Diagnostics tab offers a straightforward way to execute on-device diagnostics following the device's safety manual. It displays available diagnostics, test logs, and results for a single device. |image11|
+Diagnostics
+~~~~~~~~~~~
+
+The Diagnostics tab offers a straightforward way to execute on-device diagnostics following the device's safety manual. It displays available diagnostics, test logs, and results for a single device.
+
+
+|image10|
 
 -  **Access Diagnostics Tab:**
 
@@ -340,21 +372,20 @@ The Quick Measure tab simplifies metric measurement with a preloaded command seq
    -  A log of diagnostic-specific data appears in the center of the screen.
    -  The log provides context for understanding why a diagnostic may have failed.
 
-| 
-
 --------------
 
 Custom GUI Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-| The configuration settings in the GUI's <fc #6495ed>config.json</fc> file allow users to tailor the software to their specific needs, providing a more customized and efficient experience.
-| This section explores the three key settings: <fc #6495ed>auto_detect_sdp</fc>, <fc #6495ed>limit_usb_polling</fc>, and <fc #6495ed>display_user_manual_on_start</fc> - that users can adjust to better align the software to their intended applications.
+The configuration settings in the GUI's config.json file allow users to tailor the software to their specific needs, providing a more customized and efficient experience.
+
+This section explores the three key settings: auto_detect_sdp, limit_usb_polling, and display_user_manual_on_start - that users can adjust to better align the software to their intended applications.
 
 Key Settings
-------------
+~~~~~~~~~~~~
 
 auto_detect_sdp:
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 -  **Purpose:** Determines whether the software automatically connects to all comports or requires manual selection of the NUCLEO comport.
 -  **Default Setting:** true
@@ -365,7 +396,7 @@ auto_detect_sdp:
    -  Save the changes.
 
 limit_usb_polling:
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 -  **Purpose:** Controls the poll rate of the NUCLEO comport, balancing CPU usage and sample rate.
 -  **Default Setting:** false
@@ -376,7 +407,7 @@ limit_usb_polling:
    -  Save the changes.
 
 display_user_manual_on_start:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  **Purpose:** Governs whether the user manual is displayed each time the software starts.
 -  **Default Setting:** true
@@ -394,7 +425,7 @@ display_user_manual_on_start:
 --------------
 
 Further Help
-~~~~~~~~~~~~
+------------
 
 For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
 
@@ -403,22 +434,19 @@ For questions and more information about this product, connect with us through t
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-| 
-| :doc:`Click here to read the EVAL-ADBMS6830BMSW Hardware User Guide </wiki-migration/resources/eval/user-guides/eval-adbms6830bmsw>`
+:doc:`Click here to read the EVAL-ADBMS6830BMSW Hardware User Guide </wiki-migration/resources/eval/user-guides/eval-adbms6830bmsw>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/usb_spi_firmware_list.png
    :width: 700px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/max32625pico_flasher.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/bms_bm_browser_gui.png
-   :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/daisy_chain_connection_v.2.0.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/daisy_chain_connection_v.2.0.png
    :width: 1000px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/quick_measure_utility.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/quick_measure_utility.png
    :width: 900px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/sequences.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/scheduler_v2.0.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/memory_map_v2.0.0.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/plotfilter_v2.0.0.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/data_recall.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/diagnostics.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/sequences.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/scheduler_v2.0.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/memory_map_v2.0.0.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/plotfilter_v2.0.0.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/data_recall.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/diagnostics.png

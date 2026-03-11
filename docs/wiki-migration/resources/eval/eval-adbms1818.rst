@@ -346,8 +346,6 @@ Arduino IDE Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/eval-adbms1818_10.png
 
-.. _software-setup-1:
-
 SOFTWARE SETUP
 ~~~~~~~~~~~~~~
 
@@ -443,8 +441,6 @@ By default only a cell measurement is done, as noted by MEASURE_CELL = ENABLED. 
    const uint8_t MEASURE_AUX = DISABLED; // This is ENABLED or DISABLED
    const uint8_t MEASURE_STAT = ENABLED; //This is ENABLED or DISABLED
 
-.. _appendix-a-the-sketchbook-contents-1:
-
 APPENDIX A THE SKETCHBOOK CONTENTS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -459,8 +455,8 @@ ADC_CONVERSION_MODE, CELL_CH_TO_CONVERT, AUX_CH_TO_CONVERT and STAT_CH_TO_CONVER
    MD_7KHZ_3KHZ
    MD_26HZ_2KHZ
    ADC_OPT_ENABLED
-   ADC_OPT_DISABLED  
-   CELL_CH_ALL  
+   ADC_OPT_DISABLED
+   CELL_CH_ALL
    CELL_CH_1and7
    CELL_CH_2and8
    CELL_CH_3and9

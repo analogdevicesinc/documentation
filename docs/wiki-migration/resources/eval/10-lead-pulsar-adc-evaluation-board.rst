@@ -72,7 +72,7 @@ REV C
 
 The REV C board is the current board that is available for purchase. This board contains the on-board power supplies to power all portions of the board - the ADC, Reference, Amplifiers and SDP board. This board operates from a simple +9V wall adaptor which is included as part of the evaluation board kit. This board interfaces to the SDP controller board.
 
-\**All documentation for this version of hardware is contained in the USER GUIDE \*\*\ :adi:`REV C USER GUIDE <static/imported-files/user_guides/UG-340.pdf>`
+**All documentation for this version of hardware is contained in the USER GUIDE**\ :adi:`REV C USER GUIDE <static/imported-files/user_guides/UG-340.pdf>`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/10_lead_pulsar_revc.jpg
    :align: center

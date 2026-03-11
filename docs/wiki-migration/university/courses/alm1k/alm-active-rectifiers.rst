@@ -27,15 +27,7 @@ Having to synchronize the gate signal used to turn on and off the FET complicate
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less Breadboard and jumper wire kit
-| 1 – AD8542 dual or AD8541 single CMOS op amp with rail-to-rail input/output
-| 1 – ZVP2110A PMOS transistor ( or equivalent )
-| 1 - 4.7 uF capacitor
-| 1 - 220 uF capacitor
-| 1 – 2.2 KΩ resistor
-| 1 – 47 KΩ resistor
-| 1 – 1 MΩ resistor
+ADALM1000 hardware module Solder-less Breadboard and jumper wire kit 1 – AD8542 dual or AD8541 single CMOS op amp with rail-to-rail input/output 1 – ZVP2110A PMOS transistor ( or equivalent ) 1 - 4.7 uF capacitor 1 - 220 uF capacitor 1 – 2.2 KΩ resistor 1 – 47 KΩ resistor 1 – 1 MΩ resistor
 
 Directions:
 ~~~~~~~~~~~
@@ -64,10 +56,7 @@ The op-amp will turn on the PMOS transistor when V\ :sub:`IN` is more positive t
 
 :math:`V_GATE = V_OUT-(R_2/R_1)(V_IN – V_OUT)`
 
-| where: (voltages with respect to ground)
-| V\ :sub:`GATE` is the voltage at the gate of M\ :sub:`1`
-| V\ :sub:`IN` is the AC input voltage
-| V\ :sub:`OUT` is the output voltage at C\ :sub:`1`\ and R\ :sub:`L`
+where: (voltages with respect to ground) V\ :sub:`GATE` is the voltage at the gate of M\ :sub:`1` V\ :sub:`IN` is the AC input voltage V\ :sub:`OUT` is the output voltage at C\ :sub:`1`\ and R\ :sub:`L`
 
 You can relate the input and the output voltages to the PMOS's drain-to-source, V\ :sub:`DS`, and gate-to-source voltage, V\ :sub:`GS`, according to the following equation:
 
@@ -128,8 +117,6 @@ The op-amp that is being used in the first example circuit to compare the input 
 Just as in the op-amp based example there are limitations on the lowest voltage the circuit can operate at. As before, the minimum voltage is set by the threshold voltage of PMOS transistor M\ :sub:`1`. The maximum voltage difference between Vout and Vin (when M\ :sub:`1` is off) is determined by the reverse breakdown voltage of Q\ :sub:`1`'s emitter base junction. The difference voltage between Vout and Vin appears across the series combination of Q\ :sub:`2`'s emitter-base and Q\ :sub:`1`'s emitter base. Q\ :sub:`2` will be forward biased and Q\ :sub:`1` will be reverse biased. The emitter base reverse breakdown voltage for the 2N3906 devices used here is around 7 or 8 volts. For higher voltage designs transistors with much higher breakdown voltages will need to be chosen.
 
 Another consideration when using this circuit is the speed at which M\ :sub:`1` can be turned on and off. The fall time of Vgate is nominally set by the resistance value of R\ :sub:`2` and the gate capacitance of M\ :sub:`1`. The gate capacitance can be large for high current MOS devices. The rise time of Vgate is largely set by maximum possible current that Q\ :sub:`2` can deliver. To a large extent this is set by the beta of Q\ :sub:`2` and the amount of available base current. The base current in Q\ :sub:`2` is set by the value of R\ :sub:`1` and the output voltage Vout. The pull up current from Q\ :sub:`2` will in most cases be large enough to turn off M\ :sub:`1` quickly, the turn on time will generally be the slower of the two times.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~

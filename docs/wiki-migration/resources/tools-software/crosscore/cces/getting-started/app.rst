@@ -39,7 +39,7 @@ Processors with simpler memory configurations use an XML file to specify which r
        <!-- WARNING: has completed                                     -->
        <register name="CGU0_DIV" reset-value="0x42042442" core="Common" />
        <register name="CGU0_CTL" reset-value="0x00002000" core="Common" />
-       
+
        <!-- Init DDR0 based on the clock settings above -->
        <!-- WARNING: Do not change the order of these registers as the -->
        <!-- WARNING: debugger expects them in a certain order so that  -->
@@ -161,5 +161,5 @@ CCES can be configured to automatically call **cldp.exe** at the end of the buil
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation CCES Getting Started#led-blink-app
+.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#led-blink-app
    :alt: LED Blink Application#.|CCES Getting Started#.|CCES Getting Started

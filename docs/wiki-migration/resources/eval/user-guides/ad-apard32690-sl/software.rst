@@ -1,7 +1,7 @@
 AD-APARD32690-SL System User Guide
 ==================================
 
-|
+
 
 .. important::
 

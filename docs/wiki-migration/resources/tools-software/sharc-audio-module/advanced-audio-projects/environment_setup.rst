@@ -7,9 +7,7 @@ PATH Setup
 
 -  *If you already have CCES in your path by default, this section can be skipped.*
 -  *These instructions need to be re-run every time a new instance of your command terminal is opened if CCES is not in your path by default.*
--  *If you have multiple versions of CCESS installed, pick either the latest or the version specific to your project. CCES is typically installed in C:\\Analog Devices\\CrossCore Embedded Studio <CCES VERSION>*
-
-**To include a specific CCES Installation to PATH:**
+-  *If you have multiple versions of CCESS installed, pick either the latest or the version specific to your project. CCES is typically installed in C:\\Analog Devices\\CrossCore Embedded Studio <CCES VERSION>**To include a specific CCES Installation to PATH:**
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
 | 1. Open a file explorer and navigate to the root of the Audio Starter project within the cloned repository and open the *env.sh* file using a preferred text editor. | |image7|          |
@@ -24,16 +22,11 @@ PATH Setup
 | 5. Verify that CCES has been added to your path by running the command *echo $PATH*                                                                                  | |image12|         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
 
---------------
 
 SAM GUI Flash Tool Installation
 ===============================
 
-**Only available for software that can be updated using the SAM Flasher!** :doc:`See Software Compatibility </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>`
-
-*The SAM GUI Flash Tool is a standalone tool that allows for application reflash of the SAM once the bootloader is installed.*
-
-**To install the GUI:**
+**Only available for software that can be updated using the SAM Flasher!** :doc:`See Software Compatibility </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>`\ *The SAM GUI Flash Tool is a standalone tool that allows for application reflash of the SAM once the bootloader is installed.*\ **To install the GUI:**
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
 | 1. Open a file explorer and navigate to *<BOOTLOADER_PROJECT_ROOT>/bootloader/prebuilt* and double-click *sam-flasher_v0.0.5_setup.exe* to run the installer. | |image20|                               |
@@ -43,16 +36,11 @@ SAM GUI Flash Tool Installation
 | 3. Once installed, it can be searched for, or found under *SAM Flasher*.                                                                                      | |image25| |image26|                     |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
 
---------------
 
 USB to UART Bridge Driver Setup
 ===============================
 
-**Only required for ADZS-SC589-MINI v2.1 when the USB/UART interface is needed for UART Flashing. This driver and port will not be used during the audio example demonstrations.**
-
-*The USB to UART Bridge Driver is a Windows library that is used to emulate a serial connection over USB to the USB/UART (type Micro) on the ADSZ-SC589-MINI v2.1 hardware.*
-
-**To install the USB to UART Bridge Driver:**
+**Only required for ADZS-SC589-MINI v2.1 when the USB/UART interface is needed for UART Flashing. This driver and port will not be used during the audio example demonstrations.**\ The USB to UART Bridge Driver is a Windows library that is used to emulate a serial connection over USB to the USB/UART (type Micro) on the ADSZ-SC589-MINI v2.1 hardware.**To install the USB to UART Bridge Driver:**
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | 1. In a web browser, navigate to https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads                                                                                                                                 | |image36|           |
@@ -72,14 +60,11 @@ USB to UART Bridge Driver Setup
 | 8. Once the driver has finished installing, it will appear under *Ports* as *Silicon Labs CP210x USB to UART Bridge* or something similar.                                                                                                      | |image44|           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 
---------------
 
 Application Compilation
 =======================
 
-*The following instructions are used to compile the application binaries.*
-
-**To compile the application:**
+*The following instructions are used to compile the application binaries.**To compile the application:**
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | 1. In a Windows directory, navigate to //<project_root>/build //                                                                                               | |image48| |
@@ -94,7 +79,6 @@ Application Compilation
 | *Note that the names of the DXEs and LDR may vary depending on the project.*                                                                                   |           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 .. important::
 

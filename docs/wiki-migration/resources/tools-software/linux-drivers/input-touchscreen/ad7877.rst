@@ -60,7 +60,10 @@ Files
 Example platform device initialization
 ======================================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 Touchscreen characteristics vary between boards and models. The platform_data for the device's "struct device" holds this information.
 
@@ -74,7 +77,12 @@ These snippets are all from the same file. ``arch/blackfin/mach-bf537/boards/pna
 
 <source trunk/arch/blackfin/mach-bf537/boards/pnav10.c:spi_ad7877_chip_info{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/pnav10.c:bfin_ad7877_ts_info{} c linux-kernel>
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 <source trunk/arch/blackfin/mach-bf537/boards/pnav10.c:bfin_spi_board_info[] c linux-kernel>
 
@@ -95,23 +103,23 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
      < >   Support for memoryless force-feedback devices
      < >   Polled input device skeleton
      < >   Sparse keymap support library
-           *** Userland interfaces ***
+           ** Userland interfaces **
      < >   Mouse interface
      < >   Joystick interface
      <*>   Event interface
      < >   Event debugging
-           *** Input Device Drivers ***
+           ** Input Device Drivers **
      [ ]   Keyboards  --->
      [ ]   Mice  --->
      [ ]   Joysticks/Gamepads  --->
      [ ]   Tablets  --->
      [*]   Touchscreens  --->
-    
+
         --- Touchscreens
         < >   ADS7846/TSC2046/AD7873 and AD(S)7843 based touchscreens (NEW)
         <*>   AD7877 based touchscreens
         < >   Analog Devices AD7879-1/AD7889-1 touchscreen interface (NEW)
-    
+
      [ ]   Miscellaneous devices  --->
          Hardware I/O ports  --->
 
@@ -235,13 +243,9 @@ Check that the interrupt is registered.
    root:~> **grep ad7877 /proc/interrupts**
    258:          0   ad7877
 
-|
-
 .. tip::
 
-   In case you touch the surface and don't receive events, it's likely that something with your /DAV Interrupt is wrong.
-
-   | **check irq number in your platform device file**
+   In case you touch the surface and don't receive events, it's likely that something with your /DAV Interrupt is wrong. **check irq number in your platform device file**
 
 
 .. tip::

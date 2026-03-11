@@ -105,10 +105,10 @@ You will need to:
 
    -Get the [[https://www.arrow.com/en/products/sockit/arrow-development-tools | Terasic C5 SoCkit]]
    {{  resources:eval:user-guides:arradio:quickstart:terasic_c5_sockit.jpg?600 }}
-   -Insert the Micro-SD Card into the Micro-SD Card  Connector 
+   -Insert the Micro-SD Card into the Micro-SD Card  Connector
    -Connect the ARRADIO board to the FPGA carrier HSMC connector
-   -Plug your monitor device into the VGA Video Connector 
-   -Plug your USB mouse/keyboard into the USB 2.0 OTG Port 
+   -Plug your monitor device into the VGA Video Connector
+   -Plug your USB mouse/keyboard into the USB 2.0 OTG Port
    -Plug the Power Supply into 12V Power Supply connector (DO NOT turn the device on)
    -Set the jumpers according to the following table:
 
@@ -163,7 +163,7 @@ Remote IIO Oscilloscope
 ::
 
    -Connect USB UART (Micro USB) to your host PC.
-   -Plug your ethernet cable into the RJ45 ethernet connector 
+   -Plug your ethernet cable into the RJ45 ethernet connector
    -Run the ifconfig command on your UART terminal and get your board IP
 
 ::
@@ -171,7 +171,7 @@ Remote IIO Oscilloscope
    root@analog:~# ifconfig
 
    eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-           inet your_board_ip  netmask 255.255.255.0  broadcast 
+           inet your_board_ip  netmask 255.255.255.0  broadcast
            inet6 fe80::e6e7:b2c:f962:dc57  prefixlen 64  scopeid 0x20<link>
            ether 1c:76:ca:01:23:45  txqueuelen 1000  (Ethernet)
            RX packets 25208  bytes 4726181 (4.5 MiB)
@@ -182,7 +182,7 @@ Remote IIO Oscilloscope
 
 ::
 
-   -Open IIO Scope application and type ip:board_ip in the URI tab. 
+   -Open IIO Scope application and type ip:board_ip in the URI tab.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arradio/quickstart/iio_remote_c5soc_arradio.png
    :alt: iio_remote_c5soc_arradio.png
@@ -201,7 +201,62 @@ More Information
 
 -  :doc:`ARRADIO User Guide </wiki-migration/resources/eval/user-guides/arradio>`
 
-.. include:: ../../ad9081_fmca_ebz/common.rst
+Useful links
+------------
+
+-  :doc:`AD9081/AD9082/AD9988/AD9986 Quick Start Guides </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart>`
+
+   -  :doc:`Zynq-7000 SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynq>`
+   -  :doc:`Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynqmp>`
+   -  :doc:`Virtex UltraScale+ VCU118 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/microblaze>`
+   -  :doc:`Versal ACAP VCK190 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/versal>`
+   -  `Arria10 SoC Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081/quickstart/a10soc]>`_
+
+-  :doc:`AD9081-FMCA-EBZ (Single MxFE) HDL Reference Design </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_fmca_ebz_hdl>`
+
+   -  :doc:`ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
+   -  :doc:`Generic JESD204B block designs </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`
+   -  :doc:`JESD204B High-Speed Serial Interface Support </wiki-migration/resources/fpga/peripherals/jesd204>`
+
+-  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+
+::
+
+         - [[resources:tools-software:linux-drivers:jesd204:jesd204-fsm-framework|JESD204 (FSM) Interface Linux Kernel Framework]]
+         - [[resources:tools-software:linux-drivers:iio-pll:hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
+         - [[resources:tools-software:linux-drivers:axi-dmac| AXI-DMAC DMA Controller Linux Driver]]
+         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_tx|JESD204B Transmit Linux Driver]]
+           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
+         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_rx|JESD204B Receive Linux Driver]]
+           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
+         - [[resources:tools-software:linux-drivers:jesd204:axi_adxcvr|JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
+           - [[resources:tools-software:linux-software:jesd_eye_scan|JESD204 Eye Scan]]
+         - [[resources:tools-software:linux-drivers:iio-adc:axi-adc-hdl|AXI ADC HDL Linux Driver]]
+         - [[resources:tools-software:linux-drivers:iio-dds:axi-dac-dds-hdl|AXI DAC HDL Linux Driver]]
+   * [[:resources:tools-software:hsx-toolbox|MATLAB Support]]
+        * MATLAB support is provided through the [[:resources:tools-software:hsx-toolbox|High Speed Converter Toolbox]]
+   * [[resources:tools-software:linux-software:pyadi-iio| Python Support]]
+        * PYTHON support is provided through the [[resources:tools-software:linux-software:pyadi-iio|Device Specific Python Interfaces For IIO Drivers]] 
+        * [[https://analogdevicesinc.github.io/pyadi-iio/|PyADI-IIO Documentation]]
+        * [[https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html|AD9081 class documentation]]
+   * Product Datasheet
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9081`.pdf|AD9081]]
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9082`.pdf|AD9082]]
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9988`.pdf|AD9988]]
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9986`.pdf|AD9986]]
+   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578`.pdf|UG-1578, Device User Guide]]
+   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829`.pdf|UG-1829, Evaluation Board User Guide]]
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
+
+Software support
+----------------
+
+-  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/arradio/quickstart/terasic_c5_sockit_arradio.jpg
    :width: 550px

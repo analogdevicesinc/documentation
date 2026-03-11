@@ -9,11 +9,7 @@ The purpose of this activity is to investigate the common source configuration o
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| 5 - Resistors
-| 1 - 50 KΩ Variable resistor, potentiometer
-| 1 - small signal NMOS transistor (enhancement mode ZVN2110A or CD4007)
+ADALM2000 Active Learning Module Solder-less breadboard 5 - Resistors 1 - 50 KΩ Variable resistor, potentiometer 1 - small signal NMOS transistor (enhancement mode ZVN2110A or CD4007)
 
 Directions:
 -----------
@@ -75,8 +71,6 @@ Additional Materials:
 
 1 - 5KΩ Variable resistor, potentiometer
 
-.. _directions-1:
-
 Directions:
 -----------
 
@@ -91,8 +85,6 @@ Disconnect the source of M\ :sub:`1` from ground and insert R\ :sub:`S`, a 5KΩ 
    Figure 4 Source degeneration added
 
 
-.. _hardware-setup-1:
-
 Hardware Setup
 --------------
 
@@ -103,8 +95,6 @@ Hardware Setup
 
    Figure 5 Source degeneration added, breadboard connection
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -145,8 +135,6 @@ Adding the source degeneration resistor has improved the stability of the DC ope
    Figure 7 C\ :sub:`2` added to increase AC gain
 
 
-.. _hardware-setup-2:
-
 Hardware Setup
 --------------
 
@@ -157,8 +145,6 @@ Hardware Setup
 
    Figure 8 C\ :sub:`2` added, breadboard connection
 
-
-.. _procedure-2:
 
 Procedure:
 ----------
@@ -184,8 +170,6 @@ Self-biased configuration with negative feedback
    Figure 10 Self Biased configuration
 
 
-.. _hardware-setup-3:
-
 Hardware Setup
 --------------
 
@@ -196,8 +180,6 @@ Hardware Setup
 
    Figure 11 Self Biased configuration, breadboard connection
 
-
-.. _procedure-3:
 
 Procedure:
 ----------
@@ -210,8 +192,6 @@ Procedure:
 
    Figure 12 Self Biased configuration, Scopy plot
 
-
-.. _questions-1:
 
 Questions:
 ----------

@@ -22,8 +22,13 @@ In addition to this, the AD-FMCXMWBR1-EBZ has a RaspberryPi compatible pin heade
 Hardware Setup
 ==============
 
-| 
-| ==== FMC carrier ==== A typical setup with **ADRV9009-ZU11EG RF-SOM Complete Prototyping System** is shown below. |image1|
+FMC carrier
+-----------
+
+A typical setup with **ADRV9009-ZU11EG RF-SOM Complete Prototyping System** is shown below.
+
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,24 +42,23 @@ Hardware Setup
 -  Plug the AD-FMCXMWBR1-EBZ into the FMC connector of the ADRV2CRR-FMC.
 -  Use the cables provided in the kit to connect the AD-FMCXMWBR1-EBZ to the desired setup.
 
-| 
-
 X-MW controller
 ---------------
 
-|
+AD-FMCXMWBR1-EBZ has a pin header compatible with both the X-MW controller and the Raspberry Pi. It can be connected with a 40pin Ribbon cable to the controller, and with the cables in the kit is connected to the X-microwave setup.
 
-| AD-FMCXMWBR1-EBZ has a pin header compatible with both the X-MW controller and the Raspberry Pi. It can be connected with a 40pin Ribbon cable to the controller, and with the cables in the kit is connected to the X-microwave setup.
 
-| |image2|
+|image2|
 
 .. container:: centeralign
 
    Figure 2. Diagram of AD-FMCXMWBR1-EBZ with a X-MW controller
 
 
-| ====Raspberry Pi====
-| The AD-FMCXMWBR1-EBZ can be used with a standalone Raspberry Pi. It doesn't have as many benefits as the setup with a FPGA board, but it can simplify the wiring and power supplies needed in an X-microwave prototype.
+Raspberry Pi
+------------
+
+The AD-FMCXMWBR1-EBZ can be used with a standalone Raspberry Pi. It doesn't have as many benefits as the setup with a FPGA board, but it can simplify the wiring and power supplies needed in an X-microwave prototype.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/phaser_proto_xmw_bridge.jpg
    :align: center

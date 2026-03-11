@@ -48,10 +48,7 @@ Measuring a Battery:
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard, and jumper wire kit
-| 1 - Li-ion rechargeable battery (3.7 V 18350 cell or similar suggested)
-| 1 - 10 Ω resistor (R\ :sub:`L`)
+ADALM1000 hardware module Solder-less breadboard, and jumper wire kit 1 - Li-ion rechargeable battery (3.7 V 18350 cell or similar suggested) 1 - 10 Ω resistor (R\ :sub:`L`)
 
 Directions:
 ~~~~~~~~~~~
@@ -80,9 +77,7 @@ Measure the open-circuit voltage (when current, as measured by CA-I, through the
 Questions:
 ----------
 
-| 1. Based on your estimate of the internal resistance, what is the maximum current that the battery could supply? What is the maximum power it could deliver to a load?
-| 2. Measure the internal resistance at different states of charge i.e. when the battery is fully charged, at 50% charge and when it is at the EODV voltage. How does the internal resistance compare at the different amount of charge in the battery? Can you predict the remaining life in a battery based on its internal resistance?
-| 3. Now place a 470 Ω resistor across the terminals of the battery, and record the voltage. In your lab report, discuss whether your measurement is reasonably well predicted by the internal resistance model for the batteries.
+1. Based on your estimate of the internal resistance, what is the maximum current that the battery could supply? What is the maximum power it could deliver to a load? 2. Measure the internal resistance at different states of charge i.e. when the battery is fully charged, at 50% charge and when it is at the EODV voltage. How does the internal resistance compare at the different amount of charge in the battery? Can you predict the remaining life in a battery based on its internal resistance? 3. Now place a 470 Ω resistor across the terminals of the battery, and record the voltage. In your lab report, discuss whether your measurement is reasonably well predicted by the internal resistance model for the batteries.
 
 Measuring AC Impedance vs. Frequency:
 -------------------------------------
@@ -98,8 +93,7 @@ We can use the same hardware measurement configuration from figure 2 to measure 
    Figure 3, Time domain waveforms.
 
 
-| Using the measured p-p voltage at the battery and the p-p current, we can calculate the incremental resistance from the following formula:
-| :math:`R = \Delta V/\Delta I`
+Using the measured p-p voltage at the battery and the p-p current, we can calculate the incremental resistance from the following formula: :math:`R = \Delta V/\Delta I`
 
 :math:`6.2mV/49.2mA = 126 m \Omega`
 
@@ -203,10 +197,6 @@ Copy the script into a text file and run the script by clicking on Run Script un
 
 **For further reading:**
 
-| `Rechargeable Battery <http://en.wikipedia.org/wiki/Rechargeable_battery>`_
-| `Battery Specifications <http://web.mit.edu/evt/summary_battery_specifications.pdf>`_
-| `Considerations In Designing Single Supply, Low-Power Systems Part II: Battery Powered Systems <http://www.analog.com/en/analog-dialogue/articles/designing-single-supply-low-power-battery.html>`_
-| `CN0510 User Guide <:doc:`/wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0510`>`_
-| :adi:`CN0510 Reference Design <media/en/reference-design-documentation/reference-designs/CN0510.pdf>`
+`Rechargeable Battery <http://en.wikipedia.org/wiki/Rechargeable_battery>`_ `Battery Specifications <http://web.mit.edu/evt/summary_battery_specifications.pdf>`_ `Considerations In Designing Single Supply, Low-Power Systems Part II: Battery Powered Systems <http://www.analog.com/en/analog-dialogue/articles/designing-single-supply-low-power-battery.html>`_ `CN0510 User Guide <:doc:`/wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0510`>`_ :adi:`CN0510 Reference Design <media/en/reference-design-documentation/reference-designs/CN0510.pdf>`
 
 **Return to ALM Lab Activity Table of Contents**

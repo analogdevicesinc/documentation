@@ -184,11 +184,12 @@ Table 2 describes the ports of the AD7327 HDL driver.
 | **Table 2 AD7327 driver ports description** |           |       |                                                                                                                                                                                                                                              |
 +---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-| The following figures present the timing diagram for the read and write operations for the AD7327 driver:
+The following figures present the timing diagram for the read and write operations for the AD7327 driver:
+
 | |Read operations time diagram|
 | |image1|
 
-| 
+
 | Table 3 describes the ports of the Avalon peripheral:
 
 +-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -300,8 +301,6 @@ Troubleshooting
 
    See `troubleshooting12 <https://wiki.analog.com/troubleshooting12>`_
 
-
-.. _more-information-1:
 
 More information
 ================

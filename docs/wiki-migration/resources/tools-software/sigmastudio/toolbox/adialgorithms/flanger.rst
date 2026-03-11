@@ -1,14 +1,17 @@
 Flanger
 =======
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
 
 --------------
 
 Flanging is a classic audio phasing effect which generates a swirling frequency (moving comb filter) effect. Flanging is produced by mixing the input single with a delayed copy of itself where the delay time is continuously varied at a low frequency. The Flanger algorithm supports growing by one to support stereo processing.
 
-| Flanging is typically used for guitar but can be utilized as a special vocal effect.
-| |flangerpic1.png|
+Flanging is typically used for guitar but can be utilized as a special vocal effect.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/flangerpic1.png
+   :alt: flangerpic1.png
+   :align: center
 
 **Controls:**
 
@@ -19,12 +22,14 @@ Flanging is a classic audio phasing effect which generates a swirling frequency 
 
 **Algorithm:**
 
-| Flanger utilizes an FIR comb filter with a short delay time (typically <15ms). The delay time is continuously modulated by a low-frequency-oscillator creating the characteristic flanging sound when the filter notches sweep up and down the in frequency over time.
-| |flangerpic2.png|
+Flanger utilizes an FIR comb filter with a short delay time (typically <15ms). The delay time is continuously modulated by a low-frequency-oscillator creating the characteristic flanging sound when the filter notches sweep up and down the in frequency over time.
 
-| **Example:** The following example shows a stereo Flange effect using a 2 input Flanger and Volume Control.
-| |flangerpic3.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/flangerpic2.png
+   :alt: flangerpic2.png
+   :align: center
 
-.. |flangerpic1.png| image:: https://wiki.analog.com/_media/flangerpic1.png
-.. |flangerpic2.png| image:: https://wiki.analog.com/_media/flangerpic2.png
-.. |flangerpic3.png| image:: https://wiki.analog.com/_media/flangerpic3.png
+**Example:** The following example shows a stereo Flange effect using a 2 input Flanger and Volume Control.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/flangerpic3.png
+   :alt: flangerpic3.png
+   :align: center

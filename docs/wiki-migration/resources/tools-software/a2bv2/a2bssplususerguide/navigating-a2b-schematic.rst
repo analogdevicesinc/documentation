@@ -12,13 +12,13 @@ The A2B Plugin for SigmaStudio+ gives the following default platforms for the us
 
 ::
 
-     *  **AD242x:**
+     **AD242x:**
      * LPS/ Main /Sub node
        * EVAL-AD2428WD1BZ
      * Sub node only
        * EVAL- AD2428WB1BZ
        * EVAL- AD2428WC1BZ
-   * **AD243x:**
+   **AD243x:**
      * LPS/ Main /Sub node
        * EVAL- AD2433WA1BZ
        * EVAL- AD2435WA3LZ
@@ -34,7 +34,6 @@ The A2B Plugin for SigmaStudio+ gives the following default platforms for the us
        * EVAL- AD2430WG1BZ
        * EVAL- AD2437B1NZ
        * EVAL- AD2437B1MZ
-       
 
 **A2BBusAnalyzer**
 

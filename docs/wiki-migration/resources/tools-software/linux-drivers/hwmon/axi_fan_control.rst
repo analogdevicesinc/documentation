@@ -97,10 +97,7 @@ Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX, w
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -136,10 +133,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -154,10 +148,7 @@ Show FAN input (in RPM)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -172,10 +163,7 @@ Show FAN label
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -190,10 +178,7 @@ Show PWM input
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -208,10 +193,7 @@ Show Temperature input (in milliC)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -226,10 +208,7 @@ Show Temperature label
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -246,10 +225,7 @@ When reading **fan1_fault** returns 1, that means that either the FAN is physica
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -264,10 +240,7 @@ Set PWM value
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -286,4 +259,8 @@ HWMON pointers
 -  `HWMON Linux Kernel Documentation <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/hwmon>`_
 -  `HWMON sysfs-interface <https://www.kernel.org/doc/Documentation/hwmon/sysfs-interface>`_
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

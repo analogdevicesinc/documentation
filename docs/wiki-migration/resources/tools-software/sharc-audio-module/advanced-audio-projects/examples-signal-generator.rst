@@ -34,7 +34,6 @@ EV-SC594-SOM/EV-SC598-SOM + Carrier
 | 4. Proceed to the software setup instructions *(common for all hardware variants)*                                                                                                           | NA        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 Software Setup
 --------------
@@ -44,9 +43,7 @@ Software Setup
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
 
-*This tutorial uses TeraTerm as the serial interface to your hardware.*
-
-**Follow the instructions below to set up a connection to your hardware:**
+*This tutorial uses TeraTerm as the serial interface to your hardware.**Follow the instructions below to set up a connection to your hardware:**
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | 1. Open TeraTerm and connect to a new Serial Session, connecting to the Port labeled *SC5xx Communications Port* or *FTDI COMxx Port*.                                                | |image20| |image21| OR |image22| |
@@ -91,7 +88,6 @@ Signal Generator
 | **Note:** Signals are attenuated 6 dB's to avoid clipping during mixing.                                 |           |
 +----------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 .. important::
 

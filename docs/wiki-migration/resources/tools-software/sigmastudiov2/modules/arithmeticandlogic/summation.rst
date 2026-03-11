@@ -3,15 +3,21 @@
 Summation
 =========
 
-| 
-| |summation.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/summation.png
+   :alt: summation.png
 
 Description
 -----------
 
-| The Summation block adds the input to the sum of previous inputs and outputs the result of sum.
-| ===== Usage ===== The Reset pin is available to reset the summation result. Other than the zero to reset pin, resets the summation value.
-| ===== Targets Supported =====
+The Summation block adds the input to the sum of previous inputs and outputs the result of sum.
+
+Usage
+-----
+
+The Reset pin is available to reset the summation result. Other than the zero to reset pin, resets the summation value.
+
+Targets Supported
+-----------------
 
 ========= ========== ================ ============= ================
 Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -54,5 +60,3 @@ DSP Parameters
 --------------
 
 No DSP parameters
-
-.. |summation.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/summation.png

@@ -1,7 +1,13 @@
-| :doc:`Click here to return to 'Using SigmaStudio' page. </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| ======SigmaStudio Scripting ====== SigmaStudio is a development environment designed for the SigmaDSP family of audio specific signal processors. SigmaStudio has a highly intuitive user interface for Audio system development and tuning.
-| SigmaStudio defines a Microsoft .NET functional interface, IScripted, which provides control over the most common elements of SigmaStudio. Script files can be created and reused from within the SigmaStudio development environment. SigmaStudioServer is a software automation interface to SigmaStudio that allows external client applications to control and automate SigmaStudio functions from external software.
-| The overall system and its components are illustrated in Figure below.
+:doc:`Click here to return to 'Using SigmaStudio' page. </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+
+SigmaStudio Scripting
+=====================
+
+SigmaStudio is a development environment designed for the SigmaDSP family of audio specific signal processors. SigmaStudio has a highly intuitive user interface for Audio system development and tuning.
+
+SigmaStudio defines a Microsoft .NET functional interface, IScripted, which provides control over the most common elements of SigmaStudio. Script files can be created and reused from within the SigmaStudio development environment. SigmaStudioServer is a software automation interface to SigmaStudio that allows external client applications to control and automate SigmaStudio functions from external software.
+
+The overall system and its components are illustrated in Figure below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/script1.jpg
    :alt: 100

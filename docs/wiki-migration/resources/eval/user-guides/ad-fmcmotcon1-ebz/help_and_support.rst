@@ -5,7 +5,9 @@ Help and Support
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- If you have any questions regarding the ADI motor drive solutions or are experiencing any problems while using the boards or while following any of the user guides feel free to ask us a question. Questions can be asked on our EngineerZone support community.
+
+
+If you have any questions regarding the ADI motor drive solutions or are experiencing any problems while using the boards or while following any of the user guides feel free to ask us a question. Questions can be asked on our EngineerZone support community.
 
 For questions regarding the hardware or the HDL reference design please state them in the :ez:`FPGA Reference Designs <community/fpga>` sub-community. For questions regarding the Linux drivers for any of the components on the motor control boards please use the :ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>` sub-community.
 
@@ -25,5 +27,5 @@ Where to Buy
    `ZYNQ Intelligent Drives Kit <http://www.em.avnet.com/en-us/design/drc/Pages/Zynq-Intelligent-Drives-Kit.aspx>`_
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#qdesys_ip
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/navigation AD-FMCMOTCON1-EBZ#qdesys_ip
    :alt: Qdesys Motor Control IP#.:\|Overview#none

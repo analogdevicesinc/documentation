@@ -1,7 +1,7 @@
 Automatic Volume Control
 ========================
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 | This algorithm is intended for TV sound applications. The perceived volume level often changes considerably from channel to channel, and also within a channel, especially for commercials. This algorithm will automatically compensate for the different levels. | |avc1.png| |
@@ -28,7 +28,8 @@ Automatic Volume Control
 
 | 
 | **NOTE:** this algorithm introduces a constant delay to the audio signal regardless of the AVC Enable setting. This algorithm only supports sampling rates of 44.1kHz and 48kHz (except for the ADAU145x processor which supports all sampling rates).
-| **ADAU145x DSP:** The ADAU145x implementation of this algorithm supports growing the input channels for 5.1/7.1 applications. However, the volume detection is calculated from the first 2 inputs only (left and right) and the resulting level compensation and delay is applied to all other channels.
+
+**ADAU145x DSP:** The ADAU145x implementation of this algorithm supports growing the input channels for 5.1/7.1 applications. However, the volume detection is calculated from the first 2 inputs only (left and right) and the resulting level compensation and delay is applied to all other channels.
 
 Example
 -------

@@ -3,15 +3,24 @@
 RMS Index Selectable
 ====================
 
-| 
-| |rmsindex.png|
-| |peakcompgraph.png|
-| =====Description===== This block uses an rms dynamics processor that lets you control the rms TC (time constant) and Soft Knee behavior, and opens the compression curve graph for your curve drawing.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rmsindex.png
+   :alt: rmsindex.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcompgraph.png
+   :alt: peakcompgraph.png
+   :width: 450px
+
+Description
+===========
+
+This block uses an rms dynamics processor that lets you control the rms TC (time constant) and Soft Knee behavior, and opens the compression curve graph for your curve drawing.
 
 RMS works on a longer average than peak processors, thus allowing some fast loud transients to pass without compression, but operating more on longer segments that exceed the threshold.
 
-| This module has stage growth and each stage can have its own compression ratio set using the compressor plot individually. The index selection pin selects the desired stage to be used on the target.
-| ===== Targets Supported =====
+This module has stage growth and each stage can have its own compression ratio set using the compressor plot individually. The index selection pin selects the desired stage to be used on the target.
+
+Targets Supported
+=================
 
 +----------------------+------------+------------------+---------------+------------------+
 | Name                 | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -42,7 +51,7 @@ Name    Type  Description
 Output0 Audio Output channel1
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+-----------------------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -65,7 +74,9 @@ Output0 Audio Output channel1
 
 | 
 | Note : \_StageX - Refers to parameters of each stage. X represents the stage index.
-| ===== DSP Parameters =====
+
+DSP Parameters
+==============
 
 =================== ============= ====================== =============
 Parameter Name      Description   ADSP-214xx/SC5xx/215xx ADAU145x/146x
@@ -76,15 +87,12 @@ Table_StageX        Table values  Float                  8.24 format
 TimeConstant_StageX Time Constant Float                  8.24 format
 =================== ============= ====================== =============
 
-| 
+
 | Note : \_StageX indicates the dsp parameters associated with a particular stage. X represents the stage index
 
 DSP Parameter Computation
 =========================
 
-| Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear) Hold = FS \* Hold/1000
-| Where FS is the sampling rate
+Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear) Hold = FS \* Hold/1000
 
-.. |rmsindex.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rmsindex.png
-.. |peakcompgraph.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcompgraph.png
-   :width: 450px
+Where FS is the sampling rate

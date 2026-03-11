@@ -13,8 +13,6 @@ The example layout below provides an effective size estimate for the RF front en
 -  Fixed LO = 1.13 sq. in
 -  Tunable LO = 3.90 sq. in
 
-| 
-| |image1|
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/layoutstudy.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/layoutstudy.jpg
+   :align: center
    :width: 900px

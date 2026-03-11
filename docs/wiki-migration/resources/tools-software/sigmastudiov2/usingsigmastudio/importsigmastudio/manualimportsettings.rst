@@ -1,10 +1,12 @@
-| :doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/importsigmastudio>`
-| ====== Post-Import Manual Changes ======
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/importsigmastudio>`
+
+Post-Import Manual Changes
+==========================
 
 ADSP-SC5xx/215xx Projects
-=========================
+-------------------------
 
-| Some of the settings and control values on the migrated project are expected to be manually applied by the user. The details will be present in the summary report displayed on the output window and generated log file. Below table gives a consolidated summary of the settings to be manually assigned after migration.
+Some of the settings and control values on the migrated project are expected to be manually applied by the user. The details will be present in the summary report displayed on the output window and generated log file. Below table gives a consolidated summary of the settings to be manually assigned after migration.
 
 +---------+------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Sl. No. | Setting                      | Details                                                                                                            | Affected Modules                                                                                                                                                |
@@ -42,8 +44,10 @@ ADSP-SC5xx/215xx Projects
 | 16      | Factor                       | Sampling factor should be manually assigned                                                                        | Down-Sampler, Up-Sampler                                                                                                                                        |
 +---------+------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-| All the settings (except the number of input and output channels) on the SigmaStudio IC Control window for ADSP-215xx/ADSP-SC5xx, including Application DXE and SPORT configuration are expected to be manually assigned on the imported SigmaStudio+ project. These settings will be spread across "Processor", "Core" and "Schematic" settings pages in SigmaStudio+.
-| |image1|
+All the settings (except the number of input and output channels) on the SigmaStudio IC Control window for ADSP-215xx/ADSP-SC5xx, including Application DXE and SPORT configuration are expected to be manually assigned on the imported SigmaStudio+ project. These settings will be spread across "Processor", "Core" and "Schematic" settings pages in SigmaStudio+.
+
+
+|image1|
 
 .. note::
 

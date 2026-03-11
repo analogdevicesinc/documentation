@@ -3,10 +3,21 @@
 Solo
 ====
 
-| |solo.png|
-| ===== Description ===== If module is enabled, the selected input signal is passed to the selected output channel and rest are muted. In disable state signals get bypassed.
-| ===== Usage ===== Select the radio button to route the particular input to output.
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/muxesanddemuxes/solo.png
+   :alt: solo.png
+
+Description
+-----------
+
+If module is enabled, the selected input signal is passed to the selected output channel and rest are muted. In disable state signals get bypassed.
+
+Usage
+-----
+
+Select the radio button to route the particular input to output.
+
+Targets Supported
+-----------------
 
 ==== ========== ================ ============= ================
 Name ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -14,33 +25,33 @@ Name ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Solo B          B                NA            B
 ==== ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
------
+~~~~~
 
-======================= ===== ===============
-Name                    Type  Description
-======================= ===== ===============
-Input<fc #ff0000>X</fc> Audio Input Channel X
-======================= ===== ===============
+====== ===== ===============
+Name   Type  Description
+====== ===== ===============
+InputX Audio Input Channel X
+====== ===== ===============
 
 Output
-------
+~~~~~~
 
-======================== ===== ================
-Name                     Type  Description
-======================== ===== ================
-Output<fc #ff0000>X</fc> Audio Output Channel X
-======================== ===== ================
+======= ===== ================
+Name    Type  Description
+======= ===== ================
+OutputX Audio Output Channel X
+======= ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +-------------------+---------------+---------------+-----------------------------------------------------------------------------------+
 | GUI Parameter     | Default Value | Range         | Function Description                                                              |
@@ -66,8 +77,6 @@ Note:
 +----------------+---------------------------------------------------+------------------------+---------------+
 
 DSP Parameter Computation
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Step = 2^(-1/Step)
-
-.. |solo.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/muxesanddemuxes/solo.png

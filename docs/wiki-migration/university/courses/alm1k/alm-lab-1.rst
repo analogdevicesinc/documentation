@@ -18,14 +18,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 1 kΩ resistor
-| 3 - 4.7 kΩ resistors
-| 2 - 10 kΩ resistors
-| 1 - 20 kΩ resistor
-| 2 - AD8541 ( CMOS rail to rail amplifier )
-| 2 - 0.1uF Capacitors (radial lead)
+ADALM1000 hardware module Solder-less breadboard, and jumper wire kit 1 - 1 kΩ resistor 3 - 4.7 kΩ resistors 2 - 10 kΩ resistors 1 - 20 kΩ resistor 2 - AD8541 ( CMOS rail to rail amplifier ) 2 - 0.1uF Capacitors (radial lead)
 
 1.1 Op-Amp Basics
 -----------------
@@ -232,12 +225,7 @@ As noted in the previous lab: keep all your leftover electrical components!
 
 **Specific Discussion Items for Lab Report**
 
-| Some specific ideas for the report might be as follows:
-| Slew rate: discuss how you measured and computed the slew rate in the unity-gain buffer configuration, and compare this with the value listed in the OP97 data sheet.
-| Buffering: explain why the buffer amplifier in figure 1.6 allowed the voltage divider circuit to function perfectly with differently load resistances.
-| Output saturation: explain your observations of output voltage saturation in the inverting amplifier configuration and your estimate of the internal voltages drops. How close does the output come to the supply rails in this experiment and also later when used as a comparator with different power-supply voltages? Can you guess what the output voltage swing would be for an op-amp that is advertised as a "rail-to-rail" device?
-| Summing circuit: using superposition, derive the expected transfer characteristic for the circuit of figure 1.6; that is, find the output voltage in terms of Vin1 and Vin2 . Compare the predictions of the ideal relationship with your data.
-| Comparator: discuss your measurements and what would happen if the polarity of Vref is reversed.
+Some specific ideas for the report might be as follows: Slew rate: discuss how you measured and computed the slew rate in the unity-gain buffer configuration, and compare this with the value listed in the OP97 data sheet. Buffering: explain why the buffer amplifier in figure 1.6 allowed the voltage divider circuit to function perfectly with differently load resistances. Output saturation: explain your observations of output voltage saturation in the inverting amplifier configuration and your estimate of the internal voltages drops. How close does the output come to the supply rails in this experiment and also later when used as a comparator with different power-supply voltages? Can you guess what the output voltage swing would be for an op-amp that is advertised as a "rail-to-rail" device? Summing circuit: using superposition, derive the expected transfer characteristic for the circuit of figure 1.6; that is, find the output voltage in terms of Vin1 and Vin2 . Compare the predictions of the ideal relationship with your data. Comparator: discuss your measurements and what would happen if the polarity of Vref is reversed.
 
 **Resources:**
 
@@ -246,10 +234,6 @@ As noted in the previous lab: keep all your leftover electrical components!
 
 **For Further Reading:**
 
-| `Operational amplifier <https://en.wikipedia.org/wiki/Operational_amplifier>`_
-| `Operational amplifier applications <https://en.wikipedia.org/wiki/Operational_amplifier_applications>`_
-| :adi:`Commonly Used Amplifier Configurations <media/en/news-marketing-collateral/product-selection-guide/Op_Amps_SG_2011-12_equations.pdf>`
+`Operational amplifier <https://en.wikipedia.org/wiki/Operational_amplifier>`_ `Operational amplifier applications <https://en.wikipedia.org/wiki/Operational_amplifier_applications>`_ :adi:`Commonly Used Amplifier Configurations <media/en/news-marketing-collateral/product-selection-guide/Op_Amps_SG_2011-12_equations.pdf>`
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
-| **Return to Electronics Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents** **Return to Electronics Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

@@ -7,12 +7,14 @@ The RF input signal is received from an onboard 8-element patch antenna that ope
 
 The ADAR1000's RFIO output passes through a low pass filter before entering the :adi:`LTC5548` mixer. The low pass filter removes the high side image of the mixer as well as any re-radiation of the high side LO. :adi:`LTC5548` outputs an IF of approximately 2.2 GHz which passes through a low pass filter (LPF) to remove mixer spurs and attenuate any RF or LO leakage. The LPF's output, at Rx1 and Rx2, can then be mixed down and sampled by an external 2-channel SDR receiver, such as the ADALM-Pluto.
 
-| The system consists of the EVAL-CN0566-RPIZ, Raspberry Pi 3 or 4 running ADI Kuiper Linux, an ADALM-Pluto Rev. C, 5V power source, and either keyboard/mouse/monitor OR separate host connected via VNC. The Raspberry Pi 4 provides all SPI, I2C, and discrete digital I/O control signals.
-| |image1|
+The system consists of the EVAL-CN0566-RPIZ, Raspberry Pi 3 or 4 running ADI Kuiper Linux, an ADALM-Pluto Rev. C, 5V power source, and either keyboard/mouse/monitor OR separate host connected via VNC. The Raspberry Pi 4 provides all SPI, I2C, and discrete digital I/O control signals.
+
+
+|image1|
 
 .. container:: centeralign
 
-   <fc>Figure 1. EVAL-CN0566-RPIZ Hardware</fc>
+   <fc>Figure 1. EVAL-CN0566-RPIZ Hardware
 
 
 --------------
@@ -60,21 +62,18 @@ Equipment Required
 
    -  ADI Kuiper Linux image
 
-| 
-| ----
+--------------
 
 Block Assignments
 -----------------
 
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-08-38_pm.png
+   :align: center
+   :width: 500px
 
-.. container:: center
+*<fc>Figure 2. EVAL-CN0566-RPIZ Circuit Evaluation Block assignment*
 
-   *<fc>Figure 2. EVAL-CN0566-RPIZ Circuit Evaluation Block assignment</fc>*
-
-
-   | \* Connector **P1** is the 14-pin header for connection to ADALM-Pluto
-
+-  Connector **P1** is the 14-pin header for connection to ADALM-Pluto
 -  Connector **P16** is the type C port for the supply
 -  Connector **RX1** is the SMA connector for RX1 output
 -  Connector **RX2** is the SMA connector for RX2 output
@@ -85,36 +84,31 @@ Block Assignments
 -  Connector **EXT_LO** is the SMA connector for external LO input
 -  Connector **J3 to J10** are the footprints for SMP connectors in case an external antenna is to be used
 
-|
-
-| ----
+--------------
 
 Running the System
 ------------------
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-37-00_pm.png
+   :align: center
+   :width: 800px
 
-.. container:: center
-
-   *<fc #c0c0c0>Figure 3. Test Setup Functional Block Diagram</fc>*
-
+*Figure 3. Test Setup Functional Block Diagram*
 
 -  Connect ADALM-Pluto to Raspberry Pi via micro-USB to USB cable.
 -  Connect the Raspberry Pi to the monitor via the HDMI cable.
 -  Connect the keyboard and mouse to the USB port of Raspberry Pi.
 -  Follow the Phaser Quick Start Guide here: :doc:`quickstart </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/quickstart>`
 
-| 
-| ----
+--------------
 
 CN0566 Configuration/Setup Examples
 -----------------------------------
 
-| |image4|
-| |image5|
-| |image6|
-| |image7|
-| ----
+| |image2| |image3|
+| |image4| |image5|
+
+--------------
 
 More Information and Useful Links
 ---------------------------------
@@ -169,15 +163,11 @@ Additional Information
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-26-39_pm.png
    :width: 600px
 .. |youtube>0hnWfTvETcU| image:: https://wiki.analog.com/_media/youtube>0hnWfTvETcU
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-08-38_pm.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-37-00_pm.png
-   :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex1.png
    :width: 750px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex2.png
    :width: 750px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex3.png
    :width: 750px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex4.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex4.png
    :width: 700px

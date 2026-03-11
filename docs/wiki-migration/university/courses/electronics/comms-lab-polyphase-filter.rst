@@ -29,10 +29,7 @@ Generation of quadrature local oscillator (LO) signals is an important functiona
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 2 - 1 nF capacitors ( marked 102 )
-| 2 - 1 KΩ resistors
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 2 - 1 nF capacitors ( marked 102 ) 2 - 1 KΩ resistors
 
 Directions:
 ~~~~~~~~~~~
@@ -85,26 +82,10 @@ Differential Polyphase Tuned Amplifier
 
 By adding second order L-C and C-L low and high pass filter sections as differential output loads in a NPN differential amplifier we can generate all four 90º phases ( i.e. 0º, 90º, 180º and 270º ) of an input sine wave signal. Such a tuned amplifier is shown in figure 5.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - SSM2212 NPN matched transistor pair ( Q\ :sub:`1`, Q\ :sub:`2` )
-| 2 - 2N3904 NPN transistors ( Q\ :sub:`3`, Q\ :sub:`4` )
-| 2 - 100 uH inductor (Various other value inductors)
-| 2 - 1 nF capacitors ( marked 102 )
-| 2 - 0.1 uF capacitors ( marked 104 )
-| 2 - 10 Ω resistors
-| 2 - 150 Ω resistors
-| 2 - 470 Ω resistors
-| 3 - 1 KΩ resistors
-| 1 - 10 KΩ resistor
-| Other resistor and capacitors as needed
-
-.. _directions-1:
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - SSM2212 NPN matched transistor pair ( Q\ :sub:`1`, Q\ :sub:`2` ) 2 - 2N3904 NPN transistors ( Q\ :sub:`3`, Q\ :sub:`4` ) 2 - 100 uH inductor (Various other value inductors) 2 - 1 nF capacitors ( marked 102 ) 2 - 0.1 uF capacitors ( marked 104 ) 2 - 10 Ω resistors 2 - 150 Ω resistors 2 - 470 Ω resistors 3 - 1 KΩ resistors 1 - 10 KΩ resistor Other resistor and capacitors as needed
 
 Directions:
 ~~~~~~~~~~~
@@ -120,8 +101,6 @@ Build the circuit shown in figure 5 on your solder-less breadboard. Use the SSM2
    Figure 5 Polyphase Amplifier
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
@@ -136,8 +115,6 @@ The green squares indicate where to connect the ADALM2000 module AWG, scope chan
 
 
 Open the voltage supply control window to turn on and off the fixed +5 and -5 volt power supplies. Open the Network Analyzer software tool in Scopy. Configure the frequency sweep to start at 100 Hz and stop at 30 MHz. Set the amplitude to 1V and the offset to zero.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -187,8 +164,6 @@ Using the scope and function generator software instruments ( in the time domain
    -  LTspice files: :git-education_tools:`m2k/ltspice/polyphase_filter_ltspice`
    
 
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~

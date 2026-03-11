@@ -9,12 +9,7 @@ The objective of this activity is to investigate the use of the zero gain concep
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| 1 - 2.2KΩ Resistor ( or any similar value )
-| 1 - 168Ω Resistor ( connect a 100Ω in series with a 68Ω )
-| 1 - 4.7KΩ Resistor
-| 2 - small signal NMOS transistors (CD4007 or ZVN2110A)
+ADALM2000 Active Learning Module Solder-less breadboard 1 - 2.2KΩ Resistor ( or any similar value ) 1 - 168Ω Resistor ( connect a 100Ω in series with a 68Ω ) 1 - 4.7KΩ Resistor 2 - small signal NMOS transistors (CD4007 or ZVN2110A)
 
 Directions:
 -----------

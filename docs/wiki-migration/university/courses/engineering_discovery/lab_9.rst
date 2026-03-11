@@ -1,7 +1,7 @@
 Introduction to Transistors
 ===========================
 
-.. image:: https://wiki.analog.com/_media/analogTV>5118161058001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>5118161058001
    :alt: analogTV>5118161058001
    :align: right
 

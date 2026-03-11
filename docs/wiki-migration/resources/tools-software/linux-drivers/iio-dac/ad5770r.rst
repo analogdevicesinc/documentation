@@ -27,7 +27,7 @@ Status
 +--------------------------------------------------------------------------------------+------------+
 | Source                                                                               | Mainlined? |
 +======================================================================================+============+
-| :git-linux:`git <drivers/iio/dac>`                                                   | [No]       |
+| `git <https://github.com/analogdevicesinc/linux/blob/rpi-4.14.y/drivers/iio/dac>`_   | [No]       |
 +--------------------------------------------------------------------------------------+------------+
 
 Devicetree
@@ -47,51 +47,51 @@ Optional properties:
 
 ::
 
-           ad5770r@0 {                                                              
-                     compatible = "ad5770r";                                          
-                     reg = <0>;                                                       
-                     spi-max-frequency = <1000000>;                                   
-                     vref-supply = <&vref>;                                           
-                                                                                      
-                     reset-gpios = <&gpio 22 0>;                                      
-                                                                                      
-                     channel@0 {                                                      
-                             num = <0>;                                               
-                             adi,range-microamp = <0 300000>;                         
-                     };                                                               
-                                                                                      
-                     channel@1 {                                                      
-                             num = <1>;                                               
-                             adi,range-microamp = <0 140000>;                         
-                     };                                                               
-                                                                                      
-                     channel@2 {                                                      
-                             num = <2>;                                               
-                             adi,range-microamp = <0 55000>;                          
-                     };                                                               
-                                                                                      
-                     channel@3 {                                                      
-                             num = <3>;                                               
-                             adi,range-microamp = <0 45000>;                          
-                     };                                                               
-                                                                                      
-                     channel@4 {                                                      
-                             num = <4>;                                               
-                             adi,range-microamp = <0 45000>;                          
-                     };                                                               
-                                                                                      
-                     channel@5 {                                                      
-                             num = <5>;                                               
-                             adi,range-microamp = <0 45000>;                          
-                     };                                                               
+           ad5770r@0 {
+                     compatible = "ad5770r";
+                     reg = <0>;
+                     spi-max-frequency = <1000000>;
+                     vref-supply = <&vref>;
+
+                     reset-gpios = <&gpio 22 0>;
+
+                     channel@0 {
+                             num = <0>;
+                             adi,range-microamp = <0 300000>;
+                     };
+
+                     channel@1 {
+                             num = <1>;
+                             adi,range-microamp = <0 140000>;
+                     };
+
+                     channel@2 {
+                             num = <2>;
+                             adi,range-microamp = <0 55000>;
+                     };
+
+                     channel@3 {
+                             num = <3>;
+                             adi,range-microamp = <0 45000>;
+                     };
+
+                     channel@4 {
+                             num = <4>;
+                             adi,range-microamp = <0 45000>;
+                     };
+
+                     channel@5 {
+                             num = <5>;
+                             adi,range-microamp = <0 45000>;
+                     };
             };
-            
-            vref: fixedregulator@0 {                                                 
-                     compatible = "regulator-fixed";                                  
-                     regulator-name = "fixed-supply";                                 
-                     regulator-min-microvolt = <1250000>;                             
-                     regulator-max-microvolt = <1250000>;                             
-            };  
+
+            vref: fixedregulator@0 {
+                     compatible = "regulator-fixed";
+                     regulator-name = "fixed-supply";
+                     regulator-min-microvolt = <1250000>;
+                     regulator-max-microvolt = <1250000>;
+            };
 
 Adding Linux driver support
 ===========================
@@ -106,7 +106,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            <*>     Industrial I/O support --->
                --- Industrial I/O support
                ...
-               Digital to analog converters  ---> 
+               Digital to analog converters  --->
                    ...
                    <*> Analog Devices AD5770R IDAC driver
                    ...
@@ -121,10 +121,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -174,10 +171,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -190,21 +184,18 @@ Show device name
 Show scale
 ----------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/out_currentY_scale
-| scale to be applied to out_currentY_raw in order to obtain the measured current in milliamps.
+**Description:** /sys/bus/iio/devices/iio:deviceX/out_currentY_scale
+
+scale to be applied to out_currentY_raw in order to obtain the measured current in milliamps.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@raspberrypi:/sys/bus/iio/devices/iio:device0# cat out_current0_scale 
+      root@raspberrypi:/sys/bus/iio/devices/iio:device0# cat out_current0_scale
       0.018310546
    
 
@@ -212,21 +203,18 @@ Show scale
 Set channel Y output current
 ----------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/out_currentY_raw
-| Raw (unscaled, no bias etc.) output current for channel Y.
+**Description:** /sys/bus/iio/devices/iio:deviceX/out_currentY_raw
+
+Raw (unscaled, no bias etc.) output current for channel Y.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@raspberrypi:/sys/bus/iio/devices/iio:device0# echo 5000 > out_current0_raw 
+      root@raspberrypi:/sys/bus/iio/devices/iio:device0# echo 5000 > out_current0_raw
    
 
 
@@ -237,20 +225,16 @@ Enable power down mode for the device
 
 /sys/bus/iio/devices/iio:deviceX/out_currentY_powerdown
 
-| **Description:**
-| Writing 1 causes channel Y to enter power down mode. Clearing returns to normal operation.
+**Description:** Writing 1 causes channel Y to enter power down mode. Clearing returns to normal operation.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@raspberrypi:/sys/bus/iio/devices/iio:device0# echo 1 > out_current0_powerdown 
+      root@raspberrypi:/sys/bus/iio/devices/iio:device0# echo 1 > out_current0_powerdown
       root@raspberrypi:/sys/bus/iio/devices/iio:device0# cat out_current0_powerdown
       1
       root@raspberrypi:/sys/bus/iio/devices/iio:device0# echo 0 > out_current0_powerdown
@@ -264,20 +248,16 @@ Show available filter frequencies
 
 /sys/bus/iio/devices/iio:deviceX/out_current_filter_low_pass_3db_frequency_available
 
-| **Description:**
-| Contains available filter frequencies.
+**Description:** Contains available filter frequencies.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@raspberrypi:/sys/bus/iio/devices/iio:device0# cat out_current_filter_low_pass_3db_frequency_available 
+      root@raspberrypi:/sys/bus/iio/devices/iio:device0# cat out_current_filter_low_pass_3db_frequency_available
       153 357 715 1400 2800 262000
    
 
@@ -287,22 +267,18 @@ Set channel Y filter frequency
 
 /sys/bus/iio/devices/iio:deviceX/out_current0_filter_low_pass_3db_frequency
 
-| **Description:**
-| Write filter value to channel Y.
+**Description:** Write filter value to channel Y.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@raspberrypi:/sys/bus/iio/devices/iio:device0# cat out_current0_filter_low_pass_3db_frequency 
+      root@raspberrypi:/sys/bus/iio/devices/iio:device0# cat out_current0_filter_low_pass_3db_frequency
       262000
-      root@raspberrypi:/sys/bus/iio/devices/iio:device0# echo 1000 > out_current0_filter_low_pass_3db_frequency 
+      root@raspberrypi:/sys/bus/iio/devices/iio:device0# echo 1000 > out_current0_filter_low_pass_3db_frequency
       root@raspberrypi:/sys/bus/iio/devices/iio:device0# cat out_current0_filter_low_pass_3db_frequency
       1400
    
@@ -324,7 +300,7 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24

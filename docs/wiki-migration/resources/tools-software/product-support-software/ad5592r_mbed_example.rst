@@ -17,7 +17,7 @@ The Mbed Platform simplifies the overall software development process by providi
 Useful links
 ------------
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :doc:`AD5592R/93R No-OS Software </wiki-migration/resources/tools-software/uc-drivers/ad5592r>`
@@ -92,7 +92,7 @@ Interface Diagram
 
 The :adi:`EVAL-AD5592R <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD5592R.html>` is connected to SDP-K1 through the on-board default 120-pin SDP connector. Meanwhile, the :adi:`EVAL-AD5593R <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-ad5593r.html>` is connected using the K1's Arduino Header and jumper cables.
 
-Both evaluation boards have 8 I/O pins available on the SMB connectors - I/O 0-7. These connectors are analog inputs or outputs depending on whether the I/Ox pin is configured as ADCs or DACs, or as digital inputs or outputs if the I/Ox pin is configured as a GPIO. 
+Both evaluation boards have 8 I/O pins available on the SMB connectors - I/O 0-7. These connectors are analog inputs or outputs depending on whether the I/Ox pin is configured as ADCs or DACs, or as digital inputs or outputs if the I/Ox pin is configured as a GPIO.
 
 The SDP-K1 is connected to PC through USB cable and appears as a USB disk device. The firmware can be loaded into SDP-K1 board through this USB interface from PC, by copying a firmware image file onto the USB disk.
 

@@ -123,9 +123,7 @@ DAC, DDS, PLL's, and Clock Distribution :adi:`(pdf) <static/imported-files/semin
 Technical Articles
 ^^^^^^^^^^^^^^^^^^
 
-| Phase Locked Loops for High-Frequency Receivers and Transmitters – Part 1 :adi:`(pdf) <static/imported-files/tech_articles/206357438phase_locked.pdf>`
-| Phase Locked Loops for High-Frequency Receivers and Transmitters – Part 2 :adi:`(pdf) <static/imported-files/tech_articles/112684897PLLs_2.pdf>`
-| Phase Locked Loops for High-Frequency Receivers and Transmitters – Part 3 :adi:`(pdf) <static/imported-files/tech_articles/596616802PLLs_3.pdf>`
+Phase Locked Loops for High-Frequency Receivers and Transmitters – Part 1 :adi:`(pdf) <static/imported-files/tech_articles/206357438phase_locked.pdf>` Phase Locked Loops for High-Frequency Receivers and Transmitters – Part 2 :adi:`(pdf) <static/imported-files/tech_articles/112684897PLLs_2.pdf>` Phase Locked Loops for High-Frequency Receivers and Transmitters – Part 3 :adi:`(pdf) <static/imported-files/tech_articles/596616802PLLs_3.pdf>`
 
 Analog Circuit Simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,8 +133,6 @@ Analog Circuit Simulation
 
 Mixed Signal Electronics (Systems)
 ==================================
-
-.. _table-of-contents-1:
 
 Table of Contents:
 ------------------
@@ -197,8 +193,6 @@ High Speed System Applications
 
 Signals and Systems
 ===================
-
-.. _table-of-contents-2:
 
 Table of Contents:
 ------------------

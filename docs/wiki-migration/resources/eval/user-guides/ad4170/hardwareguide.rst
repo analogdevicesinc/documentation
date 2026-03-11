@@ -242,29 +242,29 @@ Digital Connectors
 ======================== ================ =======================
 SDP 120 Pin Connector J6                  Arduino connector P1-P5
 ======================== ================ =======================
-**Connection**           \**Function \*\* ::
+**Connection**           \**Function** 
 3,4                      GND
 
 |image4|
 
-5                        V_USB            ::
-6,11,17,23,28,36,40      GND              ::
-43                       DIGAUX1          ::
-44                       DIGAUX2          ::
-46,52                    GND              ::
-56                       EEPROM_A0        ::
-58,63,69,75              GND              ::
-78                       SYNC_IN          ::
-79                       SCL              ::
-80                       SDA              ::
-81                       GND              ::
-82                       SCLK             ::
-83                       SDO              ::
-84                       SDI              ::
-85                       CS_N             ::
-86,93,98,109,115         GND              ::
-116                      VIO              ::
-117,118                  GND              ::
+5                        V_USB            
+6,11,17,23,28,36,40      GND              
+43                       DIGAUX1          
+44                       DIGAUX2          
+46,52                    GND              
+56                       EEPROM_A0        
+58,63,69,75              GND              
+78                       SYNC_IN          
+79                       SCL              
+80                       SDA              
+81                       GND              
+82                       SCLK             
+83                       SDO              
+84                       SDI              
+85                       CS_N             
+86,93,98,109,115         GND              
+116                      VIO              
+117,118                  GND              
 ======================== ================ =======================
 
 PMOD Connector P6
@@ -314,7 +314,7 @@ AVDD (LK30) and AVSS (LK33) selection
 
       -  AVSS tied to GND [LK43-50 (GREEN)]
 
--  \**±2.5V split supply \*\*
+-  **±2.5V split supply**
 
    -  2.5 regulator supplies AVDD
 
@@ -383,7 +383,7 @@ Reference Options
 =================
 
 -  AD4170 Internal Reference
--  \**DEFAULT:LTC6655, \*\* :adi:`LTC6655 <en/products/ltc6655.html>`\ and :adi:`ADR4525 <en/products/adr4525.html>` On Board external reference
+-  **DEFAULT:LTC6655,** :adi:`LTC6655 <en/products/ltc6655.html>`\ and :adi:`ADR4525 <en/products/adr4525.html>` On Board external reference
 -  External Reference Connector J1
 
    -  Option to use PT1000 precision resistor (R3) insert LK3
@@ -480,8 +480,10 @@ GPIO3
 MOSFET Circuit
 ^^^^^^^^^^^^^^
 
-| Below is the circuit for the AC excitation circuit. This Circuit outputs to EXC+ and EXC- on J2. This is enabled when LK22,LK23,LK24,LK25 are in posB
-| |image7|
+Below is the circuit for the AC excitation circuit. This Circuit outputs to EXC+ and EXC- on J2. This is enabled when LK22,LK23,LK24,LK25 are in posB
+
+
+|image7|
 
 Schematics
 ==========
@@ -511,16 +513,12 @@ These configurations are the ones used by default with the provided mbed firmwar
 
 \*Mount Resistors R111,R42 and depopulate R41, R110 to make AIN3-AIN4 compatible for DC measurements and update channel maps accordingly in register configuration. \*Mount Resistors R26,R39 and depopulate R27,R40 to make AIN7-AIN8 compatible for DC measurements and update channel maps accordingly in register configuration.
 
-.. _wire-rtd-1:
-
 3 wire RTD
 ----------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/3-wire_config_ch0.png
 
 \*Mount Resistors R111,R42 and depopulate R41, R110 to make AIN3-AIN4 compatible for DC measurements and update channel maps accordingly in register configuration. \*Mount Resistors R26,R39 and depopulate R27,R40 to make AIN7-AIN8 compatible for DC measurements and update channel maps accordingly in register configuration.
-
-.. _wire-rtd-2:
 
 4 wire RTD
 ----------

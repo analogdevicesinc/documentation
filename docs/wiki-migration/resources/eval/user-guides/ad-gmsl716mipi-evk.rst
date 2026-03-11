@@ -1,12 +1,11 @@
 AD-GMSL716MIPI-EVK
 ==================
 
-|
+
 
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages
-
 
    | The latest version of this document can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-gmsl716mipi-evk/index.html
 
@@ -24,9 +23,8 @@ Key technical capabilities include support for up to 15-meter cable lengths, 3Gb
    :align: center
    :width: 400px
 
-|
-
-| ==== Features ====
+Features
+~~~~~~~~
 
 -  Dual GMSL2 deserializer with :adi:`MAX96716A`
 -  2 × MIPI CSI-2 22P (4 × lanes) ribbon cable connectors
@@ -65,7 +63,7 @@ System Architecture
 -  Data converted to MIPI CSI-2 format
 -  MIPI CSI-2 output connects to SoC platform
 
-\**Reverse Path (SoC to Camera): \*\*
+**Reverse Path (SoC to Camera):**
 
 -  Control commands originate from SoC platform
 -  I2C/control signals processed by MAX96716A
@@ -73,7 +71,7 @@ System Architecture
 -  Serializer receives and processes control commands
 -  Commands applied to camera sensor and peripherals
 
-\**Power Distribution: \*\*
+**Power Distribution:**
 
 -  5V input power received via USB-C connector or via the 6-pin connector
 -  LTC3303 regulator converts 5V to required board voltages: 1.8V and 1.2V
@@ -108,8 +106,7 @@ Package Contents
 -  8 x screws
 -  4 x 21 mm standoffs
 
-| 
-| ----
+--------------
 
 Hardware Components and Connections
 -----------------------------------
@@ -204,8 +201,7 @@ Sample Measurements and Expected Readings
 -  Link lock time: < 100ms typical
 -  MIPI CSI-2 output levels: MIPI D-PHY v1.2 compliant
 
-| 
-| ----
+--------------
 
 Resources
 ---------
@@ -217,13 +213,12 @@ Resources
 Software
 ~~~~~~~~
 
-|
-
 .. tip::
 
    The AD-GMSL716MIPI-EVK software package offers driver support and configuration tools for integrating GMSL2 cameras with popular SoCs, including device tree and kernel drivers.
 
-   | Access the resources via the :git-Analog Devices GMSL GitHub repository>`__.
+   
+   Access the resources via the :git-Analog Devices GMSL GitHub repository>`__.
    
 
 

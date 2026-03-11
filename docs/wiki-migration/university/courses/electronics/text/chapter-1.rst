@@ -66,7 +66,7 @@ Kirchhoff's circuit laws are two equalities that deal with the conservation of c
 
 The current entering any junction in a circuit network is equal to the current leaving that junction.
 
-*i*\ :sub:`1` + *i*\ :sub:`4` = *i*\ :sub:`2` + *i*\ :sub:`3`
+*i*:sub:`1` +*i*:sub:`4` =*i*:sub:`2` +*i*\ :sub:`3`
 
 This law is sometimes referred to as Kirchhoff's point rule, Kirchhoff's junction rule (or nodal rule), and Kirchhoff's first rule.
 
@@ -153,8 +153,7 @@ This theorem states that a circuit of voltage sources and resistors can be conve
 
 Figure 1.5.1 Any black box containing only voltage sources, current sources, and other resistors can be converted to a Thévenin equivalent circuit, comprising exactly one voltage source and one resistor.
 
-| **Review Lab Activity:** :doc:`Real voltage sources </wiki-migration/university/courses/alm1k/alm-lab-e1>` **for ADALM1000**
-| **Review Lab Activity:** :doc:`Real voltage sources </wiki-migration/university/courses/electronics/electronics-lab-0>` **for ADALM2000**
+**Review Lab Activity:** :doc:`Real voltage sources </wiki-migration/university/courses/alm1k/alm-lab-e1>` **for ADALM1000** **Review Lab Activity:** :doc:`Real voltage sources </wiki-migration/university/courses/electronics/electronics-lab-0>` **for ADALM2000**
 
 1.6 Review of Norton's theorem
 ------------------------------

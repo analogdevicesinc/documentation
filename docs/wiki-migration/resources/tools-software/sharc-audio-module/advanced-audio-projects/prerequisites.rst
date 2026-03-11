@@ -41,9 +41,7 @@ A2B Audio
 -  `Portable speaker with 3.5mm Aux Jack <https://www.amazon.com/Wireless-Speakers-Leadsound-Portable-computer/dp/B01HB18IZ4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=AHMAYDZNJIWS6&th=1>`_ or equivalent
 -  `3.5MM Stereo Audio Cable <https://www.amazon.com/Sabrent-Plated-Premium-Auxiliary-CB-AUX5/dp/B01277P0CG/ref=sr_1_3?crid=1UF9AE07JP2YC&keywords=3.5mm+stereo+cable+male+to+male+sabrent&qid=1666283694&qu=eyJxc2MiOiIwLjc4IiwicXNhIjoiMC4wMCIsInFzcCI6IjAuMDAifQ%3D%3D&sprefix=3.5mm+stereo+cable+male+to+male+sabrent%2Caps%2C113&sr=8-3>`_ or equivalent
 
---------------
 
---------------
 
 Software Prerequisites
 ----------------------
@@ -68,7 +66,6 @@ Install GIT For Windows
 | 2. Follow the instructions to install provided by the setup installer, choosing the options that best suit your needs. | |image7| |image8| |image9| |image10| |image11| |image12| |
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
---------------
 
 Install CrossCore Embedded Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,7 +84,7 @@ Follow the instructions :doc:`here </wiki-migration/resources/tools-software/sha
 Download Bootloader Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Some of the Audio Starter projects require a bootloader to be flashed first. This section only applies to software running on the ADZS-SC589-MINI!* **Skip this step if it doesn't apply to you!** *This allows the use of the SAM flasher tool to make application updates. Software can be found here:*\ :doc:`Hardware-Software Compatibility </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>`\ *.*
+*Some of the Audio Starter projects require a bootloader to be flashed first. This section only applies to software running on the ADZS-SC589-MINI!**Skip this step if it doesn't apply to you!** This allows the use of the SAM flasher tool to make application updates. Software can be found here:*\ :doc:`Hardware-Software Compatibility </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>`\ *.*
 
 +-------------------------------------------------------------------------------------------------------------+-----------+
 | 1. The software package can be downloaded directly (Be sure to unzip after download).                       | |image15| |
@@ -95,7 +92,6 @@ Download Bootloader Software
 | 2. Keep track of where this project is unzipped as it will be referenced later as <BOOTLOADER_PROJECT_ROOT> |           |
 +-------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 Clone Repository/Download Application Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,7 +116,6 @@ Clone Repository/Download Application Software
 | 6. Keep track of where the application was cloned or downloaded as it will be referred to later as <project_root>                                                                                                                                     |           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 Install Your Preferred Serial Terminal Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

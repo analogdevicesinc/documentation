@@ -28,8 +28,8 @@ Connect the hardware as follows:
 -  Connect the **development board** to the **network** using the provided **ethernet** cable. For boards with two ethernet ports the **10/100/1000** port should be used, not the **10/100** port
 -  Connect the **development board** to the **power supply** and plug in the power supply
 
-| 
-| ===== Write U-Boot onto Target Board via GDB =====
+Write U-Boot onto Target Board via GDB
+--------------------------------------
 
 U-Boot Console Output
 ~~~~~~~~~~~~~~~~~~~~~
@@ -57,7 +57,7 @@ Connect the ICE-1000 or ICE-2000 to DEBUG port via a USB cable as well as switch
 
 ::
 
-   $ cd /opt/analog/cces/2.8.3/ARM/openocd/share/openocd/scripts 
+   $ cd /opt/analog/cces/2.8.3/ARM/openocd/share/openocd/scripts
    $ sudo /opt/analog/cces/2.8.3/ARM/openocd/bin/openocd -f interface/<ICE>.cfg -f target/<TARGET>.cfg
 
 Where **<ICE>** and **<TARGET>** should be replaced.
@@ -96,18 +96,17 @@ When success you should see a message similar to the console output below:
 ::
 
    $ cd  tmp/deploy/images/<MACHINE>
-   $ /opt/analog/cces/2.8.3/ARM/arm-none-eabi/bin/arm-none-eabi-gdb <UBOOT_BIN_FILE> 
+   $ /opt/analog/cces/2.8.3/ARM/arm-none-eabi/bin/arm-none-eabi-gdb <UBOOT_BIN_FILE>
    (gdb) target remote :3333
-   (gdb) load <INIT_ELF_FILE> 
-   (gdb) c 
+   (gdb) load <INIT_ELF_FILE>
+   (gdb) c
    <Press Ctrl+C to interrupt the application>
    (gdb) load <UBOOT_BIN_FILE>
    (gdb) c
 
 Where the macros in the above command are listed at the bottom of this page in **Appendix**.
 
-| 
-| At this point U-Boot will now be running in RAM on your target board. You should see U-Boot booting in the minicom console. Press a key to interrupt the boot process before the countdown terminates:
+At this point U-Boot will now be running in RAM on your target board. You should see U-Boot booting in the minicom console. Press a key to interrupt the boot process before the countdown terminates:
 
 ::
 
@@ -119,18 +118,20 @@ Where the macros in the above command are listed at the bottom of this page in *
           Watchdog enabled
    I2C:   ready
    DRAM:  224 MiB
-   MMC:   SC5XX SDH: 0                                                                                                        
-   SF: Detected IS25LP512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB                                           
-   In:    serial                                                                                                              
-   Out:   serial                                                                                                              
-   Err:   serial                                                                                                              
-   other init                                                                                                                 
-   Net:   dwmac.3100c000                                                                                                      
-   Hit any key to stop autoboot:  0                                                                                           
+   MMC:   SC5XX SDH: 0
+   SF: Detected IS25LP512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB
+   In:    serial
+   Out:   serial
+   Err:   serial
+   other init
+   Net:   dwmac.3100c000
+   Hit any key to stop autoboot:  0
    sc #
 
-| 
-| ==== Flash U-Boot to SPI Flash ==== Here we use the u-Boot console to TFTP a version of u-Boot into RAM, and then write this application into SPI flash.
+Flash U-Boot to SPI Flash
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Here we use the u-Boot console to TFTP a version of u-Boot into RAM, and then write this application into SPI flash.
 
 Configuring the U-Boot Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -187,7 +188,7 @@ You will see output similar to the following:
    SF: Detected IS25LP512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB
    SF: 524288 bytes @ 0x0 Erased: OK
    SF: 347148 bytes @ 0x0 Written: OK
-   sc # 
+   sc #
 
 Note that the update operation will overwrite the flash memory storing the environment configuration, so if you wish to preserve it you need to save it again:
 
@@ -197,8 +198,8 @@ Note that the update operation will overwrite the flash memory storing the envir
 
 At this point the U-Boot binary is stored in flash. You can now disconnect the ICE-1000 or ICE-2000 from the development board and make sure to switch the BMODE to position 1. You will only need to reconnect this if your board fails to boot and you need to re-follow these instructions.
 
-| 
-| ===== Appendix: Macro Definition =====
+Appendix: Macro Definition
+--------------------------
 
 +------------------+----------------------+--------------------+------------------------+
 | ``MACHINE``      | ``INIT_ELF_FILE``    | ``UBOOT_BIN_FILE`` | ``UBOOT_LDR_FILE``     |

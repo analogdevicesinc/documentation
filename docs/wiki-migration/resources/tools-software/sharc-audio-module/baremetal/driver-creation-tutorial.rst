@@ -176,5 +176,5 @@ If the audio component has a SigmaDSP core, this same driver can also be used to
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#custom-a2b-topology
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#custom-a2b-topology
    :alt: Adding Custom A2B Configurations#.|Bare Metal Framework#porting-to-new-hardware-tutorial|Porting the Framework to Different HW

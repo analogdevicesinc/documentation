@@ -26,7 +26,7 @@ Supported Carriers
 Required Software
 -----------------
 
--  We're upgrade the Xilinx tools on every release. The supported version number can be found in our :git-hdl:`git repository <projects/scripts/adi_project.tcl#L10>`.
+-  We're upgrade the Xilinx tools on every release. The supported version number can be found in our `git repository <https://github.com/analogdevicesinc/hdl/blob/hdl_2018_r2/projects/scripts/adi_project.tcl#L10>`_.
 -  A UART terminal (Tera Term/Hyperterminal), baud rate 115200.
 
 Downloads
@@ -41,7 +41,7 @@ HDL Source
    :class: download
 
    
-   -  ZC706 HDL Reference design: :git-hdl:`projects/fmcadc4/zc706`
+   -  ZC706 HDL Reference design: https://github.com/analogdevicesinc/hdl/tree/hdl_2018_r2/projects/fmcadc4/zc706
    
 
 
@@ -52,6 +52,6 @@ No-OS Software Source
    :class: download
 
    
-   -  AD-FMCADC4-EBZ No-OS - :git-no-OS:`fmcadc4`
+   -  AD-FMCADC4-EBZ No-OS - https://github.com/analogdevicesinc/no-OS/tree/2018_R2/fmcadc4
    
 

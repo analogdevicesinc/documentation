@@ -1,12 +1,17 @@
 Allow Real-Time A/B Testing Between Projects
 ============================================
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| Suppose you are viewing your design A and listening to its audio flow, and you wonder how your design B (also open) sounds in comparison.
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
 
-| Press the real-time A/B-testing icon and when you switch between the 2 projects, SigmaStudio automatically downloads the design B or design A program to the DSP without needing to recompile.
-| |abcomparisonpic1.png|
-| In other words, clicking the icon lets you switch among any number of open compiled projects without having to recompile each. (The function is very useful: without it, you must recompile a project every time you bring it to the front even if you haven't made any changes to the schematic.)
+Suppose you are viewing your design A and listening to its audio flow, and you wonder how your design B (also open) sounds in comparison.
+
+Press the real-time A/B-testing icon and when you switch between the 2 projects, SigmaStudio automatically downloads the design B or design A program to the DSP without needing to recompile.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/abcomparisonpic1.png
+   :alt: abcomparisonpic1.png
+   :align: center
+
+In other words, clicking the icon lets you switch among any number of open compiled projects without having to recompile each. (The function is very useful: without it, you must recompile a project every time you bring it to the front even if you haven't made any changes to the schematic.)
 
 You can also select "Allow Realtime AB Testing" from the pull down menu:
 
@@ -35,6 +40,5 @@ Clicking on the window for project 2 will load the second project into the DSP a
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/screenhunter_336_dec._09_11.40.jpg
    :width: 200px
 
-.. |abcomparisonpic1.png| image:: https://wiki.analog.com/_media/abcomparisonpic1.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/screenhunter_331_dec._09_11.35.jpg
    :width: 200px

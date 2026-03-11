@@ -9,8 +9,10 @@ RMS Compressor with Max/Avg IP
 Description
 -----------
 
-| This Module computes the Gain of the Compressor. Compression happens by taking the RMS of the Average or Max of all inputs, and then looking up for the Gain based on the Compressor Graph.
-| ===== Targets Supported =====
+This Module computes the Gain of the Compressor. Compression happens by taking the RMS of the Average or Max of all inputs, and then looking up for the Gain based on the Compressor Graph.
+
+Targets Supported
+-----------------
 
 +-----------------------------+------------+------------------+---------------+------------------+
 | Name                        | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -39,7 +41,7 @@ Name   Type    Description
 Output Control Compressor Gain
 ====== ======= ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -68,4 +70,4 @@ Hold           Hold                          Float
 Graph          Compressor Graph table values Float Array
 ============== ============================= ======================
 
-| 
+

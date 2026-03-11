@@ -3,9 +3,7 @@
 ADZS-SC589-MINI
 ===============
 
-| 
-| Evaluation Hardware for the ADSP-SC58x SHARC Family
-|
+Evaluation Hardware for the ADSP-SC58x SHARC Family
 
 .. container:: centeralign
 
@@ -17,7 +15,7 @@ ADZS-SC589-MINI
    \ **Figure:** ADSP-SC589-MINI
 
 
-| For Sport configuration, please refer example schematic of ADSP-SC589Mini in the :doc:`Tutorial and Examples </wiki-migration/resources/tools-software/sigmastudiov2/tutorials>` wiki page.
+For Sport configuration, please refer example schematic of ADSP-SC589Mini in the :doc:`Tutorial and Examples </wiki-migration/resources/tools-software/sigmastudiov2/tutorials>` wiki page.
 
 .. note::
 

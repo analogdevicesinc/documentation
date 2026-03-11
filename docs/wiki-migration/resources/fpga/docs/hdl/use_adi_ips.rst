@@ -21,8 +21,6 @@ Launch a Quartus GUI and select the Tools dropdown from the top menu. Click the 
 JESD204
 =======
 
-.. _vivado-1:
-
 Vivado
 ------
 
@@ -49,7 +47,6 @@ Let's instantiate the TPL (Transport Layer). For RX you will swap this one with 
                                             $TX_NUM_OF_CONVERTERS \
                                             $TX_SAMPLES_PER_FRAME \
                                             $TX_SAMPLE_WIDTH \ </code>
-                                          
 
 You can optionally add the util_upack2 module for unpacking the data. For RX you will swap this one with util_cpack2. <code> ad_ip_instance util_upack2 axi_ad9144_upack [list \\
 
@@ -105,8 +102,6 @@ Now just add the interconnects and the interrupts for the added layers (PL, TPL,
 SPI Engine
 ==========
 
-.. _vivado-2:
-
 Vivado
 ------
 
@@ -120,14 +115,14 @@ All of the modules are instantiated inside the spi_engine_create function. This 
 
    #                 name         data_width async_spi_clk num_csn num_sdi     sdi_delay  echo_sclk
    spi_engine_create "spi_ad463x" 32         1             1       $NUM_OF_SDI 0          1
-   ad_ip_parameter spi_ad463x/execution CONFIG.DEFAULT_SPI_CFG 1   ; 
+   ad_ip_parameter spi_ad463x/execution CONFIG.DEFAULT_SPI_CFG 1   ;
 
    ad_ip_parameter spi_ad463x/axi_regmap CONFIG.CFG_INFO_0 $NUM_OF_SDI
    ad_ip_parameter spi_ad463x/axi_regmap CONFIG.CFG_INFO_1 $CAPTURE_ZONE
    ad_ip_parameter spi_ad463x/axi_regmap CONFIG.CFG_INFO_2 $CLK_MODE
    ad_ip_parameter spi_ad463x/axi_regmap CONFIG.CFG_INFO_3 $DDR_EN 
 
-.. image:: https://wiki.analog.com/_media/navigation HDL user guide #resources/fpga/docs/hdl/creating_new_ip_guide
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/navigation HDL user guide #resources/fpga/docs/hdl/creating_new_ip_guide
    :alt: Create a new IP#resources/fpga/docs/tips|Main page#resources/fpga/docs/hdl/xcomm2ip|A simple BBP for RF Transceivers
 
 .. |name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0| image:: https://wiki.analog.com/_media/name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0

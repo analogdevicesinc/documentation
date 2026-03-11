@@ -48,12 +48,7 @@ OR
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wires
-| 1 - 4.7 mH inductor ( or larger )
-| 1 - 10 μF capacitor
-| 1 - 1 kΩ resistor
-| 1 – small signal diode (1N914)
+ADALM1000 hardware module Solder-less breadboard and jumper wires 1 - 4.7 mH inductor ( or larger ) 1 - 10 μF capacitor 1 - 1 kΩ resistor 1 – small signal diode (1N914)
 
 Directions:
 ~~~~~~~~~~~
@@ -248,13 +243,6 @@ Figure 8 is a representative example of self-resonance waveform for a 4.7mH indu
 
 **For Further Reading:**
 
-| `Inductor <https://en.wikipedia.org/wiki/Inductor>`_
-| `Damped sine wave <https://en.wikipedia.org/wiki/Damped_sine_wave>`_
-| `Self-resonant frequency <https://en.wikipedia.org/wiki/Self-resonant_frequency>`_
-| `Parasitic capacitance <https://en.wikipedia.org/wiki/Parasitic_capacitance>`_
-| http:*www.coilcraft.com/pdfs/Doc363_MeasuringSRF.pdf
-  http:*\ www.coilcraft.com/pdfs/doc671_Selecting_RF_Inductors.pdf
-| http://www.coilcraft.com/pdfs/doc119_TestAppFreq.pdf
+`Inductor <https://en.wikipedia.org/wiki/Inductor>`_ `Damped sine wave <https://en.wikipedia.org/wiki/Damped_sine_wave>`_ `Self-resonant frequency <https://en.wikipedia.org/wiki/Self-resonant_frequency>`_ `Parasitic capacitance <https://en.wikipedia.org/wiki/Parasitic_capacitance>`_ http://www.coilcraft.com/pdfs/Doc363_MeasuringSRF.pdf http://www.coilcraft.com/pdfs/doc671_Selecting_RF_Inductors.pdf http://www.coilcraft.com/pdfs/doc119_TestAppFreq.pdf
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**

@@ -1,8 +1,9 @@
 Hierarchy Board
 ===============
 
-| :doc:`Click here to return to the System page </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign>`
-| Schematic Hierarchy Boards allows you to create multiple layers within the schematic design window, providing additional schematic workspace. Hierarchy Boards are helpful for large schematic designs and for organizing design components. Hierarchy boards support Copy/Paste, schematic settings, and Undo operations. In addition Hierarchy boards can be saved to files to create reusable design components.
+:doc:`Click here to return to the System page </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign>`
+
+Schematic Hierarchy Boards allows you to create multiple layers within the schematic design window, providing additional schematic workspace. Hierarchy Boards are helpful for large schematic designs and for organizing design components. Hierarchy boards support Copy/Paste, schematic settings, and Undo operations. In addition Hierarchy boards can be saved to files to create reusable design components.
 
 .. tip::
 
@@ -22,10 +23,11 @@ To create a Hierarchy Board:
 Hierarchy Board Name:
 =====================
 
-| To change the name of hierarchy board block, double click on the block's label and type a new name. This will also change the name displayed in the associated hierarchy tab.
-| |hierarchyboardpic2.png|
+To change the name of hierarchy board block, double click on the block's label and type a new name. This will also change the name displayed in the associated hierarchy tab.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyboardpic2.png
+   :alt: hierarchyboardpic2.png
 
 See the Hierarchy Board :doc:`System Example </wiki-migration/resources/tools-software/sigmastudio/tutorials/systemexamples>` for a sample hierarchy board design.
 
 .. |hierarchyboardpic1.png| image:: https://wiki.analog.com/_media/hierarchyboardpic1.png
-.. |hierarchyboardpic2.png| image:: https://wiki.analog.com/_media/hierarchyboardpic2.png

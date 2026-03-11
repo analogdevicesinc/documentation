@@ -1,7 +1,7 @@
 Noise Removal
 =============
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 | The Noise Removal algorithm monitors the signal level across many audio bands and compares it to the average signal level to predict what signal components are significant and what signal components are part of the noise floor. It attempts to remove signal bands that are not considered to be significant components of the signal of interest. By removing these signal components, the overall noise level of the signal can be reduced, at the cost of some reduction in the naturalness of the desired signal. This algorithm was designed to run at a sample rate of 16 kHz, so systems using this cell must be set to run at 16 kHz. | |windremovalcell.jpg| |
@@ -67,8 +67,10 @@ The default values in the GUI control for this algorithm provide a good starting
 Example
 -------
 
-| Typically, the algorithm is inserted as one of the first processing blocks in a signal chain.
-| |noiseremovalexample.jpg|
+Typically, the algorithm is inserted as one of the first processing blocks in a signal chain.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/noiseremovalexample.jpg
+   :alt: noiseremovalexample.jpg
 
 Algorithm Details
 -----------------
@@ -93,4 +95,3 @@ Algorithm Details
 +----------------------------+-------------------------------------------------+
 
 .. |windremovalcell.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/windremovalcell.jpg
-.. |noiseremovalexample.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/noiseremovalexample.jpg

@@ -6,26 +6,20 @@ Command list .h Specification
 Version
 -------
 
-| Details of A2B Stack and SigmaStudio version used during export is available in the Command list header file under copyright section.
+Details of A2B Stack and SigmaStudio version used during export is available in the Command list header file under copyright section.
 
 .. tip::
 
    
    .. container:: left round
 
-      \* @date: Thursday, 27 June 2024-17:20:07
-
-         | \* I2C/SPI Command File Version - 1.0.0
-         | \* A2B SDK DLL- 1.3.1.0
-         | \* A2B Stack DLL version- 19.10.9.0
-         | \* SigmaStudio version- 2.2.8879.30739
-      |
+      \* @date: Thursday, 27 June 2024-17:20:07 \* I2C/SPI Command File Version - 1.0.0 \* A2B SDK DLL- 1.3.1.0 \* A2B Stack DLL version- 19.10.9.0 \* SigmaStudio version- 2.2.8879.30739
 
    
 
 
 +---+---+---+---+---+
-| \*\* Field name\\A2B Software version **\|** ADI_A2B-SSPlus \_Software-Rel1.3.2 **\|** ADI_A2B_Software-Rel19.10.0 **\|** ADI_A2B_Software-Rel19.4.5 **\|** Comments **\| \|** Command list Header Schema Version **\|1.0.0|1.0.0|1.0.0|User defined version from GUI during export\| \|** A2B SDK DLL / A2B DLL **\| 1.3.1|19.10.0|19.4.5\| A2B Plugin Version \| \|** A2B Stack DLL **\| 19.10.9|19.10.0|19.4.5\| A2B Stack Version\| \|** SigmaStudio version \*\* | SigmaStudio+ v2.2.0 | SigmaStudio v4.06 | SigmaStudio v4.07 | SigmaStudio / SigmaStudio+ Version |
+| \*\* Field name\\A2B Software version **\|** ADI_A2B-SSPlus \_Software-Rel1.3.2 **\|** ADI_A2B_Software-Rel19.10.0 **\|** ADI_A2B_Software-Rel19.4.5 **\|** Comments **\| \|** Command list Header Schema Version **\|1.0.0|1.0.0|1.0.0|User defined version from GUI during export\| \|** A2B SDK DLL / A2B DLL **\| 1.3.1|19.10.0|19.4.5\| A2B Plugin Version \| \|** A2B Stack DLL **\| 19.10.9|19.10.0|19.4.5\| A2B Stack Version\| \|** SigmaStudio version** | SigmaStudio+ v2.2.0 | SigmaStudio v4.06 | SigmaStudio v4.07 | SigmaStudio / SigmaStudio+ Version |
 +---+---+---+---+---+
 
 SPECIFICATION
@@ -35,8 +29,8 @@ Command list header file consists of the below specification
 
 .. code:: c
 
-   typedef struct 
-    { 
+   typedef struct
+    {
    /*! Device address (size:1Byte) */
        unsigned char nDeviceAddr;
 

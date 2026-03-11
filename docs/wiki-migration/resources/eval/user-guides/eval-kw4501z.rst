@@ -42,8 +42,7 @@ Configuration files for the ADALM2000 Scopy that are referenced in the lecture m
 LTspice Simulation Circuits
 ---------------------------
 
-| LTspice Circuits used in the lecture material are available at `Integrated Noise LTspice Simulation File <https://wiki.analog.com/_media/resources/eval/user-guides/integrated_noise.zip>`_.
-|
+LTspice Circuits used in the lecture material are available at `Integrated Noise LTspice Simulation File <https://wiki.analog.com/_media/resources/eval/user-guides/integrated_noise.zip>`_.
 
 .. tip::
 

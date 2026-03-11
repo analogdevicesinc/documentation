@@ -61,16 +61,7 @@ Building a auto-zero amplifier
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 – LTC1043 analog switch
-| 1 – 2N3904 NPN transistor
-| 1 – 2N3906 PNP transistor
-| 1 – 470Ω resistor
-| 1 – 20 KΩ resistor
-| 1 – 47 KΩ resistor
-| 2 – 0.1 uF capacitors
-| 2 – 1 nF capacitors
-| 2 – 100 pF capacitors
+ADALM1000 hardware module 1 – LTC1043 analog switch 1 – 2N3904 NPN transistor 1 – 2N3906 PNP transistor 1 – 470Ω resistor 1 – 20 KΩ resistor 1 – 47 KΩ resistor 2 – 0.1 uF capacitors 2 – 1 nF capacitors 2 – 100 pF capacitors
 
 Directions:
 ~~~~~~~~~~~
@@ -125,9 +116,6 @@ Plot or present the DC transfer characteristic of the offset-cancelled amplifier
 
 **For Further Reading:**
 
-| :adi:`LTC1043 datasheet <media/en/technical-documentation/data-sheets/1043fa.pdf>`
-| `MT-088: Analog Switches and Multiplexer Basics <http://www.analog.com/media/en/training-seminars/tutorials/MT-088.pdf>`_
-| :adi:`Demystifying Auto-Zero Amplifiers—Part 1 <media/en/analog-dialogue/volume-34/number-1/articles/demystifying-auto-zero-amplifiers-part-1.pdf>`
-| :adi:`Demystifying Auto-Zero Amplifiers—Part 2 <media/en/analog-dialogue/volume-34/number-1/articles/demystifying-auto-zero-amplifiers-part-2.pdf>`
+:adi:`LTC1043 datasheet <media/en/technical-documentation/data-sheets/1043fa.pdf>` `MT-088: Analog Switches and Multiplexer Basics <http://www.analog.com/media/en/training-seminars/tutorials/MT-088.pdf>`_ :adi:`Demystifying Auto-Zero Amplifiers—Part 1 <media/en/analog-dialogue/volume-34/number-1/articles/demystifying-auto-zero-amplifiers-part-1.pdf>` :adi:`Demystifying Auto-Zero Amplifiers—Part 2 <media/en/analog-dialogue/volume-34/number-1/articles/demystifying-auto-zero-amplifiers-part-2.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**

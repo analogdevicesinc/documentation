@@ -90,8 +90,6 @@ Circuits I & Circuits II Lab Exercises
 
 -  :doc:`Lab Activity Material Circuits I and II </wiki-migration/university/labs/circuits>`
 
-| 
-
 Other Resources
 ---------------
 
@@ -109,7 +107,7 @@ Analog Device Supplied Content
 **Blogs and FAQs**
 
 -  :adi:`Ask the Applications Engineer: Op Amp Issues <library/analogDialogue/Anniversary/6.html>` – Discusses different types of operational amplifier and the reasons for those differences.
-   \* :adi:`Analog Computation in the Digital Age <media/en/analog-dialogue/raqs/computation.pdf>`
+-  :adi:`Analog Computation in the Digital Age <media/en/analog-dialogue/raqs/computation.pdf>`
 
 Wikipedia
 ~~~~~~~~~

@@ -3,14 +3,13 @@
 SPI Read
 ========
 
-| 
-| |spi_read_ssp.jpg|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/spi_read_ssp.jpg
+   :alt: spi_read_ssp.jpg
 
 Description
 -----------
 
-| 
-| There are two different versions of the SPI Read module.
+There are two different versions of the SPI Read module.
 
 -  SPI Periodic Read
 -  SPI Read with External Trigger
@@ -18,19 +17,31 @@ Description
 SPI Periodic Read
 -----------------
 
-| The 'SPI Periodic Read' block reads a particular sub address from any SPI slave periodically and sends the value read in the output pin.
-| ===== Usage =====
-| Click on Settings to configure the parameters for SPI read.
-| |spi_read_wndw_ssp.jpg|
-| To monitor multiple registers in the same slave, create multiple instances of the cell.
-| === Support for Different Slave Select=== If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration → ICx - ADAU145x Register Controls → MULTIPURPOSE/AUXADC) |image1|
-| \* Slave Select Channel -> 'Slave Select Channel x'
+The 'SPI Periodic Read' block reads a particular sub address from any SPI slave periodically and sends the value read in the output pin.
 
+Usage
+-----
+
+Click on Settings to configure the parameters for SPI read.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/spi_read_wndw_ssp.jpg
+   :alt: spi_read_wndw_ssp.jpg
+
+To monitor multiple registers in the same slave, create multiple instances of the cell.
+
+Support for Different Slave Select
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration → ICx - ADAU145x Register Controls → MULTIPURPOSE/AUXADC)
+
+
+|image1|
+
+-  Slave Select Channel -> 'Slave Select Channel x'
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-| 
-| The following table shows the mapping between the module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
+The following table shows the mapping between the module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
 
 +----------------------------------------+------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register control |
@@ -59,7 +70,9 @@ SPI Periodic Read
 
 | 
 | ===== Pins =====
-| ====Output Pins====
+
+Output Pins
+^^^^^^^^^^^
 
 ======== ======= ==========================
 Name     Type    Description
@@ -67,7 +80,7 @@ Name     Type    Description
 SPI Data Control Outputs data read over SPI
 ======== ======= ==========================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +-----------------------+---------------+---------------------------------+----------------------------------------------------------------------------------------------------+
@@ -96,46 +109,59 @@ SPI Data Control Outputs data read over SPI
 
 | 
 | ===== DSP Parameters=====
-| ^ Parameter Name ^ Description^ ADAU145x/146x ^
 
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| spiSpeed        | SPI Speed                                                                                          | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| spiMode         | SPI Protocol Mode                                                                                  | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| slaveSelect     | SPI Slave Select Channel                                                                           | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| readAddress     | Address to be read from                                                                            | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| addressLength   | Length of the sub address                                                                          | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| dataLength      | Length of the data to be read                                                                      | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| commandLength   | Length of the command sent in bytes                                                                | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| readInstruction | Instruction value for a read operation (0x1 for ADI audio devices, typically 0x3 for eeprom/flash) | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| Parameter Name  | Description                                                                                        | ADAU145x/146x |
++=================+====================================================================================================+===============+
+| spiSpeed        | SPI Speed                                                                                          | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| spiMode         | SPI Protocol Mode                                                                                  | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| slaveSelect     | SPI Slave Select Channel                                                                           | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| readAddress     | Address to be read from                                                                            | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| addressLength   | Length of the sub address                                                                          | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| dataLength      | Length of the data to be read                                                                      | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| commandLength   | Length of the command sent in bytes                                                                | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| readInstruction | Instruction value for a read operation (0x1 for ADI audio devices, typically 0x3 for eeprom/flash) | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
 
 | 
 | ===== DSP Parameter Computation =====
-| readAddress = AddressToRead < <(8\* (4 - (AddressLength + SPICommandLength))
-| readInstruction = SPIReadInstruction < < (8\* AddressLength)+  [1]_
+
+readAddress = AddressToRead < <(8\* (4 - (AddressLength + SPICommandLength))
+
+readInstruction = SPIReadInstruction < < (8\* AddressLength)+  [1]_
 
 SPI Read with external Trigger
 ------------------------------
 
-| The 'SPI Read with external Trigger' block reads a particular sub address from any I2C slave when a rising edge is detected in the input pin.
-| ===== Usage =====
-| Click on |image2| to configure the parameters for SPI read.
-| |image3| To monitor multiple registers in the same slave, create multiple instances of the cell.
-| === Support for Different Slave Select=== If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration → ICx - ADAU145x Register Controls → MULTIPURPOSE/AUXADC) |image4|
-| \* Slave Select Channel -> 'Slave Select Channel x'
+The 'SPI Read with external Trigger' block reads a particular sub address from any I2C slave when a rising edge is detected in the input pin.
 
+Usage
+-----
+
+Click on |image2| to configure the parameters for SPI read.
+
+|image3| To monitor multiple registers in the same slave, create multiple instances of the cell.
+
+Support for Different Slave Select
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration → ICx - ADAU145x Register Controls → MULTIPURPOSE/AUXADC)
+
+
+|image4|
+
+-  Slave Select Channel -> 'Slave Select Channel x'
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-| 
-| The following table shows the mapping between the module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
+The following table shows the mapping between the module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
 
 +----------------------------------------+------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register control |
@@ -164,22 +190,26 @@ SPI Read with external Trigger
 
 | 
 | ===== Pins =====
-| ====Input Pins====
-| ^Name^Type^Description^
 
+Input Pins
+^^^^^^^^^^
+
+======= ======= =========================================
+Name    Type    Description
 ======= ======= =========================================
 Trigger Control Rising edge in this signal initiates read
 ======= ======= =========================================
 
-| 
-| ====Output Pins====
-| ^Name^Type^Description^
 
+| ====Output Pins====
+
+======== ======= ==========================
+Name     Type    Description
 ======== ======= ==========================
 SPI Data Control Outputs data read over SPI
 ======== ======= ==========================
 
-| 
+
 | ===== Configurable Parameters =====
 
 Configurable Parameters
@@ -209,31 +239,36 @@ Configurable Parameters
 
 | 
 | ===== DSP Parameters=====
-| ===== DSP Parameters=====
-| ^ Parameter Name ^ Description^ ADAU145x/146x ^
 
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| spiSpeed        | SPI Speed                                                                                          | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| spiMode         | SPI Protocol Mode                                                                                  | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| slaveSelect     | SPI Slave Select Channel                                                                           | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| readAddress     | Address to be read from                                                                            | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| addressLength   | Length of the sub address                                                                          | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| dataLength      | Length of the data to be read                                                                      | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| commandLength   | Length of the command sent in bytes                                                                | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
-| readInstruction | Instruction value for a read operation (0x1 for ADI audio devices, typically 0x3 for eeprom/flash) | Integer32 |
-+-----------------+----------------------------------------------------------------------------------------------------+-----------+
+DSP Parameters
+--------------
+
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| Parameter Name  | Description                                                                                        | ADAU145x/146x |
++=================+====================================================================================================+===============+
+| spiSpeed        | SPI Speed                                                                                          | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| spiMode         | SPI Protocol Mode                                                                                  | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| slaveSelect     | SPI Slave Select Channel                                                                           | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| readAddress     | Address to be read from                                                                            | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| addressLength   | Length of the sub address                                                                          | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| dataLength      | Length of the data to be read                                                                      | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| commandLength   | Length of the command sent in bytes                                                                | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
+| readInstruction | Instruction value for a read operation (0x1 for ADI audio devices, typically 0x3 for eeprom/flash) | Integer32     |
++-----------------+----------------------------------------------------------------------------------------------------+---------------+
 
 | 
 | ===== DSP Parameter Computation =====
-| readAddress = AddressToRead < <(8\* (4 - (AddressLength + SPICommandLength))
-| readInstruction = SPIReadInstruction < < (8\* AddressLength)+  [2]_
+
+readAddress = AddressToRead < <(8\* (4 - (AddressLength + SPICommandLength))
+
+readInstruction = SPIReadInstruction < < (8\* AddressLength)+  [2]_
 
 .. [1]
    8\* (4 - (AddressLength + SPICommandLength
@@ -241,8 +276,6 @@ Configurable Parameters
 .. [2]
    8\* (4 - (AddressLength + SPICommandLength
 
-.. |spi_read_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/spi_read_ssp.jpg
-.. |spi_read_wndw_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/spi_read_wndw_ssp.jpg
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/slave_selection_mpx_ssp.jpg
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/spi.png

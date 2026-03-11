@@ -20,10 +20,7 @@ Download the SigmaStudio Network Utility and extract the tar archive. To build t
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -44,10 +41,7 @@ Example:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -74,10 +68,7 @@ In debug mode all register writes go to an internal cache and all register reads
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      Example
+   Example
 
    
    ::
@@ -97,10 +88,7 @@ In regmap mode sigma_tcp expects the path to a regmap debugfs file, which will b
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      Example
+   Example
 
    
    ::
@@ -139,13 +127,8 @@ The I2C mode takes two parameters, the first parameter is the I2C adapter charac
 
 .. container:: box bggreen
 
-   
-   .. note::
+   This specifies any shell prompt running on the target\ ``> **sigma_tcp i2c /dev/i2c-0 0x3b**
 
-      This specifies any shell prompt running on the target
-
-   
-   \ ``> **sigma_tcp i2c /dev/i2c-0 0x3b**
    Using i2c backend
    Waiting for connections...
    IP addresses:
@@ -203,4 +186,8 @@ More information
 
 -  :doc:`SigmaStudio </wiki-migration/resources/tools-software/sigmastudio>`
 
-.. include:: ../linux-drivers/need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

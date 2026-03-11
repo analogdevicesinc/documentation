@@ -87,5 +87,6 @@ The following issues are known for this release:
 -  SD Card and Rotary can't work simultaneously on ADSP-SC573 EZ-KIT. This is a limitation of the multiplexing pin conflict of the EZ-Kit. Rotary is disabled by default out of box on ADSP-SC573 EZ-KIT.
 -  QT, Mplayer and Bluetooth ALSA for all processors are not support in this release.
 
-| 
-| ---- \**HOME PAGE: \*\* :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`
+--------------
+
+**HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`

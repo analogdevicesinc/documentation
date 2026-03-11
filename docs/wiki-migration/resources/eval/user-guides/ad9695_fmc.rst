@@ -66,11 +66,7 @@ The link is set for full bandwidth mode and operate with the following parameter
 
 Deframer paramaters: L=4, M=2, F=1, S=1, N’=16
 
-| SYSREF - 5.078125 MHZ
-| REFCLK – 325MHz (Lane Rate/40)
-| DEVICECLK -325 MHz
-| ADCCLK – 1300MHz
-| JESD204B Lane Rate – 13Gbps
+SYSREF - 5.078125 MHZ REFCLK – 325MHz (Lane Rate/40) DEVICECLK -325 MHz ADCCLK – 1300MHz JESD204B Lane Rate – 13Gbps
 
 The transport layer component presents on its output 128 bits at once on every clock cycle, representing 4 samples per converter. The two receive chains are merged together and transferred to the DDR with a single DMA.
 
@@ -121,21 +117,13 @@ Messages
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
-
-   .. raw:: html
-
-      <details><summary>Boot log (click to expand)</summary>
-
    ::
    
       [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
@@ -169,7 +157,7 @@ Messages
       [    0.000000] psci: SMC Calling Convention v1.2
       [    0.000000] percpu: Embedded 22 pages/cpu s49496 r8192 d32424 u90112
       [    0.000000] pcpu-alloc: s49496 r8192 d32424 u90112 alloc=22\*4096
-      [    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+      [    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3
       [    0.000000] Detected VIPT I-cache on CPU0
       [    0.000000] CPU features: detected: ARM erratum 845719
       [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1034240
@@ -249,7 +237,7 @@ Messages
       [    2.401936] raid6: using algorithm neonx4 gen() 2193 MB/s
       [    2.405884] raid6: .... xor() 1561 MB/s, rmw enabled
       [    2.410819] raid6: using neon recovery algorithm
-      [    2.415807] iommu: Default domain type: Translated 
+      [    2.415807] iommu: Default domain type: Translated
       [    2.420451] SCSI subsystem initialized
       [    2.423986] libata version 3.00 loaded.
       [    2.424114] usbcore: registered new interface driver usbfs
@@ -511,7 +499,7 @@ Messages
       [    4.334767] xilinx-dp-snd-pcm zynqmp_dp_snd_pcm0: Xilinx DisplayPort Sound PCM probed
       [    4.341090] mmc0: new high speed SDHC card at address aaaa
       [    4.342930] xilinx-dp-snd-pcm zynqmp_dp_snd_pcm1: Xilinx DisplayPort Sound PCM probed
-      [    4.348426] mmcblk0: mmc0:aaaa SC32G 29.7 GiB 
+      [    4.348426] mmcblk0: mmc0:aaaa SC32G 29.7 GiB
       [    4.356263] OF: graph: no port node found in /axi/display@fd4a0000
       [    4.364327]  mmcblk0: p1 p2 p3
       [    4.366714] xlnx-drm xlnx-drm.0: bound fd4a0000.display (ops 0xffffffc010ffd810)
@@ -522,7 +510,7 @@ Messages
       [    5.487794] ahci-ceva fd0c0000.ahci: supply phy not found, using dummy regulator
       [    5.495253] ahci-ceva fd0c0000.ahci: supply target not found, using dummy regulator
       [    5.503090] ahci-ceva fd0c0000.ahci: AHCI 0001.0301 32 slots 2 ports 6 Gbps 0x3 impl platform mode
-      [    5.512046] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst 
+      [    5.512046] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst
       [    5.522740] scsi host0: ahci-ceva
       [    5.526342] scsi host1: ahci-ceva
       [    5.529770] ata1: SATA max UDMA/133 mmio [mem 0xfd0c0000-0xfd0c1fff] port 0x100 irq 45
@@ -634,11 +622,6 @@ Messages
       [    9.165974] systemd-journald[174]: Received client request to flush runtime journal.
       [   10.668817] random: crng init done
 
-
-   .. raw:: html
-
-      </details>
-
 .. raw:: html
 
    </details>
@@ -649,10 +632,7 @@ Make sure all devices are present
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

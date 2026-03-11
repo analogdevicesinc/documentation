@@ -55,8 +55,8 @@ Hardware Requirements
 System Block Diagram
 --------------------
 
-| |image1|
-|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/optoa2b.png
+   :align: center
 
 .. note::
 
@@ -66,8 +66,10 @@ System Block Diagram
 OptoA2B Setup
 -------------
 
-| |image2|
-| OptoA\ :sup:`2`\ B main and DUT are present inside the EMC chamber while A\ :sup:`2`\ B Bus Analyzer and optoA\ :sup:`2`\ B sub are outside the chamber.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/actual_optoa2b.png
+   :align: center
+
+OptoA\ :sup:`2`\ B main and DUT are present inside the EMC chamber while A\ :sup:`2`\ B Bus Analyzer and optoA\ :sup:`2`\ B sub are outside the chamber.
 
 A2B Analyzer Settings
 ---------------------
@@ -84,14 +86,14 @@ Procedure to run a Branch Network (Opto A2B) from ADI A\ :sup:`2`\ B Analyzer:
    -  Drag an analyzer platform from the toolbox and change into main node.
 
 
-   |image3|
+   |image1|
 
    -  Drag a OptoA2B platform from Toolbox.
 
 ::
 
      *{{:resources:tools-software:a2b-bus-analyzer:optoa2b_treetoolbox_.png|}}
-   * Drag a A2B sub node as DUT & connect to branching chain and save the project. 
+   * Drag a A2B sub node as DUT & connect to branching chain and save the project.
      *{{:resources:tools-software:a2b-bus-analyzer:a2b_platform.png  |}}
    * One-click procedure: Press Link-Compile-Download button in SigmaStudio+. SigmaStudio+ will launch the A2B Bus Analyzer automatically and discover the primary chain via .Dat file and secondary chain via command list.
 
@@ -110,8 +112,11 @@ Procedure to run a Branch Network (Opto A2B) from ADI A\ :sup:`2`\ B Analyzer:
    Once the primary chain is discovered, each secondary chain commands are taken as individual branch transactions with its own CHIP, NODEADR and PERI transactions as show below.
 
 
-| |image4|
-| ===== APPENDIX =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/optoa2b_transaction.png
+   :align: center
+
+APPENDIX
+--------
 
 Jumper Settings
 ~~~~~~~~~~~~~~~
@@ -168,7 +173,4 @@ A2B Sub node DUT (in the current example – AD2428WD1BZ is used as Sub node DUT
 | JP19 (1961 BCLK)   | 2-3       | ADAU1761 MCLK from AD2428_BCLK                                                                  |
 +--------------------+-----------+-------------------------------------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/optoa2b.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/actual_optoa2b.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/analyzer_platform.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/optoa2b_transaction.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/analyzer_platform.png

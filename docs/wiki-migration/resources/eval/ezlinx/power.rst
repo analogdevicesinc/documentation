@@ -1,9 +1,10 @@
-| 
-| :doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
-| ====== ezLINX™ Power Supply Implementation ======
+:doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
+
+ezLINX™ Power Supply Implementation
+===================================
 
 Power Input
-===========
+-----------
 
 An AC/DC desktop power supply is used to supply 7.5V input to the barrel connector J1 on the *ez*\ LINX hardware. This supply connects through a protection circuit as shown in Figure 1 below to the UNREG_IN node of the circuit.
 
@@ -13,7 +14,7 @@ An AC/DC desktop power supply is used to supply 7.5V input to the barrel connect
    :width: 500px
 
 3.3V Power Supply
-=================
+-----------------
 
 The ADP1864 Constant Frequency Current-Mode Step-Down DC-to-DC Controller is used with an external P-Channel Mosfet to generate the regulated 3.3V Power Supply for the *ez*\ LINX hardware. The circuit implementation of the 3.3V power supply is shown in below in Figure 2.
 
@@ -23,7 +24,7 @@ The ADP1864 Constant Frequency Current-Mode Step-Down DC-to-DC Controller is use
    :width: 500px
 
 1.2V, 2.5V and 5V Power Supplies
-================================
+--------------------------------
 
 A P-Channel mosfet is used to regulate the 3.3V input to 1.2V, See Figure 3 below.
 

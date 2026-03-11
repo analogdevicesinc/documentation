@@ -23,7 +23,7 @@ Software Configuration
 
 On the Yocto, Configure the linux-kernel as below to set the USB controller in Gadget only mode, and enable the USB Gadget Filesystem relevant options.
 
-.. code:: c++
+.. code:: console
 
    $ bitbake linux-adi -c menuconfig
 
@@ -35,14 +35,14 @@ On the Yocto, Configure the linux-kernel as below to set the USB controller in G
        [*] USB support  --->
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Gadget only mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                    <*>   USB Gadget Support  --->
 
-\**Configure the Gadget Filesyetm support \*\*
+**Configure the Gadget Filesyetm support**
 
 .. code:: shell
 
@@ -51,7 +51,7 @@ On the Yocto, Configure the linux-kernel as below to set the USB controller in G
        [*] USB support  --->
                    <*>   USB Gadget Support  --->
                          <M>   USB Gadget precomposed configurations
-                         <M>     Gadget Filesystem   
+                         <M>     Gadget Filesystem
 
 --------------
 
@@ -60,7 +60,7 @@ Example Usage
 
 **on the target Ez-Kit board**
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# modprobe gadgetfs
    gadgetfs: USB Gadget filesystem, version 24 Aug 2004
@@ -110,7 +110,7 @@ Please following the `usbtest <http://www.linux-usb.org/usbtest>`_ to get the re
 
 -  **run the gadget fs test**
 
-.. code:: c++
+.. code:: bash
 
    #!/bin/sh
    #set -x
@@ -132,10 +132,10 @@ Please following the `usbtest <http://www.linux-usb.org/usbtest>`_ to get the re
    }
 
    echo "Gadget fs bulk mode test "
-   for i in $(seq 1 8)  
-   do   
+   for i in $(seq 1 8)
+   do
    do_test $i
-   done 
+   done
 
    echo "Gadget fs control mode test "
    do_test 9
@@ -143,7 +143,7 @@ Please following the `usbtest <http://www.linux-usb.org/usbtest>`_ to get the re
 
 -  **Test log:**
 
-.. code:: c++
+.. code:: console
 
    test@madara:~$ sh usb_gadget_fs.sh
    usbtest                36864  0
@@ -173,7 +173,7 @@ Please following the `usbtest <http://www.linux-usb.org/usbtest>`_ to get the re
    ./testusb: /dev/bus/usb/002/040 may see only control tests
    /dev/bus/usb/002/040 test 10 --> 110 (Connection timed out)
 
-<fc #ff0000>\ **error log one board side**\ </fc>
+**error log one board side**
 
 .. code:: c++
 

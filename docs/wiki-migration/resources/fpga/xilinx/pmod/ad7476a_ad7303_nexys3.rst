@@ -20,10 +20,9 @@ Required Software
 Running Demo (SDK) Program
 --------------------------
 
-|
-
 .. tip::
 
+   
    | If you are not familiar with Nexys3 and/or Xilix tools, please visit
    | http://digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
 
@@ -60,10 +59,9 @@ Start the ChipScope Pro Analyzer provided with the Xilinx ISE Design Suite 13.2 
 Downloads
 =========
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | `Reference design source code <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/AD7303_AD7476.zip>`_
+   
+   `Reference design source code <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/AD7303_AD7476.zip>`_
 

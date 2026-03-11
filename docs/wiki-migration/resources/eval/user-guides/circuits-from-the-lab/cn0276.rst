@@ -136,7 +136,7 @@ Software Control and Indicator Descriptions
 ::
 
    -**Connect/Disconnect Button**
-   * When this button is clicked, the SDP-B Board USB connection to the CN-0276 Board status will be filliped.  A connection to the SDP-B Board must be made to use the software.   
+   * When this button is clicked, the SDP-B Board USB connection to the CN-0276 Board status will be filliped.  A connection to the SDP-B Board must be made to use the software.
    -**Start Button**
    * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
    -**Stop Button**
@@ -182,7 +182,7 @@ Establishing a USB Connection Link
    **C:\\Program Files\\Analog Devices\\CN0276\\CN0276.exe** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\CN0276\\CN0276.exe** *(in 64-bit operational system)*\
 
 
-\* Click the **Connect Button**. A window with a progress bar will load.
+- Click the **Connect Button**. A window with a progress bar will load.
 
 
 

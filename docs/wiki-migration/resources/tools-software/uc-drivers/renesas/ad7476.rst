@@ -1,7 +1,93 @@
 AD74xx - No-OS Driver for Renesas Microcontroller Platforms
 ===========================================================
 
-.. include:: ../ad7476.rst
+
+Supported Devices
+=================
+
+-  :adi:`AD7466`
+-  :adi:`AD7467`
+-  :adi:`AD7468`
+-  :adi:`AD7475`
+-  :adi:`AD7476`
+-  :adi:`AD7476A`
+-  :adi:`AD7477`
+-  :adi:`AD7477A`
+-  :adi:`AD7478`
+-  :adi:`AD7478A`
+-  :adi:`AD7495`
+
+Evaluation Boards
+=================
+
+-  `PmodAD1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1>`_
+-  :adi:`EVAL-AD7466`
+-  :adi:`EVAL-AD7476A`
+
+Reference Circuits
+==================
+
+-  :adi:`CN0178`
+
+Overview
+========
+
+
+The :adi:`AD7476`/:adi:`AD7477`/:adi:`AD7478` are, respectively, 12-bit, 10-bit, and 8-bit, high speed, low power, successive approximation ADCs. The parts operate from a single 2.35 V to 5.25 V power supply and feature throughput rates up to 1 MSPS. Each part contains a low noise, wide bandwidth track-and-hold amplifier that can handle input frequencies in excess of 6 MHz.
+
+The conversion process and data acquisition are controlled using CS the serial clock, allowing the devices to interface with microprocessors or DSPs. The input signal is sampled on the falling edge of CS and the conversion is initiated at this point. There are no pipeline delays associated with these parts.
+
+The :adi:`AD7476`/:adi:`AD7477`/:adi:`AD7478` use advanced design techniques to achieve very low power dissipation at high throughput rates. The reference for the parts is taken internally from VDD. This allows the widest dynamic input range to the ADC. Thus, the analog input range for the parts are 0 V to VDD. The conversion rate is determined by the SCLK.
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad7476_pmod_ad1.jpg
+   :align: center
+
+
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the AD74xx part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD74xx driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD74xx driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD74xx driver:
+
++------------------------------------------------------------------+--------------------------------------------------+
+| Function                                                         | Description                                      |
++==================================================================+==================================================+
+| char AD74xx_Init(char partNumber)                                | Initializes the device.                          |
++------------------------------------------------------------------+--------------------------------------------------+
+| void AD74xx_PowerDown(void)                                      | Powers down the device.                          |
++------------------------------------------------------------------+--------------------------------------------------+
+| void AD74xx_PowerUp(void)                                        | Powers up the device by performing a dummy read. |
++------------------------------------------------------------------+--------------------------------------------------+
+| unsigned short AD74xx_GetRegisterValue(void)                     | Reads the conversion value.                      |
++------------------------------------------------------------------+--------------------------------------------------+
+| float AD74xx_ConvertToVolts(unsigned short rawValue, float vRef) | Converts a raw sample to volts.                  |
++------------------------------------------------------------------+--------------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+
+
 
 **HW Platform(s):**
 
@@ -18,9 +104,9 @@ Downloads
    -  `AD74xx Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad74xx_generic.zip>`_
    -  `AD7476 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7476_rl78g13.zip>`_
    -  `AD7476 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7476_rx62n.zip>`_
-   -  \**AD74xx Driver: \*\* :git-no-OS:`drivers/adc/ad74xx`
-   -  \**PmodAD1 Demo for RL78G14: \*\* :git-no-OS:`Renesas/RL78G14/PmodAD1`
-   -  \**RL78G14 Common Drivers: \*\* :git-no-OS:`Renesas/RL78G14/Common`
+   -  **AD74xx Driver:** :git-no-OS:`drivers/adc/ad74xx`
+   -  **PmodAD1 Demo for RL78G14:** :git-no-OS:`Renesas/RL78G14/PmodAD1`
+   -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
 
@@ -58,15 +144,12 @@ PmodAD1 should not be inserted in the pmod connector like the other pmods becaus
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g13.jpg
    :align: center
 
-|
-
 .. important::
 
+   
+   -  The reference voltage for the AD7476 is 3.3V.
+   
 
-   ..
-
-| \* The reference voltage for the AD7476 is 3.3V.
-   |
 
 Reference Project Overview
 --------------------------
@@ -94,15 +177,11 @@ Renesas RL78G14 Quick Start Guide
 
 This section contains a description of the steps required to run the AD7476 demonstration project on a Renesas RL78G14 platform using the PmodAD1.
 
-.. _required-hardware-1:
-
 Required Hardware
 -----------------
 
 -  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`_
 -  `PmodAD1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1>`_
-
-.. _required-software-1:
 
 Required Software
 -----------------
@@ -117,8 +196,6 @@ Required Software
    
    All three parts have to be downloaded.
 
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -138,17 +215,12 @@ PmodAD1 should not be inserted in the pmod connector like the other pmods becaus
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g14.jpg
    :align: center
 
-|
-
 .. important::
 
+   
+   -  The reference voltage for the AD7476 is 3.3V.
+   
 
-   ..
-
-| \* The reference voltage for the AD7476 is 3.3V.
-   |
-
-.. _reference-project-overview-1:
 
 Reference Project Overview
 --------------------------
@@ -160,8 +232,6 @@ The reference project:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g14_screen.jpg
    :align: center
-
-.. _software-project-tutorial-1:
 
 Software Project Tutorial
 -------------------------
@@ -177,23 +247,17 @@ Renesas RX62N Quick Start Guide
 
 This section contains a description of the steps required to run the AD7476 demonstration project on a Renesas RX62N platform using the PmodAD1.
 
-.. _required-hardware-2:
-
 Required Hardware
 -----------------
 
 -  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
 -  `PmodAD1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1>`_
 
-.. _required-software-2:
-
 Required Software
 -----------------
 
 -  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
 -  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
-
-.. _hardware-setup-2:
 
 Hardware Setup
 --------------
@@ -210,8 +274,6 @@ A PmodAD1 has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/AD7476_RX62N.jpg
    :align: center
-
-.. _reference-project-overview-2:
 
 Reference Project Overview
 --------------------------
@@ -233,4 +295,12 @@ Software Project Setup
 More information
 ================
 
-.. include:: ../more-information.rst
+
+-  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
+

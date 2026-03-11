@@ -35,12 +35,7 @@ For those attending the PlutoSDR workshop at GRCon 2018, hosted by ADI, thanks. 
 
 The Workshops are on Tuesday. If you would like to come by the booth, and check out things with your hardware on Monday during the expo hours, it would be appreciated. Also - attending Michael Hennerich's discussion on *ARM PlutoSDR With Custom Applications* Monday afternoon is highly recommended.
 
-.. important::
-
-   If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions
-
-
-.
+If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions .
 
 Slides and Labs
 ===============

@@ -23,9 +23,9 @@ ADIS16COM1/PCBZ
 
 Personal Computer
 
-\* Windows
+- Windows
 
-\* Net Framework 3.5
+- Net Framework 3.5
 
 DEMO SYSTEM
 -----------
@@ -76,8 +76,6 @@ This section is a continuation and focuses on :adi:`ADIS16229AMLZ <ADIS16229>` s
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-asy1.png
    :width: 800px
 
-.. _step-1-1:
-
 Step #1
 ~~~~~~~
 
@@ -89,8 +87,6 @@ The :adi:`ADIS16229AMLZ <ADIS16229>` module is a 47.0x37.6x22.6mm PCB structure 
 
    **WARNING:** Make sure the connector cable and the battery are installed correctly or the :adi:`ADIS16229AMLZ <ADIS16229>` may be damaged.
 
-
-.. _step-2-1:
 
 Step #2
 ~~~~~~~
@@ -164,7 +160,7 @@ When the user clicks on **ok** in the above message, the main window with an act
 
 .. container:: center round box
 
-   <fc #800000>\ **Error Messages:** </fc>
+   **Error Messages:**
 
    
    The application would fail to start in the event of no USB connection to the Evaluation board. When the user sees the following error message, Ensure that ADIS16000 is connected to the Eval Board.
@@ -207,7 +203,7 @@ A sensor was successfully added to the network. User can start a FFT capture fro
 Automatic/Period Mode
 ---------------------
 
-In order to change the mode from Manual to Periodic FFT, the drop down box needs to be clicked and appropriate mode can be selected as shown below. Automatic mode is started with a default update interval of 2 secs. The automatic or periodic mode can be stopped by double clicking **<fc #800000>Esc key</fc>** twice by the user. The user is required to do this to take control of the application in Periodic mode.
+In order to change the mode from Manual to Periodic FFT, the drop down box needs to be clicked and appropriate mode can be selected as shown below. Automatic mode is started with a default update interval of 2 secs. The automatic or periodic mode can be stopped by double clicking **Esc key** twice by the user. The user is required to do this to take control of the application in Periodic mode.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-periodic-fft.png
    :align: center
@@ -244,9 +240,9 @@ Sensor node can be updated in a 4 step process..
    :align: center
    :width: 600px
 
-<fc #800000>\ **Sensor Reconfiguration in Periodic mode**\ </fc>
+**Sensor Reconfiguration in Periodic mode**
 
-The user can alternately use Register access to set up the periodic mode. When a remote sensor is set up in periodic mode using Register access and data collection is started, the sensor can be stopped only by writing **0x800** to the <fc #800000>\ **COMMAND_S**\ </fc> register in the corresponding sensor page. **Writing 0x02 to COMMAND_16K should not be issued** to stop periodic mode. When the sensor is in periodic mode, it wakes up and updates the Gateway with the new data and also checks if any of its configuration had been changed by the user since its last update.
+The user can alternately use Register access to set up the periodic mode. When a remote sensor is set up in periodic mode using Register access and data collection is started, the sensor can be stopped only by writing **0x800** to the **COMMAND_S** register in the corresponding sensor page. **Writing 0x02 to COMMAND_16K should not be issued** to stop periodic mode. When the sensor is in periodic mode, it wakes up and updates the Gateway with the new data and also checks if any of its configuration had been changed by the user since its last update.
 
 <blockquote> **If a stop command(0x800) is issued in COMMAND_S of the respective sensor page of Gateway, then the sensor reads the stop command and stops going further into sleep. The part puts itself in manual periodic mode and waits to get more commands for further action.** </blockquote>
 

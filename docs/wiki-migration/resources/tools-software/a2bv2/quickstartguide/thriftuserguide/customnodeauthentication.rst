@@ -5,12 +5,11 @@ Custom Node Authentication
 
 This API is used for the enabling or disabling the Custom Node Authentication along with settings for Sub nodes in A2B network. It takes element Uid and customAuthentication info as arguments and returns SSPResult.
 
-| **API:**
-| SSPResult EnableCustomAuth(string elementUid, AnalogDevices.SigmaStudio.Scripting.ADI_A2B_CUSTOM_ID customAuth);
+**API:** SSPResult EnableCustomAuth(string elementUid, AnalogDevices.SigmaStudio.Scripting.ADI_A2B_CUSTOM_ID customAuth);
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Sub Node
+**Arguments:**
 
+-  “elementUid” = UID of the A2B Sub Node
 -  “customAuth” = Custom Authentication configuration contains below parameters as shown below
 
    -  BEnableNodeId – For enabling/disabling Custom Node Identifier of specified Sub node
@@ -26,18 +25,17 @@ This API is used for the enabling or disabling the Custom Node Authentication al
       -  NRetryCnt – No.of retry count
       -  NMaxTimeOut – Maximum timeout when reading from Mailbox
 
-| **Result:**
-| SSPResult contains 'IsSuccess' flag and 'Message' information of EnableCustomAuth action.
+**Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of EnableCustomAuth action.
 
 -  IsSuccess is set to 'True' if the EnableCustomAuth was successful else 'False'.
 -  Message contains the Success/Failure information in the form of list of string.
 
-| **CSharp Example:**
-| ADI_A2B_CUSTOM_ID oCustomAuth = new ADI_A2B_CUSTOM_ID();
+**CSharp Example:**
 
 ::
 
-   oCustomAuth.BEnableNodeId = true; 
+   ADI_A2B_CUSTOM_ID oCustomAuth = new ADI_A2B_CUSTOM_ID();
+   oCustomAuth.BEnableNodeId = true;
    oCustomAuth.BReadFromGpio = true;
    oCustomAuth.BReadFromMailbox = true;
    oCustomAuth.AGpioVal = new byte[8] { 1, 1, 1, 1, 1, 1, 1, 1 };
@@ -50,11 +48,11 @@ This API is used for the enabling or disabling the Custom Node Authentication al
    oCustomAuth.NMaxTimeOut = 100;
    _result = client.EnableCustomAuth("AD243xSubNode_1", oCustomAuth);
 
-| **Python Example:**
-| CustomNodeAuth = ADI_A2B_CUSTOM_ID()
+**Python Example:**
 
 ::
 
+   CustomNodeAuth = ADI_A2B_CUSTOM_ID()
    CustomNodeAuth.bEnableNodeId = True
    CustomNodeAuth.bReadFromMem = True
    CustomNodeAuth.NodeId = bytearray([49, 50, 51, 52, 53])

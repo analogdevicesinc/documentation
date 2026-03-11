@@ -55,10 +55,10 @@ The MATLAB bindings follow the `C++ API <https://analogdevicesinc.github.io/libm
        This content is from the external library documentation.
 
        Inputs
-         obj            read-only clib.libm2k.libm2k.analog.M2kAnalogIn  
+         obj            read-only clib.libm2k.libm2k.analog.M2kAnalogIn
 
        Outputs
-         RetVal         clib.array.libm2k.Double  
+         RetVal         clib.array.libm2k.Double
          The list of available samplerates for this device
 
 This can be done through the class definitions or even created objects:
@@ -67,7 +67,7 @@ This can be done through the class definitions or even created objects:
 
    >> m2k = clib.libm2k.libm2k.context.m2kOpen()
 
-   m2k = 
+   m2k =
 
      M2k with no properties.
 
@@ -76,15 +76,15 @@ This can be done through the class definitions or even created objects:
 
     clib.libm2k.libm2k.context.M2k    Representation of C++ class libm2k::context::M2k.
        Contains the representation of the M2k
-       
+
        @class M2k
        @brief Controls the ADALM2000
 
        This content is from the external library documentation.
-       
+
        @defgroup m2k M2k
        @brief Contains the representation of the M2k
-       
+
        @class M2k
        @brief Controls the ADALM2000
 
@@ -95,8 +95,8 @@ Manual Build
 
 You require two main dependencies which have build/install instructions (make sure you are using compatible versions):
 
--  `libiio </>resources/tools-software/linux-software/libiio>`__
--  `libm2k </>university/tools/m2k/libm2k/libm2k>`__
+-  :doc:`libiio </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libm2k </wiki-migration/university/tools/m2k/libm2k/libm2k>`
 
 Once these are built and installed the MATLAB bindings can be built. To do this follow these steps:
 

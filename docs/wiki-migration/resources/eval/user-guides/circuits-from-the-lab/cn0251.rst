@@ -61,14 +61,14 @@ Connecting the Hardware
 
    |image2|
 
--  Connect the :adi:`ADALM2000 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM2000.html#eb-overview>` to the :adi:`EVAL-CN0251-SDPZ` **(CN-0251 Board)** as depicted in the figures below.
-
+      \* Connect the :adi:`ADALM2000 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM2000.html#eb-overview>` to the :adi:`EVAL-CN0251-SDPZ` **(CN-0251 Board)** as depicted in the figures below.
    -  The waveform outputs should be connected to **J1:2 (IN1-)** and **J1:3 (IN2+)** of the **CN-0251 Board**.
    -  The :adi:`ADALM2000 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM2000.html#eb-overview>` ground should be connected to **AGND** of the **CN-0251 Board**.
 
    |image3|
 
--  Connect the +6V Power Supply to the screw terminal at **J3**.
+      \* Connect the +6V Power Supply to the screw terminal at **J3**.
+
 -  Connect the ±15V Power Supply to the screw terminal at **J4**.
 -  Connect the **SDP-B Board** to the **CN-0251 Board**
 
@@ -101,11 +101,11 @@ Software Control and Indicator Descriptions
 ::
 
    -**Connect/Reconnect Button**
-   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0288 Board.  A connection to the SDP-B Board must be made to use the software.   
+   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0288 Board.  A connection to the SDP-B Board must be made to use the software.
    -**Capture Data Button**
    * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
    -**Save Data Button**
-   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file. 
+   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
    -**Control Tabs**
    * __Data__ - Clicking this tab brings the data collection chart to the front.
    * __Analysis__ - Clicking this tab brings the data analysis histogram to the front.
@@ -149,13 +149,13 @@ Establishing a USB Connection Link
    **C:\\Program Files\\Analog Devices\\CN0251\\CN0251.exe**\
 
 
--  Click the **Connect/Reconnect Button**. A window with a progress bar will load.
+- Click the **Connect/Reconnect Button**. A window with a progress bar will load.
 
 
 
 |image6|
 
--  Upon success, the **System Status String Indicator** will display *Ready to Capture Data*
+   \* Upon success, the **System Status String Indicator** will display *Ready to Capture Data*
 
 --------------
 
@@ -193,7 +193,7 @@ Saving Data to a Spreadsheet File
 -  Name the file.
 -  Click the **OK Button**.
 
-|
+
 
 .. note::
 

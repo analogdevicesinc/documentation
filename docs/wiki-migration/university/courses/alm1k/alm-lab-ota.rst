@@ -35,15 +35,7 @@ Part 1:
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less Breadboard and jumper wire kit
-| 1 CD4007 (CMOS array)
-| 2 ZVN2110A NMOS transistors (or similar)
-| 1 68 KΩ resistor
-| 1 10 KΩ resistor
-| 1 0.01 uF capacitor
-| 3 2N3904 NPN transistors
-| 1 2N3906 PNP transistor
+ADALM1000 hardware module Solder-less Breadboard and jumper wire kit 1 CD4007 (CMOS array) 2 ZVN2110A NMOS transistors (or similar) 1 68 KΩ resistor 1 10 KΩ resistor 1 0.01 uF capacitor 3 2N3904 NPN transistors 1 2N3906 PNP transistor
 
 Directions:
 ~~~~~~~~~~~
@@ -78,8 +70,6 @@ Questions:
 
 What is the gain from the input source, CA-V, to the output CB-H seen at the OTA output? Which components set this gain and why? Probe the voltage at the gate of M6. What is the DC and AC values of the waveform?
 
-.. _directions-1:
-
 Directions:
 ~~~~~~~~~~~
 
@@ -94,14 +84,10 @@ Add the complementary NPN, PNP emitter follower output stage to the OTA circuit 
    Figure 2, Push-Pull output stage added
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Configure the channel A voltage generator CA-V for a 200 Hz sine wave with 2.4 V Min value and 2.7 V Max value. Channel B is set in the Hi-Z mode. Both scope channels should be set to 0.5V/Div.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -109,8 +95,6 @@ Procedure:
 On the output you should see the same inverted version of the input with an approximately 6.8 times larger amplitude as you got from the circuit in figure 1. Slowly increase the amplitude of the input sine wave until the output saturates ( clips ). Record the minimum and maximum output swing that can be achieved. Explain why it is different from what you measured for figure 1.
 
 Again with the input amplitude set to slightly less than where the output saturates change the input waveform to a square wave. Measure the rise and fall times for the output waveform. Repeat the measurements with a second 0.01 uF capacitor in parallel with C\ :sub:`1`, doubling its value. Explain any differences you see.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -152,17 +136,10 @@ The transient time domain simulation of the inverting configuration is shown in 
    Figure 4s, Simulation Waveforms.
 
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 CD4007 (CMOS array)
-| 1 ZVN2110A NMOS transistor
-| 1 ZVP2110A NMOS transistor
-| 2 100 kΩ resistors
-| 1 22 kΩ resistor
-| 1 0.001 uF capacitor
+1 CD4007 (CMOS array) 1 ZVN2110A NMOS transistor 1 ZVP2110A NMOS transistor 2 100 kΩ resistors 1 22 kΩ resistor 1 0.001 uF capacitor
 
 Hardware Directions:
 ~~~~~~~~~~~~~~~~~~~~
@@ -222,7 +199,6 @@ In figure 8 we probe the voltage at the bias node (with BIN as orange trace), ga
 
 **For Further Reading:**
 
-| [1] Bazes, Mel, "Two novel fully complementary self-biased CMOS differential amplifiers”, IEEE Journal of Solid State Circuits, 26.2 (1991): pg. 165-168.
-| `Operational transconductance amplifier <https://en.wikipedia.org/wiki/Operational_transconductance_amplifier>`_
+[1] Bazes, Mel, "Two novel fully complementary self-biased CMOS differential amplifiers”, IEEE Journal of Solid State Circuits, 26.2 (1991): pg. 165-168. `Operational transconductance amplifier <https://en.wikipedia.org/wiki/Operational_transconductance_amplifier>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/electronics>`

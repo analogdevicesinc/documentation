@@ -43,16 +43,12 @@ Setting up the board
 
 In order to power up the board the "*grid connector*" must be connected to a single phase 230V AC line. A 3-wire cable rated at 16A is the minimum acceptable. The output can be connected to an EVSE test adapter, a type 2 cable (and EV) or it can be left disconnected for the first-time power up or for programming. The prog/debug connector which is a 10-pin ARM Cortex debug connector must be connected to a programmer e.g. :adi:`MAX32625PICO` MAXDAP DAPLink programmer based on the :adi:`MAX32625` through a cable in case a firmware update is available. The MAXDAP can be also used to read the debug messages during the development stage. The messages are sent via RS-232. The UART device ID is 0 with the following settings (57600 8N1). In the following figure the messages received on a computer connected to the board through the MAXDAP with the debug print option being active are presented.
 
-.. _revision-a-1:
-
 Revision A
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/debug_message_self_test.png
    :align: center
    :width: 400px
-
-.. _revision-d-1:
 
 Revision D
 ~~~~~~~~~~
@@ -63,16 +59,12 @@ Revision D
 
 After the self-test finishes a charging session can be initiated by the EV or the device connected to the "*EV connector*". The following image presents the debug messages received during a charging session.
 
-.. _revision-a-2:
-
 Revision A
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/debug_message_charging_session.png
    :align: center
    :width: 400px
-
-.. _revision-d-2:
 
 Revision D
 ~~~~~~~~~~

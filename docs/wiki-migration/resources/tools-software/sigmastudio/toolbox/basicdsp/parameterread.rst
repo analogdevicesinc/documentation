@@ -1,15 +1,21 @@
 Parameter Read
 ==============
 
-| :doc:`Click here to return to the Basic DSP. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| \|\| This module can be used to read any parameter in the schematic and get the value in the output pin.
-| |image1|
+:doc:`Click here to return to the Basic DSP. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+
+This module can be used to read any parameter in the schematic and get the value in the output pin.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/paramread.png
+   :align: center
 
 Input Pins
 ----------
 
-| None
-| ===== Output Pins =====
+None
+
+Output Pins
+-----------
 
 +---------------+------------------------------------+---------------------------------------------+
 | Name          | Format [int/dec] - [control/audio] | Function Description                        |
@@ -22,11 +28,15 @@ Input Pins
 Grow Algorithm
 --------------
 
-| Not supported
-| ===== Configurations ===== After adding the module. Press 'Link compile connect' once to ensure all the addresses are proper. Then click on the select button to open the following window.
+Not supported
 
-| 
-| |image2|
+Configurations
+--------------
+
+After adding the module. Press 'Link compile connect' once to ensure all the addresses are proper. Then click on the select button to open the following window.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/paramreadwnd.jpg
+   :align: center
 
 +------------------+----------------+----------------+---------------------------------------------------------------------------------------------------------------+
 | GUI Control Name | Default Value  | Range          | Function Description                                                                                          |
@@ -45,27 +55,22 @@ Grow Algorithm
 DSP Parameter Information
 -------------------------
 
-+------------------+-------------------------------------------------------------------------+--------------------------+
-| GUI Control Name | Compiler Name                                                           | Function Description     |
-+==================+=========================================================================+==========================+
-| Address          | <fc #008000>ParamReadAlg</fc><fc #ff0000>1</fc><fc #000080>Address</fc> | Address of the parameter |
-+------------------+-------------------------------------------------------------------------+--------------------------+
-| offset           | <fc #008000>ParamReadAlg</fc><fc #ff0000>1</fc><fc #000080>Offset</fc>  | Offeset from address     |
-+------------------+-------------------------------------------------------------------------+--------------------------+
-| type             | <fc #008000>ParamReadAlg</fc><fc #ff0000>1</fc><fc #000080>Type</fc>    | 0 - float, 1- int        |
-+------------------+-------------------------------------------------------------------------+--------------------------+
+================ ==================== ========================
+GUI Control Name Compiler Name        Function Description
+================ ==================== ========================
+Address          ParamReadAlg1Address Address of the parameter
+offset           ParamReadAlg1Offset  Offeset from address
+type             ParamReadAlg1Type    0 - float, 1- int
+================ ==================== ========================
 
-| 
+
 | Here,
 
--  <fc #008000> Green</fc> - Algorithm Name
--  <fc #ff0000> Red</fc> - Instance Number (Changes for each instance)
--  <fc #000080> Blue</fc> - Parameter Name
+-   Green - Algorithm Name
+-   Red - Instance Number (Changes for each instance)
+-   Blue - Parameter Name
 
 Supported ICs
 -------------
 
 -  SC5xx
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/paramread.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/paramreadwnd.jpg

@@ -30,20 +30,7 @@ In theory this circuit can be built using almost any three terminal voltage refe
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 4.7 KΩ resistor
-| 2 - 1.5 KΩ resistors
-| 2 - 20 KΩ resistors
-| 1 - 2.2 KΩ resistor
-| 1 - 100 Ω resistor
-| 1 - 10 KΩ variable resistor (potentiometer)
-| 4 - small signal NPN transistors (2N3904 and SSM2212)
-| 2 - LEDs (any color will do)
-| 1 - OP482 or OP484 quad op-amp
-| 1 - 1 nF Capacitor
-| 2 - 0.01 uF Capacitors
-| 2 - 0.1uF Capacitors ( supply decoupling capacitors for + and - 5 V supplies )
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 4.7 KΩ resistor 2 - 1.5 KΩ resistors 2 - 20 KΩ resistors 1 - 2.2 KΩ resistor 1 - 100 Ω resistor 1 - 10 KΩ variable resistor (potentiometer) 4 - small signal NPN transistors (2N3904 and SSM2212) 2 - LEDs (any color will do) 1 - OP482 or OP484 quad op-amp 1 - 1 nF Capacitor 2 - 0.01 uF Capacitors 2 - 0.1uF Capacitors ( supply decoupling capacitors for + and - 5 V supplies )
 
 Directions Step 1:
 ------------------
@@ -106,8 +93,6 @@ Modify your breadboard setup from step 1 as shown in figure 3. Be sure to turn o
    Figure 5 NPN shunt band-gap reference example
 
 
-.. _hardware-setup-1:
-
 Hardware setup:
 ---------------
 
@@ -120,8 +105,6 @@ The setup is the same as step 1.
 
    Figure 6 LED based volt regulator example
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -149,8 +132,6 @@ Modify your breadboard setup from step 1 as shown in figure 4. Be sure to turn o
    Figure 7 NPN three terminal band-gap reference example
 
 
-.. _hardware-setup-2:
-
 Hardware setup:
 ---------------
 
@@ -163,8 +144,6 @@ The setup is the same as step 1.
 
    Figure 8 LED based volt regulator example
 
-
-.. _procedure-2:
 
 Procedure:
 ----------
@@ -187,13 +166,7 @@ Repeat the supply headroom tests you did in Step 2 for this configuration. Are t
 For further reading:
 ~~~~~~~~~~~~~~~~~~~~
 
-| [1] :doc:`Activity: Zener Diode Regulator </wiki-migration/university/courses/electronics/electronics-lab-26>`, :doc:`EPS Activity: Zener Diode Regulator </wiki-migration/university/courses/eps/zener-regulator>`
-| [2] :doc:`Activity 9. Regulated Voltage Reference </wiki-migration/university/courses/electronics/electronics-lab-9>`
-| [3] :doc:`Activity 10. Shunt regulator </wiki-migration/university/courses/electronics/electronics-lab-10>`
-| [4] :doc:`EPS Activity: The Band-Gap Voltage Reference </wiki-migration/university/courses/eps/band-gap-regulator>`
-| [5] :doc:`Activity 7. Zero gain amplifier (BJT) </wiki-migration/university/courses/electronics/electronics-lab-7>`
-| [6] :doc:`Activity 8. Stabilized current source (BJT) </wiki-migration/university/courses/electronics/electronics-lab-8>`
-| :adi:`OP482` datasheet
+[1] :doc:`Activity: Zener Diode Regulator </wiki-migration/university/courses/electronics/electronics-lab-26>`, :doc:`EPS Activity: Zener Diode Regulator </wiki-migration/university/courses/eps/zener-regulator>` [2] :doc:`Activity 9. Regulated Voltage Reference </wiki-migration/university/courses/electronics/electronics-lab-9>` [3] :doc:`Activity 10. Shunt regulator </wiki-migration/university/courses/electronics/electronics-lab-10>` [4] :doc:`EPS Activity: The Band-Gap Voltage Reference </wiki-migration/university/courses/eps/band-gap-regulator>` [5] :doc:`Activity 7. Zero gain amplifier (BJT) </wiki-migration/university/courses/electronics/electronics-lab-7>` [6] :doc:`Activity 8. Stabilized current source (BJT) </wiki-migration/university/courses/electronics/electronics-lab-8>` :adi:`OP482` datasheet
 
 Return to Lab Activity :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 

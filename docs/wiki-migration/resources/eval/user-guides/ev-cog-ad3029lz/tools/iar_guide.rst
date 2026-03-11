@@ -1,7 +1,7 @@
 EV-COG-AD3029LZ with IAR Embedded Workbench for ARM
 ===================================================
 
-First, install mBed windows serial driver from [[https://developer.mbed.org/handbook/Windows-serial-configuration%7Chttps://developer.mbed.org/handbook/Windows-serial-configuration]]
+First, install mBed windows serial driver from https://developer.mbed.org/handbook/Windows-serial-configuration
 
 IDE Setup
 ---------

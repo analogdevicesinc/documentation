@@ -110,13 +110,13 @@ Before the board power-up, the user has to choose the required device interface 
 
 In case of the **SERIAL** interface:
 
-.. code:: c
+.. code:: console
 
    $ make SER_PAR_N=1
 
 In case of the **PARALLEL** interface:
 
-.. code:: c
+.. code:: console
 
    $ make SER_PAR_N=0
 
@@ -233,8 +233,6 @@ SDP-K1 setup
    Make sure to power both :adi:`EVAL-AD7616` and :adi:`SDP-K1` via the barrel jack connector
 
 
-.. _eval-ad7616-jumper-setup-1:
-
 EVAL-AD7616 Jumper setup
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -273,8 +271,6 @@ Fly-wire connection
 | BUSY                                                 | D6                                                 |
 +------------------------------------------------------+----------------------------------------------------+
 
-.. _no-os-downloads-1:
-
 No-OS Downloads
 ~~~~~~~~~~~~~~~
 
@@ -293,13 +289,13 @@ No-OS project build
 
 To build the project, just run:
 
-.. code:: c
+.. code:: console
 
    $ make
 
 To flash, run:
 
-.. code:: c
+.. code:: console
 
    $ make run
 
@@ -358,134 +354,147 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``enum ad7616_mode {                                                         |
+    enum ad7616_mode {
+     AD7616_SW,
+     AD7616_HW,
+    };
 
-|     AD7616_SW,                                                               |
-|     AD7616_HW,                                                               |
-| };                                                                           |
-|                                                                              |
-| enum ad7616_interface {                                                      |
-|     AD7616_SERIAL,                                                           |
-|     AD7616_PARALLEL,                                                         |
-| };                                                                           |
-|                                                                              |
-| enum ad7616_ch {                                                             |
-|     AD7616_VA0,                                                              |
-|     AD7616_VA1,                                                              |
-|     AD7616_VA2,                                                              |
-|     AD7616_VA3,                                                              |
-|     AD7616_VA4,                                                              |
-|     AD7616_VA5,                                                              |
-|     AD7616_VA6,                                                              |
-|     AD7616_VA7,                                                              |
-|     AD7616_VA_VCC,                                                           |
-|     AD7616_VA_ALDO,                                                          |
-|     AD7616_VA_RESERVED1,                                                     |
-|     AD7616_VA_SELF_TEST,                                                     |
-|     AD7616_VA_RESERVED2,                                                     |
-|     AD7616_VB0,                                                              |
-|     AD7616_VB1,                                                              |
-|     AD7616_VB2,                                                              |
-|     AD7616_VB3,                                                              |
-|     AD7616_VB4,                                                              |
-|     AD7616_VB5,                                                              |
-|     AD7616_VB6,                                                              |
-|     AD7616_VB7,                                                              |
-|     AD7616_VB_VCC,                                                           |
-|     AD7616_VB_ALDO,                                                          |
-|     AD7616_VB_RESERVED1,                                                     |
-|     AD7616_VB_SELF_TEST,                                                     |
-|     AD7616_VB_RESERVED2,                                                     |
-| };                                                                           |
-|                                                                              |
-| enum ad7616_range {                                                          |
-|     AD7616_2V5 = 1,                                                          |
-|     AD7616_5V  = 2,                                                          |
-|     AD7616_10V = 3,                                                          |
-| };                                                                           |
-|                                                                              |
-| enum ad7616_osr {                                                            |
-|     AD7616_OSR_0,                                                            |
-|     AD7616_OSR_2,                                                            |
-|     AD7616_OSR_4,                                                            |
-|     AD7616_OSR_8,                                                            |
-|     AD7616_OSR_16,                                                           |
-|     AD7616_OSR_32,                                                           |
-|     AD7616_OSR_64,                                                           |
-|     AD7616_OSR_128,                                                          |
-| };                                                                           |
-|                                                                              |
-| struct ad7616_dev {                                                          |
-|     /* SPI */                                                                |
-|     struct no_os_spi_desc       *spi_desc;                                   |
-|     struct spi_engine_offload_init_param *offload_init_param;                |
-|     uint32_t reg_access_speed;                                               |
-|     uint8_t crc;                                                             |
-|     /* GPIO */                                                               |
-|     struct no_os_gpio_desc  *gpio_hw_rngsel0;                                |
-|     struct no_os_gpio_desc  *gpio_hw_rngsel1;                                |
-|     struct no_os_gpio_desc  *gpio_reset;                                     |
-|     struct no_os_gpio_desc  *gpio_os0;                                       |
-|     struct no_os_gpio_desc  *gpio_os1;                                       |
-|     struct no_os_gpio_desc  *gpio_os2;                                       |
-|     struct no_os_gpio_desc  *gpio_convst;                                    |
-|     struct no_os_gpio_desc  *gpio_busy;                                      |
-|     /* AXI Core */                                                           |
-|     uint32_t core_baseaddr;                                                  |
-|     /* Device Settings */                                                    |
-|     enum ad7616_interface   interface;                                       |
-|     enum ad7616_mode            mode;                                        |
-|     enum ad7616_range       va[8];                                           |
-|     enum ad7616_range       vb[8];                                           |
-|     enum ad7616_osr         osr;                                             |
-|     void (*dcache_invalidate_range)(uint32_t address, uint32_t bytes_count); |
-|     /* Sequencer and burst mode */                                           |
-|     uint8_t layers_nb;                                                       |
-| };                                                                           |
-|                                                                              |
-| struct ad7616_init_param {                                                   |
-|     /* SPI */                                                                |
-|     struct no_os_spi_init_param     *spi_param;                              |
-|     struct spi_engine_offload_init_param *offload_init_param;                |
-|     uint32_t reg_access_speed;                                               |
-|     uint8_t crc;                                                             |
-|     /* GPIO */                                                               |
-|     struct no_os_gpio_init_param        *gpio_hw_rngsel0_param;              |
-|     struct no_os_gpio_init_param        *gpio_hw_rngsel1_param;              |
-|     struct no_os_gpio_init_param        *gpio_reset_param;                   |
-|     struct no_os_gpio_init_param        *gpio_os0_param;                     |
-|     struct no_os_gpio_init_param        *gpio_os1_param;                     |
-|     struct no_os_gpio_init_param        *gpio_os2_param;                     |
-|     struct no_os_gpio_init_param        *gpio_convst_param;                  |
-|     struct no_os_gpio_init_param        *gpio_busy_param;                    |
-|     /* Core */                                                               |
-|     uint32_t            core_baseaddr;                                       |
-|     /* Device Settings */                                                    |
-|     enum ad7616_mode            mode;                                        |
-|     enum ad7616_range       va[8];                                           |
-|     enum ad7616_range       vb[8];                                           |
-|     enum ad7616_osr         osr;                                             |
-|     void (*dcache_invalidate_range)(uint32_t address, uint32_t bytes_count); |
-| };                                                                           |
-|                                                                              |
-| struct ad7616_conversion_result {                                            |
-|     uint16_t channel_a;                                                      |
-|     uint16_t channel_b;                                                      |
-| };                                                                           |
-|                                                                              |
-| struct ad7616_sequencer_layer {                                              |
-|     enum ad7616_ch ch_a;                                                     |
-|     enum ad7616_ch ch_b;                                                     |
-| };``                                                                         |
-+------------------------------------------------------------------------------+
+::
+
+    enum ad7616_interface {
+     AD7616_SERIAL,
+     AD7616_PARALLEL,
+    };
+
+::
+
+    enum ad7616_ch {
+     AD7616_VA0,
+     AD7616_VA1,
+     AD7616_VA2,
+     AD7616_VA3,
+     AD7616_VA4,
+     AD7616_VA5,
+     AD7616_VA6,
+     AD7616_VA7,
+     AD7616_VA_VCC,
+     AD7616_VA_ALDO,
+     AD7616_VA_RESERVED1,
+     AD7616_VA_SELF_TEST,
+     AD7616_VA_RESERVED2,
+     AD7616_VB0,
+     AD7616_VB1,
+     AD7616_VB2,
+     AD7616_VB3,
+     AD7616_VB4,
+     AD7616_VB5,
+     AD7616_VB6,
+     AD7616_VB7,
+     AD7616_VB_VCC,
+     AD7616_VB_ALDO,
+     AD7616_VB_RESERVED1,
+     AD7616_VB_SELF_TEST,
+     AD7616_VB_RESERVED2,
+    };
+
+::
+
+    enum ad7616_range {
+     AD7616_2V5 = 1,
+     AD7616_5V  = 2,
+     AD7616_10V = 3,
+    };
+
+::
+
+    enum ad7616_osr {
+     AD7616_OSR_0,
+     AD7616_OSR_2,
+     AD7616_OSR_4,
+     AD7616_OSR_8,
+     AD7616_OSR_16,
+     AD7616_OSR_32,
+     AD7616_OSR_64,
+     AD7616_OSR_128,
+    };
+
+::
+
+    struct ad7616_dev {
+     /* SPI */
+     struct no_os_spi_desc       *spi_desc;
+     struct spi_engine_offload_init_param *offload_init_param;
+     uint32_t reg_access_speed;
+     uint8_t crc;
+     /* GPIO */
+     struct no_os_gpio_desc  *gpio_hw_rngsel0;
+     struct no_os_gpio_desc  *gpio_hw_rngsel1;
+     struct no_os_gpio_desc  *gpio_reset;
+     struct no_os_gpio_desc  *gpio_os0;
+     struct no_os_gpio_desc  *gpio_os1;
+     struct no_os_gpio_desc  *gpio_os2;
+     struct no_os_gpio_desc  *gpio_convst;
+     struct no_os_gpio_desc  *gpio_busy;
+     /* AXI Core */
+     uint32_t core_baseaddr;
+     /* Device Settings */
+     enum ad7616_interface   interface;
+     enum ad7616_mode            mode;
+     enum ad7616_range       va[8];
+     enum ad7616_range       vb[8];
+     enum ad7616_osr         osr;
+     void (*dcache_invalidate_range)(uint32_t address, uint32_t bytes_count);
+     /* Sequencer and burst mode */
+     uint8_t layers_nb;
+    };
+
+::
+
+    struct ad7616_init_param {
+     /* SPI */
+     struct no_os_spi_init_param     *spi_param;
+     struct spi_engine_offload_init_param *offload_init_param;
+     uint32_t reg_access_speed;
+     uint8_t crc;
+     /* GPIO */
+     struct no_os_gpio_init_param        *gpio_hw_rngsel0_param;
+     struct no_os_gpio_init_param        *gpio_hw_rngsel1_param;
+     struct no_os_gpio_init_param        *gpio_reset_param;
+     struct no_os_gpio_init_param        *gpio_os0_param;
+     struct no_os_gpio_init_param        *gpio_os1_param;
+     struct no_os_gpio_init_param        *gpio_os2_param;
+     struct no_os_gpio_init_param        *gpio_convst_param;
+     struct no_os_gpio_init_param        *gpio_busy_param;
+     /* Core */
+     uint32_t            core_baseaddr;
+     /* Device Settings */
+     enum ad7616_mode            mode;
+     enum ad7616_range       va[8];
+     enum ad7616_range       vb[8];
+     enum ad7616_osr         osr;
+     void (*dcache_invalidate_range)(uint32_t address, uint32_t bytes_count);
+    };
+
+::
+
+    struct ad7616_conversion_result {
+     uint16_t channel_a;
+     uint16_t channel_b;
+    };
+
+::
+
+    struct ad7616_sequencer_layer {
+     enum ad7616_ch ch_a;
+     enum ad7616_ch ch_b;
+    };
 
 No-OS IIO Driver Description
 ----------------------------
-
-.. _functions-declarations-1:
 
 Functions Declarations
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -497,8 +506,6 @@ Functions Declarations
 +---------------------------------------------------------------------------------------------+---------------------------------------+
 | ``int ad7616_iio_remove(struct ad7616_iio_dev *dev);``                                      | Remove AD7616                         |
 +---------------------------------------------------------------------------------------------+---------------------------------------+
-
-.. _types-declarations-1:
 
 Types Declarations
 ~~~~~~~~~~~~~~~~~~

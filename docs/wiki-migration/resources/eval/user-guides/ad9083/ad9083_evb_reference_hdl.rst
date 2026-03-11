@@ -46,12 +46,9 @@ For both platforms, the link is set for full bandwidth mode and operate with the
 
 Deframer paramaters: L=4, M=16, F=8, S=1, N’=16
 
-| GTREFCLK – 500MHz
-| LINKCLK(Lane Rate/40) – 250MHz
-| DEVICECLK - 125 MHz
-| ADCCLK – 2000MHz
-| JESD204B Lane Rate – 10Gbps
-| Beacause of the F=8 parameter the JESD Link IP will have different input and output frequencies and bus widths. Data will enter the IP on 4 32bit wide channels (128b) at 250MHz (link clock) and will exit on a 256bit interface clocked at 125MHz (device clock). The transport layer component presents on its output 256 bits at once on every clock cycle, representing 1 sample per converter. The receive chain is then transferred to the DDR using a DMA.
+GTREFCLK – 500MHz LINKCLK(Lane Rate/40) – 250MHz DEVICECLK - 125 MHz ADCCLK – 2000MHz JESD204B Lane Rate – 10Gbps
+
+Beacause of the F=8 parameter the JESD Link IP will have different input and output frequencies and bus widths. Data will enter the IP on 4 32bit wide channels (128b) at 250MHz (link clock) and will exit on a 256bit interface clocked at 125MHz (device clock). The transport layer component presents on its output 256 bits at once on every clock cycle, representing 1 sample per converter. The receive chain is then transferred to the DDR using a DMA.
 
 The data path and clock domains are depicted on the below diagram:
 

@@ -129,18 +129,14 @@ The feedback divider is the combination of two counters, the A and B counter. Th
 
 Rearranging these formulas it is possible to compute the A and B counter settings from a known reference and a desired VCO frequency.
 
-| ``N2`` = ``fVCO`` / ``fPFD``
-| ``A`` = ``N2`` % ``4``
-| ``B`` = ``N2`` / ``4``
+``N2`` = ``fVCO`` / ``fPFD`` ``A`` = ``N2`` % ``4`` ``B`` = ``N2`` / ``4``
 
 Example: fXO = 122.88 MHz, fVCO = 2949.12 MHz
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example the frequency doubler is bypassed and the reference divider is set to 1. That means the PFD input frequency is equal to the reference frequency.
 
-| ``N2`` = ``fVCO`` / ``fPFD`` => ``N2`` = ``2949.12`` / ``122.88`` = ``24``
-| ``A`` = ``N2`` % ``4`` => ``A`` = ``24`` % ``4`` = ``0``
-| ``B`` = ``N2`` / ``4`` => ``B`` = ``24`` / ``4`` = ``6``
+``N2`` = ``fVCO`` / ``fPFD`` => ``N2`` = ``2949.12`` / ``122.88`` = ``24`` ``A`` = ``N2`` % ``4`` => ``A`` = ``24`` % ``4`` = ``0`` ``B`` = ``N2`` / ``4`` => ``B`` = ``24`` / ``4`` = ``6``
 
 ================================ ========
 Configuration Parameter          Setting

@@ -6,7 +6,7 @@ Video Tutorial
 
 View the quick video tutorial that explains how to edit content on the Wiki.
 
-.. image:: https://wiki.analog.com/_media/analogTV>1042363586001
+.. image:: https://wiki.analog.com/_media/wiki/help/getting-started/analogTV>1042363586001
    :alt: analogTV>1042363586001
    :width: 640px
    :height: 530px

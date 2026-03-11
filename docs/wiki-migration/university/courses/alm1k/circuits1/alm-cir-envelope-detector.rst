@@ -31,11 +31,7 @@ It consists of two main elements:
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 10 KΩ resistor (brown black orange)
-| 2 - 0.1uF capacitors (104)
-| 1 - 1N914 diode
+ADALM1000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 10 KΩ resistor (brown black orange) 2 - 0.1uF capacitors (104) 1 - 1N914 diode
 
 Envelope Detector
 -----------------
@@ -159,20 +155,10 @@ Biased Envelope Detector
 
 The simple diode based envelope detector of figure 1 does not perform well or at all if the amplitude i.e. Swing is less than the forward turn voltage of the diode. It will suffer significant distortion on the negative half of the modulation signal for high modulation indexes (near 100%) when the diode is not fully turned on. A way around this limitation is to introduce a small DC bias to the diode. This small bias current moves to quiescent operating point of the circuit to right at the turn on point of the diode.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 1.5 KΩ resistor (brown green red)
-| 1 - 10 KΩ resistor (brown black orange)
-| 1 - 20 KΩ resistor (red black orange)
-| 1 - 0.22uF capacitor, C\ :sub:`1` (224)
-| 1 - 1.0uF capacitor, C\ :sub:`2`
-| 1 - 2N3904 NPN transistor
-| 1 - 1N914 diode
+ADALM1000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 1.5 KΩ resistor (brown green red) 1 - 10 KΩ resistor (brown black orange) 1 - 20 KΩ resistor (red black orange) 1 - 0.22uF capacitor, C\ :sub:`1` (224) 1 - 1.0uF capacitor, C\ :sub:`2` 1 - 2N3904 NPN transistor 1 - 1N914 diode
 
 On your solder-less breadboard construct the biased envelope detector circuit as shown in Figure 8. The amplitude modulated signal is AC coupled into the Base of NPN transistor Q\ :sub:`1` which is configured as an emitter follower. Voltage divider R\ :sub:`1` and R\ :sub:`2` along with diode D\ :sub:`1` act to set the DC bias point of the AC coupled input (:doc:`DC restoration </wiki-migration/university/courses/electronics/text/chapter-7>`). Absent any modulated input the DC quiescent operating point seen at the emitter of Q\ :sub:`1` will be the voltage at the junction of R\ :sub:`1` and R\ :sub:`2` minus the diode drop of D\ :sub:`1` and the V\ :sub:`BE` of Q\ :sub:`1`. The base current of Q\ :sub:`1` flows in diode D\ :sub:`1` forward biasing it. During the positive half cycles of the modulated input D\ :sub:`1` turns off and the input signal peaks charge filter capacitor C\ :sub:`2`. During the negative half cycles of the input signal transistor Q\ :sub:`1` turns off and D\ :sub:`1` turns on harder supplying the input current.
 

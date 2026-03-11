@@ -12,7 +12,7 @@ Download the file
    Length: 15931539 (14.8 GB) [application/octet-stream]
    Saving to: \`image_2021-07-28-ADI-Kuiper-full.zip'
 
-   100%[=======================================================================>] 15931539 1.94M/s   in 6m 52s  
+   100%[=======================================================================>] 15931539 1.94M/s   in 6m 52s
 
    2021-12-15 17:19:26 (1.83 MB/s) - \`image_2021-07-28-ADI-Kuiper-full.zip' saved [15931539/15931539]
 
@@ -24,13 +24,13 @@ Download the file
 Verify the download
 -------------------
 
--  Check the md5, to make sure you have the right file. ``rgetz@brain:~/newest$ **md5sum image_2021-07-28-ADI-Kuiper-full.zip** 
+-  Check the md5, to make sure you have the right file. ``rgetz@brain:~/newest$ **md5sum image_2021-07-28-ADI-Kuiper-full.zip**
    279097240dec7156ff5e15b7ce0b8a25 image_2021-07-28-ADI-Kuiper-full.zip``
 -  A ``zip`` file is a compressed file, you need to uncompress it, and check the md5sum on resulted file:``rgetz@brain:~/newest$ **time unzip image_2021-07-28-ADI-Kuiper-full.zip**
    real    1m17.40s
    user    74.44s
    sys 2.11s``
--  Again, check the results: ``rgetz@brain:~/newest$ **md5sum 2021-07-28-ADI-Kuiper-full.img** 
+-  Again, check the results: ``rgetz@brain:~/newest$ **md5sum 2021-07-28-ADI-Kuiper-full.img**
    b160453396e482234094a92134769ec6 2021-07-28-ADI-Kuiper-full.img``
 
 Writing SD Card GUI
@@ -71,7 +71,7 @@ This will depend on your system, where your SD card installed itself. You also n
 
 -  plug the SD Card into your SD-Writer. If this mounts the device (which many Linux distributions do), it is important that you unmount it.\ ``rgetz@brain:~/newest$  **sudo umount /dev/mmcblk0p1**``
 -  Write the file (input file or ``if``) to the storage device (output file or ``of``):``rgetz@brain:~/newest$ **time sudo dd if=2021-07-28-ADI-Kuiper-full.img of=/dev/mmcblk0 bs=4194304**
-   [sudo] password for rgetz: 
+   [sudo] password for rgetz:
    0+60640 records in
    0+60640 records out
    7948206080 bytes (7.9 GB) copied, 571.766 s, 13.9 MB/s

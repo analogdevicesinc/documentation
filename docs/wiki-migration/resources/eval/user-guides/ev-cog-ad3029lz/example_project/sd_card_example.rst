@@ -54,9 +54,9 @@ The example software provided consists of these packs
 -  Example application code.
 -  Elm-Chan’s FatFs C library- This pack is required for the implementation of FAT file system on SD card.
 
-\* The index of API’s provided by Elm-Chan’s FatFs C library and their description can be found in this `Link <http://elm-chan.org/fsw/ff/00index_e.html>`_
+- The index of API’s provided by Elm-Chan’s FatFs C library and their description can be found in this `Link <http://elm-chan.org/fsw/ff/00index_e.html>`_
 
-\* The driver version used is -> ADuCM302x-Rel1.0.6
+- The driver version used is -> ADuCM302x-Rel1.0.6
 
 Software Architecture
 ~~~~~~~~~~~~~~~~~~~~~

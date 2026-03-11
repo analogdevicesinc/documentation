@@ -5,7 +5,7 @@ PlutoSDR runs `Linux <https://en.wikipedia.org/wiki/Linux>`_. The :doc:`device d
 
 If you’re not familiar with IIO, please start reading here:
 
-.. image:: https://wiki.analog.com/_media/youtube>CS9NuRBzN5Y
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/youtube>CS9NuRBzN5Y
    :alt: youtube>CS9NuRBzN5Y
    :align: right
 
@@ -27,34 +27,35 @@ The code snippet below is a minimalistic example without error checking. It show
 -  Set the TX LO frequency (see :doc:`AD9361 device driver documentation </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`)
 -  Set RX baseband rate
 
-| 
-| ``#include <iio.h>
+.. code:: c
 
-  int main (int argc, char **argv)
-  {
-      struct iio_context *ctx;
-      struct iio_device *phy;
+   #include <iio.h>
 
-      ctx = iio_create_context_from_uri("ip:192.168.2.1");
+   int main (int argc, char **argv)
+   {
+       struct iio_context *ctx;
+       struct iio_device *phy;
 
-      phy = iio_context_find_device(ctx, "ad9361-phy");
+       ctx = iio_create_context_from_uri("ip:192.168.2.1");
 
-      iio_channel_attr_write_longlong(
-          iio_device_find_channel(phy, "altvoltage0", true),
-          "frequency",
-          2400000000); /* RX LO frequency 2.4GHz */
+       phy = iio_context_find_device(ctx, "ad9361-phy");
 
-      iio_channel_attr_write_longlong(
-          iio_device_find_channel(phy, "voltage0", false),
-          "sampling_frequency",
-          5000000); /* RX baseband rate 5 MSPS */
+       iio_channel_attr_write_longlong(
+           iio_device_find_channel(phy, "altvoltage0", true),
+           "frequency",
+           2400000000); /* RX LO frequency 2.4GHz */
 
-      receive(ctx);
+       iio_channel_attr_write_longlong(
+           iio_device_find_channel(phy, "voltage0", false),
+           "sampling_frequency",
+           5000000); /* RX baseband rate 5 MSPS */
 
-      iio_context_destroy(ctx);
+       receive(ctx);
 
-      return 0;
-  }``
+       iio_context_destroy(ctx);
+
+       return 0;
+   }
 
 Receiving data
 --------------
@@ -65,8 +66,6 @@ Receiving data
 -  Create the RX buffer
 -  Fill the buffer
 -  Process samples
-
-| 
 
 .. code:: c
 

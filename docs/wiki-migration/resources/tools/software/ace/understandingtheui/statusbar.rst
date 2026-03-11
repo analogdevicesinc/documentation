@@ -15,9 +15,12 @@ The status bar at the bottom of the application gives information about the hard
    :alt: Information available in status bar
    :align: right
 
-| The state tells the operator the status of the board in context. It will be updated if the poll state button in the toolbar is clicked.
-| |Poll.png|
-| The value of the state can be any of the following options:   
+The state tells the operator the status of the board in context. It will be updated if the poll state button in the toolbar is clicked.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Poll.png
+   :alt: Poll.png
+
+The value of the state can be any of the following options:
 
 ::
 
@@ -30,8 +33,6 @@ The status bar at the bottom of the application gives information about the hard
 ::
 
    *Uninitialized - The hardware is in its default power on state and has not been configured or setup.
-
-  
 
 ::
 
@@ -47,5 +48,3 @@ The status bar will indicate when communication with hardware fails. When this h
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/ErrorNotification.png
    :alt: ErrorNotification.png
    :align: right
-
-.. |Poll.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Poll.png

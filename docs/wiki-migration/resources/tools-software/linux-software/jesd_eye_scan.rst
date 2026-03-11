@@ -120,8 +120,8 @@ The software is started from the command line (it's better to do this as root):
 
 ::
 
-   Usage: jesd_eye_scan [-p PATH] 
-       -p     Allows setting a different directory root. Default is /. 
+   Usage: jesd_eye_scan [-p PATH]
+       -p     Allows setting a different directory root. Default is /.
               This is useful when running the tool remote
 
 Running local
@@ -129,10 +129,7 @@ Running local
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any root shell prompt running on the target
+   This specifies any root shell prompt running on the target
 
    
    ::
@@ -152,16 +149,13 @@ When using the :doc:`AD-FMC-SDCARD for Zynq/Intel SoC </wiki-migration/resources
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on a remote host
+   This specifies any shell prompt running on a remote host
 
    
    ::
    
       dave@HAL9000:/home/dave& **ssh -X root@10.44.3.53 jesd_eye_scan**
-      root@10.44.3.53's password: 
+      root@10.44.3.53's password:
       Select axi-adxcvr-rx device!
    
 
@@ -173,10 +167,7 @@ This remote option uses the Secure SHell FileSystem (SSHFS), and might be suitab
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on a remote host
+   This specifies any shell prompt running on a remote host
 
    
    ::

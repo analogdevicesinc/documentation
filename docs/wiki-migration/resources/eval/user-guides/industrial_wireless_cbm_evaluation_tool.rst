@@ -35,7 +35,7 @@ GUI
 
 ::
 
-   *GUI which supports real-time plotting of incoming data for up to 3 motes. 
+   *GUI which supports real-time plotting of incoming data for up to 3 motes.
    *GUI options to update mote parameters on-the-fly, save incoming data to database, customise plotting.
 
 --------------
@@ -102,7 +102,7 @@ The installer for this software can be downloaded from the web page linked to be
 
 ::
 
-   *Click the link "Software Download Directory" to open a web page that contains a number of software downloads. 
+   *Click the link "Software Download Directory" to open a web page that contains a number of software downloads.
    *Click the link under the title "Industrial Wireless CbM (Condition-based Monitoring) Evaluation Software for ADXL1002 Accelerometers"
 
 Note, this web page will be downloaded as a ".htm" file if you are using Google Chrome. Simply open this file after it downloads to access the directory.

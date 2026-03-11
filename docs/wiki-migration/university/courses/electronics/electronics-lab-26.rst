@@ -9,11 +9,7 @@ A voltage regulator is a circuit used to maintain a constant output voltage at a
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 1 - 1KΩ Resistor (R\ :sub:`S`)
-| 1 - 5KΩ Variable resistor, potentiometer (R\ :sub:`L`)
-| 1 - Zener diode (1N4735 or similar)
+ADALM2000 Active Learning Module Solder-less Breadboard 1 - 1KΩ Resistor (R\ :sub:`S`) 1 - 5KΩ Variable resistor, potentiometer (R\ :sub:`L`) 1 - Zener diode (1N4735 or similar)
 
 Directions:
 -----------
@@ -42,9 +38,12 @@ Hardware Setup:
 Procedure:
 ----------
 
-| 1. Monitor and report the load voltage V\ :sub:`L` by using the Scopy Voltmeter instrument to measure V\ :sub:`L` for R\ :sub:`L` equal to:
-| \* Open circuit
-| |image1|
+1. Monitor and report the load voltage V\ :sub:`L` by using the Scopy Voltmeter instrument to measure V\ :sub:`L` for R\ :sub:`L` equal to:
+
+-  Open circuit
+
+
+|image1|
 
 .. container:: centeralign
 
@@ -104,16 +103,16 @@ As we saw in the simple zener diode regulator in figure 1, the maximum load curr
 Additional Materials:
 ---------------------
 
-| 2 - NPN transistors (2N3904 and TIP31)
-| 2 - small signal diodes (1N914 or similar)
-| |image5|
+2 - NPN transistors (2N3904 and TIP31) 2 - small signal diodes (1N914 or similar)
+
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a26_f2.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
    Figure 2, Adding a current amplifier stage
 
-
-.. _directions-1:
 
 Directions:
 -----------
@@ -121,8 +120,6 @@ Directions:
 Build either of the circuits shown in figure 2 on your solder-less breadboard using the 1N4735 6.1 volt zener diode as D\ :sub:`1` and a 2N3904 or TIP31 power transistor for Q\ :sub:`1`. Q\ :sub:`2` can be a 2N3904 and D\ :sub:`2`, D\ :sub:`3` can be a 1N914.
 
 The extra diode D\ :sub:`2` is added in series with the zener to partially cancel the additional V\ :sub:`BE` drop due to the emitter follower Q\ :sub:`1`. Likewise in the Darlington configuration two diodes (D\ :sub:`2`, D\ :sub:`3`) are added to again partially cancel the two V\ :sub:`BE` drop of the Darlington follower.
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -151,5 +148,3 @@ Zener Diodes http://en.wikipedia.org/wiki/Zener_diode
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav2.png
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav3.png
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav4.png
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a26_f2.png
-   :width: 500px

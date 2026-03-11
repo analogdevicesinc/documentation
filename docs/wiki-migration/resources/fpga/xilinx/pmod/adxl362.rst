@@ -34,16 +34,14 @@ Required Software
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+
 
 .. tip::
 
    If you are not familiar with LX9 and/or Xilix tools, please visit
 
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
-   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
-   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
-   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details. If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
 
@@ -99,32 +97,61 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 If programming was successful, the Main Menu will apear in your UART terminal, as seen in the picture below. There are 9 options. Pressing [a], [x], [y], [z], [t], [r], [s], [i] or [m] key will allow you to select the desired option.
 
-| |Main Menu|
-| **Display acceleration on All Axes** will print the acceleration on X, Y and Z Axes, each on a separate row.
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu1.jpg
+   :alt: Main Menu
+   :width: 600px
 
-| |Acceleration on all 3 Axes|
-| **Display acceleration on X Axis** will print the acceleration on X Axis, each new data read from the device will be displayed on a separate row.
+**Display acceleration on All Axes** will print the acceleration on X, Y and Z Axes, each on a separate row.
 
-| |Acceleration on X Axis|
-| **Display acceleration on Y Axis** will print the acceleration on Y Axis, each new data read from the device will be displayed on a separate row.
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu2.jpg
+   :alt: Acceleration on all 3 Axes
+   :width: 600px
 
-| |Acceleration on Y Axis|
-| **Display acceleration on Z Axis** will print the acceleration on Z Axis, each new data read from the device will be displayed on a separate row.
+**Display acceleration on X Axis** will print the acceleration on X Axis, each new data read from the device will be displayed on a separate row.
 
-| |Acceleration on Z Axis|
-| **Display temperature** will print the ADXL362 temperature in Celsius Degrees.
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu3.jpg
+   :alt: Acceleration on X Axis
+   :width: 600px
 
-| |ADXL362 Temperature|
-| **Select range** will allow setting the measurement range of the ADXL362. You can choose between ±2g, ±4g and ±8g. Selecting the desired range is done by pressing [1] to [3].
+**Display acceleration on Y Axis** will print the acceleration on Y Axis, each new data read from the device will be displayed on a separate row.
 
-| |Selecting measurement range|
-| **Switch resolution** option is used to choose reading data from 8 bit register or from 12 bit register.
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu4.jpg
+   :alt: Acceleration on Y Axis
+   :width: 600px
 
-| |Switching resolution|
-| |image1|
-| **Print device ID** will show information concerning the internal ID registers of ADXL362.
+**Display acceleration on Z Axis** will print the acceleration on Z Axis, each new data read from the device will be displayed on a separate row.
 
-| |Printing ID Register|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu5.jpg
+   :alt: Acceleration on Z Axis
+   :width: 600px
+
+**Display temperature** will print the ADXL362 temperature in Celsius Degrees.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu6.jpg
+   :alt: ADXL362 Temperature
+   :width: 600px
+
+**Select range** will allow setting the measurement range of the ADXL362. You can choose between ±2g, ±4g and ±8g. Selecting the desired range is done by pressing [1] to [3].
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu7.jpg
+   :alt: Selecting measurement range
+   :width: 600px
+
+**Switch resolution** option is used to choose reading data from 8 bit register or from 12 bit register.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu8.jpg
+   :alt: Switching resolution
+   :width: 600px
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu9.jpg
+   :alt: Switching resolution
+   :width: 600px
+
+**Print device ID** will show information concerning the internal ID registers of ADXL362.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu10.jpg
+   :alt: Printing ID Register
+   :width: 600px
 
 Using the reference design
 --------------------------
@@ -134,20 +161,12 @@ Functional Description
 
 The reference design is a SPI interface used to communicate with the device. The software programs the ADXL362s internal registers, and afterwards reads desired data from the device and prints it via UART.
 
-|
-
 .. important::
 
-
-   ..
-
-| \* Connecting the PmodACL2 to the boards using an extension cable provides ease of use.
    
+   -  Connecting the PmodACL2 to the boards using an extension cable provides ease of use.
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-   |
-
-   |
 
 
 .. important::
@@ -175,21 +194,25 @@ The reference design is a SPI interface used to communicate with the device. The
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \**Avnet LX-9 MicroBoard: **
-     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl362_lx9.zip>`_\ **
-     **\ Digilent Nexys™3:**
-     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl362_nexys3.zip>`_\ **
-     **\ Avnet ZedBoard:\*\*
-   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
-   | \* :git-no-OS:`PmodACL2 Driver Files <Pmods/PmodACL2>`
-   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
-   | \* :git-no-OS:`Programming Script <Pmods/PmodACL2/bin>`
-   |
+   
+   **Avnet LX-9 MicroBoard:**
+   
+   -  `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl362_lx9.zip>`_
+   
+   **Digilent Nexys™3:**
+   
+   -  `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl362_nexys3.zip>`_
+   
+   **Avnet ZedBoard:**
+   
+   -  :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   -  :git-no-OS:`PmodACL2 Driver Files <Pmods/PmodACL2>`
+   -  :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
+   -  :git-no-OS:`Programming Script <Pmods/PmodACL2/bin>`
+   
 
 
 More information
@@ -200,24 +223,4 @@ More information
 
 |//ez.analog.com/community/feeds/allcontent/atom|
 
-.. |Main Menu| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu1.jpg
-   :width: 600px
-.. |Acceleration on all 3 Axes| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu2.jpg
-   :width: 600px
-.. |Acceleration on X Axis| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu3.jpg
-   :width: 600px
-.. |Acceleration on Y Axis| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu4.jpg
-   :width: 600px
-.. |Acceleration on Z Axis| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu5.jpg
-   :width: 600px
-.. |ADXL362 Temperature| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu6.jpg
-   :width: 600px
-.. |Selecting measurement range| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu7.jpg
-   :width: 600px
-.. |Switching resolution| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu8.jpg
-   :width: 600px
-.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu9.jpg
-   :width: 600px
-.. |Printing ID Register| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu10.jpg
-   :width: 600px
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

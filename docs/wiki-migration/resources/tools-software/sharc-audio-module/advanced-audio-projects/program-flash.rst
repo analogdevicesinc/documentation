@@ -3,11 +3,7 @@
 Bootloader Flash
 ================
 
-**Only required for software that can be updated using the SAM Flasher (ADZS-SC589-MINI)! Skip this step otherwise.** :doc:`See Software Compatibility </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>`
-
-*The bootloader allows for application reflash via the SAM Flash Tool depending on a pushbutton state. Note that this step requires you to identify which version of SAM hardware you have, as the script to use will change depending on the hardware version.*
-
-**Follow the instructions below to flash the bootloader:**
+**Only required for software that can be updated using the SAM Flasher (ADZS-SC589-MINI)! Skip this step otherwise.** :doc:`See Software Compatibility </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>`\ *The bootloader allows for application reflash via the SAM Flash Tool depending on a pushbutton state. Note that this step requires you to identify which version of SAM hardware you have, as the script to use will change depending on the hardware version.*\ **Follow the instructions below to flash the bootloader:**
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------+
 | 1. Identify if you have the SAM hardware version v1.4 (or earlier) or v1.5 or greater. The version should be printed on the silkscreen on the back.                                                      | |image14| |image15| |image16| |
@@ -38,16 +34,13 @@ Bootloader Flash
 | *./boot1_hw_rev_1_5_cldp.bat* if your hardware is v1.5 or greater.                                                                                                                                       |                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------+
 
---------------
 
 CLD CDC USB Driver Setup
 ========================
 
 **Only required for software that can be updated using the SAM Flasher (ADZS-SC589-MINI)! Skip this step otherwise.** :doc:`See Software Compatibility </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>` *Note that this only needs to be done once, but MUST be done after flashing the bootloader in the previous step!*
 
-*The CLD CDC Driver is a driver that lives on the PC that acts as an interface between a serial terminal, such as* `TeraTerm <https://ttssh2.osdn.jp/index.html.en>`_\ *, or the SAM GUI Flash Tool. This driver is required for USB to Serial emulation and to be able to interact with the bootloader or application at run-time on the physical SAM hardware.*
-
-**To install the CLD CDC Driver:**
+*The CLD CDC Driver is a driver that lives on the PC that acts as an interface between a serial terminal, such as* `TeraTerm <https://ttssh2.osdn.jp/index.html.en>`_\ *, or the SAM GUI Flash Tool. This driver is required for USB to Serial emulation and to be able to interact with the bootloader or application at run-time on the physical SAM hardware.**To install the CLD CDC Driver:**
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | 1. Recall where you downloaded/cloned your bootloader software (:doc:`prerequisites#download_bootloader_software </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/prerequisites>`) and open File explorer and navigate to *<BOOTLOADER_PROJECT_ROOT>/bootloader/prebuilt/driver* and unzip *driver.zip*            | |image30| |
@@ -56,14 +49,11 @@ CLD CDC USB Driver Setup
 |                                                                                                                                                                                                                                                                                                                                                        | |image32| |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 Application Flash via SAM Flasher
 =================================
 
-*Only available for products that support SAM Flasher updates!*
-
-**Follow the instructions below to flash the application via the SAM Flasher:**
+*Only available for products that support SAM Flasher updates!**Follow the instructions below to flash the application via the SAM Flasher:**
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | 1. Power on your SAM board and plug in the 12V Power Supply to the 12V connector. If the board is properly powered, the green LED9/PWR will light up.                                                                            | |image42|           |
@@ -72,7 +62,7 @@ Application Flash via SAM Flasher
 | **Note that on SAM v2.1 HW this is the connection on the board labeled USB OTG**                                                                                                                                                 |                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | 3. On the SAM board, press and hold buttons PB1 and PB2. While still holding PB1 and PB2, press RESET.                                                                                                                           | |image44|           |
-| *Note that you do not need to hold reset. Resetting the board while holding PB1 and PB2 down will tell the bootloader to stay in the bootloader and await instructions for application ​flash.*                                  |                     |
+| *Note that you do not need to hold reset. Resetting the board while holding PB1 and PB2 down will tell the bootloader to stay in the bootloader and await instructions for application flash.*                                   |                     |
 | *If this is successful, LED10 will blink, while LED11 and LED12 will remain off.*                                                                                                                                                |                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | 4. Open the SAM Flasher Tool                                                                                                                                                                                                     | |image45|           |
@@ -89,9 +79,7 @@ Application Flash via SAM Flasher
 Application Flash via CLPD via Bootswitch
 =========================================
 
-*Only available for products that support CLPD updates via Bootswitch!*
-
-**Follow the instructions below for products which support CLPD updates via Bootswitch:**
+*Only available for products that support CLPD updates via Bootswitch!**Follow the instructions below for products which support CLPD updates via Bootswitch:**
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
 | 1. Set the bootswitch rotary switch to *0*. This tells the device to not automatically boot.                                                                                                                                                                                                                                                                  | |image58|\ |image59| |
@@ -101,7 +89,7 @@ Application Flash via CLPD via Bootswitch
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
 | 3. Plug the ICE-1000 or ICE-2000 JTAG header into board header labelled *DEBUG*. Ensure that the USB-A connector is plugged into a USB-A receptacle on the PC and ensure the status of the debugger shows a green LED.                                                                                                                                        | |image61| |image62|  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
-| 4. Recall where you downloaded/cloned your application software (:doc:`prerequisites#clone_repositorydownload_application_software </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/prerequisites>`) and using Windows command prompt, navigate to *<​project_root>/​build* ​and run *flash.bat*                          | |image63|            |
+| 4. Recall where you downloaded/cloned your application software (:doc:`prerequisites#clone_repositorydownload_application_software </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/prerequisites>`) and using Windows command prompt, navigate to *<project_root>/build* and run *flash.bat*                             | |image63|            |
 | *Note that the update may take some time to complete.*                                                                                                                                                                                                                                                                                                        |                      |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
 | 5. Set the blue rotary switch back to 1 and reset the board to allow the software update to take effect.                                                                                                                                                                                                                                                      | |image64|            |
@@ -141,7 +129,6 @@ Application Flash via CrossCore Serial Flash Programmer
 |                                                                                                                                                                                                                                                                                                                                                                                                                        | |image90| |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 .. important::
 

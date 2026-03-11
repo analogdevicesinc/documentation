@@ -96,7 +96,7 @@ Hardware Setup
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
--  Start IMPACT, and double click “\ *Boundary Scan*\ ”. Right click and select *Initialize Chain*. The program should recognize the Kintex 7 device (see screenshot below).
+-  Start IMPACT, and double click “\ *Boundary Scan*”. Right click and select*Initialize Chain*. The program should recognize the Kintex 7 device (see screenshot below).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/impact_config.png
    :alt: impact_config.png
@@ -120,8 +120,6 @@ If the resulting csv file is opened with Microsoft Excel, the data will be displ
 
    The first time the data capture script is run it is possible that an error will occur while the script is trying to connect to the system. Just run the script again and the error shouldn't appear anymore.
 
-
-.. _more-information-1:
 
 More information
 ================

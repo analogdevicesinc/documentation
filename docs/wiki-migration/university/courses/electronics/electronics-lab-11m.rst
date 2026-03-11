@@ -9,11 +9,7 @@ To investigate the simple NMOS source follower amplifier also sometimes referred
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 2.2KΩ Resistor (R\ :sub:`L`)
-| 1 - small signal NMOS transistor (enhancement mode CD4007 or ZVN2110A M\ :sub:`1`)
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - 2.2KΩ Resistor (R\ :sub:`L`) 1 - small signal NMOS transistor (enhancement mode CD4007 or ZVN2110A M\ :sub:`1`)
 
 Directions:
 -----------
@@ -72,9 +68,7 @@ The current mirror from activity 6M is now substituted for the source load resis
 Additional Materials:
 ---------------------
 
-| 1 - 3.2KΩ Resistor (use a 1KΩ in series with a 2.2KΩ)
-| 1 - small signal NMOS transistor (M\ :sub:`1`\ ZVN2110A)
-| 2 - small signal NMOS transistors (M\ :sub:`2`, M\ :sub:`3`\ CD4007)
+1 - 3.2KΩ Resistor (use a 1KΩ in series with a 2.2KΩ) 1 - small signal NMOS transistor (M\ :sub:`1`\ ZVN2110A) 2 - small signal NMOS transistors (M\ :sub:`2`, M\ :sub:`3`\ CD4007)
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_f2.png
    :align: center
@@ -85,8 +79,6 @@ Additional Materials:
    Figure 4 Improved Source Follower
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -96,8 +88,6 @@ Hardware Setup:
 
    Figure 5 Improved Source Follower Breadboard Circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -112,23 +102,15 @@ Procedure:
 Source follower output impedance
 ================================
 
-.. _objective-1:
-
 Objective:
 ----------
 
 An important aspect of the source follower is to provide power or current gain. That is to say drive a lower resistance (impedance) load from a higher resistance (impedance) stage. Thus it is instructive to measure the source follower output impedance.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 1 - 4.7KΩ Resistor
-| 1 - 10KΩ Resistor
-| 1 - small signal NMOS transistor ( M\ :sub:`1` CD4007 or ZVN2110A)
-
-.. _directions-1:
+1 - 4.7KΩ Resistor 1 - 10KΩ Resistor 1 - small signal NMOS transistor ( M\ :sub:`1` CD4007 or ZVN2110A)
 
 Directions:
 -----------
@@ -144,8 +126,6 @@ The circuit configuration below adds a resistor R\ :sub:`2` to inject a test sig
    Figure 7 Output impedance test
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
@@ -157,8 +137,6 @@ Hardware Setup:
 
 
 The waveform generator should be configured for a 1 KHz Sine wave with 2 volt amplitude peak-to-peak with the offset set equal to minus the V\ :sub:`GS` of M\ :sub:`1` ( approximately -V ). This injects a +/- 0.1mA (1V/10KΩ) current into M\ :sub:`1`'s source. Scope input 2+ measures the change in voltage seen at the source.
-
-.. _procedure-2:
 
 Procedure:
 ----------

@@ -23,8 +23,8 @@ You can access the system view using the "Systems" button in the sidebar menu. T
 .. container:: centeralign
 
    
-   Fig. 1: System View
-   ^^^^^^^^^^^^^^^^^^^
+   **Fig. 1: System View**
+
    
 
 
@@ -43,8 +43,8 @@ Standard Memory Chip Standard Capture Chip Multi Chip
 .. container:: centeralign
 
    
-   Fig. 2: Plug-in Hierarchy Examples
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Fig. 2: Plug-in Hierarchy Examples**
+
    
 
 
@@ -67,8 +67,8 @@ Previous sessions can be opened and new sessions created from the Sessions Menu 
 .. container:: centeralign
 
    
-   Fig. 3: Start Screen Session Controls
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Fig. 3: Start Screen Session Controls**
+
    
 
 
@@ -90,8 +90,8 @@ Most plug-ins in ACE follow a very similar structure and style to simplify the e
 .. container:: centeralign
 
    
-   Fig. 4: Board View Tour
-   ^^^^^^^^^^^^^^^^^^^^^^^
+   **Fig. 4: Board View Tour**
+
    
 
 
@@ -120,8 +120,8 @@ Interactive elements are still identified by their darker color and will incur s
 .. container:: centeralign
 
    
-   Fig. 5: Chip View
-   ^^^^^^^^^^^^^^^^^
+   **Fig. 5: Chip View**
+
    
 
 
@@ -135,8 +135,8 @@ Alternatively, you can enable the System Explorer from the Tools drop down list 
 .. container:: centeralign
 
    
-   Fig. 6: Alternative Navigation Options
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Fig. 6: Alternative Navigation Options**
+
    
 
 
@@ -151,8 +151,8 @@ Memory Map View Analysis View
 .. container:: centeralign
 
    
-   Fig. 7: Chip Child Node Examples
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Fig. 7: Chip Child Node Examples**
+
    
 
 

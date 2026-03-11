@@ -1,7 +1,7 @@
 Alias
 =====
 
-| :doc:`Click here to learn basics about Alias </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/wiresandaliases>`
+:doc:`Click here to learn basics about Alias </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/wiresandaliases>`
 
 Add Alias
 ---------

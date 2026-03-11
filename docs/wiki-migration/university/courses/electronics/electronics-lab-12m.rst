@@ -8,10 +8,11 @@ To investigate the simple differential amplifier using enhancement mode NMOS tra
 
 First a few notes on hardware limitation issues. The waveform generator in the ADALM2000 Lab system has a high output bandwidth and with that high bandwidth comes wide band noise. The input signal level needed for the measurements in this lab activity is rather small because of the gain of the differential amplifier. If the waveform generator output were used directly the signal to noise ratio of its output is not high enough. The signal to noise ratio can be improved by increasing the signal level and then placing an attenuator and filter ( figure 1 ) between the generator outputs and the circuit inputs. The materials needed for this are:
 
-| 2 - 100Ω resistors
-| 2 - 1KΩ resistors
-| 2 - 0.1uF capacitors (marked 104)
-| |image1|
+2 - 100Ω resistors 2 - 1KΩ resistors 2 - 0.1uF capacitors (marked 104)
+
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a12_f1.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -23,12 +24,7 @@ This attenuator and filter will be used in all parts of this lab.
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 10KΩ resistors
-| 1 - 15KΩ resistor (use a 10KΩ in series with a 4.7KΩ)
-| 2 - Small signal NMOS transistor (CD4007 or ZVN2110A)
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 10KΩ resistors 1 - 15KΩ resistor (use a 10KΩ in series with a 4.7KΩ) 2 - Small signal NMOS transistor (CD4007 or ZVN2110A)
 
 Directions:
 -----------
@@ -99,8 +95,6 @@ Additional Materials:
    Figure 6 Diff pair with tail current source
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -111,8 +105,6 @@ Hardware Setup:
 
    Figure 7 Diff pair with tail current source Breadboard Circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -140,8 +132,6 @@ Common mode rejection is a key aspect of the differential amplifier. CMR can be 
    Figure 9 Measuring Common Mode gain
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
@@ -152,8 +142,6 @@ Hardware Setup:
 
    Figure 10 Common Mode Gain Breadboard Circuit
 
-
-.. _procedure-2:
 
 Procedure:
 ----------
@@ -189,6 +177,3 @@ What is common-mode voltage, and how should a differential amplifier (ideally) r
 
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
-
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a12_f1.png
-   :width: 400px

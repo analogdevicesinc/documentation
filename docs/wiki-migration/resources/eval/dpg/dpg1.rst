@@ -6,7 +6,7 @@ The DAC Pattern Generator (DPG) is designed to simplify the evaluation of Analog
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/dpg1_block_diagram.png
    :align: center
 
-**Please note:** *Analog Devices' pattern generators and high-speed DAC evaluation boards are designed and sold solely to support an efficient and thorough means by which to evaluate Analog Devices high speed DACs in a lab environment for a wide range of end applications. Any application or use of the pattern generators and/or high-speed DAC evaluation boards, other than specified above, will not be supported.*
+**Please note:** Analog Devices' pattern generators and high-speed DAC evaluation boards are designed and sold solely to support an efficient and thorough means by which to evaluate Analog Devices high speed DACs in a lab environment for a wide range of end applications. Any application or use of the pattern generators and/or high-speed DAC evaluation boards, other than specified above, will not be supported.*
 
 The DPG1 has been replaced by the :doc:`DPG2 </wiki-migration/resources/eval/dpg/dpg2>`. The DPG1 is no longer sold.
 

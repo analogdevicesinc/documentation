@@ -10,8 +10,12 @@ The :adi:`AD5750` is a single-channel, low cost, precision voltage/current outpu
 
 The :adi:`AD5662` is a single channel, low cost, low power (0.75 mW @ 5 V), rail-to-rail voltage buffered output nanoDAC® device. It guarantees ±1 LSB DNL under a wide range of reference voltages that can vary from 0.75 V to the VDD supply so that it can operate with :adi:`AD5750` from a common reference source of 4.096 V, provided by the :adi:`ADR444`. The :adi:`ADR444` low drift (3 ppm/°C maximum for B-grade ), high initial accuracy (0.04% maximum for B-grade), and low noise (1.8 µV p-p typical, 0.1 Hz to 10 Hz) provides the reference voltage for both the :adi:`AD5750` and :adi:`AD5662` and guarantees ultralow noise, high accuracy, and low temperature drift for the circuit.
 
-| The EVAL-CN0202-SDPZ board connects to ADI’s System Demonstration Platform (SDP) and is powered by a triple output DC power supply of +15 V, -15 V and 6 V. |image1|
-| ----
+The EVAL-CN0202-SDPZ board connects to ADI’s System Demonstration Platform (SDP) and is powered by a triple output DC power supply of +15 V, -15 V and 6 V.
+
+
+|image1|
+
+--------------
 
 Required Equipment
 ------------------
@@ -41,9 +45,11 @@ General Setup
 Block assignments
 ~~~~~~~~~~~~~~~~~
 
-| |image2|
-| \* The :adi:`EVAL-CN0202-SDPZ` **(CN-0202 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/bbbb.png
+   :align: center
+   :width: 600px
 
+-  The :adi:`EVAL-CN0202-SDPZ` **(CN-0202 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
 -  Terminal block **CN1** is the +/- 15 V power supply input
 -  Terminal block **CN2** is the +6 V power supply input
@@ -52,10 +58,6 @@ Block assignments
    -  **Optionally**, if JP3 and JP4 are open, the :adi:`AD5750` output voltage feedback can be configured by connecting **VSENSE+** and **VSENSE-** across a selected branch in the load circuit. **VSENSE-** should be within +/- 3.0 V of the GND
 
 -  Terminal block **CN4** is for the current output measurement
-
-
-| 
-|
 
 .. important::
 
@@ -83,15 +85,15 @@ Installing the Evaluation Software
    \ **NOTE:** It is recommended that you install the `CN0202 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0202>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0202\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-   |image3|
+   |image2|
 
 -  Click **Next** to view the installation review page
 
-|image4|
+|image3|
 
    \* Click **Next** to start the installation
 
-   |image5|
+   |image4|
 
    \* Upon completion of the installation of the **CN-0202 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
@@ -100,7 +102,7 @@ Installing the Evaluation Software
    \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
 
 
-   |image6|
+   |image5|
 
    \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
@@ -111,11 +113,11 @@ Installing the Evaluation Software
    **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
 
 
-   |image7|
+   |image6|
 
    \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
 
-   |image8|
+   |image7|
 
 --------------
 
@@ -125,17 +127,20 @@ Using the Evaluation Software
 Main Tab
 ~~~~~~~~
 
-| |image9|
-| \* **Connection** <fc #f0e68c>(Highlighted Yellow)</fc>
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/8-8-2017_11-41-04_am.png
+   :align: center
+   :width: 500px
 
-::
+-  **Connection** (Highlighted Yellow)
 
-     * **Connect Button**
-       * Starts the connection with the [[:adi:`CN0202|CN0202` Evaluation Board]]
-       * **Disconnect Button**
-         * Ends the connection with the [[:adi:`CN0202|CN0202` Evaluation Board]]
+   -  **Connect Button**
 
--  **System Configuration** <fc #ff0000>(Highlighted Red)</fc>
+      -  Starts the connection with the :adi:`CN0202 Evaluation Board <CN0202>`
+      -  **Disconnect Button**
+
+         -  Ends the connection with the :adi:`CN0202 Evaluation Board <CN0202>`
+
+-  **System Configuration** (Highlighted Red)
 
    -  **Connector**
 
@@ -144,7 +149,7 @@ Main Tab
 
          -  Sets the SPI clock frequency used by the evaluation board
 
--  **AD5750-1 Configuration** <fc #008000>(Highlighted Green)</fc>
+-  **AD5750-1 Configuration** (Highlighted Green)
 
    -  **JP1 Configuration**
 
@@ -157,7 +162,7 @@ Main Tab
 
          -  Sets the outputs to the zero/midscale voltage value or the minimum value of the selected current range
 
--  **AD5750-1 Error Indicator** <fc #00ffff>(Highlighted Blue)</fc>
+-  **AD5750-1 Error Indicator** (Highlighted Blue)
 
    -  **Vout Fault**
 
@@ -174,7 +179,7 @@ Main Tab
 
          -  CRC-8 error checking detected an interface error
 
--  **Output Setting** <fc #9400d3>(Highlighted Violet)</fc>
+-  **Output Setting** (Highlighted Violet)
 
    -  **Write AD5660-1**
 
@@ -187,8 +192,8 @@ Main Tab
 
    -  Exits the software application
 
-| 
-| ==== Running the System ====
+Running the System
+~~~~~~~~~~~~~~~~~~
 
 -  Open the **CN0202.exe** application from the default installation location.
 -  Set the correct connector and SCLK settings for the board in the System Configuration section.
@@ -238,19 +243,15 @@ Registration
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/cn0202-hw-1024.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/bbbb.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-20-06_pm.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-20-06_pm.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-20-18_pm.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-20-18_pm.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-20-57_pm.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-20-57_pm.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-22-03_pm.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-22-03_pm.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-22-13_pm.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-22-13_pm.png
    :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-23-12_pm.png
-   :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/8-8-2017_11-41-04_am.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0202/7-28-2017_2-23-12_pm.png
    :width: 500px

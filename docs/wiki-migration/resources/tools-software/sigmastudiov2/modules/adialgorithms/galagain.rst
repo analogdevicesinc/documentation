@@ -9,8 +9,10 @@ GALA Gain
 Description
 -----------
 
-| In GALA Gain block, the gain applied to the input signal varies with the changes in the control input(Speed/Engine noise).
-| ===== Targets Supported =====
+In GALA Gain block, the gain applied to the input signal varies with the changes in the control input(Speed/Engine noise).
+
+Targets Supported
+-----------------
 
 ========= ========== ================ ============= ================
 Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -18,7 +20,7 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 GALA Gain B          B                NA            B
 ========= ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -40,7 +42,7 @@ Name    Type  Description
 Output0 Audio Output channel0
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+----------------+-----------------------------------------------------------------------------------+
@@ -70,4 +72,5 @@ Output0 Audio Output channel0
 
 | 
 | ===== DSP Parameter Computation ===== RampUpSlew = 10^(1/(FS \* 20))
-| RampDownSlew = 10^(-3/(FS \* 20))
+
+RampDownSlew = 10^(-3/(FS \* 20))

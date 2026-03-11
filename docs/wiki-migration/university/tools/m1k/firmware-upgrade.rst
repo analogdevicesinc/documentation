@@ -10,10 +10,7 @@ The ``smu`` executable (part of the :doc:`libsmu </wiki-migration/university/too
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -82,8 +79,10 @@ After a firmware update the device status will change showing the firmware updat
 
 The list of connected devices is automatically updated when a device which is not in programming mode is disconnected/connected to the PC. To force a refresh of the devices list press the **Refresh Devices List** button.
 
-| 
-| ==== Troubleshooting ==== When installing Pixelpulse2, the drivers for ADALM1000 should be correctly installed. In order to be able to update the firmware using Pixelpulse2, you can check the installed drivers using Windows Device Manager. Ideally, ADALM1000 should appear under *Universal Serial Bus devices* as:
+Troubleshooting
+---------------
+
+When installing Pixelpulse2, the drivers for ADALM1000 should be correctly installed. In order to be able to update the firmware using Pixelpulse2, you can check the installed drivers using Windows Device Manager. Ideally, ADALM1000 should appear under *Universal Serial Bus devices* as:
 
 -  **ADALM1000 SAM-BA WinUSB** - if the board is in programming mode
 -  **ADALM1000 WinUSB** - if the board is not in programming mode
@@ -93,8 +92,7 @@ If that is the case, the firmware upgrade should work properly.
 .. image:: https://wiki.analog.com/_media/university/tools/m1k/pp-correct.png
    :align: center
 
-| 
-| Otherwise, the board will appear in the *Ports (COM &LPT)* section.
+Otherwise, the board will appear in the *Ports (COM &LPT)* section.
 
 .. image:: https://wiki.analog.com/_media/university/tools/m1k/pp-com.png
    :align: center

@@ -47,8 +47,7 @@ Software Required
 General Description
 -------------------
 
-| The EVAL-AD3552RFMCxZ is an evaluation board for the AD3552R ultrafast 16-bit precision DAC. The board is available in two variants: EVAL-AD3552RFMC1Z is optimized for high speed, intended to reproduce dynamic specifications shown in the datasheet; EVAL-AD3552RFMC2Z is optimized for DC precision and has a much lower bandwidth, intended to reproduce DC electrical specifications shown in the datasheet. The difference between these boards is the transimpedance amplifier and its corresponding feedback capacitor.
-|
+The EVAL-AD3552RFMCxZ is an evaluation board for the AD3552R ultrafast 16-bit precision DAC. The board is available in two variants: EVAL-AD3552RFMC1Z is optimized for high speed, intended to reproduce dynamic specifications shown in the datasheet; EVAL-AD3552RFMC2Z is optimized for DC precision and has a much lower bandwidth, intended to reproduce DC electrical specifications shown in the datasheet. The difference between these boards is the transimpedance amplifier and its corresponding feedback capacitor.
 
 .. tip::
 
@@ -88,22 +87,24 @@ You will need to:
 |zedboard.png|
 
 -  Insert the SD-CARD into the SD Card Interface Connector (J12).
-   \* Connect the :adi:`EVAL-AD3552R` board into the ZedBoard FMC connector.
-   \* Connect USB UART J14 (Micro USB) to your host PC.
-   \* Plug your ethernet cable into the RJ45 ethernet connector(J11).
-   \* Plug the Power Supply into the 12V Power input connector (J20) (DO NOT turn the device on).
-   \* Set the jumpers as seen in the below picture:
+-  Connect the :adi:`EVAL-AD3552R` board into the ZedBoard FMC connector.
+-  Connect USB UART J14 (Micro USB) to your host PC.
+-  Plug your ethernet cable into the RJ45 ethernet connector(J11).
+-  Plug the Power Supply into the 12V Power input connector (J20) (DO NOT turn the device on).
+-  Set the jumpers as seen in the below picture:
 
-   |jumpers_boot_sd_zedboard.jpg|
+|jumpers_boot_sd_zedboard.jpg|
+
+
 
 .. tip::
 
    Before executing the below steps, make sure that VADJ jumper is set to 1.8V.
 
 
-\* Connect the oscilloscope probes to the SMB connectors.
-   \* Turn it on.
-   \* Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
+* Connect the oscilloscope probes to the SMB connectors.
+   * Turn it on.
+   * Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
 
 ::
 
@@ -133,7 +134,7 @@ To be able to connect your device, the software must be able to create a context
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-| Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to access it.
 
 For FPGA(Zedboard) Direct Local Access:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -163,13 +164,16 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
 -  Press refresh to display available IIO Devices and press connect.
 
-| |iio_connect.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/ad3552r/iio_connect.png
+   :alt: iio_connect.png
+   :align: center
+   :width: 700px
 
 -  Once connected it is possible to set voltage raw values as below:
 
@@ -181,8 +185,9 @@ IIO Oscilloscope
 PyADI-IIO
 ~~~~~~~~~
 
-| :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a Python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO Python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
-| Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
+:doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a Python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO Python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+
+Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
 
 Running the example
 ^^^^^^^^^^^^^^^^^^^
@@ -190,24 +195,25 @@ Running the example
 .. admonition:: Download
    :class: download
 
-   Github link for the Python sample script: :git-pyadi-iio:`AD3552R-EVAL Python Example <examples/ad3552r_example.py>`
+   Github link for the Python sample script: `AD3552R-EVAL Python Example <https://github.com/analogdevicesinc/pyadi-iio/blob/cn0585_v1/examples/ad3552r_example.py>`_
 
 
 After installing and configuring PYADI-IIO on your machine, you are now ready to run Python script examples. In our case, run the **ad3552r_example.py** found in the examples folder.
-
-|
 
 .. important::
 
    Cyclic mode is actually not enabled by defualt, please edit the file **examples/ad3552r_example.py** and set:
 
-   | dev.tx_cyclic_buffer = True
+   
+   ::
+   
+       dev.tx_cyclic_buffer = True
    
 
 
 ::
 
-   D:\pyadi-iio>export PYTHONPATH=D:/pyadi-iio/ 
+   D:\pyadi-iio>export PYTHONPATH=D:/pyadi-iio/
    D:\pyadi-iio>python examples/ad3552r_example.py ip:your_board_ip
 
 Press enter and you will get these readings:
@@ -245,7 +251,7 @@ Schematic, PCB Layout, Bill of Materials
 Reference Demos & Software
 --------------------------
 
--  :git-pyadi-iio:`PyADI-IIO sources for the EVAL-AD3552R board. <examples/ad3552r_example.py>`
+-  `PyADI-IIO sources for the EVAL-AD3552R board. <https://github.com/analogdevicesinc/pyadi-iio/blob/cn0585_v1/examples/ad3552r_example.py>`_
 -  :doc:`Dual Channel, 16-Bit, 33 MUPS, Multispan, Multi-IO SPI DAC Linux device driver. </wiki-migration/resources/tools-software/linux-drivers/iio-dac/axi-ad3552r>`
 -  :doc:`AXI-AD3552R HDL IP. </wiki-migration/resources/fpga/docs/axi_ad3552r>`
 -  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
@@ -259,5 +265,3 @@ Reference Demos & Software
    :width: 600px
 .. |jumpers_boot_sd_zedboard.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/jumpers_boot_sd_zedboard.jpg
    :width: 400px
-.. |iio_connect.png| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/ad3552r/iio_connect.png
-   :width: 700px

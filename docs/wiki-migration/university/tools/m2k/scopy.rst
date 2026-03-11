@@ -18,24 +18,24 @@ Download
    :class: download
 
    
-   \**Scopy for Windows \*\*
+   **Scopy for Windows**
    
    -  Download: :git-scopy:`Installer for latest release (Windows 64/32-bit) <releases/tag/v1.5.0-rc1>`
    
-   \**Scopy for Linux \*\*
+   **Scopy for Linux**
    
    -  Download: :git-scopy:`Scopy Flatpak installer <releases/tag/v1.5.0-rc1>`
    
-   \**Scopy for OSX \*\*
+   **Scopy for OSX**
    
    -  Download: :git-scopy:`OSX installer <releases/tag/v1.5.0-rc1>`
    
-   \**Scopy for Android \*\*
+   **Scopy for Android**
    
    -  Download: :git-scopy:`Android installer <releases/tag/v1.5.0-rc1>`
    -  Google Play store link: `Scopy <https://play.google.com/store/apps/details?id=org.adi.scopy>`_
    
-   \**Scopy all platforms latest(nightly) builds \*\*
+   **Scopy all platforms latest(nightly) builds**
    
    -  Download: :git-scopy:`Installer for latest (nightly) build <releases/tag/continous>`
    
@@ -61,8 +61,13 @@ Once you downloaded the installer, run it and follow all the required steps. Aft
 Video
 ~~~~~
 
-| |youtube>894HkVXf7-U|
-| === Scopy for Linux === Before downloading and extracting the scopy-v1.1.1-Linux-flatpak.zip archive, you need to setup Flatpak using `this setup guide <https://flatpak.org/setup/>`_ for your Linux distribution.
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>894HkVXf7-U
+   :alt: youtube>894HkVXf7-U
+
+Scopy for Linux
+~~~~~~~~~~~~~~~
+
+Before downloading and extracting the scopy-v1.1.1-Linux-flatpak.zip archive, you need to setup Flatpak using `this setup guide <https://flatpak.org/setup/>`_ for your Linux distribution.
 
 For Ubuntu, you can use the following steps:
 
@@ -79,24 +84,27 @@ After this, get the **Scopy.flatpak** file from the downloaded archive and run:
 
        **flatpak install scopy-v1.1.1-Linux-flatpak.flatpak**
 
-.. _video-1:
+Video
+~~~~~
+
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>9qgxmmTrcSE
+   :alt: youtube>9qgxmmTrcSE
+
+Scopy for OSX
+~~~~~~~~~~~~~
+
+Double click the downloaded .dmg to make its content available. "Scopy" will show up in the Finder sidebar and a window showing the content should open up. Drag the application from the .dmg window into Applications to install and wait for the process to finish.
 
 Video
 ~~~~~
 
-| |youtube>9qgxmmTrcSE|
-| === Scopy for OSX === Double click the downloaded .dmg to make its content available. "Scopy" will show up in the Finder sidebar and a window showing the content should open up.
-| Drag the application from the .dmg window into Applications to install and wait for the process to finish.
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>To0ACQ77tkg
+   :alt: youtube>To0ACQ77tkg
 
-.. _video-2:
+Scopy for Android
+~~~~~~~~~~~~~~~~~
 
-Video
-~~~~~
-
-| |youtube>To0ACQ77tkg|
-| === Scopy for Android === Tap on the downloaded .apk file to start the installation process and proceed by hitting the "Install" button. Optionally, you may be warned that this application comes from unknown sources, hit the "Install anyway" button. Now, you can find "Scopy" together with your other apps.
-| In order to connect :adi:`ADALM2000` to your device, you will need an OTG adapter that will mediate the connection between your device and the USB cable, as shown in the image below.
-|
+Tap on the downloaded .apk file to start the installation process and proceed by hitting the "Install" button. Optionally, you may be warned that this application comes from unknown sources, hit the "Install anyway" button. Now, you can find "Scopy" together with your other apps. In order to connect :adi:`ADALM2000` to your device, you will need an OTG adapter that will mediate the connection between your device and the USB cable, as shown in the image below.
 
 .. container:: centeralign
 
@@ -106,8 +114,9 @@ Video
 Launching
 ---------
 
-| Run Scopy from the Desktop Shortcut / Start Menu / Installation Folder.
-| On Linux, you can also run it using:
+Run Scopy from the Desktop Shortcut / Start Menu / Installation Folder.
+
+On Linux, you can also run it using:
 
 ::
 
@@ -152,8 +161,7 @@ If the connection was established, the device will have a green status line unde
 Connecting to a remote device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| To connect to a remote device click on the **Plus** icon. Enter the IP of the remote device into the **Hostname** field and click the **Connect** button. If a device can be detected at the IP you provided, the **Connect** button will change to an **Add** button and you can click on it to add the remote device to the list of detected devices.
-|
+To connect to a remote device click on the **Plus** icon. Enter the IP of the remote device into the **Hostname** field and click the **Connect** button. If a device can be detected at the IP you provided, the **Connect** button will change to an **Add** button and you can click on it to add the remote device to the list of detected devices.
 
 .. container:: centeralign
 
@@ -170,8 +178,6 @@ Connecting to a remote device
    |image3|
 
 Clicking the **Forget Device** button will remove the device from the list. Clicking the **Identify** button will make the device blink.
-
-| 
 
 General Settings Menu
 ---------------------
@@ -203,8 +209,10 @@ Checking the **user notes preference** will enable a tool where the user can add
 
    |image6|
 
-| 
-| ===== User Guides ===== Scopy interacts with only one hardware device at a time. Once a device is selected to be used with the application, a list of instruments that are available for that device will be enabled. Each instrument can be opened from the left menu. The icon on the right of the instrument name specifies that the instrument is enabled and provides a shortcut that allows an instrument to be turned on or off.
+User Guides
+-----------
+
+Scopy interacts with only one hardware device at a time. Once a device is selected to be used with the application, a list of instruments that are available for that device will be enabled. Each instrument can be opened from the left menu. The icon on the right of the instrument name specifies that the instrument is enabled and provides a shortcut that allows an instrument to be turned on or off.
 
 The instruments menu can be minimized by clicking on the **Scopy** button near the top-left window.
 
@@ -240,8 +248,8 @@ There are 2 ways to do this:
 
    |Scopy Double Click Detach|
 
-| 
-| ==== Instruments Overview====
+Instruments Overview
+^^^^^^^^^^^^^^^^^^^^
 
 .. container:: centeralign
 
@@ -269,19 +277,20 @@ User guide on how to use scripts with Scopy:
 
 -  :doc:`Scopy - Scripting Guide </wiki-migration/university/tools/m2k/scopy/scripting-guide>`
 
-| 
-| ====== Building ====== Complete Scopy build guides on:
+Building
+========
+
+Complete Scopy build guides on:
 
 -  :doc:`Windows </wiki-migration/university/tools/m2k/scopy/build-windows>`
 -  :doc:`Linux </wiki-migration/university/tools/m2k/scopy/build-linux>`
 -  :doc:`OSX </wiki-migration/university/tools/m2k/scopy/build-osx>`
 
-| 
-| ====== Source code ====== The source code for the entire application can be found on `github <https://github.com/analogdevicesinc/scopy>`_.
+Source code
+===========
 
-.. |youtube>894HkVXf7-U| image:: https://wiki.analog.com/_media/youtube>894HkVXf7-U
-.. |youtube>9qgxmmTrcSE| image:: https://wiki.analog.com/_media/youtube>9qgxmmTrcSE
-.. |youtube>To0ACQ77tkg| image:: https://wiki.analog.com/_media/youtube>To0ACQ77tkg
+The source code for the entire application can be found on `github <https://github.com/analogdevicesinc/scopy>`_.
+
 .. |Scopy Android setup| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy-android-setup-example.png
 .. |Scopy Home View| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy_home_view.png
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/device_connected.png

@@ -1,10 +1,15 @@
 Wav Player
 ==========
 
-| :doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
-| \|\| This module can be used to read PCM/WAV files from external Flash connected to ADAU145x via SPI. This module also can perform pitch shifting while playing the file.
-| |image1|
-| The following list shows the various audio files supported by this module.
+:doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
+
+
+This module can be used to read PCM/WAV files from external Flash connected to ADAU145x via SPI. This module also can perform pitch shifting while playing the file.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayer1.png
+   :align: center
+
+The following list shows the various audio files supported by this module.
 
 -  Audio Samples in 8.24 Fixed point format (Mono/Stereo)
 -  Wav file with out header (PCM) (Mono/Stereo)
@@ -24,9 +29,11 @@ Wav Player
 
          -  32 Bits per Sample (Signed Integer)
 
-| **Note:** 8 Bits per sample is not supported for Wav file.
-| **Note:** Pitch shifting is not supported for stereo files.
-| :doc:`Flash Programmer </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport/flashprogrammer>` can be used to write wav files to the SPI flash from ADAU145x.
+**Note:** 8 Bits per sample is not supported for Wav file.
+
+**Note:** Pitch shifting is not supported for stereo files.
+
+:doc:`Flash Programmer </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport/flashprogrammer>` can be used to write wav files to the SPI flash from ADAU145x.
 
 Input Pins
 ----------
@@ -57,13 +64,19 @@ Input Pins
 Grow Algorithm
 --------------
 
-| The module currently does not support grow/add functionality.
-| ===== Configurations ===== Click on the image |image2| to configure the SPI interface for the module.
+The module currently does not support grow/add functionality.
 
-| |image3|
-| ^GUI Control Name^Default Value^Range^Function Description^
+Configurations
+--------------
+
+Click on the image |image1| to configure the SPI interface for the module.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayerconfig.jpg
+   :align: center
 
 +--------------------------+----------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| GUI Control Name         | Default Value        | Range                                                                 | Function Description                                                                                                |
++==========================+======================+=======================================================================+=====================================================================================================================+
 | Bit Rate                 | 100kHZ               | 100 kHZ - 100000 kHZ                                                  | SPI Speed                                                                                                           |
 +--------------------------+----------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | SPI Slave Select         | 0                    | 0-6                                                                   | Slave Select for the SPI. Register window should be configured to match this selection.Please refer the note below. |
@@ -97,17 +110,22 @@ Grow Algorithm
 
 **Note:** Please make sure that the Length is accurate in bytes. If Flash Programmer module is used to write the file to the SPI EEPROM, check the wav file size from the properties in windows and enter it into length field.
 
-| |image4|
-| ==== Support for Different Slave Select==== If the Slave Select is 0 and MP0 is used as chip select, no configuration is required in the register controls. Otherwise particular multipurpose pin should be configured to act as the slave select in the register window. (Hardware Configuration -> ICx - ADAU145x Register Controls -> MULTIPURPOSE/ AUXADC)
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/fileprop.jpg
+   :align: center
 
-| |image5|
-| \* Slave Select Channel -> 'Slave Select Channel x'
+Support for Different Slave Select
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+If the Slave Select is 0 and MP0 is used as chip select, no configuration is required in the register controls. Otherwise particular multipurpose pin should be configured to act as the slave select in the register window. (Hardware Configuration -> ICx - ADAU145x Register Controls -> MULTIPURPOSE/ AUXADC)
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
+   :align: center
+
+-  Slave Select Channel -> 'Slave Select Channel x'
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-| 
-| The following table shows the mapping between module's parameter and the register control window.
+The following table shows the mapping between module's parameter and the register control window.
 
 +----------------------------------------+------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register control |
@@ -126,8 +144,12 @@ Grow Algorithm
 +----------------------------------------+------------------------------------------------+
 
 | 
-| ====Support for Multiple Files==== Number of wav files can be configured in the 'Control Port Properties' window. Start Address and Length for each of the wav file should be configured in the 'Control Port Properties' window. |image6|
-| Dynamically the wav file can be selected from the external pin. |image7|
+| ====Support for Multiple Files==== Number of wav files can be configured in the 'Control Port Properties' window. Start Address and Length for each of the wav file should be configured in the 'Control Port Properties' window. |image2|
+
+Dynamically the wav file can be selected from the external pin.
+
+
+|image3|
 
 Pitch Shifting
 ~~~~~~~~~~~~~~
@@ -135,39 +157,35 @@ Pitch Shifting
 Pitch shifting option can be enabled to control the speed of the Wav file playback.
 
 
-|image8|
+|image4|
 
 In the above example the pitch shifting factor/speed is set as 1.5 (Note that this should be in 8.24 fixed point format). So the file plays at the speed of 1.5. Assume the EEPROM/Flash contains the sine tone of 500 Hz. The playback will be sine tone of 750Hz (1.5 \* 500).
 
 DSP Parameter Information
 -------------------------
 
-+------------------+-----------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| GUI Control Name | Compiler Name                                                                                                   | Function Description                                                                     |
-+==================+=================================================================================================================+==========================================================================================+
-| StartAddress1    | <fc #008000>WavPlayerAlg</fc><fc #ff0000>1</fc><fc #000080>sample</fc><fc #800000>1</fc><fc #000080>_start</fc> | Array of start addresses of Audio files in SPI flash                                     |
-+------------------+-----------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| Length1          | <fc #008000>WavPlayerAlg</fc><fc #ff0000>1</fc><fc #000080>sample</fc><fc #800000>1</fc><fc #000080>_end</fc>   | Array of end addresses of Audio files in SPI flash (Calculated as StartAddress + Length) |
-+------------------+-----------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
++------------------+----------------------------+------------------------------------------------------------------------------------------+
+| GUI Control Name | Compiler Name              | Function Description                                                                     |
++==================+============================+==========================================================================================+
+| StartAddress1    | WavPlayerAlg1sample1_start | Array of start addresses of Audio files in SPI flash                                     |
++------------------+----------------------------+------------------------------------------------------------------------------------------+
+| Length1          | WavPlayerAlg1sample1_end   | Array of end addresses of Audio files in SPI flash (Calculated as StartAddress + Length) |
++------------------+----------------------------+------------------------------------------------------------------------------------------+
 
 | 
 | Here,
 
--  <fc #008000> Green</fc> - Algorithm Name
--  <fc #ff0000> Red</fc> - Instance Number (Changes for each instance)
--  <fc #000080> Blue</fc> - Parameter Name
--  <fc #800000> Brown</fc> - File Number (Changes for each files)
+-   Green - Algorithm Name
+-   Red - Instance Number (Changes for each instance)
+-   Blue - Parameter Name
+-   Brown - File Number (Changes for each files)
 
 Supported ICs
 -------------
 
 -  ADAU145x
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayer1.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayericon.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayerconfig.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/fileprop.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayer_4files.jpg
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayer_example.jpg
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayer_pitch.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayericon.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayer_4files.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayer_example.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayer_pitch.jpg

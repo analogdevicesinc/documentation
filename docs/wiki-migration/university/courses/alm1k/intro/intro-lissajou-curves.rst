@@ -54,8 +54,7 @@ Marker readouts in upper left of the plot show the required values for computing
 
 The sign of the phase difference is determined by inspecting the channel time traces.
 
-| In the figure 2 example, the Ymax value is 1.538, YX=0 is 1.064, and the top of the ellipse is in Q1:
-| Φ2 - Φ1 = ± sin\ :sup:`−1` (1.064/1.538) = ± sin\ :sup:`−1` (0.692) = 44º
+In the figure 2 example, the Ymax value is 1.538, YX=0 is 1.064, and the top of the ellipse is in Q1: Φ2 - Φ1 = ± sin\ :sup:`−1` (1.064/1.538) = ± sin\ :sup:`−1` (0.692) = 44º
 
 The accuracy of this method is dependent on the placement of the cursors but it produces reasonable results with certain artistic panache.
 
@@ -64,8 +63,7 @@ Hardware like the ADALM1000 and ALICE desktop software offer multiple techniques
 Experiment
 ----------
 
-| **Materials:**
-| ADALM1000 hardware module
+**Materials:** ADALM1000 hardware module
 
 Create a Lissajous Pattern
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -109,7 +107,6 @@ From this activity, you should see the value of comparing one signal against som
 
 **For Further Reading:**
 
-| `Lissajou Curves <http://datagenetics.com/blog/april22015/index.html>`_
-| `Lissajou Curves <https://en.wikipedia.org/wiki/Lissajous_curve>`_
+`Lissajou Curves <http://datagenetics.com/blog/april22015/index.html>`_ `Lissajou Curves <https://en.wikipedia.org/wiki/Lissajous_curve>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**

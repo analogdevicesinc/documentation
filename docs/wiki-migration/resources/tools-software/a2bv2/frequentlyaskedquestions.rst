@@ -88,7 +88,7 @@ To enable DAT file parsing and support for reading configurations from EEPROM, t
    a2b_HResult a2b_pal_FileRead(a2b_Handle hnd, a2b_UInt16 offset, a2b_UInt16 nRead, a2b_Byte* rBuf);
    a2b_HResult a2b_pal_FileClose(A2B_ECB* ecb);
    #endif
-   a2b_HResult a2b_EepromWriteRead(a2b_Handle hnd, a2b_UInt16 addr, a2b_UInt16 nWrite, const a2b_Byte* wBuf, 
+   a2b_HResult a2b_EepromWriteRead(a2b_Handle hnd, a2b_UInt16 addr, a2b_UInt16 nWrite, const a2b_Byte* wBuf,
    a2b_UInt16 nRead, a2b_Byte* rBuf);``
 -  **Specify Binary File Path:** In a2bapp_defs.h, define the path for the binary BCF file: ``#define A2B_CONF_BINARY_BCF_FILE_URL "../adi_a2b_busconfig.dat"``
 -  **Implement File Handling Functions:** In adi_a2b_pal.c, implement functions for file operations and integrate them into the a2b_palInit() function: ``#if defined A2B_BCF_FROM_FILE_IO
@@ -346,7 +346,7 @@ Please find the discovery timing details below
 
 No. As of now, such feature has not been implemented in A2B stack or in SigmaStudioPlus.
 
-\**22. \*\*
+**22.**
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linefaultsettings.png
    :align: center
@@ -377,7 +377,7 @@ To resolve this issue, you can address it by selecting an appropriate configurat
 
 ::
 
-      “C:\Analog Devices\ADI_A2B-SSPlus_Software-Relx.x.x\Schematics\PC\xml” 
+      “C:\Analog Devices\ADI_A2B-SSPlus_Software-Relx.x.x\Schematics\PC\xml”
 
 and enable the **Program during discovery** option, as mentioned in the image below.
 
@@ -411,8 +411,9 @@ One solution is that, since the source code of A2B stack is available with the u
 
 **26. Can the A2B stack be used to frequently clear the BECNT? If yes, can the time between the clearings be set freely?**
 
-| In the *a2bapp_onDiscoveryComplete()* function, we clear the **BECNT** register by invoking the callback function *a2b_app_handle_becovf()* after a 1000ms delay, as defined in the **A2B_APP_TMRTOHANDLE_BECOVF_AFTER_INTERVAL** macro. Additionally, to repetitively clear the **BECNT** register every 1000ms, you can configure the **A2B_APP_TMRTOHANDLE_BECOVF_REPEAT_INTERVAL** macro. You can change the time freely according to your preferences. Please ensure that the LineFaultDiagnostics settings are enabled to utilize this functionality effectively.
-| **27. How do I install the A2B Plugin X.Y.Z for SigmaStudio+ on Windows 11, and what should I do if issues arise?**
+In the *a2bapp_onDiscoveryComplete()* function, we clear the **BECNT** register by invoking the callback function *a2b_app_handle_becovf()* after a 1000ms delay, as defined in the **A2B_APP_TMRTOHANDLE_BECOVF_AFTER_INTERVAL** macro. Additionally, to repetitively clear the **BECNT** register every 1000ms, you can configure the **A2B_APP_TMRTOHANDLE_BECOVF_REPEAT_INTERVAL** macro. You can change the time freely according to your preferences. Please ensure that the LineFaultDiagnostics settings are enabled to utilize this functionality effectively.
+
+**27. How do I install the A2B Plugin X.Y.Z for SigmaStudio+ on Windows 11, and what should I do if issues arise?**
 
 To install the A2B Plugin X.Y.Z for SigmaStudio+, follow these steps:
 

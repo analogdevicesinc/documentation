@@ -3,9 +3,15 @@
 Index Selectable Multiplexer
 ============================
 
-| |indxselnx1mux.png| |indxselnx2mux.png| |indxselnx2muxslew.png|
-| ===== Description ===== The Index Selectable Multiplexer block route one of the inputs to the output pins. The input is selected based on a control signal value from an Index Lookup Table, RMS Table, or DC Input block. The slew variant of Index Selectable Mux allows smooth transition when switching inputs.
-| ===== Variants =====
+|indxselnx1mux.png| |indxselnx2mux.png| |indxselnx2muxslew.png|
+
+Description
+-----------
+
+The Index Selectable Multiplexer block route one of the inputs to the output pins. The input is selected based on a control signal value from an Index Lookup Table, RMS Table, or DC Input block. The slew variant of Index Selectable Mux allows smooth transition when switching inputs.
+
+Variants
+--------
 
 -  Mono (No Slew)
 -  Mono (HW Slew)
@@ -14,8 +20,8 @@ Index Selectable Multiplexer
 -  Stereo (HW Slew)
 -  Stereo (SW Slew)
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +------------------+------------+------------------+---------------+------------------+
 | Name             | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -37,30 +43,30 @@ Index Selectable Multiplexer
 | ===== Pins =====
 
 Input
------
+~~~~~
 
-======================= ======= ===============================
-Name                    Type    Description
-======================= ======= ===============================
-Index                   Control Channel selection control input
-Input<fc #ff0000>X</fc> Audio   Input Channel X
-======================= ======= ===============================
+====== ======= ===============================
+Name   Type    Description
+====== ======= ===============================
+Index  Control Channel selection control input
+InputX Audio   Input Channel X
+====== ======= ===============================
 
 Output
-------
+~~~~~~
 
-======================== ===== ================
-Name                     Type  Description
-======================== ===== ================
-Output<fc #ff0000>X</fc> Audio Output Channel X
-======================== ===== ================
+======= ===== ================
+Name    Type  Description
+======= ===== ================
+OutputX Audio Output Channel X
+======= ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +--------------------+---------------+---------+-------------------------------------------------------------------------------------------------------+
 | GUI Parameter      | Default Value | Range   | Function Description                                                                                  |

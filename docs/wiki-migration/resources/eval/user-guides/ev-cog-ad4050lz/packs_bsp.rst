@@ -18,13 +18,13 @@ The Cog software development kit consists of the following packs:-
 ::
 
    -[[/resources/eval/user-guides/ev-cog-ad4050lz/software/aducm4x50|Analog Devices ADuCM4x50 Device Support]] - This is a bare minimum pack required to enable working with ADuCM4050 and develop simple applications using the on-chip drivers.
-   * //Version History//       
-   * **Version: 3.1.0** - Extended support for IAR Embedded Workbench and Keil uVision. **[Latest]**
+   * //Version History//
+   **Version: 3.1.0** - Extended support for IAR Embedded Workbench and Keil uVision. **[Latest]**
    -[[/resources/eval/user-guides/ev-cog-ad4050lz/software/eval-cog-ad4050lz|Analog Devices EV-COG-AD4050 Off-Chip Drivers and Examples]] - This pack along with the DFP is required to develop applications using the on-board drivers.
-   * //Version History// 
-   * **Version 3.1.0** - Extended support for IAR Embedded Workbench.**[Latest]**             
-          
+   * //Version History//
+   **Version 3.1.0** - Extended support for IAR Embedded Workbench.**[Latest]**
 
-| 
+
 | End Document
-| `Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_
+
+`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_

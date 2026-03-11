@@ -56,7 +56,7 @@ Files
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | Function                 | File                                                                                                                     |
 +==========================+==========================================================================================================================+
-| compatibility layer 4.19 | :git-linux:`drivers/net/phy/adin-compat.h`                                                                               |
+| compatibility layer 4.19 | `drivers/net/phy/adin-compat.h <https://github.com/analogdevicesinc/linux/blob/2019_R2/drivers/net/phy/adin-compat.h>`_  |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Example platform device initialization
@@ -122,13 +122,13 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
    Linux Kernel Configuration
    Symbol: ADIN_PHY [=y]
-   Type  : tristate                                                                                                                                                                      
-   Prompt: Analog Devices Industrial Ethernet PHYs  
+   Type  : tristate
+   Prompt: Analog Devices Industrial Ethernet PHYs
       Location:
         -> Device Drivers
-          -> Network device support (NETDEVICES [=y])│  
-    (1)     -> PHY Device support and infrastructure (PHYLIB [=y]) 
-      Defined at drivers/net/phy/Kconfig:208  
+          -> Network device support (NETDEVICES [=y])│
+    (1)     -> PHY Device support and infrastructure (PHYLIB [=y])
+      Defined at drivers/net/phy/Kconfig:208
       Depends on: NETDEVICES [=y] && PHYLIB [=y]
 
 Driver testing
@@ -156,30 +156,30 @@ Typically, if both TX & RX values are incremented, it means that it is working. 
 
 ::
 
-   root@analog:~# ifconfig 
-   eth0      Link encap:Ethernet  HWaddr d6:41:50:ed:3b:65  
+   root@analog:~# ifconfig
+   eth0      Link encap:Ethernet  HWaddr d6:41:50:ed:3b:65
              UP BROADCAST MULTICAST  MTU:1500  Metric:1
              RX packets:609895 errors:5 dropped:0 overruns:0 frame:0
              TX packets:286926 errors:0 dropped:0 overruns:0 carrier:0
-             collisions:0 txqueuelen:1000 
+             collisions:0 txqueuelen:1000
              RX bytes:0 (647.6 MB)  TX bytes:0 (38.7 MB)
-             Interrupt:23 
+             Interrupt:23
 
-   eth1      Link encap:Ethernet  HWaddr 00:0a:35:03:73:d9  
+   eth1      Link encap:Ethernet  HWaddr 00:0a:35:03:73:d9
              UP BROADCAST MULTICAST  MTU:1500  Metric:1
              RX packets:0 errors:0 dropped:0 overruns:0 frame:0
              TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-             collisions:0 txqueuelen:1000 
+             collisions:0 txqueuelen:1000
              RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
-             Interrupt:24 
+             Interrupt:24
 
-   lo        Link encap:Local Loopback  
+   lo        Link encap:Local Loopback
              inet addr:127.0.0.1  Mask:255.0.0.0
              inet6 addr: ::1/128 Scope:Host
              UP LOOPBACK RUNNING  MTU:65536  Metric:1
              RX packets:8 errors:0 dropped:0 overruns:0 frame:0
              TX packets:8 errors:0 dropped:0 overruns:0 carrier:0
-             collisions:0 txqueuelen:1000 
+             collisions:0 txqueuelen:1000
              RX bytes:480 (480.0 B)  TX bytes:480 (480.0 B)
 
 ethtool
@@ -212,21 +212,21 @@ Example: Seeing MAC & PHY info
    root@analog:~# ethtool eth0
    Settings for eth0:
            Supported ports: [ TP MII ]
-           Supported link modes:   10baseT/Half 10baseT/Full 
+           Supported link modes:   10baseT/Half 10baseT/Full
                                    100baseT/Half 100baseT/Full ==== Example: Seeing MAC & PHY info ====
 
-                                   1000baseT/Half 1000baseT/Full 
+                                   1000baseT/Half 1000baseT/Full
            Supported pause frame use: No
            Supports auto-negotiation: Yes
            Supported FEC modes: Not reported
-           Advertised link modes:  10baseT/Half 10baseT/Full 
-                                   100baseT/Half 100baseT/Full 
-                                   1000baseT/Half 1000baseT/Full 
+           Advertised link modes:  10baseT/Half 10baseT/Full
+                                   100baseT/Half 100baseT/Full
+                                   1000baseT/Half 1000baseT/Full
            Advertised pause frame use: No
            Advertised auto-negotiation: Yes
            Advertised FEC modes: Not reported
-           Link partner advertised link modes:  10baseT/Half 10baseT/Full 
-                                                100baseT/Half 100baseT/Full 
+           Link partner advertised link modes:  10baseT/Half 10baseT/Full
+                                                100baseT/Half 100baseT/Full
            Link partner advertised pause frame use: Symmetric
            Link partner advertised auto-negotiation: Yes
            Link partner advertised FEC modes: Not reported
@@ -459,4 +459,8 @@ Ethernet pointers
 -  `Ethernet Controller bindings doc <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/ethernet-controller.yaml>`_
 -  `Ethernet PHY bindings doc <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/ethernet-phy.yaml>`_
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

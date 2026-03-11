@@ -1,8 +1,9 @@
 Counters
 ========
 
-| :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
-| --------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
+
+--------------
 
 Counters, timers and stopwatches help achieve time based conditional event triggering. In many applications it is important to be able to track time that has passed in order to trigger events, or turn flags on and off, or find out how long it takes to finish a task. It is also useful to trigger the start and stop of counting based on external signals.
 

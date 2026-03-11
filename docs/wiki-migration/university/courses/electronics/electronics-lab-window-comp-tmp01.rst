@@ -11,15 +11,7 @@ A Window-Comparator is a circuit configuration, usually consisting of a pair of 
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 2 – AD8561 Comparators
-| 1 – 2N3904 NPN transistor
-| 2 – 1N914 small signal diodes
-| 1 – LED ( any color )
-| 3 – 10KΩ resistor
-| 1 – 20KΩ resistor
-| 1 – 470Ω resistor
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 2 – AD8561 Comparators 1 – 2N3904 NPN transistor 2 – 1N914 small signal diodes 1 – LED ( any color ) 3 – 10KΩ resistor 1 – 20KΩ resistor 1 – 470Ω resistor
 
 Window Comparator
 -----------------
@@ -89,8 +81,6 @@ On the plot the "windows" can be noticed when the input voltage is between the u
 
 Temperature Control
 -------------------
-
-.. _background-1:
 
 Background
 ~~~~~~~~~~

@@ -11,7 +11,7 @@ The script method
 
 We provide `a script that does automates <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/linux/build_zynqmp_kernel_image.sh>`_ the build for Zynq using the Linaro toolchain.
 
-<fc #ff0000>\ **Note**\ </fc> that this script differs from the one for Zynq.
+**Note** that this script differs from the one for Zynq.
 
 The script takes up to 3 parameters, but if left blank, it uses defaults:
 
@@ -79,7 +79,7 @@ Configure the kernel
 
 ::
 
-   dave@hal9000:~/github-linux-build/linux$ make adi_zynqmp_defconfig 
+   dave@hal9000:~/github-linux-build/linux$ make adi_zynqmp_defconfig
    #
    # configuration written to .config
    #
@@ -142,8 +142,9 @@ Copy the generated files to your SD Card
 Building the ZynqMP boot image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
-| Instructions on how to build the Hardware Description File (HDF) handover file can be found here:
+The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
+
+Instructions on how to build the Hardware Description File (HDF) handover file can be found here:
 
 -  :doc:`Building HDL </wiki-migration/resources/fpga/docs/build>`
 
@@ -170,13 +171,15 @@ The script can be downloaded from here:
 
 -  `build_zynqmp_boot_bin.sh <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynqmp_boot_bin/build_zynqmp_boot_bin.sh>`_
 
-|
-
 .. tip::
 
    \ **NOTE: After downloading the script you need to make it executable**
 
-   | ``$ chmod +x build_zynqmp_boot_bin.sh``
+   
+   ::
+   
+      $ chmod +x build_zynqmp_boot_bin.sh
+   
 
 
 Usage
@@ -191,7 +194,8 @@ Usage
 -  An optionally 4th ``name`` parameter can be given to tar.gz the output directory. (``name``.tar.gz)
 -  Build output is located in a local directory named: output_boot_bin.
 -  This script requires Xilinx Vitis and bootgen in the PATH.
-   \* A simple way is to source vivado settings[32|64].sh for Linux:
+
+   -  A simple way is to source vivado settings[32|64].sh for Linux:
 
 ::
 
@@ -205,14 +209,10 @@ Usage
    export PATH=$PATH:/cygdrive/c/Xilinx/Vitis/202x.x/bin
    export PATH=$PATH:/cygdrive/c/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
 
-|
-
 .. tip::
 
-   \ **NOTE: u-boot.elf**
+   \ **NOTE: u-boot.elf** For those who don't want to build u-boot themselves. The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, **bootgen_sysfiles.tgz**
 
-   | For those who don't want to build u-boot themselves.
-   | The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, **bootgen_sysfiles.tgz**
    
 
 

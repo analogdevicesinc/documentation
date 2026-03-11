@@ -60,13 +60,11 @@ Where T(S) is the measured loop gain and V\ :sub:`Sig` and V\ :sub:`Ref` are vol
 
 The measured loop gain, T(S) approximately equals the actual loop gain if the following two conditions are met.
 
-| Condition 1
-| The impedance looking forward around the feedback loop ( Z\ :sub:`IN`\ (S) of block H(S) ) is much greater than the impedance looking backwards from the injection point ( Z\ :sub:`OUT`\ (S) of block G(S) ).
+Condition 1 The impedance looking forward around the feedback loop ( Z\ :sub:`IN`\ (S) of block H(S) ) is much greater than the impedance looking backwards from the injection point ( Z\ :sub:`OUT`\ (S) of block G(S) ).
 
 :math:`|Z_IN (S)| >> |Z_OUT (S)|`
 
-| Condition 2
-| The second condition that must be fulfilled to ensure that the measured loop gain equals approximately the real loop gain is:
+Condition 2 The second condition that must be fulfilled to ensure that the measured loop gain equals approximately the real loop gain is:
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_e3.png
    :align: center
@@ -112,21 +110,7 @@ The negative feedback loop from the output at the collector and the input at the
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 2 - 10 Ω resistors
-| 1 - 100 Ω resistor
-| 1 - 470 Ω resistor
-| 1 - 2.2 KΩ resistor
-| 1 - 3.3 KΩ resistor
-| 2 - 4.7 KΩ resistors
-| 1 - 10 KO resistor
-| 1 - 47 KΩ resistor
-| 1 - 2N3904 NPN transistor ( or equivalent )
-| 1 - 39 pF capacitor
-| 1 - 100 pF capacitor
-| 1 - 470 pF capacitor
-| 1 - HPH1-1400L transformer ( or transformers, T1-6T from Minicircuits, WB1010 from Coilcraft )
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 2 - 10 Ω resistors 1 - 100 Ω resistor 1 - 470 Ω resistor 1 - 2.2 KΩ resistor 1 - 3.3 KΩ resistor 2 - 4.7 KΩ resistors 1 - 10 KO resistor 1 - 47 KΩ resistor 1 - 2N3904 NPN transistor ( or equivalent ) 1 - 39 pF capacitor 1 - 100 pF capacitor 1 - 470 pF capacitor 1 - HPH1-1400L transformer ( or transformers, T1-6T from Minicircuits, WB1010 from Coilcraft )
 
 Directions:
 ~~~~~~~~~~~
@@ -173,9 +157,7 @@ Another extra credit exercise would be to compare the measured response for the 
 Questions:
 ~~~~~~~~~~
 
-| Why did the unity gain frequency change for the cases with C\ :sub:`M` equal to 39 pF and 100 pF for the amplifier?
-| Why did the unity gain frequency change for the case of the with R\ :sub:`B` equal to 4.7 KΩ vs. 2.2 KΩ?
-| Why did the unity gain frequency change for the case with R\ :sub:`E` inserted?
+Why did the unity gain frequency change for the cases with C\ :sub:`M` equal to 39 pF and 100 pF for the amplifier? Why did the unity gain frequency change for the case of the with R\ :sub:`B` equal to 4.7 KΩ vs. 2.2 KΩ? Why did the unity gain frequency change for the case with R\ :sub:`E` inserted?
 
 .. admonition:: Download
    :class: download
@@ -189,9 +171,6 @@ Questions:
 
 **For Further Reading:**
 
-| Measurement of loop gain in feedback systems. Middlebrook, R.D. s.l. : International Journal of Electronics, 1975, Bd. 38. http:*scholar.google.com/scholar?cluster=5040596387593898653
-  http:*\ en.wikipedia.org/wiki/Nyquist_stability_criterion
-| http:*en.wikipedia.org/wiki/Phase_margin
-  http:*\ en.wikipedia.org/wiki/Bode_plot
-| http://www.edn.com/electronics-blogs/analog-bytes/4434609/Loop-gain-measurements-
-| **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
+Measurement of loop gain in feedback systems. Middlebrook, R.D. s.l. : International Journal of Electronics, 1975, Bd. 38. http://scholar.google.com/scholar?cluster=5040596387593898653 http://en.wikipedia.org/wiki/Nyquist_stability_criterion http://en.wikipedia.org/wiki/Phase_margin http://en.wikipedia.org/wiki/Bode_plot http://www.edn.com/electronics-blogs/analog-bytes/4434609/Loop-gain-measurements-
+
+**Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**

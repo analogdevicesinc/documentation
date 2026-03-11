@@ -3,15 +3,21 @@
 Single Slew External Volume
 ===========================
 
-| 
-| |extvol.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/extvol.png
+   :alt: extvol.png
 
 Description
 -----------
 
-| The Single Slew Ext Vol block controls level of the signal through external pin. Such capability would be appropriate for an application like external control communication to ab 8-10 bit ADC.
-| ===== Usage ===== This block has text filed to specify the slew rate for smooth transition from one level of the signal to another level.slew rate is configurable from 1 to 23. Signal transition from one level to another level is faster when slew rate value is low and Signal transition from one level to another level is slower when slew rate value is high.
-| ===== Targets Supported =====
+The Single Slew Ext Vol block controls level of the signal through external pin. Such capability would be appropriate for an application like external control communication to ab 8-10 bit ADC.
+
+Usage
+-----
+
+This block has text filed to specify the slew rate for smooth transition from one level of the signal to another level.slew rate is configurable from 1 to 23. Signal transition from one level to another level is faster when slew rate value is low and Signal transition from one level to another level is slower when slew rate value is high.
+
+Targets Supported
+-----------------
 
 +---------------------+------------+------------------+---------------+------------------+
 | Name                | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -25,28 +31,28 @@ Description
 Input
 ~~~~~
 
-======================== ======= ===================================
-Name                     Type    Description
-======================== ======= ===================================
-ControlInput             Control Controls the signal level of output
-Input <fc #ff0000>X</fc> Audio   Input channel X
-======================== ======= ===================================
+============ ======= ===================================
+Name         Type    Description
+============ ======= ===================================
+ControlInput Control Controls the signal level of output
+Input X      Audio   Input channel X
+============ ======= ===================================
 
 Output
 ~~~~~~
 
-========================= ===== ================
-Name                      Type  Description
-========================= ===== ================
-Output <fc #ff0000>X</fc> Audio Output channel X
-========================= ===== ================
+======== ===== ================
+Name     Type  Description
+======== ===== ================
+Output X Audio Output channel X
+======== ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +--------------------+---------------+--------------------------------+------------------------------------------------------------------------------------------+
 | GUI Parameter Name | Default Value | Range                          | Function Description                                                                     |
@@ -79,5 +85,3 @@ Note:
 
 | 
 | ===== DSP Parameter Computation ===== SlewRate = 2^(-1\*StepSize)
-
-.. |extvol.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/extvol.png

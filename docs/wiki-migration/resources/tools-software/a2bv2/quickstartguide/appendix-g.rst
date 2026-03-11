@@ -3,8 +3,6 @@
 A2B Bus Analyzer Platform
 =========================
 
-.. _a2b-bus-analyzer-platform-1:
-
 A2B Bus Analyzer Platform
 -------------------------
 

@@ -39,7 +39,7 @@ Follow below instructions to run the App.
 
 |image1|
 
-   \* Once open, the app should automatically find Bluetooth devices within range, so you'll want to find and open the project you are working on.
+-  Once open, the app should automatically find Bluetooth devices within range, so you'll want to find and open the project you are working on.
 -  Once connected, the app will provide you an option for which sensor(s) you are connected to that Bluetooth device.
 
    -  It's usually only a single sensor, so make sure it's "Checked on" and hit "View Data".

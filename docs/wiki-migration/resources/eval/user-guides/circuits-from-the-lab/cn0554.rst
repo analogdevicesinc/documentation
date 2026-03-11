@@ -1,25 +1,27 @@
 EVAL-CN0554-RPIZ Hardware User Guide
 ====================================
 
-|
-
 .. important::
 
    **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0554-rpiz/index.html
-   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
-   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+   https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0554-rpiz/index.html
+   
+   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   
+   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
    
 
 
-| The :adi:`EVAL-CN0554-RPIZ` is a flexible, general-purpose multichannel mixed-signal analog input/output (I/O) module. The 16 single-ended analog outputs are software configurable, with ranges of 0 V to 5 V, ±5 V, 0 V to 10 V, and ±15 V. Eight channels of fully differential analog input are provided with hardware selectable input ranges of ±2.5 V and ±25 V. The circuit is designed to mount directly on top of a Raspberry Pi, providing this popular single board computer an analog input/output interface. Software control is accessible through the Linux industrial input/output (IIO) framework.
-| |image1|
+The :adi:`EVAL-CN0554-RPIZ` is a flexible, general-purpose multichannel mixed-signal analog input/output (I/O) module. The 16 single-ended analog outputs are software configurable, with ranges of 0 V to 5 V, ±5 V, 0 V to 10 V, and ±15 V. Eight channels of fully differential analog input are provided with hardware selectable input ranges of ±2.5 V and ±25 V. The circuit is designed to mount directly on top of a Raspberry Pi, providing this popular single board computer an analog input/output interface. Software control is accessible through the Linux industrial input/output (IIO) framework.
 
-.. container:: center
+   
 
-   *<fc #c0c0c0>EVAL-CN0554-RPIZ Circuit Evaluation Board</fc>*
 
+|image1|
+
+*EVAL-CN0554-RPIZ Circuit Evaluation Board*
 
 Equipment Required
 ------------------
@@ -48,10 +50,7 @@ The :adi:`EVAL-CN0554-RPIZ` has three main connectors: the 40-pin connector whic
 
 |image2|
 
-.. container:: center
-
-   *<fc #c0c0c0>EVAL-CN0554-RPIZ Connectors</fc>*
-
+*EVAL-CN0554-RPIZ Connectors*
 
 ADC Header
 ~~~~~~~~~~
@@ -83,15 +82,10 @@ The :adi:`EVAL-CN0554-RPIZ` has nine jumper headers, eight are for selecting the
 
 |image3|
 
-.. container:: center
-
-   *<fc #c0c0c0>EVAL-CN0554-RPIZ Jumper Headers</fc>*
-
+*EVAL-CN0554-RPIZ Jumper Headers*
 
 System Setup
 ------------
-
-.. _equipment-required-1:
 
 Equipment Required
 ~~~~~~~~~~~~~~~~~~
@@ -120,92 +114,34 @@ Equipment Required
 System Block Diagram
 ~~~~~~~~~~~~~~~~~~~~
 
-|cn0554_simplified_block_diagram.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/cn0554_simplified_block_diagram.jpg
+   :alt: cn0554_simplified_block_diagram.jpg
+   :align: center
+   :width: 600px
 
-.. container:: center
-
-   *<fc #c0c0c0>EVAL-CN0554-RPIZ System Block Diagram</fc>*
-
+*EVAL-CN0554-RPIZ System Block Diagram*
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
 
 To set up the complete system, follow these steps:
 
--  Connect the :adi:`EVAL-CN0554-RPIZ` to the Raspberry Pi through the 40-pin connector.
-
-
-|13\_-\_cn0554_attached_to_raspberry_pi.jpg|
-
-.. container:: center
-
-   *<fc #c0c0c0>EVAL-CN0554-RPIZ Attached to Raspberry Pi 4</fc>*\
-
-
+-  Connect the :adi:`EVAL-CN0554-RPIZ` to the Raspberry Pi through the 40-pin connector. |13\_-\_cn0554_attached_to_raspberry_pi.jpg| *EVAL-CN0554-RPIZ Attached to Raspberry Pi 4*
 -  Insert the SD card with the correct ADI Kuiper Linux image to the Raspberry Pi 4 Model B.
--  Connect the corresponding ADC input and DAC output channel using the female-to-female loopback jumper cables as shown in the connection diagram and image below.\
-
-|14\_-\_cn0554_loopback_diagram.png|
-
-.. container:: center
-
-   *<fc #c0c0c0>EVAL-CN0554-RPIZ Test Setup with Loopback Connection</fc>*\
-
-
+-  Connect the corresponding ADC input and DAC output channel using the female-to-female loopback jumper cables as shown in the connection diagram and image below.\ |14\_-\_cn0554_loopback_diagram.png| *EVAL-CN0554-RPIZ Test Setup with Loopback Connection*
 -  Connect HDMI of the Raspberry Pi 4 Model B to the display monitor, and then connect the keyboard and mouse to any of the former’s USB ports.
--  Power the Raspberry Pi 4 Model B using the USB Type-C power adapter and wait for the Raspberry Pi to boot up.
+-  Power the Raspberry Pi 4 Model B using the USB Type-C power adapter and wait for the Raspberry Pi to boot up. |image4| *EVAL-CN0554-RPIZ System Test Setup*
+-  Open IIO Oscilloscope and undock the DMM and Debug tabs as shown below. |image5|\ *IIO Oscilloscope DMM and Debug Tabs*
+-  In the DMM Window, select the **ad7124** as the device and select a channel to measure, such as **ad7124-8:voltage0-voltage 1**. Click on the Play button to start the measurement. |image6| *IIO Oscilloscope DMM Window*
+-  In the Debug Window, select **ltc2688** in Device Selection. In the IIO Device Attributes section, select **output voltage1** channel and select **raw** attribute. Set the value to **32768** and click **Write**. This should set the output voltage to around 2.5 V which is half of the default output range of 0 to 5 V. |image7| *IIO Oscilloscope Debug Window*
+-  The DMM measurement should show approximately 0.227 V or 1/11 of 2.5 V which is the default input voltage attenuation. |image8| *Loopback Measurement of CN0554 Analog I/O*
 
-|image4|
+Software Setup
+--------------
 
-.. container:: center
+For the device to run, the SD card should be loaded with Analog Devices Kuiper Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It incorporates Linux device drivers for ADI products as well as tools and other software products designed and created with ease of use in mind. The reasoning behind creating this distribution is to minimize the barriers to integrating ADI hardware devices into a Linux-based embedded system.
 
-   \ *<fc #c0c0c0>EVAL-CN0554-RPIZ System Test Setup</fc>*\
-
-
--  Open IIO Oscilloscope and undock the DMM and Debug tabs as shown below. |image5|\
-
-.. container:: center
-
-   \ *<fc #c0c0c0>IIO Oscilloscope DMM and Debug Tabs</fc>*\
-
-
--  In the DMM Window, select the **ad7124** as the device and select a channel to measure, such as **ad7124-8:voltage0-voltage 1**. Click on the Play button to start the measurement.
-
-
-
-|image6|
-
-.. container:: center
-
-   \ *<fc #c0c0c0>IIO Oscilloscope DMM Window</fc>*\
-
-
--  In the Debug Window, select **ltc2688** in Device Selection. In the IIO Device Attributes section, select **output voltage1** channel and select **raw** attribute. Set the value to **32768** and click **Write**. This should set the output voltage to around 2.5 V which is half of the default output range of 0 to 5 V.
-
-
-
-|image7|
-
-.. container:: center
-
-   \ *<fc #c0c0c0>IIO Oscilloscope Debug Window</fc>*\
-
-
--  The DMM measurement should show approximately 0.227 V or 1/11 of 2.5 V which is the default input voltage attenuation.
-
-
-
-|image8|
-
-.. container:: center
-
-   \ *<fc #c0c0c0>Loopback Measurement of CN0554 Analog I/O</fc>*\
-
-
-| 
-| ===== Software Setup ===== For the device to run, the SD card should be loaded with Analog Devices Kuiper Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It incorporates Linux device drivers for ADI products as well as tools and other software products designed and created with ease of use in mind. The reasoning behind creating this distribution is to minimize the barriers to integrating ADI hardware devices into a Linux-based embedded system.
-
-Access to the embedded system can be through ​a remote PC connected ​either via LAN cable or Wi-Fi. ​
+Access to the embedded system can be through a remote PC connected either via LAN cable or Wi-Fi.
 
 Downloading and Flashing Kuiper Linux Image on SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -268,7 +204,7 @@ The DMM tab provides the ADC readings for the :adi:`AD7124-8`.
 Pyadi-IIO
 ~~~~~~~~~
 
-| :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+:doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
 
 Running the Example
 ^^^^^^^^^^^^^^^^^^^
@@ -345,8 +281,6 @@ Hardware Registration
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/cn0554_connectors.jpg
    :width: 600px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/cn0554_jumper_headers.jpg
-   :width: 600px
-.. |cn0554_simplified_block_diagram.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/cn0554_simplified_block_diagram.jpg
    :width: 600px
 .. |13\_-\_cn0554_attached_to_raspberry_pi.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/13_-_cn0554_attached_to_raspberry_pi.jpg
    :width: 600px

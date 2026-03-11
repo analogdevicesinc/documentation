@@ -20,8 +20,7 @@ Introduction
 
 The :adi:`AD9785`/:adi:`AD9787`/:adi:`AD9788` are 12-bit, 14-bit, and 16-bit, high dynamic range TxDAC® devices, respectively, that provide a sample rate of 800 MSPS, permitting multicarrier generation up to the Nyquist frequency. Features are included for optimizing direct conversion transmit applications, including complex digital modulation, as well as gain, phase, and offset compensation.
 
-| **HW Platform(s):** `Virtex-6 ML605 (Xilinx) <https://www.xilinx.com/products/boards-and-kits/EK-V6-ML605-G.htm>`_, :adi:`AD9785 Evaluation Board (ADI) <EVAL-AD9785>` / :adi:`AD9787 Evaluation Board (ADI) <EVAL-AD9787>` / :adi:`AD9788 Evaluation Board (ADI) <EVAL-AD9788>`, :adi:`DAC FMC Interposer Board (ADI) <AD-DAC-FMC>`
-| **System:** Microblaze, AXI, UART
+**HW Platform(s):** `Virtex-6 ML605 (Xilinx) <https://www.xilinx.com/products/boards-and-kits/EK-V6-ML605-G.htm>`_, :adi:`AD9785 Evaluation Board (ADI) <EVAL-AD9785>` / :adi:`AD9787 Evaluation Board (ADI) <EVAL-AD9787>` / :adi:`AD9788 Evaluation Board (ADI) <EVAL-AD9788>`, :adi:`DAC FMC Interposer Board (ADI) <AD-DAC-FMC>` **System:** Microblaze, AXI, UART
 
 Quick Start Guide
 -----------------
@@ -50,7 +49,7 @@ Bit file
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+
 
 .. tip::
 

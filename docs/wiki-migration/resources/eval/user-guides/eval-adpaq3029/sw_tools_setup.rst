@@ -25,7 +25,8 @@ The CCES software development environment for EVAL-ADPAQ3029 is based on open so
       :alt: CCES 2.8.0 Windows Installer(Executable)
       :align: left
 
-      |CCES 2.8.0 Ubuntu Linux Installer(Debian)|
+
+   |CCES 2.8.0 Ubuntu Linux Installer(Debian)|
 
 Installing on Windows:
 ~~~~~~~~~~~~~~~~~~~~~~

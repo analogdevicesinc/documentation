@@ -100,7 +100,10 @@ Files
 Example platform device initialization
 ======================================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 .. important::
 
@@ -147,17 +150,20 @@ Keypad
 ADP5520/ADP5501 MFD Core Support
 --------------------------------
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+
+This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+
+So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+
+For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+
 
 <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_pdev_data{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:/CONFIG_PMIC_ADP5520/2-/#if/ c linux-kernel>
 
-|
-
 .. tip::
 
-   **ADP5520 IRQ Usage:**
-
-   | If you aren’t planning to utilize the Keypad interface, you don’t need to specify an IRQ in bfin_i2c_board_info.
+   **ADP5520 IRQ Usage:** If you aren’t planning to utilize the Keypad interface, you don’t need to specify an IRQ in bfin_i2c_board_info.
 
 
 Adding Linux driver support
@@ -170,31 +176,27 @@ ADP5520 MFD Core Support
 
 ::
 
-   Device Drivers  ---> 
+   Device Drivers  --->
        <*> I2C support  --->
            <*> Blackfin TWI I2C support
            Or:
            <*> GPIO-based bitbanging I2C
 
 
-   Device Drivers  ---> 
+   Device Drivers  --->
        Multifunction device drivers  --->
            [*] Analog Devices ADP5520/01 MFD PMIC Core Support
-
-.. _backlight-1:
 
 Backlight
 ---------
 
 ::
 
-   Device Drivers  ---> 
+   Device Drivers  --->
        Graphics support  --->
            [*] Backlight & LCD device support  --->
                <*>   Lowlevel Backlight controls
                <M>     Backlight Driver for ADP5520/ADP5501 using WLED
-
-.. _led-1:
 
 LED
 ---
@@ -206,8 +208,6 @@ LED
            <*>   LED Class Support
            <M>   LED Support for ADP5520/ADP5501 PMIC
 
-.. _gpio-1:
-
 GPIO
 ----
 
@@ -217,8 +217,6 @@ GPIO
        [*] GPIO Support  --->
            [*]   /sys/class/gpio/... (sysfs interface)
            <M>   GPIO Support for ADP5520 PMIC
-
-.. _keypad-1:
 
 Keypad
 ------
@@ -256,8 +254,6 @@ PIN                              Function PIN/Function
 Driver testing
 ==============
 
-.. _backlight-2:
-
 Backlight
 ---------
 
@@ -284,11 +280,7 @@ Backlight
 
    root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 127 > brightness**
    root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 50 > brightness**
-   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 0 > brightness**
-
-*For more information on Backlight handling in Linux read:* `sysfs-class-backlight <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/stable/sysfs-class-backlight>`_
-
-.. _led-2:
+   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 0 > brightness** For more information on Backlight handling in Linux read:* `sysfs-class-backlight <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/stable/sysfs-class-backlight>`_
 
 LED
 ---
@@ -320,8 +312,6 @@ LED
 
 *For more information on LEDs handling in Linux read:* `leds-class.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/leds-class.txt>`_
 
-.. _gpio-2:
-
 GPIO
 ----
 
@@ -347,8 +337,6 @@ Note that you will have to enable the event_test utility under "Blackfin test pr
                       [*] Input event device test
 
 *For more information on GPIO handling in Linux read:* `gpio.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/gpio.txt>`_
-
-.. _keypad-2:
 
 Keypad
 ------

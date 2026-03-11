@@ -40,7 +40,7 @@ A new sound card ``UAC2Gadget`` is generated both for playback and capture on th
 .. code:: bash
 
    rroot@adsp-sc589-mini:~# arecord -l
-   **** List of CAPTURE Hardware Devices ****
+   *** List of CAPTURE Hardware Devices ***
    card 0: sc5xxasoccard [sc5xx-asoc-card], device 0: adau1761 adau-hifi-0 []
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -48,7 +48,7 @@ A new sound card ``UAC2Gadget`` is generated both for playback and capture on th
      Subdevices: 1/1
      Subdevice #0: subdevice #0
    root@adsp-sc589-mini:~# aplay -l
-   **** List of PLAYBACK Hardware Devices ****
+   *** List of PLAYBACK Hardware Devices ***
    card 0: sc5xxasoccard [sc5xx-asoc-card], device 0: adau1761 adau-hifi-0 []
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -90,7 +90,7 @@ Then we list the available sound card on host PC, to decide which sound card is 
 .. code:: bash
 
    test@madara:~$ aplay -l
-   **** List of PLAYBACK Hardware Devices ****
+   *** List of PLAYBACK Hardware Devices ***
    card 0: PCH [HDA Intel PCH], device 0: CX20641 Analog [CX20641 Analog]
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -101,7 +101,7 @@ Then we list the available sound card on host PC, to decide which sound card is 
      Subdevices: 1/1
      Subdevice #0: subdevice #0
    test@madara:~$ arecord -l
-   **** List of CAPTURE Hardware Devices ****
+   *** List of CAPTURE Hardware Devices ***
    card 0: PCH [HDA Intel PCH], device 0: CX20641 Analog [CX20641 Analog]
      Subdevices: 1/1
      Subdevice #0: subdevice #0

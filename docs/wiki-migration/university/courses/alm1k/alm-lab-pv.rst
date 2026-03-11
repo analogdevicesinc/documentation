@@ -59,8 +59,11 @@ A commonly used parameter that characterizes a solar cell is the fill factor, FF
 
 The efficiency of a solar cell is the ratio of the electrical power it delivers to the load, to the optical power incident on the cell. Maximum efficiency is when power delivered to the load is P\ :sub:`MAX`. Incident optical power is normally specified as the power from sunlight on the surface of the earth which is approximately 1mW/mm\ :sup:`2`. Spectral distribution of sunlight is close to a blackbody spectrum at 6000º C minus the atmospheric absorption spectrum.
 
-| The maximum efficiency η\ :sub:`MAX` may be written as:
-| |image1|
+The maximum efficiency η\ :sub:`MAX` may be written as:
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-e2_e2.png
+   :align: center
+   :width: 200px
 
 For a cell of a certain size, I\ :sub:`SC` is directly proportional to the incident optical power P\ :sub:`IN`. However, V\ :sub:`OC` increases logarithmically with the incident power. So, we would expect the overall efficiency of the solar cell to also increase logarithmically with incident power. However, thermal effects at high sunlight concentrations and electrical losses in the series resistance of the solar cell limit the enhancement in efficiency that can be achieved. So the efficiency of practical solar cells peaks at some finite light concentration level.
 
@@ -127,10 +130,7 @@ For a module or array of solar cells, the shape of the I/V curve does not change
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard, and jumper wire kit
-| 1 or more Solar Panels (see appendix for suggested types)
-| Light source, preferably full sunlight
+ADALM1000 hardware module Solder-less breadboard, and jumper wire kit 1 or more Solar Panels (see appendix for suggested types) Light source, preferably full sunlight
 
 Directions:
 ~~~~~~~~~~~
@@ -217,14 +217,7 @@ Much is made of the amount of energy lost by fixed Photovoltaic systems because 
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/Solar_cell
-  http:*\ en.wikipedia.org/wiki/Theory_of_solar_cells
-| http:*en.wikipedia.org/wiki/Maximum_power_point_tracking
-  http:*\ pveducation.org/pvcdrom/characterisation/introduction
-| http:*users.df.uba.ar/sgil/physics_paper_doc/papers_phys/e&m/I-V_measure_solar_cell.pdf
-  Mathworks Solar Cell model
-  http:*\ www.mathworks.com/help/physmod/elec/ref/solarcell.html?searchHighlight=solar+cell
-| Solar Cell Spice model: http://www.intusoft.com/nlhtm/nl78.htm
+http://en.wikipedia.org/wiki/Solar_cell http://en.wikipedia.org/wiki/Theory_of_solar_cells http://en.wikipedia.org/wiki/Maximum_power_point_tracking http://pveducation.org/pvcdrom/characterisation/introduction http://users.df.uba.ar/sgil/physics_paper_doc/papers_phys/e&m/I-V_measure_solar_cell.pdf Mathworks Solar Cell model http://www.mathworks.com/help/physmod/elec/ref/solarcell.html?searchHighlight=solar+cell Solar Cell Spice model: http://www.intusoft.com/nlhtm/nl78.htm
 
 Appendix: Sources of Solar Panels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -244,8 +237,9 @@ Sun Power panels are made of Copper Indium Diselenide. They are 60mm (2-3/8") sq
 
 Suppliers:
 
-| `SOLAR CELL, 3V 40MA <https://www.allelectronics.com/item/spl-30/solar-cell-3v-40ma/1.html>`_
-| OSEPP SC10072 Monocrystalline Solar Cell - Barrel Plug Termination, 100mA I\ :sub:`SC`, 7.2 V\ :sub:`OC`. This one comes prewired with a power plug. A matching jack would be needed to connect the panel to your experiments.
+`SOLAR CELL, 3V 40MA <https://www.allelectronics.com/item/spl-30/solar-cell-3v-40ma/1.html>`_
+
+OSEPP SC10072 Monocrystalline Solar Cell - Barrel Plug Termination, 100mA I\ :sub:`SC`, 7.2 V\ :sub:`OC`. This one comes prewired with a power plug. A matching jack would be needed to connect the panel to your experiments.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-e2_a2.png
    :align: center
@@ -297,9 +291,4 @@ Looking at the version on the left, NPN transistor Q\ :sub:`1` and collector res
    Figure A2 Shunt Regulator with negative feedback
 
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
-| **Return to Electronics Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
-
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-e2_e2.png
-   :width: 200px
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents** **Return to Electronics Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

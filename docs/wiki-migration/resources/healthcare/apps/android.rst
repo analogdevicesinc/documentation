@@ -47,7 +47,7 @@
    
    22. Entire Agreement. This Agreement constitutes the entire, final, and complete agreement between the parties hereto relevant to the subject matter hereof, and supersedes any and all other agreements, either oral or in writing, between the parties with respect to the subject matter of this Agreement. Any term or condition incorporated in Licensee’s purchase order(s) or any other document provided by Licensee to Analog Devices which is in any way different from, inconsistent with or in addition to the terms and conditions set forth herein shall be of no effect, shall not apply to the licensing of the App, and shall not become a part of a contract between the parties or be binding upon Analog Devices. Analog Devices’ failure to object to terms contained in any communication from Licensee shall not be an acceptance of such terms or a waiver of the terms set forth in this Agreement. If, for any reason, any provision of this Agreement is held invalid, such invalidity shall not affect the remainder of this Agreement, and this Agreement shall continue in force and effect to the full extent allowed by law. For the avoidance of doubt, all the App under this Agreement is subject to the terms and conditions of this Agreement and not any agreement or terms for purchase of Analog Devices products, even if the App is delivered with such products.
    
-     Appendix A – Third Party License(s)
+   Appendix A – Third Party License(s)
    
    1. Dart SDK
    

@@ -94,15 +94,9 @@ Section Summary: Current Feedback (CFB) VS. Voltage Feedback (VFB)
 
 The application advantages of current feedback and voltage feedback differ. In many applications, the differences between CFB and VFB are not readily apparent. Today's CFB and VFB amplifiers have comparable performance, but there are certain unique advantages associated with each topology. Voltage feedback allows freedom of choice of the feedback resistor (or network) at the expense of sacrificing bandwidth for gain. Current feedback maintains high bandwidth over a wide range of gains at the cost of limiting the choices in the feedback impedance.
 
-| In general, VFB amplifiers offer:
-| • Lower Noise
-| • Better dc Performance
-| • Feedback Component Freedom
+In general, VFB amplifiers offer: • Lower Noise • Better dc Performance • Feedback Component Freedom
 
-| while CFB amplifiers offer:
-| • Faster Slew Rates
-| • Lower Distortion
-| • Feedback Component Restrictions
+while CFB amplifiers offer: • Faster Slew Rates • Lower Distortion • Feedback Component Restrictions
 
 **ADALM2000 Lab Activity 12A,** :doc:`Transimpedance input stage </wiki-migration/university/courses/electronics/electronics-lab-12a>`
 

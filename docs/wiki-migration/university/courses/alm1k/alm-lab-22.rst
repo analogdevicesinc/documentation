@@ -64,13 +64,7 @@ First bend the leads of both the LED and photo transistor 90 degrees so that whe
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module ( with ALICE desktop software )
-| Solder-less breadboard
-| Jumper wires
-| 2 – 2.2 KΩ resistors
-| 1 – single rail-to-rail op-amp AD8541 ( or AD8542 dual )
-
-.. _directions-1:
+ADALM1000 hardware module ( with ALICE desktop software ) Solder-less breadboard Jumper wires 2 – 2.2 KΩ resistors 1 – single rail-to-rail op-amp AD8541 ( or AD8542 dual )
 
 Directions:
 ~~~~~~~~~~~
@@ -101,14 +95,10 @@ Questions:
 
 What is the Current Transfer Ratio of the device you constructed and tested? Is it constant over a range of input currents?
 
-.. _hardware-setup-1:
-
 Hardware setup:
 ~~~~~~~~~~~~~~~
 
 Now configure the waveform generator for a 1 KHz sine wave with 1.4V Min and 2.8 V Max ( 1.2 V P-P swing centered on 2.2V. Both scope channels should be set to 0.5V/Div. The Min and Max settings might need to be adjusted slightly to make sure the output signal is relatively centered within the 0 to 5V range of the output. You want to make sure that the peaks of the sine wave are not too close to either 0V or 5V.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -121,8 +111,6 @@ Driving the LED with a voltage to current converter
 ---------------------------------------------------
 
 By putting the LED in the feedback loop of an op amp configured as a voltage to current converter we can greatly reduce the effect of the nonlinearity of the LED.
-
-.. _directions-2:
 
 Directions:
 ~~~~~~~~~~~
@@ -138,21 +126,15 @@ On your solder-less breadboard modify your circuit to look like the one shown in
    Figure 3 V to I LED drive
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Configure the channel A AWG for a 100 Hz triangle wave with 2.5 Min and 5V Max values. Both scope channels should be set to 0.5V/Div.
 
-.. _procedure-2:
-
 Procedure:
 ~~~~~~~~~~
 
 Repeat the same measurements you did on the simple resistor driver version on this circuit. Switch the AWG to a sine wave ( same 1KHz frequency as before ) and again measure the harmonic distortion. Remember to adjust the AWG amplitude and offset to get a similar output waveform as you had in the previous circuit.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -174,9 +156,4 @@ Integrated optocouplers.
 
 Some models are in 6 pin packages and include a connection to the base terminal of the photo transistor. Others are in 4 pin packages and do not have base connections. FOD817 Series 4 pin photo transistor optocoupler from Fairchild Semi.
 
-| Lite-On, Optocoupler DC-IN 1-CH Transistor DC-OUT 4-Pin PDIP (Avnet Part #:LTV-817)
-| 4N25, 6 pin DIP package with Base terminal (Jameco Part no. 40985)
-| 4N26, 6 pin DIP package with Base terminal (Jameco Part no. 41005)
-| 4N28, 6 pin DIP package with Base terminal (Jameco Part no. 41013)
-| 4N35, 6 pin DIP package with Base terminal (Jameco Part no. 41056)
-| MCT6, MCT61,MCT62 dual photo transistor optocoupler from Fairchild Semi.
+Lite-On, Optocoupler DC-IN 1-CH Transistor DC-OUT 4-Pin PDIP (Avnet Part #:LTV-817) 4N25, 6 pin DIP package with Base terminal (Jameco Part no. 40985) 4N26, 6 pin DIP package with Base terminal (Jameco Part no. 41005) 4N28, 6 pin DIP package with Base terminal (Jameco Part no. 41013) 4N35, 6 pin DIP package with Base terminal (Jameco Part no. 41056) MCT6, MCT61,MCT62 dual photo transistor optocoupler from Fairchild Semi.

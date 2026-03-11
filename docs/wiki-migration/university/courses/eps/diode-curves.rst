@@ -68,15 +68,8 @@ The current vs. voltage (I/V) relationship for a Schottky barrier diode is given
    :align: center
    :width: 200px
 
-| Where:
-| A = junction area
-| A\* = modified Richardson constant (value varies by material and dopant) = 110
-| A/(°K\ :sup:`2`-cm\ :sup:`2`)
-| for n-type Si T = absolute temperature in ºK
-| q = electronic charge = 1.6 \* 10\ :sup:`-19` C
-| f\ :sub:`B` = barrier height in volts
-| k = Boltzman's constant = 1.37 \* 10\ :sup:`-23` J/K
-| n = ideality factor (forward slope factor, determined by metal-semiconductor interface)
+| Where: A = junction area A\* = modified Richardson constant (value varies by material and dopant) = 110
+| A/(°K\ :sup:`2`-cm\ :sup:`2`) for n-type Si T = absolute temperature in ºK q = electronic charge = 1.6 \* 10\ :sup:`-19` C f\ :sub:`B` = barrier height in volts k = Boltzman's constant = 1.37 \* 10\ :sup:`-23` J/K n = ideality factor (forward slope factor, determined by metal-semiconductor interface)
 
 LED Fundamentals:
 ~~~~~~~~~~~~~~~~~
@@ -98,13 +91,7 @@ An LED is a semiconductor device that emits electromagnetic radiation at optical
    :align: center
    :width: 200px
 
-| Where:
-| E\ :sub:`g` is the size of the energy gap
-| V\ :sub:`0` is the threshold voltage
-| f and λ are the frequency and wavelength of the emitted photons
-| c is the velocity of light
-| e is the electronic charge
-| h is Planck's constant
+Where: E\ :sub:`g` is the size of the energy gap V\ :sub:`0` is the threshold voltage f and λ are the frequency and wavelength of the emitted photons c is the velocity of light e is the electronic charge h is Planck's constant
 
 Lab Experiments:
 ----------------
@@ -114,13 +101,7 @@ You will be making I vs. V measurements on various types of diodes in this part 
 Materials:
 ----------
 
-| Analog Discovery Instrument
-| Solder-less Breadboard
-| 1 - Resistor (100 Ω or any similar value from 100 Ω to 1 KΩ)
-| 1 - Conventional diode (1N4001 or similar)
-| 1 - Schottky diode (1N5817 or similar)
-| 1 - 4.7 volt Zener diode (1N5230 or similar)
-| Various - LED diode ( 5mm red, yellow, green, blue or white etc.)
+Analog Discovery Instrument Solder-less Breadboard 1 - Resistor (100 Ω or any similar value from 100 Ω to 1 KΩ) 1 - Conventional diode (1N4001 or similar) 1 - Schottky diode (1N5817 or similar) 1 - 4.7 volt Zener diode (1N5230 or similar) Various - LED diode ( 5mm red, yellow, green, blue or white etc.)
 
 Directions:
 -----------
@@ -165,8 +146,6 @@ How do the diode parameters change based on the type of diode, Schottky, LED etc
 Zener Breakdown voltage measurements:
 -------------------------------------
 
-.. _directions-1:
-
 Directions:
 -----------
 
@@ -181,21 +160,15 @@ To measure the reverse breakdown voltage of your zener diode modify your measure
    Figure 5, Zener diode I vs. V setup
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
 The waveform generator should be configured for a 100 Hz triangle wave with 3 volt amplitude and -2 volt offset such that it swings from -5 volts to +1 volt. This should be enough larger than the breakdown voltage of your 1N5230 4.7 volt zener. Be sure to turn on the -5V power supply before taking your measurements.
 
-.. _procedure-1:
-
 Procedure:
 ----------
 
 Load the captured data for each type of diode into a data analysis software program like MatLab or a spreadsheet (Excel) and calculate the diode current I\ :sub:`D`. Plot the current vs. the now reverse bias voltage across the diode.
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -204,8 +177,6 @@ What is the slope (effective resistance) of the curve above the breakdown voltag
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/Diode
-  http:*\ en.wikipedia.org/wiki/Schottky_diode
-| https://en.wikipedia.org/wiki/Light-emitting_diode
+http://en.wikipedia.org/wiki/Diode http://en.wikipedia.org/wiki/Schottky_diode https://en.wikipedia.org/wiki/Light-emitting_diode
 
 **Return to EPS Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**

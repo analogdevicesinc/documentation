@@ -65,8 +65,9 @@ The driver implements the necessary routines for managing the device and communi
    | |                  |      |         spi_init()                | | SPI  | |    HMC7044    | |
    | |  HMC7044 Driver  <------>         spi_write_and_read()      <---------->               | |
    | |                  |      |         spi_remove()              | |      | |               | |
-   | |                  |      |                                   | |      | |               | |
+
    | +------------------+      +-----------------------------------+ |      | +---------------+ |
+
    +-----------------------------------------------------------------+      +-------------------+
 
 Example usage
@@ -132,9 +133,9 @@ Example usage
            //         hmc7044_clk_set_rate()
            //         hmc7044_clk_round_rate()
            //         hmc7044_clk_recalc_rate()
-           
+
            // This example sets the outputs 0 and 1 to explicit clock values.
-           // The driver will try its best to select appropriate dividers so as to 
+           // The driver will try its best to select appropriate dividers so as to
            // obtain the desired frequency.
            hmc7044_clk_set_rate(hmc7044_device, 0, 245760000);
            hmc7044_clk_set_rate(hmc7044_device, 1, 768000);

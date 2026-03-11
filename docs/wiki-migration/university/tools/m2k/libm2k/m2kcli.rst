@@ -87,7 +87,6 @@ synopsis
                      [-G | --get-channel channel=<index>,... <attribute>...]
                      [-s | --set <attribute>=<value>...]
                      [-S | --set-channel channel=<index> <attribute>=<value>...]
-                  
 
 description
 ~~~~~~~~~~~
@@ -276,8 +275,6 @@ Examples:
 analog-out
 ----------
 
-.. _synopsis-1:
-
 synopsis
 ~~~~~~~~
 
@@ -290,8 +287,6 @@ synopsis
                       [-9 | --generate channel=<index>,... cyclic=<value> raw=<value> [buffer_size=<size>] [format=<type>]]
                       [-G | --get-channel channel=<index> <attribute>...]
                       [-S | --set-channel channel=<index> <attribute>=<value>...]
-
-.. _description-1:
 
 description
 ~~~~~~~~~~~
@@ -388,8 +383,6 @@ Examples:
 digital
 -------
 
-.. _synopsis-2:
-
 synopsis
 ~~~~~~~~
 
@@ -404,8 +397,6 @@ synopsis
                     [-G | --get-channel channel=<index>,... <attribute>...]
                     [-s | --set <attribute>=<value>...]
                     [-S | --set-channel channel=<index>,... <attribute>=<value>...]
-
-.. _description-2:
 
 description
 ~~~~~~~~~~~
@@ -568,8 +559,6 @@ Examples:
 power-supply
 ------------
 
-.. _synopsis-3:
-
 synopsis
 ~~~~~~~~
 
@@ -581,8 +570,6 @@ synopsis
                         [-C | --calibrate]
                         [-c | --capture channel=<index>...]
                         [-9 | --generate channel=<index>,... value=<value>]
-
-.. _description-3:
 
 description
 ~~~~~~~~~~~
@@ -645,8 +632,6 @@ Examples:
 spi
 ---
 
-.. _synopsis-4:
-
 synopsis
 ~~~~~~~~
 
@@ -655,9 +640,7 @@ synopsis
     m2kcli spi <uri>
                 [-h | --help]
                 [-i | --init [frequency=<value> clk=<value> mosi=<index> [miso=<index>] cs=<index> mode=<value> bit_numbering=<value>]
-                [-w | --write data=<value>,...]    
-
-.. _description-4:
+                [-w | --write data=<value>,...]
 
 description
 ~~~~~~~~~~~
@@ -708,8 +691,6 @@ Examples:
 i2c
 ---
 
-.. _synopsis-5:
-
 synopsis
 ~~~~~~~~
 
@@ -719,9 +700,7 @@ synopsis
                 [-h | --help]
                 [-i | --init frequency=<value> address=<value> scl=<index> sda=<index> [write_only=<value>]]
                 [-w | --write data=<value>,... option=<value> [write_only=<value>]]
-                [-r | --read bytes_number=<value> option=<value>]      
-
-.. _description-5:
+                [-r | --read bytes_number=<value> option=<value>]
 
 description
 ~~~~~~~~~~~
@@ -802,8 +781,6 @@ Examples:
 uart
 ----
 
-.. _synopsis-6:
-
 synopsis
 ~~~~~~~~
 
@@ -813,9 +790,7 @@ synopsis
                  [-h | --help]
                  [-i | --init device=<index> baud_rate=<value> parity=<value> bits_number=<value> stop_bits=<value>]
                  [-w | --write data=<value>,...]
-                 [-r | --read bytes_number=<value> format=<value>]      
-
-.. _description-6:
+                 [-r | --read bytes_number=<value> format=<value>]
 
 description
 ~~~~~~~~~~~
@@ -880,8 +855,6 @@ Second terminal
 uart-terminal
 -------------
 
-.. _synopsis-7:
-
 synopsis
 ~~~~~~~~
 
@@ -890,8 +863,6 @@ synopsis
     m2kcli uart-terminal <uri>
                          [-h | --help]
                          [-i | --init rx=<index> tx=<index> baud_rate=<value> parity=<value> bits_number=<value> stop_bits=<value>]
-
-.. _description-7:
 
 description
 ~~~~~~~~~~~
@@ -940,7 +911,7 @@ First terminal
 
 ::
 
-   $ ./m2k_tty.sh 
+   $ ./m2k_tty.sh
    M2K configurations:
        URI: ip:192.168.2.1
        RX pin: 7
@@ -976,13 +947,13 @@ Second terminal
 
    Raspbian GNU/Linux 10 analog ttyS0
 
-   analog login: 
+   analog login:
    analog login: root
    Last login: Fri Sep  2 17:17:21 BST 2022 on ttyS0
    Linux analog 5.10.63-v7l+ #2 SMP Fri Jun 24 15:44:30 EEST 2022 armv7l
 
-   root@analog:~# 
-   root@analog:~# 
+   root@analog:~#
+   root@analog:~#
 
 And the connection will stay active as long as the first terminal will stay active. To close the connection, just press a key inside the first terminal.
 

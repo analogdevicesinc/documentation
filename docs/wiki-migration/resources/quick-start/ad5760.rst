@@ -33,26 +33,18 @@ Functional Block Diagram
 Pin Configuration
 -----------------
 
-| 
-|
-
 .. container:: CENTERALIGN
 
    \ |image2|\
 
 
-|
-
 .. container:: CENTERALIGN
 
-   \ *Figure 2. 24-Lead LFCSP Pin Configuration*
-
-
-
-| **Table 1. Function Descriptions for Quick Start**
-| ^ Mnemonic ^ Description ^
+   \ *Figure 2. 24-Lead LFCSP Pin Configuration **Table 1. Function Descriptions for Quick Start**
 
 +-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| Mnemonic              | Description                                                                                                                     |
++=======================+=================================================================================================================================+
 | V\ :sub:`OUT`         | Analog output voltage.                                                                                                          |
 +-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | V\ :sub:`REFP`        | Positive reference voltage input. Connect a voltage in the range of 5 V to V\ :sub:`DD` - 2.5 V.                                |
@@ -95,9 +87,7 @@ Pin Configuration
 Hardware Control Pins Truth Table
 ---------------------------------
 
-|
-
-| **Table 2. Hardware Control Pins Truth Table**
+**Table 2. Hardware Control Pins Truth Table**
 
 +-------------+-------------+-------------+---------------------------------------------------------------------------------------+
 | /LDAC       | /CLR        | /RESET      | Function                                                                              |
@@ -129,19 +119,23 @@ Hardware Control Pins Truth Table
 | 0           | ⇑\ :sup:`2` | 1           | Output set according to the DAC register value.                                       |
 +-------------+-------------+-------------+---------------------------------------------------------------------------------------+
 
-| :sup:`1` X is don't care.
-| :sup:`2` ⇑ is rising edge.
-| :sup:`3` ⇓ is falling edge.
-| ===== Input Shift Register Contents =====
-| |image3|
+:sup:`1` X is don't care.
+
+:sup:`2` ⇑ is rising edge.
+
+:sup:`3` ⇓ is falling edge.
+
+Input Shift Register Contents
+-----------------------------
+
+|image3|
 
 .. container:: CENTERALIGN
 
    //Figure 3. Input Shift Register Contents //
 
 
-| 
-| **Table 3. Register Address Definitions**
+**Table 3. Register Address Definitions**
 
 +------------------+------------------+----+----+----------------------------------------+
 |                  | Register Address |    |    |                                        |
@@ -165,21 +159,19 @@ Hardware Control Pins Truth Table
 | 1                | 0                | 1  | 1  | Read from the clearcode register       |
 +------------------+------------------+----+----+----------------------------------------+
 
-| :sup:`1` X = don't care.
+:sup:`1` X = don't care.
 
 Control Register
 ~~~~~~~~~~~~~~~~
 
-|
-
-| |image4|
+|image4|
 
 .. container:: CENTERALIGN
 
    //Figure 4. Control Register //
 
 
-| **Table 4. Control Register Functions**
+**Table 4. Control Register Functions**
 
 +----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Bit Name             | Description                             |                                                                                                                                                                   |
@@ -210,7 +202,7 @@ Control Register
 +----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | BIN/2sC              | DAC register coding selection.          |                                                                                                                                                                   |
 +----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                      | \**Setting **\|**\ Function*\*          |                                                                                                                                                                   |
+|                      | \**Setting **\|**Function**          |                                                                                                                                                                   |
 +----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                      | 0 (default)                             | DAC register uses twos complement coding.                                                                                                                         |
 +----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -236,25 +228,43 @@ Control Register
 | 
 | ====Software Control Register====
 
-| 
-| |image5|
+|image5|
 
 .. container:: CENTERALIGN
 
-   //Figure 5. Software Control Register *
+   //Figure 5. Software Control Register //
 
 
-*\ **Table 5. Software Control Register Functions**\ *^Bit Name ^Description ^ \|LDAC\ 1 \|Setting this bit to 1 updates the DAC register and, consequently, the DAC output.\| \|CLR\ 2 \|Setting this bit to 1 sets the DAC register to a user defined value and updates the DAC output.\| \|RESET \|Setting this bit to 1 returns the* :adi:`ad5760`\ */*\ :adi:`ad5780`\ */*\ :adi:`ad5790` *device to its power-on state.\| 1 The LDAC function has no effect when the :math:`overlineCLR` pin is low. Refer to Table 2 in the* :doc:`Hardware Control Pins Truth Table </wiki-migration/resources/quick-start/ad5760>` *section for further details.
-  2 The CLR function has no effect when the :math:`overlineLDAC` pin is low. Refer to Table 2 in the* :doc:`Hardware Control Pins Truth Table </wiki-migration/resources/quick-start/ad5760>` *section for further details.
-  ===== Transfer Function =====
-  :math:`V_OUT = (V_REFP - V_REFN) \times D/2^N + V_REFN`
-  where:
-  *\ V\ :sub:`REFN`// is the negative voltage applied at the V\ :sub:`REFN` input pin.
-| *V\ REFP* is the positive voltage applied at the V\ :sub:`REFP` input pin.
-| *D* is the 16-bit (:adi:`ad5760`), 18-bit (:adi:`ad5780`), or 20-bit (:adi:`ad5790`) code programmed to the DAC.
-| *N* is the number of bits.
-| ===== Example 1: Initializing and Writing to the DAC Register =====
-| === Initializing the DAC ===
+**Table 5. Software Control Register Functions**
+
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Bit Name       | Description                                                                                                                                                                                      |
++================+==================================================================================================================================================================================================+
+| LDAC\ :sup:`1` | Setting this bit to 1 updates the DAC register and, consequently, the DAC output.                                                                                                                |
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CLR\ :sup:`2`  | Setting this bit to 1 sets the DAC register to a user defined value and updates the DAC output.                                                                                                  |
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| RESET          | Setting this bit to 1 returns the :adi:`ad5760`/:adi:`ad5780`/:adi:`ad5790` device to its power-on state.                                                                                        |
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+:sup:`1` The LDAC function has no effect when the :math:`overlineCLR` pin is low. Refer to Table 2 in the :doc:`Hardware Control Pins Truth Table </wiki-migration/resources/quick-start/ad5760>` section for further details.
+
+:sup:`2` The CLR function has no effect when the :math:`overlineLDAC` pin is low. Refer to Table 2 in the :doc:`Hardware Control Pins Truth Table </wiki-migration/resources/quick-start/ad5760>` section for further details.
+
+Transfer Function
+-----------------
+
+::
+
+   $V_OUT = (V_REFP - V_REFN) \times D/2^N + V_REFN$
+
+where: *V\ REFN* is the negative voltage applied at the V\ :sub:`REFN` input pin. *V\ REFP* is the positive voltage applied at the V\ :sub:`REFP` input pin. *D* is the 16-bit (:adi:`ad5760`), 18-bit (:adi:`ad5780`), or 20-bit (:adi:`ad5790`) code programmed to the DAC. *N* is the number of bits.
+
+Example 1: Initializing and Writing to the DAC Register
+-------------------------------------------------------
+
+Initializing the DAC
+~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
@@ -266,9 +276,11 @@ Control Register
    -  To write in binary coding, select BIN/2sC = 1.
    -  Set DACTRI = 0 and OPGND = 0 to place the DAC in normal operating mode and remove the DAC output clamp to ground, respectively.
    
-   | Write the following over the serial interface: 0010 0000 0000 0000 0001 0010 (R/ :math:`overlineW` bit, three register address bits, 20 data bits).
-   | See Table 6 and Figure 6.
-   | **Table 6. Bit Settings to Initialize and Write to the Part**
+   Write the following over the serial interface: 0010 0000 0000 0000 0001 0010 (R/ :math:`overlineW` bit, three register address bits, 20 data bits).
+   
+   See Table 6 and Figure 6.
+   
+   **Table 6. Bit Settings to Initialize and Write to the Part**
    
    +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Bit(s)  | Bit Name             | Setting | Description                                                                                                                                                      |
@@ -288,25 +300,24 @@ Control Register
    | 1       | RBUF                 | 1       | The internal amplifier powered down                                                                                                                              |
    +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    
-   |
-   
    .. important::
 
       To write in binary coding, set BIN/2sC = 1.
 
-      | The default coding is twos complement. The same 24-bit data impacts the values that the user writes to or reads from the part in a different way depending on the coding selected. The user must verify the coding used by writing to the control register or reading back from it.
+         
+      The default coding is twos complement. The same 24-bit data impacts the values that the user writes to or reads from the part in a different way depending on the coding selected. The user must verify the coding used by writing to the control register or reading back from it.
 
-   
 
-
-| |image6|
+         
+      |image6|
 
 .. container:: CENTERALIGN
 
    \ *Figure 6. Initializing the Part*\
 
 
-| === Writing to the DAC Register ===
+Writing to the DAC Register
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
@@ -317,13 +328,19 @@ Control Register
    -  Set C[2:0] = 001 for the correspondent register address.
    -  Set D[19:0], the data bits, for a midscale code.
    
-   | The 24-bit data to write over the serial interface is as follows:
-   | 16-bit :adi:`ad5760`: 0001 1000 0000 0000 0000 XXXX
-   | 18-bit :adi:`ad5780`: 0001 1000 0000 0000 0000 00XX
-   | 20-bit :adi:`ad5790`: 0001 1000 0000 0000 0000 0000
-   | where X = don't care.
-   | See Table 7 and Figure 7.
-   | **Table 7. Bit Settings to Write to DAC Register**
+   The 24-bit data to write over the serial interface is as follows:
+   
+   16-bit :adi:`ad5760`: 0001 1000 0000 0000 0000 XXXX
+   
+   18-bit :adi:`ad5780`: 0001 1000 0000 0000 0000 00XX
+   
+   20-bit :adi:`ad5790`: 0001 1000 0000 0000 0000 0000
+   
+   where X = don't care.
+   
+   See Table 7 and Figure 7.
+   
+   **Table 7. Bit Settings to Write to DAC Register**
    
    +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Bit(s)  | Bit Name             | Setting | Description                                                                                                                                                      |
@@ -332,79 +349,93 @@ Control Register
    +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | [22:20] | C2, C1, C0           | 001     | Write to the DAC register                                                                                                                                        |
    +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   
-   |
 
-
-| |image7|
+   |image7|
 
 .. container:: CENTERALIGN
 
    \ *Figure 7. Writing to the DAC Register*\
 
 
-| ===== Example 2: Clearing the DAC to a Defined Value =====
-| === Writing to the Clearcode Register ===
+Example 2: Clearing the DAC to a Defined Value
+----------------------------------------------
+
+Writing to the Clearcode Register
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
    To define the value at which the DAC output is set when the :math:`overlineCLR` pin or CLR bit in the software control register is asserted, write the desired code to the clearcode register.
 
-   | For a full-scale clear code, write the following over the serial interface:
-   | 16-bit :adi:`ad5760`: 0011 1111 1111 1111 1111 XXXX
-   | 18-bit :adi:`ad5780`: 0011 1111 1111 1111 1111 11XX
-   | 20-bit :adi:`ad5790`: 0011 1111 1111 1111 1111 1111
-   | where X = don't care.
-   | See Figure 8.
+   
+   For a full-scale clear code, write the following over the serial interface:
+   
+   16-bit :adi:`ad5760`: 0011 1111 1111 1111 1111 XXXX
+   
+   18-bit :adi:`ad5780`: 0011 1111 1111 1111 1111 11XX
+   
+   20-bit :adi:`ad5790`: 0011 1111 1111 1111 1111 1111
+   
+   where X = don't care.
+   
+   See Figure 8.
 
-
-| |image8|
+   
+   |image8|
 
 .. container:: CENTERALIGN
 
    \ *Figure 8. Writing Full-Scale Code to the Clearcode Register*\
 
 
-| === Writing to the Software Control Register ===
+Writing to the Software Control Register
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
    Set the CLR bit to a Logic 1 to set the DAC register to a user defined value and update the DAC output.
 
-   | Write the following over the serial interface: 0100 0000 0000 0000 0000 0010
-   | The user should see the DAC output value change to full-scale code.
-   | See Figure 9.
+   
+   Write the following over the serial interface: 0100 0000 0000 0000 0000 0010
+   
+   The user should see the DAC output value change to full-scale code.
+   
+   See Figure 9.
 
-
-| |image9|
+   
+   |image9|
 
 .. container:: CENTERALIGN
 
    \ *Figure 9. Clearing the Part to a User Defined Value*\
 
 
-| === Reading from the Clearcode Register ===
+Reading from the Clearcode Register
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
    To confirm the clearcode value written to the part, read the data from the clearcode register (full scale for this example).
 
-   | Write the following over the serial interface:
-   | 1011 XXXX XXXX XXXX XXXX XXXX.
-   | where X = don't care.
-   | See Figure 10.
+   
+   Write the following over the serial interface:
+   
+   1011 XXXX XXXX XXXX XXXX XXXX.
+   
+   where X = don't care.
+   
+   See Figure 10.
    
    .. important::
 
       Note that this action is a read function. Therefore, set the R/ :math:`overlineW` bit = 1.
 
+         
+      D19 to D0, the data bits, are don't care bits because the intention is to read from the part and not to write to the part.
 
-      | D19 to D0, the data bits, are don't care bits because the intention is to read from the part and not to write to the part.
 
-   
-   |
-
-| |image10|
+         
+      |image10|
 
 .. container:: CENTERALIGN
 

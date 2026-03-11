@@ -30,7 +30,7 @@ When customers and partners download software from GitHub, or email downloaded s
 
 There is only one core, the only difference is the license and support.
 
-If you have a question about the license: you can email <fc #6495ed>\ **jesd204-licensing@analog.com**\ </fc>
+If you have a question about the license: you can email **jesd204-licensing@analog.com**
 
 FPGA HDL Support
 ----------------
@@ -142,7 +142,7 @@ Example Projects
 
 -  :doc:`AD-FMCADC4-EBZ Reference Design (retired) </wiki-migration/resources/fpga/xilinx/fmc/ad-fmcadc4-ebz>`
 
-   -  :git-hdl:`Xilinx ZC706 <projects/fmcadc4/zc706>`
+   -  `Xilinx ZC706 <https://github.com/analogdevicesinc/hdl/tree/hdl_2018_r2/projects/fmcadc4/zc706>`_
 
 -  :doc:`AD-FMCJESDADC1-EBZ Reference Design </wiki-migration/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz>`
 
@@ -159,7 +159,7 @@ Example Projects
    -  :git-hdl:`Intel A10SOC <projects/daq2/a10soc>`
    -  :git-hdl:`Xilinx KC705 <projects/daq2/kc705>`
    -  :git-hdl:`Xilinx KCU105 <projects/daq2/kcu105>`
-   -  :git-hdl:`Xilinx VC707 <projects/daq2/vc707>`
+   -  `Xilinx VC707 <https://github.com/analogdevicesinc/hdl/tree/hdl_2018_r2/projects/daq2/vc707>`_
    -  :git-hdl:`Xilinx ZC706 <projects/daq2/zc706>`
    -  :git-hdl:`Xilinx ZCU102 <projects/daq2/zcu102>`
 

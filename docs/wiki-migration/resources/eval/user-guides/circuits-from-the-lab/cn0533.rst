@@ -1,7 +1,7 @@
 EVAL-CN0533-EBZ User Guide
 ==========================
 
-| :adi:`EVAL-CN0533-EBZ <CN0533>` is a MEMS accelerometer (ADXL1002) vibration sensing solution with included analog 4-20 mA current loop interface circuitry, suitable for Condition-based Monitoring (CbM) applications. 4-20 mA current loop has been an industry analog signaling standard since 1950s. The main advantage of this signal standard is that there exists virtually no attenuation over long cables, therefore more robustness in EMI prone environments, such as industrial and factory settings. This reference design enables utilization of high bandwidth, ultralow noise MEMS accelerometers on a legacy 4-20 mA data acquisition (DAQ) systems for CbM applications.
+:adi:`EVAL-CN0533-EBZ <CN0533>` is a MEMS accelerometer (ADXL1002) vibration sensing solution with included analog 4-20 mA current loop interface circuitry, suitable for Condition-based Monitoring (CbM) applications. 4-20 mA current loop has been an industry analog signaling standard since 1950s. The main advantage of this signal standard is that there exists virtually no attenuation over long cables, therefore more robustness in EMI prone environments, such as industrial and factory settings. This reference design enables utilization of high bandwidth, ultralow noise MEMS accelerometers on a legacy 4-20 mA data acquisition (DAQ) systems for CbM applications.
 
 Hardware Setup
 --------------
@@ -25,9 +25,9 @@ The EVAL-CN0533-EBZ is very straightforward to setup. A cable, power supply (12-
 Mechanical Mounting
 ~~~~~~~~~~~~~~~~~~~
 
-| The accelerometer used in this reference design, ADXL1002, is an ultra-low noise and high bandwidth sensor. To achieve the best performance, a proper mechanical design is required to deliver vibration signal from the measurement point to the sensor. Careful considerations in design of EVAL-CN0533-EBZ PCB has been taken to avoid vibration signal distortion to the sensor due to mechanical resonance of the PCB structure. To best deliver the vibration signal from the measurement point to the PCB, we have designed :adi:`EVAL-XLMOUNT1`. This mechanical interface is optimized to have a 3dB flat mechanical response of up to 20 kHz. Therefore, by utilization of EVAL-XLMOUNT1, the vibration signal will be adequately coupled with the sensor. The following steps describe how to use EVAL-XLMOUNT1 with EVAL-CN0533-EBZ.
-| \* Using four 4-40 3/8” screws, securely mount the EVAL-CN0533-EBZ to the EVAL-XLMOUNT1 mechanical interface. For optimum performance, use all four screws.
+The accelerometer used in this reference design, ADXL1002, is an ultra-low noise and high bandwidth sensor. To achieve the best performance, a proper mechanical design is required to deliver vibration signal from the measurement point to the sensor. Careful considerations in design of EVAL-CN0533-EBZ PCB has been taken to avoid vibration signal distortion to the sensor due to mechanical resonance of the PCB structure. To best deliver the vibration signal from the measurement point to the PCB, we have designed :adi:`EVAL-XLMOUNT1`. This mechanical interface is optimized to have a 3dB flat mechanical response of up to 20 kHz. Therefore, by utilization of EVAL-XLMOUNT1, the vibration signal will be adequately coupled with the sensor. The following steps describe how to use EVAL-XLMOUNT1 with EVAL-CN0533-EBZ.
 
+-  Using four 4-40 3/8” screws, securely mount the EVAL-CN0533-EBZ to the EVAL-XLMOUNT1 mechanical interface. For optimum performance, use all four screws.
 -  Firmly mount EVAL-XLMOUNT1 to the vibration platform or shaker table using a M6 or similar diameter screw. Note that the sensitivity direction of the ADXL1002, as shown in the figure above, is aligned with the platform’s main vibration direction.
 -  Follow steps for proper sensor connection outlined above.
 
@@ -38,7 +38,7 @@ Schematic, PCB Layout, Bill of Materials
    :class: download
 
    
-   | :adi:`EVAL-CN0533-EBZ Design & Integration Files <cn0533-designsupport>`
+   :adi:`EVAL-CN0533-EBZ Design & Integration Files <cn0533-designsupport>`
    
    -  Schematics
    -  PCB Layout

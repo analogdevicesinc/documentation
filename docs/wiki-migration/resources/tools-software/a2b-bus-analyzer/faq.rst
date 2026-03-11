@@ -16,11 +16,11 @@ A:  Analog Devices' A\ :sup:`2`\ B Bus Analyzer software is a robust developmen
 
 \*\* 2. What is A2B Analyzer Studio? \*\*
 
-A\ :sup:`2`\ B Analyzer Studio is the next-generation continuation of A\ :sup:`2`\ B Bus Analyzer Software, introducing new features and support for the new A\ :sup:`2`\ B Analyzer HP as well as the original A\ :sup:`2`\ B Bus Analyzer. As well as new functionality and new hardware support,  A\ :sup:`2`\ B Analyzer Studio has carried out user experience improvements based on customer interviews. 
+A\ :sup:`2`\ B Analyzer Studio is the next-generation continuation of A\ :sup:`2`\ B Bus Analyzer Software, introducing new features and support for the new A\ :sup:`2`\ B Analyzer HP as well as the original A\ :sup:`2`\ B Bus Analyzer. As well as new functionality and new hardware support,  A\ :sup:`2`\ B Analyzer Studio has carried out user experience improvements based on customer interviews.
 
 A\ :sup:`2`\ B Bus Analyzer projects can be opened with  A\ :sup:`2`\ B Analyzer Studio and they will be updated to the latest format.
 
-The  A\ :sup:`2`\ B Bus Analyzer SDK API can be used in  A\ :sup:`2`\ B Bus Analyzer Studio but it is deprecated. We recommend that you use the API starting with a2ba2_sdk instead. 
+The  A\ :sup:`2`\ B Bus Analyzer SDK API can be used in  A\ :sup:`2`\ B Bus Analyzer Studio but it is deprecated. We recommend that you use the API starting with a2ba2_sdk instead.
 
 \*\* 3. Can I have both A2B Bus Analyzer and A2B Analyzer Studio Software installed at the same time? \*\*
 
@@ -48,7 +48,7 @@ A:  Orders can be placed through the Analog Devices Website :adi:`A2B Bus Analy
 
 \*\* 9. How can I order a new A2B Analyzer HP device? \*\*
 
-A:  Requests for A\ :sup:`2`\ B Analyzer HP device can be sent to <fc #4682b4>a2b.analyzer.support@analog.com </fc>
+A:  Requests for A\ :sup:`2`\ B Analyzer HP device can be sent to a2b.analyzer.support@analog.com
 
 \*\* 10. Where can I get latest A2B Bus Analyzer Software? \*\*
 
@@ -62,7 +62,7 @@ A:  The latest A\ :sup:`2`\ B Bus Analyzer Studio Software is available in `:do
 
 While A\ :sup:`2`\ B Analyzer Studio is designed to replace  A\ :sup:`2`\ B Bus Analyzer for all hardware, we made the decision to make them completely separate products. This means that  A\ :sup:`2`\ B Analyzer Studio is not an update from  A\ :sup:`2`\ B Bus Analyzer.
 
-To install  A\ :sup:`2`\ B Analyzer Studio for the first time you must run the .exe which can be obtained from  `:doc:`/wiki-migration/resources/tools-software/a2b-analyzer-studio/software-downloads` </resources/tools-software/a2b-analyzer-studio/software-downloads>`__. 
+To install  A\ :sup:`2`\ B Analyzer Studio for the first time you must run the .exe which can be obtained from  `:doc:`/wiki-migration/resources/tools-software/a2b-analyzer-studio/software-downloads` </resources/tools-software/a2b-analyzer-studio/software-downloads>`__.
 
 After the first installation, A\ :sup:`2`\ B Analyzer Studio supports automatic checks for updates in the same way as the previous software. The firmware on the A2B Bus Analyzer hardware must be upgraded to the latest released software from A\ :sup:`2`\ B Analyzer Studio in order to use it with that Software
 
@@ -72,12 +72,11 @@ A:  The A\ :sup:`2`\ B Bus Analyzer and A\ :sup:`2`\ B  Analyzer Studio softwa
 
 \*\* 14. Whom should I contact for A2B Bus Analyzer and A2B Analyzer Studio queries? \*\*
 
-A: For any A\ :sup:`2`\ B Bus Analyzer queries, you can contact <fc #4682b4>a2b.analyzer.support@analog.com </fc>
+A: For any A\ :sup:`2`\ B Bus Analyzer queries, you can contact a2b.analyzer.support@analog.com
 
 \*\* 15. Where can I get the A2B Bus Analyzer and A2B Bus Analyzer Studio Quick Start Guide? \*\*
 
-A: The A\ :sup:`2`\ B Analyzer Studio Quick Start Guide is available in :doc:`https:wiki.analog.com/resources/tools-software/a2b-analyzer-studio/quick-start-guide]] 
-The A\ 2\ B Bus Analyzer Quick Start Guide is available in [[/resources/tools-software/a2b-bus-analyzer/quick-start-guide|https:\ wiki.analog.com/resources/tools-software/a2b-bus-analyzer/quick-start-guide </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>`
+A: The A\ :sup:`2`\ B Analyzer Studio Quick Start Guide is available in :doc:`https:wiki.analog.com/resources/tools-software/a2b-analyzer-studio/quick-start-guide]] The A\ 2\ B Bus Analyzer Quick Start Guide is available in [[/resources/tools-software/a2b-bus-analyzer/quick-start-guide|https:\ wiki.analog.com/resources/tools-software/a2b-bus-analyzer/quick-start-guide </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>`
 
 \*\* 16. Where can I get the A2B Bus Analyzer and A2B Bus Analyzer Studio User Guide? \*\*
 
@@ -112,12 +111,11 @@ A:  Since Monitor is connected to a live network for the first time, it does no
 -  Ensure 'Data out on Bus Monitor' is enabled on Main node (i.e . ENDSNIFF bit of DATCTL register)
 -  Discover the network using SS/SS+ (or A2BA as main node emulator) and verify that Monitor displays both Audio and event data on the UI.
 
-| Since Monitor has already learnt the stream configuration from previous discoveries, it restores the configuration from device memory. 
-| Recommendation: (assumption is that network is already discovered before connecting A2BA Monitor)
+Since Monitor has already learnt the stream configuration from previous discoveries, it restores the configuration from device memory. Recommendation: (assumption is that network is already discovered before connecting A2BA Monitor)
 
 -  Select "Post-Discovery" mode in the monitor toolbar while connecting to Monitor in the UI.
 -  Press "Start Monitor" button
--  At this point, the Monitor status indicator in the UI would turn green and events on the bus start showing up on the UI, However, it is still required to refresh the DATCTL register from main node for Monitor to be able to sniff audio data.  
+-  At this point, the Monitor status indicator in the UI would turn green and events on the bus start showing up on the UI, However, it is still required to refresh the DATCTL register from main node for Monitor to be able to sniff audio data.
 
 *A2B Bus Analyzer*:
 
@@ -126,12 +124,11 @@ A:  Since Monitor is connected to a live network for the first time, it does no
 -  Ensure 'Data out on Bus Monitor' is enabled on Main node (i.e . ENDSNIFF bit of DATCTL register)
 -  Discover the network using SS (or A2BA as main node emulator) and verify that Monitor displays both Audio and event data on the UI.
 
-| Since Monitor has already learnt the stream configuration from previous discoveries, it restores the configuration from device memory. 
-| Recommendation: (assumption is that network is already discovered before connecting A2BA Monitor)
+Since Monitor has already learnt the stream configuration from previous discoveries, it restores the configuration from device memory. Recommendation: (assumption is that network is already discovered before connecting A2BA Monitor)
 
 -  Check the checkbox 'discovered' while connecting to Monitor in the UI.
 -  Press play button of the Monitor on the UI
--  At this point, all three indicators on the Monitor UI would turn green and events on the bus start showing up on the UI, However, it is still required to refresh the DATCTL register from main node for Monitor to be able to sniff audio data.  
+-  At this point, all three indicators on the Monitor UI would turn green and events on the bus start showing up on the UI, However, it is still required to refresh the DATCTL register from main node for Monitor to be able to sniff audio data.
 
 \*\* 22. If I export my event log to a .csv file and open it with Excel the timestamp is incorrect. Does the export contain different data from the event table? \*\*
 
@@ -146,9 +143,9 @@ A:  No, A\ :sup:`2`\ B Analyzer Studio has removed the requirement to register 
 
 \*\* 2. Which firmware version should I use with A2B Analyzer Studio? And which firmware version should I use with A2B Bus Analyzer? \*\*
 
-You must match the version of firmware with the software being used. 
+You must match the version of firmware with the software being used.
 
-In A\ :sup:`2`\ B Bus Analyzer, the first two digits of the firmware must match the Software version. For example A\ :sup:`2`\ B Bus Analyzer 3.4.0 must use Firmware 3.4.x. 
+In A\ :sup:`2`\ B Bus Analyzer, the first two digits of the firmware must match the Software version. For example A\ :sup:`2`\ B Bus Analyzer 3.4.0 must use Firmware 3.4.x.
 
 In A\ :sup:`2`\ B Analyzer Studio the firmware major version must be 4+ A\ :sup:`2`\ B Analyzer Studio major version and the minor versions must match. For example, A\ :sup:`2`\ B Analyzer Studio 1.0.0 must use Firmware 5.0.x
 
@@ -178,9 +175,7 @@ The external power supply will be evaluated only during the device connection pr
 
 \*\* 8. Why are the personality modules shown as unknown in the "About A2B Analyzer window" after using the analyzer as a sub node? \*\*
 
-If the 0x50 peripheral is present in the schematic for the sub node you are emulating, it will overwrite the analyzer's personality module information. Please uncheck the **program during discovery checkbox** for the sub node peripheral you are emulating.
-
-\*\* 9. Why is the main node audio not working when I2S1 is used and the clock drive option is enabled for I2S1? \*\*
+If the 0x50 peripheral is present in the schematic for the sub node you are emulating, it will overwrite the analyzer's personality module information. Please uncheck the **program during discovery checkbox** for the sub node peripheral you are emulating.** 9. Why is the main node audio not working when I2S1 is used and the clock drive option is enabled for I2S1? \*\*
 
 The main node audio may not work because the clock signals BCLK and SYNC are provided by the analyzer. Enabling the transceiver clock drive option for I2S1 can cause conflicts
 
@@ -257,9 +252,7 @@ Similarly, while USB In/Out can be enabled over Ethernet, the actual audio trans
 
 -  **Dynamic IP (DHCP):** Recommended for most LAN connections. Easier for temporary connections and networks with DHCP servers. Supports hostname resolution if your network has DNS.
 
-   -  **Caution:** If your network has DNS and you might have more than one Analyzer on the same network, ensure you give them unique hostnames.
-
-\*\* 19. What network port does the A2B Analyzer HP use and how to use a different one? \*\*
+   -  **Caution:** If your network has DNS and you might have more than one Analyzer on the same network, ensure you give them unique hostnames.** 19. What network port does the A2B Analyzer HP use and how to use a different one? \*\*
 
 The device uses one configurable TCP port (default: 12345) for all communication with A2B Analyzer Studio. You can change this port in the Network Settings if needed.
 
@@ -289,8 +282,7 @@ A: Some instances may already be active or enabled remotely. Check the task mana
 
 \*\* 3. The Analyzer GUI does not show Analyzer Device, what is the problem? \*\*
 
-| A: The A2B Analyzer device is being powered via USB which is not supported.
-|      Please power it with the power supply that was enclosed with the product.
+A: The A2B Analyzer device is being powered via USB which is not supported.      Please power it with the power supply that was enclosed with the product.
 
 \*\* 4. How do I export a .dat file from Sigma studio? \*\*
 
@@ -324,22 +316,15 @@ The A\ :sup:`2`\ B Bus Analyzer UI uses two ports: which by default are 5000 and
 
 Note that environmental variables should be set as individual commands and not concatenated together with &.
 
-| cd "C:\\Analog Devices\\A2B Bus Analyzer"
-| set A2B_ANALYZER_PORT=5001
-| set A2B_API_PORT=1881
-| ".\\A2B Bus Analyzer.exe"
+cd "C:\\Analog Devices\\A2B Bus Analyzer" set A2B_ANALYZER_PORT=5001 set A2B_API_PORT=1881 ".\\A2B Bus Analyzer.exe"
 
-| set A2B_ANALYZER_PORT=5002
-| set A2B_API_PORT=1882
-| ".\\A2B Bus Analyzer.exe"
+set A2B_ANALYZER_PORT=5002 set A2B_API_PORT=1882 ".\\A2B Bus Analyzer.exe"
 
-| set A2B_ANALYZER_PORT=5003
-| set A2B_API_PORT=1883
-| ".\\A2B Bus Analyzer.exe"
+set A2B_ANALYZER_PORT=5003 set A2B_API_PORT=1883 ".\\A2B Bus Analyzer.exe"
 
 *Version 3.3.0 and later*
 
-The UI identifies that another instance of the analyzer is being run and tries the next port. The UI displays a warning message with the new port. 
+The UI identifies that another instance of the analyzer is being run and tries the next port. The UI displays a warning message with the new port.
 
 The UI tries a maximum of 5 ports after the initial one (5001 or the one specified in the environment variable A2B_ANALYZER_PORT). If you require more than 5 UIs at the same time set up environment variables defining ports for all those instances.
 
@@ -353,8 +338,7 @@ File Out in version 3.1.0 recorded audio as floating point, from version 3.2.0 i
 
 \*\* 11. I can no longer connect to the UI/SDK after updating my firmware from 3.1.x. Is my analyzer bricked? \*\*
 
-| In 3.2.x the A2B Bus Analyzer Firmware started to support standalone mode. This means that the position of the standalone switch, which was ignored before, is really important. When the switch is up (standalone enabled) the device can no longer connect via USB and therefore it looks like it is bricked. If you turn standalone off then the UI and SDK should be able to connect in a similar manner as in 3.1.0 and earlier.
-| If standalone switch is enabled then the status LED is always red and the A2B Bus Analyzer UI and SDK cannot discover the device.
+In 3.2.x the A2B Bus Analyzer Firmware started to support standalone mode. This means that the position of the standalone switch, which was ignored before, is really important. When the switch is up (standalone enabled) the device can no longer connect via USB and therefore it looks like it is bricked. If you turn standalone off then the UI and SDK should be able to connect in a similar manner as in 3.1.0 and earlier. If standalone switch is enabled then the status LED is always red and the A2B Bus Analyzer UI and SDK cannot discover the device.
 
 \*\* 12. I am not able to save audio file using 'File Out' option, why am I getting an error? \*\* |image1|\
 
@@ -371,13 +355,16 @@ Refer to :doc:`Known Issues </wiki-migration/resources/tools-software/a2b-bus-an
 
 \*\* 13.  How do I detect if the firmware is operating as intended? \*\*
 
-| Please refer to the below image.
-| |image3|
+Please refer to the below image.
+
+
+|image3|
 
 The Analyzer board has two LEDs, "Power", which should always be green when the board is powered and "Status". When the firmware is operating correctly the Status LED should be illuminated green as shown by the bottom A\ :sup:`2`\ B Bus Analyzer in the above image.
 
-| If the "Status" LED is not green and you are using Windows then please check if the A\ :sup:`2`\ B Bus Analyzer is getting enumerated in the Ports (COM & LPT) section of Device Manager.
-| If the Status LED is RED, disable the standalone mode. Version 3.2 and later of the firmware supports standalone mode. While the standalone mode switch was ignored in the past, if standalone is enabled (switch up), the firmware now disables USB and therefore the UI/SDK cannot connect to it. Please disable the standalone (switch down) on the emulator side of the A\ :sup:`2`\ B Bus Analyzer.
+If the "Status" LED is not green and you are using Windows then please check if the A\ :sup:`2`\ B Bus Analyzer is getting enumerated in the Ports (COM & LPT) section of Device Manager.
+
+If the Status LED is RED, disable the standalone mode. Version 3.2 and later of the firmware supports standalone mode. While the standalone mode switch was ignored in the past, if standalone is enabled (switch up), the firmware now disables USB and therefore the UI/SDK cannot connect to it. Please disable the standalone (switch down) on the emulator side of the A\ :sup:`2`\ B Bus Analyzer.
 
 \*\* 14. What is the maximum size of an audio file that can be saved using the A2B Bus Analyzer? \*\*
 
@@ -430,8 +417,7 @@ Please refer the "Recording audio via USB output" section in analyzer user guide
 
 \*\* 19. I get an error that tells me to configure the analyzer port environment variable (A2B_ANALYZER_PORT), why? \*\*
 
-| A: The A2B Bus Analyzer requires a port on your computer for internal communication. If the analyzer detects that this port is used by another application (or another instance of the A2B Bus Analyzer) it tries to move to the next port up to 5 times. If the A2B Bus Analyzer cannot find an available port after this, the analyzer requires that you set up the environment variable A2B_ANALYZER_PORT to another value from which to start looking, for example 5006. To do this please refer to how to set up environment variables in your OS of choice.
-| To know if your computer is using port 5001 you can run the command netstat -abon and search for 5001 in your results.
+A: The A2B Bus Analyzer requires a port on your computer for internal communication. If the analyzer detects that this port is used by another application (or another instance of the A2B Bus Analyzer) it tries to move to the next port up to 5 times. If the A2B Bus Analyzer cannot find an available port after this, the analyzer requires that you set up the environment variable A2B_ANALYZER_PORT to another value from which to start looking, for example 5006. To do this please refer to how to set up environment variables in your OS of choice. To know if your computer is using port 5001 you can run the command netstat -abon and search for 5001 in your results.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/port_error.png
    :width: 400px
@@ -449,7 +435,7 @@ A: To sniff the monitor slots, bus monitor should be enabled by the main node.To
 
 A: If no audio data (upstream/downstream) is present between the nodes where the Analyzer is connected for monitoring, then the analyzer will not show any audio traffic.
 
-**Example:** Assuming the A2B network contains two sub nodes where the audio stream is configured only between sub0 & sub1 and if the Analyzer(monitor) is connected between 
+**Example:** Assuming the A2B network contains two sub nodes where the audio stream is configured only between sub0 & sub1 and if the Analyzer(monitor) is connected between
 
 main node & sub0 then the analyzer software will not show any audio traffic.
 
@@ -470,15 +456,13 @@ You can also enable monitoring of the network, which is already discovered, re
 
 which is available at Help -> User Guide. This opens the PDF which is located in your installation.
 
-**Note: **\ When you use the Analyzer as a only monitor, removing the power supply to the analyzer will stop the monitoring but keep the A2B Network alive.
-
-\*\* 22. Does the loopback feature of the Analyzer support routing a generated tone through an external development board? \*\*
+**Note: **\ When you use the Analyzer as a only monitor, removing the power supply to the analyzer will stop the monitoring but keep the A2B Network alive.** 22. Does the loopback feature of the Analyzer support routing a generated tone through an external development board? \*\*
 
 A:  The loopback feature of the Analyzer doesn't support routing the sine tone to external board. It is an internal loopback feature only.
 
-| Below is the example for performing external Loopback,
-| Consider A2B Network with 1Main Node (Analyzer) and 1Sub node (Sub0)
-| A2B Analyzer (Main Node) -> Generate Sine Tone -> Send Sine Tone down stream using stream configuration -> Connect Line-Out of Sub0 to Line-In (External Loop Back) -> Send the processed Sine Tone to the Main Node using stream configuration.
+Below is the example for performing external Loopback, Consider A2B Network with 1Main Node (Analyzer) and 1Sub node (Sub0)
+
+A2B Analyzer (Main Node) -> Generate Sine Tone -> Send Sine Tone down stream using stream configuration -> Connect Line-Out of Sub0 to Line-In (External Loop Back) -> Send the processed Sine Tone to the Main Node using stream configuration.
 
 \*\* 23. How do I access the Analyzer on a remote PC through remote desktop? Can I still use File Out? \*\*
 
@@ -492,9 +476,10 @@ Follow Below steps:
 -  In “Remote audio”, click “Settings…” to “Configure remote audio settings.”
 -  Then in the “Remote audio playback” section, select “Play on remote computer” (see image below)
 
-|image4|
+::
 
--  Click OK and connect to the remote desktop.
+   {{:resources:tools-software:a2b-bus-analyzer:remote_desktop.png?400|}}
+   * Click OK and connect to the remote desktop.
 
 \*\* 24. Why is the A2B Bus Analyzer not being detected on the host PC? \*\* A: Ensure that standalone mode is disabled by having the Standalone switch down and reload the list of devices in the UI.
 
@@ -511,12 +496,12 @@ If you are on windows, check that the A2B Bus Analyzer is getting enumerated in 
 Press the refresh button to show the available analyzer devices connected to the PC.
 
 
-|image5|
+|image4|
 
 Select the analyzer device from drop down and press the power button to connect.
 
 
-|image6|
+|image5|
 
 If the problems still persist, please launching the Analyzer software from the command line and send us any errors that may appear on the console when you are trying to connect to the device. The analyzer is by default at:
 
@@ -558,7 +543,7 @@ This is applicable for both AD242x and AD243x series.
 
 A: We can convert the audio signal in the UI to Level (dB RMS) using the following approach.
 
-The RMS level(dB) can be calculated by: 
+The RMS level(dB) can be calculated by:
 
 1.Computing the moving average of the square of the audio samples.
 
@@ -599,7 +584,6 @@ The Monitor GUI presents the write sequence, displaying the Peripheral Address, 
 ::
 
        Data 0x0F to the 0x4000 address of Peripheral 0x39.
-       
 
 Below is how this action would be displayed in the Monitor GUI.
 
@@ -642,7 +626,7 @@ A: A2B Bus Analyzer is an ASIO-compliant device.
 2.In Audio Precision, choose ASIO under the Input/Output Configuration. //
 
 
-|image7|
+|image6|
 
 //
 
@@ -673,11 +657,11 @@ A: When using A2B Bus Analyzer license checking is performed and therefore you w
 
 \*\* 2. What can I do if I am connected to VPN and my license activation is failing? \*\*
 
-A: Under certain rare circumstances the license activation mechanism may fail if the computer is connected to a VPN. In case of problems you should disconnect their VPN. If you are still having issues after that, please get in touch with <fc #4682b4>a2b.analyzer.support@analog.com</fc>.
+A: Under certain rare circumstances the license activation mechanism may fail if the computer is connected to a VPN. In case of problems you should disconnect their VPN. If you are still having issues after that, please get in touch with a2b.analyzer.support@analog.com.
 
 \*\* 3. I re-flashed my analyzer board and now the tools report that I do not have a license. What can I do? \*\*
 
-A: Re-flashing the board removes the license information which was stored at the time of license activation. You should have an email from the activation time that contains both your license key and the validation code. You can use that data again on the same board by utilizing the "Offline activation" feature. If you no longer have your validation code, please request the validation code again from the support team at <fc #4682b4>a2b.analyzer.support@analog.com</fc> making sure that you inform them of your device's Hardware Serial Number.
+A: Re-flashing the board removes the license information which was stored at the time of license activation. You should have an email from the activation time that contains both your license key and the validation code. You can use that data again on the same board by utilizing the "Offline activation" feature. If you no longer have your validation code, please request the validation code again from the support team at a2b.analyzer.support@analog.com making sure that you inform them of your device's Hardware Serial Number.
 
 \*\* 4. In how many computers can I use an analyzer with the same license? \*\*
 
@@ -696,8 +680,7 @@ A: The SDK (Software Development Kit) is a set of APIs which provide programmers
 
 \*\* 2. Where can I get the UASDK? \*\*
 
-| A: The UASDK comes bundled as part of the A\ :sup:`2`\ B Bus Analyzer GUI software and must be exported to your computer before it can be used.
-| To export your SDK:
+A: The UASDK comes bundled as part of the A\ :sup:`2`\ B Bus Analyzer GUI software and must be exported to your computer before it can be used. To export your SDK:
 
 In A\ :sup:`2`\ B Analyzer Studio and A\ :sup:`2`\ B Bus Analyzer version 3.4.0 or later: In Menu Sdk → Export User-Accessible SDK… from the application's menu bar.
 
@@ -782,19 +765,21 @@ FAQs on Advanced Use cases
 
 A: The A2B Bus analyzer uses the PortAudio library to record from USB to a file. PortAudio supports different Windows drivers each of which drivers has different characteristics. While the A2B Bus Analyzer by default uses the default driver (commonly MME), you can define environment variables to select the driver most appropriate for your use.
 
-See below table for a description of the host APIs commonly available on Windows. ^Host API Name ^PortAudio Host API ID ^Bits captured out of 32 ^Description
+See below table for a description of the host APIs commonly available on Windows.
 
-+-------------+----+----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| MME         | 2  | 16 | Usually the default Host API used. It truncates audio to 16 bits and pads the other 16 bits with zeros. Monitor, Emulator and other applications may use the device to record audio at the same time.                                                                                  |
-+-------------+----+----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| DirectSound | 1  | 16 | Truncates audio to 16 bits and pads the other 16 bits with zeros. Monitor, Emulator and other applications may use the device to record audio at the same time.                                                                                                                        |
-+-------------+----+----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| WASAPI      | 13 | 24 | Bit exactness appears to vary between 24 and 32 bits. Performance is unreliable and Monitor, Emulator and other applications may interfere with one another.                                                                                                                           |
-+-------------+----+----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| WDM-KS      | 11 | 32 | Records all 32 bits but may only record from one of Emulator, Monitor or another application at a time.                                                                                                                                                                                |
-|             |    |    | When this driver is used PortAudio cannot differentiate between Analyzers so only one should be plugged in.                                                                                                                                                                            |
-|             |    |    | As well as setting ``A2BA_HOST_API``, this driver requires the environment variable ``A2BA_FILE_OUT_DEVICE`` which may vary between Windows machines. Please get in touch with <fc #4682b4>a2b.analyzer.support@analog.com</fc> for help with what to set ``A2BA_FILE_OUT_DEVICE`` to. |
-+-------------+----+----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------+-----------------------+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Host API Name | PortAudio Host API ID | Bits captured out of 32 | Description                                                                                                                                                                                                                                                           |
++===============+=======================+=========================+=======================================================================================================================================================================================================================================================================+
+| MME           | 2                     | 16                      | Usually the default Host API used. It truncates audio to 16 bits and pads the other 16 bits with zeros. Monitor, Emulator and other applications may use the device to record audio at the same time.                                                                 |
++---------------+-----------------------+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DirectSound   | 1                     | 16                      | Truncates audio to 16 bits and pads the other 16 bits with zeros. Monitor, Emulator and other applications may use the device to record audio at the same time.                                                                                                       |
++---------------+-----------------------+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| WASAPI        | 13                    | 24                      | Bit exactness appears to vary between 24 and 32 bits. Performance is unreliable and Monitor, Emulator and other applications may interfere with one another.                                                                                                          |
++---------------+-----------------------+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| WDM-KS        | 11                    | 32                      | Records all 32 bits but may only record from one of Emulator, Monitor or another application at a time.                                                                                                                                                               |
+|               |                       |                         | When this driver is used PortAudio cannot differentiate between Analyzers so only one should be plugged in.                                                                                                                                                           |
+|               |                       |                         | As well as setting ``A2BA_HOST_API``, this driver requires the environment variable ``A2BA_FILE_OUT_DEVICE`` which may vary between Windows machines. Please get in touch with a2b.analyzer.support@analog.com for help with what to set ``A2BA_FILE_OUT_DEVICE`` to. |
++---------------+-----------------------+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/unable_to_capture_fileout.jpg
    :width: 400px
@@ -802,10 +787,8 @@ See below table for a description of the host APIs commonly available on Windows
    :width: 400px
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/firmware.jpg
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/remote_desktop.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/refresh.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/refresh.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/start_button.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/start_button.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/asio4all.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/asio4all.png

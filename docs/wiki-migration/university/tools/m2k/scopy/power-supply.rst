@@ -4,7 +4,7 @@ Scopy Power Supply
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/youtube>kohIqwrlmjI
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>kohIqwrlmjI
    :alt: youtube>kohIqwrlmjI
 
 Introduction
@@ -42,16 +42,19 @@ Independent Controls
 
 When enabled, the Enabled green buttons will turn into Disable red/orange buttons. Then, the corresponding output is active, until the Disable button is clicked again.
 
-| 
-| === Tracking === |image2| The "Tracking" option allows you to express the negative output (V- pin) as a function of the positive output: V- = -(ratio \* V+). For instance, for a positive output of 1.0 Volts and a tracking ratio of 70%, the negative output will be -0.7 Volts.
+Tracking
+^^^^^^^^
+
+|image2| The "Tracking" option allows you to express the negative output (V- pin) as a function of the positive output: V- = -(ratio \* V+). For instance, for a positive output of 1.0 Volts and a tracking ratio of 70%, the negative output will be -0.7 Volts.
 
 In this mode, the Enable button of the negative output channel is disabled; the channel is enabled and disabled dynamically at the same time as the positive channel.
 
-| 
-| ==== Positive/Negative Output Control ==== |image3| In the “Positive output” control, the output can be set from 0 to 5 V, whereas, in the Negative output control, the output can be set from -5 to 0 V. You can select units for the value, Volts or mVolts. You can either input the value directly or use the +/- control to change the voltage output value. The increment/decrement value can be changed by doing the following: The default increment/decrement value is 1 V. You can change it to 100 mV by clicking inside the circle, the small black dot should change to orange/red. |image4|
+Positive/Negative Output Control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| **Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`
+|image3| In the “Positive output” control, the output can be set from 0 to 5 V, whereas, in the Negative output control, the output can be set from -5 to 0 V. You can select units for the value, Volts or mVolts. You can either input the value directly or use the +/- control to change the voltage output value. The increment/decrement value can be changed by doing the following: The default increment/decrement value is 1 V. You can change it to 100 mV by clicking inside the circle, the small black dot should change to orange/red. |image4|
+
+**Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/powersupply3.png
    :width: 200px

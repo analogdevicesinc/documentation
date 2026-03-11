@@ -77,7 +77,7 @@ While being able to plot the two voltage and two current measurements is helpful
 
 The Phase Analyzer can also use this expanded number of channels. If the Analog Mux controls are opened first the Phase Analyzer controls will look like figure 4.
 
-A very good use case example where the extra inputs is very helpful is looking at the standing wave pattern along an artificial lumped LC transmission line. This experiment board from the :git-education_tools:`education tools <experiment-boards>` on the ADI GitHub repository has 20 sections. The specific board tested is populated with 100 uH unit inductors and 47 nF unit capacitors.
+A very good use case example where the extra inputs is very helpful is looking at the standing wave pattern along an artificial lumped LC transmission line. This experiment board from the `education tools <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/experiment-boards>`_ on the ADI GitHub repository has 20 sections. The specific board tested is populated with 100 uH unit inductors and 47 nF unit capacitors.
 
 Below in figure 4 we show the M1k with the mux board connected to one of the LC transmission line boards at 5 different taps more or less evenly spaced along the line.
 

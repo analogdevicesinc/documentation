@@ -65,7 +65,7 @@ Initialize MSI(MMC/SDIO) Sub-System
    SD version 1.10
    High Capacity: No
    Capacity: 968.8 MiB
-   Bus Width: 4-bit 
+   Bus Width: 4-bit
 
 Get More MMC Command Usage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,22 +76,19 @@ Get More MMC Command Usage
    or
    # help mmc
 
- 
-
-| 
-| ----
+--------------
 
 .. container:: group
 
    
    .. container:: half column
 
-      \**Pre: :doc:`Loading file from USB storage in u-boot </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot/loading_file_from_usb_storage_in_uboot>`\ **\
+      **Pre: :doc:`Loading file from USB storage in u-boot </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot/loading_file_from_usb_storage_in_uboot>`\ **\
 
    
    .. container:: half column
 
-      **\ Back To: \*\*\ :doc:`Das U-boot </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot>`
+      **Back To: *\*\ :doc:`Das U-boot </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot>`
 
    
 

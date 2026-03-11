@@ -3,8 +3,7 @@
 Analog Devices Kuiper Linux
 ===========================
 
-| Analog Devices Kuiper Linux is a distribution based on Raspbian for the Raspberry Pi. It incorporates Linux device drivers for ADI products, and is created with ease of use in mind. The reasoning behind creating this distribution is to minimize the barriers to integrating ADI hardware devices into a Linux-based system. When starting with a generic Linux distribution, the kernel typically would have to be rebuilt with the desired drivers enabled. While this is not difficult for an engineer that is familiar with the process, it can be a daunting task even when everything goes right.
-| ADI Kuiper Linux solves this problem, and includes a host of additional applications, software libraries, and utilities including:
+Analog Devices Kuiper Linux is a distribution based on Raspbian for the Raspberry Pi. It incorporates Linux device drivers for ADI products, and is created with ease of use in mind. The reasoning behind creating this distribution is to minimize the barriers to integrating ADI hardware devices into a Linux-based system. When starting with a generic Linux distribution, the kernel typically would have to be rebuilt with the desired drivers enabled. While this is not difficult for an engineer that is familiar with the process, it can be a daunting task even when everything goes right. ADI Kuiper Linux solves this problem, and includes a host of additional applications, software libraries, and utilities including:
 
 -  IIO Oscilloscope (basic GUI for debugging IIO devices)
 -  IIOD (exposes IIO devices over a network connection to a remote host)
@@ -292,25 +291,24 @@ First you have to use the default environment from the SD card (otherwise the sy
 Then you need to update the MAC address of the board. For some reason, Xilinx doesn't do this on their boards, and you will not get the proper MAC address. Depending on where to do it:
 
 -  `U-Boot <https://u-boot.readthedocs.io>`_ ``**setenv ethaddr XX:XX:XX:XX:XX:XX** (whatever is on the sticker on the board
-   **saveenv** 
+   **saveenv**
    **reset**``
 -  `Linux kernel <http://en.wikibooks.org/wiki/Changing_Your_MAC_Address/Linux>`_ ``**ifconfig eth2 down**
    **ifconfig eth2 hw ether XX:XX:XX:XX:XX:XX** (what ever is on the sticker on the board)
    **ifconfig eth2 up**``
 
-|
-
 .. note::
 
+   
+   These boot messages may change based on your specific platform.
+   
 
-   ..
 
-| These boot messages may change based on your specific platform.
-   |
+
 
 .. raw:: html
 
-   <details><summary>**Complete Boot Log** (Click to expand)</summary>
+   <details><summary>**Complete Boot Log** (Click to expand)
 
 ::
 
@@ -319,7 +317,6 @@ Then you need to update the MAC address of the board. For some reason, Xilinx do
     Escape character: Ctrl-\ (ASCII 28, FS): enabled
    Type the escape character followed by C to get back,
    or followed by ? to see other options.
-   ----------------------------------------------------
 
    U-Boot SPL 2021.07-16360-gee63370553-dirty (Jun 09 2022 - 23:13:35 +0300)
    FPGA: Checking FPGA configuration setting ...
@@ -860,7 +857,7 @@ Then you need to update the MAC address of the board. For some reason, Xilinx do
    </details>
 
 
-|
+
 
 .. important::
 
@@ -869,7 +866,7 @@ Then you need to update the MAC address of the board. For some reason, Xilinx do
    | ``sudo shutdown -h now``
    | or
    | ``sudo poweroff``
-   |
+   
 
 
 Users and Passwords
@@ -923,10 +920,7 @@ In order to update all ADI tools - simply call the update script as shown below:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -939,13 +933,13 @@ In order to update all ADI tools - simply call the update script as shown below:
 
 .. raw:: html
 
-   <details><summary>**Complete Update Tools Log** (Click to expand)</summary>
+   <details><summary>**Complete Update Tools Log** (Click to expand)
 
 ::
 
 
    2022-05-06 14:35:15 URL: http://github.com/analogdevicesinc 200 OK
-    *** Updating linux_image_ADI-scripts BRANCH origin/master ***
+    ** Updating linux_image_ADI-scripts BRANCH origin/master **
    HEAD is now at 47416bc update_tools: Add HWMON and examples to libiio builds
    remote: Enumerating objects: 32, done.
    remote: Counting objects: 100% (32/32), done.
@@ -956,12 +950,12 @@ In order to update all ADI tools - simply call the update script as shown below:
      * [new branch]      add_2021_R1_release -> origin/add_2021_R1_release
       47416bc..425510e  master              -> origin/master
     + c989e52...4bf27ce rpi_boot_files      -> origin/rpi_boot_files  (forced update)
-    *** Building linux_image_ADI-scripts ***
+    ** Building linux_image_ADI-scripts **
    ./adi_update_tools.sh has been updated, switching to new one
    2022-05-06 14:35:18 URL: http://github.com/analogdevicesinc 200 OK
-    *** Updating linux_image_ADI-scripts BRANCH origin/master ***
+    ** Updating linux_image_ADI-scripts BRANCH origin/master **
    HEAD is now at 425510e adi_update_boot.sh: Replace windows carrige/return
-    *** Building linux_image_ADI-scripts ***
+    ** Building linux_image_ADI-scripts **
    ./adi_update_tools.sh script is the same, continuing
    Reading package lists... Done
    Building dependency tree... Done
@@ -996,7 +990,7 @@ In order to update all ADI tools - simply call the update script as shown below:
    Cannot read environment, using default
    Cannot read default environment from file
    sed: can't read /etc/update-motd.d/10-help-text: No such file or directory
-   make: *** No rule to make target 'clean'.  Stop.
+   make: ** No rule to make target 'clean'.  Stop.
    install -d /usr/local/bin
    install ./*.sh /usr/local/bin/
    /bin/sh usb-gadget-service/install_gt.sh
@@ -1140,7 +1134,7 @@ In order to update all ADI tools - simply call the update script as shown below:
    make[1]: Entering directory '/usr/local/src/libusbgx'
    Making all in src
    ....
-    *** Building libiio ***
+    ** Building libiio **
    -- cmake version: 3.18.4
    -- The C compiler identification is GNU 10.2.1
    -- Detecting C compiler ABI info
@@ -1200,7 +1194,7 @@ In order to update all ADI tools - simply call the update script as shown below:
    -- Build files have been written to: /usr/local/src/libiio/build
    ....
    Building libiio target  finished Successfully
-    *** Updating libad9361-iio BRANCH origin/2019_R2 ***
+    ** Updating libad9361-iio BRANCH origin/2019_R2 **
    Previous HEAD position was fd44358 Fix flags for FMComms5 python tests
    HEAD is now at be7eb02 Update HW test to use environmental variables
    remote: Enumerating objects: 3, done.
@@ -1210,7 +1204,7 @@ In order to update all ADI tools - simply call the update script as shown below:
    From https://github.com/analogdevicesinc/libad9361-iio
      * [new branch]      2021_R1           -> origin/2021_R1
      * [new branch]      staging/ci-update -> origin/staging/ci-update
-    *** Building libad9361-iio ***
+    ** Building libad9361-iio **
    -- The C compiler identification is GNU 10.2.1
    -- Detecting C compiler ABI info
    -- Detecting C compiler ABI info - done
@@ -1226,7 +1220,7 @@ In order to update all ADI tools - simply call the update script as shown below:
    -- Build files have been written to: /usr/local/src/libad9361-iio/build
    ....
    Building libad9361-iio target  finished Successfully
-   *** Updating iio-oscilloscope BRANCH origin/2019_R2 ***
+   ** Updating iio-oscilloscope BRANCH origin/2019_R2 **
    Previous HEAD position was fb9ec84 plugins: adrv9002: improve temperature reporting
    HEAD is now at 177dd7d filters: add adrv9002 new API profiles
    rm -rf /usr/local/lib/osc /usr/local/share/osc /usr/local/bin/osc /usr/local/lib/libosc.so
@@ -1250,15 +1244,12 @@ In order to update all ADI tools, simply call the **adi_update_boot.sh** script 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:~# adi_update_boot.sh 
+      root@analog:~# adi_update_boot.sh
    
 
 
@@ -1266,7 +1257,7 @@ In order to update all ADI tools, simply call the **adi_update_boot.sh** script 
 
 .. raw:: html
 
-   <details><summary>**Complete Update Boot Log** (Click to expand)</summary>
+   <details><summary>**Complete Update Boot Log** (Click to expand)
 
 ::
 
@@ -1308,7 +1299,7 @@ In order to update all ADI tools, simply call the **adi_update_boot.sh** script 
    </details>
 
 
-|
+
 
 .. note::
 
@@ -1323,7 +1314,41 @@ In order to update all ADI tools, simply call the **adi_update_boot.sh** script 
    (Replace ${CONFIG} with the config name that applies in your case, e.g. "zynq-zed-adv7511-ad9361" for a FMCOMMS2/3 on a ZedBoard.)
 
 
-.. include:: ../../eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks.rst
+The device tree is a data structure for describing hardware. Rather than hard coding every detail of a device into an operating system, many aspect of the hardware can be described in a data structure that is passed to the operating system at boot time.
+
+For your convenience – all device tree files (dtb) for our designs are included in the SD Card boot partition. Sometimes it's desired to change certain device tree properties permanently.
+
+For example a custom board has a different reference clock.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/dts-dtb.png
+   :align: center
+   :width: 800px
+
+#. Mount the FAT32 Boot partition by clicking on the 537MB Volume Icon on the desktop
+#. Open a shell by clicking ion the Terminal Icon on the desktop (or CTRL+ALT+t)
+#. Now convert the devictree.dtb into a dts file
+#. Edit the file (mousepad or vi)
+#. Convert the devictree.dts back into its binary format.
+#. Unmount the file system (right click)
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      analog@analog:~$ cd /media/analog/BOOT/
+      analog@analog:/media/analog/BOOT$ dtc -I dtb devicetree.dtb -O dts -o devicetree.dts
+      analog@analog:/media/analog/BOOT$ mousepad devicetree.dts &
+      analog@analog:/media/analog/BOOT$ dtc -I dts devicetree.dts -O dtb -o devicetree.dtb
+      analog@analog:/media/analog/BOOT$ 
+   
+
+
 
 Accessing Files
 ~~~~~~~~~~~~~~~
@@ -1344,10 +1369,7 @@ By default, only read access is possible. If you want to be able to copy files o
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      Modify network share permissions
+   Modify network share permissions
 
    
    ::
@@ -1369,8 +1391,7 @@ Preparing the Image: Raspberry Pi
 Hardware Configuration
 ~~~~~~~~~~~~~~~~~~~~~~
 
-| The system will likely need to be configured according to what devices are connected to the platform board (for example, an AD7124-8 ADC connected to a Raspberry Pi) The most straightforward way to do this for Raspberry Pi is to edit the config.txt file, which is located in the boot partition. This is a FAT partition that is accessible in Linux, Windows, or MacOS. Any text editor can be used, including the Mousepad editor that is included with Kuiper Linux. Using the Raspberry Pi itself also avoids problems with USB encryption, often present on company computers. Connect a keyboard, mouse, and monitor to the Raspberry Pi and connect power. The ADI Kuiper Linux desktop should appear.
-| Before editing, it is a good idea to make a backup of the original file, just in case something goes wrong (which it won't, but still...) Open a terminal and enter the following command (noting that "analog@analog:~ $" is the prompt, and does not need to be typed):
+The system will likely need to be configured according to what devices are connected to the platform board (for example, an AD7124-8 ADC connected to a Raspberry Pi) The most straightforward way to do this for Raspberry Pi is to edit the config.txt file, which is located in the boot partition. This is a FAT partition that is accessible in Linux, Windows, or MacOS. Any text editor can be used, including the Mousepad editor that is included with Kuiper Linux. Using the Raspberry Pi itself also avoids problems with USB encryption, often present on company computers. Connect a keyboard, mouse, and monitor to the Raspberry Pi and connect power. The ADI Kuiper Linux desktop should appear. Before editing, it is a good idea to make a backup of the original file, just in case something goes wrong (which it won't, but still...) Open a terminal and enter the following command (noting that "analog@analog:~ $" is the prompt, and does not need to be typed):
 
 ::
 

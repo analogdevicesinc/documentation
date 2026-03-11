@@ -19,7 +19,7 @@ The :adi:`EVAL-ADXL362-ARDZ` Shield is designed in Arduino Uno R3 format which m
 Getting Started Video
 ---------------------
 
-.. image:: https://wiki.analog.com/_media/analogTV>4807248650001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/analogTV>4807248650001
    :alt: analogTV>4807248650001
 
 Connectors and Jumper configuration
@@ -30,8 +30,8 @@ The :adi:`EVAL-ADXL362-ARDZ` Shield has four jumpers to increase flexibility whe
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/eval-adxl362-ardz_silkscreen_w-jumper.png
    :width: 500px
 
-| 
-| ==== ADXL_CS_SEL ====
+ADXL_CS_SEL
+~~~~~~~~~~~
 
 ============= ======================================
 Configuration Function
@@ -40,7 +40,7 @@ Configuration Function
 |image2|      Routes ADXL362 CS pin to P0.4/RTS/IRQ1
 ============= ======================================
 
-| 
+
 | ==== LCD_CS_SEL ====
 
 ============= =======================================
@@ -50,7 +50,7 @@ Configuration Function
 |image4|      Connects LCD CS pin to P1.4/PWM2/MISO0.
 ============= =======================================
 
-| 
+
 | ==== ADXL_INT_SEL ====
 
 ============= =====================================================
@@ -60,7 +60,7 @@ Configuration Function
 |image6|      Connects ADXL362 Interrupt pin 2 (INT2) to P1.0/IRQ3.
 ============= =====================================================
 
-| 
+
 | ==== LDC_RST_SEL ====
 
 ============= ===================================
@@ -70,7 +70,7 @@ Configuration Function
 |image8|      Connects LCD Reset to pin P1.1/IRQ4
 ============= ===================================
 
-| 
+
 | ===== Schematics, PCB Layout, Bill of Materials =====
 
 .. admonition:: Download

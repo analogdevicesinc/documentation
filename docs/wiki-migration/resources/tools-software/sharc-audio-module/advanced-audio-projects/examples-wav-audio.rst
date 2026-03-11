@@ -47,7 +47,6 @@ EV-SC594-SOM/EV-SC598-SOM + Carrier
 | 4. Proceed to the software setup instructions *(common for all hardware variants)*                                                                                                           | NA        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 Software Setup
 --------------
@@ -57,9 +56,7 @@ Software Setup
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
 
-*This tutorial uses TeraTerm as the serial interface to your hardware.*
-
-**Follow the instructions below to set up a connection to your hardware:**
+*This tutorial uses TeraTerm as the serial interface to your hardware.**Follow the instructions below to set up a connection to your hardware:**
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | 1. Open TeraTerm and connect to a new Serial Session, connecting to the Port labeled *SC5xx Communications Port*.                                               | |image25| |image26| |
@@ -106,7 +103,6 @@ Audio Connection Setup
 | 5. You should now be able to hear the audio from the input device coming out of the speaker connected to *LINE OUT* or *HEADPHONES*.                                                                                                                                                                                                                                                      | NA        |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 .. important::
 

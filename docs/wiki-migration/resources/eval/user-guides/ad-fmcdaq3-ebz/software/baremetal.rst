@@ -21,8 +21,8 @@ Downloads
    :class: download
 
    
-   -  HDL (hdl_2016_r2\* release) - :git-hdl:`projects/daq3`
-   -  no-OS (2016_R2\* release) - :git-no-OS:`fmcdaq3`
+   -  HDL (hdl_2016_r2\* release) - https://github.com/analogdevicesinc/hdl/tree/hdl_2016_r2/projects/daq3
+   -  no-OS (2016_R2\* release) - https://github.com/analogdevicesinc/no-OS/tree/2016_R2/fmcdaq3
    
    Please check with the github pages for latest and previous releases and consult the release notes for more information.
 

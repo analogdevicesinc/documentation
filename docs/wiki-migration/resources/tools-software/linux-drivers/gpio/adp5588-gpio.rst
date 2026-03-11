@@ -52,13 +52,23 @@ Files
 Example platform device initialization
 ======================================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 <source trunk/include/linux/i2c/adp5588.h:/i2c_board_info/-EOF c linux-kernel>
 
 <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5588_gpio_data{} c linux-kernel>
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+
+This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+
+So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+
+For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+
 
 .. code:: C
 
@@ -77,13 +87,9 @@ Adding Linux driver support
 
 Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
 
-|
-
 .. hint::
 
-   The ADP5588 Driver depends on **CONFIG_I2C**
-
-   | IRQ-Chip interrupt controller support is not available in case this driver is build as Module
+   The ADP5588 Driver depends on **CONFIG_I2C** IRQ-Chip interrupt controller support is not available in case this driver is build as Module
 
 
 ::
@@ -94,9 +100,9 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        --- GPIO Support
        [ ]   Debug GPIO calls
        [*]   /sys/class/gpio/... (sysfs interface)
-             *** Memory mapped GPIO expanders: ***
+             ** Memory mapped GPIO expanders: **
        < >   IT8761E GPIO support
-             *** I2C GPIO expanders: ***
+             ** I2C GPIO expanders: **
        < >   Maxim MAX7300 GPIO expander
        < >   MAX7319, MAX7320-7327 I2C Port Expanders
        < >   PCA953x, PCA955x, TCA64xx, and MAX7310 I/O ports

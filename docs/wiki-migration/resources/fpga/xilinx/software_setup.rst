@@ -94,11 +94,11 @@
 ::
 
      * As an alternative a UART terminal can be used to capture the output of the example program. The number of used UART port depends on the computer's configuration. The following settings must be used in the UART terminal:
-     * **Baud Rate:** 115200bps
-     * **Data:** 8 bit
-     * **Parity:** None
-     * **Stop bits:** 1 bit
-     * **Flow Control:** none
+     **Baud Rate:** 115200bps
+     **Data:** 8 bit
+     **Parity:** None
+     **Stop bits:** 1 bit
+     **Flow Control:** none
 
 -  When the run configuration is done, the software can be started by clicking the **Run** button.
 

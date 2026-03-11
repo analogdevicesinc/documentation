@@ -8,8 +8,7 @@ ADA2200-EVALZ
 
 The ADA2200-EVALZ is the simpler of the two evaluation boards. It facilitates signal connections to standard test equipment. The part can be reconfigured with the use of the on-board EEPROM.
 
-| |image1|
-| *Figure 1. ADA2200-EVALZ Evaluation Board*
+|image1| *Figure 1. ADA2200-EVALZ Evaluation Board*
 
 User guide, documentation and purchasing information can be found under
 
@@ -20,8 +19,7 @@ ADA2200SDP-EVALZ
 
 The ADA2200SDP-EVALZ adds additional input and output signal conditioning circuitry on-board. It also adds an interface to the SDP board. This allows access to the ADA2200 configuration registers over the SPI port with the use of a PC resident GUI application.
 
-| |image2|
-| *Figure 2. ADA2200SDP-EVALZ Evaluation Board*
+|image2| *Figure 2. ADA2200SDP-EVALZ Evaluation Board*
 
 The ADA2200SDP-EVALZ User guide can be downloaded from this link:
 
@@ -33,7 +31,7 @@ The ACE software used to configure the ADA2200SDP-EVALZ eval board can be downlo
 
 The evaluation board contains a reconstruction filter. To calculate new values for the filter, download the excel spreadsheet.
 
-| `EVB Filter.xlsx <https://wiki.analog.com/_media/resources/eval/EVB Filter.xlsx>`_
+`EVB Filter.xlsx <https://wiki.analog.com/_media/resources/eval/EVB Filter.xlsx>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ada2200_evalz_no_conn.jpg
    :width: 400px

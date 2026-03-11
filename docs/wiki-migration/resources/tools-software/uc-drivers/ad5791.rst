@@ -28,77 +28,73 @@ Driver Description
 Functions Declarations
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| Function                                                               | Description                                                                                  |
-+========================================================================+==============================================================================================+
-| ``int32_t ad5791_init(struct ad5791_dev **device,                      | Initializes the communication with the device.                                               |
-|                              struct ad5791_init_param init_param);``   |                                                                                              |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| ``int32_t ad5791_remove(struct ad5791_dev *dev);``                     | Free the resources allocated by ad5791_init().                                               |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| ``int32_t ad5791_set_register_value(struct ad5791_dev *dev,            | Writes data into a register.                                                                 |
-|                                            uint8_t register_address,   |                                                                                              |
-|                                            uint32_t register_value);`` |                                                                                              |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| ``int32_t ad5791_get_register_value(struct ad5791_dev *dev,            | Get register value standard function.                                                        |
-|                                            uint8_t addr,               |                                                                                              |
-|                                            uint32_t *value);``         |                                                                                              |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| ``int32_t ad5791_dac_ouput_state(struct ad5791_dev *dev,               | Sets the DAC output in one of the three states.                                              |
-|                                         uint8_t state);``              |                                                                                              |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| ``int32_t ad5791_set_dac_value(struct ad5791_dev *dev,                 | Writes to the DAC register.                                                                  |
-|                                       uint32_t value);``               |                                                                                              |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| ``int32_t ad5791_soft_instruction(struct ad5791_dev *dev,              | Asserts RESET, CLR or LDAC in a software manner.                                             |
-|                                          uint8_t instruction_bit);``   |                                                                                              |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| ``int32_t ad5791_setup(struct ad5791_dev *dev,                         | Configures the output amplifier, DAC coding, SDO state and the linearity error compensation. |
-|                               uint32_t setup_word);``                  |                                                                                              |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| Function                                                                                                          | Description                                                                                  |
++===================================================================================================================+==============================================================================================+
+| ``int32_t ad5791_init(struct ad5791_dev **device, struct ad5791_init_param init_param);``                         | Initializes the communication with the device.                                               |
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_remove(struct ad5791_dev *dev);``                                                                | Free the resources allocated by ad5791_init().                                               |
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_set_register_value(struct ad5791_dev *dev, uint8_t register_address, uint32_t register_value);`` | Writes data into a register.                                                                 |
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_get_register_value(struct ad5791_dev *dev, uint8_t addr, uint32_t *value);``                     | Get register value standard function.                                                        |
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_dac_ouput_state(struct ad5791_dev *dev, uint8_t state);``                                        | Sets the DAC output in one of the three states.                                              |
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_set_dac_value(struct ad5791_dev *dev, uint32_t value);``                                         | Writes to the DAC register.                                                                  |
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_soft_instruction(struct ad5791_dev *dev, uint8_t instruction_bit);``                             | Asserts RESET, CLR or LDAC in a software manner.                                             |
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_setup(struct ad5791_dev *dev, uint32_t setup_word);``                                            | Configures the output amplifier, DAC coding, SDO state and the linearity error compensation. |
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``/* Supported devices */                   |
+    /* Supported devices */
+    enum ad5791_type {
+     ID_AD5760,
+     ID_AD5780,
+     ID_AD5781,
+     ID_AD5790,
+     ID_AD5791
+    };
 
-| enum ad5791_type {                          |
-|     ID_AD5760,                              |
-|     ID_AD5780,                              |
-|     ID_AD5781,                              |
-|     ID_AD5790,                              |
-|     ID_AD5791                               |
-| };                                          |
-|                                             |
-| struct ad5791_chip_info {                   |
-|     uint32_t resolution;                    |
-| };                                          |
-|                                             |
-| struct ad5791_dev {                         |
-|     /* SPI */                               |
-|     spi_desc        *spi_desc;              |
-|     /* GPIO */                              |
-|     struct gpio_desc    *gpio_reset;        |
-|     struct gpio_desc    *gpio_clr;          |
-|     struct gpio_desc    *gpio_ldac;         |
-|     /* Device Settings */                   |
-|     enum ad5791_type act_device;            |
-| };                                          |
-|                                             |
-| struct ad5791_init_param {                  |
-|     /* SPI */                               |
-|     spi_init_param  spi_init;               |
-|     /* GPIO */                              |
-|     struct gpio_init_param      gpio_reset; |
-|     struct gpio_init_param      gpio_clr;   |
-|     struct gpio_init_param      gpio_ldac;  |
-|     /* Device Settings */                   |
-|     enum ad5791_type act_device;            |
-| };``                                        |
-+---------------------------------------------+
+::
+
+    struct ad5791_chip_info {
+     uint32_t resolution;
+    };
+
+::
+
+    struct ad5791_dev {
+     /* SPI */
+     spi_desc        *spi_desc;
+     /* GPIO */
+     struct gpio_desc    *gpio_reset;
+     struct gpio_desc    *gpio_clr;
+     struct gpio_desc    *gpio_ldac;
+     /* Device Settings */
+     enum ad5791_type act_device;
+    };
+
+::
+
+    struct ad5791_init_param {
+     /* SPI */
+     spi_init_param  spi_init;
+     /* GPIO */
+     struct gpio_init_param      gpio_reset;
+     struct gpio_init_param      gpio_clr;
+     struct gpio_init_param      gpio_ldac;
+     /* Device Settings */
+     enum ad5791_type act_device;
+    };
 
 Downloads
 ---------

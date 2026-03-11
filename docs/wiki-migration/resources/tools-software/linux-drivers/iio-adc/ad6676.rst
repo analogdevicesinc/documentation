@@ -150,7 +150,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            -*-     Industrial I/O lock free software ring
            -*-   Enable triggered sampling support
 
-                 *** Analog to digital converters ***
+                 ** Analog to digital converters **
            [--snip--]
 
            <*>   Analog Devices AD9467 AD9643 High-Speed AXI ADC driver
@@ -176,16 +176,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad6676-osc-screenshot.png
       :align: center
       :width: 600px
-
-      |
+   
 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -231,10 +227,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -253,10 +246,7 @@ Range using external synthesizer [2.0,3.2] GHz in Hz Range using internal synthe
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -273,7 +263,7 @@ Range using external synthesizer [2.0,3.2] GHz in Hz Range using internal synthe
    \ **TIP:** If writing this attribute returns "Invalid argument" (-EINVAL) this means that the underlying HDL or Hardware's JESD204B Core and Gigabit Transceiver (GT) doesn't support changing the JESD204B Lane Rate.
 
    
-   |
+
 
 Complex IQ Data Rate (in_voltage_sampling_frequency)
 ----------------------------------------------------
@@ -284,10 +274,7 @@ In case the underlying HDL or Hardware's JESD204B Core and Gigabit Transceiver (
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -302,30 +289,25 @@ IF intermediate frequency (in_voltage_intermediate_frequency)
 
 The IF (intermediate frequency) to which the ADC is tuned. The AD6676 supports IFs from 70 to 450 MHz provided the external inductors are chosen appropriately. Since the AD6676-EBZ by default includes a pair of 19-nH inductors soldered to the evaluation board, the IF range allowed is less than the full range supported by the AD6676.
 
-|
-
 .. tip::
 
    \ **TIP:** Please see paragraph Lext Selection in the datasheet: Maximum External Inductor Value as a Function of IF Frequency
 
-
-   | The min/max values the device driver accepts can be set via following devicetree attributes:
+   
+   The min/max values the device driver accepts can be set via following devicetree attributes:
    
    ::
    
             adi,intermediate-frequency-min-hz = <150000000>;
             adi,intermediate-frequency-max-hz = <450000000>;
    
-   |
 
-| Since the tuning accuracy is finite - reading back this value allows the user to determine the offset.
+
+Since the tuning accuracy is finite - reading back this value allows the user to determine the offset.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -349,10 +331,7 @@ The allowed range is between [0.005,0.05]*FADC in Hz
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -374,10 +353,7 @@ Typical range [0,30] MHz in MHz
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -397,15 +373,12 @@ Typical range [-30,30] MHz in MHz
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo -1 > in_voltage_bw_margin_if** 
+      root@analog:/sys/bus/iio/devices/iio:device1# **echo -1 > in_voltage_bw_margin_if**
       root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_bw_margin_if**
       **-1**
    
@@ -420,10 +393,7 @@ Writing a value of 0.5 to this device attribute lowers the PIN_0dBFS by 6 dB. Li
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -445,10 +415,7 @@ The range is from 0 to -27.00 dB in 1dB steps. The nomenclature used here is gai
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -467,10 +434,7 @@ The AD6676 includes dynamic reordering of the comparators within the ADC in orde
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -488,15 +452,13 @@ The AD6676 includes dynamic reordering of the comparators within the ADC in orde
 Shuffle Threshold (in_voltage_shuffler_thresh)
 ----------------------------------------------
 
-| In order to obtain the spur-reduction benefits of shuffling at large signal levels while retaining the low noise of not shuffling when the signal is small, the AD6676 supports dynamic shuffle control via the Shuffle Threshold attribute. Shuffling is disabled if the raw ADC output is below the specified threshold for ~5000 clock cycles. A threshold of zero implies that shuffling is always enabled.
-| The supported range is from 0..8
+In order to obtain the spur-reduction benefits of shuffling at large signal levels while retaining the low noise of not shuffling when the signal is small, the AD6676 supports dynamic shuffle control via the Shuffle Threshold attribute. Shuffling is disabled if the raw ADC output is below the specified threshold for ~5000 clock cycles. A threshold of zero implies that shuffling is always enabled.
+
+The supported range is from 0..8
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -518,10 +480,7 @@ Interface test modes supported by the AD6676.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -560,7 +519,7 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24

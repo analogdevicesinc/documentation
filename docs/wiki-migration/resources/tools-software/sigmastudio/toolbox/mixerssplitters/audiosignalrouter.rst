@@ -10,8 +10,6 @@ The Audio Signal Routers cell includes 2 different versions.
 -  Audio Signal Router
 -  Audio Signal Router External Index Selectable
 
-.. _audio-signal-router-1:
-
 Audio Signal Router
 -------------------
 
@@ -24,15 +22,15 @@ This module supports multiple mixer configurations. Each mixer configuration has
 
 The following equations show the calculation of the output for given sample mixer table.
 
-==================== ===== ===================== =====================
-\                          <fc #0000FF>Out0</fc> <fc #0000FF>Out1</fc>
-\                          *Og0*                 *Og1*
-<fc #008000>In0</fc> *Ig0* G00                   G01
-<fc #008000>In1</fc> *Ig1* G10                   G11
-==================== ===== ===================== =====================
+=== ===== ===== =====
+\         Out0  Out1
+\         *Og0* *Og1*
+In0 *Ig0* G00   G01
+In1 *Ig1* G10   G11
+=== ===== ===== =====
 
--  <fc #0000FF>Out0</fc> = *Og0* \* ( G00 \* *Ig0* \* <fc #008000>In0</fc> + G10 \* *Ig1* \* <fc #008000>In1</fc>)
--  <fc #0000FF>Out1</fc> = *Og1* \* ( G01 \* *Ig0* \* <fc #008000>In0</fc> + G11 \* *Ig1* \* <fc #008000>In1</fc>)
+-  Out0 = *Og0* \* ( G00 \* *Ig0* \* In0 + G10 \* *Ig1* \* In1)
+-  Out1 = *Og1* \* ( G01 \* *Ig0* \* In0 + G11 \* *Ig1* \* In1)
 
 If the input/output channels are more than 16, then the mixer window is split for 16 input/output channels to improve GUI performance.
 
@@ -67,8 +65,8 @@ The following sample code shows how to read parameters from a file using Sigma s
    object obj = ss.GetCellObject("Router1");
    System.Collections.ArrayList arr = null;
    System.Reflection.MethodInfo[] memberInfos = ss.ObjectGetMethods(obj);
-   /*foreach (System.Reflection.MethodInfo memberInfo in memberInfos) 
-   {   
+   /*foreach (System.Reflection.MethodInfo memberInfo in memberInfos)
+   {
       ss.PrintLine(memberInfo.Name);
    }*/
 
@@ -102,7 +100,7 @@ The following sample code shows how to read parameters from a file using Sigma s
    ss.PrintLine(methodInfo2.Name);
    methodInfo2.Invoke(obj, new object[]{});
 
-   // 
+   //
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/audiosignalrouter.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/audiosignalroutergrow.jpg

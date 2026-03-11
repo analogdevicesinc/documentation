@@ -86,28 +86,12 @@ Preparing SD Card
 
 Ensure that the :doc:`ADI Kuiper Linux Image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` is properly flashed on the SD card to properly evaluate the :adi:`AD9467-FMC-250EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9467.html#eb-overview>` board with `ZedBoard (AES-Z7EV-7Z020-G) <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`_. Complete instructions on how to properly download, write, and read the ADI Kuiper Linux Image to SD card, and copy the specific files to the root of SD Card. Analog Devices Kuiper Linux Image is an embedded Linux system based on Raspberry Pi OS which incorporates thousands of Linux device drivers for ADI products which minimize the barriers in integrating ADI hardware devices in Linux environment. You can also check all the :doc:`supported projects </wiki-migration/resources/tools-software/linux-software/kuiper-linux/project-list>` of ADI Kuiper Linux Image that lists all ADI evaluation boards with its corresponding development platform.
 
--  Download
-
-.. admonition:: Download
-   :class: download
-
-   \ `ADI Kuiper Linux Image 2022_r2 <https://swdownloads.analog.com/cse/kuiper/image_2023-12-13-ADI-Kuiper-full.zip>`_\
-
-
-.
+-  Download `ADI Kuiper Linux Image 2022_r2 <https://swdownloads.analog.com/cse/kuiper/image_2023-12-13-ADI-Kuiper-full.zip>`_.
 
    -  MD5sum image_2023-12-13-ADI-Kuiper-full.zip: ``9dfd5d57573e14e06715a08b19a6a26a``
    -  MD5sum 2023-12-13-ADI-Kuiper-full.img: ``e3620b6d36ad0481b79eee6041769f38``
 
--  Download and install
-
-.. admonition:: Download
-   :class: download
-
-   \ `WinMD5 <http://www.winmd5.com/>`_ (Image Verifier)
-
-
-to ensure the version is correct and the image was not corrupted.
+-  Download and install `WinMD5 <http://www.winmd5.com/>`_ (Image Verifier) to ensure the version is correct and the image was not corrupted.
 
    -  Open **WinMD5 application** and browse the downloaded image file.
    -  Check the MD5 checksum value is matched from **Step 1**.
@@ -122,15 +106,7 @@ to ensure the version is correct and the image was not corrupted.
    *Figure 2. Verifying ADI Kuiper Linux Image File using WinMD5*\
 
 
--  If SD Card format is unknown or needs to be reconfigured/reformatted. Download and install
-
-.. admonition:: Download
-   :class: download
-
-   \ `SD Card Formatter <https://www.sdcardformatter.com/>`_\
-
-
-if no formatter software installed on your computer.
+-  If SD Card format is unknown or needs to be reconfigured/reformatted. Download and install `SD Card Formatter <https://www.sdcardformatter.com/>`_ if no formatter software installed on your computer.
 
    -  Open **SD Card Formatter**, select SD card you want to reformat and make sure that it is the **correct** one.
    -  Check the **card information** if it **matches** the SD card.
@@ -148,15 +124,7 @@ if no formatter software installed on your computer.
    *Figure 3. Formatting the Selected SD Card*\
 
 
--  Download and install
-
-.. admonition:: Download
-   :class: download
-
-   \ `Win32DiskImager <https://sourceforge.net/projects/win32diskimager/files/latest/download?source=navbar>`_ (Image Flasher)
-
-
-, to write the ADI Kuiper Linux Image to SD Card.
+-  Download and install `Win32DiskImager <https://sourceforge.net/projects/win32diskimager/files/latest/download?source=navbar>`_ (Image Flasher), to write the ADI Kuiper Linux Image to SD Card.
 
    -  Open **Win32DiskImager** then browse the ADI Kuiper Linux Image using the **small folder button**.
    -  **Select** the correct **Device**, double check the **Driver Letter** of your volume label (SD Card).
@@ -235,15 +203,7 @@ This section will discuss on how to setup and configure the `ZedBoard (AES-Z7EV-
    -  Connect another USB-A to Micro-USB-B cable from PC to USB-OTG port **(J13)**; **or**
    -  Connect Gigabit ethernet cable from PC to Zedboard Gigabit Ethernet port **(J11)** and **skip Step 10 to Step 12**
 
--  Open terminal emulator (e.g.
-
-.. admonition:: Download
-   :class: download
-
-   \ `PuTTY <https://apps.microsoft.com/store/detail/XPFNZKSKLBP7RJ?ocid=pdpshare>`_\
-
-
-/Tera Term). Set the following configuration below and click **Open**, see Figure 7:
+-  Open terminal emulator (e.g. `PuTTY <https://apps.microsoft.com/store/detail/XPFNZKSKLBP7RJ?ocid=pdpshare>`_/Tera Term). Set the following configuration below and click **Open**, see Figure 7:
 
    -  Serial line: ``<ZedBoard COM Port Number>``
    -  Speed (baud): ``115200``
@@ -278,15 +238,7 @@ This section will discuss on how to setup and configure the `ZedBoard (AES-Z7EV-
 Software Setup
 ~~~~~~~~~~~~~~
 
--  Download and install
-
-.. admonition:: Download
-   :class: download
-
-   \ :adi:`Analysis \| Control \| Evaluation (ACE) Software <en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`\
-
-
-if it is not already installed.
+-  Download and install :adi:`Analysis \| Control \| Evaluation (ACE) Software <en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>` if it is not already installed.
 -  The ACE Generic IIO plug-in can be found through ACE's Plug-In Manager.
 -  In the Plug-in Manager, search **ADGenericIIO** under **Available Packages**. Once found, select the **Board.ADGenericIIO** and click **Install Selected** button.
 -  After the installation, you can now go back to **Home**. It is located near the upper left corner on the ACE's user interface (UI).
@@ -294,10 +246,7 @@ if it is not already installed.
 
 .. container:: centeralign
 
-   \ |image11|\ *Figure 10. ACE - Hardware Detected*\
-
-
--  Click the **hardware detected** to be redirected to system tab pane. In the **System**, **uncheck** *Operate without Hardware*, and click **Acquire**. See Figure 11.
+   \ |image11|\ *Figure 10. ACE - Hardware Detected*-  Click the **hardware detected** to be redirected to system tab pane. In the **System**, **uncheck**\ Operate without Hardware*, and click **Acquire**. See Figure 11.
 
 .. container:: centeralign
 

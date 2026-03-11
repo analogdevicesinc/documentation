@@ -1,8 +1,9 @@
 State Variable (Q/F Input)
 ==========================
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| |stateqfpic1.png| This block allows for simultaneous access to three different filter types: lowpass, highpass, bandpass. See :doc:`State-Variable Filter </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/statevariable>` for information about the parameters and calculations for this algorithm.
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+|stateqfpic1.png| This block allows for simultaneous access to three different filter types: lowpass, highpass, bandpass. See :doc:`State-Variable Filter </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/statevariable>` for information about the parameters and calculations for this algorithm.
 
 This block performs the same function as the :doc:`State Variable Q Input </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/statevariableqinput>`, with the difference being the frequency is now controlled by a third input pin called 'Frequency Input' instead of text window entry.
 

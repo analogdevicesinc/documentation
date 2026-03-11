@@ -40,8 +40,8 @@ The AD5940 SDK provides a function to calibrate the LPTIA gain resistor. The fun
       lprtia_cal.SysClkFreq = AppAMPCfg.SysClkFreq;
       lprtia_cal.ADCSinc3Osr = ADCSINC3OSR_4;
       lprtia_cal.ADCSinc2Osr = ADCSINC2OSR_22;        /* Use SINC2 data as DFT data source */
-      lprtia_cal.DftCfg.DftNum = DFTNUM_2048;       
-      lprtia_cal.DftCfg.DftSrc = DFTSRC_SINC2NOTCH;   
+      lprtia_cal.DftCfg.DftNum = DFTNUM_2048;
+      lprtia_cal.DftCfg.DftSrc = DFTSRC_SINC2NOTCH;
       lprtia_cal.DftCfg.HanWinEn = bTRUE;
       lprtia_cal.fFreq = AppAMPCfg.AdcClkFreq/4/22/2048\*3;  /* Sample 3 period of signal, 13.317Hz here.
       lprtia_cal.fRcal = AppAMPCfg.RcalVal;

@@ -6,7 +6,7 @@ Preface
 
 This user guide describes both the hardware and software setup needed to acquire data capture from :adi:`AD9736-DPG2-EBZ <eval-ad9736>` evaluation board to characterize :adi:`AD9736` 14-bit 1200 MSPS digital-to-analog converter.
 
-This guide shows how AD9736-DPG2-EBZ works with SDP-H1 or ADS7-V2 controller board developed by Analog Devices. Documentation and software updates for using the <fc #ff0000>\ :adi:`AD9734`/:adi:`AD9735`/:adi:`AD9736`\ </fc> Evaluation Boards are included in a self-extracting update file. Documentation can also be downloaded individually below.
+This guide shows how AD9736-DPG2-EBZ works with SDP-H1 or ADS7-V2 controller board developed by Analog Devices. Documentation and software updates for using the :adi:`AD9734`/:adi:`AD9735`/:adi:`AD9736` Evaluation Boards are included in a self-extracting update file. Documentation can also be downloaded individually below.
 
 Typical Setup
 -------------

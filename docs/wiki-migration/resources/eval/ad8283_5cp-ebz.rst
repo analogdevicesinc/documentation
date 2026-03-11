@@ -83,9 +83,9 @@ Before using the software for testing, configure the evaluation board as follows
    \ *Figure 2. Interfacing the evaluation board to the data capture board*\
 
 
-| 2. Connect one 6V, 2A switching power supply to the evaluation board, and another 6V, 2A switching power supply to the data capture board. Power up both boards.
-| 3. Connect the data capture board to the PC using a USB cable. Make sure that all the jumpers on J601 are connected.
-| 4. Open VisualAnalog on the connected PC. The board should automatically be detected. Configure the board as instructed in AN-905. Select the preferred template to begin.
+2. Connect one 6V, 2A switching power supply to the evaluation board, and another 6V, 2A switching power supply to the data capture board. Power up both boards. 3. Connect the data capture board to the PC using a USB cable. Make sure that all the jumpers on J601 are connected. 4. Open VisualAnalog on the connected PC. The board should automatically be detected. Configure the board as instructed in AN-905. Select the preferred template to begin.
+
+
 
 |image3|
 
@@ -241,10 +241,10 @@ To remove a channel, click the channel, and click Remove.
 Running the FFT
 ---------------
 
-| Once all registers and settings have been configured, the FFT can now be run.
-| 1. Connect a signal source to the SMA inputs of the evaluation board.
-| 2. Click update on the VisualAnalog window.
-| |image8|
+Once all registers and settings have been configured, the FFT can now be run. 1. Connect a signal source to the SMA inputs of the evaluation board. 2. Click update on the VisualAnalog window.
+
+.. image:: https://wiki.analog.com/_media/ad8283/chana_40mhz_100mvpp_reg0cdat00h.png
+   :align: center
 
 .. |image1| image:: https://wiki.analog.com/_media/ad8283/ad8283_eval_bd_z_1_of_1_edlow.jpg
    :width: 400px
@@ -260,4 +260,3 @@ Running the FFT
    :width: 400px
 .. |image7| image:: https://wiki.analog.com/_media/ad8283/vanalog_play.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/ad8283/chana_40mhz_100mvpp_reg0cdat00h.png

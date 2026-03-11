@@ -4,9 +4,14 @@ EVALUATING THE ADUM141E1S QUAD CHANNEL ISOLATOR
 Preface
 -------
 
-| The :adi:`EVAL-ADUM141E1S` supports the ADUM141E1S quad-channel digital isolator based on Analog Devices, Inc., iCoupler® technology. Combining high speed CMOS and monolithic air core transformer technology, the :adi:`ADUM141E1S <ADuM141ES>` provideds outstanding performance characteristics superior to alternatives such as optocoupler devices and other integrated couplers. The :adi:`ADUM141E1S <ADuM141ES>` offers low propagation delay and low pulse width distortion as well a tight channel matching. The :adi:`ADUM141E1S <ADuM141ES>` features two different fail-safe options by which the outputs transition to a pre-determined state when the input power supply is not applied or the inputs are disabled.
-| Complete specifications for the :adi:`ADUM141E1S <ADuM141ES>` are provided in the :adi:`ADUM141E1S <ADuM141ES>` data sheet available from Analog Devices, Inc., and should be consulted in conjunction with this Wiki user guide when using the evaluation board.
-| ===== Overview ===== The :adi:`EVAL-ADUM141E1S <ADuM141ES>` board, shown in Figure 1, can be used to evaluate the performance and data sheet specifications of the :adi:`ADUM141E1S <ADuM141ES>`. Figure 2 shows the schematic of the :adi:`EVAL-ADUM141E1S <ADuM141ES>` circuit which can be used to test the accuracy of the :adi:`ADUM141E1S <ADuM141ES>` and perform other tests. The :adi:`EVAL-ADUM141E1S` is a 4-layer PC board, complete with ground and power layers as shown in the Evaluation Board Schematics and Artwork section.
+The :adi:`EVAL-ADUM141E1S` supports the ADUM141E1S quad-channel digital isolator based on Analog Devices, Inc., iCoupler® technology. Combining high speed CMOS and monolithic air core transformer technology, the :adi:`ADUM141E1S <ADuM141ES>` provideds outstanding performance characteristics superior to alternatives such as optocoupler devices and other integrated couplers. The :adi:`ADUM141E1S <ADuM141ES>` offers low propagation delay and low pulse width distortion as well a tight channel matching. The :adi:`ADUM141E1S <ADuM141ES>` features two different fail-safe options by which the outputs transition to a pre-determined state when the input power supply is not applied or the inputs are disabled.
+
+Complete specifications for the :adi:`ADUM141E1S <ADuM141ES>` are provided in the :adi:`ADUM141E1S <ADuM141ES>` data sheet available from Analog Devices, Inc., and should be consulted in conjunction with this Wiki user guide when using the evaluation board.
+
+Overview
+--------
+
+The :adi:`EVAL-ADUM141E1S <ADuM141ES>` board, shown in Figure 1, can be used to evaluate the performance and data sheet specifications of the :adi:`ADUM141E1S <ADuM141ES>`. Figure 2 shows the schematic of the :adi:`EVAL-ADUM141E1S <ADuM141ES>` circuit which can be used to test the accuracy of the :adi:`ADUM141E1S <ADuM141ES>` and perform other tests. The :adi:`EVAL-ADUM141E1S` is a 4-layer PC board, complete with ground and power layers as shown in the Evaluation Board Schematics and Artwork section.
 
 Helpful Documents
 -----------------
@@ -23,10 +28,22 @@ Evaluation Board Files
 
 The evaluation board layout, BOM, and schematic files for the :adi:`EVAL-ADUM141E1S` board can be downloaded from the links below.
 
-| **DISCLAIMER: The footprint used for layout on the evaluation board is provided for general reference only. The exact footprint required for mounting this device onto a printed circuit board will depend on the device lead forming and may differ from what is provided herein. It is recommended to generate specific footprint information from the users lead forming specifications when placing this device on the application printed circuit board.**
-| ==== Artwork: ==== `09-047807-01A.zip <https://wiki.analog.com/_media/resources/eval/09-047807-01A.zip>`_
-| ==== BOM: ==== `05-047807-01-a1.zip <https://wiki.analog.com/_media/resources/eval/05-047807-01-a1.zip>`_
-| ==== Schematic: ==== `02_047807a_top_0926.pdf <https://wiki.analog.com/_media/resources/eval/02_047807a_top_0926.pdf>`_
+**DISCLAIMER: The footprint used for layout on the evaluation board is provided for general reference only. The exact footprint required for mounting this device onto a printed circuit board will depend on the device lead forming and may differ from what is provided herein. It is recommended to generate specific footprint information from the users lead forming specifications when placing this device on the application printed circuit board.**
+
+Artwork:
+~~~~~~~~
+
+`09-047807-01A.zip <https://wiki.analog.com/_media/resources/eval/09-047807-01A.zip>`_
+
+BOM:
+~~~~
+
+`05-047807-01-a1.zip <https://wiki.analog.com/_media/resources/eval/05-047807-01-a1.zip>`_
+
+Schematic:
+~~~~~~~~~~
+
+`02_047807a_top_0926.pdf <https://wiki.analog.com/_media/resources/eval/02_047807a_top_0926.pdf>`_
 
 Evaluation Board
 ----------------

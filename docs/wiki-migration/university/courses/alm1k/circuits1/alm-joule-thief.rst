@@ -43,28 +43,19 @@ There are many underlying fundamental concepts that could be explored before doi
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit
 
 **For 1.5 V Battery substitute (figure 2):**
 
-| 1 - 2N3904 small signal NPN transistor
-| 1 – 47 Ω resistor (yellow purple black)
-| 1 – 10 KΩ potentiometer
-| 1 – 47 uF capacitor
-| 1 – 0.1 uF capacitor (104)
+1 - 2N3904 small signal NPN transistor 1 – 47 Ω resistor (yellow purple black) 1 – 10 KΩ potentiometer 1 – 47 uF capacitor 1 – 0.1 uF capacitor (104)
 
 **For DC to DC boost converter (figure 3):**
 
-| 1 - 2N3904 small signal NPN transistor
-| 1 – 1 KΩ resistor (brown black red)
-| 1 - HPH1-1400L (Coilcraft Hexapath inductor)
-| 2 – LEDs (any color will do)
+1 - 2N3904 small signal NPN transistor 1 – 1 KΩ resistor (brown black red) 1 - HPH1-1400L (Coilcraft Hexapath inductor) 2 – LEDs (any color will do)
 
 **Optional Additional Equipment:**
 
-| 1.5 V AA battery and holder
-| Small handheld DMM
+1.5 V AA battery and holder Small handheld DMM
 
 Simple "Joule Thief" DC/DC Converter:
 -------------------------------------
@@ -72,7 +63,7 @@ Simple "Joule Thief" DC/DC Converter:
 Construction Directions:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-\**Step 1: \*\*
+**Step 1:**
 
 Note, if you have a 1.5 Volt battery (AA) and a battery holder with wires attached, you can skip this step and use the battery as the 1.5 V supply. Otherwise you will need to make the circuit shown in figure 2 to simulate a single cell battery. This circuit makes a 1.5 V power supply using the fixed 2.5 V power supply on the ALM1000. Build the circuit on one end of your solder-less breadboard being sure to leave space for the rest of this lab's circuits. Improved versions of a 1.5 V power supply can be found in Appendix II below.
 
@@ -296,8 +287,7 @@ The following modifications to the basic circuit are submitted for additional in
 New Materials for figure 5:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 1 – 470 Ω resistor (yellow purple brown)
-| 1 – 5 KΩ potentiometer
+1 – 470 Ω resistor (yellow purple brown) 1 – 5 KΩ potentiometer
 
 Changing the value of resistor R\ :sub:`1` changes the oscillation frequency. Add a 5 KΩ potentiometer in series with a 470Ω resistor in place of R\ :sub:`1`, as shown in figure 5. Observe V\ :sub:`OUT` while adjusting the potentiometer. Why does changing the base resistor change the frequency?
 
@@ -315,15 +305,7 @@ Changing the 1.5 V supply voltage also changes the frequency. If you are using t
 Materials for figure 6:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| 1 - 2N3904 small signal NPN transistor
-| 1 - 2N3906 small signal PNP transistor
-| 1 – 1 KΩ resistor (brown black red)
-| 1 – 4.7 KΩ resistor (yellow purple red)
-| 1 – 47 KΩ resistor (yellow purple orange)
-| 1 – 5 KΩ potentiometer
-| 1 – 4.7 nF capacitor (472)
-| 1 - HPH1-1400L (Coilcraft Hexapath inductor)
-| 2 – LEDs (any color will do)
+1 - 2N3904 small signal NPN transistor 1 - 2N3906 small signal PNP transistor 1 – 1 KΩ resistor (brown black red) 1 – 4.7 KΩ resistor (yellow purple red) 1 – 47 KΩ resistor (yellow purple orange) 1 – 5 KΩ potentiometer 1 – 4.7 nF capacitor (472) 1 - HPH1-1400L (Coilcraft Hexapath inductor) 2 – LEDs (any color will do)
 
 The second coupled winding of L\ :sub:`1` provides the necessary inversion in the feedback signal to cause the circuit to oscillate. An alternative to the two winding inductor is to include a common emitter inverter stage instead. In figure 6 we see that a PNP common emitter inverting stage, Q\ :sub:`2`, has been used. The output signal at the collector of Q\ :sub:`1` is AC coupled to the base of Q\ :sub:`2` by C\ :sub:`1` and the series combination of R\ :sub:`2` and the potentiometer. The RC time constant of this feedback network sets the oscillation frequency. Adjusting the potentiometer changes the frequency.
 
@@ -339,14 +321,7 @@ The second coupled winding of L\ :sub:`1` provides the necessary inversion in th
 Materials for figure 7:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| 2 - 2N3904 small signal NPN transistors
-| 1 – 470 Ω resistor (yellow purple brown)
-| 1 – 4.7 KΩ resistor (yellow purple red)
-| 1 – 10 KΩ resistor (brown black orange)
-| 1 – 5 KΩ potentiometer
-| 1 – 10 nF capacitor (103)
-| 1 - HPH1-1400L (Coilcraft Hexapath inductor)
-| 2 – LEDs (any color will do)
+2 - 2N3904 small signal NPN transistors 1 – 470 Ω resistor (yellow purple brown) 1 – 4.7 KΩ resistor (yellow purple red) 1 – 10 KΩ resistor (brown black orange) 1 – 5 KΩ potentiometer 1 – 10 nF capacitor (103) 1 - HPH1-1400L (Coilcraft Hexapath inductor) 2 – LEDs (any color will do)
 
 Similarly, an NPN common emitter inverting stage can be used as shown in figure 7.
 
@@ -462,8 +437,7 @@ Appendix II: Improved 1.5V sources
 Materials in addition to figure 2:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 1 - 2N3906 small signal PNP transistor
-| 1 – 470 Ω resistor (yellow purple brown)
+1 - 2N3906 small signal PNP transistor 1 – 470 Ω resistor (yellow purple brown)
 
 The output impedance (load regulation) of the simple emitter follower in figure 1 can be improved through the addition of feedback. Shown in figure A1 is a follower circuit where the single NPN (Q\ :sub:`1` is a 2N3904) transistor is replaced with a NPN/PNP compound transistor (Q\ :sub:`2` is a 2N3906). The load regulation of a single transistor follower is a function of how much the V\ :sub:`BE` changes as the emitter current changes. In the case of the compound transistor configuration a small increase in the current of Q\ :sub:`1` is amplified and causes a much larger current to flow in PNP transistor Q\ :sub:`2`.
 
@@ -494,7 +468,7 @@ Appendix III: Formulas used to calculate electrical characteristics of multi-win
 
 Manufacturer datasheets list certain electrical characteristics for the devices. Probably the most important for our purposes is the winding inductance. For power conversion applications the DC resistance (DCR), the maximum rms current (I\ :sub:`rms`), and saturation current I\ :sub:`sat` are also specified.
 
-\**Connecting windings in series: \*\*
+**Connecting windings in series:**
 
 For higher inductance, multiple windings (W\ :sub:`N`) can be connected in series. As the inductance increases, energy storage and I\ :sub:`rms` remain the same, but DCR increases and I\ :sub:`sat` decreases.
 
@@ -502,20 +476,15 @@ Inductance = Inductance\ :sub:`table` × (W\ :sub:`N`)\ :sup:`2`
 
 Note: this Wn\ :sup:`2` factor is only valid when the coupling factor between windings is exactly ( or very nearly ) one. A more general formula is L\ :sub:`T` = L\ :sub:`1` + L\ :sub:`2` + 2M
 
-| DCR = DCR\ :sub:`table` × W\ :sub:`N`
-| I\ :sub:`sat` = (I\ :sub:`sattable` × 6) ÷ W\ :sub:`N` (connected in series)
-| I\ :sub:`rms` = I\ :sub:`rmstable`
+DCR = DCR\ :sub:`table` × W\ :sub:`N` I\ :sub:`sat` = (I\ :sub:`sattable` × 6) ÷ W\ :sub:`N` (connected in series) I\ :sub:`rms` = I\ :sub:`rmstable`
 
 Where Inductance\ :sub:`table`, DCR\ :sub:`table`, I\ :sub:`sattable`\ and I\ :sub:`rmstable`\ come from the manufacturer's datasheet.
 
-\**Connecting windings in parallel: \*\*
+**Connecting windings in parallel:**
 
 To increase current ratings, multiple windings (W\ :sub:`N`) can be connected in parallel. DCR decreases, current ratings increase, and inductance remains the same.
 
-| Inductance = Inductance\ :sub:`table`
-| DCR = 1 ÷ [W\ :sub:`N` × (1 ÷ DCR\ :sub:`table`)]
-| I\ :sub:`sat` = (I\ :sub:`sattable` × 6) ÷ W\ :sub:`N` ( connected in parallel )
-| I\ :sub:`rms` = I\ :sub:`rmstable` × W\ :sub:`N`
+Inductance = Inductance\ :sub:`table` DCR = 1 ÷ [W\ :sub:`N` × (1 ÷ DCR\ :sub:`table`)] I\ :sub:`sat` = (I\ :sub:`sattable` × 6) ÷ W\ :sub:`N` ( connected in parallel ) I\ :sub:`rms` = I\ :sub:`rmstable` × W\ :sub:`N`
 
 `Data Sheet <http://www.coilcraft.com/pdfs/doc157_SigXfrmApp.pdf>`_
 
@@ -526,9 +495,7 @@ To increase current ratings, multiple windings (W\ :sub:`N`) can be connected in
 
 **For Further Reading:**
 
-| `Boost Converter <https://en.wikipedia.org/wiki/Boost_converter>`_
-| `Joule Thief <https://en.wikipedia.org/wiki/Joule_thief>`_
-| `Compound Transistor <https://en.wikipedia.org/wiki/Sziklai_pair>`_
+`Boost Converter <https://en.wikipedia.org/wiki/Boost_converter>`_ `Joule Thief <https://en.wikipedia.org/wiki/Joule_thief>`_ `Compound Transistor <https://en.wikipedia.org/wiki/Sziklai_pair>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/circuits>`
 

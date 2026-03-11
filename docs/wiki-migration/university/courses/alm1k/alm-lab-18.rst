@@ -21,11 +21,7 @@ The ideal analog switch has no on-resistance, infinite off-impedance and zero ti
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and Jumper wire kit
-| 1 - CD4007 CMOS transistor array
-| 2 - NPN transistors (2N3904 or equivalent)
-| 1 – 4.7 KΩ resistor
+ADALM1000 hardware module Solder-less breadboard and Jumper wire kit 1 - CD4007 CMOS transistor array 2 - NPN transistors (2N3904 or equivalent) 1 – 4.7 KΩ resistor
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
    :align: center
@@ -88,14 +84,10 @@ Now modify your circuit to look like figure 2 by connecting the gates of both M\
    Figure 2 PMOS Ron test circuit
 
 
-.. _procedure-1:
-
 Procedure:
 ~~~~~~~~~~
 
 Repeat the sweep of the voltage from channel A AWG and plot the on-resistance of just the PMOS transistor.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -120,16 +112,12 @@ Now modify your circuit to look like figure 3 by connecting the gate of M\ :sub:
    Figure 3 CMOS Ron test circuit
 
 
-.. _procedure-2:
-
 Procedure:
 ~~~~~~~~~~
 
 Repeat the sweep of the voltage and plot the on resistance of the combined NMOS and PMOS transistors.
 
 Compare the traces you got for just the NMOS, just the PMOS and the combined NMOS and PMOS cases. Where do they overlap and what does that tell you about the relative on resistance of the two devices vs the voltage on the switch?
-
-.. _questions-2:
 
 Questions:
 ~~~~~~~~~~
@@ -149,7 +137,6 @@ Try measuring the Ron vs input voltage for other CMOS analog switches such as th
 
 **For Further Reading:**
 
-| :adi:`Switches and Multiplexers <library/analogdialogue/archives/45-05/switch_mux.html>`
-| :adi:`On Building Physically Accurate Analog Switch Macromodels <media/en/analog-dialogue/raqs/raq-issue-173.pdf>`
+:adi:`Switches and Multiplexers <library/analogdialogue/archives/45-05/switch_mux.html>` :adi:`On Building Physically Accurate Analog Switch Macromodels <media/en/analog-dialogue/raqs/raq-issue-173.pdf>`
 
 **Return to the ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

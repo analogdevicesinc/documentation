@@ -25,13 +25,7 @@ To use the LED as an optical detector, do not forward bias the LED into quadrant
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 2 - 2N3904 NPN transistors ( or SSM2212 NPN matched pair )
-| 1 - 100KΩ resistor
-| 1 - 2.2KΩ resistor
-| 3 - LEDs ( multiple red, yellow and green colors )
-| 1 - Infrared LED ( QED-123 )
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 2 - 2N3904 NPN transistors ( or SSM2212 NPN matched pair ) 1 - 100KΩ resistor 1 - 2.2KΩ resistor 3 - LEDs ( multiple red, yellow and green colors ) 1 - Infrared LED ( QED-123 )
 
 Directions:
 ~~~~~~~~~~~
@@ -90,9 +84,6 @@ Questions:
 
 **For Further Reading:**
 
-| `LEDs <https://en.wikipedia.org/wiki/LED>`_
-| `LED circuits <https://en.wikipedia.org/wiki/LED_circuit>`_
-| `Photo diodes <https://en.wikipedia.org/wiki/Photodiode>`_
+`LEDs <https://en.wikipedia.org/wiki/LED>`_ `LED circuits <https://en.wikipedia.org/wiki/LED_circuit>`_ `Photo diodes <https://en.wikipedia.org/wiki/Photodiode>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**

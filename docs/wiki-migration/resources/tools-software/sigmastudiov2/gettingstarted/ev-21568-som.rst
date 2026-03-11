@@ -6,9 +6,7 @@ EV-21568-SOM
 Connections
 -----------
 
-| 
-| EV-21568-SOM with EV-SOM-CRR EZ-Kit Connections
-|
+EV-21568-SOM with EV-SOM-CRR EZ-Kit Connections
 
 .. container:: centeralign
 
@@ -20,8 +18,6 @@ Connections
    \ **Figure:** EV-21568-SOM Top View
 
 
-|
-
 .. container:: centeralign
 
    \ |image2|\
@@ -32,7 +28,8 @@ Connections
    \ **Figure:** EV-21568-SOM Bottom View
 
 
-| =====Settings=====
+Settings
+--------
 
 The board settings for running SigmaStudio+ EV-2156-SOM with EV-SOM-CRR EZ-Kit, using the Default Application is given in the below tables.
 
@@ -42,38 +39,43 @@ Switch Setting
 SW1    BOOT Mode Switch Default Position 6 (SWCLK from LINKPORT)
 ====== =========================================================
 
-| Switch Settings for EV-21568-SOM Board
-| ^ Jumper ^ Setting ^
+Switch Settings for EV-21568-SOM Board
 
-=== ====================================
-JP1 2-3 connected Power by SOM Connector
-=== ====================================
+====== ====================================
+Jumper Setting
+====== ====================================
+JP1    2-3 connected Power by SOM Connector
+====== ====================================
 
-| Jumper Settings for EV-21568-SOM Board
-| ^ Port ^ Setting ^
+Jumper Settings for EV-21568-SOM Board
 
-== ==============================================
-P2 Debug port connected to ADZS-ICE-2000/ICE-1000
-== ==============================================
+==== ==============================================
+Port Setting
+==== ==============================================
+P2   Debug port connected to ADZS-ICE-2000/ICE-1000
+==== ==============================================
 
-| Port Settings for EV-21568-SOM Board
-| ^ Switch ^ Setting ^
+Port Settings for EV-21568-SOM Board
 
 +-----------+------------------------------------------------------------------+
+| Switch    | Setting                                                          |
++===========+==================================================================+
 | SW1 (CRR) | 1 – ON, 2 – ON, 3 – ON, 4 – ON, 5 – ON, 6 – ON, 7 – OFF, 8 – OFF |
 +-----------+------------------------------------------------------------------+
 
-| Switch Settings for EV-SOM-CRR EZ-Kit
-| ^ Jumper ^ Setting ^
+Switch Settings for EV-SOM-CRR EZ-Kit
 
-=== ================================
-P10 Not Connected (Open Device Mode)
-P6  1-2 Connected (3.3V to JTAG IO)
-=== ================================
+====== ================================
+Jumper Setting
+====== ================================
+P10    Not Connected (Open Device Mode)
+P6     1-2 Connected (3.3V to JTAG IO)
+====== ================================
 
-| Jumper Settings for EV-SOM-CRR EZ-Lite
-| ^ Port ^ Setting ^
+Jumper Settings for EV-SOM-CRR EZ-Lite
 
+============================= ===============================
+Port                          Setting
 ============================= ===============================
 P12                           Connected with SigmaStudio USBi
 P9                            Connected to Power

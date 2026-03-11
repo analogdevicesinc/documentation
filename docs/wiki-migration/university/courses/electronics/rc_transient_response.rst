@@ -67,13 +67,15 @@ Where Vo is the initial voltage stored in capacitor at t = 0. The product RC is 
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 2.2 KΩ resistor
-| 1 1 µF capacitor
-| 1 10 KΩ resistor
-| 1 0.01 µF capacitor
-| =====Hardware setup:===== Set up the circuit shown in Figure 4 on your solderless breadboard with the component values R\ :sub:`1` = 2.2 KΩ and C\ :sub:`1` = 1 µF. |image1|
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 2.2 KΩ resistor 1 1 µF capacitor 1 10 KΩ resistor 1 0.01 µF capacitor
+
+Hardware setup:
+---------------
+
+Set up the circuit shown in Figure 4 on your solderless breadboard with the component values R\ :sub:`1` = 2.2 KΩ and C\ :sub:`1` = 1 µF.
+
+
+|image1|
 
 .. container:: centeralign
 

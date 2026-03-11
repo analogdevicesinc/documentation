@@ -49,8 +49,8 @@ LTspice Simulation Circuits
 All LTspice Circuits used are available at `0.1 Hz to 10 Hz Filter, 60dB LTSpice Simulation Files <https://wiki.analog.com/_media/resources/eval/user-guides/0.1_hz_to_10_hz_filter_60db.zip>`_
 
 
-| 
-|
+
+
 
 .. tip::
 

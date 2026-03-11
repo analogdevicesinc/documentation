@@ -3,16 +3,24 @@
 FIR Filter
 ==========
 
-| 
-| |firfilt.png|
-| |firfilttable.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/firfilt.png
+   :alt: firfilt.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/firfilttable.png
+   :alt: firfilttable.png
 
 Description
 -----------
 
-| The FIR Filter block lets you design any FIR filter desired.Frequency response can be shaped by specifying the appropriate coefficients.
-| ===== Usage ===== This block has numeric textbox to edit the tap size for number of coefficients to be used for FIR Filter calcualtion. Click on 'table' button to open the table editor window to enter the calculated coefficients as per desired filter requirement.
-| ===== Targets Supported =====
+The FIR Filter block lets you design any FIR filter desired.Frequency response can be shaped by specifying the appropriate coefficients.
+
+Usage
+-----
+
+This block has numeric textbox to edit the tap size for number of coefficients to be used for FIR Filter calcualtion. Click on 'table' button to open the table editor window to enter the calculated coefficients as per desired filter requirement.
+
+Targets Supported
+-----------------
 
 ========== ========== ================ ============= ================
 Name       ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -20,7 +28,7 @@ Name       ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 FIR Filter B/S        B/S              S             B
 ========== ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -41,7 +49,7 @@ Name    Type  Description
 Output0 Audio Output channel 0
 ======= ===== ================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+-------------------------+---------------------------------------------------------------------------------+
@@ -68,6 +76,3 @@ Output0 Audio Output channel 0
 +-----------------+--------------------------------------------------------------------------+------------------------+---------------+
 
 | 
-
-.. |firfilt.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/firfilt.png
-.. |firfilttable.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/firfilttable.png

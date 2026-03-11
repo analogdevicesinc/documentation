@@ -112,13 +112,9 @@ The Depth Perception Rapid Prototyping Platform supports a wide range of operati
    :git-aditof_sdk>`__
 
 
-|
-
 .. note::
 
-   `Get more information abut the available 3D ToF algorithms from Analog Devices <https::`Access the full ADI 3D ToF software suite to get started </www.arrow.com/tofalgorithms>`
-
-   | `Explore the available 3D vision algorithms demos <https://github.com/robotics-ai/tof_process_public>`_
+   `Get more information abut the available 3D ToF algorithms from Analog Devices <https::`Access the full ADI 3D ToF software suite to get started </www.arrow.com/tofalgorithms>` `Explore the available 3D vision algorithms demos <https://github.com/robotics-ai/tof_process_public>`_
 
 
 --------------
@@ -141,22 +137,22 @@ Laser Safety
 Videos
 ------
 
-.. image:: https://wiki.analog.com/_media/youtube>t6z9UImtO6g
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>t6z9UImtO6g
    :alt: youtube>t6z9UImtO6g
 
-.. image:: https://wiki.analog.com/_media/youtube>5pfohkFjAuU
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>5pfohkFjAuU
    :alt: youtube>5pfohkFjAuU
 
-.. image:: https://wiki.analog.com/_media/youtube>-CErH6ROli8
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>-CErH6ROli8
    :alt: youtube>-CErH6ROli8
 
-.. image:: https://wiki.analog.com/_media/youtube>G-9UfaZXUCk
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>G-9UfaZXUCk
    :alt: youtube>G-9UfaZXUCk
 
-.. image:: https://wiki.analog.com/_media/youtube>_ew0QKQMUtI
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>_ew0QKQMUtI
    :alt: youtube>_ew0QKQMUtI
 
-.. image:: https://wiki.analog.com/_media/youtube>uRY2UZ0E5_o
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>uRY2UZ0E5_o
    :alt: youtube>uRY2UZ0E5_o
 
 --------------

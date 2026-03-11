@@ -1,15 +1,16 @@
 EVAL-ESS1-SYS Getting Started Guide
 ===================================
 
-|
-
 .. important::
 
    **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-ess1-sys/index.html
-   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
-   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+   https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-ess1-sys/index.html
+   
+   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   
+   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
    
 
 
@@ -20,41 +21,44 @@ Introduction
 | The accompanying PC-based graphical user interface provides an intuitive interface that allows the user to configure the BMS signal chain components and view cell and stack voltage and current measurement results.
 | This page is intended to be used as a getting started guide only. This summarizes the key steps required from setting up the hardware and software to taking basic current and cell voltage measurements. Further hardware guidance and details can be found in dedicated evaluation board user guides included in the EVAL-ESS1-SYS package and listed in the table below.
 
-| 
-| ===== Evaluation Kit Contents ===== The following is a complete list of contents that are in the EVAL-ESS1-SYS kit:
-| ^ ITEM ^^ QTY ^ DESCRIPTION ^
+Evaluation Kit Contents
+-----------------------
 
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Boards | :adi:`AD-APARD32690-SL`                                                      | 1 | Arduino Form-factor Development Platform based on MAX32690 ARM Cortex-M4 Microcontroller                                                                                                                                               |
-+========+==============================================================================+===+========================================================================================================================================================================================================================================+
-|        | :adi:`MAX32625PICO` with 10-pin SWD Cable                                    | 1 | Programming/debug adapter for the AD-APARD32690-SL. Please refer to `MSDK User Guide - Analog Devices MSDK Documentation <https://analogdevicesinc.github.io/msdk/USERGUIDE/#updating-the-max32625pico-pico-debug-adapter-firmware>`_  |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|        | EVAL-ADBMS6822                                                               | 1 | Arduino Form-factor Development Platform for ADBMS6822. Mates with AD-APARD32690-SL                                                                                                                                                    |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|        | EV-ADES1830CCSZ                                                              | 2 | 16-cell battery monitor board featuring the ADES1830                                                                                                                                                                                   |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|        | DC2472A + harness to EV-ADES1830                                             | 2 | Modified version of DC2472A 16-cell battery emulator. Plugs into EV-ADES1830CCSZ to emulate a 16-cell battery                                                                                                                          |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|        | EVAL-ADBMS2950-BASIC (Rev2.0)                                                | 1 | Battery pack monitoring evaluation board featuring the ADBMS2950B, a bidirectional current monitor                                                                                                                                     |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Cables | RJ45-to-RJ45                                                                 | 1 | Used to connect EV-ADES1830CCSZ to EV-ADES1830CCSZ                                                                                                                                                                                     |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|        | DuraClik-to-DuraClik cable                                                   | 2 | Used to make isoSPI connection from EVAL-ADBMS6822 to EVAL-ADBMS2950-BASIC                                                                                                                                                             |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|        | DuraClik-to-RJ45 Cable                                                       | 2 | Used to make isoSPI connection from EVAL-ADBMS2950-BASIC or EVAL-ADBMS6822 to EV-ADES1830CCSZ                                                                                                                                          |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|        | USB Type A-to-USB Micro-B                                                    | 3 | Used to provide power to DC2472A & EVAL-ADBMS2950-BASIC and also for MAX32625PICO                                                                                                                                                      |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|        | USB Type A-to-USB Type-C                                                     | 1 | Data and power for AD-APARD32690-SL                                                                                                                                                                                                    |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|        | USB-to-T1L Ethernet Adapter Board w/Cable                                    | 1 | Option to evaluate 10BASE-T1L Ethernet capability on the AD-APARD32690-SL MCU board                                                                                                                                                    |
-+--------+------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+The following is a complete list of contents that are in the EVAL-ESS1-SYS kit:
+
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ITEM   |                                                                              | QTY | DESCRIPTION                                                                                                                                                                                                                            |
++========+==============================================================================+=====+========================================================================================================================================================================================================================================+
+| Boards | :adi:`AD-APARD32690-SL`                                                      | 1   | Arduino Form-factor Development Platform based on MAX32690 ARM Cortex-M4 Microcontroller                                                                                                                                               |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        | :adi:`MAX32625PICO` with 10-pin SWD Cable                                    | 1   | Programming/debug adapter for the AD-APARD32690-SL. Please refer to `MSDK User Guide - Analog Devices MSDK Documentation <https://analogdevicesinc.github.io/msdk/USERGUIDE/#updating-the-max32625pico-pico-debug-adapter-firmware>`_  |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        | EVAL-ADBMS6822                                                               | 1   | Arduino Form-factor Development Platform for ADBMS6822. Mates with AD-APARD32690-SL                                                                                                                                                    |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        | EV-ADES1830CCSZ                                                              | 2   | 16-cell battery monitor board featuring the ADES1830                                                                                                                                                                                   |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        | DC2472A + harness to EV-ADES1830                                             | 2   | Modified version of DC2472A 16-cell battery emulator. Plugs into EV-ADES1830CCSZ to emulate a 16-cell battery                                                                                                                          |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        | EVAL-ADBMS2950-BASIC (Rev2.0)                                                | 1   | Battery pack monitoring evaluation board featuring the ADBMS2950B, a bidirectional current monitor                                                                                                                                     |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Cables | RJ45-to-RJ45                                                                 | 1   | Used to connect EV-ADES1830CCSZ to EV-ADES1830CCSZ                                                                                                                                                                                     |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        | DuraClik-to-DuraClik cable                                                   | 2   | Used to make isoSPI connection from EVAL-ADBMS6822 to EVAL-ADBMS2950-BASIC                                                                                                                                                             |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        | DuraClik-to-RJ45 Cable                                                       | 2   | Used to make isoSPI connection from EVAL-ADBMS2950-BASIC or EVAL-ADBMS6822 to EV-ADES1830CCSZ                                                                                                                                          |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        | USB Type A-to-USB Micro-B                                                    | 3   | Used to provide power to DC2472A & EVAL-ADBMS2950-BASIC and also for MAX32625PICO                                                                                                                                                      |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        | USB Type A-to-USB Type-C                                                     | 1   | Data and power for AD-APARD32690-SL                                                                                                                                                                                                    |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        | USB-to-T1L Ethernet Adapter Board w/Cable                                    | 1   | Option to evaluate 10BASE-T1L Ethernet capability on the AD-APARD32690-SL MCU board                                                                                                                                                    |
++--------+------------------------------------------------------------------------------+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
 | ===== System Requirements ===== The system requirements include both hardware and software prerequisites. The following list of equipment are\ **\_\_ not provided as part of the kit\_\_** but are required for running the tests documented in this guide. Additionally, the BMS Browser, a PC browser-based GUI tool, complements the EVAL-ESS1-SYS kit hardware. You'll need a MyAnalog.com account to download it from the provided link.
 
-| 
-| ==== Equipment Needed ====
+Equipment Needed
+~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
@@ -85,8 +89,7 @@ Software Needed
    When software updates or new versions of the software are available an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.
 
 
-| 
-| ----
+--------------
 
 System Setup
 ------------
@@ -105,8 +108,8 @@ Evaluation Software
    :adi:`BMS Broad Market/ESS GUI <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
 
-| 
-| ==== BMS Browser GUI Installation ====
+BMS Browser GUI Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  BMS Browser must be downloaded from MyAnalog as outlined above.
 -  Double click on **bms_browser_gui_broadmarket-relX.Y.Z.exe** to install the GUI.
@@ -121,21 +124,20 @@ Evaluation Software
 
 |image3|
 
-| 
-| ==== MCU Configuration & Setup ====
+MCU Configuration & Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
 
    The MCU should be programmed with the correct firmware when received as part of the EVAL-ESS1-SYS kit. Only use this section if the firmware on the MCU board has been updated for other evaluation purposes.
 
 
-|
-
 .. container:: indent
 
    The MCU should be programmed using the following steps:
 
-   | **MAX326825PICO Debugger (One time setup)**
+   
+   **MAX326825PICO Debugger (One time setup)**
    
    -  a. Download the firmware file `max32625_max32690evkit_if_crc_swd_v1.0.7.bin <https://confluence.analog.com/download/attachments/984201370/max32625_max32690evkit_if_crc_swd_v1.0.7.bin?version=1&modificationDate=1709666334248&api=v2>`_ for the MAX32625PICO board.
    -  b. Consult the `MSDK User Guide <https://analogdevicesinc.github.io/msdk/USERGUIDE/#updating-the-max32625pico-pico-debug-adapter-firmware>`_ for detailed instructions on updating the MAX32625PICO Debug Adapter Firmware.
@@ -151,10 +153,8 @@ Evaluation Software
    
 
 
-| 
-| \* Connect the MAX32625PICO to the AD-APARD32690-SL at P9, ensuring the correct 10-pin ribbon cable orientation.
-| **NOTE:** Not all PICO Debuggers have a key lock on the ribbon cable connector.
-
+-  Connect the MAX32625PICO to the AD-APARD32690-SL at P9, ensuring the correct 10-pin ribbon cable orientation.
+   **NOTE:** Not all PICO Debuggers have a key lock on the ribbon cable connector.
 -  Connect a USB cable from the AD-APARD32690-SL (via P10) to the PC.
 -  Connect another USB cable from the MAX32625PICO to the PC.
 -  A DAPLINK drive should appear in Windows Explorer.
@@ -164,8 +164,8 @@ Evaluation Software
 -  You may disconnect both boards and remove the MAX32625PICO.
 -  The AD-APARD32690-SL is now ready to be used with the other boards in the evaluation kit. If you are using this MCU board for other purposes, different firmware loads will be required, as this firmware version is only intended for use with the BMS Browser.
 
-| 
-| ==== Launching the BMS Browser GUI ====
+Launching the BMS Browser GUI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Open the BMS Browser GUI either by searching for it in the Start Menu or using the shortcut on the Desktop.
 -  Run the application to launch the BMS Browser GUI.
@@ -178,8 +178,7 @@ Evaluation Software
 -  Ensure that the AD-APARD32690-SL is connected to the PC via the USB-C cable on P10. The Blue LED, D31, will illuminate when powered.
 -  In the **Serial Port** dropdown box, select the COM port associated with the AD-APARD32690-SL. The firmware version should be 1.0.
 
-| 
-| ----
+--------------
 
 EV-ADES1830CCSZ Quick Test
 --------------------------
@@ -221,8 +220,10 @@ Before setting up the entire signal chain, it is advisable to test and evaluate 
 
 |image9|
 
-| 
-| ===== EVAL-ADBMS2950-BASIC Quick Test ===== The next part of this guide explains how to perform basic measurements with the EVAL-ADBMS2950-BASIC. You'll need a benchtop power supply to create a current through the shunt resistor on the EVAL-ADBMS2950-BASIC.
+EVAL-ADBMS2950-BASIC Quick Test
+-------------------------------
+
+The next part of this guide explains how to perform basic measurements with the EVAL-ADBMS2950-BASIC. You'll need a benchtop power supply to create a current through the shunt resistor on the EVAL-ADBMS2950-BASIC.
 
 -  Connect the isoA of EVAL-ADBMS2950-BASIC to J1 of the EVAL-ADBMS6822 using the provided DuraClik-to-DuraClik cable. Ensure the EVAL-ADBMS6822 is connected to the AD-APARD32690-SL as done previously and linked to the PC.
 
@@ -251,8 +252,10 @@ Before setting up the entire signal chain, it is advisable to test and evaluate 
 
 |image13|
 
-| 
-| ===== Complete Daisy Chain Test ===== Once familiar with the setup for each of the individual boards the entire signal chain can be verified.
+Complete Daisy Chain Test
+-------------------------
+
+Once familiar with the setup for each of the individual boards the entire signal chain can be verified.
 
 -  Connect the hardware using the provided isoSPI cables. Power DC2472A boards using the USB cable connected to a wall plug. Power the EVAL-ADBMS2950-BASIC through either J1 or the USB connector, as explained earlier.
 
@@ -303,8 +306,6 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    For external users, please post your questions under the :ez:`Reference Designs <reference-designs>` forum in EngineerZone to get assistance from the community and experts.
    
 
-
-| 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_install.png
    :width: 500px

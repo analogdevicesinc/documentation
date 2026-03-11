@@ -88,7 +88,7 @@ The source code and include files of the **CN0428_example** can be found here:
    :class: download
 
    
-   :git-arduino:`CN0428_example at Github <Arduino%20Uno%20R3/examples/CN0428_example>`
+   `CN0428_example at Github <https://github.com/analogdevicesinc/arduino/tree/cn0428/Arduino%20Uno%20R3/examples/CN0428_example>`_
    
 
 
@@ -131,8 +131,6 @@ You may need to configure the serial terminal depending on the current settings 
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-| 
 
 Tools Download and Help
 -----------------------

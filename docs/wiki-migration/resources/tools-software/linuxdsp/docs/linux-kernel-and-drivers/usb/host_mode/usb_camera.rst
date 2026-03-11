@@ -1,7 +1,6 @@
 USB Camera Support
 ==================
 
---------------
 
 Hardware Configuration
 ----------------------
@@ -19,7 +18,7 @@ Software Configuration
 
 On the Yocto, Configure the linux-kernel as below to set the USB controller in Host only mode, and enable the USB Camera relevant supported operations. Check the directory of "yocto/build" and Clean up and setup the linux-kernel configuration with commands:
 
-.. code:: c++
+.. code:: console
 
    $ bitbake linux-adi -c cleansstate
    $ bitbake linux-adi -c menuconfig
@@ -31,30 +30,30 @@ And In the pop-up window of linux-kenel configuration, configure as follows Conf
    Device Drivers  --->
        [*] USB support  --->
            <*>   Support for Host-side USB
-                   [*]   Enable USB persist by default 
+                   [*]   Enable USB persist by default
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Dual role mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
-                   [*]       Inventra 
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
+                   [*]       Inventra
 
 Configure the USB camera corresponding options
 
 .. code:: shell
 
    Device Drivers  --->
-           <*> Multimedia support  ---> 
-                 *** Multimedia core support ***   
+           <*> Multimedia support  --->
+                 ** Multimedia core support **
            [*]   Cameras/video grabbers support
            [*]   Media Controller API
            [*]   V4L2 sub-device userspace API
-                 *** Media drivers ***  
+                 ** Media drivers **
            [*]   Media USB Adapters  --->
                  <*>   USB Video Class (UVC)
                  [*]     UVC input events device support
-                 <M>   GSPCA based webcams (NEW)  --->  
+                 <M>   GSPCA based webcams (NEW)  --->
                  <M>   USB Philips Cameras
            [*]   Autoselect ancillary drivers (tuners, sensors, i2c, spi, frontends) (NEW)
 
@@ -62,14 +61,14 @@ Enable the I2C
 
 .. code:: shell
 
-   Device Drivers  --->  
+   Device Drivers  --->
            I2C support  --->
            [*]   Enable compatibility bits for old user-space
-           <*>   I2C device interface  
-           [*]   Autoselect pertinent helper modules     
+           <*>   I2C device interface
+           [*]   Autoselect pertinent helper modules
                  I2C Hardware Bus support  --->
                      <*> ADI TWI I2C support
-                     (50)  ADI TWI I2C clock (kHz) 
+                     (50)  ADI TWI I2C clock (kHz)
 
 XHIDDENSTART Click to expand XHIDDENSTARTSTOP Virtual terminal & frame buffer support (ARM core may not need this configurations)
 
@@ -77,18 +76,18 @@ XHIDDENSTART Click to expand XHIDDENSTARTSTOP Virtual terminal & frame buffer su
 
    Device Drivers  --->
            Character devices  --->
-            [*] Enable TTY 
+            [*] Enable TTY
             [*]   Virtual terminal
             [*]     Enable character translations in console
             [*]     Support for console on virtual terminal
-            -*-     Support for binding and unbinding console drivers             
-           Graphics support  --->   
-                 Console display driver support  --->  
+            -*-     Support for binding and unbinding console drivers
+           Graphics support  --->
+                 Console display driver support  --->
                  [*] Framebuffer Console support
-                 
+
    Library routines  --->
          [*] Select compiled-in fonts
-         [*]   Mac console 6x11 font (not supported by all drivers) 
+         [*]   Mac console 6x11 font (not supported by all drivers)
 
 XHIDDENEND
 
@@ -115,7 +114,7 @@ Example Usage
 
 Boot the generated Images and connect the USB Camera, kernel outputs messages looks like below:
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# modprobe g_zero
    zero gadget: Gadget Zero, version: Cinco de Mayo 2008
@@ -170,7 +169,7 @@ Boot the generated Images and connect the USB Camera, kernel outputs messages lo
    Are you sure you want to continue connecting (yes/no)? yes
    Warning: Permanently added '10.100.4.174' (ECDSA) to the list of known hosts.
    test@10.100.4.174's password:
-   usb_camera.mp4                                100% 1108KB   1.1MB/s   00:00   
+   usb_camera.mp4                                100% 1108KB   1.1MB/s   00:00
 
 Play the usb_camera.mp4 on the host PC
 

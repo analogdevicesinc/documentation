@@ -10,8 +10,12 @@ The :adi:`ADuM4160` is a USB port isolator, based on Analog Devices, Inc., iCoup
 
 The :adi:`ADuM5020` is an isoPower®, integrated, isolated dc-to-dc converter. Based on the Analog Devices, Inc., iCoupler® technology, this dc-to-dc converter provides regulated, isolated power that is below CISPR22 Class B limits at full load on a 2-layer printed circuit board (PCB) with ferrites.
 
-| The EVAL-CN0419-EBZ board connects through a USB Type A Plug and is powered by the bus voltage from the USB port. |image1|
-| ----
+The EVAL-CN0419-EBZ board connects through a USB Type A Plug and is powered by the bus voltage from the USB port.
+
+
+|image1|
+
+--------------
 
 Required Equipment
 ------------------
@@ -32,14 +36,18 @@ General Setup
 Block assignments
 ~~~~~~~~~~~~~~~~~
 
-| |image2|
-| \* Terminal block **P1** is the USB Male plug to be inserted to USB port
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/block_assign.png
+   :align: center
+   :width: 600px
 
+-  Terminal block **P1** is the USB Male plug to be inserted to USB port
 -  Terminal block **P2** is the USB Female receptacle for the peripheral
 -  Terminal block **S1** is the switch for selection of speed operation (Full speed or Low speed)
 
-| 
-| ==== Speed selection ==== Peripheral devices run at one of three speeds, low (1.5 Mbps), full (12 Mbps), and high (480 Mbps). The :adi:`EVAL-CN0419-EBZ Evaluation Board <CN0419>` can accommodate the low and full speed operations. Listed below are some examples of peripheral devices for each speed.
+Speed selection
+~~~~~~~~~~~~~~~
+
+Peripheral devices run at one of three speeds, low (1.5 Mbps), full (12 Mbps), and high (480 Mbps). The :adi:`EVAL-CN0419-EBZ Evaluation Board <CN0419>` can accommodate the low and full speed operations. Listed below are some examples of peripheral devices for each speed.
 
 -  Low speed devices
 
@@ -54,32 +62,33 @@ Block assignments
 The isolator is hardwired for the desired speed setting, either full speed or low speed. A switch at the upstream side allows the user to select between these speeds. To switch between the two modes, flip the actuator of S1 switch to FS mode as indicated in silkscreen for full speed operation and LS mode otherwise.
 
 
-|image3|
+|image2|
 
 ::
 
                                                         Low speed operation
 
-| 
-| |image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/FS_mode.png
+   :align: center
+   :width: 500px
 
 ::
 
                                                         Full speed operation
 
-| 
-
 Test setup
 ~~~~~~~~~~
 
-| |image5|
-| \* Set the switch S1 to full speed or low speed operation depending on the peripheral specifications.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/setup_diagram2.png
+   :align: center
+   :width: 700px
 
+-  Set the switch S1 to full speed or low speed operation depending on the peripheral specifications.
 -  Connect the peripheral to P2 of the :adi:`EVAL-CN0419-EBZ <CN0419>`
 -  Plug P1 of the :adi:`EVAL-CN0419-EBZ <CN0419>` into the USB port of the PC/host
 
-| 
-| ==== Running the System ====
+Running the System
+~~~~~~~~~~~~~~~~~~
 
 -  Make sure the setting for S1 is correct based on the peripheral device.
 
@@ -89,8 +98,7 @@ Test setup
    -The PC/host must recognize the peripheral connected to make sure the setup is working.
    -Upon successful connection, you can now provide your peripheral the isolated power!
 
-| 
-| ----
+--------------
 
 More Information and Useful Links
 ---------------------------------
@@ -128,11 +136,5 @@ Registration
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/figure_7.png
    :width: 650px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/block_assign.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/LS_mode.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/LS_mode.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/FS_mode.png
-   :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/setup_diagram2.png
-   :width: 700px

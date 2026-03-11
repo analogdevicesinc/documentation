@@ -15,7 +15,9 @@ EQUIPMENT NEEDED
 -  1x Coupler (Mini-Circuits ZFBDC16-63HP-S+ or equivalent)
 -  SMA connectors and RF cables to connect various components as shown in the figure below.
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adrv904x_dpd_evalsystem.jpg
+   :align: center
+   :width: 800px
 
 SOFTWARE REQUIREMENTS
 ---------------------
@@ -26,7 +28,7 @@ SOFTWARE REQUIREMENTS
 OTHER REQUIREMENTS
 ------------------
 
--  A wideband OFDM test signal such as LTE5/LTE10/LTE20 or NR100 signal sampled at a Tx IQ rate of 491.52 MSPS in <fc #ff0000>tab separated IQ format</fc> for evaluating DPD. Ensure that the Peak power level of the OFDM signal does not exceed -3dBFS to provide sufficient head-room for DPD gain expansion.
+-  A wideband OFDM test signal such as LTE5/LTE10/LTE20 or NR100 signal sampled at a Tx IQ rate of 491.52 MSPS in tab separated IQ format for evaluating DPD. Ensure that the Peak power level of the OFDM signal does not exceed -3dBFS to provide sufficient head-room for DPD gain expansion.
 
    -  Typically, an OFDM signal with -14dBFS rms and 8dB Peak-To-Average-Power Ratio is used for DPD evaluation.
 
@@ -34,6 +36,3 @@ OTHER REQUIREMENTS
 
 .. image:: https://wiki.analog.com/_media/navigation ADRV904x DPD USER GUIDE#resources/eval/user-guides/adrv904x/dpd/high_level_development_flow
    :alt: ADRV904x DEV FLOW#resources:eval:user-guides:adrv904x:dpd|ADRV904x DPD HOME page#resources:eval:user-guides:adrv904x:dpd:evaluation_user_guide|ADRV904x DPD GETTING STARTED
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adrv904x_dpd_evalsystem.jpg
-   :width: 800px

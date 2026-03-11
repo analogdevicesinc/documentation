@@ -56,4 +56,3 @@ References
 -  `Ultrascale SelectIO Resources <https://www.xilinx.com/support/documentation/user_guides/ug571-ultrascale-selectio.pdf>`_
 
 Implementation with Intel/Altera FPGAs
---------------------------------------

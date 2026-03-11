@@ -5,7 +5,9 @@ Linux Drivers
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- |IIO| The Linux Industrial I/O (IIO) subsystem is intended to provide support for devices that, in some sense, are analog-to-digital or digital-to-analog converters. Devices that fall into this category are:
+
+
+|IIO| The Linux Industrial I/O (IIO) subsystem is intended to provide support for devices that, in some sense, are analog-to-digital or digital-to-analog converters. Devices that fall into this category are:
 
 -  ADCs - can be used on ADCs ranging from a 1MSPS SoC ADC to >250 MSPS industrial ADCs
 -  DACs

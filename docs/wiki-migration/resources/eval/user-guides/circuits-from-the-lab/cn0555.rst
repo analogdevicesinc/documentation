@@ -1,15 +1,16 @@
 EVAL-CN0555-EBZ User Guide
 ==========================
 
-|
-
 .. important::
 
    **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0555-ebz/index.html
-   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
-   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+   https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0555-ebz/index.html
+   
+   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   
+   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
    
 
 
@@ -22,25 +23,20 @@ It includes a high-speed overpower cutoff that protects sensitive downstream equ
 
 Designed to be used with the :adi:`ADALM-PLUTO`, the :adi:`EVAL-CN0555-EBZ` features a small form-factor with dimensions of 25.4 mm × 50.673 mm x 1.5748 mm (PCB only). The reference design uses standard 50 Ω SMA coaxial connectors for its RF signal path — for easy integration with any RF systems; a female connector is used for the RF input and a male connector is used for the RF output. Coplanar waveguides are used for the RF traces on the board, which have a characteristic impedance of 50 Ω. A micro USB connector is used for the input power, allowing the evaluation board to use most +5 V wall-wart power supplies available in the market.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/cn0555-top.png
+   :align: center
+   :width: 500px
 
-|image1|
-
-.. container:: center
-
-   *<fc #000000>Figure 1. EVAL-CN0555-EBZ Reference Design Board</fc>*
-
+*Figure 1. EVAL-CN0555-EBZ Reference Design Board*
 
 The :adi:`CN0555` reference design features the :adi:`ADL5523`, which is a high performance `GaAs pHEMT <https://www.bing.com/search?q=What+is+GaAs+Phemt&qs=n&form=QBRE&msbsrank=1_1__0&sp=-1&pq=what+is+gaas+phemt&sc=1-18&sk=&cvid=D43F8B5D1864493486DA375A62324E6A>`_ low noise amplifier. It provides a high gain and low noise figure for single down-conversion intermediate frequency (IF) sampling receiver architectures, as well as direct down-conversion receivers. It is easy to tune and only requires a few external components. The device can support operation voltages from 3 V to 5 V and the current draw can be adjusted with external bias resistors for applications requiring very low power consumption.
 
 The :adi:`ADL5904` is a dual-function RF TruPwr detector that operates from dc to 6 GHz. It provides rms power measurement along with a programmable envelope threshold detection function. The RMS power measurement function has a 45 dB detection range, nominally from −30 dBm to +15 dBm. The rms power measurement function also features low power consumption and an intrinsically ripple-free error transfer function.
 
-| 
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/blockdiagram.png
+   :align: center
 
-.. container:: center
-
-   *<fc #000000>Figure 2. EVAL-CN0555-EBZ Simplified Block Diagram</fc>*
-
+*Figure 2. EVAL-CN0555-EBZ Simplified Block Diagram*
 
 Reference Design Hardware
 -------------------------
@@ -48,12 +44,11 @@ Reference Design Hardware
 Primary Side
 ~~~~~~~~~~~~
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/primary_side.png
+   :align: center
+   :width: 700px
 
-.. container:: center
-
-   *<fc #000000>Figure 4. CN0555 Primary Side</fc>*
-
+*Figure 4. CN0555 Primary Side*
 
 SMA Connectors
 ^^^^^^^^^^^^^^
@@ -71,22 +66,20 @@ The reference design uses two LEDs to indicate its current status.
 -  The Red LED **(DS1)** lights up when an overpowering event occurs.
 -  The Green LED **(DS2)** lights up when the power is present on the board.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/led.png
+   :align: center
+   :width: 300px
 
-.. container:: center
-
-   *<fc #000000>Figure 5. LED Indications of Board Status</fc>*
-
+*Figure 5. LED Indications of Board Status*
 
 Secondary Side
 ~~~~~~~~~~~~~~
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/secondary_side.png
+   :align: center
+   :width: 700px
 
-.. container:: center
-
-   *<fc #000000>Figure 6. CN0555 Secondary Side</fc>*
-
+*Figure 6. CN0555 Secondary Side*
 
 Power Supply Connector
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -126,25 +119,17 @@ Firmware Loading
 -  Open the unzipped firmware file.
 -  Copy the file, *pluto.frm*, to the Pluto mass storage device.
 
-|image6|
+|image1|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 7. Copying Pluto Firmware to the Pluto Mass Storage Device</fc>*
-
+*Figure 7. Copying Pluto Firmware to the Pluto Mass Storage Device*
 
 -  This will cause LED1 to blink rapidly. This means that programming is taking place. Do not remove power (or USB) while the device is blinking rapidly. It takes approximately four minutes to properly program the device.
 -  Once the device finishes programming, it will reappear as a mass storage device.
 -  Eject (don't unplug) the Pluto mass storage device.
 
-|image7|
+|image2|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 8. Ejection of Pluto Mass Storage Device</fc>*
-
+*Figure 8. Ejection of Pluto Mass Storage Device*
 
 -  Now, the USB cable can be safely disconnected from the PC.
 
@@ -152,27 +137,19 @@ Updating to the AD9364
 ^^^^^^^^^^^^^^^^^^^^^^
 
 -  Connect again the Pluto to host PC using a micro USB cable.
--  Open any serial terminal application (e.g., TeraTerm, Putty) and set the SSH to 192.168.2.1, the username is root and password is *analog*. |image8|\
+-  Open any serial terminal application (e.g., TeraTerm, Putty) and set the SSH to 192.168.2.1, the username is root and password is *analog*. |image3|\
 
-|image9|
+|image4|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 9. Serial Terminal Configuration</fc>*
-
+*Figure 9. Serial Terminal Configuration*
 
 -  To change parameters to the :adi:`AD9364` configuration, enter the following commands line by line:``# fw_setenv attr_name compatible
    # fw_setenv attr_val ad9364
    # reboot``\
 
-   |image10|
+   |image5|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 10. AD9364 Configuration</fc>*
-
+*Figure 10. AD9364 Configuration*
 
 -  Eject (don't unplug) the Pluto mass storage device.
 -  Then, the USB cable can be safely disconnected from the PC.
@@ -184,12 +161,11 @@ Test Setup
 Normal Operation
 ^^^^^^^^^^^^^^^^
 
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/test_setup.png
+   :align: center
+   :width: 800px
 
-.. container:: center
-
-   *<fc #000000>Figure 11. EVAL-CN0555-EBZ Test Setup</fc>*
-
+*Figure 11. EVAL-CN0555-EBZ Test Setup*
 
 -  Connect directly the RX port of :adi:`ADALM-PLUTO` to J2 of the :adi:`EVAL-CN0555-EBZ <CN0555>`
 -  Connect the Tx port of the :adi:`ADALM-PLUTO` to J1 of the :adi:`EVAL-CN0555-EBZ <CN0555>` using a male-to-male SMA cable.
@@ -207,40 +183,33 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
 -  Press refresh to display available IIO devices, once the :adi:`ADALM-PLUTO` appeared, press connect.
 
-|image12|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/connecting_of_iio_osc.jpg
+   :align: center
+   :width: 400px
 
-.. container:: center
-
-   *<fc #000000>Figure 12. IIO Oscilloscope Configuration</fc>*
-
+*Figure 12. IIO Oscilloscope Configuration*
 
 -  On the AD936x tab, set the required parameters for the :adi:`CN0555` to operate properly.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/ad936x.png
+   :align: center
+   :width: 400px
 
-
-|image13|
-
-.. container:: center
-
-   *<fc #000000>Figure 13. ADALM-PLUTO Settings</fc>*
-
+*Figure 13. ADALM-PLUTO Settings*
 
 -  Using the capture window, you can see the RF output of the :adi:`CN0555` in the frequency domain.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/capture_window.png
+   :align: center
+   :width: 500px
 
-
-|image14|
-
-.. container:: center
-
-   *<fc #000000>Figure 14. CN0555 RF Output</fc>*
-
+*Figure 14. CN0555 RF Output*
 
 More Information and Useful Links
 ---------------------------------
@@ -288,30 +257,13 @@ Registration
 
 *End of Document*
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/cn0555-top.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/blockdiagram.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/primary_side.png
-   :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/led.png
-   :width: 300px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/secondary_side.png
-   :width: 700px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/pluto_firmware_update.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/pluto_firmware_update.jpg
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/eject_pluto.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/eject_pluto.jpg
    :width: 300px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/tera_term_connection.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/tera_term_connection.jpg
    :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/username_and_password.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/username_and_password.jpg
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/command_line_to_update_ad9364.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/command_line_to_update_ad9364.jpg
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/test_setup.png
-   :width: 800px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/connecting_of_iio_osc.jpg
-   :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/ad936x.png
-   :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0555/capture_window.png
-   :width: 500px

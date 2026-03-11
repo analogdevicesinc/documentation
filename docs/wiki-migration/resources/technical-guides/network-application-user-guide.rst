@@ -62,7 +62,7 @@ Asset Details:
    * gpio-srv: Interface to system GPIO.
    * spi-srv: Interface to system SPI.
    * flash-srv: Former interface to system flash.  Will not be necessary once filesystem-srv in place.
-   * i2c-srv: Former interface to system I2C. 
+   * i2c-srv: Former interface to system I2C.
    * i2c-peripherials-drv: Drivers for I2C components, EEPROM and LED Driver.  Will not be necessary on the next generation module.
    * nvm-srv:  Provided functional abstraction for nonvolatile storage.  Will not be necessary once filesystem-srv in place.
    * mdio-srv: Provides interface to system MDIO either through GPIO or SMI (Station Management Interface) hardware.

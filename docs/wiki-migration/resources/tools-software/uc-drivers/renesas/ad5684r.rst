@@ -128,7 +128,6 @@ An EVAL-AD5684RSDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
      EVAL-AD5684RSDZ Pin GND    →  YRDKRL78G13 J11 connector Pin 5
      EVAL-AD5684RSDZ Pin LDAC   →  YRDKRL78G13 J11 connector Pin 9
      EVAL-AD5684RSDZ Pin RESET  →  YRDKRL78G13 J11 connector Pin 10
-     
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5684r_rl78g13.jpg
    :align: center

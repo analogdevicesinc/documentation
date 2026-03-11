@@ -45,7 +45,7 @@ CrossCore Embedded Studio Download Packages
    :class: download
 
    
-   | The EV-COG-AD4050LZ **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EV-COG-AD3029LZ.
+   The EV-COG-AD4050LZ **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EV-COG-AD3029LZ.
    
    .. image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.6.0/ADI_CrossCoreEmbeddedStudio-Rel2.6.0.exe
       :alt: CrossCore Embedded Studio 2.6.0 Windows Installer(Executable)
@@ -121,8 +121,6 @@ CrossCore Embedded Studio Support
 For more details on CrossCore Embedded Studio, updated versions of the tools, release notes, tools documentation, or other support. Please visit the CrossCore :adi:`webpage <cces>`, or email the CrossCore support team at `processor.tools.support@analog.com <https://wiki.analog.com/mailto/processor.tools.support@analog.com>`_
 
 *End of Document*
-
-.. _crosscore-embedded-studio-download-install-1:
 
 CrossCore Embedded Studio Download & Install
 ============================================

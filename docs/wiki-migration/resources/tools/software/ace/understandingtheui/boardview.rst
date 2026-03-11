@@ -37,7 +37,7 @@ The color styles and sizes representing the different components are:
 View Toolbar
 ~~~~~~~~~~~~
 
-The view toolbar provides the following operations that affect all components on the board:   
+The view toolbar provides the following operations that affect all components on the board:
 
 -  **Reset Device –** Reverts all components to their default state.
 -  **Poll Device –** If enabled causes the continuous polling of the device for state changes.
@@ -50,23 +50,19 @@ Initialization Wizard
 
 Some boards contain an initialization wizard, see bellow, to configure components. The wizard initialization setup process collects and applies the initial startup conditions for the board and all board components. No changes will be applied to the hardware until the operator clicks apply.
 
-
-|Initialization Wizard, will appear on Left of Board View|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Wizard.png
+   :alt: Initialization Wizard, will appear on Left of Board View
 
 Types of Initialization Wizards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are three types of wizards
 
-  
-
 -  **Only one setup step –** In this type of wizard all initialization is done at once with all settings being applied when the apply button is pressed.
-
-  
 
 -  **Multiple steps (no order enforced) –** The wizard is broken down into multiple
 
-steps.  Each step sets a specific component. In this type of wizard, the order in which steps are configured is not significant, so the user can jump between sections by clicking and expanding the section they are interested in. The board will not be configured until the apply button is pressed.   
+steps.  Each step sets a specific component. In this type of wizard, the order in which steps are configured is not significant, so the user can jump between sections by clicking and expanding the section they are interested in. The board will not be configured until the apply button is pressed.
 
 -  **Multiple steps (order enforced) -** The wizard is broken down into multiple =
 
@@ -88,4 +84,3 @@ Once the component has been configured, the summary is displayed where the wizar
 
 .. |Primary.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Primary.png
 .. |Secondary.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Secondary.png
-.. |Initialization Wizard, will appear on Left of Board View| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Wizard.png

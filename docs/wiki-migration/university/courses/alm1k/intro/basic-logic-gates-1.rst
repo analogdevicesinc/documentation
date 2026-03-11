@@ -21,11 +21,9 @@ Binary Numbers
 
 The power of the digital logic used to construct digital systems like computers comes from the fundamental simplicity of the binary number systems. Binary digits (called Bits) have only two values (0 and 1) rather than the ten values (0, 1, 2, 3, 4, 5, 6, 7, 8, 9) of decimal numbers. Using binary numbers makes representation of a number very long (number of Bits). Since a computer or other digital hardware is used to keep track, length (number of Bits) does not matter so much.
 
-| Decimal Number (example): 27 = 2\*10\ :sup:`1` + 7\*10\ :sup:`0` = 20 + 7
-| Binary Number (example): 11011 = 1\*2\ :sup:`4` + 1\*2\ :sup:`3` + 0\*2\ :sup:`2` + 1\*2\ :sup:`1` + 1\*2\ :sup:`0` = 16 + 8 + 0 + 2 + 1 = 27
+Decimal Number (example): 27 = 2\*10\ :sup:`1` + 7\*10\ :sup:`0` = 20 + 7 Binary Number (example): 11011 = 1\*2\ :sup:`4` + 1\*2\ :sup:`3` + 0\*2\ :sup:`2` + 1\*2\ :sup:`1` + 1\*2\ :sup:`0` = 16 + 8 + 0 + 2 + 1 = 27
 
-| 1. Convert the following decimal numbers to binary: 13, 3300
-| 2. Create a table showing all numbers from 0 to 15
+1. Convert the following decimal numbers to binary: 13, 3300 2. Create a table showing all numbers from 0 to 15
 
 Logic Gates
 ~~~~~~~~~~~
@@ -44,15 +42,16 @@ Our first multiple-input gates is the AND gate, so-called because the output of 
    Figure 1, The AND gate
 
 
-| AND Gate Truth Table:
-| ^ A ^ B ^ Output ^
+AND Gate Truth Table:
 
-= = =
+= = ======
+A B Output
+= = ======
 0 0 0
 1 0 0
 0 1 0
 1 1 1
-= = =
+= = ======
 
 The NAND Gate
 ^^^^^^^^^^^^^
@@ -68,15 +67,16 @@ A variation of the AND gate is called the NAND gate or NOT AND. The word “NAND
    Figure 2, The NAND gate
 
 
-| NAND Gate Truth Table:
-| ^ A ^ B ^ Output ^
+NAND Gate Truth Table:
 
-= = =
+= = ======
+A B Output
+= = ======
 0 0 1
 1 0 1
 0 1 1
 1 1 0
-= = =
+= = ======
 
 The OR Gate
 ^^^^^^^^^^^
@@ -92,15 +92,16 @@ The next gate to investigate is the OR gate. The output of this gate will be “
    Figure 3, The OR gate
 
 
-| OR Gate Truth Table:
-| ^ A ^ B ^ Output ^
+OR Gate Truth Table:
 
-= = =
+= = ======
+A B Output
+= = ======
 0 0 0
 1 0 1
 0 1 1
 1 1 1
-= = =
+= = ======
 
 The NOR Gate
 ^^^^^^^^^^^^
@@ -116,27 +117,23 @@ As might be suspected, the NOR gate is an OR gate with its output inverted, just
    Figure 4, The NOR gate
 
 
-| NOR Gate Truth Table:
-| ^ A ^ B ^ Output ^
+NOR Gate Truth Table:
 
-= = =
+= = ======
+A B Output
+= = ======
 0 0 1
 1 0 0
 0 1 0
 1 1 0
-= = =
+= = ======
 
 NOR gates, like all multiple-input gates seen thus far, can be manufactured with more than two inputs. Still, the same logical principle applies: the output goes “low” (0) if any of the inputs are made “high” (1). The output is “high” (1) only when all inputs are “low” (0).
 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 74HC08 Quad AND Gate
-| 1 - 74HC32 Quad OR Gate
-| 1 – 74HC04 Hex Inverter (NOT Gate)
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 - 74HC08 Quad AND Gate 1 - 74HC32 Quad OR Gate 1 – 74HC04 Hex Inverter (NOT Gate)
 
 For the activity, find the corresponding IC chips and wire the circuit shown in the following diagrams (figures 10-12) one at a time on your breadboard. The logic gates you need to use are 74HC04 Hex inverter, 74HC08 Quad AND gate, and 74HC32 74HC32 Quad OR gate. The IC package contains 4 individual gates, wire one gate at a time and test the functionality.
 
@@ -245,8 +242,7 @@ Inverting the inputs of the AND gate provides the Negative AND function. Similar
 EXPERIMENT RESULTS
 ------------------
 
-| Witnessed by:
-| Date \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+Witnessed by: Date \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Recorded Truth Table
 
@@ -278,15 +274,16 @@ Exclusive-OR gates output a “high” (1) logic level if the inputs are at diff
    Figure 13, Exclusive OR function from AND, OR NOT gates
 
 
-| XOR Gate Truth Table:
-| ^ A ^ B ^ Output ^
+XOR Gate Truth Table:
 
-= = =
+= = ======
+A B Output
+= = ======
 0 0 0
 1 0 1
 0 1 1
 1 1 0
-= = =
+= = ======
 
 There are equivalent circuits for an Exclusive-OR gate made up of AND, OR, and NOT gates, just as there were for NAND, NOR, and the negative-input gates. A rather direct approach to simulating an Exclusive-OR gate is to start with a regular OR gate, then add additional gates (AND gates) to inhibit the output from going “high” (1) when both inputs are “high” (1):
 
@@ -306,15 +303,16 @@ The Exclusive-NOR Gate
 
 Finally, our last gate for analysis is the Exclusive-NOR gate, otherwise known as the XNOR gate. It is equivalent to an Exclusive-OR gate with an inverted output. The truth table for this gate is exactly opposite as for the Exclusive-OR gate:
 
-| XNOR Gate Truth Table:
-| ^ A ^ B ^ Output ^
+XNOR Gate Truth Table:
 
-= = =
+= = ======
+A B Output
+= = ======
 0 0 1
 1 0 0
 0 1 0
 1 1 1
-= = =
+= = ======
 
 A mathematician named DeMorgan developed a pair of important rules regarding group complementation in Boolean algebra. By group complementation, we are referring to the complement of a group of terms, represented by a long bar over more than one variable.
 
@@ -334,13 +332,6 @@ REVIEW:
 
 **For Further Reading:**
 
-| `Logic Gates <https://en.wikipedia.org/wiki/Logic_gate>`_
-| `The Inverter, NOT gate <https://en.wikipedia.org/wiki/Inverter_(logic_gate)>`_
-| `The AND gate <https://en.wikipedia.org/wiki/AND_gate>`_
-| `The NAND gate <https://en.wikipedia.org/wiki/NAND_gate>`_
-| `The OR gate <https://en.wikipedia.org/wiki/OR_gate>`_
-| `The NOR gate <https://en.wikipedia.org/wiki/NOR_gate>`_
-| `The XOR gate <https://en.wikipedia.org/wiki/XOR_gate>`_
-| `De Morgan duality <https://en.wikipedia.org/wiki/De_Morgan%27s_laws>`_
+`Logic Gates <https://en.wikipedia.org/wiki/Logic_gate>`_ `The Inverter, NOT gate <https://en.wikipedia.org/wiki/Inverter_(logic_gate)>`_ `The AND gate <https://en.wikipedia.org/wiki/AND_gate>`_ `The NAND gate <https://en.wikipedia.org/wiki/NAND_gate>`_ `The OR gate <https://en.wikipedia.org/wiki/OR_gate>`_ `The NOR gate <https://en.wikipedia.org/wiki/NOR_gate>`_ `The XOR gate <https://en.wikipedia.org/wiki/XOR_gate>`_ `De Morgan duality <https://en.wikipedia.org/wiki/De_Morgan%27s_laws>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**

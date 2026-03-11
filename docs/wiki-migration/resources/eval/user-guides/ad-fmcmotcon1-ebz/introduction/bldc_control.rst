@@ -20,7 +20,7 @@ Brushless DC motors windings generate a trapezoidal back EMF synchronized to the
 
 **Sensorless control** can be achieved by detecting the zero crossings of the BEMF for each phase. *Benefits*: lower system cost, increased reliability. *Drawbacks*: BEMF zero crossings can’t be reliably detected at low motor speeds
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#dc_control
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction/navigation AD-FMCMOTCON1-EBZ#dc_control
    :alt: Brushed DC Motor Control#..:\|Overview#none
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction/bldc_star.png

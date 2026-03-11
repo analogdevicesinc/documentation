@@ -3,17 +3,25 @@
 Toggle Counter
 ==============
 
-| 
-| |toggle_counter_ssp.jpg|
-| ===== Description =====
-| The Toggle Counter cell counts the number of edges seen on its input pin and outputs the count as a 32.0 integer value. The toggle detection can be set to detect rising or falling edges on the input.
-| ===== Usage =====
-| The toggle counter increments an internal counter each time an edge is detected on the input. Two algorithms exist: one for detecting and counting rising edges, and one for detecting and counting falling edges.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gpioconditioning/toggle_counter_ssp.jpg
+   :alt: toggle_counter_ssp.jpg
+
+Description
+-----------
+
+The Toggle Counter cell counts the number of edges seen on its input pin and outputs the count as a 32.0 integer value. The toggle detection can be set to detect rising or falling edges on the input.
+
+Usage
+-----
+
+The toggle counter increments an internal counter each time an edge is detected on the input. Two algorithms exist: one for detecting and counting rising edges, and one for detecting and counting falling edges.
 
 The rising edge counter starts at zero when the program begins. Each time the input detects a rising edge - in any number format - the counter will increment. After the counter exceeds the maximum count value (which can be configured in the GUI), it will reset to zero and resume counting again.
 
-| The falling edge counter starts at zero when the program begins. Each time the input detects a falling edge - in any number format - the counter will increment. After the counter exceeds the maximum count value (which can be configured in the GUI), it will reset to zero and resume counting again.
-| ===== Targets Supported =====
+The falling edge counter starts at zero when the program begins. Each time the input detects a falling edge - in any number format - the counter will increment. After the counter exceeds the maximum count value (which can be configured in the GUI), it will reset to zero and resume counting again.
+
+Targets Supported
+-----------------
 
 +----------------+------------+-----------------------+---------------+------------------+
 | Name           | ADSP-214xx | ADSP-215xx/ADSP-SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -25,7 +33,7 @@ The rising edge counter starts at zero when the program begins. Each time the in
 | ===== Pins =====
 
 Input
------
+~~~~~
 
 +--------+---------+------------------------------------------------------------------------------------+
 | Name   | Type    | Description                                                                        |
@@ -36,7 +44,7 @@ Input
 +--------+---------+------------------------------------------------------------------------------------+
 
 Output
-------
+~~~~~~
 
 +---------+---------+------------------------------------------------------------------------------------------------------+
 | Name    | Type    | Description                                                                                          |
@@ -68,6 +76,5 @@ Output
 
 | 
 | ===== DSP Parameter Computation =====
-| if IsLin ==true max= Gain else max = 10^ (Gain/20)
 
-.. |toggle_counter_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gpioconditioning/toggle_counter_ssp.jpg
+if IsLin ==true max= Gain else max = 10^ (Gain/20)

@@ -11,9 +11,7 @@ ADTF3175
 
 The ADTF3175 is a complete Time-Of-Flight (ToF) module for high resolution 3D depth sensing and vision systems. Using the ADSD3100 ToF image sensor, the ADTF3175 also integrates the lens and optical band-pass filter for the imager, an infrared illumination source containing optics, laser diode driver and photodetector, a flash memory, and power regulators to generate local supply voltages.
 
-\*\* Product Page \*\*
-
-**IMAGE OF CROSBY**
+\*\* Product Page \*\**IMAGE OF CROSBY**
 
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,7 +21,7 @@ Simplified Block Diagram
 
 For full block diagram please refer to datasheet
 
-\* Link to ADSD3100 datasheet \* Link to NVM
+- Link to ADSD3100 datasheet \* Link to NVM
 
 NVM Contents
 ~~~~~~~~~~~~
@@ -49,8 +47,6 @@ An NXP i.MX8M SOM is used as the embedded devkit for this evaluation platform. A
 -  `carrier-schematic.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175-nxz/carrier-schematic.pdf>`_
 -  `som_carrier-datasheet.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175-nxz/som_carrier-datasheet.pdf>`_
 
-.. _simplified-block-diagram-1:
-
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -62,8 +58,6 @@ NXP i.MX8M reference drivers
 
 -  Custom V4L2 Camera Sensor Driver
 -  USB Video Driver (UVC)
-
-.. _eval-adtf3175-nxz-usecase-1:
 
 EVAL-ADTF3175-NXZ Usecase
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,8 +71,6 @@ The Host PC captures data provided by the SOM through network or USB 3.0 (USB-C)
 
 Once raw data is received by the SDK, the data run through a depth compute library to generate radial depth, active brightness and confidence data. XYZ data can also be generated using the lens calibration parameters stored on the ADTF3175 NVM.
 
-.. _simplified-block-diagram-2:
-
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -91,8 +83,6 @@ SDK
 An open source SDK for this evaluation platform is provided on :git-ToF>`__. The SDK also requires the depth compute libraries which are provided as binaries in the installer @ ` <https::`ToF </github.com/analogdevicesinc/ToF/releases>`.
 
 The SDK comes with a GUI and first frame examples. As well as bindings for Python, OpenCV, ROS and Open3D.
-
-.. _eval-adtf3175-nxz-usecase-2:
 
 EVAL-ADTF3175-NXZ Usecase
 ~~~~~~~~~~~~~~~~~~~~~~~~~

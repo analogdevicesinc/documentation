@@ -32,10 +32,7 @@ If we sweep the voltage on the collector, V\ :sub:`CE`, while changing the volta
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Hardware module
-| Solder-less Breadboard
-| 1 - 10KΩ Resistor
-| 1 - small signal NPN transistor (2N3904, SSM2212)
+ADALM1000 Hardware module Solder-less Breadboard 1 - 10KΩ Resistor 1 - small signal NPN transistor (2N3904, SSM2212)
 
 NPN device Directions:
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -64,10 +61,7 @@ The 0.4 V steps in the voltage driving the 10 KΩ base resistor will produce app
 Questions:
 ~~~~~~~~~~
 
-| From the measured data calculate the current gain Beta ( ß=I\ :sub:`C`/I\ :sub:`B` ) for each device.
-| Using the curve for the highest base current step, calculate the early voltage (VA) for each device.
-| Calculate the Beta Early voltage product ( ß\*VA) for each device.
-| Compare your results with manufacturer specifications for each device measured.
+From the measured data calculate the current gain Beta ( ß=I\ :sub:`C`/I\ :sub:`B` ) for each device. Using the curve for the highest base current step, calculate the early voltage (VA) for each device. Calculate the Beta Early voltage product ( ß\*VA) for each device. Compare your results with manufacturer specifications for each device measured.
 
 PNP device Directions:
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -124,15 +118,10 @@ Set the Math X axis to V-A. Set the Math Y axis to I-B. Adjust the range and pos
 
 As we can see the β falls off rapidly as the V\ :sub:`CE` drops below 0.5 volts. At this point the collector base junction is starting to become forward biased (i.e. no longer reversed biased) and the transistor is entering into what is called the saturation region. In the saturation the β or current gain of the transistor is significantly smaller than in the so called linear region (i.e. collector base junction reversed biased).
 
-.. _questions-1:
-
 Questions:
 ~~~~~~~~~~
 
-| Again, from the measured data calculate the current gain Beta ( ß=I\ :sub:`C`/I\ :sub:`B` ) for each device.
-| Using the curve for the highest base current step, calculate the early voltage (VA) for each device.
-| Calculate the Beta Early voltage product ( ß\*VA) for each device.
-| Compare your results with manufacturer specifications for each device measured.
+Again, from the measured data calculate the current gain Beta ( ß=I\ :sub:`C`/I\ :sub:`B` ) for each device. Using the curve for the highest base current step, calculate the early voltage (VA) for each device. Calculate the Beta Early voltage product ( ß\*VA) for each device. Compare your results with manufacturer specifications for each device measured.
 
 **Resources:**
 
@@ -141,7 +130,6 @@ Questions:
 
 **For Further Reading:**
 
-| `Bipolar junction transistor <https://en.wikipedia.org/wiki/Bipolar_junction_transistor>`_
-| http://www.physics.csbsju.edu/trace/NPN.CC.html
+`Bipolar junction transistor <https://en.wikipedia.org/wiki/Bipolar_junction_transistor>`_ http://www.physics.csbsju.edu/trace/NPN.CC.html
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

@@ -49,24 +49,22 @@ Algorithm Description
 
 The Standard Cubic block clips portions of signal voltages according to a cubic soft clip function. The pre/post scalar alpha makes the soft clip more or less severe. This block limits the range of the output signal according to the following formulas:
 
-| 
-| |image3|
-| Thus for the default value of Alpha = 1, the signal range will be from [-2/3, 2/3]. Changing the value of alpha will affect the output range of the signal. The following graphs show the relationship between changing values of alpha and obtaining different signal ranges.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic002.jpg
 
-| 
-| |image4|
+Thus for the default value of Alpha = 1, the signal range will be from [-2/3, 2/3]. Changing the value of alpha will affect the output range of the signal. The following graphs show the relationship between changing values of alpha and obtaining different signal ranges.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic003.jpg
 
 Example
 -------
 
 The following image shows the Soft Clipper, being compared to a Hard Clipper and also the direct signal coming from the Inputs. A stereo switch mux allows for selection of the processing type, and then the signals are routed to the Outputs.
 
-| 
-| |image5|
-| The Hard Clipper and Soft Clipper are set with corresponding Alpha and threshold values so that their clip behavior occurs at the same time. However, you will notice in the following output comparison graph, the Soft Clipper has rounded smoother edges on the output where clipping begins to occur which has a more pleasing auditory effect.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic004.jpg
 
-| 
-| |image6|
+The Hard Clipper and Soft Clipper are set with corresponding Alpha and threshold values so that their clip behavior occurs at the same time. However, you will notice in the following output comparison graph, the Soft Clipper has rounded smoother edges on the output where clipping begins to occur which has a more pleasing auditory effect.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic005.jpg
 
 Algorithm Details
 -----------------
@@ -97,7 +95,7 @@ Algorithm Growth Information
 ----------------------------
 
 +--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
-| Description              | When the SoftClip algorithm is grown, an extra pair of input/output pints is added to the control. The same Alpha parameter affects the clipping on grown Input pins. | |image8| |
+| Description              | When the SoftClip algorithm is grown, an extra pair of input/output pints is added to the control. The same Alpha parameter affects the clipping on grown Input pins. | |image4| |
 +--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 | Program RAM Repetition   | 21 per growth                                                                                                                                                         |          |
 +--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
@@ -108,9 +106,5 @@ Algorithm Growth Information
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic001.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic001.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic002.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic003.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic004.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic005.jpg
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic006.jpg
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic006.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic006.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/standardcubic006.jpg

@@ -38,14 +38,7 @@ The ADXL327 is a small, low power, complete 3-axis accelerometer with signal con
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 ADXL327 accelerometer
-| 2 0.047 uF capacitors
-| 1 0.1 uF capacitor
-| 2 AD8561 comparators
-| 4 LEDs
-| 4 100 Ω resistors
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 ADXL327 accelerometer 2 0.047 uF capacitors 1 0.1 uF capacitor 2 AD8561 comparators 4 LEDs 4 100 Ω resistors
 
 Hardware setup
 --------------
@@ -76,14 +69,10 @@ Turn on the positive power supply at 3V and monitor X\ :sub:`OUT` on channel 1 o
 Tilt sensor with LED indicators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _background-1:
-
 Background
 ----------
 
 We monitored the output voltage of the ADXL327 accelerometer on the oscilloscope but using AD8561 comparators and LEDs is possible to make the tilt sensor send light signals when the the degree of inclination changes or when a vibration is sensed. We use one AD8561 comparator for each axis. The zero g bias output is similar on both axes and will be the reference of both comparators. On each of the two outputs of the comparator a LED will be connected. The two output signals are opposite so only one LED will be active at a time.
-
-.. _hardware-setup-1:
 
 Hardware setup
 --------------
@@ -104,8 +93,6 @@ On the solderless breadboard you will add two comparators and two LEDs ( with th
 
    Figure 6. Breadboard connections for tilt sensor with LEDs
 
-
-.. _procedure-1:
 
 Procedure
 ---------

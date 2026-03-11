@@ -22,7 +22,7 @@ The EVAL-ADIS-FX3 hardware is completely open-source and MIT licensed. It includ
 
 ::
 
-   * 
+   *
 
 The EVAL-ADIS-FX3 firmware was also redesigned to offer developers the flexibility to interface with as many external devices as possible. The firmware includes support for:
 

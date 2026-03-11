@@ -23,8 +23,13 @@ Selecting the Communications Interface (JP1 to JP6)
 
 The :adi:`ADPD188BI` is capable of communicating using either I2C or SPI. Short jumpers JP1 to JP2 to connect the I2C lines to the device. Likewise, short jumpers JP3 to JP6 to connect the SPI lines to the device. Open jumpers corresponding to the unused lines.
 
-| |image1|
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_comms_interface_select_.png
+   :align: center
+   :width: 200px
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_table.jpg
+   :align: center
+   :width: 250px
 
 .. note::
 
@@ -54,18 +59,51 @@ Alarm LED, Buzzer and Test Button (DS1, U6 and S1)
 
 These components can be used to signal an alarm when smoke is detected by the :adi:`ADPD188BI`. The LED can be turned on by writing a 0 on pin 3 on connector P4. Similarly, the buzzer can be sounded by writing a 1 on pin 1.
 
-| |image3|
-| Please note that the pins assignments can be changed depending on the settings of JP14 & JP15 (for the LED) and JP16 & JP17 (for the buzzer).
-| The push button S1 can be used to test the alarm if needed. Pressing this button sets pin 3 (or pin 4, depending on the settings of jumpers JP16 and JP17) on connector P4 to 0, turning the LED on. With the demo software running, pressing and holding S1 for at least 5 seconds will also trigger the buzzer.
-| ==== GPIO Pin Assignments (JP12 to JP19) ==== Some GPIO pin assignments on the :adi:`EVAL-CN0537-ARDZ <CN0537>` can be changed using jumpers JP14 to JP19; giving the user the option of using the unused pins for other purposes.
-| |image4|
-| |image5|
-| ==== Host Processor Connectors ==== The tables below show the pinouts of the Arduino form factor connectors (P1, P2, P3, P4). When evaluating the :adi:`EVAL-CN0537-ARDZ <CN0537>` , make sure that the chip select and GPIO pins used by the board are not shared with other hardware.
-| |image6|
-| |image7|
-| |image8|
-| |image9|
-| |image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_alarm.png
+   :align: center
+   :width: 300px
+
+Please note that the pins assignments can be changed depending on the settings of JP14 & JP15 (for the LED) and JP16 & JP17 (for the buzzer).
+
+The push button S1 can be used to test the alarm if needed. Pressing this button sets pin 3 (or pin 4, depending on the settings of jumpers JP16 and JP17) on connector P4 to 0, turning the LED on. With the demo software running, pressing and holding S1 for at least 5 seconds will also trigger the buzzer.
+
+GPIO Pin Assignments (JP12 to JP19)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some GPIO pin assignments on the :adi:`EVAL-CN0537-ARDZ <CN0537>` can be changed using jumpers JP14 to JP19; giving the user the option of using the unused pins for other purposes.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp12-jp19_gpio_.png
+   :align: center
+   :width: 200px
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp12-jp19_table.png
+   :align: center
+   :width: 630px
+
+Host Processor Connectors
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The tables below show the pinouts of the Arduino form factor connectors (P1, P2, P3, P4). When evaluating the :adi:`EVAL-CN0537-ARDZ <CN0537>` , make sure that the chip select and GPIO pins used by the board are not shared with other hardware.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p1-p4.png
+   :align: center
+   :width: 600px
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p1_table.png
+   :align: center
+   :width: 500px
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p2_table.png
+   :align: center
+   :width: 500px
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p3_table.png
+   :align: center
+   :width: 560px
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p4_table.png
+   :align: center
+   :width: 530px
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -115,24 +153,3 @@ Registration
 
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_comms_interface_select_.png
-   :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_table.jpg
-   :width: 250px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_alarm.png
-   :width: 300px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp12-jp19_gpio_.png
-   :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp12-jp19_table.png
-   :width: 630px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p1-p4.png
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p1_table.png
-   :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p2_table.png
-   :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p3_table.png
-   :width: 560px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p4_table.png
-   :width: 530px

@@ -122,8 +122,6 @@ Dynamic range
 
 `Dynamic range <https://en.wikipedia.org/wiki/Dynamic range>`_
 
-.. _lo-bw-1:
-
 LO BW
 ~~~~~
 
@@ -134,8 +132,6 @@ LO BW
 | LO BW over the full range or 70 MHz to 6GHz |
 
 +---------------------------------------------+
-
-.. _evm-1:
 
 EVM
 ~~~

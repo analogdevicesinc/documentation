@@ -35,16 +35,7 @@ The terminal with a solder mark (connecting to the case) is negative and the ter
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard, and jumper wire kit
-| 3 - 1 KΩ resistors
-| 2 - 10 KΩ resistors
-| 1 - 20 KΩ resistor
-| 2 - 2N3904 NPN transistor (or SSM2212 matched pair)
-| 1 - 10 uF capacitor
-| 1 - 47 uF capacitor
-| 1 - 220 uF capacitor
-| 1 - Electret microphone
+ADALM1000 hardware module Solder-less breadboard, and jumper wire kit 3 - 1 KΩ resistors 2 - 10 KΩ resistors 1 - 20 KΩ resistor 2 - 2N3904 NPN transistor (or SSM2212 matched pair) 1 - 10 uF capacitor 1 - 47 uF capacitor 1 - 220 uF capacitor 1 - Electret microphone
 
 Directions:
 ~~~~~~~~~~~
@@ -79,7 +70,6 @@ Change the relative distance between the speaker and microphone an observe the a
 
 **For Further Reading:**
 
-| `Electret <https://en.wikipedia.org/wiki/Electret>`_
-| `Electret microphone <https://en.wikipedia.org/wiki/Electret_microphone>`_
+`Electret <https://en.wikipedia.org/wiki/Electret>`_ `Electret microphone <https://en.wikipedia.org/wiki/Electret_microphone>`_
 
-**Return to ALM Lab Activity\ **\ :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**
+**Return to ALM Lab Activity\**\ :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`**.**

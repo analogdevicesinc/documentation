@@ -34,16 +34,14 @@ Required Software
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+
 
 .. tip::
 
    If you are not familiar with LX9 and/or Xilix tools, please visit
 
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
-   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
-   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
-   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details. If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
 
@@ -99,28 +97,51 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 If programming was successful, the **Main Menu** will apear in your UART terminal, as seen in the picture below. There are 7 options. Pressing [e], [d], [a], [s], [r], [t] or [q] key will allow you to select the desired option. After the end of every option, all the possible options (the Menu) will be shown again, allowing the user to make a new choice.
 
-| |Main Menu|
-| **Enable Measurement** sets the ADXL345 into measurement mode. Any measurement that takes place from that moment on will be valid data.
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu1.jpg
+   :alt: Main Menu
+   :width: 600px
 
-| |Enable Measurement|
-| **Disable Measurement** sets the ADXL345 into standby mode. Any measurement that takes place from that moment will not be valid data (usually 0).
+**Enable Measurement** sets the ADXL345 into measurement mode. Any measurement that takes place from that moment on will be valid data.
 
-| |Disable Measurement|
-| **Display Acceleration** displays acceleration data on all 3 Axes.
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu2.jpg
+   :alt: Enable Measurement
+   :width: 600px
 
-| |Acceleration on all 3 Axes|
-| **Select Measurement Range** allows choosing between 4 options: ±2g, ±4g, ±8g and ±16g. Desired measurement range is selected by pressing [1] to [4].
+**Disable Measurement** sets the ADXL345 into standby mode. Any measurement that takes place from that moment will not be valid data (usually 0).
 
-| |Selecting Measurement Range|
-| **Change Acquisition Rate** allows choosing different Acquisition rates for the ADXL345. Desired option is selected by pressing [1] to [9].
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu3.jpg
+   :alt: Disable Measurement
+   :width: 600px
 
-| |Acquisition Rate|
-| **Select Tap Interrupts** allows enabling or disabling tap interrupts. Desired option is selected by pressing [1] to [4]. If the tap option selected is [1] or [3], after a single tap, D2 (LX9) / LD0 (Nexys3 and ZedBoard) will be ON. If the tap option selected is [2] or [3], after two consecutive taps, D3 and D2 (LX9) / LD1 and LD0 (Nexys3 and ZedBoard) will both be on at the same time. If the tap option selected is [4], no LEDs will be ON after a single or double tap.
+**Display Acceleration** displays acceleration data on all 3 Axes.
 
-| |Select Tap Interrupts|
-| **Stop any ongoing action** will stop any display of measurements and afterwards display the Main Menu.
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu4.jpg
+   :alt: Acceleration on all 3 Axes
+   :width: 600px
 
-| |Stop actions|
+**Select Measurement Range** allows choosing between 4 options: ±2g, ±4g, ±8g and ±16g. Desired measurement range is selected by pressing [1] to [4].
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu5.jpg
+   :alt: Selecting Measurement Range
+   :width: 600px
+
+**Change Acquisition Rate** allows choosing different Acquisition rates for the ADXL345. Desired option is selected by pressing [1] to [9].
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu6.jpg
+   :alt: Acquisition Rate
+   :width: 600px
+
+**Select Tap Interrupts** allows enabling or disabling tap interrupts. Desired option is selected by pressing [1] to [4]. If the tap option selected is [1] or [3], after a single tap, D2 (LX9) / LD0 (Nexys3 and ZedBoard) will be ON. If the tap option selected is [2] or [3], after two consecutive taps, D3 and D2 (LX9) / LD1 and LD0 (Nexys3 and ZedBoard) will both be on at the same time. If the tap option selected is [4], no LEDs will be ON after a single or double tap.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu7.jpg
+   :alt: Select Tap Interrupts
+   :width: 600px
+
+**Stop any ongoing action** will stop any display of measurements and afterwards display the Main Menu.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu1.jpg
+   :alt: Stop actions
+   :width: 600px
 
 Using the reference design
 --------------------------
@@ -130,20 +151,12 @@ Functional Description
 
 The reference design is a SPI interface used to communicate with the device. The software programs the ADXL345 internal registers, and afterwards reads desired data from the device and prints it via UART. Three Interrupt signals are used in the design: one coming from the ADXL345, one from the UART and a timer interrupt (used for single and double tap LED signaling).
 
-|
-
 .. important::
 
-
-   ..
-
-| \* Connecting the PmodACL to the boards using an extension cable provides ease of use.
    
+   -  Connecting the PmodACL to the boards using an extension cable provides ease of use.
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-   |
-
-   |
 
 
 .. important::
@@ -171,104 +184,106 @@ The reference design is a SPI interface used to communicate with the device. The
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \**Avnet LX-9 MicroBoard: **
-     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl345_lx9.zip>`_\ **
-     **\ Digilent Nexys™3:**
-     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl345_nexys3.zip>`_\ **
-     **\ Avnet ZedBoard:\*\*
-   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
-   | \* :git-no-OS:`PmodACL Driver Files <Pmods/PmodACL>`
-   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
-   | \* :git-no-OS:`Programming Script <Pmods/PmodACL/bin>`
-   |
+   
+   **Avnet LX-9 MicroBoard:**
+   
+   -  `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl345_lx9.zip>`_
+   
+   **Digilent Nexys™3:**
+   
+   -  `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl345_nexys3.zip>`_
+   
+   **Avnet ZedBoard:**
+   
+   -  :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   -  :git-no-OS:`PmodACL Driver Files <Pmods/PmodACL>`
+   -  :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
+   -  :git-no-OS:`Programming Script <Pmods/PmodACL/bin>`
+   
 
 
-.. container:: hide
+Linux Device Driver
+===================
 
-   
-   Linux Device Driver
-   ===================
-   
-   Connect PmodACL to the JA1 connector of the ZedBoard (upper row of pins).
-   
-   Preparing the SD Card
-   ---------------------
-   
-   In order to prepare the SD Card for booting Linux on the ZedBoard:
-   
-   -  Download the device tree: :git-no-OS:`PmodACL Linux devicetree <Pmods/PmodACL/dts>`
-   -  Configure the kernel to include the driver for the ADXL345: :doc:`Compiling the ADXL345 driver into the kernel </wiki-migration/resources/tools-software/linux-drivers/input-misc/adxl345>`
-   -  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step and the kernel configuration above
-   
-      -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`. When following those instructions make sure to copy the devicetree file that was downloaded in step 1) to arch/arm/boot/dts/zynq-zed-adv7511-pmod-acl.dts before trying to build the zynq-zed-adv7511-pmod-acl.dtb file.
-   
-   Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
-   
-   There are 2 ways to test the driver.
-   
-   -  Using the terminal window
-   -  Using a serial terminal
-   
-   Using the terminal window
-   -------------------------
-   
-   Open a new terminal window by pressing **Ctrl+Alt+T**.
-   
-   Navigate to the location of the device and identify it using the following commands:
-   
-   ::
-   
-      cd /sys/bus/spi/devices/
-      ls
-      spi32765.0  spi32766.0
-      cd spi32766.0
-      cat modalias
-      spi:adxl34x
-   
-   If the **cat name** command doesn't return **spi:adxl34x**, then change the spi:device, and check again.
-   
-   ::
-   
-      cd ..
-      cd spi32765.0
-      cat modalias
-   
-   To see the list of options that the ADXL345 driver provides, type:
-   
-   ::
-   
-      ls
-      autosleep  disable  input     position  rate       uevent
-      calibrate  driver   modalias  power     subsystem
-   
-   To calibrate the device, type:
-   
-   ::
-   
-      echo 1 > calibrate
-      cat calibrate
-      4,3,-218
-   
-   To read the position, type:
-   
-   ::
-   
-      cat position
-      (1, 0, 1)
-   
-   .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl345_linaro_terminal.jpg
-      :alt: ADXL345 Set Voltage from Terminal
-      :width: 600px
-   
-   The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+Connect PmodACL to the JA1 connector of the ZedBoard (upper row of pins).
 
-   
-   |ADXL345 Read Voltage from Serial Terminal|
+Preparing the SD Card
+---------------------
+
+In order to prepare the SD Card for booting Linux on the ZedBoard:
+
+-  Download the device tree: :git-no-OS:`PmodACL Linux devicetree <Pmods/PmodACL/dts>`
+-  Configure the kernel to include the driver for the ADXL345: :doc:`Compiling the ADXL345 driver into the kernel </wiki-migration/resources/tools-software/linux-drivers/input-misc/adxl345>`
+-  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step and the kernel configuration above
+
+   -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`. When following those instructions make sure to copy the devicetree file that was downloaded in step 1) to arch/arm/boot/dts/zynq-zed-adv7511-pmod-acl.dts before trying to build the zynq-zed-adv7511-pmod-acl.dtb file.
+
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+
+There are 2 ways to test the driver.
+
+-  Using the terminal window
+-  Using a serial terminal
+
+Using the terminal window
+-------------------------
+
+Open a new terminal window by pressing **Ctrl+Alt+T**.
+
+Navigate to the location of the device and identify it using the following commands:
+
+::
+
+   cd /sys/bus/spi/devices/
+   ls
+   spi32765.0  spi32766.0
+   cd spi32766.0
+   cat modalias
+   spi:adxl34x
+
+If the **cat name** command doesn't return **spi:adxl34x**, then change the spi:device, and check again.
+
+::
+
+   cd ..
+   cd spi32765.0
+   cat modalias
+
+To see the list of options that the ADXL345 driver provides, type:
+
+::
+
+   ls
+   autosleep  disable  input     position  rate       uevent
+   calibrate  driver   modalias  power     subsystem
+
+To calibrate the device, type:
+
+::
+
+   echo 1 > calibrate
+   cat calibrate
+   4,3,-218
+
+To read the position, type:
+
+::
+
+   cat position
+   (1, 0, 1)
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl345_linaro_terminal.jpg
+   :alt: ADXL345 Set Voltage from Terminal
+   :width: 600px
+
+The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl345_linux_serial.jpg
+   :alt: ADXL345 Read Voltage from Serial Terminal
+   :width: 600px
 
 More information
 ----------------
@@ -278,22 +293,4 @@ More information
 
 |//ez.analog.com/community/feeds/allcontent/atom|
 
-.. |Main Menu| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu1.jpg
-   :width: 600px
-.. |Enable Measurement| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu2.jpg
-   :width: 600px
-.. |Disable Measurement| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu3.jpg
-   :width: 600px
-.. |Acceleration on all 3 Axes| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu4.jpg
-   :width: 600px
-.. |Selecting Measurement Range| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu5.jpg
-   :width: 600px
-.. |Acquisition Rate| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu6.jpg
-   :width: 600px
-.. |Select Tap Interrupts| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu7.jpg
-   :width: 600px
-.. |Stop actions| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu1.jpg
-   :width: 600px
-.. |ADXL345 Read Voltage from Serial Terminal| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl345_linux_serial.jpg
-   :width: 600px
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

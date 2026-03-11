@@ -3,29 +3,17 @@
 Features
 ========
 
-| Full featured system evaluation board for ADBT1000
-| Charge and discharge batteries under constant current (CC), constant voltage (CV), and
-| constant power (CP), discharge additionally allows constant resistance (CR)
-| Allows multiple charge and discharge configurations
-| Channels fully functional for Li-Ion cell formation and testing similar to real world
-| manufacturing equipment
-| Energy recycling capability
-| Intuitive Graphic User Interface (GUI) for easy configuration
+Full featured system evaluation board for ADBT1000 Charge and discharge batteries under constant current (CC), constant voltage (CV), and constant power (CP), discharge additionally allows constant resistance (CR) Allows multiple charge and discharge configurations Channels fully functional for Li-Ion cell formation and testing similar to real world manufacturing equipment Energy recycling capability Intuitive Graphic User Interface (GUI) for easy configuration
 
 Evaluation Kit Contents
 =======================
 
-| 1 System Control Board
-| 4 Switching Power Modules
+1 System Control Board 4 Switching Power Modules
 
 Hardware Requirements
 =====================
 
-| Power Supply Capable of providing +/-15V
-| DC Bus Supply 12 to 36V
-| SPD-S Controller Board
-| Test Battery or an Electronic Load
-| Computer with installed Graphical User Interface for ADBT1000_Eval_Software
+Power Supply Capable of providing +/-15V DC Bus Supply 12 to 36V SPD-S Controller Board Test Battery or an Electronic Load Computer with installed Graphical User Interface for ADBT1000_Eval_Software
 
 General Description
 ===================
@@ -40,8 +28,7 @@ When testing this system with lithium-ion (Li-Ion) batteries, take care not to o
 ADBT1000 Battery Testing and Formation Evaluation Board
 =======================================================
 
-| |System Demo Board Photograph|
-|
+|System Demo Board Photograph|
 
 .. container:: centeralign
 
@@ -144,15 +131,14 @@ The System Control Board (SCB) serves as the main controller of the system and h
 -  +5V
 -  +3.3V
 
-| |ADBT1000 System Control Board|
+|ADBT1000 System Control Board|
 
 .. container:: centeralign
 
    *Figure 8. System Control Board*\
 
 
-   | Table 1 below shows the onboard connectors on the SCB and their corresponding functions.
-|
+Table 1 below shows the onboard connectors on the SCB and their corresponding functions.
 
 .. container:: centeralign
 
@@ -164,9 +150,9 @@ The System Control Board (SCB) serves as the main controller of the system and h
 DC Bus Monitor
 ~~~~~~~~~~~~~~
 
-| The DC Bus input provides the high side voltage for the half bridge on the switching power module. The DC bus monitor provides a way of feeding this voltage back to the ADBT1000 in a feedforward control mechanism to reduce effects of any sudden interference on the DC bus supply. However, this voltage must be scaled down before going into the ADBT1000. There are onboard resistor dividers which can be used for this purpose. Refer to Table 2 for the correct setting to keep the input to the ADC within range. The scaling factor is the effective resistor divider ratio required for a nominal to max DC bus voltage range given below.
-| Ensure that these jumpers are set up correctly according to the nominal bus voltage before powering up the system.
-|
+The DC Bus input provides the high side voltage for the half bridge on the switching power module. The DC bus monitor provides a way of feeding this voltage back to the ADBT1000 in a feedforward control mechanism to reduce effects of any sudden interference on the DC bus supply. However, this voltage must be scaled down before going into the ADBT1000. There are onboard resistor dividers which can be used for this purpose. Refer to Table 2 for the correct setting to keep the input to the ADC within range. The scaling factor is the effective resistor divider ratio required for a nominal to max DC bus voltage range given below.
+
+Ensure that these jumpers are set up correctly according to the nominal bus voltage before powering up the system.
 
 .. container:: centeralign
 
@@ -186,15 +172,15 @@ The SCB has onboard provisions for the sensed battery voltages and currents from
 Switching Power Module
 ----------------------
 
-| The Switching Power Module contains a bidirectional half bridge power FET configuration that enables charging and discharging of cells. Overvoltage, undervoltage and overcurrent protection is incorporated for the half-bridge FETs. A four (4) wire pluggable terminal block enables either a 4-wire or 2-wire connection to the battery. A two wire pluggable terminal block enables connecting to a thermistor. Each SPM is rated at 10A.
-| |image6|
+The Switching Power Module contains a bidirectional half bridge power FET configuration that enables charging and discharging of cells. Overvoltage, undervoltage and overcurrent protection is incorporated for the half-bridge FETs. A four (4) wire pluggable terminal block enables either a 4-wire or 2-wire connection to the battery. A two wire pluggable terminal block enables connecting to a thermistor. Each SPM is rated at 10A.
+
+
+|image6|
 
 .. container:: centeralign
 
    *Figure 9. Switching Power Module*\
 
-
-|
 
 .. container:: centeralign
 
@@ -206,15 +192,15 @@ Switching Power Module
 Battery Voltage Detect
 ~~~~~~~~~~~~~~~~~~~~~~
 
-| The switching power module includes a battery voltage detect feature, which is intended to sense when the battery is connected with a reverse polarity.
-| Short pins 2 and 3 of connector P1 to use this feature. When a battery is connected with a reverse polarity, the battery will be isolated from the PWM drive circuit. The battery voltage detection feature can be disabled by shorting pins 1 to 2 on connector P1. This may be necessary when charging and discharging outputs less than 500mV.
-| Warning: Do not apply more than -1.5V on the battery output or excessive currents can result.
+The switching power module includes a battery voltage detect feature, which is intended to sense when the battery is connected with a reverse polarity. Short pins 2 and 3 of connector P1 to use this feature. When a battery is connected with a reverse polarity, the battery will be isolated from the PWM drive circuit. The battery voltage detection feature can be disabled by shorting pins 1 to 2 on connector P1. This may be necessary when charging and discharging outputs less than 500mV. Warning: Do not apply more than -1.5V on the battery output or excessive currents can result.
 
 Thermistor Connection
 ~~~~~~~~~~~~~~~~~~~~~
 
-| The board has a provision for connecting a thermistor to measure thermal effects on the board. This signal is routed to the SCB through connector P6 and is used as feedback to the ADBT1000. If a voltage is used to simulate a thermistor response, the correct polarity, shown in Figure 9 below must be observed.
-| |image8|
+The board has a provision for connecting a thermistor to measure thermal effects on the board. This signal is routed to the SCB through connector P6 and is used as feedback to the ADBT1000. If a voltage is used to simulate a thermistor response, the correct polarity, shown in Figure 9 below must be observed.
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -227,9 +213,7 @@ Evaluation Board Software
 Installing the ADBT1000 GUI
 ---------------------------
 
-| The ADBT1000 (Graphical User Interface) GUI can be downloaded from the ADBT1000 product page on the Analog Devices website.
-| Install the software to have access and control to the System Control Board (SCB) through the Analog Devices System Demonstration Platform (SDP). The default location for the software is "C:\\Program Files (x86)\\Analog Devices\\ADBT1000_Eval_Software"
-| This location contains the executable software and support files.
+The ADBT1000 (Graphical User Interface) GUI can be downloaded from the ADBT1000 product page on the Analog Devices website. Install the software to have access and control to the System Control Board (SCB) through the Analog Devices System Demonstration Platform (SDP). The default location for the software is "C:\\Program Files (x86)\\Analog Devices\\ADBT1000_Eval_Software" This location contains the executable software and support files.
 
 Installation Steps
 ~~~~~~~~~~~~~~~~~~
@@ -349,8 +333,7 @@ Once KingWare is installed and the system is powered up, follow the proceeding s
 Using KingWare
 ==============
 
-| There are several tabs in KingWare which allow the user to get full functionality of the board. These will be described in the following sections. Please note that the datasheet should be consulted when configuring and operating the board.
-| It is important to note that the software must be run with the jumpers in their desired configurations. If any settings, for example, the load or jumper settings, need to be changed, it is recommended that operation first be stopped and the GUI disconnected. After changes on the board are done, rerun the configuration settings. It is critical that jumper settings be changed while the power is off.
+There are several tabs in KingWare which allow the user to get full functionality of the board. These will be described in the following sections. Please note that the datasheet should be consulted when configuring and operating the board. It is important to note that the software must be run with the jumpers in their desired configurations. If any settings, for example, the load or jumper settings, need to be changed, it is recommended that operation first be stopped and the GUI disconnected. After changes on the board are done, rerun the configuration settings. It is critical that jumper settings be changed while the power is off.
 
 General Functions
 -----------------
@@ -391,8 +374,10 @@ This can be used to stop all operation on the board. This will be useful if an e
 Bell Icon
 ~~~~~~~~~
 
-| Clicking on the Bell icon will show the Activity Monitor, which logs all data writes and reads done by the tool. When new interrupts occur, a red dot will appear on the bell icon.
-| On the Activity Monitor drop-down, the user will be able to see all the events that have been done. This feature is useful for tracking procedures in the whole use of the system. |image21|
+Clicking on the Bell icon will show the Activity Monitor, which logs all data writes and reads done by the tool. When new interrupts occur, a red dot will appear on the bell icon. On the Activity Monitor drop-down, the user will be able to see all the events that have been done. This feature is useful for tracking procedures in the whole use of the system.
+
+
+|image21|
 
 .. container:: centeralign
 
@@ -409,8 +394,10 @@ Data Polling/Interrupt Polling
 Configuring the System
 ----------------------
 
-| As discussed in the KingWare quick start section, to start operating the board, the user must fill in the required parameters on the **Configure Systems tab**. These parameters come pre-filled with default values upon installation. The default values for these settings can be seen in Table 4. However, the software stores the last programmed configuration, so when the settings are changed, these will be the default once the software is re-opened.
-| Clicking on the expand button on the right side of each parameter will show a dropdown menu that gives the user more options to customize the application. |image22|
+As discussed in the KingWare quick start section, to start operating the board, the user must fill in the required parameters on the **Configure Systems tab**. These parameters come pre-filled with default values upon installation. The default values for these settings can be seen in Table 4. However, the software stores the last programmed configuration, so when the settings are changed, these will be the default once the software is re-opened. Clicking on the expand button on the right side of each parameter will show a dropdown menu that gives the user more options to customize the application.
+
+
+|image22|
 
 .. container:: centeralign
 
@@ -440,15 +427,17 @@ Once the parameters have been set with the desired values, pressing **Continue**
 Configuring Channels
 --------------------
 
-| The **Configure Channel tab** allows the user to visually configure and operate each channel of the system demo board. In this tab, the user can select charge, discharge, and rest modes, and set limits for the specific application. The battery, bus, and power stage buttons can be connected or isolated. On running the startup sequence, these buttons will be green, indicating that they are connected. The background of the container will be changed based on the instruction the user executes. Figure 27 depicts modes of Charge, Discharge, and Rest, respectively.
-| The modes of operation can be set in this tab. The user can choose to do a charge, discharge, or rest cycle. Upon choosing the preferred cycle, the user can choose the mode in the following dropdown: |image25|
+The **Configure Channel tab** allows the user to visually configure and operate each channel of the system demo board. In this tab, the user can select charge, discharge, and rest modes, and set limits for the specific application. The battery, bus, and power stage buttons can be connected or isolated. On running the startup sequence, these buttons will be green, indicating that they are connected. The background of the container will be changed based on the instruction the user executes. Figure 27 depicts modes of Charge, Discharge, and Rest, respectively. The modes of operation can be set in this tab. The user can choose to do a charge, discharge, or rest cycle. Upon choosing the preferred cycle, the user can choose the mode in the following dropdown:
+
+
+|image25|
 
 .. container:: centeralign
 
    *Figure 26. Charge or Discharge Mode*\
 
 
-| |image26|
+   |image26|
 
 .. container:: centeralign
 
@@ -456,9 +445,9 @@ Configuring Channels
 
 
 The ADBT1000 has two control loops per channel: the I-channel and the V-channel. The mode selected will determine which control loop is active. There are 32 modes in all for both charge and discharge cycles, however, the 4 basic modes are discussed below:
-| \* Constant Current (CC)
-| I-channel is in control, loop target will be set to ISET
 
+-  Constant Current (CC)
+   I-channel is in control, loop target will be set to ISET
 -  Constant Voltage (CV)
    V-channel is in control, loop target will be set to VSET
 -  Constant Power (CP)
@@ -479,28 +468,40 @@ VMEAS determines where the measurement is being taken.
 -  BVP/BVN – actual battery voltage is being measured
 -  CVS/BVN – capacitor voltage is being measured
 
-| |image27|
+|image27|
 
 .. container:: centeralign
 
    *Figure 28. Vmeas Options*\
 
 
-| When the modes and the limits are set, clicking Execute will start the cycle. During execution, the top right portion of each channel will display the actual measured battery voltage and battery current. |image28|
+When the modes and the limits are set, clicking Execute will start the cycle. During execution, the top right portion of each channel will display the actual measured battery voltage and battery current.
+
+
+
+|image28|
 
 .. container:: centeralign
 
    *Figure 29. Measured Battery Voltage and Current*\
 
 
-| If the user wants to change any parameters, the changes can be made to the variables, but the changes will not apply until the user clicks **Update**. |image29|
+If the user wants to change any parameters, the changes can be made to the variables, but the changes will not apply until the user clicks **Update**.
+
+
+
+|image29|
 
 .. container:: centeralign
 
    *Figure 30. Update Button*\
 
 
-| The channels are grouped based on the master slave configuration. By default, the channels are configured as Individual. The following section will discuss parallel configuration. |image30|
+The channels are grouped based on the master slave configuration. By default, the channels are configured as Individual. The following section will discuss parallel configuration.
+
+
+
+|image30|
 
 .. container:: centeralign
 
@@ -510,27 +511,25 @@ VMEAS determines where the measurement is being taken.
 Parallel Configuration
 ~~~~~~~~~~~~~~~~~~~~~~
 
-| Multiple channels can work in parallel. Inside a group of multiple channels working in parallel, a channel will be declared as the master and will transmit IMEAS to the other channels. The master channel will operate as configured but the slave channels will operate in CC mode.
-| To operate in a parallel configuration, go to the **Configure Systems** tab. Under Channel Configurations, there are several options for the desired mode: Two Pair, Parallel, and Individual and Two Pair. The description of each is shown in Table 5. Parallel Configurations.
-|
+Multiple channels can work in parallel. Inside a group of multiple channels working in parallel, a channel will be declared as the master and will transmit IMEAS to the other channels. The master channel will operate as configured but the slave channels will operate in CC mode. To operate in a parallel configuration, go to the **Configure Systems** tab. Under Channel Configurations, there are several options for the desired mode: Two Pair, Parallel, and Individual and Two Pair. The description of each is shown in Table 5. Parallel Configurations.
 
 .. container:: centeralign
 
-   \**Table 5. Parallel Configurations \**
+   **Table 5. Parallel Configurations \**
 
 
-   |image31|
-
-| After setting the mode, under Master Slave Configurations, choose which channels are to be configured as master or slave as in the figure below:
-| |image32|
+|image31| After setting the mode, under Master Slave Configurations, choose which channels are to be configured as master or slave as in the figure below: |image32|
 
 .. container:: centeralign
 
    *Figure 32. Master and Slave Channel Configurations*\
 
 
-| Take note that when operating channels in parallel, the master should be connected in a 4-wire configuration, while the slave channels should be connected in a 2-wire configuration. Also, the current setpoint for the channels should be specified as the total of the desired charge current divided by the number of channels in parallel. Therefore, for 2 channels in parallel, the current setpoint will be half of the desired, and for all channels in parallel, the current setpoint is the total current divided by 4. The current displayed on the top right of the master channel will be the sum of all the channels.
-| Figure 33 shows an example for a two-pair configuration using Channels A and B. Note that only the master slave can be configured when in the **Configure Channel** tab. Example data is also shown in the figure. |image33|
+Take note that when operating channels in parallel, the master should be connected in a 4-wire configuration, while the slave channels should be connected in a 2-wire configuration. Also, the current setpoint for the channels should be specified as the total of the desired charge current divided by the number of channels in parallel. Therefore, for 2 channels in parallel, the current setpoint will be half of the desired, and for all channels in parallel, the current setpoint is the total current divided by 4. The current displayed on the top right of the master channel will be the sum of all the channels. Figure 33 shows an example for a two-pair configuration using Channels A and B. Note that only the master slave can be configured when in the **Configure Channel** tab. Example data is also shown in the figure.
+
+
+
+|image33|
 
 .. container:: centeralign
 
@@ -540,29 +539,43 @@ Parallel Configuration
 Getting Live Data
 -----------------
 
-| The **Live Data** tab allows the user to monitor the currents and voltages on each channel of the system demo board. This provides an easy way to monitor the activity on each channel of the board. |image34|
+The **Live Data** tab allows the user to monitor the currents and voltages on each channel of the system demo board. This provides an easy way to monitor the activity on each channel of the board.
+
+
+|image34|
 
 .. container:: centeralign
 
    *Figure 34. Configure Live Data Tab*\
 
 
-| When the operation is executed from the channel configuration tab, the software will automatically start taking data. The plot below shows actual data taken on the software in CC-CV mode of operation. |image35|
+When the operation is executed from the channel configuration tab, the software will automatically start taking data. The plot below shows actual data taken on the software in CC-CV mode of operation.
+
+
+
+|image35|
 
 .. container:: centeralign
 
    *Figure 35. Actual Data Showing CC-CV Operation*\
 
 
-| Data is not logged until the logging feature is enabled. To enable logging, click the gear on the top right portion of KingWare. Check the channels which need to be datalogged, and click **Start**. |image36|
+Data is not logged until the logging feature is enabled. To enable logging, click the gear on the top right portion of KingWare. Check the channels which need to be datalogged, and click **Start**.
+
+
+
+|image36|
 
 .. container:: centeralign
 
    *Figure 36. Start Data Logging*\
 
 
-| Clicking on **show logs** hyperlink at the bottom of the options will open a folder where the csv files are stored.
-| The **Reset** button on the top right of the tab will reset all graphs in the Live Data page. On clicking this button, the application will ask for confirmation, and when the user chooses Yes, all data from the page will be cleared. The data is still stored on the disk if logging was enabled. |image37|
+Clicking on **show logs** hyperlink at the bottom of the options will open a folder where the csv files are stored. The **Reset** button on the top right of the tab will reset all graphs in the Live Data page. On clicking this button, the application will ask for confirmation, and when the user chooses Yes, all data from the page will be cleared. The data is still stored on the disk if logging was enabled.
+
+
+
+|image37|
 
 .. container:: centeralign
 
@@ -572,7 +585,7 @@ Getting Live Data
 Running Diagnostics
 -------------------
 
-| The **Diagnostics** tab allows the user to monitor the control functions for the system. An EIS analysis can be performed through this tab. |image38|\
+The **Diagnostics** tab allows the user to monitor the control functions for the system. An EIS analysis can be performed through this tab. |image38|\
 
 .. container:: centeralign
 
@@ -582,13 +595,15 @@ Running Diagnostics
 EIS Analysis
 ~~~~~~~~~~~~
 
-| During EIS Analysis, users can provide required NCO & DEMOD values in the configuration tab, PID values in the PID tab, and Frequency type and values in the Frequency tab. The user can start the analysis only after enabling NCO & DEMOD.
-| The default values of PID will be fetched from the PID values provided in the Configure Systems wizard. Users can modify the default values and provide custom values.
+During EIS Analysis, users can provide required NCO & DEMOD values in the configuration tab, PID values in the PID tab, and Frequency type and values in the Frequency tab. The user can start the analysis only after enabling NCO & DEMOD. The default values of PID will be fetched from the PID values provided in the Configure Systems wizard. Users can modify the default values and provide custom values.
 
 Instructions
 ------------
 
-| The **Instruct** Tab allows executing instructions through scripts. |image39|
+The **Instruct** Tab allows executing instructions through scripts.
+
+
+|image39|
 
 .. container:: centeralign
 
@@ -598,15 +613,21 @@ Instructions
 Channel Card
 ~~~~~~~~~~~~
 
-| There are 4 channel cards (apart from the Register Settings card) vertically arranged on the left side of the Instructions tab. Each card pertains to one channel in the device and displays high-level information about the channel.
-| Each card displays the execution state of the channel and has a drop-down to select the mode of execution. The card also displays whether the channel is a Master or a Slave. Clicking the channel card would open the channel editor, where the user can write instructions pertaining to that channel. |image40|
+There are 4 channel cards (apart from the Register Settings card) vertically arranged on the left side of the Instructions tab. Each card pertains to one channel in the device and displays high-level information about the channel. Each card displays the execution state of the channel and has a drop-down to select the mode of execution. The card also displays whether the channel is a Master or a Slave. Clicking the channel card would open the channel editor, where the user can write instructions pertaining to that channel.
+
+
+|image40|
 
 .. container:: centeralign
 
    *Figure 40. Channel Execution Mode*\
 
 
-| The user can edit only in master channels. Any change in the master channel is automatically reflected in the slave channels. The channel cards also display the latest channel interrupt. The interrupt messages will be cleared once the user clicks on any of the other channel cards. |image41|
+The user can edit only in master channels. Any change in the master channel is automatically reflected in the slave channels. The channel cards also display the latest channel interrupt. The interrupt messages will be cleared once the user clicks on any of the other channel cards.
+
+
+
+|image41|
 
 .. container:: centeralign
 
@@ -616,42 +637,61 @@ Channel Card
 Channel Editor
 ~~~~~~~~~~~~~~
 
-| The instruction commands supported are **Charge**, **Discharge**, **Rest**, **Halt**, and **Loop**. |image42|
+The instruction commands supported are **Charge**, **Discharge**, **Rest**, **Halt**, and **Loop**.
+
+
+|image42|
 
 .. container:: centeralign
 
    *Figure 42. Auto-Suggestion on Channel Editor*\
 
 
-| Clicking on the mode would fill the payloads of the particular mode. The payloads would be displayed with default values which the user can change. The black colored words indicate the payload keywords, while the blue colored words indicate the corresponding payload values which can be configured. |image43|
+Clicking on the mode would fill the payloads of the particular mode. The payloads would be displayed with default values which the user can change. The black colored words indicate the payload keywords, while the blue colored words indicate the corresponding payload values which can be configured.
+
+
+
+|image43|
 
 .. container:: centeralign
 
    *Figure 43. Mode with Payload*\
 
 
-| The register-field pop up would be displayed whenever the user clicks on payload values. This pop up allows user to change the payload values. The title of the pop up represents the name of the payload. The pop up contains the particular payload’s register field name, unit, field value and the bits representation. Upon hovering over one field, the related bits of the fields are highlighted in the bit wise section. Changing the field values in the pop up would change the corresponding field value in the editor and vice versa. |image44|
+The register-field pop up would be displayed whenever the user clicks on payload values. This pop up allows user to change the payload values. The title of the pop up represents the name of the payload. The pop up contains the particular payload’s register field name, unit, field value and the bits representation. Upon hovering over one field, the related bits of the fields are highlighted in the bit wise section. Changing the field values in the pop up would change the corresponding field value in the editor and vice versa.
+
+
+
+|image44|
 
 .. container:: centeralign
 
    *Figure 44. VLimit Register Field*\
 
 
-| Once the instructions are written in the editor, the user can click on the **Execute** button in case of automatic mode. Upon clicking the **Execute** button, the corresponding register writes for the instruction are written to the instruction memory registers and the instruction starts executing. |image45|
+Once the instructions are written in the editor, the user can click on the **Execute** button in case of automatic mode. Upon clicking the **Execute** button, the corresponding register writes for the instruction are written to the instruction memory registers and the instruction starts executing.
+
+
+
+|image45|
 
 .. container:: centeralign
 
    *Figure 45. Execute Button*\
 
 
-| In the case of manual or semi-auto mode, the user needs to click on **Load Instruction** before executing. Clicking on the **Stop** button would stop the instruction execution. |image46|
+In the case of manual or semi-auto mode, the user needs to click on **Load Instruction** before executing. Clicking on the **Stop** button would stop the instruction execution.
+
+
+
+|image46|
 
 .. container:: centeralign
 
    *Figure 46. Load Instruction Button*\
 
 
-| The user is prevented from navigating to the **Configure Channel** and **Configure Systems** page, as well as closing the tool when any of the channels is in the execution state.
+The user is prevented from navigating to the **Configure Channel** and **Configure Systems** page, as well as closing the tool when any of the channels is in the execution state.
 
 Execution Modes
 ~~~~~~~~~~~~~~~
@@ -661,20 +701,25 @@ The Instruction Tab supports three modes of execution: Manual, Semi-Auto, and Au
 Manual Mode
 ^^^^^^^^^^^
 
-| In manual sequencing mode, the user can write multiple instructions in the editor and load the first set of instructions by clicking **Load Instruction**. On loading, the instruction is written into the next instruction area of the channel register map and grayed out. User can start the instruction execution by clicking **Execute**. The instruction pointer in the editor points to the next set of instructions. |image47|
+In manual sequencing mode, the user can write multiple instructions in the editor and load the first set of instructions by clicking **Load Instruction**. On loading, the instruction is written into the next instruction area of the channel register map and grayed out. User can start the instruction execution by clicking **Execute**. The instruction pointer in the editor points to the next set of instructions.
+
+
+|image47|
 
 .. container:: centeralign
 
    *Figure 47. Instructions in Manual Mode*\
 
 
-| It is expected that the user will write the next instruction and click **Load instruction** upon receiving **Instruction Done** or **Instruction Timeout** interrupt. The Execute button will be enabled, and upon clicking the button, it executes the next set of loaded instructions.
+It is expected that the user will write the next instruction and click **Load instruction** upon receiving **Instruction Done** or **Instruction Timeout** interrupt. The Execute button will be enabled, and upon clicking the button, it executes the next set of loaded instructions.
 
 Semi-Automatic Mode
 ^^^^^^^^^^^^^^^^^^^
 
-| In semi-auto sequencing mode, the user needs to load the first set of instructions to the device by clicking the **Load Instruction** button. On loading, the first instruction set is grayed out and is written into the next instruction area of the channel register map. On clicking **Execute**, the self-clearing bit “START” is set, thus initiating the execution of this instruction. The instruction pointer in the editor points to the next set of instructions to be loaded.
-| It is expected that the user will write the next instruction and click the **Load instruction** button upon receiving **Instruction Done** or **Instruction Timeout** interrupt. On clicking the **Load Instruction** button, the next instruction is written to the next instruction register and the “NEXT_INSTR_READY” bit is set. |image48|
+In semi-auto sequencing mode, the user needs to load the first set of instructions to the device by clicking the **Load Instruction** button. On loading, the first instruction set is grayed out and is written into the next instruction area of the channel register map. On clicking **Execute**, the self-clearing bit “START” is set, thus initiating the execution of this instruction. The instruction pointer in the editor points to the next set of instructions to be loaded. It is expected that the user will write the next instruction and click the **Load instruction** button upon receiving **Instruction Done** or **Instruction Timeout** interrupt. On clicking the **Load Instruction** button, the next instruction is written to the next instruction register and the “NEXT_INSTR_READY” bit is set.
+
+
+|image48|
 
 .. container:: centeralign
 
@@ -684,33 +729,47 @@ Semi-Automatic Mode
 Automatic Mode
 ^^^^^^^^^^^^^^
 
-| In auto sequencing mode, all instructions are programmed in instruction memory. On clicking **Execute**, the self-clearing bit “START” is set, thus initiating the execution of the instructions. The instructions are grayed out on execution. The memory address pointer is displayed at the top of the channel editor. **Sequence Completed interrupt** is generated when all instructions have been executed. |image49|
+In auto sequencing mode, all instructions are programmed in instruction memory. On clicking **Execute**, the self-clearing bit “START” is set, thus initiating the execution of the instructions. The instructions are grayed out on execution. The memory address pointer is displayed at the top of the channel editor. **Sequence Completed interrupt** is generated when all instructions have been executed.
+
+
+|image49|
 
 .. container:: centeralign
 
    *Figure 49. Instructions in Automatic Mode*\
 
 
-| User can stop the instruction execution by clicking the **Stop** button.
+User can stop the instruction execution by clicking the **Stop** button.
 
 Loop Instructions
 ~~~~~~~~~~~~~~~~~
 
-| Loop instruction is supported only in automatic mode. The syntax of loop instruction: |image50|
+Loop instruction is supported only in automatic mode. The syntax of loop instruction:
+
+
+|image50|
 
 .. container:: centeralign
 
    *Figure 50. Loop Instruction*\
 
 
-| The user can write charge, discharge, or rest instructions inside the loop. On clicking the **Execute** button, the first instruction will be executed. After the occurrence of **Instruction Done** interrupt, the next instruction will be executed. The loop restarts after completing the execution of all the instructions inside. The loop executes the instructions inside for the number of times indicated by the variable **count** in the syntax. |image51|
+The user can write charge, discharge, or rest instructions inside the loop. On clicking the **Execute** button, the first instruction will be executed. After the occurrence of **Instruction Done** interrupt, the next instruction will be executed. The loop restarts after completing the execution of all the instructions inside. The loop executes the instructions inside for the number of times indicated by the variable **count** in the syntax.
+
+
+
+|image51|
 
 .. container:: centeralign
 
    *Figure 51. Loop Example*\
 
 
-| An example loop instruction was run and results can be seen on the Live Data tab. |image52|
+An example loop instruction was run and results can be seen on the Live Data tab.
+
+
+
+|image52|
 
 .. container:: centeralign
 
@@ -720,15 +779,17 @@ Loop Instructions
 Editor Features
 ~~~~~~~~~~~~~~~
 
-| The register and the channel editors comprise the below features: |image53|
+The register and the channel editors comprise the below features:
+
+
+|image53|
 
 .. container:: centeralign
 
    *Figure 53. Editor Features*\
 
 
-| \* Undo/Redo – undo or redo the commands
-
+-  Undo/Redo – undo or redo the commands
 -  Open – open an existing file with the commands to be executed
 -  Save – save the executed commands to a text file in .txt format
 -  Delete – clears the editor content
@@ -736,7 +797,10 @@ Editor Features
 Activity Monitor
 ~~~~~~~~~~~~~~~~
 
-| This monitor allows viewing the results of executed scripts, interrupts and warnings. User can view the results of channels either collectively or individually from the toggle button to the top right of the activity monitor. The channel selected in the toggle button corresponds to the active channel card. The monitor has support to filter events like ‘All events’, ‘Interrupts’ and ‘Warnings’. |image54|
+This monitor allows viewing the results of executed scripts, interrupts and warnings. User can view the results of channels either collectively or individually from the toggle button to the top right of the activity monitor. The channel selected in the toggle button corresponds to the active channel card. The monitor has support to filter events like ‘All events’, ‘Interrupts’ and ‘Warnings’.
+
+
+|image54|
 
 .. container:: centeralign
 
@@ -746,28 +810,36 @@ Activity Monitor
 Registers Tab
 -------------
 
-| This page allows communication with the device registers through scripts. This page comprises a script editor and status editor. The script editor allows to type the script which has to be executed and the status editor allows to view the result of the executed script. Multiple read and write operations are supported. |image55|
+This page allows communication with the device registers through scripts. This page comprises a script editor and status editor. The script editor allows to type the script which has to be executed and the status editor allows to view the result of the executed script. Multiple read and write operations are supported.
+
+
+|image55|
 
 .. container:: centeralign
 
    *Figure 55. Configure Register Tab*\
 
 
-| While clicking on the register value, a window having the field details of the respective register will appear. |image56|
+While clicking on the register value, a window having the field details of the respective register will appear.
+
+
+
+|image56|
 
 .. container:: centeralign
 
    *Figure 56. Register Window*\
 
 
-| The header of the window represents the name of the register, and also contains the field name, size of the field and its controls.
-| From this window, field values and its bit representation of the respective field can be identified by hovering the field. On changing the value of the field, those changes will affect the register value in the script editor and vice versa.
-| The **Execute** button execute the script in the editor and updates the status in the status editor. This button will be enabled only if the scripts in the editor are valid.
+The header of the window represents the name of the register, and also contains the field name, size of the field and its controls. From this window, field values and its bit representation of the respective field can be identified by hovering the field. On changing the value of the field, those changes will affect the register value in the script editor and vice versa. The **Execute** button execute the script in the editor and updates the status in the status editor. This button will be enabled only if the scripts in the editor are valid.
 
 Help Tab
 --------
 
-| The Help tab provides the user with quick links to the user manual and quick start procedures for the system. |image57|
+The Help tab provides the user with quick links to the user manual and quick start procedures for the system.
+
+
+|image57|
 
 .. container:: centeralign
 
@@ -777,164 +849,160 @@ Help Tab
 Evaluation Board Schematics and Layout
 ======================================
 
-.. _system-control-board-1:
-
 System Control Board
 --------------------
 
-| |image58|
+|image58|
 
 .. container:: centeralign
 
    *Figure 58. ADBT1000 Connections*\
 
 
-| |image59|
+   |image59|
 
 .. container:: centeralign
 
    *Figure 59. Onboard Battery Monitor*\
 
 
-| |image60|
+   |image60|
 
 .. container:: centeralign
 
    *Figure 60. SPI Connections*\
 
 
-| |image61|
+   |image61|
 
 .. container:: centeralign
 
    *Figure 61. DC Bus Monitor Connections*\
 
 
-| |image62|
+   |image62|
 
 .. container:: centeralign
 
    *Figure 62. Power Section*\
 
 
-| |image63|
+   |image63|
 
 .. container:: centeralign
 
    *Figure 63. Current Sense Filter*\
 
 
-| |image64|
+   |image64|
 
 .. container:: centeralign
 
    *Figure 64. Voltage Sense Buffer*\
 
 
-| |image65|
+   |image65|
 
 .. container:: centeralign
 
    *Figure 65. Connections for SPM Sockets*\
 
 
-| |image66|
+   |image66|
 
 .. container:: centeralign
 
    *Figure 66. System Control Board Top Layer*\
 
 
-| |image67|
+   |image67|
 
 .. container:: centeralign
 
    *Figure 67. System Control Board Layer 1 Primary*\
 
 
-| |image68|
+   |image68|
 
 .. container:: centeralign
 
    *Figure 68. System Control Board Layer 2 Ground*\
 
 
-| |image69|
+   |image69|
 
 .. container:: centeralign
 
    *Figure 69. System Control Board Layer 3 Signal*\
 
 
-| |image70|
+   |image70|
 
 .. container:: centeralign
 
    *Figure 70. System Control Board Layer 4 Signal*\
 
 
-| |image71|
+   |image71|
 
 .. container:: centeralign
 
    *Figure 71. System Control Board Layer 5 Ground*\
 
 
-| |image72|
+   |image72|
 
 .. container:: centeralign
 
    *Figure 72. System Control Board Layer 6 Secondary*\
 
 
-.. _switching-power-module-1:
-
 Switching Power Module
 ----------------------
 
-| |image73|
+|image73|
 
 .. container:: centeralign
 
    *Figure 73. System Power Module*\
 
 
-| |image74|
+   |image74|
 
 .. container:: centeralign
 
    *Figure 74. Current Sense and Socket Connection*\
 
 
-| |image75|
+   |image75|
 
 .. container:: centeralign
 
    *Figure 75. Switching Power Module Silkscreen*\
 
 
-| |image76|
+   |image76|
 
 .. container:: centeralign
 
    *Figure 76. Switching Power Module Primary Layer*\
 
 
-| |image77|
+   |image77|
 
 .. container:: centeralign
 
    *Figure 77. Switching Power Module Ground Layer*\
 
 
-| |image78|
+   |image78|
 
 .. container:: centeralign
 
    *Figure 78. Switching Power Module Power Layer*\
 
 
-| |image79|
+   |image79|
 
 .. container:: centeralign
 
@@ -944,15 +1012,12 @@ Switching Power Module
 Bill of Materials
 =================
 
-|
-
 .. container:: centeralign
 
    **Table 5. System Control Board**\
 
 
 |image80| |image81| |image82| |image83| |image84| |image85|
-|
 
 .. container:: centeralign
 
@@ -960,7 +1025,10 @@ Bill of Materials
 
 
 |image86| |image87| |image88|
-| |image89|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_copyright1.svg
+   :align: center
+   :width: 800px
 
 .. |System Demo Board Photograph| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000scb1kitangle.jpg
    :width: 800px
@@ -1142,6 +1210,4 @@ Bill of Materials
 .. |image87| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm2.svg
    :width: 800px
 .. |image88| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm3.svg
-   :width: 800px
-.. |image89| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_copyright1.svg
    :width: 800px

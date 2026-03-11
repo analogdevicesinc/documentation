@@ -29,7 +29,7 @@ The :adi:`AD568xRSDZ(nanodac+)-EVAL <media/en/technical-documentation/user-guide
 Useful links
 ============
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :doc:`nanoDAC+ No-OS Driver </wiki-migration/resources/tools-software/uc-drivers/ad5676>`
@@ -54,7 +54,7 @@ EVAL-AD56x86RSDZ Board (AD5696R chip)-
 -  Connect PWRSEL connector to USB_SUPP position to power-up device from the SDP-K1 USB.
 -  Disconnect/Open the P1 jumper to open the connection of VDD and VLOGIC. Use this option when using the SDP board.
 
-*<fc #cd5c5c>*Note: The settings can vary board to board and user must refer user manual of respective EVAL board for ensuring the proper connections.</fc>*
+*\*Note: The settings can vary board to board and user must refer user manual of respective EVAL board for ensuring the proper connections.*
 
 SDP-K1 is powered through USB connection from the PC. SDP-K1 acts as a Serial device when connected to PC, which creates a COM Port to connect to Serial Terminals like Teraterm, Putty, etc. The COM port assigned to a device can be seen through the device manager for windows based OS.
 

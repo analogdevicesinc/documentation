@@ -1,8 +1,9 @@
 Buffer Gate
 ===========
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| -------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+--------------
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
 | The Buffer Gate is a logic block that takes any input and compares the value to 0. If the input signal is zero, the output will be zero. If the input is non-zero, the output will be a "1" in the bit position designated by the drop-down box. This is the opposite output result as the Zero Comparator block. This block is not an audio buffer; this block follows the gate logic of a buffer which acts as a double inversion. | |buffergatepic1.png| |
@@ -67,8 +68,10 @@ Any non-zero Value Bit: 26           0x04 0x00 0x00 0x00
 Example
 -------
 
-| The following schematic image shows both the Buffer and the :doc:`Zero Comparator </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/zerocomparator>` for a non-zero and zero input. There results of the algorithm are captured in the :doc:`DSP Readback </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/dspreadback>` cell.
-| |buffergatepic2.png|
+The following schematic image shows both the Buffer and the :doc:`Zero Comparator </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/zerocomparator>` for a non-zero and zero input. There results of the algorithm are captured in the :doc:`DSP Readback </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/dspreadback>` cell.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/buffergatepic2.png
+   :alt: buffergatepic2.png
 
 Algorithm Details
 -----------------
@@ -115,6 +118,5 @@ Algorithm Addition Information
 +--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
 
 .. |buffergatepic1.png| image:: https://wiki.analog.com/_media/buffergatepic1.png
-.. |buffergatepic2.png| image:: https://wiki.analog.com/_media/buffergatepic2.png
 .. |buffergatepic3.png| image:: https://wiki.analog.com/_media/buffergatepic3.png
 .. |buffergatepic4.png| image:: https://wiki.analog.com/_media/buffergatepic4.png

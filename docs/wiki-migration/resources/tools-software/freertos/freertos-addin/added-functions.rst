@@ -12,10 +12,10 @@ The following image shows the changes that will be made to the users main file.
 
 A list of the includes that will be added can be found below
 
--  **#include <stdlib.h>** *- required for calls to* **abort()**\ *;*
--  **#include "FreeRTOSUserApplication.h"** *- required for access to* **userStartupTask**
+-  **#include <stdlib.h>** *- required for calls to **abort()**\ *;*
+-  **#include "FreeRTOSUserApplication.h"** *- required for access to **userStartupTask**
 -  **#include "FreeRTOSConfig.h"** *- required for access to FreeRTOS configuration Macros*
--  **#include "FreeRTOS.h"** *- required for call to* **vStartSchedular()** *and other main FreeRTOS functions*
+-  **#include "FreeRTOS.h"** *- required for call to **vStartSchedular()** and other main FreeRTOS functions*
 
 --------------
 

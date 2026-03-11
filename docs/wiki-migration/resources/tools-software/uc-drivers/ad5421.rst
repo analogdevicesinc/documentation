@@ -1,3 +1,4 @@
+
 AD5421 - Microcontroller No-OS Driver
 =====================================
 
@@ -166,15 +167,16 @@ The demo program writes a value to the DAC register, reads the die temperature a
 Software Project Tutorial
 -------------------------
 
-.. image:: https://wiki.analog.com/_media/page>rl78g13_software_tutorial
-   :alt: page>rl78g13_software_tutorial
+
+.. note::
+
+   See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
+
 
 Renesas RX62N Quick Start Guide
 ===============================
 
 This section contains a description of the steps required to run the AD5421 demonstration project on a Renesas RX62N platform.
-
-.. _required-hardware-1:
 
 Required Hardware
 -----------------
@@ -182,14 +184,10 @@ Required Hardware
 -  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
 -  :adi:`EVAL-AD5421SDZ (ADI) <EVAL-AD5421SDZ>`
 
-.. _required-software-1:
-
 Required Software
 -----------------
 
 -  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -206,8 +204,6 @@ An EVAL-AD5421SDZ board has to be interfaced with the Renesas Demonstration Kit 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5421_.x62n.jpg
    :align: center
 
-.. _reference-project-overview-1:
-
 Reference Project Overview
 --------------------------
 
@@ -219,14 +215,21 @@ The demo program writes a value to the DAC register, reads the die temperature a
 Software Project Setup
 ----------------------
 
-.. image:: https://wiki.analog.com/_media/page>rx62n_software_design
-   :alt: page>rx62n_software_design
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
 
 More information
 ================
 
-.. image:: https://wiki.analog.com/_media/page>more-information
-   :alt: page>more-information
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+
 

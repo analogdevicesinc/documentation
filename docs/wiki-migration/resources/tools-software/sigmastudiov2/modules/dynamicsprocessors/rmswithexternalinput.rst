@@ -3,21 +3,26 @@
 RMS w/Ext Detector
 ==================
 
-| 
-| |rmscompext.png|
-| |rmscompextgraph.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rmscompext.png
+   :alt: rmscompext.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rmscompextgraph.png
+   :alt: rmscompextgraph.png
+   :width: 450px
 
 Description
 -----------
 
-| The RMS w/Ext Detector Compressor block computes the RMS level of the control signal and applies the compressor gain to the input signal based on the RMS value.
-| ===== Variants =====
+The RMS w/Ext Detector Compressor block computes the RMS level of the control signal and applies the compressor gain to the input signal based on the RMS value.
+
+Variants
+--------
 
 -  RMS w/Ext Detector
 -  RMS w/Ext Detector Input and Gain Out
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +---------------------------------------+------------+------------------+---------------+------------------+
 | Name                                  | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -50,7 +55,7 @@ Name    Type  Description
 Output1 Audio Output channel1
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,11 +95,11 @@ Output1 Audio Output channel1
 
 | 
 | ===== DSP Parameter Computation =====
-| TimeConstant = Abs(1 - 10^(TimeConstant/(10 \* (FS + 0.0000001)))), Where TimeConstant is 20000/TimeConstant in dBps
-| Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear)
-| Hold = FS \* Hold/1000
-| Where FS is the sampling rate
 
-.. |rmscompext.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rmscompext.png
-.. |rmscompextgraph.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rmscompextgraph.png
-   :width: 450px
+TimeConstant = Abs(1 - 10^(TimeConstant/(10 \* (FS + 0.0000001)))), Where TimeConstant is 20000/TimeConstant in dBps
+
+Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear)
+
+Hold = FS \* Hold/1000
+
+Where FS is the sampling rate

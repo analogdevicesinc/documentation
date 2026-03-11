@@ -52,7 +52,10 @@ Files
 Example platform device initialization
 ======================================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 Some device parameter may vary between applications and use cases. The platform_data for the device's "struct device" holds this information.
 
@@ -80,20 +83,27 @@ Some device parameter may vary between applications and use cases. The platform_
        bool thermistor_term_en;
    }
 
-|
-
 .. tip::
 
    In case platform_data is not present or set to NULL, the driver will use following defaults:
 
-   | ``static const struct ad7280_platform_data ad7280_default_pdata = {
-         .acquisition_time = AD7280A_ACQ_TIME_400ns,
-         .conversion_averaging = AD7280A_CONV_AVG_DIS,
-         .thermistor_term_en = true,
-   };``
+   
+   .. code:: c
+   
+      static const struct ad7280_platform_data ad7280_default_pdata = {
+          .acquisition_time = AD7280A_ACQ_TIME_400ns,
+          .conversion_averaging = AD7280A_CONV_AVG_DIS,
+          .thermistor_term_en = true,
+      };
+   
 
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
 
@@ -148,7 +158,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                    -*-     Industrial I/O lock free software ring
                    -*-   Enable triggered sampling support
 
-                         *** Analog to digital converters ***
+                         ** Analog to digital converters **
                    [--snip--]
 
                    <*>   Analog Devices AD7280A Lithium Ion Battery Monitoring System
@@ -164,14 +174,12 @@ Hardware configuration
 Driver testing
 ==============
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -247,10 +255,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -263,15 +268,11 @@ Show device name
 Show cell channel scale
 -----------------------
 
-| **Description:**
-| scale to be applied to inX-inY_raw in order to obtain the measured voltage in millivolts.
+**Description:** scale to be applied to inX-inY_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -284,15 +285,11 @@ Show cell channel scale
 Show channel 0-1 measurement
 ----------------------------
 
-| **Description:**
-| Raw unscaled voltage measurement on cell channel in0-in1_raw
+**Description:** Raw unscaled voltage measurement on cell channel in0-in1_raw
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -307,15 +304,11 @@ Show channel 0-1 measurement
 Show voltage across all cells measurement
 -----------------------------------------
 
-| **Description:**
-| Raw unscaled voltage measurement on all cell channel in0-inX_raw
+**Description:** Raw unscaled voltage measurement on all cell channel in0-inX_raw
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -330,15 +323,11 @@ Show voltage across all cells measurement
 Show auxiliary/temperature channel scale
 ----------------------------------------
 
-| **Description:**
-| scale to be applied to tempX_raw in order to obtain the measured voltage in millivolts.
+**Description:** scale to be applied to tempX_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -351,15 +340,11 @@ Show auxiliary/temperature channel scale
 Show auxiliary/temperature channel measurement
 ----------------------------------------------
 
-| **Description:**
-| Shows high accuracy band gap temperature sensor temperature in milli degrees Celsius.
+**Description:** Shows high accuracy band gap temperature sensor temperature in milli degrees Celsius.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -376,20 +361,11 @@ Enable cell balance output switch on channel 4-5
 
 The AD7280A has cell balancing interface outputs designed to control external FET transistors to allow discharging of individual cells.
 
-| **Description:**
-| Writing 1 enables the cell balance output switch corresponding
-| to input Y. Writing 0 disables it. If the inY-inZ_balance_timer
-| is set to a none zero value, the corresponding switch will
-| enable for the programmed amount of time, before it
-| automatically disables.
-|
+**Description:** Writing 1 enables the cell balance output switch corresponding to input Y. Writing 0 disables it. If the inY-inZ_balance_timer is set to a none zero value, the corresponding switch will enable for the programmed amount of time, before it automatically disables.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -401,29 +377,18 @@ The AD7280A has cell balancing interface outputs designed to control external FE
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **echo 0 > in4-in5_balance_switch_en**
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat in4-in5_balance_switch_en**
       0
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> 
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0>
    
 
 
 Enable cell balance timer on channel 4-5
 ----------------------------------------
 
-| **Description:**
-| The inY-inZ_balance_timer file allows the user to program
-| individual times for each cell balance output. The AD7280A
-| allows the user to set the timer to a value from 0 minutes to
-| 36.9 minutes. The resolution of the timer is 71.5 sec.
-| The value written is the on-time in milliseconds. When the
-| timer value is set 0, the timer is disabled. The cell balance
-| outputs are controlled only by inY-inZ_balance_switch_en.
-|
+**Description:** The inY-inZ_balance_timer file allows the user to program individual times for each cell balance output. The AD7280A allows the user to set the timer to a value from 0 minutes to 36.9 minutes. The resolution of the timer is 71.5 sec. The value written is the on-time in milliseconds. When the timer value is set 0, the timer is disabled. The cell balance outputs are controlled only by inY-inZ_balance_switch_en.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -431,7 +396,7 @@ Enable cell balance timer on channel 4-5
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **echo 150000 > in4-in5_balance_timer**
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat in4-in5_balance_timer**
       143000
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> 
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0>
    
 
 
@@ -440,10 +405,7 @@ Enabling cell and auxiliary/temperature channel threshold events
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -462,21 +424,17 @@ Enabling cell and auxiliary/temperature channel threshold events
       -rw-r--r--    1 root     root          4096 Mar 14 13:37 temp_thresh_high_value
       -rw-r--r--    1 root     root          4096 Mar 14 13:37 temp_thresh_low_value
       -rw-r--r--    1 root     root          4096 Mar 14 13:37 uevent
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> 
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0>
    
 
 
 The AD7280A includes a dynamic alert function that can detect whether the cell voltages or auxiliary ADC inputs exceed an upper or lower limit defined by the user.
 
-| **Description:**
-| Specifies the value of threshold (\_high|_low) that the device is comparing against.
+**Description:** Specifies the value of threshold (\_high|_low) that the device is comparing against.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -494,4 +452,21 @@ The AD7280A includes a dynamic alert function that can detect whether the cell v
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

@@ -162,7 +162,7 @@ In order to work around an issue with the ADIN1320, you will have to use the fol
        link/ether cc:96:e5:c7:d8:64 brd ff:ff:ff:ff:ff:ff
        inet 10.48.65.151/24 brd 10.48.65.255 scope global dynamic noprefixroute eth0
           valid_lft 15504sec preferred_lft 15504sec
-       inet6 fe80::e79f:ad8:ff14:4f5/64 scope link noprefixroute 
+       inet6 fe80::e79f:ad8:ff14:4f5/64 scope link noprefixroute
           valid_lft forever preferred_lft forever
    18: eth1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
        link/ether 00:e0:4c:68:04:5c brd ff:ff:ff:ff:ff:ff
@@ -195,7 +195,7 @@ Compile the kernel for the Zedboard:
 ::
 
    export ARCH=arm
-   export CROSS_COMPILE=arm-linux-gnueabihf- 
+   export CROSS_COMPILE=arm-linux-gnueabihf-
    make zynq_xcomm_adv7511_defconfig -j4
    make -j4 UIMAGE_LOADADDR=0x8000 uImage
    sudo make modules_install INSTALL_MOD_PATH=/media/$USER/rootfs

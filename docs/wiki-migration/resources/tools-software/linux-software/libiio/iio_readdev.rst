@@ -40,7 +40,7 @@ a quick example, captures 4 frames of 256 samples, (1024 samples in total), from
    Compiled with backends: local xml ip usb serial
    Available contexts:
        0: 0456:b673 (Analog Devices Inc. PlutoSDR (ADALM-PLUTO)), serial=104473222a87000c0a000e009b8ed5102e [usb:3.80.5]``
--  find the streaming device ``analog@imhotep:~$ **iio_attr -u usb:3.80.5 -s -c *ad* **
+-  find the streaming device ``analog@imhotep:~$ **iio_attr -u usb:3.80.5 -s -c *ad **
    dev 'cf-ad9361-dds-core-lpc', channel 'voltage0' (output, index: 0, format: le:S16/16>>0)
    dev 'cf-ad9361-dds-core-lpc', channel 'voltage1' (output, index: 1, format: le:S16/16>>0)
    dev 'cf-ad9361-lpc', channel 'voltage0' (input, index: 0, format: le:S12/16>>0)

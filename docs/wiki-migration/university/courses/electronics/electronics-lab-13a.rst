@@ -14,14 +14,7 @@ The role of an output stage is to provide power gain. It should have high input 
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 100 Ω resistors
-| 1 - 2.2 KΩ resistor
-| 2 - 10 KΩ resistors
-| 2 - small signal NPN transistors (SSM2212 with matching V\ :sub:`BE` preferred)
-| 2 - small signal PNP transistors (SSM2220 with matching V\ :sub:`BE` preferred)
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 100 Ω resistors 1 - 2.2 KΩ resistor 2 - 10 KΩ resistors 2 - small signal NPN transistors (SSM2212 with matching V\ :sub:`BE` preferred) 2 - small signal PNP transistors (SSM2220 with matching V\ :sub:`BE` preferred)
 
 Directions:
 -----------
@@ -94,8 +87,6 @@ Reducing Output Distortion:
 
 The large amount of distortion at the zero-crossings in the basic push-pull stage of figure 1 is a result of a dead zone when both the NPN and PNP emitter followers are off. The waveform's dead zone at the zero-crossings is dramatically reduced if we pre-bias the BJTs with two V\ :sub:`BE` drops, as shown in figure 2. Here, the pre-bias function is provided by diode connected NPN Q\ :sub:`1` and PNP Q\ :sub:`3`. Resistors R\ :sub:`1` and R\ :sub:`2` provide bias current and set the idle current that flows in the output devices Q\ :sub:`2` and Q\ :sub:`4`.
 
-.. _directions-1:
-
 Directions:
 -----------
 
@@ -112,8 +103,6 @@ With the power turned off, assemble the circuit of figure 5, keeping leads as sh
 
 If we examine, in figure 5, the loop formed by the base emitter voltages of Q\ :sub:`1`, Q\ :sub:`2`, Q\ :sub:`3` and Q\ :sub:`4` we know that the sum of the voltage drops around the loop must sum to zero. Thus if Q\ :sub:`1` is identical to Q\ :sub:`2` and Q\ :sub:`3` is identical to Q\ :sub:`4`, the voltage around the loop will be zero only when the current in Q\ :sub:`1` is identical to the current in Q\ :sub:`2` and the current in Q\ :sub:`3` is identical to the current in Q\ :sub:`4`. Thus when the output is at zero volts i.e. there is no current in R\ :sub:`L`, the input must also be at zero volts.
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -127,8 +116,6 @@ Channel one of the scope should be connected to display the output of the first 
    Figure 6 Push - Pull Output stage with zero-crossing distortion elimination Breadboard Circuit
 
 
-.. _procedure-1:
-
 Procedure:
 ----------
 
@@ -141,8 +128,6 @@ The waveform generator, W1, should be configured for a 1 KHz sine wave with 6.0 
 
    Figure 7 Push - Pull Output stage with zero-crossing distortion elimination Waveforms
 
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -171,8 +156,6 @@ Remembering the loop formed by the base emitter voltages of Q\ :sub:`1`, Q\ :sub
    Figure 8 Emitter Follower zero-crossing distortion elimination
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
@@ -185,8 +168,6 @@ Channel one of the scope should be connected to display the output of the first 
 
    Figure 9 Emitter Follower zero-crossing distortion elimination Breadboard Circuit
 
-
-.. _procedure-2:
 
 Procedure:
 ----------
@@ -204,8 +185,6 @@ The waveform generator, W1, should be configured for a 1 KHz sine wave with 6.0 
 \*\* Lab Resources:\*\*
 
 -  LTSpice files: :git-education_tools:`amp_out_stage_ltspice <m2k/ltspice/amp_out_stg_ltspice>`
-
-.. _questions-2:
 
 Questions:
 ----------
@@ -234,8 +213,7 @@ Simulate the circuit of figure 3 using LTSpice or ADIsimPE, compare with your la
 For Further reading:
 ~~~~~~~~~~~~~~~~~~~~
 
-| Output Stages :adi:`(MT-207) <static/imported-files/tutorials/MT-207.pdf>`
-| `Push-Pull Outputs <https://en.wikipedia.org/wiki/Push-pull_output>`_
+Output Stages :adi:`(MT-207) <static/imported-files/tutorials/MT-207.pdf>` `Push-Pull Outputs <https://en.wikipedia.org/wiki/Push-pull_output>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/electronics>`
 

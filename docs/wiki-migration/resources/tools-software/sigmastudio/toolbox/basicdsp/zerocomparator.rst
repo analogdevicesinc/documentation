@@ -1,8 +1,9 @@
 Zero Comparator
 ===============
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| -----------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+--------------
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+
 | The Zero Comparator block takes any input and compares the value to 0. If the input signal is non-zero, the output will be zero. If the input is zero, the output will be a flag of "1" in the bit position designated by the drop-down box. | |zerocomparatorpic1.png| |
@@ -47,15 +48,20 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-| The following table shows what the data output value will be for given input values, based on the selection from the Drop Down Display.
-| |zerocomparatorpic2.png|
+The following table shows what the data output value will be for given input values, based on the selection from the Drop Down Display.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/zerocomparatorpic2.png
+   :alt: zerocomparatorpic2.png
 
 Examples
 --------
 
-| The following schematic image shows both the :doc:`Buffer </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/buffergate>` and the Zero Comparator for a non-zero and zero input. There results of the algorithm are captured in the :doc:`DSP Readback </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/dspreadback>` cell.
-| |zerocomparatorpic3.png|
-| Example: To logically invert the output of the Signal Detection block (which is either a 1.0 or 0.0 in 5.23 format), you would use a Zero Comparator with bit=23 setting to produce 0.0 or 1.0 in 5.23 format as output.
+The following schematic image shows both the :doc:`Buffer </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/buffergate>` and the Zero Comparator for a non-zero and zero input. There results of the algorithm are captured in the :doc:`DSP Readback </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/dspreadback>` cell.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/zerocomparatorpic3.png
+   :alt: zerocomparatorpic3.png
+
+Example: To logically invert the output of the Signal Detection block (which is either a 1.0 or 0.0 in 5.23 format), you would use a Zero Comparator with bit=23 setting to produce 0.0 or 1.0 in 5.23 format as output.
 
 Algorithm Details
 -----------------
@@ -104,7 +110,5 @@ Algorithm Addition Information
 +--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+
 
 .. |zerocomparatorpic1.png| image:: https://wiki.analog.com/_media/zerocomparatorpic1.png
-.. |zerocomparatorpic2.png| image:: https://wiki.analog.com/_media/zerocomparatorpic2.png
-.. |zerocomparatorpic3.png| image:: https://wiki.analog.com/_media/zerocomparatorpic3.png
 .. |zerocomparatorpic4.png| image:: https://wiki.analog.com/_media/zerocomparatorpic4.png
 .. |zerocomparatorpic5.png| image:: https://wiki.analog.com/_media/zerocomparatorpic5.png

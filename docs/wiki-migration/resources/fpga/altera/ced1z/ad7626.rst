@@ -82,6 +82,7 @@ Create a folder called “\ **ADIEvalBoard**\ ” on your PC and extract the **a
 Install the USB-Blaster Device Driver
 -------------------------------------
 
+
 The USB Blaster is used to program the FPGA on the CED1Z board and also for data exchange between the system and a PC. To install the driver plug the Terasic USB Blaster into one of the PCs USB ports. Your Windows PC will find the new hardware and try to install the driver.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image007.png
@@ -116,6 +117,7 @@ In the next dialog box select the option **Browse my computer for driver softwar
    :width: 400px
 .. |image016.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image016.jpg
    :width: 400px
+
 
 
 AD7626 Evaluation Project Overview
@@ -318,10 +320,11 @@ In order to acquire data, follow the instructions in the **Evaluation Project Da
 NIOS II Software Design
 =======================
 
+
 This section presents the steps for developing a software application that will run on the **CED1Z** system and will be used for controlling and monitoring the operation of the ADI evaluation board.
 
 Create a new project using the NIOS II Software Build Tools for Eclipse
------------------------------------------------------------------------
+=======================================================================
 
 Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II EDS 11.0 -> Nios II 11.0 Software Build Tools for Eclipse (SBT)**.
 
@@ -331,7 +334,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 
 
 1. Initialize Eclipse workspace
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 -  When Eclipse first launches, a dialog box appears asking what directory it should use for its workspace. It is useful to have a separate Eclipse workspace associated with each hardware project that is created in SOPC Builder. Browse to the **ADIEvalBoard** directory and click **Make New Folder** to create a folder for the software project. Name the new folder “\ **eclipse_workspace**\ ”. After selecting the workspace directory, click **OK** and Eclipse will launch and the workbench will appear in the **Nios II** perspective.
 
@@ -341,7 +344,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
    :width: 800px
 
 2. Create a new software project in the SBT
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 -  Select **File -> New -> Nios II Application and BSP from Template**.
 
@@ -374,7 +377,7 @@ The tool will create two new software project directories. Each Nios II applicat
 Since you chose the blank project template, there are no source files in the application project directory at this time. The BSP contains a directory of software drivers as well as a system.h header file, system initialization source code and other software infrastructure.
 
 Configure the Board Support Package
------------------------------------
+===================================
 
 -  Configure the board support package to specify the properties of this software system by using the **BSP Editor** tool. These properties include what interface should be used for *stdio* and *stderr* messages, the memory in which stack and heap should be allocated and whether an operating system or network stack should be included with this BSP.
 -  Right click on the **ADIEvalBoard_bsp** project and select **Nios II -> BSP Editor…** from the right-click menu.
@@ -411,7 +414,7 @@ The memory used by the design is should be changed from OnChip ram to SRAM for t
 -  When the generate has completed, select **File -> Exit** to close the BSP Editor.
 
 Configure BSP Project Build Properties
---------------------------------------
+======================================
 
 In addition to the board support package settings configured using the **BSP Editor**, there are other compilation settings managed by the Eclipse environment such as compiler flags and optimization level.
 
@@ -429,7 +432,7 @@ In addition to the board support package settings configured using the **BSP Edi
    :width: 500px
 
 Add source code to the project
-------------------------------
+==============================
 
 In Windows Explorer locate the project directory which contains a directory called **Software**. In Windows Explorer select all the files and directories from the **Software** folder and drag and drop them into the Eclipse software project **ADIEvalBoard**.
 
@@ -453,7 +456,7 @@ In Windows Explorer locate the project directory which contains a directory call
    :align: center
 
 Configure Application Project Build Properties
-----------------------------------------------
+==============================================
 
 Just as you configured the optimization level for the BSP project, you should set the optimization level for the application software project **ADIEvalBoard** as well.
 
@@ -468,7 +471,7 @@ Just as you configured the optimization level for the BSP project, you should se
    :width: 500px
 
 Define Application Include Directories
---------------------------------------
+======================================
 
 Application code can be conveniently organized in a directory structure. This section shows how to define these paths in the makefile.
 
@@ -502,10 +505,10 @@ Application code can be conveniently organized in a directory structure. This se
 -  Click the **Ctrl** and **S** keys to save the **Makefile**.
 
 Compile, Download and Run the Software Project
-----------------------------------------------
+==============================================
 
 1. Build the Application and BSP Projects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------
 
 -  Right click the **ADIEvalBoard_bsp** software project and choose **Build Project** to build the board support package.
 -  When that build completes, right click the **ADIEvalBoard** application software project and choose **Build Project** to build the Nios II application.
@@ -520,7 +523,7 @@ These 2 steps will compile and build the associated board support package, then 
 
 
 2. Verify the Board Connection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 The **CED1Z** hardware is designed with a *System ID* peripheral. This peripheral is assigned a unique value based on when the hardware design was last modified in the SOPC Builder tool. SOPC Builder also places this information in the *.sopcinfo* hardware description file. The BSP is built based on the information in the *.sopcinfo* file.
 
@@ -542,14 +545,12 @@ The **CED1Z** hardware is designed with a *System ID* peripheral. This periphera
    :width: 800px
 
 3. Run the Software Project on the Target
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------
 
 To run the software project on the Nios II processor:
 
-::
-
-    * Before running the the software project, the FPGA located on the CED1Z must be programmed with the Nios II system image. To program the FPGA run the //**ADIEvalBoard/FPGA/program_fpga.bat**// script.
-    * Press the **//Run//** button in the **//Run Configurations//** window. This will re-build the software project to create an up–to-date executable and then download the code into memory on the **CED1Z** hardware. The debugger resets the Nios II processor, and it executes the downloaded code. Note that the code is verified in memory before it is executed
+-  Before running the the software project, the FPGA located on the CED1Z must be programmed with the Nios II system image. To program the FPGA run the **ADIEvalBoard/FPGA/program_fpga.bat** script.
+-  Press the **Run** button in the **Run Configurations** window. This will re-build the software project to create an up–to-date executable and then download the code into memory on the **CED1Z** hardware. The debugger resets the Nios II processor, and it executes the downloaded code. Note that the code is verified in memory before it is executed
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsestartprogram.png
    :alt: eclipsestartprogram.png
@@ -571,6 +572,7 @@ To run the software project on the Nios II processor:
    :width: 400px
 
 
+
 Evaluation Project Data Acquisition
 ===================================
 
@@ -589,8 +591,6 @@ In order to capture data from the ADC the following steps must be performed:
 -  A new acquisition can be started by executing the **data_capture.bat** script.
 
 **Note:** If several consecutive data acquisitions are performed the captured data is appended to the **Acquisition.csv** file.
-
-.. _more-information-1:
 
 More information
 ================

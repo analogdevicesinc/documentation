@@ -70,8 +70,6 @@ Circuits from the Lab
 CED1Z
 -----
 
-.. _analog-to-digital-converters-1:
-
 Analog to Digital Converters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

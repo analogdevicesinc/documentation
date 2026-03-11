@@ -19,11 +19,7 @@ High gain inverting amplifier
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 1 - 0.01uF capacitor (103)
-| 1 - 5-20KΩ photo resistor (photocell)
-| 1 - CD4007 simple CMOS inverters built using the transistor array (or CMOS hex inverter 74HC04)
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 - 0.01uF capacitor (103) 1 - 5-20KΩ photo resistor (photocell) 1 - CD4007 simple CMOS inverters built using the transistor array (or CMOS hex inverter 74HC04)
 
 Background:
 ~~~~~~~~~~~
@@ -95,16 +91,12 @@ What is the gain from the input source, CA-V, to the output seen at the inverter
 Two stage astable multivibrator:
 --------------------------------
 
-.. _background-1:
-
 Background:
 ~~~~~~~~~~~
 
 There are basically two requirements to make an oscillator. The first is some sort of gain stage such as the CMOS inverter we just looked at and the second is some sort of frequency dependent or phase delay block like a RC time constant. Positive feedback around a cascade of two of these inverter stages such as was looked at in the :doc:`MOS Multivibrator Activity </wiki-migration/university/courses/alm1k/alm-lab-24m>` completes the oscillator.
 
 To understand how the circuit shown in figure 5 oscillates we first assume that the output of the first inverter stage ( at pins 8 and 13 ) is high, near V\ :sub:`DD`. This means that the output of the second inverter stage ( at pin 12 ) is low, near V\ :sub:`SS`. The high voltage on pins 8,13 will begin charging capacitor C\ :sub:`1` through the photo resistor. The voltage on C\ :sub:`1` is also the input to the first inverter stage at pin 6. Eventually the voltage on C\ :sub:`1` becomes high enough to be above the threshold of the first inverter stage and the output will switch from the high voltage to a low voltage ( near V\ :sub:`SS` ). This also causes the output of the second inverter stage to switch from low to high. Now C\ :sub:`1` driven by the output of stage 2, discharges through the photo resistor. Again, eventually the voltage at C\ :sub:`1` and the photo resistor becomes low enough to switch stage 1 back to its original starting state completing one cycle and starting the next.
-
-.. _directions-1:
 
 Directions:
 ~~~~~~~~~~~
@@ -120,8 +112,6 @@ First, be sure the power supplies are switched off before modifying your circuit
    Figure 5 Light dependent oscillator
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
@@ -129,14 +119,10 @@ Scope channels A and B should be set to Hi-Z mode. Set the Triggering to the ris
 
 Turn connect the positive 5 V power supply only after double checking your circuit connections.
 
-.. _procedure-1:
-
 Procedure:
 ~~~~~~~~~~
 
 Place a finger or something else over the photo resistor to block any light from falling on it. Note the frequency of the oscillator. Now move your finger slightly to allow some light from the room to fall on the photo resistor. Again note the frequency of the oscillator. The more light falling on the photo resistor reduces its resistance and should noticeably increase the frequency of the oscillation.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -152,7 +138,6 @@ Could you modify this circuit to make the frequency of the oscillator temperatur
 
 **For Further Reading:**
 
-| http://en.wikipedia.org/wiki/Photoresistor
-| http://en.wikipedia.org/wiki/Multivibrator
+http://en.wikipedia.org/wiki/Photoresistor http://en.wikipedia.org/wiki/Multivibrator
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

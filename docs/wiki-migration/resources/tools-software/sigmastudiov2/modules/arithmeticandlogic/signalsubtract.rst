@@ -3,13 +3,13 @@
 Signal Subtract
 ===============
 
-| 
-| |subtract.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/subtract.png
+   :alt: subtract.png
 
 Description
 -----------
 
-| The Signal Subtract block subtracts the input signals(all input signals are subtracted to the first signal) and outputs the difference result.
+The Signal Subtract block subtracts the input signals(all input signals are subtracted to the first signal) and outputs the difference result.
 
 Variants
 --------
@@ -63,5 +63,3 @@ DSP Parameters
 --------------
 
 No DSP parameters
-
-.. |subtract.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/subtract.png

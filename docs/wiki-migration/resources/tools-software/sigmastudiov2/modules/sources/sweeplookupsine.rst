@@ -3,11 +3,18 @@
 Sweep Look Up Sine
 ==================
 
-| |sweep_lookup.png|
-| ===== Description =====
-| The Sweep (Lookup/Sine) block generates a sinewave that sweeps from a start to an end frequency. The sweep speed is determined by the number of steps and cycles per step.
-| ===== Usage =====
-| Enter the desired start and stop frequency and step size using the edit controls:
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/sweep_lookup.png
+   :alt: sweep_lookup.png
+
+Description
+-----------
+
+The Sweep (Lookup/Sine) block generates a sinewave that sweeps from a start to an end frequency. The sweep speed is determined by the number of steps and cycles per step.
+
+Usage
+-----
+
+Enter the desired start and stop frequency and step size using the edit controls:
 
 -  **Initial Freq**
 
@@ -35,9 +42,11 @@ Sweep Look Up Sine
 
 A valid slope range will be computed depending on the step size entered. The ending tone will be held until reset is clicked, which returns to the initial frequency. The plot below shows the correlation for sweep plots with varying step sizes and slopes.
 
-| 
-| |image1|
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sweeplookupsine008.jpg
+   :align: center
+
+Targets Supported
+-----------------
 
 +--------------------+------------+------------------+---------------+------------------+
 | Name               | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -49,7 +58,7 @@ A valid slope range will be computed depending on the step size entered. The end
 | ===== Pins =====
 
 Output
-------
+~~~~~~
 
 ====== ===== ==============
 Name   Type  Description
@@ -57,7 +66,7 @@ Name   Type  Description
 Output Audio Output channel
 ====== ===== ==============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+------------------------+--------------------------------------------------------+
@@ -87,13 +96,15 @@ step           slew step                                FixPoint8d24
 ison           Enabled/Disabled the sweep               FixPoint8d24
 ============== ======================================== =============
 
-| 
-| ===== DSP Parameter Computation ===== increment1= InitialFrequency/(FS/2)
-| increment2= EndFrequency/(FS/2)
-| slope= Slope\* 2^(SlewStep-23)
-| step = 2 ^ (-1\* SlewStep)
-| ison = Sweep
-| FS, Where fs is frequency and FS is the sampling rate
 
-.. |sweep_lookup.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/sweep_lookup.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sweeplookupsine008.jpg
+| ===== DSP Parameter Computation ===== increment1= InitialFrequency/(FS/2)
+
+increment2= EndFrequency/(FS/2)
+
+slope= Slope\* 2^(SlewStep-23)
+
+step = 2 ^ (-1\* SlewStep)
+
+ison = Sweep
+
+FS, Where fs is frequency and FS is the sampling rate

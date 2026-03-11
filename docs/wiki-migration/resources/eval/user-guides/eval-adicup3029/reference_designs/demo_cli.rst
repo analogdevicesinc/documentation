@@ -130,8 +130,6 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
-| 
-
 How to use the Tools
 --------------------
 

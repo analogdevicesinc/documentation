@@ -1,10 +1,18 @@
-| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| ====== RMS 4 Band Compressor- Single Precision(ADAU145x) ====== |image1|
-| RMS 4 band compressor is a multi-band compressor with 4 unique filter bands each with a unique compression curve and setting. The filter bands are configurable allowing the user to adjust the frequencies fed to each compression curve. Each compressor curve is individually configurable by means of a Graph and settings - attack, release hold and knee. The compression is applied by detecting the RMS value of the input signal and multiplying it with corresponding gain as set in the graph.
-| |image2|
+:doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+RMS 4 Band Compressor- Single Precision(ADAU145x)
+=================================================
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/multibandcompressor_treetoolbox.png
+   :width: 200px
+
+RMS 4 band compressor is a multi-band compressor with 4 unique filter bands each with a unique compression curve and setting. The filter bands are configurable allowing the user to adjust the frequencies fed to each compression curve. Each compressor curve is individually configurable by means of a Graph and settings - attack, release hold and knee. The compression is applied by detecting the RMS value of the input signal and multiplying it with corresponding gain as set in the graph.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/multiband_compressor_gui.png
+   :align: center
 
 Input Pins
-==========
+----------
 
 +---------------------+------------------------------------------+-------------------------------+
 | Name                | Format [int/dec/float] - [control/audio] | Function Description          |
@@ -13,7 +21,7 @@ Input Pins
 +---------------------+------------------------------------------+-------------------------------+
 
 Output Pins
-===========
+-----------
 
 +-----------------------+------------------------------------------+-----------------------+
 | Name                  | Format [int/dec/float] - [control/audio] | Function Description  |
@@ -22,13 +30,16 @@ Output Pins
 +-----------------------+------------------------------------------+-----------------------+
 
 Grow Algorithm
-==============
+--------------
 
-| The module supports growth functionality. Add is not supported.
-| ===== GUI Controls =====
-| ^GUI Control Name^Default Value^Range^Function Description^
+The module supports growth functionality. Add is not supported.
+
+GUI Controls
+------------
 
 +-------------------------------+----------------------+----------------+-----------------------------------------------------------------------------------------------------+
+| GUI Control Name              | Default Value        | Range          | Function Description                                                                                |
++===============================+======================+================+=====================================================================================================+
 | corner frequency low          | 40Hz                 | 10-10000Hz     | cross over frequency at the intersection of the lowpass band and midband1                           |
 +-------------------------------+----------------------+----------------+-----------------------------------------------------------------------------------------------------+
 | corner frequency mid          | 600Hz                | 10-10000Hz     | cross over frequency at the intersection of the midbands                                            |
@@ -88,33 +99,30 @@ Grow Algorithm
 +------------------+----------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 Algorithm Description
-=====================
+---------------------
 
-| 
-| The Algorithm implements a multiple band compressor, with the input being separated into various filter bands depending on the set corner frequencies. These filter inputs are fed into individual compressors with unique curves and settings for attack, release and hold times.The detected gain is multiplied with the individual filter outputs and summed to a single output.
+The Algorithm implements a multiple band compressor, with the input being separated into various filter bands depending on the set corner frequencies. These filter inputs are fed into individual compressors with unique curves and settings for attack, release and hold times.The detected gain is multiplied with the individual filter outputs and summed to a single output.
 
 Example
-=======
+-------
 
-| 
-| The example shows The module configured to a single input, single output configuration. The input is a sine sweep, sweeping linearly from 50Hz to 20kHz. The multiband compressor bands are configured to provide compression of 12db,0db,5dB and 30dB at an input level of 0dB.
-| |image3|
-| |image4|
-| |image5|
+The example shows The module configured to a single input, single output configuration. The input is a sine sweep, sweeping linearly from 50Hz to 20kHz. The multiband compressor bands are configured to provide compression of 12db,0db,5dB and 30dB at an input level of 0dB.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/example_multiband_comp1.png
+   :align: center
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/example_multiband_comp2.png
+   :align: center
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/120-5-30_multiband_comp.png
+   :align: center
 
 Supported IC's
-==============
+--------------
 
-| 1. ADAU145x
+1. ADAU145x
 
 .. hint::
 
    Note: The module uses single precision filters due to which the accuracy of the module is limited at low amplitude levels of input data
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/multibandcompressor_treetoolbox.png
-   :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/multiband_compressor_gui.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/example_multiband_comp1.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/example_multiband_comp2.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/120-5-30_multiband_comp.png

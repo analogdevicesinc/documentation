@@ -32,10 +32,7 @@ A ring oscillator is an odd number (N) of inverting stages connected in series w
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 – CD4007 CMOS array
-| 3 – 0.1 uF capacitors
-| 3 – 0.01 uF capacitors
+ADALM1000 hardware module 1 – CD4007 CMOS array 3 – 0.1 uF capacitors 3 – 0.01 uF capacitors
 
 Making inverters with the CD4007 transistor array
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

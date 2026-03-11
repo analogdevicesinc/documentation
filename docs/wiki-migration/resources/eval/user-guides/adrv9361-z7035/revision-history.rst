@@ -71,8 +71,6 @@ This is the first publicly available revision.
 ADRV9364-Z7020 Hardware
 -----------------------
 
-.. _revision-d-1:
-
 Revision D
 ~~~~~~~~~~
 
@@ -98,8 +96,6 @@ This is the current shipping version.
       -  This has the notation error described above.
    
 
-
-.. _revision-c-first-publicly-available-revision-1:
 
 Revision C (First publicly available revision)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -51,10 +51,7 @@ The circuit in figure 1 has a dc resistance placed in series with a lossy parall
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 1 - 100Ω Resistor (or any similar value)
-| 1 - Loudspeaker, it is best if the speaker is one with a cone diameter larger than 4 inches such that is has a relatively low resonant frequency.
+ADALM2000 Active Learning Module Solder-less Breadboard 1 - 100Ω Resistor (or any similar value) 1 - Loudspeaker, it is best if the speaker is one with a cone diameter larger than 4 inches such that is has a relatively low resonant frequency.
 
 RMS Voltage measurement
 -----------------------
@@ -73,14 +70,15 @@ Build the circuit shown in figure 2, preferably using your solder-less breadboar
    Figure 2: Speaker measurement set up
 
 
-| |image2|
+   |image2|
 
 .. container:: centeralign
 
    Figure 3: Speaker measurement setup for V\ :sub:`L` and I\ :sub:`L`\
 
 
-| ====Procedure====
+Procedure
+~~~~~~~~~
 
 In Scopy, start the Signal generator and generate a sine waveform with 8V peak-to-peak amplitude and 100 Hz frequency.
 
@@ -94,8 +92,11 @@ Start the Voltmeter and set both channels to AC (20Hz-800Hz). Using the Voltmete
    Figure 4: RMS voltage across the loudspeaker
 
 
-| You can plot the calculated impedance Z vs Frequency. The frequency of the signal generator is set in steps of 100 Hz and for each frequency you compute Z. The speaker impedance is small, approximately equal to the DC resistance in the linear region but is much higher at the resonance frequency F\ :sub:`S`. An example plot is shown in Figure 5. Your speaker will probably look different than this.
-| |image4|
+You can plot the calculated impedance Z vs Frequency. The frequency of the signal generator is set in steps of 100 Hz and for each frequency you compute Z. The speaker impedance is small, approximately equal to the DC resistance in the linear region but is much higher at the resonance frequency F\ :sub:`S`. An example plot is shown in Figure 5. Your speaker will probably look different than this.
+
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/plot_of_calculated_impedance.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -105,19 +106,23 @@ Start the Voltmeter and set both channels to AC (20Hz-800Hz). Using the Voltmete
 Frequency Response
 ------------------
 
-.. _hardware-setup-1:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
-| In order to plot the frequency response make the connections as shown in Figure 6. |image5|
+In order to plot the frequency response make the connections as shown in Figure 6.
+
+
+|image4|
 
 .. container:: centeralign
 
    Figure 6: Breadboard Connections for plotting the frequency response
 
 
-| ====Procedure==== In the Network analyzer tool you will do a logarithmic sweep. Set the start frequency to 100 Hz and the stop frequency to 1 kHz. Set the phase to vary from -30 to 30 degrees and the magnitude from 0 to 10 dB.
+Procedure
+~~~~~~~~~
+
+In the Network analyzer tool you will do a logarithmic sweep. Set the start frequency to 100 Hz and the stop frequency to 1 kHz. Set the phase to vary from -30 to 30 degrees and the magnitude from 0 to 10 dB.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/freq-resp_100ohm.png
    :align: center
@@ -159,7 +164,5 @@ http://en.wikipedia.org/wiki/Electrical_characteristics_of_dynamic_loudspeakers
    :width: 900px
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/voltmeter_8vpp_100ohm.png
    :width: 900px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/plot_of_calculated_impedance.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/loudspeaker_bb_freq_resp.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/loudspeaker_bb_freq_resp.png
    :width: 900px

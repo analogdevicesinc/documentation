@@ -116,8 +116,6 @@ Frequency                         Minimum Average Maximum
 Receive Low Gain Mode
 ---------------------
 
-.. _s-parameters-1:
-
 S Parameters
 ~~~~~~~~~~~~
 
@@ -150,8 +148,6 @@ S Parameters
    \ **Figure 8: RX Low Gain Mode S22**\
 
 
-.. _noise-figure-1:
-
 Noise Figure
 ~~~~~~~~~~~~
 
@@ -164,8 +160,6 @@ Noise Figure
    \ **Figure 9: RX Low Gain Mode Noise Figure**\
 
 
-.. _iip3-1:
-
 IIP3
 ~~~~
 
@@ -177,8 +171,6 @@ IIP3
 
    \ **Figure 10: RX Low Gain Mode IIP3**\
 
-
-.. _data-tables-1:
 
 Data Tables
 ~~~~~~~~~~~
@@ -234,8 +226,6 @@ Frequency                        Minimum Average Maximum
 TX Mode
 -------
 
-.. _s-parameters-2:
-
 S Parameters
 ~~~~~~~~~~~~
 
@@ -289,8 +279,6 @@ IP3
    \ **Figure 15: TX Mode IIP3**\
 
 
-.. _data-tables-2:
-
 Data Tables
 ~~~~~~~~~~~
 
@@ -334,7 +322,7 @@ Switching Speed (ns)
 ==================== ========= ======= ======= =======
 Mode                 Edge Type Minimum Average Maximum
 All Modes            Rising    146.4   159.2   178.4
-:::                  Falling   11.4    13.9    20.8
+\                    Falling   11.4    13.9    20.8
 ==================== ========= ======= ======= =======
 
 .. container:: leftalign

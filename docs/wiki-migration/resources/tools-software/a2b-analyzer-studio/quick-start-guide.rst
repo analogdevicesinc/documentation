@@ -6,7 +6,7 @@ A2B Analyzer Studio Quick Start Guide
 Introduction
 ============
 
-The guidelines on these pages are intended to help A\ :sup:`2`\ B users configure and use the ADI A\ :sup:`2`\ B Analyzer Studio tool in Monitor or Emulator mode for A2B1.0 networks on A2B Bus Analyzer and A2B2.0 networks on A2B Analyzer HP respectively. 
+The guidelines on these pages are intended to help A\ :sup:`2`\ B users configure and use the ADI A\ :sup:`2`\ B Analyzer Studio tool in Monitor or Emulator mode for A2B1.0 networks on A2B Bus Analyzer and A2B2.0 networks on A2B Analyzer HP respectively.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_1.png
    :width: 600px
@@ -17,7 +17,7 @@ Installation and Upgrades
 Supported Operating Systems
 ---------------------------
 
-A\ :sup:`2`\ B Analyzer Studio runs on Windows, Linux, and macOS. The Operating Systems table describes the operating system versions supported currently. 
+A\ :sup:`2`\ B Analyzer Studio runs on Windows, Linux, and macOS. The Operating Systems table describes the operating system versions supported currently.
 
 +-------------------+---------------------------------------------------------------------------------------------+
 | **Platform**      | **Details**                                                                                 |
@@ -33,7 +33,7 @@ A\ :sup:`2`\ B Analyzer Studio runs on Windows, Linux, and macOS. The Operating 
 Software Installation Instructions
 ----------------------------------
 
-The following sub-sections include installation information for the supported Operating Systems. 
+The following sub-sections include installation information for the supported Operating Systems.
 
 Windows
 ~~~~~~~
@@ -55,10 +55,10 @@ Linux
 ::
 
    #!/bin/sh
-    
+
    # The following is an example script of how to configure your USB on Linux
    # to be accessible by other users.
-    
+
    if [ $(id -u) != 0 ]; then
        echo "You must run this script with sudo:"
        echo "sudo $0 $*"; exit 1
@@ -92,7 +92,7 @@ macOS
 -  To install A\ :sup:`2`\ B Bus Analyzer double-click on a2b_analyzer_studio-vX.Y.Z-macos-arm64.pkg
 -  Right-click on the Installer .pkg and select Open with... or Installer if the Installation Wizard does not appear.
 -  A\ :sup:`2`\ B Analyzer Studio is installed in /Applications.
--  To uninstall A\ *2*\ B Analyzer Studio, find the application in your install location, right click it and click "Move to Bin". 
+-  To uninstall A\ *2*\ B Analyzer Studio, find the application in your install location, right click it and click "Move to Bin".
 
 Software Upgrades
 -----------------
@@ -106,8 +106,10 @@ Run A\ :sup:`2`\ B Analyzer Studio, visit the Home screen, click 'Check for Upd
 
 You can also use the Help \| Check for Updates... menu item to find out if there are any new updates available.
 
-| A\ :sup:`2`\ B Analyzer Studio software updates preserve the settings from the previous version installed.
-| |image7|
+A\ :sup:`2`\ B Analyzer Studio software updates preserve the settings from the previous version installed.
+
+
+|image7|
 
 Updating the Firmware for A2B Bus Analyzer or A2B Analyzer HP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,31 +172,44 @@ Using A2B Analyzer HP as Bus Monitor
 
 1. To configure the device as a monitor follow the instructions in :doc:`A2B Bus Analyzer and A2B Analyzer HP Hardware Setup </wiki-migration/resources/tools-software/a2b-analyzer-studio/a2b-analyzer-hardware-setup>`.
 
-| 2. Launch the A\ :sup:`2`\ B Analyzer Studio and create a new project or open an existing project using the links on the Welcome panel.
-| |image8|
+2. Launch the A\ :sup:`2`\ B Analyzer Studio and create a new project or open an existing project using the links on the Welcome panel.
 
-| 3. In the New Project tab, choose analyzer as A\ :sup:`2`\ B Analyzer HP and select the features you want to enable.
-| |image9|
 
-| 4. Switch to Monitor PM2 view using the link in the side panel.
-| |image10|
+|image8|
 
-| 5. The transceiver is selected from the personality module connected to the board
-| |image11|
+3. In the New Project tab, choose analyzer as A\ :sup:`2`\ B Analyzer HP and select the features you want to enable.
 
-| 6. Provide json file for the ADAA24xx network. This is required to know the position of the traffic within the A2B super frame. JSON file can be exported from SigmaStudio+ schematic.
-| |image12|
 
-| 7. Select the position of the bus monitor in the network and then activate bus monitoring by clicking **Start** .
-| |image13|
+|image9|
 
-| 8. Now you are ready to start capturing audio and event traffic on the bus.
-| |image14|
+4. Switch to Monitor PM2 view using the link in the side panel.
+
+
+|image10|
+
+5. The transceiver is selected from the personality module connected to the board
+
+
+|image11|
+
+6. Provide json file for the ADAA24xx network. This is required to know the position of the traffic within the A2B super frame. JSON file can be exported from SigmaStudio+ schematic.
+
+
+|image12|
+
+7. Select the position of the bus monitor in the network and then activate bus monitoring by clicking **Start** .
+
+
+|image13|
+
+8. Now you are ready to start capturing audio and event traffic on the bus.
+
+
+|image14|
 
 **Note: **\ Event and Audio Traffic area will remain blank until the network host initiates A\ :sup:`2`\ B discovery. 9. Switch to the A\ :sup:`2`\ B network host program (e.g., SigmaStudio+, Head-unit software) and initiate discovery process.
 
-| 10. With network discovery initiated on the host, the A\ :sup:`2`\ B Analyzer Studio will begin capturing event and audio traffic. Use Audio-Output controls to playback captured audio on the device's Line Out/SPDIF Out or Save as .WAV File or even stream to Host PC over USB using drivers appropriate for your platform (ASIO/ALSA/CoreAudio).
-| **Note: **\ Refer to the A\ :sup:`2`\ B Analyzer Studio User Guide PDF for more advanced device usage.
+10. With network discovery initiated on the host, the A\ :sup:`2`\ B Analyzer Studio will begin capturing event and audio traffic. Use Audio-Output controls to playback captured audio on the device's Line Out/SPDIF Out or Save as .WAV File or even stream to Host PC over USB using drivers appropriate for your platform (ASIO/ALSA/CoreAudio). **Note: **\ Refer to the A\ :sup:`2`\ B Analyzer Studio User Guide PDF for more advanced device usage.
 
 11. Click Stop to finish collecting audio and event traffic. Collected data can be saved to a file (CSV or JSON) using the Download button.
 
@@ -206,16 +221,22 @@ Main Node Emulator
 
 1. To configure the device as main node, follow the instructions in the :doc:`A2B Bus Analyzer and A2B Analyzer HP Hardware Setup </wiki-migration/resources/tools-software/a2b-analyzer-studio/a2b-analyzer-hardware-setup>`.
 
-| 2. Launch the A\ :sup:`2`\ B Analyzer Studio and create a new project or open an existing project using the links on the Welcome panel. Ensure to Enable Emulator option if available when creating a new project and switch to Emulator PM1 view using the link in the side panel.
-| |image15|
+2. Launch the A\ :sup:`2`\ B Analyzer Studio and create a new project or open an existing project using the links on the Welcome panel. Ensure to Enable Emulator option if available when creating a new project and switch to Emulator PM1 view using the link in the side panel.
 
-| 3. Configure the device by setting properties as per the node being emulated. Ensure to set Emulate option to ‘Main’. When emulating a Main node, the network information corresponding to the connected nodes shall be provided as a .json file exported from SigmaStudio+ schematic.
-| |image16|
 
-| 4. Click on the ‘Start Emulator’ button to set the emulator in Main node mode and initiate the discovery/configuration of the network as per the provided .json file. A successful discovery of the network is indicated with the Discovery status icon turning green.
-| |image17|
+|image15|
 
-5. Use Audio Output controls in each sink stream to listen/save/stream any audio stream(s) of interest. Use Audio Input controls in each source stream to feed audio from Line/SPDIF/File/USB In or Test Tones/Loop back options on to the bus. 
+3. Configure the device by setting properties as per the node being emulated. Ensure to set Emulate option to ‘Main’. When emulating a Main node, the network information corresponding to the connected nodes shall be provided as a .json file exported from SigmaStudio+ schematic.
+
+
+|image16|
+
+4. Click on the ‘Start Emulator’ button to set the emulator in Main node mode and initiate the discovery/configuration of the network as per the provided .json file. A successful discovery of the network is indicated with the Discovery status icon turning green.
+
+
+|image17|
+
+5. Use Audio Output controls in each sink stream to listen/save/stream any audio stream(s) of interest. Use Audio Input controls in each source stream to feed audio from Line/SPDIF/File/USB In or Test Tones/Loop back options on to the bus.
 
 Sub Node Emulator
 ~~~~~~~~~~~~~~~~~
@@ -224,41 +245,49 @@ Sub Node Emulator
 
 2. Launch the A\ :sup:`2`\ B Analyzer Studio and create a new project or open an existing project using the links on the Welcome panel. Ensure to Enable Emulator option if available when creating a new project and switch to Emulator PM1 view using the link in the side panel.
 
-| 3. Configure the device by setting properties as per the node being emulated. The correct position for the sub node number is recommended although some of the functionality would behave correctly even when choosing the wrong node number. The transceiver is selected from the personality module connected to the board. There is an optional field "Register Writes File" defining the registers to be written for discovering smart sub-nodes. Sigma Studio/Sigma Studio+ defines the format for the JSON and XML.
-| |image18|
+3. Configure the device by setting properties as per the node being emulated. The correct position for the sub node number is recommended although some of the functionality would behave correctly even when choosing the wrong node number. The transceiver is selected from the personality module connected to the board. There is an optional field "Register Writes File" defining the registers to be written for discovering smart sub-nodes. Sigma Studio/Sigma Studio+ defines the format for the JSON and XML.
+
+
+|image18|
 
 4. Click on the ‘Start Emulator’ button to set the emulator in Sub node mode (indicated by Node Active icon turning green).
 
 5. Switch to the A\ :sup:`2`\ B network host program (e.g., SigmaStudio+, Head-unit software) and initiate discovery process.
 
-| 6. With network discovery initiated on the host, A\ :sup:`2`\ B Analyzer HP will auto detect the settings for the Sub node being emulated (based on the A\ :sup:`2`\ B Analyzer HP position in the network) and configures itself to emulate the Sub node. A successful discovery of A\ :sup:`2`\ B Analyzer HP as a sub node is indicated by the Discovery status icon turning green.
-| |image19|
+6. With network discovery initiated on the host, A\ :sup:`2`\ B Analyzer HP will auto detect the settings for the Sub node being emulated (based on the A\ :sup:`2`\ B Analyzer HP position in the network) and configures itself to emulate the Sub node. A successful discovery of A\ :sup:`2`\ B Analyzer HP as a sub node is indicated by the Discovery status icon turning green.
 
-| 7. Use Audio Output controls in each sink stream to listen/save/stream any audio stream(s) of interest. Use Audio Input controls in each source stream to feed audio from Line/SPDIF/File/USB In or Test Tones/Loop back options on to the bus. 
-| **Note: **\ Refer to the A\ :sup:`2`\ B Analyzer Studio *User Guide* for more advanced device usage.
+
+|image19|
+
+7. Use Audio Output controls in each sink stream to listen/save/stream any audio stream(s) of interest. Use Audio Input controls in each source stream to feed audio from Line/SPDIF/File/USB In or Test Tones/Loop back options on to the bus. **Note: **\ Refer to the A\ :sup:`2`\ B Analyzer Studio*User Guide* for more advanced device usage.
 
 Using A2B Bus Analyzer as Bus Monitor
 -------------------------------------
 
 1. To configure the device as a monitor, follow the instructions in the :doc:`A2B Bus Analyzer and A2B Analyzer HP Hardware Setup </wiki-migration/resources/tools-software/a2b-analyzer-studio/a2b-analyzer-hardware-setup>`.
 
-| 2. Launch the A\ :sup:`2`\ B Analyzer Studio and create a new project or open an existing project using the links on the Welcome panel. While creating the project choose Analyzer as A\ :sup:`2`\ B Bus Analyzer.
-| |image20|
+2. Launch the A\ :sup:`2`\ B Analyzer Studio and create a new project or open an existing project using the links on the Welcome panel. While creating the project choose Analyzer as A\ :sup:`2`\ B Bus Analyzer.
 
-| 3. Switch to Bus Monitor view using the link in the side panel.
-| |image21|
 
-| 4. Select "Normal" mode of bus monitoring.
-| |image22|
+|image20|
 
-| 5. Click "Start Monitor" to capture audio and event traffic on the bus.
-| **Note: **\ Event and Audio Traffic area will remain blank until the network host initiates A\ :sup:`2`\ B discovery.
+3. Switch to Bus Monitor view using the link in the side panel.
+
+
+|image21|
+
+4. Select "Normal" mode of bus monitoring.
+
+
+|image22|
+
+5. Click "Start Monitor" to capture audio and event traffic on the bus.
+
+**Note: **\ Event and Audio Traffic area will remain blank until the network host initiates A\ :sup:`2`\ B discovery.
 
 6. Switch to the A\ :sup:`2`\ B network host program (e.g., SigmaStudio, Head-unit software) and initiate discovery process.
 
-| 7. With network discovery initiated on the host, the A\ :sup:`2`\ B Analyzer Studio will begin capturing event and audio traffic. Use Audio-Output controls to playback captured audio on the device's Line Out/SPDIF Out or Save as .WAV File or even stream to Host PC over USB using drivers appropriate for your platform (ASIO/ALSA/CoreAudio).
-| |image23|
-| **Note: **\ Refer to the A\ :sup:`2`\ B Analyzer Studio A2B Analyzer Studio user guide PDF for more advanced device usage.
+7. With network discovery initiated on the host, the A\ :sup:`2`\ B Analyzer Studio will begin capturing event and audio traffic. Use Audio-Output controls to playback captured audio on the device's Line Out/SPDIF Out or Save as .WAV File or even stream to Host PC over USB using drivers appropriate for your platform (ASIO/ALSA/CoreAudio). |image23| **Note: **\ Refer to the A\ :sup:`2`\ B Analyzer Studio A2B Analyzer Studio user guide PDF for more advanced device usage.
 
 8. Click Stop to finish collecting audio and event traffic. Collected data can be saved to a file (CSV or JSON) using the Download button.
 
@@ -270,8 +299,6 @@ Connection of Bus Monitor to A\ :sup:`2`\ B network is same as described above. 
 Using A2B Bus Analyzer as Node Emulator
 ---------------------------------------
 
-.. _main-node-emulator-1:
-
 Main Node Emulator
 ~~~~~~~~~~~~~~~~~~
 
@@ -279,30 +306,36 @@ Main Node Emulator
 
 2. Launch A\ :sup:`2`\ B Analyzer Studio and create a new project or open an existing project using the options on the Welcome panel. Ensure to check Standard-Power/High-Power Emulator option if available when creating a new project.
 
-| 3. Switch to Emulator view (Std/High) using the side panel. Ensure the Power icon is green at this time. If not green, click on the Reset, wait for a few seconds (until the status LED on the unit turns full green) and connect again using the Power icon.
-| |image24|
+3. Switch to Emulator view (Std/High) using the side panel. Ensure the Power icon is green at this time. If not green, click on the Reset, wait for a few seconds (until the status LED on the unit turns full green) and connect again using the Power icon.
 
-| 4. Configure the device by setting properties as per the node being emulated. Ensure to set Emulate option to ‘Main’.  When emulating a Main node, the network information corresponding to the connected nodes shall be provided as a .dat file exported from SigmaStudio (or SigmaStudio+) for A\ :sup:`2`\ B.
-| |image25|
 
-   **Note**:             
+|image24|
+
+4. Configure the device by setting properties as per the node being emulated. Ensure to set Emulate option to ‘Main’.  When emulating a Main node, the network information corresponding to the connected nodes shall be provided as a .dat file exported from SigmaStudio (or SigmaStudio+) for A\ :sup:`2`\ B.
+
+
+|image25|
+
+   **Note**:
 
 -  A\ :sup:`2`\ B SW release package Rel19.9.0 or higher must be used to export adi_a2b_busconfig.dat when using SigmaStudio. Refer to user guide documentation available in the A\ :sup:`2`\ B SW package on how to create A\ :sup:`2`\ B project in SigmaStudio and export a .dat file. The SW release package details for SigmaStudio+ will be provided when that product is available.
 -  .DAT files are not correctly exported when 32 streams are configured
 
 5. Click on the ‘Start emulator’ button to set the emulator in Main node mode and initiate the discovery/configuration of the network as per the provided .dat file.
 
-6. A successful discovery of the network is indicated with the Discovery status icon turning green.  
+6. A successful discovery of the network is indicated with the Discovery status icon turning green.
 
-| 7. To view audio streams sourced or sinked by the node switch to Audio panel. Use Audio Output controls in each sink stream to listen/save/stream any audio stream(s) of interest. Use Audio Input controls in each source stream to feed audio from Line/SPDIF/File/USB In or Test Tones/Loop back options on to the bus. 
-| |image26|
+7. To view audio streams sourced or sinked by the node switch to Audio panel. Use Audio Output controls in each sink stream to listen/save/stream any audio stream(s) of interest. Use Audio Input controls in each source stream to feed audio from Line/SPDIF/File/USB In or Test Tones/Loop back options on to the bus.
+
+
+|image26|
 
 8. Switch to the Data panel to view SPI data tunnel streams (if any) available on the node. Use Data controls to send/receive data over SPI tunnels different transfer modes.
 
-| 9. Switch to Regs and Logs panel to view Config logs and Registers. Use this panel to read/write registers to/from a node.
-| |image27|
+9. Switch to Regs and Logs panel to view Config logs and Registers. Use this panel to read/write registers to/from a node.
 
-.. _sub-node-emulator-1:
+
+|image27|
 
 Sub Node Emulator
 ~~~~~~~~~~~~~~~~~
@@ -313,19 +346,23 @@ Sub Node Emulator
 
 3. Switch to Emulator view (Std/High) using the side panel. Ensure the Power icon is green at this time. If not green, click on the Reset, wait for a few seconds (until the status LED on the unit turns full green) and connect again using the Power icon.
 
-| 4. Configure the device by setting properties as per the node being emulated. Ensure to set Emulate option to ‘Sub’. 
-| |image28|
+4. Configure the device by setting properties as per the node being emulated. Ensure to set Emulate option to ‘Sub’.
 
-   **Note**: When emulating a Sub node, the configuration information corresponding to the emulated node is automatically detected by the A\ :sup:`2`\ B Bus Analyzer from the bus. 
 
-5. Click on the ‘Start Emulator’ button to set the emulator in Sub node mode (indicated by Node Active icon turning green). 
+|image28|
 
-6. Switch to the A\ :sup:`2`\ B network host program (e.g., SigmaStudio or Head-unit software) and initiate discovery process. 
+   **Note**: When emulating a Sub node, the configuration information corresponding to the emulated node is automatically detected by the A\ :sup:`2`\ B Bus Analyzer from the bus.
 
-   **Note**:  A\ :sup:`2`\ B SW release package Rel19.9.0 or higher must be used when using SigmaStudio. Refer to the user guide documentation available in the A\ :sup:`2`\ B SW package on how to create A\ :sup:`2`\ B project in SigmaStudio. 
+5. Click on the ‘Start Emulator’ button to set the emulator in Sub node mode (indicated by Node Active icon turning green).
 
-| 7. With network discovery initiated on the host, A\ :sup:`2`\ B Bus Analyzer will auto detect the settings for the Sub node being emulated (based on the A\ :sup:`2`\ B Bus Analyzer position in the network) and configures itself to emulate the Sub node. A successful discovery of A\ :sup:`2`\ B Bus Analyzer as a sub node is indicated by the Discovery status icon turning green.   
-| |image29|
+6. Switch to the A\ :sup:`2`\ B network host program (e.g., SigmaStudio or Head-unit software) and initiate discovery process.
+
+   **Note**:  A\ :sup:`2`\ B SW release package Rel19.9.0 or higher must be used when using SigmaStudio. Refer to the user guide documentation available in the A\ :sup:`2`\ B SW package on how to create A\ :sup:`2`\ B project in SigmaStudio.
+
+7. With network discovery initiated on the host, A\ :sup:`2`\ B Bus Analyzer will auto detect the settings for the Sub node being emulated (based on the A\ :sup:`2`\ B Bus Analyzer position in the network) and configures itself to emulate the Sub node. A successful discovery of A\ :sup:`2`\ B Bus Analyzer as a sub node is indicated by the Discovery status icon turning green.
+
+
+|image29|
 
 8. Switch to the Audio panel to view audio streams sourced or sinked by the node. Use Audio Output controls to listen/save/stream any audio stream(s) of interest. Use Audio Input controls to feed audio from Line/SPDIF/File/USB In or Test Tones/Loop back options on to the bus.
 

@@ -348,8 +348,7 @@ Set the multiple link options correctly for the appropriate operating setup befo
 Precision Medium Bandwidth Data Acquisition Solution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| This Data Acquisition Solution has 4 gain options, as shown in Table 2. The gain of the signal chain can be controlled by changing the logic levels of the ADG1209 A0 and A1 pins. This can be done through the software or by adjusting the jumpers JA0 and JA1.
-|
+This Data Acquisition Solution has 4 gain options, as shown in Table 2. The gain of the signal chain can be controlled by changing the logic levels of the ADG1209 A0 and A1 pins. This can be done through the software or by adjusting the jumpers JA0 and JA1.
 
 .. container:: centeralign
 
@@ -361,16 +360,21 @@ Precision Medium Bandwidth Data Acquisition Solution
 DC Performance
 ^^^^^^^^^^^^^^
 
-| Figure 24 shows the DNL vs. Gain Performance of the data acquisition solution.
-| |image27|
+Figure 24 shows the DNL vs. Gain Performance of the data acquisition solution.
+
+
+|image27|
 
 .. container:: centeralign
 
    *Figure 24. DNL vs. Code vs. Gain*
 
 
-| Figure 25 shows the INL vs. Gain Performance of the data acquisition solution.
-| |image28|
+Figure 25 shows the INL vs. Gain Performance of the data acquisition solution.
+
+
+
+|image28|
 
 .. container:: centeralign
 
@@ -380,24 +384,32 @@ DC Performance
 AC Performance
 ^^^^^^^^^^^^^^
 
-| Figure 26 shows the Dynamic Range vs. Gain Performance of the data acquisition solution.
-| |image29|
+Figure 26 shows the Dynamic Range vs. Gain Performance of the data acquisition solution.
+
+
+|image29|
 
 .. container:: centeralign
 
    *Figure 26. Dynamic Range vs. Gain*
 
 
-| Figure 27 shows the Signal-to-Noise Ratio (SNR) vs. Frequency vs. Gain Performance of the data acquisition solution.
-| |image30|
+Figure 27 shows the Signal-to-Noise Ratio (SNR) vs. Frequency vs. Gain Performance of the data acquisition solution.
+
+
+
+|image30|
 
 .. container:: centeralign
 
    *Figure 27. SNR vs. Frequency vs. Gain*
 
 
-| Figure 28 shows the Total Harmonic Distortion (THD) vs. Frequency vs. Gain Performance of the data acquisition solution.
-| |image31|
+Figure 28 shows the Total Harmonic Distortion (THD) vs. Frequency vs. Gain Performance of the data acquisition solution.
+
+
+
+|image31|
 
 .. container:: centeralign
 

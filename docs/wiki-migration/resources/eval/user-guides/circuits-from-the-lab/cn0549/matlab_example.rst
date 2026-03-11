@@ -85,8 +85,6 @@ Before you can start gathering data, you first must locate the CN0549 system set
 
 |image2|
 
-.. _system-block-diagram-1:
-
 System Block Diagram
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -99,9 +97,9 @@ Connecting to the CN0549 via MATLAB
 
 With your system fully setup, it's now time to stream data directly into MATLAB.
 
-Data streaming and device control are provided through the specialized classes called `MATLAB system objects <https://www.mathworks.com/help/matlab/matlab_prog/what-are-system-objects.html>`_ in :doc:`ADI's Sensor Toolbox </wiki-migration/resources/tools-software/sensor-toolbox>`. Devices or sensors which connect through the CN0540, such as the CN0549, will share a common base class called :git-SensorToolbox:`adi.CN0540Base.m <%2Badi/CN0540Base.m>`. However, each specific sensor will have its own class that will contain documentation, methods, and properties specific to it. Therefore, end-users should always use the python class associated with the sensor and not the CN0540.
+Data streaming and device control are provided through the specialized classes called `MATLAB system objects <https://www.mathworks.com/help/matlab/matlab_prog/what-are-system-objects.html>`_ in :doc:`ADI's Sensor Toolbox </wiki-migration/resources/tools-software/sensor-toolbox>`. Devices or sensors which connect through the CN0540, such as the CN0549, will share a common base class called `adi.CN0540Base.m <https://github.com/analogdevicesinc/SensorToolbox/blob/cn0540/%2Badi/CN0540Base.m>`_. However, each specific sensor will have its own class that will contain documentation, methods, and properties specific to it. Therefore, end-users should always use the python class associated with the sensor and not the CN0540.
 
-Below is a basic example where we will talk to a CN0540 with CN0549 attached. This is done remotely from a host PC, but can be done locally on the board or through another backend. See the :doc:`libiio doc for more information </wiki-migration/resources/tools-software/linux-software/libiio>`. This example can be downloaded from :git-SensorToolbox:`GitHub directly <sensor_examples/cn0549.m>`.
+Below is a basic example where we will talk to a CN0540 with CN0549 attached. This is done remotely from a host PC, but can be done locally on the board or through another backend. See the :doc:`libiio doc for more information </wiki-migration/resources/tools-software/linux-software/libiio>`. This example can be downloaded from `GitHub directly <https://github.com/analogdevicesinc/SensorToolbox/blob/cn0540/sensor_examples/cn0549.m>`_.
 
 .. code:: matlab
 

@@ -123,7 +123,7 @@ Below is defined the adc_core structure used by the adc_setup() and adc_capture(
    :align: center
    :width: 650px
 
--  Next, download the capture scripts from the :git-no-OS:`git repository <ad9371/scripts>`.
+-  Next, download the capture scripts from the `git repository <https://github.com/analogdevicesinc/no-OS/tree/2018_R2/ad9371/scripts>`_.
 -  **capture.bat** script contains the path of the Xilinx SDK, the default is **"C:\\Xilinx\\SDK\\$VERSION"**; if on your PC the path is different, you need to update it according to your project setup.
 -  By running **capture.bat**, the **iq_rx1.csv** and **iq_rx2.csv** files will be generated.
 -  Start :adi:`VisualAnalog <en/design-center/interactive-design-tools/visualanalog.html>` and open the **visual_analog.vac** file downloaded from the git repository.
@@ -138,8 +138,6 @@ Intel/Altera Platform
 This guide provides some quick instructions on how to setup the AD9371 mykonos on:
 
 -  `Intel/Altera Arria 10 <https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-a10-gx-fpga.html>`_
-
-.. _required-software-1:
 
 Required Software
 ~~~~~~~~~~~~~~~~~
@@ -199,17 +197,8 @@ Before the image can be loaded the **Quartus Prime 16.0** tool or the `Quartus P
       -  The script generates **headless.c, headless.h, myk.c, myk.h and myk_ad9528init.c** files. Add **myk.c**, **myk.h** and **myk_ad9528init.c** to the **src** folder of your project. Do NOT add headless.c and headless.h, instead use the files provided in github.
       -  Note: The AD9371/AD9375 evaluation board contains an on-board voltage controlled crystal oscillator (VCXO), there are limitations with the default hardware configuration in the scenario where user desired device frequencies are not related to the on-board 122.88 MHz VCXO by a rational fraction.
 
--  Nios II Eclipse should automatically build the projects and the Console window will display the result of the build. If the build is not done automatically select the **Project**\ →\ **Build Automatically** menu option.
--  Note: if you get this error:
-
-.. container:: hi
-
-   warning: Unable to reach (null) (at 0x00088608) from the global pointer (at 0x000752b8) because the offset (78672) is out of the allowed range, -32678 to 32767
-
-
-, a quick workaround can be found on the `Altera support page <https://www.altera.com/support/support-resources/knowledge-base/solutions/rd02132012_291.html>`_: modify the linker.x file from your bsp by deleting **+ SIZEOF (.rwdata)** from this one line:
-
-
+-  Nios II Eclipse should automatically build the projects and the Console window will display the result of the build. If the build is not done automatically select the **Project**→**Build Automatically** menu option.
+-  Note: if you get this error: warning: Unable to reach (null) (at 0x00088608) from the global pointer (at 0x000752b8) because the offset (78672) is out of the allowed range, -32678 to 32767, a quick workaround can be found on the `Altera support page <https://www.altera.com/support/support-resources/knowledge-base/solutions/rd02132012_291.html>`_: modify the linker.x file from your bsp by deleting **+ SIZEOF (.rwdata)** from this one line:
 
 |image7|
 
@@ -234,8 +223,6 @@ Before the image can be loaded the **Quartus Prime 16.0** tool or the `Quartus P
 -  Check the **Ignore mismatched system timestamp** option.
 -  Press the **Run** button in the **Run Configurations** window.
 -  This will re-build the software project to create an up–to-date executable and then download the code into memory.
-
-.. _push-data-intoout-of-the-ad9371ad9375-1:
 
 Push data into/out of the AD9371/AD9375
 ---------------------------------------
@@ -295,7 +282,7 @@ Below is defined the adc_core structure used by the adc_setup() and adc_capture(
 
 |image12|
 
--  Next, download the capture scripts from the :git-no-OS:`git repository <ad9371/scripts>`.
+-  Next, download the capture scripts from the `git repository <https://github.com/analogdevicesinc/no-OS/tree/2018_R2/ad9371/scripts>`_.
 -  By running **capture.bat**, the **iq_rx1.csv** and **iq_rx2.csv** files will be generated inside the **nios2eds** folder
 -  Start :adi:`VisualAnalog <en/design-center/interactive-design-tools/visualanalog.html>` and open the **visual_analog.vac** file downloaded from the git repository.
 -  From the **Pattern Loader** window, browse for the newly generated .csv files and click **Run**.
@@ -309,7 +296,7 @@ The source code of the no-OS software and the scripts can be downloaded from the
 
    
    -  **AD9371/AD9375 No-OS Software** :git-no-OS:`projects/ad9371/src`
-   -  **AD9371/AD9375 No-OS Scripts** :git-no-OS:`ad9371/scripts`
+   -  **AD9371/AD9375 No-OS Scripts** https://github.com/analogdevicesinc/no-OS/tree/2018_R2/ad9371/scripts
    -  **API Source Code** http://www.analog.com/en/design-center/landing-pages/001/transceiver-evaluation-software.html
    
 

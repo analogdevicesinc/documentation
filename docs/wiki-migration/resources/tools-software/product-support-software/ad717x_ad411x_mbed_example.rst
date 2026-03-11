@@ -27,7 +27,7 @@ The :adi:`EVAL-AD411x <en/design-center/evaluation-hardware-and-software/evaluat
 Useful links
 ============
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :doc:`AD717x No-OS Driver </wiki-migration/resources/tools-software/uc-drivers/ad717x>`
@@ -61,7 +61,7 @@ EVAL-AD4111SDZ Board (AD4111/AD4112 chip)-
 
 -  Connect PWR (LK3) connector to USB_SUPP (B) position to power-up device from the SDP-K1 USB.
 
-*<fc #cd5c5c>*Note: The settings can vary board to board and user must refer user manual of respective EVAL board for ensuring the proper connections.</fc>*
+*\*Note: The settings can vary board to board and user must refer user manual of respective EVAL board for ensuring the proper connections.*
 
 SDP-K1 is powered through USB connection from the PC. SDP-K1 acts as a Serial device when connected to PC, which creates a COM Port to connect to Serial Terminals like Teraterm, Putty, etc. The COM port assigned to a device can be seen through the device manager for windows based OS.
 

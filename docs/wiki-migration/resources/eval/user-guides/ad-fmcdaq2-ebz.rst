@@ -45,7 +45,7 @@ The purpose of the :adi:`AD-FMCDAQ2-EBZ` is a data acquisition platform that con
 Videos
 ======
 
-.. image:: https://wiki.analog.com/_media/analogTV>3726581576001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/analogTV>3726581576001
    :alt: analogTV>3726581576001
 
 

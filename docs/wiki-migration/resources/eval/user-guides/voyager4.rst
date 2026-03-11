@@ -62,28 +62,34 @@ Prerequisites
 -  PC with Bluetooth Adapter (or External Bluetooth Adapter).
 -  Graphical User Interface (GUI) python code.
 
-| 
-| |Voyager Module|
-| *Fig 1. Voyager4 Module*
-| |Voyager4 GUI|
-| *Fig 2. Voyager4 Graphical User Interface (GUI)*
+| |Voyager Module| *Fig 1. Voyager4 Module*
+| |Voyager4 GUI| *Fig 2. Voyager4 Graphical User Interface (GUI)*
 
 --------------
 
 2. Powering Up
 ~~~~~~~~~~~~~~
 
-| With the Voyager4 (EV-CBM-VOYAGER4-1Z) fully assembled in hand:
-| \* Remove the top acrylic part (lid).
-| |Remove the Lid|
-| \* Remove the cylinder part (body).
-| |Remove the Body|
+With the Voyager4 (EV-CBM-VOYAGER4-1Z) fully assembled in hand:
+
+-  Remove the top acrylic part (lid).
+
+
+|Remove the Lid|
+
+-  Remove the cylinder part (body).
+
+
+|Remove the Body|
 
 -  Connect the battery to the power board.
    |Unconnected Battery| |Connected Battery|
+
 -  Connect Voyager4 to the PC using the USB Cable
    |Unconnected Voyager| |Connected Voyager|
+
 -  The leftmost LED should perform one long blink and 3 short blinks upon successful startup. The LED will then remain OFF when the Voyager is running.
+
 
 |Powered on Voyager|
 
@@ -112,18 +118,22 @@ A BLE 5.3 Adapter with Antenna is included in every Voyager4 kit. Voyager4 uses 
 
 |Attached BLE Adapter|
 
-   \* Open Device Manager (on Windows, Control Panel -> Hardware and Sound -> Device Manager. You may need administrator privileges to access this.
+-  Open Device Manager (on Windows, Control Panel -> Hardware and Sound -> Device Manager. You may need administrator privileges to access this.
 
-   |Devices and Printers|
 
-   \* Confirm that the driver for the BLE Adapter was successfully installed automatically (Generic Bluetooth Adapter).
+|Devices and Printers|
 
-   |Generic Bluetooth Adapter Driver|
+-  Confirm that the driver for the BLE Adapter was successfully installed automatically (Generic Bluetooth Adapter).
 
-| 
-| \* Right Click and disable the default Bluetooth Driver -> Intel® Wireless Bluetooth. You may need to turn off your PC’s Bluetooth first.
-| |Disable Intel Wireless Bluetooth|
-| \* Restart your PC. The driver has been successfully installed, and the adapter has replaced the default Bluetooth functionality of your PC.
+
+|Generic Bluetooth Adapter Driver|
+
+-  Right Click and disable the default Bluetooth Driver -> Intel® Wireless Bluetooth. You may need to turn off your PC’s Bluetooth first.
+
+
+|Disable Intel Wireless Bluetooth|
+
+-  Restart your PC. The driver has been successfully installed, and the adapter has replaced the default Bluetooth functionality of your PC.
 
 .. warning::
 
@@ -145,13 +155,13 @@ For details on the software download of the project, please reach out to contact
 
 |Launch Anaconda Environment|
 
-   \* Type in ``conda create --name voy4_env python=3.7``.
+-  Type in ``conda create --name voy4_env python=3.7``.
 -  This will create a virtual environment to run the GUI. Please note the double dash (- -) ahead of name.
 -  Type in ``activate voy4_env``.
 
 |Create and Start Anaconda Environment|
 
-   \* cd into the directory where main.py is.
+-  cd into the directory where main.py is.
 -  Example: ``cd C:\voy4\GUI\voyager4-gui``.
 -  Type in ``pip install -r requirements.txt``. This will install all necessary packages.
 -  Type in ``python main.py``. This should run the main.py script, prompting the GUI
@@ -173,35 +183,40 @@ For details on the software download of the project, please reach out to contact
 
 |GUI Scan to Connect|
 
-   \* A Voyager device should appear under Available Devices.
+-  A Voyager device should appear under Available Devices.
 
-   |GUI Available Devices|
+|GUI Available Devices|
 
 -  **Double-click** the listed device to highlight its text.
 
+
 |GUI Selected Device Entry|
 
-   \* Click **"Connect"**.
+-  Click **"Connect"**.
 -  The device Connected status changes to **“Connected: True”**. This may take several minutes depending on the strength of connection.
 
 |GUI Connected to Device|
 
-   \* Under **BLE Operations**, click the drop-down menu.
+-  Under **BLE Operations**, click the drop-down menu.
 
    -  Select **“setphy”**.
    -  Click **“Send”** to send the default value of **2**.
 
    |Issue Setphy 2 Command|
 
-      \* Device Status displays “Return Value: OK”.
+   -  Device Status displays “Return Value: OK”.
 
-      |GUI Device Status OK|
+   |GUI Device Status OK|
 
-| 
-| \* Under BLE Operations, click **"Start"**
-| |GUI Start Command|
-| \* You should see data for 3-axis vibration data being plotted on the Canvas Frame.
-| |GUI with accel data|
+-  Under BLE Operations, click **"Start"**
+
+
+|GUI Start Command|
+
+-  You should see data for 3-axis vibration data being plotted on the Canvas Frame.
+
+
+|GUI with accel data|
 
 --------------
 
@@ -213,21 +228,22 @@ For details on the software download of the project, please reach out to contact
 
 |GUI Saving Data disabled|
 
-   \* The label changes to “Saving Enabled”.
+-  The label changes to “Saving Enabled”.
 
-   |GUI Saving Data Enabled|
 
-   \* Any data that is plotted will now also be saved as a CSV.
+|GUI Saving Data Enabled|
 
-   |GUI Data Saving|
+-  Any data that is plotted will now also be saved as a CSV.
+
+
+|GUI Data Saving|
 
 .. note::
 
    Plotting and saving occur simultaneously. Each plot is saved to its own CSV file. The name includes the timestamp and data on which the data was saved, along with information about the accelerometer mode. Saved data appears in the same folder as the GUI.
 
 
-| 
-| \* Press Start to begin the flow of data and save your first CSV.
+-  Press Start to begin the flow of data and save your first CSV.
 
 --------------
 
@@ -241,9 +257,10 @@ Voyager4 comes packaged with a second microcontroller, the MAX78000, which can m
 
 |GUI Wake78000|
 
-   \* A reconstruction error is displayed in the device status.
+-  A reconstruction error is displayed in the device status.
 
-   |GUI Reconstruction Error|
+
+|GUI Reconstruction Error|
 
 .. note::
 
@@ -256,19 +273,21 @@ Voyager4 comes packaged with a second microcontroller, the MAX78000, which can m
 
 |GUI Auto Detect Tab|
 
-   \* If the returned fault detection value is above the threshold, a “Motor Fault” status is displayed.
+-  If the returned fault detection value is above the threshold, a “Motor Fault” status is displayed.
 
-   |GUI Default Motor Detect|
 
-   \* If the returned fault detection value is above the threshold, a “No motor fault detected” is displayed.
+|GUI Default Motor Detect|
 
-   |GUI Motor Fault Detected|
+-  If the returned fault detection value is above the threshold, a “No motor fault detected” is displayed.
 
-   \* The Reconstruction Threshold can be adjusted by entering a new value in the textbox or by adjusting the slider.
+
+|GUI Motor Fault Detected|
+
+-  The Reconstruction Threshold can be adjusted by entering a new value in the textbox or by adjusting the slider.
 -  7. You can also press “Start Inference” which will automatically send a “wake78000 1” command and issue an inference.
 -  8. If the Repeat Inference is enabled, it periodically runs an inference, goes to sleep, disconnects, wakes up after the defined period, reconnects, and repeats this sequence until the Repeat Inference checkbox is unchecked.
 
-| 
+
 | |GUI Motor Off|
 
 .. |Voyager Module| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_1_voyager_module.svg

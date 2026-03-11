@@ -4,8 +4,7 @@ Building Scopy on OSX
 Using existing DMG Installers
 -----------------------------
 
-| Scopy DMG Installers for OSX are available for each release.
-| The oldest supported OSX version is 10.11.
+Scopy DMG Installers for OSX are available for each release. The oldest supported OSX version is 10.11.
 
 .. admonition:: Download
    :class: download
@@ -20,24 +19,21 @@ Installing the dependencies
 
 You can also build Scopy from source, instead of using the provided installer. Before building Scopy on OSX systems, you need to make sure all the requirements are installed.
 
-| 
-| **Setup Python**
+**Setup Python**
 
 ::
 
         **export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages
         export PATH=$PATH:$(brew --prefix)/share/python**
 
-| 
-| **Get pip**
+**Get pip**
 
 ::
 
         **curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
         sudo python get-pip.py**
 
-| 
-| **Install dependencies using Homebrew**
+**Install dependencies using Homebrew**
 
 ::
 
@@ -46,11 +42,9 @@ You can also build Scopy from source, instead of using the provided installer. B
         brew pip mako
         brew pip cheetah**
 
-| 
-| **Get the latest release of libiio from** :git-libiio:`here <releases>`
+**Get the latest release of libiio from** :git-libiio:`here <releases>`
 
-| 
-| **Build and install Boost**
+**Build and install Boost**
 
 ::
 
@@ -62,21 +56,19 @@ You can also build Scopy from source, instead of using the provided installer. B
        ./b2
        sudo ./b2 install**
 
-| 
-| **Build and install Markdown**
+**Build and install Markdown**
 
 ::
 
        **cd ~
-       wget 
+       wget
        https://pypi.python.org/packages/1d/25/3f6d2cb31ec42ca5bd3bfbea99b63892b735d76e26f20dd2dcc34ffe4f0d/Markdown-2.6.8.tar.gz
        tar -xzvf Markdown-2.6.8.tar.gz
        cd Markdown-2.6.8
        ./setup.py build
        sudo ./setup.py install**
 
-| 
-| **Build and install Cheetah**
+**Build and install Cheetah**
 
 ::
 
@@ -87,8 +79,7 @@ You can also build Scopy from source, instead of using the provided installer. B
        ./setup.py build
        sudo ./setup.py install**
 
-| 
-| **Build and install Volk**
+**Build and install Volk**
 
 ::
 
@@ -101,8 +92,7 @@ You can also build Scopy from source, instead of using the provided installer. B
        make
        sudo make install**
 
-| 
-| **Build and install GNU Radio**
+**Build and install GNU Radio**
 
 ::
 
@@ -115,8 +105,7 @@ You can also build Scopy from source, instead of using the provided installer. B
        make
        sudo make install**
 
-| 
-| **Build and install libsigrok**
+**Build and install libsigrok**
 
 ::
 
@@ -128,8 +117,7 @@ You can also build Scopy from source, instead of using the provided installer. B
        ../configure --disable-all-drivers --enable-bindings --enable-cxx
        make -j4 install**
 
-| 
-| **Build and install libsigrokdecode**
+**Build and install libsigrokdecode**
 
 ::
 
@@ -141,8 +129,7 @@ You can also build Scopy from source, instead of using the provided installer. B
        ../configure --enable-shared --disable-static
        make -j4 install**
 
-| 
-| **Build and install Qwt**
+**Build and install Qwt**
 
 Before building Qwt, you need to check out your version of qmake.
 
@@ -155,17 +142,13 @@ Now we can build and install Qwt:
        **cd ~
        git clone https://github.com/osakared/qwt -b qwt-6.1-multiaxes
        cd qwt
-       curl https://raw.githubusercontent.com/analogdevicesinc/scopy-snap/master/qwt-6.1-multiaxes.patch
-
-       | patch -p1
+       curl https://raw.githubusercontent.com/analogdevicesinc/scopy-snap/master/qwt-6.1-multiaxes.patch | patch -p1
        # Use full path to qmake
        qmake qwt.pro
        make -j4
        sudo make install**
 
-|
-
-| **Build and install Qwt Polar**
+**Build and install Qwt Polar**
 
 ::
 
@@ -174,28 +157,25 @@ Now we can build and install Qwt:
        cd qwtpolar-1.1.1
        curl https://raw.githubusercontent.com/analogdevicesinc/scopy-snap/master/qwtpolar-qwt-6.1-compat.patch |patch -p1**
 
-| Change QWT_POLAR_INSTALL_PREFIX to /usr/local and remove the following lines:
-| QWT_POLAR_CONFIG += QwtPolarExamples
-| QWT_POLAR_CONFIG += QwtPolarDesigner
-| QWT_POLAR_CONFIG += QwtPolarFramework
-| QWT_POLAR_INSTALL_FEATURES =
+Change QWT_POLAR_INSTALL_PREFIX to /usr/local and remove the following lines:
 
-  .. math::
+::
 
-     {QWT_POLAR_INSTALL_PREFIX}/features \\
-     After that, change QWT_POLAR_INSTALL_PREFIX to /usr/local and QWT_POLAR_INSTALL_HEADERS to 
+     QWT_POLAR_CONFIG += QwtPolarExamples
+     QWT_POLAR_CONFIG += QwtPolarDesigner
+     QWT_POLAR_CONFIG += QwtPolarFramework
+     QWT_POLAR_INSTALL_FEATURES = $${QWT_POLAR_INSTALL_PREFIX}/features
 
-  \ {QWT_POLAR_INSTALL_PREFIX}/include/qwt
+After that, change QWT_POLAR_INSTALL_PREFIX to /usr/local and QWT_POLAR_INSTALL_HEADERS to $${QWT_POLAR_INSTALL_PREFIX}/include/qwt
 
+::
 
-  | ``**# Use full path to qmake
-      qmake LIBS+="-L/usr/local/lib -lqwt" INCLUDEPATH+="/usr/local/include/qwt" qwtpolar.pro
-      make -j4
-      sudo make install**``
+       **# Use full path to qmake
+       qmake LIBS+="-L/usr/local/lib -lqwt" INCLUDEPATH+="/usr/local/include/qwt" qwtpolar.pro
+       make -j4
+       sudo make install**
 
-|
-
-| **Install libad9361**
+**Install libad9361**
 
 ::
 
@@ -207,8 +187,7 @@ Now we can build and install Qwt:
        make
        sudo make install**
 
-| 
-| **Build and install the IIO blocks for GNU Radio**
+**Build and install the IIO blocks for GNU Radio**
 
 ::
 
@@ -220,8 +199,8 @@ Now we can build and install Qwt:
        make
        sudo make install**
 
-| 
-| ===== Building Scopy =====
+Building Scopy
+--------------
 
 ::
 

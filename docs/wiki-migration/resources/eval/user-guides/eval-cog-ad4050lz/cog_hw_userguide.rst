@@ -135,10 +135,9 @@ MCU Cog Design and Integration Files
 
 ::
 
-     MCU Cog revB Schematics 
+     MCU Cog revB Schematics
      MCU Cog revB Layout
      MCU Cog revB BOM
-     
 
 Add-on (Gear) Template
 ~~~~~~~~~~~~~~~~~~~~~~

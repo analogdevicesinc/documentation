@@ -6,15 +6,16 @@ List of API in BERT Properties
 -  :doc:`BERT PRBS Test </wiki-migration/resources/tools-software/a2bv2/quickstartguide/thriftuserguide/bertproperties>`
 -  :doc:`BERT Audio Test </wiki-migration/resources/tools-software/a2bv2/quickstartguide/thriftuserguide/bertproperties>`
 
-| 
-| ====BERT PRBS Test==== This API is used to Run PRBS Test. It takes elementUid and property name and property value as arguments and returns SSPResult.
+BERT PRBS Test
+--------------
 
-| **API:**
-| SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
+This API is used to Run PRBS Test. It takes elementUid and property name and property value as arguments and returns SSPResult.
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**API:** SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
+**Arguments:**
+
+-  “elementUid” = UID of the A2B Channel
 -  “propertyName” = Name of the action property. Some of the property name examples are listed below
 
    -  BertCalcLinkStatus – To check Link status
@@ -29,17 +30,16 @@ List of API in BERT Properties
 
 -  “propertyVal” = Setting value (true or false).
 
-| **Result:**
-| SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
+**Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateBoolProperty was successful else 'False'.
 -  Message contains the Success/Failure information in the form of list of string.
 
-| **Csharp Example:**
-| \_sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcLinkStatus", true);
+**Csharp Example:**
 
 ::
 
+   _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcLinkStatus", true);
    _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcRdoPseudoRandom", true);
    _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcRdoAudio", false);
    _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcEnablePrbsNodetoNodeChecking", true);
@@ -62,11 +62,11 @@ List of API in BERT Properties
    _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcRun", true);
    _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcReset", true);
 
-| **Python Example:**
-| ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcLinkStatus", "True")
+**Python Example:**
 
 ::
 
+   ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcLinkStatus", "True")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcRdoPseudoRandom", "True")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcRdoAudio", "False")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcEnablePrbsNodetoNodeChecking", "True")
@@ -89,15 +89,16 @@ List of API in BERT Properties
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcRun", "True")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcReset", "True")
 
-| 
-| ====BERT Audio Test==== This API is used to Run PRBS Test. It takes elementUid and property name and property value as arguments and returns SSPResult.
+BERT Audio Test
+---------------
 
-| **API:**
-| SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
+This API is used to Run PRBS Test. It takes elementUid and property name and property value as arguments and returns SSPResult.
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**API:** SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
+**Arguments:**
+
+-  “elementUid” = UID of the A2B Channel
 -  “propertyName” = Name of the action property. Some of the property name examples are listed below
 
    -  BertCalcLinkStatus – To check Link status
@@ -120,17 +121,16 @@ List of API in BERT Properties
 
 -  “propertyVal” = Setting value (true or false)
 
-| **Result:**
-| SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
+**Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateBoolProperty was successful else 'False'.
 -  Message contains the Success/Failure information in the form of list of string.
 
-| **Csharp Example:**
-| \_sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcLinkStatus", true);
+**Csharp Example:**
 
 ::
 
+   _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcLinkStatus", true);
    _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcRdoPseudoRandom", false);
    _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcRdoAudio", true);
    _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcEnablePrbsNodetoNodeChecking", false);
@@ -153,11 +153,11 @@ List of API in BERT Properties
    _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcRun", true);
    _sspresult = client.UpdateBooleanProperty("A2B_0", "BertCalcReset", true);
 
-| **Python Example:**
-| ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcLinkStatus", "True")
+**Python Example:**
 
 ::
 
+   ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcLinkStatus", "True")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcRdoPseudoRandom", "False")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcRdoAudio", "True")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcEnablePrbsNodetoNodeChecking", "False")
@@ -165,7 +165,7 @@ List of API in BERT Properties
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcEnableICRCERR", "True")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcEnableDDERR", "True")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcEnableDPERR", "True")
-   ssp_result = client.UpdateNumericProperty("A2B_0", "BertCalcAutoResetInterval", float(5.0)) 
+   ssp_result = client.UpdateNumericProperty("A2B_0", "BertCalcAutoResetInterval", float(5.0))
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcEnableAutoReset", "True")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcEnableShowErrorDiff", "False")
    ssp_result = client.UpdateBooleanProperty("A2B_0", "BertCalcAutoGenerateBusErrors", "True")

@@ -16,7 +16,7 @@ This page describes the hardware peripheral connectors, jumpers and UART switch 
 Unboxing the EVAL-ADICUP3029
 ----------------------------
 
-.. image:: https://wiki.analog.com/_media/analogTV>5554821998001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/analogTV>5554821998001
    :alt: analogTV>5554821998001
 
 Peripheral Connectors
@@ -31,11 +31,17 @@ The following standard connectors are provided on the base board for customer to
 ::
 
      * DC Power Jack:    Core positive, accepts +7V to +12V DC supply voltage.
-     
+
+::
+
      * USB:      Used for flash programming and debug interface; also can provide a virtual serial port connection to ADuCM3029 microcontroller.
-     
+
+::
+
      * PMOD_SPI:         12-pin SPI PMOD connector.
-     
+
+::
+
      * PMOD_I2C:         8-pin I2C PMOD connector.
 
 -  Grove Connector: 4-pin I2C Grove connector.
@@ -448,10 +454,9 @@ Schematics, PCB Layout, Bill of Materials
    -  Bill of Materials
    -  Allegro Project
    
-   |
 
 
-| *End of Document*
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_usb_revc.png
    :width: 100px

@@ -1,8 +1,6 @@
 AD-FMCOMMS2-EBZ Hardware
 ========================
 
-| 
-
 Schematics, PCB Layout, Bill of Materials
 -----------------------------------------
 

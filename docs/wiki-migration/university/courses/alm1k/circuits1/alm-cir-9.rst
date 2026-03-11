@@ -80,10 +80,7 @@ To show how a circuit responds to a range of frequencies a plot of the magnitude
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Resistors (1.0 KΩ)
-| Capacitors (0.047 µF)
-| Inductors (20 mH)
+ADALM1000 hardware module Resistors (1.0 KΩ) Capacitors (0.047 µF) Inductors (20 mH)
 
 Procedure:
 ~~~~~~~~~~
@@ -160,7 +157,6 @@ Questions:
 
 **For Further Reading:**
 
-| :doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
-| `LC filter calculator <http://circuitcalculator.com/lcfilter.htm>`_
+:doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` `LC filter calculator <http://circuitcalculator.com/lcfilter.htm>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

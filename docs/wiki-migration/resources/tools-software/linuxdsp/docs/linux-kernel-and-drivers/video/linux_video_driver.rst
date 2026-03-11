@@ -37,11 +37,11 @@ The Enhanced Parallel Peripheral Interface (EPPI) is a half-duplex, bidirectiona
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/1.jpg
    :width: 600px
 
-| 
-| Refer below pages for the detailed useage of ADI video encoders and decoders ADV7842, ADV7511, ADV7343 on ADSP-SC5XX EZ-Board.
+Refer below pages for the detailed useage of ADI video encoders and decoders ADV7842, ADV7511, ADV7343 on ADSP-SC5XX EZ-Board.
 
 -  :doc:`Video Decoder EI3 Extender Example </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/adv7842>`
 -  :doc:`Video Encoder EI3 Extender Example </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/encoder_adv7511_adv7343>`
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`  
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

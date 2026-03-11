@@ -9,11 +9,7 @@ To investigate the simple NPN emitter follower amplifier also sometimes referred
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 – 2.2KΩ Resistor ( RL )
-| 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` )
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 – 2.2KΩ Resistor ( RL ) 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` )
 
 Directions:
 -----------
@@ -62,9 +58,7 @@ From the equation we can see that in order to obtain a gain close to one we can 
 Additional Materials:
 ---------------------
 
-| 1 – 3.2KΩ Resistor ( use a 1KΩ in series with a 2.2KΩ )
-| 1 – small signal NPN transistor ( Q\ :sub:`1` 2N3904)
-| 2 – small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3` SSM2212) selected for best Vbe matching
+1 – 3.2KΩ Resistor ( use a 1KΩ in series with a 2.2KΩ ) 1 – small signal NPN transistor ( Q\ :sub:`1` 2N3904) 2 – small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3` SSM2212) selected for best Vbe matching
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f3.png
    :align: center
@@ -75,8 +69,6 @@ Additional Materials:
    Figure 4 Improved Emitter Follower
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -86,8 +78,6 @@ Hardware Setup:
 
    Figure 5 Improved Emitter Follower Breadboard Circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -111,23 +101,15 @@ Procedure:
 Emitter follower output impedance
 =================================
 
-.. _objective-1:
-
 Objective:
 ----------
 
 An important aspect of the emitter follower is to provide power or current gain. That is to say drive a lower resistance (impedance) load from a higher resistance (impedance) source. Thus it is instructive to measure the emitter follower output impedance.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 1 – 4.7KΩ Resistor
-| 1 – 10KΩ Resistor
-| 1 – small signal NPN transistor ( Q\ :sub:`1` 2N3904)
-
-.. _directions-1:
+1 – 4.7KΩ Resistor 1 – 10KΩ Resistor 1 – small signal NPN transistor ( Q\ :sub:`1` 2N3904)
 
 Directions:
 -----------
@@ -142,8 +124,6 @@ The circuit configuration below adds a resistor R\ :sub:`2` to inject a test sig
    Figure 8 Output impedance test
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
@@ -156,8 +136,6 @@ The waveform generator should be configured for a 1 KHz Sine wave with 2 volt am
 
    Figure 9 Output impedance test Breadboard Circuit
 
-
-.. _procedure-2:
 
 Procedure:
 ----------
@@ -176,18 +154,10 @@ Low Offset Follower
 
 All the follower circuits we have investigated so far have a built in offset of –V\ :sub:`BE`. The circuit shown next uses the V\ :sub:`BE` shift up of a PNP emitter follower to partially cancel the V\ :sub:`BE` shift down of an NPN emitter follower.
 
-.. _materials-2:
-
 Materials:
 ----------
 
-| 1 – 6.8KΩ Resistor
-| 1 – 10KΩ Resistor
-| 1 – 0.01uF Capacitor
-| 1 – small signal PNP transistor ( Q\ :sub:`1` 2N3906)
-| 3 – small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3`, Q\ :sub:`4` 2N3904 or SSM2212)
-
-.. _directions-2:
+1 – 6.8KΩ Resistor 1 – 10KΩ Resistor 1 – 0.01uF Capacitor 1 – small signal PNP transistor ( Q\ :sub:`1` 2N3906) 3 – small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3`, Q\ :sub:`4` 2N3904 or SSM2212)
 
 Directions:
 -----------
@@ -203,8 +173,6 @@ The breadboard connections are shown in the diagram below. The output of the fun
    Figure 11 Low offset follower
 
 
-.. _hardware-setup-3:
-
 Hardware Setup:
 ---------------
 
@@ -216,8 +184,6 @@ Hardware Setup:
 
 
 The waveform generator should be configured for a 1 KHz Sine wave with 2 volt amplitude peak-to-peak with the offset set equal to 0. Scope input channel 2 is set to 500mV / Div.
-
-.. _procedure-3:
 
 Procedure:
 ----------
@@ -252,17 +218,12 @@ Driving a Capacitor
 
 A problem suffered by the simple emitter follower can be seen when it drives a capacitive load. The rise time of the output can be relative fast as the emitter current is limited only by beta times the base current that can be supplied by the signal source driving the base. The fall time can be much slower and is limited by either the emitter resistor or current source.
 
-.. _materials-3:
-
 Materials:
 ----------
 
-| 2 – 2.2KΩ Resistor
-| 1 – 10KΩ Resistor
-| 1 – 0.01uF Capacitor
-| 3 – small signal PNP transistor (Q\ :sub:`2`, Q\ :sub:`3`, Q\ :sub:`4` 2N3906 SSM2220)
-| 3 – small signal NPN transistors ( Q\ :sub:`1`, Q\ :sub:`5`, Q\ :sub:`6` 2N2904 SSM2212)
-| The circuit shown here in figure 10 uses feedback to adjust the current in the emitter follower as the current in the load changes. The current to pull the output negative can be as much as N times (the gain of the NPN mirror) the current in PNP Q\ :sub:`3`. For best matching use the SSM2220 matched PNP pair for Q\ :sub:`3` and Q\ :sub:`4`\ and the SSM2212 matched NPN pair for Q\ :sub:`5` and Q\ :sub:`6`\ (NPN mirror gain will be 1, add a second SSM2212 in parallel with Q\ :sub:`5` to increase the mirror gain).
+2 – 2.2KΩ Resistor 1 – 10KΩ Resistor 1 – 0.01uF Capacitor 3 – small signal PNP transistor (Q\ :sub:`2`, Q\ :sub:`3`, Q\ :sub:`4` 2N3906 SSM2220) 3 – small signal NPN transistors ( Q\ :sub:`1`, Q\ :sub:`5`, Q\ :sub:`6` 2N2904 SSM2212)
+
+The circuit shown here in figure 10 uses feedback to adjust the current in the emitter follower as the current in the load changes. The current to pull the output negative can be as much as N times (the gain of the NPN mirror) the current in PNP Q\ :sub:`3`. For best matching use the SSM2220 matched PNP pair for Q\ :sub:`3` and Q\ :sub:`4`\ and the SSM2212 matched NPN pair for Q\ :sub:`5` and Q\ :sub:`6`\ (NPN mirror gain will be 1, add a second SSM2212 in parallel with Q\ :sub:`5` to increase the mirror gain).
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f10.png
    :align: center
@@ -273,8 +234,6 @@ Materials:
    Figure 16 Balanced slew rate follower
 
 
-.. _hardware-setup-4:
-
 Hardware Setup:
 ---------------
 
@@ -284,8 +243,6 @@ Hardware Setup:
 
    Figure 17 Balanced slew rate follower Breadboard Circuit
 
-
-.. _procedure-4:
 
 Procedure:
 ----------
@@ -333,40 +290,34 @@ Procedure:
 
 An alternate approach to improving the emitter follower is to reduce the effective r\ :sub:`e` through negative feedback. Reducing r\ :sub:`e` can be addressed by adding a second transistor to increase the negative feedback factor by increasing the open-loop-gain. The single transistor is replaced by a pair with 100% voltage feedback to the emitter of the first transistor. This is often referred to as a complementary feedback pair. The value of R\ :sub:`2` is crucial to good linearity, as it sets the I\ :sub:`C` of transistor Q\ :sub:`1`, and also determines its collector loading.
 
-.. _materials-4:
-
 Materials:
 ----------
 
-| 1 – 2.2KΩ Resistor
-| 1 – 10KΩ Resistor
-| 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` )
-| 1 – small signal PNP transistor ( 2N3906 Q\ :sub:`2` )
-| |image5|
+1 – 2.2KΩ Resistor 1 – 10KΩ Resistor 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` ) 1 – small signal PNP transistor ( 2N3906 Q\ :sub:`2` )
+
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f14.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    Figure 23 Complementary Feedback Pair Emitter Follower
 
 
-.. _hardware-setup-5:
-
 Hardware Setup:
 ---------------
 
-|image6|
+|image5|
 
 .. container:: centeralign
 
    Figure 24 Complementary Feedback Pair Emitter Follower Breadboard Circuit
 
 
-.. _procedure-5:
-
 Procedure:
 ----------
 
-|image7|
+|image6|
 
 .. container:: centeralign
 
@@ -375,15 +326,10 @@ Procedure:
 
 A minor addition to the complementary feedback pair emitter follower can provide a gain greater than 1. Resistor R\ :sub:`3` is added between the collector of PNP Q\ :sub:`2` and the emitter of NPN Q\ :sub:`1`. The output is now taken at the collector of Q\ :sub:`2`. The gain is approximated by the ratio of R\ :sub:`3` to R\ :sub:`1`, Gain = (R\ :sub:`1`\ +R\ :sub:`3`)/R\ :sub:`1`. In this example it is about 3.2.
 
-.. _materials-5:
-
 Materials:
 ----------
 
-| 2 – 1KΩ Resistors
-| 1 – 2,2KΩ Resistor
-| 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` )
-| 1 – small signal PNP transistor ( 2N3906 Q\ :sub:`2` )
+2 – 1KΩ Resistors 1 – 2,2KΩ Resistor 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` ) 1 – small signal PNP transistor ( 2N3906 Q\ :sub:`2` )
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f15.png
    :align: center
@@ -394,24 +340,20 @@ Materials:
    Figure 26 Follower with gain greater than 1
 
 
-.. _hardware-setup-6:
-
 Hardware Setup:
 ---------------
 
-|image8|
+|image7|
 
 .. container:: centeralign
 
    Figure 27 Follower with gain greater than 1 Breadboard Circuit
 
 
-.. _procedure-6:
-
 Procedure:
 ----------
 
-|image9|
+|image8|
 
 .. container:: centeralign
 
@@ -472,8 +414,6 @@ This is a modification of the emitter follower to limit the current output. If t
    Figure 32 Emitter Current Limit
 
 
-.. _hardware-setup-7:
-
 Hardware Setup:
 ---------------
 
@@ -484,12 +424,10 @@ Hardware Setup:
    Figure 33 Emitter Current Limit Breadboard Circuit
 
 
-.. _procedure-7:
-
 Procedure:
 ----------
 
-|image10|
+|image9|
 
 .. container:: centeralign
 
@@ -527,10 +465,8 @@ The concept in this circuit is that R\ :sub:`2` acts as current sense resistor. 
    :width: 400px
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/out_imp_test-bb.png
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/out_imp_test-wav.png
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f14.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/compl_fb_flw-bb.png
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/compl_fb_flw-wav.png
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/flw_gain_gr_one-bb.png
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/flw_gain_gr_one-wav.png
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/emit_curr_limit-wav.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/compl_fb_flw-bb.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/compl_fb_flw-wav.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/flw_gain_gr_one-bb.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/flw_gain_gr_one-wav.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/emit_curr_limit-wav.png

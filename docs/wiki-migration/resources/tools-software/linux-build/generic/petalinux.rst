@@ -34,20 +34,17 @@ You should see the board start-up messages as follows:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
 
    .. raw:: html
 
-      <details><summary>Boot log (click to expand)</summary>
+      <details><summary>Boot log (click to expand)
 
    ::
    
-      Xilinx Zynq MP First Stage Boot Loader 
+      Xilinx Zynq MP First Stage Boot Loader
       Release 2018.3   Apr 16 2019  -  10:56:27
       NOTICE:  ATF running on XCZU9EG/silicon v4/RTL5.1 at 0xfffea000
       NOTICE:  BL31: Secure code at 0x0
@@ -65,7 +62,7 @@ You should see the board start-up messages as follows:
       Chip ID:        zu9eg
       MMC:   mmc@ff170000: 0 (SD)
       SF: Detected n25q512a with page size 512 Bytes, erase size 128 KiB, total 128 MiB
-      *** Warning - bad CRC, using default environment
+      ** Warning - bad CRC, using default environment
    
       In:    serial@ff000000
       Out:   serial@ff000000
@@ -78,7 +75,7 @@ You should see the board start-up messages as follows:
       U-BOOT for zynqmp-zcu102-fmcomms5
    
       ethernet@ff0e0000 Waiting for PHY auto negotiation to complete......................................... TIMEOUT !
-      Hit any key to stop autoboot:  0 
+      Hit any key to stop autoboot:  0
       reading uEnv.txt
       381 bytes read in 11 ms (33.2 KiB/s)
       Loaded environment from uEnv.txt
@@ -89,7 +86,7 @@ You should see the board start-up messages as follows:
       Device: mmc@ff170000
       Manufacturer ID: 3
       OEM: 5344
-      Name: SU08G 
+      Name: SU08G
       Tran Speed: 50000000
       Rd Block Len: 512
       SD version 3.0
@@ -433,7 +430,7 @@ You should see the board start-up messages as follows:
       [    1.786735] Btrfs loaded, crc32c=crc32c-generic
       [    1.791029] ff000000.serial: ttyPS0 at MMIO 0xff000000 (irq = 49, base_baud = 6249375) is a xuartps
       [    1.947009] mmc0: new high speed SDHC card at address e624
-      [    1.954657] mmcblk0: mmc0:e624 SU08G 7.40 GiB 
+      [    1.954657] mmcblk0: mmc0:e624 SU08G 7.40 GiB
       [    1.962249]  mmcblk0: p1 p2 p3
       [    3.421883] console [ttyPS0] enabled
       [    3.425977] ff010000.serial: ttyPS1 at MMIO 0xff010000 (irq = 50, base_baud = 6249375) is a xuartps
@@ -455,7 +452,7 @@ You should see the board start-up messages as follows:
       [    4.636943] zynqmp-display fd4a0000.zynqmp-display: ZynqMP DisplayPort Subsystem driver probed
       [    4.645873] xilinx-psgtr fd400000.zynqmp_phy: Lane:3 type:3 protocol:2 pll_locked:yes
       [    4.663811] ahci-ceva fd0c0000.ahci: AHCI 0001.0301 32 slots 2 ports 6 Gbps 0x3 impl platform mode
-      [    4.672767] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst 
+      [    4.672767] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst
       [    4.683052] scsi host0: ahci-ceva
       [    4.686540] scsi host1: ahci-ceva
       [    4.689953] ata1: SATA max UDMA/133 mmio [mem 0xfd0c0000-0xfd0c1fff] port 0x100 irq 45

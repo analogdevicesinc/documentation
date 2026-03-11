@@ -23,7 +23,7 @@ The equation for calculating Vbus is: :math:`V = (ADCvalue-2^{ADCbits-1}) \times
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/vbus_chain.png
    :width: 800px
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON2-EBZ#lv_board
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/navigation AD-FMCMOTCON2-EBZ#lv_board
    :alt: Low Voltage Drive Board#..:\|Overview#dyno|Dynamometer Drive system
 
 .. |paper| image:: http://www.analog.com/media/en/reference-design-documentation/reference-designs/CN0185.pdf

@@ -3,15 +3,21 @@
 Pulse Generator
 ===============
 
-| 
-| |pulsegen.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/pulsegen.png
+   :alt: pulsegen.png
 
 Description
 -----------
 
-| The Pulse Generator block generates pulse at different frequencies with a configurable duty cycle.
-| ===== Usage ===== This block has checkbox to enabled or disabled the algorithm. Check the box to enable this algorithm. It has the text fields for frequency and duty cycle to generate the pulse at different frequencies with different "ON" and "OFF" time of the pulse.It has the radio button to round the coefficients.
-| ===== Targets Supported =====
+The Pulse Generator block generates pulse at different frequencies with a configurable duty cycle.
+
+Usage
+-----
+
+This block has checkbox to enabled or disabled the algorithm. Check the box to enable this algorithm. It has the text fields for frequency and duty cycle to generate the pulse at different frequencies with different "ON" and "OFF" time of the pulse.It has the radio button to round the coefficients.
+
+Targets Supported
+-----------------
 
 +-----------------+------------+------------------+---------------+------------------+
 | Name            | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -33,7 +39,7 @@ Name    Type    Description
 Output0 Control Output channel 0
 ======= ======= ================
 
-|
+
 
 | ===== Configurable Parameters =====
 
@@ -71,7 +77,4 @@ Output0 Control Output channel 0
 -  Frequency = fs/FS (not rounded)
 -  DutyCycle = DutyCylce/100
 
-| 
-| Where fs is frequency and FS is the sampling rate
-
-.. |pulsegen.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/pulsegen.png
+Where fs is frequency and FS is the sampling rate

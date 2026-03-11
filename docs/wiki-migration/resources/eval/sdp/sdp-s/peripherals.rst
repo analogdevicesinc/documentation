@@ -6,8 +6,7 @@ The SDP-S’s peripherals are a subset of the SDP-B's peripherals. This document
 TWI/I2C : TWO WIRE INTERFACE
 ----------------------------
 
-| The TWI / I\ :sup:`2`\ C bus is fully compatible with the widely used I\ :sup:`2`\ C bus standard as defined by Philips I\ :sup:`2`\ C Bus Specification version 2.1.
-| Pull up Resistors are required on both the SDA and SCL lines, so the lines will idle high at all times.
+| The TWI / I\ :sup:`2`\ C bus is fully compatible with the widely used I\ :sup:`2`\ C bus standard as defined by Philips I\ :sup:`2`\ C Bus Specification version 2.1. Pull up Resistors are required on both the SDA and SCL lines, so the lines will idle high at all times.
 | Data Rates :up to 100K bits/second (Standard Mode)and up to 400K bits/second (Fast Mode)data rates
 
 For more details on TWI/I\ :sup:`2`\ C, click :doc:`here </wiki-migration/resources/eval/sdp/sdp-s/peripherals/twi>`!

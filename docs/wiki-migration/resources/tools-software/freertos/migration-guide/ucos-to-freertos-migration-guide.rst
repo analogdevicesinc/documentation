@@ -165,7 +165,7 @@ The folder structure for both µC/OS-III and FreeRTOS are shown below in Table 1
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 1** Source Code Directory Structures</fc>
+   **Table 1** Source Code Directory Structures
 
 
 
@@ -187,7 +187,6 @@ Like the µC/OS-III, the directory structure of FreeRTOS includes some files tha
 | **``Section (2-4)``** | **FreeRTOS Portable Code** ``proccessor-dependent, SHARC``     | Support for the ADSP-215XX / ADSP-SC5xx ``SHARC`` Core                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 +-----------------------+----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
---------------
 
 Interrupt Vector Table
 ----------------------
@@ -203,21 +202,21 @@ This startup code is compiler-dependent and varies widely depending on the archi
 
 ADI provides the respective ``Interrupt Handler Vector Table`` for Processor ``BLACKFIN``, ``CORTEX-A5`` and ``SHARC`` on µC/OS-III and FreeRTOS listed in the following Table 2.
 
-+------------------+----------------+------------------------+--------------------------------------------------------------------------------------------+
-| IRQ Handler Name | Processor Name | µC/OS-III              | FreeRTOS                                                                                   |
-+==================+================+========================+============================================================================================+
-| **``PendSV``**   | ``CORTEX-A5``  | OS_CPU_PendSVHandler() | <fc #4682b4>FreeRTOS_IRQ_Handler()</fc> **[ in portASM.s ]**                               |
-+------------------+----------------+------------------------+--------------------------------------------------------------------------------------------+
-|                  | ``BACKFIN``    |                        | <fc #dda0dd>_xPortIVG14Handler()</fc> **[ in portASM.asm ]**                               |
-+------------------+----------------+------------------------+--------------------------------------------------------------------------------------------+
-|                  | ``SHARC``      |                        | <fc #6495ed>xPortSFT31Handler()</fc> \*\* [ in portASM.asm ]\ **\| \|**\ ``SysTick``\ \*\* |
-+------------------+----------------+------------------------+--------------------------------------------------------------------------------------------+
-|                  |                |                        |                                                                                            |
-+------------------+----------------+------------------------+--------------------------------------------------------------------------------------------+
++------------------+----------------+------------------------+---------------------------------------------------------------------------+
+| IRQ Handler Name | Processor Name | µC/OS-III              | FreeRTOS                                                                  |
++==================+================+========================+===========================================================================+
+| **``PendSV``**   | ``CORTEX-A5``  | OS_CPU_PendSVHandler() | FreeRTOS_IRQ_Handler() **[ in portASM.s ]**                               |
++------------------+----------------+------------------------+---------------------------------------------------------------------------+
+|                  | ``BACKFIN``    |                        | \_xPortIVG14Handler() **[ in portASM.asm ]**                              |
++------------------+----------------+------------------------+---------------------------------------------------------------------------+
+|                  | ``SHARC``      |                        | xPortSFT31Handler() \*\* [ in portASM.asm ]\ **\| \|**``SysTick``\ *\* |
++------------------+----------------+------------------------+---------------------------------------------------------------------------+
+|                  |                |                        |                                                                           |
++------------------+----------------+------------------------+---------------------------------------------------------------------------+
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 2** Cortex-A5/Blackfin/SHARC IRQ Handlers</fc>
+   **Table 2** Cortex-A5/Blackfin/SHARC IRQ Handlers
 
 
 
@@ -291,7 +290,7 @@ Note That the ``configMAX_SYSCALL_INTERRUPT_PRIORITY`` in the FreeRTOS configura
       {
           // Storage for SR register
           CPU_SR_ALLOC();
-        
+   
           // Create a critical section
           CPU_CRITICAL_ENTER();
               :
@@ -300,7 +299,7 @@ Note That the ``configMAX_SYSCALL_INTERRUPT_PRIORITY`` in the FreeRTOS configura
               :
               :
               :  // ... from interrupts or concurrent access.
-              :     
+              :
               :
           // Exit the critical section
           CPU_CRITICAL_EXIT();
@@ -323,7 +322,7 @@ Note That the ``configMAX_SYSCALL_INTERRUPT_PRIORITY`` in the FreeRTOS configura
           /** Exit the critical section **/
           taskEXIT_CRITICAL();
       }
-       
+   
       void MyFunction_2_FromISR (void)   /** Called from ISR **/
       {
       UBaseType_t uxSavedIrqStatus;
@@ -339,7 +338,7 @@ Note That the ``configMAX_SYSCALL_INTERRUPT_PRIORITY`` in the FreeRTOS configura
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 3** Critical Sections</fc>
+   **Table 3** Critical Sections
 
 
 
@@ -418,16 +417,16 @@ Here is an example in using the Queue Send from an interrupt in µC/OS-III\ ``(l
       {
       char cIn;
       BaseType_t xHigherPrioTaskWoken;
-       
-       
+   
+   
           xHigherPrioTaskWoken = pdFALSE;
-           
+   
           /* Handle the interrupt */
            xQueueSendFromISR(
                               xRxQueue,
                               &cIn,
                               &xHigherPrioTaskWoken);
-           
+   
           if (xHigherPrioTaskWoken)
           {
               taskYIELD_FROM_ISR();
@@ -439,7 +438,7 @@ Here is an example in using the Queue Send from an interrupt in µC/OS-III\ ``(l
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 4** Kernel Aware ISRs</fc>
+   **Table 4** Kernel Aware ISRs
 
 
 
@@ -452,7 +451,7 @@ Generally, both for µC/OS-III and FreeRTOS, it is considered best practice to k
    
    .. container:: Centeralign
 
-      <fc #4682b4>**Diagram \*\* </fc>
+      **Diagram**
 
    
    .. image:: https://wiki.analog.com/_media/resources/tools-software/freertos/migration-guide/completing_interrupt_processing_in_a_high_priority_task.jpg
@@ -461,7 +460,7 @@ Generally, both for µC/OS-III and FreeRTOS, it is considered best practice to k
    
    .. container:: Centeralign
 
-      <fc #4682b4>\ **Figure 1** Deferred Interrupt Processing</fc>
+      **Figure 1** Deferred Interrupt Processing
 
    
    The above diagram showing how the deferred interrupt process, which to trigger a high-priority task and complete interrupt processing in this high-priority task.
@@ -533,7 +532,7 @@ Typically, before the scheduler has been started, main() (or a function called b
       OS_ERR err;
           // Initialize µC/OS-III
           OSInit(&err);
-        
+   
           // Create tasks and other
           // kernel objects
           CreateTasksFun();
@@ -577,7 +576,7 @@ Typically, before the scheduler has been started, main() (or a function called b
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 5** Starting the Kernels </fc>
+   **Table 5** Starting the Kernels
 
 
 
@@ -611,7 +610,7 @@ In µC/OS-III, low priority numbers denote high priority tasks. On the other han
    
    .. container:: Centeralign
 
-      <fc #4682b4>\ **Table 6** Task Priority Levels </fc>
+      **Table 6** Task Priority Levels
 
    
 
@@ -666,13 +665,13 @@ In both µC/OS-III and FreeRTOS , tasks are written as an infinite loop function
 .. container:: col2
 
    
-   =============================== ================== ==================
-   Supported feature               µC/OS-III          FreeRTOS
-   =============================== ================== ==================
-   Passing an argument to the task <fc #4682b4>✔</fc> <fc #4682b4>✔</fc>
-   Static RTOS memory Allocation   <fc #4682b4>✔</fc> <fc #4682b4>✔</fc>
-   Dynamic RTOS memory Allocation  <fc #ff0000>✘</fc> <fc #4682b4>✔</fc>
-   =============================== ================== ==================
+   =============================== ========= ========
+   Supported feature               µC/OS-III FreeRTOS
+   =============================== ========= ========
+   Passing an argument to the task ✔         ✔
+   Static RTOS memory Allocation   ✔         ✔
+   Dynamic RTOS memory Allocation  ✘         ✔
+   =============================== ========= ========
    
    This means that any of the kernel objects in your µC/OS-III project were created statically, when migrating them to FreeRTOS with the similar API functions, **two methods** of allocating them from the Heap ``statically`` or ``dynamically`` can be used in FreeRTOS.
    
@@ -720,10 +719,10 @@ For example, to migrate your tasks, locate in your project all the places where 
    
       #define MY_TASK_PRIORITY 5
       #define MY_TASK_STK_SIZE 200
-       
+   
       OS_TCB MyTaskTCB;
       CPU_STK MyTaskStk[MY_TASK_STK_SIZE];
-       
+   
       void MyTaskCode (void *p_arg)
       {
           while (DEF_ON) {
@@ -731,12 +730,12 @@ For example, to migrate your tasks, locate in your project all the places where 
           // Task code goes here
           }
       }
-       
+   
       void MyInitFunction (void)
       {
           OS_ERR err;
-          
-          // Create a user application task 
+   
+          // Create a user application task
           OSTaskCreate (
               &MyTaskTCB,
               "Task Name Here",
@@ -752,7 +751,7 @@ For example, to migrate your tasks, locate in your project all the places where 
               OS_OPT_TASK_STK_CHK +
               OS_OPT_TASK_STK_CLR,
               &err);
-              
+   
               // Check “err”
               :
               :
@@ -772,10 +771,10 @@ For example, to migrate your tasks, locate in your project all the places where 
    
       #define MY_TASK_PRIORITY 5
       #define MY_TASK_STK_SIZE 200
-       
+   
       StaticTask_t MyTaskTCB;
       StackType_t MyTaskStk[MY_TASK_STK_SIZE];
-       
+   
       void MyTaskCode (void *pvParameters)
       {
           for (;;) {
@@ -783,34 +782,34 @@ For example, to migrate your tasks, locate in your project all the places where 
           /* Task code goes here */
           }
       }
-       
+   
       void MyInitFunction(void)
       {
       BaseType_t xReturned;
       TaskHandle_t xHandle = NULL;
-           
+   
           /** Method 1 to Create the task static **/
           xHandle = xTaskCreateStatic(
-                          MyTaskCode,        
+                          MyTaskCode,
                           "Task Name Here",
                           MY_TASK_STACK_SIZE,
-                          ( void * ) 1,      
-                          MY_TASK_PRIORITY,  
-                          MyTaskStk,         
-                          &MyTaskTCB);       
-       
+                          ( void * ) 1,
+                          MY_TASK_PRIORITY,
+                          MyTaskStk,
+                          &MyTaskTCB);
+   
           /** Method 2 to Create the task **/
           xReturned = xTaskCreate(
-                          MyTaskCode,        
-                          "Task Name Here",  
+                          MyTaskCode,
+                          "Task Name Here",
                           MY_TASK_STACK_SIZE,
-                          ( void * ) 1,      
-                          MY_TASK_PRIORITY,  
-                          &xHandle );  
+                          ( void * ) 1,
+                          MY_TASK_PRIORITY,
+                          &xHandle );
           if( xReturned == pdPASS )
           {
               vTaskDelete( xHandle );
-          }  
+          }
       }
    
 
@@ -818,7 +817,7 @@ For example, to migrate your tasks, locate in your project all the places where 
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 7** Task Creation </fc>
+   **Table 7** Task Creation
 
 
 
@@ -836,7 +835,7 @@ Just like in µC/OS-III, you can delay a task with FreeRTOS for a certain number
 .. code:: c++
 
    OSTimeDly()
-   OSTimeDlyHMSM()             
+   OSTimeDlyHMSM()
    OSTimeDlyResume()
 
 Typically, in µC/OS-III, the Task delay modes (Relative, periodic or absolute) can be selected by inputting the parameter opt of ``OSTimeDly()`` or ``OSTimeDlyHMSM()``.
@@ -874,14 +873,14 @@ The following example shows a task that toggles a LED every 500ms. The 500ms del
       {
           OS_ERR err;
           const OS_TICK delay = 500;  // 500ms Delay.
-       
+   
           while (DEF_ON) {
               BSP_TOGGLE_LED(LED2);   // Toggle LED2.
-       
+   
               OSTimeDly(delay,        // Block task for 500ms.
                         OS_OPT_TIME_DLY,
                         &err);
-       
+   
               if (err != OS_ERR_NONE) {
                  // Handle the error
               }
@@ -901,17 +900,17 @@ The following example shows a task that toggles a LED every 500ms. The 500ms del
       {
       /* Block for 500ms. */
       const TickType_t xDelay = 500 / portTICK_PERIOD_MS;
-       
+   
           for (;;)
           {
               /* Simply toggle the LED every 500ms,
         * blocking between each toggle.
                */
               BSP_TOGGLE_LED(LED2);
-               
+   
               /* Block task for 500ms. */
               vTaskDelay( delay );
-          
+   
           }
       }
    
@@ -920,7 +919,7 @@ The following example shows a task that toggles a LED every 500ms. The 500ms del
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 8** Task Delay - Relative </fc>
+   **Table 8** Task Delay - Relative
 
 
 
@@ -937,19 +936,19 @@ If you want to delay a task for an absolute time, then you can use the API vTask
       {
           OS_ERR err;
           const OS_TICK period = 100;
-       
+   
           while (DEF_ON) {
               // Toggle LED2.
               BSP_TOGGLE_LED(LED2);
-       
+   
               // Wait for the next cycle.
               OSTimeDly(period,
                         OS_OPT_TIME_PERIODIC,
                         &err);
-       
+   
               if (err != OS_ERR_NONE) {
                   // Handle the error
-              
+   
               }
           }
       }
@@ -972,15 +971,15 @@ If you want to delay a task for an absolute time, then you can use the API vTask
    
           /* Initialise "xLastWakeTime" with current time. */
           xLastWakeTime = xTaskGetTickCount();
-       
+   
           for( ;; )
           {
              /* Toggle LED2.*/
              BSP_TOGGLE_LED(LED2);
-               
+   
              /* Wait for the next cycle.*/
              vTaskDelayUntil( &xLastWakeTime, xFrequency );
-             
+   
              /* Perform action here.*/
           }
       }
@@ -990,7 +989,7 @@ If you want to delay a task for an absolute time, then you can use the API vTask
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 9** Task Delay - Periodic </fc>
+   **Table 9** Task Delay - Periodic
 
 
 
@@ -1043,7 +1042,7 @@ In FreeRTOS, the corresponding APIs called with/without ISR for controlling task
    
       void main( void )
       {
-          // Create a user application task 
+          // Create a user application task
           OSTaskCreate (
               &Task_1_TCB,
               "Task_1",
@@ -1059,9 +1058,9 @@ In FreeRTOS, the corresponding APIs called with/without ISR for controlling task
         (void)&p_arg;
         while (DEF_ON) {
             // ...
-            
+   
             /* Suspend current task Task_1*/
-            OSTaskSuspend((OS_TCB *)0, &err);       
+            OSTaskSuspend((OS_TCB *)0, &err);
    
             /* Check “err” */
             // ...
@@ -1071,11 +1070,11 @@ In FreeRTOS, the corresponding APIs called with/without ISR for controlling task
       void Task_2 (void *p_arg)
       {
         OS_ERR err;
-        
+   
         (void)&p_arg;
         while (DEF_ON) {
             // ...
-            
+   
             /* Resume suspended task Task_1 */
             OSTaskResume(&Task_1_TCB, &err);
    
@@ -1114,12 +1113,12 @@ In FreeRTOS, the corresponding APIs called with/without ISR for controlling task
           for( ; ; )
           {
              // ...
-             
+   
              // Suspend current task vTask_1
-             
+   
              /* The created task will not run during
         * this period, unless another task calls
-        * vTaskResume( xHandleTask_1 ). */ 
+        * vTaskResume( xHandleTask_1 ). */
              vTaskSuspend( NULL );
           }
       }
@@ -1130,14 +1129,14 @@ In FreeRTOS, the corresponding APIs called with/without ISR for controlling task
           for( ; ; )
           {
              // ...
-             
+   
              // Resume the suspended task vTask_1.
              vTaskResume( xHandleTask_1 );
-             
+   
              /* The created task will once again get
         * microcontroller processing time in accordance
         * with its priority within the system. */
-             
+   
              // ...
           }
       }
@@ -1147,7 +1146,7 @@ In FreeRTOS, the corresponding APIs called with/without ISR for controlling task
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 10** Task Suspend </fc>
+   **Table 10** Task Suspend
 
 
 
@@ -1216,7 +1215,7 @@ Both µC/OS-III and FreeRTOS allow a task to retain control of the CPU and suspe
             /* Prevent other tasks to run */
             OSSchedLock(&err);
             /* Check “err” */
-            
+   
             /* Code protected from context switch */
                       :
                       :
@@ -1243,19 +1242,19 @@ Both µC/OS-III and FreeRTOS allow a task to retain control of the CPU and suspe
           for( ;; )
           {
             // Task code goes here.
-            
+   
             // ...
-            
+   
             // Prevent the RTOS kernel swapping out the task.
             vTaskSuspendAll();
    
-            /* Code protected from context switch 
+            /* Code protected from context switch
         * During this time interrupts will still
         * operate and the RTOS kernel tick count
         * will be maintained. */
-            
+   
              // ...
-             
+   
              // Operation is complete. Restart the RTOS kernel.
              xTaskResumeAll();
            }
@@ -1266,7 +1265,7 @@ Both µC/OS-III and FreeRTOS allow a task to retain control of the CPU and suspe
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 11** Scheduler Suspend </fc>
+   **Table 11** Scheduler Suspend
 
 
 
@@ -1284,19 +1283,19 @@ Semaphores and Mutexes
 
 Both of the µC/OS-III and FreeRTOS, the **Semaphores and Mutexes** APIs are shared and visible to all tasks, they can be divided into 3 types of semaphores including ``Binary Semaphore``, ``Counting Semaphore`` and ``Mutex``, FreeRTOS also provides the APIs of ``Recursive Mutex``.
 
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| type       | name                   | µC/OS-III                                                                                                                                                                                                                                              | FreeRTOS                                                                                              |
-+============+========================+========================================================================================================================================================================================================================================================+=======================================================================================================+
-| Semaphores | ``Binary Semaphore``   | Binary and Counting semaphores are implemented through a single set of API functions that start with the prefix ``OSSem_XXX()``, and via the argument ``<fc #4682b4>OS_SEM_CTR</fc> cnt`` to distinguish this is called a binary or counting semaphore | FreeRTOS uses the APIs with ``xSemaphoreCreateBinary_XXX()`` to create the Binary Semaphores.         |
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-|            | ``Counting Semaphore`` |                                                                                                                                                                                                                                                        | FreeRTOS uses the APIs with the ``xSemaphoreCreateCounting_XXX()`` to create the Counting Semaphores. |
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| Mutexes    | ``Mutex``              | mutexes are implemented through a separate set of API functions that start with the prefix ``OSMutex_xxx()``                                                                                                                                           | FreeRTOS uses the APIs with ``xSemaphoreCreateMutex_XXX()`` to create the Mutexes.                    |
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-|            | ``Recursive Mutex``    | <fc #ff0000>✘</fc>                                                                                                                                                                                                                                     | FreeRTOS use the APIs with ``xSemaphoreCreateRecursiveMutex_XXX()`` to create the Recursive Mutexes   |
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-|            |                        |                                                                                                                                                                                                                                                        |                                                                                                       |
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
++------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| type       | name                   | µC/OS-III                                                                                                                                                                                                                             | FreeRTOS                                                                                              |
++============+========================+=======================================================================================================================================================================================================================================+=======================================================================================================+
+| Semaphores | ``Binary Semaphore``   | Binary and Counting semaphores are implemented through a single set of API functions that start with the prefix ``OSSem_XXX()``, and via the argument ``OS_SEM_CTR cnt`` to distinguish this is called a binary or counting semaphore | FreeRTOS uses the APIs with ``xSemaphoreCreateBinary_XXX()`` to create the Binary Semaphores.         |
++------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+|            | ``Counting Semaphore`` |                                                                                                                                                                                                                                       | FreeRTOS uses the APIs with the ``xSemaphoreCreateCounting_XXX()`` to create the Counting Semaphores. |
++------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| Mutexes    | ``Mutex``              | mutexes are implemented through a separate set of API functions that start with the prefix ``OSMutex_xxx()``                                                                                                                          | FreeRTOS uses the APIs with ``xSemaphoreCreateMutex_XXX()`` to create the Mutexes.                    |
++------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+|            | ``Recursive Mutex``    | ✘                                                                                                                                                                                                                                     | FreeRTOS use the APIs with ``xSemaphoreCreateRecursiveMutex_XXX()`` to create the Recursive Mutexes   |
++------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+|            |                        |                                                                                                                                                                                                                                       |                                                                                                       |
++------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 **µC/OS-III**
 
@@ -1305,17 +1304,17 @@ Kernel Semaphore/Mutex APIs in µC/OS-III
 .. code:: c++
 
    /*Kernel Semaphore API*/
-   OSSemCreate()       
-   OSSemDel()         
-   OSSemPend()         
-   OSSemPendAbort()   
-   OSSemPost()  
+   OSSemCreate()
+   OSSemDel()
+   OSSemPend()
+   OSSemPendAbort()
+   OSSemPost()
    OSSemSet()
    /*Kernel Mutex API*/
-   OSMutexCreate()     
-   OSMutexDel()       
-   OSMutexPend()      
-   OSMutexPendAbort()  
+   OSMutexCreate()
+   OSMutexDel()
+   OSMutexPend()
+   OSMutexPendAbort()
    OSMutexPost()
 
 **FreeRTOS**
@@ -1331,10 +1330,10 @@ Kernel Semaphore/Mutex APIs in FreeRTOS
    xSemaphoreCreateCounting()
    xSemaphoreCreateCountingStatic()
    /*Mutex Create*/
-   xSemaphoreCreateMutex()            
-   xSemaphoreCreateMutexStatic()  
+   xSemaphoreCreateMutex()
+   xSemaphoreCreateMutexStatic()
    /*Recursive Mutex Create.*/
-   xSemaphoreCreateRecursiveMutex()     
+   xSemaphoreCreateRecursiveMutex()
    xSemaphoreCreateRecursiveMutexStatic()
    /*All Semaphores/Mutexes share the same delete function.*/
    vSemaphoreDelete()
@@ -1348,7 +1347,7 @@ Kernel Semaphore/Mutex APIs in FreeRTOS
    xSemaphoreTakeRecursive()
    xSemaphoreGiveRecursive()
    /*Others.*/
-   xSemaphoreGetMutexHolder() 
+   xSemaphoreGetMutexHolder()
    uxSemaphoreGetCount()
 
 In FreeRTOS, ``Binary Semaphore``, ``Counting Semaphore``, ``Mutex`` and ``Recursive Mutex`` all share the same API functions except for the ones to create the actual objects. More about the `Semaphore/Mutexes <https://www.freertos.org/a00113.html>`_ in FreeRTOS can be found at the Section of Semaphore/Mutexes of API Reference.
@@ -1365,7 +1364,7 @@ The following example shows how to protect a shared resource with a mutex.
    .. code:: c++
    
       OS_MUTEX MyMutex;
-       
+   
       void MyInitFunction( void )
       {
           OS_ERR err;
@@ -1373,8 +1372,8 @@ The following example shows how to protect a shared resource with a mutex.
                         "Mutex Name Here",
                         &err);
       }
-       
-       
+   
+   
       void MyTaskCode( void *p_arg )
       {
           OS_ERR err;
@@ -1386,7 +1385,7 @@ The following example shows how to protect a shared resource with a mutex.
                           OS_OPT_PEND_BLOCKING,
                           &ts,
                           &err);
-                       
+   
               if (err == OS_ERR_NONE) {
                   // We now have the mutex and can
                   // access the shared resource.
@@ -1413,7 +1412,7 @@ The following example shows how to protect a shared resource with a mutex.
    .. code:: c++
    
       SemaphoreHandle_t MyMutex = NULL;
-       
+   
       void MyInitFunction( void )
       {
           MyMutex = xSemaphoreCreateMutex();
@@ -1422,7 +1421,7 @@ The following example shows how to protect a shared resource with a mutex.
               /* Create the Semaphore Error.*/
           }
       }
-       
+   
       void MyTaskCode( void *pvParameters )
       {
           for ( ;; )
@@ -1456,7 +1455,7 @@ The following example shows how to protect a shared resource with a mutex.
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 12** Protecting a Shared Resource with a Mutex </fc>
+   **Table 12** Protecting a Shared Resource with a Mutex
 
 
 
@@ -1508,15 +1507,13 @@ Both kernels support inter-task communication, which allows a task or ISR to com
 .. container:: column
 
    
-   +--------------------------------------------+--------------------+--------------------+
-   | type                                       | µC/OS-III          | FreeRTOS           |
-   +============================================+====================+====================+
-   | ``Send/Recv Data from a Task``             | <fc #4682b4>✔</fc> | <fc #4682b4>✔</fc> |
-   +--------------------------------------------+--------------------+--------------------+
-   | ``Send/Recv Data from an ISR``             | <fc #4682b4>✔</fc> | <fc #4682b4>✔</fc> |
-   +--------------------------------------------+--------------------+--------------------+
-   | ``No-need-remain (in scope) Data sending`` | <fc #ff0000>✘</fc> | <fc #4682b4>✔</fc> |
-   +--------------------------------------------+--------------------+--------------------+
+   ========================================== ========= ========
+   type                                       µC/OS-III FreeRTOS
+   ========================================== ========= ========
+   ``Send/Recv Data from a Task``             ✔         ✔
+   ``Send/Recv Data from an ISR``             ✔         ✔
+   ``No-need-remain (in scope) Data sending`` ✘         ✔
+   ========================================== ========= ========
    
 
 
@@ -1621,14 +1618,14 @@ For a more detailed description of each of the arguments/usage for the above Fre
       OS_Q My_UART_Q;
       OS_MEM My_UART_MemPartition;
       char My_UART_Buffer[BUFFER_SIZE];
-       
+   
       void My_UART_RxTaskCode (void *p_arg)
       {
           OS_ERR err;
           void *p_msg;
           OS_MSG_SIZE msg_size;
           CPU_TS ts;
-        
+   
           // Create a memory pool of 128 bytes
           OSMemCreate(&My_UART_MemPartition,
                       "UART Memory Pool",
@@ -1639,7 +1636,7 @@ For a more detailed description of each of the arguments/usage for the above Fre
           if (err != OS_ERR_NONE) {
               // Handle the error
           }
-        
+   
           // Create a Q of 128 pointers
           OSQCreate(&My_UART_Q,
                     "Queue name here",
@@ -1650,7 +1647,7 @@ For a more detailed description of each of the arguments/usage for the above Fre
           } else {
               // Enable UART interrupts
           }
-        
+   
           while (1) {
               // Receive a message from the queue.
               // Block for 10-ticks if queue is empty.
@@ -1682,14 +1679,14 @@ For a more detailed description of each of the arguments/usage for the above Fre
    .. code:: c++
    
       #define BUFFER_SIZE 128
-       
+   
       QueueHandle_t My_UART_Q;
-       
-       
+   
+   
       void My_UART_RxTaskCode (void *pvParameters)
       {
       char *pxRxedMessage;
-           
+   
           /* Create a Q capable of containing 128 bytes */
           My_UART_Q = xQueueCreate( BUFFER_SIZE,
                                     1 );
@@ -1704,17 +1701,17 @@ For a more detailed description of each of the arguments/usage for the above Fre
                    .
                    .
           }
-           
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
           for ( ;; )
           {
               /* Receive a message from the queue.*/
@@ -1741,7 +1738,7 @@ For a more detailed description of each of the arguments/usage for the above Fre
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 13-1** Inter-task Communication - Tasks </fc>
+   **Table 13-1** Inter-task Communication - Tasks
 
 
 
@@ -1753,7 +1750,7 @@ For a more detailed description of each of the arguments/usage for the above Fre
    .. code:: c++
    
       char *My_UART_RxDataPtr;
-       
+   
       void My_UART_IRQ_Handler(void)
       {
           OS_ERR err;
@@ -1762,13 +1759,13 @@ For a more detailed description of each of the arguments/usage for the above Fre
           CPU_SR_ALLOC();
           // Protect a critical section
           CPU_CRITICAL_ENTER();
-           
+   
           // Make the kernel aware that
           // the interrupt has started
           OSIntEnter();
-           
+   
           CPU_CRITICAL_EXIT();
-           
+   
           // Loop until the buffer is empty
           do
           {
@@ -1776,20 +1773,20 @@ For a more detailed description of each of the arguments/usage for the above Fre
               rx_data = UART_RX_REGISTER;
               My_UART_RxDataPtr =
                   (char *)OSMemGet(&My_UART_MemPartition, &err);
-               
+   
               *My_UART_RxDataPtr++ = rx_data;
-               
+   
               // Post byte to task for processing
               OSQPost((OS_Q *)&My_UART_Q,
                       (void *)My_UART_RxDataPtr,
                       (OS_MSG_SIZE)1,
                       (OS_OPT )OS_OPT_POST_FIFO,
                       (OS_ERR *)&err);
-               
+   
               // Don't point to sent buffer
               My_UART_RxDataPtr = NULL;
           } while (UART_RX_BUFFER_COUNT);
-           
+   
           // Make the kernel aware that
           // the interrupt has ended
           OSIntExit();
@@ -1805,7 +1802,7 @@ For a more detailed description of each of the arguments/usage for the above Fre
    .. code:: c++
    
       QueueHandle_t xQueue;
-       
+   
       void My_UART_IRQ_Handler(void)
       {
       char rx_data;
@@ -1817,12 +1814,12 @@ For a more detailed description of each of the arguments/usage for the above Fre
           {
             // Obtain a byte from the UART.
             rx_data = UART_RX_REGISTER;
-       
+   
             // Post byte to task for processing.
             xQueueSendToBackFromISR(xQueue,
                                     &rx_data,
                                     &xHigherPriorityTaskWoken);
-                                        
+   
             //A character was received and output it now.
             vOutputCharacter( rx_data );
                  :
@@ -1834,7 +1831,7 @@ For a more detailed description of each of the arguments/usage for the above Fre
             No matter how many times this loop iterates only
             one task will be woken.*/
           } while (UART_RX_BUFFER_COUNT);
-        
+   
           /* Now we can switch context if necessary */
           if ( xHigherPriorityTaskWoken != pdFALSE )
           {
@@ -1842,7 +1839,7 @@ For a more detailed description of each of the arguments/usage for the above Fre
             different task. NOTE:  How this is done depends on
             the port you are using.  Check the documentation and
             examples for your port. */
-       
+   
             taskYIELD_FROM_ISR();
           }
       }
@@ -1852,7 +1849,7 @@ For a more detailed description of each of the arguments/usage for the above Fre
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 13-2** Inter-task Communication - ISRs </fc>
+   **Table 13-2** Inter-task Communication - ISRs
 
 
 
@@ -1926,7 +1923,7 @@ Stream/Message buffers are an RTOS task to RTOS task, and interrupt to task comm
       xStreamBufferSetTriggerLevel()
       xStreamBufferReset()
       xStreamBufferIsEmpty()
-      xStreamBufferIsFull() 
+      xStreamBufferIsFull()
    
 
 
@@ -1947,7 +1944,7 @@ Stream/Message buffers are an RTOS task to RTOS task, and interrupt to task comm
       xMessageBufferSpacesAvailable()
       xMessageBufferReset()
       xMessageBufferIsEmpty()
-      xMessageBufferIsFull()  
+      xMessageBufferIsFull()
    
 
 
@@ -1991,7 +1988,7 @@ Event flags are used when a task needs to synchronize with the occurrence of mul
 For this RTOS API function to be available:
 
 -  **configSUPPORT_DYNAMIC_ALLOCATION** must be set to **``1``** in FreeRTOSConfig.h, or left undefined (in which case it will default to **``1``**).
--  The RTOS source file **<fc #4682b4>FreeRTOS/source/event_groups.c</fc>** must be included in the build.
+-  The RTOS source file **FreeRTOS/source/event_groups.c** must be included in the build.
 
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | name                          | note                                                                                                                                                                                                                                          |
@@ -2024,42 +2021,42 @@ The following example demonstrates how to use the Event Flags in the both µC/OS
    
    .. code:: c++
    
-      #define      TEMP_LOW   (OS_FLAGS)0x0001                            
+      #define      TEMP_LOW   (OS_FLAGS)0x0001
       #define      BATT_LOW   (OS_FLAGS)0x0002
-         
+   
       OS_FLAG_GRP  MyEventFlagGrp;
-       
+   
       void main (void)
       {
           OS_ERR  err;
           OSInit(&err);
           :
-          OSFlagCreate(&MyEventFlagGrp,                                   
+          OSFlagCreate(&MyEventFlagGrp,
                        ”My Event Flag Group”,
                        (OS_FLAGS)0,
                        &err);
           /* Check ’err” */
           :
-          OSStart(&err); 
+          OSStart(&err);
       }
-       
+   
       void  MyTask (void *p_arg)
       {
           OS_ERR  err;
           CPU_TS  ts;
           const OS_TICK delay = 100;
-         
+   
           while (DEF_ON) {
               OSFlagPend(&MyEventFlagGrp,
                          TEMP_LOW + BATT_LOW,
-                         (OS_TICK )delay,      
+                         (OS_TICK )delay,
                          (OS_OPT)OS_OPT_PEND_FLAG_SET_ANY,
-                         &ts,                             
-                         &err);                           
+                         &ts,
+                         &err);
               /* Check ’err” */
               :
               :
-              
+   
               /* Handle the event */
               :
               :
@@ -2072,15 +2069,15 @@ The following example demonstrates how to use the Event Flags in the both µC/OS
               :
           }
       }
-       
+   
       void  MyISR (void)
       {
           OS_ERR  err;
           :
-          OSFlagPost(&MyEventFlagGrp,                                  
-                     BATT_LOW,                     
+          OSFlagPost(&MyEventFlagGrp,
+                     BATT_LOW,
                      (OS_OPT)OS_OPT_POST_FLAG_SET,
-                     &err);                       
+                     &err);
           /* Check ’err” */
           :
       }
@@ -2097,9 +2094,9 @@ The following example demonstrates how to use the Event Flags in the both µC/OS
    
       #define BIT_0   ( 1 << 0 )
       #define BIT_4   ( 1 << 4 )
-       
+   
       EventGroupHandle_t xEventGroup = NULL;
-       
+   
       void main (void)
       {
           /* Create an event group. */
@@ -2108,23 +2105,23 @@ The following example demonstrates how to use the Event Flags in the both µC/OS
           {
               /* Event group create Error. */
           }
-       
+   
           /* Create task and start the scheduler */
           :
           :
           vTaskStartScheduler();
       }
-         
+   
       void  MyTask( void *pvParameters )
       {
       EventBits_t uxBits;
       const TickType_t xTicksToWait = 100 / portTICK_PERIOD_MS;
-       
+   
           /* Were the event flags have been set? */
           uxBits = xEventGroupWaitBits( xEventGroup,
                                         BIT_0 | BIT_4,
                                         pdFALSE,
-                                        pdFALSE,        
+                                        pdFALSE,
                                         xTicksToWait );
           if( (uxBits & (BIT_0 | BIT_4)) == (BIT_0 | BIT_4) )
           {
@@ -2144,7 +2141,7 @@ The following example demonstrates how to use the Event Flags in the both µC/OS
         * without either BIT_0 or BIT_4 becoming set. */
           }
       }
-       
+   
       void  MyISR (void)
       {
           :
@@ -2162,7 +2159,7 @@ The following example demonstrates how to use the Event Flags in the both µC/OS
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 14** Event Flags/Group</fc>
+   **Table 14** Event Flags/Group
 
 
 
@@ -2227,12 +2224,12 @@ For a more detailed description of each of the arguments/usage for the above Fre
    .. code:: c++
    
       OS_TMR  CloseDoorTmr;
-         
+   
       void Task (void *p_arg)
       {
           OS_ERR   err;
           CPU_BOOLEAN  status;
-         
+   
           (void)&p_arg;
           while (DEF_ON) {
              OSTmrCreate(&CloseDoorTmr,        // p_tmr
@@ -2246,7 +2243,7 @@ For a more detailed description of each of the arguments/usage for the above Fre
               /* Check “err” */
               :
               :
-       
+   
               status = OSTmrStart(&CloseDoorTmr,
                                   &err);
               /* Check “err” */
@@ -2272,19 +2269,19 @@ For a more detailed description of each of the arguments/usage for the above Fre
    
    
       TimerHandle_t  xTimers;
-         
+   
       void Task (void *pvParameters)
       {
           ( void ) pvParameters;
-       
-       
+   
+   
           while (DEF_ON) {
-              xTimers = 
+              xTimers =
                 xTimerCreate( "Door close",    // pcTimerName
                                100,            // period
                                pdTRUE,         // uxAutoReload
                                ( void * ) 0,   // pvTimerID
-                               DoorCloseFnct );// Callback Func          
+                               DoorCloseFnct );// Callback Func
               if( xTimers == NULL )
                {
                    /* The timer was not created. */
@@ -2299,11 +2296,11 @@ For a more detailed description of each of the arguments/usage for the above Fre
                }
           }
       }
-         
+   
       void  DoorCloseFnct( TimerHandle_t xTimer )
       {
           /* Close the door! */
-       
+   
       }
    
 
@@ -2311,7 +2308,7 @@ For a more detailed description of each of the arguments/usage for the above Fre
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 15** Software Timers </fc>
+   **Table 15** Software Timers
 
 
 
@@ -2606,7 +2603,7 @@ Locate in your project all the rest of µC/OS-III API function calls, and replac
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 16** API Mapping</fc>
+   **Table 16** API Mapping
 
 
 
@@ -2633,7 +2630,7 @@ The errors reported back from the FreeRTOS API are different from µC/OS-III. In
           OSMutexCreate( &MyMutex,
                          "Mutex Name Here",
                          &err );
-           
+   
           if (err == OS_ERR_NONE) {
           // The mutex was created
           // and can be used
@@ -2653,11 +2650,11 @@ The errors reported back from the FreeRTOS API are different from µC/OS-III. In
    
       SemaphoreHandle_t MyMutex;
       StaticSemaphore_t MyMutexBuffer;
-       
+   
       void MyFunction(void)
       {
           MyMutex = xSemaphoreCreateMutexStatic( &MyMutexBuffer );
-        
+   
           if( MyMutex != pdFALSE )
           {
               // The mutex was created
@@ -2673,7 +2670,7 @@ The errors reported back from the FreeRTOS API are different from µC/OS-III. In
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 17 - 1** Error Handling </fc>
+   **Table 17 - 1** Error Handling
 
 
 
@@ -2703,7 +2700,7 @@ As a basic error handling, you can simply check that the returned error code is 
 
 .. container:: Centeralign
 
-   <fc #4682b4>\ **Table 17 - 2** FreeRTOS Error Check Codes</fc>
+   **Table 17 - 2** FreeRTOS Error Check Codes
 
 
 
@@ -2732,6 +2729,5 @@ Getting Help
 If you need further help with migrations, please get in touch via:
 
 -  ADI EngineerZone: :ez:`community/dsp/software-and-development-tools/freertos`
--  Support Email: <fc #4682b4>\ *processor.tools.support@analog.com*\ </fc>
+-  Support Email: *processor.tools.support@analog.com*
 
---------------

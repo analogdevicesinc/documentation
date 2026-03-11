@@ -40,7 +40,7 @@ The SD card image used for production testing is based on official release of Zy
    :class: download
 
    
-   -  \**28 May 2020 release \*\*
+   -  **28 May 2020 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_fmcomms8_test_card_28_05.img.tar.xz>`_
    -  Checksum ``9d3455a071f4151b9c320282abcb2f04``
    
@@ -50,7 +50,7 @@ The SD card image used for production testing is based on official release of Zy
    :class: download
 
    
-   -  \**27 May 2020 release \*\*
+   -  **27 May 2020 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_som_test_card_27_05.img.tar.xz>`_
    -  Checksum ``4efbaa39928f2f36b7b462156e6d00f6``
    
@@ -70,7 +70,7 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    :class: download
 
    
-   -  \**02 Nov 2021 release \*\*
+   -  **02 Nov 2021 release**
    -  `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_pi_test_card_02_11.tar.xz>`_
    -  Checksum ``080fb8771e12195eba7196f9de05ec1c``
    
@@ -123,8 +123,6 @@ First make sure all the required setup explained above is completed. Once the te
 
 -  Before starting the test place the label containing the serial number on the RF shielding top cover.
 
-|
-
 .. warning::
 
    After this step, DO NOT SWAP the RF shielding top cover between boards.
@@ -134,11 +132,14 @@ First make sure all the required setup explained above is completed. Once the te
 
    When testing the AD-FMCOMMS8-EBZ run the following test:
 
+   
+   -  **Test 7**
+   
 
-   | \* **Test 7**
-   |
 
 -  Testing sequence can be started by selecting one of the menu items. In order to start testing an Ethernet cable should be connected between Raspberry Pi and DUT. At the beginning of every test the correct connection with DUT is checked. If the connection cannot be established the following error message will be printed:
+
+   
 
 
 |image2|

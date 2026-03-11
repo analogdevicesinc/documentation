@@ -107,14 +107,13 @@ Downloads
 
 The latest stable source code can be downloaded from the Analog Devices github.
 
-|
-
 .. admonition:: Download
    :class: download
 
    Release 2014_R2:
 
-   | :git-no-OS:`fmcomms1`
+   
+   https://github.com/analogdevicesinc/no-OS/tree/2014_R2/fmcomms1
 
 
 Using the XCOMM API

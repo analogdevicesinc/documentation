@@ -105,7 +105,7 @@ Option 1: mbed Programming (simplest programming method)
 
 ::
 
-   *Based on the default project options, the .hex file is found in the iar/debug/exe/ folder of the project. Find the .hex file in that folder and drag it onto the DAPLINK: drive. 
+   *Based on the default project options, the .hex file is found in the iar/debug/exe/ folder of the project. Find the .hex file in that folder and drag it onto the DAPLINK: drive.
    *The drive disappears momentarily and then reappears. The board has been programmed as long as there is no "fail.txt" in the DAPLINK: drive.
 
 Option 2: IAR programming/debugging (allows debugging)
@@ -121,7 +121,7 @@ Option 2: IAR programming/debugging (allows debugging)
 ::
 
    *In Linker > Config, check the box to override the default file
-   * **Caution: CN0428 and CN0429 use a different linker file** 
+   **Caution: CN0428 and CN0429 use a different linker file**
      * For CN0428 (water quality) choose 'ADuCM355.icf' (shown in the image)
      * For CN0429 (gas sensing), choose the custom linker file, which is distributed together with the M355 software. By default, it is located at: 'C:\Analog Devices\ADuCM355V2.1.0.54\examples\M355_CN0429\iar\ADuCM355_64kSRAM.icf'    (or current version number)
        * //Note: This custom linker file enables use of 64k of SRAM for diagnostics (pulse test)//
@@ -201,7 +201,7 @@ Downloading and Running the ADuCM355 Installer
 
 ::
 
-   *The Installer can be found at ftp://ftp.analog.com/pub/MicroConverter/ADuCM355 
+   *The Installer can be found at ftp://ftp.analog.com/pub/MicroConverter/ADuCM355
    *Download the latest version, extract the .zip archive, and open the .exe.
    *The necessary example projects, drivers, and files will be installed.
 

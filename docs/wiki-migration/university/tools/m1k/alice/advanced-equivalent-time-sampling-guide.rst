@@ -82,14 +82,10 @@ Using Equivalent Time Sampling with the ADALM1000
 
 The ALICE 1.3 desktop software suite for ADALM1000 includes an option that implements a form of equivalent time sampling or ETS.
 
-.. _periodic-waveforms-1:
-
 Periodic waveforms
 ~~~~~~~~~~~~~~~~~~
 
 Many of the kinds of signals that an oscilloscope user might like to measure are periodic. That is, they have a fixed pattern or shape that repeats periodically. Indeed it is almost impossible to see any other type of signal with an ordinary (non-sampling) analog oscilloscope. A digital oscilloscope like ALM1000 can of course capture and store any non-periodic waveform at the base real time sample rate. Often the analog signal chain and the ADC used in a scope like the ALM1000 have more usable bandwidth than some fraction of the sample rate.
-
-.. _sub-sampled-waveform-capture-1:
 
 Sub-sampled waveform capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,8 +144,7 @@ The ETS controls in ALICE 1.3
 
 Unlike in a bench digital oscilloscope with an equivalent time sampling mode feature, the ETS mode controls in ALICE 1.3 require some manual settings by the user. By default access to the ETS feature is disabled. To enable access to the ETS controls add the following lines to your alice_init.ini file:
 
-| global EnableETSScreen; EnableETSScreen = 1
-| global EnableHSsampling; EnableHSsampling = 1
+global EnableETSScreen; EnableETSScreen = 1 global EnableHSsampling; EnableHSsampling = 1
 
 Three new control widgets will now appear in the main ALICE scope window, figure 5. Two will appear along the top next to the Time per division entry. The one on the right is where the User will enter the target minimum input frequency that is to be displayed. More later in this guide on how to determine this frequency. Next to that is where the time (horizontal X) multiplication factor will appear. The program will attempt to calculate this vale based on the target minimum input frequency entered and the chosen sample rate. This “guess” can be very off from the actual multiplication factor based on how accurate the User guessed at the entered target minimum input frequency. Either the Fmin or MulX values can be adjusted to more accurately “calibrate” the horizontal time scale. More on doing that adjustment later in the guide as well. The third button added will appear along the right hand column of buttons below the other instrument enable buttons. Where in the list it appears will depend on what other optional feature controls are enabled in the alice_init.ini file.
 

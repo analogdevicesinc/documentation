@@ -9,8 +9,6 @@ There are several high-speed analog modules designed to showcase the :adi:`AD936
 
 The AD9361 and AD9364 chip operates in the 70MHz to 6GHz range, covering most licensed and unlicensed bands. The boards, due to discrete external components may have less performance on some of the RF input/output connectors (for example - the FMCOMMS2 and specific connectors on the FMCOMMS5 are specifically tuned to 2.4GHz). The AD9361 and AD9364 both supports channel bandwidths from less than 200kHz to 56MHz by both changing sample rate, and by changing digital filters, and decimation inside the device itself.
 
-| 
-
 Available AD936x Boards
 -----------------------
 
@@ -71,8 +69,6 @@ The `ARRADIO <https://wiki.analog.com/../arradio>`_ board is the AD9361 in a 2 x
 
 Available Carrier Boards
 ------------------------
-
-.. _overview-1:
 
 Overview
 ~~~~~~~~

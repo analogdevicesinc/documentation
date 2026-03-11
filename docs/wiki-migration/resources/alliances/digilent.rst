@@ -8,13 +8,15 @@ Digilent Inc.
    
    -  `FPGA Boards <https://store.digilentinc.com/digilent-system-boards-and-components/>`_
    -  `Pmods <https://store.digilentinc.com/boards-and-components/expansion-modules/pmods/>`_
-
-   |
+   
 
 
 .. container:: column
 
-   |
+   
+
+
+   ..
 
 .. container:: column
 

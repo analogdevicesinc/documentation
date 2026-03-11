@@ -16,7 +16,7 @@ Software Configuration
 
 On the Yocto, Configure the linux-kernel as below to set the USB controller in Gadget only mode, and enable the USB Mass Storage support. check the directory of "yocto/build" and Clean up and setup the linux-kernel configuration with commands:
 
-.. code:: c++
+.. code:: console
 
    $ bitbake linux-adi -c cleansstate
    $ bitbake linux-adi -c menuconfig
@@ -30,15 +30,14 @@ And In the pop-up window of linux-kenel configuration, configure as follows Conf
                    <N>   Support for Host-side USB
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Gadget only mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                          USB Physical Layer drivers  --->
-                      <*> NOP USB Transceiver Driver 
+                      <*> NOP USB Transceiver Driver
                    <*>   USB Gadget Support  --->
-                         
 
 Gadget Serial Configuration
 
@@ -63,7 +62,7 @@ Example Usage
 
 **Ez-Kit target board**
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# modprobe g_serial use_acm=1
    g_serial gadget: Gadget Serial v2.4
@@ -76,7 +75,7 @@ Example Usage
 
 Get the target board usb serial information:
 
-.. code:: c++
+.. code:: console
 
    test@madara:~# dmesg|tail
    [777890.073364] usb 1-1.4.1.2: New USB device found, idVendor=0525, idProduct=a4a7
@@ -96,14 +95,14 @@ Open a new Minicom terminal and configure as below:
 
 And you will get into the kernel of the target board via the USB Serial protocol:
 
-.. code:: c++
+.. code:: console
 
-   Port /dev/ttyACM0, 18:19:06                                                  
-                                                                                
-   Press CTRL-A Z for help on special keys                                      
+   Port /dev/ttyACM0, 18:19:06
+
+   Press CTRL-A Z for help on special keys
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@     
+        @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@     @@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@            @@@@@@@@@@@@@@@@@@@
@@ -123,11 +122,11 @@ And you will get into the kernel of the target board via the USB Serial protocol
            Analog Devices Yocto Distribution
                     www.analog.com
                  www.yoctoproject.org
-        
+
    adsp-sc589-ezkit login: root
-   Password: 
+   Password:
    Last login: Thu Jul  2 11:28:33 +0000 2020 on /dev/ttySC0.
-   root@adsp-sc589-ezkit:~# 
+   root@adsp-sc589-ezkit:~#
 
 --------------
 

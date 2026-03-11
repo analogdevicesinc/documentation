@@ -51,7 +51,7 @@ The AD5940 SDK provides a function to calibrate the LPTIA offset error. The func
       lptiaoffset_cal.LpDacVzeroMux = LPDACVZERO_6BIT;
       lptiaoffset_cal.LpAmpPwrMod = AppAMPCfg.LpAmpPwrMod;
       lptiaoffset_cal.LpTiaRtia = AppAMPCfg.LpTiaRtia;
-      lptiaoffset_cal.LpTiaSW = LPTIASW(13)|LPTIASW(12)|LPTIASW(8)|LPTIASW(5);  
+      lptiaoffset_cal.LpTiaSW = LPTIASW(13)|LPTIASW(12)|LPTIASW(8)|LPTIASW(5);
       lptiaoffset_cal.SettleTime10us = 5000\*100;        /* 1000ms, the time needed for RTIA//CTIA settlling. */
       lptiaoffset_cal.TimeOut10us = 10\*100;     /* 10ms. */
       error = AD5940_LPTIAOffsetCal(&lptiaoffset_cal);

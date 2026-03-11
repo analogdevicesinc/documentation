@@ -1,8 +1,9 @@
 Reverb
 ======
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
-| |reverbpic1.png| The Reverb algorithm simulates the natural reverberation of an echoic space, such as a performance hall, and mixes it back into the original signal. Technically, reverberation is the total soundfield remaining in an enclosed space after initial sources are not active.
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+
+|reverbpic1.png| The Reverb algorithm simulates the natural reverberation of an echoic space, such as a performance hall, and mixes it back into the original signal. Technically, reverberation is the total soundfield remaining in an enclosed space after initial sources are not active.
 
 This block lets you control the following three parameters:
 

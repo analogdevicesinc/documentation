@@ -1,9 +1,18 @@
-| :doc:`Click here to return to the IO page </wiki-migration/resources/tools-software/sigmastudiov2/modules/inputoutput>`
-| ====== Pack 16 Bit Audio ======
-| |pack_audio_ssp.jpg|
-| ===== Description =====
-| This module accepts stereo audio channels and packs them into a single 16 bit audio stream at the output.
-| ===== Targets Supported =====
+:doc:`Click here to return to the IO page </wiki-migration/resources/tools-software/sigmastudiov2/modules/inputoutput>`
+
+Pack 16 Bit Audio
+=================
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/inputoutput/pack_audio_ssp.jpg
+   :alt: pack_audio_ssp.jpg
+
+Description
+-----------
+
+This module accepts stereo audio channels and packs them into a single 16 bit audio stream at the output.
+
+Targets Supported
+-----------------
 
 +---------------------------+--------------------------+----------------------------------------------+------------------------------------+
 | Name                      | ADSP-214xx               | ADSP-215xx/ADSP-SC5xx                        | ADAU145x/ADAU146x                  |
@@ -17,7 +26,7 @@
 | ===== Pins =====
 
 Input
-=====
+~~~~~
 
 +----------------------------------+---------------------------------------------------------+---------------------------------------------------------------------+
 | Name                             | Type                                                    | Description                                                         |
@@ -53,6 +62,5 @@ Configurable Parameters
 
 | 
 | ===== DSP Parameters =====
-| Not applicable
 
-.. |pack_audio_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/inputoutput/pack_audio_ssp.jpg
+Not applicable

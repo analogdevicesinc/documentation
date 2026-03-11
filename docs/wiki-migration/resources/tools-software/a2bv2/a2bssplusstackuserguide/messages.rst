@@ -1,8 +1,9 @@
 Appendix B: Messages
 ====================
 
-| :doc:`Click here to return to the A2B SSPLUS STACK USER GUIDE </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide>`
-| Messages are shared between the Stack, Plugins and the Application to request or notify specific events.
+:doc:`Click here to return to the A2B SSPLUS STACK USER GUIDE </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide>`
+
+Messages are shared between the Stack, Plugins and the Application to request or notify specific events.
 
 Request Message
 ---------------
@@ -63,8 +64,12 @@ Notify Message Examples:-
    \ **Figure: Notify Message Example**\
 
 
-The list of Notify Message Commands is listed below ^Notify Message Commands^Description^Payload type^ \|A2B_MSGNOTIFY_GPIO_INTERRUPT|Notify type used when a plugin triggers a GPIO interrupt.Causes an interrupt notification to be emitted|a2b_Interrupt
+The list of Notify Message Commands is listed below
 
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+| Notify Message Commands      | Description                                                                                                                                                                                           | Payload type        |
++==============================+=======================================================================================================================================================================================================+=====================+
+| A2B_MSGNOTIFY_GPIO_INTERRUPT | Notify type used when a plugin triggers a GPIO interrupt.Causes an interrupt notification to be emitted                                                                                               | a2b_Interrupt       |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | A2B_MSGNOTIFY_POWER_FAULT    | Notify type used when a plugin sends a power fault notification                                                                                                                                       | a2b_PowerFault      |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+

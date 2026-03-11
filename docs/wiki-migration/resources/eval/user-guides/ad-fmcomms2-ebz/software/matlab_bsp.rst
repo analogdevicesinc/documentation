@@ -145,7 +145,7 @@ The Analog Devices BSP can be downloaded from the Analog Devices github using th
 .. admonition:: Download
    :class: download
 
-   :git-MathWorks_tools:`Analog Devices BSP for MathWorks HDL Workflow Advisor <hdl_wa_bsp>`
+   `Analog Devices BSP for MathWorks HDL Workflow Advisor <https://github.com/analogdevicesinc/MathWorks_tools/tree/2017b/hdl_wa_bsp>`_
 
 
 .. important::

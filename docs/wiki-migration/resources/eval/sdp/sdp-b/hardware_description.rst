@@ -366,7 +366,7 @@ The mechanical specifications of the SDP-B board are 2.75" x 2.25" (69.85mm x 57
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/hwd5.jpg
    :width: 500px
 
-| 
+
 | the below image is a detailed view of the underneath of the board
 | |image1|
 | Figure HWD5: SDP-B Board Mechanical Specifications (above measurements are in mm)

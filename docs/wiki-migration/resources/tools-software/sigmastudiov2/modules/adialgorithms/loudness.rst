@@ -8,19 +8,23 @@ Loudness
 Description
 -----------
 
-| **Loudness Low High**: For low levels, the Loudness (Low and High) block raises bass <60 Hz and also the treble >7kHz.
-| **Loudness (Low and High) External Control**: Unlike the Loundess (Low and High) block, the loudness level parameter of the Loudness (Low and High) External Control block is controlled by an external signal instead of a volume slider.
-| **Loudness (Lower End)**: The Loudness (Lower End) algorithm raises the amplitude of bass frequencies for low volume levels.
+**Loudness Low High**: For low levels, the Loudness (Low and High) block raises bass <60 Hz and also the treble >7kHz.
 
-| In all the 3 variants, the boost values are derived from the well-known equal-loudness curves of Fletcher and Munson and others. This research revealed that at low levels, lows and highs need to be considerably louder in order for the tonal balance to sound correctly proportioned and the overall sound to have the same apparent loudness to the human ear. This algorithm is fixed, not dynamic: it assumes that the input level is constant.
-| ===== Variants =====
+**Loudness (Low and High) External Control**: Unlike the Loundess (Low and High) block, the loudness level parameter of the Loudness (Low and High) External Control block is controlled by an external signal instead of a volume slider.
+
+**Loudness (Lower End)**: The Loudness (Lower End) algorithm raises the amplitude of bass frequencies for low volume levels.
+
+In all the 3 variants, the boost values are derived from the well-known equal-loudness curves of Fletcher and Munson and others. This research revealed that at low levels, lows and highs need to be considerably louder in order for the tonal balance to sound correctly proportioned and the overall sound to have the same apparent loudness to the human ear. This algorithm is fixed, not dynamic: it assumes that the input level is constant.
+
+Variants
+--------
 
 -  Loudness Low High
 -  Loudness Low High (Control I/P)
 -  Loudness Lower End
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +---------------------------------+------------+------------------+---------------+------------------+
 | Name                            | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -55,7 +59,7 @@ Name    Type  Description
 Outputx Audio Output channel
 ======= ===== ==============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------------+---------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

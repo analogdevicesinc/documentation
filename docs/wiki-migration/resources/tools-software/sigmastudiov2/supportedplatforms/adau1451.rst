@@ -3,6 +3,6 @@
 ADAU1451
 ========
 
-| 
-| The ADAU1452/ADAU1451/ADAU1450 are automotive qualified audio processors that far exceed the digital signal processing capabilities of earlier SigmaDSP® devices.
-| More details - :adi:`ADAU1451 <en/products/adau1451.html>`
+The ADAU1452/ADAU1451/ADAU1450 are automotive qualified audio processors that far exceed the digital signal processing capabilities of earlier SigmaDSP® devices.
+
+More details - :adi:`ADAU1451 <en/products/adau1451.html>`

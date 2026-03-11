@@ -18,7 +18,7 @@ Evaluation Boards
 ADXRS450: ±300°/sec High Vibration Immunity Digital Gyro
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/scrape>adi>ADXRS450#additional-details__paragraph
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/scrape>adi>ADXRS450#additional-details__paragraph
    :alt: scrape>adi>ADXRS450#additional-details\__paragraph
 
 -  :adi:`Product Page <ADXRS450>`
@@ -26,7 +26,7 @@ ADXRS450: ±300°/sec High Vibration Immunity Digital Gyro
 ADXRS453: ±300°/sec High Vibration Immunity Digital Gyro
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/scrape>adi>ADXRS453#additional-details__paragraph
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/scrape>adi>ADXRS453#additional-details__paragraph
    :alt: scrape>adi>ADXRS453#additional-details\__paragraph
 
 -  :adi:`Product Page <ADXRS453>`
@@ -76,7 +76,12 @@ Example platform device initialization
 
 Below is an example which is used on Blackfin board file.
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 .. code:: c
 
@@ -128,10 +133,7 @@ Module loading
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -142,22 +144,20 @@ Module loading
    
 
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root:/> **cd /sys/bus/iio/devices/**
       root:/sys/bus/iio/devices> ls
-      iio:device0 
-      root:/sys/bus/iio/devices> **cd iio:device0 **
+      iio:device0
+      root:/sys/bus/iio/devices> **cd iio:device0**
    
       root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > **ls -l**
       -r--r--r--    1 root     root          4096 Jan  3 16:24 dev
@@ -179,10 +179,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -197,10 +194,7 @@ Show angular rate scale
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -220,10 +214,7 @@ Rotate in positive direction
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -240,10 +231,7 @@ Rotate in negative direction
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -262,10 +250,7 @@ This attribute is used to read the amount of quadrature error present in the dev
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -282,10 +267,7 @@ This attribute is used to make small adjustments to the rateout of the device. T
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -305,10 +287,7 @@ Show temperature
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -325,4 +304,21 @@ Show temperature
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

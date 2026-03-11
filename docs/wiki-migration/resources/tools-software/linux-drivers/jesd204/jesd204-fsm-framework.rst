@@ -64,9 +64,7 @@ JESD204 devices form a directed graph (topology) where connections represent dat
 
    Legend: [TOP] = Top device (ADC/DAC)  [CLK] = Clock/SYSREF source
 
-   --------------------------------------------------------------------------------
    Link 2 - RX (JESD204B)  State: opt_post_running_stage
-   --------------------------------------------------------------------------------
      JESD Parameters:  L=8  M=4  N=16  N'=16  F=1  K=32  S=1
      Encoder: 8B/10B    Subclass: 1  Scrambling: Yes  HD: No
      Sample Rate:  1.500000000000 GHz
@@ -74,9 +72,7 @@ JESD204 devices form a directed graph (topology) where connections represent dat
      LMFC Rate:   46.875000000 MHz
      Device Clock: 375.000000000 MHz
 
-   --------------------------------------------------------------------------------
    Link 0 - TX (JESD204B)  State: opt_post_running_stage
-   --------------------------------------------------------------------------------
      JESD Parameters:  L=8  M=4  N=16  N'=16  F=1  K=32  S=1
      Encoder: 8B/10B    Subclass: 1  Scrambling: Yes  HD: No
      Sample Rate:  1.500000000000 GHz
@@ -426,32 +422,23 @@ JESD204-FSM link states in a nutshell
 
 Important JESD204-FSM link states in a nutshell.
 
-| **LINK_INIT**
-| The JESD204-FSM calls this callback for each JESD204 link defined in the device-tree. The TOP device fills in the (``struct jesd204_link``) parameter for each link. These parameters include all the JESD204 link parameters, the sample rate and SYSREF mode settings, such as continuous or pulsed SYSREF operation.
+**LINK_INIT** The JESD204-FSM calls this callback for each JESD204 link defined in the device-tree. The TOP device fills in the (``struct jesd204_link``) parameter for each link. These parameters include all the JESD204 link parameters, the sample rate and SYSREF mode settings, such as continuous or pulsed SYSREF operation.
 
-| **LINK_SUPPORTED**
-| During this state the FSM core, calls for each link of a topology into each device in order to query if this configuration is supported. Whether a configuration is supported or not depends on a number of constrains and synthesis parameters. In case all devices support the configuration, the FSM moves on to the next state. The clock chip drivers use this state to compute the LMFC/LEMC of all links and find it’s GCD, so that a common SYSREF frequency can be computed which satisfies all links requirements.
+**LINK_SUPPORTED** During this state the FSM core, calls for each link of a topology into each device in order to query if this configuration is supported. Whether a configuration is supported or not depends on a number of constrains and synthesis parameters. In case all devices support the configuration, the FSM moves on to the next state. The clock chip drivers use this state to compute the LMFC/LEMC of all links and find it’s GCD, so that a common SYSREF frequency can be computed which satisfies all links requirements.
 
-| **LINK_PRE_SETUP**
-| Typically, this state is used by the CLK chip drivers to configure the output channels dedicated as SYSREF, applies the previously computed SYSREF frequency and configures the mode.Optional **CLK_SYNC_STAGEs** These states can be used by clock chip drivers to implement a Clock Tree Synchronization mechanism. This is typically device specific or might not be supported by the clock chip in question. Right now, there are 3 states reserved for this. Based on the HMC7044 example this is what happens in each state.
+**LINK_PRE_SETUP** Typically, this state is used by the CLK chip drivers to configure the output channels dedicated as SYSREF, applies the previously computed SYSREF frequency and configures the mode.Optional **CLK_SYNC_STAGEs** These states can be used by clock chip drivers to implement a Clock Tree Synchronization mechanism. This is typically device specific or might not be supported by the clock chip in question. Right now, there are 3 states reserved for this. Based on the HMC7044 example this is what happens in each state.
 
-| **CLK_SYNC_STAGE1**
-| The SYNC provider and consumers are configured to generate or receive a synchronization request.
+**CLK_SYNC_STAGE1** The SYNC provider and consumers are configured to generate or receive a synchronization request.
 
-| **CLK_SYNC_STAGE2**
-| The synchronization request is issued at the TOP most device in the clock tree. For the HMC7044, this is the SYSREF PROVIDER.
+**CLK_SYNC_STAGE2** The synchronization request is issued at the TOP most device in the clock tree. For the HMC7044, this is the SYSREF PROVIDER.
 
-| **CLK_SYNC_STAGE3**
-| In this last CLK SYNC state, the SYNC status of each CLK device is validated.
+**CLK_SYNC_STAGE3** In this last CLK SYNC state, the SYNC status of each CLK device is validated.
 
-| **LINK_SETUP**
-| In this state all actors (link devices) are setup and configured, based on the mode and configuration previously validated. A lot of devices typically found on multi-chip setups, require additional synchronization steps such as MCS (Mult-chip Sync), Phase/NCO Sync, or calibrations which take a lot of time and would benefit from being done in parallel to save some time. For those cases **OPT_SETUP_STAGE1** to **OPT_SETUP_STAGE5** can be used to implement these High-Speed converter device specific configuration, synchronization and calibration steps.
+**LINK_SETUP** In this state all actors (link devices) are setup and configured, based on the mode and configuration previously validated. A lot of devices typically found on multi-chip setups, require additional synchronization steps such as MCS (Mult-chip Sync), Phase/NCO Sync, or calibrations which take a lot of time and would benefit from being done in parallel to save some time. For those cases **OPT_SETUP_STAGE1** to **OPT_SETUP_STAGE5** can be used to implement these High-Speed converter device specific configuration, synchronization and calibration steps.
 
-| **CLOCKS_ENABLE & LINK_ENABLE**
-| Depending on the direction of the JESD204 link, different link components may implement different things. However, as the name implies it’s about enabling the JESD204 links. This includes taking the Link Layer cores out of RESET, enabling the SYSREF receivers for SUBCLASS 1 operation, requesting a SYSREF pulse, etc.
+**CLOCKS_ENABLE & LINK_ENABLE** Depending on the direction of the JESD204 link, different link components may implement different things. However, as the name implies it’s about enabling the JESD204 links. This includes taking the Link Layer cores out of RESET, enabling the SYSREF receivers for SUBCLASS 1 operation, requesting a SYSREF pulse, etc.
 
-| **LINK_RUNNING**
-| In this state all links of a topology assumed running. This is typically being checked in this state. Drivers can also use this state to complete setup and configuration which is required after the JESD204 links are running. In case another state is required drivers can also implement the optional **OPT_POST_RUNNING_STAGE** for these purposes.
+**LINK_RUNNING** In this state all links of a topology assumed running. This is typically being checked in this state. Drivers can also use this state to complete setup and configuration which is required after the JESD204 links are running. In case another state is required drivers can also implement the optional **OPT_POST_RUNNING_STAGE** for these purposes.
 
 JESD204-FSM link states
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -474,9 +461,9 @@ Complete state diagram of all available link states:
      LINK_SETUP:sw -> OPT_SETUP_STAGE1:w [ label="init" fontname="Courier New"];
      OPT_SETUP_STAGE1:sw -> OPT_SETUP_STAGE2:w [ label="init" fontname="Courier New"];
      OPT_SETUP_STAGE2:sw -> OPT_SETUP_STAGE3:w [ label="init" fontname="Courier New"];
-     OPT_SETUP_STAGE3:sw -> OPT_SETUP_STAGE4:w [ label="init" fontname="Courier New"]; 
-     OPT_SETUP_STAGE4:sw -> OPT_SETUP_STAGE5:w [ label="init" fontname="Courier New"]; 
-     OPT_SETUP_STAGE5:sw -> CLOCKS_ENABLE:w [ label="init" fontname="Courier New"]; 
+     OPT_SETUP_STAGE3:sw -> OPT_SETUP_STAGE4:w [ label="init" fontname="Courier New"];
+     OPT_SETUP_STAGE4:sw -> OPT_SETUP_STAGE5:w [ label="init" fontname="Courier New"];
+     OPT_SETUP_STAGE5:sw -> CLOCKS_ENABLE:w [ label="init" fontname="Courier New"];
      CLOCKS_ENABLE:sw -> LINK_ENABLE:w [ label="init" fontname="Courier New"];
      LINK_ENABLE:sw -> LINK_RUNNING:w [ label="init" fontname="Courier New"];
      LINK_RUNNING:sw -> OPT_POST_RUNNING_STAGE:w [ label="init" fontname="Courier New"];
@@ -491,9 +478,9 @@ Complete state diagram of all available link states:
      OPT_SETUP_STAGE1:e -> LINK_SETUP:se [ label="teardown" fontname="Courier New"];
      OPT_SETUP_STAGE2:e -> OPT_SETUP_STAGE1:se [ label="teardown" fontname="Courier New"];
      OPT_SETUP_STAGE3:e -> OPT_SETUP_STAGE2:se [ label="teardown" fontname="Courier New"];
-     OPT_SETUP_STAGE4:e -> OPT_SETUP_STAGE3:se [ label="teardown" fontname="Courier New"]; 
-     OPT_SETUP_STAGE5:e -> OPT_SETUP_STAGE4:se [ label="teardown" fontname="Courier New"]; 
-     CLOCKS_ENABLE:e -> OPT_SETUP_STAGE5:se [ label="teardown" fontname="Courier New"]; 
+     OPT_SETUP_STAGE4:e -> OPT_SETUP_STAGE3:se [ label="teardown" fontname="Courier New"];
+     OPT_SETUP_STAGE5:e -> OPT_SETUP_STAGE4:se [ label="teardown" fontname="Courier New"];
+     CLOCKS_ENABLE:e -> OPT_SETUP_STAGE5:se [ label="teardown" fontname="Courier New"];
      LINK_ENABLE:e -> CLOCKS_ENABLE:se [ label="teardown" fontname="Courier New"];
      LINK_RUNNING:e -> LINK_ENABLE:se [ label="teardown" fontname="Courier New"];
      OPT_POST_RUNNING_STAGE:e -> LINK_RUNNING:se [ label="teardown" fontname="Courier New"];
@@ -856,68 +843,74 @@ This utility resumes a number of iio devices across different IIO context from t
 
    Example:
    #iio_jesd204_fsm_sync -d adrv9009-phy -u ip10.48.65.140 ip:10.48.65.244
-   ---------------------------------------------------------------------------
    DEVICE0: adrv9009-phy uri=ip:10.48.65.140 (Primary) created
    DEVICE1: adrv9009-phy uri=ip:10.48.65.244 (Secondary) created
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <clk_sync_stage1> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <clk_sync_stage1> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <clk_sync_stage2> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <clk_sync_stage2> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <clk_sync_stage3> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <clk_sync_stage3> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <link_setup> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <link_setup> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <opt_setup_stage1> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <opt_setup_stage1> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <opt_setup_stage2> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <opt_setup_stage2> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <opt_setup_stage3> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <opt_setup_stage3> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <opt_setup_stage4> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <opt_setup_stage4> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <opt_setup_stage5> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <opt_setup_stage5> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <clocks_enable> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <clocks_enable> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    DEVICE1: Is <Paused> in state <link_enable> with status <Success (0)>
    --- RESUME DEVICE1 ---
    DEVICE0: Is <Paused> in state <link_enable> with status <Success (0)>
    --- RESUME DEVICE0 ---
-   ---------------------------------------------------------------------------
    --- DONE ---
 
 More Information
 ----------------
 
-.. include:: ../../../fpga/peripherals/jesd204.rst
+-  :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+-  :doc:`JESD204B/C Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`: Linux driver for the JESD204B transmit core.
+-  :doc:`JESD204B/C Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`: Linux driver for the JESD204B receive core.
+-  :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+-  :doc:`JESD204B Statistical Eyescan Application </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
+-  :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>`
+-  :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+
+   -  :doc:`AD9172 DAC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/ad9172>`
+   -  :doc:`AD9081 MxFE Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+   -  :doc:`ADRV9009, ADRV9008 highly integrated, wideband RF transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   -  :doc:`AD9371, AD9375 highly integrated, wideband RF transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9371>`
+
+-  :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+
+   -  :doc:`AD9208 ADC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad9208>`
+   -  :doc:`AD9081 MxFE Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+   -  :doc:`ADRV9009, ADRV9008 highly integrated, wideband RF transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   -  :doc:`AD9371, AD9375 highly integrated, wideband RF transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9371>`
+

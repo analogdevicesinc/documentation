@@ -57,10 +57,7 @@ The AD9523-1 also supplies the SYSREF signal to all parts of the JESD204B system
 References
 ----------
 
-| :adi:`AD9144 Datasheet <media/en/technical-documentation/data-sheets/AD9144.pdf>`
-| :adi:`AD9680 Datasheet <media/en/technical-documentation/data-sheets/AD9680.pdf>`
-| :adi:`AD9523-1 Datasheet <media/en/technical-documentation/data-sheets/AD9523-1.pdf>`
-| :doc:`AD-FMCDAQ2-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz>`
+:adi:`AD9144 Datasheet <media/en/technical-documentation/data-sheets/AD9144.pdf>` :adi:`AD9680 Datasheet <media/en/technical-documentation/data-sheets/AD9680.pdf>` :adi:`AD9523-1 Datasheet <media/en/technical-documentation/data-sheets/AD9523-1.pdf>` :doc:`AD-FMCDAQ2-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz>`
 
 .. |dac2_top.jpg| image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/tutorial/dac2_top.jpg
    :width: 300px

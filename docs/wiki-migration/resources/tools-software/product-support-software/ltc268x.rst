@@ -20,7 +20,7 @@ The software described below allows for an Mbed enabled controller board to be c
 Useful Links
 ============
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :adi:`LTC2686 <en/products/ltc2686.html>`

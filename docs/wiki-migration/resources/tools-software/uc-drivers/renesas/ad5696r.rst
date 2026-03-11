@@ -121,8 +121,7 @@ An EVAL-AD5696RSDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
      EVAL-AD5696RSDZ Pin SDA   →  YRDKRL78G13 J9  connector Pin 3
      EVAL-AD5696RSDZ Pin LDAC  →  YRDKRL78G13 J11 connector Pin 9
      EVAL-AD5696RSDZ Pin RESET →  YRDKRL78G13 J11 connector Pin 10
-     EVAL-AD5696RSDZ Pin GND   →  YRDKRL78G13 J11 connector Pin 11    
-     
+     EVAL-AD5696RSDZ Pin GND   →  YRDKRL78G13 J11 connector Pin 11
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5696r_rl78g13.jpg
    :align: center

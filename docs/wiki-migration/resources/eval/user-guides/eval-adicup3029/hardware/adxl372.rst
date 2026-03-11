@@ -27,8 +27,8 @@ The :adi:`EVAL-ADXL372-ARDZ` Shield has four jumpers to increase flexibility whe
    :align: center
    :width: 400px
 
-| 
-| ==== ADXL_CS_SELECT(P10) ====
+ADXL_CS_SELECT(P10)
+~~~~~~~~~~~~~~~~~~~
 
 ============= =============================
 Configuration Function
@@ -37,7 +37,7 @@ Configuration Function
 |image2|      Routes ADXL372 CS pin to CS_2
 ============= =============================
 
-| 
+
 | ==== ADXL_INT1_SELECT(P11) ====
 
 ============= ===================================
@@ -47,7 +47,7 @@ Configuration Function
 |image4|      Connects ADXL372 INT1 pin to INT1_B
 ============= ===================================
 
-| 
+
 | ==== ADXL_INT2_SELECT(P12) ====
 
 ============= ===================================
@@ -57,7 +57,7 @@ Configuration Function
 |image6|      Connects ADXL372 INT2 pin to INT2_B
 ============= ===================================
 
-| 
+
 | ==== VOLTAGE TRANSLATOR VDDIO SELECT(P13)====
 
 ============= ============================================
@@ -67,7 +67,7 @@ Configuration Function
 |image8|      Connects ADXL VDDIO to the IOREF Arduino pin
 ============= ============================================
 
-| 
+
 | ===== Connecting/Mounting ADXL372 =====
 
 Direct Mounting (P5 and P2)

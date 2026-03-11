@@ -90,8 +90,6 @@ Jumper settings (default) for EVAL-AD2433WA1BZ (Main) and EVAL-AD2433WB1BZ (Sub 
 | P7         | I2S Connector                   | Keep default |   |            |                                 |           |           |
 +------------+---------------------------------+--------------+---+------------+---------------------------------+-----------+-----------+
 
-.. _evaluation-boards-1:
-
 Evaluation boards
 ~~~~~~~~~~~~~~~~~
 

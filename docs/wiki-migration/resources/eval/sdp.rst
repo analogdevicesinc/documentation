@@ -13,7 +13,7 @@ The SDP Family consists of:
    * Interposer Boards
      * [[/resources/eval/sdp/breakout_board|Breakout Board]] - provides information on the SDP Breakout board.
    * 3rd Party Tools
-     * [[/resources/eval/sdp/bemicro_sdp|BeMicro SDK/SDP Interposer]] - adapter that connects SDP daughter boards to the BeMicro SDK. 
+     * [[/resources/eval/sdp/bemicro_sdp|BeMicro SDK/SDP Interposer]] - adapter that connects SDP daughter boards to the BeMicro SDK.
      * [[/resources/eval/sdp/sdp-fmc|SDP-I-FMC Interposer]] - adapter that connects SDP daughter boards to Xilinx FPGA Evaluation kits with 3.3VIO
      * [[/resources/eval/sdp/sdp-pmod|PMOD to SDP Interposer]] - adapter that connects ADI PMOD boards to SDP-B evaluation controller board
 

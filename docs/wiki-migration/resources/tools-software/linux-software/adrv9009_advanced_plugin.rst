@@ -23,18 +23,13 @@ In order for the settings made on these plugin to take affect, the Save Settings
    
    .. container:: box bggreen
 
-         
-         .. note::
-
-            This specifies any shell prompt running on the target
+      This specifies any shell prompt running on the target
 
          
          ::
          
             root@analog:/sys/bus/iio/devices/iio:device3# **cd /sys/kernel/debug/iio/iio\:device3**
-            root@analog:/sys/kernel/debug/iio/iio:device3# **grep "" * | sed "s/:/ = </g"
-
-            | awk '{print $0">;"}'**
+            root@analog:/sys/kernel/debug/iio/iio:device3# **grep "" * | sed "s/:/ = </g" | awk '{print $0">;"}'**
             adi,arm-gpio-config-en-tx-tracking-cals-enable = <0>;
             adi,arm-gpio-config-en-tx-tracking-cals-gpio-pin-sel = <0>;
             adi,arm-gpio-config-en-tx-tracking-cals-polarity = <0>;
@@ -62,12 +57,13 @@ In order for the settings made on these plugin to take affect, the Save Settings
    
    For the No-OS driver the mapping can be found here: :doc:`ADRV9009 Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`
    
-   |
 
-| ===== Screenshots / Descriptions =====
+
+Screenshots / Descriptions
+--------------------------
 
 Clock Settings
---------------
+~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_1.png
    :alt: BIST
@@ -75,7 +71,7 @@ Clock Settings
    :width: 600px
 
 Calibrations
-------------
+~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_2.png
    :alt: BIST
@@ -83,7 +79,7 @@ Calibrations
    :width: 600px
 
 TX Settings
------------
+~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_3.png
    :alt: BIST
@@ -91,7 +87,7 @@ TX Settings
    :width: 600px
 
 RX Settings
------------
+~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_4.png
    :alt: BIST
@@ -99,7 +95,7 @@ RX Settings
    :width: 600px
 
 Observation RX Settings
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_5.png
    :alt: BIST
@@ -107,7 +103,7 @@ Observation RX Settings
    :width: 600px
 
 Frequency Hopping Mode Setup
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_6.png
    :alt: BIST
@@ -115,7 +111,7 @@ Frequency Hopping Mode Setup
    :width: 600px
 
 PA Protection Settings
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_7.png
    :alt: BIST
@@ -123,7 +119,7 @@ PA Protection Settings
    :width: 600px
 
 Gain Settings
--------------
+~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_8.png
    :alt: BIST
@@ -131,7 +127,7 @@ Gain Settings
    :width: 600px
 
 AGC Settings
-------------
+~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_9.png
    :alt: BIST
@@ -139,7 +135,7 @@ AGC Settings
    :width: 600px
 
 ARM GPIO Settings
------------------
+~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_10.png
    :alt: BIST
@@ -147,7 +143,7 @@ ARM GPIO Settings
    :width: 600px
 
 AUX DAC Settings
-----------------
+~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_11.png
    :alt: BIST
@@ -155,7 +151,7 @@ AUX DAC Settings
    :width: 600px
 
 JESD204B Settings
------------------
+~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_12.png
    :alt: BIST
@@ -163,7 +159,7 @@ JESD204B Settings
    :width: 600px
 
 JESD204B Framer Settings
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_13.png
    :alt: BIST
@@ -171,7 +167,7 @@ JESD204B Framer Settings
    :width: 600px
 
 JESD204B Deframer Settings
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_14.png
    :alt: BIST
@@ -179,7 +175,7 @@ JESD204B Deframer Settings
    :width: 600px
 
 BIST
-----
+~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_15.png
    :alt: BIST
@@ -191,11 +187,11 @@ BIST stands for Build-In Self-Test. Selections on this Tab take immediately effe
 There are three major facilities.
 
 BIST TX NCO Tone
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 User selectable tone with frequency in kHz, that can be injected into the TX path.
 
 BIST PRBS
-~~~~~~~~~
+^^^^^^^^^
 
 Patterns and Pseudorandom Binary Sequence (PRBS) that can be injected into the RX path.

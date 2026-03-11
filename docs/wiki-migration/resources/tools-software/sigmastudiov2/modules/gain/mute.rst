@@ -3,10 +3,14 @@
 Mute
 ====
 
-| 
-| |mute.png|
-| |muteswslew.png|
-| ===== Variants =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/mute.png
+   :alt: mute.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/muteswslew.png
+   :alt: muteswslew.png
+
+Variants
+========
 
 -  Mute (No Slew)
 -  Mute (ClicklessSWSlew)
@@ -17,10 +21,16 @@ Mute
 Description
 ===========
 
-| The Mute module provides an option to mute the input signal. By default the signal is passed to the output unchanged. When mute is enabled, there will be no signal available at the output.
-| The mute block is available as a Slew or Non-Slew algorithm. The Slew version of the algorithm will smoothly transition the gain to its target value, eliminating any click or pops, but require more system resources.
-| Multiple Control Mute provide separate mute selection control for each inputs
-| ===== Usage ===== This block has checkbox to mute/unmute the audio.
+The Mute module provides an option to mute the input signal. By default the signal is passed to the output unchanged. When mute is enabled, there will be no signal available at the output.
+
+The mute block is available as a Slew or Non-Slew algorithm. The Slew version of the algorithm will smoothly transition the gain to its target value, eliminating any click or pops, but require more system resources.
+
+Multiple Control Mute provide separate mute selection control for each inputs
+
+Usage
+=====
+
+This block has checkbox to mute/unmute the audio.
 
 Targets Supported
 =================
@@ -45,27 +55,27 @@ Pins
 Input
 -----
 
-======================= ===== ===============
-Name                    Type  Description
-======================= ===== ===============
-Input<fc #ff0000>X</fc> Audio Input channel X
-======================= ===== ===============
+====== ===== ===============
+Name   Type  Description
+====== ===== ===============
+InputX Audio Input channel X
+====== ===== ===============
 
 Output
 ------
 
-======================== ===== ================
-Name                     Type  Description
-======================== ===== ================
-Output<fc #ff0000>X</fc> Audio Output channel X
-======================== ===== ================
+======= ===== ================
+Name    Type  Description
+======= ===== ================
+OutputX Audio Output channel X
+======= ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+=======================
 
 +--------------------+---------------+-------------------------+-----------------------------------------------------------------------------------+
 | GUI Parameter Name | Default Value | Range                   | Function Description                                                              |
@@ -114,6 +124,3 @@ om_alpha                 = 1 - alpha
 ::
 
    *where Fs is Sampling Rate
-
-.. |mute.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/mute.png
-.. |muteswslew.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/muteswslew.png

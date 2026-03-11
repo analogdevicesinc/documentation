@@ -351,7 +351,7 @@ Constraints
 
 As shown below, the transceiver channels and ADC channels are not connected one to one.
 
-.. code:: xdc
+.. code:: tcl
 
    set_property  -dict {PACKAGE_PIN  K2} [get_ports rx_data_p[0]] ; ## A10  FMC_HPC0_DP3_M2C_P
    set_property  -dict {PACKAGE_PIN  K1} [get_ports rx_data_n[0]] ; ## A11  FMC_HPC0_DP3_M2C_N
@@ -372,7 +372,7 @@ As shown below, the transceiver channels and ADC channels are not connected one 
 
 The reference clocks run at 500 MHz, and the frame clock at 250, in the maximum throughput configuration(default).
 
-.. code:: xdc
+.. code:: tcl
 
    create_clock -name tx_ref_clk   -period  2.00 [get_ports tx_ref_clk_p]
    create_clock -name rx_ref_clk   -period  2.00 [get_ports rx_ref_clk_p]
@@ -404,8 +404,11 @@ The script can be downloaded from here:
 
 -  `build_zynqmp_boot_bin.sh <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynqmp_boot_bin/build_zynqmp_boot_bin.sh>`_
 
-| **NOTE: After downloading the script you need to make it executable**
-| ``$ chmod +x build_zynqmp_boot_bin.sh``
+**NOTE: After downloading the script you need to make it executable**
+
+::
+
+   $ chmod +x build_zynqmp_boot_bin.sh
 
 ::
 
@@ -416,19 +419,16 @@ The script can be downloaded from here:
 -  An optionally 4th ``name`` parameter can be given to tar.gz the output directory. (``name``.tar.gz)
 -  Build output is located in a local directory named: output_boot_bin.
 -  This script requires Xilinx XSDK and bootgen in the PATH.
-   \* A simple way is to source vivado settings[32|64].sh:
+
+   -  A simple way is to source vivado settings[32|64].sh:
 
 ::
 
    $ source /opt/Xilinx/Vivado/201x.x/settings64.sh
 
-| **NOTE: u-boot.elf**
-| For those who don't want to build u-boot themselves.
-| The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/zynq_images>`, **bootgen_sysfiles.tgz**
+**NOTE: u-boot.elf** For those who don't want to build u-boot themselves. The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/zynq_images>`, **bootgen_sysfiles.tgz**
 
 References
 ~~~~~~~~~~
 
-| :doc:`HDL Build Instructions </wiki-migration/resources/fpga/docs/build>`
-| :doc:`How to build the ZynqMP boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynqmp-boot-image>`
-| :doc:`How to build the Zynq boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynq-boot-image>`
+:doc:`HDL Build Instructions </wiki-migration/resources/fpga/docs/build>` :doc:`How to build the ZynqMP boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynqmp-boot-image>` :doc:`How to build the Zynq boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynq-boot-image>`

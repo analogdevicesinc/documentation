@@ -1,21 +1,45 @@
-| :doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication>`
-| ====== Enabling S/PDIF Transmitter Feature support In Example Demo applications ====== The S/PDIF transmitter feature is supported on all **ADSP-SC5xx/ADSP-215xx** processors with the existing example demo application.
-| This feature can be used to transmit S/PDIF data from the evaluation boards.
-| The steps described below are to be followed to use this feature:-
-| **Step 1**:
-| Add the compiler preprocessor “\ **SPDIF_TX_ENABLE**\ ” to each CCES project (for each core) as shown in below figures.
-| a) Right-Click on the project folder and select **Properties**. |image1|
-| b) Click on the "**+**" (**Add**) button in **Preprocessor definitions** window. |image2|
-| c) Enter the Macro “\ **SPDIF_TX_ENABLE**\ ” and click **Apply and Close**.
-| |image3|
-| Make sure similar changes are made to all the core projects and rebuild the entire target framework application.
-| **Step 2**:
-| In the SigmaStudioPlus SPORT Configuration tab, add one more sink for the S/PDIF transmitter output. The SPORT configuration tab can be opened from Project window as shown in below figure.
-| |image4|
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication>`
+
+Enabling S/PDIF Transmitter Feature support In Example Demo applications
+========================================================================
+
+The S/PDIF transmitter feature is supported on all **ADSP-SC5xx/ADSP-215xx** processors with the existing example demo application.
+
+This feature can be used to transmit S/PDIF data from the evaluation boards.
+
+The steps described below are to be followed to use this feature:-
+
+**Step 1**:
+
+Add the compiler preprocessor “\ **SPDIF_TX_ENABLE**\ ” to each CCES project (for each core) as shown in below figures.
+
+a) Right-Click on the project folder and select **Properties**.
+
+
+|image1|
+
+b) Click on the "**+**" (**Add**) button in **Preprocessor definitions** window.
+
+
+|image2|
+
+c) Enter the Macro “\ **SPDIF_TX_ENABLE**\ ” and click **Apply and Close**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/prop3.png
+   :align: center
+
+Make sure similar changes are made to all the core projects and rebuild the entire target framework application.
+
+**Step 2**:
+
+In the SigmaStudioPlus SPORT Configuration tab, add one more sink for the S/PDIF transmitter output. The SPORT configuration tab can be opened from Project window as shown in below figure.
+
+
+|image3|
 
 .. container:: centeralign
 
-   **Figure: \*\* SPORT configuration Tab
+   **Figure:** SPORT configuration Tab
 
 
 .. note::
@@ -35,21 +59,37 @@ From the drop-down menu in the configuration section, select the S/PDIF Tx SPORT
 -  24-bit width
 -  Frame sync and bit clock polarity.
 
-| Please refer the below figure.
-| |image5|
+Please refer the below figure.
+
+
+|image4|
 
 .. container:: centeralign
 
-   **Figure: **Framework Configuration for S/PDIF Transmitter support
+   **Figure:**\ Framework Configuration for S/PDIF Transmitter support
 
 
-**\ Step 3*\*:
-| The DAI pin to be used for the S/PDIF Tx feature is mentioned in the below table which varies for each target evaluation platform.
-| ^ **Evaluation Target Platform** ^ **S/PDIF Tx SPORT DAI Pin To ASRC** ^ \**S/PDIF Tx Data DAI Pin **^ \| ADSP-21569 EZ-KIT\| DAI0 Pin 02 \| DAI0 Pin 10 \| \| ADSP-21569 SOM-CRR EZ-KIT\| DAI0 Pin 11 \| DAI0 Pin 10 \| \| ADSP-21593/ADSP-SC594 SOM-CRR EZ-KIT\| DAI0 Pin 06 \| DAI0 Pin 10 \| \| ADSP-SC584/ADSP-SC589 EZ-KIT\| DAI0 Pin 06 \| DAI0 Pin 20 \| \| ADSP-SC573 EZ-KIT\| DAI0 Pin 18 \| DAI0 Pin 10 \|
+**Step 3**:
+
+The DAI pin to be used for the S/PDIF Tx feature is mentioned in the below table which varies for each target evaluation platform.
+
++--------------------------------------+-------------------------------------+--------------------------------+
+| **Evaluation Target Platform**       | **S/PDIF Tx SPORT DAI Pin To ASRC** | \**S/PDIF Tx Data DAI Pin**    |
++======================================+=====================================+================================+
+| ADSP-21569 EZ-KIT                    | DAI0 Pin 02                         | DAI0 Pin 10                    |
++--------------------------------------+-------------------------------------+--------------------------------+
+| ADSP-21569 SOM-CRR EZ-KIT            | DAI0 Pin 11                         | DAI0 Pin 10                    |
++--------------------------------------+-------------------------------------+--------------------------------+
+| ADSP-21593/ADSP-SC594 SOM-CRR EZ-KIT | DAI0 Pin 06                         | DAI0 Pin 10                    |
++--------------------------------------+-------------------------------------+--------------------------------+
+| ADSP-SC584/ADSP-SC589 EZ-KIT         | DAI0 Pin 06                         | DAI0 Pin 20                    |
++--------------------------------------+-------------------------------------+--------------------------------+
+| ADSP-SC573 EZ-KIT                    | DAI0 Pin 18                         | DAI0 Pin 10                    |
++--------------------------------------+-------------------------------------+--------------------------------+
 
 .. container:: centeralign
 
-   **\ Table: **DAI Pins Used for S/PDIF Tx Feature
+   **Table:**\ DAI Pins Used for S/PDIF Tx Feature
 
 
 .. note::
@@ -57,40 +97,54 @@ From the drop-down menu in the configuration section, select the S/PDIF Tx SPORT
    The DAI pin on each ADSP-SC5xx/ADSP-215xx evaluation boards which currently supports the S/PDIF Tx feature is mentioned in the above Table. The same DAI pin must be assigned in the SigmaStudioPlus schematic SPORT configuration for S/PDIF Tx Sink.
 
 
-**\ Step 4*\*:
-| Once the sport configuration changes have been completed, regenerate the config file and overwrite the existing config file in the framework using “\ **Generate Configuration File**\ ” option in SigmaStudioPlus's **Processor Settings** Tab as shown in below figure. |image6|
+**Step 4**:
+
+Once the sport configuration changes have been completed, regenerate the config file and overwrite the existing config file in the framework using “\ **Generate Configuration File**\ ” option in SigmaStudioPlus's **Processor Settings** Tab as shown in below figure.
+
+
+|image5|
 
 .. container:: centeralign
 
-   **Figure: **Processor Settings
+   **Figure:**\ Processor Settings
 
 
-.. container:: centeralign
-
-   **\ Figure: **Generating Configuration File in SigmaStudioPlus
-
-
-\* The generated config file for ADSP-2156x processor must be overwritten as adi_ss_fw_config_2156x.h in “\ C:\\Analog Devices\\SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Framework\\Include\ ” folder. \* For ADSP-SC5xx/ADSP-215xx processors, generated config file must be overwritten as adi_ss_fw_config.h in the same “\ C:\\Analog Devices\\SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Framework\\Include\ ” folder.
+   |image6|
 
 .. container:: centeralign
 
-   **\ Figure: **Framework related file's path
+   **Figure:**\ Generating Configuration File in SigmaStudioPlus
 
 
-**\ Step 5\ **:
-  In SigmaStudioPlus schematic, connect the audio data channels to the output channels 8 and 9, in order to route the data to SPORT of S/PDIF Tx as shown in below figure.
+-  The generated config file for ADSP-2156x processor must be overwritten as **adi_ss_fw_config_2156x.h** in “\ **C:\\Analog Devices\\SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Framework\\Include**\ ” folder.
+-  For ADSP-SC5xx/ADSP-215xx processors, generated config file must be overwritten as **adi_ss_fw_config.h** in the same “\ **C:\\Analog Devices\\SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Framework\\Include**\ ” folder.
+
+|image7|
 
 .. container:: centeralign
 
-   **\ Figure: **SPDIF Output
+   **Figure:**\ Framework related file's path
 
 
-**\ Step 6\ **:
-  Rebuild the example demo application to generate the DXEs.
-  **\ Step 7*\*:
+**Step 5**:
 
-  | With all the above changes incorporated, the target application and SigmaStudioPlus schematic application is ready to support the S/PDIF Tx feature.
-|
+In SigmaStudioPlus schematic, connect the audio data channels to the output channels 8 and 9, in order to route the data to SPORT of S/PDIF Tx as shown in below figure.
+
+
+|image8|
+
+.. container:: centeralign
+
+   **Figure:**\ SPDIF Output
+
+
+**Step 6**:
+
+Rebuild the example demo application to generate the DXEs.
+
+**Step 7**:
+
+With all the above changes incorporated, the target application and SigmaStudioPlus schematic application is ready to support the S/PDIF Tx feature.
 
 .. note::
 
@@ -102,7 +156,9 @@ From the drop-down menu in the configuration section, select the S/PDIF Tx SPORT
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/prop1.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/prop2.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/prop3.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/sport_configuration_tab.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/sinksportconfig.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/processor_settings.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/sport_configuration_tab.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/sinksportconfig.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/processor_settings.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/generateconfigfile.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/fw_code.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/spdif_output.png

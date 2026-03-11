@@ -5,7 +5,9 @@ Simulink Controller Models
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- The Vivado HDL design is provided with an integrated FOC and speed & torque controller generated from a Simulink model provided by MathWorks. The controller is designed in Simulink and the corresponding HDL code is generated using the Mathworks HDL Coder.
+
+
+The Vivado HDL design is provided with an integrated FOC and speed & torque controller generated from a Simulink model provided by MathWorks. The controller is designed in Simulink and the corresponding HDL code is generated using the Mathworks HDL Coder.
 
 Field Oriented Controller (FOC)
 -------------------------------
@@ -104,5 +106,5 @@ Support
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#software
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/navigation AD-FMCMOTCON1-EBZ#software
    :alt: Software#.:\|Overview#qdesys_ip|QDESYS Motor Control IP

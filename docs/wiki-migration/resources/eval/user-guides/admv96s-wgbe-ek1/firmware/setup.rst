@@ -41,7 +41,7 @@ The ``libiio (v0.25 or later)`` library setup also installs some useful command 
 
 ::
 
-   $ iio_info -u serial:/dev/ttyACM0,345600,8n1n 
+   $ iio_info -u serial:/dev/ttyACM0,345600,8n1n
    iio_info version: 0.25 (git tag:v0.25)
    Libiio version: 0.25 (git tag: v0.25) backends: local xml ip usb serial
    IIO context created with serial backend.
@@ -77,7 +77,7 @@ If however, there is a FAIL.TXT file, if might be that the programmer isn't conn
 
 .. raw:: html
 
-   <details><summary>Is the MAXDAP firmware correct?</summary>
+   <details><summary>Is the MAXDAP firmware correct?
 
 The MAXDAP itself needs to run a specific firmware version to be able to program the MAX32650 with Drag and Drop. The DETAILS.TXT file on the DAPLINK drive specifies the Git SHA of the running firmware:
 
@@ -124,7 +124,7 @@ mcufla.sh
    Info : max32xxx.cpu: external reset detected
    Info : starting gdb server for max32xxx.cpu on 3333
    Info : Listening on port 3333 for gdb connections
-   target halted due to debug-request, current mode: Thread 
+   target halted due to debug-request, current mode: Thread
    xPSR: 0x01000000 pc: 0x00000184 msp: 0x2000b300
    ** Programming Started **
    ** Programming Finished **
@@ -140,6 +140,7 @@ This method involves installing the toolchain for building the ``projects/wethli
 
 Hardware revision must be specified when building the wethlink project, otherwise the build errors out. ``make HW_VERSION=0`` builds for rev A hardware, and ``make HW_VERSION=1`` builds for rev B hardware.
 
+
 No-OS Build Guide
 =================
 
@@ -164,7 +165,7 @@ Use the following commands to prepare your environment for building no-OS projec
 
 .. raw:: html
 
-   <details><summary>Linux (Click to expand)</summary>
+   <details><summary>Linux (Click to expand)
 
 .. important::
 
@@ -175,7 +176,7 @@ Use the following commands to prepare your environment for building no-OS projec
 
 .. raw:: html
 
-   <details><summary>Intel (Click to expand)</summary>
+   <details><summary>Intel (Click to expand)
 
 Assuming the SDK is installed at this path:
 
@@ -200,7 +201,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Assuming the Vitis 2022.2 is installed at this path:
 
@@ -227,7 +228,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
 -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
@@ -242,7 +243,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
 -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
@@ -257,7 +258,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
 -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
@@ -271,7 +272,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Pico (Click to expand)</summary>
+   <details><summary>Pico (Click to expand)
 
 -  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
 -  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
@@ -288,11 +289,11 @@ Run:
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
--  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+-  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+-  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+-  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
 -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
 .. important::
@@ -317,7 +318,7 @@ Common Issues with environment setup:
 
 .. raw:: html
 
-   <details><summary>Windows (Click to expand)</summary>
+   <details><summary>Windows (Click to expand)
 
 .. important::
 
@@ -338,7 +339,7 @@ Common Issues with environment setup:
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Assuming the Vitis 2022.2 is installed at this path:
 
@@ -371,7 +372,7 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
 -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
@@ -386,7 +387,7 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 -  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
 -  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
@@ -409,11 +410,11 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
--  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+-  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+-  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+-  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
 -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -426,7 +427,7 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
 -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
@@ -450,7 +451,7 @@ Go in the project directory that should be built.
 
 .. raw:: html
 
-   <details><summary>Linux (Click to expand)</summary>
+   <details><summary>Linux (Click to expand)
 
 ::
 
@@ -466,14 +467,14 @@ Go in the project directory that should be built.
 
 .. raw:: html
 
-   <details><summary>Intel (Click to expand)</summary>
+   <details><summary>Intel (Click to expand)
 
 Copy the **.sof** and **.sopcinfo** to the project folder.
 
 ::
 
    $ ls
-   Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof 
+   Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
    $ make
 
    # Alternatively you may select a .sopcinfo file explicitly by:
@@ -488,7 +489,7 @@ Copy the **.sof** and **.sopcinfo** to the project folder.
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Copy the **.xsa** in the project folder.
 
@@ -510,7 +511,7 @@ Copy the **.xsa** in the project folder.
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 To build a project, type:
 
@@ -529,7 +530,7 @@ The ``TARGET`` specifies the chip for which the project is built. If it is missi
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 To build a project, type:
 
@@ -548,7 +549,7 @@ The ``TARGET_BOARD`` specifies the board for which the project is built. If not 
 
 .. raw:: html
 
-   <details><summary>Pico (Click to expand)</summary>
+   <details><summary>Pico (Click to expand)
 
 To build a project, type:
 
@@ -565,7 +566,7 @@ To build a project, type:
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 Make sure you have the .ioc file in the project directory, then type:
 
@@ -586,7 +587,7 @@ If you're trying to use an .ioc file generated with a newer CubeMX than the one 
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
 The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
 
@@ -611,7 +612,7 @@ The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pi
 
 .. raw:: html
 
-   <details><summary>Windows (Click to expand)</summary>
+   <details><summary>Windows (Click to expand)
 
 .. important::
 
@@ -636,7 +637,7 @@ It should contain make-related files and source files:
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Copy the **.xsa** to the project folder and run:
 
@@ -660,7 +661,7 @@ Copy the **.xsa** to the project folder and run:
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 To build a project, type:
 
@@ -679,7 +680,7 @@ The ``TARGET`` specifies the chip for which the project is built. If it is missi
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 .. important::
 
@@ -703,7 +704,7 @@ The ``TARGET_BOARD`` specifies the board for which the project is built. If not 
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
 ::
 
@@ -719,7 +720,7 @@ The ``TARGET_BOARD`` specifies the board for which the project is built. If not 
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
 
@@ -779,7 +780,7 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 To debug a project, type:
 
@@ -798,7 +799,7 @@ The ``TARGET`` specifies the chip for which the project is built and run. If it 
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 **Booting from SD Card**
 
@@ -840,10 +841,11 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
 If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
 
+-  It is recommended to have a version of Windows 10 or 11.
+-  You must have all updates installed in WSL.
+
 ::
 
-    * It is recommended to have a version of Windows 10 or 11.
-    * You must have all updates installed in WSL.
         To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
 ::
@@ -853,10 +855,8 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
 
 WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
 
-::
-
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
-    * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers: 
+-  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+-  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
 
@@ -878,9 +878,7 @@ If there is a device connected to the USB port, it can be checked from the Devic
 
 To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
 
-::
-
-    * Open Command Prompt in Administrator mode and enter the command:
+-  Open Command Prompt in Administrator mode and enter the command:
 
 ::
 
@@ -910,9 +908,7 @@ In WSL enter the following command:
 
 A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
 
-::
-
-    * To attach a USB device to WSL enter the following command in Command Prompt:
+-  To attach a USB device to WSL enter the following command in Command Prompt:
 
 ::
 
@@ -950,9 +946,7 @@ In WSL if you run: **lsusb** we have:
 
 If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
 
-::
-
-    * If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+-  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -971,7 +965,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
 -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
@@ -1012,8 +1006,6 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 ++++
 
-.. _no-os-build-guide-1:
-
 No-OS Build Guide
 =================
 
@@ -1029,8 +1021,6 @@ If however you've already cloned NO-OS without the ``--recursive`` flag, you may
 
    git submodule update --recursive --init
 
-.. _build-prerequisites-1:
-
 Build Prerequisites
 -------------------
 
@@ -1040,7 +1030,7 @@ Use the following commands to prepare your environment for building no-OS projec
 
 .. raw:: html
 
-   <details><summary>Linux (Click to expand)</summary>
+   <details><summary>Linux (Click to expand)
 
 .. important::
 
@@ -1051,7 +1041,7 @@ Use the following commands to prepare your environment for building no-OS projec
 
 .. raw:: html
 
-   <details><summary>Intel (Click to expand)</summary>
+   <details><summary>Intel (Click to expand)
 
 Assuming the SDK is installed at this path:
 
@@ -1076,7 +1066,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Assuming the Vitis 2022.2 is installed at this path:
 
@@ -1103,7 +1093,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
 -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
@@ -1118,7 +1108,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
 -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
@@ -1133,7 +1123,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
 -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
@@ -1147,7 +1137,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Pico (Click to expand)</summary>
+   <details><summary>Pico (Click to expand)
 
 -  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
 -  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
@@ -1164,11 +1154,11 @@ Run:
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
--  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+-  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+-  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+-  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
 -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
 .. important::
@@ -1193,7 +1183,7 @@ Common Issues with environment setup:
 
 .. raw:: html
 
-   <details><summary>Windows (Click to expand)</summary>
+   <details><summary>Windows (Click to expand)
 
 .. important::
 
@@ -1214,7 +1204,7 @@ Common Issues with environment setup:
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Assuming the Vitis 2022.2 is installed at this path:
 
@@ -1247,7 +1237,7 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
 -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
@@ -1262,7 +1252,7 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 -  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
 -  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
@@ -1285,11 +1275,11 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
--  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+-  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+-  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+-  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
 -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -1302,7 +1292,7 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
 -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
@@ -1317,8 +1307,6 @@ Or alternatively, work only with the desired paths:
    </details>
 
 
-.. _building-a-project-1:
-
 Building a project
 ------------------
 
@@ -1328,7 +1316,7 @@ Go in the project directory that should be built.
 
 .. raw:: html
 
-   <details><summary>Linux (Click to expand)</summary>
+   <details><summary>Linux (Click to expand)
 
 ::
 
@@ -1344,7 +1332,7 @@ Go in the project directory that should be built.
 
 .. raw:: html
 
-   <details><summary>Intel (Click to expand)</summary>
+   <details><summary>Intel (Click to expand)
 
 Copy the **.sof** and **.sopcinfo** to the project folder.
 
@@ -1366,7 +1354,7 @@ Copy the **.sof** and **.sopcinfo** to the project folder.
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Copy the **.xsa** in the project folder.
 
@@ -1388,7 +1376,7 @@ Copy the **.xsa** in the project folder.
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 To build a project, type:
 
@@ -1407,7 +1395,7 @@ The ``TARGET`` specifies the chip for which the project is built. If it is missi
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 To build a project, type:
 
@@ -1426,7 +1414,7 @@ The ``TARGET_BOARD`` specifies the board for which the project is built. If not 
 
 .. raw:: html
 
-   <details><summary>Pico (Click to expand)</summary>
+   <details><summary>Pico (Click to expand)
 
 To build a project, type:
 
@@ -1443,7 +1431,7 @@ To build a project, type:
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 Make sure you have the .ioc file in the project directory, then type:
 
@@ -1464,7 +1452,7 @@ If you're trying to use an .ioc file generated with a newer CubeMX than the one 
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
 The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
 
@@ -1489,7 +1477,7 @@ The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pi
 
 .. raw:: html
 
-   <details><summary>Windows (Click to expand)</summary>
+   <details><summary>Windows (Click to expand)
 
 .. important::
 
@@ -1514,7 +1502,7 @@ It should contain make-related files and source files:
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Copy the **.xsa** to the project folder and run:
 
@@ -1538,7 +1526,7 @@ Copy the **.xsa** to the project folder and run:
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 To build a project, type:
 
@@ -1557,7 +1545,7 @@ The ``TARGET`` specifies the chip for which the project is built. If it is missi
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 .. important::
 
@@ -1581,7 +1569,7 @@ The ``TARGET_BOARD`` specifies the board for which the project is built. If not 
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
 ::
 
@@ -1597,7 +1585,7 @@ The ``TARGET_BOARD`` specifies the board for which the project is built. If not 
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
 
@@ -1636,8 +1624,6 @@ The build process creates a **build** directory in the project folder:
    ├── project_name.elf
    └── tmp
 
-.. _runningdebugging-1:
-
 Running/Debugging
 -----------------
 
@@ -1659,7 +1645,7 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 To debug a project, type:
 
@@ -1678,7 +1664,7 @@ The ``TARGET`` specifies the chip for which the project is built and run. If it 
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 **Booting from SD Card**
 
@@ -1720,10 +1706,11 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
 If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
 
+-  It is recommended to have a version of Windows 10 or 11.
+-  You must have all updates installed in WSL.
+
 ::
 
-    * It is recommended to have a version of Windows 10 or 11.
-    * You must have all updates installed in WSL.
         To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
 ::
@@ -1733,10 +1720,8 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
 
 WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
 
-::
-
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
-    * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
+-  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+-  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
 
@@ -1758,9 +1743,7 @@ If there is a device connected to the USB port, it can be checked from the Devic
 
 To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
 
-::
-
-    * Open Command Prompt in Administrator mode and enter the command:
+-  Open Command Prompt in Administrator mode and enter the command:
 
 ::
 
@@ -1790,9 +1773,7 @@ In WSL enter the following command:
 
 A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
 
-::
-
-    * To attach a USB device to WSL enter the following command in Command Prompt:
+-  To attach a USB device to WSL enter the following command in Command Prompt:
 
 ::
 
@@ -1830,9 +1811,7 @@ In WSL if you run: **lsusb** we have:
 
 If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
 
-::
-
-    * If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+-  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -1851,7 +1830,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
 -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
@@ -1892,8 +1871,6 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 ++++
 
-.. _no-os-build-guide-2:
-
 No-OS Build Guide
 =================
 
@@ -1909,8 +1886,6 @@ If however you've already cloned NO-OS without the ``--recursive`` flag, you may
 
    git submodule update --recursive --init
 
-.. _build-prerequisites-2:
-
 Build Prerequisites
 -------------------
 
@@ -1920,7 +1895,7 @@ Use the following commands to prepare your environment for building no-OS projec
 
 .. raw:: html
 
-   <details><summary>Linux (Click to expand)</summary>
+   <details><summary>Linux (Click to expand)
 
 .. important::
 
@@ -1931,7 +1906,7 @@ Use the following commands to prepare your environment for building no-OS projec
 
 .. raw:: html
 
-   <details><summary>Intel (Click to expand)</summary>
+   <details><summary>Intel (Click to expand)
 
 Assuming the SDK is installed at this path:
 
@@ -1956,7 +1931,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Assuming the Vitis 2022.2 is installed at this path:
 
@@ -1983,7 +1958,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
 -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
@@ -1998,7 +1973,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
 -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
@@ -2013,7 +1988,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
 -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
@@ -2027,7 +2002,7 @@ Run:
 
 .. raw:: html
 
-   <details><summary>Pico (Click to expand)</summary>
+   <details><summary>Pico (Click to expand)
 
 -  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
 -  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
@@ -2044,11 +2019,11 @@ Run:
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
--  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+-  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+-  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+-  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
 -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
 .. important::
@@ -2073,7 +2048,7 @@ Common Issues with environment setup:
 
 .. raw:: html
 
-   <details><summary>Windows (Click to expand)</summary>
+   <details><summary>Windows (Click to expand)
 
 .. important::
 
@@ -2094,7 +2069,7 @@ Common Issues with environment setup:
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Assuming the Vitis 2022.2 is installed at this path:
 
@@ -2127,7 +2102,7 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
 -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
@@ -2142,7 +2117,7 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 -  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
 -  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
@@ -2165,11 +2140,11 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
--  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+-  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+-  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+-  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
 -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -2182,7 +2157,7 @@ Or alternatively, work only with the desired paths:
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
 -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
@@ -2197,8 +2172,6 @@ Or alternatively, work only with the desired paths:
    </details>
 
 
-.. _building-a-project-2:
-
 Building a project
 ------------------
 
@@ -2208,7 +2181,7 @@ Go in the project directory that should be built.
 
 .. raw:: html
 
-   <details><summary>Linux (Click to expand)</summary>
+   <details><summary>Linux (Click to expand)
 
 ::
 
@@ -2224,7 +2197,7 @@ Go in the project directory that should be built.
 
 .. raw:: html
 
-   <details><summary>Intel (Click to expand)</summary>
+   <details><summary>Intel (Click to expand)
 
 Copy the **.sof** and **.sopcinfo** to the project folder.
 
@@ -2246,7 +2219,7 @@ Copy the **.sof** and **.sopcinfo** to the project folder.
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Copy the **.xsa** in the project folder.
 
@@ -2268,7 +2241,7 @@ Copy the **.xsa** in the project folder.
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 To build a project, type:
 
@@ -2287,7 +2260,7 @@ The ``TARGET`` specifies the chip for which the project is built. If it is missi
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 To build a project, type:
 
@@ -2306,7 +2279,7 @@ The ``TARGET_BOARD`` specifies the board for which the project is built. If not 
 
 .. raw:: html
 
-   <details><summary>Pico (Click to expand)</summary>
+   <details><summary>Pico (Click to expand)
 
 To build a project, type:
 
@@ -2323,7 +2296,7 @@ To build a project, type:
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 Make sure you have the .ioc file in the project directory, then type:
 
@@ -2344,7 +2317,7 @@ If you're trying to use an .ioc file generated with a newer CubeMX than the one 
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
 The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
 
@@ -2369,7 +2342,7 @@ The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pi
 
 .. raw:: html
 
-   <details><summary>Windows (Click to expand)</summary>
+   <details><summary>Windows (Click to expand)
 
 .. important::
 
@@ -2394,7 +2367,7 @@ It should contain make-related files and source files:
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 Copy the **.xsa** to the project folder and run:
 
@@ -2418,7 +2391,7 @@ Copy the **.xsa** to the project folder and run:
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 To build a project, type:
 
@@ -2437,7 +2410,7 @@ The ``TARGET`` specifies the chip for which the project is built. If it is missi
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 .. important::
 
@@ -2461,7 +2434,7 @@ The ``TARGET_BOARD`` specifies the board for which the project is built. If not 
 
 .. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)</summary>
+   <details><summary>ADuCM3029 (Click to expand)
 
 ::
 
@@ -2477,7 +2450,7 @@ The ``TARGET_BOARD`` specifies the board for which the project is built. If not 
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
 
@@ -2516,8 +2489,6 @@ The build process creates a **build** directory in the project folder:
    ├── project_name.elf
    └── tmp
 
-.. _runningdebugging-2:
-
 Running/Debugging
 -----------------
 
@@ -2539,7 +2510,7 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
 .. raw:: html
 
-   <details><summary>Maxim (Click to expand)</summary>
+   <details><summary>Maxim (Click to expand)
 
 To debug a project, type:
 
@@ -2558,7 +2529,7 @@ The ``TARGET`` specifies the chip for which the project is built and run. If it 
 
 .. raw:: html
 
-   <details><summary>Xilinx (Click to expand)</summary>
+   <details><summary>Xilinx (Click to expand)
 
 **Booting from SD Card**
 
@@ -2600,10 +2571,11 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
 If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
 
+-  It is recommended to have a version of Windows 10 or 11.
+-  You must have all updates installed in WSL.
+
 ::
 
-    * It is recommended to have a version of Windows 10 or 11.
-    * You must have all updates installed in WSL.
         To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
 ::
@@ -2613,10 +2585,8 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
 
 WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
 
-::
-
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
-    * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
+-  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+-  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
 
@@ -2638,9 +2608,7 @@ If there is a device connected to the USB port, it can be checked from the Devic
 
 To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
 
-::
-
-    * Open Command Prompt in Administrator mode and enter the command:
+-  Open Command Prompt in Administrator mode and enter the command:
 
 ::
 
@@ -2670,9 +2638,7 @@ In WSL enter the following command:
 
 A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
 
-::
-
-    * To attach a USB device to WSL enter the following command in Command Prompt:
+-  To attach a USB device to WSL enter the following command in Command Prompt:
 
 ::
 
@@ -2710,9 +2676,7 @@ In WSL if you run: **lsusb** we have:
 
 If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
 
-::
-
-    * If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+-  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -2731,7 +2695,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. raw:: html
 
-   <details><summary>STM32 (Click to expand)</summary>
+   <details><summary>STM32 (Click to expand)
 
 -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
 -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
@@ -2900,9 +2864,9 @@ Step 3: Verify Configuration (Optional)
 
 If you want to verify or customize the auto-generated configuration:
 
-#. In Vitis Explorer, expand ``_ide`` folder
-#. Open ``launch.json`` to view the configuration
-#. Configuration named ``<project_name>_app_hw_1`` is ready to use
+-  In Vitis Explorer, expand ``_ide`` folder
+-  Open ``launch.json`` to view the configuration
+-  Configuration named ``<project_name>_app_hw_1`` is ready to use
 
 The configuration is automatically regenerated each time you run ``make sdkopen``.
 
@@ -2921,9 +2885,9 @@ Start Debugging
 
 **In Vitis IDE:**
 
-#. Make sure you've built with ``make DEBUG=1``
-#. Click **FLOW** panel (left side) → Click **"Debug"**
-#. Debug session starts immediately!
+-  Make sure you've built with ``make DEBUG=1``
+-  Click **FLOW** panel (left side) → Click **"Debug"**
+-  Debug session starts immediately!
 
 .. warning::
 
@@ -2932,11 +2896,11 @@ Start Debugging
 
 **What happens:**
 
-#. Vitis connects to board via JTAG
-#. Programs FPGA with bitstream
-#. Runs FSBL to initialize processor (ZynqMP/Zynq only)
-#. Loads your application ELF
-#. Stops at entry point - ready to debug!
+-  Vitis connects to board via JTAG
+-  Programs FPGA with bitstream
+-  Runs FSBL to initialize processor (ZynqMP/Zynq only)
+-  Loads your application ELF
+-  Stops at entry point - ready to debug!
 
 **Debug Features:**
 
@@ -3037,16 +3001,12 @@ Troubleshooting
 -  Vitis 2023.2 introduced the Unified IDE, but the User Managed Mode (required for makefile-based projects) has incomplete debug configuration support
 -  The classic Eclipse mode provides a mature, fully-functional debugging experience
 
-.. _prerequisites-1:
-
 Prerequisites
 -------------
 
 -  Vitis 2023.2, 2023.2, 2024.1, or 2024.2 installed
 -  Hardware design file (.xsa) in project directory
 -  JTAG and UART cables connected to target board
-
-.. _wsl2-users-one-time-xsdb-fix-1:
 
 WSL2 Users: One-Time xsdb Fix
 -----------------------------
@@ -3089,12 +3049,8 @@ For custom Vitis installation location:
 
 **Note:** This is a system-wide fix, only needs to be done once per machine.
 
-.. _per-project-setup-first-time-only-1:
-
 Per-Project Setup (First Time Only)
 -----------------------------------
-
-.. _step-1-build-project-1:
 
 Step 1: Build Project
 ~~~~~~~~~~~~~~~~~~~~~
@@ -3152,10 +3108,10 @@ The "Debug Configurations" dialog will open.
 
 **B. Create New Configuration:**
 
-#. In the left panel, expand **"Single Application Debug"**
-#. Click the **"New Configuration"** button (first icon in the toolbar - looks like a document with a star/plus)
-#. A new configuration will be created (e.g., ``Debugger_-Default``)
-#. You can rename it if desired (e.g., ``adrv904x-debug``)
+-  In the left panel, expand **"Single Application Debug"**
+-  Click the **"New Configuration"** button (first icon in the toolbar - looks like a document with a star/plus)
+-  A new configuration will be created (e.g., ``Debugger_-Default``)
+-  You can rename it if desired (e.g., ``adrv904x-debug``)
 
 **C. Configure Main Tab:**
 
@@ -3210,10 +3166,10 @@ Browse to or enter the FSBL path:
 
 After configuration, the Summary panel on the right shows the debug sequence:
 
-#. Reset system and clear FPGA
-#. Program FPGA with bitstream
-#. Initialize PS using FSBL
-#. Load application and suspend processors
+-  Reset system and clear FPGA
+-  Program FPGA with bitstream
+-  Initialize PS using FSBL
+-  Load application and suspend processors
 
 **E. Configure Application Tab:**
 
@@ -3246,17 +3202,13 @@ The IDE typically auto-populates these fields:
 
 **F. Save and Apply:**
 
-#. Click **"Apply"** to save the configuration
-#. Click **"Debug"** to start debugging immediately, or **"Close"** to save for later
+-  Click **"Apply"** to save the configuration
+-  Click **"Debug"** to start debugging immediately, or **"Close"** to save for later
 
 The configuration is now saved and ready to use!
 
-.. _debugging-your-project-1:
-
 Debugging Your Project
 ----------------------
-
-.. _hardware-setup-1:
 
 Hardware Setup
 ~~~~~~~~~~~~~~
@@ -3265,26 +3217,24 @@ Hardware Setup
 -  Connect UART cable (for console output)
 -  Power on the board
 
-.. _start-debugging-1:
-
 Start Debugging
 ~~~~~~~~~~~~~~~
 
 **In Vitis Classic Eclipse IDE:**
 
-#. Make sure you've built with ``make DEBUG=1``
-#. Go to **Run** → **Debug Configurations...**
-#. Select your debug configuration (e.g., "adrv904x-debug")
-#. Click **"Debug"** button
-#. The Debug perspective will open automatically
+-  Make sure you've built with ``make DEBUG=1``
+-  Go to **Run** → **Debug Configurations...**
+-  Select your debug configuration (e.g., "adrv904x-debug")
+-  Click **"Debug"** button
+-  The Debug perspective will open automatically
 
 **What happens:**
 
-#. Vitis connects to board via JTAG
-#. Programs FPGA with bitstream
-#. Runs FSBL to initialize processor (ZynqMP/Zynq only)
-#. Loads your application ELF
-#. Stops at entry point (usually ``main()``) - ready to debug!
+-  Vitis connects to board via JTAG
+-  Programs FPGA with bitstream
+-  Runs FSBL to initialize processor (ZynqMP/Zynq only)
+-  Loads your application ELF
+-  Stops at entry point (usually ``main()``) - ready to debug!
 
 **Debug Features:**
 
@@ -3293,8 +3243,6 @@ Start Debugging
 -  Inspect variables, registers, call stack
 -  Watch expressions
 -  View memory and disassembly
-
-.. _daily-development-workflow-1:
 
 Daily Development Workflow
 --------------------------
@@ -3312,8 +3260,6 @@ After initial setup:
    # 3. Debug
    make sdkopen
    # In Vitis Eclipse: Run → Debug Configurations → Select your config → Debug
-
-.. _architecture-specific-notes-1:
 
 Architecture-Specific Notes
 ---------------------------
@@ -3341,8 +3287,6 @@ Architecture-Specific Notes
 -  Processor: ``psv_cortexa72_0``
 -  Uses PLM (Platform Loader Manager) instead of FSBL
 
-.. _troubleshooting-1:
-
 Troubleshooting
 ---------------
 
@@ -3362,7 +3306,7 @@ Troubleshooting
 
 **For complete documentation, see:** :git-no-OS:`Xilinx Vitis Debugging Guide <doc/sphinx/source/build_guides/build_xilinx_vitis2025.rst>`
 
-++++
+
 
 
 Theory of Operation
@@ -3394,7 +3338,7 @@ You can see all the iio devices and their channels and attributes below, as obta
 
 ::
 
-   $ iio_info -u serial:/dev/ttyACM0,345600,8n1n 
+   $ iio_info -u serial:/dev/ttyACM0,345600,8n1n
    iio_info version: 0.25 (git tag:v0.25)
    Libiio version: 0.25 (git tag: v0.25) backends: local xml ip usb serial
    IIO context created with serial backend.
@@ -3419,7 +3363,7 @@ You can see all the iio devices and their channels and attributes below, as obta
            8 device-specific attributes found:
                    attr  0: enabled value: 1
                    attr  1: vco value: 59850000
-                   attr  2: vco_available value: 55125000 55387500 55650000 55912500 56175000 56437500 56700000 56962500 57225000 57487500 57750000 58012500 58275000 58537500 58800000 59062500 59325000 59587500 59850000 60112500 60375000 60637500 60900000 61162500 61425000 61687500 61950000 62212500 62475000 62737500 63000000 63262500 63525000 63787500 64050000 64312500 64575000 64837500 65100000 65362500 65625000 65887500 66150000 
+                   attr  2: vco_available value: 55125000 55387500 55650000 55912500 56175000 56437500 56700000 56962500 57225000 57487500 57750000 58012500 58275000 58537500 58800000 59062500 59325000 59587500 59850000 60112500 60375000 60637500 60900000 61162500 61425000 61687500 61950000 62212500 62475000 62737500 63000000 63262500 63525000 63787500 64050000 64312500 64575000 64837500 65100000 65362500 65625000 65887500 66150000
                    attr  3: vco_band value: 8
                    attr  4: vco_lock value: 1
                    attr  5: if_attn value: 15
@@ -3436,7 +3380,7 @@ You can see all the iio devices and their channels and attributes below, as obta
            14 device-specific attributes found:
                    attr  0: enabled value: 1
                    attr  1: vco value: 63262500
-                   attr  2: vco_available value: 55125000 55387500 55650000 55912500 56175000 56437500 56700000 56962500 57225000 57487500 57750000 58012500 58275000 58537500 58800000 59062500 59325000 59587500 59850000 60112500 60375000 60637500 60900000 61162500 61425000 61687500 61950000 62212500 62475000 62737500 63000000 63262500 63525000 63787500 64050000 64312500 64575000 64837500 65100000 65362500 65625000 65887500 66150000 
+                   attr  2: vco_available value: 55125000 55387500 55650000 55912500 56175000 56437500 56700000 56962500 57225000 57487500 57750000 58012500 58275000 58537500 58800000 59062500 59325000 59587500 59850000 60112500 60375000 60637500 60900000 61162500 61425000 61687500 61950000 62212500 62475000 62737500 63000000 63262500 63525000 63787500 64050000 64312500 64575000 64837500 65100000 65362500 65625000 65887500 66150000
                    attr  3: vco_band value: 15
                    attr  4: vco_lock value: 1
                    attr  5: if_attn value: 6
@@ -3658,8 +3602,6 @@ To illustrate how the algorithm works, here's the result of a simulation with ar
    :align: center
 
 With the factory default settings, the algorithm finds the target within 10 iterations or less and does it with few gain changes addressing both of the above points. As with any P.I.D. algorithm, it's possible that better behavior is achievable by experimentally fine tuning the coefficients but with the factory default coefficients and initial release implementation, the system achieves a bit error rate of less than 10E-10 for constant distance and across the whole -40°C to 80°C.
-
-| 
 
 --------------
 

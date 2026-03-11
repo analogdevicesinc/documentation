@@ -77,7 +77,8 @@ Installing the Software
    | NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 
 
--  Click **I Agree** to accept the software license agreement and initiate the installation
+| \* Click **I Agree** to accept the software license agreement and initiate the installation
+
 -  Select only **ADuCM360** and **Segger J-Link Software** on the options shown
 
 .. important::

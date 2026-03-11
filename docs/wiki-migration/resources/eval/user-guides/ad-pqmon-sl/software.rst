@@ -243,14 +243,14 @@ Settings tab
 
 -  To modify a parameter select it, change its value to the desired one and click the Set button.
 
-|
-
 .. note::
 
    More information about the **Scopy PQMON addon** can be consulted `here <https://analogdevicesinc.github.io/scopy/plugins/pqm/index.html>`_
 
-   | The system comes pre-programmed with a firmware that works with the **Scopy** application, allowing complete system evaluation.
-   | **Scopy** will work only with the official :git-no-OS:`firmware releases <projects/eval-pqmon>`
+   
+   The system comes pre-programmed with a firmware that works with the **Scopy** application, allowing complete system evaluation.
+   
+   **Scopy** will work only with the official :git-no-OS:`firmware releases <projects/eval-pqmon>`
 
 
 Firmware Update
@@ -263,7 +263,7 @@ Firmware update using a prebuilt hex file
 
 Step 1 - :adi:`max32625pico` firmware update Download the :adi:`MAX32650FTHR` firmware image from :git-max32625pico-firmware-images>`__
 
-.. image:: https://wiki.analog.com/_media/:`here <resources/eval/user-guides/ad-pqmon-sl/scopy23.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/:`here <resources/eval/user-guides/ad-pqmon-sl/scopy23.jpg
    :align: center
    :width: 300px
 

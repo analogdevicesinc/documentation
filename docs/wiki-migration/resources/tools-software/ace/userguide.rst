@@ -52,13 +52,13 @@ The latest version of ACE is available from www.analog.com/ace. Simply download 
 
 .. raw:: html
 
-   <details><summary>Click here to view the installation steps</summary>
+   <details><summary>Click here to view the installation steps
 
 .. container:: centeralign
 
    
-   Step 1: Launch the Setup Wizard
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Step 1: Launch the Setup Wizard**
+
    
 
 
@@ -72,8 +72,8 @@ The latest version of ACE is available from www.analog.com/ace. Simply download 
 .. container:: centeralign
 
    
-   Step 2: Check for Updates
-   ^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Step 2: Check for Updates**
+
    
 
 
@@ -87,8 +87,8 @@ The latest version of ACE is available from www.analog.com/ace. Simply download 
 .. container:: centeralign
 
    
-   Step 3: License Agreement
-   ^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Step 3: License Agreement**
+
    
 
 
@@ -102,8 +102,8 @@ The latest version of ACE is available from www.analog.com/ace. Simply download 
 .. container:: centeralign
 
    
-   Step 4: Installation Directory
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Step 4: Installation Directory**
+
    
 
 
@@ -117,8 +117,8 @@ The latest version of ACE is available from www.analog.com/ace. Simply download 
 .. container:: centeralign
 
    
-   Step 5: Choose Components to Install
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Step 5: Choose Components to Install**
+
    
 
 
@@ -132,8 +132,8 @@ The latest version of ACE is available from www.analog.com/ace. Simply download 
 .. container:: centeralign
 
    
-   Step 6: Installation
-   ^^^^^^^^^^^^^^^^^^^^
+   **Step 6: Installation**
+
    
 
 
@@ -147,8 +147,8 @@ The latest version of ACE is available from www.analog.com/ace. Simply download 
 .. container:: centeralign
 
    
-   Step 7: Complete Installation
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Step 7: Complete Installation**
+
    
 
 

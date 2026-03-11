@@ -15,9 +15,9 @@ Sources and head can be dragged to any position in the room, or set more precise
 -  Head location
 -  Source locations
 
-| 
-| Press Resize to accept changes. Grayed-out source locations mean the source is not currently added.
-| A typical living room / HT setup is shown below:
+Press Resize to accept changes. Grayed-out source locations mean the source is not currently added.
+
+A typical living room / HT setup is shown below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/surroundsoundvolumecontrol2.jpg
    :alt: surroundsoundvolumecontrol2.jpg

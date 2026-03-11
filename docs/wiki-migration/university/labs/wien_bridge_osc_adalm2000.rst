@@ -1,14 +1,13 @@
 Activity: The Wien Bridge Oscillator
 ====================================
 
-|
+
 
 .. note::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
-   | This Active Learning exercise is now available at
-   | https://analogdevicesinc.github.io/documentation/university/active_learning/wien_bridge_oscillator/index.html
+   | This Active Learning exercise is now available at https://analogdevicesinc.github.io/documentation/university/active_learning/wien_bridge_oscillator/index.html
 
 
 Objective:
@@ -35,10 +34,11 @@ Oscillators are circuits that generate periodic waveforms without any input sign
 -  The loop gain is equal to unity in absolute magnitude
 -  The phase shift around the loop is zero or an integer multiple of 2π
 
-| Consider the first one, and its consequences in an oscillator: If the loop gain is less than unity, the oscillations will die out. If the loop gain is greater than unity, the oscillations will increase in amplitude, either forever (which is possible in a simulation), or until **something** limits the amplitude (hopefully gracefully, and not as the result of a catastrophic failure.) If the end application is not very sensitive to distortion (output frequencies at multiples of the desired fundamental frequency), then simple gain limiting methods can be employed - this could be as simple as allowing the amplifier output to "clip" at the supply voltage. But if the application requires a pure sinewave, then carefully controlling the amplifier's gain is absolutely critical.
-| There are various feedback elements employed to generate the required frequency-dependent phase shift - quartz crystals, mechanical resonators, L-C (inductor-capacitor) networks. The `Wien_bridge <https://en.wikipedia.org/wiki/Wien_bridge>`_ was developed by Max Wien in 1891, as an extension of the `Wheatstone_bridge <https://en.wikipedia.org/wiki/Wheatstone_bridge>`_. Whereas the Wheatstone bridge consists of purely resistive elements, the Wien bridge can be used to measure capacitors. While initially intended as a measurement circuit, at balance, the phase shift of a Wien bridge is zero, so including a gain element with a phase shift of zero will satisfy one of the the Barkhausen criterion.
-| (It would have been impossible to make an oscillator in 1891 as no linear electronic gain elements existed - the audion tube was invented in 1906.)
-| There are several advantages to using a Wien bridge as the feedback element in an oscillator:
+Consider the first one, and its consequences in an oscillator: If the loop gain is less than unity, the oscillations will die out. If the loop gain is greater than unity, the oscillations will increase in amplitude, either forever (which is possible in a simulation), or until **something** limits the amplitude (hopefully gracefully, and not as the result of a catastrophic failure.) If the end application is not very sensitive to distortion (output frequencies at multiples of the desired fundamental frequency), then simple gain limiting methods can be employed - this could be as simple as allowing the amplifier output to "clip" at the supply voltage. But if the application requires a pure sinewave, then carefully controlling the amplifier's gain is absolutely critical.
+
+There are various feedback elements employed to generate the required frequency-dependent phase shift - quartz crystals, mechanical resonators, L-C (inductor-capacitor) networks. The `Wien_bridge <https://en.wikipedia.org/wiki/Wien_bridge>`_ was developed by Max Wien in 1891, as an extension of the `Wheatstone_bridge <https://en.wikipedia.org/wiki/Wheatstone_bridge>`_. Whereas the Wheatstone bridge consists of purely resistive elements, the Wien bridge can be used to measure capacitors. While initially intended as a measurement circuit, at balance, the phase shift of a Wien bridge is zero, so including a gain element with a phase shift of zero will satisfy one of the the Barkhausen criterion. (It would have been impossible to make an oscillator in 1891 as no linear electronic gain elements existed - the audion tube was invented in 1906.)
+
+There are several advantages to using a Wien bridge as the feedback element in an oscillator:
 
 -  Simplicity
 -  Low distortion
@@ -54,8 +54,9 @@ With the phase shift satisfied, the other half of the Barkhausen criterion is a 
    Figure 1, 1.0kHz Wien Bridge Oscillator
 
 
-| Gain control is achieved with an incandescent light bulb (as it is in Bill Hewlett's configuration.) An incandescent bulb's resistance increases with power dissipation, and as a rough rule of thumb the hot resistance is often about 10 times the cold resistance. The #327 lamp shown has an operating voltage of 28V and operating current of 40mA, for a hot resistance of about 700 ohms, and an estimated cold resistance of around 70 ohms. In order to achieve a noninverting gain of 3, the lamp's resistance must be half of the feedback resistance, or about 215 ohms.
-| Once the circuit is oscillating, the amplitude control can be described as follows:
+Gain control is achieved with an incandescent light bulb (as it is in Bill Hewlett's configuration.) An incandescent bulb's resistance increases with power dissipation, and as a rough rule of thumb the hot resistance is often about 10 times the cold resistance. The #327 lamp shown has an operating voltage of 28V and operating current of 40mA, for a hot resistance of about 700 ohms, and an estimated cold resistance of around 70 ohms. In order to achieve a noninverting gain of 3, the lamp's resistance must be half of the feedback resistance, or about 215 ohms.
+
+Once the circuit is oscillating, the amplitude control can be described as follows:
 
 -  If the gain is a little bit less than 3, the lamp cools down, its resistance drops, tending to increase the gain.
 -  If the gain is higher than 3, the lamp heats up, its resistance increases, tending to reduce the gain.
@@ -119,16 +120,19 @@ Open the **basic_wein_bridge.asc** LTspice simulation shown in Figure 3. The sim
 Simulated Wien Bridge Oscillator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Open the **wien_bridge_vcvs_gain.asc** LTspice simulation. This is a circuit that is impossible to build in real-life - the gain stage is essentially perfect - infinite input impedance, zero output impedance, and no offset or gain error. But it allows us to experiment with ideal cases, to gain some intuition into the Barkhausen criterion and test out some assertions made in the background information.
-| |image5|
+Open the **wien_bridge_vcvs_gain.asc** LTspice simulation. This is a circuit that is impossible to build in real-life - the gain stage is essentially perfect - infinite input impedance, zero output impedance, and no offset or gain error. But it allows us to experiment with ideal cases, to gain some intuition into the Barkhausen criterion and test out some assertions made in the background information.
+
+
+|image5|
 
 .. container:: centeralign
 
    Figure 5, Wien Bridge Oscillator with Ideal Gain Stage
 
 
-| Ignoring V1 for the moment, note that when this simulation is started, all voltages are zero. There is no reason for it to do anything other than stay at zero forever. V1 is there to "kick" the circuit into operation by providing a step to the gain stage when the simulation is first started, then it ramps back to zero and has no further effect on the circuit's operation.
-| Run the simulation, and probe the output node. Results should look similar to Figure 6.
+Ignoring V1 for the moment, note that when this simulation is started, all voltages are zero. There is no reason for it to do anything other than stay at zero forever. V1 is there to "kick" the circuit into operation by providing a step to the gain stage when the simulation is first started, then it ramps back to zero and has no further effect on the circuit's operation. Run the simulation, and probe the output node. Results should look similar to Figure 6.
+
+
 
 |image6|
 
@@ -137,8 +141,11 @@ Simulated Wien Bridge Oscillator
    Figure 6, Ideal Wien Oscillator, G=2.97
 
 
-| Note that the circuit oscillates a for a few milliseconds, but the amplitude exponentially decays to zero. This is because the gain is set 1% too low (as you might expect if you built an amplifier with 1% resistors.) Next, set the value for E2 to 2.997, or about 0.1% too low. Oscillations continue longer, but still decay.
-| |image7|
+Note that the circuit oscillates a for a few milliseconds, but the amplitude exponentially decays to zero. This is because the gain is set 1% too low (as you might expect if you built an amplifier with 1% resistors.) Next, set the value for E2 to 2.997, or about 0.1% too low. Oscillations continue longer, but still decay.
+
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -156,8 +163,10 @@ Since we know that the gain needs to be exactly 3 to sustain oscillation, set th
    Figure 8, Ideal Wien Oscillator, G=3.0
 
 
-| Notice that the operation is exactly as predicted, with a steady amplitude for the entire 250ms simulation time. This would never happen in real life, or even with simulations using a model of a real amplifier - the finite gain, finite input impedance, would cause the gain to be slightly more or less than 3.
-| As a final illustration that simulations can model situations that would be impossible in the real world, set the gain to 3.03 (1% too high) and run the simulation.
+Notice that the operation is exactly as predicted, with a steady amplitude for the entire 250ms simulation time. This would never happen in real life, or even with simulations using a model of a real amplifier - the finite gain, finite input impedance, would cause the gain to be slightly more or less than 3.
+
+As a final illustration that simulations can model situations that would be impossible in the real world, set the gain to 3.03 (1% too high) and run the simulation.
+
 
 |image9|
 
@@ -194,14 +203,13 @@ Run the simulation. The "kick" circuit is not necessary to get the simulation to
 
 Next, construct the circuit as shown in Figure 12.
 
-|
-
 .. note::
 
    Needs Update - V- not connected
 
-   | |image12|
-   
+
+   |image12|
+
    .. container:: centeralign
 
       Figure 12, Complete Wien Bridge Oscillator
@@ -211,14 +219,13 @@ Next, construct the circuit as shown in Figure 12.
 
 Note that R5 is a potentiometer, allowing the gain of the circuit to be "dialed in" to where oscillation just starts. Measure the output with Scopy's oscilloscope, results should be similar to Figure 13.
 
-|
-
 .. note::
 
    Take nicer Scopyshot
 
-   | |image13|
-   
+
+   |image13|
+
    .. container:: centeralign
 
       Figure 13, Wien Bridge Oscillator Measured Output
@@ -226,13 +233,9 @@ Note that R5 is a potentiometer, allowing the gain of the circuit to be "dialed 
    
 
 
-|
-
 .. note::
 
-   Frequency Domain measurements
-
-   | Distortion vs. potentiometer setting
+   Frequency Domain measurements Distortion vs. potentiometer setting
 
 
 Questions:
@@ -258,15 +261,17 @@ What is the relationship between the gain control elements and distortion?
 
 **For Further Reading:**
 
-| `"Thank You, Bill Hewlett", Jim Williams, EDN Magazine Feb. 2001 <https://m.eet.com/media/1146147/22254-61856.pdf>`_
-| `U.S. Patent 2,268,872 <https://web.archive.org/web/20211006041636/https://www.hp.com/us-en/pdf/002patent_tcm_245_921599.pdf>`_
-| :adi:`Linear Technology Application Note 43 <media/en/technical-documentation/application-notes/an43f.pdf>`
-| `Wien_bridge_oscillator <https://en.wikipedia.org/wiki/Wien_bridge_oscillator>`_
+`"Thank You, Bill Hewlett", Jim Williams, EDN Magazine Feb. 2001 <https://m.eet.com/media/1146147/22254-61856.pdf>`_
+
+`U.S. Patent 2,268,872 <https://web.archive.org/web/20211006041636/https://www.hp.com/us-en/pdf/002patent_tcm_245_921599.pdf>`_
+
+:adi:`Linear Technology Application Note 43 <media/en/technical-documentation/application-notes/an43f.pdf>`
+
+`Wien_bridge_oscillator <https://en.wikipedia.org/wiki/Wien_bridge_oscillator>`_
 
 `Using lamps for stabilizing oscillators <http://www.tronola.com/moorepage/Lamps.html>`_
 
-| **Return to** :doc:`Electronics I and II Lab Activity Material </wiki-migration/university/labs/electronics>`
-| **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
+**Return to** :doc:`Electronics I and II Lab Activity Material </wiki-migration/university/labs/electronics>` **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
 
 .. |youtube>-FxNJlDDGIs| image:: https://wiki.analog.com/_media/youtube>-FxNJlDDGIs
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/wien_bridge_osc_adalm2000/williams_simple_wien_bridge_osc.png

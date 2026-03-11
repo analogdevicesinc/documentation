@@ -27,8 +27,7 @@ The main source code for the SC5xx I2C adapter driver is in drivers/i2c/busses/i
            I2C support  --->
                I2C Hardware Bus support  --->
                    <*> ADI TWI I2C support
-                   (50)  ADI TWI I2C clock (kHz) 
-                   
+                   (50)  ADI TWI I2C clock (kHz)
 
 I2C Client Driver Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,7 +51,6 @@ The following C code defines a client driver instance, which is later registered
            .remove = adau1977_i2c_remove,
            .id_table = adau1977_i2c_ids,
    };
-    
 
 Register
 ~~~~~~~~
@@ -71,7 +69,7 @@ This audio codec driver uses the regmap programming interface, which is built up
 ::
 
    ret = regmap_read(adau1977->regmap, ADAU1977_REG_PLL, &val);
-     
+
    ret = regmap_write(adau1977->regmap, ADAU1977_REG_POWER,
                            ADAU1977_POWER_RESET);
 
@@ -148,17 +146,17 @@ Once rebuilt, the file twilcd_userspace_test.c is the main source code for this 
        int adapter_nr = 2; /* probably dynamically determined */
        char filename[20];
        snprintf(filename, 19, "/dev/i2c-%d", adapter_nr);
-        
+
        /** Open the I2C controller device node **/
        file = open(filename, O_RDWR);
-        
+
        if (file < 0) {
           /* ERROR HANDLING; you can check errno to see what went wrong */
           exit(1);
        }
-     
+
        int addr = 0x40; /* The I2C address */
-      
+
        /** Set the address for the I2C peripheral device **/
        if (ioctl(file, I2C_SLAVE, addr) < 0) {
              /* ERROR HANDLING; you can check errno to see what went wrong */
@@ -170,9 +168,10 @@ Once rebuilt, the file twilcd_userspace_test.c is the main source code for this 
            /* ERROR HANDLING: i2c transaction failed */
         } else {
            /* res contains the read word */
-        }        
-    
+        }
+
    }
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

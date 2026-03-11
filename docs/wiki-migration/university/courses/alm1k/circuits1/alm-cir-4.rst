@@ -54,22 +54,14 @@ In terms of a Thévenin Equivalent Circuit, maximum power is delivered to the lo
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Various Resistors (100 Ω, 330 Ω, 470 Ω, 1 KΩ and 1.5 KΩ)
+ADALM1000 hardware module Various Resistors (100 Ω, 330 Ω, 470 Ω, 1 KΩ and 1.5 KΩ)
 
 Procedure:
 ~~~~~~~~~~
 
-| 1. Verifying the Thévenin's theorem:
-| a) Construct the circuit of figure 1 using the following component values:
+1. Verifying the Thévenin's theorem: a) Construct the circuit of figure 1 using the following component values:
 
-| R\ :sub:`1` = 330 Ω
-| R\ :sub:`2` = 470 Ω
-| R\ :sub:`3` = 470 Ω
-| R\ :sub:`4` = 330 Ω
-| R\ :sub:`5` = 1 KΩ
-| R\ :sub:`L` = 1.5 KΩ
-| V\ :sub:`S` = +5V
+R\ :sub:`1` = 330 Ω R\ :sub:`2` = 470 Ω R\ :sub:`3` = 470 Ω R\ :sub:`4` = 330 Ω R\ :sub:`5` = 1 KΩ R\ :sub:`L` = 1.5 KΩ V\ :sub:`S` = +5V
 
 b) Accurately measure the voltage V\ :sub:`L` across the load resistance using ALM1000 Volt Meter Tool. Use the Volt Meter Tool by connecting channel CA to the + node of V\ :sub:`L` and connect channel CB to the - node. V\ :sub:`L` will be the difference between CA volts and CB volts. This value will later be compared to the one you will find using Thevenin Equivalent.
 
@@ -114,10 +106,7 @@ g) Optional: Repeat steps 1 b) to 1 f) for R\ :sub:`L` = 2.2 KΩ
 
 a) Construct the circuit as in figure 7 using the following values:
 
-| V\ :sub:`S` = +5 V
-| R\ :sub:`1` = R\ :sub:`2` = 470 Ω
-| R\ :sub:`3` = 1 KΩ
-| R\ :sub:`L` = combinations of 1 KΩ and 100 Ω resistors ( figure 8 )
+V\ :sub:`S` = +5 V R\ :sub:`1` = R\ :sub:`2` = 470 Ω R\ :sub:`3` = 1 KΩ R\ :sub:`L` = combinations of 1 KΩ and 100 Ω resistors ( figure 8 )
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig8.png
    :align: center
@@ -154,11 +143,8 @@ Questions:
 
 **For Further Reading:**
 
-| DC Voltmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/voltmeter_lab-0.pdf>`_ (volt-meter-tool-1.2.exe)
-| DC Ohmmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/ohmmeter_lab-0.pdf>`_ (ohm-meter-vdiv-1.2.exe)
-| DC Meter-Source `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/meter-source-lab0.pdf>`_ (dc-meter-source-tool-1.3.exe)
+DC Voltmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/voltmeter_lab-0.pdf>`_ (volt-meter-tool-1.2.exe) DC Ohmmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/ohmmeter_lab-0.pdf>`_ (ohm-meter-vdiv-1.2.exe) DC Meter-Source `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/meter-source-lab0.pdf>`_ (dc-meter-source-tool-1.3.exe)
 
 :doc:`Oscilloscope Terminology </wiki-migration/university/courses/alm1k/intro/oscilloscope-terminology>`
 
-| **\*Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**\*Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**

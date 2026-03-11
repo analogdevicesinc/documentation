@@ -60,13 +60,7 @@ The internal oscillator of the LT1054 runs at a nominal frequency of 25 kHz. CAP
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 - HPH1-1400L 6 winding transformer
-| 1 - LT1054
-| 2 - 1N4001 Diodes (D\ :sub:`1` and D\ :sub:`2`)
-| 2 – 47 uF Capacitors (C\ :sub:`1` and C\ :sub:`2`)
-| 1 – 220 uF Capacitor (C\ :sub:`3`)
-| 1 – Optional +5 V DC output AC wall adapter (USB charger)
+ADALM1000 hardware module 1 - HPH1-1400L 6 winding transformer 1 - LT1054 2 - 1N4001 Diodes (D\ :sub:`1` and D\ :sub:`2`) 2 – 47 uF Capacitors (C\ :sub:`1` and C\ :sub:`2`) 1 – 220 uF Capacitor (C\ :sub:`3`) 1 – Optional +5 V DC output AC wall adapter (USB charger)
 
 As shown in figure 3, the HPH1-1400L is wired as a 1:5 step-up transformer with one winding serving as the primary and the other 5 connected in series as the secondary. The CAP+ pin of the LT1054 drives one end of the primary with the other end of the primary connected to DC blocking capacitor C\ :sub:`3`. This single capacitor represents the parallel combination of C\ :sub:`1` and C\ :sub:`2` in figure 1. This insures that there will be no DC current in the transformer primary.
 
@@ -108,10 +102,7 @@ In order to use op-amps such as the ADTL082 in lab experiments with the M1k, hig
 Additional Materials:
 ^^^^^^^^^^^^^^^^^^^^^
 
-| 1 – ADTL082 Dual Op-Amp
-| 3 – 20 kΩ resistors
-| 2 – 4.7 kΩ resistors
-| 1 – 4.7 uF capacitor
+1 – ADTL082 Dual Op-Amp 3 – 20 kΩ resistors 2 – 4.7 kΩ resistors 1 – 4.7 uF capacitor
 
 Construct the example circuit shown in figure 5 on the breadboard next to the DC-DC converter in figure 3. The ADTL082 is powered from the generated +/- Vout voltages. The first of the two amplifiers is configured with a non-inverting gain greater than 1 (approx. 5) and the second amplifier is configured with an inverting gain of 1 with its input connect to the output of the first amplifier.
 
@@ -146,13 +137,10 @@ Other pin compatible parts such as ICL7660 switch at much lower frequencies and 
 
 **Transformer Driver Integrated Circuits**
 
-| :adi:`LT3439 DC/DC Transformer Driver <media/en/technical-documentation/data-sheets/3439fs.pdf>`
-| `MAX253 DC/DC Transformer Driver <https://datasheets.maximintegrated.com/en/ds/MAX253.pdf>`_
+:adi:`LT3439 DC/DC Transformer Driver <media/en/technical-documentation/data-sheets/3439fs.pdf>` `MAX253 DC/DC Transformer Driver <https://datasheets.maximintegrated.com/en/ds/MAX253.pdf>`_
 
 **For Further Reading:**
 
-| `Forward Mode Converters <https://en.wikipedia.org/wiki/Forward_converter>`_
-| :adi:`ADM660 Datasheet <media/en/technical-documentation/data-sheets/ADM660_8660.pdf>`
-| :adi:`LT1054 Datasheet <media/en/technical-documentation/data-sheets/1054lfh.pdf>`
+`Forward Mode Converters <https://en.wikipedia.org/wiki/Forward_converter>`_ :adi:`ADM660 Datasheet <media/en/technical-documentation/data-sheets/ADM660_8660.pdf>` :adi:`LT1054 Datasheet <media/en/technical-documentation/data-sheets/1054lfh.pdf>`
 
 **Return to Lab Activity Table of Contents**

@@ -68,5 +68,6 @@ Process Documentation
 
 -  `Branching Policy <resources/tools-software/linuxdsp/docs/branching-policy]>`_
 
-| 
-| ---- \**HOME PAGE: \*\* :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`
+--------------
+
+**HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`

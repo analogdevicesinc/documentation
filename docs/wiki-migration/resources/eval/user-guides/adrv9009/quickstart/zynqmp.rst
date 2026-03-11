@@ -60,20 +60,17 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
 
    .. raw:: html
 
-      <details><summary>Boot log (click to expand)</summary>
+      <details><summary>Boot log (click to expand)
 
    ::
    
-      Xilinx Zynq MP First Stage Boot Loader 
+      Xilinx Zynq MP First Stage Boot Loader
       Release 2017.4   May 11 2018  -  15:08:48
       NOTICE:  ATF running on XCZU9EG/silicon v4/RTL5.1 at 0xfffea000, with PMU firmware
       NOTICE:  BL31: Secure code at 0x0
@@ -96,13 +93,13 @@ Messages
       Err:   serial@ff000000
       Net:   ZYNQ GEM: ff0e0000, phyaddr c, interface rgmii-id
       eth0: ethernet@ff0e0000
-      Hit any key to stop autoboot:  0 
+      Hit any key to stop autoboot:  0
       switch to partitions #0, OK
       mmc0 is current device
       Device: sdhci@ff170000
       Manufacturer ID: 3
       OEM: 5344
-      Name: SL16G 
+      Name: SL16G
       Tran Speed: 50000000
       Rd Block Len: 512
       SD version 3.0
@@ -422,7 +419,7 @@ Messages
       [    3.130808] xilinx-drm-dp fd4a0000.dp: Display Port, version 1.0200 (tx)
       [    3.137748] xilinx-psgtr fd400000.zynqmp_phy: Lane:3 type:3 protocol:2 pll_locked:yes
       [    3.155604] ahci-ceva fd0c0000.ahci: AHCI 0001.0301 32 slots 2 ports 6 Gbps 0x3 impl platform mode
-      [    3.164483] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst 
+      [    3.164483] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst
       [    3.174790] scsi host0: ahci-ceva
       [    3.178222] scsi host1: ahci-ceva
       [    3.181567] ata1: SATA max UDMA/133 mmio [mem 0xfd0c0000-0xfd0c1fff] port 0x100 irq 36
@@ -521,7 +518,7 @@ Messages
       [    3.869249] input: PixArt Dell MS116 USB Optical Mouse as /devices/platform/amba/ff9d0000.usb0/fe200000.dwc3/xhci-hcd.0.auto/usb1/1-1/1-1:1.0/0003:413C:301A.0001/input/input0
       [    3.884889] hid-generic 0003:413C:301A.0001: input: USB HID v1.11 Mouse [PixArt Dell MS116 USB Optical Mouse] on usb-xhci-hcd.0.auto-1/input0
       [    4.116128] mmc0: new ultra high speed DDR50 SDHC card at address aaaa
-      [    4.122789] mmcblk0: mmc0:aaaa SL16G 14.8 GiB 
+      [    4.122789] mmcblk0: mmc0:aaaa SL16G 14.8 GiB
       [    4.131807]  mmcblk0: p1 p2 p3
       [    4.572980] random: crng init done
       [   11.594056] adrv9009 spi32766.1: adrv9009_probe: adrv9009 Rev 192, Firmware 4.0.4 API version: 3.4.0.0 successfully initialized
@@ -546,17 +543,17 @@ Messages
       [   12.062580] devtmpfs: mounted
       [   12.065577] Freeing unused kernel memory: 512K (ffffffc000db0000 - ffffffc000e30000)
       Mount failed for selinuxfs on /sys/fs/selinux:  No such file or directory
-      [ OK ]ting up X socket directories...        
+      [ OK ]ting up X socket directories...
         * STARTDISTCC is set to false in /etc/default/distcc
         * /usr/bin/distccd not starting
-      [ OK ]rting IIO Daemon iiod        
+      [ OK ]rting IIO Daemon iiod
    
       Last login: Tue May 15 07:20:04 UTC 2018 on tty1
       Welcome to Linaro 14.04 (GNU/Linux 4.9.0-g6834429-dirty aarch64)
    
         * Documentation:  https://wiki.analog.com/ https://ez.analog.com/
    
-      root@analog:~# 
+      root@analog:~#
    
 
    .. raw:: html
@@ -567,10 +564,7 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -588,10 +582,7 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

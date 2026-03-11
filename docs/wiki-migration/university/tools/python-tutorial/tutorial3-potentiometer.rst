@@ -20,16 +20,14 @@ Through Python we can acquire a number of analog values or samples from either c
 
 To measure an input voltage on a channel first we must set the mode to high impedance: CHA.mode = Mode.HI_Z # set channel to high impedance mode, measure voltage
 
-| Then we can acquire some number of input samples to a list ( in variable ADsignal1 ):
-| ADsignal1 = devx.read(20, -1, True) # get 20 readings
+Then we can acquire some number of input samples to a list ( in variable ADsignal1 ): ADsignal1 = devx.read(20, -1, True) # get 20 readings
 
 It will then be possible to add the 20 values and calculate an average for example.
 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 - 5KΩ Potentiometer
+ADALM1000 hardware module 1 - 5KΩ Potentiometer
 
 Directions:
 ~~~~~~~~~~~
@@ -81,5 +79,4 @@ Modify the program(s) to display both the Channel A and B inputs. Connect a seco
 
 `Potentiometer <https://en.wikipedia.org/wiki/Potentiometer>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`

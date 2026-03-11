@@ -85,7 +85,7 @@ I2C mode
                     reg = <0x14>;
                     status = "okay";
                     adi,pdm-clk-map = <1 1 0 0>;
-                    adi,decimation-ratio = <16>;   
+                    adi,decimation-ratio = <16>;
             };
    };
 
@@ -214,9 +214,13 @@ Supported DAI formats
 | SND_SOC_DAIFMT_CBS_CFS | yes                 | Codec bit- and frameclock slave         |
 +------------------------+---------------------+-----------------------------------------+
 
-\* The supported DAI format are limited for HW only mode (only I2S and Normal bit- and frameclock is supported). In this mode, the I2C SCL and SDA pins are used to select different functionality. Check table 11 of the datasheet for more details.
+- The supported DAI format are limited for HW only mode (only I2S and Normal bit- and frameclock is supported). In this mode, the I2C SCL and SDA pins are used to select different functionality. Check table 11 of the datasheet for more details.
 
 More information
 ================
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

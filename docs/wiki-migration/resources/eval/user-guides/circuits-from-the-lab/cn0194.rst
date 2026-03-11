@@ -101,7 +101,7 @@ Software Control and Indicator Descriptions
 ::
 
    -**Connect/Disconnect Button**
-   * When this button is clicked, the SDP-B Board USB connection to the CN-0194 Board status will be filliped.  A connection to the SDP-B Board must be made to use the software.   
+   * When this button is clicked, the SDP-B Board USB connection to the CN-0194 Board status will be filliped.  A connection to the SDP-B Board must be made to use the software.
    -**Capture Data Button**
    * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
    -**Save Data Button**
@@ -113,22 +113,22 @@ Software Control and Indicator Descriptions
    -**Channel Display**
    * Sets which channel is used and displayed.
    -**Control Tabs**
-   * __Time Domain__ : This tab shows the signal received in the ADC plotted in amplitude vs time. 
+   * __Time Domain__ : This tab shows the signal received in the ADC plotted in amplitude vs time.
    * __Frequency Domain__ : This tab shows the signal received in the ADC plotted in amplitude vs frequency. This Tab include two indicators to showing the position and velocity output of RDC, update in real time when RDC is converting.
    * __Histogram__ : This tab shows distribution of the captured signal amplitude displayed as the ADC code.
    * __S/W Version Info__ : Showing the SDP-B Board information when USB connection available.
    -**Navigation Tools**
-   * __Cursor__ 
-   * __Magnification__ : Contains magnification tools 
+   * __Cursor__
+   * __Magnification__ : Contains magnification tools
    * __Hand__ : Used for navigating through the graph
    -**Axis Tools**
-   * __Text Box__ : Provides easy graph navigation 
+   * __Text Box__ : Provides easy graph navigation
    * __Lock__ : Enables/Disables auto scroll of the graph
    * __Settings__ : Conatains axis settings
    -**SDP Status String Indicator**
    * This indicator displays a message regarding the status of the SDP-B Board.
    -**Status LED**
-   * This LED showing the ADC working status, when ADC is converting this LED will be light up, otherwise it will be turn off. 
+   * This LED showing the ADC working status, when ADC is converting this LED will be light up, otherwise it will be turn off.
    -**Frequency Analysis**
    * __THD__ : Total harmonic distortion
    * __SNR__ : Signal to noise ratio in decibels
@@ -139,14 +139,12 @@ Software Control and Indicator Descriptions
    * __Fund ampl__ : Amplitude of fundamental frequency
    * __Fund Freq__ : Fundamental frequency of the signal
    -** SDP Firmware Revision Details **
-   * __Major Rev__: 
-   * __Minor Rev__: 
-   * __Date__: 
-   * __Host Code Rev__: 
-   * __BF Code Rev__: 
-   * __Time__:  
-
-| 
+   * __Major Rev__:
+   * __Minor Rev__:
+   * __Date__:
+   * __Host Code Rev__:
+   * __BF Code Rev__:
+   * __Time__:
 
 --------------
 
@@ -163,7 +161,7 @@ Establishing a USB Connection Link
    **C:\\Program Files\\Analog Devices\\CN0194\\CN0194.exe** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\CN0194\\CN0194.exe** *(in 64-bit operational system)*\
 
 
-\* Click the **Connect Button**. A window with a progress bar will load.
+- Click the **Connect Button**. A window with a progress bar will load.
 
 
 

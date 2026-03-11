@@ -38,17 +38,7 @@ Build a simulation schematic of the Hartley oscillator as shown in figure 1. Cal
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 2N3904 NPN transistor
-| 1 - 1 uH inductor
-| 1 - 10 uH inductor
-| 1 - 100 uH inductor
-| 1 - 1 nF capacitor ( C\ :sub:`1` optional values as listed below )
-| 2 - 0.1 uF capacitors ( marked 104 )
-| 1 - 0.01 uF capacitor ( marked 103)
-| 1 - 1 KΩ resistor
-| Other resistor, capacitors and inductors as needed
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 2N3904 NPN transistor 1 - 1 uH inductor 1 - 10 uH inductor 1 - 100 uH inductor 1 - 1 nF capacitor ( C\ :sub:`1` optional values as listed below ) 2 - 0.1 uF capacitors ( marked 104 ) 1 - 0.01 uF capacitor ( marked 103) 1 - 1 KΩ resistor Other resistor, capacitors and inductors as needed
 
 Directions:
 -----------

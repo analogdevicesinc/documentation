@@ -1,7 +1,6 @@
 EVALUATING THE AD9625 ANALOG-TO-DIGITAL CONVERTER
 =================================================
 
---------------
 
 INTRODUCTION
 ============
@@ -25,7 +24,7 @@ FEATURES
 
 .. container:: centeralign
 
-   *Figure 1. AD9625 Evaluation Board Connection—*\ :adi:`AD9625-2.5EBZ <AD9625>` *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
+   *Figure 1. AD9625 Evaluation Board Connection—*\ :adi:`AD9625-2.5EBZ <AD9625>`\ *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
 
 
 REQUIRED HARDWARE
@@ -94,7 +93,7 @@ EASY START Steps
 
 7. Make sure the evaluation boards are powered on before connecting the analog input and clock. Connect the appropriate analog input (which should be filtered with a band-pass filter) and low jitter clock signal.
 
-| 8. Refer to the VisualAnalog User Manual at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for detailed software operating instructions.
+8. Refer to the VisualAnalog User Manual at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for detailed software operating instructions.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9625/ad9625_board_with_capture_board.png
    :width: 900px

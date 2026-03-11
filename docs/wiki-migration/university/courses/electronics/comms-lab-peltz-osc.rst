@@ -45,14 +45,7 @@ Build a simulation schematic of the Peltz oscillator as shown in figures 1 and 2
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - small signal NPN transistor (2N3904)
-| 1 - 10 KΩ resistor
-| 2 - 4.7 KΩ resistors
-| 1 - 100 uH inductor
-| 1 - 100 pF capacitor
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - small signal NPN transistor (2N3904) 1 - 10 KΩ resistor 2 - 4.7 KΩ resistors 1 - 100 uH inductor 1 - 100 pF capacitor
 
 Directions:
 -----------

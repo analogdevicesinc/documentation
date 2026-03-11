@@ -161,15 +161,13 @@ For example, GPIO30 is connected to the on board ADT7420 temperature sensor by d
 MCU Cog Design and Integration Files
 ------------------------------------
 
-|
-
 .. admonition:: Download
    :class: download
 
    `EV-COG-AD4050LZ MCU Cog revB Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/aducm4050_cog_schematic.pdf>`_
 
-
-   | `EV-COG-AD4050LZ MCU Cog revB Layout Files & BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/ev-cog-ad4050lzboarddesigndatabase.zip>`_
+   
+   `EV-COG-AD4050LZ MCU Cog revB Layout Files & BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/ev-cog-ad4050lzboarddesigndatabase.zip>`_
    
 
 
@@ -184,10 +182,10 @@ For developers designing a Cog add-on board, the template schematic/board files 
    `Gear Template Design Database <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/geartemplatedesigndatabase.zip>`_
 
 
-|
 
 | End Document
-| `Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_
+
+`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_
 
 .. |direct| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/24072017-tile-revb-adp5300-gpio.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/c1-conn-mapping.png

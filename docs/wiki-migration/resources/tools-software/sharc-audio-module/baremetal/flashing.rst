@@ -23,7 +23,7 @@ This procedure will use the application name of **my_app** for the purpose of ex
 -  Place **my_app_Core0**, **my_app_Core1.dxe**, and **my_app_Core2.dxe** into the **Input_DXE_Files** folder
 -  Open a *Windows Command Prompt*
 -  Change directories to ..\\SAM_BareMetal_SDK-Rel2.1.0\\extras\\flash-programmer
--  On the command line type **prog_SAM_flash_ice1000.bat** *my_app* (do NOT add the core extension)
+-  On the command line type **prog_SAM_flash_ice1000.bat** my_app* (do NOT add the core extension)
 -  Execute the batch file to program flash on the SHARC Audio Module Main Board.
 
 .. important::
@@ -33,5 +33,5 @@ This procedure will use the application name of **my_app** for the purpose of ex
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#porting-to-new-hardware-tutorial
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#porting-to-new-hardware-tutorial
    :alt: Porting framework to different HW#.|Bare Metal Framework#troubleshooting|Trouble Shooting

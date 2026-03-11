@@ -23,12 +23,7 @@ To rotate the stepper motor a sequence of “high” and “low” levels is app
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard adapter
-| Jumper wires
-| 2 – 74HC541 octal drivers
-| 1 – 5 V Stepper motor (Mitsumi M35SP-7T bipolar stepper motor or similar)
-| 1 Amp 5 V power supply, USB wall charger and micro USB to breadboard adapter is a good option
+ADALM1000 hardware module Solder-less breadboard adapter Jumper wires 2 – 74HC541 octal drivers 1 – 5 V Stepper motor (Mitsumi M35SP-7T bipolar stepper motor or similar) 1 Amp 5 V power supply, USB wall charger and micro USB to breadboard adapter is a good option
 
 Program to Drive A Stepper Motor
 --------------------------------
@@ -102,7 +97,7 @@ In this first code example we configure the four digital pins, PIO 0 – 3, as o
    PIO_0 = 28
    PIO_1 = 29
    PIO_2 = 47
-   PIO_3 = 3 
+   PIO_3 = 3
    # step tables for full steps
    D0steptab = [1, 0, 0, 0]
    D1steptab = [0, 1, 0, 0]
@@ -117,7 +112,7 @@ While this is a fairly simple approach it is sort of brute force and the width a
            pointer = pointer + 1
            if pointer > pointermax:
                pointer = 0
-               
+
            D0stepcode = 0x50 + D0steptab[pointer] # 0x50 = set to 0, 0x51 = set to 1
            D1stepcode = 0x50 + D1steptab[pointer]
            D2stepcode = 0x50 + D2steptab[pointer]
@@ -125,8 +120,8 @@ While this is a fairly simple approach it is sort of brute force and the width a
            devx.ctrl_transfer(0x40, D0stepcode, PIO_0, 0, 0, 0, 100) # set PIO 0
            devx.ctrl_transfer(0x40, D1stepcode, PIO_1, 0, 0, 0, 100) # set PIO 1
            devx.ctrl_transfer(0x40, D2stepcode, PIO_2, 0, 0, 0, 100) # set PIO 2
-           devx.ctrl_transfer(0x40, D3stepcode, PIO_3, 0, 0, 0, 100) # set PIO 3     
-           
+           devx.ctrl_transfer(0x40, D3stepcode, PIO_3, 0, 0, 0, 100) # set PIO 3
+
            time.sleep(steptime)
            i = i + 1
 
@@ -169,4 +164,4 @@ Challenges:
 
 `Stepper motor <https://en.wikipedia.org/wiki/Stepper_motor>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**

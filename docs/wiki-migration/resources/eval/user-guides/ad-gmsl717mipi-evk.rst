@@ -1,15 +1,16 @@
 AD-GMSL717MIPI-EVK
 ==================
 
-|
-
 .. important::
 
    **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-gmsl717mipi-evk/index.html
-   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
-   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+   https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-gmsl717mipi-evk/index.html
+   
+   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   
+   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
    
 
 
@@ -20,8 +21,8 @@ The **AD-GMSL717MIPI-EVK** allows connecting a wide range of cameras with 15-pin
 
 |image1| |image2|
 
-| 
-| ==== Features ====
+Features
+--------
 
 -  1 x MIPI CSI (2 x lanes) 15-pin ribbon cable connector
 -  4 x MFP pins routed to the ribbon cable connector
@@ -37,17 +38,19 @@ Applications
 -  Autonomous Guided Vehicles
 -  Advanced Driver Assistance Systems (ADAS)
 
-| 
-| ===== Software Development ===== The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the `Analog Devices GMSL GitHub repository <https://github.com/analogdevicesinc/gmsl>`_.
+Software Development
+~~~~~~~~~~~~~~~~~~~~
 
-| 
-| ==== Resources ====
+The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the `Analog Devices GMSL GitHub repository <https://github.com/analogdevicesinc/gmsl>`_.
+
+Resources
+---------
 
 -  :adi:`MAX96717 Product Page <MAX96717>`
 -  :adi:`MAX20049 Product Page <MAX20049>`
 
-| 
-| ===== Support =====
+Support
+~~~~~~~
 
 .. hint::
 

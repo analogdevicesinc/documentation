@@ -42,7 +42,7 @@ Files
 +---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | devicetree bindings | :git-linux:`Documentation/devicetree/bindings/iio/adc/adi,ad7768.yaml`                                                                                                          |
 +---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| hdl project         | :git-hdl:`hdl <projects/ad7768evb>`                                                                                                                                             |
+| hdl project         | `hdl <https://github.com/analogdevicesinc/hdl/tree/hdl_2017_r1/projects/ad7768evb>`_                                                                                            |
 +---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example Linux Device-Tree Initialization
@@ -84,20 +84,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
-
-
    
-   |
 
-
-|
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -134,10 +126,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -150,20 +139,16 @@ Show device name
 Show scale
 ----------
 
-| **Description:**
-| scale to be applied to in_voltage0_raw in order to obtain the measured voltage in millivolts.
+**Description:** scale to be applied to in_voltage0_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage_scale **
+      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage_scale**
       0.000488281
    
 
@@ -184,7 +169,7 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24

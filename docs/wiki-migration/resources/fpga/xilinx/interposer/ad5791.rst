@@ -66,20 +66,15 @@ Required Software
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \* **AD5791 Driver:** :git-no-OS:`drivers/dac/ad5791`
    
+   -  **AD5791 Driver:** :git-no-OS:`drivers/dac/ad5791`
    -  **AD5791 Commands:** :git-no-OS:`device_commands/AD5791`
    -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
    -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
    
-   |
-
-   |
 
 
 Run the Demonstration Project
@@ -88,24 +83,19 @@ Run the Demonstration Project
 Hardware setup
 --------------
 
-|
-
 .. important::
 
-
-   ..
-
-| Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+   
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
 
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
 
-|
-
 .. important::
 
-   | To power on the EVAL-AD5791 evaluation board, you need to provide external differential supply voltage to J1 connector(for more information see: :adi:`EVAL-AD5791SDZ evaluation board user guide </static/imported-files/user_guides/UG-185.pdf>`) and a 5V reference voltage to VREF connector on the evaluation board. VREFN will be connected to AGND (LK8 option=A and LK9 option=B).
+   
+   To power on the EVAL-AD5791 evaluation board, you need to provide external differential supply voltage to J1 connector(for more information see: :adi:`EVAL-AD5791SDZ evaluation board user guide </static/imported-files/user_guides/UG-185.pdf>`) and a 5V reference voltage to VREF connector on the evaluation board. VREFN will be connected to AGND (LK8 option=A and LK9 option=B).
 
 
 Reference Project Overview
@@ -165,8 +155,6 @@ Software Project Setup
 
    See `import_workspace <https://wiki.analog.com/import_workspace>`_
 
-
-.. _more-information-1:
 
 More information
 ================

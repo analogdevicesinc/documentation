@@ -34,14 +34,7 @@ Build a simulation schematic of the tuned emitter follower amplifier as shown in
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 2N3904 NPN transistor
-| 1 - 100 uH inductor (Various other value inductors)
-| 2 - 1.0 nF capacitors ( marked 102 )
-| 2 - 1 KΩ resistors
-| 1 - 2.2 KΩ resistor
-| Other resistor and capacitors as needed
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 2N3904 NPN transistor 1 - 100 uH inductor (Various other value inductors) 2 - 1.0 nF capacitors ( marked 102 ) 2 - 1 KΩ resistors 1 - 2.2 KΩ resistor Other resistor and capacitors as needed
 
 Directions:
 ~~~~~~~~~~~
@@ -102,11 +95,7 @@ If we add a second conventional emitter follower stage as a non-tuned parallel p
 Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
-| 1 - 2N3904 NPN transistor
-| 2 - 470 Ω resistors
-| 1 - 1 KΩ resistor
-
-.. _directions-1:
+1 - 2N3904 NPN transistor 2 - 470 Ω resistors 1 - 1 KΩ resistor
 
 Directions:
 ~~~~~~~~~~~
@@ -126,8 +115,6 @@ The exact value for R\ :sub:`1`, such that the gain is reduced to unity, may var
 
 The green squares indicate where to connect the ADALM2000 module AWG, scope channels and power supplies. Be sure to turn on the power supplies only after you double check your wiring.
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
@@ -144,8 +131,6 @@ Build the breadboard circuit presented in Figure 6.
 
    Figure 6 Amplifier with quadrature outputs breadboard circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -165,8 +150,6 @@ Set the AWG amplitude in the Network Analyzer to 2.0 V, because we have reduced 
 
 
 Using the scope and function generator software instruments ( in the time domain ) set the AWG frequency to the resonate frequency with the amplitude set to 2V. Observer the relative amplitude and phase of the two outputs.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~

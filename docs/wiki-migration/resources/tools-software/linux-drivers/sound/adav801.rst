@@ -140,12 +140,8 @@ There is no dedicated Blackfin STAMP evaluation board for the ADAV80X. During te
 
 It can be easily wired to the Blackfin STAMP SPORT header.
 
-.. _source-code-1:
-
 Source Code
 -----------
-
-.. _status-1:
 
 Status
 ~~~~~~
@@ -155,8 +151,6 @@ Status
 +===================================================================================================+==========================================================================================================================+
 | :git-linux-kernel?sound:`git <soc/blackfin/bfin-eval-adav80x.c>`                                  | `Yes <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/blackfin/bfin-eval-adav80x.c>`_  |
 +---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-
-.. _files-1:
 
 Files
 ~~~~~
@@ -176,7 +170,7 @@ For ADAV801, enable SPI:
 
    Device Drivers  --->
    [*] SPI support  --->
-   ***   SPI Master Controller Drivers ***
+   **   SPI Master Controller Drivers **
    <*>   SPI controller driver for ADI Blackfin5xx
 
 For ADAV803, enable I2C:
@@ -186,7 +180,7 @@ For ADAV803, enable I2C:
    Device Drivers  --->
    [*] I2C support  --->
    [*]   I2C Hardware Bus support  --->
-   ***     I2C system bus drivers (mostly embedded / system-on-chip) ***
+   **     I2C system bus drivers (mostly embedded / system-on-chip) **
    <*>       Blackfin TWI I2C support
    (100)     Blackfin TWI I2C clock (kHz)
 
@@ -217,10 +211,7 @@ Load the driver and make sure the sound card is properly instantiated.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -236,10 +227,7 @@ Load the driver and make sure the sound card is properly instantiated.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

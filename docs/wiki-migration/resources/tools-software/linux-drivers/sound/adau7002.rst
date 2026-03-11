@@ -55,7 +55,10 @@ The ADAU7002 driver is fully devicetree compatible.
 Example device initialization
 =============================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 Devicetree
 ----------
@@ -139,9 +142,13 @@ Supported DAI formats
 | SND_SOC_DAIFMT_CBS_CFS | no                  | Codec bit- and frameclock slave         |
 +------------------------+---------------------+-----------------------------------------+
 
-\* The supported DAI format depends on the configuration of the CONFIG pin. When tied to IOVDD only SND_SOC_DAIFMT_I2S is supported, for all other settings only SND_SOC_DAIFMT_DSP_A is supported
+- The supported DAI format depends on the configuration of the CONFIG pin. When tied to IOVDD only SND_SOC_DAIFMT_I2S is supported, for all other settings only SND_SOC_DAIFMT_DSP_A is supported
 
 More information
 ================
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

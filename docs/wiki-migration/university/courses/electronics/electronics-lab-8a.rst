@@ -16,12 +16,7 @@ The AD590 uses a fundamental property of silicon BJT transistors to realize its 
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| 1 - 500Ω Variable Resistor, Potentiometer
-| 1 - 100Ω Resistor
-| 3 - small signal NPN transistors (2N3904)
-| 3 - small signal PNP transistors (2N3906)
+ADALM2000 Active Learning Module Solder-less breadboard 1 - 500Ω Variable Resistor, Potentiometer 1 - 100Ω Resistor 3 - small signal NPN transistors (2N3904) 3 - small signal PNP transistors (2N3906)
 
 Directions:
 -----------
@@ -93,8 +88,6 @@ In figure 1 we referenced the negative end of the circuit to a negative power su
    Figure 4 Floating current source (as a source tied to a positive supply)
 
 
-.. _hardware-setup-1:
-
 Hardware setup:
 ---------------
 
@@ -104,8 +97,6 @@ Hardware setup:
 
    Figure 5 Floating current source (as a sink tied to a positibe supply) Breadboard Circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -119,8 +110,6 @@ Procedure:
 
    Figure 6 Floating current source (as a sink tied to a positive supply) XY plot
 
-
-.. _questions-1:
 
 Questions:
 ----------

@@ -79,7 +79,8 @@ There are two basic ways to program the ADICUP3029 with the software for the ADX
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
-   Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+
+Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
 
 Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
 
@@ -171,8 +172,6 @@ Serial Terminal Output
 -  Once done, open a serial terminal program, such as Putty or Tera Term.
 -  Then follow the UART configurations below.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -183,8 +182,6 @@ Following is the UART configuration.
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-|
 
 It should now display the value similar to the image below.
 

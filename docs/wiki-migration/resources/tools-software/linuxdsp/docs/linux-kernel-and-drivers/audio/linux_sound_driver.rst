@@ -96,20 +96,20 @@ Find the device
 
 After the configuration in above steps, you are able to find the audio device information in boot log:
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/audio/lkad-linux_sound_driver-find_the_device.jpg
+   :width: 400px
 
 You are able to use arecord -l and aplay -l to find the card number.
 
 ::
 
    # arecord -l
-   **** List of CAPTURE Hardware Devices ****
+   *** List of CAPTURE Hardware Devices ***
    card 0: sc5xxasoccard [sc5xx-asoc-card], device 1: ADAU1979 adau1977-hifi-1 []
       Subdevices: 1/1
       Subdevice #0: subdevice #0
    # aplay -l
-   **** List of PLAYBACK Hardware Devices ****
+   *** List of PLAYBACK Hardware Devices ***
    card 0: sc5xxasoccard [sc5xx-asoc-card], device 0: ADAU1962 adau1962-hifi-0 []
       Subdevices: 1/1
       Subdevice #0: subdevice #0
@@ -178,8 +178,6 @@ If you want to unmute the ADC and DAC or adjust the volume, you can use the **a
    numid=29,iface=MIXER,name='DAC9 Playback Switch'
    numid=28,iface=MIXER,name='DAC9 Playback Volume'
    numid=30,iface=MIXER,name='DAC9 Power Adjust'
-
- 
 
 If you want to increase the volume of ADC1 and ADC2, you can set a bigger value.
 
@@ -267,7 +265,7 @@ If you have a sample wav file, you can use **aplay** tool or **speaker-test** to
 
 ::
 
-   # aplay -D hw:0,0 sample.wav 
+   # aplay -D hw:0,0 sample.wav
    # aplay -D plug:dmix:0 sample.wav
 
  Or you can use speaker-test tool:
@@ -297,6 +295,3 @@ If you want to hear the audio at the ADC input, you can use following command:
 --------------
 
 **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/audio/lkad-linux_sound_driver-find_the_device.jpg
-   :width: 400px

@@ -8,5 +8,5 @@ There are differences in working with single-core applications vs multi-core app
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation CCES Getting Started#bsp
+.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#bsp
    :alt: Board Support Packages#.|CCES Getting Started#app|Creating Bootable Applications

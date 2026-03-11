@@ -122,8 +122,6 @@ NXP 8MMINI-BB
 |image3|                             |image4|
 ==================================== ===================================
 
-.. _wiring-1:
-
 Wiring
 ^^^^^^
 
@@ -139,8 +137,6 @@ GND                  AGND
 ==================== ================
 
 Connect both grounds (idealy) to the most accessible ground to you on the 8MMINI-BB.
-
-.. _board-settings-1:
 
 Board settings
 ^^^^^^^^^^^^^^
@@ -166,8 +162,6 @@ SWITCH S4 POSITION
 ========= ========
 
 Make sure IMX8MM-BB is set to boot from the SD Card, for more details go to `Boot Switch Setup <https://www.nxp.com/document/guide/get-started-with-the-i-mx-8m-mini-evkb:GS-iMX-8M-Mini-EVK>`_.
-
-.. _software-setup-1:
 
 Software Setup
 ^^^^^^^^^^^^^^
@@ -296,8 +290,6 @@ Copy the modified DT on the boot partition of the SD Card:
 
    cp arch/arm64/boot/dts/freescale/imx8mm-evk.dtb /media/<user>/BOOT
 
-.. _testing-1:
-
 Testing
 ^^^^^^^
 
@@ -342,8 +334,6 @@ NVIDIA Jetson Nano
 | |image7|                               | |image8|                            |
 +----------------------------------------+-------------------------------------+
 
-.. _wiring-2:
-
 Wiring
 ^^^^^^
 
@@ -359,8 +349,6 @@ GND                          AGND
 ============================ ================
 
 Connect both grounds (AGND) (idealy) to the most accessible ground to you on the Jetson Nano. Also, avoid powering the EVAL-ADIN2111EBZ from the USB of Jetson Nano, driver won't probe correctly because power to the USB is given too late in boot stage. (Try powering from 5V pins or externally if possible).
-
-.. _board-settings-2:
 
 Board settings
 ^^^^^^^^^^^^^^
@@ -562,8 +550,6 @@ Make extlinux.conf point to the newly added dt:
          APPEND ${cbootargs} quiet root=/dev/mmcblk0p1 rw rootwait rootfstype=ext4 console=ttyS0,115200n8 console=tty0 fbcon=map:0 net.ifnames=0 sdhci_tegra.en_boot_part_access=1
 
 Reboot the Jetson Nano.
-
-.. _testing-2:
 
 Testing
 ^^^^^^^

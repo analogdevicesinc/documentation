@@ -206,8 +206,7 @@ Pros:
 
 Cons:
 
-| - Requires many comparators. The physical limits of monolithic integration generally allow only up to 8 bits of resolution per ADC chip.
-| - High input capacitance.
+- Requires many comparators. The physical limits of monolithic integration generally allow only up to 8 bits of resolution per ADC chip. - High input capacitance.
 
 20.6 How It Works - Pipeline Architecture
 -----------------------------------------
@@ -218,16 +217,11 @@ The same code is then fed to the DAC, which reconverts the code back to an analo
 
 Pros:
 
-| + Not as fast as pure flash architecture, but achieves higher resolutions and dynamic range.
-| + Handles wideband inputs.
-| + Use of dither noise and averaging increases the effective resolution of the converter.
-| + Permits under sampling of wideband IF signal.
++ Not as fast as pure flash architecture, but achieves higher resolutions and dynamic range. + Handles wideband inputs. + Use of dither noise and averaging increases the effective resolution of the converter. + Permits under sampling of wideband IF signal.
 
 Cons:
 
-| - Pipeline delay. Total throughput can be equal to that of a flash converter (one conversion per cycle), but with a latency or pipeline delay equal to the number of stages.
-| - Accuracy of conversion depends on the DAC linearity.
-| - Ill-suited to applications where conversion results must be available immediately after the sample clock.
+- Pipeline delay. Total throughput can be equal to that of a flash converter (one conversion per cycle), but with a latency or pipeline delay equal to the number of stages. - Accuracy of conversion depends on the DAC linearity. - Ill-suited to applications where conversion results must be available immediately after the sample clock.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f11.gif
    :align: center
@@ -247,16 +241,11 @@ The first comparison is made between the analog input voltage and a voltage repr
 
 Pros:
 
-| + Uses a single comparator to achieve high resolution, resulting in small die size for monolithic ADCs.
-| + No pipeline delay.
-| + Well-suited for non-periodic inputs.
-| + Use of dither noise and averaging increases the effective resolution of the converter.
-| + Permits under-sampling.
++ Uses a single comparator to achieve high resolution, resulting in small die size for monolithic ADCs. + No pipeline delay. + Well-suited for non-periodic inputs. + Use of dither noise and averaging increases the effective resolution of the converter. + Permits under-sampling.
 
 Cons:
 
-| - Requires N comparisons to achieve N-bit resolution, which is more than both flash and pipelined.
-| - Accuracy of conversion depends on the DAC linearity and comparator noise.
+- Requires N comparisons to achieve N-bit resolution, which is more than both flash and pipelined. - Accuracy of conversion depends on the DAC linearity and comparator noise.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f12.gif
    :align: center
@@ -276,14 +265,11 @@ The modulator produces a binary stream in which the ratio of ones to zeros is a 
 
 Pros:
 
-| + Yields the highest precision for lower input-bandwidth applications.
-| + Permits noise shaping whereby low-frequency noise is moved to higher frequencies, outside the band of interest.
-| + Oversampling reduces requirements for anti-aliasing filtering.
++ Yields the highest precision for lower input-bandwidth applications. + Permits noise shaping whereby low-frequency noise is moved to higher frequencies, outside the band of interest. + Oversampling reduces requirements for anti-aliasing filtering.
 
 Cons:
 
-| - Latency is much greater than with other architectures.
-| - Oversampling and latency discourage the use of sigma-delta ADCs when digitizing multiplexed input signals.
+- Latency is much greater than with other architectures. - Oversampling and latency discourage the use of sigma-delta ADCs when digitizing multiplexed input signals.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f13.gif
    :align: center

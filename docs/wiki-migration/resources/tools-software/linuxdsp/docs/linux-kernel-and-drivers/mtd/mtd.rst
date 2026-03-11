@@ -9,13 +9,9 @@ This section describes the steps required to build and use MTD(Memory Technology
 ::
 
             MTD
-   ------------------------
        SPI NOR framework
-   ------------------------
            m25p80
-   ------------------------
         SPI bus driver
-   ------------------------
          SPI NOR chip
 
 Hardware Setup
@@ -41,12 +37,12 @@ The following configuration should be done on top of the SC589-ezkit/SC584-ezkit
 ::
 
    Device Drivers  --->
-       <*> Memory Technology Device (MTD) support  ---> 
+       <*> Memory Technology Device (MTD) support  --->
 
            <*>   Command line partition table parsing
            <*>   Caching block device access to MTD devices
            <*>   SPI-NOR device support  --->
-           Self-contained MTD device drivers  ---> 
+           Self-contained MTD device drivers  --->
                <*> Support most SPI Flash chips (AT26DF, M25P, W25X, ...)
 
 Enable JFFS2 filesystem support.
@@ -74,26 +70,26 @@ Get the MTD device info.
 
 ::
 
-   # cat /proc/mtd 
-   dev:    size   erasesize  name 
-   mtd0: 00080000 00001000 "uboot (spi)" 
-   mtd1: 00580000 00001000 "kernel (spi)" 
-   mtd2: 00a00000 00001000 "root file system (spi)" 
-   # mtdinfo 
-   Count of MTD devices:           3 
-   Present MTD devices:            mtd0, mtd1, mtd2 
-   Sysfs interface supported:      yes 
-   # mtdinfo /dev/mtd0 
-   mtd0 
-   Name:                           uboot (spi) 
-   Type:                           nor 
-   Eraseblock size:                4096 bytes, 4.0 KiB 
-   Amount of eraseblocks:          128 (524288 bytes, 512.0 KiB) 
-   Minimum input/output unit size: 1 byte 
-   Sub-page size:                  1 byte 
-   Character device major/minor:   90:0 
-   Bad blocks are allowed:         false 
-   Device is writable:             true 
+   # cat /proc/mtd
+   dev:    size   erasesize  name
+   mtd0: 00080000 00001000 "uboot (spi)"
+   mtd1: 00580000 00001000 "kernel (spi)"
+   mtd2: 00a00000 00001000 "root file system (spi)"
+   # mtdinfo
+   Count of MTD devices:           3
+   Present MTD devices:            mtd0, mtd1, mtd2
+   Sysfs interface supported:      yes
+   # mtdinfo /dev/mtd0
+   mtd0
+   Name:                           uboot (spi)
+   Type:                           nor
+   Eraseblock size:                4096 bytes, 4.0 KiB
+   Amount of eraseblocks:          128 (524288 bytes, 512.0 KiB)
+   Minimum input/output unit size: 1 byte
+   Sub-page size:                  1 byte
+   Character device major/minor:   90:0
+   Bad blocks are allowed:         false
+   Device is writable:             true
 
 Erase the MTD device.
 
@@ -112,7 +108,7 @@ Read and Write data to the MTD device.
 ::
 
    # echo hello > /mnt/test
-   # cat /mnt/test 
+   # cat /mnt/test
    hello
 
 Unmount the MTD device.

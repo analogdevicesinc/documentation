@@ -5,11 +5,10 @@ General EQ With External Blend
 
 The 'General EQ with External Blend' block blends the filter coefficients of two second order filters according to the blend factor specified and performs filtering operation. The blending factor will be obtained via the control input pin
 
-| 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/geneqextblendtreetoolbox.png
+   :align: center
 
-| 
-| This block gives access to a wide variety of 2nd-order (biquad)filter algorithms. The blend factor(0-1) is obtained as input through the control pin. The Slew time can be entered in seconds (0-1) to slew from the initial blend factor to the target value. The available filter types are:
+This block gives access to a wide variety of 2nd-order (biquad)filter algorithms. The blend factor(0-1) is obtained as input through the control pin. The Slew time can be entered in seconds (0-1) to slew from the initial blend factor to the target value. The available filter types are:
 
 -  Parametric
 -  Shelving
@@ -53,10 +52,12 @@ Output Pins
 | Pin 0: Filter Out1 | decimal - audio                    | Filtered output      |
 +--------------------+------------------------------------+----------------------+
 
---------------
 
-| 
-| ====Configuration==== |image2|
+Configuration
+-------------
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/blendExtCell.png
+   :align: center
 
 +--------------------------+---------------+---------------+--------------------------------------------------------------------------------------------------------+
 | GUI Control Name         | Default Value | Range         | Function Description                                                                                   |
@@ -77,8 +78,9 @@ Output Pins
 +--------------------------+---------------+---------------+--------------------------------------------------------------------------------------------------------+
 
 | 
-| Click on the |image3| icon to configure the filters. Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
-| The GUI controls for various types of filters are given below.
+| Click on the |image1| icon to configure the filters. Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+
+The GUI controls for various types of filters are given below.
 
 Parameteric
 -----------
@@ -96,7 +98,6 @@ Parameteric
 | Q                | 1.41          | 0-16        | Q Factor for filter calculations    |
 +------------------+---------------+-------------+-------------------------------------+
 
---------------
 
 Shelving
 --------
@@ -140,7 +141,6 @@ General
 | Q                | 1.41            | 0-16                                 | Q Factor for filter calculations   |
 +------------------+-----------------+--------------------------------------+------------------------------------+
 
---------------
 
 Butterworth/Bessel
 ------------------
@@ -158,7 +158,6 @@ Butterworth/Bessel
 | Gain             | 0dB             | -15 - 15 dB                                                                 | dB gain of the filter coefficients |
 +------------------+-----------------+-----------------------------------------------------------------------------+------------------------------------+
 
---------------
 
 Tone Control
 ------------
@@ -178,7 +177,6 @@ Tone Control
 | Bass Gain        | 0dB           | -15 - 15 dB | Bass dB gain of the filter coefficients   |
 +------------------+---------------+-------------+-------------------------------------------+
 
---------------
 
 IIR Coefficient
 ---------------
@@ -218,7 +216,6 @@ First Order Filters
 | Q                | 1.41                                        | 0-16              | Q Factor for filter calculations       |
 +------------------+---------------------------------------------+-------------------+----------------------------------------+
 
---------------
 
 All Pass,Peaking,Notch
 ----------------------
@@ -236,7 +233,6 @@ All Pass,Peaking,Notch
 | Q                | 1.41          | 0-16        | Q Factor for filter calculations   |
 +------------------+---------------+-------------+------------------------------------+
 
---------------
 
 Chebyshev
 ---------
@@ -258,43 +254,42 @@ Chebyshev
 
 --------------
 
-|
+DSP Parameter Information
+-------------------------
 
-| ====DSP Parameter Information====
-
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| GUI Control Name | Compiler Name                                                                                 | Function Description                                                                                                                                                 |
-+==================+===============================================================================================+======================================================================================================================================================================+
-| F1_B2\_          | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F1_B2\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B2 for filter 1                                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F1_B1\_          | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F1_B1\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B1 for filter 1                                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F1_B0\_          | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F1_B0\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B0 for filter 1                                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F1_A2\_          | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F1_A2\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient A2 for filter 1                                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F1_A1\_          | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F1_A1\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient A1 for filter 1                                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F2_B2\_          | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F2_B2\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B2 for filter 2                                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F2_B1\_          | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F2_B1\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B1 for filter 2                                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F2_B0\_          | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F2_B0\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient B0 for filter 2                                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F2_A2\_          | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F2_A2\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient A2 for filter 2                                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F2_A1\_          | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>F2_A1\_</fc><fc #800000>1</fc>  | Bi-quad filter coefficient A1 for filter 2                                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Lambda\_         | <fc #008000>BlendEQExtSPAlg</fc><fc #ff0000>1</fc><fc #000080>lambda\_</fc><fc #800000>1</fc> | time_constant = slew_time/(PI \* 1.5),Lambda\_= exp(-1/(time_constant\*FS)) where,slew_time is the time required to slew from initial to final value of coefficient. |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| GUI Control Name | Compiler Name            | Function Description                                                                                                                                                 |
++==================+==========================+======================================================================================================================================================================+
+| F1_B2\_          | BlendEQExtSPAlg1F1_B2_1  | Bi-quad filter coefficient B2 for filter 1                                                                                                                           |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F1_B1\_          | BlendEQExtSPAlg1F1_B1_1  | Bi-quad filter coefficient B1 for filter 1                                                                                                                           |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F1_B0\_          | BlendEQExtSPAlg1F1_B0_1  | Bi-quad filter coefficient B0 for filter 1                                                                                                                           |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F1_A2\_          | BlendEQExtSPAlg1F1_A2_1  | Bi-quad filter coefficient A2 for filter 1                                                                                                                           |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F1_A1\_          | BlendEQExtSPAlg1F1_A1_1  | Bi-quad filter coefficient A1 for filter 1                                                                                                                           |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F2_B2\_          | BlendEQExtSPAlg1F2_B2_1  | Bi-quad filter coefficient B2 for filter 2                                                                                                                           |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F2_B1\_          | BlendEQExtSPAlg1F2_B1_1  | Bi-quad filter coefficient B1 for filter 2                                                                                                                           |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F2_B0\_          | BlendEQExtSPAlg1F2_B0_1  | Bi-quad filter coefficient B0 for filter 2                                                                                                                           |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F2_A2\_          | BlendEQExtSPAlg1F2_A2_1  | Bi-quad filter coefficient A2 for filter 2                                                                                                                           |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F2_A1\_          | BlendEQExtSPAlg1F2_A1_1  | Bi-quad filter coefficient A1 for filter 2                                                                                                                           |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Lambda\_         | BlendEQExtSPAlg1lambda_1 | time_constant = slew_time/(PI \* 1.5),Lambda\_= exp(-1/(time_constant\*FS)) where,slew_time is the time required to slew from initial to final value of coefficient. |
++------------------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
 | Here,
 
--  <fc #008000> Green</fc> - Algorithm Name
--  <fc #ff0000> Red</fc> - Instance Number (Changes for each instance)
--  <fc #000080> Blue</fc> - Parameter Name
--  <fc #800000> Brown</fc> - Stage number
+-   Green - Algorithm Name
+-   Red - Instance Number (Changes for each instance)
+-   Blue - Parameter Name
+-   Brown - Stage number
 
 Note: The algorithm names for different algorithms for this module are:
 
@@ -311,6 +306,4 @@ Supported ICs
 -  ADAU145x/ADAU146x
 -  ADSPSC5xx
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/geneqextblendtreetoolbox.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/blendExtCell.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/filter_icon.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/filter_icon.png

@@ -81,10 +81,7 @@ R inductance is the measured value of inductor resistance and can be measured by
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 100 Ω resistor
-| 1 1 mH inductor
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 100 Ω resistor 1 1 mH inductor
 
 Hardware setup:
 ---------------

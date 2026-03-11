@@ -1,8 +1,9 @@
 AXI_ADC_TRIGGER
 ===============
 
-| The AXI_ADC_TRIGGER IP implements triggering for the ADC path and also controls two I/O triggering pins.
-| More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`.
+The AXI_ADC_TRIGGER IP implements triggering for the ADC path and also controls two I/O triggering pins.
+
+More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`.
 
 Features
 --------
@@ -319,8 +320,8 @@ References
 ----------
 
 -  :git-hdl:`AXI_ADC_TRIGGER source code <library/axi_adc_trigger>`
-   \* :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
-   \* :git-linux:`ADI Linux repository <tree/m2k>`
+-  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
+-  :git-linux:`ADI Linux repository <tree/m2k>`
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

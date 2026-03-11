@@ -10,7 +10,7 @@ For example, say we wanted to change the gain / volume by a factor of 0.5 on the
 .. code:: c
 
    void processaudio_callback(void) {
-       
+
        for (int i=0; i < AUDIO_BLOCK_SIZE; i++) {
            audiochannel_0_left_out[i]  = 0.5 * audiochannel_0_left_in[i];
            audiochannel_0_right_out[i] = 0.5 * audiochannel_0_right_in[i];
@@ -22,7 +22,7 @@ Or say we had written a function call ``volume_half( float * in, float * out, in
 .. code:: c
 
    void processaudio_callback(void) {
-       
+
        volume_half(audiochannel_0_left_in, audiochannel_0_left_out, AUDIO_BLOCK_SIZE);
        volume_half(audiochannel_0_right_in, audiochannel_0_right_out, AUDIO_BLOCK_SIZE);
    }
@@ -31,5 +31,5 @@ As noted in the :doc:`Processing Audio </wiki-migration/resources/tools-software
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#troubleshooting
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#troubleshooting
    :alt: Troubleshooting#.|Bare Metal Framework#tremelo-effect-tutorial|Implementing a Tremolo Effect

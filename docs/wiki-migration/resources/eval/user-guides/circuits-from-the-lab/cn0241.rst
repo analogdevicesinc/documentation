@@ -85,7 +85,7 @@ Installing the Evaluation Software
 
    |image5|
 
-   \* Click **Next** to set the installation location for the **SDP Drivers**
+-  Click **Next** to set the installation location for the **SDP Drivers**
 
 .. tip::
 
@@ -100,9 +100,9 @@ Installing the Evaluation Software
 
 |image7|
 
-   \* Click **Finish** to complete the installation
+-  Click **Finish** to complete the installation
 
-   |image8|
+|image8|
 
 Running the System
 ------------------

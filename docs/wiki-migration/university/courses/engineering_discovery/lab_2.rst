@@ -1,7 +1,7 @@
 Introduction to RC Circuits
 ===========================
 
-.. image:: https://wiki.analog.com/_media/analogTV>4800540010001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>4800540010001
    :alt: analogTV>4800540010001
    :align: right
 

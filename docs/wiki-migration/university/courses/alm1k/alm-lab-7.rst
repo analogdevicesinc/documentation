@@ -18,11 +18,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| Analog Discovery Lab hardware
-| Solder-less breadboard
-| 1 - 2.2 KΩ Resistor (or any similar value)
-| 1 - 47 Ω Resistor
-| 1 - small signal NPN transistor (2N3904 or SSM2212)
+Analog Discovery Lab hardware Solder-less breadboard 1 - 2.2 KΩ Resistor (or any similar value) 1 - 47 Ω Resistor 1 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 ~~~~~~~~~~~
@@ -63,15 +59,10 @@ V_BE times 2 version 1:
 
 The obviously simple thing to do would be to just use two diode connected transistors in series.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 - 1KΩ Resistor
-| 2 - small signal NPN transistor (2N3904 or SSM2212)
-
-.. _directions-1:
+1 - 1KΩ Resistor 2 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 ~~~~~~~~~~~
@@ -87,14 +78,10 @@ The breadboard connections are as shown in figure 2. The output of the channel A
    Figure 2 2 V\ :sub:`BE` circuit
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A generator should be configured for a 100 Hz triangle wave with 3.0 volt Max and 0V Min. Both channels vertical range can be set to 0.2 V per division.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -106,17 +93,10 @@ V_BE times 2 version 2:
 
 A second option would be to use two resistors as a voltage divider. This could produce an output that is the addition of fractions of a V\ :sub:`BE` to the V\ :sub:`BE` of Q\ :sub:`1`.
 
-.. _materials-2:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 - 1KΩ Resistor
-| 2 - 10KΩ Resistors
-| 1 - 5KΩ Variable resistor ( a 500Ω pot would be preferable if available )
-| 1 - small signal NPN transistor (2N3904 or SSM2212)
-
-.. _directions-2:
+1 - 1KΩ Resistor 2 - 10KΩ Resistors 1 - 5KΩ Variable resistor ( a 500Ω pot would be preferable if available ) 1 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 ~~~~~~~~~~~
@@ -132,14 +112,10 @@ The breadboard connections are as shown in figure 3. The output of the channel A
    Figure 3 V\ :sub:`BE` Multiplier circuit
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A generator should be configured for a 100 Hz triangle wave with 3 volt Max and 0V Min. Both vertical ranges can be set to 0.2 V per division.
-
-.. _procedure-2:
 
 Procedure:
 ~~~~~~~~~~
@@ -153,17 +129,10 @@ V_BE times 2 version 3:
 
 A minor variation on Version 2.
 
-.. _materials-3:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 - 1KΩ Resistor
-| 1 - 10KΩ Resistor
-| 1 - 5KΩ Variable resistor ( 500Ω pot would be preferable if available )
-| 2 - small signal NPN transistor (2N3904 or SSM2212)
-
-.. _directions-3:
+1 - 1KΩ Resistor 1 - 10KΩ Resistor 1 - 5KΩ Variable resistor ( 500Ω pot would be preferable if available ) 2 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 ~~~~~~~~~~~
@@ -179,14 +148,10 @@ The breadboard connections are as shown in figure 4. Version 3 is made from vers
    Figure 4 Version 3 of V\ :sub:`BE` multiplier
 
 
-.. _hardware-setup-3:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A generator should be configured for a 100 Hz triangle wave with 3.0 volt Max and 0V Min. Both vertical ranges can be set to 0.2 V per division.
-
-.. _procedure-3:
 
 Procedure:
 ~~~~~~~~~~

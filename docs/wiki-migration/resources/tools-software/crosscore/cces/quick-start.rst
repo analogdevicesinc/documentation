@@ -88,8 +88,6 @@ CCES Setup - ICE-1000/ICE-2000 Emulator
 
 Follow these instructions to ensure correct operation of the product software and hardware.
 
-.. _connect-the-board-to-a-personal-computer-pc-1:
-
 Connect the board to a personal computer (PC)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -105,8 +103,6 @@ The following steps assume that CCES is installed and running on your PC.
 
 -  Navigate to the CCES environment through the Start menu.
 -  Once an application is ready to load to the evaluation board a debug configuration can be created.
-
-.. _launching-the-debug-configuration-1:
 
 Launching the Debug Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,8 +120,6 @@ Use the **Debug Configurations** wizard to connect to the board. If a debug con
 -  To create a debug configuration, choose Run > Debug Configurations
 -  The Debug Configuration dialog box will appear.
 
-.. _creating-a-new-debug-configuration-1:
-
 Creating a New Debug Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -138,8 +132,6 @@ Creating a New Debug Configuration
 -  On the **Connection Type** page, select *Emulator*.
 -  Choose the type of emulator connected.
 -  Click *Finish* to close the wizard. The new debug configuration is created and added to the Debug Configurations list.
-
-.. _selecting-the-applications-to-load-1:
 
 Selecting the Application(s) to Load
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

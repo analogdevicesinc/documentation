@@ -63,11 +63,7 @@ While it would be possible to make measurements on a full size AC line voltage m
 Materials:
 ----------
 
-| ADALM1000 module
-| Jumper Wires
-| Solderless Breadboard
-| Small low voltage, low power stepper motor
-| Various capacitors
+ADALM1000 module Jumper Wires Solderless Breadboard Small low voltage, low power stepper motor Various capacitors
 
 **Stepper Motor Specifications**
 
@@ -223,8 +219,6 @@ The following time and phase screens in figures 7 and 8 were taken using the sam
 
 Note that the sum of the two coil currents are in phase with the AC supply voltage (VA = VB) and the Power factor will be 1. Refer to this activity on :doc:`AC Power Factor </wiki-migration/university/courses/alm1k/circuits1/alm-cir-ac-power-factor>` for more on how it is calculated.
 
-.. _questions-1:
-
 Questions:
 ^^^^^^^^^^
 
@@ -287,8 +281,6 @@ The gear reduction should not change the voltage and current waveforms so these 
 
 **For Further Reading:**
 
-| `AC Motors <https://en.wikipedia.org/wiki/AC_motor>`_
-| `Synchronous Motors <https://en.wikipedia.org/wiki/Synchronous_motor>`_
-| ` <https://www.allaboutcircuits.com/textbook/alternating-current/chpt-13/synchronous-motors/>`__
+`AC Motors <https://en.wikipedia.org/wiki/AC_motor>`_ `Synchronous Motors <https://en.wikipedia.org/wiki/Synchronous_motor>`_ ` <https://www.allaboutcircuits.com/textbook/alternating-current/chpt-13/synchronous-motors/>`__
 
 **Return to Lab Activity Table of Contents**

@@ -9,8 +9,7 @@ The SDP to FMC Interposer board is an adaptor that allows Xilinx FPGA Eval board
 Links
 -----
 
-| SDP-I-FMC Schematic:
-| `sdp-i-fmc_rev1.pdf <https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-fmc_rev1.pdf>`_
+SDP-I-FMC Schematic: `sdp-i-fmc_rev1.pdf <https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-fmc_rev1.pdf>`_
 
 Product Overview
 ----------------

@@ -31,19 +31,16 @@ Build Linux - Step by Step instructions
 Get Microblaze Little Endian Toolchain from Xilinx
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The Microblaze Little Endian Toolchain can be found in the Xilinx Vitis install folder:
-| For 64-bit hosts use:
-| /opt/Xilinx/Vitis/2021.2/gnu/microblaze/linux_toolchain/lin64_le/bin
+The Microblaze Little Endian Toolchain can be found in the Xilinx Vitis install folder:
+
+For 64-bit hosts use: /opt/Xilinx/Vitis/2021.2/gnu/microblaze/linux_toolchain/lin64_le/bin
 
 Get Linux kernel source
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -64,10 +61,7 @@ Checkout main branch
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -86,10 +80,7 @@ Set Environmental Variables
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -105,10 +96,7 @@ Configure Kernel for KC705 XCOMM platform (aka FMCOMMS1)
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -131,19 +119,11 @@ Configure Kernel for KC705 XCOMM platform (aka FMCOMMS1)
 Get Root File-System
 ~~~~~~~~~~~~~~~~~~~~
 
-|image1|
-
-.. tip::
-
-   rootfs.cpio.gz must be placed in the root of your kernel tree.
-
+|image1| rootfs.cpio.gz must be placed in the root of your kernel tree.
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -156,7 +136,7 @@ Get Root File-System
       Length: 3006465 (2.9M) [application/octet-stream]
       Saving to: `rootfs.cpio.gz'
    
-      100%[===================================================================================================================================================================>] 3,006,465   75.1K/s   in 37s     
+      100%[===================================================================================================================================================================>] 3,006,465   75.1K/s   in 37s
    
       2014-11-21 14:28:32 (79.2 KB/s) - `rootfs.cpio.gz' saved [3006465/3006465]
    
@@ -185,10 +165,7 @@ To see what device-trees for the different FPGA carrier and FMC module combinati
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::

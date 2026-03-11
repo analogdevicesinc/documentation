@@ -34,16 +34,14 @@ Required Software
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+
 
 .. tip::
 
    If you are not familiar with LX9 and/or Xilix tools, please visit
 
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
-   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
-   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
-   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details. If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
 
@@ -99,16 +97,18 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 If programming was successful, you should see messages in the UART terminal.
 
-| |UART|
-| |Data Capture|
-|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_menu1.jpg
+   :alt: UART
+   :width: 600px
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_menu2.jpg
+   :alt: Data Capture
+   :width: 600px
 
 .. important::
 
-
-   ..
-
-| For reasons NOT depending on Analog Devices, the JTAG connection through which the stored data on the LX-9/Nexys3 is transfered to the \*.wav file is very slow. The process takes about 2 hours.
+   
+   For reasons NOT depending on Analog Devices, the JTAG connection through which the stored data on the LX-9/Nexys3 is transfered to the \*.wav file is very slow. The process takes about 2 hours.
 
 
 Functional Description
@@ -118,41 +118,37 @@ The reference design is a custom I2S interface used to communicate with the devi
 
 The ZedBoard design uses DMA to transfer data from the I2S Core to DDR.
 
-|
-
 .. important::
 
-
-   ..
-
-| \* Connecting the PmodMIC2 to the boards using an extension cable provides ease of use.
    
+   -  Connecting the PmodMIC2 to the boards using an extension cable provides ease of use.
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-   |
-
-   |
 
 
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \**Avnet LX-9 MicroBoard: **
-     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/admp441_lx9.zip>`_\ **
-     **\ Digilent Nexys™3:**
-     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/admp441_nexys3.zip>`_\ **
-     **\ Avnet ZedBoard:\*\*
-   | \* :git-no-OS:`XPS Project <Pmods/PmodMIC2/cf_admp441_zed>`
-   | \* :git-no-OS:`ADMP441 IPCore <Pmods/PmodMIC2/cf_lib/edk/pcores/axi_admp441_v1_00_a>`
-   | \* :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
-   | \* :git-no-OS:`PmodMIC2 Driver Files <Pmods/PmodMIC2>`
-   | \* :git-no-OS:`Programming Script <Pmods/PmodMIC2/bin>`
-   |
+   
+   **Avnet LX-9 MicroBoard:**
+   
+   -  `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/admp441_lx9.zip>`_
+   
+   **Digilent Nexys™3:**
+   
+   -  `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/admp441_nexys3.zip>`_
+   
+   **Avnet ZedBoard:**
+   
+   -  :git-no-OS:`XPS Project <Pmods/PmodMIC2/cf_admp441_zed>`
+   -  :git-no-OS:`ADMP441 IPCore <Pmods/PmodMIC2/cf_lib/edk/pcores/axi_admp441_v1_00_a>`
+   -  :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
+   -  :git-no-OS:`PmodMIC2 Driver Files <Pmods/PmodMIC2>`
+   -  :git-no-OS:`Programming Script <Pmods/PmodMIC2/bin>`
+   
 
 
 More information
@@ -163,8 +159,4 @@ More information
 
 |//ez.analog.com/community/feeds/allcontent/atom|
 
-.. |UART| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_menu1.jpg
-   :width: 600px
-.. |Data Capture| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_menu2.jpg
-   :width: 600px
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

@@ -18,7 +18,7 @@ The Design Support Package is a zip file that contains the following:
      Assembly Drawing
      Fabrication Drawing
      Native CAD Project Files
-     Gerber Layout Files 
+     Gerber Layout Files
 
 Click here to download the design package: `ev-ht-200cdaq1-z_revc_deisgn_support_package.zip <https://wiki.analog.com/_media/resources/eval/user-guides/high-temp/ev-ht-200cdaq1/ev-ht-200cdaq1-z_revc_deisgn_support_package.zip>`_
 

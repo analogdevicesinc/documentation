@@ -33,7 +33,7 @@ Power Supply
 
 ::
 
-    +/-5V supply should be supplied to the connector for proper operation of the evaluation board  
+    +/-5V supply should be supplied to the connector for proper operation of the evaluation board
 
 Input Signal
 ~~~~~~~~~~~~

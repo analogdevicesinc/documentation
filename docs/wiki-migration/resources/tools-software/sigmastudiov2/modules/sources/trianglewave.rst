@@ -9,14 +9,12 @@ Triangle Wave
 Description
 -----------
 
-| 
-| The Triangle Wave block generates a triangle wave at a constant level and at different frequencies.
+The Triangle Wave block generates a triangle wave at a constant level and at different frequencies.
 
 Usage
 -----
 
-| 
-| This block has checkbox to enabled or disabled the algorithm. Check the box to enable this algorithm. It has the numeric text box to edit the frequency to generate the triangle wave at different frequencies.
+This block has checkbox to enabled or disabled the algorithm. Check the box to enable this algorithm. It has the numeric text box to edit the frequency to generate the triangle wave at different frequencies.
 
 Targets Supported
 -----------------
@@ -68,7 +66,10 @@ DSP Parameters
 DSP Parameter Computation
 -------------------------
 
-| Sin = sin⁡(2\*π*fs/FS)
-| Cos = cos⁡(2\*π*fs/FS)
-| delta = 4 \* fs/FS
-| Where fs is frequency and FS is the sampling rate
+Sin = sin⁡(2\*π*fs/FS)
+
+Cos = cos⁡(2\*π*fs/FS)
+
+delta = 4 \* fs/FS
+
+Where fs is frequency and FS is the sampling rate

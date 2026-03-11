@@ -89,7 +89,7 @@ Remote IIO Oscilloscope
    -Connect USB UART J83 (Micro USB) to your host PC.
    -Plug your ethernet cable into the RJ45 ethernet connector(P12)
    -Observe kernel and serial console messages on your UART terminal (use the first ttyUSB or COM port resisted)
-   -Run the ifconfig command on your UART terminal and get your board IP 
+   -Run the ifconfig command on your UART terminal and get your board IP
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/zcu102_console_ifconfig.png
    :alt: zcu102_console_ifconfig.png
@@ -98,7 +98,7 @@ Remote IIO Oscilloscope
 
 ::
 
-   -Open IIO Scope application and type ip:board_ip in the URI tab. 
+   -Open IIO Scope application and type ip:board_ip in the URI tab.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/iio_scope_board_ip-zcu102.png
    :alt: iio_scope_board_ip-zcu102.png

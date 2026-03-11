@@ -18,22 +18,22 @@ Required Software
 -----------------
 
 -  SD Card 16GB image using the instructions here: :doc:`SDCARD for Zynq & Altera SoC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. Use 2020_r1 or later release. (Pre-released files, built using Vivado 2020.1 can be downloaded from `here <https://wiki.analog.com/https/swdownloads.analog.com/cse/prebuilt/socfpga_arria10_socdk_adrv9002_rx2tx2.zip>`_)
--   Copy next boot files from <fc #ff0000>\ ``socfpga_arria10_socdk_adrv9002``\ </fc> directory directly on SD Card ``BOOT`` partition :
+-   Copy next boot files from ``socfpga_arria10_socdk_adrv9002`` directory directly on SD Card ``BOOT`` partition :
 
    -  ``socfpga_arria10_socdk.rbf``
    -  ``socfpga_arria10_socdk_sdmmc.dtb``
    -  ``zImage`` (from ``socfpga_arria10-common`` folder)
 
--  Write preloader_bootloader.bin from <fc #ff0000>\ ``socfpga_arria10_socdk_adrv9002``\ </fc> folder on third SD Card partition:
+-  Write preloader_bootloader.bin from ``socfpga_arria10_socdk_adrv9002`` folder on third SD Card partition:
 
 ::
 
        root@raspberrypi:~# lsblk
        NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-       sda           8:0    1 14.9G  0 disk 
+       sda           8:0    1 14.9G  0 disk
        ├─sda1        8:1    1    1G  0 part /media/pi/BOOT
        ├─sda2        8:2    1  7.6G  0 part /media/pi/rootfs
-       └─sda3        8:3    1    4M  0 part 
+       └─sda3        8:3    1    4M  0 part
        root@raspberrypi:~# dd if="./preloader_bootloader.bin" of="/dev/sda3" bs=512
        2048+0 records in
        2048+0 records out
@@ -86,7 +86,7 @@ Testing
 
 .. warning::
 
-   **<fc #ff0000>Before executing below steps, VADJ for FMCA must be set to 1.8V.</fc>**
+   **Before executing below steps, VADJ for FMCA must be set to 1.8V.**
 
    
    This can be done by changing VADJ FMCA Voltage using J42 (see below picture).
@@ -117,21 +117,13 @@ Messages
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
-
-   .. raw:: html
-
-      <details><summary>Boot log (click to expand)</summary>
-
    ::
    
       U-Boot 2014.10-00334-gf7a7e26-dirty (Jun 30 2021 - 18:30:00), Build: jenkins-master-hdl_jobs_for_linux-projects-adrv9001.a10soc-14
@@ -148,14 +140,14 @@ Messages
       Reserving 2048 Bytes for IRQ stack at: ffe386e8
       DRAM  : 1 GiB
       WARNING: Caches not enabled
-      MMC:   *** Warning - bad CRC, using default environment
+      MMC:   ** Warning - bad CRC, using default environment
    
       In:    serial
       Out:   serial
       Err:   serial
       Model: SOCFPGA Arria10 Dev Kit
       Net:   dwmac.ff800000
-      Hit any key to stop autoboot:  0 
+      Hit any key to stop autoboot:  0
       FPGA must be in Early Release mode to program core.
       fpga - loadable FPGA image support
    
@@ -339,7 +331,7 @@ Messages
       [    1.533255] mmc_host mmc0: Bus speed (slot 0) = 50000000Hz (slot req 400000Hz, actual 396825HZ div = 63)
       [    1.622641] mmc_host mmc0: Bus speed (slot 0) = 50000000Hz (slot req 50000000Hz, actual 50000000HZ div = 0)
       [    1.632388] mmc0: new high speed SDHC card at address aaaa
-      [    1.638528] mmcblk0: mmc0:aaaa SB16G 14.8 GiB 
+      [    1.638528] mmcblk0: mmc0:aaaa SB16G 14.8 GiB
       [    1.649483]  mmcblk0: p1 p2 p3
       [    2.431855] ledtrig-cpu: registered to indicate activity on CPUs
       [    2.437975] usbcore: registered new interface driver usbhid
@@ -548,11 +540,6 @@ Messages
       permitted by applicable law.
       root@analog:~#
 
-
-   .. raw:: html
-
-      </details>
-
 .. raw:: html
 
    </details>
@@ -562,10 +549,7 @@ These devices should be present:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -602,7 +586,65 @@ Once the application is launched goto Settings -> Connect and enter the IP addre
 
    |image3|
 
-.. include:: ../common.rst .. include:: ../common.rst
+More Information
+----------------
+
+-  :doc:`ADRV9001/2 Quick Start Guides </wiki-migration/resources/eval/user-guides/adrv9002/quickstart>`
+
+   -  :doc:`ADRV9002 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynqmp>`
+   -  :doc:`ADRV9002 Zynq SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynq>`
+   -  :doc:`ADRV9002 Zynq Zed Board Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zed>`
+   -  :doc:`ADRV9002 Arria10 SoC Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/a10soc>`
+
+-  :doc:`ADRV9001/ADRV9002 HDL Reference Design </wiki-migration/resources/eval/user-guides/adrv9002/reference_hdl>`
+
+   -  :doc:`AXI_ADRV9001/AXI_ADRV9002 Interface Core </wiki-migration/resources/eval/user-guides/adrv9002/axi_adrv9002>`
+   -  :doc:`Building HDL how-to, ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
+
+-  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+-  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
+
+Software resources
+------------------
+
+-  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+-  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
+
+More Information
+----------------
+
+-  :doc:`ADRV9001/2 Quick Start Guides </wiki-migration/resources/eval/user-guides/adrv9002/quickstart>`
+
+   -  :doc:`ADRV9002 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynqmp>`
+   -  :doc:`ADRV9002 Zynq SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynq>`
+   -  :doc:`ADRV9002 Zynq Zed Board Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zed>`
+   -  :doc:`ADRV9002 Arria10 SoC Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/a10soc>`
+
+-  :doc:`ADRV9001/ADRV9002 HDL Reference Design </wiki-migration/resources/eval/user-guides/adrv9002/reference_hdl>`
+
+   -  :doc:`AXI_ADRV9001/AXI_ADRV9002 Interface Core </wiki-migration/resources/eval/user-guides/adrv9002/axi_adrv9002>`
+   -  :doc:`Building HDL how-to, ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
+
+-  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+-  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
+
+Software resources
+------------------
+
+-  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+-  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_a10soc_vadj_jumper.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_vadj_led.png

@@ -15,14 +15,10 @@ This guide provides some quick instructions on how to setup the AD-FMCOMMS1-EBZ 
 -  `ZC706 <https://www.xilinx.com/ZC706>`_
 -  `Avnet ZED Board <http://zedboard.org/product/zedboard/>`_
 
-|
-
 .. important::
 
-
-   ..
-
-| The ML605 XPS project remain on this website only for legacy purposes. The support for XPS projects has been discontinued.
+   
+   The ML605 XPS project remain on this website only for legacy purposes. The support for XPS projects has been discontinued.
 
 
 Required Software
@@ -39,22 +35,21 @@ Required Hardware
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
    **no-OS Drivers:** :git-no-OS:`fmcomms1`
 
-   | \**ML605 HDL Reference Design for ISE: **:git-fpgahdl_xilinx:`cf_xcomm`
-     **\ Latest release for VivadoAC701: **https:github.com/analogdevicesinc/hdl/tree/master/projects/fmcomms1/ac701
-     \**KC705: \*\* https:\ github.com/analogdevicesinc/hdl/tree/master/projects/fmcomms1/kc705
-     **\ VC707: **:git-hdl:`projects/fmcomms1/vc707`
-     **\ ZC702: **:git-hdl:`projects/fmcomms1/zc702`
-     **\ ZC706: **:git-hdl:`projects/fmcomms1/zc706`
-     **\ ZED: **:git-hdl:`projects/fmcomms1/zed`
-     **\ Old releases for Vivado\ **
-   **\ For Vivado 2013.4 :\*\*\ :git-hdl:`projects/fmcomms1`
+   
+   **ML605 HDL Reference Design for ISE:** :git-fpgahdl_xilinx:`cf_xcomm`
+   
+   **Latest release for Vivado**
+   
+   **AC701: :git-hdl:`projects/fmcomms1/ac701` KC705: :git-hdl:`projects/fmcomms1/kc705` VC707: :git-hdl:`projects/fmcomms1/vc707` ZC702: :git-hdl:`projects/fmcomms1/zc702` ZC706: :git-hdl:`projects/fmcomms1/zc706` ZED:** :git-hdl:`projects/fmcomms1/zed`
+   
+   **Old releases for Vivado**
+   
+   **For Vivado 2013.4 :**\ https://github.com/analogdevicesinc/hdl/tree/hdl_2014_r1/projects/fmcomms1
 
 
 Hardware Setup
@@ -239,8 +234,14 @@ After running the example program the system is configured to generate a sinewav
 
 -  Then click **Next** 4 times and then **Finish**
 
-| |Open New Hardware Target|\ |Server name|\ |Select Target| |Set Properties|\ |image1|
-| \* This is how the *Vivado Hardware Manager* looks like. Now go to Probes files. |Device Properties|
+|Open New Hardware Target|\ |Server name|\ |Select Target| |Set Properties|\ |image1|
+
+-  This is how the *Vivado Hardware Manager* looks like. Now go to Probes files.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/vivado_hardware_device_properties.png
+   :alt: Device Properties
+   :align: center
+   :width: 600px
 
 -  And browse for the folder where the project was compiled **../fmcomms1_board.runs/impl_1/debug_nets.ltx**
 
@@ -312,7 +313,7 @@ After running the example program the system is configured to generate a sinewav
    :align: center
    :width: 600px
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS1-EBZ#zynq
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart/navigation AD-FMCOMMS1-EBZ#zynq
    :alt: Linux on ZC702, ZC706, ZED#.:\|Quick Start Guides#none
 
 .. |Open New Hardware Target| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/vivado_open_new_hardaware_target_start.png
@@ -325,5 +326,3 @@ After running the example program the system is configured to generate a sinewav
    :width: 290px
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/vivado_open_new_hardware_target_finish.png
    :width: 290px
-.. |Device Properties| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/vivado_hardware_device_properties.png
-   :width: 600px

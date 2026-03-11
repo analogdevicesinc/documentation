@@ -1,13 +1,14 @@
 Peak (No Gain)
 ==============
 
-| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| ----------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 |peaknogainpic1.png| This block functions exactly like the :doc:`Peak(gain) </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peakgain>` block (see that topic for details) but does not include the Post Gain knob.
 
-| 
-| ===Controls===
+Controls
+--------
 
 +--------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Hold (ms)    | |peaknogainpic2.png| | Controls the time (in ms) the compressor maintains its current output gain setting after the input level decreases, before the gain starts increasing back to normal.                                                                                                                               |

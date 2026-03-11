@@ -1,7 +1,7 @@
 Class A NPN Common-Base and Cascode Amplifiers
 ==============================================
 
-.. image:: https://wiki.analog.com/_media/analogTV>5183327709001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>5183327709001
    :alt: analogTV>5183327709001
    :align: right
 

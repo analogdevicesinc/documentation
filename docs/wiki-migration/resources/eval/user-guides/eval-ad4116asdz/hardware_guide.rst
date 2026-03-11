@@ -16,8 +16,7 @@ After following the instructions in the Software Installation Procedures section
    The evaluation software and drivers must be installed before connecting the EVAL-AD4116ASDZ evaluation board and EVAL-SDP-CB1Z board to the USB port of the PC to ensure the PC correctly recognizes the evaluation system.
 
 
-| **Configuring the Evaluation and SDP Boards**
-| Use the following procedure to configure the boards
+**Configuring the Evaluation and SDP Boards** Use the following procedure to configure the boards
 
 -  Connect the SDP board to Connector A or Connector B on the EVAL-AD4116ASDZ board. Screw the two boards together firmly using the plastic screw and washer set included in the evaluation board kit.
 -  If using the SDP-K1 board the Arduino headers can also be used to connect to the board
@@ -129,5 +128,4 @@ Schematic, PCB Layout, Bill of Materials
    
 
 
-| :doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/software>`
-| :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/eval-ad4116asdz>`
+:doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/software>` :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/eval-ad4116asdz>`

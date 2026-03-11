@@ -3,15 +3,21 @@
 Pitch Transposer
 ================
 
-| |pitch.png| |pitchdatacontrolled.png|
-| ===== Description ===== Pitch Transposer algorithm shifts the frequency of an incoming signal. There are two versions of the algorithm. The first version allows the user to manually set the pitch shift amount by entering it in the GUI (or writing a value directly to RAM). In the data controlled variant, the frequency shift is “voltage-controlled”, meaning that there is an input pin that controls the pitch shift amount based on its value.
-| ===== Variants =====
+|pitch.png| |pitchdatacontrolled.png|
+
+Description
+-----------
+
+Pitch Transposer algorithm shifts the frequency of an incoming signal. There are two versions of the algorithm. The first version allows the user to manually set the pitch shift amount by entering it in the GUI (or writing a value directly to RAM). In the data controlled variant, the frequency shift is “voltage-controlled”, meaning that there is an input pin that controls the pitch shift amount based on its value.
+
+Variants
+--------
 
 -  Pitch Transposer
 -  Pitch Transposer Data Controlled
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +----------------------------------+------------+------------------+---------------+------------------+
 | Name                             | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -25,7 +31,7 @@ Pitch Transposer
 | ===== Pins =====
 
 Input
------
+~~~~~
 
 +--------------------+---------+----------------------------------------------------------------------------------------------+
 | Name               | Type    | Description                                                                                  |
@@ -36,7 +42,7 @@ Input
 +--------------------+---------+----------------------------------------------------------------------------------------------+
 
 Output
-------
+~~~~~~
 
 ======= ===== ============================
 Name    Type  Description
@@ -44,7 +50,7 @@ Name    Type  Description
 Output0 Audio Outputs the processed signal
 ======= ===== ============================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +---------------+---------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -67,7 +73,7 @@ freq           Change in frequency 8.24 Format   Single Precision
 scalingfactor  pitch change factor Integer       Target Defined
 ============== =================== ============= ================
 
-| 
+
 
 .. |pitch.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/pitch.png
 .. |pitchdatacontrolled.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/pitchdatacontrolled.png

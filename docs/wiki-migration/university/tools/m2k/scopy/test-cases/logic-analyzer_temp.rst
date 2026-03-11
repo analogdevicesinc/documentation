@@ -1,18 +1,28 @@
-| 
-| ====== Logic Analyzer - Test Case ======
-| ===== Initial Setup ===== In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
+Logic Analyzer - Test Case
+==========================
+
+Initial Setup
+-------------
+
+In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
 Open the Logic Analyzer instrument. The interface should look like the picture below:
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la-initialsetup.png
 
-| Press multiple times on the "Run" button to check if the instrument works.
-| ===== Test Title =====
-| ==== A. Individual Pin Operation==== 
+Press multiple times on the "Run" button to check if the instrument works.
+
+Test Title
+----------
+
+A. Individual Pin Operation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                          | Test Steps                                                                                                                                                                                                                                                                                                               | Steps Resources                 | Expected Results                                                                                                                                                                                         |
@@ -96,13 +106,13 @@ Open the Logic Analyzer instrument. The interface should look like the picture b
 
 
 B. Group Operation
-==================
+~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 =========== ========== =============== ================
 Description Test Steps Steps Resources Expected Results
@@ -151,13 +161,13 @@ Description Test Steps Steps Resources Expected Results
 
 
 C. Additional Features
-======================
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                     | Test Steps                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Steps Resources | Expected Results                                                                                                                                                                                               |
@@ -202,8 +212,9 @@ C. Additional Features
    </details>
 
 
-| Test Results will be recorded in the following document: `Logic Analyzer Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/logic_analyzer_-_test_case.xlsx>`_
-| **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
+Test Results will be recorded in the following document: `Logic Analyzer Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/logic_analyzer_-_test_case.xlsx>`_
+
+**Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0a.png
    :width: 200px

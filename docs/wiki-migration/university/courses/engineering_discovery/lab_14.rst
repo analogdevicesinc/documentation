@@ -1,7 +1,7 @@
 Push-Pull Class B and Class AB Amplifiers
 =========================================
 
-.. image:: https://wiki.analog.com/_media/analogTV>Video  Here
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>Video  Here
    :alt: analogTV>Video  Here
    :align: right
 

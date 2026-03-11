@@ -28,8 +28,8 @@ To get an input state:
    PIO_0 = 28
    PIO_1 = 29
    PIO_2 = 47
-   PIO_3 = 3 
-   # get state of PIO0\\
+   PIO_3 = 3
+   # get state of PIO0
    Pio0 = devx.ctrl_transfer(0xc0, 0x91, PIO_0, 0, 0, 1, 100)
 
 The value after 0x91 is the number of the I\\O pin. The rest of the values are the always the same and should not be changed.
@@ -37,9 +37,7 @@ The value after 0x91 is the number of the I\\O pin. The rest of the values are t
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 4 - Tactile push button switches
-| 4 - 1 KΩ resistors
+ADALM1000 hardware module 4 - Tactile push button switches 4 - 1 KΩ resistors
 
 Directions:
 ~~~~~~~~~~~
@@ -83,5 +81,4 @@ Combine the LED and push button programs to turn on and off two LEDs based on wh
 
 `Novel Switch Interface Scheme Reduces Microprocessor Pin Count <https://www.radiolocman.com/review/article.html?di=653075>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`

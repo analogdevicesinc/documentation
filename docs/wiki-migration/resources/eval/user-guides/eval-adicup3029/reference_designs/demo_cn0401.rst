@@ -184,8 +184,8 @@ Typing **help** or **h** after initial calibration sequence will display the lis
 -  For the "h", "cg" and "test" commands press Enter without inserting any space afterwards.
 -  For the "ct" and "css" commands, to invoke in application instructions, write just the command without parameters, insert a space afterwards and press Enter.
 
-| 
-| |image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_terminal_example.png
+   :align: center
 
 Obtaining the Software
 ----------------------
@@ -258,4 +258,3 @@ Project structure includes:
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_can_bus_connect.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_single_node.jpg
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_bus_connection.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_terminal_example.png

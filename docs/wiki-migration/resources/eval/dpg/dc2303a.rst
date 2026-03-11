@@ -119,17 +119,11 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ *Figure 2. Launching LTDACGen (FPGA Connected)*\
-
-
--  Select **Sine** from the dropdown menu under the *FPGA LVDS Data* panel then press **Add**. As can be seen in Figure 3, the frequency should be set to 400 MHz by default.\ |image3|\
+   \ *Figure 2. Launching LTDACGen (FPGA Connected)*-  Select **Sine** from the dropdown menu under the*FPGA LVDS Data* panel then press **Add**. As can be seen in Figure 3, the frequency should be set to 400 MHz by default.\ |image3|\
 
 .. container:: centeralign
 
-   \ *Figure 3. Generating a Sine Wave Pattern using LTDACGen*\
-
-
--  Change the *Center Frequency* to **200 MHz** then click the **Update FPGA** button to send the data to the FPGA and program the DAC.  The FFT plots similar to Figures 4 should appear in the signal/spectrum analyzer.
+   \ *Figure 3. Generating a Sine Wave Pattern using LTDACGen*-  Change the*Center Frequency* to **200 MHz** then click the **Update FPGA** button to send the data to the FPGA and program the DAC.  The FFT plots similar to Figures 4 should appear in the signal/spectrum analyzer.
 
 
 

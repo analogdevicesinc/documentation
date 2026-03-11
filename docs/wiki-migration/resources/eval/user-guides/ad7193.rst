@@ -32,7 +32,7 @@ Required Software
 -----------------
 
 -  :adi:`ACE Software <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7193asdz.html#eb-documentation>`
-   \* :adi:`AD7193 ACE Plugin <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7193asdz.html#eb-documentation>`
+-  :adi:`AD7193 ACE Plugin <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7193asdz.html#eb-documentation>`
 
 Quick Start Guide
 =================
@@ -89,8 +89,7 @@ Getting started
 Hardware Guide
 ==============
 
-| :doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>` **Contents of the Hardware guide:**
 
 -  :doc:`Set-up Procedures </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
 -  :doc:`Block Diagram </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
@@ -106,8 +105,7 @@ Hardware Guide
 Software Guide
 ==============
 
-| :doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>` **Contents of the Hardware guide:**
 
 -  :doc:`Ace Plugin </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>`
 

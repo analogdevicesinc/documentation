@@ -188,7 +188,7 @@ This will run the iperf3 from the PC as the server (-s) and bound to its Etherne
 
 ::
 
-   iperf3 -c 169.254.6.62 -B 169.254.7.196 
+   iperf3 -c 169.254.6.62 -B 169.254.7.196
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0506/quickstart/12_performance_run_b_s.png
    :align: center

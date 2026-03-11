@@ -22,8 +22,6 @@ What are all these logos?
 -  `Electrical and Electronic Equipment Waste Directive <https://en.wikipedia.org/wiki/Waste_Electrical_and_Electronic_Equipment_Directive>`_ : a European Community directive 2002/96/EC on waste electrical and electronic equipment (WEEE).
 -  `Federal Communications Commission <https://en.wikipedia.org/wiki/Federal_Communications_Commission>`_ : is an independent agency of the United States government, this logo means we pass `part 15, class B <http://transition.fcc.gov/Bureaus/Engineering_Technology/Documents/bulletins/oet62/oet62rev.pdf>`_.
 
-| 
-|
 
 .. note::
 

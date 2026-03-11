@@ -1,8 +1,9 @@
 Vocal Chorus
 ============
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
-| |vocalpic1.png| Vocal Chorus produces an effect where the audio signal is given multiple delays to enrich and thicken the sound, like several voices (or instruments) playing at once. The delay time is modulated by a low-frequency oscillator (LFO) to achieve a shimmering, spacious effect due to a combination of beat frequencies and the slight pitch-bending that occurs as the delay time is changed.
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+
+|vocalpic1.png| Vocal Chorus produces an effect where the audio signal is given multiple delays to enrich and thicken the sound, like several voices (or instruments) playing at once. The delay time is modulated by a low-frequency oscillator (LFO) to achieve a shimmering, spacious effect due to a combination of beat frequencies and the slight pitch-bending that occurs as the delay time is changed.
 
 This cell is intended chiefly for voice.
 

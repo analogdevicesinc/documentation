@@ -16,7 +16,7 @@ Demo
 
 This video demonstrates some basic features of the MicroPython for SHARC Audio Module as well as how it can be used in conjunction with the Bare Metal Framework.
 
-.. image:: https://wiki.analog.com/_media/youtube>LwsSwZ6zaPQ
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/youtube>LwsSwZ6zaPQ
    :alt: youtube>LwsSwZ6zaPQ
    :align: center
 

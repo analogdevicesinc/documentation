@@ -30,11 +30,11 @@ Status
 +----------------------------------------------------------------------------------------------------------------------------------+------------+
 | Source                                                                                                                           | Mainlined? |
 +----------------------------------------------------------------------------------------------------------------------------------+------------+
-| :git-linux:`drivers/net/ethernet/open_alliance.c`                                                                                | No         |
+| `open_alliance.c <https://github.com/analogdevicesinc/linux/blob/adin1110-open-alliance/drivers/net/ethernet/open_alliance.c>`_  | No         |
 +----------------------------------------------------------------------------------------------------------------------------------+------------+
-| :git-linux:`include/linux/open_alliance.h`                                                                                       | No         |
+| `open_alliance.h <https://github.com/analogdevicesinc/linux/blob/adin1110-open-alliance/include/linux/open_alliance.h>`_         | No         |
 +----------------------------------------------------------------------------------------------------------------------------------+------------+
-| :git-linux:`drivers/net/ethernet/adi/adin1110.c`                                                                                 | No         |
+| `adin1110.c <https://github.com/analogdevicesinc/linux/blob/adin1110-open-alliance/drivers/net/ethernet/adi/adin1110.c>`_        | No         |
 +----------------------------------------------------------------------------------------------------------------------------------+------------+
 
 Files
@@ -43,11 +43,11 @@ Files
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                      |
 +==========+===========================================================================================================================================+
-| API      | :git-linux:`drivers/net/ethernet/open_alliance.c <drivers/net>`                                                                           |
+| API      | `drivers/net/ethernet/open_alliance.c <https://github.com/analogdevicesinc/linux/blob/adin1110-open-alliance/drivers/net>`_               |
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| API      | :git-linux:`include/linux/open_alliance.h <include/linux>`                                                                                |
+| API      | `include/linux/open_alliance.h <https://github.com/analogdevicesinc/linux/blob/adin1110-open-alliance/include/linux>`_                    |
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| Driver   | :git-linux:`drivers/net/ethernet/adi/adin1110.c <drivers/net/ethernet/adi>`                                                               |
+| Driver   | `drivers/net/ethernet/adi/adin1110.c <https://github.com/analogdevicesinc/linux/blob/adin1110-open-alliance/drivers/net/ethernet/adi>`_   |
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enabling Linux driver support
@@ -62,24 +62,24 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 ::
 
-   CONFIG_OPEN_ALLIANCE:                                                                                                                                                                              
-   The Open Alliance SPI protocol is used on 10BASE-T1x                                                                                                                                              
-   MACPHY Serial Interface for communication                                                                                                                                                          
+   CONFIG_OPEN_ALLIANCE:
+   The Open Alliance SPI protocol is used on 10BASE-T1x
+   MACPHY Serial Interface for communication
    with the host controller.
-                                                                                                                                                                         
-   Say Y to include support for the OPEN_ALLIANCE.                                                                                                                                                    
-   To compile this driver as a module, choose M here: the module                                                                                                                                      
-   will be called dnet.                                                                                                                                                                               
 
-   Symbol: OPEN_ALLIANCE [=y]                                                                                                                                                                         
-   Type  : tristate                                                                                                                                                                                   
-   Defined at drivers/net/ethernet/Kconfig:147                                                                                                                                                        
-       Prompt: Open Alliance 10BASE-T1x support.                                                                                                                                                        
-       Depends on: NETDEVICES [=y] && ETHERNET [=y] && SPI [=y]                                                                                                                                         
-       Location:                                                                                                                                                                                        
-           -> Device Drivers                                                                                                                                                                              
-               -> Network device support (NETDEVICES [=y])                                                                                                                                                  
-                   -> Ethernet driver support (ETHERNET [=y])                                                                                                                                                 
+   Say Y to include support for the OPEN_ALLIANCE.
+   To compile this driver as a module, choose M here: the module
+   will be called dnet.
+
+   Symbol: OPEN_ALLIANCE [=y]
+   Type  : tristate
+   Defined at drivers/net/ethernet/Kconfig:147
+       Prompt: Open Alliance 10BASE-T1x support.
+       Depends on: NETDEVICES [=y] && ETHERNET [=y] && SPI [=y]
+       Location:
+           -> Device Drivers
+               -> Network device support (NETDEVICES [=y])
+                   -> Ethernet driver support (ETHERNET [=y])
        Selects: CRC8 [=y]
 
 Driver testing
@@ -100,14 +100,14 @@ ADIN1110 probes via devicetree.
 
    ethernet@0 {
        compatible = "adi,adin1110";
-       
+
            /* SPI CS number */
            reg = <0>;
 
            /* will need 13.5 MHz for 10 Mbps, lower speeds will result in lower bandwidth */
        spi-max-frequency = <13500000>;
 
-           /* Enables Open Alliance Mode */        
+           /* Enables Open Alliance Mode */
            open-alliance;
 
            /* optional, will check all control read/writes over SPI */
@@ -170,15 +170,15 @@ Example: Seeing MAC & PHY info
 
    Settings for eth1:
        Supported ports: [ TP MII ]
-       Supported link modes:   10baseT/Full 
+       Supported link modes:   10baseT/Full
        Supported pause frame use: Symmetric Receive-only
        Supports auto-negotiation: Yes
        Supported FEC modes: Not reported
-       Advertised link modes:  10baseT/Full 
+       Advertised link modes:  10baseT/Full
        Advertised pause frame use: No
        Advertised auto-negotiation: Yes
        Advertised FEC modes: Not reported
-       Link partner advertised link modes:  10baseT/Full 
+       Link partner advertised link modes:  10baseT/Full
        Link partner advertised pause frame use: No
        Link partner advertised auto-negotiation: Yes
        Link partner advertised FEC modes: Not reported

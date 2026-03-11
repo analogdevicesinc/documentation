@@ -75,9 +75,9 @@ The software is started from the command line (it's better to do this as root):
 
 ::
 
-   Usage: jesd_status [-s] [-p PATH] 
+   Usage: jesd_status [-s] [-p PATH]
        -s     Simple mode no boxes and frames (useful for serial terminals)
-       -p     Allows setting a different directory root. Default is /. 
+       -p     Allows setting a different directory root. Default is /.
               This is useful when running the tool remote
 
 Running local
@@ -85,10 +85,7 @@ Running local
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any root shell prompt running on the target
+   This specifies any root shell prompt running on the target
 
    
    ::
@@ -108,10 +105,7 @@ Depending on the terminal used colors might be unsupported and boxes, frames mig
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any root shell prompt running on the target
+   This specifies any root shell prompt running on the target
 
    
    ::

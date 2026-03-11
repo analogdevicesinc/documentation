@@ -5,7 +5,9 @@ AD-FMCOMMS1-EBZ Functional Overview
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- A functional block diagram of the system is given below. The system consists of four functional partitions - transmit path, receive path, clocking and power supply.
+
+
+A functional block diagram of the system is given below. The system consists of four functional partitions - transmit path, receive path, clocking and power supply.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/cf_xcomm_kc705_bd.jpg
    :alt: Block diagram
@@ -14,7 +16,7 @@ AD-FMCOMMS1-EBZ Functional Overview
 Transmit
 --------
 
-| Key components:
+Key components:
 
 +-----------------+--------------------------------------------------------------------------------------------------------+
 | :adi:`AD9122`   | Dual, 16-Bit, 1200 MSPS, TxDAC+® Digital-to-Analog Converter with offset, phase and gain compensation. |
@@ -33,7 +35,7 @@ The reference design generates the signals for AD9122 either from an internal DD
 Receive
 -------
 
-| Key components:
+Key components:
 
 +-----------------+--------------------------------------------------------------------------+
 | :adi:`ADL5380`  | 400 to 6000 MHz Quadrature Demodulator, 500MHz bandwidth.                |
@@ -58,7 +60,7 @@ The reference design transfers the received data to DDR via DMA. An optional off
 Clocking
 --------
 
-| Key components:
+Key components:
 
 +-------------------+------------------------------------------------------------------------+
 | :adi:`AD9548`     | Quad/Octal Input Network Clock Generator/Synchronizer (1Hz to 750MHz). |
@@ -91,7 +93,7 @@ It is possible to synchronize multiple boards on the same FPGA platform to the s
 Power
 -----
 
-| Key components:
+Key components:
 
 +-----------------+----------------------------------+
 | :adi:`ADP2323`  | Dual 3A, 20V step-down switcher. |

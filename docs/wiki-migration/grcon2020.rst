@@ -37,12 +37,7 @@ For those attending the PlutoSDR workshop at GRCon 2020, hosted by ADI, thanks. 
 
 The Workshops are on Wednesday and Thursday. If you would like to come by the booth, and check out things with your hardware on Monday or Tuesday during the expo hours, it would be appreciated.
 
-.. important::
-
-   If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions
-
-
-.
+If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions .
 
 Slides and Labs
 ===============

@@ -6,7 +6,7 @@ Objective:
 
 The purpose of this document is to serve as a User's Guide to the operation of the EPS plugin module for use with the Analog Discovery USB Lab instrument.
 
-<fc #FF0000>This Draft copy of the document is specific to the 8-2-2013 version of the hardware.</fc>
+This Draft copy of the document is specific to the 8-2-2013 version of the hardware.
 
 Background:
 -----------
@@ -16,11 +16,7 @@ This Analog Discovery plugin module is designed to support lab activities explor
 Materials:
 ----------
 
-| EPS plugin board
-| Analog Discovery module
-| 9 V battery or equivalent DC voltage source
-| 3.6 V ( three cell ) rechargeable battery either NiCd or NiMH
-| Small solar panel ( > 6 V\ :sub:`OS` or solar panel simulator board, see Appendix )
+EPS plugin board Analog Discovery module 9 V battery or equivalent DC voltage source 3.6 V ( three cell ) rechargeable battery either NiCd or NiMH Small solar panel ( > 6 V\ :sub:`OS` or solar panel simulator board, see Appendix )
 
 Directions:
 -----------
@@ -149,22 +145,7 @@ Diodes D\ :sub:`2`-D\ :sub:`9` model a panel with 8 cells connected in series an
 
 Actual values for your EPS board could be substantially different than those listed in the example.
 
-| ImainOffset = 0.5 # offset is in mA
-| VmainOffset = 0.0 # offset is in Volts
-| IgenOffset = 1.42 # offset is in mA
-| VgenOffset = 0.0 # offset is in Volts
-| IsolarOffset = -0.5 # offset is in mA
-| IbatOffset = 1.67 # offset is in mA
-| VsolarOffset = 0.0 # offset is in Volts
-| ImotorOffset = 0.2 # offset is in mA
-| ImainScale = 99.8 # nominal current scale factor is 100
-| VmainScale = 2.029 # nominal voltage scale factor is 2
-| IgenScale = 100.1
-| VgenScale = 2.033
-| IsolarScale = 100.2
-| IbatScale = 99.5
-| VsolarScale = 2.022
-| ImotorScale = 99.7
+ImainOffset = 0.5 # offset is in mA VmainOffset = 0.0 # offset is in Volts IgenOffset = 1.42 # offset is in mA VgenOffset = 0.0 # offset is in Volts IsolarOffset = -0.5 # offset is in mA IbatOffset = 1.67 # offset is in mA VsolarOffset = 0.0 # offset is in Volts ImotorOffset = 0.2 # offset is in mA ImainScale = 99.8 # nominal current scale factor is 100 VmainScale = 2.029 # nominal voltage scale factor is 2 IgenScale = 100.1 VgenScale = 2.033 IsolarScale = 100.2 IbatScale = 99.5 VsolarScale = 2.022 ImotorScale = 99.7
 
 It is best to start with a file that sets all the offsets to 0, all the current scale factors to 100 and all the voltage scale factors to 2. Then observe the errors and adjust the values accordingly. The current measurement offset error for Imain, Igen, Isolar and Ibat can be observed by inserting shorting jumpers on IL, IGEN, ISP and IBAT respectively. A DVM can be used to measure the actual voltage values to determine scale factor calibration factors.
 

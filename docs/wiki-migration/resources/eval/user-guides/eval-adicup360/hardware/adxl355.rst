@@ -50,7 +50,7 @@ Pin 11        Digital Ground      DGND
 Pin 12        Digital Power       VDD
 ============= =================== ========
 
-| 
+
 | |image1|
 
 ADXL355 Interrupt Pins

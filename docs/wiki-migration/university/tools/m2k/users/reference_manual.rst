@@ -6,7 +6,7 @@ Overview
 
 The easy to use :adi:`ADALM2000` active learning module (M2K) helps introduce electrical engineering students and hobbyists to the fundamentals of signals and systems. Designed for students at all levels and from all backgrounds, the module can be used for both instructor-led and self-directed learning to help students develop a foundation in exploring signals and systems into the tens of MHz that they can build on as they pursue science, technology, or engineering degrees, without the cost and bulk associated with traditional lab gear.
 
-| With 12-bit ADCs(running at 100MSPS) and DACs(at 150MSPS), the ADALM2000 brings the power of high performance lab equipment to the palm of your hand. When coupled with Analog Devices' Scopy graphical application software running on a computer, provides the user with the following high performance instrumentation:
+With 12-bit ADCs(running at 100MSPS) and DACs(at 150MSPS), the ADALM2000 brings the power of high performance lab equipment to the palm of your hand. When coupled with Analog Devices' Scopy graphical application software running on a computer, provides the user with the following high performance instrumentation:
 
 -  Two-channel oscilloscope with differential inputs
 -  Two-channel arbitrary waveform generator (AWG)
@@ -121,12 +121,9 @@ The ADALM2000 hardware design includes two gain range settings for the analog in
 -  High gain mode: for signals from -2.5 V to +2.5V
 -  Low gain mode: for signals from -25 V to 25 V
 
-| A logic high on EN_SC1_HG turns switch 1 and switch 3 on, selecting high gain mode (gain of :math:`HG_1` ).
-| A logic high on EN_SC1_LG turns switch 2 and switch 4 on, selecting low gain mode (gain of :math:`LG_1` ).
-| Where:
-| :math:`\displaystyle HG_1=\frac{R_20 + R_21}{R_19+R_20+R_21} = \frac{200 K +21 K}{820K +200K +21K}=0.212`
-| :math:`\displaystyle LG_1=\frac{ R_21}{R_19+R_20+R_21} = \frac{21 K}{820K +200K +21K}=0.020`
-| |image6| |image7|
+A logic high on EN_SC1_HG turns switch 1 and switch 3 on, selecting high gain mode (gain of :math:`HG_1` ). A logic high on EN_SC1_LG turns switch 2 and switch 4 on, selecting low gain mode (gain of :math:`LG_1` ). Where: :math:`\displaystyle HG_1=\frac{R_20 + R_21}{R_19+R_20+R_21} = \frac{200 K +21 K}{820K +200K +21K}=0.212` :math:`\displaystyle LG_1=\frac{ R_21}{R_19+R_20+R_21} = \frac{21 K}{820K +200K +21K}=0.020`
+
+|image6| |image7|
 
 .. container:: centeralign
 
@@ -229,21 +226,17 @@ Waveform Generator
 I/V
 ~~~
 
-| The AD9963 DACs are a current steering architecture, so it is necessary to convert the TXIP,TXIN,TXQP,TXQN outputs to a voltage for the AWG frontend. This operation is performed by an AD8058 dual voltage feedback amplifier. The output currents from the TXIP and TXIN pins are complementary, meaning that the sum of the two currents always equals the full-scale current of the DAC. The digital input code to the DAC determines the effective differential current delivered to the load. TXIP provides maximum output current when all bits are high. The output currents vs. DACCODE for the DAC outputs are expressed as :math:`I_TXIP=[DACCODE/2^N] \times I_OUTFS`
-| where :math:`DACCODE = 0 to 2^N-1.` The DAC full-scale output current is regulated by the reference control amplifier and is determined by the product of a reference current, a programmable reference resistor, an internal programmable resistor, and a pair of programmable gain scaling parameters. There are a number of adjustments that can be made to scale IOUTFS to provide programmability in the output signal level. There are 2 available ranges for the DAC full scale current: 4 mA full scale or 1 mA full scale. This current is converted by the AD8058 into voltage for the last stages of the AWG front end.
-| |image13|
+The AD9963 DACs are a current steering architecture, so it is necessary to convert the TXIP,TXIN,TXQP,TXQN outputs to a voltage for the AWG frontend. This operation is performed by an AD8058 dual voltage feedback amplifier. The output currents from the TXIP and TXIN pins are complementary, meaning that the sum of the two currents always equals the full-scale current of the DAC. The digital input code to the DAC determines the effective differential current delivered to the load. TXIP provides maximum output current when all bits are high. The output currents vs. DACCODE for the DAC outputs are expressed as :math:`I_TXIP=[DACCODE/2^N] \times I_OUTFS` where :math:`DACCODE = 0 to 2^N-1.` The DAC full-scale output current is regulated by the reference control amplifier and is determined by the product of a reference current, a programmable reference resistor, an internal programmable resistor, and a pair of programmable gain scaling parameters. There are a number of adjustments that can be made to scale IOUTFS to provide programmability in the output signal level. There are 2 available ranges for the DAC full scale current: 4 mA full scale or 1 mA full scale. This current is converted by the AD8058 into voltage for the last stages of the AWG front end.
+
+
+|image13|
 
 .. container:: centeralign
 
    Figure 11. Current to voltage converter
 
 
-| The AD8058 has a very low input bias current value (typically 0.5 µA) and is and is configured as a current to voltage converter such that:
-| :math:`V_+=V_-`
-| :math:`V_-=V_out+(I_(DAC-AWG1N) \times R_95)`
-| :math:`V_+=(I_(DAC-AWG1P) \times R_93)`
-| :math:`V_out=I_(DAC-AWG1P) \times R_93 - I_(DAC-AWG1N) \times R_95`
-| The output voltage range of the AD8050 will be different, depending on the DAC full scale output current:
+The AD8058 has a very low input bias current value (typically 0.5 µA) and is and is configured as a current to voltage converter such that: :math:`V_+=V_-` :math:`V_-=V_out+(I_(DAC-AWG1N) \times R_95)` :math:`V_+=(I_(DAC-AWG1P) \times R_93)` :math:`V_out=I_(DAC-AWG1P) \times R_93 - I_(DAC-AWG1N) \times R_95` The output voltage range of the AD8050 will be different, depending on the DAC full scale output current:
 
 ====================== =======================
 Input current (AD8058) Output Voltage (AD8058)
@@ -356,19 +349,19 @@ Control signals for the supplies are generated by an AD5627 dual 12 bit nanoDAC,
    Figure 18. AD5627 nanoDAC
 
 
-| The amplifier used for the positive user power supply has a gain of 5.02:
-| :math:`\displaystyle gain_pos=1+(R_161/R_158)=1+(\frac{4.02k}{1k})=5.02`
-| For the negative user supply amplifier the gain is -5.1:
-| :math:`\displaystyle gain_neg=-(R_160/R_159)=-(\frac{5.1k}{1k})=-5.1`
-| The outputs of the ADA4805s (SUPPLY_POS and SUPPLY_NEG) correspond to the V+ and V- pins on the user connector. Output voltages are also monitored through scaling circuits with a gains of 1/2 and -1/2 that are then connected to the AD9963's AUXIO pins. The monitoring function is useful for detecting supply overcurrent and / or short circuits in the circuit being powered. |image21|
+The amplifier used for the positive user power supply has a gain of 5.02: :math:`\displaystyle gain_pos=1+(R_161/R_158)=1+(\frac{4.02k}{1k})=5.02` For the negative user supply amplifier the gain is -5.1: :math:`\displaystyle gain_neg=-(R_160/R_159)=-(\frac{5.1k}{1k})=-5.1`
+
+The outputs of the ADA4805s (SUPPLY_POS and SUPPLY_NEG) correspond to the V+ and V- pins on the user connector. Output voltages are also monitored through scaling circuits with a gains of 1/2 and -1/2 that are then connected to the AD9963's AUXIO pins. The monitoring function is useful for detecting supply overcurrent and / or short circuits in the circuit being powered.
+
+
+|image21|
 
 .. container:: centeralign
 
    Figure 19. User supply signals division
 
 
-| The positive supply monitoring signal is obtained with a resistive divider with a gain of 1/2 and the negative supply monitor signal is obtained with an inverting amplifier with gain -1/2:
-| :math:`\displaystyle G=-(R_136/R_139)=-(\frac{2k}{4.02k})=-\frac{1}{2}`
+The positive supply monitoring signal is obtained with a resistive divider with a gain of 1/2 and the negative supply monitor signal is obtained with an inverting amplifier with gain -1/2: :math:`\displaystyle G=-(R_136/R_139)=-(\frac{2k}{4.02k})=-\frac{1}{2}`
 
 Internal power supplies
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -444,8 +437,8 @@ An LT1964ES5-5 provides the -5V rail. This device is a low-noise, Low Dropout Ne
 Digital Power supplies
 ^^^^^^^^^^^^^^^^^^^^^^
 
-| There are 4 supply rails for the digital section of the board. These rails are provided by two ADP2114 Dual Step-Down DC-to-DC Regulators. This device is a synchronous step-down switching regulator with two independent outputs. It provides high efficiency(up to 95%) and operates at switching frequencies up to 2MHz. The input voltage range is 2.75V to 5.5V and the output is either fixed or adjustable.
-| One of the ADP2114s is used to provide 1.8V for the ADC/DAC and 1.35V for the DDR3 memory.
+There are 4 supply rails for the digital section of the board. These rails are provided by two ADP2114 Dual Step-Down DC-to-DC Regulators. This device is a synchronous step-down switching regulator with two independent outputs. It provides high efficiency(up to 95%) and operates at switching frequencies up to 2MHz. The input voltage range is 2.75V to 5.5V and the output is either fixed or adjustable. One of the ADP2114s is used to provide 1.8V for the ADC/DAC and 1.35V for the DDR3 memory.
+
 
 |image28|
 
@@ -494,8 +487,10 @@ A Microchip USB3320 Hi-Speed USB 2.0 transceiver provides a USB PHY and ULPI con
 Memory
 ------
 
-| System memory is a Micron `MT41K256M16TW-107 <https://www.micron.com/parts/dram/ddr3-sdram/mt41k256m16tw-107>`_ 4Gbit (512 MByte), 1066 Mbps, DDR3L low voltage SDRAM. This memory is used for temporary storage of streaming data as well as the operating system.
-| |image31|
+System memory is a Micron `MT41K256M16TW-107 <https://www.micron.com/parts/dram/ddr3-sdram/mt41k256m16tw-107>`_ 4Gbit (512 MByte), 1066 Mbps, DDR3L low voltage SDRAM. This memory is used for temporary storage of streaming data as well as the operating system.
+
+
+|image31|
 
 .. container:: centeralign
 

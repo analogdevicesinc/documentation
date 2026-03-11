@@ -14,13 +14,11 @@ The ideal analog switch has no on-resistance, infinite off-impedance and zero ti
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - CD4007 CMOS transistor array
-| 2 - NPN transistors (2N3904 or equivalent)
-| 1 - 4.7 KΩ resistor
-| |image1|
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - CD4007 CMOS transistor array 2 - NPN transistors (2N3904 or equivalent) 1 - 4.7 KΩ resistor
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -60,7 +58,7 @@ Procedure:
 Configure waveform generator 1 as a 100 Hz triangle wave with an amplitude of 9 volts peak-to-peak and an offset of +500 mV. This will swing the voltage on the NMOS switch transistor from +5 volts to -4 volts. We can not swing the voltage all the way to -5 volts because of the NPN current source Q\ :sub:`2`. Be sure to turn on the external user power supplies (Vp and Vn) before running the waveform generator. Configure the scope screen in XY mode with C1 on the X axis, and C2 (the voltage across the switch) on the Y axis. Use the math function to calculate the resistance (C2 / 1mA). Note: You can get a more precise estimate of the current source by measuring the voltage across R\ :sub:`1` and its actual resistance.
 
 
-|image2|
+|image1|
 
 .. container:: centeralign
 
@@ -90,8 +88,6 @@ Now modify your circuit to look like figure 2 by connecting the gates of both M\
    Figure 4 PMOS Ron test circuit
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -103,22 +99,18 @@ Hardware Setup:
    Figure 5 PMOS Ron test circuit Breadboard Connections
 
 
-.. _procedure-1:
-
 Procedure:
 ----------
 
 Repeat the sweep of the voltage from waveform generator W1 and plot the on-resistance of just the PMOS transistor.
 
 
-|image3|
+|image2|
 
 .. container:: centeralign
 
    Figure 6 PMOS Ron X-Y trace
 
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -143,8 +135,6 @@ Now modify your circuit to look like figure 3 by connecting the gate of M\ :sub:
    Figure 7 CMOS Ron test circuit
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
@@ -156,22 +146,18 @@ Hardware Setup:
    Figure 8 CMOS Ron test circuit Breadboard Connections
 
 
-.. _procedure-2:
-
 Procedure:
 ----------
 
 Repeat the sweep of the voltage and plot the on resistance of the combined NMOS and PMOS transistors.
 
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
    Figure 9 CMOS Ron X-Y trace
 
-
-.. _questions-2:
 
 Questions:
 ----------
@@ -187,10 +173,7 @@ What are the conditions for a PMOS switch?
 For Further Study:
 ~~~~~~~~~~~~~~~~~~
 
-| ADI Mini Tutorial on :adi:`Analog Switches <static/imported-files/tutorials/MT-088.pdf>`
-| R\ :sub:`ON` Modulation in CMOS :adi:`Switches and Multiplexers <static/imported-files/tech_articles/99941520Ron_Modulati_Whitepaper.pdf>`
-| :adi:`Switches and Multiplexers <library/analogdialogue/archives/45-05/switch_mux.html>`
-| :adi:`On Building Physically Accurate Analog Switch Macromodels <media/en/analog-dialogue/raqs/raq-issue-173.pdf>`
+ADI Mini Tutorial on :adi:`Analog Switches <static/imported-files/tutorials/MT-088.pdf>` R\ :sub:`ON` Modulation in CMOS :adi:`Switches and Multiplexers <static/imported-files/tech_articles/99941520Ron_Modulati_Whitepaper.pdf>` :adi:`Switches and Multiplexers <library/analogdialogue/archives/45-05/switch_mux.html>` :adi:`On Building Physically Accurate Analog Switch Macromodels <media/en/analog-dialogue/raqs/raq-issue-173.pdf>`
 
 Extra Challenge Activity:
 =========================
@@ -210,11 +193,9 @@ Try measuring the Ron vs input voltage for other CMOS analog switches such as th
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_nmos_ss.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_nmos_ss.png
    :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_pmos_ss.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_pmos_ss.png
    :width: 300px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_cmos_ss.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_cmos_ss.png
    :width: 300px

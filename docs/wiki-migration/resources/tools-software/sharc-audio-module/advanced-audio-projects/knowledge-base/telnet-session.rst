@@ -11,9 +11,7 @@ Details
 
 *This article assumes that the hardware is already up and running and proper connection to the USB port has been established. There are various instructions on setting this up. The* :doc:`Analog Audio </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/examples-analog-audio>` *example is a great place to start.*
 
-*This tutorial uses TeraTerm as the serial interface to your hardware.*
-
-**Follow the instructions below to set up a connection to your hardware:**
+*This tutorial uses TeraTerm as the serial interface to your hardware.**Follow the instructions below to set up a connection to your hardware:**
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | 1. Establish a shell connection via :doc:`USB OTG/USB-PHY </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/usb-otg-session>`. This will be needed to get the IP address of the system.                                                         | |image8|  |
@@ -36,7 +34,6 @@ Details
 |                                                                                                                                                                                                                                                                                                   | |image14| |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 `Knowledge Base#.|Knowledge Base#.|Knowledge Base <https://wiki.analog.com/_media/navigation Knowledge Base#.>`_
 

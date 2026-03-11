@@ -74,55 +74,62 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``enum adgs1408_type {                              |
+    enum adgs1408_type {
+     ID_ADGS1408,
+     ID_ADGS1409,
+    };
 
-|     ID_ADGS1408,                                    |
-|     ID_ADGS1409,                                    |
-| };                                                  |
-|                                                     |
-| enum adgs1408_state {                               |
-|     ADGS1408_ENABLE,                                |
-|     ADGS1408_DISABLE,                               |
-| };                                                  |
-|                                                     |
-| struct adgs1408_rrobin_config {                     |
-|     bool rrobin_sw1;                                |
-|     bool rrobin_sw2;                                |
-|     bool rrobin_sw3;                                |
-|     bool rrobin_sw4;                                |
-|     bool rrobin_sw5;                                |
-|     bool rrobin_sw6;                                |
-|     bool rrobin_sw7;                                |
-|     bool rrobin_sw8;                                |
-| };                                                  |
-|                                                     |
-| struct adgs1408_dev {                               |
-|     /* SPI */                                       |
-|     spi_desc    *spi_desc;                          |
-|     /* Device Settings */                           |
-|     enum adgs1408_state crc_en;                     |
-|     enum adgs1408_state burst_mode_en;              |
-|     enum adgs1408_state daisy_chain_en;             |
-|     enum adgs1408_state round_robin_en;             |
-|     struct adgs1408_rrobin_config rrobin_sw_config; |
-|     enum adgs1408_type act_device;                  |
-| };                                                  |
-|                                                     |
-| struct adgs1408_init_param {                        |
-|     /* SPI */                                       |
-|     spi_init_param  spi_init;                       |
-|     /* Device Settings */                           |
-|     enum adgs1408_state crc_en;                     |
-|     enum adgs1408_state burst_mode_en;              |
-|     enum adgs1408_state daisy_chain_en;             |
-|     enum adgs1408_state round_robin_en;             |
-|     struct adgs1408_rrobin_config rrobin_sw_config; |
-|     enum adgs1408_type act_device;                  |
-| };``                                                |
-+-----------------------------------------------------+
+::
+
+    enum adgs1408_state {
+     ADGS1408_ENABLE,
+     ADGS1408_DISABLE,
+    };
+
+::
+
+    struct adgs1408_rrobin_config {
+     bool rrobin_sw1;
+     bool rrobin_sw2;
+     bool rrobin_sw3;
+     bool rrobin_sw4;
+     bool rrobin_sw5;
+     bool rrobin_sw6;
+     bool rrobin_sw7;
+     bool rrobin_sw8;
+    };
+
+::
+
+    struct adgs1408_dev {
+     /* SPI */
+     spi_desc    *spi_desc;
+     /* Device Settings */
+     enum adgs1408_state crc_en;
+     enum adgs1408_state burst_mode_en;
+     enum adgs1408_state daisy_chain_en;
+     enum adgs1408_state round_robin_en;
+     struct adgs1408_rrobin_config rrobin_sw_config;
+     enum adgs1408_type act_device;
+    };
+
+::
+
+    struct adgs1408_init_param {
+     /* SPI */
+     spi_init_param  spi_init;
+     /* Device Settings */
+     enum adgs1408_state crc_en;
+     enum adgs1408_state burst_mode_en;
+     enum adgs1408_state daisy_chain_en;
+     enum adgs1408_state round_robin_en;
+     struct adgs1408_rrobin_config rrobin_sw_config;
+     enum adgs1408_type act_device;
+    };
 
 No-OS Downloads
 ---------------

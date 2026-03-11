@@ -26,14 +26,7 @@ The objective of this first experiment is to build an astable multivibrator. Two
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and Jumper wire kit
-| 2 - 470 Ω Resistors
-| 2 - 20 KΩ Resistors
-| 2 - small signal NPN transistors (2N3904)
-| 1 - Red LED
-| 1 - Green LED
-| 2 - 47 uF Capacitors
+ADALM1000 hardware module Solder-less breadboard and Jumper wire kit 2 - 470 Ω Resistors 2 - 20 KΩ Resistors 2 - small signal NPN transistors (2N3904) 1 - Red LED 1 - Green LED 2 - 47 uF Capacitors
 
 Directions:
 ~~~~~~~~~~~
@@ -66,31 +59,15 @@ What would be the effect of decreasing C\ :sub:`1` and increasing C\ :sub:`2` bu
 The Monostable Multivibrator
 ----------------------------
 
-.. _objectives-1:
-
 Objectives:
 ~~~~~~~~~~~
 
 The objective of this second experiment is to build an monostable multivibrator. One resistance-capacitance network determines the duration of the one-shot output. The amplifying devices (transistors) are connected in a common-emitter configuration, as shown in figure 2.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and Jumper wire kit
-| 2 - 470 Ω Resistors
-| 1 - 1 KΩ Resistor
-| 1 - 20 KΩ Resistor
-| 1 - 47 KΩ Resistor
-| 1 - small signal diode (1N914)
-| 2 - small signal NPN transistors (2N3904)
-| 1 - Red LED
-| 1 - Green LED
-| 1 - 47 uF Capacitor
-
-.. _directions-1:
+ADALM1000 hardware module Solder-less breadboard and Jumper wire kit 2 - 470 Ω Resistors 1 - 1 KΩ Resistor 1 - 20 KΩ Resistor 1 - 47 KΩ Resistor 1 - small signal diode (1N914) 2 - small signal NPN transistors (2N3904) 1 - Red LED 1 - Green LED 1 - 47 uF Capacitor
 
 Directions:
 ~~~~~~~~~~~
@@ -106,16 +83,12 @@ Construct the circuit as shown in figure 2 on your solder-less breadboard. Start
    Figure 2, Monostable Multivibrator
 
 
-.. _procedure-1:
-
 Procedure:
 ~~~~~~~~~~
 
 Connect the +5 V power supply only after you have completely built and checked the circuit. The red LED should be lit and the green LED should be dark. With a jumper wire, momentarily touch the trigger input (end of R\ :sub:`5`) to +5 V and immediately let go. The red LED should go out and the green LED come on for about a second and then go back to the stable state with the red on and green off. Try this a few times.
 
 The width of the one-shot pulse is very long due to the large value of capacitor C\ :sub:`2`. Replace C\ :sub:`2` with 0.1 uF capacitor. The output pulse should be much shorter now such that the green LED does not seem to flash on. Connect the channel A generator output to the trigger input. Configure channel A to force voltage with a Min of 0 V and a Max of 5V. Set the shape to a square wave, the frequency to 100 Hz and the duty cycle to 10% ( i.e. the pulse is high for 1/10 of the period). Use scope channel B to measure the width of the output Q and Qbar waveforms.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -125,28 +98,15 @@ What would be the effect of decreasing or increasing the value of capacitor C\ :
 The Bistable Multivibrator ( or flip-flop )
 -------------------------------------------
 
-.. _objectives-2:
-
 Objectives:
 ~~~~~~~~~~~
 
 The objective of this third experiment is to build an bistable multivibrator. The amplifying devices (transistors) are connected in a common-emitter configuration, as shown in figure 3.
 
-.. _materials-2:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and Jumper wire kit\\
-| 2 - 470 Ω Resistors
-| 2 - 1 KΩ Resistors
-| 2 - 47 KΩ Resistors
-| 2 - small signal NPN transistors (2N3904)
-| 2 - small signal diodes (1N914)\\ 1 - Red LED
-| 1 - Green LED
-
-.. _directions-2:
+ADALM1000 hardware module Solder-less breadboard and Jumper wire kit\\ 2 - 470 Ω Resistors 2 - 1 KΩ Resistors 2 - 47 KΩ Resistors 2 - small signal NPN transistors (2N3904) 2 - small signal diodes (1N914)\\ 1 - Red LED 1 - Green LED
 
 Directions:
 ~~~~~~~~~~~
@@ -162,8 +122,6 @@ Construct the bistable circuit as shown in figure 3 on your solder-less breadboa
    Figure 3, Bistable Multivibrator
 
 
-.. _procedure-2:
-
 Procedure:
 ~~~~~~~~~~
 
@@ -171,38 +129,21 @@ Connect the +5 V power supply only after you have completely built and checked t
 
 Now connect the CA-OUT and CB-OUT of the M1000 to the SET and RESET inputs. With both channels configured in the Split I/O mode with the Termination to GND. Set their Min values to 0 mA and their Max values to 100 mA ( 0 to 5 V swing ). Set both channels frequency to 100 Hz, square wave shape. Set both duty-cycles to 10 % ( i.e. the pulse is high for 1/10 of the period). Set channels Phase to 0 and channel B to 180 degrees. The pulses should not overlap and be equally spaced from each other. Observe the relative timing and frequency of the waveforms at the Q and Qbar outputs.
 
-.. _questions-2:
-
 Questions:
 ~~~~~~~~~~
 
 D-Type Flip-Flop
 ----------------
 
-.. _objectives-3:
-
 Objectives:
 ~~~~~~~~~~~
 
 The objective of this fourth experiment is to use the bistable or set - reset flip-flop from experiment 3 to build what is known as a D-Type flip-flop.
 
-.. _materials-3:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware Module
-| Solder-less breadboard and Jumper wire kit
-| 3 - 1 KΩ resistors
-| 1 - 100 KΩ resistor
-| 2 - 200 KΩ resistors
-| 2 - 47 KΩ resistors
-| 3 - small signal NPN transistors (2N3904)
-| 2 - small signal diodes (1N914)
-| 2 - 39 pF capacitors
-| 2 - 100 pF capacitors
-
-.. _directions-3:
+ADALM1000 hardware Module Solder-less breadboard and Jumper wire kit 3 - 1 KΩ resistors 1 - 100 KΩ resistor 2 - 200 KΩ resistors 2 - 47 KΩ resistors 3 - small signal NPN transistors (2N3904) 2 - small signal diodes (1N914) 2 - 39 pF capacitors 2 - 100 pF capacitors
 
 Directions:
 ~~~~~~~~~~~
@@ -231,14 +172,10 @@ The channel A generator output CA-OUT should be connected to the input marked D 
 
 With both channels configured in the Split I/O mode with the Termination to GND. Set their Min values to 0 mA and their Max values to 100 mA ( 0 to 5 V swing ). Set channel A frequency to 100 Hz, and square wave shape. Set channel B frequency to 200 Hz, and square wave shape. Set both duty-cycles to 50 % ( i.e. the pulse is high for 1/2 of the period). Set the phase of CA to 45 degrees. Be sure to configure the AWG outputs to operate synchronously.
 
-.. _procedure-3:
-
 Procedure:
 ~~~~~~~~~~
 
 Connect the +5 V power supply and enable the generator outputs only after you have completely built and checked the circuit. You should observe a square wave on the Q output which is aligned with the falling edge of the Clock input signal. Change the phase of Channel A ( D input signal ) while observing this alignment. Does this change as the phase of the D input change? Move the channel CB-IN scope input to the D input. You should see a similar square wave signal but ahead in time with respect to the Q output. In other words the Q output is delayed until the falling edge of the Clock signal.
-
-.. _questions-3:
 
 Questions:
 ~~~~~~~~~~
@@ -252,29 +189,15 @@ The capacitor coupling ( C\ :sub:`1` and C\ :sub:`2` AC coupling ) of the Clock 
 Divide by 2 Flip-Flop
 ---------------------
 
-.. _objectives-4:
-
 Objectives:
 ~~~~~~~~~~~
 
 The objective of this fifth experiment is to modify the D-type flip-flop from experiment 4 to build a circuit that divides the frequency of an input signal by 2.
 
-.. _materials-4:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and Jumper wire kit
-| 2 - 1 KΩ resistors
-| 2 - 200 KΩ resistors
-| 2 - 47 KΩ resistors
-| 2 - small signal NPN transistors (2N3904)
-| 2 - small signal diodes (1N914)
-| 2 - 39 pF capacitors
-| 2 - 100 pF capacitors
-
-.. _directions-4:
+ADALM1000 hardware module Solder-less breadboard and Jumper wire kit 2 - 1 KΩ resistors 2 - 200 KΩ resistors 2 - 47 KΩ resistors 2 - small signal NPN transistors (2N3904) 2 - small signal diodes (1N914) 2 - 39 pF capacitors 2 - 100 pF capacitors
 
 Directions:
 ~~~~~~~~~~~
@@ -298,21 +221,15 @@ Since the collector voltage of Q\ :sub:`2` , the Q output node, changes state fo
    Figure 5 Divide by 2 circuit
 
 
-.. _hardware-setup-1:
-
 Hardware setup:
 ~~~~~~~~~~~~~~~
 
 The channel A output should be connected to the input marked Clock in figure 5. The scope input channel B should be connected to the Q output of the flip-flop in figure 5. The CA-V should be configured as a square wave with a 5 V Max and 0 V Min ( 0 - 5V swing ). Set the frequency to 500 Hz.
 
-.. _procedure-4:
-
 Procedure:
 ~~~~~~~~~~
 
 Connect the +5 V power supply and enable generator output only after you have completely built and checked the circuit. You should observe a square wave on the Q output which is one half the frequency of the CA-V signal. Move the channel B scope input to the QB output. You should see a similar square wave signal but inverted with respect to the Q output.
-
-.. _questions-4:
 
 Questions:
 ~~~~~~~~~~
@@ -323,7 +240,6 @@ Reverse the polarity ( direction ) of the two steering diodes, D\ :sub:`1` and D
 
 **For further reading:**
 
-| http://en.wikipedia.org/wiki/Multivibrator
-| http://www.wisc-online.com/objects/ViewObject.aspx?ID=DIG5303
+http://en.wikipedia.org/wiki/Multivibrator http://www.wisc-online.com/objects/ViewObject.aspx?ID=DIG5303
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

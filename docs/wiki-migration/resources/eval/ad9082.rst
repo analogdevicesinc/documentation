@@ -134,8 +134,6 @@ The following instructions allow the user to setup the MxFE chip in a single ban
    :alt: Setup block diagram of AD9081
    :align: center
 
-.. _configuring-the-device-in-ace-1:
-
 Configuring the device in ACE
 -----------------------------
 
@@ -151,8 +149,6 @@ Hit Apply
 
 Allow a few seconds for ACE and the ADS9v2 hardware to setup the AD9081.
 
-.. _setting-up-dpg-lite-to-generate-a-tone-out-of-the-dac-1:
-
 Setting up DPG Lite to generate a tone out of the DAC
 -----------------------------------------------------
 
@@ -160,8 +156,6 @@ Setup DPG Lite for single tone as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/mxfe/4_dpgl_setup.png
    :alt: Selecting a Single Tone in DPG Lite
-
-.. _obtaining-an-fft-from-the-adc-1:
 
 Obtaining an FFT from the ADC
 -----------------------------
@@ -247,7 +241,7 @@ Under the Compensation Filter Folder you should see the following:
 
 ::
 
-   Figure 3: Compensation Filter Folder view under HighSpeedConverterToolBox 
+   Figure 3: Compensation Filter Folder view under HighSpeedConverterToolBox
 
 This document uses the MxFEADCCompensationFilterDesign_BPF.m MATLAB code.
 
@@ -289,7 +283,7 @@ The coefficient /taps are generated from MATLAB. These are in decimal format. Pr
 
 ::
 
-   Figure 8: Excerpt from a Coefficient file for PFILT loading 
+   Figure 8: Excerpt from a Coefficient file for PFILT loading
 
 In this document we are considering that you have a working set up of the AD9082-FMCB-EBZ with following instructions from UG-1829 as listed under the Documents needed section. Once you have a working set up of the AD9082-FMCB-EBZ, please use the last ADC Full Bandwidth condition shown under Table 2 of Page 11 of the UG-1829.
 
@@ -302,7 +296,7 @@ In this document we are considering that you have a working set up of the AD9082
 
 ::
 
-   Figure 9: Board View of selected Full Bandwidth ADC Use Case 
+   Figure 9: Board View of selected Full Bandwidth ADC Use Case
 
 You can check the FFT response of the signal without PFILT:
 
@@ -312,7 +306,7 @@ You can check the FFT response of the signal without PFILT:
 
 ::
 
-   Figure 10: FFT of the signal @0.5GHz to ADC input, without PFILT 
+   Figure 10: FFT of the signal @0.5GHz to ADC input, without PFILT
 
 **How to load the generated coefficients by MATLAB code in the ACE Tool?** 1.Design Band pass filter in MATLAB PFILT tool to equalize the ADC input: For a 192 tap single real mode PFILT: Use the following settings under Quick Configuration tool in Chip view for AD9082 board. You get to the chip view by click on the highlighted box in green in the figure below
 
@@ -358,7 +352,7 @@ You can check the FFT response of the signal without PFILT:
 
 ::
 
-   Figure 14: Configure PFilter 
+   Figure 14: Configure PFilter
 
 7.Now proceed to Analysis by click at the “Proceed to Analysis” button at the bottom of the chip view page.
 

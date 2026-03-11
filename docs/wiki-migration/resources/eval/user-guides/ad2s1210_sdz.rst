@@ -66,22 +66,24 @@ You will need to:
 |zedboard.png|
 
 -  Insert the SD-CARD into the SD Card Interface Connector (J12).
-   \* Connect the :adi:`EVAL-AD2S1210SDZ` board to the SDP adaptor and into the ZedBoard FMC connector.
-   \* Connect USB UART J14 (Micro USB) to your host PC.
-   \* Plug your ethernet cable into the RJ45 ethernet connector(J11).
-   \* Plug the Power Supply into the 12V Power input connector (J20) (DO NOT turn the device on).
-   \* Set the jumpers as seen in the below picture:
+-  Connect the :adi:`EVAL-AD2S1210SDZ` board to the SDP adaptor and into the ZedBoard FMC connector.
+-  Connect USB UART J14 (Micro USB) to your host PC.
+-  Plug your ethernet cable into the RJ45 ethernet connector(J11).
+-  Plug the Power Supply into the 12V Power input connector (J20) (DO NOT turn the device on).
+-  Set the jumpers as seen in the below picture:
 
-   |jumpers_boot_sd_zedboard.jpg|
+|jumpers_boot_sd_zedboard.jpg|
+
+
 
 .. tip::
 
    Before executing the below steps, make sure that VADJ jumper is set to 3.3V.
 
 
-\* Connect the oscilloscope probes to the SMB connectors.
-   \* Turn it on.
-   \* Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
+* Connect the oscilloscope probes to the SMB connectors.
+   * Turn it on.
+   * Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
 
 
 .. note::
@@ -149,7 +151,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.

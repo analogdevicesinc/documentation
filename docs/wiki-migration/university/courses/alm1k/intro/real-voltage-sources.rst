@@ -73,12 +73,7 @@ The lemon battery illustrates the type of chemical reaction (oxidation-reduction
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Jumper wires (wires with alligator clips will work best)
-| One or more lemons: large, fresh, "juicy" lemons work best.
-| Zinc plated screws or nails
-| Copper plated coins or copper nails or heavy gauge (14 or 12) copper wire.
-| Red LED
+ADALM1000 hardware module Jumper wires (wires with alligator clips will work best) One or more lemons: large, fresh, "juicy" lemons work best. Zinc plated screws or nails Copper plated coins or copper nails or heavy gauge (14 or 12) copper wire. Red LED
 
 Insert a copper penny into a small cut or push a copper nail or heavy gauge wire into one side of the lemon. Push a galvanized (zinc coated) screw or nail into the other side of the lemon. The zinc and copper electrodes must not touch. This will be a single cell of a battery. The zinc and the copper are called electrodes. The lemon juice is called electrolyte. All batteries have a "+" and "-" terminal. Electric current is a flow of atomic particles called electrons.
 

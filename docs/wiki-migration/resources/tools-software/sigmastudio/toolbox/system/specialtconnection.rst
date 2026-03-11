@@ -1,11 +1,10 @@
 Special T Connection
 ====================
 
-| :doc:`Click here to return to the System page </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign>`
+:doc:`Click here to return to the System page </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign>`
 
-|
-
-| |specialtconnection.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/system/specialtconnection.png
+   :alt: specialtconnection.png
 
 Description
 -----------
@@ -67,5 +66,3 @@ Name    Type                  Description      Signal
 ======= ===================== ================ =======
 Output0 Compressed audio data Output channel 0 Digital
 ======= ===================== ================ =======
-
-.. |specialtconnection.png| image:: https://wiki.analog.com/_media/specialtconnection.png

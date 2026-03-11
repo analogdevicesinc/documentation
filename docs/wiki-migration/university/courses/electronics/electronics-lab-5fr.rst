@@ -79,20 +79,9 @@ Thus, if we assume that the common-emitter amplifier is properly characterized b
 
 Assuming C\ :sub:`B` = C\ :sub:`C` = C\ :sub:`E` = 1 Farad and C\ :sub:`F` = C\ :sub:`Π` = C\ :sub:`µ` = 0, and using a 2N3904 transistor, design a common-emitter amplifier with the following specifications:
 
-| V\ :sub:`CC` = 5 V
-| R\ :sub:`S` = 50Ω
-| R\ :sub:`L` = 1 kΩ
-| R\ :sub:`IN` > 250
-| Isupply < 8mA
-| A\ :sub:`V` > 50
-| peak-to-peak unclipped output swing > 3 V
-| 1. Show all your calculations, design procedure, and final component values.
-| 2. Verify your results using the LTSpice circuit simulator. Submit all necessary simulation plots showing that the specifications are satisfied. Also provide the circuit schematic with DC bias points annotated.
-| 3. Using the LTSpice simulator, find the higher 3-dB frequency (f\ :sub:`H`) while C\ :sub:`F` = 0.
-| 4. Determine Cp, Cµ and r\ :sub:`b` of the transistor from the simulated operating point data, (refer to your simulator's documentation on how to obtain operating point data). Calculate f\ :sub:`H` using the equation from section 1.3 and compare it with the simulation result obtained in Step 3. Remember that the equation gives you the radian frequency and you need to convert to Hz.
-| 5. Calculate the value of C\ :sub:`F` to have f\ :sub:`H` = 50 kHz. Simulate the circuit to verify your result, and adjust the value of C\ :sub:`F` if necessary.
-| 6. Calculate C\ :sub:`B`, C\ :sub:`C`, C\ :sub:`E` to have f\ :sub:`L` = 500 Hz. Simulate the circuit to verify your result, and adjust the values of capacitors if necessary.
-| 7. Be prepared to discuss your design at the beginning of the lab period with your TA.
+V\ :sub:`CC` = 5 V R\ :sub:`S` = 50Ω R\ :sub:`L` = 1 kΩ R\ :sub:`IN` > 250 Isupply < 8mA A\ :sub:`V` > 50 peak-to-peak unclipped output swing > 3 V
+
+1. Show all your calculations, design procedure, and final component values. 2. Verify your results using the LTSpice circuit simulator. Submit all necessary simulation plots showing that the specifications are satisfied. Also provide the circuit schematic with DC bias points annotated. 3. Using the LTSpice simulator, find the higher 3-dB frequency (f\ :sub:`H`) while C\ :sub:`F` = 0. 4. Determine Cp, Cµ and r\ :sub:`b` of the transistor from the simulated operating point data, (refer to your simulator's documentation on how to obtain operating point data). Calculate f\ :sub:`H` using the equation from section 1.3 and compare it with the simulation result obtained in Step 3. Remember that the equation gives you the radian frequency and you need to convert to Hz. 5. Calculate the value of C\ :sub:`F` to have f\ :sub:`H` = 50 kHz. Simulate the circuit to verify your result, and adjust the value of C\ :sub:`F` if necessary. 6. Calculate C\ :sub:`B`, C\ :sub:`C`, C\ :sub:`E` to have f\ :sub:`L` = 500 Hz. Simulate the circuit to verify your result, and adjust the values of capacitors if necessary. 7. Be prepared to discuss your design at the beginning of the lab period with your TA.
 
 3 Lab Procedure
 ---------------
@@ -105,12 +94,9 @@ The objective of this section of the Lab Activity is to validate your pre-Lab de
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| 6 - Resistors various values from the ADALP2000 Analog Parts Kit
-| 4 - Capacitors various values from the ADALP2000 Analog Parts Kit
-| 1 - small signal NPN transistor (2N3904)
-| Note on the source resistor R\ :sub:`S` and the AWG output of the ADALM2000. The AWG output has a 50 Ω series output resistance and you will need to include it along with the external resistance in series with its output. Also because of the relatively high gain of your design you will need an input signal with a small amplitude of around 100mV peak-to-peak. Rather than turning down the AWG in software it would be better from a noise point of view to insert a resistor voltage divider between the AWG output and your circuit input to attenuate the signal. Using something like that shown in figure 4 will provide both an attenuation factor of 1/8 and a 60Ω equivalent source resistance. Other combinations of resistor values are of course also possible based on what you have available.
+ADALM2000 Active Learning Module Solder-less breadboard 6 - Resistors various values from the ADALP2000 Analog Parts Kit 4 - Capacitors various values from the ADALP2000 Analog Parts Kit 1 - small signal NPN transistor (2N3904)
+
+Note on the source resistor R\ :sub:`S` and the AWG output of the ADALM2000. The AWG output has a 50 Ω series output resistance and you will need to include it along with the external resistance in series with its output. Also because of the relatively high gain of your design you will need an input signal with a small amplitude of around 100mV peak-to-peak. Rather than turning down the AWG in software it would be better from a noise point of view to insert a resistor voltage divider between the AWG output and your circuit input to attenuate the signal. Using something like that shown in figure 4 will provide both an attenuation factor of 1/8 and a 60Ω equivalent source resistance. Other combinations of resistor values are of course also possible based on what you have available.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/afr_f4.png
    :align: center
@@ -137,14 +123,10 @@ Construct the circuit on your breadboard.
 Directions:
 ~~~~~~~~~~~
 
-| 1. Construct the amplifier, based on the schematic in figure 1, you designed in the pre-lab. Based on your design values from the pre-Lab, use the closest standard value from your kit. Remember that you can combine the standard values in series or parallel to get a combined value closer to your design number.
-| 2. Check your DC operating point by measuring I\ :sub:`C`, V\ :sub:`E`, V\ :sub:`C` and V\ :sub:`B`. If any DC bias value is significantly different than the one obtained from simulation, modify your circuit to get the desired DC bias before moving onto the next step.
-| 3. Measure Isupply.
-| 4. Use the Network analyzer instrument in the Scopy software to obtain the magnitude of the frequency response of the amplifier from 10 Hz to as high as 5 MHz and determine the lower and upper 3-dB frequencies f\ :sub:`L` and f\ :sub:`H`.
-| 5. At mid-band frequencies, measure A\ :sub:`V`, R\ :sub:`IN`, and R\ :sub:`OUT`.
-| 6. Measure the maximum un-clipped output signal amplitude.
-| 7. Prepare a data sheet showing your simulated and measured values.
-| 8. Be prepared to discuss your experiment with your TA. Have your lab data sheet checked off by your TA before submitting the lab report. |image7|
+1. Construct the amplifier, based on the schematic in figure 1, you designed in the pre-lab. Based on your design values from the pre-Lab, use the closest standard value from your kit. Remember that you can combine the standard values in series or parallel to get a combined value closer to your design number. 2. Check your DC operating point by measuring I\ :sub:`C`, V\ :sub:`E`, V\ :sub:`C` and V\ :sub:`B`. If any DC bias value is significantly different than the one obtained from simulation, modify your circuit to get the desired DC bias before moving onto the next step. 3. Measure Isupply. 4. Use the Network analyzer instrument in the Scopy software to obtain the magnitude of the frequency response of the amplifier from 10 Hz to as high as 5 MHz and determine the lower and upper 3-dB frequencies f\ :sub:`L` and f\ :sub:`H`. 5. At mid-band frequencies, measure A\ :sub:`V`, R\ :sub:`IN`, and R\ :sub:`OUT`. 6. Measure the maximum un-clipped output signal amplitude. 7. Prepare a data sheet showing your simulated and measured values. 8. Be prepared to discuss your experiment with your TA. Have your lab data sheet checked off by your TA before submitting the lab report.
+
+
+|image7|
 
 .. container:: centeralign
 

@@ -33,10 +33,7 @@ Get Microblaze Little Endian Toolchain from Xilinx
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -55,10 +52,7 @@ Untar Toolchain
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -73,10 +67,7 @@ Get Linux kernel source
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -97,10 +88,7 @@ Checkout master branch
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -117,10 +105,7 @@ Set Environmental Variables
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -136,10 +121,7 @@ Configure Kernel for ML605 XCOMM platform (aka FMCOMMS1)
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -167,10 +149,7 @@ Get Root File-System
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -184,7 +163,7 @@ Get Root File-System
       Saving to: `rootfs.cpio.gz'
    
       100%[=====================================================================================================
-      =====================================================================>] 2,958,801   1.42M/s   in 2.0s    
+      =====================================================================>] 2,958,801   1.42M/s   in 2.0s
    
       2012-12-19 09:25:30 (1.42 MB/s) - `rootfs.cpio.gz' saved [2958801/2958801]
       Dave@HAL9000:~/fmcomms1/linux$
@@ -196,10 +175,7 @@ Build kernel
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -240,10 +216,7 @@ Create a directory and gather required files
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -262,10 +235,7 @@ On Windows open a ISE Design Suite Command Prompt.
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -286,10 +256,7 @@ Run XMD genace tcl script
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::

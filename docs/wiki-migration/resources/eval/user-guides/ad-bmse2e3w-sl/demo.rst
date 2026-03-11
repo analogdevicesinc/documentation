@@ -4,9 +4,11 @@ DIY 72V TO 96V Battery Pack for AD-BMSE2E3W-SL
 Overview
 --------
 
-| The **AD-BMSE2E3W-SL** is a BMS reference design for light electric vehicles (LEVs). With a voltage range of 72 V to 96 V, this solution is suitable for electric 2-wheeler and 3-wheeler vehicles with high current capacity ranging up to 100 A.
-| ​It is designed to perform either in embedded mode or using a graphical user interface (GUI), where it calculates the battery's State of Charge (SoC) and State of Health (SoH) through enhanced coulomb counting technique.
-| To demonstrate its capabilities, this application user guide will explain how to build a 72V-96V battery pack and highlight the use of the AD-BMSE2E3-W-SL for evaluating and monitoring the battery using the Light EV BMS GUI.
+The **AD-BMSE2E3W-SL** is a BMS reference design for light electric vehicles (LEVs). With a voltage range of 72 V to 96 V, this solution is suitable for electric 2-wheeler and 3-wheeler vehicles with high current capacity ranging up to 100 A.
+
+It is designed to perform either in embedded mode or using a graphical user interface (GUI), where it calculates the battery's State of Charge (SoC) and State of Health (SoH) through enhanced coulomb counting technique.
+
+To demonstrate its capabilities, this application user guide will explain how to build a 72V-96V battery pack and highlight the use of the AD-BMSE2E3-W-SL for evaluating and monitoring the battery using the Light EV BMS GUI.
 
 Demo Requirements
 -----------------
@@ -92,16 +94,16 @@ Hardware Setup
 
 .. container:: center round box
 
-
-   ..
-
-| <fc #4682b4>\ **By default (upon purchase), the AD-BMSE2E3W-SL board comes with a MAX32625PICO programmer adapter that is loaded with firmware image.
-     Otherwise, if you are using a new MAX32625PICO programmer (that is not part of the original kit), make sure to flash it first with the** :git-max32625pico-firmware-images:`correct firmware image <raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>` **before connecting it to the AD-BMSE2E3W-SL board. If you do not know how to load the image, follow the instructions below:**\ </fc>
-   |
+   
+   **By default (upon purchase), the AD-BMSE2E3W-SL board comes with a MAX32625PICO programmer adapter that is loaded with firmware image.
+   
+   Otherwise, if you are using a new MAX32625PICO programmer (that is not part of the original kit), make sure to flash it first with the :git-max32625pico-firmware-images:`correct firmware image <raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>` before connecting it to the AD-BMSE2E3W-SL board. If you do not know how to load the image, follow the instructions below:\*\*
+   
+   
 
 .. raw:: html
 
-   <details><summary>**Click here to learn how to flash the firmware image in the MAX32625PICO**</summary>
+   <details><summary>**Click here to learn how to flash the firmware image in the MAX32625PICO**
 
 -   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32690 <raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`
    -   Do not connect the MAX32625PICO to the AD-BMSE2E3W-SL Board yet.
@@ -142,30 +144,29 @@ Hardware Setup
 Software Setup
 ~~~~~~~~~~~~~~
 
-| |image11|
+|image11|
 
 .. tip::
 
    The AD-BMSE2E3W-SL comes complete with firmware examples and easy-to-use application GUI.
 
-
-   | Access the software resources and see the setup procedure in the
    
-   .. container:: hi
-
-      :doc:`AD-BMSE2E3W-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-bmse2e3w-sl/software>`
-
+   Access the software resources and see the setup procedure in the :doc:`AD-BMSE2E3W-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-bmse2e3w-sl/software>` .
    
-   .
-   |
+
 
 Running the Demo
 ----------------
 
-| 1. Follow the instructions provided above to set up the hardware components. Ensure all connections are secure and aligned with the diagram and specifications.
-| 2. Download and install the necessary software and dependencies from the link provided above. Follow the installation guide if available to configure the software correctly.
-| 3. Open the **Light_EV_BMS_GUI.exe** file to open the GUI. You should see a script running in the background separately and the landing page running in the browser.
-| |image12|
+1. Follow the instructions provided above to set up the hardware components. Ensure all connections are secure and aligned with the diagram and specifications.
+
+2. Download and install the necessary software and dependencies from the link provided above. Follow the installation guide if available to configure the software correctly.
+
+3. Open the **Light_EV_BMS_GUI.exe** file to open the GUI. You should see a script running in the background separately and the landing page running in the browser.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/home_landing_details.png
+   :align: center
+   :width: 2000px
 
 +-------------------------------------------+------------------------------+-------------------------------------------------------------------------------------------------+
 | **Details Available on the Landing Page** |                              |                                                                                                 |
@@ -188,11 +189,27 @@ Running the Demo
 +-------------------------------------------+------------------------------+-------------------------------------------------------------------------------------------------+
 
 | 
-| 4.Set the jumper configuration based on the communication mode being used: UART or CAN. |image13|
-| 5. On the GUI landing page, hover to the Communication Mode dropdown menu. Select **UART COM** followed by the specific **port number** if using UART, or CAN if using CAN. |image14|
-| 6. Press the **RESET** button (S1) every time the hardware set up is changed. |image15|
-| 7. Click the **Load Defaults** button to set the initial entry values for the different parameters needed for the State of Charge (SoC) and State of Health (SoH) calculations. |image16|
-| 8. Click the **Start** button to begin the measurements. |image17|
+| 4.Set the jumper configuration based on the communication mode being used: UART or CAN. |image12|
+
+5. On the GUI landing page, hover to the Communication Mode dropdown menu. Select **UART COM** followed by the specific **port number** if using UART, or CAN if using CAN.
+
+
+|image13|
+
+6. Press the **RESET** button (S1) every time the hardware set up is changed.
+
+
+|image14|
+
+7. Click the **Load Defaults** button to set the initial entry values for the different parameters needed for the State of Charge (SoC) and State of Health (SoH) calculations.
+
+
+|image15|
+
+8. Click the **Start** button to begin the measurements.
+
+
+|image16|
 
 Viewing Results in the Light BMS GUI Tabs
 -----------------------------------------
@@ -265,12 +282,10 @@ For questions and more information, please visit the Analog Devices Engineer Zon
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/load_connection.png
    :width: 2000px
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/update_overview_page.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/home_landing_details.png
-   :width: 2000px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/communication_jumper_selection.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/communication_jumper_selection.png
    :width: 300px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/communication_mode.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/reset_button_hardware.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/communication_mode.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/reset_button_hardware.png
    :width: 500px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/setting_defaults.png
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/start_button.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/setting_defaults.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/start_button.png

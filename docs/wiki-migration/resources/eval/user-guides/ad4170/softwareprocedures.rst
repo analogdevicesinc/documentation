@@ -12,7 +12,7 @@ Ace Plugin Install guide
 The software and drivers required for the installation walked through in this section can be found below:
 
 -  :adi:`Ace Software <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html?doc=EVAL-AD7383FMCZ-ug-1770.pdf>`
--  :adi:`AD4170 Ace Plugin <media/en/evaluation-boards-kits/evaluation-software/AD4170>` <fc #ff0000>UPDATE WHEN AVAIL</fc>
+-  :adi:`AD4170 Ace Plugin <media/en/evaluation-boards-kits/evaluation-software/AD4170>` UPDATE WHEN AVAIL
 -  `SDP controller system demonstration platform drivers <http://swdownloads.analog.com/ACE/SDP/SDPDrivers.exe>`_
 
 Installing the ACE Plugin software
@@ -61,7 +61,7 @@ Download the AD4170 Plugin software from your myanalog account. Steps to downloa
 
 -  Login to your myAnalog.com account.
 -  Click on your myanalog Dashboard.
--  Under “Special Resources” click on the link call “AD4170 ACE Plug In V 1.0 Software Download”. Note the version number could be different at time of downloading. <fc #ff0000>REPLACE with 4170 type</fc>\
+-  Under “Special Resources” click on the link call “AD4170 ACE Plug In V 1.0 Software Download”. Note the version number could be different at time of downloading. REPLACE with 4170 type\
 
 |image8|
 
@@ -204,8 +204,7 @@ AD4170 Demo Modes
 AD7124 Eval+ Demo Modes
 =======================
 
-| :doc:`Visit the demo mode section here </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures/demo_modes>`
-| **Contents of the demo modes section:**
+:doc:`Visit the demo mode section here </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures/demo_modes>` **Contents of the demo modes section:**
 
 -  :doc:`Noise Test Demo </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures/demo_modes>`
 -  :doc:`2 Wire RTD Demo </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures/demo_modes>`

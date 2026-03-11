@@ -58,10 +58,7 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -75,7 +72,7 @@ Messages
       DRAM:  ECC disabled 1 GiB
       MMC:   sdhci@e0100000: 0 (SD)
       SF: Detected s25fl128s_64k with page size 512 Bytes, erase size 128 KiB, total 32 MiB
-      *** Warning - bad CRC, using default environment
+      ** Warning - bad CRC, using default environment
    
       In:    serial@e0001000
       Out:   serial@e0001000
@@ -621,10 +618,7 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

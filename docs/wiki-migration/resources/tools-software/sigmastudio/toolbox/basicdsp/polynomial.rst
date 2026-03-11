@@ -3,16 +3,26 @@ Polynomial
 
 :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-| 
-| |polynomial.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/polynomial.png
+   :alt: polynomial.png
+   :align: center
 
 Description
 -----------
 
-| The Polynomial block computes the polynomial equation of (N - 1)th order.Where N specifies in the text field.
-| ===== Usage ===== Enter the order of the equation in the text field and to open the table editor to enter the coefficients, click on the table button. if N = 5, This block computes the polynomial equation of 4th order.The table editor contains 5 coefficients and those are in the order of a0,a1,a2,a3, and a4 respectively.
-| ===== Variants ===== 1. SinglePrecision
-| 2. ExtendedPrecision
+The Polynomial block computes the polynomial equation of (N - 1)th order.Where N specifies in the text field.
+
+Usage
+-----
+
+Enter the order of the equation in the text field and to open the table editor to enter the coefficients, click on the table button. if N = 5, This block computes the polynomial equation of 4th order.The table editor contains 5 coefficients and those are in the order of a0,a1,a2,a3, and a4 respectively.
+
+Variants
+--------
+
+1. SinglePrecision
+
+2. ExtendedPrecision
 
 Targets Supported
 -----------------
@@ -67,5 +77,3 @@ Parameter Name   Description                ADSP-214xx/SC5xx/215xx
 NumofTableValues N -1 order of the equation Float
 TableValues      coeffcients values a0,a1   Float
 ================ ========================== ======================
-
-.. |polynomial.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/polynomial.png

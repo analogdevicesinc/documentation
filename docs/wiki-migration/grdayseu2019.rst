@@ -28,12 +28,7 @@ For those attending the :adi:`PlutoSDR` workshop at European GNU Radio Days 2019
 
    -  Installation instructions for Linux users are here: :doc:`GNU Radio </wiki-migration/resources/tools-software/linux-software/gnuradio>`
 
-.. important::
-
-   If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions
-
-
-.
+If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions .
 
 Slides and Labs
 ===============

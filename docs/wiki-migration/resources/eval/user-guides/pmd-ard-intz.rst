@@ -55,7 +55,7 @@ Meanwhile, the logic voltage source of the MCU baseboard can be chosen from the 
 Reset Logic Active State
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The reset button (S2) on PMD-ARD-INTZ resets the MCU baseboard and all of the Pmod ports simultaneously. By default, the reset pins are **Active Low** and can be changed to an \**Active High \*\* using solder jumpers JP1, JP2, JP3, JP4 for the Pmod ports and JP5 for the MCU.
+The reset button (S2) on PMD-ARD-INTZ resets the MCU baseboard and all of the Pmod ports simultaneously. By default, the reset pins are **Active Low** and can be changed to an \**Active High** using solder jumpers JP1, JP2, JP3, JP4 for the Pmod ports and JP5 for the MCU.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pmd-ard-intz/reset.png
    :alt: reset.png

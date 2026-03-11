@@ -63,10 +63,8 @@ For the sake of compatibility the resource table used in the `examples <https://
 
 .. note::
 
-   Additional detail can be found at :git-rpmsg-lite:`release/yocto-2`.1.0/lib/include/remoteproc.h\
+   Additional detail can be found at https://github.com/analogdevicesinc/rpmsg-lite/blob/adi/release/yocto-2.1.0/lib/include/remoteproc.h\
 
-
-   | 
 
 Using RPMsg-Lite on SC5xx
 -------------------------
@@ -81,8 +79,6 @@ Create an array for the vring buffers on the heap.
 ::
 
    uint8_t vring_buffer[ADI_VRING_BUFFER_SIZE];
-
-|
 
 Disable cache on ARM
 ^^^^^^^^^^^^^^^^^^^^
@@ -144,8 +140,6 @@ To store the vring buffers previously declared in the uncached memory block use 
    __attribute__ ((section (".l3_data_uncached")))
    uint8_t vring_buffer[ADI_VRING_BUFFER_SIZE];
 
-   | 
-
 Disable cache on SHARC
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -160,8 +154,6 @@ The SHARCs have a number of range registers allowing for sections of memory to b
                            adi_cache_noncacheable_range);
 
 If the SHARC is acting as an RPMsg-Lite remote the ranges to mark as uncached are retrieved from the resource table.
-
-|
 
 Create Resource Table
 ~~~~~~~~~~~~~~~~~~~~~
@@ -221,8 +213,6 @@ On the core on which the memory for the vring buffers was declared create the re
    extern struct adi_resource_table __MCAPI_common_start;
    volatile struct adi_resource_table *adi_resource_table;
    volatile struct sharc_resource_table *resource_table;
-
-   | 
 
 Adding an rpmsg-lite instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -287,8 +277,6 @@ On the remote side the instance is initialized as follows
            RL_SHM_VDEV,
            &rpmsg_ARM_channel);
 
-|
-
 Adding an endpoint
 ^^^^^^^^^^^^^^^^^^
 
@@ -322,8 +310,6 @@ Create an endpoint
            NULL,
            &sharc_ping_endpoint_context);
 
-           | 
-
 Sending a message
 ^^^^^^^^^^^^^^^^^
 
@@ -340,8 +326,6 @@ In order to send a message the recipient endpoint address must be known.
            &sharc_ping_endpoint_context.ept,
            remote_addr,
            msg, len, 0);
-
-|
 
 Additional information
 ----------------------

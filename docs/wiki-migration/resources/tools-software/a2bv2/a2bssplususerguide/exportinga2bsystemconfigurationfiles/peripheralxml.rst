@@ -11,9 +11,9 @@ The XML Prelog is as below
 
    <?xml version="1.0" standalone="no"?>
 
-| 
-| **<ROM>** is the root element of the Sequence XML.
-| Root element contains **<dateTime>**, **<version>** and one or more **<page>** elements.
+**<ROM>** is the root element of the Sequence XML.
+
+Root element contains **<dateTime>**, **<version>** and one or more **<page>** elements.
 
 -  dateTime - Date and time of generation of the xml file.
 -  version - Version of SigmaStudio+ used for generating the XML.
@@ -27,9 +27,7 @@ The XML Prelog is as below
 <page> Element
 --------------
 
-**modetype** attribute under **<page>** indicates the name of the mode. Each mode has multiple commands represented by **<action>** element.. The attributes of the <action> element are given below.
-
-\*\* instr \*\* - Instruction for performing various operations with xml
+**modetype** attribute under **<page>** indicates the name of the mode. Each mode has multiple commands represented by **<action>** element.. The attributes of the <action> element are given below.** instr \*\* - Instruction for performing various operations with xml
 
 -   For delay -> instr="delay"
 -   For write -> instr="writeXbytes"

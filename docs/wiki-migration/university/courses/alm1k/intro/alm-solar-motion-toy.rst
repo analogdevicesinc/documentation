@@ -62,10 +62,7 @@ So that’s all there is inside the dancing hula girl, but what else can we do w
 Materials:
 ~~~~~~~~~~
 
-| 1 – Solar toy (disassembled)
-| ADALM1000 module
-| Solderless breadboard
-| 4 – Male to male jumper wires, different colors
+1 – Solar toy (disassembled) ADALM1000 module Solderless breadboard 4 – Male to male jumper wires, different colors
 
 Measuring Circuit Operation:
 ----------------------------
@@ -129,16 +126,10 @@ Other Things to investigate:
 
 The circuit board is simply an oscillator and could be used for other purposes.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 – Red LED
-| 1 - 100Ω resistor
-| 1 – 10 kΩ resistor
-| 1 – 10 uF capacitor
-| 1 – 3.3 kΩ resistor
+1 – Red LED 1 - 100Ω resistor 1 – 10 kΩ resistor 1 – 10 uF capacitor 1 – 3.3 kΩ resistor
 
 The IC on the circuit board makes a good LED flasher as well. Connect the LED and a series current limit resistor in place of the coil as shown in figure 9.
 
@@ -228,9 +219,7 @@ Transformer action can be investigated by driving a 1 mH or 10 mH inductor, like
 
 **Going Further**
 
-| `Flappy solar ornaments have an interesting history. <https://www.youtube.com/watch?v=MHRxYtVD1IU&t=1s>`_
-| `Flappy Flower Solar Ornament Teardown <https://www.youtube.com/watch?v=pwR--SBEM9U>`_
-| `Really nice "flip flap" pendulum kicker - with a transistor level schematic <https://odysee.com/@bigclivedotcom:0d/really-nice-flip-flap-pendulum-kicker:5>`_
+`Flappy solar ornaments have an interesting history. <https://www.youtube.com/watch?v=MHRxYtVD1IU&t=1s>`_ `Flappy Flower Solar Ornament Teardown <https://www.youtube.com/watch?v=pwR--SBEM9U>`_ `Really nice "flip flap" pendulum kicker - with a transistor level schematic <https://odysee.com/@bigclivedotcom:0d/really-nice-flip-flap-pendulum-kicker:5>`_
 
 **Return to Lab Activity table of contents**
 

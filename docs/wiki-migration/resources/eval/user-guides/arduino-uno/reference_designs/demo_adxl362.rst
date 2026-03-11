@@ -1,7 +1,7 @@
 Acceleration Measurement Demo using the Arduino Uno
 ===================================================
 
-| The **ADXL362_example** is an acceleration measurement demo project for the Arduino Uno base board with additional EVAL-ADXL362-ARDZ shield, created using the Arduino IDE.
+The **ADXL362_example** is an acceleration measurement demo project for the Arduino Uno base board with additional EVAL-ADXL362-ARDZ shield, created using the Arduino IDE.
 
 General Description/Overview
 ----------------------------
@@ -14,9 +14,7 @@ The **ADXL362_example** uses the :doc:`EVAL-ADXL362-ARDZ shield </wiki-migration
 
 The application reads the \*\* X \*\* , \*\* Y \*\*, and \*\* Z \*\* acceleration registers each **500 [ms]**. The acceleration in the 3 axes is displayed in **[mG]** on the LCD. Also this application demonstrates the usage of the motion switch. Movement zones - **UP**, **DOWN**, **RIGHT**, **LEFT**, **CENTER** - are displayed in the right side of the LCD.
 
-The **EVAL-ADXL362-ARDZ** shield provide an internal temperature sensor as an additional features which is read in the same software loop. The value is displayed in ADC codes or in Celsius degrees. The temperature \*\* Treal \*\* is derived from the ADC readings \*\* Tadc \*\* using the predefined formula:
-
-|
+The **EVAL-ADXL362-ARDZ** shield provide an internal temperature sensor as an additional features which is read in the same software loop. The value is displayed in ADC codes or in Celsius degrees. The temperature** Treal \*\* is derived from the ADC readings \*\* Tadc \*\* using the predefined formula:
 
 ::
 
@@ -30,7 +28,7 @@ Each **ADXL362** chip requires individual calibration which can be done by setti
 
 The software puts the LCD in a "sleep" mode after **10 sec** if no movement of the boards is present. The system "wakes-up" if the acceleration on any axes is greater than **50 [mG]**. The threshold values can be adjusted by the user.
 
-| The acceleration axes, the temperature values and the motion grid are displayed as is presented in the picture on the right.
+The acceleration axes, the temperature values and the motion grid are displayed as is presented in the picture on the right.
 
 Demo Requirements
 -----------------
@@ -183,8 +181,6 @@ You may need to configure the serial terminal depending on the current settings 
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-| 
 
 Tools Download and Help
 -----------------------

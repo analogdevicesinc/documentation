@@ -59,7 +59,7 @@ The baremetal framework presently ships with three A2B initialization files / co
            #define A2B_TOPOLOGY_TDM8_SAM_to_CLASSD_4down                        FALSE
 
           // Add your own pre-processor variables for custom A2B topologies here
-          
+
        #endif  // A2B_ROLE_MASTER
 
    #endif  // ENABLE_A2B
@@ -91,7 +91,7 @@ To access the four channels on the Class D amp, use the first four buffers assoc
 
    /*
      * Note - this code below is slightly different than the default A2B code in the audio callback file.
-     * We are copying audio from audiochannel_from_sharc_core2_0_left, not audiochannel_from_sharc_core2_1_left. 
+     * We are copying audio from audiochannel_from_sharc_core2_0_left, not audiochannel_from_sharc_core2_1_left.
      * Audio coming in from the ADC is only on the first stereo pair so we'll copy this stereo
      * Audio to both stereo class D amps.
     */
@@ -103,5 +103,5 @@ As mentioned above, if we are using an A2B configuration that sends four channel
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#audioproj-tutorial
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#audioproj-tutorial
    :alt: Using the Audio Project Fin#.|Bare Metal Framework#custom-a2b-topology|Adding Custom A2B Configurations

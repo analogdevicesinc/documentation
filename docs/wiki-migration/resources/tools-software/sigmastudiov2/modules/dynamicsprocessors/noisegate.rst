@@ -3,14 +3,16 @@
 Noise Gate
 ==========
 
-| 
-| |noisegate.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/noisegate.png
+   :alt: noisegate.png
 
 Description
 -----------
 
-| The NoiseGate block is used to control the volume of an audio signal. Computes the RMS Level of an Incoming Audio Signal and Reduces the Noise which is Below a User-Defined Threshold by Setting the Gain as 0
-| ===== Targets Supported =====
+The NoiseGate block is used to control the volume of an audio signal. Computes the RMS Level of an Incoming Audio Signal and Reduces the Noise which is Below a User-Defined Threshold by Setting the Gain as 0
+
+Targets Supported
+-----------------
 
 ========= ========== ================ ============= ================
 Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -18,7 +20,7 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 NoiseGate B          B                NA            B
 ========= ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -39,7 +41,7 @@ Name    Type  Description
 Output0 Audio Output channel0
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,10 +75,9 @@ Output0 Audio Output channel0
 
 | 
 | ===== DSP Parameter Computation ===== Decay = 1/P^(1000/(Decay \* FS))
-| Hold = FS \* HOld/1000
-| Where P is 1/9 and FS is the sampling rate
 
-| 
-| Where FS is the sampling rate
+Hold = FS \* HOld/1000
 
-.. |noisegate.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/noisegate.png
+Where P is 1/9 and FS is the sampling rate
+
+Where FS is the sampling rate

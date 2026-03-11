@@ -1,8 +1,9 @@
 System
 ======
 
-| :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
-| The System library in the ToolBox lists blocks that give you basic control of design layout and response. These are helper blocks, which don't own a DSP; their functions are not driven by DSP algorithms and they don't use any instructions. But they're useful in organizing your designs.
+:doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
+
+The System library in the ToolBox lists blocks that give you basic control of design layout and response. These are helper blocks, which don't own a DSP; their functions are not driven by DSP algorithms and they don't use any instructions. But they're useful in organizing your designs.
 
 The algorithms for these blocks are built in, don't require that you add an algorithm, and the blocks are not associated with specific DSPs. That association is made at link time, after you've made your wire connections.
 

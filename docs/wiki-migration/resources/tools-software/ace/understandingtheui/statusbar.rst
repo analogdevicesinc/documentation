@@ -9,7 +9,9 @@ The status bar at the bottom of the application gives information about the hard
 
 The state tells the operator the status of the board in
 
-context. It will be updated if the poll state button in the toolbar is clicked. |Poll.png| The value of the state can be any of the following options:    Unavailable – The hardware is not acquired by ACE.
+context. It will be updated if the poll state button in the toolbar is clicked. |Poll.png| The value of the state can be any of the following options:
+
+Unavailable – The hardware is not acquired by ACE.
 
 ::
 
@@ -18,8 +20,6 @@ context. It will be updated if the poll state button in the toolbar is clicked. 
 ::
 
    *Uninitialized - The hardware is in its default power on state and has not been configured or setup.
-
-  
 
 ::
 

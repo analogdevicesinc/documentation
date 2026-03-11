@@ -1,6 +1,6 @@
 .. warning::
 
-   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki\`
+   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki`
 
 
 SHARC-ALSA Example
@@ -28,20 +28,24 @@ SHARC-ALSA modes
 
 There are 2 modes for SHARC-ALSA, and they differ in how the SHARCs are programmed. The mode is set in the ``conf/local.conf`` file, when building the Linux image. E.g. : ``DISTRO_FEATURES:append = " adi_sharc_alsa_audio"``
 
-| 
-| == adi_sharc_alsa_audio == Audio playback handled through SHARC firmware, no codec control (volume, etc) from Linux. Remoteproc is used to load the SHARC LDR firmware files.
+adi_sharc_alsa_audio
+~~~~~~~~~~~~~~~~~~~~
 
-| 
-| == adi_sharc_alsa_audio_uboot == Audio playback handled through SHARC firmware, no codec control (volume, etc) from Linux. Remoteproc is *not* used to load the SHARC LDR firmware file.
+Audio playback handled through SHARC firmware, no codec control (volume, etc) from Linux. Remoteproc is used to load the SHARC LDR firmware files.
 
-| 
-| ==== Programming the SHARC ====
+adi_sharc_alsa_audio_uboot
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Audio playback handled through SHARC firmware, no codec control (volume, etc) from Linux. Remoteproc is *not* used to load the SHARC LDR firmware file.
+
+Programming the SHARC
+---------------------
 
 Using Linux (remoteproc)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 adi_sharc_alsa_audio
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 An example SHARC image is present in the ``/lib/firmware`` directory on the target. The SHARC can be programmed with this image using the Linux shell. The SHARCs are running already when Linux has booted, so you can stop them, reload the example image or your own one, and start them again
 
@@ -65,21 +69,18 @@ An example SHARC image is present in the ``/lib/firmware`` directory on the targ
 
 When executing the ``echo start`` command you will notice the LEDs on the SOMCRR-EZKIT flashing and then settle on LED7 remaining on. This indicates that the image on the SHARC is running.
 
-
-| 
-
 Using U-Boot
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 adi_sharc_alsa_audio_uboot
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An example SHARC image is present in the /lib/firmware folder on the target. The SHARC can be programmed with this image via U-Boot. You need to store ``icap-sharc-alsa_Core1.ldr`` & ``icap-sharc-alsa_Core2.ldr`` (or your own image/images) in the TFTP server used throughout the booting process in the :doc:`Linux for ADSP-SC5xx Processors 3.0.0 (develop) </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>`. With these stored in the TFTP server, you need to input the following at the U-Boot prompt
 
 .. code:: bash
 
    => rproc init
-   => tftp ${loadaddr} icap-sharc-alsa_Core1.ldr  
+   => tftp ${loadaddr} icap-sharc-alsa_Core1.ldr
    => rproc load 0 ${loadaddr} ${filesize}
    Load Remote Processor 0 with data@addr=0x96000000 132860 bytes: Success!
    => tftp ${loadaddr} icap-sharc-alsa_Core2.ldr
@@ -90,9 +91,8 @@ An example SHARC image is present in the /lib/firmware folder on the target. The
 
 You can now proceed to booting Linux as per usual. The SHARCs will be programmed and running.
 
-|
-
-| ==== Playing Audio ====
+Playing Audio
+-------------
 
 .. note::
 
@@ -109,8 +109,10 @@ Play back the audio sample file stored in ``/usr/share/sounds/alsa/``
 
 You will hear a 440Hz tone on the left channel and a 200Hz tone on the right channel being played for 6 seconds.
 
-| 
-| === Adding a Tone to a Channel === The SHARC can be instructed to add a tone to the audio played using aplay. This is done through a command interface which also uses RPMsg for passing on the instructions to the SHARC Core. A helper tool for simplifying this is installed on the target. The tool creates a character device which will accept a channel number and a frequency to be added to the audio as strings allowing for simple interaction from the command line.
+Adding a Tone to a Channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The SHARC can be instructed to add a tone to the audio played using aplay. This is done through a command interface which also uses RPMsg for passing on the instructions to the SHARC Core. A helper tool for simplifying this is installed on the target. The tool creates a character device which will accept a channel number and a frequency to be added to the audio as strings allowing for simple interaction from the command line.
 
 .. code:: bash
 

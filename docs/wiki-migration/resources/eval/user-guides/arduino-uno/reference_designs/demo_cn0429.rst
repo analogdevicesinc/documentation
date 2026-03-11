@@ -80,7 +80,7 @@ The source code and include files of the **CN0429_example** can be found here:
    :class: download
 
    
-   :git-arduino:`CN0429_example at Github <Arduino%20Uno%20R3/examples/CN0429_example>`
+   `CN0429_example at Github <https://github.com/analogdevicesinc/arduino/tree/cn0429/Arduino%20Uno%20R3/examples/CN0429_example>`_
    
 
 
@@ -123,8 +123,6 @@ You may need to configure the serial terminal depending on the current settings 
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-| 
 
 Tools Download and Help
 -----------------------

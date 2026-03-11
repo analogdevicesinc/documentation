@@ -44,9 +44,9 @@ Prior to the setup function, we'll need to declare two instances of the clickles
     */
    void processaudio_setup(void) {
 
-       // *******************************************************************************
+       // ******************************************************************************
        // Add any custom setup code here
-       // *******************************************************************************
+       // ******************************************************************************
        volume_control_setup(&vol_ctrl_l, multicore_data->audioproj_fin_pot_hadc0);
        volume_control_setup(&vol_ctrl_r, multicore_data->audioproj_fin_pot_hadc1);
 
@@ -90,9 +90,9 @@ In our setup code, we'll multiply the value of the current pots by 2.0...
     */
    void processaudio_setup(void) {
 
-       // *******************************************************************************
+       // ******************************************************************************
        // Add any custom setup code here
-       // *******************************************************************************
+       // ******************************************************************************
 
 
        volume_control_setup(&vol_ctrl_l, multicore_data->audioproj_fin_pot_hadc0 * 2.0);
@@ -127,5 +127,5 @@ Other Fun Things to Try
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#audio-elements
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#audio-elements
    :alt: "Audio Elements" and "Audio Effects"#.|Bare Metal Framework#chaining-audio-elements|Chaining Elements and Effects

@@ -3,9 +3,11 @@
 Single Volume Shared
 ====================
 
-| 
-| |singlevolume.png|
-| ===== Varaints =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/singlevolume.png
+   :alt: singlevolume.png
+
+Varaints
+--------
 
 ::
 
@@ -18,9 +20,15 @@ Single Volume Shared
 Description
 -----------
 
-| The Single Volume Shared block controls level of the signal through slider. This block has single volume control for 'N' number of inputs. Connect an input signal and control its level with the slider. Optionally the slew rate can be adjusted in the range 1 to 23.
-| ===== Usage ===== To modify the slider settings, right click on the slider control to customize the max/min and step size for slider.
-| ===== Targets Supported =====
+The Single Volume Shared block controls level of the signal through slider. This block has single volume control for 'N' number of inputs. Connect an input signal and control its level with the slider. Optionally the slew rate can be adjusted in the range 1 to 23.
+
+Usage
+-----
+
+To modify the slider settings, right click on the slider control to customize the max/min and step size for slider.
+
+Targets Supported
+-----------------
 
 +-----------------------------------------+------------+------------------+---------------+------------------+
 | Name                                    | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -42,27 +50,27 @@ Pins
 Input
 ~~~~~
 
-+-------------------------+----------------------------------------+-----------------+
-| Name                    | Type                                   | Description     |
-+=========================+========================================+=================+
-| Input<fc #ff0000>X</fc> | Audio (Complex pin for Complex module) | Input channel X |
-+-------------------------+----------------------------------------+-----------------+
+====== ====================================== ===============
+Name   Type                                   Description
+====== ====================================== ===============
+InputX Audio (Complex pin for Complex module) Input channel X
+====== ====================================== ===============
 
 Output
 ~~~~~~
 
-+--------------------------+----------------------------------------+------------------+
-| Name                     | Type                                   | Description      |
-+==========================+========================================+==================+
-| Output<fc #ff0000>X</fc> | Audio (Complex pin for Complex module) | Output channel X |
-+--------------------------+----------------------------------------+------------------+
+======= ====================================== ================
+Name    Type                                   Description
+======= ====================================== ================
+OutputX Audio (Complex pin for Complex module) Output channel X
+======= ====================================== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +--------------------+---------------+-------------------------+--------------------------------------------------------------------------------+
 | GUI Parameter Name | Default Value | Range                   | Function Description                                                           |
@@ -109,6 +117,4 @@ alpha    = Math.Exp(-1 / (tc \* FS))
 om_alpha = 1 - alpha
 ======== ==============================================
 
-| 
 
-.. |singlevolume.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/singlevolume.png

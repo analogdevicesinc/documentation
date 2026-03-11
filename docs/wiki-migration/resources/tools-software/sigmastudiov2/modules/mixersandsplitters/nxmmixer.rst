@@ -3,18 +3,26 @@
 NxM Mixer
 =========
 
-| 
-| |nxmmixer.png|
-| NxM Mixer
-| |nxmmixerform.png|
-| NxM Mixer Linear
-| |nxmlinear.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/nxmmixer.png
+   :alt: nxmmixer.png
+
+NxM Mixer
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/nxmmixerform.png
+   :alt: nxmmixerform.png
+
+NxM Mixer Linear
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/nxmlinear.png
+   :alt: nxmlinear.png
 
 Description
 -----------
 
-| The NxM Mixer block multiplies the inputs with respective gains and mixes N number of inputs and sends the result to the M number of outputs.
-| ===== Variants =====
+The NxM Mixer block multiplies the inputs with respective gains and mixes N number of inputs and sends the result to the M number of outputs.
+
+Variants
+--------
 
 -  NxM Mixer
 -  NxM Mixer Linear
@@ -22,13 +30,13 @@ Description
 -  3x1 Mixer (Linear HW Slew)
 -  4x1 Mixer(Linear)
 
-| 
-
 Usage
 -----
 
-| Click on the icon to open the NxM Mixer window to configure the gain for respective input channels for respective outputs.
-| ===== Targets Supported =====
+Click on the icon to open the NxM Mixer window to configure the gain for respective input channels for respective outputs.
+
+Targets Supported
+-----------------
 
 +---------------------------+------------+------------------+---------------+------------------+
 | Name                      | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -50,48 +58,48 @@ Usage
 Input
 ~~~~~
 
-======================= ===== ===============
-Name                    Type  Description
-======================= ===== ===============
-Input<fc #ff0000>X</fc> Audio Input channel X
-======================= ===== ===============
+====== ===== ===============
+Name   Type  Description
+====== ===== ===============
+InputX Audio Input channel X
+====== ===== ===============
 
 Output
 ~~~~~~
 
-======================== ======= ================
-Name                     Type    Description
-======================== ======= ================
-Output<fc #ff0000>X</fc> Control Output channel X
-======================== ======= ================
+======= ======= ================
+Name    Type    Description
+======= ======= ================
+OutputX Control Output channel X
+======= ======= ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
 Configurable Parameters
 -----------------------
 
-+---------------------------------------------------------+---------------+-------------+-------------------------------------------------------------------------+
-| GUI Parameter Name                                      | Default Value | Range       | Function Description                                                    |
-+=========================================================+===============+=============+=========================================================================+
-| GainDB_Output<fc #ff0000>M</fc>_Input<fc #ff0000>N</fc> | 0 dB          | -30 to 6 dB | Gain factor                                                             |
-+---------------------------------------------------------+---------------+-------------+-------------------------------------------------------------------------+
-| ISDb_Output<fc #ff0000>M</fc>_Input<fc #ff0000>N</fc>   | True          | True/False  | Decides the Gain control in db/linear                                   |
-+---------------------------------------------------------+---------------+-------------+-------------------------------------------------------------------------+
-| NumInputs                                               | 2             | 20          | Number of input channels. Change in this value requires re-compilation  |
-+---------------------------------------------------------+---------------+-------------+-------------------------------------------------------------------------+
-| NumOutputs                                              | 1             | 20          | Number of output channels. Change in this value requires re-compilation |
-+---------------------------------------------------------+---------------+-------------+-------------------------------------------------------------------------+
-| SlewType                                                | RC Slew       | NA          | Slew type. Applicable to HW slew modules                                |
-+---------------------------------------------------------+---------------+-------------+-------------------------------------------------------------------------+
-| CustomVal                                               | 0x208A        | NA          | Custom slew value. Applicable to HW slew modules                        |
-+---------------------------------------------------------+---------------+-------------+-------------------------------------------------------------------------+
++-----------------------+---------------+-------------+-------------------------------------------------------------------------+
+| GUI Parameter Name    | Default Value | Range       | Function Description                                                    |
++=======================+===============+=============+=========================================================================+
+| GainDB_OutputM_InputN | 0 dB          | -30 to 6 dB | Gain factor                                                             |
++-----------------------+---------------+-------------+-------------------------------------------------------------------------+
+| ISDb_OutputM_InputN   | True          | True/False  | Decides the Gain control in db/linear                                   |
++-----------------------+---------------+-------------+-------------------------------------------------------------------------+
+| NumInputs             | 2             | 20          | Number of input channels. Change in this value requires re-compilation  |
++-----------------------+---------------+-------------+-------------------------------------------------------------------------+
+| NumOutputs            | 1             | 20          | Number of output channels. Change in this value requires re-compilation |
++-----------------------+---------------+-------------+-------------------------------------------------------------------------+
+| SlewType              | RC Slew       | NA          | Slew type. Applicable to HW slew modules                                |
++-----------------------+---------------+-------------+-------------------------------------------------------------------------+
+| CustomVal             | 0x208A        | NA          | Custom slew value. Applicable to HW slew modules                        |
++-----------------------+---------------+-------------+-------------------------------------------------------------------------+
 
 Note:
 
--  <fc #ff0000>M</fc> - Output Channel Index
--  <fc #ff0000>N</fc> - Input Channel Index
+-  M - Output Channel Index
+-  N - Input Channel Index
 
 DSP Parameters
 --------------
@@ -103,7 +111,3 @@ DSP Parameters
 +----------------+----------------------------------------------------+------------------------+---------------+
 | slew_mode      | Slew mode and value for HW slew (only for HW slew) | NA                     | Integer       |
 +----------------+----------------------------------------------------+------------------------+---------------+
-
-.. |nxmmixer.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/nxmmixer.png
-.. |nxmmixerform.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/nxmmixerform.png
-.. |nxmlinear.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/nxmlinear.png

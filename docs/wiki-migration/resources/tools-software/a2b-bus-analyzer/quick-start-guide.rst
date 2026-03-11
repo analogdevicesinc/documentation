@@ -19,7 +19,7 @@ A\ :sup:`2`\ B Bus Analyzer can be downloaded from :doc:`Software Downloads </wi
 Supported Operating Systems
 ---------------------------
 
-The A\ :sup:`2`\ B Bus Analyzer runs on Windows, Linux, and macOS. The Operating Systems table describes the operating system versions supported in this release. 
+The A\ :sup:`2`\ B Bus Analyzer runs on Windows, Linux, and macOS. The Operating Systems table describes the operating system versions supported in this release.
 
 +----------+--------------+---------------------------------------------------------------------+
 |          | **Platform** | **Details**                                                         |
@@ -34,7 +34,7 @@ The A\ :sup:`2`\ B Bus Analyzer runs on Windows, Linux, and macOS. The Operating
 Software Installation Instructions
 ----------------------------------
 
-The following sub-sections include installation information for the supported OS platforms. 
+The following sub-sections include installation information for the supported OS platforms.
 
 Windows
 ~~~~~~~
@@ -56,10 +56,10 @@ Linux
 ::
 
    #!/bin/sh
-    
+
    # The following is an example script of how to configure your USB on Linux
    # to be accessible by other users.
-    
+
    if [ $(id -u) != 0 ]; then
        echo "You must run this script with sudo:"
        echo "sudo $0 $*"; exit 1
@@ -284,15 +284,15 @@ For customer cabling, please use the below pinout details:
 
 **High power connector:**
 
-\* P7 (towards sub): 1 - GND, 2 - BP, 3 - BN, 4 – GND (left to right)
+- P7 (towards sub): 1 - GND, 2 - BP, 3 - BN, 4 – GND (left to right)
 
-\* P8 (towards main): 1 - GND, 2 - AN, 3 - AP, 4 – GND (left to right)
+- P8 (towards main): 1 - GND, 2 - AN, 3 - AP, 4 – GND (left to right)
 
 **Standard power connector:**
 
-\* P6 (towards sub): 1 - BP, 2 – BN (left to right)
+- P6 (towards sub): 1 - BP, 2 – BN (left to right)
 
-\* P3 (towards main): 1- AN, 2- AP (left to right)
+- P3 (towards main): 1- AN, 2- AP (left to right)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/emulator_pins.png
    :width: 400px
@@ -341,7 +341,7 @@ Sub Node Emulator
 
 2. Insert the Analyzer unit in an A\ :sup:`2`\ B network at a desired Sub node position to be emulated. Connect the unit to an upstream node, using TOWARDS MAIN, and to a downstream node, using TOWARDS SUB (if it is not the last node), on STD or HIGH PWR node emulator ports depending on the power configuration of the node being emulated.
 
-**Note:**\ \*\* AD242x node emulator*\* is also supported on STD PWR. Thus use emulator ports labelled TOWARDS MAIN and TOWARDS SUB on STD PWR when emulating AD242x Sub node.
+**Note:**\** AD242x node emulator*\* is also supported on STD PWR. Thus use emulator ports labelled TOWARDS MAIN and TOWARDS SUB on STD PWR when emulating AD242x Sub node.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/stdpowersub1.png
    :width: 600px

@@ -1,8 +1,9 @@
 Building Schematics
 ===================
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| This section present the fundamental concepts of the SigmaStudio System. For a brief overview of creating a SigmaStudio project, refer to the `Quick Start <https://wiki.analog.com/resources/tools-software/sigmastudio/gettingstarted/quickstart>`_. You can also find more information in the :doc:`tutorials </wiki-migration/resources/tools-software/sigmastudio/tutorials>` section.
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+
+This section present the fundamental concepts of the SigmaStudio System. For a brief overview of creating a SigmaStudio project, refer to the `Quick Start <https://wiki.analog.com/resources/tools-software/sigmastudio/gettingstarted/quickstart>`_. You can also find more information in the :doc:`tutorials </wiki-migration/resources/tools-software/sigmastudio/tutorials>` section.
 
 -  :doc:`Schematic Blocks </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/schematicblocks>`
 -  :doc:`Algorithms: Add/Remove, Grow/Reduce </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithms>`
@@ -33,8 +34,9 @@ Once a Processor block is added to the project, the Schematic tab is displayed. 
    Note: Every schematic MUST contain either an :doc:`Input block </wiki-migration/resources/tools-software/sigmastudio/toolbox/io>` or a :doc:`Source block </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources>`. If no inputs are present in the schematic design, you will receive the compiler error: <blockquote>Error - No Inputs are Defined for IC. </blockquote>
 
 
-| **Step 4: Create a Signal Processing Design**
-| Algorithm/Function blocks are managed in the :doc:`Schematic tab </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/schematictab>`
+**Step 4: Create a Signal Processing Design**
+
+Algorithm/Function blocks are managed in the :doc:`Schematic tab </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/schematictab>`
 
 Drag and drop blocks from the ToolBox or Tree ToolBox pane into the schematic tab to create your design. Note that in additional to advanced signal processing blocks, there are a variety or low level building blocks available (delay, multiply, and addition, feedback) allowing you to implement custom algorithms to fulfill your specific design requirements.
 
@@ -47,11 +49,13 @@ Drag and drop blocks from the ToolBox or Tree ToolBox pane into the schematic ta
    Note: If there are unconnected pins in the schematic you will receive the compiler error: <blockquote>Fatal Error: Unconnected pins found in cell. </blockquote>
 
 
-| **Step 7: Link and Compile the Project**
-| Once the schematic is complete and all blocks are correctly wired together, you can :doc:`link and compile </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/linkcompiledownload>` the project. If any errors are encountered during compilation, the Link Window will open and display the error information. If compilation is successful you will see a green bar directly below the schematic tab window and **Ready - Download** is displayed in the application's status bar.
+**Step 7: Link and Compile the Project**
 
-| **Step 8: Adjust Controls in Real-time**
-| Once your schematic is compiled and downloaded to the hardware, you can adjust the schematic's controls (knobs, sliders, and spin boxes) to change algorithm parameters in real time. This allows you to tune your design's settings before implementing the final system.
+Once the schematic is complete and all blocks are correctly wired together, you can :doc:`link and compile </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/linkcompiledownload>` the project. If any errors are encountered during compilation, the Link Window will open and display the error information. If compilation is successful you will see a green bar directly below the schematic tab window and **Ready - Download** is displayed in the application's status bar.
+
+**Step 8: Adjust Controls in Real-time**
+
+Once your schematic is compiled and downloaded to the hardware, you can adjust the schematic's controls (knobs, sliders, and spin boxes) to change algorithm parameters in real time. This allows you to tune your design's settings before implementing the final system.
 
 Some controls adjust compile-time parameters. Changes to these controls will not update the connected SigmaDSP instantly. If a compile-time control is changed, text in the bottom right corner of the SigmaStudio window will change from "Active: Downloaded" to "Design Mode", indicating SigmaStudio has stopped synchronizing the schematic with the DSP. To implement changes to compile-time parameters, recompile and download the program to the DSP, at which time the "Design Mode" text will change back to "Active: Downloaded".
 

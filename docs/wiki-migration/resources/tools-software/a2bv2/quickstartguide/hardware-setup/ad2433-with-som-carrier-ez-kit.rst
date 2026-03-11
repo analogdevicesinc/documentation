@@ -58,8 +58,6 @@ EVAL-AD2433WB1BZ
    \ **Figure:** EVAL-AD2433WB1BZ board
 
 
-.. _jumper-settings-1:
-
 Jumper settings
 ^^^^^^^^^^^^^^^
 

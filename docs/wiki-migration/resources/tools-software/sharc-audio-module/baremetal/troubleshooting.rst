@@ -28,7 +28,7 @@ There are generally five sources of issues that can result in no audio coming fr
 
 Sources #3-5 may be encountered when modifying the framework itself (beyond the callbacks) such as when porting the framework to a new hardware platform. If you're working within the audio callbacks, these are unlikely the source of the issue. The following steps are designed to help identify the source of the issue.
 
-\**Step 1: Confirm that the cables, audio source device and audio output device are working as expected \*\*
+**Step 1: Confirm that the cables, audio source device and audio output device are working as expected**
 
 The best place to start is to confirm that the cables connected to the SHARC Audio Module are working, that there is line-level audio coming from your audio source (e.g., smartphone, PC, etc.) connected to the SHARC Audio Module, and that whatever audio output device (e.g., amplifier, headphones, etc.) the SHARC Audio Module is connected to is working as expected. A simple test is to connect the audio source directly to the audio output device to ensure that all of the hardware and cabling connected to the SHARC Audio Module is working as expected.
 
@@ -60,14 +60,14 @@ In ``Callback_Audio_Processing.cpp`` on SHARC Core 1, change processaudio_callba
        // Otherwise, perform our C-based block processing here!
        for (int i=0;i<AUDIO_BLOCK_SIZE;i++) {
 
-           // *******************************************************************************
+           // ******************************************************************************
            // Replace the pass-through code below with your custom audio processing code here
-           // *******************************************************************************
-    
+           // ******************************************************************************
+
                            float sine_val = 0.5\*sinf(t);
                            t += 0.05;
                            if (t > 6.2831853072) t -= 6.2831853072;
-                           
+
                // Generate a sine output
                AudioChannel_0_Left_Out[i]  = sine_val;
                AudioChannel_0_Right_Out[i] = sine_val;
@@ -84,9 +84,9 @@ If the unmodified framework is passing audio from the LINE IN to the LINE OUT ja
 
 .. code:: c
 
-   //*****************************************************************************
+   //****************************************************************************
    // 2. Set audio processing parameters
-   //*****************************************************************************
+   //****************************************************************************
 
    // This should be a base 2 number from 8 to 128
    #define AUDIO_BLOCK_SIZE                                (32)
@@ -112,7 +112,7 @@ On the ARM core, you can monitor the number of dropped audio frames due to overf
 
 .. code:: c
 
-   if ((multiCoreAudioCtrl->SHARC_Core1_Dropped_Audio_Frames > 0) || 
+   if ((multiCoreAudioCtrl->SHARC_Core1_Dropped_Audio_Frames > 0) ||
        (multiCoreAudioCtrl->SHARC_Core2_Dropped_Audio_Frames > 0)
    {
      // Add some code to let you know that one of the SHARC cores has dropped an audio frame
@@ -140,5 +140,5 @@ Generally unexpected behavior
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#flashing
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#flashing
    :alt: Programming BM Framework to Flash#.|Bare Metal Framework#using-both-cores|Audio Processing Basics

@@ -53,7 +53,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
    Linux Kernel Configuration
    Symbol: ADIN1110 [=y]
-   Type  : tristate                                                                                                                                                                      
+   Type  : tristate
    Prompt: Analog Devices ADIN1110 MAC-PHY
       Location:
         -> Device Drivers
@@ -82,7 +82,7 @@ ADIN2111 probes via devicetree.
 
    ethernet@0 {
        compatible = "adi,adin2111";
-       
+
            /* SPI CS number */
            reg = <0>;
 
@@ -189,7 +189,7 @@ Typically, if both TX & RX values are incremented, it means that it is working. 
            RX errors 2  dropped 270  overruns 0  frame 0
            TX packets 15916  bytes 17297421 (16.4 MiB)
            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-           device interrupt 199  
+           device interrupt 199
 
    adin2111-0-p1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
            inet6 fe80::c82f:b7ff:fe10:2363  prefixlen 64  scopeid 0x20<link>
@@ -198,7 +198,7 @@ Typically, if both TX & RX values are incremented, it means that it is working. 
            RX errors 4  dropped 1835  overruns 0  frame 0
            TX packets 119263  bytes 128953328 (122.9 MiB)
            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-           device interrupt 199  
+           device interrupt 199
 
 ethtool
 -------
@@ -365,4 +365,8 @@ Ethernet pointers
 -  `Ethernet Controller bindings doc <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/ethernet-controller.yaml>`_
 -  `Ethernet PHY bindings doc <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/ethernet-phy.yaml>`_
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

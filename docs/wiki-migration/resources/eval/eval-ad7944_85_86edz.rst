@@ -4,8 +4,8 @@ User Guide for the AD7944/AD7985/AD7986, 14-/16-/18-Bit PulSAR® ADCs
 Features
 --------
 
--  **Full-featured evaluation board for the** :adi:`AD7944`\ **/**\ :adi:`AD7985`\ **/**\ :adi:`AD7986`
--  \**PC Control in conjunction with the converter and evaluation development board :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` \*\*
+-  **Full-featured evaluation board for the** :adi:`AD7944`\ **/**\ :adi:`AD7985`**/**\ :adi:`AD7986`
+-  **PC Control in conjunction with the converter and evaluation development board :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>`**
 -  **PC software for control and data analysis of time and frequency domain**
 -  **Versatile analog signal conditioning circuitry**
 -  **On-board reference, clock oscillator, and buffers**
@@ -88,20 +88,22 @@ Note that the measurements made by Analog Devices use the Audio Precision SYS-25
 Evaluation Board Hardware
 =========================
 
-| The low power, :adi:`AD7944`/:adi:`AD7985`/:adi:`AD7986` ADCs offer very high performance of up to 2.0 MSPS (:adi:`AD7986`) and 2.5 MSPS (:adi:`AD7944` and :adi:`AD7985`) throughput rates using a flexible parallel interface on the 96-pin interface to the :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` board.
+The low power, :adi:`AD7944`/:adi:`AD7985`/:adi:`AD7986` ADCs offer very high performance of up to 2.0 MSPS (:adi:`AD7986`) and 2.5 MSPS (:adi:`AD7944` and :adi:`AD7985`) throughput rates using a flexible parallel interface on the 96-pin interface to the :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` board.
 
-| The evaluation board is designed to demonstrate the performance of the ADC and to provide an easy-to-understand interface for a variety of system applications.
-| The evaluation board is ideal for use with the Analog Devices Converter and Evaluation Development EVAL-CED1Z (CED). The design offers the flexibility of applying external control signals and is capable of generating conversion results on parallel 16-bit wide buffered outputs.
+The evaluation board is designed to demonstrate the performance of the ADC and to provide an easy-to-understand interface for a variety of system applications.
 
-| Figure 2 shows the EVAL-AD7944/AD7985/AD7986EBZ evaluation board. The on-board FPGA, U3, provides the necessary control signals for conversion and deserializes the serial data as the :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` board uses a parallel interface. The evaluation board is a flexible design that enables the user to choose among many different board configurations, analog signal conditioning, reference, and different modes of conversion data.
+The evaluation board is ideal for use with the Analog Devices Converter and Evaluation Development EVAL-CED1Z (CED). The design offers the flexibility of applying external control signals and is capable of generating conversion results on parallel 16-bit wide buffered outputs.
 
-| This evaluation board is a 6-layer board carefully laid out and tested to demonstrate the specific high accuracy performance of the :adi:`AD7944`, :adi:`AD7985`, and :adi:`AD7986`. See the Design Support Package section for the board schematic and layout.
+Figure 2 shows the EVAL-AD7944/AD7985/AD7986EBZ evaluation board. The on-board FPGA, U3, provides the necessary control signals for conversion and deserializes the serial data as the :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` board uses a parallel interface. The evaluation board is a flexible design that enables the user to choose among many different board configurations, analog signal conditioning, reference, and different modes of conversion data.
+
+This evaluation board is a 6-layer board carefully laid out and tested to demonstrate the specific high accuracy performance of the :adi:`AD7944`, :adi:`AD7985`, and :adi:`AD7986`. See the Design Support Package section for the board schematic and layout.
 
 Device Description
 ------------------
 
-| The :adi:`AD7944` is a 14-bit, 2.5 MSPS successive approximation analog-to-digital converter (SAR ADC), whereas the :adi:`AD7985` is a 16-bit version of the SAR ADC. The :adi:`AD7986` is an 18-bit, 2 MSPS SAR ADC.
-| These ADCs are low power and high speed and include an internal conversion clock, an internal reference (and buffer), error correction circuits, and a versatile serial interface port. On the rising edge of CNV, the ADC samples an analog input, IN+, between 0 V and REF with respect to the ground sense, IN−. The ADCs feature a very high sampling rate turbo mode (TURBO is high) and a reduced power normal mode (TURBO is low) for low power applications where the power is scaled with the throughput. A full description of these products is available in their respective data sheets and should be consulted when using this evaluation board.
+The :adi:`AD7944` is a 14-bit, 2.5 MSPS successive approximation analog-to-digital converter (SAR ADC), whereas the :adi:`AD7985` is a 16-bit version of the SAR ADC. The :adi:`AD7986` is an 18-bit, 2 MSPS SAR ADC.
+
+These ADCs are low power and high speed and include an internal conversion clock, an internal reference (and buffer), error correction circuits, and a versatile serial interface port. On the rising edge of CNV, the ADC samples an analog input, IN+, between 0 V and REF with respect to the ground sense, IN−. The ADCs feature a very high sampling rate turbo mode (TURBO is high) and a reduced power normal mode (TURBO is low) for low power applications where the power is scaled with the throughput. A full description of these products is available in their respective data sheets and should be consulted when using this evaluation board.
 
 Power Supplies
 --------------
@@ -126,11 +128,15 @@ The on-board FPGA performs a number of digital functions, one of them being the 
 Analog Inputs
 -------------
 
-| The analog inputs to the evaluation board are J1, J2, and SMB (push on). These inputs are buffered with dedicated amplifier circuitry (A2, A3, and discretes) to allow configuration changes such as positive or negative gain, input range scaling, filtering, addition of a dc component, and use of different op amps and supplies. The analog input amplifiers are set as unity-gain buffers at the factory. The supplies are selectable with solder pads and are set for the +7 V to −5 V ranges.
-| The default configuration sets both A2 and A3 at midscale generated from either a buffered reference voltage divider or the internal reference of the ADC.
-| The evaluation board is factory configured for providing either a single-ended path or a fully differential path. Because the AD7986 is differential, both inputs and amplifier circuits are used to buffer the IN+ and IN- inputs of the ADCs. For the AD7944 and AD7985 evaluation boards, only the J2, A3, and associated circuitry is used in the path.
-| For dynamic performance, an FFT test can be executed by applying a very low distortion ac source. For low frequency testing, an audio precision source can be used directly because the outputs on these are isolated. Set the audio precision outputs for balanced and floating. Although different sources can be used, most are single ended and use a fixed output resistance.
-| Because the evaluation board uses the amplifiers in unity gain, the noninverting input has a common-mode input with a 590 Ω series resistor, which needs to be taken into account when directly connecting a source (voltage divider).
+The analog inputs to the evaluation board are J1, J2, and SMB (push on). These inputs are buffered with dedicated amplifier circuitry (A2, A3, and discretes) to allow configuration changes such as positive or negative gain, input range scaling, filtering, addition of a dc component, and use of different op amps and supplies. The analog input amplifiers are set as unity-gain buffers at the factory. The supplies are selectable with solder pads and are set for the +7 V to −5 V ranges.
+
+The default configuration sets both A2 and A3 at midscale generated from either a buffered reference voltage divider or the internal reference of the ADC.
+
+The evaluation board is factory configured for providing either a single-ended path or a fully differential path. Because the AD7986 is differential, both inputs and amplifier circuits are used to buffer the IN+ and IN- inputs of the ADCs. For the AD7944 and AD7985 evaluation boards, only the J2, A3, and associated circuitry is used in the path.
+
+For dynamic performance, an FFT test can be executed by applying a very low distortion ac source. For low frequency testing, an audio precision source can be used directly because the outputs on these are isolated. Set the audio precision outputs for balanced and floating. Although different sources can be used, most are single ended and use a fixed output resistance.
+
+Because the evaluation board uses the amplifiers in unity gain, the noninverting input has a common-mode input with a 590 Ω series resistor, which needs to be taken into account when directly connecting a source (voltage divider).
 
 Serial Interface
 ----------------
@@ -287,11 +293,13 @@ The :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/pro
 Software Installation
 ~~~~~~~~~~~~~~~~~~~~~
 
-| It is recommended to close all Windows® applications prior to installing the software. The evaluation board comes with a CD as part of the evaluation kit. The latest software versions are always available from the Analog Devices product page, visit www.analog.com. Note that the user must accept the license agreement during the installation process.
-| |image2| **Figure 3. To Install, the User Must Accept License Agreement**
+It is recommended to close all Windows® applications prior to installing the software. The evaluation board comes with a CD as part of the evaluation kit. The latest software versions are always available from the Analog Devices product page, visit www.analog.com. Note that the user must accept the license agreement during the installation process.
 
-| After downloading the software, it is recommended to use the WinZip extract function to extract all of the necessary components rather than immediately selecting **setup.exe** from within the zipped file. After extracting the software, click **setup.exe** in the folder created during the extraction process and follow the instructions on the screen.
-| If another version of the software already exists on the computer, it may be necessary to remove it. To remove prior versions of the software, click the Windows **Start** button, select **Control Panel**, and then select **Add or Remove Programs**. When the list populates, navigate to **Analog Devices High Resolution sampling ADC’s Evaluation Software** or **PulSAR Evaluation Software** and select **Remove**.
+|image2| **Figure 3. To Install, the User Must Accept License Agreement**
+
+After downloading the software, it is recommended to use the WinZip extract function to extract all of the necessary components rather than immediately selecting **setup.exe** from within the zipped file. After extracting the software, click **setup.exe** in the folder created during the extraction process and follow the instructions on the screen.
+
+If another version of the software already exists on the computer, it may be necessary to remove it. To remove prior versions of the software, click the Windows **Start** button, select **Control Panel**, and then select **Add or Remove Programs**. When the list populates, navigate to **Analog Devices High Resolution sampling ADC’s Evaluation Software** or **PulSAR Evaluation Software** and select **Remove**.
 
 Typical Install Process
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -331,26 +339,33 @@ The most usual reason for uninstalled properties is caused by the installation o
 Running the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The evaluation board includes software for analyzing the AD7944, AD7985, and AD7986. The :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` is required when using the software. Use the software to perform the following tests:
+The evaluation board includes software for analyzing the AD7944, AD7985, and AD7986. The :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` is required when using the software. Use the software to perform the following tests:
 
 -  Histogram for determining code transition noise (dc).
-   \* Fast Fourier transforms (FFT) for signal-to-noise ratio (SNR), SNR and signal-to-noise-and-distortion (SINAD), total harmonic distortion (THD), and spurious free dynamic range (SFDR).
-   \* Decimation (digital filtering).
-   \*
+-  Fast Fourier transforms (FFT) for signal-to-noise ratio (SNR), SNR and signal-to-noise-and-distortion (SINAD), total harmonic distortion (THD), and spurious free dynamic range (SFDR).
+-  Decimation (digital filtering).
+
+::
+
+   *
 
 The software is located at <local_drive>:\\Program Files\\Analog Devices\\PulSAR ADC Evaluation Software\\Eval PulSAR CED.exe. A shortcut is also added to the Windows **Start** menu under **Analog Devices PulSAR Evaluation Software, Eval PulSAR CED**. To run the software, select the program from either location.
 
 Running the ADC Analysis Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The evaluation board includes software for analyzing the :adi:`AD7944`, :adi:`AD7985`, and :adi:`AD7986` ADCs. The :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` is required when using the ADC analysis software. Use the software to perform the following tests:
+The evaluation board includes software for analyzing the :adi:`AD7944`, :adi:`AD7985`, and :adi:`AD7986` ADCs. The :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` is required when using the ADC analysis software. Use the software to perform the following tests:
 
 -  Histogram for determining code transition noise (dc).
 -  FFT for SNR, SNR and SINAD, THD, and SFDR.
-   \*
 
-| Refer to Figure 15 to Figure 20 for additional details and features of the software.
-| The ADC analysis software is located at C:\\Program Files\\Analog Devices\\ PulSAR ADC Evaluation Software\\Eval PulSAR CED.exe. A shortcut is also added to the Windows **Start** menu under **Analog Devices PulSAR ADC Evaluation Software, Eval PulSAR CED.** To run the software, select the program from either location.
+::
+
+   *
+
+Refer to Figure 15 to Figure 20 for additional details and features of the software.
+
+The ADC analysis software is located at C:\\Program Files\\Analog Devices\\ PulSAR ADC Evaluation Software\\Eval PulSAR CED.exe. A shortcut is also added to the Windows **Start** menu under **Analog Devices PulSAR ADC Evaluation Software, Eval PulSAR CED.** To run the software, select the program from either location.
 
 Software Operation
 ------------------
@@ -387,43 +402,44 @@ Context Help
 On-Screen Help
 ~~~~~~~~~~~~~~
 
-| To use the on-screen help. Select **Help**, **Show Context Help** or click **Help (F1)**. These function areas on the screen are indicated by Number 1 in Figure 16. Hovering the cursor over most screen items displays useful information for the particular control or displayed unit.
-| |image15| **Figure 16. Context Help and Histogram Controls**
+To use the on-screen help. Select **Help**, **Show Context Help** or click **Help (F1)**. These function areas on the screen are indicated by Number 1 in Figure 16. Hovering the cursor over most screen items displays useful information for the particular control or displayed unit.
+
+|image15| **Figure 16. Context Help and Histogram Controls**
 
 Histogram Controls
 ^^^^^^^^^^^^^^^^^^
 
-| The histogram controls, shown in the area indicated by Number 2 in Figure 16, are used for axes and zooming panning, as follows:
+The histogram controls, shown in the area indicated by Number 2 in Figure 16, are used for axes and zooming panning, as follows:
 
 Graph Axis Lock
 ^^^^^^^^^^^^^^^
 
-| Locks the graph axis to automatically fit the data.
+Locks the graph axis to automatically fit the data.
 
 Axis Rescaling
 ^^^^^^^^^^^^^^
 
-| Uses the last axis set by the user. These allow the user to rescale the x- and y-axis, respectively, to the automatic values.
+Uses the last axis set by the user. These allow the user to rescale the x- and y-axis, respectively, to the automatic values.
 
 Axis Properties
 ^^^^^^^^^^^^^^^
 
-| These are used to set the x- and y-axis properties, such as format, precision, color, and so forth.
+These are used to set the x- and y-axis properties, such as format, precision, color, and so forth.
 
 Cursor Display
 ^^^^^^^^^^^^^^
 
-| Displays the cursor.
+Displays the cursor.
 
 Zooming
 ^^^^^^^
 
-| Zooms in and out.
+Zooms in and out.
 
 Panning
 ^^^^^^^
 
-| Use to pan.
+Use to pan.
 
 Graph Properties
 ^^^^^^^^^^^^^^^^
@@ -433,37 +449,46 @@ Sets various graph properties such as graph type, colors, lines, and so forth.
 Histogram and Oscilloscope Charts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The areas of the **Raw Data Capture** window that pertain to working with histogram or oscilloscope charts are demarcated by the sections numbered 1, 2, and 3 in Figure 17.
-| |image16| **Figure 17. Histogram Data Window**
+The areas of the **Raw Data Capture** window that pertain to working with histogram or oscilloscope charts are demarcated by the sections numbered 1, 2, and 3 in Figure 17.
+
+|image16| **Figure 17. Histogram Data Window**
 
 Single or Continuous Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Use the buttons shown in Section 1 in Figure 17 to perform either a single capture or continuous capture of data. Enter the number of samples that are required in the **# of Samples (k)** field (located to the left of the **Single Capture (F3)** button). The statistics for the x- and y-axes are displayed in the **Histogram Data** section of the window, shown as the Number 2 and Number 3 areas within Figure 17.
-| The graphic results are displayed in the chart area of the window. Note that the results can be displayed as either a histogram (see Figure 18) or an oscilloscope (see Figure 19) by selecting the relevant tab, **Oscilloscope**, above the chart display (shown as Number 1 in Figure 20).
-| Time domain data can also be viewed by using the **Oscilloscope** tab. In addition, the charts can be displayed together when the **Summary** tab is selected (see Figure 21).
-| |image17| **Figure 18. Histogram Chart Display**
+Use the buttons shown in Section 1 in Figure 17 to perform either a single capture or continuous capture of data. Enter the number of samples that are required in the **# of Samples (k)** field (located to the left of the **Single Capture (F3)** button). The statistics for the x- and y-axes are displayed in the **Histogram Data** section of the window, shown as the Number 2 and Number 3 areas within Figure 17.
 
-| |image18| **Figure 19. Oscilloscope Chart Display (Time Domain)**
-| |image19| **Figure 20. Oscilloscope**
-| |image20| **Figure 21. Summary Tab**
+The graphic results are displayed in the chart area of the window. Note that the results can be displayed as either a histogram (see Figure 18) or an oscilloscope (see Figure 19) by selecting the relevant tab, **Oscilloscope**, above the chart display (shown as Number 1 in Figure 20).
+
+Time domain data can also be viewed by using the **Oscilloscope** tab. In addition, the charts can be displayed together when the **Summary** tab is selected (see Figure 21).
+
+|image17| **Figure 18. Histogram Chart Display**
+
+|image18| **Figure 19. Oscilloscope Chart Display (Time Domain)**
+
+|image19| **Figure 20. Oscilloscope**
+
+|image20| **Figure 21. Summary Tab**
 
 FFT Spectrum Data
 ^^^^^^^^^^^^^^^^^
 
-| To review the FFT spectrum data, select the **Spectrum** tab in the **Raw Data Capture** window. Figure 22 shows the FFT spectrum window and sections numbered 1, 2, and 3 of this window are described as follows:
+To review the FFT spectrum data, select the **Spectrum** tab in the **Raw Data Capture** window. Figure 22 shows the FFT spectrum window and sections numbered 1, 2, and 3 of this window are described as follows:
 
 Displaying the FFT
 ^^^^^^^^^^^^^^^^^^
 
-| From the **Raw Data Capture** window, in the section of Figure 22 labeled with Number 1, select the **Spectrum** tab to display the FFT when the spectrum chart is selected.
+From the **Raw Data Capture** window, in the section of Figure 22 labeled with Number 1, select the **Spectrum** tab to display the FFT when the spectrum chart is selected.
 
 Displaying the Spectrum Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| The **Spectrum Data** section (Number 2 and Number 3 in Figure 22), is located beneath the spectrum chart. These areas of the **Spectrum Data** section display the data for the x-axis (shown in the area labeled as Number 2) and y-axis, (shown in the area labeled as Number 3).
-| |image21| **Figure 22. FFT Spectrum**
-| ====== Troubleshooting ======
+The **Spectrum Data** section (Number 2 and Number 3 in Figure 22), is located beneath the spectrum chart. These areas of the **Spectrum Data** section display the data for the x-axis (shown in the area labeled as Number 2) and y-axis, (shown in the area labeled as Number 3).
+
+|image21| **Figure 22. FFT Spectrum**
+
+Troubleshooting
+===============
 
 Software Tips
 -------------

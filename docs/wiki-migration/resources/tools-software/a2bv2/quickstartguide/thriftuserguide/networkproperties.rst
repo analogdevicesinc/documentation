@@ -10,16 +10,19 @@ List of API in Network Properties
 -  :doc:`UpdateLevelStackDbgSettings </wiki-migration/resources/tools-software/a2bv2/quickstartguide/thriftuserguide/networkproperties>`
 -  :doc:`UpdateDomainStackDbgSettings </wiki-migration/resources/tools-software/a2bv2/quickstartguide/thriftuserguide/networkproperties>`
 
-| 
-| ====Get Network Policy==== This API used for Getting A2B network policy for the specified A2B channel. It takes elementUid as argument and returns A2B Network policy information.
+Get Network Policy
+------------------
 
-| **API:**
-| AnalogDevices.SigmaStudio.Scripting.A2bNwPolicy GetNwPolicy(string elementUid);
+This API used for Getting A2B network policy for the specified A2B channel. It takes elementUid as argument and returns A2B Network policy information.
+
+**API:** AnalogDevices.SigmaStudio.Scripting.A2bNwPolicy GetNwPolicy(string elementUid);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
-   A2B Network policy contains below parameters for users to update Network policy from thrift. Rest of the parameters are read only parameters and not to be changed.
+
+A2B Network policy contains below parameters for users to update Network policy from thrift. Rest of the parameters are read only parameters and not to be changed.
+
 -  DsvryMode
 -  NDiscoveryStartDelay
 -  BOverrideSelfDisc
@@ -32,31 +35,30 @@ List of API in Network Properties
 
 This API returns List of all Network property details for the selected A2B Channel.
 
-| **Result:**
-| This API returns List of Network properties details for the selected A2B Channel.
+**Result:** This API returns List of Network properties details for the selected A2B Channel.
 
-| **Csharp Example:**
-| A2bNwPolicy a2BNwPolicy = new A2bNwPolicy();
+**Csharp Example:**
 
 ::
 
-   a2BNwPolicy = client.GetNwPolicy("A2B_0"); 
+   A2bNwPolicy a2BNwPolicy = new A2bNwPolicy();
+   a2BNwPolicy = client.GetNwPolicy("A2B_0");
 
-| **Python Example:**
-| A2bnetworkpolicy = A2bNwPolicy()
+**Python Example:**
 
 ::
 
+   A2bnetworkpolicy = A2bNwPolicy()
    A2bnetworkpolicy = client.GetNwPolicy("A2B_0")
 
-| 
-| ====Update Network Policy==== This API used for Updating A2B network policy for the specified A2B channel. It takes elementUid and NwPolicy as argument and returns SSPResult. It is recommended to read the network policy using GetNwPolicy before updating the policy.
+Update Network Policy
+---------------------
 
-| **API:**
-| AnalogDevices.SigmaStudio.Scripting.A2bNwPolicy UpdateNetworkPolicy (string elementUid, list NwPolicy);
+This API used for Updating A2B network policy for the specified A2B channel. It takes elementUid and NwPolicy as argument and returns SSPResult. It is recommended to read the network policy using GetNwPolicy before updating the policy.
 
-| **Arguments:**
-| A2B Network policy contains below parameters for users to update Network policy from thrift. Rest of the parameters are read only parameters and not to be changed.
+**API:** AnalogDevices.SigmaStudio.Scripting.A2bNwPolicy UpdateNetworkPolicy (string elementUid, list NwPolicy);
+
+**Arguments:** A2B Network policy contains below parameters for users to update Network policy from thrift. Rest of the parameters are read only parameters and not to be changed.
 
 -  “elementUid” = UID of the A2B Channel
 -  “NwPolicy” - Following are the list Parameters for NwPolicy
@@ -72,19 +74,20 @@ This API returns List of all Network property details for the selected A2B Chann
       -  OLineFaultDbSettings.nNumAttemptsCritical
       -  OLineFaultDbSettings.RediscoveryInterval
 
-| **Result:**
-| SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateNetworkPolicy action.
+**Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateNetworkPolicy action.
 
 -  IsSuccess is set to 'True' if the UpdateNetworkPolicy was successful else 'False'.
 -  Message contains the Success/Failure information in the form of list of string.
 
-| **Csharp Example:**
-| A2bNwPolicy network = new A2bNwPolicy();
+**Csharp Example:**
 
 ::
 
+   A2bNwPolicy network = new A2bNwPolicy();
    ADI_A2B_LINE_FAULT_SETTINGS Linefault = new ADI_A2B_LINE_FAULT_SETTINGS();
-   ADI_A2B_DISCOVERY_MODE discmode = ADI_A2B_DISCOVERY_MODE.A2B_SIMPLE_DISCOVERY; 
+   ADI_A2B_DISCOVERY_MODE discmode = ADI_A2B_DISCOVERY_MODE.A2B_SIMPLE_DISCOVERY;
+
+::
 
    // Setting properties for Linefault
    Linefault.bEnablePostDiscFaultDiag = true;
@@ -101,11 +104,11 @@ This API returns List of all Network property details for the selected A2B Chann
    // Update the network policy for device "A2B_0"
    _ssp_result = client.UpdateNetworkPolicy("A2B_0", network);
 
-| **Python Example:**
-| network = A2bNwPolicy()
+**Python Example:**
 
 ::
 
+   network = A2bNwPolicy()
    Linefault = ADI_A2B_LINE_FAULT_SETTINGS()
    discmode = ADI_A2B_DISCOVERY_MODE()
    Linefault.bEnablePostDiscFaultDiag = True
@@ -120,132 +123,134 @@ This API returns List of all Network property details for the selected A2B Chann
    network.RediscoveryWaitTimeInMilliSeconds = 25
    ssp_result = client.UpdateNetworkPolicy("A2B_0", network)
 
-| 
-| ====Get Level Stack Debug Info==== This API used for getting information of Stack Level Debug information for the specified A2B channel. It takes elementUid as argument and returns SSPResult.
+Get Level Stack Debug Info
+--------------------------
 
-| **API:**
-| AnalogDevices.SigmaStudio.Scripting.LevelListSent GetLevelStackDbgSettings (string elementUid)
+This API used for getting information of Stack Level Debug information for the specified A2B channel. It takes elementUid as argument and returns SSPResult.
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**API:** AnalogDevices.SigmaStudio.Scripting.LevelListSent GetLevelStackDbgSettings (string elementUid)
 
-| **Result:**
-| This API returns List of Level stack debug details for the selected A2B Channel.
+**Arguments:**
 
-| **Csharp Example:**
-| LevelListSent level = new LevelListSent();
+-  “elementUid” = UID of the A2B Channel
+
+**Result:** This API returns List of Level stack debug details for the selected A2B Channel.
+
+**Csharp Example:**
 
 ::
 
+   LevelListSent level = new LevelListSent();
    level = client.GetLevelStackDbgSettings("A2B_0");
 
-| **Python Example:**
-| level = LevelListSent()
+**Python Example:**
 
 ::
 
+   level = LevelListSent()
    level = client.GetLevelStackDbgSettings("A2B_0")
 
-| 
-| ====Get Domain Stack Debug Info==== This API used for getting information of Stack Domain Debug information for the specified A2B channel. It takes elementUid as argument and returns SSPResult.
+Get Domain Stack Debug Info
+---------------------------
 
-| **API:**
-| AnalogDevices.SigmaStudio.Scripting.DomainListSent GetDomainStackDbgSettings (string elementUid)
+This API used for getting information of Stack Domain Debug information for the specified A2B channel. It takes elementUid as argument and returns SSPResult.
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**API:** AnalogDevices.SigmaStudio.Scripting.DomainListSent GetDomainStackDbgSettings (string elementUid)
 
-| **Result:**
-| This API returns List of Domain stack debug details for the selected A2B Channel.
+**Arguments:**
 
-| **Csharp Example:**
-| DomainListSent domain = new DomainListSent();
+-  “elementUid” = UID of the A2B Channel
+
+**Result:** This API returns List of Domain stack debug details for the selected A2B Channel.
+
+**Csharp Example:**
 
 ::
 
+   DomainListSent domain = new DomainListSent();
    domain = client.GetDomainStackDbgSettings("A2B_0");
 
-| **Python Example:**
-| domain = DomainListSent()
+**Python Example:**
 
 ::
 
+   domain = DomainListSent()
    domain = client.GetDomainStackDbgSettings("A2B_0")
 
-| 
-| ====Update Stack Level Debug Settings==== This API used for updating the Trace level Debug settings for the specified A2B channel. It takes elementUid and LevelListSent as argument and returns SSPResult.
+Update Stack Level Debug Settings
+---------------------------------
 
-| **API:**
-| SSPResult UpdateLevelStackDbgSettings (string elementUid, List LevelListSent);
+This API used for updating the Trace level Debug settings for the specified A2B channel. It takes elementUid and LevelListSent as argument and returns SSPResult.
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**API:** SSPResult UpdateLevelStackDbgSettings (string elementUid, List LevelListSent);
 
+**Arguments:**
+
+-  “elementUid” = UID of the A2B Channel
 -  “LevelListSent” – List of Trace Level
 
    -  LevelListSentChecked
 
       -  LevelListSentNum
 
-| **Result:**
-| SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateLevelStackDbgSettings action.
+**Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateLevelStackDbgSettings action.
 
 -  IsSuccess is set to 'True' if the UpdateLevelStackDbgSettings was successful else 'False'.
 -  Message contains the Success/Failure information in the form of list of string.
 
-| **Csharp Example:**
-| LevelListSent levelstack = new LevelListSent();
+**Csharp Example:**
 
 ::
 
+   LevelListSent levelstack = new LevelListSent();
    levelstack.LevelListSentChecked = true;
    levelstack.LevelListSentNum = 2;
    _sspresult = client.UpdateLevelStackDbgSettings("A2B_0", levelstack);
 
-| **Python Example:**
-| levelstack = LevelListSent()
+**Python Example:**
 
 ::
 
+   levelstack = LevelListSent()
    levelstack.LevelListSentChecked = True
    levelstack.LevelListSentNum = 2
    ssp_result = client.UpdateLevelStackDbgSettings("A2B_0", levelstack)
 
-| 
-| ====Update Stack Domain Debug Settings==== This API used for updating the Trace Domain Debug settings for the specified A2B channel. It takes elementUid and DomainListSent as argument and returns SSPResult.
+Update Stack Domain Debug Settings
+----------------------------------
 
-| **API:**
-| SSPResult UpdateDomainStackDbgSettings (string elementUid, List DomainListSent);
+This API used for updating the Trace Domain Debug settings for the specified A2B channel. It takes elementUid and DomainListSent as argument and returns SSPResult.
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**API:** SSPResult UpdateDomainStackDbgSettings (string elementUid, List DomainListSent);
 
+**Arguments:**
+
+-  “elementUid” = UID of the A2B Channel
 -  “DomainListSent” – List of Trace Level
 
    -  DomainListSentChecked
 
       -  DomainListSentNum
 
-| **Result:**
-| SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateDomainStackDbgSettings action.
+**Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateDomainStackDbgSettings action.
 
 -  IsSuccess is set to 'True' if the UpdateDomainStackDbgSettings was successful else 'False'.
 -  Message contains the Success/Failure information in the form of list of string.
 
-| **Csharp Example:**
-| DomainListSent domainstack = new DomainListSent();
+**Csharp Example:**
 
 ::
 
+   DomainListSent domainstack = new DomainListSent();
    domainstack.DomainListSentChecked = true;
    domainstack.DomainListSentNum = 6;
    _sspresult = client.UpdateDomainStackDbgSettings("A2B_0", domainstack);
 
-| **Python Example:**
-| domainstack = DomainListSent()
+**Python Example:**
 
 ::
 
+   domainstack = DomainListSent()
    domainstack.DomainListSentChecked = True
    domainstack.DomainListSentNum = 6
    ssp_result = client.UpdateDomainStackDbgSettings("A2B_0", domainstack)

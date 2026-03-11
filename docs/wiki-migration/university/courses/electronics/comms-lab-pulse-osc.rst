@@ -35,14 +35,7 @@ You probably have noticed by now that feedback has not been mentioned in this di
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - small signal NPN transistor (2N3904)
-| 1 - 470 KΩ resistor
-| 1 - 100 uH indictor
-| 1 - 100 pF capacitor
-| 1 - 0.1 uF capacitor
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - small signal NPN transistor (2N3904) 1 - 470 KΩ resistor 1 - 100 uH indictor 1 - 100 pF capacitor 1 - 0.1 uF capacitor
 
 Directions:
 -----------

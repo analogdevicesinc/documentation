@@ -1,8 +1,12 @@
 EVAL-AD7690-PMDZ PulSAR ADC PMOD User Guide
 ===========================================
 
-| The EVAL-AD7690-PMDZ offers a very high performance of 18 bits with a throughput of 400 kSPS in a PMOD form factor. It is designed to demonstrate the performance of :adi:`AD7690` and to provide an easy digital interface for a variety of system applications. |image1|
-| The :adi:`AD7690` is an 18-bit, successive approximation, analog to digital converter (ADC) that operates from a single power supply, VDD. It contains a low-power, high-speed, 18-bit sampling ADC with no missing codes, an internal conversion clock, and a versatile serial interface port.
+The EVAL-AD7690-PMDZ offers a very high performance of 18 bits with a throughput of 400 kSPS in a PMOD form factor. It is designed to demonstrate the performance of :adi:`AD7690` and to provide an easy digital interface for a variety of system applications.
+
+
+|image1|
+
+The :adi:`AD7690` is an 18-bit, successive approximation, analog to digital converter (ADC) that operates from a single power supply, VDD. It contains a low-power, high-speed, 18-bit sampling ADC with no missing codes, an internal conversion clock, and a versatile serial interface port.
 
 .. note::
 

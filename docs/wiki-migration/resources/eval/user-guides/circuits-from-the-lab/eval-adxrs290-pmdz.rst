@@ -1,8 +1,11 @@
 ADXRS290 Gyroscope PMOD Demo
 ============================
 
-| The :adi:`EVAL-ADXRS290-PMDZ` is a simple Pmod form-factor evaluation board for the :adi:`ADXRS290`, a high-performance MEMS pitch-and-roll (dual-axis in-plane) angular rate sensor (gyroscope) designed for use in stabilization applications.
-| |image1|
+The :adi:`EVAL-ADXRS290-PMDZ` is a simple Pmod form-factor evaluation board for the :adi:`ADXRS290`, a high-performance MEMS pitch-and-roll (dual-axis in-plane) angular rate sensor (gyroscope) designed for use in stabilization applications.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/eval-adxrs290-pmdz.png
+   :align: center
+   :width: 200px
 
 The solution senses and digitizes the \*\* X-axis \*\* and \*\* Y-axis \*\* (also called **roll** and **pitch**) angular rates, producing a positive reading for clockwise rotation about the x-axis and y-axis.
 
@@ -79,12 +82,13 @@ Features
 Device Driver Support
 ---------------------
 
-| Two example device driver solutions are provided for controling the **EVAL-ADXRS290-PMDZ** **PMOD** using the no-OS device driver on the **EVAL-ADICUP3029** platform and Linux device driver on the **Raspberry Pi** platform.
-| 1. **EVAL-ADICUP3029**
+Two example device driver solutions are provided for controling the **EVAL-ADXRS290-PMDZ** **PMOD** using the no-OS device driver on the **EVAL-ADICUP3029** platform and Linux device driver on the **Raspberry Pi** platform.
+
+1. **EVAL-ADICUP3029**
 
 -  The ADICUP3029 example application uses the ADXRS290 no-OS driver, and emulates the Linux IIO framework through the tinyiiod daemon library. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
 
-| 2. **Raspberry Pi**
+2. **Raspberry Pi**
 
 -  The Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of applicaiton code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local bakend, or from a remote host over the network or USB backends.
 
@@ -97,13 +101,11 @@ General Setup Using ADICUP3029
 
 The :adi:`EVAL-ADXRS290-PMDZ` can be used with :doc:`ADICUP3029 </wiki-migration/resources/eval/user-guides/eval-adicup3029>`.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_architecture.png
+   :align: center
+   :width: 400px
 
-|image2|
-
-.. container:: center
-
-   *<fc #c0c0c0>Software Architecture</fc>*
-
+*Software Architecture*
 
 Demo Requirements
 ~~~~~~~~~~~~~~~~~
@@ -124,8 +126,7 @@ There are two basic ways to program the ADICUP3029 with the software for the ADX
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-| 
-| Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
 
 Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
 
@@ -168,7 +169,7 @@ Flashing the Firmware/Program
 -  Connect the ADICuP3029 to the PC host via micro-USB cable as shown below.
 -  From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
 
-|image3|
+|image1|
 
 -  Simply extract the provided zip file. Do note that when you extract the zip file, there are two Hex file compressed inside. For this demo use the **adxrs290-pmdz_aducm3029_iio_uart.hex**. Then drag and drop this Hex file to the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red) LED will blink rapidly.
 -  The DS2 will stop blinking and will stay ON once the programming is done.
@@ -184,8 +185,6 @@ General Setup Using Raspberry Pi
 --------------------------------
 
 The :adi:`EVAL-ADXRS290-PMDZ` can be used with a Raspberry Pi.
-
-.. _demo-requirements-1:
 
 Demo Requirements
 ~~~~~~~~~~~~~~~~~
@@ -216,8 +215,9 @@ The following is a list of items needed in order to replicate this demo.
 Loading Image on SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-| In order to control the **EVAL-ADXRS290-PMDZ** from the Raspberry Pi, you will need to install ADI Kuiper Linux on an SD card. Complete instructions, including where to download the SD card image, how to write it to the SD card, and how to configure the system are provided at :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
-| Write the image and follow the system configuration procedure.
+In order to control the **EVAL-ADXRS290-PMDZ** from the Raspberry Pi, you will need to install ADI Kuiper Linux on an SD card. Complete instructions, including where to download the SD card image, how to write it to the SD card, and how to configure the system are provided at :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
+
+Write the image and follow the system configuration procedure.
 
 Configuring the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -228,17 +228,13 @@ Follow the Hardware Configuration procedure under **Preparing the Image: Raspber
 
    dtoverlay=rpi-adxrs290
 
-| 
-
-.. _setting-up-the-hardware-1:
-
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 To set up the circuit for evaluation, consider the following steps:
 
 
-|image4|
+|image2|
 
 .. important::
 
@@ -263,8 +259,9 @@ Software (both ADICUP3029 and Raspberry Pi)
 Connection
 ~~~~~~~~~~
 
-| To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-ADXRS290-PMDZ is attached. Two platforms are currently supported for the ADXRS290: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the ADXRS290 IIO demo project. The user needs to supply a URI which will be used in the context creation.
-| The Libiio is a library for interfacing with IIO devices.
+To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-ADXRS290-PMDZ is attached. Two platforms are currently supported for the ADXRS290: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the ADXRS290 IIO demo project. The user needs to supply a URI which will be used in the context creation.
+
+The Libiio is a library for interfacing with IIO devices.
 
 .. admonition:: Download
    :class: download
@@ -274,15 +271,14 @@ Connection
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-| Upon installation, simply enter the command on the terminal command line to access it.
-| === For RPI Direct Local Access: ===
+Upon installation, simply enter the command on the terminal command line to access it.
+
+For RPI Direct Local Access:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
    iio_info
-
-
-   | 
 
 For Windows machine connected to Raspberry Pi:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -329,9 +325,7 @@ Example:
 
    analog@analog:~$ iio_attr -a -C
 
-|
-
-| The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the ADICUP3029 platform.
+The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the ADICUP3029 platform.
 
 ::
 
@@ -345,15 +339,14 @@ Example:
 
    iio_reg -u ip:<ip address> adxrs290 0x02
 
-| 
-| -------------
+--------------
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
@@ -374,13 +367,18 @@ Below is the Debug panel of ADXRS290 wherein you can directly access the attribu
 DMM Panel
 ^^^^^^^^^
 
-| Access the DMM panel to see the instantaneous reading of the X and Y's angular velocities. |ADXRS290 DMM Panel|
+Access the DMM panel to see the instantaneous reading of the X and Y's angular velocities.
+
+
+|ADXRS290 DMM Panel|
 
 Waveform Panel
 ^^^^^^^^^^^^^^
 
-| The Waveform panel, also known as the Capture window, displays the real-time waveform of ADXRS290's response. |image5|
-|
+The Waveform panel, also known as the Capture window, displays the real-time waveform of ADXRS290's response.
+
+
+|image3|
 
 .. note::
 
@@ -392,35 +390,37 @@ Waveform Panel
 PyADI-IIO
 ~~~~~~~~~
 
-| :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
-| Install PyADI-IIO using one of the methods in :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
+:doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+
+Install PyADI-IIO using one of the methods in :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
 
 The ADXRS290 example requires a number of packages to be installed before it can be used. To ensure that all required packages are present, we will be installing them in a virtual environment so that other python projects will not be affected by this added configuration. Make sure that `virtualenv <https://pypi.org/project/virtualenv/>`_ has been installed before proceeding.
 
-| 
-| === Creating a Virtual Environment ===
+Creating a Virtual Environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Open a command prompt and navigate to the *pyadi-iio* directory.
 -  Create a virtual environment by entering the following command:<code> D:\\pyadi-iio>python -m venv adxrs290 </code> Note that the last argument *adxrs290* is just the name of the virtual environment to be created. It can be replaced by any other name or identifier that you prefer. In case the code above does not work, try: <code> D:\\pyadi-iio>virtualenv adxrs290 </code>
 -  Input the following command to activate the virtual environment: <code> D:\\pyadi-iio>adxrs290\\Scripts\\activate </code>
 
-| 
-| ===Installing the Packages === Upon activation of the virtual environment, enter the following commands:
+Installing the Packages
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Upon activation of the virtual environment, enter the following commands:
 
 ::
 
    (adxrs290) D:\pyadi-iio>pip install -r requirements.txt
    (adxrs290) D:\pyadi-iio>pip install -r examples/requirements_adiplot.txt
-   (adxrs290) D:\pyadi-iio>python setup.py install 
-
-|
+   (adxrs290) D:\pyadi-iio>python setup.py install
 
 .. important::
 
    One of the packages in *requirements_adiplot.txt* is the PyQt5. If you already have a pre-installed PyQt5 prior to the installation of the packages, we suggest that you uninstall the said package in the virtual environment. Duplicate installations may sometimes cause errors that inhibit the system from displaying the real-time plot. This can easily be done by inputting the command: *pip uninstall PyQt5* while the virtual environment is active.
 
 
-| === Running the Example ===
+Running the Example
+^^^^^^^^^^^^^^^^^^^
 
 -  Connect the ADXRS290 to the device platform you've chosen.
 -  If interfaced via RPI, connect your laptop to the same network as the ADXRS290 and take note of its IP address. For ADICUP3029, take note of the serial port used.
@@ -445,8 +445,7 @@ It will return these lines of data on the terminal:
 
 |ADXRS290's Real-time Plot|
 
-| 
-| ---------------------
+--------------
 
 Video Guides
 ~~~~~~~~~~~~
@@ -454,15 +453,14 @@ Video Guides
 Unboxing
 ^^^^^^^^
 
-.. image:: https://wiki.analog.com/_media/youtube>Z4bt3IdRFEQ
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>Z4bt3IdRFEQ
    :alt: youtube>Z4bt3IdRFEQ
 
 EVAL-ADICUP3029 Demo
 ^^^^^^^^^^^^^^^^^^^^
 
 | |youtube>LwD-MHoSlWk|
-
---------------
+| ---------------------
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -502,19 +500,15 @@ Registration
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/eval-adxrs290-pmdz.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/daplink_in_mycomputer.jpg
    :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_architecture.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/daplink_in_mycomputer.jpg
-   :width: 200px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/rpi_pmod_con.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/rpi_pmod_con.jpg
    :width: 800px
 .. |ADXRS290 Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_debug.png
    :width: 400px
 .. |ADXRS290 DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_dmm-2.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/iio_osc_graph.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/iio_osc_graph.jpg
    :width: 400px
 .. |Output on Terminal| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_output.png
    :width: 700px

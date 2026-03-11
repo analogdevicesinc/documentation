@@ -42,7 +42,7 @@ Documents Needed
 General Description
 ===================
 
-| The :adi:`AD9578` evaluation board is a compact, easy-to-use platform for evaluating all features of the :adi:`AD9578`. The :adi:`AD9578` is a programmable synthesizer intended for jitter attenuation and asynchronous clocking applications in high performance telecommunications, networking, data storage, serializer/deserializer (SERDES) and physical layer (PHY) applications. The evaluation board consists of one prepopulated 49.152MHz crystal and optional single ended SMA inputs to drive the XO2 and XO4 pins. Each output is accessed through edge launch ac-coupled SMA connectors. The on board power supply allows users to simply operate the :adi:`AD9578` with 2.5V or 3.3V voltages by altering a few jumper settings. Use this user guide in conjunction with the :adi:`AD9578` data sheet and the evaluation software available at :adi:`EVAL-AD9578.html#eb-overview <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9578.html#eb-overview>`.
+The :adi:`AD9578` evaluation board is a compact, easy-to-use platform for evaluating all features of the :adi:`AD9578`. The :adi:`AD9578` is a programmable synthesizer intended for jitter attenuation and asynchronous clocking applications in high performance telecommunications, networking, data storage, serializer/deserializer (SERDES) and physical layer (PHY) applications. The evaluation board consists of one prepopulated 49.152MHz crystal and optional single ended SMA inputs to drive the XO2 and XO4 pins. Each output is accessed through edge launch ac-coupled SMA connectors. The on board power supply allows users to simply operate the :adi:`AD9578` with 2.5V or 3.3V voltages by altering a few jumper settings. Use this user guide in conjunction with the :adi:`AD9578` data sheet and the evaluation software available at :adi:`EVAL-AD9578.html#eb-overview <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9578.html#eb-overview>`.
 
 .. container:: centeralign
 
@@ -51,19 +51,12 @@ General Description
 
 |image1|
 
-   |
-   
-   .. container:: centeralign
-
-      //Figure 1. AD9578/PCBZ //
-
-   
+   //Figure 1. AD9578/PCBZ //
 
 
 Evaluation Board Hardware
 =========================
 
---------------
 
 The following instructions are for setting up the physical connections to the AD9578/PCBZ evaluation board.
 
@@ -88,7 +81,7 @@ The following instructions assume the evaluation board is set up with the defaul
 -  Download the latest :adi:`AD9578 evaluation software <EVAL-AD9578>` from AD9578/PCBZ website.
 -  Install the :adi:`AD9578 evaluation software <EVAL-AD9578>`; uninstall prior versions of the software before installation updates. Administrative privileges are needed to install the software.
 -  Connect the 6V wall power supply to the main power connector labeled P500.
--  Connect the USB cables to the evaluation board and the computer. The <fc #FF0000>red</fc> LED labeled CR300 on the evaluation board should illuminate.
+-  Connect the USB cables to the evaluation board and the computer. The red LED labeled CR300 on the evaluation board should illuminate.
 -  If the **Found New Hardware Wizard** window automatically appears when the evaluation board is connected, select **Install the software automatically** and click **Next**.
 
    -  The **Found New Hardware Wizard** window may appear twice, and a system restart may be required.
@@ -125,7 +118,6 @@ Default Evaluation Boards Setup Summary
 Evaluation Board Software
 =========================
 
---------------
 
 Use the following instructions to set up the :adi:`AD9578` evaluation board software.
 
@@ -142,26 +134,19 @@ Running the Software
 
 Power up and connect the evaluation board to the PC. See the **Evaluation Board Hardware** section for details on the various connectors on the evaluation board. At start up, the AD9578 evaluation software checks to see if an evaluation board is connected. If no board is connected, the message in **Figure 2** will appear.
 
-|
-
 .. container:: centeralign
 
-
-   ..
-
-|image2|
-
-   | *Figure 2. Evaluation Board Not Connected Message*
-   |
+   |image2| *Figure 2. Evaluation Board Not Connected Message*
 
 
-| Clicking **OK** allows the software to be used without a connected evaluation board. This mode is convenient for creating register setup files when an evaluation board is not present. If an evaluation board is present and the error message appears, check power and USB connections and re start the program. If the evaluation board is connected before starting the program, the standard GUI appears as shown in Figure 6. It is possible to connect the evaluation board after the software is started by selecting **File/Select Hardware** after the board has been powered and USB cable connected. When a board is properly connected, **Read All Successful** will appear in the **Comments** box.
+Clicking **OK** allows the software to be used without a connected evaluation board. This mode is convenient for creating register setup files when an evaluation board is not present. If an evaluation board is present and the error message appears, check power and USB connections and re start the program. If the evaluation board is connected before starting the program, the standard GUI appears as shown in Figure 6. It is possible to connect the evaluation board after the software is started by selecting **File/Select Hardware** after the board has been powered and USB cable connected. When a board is properly connected, **Read All Successful** will appear in the **Comments** box.
 
 Setup Files
 ~~~~~~~~~~~
 
-| The AD9578 software allows the user to save a setup file containing all of the current register settings generated by the software, which can be later read, and re used.
-| To create a setup file:
+The AD9578 software allows the user to save a setup file containing all of the current register settings generated by the software, which can be later read, and re used.
+
+To create a setup file:
 
 -  Open the AD9578 software with or without an evaluation board present.
 -  Adjust the AD9578 settings within the GUI.
@@ -174,7 +159,6 @@ To load a setup file:
 Quick Start Guide
 =================
 
---------------
 
 Once the evaluation software is loaded and the evaluation board is connected, use the following steps to lock both PLLs on the AD9578. These steps use the on board 49.152MHz crystal as a reference for both PLL1 and PLL2 and the default power configuration using the provided 6V wall supply as described in the **Evaluation Board Hardware** section. The quick start guide covers only simple PLL operation. See the AD9578 datasheet and **Evaluation Software Components** section for a detailed explanation of the various AD9578 features. The following case is an example of the AD9578 using the values in **Table 1**.
 
@@ -198,8 +182,7 @@ REFOUT Frequency and Logic Type Disabled
 .. container:: centeralign
 
    
-   | |image3| *Figure 3. Crystal 1 Frequency Text Box*
-   |
+   |image3| *Figure 3. Crystal 1 Frequency Text Box*
 
 
 -  Select **Crystal 1** as the **PLL1 Reference** and **PLL2 Reference** to using the drop down in the upper right of the Main Window.
@@ -207,8 +190,7 @@ REFOUT Frequency and Logic Type Disabled
 .. container:: centeralign
 
    
-   | |image4| *Figure 4. Input Reference Selection*
-   |
+   |image4| *Figure 4. Input Reference Selection*
 
 
 -  Select the appropriate logic level for Output 1 through Output 4 and REFOUT by using each logic level drop down as shown in Figure 5 and type the desired frequency in each Output1 through Output 4 text box.
@@ -216,8 +198,7 @@ REFOUT Frequency and Logic Type Disabled
 .. container:: centeralign
 
    
-   | |image5| *Figure 5. Logic Level Selection and Frequency Input*
-   |
+   |image5| *Figure 5. Logic Level Selection and Frequency Input*
 
 
 -  Press the **Autocalculate** button at the bottom of the screen. The software will calculate to the closest possible output frequency given the specified reference frequency.
@@ -226,30 +207,23 @@ REFOUT Frequency and Logic Type Disabled
 Evaluation Software Components
 ==============================
 
---------------
 
 Main Window
 -----------
-
-|
 
 .. container:: centeralign
 
    |image6| *Figure 6. AD9578 Evaluation Software Main Window*
 
-   |
-
 
 Active and Inactive Controls
 ----------------------------
 
-| Upon startup, many controls in the AD9578 main window are inactive and grayed out. To manipulate all controls within the main window check the **Advanced** box in the lower right corner of the main window.
+Upon startup, many controls in the AD9578 main window are inactive and grayed out. To manipulate all controls within the main window check the **Advanced** box in the lower right corner of the main window.
 
 .. container:: centeralign
 
    |image7| *Figure 7. Advanced Box*
-
-   |
 
 
 Checking the **Advanced** box expands the main window to include a full register map and many other features, which are explained in the following sections of the user guide.
@@ -257,8 +231,9 @@ Checking the **Advanced** box expands the main window to include a full register
 Invalid Value Indication
 ------------------------
 
-| Certain combinations of values can cause the AD9578 operating parameters to exceed the valid ranges specified in the datasheet. In these cases, the invalid entry will be highlighted in yellow and a message will appear in the **Comments** box explaining why the entry is invalid.
-| The following conditions are checked within the software:
+Certain combinations of values can cause the AD9578 operating parameters to exceed the valid ranges specified in the datasheet. In these cases, the invalid entry will be highlighted in yellow and a message will appear in the **Comments** box explaining why the entry is invalid.
+
+The following conditions are checked within the software:
 
 -  Crystal 1, Crystal 2, and External Reference input frequency ranges
 -  Output 1 through Output 4 and Reference Output frequency ranges.
@@ -288,11 +263,7 @@ The reference input to each PLL is specified by using the various drop down menu
 
 |image8|
 
-   .. container:: centeralign
-
-      //Figure 8. PLL Input Reference Selection Drop Downs //
-
-   
+   //Figure 8. PLL Input Reference Selection Drop Downs //
 
 
 Each PLL and REFOUT reference frequency can be supplied by Crystal 1, Crystal 2, or an external reference input Ref In. Crystal 2 and Ref In cannot be used simultaneously. The selection of Ref In or Crystal 2 is controlled by using the Ref In/Crystal 2 drop down.
@@ -304,16 +275,7 @@ The AD9578 evaluation software automatically configures the settings for each PL
 
 .. container:: centeralign
 
-
-   ..
-
-|image9|
-
-   .. container:: centeralign
-
-      //Figure 9. PLL1 and PLL2 Default Controls //
-
-   
+   |image9| //Figure 9. PLL1 and PLL2 Default Controls //
 
 
 The **OEx** and **override** check boxes allow the user to manipulate the various output enable bits from the register 0x02 of the AD9578. Default operation is for both boxes to be checked, allowing the software to have control over each output.
@@ -325,29 +287,14 @@ Clicking the Advanced check box, as shown in Figure 7, expands the Main Window t
 
 .. container:: centeralign
 
-
-   ..
-
-|image10|
-
-   .. container:: centeralign
-
-      //Figure 10. PLL1 and PLL2 Advanced Controls *
-
-   
+   |image10| //Figure 10. PLL1 and PLL2 Advanced Controls *
 
 
-In* **Advanced Controls** *mode, all PLL feedback dividers, output dividers, charge pump and VCO settings are editable by typing in the various text boxes. It is recommended to allow the software to auto select the VCO band being used when in* **Advanced Controls** *mode. In this mode, all of the output frequencies are calculated based off the user’s settings for the reference frequencies and feedback/output division settings. The* **Autocalcuate** *feature is thus disabled in* **Advanced Controls** *mode. Another feature in* **Advanced Controls** *mode is the* **Reset Fuses Button**\ *. This button allows the user to reset the AD9578 to its default fuse blown settings without power cycling evaluation board. The default fuse blown settings are then displayed in the Main Window.
+In **Advanced Controls** mode, all PLL feedback dividers, output dividers, charge pump and VCO settings are editable by typing in the various text boxes. It is recommended to allow the software to auto select the VCO band being used when in **Advanced Controls** mode. In this mode, all of the output frequencies are calculated based off the user’s settings for the reference frequencies and feedback/output division settings. The **Autocalcuate** feature is thus disabled in **Advanced Controls** mode. Another feature in **Advanced Controls** mode is the **Reset Fuses Button**\ *. This button allows the user to reset the AD9578 to its default fuse blown settings without power cycling evaluation board. The default fuse blown settings are then displayed in the Main Window.
 
 .. container:: centeralign
 
-   
-   .. container:: centeralign
-
-      *\ Figure 11. Reset Fuses Button //
-
-   
-
+   *Figure 11. Reset Fuses Button*
 
 Reference Output Section
 ------------------------
@@ -356,16 +303,7 @@ The Reference Output source is selected in the **Input Frequency Section**. The 
 
 .. container:: centeralign
 
-
-   ..
-
-|image11|
-
-   .. container:: centeralign
-
-      //Figure 12. Reference Output Section //
-
-   
+   |image11| //Figure 12. Reference Output Section //
 
 
 PLL Lock Indicators
@@ -375,16 +313,7 @@ When either PLL1 or PLL2 are in lock, the appropriate PLL lock indicator will tu
 
 .. container:: centeralign
 
-
-   ..
-
-|image12|
-
-   .. container:: centeralign
-
-      //Figure 13. PLL Lock Indicators //
-
-   
+   |image12| //Figure 13. PLL Lock Indicators //
 
 
 Comments Box
@@ -394,16 +323,7 @@ The Comments box displays notifications to the user upon successful read/write o
 
 .. container:: centeralign
 
-
-   ..
-
-|image13|
-
-   .. container:: centeralign
-
-      //Figure 14. Comments Box //
-
-   
+   |image13| //Figure 14. Comments Box //
 
 
 Frequency Wizard
@@ -413,16 +333,7 @@ The AD9578 **Frequency Wizard** is responsible for calculating the optimum PLL s
 
 .. container:: centeralign
 
-
-   ..
-
-|image14|
-
-   .. container:: centeralign
-
-      //Figure 15. Frequency Wizard //
-
-   
+   |image14| //Figure 15. Frequency Wizard //
 
 
 Pressing the various **Index** buttons on the left of the window will load those particular settings into the **Main Window** and override the original settings chosen by the **Frequency Wizard**.
@@ -430,20 +341,10 @@ Pressing the various **Index** buttons on the left of the window will load those
 Evaluation Software Menu Items
 ==============================
 
---------------
 
 .. container:: centeralign
 
-
-   ..
-
-|image15|
-
-   .. container:: centeralign
-
-      //Figure 16. Menu Bar //
-
-   
+   |image15| //Figure 16. Menu Bar //
 
 
 Menu Bar
@@ -491,16 +392,7 @@ Allows the user to read write hex values to specific registers. The register add
 
 .. container:: centeralign
 
-
-   ..
-
-|image16|
-
-   .. container:: centeralign
-
-      //Figure 17. Debug Window //
-
-   
+   |image16| //Figure 17. Debug Window //
 
 
 Crystal Settings
@@ -510,16 +402,7 @@ Allows the user to alter the various XO settings found in registers 4 and 10. Th
 
 .. container:: centeralign
 
-
-   ..
-
-|image17|
-
-   .. container:: centeralign
-
-      //Figure 18. Crystal Settings Mode //
-
-   
+   |image17| //Figure 18. Crystal Settings Mode //
 
 
 Help Menu

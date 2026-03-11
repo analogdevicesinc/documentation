@@ -15,14 +15,14 @@ Via IIOD USB backend
 ::
 
    iio_readdev -u usb:1.100.5 -b 100000 cf-ad9361-lpc | pv > /dev/null
-   210GiB 1:19:51 [**26,1MiB/s**] [     <=>     
+   210GiB 1:19:51 [**26,1MiB/s**] [     <=>
 
 Via IIOD Network backend with RNDIS
 
 ::
 
    iio_readdev -n 192.168.2.1 -b 100000 cf-ad9361-lpc | pv > /dev/null
-   203MiB 0:00:10 [**20,4MiB/s**] [              <=>  
+   203MiB 0:00:10 [**20,4MiB/s**] [              <=>
 
 Via local IIO device (running on Linux inside PLUTO, with self-compiled pv(1))
 

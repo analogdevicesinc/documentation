@@ -157,8 +157,6 @@ You may need to configure the serial terminal depending on the current settings 
      Stop: 1 bit
      Flow Control: none
 
-| 
-
 Tools Download and Help
 -----------------------
 

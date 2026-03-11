@@ -3,4 +3,4 @@
 Wave Generators
 ===============
 
-| SawToothWithPhaseGain SquareWaveWithPhaseGain TriangleWaveWithPhaseGain SineWaveWithPhaseGain
+SawToothWithPhaseGain SquareWaveWithPhaseGain TriangleWaveWithPhaseGain SineWaveWithPhaseGain

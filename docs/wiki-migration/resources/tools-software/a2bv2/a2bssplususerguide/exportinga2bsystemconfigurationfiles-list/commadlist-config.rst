@@ -24,7 +24,7 @@ An example project using command list for A2B network discovery and configuratio
 
 .. note::
 
-   Few SPI A2B commands requires polling of A2B_SPISTAT.SPI_BUSY bit using SPISTAT (0x04) command before issuing new commands. The command list contains a single command with the comment – “/\* **SPI_BUSY_STAT_CHECK:** Read in loop \*/”. The application is expected to issue this command in a loop till SPI is available.
+   Few SPI A2B commands requires polling of A2B_SPISTAT.SPI_BUSY bit using SPISTAT (0x04) command before issuing new commands. The command list contains a single command with the comment – “/\**SPI_BUSY_STAT_CHECK:** Read in loop \*/”. The application is expected to issue this command in a loop till SPI is available.
 
 
 .. note::

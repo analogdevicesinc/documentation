@@ -97,8 +97,6 @@ EVM
 Receive Specs
 -------------
 
-.. _lo-bw-1:
-
 LO BW
 ~~~~~
 

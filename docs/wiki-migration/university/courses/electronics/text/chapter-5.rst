@@ -101,7 +101,7 @@ The figure 5.3 below gives the schematic symbol for a diode (a) and a picture of
    Figure 5.3: (a) Diode Schematic Symbol (b) small signal diode.
 
 
-As was discussed earlier, semiconductor diodes are fabricated as a two layer structure forming a PN junction. Semiconductors, such as silicon or germanium, can be doped with small concentrations of specific impurities to yield a material which conducts electricity via electron transport (n-type) or via holes (p-type). When layers of these two types of doped semiconductor are constructed to form a PN junction, electrons migrate away from the n-type side and holes migrate away from the p-type side, as shown in figure. 5.1. This redistribution of charge gives rise to a potential gap V\ :sub:`BI` across the junction, as depicted in the Figure. This gap is *VBI ~*\ 0\ *.*\ 7 V for silicon and *~*\ 0\ *.*\ 3 V for germanium.
+As was discussed earlier, semiconductor diodes are fabricated as a two layer structure forming a PN junction. Semiconductors, such as silicon or germanium, can be doped with small concentrations of specific impurities to yield a material which conducts electricity via electron transport (n-type) or via holes (p-type). When layers of these two types of doped semiconductor are constructed to form a PN junction, electrons migrate away from the n-type side and holes migrate away from the p-type side, as shown in figure. 5.1. This redistribution of charge gives rise to a potential gap V\ :sub:`BI` across the junction, as depicted in the Figure. This gap is *VBI ~*0*.*7 V for silicon and *~*\ 0*.*\ 3 V for germanium.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f5.png
    :align: center
@@ -118,14 +118,7 @@ The expression for the (forward bias) diode voltage V\ :sub:`D` is as follows:
 
 |image1| (5.1)
 
-| Where:
-| V\ :sub:`D` = applied voltage across the diode
-| k = Boltzman constant (1.38E-23 Joules/Kelvin)
-| T = the absolute temperature in Kelvin
-| q = the electron charge (1.6E-19 Coulombs)
-| I\ :sub:`D` = the actual current through the diode
-| I\ :sub:`S` = the diffusion current (a device dependent constant)
-| (The so called thermal voltage, V\ :sub:`T`, is //kT/q //= 26 mV at room temperature.)
+Where: V\ :sub:`D` = applied voltage across the diode k = Boltzman constant (1.38E-23 Joules/Kelvin) T = the absolute temperature in Kelvin q = the electron charge (1.6E-19 Coulombs) I\ :sub:`D` = the actual current through the diode I\ :sub:`S` = the diffusion current (a device dependent constant) (The so called thermal voltage, V\ :sub:`T`, is //kT/q //= 26 mV at room temperature.)
 
 The equation above can be rearranged to provide I\ :sub:`D`:
 
@@ -218,8 +211,7 @@ Because the diode equation for I\ :sub:`D` as a function of V\ :sub:`D` is non-l
    :align: center
    :width: 300px
 
-| Where:
-| V\ :sub:`D` and I\ :sub:`D` are DC bias values and v\ :sub:`d` and i\ :sub:`d` are small-signal changes about the bias values.
+Where: V\ :sub:`D` and I\ :sub:`D` are DC bias values and v\ :sub:`d` and i\ :sub:`d` are small-signal changes about the bias values.
 
 The small-signal resistance is defined as the ratio of v\ :sub:`d` to i\ :sub:`d` and is given by:
 
@@ -227,33 +219,30 @@ The small-signal resistance is defined as the ratio of v\ :sub:`d` to i\ :sub:`d
 
 This results in the same r\ :sub:`d` as in the linear tangent model of the diode in figure 5.8. Thus the small-signal model of the diode when forward biased is a resistor of value r\ :sub:`d`. The value of r\ :sub:`d` is inversely proportional to the current through it. Each time the current is doubled, the resistance is halved. It follows from the linear diode model that r\ :sub:`d` can be interpreted graphically as the reciprocal of the slope of the i\ :sub:`D` versus v\ :sub:`D` curve at the point (V\ :sub:`D`, I\ :sub:`D`).
 
-.. _section-summary-1:
-
 Section Summary
 ~~~~~~~~~~~~~~~
 
 -   Semiconductors contain two types of mobile charge carriers, positively charged holes and negatively charged electrons.
-   \* A semiconductor may be doped with donor impurities (n-type doping) so that it contains mobile charges which are electrons.
-   \* A semiconductor may be doped with acceptor impurities (p-type doping) so that it contains mobile charges which are holes.
-   \* There are two important mechanisms for current flow in a semiconductor:
-   \* diffusion of carriers as a result of a concentration gradient; and
-   \* drift of carriers in an electric field.
-   \* At equilibrium, a built-in potential or potential barrier of V\ :sub:`BI`\ volts is developed across a PN junction.
-   \* With the application of a forward bias voltage V\ :sub:`DF`, the built-in potential is reduced to V\ :sub:`BI`- V\ :sub:`D`, and current flows through the diode when V\ :sub:`DF` is greater than V\ :sub:`BI`.
-   \* With the application of a reverse bias voltage V\ :sub:`DR`, the height of the potential barrier is increased to V\ :sub:`BI` + V\ :sub:`DR` and little current can flow.
-   \* When V\ :sub:`BI` + V\ :sub:`DR` is greater than some critical voltage, where the electric field is higher than the dielectric strength of the semiconductor, reverse breakdown of the junction occurs and current will flow.
-   \* The total diode current I\ :sub:`D` is related to the applied voltage V\ :sub:`D` by
+-   A semiconductor may be doped with donor impurities (n-type doping) so that it contains mobile charges which are electrons.
+-   A semiconductor may be doped with acceptor impurities (p-type doping) so that it contains mobile charges which are holes.
+-   There are two important mechanisms for current flow in a semiconductor:
+
+   -   diffusion of carriers as a result of a concentration gradient; and
+   -   drift of carriers in an electric field.
+
+-   At equilibrium, a built-in potential or potential barrier of V\ :sub:`BI`\ volts is developed across a PN junction.
+-   With the application of a forward bias voltage V\ :sub:`DF`, the built-in potential is reduced to V\ :sub:`BI`- V\ :sub:`D`, and current flows through the diode when V\ :sub:`DF` is greater than V\ :sub:`BI`.
+-   With the application of a reverse bias voltage V\ :sub:`DR`, the height of the potential barrier is increased to V\ :sub:`BI` + V\ :sub:`DR` and little current can flow.
+-   When V\ :sub:`BI` + V\ :sub:`DR` is greater than some critical voltage, where the electric field is higher than the dielectric strength of the semiconductor, reverse breakdown of the junction occurs and current will flow.
+-   The total diode current I\ :sub:`D` is related to the applied voltage V\ :sub:`D` by
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e2.png
    :align: center
    :width: 200px
 
-| **ADALM1000 Lab Activity 2.\ **\ :doc:`Diode I vs. V curves </wiki-migration/university/courses/alm1k/alm-lab-2>`
-| **ADALM1000 Lab Activity,** :doc:`The voltage dependent capacitance of the PN junction </wiki-migration/university/courses/alm1k/alm-lab-2pnj>`
+**ADALM1000 Lab Activity 2.\**\ :doc:`Diode I vs. V curves </wiki-migration/university/courses/alm1k/alm-lab-2>` **ADALM1000 Lab Activity,** :doc:`The voltage dependent capacitance of the PN junction </wiki-migration/university/courses/alm1k/alm-lab-2pnj>`
 
-| **ADALM2000 Lab Activity 2.\ **\ :doc:`Diode I vs. V curves </wiki-migration/university/courses/electronics/electronics-lab-2>`
-| **ADALM2000 Lab Activity,** :doc:`The voltage dependent capacitance of the PN junction </wiki-migration/university/courses/electronics/electronics-lab-pn-junction-cap>`
-| **ADALM2000 Lab Activity:** :doc:`Differential Temperature Sensor </wiki-migration/university/courses/electronics/electronics-lab-25>`
+**ADALM2000 Lab Activity 2.\**\ :doc:`Diode I vs. V curves </wiki-migration/university/courses/electronics/electronics-lab-2>` **ADALM2000 Lab Activity,** :doc:`The voltage dependent capacitance of the PN junction </wiki-migration/university/courses/electronics/electronics-lab-pn-junction-cap>` **ADALM2000 Lab Activity:** :doc:`Differential Temperature Sensor </wiki-migration/university/courses/electronics/electronics-lab-25>`
 
 **Return to** :doc:`Previous Chapter </wiki-migration/university/courses/electronics/text/chapter-4>`
 

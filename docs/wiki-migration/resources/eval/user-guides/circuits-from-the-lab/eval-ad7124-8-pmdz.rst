@@ -5,14 +5,14 @@ The :adi:`EVAL-AD7124-8-PMDZ` is a minimalist 8-channel, low noise, low power, 2
 
 All pins of the :adi:`AD7124-8` are exposed, which makes the :adi:`EVAL-AD7124-8-PMDZ` very flexible and easy to use.
 
-| 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-8-pmdz_top.jpg
+   :width: 600px
 
 Functional block diagram
 ------------------------
 
-| 
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-8_functional_block_diagram.png
+   :align: center
 
 About the AD7124-8
 ------------------
@@ -193,7 +193,3 @@ Registration
 
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-8-pmdz_top.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-8_functional_block_diagram.png

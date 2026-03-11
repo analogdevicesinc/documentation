@@ -1,8 +1,9 @@
 AXI_LOGIC_ANALYZER
 ==================
 
-| The AXI_LOGIC_ANALYZER IP implements both a logic analyzer and a pattern generator, sharing the same pins
-| More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`, and for DACs: :doc:`axi_dac_ip </wiki-migration/resources/fpga/docs/axi_dac_ip>`.
+The AXI_LOGIC_ANALYZER IP implements both a logic analyzer and a pattern generator, sharing the same pins
+
+More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`, and for DACs: :doc:`axi_dac_ip </wiki-migration/resources/fpga/docs/axi_dac_ip>`.
 
 Features
 --------
@@ -243,13 +244,13 @@ References
 ----------
 
 -  :git-hdl:`AXI_LOGIC_ANALYZER IP source code <library/axi_logic_analyzer>`
-   \* :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
-   \* `ADI Linux repository <https://github.com/analogdevicesinc/linux/>`_
+-  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
+-  `ADI Linux repository <https://github.com/analogdevicesinc/linux/>`_
 -  `7 Series IO <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_
-   \* `7 Series Clocking <https://www.xilinx.com/support/documentation/user_guides/ug472_7Series_Clocking.pdf>`_
-   \* `7 Series libraries <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2016_2/ug953-vivado-7series-libraries.pdf>`_
+-  `7 Series Clocking <https://www.xilinx.com/support/documentation/user_guides/ug472_7Series_Clocking.pdf>`_
+-  `7 Series libraries <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2016_2/ug953-vivado-7series-libraries.pdf>`_
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/docs/axi_logic_analyzer_trigger.png

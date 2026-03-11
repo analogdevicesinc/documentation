@@ -58,18 +58,14 @@ Initial Set-Up
 | 1. Install the DPG Downloader and SPIPro software and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
 | 2. Plug the AD9144-FMC-EBZ into port FMC_1 of the ADS7 System. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB as shown in Figure 1.
 | 3. Connect the ADS7 unit to your PC via USB and turn on the ADS7.
-
-Single-Tone Demonstration
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| These settings configure the AD9144 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the DAC output, under the condition: Fdata = 368.64MHz, 4X interpolation, IF = 20MHz.
+| ==== Single-Tone Demonstration==== These settings configure the AD9144 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the DAC output, under the condition: Fdata = 368.64MHz, 4X interpolation, IF = 20MHz.
 | === Single Tone Demo Lab Bench Configuration Procedure:=== These settings configure the AD9144 to output a 112Mhz -1dbFS sine wave using the ADS7 on all four AD9144 DACs.
 
 - Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1500MHz, and the output level to 3dBm. The spectrum analyzer can be configured as shown in Figure 8 with a resolution bandwidth of 100kHz. Choose an Input Attenuation of 24dB.
 
 
 | - On your lab computer, open the SPIPro application (Start > All Programs > Analog Devices > AD9144 > SPIPro). You will see the GUI shown in Figure 5 come up.
-|
+
 
 .. container:: center
 
@@ -91,7 +87,7 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 
 | 1. Run DPG Downloader. It will say AD9144 as shown in Figure 3
 | 2. Execute Port Configuration ‘Below 7.5Gbps’. This will turn on the ADS7 FMC power supplies that power the FMC EVB.
-|
+
 
 .. container:: center
 
@@ -114,7 +110,7 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 
 
 | 4. Select single link, JESD mode 0, Interpolation 2. Press ‘Configure DAC and Clock’ button. JESD204B PLL lock will turn green.
-|
+
 
 .. container:: center
 

@@ -3,9 +3,11 @@
 Gain
 ====
 
-| 
-| |gain.png|
-| ===== Variants =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/gain.png
+   :alt: gain.png
+
+Variants
+--------
 
 -  Gain (No Slew)
 -  Gain (Clickless SW Slew)
@@ -17,10 +19,16 @@ Gain
 Description
 -----------
 
-| The Gain block scales the input signal by the specified value in the text field.
-| The value (Linear) specified in the textbox is the multiplication factor. The value of “1” will not change the gain value and the value of “0” will mute the audio. The value of “2” will double the signal level (adds 6dB) and the value of “-2” will invert the polarity and double the signal level (adds -6dB). If the value is between 1 and 0, the signal level will decrease. You can choose a slew or no-slew algorithm. Using slew RAM gradually ramps the signal from original to target value, while using no-slew RAM jumps the signal immediately.
-| The Multiple Control Gain module has separate gain for each of the inputs.
-| ===== Usage ===== Linear or dB value can be entered by clicking on "Lin" or "dB" selection on the UI ( Multiple Control Gain has Linear input only)
+The Gain block scales the input signal by the specified value in the text field.
+
+The value (Linear) specified in the textbox is the multiplication factor. The value of “1” will not change the gain value and the value of “0” will mute the audio. The value of “2” will double the signal level (adds 6dB) and the value of “-2” will invert the polarity and double the signal level (adds -6dB). If the value is between 1 and 0, the signal level will decrease. You can choose a slew or no-slew algorithm. Using slew RAM gradually ramps the signal from original to target value, while using no-slew RAM jumps the signal immediately.
+
+The Multiple Control Gain module has separate gain for each of the inputs.
+
+Usage
+-----
+
+Linear or dB value can be entered by clicking on "Lin" or "dB" selection on the UI ( Multiple Control Gain has Linear input only)
 
 Targets Supported
 -----------------
@@ -47,27 +55,27 @@ Targets Supported
 Input
 ~~~~~
 
-+-------------------------+-------------------------------------+-----------------+
-| Name                    | Type                                | Description     |
-+=========================+=====================================+=================+
-| Input<fc #ff0000>X</fc> | Audio(Complex pin for Complex Gain) | Input channel X |
-+-------------------------+-------------------------------------+-----------------+
+====== =================================== ===============
+Name   Type                                Description
+====== =================================== ===============
+InputX Audio(Complex pin for Complex Gain) Input channel X
+====== =================================== ===============
 
 Output
 ~~~~~~
 
-+--------------------------+-------------------------------------+------------------+
-| Name                     | Type                                | Description      |
-+==========================+=====================================+==================+
-| Output<fc #ff0000>X</fc> | Audio(Complex pin for Complex Gain) | Output channel X |
-+--------------------------+-------------------------------------+------------------+
+======= =================================== ================
+Name    Type                                Description
+======= =================================== ================
+OutputX Audio(Complex pin for Complex Gain) Output channel X
+======= =================================== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +--------------------+---------------+--------------+----------------------------------------------------------------------------------------------------------+
 | GUI Parameter Name | Default Value | Range        | Function Description                                                                                     |
@@ -98,5 +106,3 @@ Note:
 
 | 
 | ===== DSP Parameter Computation ===== Gain(Linear) = 10^(Gain(dB)/20)
-
-.. |gain.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/gain.png

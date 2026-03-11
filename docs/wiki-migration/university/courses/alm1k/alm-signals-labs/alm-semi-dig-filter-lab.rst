@@ -36,12 +36,7 @@ The D-type latches used in the shift register produce unit delays (Z\ :sup:`-1`)
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 - 74HC273 Octal D-type FF register
-| 1 – 20 KΩ resistor
-| 5 – 6.8 KΩ resistors
-| 4 – 10 KΩ resistors
-| Filter caps as needed
+ADALM1000 hardware module 1 - 74HC273 Octal D-type FF register 1 – 20 KΩ resistor 5 – 6.8 KΩ resistors 4 – 10 KΩ resistors Filter caps as needed
 
 Directions:
 ~~~~~~~~~~~
@@ -64,22 +59,10 @@ Clock source:
 
 This experiment needs a square wave clock source for the shift register. A variable frequency square wave source can be built using the AD654 voltage-to-frequency converter IC, as shown in figure 3.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 – 10Ω resistor
-| 2 – 220 Ω resistors
-| 1 – 1.5 KΩ resistor
-| 1 – 4.7 KΩ resistor
-| 1 – 5 KΩ potentiometer
-| 1 – 2.2 nF capacitor (222)
-| 1 – 0.56 uF capacitor (564)
-| 1 – 10 uF capacitor
-| 1 – AD654 Voltage-to-frequency Converter
-
-.. _directions-1:
+1 – 10Ω resistor 2 – 220 Ω resistors 1 – 1.5 KΩ resistor 1 – 4.7 KΩ resistor 1 – 5 KΩ potentiometer 1 – 2.2 nF capacitor (222) 1 – 0.56 uF capacitor (564) 1 – 10 uF capacitor 1 – AD654 Voltage-to-frequency Converter
 
 Directions:
 ~~~~~~~~~~~
@@ -145,15 +128,10 @@ The moving average filter is a simple Low Pass FIR (Finite Impulse Response) fil
 
 As the filter length increases (the parameter M) the smoothness of the output increases, whereas the sharp transitions in the data are made increasingly blunt. This implies that this filter has excellent time domain response but a poor frequency response.
 
-| The Moving Average filter performs three important functions:
-| 1) It takes M input points, computes the average of those M-points and produces a single output point
-| 2) Due to the computation/calculations involved, the filter introduces a definite amount of delay
-| 3) The filter acts as a Low Pass Filter (with poor frequency domain response and a good time domain response).
+The Moving Average filter performs three important functions: 1) It takes M input points, computes the average of those M-points and produces a single output point 2) Due to the computation/calculations involved, the filter introduces a definite amount of delay 3) The filter acts as a Low Pass Filter (with poor frequency domain response and a good time domain response).
 
 **For Further Reading:**
 
-| :adi:`AD654 datasheet <media/en/technical-documentation/data-sheets/AD654.pdf>`
-| `Finite impulse response <https://en.wikipedia.org/wiki/Finite_impulse_response>`_
-| `Frequency Response of the Running Average Filter <https://ptolemy.berkeley.edu/eecs20/week12/freqResponseRA.html>`_
+:adi:`AD654 datasheet <media/en/technical-documentation/data-sheets/AD654.pdf>` `Finite impulse response <https://en.wikipedia.org/wiki/Finite_impulse_response>`_ `Frequency Response of the Running Average Filter <https://ptolemy.berkeley.edu/eecs20/week12/freqResponseRA.html>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**

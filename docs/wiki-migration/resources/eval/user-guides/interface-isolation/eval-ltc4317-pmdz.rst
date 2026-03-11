@@ -8,10 +8,9 @@ EVAL-LTC4317-PMDZ User Guide
 GENERAL DESCRIPTION
 -------------------
 
-| EVAL-LTC4317-PMDZ features :adi:`LTC4317 <en/products/ltc4317.html>`, a Dual I2C/SMBus Address Translator that enables the hardwired address of one or more I2C or SMBus slave device to be translated to a different address. This evaluation board provides 6-pin PMOD connectors for upstream and downstream connection for compatibility with PMOD form factors such as :adi:`EVAL-ADICUP3029`, an Arduino based Wireless Development Platform for Internet of Things applications based on an ultra-low power ARM Cortex-M3 processor.
-| Pmod™ is the Digilent defined standard of Peripheral Modules, small I/O interface boards that offer an ideal way to extend the capabilities of programmable logic and microcontroller boards. They allow sensitive signal conditioning circuits and high-power drive circuits to be placed where they are most effective - near sensors and actuators.
-| \* :adi:`LTC4317 <en/products/ltc4317.html>` allows slaves with the same hardwired address to coexist on the same bus. Only discrete resistors are needed
+EVAL-LTC4317-PMDZ features :adi:`LTC4317 <en/products/ltc4317.html>`, a Dual I2C/SMBus Address Translator that enables the hardwired address of one or more I2C or SMBus slave device to be translated to a different address. This evaluation board provides 6-pin PMOD connectors for upstream and downstream connection for compatibility with PMOD form factors such as :adi:`EVAL-ADICUP3029`, an Arduino based Wireless Development Platform for Internet of Things applications based on an ultra-low power ARM Cortex-M3 processor. Pmod™ is the Digilent defined standard of Peripheral Modules, small I/O interface boards that offer an ideal way to extend the capabilities of programmable logic and microcontroller boards. They allow sensitive signal conditioning circuits and high-power drive circuits to be placed where they are most effective - near sensors and actuators.
 
+-  :adi:`LTC4317 <en/products/ltc4317.html>` allows slaves with the same hardwired address to coexist on the same bus. Only discrete resistors are needed
 -  :adi:`LTC4317 <en/products/ltc4317.html>` has two output channels for two different sets of slaves.
 -  No Software programming is required to configure the :adi:`LTC4317 <en/products/ltc4317.html>` to select the new address and no software programming is required.
 -  Up to 127 different address translations are available.

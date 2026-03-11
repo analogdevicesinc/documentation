@@ -12,7 +12,7 @@ When operating the ADTF-3175x with a read/write partition it is highly recommend
    \ **sudo systemctl poweroff**\
 
 
-**Disclaimer:** <fc #ff0000>It is rather easy to stop the proper functioning of the ADTF-3175x via an errant Linux command. The user is responsible for the state of the device once they start using the CLI. If the ADTF-3175x does stop functioning it is trivial to re-flash the stock micro-SD card image from the installation package.</fc>
+**Disclaimer:** It is rather easy to stop the proper functioning of the ADTF-3175x via an errant Linux command. The user is responsible for the state of the device once they start using the CLI. If the ADTF-3175x does stop functioning it is trivial to re-flash the stock micro-SD card image from the installation package.
 
 Making the SD Card Writable
 ---------------------------

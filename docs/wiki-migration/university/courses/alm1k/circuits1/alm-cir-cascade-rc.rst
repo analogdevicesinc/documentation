@@ -45,13 +45,7 @@ A simulation was run sweeping the frequency from 100 Hz to 20 KHz. As we can see
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 3 – 1 KΩ resistors
-| 1 – 10 KΩ resistor
-| 1 – 100 KΩ resistor
-| 3 – 0.1 uF capacitors (marked 104)
-| 1 – 0.01 uF capacitor (marked 103)
-| 1 – 0.001 uF capacitor (marked 102)
+ADALM1000 hardware module 3 – 1 KΩ resistors 1 – 10 KΩ resistor 1 – 100 KΩ resistor 3 – 0.1 uF capacitors (marked 104) 1 – 0.01 uF capacitor (marked 103) 1 – 0.001 uF capacitor (marked 102)
 
 Directions:
 ~~~~~~~~~~~
@@ -69,19 +63,9 @@ Build the first order passive RC low pass filter shown in figure 3 on your solde
 
 Set up the ALICE desktop Bode Plotter screen as follows. With the Bode screen open you can deselect the Enab Time Plot selector and minimize the main Scope window.
 
-| Set the Frequency scale to log.
-| Under the Curves drop down select CA-dBV (to confirm the input level) and CB-dB – CA-dB (to plot the output response with respect to the input).
-| Set the Start Frequency to 100 Hz.
-| Set the Stop Frequency to 20000 Hz.
-| Select CHA as the sweep source.
-| Set the number of sweep points to 300.
-| Set the FFT window shape to Flat-top.
-| Under the Options drop down be sure the Cut-DC option is selected.
-| Use the +dB/div and/or –dB/div buttons to select 5 dB/div on the vertical scale.
-| Use the LVL+1 and/or LVL-1 buttons to set the level of the top line of the grid to 5 dB.
+Set the Frequency scale to log. Under the Curves drop down select CA-dBV (to confirm the input level) and CB-dB – CA-dB (to plot the output response with respect to the input). Set the Start Frequency to 100 Hz. Set the Stop Frequency to 20000 Hz. Select CHA as the sweep source. Set the number of sweep points to 300. Set the FFT window shape to Flat-top. Under the Options drop down be sure the Cut-DC option is selected. Use the +dB/div and/or –dB/div buttons to select 5 dB/div on the vertical scale. Use the LVL+1 and/or LVL-1 buttons to set the level of the top line of the grid to 5 dB.
 
-| In the AWG controls window confirm that Channel A is set to SVMI mode, Shape Sin and Channel B is set to Hi-Z mode.
-| Set Channel A Min value to 1.0 and Max value to 4.0.
+In the AWG controls window confirm that Channel A is set to SVMI mode, Shape Sin and Channel B is set to Hi-Z mode. Set Channel A Min value to 1.0 and Max value to 4.0.
 
 With Single sweep mode selected click on the green Run button. After a few seconds you should have the frequency response plot of the RC filter. Under the Options drop down click on the Store trace button to save a copy of the plot. Under the Curves drop down select the saved Math plot to be displayed also.
 
@@ -148,7 +132,6 @@ One final question, how do your measured results compare to your simulation resu
 
 **For Further Reading:**
 
-| :adi:`LTSpice <en/design-center/design-tools-and-calculators/ltspice-simulator.html>`
-| :adi:`ADIsimPE <en/design-center/interactive-design-tools/adisimpe.html>`
+:adi:`LTSpice <en/design-center/design-tools-and-calculators/ltspice-simulator.html>` :adi:`ADIsimPE <en/design-center/interactive-design-tools/adisimpe.html>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

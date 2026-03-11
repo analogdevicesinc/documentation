@@ -10,9 +10,7 @@ The **ADRV9009-ZU11EG RF-SOM** package includes:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009_zu11eg/adrv9009_zu11eg_rfsom.png
 
---------------
 
---------------
 
 High level block diagram showing key components and IO routing
 ==============================================================
@@ -226,8 +224,6 @@ The carrier needs to include reset buttons, LEDs for status signals, slide switc
 
 |image5|
 
-.. _sd-card-1:
-
 SD Card
 -------
 
@@ -237,8 +233,6 @@ UART Interface for Debug
 ------------------------
 
 Connect UART1 interface in the carrier (MIO pins 16 and 17). The IO voltage level on these pins is 1.8V, so if a USB to UART interface like the FTDI FT232R is used, a voltage level translator from 3.3V to 1.8V must be used.
-
-.. _rgmii-ethernet-1:
 
 RGMII Ethernet
 --------------

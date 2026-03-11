@@ -19,7 +19,7 @@ The code for all the various pieces required to create testing SD cards can be f
    
    **No-OS:**
    
-   -  HDL dev branch: :git-hdl:`projects/pzsdr/ccbrk`
+   -  HDL dev branch: https://github.com/analogdevicesinc/hdl/tree/dev/projects/pzsdr/ccbrk
    -  Loopback test: :git-no-OS:`pzsdr/ccbrk/loopback`
    
    Xilinx SDK 2015.2 is currently required to build both of these projects.
@@ -184,28 +184,20 @@ SOM1
 
 TODO
 
-.. _fpga-bitstream-1:
-
 FPGA bitstream
 ~~~~~~~~~~~~~~
 
 TODO
-
-.. _creating-the-main-u-boot-test-binary-1:
 
 Creating the main U-Boot test binary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TODO
 
-.. _creating-the-qspi-u-boot-binary-1:
-
 Creating the QSPI U-Boot binary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TODO
-
-.. _creating-the-no-os-test-elfs-1:
 
 Creating the no-OS test ELFs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -213,8 +205,6 @@ Creating the no-OS test ELFs
 TODO
 
 TODO: ad9361
-
-.. _linux-and-the-device-tree-1:
 
 Linux and the device tree
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -237,7 +227,7 @@ The code for all the various pieces required to create testing SD cards can be f
    **No-OS:**
    
    -  Tests for various loopback modules (PMOD, camera, FMC, SFTP+) that are run at the U-Boot level: :git-no-OS:`pzsdr/ccfmc/loopback`
-   -  HDL dev branch: :git-hdl:`projects/pzsdr/ccfmc`
+   -  HDL dev branch: https://github.com/analogdevicesinc/hdl/tree/dev/projects/pzsdr/ccfmc
    
    **Test script:**
    
@@ -249,8 +239,6 @@ The code for all the various pieces required to create testing SD cards can be f
 First, write the latest available SD card image found at :doc:`/wiki-migration/resources/tools-software/linux-software/zynq_images` to a spare card and prepare the card to boot into Linux as detailed on that page.
 
 When that is ready follow the instructions below the create the various files necessary to run the test suite.
-
-.. _fpga-bitstream-2:
 
 FPGA bitstream
 ~~~~~~~~~~~~~~
@@ -280,8 +268,6 @@ Symlink the created bitstream into the unpacked bootgen directory for future use
 
    cd ~/zynq-picozed-sdr2/bootgen
    ln -s ~/zynq-picozed-sdr2/hdl/projects/pzsdr/ccbrk/ccbrk_pzsdr.runs/impl_1/system_top.bit
-
-.. _creating-the-main-u-boot-test-binary-2:
 
 Creating the main U-Boot test binary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -324,8 +310,6 @@ Copy the BOOT.BIN file to the root directory of the SD card's BOOT partition:
 ::
 
    cp BOOT.BIN /media/BOOT/
-
-.. _creating-the-no-os-test-elfs-2:
 
 Creating the no-OS test ELFs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

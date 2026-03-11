@@ -10,8 +10,10 @@ This reference design integrates an HDL PHY layer with a demo application for vi
 
 Despite the ubiquity of IEEE 802.11, there are few available reference projects that fully implement a customizable, full-stack communication system, from application layer down to the physical layer, on a system-on-chip. The purpose of this software reference design is to show customers how they may use the AD936x transceivers as a communication link for unmanned aerial vehicles (UAVs) and drones.
 
-| 
-| ===== System Architecture ===== Figure 1 illustrates the high-level ADSW-OFDM2M architecture. The communication stack is focused mainly on the FPGA where the signal processing for the PHY layer is implemented. The signal processing includes the TX and RX chains, as well as a lower MAC layer.
+System Architecture
+-------------------
+
+Figure 1 illustrates the high-level ADSW-OFDM2M architecture. The communication stack is focused mainly on the FPGA where the signal processing for the PHY layer is implemented. The signal processing includes the TX and RX chains, as well as a lower MAC layer.
 
 A demonstration GUI application runs on :doc:`ADI Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. For the PHY layer to communicate with user space applications, it reuses existing upper-level protocols such as TCP/IP stack and loadable drivers.
 
@@ -24,8 +26,8 @@ A demonstration GUI application runs on :doc:`ADI Kuiper Linux </wiki-migration/
    *Figure 1. High-level Architecture Block Diagram*
 
 
-| 
-| ===== Features =====
+Features
+--------
 
 .. container:: center
 
@@ -71,20 +73,23 @@ A demonstration GUI application runs on :doc:`ADI Kuiper Linux </wiki-migration/
    
 
 
-| 
-| ===== Applications ===== Possible applications of the ADSW-OFDMS2M reference modem include the following:
+Applications
+------------
+
+Possible applications of the ADSW-OFDMS2M reference modem include the following:
 
 -  UAV communications
 -  Wireless video transmission
 
-| 
-| ▶️Recorded demonstration of a wireless video transmission using the ADSW-OFDMS2M HDL reference modem
+▶️Recorded demonstration of a wireless video transmission using the ADSW-OFDMS2M HDL reference modem
 
-.. image:: https://wiki.analog.com/_media/youtube>QH53fXQbzeI
+.. image:: https://wiki.analog.com/_media/resources/youtube>QH53fXQbzeI
    :alt: youtube>QH53fXQbzeI
 
-| 
-| ===== Use Cases ===== The ADSW-OFDMS2M evaluation platform can be operated using the following use cases, depending on the loaded software in the SD card.
+Use Cases
+---------
+
+The ADSW-OFDMS2M evaluation platform can be operated using the following use cases, depending on the loaded software in the SD card.
 
 +----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **SISO** | The SISO build follows the use case of a typical IEEE 802.11 Basic Service Set where a wireless station/client connects to an access point.                                                          |
@@ -98,21 +103,21 @@ A demonstration GUI application runs on :doc:`ADI Kuiper Linux </wiki-migration/
 
 The ADSW-OFDMS2M demo application has two operating modes which emulate functions for the drone and controller side. The drone mode is expected to start the video streaming and receive the telemetry commands. The controller mode will be sending the telemetry commands while receiving and performing video playback.
 
-| 
-| ===== Help and Support ===== For questions and more information, please visit the Analog Devices Engineer Zone.
+Help and Support
+----------------
+
+For questions and more information, please visit the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-| 
-| ===== Additional Resources =====
+Additional Resources
+--------------------
 
 -  :doc:`Linux on RF SoM </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zynq>`
 -  :doc:`Analog Devices Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
-
-| 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dronetrx/dronetrx_demo_application_as_run_in_kuiper_linux.png
    :width: 800px

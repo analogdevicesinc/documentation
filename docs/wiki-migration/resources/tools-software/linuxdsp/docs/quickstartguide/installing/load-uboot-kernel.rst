@@ -45,7 +45,7 @@ Options from user have higher priority, when both options specified and macros i
    # No need to update uboot and load with ramboot with providing deploy folder
    $ sudo python3 LUK.py -b ramboot -m adsp-sc584-ezkit -f /tmp/deploy/images/adsp-sc584-ezkit
 
-   # Only update uboot, not load kernel, 
+   # Only update uboot, not load kernel,
    $ sudo python3 LUK.py -m adsp-sc584-ezkit --updateUboot -e 2000 --ipaddr 10.100.4.50 --serverip 10.100.4.174
 
    # Update uboot and load with nfsboot with providing deploy folder

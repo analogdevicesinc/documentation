@@ -171,7 +171,7 @@ Follow these steps to prepare the SD Card,
    The Analog Devices Kuiper Linux image is an open-source, embedded Linux operating system based on Raspberry Pi OS. It incorporates Linux device drivers for ADI products as well as tools and other software products designed and created for ease of use.
    
    -  **Use the image for CN0577.**
-   -  Access to the embedded system can be through ​a remote PC connected ​either via LAN cable or Wi-Fi.
+   -  Access to the embedded system can be through a remote PC connected either via LAN cable or Wi-Fi.
    
 
 
@@ -231,7 +231,7 @@ Each plugin (or tab) can be detached from the main window simply by clicking on 
 Debug Tab/Plugin
 ~~~~~~~~~~~~~~~~
 
-**Debug Plugin** is a tool for device debugging. Since "normal" users should not be doing this, features on this tab may not work unless you have started the <fc #ff0000>osc</fc> application as root.
+**Debug Plugin** is a tool for device debugging. Since "normal" users should not be doing this, features on this tab may not work unless you have started the osc application as root.
 
 -  **Device Selection:** Sets the active device. Once a device is selected any other information displayed in the plugin is related to this particular device.
 -  **IIO Device Attributes:** Allows Read/Write operation for the attributes of a device.
@@ -239,9 +239,9 @@ Debug Tab/Plugin
 
 ::
 
-         ***a. Enable AutoRead:** When enabled it allows the register to be read automatically as the register address changes.
-         ***b. Address:** The address of the register
-         ***c. Value:** The value of the register at the given address.
+         **a. Enable AutoRead:** When enabled it allows the register to be read automatically as the register address changes.
+         **b. Address:** The address of the register
+         **c. Value:** The value of the register at the given address.
 
          |image14|
 
@@ -408,26 +408,25 @@ Evaluating the EVAL-ADAQ23876 FMCZ / EVAL-ADAQ23878FMCZ using IIO Oscilloscope
    //Figure 15: Refreshing the IIO Oscilloscope Connection *
 
 
-\* Once ltc2387 appears, select Connect. \
+- Once ltc2387 appears, select Connect. \
 
 .. container:: centeralign
 
-   *\ Figure 16: Connecting the IIO Oscilloscope\ *
+   *Figure 16: Connecting the IIO Oscilloscope*
 
 
 ==== IIO Oscilloscope Capture Window ==== === Waveform Plot === \
 
 .. container:: centeralign
 
-   *\ Figure 17: Time Domain Waveform Plot *
+   *Figure 17: Time Domain Waveform Plot*
 
 
 === FFT Plot === \
 
 .. container:: centeralign
 
-   *\ Figure 18: FFT Plot //
-
+   *Figure 18: FFT Plot*
 
 To Start
 ~~~~~~~~

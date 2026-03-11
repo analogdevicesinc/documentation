@@ -20,9 +20,7 @@ SPISEL7           SPI_SEL_B                      SPI Slave Select 7
 SPISEL5           SPI_SEL_A                      SPI Slave Select 5
 ================= ============================== =======================
 
-| Table 1: SPI Pin Assignments
-| The maximum clock frequency for SPI transfers is: 30MHz.
-| The maximum frame frequency for SPI transfers is shown below...
+Table 1: SPI Pin Assignments The maximum clock frequency for SPI transfers is: 30MHz. The maximum frame frequency for SPI transfers is shown below...
 
 ============= ================================
 Transfer size Frame Freq Max ( for 30MHz sclk)
@@ -35,7 +33,8 @@ Transfer size Frame Freq Max ( for 30MHz sclk)
 48 bits       ~220kHz
 ============= ================================
 
-| Table 2: SPI Frame Frequency Limits
+Table 2: SPI Frame Frequency Limits
+
 | The SDP’s SPI protocol is a hybrid of the Blackfin’s Hardware SPI controller and a software implemented chip select option. The internal Blackfin hardware SPI controller allows 8 or 16 bit transfers only. The SDP SPI implementation uses the hardware shift registers of the Blackfin SPI controller but with a software controlled chip select. This allows the SDP to handle SPI transfers of 8, 16, 24, 32, 40 and 48 bits. The software controlled chip selects framing period is not repeatedly consistent. There is jitter on the Chip Select frame rate. For this reason the SPI can be used for control data or burst transfers but cannot implement streaming.
 | The SPI protocol supports four different combinations of serial clock and polarity modes, SPI Modes 0, 1, 2 & 3.
 
@@ -79,9 +78,8 @@ Below are timing examples for each of the 4 data transfer sizes in the SDP-B SPI
 SPI Extended Interfaces for converters
 --------------------------------------
 
-| This section introduces timing diagrams for interfacing to ADI parts that requires Busy or Ready signals combined to CS to decode the part. The singularity of these modes is that the MISO line provides double functionality, data and ready signal.
-| The serial interface can operate in 3-wire mode by tying CS low. The end of conversion can be monitored using RDY and/or Busy. The DOUT/RDY pin functions as a data ready signal also, with the line going low when a new data-word is available in the output register.
-| Given the complexity of the implementation, the description below provides an additional explanation of how these interfaces are programmed to be used within the SDP.
+This section introduces timing diagrams for interfacing to ADI parts that requires Busy or Ready signals combined to CS to decode the part. The singularity of these modes is that the MISO line provides double functionality, data and ready signal. The serial interface can operate in 3-wire mode by tying CS low. The end of conversion can be monitored using RDY and/or Busy. The DOUT/RDY pin functions as a data ready signal also, with the line going low when a new data-word is available in the output register. Given the complexity of the implementation, the description below provides an additional explanation of how these interfaces are programmed to be used within the SDP.
+
 | |image8|
 | Figure 8 : Single Read more with RDY
 
@@ -99,9 +97,9 @@ Bytes to read             Data + Status + CRC
 Repeat Read Command       False
 Enable CS between Samples False
 SPI Write Buffer U8       0x08
-:::                       0x28
-:::                       0x00
-:::                       0x60
+\                         0x28
+\                         0x00
+\                         0x60
 ========================= ======================
 
 | |image10|

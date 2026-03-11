@@ -3,8 +3,8 @@
 Seven Band Level Detector
 =========================
 
-| 
-| |sevenband.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/sevenband.png
+   :alt: sevenband.png
 
 Description
 -----------
@@ -21,8 +21,10 @@ The Seven-Band Level Detector block calculates the input signal level, reading d
 
 The level detector performs the analysis only and does not modify the input signal. The signal at the output pin is identical to the input.
 
-| Use the On / Off button to enable or disable the display. The level detector will not function until the schematic design has been compiled and downloaded to the hardware and a USB communication channel is properly configured.
-| ===== Targets Supported =====
+Use the On / Off button to enable or disable the display. The level detector will not function until the schematic design has been compiled and downloaded to the hardware and a USB communication channel is properly configured.
+
+Targets Supported
+-----------------
 
 +---------------------------+------------+------------------+---------------+------------------+
 | Name                      | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -51,7 +53,7 @@ Name    Type  Description
 Output0 Audio Output channel 0
 ======= ===== ================
 
-| 
+
 | ===== Configurable Parameters =====
 
 ============= ============= ====== ====================================
@@ -60,7 +62,5 @@ GUI Parameter Default Value Range  Function Description
 On/Off Switch OFF           ON/OFF Enable or Disable the Level Detector
 ============= ============= ====== ====================================
 
-| 
-| ===== DSP Parameters ===== No DSP Parameters
 
-.. |sevenband.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/sevenband.png
+| ===== DSP Parameters ===== No DSP Parameters

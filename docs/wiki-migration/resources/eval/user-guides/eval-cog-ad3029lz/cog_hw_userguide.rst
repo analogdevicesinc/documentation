@@ -139,9 +139,10 @@ For developers designing a Cog add-on board, the template schematic/board files 
 
 `Template Design Files (Cadence Allegro v16.6) <https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/20-047257-01a.zip>`_
 
-| 
+
 | End Document
-| :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
+
+:doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 
 .. |direct| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/24072017-tile-revb-adp5300-gpio.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/c1-conn-mapping.png

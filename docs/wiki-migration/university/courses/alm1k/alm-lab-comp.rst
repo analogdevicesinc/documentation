@@ -30,14 +30,7 @@ A Differential Voltage Comparator such as the AD8561 from the analog parts kit h
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| AD8561 voltage comparator
-| 1 – 10 KΩ resistor
-| 1 – 20 KΩ resistors
-| 1 – 47 KΩ resistor
-| 1 – 100 KΩ resistor
-| 2 – 4.7 KΩ resistors
-| 1 – 0.1 uF capacitor
+ADALM1000 hardware module AD8561 voltage comparator 1 – 10 KΩ resistor 1 – 20 KΩ resistors 1 – 47 KΩ resistor 1 – 100 KΩ resistor 2 – 4.7 KΩ resistors 1 – 0.1 uF capacitor
 
 Directions:
 ~~~~~~~~~~~
@@ -101,8 +94,6 @@ For the AD8561 with a +5 V power supply and pull-up resistor, V\ :sub:`HIGH` –
 
 Note that the hysteresis gap equation places a potential restriction on the ratio R\ :sub:`2`/R\ :sub:`1` for a Schmitt trigger: unless R\ :sub:`2` < R\ :sub:`1`, the hysteresis gap will be larger than one half of the peak to peak output voltage swing range of the comparator and depending on the reference voltage value, one or the other of the Schmitt trigger thresholds might be beyond the range of the output voltage. Assuming the input signal voltage range is also limited to the output swing range ( in other word the power supply rails ) then the circuit’s output could lock-up and no longer respond to any changes in the input rendering the circuit useless.
 
-.. _procedure-1:
-
 Procedure:
 ~~~~~~~~~~
 
@@ -130,8 +121,6 @@ Where coth is the hyperbolic cotangent function. If we want the oscillator perio
 R\ :sub:`1`\ =120 KΩ, R\ :sub:`2`\ =39 KΩ gives a pair of standard resistor values which closely matches this ratio within 0.2%. ( Other combinations of standard values such as R\ :sub:`1`\ =100 KΩ, R\ :sub:`2`\ =20 KΩ + 10 KΩ in series are also close).
 
 Note that the current drawn by the R\ :sub:`T`, C\ :sub:`T` feedback is as high as the peak to peak output swing just after the output changes state. Large currents from low values of R\ :sub:`T` and / or high values of C\ :sub:`T` will reduce the minimum and maximum output voltages as the comparator tries to deliver this much output current, distorting the output waveforms and lengthening T. Choosing R\ :sub:`T` ≥ 10 KΩ should limit the capacitor charging current to a reasonable level.
-
-.. _directions-1:
 
 Directions:
 ~~~~~~~~~~~
@@ -162,8 +151,6 @@ Using an integrator circuit rather than a simple RC network would charge the cap
 
    Figure 5, simple function generator
 
-
-.. _directions-2:
 
 Directions:
 ~~~~~~~~~~~
@@ -210,8 +197,6 @@ Yet many designers still try to use op amps as comparators. While this may work 
 
 The most common issues are speed (as we have already mentioned), the effects of input structures (protection diodes, phase inversion in FET amplifiers such as the ADTL082, and many others), output structures which are not intended to drive logic, hysteresis and stability, and common-mode effects.
 
-.. _directions-3:
-
 Directions:
 ~~~~~~~~~~~
 
@@ -225,8 +210,6 @@ The ADALP2000 Analog Parts Kit contains a wide variety of op-amps. Using as many
 
    Figure 8, op-amp as comparator test circuit
 
-
-.. _procedure-2:
 
 Procedure:
 ~~~~~~~~~~

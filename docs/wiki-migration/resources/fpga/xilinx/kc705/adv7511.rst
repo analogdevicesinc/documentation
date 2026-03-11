@@ -85,15 +85,11 @@ The video part consists of an AXI DMAC interface and the ADV7511 video interface
 
 The reference design defaults to the 1080p video mode. Users may change the video settings by programming the following registers. The core requires a corresponding pixel clock to generate the video. This clock must be generated externally.
 
-| **HSYNC count**: is the total horizontal pixel clocks of the video, for 1080p this is 2200.
-| **HSYNC width**: is the pulse width in pixel clocks, for 1080p this is 44.
-| **HSYNC DE Minimum**: is the number of pixel clocks for the start of active video and is the sum of horizontal sync width and back porch, for 1080p this is 192 (44 + 148).
-| **HSYNC DE Maximum**: is the number of pixel clocks for the end of active video and is the sum of horizontal sync width, back porch and the active video count, for 1080p this is 2112 (44 + 148 + 1920).
-| **VSYNC count**: is the total vertical pixel clocks of the video, for 1080p this is 1125.
-| **VSYNC width**: is the pulse width in pixel clocks, for 1080p this is 5.
-| **VSYNC DE Minimum**: is the number of pixel clocks for the start of active video and is the sum of vertical sync width and back porch, for 1080p this is 41 (5 + 36).
-| **VSYNC DE Maximum**: is the number of pixel clocks for the end of active video and is the sum of vertical sync width, back porch and the active video count, for 1080p this is 1121 (5 + 36 + 1080).
-| Note that the pixel frequency for 1080p is 148.5MHz.
+**HSYNC count**: is the total horizontal pixel clocks of the video, for 1080p this is 2200. **HSYNC width**: is the pulse width in pixel clocks, for 1080p this is 44. **HSYNC DE Minimum**: is the number of pixel clocks for the start of active video and is the sum of horizontal sync width and back porch, for 1080p this is 192 (44 + 148). **HSYNC DE Maximum**: is the number of pixel clocks for the end of active video and is the sum of horizontal sync width, back porch and the active video count, for 1080p this is 2112 (44 + 148 + 1920).
+
+**VSYNC count**: is the total vertical pixel clocks of the video, for 1080p this is 1125. **VSYNC width**: is the pulse width in pixel clocks, for 1080p this is 5. **VSYNC DE Minimum**: is the number of pixel clocks for the start of active video and is the sum of vertical sync width and back porch, for 1080p this is 41 (5 + 36). **VSYNC DE Maximum**: is the number of pixel clocks for the end of active video and is the sum of vertical sync width, back porch and the active video count, for 1080p this is 1121 (5 + 36 + 1080).
+
+Note that the pixel frequency for 1080p is 148.5MHz.
 
 The reference design reads 24bits of RGB data from DDR and performs color space conversion (RGB to YCbCr) and down sampling (444 to 422). If bypassed, the lower 16bits of DDR data is passed to the HDMI interface as it is.
 
@@ -173,19 +169,20 @@ As an alternative an UART terminal can be used to capture the output of the exam
 Downloads
 ---------
 
-| The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices Github.
-| **HDL Reference Designs:**
+The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices Github.
+
+**HDL Reference Designs:**
 
 .. admonition:: Download
    :class: download
 
    
-   -  \**AC701 HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/ac701`
-   -  \**KC705 HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/kc705`
-   -  \**vC707 HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/vc707`
-   -  \**ZC702 HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/zc702`
-   -  \**ZC706 HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/zc706`
-   -  \**ZED HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/zed`
+   -  **AC701 HDL Reference Design for Vivado:** https://github.com/analogdevicesinc/hdl/tree/hdl_2017_r1/projects/adv7511/ac701
+   -  **KC705 HDL Reference Design for Vivado:** https://github.com/analogdevicesinc/hdl/tree/hdl_2017_r1/projects/adv7511/kc705
+   -  **vC707 HDL Reference Design for Vivado:** https://github.com/analogdevicesinc/hdl/tree/hdl_2017_r1/projects/adv7511/vc707
+   -  **ZC702 HDL Reference Design for Vivado:** :git-hdl:`projects/adv7511/zc702`
+   -  **ZC706 HDL Reference Design for Vivado:** :git-hdl:`projects/adv7511/zc706`
+   -  **ZED HDL Reference Design for Vivado:** :git-hdl:`projects/adv7511/zed`
    
 
 
@@ -195,7 +192,7 @@ Downloads
    :class: download
 
    
-   -  \**ADV7511 Project: \*\* :git-no-OS:`projects/adv7511`
+   -  **ADV7511 Project:** :git-no-OS:`projects/adv7511`
    
 
 

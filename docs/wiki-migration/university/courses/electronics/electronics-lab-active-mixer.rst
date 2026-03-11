@@ -47,13 +47,7 @@ In an up-conversion mixer, the other input is the IF and the output is the RF si
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 2 1 kΩ resistor
-| 2 6.8k kΩ resistor
-| 1 OP37 precision op-amp
-| 1 LTC1043 precision switched-cap block
-| 3 N-channel MOSFET (2-ZVN3310, 1-ZVN2210A)
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 2 1 kΩ resistor 2 6.8k kΩ resistor 1 OP37 precision op-amp 1 LTC1043 precision switched-cap block 3 N-channel MOSFET (2-ZVN3310, 1-ZVN2210A)
 
 Single Balanced Active Mixer
 ----------------------------
@@ -111,8 +105,6 @@ For the Down-conversion mixing, set W2 to 5V, 260kHz sine wave, this will serve 
 
 Single balanced active mixer implemented with LTC1043
 -----------------------------------------------------
-
-.. _background-1:
 
 Background
 ~~~~~~~~~~

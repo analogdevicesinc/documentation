@@ -1,8 +1,9 @@
 Software Debounce
 =================
 
-| :doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
-| |softdebpic1.png| The contacts of mechanical switches and encoders can "bounce" when changing positions; meaning the voltage may fluctuate between states several times during the transition period. When the transition is not clean erroneous states can be set in your system. This block debounces (removes the transition ripple) from a signal, by waiting a specified amount of time between sampling periods. This provides a clean transition signal to the output.
+:doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
+
+|softdebpic1.png| The contacts of mechanical switches and encoders can "bounce" when changing positions; meaning the voltage may fluctuate between states several times during the transition period. When the transition is not clean erroneous states can be set in your system. This block debounces (removes the transition ripple) from a signal, by waiting a specified amount of time between sampling periods. This provides a clean transition signal to the output.
 
 Typically, this block is used to debounce a GPIO input signal.
 

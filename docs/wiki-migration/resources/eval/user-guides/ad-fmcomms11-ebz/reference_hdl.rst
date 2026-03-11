@@ -129,7 +129,7 @@ The physical layer is responsible for instantiating and configuring the high spe
 
 .. code:: tcl
 
-   ad_ip_instance axi_adxcvr axi_ad9162_xcvr [list \ 
+   ad_ip_instance axi_adxcvr axi_ad9162_xcvr [list \
      NUM_OF_LANES 8 \
      QPLL_ENABLE 1 \
      TX_OR_RX_N 1 \
@@ -382,7 +382,7 @@ Constraints
 
 As shown below, the transceiver channels are connected to the appropriate high speed FMC lane. The lane remapping is done after the JESD204 link layer, see the **Data Link Layer** section for more details.
 
-.. code:: xdc
+.. code:: tcl
 
 
    set_property  -dict {PACKAGE_PIN  AH10} [get_ports rx_data_p[0]]  ; ## C06  FMC_HPC_DP0_M2C_P
@@ -421,7 +421,7 @@ As shown below, the transceiver channels are connected to the appropriate high s
 
 In default configuration the reference clocks run at 122.88 MHz, the RX core clock at 122.88MHz and TX core clock at 245.76MHz. See the block diagram above for detailed clock tree. The clock are slightly over constraint to 125 MHz and 250 MHz.
 
-.. code:: xdc
+.. code:: tcl
 
    create_clock -name rx_ref_clk   -period  8 [get_ports trx_ref_clk_p]
    create_clock -name tx_div_clk   -period  4 [get_pins i_system_wrapper/system_i/util_fmcomms11_xcvr/inst/i_xch_0/i_gtxe2_channel/TXOUTCLK]
@@ -474,9 +474,10 @@ References
 
    
    -  :doc:`HDL Build Instructions </wiki-migration/resources/fpga/docs/build>`
-      \* :doc:`JESD204 Framework </wiki-migration/resources/fpga/peripherals/jesd204>`
+   -  :doc:`JESD204 Framework </wiki-migration/resources/fpga/peripherals/jesd204>`
    -  :doc:`Using and modifying the HDL designs </wiki-migration/resources/fpga/docs/tips>`
-      \* :doc:`Generic JESD204 block design </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`
+   -  :doc:`Generic JESD204 block design </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`
+   
 
 
 .. |FMCOMMS11 HDL project| image:: https://wiki.analog.com/_media/:git-hdl:`projects/fmcomms11`

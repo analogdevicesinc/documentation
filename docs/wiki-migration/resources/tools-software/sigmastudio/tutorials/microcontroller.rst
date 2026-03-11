@@ -209,8 +209,6 @@ Example Code Change Log
 -  Added function ``SIGMA_READ_REGISTER_FLOAT``
 -  Added function ``SIGMA_READ_REGISTER_INTEGER``
 
-.. _section-1:
-
 1.0.0
 -----
 

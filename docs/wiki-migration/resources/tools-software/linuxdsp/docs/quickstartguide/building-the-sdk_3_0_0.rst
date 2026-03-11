@@ -45,8 +45,10 @@ Sourcing the script will configure your build environment and create a build fol
    Note that the build environment needs to be sourced once only before building.  If later working in a different terminal the setup-environment script should be sourced again.  If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
 
 
-| 
-| ==== Building the SDK ==== The SDK can be built for the adsp-sc5xx-minimal image or the adsp-sc5xx-full image. To build the SDK for the adsp-sc5xx-minimal image invoke bitbake from within the build directory created previously.
+Building the SDK
+----------------
+
+The SDK can be built for the adsp-sc5xx-minimal image or the adsp-sc5xx-full image. To build the SDK for the adsp-sc5xx-minimal image invoke bitbake from within the build directory created previously.
 
 ::
 
@@ -70,8 +72,10 @@ When the build has completed you will find a set of files in the <BUILD_DIR>/tmp
 
 The ``adi-distro-musl-x86_64-adsp-sc5xx-full-cortexa5t2hf-neon-adsp-sc594-som-ezkit-toolchain-4.0.1.sh`` is a self-extracting archive containing the SDK.
 
-| 
-| ==== Installing the SDK ==== Invoke the self-extracting archive. It will default to installing to ``/opt/adi-distro/4.0.1`` but gives you the option to select your own install folder during the installation. For the minimal image on SC594
+Installing the SDK
+------------------
+
+Invoke the self-extracting archive. It will default to installing to ``/opt/adi-distro/4.0.1`` but gives you the option to select your own install folder during the installation. For the minimal image on SC594
 
 ::
 

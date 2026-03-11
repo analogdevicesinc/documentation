@@ -7,17 +7,12 @@ The circuit supplies most of the typical power rails required for digital and an
 
 The circuit is flexible and can accept a wide input voltage range from 6 V to 14 V. This is possible because the highly efficient switching controllers and regulators used in the first stage of each power rail have correspondingly wide input ranges. The :adi:`ADM1178` block provides overvoltage and overcurrent detection and protection for the input supply, as well as hotswap control for the whole system. The :adi:`ADM1066` offers a single-chip solution for power supply monitoring and sequencing control for all of the 12 power rails and also margining control for the 3.3V(2A) rail.
 
-| 
-| |image1|
-
-| 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0190-hw-1024.jpg
 
 Equipment Needed (Equivalents Can be Substituted)
 =================================================
 
-| 
-| \* Tektronix TDS3034B 4-channel 300 MHz color digital phosphor oscilloscope
-
+-  Tektronix TDS3034B 4-channel 300 MHz color digital phosphor oscilloscope
 -  Tektronix P6139A, 500 MHz, 8 pF, 10 MΩ, 10× passive prob
 -  Agilent N3302A, 150 W, 0 A to 30 A, 0 V to 60 V electronic load module combined with N3300A
 -  Agilent E3631A, 0 V to 6 V, 5 A; 0 V to ±25 V, 1 A, triple output dc power supply
@@ -29,45 +24,37 @@ Equipment Needed (Equivalents Can be Substituted)
 Test Setup Functional Block Diagram
 -----------------------------------
 
-| 
-| ==== Power Rails Efficiency Measurements ====
+Power Rails Efficiency Measurements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|image1|
+
+.. note::
+
+   Efficiency = POUT/PIN = (VOUT × IOUT) ÷ (VIN × IIN) - POUT can be calculated by multiplying VOUT by IOUT - VIN and IIN can be read directly from the display window of the Agilent E3631A dc power supply - Electronic load should be set to constant current mode
+
+
+Ripple and Transient Response Measurements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 | |image2|
-|
 
 .. note::
 
-   Efficiency = POUT/PIN = (VOUT × IOUT) ÷ (VIN × IIN)
-
-   | - POUT can be calculated by multiplying VOUT by IOUT
-   | - VIN and IIN can be read directly from the display window of the Agilent E3631A dc power supply
-   | - Electronic load should be set to constant current mode
+   - Channel A of the oscilloscope monitors the output voltage of the module - Channel B monitors the voltage across the 0.1 Ω current sense resistor, which is proportional to the load current - Electronic load should be set to "switch" mode with preset amplitude and frequency
 
 
-| ==== Ripple and Transient Response Measurements ====
-| |image3|
-|
 
-.. note::
-
-   - Channel A of the oscilloscope monitors the output voltage of the module
-
-   | - Channel B monitors the voltage across the 0.1 Ω current sense resistor, which is proportional to the load current
-   | - Electronic load should be set to "switch" mode with preset amplitude and frequency
-   |
-
-
-| 
 
 Connectors and Jumper Configurations
 ------------------------------------
 
-| 
-| |image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/boardwithdes.png
 
 Input Power
 ~~~~~~~~~~~
 
-| Connector 1, and should be between +6V and +14V
+Connector 1, and should be between +6V and +14V
 
 Output Power Options
 ~~~~~~~~~~~~~~~~~~~~
@@ -105,12 +92,13 @@ Switch Matrix
 
 -  To select the VDD/VEE outputs on Connector 12 and Connector 13, you must setup the switch matrix. Use the following table to select those outputs:
 
-| |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sw1.png
+   :align: center
 
 I2C Programming Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| I2C serial interface is on Connector 15 (1- SCLK, 2 - SDA, 3 - GND)
+I2C serial interface is on Connector 15 (1- SCLK, 2 - SDA, 3 - GND)
 
 Software and Driver Installation
 --------------------------------
@@ -145,7 +133,7 @@ Driver Installation
 -  Install the USB-SDP-CABLEZ driver
 -  Open the file setup.exe located at the path \\ADMxxxx Run-Time Installer\\Installer\\Volume\\setup.exe
 
-|image6|
+|image3|
 
 .. tip::
 
@@ -157,12 +145,12 @@ Driver Installation
 
 
 
-|image7|
+|image4|
 
 -  Plug in the USB-SDP-CABLEZ into your PC or labtop using the USB cable.
 -  Windows will automatically find the new hardware(USB-SDP-CABLEZ) plugged the into the PC.\
 
-|image8|
+|image5|
 
 Sequencer Software Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -177,7 +165,7 @@ Sequencer Software Installation
 
 
 
-|image9|
+|image6|
 
 .. tip::
 
@@ -185,13 +173,13 @@ Sequencer Software Installation
 
 
 -  Follow the on-screen prompts to install the software.
-   |image10|\ |image11|\ |image12|\ |image13|
+   |image7|\ |image8|\ |image9|\ |image10|
 -  Install Graphviz.
 
-|image14|
+|image11|
 
 -  Upon completion, follow the on-screen promps to install the prog106x Setup Application Software
-   |image15|\ |image16|\ |image17|\ |image18|
+   |image12|\ |image13|\ |image14|\ |image15|
 
 .. note::
 
@@ -201,22 +189,22 @@ Sequencer Software Installation
 Using Super Sequencer Software
 ------------------------------
 
-| Super Sequencer Evaluation Software enables the user to create new control strategy and generates new intel hex file for ADM1066. For detailed information about Super Sequencer features, visit :adi:`Super Sequencer User Guide <media/en/technical-documentation/user-guides/UG-063.pdf>`
+Super Sequencer Evaluation Software enables the user to create new control strategy and generates new intel hex file for ADM1066. For detailed information about Super Sequencer features, visit :adi:`Super Sequencer User Guide <media/en/technical-documentation/user-guides/UG-063.pdf>`
 
 Generating new hex file using Super Sequencer Software
 
 -  Open SuperSequencerSoftwareEval.exe installed in PC
 
 
-|image19|
+|image16|
 
 -  Assuming all the new configurations and controls were already done on the software, on the main window go to File and click Save Settings to File
 
-|image20|
+|image17|
 
 -  Select Create Intel Hex File and click Save
 
-|image21|
+|image18|
 
 -  Once completed saving, you now have a new hex file to download to ADM1066
 
@@ -226,9 +214,9 @@ Downloading Firmware for ADM1066
 -  Copy the eeprom file i.e. ADM1066_SuperSequencing_REVB.hex in the root directory on Disk C: (i.e. C:\\ADM1066_SuperSequencing_REVB.hex)
 -  Plug USB to I2C converter dongle into the USB port on your PC. Plug the other side of the cable into the JP1 on the right side of the EVAL-CN0190-EB1Z.\
 
-|image22|
+|image19|
 
-|
+
 
 .. note::
 
@@ -243,7 +231,7 @@ Downloading Firmware for ADM1066
 -  Turn on the power to the supply of EVAL-CN0190-EB1Z
 -  Open the Command Prompt (C:\\Windows\\System32\\cmd.exe)\
 
-|image23|
+|image20|
 
 -  In the cmd.exe, key the command ``prog106x download 6A c:\ADM1066_SuperSequencing_REVB.hex`` and Press Enter
 
@@ -286,28 +274,25 @@ Registration
 
 // End of document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0190-hw-1024.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/block.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/block2.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/boardwithdes.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sw1.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usb1.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usb2.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/newdevice.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft1.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft2.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft3.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft4.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft5.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft6.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft7.png
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft8.png
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft9.png
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft10.png
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sequencer_icon.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/block.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/block2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usb1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usb2.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/newdevice.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft1.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft2.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft3.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft4.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft5.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft6.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft7.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft8.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft9.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft10.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sequencer_icon.png
    :width: 300px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/savesettings.png
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/hexfile.png
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usbtosdp.png
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cmd.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/savesettings.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/hexfile.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usbtosdp.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cmd.png
 .. |program.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/program.png

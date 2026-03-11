@@ -44,7 +44,7 @@ The script below can be used to update various parameters in the schematic shown
    // Update gain of 3rd filter in 'Param EQ1 to 0.75
    ss.ObjectSetProperties("setControlValue", "Param EQ1", 0, 0, "Gain12", 0.75);
 
-   // As controls in pramaEQ is inside an another form, the following APIs to be called to download the changed parameters to the target. 
+   // As controls in pramaEQ is inside an another form, the following APIs to be called to download the changed parameters to the target.
    object paramEQ1Object = ss.GetCellObject("Param EQ1");
    ss.ObjectGetMethod(paramEQ1Object, "PackDataAllControls").Invoke(paramEQ1Object, new object[]{});
 
@@ -100,20 +100,20 @@ The script below can be used to write and read the register without 'ICName' as 
                                        0x00,0x00,0x00,0x02, 0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x02,
                                        0x00,0x00,0x00,0x02, 0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x02,
                                        0x00,0x00,0x00,0x03};
-   byte[] readValues;    
+   byte[] readValues;
 
-   // ---------- ICRegisterWrite API ---------                               
+   // ---------- ICRegisterWrite API ---------
    ss.ICRegisterWrite( 40,_tableValues, 0, 112 ,0x001B, 2, 4, 0, 0);
 
    // ---------- ICRegisterRead API ----------
    ss.ICRegisterRead( 40, out readValues, 0, 112 ,0x001B, 2, 4, 0, 0);
 
-   // ---------- for loop for read values to print ---------- 
+   // ---------- for loop for read values to print ----------
    for(int i = 0; i < readValues.Length; i ++)
    {
    // Print the values byte by byte
-   ss.PrintLine(readValues[i].ToString()); 
-   }                                
+   ss.PrintLine(readValues[i].ToString());
+   }
 
 .. code:: csharp
 
@@ -123,20 +123,20 @@ The script below can be used to write and read the register without 'ICName' as 
                                        0x00,0x00,0x00,0x02, 0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x02,
                                        0x00,0x00,0x00,0x02, 0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x02,
                                        0x00,0x00,0x00,0x03};
-   byte[] readValues;    
+   byte[] readValues;
 
-   // ---------- ICRegisterWrite API ---------                               
+   // ---------- ICRegisterWrite API ---------
    ss.ICRegisterWrite( 40,_tableValues, 1, 0 ,0x0014, 2, 4, 0, 0);
 
    // ---------- ICRegisterRead API ----------
    ss.ICRegisterRead( 40, out readValues, 1, 0 ,0x0014, 2, 4, 0, 0);
 
-   // ---------- for loop for read values to print ---------- 
+   // ---------- for loop for read values to print ----------
    for(int i = 0; i < readValues.Length; i ++)
    {
    // Print the values byte by byte
-   ss.PrintLine(readValues[i].ToString()); 
-   }                                
+   ss.PrintLine(readValues[i].ToString());
+   }
 
 Test the NxM Mixer (Linear)
 ---------------------------
@@ -148,9 +148,9 @@ FOllowing script creates a schematic for ADAU1467 with NxM mixer and tests its f
    // #LANGUAGE# C#
    // Modify the below variables to create test NxM mixer for the particular input output configuration.
    int inputs = 8;
-   int outputs = 4; 
+   int outputs = 4;
 
-   //*********Local Vars*************//
+   //********Local Vars************//
    double GainInc = 0.001;
    double DCInc = 0.1;
    double[] InputDCValues = new double[inputs];
@@ -162,15 +162,15 @@ FOllowing script creates a schematic for ADAU1467 with NxM mixer and tests its f
    double[] ExpectedResults = new double[outputs];
    HResult rest;
    ss.EnableLoggingMode(true);
-   // Create Input Vectors. 
+   // Create Input Vectors.
    ss.ProjectNew();
    Object IcObject = ss.ObjectInsert("ADAU1467", 300, 100);
    Object USBiObject = ss.ObjectInsert("USBi", 50, 100);
    rest =ss.ObjectConnect("USB Interface", 0, "IC 1", 0);
-   int X = 300; 
-   int Y = 100; 
+   int X = 300;
+   int Y = 100;
 
-   // Add cell and algorithm 
+   // Add cell and algorithm
    object MixerCellObject = ss.ObjectInsert("NxM Mixer (Linear)", X, Y);
    rest = ss.ObjectSetProperties("addAlgorithm", MixerCellObject, "IC 1", "NxM Mixer Slew");
    ss.PrintLine("Mixer Module Added");
@@ -194,18 +194,18 @@ FOllowing script creates a schematic for ADAU1467 with NxM mixer and tests its f
    // Add DC for the inputs
    for (int i = 0; i < inputs; i++)
    {
-       object DCCellObject = ss.ObjectInsert("DC Input Entry", X - 100, Y + i * 100);  
+       object DCCellObject = ss.ObjectInsert("DC Input Entry", X - 100, Y + i * 100);
        rest =ss.ObjectConnect(DCCellObject, 0, MixerCellObject, i);
        //ss.PrintLine("DC Module " + i + " Added");
        DCModuleObjects[i] = DCCellObject;
-       InputDCValues[i] = (i + 1) * DCInc; 
+       InputDCValues[i] = (i + 1) * DCInc;
        rest = ss.ObjectSetProperties("setControlValue", DCCellObject, 0, 0 , "DC", InputDCValues[i]);
    }
 
    // Add Readback for the outputs
    for (int i = 0; i < outputs; i++)
    {
-       object RBCellObject = ss.ObjectInsert("DSP Readback", X + 100, Y + i * 100);    
+       object RBCellObject = ss.ObjectInsert("DSP Readback", X + 100, Y + i * 100);
        rest =ss.ObjectConnect(MixerCellObject, i, RBCellObject, 0);
        //ss.PrintLine("ReadBack Module " + i + " Added");
        RBModuleObjects[i] = RBCellObject;
@@ -215,7 +215,7 @@ FOllowing script creates a schematic for ADAU1467 with NxM mixer and tests its f
    ss.ProjectLinkCompileDownload();
    System.Threading.Thread.Sleep(3000);
 
-   ss.PrintLine("*****************************************");
+   ss.PrintLine("****************************************");
    bool isFailed = false;
    for (int outIndx = 0; outIndx < outputs; outIndx++)
    {
@@ -226,12 +226,12 @@ FOllowing script creates a schematic for ADAU1467 with NxM mixer and tests its f
        int RBModuleAddresse = addresses[0];
 
        // Calculate Expected result and compare with Actual Result.
-       ExpectedResults[outIndx] = 0; 
+       ExpectedResults[outIndx] = 0;
        for (int inIndx = 0; inIndx < inputs; inIndx++)
        {
            ExpectedResults[outIndx] += GainValues[inIndx, outIndx] * InputDCValues[inIndx];
        }
-       
+
        // Read Actual Result
        float valRead;
        ss.ICParameterRead("IC 1", RBModuleAddresse, 8, 24, out valRead);
@@ -243,7 +243,7 @@ FOllowing script creates a schematic for ADAU1467 with NxM mixer and tests its f
            isFailed = true;
        }
    }
-   ss.PrintLine("*****************************************");
+   ss.PrintLine("****************************************");
    if (isFailed)
    {
        ss.PrintLine("Test failed");

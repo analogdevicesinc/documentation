@@ -16,11 +16,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 100 Ω Resistor ( R\ :sub:`D` )
-| 1 - small signal NMOS transistor ( ZVN2110A or similar M\ :sub:`1` )
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 - 100 Ω Resistor ( R\ :sub:`D` ) 1 - small signal NMOS transistor ( ZVN2110A or similar M\ :sub:`1` )
 
 Directions:
 ~~~~~~~~~~~
@@ -46,25 +42,18 @@ Procedure:
 
 Using the measurement plots and data taken calculate the voltage gain, current gain, input resistance and output resistance for the common gate amplifier.
 
-| Voltage gain approximate expression:
-| A\ :sub:`V` = g\ :sub:`m`\ R\ :sub:`D`
+Voltage gain approximate expression: A\ :sub:`V` = g\ :sub:`m`\ R\ :sub:`D`
 
-| Current gain approximate expression:
-| A\ :sub:`I` = I\ :sub:`D`/I\ :sub:`S` = 1 ( assuming zero gate current )
+Current gain approximate expression: A\ :sub:`I` = I\ :sub:`D`/I\ :sub:`S` = 1 ( assuming zero gate current )
 
-| Input resistance approximate expression:
-| R\ :sub:`In` ˜ 1/g\ :sub:`m`
+Input resistance approximate expression: R\ :sub:`In` ˜ 1/g\ :sub:`m`
 
-| Output resistance approximate expression:
-| R\ :sub:`Out` = R\ :sub:`D`\ \||r\ :sub:`o` ˜ R\ :sub:`D` ( when R\ :sub:`D` << r\ :sub:`o` )
+Output resistance approximate expression: R\ :sub:`Out` = R\ :sub:`D`\ \||r\ :sub:`o` ˜ R\ :sub:`D` ( when R\ :sub:`D` << r\ :sub:`o` )
 
 Questions:
 ~~~~~~~~~~
 
-| What is the maximum peak to peak output voltage swing that can be produced with the common gate stage as shown in figure 1?
-| What limits the maximum and minimum voltage extremes and why?
-| What happens to the input impedance when the output reaches one or the other extreme?
-| What happens to the output impedance when the output reaches one or the other extreme?
+What is the maximum peak to peak output voltage swing that can be produced with the common gate stage as shown in figure 1? What limits the maximum and minimum voltage extremes and why? What happens to the input impedance when the output reaches one or the other extreme? What happens to the output impedance when the output reaches one or the other extreme?
 
 The Active Cascode
 ------------------
@@ -76,10 +65,7 @@ In the active cascode rather than simply connecting the gate of the transistor t
 Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
-| 1 - 1 KΩ Resistor ( R\ :sub:`1` )
-| 1 - small signal NMOS transistor ( ZVN2110A or similar M\ :sub:`2` )
-
-.. _directions-1:
+1 - 1 KΩ Resistor ( R\ :sub:`1` ) 1 - small signal NMOS transistor ( ZVN2110A or similar M\ :sub:`2` )
 
 Directions:
 ~~~~~~~~~~~
@@ -95,14 +81,10 @@ Modify the test circuit on your breadboard to look like figure 2.
    Figure 2 Active Cascode
 
 
-.. _hardware-setup-1:
-
 Hardware setup:
 ~~~~~~~~~~~~~~~
 
 You should be able to use the same settings you used for the simple common gate amplifier. You will want to use the CB-H scope channel to observe the waveform at the gate of M\ :sub:`1` as well as the drain voltage.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -110,8 +92,6 @@ Procedure:
 Compare the channel A voltage trace, CA-V, to what you observed for the simple common gate amplifier. Use the change in M\ :sub:`1`'s source voltage vs. the source current to calculate the voltage gain and input resistance as you did for the simple common gate amplifier.
 
 With scope channel B, CB-H, connected to the gate of M\ :sub:`1`, compare the waveform observed to the source voltage waveform you observed for the simple common gate amplifier.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -122,7 +102,6 @@ Increase the negative swing of channel A's current until the channel A voltage w
 
 **For Further Reading:**
 
-| http://en.wikipedia.org/wiki/Common_gate
-| http://en.wikipedia.org/wiki/Cascode
+http://en.wikipedia.org/wiki/Common_gate http://en.wikipedia.org/wiki/Cascode
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

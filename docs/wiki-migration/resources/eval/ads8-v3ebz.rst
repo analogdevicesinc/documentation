@@ -34,14 +34,16 @@ ADS8-V3EBZ Features
    *Figure 2. ADS8-V3EBZ High Speed Carrier Card (Bottom)*
 
 
-| 
-| ====== Using the ADS8-V3EBZ to evaluate High Speed Converters ======
+Using the ADS8-V3EBZ to evaluate High Speed Converters
+======================================================
 
 Overview
 --------
 
-| When connected to a specified Analog Devices high speed converter evaluation board, the ADS8-V3EBZ works as a data generation and acquisition board. Designed to support the highest speed JESD204B converters, the FPGA on the ADS8-V3EBZ acts as the data and control interface. A typical test setup is shown below.
-| |image3|
+When connected to a specified Analog Devices high speed converter evaluation board, the ADS8-V3EBZ works as a data generation and acquisition board. Designed to support the highest speed JESD204B converters, the FPGA on the ADS8-V3EBZ acts as the data and control interface. A typical test setup is shown below.
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -70,12 +72,12 @@ Design and Integration Files
 -  BRD Archive: `08_064925a.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/08_064925a.zip>`_
 -  Schematic Archive: `02-064925-01-a.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/02-064925-01-a.zip>`_
 
-| Data sheets and user guides provide additional product specific information and should be consulted when using high speed converter evaluation boards. All documents and software tools are available at :adi:`High Speed Converter Eval Boards <hsadcevalboard>`. For additional information or questions, visit our High-Speed ADC and DAC Ezone Support Portal at :ez:`Data Converters EngineerZone <data_converters>` or call 1-800-ANALOGD.
+Data sheets and user guides provide additional product specific information and should be consulted when using high speed converter evaluation boards. All documents and software tools are available at :adi:`High Speed Converter Eval Boards <hsadcevalboard>`. For additional information or questions, visit our High-Speed ADC and DAC Ezone Support Portal at :ez:`Data Converters EngineerZone <data_converters>` or call 1-800-ANALOGD.
 
 ADS8-V3EBZ Supported Evaluation Boards
 --------------------------------------
 
-| Refer to the Analog Devices High Speed Converter evaluation board product page at :adi:`High Speed Converter Eval Boards <hsadcevalboard>` for a table of ADS8-V3EBZ compatible evaluation boards.
+Refer to the Analog Devices High Speed Converter evaluation board product page at :adi:`High Speed Converter Eval Boards <hsadcevalboard>` for a table of ADS8-V3EBZ compatible evaluation boards.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/ads8-v3ebztop-web.gif
    :width: 600px

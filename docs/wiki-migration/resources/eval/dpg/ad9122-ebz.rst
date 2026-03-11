@@ -81,17 +81,15 @@ Jumpers for Selecting the DAC Output
 
 Jumpers JP4, JP5, JP6, and JP17 select the output configuration. By default, the DAC output connected to the LPF and the ADL537x analog quadrature modulator. For selecting DAC output configuration, refer to Table 1 and Figure 2.
 
-<WRAP >\ *Table 1. Jumper Configurations for Viewing DAC Output and Modulator Output*\ </WRAP>
+\ *Table 1. Jumper Configurations for Viewing DAC Output and Modulator Output*\ 
 
-+----------------------------+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Output Viewed              | SMA Output                 | Jumper Configuration                                                                                                                                                              |
-+============================+============================+===================================================================================================================================================================================+
-| DAC Output                 | J3 (DAC1_P) or J8 (DAC2_P) | <WRAP>JP4 and JP5 Pin 2 to Pin 3 (outer pads), JP6 and JP17 Pin 2 to Pin 3 (outer pads)</WRAP>
-
-JP20 and JP19 Pin 2 to Pin 3 (inner pads), JP18 and JP7 Pin 2 to Pin 3 (inner pads) |
-+----------------------------+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Modulator Output (Default) | J6 (MOD_OUT)               | JP4 and JP5 Pin 1 to Pin 2 (inner pads), JP6 and JP17 Pin 1 to Pin 2 (inner pads)                                                                                                 |
-+----------------------------+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Output Viewed              | SMA Output                 | Jumper Configuration                                                                                                                                                 |
++============================+============================+======================================================================================================================================================================+
+| DAC Output                 | J3 (DAC1_P) or J8 (DAC2_P) | JP4 and JP5 Pin 2 to Pin 3 (outer pads), JP6 and JP17 Pin 2 to Pin 3 (outer pads)JP20 and JP19 Pin 2 to Pin 3 (inner pads), JP18 and JP7 Pin 2 to Pin 3 (inner pads) |
++----------------------------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Modulator Output (Default) | J6 (MOD_OUT)               | JP4 and JP5 Pin 1 to Pin 2 (inner pads), JP6 and JP17 Pin 1 to Pin 2 (inner pads)                                                                                    |
++----------------------------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ================================ ==============================
 |ad9122_dac_output_config_2.png| |image3|
@@ -138,10 +136,7 @@ To implement external supply configuration, remove the header shunt of six pin j
 
 .. container:: centeralign
 
-   \ *Figure 4. AD9122-M5375-EBZ Pin Jumpers*\
-
-
-<WRAP >\ *Table 2. Jumper Configurations for External Power Supply*\ </WRAP>
+   \ *Figure 4. AD9122-M5375-EBZ Pin Jumpers**Table 2. Jumper Configurations for External Power Supply*\ 
 
 =========== ==================== =====================
 Supply Rail Remove Jx Pin Jumper Apply External Supply
@@ -159,7 +154,7 @@ Jumper for Selecting Clock Configuration
 
 The AD9121-M5372-EBZ/AD9121-M5375-EBZ/AD9122-M5372-EBZ/AD9122-M5375-EBZ/AD9125-M5375-EBZ evaluates both the DAC outputs as well as the AQM outputs. Refer to Table 3 for clock configuration.
 
-<WRAP >\ *Table 3. Clock Configuration*\ </WRAP>
+\ *Table 3. Clock Configuration*\ 
 
 ========================== =========== ======================
 Output Viewed              Clock Input Local Oscillator Input

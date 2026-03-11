@@ -3,8 +3,7 @@
 DSP Readback
 ============
 
-| 
-| |dspreadadau.png| |readcomplex.png|
+|dspreadadau.png| |readcomplex.png|
 
 Description
 -----------
@@ -13,14 +12,15 @@ The DSP Readback block lets you read values back from the DSP at any point in yo
 
 Values can be read back in either hex or decimal. For the latter, you must specify what format you want the number to be displayed in. Any changes to this format will shift the decimal value of the number displayed.
 
-| 
-| The DSP Readback(Complex) block lets you read complex values back from the DSP at any point in your schematic design.
+The DSP Readback(Complex) block lets you read complex values back from the DSP at any point in your schematic design.
 
 Usage
 -----
 
-| The DSP Readback cell can be configured to read back from the target DSP repeatedly at regular intervals. To enable this mode, right-click the cell and select ReadValue.
-| ===== Variants =====
+The DSP Readback cell can be configured to read back from the target DSP repeatedly at regular intervals. To enable this mode, right-click the cell and select ReadValue.
+
+Variants
+--------
 
 -  DSP ReadBack
 -  Generic DSP ReadBack
@@ -60,7 +60,7 @@ Name    Type                                    Description
 Output0 Audio(Complex Pin for Complex ReadBack) Output channel 0
 ======= ======================================= ================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +-----------------+---------------+------------------+-------------------------------------------------------------------------------------+

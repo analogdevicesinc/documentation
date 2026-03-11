@@ -8,9 +8,14 @@ Register Read or Write
 Description
 -----------
 
-| The Register Read module reads any user accessible register from the DSP and gives out in the output Pin.
-| The Register Write module writes the value in the input pin to the DSP register address configured.
-| ===== Configuration ===== This module supports growth. Address control will be repeated for each channels when grown. And address can be specified either in hexadecimal or decimal.
+The Register Read module reads any user accessible register from the DSP and gives out in the output Pin.
+
+The Register Write module writes the value in the input pin to the DSP register address configured.
+
+Configuration
+-------------
+
+This module supports growth. Address control will be repeated for each channels when grown. And address can be specified either in hexadecimal or decimal.
 
 Variants
 --------
@@ -18,8 +23,8 @@ Variants
 -  Register Read
 -  Register Write
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +----------------+------------+------------------+---------------+------------------+
 | Name           | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -35,42 +40,42 @@ Variants
 Input
 ~~~~~
 
-======================= ======= ========================================
-Name                    Type    Description
-======================= ======= ========================================
-Input<fc #ff0000>X</fc> Control Input Channel X (Only for RegisterWrite)
-======================= ======= ========================================
+====== ======= ========================================
+Name   Type    Description
+====== ======= ========================================
+InputX Control Input Channel X (Only for RegisterWrite)
+====== ======= ========================================
 
 Output
 ~~~~~~
 
-+--------------------------+---------+------------------------------------------+
-| Name                     | Type    | Description                              |
-+==========================+=========+==========================================+
-| Output<fc #ff0000>X</fc> | Control | Output Channel X (Only for RegisterRead) |
-+--------------------------+---------+------------------------------------------+
+======= ======= ========================================
+Name    Type    Description
+======= ======= ========================================
+OutputX Control Output Channel X (Only for RegisterRead)
+======= ======= ========================================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
-+---------------------------------+---------------+-----------------+-----------------------------------------------------------+
-| GUI Parameter                   | Default Value | Range           | Function Description                                      |
-+=================================+===============+=================+===========================================================+
-| Address <fc #ff0000>X</fc>      | 0xF000        | 0xF000 - 0xF890 | Register Address to be read/write                         |
-+---------------------------------+---------------+-----------------+-----------------------------------------------------------+
-| Address Type <fc #ff0000>X</fc> | Hex           | Hex / Dec       | Address can be specified either in hexadecimal or decimal |
-+---------------------------------+---------------+-----------------+-----------------------------------------------------------+
++----------------+---------------+-----------------+-----------------------------------------------------------+
+| GUI Parameter  | Default Value | Range           | Function Description                                      |
++================+===============+=================+===========================================================+
+| Address X      | 0xF000        | 0xF000 - 0xF890 | Register Address to be read/write                         |
++----------------+---------------+-----------------+-----------------------------------------------------------+
+| Address Type X | Hex           | Hex / Dec       | Address can be specified either in hexadecimal or decimal |
++----------------+---------------+-----------------+-----------------------------------------------------------+
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== DSP Parameters =====
+DSP Parameters
+--------------
 
 ============== ================ ====================== =============
 Parameter Name Description      ADSP-214xx/SC5xx/215xx ADAU145x/146x

@@ -31,7 +31,7 @@ Each folder in this repository corresponds to a supported component.
 Install MOTIF
 =============
 
-In order to run any of the models, it is first necessary to install MOTIF within MATLAB. To install MOTIF, under the root \\MOTIF directory, run the file ``InstallMe.m`` This sets up the proper paths.
+In order to run any of the models, it is first necessary to install MOTIF within MATLAB. To install MOTIF, under the root \\MOTIF directory, run the file <file>InstallMe.m</code> This sets up the proper paths.
 
 Setup Compiler
 ==============
@@ -46,7 +46,7 @@ AD9625 Example
 
 AD9625 is a 12-Bit, 2.5 GSPS/2.0 GSPS, 1.3 V/2.5 V Analog-to-Digital Converter. Its data sheet can be found :adi:`here <AD9625>`.
 
-To use the AD9625 model, go to \\AD9625\\MOTIF directory, and double click on ``Main.m`` to open the main function.
+To use the AD9625 model, go to \\AD9625\\MOTIF directory, and double click on <file>Main.m</code> to open the main function.
 
 There are several performance characteristics of AD9625 we can get from this model by setting up the simulation parameters. For example, we can change the setting of input tone frequency and get an FFT plot. The figure below shows the FFT with Fin = 730.3 MHz.
 
@@ -54,7 +54,7 @@ There are several performance characteristics of AD9625 we can get from this mod
 
 Given a fixed input tone frequency Fin = 241 MHz, we can sweep the analog input amplitude from -90 dB to 0 dB, and get SFDR.
 
-Generated from file: :git-MOTIF_MathWorks:`AD9625/MOTIF/PlotSFDR.m`.
+Generated from file: :git-MOTIF_MathWorks:`AD9625/MOTIF/PlotSFDR.m`. \|
 
 |image3| |image4|
 

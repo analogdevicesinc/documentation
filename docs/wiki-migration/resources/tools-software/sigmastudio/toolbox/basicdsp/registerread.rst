@@ -1,12 +1,18 @@
 Register Read
 =============
 
-| :doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| \|\| This module reads any user accessible register from the DSP and gives out in the output Pin.
+:doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-| 
-| |image1|
-| ===== Input Pins ===== None
+
+This module reads any user accessible register from the DSP and gives out in the output Pin.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/regread.png
+   :align: center
+
+Input Pins
+----------
+
+None
 
 Output Pins
 -----------
@@ -22,9 +28,13 @@ Output Pins
 Grow Algorithm
 --------------
 
-| The module currently supports growth. Both the control and pins are grown for each growth. Add algorithm functionality is not supported. The figure below shows the module when grown for 5.
-| |image2|
-| ===== Configurations =====
+The module currently supports growth. Both the control and pins are grown for each growth. Add algorithm functionality is not supported. The figure below shows the module when grown for 5.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/readread2.png
+   :align: center
+
+Configurations
+--------------
 
 +------------------+---------------+-----------------+------------------------------+
 | GUI Control Name | Default Value | Range           | Function Description         |
@@ -37,24 +47,21 @@ Grow Algorithm
 DSP Parameter Information
 -------------------------
 
-+------------------+----------------------------------------------------------------------------------------------+----------------------+
-| GUI Control Name | Compiler Name                                                                                | Function Description |
-+==================+==============================================================================================+======================+
-| Mute             | <fc #008000>RegisterReadAlg</fc><fc #ff0000>1</fc><fc #000080>address</fc><fc #800000>0</fc> | Register Address     |
-+------------------+----------------------------------------------------------------------------------------------+----------------------+
+================ ======================== ====================
+GUI Control Name Compiler Name            Function Description
+================ ======================== ====================
+Mute             RegisterReadAlg1address0 Register Address
+================ ======================== ====================
 
-| 
+
 | Here,
 
--  <fc #008000> Green</fc> - Algorithm Name
--  <fc #ff0000> Red</fc> - Instance Number (Changes for each instance)
--  <fc #000080> Blue</fc> - Parameter Name
--  <fc #800000> Brown</fc> - Growth Number (Changes for each register address when grown)
+-   Green - Algorithm Name
+-   Red - Instance Number (Changes for each instance)
+-   Blue - Parameter Name
+-   Brown - Growth Number (Changes for each register address when grown)
 
 Supported ICs
 -------------
 
 -  ADAU145x
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/regread.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/readread2.png

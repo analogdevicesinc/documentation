@@ -190,8 +190,6 @@ Gate Pulsed Mode Operation
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/gate_pulsed_mode_block_diagam.jpg
    :align: center
 
-.. _setup-1:
-
 Setup
 ~~~~~
 
@@ -214,8 +212,6 @@ Setup
 -  Switch the operating mode to Zero Span. Set the Resolution Bandwidth (RBW) and Video Bandwidth (VB) to the highest available values (ideally 10 MHz or greater). Set the sweep trigger to "External" and connect the pulse generator's sync or trigger output to the external trigger input of the spectrum analyzer. This signal will trigger input will be used to start the spectrum analyzer's zero span sweep
 -  If the PA evaluation board is not connected to a heat sink, operation at a very low duty cycle is recommended. A starting pulse profile of 10 us high and 10 ms low is recommended (i.e. 0.1% duty cycle). For PAs operating up to 47 dBm output power, this duty cycle has been observed to result in negligible self-heating.
 
-.. _turn-on-1:
-
 Turn On
 ~~~~~~~
 
@@ -224,8 +220,6 @@ Turn On
 -  Turn on Drain Pulse Enable (3V dc)
 -  Turn on the RF Signal Generator
 -  Turn on the output of the pulse generator driving Gate Pulse Enable
-
-.. _turn-off-1:
 
 Turn Off
 ~~~~~~~~
@@ -249,6 +243,6 @@ Resources
 Support
 -------
 
-| For support on this reference design, please contact us through our technical support portal at the follow link: :adi:`technical-support.html <en/support/technical-support.html>`. Alternatively, you can log on to the RF & Microwave Community on Engineerzone (` <https://ez.analog.com/rf/>`__) and post a question that contains the Keywords "PulserPlus" or "Pulser Plus" and we will get back to you.
+For support on this reference design, please contact us through our technical support portal at the follow link: :adi:`technical-support.html <en/support/technical-support.html>`. Alternatively, you can log on to the RF & Microwave Community on Engineerzone (` <https://ez.analog.com/rf/>`__) and post a question that contains the Keywords "PulserPlus" or "Pulser Plus" and we will get back to you.
 
 .. |image1| image:: https://wiki.analog.com/_media/drain_pulsed_mode_block_diagam.jpg

@@ -59,11 +59,7 @@ To show how a circuit responds to a range of frequencies a plot of the magnitude
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 1.0 KΩ resistor
-| 1 0.047 µF capacitor
-| 1 10 mH inductor
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 1.0 KΩ resistor 1 0.047 µF capacitor 1 10 mH inductor
 
 Hardware setup
 --------------
@@ -100,14 +96,19 @@ The band pass filter frequency response can be plotted using the Network Analyze
 
 In the Signal Generator tool, on Channel 1, generate a waveform with the frequency value in the pass band of the filter and analyze it's response. Observe on the oscilloscope channel 1 the input signal and the output signal on channel 2. In Figure 6 you can see the filter input and output for a 7kHz sine waveform.
 
-| |image5|
+
+
+|image5|
 
 .. container:: centeralign
 
    Figure 6: Input and output signals of Band pass filter circuit for 7kHz input frequency
 
 
-| =====Questions===== Compute the cut-off frequencies for each Band Pass filter constructed using the formula in equations (1) and (2). Compare these theoretical values to the ones obtained from the experiment and provide suitable explanation for any differences.
+Questions
+---------
+
+Compute the cut-off frequencies for each Band Pass filter constructed using the formula in equations (1) and (2). Compare these theoretical values to the ones obtained from the experiment and provide suitable explanation for any differences.
 
 .. admonition:: Download
    :class: download

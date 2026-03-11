@@ -7,7 +7,7 @@
 ezLINX™ iCoupler® Isolated Interface Development Environment
 ============================================================
 
-The *ez*\ LINX *i*\ Coupler Isolated Interface Development environment provides developers with a cost-effective, plug and play solution for evaluating eight physical Layer, digitally-isolated communication standards(USB, RS-422, RS-485, RS-232, CAN, SPI, I2C and LVDS). The Blackfin ADSP-BF548 processor is used to run the uCLinux operating system and allows for easy customization through the open source hardware and software platform. Development time is significantly reduced for embedded designers and system architects who are designing and evaluating isolated communication standards.The Interfaces on *ez*\ LINX use ADI's isolated transceivers with integrated *i*\ Coupler and *iso*\ Power® digital isolator technology.
+The *ez*LINX*i*Coupler Isolated Interface Development environment provides developers with a cost-effective, plug and play solution for evaluating eight physical Layer, digitally-isolated communication standards(USB, RS-422, RS-485, RS-232, CAN, SPI, I2C and LVDS). The Blackfin ADSP-BF548 processor is used to run the uCLinux operating system and allows for easy customization through the open source hardware and software platform. Development time is significantly reduced for embedded designers and system architects who are designing and evaluating isolated communication standards.The Interfaces on*ez*LINX use ADI's isolated transceivers with integrated*i*Coupler and*iso*\ Power® digital isolator technology.
 
 Quick Start Installation Setup Guide
 ------------------------------------
@@ -17,26 +17,21 @@ The following guides give a complete step-by-step guide for the initial setup of
 Evaluation Kit Contents
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| EZLINX-IIIDE-EBZ Evaluation board
-| USB A to mini USB B Cable
-| Power supply
-| ezLINX Software DVD
+| EZLINX-IIIDE-EBZ Evaluation board USB A to mini USB B Cable Power supply ezLINX Software DVD
 
 Installation Instructions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Select the operating system you are using from the list:
 
-| :doc:`Windows XP Quick Start installation </wiki-migration/resources/eval/ezlinx/windows_xp_installation_and_setup_guide>`
-| :doc:`Windows Vista 32-bit/64-bit Quick Start Installation </wiki-migration/resources/eval/ezlinx/windows_vista_installation_and_setup_guide>`
-| :doc:`Windows 7 32-bit/64-bit Quick Start Installation </wiki-migration/resources/eval/ezlinx/windows_7_installation_and_setup_guide>`
+:doc:`Windows XP Quick Start installation </wiki-migration/resources/eval/ezlinx/windows_xp_installation_and_setup_guide>` :doc:`Windows Vista 32-bit/64-bit Quick Start Installation </wiki-migration/resources/eval/ezlinx/windows_vista_installation_and_setup_guide>` :doc:`Windows 7 32-bit/64-bit Quick Start Installation </wiki-migration/resources/eval/ezlinx/windows_7_installation_and_setup_guide>`
 
 Hardware
 --------
 
 .. container:: col1 left 600px
 
-   The Hardware of the *ez*\ LINX *i*\ Coupler isolated interface development environment contains the ADSP-BF548 blackfin processor with 64MB of RAM and 32MB of Flash memory. The Isolated Physical layer communication standards are implemented using ADI's isolated transceivers with integrated *i*\ Coupler and *iso*\ Power technology. Routing between the various communication standards is implemented at the hardware level. Included are the following:
+   The Hardware of the *ez*LINX*i*Coupler isolated interface development environment contains the ADSP-BF548 blackfin processor with 64MB of RAM and 32MB of Flash memory. The Isolated Physical layer communication standards are implemented using ADI's isolated transceivers with integrated*i*Coupler and*iso*\ Power technology. Routing between the various communication standards is implemented at the hardware level. Included are the following:
 
    
    ::

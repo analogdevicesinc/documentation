@@ -61,9 +61,9 @@ After the installation is finished, the EVAL-AD5676RARDZ plug-in appears when th
 Initial Setup
 ~~~~~~~~~~~~~
 
-| To set up the evaluation board, take the following steps:
-| \* Connect the evaluation board to the SDP-K1 board, and then connect the USB cable between the SDP-K1 board and the PC.
+To set up the evaluation board, take the following steps:
 
+-  Connect the evaluation board to the SDP-K1 board, and then connect the USB cable between the SDP-K1 board and the PC.
 -  Run the ACE application. The EVAL-AD5676RARDZ plug-ins appear in the attached hardware section of the Start tab.
 -  Double-click the board plug-in to open the board view.
 -  Double-click the AD5676R chip to access the chip block diagram. This view provides a basic representation of the functionality of the board.
@@ -99,7 +99,7 @@ Some of the blocks and their functions are described in this section as they per
    :alt: Plugin - Block Diagram with Labels
    :width: 600px
 
-| **Block Diagram Functions**
+**Block Diagram Functions**
 
 +-------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Label | Button/Function              | Function/Description                                                                                                                                                                                                                                                                               |
@@ -219,9 +219,7 @@ On-Board Connectors
 +-----+-----------------+---------------------------------------------------------------+
 
 | |image1|
-
-Schematic, Layout, Bill of Materials & Board Photos
----------------------------------------------------
+| ===== Schematic, Layout, Bill of Materials & Board Photos =====
 
 .. admonition:: Download
    :class: download

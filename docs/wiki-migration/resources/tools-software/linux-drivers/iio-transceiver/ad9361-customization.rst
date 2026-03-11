@@ -9,8 +9,7 @@ AD9361 Device Driver Customization
    If unsure please see the manual or don't change!
 
 
-| The Linux platform allows you to examine and determine optimal settings for your target application:
-| See here: :doc:`AD936X Advanced Plugin </wiki-migration/resources/tools-software/linux-software/fmcomms2_advanced_plugin>`
+The Linux platform allows you to examine and determine optimal settings for your target application: See here: :doc:`AD936X Advanced Plugin </wiki-migration/resources/tools-software/linux-software/fmcomms2_advanced_plugin>`
 
 --------------
 
@@ -417,16 +416,12 @@ Linux/No-OS device driver comparison
 | adi,digital-interface-tune-skip-mode                                        | digital_interface_tune_skip_mode                   | Allows skipping the digital interface tune 0=don't skip, 1=skip TX tuning, 2=skip RX and TX and use rx-data-clock-delay, adi,rx-data-delay, adi,tx-fb-clock-delay, adi,tx-data-delay instead                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +-----------------------------------------------------------------------------+----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|
-
 .. hint::
 
    All options below directly correspond to bits in:
 
    
-   | PARALLEL PORT CONFIGURATION REGISTERS (ADDRESS 0x010 THROUGH ADDRESS 0x012)
-   | TX, RX INTERFACE CLOCK CONFIGURATION REGISTERS (ADDRESS 0x006 THROUGH ADDRESS 0x07)
-   | DIGITAL IO CONTROL REGISTERS (ADDRESS 0x03B THROUGH ADDRESS 0x03E)
+   PARALLEL PORT CONFIGURATION REGISTERS (ADDRESS 0x010 THROUGH ADDRESS 0x012) TX, RX INTERFACE CLOCK CONFIGURATION REGISTERS (ADDRESS 0x006 THROUGH ADDRESS 0x07) DIGITAL IO CONTROL REGISTERS (ADDRESS 0x03B THROUGH ADDRESS 0x03E)
    
    please see the manual for further assistance.
 
@@ -487,7 +482,6 @@ Linux/No-OS device driver comparison
 | adi,lvds-invert2-control              | lvds_invert2_control              |                                                                                                                                                                                                                                                                                                                                                                         |
 +---------------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
---------------
 
 RF Port Select
 --------------

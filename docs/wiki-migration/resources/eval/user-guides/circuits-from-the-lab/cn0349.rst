@@ -82,11 +82,11 @@ Installing the Software
 
 |image2|
 
--  Click **Next** to start the installation
+   \* Click **Next** to start the installation
 
-|image3|
+   |image3|
 
--  Upon completion of the installation of the **CN0349 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+   \* Upon completion of the installation of the **CN0349 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
 .. tip::
 
@@ -99,7 +99,7 @@ Installing the Software
 
 |image4|
 
--  Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
 .. tip::
 
@@ -114,7 +114,6 @@ Installing the Software
 
    |image6|
 
-   ----
 
 Connecting the Hardware
 -----------------------
@@ -142,9 +141,9 @@ Connecting the Hardware
 
    |image10|
 
--  Connect the :adi:`EVAL-CN0349-PMDZ` **(CN0349 Board)** to the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** via the 8 pin header Digilent Pmod I2C interface connector.
+   \* Connect the :adi:`EVAL-CN0349-PMDZ` **(CN0349 Board)** to the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** via the 8 pin header Digilent Pmod I2C interface connector.
 
-|image11|
+   |image11|
 
    \* Connect the Resistance Decade Box/Conductivity Cell to pin4 and pin5 of J1 Terminal Block located on :adi:`EVAL-CN0349-PMDZ` **(CN0349 Board)**. If a Conductivity Cell with integrated Pt100 sensor is used, the sensor should be wired to **pin 3** and **pin 2** of **J1** Terminal Block. **Pin 1** can be used to wire the ground shield of the Conductivity Cell.
 -  After a proper connection of the hardware to the PC the **CN0349 Evaluation Software** can be used to calibrate the board and capture data.
@@ -157,15 +156,22 @@ Using the Evaluation Software
 Software Control and Indicator Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| |image12|
-| |image13|
-| |image14|
-| |image15|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_1.png
+   :align: center
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_2.png
+   :align: center
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_3.png
+   :align: center
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_4.png
+   :align: center
 
 ::
 
    -**Measure Button**
-   * When this button is pressed, the SDP-B Board will perform a measurement procedure and present the data in the measurement data indicators (3,4,5,6).   
+   * When this button is pressed, the SDP-B Board will perform a measurement procedure and present the data in the measurement data indicators (3,4,5,6).
    -**Control Tabs**
    * __Main__ - Clicking this tab brings the data collection graph to the front.
    * __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
@@ -176,30 +182,30 @@ Software Control and Indicator Descriptions
    -**Conductivity Indicator**
    * This indicator displays the measured input conductivity in mS/cm. The measurement result is dependent on the applied probe corrections (7)  and (9).
    -**Conductivity Temperature Compensated Indicator**
-   * This indicator displays the temperature compensated input conductivity in mS/cm according to the chosen Temperature coefficient (8) 
+   * This indicator displays the temperature compensated input conductivity in mS/cm according to the chosen Temperature coefficient (8)
    -**Temperature of the Solution Indicator**
    * This indicator displays the measured temperature in °C, using external Pt100 RTD sensor
    -**Cell Constant Control (Probe Corrections)**
-   * This control is used to apply the constant of the cell used for the measurement. The value of this control affects the measurement result presented in the Conductivity Indicator (4). 
-   -**Temperature Coefficient Control (Probe Corrections) **
-   * This control is used to apply the temperature coefficient of the measured solution. 
-   -**Offset Control (Probe Corrections) **
+   * This control is used to apply the constant of the cell used for the measurement. The value of this control affects the measurement result presented in the Conductivity Indicator (4).
+   -**Temperature Coefficient Control (Probe Corrections)**
+   * This control is used to apply the temperature coefficient of the measured solution.
+   -**Offset Control (Probe Corrections)**
    * This control is used to apply offset correction to the measured Conductivity (4). If offset correction is not needed, leave this control at 0mS/cm.
-   -**Measurement Range Radio Buttons **
-   * This control determines the input measurement range. The two measurement ranges are. 
-   -**Measurement Range Indicator **
+   -**Measurement Range Radio Buttons**
+   * This control determines the input measurement range. The two measurement ranges are.
+   -**Measurement Range Indicator**
    * This indicator shows the limits of the chosen input measurement range.
    -**System Status String Indicator**
-   * This indicator displays a message to the user detailing the current state of the software. 
+   * This indicator displays a message to the user detailing the current state of the software.
    -**System Status LED Indicator**
-   * This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12inactive.png?nolink|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12busy.png?nolink|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12error.png?nolink|}}Error\\  {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12waiting.png?nolink|}}Waiting for user action\\
+   * This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12inactive.png?nolink|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12busy.png?nolink|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12error.png?nolink|}}Error\\  {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12waiting.png?nolink|}}Waiting for user action
    -**Calibrate Button**
    * Pressing this button initiates a calibration of the board.
    -**Calibration Resistances Controls**
      * This control is used to apply the values for the three on board calibration resistances **R3, R4, R7**. The values for this controls has to be changed only if different calibration resistances are populated on the board.
-   * **ADG715 register value**
+   **ADG715 register value**
      * This read only panel showing the ADG715 register value.
-   * **AD5934 register address and value**
+   **AD5934 register address and value**
      * This read only panel showing the AD5934 register address and value.
    -**SDP Firmware Revision**
    * Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
@@ -225,9 +231,9 @@ Establishing a USB Connection Link
    
 
 
-|image16|
+|image12|
 
--  Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
+   \* Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
 
 Calibrating the CN0349 Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -241,16 +247,16 @@ Calibration Procedure Steps
 -  A pop-up window will appear indicating that the board is being calibrated. Wait for the calibration to finish.
 -  When the calibration is finished a second pop-up window will appear to indicate the end of the measurement. Click the OK button.
 
-| 
-| |image17|
-| |image18|
+
+| |image13|
+| |image14|
 
 Measuring Data
 ~~~~~~~~~~~~~~
 
 -  Establish a USB Connection Link.
--  Choose the appropriate \**Probe Corrections \*\*.
--  Choose the \**Measurement Range \*\*.
+-  Choose the appropriate \**Probe Corrections**.
+-  Choose the \**Measurement Range**.
 -  Click the **Measure** button .
 -  A pop-up window appear to indicate that the board is performing a measurement procedure.
 -  When the measurement is finished a second pop-up window will appear to indicate the end of the measurement. Click the \*\* OK*\* button to close the pop-up window.
@@ -407,10 +413,6 @@ Registration
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_connecthw_3a.png
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_connecthw_4.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_1.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_2.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_3.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_4.png
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_establishing_connection_3a.png
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/CN0349_Cal_Procedure_steps 5.png
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/CN0349_Cal_Procedure_steps 5a.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_establishing_connection_3a.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/CN0349_Cal_Procedure_steps 5.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/CN0349_Cal_Procedure_steps 5a.png

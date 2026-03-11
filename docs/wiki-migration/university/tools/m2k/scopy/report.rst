@@ -66,8 +66,8 @@ In order to generate a logging file that provides the most information, after en
 Older Versions of Scopy (v 1.2.0 and older) do not capture:
 
 -  **Operating System:** Scopy runs on Windows, Linux and MacOS. This is important for us as the dependencies we use for Scopy might have different implementations on different operating systems and we could track the bug to one of them if we knew the system.
--  \**Scopy Version: \*\* Scopy is continuously being improved from one version to another, with bug fixes and with new features. Sometimes this new features also bring hidden bugs, but sometimes they also fix older bugs. So making sure that we now exactly the version of Scopy that crashed greatly improves our debugging.
--  \**Firmware Version: \*\* The firmware version is also important, as the bug might be tracked down into the firmware that is currently installed on the device itself.
+-  **Scopy Version:** Scopy is continuously being improved from one version to another, with bug fixes and with new features. Sometimes this new features also bring hidden bugs, but sometimes they also fix older bugs. So making sure that we now exactly the version of Scopy that crashed greatly improves our debugging.
+-  **Firmware Version:** The firmware version is also important, as the bug might be tracked down into the firmware that is currently installed on the device itself.
 
 Steps to reproduce the Bug
 --------------------------

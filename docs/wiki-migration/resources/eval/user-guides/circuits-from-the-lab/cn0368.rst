@@ -23,8 +23,8 @@ General Setup
    *One USB Type-A plug to USB Mini-B plug cable.
    *One of the following:
      *6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
-     *DC power supply with a 0-6V output.  (HP6236B) 
-     *One diametrically magnetized Neodymium magnet 
+     *DC power supply with a 0-6V output.  (HP6236B)
+     *One diametrically magnetized Neodymium magnet
      *One Neodymium magnet approximately two inches in length, magnetized along the length of the magnet.
 
 Minimum PC/System Requirements

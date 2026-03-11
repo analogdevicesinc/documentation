@@ -19,10 +19,7 @@ The Diode Connected NPN transistor
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Hardware Module
-| Solder-less Breadboard
-| 1 - 470 Ω Resistor (or any similar value)
-| 1 - small signal NPN transistor (2N3904)
+ADALM1000 Hardware Module Solder-less Breadboard 1 - 470 Ω Resistor (or any similar value) 1 - small signal NPN transistor (2N3904)
 
 Directions:
 ~~~~~~~~~~~
@@ -56,23 +53,15 @@ Derive the mathematical expression for the current, I\ :sub:`C`, given the volta
 Reverse Breakdown Characteristics
 ---------------------------------
 
-.. _objective-1:
-
 Objective:
 ~~~~~~~~~~
 
 The purpose of this activity is to investigate the reverse break down voltage characteristics of the emitter base junction of a bipolar junction transistor (BJT) connected as a diode.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 - 100 Ω Resistor (or any similar value)
-| 1 - small signal PNP transistor (2N3906)
-| 4.5 volt battery ( three AA cells in series for example )
-
-.. _directions-1:
+1 - 100 Ω Resistor (or any similar value) 1 - small signal PNP transistor (2N3906) 4.5 volt battery ( three AA cells in series for example )
 
 Directions:
 ~~~~~~~~~~~
@@ -88,14 +77,10 @@ Set up the breadboard with the channel A generator output attached to one end of
    Figure 2 PNP Emitter Base Reverse breakdown configuration
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A generator should be configured for a 100 Hz triangle wave with 5 volt Max and 0 volt Min. Scope channel B is used to measure the voltage across the transistor. Both channels should be set to 0.5 V per division. The current flowing through the transistor is the current measured in channel A (CA-I) or the Math trace voltage difference between CA-V - CB-V divided by the resistor value (100 Ω).
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -104,37 +89,25 @@ The ALM1000 hardware power supply limits the maximum voltage available to 5 volt
 
 Capture the scope waveforms and export them into a spreadsheet program such as Excel. For the 2N3906 PNP used in the example, the breakdown voltage of the emitter base junction should be around 8.5 volts. Remember to add the 4.5 V offset from the external battery to your calculations. Be sure to measure the actual battery voltage for the most accurate measurements.
 
-.. _questions-1:
-
 Questions:
 ~~~~~~~~~~
 
-| Disconnect the collector of Q\ :sub:`1`\ and leave it open. How does this change the breakdown voltage?
-| Now connect the collector to the emitter. How does this change the breakdown voltage?
+Disconnect the collector of Q\ :sub:`1`\ and leave it open. How does this change the breakdown voltage? Now connect the collector to the emitter. How does this change the breakdown voltage?
 
 Try measuring the NPN 2N3904 emitter base reverse breakdown voltage. You can also check the emitter base breakdown voltage for the two power transistors, TIP31 and TIP32, which are included in the Analog Parts Kit. Are they higher or lower than the PNP 2N3906 and is it lower than the +9.5 volts you can measure with this setup? If it is higher what could you change in the setup to allow you to measure higher breakdown voltages?
 
 Lowering the effective forward voltage of the diode
 ---------------------------------------------------
 
-.. _objective-2:
-
 Objective:
 ~~~~~~~~~~
 
 The purpose of this activity is to investigate a circuit configuration with smaller forward voltage characteristics than that of a bipolar junction transistor (BJT) connected as a diode.
 
-.. _materials-2:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 - 1KΩ Resistor
-| 1 - 150KΩ Resistor ( or 100KΩ in series with 47KΩ )
-| 1 - small signal NPN transistor (2N3904)
-| 1 - small signal PNP transistor (2N3906)
-
-.. _directions-2:
+1 - 1KΩ Resistor 1 - 150KΩ Resistor ( or 100KΩ in series with 47KΩ ) 1 - small signal NPN transistor (2N3904) 1 - small signal PNP transistor (2N3906)
 
 Directions:
 ~~~~~~~~~~~
@@ -150,51 +123,35 @@ Set up the breadboard, as shown in figure 3, with the channel A generator attach
    Figure 3 Configuration to lower effective forward voltage drop of diode
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A generator should be configured for a 100 Hz triangle wave with 5 volt Max and 0 volt Min. Scope channel B is used to measure the voltage across the transistor. The current flowing through the transistor is the current measured in channel A (CA-I) or the Math trace voltage difference between CA-V - CB-V divided by the resistor value (1 KΩ).
-
-.. _procedure-2:
 
 Procedure:
 ~~~~~~~~~~
 
 The turn on voltage of the "diode" is now about 100mV compared to 650mV for the simple diode connection in the first example. Plot the V\ :sub:`CE` of Q\ :sub:`1` as CA-V is swept.
 
-.. _questions-2:
-
 Questions:
 ~~~~~~~~~~
 
-| Could the collector of the PNP Q\ :sub:`2` be connected to some other node such as a negative supply voltage?
-| And what would be the effect?
+Could the collector of the PNP Q\ :sub:`2` be connected to some other node such as a negative supply voltage? And what would be the effect?
 
 The value of R\ :sub:`2` sets the current in Q\ :sub:`2`. What is the effect of increasing or decreasing the value of R\ :sub:`2`?
 
 VBE Multiplier Circuit
 ----------------------
 
-.. _objective-3:
-
 Objective:
 ~~~~~~~~~~
 
 Now that we have seen a way to make V\ :sub:`BE` effectively smaller, the purpose of this activity is to make V\ :sub:`BE` larger. Larger forward voltage characteristics than that of a single bipolar junction transistor (BJT) connected as a diode.
 
-.. _materials-3:
-
 Materials:
 ~~~~~~~~~~
 
-| 2 - 2.2 KΩ Resistors
-| 1 - 1 KΩ Resistor
-| 1 - 5 KΩ Variable resistor, potentiometer
-| 1 - small signal NPN transistor (2N3904)
-
-.. _directions-3:
+2 - 2.2 KΩ Resistors 1 - 1 KΩ Resistor 1 - 5 KΩ Variable resistor, potentiometer 1 - small signal NPN transistor (2N3904)
 
 Directions:
 ~~~~~~~~~~~
@@ -210,21 +167,15 @@ Set up the breadboard, as shown in figure 4, with the channel A generator attach
    Figure 4 V\ :sub:`BE` Multiplier configuration
 
 
-.. _hardware-setup-3:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A generator should be configured for a 100 Hz triangle wave with 5 volt Max and 0 V Min. The input of scope channel B is used to measure the voltage across the transistor. The software should be configured to display CA-V and channel CB-V, the collector voltage of Q\ :sub:`1`. The current flowing through the transistor is the current measured in channel A (CA-I) or the Math trace voltage difference between CA-V - CB-V divided by the resistor value (1 KΩ).
 
-.. _procedure-3:
-
 Procedure:
 ~~~~~~~~~~
 
 Starting with the potentiometer R\ :sub:`3` set at the middle of its range the voltage at the collector of Q\ :sub:`2` should be about 2 times V\ :sub:`BE`. With R\ :sub:`3` set to its minimum the voltage at the collector should be 9/2 (or 4.5) times V\ :sub:`BE`. With R\ :sub:`3` set to its maximum the voltage at the collector should be 9/7 times V\ :sub:`BE`.
-
-.. _questions-3:
 
 Questions:
 ~~~~~~~~~~

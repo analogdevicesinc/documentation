@@ -6,9 +6,9 @@ Features
 
 ::
 
-   *PC evaluation software for control and measurement \\ of the [[:adi:`AD9914|AD9914]]` and [[:adi:`AD9915|AD9915]]` 
+   *PC evaluation software for control and measurement \\ of the [[:adi:`AD9914|AD9914]]` and [[:adi:`AD9915|AD9915]]`
    *USB connection to PC
-   *Microsoft Windows-based evaluation software with simple \\  graphical user interface (supports 64-bit versions of Windows) 
+   *Microsoft Windows-based evaluation software with simple \\  graphical user interface (supports 64-bit versions of Windows)
 
 Applications
 ------------
@@ -25,8 +25,6 @@ General Description
 -------------------
 
 This user guide describes how to set up and use the :adi:`AD9914` and :adi:`AD9915` evaluation board. The :adi:`AD9914` is a 3.5 GSPS direct digital synthesizer (DDS) with a 12-bit DAC; The :adi:`AD9915` is a 2.5 GSPS direct digital synthesizer (DDS) with a 12-bit DAC. The evaluation board software provides a graphical user interface (GUI) for easy communication with the device along with many user friendly features, such as the mouse-over effect. This user guide is intended for use in conjunction with the :adi:`AD9914` and :adi:`AD9915` data sheets.
-
-|
 
 .. container:: centeralign
 
@@ -62,9 +60,9 @@ After the installation of the evaluation software is complete, follow these step
 
    -Power up the evaluation board and apply the REF CLK source. See the [[/resources/eval/ad9914-user-guide#evaluation_board_hardware|Evaluation Board Hardware]] section for properly powering the evaluation board.
    * Connect the evaluation board to the computer via the USB port using the USB cable included in the evaluation board kit. When the USB connection is recognized, a green LED light (D200) illuminates and the **Found New Hardware Wizard** dialog box appears.
-   * Click **Next** to continue installing the new driver. 
+   * Click **Next** to continue installing the new driver.
    * Click **Continue Anyway** when the **Hardware Installation Warning** window appears.
-   * Click **Finish** in the **Found New Hardware Wizard** when installation is complete. Note that another **Found New Hardware Wizard** dialog box usually appears to complete the device driver installation. 
+   * Click **Finish** in the **Found New Hardware Wizard** when installation is complete. Note that another **Found New Hardware Wizard** dialog box usually appears to complete the device driver installation.
    * Repeat Step 3 to Step 5 in this section.
 
 Confirming the Connection
@@ -82,8 +80,9 @@ An unsuccessful connection is indicated by a flashing red USB icon located at th
 .. container:: centeralign
 
    
-   | |image2|
-   | *Figure 2. New Found Hardware Window*
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/figure2_found_new_hardware_wiz.png
+   
+   *Figure 2. New Found Hardware Window*
 
 
 -  Choose **Don’t search. I will choose the driver to install**, and then click **Next**.
@@ -93,10 +92,9 @@ An unsuccessful connection is indicated by a flashing red USB icon located at th
    \
 
 
-   |image3|
+   |image2|
 
-   | 
-   | *Figure 3. Search and Installation Options Window*
+   *Figure 3. Search and Installation Options Window*
 
 
 -  Select the **AD9914 Firmware Loader**, and then click **Next**. Note that on occasion the operating system may load the wrong driver because the operating system detects multiple drivers, such as the evaluation board, that can be used by the hardware. In such a case, multiple drivers might be listed in this window. Select only the **AD9914 Firmware Loader**, and then click **Next**. A **Hardware Installation** box then appears. Click **Continue Anyway**, and then close the wizard by clicking **Finish**.
@@ -106,10 +104,9 @@ An unsuccessful connection is indicated by a flashing red USB icon located at th
    \
 
 
-   |image4|
+   |image3|
 
-   | 
-   | *Figure 4. Select Device Driver Window*
+   *Figure 4. Select Device Driver Window*
 
 
 Evaluation Board Hardware
@@ -120,8 +117,9 @@ The evaluation board provides all of the support circuitry required to operate t
 Power Supplies
 ~~~~~~~~~~~~~~
 
-| The :adi:`AD9914` evaluation board has one power supply connector labeled P300 to power the USB interface circuitry and the :adi:`AD9914`/:adi:`AD9915`. This connector has four pins; connect individual wires back to power supplies to power the evaluation board. Table 1 shows the necessary connections and the appropriate supply voltage
-| **Table 1. Power Supply Connections**
+The :adi:`AD9914` evaluation board has one power supply connector labeled P300 to power the USB interface circuitry and the :adi:`AD9914`/:adi:`AD9915`. This connector has four pins; connect individual wires back to power supplies to power the evaluation board. Table 1 shows the necessary connections and the appropriate supply voltage
+
+**Table 1. Power Supply Connections**
 
 ======= ===== =======
 Pin No. Label Voltage
@@ -153,7 +151,7 @@ Jumper Settings
 
 The jumpers on the evaluation board are factory set so that the board is ready to use with PC control. The software GUI operates the evaluation board in a serial interface only; however, you can also opt to use an alternative external control. Note that this user guide does not cover all aspects of externally controlling the evaluation board.
 
-| If you tri-state the USB circuitry to drive the board externally, you must control all tri-stated inputs to the :adi:`AD9914`/:adi:`AD9915`. Otherwise, the device may not response to the external stimulus. For example, if the master reset input or the EXT_PWR_DWN input are floating, any external programming will have intermittent issues. All digital inputs are accessible via the provided header connectors.
+If you tri-state the USB circuitry to drive the board externally, you must control all tri-stated inputs to the :adi:`AD9914`/:adi:`AD9915`. Otherwise, the device may not response to the external stimulus. For example, if the master reset input or the EXT_PWR_DWN input are floating, any external programming will have intermittent issues. All digital inputs are accessible via the provided header connectors.
 
 Jumper Settings for Communication Modes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -196,13 +194,13 @@ In profile mode, the three DDS signal control parameters (frequency, phase offse
 
 ::
 
-    -Power up the evaluation board and apply the REF CLK source to clock the [[:adi:`AD9914|AD9914]]/[[https://www`.analog.com/AD9915|AD9915]].    
+    -Power up the evaluation board and apply the REF CLK source to clock the [[:adi:`AD9914|AD9914]]/[[https://www`.analog.com/AD9915|AD9915]].
     -Launch the evaluation software. After the software recongnizes the evaluation board, click the master reset icon in the main tool bar of the software GUI (labeled 1 in Figure 7). The master reset clears all memory elements and sets the registers to default values.
     -Enter the desired REF CLK frequency value in the **External Clock** box. If the internal PLL is to be used, enable and load those desired PLL settings at this time.
     -After the desired system clock frequency appears in the main tool bar of the software GUI, click the DAC calibration icon (labeled 3 in Figure 7). The DAC CAL is required once for the initial setup and/or every time the REF CLK frequency is changed.
     -Click the **Profiles** tab to access the Profiles window and enable profile mode via the check box.
     -Enter the desired output frequency in Profile 0. See Figure 5 for a view of an individual profile.
-    -Click the flashing **Load** button (labeled 5 in Figure 7) near the top of the GUI. 
+    -Click the flashing **Load** button (labeled 5 in Figure 7) near the top of the GUI.
     -View the DAC output single tone frequency performance via an oscilloscope or spectrum analyzer.
 
 To select a profile other than Profile 0, use the **Selected Profile** drop-down menu. Note that, unfortunately, the profile pin signals are sent asynchronously from the buffer ICs on the evaluation board to the profile pins. Thus, it is possible that the profile found may not be the profile you selected because the profile signals are not synchronous to the SYNC_CLK. If the selected profile setting does not point to the correct profile settings chosen, send an IO_UPDATE or click **Load** tocorrect the issue. This would not be an issue if the profile signals were sychrnonously transmitted to the :adi:`AD9914`/:adi:`AD9915`.
@@ -210,17 +208,17 @@ To select a profile other than Profile 0, use the **Selected Profile** drop-down
 Profile Data Entry
 ^^^^^^^^^^^^^^^^^^
 
-| 
-|
+
+
 
 .. container:: centeralign
 
 
    ..
 
-|image5|
+|image4|
 
-   | *Figure 5. Single Profile Window*
+   *Figure 5. Single Profile Window*
 
 
 The **Frequency** box is used to set the frequency generated by the DDS. The input values are in megahertz. Refer to the data sheet for the acceptable range of output frequencies.
@@ -237,13 +235,16 @@ Sweep Mode
 The Digital Ramp Generator (DRG) window is accessible via the **Sweep** Tab directly below the GUI tool bar. The DRG can sweep frequency, phase, or amplitude. The DRG allows independent control of the slope of a rising sweep and the falling sweep along with other features (see Figure 5).
 
 
-| 
-|
+
+
 
 .. container:: centeralign
 
-   | |image6|
-   | *Figure 6. Digital Ramp Generator Window*
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/sweep.png
+      :width: 500px
+   
+   *Figure 6. Digital Ramp Generator Window*
 
 
 To enable the DRG for configuration,
@@ -281,30 +282,30 @@ Toolbar
 ~~~~~~~
 
 | The toolbar near the top of the evaluation software main window includes several buttons, each labeled with an icon, that allow you to easily initiate various actions (refer to Figure 6 for a detailed description of the requirements of each toolbar element).
-|
+
 
 .. container:: centeralign
 
 
    ..
 
-|image7|
+|image5|
 
-   | *Figure 7. Toolbar Description*
+   *Figure 7. Toolbar Description*
 
 
 Tabs
 ~~~~
 
 | There are five tabs available in the main window of the evaluation software: **Control**, **Profiles**, **Sweep**, **Modulus**, and **Debug**. The following tab descriptions provide a brief overview of each tab; more detailed information can be found in the Evaluation and Test section.
-|
-
-<WRAP centeralign>
 
 
-|image8|
 
-| *Figure 8. Tabs Available*
+
+
+|image6|
+
+*Figure 8. Tabs Available*
 
 Control Tab
 ^^^^^^^^^^^
@@ -335,14 +336,11 @@ The Debug tab provides complete direct access to the register map as well as con
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/figure1_ad9914_evb.png
    :width: 700px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/figure2_found_new_hardware_wiz.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/figure3_found_new_hardware_wiz2.png
-.. |image4| image:: https://wiki.analog.com/_media/{{/resources/eval/user-guides/ad9914/figure4_found_new_hardware_wiz3.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/drawing1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/figure3_found_new_hardware_wiz2.png
+.. |image3| image:: https://wiki.analog.com/_media/{{/resources/eval/user-guides/ad9914/figure4_found_new_hardware_wiz3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/drawing1.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/sweep.png
-   :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/tool_bar.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/tool_bar.png
    :width: 900px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/tabs.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/tabs.png
    :width: 300px

@@ -19,14 +19,7 @@ High gain inverting amplifier
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 1 - 0.01uF capacitor (103)
-| 1 - 0.001uF capacitor (102)
-| 1 - 4.7KΩ resistor
-| 2 - 100KΩ resistors
-| 1 - 5KΩ Potentiometer
-| 1 - CD4007 CMOS transistor array
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 - 0.01uF capacitor (103) 1 - 0.001uF capacitor (102) 1 - 4.7KΩ resistor 2 - 100KΩ resistors 1 - 5KΩ Potentiometer 1 - CD4007 CMOS transistor array
 
 Background:
 ~~~~~~~~~~~
@@ -98,16 +91,12 @@ What is the gain from the input source, CA-V, to the output seen at the inverter
 Two stage astable multivibrator:
 --------------------------------
 
-.. _background-1:
-
 Background:
 ~~~~~~~~~~~
 
 There are basically two requirements to make an oscillator. The first is some sort of gain stage such as the CMOS inverter we just looked at and the second is some sort of frequency dependent or phase delay block like a RC time constant. Positive feedback around a cascade of two of these inverter stages such as was looked at in the MOS Multivibrator Activity completes the oscillator.
 
 To understand how the circuit shown in figure 5 oscillates we first assume that the output of the first inverter stage ( at pins 8 and 13 ) is high, near V\ :sub:`DD`. This means that the output of the second inverter stage ( at pin 12 ) is low, near V\ :sub:`SS`. The high voltage on pins 8,13 will begin charging capacitor C\ :sub:`1` through the combination of resistors R\ :sub:`2`, R\ :sub:`3` and M\ :sub:`5`. The voltage on C\ :sub:`1` is also the input to the first inverter stage at pin 6. Eventually the voltage on C\ :sub:`1` becomes high enough to be above the threshold of the first inverter stage and the output will switch from the high voltage to a low voltage ( near V\ :sub:`SS` ). This also causes the output of the second inverter stage to switch from low to high. Now C\ :sub:`1` driven by the output of stage 2, discharges through the resistors. Again, eventually the voltage at C\ :sub:`1` and the resistors becomes low enough to switch stage 1 back to its original starting state completing one cycle and starting the next.
-
-.. _directions-1:
 
 Directions:
 ~~~~~~~~~~~
@@ -123,21 +112,15 @@ First, be sure the power supplies are switched off before modifying your circuit
    Figure 5 Voltage controlled oscillator
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Scope channels A and B should be set to Hi-Z mode. Set the Triggering to the rising edge of CB-V. Set the trigger level to 2.5 V. The horizontal time base will need to be adjusted so that a few cycles of the oscillator output frequency are displayed. This will change based on the setting of R\ :sub:`4` Connect the positive 5 V power supply only after double checking your circuit connections.
 
-.. _procedure-1:
-
 Procedure:
 ~~~~~~~~~~
 
 Adjust the variable resistor R\ :sub:`4` from one extreme to the other noting the voltage on the gate of NMOS transistor M\ :sub:`5`. Note the frequency of the oscillator. Increasing the voltage should noticeably increase the frequency of the oscillation. Make a table of frequency, duty-cycle for gate voltages from 0 to 5 V in 100 mV steps. Include the table in your lab review.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~

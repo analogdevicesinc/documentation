@@ -11,9 +11,7 @@ Description
 
 The ADALM-SR1 (Analog Devices Active Learning Module, Switching Regulator #1) board is a companion module for several switching regulator exercises covering buck and boost regulators:
 
-| :doc:`Activity: Boost and Buck converter elements and open-loop operation </wiki-migration/university/labs/open_loop_boost_and_buck_adalm2000>`
-| :doc:`Activity: Buck Converters: closed loop operation </wiki-migration/university/labs/closed_loop_buck_adalm2000>`
-| :doc:`Activity: Boost Converters: closed loop operation </wiki-migration/university/labs/closed_loop_boost_adalm2000>`
+:doc:`Activity: Boost and Buck converter elements and open-loop operation </wiki-migration/university/labs/open_loop_boost_and_buck_adalm2000>` :doc:`Activity: Buck Converters: closed loop operation </wiki-migration/university/labs/closed_loop_buck_adalm2000>` :doc:`Activity: Boost Converters: closed loop operation </wiki-migration/university/labs/closed_loop_boost_adalm2000>`
 
 The circuits required for these exercises exceed the complexity that can be constructed on a breadboard, so the ADALM-SR1 is required to run them, although the simulations can be run beforehand to gain insight.
 
@@ -30,8 +28,6 @@ ADALM-SR1 Jumpers and Connections
 ---------------------------------
 
 The ADALM-SR1 uses 0.635mm (0.025-mil) headers for configuration jumpers, signal inputs, and signal outputs. Signal inputs and outputs are 2-conductor headers with 5.08mm (200-mil) pitch so that they cannot be confused with configuration jumpers. The lower conductor is always a ground connection (that is not always used) and an arrow indicates whether the upper conductor is an input or output.
-
-| 
 
 Inductance Selection
 ~~~~~~~~~~~~~~~~~~~~
@@ -277,31 +273,39 @@ Auxiliary Circuit Details
 
 The setup and operation of circuitry associated with the lab exercises is described in detail in the exercises themselves. The ADALM-SR1 includes various auxiliary housekeeping and protection circuits described here.
 
-| 
-
 Housekeeping supplies and reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ADALM-SR1 has two power inputs. The experiment power input is supplied by the user, and the voltage will vary depending on the experiment being run. An additional micro USB connector is the input for a 5V "housekeeping" supply that powers all of the control circuitry, allowing the experiment power to vary over a wide range. An LT3472 boosts / inverts the 5V supply to +15 / -2V, respectively. This provides a high voltage and slightly negative voltage for the LT1995 current sense amplifiers, and a negative supply for the error amplifier.
 
-| |image28|
+.. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_housekeeping_supplies.jpg
+   :align: center
 
 An LT1970-1.25 provides an accurate reference for the error amplifier and duty cycle, current threshold adjustment potentiometers.
 
-| |image29|
-| ==== Input Overvoltage, Undervoltage, Reverse voltage, and Overcurrent ==== An LTC4368 and associated circuitry protects the experiment power input by only turning on when the supply is between 3V and 15V. The circuit is protected from voltages between -40V and +60V. The LTC4368 also functions as a fuse, shutting off the supply if the current exceeds 2A.
+.. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_reference.jpg
+   :align: center
+
+Input Overvoltage, Undervoltage, Reverse voltage, and Overcurrent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+An LTC4368 and associated circuitry protects the experiment power input by only turning on when the supply is between 3V and 15V. The circuit is protected from voltages between -40V and +60V. The LTC4368 also functions as a fuse, shutting off the supply if the current exceeds 2A.
 
 .. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_power_input_protection.jpg
    :align: center
 
-| 
-| ==== Output Overvoltage ==== In boost mode, the ADSRALM can produce high voltages under certain conditions: if the duty cycle is high and the load is light, or if feedback is disconnected. An LTC2912 overvoltage / undervoltage supervisor will disable the switching circuitry if the output exceeds 22V. An SMAJ24A, 24-volt TVS diode provides additional protection.
+Output Overvoltage
+~~~~~~~~~~~~~~~~~~
+
+In boost mode, the ADSRALM can produce high voltages under certain conditions: if the duty cycle is high and the load is light, or if feedback is disconnected. An LTC2912 overvoltage / undervoltage supervisor will disable the switching circuitry if the output exceeds 22V. An SMAJ24A, 24-volt TVS diode provides additional protection.
 
 .. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_output_overvoltage.jpg
    :align: center
 
-| 
-| ==== Inductor, Load Resistor Overtemperature ==== The inductor and onboard load resistors can get warm during certain experiments or if the board is misconfigured. Three temperature sensors measure the inductor temperature and the temperature of the high-dissipation areas of the load resistor bank. If any temperature exceeds 60ºC, switching is disabled for a 1.9 second cool-down period.
+Inductor, Load Resistor Overtemperature
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The inductor and onboard load resistors can get warm during certain experiments or if the board is misconfigured. Three temperature sensors measure the inductor temperature and the temperature of the high-dissipation areas of the load resistor bank. If any temperature exceeds 60ºC, switching is disabled for a 1.9 second cool-down period.
 
 The low-resistance loads consist of parallel, single 100Ω, 1/2W resistors - An orange LED near the associated jumpers illuminates when the output voltage exceeds 7V as a warning that these must be disconnected.
 
@@ -309,8 +313,6 @@ The high resistance loads consist of multiples of two 100-ohm, 1/2W resistors in
 
 .. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_overtemperature.jpg
    :align: center
-
-| 
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -355,5 +357,3 @@ Schematic, PCB Layout, Bill of Materials
 .. |image25| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_p28_p29.jpg
 .. |image26| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_p27_p26.jpg
 .. |image27| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_p7_p6.jpg
-.. |image28| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_housekeeping_supplies.jpg
-.. |image29| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_reference.jpg

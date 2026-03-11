@@ -30,11 +30,7 @@ The CD4007 like many CMOS integrated circuits, it is easily damaged by static di
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 1 CD4007 ( CMOS array)
-| 2 ZVN2110A NMOS transistors
-| 2 ZVP2110A PMOS transistors
+ADALM2000 Active Learning Module Solder-less Breadboard 1 CD4007 ( CMOS array) 2 ZVN2110A NMOS transistors 2 ZVP2110A PMOS transistors
 
 Directions:
 -----------
@@ -147,8 +143,6 @@ For many design cases in integrated circuits where internal signals just pass be
    Figure 10 6 transistor falling edge D-Type latch
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -167,8 +161,6 @@ Hardware Setup:
 
    Figure 12 6 transistor falling edge D Type Latch Breadboard connections
 
-
-.. _directions-1:
 
 Directions:
 -----------

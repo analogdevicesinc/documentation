@@ -16,11 +16,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 2.2KΩ Resistor ( R\ :sub:`L` )
-| 1 - small signal NPN transistor ( 2N3904 Q\ :sub:`1` )
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 - 2.2KΩ Resistor ( R\ :sub:`L` ) 1 - small signal NPN transistor ( 2N3904 Q\ :sub:`1` )
 
 Directions:
 ~~~~~~~~~~~
@@ -59,9 +55,7 @@ The current mirror from activity 5 is now substituted for the emitter load resis
 Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
-| 1 - 1 KΩ Resistor
-| 1 - small signal NPN transistor ( Q\ :sub:`1` 2N3904)
-| 2 - small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3` SSM2212) selected for best V\ :sub:`BE` matching
+1 - 1 KΩ Resistor 1 - small signal NPN transistor ( Q\ :sub:`1` 2N3904) 2 - small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3` SSM2212) selected for best V\ :sub:`BE` matching
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f2a.png
    :align: center
@@ -75,23 +69,15 @@ Additional Materials:
 Emitter follower output impedance
 ---------------------------------
 
-.. _objective-1:
-
 Objective:
 ~~~~~~~~~~
 
 An important aspect of the emitter follower is to provide power or current gain. That is to say drive a lower resistance (impedance) load from a higher resistance (impedance) source. Thus it is instructive to measure the emitter follower output impedance.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 - 2.2 KΩ Resistor
-| 1 - 10 KΩ Resistor
-| 1 - small signal NPN transistor ( Q\ :sub:`1` 2N3904 )
-
-.. _directions-1:
+1 - 2.2 KΩ Resistor 1 - 10 KΩ Resistor 1 - small signal NPN transistor ( Q\ :sub:`1` 2N3904 )
 
 Directions:
 ~~~~~~~~~~~
@@ -107,14 +93,10 @@ The circuit configuration shown in figure 3 adds a resistor R\ :sub:`2` to injec
    Figure 3 Output impedance test
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A generator should be configured for a 100 Hz Sine wave with 2.8 volt Max and a 0.8 volt Min ( +/- 1 volt swing either side of the emitter voltage which should be around 1.8 V). This injects a +/- 0.1mA (1V/10KΩ) current into Q\ :sub:`1`'s emitter. Scope channel B measures the change in voltage seen at the emitter.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -126,18 +108,10 @@ Low Offset Follower
 
 All the follower circuits we have investigated so far have a built in offset of -V\ :sub:`BE`. The circuit shown next uses the V\ :sub:`BE` shift up of a PNP emitter follower to partially cancel the V\ :sub:`BE` shift down of an NPN emitter follower.
 
-.. _materials-2:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 - 6.8KΩ Resistor
-| 1 - 10KΩ Resistor
-| 1 - 0.01uF Capacitor
-| 1 - small signal PNP transistor ( Q\ :sub:`1` 2N3906)
-| 3 - small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3`, Q\ :sub:`4` 2N3904 or SSM2212)
-
-.. _directions-2:
+1 - 6.8KΩ Resistor 1 - 10KΩ Resistor 1 - 0.01uF Capacitor 1 - small signal PNP transistor ( Q\ :sub:`1` 2N3906) 3 - small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3`, Q\ :sub:`4` 2N3904 or SSM2212)
 
 Directions:
 ~~~~~~~~~~~
@@ -153,14 +127,10 @@ The breadboard connections are shown in figure 4. The output of the channel A ge
    Figure 4 Low offset follower
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A generator should be configured for a 100 Hz Sine wave with 3 volt Max and a 2 volt Min. Both Scope vertical ranges are set to 0.5V/Div.
-
-.. _procedure-2:
 
 Procedure:
 ~~~~~~~~~~
@@ -186,7 +156,7 @@ Circuit:
    Figure 5 Emitter Current Limit
 
 
-| Where:
+Where:
 
 -   R\ :sub:`1` base resistor limits base current to transistor Q\ :sub:`1`.
 -   R\ :sub:`2` current sense resistor used to sense the current and turn on transistor Q\ :sub:`2`.

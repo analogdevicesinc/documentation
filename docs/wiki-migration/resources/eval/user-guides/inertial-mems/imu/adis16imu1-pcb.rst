@@ -39,10 +39,7 @@ ADIS16133, ADIS16135, ADIS1636 Mounting
 
 Use the M2x0.4x16mm machine screws (provided in pink bag) for mounting these products to the ADIS16IMU1/PCBZ and set their torque for 20 inch-ounces. The yellow-highlights in the top-view picture illustrate the location of the mounting holes for these products.
 
-.. warning::
-
-   **WARNING:** Remove the jumper from **JP1** when using the ADIS16IMU1/PCB to evaluate these products.
-
+**WARNING:** Remove the jumper from **JP1** when using the ADIS16IMU1/PCB to evaluate these products.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb_13x.jpg
    :width: 300px
@@ -52,10 +49,7 @@ ADIS16360, ADIS16362, ADIS16364, ADIS16365, ADIS16367, ADIS16400, ADIS16405, ADI
 
 Use the M2x0.4x4mm machine screws (provided in pink bag) for mounting these products to the ADIS16IMU1/PCBZ and set their torque for 20 inch-ounces. The pink-highlights in the top-view picture illustrate the location of the mounting holes for these products. For high-vibration environments, consider using more than 2 screws. :adi:`Application Note AN-1045 <static/imported-files/application_notes/AN-1045.pdf>` offers some ideas on using more than two screws to attach this package style to a system frame.
 
-.. warning::
-
-   **WARNING:** Remove the jumper from **JP1** when using the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1/eb.html#buy>` to evaluate these products.
-
+**WARNING:** Remove the jumper from **JP1** when using the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1/eb.html#buy>` to evaluate these products.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb_36x.jpg
    :width: 300px
@@ -78,26 +72,12 @@ Here is an example of the ADIS16IMU1/PCBZ, with an ADIS16485AMLZ mounted to it.
 
 Make sure that the connector pins are in alignment with J2 on the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1/eb.html#buy>`, before pressing it into place.
 
-Here is a close-up view, which shows the
-
-.. container:: em
-
-   correct connector alignment
-
-
-.
+Here is a close-up view, which shows the correct connector alignment.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis1648x_evaladis_install_step01-02b.jpg
    :width: 300px
 
-This picture provides an example of the an
-
-.. container:: em
-
-   incorrect connector alignment
-
-
-. Note that this view is on the EVAL-ADISZ board, not the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1/eb.html#buy>`.
+This picture provides an example of the an incorrect connector alignment. Note that this view is on the EVAL-ADISZ board, not the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1/eb.html#buy>`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis1648x_evaladis_install_step01-03.jpg
    :width: 300px
@@ -120,14 +100,7 @@ Verify the alignment with J2 and then gently press the ADIS1649x into J2. Here i
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_003c.jpg
    :width: 430px
 
-Here are two examples of
-
-.. container:: em
-
-   incorrect
-
-
-insertion alignment.
+Here are two examples of incorrect insertion alignment.
 
 |image4| |image5|
 
@@ -139,25 +112,11 @@ Secure the ADIS1649x to the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1
 STEP #4
 ^^^^^^^
 
-Secure the 16-pin, 1mm ribbon cable to J1 and use that to connect to an embedded processor board or to the evaluation system (:adi:`eval-adis2`). The following two pictures illustrate
-
-.. container:: em
-
-   correct
-
-
-insertion alignment between the ribbon cable and J1.
+Secure the 16-pin, 1mm ribbon cable to J1 and use that to connect to an embedded processor board or to the evaluation system (:adi:`eval-adis2`). The following two pictures illustrate correct insertion alignment between the ribbon cable and J1.
 
 |image6| |image7|
 
-The following two pictures illustrate
-
-.. container:: em
-
-   incorrect
-
-
-insertion alignment between the ribbon cable and J1.
+The following two pictures illustrate incorrect insertion alignment between the ribbon cable and J1.
 
 |image8| |image9| |image10|
 

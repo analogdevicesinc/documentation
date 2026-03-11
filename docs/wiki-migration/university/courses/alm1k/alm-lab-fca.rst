@@ -21,12 +21,7 @@ A conventional combination of a common emitter amplifier with a stacked common b
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 1 - small signal PNP transistor, Q1 ( 2N3906 or similar )
-| 1 - small signal NPN transistor, Q2 ( 2N3904 or similar )
-| 3 - 1 KΩ resistors
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 - small signal PNP transistor, Q1 ( 2N3906 or similar ) 1 - small signal NPN transistor, Q2 ( 2N3904 or similar ) 3 - 1 KΩ resistors
 
 Directions:
 ~~~~~~~~~~~

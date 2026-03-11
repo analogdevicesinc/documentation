@@ -3,14 +3,16 @@
 Absolute Value
 ==============
 
-| 
-| |absval.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/absval.png
+   :alt: absval.png
 
 Description
 -----------
 
-| The Absolute Value block coverts all negative components of the input to positive components.
-| ===== Targets Supported =====
+The Absolute Value block coverts all negative components of the input to positive components.
+
+Targets Supported
+-----------------
 
 +----------------+------------+------------------+---------------+------------------+
 | Name           | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -48,5 +50,3 @@ DSP Parameters
 --------------
 
 NO DSP parameters
-
-.. |absval.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/absval.png

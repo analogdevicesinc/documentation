@@ -1,14 +1,13 @@
 AD-GMSLCAMRPI-ADP# User Guide
 =============================
 
-|
+
 
 .. note::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
-   | This user guide is now available at
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-gmslcamrpi-adp/index.html
+   | This user guide is now available at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-gmslcamrpi-adp/index.html
 
 
 Seamlessly insert GMSL into the signal chain and create a full GMSL Camera System with off-the-shelf parts.
@@ -16,8 +15,10 @@ Seamlessly insert GMSL into the signal chain and create a full GMSL Camera Syste
 .. image:: https://wiki.analog.com/_media/playground/ signal_chain.png
    :width: 600px
 
-| 
-| ===== Overview ===== The :adi:`AD-GMSLCAMRPI-ADP# <design-center/evaluation-hardware-and-software/evaluation-boards-kits/AD-GMSLCAMRPI-ADP.html>` enables connecting GMSL serializer and deserializer Evaluation Kits (EVK) to a wide range of cameras and processing platforms supporting industry standard ribbon cable connectors. The adapter consists of three sections that can be broken apart from each other, with the following functionalities:
+Overview
+--------
+
+The :adi:`AD-GMSLCAMRPI-ADP# <design-center/evaluation-hardware-and-software/evaluation-boards-kits/AD-GMSLCAMRPI-ADP.html>` enables connecting GMSL serializer and deserializer Evaluation Kits (EVK) to a wide range of cameras and processing platforms supporting industry standard ribbon cable connectors. The adapter consists of three sections that can be broken apart from each other, with the following functionalities:
 
 -  A **Ribbon Cable Adapter** having two pairs of 15-pin and 22-pin connectors routed to each other. The 15-pin connectors support 2 MIPI lanes, while the 22-pin connectors support 4 MIPI lanes.
 -  A **GMSL Serializer EVK Adapter** with two 22-pin ribbon cable connectors, for connecting cameras to the GMSL serializers. A USB Type-A connector is available to supply 5V @ 4A to another system
@@ -40,49 +41,35 @@ Specifications
    Do not use the 15-pin ribbon cable included with the Raspberry Pi camera since that is an opposite sided cable.
 
 
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-| Ribbon cable adapter          |                                                                                                          |
-+===============================+==========================================================================================================+
-| **Connectors**                | 2 x 15 Pin Type A (**
-
-.. container:: hi
-
-   same side
-
-
-**) Flexible Ribbon Cable (2 x MIPI lanes, P/N: 1-84953-5) |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-|                               | 2 x 22 Pin Type B (**
-
-.. container:: hi
-
-   opposite side
-
-
-**) Flexible Ribbon Cable (P/N: 687122149022)          |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-| **Power**                     | Routing 3.3V external power between pairs of 15-pin and 22-pin connectors                                |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-| GMSL Serializer EVK Adapter   |                                                                                                          |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-| **Connectors**                | 1 x GMSL Serializer EV kit (P/N: QSH-030-01-L-D-A)                                                       |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-|                               | 2 x 22-pin (4 x MIPI lanes, P/N: 687122149022)                                                           |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-| **Power**                     | Input: 12V from GMSL Serializer EV kit                                                                   |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-|                               | Output: 3.3V @ 0.5A on the 22-pin connectors                                                             |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-| GMSL Deserializer EVK Adapter |                                                                                                          |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-| **Connectors**                | 1 x GMSL Deserializer EV kit (P/N: QTH-030-01-L-D-A)                                                     |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-|                               | 2 x 22-pin (4 x MIPI lanes, P/N: 687122149022)                                                           |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-| **Power**                     | Input: 12V from GMSL Deserializer EV kit                                                                 |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
-|                               | Output: 5V @ 4A on the USB Type A connector to power external devices                                    |
-+-------------------------------+----------------------------------------------------------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------------------------------+
+| Ribbon cable adapter          |                                                                                          |
++===============================+==========================================================================================+
+| **Connectors**                | 2 x 15 Pin Type A (**same side**) Flexible Ribbon Cable (2 x MIPI lanes, P/N: 1-84953-5) |
++-------------------------------+------------------------------------------------------------------------------------------+
+|                               | 2 x 22 Pin Type B (**opposite side**) Flexible Ribbon Cable (P/N: 687122149022)          |
++-------------------------------+------------------------------------------------------------------------------------------+
+| **Power**                     | Routing 3.3V external power between pairs of 15-pin and 22-pin connectors                |
++-------------------------------+------------------------------------------------------------------------------------------+
+| GMSL Serializer EVK Adapter   |                                                                                          |
++-------------------------------+------------------------------------------------------------------------------------------+
+| **Connectors**                | 1 x GMSL Serializer EV kit (P/N: QSH-030-01-L-D-A)                                       |
++-------------------------------+------------------------------------------------------------------------------------------+
+|                               | 2 x 22-pin (4 x MIPI lanes, P/N: 687122149022)                                           |
++-------------------------------+------------------------------------------------------------------------------------------+
+| **Power**                     | Input: 12V from GMSL Serializer EV kit                                                   |
++-------------------------------+------------------------------------------------------------------------------------------+
+|                               | Output: 3.3V @ 0.5A on the 22-pin connectors                                             |
++-------------------------------+------------------------------------------------------------------------------------------+
+| GMSL Deserializer EVK Adapter |                                                                                          |
++-------------------------------+------------------------------------------------------------------------------------------+
+| **Connectors**                | 1 x GMSL Deserializer EV kit (P/N: QTH-030-01-L-D-A)                                     |
++-------------------------------+------------------------------------------------------------------------------------------+
+|                               | 2 x 22-pin (4 x MIPI lanes, P/N: 687122149022)                                           |
++-------------------------------+------------------------------------------------------------------------------------------+
+| **Power**                     | Input: 12V from GMSL Deserializer EV kit                                                 |
++-------------------------------+------------------------------------------------------------------------------------------+
+|                               | Output: 5V @ 4A on the USB Type A connector to power external devices                    |
++-------------------------------+------------------------------------------------------------------------------------------+
 
 .. admonition:: Download
    :class: download
@@ -91,8 +78,8 @@ Specifications
 
    
    -  `Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/02_075922a_top.pdf>`_
-      \* `Layout <https://wiki.analog.com/_media/resources/eval/user-guides/08_075922a.zip>`_
-      \* `High level BOM <https://wiki.analog.com/_media/resources/eval/user-guides/05-075922-01-a.zip>`_
+   -  `Layout <https://wiki.analog.com/_media/resources/eval/user-guides/08_075922a.zip>`_
+   -  `High level BOM <https://wiki.analog.com/_media/resources/eval/user-guides/05-075922-01-a.zip>`_
    
 
 

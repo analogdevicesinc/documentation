@@ -1,8 +1,9 @@
 Schematic Version Control (ADAU145X)
 ====================================
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| Schematic version control allows the users to maintain version numbers for a particular schematic. This feature is disabled by default. It can be enabled by using write click context menu on the IC as shown below. This is currently supported only for ADAU145X Sigma DSPs.
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+
+Schematic version control allows the users to maintain version numbers for a particular schematic. This feature is disabled by default. It can be enabled by using write click context menu on the IC as shown below. This is currently supported only for ADAU145X Sigma DSPs.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schematicversion.jpg
    :align: center

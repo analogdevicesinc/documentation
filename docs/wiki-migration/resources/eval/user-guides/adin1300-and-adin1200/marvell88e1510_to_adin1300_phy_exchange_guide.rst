@@ -25,10 +25,9 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          The ADIN1300 datasheet provides a detailed description of all functions of the device and should also be consulted for reference.
          
          Hardware Changes By Function
-         ----------------------------
          
-         Power Supplies Overview
-         ~~~~~~~~~~~~~~~~~~~~~~~
+         **Power Supplies Overview**
+
          
          The ADIN1300 requires a minimum of 2 power supply rails, where the VDDIO is connected to the same power supply voltage as the MAC or as the PHY analog supply AVDD_3P3 (VDDA2P5). The 88E1510 can be powered with between 1 and 4 power supply rails depending on the configuration of using internal or external regulators. The VDDIO / VDDO supply rail powers the MAC interface and MDIO blocks, this can operate from 1.8V, 2.5V or 3.3V. The supply requirements are listed in Table 1 and Table 2.
          
@@ -45,8 +44,8 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/04_-_88e1510_decoupling_requirements_-_table_3.png
             :align: right
          
-         RESET Operation
-         ~~~~~~~~~~~~~~~
+         **RESET Operation**
+
          
          Both devices have a RESET_N pin which initializes the device and latches the hardware pin configuration. To reset the ADIN1300 the RESET_N pin should be held low for >10 μs. Deglitch circuitry is included on this pin to reject pulses shorter than ~1 μs. This pin requires a 1 kΩ pull-up resistor to AVDD_3P3.
          
@@ -58,15 +57,15 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          
          The 88E1510 will be hardware configured after the de assertion of RESETn. The valid power to RESETn de-assertion time is 10mS. To reset the 88E1510 the RESET_N pin should be held low for a minimum of 10 ms.
          
-         Clocking
-         ~~~~~~~~
+         **Clocking**
+
          
          A 25 MHz crystal or external clock source is used to provide the reference clock for both devices. A crystal can be connected to pins XTAL_I/XTAL_O (XI/XO), with both devices using the same external circuit. Or a 25 MHz refence clock can be provided on the input clock pin CLK_IN (XI).
          
          The ADIN1300 supports RMII and requires an external 50 MHz REF_CLK on the XTAL_I/REF_CLK pin in RMII mode. The 88E1510 does not support the RMII MAC interface.
          
-         Bias Resistor
-         ~~~~~~~~~~~~~
+         **Bias Resistor**
+
          
          An external resistor is required to bias internal reference circuitry for both 88E1510 and ADIN1300. The ADIN1300 requires a 3.01 kΩ resistor (1% tolerance, 100 ppm/°C temperature coefficient) connected to pin 10. The 88E1510 uses a 4.99 kΩ (1%) on pin 25.
          
@@ -88,22 +87,22 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/06_-_88e1510_discrate_magnetics_isolation_-_figure_2.png
             :align: right
          
-         MDIO/Management Interface
-         ~~~~~~~~~~~~~~~~~~~~~~~~~
+         **MDIO/Management Interface**
+
          
          Both devices support the IEEE management interface using the MDIO/MDC pins and require a pullup resistor on the MDIO pin (Management Data Open Drain Input/Output). The recommended value for ADIN1300 is a 1.5kΩ resistor connected to pin 24. The 88E1510 recommends a 1.5kΩ to 10 kΩ resistor connected to pin 5.
          
          Both devices provide an interrupt pin, INT_N (¯INT). For the ADIN1300 this pin requires a 1.5 kΩ pull-up resistor to VDDIO. The 88E1510 INT_N (¯INT) is shared with the LED[2] pin and is register programmable.
          
-         LED Function
-         ~~~~~~~~~~~~
+         **LED Function**
+
          
          The ADIN1300 supports two LED pins, one on LED_0 and one on LINK_ST. The LED_0 has programmability of LED functions, with different blinking operation possible through MDIO configuration, the default mode is ON when Link is Up, blink if activity. The LINK_ST provides static information about Link up or down status.
          
          The 88E1510 supports 3 LED pins 8, 9 and 10.
          
-         LED Circuit
-         ^^^^^^^^^^^
+         **LED Circuit**
+
          
          The ADIN1300 LED_0 operates from the AVDD_3P3 voltage domain, therefore can support driving LEDs even when the MAC interface is running at the lower voltage of 1.8V.
          
@@ -114,8 +113,8 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/07_-_88e1510_led_hardware_config_-_figure_3.png
             :align: right
          
-         Link Status, LINK_ST
-         ^^^^^^^^^^^^^^^^^^^^
+         **Link Status, LINK_ST**
+
          
          The ADIN1300 has a dedicated LINK_ST pin to provide information to the MAC on the status of the Link. By default, the LINK_ST pin goes high indicating the link is up and low to indicate the link is down. The LINK_ST polarity is programmable by setting the bit high GE_LNK_STAT_INV_EN.
          
@@ -147,8 +146,8 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/08_-_88e1510_rgmii_mac_interface_pin_comparison_-_table_5.png
          
-         MII Interface
-         ^^^^^^^^^^^^^
+         **MII Interface**
+
          
          The 88E1510 does not support the MII interface.
          
@@ -166,8 +165,8 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/09_-_88e1510_mii_mac_interface_pin_comparison_-_table_6.png
             :align: right
          
-         RMII Interface
-         ^^^^^^^^^^^^^^
+         **RMII Interface**
+
          
          The 88E1510 does not support the RMII interface. RMII is a Reduced MII interface using fewer pins as shown in Table 7. The pin count for this interface is 8 pins.
          
@@ -195,8 +194,7 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          
          The ADIN1300 can optionally provide a number of clock signals on the GP_CLK pin. This is configured via MDIO writes and the clocks available are a 125 MHz free running clock, 25 MHz clock and 25 MHz/125 MHz recovered clock.
          
-         **Hardware Configuration**
-
+         Hardware Configuration
          
          Both devices have a number of strapping options to enable managed or unmanaged configurations of the PHY function such as PHY address, mode of operation, Auto-Negotiation and MAC Interface.
          
@@ -214,8 +212,8 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          
          Strapping configurations are very specific to the device, consult the respective datasheet to determine the exact configuration required for each use case with the 88E1510.
          
-         Hardware Configuration of Speed
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         **Hardware Configuration of Speed**
+
          
          For the ADIN1300, speed configuration is done using two pins, PHY_CFG0 and PHY_CFG1. These pins do not have any internal pull resistors, therefore external strapping is required. Both pins support 4-level strapping, providing much flexibility in terms of the possible combinations, such as Auto-neg speeds shown in Table 9 or Forced modes shown in Table 10. Review the datasheet hardware configuration pin section for full detail on the possible settings using these pins.
          
@@ -230,24 +228,24 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/14_-_88e1510_adin1300_forced_speeds_-_table_10.png
             :align: right
          
-         Hardware Configuration of Auto-MDIX
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         **Hardware Configuration of Auto-MDIX**
+
          
          Selection of Auto-MDIX for the ADIN1300 is done using one pin, (MDIX_MODE) with 4-level strapping.
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/15_-_88e1510_auto_mdix_mode_adin1300_-_table_11.png
             :align: right
          
-         MAC Interface Selection
-         ~~~~~~~~~~~~~~~~~~~~~~~
+         **MAC Interface Selection**
+
          
          The ADIN1300 uses two hardware pins, MACIF_SEL0 and MACIF_SEL1 to provide user ability to select different MAC interfaces. These two pins have internal weak pull downs, therefore the default operation would be RGMII with delays as shown in Table 12. To configure any other MAC interface mode, use 10kΩ pull up or pull down resistors to select accordingly.
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/16_-_88e1510_mac_interface_selection_adin1300_-_table_12.png
             :align: right
          
-         Hardware Configuration of PHY Address
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         **Hardware Configuration of PHY Address**
+
          
          The ADIN1300 has a default strapping providing a PHY address of 0x0000. For the 88E1510 Bit 0 of the PHY address is configured during the hardware reset sequence. PHY address bits[4:1] are set to “0000” internally in the device.
          
@@ -272,8 +270,7 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
    .. container:: half column
 
          
-         **Package**
-
+         Package
          
          The ADIN1300 is available in a 40 lead LFCSP (6 mm x 6 mm footprint). The 88E1510 is available in a 48 lead QFN (7 mm x 7 mm). Due to the smaller package footprint and differing pinout, the ADIN1300 is not a drop-in replacement for the 88E1510 product. It will require a re-spin of schematic and board layout to achieve this exchange.
          
@@ -283,15 +280,14 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          The underside of the LFCSP package for the ADIN1300 includes an exposed paddle which should be soldered directly to the board with an array of vias for thermal purposes. There are also two exposed stripes adjacent to the exposed paddle. These are not intended to and do not need to be soldered to the board, they should be treated as a keep out area as they are connected to supply rails in the device, therefore should not be tied to ground and there should be no routing or traces on the PCB layer directly underneath them.
          
          Other Pinout Considerations
-         ---------------------------
          
-         Integrated MDI Termination
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+         **Integrated MDI Termination**
+
          
          Both devices include integrated termination resistors on the MDI paths. These are voltage mode PHYs, no external resistors are required for biasing and no supply voltage is required at the center tap of the transformer.
          
-         RGMII Drive/Termination resistors
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         **RGMII Drive/Termination resistors**
+
          
          The ADIN1300 provides user with ability to adjust the RGMII drive current through the GE_RGMII_IO_CNTRL register.
          
@@ -325,8 +321,7 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
          
          Neither of the two devices support fiber protocols.
          
-         **Software Considerations**
-
+         Software Considerations
          
          Both devices can be hardware strapped to be used in an unmanaged configuration. Alternatively, they can provide access over the MDIO interface. Both devices support both Clause 22 and Clause 45 register access using both the 802.3 Clause 22 and Clause 45 management frame structures.
          
@@ -394,9 +389,8 @@ The following list summarizes an RGMII auto negotiate, 10 Mbps, 100 Mbps, or 100
 
 ::
 
-     *PHY_CFG1 = MODE_1 = 10 kΩ pull-down resistor 
+     *PHY_CFG1 = MODE_1 = 10 kΩ pull-down resistor
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/20_-_88e1510_adin1300_example_-_figure_6.png
    :align: right
 
---------------

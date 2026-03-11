@@ -1,7 +1,7 @@
 Opening the Framework in CCES
 =============================
 
-.. image:: https://wiki.analog.com/_media/youtube>GprhlU-IrXQ
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>GprhlU-IrXQ
    :alt: youtube>GprhlU-IrXQ
 
 After installing the framework, the CCES project will be placed in the following directory: ``C:\Analog Devices\SAM_BareMetal_SDK-Rel2.0.0\framework``.
@@ -46,7 +46,7 @@ If the LEDs are strobing rapidly, it has encountered an initialization error. Ha
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#project-wizard
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#project-wizard
    :alt: Bare Metal Project Wizard#.|Bare Metal Framework#configuring-cces|Configuring CCES
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/bm-cces-open-framework.gif

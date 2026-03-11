@@ -1,11 +1,14 @@
 CheckSum
 ========
 
-| 
-| :doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| This module can be used for detecting and transmission error happened while writing the PM, DM0, DM1 data packs from the uC to the SigmaDSP.
-| |image1|
-| SigmaStudio computes 'Expected' checksum value and displays in the schematic. The SigmaDSP initialization routine computes the actual checksum and stores in the target before the audio processing starts. By clicking the 'read' button, the actual values can be read from the target and displayed in the module. If the circle color is red the computation is still in progress. The green color indicates the computation is completed.
+:doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+This module can be used for detecting and transmission error happened while writing the PM, DM0, DM1 data packs from the uC to the SigmaDSP.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/checksum.png
+   :align: center
+
+SigmaStudio computes 'Expected' checksum value and displays in the schematic. The SigmaDSP initialization routine computes the actual checksum and stores in the target before the audio processing starts. By clicking the 'read' button, the actual values can be read from the target and displayed in the module. If the circle color is red the computation is still in progress. The green color indicates the computation is completed.
 
 The checksum is calculated for each pack as follows,
 
@@ -13,12 +16,12 @@ The checksum is calculated for each pack as follows,
 
    initialize the sum to zero
    FOR each word in the pack
-       Read each word in the pack      
+       Read each word in the pack
        Set sum equal to the addition of the each word
    END FOR
    Assign the negative sum to checksum result
 
-| Note:- For DM0 memory checksum is calculated by excluding the stack memory.
+Note:- For DM0 memory checksum is calculated by excluding the stack memory.
 
 Usage
 -----
@@ -54,11 +57,10 @@ After writing all the download data as per the ADAU145x/ADAU146x download sequen
         data  = data | (spidata[4 * i + 2] << 8);
         data  = data | (spidata[4 * i + 1] << 16);
         data  = data | (spidata[4 * i] << 24);
-        
-        sum += data;    
-     }  
+
+        sum += data;
+     }
      checksumresult = -sum;
-     
 
 -  Please find the addresses of 'PMCheckSum', 'DM0CheckSum', 'DM1CheckSum' and 'CheckSumCalculationDone' framework variables in the export PARAM.h
 
@@ -72,7 +74,6 @@ After writing all the download data as per the ADAU145x/ADAU146x download sequen
 Supported IC's
 --------------
 
-| 1. ADAU145x
-| 2. ADAU146x
+1. ADAU145x
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/checksum.png
+2. ADAU146x

@@ -152,20 +152,19 @@ The CN0343 will response following command:
 
    xxx query\r\n
 
-the <fc #6495ed>xxx</fc> is the CN0343's decimal address, and <fc #6495ed>\\r\\n</fc> is the return characters.
+the xxx is the CN0343's decimal address, and \\r\\n is the return characters.
 
 For example:
 
 ::
 
    109 query
-    
 
 will trigger the CN0343 which have RS-485 address 109 send the measure result data to RS-485 network.
 
 .. important::
 
-   Please don't ignore the space character between address <fc #6495ed>109</fc> and <fc #6495ed>query</fc> command
+   Please don't ignore the space character between address 109 and query command
 
 
 Software Programming

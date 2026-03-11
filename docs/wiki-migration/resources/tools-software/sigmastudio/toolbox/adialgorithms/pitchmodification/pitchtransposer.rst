@@ -6,7 +6,7 @@ Pitch Transposer
    Under Construction
 
 
-| :doc:`Click here to return to the Pitch Modification page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification>`
+:doc:`Click here to return to the Pitch Modification page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification>`
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+
 | This algorithm shifts the frequency of an incoming signal. There are two versions of the algorithm. This version allows the user to manually set the pitch shift amount by entering it in the GUI (or writing a value directly to RAM). See :doc:`Pitch Transposer (Data Controlled) </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/pitchtransposerdatacontrolled>` for the "voltage-controlled" version. | |Pitch_Transpose_Cell.png| |
@@ -58,19 +58,30 @@ TBD              TBD           TBD
 Algorithm Description
 ---------------------
 
-| The algorithm takes an input signal and shifts it in frequency up or down depending on the settings of the control. Here is a time-domain display of a sine tone being shifted in frequency. The top sine tone is the input signal, and the bottom sine tone is the output.
-| Approximate Output frequency = Input frequency - (Input frequency \* (Delay Reserved x 0.001) x Max shift(%))
-| |pitch_shift_up.png|
-| Here is the same example in the frequency domain. This picture shows the frequency domain of the input signal.
-| |Before_Pitch_Shift.png|
-| This picture shows the frequency domain of the output signal.
-| |After_Pitch_Shift.png|
+The algorithm takes an input signal and shifts it in frequency up or down depending on the settings of the control. Here is a time-domain display of a sine tone being shifted in frequency. The top sine tone is the input signal, and the bottom sine tone is the output.
+
+Approximate Output frequency = Input frequency - (Input frequency \* (Delay Reserved x 0.001) x Max shift(%))
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/pitch_shift_up.png
+   :alt: pitch_shift_up.png
+
+Here is the same example in the frequency domain. This picture shows the frequency domain of the input signal.
+
+
+|Before_Pitch_Shift.png|
+
+This picture shows the frequency domain of the output signal.
+
+
+|After_Pitch_Shift.png|
 
 Example
 -------
 
-| The algorithm can simply be inserted into the signal chain to shift the frequency of the signal that is input to it.
-| |System_Picture.png|
+The algorithm can simply be inserted into the signal chain to shift the frequency of the signal that is input to it.
+
+
+|System_Picture.png|
 
 Algorithm Details
 -----------------
@@ -92,7 +103,6 @@ Parameter RAM              4
 ========================== =================================
 
 .. |Pitch_Transpose_Cell.png| image:: https://wiki.analog.com/_media/Pitch_Transpose_Cell.png
-.. |pitch_shift_up.png| image:: https://wiki.analog.com/_media/pitch_shift_up.png
 .. |Before_Pitch_Shift.png| image:: https://wiki.analog.com/_media/Before_Pitch_Shift.png
 .. |After_Pitch_Shift.png| image:: https://wiki.analog.com/_media/After_Pitch_Shift.png
 .. |System_Picture.png| image:: https://wiki.analog.com/_media/System_Picture.png

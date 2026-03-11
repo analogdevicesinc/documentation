@@ -16,8 +16,8 @@ Hardware Setup
 
 The UART interface is the **USB to UART** port on the ADSP-SC5xx EZ-board.
 
-| 
-| ===== Software Configuration =====
+Software Configuration
+----------------------
 
 Configure Linux kernel
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -43,7 +43,7 @@ Add in uart0 node of **'linux source code directory'/arch/arm/boot/dts/sc58x.dts
    ...
    adi,uart-has-rtscts;
    ...
-   }; 
+   };
 
 Then run bitbake linux-adi -C compile to generate kernel image zImage and dtb file.
 

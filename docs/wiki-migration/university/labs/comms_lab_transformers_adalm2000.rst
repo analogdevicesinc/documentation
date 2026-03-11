@@ -62,8 +62,7 @@ One example of this impedance matching is a television balun (short for balanced
 
 Turns ratio :math:`r = sqrt(R_S / R_L)`
 
-| http://en.wikipedia.org/wiki/Maximum_power_transfer_theorem
-| http://en.wikipedia.org/wiki/Impedance_matching
+http://en.wikipedia.org/wiki/Maximum_power_transfer_theorem http://en.wikipedia.org/wiki/Impedance_matching
 
 Frequency range:
 ~~~~~~~~~~~~~~~~
@@ -83,9 +82,7 @@ Inductance = Inductance\ :sub:`table` × (W\ :sub:`N`)\ :sup:`2`
 
 Note: this Wn\ :sup:`2` factor is only valid when the coupling factor between windings is exactly ( or very nearly ) one. A more general formula is L\ :sub:`T` = L\ :sub:`1` + L\ :sub:`2` + 2M
 
-| DCR = DCR\ :sub:`table` × W\ :sub:`N`
-| I\ :sub:`sat` = (I\ :sub:`sattable` × 6) ÷ W\ :sub:`N` (connected in series)
-| I\ :sub:`rms` = I\ :sub:`rmstable`
+DCR = DCR\ :sub:`table` × W\ :sub:`N` I\ :sub:`sat` = (I\ :sub:`sattable` × 6) ÷ W\ :sub:`N` (connected in series) I\ :sub:`rms` = I\ :sub:`rmstable`
 
 Where Inductance\ :sub:`table`, DCR\ :sub:`table`, I\ :sub:`sattable`\ and I\ :sub:`rmstable`\ come from the manufacturer's datasheet.
 
@@ -93,10 +90,7 @@ Where Inductance\ :sub:`table`, DCR\ :sub:`table`, I\ :sub:`sattable`\ and I\ :s
 
 To increase current ratings, multiple windings (W\ :sub:`N`) can be connected in parallel. DCR decreases, current ratings increase, and inductance remains the same.
 
-| Inductance = Inductance\ :sub:`table`
-| DCR = 1 ÷ [W\ :sub:`N` × (1 ÷ DCR\ :sub:`table`)]
-| I\ :sub:`sat` = (I\ :sub:`sattable` × 6) ÷ W\ :sub:`N` ( connected in parallel )
-| I\ :sub:`rms` = I\ :sub:`rmstable` × W\ :sub:`N`
+Inductance = Inductance\ :sub:`table` DCR = 1 ÷ [W\ :sub:`N` × (1 ÷ DCR\ :sub:`table`)] I\ :sub:`sat` = (I\ :sub:`sattable` × 6) ÷ W\ :sub:`N` ( connected in parallel ) I\ :sub:`rms` = I\ :sub:`rmstable` × W\ :sub:`N`
 
 Pre Lab Simulaations
 ~~~~~~~~~~~~~~~~~~~~
@@ -106,11 +100,7 @@ Before measuring the frequency response of the transformers supplied in your par
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 HPH1-1400L 6 winding transformer
-| 1 HPH1-0190L 6 winding transformer
-| 2 100 Ω resistors
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 HPH1-1400L 6 winding transformer 1 HPH1-0190L 6 winding transformer 2 100 Ω resistors
 
 Directions:
 -----------
@@ -174,8 +164,6 @@ Connect to the transformer for a 1:2 step up configuration (red arrows) and a 2:
 
 Use the impedance matching formula to calculate the appropriate value for R\ :sub:`L` in both cases. Repeat the same frequency sweeps using the Network Analyzer tool. Be sure to export the data to a .csv file for further analysis in either Excel or Matlab. Compare the measured low frequency roll off points with those measures in the 1:1 configurations from figure 2.
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -186,8 +174,6 @@ Hardware Setup:
 
    Figure 6, Step up (red) breadboard connection
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -216,8 +202,6 @@ For additional credit calculate the correct R\ :sub:`L` for other possible step 
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/Electromagnetic_coil
-  http:*\ www.coilcraft.com/pdfs/doc157_SigXfrmApp.pdf
-| `Simulating Non-linear Transformers in LTspice <https://www.allaboutcircuits.com/technical-articles/simulating-non-linear-transformers-in-ltspice/>`_
+http://en.wikipedia.org/wiki/Electromagnetic_coil http://www.coilcraft.com/pdfs/doc157_SigXfrmApp.pdf `Simulating Non-linear Transformers in LTspice <https://www.allaboutcircuits.com/technical-articles/simulating-non-linear-transformers-in-ltspice/>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**

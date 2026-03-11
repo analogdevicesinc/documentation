@@ -197,14 +197,13 @@ For example, GPIO30 is connected to the on board ADT7420 temperature sensor by d
 MCU Cog Design and Integration Files
 ------------------------------------
 
-|
-
 .. admonition:: Download
    :class: download
 
    `EV-COG-AD4050WZ MCU Cog Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/02_047385a_top.pdf>`_
 
-   | `EV-COG-AD4050WZ MCU Cog Layout Files & BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/20-047385-01a_3_.zip>`_
+   
+   `EV-COG-AD4050WZ MCU Cog Layout Files & BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/20-047385-01a_3_.zip>`_
    
 
 

@@ -1,13 +1,9 @@
 ADI AD-FMCADC2-EBZ Boards & Xilinx Reference Design
 ===================================================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support for the ad-fmcadc2-ebz was discontinued starting with 2022_R2 Kuiper Linux release and it is not supported in later releases. Last release in which pre-build files can be found is **2021_r2**. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can still be found on :git-hdl:`hdl_2021_r2 <projects/fmcadc2>` release branch.
+   \ **NOTE:** Support for the ad-fmcadc2-ebz was discontinued starting with 2022_R2 Kuiper Linux release and it is not supported in later releases. Last release in which pre-build files can be found is **2021_r2**. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can still be found on `hdl_2021_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2021_r2/projects/fmcadc2>`_ release branch.
 
 
 .. important::

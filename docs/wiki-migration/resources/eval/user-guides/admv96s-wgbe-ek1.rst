@@ -1,7 +1,7 @@
 ADMV96S-WGBE-EK1 User Guide
 ===========================
 
-|
+
 
 .. important::
 
@@ -25,8 +25,8 @@ The on-board :adi:`MAX32650` ultralow power ARM® Cortex®-M4 microcontroller co
 
 |image2|
 
-| 
-| ==== Features ====
+Features
+~~~~~~~~
 
 -  Allows evaluation and prototyping of 60 GHz short data links to replace traditional mechanical connectors in moving joints
 -  1 Gbps / 100 Mbps / 10 Mbps Ethernet interface on both sides of the wireless data link
@@ -66,7 +66,6 @@ Specifications
 | Dimensions               | 3.283 x 2.362                                                                                                                                 |
 +--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
---------------
 
 Package Contents
 ----------------
@@ -80,8 +79,8 @@ Package Contents
 -  2x MAXDAP programmer
 -  2x VEL36US120 power adapter (Users may need to purchase different adapter plugs to accommodate the various power socket standards in different countries or regions）
 
-| 
-| ==== Getting your system up and running ====
+Getting your system up and running
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
@@ -102,15 +101,18 @@ Application Development
 Example 1 – Demonstrate Gigabit Capability by Connecting to the Internet Using LAN with the Contactless 60 GHz Link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| ADMV9615 and ADMV9625 Contactless Ethernet Link Labeled Pair1 and Pair-2 |image3|
+ADMV9615 and ADMV9625 Contactless Ethernet Link Labeled Pair1 and Pair-2
+
+
+|image3|
 
 Hardware Connections
 ^^^^^^^^^^^^^^^^^^^^
 
-| |image4|
-| \* Mount the ADMV9615 and ADMV9625 Assemblies onto the guide rails with patch antennas facing each other.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_1_hw_connections.png
+   :width: 600px
 
+-  Mount the ADMV9615 and ADMV9625 Assemblies onto the guide rails with patch antennas facing each other.
 -  Connect 12 V power supplies.
 -  Connect one RJ45 Ethernet connector to your PC.
 -  Connect the other RJ45 Ethernet connector to your Local Area Network.
@@ -118,77 +120,82 @@ Hardware Connections
 -  Within a few seconds, your PC should connect to your LAN with a speed of up to 1 Gbps (if your network can support it)
 -  (Optional) Connect MAXDAP connector using a micro-USB to your PCs if you would like to configure the firmware.
 
-| 
-| ----
+--------------
 
 Example 2 – Create a Two PC LAN Connected with the Contactless 60GHz Link and Share Large Data Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| ADMV9615 and ADMV9625 Contactless Ethernet Link Labeled Pair-1 and Pair-2 |image5|
+ADMV9615 and ADMV9625 Contactless Ethernet Link Labeled Pair-1 and Pair-2
 
-.. _hardware-connections-1:
+
+|image4|
 
 Hardware Connections
 ^^^^^^^^^^^^^^^^^^^^
 
-| |image6|
-| \* Mount the ADMV9615 and ADMV9625 assemblies onto the guide rails with patch antennas facing each other.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_2_hw_connections.png
+   :width: 600px
 
+-  Mount the ADMV9615 and ADMV9625 assemblies onto the guide rails with patch antennas facing each other.
 -  Connect 12 V power supply, 2 PL.
 -  Connect one RJ45 Ethernet connector to PC1’s Ethernet jack.
 -  Connect the other RJ45 Ethernet connector to PC2’s Ethernet jack.
 
-| 
-| ===File Sharing Setup===
+File Sharing Setup
+^^^^^^^^^^^^^^^^^^
 
-| The following procedure was taken from: How to Share Files between Two Computers Using LAN Cable – TechWiser
-| On PC1, go to the Start menu and search “Control Panel”. Once you see it, click on it, to open it. |image7|
+The following procedure was taken from: How to Share Files between Two Computers Using LAN Cable – TechWiser
+
+On PC1, go to the Start menu and search “Control Panel”. Once you see it, click on it, to open it.
+
+
+|image5|
 
 -  Choose **Networks and Internet**.
 -  Next, choose **Network and Sharing Center**.
 -  Click on **Advanced Sharing Settings**.
--  Choose **All Networks**. |image8|
+-  Choose **All Networks**. |image6|
 
-|image9|
+|image7|
 
 -  Choose **Turn on Sharing**.
 
-|image10|
+|image8|
 
 -  Turn off Password Protection (Once Done with File Sharing Turn Password Protection Back On)
 -  Perform steps 2 through 6 for PC2.
 
-| 
-| To put both PCs on the same network, manually set up IP settings by opening **Control Panel**.
+To put both PCs on the same network, manually set up IP settings by opening **Control Panel**.
 
 -  Choose **Network and Sharing**.
 -  Select **Ethernet** and click **Properties**.
 -  Select **Internet Protocol Version 4 (TCP/IPv4)**.
 -  Select **Properties**.
 
-| 
-| For PC1, choose “Use the following IP address” |image11|
+For PC1, choose “Use the following IP address”
+
+
+|image9|
 
 -  IP Address: **192.168.1.1**
 -  Subnet mask: **255.255.255.0**
 -  Default Gateway: **192.168.1.2**
 
-| 
-| Use the following DNS server address:
+Use the following DNS server address:
 
 -  Preferred DNS Server: **208.67.222.222**
 -  Alternate DNS server: **208.67.220.220**
 
-| 
-| For PC2, choose “Use the following IP address” |image12|
+For PC2, choose “Use the following IP address”
+
+
+|image10|
 
 -  IP Address: **192.168.1.2**.
 -  Subnet mask: **255.255.255.0**.
 -  Default Gateway: **192.168.1.1**.
 
-| 
-| Use the following DNS server address:
+Use the following DNS server address:
 
 -  Preferred DNS Server: **208.67.222.222**
 -  Alternate DNS server: **208.67.220.220**
@@ -218,34 +225,40 @@ Hardware Connections
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/shared_folder.png
    :width: 400px
 
-| 
-| ----
+--------------
 
 Example 3 – Use Iperf to Check Ethernet Link Speed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| ADMV9615 and ADMV9625 Contactless Ethernet Link Labeled Pair1 and Pair2 |image13|
-| ===Hardware Connections=== |image14|
+ADMV9615 and ADMV9625 Contactless Ethernet Link Labeled Pair1 and Pair2
+
+
+|image11|
+
+Hardware Connections
+^^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_3_hw_connections.png
+   :width: 600px
 
 -  Mount the ADMV9615 and ADMV9625 assemblies onto the guide rails with patch antennas facing each other.
 -  Connect 12 V power supplies.
 -  Connect one RJ45 Ethernet connector to PC1’s Ethernet jack.
 -  Connect the other RJ45 Ethernet connector to PC2’s Ethernet jack.
 
-| 
-| ----
+--------------
 
 Iperf
 -----
 
-| Follow the Procedure from Example 2 for File Sharing Using a 2 PC LAN:
-| Iperf is a free tool for network performance and measurement, `download it here <https://iperf.fr/iperf-download.php>`_
-| |image15|
+Follow the Procedure from Example 2 for File Sharing Using a 2 PC LAN:
 
-| 
-| \* Unzip the downloaded archive.
+Iperf is a free tool for network performance and measurement, `download it here <https://iperf.fr/iperf-download.php>`_
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/iperf.png
+   :width: 600px
+
+-   Unzip the downloaded archive.
 -   On PC1, open a DOS Command window and navigate to the directory where iperf is installed. Type in
 
 <code> cd C:\\Users\\Public\\Documents\\iperf-3.1.3-win64 </code>
@@ -263,11 +276,9 @@ Iperf
 <code> “iperf3.exe -c 192.168.1.1” </code>
 
 
-|image16|
+|image12|
 
 -  Iperf tests the link speed about 950 Mbps.
-
-| 
 
 --------------
 
@@ -299,29 +310,21 @@ For questions and more information please contact us on the Analog Devices Engin
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/evaal-admv96s-wgbe-ek1.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_1.png
    :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_1_hw_connections.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_2.png
    :width: 800px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_2_hw_connections.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/file_sharing_setup.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/file_sharing_setup.png
-   :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_settings.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_settings.png
    :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_settings_2.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_settings_2.png
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_and_sharing.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_and_sharing.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/ip_address.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/ip_address.png
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/pc2_ip_address.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/pc2_ip_address.png
    :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_3.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_3.png
    :width: 800px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_3_hw_connections.png
-   :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/iperf.png
-   :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/iperf_settings.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/iperf_settings.png
    :width: 600px

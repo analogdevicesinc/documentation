@@ -26,13 +26,13 @@ The model can be found here:
    :class: download
 
    
-   -  :git-MathWorks_tools:`IEEE 802.11 Beacon Frame Receiver Model <hil_models/ieee80211_beacon_rx>`
+   -  `IEEE 802.11 Beacon Frame Receiver Model <https://github.com/analogdevicesinc/MathWorks_tools/tree/3.1/hil_models/ieee80211_beacon_rx>`_
    
 
 
 Its initialization functions are based on the ones of `IEEE 802.11 WLAN - Beacon Frame Receiver with USRP® Hardware <https://www.mathworks.com/help/supportpkg/usrpradio/ug/ieee-802-11-tm-wlan-ofdm-beacon-receiver-with-usrp-r-hardware.html>`_.
 
-.. image:: https://wiki.analog.com/_media/example.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/example.png
    :alt: Block diagram
    :width: 600px
 
@@ -42,9 +42,9 @@ One other tip: In order to avoid saturation of the RX channel, use the manual ga
 
 With everything set up properly, we can run the model and get the results below:
 
-.. image:: https://wiki.analog.com/_media/result1.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/result1.png
    :alt: Block diagram
    :width: 600px
 
-.. image:: https://wiki.analog.com/_media/result2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/result2.png
    :alt: Block diagram

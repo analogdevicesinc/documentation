@@ -39,7 +39,7 @@ The MCAPI example for ARM core (Running Linux) is included in the YOCTO, and you
 
    git clone https://github.com/analogdevicesinc/lnxdsp-examples.git
    cd lnxdsp-examples
-   git branch -a 
+   git branch -a
    git checkout -b release/yocto-1.0.0 origin/release/yocto-1.0.0
    git pull
 
@@ -84,7 +84,7 @@ MCAPI lib is built on top of the ICC (Inter-Core Communications) device driver. 
    Device Drivers  --->
           [*] Staging drivers  --->
              [*]   icc driver  --->
-                [*]   icc core control  
+                [*]   icc core control
                 [*]   icc protocol
                 [ ]   icc debug
 
@@ -121,14 +121,16 @@ A **brief step** to run multicore on the EZ-Kit board is showing as follows:
 -  Enable SHARC cores in Linux
 -  Resume Core 1 & 2 Application running in CCES
 
-| 
-| ==== Step 1: Boot into Linux console ==== Please refer to the :doc:`Installing Linux On The Hardware </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing>` to load the built Linux into the target board:
+Step 1: Boot into Linux console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: c++
+Please refer to the :doc:`Installing Linux On The Hardware </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing>` to load the built Linux into the target board:
+
+.. code:: none
 
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@     
+        @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@     @@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@            @@@@@@@@@@@@@@@@@@@
@@ -151,8 +153,10 @@ A **brief step** to run multicore on the EZ-Kit board is showing as follows:
    adsp-sc589-ezkit login: root
    Password: adi
 
-| 
-| ==== Step2: Build MCAPI Example in CCES ==== Before running the mcapi example in CrossCore Embedded Studio, please follow the steps below to import and build it, now we take ADSP-SC589-EzKit as the example to demonstrate.
+Step2: Build MCAPI Example in CCES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Before running the mcapi example in CrossCore Embedded Studio, please follow the steps below to import and build it, now we take ADSP-SC589-EzKit as the example to demonstrate.
 
 Import the mcapi example into CCES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -204,8 +208,10 @@ Build the projects
    **Diagram 3** Build Action - Build Projects
 
 
-| 
-| ==== Step3: Load MCAPI Example for SHARC Cores ==== Please follow the steps below to do debug configuration, download and run the built binary for SHARC Cores.
+Step3: Load MCAPI Example for SHARC Cores
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Please follow the steps below to do debug configuration, download and run the built binary for SHARC Cores.
 
 1. Connect ICE-1000/2000 JTAG emulator between the SC589-EZKIT and your PC
 
@@ -229,8 +235,10 @@ Build the projects
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/debug_config_start_debug.jpg
 
-| 
-| ==== Step4: Enable SHARC cores in Linux ==== In u-boot, enable SHARC core then boot linux
+Step4: Enable SHARC cores in Linux
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In u-boot, enable SHARC core then boot linux
 
 ::
 
@@ -247,17 +255,21 @@ After running SHARC core, CCES halts in the first line of the application code o
 
 |image4|
 
-| 
-| ==== Step5: Resume Core 1 & 2 Application running in CCES ==== Resume(F5) core 1 and continue running the application in CCES.
+Step5: Resume Core 1 & 2 Application running in CCES
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Resume(F5) core 1 and continue running the application in CCES.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/debug_config_resume_success.jpg
 
 Now Linux is running on ARM core 0 while SHARC baremetal application is running on core 1.
 
-| 
-| ==== Step6: Run Linux MCAPI MSG Demo Test ==== Run 'arm_sharc_msg_demo' and 'arm_sharc_msg_test' command in Linux and the passed log in linux is showing as below.
+Step6: Run Linux MCAPI MSG Demo Test
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code:: c++
+Run 'arm_sharc_msg_demo' and 'arm_sharc_msg_test' command in Linux and the passed log in linux is showing as below.
+
+.. code:: console
 
    root@adsp-sc589-ezkit:~# corecontrol --start 1
    Test core 1 start
@@ -281,7 +293,7 @@ Now Linux is running on ARM core 0 while SHARC baremetal application is running 
                                    0 ----- specify to use the two SHARC cores(default)
                                    1 ----- specify the remote core is SHARC Core 1
                                    2 ----- specify the remote core is SHARC Core 2
-                                   
+
    root@adsp-sc589-ezkit:~# arm_sharc_msg_demo -r 3
    semget
    Thread [0] CHECK_STATUS---initialize:MCAPI_SUCCESS
@@ -497,8 +509,9 @@ Now Linux is running on ARM core 0 while SHARC baremetal application is running 
    Thread [1] test success
    mcapi_finalize 322
 
-| 
-| ---- **BACK TO** :doc:`Multi-Core Support </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/start>`
+--------------
+
+**BACK TO** :doc:`Multi-Core Support </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/start>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/001_import_mcapi_example_into_cces.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/002_debug_or_release_mode_choosing.png

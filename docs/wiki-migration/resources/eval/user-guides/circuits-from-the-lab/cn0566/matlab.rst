@@ -31,12 +31,18 @@ Installing MATLAB
 
 For the hardware board support packages to work, you must use Matlab version **R2022b** or newer. You can go to the download page by clicking `here <https://www.mathworks.com/downloads>`_, you may be required to sign in with your MathWorks account first.
 
-| |matlab_download_website.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/matlab/matlab_download_website.png
+   :alt: matlab_download_website.png
+   :align: right
 
 --------------
 
-| Select the release version on the left, then click the download button.
-| After downloading the installer, open it to run the MATLAB installation tool. During the installation process, there will be a window to select which products and toolboxes will be installed, as shown in the image below. Ensure that all the products shown in the image have been selected. |mathworks_products_install.png|
+Select the release version on the left, then click the download button.
+
+After downloading the installer, open it to run the MATLAB installation tool. During the installation process, there will be a window to select which products and toolboxes will be installed, as shown in the image below. Ensure that all the products shown in the image have been selected.
+
+
+|mathworks_products_install.png|
 
 --------------
 
@@ -98,8 +104,9 @@ Next verify connectivity to Pluto with a similar method. Create and instance of 
    sdr.uri = 'ip:pluto';
    data = sdr();
 
-| Like the Phaser system object this operation should not generate any errors. The *data* vector should contain non-zero data.
-| If there are errors while attempting to verify connectivity, please try the following options:
+Like the Phaser system object this operation should not generate any errors. The *data* vector should contain non-zero data.
+
+If there are errors while attempting to verify connectivity, please try the following options:
 
 -  Check all the packages/toolboxes listed above are installed properly
 -  Restart MATLAB and run the code again
@@ -109,9 +116,11 @@ Next verify connectivity to Pluto with a similar method. Create and instance of 
 Running scripts
 ~~~~~~~~~~~~~~~
 
-| Once both the Phaser and Pluto are able to communicate with MATLAB, download and extract `phaser_steeringangle_rev1.zip <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/matlab/phaser_steeringangle_rev1.zip>`_
-| Then open the file **Phaser_steeringAngle_rev1.m**
-| This script functions to scan through a range of steering angles and output a plot of the array factor.
+Once both the Phaser and Pluto are able to communicate with MATLAB, download and extract `phaser_steeringangle_rev1.zip <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/matlab/phaser_steeringangle_rev1.zip>`_
+
+Then open the file **Phaser_steeringAngle_rev1.m**
+
+This script functions to scan through a range of steering angles and output a plot of the array factor.
 
 --------------
 
@@ -135,9 +144,9 @@ This segment of the code serves to initialize the Pluto and Phaser objects in MA
 
 .. code:: matlab
 
-   % Create the model of the phaser    
+   % Create the model of the phaser
    c = physconst('LightSpeed');
-   phaserModel = phased.ULA('NumElements',8,'ElementSpacing', ... 
+   phaserModel = phased.ULA('NumElements',8,'ElementSpacing', ...
        bf.ElementSpacing);
    steeringVec = phased.SteeringVector("SensorArray",phaserModel, ...
        'NumPhaseShifterBits',7,'PropagationSpeed',c);
@@ -176,8 +185,7 @@ This segment just sets the gain levels and phase calibration values.
        ArrayFactor(ii) = (max(abs(receivedFFT)));
    end
 
-| Here is where the actual beam steering action happens in the code.
-| The code creates an array containing the angles that the beam will be steered through. Then, it performs a loop where:
+Here is where the actual beam steering action happens in the code. The code creates an array containing the angles that the beam will be steered through. Then, it performs a loop where:
 
 -  Takes a given angle from the array of angles
 -  Use the given steering angle to create another array containing the respective phase shifts to be applied to each antenna element
@@ -206,7 +214,6 @@ Here, the Phased Array System Toolbox is used to simulate the array factor for t
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/matlab/final_assembly.png
    :width: 750px
-.. |matlab_download_website.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/matlab/matlab_download_website.png
 .. |mathworks_products_install.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/matlab/mathworks_products_install.png
    :width: 800px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/matlab/matlab_addons_button.png

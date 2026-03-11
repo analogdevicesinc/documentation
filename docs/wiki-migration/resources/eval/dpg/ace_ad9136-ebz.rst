@@ -56,11 +56,7 @@ Initial Set-Up
 | 1. Install the DPG Downloader and AD9136/AD9135 SPI software and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
 | 2. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB.
 | 3. Connect the DGP3 unit to your PC and turn on the unit.
-
-Single-Tone Test
-~~~~~~~~~~~~~~~~
-
-| These settings configure the AD9136/AD9135 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the DAC output, under the condition: Fdata = 1.6GHz, 1X interpolation, 4-carrier WCDMA signal with center frequency = 100MHz.
+| ==== Single-Tone Test ==== These settings configure the AD9136/AD9135 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the DAC output, under the condition: Fdata = 1.6GHz, 1X interpolation, 4-carrier WCDMA signal with center frequency = 100MHz.
 | === Configure DPG Vector Software === 1. To begin, turn on the external +5V supply.
 | 2. Open DPG Downloader if you have not done so. (Start > All Programs > Analog Devices > DPG > DPGDownloader). Ensure that the program detects the AD9136/AD9135, as indicated in the “Evaluation Board” drop-down list, shown in Figure 3.
 
@@ -81,7 +77,7 @@ Single-Tone Test
 3. Select "QBF 2X4 85G 425M" from the "Port Configuration" drop-down list to configure the DPG for Dual Link and "Mode 8" from the "JESD Mode" drop-down list.
 | 3. Click on “Add Generated Waveform”, and then “Wireless Infrastructure”. A WIFR panel will be added to the vector list. Enter the Data Rate, in this case 1.6GHz and the desired frequency, 100MHz. Enter the digital amplitude. In this case we use 0dBFS. Select "2's Complement" from the Number Format drop-down list. Input the center frequency of "100MHz" at the bottom of the panel, choose "WCDMA" from the Standard drop-down menu and increase the No. of Carriers to "4" - then hit the "Add Carriers" button. The DPG Downloader panel should look like Figure 3.
 | 4. Select the WIFR vector (I) in the “DAC0” drop down menu and the WIFR vector (Q) in the “DAC1”. At this point, the DPG Downloader panel should look like Figure 4.
-|
+
 
 .. container:: center
 
@@ -100,7 +96,7 @@ Configuring SPI
 ^^^^^^^^^^^^^^^
 
 | 1. Open ACE (Start > All Programs > Analog Devices > ACE). It should recognize the AD9136-EBZ or AD9135-EBZ in the attached hardware section when the application startup screen displays, as showing in Figure 5 for the AD9136-EBZ.
-|
+
 
 .. container:: center
 
@@ -120,6 +116,7 @@ Configuring SPI
 | a. The Links should be set to dual link. The JESD Mode is set to 8, Interpolation set to 1, and FDAC set to 1.6GHz, as shown in Figure 6.
 
 | b. Hit “Apply” and the wizard will execute a startup routine to configure the AD9516 and the AD9136/AD9135. Once complete, the SERDES PLL lock indicator on the board will turn green if it locked and the display will look like Figure 7.
+
 
 .. container:: center
 
@@ -145,6 +142,7 @@ Configuring SPI
 4. Return to DPGDownloader and note the Serial Line Rate readback should read 8Gbps indicating that the clocks going to the FPGA are configured properly for this setup, as shown in Figure 8.
 
 | 5. Click Download (|9154_down_arrow.png|) and Play (|9154_right_green_arrow.png|) in the DPGDownloader screen.
+
 
 .. container:: center
 

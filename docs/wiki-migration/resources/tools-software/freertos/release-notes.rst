@@ -50,8 +50,6 @@ This FreeRTOS product is a standalone product containing FreeRTOS 10.4.3-LTS2. N
 Version 2.0.0
 ~~~~~~~~~~~~~
 
-.. _supported-parts-1:
-
 Supported Parts
 ---------------
 
@@ -61,22 +59,16 @@ Supported Parts
 -  ADSP-SC5xx (Cortex-A55)
 -  ADSP-215xx
 
-.. _new-features-1:
-
 New Features
 ------------
 
 -  Upgraded FreeRTOS from 10.0.0 to 10.4.3-LTS2
 -  Add support for Cortex-A55 on ADSP-SC59x
 
-.. _changes-1:
-
 Changes
 -------
 
 -  FreeRTOS sources are included so no overlay is required
-
-.. _compatibility-1:
 
 Compatibility
 -------------
@@ -86,8 +78,6 @@ This FreeRTOS product is a standalone product containing FreeRTOS 10.4.3-LTS2. N
 Version 1.5.0
 ~~~~~~~~~~~~~
 
-.. _supported-parts-2:
-
 Supported Parts
 ---------------
 
@@ -96,21 +86,15 @@ Supported Parts
 -  ADSP-SC5xx (Cortex-A5)
 -  ADSP-215xx
 
-.. _new-features-2:
-
 New Features
 ------------
 
 -  Support for ADSP-SC594 (ARM and SHARC+ Core) processor added
 
-.. _changes-2:
-
 Changes
 -------
 
 -  ADuCM3/4\* support has been removed from this product
-
-.. _compatibility-2:
 
 Compatibility
 -------------
@@ -120,8 +104,6 @@ This FreeRTOS product is intended to be used in conjunction with version 10.0.0 
 Version 1.4.0
 ~~~~~~~~~~~~~
 
-.. _supported-parts-3:
-
 Supported Parts
 ---------------
 
@@ -132,21 +114,15 @@ Supported Parts
 -  ADuCM302x
 -  ADuCM4x50
 
-.. _new-features-3:
-
 New Features
 ------------
 
 -  Support for ADSP-2156x (SHARC+ Core) processor added
 
-.. _changes-3:
-
 Changes
 -------
 
 -  LwIP examples removed due to incompatability between LwIP 2.6.0 and CCES 2.9.0.
-
-.. _compatibility-3:
 
 Compatibility
 -------------
@@ -156,8 +132,6 @@ This FreeRTOS product is intended to be used in conjunction with version 10.0.0 
 Version 1.3.1
 ~~~~~~~~~~~~~
 
-.. _supported-parts-4:
-
 Supported Parts
 ---------------
 
@@ -168,8 +142,6 @@ Supported Parts
 -  ADuCM302x
 -  ADuCM4x50
 
-.. _new-features-4:
-
 New Features
 ------------
 
@@ -177,14 +149,10 @@ New Features
 -  Fix issues related to use of System Service and Device Drivers with ADSP-SC5xx and ADSP-BF7xx processors
 -  Support for UART based I/O for ADSP-SC5xx Cortex-A core FreeRTOS
 
-.. _changes-4:
-
 Changes
 -------
 
 This release contains support for UART based I/O when using FreeRTOS on the ADSP-SC5xx Cortex-A5 core. This changes the method of I/O used for this processor core and care should be taken to understand this change when upgrading existing projects.
-
-.. _compatibility-4:
 
 Compatibility
 -------------
@@ -193,8 +161,6 @@ This FreeRTOS product is intended to be used in conjunction with version 10.0.0 
 
 Version 1.3.0
 ~~~~~~~~~~~~~
-
-.. _supported-parts-5:
 
 Supported Parts
 ---------------
@@ -206,8 +172,6 @@ Supported Parts
 -  ADuCM302x
 -  ADuCM4x50
 
-.. _new-features-5:
-
 New Features
 ------------
 
@@ -216,8 +180,6 @@ New Features
 -  LwIP example for Cortex-A5
 
 While this port is functionally complete, it is considered a beta release due to an issue with performance when host based I/O is enabled in an application debug session (see known issues below for more details). This issue will be addressed in a future version of the FreeRTOS product from Analog Devices.
-
-.. _compatibility-5:
 
 Compatibility
 -------------
@@ -249,8 +211,6 @@ Known Issues
 Version 1.2.0
 ~~~~~~~~~~~~~
 
-.. _supported-parts-6:
-
 Supported Parts
 ---------------
 
@@ -260,19 +220,15 @@ Supported Parts
 -  ADuCM302x
 -  ADuCM4x50
 
-.. _compatibility-6:
-
 Compatibility
 -------------
 
 This FreeRTOS product is intended to be used in conjunction with version 9.0.0 of the FreeRTOS product as provided for free at FreeRTOS.org. This product was tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use this version of the operating system. CrossCore Embedded Studio version 2.6.0 or later is required. ADuCM parts require IAR 5.2.1.a or Keil 7.60.1 or later.
 
-.. _known-issues-1:
-
 Known Issues
 ------------
 
-\* FreeRTOS and CrossCore Embedded Studio conflict on use of SVC interrupt (Cortex-A5 only) \* The current implementation of FreeRTOS for ADSP-SC5xx (Cortex-A5 Core) relies on the SVC interrupt to perform context switching within the RTOS.
+- FreeRTOS and CrossCore Embedded Studio conflict on use of SVC interrupt (Cortex-A5 only) \* The current implementation of FreeRTOS for ADSP-SC5xx (Cortex-A5 Core) relies on the SVC interrupt to perform context switching within the RTOS.
 
 ::
 
@@ -293,15 +249,11 @@ Known Issues
 Version 1.1.0
 ~~~~~~~~~~~~~
 
-.. _supported-parts-7:
-
 Supported Parts
 ---------------
 
 -  ADuCM302x
 -  ADuCM4x50
-
-.. _compatibility-7:
 
 Compatibility
 -------------

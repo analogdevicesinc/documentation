@@ -27,15 +27,16 @@ The following steps describe the procedure for exporting A2B system configuratio
 
 |image1|
 
-|
-
 .. container:: centeralign
 
    **Figure :** Exporting system configuration
 
 
-| A dialog box appears as shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles>`. Export required configuration file using appropriate tab.
-| |image2|
+A dialog box appears as shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles>`. Export required configuration file using appropriate tab.
+
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -75,12 +76,7 @@ In the Auto configuration scheme, a host processor can automatically configure a
 Specifications of Export files from A2B plugin for SigmaStudio+
 ---------------------------------------------------------------
 
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/cmdlistxml>` for the Command List XML specification
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/cmdlisth>` for the Command List header specification
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/peripheralxml>` for the Peripheral XML specification
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml>` for the A2B BCF XML specification
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfc>` for the A2B BCF.c specification
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles-list/dat>` for the DAT specification
+:doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/cmdlistxml>` for the Command List XML specification :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/cmdlisth>` for the Command List header specification :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/peripheralxml>` for the Peripheral XML specification :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml>` for the A2B BCF XML specification :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfc>` for the A2B BCF.c specification :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles-list/dat>` for the DAT specification
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/exportimport.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/system_config.png

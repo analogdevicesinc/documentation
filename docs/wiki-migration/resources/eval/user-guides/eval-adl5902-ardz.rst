@@ -20,9 +20,9 @@ Shield Specifications
    *Input Frequency Range: 50MHz to 9GHz
    *RF Input Range: 65dB (+3 dBm to -62 dBm)
    *Maximum RF Input Power (Abs Max Rating): 21dBm
-   *Supply: 
-   * 5V Internal from Arduino base board (short pin1 and pin2 of P4) 
-   * 6V External (for operation with an external supply or operation without Arduino base board) 
+   *Supply:
+   * 5V Internal from Arduino base board (short pin1 and pin2 of P4)
+   * 6V External (for operation with an external supply or operation without Arduino base board)
      * 6V External supply (short pin1 and pin2 of P2; short pin2 and pin3 of P4)
      * 6V Wall wart supply (short pin2 and pin3 of P2; short pin2 and pin3 of P4)
    *Quiescent Current: < 100mA
@@ -49,12 +49,12 @@ Choose among the power option to Power up the EVAL-ADL5902-ARDZ by shorting the 
 Option 1: 5V of EVAL-ADICUP3029 or Linduino One
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| |power-5v|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-power-5v.png
+   :alt: power-5v
+   :width: 300px
 
 -  Connect **pin1 and pin2** of pin header **P4**.
 -  Mount EVAL-ADL5902-ARDZ to EVAL-ADICUP3029 or Linduino One.
-
-|
 
 .. note::
 
@@ -64,37 +64,40 @@ Option 1: 5V of EVAL-ADICUP3029 or Linduino One
 Option 2: 6V DC supply
 ~~~~~~~~~~~~~~~~~~~~~~
 
-| |power-dc|
-| \* Connect **pin2 and pin3** of pin header **P4**
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-power-dc.png
+   :alt: power-dc
+   :width: 300px
 
+-  Connect **pin2 and pin3** of pin header **P4**
 -  Connect **pin1 and pin2** of pin header **P2**
 -  Connect 6V to the EVAL-ADL5902-ARDZ via the **Screw terminal block**
 
 .. note::
 
-   
-   | EVAL-ADL5902-ARDZ is already functional using this option, even without EVAL-ADICUP3029 or Linduino One
+   EVAL-ADL5902-ARDZ is already functional using this option, even without EVAL-ADICUP3029 or Linduino One
 
 
 Option 3: 6V Wall wart
 ~~~~~~~~~~~~~~~~~~~~~~
 
-| |power-wall|
-| \* Connect **pin2 and pin3** of pin header **P4**
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-power-wall.png
+   :alt: power-wall
+   :width: 300px
 
+-  Connect **pin2 and pin3** of pin header **P4**
 -  Connect **pin2 and pin3** of pin header **P2**
 -  Connect 6V wall wart to the EVAL-ADL5902-ARDZ via the **DC Jack**
 
 .. note::
 
-   
-   | EVAL-ADL5902-ARDZ is already functional using this option, even without EVAL-ADICUP3029 or Linduino One
+   EVAL-ADL5902-ARDZ is already functional using this option, even without EVAL-ADICUP3029 or Linduino One
 
 
 Typical Hardware Setup for Measurement
 ======================================
 
-| |typical setup|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-setup.png
+   :alt: typical setup
 
 Software GUI for EVAL-ADICUP3029
 ================================
@@ -112,19 +115,20 @@ Software Installation
 
 -  In the extracted files look for **power_detector-firmware.hex** then copy the hex file to **Computer>>DAPLINK** drive
    |\|DAPLINK_screencap|
-   <WRAP>
+   
 
 .. important::
 
    After loading the hex file to the DAPLINK drive the window explorer must automatically close or else you need to load the hex file to the drive again.
 
 
-</WRAP>
+
 
 -  After the **windows explorer automatically closes**, reset the EVAL-ADICUP3029 board by pressing the S1 (reset) button on the board.
 -  Go to extracted files and look for **power_detector.exe** file and double click to run the software. The Connection Window will open.
 
-|APP_window|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection.png
+   :alt: APP_window
 
 Software Operation
 ------------------
@@ -134,43 +138,41 @@ Connection Window
 
 -  Mount EVAL-ADL5902-ARDZ to the EVAL-ADICUP3029 and connect EVAL-ADICUP3029 to computer as in `Typical Hardware Setup for Measurement <https://wiki.analog.com/>`_
 -  Click the **refresh button** on Port Name to Identify the **port** where an EVAL-ADICUP3029 is installed
-   |image1| <WRAP>
+   |APP_window| 
 
 .. note::
 
    If there is more than one EVAL-ADICUP3029 installed, select the port where EVAL-ADICUP3029 and EVAL-ADL5902-ARDZ connected
 
 
-</WRAP>
+
 
 -  Set Baudrate to 115200
 -  Select Auto-detect on Shield type.
 -  Click Connect. The Measurement Window should Open.
 
-<WRAP>
+
 
 .. important::
 
    Console Log must indicate **ADL5902 shield detected with ADiCUP**
 
 
-</WRAP>
+
 
 Measurement Window
 ~~~~~~~~~~~~~~~~~~
 
-| |image2|
-| The EVAL-ADL5902-ARDZ shield converts the measured ADC code to RF input power in dBm using stored calibration coefficients. A 3-point calibration methodology is used. The software program includes default calibration coefficients that correspond to the default response of the ADL5902 across RF power level and frequency. :adi:`datasheet specifications of ADL5902 <media/en/technical-documentation/data-sheets/ADL5902.pdf>`. Because of part-to-part device variation, observed accuracy using the default calibration coefficients will be sub-optimal. By availing of the software program's 3-point calibration function, measurement accuracy can be increased.
-| <WRAP>
+|image1| The EVAL-ADL5902-ARDZ shield converts the measured ADC code to RF input power in dBm using stored calibration coefficients. A 3-point calibration methodology is used. The software program includes default calibration coefficients that correspond to the default response of the ADL5902 across RF power level and frequency. :adi:`datasheet specifications of ADL5902 <media/en/technical-documentation/data-sheets/ADL5902.pdf>`. Because of part-to-part device variation, observed accuracy using the default calibration coefficients will be sub-optimal. By availing of the software program's 3-point calibration function, measurement accuracy can be increased. 
 
 .. note::
 
    If calibration is skipped at some frequencies, the default calibration coefficients will be used (user calibration coefficients and default calibration coefficients are INITIALLY the same).
 
 
-</WRAP>
 
-| Related topic: `Calibration of EVAL-ADL5902-ARDZ <https://wiki.analog.com/>`_
+
+Related topic: `Calibration of EVAL-ADL5902-ARDZ <https://wiki.analog.com/>`_
 
 To skip Calibration and use Default Calibration Coefficients:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -185,14 +187,14 @@ To make single measurement:
 -  Uncheck Continuous Measurement
 -  Click Measure Button
 
-| <WRAP>
+
 
 .. important::
 
    Not entering the correct frequency may result to less accurate measurements.
 
 
-</WRAP>
+
 
 To continuously make measurements:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -202,14 +204,14 @@ To continuously make measurements:
 -  Click Measure Button
 -  Click Stop to stop measuring at the last measurement
 
-| <WRAP>
+
 
 .. important::
 
    Not entering the correct frequency may result to less accurate measurements.
 
 
-</WRAP>
+
 
 To switch windows:
 ^^^^^^^^^^^^^^^^^^
@@ -231,16 +233,14 @@ To calibrate at a specific frequency, take the following steps
 -  Input an RF signal of -60dBm at the selected frequency. Click the Measure button beside -60dBm.
 -  Click the Calibrate button. Console Log will indicate "User calibration coefficient for (frequency used) is updated."
 
-| <WRAP>
+
 
 .. important::
 
    Follow steps exactly. User calibration coefficients will not update if the Calibrate Button is not clicked.
 
 
-</WRAP>
 
-|
 
 .. tip::
 
@@ -286,9 +286,6 @@ SLOPE and INTERCEPT are calculated and stored during the calibration process by 
 
    SLOPE = (CODE1–CODE2)/(PIN1−PIN2)
 
-
-   | 
-
 ::
 
    INTERCEPT = PIN1-(CODE1/SLOPE)
@@ -301,11 +298,17 @@ This results in two SLOPE values and two INTERCEPT values which are calculated u
 
    SLOPE1 = (CODE1–CODE2)/(PIN1−PIN2)
 
-|
+::
 
-| SLOPE2 = (CODE2–CODE3)/(PIN2−PIN3)
-| INTERCEPT1 = PIN1-(CODE1/SLOPE1)
-| INTERCEPT2 = PIN2-(CODE2/SLOPE2)
+   SLOPE2 = (CODE2–CODE3)/(PIN2−PIN3)
+
+::
+
+   INTERCEPT1 = PIN1-(CODE1/SLOPE1)
+
+::
+
+   INTERCEPT2 = PIN2-(CODE2/SLOPE2)
 
 After calibration when measuring RF input power, the power is calculated using the appropriate equation
 
@@ -313,7 +316,11 @@ After calibration when measuring RF input power, the power is calculated using t
 
    PIN = (CODE/SLOPE1)+INTERCEPT1   (if CODE > CODE2)
 
+::
+
    or
+
+::
 
    PIN = (CODE/SLOPE2)+INTERCEPT2   (if CODE < CODE2)
 
@@ -359,9 +366,9 @@ Setting Up CrossCore Embedded Studio
 
 |rfdet-c-workspace|
 
-   \* To open the unzipped folder in the workspace, click **File -> Open Projects from File System**. A new window will pop up and ask you to select the project or folder that you want to open. Select the proper directory then click **Finish**.
+-  To open the unzipped folder in the workspace, click **File -> Open Projects from File System**. A new window will pop up and ask you to select the project or folder that you want to open. Select the proper directory then click **Finish**.
 
-   |rfdet-c-import-adl5902|
+|rfdet-c-import-adl5902|
 
 | On the left side of the window, the structure of the loaded sample code should match the structure in the image shown below.
 | |rfdet-c-proj-adl5902|
@@ -379,8 +386,6 @@ Development on CrossCore Embedded Studio
 
 Python Development Guide
 ------------------------
-
-.. _installations-1:
 
 Installations
 ~~~~~~~~~~~~~
@@ -422,8 +427,6 @@ Running Python Development Example Code
 Hardware Reference Information
 ==============================
 
-|
-
 .. admonition:: Download
    :class: download
 
@@ -442,18 +445,10 @@ Help and Support
 
 For any queries regarding the hardware and evaluation software, contact us at :ez:`EngineerZone <rf>`.
 
-.. |power-5v| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-power-5v.png
-   :width: 300px
-.. |power-dc| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-power-dc.png
-   :width: 300px
-.. |power-wall| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-power-wall.png
-   :width: 300px
-.. |typical setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-setup.png
 .. |EVAL-ADICUP3029pic_selectUSB| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-adicup3029-usb.png
 .. |\|DAPLINK_screencap| image:: /resources/eval/user-guides/rfdet-daplink.png
-.. |APP_window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection-refresh.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-measurement.png
+.. |APP_window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection-refresh.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-measurement.png
 .. |c-dev-window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-dev-window.png
 .. |rfdet-c-unzip| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-unzip.png
 .. |rfdet-c-folder-adl5902| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-folder-adl5902.png

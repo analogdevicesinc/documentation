@@ -31,11 +31,7 @@ It consists of two main elements:
 Materials
 ~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 2 - 1 KΩ resistor
-| 2 - 1uF capacitor
-| 2 - 1N914 diode
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 2 - 1 KΩ resistor 2 - 1uF capacitor 2 - 1N914 diode
 
 Envelope Detector
 -----------------
@@ -168,8 +164,6 @@ Since the frequency analysis is made on the output signal using a basic envelope
 Extended Envelope Detector
 --------------------------
 
-.. _background-1:
-
 Background
 ~~~~~~~~~~
 
@@ -187,8 +181,6 @@ Consider the circuit presented in Figure 9.
 
 A similar circuit is added to the circuit in Figure 1 , the only difference being that the diode is reversed, allowing the negative voltages to pass through the RC circuit.
 
-.. _hardware-setup-1:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -203,8 +195,6 @@ Build the following breadboard circuit for the extended envelope detector circui
 
    Figure 10. Extended Envelope Detector breadboard circuit
 
-
-.. _procedure-1:
 
 Procedure
 ^^^^^^^^^
@@ -270,21 +260,10 @@ Extra Activity: Biased Envelope Detector
 
 The simple diode based envelope detector of Figure 1 does not well or at all if the amplitude i.e. Swing is less than the forward turn voltage of the diode. It will suffer significant distortion on the negative half of the modulation signal for high modulation indexes (near 100%) when the diode is not fully turned on. A way around this limitation is to introduce a small DC bias to the diode. This small bias current moves to quiescent operating point of the circuit to right at the turn on point of the diode.
 
-.. _materials-1:
-
 Materials
 ~~~~~~~~~
 
-| ADALM1000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 1.5 KΩ resistor (brown green red)
-| 1 - 10 KΩ resistor (brown black orange)
-| 1 - 20 KΩ resistor (red black orange)
-| 2 - 1.0uF capacitor, C1, C2
-| 1 - 2N3904 NPN transistor
-| 1 - 1N914 diode
-
-.. _background-2:
+ADALM1000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 1.5 KΩ resistor (brown green red) 1 - 10 KΩ resistor (brown black orange) 1 - 20 KΩ resistor (red black orange) 2 - 1.0uF capacitor, C1, C2 1 - 2N3904 NPN transistor 1 - 1N914 diode
 
 Background
 ~~~~~~~~~~
@@ -303,8 +282,6 @@ Consider the circuit shown in Figure 14.
 
 The amplitude modulated signal is AC coupled into the Base of NPN transistor Q1 which is configured as an emitter follower. Voltage divider R1 and R2 along with diode D1 act to set the DC bias point of the AC coupled input (:doc:`DC restoration </wiki-migration/university/courses/electronics/text/chapter-7>`). Absent any modulated input the DC quiescent operating point seen at the emitter of Q1 will be the voltage at the junction of R1 and R2 minus the diode drop of D1 and the VBE of Q1. The base current of Q1 flows in diode D1 forward biasing it. During the positive half cycles of the modulated input D1 turns off and the input signal peaks charge filter capacitor C2. During the negative half cycles of the input signal transistor Q1 turns off and D1 turns on harder supplying the input current.
 
-.. _hardware-setup-2:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -319,8 +296,6 @@ Build the following breadboard circuit for the biased envelope detector circuit.
 
    Figure 15. Biased Envelope Detector breadboard circuit
 
-
-.. _procedure-2:
 
 Procedure
 ~~~~~~~~~

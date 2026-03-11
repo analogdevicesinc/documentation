@@ -1,16 +1,18 @@
 Clipping Detection
 ==================
 
-| 
-| :doc:`Click here to return to the Non Linear Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/nonlinearprocessors>`
+:doc:`Click here to return to the Non Linear Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/nonlinearprocessors>`
 
 Description
 -----------
 
 The clipping detection module can be used to identify whether there is a clipping in a particular wave form. It indicates the signal reaching the onset of its maximum permitted peak-to-peak voltage value before an overload is occurring. This will help in preventing severe, audible distortion to be generated through the audio signal chain.
 
-| |image1|
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocessors/clipping_detc1.jpg
+   :width: 400px
+
+Targets Supported
+-----------------
 
 ================== ========== ================ =============
 Name               ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
@@ -18,7 +20,7 @@ Name               ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
 Clipping Detection NA         Block            NA
 ================== ========== ================ =============
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -40,7 +42,7 @@ Output0      Audio   Output channel0
 ClippingFlag Control Clipping detection flag
 ============ ======= =======================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+--------------+------------------------------------------+
@@ -63,6 +65,3 @@ ClippingFlag Control Clipping detection flag
 +----------------+----------------------------------+------------------------+---------------+
 
 | 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocessors/clipping_detc1.jpg
-   :width: 400px

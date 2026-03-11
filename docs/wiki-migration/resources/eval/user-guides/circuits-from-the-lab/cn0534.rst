@@ -135,7 +135,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
@@ -151,8 +151,6 @@ ADALM Pluto Loop-Back Operation
 |image8| The plot shown below is the ADALM Pluto output with the RF TX and RX connected directly with transmit power set to -30 dBFS producing a 63.5 dB RSSI RF power input reading:
 
 |image9| And with transmit power set to -10 dBFS producing a 43.5 dB RSSI RF power input reading: |image10|
-
-.. _normal-operation-1:
 
 Normal Operation
 ^^^^^^^^^^^^^^^^

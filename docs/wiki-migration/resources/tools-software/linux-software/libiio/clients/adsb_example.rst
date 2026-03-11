@@ -92,7 +92,7 @@ In this case, we are receiving the real-world ADS-B signals over the air, instea
 
 Besides, if you are in a location with sparse aircraft traffic, it is recommended to run the model for longer time in order to capture some useful data. You can tell whether there is any useful data by looking at the spectrum analyzer. A typical ADS-B spectrum looks like this:
 
-.. image:: https://wiki.analog.com/_media/adsb_spec.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/adsb_spec.png
    :alt: Block diagram
 
 With everything set up properly, in order to run the MATLAB model, simply use the following command:
@@ -147,7 +147,7 @@ The original model works with sample time = 1 and frame size = 1. However, the S
 
 The Simulink model **ModeS_Simulink_libiio.slx** is shown in the figure below. We set up the target using *iio_sys_obj* block, and the received ADS-B signal is post processed by the detector and decoding subsystem.
 
-.. image:: https://wiki.analog.com/_media/adsb_model.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/adsb_model.png
    :alt: Block diagram
 
 Depending on how you set up the TX_LO_FREQ and RX_LO_FREQ, this Simulink model can be run in two modes: using pre-captured data “DataIn” and using live data. Taking the pre-captured data for example, at the end of the simulation, we can see the following results in command window:

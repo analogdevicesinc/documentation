@@ -68,4 +68,8 @@ More information
 
 -   :doc:`SPI Engine Framework </wiki-migration/resources/fpga/peripherals/spi_engine>`
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

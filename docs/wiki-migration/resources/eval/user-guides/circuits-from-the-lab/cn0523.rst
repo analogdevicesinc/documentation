@@ -1,15 +1,16 @@
 EVAL-CN0523-EBZ User Guide
 ==========================
 
-|
-
 .. important::
 
    **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0523-ebz/index.html
-   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
-   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+   https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0523-ebz/index.html
+   
+   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   
+   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
    
 
 
@@ -24,13 +25,12 @@ Designed to be used with the :adi:`ADALM-PLUTO`, or other software defined radio
 
 A micro-USB connector is used for the input power, allowing the evaluation board to use most +5 V wall wart power supplies available in the market.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/cn0523_simplified_block_diagram.png
+   :alt: cn0523_simplified_block_diagram.png
+   :align: center
+   :width: 600px
 
-|cn0523_simplified_block_diagram.png|
-
-.. container:: center
-
-   *<fc #000000>Figure 1. EVAL-CN0523-EBZ Block Diagram</fc>*
-
+*Figure 1. EVAL-CN0523-EBZ Block Diagram*
 
 --------------
 
@@ -40,12 +40,12 @@ Reference Design Hardware
 Primary Side
 ~~~~~~~~~~~~
 
-|top_temp.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/top_temp.jpg
+   :alt: top_temp.jpg
+   :align: center
+   :width: 700px
 
-.. container:: center
-
-   *<fc #000000>Figure 2. CN0523 Primary Side</fc>*
-
+*Figure 2. CN0523 Primary Side*
 
 SMA Connectors
 ^^^^^^^^^^^^^^
@@ -77,12 +77,12 @@ LED Indicators
 Secondary Side
 ~~~~~~~~~~~~~~
 
-|bot_temp.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/bot_temp.jpg
+   :alt: bot_temp.jpg
+   :align: center
+   :width: 700px
 
-.. container:: center
-
-   *<fc #000000>Figure 3. CN0523 Secondary Side</fc>*
-
+*Figure 3. CN0523 Secondary Side*
 
 Power Supply Connector
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -94,13 +94,11 @@ Changing the Temperature Switch Trip Point (JP1, JP2, JP3)
 
 -  The trip point of the temperature switch can be set using the solder jumpers JP1, JP2, and JP3 as shown in the table below. When the board temperature reaches the trip point, the :adi:`ADT6401` will disable the two RF amplifiers.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/jmp_settings.jpg
+   :align: center
+   :width: 200px
 
-|image1|
-
-.. container:: center
-
-   *<fc #000000>Figure 4. ADT6401 Jumper Setting</fc>*
-
+*Figure 4. ADT6401 Jumper Setting*
 
 .. container:: center round box
 
@@ -191,12 +189,11 @@ Test Setup
 -  The DS2 LED of :adi:`EVAL-CN0523-EBZ` will automatically turn on, indicating that the board is powered on and is in operation.
 -  Refer to the image below for the full hardware setup.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/full_hw_setup.jpg
+   :align: center
+   :width: 700px
 
-.. container:: center
-
-   *<fc #000000>Figure 5. EVAL-CN0523-EBZ Test Setup</fc>*
-
+*Figure 5. EVAL-CN0523-EBZ Test Setup*
 
 .. warning::
 
@@ -248,14 +245,3 @@ Registration
 
 
 *End of Document*
-
-.. |cn0523_simplified_block_diagram.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/cn0523_simplified_block_diagram.png
-   :width: 600px
-.. |top_temp.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/top_temp.jpg
-   :width: 700px
-.. |bot_temp.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/bot_temp.jpg
-   :width: 700px
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/jmp_settings.jpg
-   :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/full_hw_setup.jpg
-   :width: 700px

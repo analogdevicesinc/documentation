@@ -25,8 +25,9 @@ Required hardware
 Required software
 -----------------
 
-| For the test is needed an SD card with the Kuiper image that has the test procedure installed. If there is no such SD card available, it can be created.
-| **Creating a carrier SD test card**
+For the test is needed an SD card with the Kuiper image that has the test procedure installed. If there is no such SD card available, it can be created.
+
+**Creating a carrier SD test card**
 
 -  Write the latest available SD card image to a spare card and prepare the card to boot into Linux.
 

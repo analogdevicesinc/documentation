@@ -108,7 +108,6 @@ An EVAL-AD7328SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) 
      EVAL-AD7328SDZ Pin DOUT   →  YRDKRL78G13 J11 connector Pin 3
      EVAL-AD7328SDZ Pin SCLK   →  YRDKRL78G13 J11 connector Pin 4
      EVAL-AD7328SDZ Pin GND    →  YRDKRL78G13 J11 connector Pin 5
-     
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7328sdz_rl78g13.jpg
    :align: center

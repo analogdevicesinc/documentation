@@ -54,7 +54,7 @@ Get the source code ready
 Latest versions
 ~~~~~~~~~~~~~~~
 
-For ADI FreeRTOS version 2.0.0 and later, combined sources are available from GitHub: :git-freertos:`FreeRTOSv10.4.x`
+For ADI FreeRTOS version 2.0.0 and later, combined sources are available from GitHub: `FreeRTOSv10.4.x <https://github.com/analogdevicesinc/freertos/tree/release/FreeRTOSv10.4.x>`_
 
 The latest sources are automatically downloaded and configured via the FreeRTOS Add-In for CCES, more details can be found at :doc:`freertos-addin </wiki-migration/resources/tools-software/freertos/freertos-addin>`
 

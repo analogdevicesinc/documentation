@@ -33,14 +33,7 @@ You probably have noticed by now that feedback has not been mentioned in this di
 Materials:
 ~~~~~~~~~~
 
-| ADLM1000 module
-| Solder-less breadboard
-| Jumper wires
-| 1 – small signal NPN transistor (2N3904)
-| 1 – 100 KΩ resistor
-| 1 – 1 mH indictor
-| 1 – 1.0 uF capacitor
-| 1 – 0.1 uF capacitor
+ADLM1000 module Solder-less breadboard Jumper wires 1 – small signal NPN transistor (2N3904) 1 – 100 KΩ resistor 1 – 1 mH indictor 1 – 1.0 uF capacitor 1 – 0.1 uF capacitor
 
 Directions:
 ~~~~~~~~~~~

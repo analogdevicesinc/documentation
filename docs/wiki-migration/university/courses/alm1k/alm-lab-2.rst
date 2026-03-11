@@ -61,8 +61,7 @@ A Schottky barrier diode uses a rectifying metal-semiconductor junction formed b
 
 The normal current vs. voltage (I/V) curve of a Schottky barrier diode resembles that of a PN junction diode with the following exceptions:
 
-| 1. The reverse breakdown voltage of a Schottky barrier diode is lower and the reverse leakage current higher than those of a PN junction diode made using the same resistivity semiconductor material.
-| 2. The forward voltage at a specific forward current is also lower for a Schottky barrier diode than for a PN junction diode. For example, at 2 mA forward bias current a low barrier silicon Schottky diode will have a forward voltage of ~0.3 volts while a silicon PN junction diode will have a voltage of ~0.7 volts. This lower forward voltage drop can cut the power dissipated in the diode by more than one half. This power savings can be very significant when the diodes need to carry large forward currents. The current vs. voltage (I/V) relationship for a Schottky barrier diode is given by the following equation known as the Richardson equation. The primary difference from the conventional diode equation is in I\ :sub:`S` with the addition of the modified Richardson constant A\*.
+1. The reverse breakdown voltage of a Schottky barrier diode is lower and the reverse leakage current higher than those of a PN junction diode made using the same resistivity semiconductor material. 2. The forward voltage at a specific forward current is also lower for a Schottky barrier diode than for a PN junction diode. For example, at 2 mA forward bias current a low barrier silicon Schottky diode will have a forward voltage of ~0.3 volts while a silicon PN junction diode will have a voltage of ~0.7 volts. This lower forward voltage drop can cut the power dissipated in the diode by more than one half. This power savings can be very significant when the diodes need to carry large forward currents. The current vs. voltage (I/V) relationship for a Schottky barrier diode is given by the following equation known as the Richardson equation. The primary difference from the conventional diode equation is in I\ :sub:`S` with the addition of the modified Richardson constant A\*.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab2-e1.png
    :align: center
@@ -72,13 +71,7 @@ The normal current vs. voltage (I/V) curve of a Schottky barrier diode resembles
    :align: center
    :width: 200px
 
-| Where:
-| A = junction area
-| A\* = modified Richardson constant (value varies by material and dopant) = 110 A/(°K\ :sup:`2`-cm\ :sup:`2`) for n-type Si
-| T = absolute temperature in ºK
-| q = electronic charge = 1.6 \* 10\ :sup:`-19` C
-| f\ :sub:`B` = barrier height in volts k = Boltzman's constant = 1.37 \* 10\ :sup:`-23` J/K
-| n = ideality factor (forward slope factor, determined by metal-semiconductor interface)
+Where: A = junction area A\* = modified Richardson constant (value varies by material and dopant) = 110 A/(°K\ :sup:`2`-cm\ :sup:`2`) for n-type Si T = absolute temperature in ºK q = electronic charge = 1.6 \* 10\ :sup:`-19` C f\ :sub:`B` = barrier height in volts k = Boltzman's constant = 1.37 \* 10\ :sup:`-23` J/K n = ideality factor (forward slope factor, determined by metal-semiconductor interface)
 
 LED Fundamentals:
 ~~~~~~~~~~~~~~~~~
@@ -100,13 +93,7 @@ An LED is a semiconductor device that emits electromagnetic radiation at optical
    :align: center
    :width: 200px
 
-| Where:
-| E\ :sub:`g` is the size of the energy gap
-| V\ :sub:`0` is the threshold voltage
-| f and λ are the frequency and wavelength of the emitted photons
-| c is the velocity of light
-| e is the electronic charge
-| h is Planck's constant
+Where: E\ :sub:`g` is the size of the energy gap V\ :sub:`0` is the threshold voltage f and λ are the frequency and wavelength of the emitted photons c is the velocity of light e is the electronic charge h is Planck's constant
 
 Lab Experiments:
 ----------------
@@ -116,13 +103,7 @@ You will be making I vs. V measurements on various types of diodes in this part 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less Breadboard
-| 1 - Resistor (47 Ω or any similar value from 47 Ω to 1 KΩ)
-| 1 - Conventional diode (1N4001 or similar)
-| 1 - Schottky diode (1N5817 or similar)
-| 1 - 6.2 volt Zener diode (1N4735 or similar)
-| Various - LED diode ( 5mm red, yellow, green, blue or white etc.)
+ADALM1000 hardware module Solder-less Breadboard 1 - Resistor (47 Ω or any similar value from 47 Ω to 1 KΩ) 1 - Conventional diode (1N4001 or similar) 1 - Schottky diode (1N5817 or similar) 1 - 6.2 volt Zener diode (1N4735 or similar) Various - LED diode ( 5mm red, yellow, green, blue or white etc.)
 
 Directions:
 ~~~~~~~~~~~
@@ -172,8 +153,6 @@ Additional Materials:
 
 2 - 1.5 Volt cells in series ( AA cells for example )
 
-.. _directions-1:
-
 Directions:
 ~~~~~~~~~~~
 
@@ -188,21 +167,15 @@ To measure the reverse breakdown voltage of your Zener diode we need to produce 
    Figure 5, Zener diode I vs. V setup
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A generator should be configured for a 100 Hz triangle wave with 3 volt Max and 0 volt Min such that it swings from 0 volts to +3 volt. This swing added to the -3 V offset from the external battery should be enough larger than the breakdown voltage of your 1N5230 4.7 volt zener. Be sure to connect the external battery before taking your measurements.
 
-.. _procedure-1:
-
 Procedure:
 ~~~~~~~~~~
 
 Load the captured data for each type of diode into a data analysis software program like MATLAB or a spreadsheet (Excel) and calculate the diode current I\ :sub:`D`. Be sure to add the 3 volt offset to the measurements for channel B to obtain the true voltage across the zener diode. You should probably measure the actual battery voltage for accurate measurements of the breakdown voltage. Plot the current vs. the calculated reverse bias voltage across the diode.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -218,10 +191,6 @@ How much does the voltage change as the current changes from 100uA to 10 mA?
 
 **For Further Reading:**
 
-| `Diodes <https://en.wikipedia.org/wiki/Diode>`_
-| `Schottky diodes <https://en.wikipedia.org/wiki/Schottky_diode>`_
-| `Light-emitting diode <https://en.wikipedia.org/wiki/Light-emitting_diode>`_
-| `Diode modelling <https://en.wikipedia.org/wiki/Diode_modelling>`_
+`Diodes <https://en.wikipedia.org/wiki/Diode>`_ `Schottky diodes <https://en.wikipedia.org/wiki/Schottky_diode>`_ `Light-emitting diode <https://en.wikipedia.org/wiki/Light-emitting_diode>`_ `Diode modelling <https://en.wikipedia.org/wiki/Diode_modelling>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**

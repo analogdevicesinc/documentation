@@ -33,8 +33,7 @@ The Line Fault settings allow user to enable fault diagnostic feature of the sof
 
 **Enable Line Fault Diagnostics:** Enables line fault diagnostic feature of software. When set, SigmaStudio+ will continuously monitor the network for faults at 1 second interval. Detected faults will be handled and notified.
 
-| **Rediscovery upon faults:** If checked, automatic network rediscovery or partial discovery will be performed upon detecting post-discovery faults.
-| **Partial discovery:**\ If checked, automatic partial re-discovery of dropped nodes are attempted instead of a bus discovery of all nodes.
+**Rediscovery upon faults:** If checked, automatic network rediscovery or partial discovery will be performed upon detecting post-discovery faults. **Partial discovery:**\ If checked, automatic partial re-discovery of dropped nodes are attempted instead of a bus discovery of all nodes.
 
 -  **No. of Attempts:** Specifies the number of partial re-discovery attempts to be tried if the fault persists(-1 for infinite retry).
 -  **Discovery Interval(ms):** Delay between each re-discovery attempt in milliseconds.

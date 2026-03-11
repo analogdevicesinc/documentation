@@ -1,3 +1,4 @@
+
 AD5755 - Microcontroller No-OS Driver
 =====================================
 
@@ -151,14 +152,21 @@ The reference project outputs a square signal on channel A, and DC voltage signa
 Software Project Tutorial
 -------------------------
 
-.. image:: https://wiki.analog.com/_media/page>rl78g13_software_tutorial_without_applilet3
-   :alt: page>rl78g13_software_tutorial_without_applilet3
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
 
 More information
 ================
 
-.. image:: https://wiki.analog.com/_media/page>more-information
-   :alt: page>more-information
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+
 

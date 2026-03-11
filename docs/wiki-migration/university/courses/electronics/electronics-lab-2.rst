@@ -9,10 +9,7 @@ The purpose of this activity is to investigate the current vs. voltage character
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 1 - Resistor (1KΩ or any similar value from 1KΩ to 5KΩ)
-| 1 - small signal diode (1N914 or similar)
+ADALM2000 Active Learning Module Solder-less Breadboard 1 - Resistor (1KΩ or any similar value from 1KΩ to 5KΩ) 1 - small signal diode (1N914 or similar)
 
 Directions:
 -----------
@@ -86,22 +83,15 @@ Replace the 1N914 diodes with a light-emitting diode, or LED. You should have re
 Activity 2a. Half wave rectifier
 ================================
 
-.. _objective-1:
-
 Objective:
 ----------
 
 The purpose of this activity is to investigate the use of a diode as a half wave rectifier.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 1 - Resistor (4.7KΩ or any similar value)
-| 1 - small signal diode (1N914 or similar)
-
-.. _directions-1:
+1 - Resistor (4.7KΩ or any similar value) 1 - small signal diode (1N914 or similar)
 
 Directions:
 -----------
@@ -117,8 +107,6 @@ Set up the breadboard with waveform generator output W1 attached to one end of t
    Figure 6. Connection diagram for half wave diode rectifier
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -131,8 +119,6 @@ The waveform generator should be configured for a 100 Hz Sine wave with 6 volt a
 
    Figure 7. Half Wave Diode Rectifier Breadboard Circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -147,8 +133,6 @@ Plot the two waveforms using Oscilloscope feature from the Scopy tool.
    Figure 8. Half Wave rectified waveform
 
 
-.. _questions-1:
-
 Questions:
 ----------
 
@@ -162,22 +146,15 @@ Replace the 1N914 diode with a light-emitting diode, or LED. You probably need t
 Activity 2b. Full wave rectifier
 ================================
 
-.. _objective-2:
-
 Objective:
 ----------
 
 The purpose of this activity is to investigate the use of two diodes as a full wave rectifier.
 
-.. _materials-2:
-
 Materials:
 ----------
 
-| 1 - Resistor (4.7KΩ or any similar value)
-| 2 - small signal Diodes (1N914 or similar)
-
-.. _directions-2:
+1 - Resistor (4.7KΩ or any similar value) 2 - small signal Diodes (1N914 or similar)
 
 Directions:
 -----------
@@ -193,8 +170,6 @@ Set up the breadboard with W1 attached to one end of the first diode, D\ :sub:`1
    Figure 9. Connection diagram for full wave diode rectifier
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
@@ -207,8 +182,6 @@ The first waveform generator, W1, should be configured for a 100 Hz Sine wave wi
 
    Figure 10. Full Wave Diode Rectifier Breadboard Circuit
 
-
-.. _procedure-2:
 
 Procedure:
 ----------
@@ -223,16 +196,12 @@ Plot the two waveforms using the Oscilloscope provided by the Scopy tool. If bot
    Figure 11. Full Wave rectified waveform
 
 
-.. _questions-2:
-
 Questions:
 ----------
 
 -  What happens if the direction of the diodes is reversed? Repeat experiment with the direction of both diodes reversed.
 -  What happens if the direction of one diode is opposite of the other? Repeat experiment with the direction of one diode (D\ :sub:`1`) reversed.
 -  How could both 0 degree and 180 degree phases be created from a single source (a transformer?)?
-
-.. _further-exploration-1:
 
 Further exploration:
 ~~~~~~~~~~~~~~~~~~~~
@@ -242,22 +211,15 @@ Replace D\ :sub:`1` and D\ :sub:`2` with red and green LEDs. Increase the amplit
 2c. Bridge rectifier
 ====================
 
-.. _objective-3:
-
 Objective:
 ----------
 
 The purpose of this activity is to investigate the use of four diodes as a bridge rectifier.
 
-.. _materials-3:
-
 Materials:
 ----------
 
-| 1 - Resistor (4.7KΩ or any similar value)
-| 4 - small signal Diodes (1N914 or similar)
-
-.. _directions-3:
+1 - Resistor (4.7KΩ or any similar value) 4 - small signal Diodes (1N914 or similar)
 
 Directions:
 -----------
@@ -273,8 +235,6 @@ Four diodes can be arranged in a bridge configuration to provide a full-wave rec
    Figure 12. Connection diagram for diode bridge rectifier
 
 
-.. _hardware-setup-3:
-
 Hardware Setup:
 ---------------
 
@@ -287,8 +247,6 @@ The waveform generator should be configured for a 100 Hz Sine wave with 6 volt p
 
    Figure 13. Diode Bridge Rectifier Breadboard Circuit
 
-
-.. _procedure-3:
 
 Procedure:
 ----------
@@ -303,14 +261,10 @@ Plot the two waveforms using the Oscilloscope provided by the Scopy tool. The di
    Figure 14. Full Wave Bridge rectifier waveforms
 
 
-.. _questions-3:
-
 Questions:
 ----------
 
 How would you reconfigure this circuit to allow one end of the load resistor to be connected to ground rather than how it is shown figure 4 with one end of the AC source grounded?
-
-.. _further-exploration-2:
 
 Further exploration:
 ~~~~~~~~~~~~~~~~~~~~
@@ -320,22 +274,15 @@ Replace all four diodes D\ :sub:`1`, D\ :sub:`2`, D\ :sub:`3` and D\ :sub:`4` wi
 Activity 2d. Limiter / Clamp circuit
 ====================================
 
-.. _objective-4:
-
 Objective:
 ----------
 
 The purpose of this activity is to investigate the use of diode as a amplitude limiting or clamp circuit.
 
-.. _materials-4:
-
 Materials:
 ----------
 
-| 1 - 10KΩ Resistor (or any similar value)
-| 2 - small signal Diodes (1N914 or similar)
-
-.. _directions-4:
+1 - 10KΩ Resistor (or any similar value) 2 - small signal Diodes (1N914 or similar)
 
 Directions:
 -----------
@@ -351,8 +298,6 @@ Set up the breadboard with waveform generator output (W1) attached to one end of
    Figure 15. Connection diagram for diode clamp
 
 
-.. _hardware-setup-4:
-
 Hardware Setup:
 ---------------
 
@@ -365,8 +310,6 @@ The first waveform generator should be configured for a 100 Hz Sine wave with 6 
 
    Figure 16. Diode Clamp Breadboard Circuit
 
-
-.. _procedure-4:
 
 Procedure:
 ----------
@@ -381,8 +324,6 @@ With the DC offset value of waveform generator 2 set to zero observe the minimum
    Figure 17. Diode Clamp waveforms
 
 
-.. _questions-4:
-
 Questions:
 ----------
 
@@ -391,22 +332,15 @@ What happens to the voltage limits if both diodes, D\ :sub:`1` and D\ :sub:`2` a
 Activity 2e. AC coupling and DC restoration
 ===========================================
 
-.. _objective-5:
-
 Objective:
 ----------
 
 The purpose of this activity is to investigate AC coupling and the use of diode as a DC restoration circuit. Many signals contain a DC component. Often this DC must be removed and perhaps restored to a different DC level later in the signal path.
 
-.. _materials-5:
-
 Materials:
 ----------
 
-| 1 - 1.0 uF Capacitor( or any similar value )
-| 1 - small signal Diode (1N914 or similar)
-
-.. _directions-5:
+1 - 1.0 uF Capacitor( or any similar value ) 1 - small signal Diode (1N914 or similar)
 
 Directions:
 -----------
@@ -422,8 +356,6 @@ Set up the breadboard with W1 attached to one end of the 1.0uF capacitor as show
    Figure 18. Connection diagram for DC Restoration circuit
 
 
-.. _hardware-setup-5:
-
 Hardware Setup:
 ---------------
 
@@ -436,8 +368,6 @@ The first waveform generator should be configured for a 1KHz Sine wave with 2 vo
 
    Figure 19. DC Restoration Breadboard Circuit
 
-
-.. _procedure-5:
 
 Procedure:
 ----------
@@ -454,8 +384,6 @@ Plot the two waveforms using the Oscilloscope provided by the Scopy tool.
 
 Replace diode D\ :sub:`1` in the circuit with a 10K resistor. Using the measurement tab on the Scope, read and record the positive and negative peak values and mean value of channel2 (2+) as the offset of waveform generator channel 1 is changed between -1 and +1 volt. Now set waveform generator channel 1 to a square wave again with 2V peak-to-peak amplitude value. As done before read and record the positive and negative peak values and the mean value as the duty cycle of the square wave is changed between 10% and 90%. Now remove the 10KΩ resistor and put diode D\ :sub:`1` back in place. Repeat the same measurements, adjusting DC offset and duty cycle, that were just taken with resistor. How do they compare? Reverse the direction of diode D1 and again repeat these same measurements. How do they compare to the previous two?
 
-.. _questions-5:
-
 Questions:
 ----------
 
@@ -464,26 +392,15 @@ What happened when the direction of D\ :sub:`1` was reversed? What is the effect
 Activity 2f. Variable attenuator
 ================================
 
-.. _objective-6:
-
 Objective:
 ----------
 
 The goal of this activity is to build, characterize and analyze a small signal variable attenuator using a diode.
 
-.. _materials-6:
-
 Materials:
 ----------
 
-| 1 - 2.2KΩ Resistor
-| 1 - 4.7KΩ Resistor
-| 1 - 10KΩ Resistor
-| 1 - 5KΩ Variable resistor, potentiometer
-| 2 - 0.1uF Capacitors
-| 1 - small signal Diode (1N914 or similar)
-
-.. _directions-6:
+1 - 2.2KΩ Resistor 1 - 4.7KΩ Resistor 1 - 10KΩ Resistor 1 - 5KΩ Variable resistor, potentiometer 2 - 0.1uF Capacitors 1 - small signal Diode (1N914 or similar)
 
 Directions:
 -----------
@@ -499,8 +416,6 @@ Set up the breadboard with the first waveform generator attached to one end of t
    Figure 21. Connection diagram for variable attenuator
 
 
-.. _hardware-setup-6:
-
 Hardware Setup:
 ---------------
 
@@ -513,8 +428,6 @@ Waveform generator W1 should be configured for a 10KHz Sine wave with 200 mV pea
 
    Figure 22. Variable Attenuator Breadboard Circuit
 
-
-.. _procedure-6:
 
 Procedure:
 ----------
@@ -529,16 +442,9 @@ Plot the two waveforms using the Oscilloscope provided by the Scopy tool.
    Figure 23. Variable Attenuator waveforms
 
 
-| The purpose of C\ :sub:`1` (and C\ :sub:`2`) is to block DC current from the input and output circuits so the operating point of the diode is not affected. The attenuator uses the fact that that "small signal" resistance of the diode r\ :sub:`D` is a function the DC current flowing in the diode I\ :sub:`D`. See Equations below: |image3| |image4| Where:
-| n is the diode area ( size ) scale factor
-| V\ :sub:`T` is the Thermal Voltage
-| I\ :sub:`D` is the diode current
-| k is Boltzmann's constant
-| q is the electron charge
-| T is the absolute temperature
-| In the circuit a voltage divider is set up between R\ :sub:`1` and the resistance of D\ :sub:`1`. The current in D\ :sub:`1`\ is varied by changing the current in R\ :sub:`2`. When the current in D\ :sub:`1` is small r\ :sub:`D`\ is large and the fraction of the input signal seen at the output is large. As the current in D\ :sub:`1` increases, its resistance decreases and the fraction of the input seen at the output decreases.
+The purpose of C\ :sub:`1` (and C\ :sub:`2`) is to block DC current from the input and output circuits so the operating point of the diode is not affected. The attenuator uses the fact that that "small signal" resistance of the diode r\ :sub:`D` is a function the DC current flowing in the diode I\ :sub:`D`. See Equations below: |image3| |image4| Where: n is the diode area ( size ) scale factor V\ :sub:`T` is the Thermal Voltage I\ :sub:`D` is the diode current k is Boltzmann's constant q is the electron charge T is the absolute temperature
 
-.. _questions-6:
+In the circuit a voltage divider is set up between R\ :sub:`1` and the resistance of D\ :sub:`1`. The current in D\ :sub:`1`\ is varied by changing the current in R\ :sub:`2`. When the current in D\ :sub:`1` is small r\ :sub:`D`\ is large and the fraction of the input signal seen at the output is large. As the current in D\ :sub:`1` increases, its resistance decreases and the fraction of the input seen at the output decreases.
 
 Questions:
 ----------
@@ -548,24 +454,15 @@ What is the maximum input signal level that you can use without distorting the o
 Activity 2g. Absolute value circuits
 ====================================
 
-.. _objective-7:
-
 Objective:
 ----------
 
 The purpose of this activity is to investigate absolute value circuits. Rectifiers, or 'absolute-value' circuits are often used as detectors to convert the amplitudes of AC signals to DC values to be more easily measured. For this type of circuit, the AC signal is first high-pass filtered to remove any DC term and then rectified and perhaps low pass filtered. As we have seen in the simple rectifier circuits constructed with diodes, the circuit does not respond well to signals with a magnitude less than a diode-drop (0.6V for silicon diodes). This limits their use in designs where small amplitudes are to be measured. For designs in which a high degree of precision is needed, op-amps can be used in conjunction with diodes to build precision rectifiers.
 
-.. _materials-7:
-
 Materials:
 ----------
 
-| 1 - Dual Op AMP (such as ADTL082 or similar)
-| 5 - 10KΩ Resistors
-| 2 - small signal Diodes (1N914 or similar)
-| 2 - 4.7uF decoupling capacitors
-
-.. _directions-7:
+1 - Dual Op AMP (such as ADTL082 or similar) 5 - 10KΩ Resistors 2 - small signal Diodes (1N914 or similar) 2 - 4.7uF decoupling capacitors
 
 Directions:
 -----------
@@ -581,8 +478,6 @@ The inverting op-amp circuit can be converted into an "ideal" (linear precision)
    Figure 24. Connection diagram for precision half-wave rectifier
 
 
-.. _hardware-setup-7:
-
 Hardware Setup:
 ---------------
 
@@ -593,8 +488,6 @@ Hardware Setup:
 
    Figure 25. Precision Half-Wave Rectifier Breadboard Circuit
 
-
-.. _procedure-7:
 
 Procedure:
 ----------
@@ -608,8 +501,6 @@ The peak of the rectified output, as seen in the plot here, is now equal to the 
 
    Figure 26. Precision Half-Wave Rectifier waveforms
 
-
-.. _directions-8:
 
 Directions:
 -----------
@@ -625,8 +516,6 @@ The circuit shown in figure 27 is an absolute value circuit, often called a prec
    Figure 27. Connection diagram for absolute value circuit
 
 
-.. _hardware-setup-8:
-
 Hardware Setup:
 ---------------
 
@@ -638,23 +527,18 @@ Hardware Setup:
    Figure 28. Absolute Value Breadboard Circuit
 
 
-.. _procedure-8:
-
 Procedure:
 ----------
 
-| For this laboratory exercise you should:
-| a) Study the circuit and determine how it works. There is very fundamental concept that should help in understanding how this circuit operates. Given an op-amp configured with negative feedback, the inverting and non-inverting input terminals will try to reach the same voltage level, often referred to as a virtual short.
-| b) Plan some tests to see if this circuit indeed is an absolute value circuit. Perform these tests, fully documenting all tests and results.
-| c) Make the input voltage a 6 Volt amplitude sinusoid, at 1KHz. Carefully measure and record voltages at all nodes in the circuit.
-| |image5|
+For this laboratory exercise you should: a) Study the circuit and determine how it works. There is very fundamental concept that should help in understanding how this circuit operates. Given an op-amp configured with negative feedback, the inverting and non-inverting input terminals will try to reach the same voltage level, often referred to as a virtual short. b) Plan some tests to see if this circuit indeed is an absolute value circuit. Perform these tests, fully documenting all tests and results. c) Make the input voltage a 6 Volt amplitude sinusoid, at 1KHz. Carefully measure and record voltages at all nodes in the circuit.
+
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/abs_val2-waveform.png
+   :align: center
 
 .. container:: centeralign
 
    Figure 29. Absolute Value waveforms
 
-
-.. _questions-7:
 
 Questions:
 ----------
@@ -689,8 +573,6 @@ Note that the output current capacity of this circuit is only half the current c
 
 The charging and recharging of C\ :sub:`2`\ can be made faster if C\ :sub:`1` is made larger than C\ :sub:`2`. For example, if C\ :sub:`1` = 10µF and C\ :sub:`2` = 1µF, C\ :sub:`1` can transfer much more charge to C\ :sub:`2` on each positive half-cycle, and the voltage on C\ :sub:`2` will increase much faster than the voltage on C\ :sub:`1` will decrease. Of course, this also means that the output current capacity is even more limited, since C\ :sub:`2` will discharge rapidly as well as charging rapidly.
 
-.. _hardware-setup-9:
-
 Hardware Setup:
 ---------------
 
@@ -701,8 +583,6 @@ Hardware Setup:
 
    Figure 31. Voltage Doubler Breadboard Circuit
 
-
-.. _procedure-9:
 
 Procedure:
 ----------
@@ -716,8 +596,6 @@ Plot the two waveforms using the Oscilloscope provided by the Scopy tool.
 
    Figure 32. Voltage Doubler waveforms
 
-
-.. _questions-8:
 
 Questions:
 ----------
@@ -769,4 +647,3 @@ What happens to the output voltage across R\ :sub:`L` if the direction of the fo
    :width: 100px
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_e2.png
    :width: 100px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/abs_val2-waveform.png

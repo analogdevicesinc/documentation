@@ -81,7 +81,7 @@ Some useful links for more information are provided as follows:
 
 ::
 
-     * 
+     *
 
 MathWorks Support by Analog Devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

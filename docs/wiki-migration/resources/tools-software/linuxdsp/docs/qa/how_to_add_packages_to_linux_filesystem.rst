@@ -3,13 +3,19 @@ How To Add Packages To Your Own Linux Filesystem
 
 This page introduces a simple way to add packages to your own Linux filesystem in Yocto Linux. Take the example that add the package "ethtool" to your own target adsp-custom-ramdisk image.
 
-| 
-| ===== Find the Yocto Project recipe ===== Users could add their own packages instead of the "ethtool", the first step is to find out the Yocto Project recipe that includes "ethtool". The way to find recipes is to go to the `Openembedded Layer Index <https://layers.openembedded.org/layerindex/branch/master/recipes/>`_ web site.
+Find the Yocto Project recipe
+-----------------------------
+
+Users could add their own packages instead of the "ethtool", the first step is to find out the Yocto Project recipe that includes "ethtool". The way to find recipes is to go to the `Openembedded Layer Index <https://layers.openembedded.org/layerindex/branch/master/recipes/>`_ web site.
 
 Below picture shows how to find the package "gstreamer" in this website.
 
-| |image1|
-| ===== Add the Package to filesystem ===== **Method 1:** After finding the specific recipe name, users need to add it to the image by adding this line to conf/local.conf which is highly recommended:
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/qa/gstreamer.png
+
+Add the Package to filesystem
+-----------------------------
+
+**Method 1:** After finding the specific recipe name, users need to add it to the image by adding this line to conf/local.conf which is highly recommended:
 
 ::
 
@@ -31,8 +37,10 @@ Below picture shows how to find the package "gstreamer" in this website.
    "
    DISTRO_FEATURES = " ram"
 
-| 
-| ===== Build the Target Images ===== Run below command to bitbake the ramdisk filesystem, the package ethtool would be deployed into Linux filesystem directly. Refer to the :doc:`Building The Linux Components </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/building>` for more details on how to build the Yocto Linux Images.
+Build the Target Images
+-----------------------
+
+Run below command to bitbake the ramdisk filesystem, the package ethtool would be deployed into Linux filesystem directly. Refer to the :doc:`Building The Linux Components </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/building>` for more details on how to build the Yocto Linux Images.
 
 ::
 
@@ -47,15 +55,11 @@ options:
    ; -C INVALIDATE_STAMP
    : Invalidate the stamp for the specified task such as 'compile' and then run the default task for the specified target(s).
 
-   | 
-
 Installing Linux On The Hardware
 --------------------------------
 
 Pease refer this page :doc:`Installing Linux On The Hardware </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing>`.
 
-|
+--------------
 
-| ---- Back To :doc:`Linux for SC5xx: Frequently Asked Questions </wiki-migration/resources/tools-software/linuxdsp/docs/qa/start>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/qa/gstreamer.png
+Back To :doc:`Linux for SC5xx: Frequently Asked Questions </wiki-migration/resources/tools-software/linuxdsp/docs/qa/start>`

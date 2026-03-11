@@ -3,11 +3,19 @@
 RMS 4 Band Compressor
 =====================
 
-| 
-| |rms4band.png|
-| |rms4bandgraph.png|
-| ===== Description ===== The Standard Independent RMS Compressor is a stereo compressor that allows direct control over threshold and ratio. In the pop-up GUI, graphical controls are given for crossover filter settings, compressor curve table settings, threshold, ratio, and time constants. Also there are visual indicators showing input, output, and compression levels. The detection signal used for this RMS compressor is based on the sum of Left and Right channels.
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rms4band.png
+   :alt: rms4band.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rms4bandgraph.png
+   :alt: rms4bandgraph.png
+
+Description
+===========
+
+The Standard Independent RMS Compressor is a stereo compressor that allows direct control over threshold and ratio. In the pop-up GUI, graphical controls are given for crossover filter settings, compressor curve table settings, threshold, ratio, and time constants. Also there are visual indicators showing input, output, and compression levels. The detection signal used for this RMS compressor is based on the sum of Left and Right channels.
+
+Targets Supported
+=================
 
 +-----------------------+------------+------------------+---------------+------------------+
 | Name                  | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -36,7 +44,7 @@ Name   Type  Description
 Output Audio Compressor Output
 ====== ===== =================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +-------------------------------+---------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,6 +89,3 @@ Output Audio Compressor Output
 +----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+
 
 | 
-
-.. |rms4band.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rms4band.png
-.. |rms4bandgraph.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rms4bandgraph.png

@@ -3,13 +3,14 @@ AD-3DSMARTCAM1-PRZ User Guide
 
 To get your new camera up and running there are a few steps to go through in order to connect the camera to your PC, update the camera's software and then start receiving data and using the installed applications.
 
-| |image1| After powering up the camera the blue LED on the top right corner of the camera's front will light up and the system will start booting the installed Linux OS. The boot process takes about 30 seconds, after which the camera will expose a WiFi access point named **ADI_Smart_Camera** and having the password *ADI_Smart_Camera*.
-| There are two ways to connect to the camera from a PC:
+|image1| After powering up the camera the blue LED on the top right corner of the camera's front will light up and the system will start booting the installed Linux OS. The boot process takes about 30 seconds, after which the camera will expose a WiFi access point named **ADI_Smart_Camera** and having the password *ADI_Smart_Camera*.
+
+There are two ways to connect to the camera from a PC:
 
 -  Connect the PC to the camera's WiFi access point. In this case the camera will always have the **172.16.1.1** IP address.
 -  Connect the camera to the local Ethernet network. In this case the camera will use DHCP to obtain a dynamic IP address.
 
-The camera can now be accessed via *ssh* using the camera's IP address and **username** *analog* and **password** *analog*.
+The camera can now be accessed via *ssh* using the camera's IP address and **username** analog* and **password** analog*.
 
 
 |image2|

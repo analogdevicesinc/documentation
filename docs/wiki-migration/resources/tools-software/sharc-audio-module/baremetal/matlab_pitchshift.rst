@@ -10,7 +10,7 @@ First, start audioTestBench in the MATLAB command window
 
 .. code:: c
 
-   >> audioTestBench(audiopluginexample.PitchShifter) 
+   >> audioTestBench(audiopluginexample.PitchShifter)
 
 -  Choose the input audio file
 -  Make sure to output to the correct output source such as PC speakers
@@ -29,17 +29,17 @@ Although PitchShifter is one of the MATLAB Audio Plugin Examples, a function nee
 
    function y = applyPitchShift(PitchShift,Overlap,x)
        persistent h
-       
-       if isempty(h)    
-           h = audiopluginexample.PitchShifter;  
+
+       if isempty(h)
+           h = audiopluginexample.PitchShifter;
        end
-       
+
        % Exercise parameter tuning
        h.PitchShift = PitchShift;
-       h.Overlap = Overlap; 
+       h.Overlap = Overlap;
 
        % Exercise process function
-       y = h(x);    
+       y = h(x);
    end
 
 Testing the Function in MATLAB
@@ -88,7 +88,7 @@ Generate Code
 
 -  Choose *Source Code* as the **Build Type**
 -  Choose *C++* as the **Language**
--  Selecting **Hardware Board** *None* will give the ability to choose the *Analog Devices SHARC Device*
+-  Selecting **Hardware Board** None* will give the ability to choose the *Analog Devices SHARC Device*
 -  **More Settings** will be needed in this case
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/gen_code1.png
@@ -103,8 +103,6 @@ Adjust Settings
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/gen_code2.png
    :width: 700px
-
-.. _generate-code-1:
 
 Generate Code
 ~~~~~~~~~~~~~
@@ -178,9 +176,9 @@ processaudio_setup(void) changes
    void processaudio_setup(void) {
        // Initialize the audio effects in the audio_processing/ folder
        audio_effects_setup_core1();
-       // ******************************************************************
+       // *****************************************************************
        // Add any custom setup code here
-       // ******************************************************************
+       // *****************************************************************
        /* Initialize reentrant memory structures */
        applyPitchShiftStackDataGlobal1.pd = &c_applyPitchShiftPersistentData1;
        /* Initialize the application.
@@ -244,8 +242,6 @@ Before executing the application in CCES, the hardware should be setup as shown 
 Executing the Code in CCES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
-
 .. tip::
 
    Some knowledge of CrossCore Embedded Studio(CCES) is assumed here. If unfamiliar with CCES, please go through the :doc:`CCES Getting Started Guide </wiki-migration/resources/tools-software/crosscore/cces/getting-started>` prior to working in CCES.
@@ -267,15 +263,17 @@ Executing the Code in CCES
 Optimizing the Pitch Shift Algorithm
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| By default the optimizer in CCES is not enabled for the new matlab code.
-|
+By default the optimizer in CCES is not enabled for the new matlab code.
+
+
 
 .. container:: left
 
    \ |image2|\
 
 
--  Right click on the matlab folder.
+| \* Right click on the matlab folder.
+
 -  Go to Properties::C/C+ + Build::Settings.
 -  Under the Compiler section in the Tools Settings tab, select General.
 -  Check Enable optimization
@@ -297,8 +295,6 @@ Serial Settings
 -  1 Stop bits
 -  No parity
 -  XON/XOFF flow control
-
-| 
 
 ============= =========
 Non-Optimized Optimized

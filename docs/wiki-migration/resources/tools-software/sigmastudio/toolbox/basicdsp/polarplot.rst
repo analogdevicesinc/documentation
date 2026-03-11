@@ -1,15 +1,23 @@
 Polar Plot
 ==========
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| |polar_plot.png|
-| |polar_plotgraph.png|
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/polar_plot.png
+   :alt: polar_plot.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/polar_plotgraph.png
+   :alt: polar_plotgraph.png
 
 Description
 -----------
 
-| The polar plot module displays the input signal coefficient in a polar plot
-| ===== Usage ===== Polar plot is a plot of magnitude versus phase angle in complex plane . (i.e. locus of magnitude traced by the phasor by varying frequency from zero to infinity). The polar plot can capture the system behavior over the entire frequency range in a single plot
+The polar plot module displays the input signal coefficient in a polar plot
+
+Usage
+-----
+
+Polar plot is a plot of magnitude versus phase angle in complex plane . (i.e. locus of magnitude traced by the phasor by varying frequency from zero to infinity). The polar plot can capture the system behavior over the entire frequency range in a single plot
 
 Targets Supported
 -----------------
@@ -20,7 +28,7 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
 PolarPlot NA         Block            NA
 ========= ========== ================ =============
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -32,7 +40,7 @@ Name            Type  Description
 Address Pointer Audio Input Address
 =============== ===== =============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------------+---------------+------------+-------------------------------------------------+
@@ -65,6 +73,3 @@ Address Pointer Audio Input Address
 +----------------+----------------------------------+------------------------+---------------+
 
 | 
-
-.. |polar_plot.png| image:: https://wiki.analog.com/_media/polar_plot.png
-.. |polar_plotgraph.png| image:: https://wiki.analog.com/_media/polar_plotgraph.png

@@ -9,13 +9,7 @@ In this lab we introduce the operational amplifier (op amp), an active circuit t
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 1 kΩ resistor
-| 2 4.7 kΩ resistors
-| 2 10 kΩ resistors
-| 2 OP97 ( Low slew rate amplifier supplied with the recent versions of ADALP2000 Analog Parts Kit )
-| 2 0.1uF Capacitors (radial lead)
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 1 kΩ resistor 2 4.7 kΩ resistors 2 10 kΩ resistors 2 OP97 ( Low slew rate amplifier supplied with the recent versions of ADALP2000 Analog Parts Kit ) 2 0.1uF Capacitors (radial lead)
 
 1.1 Op-Amp Basics
 -----------------
@@ -135,8 +129,6 @@ Now move the 1 kΩ load between pin 3 and ground, so that it is in parallel with
 Inverting Amplifier:
 ~~~~~~~~~~~~~~~~~~~~
 
-.. _background-1:
-
 Background:
 ^^^^^^^^^^^
 
@@ -150,8 +142,6 @@ Figure 1.8 shows the conventional inverting amplifier configuration with a 10 k�
 
    Figure 1.8 Inverting amplifier configuration
 
-
-.. _hardware-setup-1:
 
 Hardware Setup:
 ^^^^^^^^^^^^^^^
@@ -168,8 +158,6 @@ Turn on the power supplies and observe the current draw to be sure there are no 
 
 
 This is a good point to comment on circuit debugging. At some point in this class you are likely to have trouble getting your circuit to work. That is not unexpected, nobody is perfect. However, you should not simply assume that a non-working circuit must imply a malfunctioning part or lab instrument. That is almost never true; 99% of all circuit problems are simple wiring or power supply errors. Even experienced engineers will make mistakes from time to time, and consequently, learning how to “debug” circuit problems is a very important part of the learning process. It is NOT the TA’s responsibility to diagnose errors for you, and if you find yourself relying on others in this way then you are missing a key point of the lab and you will be unlikely to succeed in later coursework. Unless smoke is issuing from your op amp or there are brown burn marks on your resistors or your capacitor has exploded, your components are probably fine, in fact most of them can tolerate a little abuse before significant damage is done. The best thing to do when things aren’t working is to just turn off the power supplies and look for a simple explanation before blaming parts or equipment. The DMM can be valuable debugging tool in this regard.
-
-.. _procedure-1:
 
 Procedure:
 ^^^^^^^^^^
@@ -193,8 +181,6 @@ Now change the feedback resistor R\ :sub:`2` in figure 1.8 from 4.7 kΩ to 10 k�
 Summing Amplifier Circuit:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _background-2:
-
 Background:
 ^^^^^^^^^^^
 
@@ -208,8 +194,6 @@ The circuit of figure 1.11 is a basic inverting amplifier with an additional inp
 
    Figure 1.11 Summing Amplifier configuration
 
-
-.. _hardware-setup-2:
 
 Hardware Setup:
 ^^^^^^^^^^^^^^^
@@ -231,8 +215,6 @@ Return the offset voltage of waveform generator W2 to approximately +1V. Set the
    Figure 1.12. Summing Amplifier Breadboard Circuit
 
 
-.. _procedure-2:
-
 Procedure:
 ^^^^^^^^^^
 
@@ -250,8 +232,6 @@ A plot example is presented in Figure 1.13.
 Non-Inverting Amplifier:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _background-3:
-
 Background:
 ^^^^^^^^^^^
 
@@ -265,8 +245,6 @@ The non-inverting amplifier configuration is shown in figure 1.14. Like the unit
 
    Figure 1.14 Non-inverting Amplifier with gain
 
-
-.. _hardware-setup-3:
 
 Hardware Setup:
 ^^^^^^^^^^^^^^^
@@ -287,8 +265,6 @@ The last step underscores an important consideration for high-gain amplifiers. H
 
    Figure 1.15. Non-Inverting Amplifier Breadboard Circuit
 
-
-.. _procedure-3:
 
 Procedure:
 ^^^^^^^^^^
@@ -322,9 +298,7 @@ Some specific ideas for the report might be as follows:
 
 ■ Summing circuit: using superposition, derive the expected transfer characteristic for the circuit of figure 1.11; that is, find the output voltage in terms of Vin1 and Vin2 . Compare the predictions of the ideal relationship with your data.
 
-
-| ■ Comparator: discuss your measurements and what would happen if the polarity of Vref is reversed
-|
+■ Comparator: discuss your measurements and what would happen if the polarity of Vref is reversed
 
 .. admonition:: Download
    :class: download
@@ -339,5 +313,6 @@ Some specific ideas for the report might be as follows:
 
 **Continue to next Op Amp Lab Activity:** :doc:`Op Amp as Comparator </wiki-migration/university/courses/electronics/electronics-lab-opamp-comparator>`
 
-| **More on Op Amps in amplifier configuration:** :doc:`Variable Gain Amplifiers </wiki-migration/university/courses/electronics/electronics-lab-variable-gain-amplifier>`
-| **Return to Lab Activity:** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
+**More on Op Amps in amplifier configuration:** :doc:`Variable Gain Amplifiers </wiki-migration/university/courses/electronics/electronics-lab-variable-gain-amplifier>`
+
+**Return to Lab Activity:** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`

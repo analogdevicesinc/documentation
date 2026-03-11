@@ -98,7 +98,9 @@ SPI
 ::
 
      libm2k::contexts::M2k *context = libm2k::contexts::m2kOpen("ip:192.168.2.1");
-     
+
+::
+
      // first step of initialization
      m2k_spi_init m2KSpiInit;
      m2KSpiInit.clock = 1;
@@ -106,14 +108,18 @@ SPI
      m2KSpiInit.miso = 7;
      m2KSpiInit.bit_numbering = MSB;
      m2KSpiInit.context = context;
-     
+
+::
+
      // second step of initialization
      spi_init_param spiInitParam;
      spi_init_param.max_speed_hz = 1000000;
      spi_init_param.mode = SPI_MODE_3;
      spi_init_param.chip_select = 0;
      spi_init_param.extra = (void*)&m2KSpiInit;
-     
+
+::
+
      // third step of initialization
      spi_desc *desc = nullptr;
      spi_init(&desc, &spiInitParam);
@@ -190,19 +196,25 @@ I²C
 ::
 
      libm2k::contexts::M2k *context = libm2k::contexts::m2kOpen("ip:192.168.2.1");
-     
+
+::
+
      // first step of initialization
      m2k_i2c_init m2KI2CInit;
      m2KI2CInit.scl = 0;
      m2KI2CInit.sda = 1;
      m2KI2CInit.context = context;
-     
+
+::
+
      // second step of initialization
      i2c_init_param i2CInitParam;
      i2CInitParam.max_speed_hz = 100000;
      i2CInitParam.slave_address = 0x48;
      i2CInitParam.extra = (void*)&m2KI2CInit;
-     
+
+::
+
      // third step of initialization
      i2c_desc *desc = nullptr;
      i2c_init(&desc, &i2CInitParam);
@@ -279,20 +291,26 @@ UART
 ::
 
      libm2k::contexts::M2k *context = libm2k::contexts::m2kOpen("ip:192.168.2.1");
-     
+
+::
+
      // first step of initialization
      m2k_uart_init m2KUartInit;
      m2KUartInit.bits_number = 8;
      m2KUartInit.parity = NO_PARITY;
      m2KUartInit.stop_bits = ONE;
      m2KUartInit.context = context;
-     
+
+::
+
      // second step of initialization
      uart_init_param uartInitParam;
      uartInitParam.device_id = 0;
      uartInitParam.baud_rate = 9600;
      uartInitParam.extra = (void*)&m2KUartInit;
-     
+
+::
+
      // third step of initialization
      uart_desc *desc = nullptr;
      uart_init(&desc, &uartInitParam);
@@ -365,7 +383,9 @@ AD5592r can be independently configured as DAC outputs, ADC inputs, digital outp
 
      #include "delay.h"
      #include <unistd.h>
-     
+
+::
+
      void mdelay(uint32_t msecs) {
          usleep(msecs * 1000);
      }
@@ -391,30 +411,44 @@ AD5592r can be independently configured as DAC outputs, ADC inputs, digital outp
      #include <libm2k/analog/m2kpowersupply.hpp>
      #include <libm2k/analog/m2kanalogin.hpp>
      #include <libm2k/tools/spi_extra.hpp>
-     
+
+::
+
      extern "C" {
          #include "ad5592r.h"
      }
      extern struct ad5592r_rw_ops ad5592r_rw_ops; //default operations
-     
+
+::
+
      int main()
      {
          struct ad5592r_init_param init_param;
          init_param.int_ref = true; // use the internal reference
-         
+
+::
+
          struct ad5592r_dev device;
          device.ops = &ad5592r_rw_ops; //initialize the operations
-         
+
+::
+
          libm2k::contexts::M2k *context = libm2k::contexts::m2kOpen("ip:192.168.2.1");
          libm2k::analog::M2kPowerSupply *powerSupply = context->getPowerSupply();
          libm2k::analog::M2kAnalogIn *analogIn = context->getAnalogIn();
-         
+
+::
+
          std::cout << "Calibrating . . ." << std::endl;
          context->calibrateADC();
-         
+
+::
+
          powerSupply->enableChannel(0, true);
          powerSupply->pushChannel(0, 5); // power up the chip
-         
+
+::
+
          // first step of initialization
          m2k_spi_init m2KSpiInit; // m2k specific attributes of SPI
          m2KSpiInit.clock = 0;
@@ -422,26 +456,36 @@ AD5592r can be independently configured as DAC outputs, ADC inputs, digital outp
          m2KSpiInit.miso = 2;
          m2KSpiInit.bit_numbering = MSB;
          m2KSpiInit.context = context;
-         
+
+::
+
          // second step of initialization
          spi_init_param spiInitParam; // generic attributes of SPI
          spiInitParam.max_speed_hz = 2500000;
          spiInitParam.mode = SPI_MODE_2;
          spiInitParam.chip_select = 3;
          spiInitParam.extra = (void*)&m2KSpiInit;
-         
+
+::
+
          // third step of initialization
          spi_init(&device.spi, &spiInitParam); // initialize SPI communication
-         
+
+::
+
          device.channel_modes[0] = CH_MODE_DAC; // set the first channel as a DAC
          device.num_channels = 1; // enable just the first channel
          ad5592r_init(&device, &init_param ); //initialize AD5592r
-         
+
+::
+
          for(int i = 0; i < 0xfff; i+=0x0f) {
              ad5592r_write_dac(&device, 0, i); // generate voltage
              std::cout << analogIn->getVoltage(0) << std::endl; //read voltage
          }
-         
+
+::
+
          libm2k::contexts::contextClose(context, true);
      }
 

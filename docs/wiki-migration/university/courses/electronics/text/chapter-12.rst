@@ -145,11 +145,9 @@ Sometimes it is advantageous to add emitter degeneration resistor REF to the cir
 
 To improve linearity, we introduce emitter-degeneration resistors, which increase the linear range from a few V\ :sub:`T` to about I\ :sub:`Tail`\ R.
 
-| **ADALM1000 Lab Activity 12,** :doc:`BJT Differential Amplifier </wiki-migration/university/courses/alm1k/alm-lab-12>`
-| **ADALM1000 Lab Activity 12m,** :doc:`MOS Differential Amplifier </wiki-migration/university/courses/alm1k/alm-lab-12m>`
+**ADALM1000 Lab Activity 12,** :doc:`BJT Differential Amplifier </wiki-migration/university/courses/alm1k/alm-lab-12>` **ADALM1000 Lab Activity 12m,** :doc:`MOS Differential Amplifier </wiki-migration/university/courses/alm1k/alm-lab-12m>`
 
-| **ADALM2000 Lab Activity 12,** :doc:`BJT Differential Amplifier </wiki-migration/university/courses/electronics/electronics-lab-12>`
-| **ADALM2000 Lab Activity 12m,** :doc:`MOS Differential Amplifier </wiki-migration/university/courses/electronics/electronics-lab-12m>`
+**ADALM2000 Lab Activity 12,** :doc:`BJT Differential Amplifier </wiki-migration/university/courses/electronics/electronics-lab-12>` **ADALM2000 Lab Activity 12m,** :doc:`MOS Differential Amplifier </wiki-migration/university/courses/electronics/electronics-lab-12m>`
 
 The current mirror as a load
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

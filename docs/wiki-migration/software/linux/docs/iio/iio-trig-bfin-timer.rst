@@ -26,10 +26,10 @@ Configure kernel with “make menuconfig” (alternatively use “make xconfig�
                    -*-   Enable ring buffer support within IIO
                    -*-     Industrial I/O lock free software ring
                    -*-   Enable triggered sampling support
-                   
+
                    [--snip--]
-                   
-                         *** Triggers - standalone ***
+
+                         ** Triggers - standalone **
                    < >   Periodic RTC triggers
                    < >   GPIO trigger
                    < >   SYSFS trigger
@@ -68,9 +68,9 @@ One or multiple instances of this driver can be declared by adding appropriate p
    static int __init board_init(void)
    {
        [--snip--]
-       
+
        platform_add_devices(board_devices, ARRAY_SIZE(board_devices));
-       
+
        [--snip--]
 
        return 0;
@@ -82,10 +82,7 @@ Driver testing
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -100,10 +97,7 @@ Driver testing
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -116,10 +110,7 @@ Driver testing
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -131,10 +122,7 @@ Driver testing
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

@@ -15,8 +15,9 @@ For nearly all of these lab activities, you will be connecting a signal source t
 Circuit Simulation
 ~~~~~~~~~~~~~~~~~~
 
-| Basic information and material on :doc:`circuit simulation </wiki-migration/university/courses/electronics/circuitsimulationnotes>`, including tool links and usage information.
-| Many of the labs are populated with :adi:`LTspice <en/design-center/design-tools-and-calculators/ltspice-simulator.html>` resource files which contain the schematics of the circuits discussed at a specific topic.
+Basic information and material on :doc:`circuit simulation </wiki-migration/university/courses/electronics/circuitsimulationnotes>`, including tool links and usage information.
+
+Many of the labs are populated with :adi:`LTspice <en/design-center/design-tools-and-calculators/ltspice-simulator.html>` resource files which contain the schematics of the circuits discussed at a specific topic.
 
 Lab Hardware and Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~

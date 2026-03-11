@@ -4,14 +4,13 @@
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
-| :doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
+:doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
 
 Kernel Update Guide
 ===================
 
 | The update process requires newer version of the kernel image file. The download links for these pieces of software are provided below:
-| Latest Kernel Image File
-| Quick 'n Easy FTP Server Software
+| Latest Kernel Image File Quick 'n Easy FTP Server Software
 
 Option 1: Flashing uImage through FTP
 -------------------------------------
@@ -81,7 +80,10 @@ Reconnecting to the ezLINX® PC Application
 
 | Open the ezLINX PC application again and navigate to the board configuration screen by clicking on the picture of the ezLINX board in the bottom left-hand corner.
 | Reset the board using SW1 on the board and wait for the board to reconnect. With the same IP address that was used earlier, connect to the board. Click on the "check" button and the updated embedded version will show:
-| |image2|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/ReconnectionofBoard.jpg
+   :align: center
+   :width: 600px
 
 The embedded version has now been updated.
 
@@ -93,7 +95,7 @@ To flash the ezLINX board through UART, follow the following steps:
 -  Step 1: Connect the RS-232 port of the PC to the UART1 connector J4 of the board (If the PC does not contain an RS-232 port you may use an external USB converter)
 
 
-|image3|
+|image2|
 
 -  Step 2: Open HyperTerminal (Hyperterminal is delivered with windows XP and no longer exist with newer versions so we suggest to use TeraTerm instead) and set the Baud rate to 57600, Data bit :8, Parity: none, flow control :none,
 -  Step 3: Upon turning on the board, uBoot is loaded and you should Press [Enter] or any key in the HyperTerminal within 5 sec to avoid auto-boot for the first time. Then you should see in the HyperTerminal the ‘bfin>’ prompt.
@@ -105,26 +107,23 @@ To flash the ezLINX board through UART, follow the following steps:
 
 ::
 
-     ''bfin> loadb'' \\ \\
-     
+     ''bfin> loadb'' \\
 
 | U Boot is now waiting for a Kermit connection to be made. Under the Transfer menu in HyperTerminal select Send File. The Send File dialog should now appear:
-| |image4|
+| |image3|
 
 -  In the Filename field select the file to load onto the target.
 -  In the Protocol field select Kermit.
 -  Click Send.
 
 | A dialog showing you the progress of the transfer should now be displayed:
-| |image5|
+| |image4|
 
 | Once the transfer is complete you should be returned to the main HyperTerminal window and the U-Boot prompt. Run the following commands one by one in HyperTerminal window.
-| ``bfin> protect off bank 1;erase 0x200A0000 0x206FFFFF;cp.b 0x1000000 0x200A0000 $(filesize); cmp.b 0x1000000 0x200A0000 $(filesize)  bfin> protect off bank 1;erase 0x20900000 0x20EFFFFF;cp.b 0x1000000 0x20900000 $(filesize); cmp.b 0x1000000 0x20900000 $(filesize)  bfin> set bootcmd run flashboot  bfin> save``
+| ``bfin> protect off bank 1;erase 0x200A0000 0x206FFFFF;cp.b 0x1000000 0x200A0000 $(filesize); cmp.b 0x1000000 0x200A0000 $(filesize) bfin> protect off bank 1;erase 0x20900000 0x20EFFFFF;cp.b 0x1000000 0x20900000 $(filesize); cmp.b 0x1000000 0x20900000 $(filesize) bfin> set bootcmd run flashboot bfin> save``
 | Once these commands are executed the board is ready to boot from flash.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/ftpserver.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/ReconnectionofBoard.jpg
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/ez+PC.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/SendFiledialogwindow.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/Sendprogresswindow.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/ez+PC.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/SendFiledialogwindow.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/Sendprogresswindow.jpg

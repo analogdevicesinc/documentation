@@ -62,8 +62,10 @@ Reconfiguring the Evaluation Board
 
 This section details the quick start procedures for setting up the AD9740-FMC-EBZ/AD9742-FMC-EBZ/AD9744-FMC-EBZ/ AD9748-FMC-EBZ evaluation board. Refer to the table below to configure the clock and output option of the evaluation board.
 
-| 
-| ===Clock Configuration=== The evaluation board has a provision for on-board or external clocking configuration.
+Clock Configuration
+^^^^^^^^^^^^^^^^^^^
+
+The evaluation board has a provision for on-board or external clocking configuration.
 
 .. container:: centeralign
 
@@ -123,8 +125,10 @@ The ACE software and DPGDownloader Lite are needed to configure the device. ACE 
 
 To configure the evaluation board to output a 5.0MHz sine wave at 210MSPS with DPGDownloader Lite and ACE software, take the following steps:
 
-| 
-| === Configuring the EVB using ACE === Follow the steps to set-up and configure the clocking of the eval board.
+Configuring the EVB using ACE
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow the steps to set-up and configure the clocking of the eval board.
 
 -  From the initial ACE screen, click the AD9744-FMC-EBZ.
 -  On the Clocking Setup Tab, select Onboard clock (ADF4351) on the clock source drop-down menu, and enter 210MHz on the DAC clock field. Refer to the Figure 3.
@@ -137,8 +141,10 @@ To configure the evaluation board to output a 5.0MHz sine wave at 210MSPS with D
    *Figure 3. AD9744 Plugin Board Wizard*
 
 
-| 
-| === Loading a vector using DPGDownloader Lite === Follow the steps to generate and download a vector into the eval board.
+Loading a vector using DPGDownloader Lite
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow the steps to generate and download a vector into the eval board.
 
 -  Confirm first if the DCO frequency detected is the same as the clock frequency set on ACE (210MHz). Repeat the ACE process if frequencies don't match.
 -  In the DPGDownloader Lite window (see Figure 4), click the Add Generated Waveform dropdown menu and select Single Tone as the vector type.
@@ -209,15 +215,18 @@ There are two LEDs on the evaluation board, which are the 3.3V power supply LED,
    *Figure 6. AD9744-FMC-EBZ Evaluation Board LEDs*
 
 
-| 
-| === DPGDownloader Lite Does Not Recognize the Evaluation Board === There may be cases where the DPGDownloader Lite does not recognize the evaluation board. If this occurs, open the DPGDownloader Lite and unplug then replug the USB cable. If DPGDownloader Lite still does not recognize the evaluation board, there is a chance that the firmware of the board is not updated and the evaluation board must be reprogrammed with the new firmware. Contact a local Analog Devices salesperson or distributor to arrange for this reprogramming to be done.
+DPGDownloader Lite Does Not Recognize the Evaluation Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
+There may be cases where the DPGDownloader Lite does not recognize the evaluation board. If this occurs, open the DPGDownloader Lite and unplug then replug the USB cable. If DPGDownloader Lite still does not recognize the evaluation board, there is a chance that the firmware of the board is not updated and the evaluation board must be reprogrammed with the new firmware. Contact a local Analog Devices salesperson or distributor to arrange for this reprogramming to be done.
 
 ACE Does Not Recognize the Evaluation Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| There may be cases where the AD9744 icon does not appear on the Attached Hardware tab of ACE, or the icon is there but once clicked, will indicate an Unavailable status on the bottom as shown in Figure 7. These errors can occur if the ACE software is started before powering up and connecting the evaluation board to the PC, or if the evaluation board is power cycled and ACE is not restarted. The most basic remedy for this issue is to close ACE and reopen it (restart). As long as the evaluation board is powered up and connected to the PC, ACE recognizes the evaluation board and will work again. |image10|
+There may be cases where the AD9744 icon does not appear on the Attached Hardware tab of ACE, or the icon is there but once clicked, will indicate an Unavailable status on the bottom as shown in Figure 7. These errors can occur if the ACE software is started before powering up and connecting the evaluation board to the PC, or if the evaluation board is power cycled and ACE is not restarted. The most basic remedy for this issue is to close ACE and reopen it (restart). As long as the evaluation board is powered up and connected to the PC, ACE recognizes the evaluation board and will work again.
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -227,8 +236,12 @@ ACE Does Not Recognize the Evaluation Board
 DCO Frequency is not correct or not detected
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Check if the proper resistors are installed indicated in Table 1. If using the Onboard clock, check if DS2 LED lights up. If not, restart ACE and then reprogram the board with the desired clock frequency. If using an external clock source, increase the output power level to 20dBm. Make sure the resistors installed are properly soldered.
-| === DAC Output Frequency is not correct === Check if the DCO Frequency detected on the DPG Panel matches the Data Rate field. These two should match for proper vector generation and playing to the DAC.
+Check if the proper resistors are installed indicated in Table 1. If using the Onboard clock, check if DS2 LED lights up. If not, restart ACE and then reprogram the board with the desired clock frequency. If using an external clock source, increase the output power level to 20dBm. Make sure the resistors installed are properly soldered.
+
+DAC Output Frequency is not correct
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Check if the DCO Frequency detected on the DPG Panel matches the Data Rate field. These two should match for proper vector generation and playing to the DAC.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_sdp_h1.jpg
    :width: 400px

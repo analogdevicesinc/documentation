@@ -5,7 +5,9 @@ Testing the AD-FMComms1-EBZ Board
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- Testing this board, is based on data/algorithms which can be found at:
+
+
+Testing this board, is based on data/algorithms which can be found at:
 
 -  :adi:`Correcting Imperfections in IQ Modulators to Improve RF Signal Fidelity <AN-1039>` by Eamon Nash.
 -  :adi:`Wireless Transmitter IQ Balance and Sideband Suppression <AN-1100>` by Yi Zhang.

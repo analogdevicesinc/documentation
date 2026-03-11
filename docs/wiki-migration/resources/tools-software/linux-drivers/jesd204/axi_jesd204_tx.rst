@@ -142,10 +142,7 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -199,15 +196,12 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84b90000.axi-jesd204-tx# **cat status** 
+      root@analog:/sys/bus/platform/devices/84b90000.axi-jesd204-tx# **cat status**
       Link is enabled
       Measured Link Clock: 375.034 MHz
       Reported Link Clock: 375.000 MHz
@@ -228,15 +222,12 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84b90000.axi-jesd204-tx# **cat encoder** 
+      root@analog:/sys/bus/platform/devices/84b90000.axi-jesd204-tx# **cat encoder**
       8b10b
    
 

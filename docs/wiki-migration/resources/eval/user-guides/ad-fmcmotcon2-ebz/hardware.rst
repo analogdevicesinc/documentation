@@ -4,8 +4,10 @@ Motor Control Hardware
 Hardware solutions
 ------------------
 
-| :doc:`AD-FMCMOTCON2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/controller_board>` - Controller board
-| |AD-FMCMOTCON2-EBZ|
+:doc:`AD-FMCMOTCON2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/controller_board>` - Controller board
+
+
+|AD-FMCMOTCON2-EBZ|
 
 -  Compatible with all Xilinx FPGA platforms with FMC LPC or HPC connectors
 -  Digital board for interfacing with the low and high voltage drive boards
@@ -28,8 +30,10 @@ Hardware solutions
    -  EnDat
    -  BISS Interface
 
-| :doc:`AD-DRVLV2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/lv_board>` - Low voltage drive board
-| |AD-DRVLV2-EBZ|
+:doc:`AD-DRVLV2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/lv_board>` - Low voltage drive board
+
+
+|AD-DRVLV2-EBZ|
 
 -  Connects to the Controller board and has a power stage that can drive motors up to 48V and 20A.
 -  Drives 2 motors simultaneously
@@ -51,8 +55,10 @@ Hardware solutions
 -  BEMF zero cross detection for sensorless control of PMSM or BLDC motors
 -  Separate voltage supplies for the 2 motors so that the motors don’t influence each other
 
-| :doc:`AD-DYNO2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/dyno>` - Dynamometer Drive System
-| |AD-DYNO2-EBZ|
+:doc:`AD-DYNO2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/dyno>` - Dynamometer Drive System
+
+
+|AD-DYNO2-EBZ|
 
 -  Two BLDC motors connected in a dyno setup
 -  Electronically adjustable load – the load value is set using the onboard buttons + LCD
@@ -90,7 +96,7 @@ Where to Buy
    :adi:`FMCMOTCON2 Evaluation Kit <design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-FMCMOTCON2.html>`
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON2-EBZ#quickstart
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/navigation AD-FMCMOTCON2-EBZ#quickstart
    :alt: Quick Start Guides#.:\|Overview#reference_hdl|HDL Reference Design
 
 .. |AD-FMCMOTCON2-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_ctrl_single.jpg

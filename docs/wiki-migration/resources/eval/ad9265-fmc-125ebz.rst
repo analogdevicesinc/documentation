@@ -1,20 +1,17 @@
 EVALUATING THE AD9265 ANALOG-TO-DIGITAL CONVERTER
 =================================================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support for the AD9265-fmc is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
+   \ **NOTE:** Support for the AD9265-fmc is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
 
 
 Preface
 -------
 
-| This user guide describes the evaluation board,\ :adi:`AD9265-FMC-125EBZ <AD9265>`, that is used to evaluate the following Analog Devices, Inc., product: :adi:`AD9265`. These evaluation board provide all of the support circuitry required to operate these parts in their various modes and configurations. The application software used to interface with the devices is also described.
-| The :adi:`AD9265` data sheet provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/sdp <sdp>`. For additional information or questions, send an email to highspeedproductssupport@analog.com.
+This user guide describes the evaluation board,\ :adi:`AD9265-FMC-125EBZ <AD9265>`, that is used to evaluate the following Analog Devices, Inc., product: :adi:`AD9265`. These evaluation board provide all of the support circuitry required to operate these parts in their various modes and configurations. The application software used to interface with the devices is also described.
+
+The :adi:`AD9265` data sheet provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/sdp <sdp>`. For additional information or questions, send an email to highspeedproductssupport@analog.com.
 
 Typical Measurement Setup
 -------------------------
@@ -23,9 +20,9 @@ Typical Measurement Setup
 
 .. container:: centeralign
 
-   *Figure 1. Evaluation Board Connection—*\ :adi:`AD9265-FMC-125EBZ <AD9265>` *(on Left) and
+   *Figure 1. Evaluation Board Connection—*\ :adi:`AD9265-FMC-125EBZ <AD9265>`\ *(on Left) and
 
-   *\ :adi:`EVAL-SDP-CH1Z <sdp>` *SDP-H1 (on Right)*
+   *:adi:`EVAL-SDP-CH1Z <sdp>`\ *SDP-H1 (on Right)*
 
 
 Features
@@ -79,7 +76,7 @@ Equipment Needed
 Getting Started
 ---------------
 
-| This section provides quick start procedures for using the :adi:`AD9265-FMC-125EBZ <AD9265>` board. Both the default and optional settings are described.
+This section provides quick start procedures for using the :adi:`AD9265-FMC-125EBZ <AD9265>` board. Both the default and optional settings are described.
 
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
@@ -200,12 +197,11 @@ The next step is to adjust the amplitude of the input signal for each channel as
    //Figure 13. Graph Window of VisualAnalog *
 
 
-\* Click the disk icon within the* **Graph** *window to save the performance plot data as .csv formatted file. \
+- Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file. \
 
 .. container:: centeralign
 
-   *\ Figure 14. VisualAnalog Disk Icon //
-
+   *Figure 14. VisualAnalog Disk Icon*
 
 Testing Additional AD9265 Boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

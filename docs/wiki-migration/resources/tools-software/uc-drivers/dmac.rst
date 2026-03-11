@@ -43,7 +43,7 @@ A structure that specifies the DMA transfer characteristics is required for send
        enum cyclic_transfer cyclic;
        /* The address of the data source */
        uint32_t src_addr;
-       /* The address of the data destination */   
+       /* The address of the data destination */
        uint32_t dest_addr;
    };
 
@@ -113,8 +113,6 @@ The code snippet below transfers ``sizeof(adc_buffer)`` bytes of data from an AD
    if(status)
        return status;
 
-.. _note-1:
-
 Note
 ^^^^
 
@@ -155,8 +153,6 @@ A memory to memory transfer sends the specified amount of data from the source a
    status = axi_dmac_transfer_wait_completion(mem_dmac, timeout);
    if(status)
        return status;
-
-.. _note-2:
 
 Note
 ^^^^

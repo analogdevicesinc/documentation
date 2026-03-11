@@ -8,17 +8,18 @@ List of API in Power Calculation Properties
 -  :doc:`UpdatePwrCalcNwParams </wiki-migration/resources/tools-software/a2bv2/quickstartguide/thriftuserguide/powercalculationproperties>`
 -  :doc:`Power calculation Run and Reset </wiki-migration/resources/tools-software/a2bv2/quickstartguide/thriftuserguide/powercalculationproperties>`
 
-| 
-| ====Get power parameters==== This API is used for Retrieve the power parameters. It takes elementUid as argument and returns PowerParamForCalc which is having PowerCalcParams and BStandbyMode.
+Get power parameters
+--------------------
 
-| **API:**
-| AnalogDevices.SigmaStudio.Scripting.PowerParamForCalc GetPwrParams(string elementUid);
+This API is used for Retrieve the power parameters. It takes elementUid as argument and returns PowerParamForCalc which is having PowerCalcParams and BStandbyMode.
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**API:** AnalogDevices.SigmaStudio.Scripting.PowerParamForCalc GetPwrParams(string elementUid);
 
-| **Result:**
-| This API Returns PowerParamForCalc object which contains list of PowerCalcParams and BStandbyMode.
+**Arguments:**
+
+-  “elementUid” = UID of the A2B Channel
+
+**Result:** This API Returns PowerParamForCalc object which contains list of PowerCalcParams and BStandbyMode.
 
 -  In Success case, it will give List of PowerCalcParams.
 -  PowerCalcParams will give result as null in case of failure.
@@ -76,76 +77,81 @@ List of API in Power Calculation Properties
    -  ShortCircuitProtectR
    -  TotPhantomR
 
-| **CSharp Example:**
+**CSharp Example:**
 
 ::
 
    PowerParamForCalc paramForCalc = new PowerParamForCalc();
    paramForCalc = client.GetPwrParams("A2B_0");
 
-| **Python Example:**
-| power = PowerCalcParams()
+**Python Example:**
 
 ::
 
+   power = PowerCalcParams()
    power = client.GetPwrParams("A2B_0")
 
-| 
-| ====Compute power parameters==== This API is used for computing the power parameters. It takes elementUid as argument and returns Power Calculation information for the selected A2B channel.
+Compute power parameters
+------------------------
 
-| **API:**
-| AnalogDevices.SigmaStudio.Scripting.PwrCalc ComputePwr(string elementUid);
+This API is used for computing the power parameters. It takes elementUid as argument and returns Power Calculation information for the selected A2B channel.
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**API:** AnalogDevices.SigmaStudio.Scripting.PwrCalc ComputePwr(string elementUid);
 
-| **Result:**
-| This API Returns Power Calculation object which contains list of PowerCalcOutputs and powercalSummary.
+**Arguments:**
 
-| **Csharp example:**
-| PwrCalc pwrCalc = client.ComputePwr("A2B_0");
+-  “elementUid” = UID of the A2B Channel
 
-| **Python example:**
-| PwrCalc pwrCalc = client.ComputePwr("A2B_0")
+**Result:** This API Returns Power Calculation object which contains list of PowerCalcOutputs and powercalSummary.
+
+**Csharp example:**
+
+::
+
+   PwrCalc pwrCalc = client.ComputePwr("A2B_0");
+
+**Python example:**
+
+::
+
+   PwrCalc pwrCalc = client.ComputePwr("A2B_0")
 
 Update Power Calc Network Params
 --------------------------------
 
 This API is used for updating Power calculation parameters. It takes elementUid and power calculation parameters as arguments and returns SSPResult.
 
-| **API:**
-| SSPResult UpdatePwrCalcNwParams(string elementUid, AnalogDevices.SigmaStudio.Scripting.PowerParamForCalc pwrCalc);
+**API:** SSPResult UpdatePwrCalcNwParams(string elementUid, AnalogDevices.SigmaStudio.Scripting.PowerParamForCalc pwrCalc);
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**Arguments:**
 
+-  “elementUid” = UID of the A2B Channel
 -  “pwrCalc” = Power Calculation Parameters
 
-| **Result:**
-| SSPResult contains 'IsSuccess' flag and 'Message' information of UpdatePwrCalcNwParams action.
+**Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdatePwrCalcNwParams action.
 
 -  IsSuccess is set to 'True' if the UpdatePwrCalcNwParams was successful else 'False'.
 -  Message contains the Success/Failure information in the form of list of string.
 
-| **Csharp Example:**
-| PowerParamForCalc paramForCalc = new PowerParamForCalc();
+**Csharp Example:**
 
 ::
 
+   PowerParamForCalc paramForCalc = new PowerParamForCalc();
    paramForCalc = client.GetPwrParams("A2B_0");
    // Updating Peri Supply 1 property for main node
-   paramForCalc.PowerCalcSettings[0].Ivext1 = 13.99f; 
+   paramForCalc.PowerCalcSettings[0].Ivext1 = 13.99f;
    // Updating Peri Supply 2 property for main node
-   paramForCalc.PowerCalcSettings[0].Ivext2 = 8.01f; 
+   paramForCalc.PowerCalcSettings[0].Ivext2 = 8.01f;
    //Updating Peri Supply 1 property for sub node 0
-   paramForCalc.PowerCalcSettings[1].Ivext1 = 14.99f; 
+   paramForCalc.PowerCalcSettings[1].Ivext1 = 14.99f;
    _sspresult =  client.UpdatePwrCalcNwParams("A2B_0", paramForCalc); // Update power params
 
-| **Python Example:**
-| pwrcalc = PowerParamForCalc()
+**Python Example:**
 
 ::
 
+   pwrcalc = PowerParamForCalc()
    pwrcalc = client.GetPwrParams("A2B_0")
    #Updating Peri Supply 1 property for main node
    pwrcalc.PowerCalcSettings[0].Ivext1 = float(12.99)
@@ -155,15 +161,16 @@ This API is used for updating Power calculation parameters. It takes elementUid 
    pwrcalc.PowerCalcSettings[1].Ivext1 = float(14.99)
    ssp_result = client.UpdatePwrCalcNwParams("A2B_0", pwrcalc)
 
-| 
-| ====Power Calc Run and Reset==== This API is used to Run Power calculation. It takes elementUid and property name and property value as arguments and returns SSPResult.
+Power Calc Run and Reset
+------------------------
 
-| **API:**
-| SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
+This API is used to Run Power calculation. It takes elementUid and property name and property value as arguments and returns SSPResult.
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**API:** SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
+**Arguments:**
+
+-  “elementUid” = UID of the A2B Channel
 -  “propertyName” = Name of the action property. Some of the property name examples are listed below
 
    -  PwrCalcRun – Run the Power calculation
@@ -172,24 +179,23 @@ This API is used for updating Power calculation parameters. It takes elementUid 
 
 -  “propertyVal” = Setting value (true or false).
 
-| **Result:**
-| SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
+**Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateBoolProperty was successful else 'False'.
 -  Message contains the Success/Failure information in the form of list of string.
 
-| **Csharp Example:**
-| \_sspresult = client.UpdateBooleanProperty("A2B_0", "PwrCalcRun", true);
+**Csharp Example:**
 
 ::
 
+   _sspresult = client.UpdateBooleanProperty("A2B_0", "PwrCalcRun", true);
    _sspresult = client.UpdateBooleanProperty("A2B_0", "PwrCalcReset", true);
 
-| **Python Example:**
-| ssp_result = client.UpdateBooleanProperty("A2B_0", "PwrCalcRun", True)
+**Python Example:**
 
 ::
 
+   ssp_result = client.UpdateBooleanProperty("A2B_0", "PwrCalcRun", True)
    ssp_result = client.UpdateBooleanProperty("A2B_0", "PwrCalcReset", True)
 
 .. note::

@@ -38,10 +38,7 @@ The ON resistance of the pass NFET, and the parasitic capacitance of the signal 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 2 Each 100 KΩ, 47 KΩ 10 KΩ and 1 KΩ resistors
-| 1 – NMOS transistor (ZVN2110A)
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 2 Each 100 KΩ, 47 KΩ 10 KΩ and 1 KΩ resistors 1 – NMOS transistor (ZVN2110A)
 
 Directions:
 ~~~~~~~~~~~
@@ -97,7 +94,6 @@ For extra credit try substituting the fixed 2.5 V supply for V\ :sub:`LV`\ and u
 
 **For Further Reading:**
 
-| `Logic Levels <http://en.wikipedia.org/wiki/Logic_level>`_
-| `Low Voltage Logic Interfacing <http://www.analog.com/static/imported-files/tutorials/MT-098.pdf>`_
+`Logic Levels <http://en.wikipedia.org/wiki/Logic_level>`_ `Low Voltage Logic Interfacing <http://www.analog.com/static/imported-files/tutorials/MT-098.pdf>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**

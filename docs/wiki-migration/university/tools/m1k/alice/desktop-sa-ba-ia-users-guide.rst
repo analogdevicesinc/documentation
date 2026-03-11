@@ -28,7 +28,7 @@ The menu buttons:
 
 The following sections cover the functions of the various menu buttons. Most of the control settings can be found under the buttons.
 
-\**File drop down menu \*\*
+**File drop down menu**
 
 Save Config Load Config, commands for saving and loading configuration settings (.cfg file).
 
@@ -237,23 +237,11 @@ There must be an input to the network which you can observe and record. There mu
 
 If we set the number of FFT samples to 8192 the total sample time will be 81.92 mSec which is the same as one cycle at 12.2 Hz. By setting the Channel A function generator to a 12.2 Hz square wave with a very narrow duty cycle of only 4 – 6 samples wide the resulting test signal will contain frequency content every 12.2 Hz with nearly equal amplitude out to high frequencies. At 12 Hz each 10 uSec sample period is equal to about 0.012 % of duty cycle. We can set the duty cycle to anything from 0.012% to 0.08% and get similar results. The only difference is how fast the signal level falls off with increasing frequency. For a given pulse amplitude, the narrower the pulse the less energy in each 12.2 Hz spaced frequency but the flatter vs frequency they will be. The wider the pulse the more signal energy but a faster frequency roll off. 0.08% gives an acceptable frequency roll off out to 10 KHz.
 
-| The detailed settings for Channel A are as follows:
-| Shape - Square
-| Mode - SVMI
-| VMIN = 1.3
-| VMAX = 3.7 ( pulse amplitude set to allow some headroom for overshoot and ringing )
-| Freq = 12.2
-| Phase = 180 ( phase is set to 180 degrees to center the pulse in the time sample record )
-| DutyCycle = 0.08 ( can be adjusted down to 0.012% for flatter input signal energy )
+The detailed settings for Channel A are as follows: Shape - Square Mode - SVMI VMIN = 1.3 VMAX = 3.7 ( pulse amplitude set to allow some headroom for overshoot and ringing ) Freq = 12.2 Phase = 180 ( phase is set to 180 degrees to center the pulse in the time sample record ) DutyCycle = 0.08 ( can be adjusted down to 0.012% for flatter input signal energy )
 
 Channel B is set in Hi-Z mode as an input.
 
-| Other Settings:
-| FFT Window – Flat top ( has a wide FFT bandwidth which is wider than 12 Hz )
-| FFT Samples = 8192
-| Start Freq = 100 ( set to something other than 0, to ignore DC content )
-| Stop Freq = 10000
-| ZeroStuffing = 0 ( can be adjusted but generally has little effect on resultant plot )
+Other Settings: FFT Window – Flat top ( has a wide FFT bandwidth which is wider than 12 Hz ) FFT Samples = 8192 Start Freq = 100 ( set to something other than 0, to ignore DC content ) Stop Freq = 10000 ZeroStuffing = 0 ( can be adjusted but generally has little effect on resultant plot )
 
 Below in figure E2 is a screen shot for the bandpass RLC configuration of figure E11. The green trace for channel A is the narrow pulse forcing function response. The light and dark orange traces are the output responses seen by channel B for C1 = 0.47 uF and 1.0 uF respectively. The light and dark magenta traces are the subtraction of the Channel A trace ( in dBV ) and the Channel B trace ( in dBV ). As we know subtraction in dB ( logs ) is the same as division in magnitude. The magenta traces are the actual input to output transfer function of the RLC network. The Yellow trace is the phase response.
 
@@ -279,11 +267,7 @@ Similarly in figure E3 is a screen shot for the bandstop RLC configuration of fi
 
 **For Further Reading:**
 
-| https:*en.wikipedia.org/wiki/Fast_Fourier_transform
-  http:*\ www.analog.com/media/en/training-seminars/design-handbooks/MixedSignal_Sect5.pdf
-| https:*en.wikipedia.org/wiki/Window_function
-  https:*\ en.wikipedia.org/wiki/Spectral_leakage
-| http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html
+https://en.wikipedia.org/wiki/Fast_Fourier_transform http://www.analog.com/media/en/training-seminars/design-handbooks/MixedSignal_Sect5.pdf https://en.wikipedia.org/wiki/Window_function https://en.wikipedia.org/wiki/Spectral_leakage http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html
 
 Impedance Analyzer / LCR Meter
 ------------------------------
@@ -306,10 +290,7 @@ The unknown impedance to be measured is modeled as a series circuit consisting o
    Figure 16: Basic Concept
 
 
-| Three voltages are measured:
-| 1. VA is the applied voltage ( from Channel A of the ALM1000 ).
-| 2. VZ is the voltage across the unknown impedance ( from Channel B of the ALM1000 ).
-| 3. VI, the voltage across the known resistor R\ :sub:`EXT` is calculated from VA and VZ and is related to the current in both R\ :sub:`EXT` and the unknown impedance.
+Three voltages are measured: 1. VA is the applied voltage ( from Channel A of the ALM1000 ). 2. VZ is the voltage across the unknown impedance ( from Channel B of the ALM1000 ). 3. VI, the voltage across the known resistor R\ :sub:`EXT` is calculated from VA and VZ and is related to the current in both R\ :sub:`EXT` and the unknown impedance.
 
 These three voltages are actually vectors and indicated in figure 24.
 
@@ -405,7 +386,7 @@ Used to change the number of samples in the FFT calculation. This number has to 
 
 Used to select an FFT window. It is generally better not to select the "Rectangle window" or no window. This window has a poor dynamic range due to the high side bands that are generated with no weighting function in the FFT calculation. The Flat Top window gives the highest amplitude accuracy but also has a large bandwidth, so less selectivity. Using the narrowest bandwidth FFT window and increasing the zero-stuffing factor can improve the measurement results. The program starts up set to the Nuttall window (BW=2.02).
 
-\**File drop down menu \*\*
+**File drop down menu**
 
 Save Config Load Config buttons. Commands for saving and loading the configuration settings to a file. (.cfg file)
 
@@ -428,9 +409,7 @@ Cut-DC, an option that will remove the DC component from the sampled data record
 
 The section along the right hand side contains the controls for making the measurements. There is a place to enter the external resistor value. The program starts up with this set to 1000. Next is a spin box to set the number of Ohms/div for the polar ( circular ) grid.
 
-| M1K Analog Inputs
-| ADALM1000 Low Capacitance FET Input Buffers
-| M1K Breadboard Adapters
+M1K Analog Inputs ADALM1000 Low Capacitance FET Input Buffers M1K Breadboard Adapters
 
 Main Graphics area
 ~~~~~~~~~~~~~~~~~~
@@ -664,14 +643,7 @@ At the expense of a little wider bandwidth the Nuttall window function provides 
 
 A special filter is the Flat Top filter. It has a flat top as the name implies. That is why it is very usable for accurate amplitude measurements. The peak of the signal does not have to be exactly on the center of an FFT frequency bin.
 
-| ALICE Desktop has 7 built in windowing functions.
-| Rectangular, no window function B=1
-| Cosine window function, medium-dynamic range B=1.24
-| Triangular non-zero endpoints, medium-dynamic range B=1.33
-| Hann window function, medium-dynamic range B=1.5
-| Blackman window, continuous first derivate function, medium-dynamic range B=1.73
-| Nuttall window, continuous first derivate function, high-dynamic range B=2.02
-| Flat top window, medium-dynamic range, extra wide bandwidth B=3.77
+ALICE Desktop has 7 built in windowing functions. Rectangular, no window function B=1 Cosine window function, medium-dynamic range B=1.24 Triangular non-zero endpoints, medium-dynamic range B=1.33 Hann window function, medium-dynamic range B=1.5 Blackman window, continuous first derivate function, medium-dynamic range B=1.73 Nuttall window, continuous first derivate function, high-dynamic range B=2.02 Flat top window, medium-dynamic range, extra wide bandwidth B=3.77
 
 ALICE desktop also allows the user to enter a function, generally from the numpy library, for the FFT window. Under the FFTwindow drop down menu click on Enter User Function and type in the function. Then select User Defined Window. It is also possible to enter the FFT window shape as an array from a .csv file. The length of the window shape has to be a power of 2, i.e. 256, 512, 1024, 2048, 4096.... When using an FFT window shape from a file, changing the number of samples up or down is not permitted. The number of FFT samples will be set by the length of the shape file.
 

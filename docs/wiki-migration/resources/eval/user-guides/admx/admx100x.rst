@@ -25,7 +25,7 @@ Additional Equipment Needed
 
 ::
 
-       *[[:adi:`sdp-s|SDP-S]]` or [[:adi:`sdp-b|SDP-B]]` 
+       *[[:adi:`sdp-s|SDP-S]]` or [[:adi:`sdp-b|SDP-B]]`
    * USB-A to mini-USB cable
        *[[:adi:`eval_sdp-pmod|SDP-I-PMOD]]` interposer board
    * 6V Power Adapter
@@ -68,7 +68,7 @@ The EVAL-ADMX100X-FMCZ evaluation board is shown in Figure 2. The following tabl
 -  SMA connector descriptions are summarized in Table 1.
 -  Jumpers and Switch Setup are summarized in Table 2.
 
-| **Table 1. SMA Connector**
+**Table 1. SMA Connector**
 
 =========================== ==================================
 Connector                   Description
@@ -82,13 +82,13 @@ ACQ_SYNC_IN (ADMX1001 only) Acquisition Channel Sync Input
 SYNC_IN                     Source Input Sync Clock
 =========================== ==================================
 
-| **Table 2. Jumper and Switch Setup**
+**Table 2. Jumper and Switch Setup**
 
 ==== ======================== ===================
 Name Function                 Position
 ==== ======================== ===================
 P4   VCM from DAC or EXT      2-1 (VCM_DAC)
-:::  :::                      2-3 (VCM_EXT)  [1]_
+\                             2-3 (VCM_EXT)  [1]_
 P6   EN                       Removed
 P8   Sense Input Clamp to +5V Inserted
 P9   Sense Input Clamp to -5V Inserted
@@ -146,13 +146,13 @@ Follow the steps below to set up the full evaluation board.
 ::
 
      *After the power is applied, the “READY” LED turns on and then turns off. Then the “DONE” LED turns on and the “READY” LED turns on again.
-     * <fc #ff0000>**Caution**</fc>: If both LEDs do not turn on, power cycle the EVAL-ADMX100X-FMCZ evaluation board. 
+     **Caution**: If both LEDs do not turn on, power cycle the EVAL-ADMX100X-FMCZ evaluation board.
    * Configure the LOOPBACK switch (S1).
      * If using the ADMX1002 or there is a need to view the source outputs via the OUTP and OUTN SMAs when using the ADMX1001, slide S1 on the EVAL-ADMX100X-FMCZ to the “LOOPBACK OFF” position.
      * If using the ADMX1001, the signal generator outputs can be looped back into the acquisition channel inputs by sliding S1 on the EVAL-ADMX100X-FMCZ to the “LOOPBACK ON” position The SMA outputs (OUTP and OUTN) and inputs (INP and INN) connectors are disengaged in this mode.
    * Start the ADMX100X GUI.
      * The GUI will display "Connected" in green text at the bottom left corner if the connection was successful.
-     * <fc #ff0000>**Caution**</fc>: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
+     **Caution**: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
 
      |image4|
 
@@ -171,8 +171,7 @@ The recommended controller board to use with the EVAL-ADMX100X evaluation system
    The SDP-I-PMD is used in conjunction with either the SDP-S or the SDP-B boards to establish SPI communication to the ADMX1002 using only the SPI PMOD connector. The SDP-H1 performs the same function and can be plugged into the FMC connector on the EVAL-ADMX100X-FMCZ.
 
    
-   | There are additional connections to the FMC connector that are required for some features, including the ability to shift the VCM of the generated output using the GUI, as well as access an additional SPI bus to control the acquisition module on the ADMX1001.
-   | Therefore, we recommend using the SDP-H1 controller board in most cases to access all features and both module boards (ADMX1001B and ADMX1002B). However, if the user is evaluating the ADMX1002 and can shift the VCM of the output manually, the SDP-S/SDP-B and SDP-I-PMD boards can be used. This setup cannot be used to evaluate the ADMX1001B.
+   There are additional connections to the FMC connector that are required for some features, including the ability to shift the VCM of the generated output using the GUI, as well as access an additional SPI bus to control the acquisition module on the ADMX1001. Therefore, we recommend using the SDP-H1 controller board in most cases to access all features and both module boards (ADMX1001B and ADMX1002B). However, if the user is evaluating the ADMX1002 and can shift the VCM of the output manually, the SDP-S/SDP-B and SDP-I-PMD boards can be used. This setup cannot be used to evaluate the ADMX1001B.
 
 
 Quick Start with the SDP_S/SDP_B and SDP_I_PMOD
@@ -182,8 +181,6 @@ Refer to Figure 2 for the EVAL-ADMX100X-FMCZ Connector layout.
 
 -  Source/DAC SPI PMOD header: The SDP-S or SDP-B will communicate to the module via SPI through the Source/DAC SPI PMOD header (P2). The P2 bottom row pins 1-6 are "SS_MOSI_MISO_SCLK_GND\_+3.3V"
 -  When using these controller boards, the output common-mode voltage can only be adjusted by providing external VCM at pin 9 of P7. The P4 jumper should also be inserted at 2-3 position as indicated in Table 2.
-
-.. _equipment-1:
 
 Equipment
 ~~~~~~~~~
@@ -218,8 +215,6 @@ Figure 5 illustrates the required setup to evaluate the ADMX1002 module. The fol
    *Figure 5. Evaluation Board Connection Using the SDP-I-PMD with Either the SDP-S or SDP-B Controller Boards*
 
 
-.. _setup-1:
-
 Setup
 ~~~~~
 
@@ -232,21 +227,21 @@ Follow the steps below to set up the full evaluation board.
 ::
 
      *Put jumper JP1 into the SPI position
-     *<fc #ff0000>**Caution**</fc>: Remove jumper JP2
+     **Caution**: Remove jumper JP2
    * Connect the SDP-I-PMD interposer board to the “SOURCE/DAC SPI” header (P2) on the EVAL-ADMX100X-FMCZ evaluation board through the 6-pin PMOD cable.
      *Connect the 6-pin male-to-male header to one end of the 6-pin PMOD cable.
-     *<fc #ff0000>**Caution**</fc>: Connect the male pins to the top row (pin 1-6) of the SDP-I-PMD PMOD connector (P4). Be careful to match pin number 1 of the PMOD cable with pin number 1 of the PMOD connector (P4) on the SDP-I-PMD board.
-     *<fc #ff0000>**Caution**</fc>: Connect the female side of the PMOD cable to the bottom row of the “SOURCE/DAC SPI” header (P2) on the EVAL-ADMX100X-FMCZ. Be careful to connect pin number 1 of the PMOD cable to pin number 1 of the “SOURCE/DAC SPI” header (P2).
+     **Caution**: Connect the male pins to the top row (pin 1-6) of the SDP-I-PMD PMOD connector (P4). Be careful to match pin number 1 of the PMOD cable with pin number 1 of the PMOD connector (P4) on the SDP-I-PMD board.
+     **Caution**: Connect the female side of the PMOD cable to the bottom row of the “SOURCE/DAC SPI” header (P2) on the EVAL-ADMX100X-FMCZ. Be careful to connect pin number 1 of the PMOD cable to pin number 1 of the “SOURCE/DAC SPI” header (P2).
    * Connect the SDP controller USB to the computer.
    * Apply the SDP-I-PMD board power. Wait 10 seconds after applying power before moving to the next step.
    * Apply the EVAL-ADMX100X-FMCZ power.
      *After the power is applied, the “READY” LED turns on and then turns off. Then the “DONE” LED turns on and the “READY” LED turns on again.
-     * <fc #ff0000>**Caution**</fc>: If both LEDs do not turn on, power cycle the EVAL-ADMX100X-FMCZ evaluation board. 
+     **Caution**: If both LEDs do not turn on, power cycle the EVAL-ADMX100X-FMCZ evaluation board.
    * Configure the LOOPBACK switch (S1).
      * Slide S1 on the EVAL-ADMX100X-FMCZ to the “LOOPBACK OFF” position.
    * Start the ADMX100X GUI.
      * The GUI will display "Connected" in green text at the bottom left corner if the connection was successful.
-     * <fc #ff0000>**Caution**</fc>: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
+     **Caution**: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
 
      |image6|
 
@@ -359,8 +354,6 @@ Arbitrary Waveform Generation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An arbitrary waveform can be programmed by the user. The AWG signal can be programmed up to 20s long and will be stored in volatile memory. Continuous AWG generation can be performed by looping back the waveform stored in memory. ADMX100X contains a 27kHz low pass filter on its output allowing AWG waveforms to be generated within this band. Signals generated in the band will be within a 5% tolerance.
-
-.. _acquisition-channel-1:
 
 Acquisition Channel
 ~~~~~~~~~~~~~~~~~~~
@@ -841,7 +834,7 @@ ATE Control Interface
 
 The Automatic Test Equipment (ATE) control interface can be used to provide a simple protocol for initiating an instruction to perform a DPD calibration or signal generation by driving and monitoring pins on the module. The test parameters, like the amplitude and frequency of the signal, must still be loaded through SPI.
 
-| **Table 3. ATE Pin Assignment and Function**
+**Table 3. ATE Pin Assignment and Function**
 
 ========= ===========
 Connector Description
@@ -853,7 +846,7 @@ VALID     Output
 CAL       Input
 OT        Output
 SYNC_MODE Input
-:::       ::
+\         
 SYNC_IN   Input
 SYNC_OUT  Output
 ========= ===========
@@ -911,20 +904,22 @@ Notes:
 -  During Coherent Sampling, SYNC_IN must have a 100 MHz clock frequency with a 50% duty cycle.
 -  Although less common, coherent sampling may also be performed by synchronizing the analyzer from the clock generated from the module (SYNC_OUT).
 
-| **Table 4. SYNC_MODE Configuration Options**
-| ^SYNC_Mode ^Function ^Position^
+**Table 4. SYNC_MODE Configuration Options**
 
-=== ====================================== ===========
-P12 Non-Coherent Sampling (Internal Clock) 1-2 (3.3 V)
-::: Coherent Sampling (External Clock)     2-3 (GND)
-=== ====================================== ===========
+========= ====================================== ===========
+SYNC_Mode Function                               Position
+========= ====================================== ===========
+P12       Non-Coherent Sampling (Internal Clock) 1-2 (3.3 V)
+\         Coherent Sampling (External Clock)     2-3 (GND)
+========= ====================================== ===========
 
-| **Table 5. SYNC_IN Configuration Options**
-| ^SYNC_IN ^Function ^Position^
+**Table 5. SYNC_IN Configuration Options**
 
-=== ============================ ===============
-P13 SMA Input for external clock 2-3 (SMA input)
-=== ============================ ===============
+======= ============================ ===============
+SYNC_IN Function                     Position
+======= ============================ ===============
+P13     SMA Input for external clock 2-3 (SMA input)
+======= ============================ ===============
 
 ADMX100X TYPICAL PERFORMANCE CHARACTERISTICS
 --------------------------------------------

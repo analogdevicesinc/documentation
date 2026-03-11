@@ -14,7 +14,7 @@ Software Configuration
 
 On the Yocto, Configure the linux-kernel as below to set the USB controller in Host only mode, and enable the USB Mass Storage support. check the directory of "yocto/build" and Clean up and setup the linux-kernel configuration with commands:
 
-.. code:: c++
+.. code:: console
 
    $ bitbake linux-adi -c cleansstate
    $ bitbake linux-adi -c menuconfig
@@ -26,14 +26,14 @@ And In the pop-up window of linux-kenel configuration, configure as follows Conf
    Device Drivers  --->
        [*] USB support  --->
            <*>   Support for Host-side USB
-                   [*]   Enable USB persist by default 
+                   [*]   Enable USB persist by default
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Host only mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
-                   [*]       Inventra 
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
+                   [*]       Inventra
 
 Configure to use the USB storage for host mode demonstrate
 
@@ -57,7 +57,7 @@ Example Usage
 
 Boot the generated Images and connect the USB memory storage, kernel outputs messages looks like below:
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# usb 1-1: new high-speed USB device number 2 using musb-hdrc
    usb-storage 1-1:1.0: USB Mass Storage device detected

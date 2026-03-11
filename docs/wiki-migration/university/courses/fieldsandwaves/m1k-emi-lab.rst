@@ -25,16 +25,9 @@ Any kind of noise is also a form of EMI. Noise can be generated either externall
 Materials:
 ----------
 
-| ADALM1000 hardware module
-| 2 12 inch / 30 cm long 3 wire female to female header jumper wires (should be included with ADALM1000)
+ADALM1000 hardware module 2 12 inch / 30 cm long 3 wire female to female header jumper wires (should be included with ADALM1000)
 
-| From ADALP2000 parts kit:
-| Solder-less breadboard
-| Male to Male jumper wires
-| Male to male header pins (gender changers)
-| 1 10 mH Inductor (103)
-| 1 1 mH Inductor (102)
-| 1 100 uH Inductor (101)
+From ADALP2000 parts kit: Solder-less breadboard Male to Male jumper wires Male to male header pins (gender changers) 1 10 mH Inductor (103) 1 1 mH Inductor (102) 1 100 uH Inductor (101)
 
 Magnetic Field Directions:
 --------------------------
@@ -122,14 +115,10 @@ Up until now we have been using magnetic coils to detect varying magnetic fields
    Figure 6, Connect electric field pick-up wire to Scope input.
 
 
-.. _hardware-settings-1:
-
 Hardware Settings:
 ~~~~~~~~~~~~~~~~~~
 
 The AWG channels should be configured in Hi-Z and Split I/O mode. Turn on the channel A scope trace. The signals seen will likely be small so the vertical range settings should be around 50 mV/div. You may wish to adjust the vertical position as needed to center the trace on the screen grid. The 1 Meg resistor connected to the +5 supply rail should center the signal near 2.5 V because of the internal 1 Meg resistor connected to ground on the AIN pin. The horizontal time/Div should be adjusted as needed to view the various waveforms you pick up with the wire, 5 mS/Div is a good place to start to observe 60 Hz AC power line interference.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -154,13 +143,10 @@ Or 336 Vp-p, so the coupling factor is about 1/1000.
 Questions:
 ----------
 
-| a) Describe the “antenna” you are using.
-| b) Qualitatively describe (sketch or annotate a screen capture if you wish) two signals you observe. Give their characteristic frequencies.
-| c) Identify the sources of the two signals you observed. (Guess, but try to make a reasonable guess)
+a) Describe the “antenna” you are using. b) Qualitatively describe (sketch or annotate a screen capture if you wish) two signals you observe. Give their characteristic frequencies. c) Identify the sources of the two signals you observed. (Guess, but try to make a reasonable guess)
 
 **For Further Reading:**
 
-| `Electromagnetic radiation <https://en.wikipedia.org/wiki/Electromagnetic_radiation>`_
-| `Electromagnetic interference <https://en.wikipedia.org/wiki/Electromagnetic_interference>`_
+`Electromagnetic radiation <https://en.wikipedia.org/wiki/Electromagnetic_radiation>`_ `Electromagnetic interference <https://en.wikipedia.org/wiki/Electromagnetic_interference>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/fieldsandwaves>`\ **.**

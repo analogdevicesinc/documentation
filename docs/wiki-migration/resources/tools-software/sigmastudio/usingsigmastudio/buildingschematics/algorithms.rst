@@ -1,20 +1,31 @@
 Algorithms: Add/Remove, Grow/Reduce
 ===================================
 
-| :doc:`Click here to return to the Building Schematics page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics>`
-| Each schematic block represents one or more signal processing algorithms. Algorithms range from very simple, like :doc:`Signal Add </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/signaladd>`, to advanced system components like :doc:`Dynamic Bass Boost </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/dynamicbassboost>`. You can add or remove algorithms from blocks to meet your specific requirements. Algorithms can also be grown as explained below.
+:doc:`Click here to return to the Building Schematics page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics>`
+
+Each schematic block represents one or more signal processing algorithms. Algorithms range from very simple, like :doc:`Signal Add </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/signaladd>`, to advanced system components like :doc:`Dynamic Bass Boost </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/dynamicbassboost>`. You can add or remove algorithms from blocks to meet your specific requirements. Algorithms can also be grown as explained below.
 
 --------------
 
 **Add Algorithm:**
 
-| You must add an algorithm -- typically associated with set of i/o pins -- for a block to function. To Add an algorithm to a block, **right-click** the block and select **Add Algorithm > IC #**, selecting the DSP IC for the algorithm. Note, if there are multiple processors (ICs/DSPs) in your project, you can select which DSP will run an algorithm, see below for more information.
-| |algorithmpic1.png|
-| At this point, right-click the block on its border or label to add another algorithm if desired. (It's important to right-click the border or label; if you right-click the center, you may display the pop-up window for entering parameters values.)
-| |algorithmpic2.png|
-| A block that contains no algorithms will have no controls or pins and you will only see the block's name (as shown in the figure below). You must add an algorithm to empty blocks before they can be used in the schematic design.
-| |algorithmpic3.png|
-|
+You must add an algorithm -- typically associated with set of i/o pins -- for a block to function. To Add an algorithm to a block, **right-click** the block and select **Add Algorithm > IC #**, selecting the DSP IC for the algorithm. Note, if there are multiple processors (ICs/DSPs) in your project, you can select which DSP will run an algorithm, see below for more information.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithmpic1.png
+   :alt: algorithmpic1.png
+   :align: center
+
+At this point, right-click the block on its border or label to add another algorithm if desired. (It's important to right-click the border or label; if you right-click the center, you may display the pop-up window for entering parameters values.)
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithmpic2.png
+   :alt: algorithmpic2.png
+   :align: center
+
+A block that contains no algorithms will have no controls or pins and you will only see the block's name (as shown in the figure below). You must add an algorithm to empty blocks before they can be used in the schematic design.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithmpic3.png
+   :alt: algorithmpic3.png
+   :align: center
 
 .. tip::
 
@@ -23,9 +34,13 @@ Algorithms: Add/Remove, Grow/Reduce
 
 When adding an algorithm, not only are you choosing the method of computation for the block, you're also selecting a particular DSP association for the algorithm. This is important if you're connect multiple DSP processors: by adding algorithms to blocks, you can share blocks and controls and communicate with multiple DSPs simultaneously.
 
-| For example: the `Single Volume Control <https://wiki.analog.com/resources/tools-software/sigmastudio/volumecontrols/singlevolumecontrol>`_ block has a single slider control for all algorithms. If you create a project with 2 DSP processors, IC 1 (AD1940) and IC 2 (ADAU1701), and select Add Algorithm, you will be prompted for which chip you want to add this algorithm to.
-| |algorithmpic4.png|
-| It is possible to have the first algorithm assigned to IC 1, and a second algorithm assigned to IC 2, but they share the volume block and a single slider control. Note that you cannot create a wire between different processor, see the `Wires <https://wiki.analog.com/resources/tools-software/sigmastudio/usingsigmastudio/wiresandaliases>`_ topic for more information.
+For example: the `Single Volume Control <https://wiki.analog.com/resources/tools-software/sigmastudio/volumecontrols/singlevolumecontrol>`_ block has a single slider control for all algorithms. If you create a project with 2 DSP processors, IC 1 (AD1940) and IC 2 (ADAU1701), and select Add Algorithm, you will be prompted for which chip you want to add this algorithm to.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithmpic4.png
+   :alt: algorithmpic4.png
+   :align: center
+
+It is possible to have the first algorithm assigned to IC 1, and a second algorithm assigned to IC 2, but they share the volume block and a single slider control. Note that you cannot create a wire between different processor, see the `Wires <https://wiki.analog.com/resources/tools-software/sigmastudio/usingsigmastudio/wiresandaliases>`_ topic for more information.
 
 --------------
 
@@ -48,11 +63,7 @@ The easiest way to understand the distinction between adding and growing is with
 
 **Reduce Algorithm:**
 
-| Reducing is the opposite of growing, it removes the extra controls and pins that are created by the Grow Algorithm operation. Like remove algorithm, reduce will remove controls/pins starting at the bottom or the most recently grown item.
-| |algorithmpic5.png|
+Reducing is the opposite of growing, it removes the extra controls and pins that are created by the Grow Algorithm operation. Like remove algorithm, reduce will remove controls/pins starting at the bottom or the most recently grown item.
 
-.. |algorithmpic1.png| image:: https://wiki.analog.com/_media/algorithmpic1.png
-.. |algorithmpic2.png| image:: https://wiki.analog.com/_media/algorithmpic2.png
-.. |algorithmpic3.png| image:: https://wiki.analog.com/_media/algorithmpic3.png
-.. |algorithmpic4.png| image:: https://wiki.analog.com/_media/algorithmpic4.png
-.. |algorithmpic5.png| image:: https://wiki.analog.com/_media/algorithmpic5.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithmpic5.png
+   :alt: algorithmpic5.png

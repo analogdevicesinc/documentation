@@ -1,7 +1,102 @@
 AD5933 - No-OS Driver for Microchip Microcontroller Platforms
 =============================================================
 
-.. include:: ../ad5933.rst
+
+Supported Devices
+=================
+
+-  :adi:`AD5933`
+
+Evaluation Boards
+=================
+
+-  `PmodIA <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-IA>`_
+
+Overview
+========
+
+
+The :adi:`AD5933` is a high precision impedance converter system solution that combines an on-board frequency generator with a 12-bit, 1 MSPS, analog-to-digital converter (ADC). The frequency generator allows an external complex impedance to be excited with a known frequency. The response signal from the impedance is sampled by the on-board ADC and a discrete Fourier transform (DFT) is processed by an on-board DSP engine. The DFT algorithm returns a real (R) and imaginary (I) data-word at each output frequency.
+
+Once calibrated, the magnitude of the impedance and relative phase of the impedance at each frequency point along the sweep is easily calculated. This is done off chip using the real and imaginary register contents, which can be read from the serial I2C interface.
+
+A similar device, also available from Analog Devices, Inc., is the :adi:`AD5934`, a 2.7 V to 5.5 V, 250 kSPS, 12-bit impedance converter, with an internal temperature sensor and is packaged in a 16-lead SSOP.
+
+Applications
+------------
+
+-  Electrochemical analysis
+-  Bioelectrical impedance analysis
+-  Impedance spectroscopy
+-  Complex impedance measurement
+-  Corrosion monitoring and protection equipment
+-  Biomedical and automotive sensors
+-  Proximity sensing
+-  Nondestructive testing
+-  Material property analysis
+-  Fuel/battery cell condition monitoring
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad5933_pmod_ia.jpg
+   :align: center
+
+
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the AD5933 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5933 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD5933 driver:
+
+-  I2C_Init() – initializes the communication peripheral.
+-  I2C_Write() – writes data to the device.
+-  I2C_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   I2C driver architecture
+
+
+The following functions are implemented in this version of AD5933 driver:
+
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| Function                                                                                                            | Description                                                                                     |
++=====================================================================================================================+=================================================================================================+
+| char AD5933_Init(void)                                                                                              | Initializes the communication peripheral.                                                       |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_SetRegisterValue(unsigned char registerAddress, unsigned long registerValue, unsigned char bytesNumber) | Writes data into a register.                                                                    |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| unsigned long AD5933_GetRegisterValue(unsigned char registerAddress, unsigned char bytesNumber)                     | Reads the value of a register.                                                                  |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_Reset(void)                                                                                             | Resets the device.                                                                              |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_SetSystemClk(char clkSource, unsigned long extClkFreq)                                                  | Selects the source of the system clock.                                                         |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_SetRangeAndGain(char range, char gain)                                                                  | Selects the range and gain of the device.                                                       |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| float AD5933_GetTemperature(void)                                                                                   | Reads the temperature from the part and returns the data in degrees Celsius.                    |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_ConfigSweep(unsigned long startFreq, unsigned long incFreq, unsigned short incNum)                      | Configures the sweep parameters: Start frequency, Frequency increment and Number of increments. |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_StartSweep(void)                                                                                        | Starts the sweep operation.                                                                     |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| double AD5933_CalculateGainFactor(unsigned long calibrationImpedance, unsigned char freqFunction)                   | Reads the real and the imaginary data and calculates the Gain Factor.                           |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| double AD5933_CalculateImpedance(double gainFactor, unsigned char freqFunction)                                     | Reads the real and the imaginary data and calculates the Impedance.                             |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
+
+
 
 **HW Platform(s):**
 
@@ -98,6 +193,7 @@ The following image shows a generic list of commands in a serial terminal connec
 Software Project Setup
 ----------------------
 
+
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -138,12 +234,11 @@ This section presents the steps for developing a software application that will 
    :align: center
 
 
+
 Digilent Cerebot MC7 Quick Start Guide
 ======================================
 
 This section contains a description of the steps required to run the AD5933 demonstration project on a Digilent Cerebot MC7 platform.
-
-.. _required-hardware-1:
 
 Required Hardware
 -----------------
@@ -151,15 +246,11 @@ Required Hardware
 -  `Cerebot MC7 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MC7>`_
 -  PmodIA
 
-.. _required-software-1:
-
 Required Software
 -----------------
 
 -  `MPLAB X Integrated Development Environment <http://www.microchip.com/mplabx>`_
 -  `MPLAB XC16 compiler <http://www.microchip.com/mplabxc>`_
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -168,8 +259,6 @@ A PmodIA has to be connected to the J6 connector of Cerebot MC7 development boar
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ia_dspic33.jpg
    :align: center
-
-.. _reference-project-overview-1:
 
 Reference Project Overview
 --------------------------
@@ -205,10 +294,9 @@ The following image shows a list of commands in a serial terminal connected to p
 
 |image2|
 
-.. _software-project-setup-1:
-
 Software Project Setup
 ----------------------
+
 
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -250,12 +338,11 @@ This section presents the steps for developing a software application that will 
    :align: center
 
 
+
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
 ==========================================================
 
 This section contains a description of the steps required to run the AD5933 chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
-
-.. _required-hardware-2:
 
 Required Hardware
 -----------------
@@ -263,14 +350,10 @@ Required Hardware
 -  `Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
 -  PmodIA
 
-.. _required-software-2:
-
 Required Software
 -----------------
 
 -  `MPIDE <https://github.com/chipKIT32/chipKIT32-MAX/downloads>`_
-
-.. _hardware-setup-2:
 
 Hardware Setup
 --------------
@@ -279,8 +362,6 @@ A PmodIA has to be connected to the J2 connector of Cerebot MX3cK development bo
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ia_pic32_arduino.jpg
    :align: center
-
-.. _reference-project-overview-2:
 
 Reference Project Overview
 --------------------------
@@ -318,10 +399,9 @@ The following image shows a list of commands in the serial monitor.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_arduino.png
    :align: center
 
-.. _software-project-setup-2:
-
 Software Project Setup
 ----------------------
+
 
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -347,8 +427,10 @@ This section presents the steps for developing a chipKIT application that will r
    :align: center
 
 
+
 More information
 ================
+
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
@@ -356,6 +438,7 @@ More information
 |//ez.analog.com/community/feeds/allcontent/atom|
 
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

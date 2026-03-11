@@ -1,12 +1,11 @@
 AD-PAARRAY3552R-SL Overview
 ===========================
 
-|
+
 
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages
-
 
    | The latest version of this document can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-paarray3552r-sl/index.html
 
@@ -26,13 +25,12 @@ The on-board :adi:`MAX32666` ultralow power Arm Cortex-M4 microcontroller overse
 
 The :adi:`AD-PAARRAY3552R-SL` is a compact, user-friendly, microcontroller-controlled system designed to bias GaN PAs automatically and, to monitor the gate voltage, drain current, drain voltage, and transistor temperature.
 
-|
 
-| |image1|
+|image1|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **AD-PAARRAY3552R-SL Board**\ *\ </fc>*
+   **AD-PAARRAY3552R-SL Board**
 
 
 Features
@@ -49,23 +47,24 @@ Features
 -  Can accommodate from two to four GaN/GaAs Power Amplifiers
 -  Real-time monitoring of voltages, currents, and temperature.
 
-| 
-| ==== Applications ====
+Applications
+------------
 
 -  5G massive MIMOs
 -  Macro base stations
 -  Testing and Automation
 
-| 
-| ===== System Architecture ===== |image2|
-|
+System Architecture
+~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/ad-paarray3552r-sl_block_diagram.png
+   :align: center
+   :width: 800px
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 1. AD-PAARRAY3552R-SL System Block Diagram**\ *\ </fc>*
+   **Figure 1. AD-PAARRAY3552R-SL System Block Diagram**
 
-
-| 
 
 Specifications
 ~~~~~~~~~~~~~~
@@ -126,7 +125,7 @@ The solution also comes with a pre-programmed firmware allowing the system to in
 
 In order to update the firmware on the on-board MCU, the user needs to purchase the :adi:`MAX32625 PICO Evaluation Kit <MAX32625PICO>` separately.
 
-----
+--------------
 
 User Guides
 ~~~~~~~~~~~
@@ -138,8 +137,10 @@ Visit this page to learn how to install the firmware and use the application GUI
 
 -  :doc:`AD-PAARRAY3552R-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-paarray3552r-sl/software>`
 
-| 
-| ==== Hardware Setup and Evaluation ==== Get complete access to hardware configuration, design files, and procedure on how to use the AD-PAARRAY3552R-SL:
+Hardware Setup and Evaluation
+-----------------------------
+
+Get complete access to hardware configuration, design files, and procedure on how to use the AD-PAARRAY3552R-SL:
 
 -  :doc:`AD-PAARRAY3552R-SL Hardware User Guide </wiki-migration/resources/eval/user-guides/ad-paarray3552r-sl/hardware>`
 
@@ -155,10 +156,9 @@ For questions and more information about this product, connect with us through t
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-| |#:resources:eval:user-guides:ad-paarray3552r-sl:software \| AD-PAARRAY3552R-SL Software User Guide#none|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/navigation #none
+   :alt: #:resources:eval:user-guides:ad-paarray3552r-sl:software \| AD-PAARRAY3552R-SL Software User Guide#none
+   :align: left
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/ad-paarray3552r-sl_angle.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/ad-paarray3552r-sl_block_diagram.png
-   :width: 800px
-.. |#:resources:eval:user-guides:ad-paarray3552r-sl:software \| AD-PAARRAY3552R-SL Software User Guide#none| image:: navigation #none

@@ -53,7 +53,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
    Linux Kernel Configuration
    Symbol: ADIN1110 [=y]
-   Type  : tristate                                                                                                                                                                      
+   Type  : tristate
    Prompt: Analog Devices ADIN1110 MAC-PHY
       Location:
         -> Device Drivers
@@ -84,7 +84,7 @@ ADIN1110 probes via devicetree.
 
    ethernet@0 {
        compatible = "adi,adin1110";
-       
+
            /* SPI CS number */
            reg = <0>;
 
@@ -152,15 +152,15 @@ Example: Seeing MAC & PHY info
 
    Settings for eth1:
        Supported ports: [ TP MII ]
-       Supported link modes:   10baseT/Full 
+       Supported link modes:   10baseT/Full
        Supported pause frame use: Symmetric Receive-only
        Supports auto-negotiation: Yes
        Supported FEC modes: Not reported
-       Advertised link modes:  10baseT/Full 
+       Advertised link modes:  10baseT/Full
        Advertised pause frame use: No
        Advertised auto-negotiation: Yes
        Advertised FEC modes: Not reported
-       Link partner advertised link modes:  10baseT/Full 
+       Link partner advertised link modes:  10baseT/Full
        Link partner advertised pause frame use: No
        Link partner advertised auto-negotiation: Yes
        Link partner advertised FEC modes: Not reported
@@ -285,4 +285,8 @@ Ethernet pointers
 -  `Ethernet Controller bindings doc <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/ethernet-controller.yaml>`_
 -  `Ethernet PHY bindings doc <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/ethernet-phy.yaml>`_
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

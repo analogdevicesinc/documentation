@@ -24,7 +24,6 @@ On Linux
 
 `GTKterm <https://elinux.org/Communicate_with_hardware_using_USB_cable_for_Ubuntu>`_ `Minicom <https://help.ubuntu.com/community/Minicom>`_
 
-| 
-| See Also:
+See Also:
 
 -  http://www.wiki.xilinx.com/Setup+a+Serial+Console

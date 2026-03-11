@@ -18,11 +18,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| 1 - 2.2 KΩ Resistor (or any similar value)
-| 1 - 168 Ω resistor ( use a 100 Ω in series with a 68 Ω )
-| 1 - small signal NMOS transistor (enhancement mode CD4007 or ZVN2110A)
+ADALM1000 hardware module Solder-less breadboard 1 - 2.2 KΩ Resistor (or any similar value) 1 - 168 Ω resistor ( use a 100 Ω in series with a 68 Ω ) 1 - small signal NMOS transistor (enhancement mode CD4007 or ZVN2110A)
 
 Directions:
 ~~~~~~~~~~~

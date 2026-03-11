@@ -19,11 +19,7 @@ In this activity you will combine the common-collector configuration from :doc:`
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 2 – 1.0 KΩ Resistor ( R\ :sub:`E` and R\ :sub:`C` )
-| 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` )
+ADALM1000 hardware module Solder-less breadboard Jumper wires 2 – 1.0 KΩ Resistor ( R\ :sub:`E` and R\ :sub:`C` ) 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` )
 
 Directions:
 ~~~~~~~~~~~
@@ -72,11 +68,7 @@ The DC or average values of the two output waveforms are not the same. It is oft
 Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
-| 2 – 0.1 uF capacitors ( C\ :sub:`1` and C\ :sub:`2` )
-| 2 – 10 KΩ resistors ( R\ :sub:`1` and R\ :sub:`2` )
-| 2 – 1N914 small signal diodes ( D\ :sub:`1` and D\ :sub:`2` )
-
-.. _directions-1:
+2 – 0.1 uF capacitors ( C\ :sub:`1` and C\ :sub:`2` ) 2 – 10 KΩ resistors ( R\ :sub:`1` and R\ :sub:`2` ) 2 – 1N914 small signal diodes ( D\ :sub:`1` and D\ :sub:`2` )
 
 Directions:
 ~~~~~~~~~~~

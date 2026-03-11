@@ -46,5 +46,5 @@ The 8 channel audio framework makes use of the bm A2B driver and provide a good 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#using-shared-memory-structure
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#using-shared-memory-structure
    :alt: Sharing Data Between Cores#.|Bare Metal Framework#event-logging|Using the Event Logging Feature

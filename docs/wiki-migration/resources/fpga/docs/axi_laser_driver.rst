@@ -172,5 +172,5 @@ Functional description
 
 TBD
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

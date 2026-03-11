@@ -18,15 +18,7 @@ The activity in this lab exercise investigates an alternate differential input s
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 module
-| Solder-less breadboard
-| Jumper wires
-| 3 – 1 KΩ resistors
-| 2 – 2.2 KΩ resistors
-| 1 – 47 KΩ resistor
-| 2 – 10 uF capacitors
-| 2 – NPN transistors ( 2N3904 or SSM2212 )
-| 2 – PNP transistors ( 2N3906 or SSM2220 )
+ADALM1000 module Solder-less breadboard Jumper wires 3 – 1 KΩ resistors 2 – 2.2 KΩ resistors 1 – 47 KΩ resistor 2 – 10 uF capacitors 2 – NPN transistors ( 2N3904 or SSM2212 ) 2 – PNP transistors ( 2N3906 or SSM2220 )
 
 Directions:
 ~~~~~~~~~~~
@@ -65,8 +57,6 @@ Additional Materials:
 
 1 – 470 Ω resistor
 
-.. _directions-1:
-
 Directions:
 ~~~~~~~~~~~
 
@@ -81,16 +71,12 @@ Now we are going to reconfigure the input for voltage drive. Replace R\ :sub:`IN
    Figure 2, Transresistance amplifier input stage with voltage drive
 
 
-.. _procedure-1:
-
 Procedure:
 ~~~~~~~~~~
 
 Observe the output at R\ :sub:`L`, which is the AC coupled sum of the signals at the collectors of Q\ :sub:`1` and Q\ :sub:`3`. Measure the voltage gain from the CH A output to R\ :sub:`L` and compare it to your calculated value. Observe the voltage amplitude of the signal seen at the current input node, at the emitters of Q\ :sub:`1` and Q\ :sub:`3`. Based on the this amplitude calculate the input current amplitude ( voltage across R\ :sub:`IN` divided by R\ :sub:`IN` ) and the effective input resistance of the amplifier. Compare these values to your calculated values.
 
 To measure the current that is required from the input driver (CH A) in this voltage drive configuration, you can turn on the CH A current trace. How does this current compare to the current seen in across the 470 Ω R\ :sub:`IN` resistor?
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -99,8 +85,6 @@ How closely does the voltage at the emitters of Q\ :sub:`1` and Q\ :sub:`3` foll
 
 **For Further Reading:**
 
-| :adi:`Current Feedback (CFB) Op Amps <static/imported-files/tutorials/MT-034.pdf>`
-| `Op Amp Fundamentals: The Transresistance Amplifier <http://www.wisc-online.com/objects/ViewObject.aspx?ID=SSE3103>`_
-| `Current-to-voltage converter <https://en.wikipedia.org/wiki/Transimpedance_amplifier>`_
+:adi:`Current Feedback (CFB) Op Amps <static/imported-files/tutorials/MT-034.pdf>` `Op Amp Fundamentals: The Transresistance Amplifier <http://www.wisc-online.com/objects/ViewObject.aspx?ID=SSE3103>`_ `Current-to-voltage converter <https://en.wikipedia.org/wiki/Transimpedance_amplifier>`_
 
 **Return to Lab Activity Table of Contents.**

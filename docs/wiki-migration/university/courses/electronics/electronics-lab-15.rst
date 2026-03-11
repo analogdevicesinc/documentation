@@ -14,24 +14,12 @@ When the current flowing in an inductor is quickly interrupted a large voltage s
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - AD8541 CMOS single supply opamp used as a comparator (or AD8561 comparator)
-| 1 - 74HC00 quad CMOS NAND gate (or CD4007 see Appendix)
-| 1 - ZVN2110A NMOS FET (2N7000 or power FET device such as IRF510)
-| 1 - 20 KΩ resistor
-| 1 - 10 KΩ resistor
-| 1 - 1 mH inductor
-| 1 - 47 uF capacitor
-| 1 - 220 uF capacitor
-| 2 - rectifier diodes (1N4001, 1N3064)
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - AD8541 CMOS single supply opamp used as a comparator (or AD8561 comparator) 1 - 74HC00 quad CMOS NAND gate (or CD4007 see Appendix) 1 - ZVN2110A NMOS FET (2N7000 or power FET device such as IRF510) 1 - 20 KΩ resistor 1 - 10 KΩ resistor 1 - 1 mH inductor 1 - 47 uF capacitor 1 - 220 uF capacitor 2 - rectifier diodes (1N4001, 1N3064)
 
 Additional Equipment:
 ---------------------
 
-| Small handheld DMM
-| +5 V bench power supply or battery holder for 3 AA cells to provide +4.5V
+Small handheld DMM +5 V bench power supply or battery holder for 3 AA cells to provide +4.5V
 
 Simple inductor and switch DC/DC Converter:
 -------------------------------------------
@@ -83,50 +71,25 @@ Be sure to start up the waveform generator and digital clock outputs on the ADAL
 Questions:
 ----------
 
-| What is the effect of changing the DC value at the positive input of the comparator?
-| What is the effect of changing the frequency of the digital clock output?
-| Is there a minimum? or a maximum?
-| How much current can the circuit supply to a load?
-| Is that current affected by the voltage the output is set to?
-| Is that current affected by the frequency of the digital clock output?
-| Calculate the conversion efficiency of the circuit. Ratio of output power ( Iout \* Vout ) to input power ( Iin \* 5V )
-| Change the value of L\ :sub:`1` and redo the above. How have the results changed?
+What is the effect of changing the DC value at the positive input of the comparator? What is the effect of changing the frequency of the digital clock output? Is there a minimum? or a maximum? How much current can the circuit supply to a load? Is that current affected by the voltage the output is set to? Is that current affected by the frequency of the digital clock output? Calculate the conversion efficiency of the circuit. Ratio of output power ( Iout \* Vout ) to input power ( Iin \* 5V ) Change the value of L\ :sub:`1` and redo the above. How have the results changed?
 
 Inverting DC - DC Converter
 ===========================
-
-.. _objective-1:
 
 Objective:
 ----------
 
 The object of this activity is to explore an inductor based circuit which can produce an output voltage which is negative with respect to ground. This class of circuits are referred to as inverting DC to DC converters.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 1 - AD8541 CMOS single supply opamp used as a comparator (or AD8561 comparator)
-| 1 - 74HC00 quad NAND gate (or CD4007 see Appendix)
-| 1 - generic PNP transistor (TIP32 or similar device)
-| 1 - 20KΩ resistor
-| 1 - 10KΩ resistor
-| 1 - 2.2KΩ resistor
-| 1 - 1mH inductor
-| 1 - 47uF capacitor
-| 1 - 220uF capacitor
-| 1 - rectifier diodes (1N4001, 1N3064)
-
-.. _additional-equipment-1:
+1 - AD8541 CMOS single supply opamp used as a comparator (or AD8561 comparator) 1 - 74HC00 quad NAND gate (or CD4007 see Appendix) 1 - generic PNP transistor (TIP32 or similar device) 1 - 20KΩ resistor 1 - 10KΩ resistor 1 - 2.2KΩ resistor 1 - 1mH inductor 1 - 47uF capacitor 1 - 220uF capacitor 1 - rectifier diodes (1N4001, 1N3064)
 
 Additional Equipment:
 ---------------------
 
-| Small handheld DMM
-| +5 V bench power supply
-
-.. _directions-1:
+Small handheld DMM +5 V bench power supply
 
 Directions:
 -----------
@@ -142,33 +105,20 @@ The breadboard connections are as shown in the diagram below. The DMM should be 
    Figure 3 Inverting DC - DC Converter
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
 The signal generator should be configured for constant DC output of 2.5V. The digital clock output should be configured for a 50% duty cycle and 100 KHz output frequency. The Single ended input of scope channel 1 (1+) is used to measure the output of the analog voltage comparator.
-
-.. _procedure-1:
 
 Procedure:
 ----------
 
 Be sure to start up the wsignal generator and digital clock outputs on the ADALM2000 board before turning on the +5V bench supply. The regulated output voltage at node V\ :sub:`OUT` should be observed as the DC offset value of the waveform generator is adjusted. It should be equal to - V\ :sub:`REF`\ when V\ :sub:`REF` is set to 2.5V (assuming V\ :sub:`IN` is +5V).
 
-.. _questions-1:
-
 Questions:
 ----------
 
-| What is the effect of changing the DC value at the negative input of the comparator?
-| What is the effect of changing the frequency of the digital clock output?
-| Is there a minimum? or a maximum?
-| How much current can the circuit supply to a load?
-| Is that current affected by the voltage the output is set to?
-| Is that current affected by the frequency of the digital clock output?
-| Calculate the conversion efficiency of the circuit. Ratio of output power (Iout \* Vout) to input power ( Iin \* 5V )
-| Change the value of L\ :sub:`1` and redo the above. How have the results changed?
+What is the effect of changing the DC value at the negative input of the comparator? What is the effect of changing the frequency of the digital clock output? Is there a minimum? or a maximum? How much current can the circuit supply to a load? Is that current affected by the voltage the output is set to? Is that current affected by the frequency of the digital clock output? Calculate the conversion efficiency of the circuit. Ratio of output power (Iout \* Vout) to input power ( Iin \* 5V ) Change the value of L\ :sub:`1` and redo the above. How have the results changed?
 
 Circuit Additions:
 ------------------
@@ -184,13 +134,10 @@ What sort of circuit could you make to generate the 100 KHz square wave other th
    Figure 4 stand-alone gated oscillator
 
 
-.. _questions-2:
-
 Questions:
 ----------
 
-| What other types of oscillator circuits might be used to generate the 100 KHz square wave?
-| The DC reference voltage from the waveform generator output of the ADALM2000 board could be replaced by the band-gap reference circuit from Activity 8 in this series. The +5V supply can be connected where reference input is shown in the diagram and R\ :sub:`1` and R\ :sub:`2` adjusted to produce the desires reference voltage ( where 2+ is shown ) to be used at the plus input of the LM2901 comparator.
+What other types of oscillator circuits might be used to generate the 100 KHz square wave? The DC reference voltage from the waveform generator output of the ADALM2000 board could be replaced by the band-gap reference circuit from Activity 8 in this series. The +5V supply can be connected where reference input is shown in the diagram and R\ :sub:`1` and R\ :sub:`2` adjusted to produce the desires reference voltage ( where 2+ is shown ) to be used at the plus input of the LM2901 comparator.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f5.png
    :align: center
@@ -200,8 +147,6 @@ Questions:
 
    Figure 5 Band gap reference from Activity 9
 
-
-.. _questions-3:
 
 Questions:
 ----------

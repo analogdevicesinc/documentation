@@ -3,14 +3,16 @@
 GALA With Filter
 ================
 
-.. image:: https://wiki.analog.com/_media/gala_filter.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/gala_filter.jpg
    :alt: gala_filter.jpg
 
 Description
 -----------
 
-| GALA With Filter block applies the filtering to the input signal first and then applies the variable GALA gain to the filtered input signal with change in control input value(Speed/Engine Noise)
-| ===== Targets Supported =====
+GALA With Filter block applies the filtering to the input signal first and then applies the variable GALA gain to the filtered input signal with change in control input value(Speed/Engine Noise)
+
+Targets Supported
+-----------------
 
 ================ ========== ================ =============
 Name             ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
@@ -18,7 +20,7 @@ Name             ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
 GALA With Filter Block      Block            NA
 ================ ========== ================ =============
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -40,7 +42,7 @@ Name    Type  Description
 Output0 Audio Output channel0
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+-------------------------------+-----------------------------------------------------------------------------------+

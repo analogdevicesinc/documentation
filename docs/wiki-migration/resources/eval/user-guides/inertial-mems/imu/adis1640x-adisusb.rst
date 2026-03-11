@@ -119,12 +119,7 @@ The following pictures show the final steps for USB driver install. Click on **N
 
 |image9| |image10|
 
-.. warning::
-
-   **WARNING:** For those who are using Windows XP, Service Pack 3, additional steps are required for completing the driver installation. Please see page 8, on the :adi:`ADISUSB User Guide (UG-363) <static/imported-files/user_guides/UG-363.pdf#Page=08>` for additional information on these steps.
-
-
-.. _adis1640x-evaluation-software-1:
+**WARNING:** For those who are using Windows XP, Service Pack 3, additional steps are required for completing the driver installation. Please see page 8, on the :adi:`ADISUSB User Guide (UG-363) <static/imported-files/user_guides/UG-363.pdf#Page=08>` for additional information on these steps.
 
 ADIS1640x EVALUATION SOFTWARE
 -----------------------------
@@ -185,8 +180,6 @@ The red box identifies all of the registers that are eligible for inclusion in t
 The green box identifies the configuration box for the name and location of the data storage file.
 
 The yellow boxes identify a number of configuration options for the data acquisition process. The **Samples per File** is a user input for the total number of samples in a data record. Note that all selected registers will have this number of samples in the data record file, after the acquisition process completes. After each update to the **Record Length** box, the software calculates then displays the total **Capture Time**. The **Numeric Data Only..No File Header** option allows the user to add or remove the header in the data storage file. The **No Scale LSB's Only** causes the software to convert the decimal, twos complement number into its representative value. For example, when enabling **No Scale LSB's Only,** the gyroscope outputs will be in units of degrees/second.
-
-.. _data-capture-menu-1:
 
 Data Capture Menu
 ~~~~~~~~~~~~~~~~~

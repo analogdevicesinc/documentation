@@ -1,17 +1,15 @@
 EVAL-CN0503-ARDZ Hardware User Guide
 ====================================
 
-|
-
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
-   | The latest version of this page can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0503-ardz/index.html
+   
+   The latest version of this page can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0503-ardz/index.html
 
 
-| :adi:`CN0503` is a reconfigurable multi-parameter optical liquid measurement platform capable of performing colorimetry, turbidity, and fluorometry. The design minimizes complexity by using a highly integrated multimodal sensor front end capable of simultaneously driving four LEDs, and synchronously measuring four pairs of photodiodes at a flexible sampling rate. Furthermore, the front end has on-chip digital filters and high ambient light rejection which allow the platform to operate regardless of environmental lighting conditions.
-| |image1|
+| :adi:`CN0503` is a reconfigurable multi-parameter optical liquid measurement platform capable of performing colorimetry, turbidity, and fluorometry. The design minimizes complexity by using a highly integrated multimodal sensor front end capable of simultaneously driving four LEDs, and synchronously measuring four pairs of photodiodes at a flexible sampling rate. Furthermore, the front end has on-chip digital filters and high ambient light rejection which allow the platform to operate regardless of environmental lighting conditions. |image1|
 
 Materials Needed
 ----------------
@@ -71,8 +69,7 @@ Here are the list of items and their photos included in :adi:`CN0503`.
 LED and Photodiode Boards
 -------------------------
 
-| The :adi:`CN0503` supports 4 channels or paths of light which can be configured for different types of optical measurements. The 2 channels at the sides are capable of measuring light intensity reflected at 90 degrees from the liquid sample to support measurements for turbidity, fluorescence, etc. The LED boards placed in each of the 4 channels are interchangeable and natively support 8 different wavelengths. Additional spare boards are available to accommodate LEDs with other wavelengths.
-| |image44|
+| The :adi:`CN0503` supports 4 channels or paths of light which can be configured for different types of optical measurements. The 2 channels at the sides are capable of measuring light intensity reflected at 90 degrees from the liquid sample to support measurements for turbidity, fluorescence, etc. The LED boards placed in each of the 4 channels are interchangeable and natively support 8 different wavelengths. Additional spare boards are available to accommodate LEDs with other wavelengths. |image44|
 
 LED Boards
 ~~~~~~~~~~
@@ -118,7 +115,7 @@ Spare Lumiled LED Board
 
 ========================== =============
 
-| 
+
 
 Photodiode (PD) Boards
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -138,7 +135,7 @@ Fluorescent PD Board
 
 ==================== =========
 
-| 
+
 
 Assembling the Mechanical Fixtures
 ----------------------------------
@@ -167,16 +164,14 @@ Mounting the Base
 Connecting the LED and Photodiode (PD) Boards
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| The `LED Boards <https://wiki.analog.com/>`_ are drawn with a huge 'X' on the silkscreen which marks the center of the area of interest or the active area of the LED. To mount the `LED Boards <https://wiki.analog.com/>`_, face the top of the board with the LED facing towards the small window of the `Mounted Base <https://wiki.analog.com/>`_ and attach the 4-pin female connectors to the jumper headers marked LED as shown below.
-| |image58|
+| The `LED Boards <https://wiki.analog.com/>`_ are drawn with a huge 'X' on the silkscreen which marks the center of the area of interest or the active area of the LED. To mount the `LED Boards <https://wiki.analog.com/>`_, face the top of the board with the LED facing towards the small window of the `Mounted Base <https://wiki.analog.com/>`_ and attach the 4-pin female connectors to the jumper headers marked LED as shown below. |image58|
 
 .. important::
 
    Be sure to check if the 'X' mark is centered at the middle of the small window of the base
 
 
-| To mount the photodiode (PD) boards, face the top of the board with the photodiode facing towards the small window of the base and attach the 4-pin female connectors to the jumper headers marked PD as shown below.
-| |image59|\ |image60|
+| To mount the photodiode (PD) boards, face the top of the board with the photodiode facing towards the small window of the base and attach the 4-pin female connectors to the jumper headers marked PD as shown below. |image59|\ |image60|
 
 .. important::
 
@@ -191,8 +186,7 @@ Connecting the LED and Photodiode (PD) Boards
 Inserting the Flourescent Filters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| Two `Fluorescent Filters <https://wiki.analog.com/>`_ can be placed in the square slot in front of each `Fluorescent PD Board <https://wiki.analog.com/>`_ as shown below
-| |image61|
+| Two `Fluorescent Filters <https://wiki.analog.com/>`_ can be placed in the square slot in front of each `Fluorescent PD Board <https://wiki.analog.com/>`_ as shown below |image61|
 
 Assembling the Tower
 ~~~~~~~~~~~~~~~~~~~~
@@ -207,26 +201,26 @@ Assembling the Tower
 Securing the Beamsplitter
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| The `Beamsplitter <https://wiki.analog.com/>`_ is used to direct the light path to both the liquid sample in the `Cuvette <https://wiki.analog.com/>`_ as well as the reference photodiode located below it. It is angled at 45 degrees with respect to the light path and should be held tightly in place. Slight movements of the `Beamsplitter <https://wiki.analog.com/>`_ will affect the measurement ratios obtained from the transmit photodiode and reference photodiode.
+The `Beamsplitter <https://wiki.analog.com/>`_ is used to direct the light path to both the liquid sample in the `Cuvette <https://wiki.analog.com/>`_ as well as the reference photodiode located below it. It is angled at 45 degrees with respect to the light path and should be held tightly in place. Slight movements of the `Beamsplitter <https://wiki.analog.com/>`_ will affect the measurement ratios obtained from the transmit photodiode and reference photodiode.
 
 -  Starting with the `Cuvette Holder <https://wiki.analog.com/>`_, insert two `Hex Nuts <https://wiki.analog.com/>`_ to each of the two circular depressions as shown below. These should be completely pressed and held tight to the depression to avoid the hassle of them coming off later.
 
 
 |image62|
 
--  Insert the `Beamsplitter <https://wiki.analog.com/>`_ in the angled 45 degree slit. Be careful in applying pressure as this may damage the part.
+   \* Insert the `Beamsplitter <https://wiki.analog.com/>`_ in the angled 45 degree slit. Be careful in applying pressure as this may damage the part.
 
-|image63|
+   |image63|
 
--  Secure the `Beamsplitter <https://wiki.analog.com/>`_ with the `Beamsplitter Cover <https://wiki.analog.com/>`_ as shown below.
+   \* Secure the `Beamsplitter <https://wiki.analog.com/>`_ with the `Beamsplitter Cover <https://wiki.analog.com/>`_ as shown below.
 
-|image64|
+   |image64|
 
--  Screw the `Beamsplitter <https://wiki.analog.com/>`_ to the `Cuvette Holder <https://wiki.analog.com/>`_ using 2 `S1 Screws <https://wiki.analog.com/>`_ at the two holes as shown below. Be sure to drive the screws in until the head no longer protrudes from the depression.
+   \* Screw the `Beamsplitter <https://wiki.analog.com/>`_ to the `Cuvette Holder <https://wiki.analog.com/>`_ using 2 `S1 Screws <https://wiki.analog.com/>`_ at the two holes as shown below. Be sure to drive the screws in until the head no longer protrudes from the depression.
 
-|image65|
+   |image65|
 
-|
+
 
 .. tip::
 
@@ -243,15 +237,15 @@ The `Condenser Lens <https://wiki.analog.com/>`_ is used to focus and direct the
 
 |image66|
 
--  Place the `Condenser Lens <https://wiki.analog.com/>`_ on the `Cuvette Holder <https://wiki.analog.com/>`_. This will be easier to do by rotating the `Cuvette Holder <https://wiki.analog.com/>`_ vertically so that the `Condenser Lens <https://wiki.analog.com/>`_ will drop in position.
+   \* Place the `Condenser Lens <https://wiki.analog.com/>`_ on the `Cuvette Holder <https://wiki.analog.com/>`_. This will be easier to do by rotating the `Cuvette Holder <https://wiki.analog.com/>`_ vertically so that the `Condenser Lens <https://wiki.analog.com/>`_ will drop in position.
 
-|image67|
+   |image67|
 
--  Press the `Lens Cover <https://wiki.analog.com/>`_ to the `Cuvette Holder <https://wiki.analog.com/>`_ and screw it in place using an `S2 Screw <https://wiki.analog.com/>`_ at the bottom hole <fc #008000>(marked green)</fc> and an `S1 Screw <https://wiki.analog.com/>`_ at the top hole <fc #800000>(marked red)</fc> as show below.
+   \* Press the `Lens Cover <https://wiki.analog.com/>`_ to the `Cuvette Holder <https://wiki.analog.com/>`_ and screw it in place using an `S2 Screw <https://wiki.analog.com/>`_ at the bottom hole (marked green) and an `S1 Screw <https://wiki.analog.com/>`_ at the top hole (marked red) as show below.
 
-|image68|
+   |image68|
 
-|
+
 
 .. tip::
 
@@ -272,9 +266,9 @@ Adding a Narrowband Transmit Filter and Neutral Density Filter (Optional)
 
 |image69|
 
--  The `Neutral Density Filter <https://wiki.analog.com/>`_ is used to decrease the light intensity for a wide range of wavelengths. For instances wherein the LED light intensity easily saturates the photodiode current input to the :adi:`ADPD4101`, adding the `Neutral Density Filter <https://wiki.analog.com/>`_ will help decrease the input current range.
+   \* The `Neutral Density Filter <https://wiki.analog.com/>`_ is used to decrease the light intensity for a wide range of wavelengths. For instances wherein the LED light intensity easily saturates the photodiode current input to the :adi:`ADPD4101`, adding the `Neutral Density Filter <https://wiki.analog.com/>`_ will help decrease the input current range.
 
-|image70|
+   |image70|
 
 Placing the Cuvette Cover
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -286,13 +280,13 @@ The `Cuvette Cover <https://wiki.analog.com/>`_ secures the hold for the `Cuvett
 
 |image71|
 
--  Place the `Cuvette Cover <https://wiki.analog.com/>`_ on top of the `Cuvette Holder <https://wiki.analog.com/>`_ as shown below
+   \* Place the `Cuvette Cover <https://wiki.analog.com/>`_ on top of the `Cuvette Holder <https://wiki.analog.com/>`_ as shown below
 
-|image72|
+   |image72|
 
--  Secure the `Cuvette Cover <https://wiki.analog.com/>`_ using an `S3 Screw <https://wiki.analog.com/>`_ at the specified hole shown below.
+   \* Secure the `Cuvette Cover <https://wiki.analog.com/>`_ using an `S3 Screw <https://wiki.analog.com/>`_ at the specified hole shown below.
 
-|image73|
+   |image73|
 
 Placing the Cuvette
 ^^^^^^^^^^^^^^^^^^^
@@ -306,9 +300,9 @@ Placing the Cuvette
 
 |image75|
 
--  Replace the `Cuvette Cover <https://wiki.analog.com/>`_ and attach an `S2 Screw <https://wiki.analog.com/>`_ at the specified hole in the `Cuvette Holder <https://wiki.analog.com/>`_ as shown below. The depth of the screw can be adjusted to increase or decrease the tightness of the hold.
+   \* Replace the `Cuvette Cover <https://wiki.analog.com/>`_ and attach an `S2 Screw <https://wiki.analog.com/>`_ at the specified hole in the `Cuvette Holder <https://wiki.analog.com/>`_ as shown below. The depth of the screw can be adjusted to increase or decrease the tightness of the hold.
 
-|image76|
+   |image76|
 
 Video Guides
 ~~~~~~~~~~~~
@@ -337,13 +331,12 @@ Mounting the Tower to the Base
 Jumper Settings
 ---------------
 
-| The :adi:`CN0503` has ten jumper positions which configure different settings as shown below. Also, the default shunt positions are highlighted.
-| |image78|
+| The :adi:`CN0503` has ten jumper positions which configure different settings as shown below. Also, the default shunt positions are highlighted. |image78|
 
 1.8V LDO Enable
 ~~~~~~~~~~~~~~~
 
-| P1.8V enables the 1.8V LDO supply which sources its input voltage from the Arduino 3.3V pin. By default, a shunt is placed in P1.8V.
+P1.8V enables the 1.8V LDO supply which sources its input voltage from the Arduino 3.3V pin. By default, a shunt is placed in P1.8V.
 
 ======================== =============== =========
 P1.8 Shunt               1.8V LDO Status Image
@@ -358,7 +351,7 @@ P1.8 Shunt               1.8V LDO Status Image
 
 ======================== =============== =========
 
-|
+
 
 .. important::
 
@@ -368,7 +361,7 @@ P1.8 Shunt               1.8V LDO Status Image
 IO Voltage Selection
 ~~~~~~~~~~~~~~~~~~~~
 
-| IOSEL selects the source of the logic level voltage for the :adi:`ADPD4101`. By default, a shunt is placed connecting pins 1 and 2.
+IOSEL selects the source of the logic level voltage for the :adi:`ADPD4101`. By default, a shunt is placed connecting pins 1 and 2.
 
 ======================= ============================== =========
 IOSEL Shunt Position    Source of Logic Level Voltage  Image
@@ -388,7 +381,7 @@ Connecting pins 1 and 2
 LED Supply Selection
 ~~~~~~~~~~~~~~~~~~~~
 
-| There are 4 jumper selection headers to set the supply source of each of the four LED connections. Each follow the same selection rules for shunt placement. By default, a shunt is placed connecting pins 1 and 2 for all 4 jumper headers.
+There are 4 jumper selection headers to set the supply source of each of the four LED connections. Each follow the same selection rules for shunt placement. By default, a shunt is placed connecting pins 1 and 2 for all 4 jumper headers.
 
 ======================= ================================ =========
 LD1SEL Shunt Position   Source of LED1 supply            Image
@@ -405,10 +398,9 @@ Connecting pins 1 and 2
 Connecting pins 3 and 4                                  
 ======================= ================================ =========
 
-| 
 
-======================= ================================ =========
-LD2SEL Shunt Position   Source of LED2 supply            Image
+| ^ LD2SEL Shunt Position ^ Source of LED2 supply ^ Image ^
+
 ======================= ================================ =========
 **VARD Position**       Sourced from Arduino 5V
 
@@ -422,10 +414,9 @@ Connecting pins 1 and 2
 Connecting pins 3 and 4                                  
 ======================= ================================ =========
 
-| 
 
-======================= ================================ =========
-LD3SEL Shunt Position   Source of LED3 supply            Image
+| ^ LD3SEL Shunt Position ^ Source of LED3 supply ^ Image ^
+
 ======================= ================================ =========
 **VARD Position**       Sourced from Arduino 5V
 
@@ -439,10 +430,9 @@ Connecting pins 1 and 2
 Connecting pins 3 and 4                                  
 ======================= ================================ =========
 
-| 
 
-======================= ================================ =========
-LD4SEL Shunt Position   Source of LED4 supply            Image
+| ^ LD4SEL Shunt Position ^ Source of LED4 supply ^ Image ^
+
 ======================= ================================ =========
 **VARD Position**       Sourced from Arduino 5V
 
@@ -456,7 +446,7 @@ Connecting pins 1 and 2
 Connecting pins 3 and 4                                  
 ======================= ================================ =========
 
-|
+
 
 .. tip::
 
@@ -511,7 +501,7 @@ LD4SEL      **VARD Position**       Sourced from Arduino 5V
 Photodiode Selection
 ~~~~~~~~~~~~~~~~~~~~
 
-| There are 4 photodiode selection headers available to the two side light paths. These 2 light paths have the option to use a fluorescent photodiode located at right angles from the light path. The combination of which photodiodes to be used by the :adi:`ADPD4101` can be configured by two selection headers, one for each input channel. Each selection header requires two shunts to configure, to connect both anode and cathode of the photodiode
+There are 4 photodiode selection headers available to the two side light paths. These 2 light paths have the option to use a fluorescent photodiode located at right angles from the light path. The combination of which photodiodes to be used by the :adi:`ADPD4101` can be configured by two selection headers, one for each input channel. Each selection header requires two shunts to configure, to connect both anode and cathode of the photodiode
 
 +-------------------------+----------------------------------------------------------------+------------+
 | P1ASEL Shunt Positions  | Photodiode Connected to the First Input Channel                | Image      |
@@ -526,10 +516,9 @@ Photodiode Selection
 +-------------------------+----------------------------------------------------------------+------------+
 
 | 
+| ^ P1BSEL Shunt Positions ^ Photodiode Connected to the Second Input Channel ^ Image ^
 
 +-------------------------+-----------------------------------------------------------------+------------+
-| P1BSEL Shunt Positions  | Photodiode Connected to the Second Input Channel                | Image      |
-+=========================+=================================================================+============+
 | **90 DEG Position**     | Fluorescent photodiode is connected to the second input channel | |image105| |
 | Connecting pins 1 and 3 |                                                                 |            |
 | Connecting pins 2 and 4 |                                                                 |            |
@@ -540,10 +529,9 @@ Photodiode Selection
 +-------------------------+-----------------------------------------------------------------+------------+
 
 | 
+| ^ P4ASEL Shunt Positions ^ Photodiode Connected to the First Input Channel ^ Image ^
 
 +-------------------------+----------------------------------------------------------------+------------+
-| P4ASEL Shunt Positions  | Photodiode Connected to the First Input Channel                | Image      |
-+=========================+================================================================+============+
 | **0 DEG Position**      | Transmit photodiode is connected to the first input channel    | |image109| |
 | Connecting pins 1 and 3 |                                                                |            |
 | Connecting pins 2 and 4 |                                                                |            |
@@ -554,10 +542,9 @@ Photodiode Selection
 +-------------------------+----------------------------------------------------------------+------------+
 
 | 
+| ^ P4BSEL Shunt Positions ^ Photodiode Connected to the Second Input Channel ^ Image ^
 
 +-------------------------+-----------------------------------------------------------------+------------+
-| P4BSEL Shunt Positions  | Photodiode Connected to the Second Input Channel                | Image      |
-+=========================+=================================================================+============+
 | **90 DEG Position**     | Fluorescent photodiode is connected to the second input channel | |image113| |
 | Connecting pins 1 and 3 |                                                                 |            |
 | Connecting pins 2 and 4 |                                                                 |            |
@@ -572,8 +559,7 @@ Photodiode Selection
 Arduino Connection
 ------------------
 
-| The :adi:`CN0503` is stacks on top of the :adi:`EVAL-ADICUP3029` or any Arduino microcontroller using the **PWMH**, **PWML**, **POWER**, and **ANALOG** headers. You will also have to remove the stand-offs from the :adi:`CN0503` as shown below.
-| |image115|
+| The :adi:`CN0503` is stacks on top of the :adi:`EVAL-ADICUP3029` or any Arduino microcontroller using the **PWMH**, **PWML**, **POWER**, and **ANALOG** headers. You will also have to remove the stand-offs from the :adi:`CN0503` as shown below. |image115|
 
 Demo Hardware Setup
 -------------------
@@ -581,17 +567,17 @@ Demo Hardware Setup
 | This section details the hardware setup of :adi:`CN0503` for a demonstration showing 4 different experiments in each optical path, utilizing colorimetry (absorbance measurement), turbidity, and fluorescence measurement. Below is a general block diagram of the setup.
 | Listed in the table below are the `LED Boards <https://wiki.analog.com/>`_ and optional optical glass components used in each path.
 
-+----------------------------------------------------------+---------------------------+---------------------------+---------------------------+---------------------------+
-| Item                                                     | Optical Path 1            | Optical Path 2            | Optical Path 3            | Optical Path 4            |
-+==========================================================+===========================+===========================+===========================+===========================+
-| `LED Board <https://wiki.analog.com/>`_                  | 365nm LED Board           | 430nm LED Board           | 615nm LED Board           | 530nm LED Board           |
-+----------------------------------------------------------+---------------------------+---------------------------+---------------------------+---------------------------+
-| `Fluorescent Filter <https://wiki.analog.com/>`_         | <fc #008000>Used</fc>     | <fc #800000>Not Used</fc> | <fc #800000>Not Used</fc> | <fc #800000>Not Used</fc> |
-+----------------------------------------------------------+---------------------------+---------------------------+---------------------------+---------------------------+
-| `Neutral Density Filter <https://wiki.analog.com/>`_     | <fc #800000>Not Used</fc> | <fc #800000>Not Used</fc> | <fc #800000>Not Used</fc> | <fc #800000>Not Used</fc> |
-+----------------------------------------------------------+---------------------------+---------------------------+---------------------------+---------------------------+
-| `Narrowband Transmit Filter <https://wiki.analog.com/>`_ | <fc #800000>Not Used</fc> | <fc #800000>Not Used</fc> | <fc #800000>Not Used</fc> | <fc #800000>Not Used</fc> |
-+----------------------------------------------------------+---------------------------+---------------------------+---------------------------+---------------------------+
++----------------------------------------------------------+-----------------+-----------------+-----------------+-----------------+
+| Item                                                     | Optical Path 1  | Optical Path 2  | Optical Path 3  | Optical Path 4  |
++==========================================================+=================+=================+=================+=================+
+| `LED Board <https://wiki.analog.com/>`_                  | 365nm LED Board | 430nm LED Board | 615nm LED Board | 530nm LED Board |
++----------------------------------------------------------+-----------------+-----------------+-----------------+-----------------+
+| `Fluorescent Filter <https://wiki.analog.com/>`_         | Used            | Not Used        | Not Used        | Not Used        |
++----------------------------------------------------------+-----------------+-----------------+-----------------+-----------------+
+| `Neutral Density Filter <https://wiki.analog.com/>`_     | Not Used        | Not Used        | Not Used        | Not Used        |
++----------------------------------------------------------+-----------------+-----------------+-----------------+-----------------+
+| `Narrowband Transmit Filter <https://wiki.analog.com/>`_ | Not Used        | Not Used        | Not Used        | Not Used        |
++----------------------------------------------------------+-----------------+-----------------+-----------------+-----------------+
 
 | 
 | The jumper configuration of the :adi:`CN0503` for this setup is shown below.
@@ -616,9 +602,7 @@ Optical Path 3
 In optical path 3, the experiment shows nitrate detection using colorimetry. Using the API reagent found in nitrate test kits, a solution with a higher concentration of nitrate turns into a darker shade of red. As a result, the degree of absorbance of 615nm light decreases with the increasing nitrate concentration.
 
 -  :doc:`Optical Platform: Nitrate Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ) </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503/nitrate-measurement>`
-
-Optical Path 4
-~~~~~~~~~~~~~~
+   ==== Optical Path 4 ====
 
 In optical path 4, the experiment shows turbidity measurements of cloudy water made by adding a a drop of milk and de-ionized water using 530nm light.
 
@@ -636,8 +620,6 @@ Software Reference Design & Demo
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 
-|
-
 .. admonition:: Download
    :class: download
 
@@ -653,8 +635,6 @@ Schematic, PCB Layout, Bill of Materials
 
 3D Printed Files (Mechanical Base and Cuvette Holder)
 -----------------------------------------------------
-
-|
 
 .. admonition:: Download
    :class: download

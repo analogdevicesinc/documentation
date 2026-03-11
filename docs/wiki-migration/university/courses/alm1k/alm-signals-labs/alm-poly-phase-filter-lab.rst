@@ -34,10 +34,7 @@ Generation of quadrature local oscillator (LO) signals is an important functiona
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 module
-| Solder-less breadboard, and jumper wire kit
-| 2 – 0.1 uF capacitors (marked 104)
-| 2 – 1 KΩ resistors
+ADALM1000 module Solder-less breadboard, and jumper wire kit 2 – 0.1 uF capacitors (marked 104) 2 – 1 KΩ resistors
 
 Directions:
 ~~~~~~~~~~~
@@ -123,13 +120,10 @@ The AIN and BIN scope input channels can be used to display two of the quadratur
 Effect of Component tolerance:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _questions-1:
-
 Questions:
 ^^^^^^^^^^
 
-| How do small differences in the component values change the relative phases?
-| How would you tune or trip the circuit to account for these variations?
+How do small differences in the component values change the relative phases? How would you tune or trip the circuit to account for these variations?
 
 Single-ended to Differential conversion:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,11 +141,9 @@ Transformers are often used at high frequencies to convert a single ended, groun
 
 Additional Materials:
 
-| 1 HPH1-1400L 6 winding transformer
-| 1 47 Ω resistor
-| 4 470 Ω resistors
-| 4 47 nF capacitors
-| Using the HPH1-1400L six winding inductor we can connect it as a 1:2 center tapped transformer as shown in figure 9. The HPH1-1400L has a lower useable frequency limit and the values of the R and C in the quadrature filters needs to be scaled to a higher frequency.
+1 HPH1-1400L 6 winding transformer 1 47 Ω resistor 4 470 Ω resistors 4 47 nF capacitors
+
+Using the HPH1-1400L six winding inductor we can connect it as a 1:2 center tapped transformer as shown in figure 9. The HPH1-1400L has a lower useable frequency limit and the values of the R and C in the quadrature filters needs to be scaled to a higher frequency.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-poly-phase-fig10.png
    :align: center
@@ -185,31 +177,16 @@ Differential Poly Phase Tuned Amplifier
 
 By adding second order L-C and C-L low and high pass filter sections as differential output loads in a NPN differential amplifier we can generate all four 90º phases ( i.e. 0º, 90º, 180º and 270º ) of an input sine wave signal. Such a tuned amplifier is shown in figure 12.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Lab module
-| Solder-less breadboard, and jumper wire kit
-| 4 – 2N3904 NPN transistors (Q\ :sub:`1`, Q\ :sub:`2` Q\ :sub:`3`, Q\ :sub:`4`)
-| 2 – 10 mH inductor (Various other value inductors)
-| 2 – 0.56 uF capacitors (marked 564)
-| 1 – 0.1 uF capacitor (marked 104)
-| 1 – 1 uF capacitor (marked 105)
-| 2 - 10 Ω resistors
-| 2 - 100 Ω resistors
-| 1 - 470 Ω resistor
-| 4 – 1 KΩ resistors
-| 1 – 10 KΩ resistor
-| Other resistors and capacitors as needed
+ADALM1000 Lab module Solder-less breadboard, and jumper wire kit 4 – 2N3904 NPN transistors (Q\ :sub:`1`, Q\ :sub:`2` Q\ :sub:`3`, Q\ :sub:`4`) 2 – 10 mH inductor (Various other value inductors) 2 – 0.56 uF capacitors (marked 564) 1 – 0.1 uF capacitor (marked 104) 1 – 1 uF capacitor (marked 105) 2 - 10 Ω resistors 2 - 100 Ω resistors 1 - 470 Ω resistor 4 – 1 KΩ resistors 1 – 10 KΩ resistor Other resistors and capacitors as needed
 
-| Negative 5 V power source (use one of the following options)
-| \* LTM8067 uPower DC-DC converter Module
-| \* LT1054 DC-DC Inverter
-| \* 3 – 1.5 V AA Cells (or AAA cells) in battery holder for -4.5 V
+Negative 5 V power source (use one of the following options)
 
-.. _directions-1:
+-  LTM8067 uPower DC-DC converter Module
+-  LT1054 DC-DC Inverter
+-  3 – 1.5 V AA Cells (or AAA cells) in battery holder for -4.5 V
 
 Directions:
 ~~~~~~~~~~~
@@ -225,16 +202,12 @@ Build the circuit shown in figure 12 on your solder-less breadboard. Set L\ :sub
    Figure 12, Poly Phase Amplifier
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The green squares indicate where to connect the ALM1000 module AWG, scope channels and power supplies. The analog input Mux can again be used to display all four output phases.
 
 Be sure to turn on the power supplies only after you double check your wiring. Be careful to never connect CHB to the -4.5 V supply or any other negative voltage node without using :doc:`a resistor divider/attenuator </wiki-migration/university/courses/alm1k/circuits1/alm-measure-outside-0-5-range>`. Open the Bode Plotting tool in ALICE. Configure the frequency sweep to start at 100 Hz and stop at 20 KHz. Set the CHA Max value to 4.0 and the Min value to 1.0.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -244,8 +217,6 @@ Calculate the expected LC corner frequency based on the L and C values used.
 Turn on the power supplies. Connect CHB scope input alternately to each of the four possible outputs at the ends of resistors R\ :sub:`1`, R\ :sub:`2`, R\ :sub:`3` and R\ :sub:`4`. Run a single frequency sweep and store each sweep in a trace snapshot to compare each output's relative gain and phase response. Be sure to export the data from each frequency sweep to a .csv file for further analysis in either Excel or other analysis software.
 
 Using the scope and waveform generator controls ( in the time domain ) set the CHA frequency to the resonate frequency. Observe the relative amplitudes and phases of the four outputs on channel B and store each trace as a reference to compare the amplitude and phase of each output.
-
-.. _questions-2:
 
 Questions:
 ~~~~~~~~~~
@@ -300,16 +271,10 @@ Appendix: Negative Power Supply Option, LT1054
 
 Refer to the :adi:`LT1054 datasheet <en/products/power-management/inductorless-charge-pump-dc-dc-converters/regulated-step-up-charge-pumps/lt1054.html>` for complete application information.
 
-.. _materials-2:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 – LT1054 Switch Cap DC-DC converter (or ADM660)
-| 1 – 10 uF capacitor
-| 1 – 22 uF capacitor
-
-.. _directions-2:
+1 – LT1054 Switch Cap DC-DC converter (or ADM660) 1 – 10 uF capacitor 1 – 22 uF capacitor
 
 Directions:
 ~~~~~~~~~~~

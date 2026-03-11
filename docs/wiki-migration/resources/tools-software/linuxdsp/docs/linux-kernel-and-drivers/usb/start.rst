@@ -15,38 +15,35 @@ In this page, we cover configuration and example on how to use USB interface in 
 Supported Board
 ---------------
 
-Below table shows numbers of the USB controller for SC589/584/573 chips [supported:<fc #6495ed>✔</fc>; unsupported:<fc #ff0000>✘</fc>]
+Below table shows numbers of the USB controller for SC589/584/573 chips [supported:✔; unsupported:✘]
 
 +------------------+-------------------------+-------------------------+-----------------------------+------------------------+
 | Board            | Hardware Port           |                         | USB 2.0 Supported Mode      |                        |
 +==================+=========================+=========================+=============================+========================+
 |                  |                         | ``HOST-Host only mode`` | ``DEVICE-Gadget only mode`` | ``OTG-Dual Role mode`` |
 +------------------+-------------------------+-------------------------+-----------------------------+------------------------+
-| adsp-sc573-ezkit | USB0 - OTG Port ( P23 ) | <fc #6495ed>✔</fc>      | <fc #6495ed>✔</fc>          | <fc #6495ed>✔</fc>     |
+| adsp-sc573-ezkit | USB0 - OTG Port ( P23 ) | ✔                       | ✔                           | ✔                      |
 +------------------+-------------------------+-------------------------+-----------------------------+------------------------+
-| adsp-sc584-ezkit | USB0 - OTG Port ( P23 ) | <fc #6495ed>✔</fc>      | <fc #6495ed>✔</fc>          | <fc #6495ed>✔</fc>     |
+| adsp-sc584-ezkit | USB0 - OTG Port ( P23 ) | ✔                       | ✔                           | ✔                      |
 +------------------+-------------------------+-------------------------+-----------------------------+------------------------+
-| adsp-sc589-ezkit | USB0 - OTG Port ( P10 ) | <fc #6495ed>✔</fc>      | <fc #6495ed>✔</fc>          | <fc #6495ed>✔</fc>     |
+| adsp-sc589-ezkit | USB0 - OTG Port ( P10 ) | ✔                       | ✔                           | ✔                      |
 +------------------+-------------------------+-------------------------+-----------------------------+------------------------+
-|                  | USB1 - HS  Port ( P11 ) | <fc #ff0000>✘</fc>      | <fc #6495ed>✔</fc>          | <fc #ff0000> ✘</fc>    |
+|                  | USB1 - HS  Port ( P11 ) | ✘                       | ✔                           | ✘                      |
 +------------------+-------------------------+-------------------------+-----------------------------+------------------------+
-| adsp-sc589-mini  | USB0 - OTG Port ( P10 ) | <fc #6495ed>✔</fc>      | <fc #6495ed>✔</fc>          | <fc #6495ed>✔</fc>     |
+| adsp-sc589-mini  | USB0 - OTG Port ( P10 ) | ✔                       | ✔                           | ✔                      |
 +------------------+-------------------------+-------------------------+-----------------------------+------------------------+
-|                  | USB1 - HS Port  ( J7 )  | <fc #6495ed>✔</fc>      | <fc #ff0000>✘</fc>          | <fc #ff0000> ✘</fc>    |
+|                  | USB1 - HS Port  ( J7 )  | ✔                       | ✘                           | ✘                      |
 +------------------+-------------------------+-------------------------+-----------------------------+------------------------+
 
---------------
 
 HOST - host only mode
 ---------------------
 
 With the USB Host mode, we can add a lot of USB dongle peripheral to the Ez-Kits and using the corresponding features.
 
-\*\* Hardware Connection Software Configuration \*\*
+\*\* Hardware Connection Software Configuration \*\**Step 1:** Linux kernel Configuration:
 
-**Step 1:** Linux kernel Configuration:
-
-.. code:: c++
+.. code:: console
 
    $ bitbake linux-adi -c cleansstate
    $ bitbake linux-adi -c menuconfig
@@ -58,14 +55,14 @@ With the USB Host mode, we can add a lot of USB dongle peripheral to the Ez-Kits
    Device Drivers  --->
        [*] USB support  --->
            <*>   Support for Host-side USB
-                   [*]   Enable USB persist by default 
+                   [*]   Enable USB persist by default
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Host only mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
-                   [*]       Inventra 
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
+                   [*]       Inventra
 
 **Step 3:** Configure the USB host mode supported devices:
 
@@ -96,11 +93,9 @@ With the USB Host mode, we can add a lot of USB dongle peripheral to the Ez-Kits
 DEVICE - gadget only mode
 -------------------------
 
-With the USB Device mode, we can connect the the Ez-Kits to a host PC other Hosts with the USB cable and make the Ez-Kits as an USB Devices: \*\* Hardware Connection Software Configuration \*\*
+With the USB Device mode, we can connect the the Ez-Kits to a host PC other Hosts with the USB cable and make the Ez-Kits as an USB Devices: \*\* Hardware Connection Software Configuration \*\**Step 1:** Linux kernel Configuration:
 
-**Step 1:** Linux kernel Configuration:
-
-.. code:: c++
+.. code:: console
 
    $ bitbake linux-adi -c cleansstate
    $ bitbake linux-adi -c menuconfig
@@ -114,14 +109,14 @@ With the USB Device mode, we can connect the the Ez-Kits to a host PC other Host
                    <N>   Support for Host-side USB
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Gadget only mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                    <*>   USB Gadget Support  --->
                          USB Physical Layer drivers  --->
-                   <*> NOP USB Transceiver Driver 
+                   <*> NOP USB Transceiver Driver
 
 **Step 3:** Configure the USB device mode supported devices:
 
@@ -137,10 +132,10 @@ With the USB Device mode, we can connect the the Ez-Kits to a host PC other Host
                          [*]         UAC 1.0 (Legacy)
                          <M>     Ethernet Gadget (with CDC Ethernet support)
                          [*]       RNDIS support
-                         <M>     Gadget Filesystem   
-                         <M>     Mass Storage Gadget      
+                         <M>     Gadget Filesystem
+                         <M>     Mass Storage Gadget
                          <M>     Serial Gadget (with CDC ACM and CDC OBEX support)
-                         <M>     HID Gadget 
+                         <M>     HID Gadget
 
 **Step 4:** Build target images:
 
@@ -167,5 +162,6 @@ The USB OTG port can work as either Host or Device, depends on the way we connec
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/003_usb_otg_mode_hardware_connection.png
    :align: center
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

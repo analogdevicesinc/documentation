@@ -3,14 +3,16 @@
 Inverse Square Root
 ===================
 
-| 
-| |invsqroot.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/invsqroot.png
+   :alt: invsqroot.png
 
 Description
 -----------
 
-| The Inverse Square Root block computes the reciprocal of square root of the input signal.
-| ===== Targets Supported =====
+The Inverse Square Root block computes the reciprocal of square root of the input signal.
+
+Targets Supported
+-----------------
 
 =================== =============== ================ =============
 Name                ADSP-214xx      ADSP-215xx/SC5xx ADAU145x/146x
@@ -18,7 +20,7 @@ Name                ADSP-214xx      ADSP-215xx/SC5xx ADAU145x/146x
 Inverse Square Root Schematic/Block Schematic/Block  NA
 =================== =============== ================ =============
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -48,5 +50,3 @@ DSP Parameters
 --------------
 
 NO DSP parameters
-
-.. |invsqroot.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/invsqroot.png

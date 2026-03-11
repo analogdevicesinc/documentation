@@ -11,11 +11,7 @@ This is to introduce a current “mirror” in Activity 8 which has an output wh
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| 1 - 2.2KΩ Resistor (or any similar value)
-| 1 - 47Ω Resistor
-| 1 - small signal NPN transistor (2N3904 or SSM2212)
+ADALM2000 Active Learning Module Solder-less breadboard 1 - 2.2KΩ Resistor (or any similar value) 1 - 47Ω Resistor 1 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 -----------
@@ -103,15 +99,10 @@ VBE times 2 version 1:
 
 The obviously simple thing to do would be to just use two diode connected transistors in series.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 1 - 1KΩ Resistor
-| 2 - small signal NPN transistor (2N3904 or SSM2212)
-
-.. _directions-1:
+1 - 1KΩ Resistor 2 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 -----------
@@ -127,8 +118,6 @@ The breadboard connections are as shown in figure 7 below. The output of the AWG
    Figure 7 V\ :sub:`BE` circuit
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -140,8 +129,6 @@ Hardware Setup:
 
 
 The waveform generator should be configured for a 1 KHz triangle wave with 3 volt amplitude peak-to-peak and 1.5V offset. Both scope channels can be set to 200mV per division.
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -172,17 +159,10 @@ VBE times 2 version 2:
 
 A second option would be to use two resistors as a voltage divider. This could produce an output that is the addition of fractions of a V\ :sub:`BE` to the V\ :sub:`BE` of Q\ :sub:`1`.
 
-.. _materials-2:
-
 Materials:
 ----------
 
-| 1 - 1KΩ Resistor
-| 2 - 10KΩ Resistors
-| 1 - 5KΩ Variable resistor ( a 500Ω pot would be preferable if available )
-| 1 - small signal NPN transistor (2N3904 or SSM2212)
-
-.. _directions-2:
+1 - 1KΩ Resistor 2 - 10KΩ Resistors 1 - 5KΩ Variable resistor ( a 500Ω pot would be preferable if available ) 1 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 -----------
@@ -198,8 +178,6 @@ The breadboard connections are as shown in the diagram below. The output of the 
    Figure 11 V\ :sub:`BE` Multiplier circuit
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
@@ -211,8 +189,6 @@ Hardware Setup:
 
 
 The waveform generator should be configured for a 1KHz triangle wave with 3 volt amplitude peak-to-peak and 1.5V offset. Both scope channels can be set to 200mV per division.
-
-.. _procedure-2:
 
 Procedure:
 ----------
@@ -264,17 +240,10 @@ VBE times 2 version 3:
 
 A minor variation on Version 2.
 
-.. _materials-3:
-
 Materials:
 ----------
 
-| 1 - 1KΩ Resistor
-| 1 - 10KΩ Resistor
-| 1 - 5KΩ Variable resistor ( 500Ω pot would be preferable if available )
-| 2 - small signal NPN transistor (2N3904 or SSM2212)
-
-.. _directions-3:
+1 - 1KΩ Resistor 1 - 10KΩ Resistor 1 - 5KΩ Variable resistor ( 500Ω pot would be preferable if available ) 2 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 -----------
@@ -290,8 +259,6 @@ The breadboard connections are as shown in the diagram below in figure 17. Versi
    Figure 17 Version 3 of V\ :sub:`BE` multiplier
 
 
-.. _hardware-setup-3:
-
 Hardware Setup:
 ---------------
 
@@ -303,8 +270,6 @@ Hardware Setup:
 
 
 The waveform generator should be configured for a 1KHz triangle wave with 3 volt amplitude peak-to-peak and 1.5V offset. Both scope channels can be set to 200mV per division.
-
-.. _procedure-3:
 
 Procedure:
 ----------

@@ -81,10 +81,7 @@ Driver testing
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -112,10 +109,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -128,20 +122,16 @@ Show device name
 Show scale
 ----------
 
-| **Description:**
-| scale to be applied to in_voltage0_raw in order to obtain the measured voltage in millivolts.
+**Description:** scale to be applied to in_voltage0_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat out_voltage_scale **
+      root:/sys/bus/iio/devices/iio:device0> **cat out_voltage_scale**
       0.152587890
    
 
@@ -149,16 +139,13 @@ Show scale
 Set channel 0 output voltage
 ----------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/deviceX/out_voltage0_raw
-| Raw (unscaled, no bias etc.) output voltage for channel 0.
+**Description:** /sys/bus/iio/devices/deviceX/out_voltage0_raw
+
+Raw (unscaled, no bias etc.) output voltage for channel 0.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -174,15 +161,11 @@ Enable power down mode on output 0
 
 /sys/bus/iio/devices/deviceX/out_voltage0_powerdown
 
-| **Description:**
-| Writing 1 causes output 0 to enter the power down mode. Clearing returns to normal operation.
+**Description:** Writing 1 causes output 0 to enter the power down mode. Clearing returns to normal operation.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -199,4 +182,21 @@ Enable power down mode on output 0
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

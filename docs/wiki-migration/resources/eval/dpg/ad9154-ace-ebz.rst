@@ -78,7 +78,7 @@ These settings configure the AD9154 to output a 112Mhz -1dbFS sine wave using th
 
 | 2. Open ACE from Start->Analog Devices->ACE. ACE will come up and display the initial ACE page shown in figure 3a.
 | 3. Press the AD9154 icon and populate the AD9154 initialization wizard as shown in figure 3b, JESD mode 0, Interpolation 2. Leave all other settings in their default state. Press rhe APPLY button. JESD204B PLL lock will turn green as shown in figure 3c. Press the AD9154 icon in the initialization wizard tab. The AD9154 block diagram view will appear populated as shown in figure 3d.
-|
+
 
 .. container:: center
 

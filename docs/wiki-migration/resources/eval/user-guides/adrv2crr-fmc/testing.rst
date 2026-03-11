@@ -51,7 +51,7 @@ The SD card image used for production testing is based on official release of Zy
    :class: download
 
    
-   -  \**28 May 2020 release \*\*
+   -  **28 May 2020 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_fmcomms8_test_card_28_05.img.tar.xz>`_
    -  Checksum ``9d3455a071f4151b9c320282abcb2f04``
    
@@ -61,7 +61,7 @@ The SD card image used for production testing is based on official release of Zy
    :class: download
 
    
-   -  \**27 May 2020 release \*\*
+   -  **27 May 2020 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_som_test_card_27_05.img.tar.xz>`_
    -  Checksum ``4efbaa39928f2f36b7b462156e6d00f6``
    
@@ -81,7 +81,7 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    :class: download
 
    
-   -  \**02 Nov 2021 release \*\*
+   -  **02 Nov 2021 release**
    -  `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_pi_test_card_02_11.tar.xz>`_
    -  Checksum ``080fb8771e12195eba7196f9de05ec1c``
    

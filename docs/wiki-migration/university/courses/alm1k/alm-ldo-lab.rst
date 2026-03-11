@@ -114,18 +114,7 @@ Change the settings for the input source V1 and the output load source V3 to sim
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Lab hardware module
-| Solder-less breadboard, and jumper wire kit
-| 1 – 47 Ω resistor
-| 1 – 4.7 KΩ resistor
-| 3 – 10 KΩ resistors
-| 1 – 15 KΩ resistor
-| 3 – small signal NPN transistors (2N3904)
-| 5 – small signal PNP transistors (2N3906)
-| 1 – power PNP transistor (TIP32)
-| 1 – 100 pF capacitor
-| 1 – 470 pF capacitor
-| 1 – 1.0 uF capacitor
+ADALM1000 Lab hardware module Solder-less breadboard, and jumper wire kit 1 – 47 Ω resistor 1 – 4.7 KΩ resistor 3 – 10 KΩ resistors 1 – 15 KΩ resistor 3 – small signal NPN transistors (2N3904) 5 – small signal PNP transistors (2N3906) 1 – power PNP transistor (TIP32) 1 – 100 pF capacitor 1 – 470 pF capacitor 1 – 1.0 uF capacitor
 
 Directions:
 ~~~~~~~~~~~
@@ -168,12 +157,6 @@ Substitute an enhancement mode PMOS (ZVP2110A) for the output pass transistor (P
 For Further Reading:
 ~~~~~~~~~~~~~~~~~~~~
 
-| :adi:`References and Low Dropout Linear Regulators <static/imported-files/tutorials/ptmsect2.pdf>`
-| :adi:`The Fundamentals of LDO Design and Application <static/imported-files/pwr_mgmt/PM_ldo_design_08451b.pdf>`
-| :adi:`Understand Low-Dropout Regulator (LDO) Concepts to Achieve Optimal Designs <en/analog-dialogue/articles/understand-ldo-concepts.html>`
-| :adi:`Basic Concepts of Linear Regulator and Switching Mode Power Supplies <media/en/technical-documentation/application-notes/AN140.pdf>`
-| `Low Dropout Regulators <https://en.wikipedia.org/wiki/Low-dropout_regulator>`_
-| `Linear Regulators <https://en.wikipedia.org/wiki/Linear_regulator>`_
-| `Low Dropout Linear Regulator Frequently asked Questions <http://electronicdesign.com/power/low-dropout-ldo-linear-regulators>`_
+:adi:`References and Low Dropout Linear Regulators <static/imported-files/tutorials/ptmsect2.pdf>` :adi:`The Fundamentals of LDO Design and Application <static/imported-files/pwr_mgmt/PM_ldo_design_08451b.pdf>` :adi:`Understand Low-Dropout Regulator (LDO) Concepts to Achieve Optimal Designs <en/analog-dialogue/articles/understand-ldo-concepts.html>` :adi:`Basic Concepts of Linear Regulator and Switching Mode Power Supplies <media/en/technical-documentation/application-notes/AN140.pdf>` `Low Dropout Regulators <https://en.wikipedia.org/wiki/Low-dropout_regulator>`_ `Linear Regulators <https://en.wikipedia.org/wiki/Linear_regulator>`_ `Low Dropout Linear Regulator Frequently asked Questions <http://electronicdesign.com/power/low-dropout-ldo-linear-regulators>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

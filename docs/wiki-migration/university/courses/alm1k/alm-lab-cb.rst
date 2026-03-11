@@ -16,11 +16,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 100 Ω Resistor ( R\ :sub:`C` )
-| 1 - small signal NPN transistor ( 2N3904 or similar Q\ :sub:`1` )
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 - 100 Ω Resistor ( R\ :sub:`C` ) 1 - small signal NPN transistor ( 2N3904 or similar Q\ :sub:`1` )
 
 Directions:
 ~~~~~~~~~~~
@@ -46,25 +42,18 @@ Procedure:
 
 Using the measurement plots and data taken calculate the voltage gain, current gain, input resistance and output resistance for the common base amplifier.
 
-| Voltage gain approximate expression:
-| A\ :sub:`V` = g\ :sub:`m`\ R\ :sub:`C`
+Voltage gain approximate expression: A\ :sub:`V` = g\ :sub:`m`\ R\ :sub:`C`
 
-| Current gain approximate expression:
-| A\ :sub:`I` = I\ :sub:`C`/I\ :sub:`E` = αI\ :sub:`E`
+Current gain approximate expression: A\ :sub:`I` = I\ :sub:`C`/I\ :sub:`E` = αI\ :sub:`E`
 
-| Input resistance approximate expression:
-| R\ :sub:`In` = r\ :sub:`e` ˜ 1/g\ :sub:`m`
+Input resistance approximate expression: R\ :sub:`In` = r\ :sub:`e` ˜ 1/g\ :sub:`m`
 
-| Output resistance approximate expression:
-| R\ :sub:`Out` = R\ :sub:`C`\ \||r\ :sub:`o` ˜ R\ :sub:`C` ( when R\ :sub:`C` << r\ :sub:`o` )
+Output resistance approximate expression: R\ :sub:`Out` = R\ :sub:`C`\ \||r\ :sub:`o` ˜ R\ :sub:`C` ( when R\ :sub:`C` << r\ :sub:`o` )
 
 Questions:
 ~~~~~~~~~~
 
-| What is the maximum peak to peak output voltage swing that can be produced with the common base stage as shown in figure 1?
-| What limits the maximum and minimum voltage extremes and why?
-| What happens to the input impedance when the output reaches one or the other extreme?
-| What happens to the output impedance when the output reaches one or the other extreme?
+What is the maximum peak to peak output voltage swing that can be produced with the common base stage as shown in figure 1? What limits the maximum and minimum voltage extremes and why? What happens to the input impedance when the output reaches one or the other extreme? What happens to the output impedance when the output reaches one or the other extreme?
 
 **For Further Reading:**
 

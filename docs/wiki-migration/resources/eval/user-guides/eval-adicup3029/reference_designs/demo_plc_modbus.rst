@@ -63,8 +63,10 @@ Setting up the Hardware
    Refer to the :doc:`CN0414 </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/cn0414>` and :doc:`CN0418 </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/cn0418>` user guides for detailed information on power requirements.
 
 
-| 
-| ==== PLC / Single or multi-node DCS System Setup Configuration ==== Block diagrams for PLC / single-node DCS and multi-node DCS systems are shown below. These systems differ slightly in their allowable configurations:
+PLC / Single or multi-node DCS System Setup Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Block diagrams for PLC / single-node DCS and multi-node DCS systems are shown below. These systems differ slightly in their allowable configurations:
 
 -  A Single-node system can operate with either half-duplex or full-duplex RS-485. Termination must be enabled at both ends of the RS-485 line(s).
 -  Modbus address conflict is not a concern in a single-node system (but the address must be known to the host.)
@@ -78,15 +80,11 @@ PLC / Single-node DCS System block diagram
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/plc_block_diagram.png
    :align: center
 
-   | 
-
 DCS System block diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/dcs_block_diagram.png
    :align: center
-
-|
 
 RS485 Adapter Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -664,7 +662,7 @@ For example, consider an instrument (slave) with Modbus RTU and address number 1
 
 ::
 
-   [4, 1, 3, 4, 6] 
+   [4, 1, 3, 4, 6]
 
 In this example, after we run the above piece of code it results that we have 4 boards connected. Two of this boards are **EVAL-CN0414-ARDZ** and other two are **EVAL-CN0418-ARDZ**. The **EVAL-CN0414-ARDZ** boards have address 0b10 and 0b11 while **EVAL-CN0418-ARDZ** boards have address 0b00 and 0b01.
 
@@ -932,8 +930,6 @@ Depending on the system configuration, one or more DCS nodes will be detected. A
    q - Quit.
 
    Enter test option:
-
-|
 
 Example Applications in Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

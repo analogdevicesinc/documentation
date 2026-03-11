@@ -49,7 +49,7 @@ IOSEL      Shorted Pin 1 and 2
 Set the following :adi:`EVAL-ADICUP3029` switches according to their configuration on the table below.
 
 ========== =====================
-**Switch** \**Configuration \*\*
+**Switch** \**Configuration**
 ========== =====================
 UART (S2)  USB
 POWER (S5) WALL/USB

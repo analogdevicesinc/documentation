@@ -11,8 +11,10 @@ Setting Up Your Host PC
 
 The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-bit.
 
-| 
-| ==== Installing Required Packages ==== In order to build and deploy Linux to your ADSP-SC573-EZKIT development board you will need to install the following packages on your host PC.
+Installing Required Packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to build and deploy Linux to your ADSP-SC573-EZKIT development board you will need to install the following packages on your host PC.
 
 .. code:: bash
 
@@ -39,8 +41,10 @@ A TFTP server on the host is used to transfer images to the development board. I
    $ sudo chmod 777 /tftpboot
    $ sudo service tftpd-hpa restart
 
-| 
-| ==== Configure Minicom ==== In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
+Configure Minicom
+~~~~~~~~~~~~~~~~~
+
+In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
 
 On the host PC open a terminal and execute the following commands:
 
@@ -69,7 +73,7 @@ On the host PC open a terminal and execute the following commands:
         Set Serial Device to /dev/ttyUSB0
         Set Bps/Par/Bits to 115200 8N1
         Set Hardware Flow Control to No
-        
+
         Close the Serial port setup option by press Esc
     Select Save setup as dfl
     Select Exit
@@ -79,10 +83,12 @@ On the host PC open a terminal and execute the following commands:
    \ ``/dev/ttyUSB0`` might not correspond to the serial port of the board on every system. You can determine which ``/dev`` entry your board uses by running ``ls -l /dev/ttyUSB*`` twice, once when the serial port of the board is plugged in, and once when it isn't.
 
 
-| 
-| ==== Installing the Sources ==== The example is fully contained in the Analog Devices Yocto Linux github repositories.
+Installing the Sources
+~~~~~~~~~~~~~~~~~~~~~~
 
-To install the sources: 
+The example is fully contained in the Analog Devices Yocto Linux github repositories.
+
+To install the sources:
 
 .. code:: bash
 
@@ -97,11 +103,11 @@ To install the sources: 
       -m release-yocto-3.0.0.xml
    $ ./bin/repo sync
 
-| 
-| ===== Building the Image =====
+Building the Image
+==================
 
 Preparing the buildtool
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Yocto requires the environment to be configured before building is possible.  A setup-environment script in the griffin folder contains all the required environment settings for your build target. Source the setup script for your board:
 
@@ -116,8 +122,10 @@ Sourcing the script will configure your build environment and create a build fol
    Note that the build environment needs to be sourced once only before building.  If later working in a different terminal the setup-environment script should be sourced again.  If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
 
 
-| 
-| ==== Building the example ==== You can build three different versions of the root filesystem; tiny, minimal and full. To build the example images invoke bitbake from within the build directory created previously.
+Building the example
+--------------------
+
+You can build three different versions of the root filesystem; tiny, minimal and full. To build the example images invoke bitbake from within the build directory created previously.
 
 .. code:: bash
 
@@ -133,7 +141,7 @@ When the build completes you will see a warning that the ELF binary has relocati
 
 
 Building the SDK
-~~~~~~~~~~~~~~~~
+----------------
 
 The SDK will provide you with the cross toolchain needed to develop application for the target board, alongside various miscellaneous tools. Notably, it will provide you with OpenOCD and GDB, which you can use to run and flash U-Boot on the board.
 
@@ -162,15 +170,15 @@ When the build has completed you will find a set of files in the <BUILD_DIR>/tmp
 The ``adi-distro-glibc-glibc-x86_64-adsp-sc5xx-minimal-cortexa5t2hf-neon-adsp-sc573-ezkit-toolchain-3.0.0.sh`` is a self-extracting archive containing the SDK.
 
 Installing the SDK
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Invoke the self-extracting archive. It will default to installing to ``/opt/adi-distro/3.0.0`` but gives you the option to select your own install folder during the installation. For the minimal image on SC573
 
 .. code:: bash
 
    $ ./adi-distro-glibc-glibc-x86_64-adsp-sc5xx-minimal-cortexa5t2hf-neon-adsp-sc573-ezkit-toolchain-3.0.0.sh
-   Analog Devices Inc Reference Distro (glibc) SDK installer version 3.0.0
-   =======================================================================
+   **Analog Devices Inc Reference Distro (glibc) SDK installer version 3.0.0**
+
    Enter target directory for SDK (default: /opt/adi-distro-glibc/3.0.0):
    You are about to install the SDK to "/opt/adi-distro-glibc/3.0.0". Proceed [Y/n]? y
    Extracting SDK................................................................................................................done
@@ -182,7 +190,7 @@ Invoke the self-extracting archive. It will default to installing to ``/opt/adi-
 Your SDK is now installed.
 
 Running U-Boot on the Board for the first time
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------
 
 .. note::
 
@@ -193,10 +201,10 @@ Copy the U-Boot binary & loader files to the tftp directory:
 
 .. code:: bash
 
-   $ cp tmp/deploy/images/adsp-sc573-ezkit/u-boot-spl-sc573-ezkit.elf /tftpboot/ 
-   $ cp tmp/deploy/images/adsp-sc573-ezkit/u-boot-proper-sc573-ezkit.elf /tftpboot/ 
-   $ cp tmp/deploy/images/adsp-sc573-ezkit/stage1-boot.ldr /tftpboot/ 
-   $ cp tmp/deploy/images/adsp-sc573-ezkit/stage2-boot.ldr /tftpboot/ 
+   $ cp tmp/deploy/images/adsp-sc573-ezkit/u-boot-spl-sc573-ezkit.elf /tftpboot/
+   $ cp tmp/deploy/images/adsp-sc573-ezkit/u-boot-proper-sc573-ezkit.elf /tftpboot/
+   $ cp tmp/deploy/images/adsp-sc573-ezkit/stage1-boot.ldr /tftpboot/
+   $ cp tmp/deploy/images/adsp-sc573-ezkit/stage2-boot.ldr /tftpboot/
 
 Before installing the software on to the development board, ensure that the following cables are connected:
 
@@ -259,7 +267,17 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
    ;''**Terminal3: GDB**''
    : <code bash>
 
-$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc573-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9c0c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089c0c Loading section .dtb.init.rodata, size 0x1460 lma 0x2008adb0 Loading section .data, size 0x514 lma 0x2008c210 Loading section .u_boot_list, size 0xa50 lma 0x2008c724 Start address 0x20080000, load size 53608 Transfer rate: 29 KB/sec, 7658 bytes/write. (gdb) c Continuing. ^C Program received signal SIGINT, Interrupt. </code>
+$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc573-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9c0c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089c0c Loading section .dtb.init.rodata, size 0x1460 lma 0x2008adb0 Loading section .data, size 0x514 lma 0x2008c210 Loading section .u_boot_list, size 0xa50 lma 0x2008c724 Start address 0x20080000, load size 53608 Transfer rate: 29 KB/sec, 7658 bytes/write. (gdb) c Continuing.
+
++---+
+
+
+| C |
+
++===+
++---+
+
+Program received signal SIGINT, Interrupt. </code>
 
 You will see a message on Terminal 1 running minicom, informing you that you can now load U-Boot Proper
 
@@ -311,14 +329,15 @@ CPU: ADSP ADSP-SC573-0.1 (spi flash boot) Detected Revision: 1.1 Model: ADI sc57
 
 In: serial@0x31003000 Out: serial@0x31003000 Err: serial@0x31003000 Net: eth0: eth0 Hit any key to stop autoboot: 0 => </code>
 
-| 
-| == Flash U-Boot to SPI Flash ==
-| In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot loader files (``stage1-boot.ldr`` & ``stage2-boot.ldr``) on TFTP.
+Flash U-Boot to SPI Flash
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot loader files (``stage1-boot.ldr`` & ``stage2-boot.ldr``) on TFTP.
 
 ::
 
    ;''**Terminal1: minicom**''
-   :  
+   :
 
 .. code:: bash
 
@@ -395,8 +414,8 @@ In order to store the ``serverip`` and the DHCP or otherwise assigned IP address
 
 At this point the U-Boot binary is stored in flash. You can now disconnect the ICE-1000 or ICE-2000 from the development board and make sure to switch the BMODE to position 1. You will only need to reconnect this if your board fails to boot and you need to re-follow these instructions.
 
-| 
-| ====== Booting Linux ======
+Booting Linux
+-------------
 
 Booting Linux from SPI Flash
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -405,15 +424,19 @@ The ADSP-SC573-EZKIT comes equipped with 16 MiB of SPI Flash. There's the option
 
 </code>
 
-| 
-| ==== Booting Linux Using TFTP ==== In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc589>` and a copy of the kernel image should be copied into the **/tftpboot** directory.
+Booting Linux Using TFTP
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc589>` and a copy of the kernel image should be copied into the **/tftpboot** directory.
 
 .. code:: bash
 
    $ cp tmp/deploy/images/adsp-sc573-ezkit/fitImage /tftpboot
 
-| 
-| === NFS Boot === For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
+NFS Boot
+^^^^^^^^
+
+For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
 
 .. code:: bash
 
@@ -452,8 +475,9 @@ The output will indicate that the server is active, i.e.
 
 If it's reported as inactive, wait a few moments and check the status again.
 
-| The root filesystem should then be copied to /romfs.
-| If you are using the ADSP-SC573-EZKIT with the full image (you ran 'bitbake adsp-sc5xx-full'):
+The root filesystem should then be copied to /romfs.
+
+If you are using the ADSP-SC573-EZKIT with the full image (you ran 'bitbake adsp-sc5xx-full'):
 
 .. code:: bash
 
@@ -465,8 +489,10 @@ Or if you are using the ADSP-SC573-EZKIT with the minimal image (you ran 'bitbak
 
    $ sudo tar -xf tmp/deploy/images/adsp-sc573-ezkit/adsp-sc5xx-minimal-adsp-sc573-ezkit.tar.xz -C /romfs
 
-| 
-| === Booting into Linux from TFTP === Next, on the target, from u-boot, run the following command:
+Booting into Linux from TFTP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Next, on the target, from u-boot, run the following command:
 
 .. code:: bash
 
@@ -532,8 +558,10 @@ Format the SD card to EXT filesystem
 
    $ sudo mkfs.ext2 /dev/sdb1
 
-| 
-| === Writing the kernel and file system to the SD Card === Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card. To allow the choice of booting using ramboot and sdcard boot we copy the ramboot image to the SD card as well as extract the minimal image to the SD card.
+Writing the kernel and file system to the SD Card
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card. To allow the choice of booting using ramboot and sdcard boot we copy the ramboot image to the SD card as well as extract the minimal image to the SD card.
 
 .. code:: bash
 
@@ -548,15 +576,15 @@ Format the SD card to EXT filesystem
 
 The file system and kernel image are now installed on to the SD Card. The SD Card can now be safely removed from the Host PC.
 
-| 
-| === Booting Linux from the SD card === Insert the SD card to target board, and reset the board and enter into U-Boot
+Booting Linux from the SD card
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Insert the SD card to target board, and reset the board and enter into U-Boot
 
 .. code:: bash
 
    => run sdcardboot
-   or 
+   or
    => run ramboot_emmc
 
 The linux kernel will then boot up using the file system stored in SD card.
-
-| 

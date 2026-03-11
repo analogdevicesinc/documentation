@@ -9,11 +9,7 @@ The purpose of this activity is to investigate the forward and reverse current v
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 1 - 100Ω Resistor
-| 1 - ZVN2110A NMOS transistor
-| 1 - ZVP2110A PMOS transistor
+ADALM2000 Active Learning Module Solder-less Breadboard 1 - 100Ω Resistor 1 - ZVN2110A NMOS transistor 1 - ZVP2110A PMOS transistor
 
 NMOS Directions:
 ----------------
@@ -75,8 +71,6 @@ Repeat the experiment using the PMOS device. The connections are similar and as 
    Figure 4 PMOS diode connection diagram
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -88,8 +82,6 @@ The waveform generator should be configured for a 100 Hz triangle wave with 10 v
 
    Figure 5 PMOS diode Breadboard Circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -105,8 +97,6 @@ Load the captured data in to Excel and calculate the current. Calculate and plot
 
    Figure 6 PMOS diode XY plot
 
-
-.. _questions-1:
 
 Questions:
 ----------

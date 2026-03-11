@@ -3,9 +3,15 @@
 Switch Multiplexer
 ==================
 
-| |nx1mux.png| |nx2mux.png| |nx3mux.png| |nx4mux.png| |nx6mux.png| |nx8mux.png|
-| ===== Description ===== The Mux Switch block routes one of many possible input signals to the output. The strip of radio buttons is used to select the input signal.
-| ===== Variants =====
+|nx1mux.png| |nx2mux.png| |nx3mux.png| |nx4mux.png| |nx6mux.png| |nx8mux.png|
+
+Description
+-----------
+
+The Mux Switch block routes one of many possible input signals to the output. The strip of radio buttons is used to select the input signal.
+
+Variants
+--------
 
 -  Nx1 Switch
 -  Nx2 Switch
@@ -14,8 +20,10 @@ Switch Multiplexer
 -  Nx8 Switch
 -  Nx12 Switch
 
-| Note: \* <fc #ff0000>Slew Type</fc> - Slew type can be selected for each of the above Switches
-| ===== Targets Supported =====
+Note: \* Slew Type - Slew type can be selected for each of the above Switches
+
+Targets Supported
+-----------------
 
 +----------------+------------+------------------+---------------+------------------+
 | Name           | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -45,29 +53,29 @@ Switch Multiplexer
 | ===== Pins =====
 
 Input
------
+~~~~~
 
-======================= ===== ===============
-Name                    Type  Description
-======================= ===== ===============
-Input<fc #ff0000>X</fc> Audio Input Channel X
-======================= ===== ===============
+====== ===== ===============
+Name   Type  Description
+====== ===== ===============
+InputX Audio Input Channel X
+====== ===== ===============
 
 Output
-------
+~~~~~~
 
-======================== ===== ================
-Name                     Type  Description
-======================== ===== ================
-Output<fc #ff0000>X</fc> Audio Output Channel X
-======================== ===== ================
+======= ===== ================
+Name    Type  Description
+======= ===== ================
+OutputX Audio Output Channel X
+======= ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +---------------------------+---------------+---------+---------------------------------------------------------------------------------------------------------+
 | GUI Parameter             | Default Value | Range   | Function Description                                                                                    |

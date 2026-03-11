@@ -6,21 +6,21 @@ Preface
 
 This user guide describes the :adi:`AD6674` evaluation board :adi:`AD6674-1000EBZ <AD6674>` which provides all of the support circuitry required to operate the ADC in its various modes and configurations. The application software used to interface with the devices is also described. The user guide wiki applies to the follow evaluation boards:
 
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| Evaluation Board Part Number      | Description                                                                   | Board Revision             |
-+===================================+===============================================================================+============================+
-| <fc #9400d3>AD6674-1000EBZ</fc>   | <fc #9400d3>Evaluation board for AD6674-1000; Full Bandwidth</fc>             | <fc #9400d3>9680CE04B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #9400d3>AD6674-750EBZ</fc>    | <fc #9400d3>Evaluation board for AD6674-750; Full Bandwidth</fc>              | <fc #9400d3>9680CE04B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #9400d3>AD6674-500EBZ</fc>    | <fc #9400d3>Evaluation board for AD6674-500; Full Bandwidth</fc>              | <fc #9400d3>9680CE04B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #4682b4>AD6674-LF1000EBZ</fc> | <fc #4682b4>Evaluation board for AD6674-1000; up to 1GHz Input Bandwidth</fc> | <fc #4682b4>9680CE02B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #4682b4>AD6674-LF750EBZ</fc>  | <fc #4682b4>Evaluation board for AD6674-750; up to 1GHz Input Bandwidth</fc>  | <fc #4682b4>9680CE02B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
-| <fc #4682b4>AD6674-LF500EBZ</fc>  | <fc #4682b4>Evaluation board for AD6674-500; up to 1GHz Input Bandwidth</fc>  | <fc #4682b4>9680CE02B</fc> |
-+-----------------------------------+-------------------------------------------------------------------------------+----------------------------+
++------------------------------+--------------------------------------------------------------+----------------+
+| Evaluation Board Part Number | Description                                                  | Board Revision |
++==============================+==============================================================+================+
+| AD6674-1000EBZ               | Evaluation board for AD6674-1000; Full Bandwidth             | 9680CE04B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD6674-750EBZ                | Evaluation board for AD6674-750; Full Bandwidth              | 9680CE04B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD6674-500EBZ                | Evaluation board for AD6674-500; Full Bandwidth              | 9680CE04B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD6674-LF1000EBZ             | Evaluation board for AD6674-1000; up to 1GHz Input Bandwidth | 9680CE02B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD6674-LF750EBZ              | Evaluation board for AD6674-750; up to 1GHz Input Bandwidth  | 9680CE02B      |
++------------------------------+--------------------------------------------------------------+----------------+
+| AD6674-LF500EBZ              | Evaluation board for AD6674-500; up to 1GHz Input Bandwidth  | 9680CE02B      |
++------------------------------+--------------------------------------------------------------+----------------+
 
 | 
 | The :adi:`AD6674` data sheet provides additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`High-Speed Converter Data Source/Capture Boards <en/resources/evaluation-hardware-and-software/evaluation-development-platforms/high-speed-adc-data-capture-boards.html>`. For additional information or questions, send an email to highspeed.converters@analog.com.
@@ -56,14 +56,14 @@ The :adi:`AD6674-1000EBZ <AD6674>` can be evaluated using the :adi:`ADS7-V1EBZ <
 
 .. container:: centeralign
 
-   *Figure 3a. Evaluation Board Connection—*\ :adi:`AD6674-1000EBZ <AD6674>` *(on Left) and* :adi:`ADS7-V1EBZ <eval-ads7-v1>` *(on Right)*
+   *Figure 3a. Evaluation Board Connection—*\ :adi:`AD6674-1000EBZ <AD6674>`\ *(on Left) and* :adi:`ADS7-V1EBZ <eval-ads7-v1>` *(on Right)*
 
 
 |image5|\
 
 .. container:: centeralign
 
-   *Figure 3b. Evaluation Board Connection—*\ :adi:`AD6674-LF1000EBZ <AD6674>` *(on Left) and* :adi:`ADS7-V2EBZ <eval-ads7-v2>` *(on Right)*
+   *Figure 3b. Evaluation Board Connection—*\ :adi:`AD6674-LF1000EBZ <AD6674>`\ *(on Left) and* :adi:`ADS7-V2EBZ <eval-ads7-v2>` *(on Right)*
 
 
 Features
@@ -119,7 +119,7 @@ Equipment Needed
 Getting Started
 ---------------
 
-| This section provides quick start procedures for using the evaluation board for AD6674.
+This section provides quick start procedures for using the evaluation board for AD6674.
 
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
@@ -173,10 +173,10 @@ Software Setup
 
 .. raw:: html
 
-   <details><summary>ACE Setup</summary>
+   <details><summary>ACE Setup
 
 -  Download and install ACE if it is not already installed.
-   -  The AD6674 ACE plug-in can be found under the :adi:`AD6674 Evaluation Board Software Section <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9680.html#eb-relatedsoftware>`, or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).<WRAP>
+   -  The AD6674 ACE plug-in can be found under the :adi:`AD6674 Evaluation Board Software Section <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9680.html#eb-relatedsoftware>`, or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).
    
    .. tip::
 
@@ -194,14 +194,14 @@ Software Setup
    }\ |image7|\ *Figure 5. ACE's AD6674 Plug-in*\
 
 
--  If the AD6674 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.<WRAP>
+-  If the AD6674 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.
 
 .. note::
 
    Note: Differences may occur between ACE plug-in versions, including the version number seen in Figure 7 above or components in any of the other images below - however, these will not affect the performance of the part, nor the fundamental features described in this user guide.
 
 
-</WRAP>
+
 
 -  Double click on the plug-in to open it. This will open the AD6674 Board View.
 
@@ -210,14 +210,14 @@ Software Setup
    \ |image8|\ *Figure 6. AD6674 Board View*\
 
 
-<WRAP>
+
 
 .. note::
 
    Note: ACE will automatically program the FPGA (FPGA_DONE LED should be lit up) and load the default full bandwidth configuration.
 
 
-</WRAP>
+
 
 -  Double click on the blue AD6674 chip (in the middle of the board) to open up the Chip View.
 
@@ -234,7 +234,7 @@ Software Setup
 
 .. raw:: html
 
-   <details><summary>Visual Analog & SPI Controller Setup</summary>
+   <details><summary>Visual Analog & SPI Controller Setup
 
 **Visual Analog Setup**
 
@@ -246,61 +246,60 @@ Software Setup
    //Figure 8. Selecting the :adi:`AD6674` canvas *
 
 
-\* At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in Figure 9.\ \
+- At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in Figure 9.\ \
 
 .. container:: centeralign
 
-   *\ Figure 9. Programming the :adi:`ADS7-V2EBZ <eval-ads7-v2>`\ *
+   *Figure 9. Programming the :adi:`ADS7-V2EBZ <eval-ads7-v2>`*
 
 
-\* If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 10)\ \
-
-.. container:: centeralign
-
-   *\ Figure 10. Expanding Display in VA\ *
-
-
-\* Click the* **Settings** *button in the* **ADC Data Capture** *block as shown in Figure 11 \
+- If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 10)\ \
 
 .. container:: centeralign
 
-   *\ Figure 11. Changing the ADC Capture Settings\ *
+   *Figure 10. Expanding Display in VA*
 
 
-\* On the* **General** *tab make sure the clock frequency is set to* **750MHz** *(or other clock frequency). The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The* :adi:`ADS7-V2 <eval-ads7-v2>` *and* :adi:`ADS7-V1 <eval-ads7-v1>` *FPGA software supports up to 2M FFT capture (1M per channel)\ \
-
-.. container:: centeralign
-
-   *\ Figure 12. Setting the clock frequency and Capture length\ *
-
-
-\* If the board did not Auto-program click on the* **Capture Board** *tab and browse to the* **ad9680_ads7v1.bin** *or the* **ad9680_ads7v2.bin** *file depending on which data capture board is being used. Click the* **Program** *button. The* **FPGA_DONE** *LED should illuminate on the* :adi:`ADS7-V1 <eval-ads7-v1>` *board indicating that the FPGA has been correctly programmed. \* On the* **Device** *tab. Make sure that* **Enable Alternate REFCLK** *option is unchecked. \* Click* **OK**\ **SPI Controller Setup**\ *\* Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController \* Select the appropriate configuration file when prompted. \* In the* **Global** *tab, under the* **Generic Read/Write** *section, write 0x81 to register 0x000. This issues a Soft reset for the DUT. \
+- Click the **Settings** button in the **ADC Data Capture** block as shown in Figure 11 \
 
 .. container:: centeralign
 
-   *\ Figure 13. Sending a Soft Reset to the AD6674\ *
+   *Figure 11. Changing the ADC Capture Settings*
 
 
-\* The JESD204B quick configuration and Lane Rate registers are available in the* **ADCBase3** *tab. Set the Lane Rate setting register 0x56E to* **Low Lane Rate Mode**\ *\ \
-
-.. container:: centeralign
-
-   *\ Figure 14. Setting the JESD204B Lane Rate\ *
-
-
-\* Set the JESD204B Quick Configuration register 0x570. For 1000MSPS operation with with default conditions (*\ Noise Shaped Requantizer (NSR) Mode\ *), the values for* **L.M.F** *are* **4.2.1**\ *\ \
+- On the **General** tab make sure the clock frequency is set to **750MHz** *(or other clock frequency). The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The* :adi:`ADS7-V2 <eval-ads7-v2>` *and* :adi:`ADS7-V1 <eval-ads7-v1>` *FPGA software supports up to 2M FFT capture (1M per channel)\ \
 
 .. container:: centeralign
 
-   *\ Figure 15. Setting the JESD204B Quick Configuration Register\ *
+   *Figure 12. Setting the clock frequency and Capture length*
 
 
-\* After the quick configuration setting is completed, the PLL Lock Detect register 0x56F will read 0x80 to denote a lock. The SPIController interface will show a "1" to denote a lock. \* Toggle the JESD204B link by checking and then unchecking the* **JESD204B Serial Transmit Power Down** *box \* Individual Channel control for* **ADC A** *and* **ADC B** *are done using the Device Index Register (0x008) in the Global tab.\ \
+- If the board did not Auto-program click on the **Capture Board** tab and browse to the **ad9680_ads7v1.bin** or the **ad9680_ads7v2.bin** file depending on which data capture board is being used. Click the **Program** button. The **FPGA_DONE** LED should illuminate on the* :adi:`ADS7-V1 <eval-ads7-v1>` *board indicating that the FPGA has been correctly programmed. \* On the **Device** tab. Make sure that **Enable Alternate REFCLK** option is unchecked. \* Click **OK***SPI Controller Setup**\* Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController \* Select the appropriate configuration file when prompted. \* In the **Global** tab, under the **Generic Read/Write** section, write 0x81 to register 0x000. This issues a Soft reset for the DUT. \
 
 .. container:: centeralign
 
-   *\ Figure 16. Device Index for ADC Channel A and Channel B//
+   *Figure 13. Sending a Soft Reset to the AD6674*
 
+
+- The JESD204B quick configuration and Lane Rate registers are available in the **ADCBase3** tab. Set the Lane Rate setting register 0x56E to **Low Lane Rate Mode**\ *\ \
+
+.. container:: centeralign
+
+   *Figure 14. Setting the JESD204B Lane Rate*
+
+
+- Set the JESD204B Quick Configuration register 0x570. For 1000MSPS operation with with default conditions (*Noise Shaped Requantizer (NSR) Mode*), the values for **L.M.F** are **4.2.1**\ *\ \
+
+.. container:: centeralign
+
+   *Figure 15. Setting the JESD204B Quick Configuration Register*
+
+
+- After the quick configuration setting is completed, the PLL Lock Detect register 0x56F will read 0x80 to denote a lock. The SPIController interface will show a "1" to denote a lock. \* Toggle the JESD204B link by checking and then unchecking the **JESD204B Serial Transmit Power Down** box \* Individual Channel control for **ADC A** and **ADC B** are done using the Device Index Register (0x008) in the Global tab.\ \
+
+.. container:: centeralign
+
+   *Figure 16. Device Index for ADC Channel A and Channel B*
 
 -  Under **ADC A** and **ADC B** tabs the options for Channel A and B are listed. Default settings have been programmed to ensure optimal performance for the input bandwidth and sample rate. Only the following options need to be operated with:
 
@@ -321,7 +320,7 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 
 .. raw:: html
 
-   <details><summary>ACE Configuration</summary>
+   <details><summary>ACE Configuration
 
 -  Under **Initial Configuration** at board view, set the following configuration below:
 
@@ -338,14 +337,14 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
    \ |image11|\ *Figure 17. Chip Settings*\
 
 
--  Click **Apply** to apply the chip settings. Set the **reference clock** to **187.5 MHz** to match these settings and click AD6674 to be directed to chip view.<WRAP>
+-  Click **Apply** to apply the chip settings. Set the **reference clock** to **187.5 MHz** to match these settings and click AD6674 to be directed to chip view.
 
 .. note::
 
    Note: ACE will automatically load the default NSR mode configuration and can skip to step 6 to proceed to **Analysis** tab to capture data.
 
 
-</WRAP>
+
 
 -  Click **Apply** at **AD6674 Configuration**, and then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.\ |image12|\
 
@@ -382,14 +381,14 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
    \ *Figure 22. Display FFTs and Run once*\
 
 
-<WRAP>
+
 
 .. tip::
 
    Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE's data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.
 
 
-</WRAP>
+
 
 -  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75 MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at the desired level. NSR imposes a ~3dB loss in the signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -4.0 dBFS in the FFT.\ |image17|\
 
@@ -409,7 +408,7 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 
 .. raw:: html
 
-   <details><summary>Visual Analog & SPI Controller Configuration</summary>
+   <details><summary>Visual Analog & SPI Controller Configuration
 
 **SPI Controller Configuration**
 
@@ -477,7 +476,7 @@ Sample Configuration 2: VDR Mode
 
 .. raw:: html
 
-   <details><summary>ACE Configuration</summary>
+   <details><summary>ACE Configuration
 
 -  Under **Initial Configuration** at board view, set the following configuration below:
 
@@ -495,14 +494,14 @@ Sample Configuration 2: VDR Mode
    \ |image25|\ *Figure 31. Chip Settings*\
 
 
--  Click **Apply** to apply the chip settings. Set the **reference clock** to **375 MHz** to match these settings and click AD6674 to be directed to chip view.<WRAP>
+-  Click **Apply** to apply the chip settings. Set the **reference clock** to **375 MHz** to match these settings and click AD6674 to be directed to chip view.
 
 .. note::
 
    Note: ACE will automatically load the initialization sequence after applying initial configurations.
 
 
-</WRAP>
+
 
 -  In the chip view, set **Tuning Word** to **0** and click **Apply** at **AD6674 Configuration**. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.\ |image26|\
 
@@ -539,14 +538,14 @@ Sample Configuration 2: VDR Mode
    \ *Figure 36. Display FFTs and Run once*\
 
 
-<WRAP>
+
 
 .. tip::
 
    Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE's data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.
 
 
-</WRAP>
+
 
 -  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. |image31|\
 
@@ -566,7 +565,7 @@ Sample Configuration 2: VDR Mode
 
 .. raw:: html
 
-   <details><summary>Visual Analog & SPI Controller Configuration</summary>
+   <details><summary>Visual Analog & SPI Controller Configuration
 
 **SPI Controller Configuration**
 
@@ -642,7 +641,7 @@ Sample Configuration 2.1: VDR Mode - Use Control Bits as VDR Punish Bits and the
 
 .. raw:: html
 
-   <details><summary>Visual Analog & SPI Controller Configuration</summary>
+   <details><summary>Visual Analog & SPI Controller Configuration
 
 **SPI Controller Configuration**
 
@@ -708,7 +707,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 .. raw:: html
 
-   <details><summary>ACE Configuration</summary>
+   <details><summary>ACE Configuration
 
 -  Under **Initial Configuration** at board view, set the following configuration below:
 
@@ -727,14 +726,14 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
    \ |image46|\ *Figure 52. Chip Settings*\
 
 
--  Click **Apply** to apply the chip settings. Set the **reference clock** to **187.5 MHz** to match these settings and click AD6674 to be directed to chip view.<WRAP>
+-  Click **Apply** to apply the chip settings. Set the **reference clock** to **187.5 MHz** to match these settings and click AD6674 to be directed to chip view.
 
 .. note::
 
    Note: ACE will automatically load the initialization sequence after applying initial configurations.
 
 
-</WRAP>
+
 
 -  In the chip view, set the following additional configuration to DDC 0 and DDC 1 by selecting the dropdown:
 
@@ -785,14 +784,14 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
    \ *Figure 58. Display FFTs and Run once*\
 
 
-<WRAP>
+
 
 .. tip::
 
    Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE's data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.
 
 
-</WRAP>
+
 
 -  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. |image53|\
 
@@ -812,7 +811,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 .. raw:: html
 
-   <details><summary>Visual Analog & SPI Controller Configuration</summary>
+   <details><summary>Visual Analog & SPI Controller Configuration
 
 **SPI Controller Configuration**
 
@@ -894,7 +893,7 @@ Sample Configuration 4: 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 .. raw:: html
 
-   <details><summary>Visual Analog & SPI Controller Configuration</summary>
+   <details><summary>Visual Analog & SPI Controller Configuration
 
 **SPI Controller Configuration**
 
@@ -971,7 +970,7 @@ Troubleshooting Tips
 
 ::
 
-   *<WRAP>
+   *
 
 ======== ========== ===============
 Domain   Test Point Approx. Voltage
@@ -984,24 +983,22 @@ DVDD     TP407      1.25 V
 DRVDD    TP410      1.25 V
 ======== ========== ===============
 
-</WRAP>
+
 
 -  If a short is detected between any of the supply domains and ground, or an open is detected across fuse chip F400 or F401, a component may have been damaged.
 
-\*\* Evaluation board is not communicating with the ADS7-V2 / No SPI communication **\* Make sure that the FPGA on the ADS7-V2 has been programmed - a lit LED DS15 (**\ FPGA_DONE*\*) on the top of the ADS7-V2 and a powered fan are good indicators of the FPGA being programmed.
+\*\* Evaluation board is not communicating with the ADS7-V2 / No SPI communication **\* Make sure that the FPGA on the ADS7-V2 has been programmed - a lit LED DS15 (**FPGA_DONE**) on the top of the ADS7-V2 and a powered fan are good indicators of the FPGA being programmed.
 
 -  Check the common mode voltage on the JESD204B traces. On the evaluation board, the common mode voltage should be roughly two-thirds of DRVDD_1. On the ADS7-V2, the common mode voltage should be around 1.2 volts.
 -  To test SPI operation, attempt to both read and write to register 0x00A (Scratch Pad) using ACE's Register Debugger (Tools -> Register Debugger). This register is an open register available for testing memory reads and writes. If the register reads back the same value written to it, SPI is operational.
 -  All registers reading back as either all ones or all zeros (i.e., 0xFF or 0x00) may indicate no SPI communication.
 -  Register 0x000 (SPI Configuration A) reading back 0x81 in ACE may indicate no SPI communication as a result of the FPGA on the ADS7-V2 not being programmed.
 
-\*\* ACE software fails to capture date **\* Ensure that the board is functioning properly and that SPI communication is successful - see previous troubleshooting tips. \* Check the Clock Status register 0x011C to see if the input sample clock is being detected. 0x01 indicates detection, 0x00 indicates no clock detected. Check the signal generator input on connector J801. Try checking the common mode voltage on the clock pins, which should be roughly two-thirds of AVDD_1. Try placing a differential oscilloscope probe on the clock pins to see if the clock signal is reaching the chip. \* Check the PLL Locked indicator (see figure 23) or register 0x056F (PLL Status). If the light in the plugin chip view is green or if the register reads back 0x80, the PLL is locked. If it is not locked: \* Check the clock being input to connector J801. \* Check the JESD204B settings under the Initial Configuration. Reference the** :adi:`AD6674` **datasheet for supported lane options. \* Check the Reference Clock and make sure it matches your JESD settings. \* Make sure P100 (Power Down / Standby Jumper) is not jumped.** FFT plot appears abnormal \*\*
+\*\* ACE software fails to capture date **\* Ensure that the board is functioning properly and that SPI communication is successful - see previous troubleshooting tips. \* Check the Clock Status register 0x011C to see if the input sample clock is being detected. 0x01 indicates detection, 0x00 indicates no clock detected. Check the signal generator input on connector J801. Try checking the common mode voltage on the clock pins, which should be roughly two-thirds of AVDD_1. Try placing a differential oscilloscope probe on the clock pins to see if the clock signal is reaching the chip. \* Check the PLL Locked indicator (see figure 23) or register 0x056F (PLL Status). If the light in the plugin chip view is green or if the register reads back 0x80, the PLL is locked. If it is not locked: \* Check the clock being input to connector J801. \* Check the JESD204B settings under the Initial Configuration. Reference the** :adi:`AD6674` **datasheet for supported lane options. \* Check the Reference Clock and make sure it matches your JESD settings. \* Make sure P100 (Power Down / Standby Jumper) is not jumped.** FFT plot appears abnormal**
 
 -  If you see a normal noise floor when you disconnect the signal generator from the analog input, be sure you are not overdriving the ADC. Reduce input level if necessary.
 -  In VisualAnalog, Click on the Settings button in the **Input Formatter** block. Check that **Number Format** is set to the correct encoding (twos compliment by default). Repeat for the other channel.
--  Issue a **Data Path Soft Reset** to DUT.
-
-\*\* The FFT plot appears normal, but performance is poor. \*\*
+-  Issue a **Data Path Soft Reset** to DUT.** The FFT plot appears normal, but performance is poor. \*\*
 
 -  Make sure you are using the appropriate band-pass filter on the analog input.
 -  Make sure the signal generators for the clock and the analog input are clean (low phase noise).
@@ -1020,10 +1017,7 @@ DRVDD    TP410      1.25 V
 
 .. container:: centeralign
 
-   \ *Figure 80. Setting the correct clock frequency in VisualAnalog*\
-
-
-\*\* VisualAnalog indicates that the “FIFO capture timed out” or "FIFO not ready for read back" \*\*
+   \ *Figure 80. Setting the correct clock frequency in VisualAnalog*\** VisualAnalog indicates that the “FIFO capture timed out” or "FIFO not ready for read back"**
 
 -  Make sure all power and USB connections are secure.
 -  Ensure that JESD204B Configuration is within PLL Range and is on PLL Locked.

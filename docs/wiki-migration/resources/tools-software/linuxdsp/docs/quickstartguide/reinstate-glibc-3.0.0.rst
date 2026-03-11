@@ -59,8 +59,8 @@ and delete the bottom conflict text:
        ln -s /lib/systemd/systemd ${IMAGE_ROOTFS}/sbin/init
    }
 
-   addtask do_set_init after do_rootfs before do_image
-   =======
+   **addtask do_set_init after do_rootfs before do_image**
+
    >>>>>>> parent of 540ce48... Further reduce RFS size via poky-tiny.conf instead of poky.conf
 
 Proceed with building.

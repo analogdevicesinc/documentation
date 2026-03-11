@@ -1,8 +1,9 @@
 Medium Size EQ
 ==============
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| |medpic1.png| This block gives access to two general 2nd-order filters: Peaking and Shelving EQ. The algorithms driving this block are the same as for the other 2nd-order filters, but it simply offers an alternate layout and control of parameters that may prove more useful for your application.
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+|medpic1.png| This block gives access to two general 2nd-order filters: Peaking and Shelving EQ. The algorithms driving this block are the same as for the other 2nd-order filters, but it simply offers an alternate layout and control of parameters that may prove more useful for your application.
 
 As can be seen from the figure at right, the block controls frequency, gain, and filter type.
 
@@ -27,15 +28,14 @@ To use this block:
      *5-channel - Single-Precision
      *6-channel - Double-Precision
      *6-channel - Single-Precision
-   * Click the blue icon to choose which filter you want to implement: Peak or High- / Low-Shelf. 
+   * Click the blue icon to choose which filter you want to implement: Peak or High- / Low-Shelf.
    * Double-click right in the middle of the block to bring up the EQ parameter window:
    {{ idxpic2.png }}
    * Select from the dropdown menu which of the two types of filters you want and enter the parameters desired. Peaking is the default.
 
 After choosing the filter type, right-click the block to either Grow or Add to it. Growing adds another frequency band to the block, equivalent to having two individual filters in series, while adding an algorithm adds another input/output pair, equivalent to adding a filter in parallel.
 
-| 
-| |medpic3.png| **Peaking EQ** Peaking boosts or cuts a designated center frequency.
+|medpic3.png| **Peaking EQ** Peaking boosts or cuts a designated center frequency.
 
 *Gain:* This field sets the overall gain (scale gain) of the filter. Edit your desired value (+/-15) in the upper-right Gain field or click the arrows.
 
@@ -45,18 +45,27 @@ After choosing the filter type, right-click the block to either Grow or Add to i
 
 *Q:* Set the Q you want (max 51) by entering a value in the field, clicking its arrows, or using the concentric knobs, where the outer one controls the integer value and the inner one the decimal value. Q governs the narrowness of the filter, being the ratio of the center frequency to the half-power points (-3dB) on either side. The higher the Q the faster the transition between passband and stopband.
 
-| This is a quick and versatile block, as can be seen by comparing the below curves with their settings. It is highly useful for developing an educated ear.
-| |medpic4.png|
+This is a quick and versatile block, as can be seen by comparing the below curves with their settings. It is highly useful for developing an educated ear.
 
-| Negative gain and shallow Q (above) produce this:
-| |medpic5.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic4.png
+   :alt: medpic4.png
 
-| while positive gain and narrower Q (same scale gain and same frequency; below),
-| |medpic6.png|
+Negative gain and shallow Q (above) produce this:
 
-| quickly produce this:
-| |medpic7.png|
-| |medpic8.png| *Shelving EQ:* Low / High Shelf
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic5.png
+   :alt: medpic5.png
+
+while positive gain and narrower Q (same scale gain and same frequency; below),
+
+
+|medpic6.png|
+
+quickly produce this:
+
+
+|medpic7.png|
+
+|medpic8.png| *Shelving EQ:* Low / High Shelf
 
 Shelving evenly boosts or cuts all frequencies either above (= High Shelf, ) or below (= Low Shelf,) the cutoff frequency.
 
@@ -71,18 +80,18 @@ The other parameters:
 
 *Scale Gain (dB):* This value controls the overall gain of the filter. Enter it in the field or click the arrows at right.
 
-| Handy for ear training, this is a quick and versatile block, as can be seen by comparing the below curves with their parameters.
-| |medpic9.png|
-| |medpic10.png|
+Handy for ear training, this is a quick and versatile block, as can be seen by comparing the below curves with their parameters.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic9.png
+   :alt: medpic9.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic10.png
+   :alt: medpic10.png
 
 As with Peaking, Shelving parameters may be changed handily and the results immediately checked for audible effect.
 
 .. |medpic1.png| image:: https://wiki.analog.com/_media/medpic1.png
 .. |medpic3.png| image:: https://wiki.analog.com/_media/medpic3.png
-.. |medpic4.png| image:: https://wiki.analog.com/_media/medpic4.png
-.. |medpic5.png| image:: https://wiki.analog.com/_media/medpic5.png
 .. |medpic6.png| image:: https://wiki.analog.com/_media/medpic6.png
 .. |medpic7.png| image:: https://wiki.analog.com/_media/medpic7.png
 .. |medpic8.png| image:: https://wiki.analog.com/_media/medpic8.png
-.. |medpic9.png| image:: https://wiki.analog.com/_media/medpic9.png
-.. |medpic10.png| image:: https://wiki.analog.com/_media/medpic10.png

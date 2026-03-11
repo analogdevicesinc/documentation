@@ -22,10 +22,7 @@ The Transmitter library provides a comprehensive set of APIs to control, configu
 
 Below is the list of all functions implemented in this library:
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxInit</fc> (BOOL FullInit)**\
-
+**ATV_ERR ADIAPI_TxInit (BOOL FullInit)**
 
 .. container:: box center
 
@@ -48,10 +45,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxShutdown</fc> (TX_PD_MODE PdMode)**\
-
+**ATV_ERR ADIAPI_TxShutdown (TX_PD_MODE PdMode)**
 
 .. container:: box center
 
@@ -74,10 +68,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetConfig</fc> (TX_CONFIG UserConfig, BOOL Set)**\
-
+**ATV_ERR ADIAPI_TxSetConfig (TX_CONFIG UserConfig, BOOL Set)**
 
 .. container:: box center
 
@@ -108,10 +99,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxIsr</fc> (void)**\
-
+**ATV_ERR ADIAPI_TxIsr (void)**
 
 .. container:: box center
 
@@ -171,10 +159,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxIntPending</fc> (void)**\
-
+**ATV_ERR ADIAPI_TxIntPending (void)**
 
 .. container:: box center
 
@@ -194,10 +179,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetEnabledEvents</fc> (TX_EVENT Events, BOOL Enable)**\
-
+**ATV_ERR ADIAPI_TxSetEnabledEvents (TX_EVENT Events, BOOL Enable)**
 
 .. container:: box center
 
@@ -239,10 +221,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetChipRevision</fc> (UINT16 \*TxRev)**\
-
+**ATV_ERR ADIAPI_TxGetChipRevision (UINT16 \*TxRev)**
 
 .. container:: box center
 
@@ -261,10 +240,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxOverrideHpdPd</fc> (BOOL Override)**\
-
+**ATV_ERR ADIAPI_TxOverrideHpdPd (BOOL Override)**
 
 .. container:: box center
 
@@ -286,10 +262,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxEnableTmds</fc> (BOOL Enable, BOOL SoftOn)**\
-
+**ATV_ERR ADIAPI_TxEnableTmds (BOOL Enable, BOOL SoftOn)**
 
 .. container:: box center
 
@@ -316,10 +289,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetInputPixelFormat</fc> (UCHAR BitsPerColor, TX_IN_FORMAT Format, UCHAR Style, TX_CHAN_ALIGN Align, BOOL RisingEdge, BOOL BitSwap)**\
-
+**ATV_ERR ADIAPI_TxSetInputPixelFormat (UCHAR BitsPerColor, TX_IN_FORMAT Format, UCHAR Style, TX_CHAN_ALIGN Align, BOOL RisingEdge, BOOL BitSwap)**
 
 .. container:: box center
 
@@ -369,10 +339,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetInputVideoClock</fc> (UCHAR ClkDivide)**\
-
+**ATV_ERR ADIAPI_TxSetInputVideoClock (UCHAR ClkDivide)**
 
 .. container:: box center
 
@@ -392,10 +359,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetOutputPixelFormat</fc> (TX_OUT_ENCODING OutEnc, BOOL Interpolate)**\
-
+**ATV_ERR ADIAPI_TxSetOutputPixelFormat (TX_OUT_ENCODING OutEnc, BOOL Interpolate)**
 
 .. container:: box center
 
@@ -425,10 +389,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetManualPixelRepeat</fc> (UCHAR Vic, UCHAR Factor, UCHAR PrValue)**\
-
+**ATV_ERR ADIAPI_TxSetManualPixelRepeat (UCHAR Vic, UCHAR Factor, UCHAR PrValue)**
 
 .. container:: box center
 
@@ -450,10 +411,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetAutoPixelRepeat</fc> (UCHAR Mode, UCHAR Vic, TX_REFR_RATE RefRate, UCHAR AspectRatio)**\
-
+**ATV_ERR ADIAPI_TxSetAutoPixelRepeat (UCHAR Mode, UCHAR Vic, TX_REFR_RATE RefRate, UCHAR AspectRatio)**
 
 .. container:: box center
 
@@ -489,10 +447,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetOutputColorDepth</fc> (UCHAR Depth, TX_DC_METHOD DcMethod)**\
-
+**ATV_ERR ADIAPI_TxSetOutputColorDepth (UCHAR Depth, TX_DC_METHOD DcMethod)**
 
 .. container:: box center
 
@@ -516,10 +471,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetCSC</fc> (TX_CS_MODE InColorSpace, TX_CS_MODE OutColorSpace)**\
-
+**ATV_ERR ADIAPI_TxSetCSC (TX_CS_MODE InColorSpace, TX_CS_MODE OutColorSpace)**
 
 .. container:: box center
 
@@ -581,10 +533,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetAudioInterface</fc> (TX_AUD_FORMAT InputFormat, TX_AUD_PKT_TYPE OutType, UCHAR HbrStrmCount)**\
-
+**ATV_ERR ADIAPI_TxSetAudioInterface (TX_AUD_FORMAT InputFormat, TX_AUD_PKT_TYPE OutType, UCHAR HbrStrmCount)**
 
 .. container:: box center
 
@@ -675,10 +624,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetAudChanMapping</fc> (TX_AUD_CHAN InChan, TX_AUD_CHAN OutSample)**\
-
+**ATV_ERR ADIAPI_TxSetAudChanMapping (TX_AUD_CHAN InChan, TX_AUD_CHAN OutSample)**
 
 .. container:: box center
 
@@ -736,10 +682,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetAudNValue</fc> (UINT32 NValue)**\
-
+**ATV_ERR ADIAPI_TxSetAudNValue (UINT32 NValue)**
 
 .. container:: box center
 
@@ -760,10 +703,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetAudCTS</fc> (UINT32 CTS)**\
-
+**ATV_ERR ADIAPI_TxSetAudCTS (UINT32 CTS)**
 
 .. container:: box center
 
@@ -784,10 +724,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetAudMCLK</fc> (TX_MCLK_FREQ MClk)**\
-
+**ATV_ERR ADIAPI_TxSetAudMCLK (TX_MCLK_FREQ MClk)**
 
 .. container:: box center
 
@@ -814,10 +751,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetAudClkPolarity</fc> (BOOL RisingEdge)**\
-
+**ATV_ERR ADIAPI_TxSetAudClkPolarity (BOOL RisingEdge)**
 
 .. container:: box center
 
@@ -839,10 +773,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetAudChStatSampFreq</fc> (TX_AUD_FS SampFreq)**\
-
+**ATV_ERR ADIAPI_TxSetAudChStatSampFreq (TX_AUD_FS SampFreq)**
 
 .. container:: box center
 
@@ -892,10 +823,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetAudChanStatus</fc> (BOOL FromStream, TX_CHAN_STATUS \*ChanStat)**\
-
+**ATV_ERR ADIAPI_TxSetAudChanStatus (BOOL FromStream, TX_CHAN_STATUS \*ChanStat)**
 
 .. container:: box center
 
@@ -935,10 +863,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxAudInputEnable</fc> (TX_AUD_INTERFACE Interface, BOOL Enable)**\
-
+**ATV_ERR ADIAPI_TxAudInputEnable (TX_AUD_INTERFACE Interface, BOOL Enable)**
 
 .. container:: box center
 
@@ -980,10 +905,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetI2sInput</fc> (UCHAR ChanCount, UCHAR ChanAlloc, TX_AUD_PKT_TYPE AudType)**\
-
+**ATV_ERR ADIAPI_TxSetI2sInput (UCHAR ChanCount, UCHAR ChanAlloc, TX_AUD_PKT_TYPE AudType)**
 
 .. container:: box center
 
@@ -1021,10 +943,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetOutputMode</fc> (TX_OUTPUT_MODE OutMode)**\
-
+**ATV_ERR ADIAPI_TxSetOutputMode (TX_OUTPUT_MODE OutMode)**
 
 .. container:: box center
 
@@ -1047,10 +966,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxHdcpEnable</fc> (BOOL EncEnable, BOOL FrameEncEnable)**\
-
+**ATV_ERR ADIAPI_TxHdcpEnable (BOOL EncEnable, BOOL FrameEncEnable)**
 
 .. container:: box center
 
@@ -1077,10 +993,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetBksvList</fc> (UCHAR \*BksvList, UCHAR \*NumOfBksvs)**\
-
+**ATV_ERR ADIAPI_TxGetBksvList (UCHAR \*BksvList, UCHAR \*NumOfBksvs)**
 
 .. container:: box center
 
@@ -1101,10 +1014,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetBstatus</fc> (UINT16 \*Bstatus, UCHAR \*Bcaps)**\
-
+**ATV_ERR ADIAPI_TxGetBstatus (UINT16 \*Bstatus, UCHAR \*Bcaps)**
 
 .. container:: box center
 
@@ -1125,10 +1035,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetHdcpState</fc> (TX_HDCP_STATE \*HdcpState)**\
-
+**ATV_ERR ADIAPI_TxGetHdcpState (TX_HDCP_STATE \*HdcpState)**
 
 .. container:: box center
 
@@ -1153,10 +1060,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetLastHdcpError</fc> (TX_HDCP_ERR \*Error)**\
-
+**ATV_ERR ADIAPI_TxGetLastHdcpError (TX_HDCP_ERR \*Error)**
 
 .. container:: box center
 
@@ -1186,10 +1090,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetEdidSegment</fc> (UCHAR SegNum, UCHAR \*SegBuf)**\
-
+**ATV_ERR ADIAPI_TxGetEdidSegment (UCHAR SegNum, UCHAR \*SegBuf)**
 
 .. container:: box center
 
@@ -1210,10 +1111,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetHpdMsenState</fc> (BOOL \*Hpd, BOOL \*Msen)**\
-
+**ATV_ERR ADIAPI_TxGetHpdMsenState (BOOL \*Hpd, BOOL \*Msen)**
 
 .. container:: box center
 
@@ -1233,10 +1131,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetEdidControllerState</fc> (TX_EDID_CTRL_STATE \*State)**\
-
+**ATV_ERR ADIAPI_TxGetEdidControllerState (TX_EDID_CTRL_STATE \*State)**
 
 .. container:: box center
 
@@ -1261,10 +1156,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxOutputModeHdmi</fc> (BOOL \*IsHdmi)**\
-
+**ATV_ERR ADIAPI_TxOutputModeHdmi (BOOL \*IsHdmi)**
 
 .. container:: box center
 
@@ -1284,10 +1176,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxHdcpEnabled</fc> (BOOL \*HdcpOn)**\
-
+**ATV_ERR ADIAPI_TxHdcpEnabled (BOOL \*HdcpOn)**
 
 .. container:: box center
 
@@ -1310,10 +1199,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxOutputEncrypted</fc> (BOOL \*Encrypted)**\
-
+**ATV_ERR ADIAPI_TxOutputEncrypted (BOOL \*Encrypted)**
 
 .. container:: box center
 
@@ -1333,10 +1219,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxPllLocked</fc> (BOOL \*Locked)**\
-
+**ATV_ERR ADIAPI_TxPllLocked (BOOL \*Locked)**
 
 .. container:: box center
 
@@ -1359,10 +1242,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetStatus</fc> (TX_STATUS \*TxStat)**\
-
+**ATV_ERR ADIAPI_TxGetStatus (TX_STATUS \*TxStat)**
 
 .. container:: box center
 
@@ -1449,10 +1329,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxMuteAudio</fc> (BOOL Mute)**\
-
+**ATV_ERR ADIAPI_TxMuteAudio (BOOL Mute)**
 
 .. container:: box center
 
@@ -1474,10 +1351,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxMuteVideo</fc> (BOOL Mute)**\
-
+**ATV_ERR ADIAPI_TxMuteVideo (BOOL Mute)**
 
 .. container:: box center
 
@@ -1499,10 +1373,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetAvmute</fc> (TX_AVMUTE State)**\
-
+**ATV_ERR ADIAPI_TxSetAvmute (TX_AVMUTE State)**
 
 .. container:: box center
 
@@ -1526,10 +1397,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetAvmute</fc> (TX_AVMUTE \*State)**\
-
+**ATV_ERR ADIAPI_TxGetAvmute (TX_AVMUTE \*State)**
 
 .. container:: box center
 
@@ -1553,10 +1421,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxEnablePackets</fc> (UINT16 Packets, BOOL Enable)**\
-
+**ATV_ERR ADIAPI_TxEnablePackets (UINT16 Packets, BOOL Enable)**
 
 .. container:: box center
 
@@ -1595,10 +1460,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxGetEnabledPackets</fc> (UINT16 \*Packets)**\
-
+**ATV_ERR ADIAPI_TxGetEnabledPackets (UINT16 \*Packets)**
 
 .. container:: box center
 
@@ -1628,10 +1490,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSendAVInfoFrame</fc> (UCHAR \*Packet, UCHAR Size)**\
-
+**ATV_ERR ADIAPI_TxSendAVInfoFrame (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
 
@@ -1652,10 +1511,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSendAudioInfoFrame</fc> (UCHAR \*Packet, UCHAR Size)**\
-
+**ATV_ERR ADIAPI_TxSendAudioInfoFrame (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
 
@@ -1678,10 +1534,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSendACPPacket</fc> (UCHAR \*Packet, UCHAR Size)**\
-
+**ATV_ERR ADIAPI_TxSendACPPacket (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
 
@@ -1702,10 +1555,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSendSPDPacket</fc> (UCHAR \*Packet, UCHAR Size)**\
-
+**ATV_ERR ADIAPI_TxSendSPDPacket (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
 
@@ -1726,10 +1576,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSendISRC1Packet</fc> (UCHAR \*Packet, UCHAR Size)**\
-
+**ATV_ERR ADIAPI_TxSendISRC1Packet (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
 
@@ -1750,10 +1597,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSendISRC2Packet</fc> (UCHAR \*Packet, UCHAR Size)**\
-
+**ATV_ERR ADIAPI_TxSendISRC2Packet (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
 
@@ -1774,10 +1618,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSendGMDPacket</fc> (UCHAR \*Packet, UCHAR Size)**\
-
+**ATV_ERR ADIAPI_TxSendGMDPacket (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
 
@@ -1798,10 +1639,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSendMpegPacket</fc> (UCHAR \*Packet, UCHAR Size)**\
-
+**ATV_ERR ADIAPI_TxSendMpegPacket (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
 
@@ -1822,10 +1660,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSendSpare1Packet</fc> (UCHAR \*Packet, UCHAR Size)**\
-
+**ATV_ERR ADIAPI_TxSendSpare1Packet (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
 
@@ -1846,10 +1681,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSendSpare2Packet</fc> (UCHAR \*Packet, UCHAR Size)**\
-
+**ATV_ERR ADIAPI_TxSendSpare2Packet (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
 
@@ -1870,10 +1702,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxCecEnable</fc> (BOOL Enable)**\
-
+**ATV_ERR ADIAPI_TxCecEnable (BOOL Enable)**
 
 .. container:: box center
 
@@ -1895,10 +1724,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxCecReset</fc> (void)**\
-
+**ATV_ERR ADIAPI_TxCecReset (void)**
 
 .. container:: box center
 
@@ -1917,10 +1743,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxCecSendMessage</fc> (UCHAR \*MsgPtr, UCHAR MsgLen)**\
-
+**ATV_ERR ADIAPI_TxCecSendMessage (UCHAR \*MsgPtr, UCHAR MsgLen)**
 
 .. container:: box center
 
@@ -1945,10 +1768,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxCecSendMessageOut</fc> (void)**\
-
+**ATV_ERR ADIAPI_TxCecSendMessageOut (void)**
 
 .. container:: box center
 
@@ -1968,10 +1788,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxCecResendLastMessage</fc> (void)**\
-
+**ATV_ERR ADIAPI_TxCecResendLastMessage (void)**
 
 .. container:: box center
 
@@ -1991,10 +1808,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxCecReadMessage</fc> (UCHAR \*MsgPtr, UCHAR \*MsgLen)**\
-
+**ATV_ERR ADIAPI_TxCecReadMessage (UCHAR \*MsgPtr, UCHAR \*MsgLen)**
 
 .. container:: box center
 
@@ -2015,10 +1829,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxCecSetLogicalAddr</fc> (UCHAR LogAddr, UCHAR DevId, BOOL Enable)**\
-
+**ATV_ERR ADIAPI_TxCecSetLogicalAddr (UCHAR LogAddr, UCHAR DevId, BOOL Enable)**
 
 .. container:: box center
 
@@ -2040,10 +1851,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxCecAllocateLogAddr</fc> (UCHAR \*LogAddrList)**\
-
+**ATV_ERR ADIAPI_TxCecAllocateLogAddr (UCHAR \*LogAddrList)**
 
 .. container:: box center
 
@@ -2063,10 +1871,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxCecGetStatus</fc> (UCHAR \*Status)**\
-
+**ATV_ERR ADIAPI_TxCecGetStatus (UCHAR \*Status)**
 
 .. container:: box center
 
@@ -2112,10 +1917,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxArcSetMode</fc> (TX_ARC_MODE Mode)**\
-
+**ATV_ERR ADIAPI_TxArcSetMode (TX_ARC_MODE Mode)**
 
 .. container:: box center
 
@@ -2139,10 +1941,7 @@ Below is the list of all functions implemented in this library:
    
 
 
-.. container:: box
-
-   \ **ATV_ERR <fc blue>ADIAPI_TxSetVideoClkDelay</fc> (TX_VIDEO_CLK_DELAY Delay)**\
-
+**ATV_ERR ADIAPI_TxSetVideoClkDelay (TX_VIDEO_CLK_DELAY Delay)**
 
 .. container:: box center
 

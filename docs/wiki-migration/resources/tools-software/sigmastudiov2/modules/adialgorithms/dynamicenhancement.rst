@@ -18,16 +18,15 @@ Dynamic Enhancement Stereo
 Description
 ~~~~~~~~~~~
 
-| 
-| The Dynamic Enhancement block provides variable bass enhancement as a function of input-signal level. Lower levels require more bass than higher levels. The filter dynamically adjusts the amount of bass enhancement depending on the volume of the input signal, by using a variable-Q filter.
+The Dynamic Enhancement block provides variable bass enhancement as a function of input-signal level. Lower levels require more bass than higher levels. The filter dynamically adjusts the amount of bass enhancement depending on the volume of the input signal, by using a variable-Q filter.
 
-| A fixed enhancement is applied to input levels below the threshold while a dynamic gain is applied to input levels above the threshold.
-| ===== Variants =====
+A fixed enhancement is applied to input levels below the threshold while a dynamic gain is applied to input levels above the threshold.
+
+Variants
+~~~~~~~~
 
 -  Dynamic Enhancement (Mono)
 -  Dynamic Enhancement (Stereo)
-
-| 
 
 Targets Supported
 ~~~~~~~~~~~~~~~~~

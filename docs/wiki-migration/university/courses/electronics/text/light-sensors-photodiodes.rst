@@ -169,14 +169,9 @@ A BJT turns on when its base-emitter voltage is about 700 mV, a bipolar Darlingt
    :align: center
    :width: 500px
 
-|
-
 .. container:: centeralign
 
-   Fig 9 Classical Photodetector - Transistor conducts when light is present
-
-
-   | (Diagram shows the possible devices which might be used)
+   Fig 9 Classical Photodetector - Transistor conducts when light is present (Diagram shows the possible devices which might be used)
 
 
 The commoner arrangement has the transistor conduct in the presence of light, turning on a relay load or producing logic 0 on an N-channel/NPN drain/collector. The voltage drop across R\ :sub:`s` must be equal to V\ :sub:`th` when I\ :sub:`t` (the photocell current at the switching threshold) flows in it. With a photodiode I\ :sub:`t` is more or less independent of its bias voltage, so
@@ -203,14 +198,9 @@ or
    :align: center
    :width: 500px
 
-|
-
 .. container:: centeralign
 
-   Fig 10 Classical Inverting Photodetector - Transistor conducts when light is not present
-
-
-   | (Diagram shows the possible devices which might be used)
+   Fig 10 Classical Inverting Photodetector - Transistor conducts when light is not present (Diagram shows the possible devices which might be used)
 
 
 The other arrangement (the inverting photodetector) has the transistor turned off in the presence of light, turning off a relay load or producing logic 1 on an N-channel/NPN drain/collector. In this case the voltage drop across R\ :sub:`s` must be equal to (V\ :sub:`s`-V\ :sub:`th`) when I\ :sub:`t` (the photocell current at the switching threshold) flows in it. Again the photodiode equation is simple
@@ -243,14 +233,9 @@ Obviously the photodiode material selected for this application must have a cond
    :align: center
    :width: 500px
 
-|
-
 .. container:: centeralign
 
-   Fig 11 Photodetector using a Photodiode in Photovoltaic Mode
-
-   | V\ :sub:`th(Photodiode)` > V\ :sub:`th(Transistor)`
-   | (Diagram shows the possible devices which might be used - it does not work with a photoresistor.)
+   Fig 11 Photodetector using a Photodiode in Photovoltaic Mode V\ :sub:`th(Photodiode)` > V\ :sub:`th(Transistor)` (Diagram shows the possible devices which might be used - it does not work with a photoresistor.)
 
 
 If a bipolar device - a BJT or even a Darlington - is used in any of the circuits in Figs 9-11 its minimum base current when the load is turned fully on should be no more than 20% of I\ :sub:`t`. If the collector load resistance (resistor or relay) is R\ :sub:`L` and the supply V\ :sub:`s` the collector current will be V\ :sub:`s`/R\ :sub:`L`, and the minimum base current, I\ :sub:`b(min)`, V\ :sub:`s`/ßR\ :sub:`L` where ß is the current gain of the bipolar device. So
@@ -267,14 +252,9 @@ The simplest circuit uses a Schmitt trigger input logic gate. These are logic ci
    :align: center
    :width: 500px
 
-|
-
 .. container:: centeralign
 
-   Fig 12 Photodetectors with Hysteresis
-
-
-   | (This diagram shows the possible input device configurations and an optional relay driver.)
+   Fig 12 Photodetectors with Hysteresis (This diagram shows the possible input device configurations and an optional relay driver.)
 
 
 Such Schmitt input logic gates are available with supply ranges between 2 V and 18 V (no single part has this wide a range - but parts are available that may be used with any supply from 3 V to 18 V). They are available in traditional DIL and SOT packages with 4 or 6 gates in a package (the "4000 Series" 4093 and 40106 for example) or as single or dual buffers or inverters in a tiny SO-23 package for as little as 6 cents in large quantities (the Toshiba TC4S584F and many others).
@@ -291,13 +271,9 @@ Comparators sometimes have built-in hysteresis and can almost always have hyster
    :align: center
    :width: 500px
 
-|
-
 .. container:: centeralign
 
-   Fig 13 Accurate Photodetector using a Comparator
-
-   | (Diagram shows the possible configurations which might be used)
+   Fig 13 Accurate Photodetector using a Comparator (Diagram shows the possible configurations which might be used)
 
 
 The equations relating the photocell characteristics, V\ :sub:`ref`, and R\ :sub:`s` are very similar to Equations [1] - [10] except that V\ :sub:`th` becomes the reference voltage V\ :sub:`ref`.
@@ -408,9 +384,7 @@ The values of C1 and C2 in the above diagram depend on the tone frequency to be 
 
 There are innumerable other applications of photosensors, but this article is intended only to discuss their characteristics and how to use them, not to consider the systems where they are used.
 
-| James Bryant
-| Calshot - England
-| August 2014
+James Bryant Calshot - England August 2014
 
 **Return to** :doc:`Previous Chapter </wiki-migration/university/courses/electronics/text/chapter-7>`
 
@@ -462,33 +436,17 @@ In addition to measurement of spectral sensitivity it may be advisable to measur
 Foot Notes
 ~~~~~~~~~~
 
-| [1]The International Commission on Illumination (CIE) recommends the division of infrared & ultraviolet radiation into the following six bands:
-| **Infrared**
-| • IR-A: 700 nm – 1400 nm (215 THz – 430 THz)
-| • IR-B: 1400 nm – 3000 nm (100 THz – 215 THz)
-| • IR-C: 3000 nm – 1 mm (300 GHz – 100 THz)
-| **Ultraviolet**
-| • UV-A: 315 nm – 400 nm (750 THz – 950 THz)
-| (Subdivided into UV-A1 (315 nm – 340 nm) & UV-A2 (340 nm – 400 nm)
-| • UV-B: 280 nm – 315 nm (950 THz – 1070 THz)
-| • UV-C: 100 nm – 280 nm (1070 THz – 3000 THz)
-| [2]The characteristics of photoresistors are discussed in some detail on the Selco Products website at
-| http://www.selcoproducts.com/pdfs/CdS-Photocells%20Catalog.pdf
+[1]The International Commission on Illumination (CIE) recommends the division of infrared & ultraviolet radiation into the following six bands: **Infrared** • IR-A: 700 nm – 1400 nm (215 THz – 430 THz) • IR-B: 1400 nm – 3000 nm (100 THz – 215 THz) • IR-C: 3000 nm – 1 mm (300 GHz – 100 THz) **Ultraviolet** • UV-A: 315 nm – 400 nm (750 THz – 950 THz) (Subdivided into UV-A1 (315 nm – 340 nm) & UV-A2 (340 nm – 400 nm) • UV-B: 280 nm – 315 nm (950 THz – 1070 THz) • UV-C: 100 nm – 280 nm (1070 THz – 3000 THz)
+
+[2]The characteristics of photoresistors are discussed in some detail on the Selco Products website at http://www.selcoproducts.com/pdfs/CdS-Photocells%20Catalog.pdf
 
 [3]There are a number of ROHS compliant CdS & Cd2SeS photocells but many older types are not compliant.
 
 [4]The same arrangement was once used for digital isolators as well, but today these almost always use photodiodes or phototransistors.
 
-| [5]The electrical conductance of a conductor is the ease with which an electric current passes through that conductor. The (commoner) inverse quantity is its resistance - the opposition to the passage of an electric current. The official SI unit of conductance is the Siemens (S) but the older name, “mho”, and symbol (Ʊ) are still quite widely used because the older symbol is less likely to be confused with the symbol for a second (s). The unit of resistance is the ohm (Ω). The relationships between voltage (V), current (I), resistance (R) and conductance (G) are:-
-| :math:`R = V/I` :math:`G = I/V` :math:`G = 1/R`
+[5]The electrical conductance of a conductor is the ease with which an electric current passes through that conductor. The (commoner) inverse quantity is its resistance - the opposition to the passage of an electric current. The official SI unit of conductance is the Siemens (S) but the older name, “mho”, and symbol (Ʊ) are still quite widely used because the older symbol is less likely to be confused with the symbol for a second (s). The unit of resistance is the ohm (Ω). The relationships between voltage (V), current (I), resistance (R) and conductance (G) are:- :math:`R = V/I` :math:`G = I/V` :math:`G = 1/R`
 
-| [6] Read the Friendly Data Sheet (RTFDS). The RAQ on this topic can be found at
-| http:*www.analog.com/static/imported-files/rarely_asked_questions/RAQ_caveat.pdf
-  and the longer discussions at
-  http:*\ www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_datasheet.html
-| http:*www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_opAmpNoise.html
-  http:*\ www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_opampbiasCurrents.html
-| http://www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_dcSpecs.html
+[6] Read the Friendly Data Sheet (RTFDS). The RAQ on this topic can be found at http://www.analog.com/static/imported-files/rarely_asked_questions/RAQ_caveat.pdf and the longer discussions at http://www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_datasheet.html http://www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_opAmpNoise.html http://www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_opampbiasCurrents.html http://www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_dcSpecs.html
 
 [7]Sometimes there is a very high resistance in parallel with the current sources so that there is a slight change of leakage with applied voltage, but the effect is generally negligible.
 
@@ -512,13 +470,8 @@ I intend to make more measurements and will modify this footnote when I have don
 
 [16]A silicon photodiode with a threshold of 700 mV used in this way may be able to drive an exceptionally low threshold MOSFET or a Schmitt input gate using a very low supply voltage.
 
-| [17]A discussion of comparator characteristics is in the article accompanying RAQ 11 "Comparators & Op Amps – May They Never Meet (or Good Advice from Mr. Punch)"
-| http://www.analog.com/en/all-operational-amplifiers-op-amps/operational-amplifiers-op-amps/product/raq_jbryant_comparators_opamps_may_issue11/resources/faq.html?display=popup .
-| The article is at
-| http://www.analog.com/static/imported-files/rarely_asked_questions/op-AmpsAsComparatorsv1.ppt .
-| It is possible to use an operational amplifier as a comparator but there are problems, which are also discussed in this article. Despite being written to discuss a particular application problem, it is a useful short background note on the properties and uses of comparators.
+[17]A discussion of comparator characteristics is in the article accompanying RAQ 11 "Comparators & Op Amps – May They Never Meet (or Good Advice from Mr. Punch)" http://www.analog.com/en/all-operational-amplifiers-op-amps/operational-amplifiers-op-amps/product/raq_jbryant_comparators_opamps_may_issue11/resources/faq.html?display=popup . The article is at http://www.analog.com/static/imported-files/rarely_asked_questions/op-AmpsAsComparatorsv1.ppt . It is possible to use an operational amplifier as a comparator but there are problems, which are also discussed in this article. Despite being written to discuss a particular application problem, it is a useful short background note on the properties and uses of comparators.
 
-| [18]Read RAQ 22 on ADC inputs.
-| http://www.analog.com/static/imported-files/rarely_asked_questions/RAQ_highfrequency.pdf
+[18]Read RAQ 22 on ADC inputs. http://www.analog.com/static/imported-files/rarely_asked_questions/RAQ_highfrequency.pdf
 
 [19]This equation is often written with respect to the bias being on the N region, in which case the polarity of V is reversed and the equation becomes :math:`\displaystyle I = I_s e^{v/\frac{kT}{q}}-1`

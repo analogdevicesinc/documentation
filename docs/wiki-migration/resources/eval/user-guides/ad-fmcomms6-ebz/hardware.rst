@@ -18,8 +18,6 @@ For those that don't want to load up the Allegro viewer, here is a basic outline
    :align: left
    :width: 400px
 
-   | 
-
 Size
 ----
 
@@ -29,9 +27,8 @@ The size of the board (not including the SMA connectors, which project beyond th
    :align: left
    :width: 400px
 
-|
-
-| ===== Downloads =====
+Downloads
+---------
 
 .. admonition:: Download
    :class: download

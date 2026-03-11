@@ -91,13 +91,13 @@ If an external OSD region is received directly from external OSD TTL input, then
 Video resolution Video bits Bandwidth (gbps) For video frame rate = 60Hz
 ================ ========== ============================================
 1080p            24 bits    5.561828613
-:::              32 bits    7.415771484
+                 32 bits    7.415771484
 720p             24 bits    2.471923828
-:::              32 bits    3.295898438
+                 32 bits    3.295898438
 480p             24 bits    0.926971436
-:::              32 bits    1.235961914
+                 32 bits    1.235961914
 240p             24 bits    0.463485718
-:::              32 bits    0.617980957
+                 32 bits    0.617980957
 ================ ========== ============================================
 
 • For 16 bits input video, simply divide 32bits value by 2 • If frame rate different from 60, multiply by frame rate and divide by 60
@@ -128,9 +128,9 @@ Application analysis
 \             Inputs                
 ======= ===== ========== ========== =========
 \             1080p Main 1080p Main 4k30 Main
-:::           1080p PIP  4k30 PIP   1080p PIP
+              1080p PIP  4k30 PIP   1080p PIP
 Outputs 1080p Supported  Supported  Supported
-:::     4k30  Supported  Supported  Supported
+        4k30  Supported  Supported  Supported
 ======= ===== ========== ========== =========
 
 This table assumes PVSP is only used for upscaling with no RNR or interlaced conversion. If any of these features are required, some configurations will need 2 ADV8005 due to bandwidth exceeding.

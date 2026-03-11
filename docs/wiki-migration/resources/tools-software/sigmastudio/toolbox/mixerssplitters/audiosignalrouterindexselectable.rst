@@ -18,15 +18,15 @@ This module supports multiple mixer configurations. Each mixer configuration has
 
 The following equations show the calculation of the output for given sample mixer table.
 
-==================== ===== ===================== =====================
-\                          <fc #0000FF>Out0</fc> <fc #0000FF>Out1</fc>
-\                          *Og0*                 *Og1*
-<fc #008000>In0</fc> *Ig0* G00                   G01
-<fc #008000>In1</fc> *Ig1* G10                   G11
-==================== ===== ===================== =====================
+=== ===== ===== =====
+\         Out0  Out1
+\         *Og0* *Og1*
+In0 *Ig0* G00   G01
+In1 *Ig1* G10   G11
+=== ===== ===== =====
 
--  <fc #0000FF>Out0</fc> = *Og0* \* ( G00 \* *Ig0* \* <fc #008000>In0</fc> + G10 \* *Ig1* \* <fc #008000>In1</fc>)
--  <fc #0000FF>Out1</fc> = *Og1* \* ( G01 \* *Ig0* \* <fc #008000>In0</fc> + G11 \* *Ig1* \* <fc #008000>In1</fc>)
+-  Out0 = *Og0* \* ( G00 \* *Ig0* \* In0 + G10 \* *Ig1* \* In1)
+-  Out1 = *Og1* \* ( G01 \* *Ig0* \* In0 + G11 \* *Ig1* \* In1)
 
 If the input/output channels are more than 17, then the mixer window is split for 17 input/output channels to improve GUI performance.
 
@@ -35,24 +35,22 @@ If the input/output channels are more than 17, then the mixer window is split fo
 
 Labels for each of the input/output channels can be edited. This updated channel name will pear on the each of the Pin's tooltip as show below.
 
-| |image3|
-| =====DSP Parameter Information=====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/channel_customization2.jpg
+   :align: center
 
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| Compiler Name                                                         | Function Description                                                                              |
-+=======================================================================+===================================================================================================+
-| InputGain\_<fc #FF0000>t</fc>\_<fc #008000>i</fc>                     | Gain for the Mix <fc #FF0000>t</fc> and Input <fc #008000>i</fc>.                                 |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| OutputGain\_<fc #FF0000>t</fc>\_<fc #0000FF>j</fc>                    | Gain for the Mix <fc #FF0000>t</fc> and Output <fc #0000FF>j</fc>.                                |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| CrossGain\_<fc #FF0000>t</fc>\_<fc #0000FF>j</fc>\_<fc #008000>i</fc> | CrossGain for the Mix <fc #FF0000>t</fc>, Output <fc #0000FF>j</fc> and Input <fc #008000>i</fc>. |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| TabIndex                                                              | Current Mix to apply                                                                              |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+DSP Parameter Information
+-------------------------
 
-| **Note:**\ Here <fc #FF0000>t</fc>,<fc #008000>i</fc> and <fc #0000FF>j</fc> starts from 0.
-| All the parameter names are appended with the algorithm name (e.g.)<fc #c0c0c0>AudioSignalRouterIndxSel32S300Alg1</fc>InputGain_0_0
+=============== ==============================================
+Compiler Name   Function Description
+=============== ==============================================
+InputGain_t_i   Gain for the Mix t and Input i.
+OutputGain_t_j  Gain for the Mix t and Output j.
+CrossGain_t_j_i CrossGain for the Mix t, Output j and Input i.
+TabIndex        Current Mix to apply
+=============== ==============================================
+
+**Note:**\ Here t,i and j starts from 0. All the parameter names are appended with the algorithm name (e.g.)AudioSignalRouterIndxSel32S300Alg1InputGain_0_0
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/audiosignalrouterindx.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/audio_router_morethan17.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/channel_customization2.jpg

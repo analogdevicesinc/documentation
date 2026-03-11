@@ -5,8 +5,9 @@ ADRV9001/2 Prototyping Platform User Guide
    :align: left
    :width: 200px
 
-| The :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` (low band, 30MHz – 3GHz) and :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` (high band, 3GHz – 6GHz) are FMC radio cards for the :adi:`ADRV9002` highly integrated RF transceiver, offering dual channel transmitters and dual channel receivers, integrated synthesizers, and digital signal processing functions. The IC delivers a versatile combination of high performance and low power consumption required by battery powered radio equipment and can operate in both FDD and TDD modes. The ADRV9002 operates from 30 MHz to 6000 MHz covering the VHF, licensed and unlicensed cellular bands, and ISM bands. The IC is capable of supporting both narrowband and wideband standards up to 40MHz bandwidth on both receive and transmit.
-| While the complete chip level design package can be found on :adi:`the ADI web site <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`, information on the card and how to use it, the design package that surrounds it, and the software which can make it work can be found here.
+The :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` (low band, 30MHz – 3GHz) and :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` (high band, 3GHz – 6GHz) are FMC radio cards for the :adi:`ADRV9002` highly integrated RF transceiver, offering dual channel transmitters and dual channel receivers, integrated synthesizers, and digital signal processing functions. The IC delivers a versatile combination of high performance and low power consumption required by battery powered radio equipment and can operate in both FDD and TDD modes. The ADRV9002 operates from 30 MHz to 6000 MHz covering the VHF, licensed and unlicensed cellular bands, and ISM bands. The IC is capable of supporting both narrowband and wideband standards up to 40MHz bandwidth on both receive and transmit.
+
+While the complete chip level design package can be found on :adi:`the ADI web site <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`, information on the card and how to use it, the design package that surrounds it, and the software which can make it work can be found here.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/42975_50034.jpg
    :align: center
@@ -112,7 +113,7 @@ The latest boot files for adrv9002 (for all supported carriers) can be found in 
 
 .. raw:: html
 
-   <details><summary>Older releases (Click to expand)</summary>
+   <details><summary>Older releases (Click to expand)
 
 -  `ADRV9002_ZCU102_SDCARD_BOOT_FILES_JULY17.zip <http://swdownloads.analog.com/cse/tmp/ADRV9002_ZCU102_SDCARD_BOOT_FILES_JULY17.zip>`_
 -  `adrv9002_2019_r2_prerelease.zip <http://swdownloads.analog.com/cse/tmp/adrv9002_2019_r2_prerelease.zip>`_
@@ -127,7 +128,7 @@ The latest boot files for adrv9002 (for all supported carriers) can be found in 
 Source code have been posted on following branches on github, or has been already merged into master:
 
 -  :git-linux:`drivers/iio/adc/navassa`
--  :git-hdl:`projects/adrv9001`
+-  https://github.com/analogdevicesinc/hdl/tree/adrv9001_zcu102/projects/adrv9001
 -  :git-iio-oscilloscope:`plugins/adrv9002`.c
 -  :git-pyadi-iio:`examples/adrv9002_example`.py
 

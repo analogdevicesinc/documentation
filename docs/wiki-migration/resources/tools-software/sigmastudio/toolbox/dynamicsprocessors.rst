@@ -1,16 +1,13 @@
 Dynamics Processors
 ===================
 
-| :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
+:doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
 --------------
 
 The Dynamics Processors library of the ToolBox provides a variety of blocks that can be programmed to control the dynamic range of signals. These blocks provide compression, limiting, and expansion — and allow you to graphically control the dynamic repose by manipulating the response curves. For usage samples, take a look at the :doc:`Dynamics Processor Examples </wiki-migration/resources/tools-software/sigmastudio/tutorials/dynamicsprocessorexamples>` page.
 
-|
-
-| \* :doc:`Envelope Peak </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeak>`
-
+-  :doc:`Envelope Peak </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeak>`
 -  :doc:`Envelope Peak External Decay </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakexternaldecay>`
 -  :doc:`Envelope Peak RMS </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakrms>`
 -  :doc:`High Resolution RMS </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/highresolutionrms>`

@@ -4,11 +4,15 @@
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
+
 AD-FMComms1-EBZ : no-OS Software Drivers
 ========================================
 
-.. image:: https://wiki.analog.com/_media/page>/wiki/common#retired&nofooter&noheader
-   :alt: page>/wiki/common#retired&nofooter&noheader
+
+.. note::
+
+   See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
+
 
 The reference design is a combination of hardware (the FMComms1 Card + the FPGA base platform), the HDL, and the software that is either running on the Microblaze, or ARM Cores.
 
@@ -110,14 +114,13 @@ Downloads
 
 The latest stable source code can be downloaded from the Analog Devices github.
 
-|
-
 .. admonition:: Download
    :class: download
 
    Release 2014_R2:
 
-   | :git-no-OS:`fmcomms1`
+   
+   https://github.com/analogdevicesinc/no-OS/tree/2014_R2/fmcomms1
 
 
 Using the XCOMM API
@@ -153,6 +156,7 @@ After running the example program the system is configured to generate a sinewav
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/xcomm_chipscope.png
    :alt: ADC output
    :width: 500px
+
 
 
 .. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS1-EBZ#Linux#./

@@ -1,6 +1,6 @@
 .. warning::
 
-   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki\`
+   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki`
 
 
 Linux for ADSP-SC5xx: Useful Links

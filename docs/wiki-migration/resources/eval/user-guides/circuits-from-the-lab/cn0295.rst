@@ -116,7 +116,7 @@ The output of the system can be measured in two ways, either through direct outp
    :align: center
    :width: 500px
 
-\* Voltage Measurement
+- Voltage Measurement
 ^^^^^^^^^^^^^^^^^^^^^^
 
 -  Voltage output measurement is done across a series 250ohms resistor though screw type terminal block (P1).
@@ -130,7 +130,7 @@ The output of the system can be measured in two ways, either through direct outp
    :align: right
    :width: 100px
 
-\* Current Measurement
+- Current Measurement
 ^^^^^^^^^^^^^^^^^^^^^^
 
 -  Current output measurement is done by connecting the positive terminal of the current meter at one pin of the male header shunt terminal (J1) and the negative terminal of the meter connected to the other pin of the same male header shunt terminal.

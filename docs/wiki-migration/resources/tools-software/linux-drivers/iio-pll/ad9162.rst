@@ -111,18 +111,19 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            -*-     Industrial I/O lock free software ring
            -*-   Enable triggered sampling support
 
-                 *** Direct Digital Synthesis ***
+                 ** Direct Digital Synthesis **
            [--snip--]
 
            <*>   Analog Devices CoreFPGA AXI DDS driver
-           <*>   Analog Devices AD9162 DAC 
+           <*>   Analog Devices AD9162 DAC
 
            [--snip--]
 
 Driver testing
 ==============
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 The driver has two main ways of functioning depending on the :git-linux:`adi,standalone-probe <Documentation/devicetree/bindings/iio/frequency/ad916x.yaml#L49>` devicetree property. If set, the driver will probe in standalone mode which means that it won't link with the :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`. This means that different attributes will be seen depending on the working mode. The next ABI is the same independent of the working mode.
 
@@ -131,15 +132,12 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      analog@analog:/sys/bus/iio/devices/iio:device2 $ cat name 
+      analog@analog:/sys/bus/iio/devices/iio:device2 $ cat name
       ad9166
    
 
@@ -155,10 +153,7 @@ Range is: −fclk/2 ≤ fCARRIER < +fclk/2 or 0 ≤ fCARRIER < fclk if FIR85 is 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -176,16 +171,13 @@ This mode can be used together with :git-linux:`adi,dc-test-en <Documentation/de
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       analog@analog:~ $ cd /sys/bus/iio/devices/iio\:device2
-      analog@analog:/sys/bus/iio/devices/iio:device2 $ 
+      analog@analog:/sys/bus/iio/devices/iio:device2 $
       analog@analog:/sys/bus/iio/devices/iio:device2 $ ls -l
       total 0
       -r--r--r-- 1 root root 4096 Jan 18 22:03 dev
@@ -213,10 +205,7 @@ Set the DC test word data. This will be the data source of the digital path when
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -236,10 +225,7 @@ This setting allows for runtime calibration of the device internal temperature s
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -257,15 +243,12 @@ To get the temperature already processed in milli degrees °C:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      analog@analog:/sys/bus/iio/devices/iio:device2 $ cat in_temp0_input 
+      analog@analog:/sys/bus/iio/devices/iio:device2 $ cat in_temp0_input
       75000
    
 
@@ -276,10 +259,7 @@ To get the raw value:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -298,10 +278,7 @@ With fir85 enabled, 0 ≤ fCARRIER < fclk.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -319,17 +296,14 @@ As said, in this mode the driver is used in conjunction with the :doc:`AXI DAC H
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       analog@analog:~$ cd /sys/bus/iio/devices/iio\:device6
-      analog@analog:/sys/bus/iio/devices/iio:device6$ 
-      analog@analog:/sys/bus/iio/devices/iio:device6$ 
+      analog@analog:/sys/bus/iio/devices/iio:device6$
+      analog@analog:/sys/bus/iio/devices/iio:device6$
       analog@analog:/sys/bus/iio/devices/iio:device6$ ls -la
       total 0
       drwxr-xr-x 5 root root    0 Apr 27 16:20 .
@@ -361,8 +335,6 @@ As said, in this mode the driver is used in conjunction with the :doc:`AXI DAC H
    
 
 
-.. _enable-fir85-filter-1:
-
 Enable FIR85 filter
 ~~~~~~~~~~~~~~~~~~~
 
@@ -372,10 +344,7 @@ With fir85 enabled, 0 ≤ fCARRIER < fclk.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -414,4 +383,21 @@ The AD9166 comes with an integrated differential to single-ended output buffer a
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

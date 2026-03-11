@@ -25,19 +25,7 @@ Phase-locked loops are the subject of many in depth books and much discussion an
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 2.2 KΩ Resistor
-| 1 - 47 KΩ Resistor
-| 1 - 10 KΩ Resistor
-| 1 - 4.7 nF capacitor (marked 472)
-| 1 - 100 pF capacitor (marked 101)
-| 1 - CD4007 CMOS array
-| 2 - ZVN2110A NMOS transistors
-| 2 - ZVP2110A PMOS transistors
-| 1 - AD654 voltage to frequency converter
-| 1 - 9 Volt battery ( with connector )
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - 2.2 KΩ Resistor 1 - 47 KΩ Resistor 1 - 10 KΩ Resistor 1 - 4.7 nF capacitor (marked 472) 1 - 100 pF capacitor (marked 101) 1 - CD4007 CMOS array 2 - ZVN2110A NMOS transistors 2 - ZVP2110A PMOS transistors 1 - AD654 voltage to frequency converter 1 - 9 Volt battery ( with connector )
 
 Step 1 Directions:
 ------------------
@@ -109,8 +97,6 @@ Next add the XOR gate phase detector circuit from the earlier Lab [1] on you bre
    Figure 6, Complete PLL circuit
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -123,8 +109,6 @@ Turn on the fixed +5 volt power supply and connect the 9 volt battery to your ci
 
    Figure 7, Complete PLL breadboard circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -173,8 +157,7 @@ Depending on the divide factor N of the particular divider you build you will ne
 
 [1] :doc:`Activity: CMOS Logic Circuits, Transmission Gate XOR </wiki-migration/university/courses/electronics/electronics-lab-30>`
 
-| :adi:`MT-086.pdf <static/imported-files/tutorials/MT-086.pdf>`
-| `Phase-locked_loop <https://en.wikipedia.org/wiki/Phase-locked_loop>`_
+:adi:`MT-086.pdf <static/imported-files/tutorials/MT-086.pdf>` `Phase-locked_loop <https://en.wikipedia.org/wiki/Phase-locked_loop>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 

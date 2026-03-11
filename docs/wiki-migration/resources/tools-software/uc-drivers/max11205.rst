@@ -274,7 +274,7 @@ Source code documentation for the IIO driver is automatically generated using th
 
 ::
 
-   * 
+   *
 
 MAX11205 IIO Device Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

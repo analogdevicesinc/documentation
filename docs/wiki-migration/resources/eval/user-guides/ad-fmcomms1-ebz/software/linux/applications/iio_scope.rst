@@ -49,8 +49,8 @@ To build on a host, do not use the script, you **must**:
 
 rgetz@pinky:~/iio-oscilloscope$ \**cmake ../ && make -j :math:`(nproc)** rgetz@pinky:~/iio-oscilloscope` **sudo make install** </code>
 
--  if you don't want to do a ``make install`` (sometimes I don't), you will need to make sure that the most recently built shared libraries can be found, by setting the `LD_LIBRARY_PATH <http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html#AEN77>`_ environmental variable.\ ``rgetz@pinky:~/iio-oscilloscope$ **export LD_LIBRARY_PATH=./**``\ otherwise you may get an error like this:``rgetz@pinky:~/iio-oscilloscope$ **./osc** 
-   ./osc: error while loading shared libraries: libosc.so: cannot open shared object file: 
+-  if you don't want to do a ``make install`` (sometimes I don't), you will need to make sure that the most recently built shared libraries can be found, by setting the `LD_LIBRARY_PATH <http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html#AEN77>`_ environmental variable.\ ``rgetz@pinky:~/iio-oscilloscope$ **export LD_LIBRARY_PATH=./**``\ otherwise you may get an error like this:``rgetz@pinky:~/iio-oscilloscope$ **./osc**
+   ./osc: error while loading shared libraries: libosc.so: cannot open shared object file:
    No such file or directory``\ Or, worse case, when you are debugging things, you will see your modified source code, but it will be running/executing the older shared shared object which was loaded (since it didn't find things in the library path).
 
 macOS
@@ -93,10 +93,7 @@ The application can be used to connect to another platform that has a connected 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the host or target - Run IIO Oscilloscope in remote mode
+   This specifies any shell prompt running on the host or target - Run IIO Oscilloscope in remote mode
 
    
    ::
@@ -139,10 +136,10 @@ DMM Tab/Plugin
 The **DMM** Plugin: The Digital Multimeter continuously displays device specific data once the start button is activated.
 
 -  **Device** tab: Displays the list of all available devices.
--  \**Active channels \*\* tab:Displays the list of channels that belong to the enabled devices. All channels can be enabled simultaneously by using the *All Channels* button.
+-  **Active channels** tab:Displays the list of channels that belong to the enabled devices. All channels can be enabled simultaneously by using the *All Channels* button.
 -  **Right side** tab: Displays data readings of the enabled channels in Active channels tab.
 
-| 
+
 
 Debug Tab/Plugin
 ^^^^^^^^^^^^^^^^
@@ -163,7 +160,7 @@ Debug Tab/Plugin
    -  **Address:** The address of the register.
    -  **Value:** The value of the register at the given address.
 
-|
+
 
 | === Hardware Specific Tab/Plugins === There may be hardware specific plugins/tabs, specific to the platform you are running on. Here are a few:
 
@@ -259,9 +256,6 @@ Fixed markers are designed to have their position moved by the user. Once the fi
 
 To disable the markers select Markers Off from the marker menu.
 
-
-| 
-
 Saving Captured Data
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -270,7 +264,6 @@ Saving Captured Data
    :align: right
    :width: 400px
 
-|
 
 | Once the data is captured, it can be saved using one of the following formats:
 
@@ -282,7 +275,6 @@ Saving Captured Data
 Click on File→Save As to open the dialog needed to save the data.
 
 
-| 
 
 Channel Settings
 ^^^^^^^^^^^^^^^^
@@ -296,8 +288,6 @@ Channel Settings
 -  The graph color associated with the channel can be modified. Right click on the name of the channel and select Color Settings to open a color selection panel that will allow you to pick the desired color.
 
 The settings can be applied only in Time domain.
-
-|
 
 Trigger settings
 ^^^^^^^^^^^^^^^^

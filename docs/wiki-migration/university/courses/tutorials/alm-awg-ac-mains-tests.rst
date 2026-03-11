@@ -110,8 +110,6 @@ To insulate the high voltage connections and for safety reasons the transformer 
    Figure 8, Transformer and resistors mounted in plug adapter case.
 
 
-.. _calibration-steps-1:
-
 Calibration Steps
 ^^^^^^^^^^^^^^^^^
 
@@ -285,8 +283,6 @@ Next the CoilCraft CS4200V-01 and Würth Elektronik 750316796 examples are teste
    Figure 22, CoilCraft CS4200V-01 and Würth Elektronik 750316796 bode plot
 
 
-.. _electronic-burden-i-to-v-converter-1:
-
 Electronic Burden, I to V converter
 -----------------------------------
 
@@ -414,8 +410,6 @@ As another LED lamp example, a 40 degree LED flood light, is measured. The specs
 
 The lower crest factor of the LED waveforms probably accounts for the measured power being closed to the listed power. The CFL manufacturers did not probably use high bandwidth hardware like the M1k to measure the true RMS current of their lamps and missed the high crest factor of the current drawn. It is probably important to note at this point that the measurement results shown so far do not take into account any phase difference between the voltage and current waveforms (power factor).
 
-.. _measuring-the-mains-voltage-waveform-1:
-
 Measuring the Mains Voltage Waveform
 ------------------------------------
 
@@ -450,8 +444,7 @@ For making Mains AC power measurements of line voltage and current, the voltage 
 
 **For Further Reading**
 
-| `Pulse Transformers <https://www.digikey.com/product-detail/en/pulse-electronics-power/PE-51718NL/553-1547-ND/2265979>`_
-| `Galvanic isolation <https://en.wikipedia.org/wiki/Galvanic_isolation>`_
+`Pulse Transformers <https://www.digikey.com/product-detail/en/pulse-electronics-power/PE-51718NL/553-1547-ND/2265979>`_ `Galvanic isolation <https://en.wikipedia.org/wiki/Galvanic_isolation>`_
 
 Appendix: Other Off the Shelf Hardware
 --------------------------------------

@@ -1,7 +1,90 @@
 ADP5589 - No-OS Driver for Renesas Microcontroller Platforms
 ============================================================
 
-.. include:: ../adp5589.rst
+
+Supported Devices
+=================
+
+-  :adi:`ADP5589`
+
+Evaluation Boards
+=================
+
+-  `PmodIOXP <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-IOXP>`_
+
+Overview
+========
+
+
+The :adi:`ADP5589` is a 19 channel GPIO (General Purpose Input/Output) port expander with built-in keypad matrix decoder, programmable logic, reset logic, and PWM generator. The IC is capable of handling QWERTY size keyboards and GPIO expansion. I/O expander ICs are used in portable devices (phones, remote controls, & cameras) and non-portable applications (healthcare, industrial & instrumentation). I/O expanders can be used to increase the number of I/Os available to a processor or to reduce the number of I/Os required through interface connectors for front panel designs.
+
+The :adi:`ADP5589` handles all key scanning and decoding and can flag the main processor via an interrupt line that new key events have occurred. GPI changes and logic changes can also be tracked as events via the FIFO, eliminating the need to monitor different registers for event changes. The :adi:`ADP5589` is equipped with a FIFO to store up to 16 events. Events can be read back by the processor via an I2C-compatible interface.
+
+The :adi:`ADP5589` frees up the main processor from having to monitor the keypad, thereby reducing power consumption and/or increasing processor bandwidth for performing other functions. The programmable logic functions allow common logic requirements to be integrated as part of the GPIO expander, saving board area and cost. Reference software Linux driver is available.
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/adp5589_pmod_ioxp.jpg
+   :align: center
+
+
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the ADP5589 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the ADP5589 driver can be used exactly as it is provided.
+
+There are three functions which are called by the ADP5589 driver:
+
+-  I2C_Init() – initializes the communication peripheral.
+-  I2C_Write() – writes data to the device.
+-  I2C_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   I2C driver architecture
+
+
+The implementation of these three functions depends on the used microcontroller.
+
+The following functions are implemented in this version of ADP5589 driver:
+
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Function                                                                                            | Description                                                                         |
++=====================================================================================================+=====================================================================================+
+| void ADP5589_SetRegisterValue(unsigned char registerAddress, unsigned char registerValue)           | Writes data into a register.                                                        |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| unsigned char ADP5589_GetRegisterValue(unsigned char registerAddress)                               | Reads the value of a register.                                                      |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| char ADP5589_Init(void)                                                                             | Initializes the communication peripheral and checks if the ADP5589 part is present. |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| void ADP5589_InitPwm(void)                                                                          | Initializes the PWM generator in continuous mode.                                   |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| void ADP5589_SetPwm(unsigned short pwmOffTime, unsigned short pwmOnTime)                            | Sets the PWM On and Off times.                                                      |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| void ADP5589_GpioDirection(unsigned char reg, unsigned char val)                                    | Sets the direction of the pins.                                                     |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| unsigned char ADP5589_GetPinState(unsigned char reg)                                                | Reads the state of the pins.                                                        |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| void ADP5589_SetPinState(unsigned char reg, unsigned char state)                                    | Sets the state of the pins.                                                         |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| void ADP5589_InitKey(unsigned char pmodPort)                                                        | Initializes keyboard decoder.                                                       |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| unsigned char ADP5589_KeyDecode(unsigned char reg, unsigned char eventType, unsigned char pmodPort) | Decodes the key pressed on the Pmod-KYPD.                                           |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| void ADP5589_KeyLock(unsigned char firstEvent, unsigned char secondEvent, unsigned char pmodPort)   | Locks the ADP5589 and requests Password for unlock.                                 |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
+
+
 
 **HW Platform(s):**
 
@@ -18,9 +101,9 @@ Downloads
    -  `ADP5589 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/adp5589_generic.zip>`_
    -  `ADP5589 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adp5589_rl78g13.zip>`_
    -  `ADP5589 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adp5589_rx62n.zip>`_
-   -  \**ADP5589 Driver: \*\* :git-no-OS:`drivers/io-expander/adp5589`
-   -  \**PmodIOXP Demo for RL78G14: \*\* :git-no-OS:`Renesas/RL78G14/PmodIOXP`
-   -  \**RL78G14 Common Drivers: \*\* :git-no-OS:`Renesas/RL78G14/Common`
+   -  **ADP5589 Driver:** :git-no-OS:`drivers/io-expander/adp5589`
+   -  **PmodIOXP Demo for RL78G14:** :git-no-OS:`Renesas/RL78G14/PmodIOXP`
+   -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
 
@@ -85,16 +168,12 @@ Renesas RL78G14 Quick Start Guide
 
 This section contains a description of the steps required to run the ADP5589 demonstration project on a Renesas RL78G14 platform using the PmodIOXP.
 
-.. _required-hardware-1:
-
 Required Hardware
 -----------------
 
 -  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`_
 -  `PmodIOXP <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-IOXP>`_
 -  `PmodKYPD <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMODKYPD>`_
-
-.. _required-software-1:
 
 Required Software
 -----------------
@@ -109,8 +188,6 @@ Required Software
    
    All three parts have to be downloaded.
 
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -127,8 +204,6 @@ A PmodIOXP has to be interfaced with the Renesas Demonstration Kit (RDK) for RL7
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adp5589_rl78g14.jpg
    :align: center
 
-.. _reference-project-overview-1:
-
 Reference Project Overview
 --------------------------
 
@@ -144,8 +219,6 @@ The reference project:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adp5589_rl78g14_screen_2.jpg
    :align: center
 
-.. _software-project-tutorial-1:
-
 Software Project Tutorial
 -------------------------
 
@@ -160,8 +233,6 @@ Renesas RX62N Quick Start Guide
 
 This section contains a description of the steps required to run the ADP5589 demonstration project on a Renesas RX62N platform.
 
-.. _required-hardware-2:
-
 Required Hardware
 -----------------
 
@@ -169,15 +240,11 @@ Required Hardware
 -  `PmodIOXP <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-IOXP>`_
 -  `PmodKYPD <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,940&Prod=PMODKYPD>`_
 
-.. _required-software-2:
-
 Required Software
 -----------------
 
 -  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
 -  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
-
-.. _hardware-setup-2:
 
 Hardware Setup
 --------------
@@ -193,8 +260,6 @@ A PmodIOXP has to be interfaced with the Renesas Demonstration Kit (RDK) for RX6
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ioxp_rx62n.jpg
    :align: center
-
-.. _reference-project-overview-2:
 
 Reference Project Overview
 --------------------------
@@ -221,4 +286,12 @@ Software Project Setup
 More information
 ================
 
-.. include:: ../more-information.rst
+
+-  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
+

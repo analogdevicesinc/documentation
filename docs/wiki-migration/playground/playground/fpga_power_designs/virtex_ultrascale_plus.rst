@@ -1,11 +1,11 @@
 Virtex UltraScale+ Generic Power Solution
 =========================================
 
-====== ===========================
+====== =====================
 Type   |image1| Paper Design
-====== ===========================
-Status <fc #ffa500>★</fc> Proposed
-====== ===========================
+====== =====================
+Status ★ Proposed
+====== =====================
 
 This Virtex UltraScale+ power solution is a general purpose power tree for the Xilinx Virtex UltraScale+ series of FPGAs. Blah, blah, blah...
 

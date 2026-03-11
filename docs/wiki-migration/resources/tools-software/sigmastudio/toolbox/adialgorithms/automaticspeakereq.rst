@@ -1,7 +1,7 @@
 Automatic Speaker EQ
 ====================
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+
 | The Automatic Speaker EQ algorithm is aimed at reducing the design time of speaker systems by automatically tuning filters to create the desired frequency response of the speaker. The algorithm is capable of tuning one, two, and three way systems. | |AutoEQ1.png| |
@@ -54,14 +54,20 @@ Three Speaker System
 Algorithm Description
 ~~~~~~~~~~~~~~~~~~~~~
 
-| The Automatic Speaker EQ is located in the ADI Algorithms section of the SigmaStudio Toolbox. Once included in the project, it is necessary to choose the proper algorithm for the current design. The Automatic Speaker EQ supports up to three-way speaker designs.
-| |AutoEQ2.png|
+The Automatic Speaker EQ is located in the ADI Algorithms section of the SigmaStudio Toolbox. Once included in the project, it is necessary to choose the proper algorithm for the current design. The Automatic Speaker EQ supports up to three-way speaker designs.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ2.png
+   :alt: AutoEQ2.png
+   :align: center
 
 Source Tab
 ~~~~~~~~~~
 
-| When first opening the control, the source tab will be visible. This is where the response(s) of the desired speakers are loaded. Compatible formats include Impulse Responses with one measurement per line and Frequency responses in the :doc:`MLSSA file format </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/speakerresponsemlssa>`.
-| |AutoEQ3.png|
+When first opening the control, the source tab will be visible. This is where the response(s) of the desired speakers are loaded. Compatible formats include Impulse Responses with one measurement per line and Frequency responses in the :doc:`MLSSA file format </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/speakerresponsemlssa>`.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ3.png
+   :alt: AutoEQ3.png
+   :align: center
 
 Controls
 --------
@@ -81,10 +87,11 @@ Controls
 Target Response Tab
 ~~~~~~~~~~~~~~~~~~~
 
-| The next tab provides tools to allow the user to design the desired target response for each transducer.
-| |AutoEQ4.png|
+The next tab provides tools to allow the user to design the desired target response for each transducer.
 
-.. _controls-1:
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ4.png
+   :alt: AutoEQ4.png
+   :align: center
 
 Controls
 --------
@@ -106,10 +113,11 @@ Controls
 Design Settings Tab
 ~~~~~~~~~~~~~~~~~~~
 
-| This tab provides controls to customize the operation of the Automatic Speaker EQ algorithm.
-| |AutoEQ5.png|
+This tab provides controls to customize the operation of the Automatic Speaker EQ algorithm.
 
-.. _controls-2:
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ5.png
+   :alt: AutoEQ5.png
+   :align: center
 
 Controls
 --------
@@ -127,10 +135,11 @@ Controls
 Filter Tabs
 ~~~~~~~~~~~
 
-| After running the Automatic Speaker EQ algorithm, the Filters tab is automatically displayed. The Filters tab shows the results of the algorithm and allows the user to change the values of the filters as desired. The control is the same as the Parametric EQ included in Sigma Studio.
-| |AutoEQ6.png|
+After running the Automatic Speaker EQ algorithm, the Filters tab is automatically displayed. The Filters tab shows the results of the algorithm and allows the user to change the values of the filters as desired. The control is the same as the Parametric EQ included in Sigma Studio.
 
-.. _controls-3:
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ6.png
+   :alt: AutoEQ6.png
+   :align: center
 
 Controls
 --------
@@ -154,10 +163,11 @@ The multiband versions of the Automatic Speaker EQ algorithm contain two extra t
 Crossover Tab
 ~~~~~~~~~~~~~
 
-| The crossover tab is the same as the crossover control included in Sigma Studio. The initial crossover points are set at the cutoff frequencies defined on the Target Tab. The user is then free to edit them as needed.
-| |AutoEQ7.png|
+The crossover tab is the same as the crossover control included in Sigma Studio. The initial crossover points are set at the cutoff frequencies defined on the Target Tab. The user is then free to edit them as needed.
 
-.. _controls-4:
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ7.png
+   :alt: AutoEQ7.png
+   :align: center
 
 Controls
 --------
@@ -173,10 +183,11 @@ Controls
 Crossover Tab Alignment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| Because the Automatic Speaker EQ uses IIR filters, the phase of the signal is affected. This creates a need to align the crossover filters to prevent unwanted cancellation due to phase irregularities. The alignment tab will help fix any phase-related cancellation and allow the user to fine-tune the system.
-| |AutoEQ8.png|
+Because the Automatic Speaker EQ uses IIR filters, the phase of the signal is affected. This creates a need to align the crossover filters to prevent unwanted cancellation due to phase irregularities. The alignment tab will help fix any phase-related cancellation and allow the user to fine-tune the system.
 
-.. _controls-5:
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ8.png
+   :alt: AutoEQ8.png
+   :align: center
 
 Controls
 --------
@@ -190,8 +201,11 @@ Controls
 Filter Initialization/ Target From Filters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The dialogs for defining a target from filters and for initializing filters are the same.
-| |AutoEQ9.png|
+The dialogs for defining a target from filters and for initializing filters are the same.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ9.png
+   :alt: AutoEQ9.png
+   :align: center
 
 -  **Load/Save** – It is possible to load and save both target filter information and initialized filters.
 -  **Graph Controls** – These control the scaling of the x and y axes.
@@ -207,8 +221,11 @@ Filter Initialization/ Target From Filters
 Advanced Settings
 ~~~~~~~~~~~~~~~~~
 
-| The advanced settings are located on the Design Settings tab. They are hidden by default, but pushing the “Show Advanced Settings” button will make them appear.
-| |AutoEQ10.png|
+The advanced settings are located on the Design Settings tab. They are hidden by default, but pushing the “Show Advanced Settings” button will make them appear.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ10.png
+   :alt: AutoEQ10.png
+   :align: center
 
 -  **Design Settings:**
 
@@ -235,12 +252,3 @@ Menu Bar
 The menu on the Automatic Speaker EQ has some advanced functions associated with it. Under File, there are controls to load/save configurations. The Design menu has functions to import/export the target of the currently viewed tab, as well as to initiate the design process or reset the control.
 
 .. |AutoEQ1.png| image:: https://wiki.analog.com/_media/AutoEQ1.png
-.. |AutoEQ2.png| image:: https://wiki.analog.com/_media/AutoEQ2.png
-.. |AutoEQ3.png| image:: https://wiki.analog.com/_media/AutoEQ3.png
-.. |AutoEQ4.png| image:: https://wiki.analog.com/_media/AutoEQ4.png
-.. |AutoEQ5.png| image:: https://wiki.analog.com/_media/AutoEQ5.png
-.. |AutoEQ6.png| image:: https://wiki.analog.com/_media/AutoEQ6.png
-.. |AutoEQ7.png| image:: https://wiki.analog.com/_media/AutoEQ7.png
-.. |AutoEQ8.png| image:: https://wiki.analog.com/_media/AutoEQ8.png
-.. |AutoEQ9.png| image:: https://wiki.analog.com/_media/AutoEQ9.png
-.. |AutoEQ10.png| image:: https://wiki.analog.com/_media/AutoEQ10.png

@@ -34,10 +34,7 @@ As we have seen in the simple rectifier circuits constructed with diodes, the ci
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 - OP484 quad rail-rail op-amp
-| 5 – 10 KΩ Resistors
-| 2 – small signal diodes (1N914 or similar)
+ADALM1000 hardware module 1 - OP484 quad rail-rail op-amp 5 – 10 KΩ Resistors 2 – small signal diodes (1N914 or similar)
 
 Directions:
 ~~~~~~~~~~~
@@ -67,9 +64,7 @@ The peak of the rectified output should now equal to the peak value of the input
 
 For this laboratory exercise you should:
 
-| a) Study the circuit and determine how it works. There is a very fundamental concept that should help in understanding how this circuit operates. Given an op-amp configured with negative feedback, the inverting and non-inverting input terminals will try to reach the same voltage level, often referred to as a "virtual ground".
-| b) Plan some tests to see if this circuit indeed is a rectifying circuit. Perform these tests, fully documenting all tests and results in your lab report.
-| c) Carefully measure and record voltages at all nodes in the circuit.
+a) Study the circuit and determine how it works. There is a very fundamental concept that should help in understanding how this circuit operates. Given an op-amp configured with negative feedback, the inverting and non-inverting input terminals will try to reach the same voltage level, often referred to as a "virtual ground". b) Plan some tests to see if this circuit indeed is a rectifying circuit. Perform these tests, fully documenting all tests and results in your lab report. c) Carefully measure and record voltages at all nodes in the circuit.
 
 Questions:
 ~~~~~~~~~~
@@ -80,8 +75,6 @@ Full wave rectifier:
 ~~~~~~~~~~~~~~~~~~~~
 
 The purpose of this part of the lab activity is to modify the half wave rectifier to make full wave rectifier or absolute value circuit.
-
-.. _directions-1:
 
 Directions:
 ~~~~~~~~~~~
@@ -97,14 +90,10 @@ The circuit shown in figure 3 is an absolute value circuit, often called a preci
    Figure 3 Connection diagram for absolute value circuit
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The AWG CH-A waveform generator should be configured for a 300 Hz Sine wave with 1.0 volt Min value and 4.0 volt Max value (3 V p-p centered on 2.5 V). Channel B is set in Hi-Z mode and used to measure the voltage at the rectified output. Both scope channels should be set to 0.5 V per division.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -112,8 +101,6 @@ Procedure:
 Under the curves drop down menu select CA-V and CB-V to be displayed. Using the Meas drop down menus select Max and Avg for CV-A to display the peak and average voltage for Channel A. Select Max and Avg for CB-V to display the peak and average voltage for Channel B.
 
 Carefully measure and record voltages at all nodes in the circuit.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -129,7 +116,6 @@ What happens if the direction of one diode is opposite of the other? Repeat expe
 
 **For Further Reading:**
 
-| :adi:`Half Wave Rectifier <media/en/training-seminars/tutorials/MT-212.pdf>`
-| :adi:`Full Wave Rectifier <media/en/training-seminars/tutorials/MT-211.pdf>`
+:adi:`Half Wave Rectifier <media/en/training-seminars/tutorials/MT-212.pdf>` :adi:`Full Wave Rectifier <media/en/training-seminars/tutorials/MT-211.pdf>`
 
 **Return to the ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

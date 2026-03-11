@@ -15,10 +15,22 @@ Hardware
 Power Supply Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| When using the MAX31855 PMOD board, the 3.3 V power comes directly from the host board it is connected to. The power from the host is generally capable of providing up to 100 mA at 3.3 V; but for complete PMOD power specifications, please click\ `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
-| ==== Temperature Conversion ==== The device includes signal-conditioning hardware to convert the thermocouple’s signal into a voltage compatible with the input channels of the ADC. The T+ and T- inputs connect to internal circuitry which reduces the introduction of noise errors from the thermocouple wires. Before converting the thermoelectric voltages into equivalent temperature values, it is necessary to compensate for the difference between the thermocouple cold-junction side (device ambient temperature) and a 0°C virtual reference. For a K-type thermocouple, the voltage changes by about 41µV/°C, which approximates the thermocouple characteristic with the following linear equation: |image1| where VOUT is the thermocouple output voltage (µV), TR is the temperature of the remote thermocouple junction (°C), and TAMB is the temperature of the device (°C).
-| ==== Cold-Junction Compensation ==== The function of the thermocouple is to sense a difference in temperature between two ends of the thermocouple wires. The thermocouple’s “hot” junction can be read across the operating temperature range below for K type. |image2| The reference junction, or “cold” end (which should be at the same temperature as the board on which the device is mounted) can range from -55°C to +125°C. While the temperature at the cold end fluctuates, the device continues to accurately sense the temperature difference at the opposite end.
-| ==== Digital Interface (PMOD) ==== The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
+When using the MAX31855 PMOD board, the 3.3 V power comes directly from the host board it is connected to. The power from the host is generally capable of providing up to 100 mA at 3.3 V; but for complete PMOD power specifications, please click\ `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
+
+Temperature Conversion
+~~~~~~~~~~~~~~~~~~~~~~
+
+The device includes signal-conditioning hardware to convert the thermocouple’s signal into a voltage compatible with the input channels of the ADC. The T+ and T- inputs connect to internal circuitry which reduces the introduction of noise errors from the thermocouple wires. Before converting the thermoelectric voltages into equivalent temperature values, it is necessary to compensate for the difference between the thermocouple cold-junction side (device ambient temperature) and a 0°C virtual reference. For a K-type thermocouple, the voltage changes by about 41µV/°C, which approximates the thermocouple characteristic with the following linear equation: |image1| where VOUT is the thermocouple output voltage (µV), TR is the temperature of the remote thermocouple junction (°C), and TAMB is the temperature of the device (°C).
+
+Cold-Junction Compensation
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The function of the thermocouple is to sense a difference in temperature between two ends of the thermocouple wires. The thermocouple’s “hot” junction can be read across the operating temperature range below for K type. |image2| The reference junction, or “cold” end (which should be at the same temperature as the board on which the device is mounted) can range from -55°C to +125°C. While the temperature at the cold end fluctuates, the device continues to accurately sense the temperature difference at the opposite end.
+
+Digital Interface (PMOD)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
 The MAX31855PMB1 peripheral module can plug directly into a Pmod-compatible port (configured for SPI) through connector J1. Connector J1 provides connection of the module to the host. The pin functions and pin assignments adhere to the Pmod standard recommended by Digilent.
 
@@ -26,15 +38,23 @@ The MAX31855PMB1 peripheral module can plug directly into a Pmod-compatible port
    :align: center
    :width: 400px
 
-| |image3|
-| ===== Device Driver Support ===== There are two device driver solutions that are provided for controlling the **MAX31855PMB1**:
+.. image:: https://wiki.analog.com/_media/resources/eval/max31855/layout.png
+   :align: center
+   :width: 400px
+
+Device Driver Support
+---------------------
+
+There are two device driver solutions that are provided for controlling the **MAX31855PMB1**:
 
 -  **MAX31855 no-OS Driver**
 
    -  The MAX32655FTHR or MAX32650FTHR example application uses the :doc:`MAX31855 no-OS driver </wiki-migration/resources/tools-software/uc-drivers/max31855>` and emulates the Linux IIO framework through the :git-libtinyiiod>`__. This driver is used in bare-metal applications, typically running on low-power, embedded microcontrollers. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
 
-| 
-| ===== System Setup Using MAX32655FTHR or MAX32650FTHR ===== The :adi:`MAX31855PMB1` can be used with the :adi:`MAX32655FTHR` and :adi:`MAX32650FTHR`.
+System Setup Using MAX32655FTHR or MAX32650FTHR
+-----------------------------------------------
+
+The :adi:`MAX31855PMB1` can be used with the :adi:`MAX32655FTHR` and :adi:`MAX32650FTHR`.
 
 Demo Requirements
 ~~~~~~~~~~~~~~~~~
@@ -84,7 +104,7 @@ Pin 6 (VCC)           VCC
 The final setup should look similar as shown below.
 
 
-|image4|
+|image3|
 
 3. Power up the **MAX32655FTHR** by connecting it to your laptop using a micro-USB cable.
 
@@ -97,12 +117,10 @@ The expected output viewed in the PuTTY is shown below.
 
 |Basic Example|
 
-| 
-
 MAX32650FTHR
 ~~~~~~~~~~~~
 
-1. Using a 10-pin ribbon cable, connect the **MAX32625PICO** to the **MAX32650FTHR**. |image5| 2. Connect **MAX32650FTHR** to the **FTHR-PMD-INTZ**.
+1. Using a 10-pin ribbon cable, connect the **MAX32625PICO** to the **MAX32650FTHR**. |image4| 2. Connect **MAX32650FTHR** to the **FTHR-PMD-INTZ**.
 
 3. Connect \*\* MAX31855PMB1 \*\* to the \*\* FTHR-PMD-INTZ \*\*.
 
@@ -120,7 +138,7 @@ Pin 6 (VCC)           VCC
 The final setup should look similar as shown below.
 
 
-|image6|
+|image5|
 
 4. Power up the **MAX32650FTHR** by connecting it to your laptop using micro-USB. Connect **MAX32625PICO** to your laptop as well.
 
@@ -131,10 +149,10 @@ The final setup should look similar as shown below.
 The expected output viewed in the PuTTY is shown below.
 
 
-|image7|
+|image6|
 
-| 
-| ===== Application Software (All Platforms) =====
+Application Software (All Platforms)
+------------------------------------
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
@@ -151,8 +169,7 @@ To be able to connect your device, the software must be able to create a context
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-
-| Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to access it.
 
 For Windows machine connected to MAX32655FTHR and MAX32650FTHR:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -183,22 +200,18 @@ Example:
 
    analog@analog:~$ iio_attr -a -C
 
-|
-
-| The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the MAX32655FTHR or MAX32650FTHR platform.
+The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the MAX32655FTHR or MAX32650FTHR platform.
 
 ::
 
    analog@analog:~$ iio_reg -u <context> <device> <register> [<value>]
-
-| 
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application.  The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
@@ -228,8 +241,9 @@ Access the DMM panel to see the instantaneous reading of the thermocouple readin
 PyADI-IIO
 ~~~~~~~~~
 
-| :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
-| Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
+:doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+
+Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
 
 Running the example
 ^^^^^^^^^^^^^^^^^^^
@@ -289,17 +303,15 @@ Registration
    :width: 200px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31855/typek.png
    :width: 550px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/max31855/layout.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32655_demo.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32655_demo.png
    :width: 500px
 .. |Basic Example| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32655_basic_example.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/max31855/max32650fthr_with_pico.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/max31855/max32650fthr_with_pico.png
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32650_demo.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32650_demo.jpg
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32650_basic_example.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32650_basic_example.png
    :width: 600px
 .. |MAX31855PMB1 Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32655_iio_debug_panel.png
    :width: 300px

@@ -1,7 +1,7 @@
 Toggle On/Off
 =============
 
-| :doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
+:doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 | The Toggle On/Off cell toggles its output when it detects a rising edge on its input. The amplitude of the output signal can be set using the drop-down control in the cell's GUI. | |toggleonoffpic1.png| |
@@ -52,20 +52,29 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-| The toggle on/off cell detects rising edges on its input and toggles its output each time another rising edge is encountered. In other words, if the output is zero and a rising edge appears on the input, the output will change to one. Conversely, if the output is one and a rising edge appears on the input, the output will change to zero. The graphic below shows this input to output relationship.
-| |toggleonoffpic2.png|
-| The output of the cell will always toggle between zero and another number. That number is determined by the value in the drop-down menu in the GUI. For example, in the above graphic, only the LSB was toggling, so the output was toggling between zero and one in integer format.
+The toggle on/off cell detects rising edges on its input and toggles its output each time another rising edge is encountered. In other words, if the output is zero and a rising edge appears on the input, the output will change to one. Conversely, if the output is one and a rising edge appears on the input, the output will change to zero. The graphic below shows this input to output relationship.
 
-| In the example below, the 23rd bit (in a SigmaDSP with 5.23 decimal representation) is toggling. Therefore, the output toggles between zero and 0.5 in decimal format.
-| |toggleonoffpic3.png|
-| The input to this cell should only take on two values - for example, a logic switch or a square wave. Signals such as sine waves or noise signals will cause the cell to behave in an unpredictable way.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/toggleonoffpic2.png
+   :alt: toggleonoffpic2.png
+
+The output of the cell will always toggle between zero and another number. That number is determined by the value in the drop-down menu in the GUI. For example, in the above graphic, only the LSB was toggling, so the output was toggling between zero and one in integer format.
+
+In the example below, the 23rd bit (in a SigmaDSP with 5.23 decimal representation) is toggling. Therefore, the output toggles between zero and 0.5 in decimal format.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/toggleonoffpic3.png
+   :alt: toggleonoffpic3.png
+
+The input to this cell should only take on two values - for example, a logic switch or a square wave. Signals such as sine waves or noise signals will cause the cell to behave in an unpredictable way.
 
 Example
 -------
 
-| This simple example will toggle the 24th bit on the output each time the input switch outputs a rising edge. The output will be a series of zeros and ones in 5.23 format.
-| |toggleonoffpic4.png|
-| Other cells used in this example: On/Off Switch, Interface Read, Interface Write, Output
+This simple example will toggle the 24th bit on the output each time the input switch outputs a rising edge. The output will be a series of zeros and ones in 5.23 format.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/toggleonoffpic4.png
+   :alt: toggleonoffpic4.png
+
+Other cells used in this example: On/Off Switch, Interface Read, Interface Write, Output
 
 Algorithm Details
 -----------------
@@ -92,6 +101,3 @@ Algorithm Details
 +----------------------------+--------------------------------------------------------------+
 
 .. |toggleonoffpic1.png| image:: https://wiki.analog.com/_media/toggleonoffpic1.png
-.. |toggleonoffpic2.png| image:: https://wiki.analog.com/_media/toggleonoffpic2.png
-.. |toggleonoffpic3.png| image:: https://wiki.analog.com/_media/toggleonoffpic3.png
-.. |toggleonoffpic4.png| image:: https://wiki.analog.com/_media/toggleonoffpic4.png

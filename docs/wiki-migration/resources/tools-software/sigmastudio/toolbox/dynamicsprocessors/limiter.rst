@@ -1,8 +1,9 @@
 Limiter
 =======
 
-| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| ----------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
 | The limiter tracks the RMS level of an incoming audio signal and attempts to prevent it from exceeding a user-defined threshold by automatically reducing its gain. | |limiterpic1.png| |
@@ -92,11 +93,17 @@ The Limiter block is an extreme compressor, completely preventing signals from e
 
 This block can control the detected rms value and attack-time constant (TC), as well as the processor's decay.
 
-| The following graph shows the input/output relationship for a 1kHz tone with 6dB-increments thresholds.
-| |limiterpic2.png|
-| Signal output is computed according to the following formula:
-| |limiterpic3.png|
-| Signals below threshold remain unaffected; those above it are attenuated by the firm ratio shown above.
+The following graph shows the input/output relationship for a 1kHz tone with 6dB-increments thresholds.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/limiterpic2.png
+   :alt: limiterpic2.png
+
+Signal output is computed according to the following formula:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/limiterpic3.png
+   :alt: limiterpic3.png
+
+Signals below threshold remain unaffected; those above it are attenuated by the firm ratio shown above.
 
 In the block figure, top right, the blue pin outputs the dynamically limited input signal. The second red pin (bottom of three pins) outputs ZERO (a flag) when the rms value of the input is below threshold. If the rms value exceeds the threshold, it will output ONE, giving you the option to read whether the limiter is active.
 
@@ -160,8 +167,6 @@ Algorithm Details
 +---------------------------------------+-------------------------------------+
 
 .. |limiterpic1.png| image:: https://wiki.analog.com/_media/limiterpic1.png
-.. |limiterpic2.png| image:: https://wiki.analog.com/_media/limiterpic2.png
-.. |limiterpic3.png| image:: https://wiki.analog.com/_media/limiterpic3.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/screenhunter_711_dec._01_09.18.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/screenhunter_712_dec._01_09.19.jpg
    :width: 200px

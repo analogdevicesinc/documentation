@@ -3,9 +3,15 @@
 Switch Demultiplexer
 ====================
 
-| |switch1xn.png| |switch2xn.png|
-| ===== Description ===== The Demux Switch block routes an input signal to one of many possible outputs. The strip of radio buttons is used to select an output.
-| ===== Variants =====
+|switch1xn.png| |switch2xn.png|
+
+Description
+-----------
+
+The Demux Switch block routes an input signal to one of many possible outputs. The strip of radio buttons is used to select an output.
+
+Variants
+--------
 
 -  1xN (No Slew)
 -  1xN (SW Slew)
@@ -14,8 +20,8 @@ Switch Demultiplexer
 -  2xN (SW Slew)
 -  2xN (HW Slew)
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 ============= ========== ================ ============= ================
 Name          ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -28,33 +34,33 @@ Name          ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 2xN (HW Slew) NA         NA               S             NA
 ============= ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
------
+~~~~~
 
-======================= ===== ===============
-Name                    Type  Description
-======================= ===== ===============
-Input<fc #ff0000>X</fc> Audio Input Channel X
-======================= ===== ===============
+====== ===== ===============
+Name   Type  Description
+====== ===== ===============
+InputX Audio Input Channel X
+====== ===== ===============
 
 Output
-------
+~~~~~~
 
-======================== ===== ================
-Name                     Type  Description
-======================== ===== ================
-Output<fc #ff0000>X</fc> Audio Output Channel X
-======================== ===== ================
+======= ===== ================
+Name    Type  Description
+======= ===== ================
+OutputX Audio Output Channel X
+======= ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +-------------------+---------------+---------+----------------------------------------------------------------------------------------------------+
 | GUI Parameter     | Default Value | Range   | Function Description                                                                               |
@@ -73,17 +79,17 @@ Note:
 | 
 | ===== DSP Parameters =====
 
-+---------------------------------+------------------------------------------------------------------------------+------------------------+---------------+
-| Parameter Name                  | Description                                                                  | ADSP-214xx/SC5xx/215xx | ADAU145x/146x |
-+=================================+==============================================================================+========================+===============+
-| Index_Channel<fc #ff0000>X</fc> | 0 or 1 depending on whether the input channel <fc #ff0000>X</fc> is selected | Float                  | FixPoint8d32  |
-+---------------------------------+------------------------------------------------------------------------------+------------------------+---------------+
-| slew_mode                       | Slew mode and value for HW slew (only for HW slew)                           | NA                     | Integer       |
-+---------------------------------+------------------------------------------------------------------------------+------------------------+---------------+
++----------------+-------------------------------------------------------------+------------------------+---------------+
+| Parameter Name | Description                                                 | ADSP-214xx/SC5xx/215xx | ADAU145x/146x |
++================+=============================================================+========================+===============+
+| Index_ChannelX | 0 or 1 depending on whether the input channel X is selected | Float                  | FixPoint8d32  |
++----------------+-------------------------------------------------------------+------------------------+---------------+
+| slew_mode      | Slew mode and value for HW slew (only for HW slew)          | NA                     | Integer       |
++----------------+-------------------------------------------------------------+------------------------+---------------+
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
 .. |switch1xn.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/muxesanddemuxes/switch1xn.png
 .. |switch2xn.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/muxesanddemuxes/switch2xn.png

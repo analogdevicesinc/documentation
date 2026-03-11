@@ -67,10 +67,7 @@ We would like a simple configuration where the active element, a single transist
    Figure 11.2, Current to Voltage Converter
 
 
-| :doc:`ADALM1000 BJT as a diode lab activity </wiki-migration/university/courses/alm1k/alm-lab-3>`
-| :doc:`ADALM1000 MOS as a diode lab activity </wiki-migration/university/courses/alm1k/alm-lab-3m>`
-| :doc:`ADALM2000 BJT as a diode lab activity </wiki-migration/university/courses/electronics/electronics-lab-3>`
-| :doc:`ADALM2000 MOS as a diode lab activity </wiki-migration/university/courses/electronics/electronics-lab-3m>`
+:doc:`ADALM1000 BJT as a diode lab activity </wiki-migration/university/courses/alm1k/alm-lab-3>` :doc:`ADALM1000 MOS as a diode lab activity </wiki-migration/university/courses/alm1k/alm-lab-3m>` :doc:`ADALM2000 BJT as a diode lab activity </wiki-migration/university/courses/electronics/electronics-lab-3>` :doc:`ADALM2000 MOS as a diode lab activity </wiki-migration/university/courses/electronics/electronics-lab-3m>`
 
 11.3 An output stage to convert voltage to current
 --------------------------------------------------
@@ -152,9 +149,7 @@ The V\ :sub:`CB` of Q\ :sub:`1` in the mirror is zero. If V\ :sub:`CB` is greate
    :align: center
    :width: 200px
 
-| Where:
-| V\ :sub:`A` is the Early voltage
-| V\ :sub:`CB` is the collector-to-base voltage
+Where: V\ :sub:`A` is the Early voltage V\ :sub:`CB` is the collector-to-base voltage
 
 As we learned in an earlier chapter, the inclusion of emitter degeneration resistors (R\ :sub:`E1` and R\ :sub:`E2` in figure 11.5) can increase the effective collector impedance seen at the mirror output. In order for the mirror gain to remain equal to 1, R\ :sub:`E1` must of course equal R\ :sub:`E2`. The added voltage drop across the emitter resistor R\ :sub:`E2` (I\ :sub:`OUT` x R\ :sub:`E2`) adds to the minimum allowable output voltage (see section 11.5.2).
 
@@ -212,12 +207,9 @@ The drain-to-source voltage can be expressed as V\ :sub:`DS`\ =V\ :sub:`DG` + V\
 
 :math:`\displaystyle I_D = \frac{1}{2} K_p (W/L) (V_GS-V_th )^2 (1+λ(V_DG+V_GS ))`
 
-| Where:
-| Kp is a technology related constant associated with the transistor,
-| W/L is the width to length ratio of the transistor,
-| V\ :sub:`GS` is the gate-source voltage, V\ :sub:`th` is the threshold voltage, V\ :sub:`DS` is the drain-source voltage
-| λ is the channel length modulation constant
-| **Output resistance**
+Where: Kp is a technology related constant associated with the transistor, W/L is the width to length ratio of the transistor, V\ :sub:`GS` is the gate-source voltage, V\ :sub:`th` is the threshold voltage, V\ :sub:`DS` is the drain-source voltage λ is the channel length modulation constant
+
+**Output resistance**
 
 Because of channel-length modulation, the mirror has a finite output resistance given by the *ro* of the output transistor, namely:
 
@@ -225,9 +217,7 @@ Because of channel-length modulation, the mirror has a finite output resistance 
    :align: center
    :width: 200px
 
-| Where:
-| λ = channel-length modulation parameter
-| V\ :sub:`DS` = drain-to-source bias.
+Where: λ = channel-length modulation parameter V\ :sub:`DS` = drain-to-source bias.
 
 **Compliance voltage**
 
@@ -454,11 +444,7 @@ Eq. 4
 
 According to Eq. 4, the output resistance of the Widlar current source is increased over that of the output transistor itself (which is r\ :sub:`O`) so long as R\ :sub:`2` is large enough compared to the r\ :sub:`p` of the output transistor. (Large resistances R\ :sub:`2` make the factor multiplying r\ :sub:`O` approach the value (ß +1).) The output transistor carries a low current, making r\ :sub:`p` large, and increase in R\ :sub:`2` tends to reduce this current further, causing a correlated increase in r\ :sub:`p`. Therefore, a goal of R\ :sub:`2` >> r\ :sub:`p` can be unrealistic, and further discussion is provided below. The resistance R\ :sub:`1` / r\ :sub:`E` usually is small because the emitter resistance r\ :sub:`E` usually is only a few ohms.
 
-\**ADALM1000 Lab Activity 6, :doc:`BJT Current Mirror </wiki-migration/university/courses/alm1k/alm-lab-6>` **
-**\ ADALM1000 Lab Activity 6M, :doc:`MOS Current Mirror </wiki-migration/university/courses/alm1k/alm-lab-6m>` \*\*
-
-\**ADALM2000 Lab Activity 6, :doc:`BJT Current Mirror </wiki-migration/university/courses/electronics/electronics-lab-6>` **
-**\ ADALM2000 Lab Activity 6M, :doc:`MOS Current Mirror </wiki-migration/university/courses/electronics/electronics-lab-6m>` \*\*
+**ADALM1000 Lab Activity 6, :doc:`BJT Current Mirror </wiki-migration/university/courses/alm1k/alm-lab-6>` ADALM1000 Lab Activity 6M, :doc:`MOS Current Mirror </wiki-migration/university/courses/alm1k/alm-lab-6m>`***ADALM2000 Lab Activity 6, :doc:`BJT Current Mirror </wiki-migration/university/courses/electronics/electronics-lab-6>` ADALM2000 Lab Activity 6M, :doc:`MOS Current Mirror </wiki-migration/university/courses/electronics/electronics-lab-6m>` \*\*
 
 11.9. The Zero Gain Amplifier
 -----------------------------
@@ -511,11 +497,7 @@ A zero gain amplifier made using an enhancement mode NMOS 2N7000 transistor was 
    Figure 11.17 Small signal gain/phase plot of zero gain amplifier vs. I\ :sub:`D`
 
 
-\**ADALM1000 Lab Activity 7, :doc:`BJT Zero Gain Amplifier </wiki-migration/university/courses/alm1k/alm-lab-7>` **
-**\ ADALM1000 Lab Activity 7m, :doc:`NMOS Zero Gain Amplifier </wiki-migration/university/courses/alm1k/alm-lab-7m>` \*\*
-
-\**ADALM2000 Lab Activity 7, :doc:`BJT Zero Gain Amplifier </wiki-migration/university/courses/electronics/electronics-lab-7>` **
-**\ ADALM2000 Lab Activity 7m, :doc:`NMOS Zero Gain Amplifier </wiki-migration/university/courses/electronics/electronics-lab-7m>` \*\*
+**ADALM1000 Lab Activity 7, :doc:`BJT Zero Gain Amplifier </wiki-migration/university/courses/alm1k/alm-lab-7>` ADALM1000 Lab Activity 7m, :doc:`NMOS Zero Gain Amplifier </wiki-migration/university/courses/alm1k/alm-lab-7m>`***ADALM2000 Lab Activity 7, :doc:`BJT Zero Gain Amplifier </wiki-migration/university/courses/electronics/electronics-lab-7>` ADALM2000 Lab Activity 7m, :doc:`NMOS Zero Gain Amplifier </wiki-migration/university/courses/electronics/electronics-lab-7m>` \*\*
 
 11.10 Stabilized Current Source
 -------------------------------
@@ -576,11 +558,9 @@ Now that we understand the concept of the zero gain amplifier, the objective is 
    Figure 11.23 cascade of NPN and PNP peaking current sources
 
 
-| **ADALM1000 Lab Activity 8,** :doc:`BJT Stabilized current source </wiki-migration/university/courses/alm1k/alm-lab-8>`
-| **ADALM1000 Lab Activity 8m,** :doc:`NMOS Stabilized current source </wiki-migration/university/courses/alm1k/alm-lab-8m>`
+**ADALM1000 Lab Activity 8,** :doc:`BJT Stabilized current source </wiki-migration/university/courses/alm1k/alm-lab-8>` **ADALM1000 Lab Activity 8m,** :doc:`NMOS Stabilized current source </wiki-migration/university/courses/alm1k/alm-lab-8m>`
 
-| **ADALM2000 Lab Activity 8,** :doc:`BJT Stabilized current source </wiki-migration/university/courses/electronics/electronics-lab-8>`
-| **ADALM2000 Lab Activity 8m,** :doc:`MOS Stabilized current source </wiki-migration/university/courses/electronics/electronics-lab-8m>`
+**ADALM2000 Lab Activity 8,** :doc:`BJT Stabilized current source </wiki-migration/university/courses/electronics/electronics-lab-8>` **ADALM2000 Lab Activity 8m,** :doc:`MOS Stabilized current source </wiki-migration/university/courses/electronics/electronics-lab-8m>`
 
 --------------
 

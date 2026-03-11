@@ -20,7 +20,7 @@ Software Configuration
 
 On the Yocto, Configure the linux-kernel as below to set the USB controller in Gadget only mode, and enable the USB Ethernet Gadget relevant options.
 
-.. code:: c++
+.. code:: console
 
    $ bitbake linux-adi -c menuconfig
 
@@ -31,13 +31,13 @@ Configure the USB drivers to Gadget only mode (or Dual role mode )
 
    Device Drivers  --->
        [*] USB support  --->
-                   <*>   Support for Host-side USB  
+                   <*>   Support for Host-side USB
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Dual role mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                    <*>   USB Gadget Support  --->
 
@@ -46,7 +46,7 @@ Configure the Gadget Ethernet Support
 
 .. code:: shell
 
-   Device Drivers  --->  
+   Device Drivers  --->
         <*> USB support
         <*>   USB Gadget Support  --->
         <M>     Ethernet Gadget (with CDC Ethernet support)
@@ -61,7 +61,7 @@ Example Usage
 
 -  **Install the USB Ethernet module**
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# modprobe g_ether host_addr=00:dc:c8:f7:75:05 dev_addr=00:dd:dc:eb:6d:f1
    using random self ethernet address
@@ -85,7 +85,7 @@ Example Usage
 
 Enable the **usb0** and config the ``IP address`` via the "ifconfig"command:
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# ifconfig usb0 192.168.1.66 up
    IPv6: ADDRCONF(NETDEV_CHANGE): usb0: link becomes ready
@@ -103,7 +103,7 @@ Enable the **usb0** and config the ``IP address`` via the "ifconfig"command:
 
 With following command you should be able to see the USB Ethernet device is there on your HOST:
 
-.. code:: c++
+.. code:: console
 
    test@madara:~# sudo su
    root@madara:~# lsusb
@@ -117,7 +117,7 @@ With following command you should be able to see the USB Ethernet device is ther
    [84172.939552] cdc_subset: probe of 2-1.4:1.0 failed with error -22
    [84172.940300] cdc_ether 2-1.4:1.0 eth2: register 'cdc_ether' at usb-0000:00:1d.0-1.4, CDC Ethernet Device, 00:dc:c8:f7:75:05
 
-.. code:: c++
+.. code:: console
 
    test@madara:~# ifconfig
    enp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
@@ -148,7 +148,7 @@ With following command you should be able to see the USB Ethernet device is ther
 
 Thought compared the commands output of dmesg and ifconfig, we can see the ether address of enx00dcc8f77505 is same with CDC Ethernet Device. So the "**enx00dcc8f77505**" is the target USB Ethernet Device.
 
-.. code:: c++
+.. code:: console
 
    test@madara:~# ifconfig enx00dcc8f77505 up
    test@madara:~# ifconfig enx00dcc8f77505 192.168.1.67
@@ -166,7 +166,7 @@ Thought compared the commands output of dmesg and ifconfig, we can see the ether
 
 Ping the target board:
 
-.. code:: c++
+.. code:: console
 
    test@madara:~# ping -c 5 192.168.1.66
    PING 192.168.1.66 (192.168.1.66) 56(84) bytes of data.

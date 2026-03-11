@@ -113,81 +113,96 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``typedef enum {                               |
+    typedef enum {
+     AD77681_ECO = 0,
+     AD77681_MEDIAN = 2,
+     AD77681_FAST = 3,
+    } ad77681_power_mode;
 
-|     AD77681_ECO = 0,                           |
-|     AD77681_MEDIAN = 2,                        |
-|     AD77681_FAST = 3,                          |
-| } ad77681_power_mode;                          |
-|                                                |
-| typedef enum {                                 |
-|     AD77681_MCLK_DIV_16 = 0,                   |
-|     AD77681_MCLK_DIV_8 = 1,                    |
-|     AD77681_MCLK_DIV_4 = 2,                    |
-|     AD77681_MCLK_DIV_2 = 3                     |
-| } ad77681_mclk_div;                            |
-|                                                |
-| typedef enum {                                 |
-|     AD77681_CONV_CONTINUOUS = 0,               |
-|     AD77681_CONV_ONE_SHOT = 1,                 |
-|     AD77681_CONV_SINGLE = 2,                   |
-|     AD77681_CONV_PERIODIC = 3                  |
-| } ad77681_conv_mode;                           |
-|                                                |
-| typedef enum {                                 |
-|     AD77681_CONV_24BIT = 0,                    |
-|     AD77681_CONV_16BIT = 1                     |
-| } ad77681_conv_len;                            |
-|                                                |
-| typedef enum {                                 |
-|     AD77681_RDY_DOUT_EN,                       |
-|     AD77681_RDY_DOUT_DIS                       |
-| } ad77681_rdy_dout;                            |
-|                                                |
-| typedef enum {                                 |
-|     AD77681_TEMP_SENSOR = 0x0,                 |
-|     AD77681_AIN_SHORT= 0x8,                    |
-|     AD77681_POSITIVE_FS = 0x9,                 |
-|     AD77681_NEGATIVE_FS = 0xA                  |
-| } ad77681_conv_diag_mux;                       |
-|                                                |
-| typedef enum {                                 |
-|     AD77681_CRC,                               |
-|     AD77681_XOR,                               |
-|     AD77681_NO_CRC                             |
-| } ad77681_crc_sel;                             |
-|                                                |
-| typedef struct {                               |
-|     /* SPI */                                  |
-|     spi_dev                 *spi_eng_dev;      |
-|     /* Configuration */                        |
-|     ad77681_power_mode      power_mode;        |
-|     ad77681_mclk_div        mclk_div;          |
-|     ad77681_conv_mode       conv_mode;         |
-|     ad77681_conv_diag_mux   diag_mux_sel;      |
-|     bool                    conv_diag_sel;     |
-|     ad77681_conv_len        conv_len;          |
-|     ad77681_crc_sel         crc_sel;           |
-|     uint8_t                 status_bit;        |
-| } ad77681_dev;                                 |
-|                                                |
-| typedef struct {                               |
-|     /* SPI */                                  |
-|     spi_init_param          *spi_eng_dev_init; |
-|     /* Configuration */                        |
-|     ad77681_power_mode      power_mode;        |
-|     ad77681_mclk_div        mclk_div;          |
-|     ad77681_conv_mode       conv_mode;         |
-|     ad77681_conv_diag_mux   diag_mux_sel;      |
-|     bool                    conv_diag_sel;     |
-|     ad77681_conv_len        conv_len;          |
-|     ad77681_crc_sel         crc_sel;           |
-|     uint8_t                 status_bit;        |
-| } ad77681_init_param;``                        |
-+------------------------------------------------+
+::
+
+    typedef enum {
+     AD77681_MCLK_DIV_16 = 0,
+     AD77681_MCLK_DIV_8 = 1,
+     AD77681_MCLK_DIV_4 = 2,
+     AD77681_MCLK_DIV_2 = 3
+    } ad77681_mclk_div;
+
+::
+
+    typedef enum {
+     AD77681_CONV_CONTINUOUS = 0,
+     AD77681_CONV_ONE_SHOT = 1,
+     AD77681_CONV_SINGLE = 2,
+     AD77681_CONV_PERIODIC = 3
+    } ad77681_conv_mode;
+
+::
+
+    typedef enum {
+     AD77681_CONV_24BIT = 0,
+     AD77681_CONV_16BIT = 1
+    } ad77681_conv_len;
+
+::
+
+    typedef enum {
+     AD77681_RDY_DOUT_EN,
+     AD77681_RDY_DOUT_DIS
+    } ad77681_rdy_dout;
+
+::
+
+    typedef enum {
+     AD77681_TEMP_SENSOR = 0x0,
+     AD77681_AIN_SHORT= 0x8,
+     AD77681_POSITIVE_FS = 0x9,
+     AD77681_NEGATIVE_FS = 0xA
+    } ad77681_conv_diag_mux;
+
+::
+
+    typedef enum {
+     AD77681_CRC,
+     AD77681_XOR,
+     AD77681_NO_CRC
+    } ad77681_crc_sel;
+
+::
+
+    typedef struct {
+     /* SPI */
+     spi_dev                 *spi_eng_dev;
+     /* Configuration */
+     ad77681_power_mode      power_mode;
+     ad77681_mclk_div        mclk_div;
+     ad77681_conv_mode       conv_mode;
+     ad77681_conv_diag_mux   diag_mux_sel;
+     bool                    conv_diag_sel;
+     ad77681_conv_len        conv_len;
+     ad77681_crc_sel         crc_sel;
+     uint8_t                 status_bit;
+    } ad77681_dev;
+
+::
+
+    typedef struct {
+     /* SPI */
+     spi_init_param          *spi_eng_dev_init;
+     /* Configuration */
+     ad77681_power_mode      power_mode;
+     ad77681_mclk_div        mclk_div;
+     ad77681_conv_mode       conv_mode;
+     ad77681_conv_diag_mux   diag_mux_sel;
+     bool                    conv_diag_sel;
+     ad77681_conv_len        conv_len;
+     ad77681_crc_sel         crc_sel;
+     uint8_t                 status_bit;
+    } ad77681_init_param;
 
 HDL Downloads
 -------------
@@ -209,9 +224,11 @@ No-OS Downloads
    :class: download
 
    
-   -  |:git-no-OS:`ad7768-1fmcz|`
-   
+   -
 
+
+   
+   |https://github.com/analogdevicesinc/no-OS/tree/ad7768_1/ad7768-1fmcz|
 
 .. |ad77681evb HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/ad77681evb`
-.. |:git-no-OS:`ad7768-1fmcz|` image:: :git-no-OS:`ad7768-1fmcz`
+.. |https://github.com/analogdevicesinc/no-OS/tree/ad7768_1/ad7768-1fmcz| image:: https://github.com/analogdevicesinc/no-OS/tree/ad7768_1/ad7768-1fmcz

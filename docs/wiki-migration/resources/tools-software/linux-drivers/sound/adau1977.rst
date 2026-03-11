@@ -45,7 +45,10 @@ Files
 Example device initialization
 =============================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 The platform data for the ADAU1977 allow to specify the MICBIAS pin voltage. If no platform data is specified (i.e. set to NULL) the default voltage of 8.5 V will be used.
 
@@ -95,7 +98,7 @@ When using machine board files to register the device the regulators can be spec
    static struct regulator_consumer_supply adau1977_avdd_consumer_supplies[] = {
        REGULATOR_SUPPLY("AVDD", "spi0.1"),
    };
-    
+
    static struct regulator_init_data adau1977_avdd_reg_init_data = {
        .constraints    = {
            .name   = "3V3",
@@ -104,7 +107,7 @@ When using machine board files to register the device the regulators can be spec
        .consumer_supplies = adau1977_avdd_consumer_supplies,
        .num_consumer_supplies = ARRAY_SIZE(adau1977_avdd_consumer_supplies),
    };
-    
+
    static struct fixed_voltage_config adau1977_avdd_pdata = {
        .supply_name    = "board-3V3",
        .microvolts = 3300000,
@@ -125,7 +128,7 @@ When using machine board files to register the device the regulators can be spec
    static struct regulator_consumer_supply adau1977_dvdd_consumer_supplies[] = {
        REGULATOR_SUPPLY("DVDD", "spi0.1"),
    };
-    
+
    static struct regulator_init_data adau1977_dvdd_reg_init_data = {
        .constraints    = {
            .name   = "1V8",
@@ -134,7 +137,7 @@ When using machine board files to register the device the regulators can be spec
        .consumer_supplies = adau1977_dvdd_consumer_supplies,
        .num_consumer_supplies = ARRAY_SIZE(adau1977_dvdd_consumer_supplies),
    };
-    
+
    static struct fixed_voltage_config adau1977_dvdd_pdata = {
        .supply_name    = "board-1V8",
        .microvolts = 1800000,
@@ -191,7 +194,14 @@ The ADAU1977 driver is fully devicetree compatible. Depending on the bus type th
 I2C
 ---
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+
+This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+
+So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+
+For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+
 
 The I2C device id depends on the ADDR0 and ADDR1 pin settings and needs to be set according to your board setup.
 
@@ -253,7 +263,7 @@ Devicetree
 
        #size-cells = <0>;
        #address-cells = <1>;
-               
+
        adau1977: codec@11 {
            compatible = "adi,adau1977";
            reg = <0x11>;
@@ -265,7 +275,12 @@ Devicetree
 SPI
 ---
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 .. code:: c
 
@@ -300,8 +315,6 @@ SPI
    }
    arch_initcall(board_init);
 
-.. _devicetree-1:
-
 Devicetree
 ~~~~~~~~~~
 
@@ -320,7 +333,7 @@ Devicetree
 
        #size-cells = <0>;
        #address-cells = <1>;
-               
+
        adau1977: codec@1 {
            compatible = "adi,adau1977";
            reg = <0x1>;
@@ -482,15 +495,15 @@ Fixed MCLK
 
    static struct snd_soc_dai_link eval_adau1977_dai = {
        .name = "adau1977",
-       .stream_name = "ADAU1977", 
-       .cpu_dai_name = "bfin-i2s.0", 
+       .stream_name = "ADAU1977",
+       .cpu_dai_name = "bfin-i2s.0",
        .codec_dai_name = "adau1977-hifi",
        .platform_name = "bfin-i2s-pcm-audio",
        .codec_name = "adau1977.0-0011",
        .init = eval_adau1977_init,
        .dai_fmt = SND_SOC_DAIFMT_I2S
 
-       |
+
            SND_SOC_DAIFMT_NB_NF |
 
            SND_SOC_DAIFMT_CBM_CFM,
@@ -530,8 +543,8 @@ Configurable MCLK
 
    static struct snd_soc_dai_link eval_adau1977_dai = {
        .name = "adau1977",
-       .stream_name = "ADAU1977", 
-       .cpu_dai_name = "bfin-i2s.0", 
+       .stream_name = "ADAU1977",
+       .cpu_dai_name = "bfin-i2s.0",
        .codec_dai_name = "adau1977-hifi",
        .platform_name = "bfin-i2s-pcm-audio",
        .codec_name = "adau1977.0-0011",
@@ -539,10 +552,14 @@ Configurable MCLK
        .init = eval_adau1977_init,
        .dai_fmt = SND_SOC_DAIFMT_I2S
 
-       |
+
            SND_SOC_DAIFMT_NB_NF |
 
            SND_SOC_DAIFMT_CBM_CFM,
    };
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

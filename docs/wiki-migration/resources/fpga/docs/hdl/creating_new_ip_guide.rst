@@ -21,14 +21,14 @@ TCL File
 
 The tcl file should be named <module_name_ip>.tcl (ex: axi_led_control_ip.tcl). Here you should keep the two lines that source our scripts :
 
-.. code:: c
+.. code:: tcl
 
    source ../scripts/adi_env.tcl
    source $ad_hdl_dir/library/scripts/adi_ip_xilinx.tcl
 
 Then take a look at the commands
 
-.. code:: c
+.. code:: tcl
 
    adi_ip_create <module_name>
    adi_ip_files <module_name> [list \ <other_components>]
@@ -37,13 +37,13 @@ These commands create the IP and add the dependencies for it. By <other_componen
 
 If your new IP uses AXI Lite for register control, then the next command is
 
-.. code:: c
+.. code:: tcl
 
    adi_ip_properties <module_name>
 
 It is used to initialize properties like memory and so on. If the IP does not use AXI, then you should use
 
-.. code:: c
+.. code:: tcl
 
    adi_ip_properties_lite <module_name>
 
@@ -55,7 +55,7 @@ At the end of the file don't forget to save the IP by using this command
 
 If you need more help, here is an example of an IP called axi_led_control. You can open it side by side with the tcl file from the original axi_fan_control and apply the same logic to make your changes.
 
-.. code:: c
+.. code:: tcl
 
    # ip
 
@@ -95,14 +95,12 @@ Now you can run the famous "make" in command line from the IP directory. After t
 Intel
 -----
 
-.. _tcl-file-1:
-
 TCL File
 ~~~~~~~~
 
 The tcl file should be named <module_name_hw>.tcl (ex: axi_led_control_intel_hw.tcl) These first 4 lines of code you should keep:
 
-.. code:: c
+.. code:: tcl
 
    package require qsys 14.0
    package require quartus::device
@@ -147,7 +145,7 @@ In Quartus there is no need to save the core or run make afterwards. It is smart
 
 If you want to see the whole file, here is an example named axi_led_control_intel.
 
-.. code:: c
+.. code:: tcl
 
    package require qsys 14.0
    package require quartus::device
@@ -160,15 +158,13 @@ If you want to see the whole file, here is an example named axi_led_control_inte
    ad_ip_files axi_led_control_intel [list \
      $ad_hdl_dir/library/common/up_axi.v \
      axi_led_control_intel.v]
-     
+
    #axi4 slave
    ad_ip_intf_s_axi s_axi_aclk s_axi_aresetn 10
 
    #output led
    add_interface led_on_if conduit end
-   add_interface_port led_on_if led_on data Output 1 
-
-.. _makefile-1:
+   add_interface_port led_on_if led_on data Output 1
 
 Makefile
 ~~~~~~~~
@@ -195,5 +191,5 @@ If this tutorial was not enough and you need more in depth information about cre
 
 :doc:`add_hdl_ip </wiki-migration/resources/fpga/docs/hdl/add_hdl_ip>`
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#resources/fpga/quick_validation
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/navigation HDL User Guide#resources/fpga/quick_validation
    :alt: Quick system validation with no-Os#resources/fpga/docs/tips|Main page#resources/fpga/docs/hdl/use_adi_ips|Use ADI IPs

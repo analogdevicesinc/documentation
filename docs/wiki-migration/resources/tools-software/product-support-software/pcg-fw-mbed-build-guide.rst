@@ -27,13 +27,13 @@ Prior to building a firmware project, it is required to set up an environment so
 
 .. raw:: html
 
-   <details><summary>Windows (Click to expand)</summary>
+   <details><summary>Windows (Click to expand)
 
 XHIDDENSTART STM32 (Click to expand) XHIDDENSTARTSTOP
 
 XHIDDENSTART Build using STM32 IDE (click to expand) XHIDDENSTARTSTOP
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/pcg-fw-stm32-build-pre-requisites#STM Build Pre-requisites&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/pcg-fw-stm32-build-pre-requisites#STM Build Pre-requisites&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/pcg-fw-stm32-build-pre-requisites#STM Build Pre-requisites&showfooter=nofooter
 
 .. raw:: html
@@ -47,7 +47,7 @@ XHIDDENEND
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 XHIDDENSTART For Web/Online Build (Click to expand) XHIDDENSTARTSTOP
 
@@ -63,7 +63,7 @@ XHIDDENSTART For Web/Online Build (Click to expand) XHIDDENSTARTSTOP
 
 .. raw:: html
 
-   <details><summary>For Make Build (Click to expand)</summary>
+   <details><summary>For Make Build (Click to expand)
 
 -  Install Make in the root of 'C' drive without any spaces in the installation path. The path must be C:\\GnuWin32\\... https://gnuwin32.sourceforge.net/packages/make.htm
 -  Add the path of GnuWin32/bin directory into the system environmental path variable (as shown in below screenshot).
@@ -94,13 +94,13 @@ Building a project
 
 .. raw:: html
 
-   <details><summary>Windows (Click to expand)</summary>
+   <details><summary>Windows (Click to expand)
 
 XHIDDENSTART STM32 (Click to expand) XHIDDENSTARTSTOP
 
 XHIDDENSTART Build using STM32 IDE (click to expand) XHIDDENSTARTSTOP
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/pcg-fw-stm32-build-guide#STM Build&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/pcg-fw-stm32-build-guide#STM Build&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/pcg-fw-stm32-build-guide#STM Build&showfooter=nofooter
 
 .. raw:: html
@@ -114,7 +114,7 @@ XHIDDENEND
 
 .. raw:: html
 
-   <details><summary>Mbed (Click to expand)</summary>
+   <details><summary>Mbed (Click to expand)
 
 XHIDDENSTART Build Using Web/Online IDE (Click to expand) XHIDDENSTARTSTOP
 
@@ -148,7 +148,7 @@ XHIDDENSTART Build Using Web/Online IDE (Click to expand) XHIDDENSTARTSTOP
 
 .. raw:: html
 
-   <details><summary>Build Using Make (Click to expand)</summary>
+   <details><summary>Build Using Make (Click to expand)
 
 -  Open Git bash and change current directory to project directory (eg. "precision-converters-firmware/projects/ad4130_iio" directory) which you want to build.
 -  Run **make** command to build the project.

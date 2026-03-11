@@ -36,8 +36,6 @@ MacOS users: To be able to open multiple instances of Scopy, open a terminal wid
 
    open -n /path/to/application/Scopy.app
 
-.. _analog-example-1:
-
 Analog Example
 --------------
 
@@ -70,8 +68,6 @@ You’ll notice that both Oscilloscope instruments were triggered. In the image 
 
 |2m2k_ainsync1.png| |2m2k_ainsync2.png|
 
-.. _digital-example-1:
-
 Digital Example
 ---------------
 
@@ -103,14 +99,10 @@ If you’ll zoom in on the plot and enable the cursors in the second instance of
 Using Libm2k
 ============
 
-.. _analog-example-2:
-
 Analog Example
 --------------
 
 Maintaining the connections made when demonstrating the synchronisation of the analog inputs using Scopy, the same result can be achieved using the example Python libm2k :git-libm2k:`script <bindings/python/examples/analogin_sync_2m2ks.py>`. The script follows the exact steps shown in the Scopy section of this tutorial.
-
-.. _digital-example-2:
 
 Digital Example
 ---------------

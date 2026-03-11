@@ -7,7 +7,8 @@ AD-FMCOMMS1-EBZ Linux support
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/software/tux.png
+   :align: right
 
 Analog Devices provides full Linux support for the AD-FMCOMMS1-EBZ. Depending on which FPGA platform you are using the steps to perform to setup the system slightly differ:
 
@@ -28,5 +29,3 @@ Descriptions of the individual Linux device drivers for the different parts on t
 
 .. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS1-EBZ#none#./
    :alt: Software#baremetal|No-OS drivers
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/software/tux.png

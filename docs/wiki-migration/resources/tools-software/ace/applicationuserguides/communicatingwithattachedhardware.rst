@@ -28,35 +28,23 @@ Each view toolbar contains a selection of the following communication options:
 
 ::
 
-   *  {{:resources:tools-software:ace:applicationuserguides:ResetChip.PNG?80|}} **Reset Device –** Reverts all components to their default state.****
+   *  {{:resources:tools-software:ace:applicationuserguides:ResetChip.PNG?80|}} **Reset Device –** Reverts all components to their default state.***
 
--  |image1| **Poll Device –** If enabled causes the continuous polling of the device for state changes.***\*
-
-  
+-  |image1| **Poll Device –** If enabled causes the continuous polling of the device for state changes.**\*
 
 -  |image2| **Auto Apply –** If enabled causes continuous applying of changes made by the operator to the
 
 device.
 
-  
-
--  |image3| **Apply Changes –** Applies all changes made in the software to the hardware.***\*
-
-  
+-  |image3| **Apply Changes –** Applies all changes made in the software to the hardware.**\*
 
 -  |image4| **Apply Selected –** Applies current software value of the selected register to the hardware.
 
-  
-
 -   |image5| **Read All –** Reads the register values from the hardware and updates the software to these values.
-
-  
 
 ::
 
    *`{{:resources:tools-software:ace:applicationuserguides:Readselected.PNG?80|}} **Read Selected –** Reads the selected registers value from the hardware and updates the software to this value.
-
-        
 
 -  |image6| **Reset Device –** Resets hardware to its default state.
 

@@ -1,7 +1,105 @@
 ADXL362 - No-OS Driver for Microchip Microcontroller Platforms
 ==============================================================
 
-.. include:: ../adxl362.rst
+
+Supported Devices
+=================
+
+-  :adi:`ADXL362`
+
+Evaluation Boards
+=================
+
+-  `PmodACL2 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-ACL2>`_
+
+Overview
+========
+
+
+The :adi:`ADXL362` is an ultralow power, 3-axis MEMS accelerometer that consumes less than 2 μA at a 100 Hz output data rate and 270 nA when in motion triggered wake-up mode. Unlike accelerometers that use power duty cycling to achieve low power consumption, the :adi:`ADXL362` does not alias input signals by undersampling; it samples the full bandwidth of the sensor at all data rates.
+
+The :adi:`ADXL362` always provides 12-bit output resolution; 8-bit formatted data is also provided for more efficient single-byte transfers when a lower resolution is sufficient. Measurement ranges of ±2 g, ±4 g, and ±8 g are available, with a resolution of 1 mg/LSB on the ±2 g range. For applications where a noise level lower than the normal 550 μg/√Hz of the :adi:`ADXL362` is desired, either of two lower noise modes (down to 175 μg/√Hz typical) can be selected at minimal increase in supply current.
+
+In addition to its ultralow power consumption, the :adi:`ADXL362` has many features to enable true system level power reduction. It includes a deep multimode output FIFO, a built-in micropower temperature sensor, and several activity detection modes including adjustable threshold sleep and wake-up operation that can run as low as 270 nA at a 6 Hz (approximate) measurement rate. A pin output is provided to directly control an external switch when activity is detected, if desired. In addition, the :adi:`ADXL362` has provisions for external control of sampling time and/or an external clock.
+
+The :adi:`ADXL362` operates on a wide 1.6 V to 3.5 V supply range, and can interface, if necessary, to a host operating on a separate, lower supply voltage. :adi:`ADXL362` is available in a 3 mm × 3.25 mm × 1.06 mm package.
+
+Applications
+------------
+
+-  Hearing aids
+-  Home healthcare devices
+-  Motion enabled power save switches
+-  Wireless sensors
+-  Motion enabled metering devices
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/adxl362_pmod_acl2.jpg
+   :align: center
+
+
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the ADXL362 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the ADXL362 driver can be used exactly as it is provided.
+
+There are three functions which are called by the ADXL362 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of ADXL362 driver:
+
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| Function                                                                                                              | Description                                                            |
++=======================================================================================================================+========================================================================+
+| char ADXL362_Init(void)                                                                                               | Initializes the device.                                                |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_SetRegisterValue(unsigned short registerValue, unsigned char registerAddress, unsigned char bytesNumber) | Writes data into a register.                                           |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_GetRegisterValue(unsigned char \*pReadData, unsigned char registerAddress, unsigned char bytesNumber)    | Performs a burst read of a specified number of registers.              |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_GetFifoValue(unsigned char \*pBuffer, unsigned short bytesNumber)                                        | Reads multiple bytes from the device's FIFO buffer.                    |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_SoftwareReset(void)                                                                                      | Resets the device via SPI communication bus.                           |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_SetPowerMode(unsigned char pwrMode)                                                                      | Places the device into standby/measure mode.                           |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_SetRange(unsigned char gRange)                                                                           | Selects the measurement range.                                         |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_SetOutputRate(unsigned char outRate)                                                                     | Selects the Output Data Rate of the device.                            |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_GetXyz(short \*x, short \*y, short \*z)                                                                  | Reads the 3-axis raw data from the accelerometer.                      |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_GetGxyz(float\* x, float\* y, float\* z)                                                                 | Reads the 3-axis raw data from the accelerometer and converts it to g. |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| float ADXL362_ReadTemperature(void)                                                                                   | Reads the temperature of the device.                                   |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_FifoSetup(unsigned char mode, unsigned short waterMarkLvl, unsigned char enTempRead)                     | Configures the FIFO feature.                                           |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_SetupActivityDetection(unsigned char refOrAbs, unsigned short threshold, unsigned char time)             | Configures activity detection.                                         |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void ADXL362_SetupInactivityDetection(unsigned char refOrAbs, unsigned short threshold, unsigned short time)          | Configures inactivity detection.                                       |
++-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+
+
 
 **HW Platform(s):**
 
@@ -98,6 +196,7 @@ The following image shows a generic list of commands in a serial terminal connec
 Software Project Setup
 ----------------------
 
+
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -138,12 +237,11 @@ This section presents the steps for developing a software application that will 
    :align: center
 
 
+
 Digilent Cerebot MC7 Quick Start Guide
 ======================================
 
 This section contains a description of the steps required to run the ADXL362 demonstration project on a Digilent Cerebot MC7 platform.
-
-.. _required-hardware-1:
 
 Required Hardware
 -----------------
@@ -151,15 +249,11 @@ Required Hardware
 -  `Cerebot MC7 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MC7>`_
 -  PmodACL2
 
-.. _required-software-1:
-
 Required Software
 -----------------
 
 -  `MPLAB X Integrated Development Environment <http://www.microchip.com/mplabx>`_
 -  `MPLAB XC16 compiler <http://www.microchip.com/mplabxc>`_
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -168,8 +262,6 @@ A PmodACL2 can be connected to the JB connector of Cerebot MC7 development board
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_acl2_dspic33.jpg
    :align: center
-
-.. _reference-project-overview-1:
 
 Reference Project Overview
 --------------------------
@@ -201,19 +293,55 @@ The following image shows a list of commands in a serial terminal connected to p
 
 |image2|
 
-.. _software-project-setup-1:
-
 Software Project Setup
 ----------------------
 
-.. include:: dspic33_software_design.rst
+
+This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
+
+-  Run the **MPLAB X** integrated development environment.
+-  Choose to create a new project.
+-  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_0.png
+   :align: center
+
+-  In the **Select Device** window choose **dsPIC33FJ128MC706A** device and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_1.png
+   :align: center
+
+-  In the **Select Tool** window select the desired hardware tool and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_2.png
+   :align: center
+
+-  In the **Select Compiler** window chose the **XC16** compiler and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_3.png
+   :align: center
+
+-  In the **Select Project Name and Folder** window choose a name and a location for the project.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
+   :align: center
+
+-  After the project is created, the source files have to be copied in the project folder and included in the project.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
+   :align: center
+
+-  The project is ready to be built and downloaded on the development board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
+   :align: center
+
+
 
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
 ==========================================================
 
 This section contains a description of the steps required to run the ADXL362 chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
-
-.. _required-hardware-2:
 
 Required Hardware
 -----------------
@@ -221,14 +349,10 @@ Required Hardware
 -  `Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
 -  PmodACL2
 
-.. _required-software-2:
-
 Required Software
 -----------------
 
 -  `MPIDE <https://github.com/chipKIT32/chipKIT32-MAX/downloads>`_
-
-.. _hardware-setup-2:
 
 Hardware Setup
 --------------
@@ -237,8 +361,6 @@ A PmodACL2 has to be connected to the JE connector of Cerebot MX3cK development 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_acl2_pic32_arduino.jpg
    :align: center
-
-.. _reference-project-overview-2:
 
 Reference Project Overview
 --------------------------
@@ -272,15 +394,38 @@ The following image shows a list of commands in the serial monitor.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_arduino.png
    :align: center
 
-.. _software-project-setup-2:
-
 Software Project Setup
 ----------------------
 
-.. include:: arduino_software_design.rst
+
+This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
+
+-  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
+-  Unzip the downloaded file in the libraries folder.
+-  Run the **MPIDE** environment.
+-  You should see the new library under **Sketch->Import Library**, under **Contributed**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_1.png
+   :align: center
+
+-  Also you should see under **File->Examples** the demo project for the ADI library.
+-  Select the ADIDriver example.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_2.png
+   :align: center
+
+-  Select the **Cerebot MX3cK** board from **Tools->Board**.
+-  Select the corresponding Serial Communication Port from **Tools->Serial Port**
+-  The project is ready to be uploaded on the development board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_3.png
+   :align: center
+
+
 
 More information
 ================
+
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
@@ -288,6 +433,7 @@ More information
 |//ez.analog.com/community/feeds/allcontent/atom|
 
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

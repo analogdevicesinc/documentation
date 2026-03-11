@@ -1,7 +1,7 @@
 EVAL-CN0585-FMCZ User Guide
 ===========================
 
-|
+
 
 .. important::
 
@@ -276,7 +276,7 @@ Reference Demos & Software
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 -  :git-pyadi-iio:`PyADI-IIO sources for the CN0585 Rev. B board <tree/cn0585_v1>`
 -  :git-HighSpeedConverterToolbox:`MATLAB and Simulink sources for the CN0585 Rev. B board <tree/cn0585_v1>`
--  :git-hdl:`HDL Project sources for the CN0585 Rev. B board <projects/cn0585_fmcz>`
+-  `HDL Project sources for the CN0585 Rev. B board <https://github.com/analogdevicesinc/hdl/tree/cn0585_v1/projects/cn0585_fmcz>`_
 -  :git-linux:`Linux driver sources for the CN0585 Rev. B board <tree/cn0585_v1>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/setup_cn0585_diagram.png

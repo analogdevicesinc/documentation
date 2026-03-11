@@ -6,47 +6,71 @@ M2K HDL Architecture
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/m2k/index.html\
 
 
-| The ADALM2000 (M2K) is built around the XC7Z010 Xilinx Zynq FPGA.
-| Booting is done from a 32MB QSPI FLASH, connected directly to the PS7 block.
-| The system memory is 512MB RAM, which is also used for the file system. The DDR interface is a 16 bits interface running at 500 MHz. The frequency was chosen so that a single PLL runs inside of the PS7 block generating all the required PS7 clocks, consuming minimum power.
-| The FPGA drives 16 GPIOs for the logic analyzer, 2 GPIOs for triggers, a 14 pin interface to the AD9963 ADC and a 14 pin interface to the AD9963 DAC. It also has several generic GPIOs, an SPI and an I2C interface for configuring the board.
-| The control GPIOs and the SPI are driven by the PS7 block in order to minimize the PL resource usage.
-| The I2C is implemented by an AXI I2C IP because the PS7 I2C has several limitations which make it not suitable for this project.
-| |M2K HDL System Architecture|
+The ADALM2000 (M2K) is built around the XC7Z010 Xilinx Zynq FPGA.
 
-| The oscilloscope related logic transfers data from the AD9963 chip with the AD9963 TRX interface goes through the decimation block, the analog triggering block, the history FIFO and streams data to memory using the DMA.
-| The analog waveform generator transfers data from the memory using two DMAs goes through the interpolation block and ends with the AD9963 TX interface which transfers data to the AD9963 chip. Two DMAs are used in order to have different orders of magnitude for the frequency of the two AWG channels without needing to transfer a very large number of samples.
-| The logic analyzer and pattern generator logic are mostly implemented in the same IP to which a history FIFO and DMAs are added.
+Booting is done from a 32MB QSPI FLASH, connected directly to the PS7 block.
+
+The system memory is 512MB RAM, which is also used for the file system. The DDR interface is a 16 bits interface running at 500 MHz. The frequency was chosen so that a single PLL runs inside of the PS7 block generating all the required PS7 clocks, consuming minimum power.
+
+The FPGA drives 16 GPIOs for the logic analyzer, 2 GPIOs for triggers, a 14 pin interface to the AD9963 ADC and a 14 pin interface to the AD9963 DAC. It also has several generic GPIOs, an SPI and an I2C interface for configuring the board.
+
+The control GPIOs and the SPI are driven by the PS7 block in order to minimize the PL resource usage.
+
+The I2C is implemented by an AXI I2C IP because the PS7 I2C has several limitations which make it not suitable for this project.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/m2k_hdl_ref_design.svg
+   :alt: M2K HDL System Architecture
+   :align: center
+   :width: 850px
+
+The oscilloscope related logic transfers data from the AD9963 chip with the AD9963 TRX interface goes through the decimation block, the analog triggering block, the history FIFO and streams data to memory using the DMA.
+
+The analog waveform generator transfers data from the memory using two DMAs goes through the interpolation block and ends with the AD9963 TX interface which transfers data to the AD9963 chip. Two DMAs are used in order to have different orders of magnitude for the frequency of the two AWG channels without needing to transfer a very large number of samples.
+
+The logic analyzer and pattern generator logic are mostly implemented in the same IP to which a history FIFO and DMAs are added.
 
 PS7
 ---
 
-| The PS7 hardware block is the main processing block of the system, having an ARM processor running at 500MHz. It is running a Linux operating system.
-| In order to minimize the power utilization for the design, the PS7 block is the only block generating clocks in the system. The clock configuration is done in such a way that a single PLL is used to derive all the necessary clocks for the ARM processor, the DDR and the peripherals. It generates a 27MHz clock (FCLK0) for the AXI interface, the logic generator and pattern generator DMAs, a 100 MHz clock (FCLK2) for the logic analyzer and pattern generator path and a 55MHz clock for the oscilloscope DMA and one of the two analog waveform generator DMAs.
-| The PS7 has enabled SPI0, UART1 and USB0 peripherals. The QUAD SPI flash interface is enabled in Single SS 4 bit IO mode.
-| The DDR interface is a 16 bit interface running at 500 MHz.
-| The HP ports have been assigned in a way to optimize the data throughput through each of the active ports, considering that HP0 and HP1 share the path to memory (same for HP2 and HP3).
-| BANK 0 and BANK 1 are configured in LVCMOS 1.8V mode.
+The PS7 hardware block is the main processing block of the system, having an ARM processor running at 500MHz. It is running a Linux operating system.
+
+In order to minimize the power utilization for the design, the PS7 block is the only block generating clocks in the system. The clock configuration is done in such a way that a single PLL is used to derive all the necessary clocks for the ARM processor, the DDR and the peripherals. It generates a 27MHz clock (FCLK0) for the AXI interface, the logic generator and pattern generator DMAs, a 100 MHz clock (FCLK2) for the logic analyzer and pattern generator path and a 55MHz clock for the oscilloscope DMA and one of the two analog waveform generator DMAs.
+
+The PS7 has enabled SPI0, UART1 and USB0 peripherals. The QUAD SPI flash interface is enabled in Single SS 4 bit IO mode.
+
+The DDR interface is a 16 bit interface running at 500 MHz.
+
+The HP ports have been assigned in a way to optimize the data throughput through each of the active ports, considering that HP0 and HP1 share the path to memory (same for HP2 and HP3).
+
+BANK 0 and BANK 1 are configured in LVCMOS 1.8V mode.
 
 AXI_AD9963
 ----------
 
-| The AXI_AD9963 IP is implementing the interfacing with the AD9963 chip. It features a dual 12 bit ADC working up to 100MSPS and a dual 12 bit DAC with up to 170MSPS. It also features a DLL which can provide the clock for both the ADC and the DAC path.
-| The TRX (ADC) interface is set at 100 MSPS, full duplex mode, double data rate (DDR), two channels. The clock comes from the AD9963 chip. The IO standard is CMOS at 3.3V.
-| The TX (DAC) interface works at 75MSPS data rate with interpolation by 2 on the AD9963 chip. The DAC path inside AD9963 chip works at 150MHz, pushing part of the spurs outside the 100MHz bandwidth. Given that the reference clock for AD9963 is 100 MHz and DACs maximum sampling rate is 170 MSPS, this is the best option available. The 75MHz clock is not available in the FPGA. In order to reduce the number of PLL used in the FPGA, we are using AD9963 and a BUFR (divide by 2) to generate this clock. When the clock is generated by AD9963, DDR transfer is not available. The TX interface works at 150 MHz, SDR. The IO standard is CMOS at 3.3V.
-| More information: :doc:`AXI AD9963 documentation </wiki-migration/resources/fpga/docs/axi_ad9963>`
+The AXI_AD9963 IP is implementing the interfacing with the AD9963 chip. It features a dual 12 bit ADC working up to 100MSPS and a dual 12 bit DAC with up to 170MSPS. It also features a DLL which can provide the clock for both the ADC and the DAC path.
+
+The TRX (ADC) interface is set at 100 MSPS, full duplex mode, double data rate (DDR), two channels. The clock comes from the AD9963 chip. The IO standard is CMOS at 3.3V.
+
+The TX (DAC) interface works at 75MSPS data rate with interpolation by 2 on the AD9963 chip. The DAC path inside AD9963 chip works at 150MHz, pushing part of the spurs outside the 100MHz bandwidth. Given that the reference clock for AD9963 is 100 MHz and DACs maximum sampling rate is 170 MSPS, this is the best option available. The 75MHz clock is not available in the FPGA. In order to reduce the number of PLL used in the FPGA, we are using AD9963 and a BUFR (divide by 2) to generate this clock. When the clock is generated by AD9963, DDR transfer is not available. The TX interface works at 150 MHz, SDR. The IO standard is CMOS at 3.3V.
+
+More information: :doc:`AXI AD9963 documentation </wiki-migration/resources/fpga/docs/axi_ad9963>`
 
 AXI_ADC_TRIGGER
 ---------------
 
-| The AXI_ADC_TRIGGER IP implements triggering for the ADC path and also controls the TRIGGER pins.
-| It works on two clock domains, the ADC clock and the AXI interface clock.
-| The configuration of the IP is done through the AXI interface.
-| The data path runs at the ADC clock.
-| Triggers based on the two trigger digital pins, trigger[0] for ADC A and trigger[1] for ADC B can be selected between high, low, any edge, rise edge, fall edge
-| Triggers based on the analog data on a channel will be active if data is larger than a limit, smaller than a limit, passing through the limit, passing through high or passing through low. The data format must be 2’s complement
-| The output of the core embeds the triggers in the data words, as only 12 bits of the 16 bit word are used for data. These need to be extracted before being forwarded to the DMA. Embedding the trigger with the data allows for additional IPs with unknown pipeline length to be introduced in the path.
-| More information: :doc:`AXI ADC TRIGGER documentation </wiki-migration/resources/fpga/docs/axi_adc_trigger>`
+The AXI_ADC_TRIGGER IP implements triggering for the ADC path and also controls the TRIGGER pins. It works on two clock domains, the ADC clock and the AXI interface clock.
+
+The configuration of the IP is done through the AXI interface.
+
+The data path runs at the ADC clock.
+
+Triggers based on the two trigger digital pins, trigger[0] for ADC A and trigger[1] for ADC B can be selected between high, low, any edge, rise edge, fall edge
+
+Triggers based on the analog data on a channel will be active if data is larger than a limit, smaller than a limit, passing through the limit, passing through high or passing through low. The data format must be 2’s complement
+
+The output of the core embeds the triggers in the data words, as only 12 bits of the 16 bit word are used for data. These need to be extracted before being forwarded to the DMA. Embedding the trigger with the data allows for additional IPs with unknown pipeline length to be introduced in the path.
+
+More information: :doc:`AXI ADC TRIGGER documentation </wiki-migration/resources/fpga/docs/axi_adc_trigger>`
 
 UTIL_VAR_FIFO
 -------------
@@ -65,32 +89,37 @@ More information: :doc:`UTIL EXTRACT documentation </wiki-migration/resources/fp
 AXI_ADC_DECIMATE
 ----------------
 
-| The AD9963 RX interface clock has a set value of 100 MHz, so the interface always runs at 100MSPS for each of the two channels. For some applications, 100MSPS are not required and leads to lots of samples transferred to memory, which are redundant. For these cases, the decimation IP is used.
-| The decimation block allows decimating the input data so that the sampling frequency to be reduced by 10, 100, 1000, 10000, 100000, with filtering. The filtering is implemented by a 6 sections CIC programmable rate filter which allows decimation by 5/50/500/5000/50000 and a compensation FIR filter (decimation by 2).
-| At the end of the filter chain, there is an arbitrary decimation block. The arbitrary decimation can be activated independently and it does not implement any type of filtering.
-| More information: :doc:`AXI ADC DECIMATE documentation </wiki-migration/resources/fpga/docs/axi_adc_decimate>`
+The AD9963 RX interface clock has a set value of 100 MHz, so the interface always runs at 100MSPS for each of the two channels. For some applications, 100MSPS are not required and leads to lots of samples transferred to memory, which are redundant. For these cases, the decimation IP is used.
+
+The decimation block allows decimating the input data so that the sampling frequency to be reduced by 10, 100, 1000, 10000, 100000, with filtering. The filtering is implemented by a 6 sections CIC programmable rate filter which allows decimation by 5/50/500/5000/50000 and a compensation FIR filter (decimation by 2).
+
+At the end of the filter chain, there is an arbitrary decimation block. The arbitrary decimation can be activated independently and it does not implement any type of filtering.
+
+More information: :doc:`AXI ADC DECIMATE documentation </wiki-migration/resources/fpga/docs/axi_adc_decimate>`
 
 AXI_DAC_INTERPOLATE
 -------------------
 
-| The TX interface is set at 75MSPS. For some generated signals, this sampling rate is too high and leads to a bad utilization of the memory and the USB bandwidth. In order to avoid that, the interpolation IP can be used.
-| The interpolation block allows interpolation by 10, 100, 1000, 10000,100000 with filtering. The filtering is implemented using an FIR compensation filter (interpolation by 2) for the CIC and a 6 stage CIC interpolation filter allowing interpolation by 5/50/500/5000/50000.
-| At the end of the filter blocks, we have an arbitrary interpolation zero-order hold block which holds the value for a configurable number of samples.
-| More information: :doc:`AXI DAC INTERPOLATION documentation </wiki-migration/resources/fpga/docs/axi_dac_interpolate>`
+The TX interface is set at 75MSPS. For some generated signals, this sampling rate is too high and leads to a bad utilization of the memory and the USB bandwidth. In order to avoid that, the interpolation IP can be used.
+
+The interpolation block allows interpolation by 10, 100, 1000, 10000,100000 with filtering. The filtering is implemented using an FIR compensation filter (interpolation by 2) for the CIC and a 6 stage CIC interpolation filter allowing interpolation by 5/50/500/5000/50000.
+
+At the end of the filter blocks, we have an arbitrary interpolation zero-order hold block which holds the value for a configurable number of samples.
+
+More information: :doc:`AXI DAC INTERPOLATION documentation </wiki-migration/resources/fpga/docs/axi_dac_interpolate>`
 
 AXI_LOGIC_ANALYZER
 ------------------
 
-| The AXI_LOGIC_ANALYZER IP implements both the logic analyzer and the pattern generator, as they share the same pins.
-| There are 16-channel digital I/O pins running at 100 MSPS. All the pins can be configured either as inputs (logic analyzer) or outputs (pattern generator). The logic analyzer path allows a pre trigger history of 8192 samples per channel.
-| The pattern generator supports open drain outputs, configurable per pin.
-| Additionally to the 16 data pins, there are two trigger pins, which can be configured as input or output. Because they can be used with either analog or digital instruments, they are controlled by the AXI_ADC_TRIGGER IP.
-| The logic analyzer path can work at lower than the 100MSPS rate by configuring the down sampling block.
-| The same thing is done for the pattern generator by configuring the up sampling block.
-| Triggering for the logic analyzer is implemented in this IP. It can generate triggers based on the external trigger signals and the 16 bit input signals. For each of the 18 pins it can detect rise edge, fall edge, any edge, high or low.
-| In order to provide data before triggering, a variable length FIFO is used with this IP. The depth of the FIFO is configured through the TRIGGER_OFFSET register. It can be bypassed if TRIGGER\_ OFFSET is 0.
-| If the FIFO is active, it is filled before being read, not forwarding any data until it is full. The maximum size of the FIFO is 8192 samples. The FIFO is implemented using BRAM blocks configured for minimal power consumption.
-| More information: :doc:`AXI LOGIC ANALYZER documentation </wiki-migration/resources/fpga/docs/axi_logic_analyzer>`
+The AXI_LOGIC_ANALYZER IP implements both the logic analyzer and the pattern generator, as they share the same pins.
+
+There are 16-channel digital I/O pins running at 100 MSPS. All the pins can be configured either as inputs (logic analyzer) or outputs (pattern generator). The logic analyzer path allows a pre trigger history of 8192 samples per channel. The pattern generator supports open drain outputs, configurable per pin. Additionally to the 16 data pins, there are two trigger pins, which can be configured as input or output. Because they can be used with either analog or digital instruments, they are controlled by the AXI_ADC_TRIGGER IP.
+
+The logic analyzer path can work at lower than the 100MSPS rate by configuring the down sampling block. The same thing is done for the pattern generator by configuring the up sampling block.
+
+Triggering for the logic analyzer is implemented in this IP. It can generate triggers based on the external trigger signals and the 16 bit input signals. For each of the 18 pins it can detect rise edge, fall edge, any edge, high or low. In order to provide data before triggering, a variable length FIFO is used with this IP. The depth of the FIFO is configured through the TRIGGER_OFFSET register. It can be bypassed if TRIGGER\_ OFFSET is 0. If the FIFO is active, it is filled before being read, not forwarding any data until it is full. The maximum size of the FIFO is 8192 samples. The FIFO is implemented using BRAM blocks configured for minimal power consumption.
+
+More information: :doc:`AXI LOGIC ANALYZER documentation </wiki-migration/resources/fpga/docs/axi_logic_analyzer>`
 
 Pinout Table
 ------------
@@ -280,8 +309,7 @@ Pinout Table
 Utilization
 -----------
 
-| The utilization may slightly change depending on the Vivado version used.
-| HDL version: (cc5d75894784ac9c2565bc8d4dd8634e4ea1151d)
+The utilization may slightly change depending on the Vivado version used. HDL version: (cc5d75894784ac9c2565bc8d4dd8634e4ea1151d)
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/m2k_utilization.jpg
    :alt: M2K Utilization
@@ -290,6 +318,3 @@ Utilization
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/m2k_utilization_hierarchy.jpg
    :alt: M2K Utilization by IP
    :align: center
-
-.. |M2K HDL System Architecture| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/m2k_hdl_ref_design.svg
-   :width: 850px

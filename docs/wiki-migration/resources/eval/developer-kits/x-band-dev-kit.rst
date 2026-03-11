@@ -14,7 +14,7 @@ The system can be used to enable quick time-to-market development programs for a
 -  Hybrid Beamforming
 -  Electronic Test and Measurement
 
-.. image:: https://wiki.analog.com/_media/analogTV>6186691801001
+.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/analogTV>6186691801001
    :alt: analogTV>6186691801001
 
 REQUIREMENTS

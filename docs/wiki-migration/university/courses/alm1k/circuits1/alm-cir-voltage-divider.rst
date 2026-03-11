@@ -62,9 +62,7 @@ Experiment to compensate for the input capacitance of the ALM1000
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 – 1 MΩ resistor
-| 1 – Capacitor, value to be determined
+ADALM1000 hardware module 1 – 1 MΩ resistor 1 – Capacitor, value to be determined
 
 Directions:
 ~~~~~~~~~~~
@@ -155,11 +153,8 @@ A unity gain buffer amplifier (AD8541 or AD8542) can be inserted between the pro
 
 With resistor R\ :sub:`1` connected to ground only positive voltages can be measured. If R\ :sub:`1` is connected to 2.5 V, middle of the 0 – 5V input range of the amplifier, an offset is injected and both positive and negative voltages can be measured.
 
-\**For Further Reading: \*\*
+**For Further Reading:**
 
-| `Capacitive voltage divider <https://en.wikipedia.org/wiki/Voltage_divider#Capacitive_divider>`_
-| `Oscilloscope Probes <http://www.radio-electronics.com/info/t_and_m/oscilloscope/oscilloscope-probes.php>`_
-| `Building Your Own Oscilloscope Probes <http://cromwell-intl.com/radio/probes.html>`_
-| :ez:`New Feature in ALICE Adds Input Divider Frequency Compensation <adieducation/university-program/b/blogs/posts/new-feature-in-alice-adds-input-divider-frequency-compensation>`
+`Capacitive voltage divider <https://en.wikipedia.org/wiki/Voltage_divider#Capacitive_divider>`_ `Oscilloscope Probes <http://www.radio-electronics.com/info/t_and_m/oscilloscope/oscilloscope-probes.php>`_ `Building Your Own Oscilloscope Probes <http://cromwell-intl.com/radio/probes.html>`_ :ez:`New Feature in ALICE Adds Input Divider Frequency Compensation <adieducation/university-program/b/blogs/posts/new-feature-in-alice-adds-input-divider-frequency-compensation>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

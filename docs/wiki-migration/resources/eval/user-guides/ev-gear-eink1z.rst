@@ -9,7 +9,7 @@ EV-GEAR-EINK1Z is a “Gear” (expansion add-on board) for MCU Cogs (EV-COG-AD3
 The EV-GEAR-EINK1Z supports these displays
 
 -  EL029TR1 (2.9`\` ePaper Display)
-   \* ED057TC6 (5.65`\` ePaper display)
+-  ED057TC6 (5.65`\` ePaper display)
 
 Features
 --------
@@ -47,12 +47,10 @@ Connecting to MCU Cog
 Connecting EPD to EV-GEAR-EINK1Z
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Step. 1: Unlock the EPD connector
-| |image1|
-| Step. 2: Insert the display into to EPD connector
-| |image2|
-| Step. 3: Lock the EPD connector
-| |image3|
+Step. 1: Unlock the EPD connector |image1| Step. 2: Insert the display into to EPD connector |image2| Step. 3: Lock the EPD connector
+
+
+|image3|
 
 Connecting EV-GEAR-EINK to MCU-COG
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,14 +67,18 @@ Place the COG on the EINK-Gear such that COG connectors (C1 and C2) on COG and E
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eink_cog_4.png
    :width: 600px
 
-| 
-| ====Power options==== There are 3 options to power the COG+EPD setup. The option can be selected using the power-switch on MCU-Cog. <Image>
+Power options
+-------------
+
+There are 3 options to power the COG+EPD setup. The option can be selected using the power-switch on MCU-Cog. <Image>
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/power_table_1.png
    :width: 600px
 
-| 
-| ====Test points==== For quick debugging, following test points are provided.
+Test points
+-----------
+
+For quick debugging, following test points are provided.
 
 -  TP1 : SPI0_MOSI
 -  TP2 : SPI0_CLK
@@ -85,20 +87,18 @@ Place the COG on the EINK-Gear such that COG connectors (C1 and C2) on COG and E
 -  TP5 : SYS_WAKE3
 -  TP6 : GPIO41
 
-| 
-
 EV-GEAR-EINK1Z Design and Integration Files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
    :class: download
 
    `EV-GEAR-EINK Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/ev-gear-eink1z_schematics.pdf>`_
 
-   | `EV-GEAR-EINK1Z Layout and BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ev-gear-eink1z_-_fab.zip>`_
-   | `EV-GEAR-EINK1Z assembly <https://wiki.analog.com/_media/resources/eval/user-guides/ev-gear-eink1z_-_assembly_files.zip>`_
+   
+   `EV-GEAR-EINK1Z Layout and BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ev-gear-eink1z_-_fab.zip>`_
+   
+   `EV-GEAR-EINK1Z assembly <https://wiki.analog.com/_media/resources/eval/user-guides/ev-gear-eink1z_-_assembly_files.zip>`_
 
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/rapidnet-ip>`

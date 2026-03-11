@@ -196,9 +196,7 @@ Multiple input voltages can be summed by the addition of multiple input resistor
 
 If all the input resistors R\ :sub:`1`, R\ :sub:`2`, ... R\ :sub:`n` are equal but not equal to R\ :sub:`f` then from the equation we can see that it can be simplified such that the output will be equal to the algebraic sum of the inputs times a common gain factor of -R\ :sub:`f`/R\ :sub:`1`. If all the resistors are made equal including R\ :sub:`f` then the output will be simply the negative sum of the inputs.
 
-| **ADALM1000 Lab Activity 1.** :doc:`Simple Op Amps </wiki-migration/university/courses/alm1k/alm-lab-1>`
-| **ADALM2000 Lab Activity 1.** :doc:`Simple Op Amps </wiki-migration/university/courses/electronics/electronics-lab-1>`
-| **ADALM1000 Lab Activity** :doc:`Summing Amplifier </wiki-migration/university/courses/alm1k/alm-lab-vectrosumamp>`
+**ADALM1000 Lab Activity 1.** :doc:`Simple Op Amps </wiki-migration/university/courses/alm1k/alm-lab-1>` **ADALM2000 Lab Activity 1.** :doc:`Simple Op Amps </wiki-migration/university/courses/electronics/electronics-lab-1>` **ADALM1000 Lab Activity** :doc:`Summing Amplifier </wiki-migration/university/courses/alm1k/alm-lab-vectrosumamp>`
 
 2.8 The Differential Op Amp Stage
 ---------------------------------
@@ -241,8 +239,7 @@ A disadvantage of this stage is that the resistor networks load the V\ :sub:`1`-
    Figure 2.8.1: Buffered differential amplifier stage
 
 
-| **ADALM1000 Lab Activity** :doc:`Difference Amplifier </wiki-migration/university/courses/alm1k/alm-lab-diffamp>`
-| **ADALM1000 Lab Activity** :doc:`Current Sensing Difference Amplifier </wiki-migration/university/courses/alm1k/alm-lab-current-sense>`
+**ADALM1000 Lab Activity** :doc:`Difference Amplifier </wiki-migration/university/courses/alm1k/alm-lab-diffamp>` **ADALM1000 Lab Activity** :doc:`Current Sensing Difference Amplifier </wiki-migration/university/courses/alm1k/alm-lab-current-sense>`
 
 2.9 The Instrumentation Amplifier
 ---------------------------------
@@ -272,9 +269,7 @@ This voltage drop between points V\ :sub:`a` and V\ :sub:`b` is connected to the
 
 To change the differential gain of the circuit we simply change the value of R\ :sub:`1`. An instrumentation amplifier can also be made from two op amps; this is shown in figure 2.10.
 
-**<fs large>R\ 1 = R\ 4 (matched)
-R\ 2 = R\ 3 (matched)
-Gain = 1 + R\ 1/R\ 2\ </fs>**
+**<fs large>R\ 1 = R\ 4 (matched) R\ 2 = R\ 3 (matched) Gain = 1 + R\ 1/R\ 2\ </fs>**
 
 This assumes Vin- and Vin+ are referenced to Vcc/2 in the case of single supply op amps.
 

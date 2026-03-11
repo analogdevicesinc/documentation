@@ -11,7 +11,7 @@ Circuit Simulation
 
 Basic information and material on :doc:`circuit simulation </wiki-migration/university/courses/electronics/circuitsimulationnotes>`, including tool links and usage information. :adi:`Get Up and Running with LTspice <media/en/analog-dialogue/volume-53/number-4/get-up-and-running-with-ltspice.pdf>`.
 
-| Most of the labs are populated with :adi:`LTspice <en/design-center/design-tools-and-calculators/ltspice-simulator.html>` resource files which contain the schematics of the circuits discussed at a specific topic. A file containing the ADALM2000 connections for the schematics can be found here: :git-education_tools:`m2k/ltspice/m2k_conn_ltspice`.
+Most of the labs are populated with :adi:`LTspice <en/design-center/design-tools-and-calculators/ltspice-simulator.html>` resource files which contain the schematics of the circuits discussed at a specific topic. A file containing the ADALM2000 connections for the schematics can be found here: :git-education_tools:`m2k/ltspice/m2k_conn_ltspice`.
 
 +---------------------------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | Course                    | ADALM1000 (M1K)                                                                                           | ADALM2000 (M2K)                                                                                                      |

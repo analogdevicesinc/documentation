@@ -113,10 +113,11 @@ For the circuit in figure 4.4, if a DC voltage step is suddenly applied to the i
 
 When C\ :sub:`1` is fully charged, resistor R\ :sub:`L` limits the current flow, and this appears as a series resistance within the simulated inductor. This series resistance limits the Q of the inductor. Real inductors generally have much less resistance than the simulated variety.
 
-| There are some limitations of a simulated inductor like this:
-| \* One end of the inductor is connected to virtual ground.
-| \* The simulated inductor cannot be made with high Q, due to the series resistor R\ :sub:`L`.
-| \* It does not have the same energy storage as a real inductor. The collapse of the magnetic field in a real inductor causes large voltage spikes of opposite polarity. The simulated inductor is limited to the voltage swing of the op amp, so the flyback pulse is limited to the voltage swing.
+There are some limitations of a simulated inductor like this:
+
+-   One end of the inductor is connected to virtual ground.
+-   The simulated inductor cannot be made with high Q, due to the series resistor R\ :sub:`L`.
+-   It does not have the same energy storage as a real inductor. The collapse of the magnetic field in a real inductor causes large voltage spikes of opposite polarity. The simulated inductor is limited to the voltage swing of the op amp, so the flyback pulse is limited to the voltage swing.
 
 4.5 All-Pass Filter
 -------------------

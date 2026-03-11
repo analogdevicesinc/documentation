@@ -42,14 +42,13 @@ The software pack can be downloaded in following ways.
 
    -  However if you do decide to download the Sensor software pack to your PC/laptop directly, please use the link below, and make sure you save the software pack to the correct local directory for your applications/projects.
 
-|
-
 .. admonition:: Download
    :class: download
 
    Download the Sensor Software Pack.
 
-   | `Sensor Software Pack 1.1.0 <http://download.analog.com/tools/Sensor_Software/Releases/>`_
+   
+   `Sensor Software Pack 1.1.0 <http://download.analog.com/tools/Sensor_Software/Releases/>`_
    
 
 

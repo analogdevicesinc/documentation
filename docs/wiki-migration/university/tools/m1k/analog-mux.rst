@@ -60,7 +60,7 @@ There are many use cases that can benefit from more than two scope inputs. Below
    Figure 6, M1k Mux accessory board attached to poly phase filter and an M1k
 
 
-Another use case is the artificial lumped LC transmission line :git-education_tools:`experiment board <experiment-boards>` shown in figure 7.
+Another use case is the artificial lumped LC transmission line `experiment board <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/experiment-boards>`_ shown in figure 7.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig3.png
    :align: center

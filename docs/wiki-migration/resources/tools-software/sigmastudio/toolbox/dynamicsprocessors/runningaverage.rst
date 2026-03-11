@@ -1,8 +1,9 @@
 Running Average
 ===============
 
-| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| ---------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
 | The signal envelope block allows a running average to be computed on an input signal. This is not true RMS since the absolute value of the input signal drives the averaging, not the square of the input. Time constants are used to define the averaging time for computation. | |runningpic1.png| |
@@ -55,14 +56,18 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-| The running average block takes the envelope of the input signal based on a running average. The absolute value of the input signal is taken and then filtered to get an averaged level. The RMS TC, hold, and decay time constants affect how the averaging is computed. RMS TC mainly affects the attack rise of the signal and decay affects the release of the signal. The hold time holds the previous envelope value for the amount of time before reacting to a new input signal level change.
-| |runningpic2.png|
+The running average block takes the envelope of the input signal based on a running average. The absolute value of the input signal is taken and then filtered to get an averaged level. The RMS TC, hold, and decay time constants affect how the averaging is computed. RMS TC mainly affects the attack rise of the signal and decay affects the release of the signal. The hold time holds the previous envelope value for the amount of time before reacting to a new input signal level change.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/runningpic2.png
+   :alt: runningpic2.png
 
 Example
 -------
 
-| The following example uses the Running Average block to drive a GPIO LED. Depending on the level of the input signal, in a given application, you may want to conditionally turn something on or off. In this example, the output of the running average envelope is sent to a :doc:`Tolerance </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/toleranceanalyzer>` block to check the limits of the input signal. If the signal is within the defined range, a "1" is sent to the GPIO output, otherwise a "0" is sent.
-| |runningpic3.png|
+The following example uses the Running Average block to drive a GPIO LED. Depending on the level of the input signal, in a given application, you may want to conditionally turn something on or off. In this example, the output of the running average envelope is sent to a :doc:`Tolerance </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/toleranceanalyzer>` block to check the limits of the input signal. If the signal is within the defined range, a "1" is sent to the GPIO output, otherwise a "0" is sent.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/runningpic3.png
+   :alt: runningpic3.png
 
 Algorithm Details
 -----------------
@@ -90,5 +95,3 @@ Algorithm Details
 +----------------------------+--------------------------------------------------------------------+
 
 .. |runningpic1.png| image:: https://wiki.analog.com/_media/runningpic1.png
-.. |runningpic2.png| image:: https://wiki.analog.com/_media/runningpic2.png
-.. |runningpic3.png| image:: https://wiki.analog.com/_media/runningpic3.png

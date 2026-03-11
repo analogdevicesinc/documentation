@@ -70,11 +70,7 @@ Run the alice-desktop-1.3-x64-setup.exe installer program. For 32 bit systems, r
 
 Using the Widows executable is highly recommended but the ALICE Desktop can also be run from the Python 2.X/3.X compatible source code with the following packages installed:
 
-| **Python 2.7 or Python 3.7**
-| tKinter
-| numpy numerical package extension
-| matplotlib plotting package extension
-| libsmu/pysmu
+**Python 2.7 or Python 3.7** tKinter numpy numerical package extension matplotlib plotting package extension libsmu/pysmu
 
 Python for Linux and OSX:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,9 +89,7 @@ Manually installing libsmu / pysmu required by the ALICE Desktop Python source
    **For all Non-Windows Operating Systems**
 
    
-   If you are going to be using the ALICE Desktop software on a computer with an operating system other than Windows you will need to run the program from the Python source code (compatible with either Python 2 or 3). **DO NOT** proceed beyond this point without first installing the pysmu library (and the underlying libsmu package) following the instructions found in the readme file on the `Libsmu GitHub Repository <https://github.com/analogdevicesinc/libsmu>`_.
-   
-   \*\* The Recommended Method for all non-Windows operating systems is to use Anaconda (Python) and the Conda installation packages as outlined here: :doc:`Conda Packages </wiki-migration/university/tools/conda>`\ \*\*
+   If you are going to be using the ALICE Desktop software on a computer with an operating system other than Windows you will need to run the program from the Python source code (compatible with either Python 2 or 3). **DO NOT** proceed beyond this point without first installing the pysmu library (and the underlying libsmu package) following the instructions found in the readme file on the `Libsmu GitHub Repository <https://github.com/analogdevicesinc/libsmu>`_.** The Recommended Method for all non-Windows operating systems is to use Anaconda (Python) and the Conda installation packages as outlined here: :doc:`Conda Packages </wiki-migration/university/tools/conda>`\ \*\*
 
 
 There are Python :git-libsmu:`test examples that can be found here <bindings/python/examples>` to assist in testing and confirming that you have a working version of pysmu installed.
@@ -116,17 +110,7 @@ Directions:
 
 It is assumed that the reader is somewhat familiar with the functionality and capabilities of the ADALM1000 hardware. For more on the ADALM1000 hardware please refer to the following documents:
 
-| :doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>`
-| :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>`
-| :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>`
-| `What is a Source Measurement Unit or SMU? <https://wiki.analog.com/_media/university/tools/m1k/alice/alice_whats-a-smu.pdf>`_
-| `What is a Curve Tracer vs an Analog Signature Analyzer vs a SMU? <https://wiki.analog.com/_media/university/tools/m1k/alice/alice_curve-tracing_what-is-analog_signature_analysis.pdf>`_
-| `Measuring current with the ADALM1000 <https://wiki.analog.com/_media/university/tools/m1k/alice/alice_measuring-current.pdf>`_
-| :doc:`ADALM1000 Accessory Boards </wiki-migration/university/tools/adalm1000/accessory-boards-index>`
-| :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
-| :doc:`ADALM1000 Analog Multiplexers </wiki-migration/university/tools/m1k/analog-mux>`
-| :doc:`ADALM1000 Digital Outputs </wiki-migration/university/tools/m1k/digital-outputs>`
-| :doc:`ADALM1000 Low Capacitance FET Input Buffers </wiki-migration/university/tools/m1k/fet-probes>`
+:doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>` :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>` :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>` `What is a Source Measurement Unit or SMU? <https://wiki.analog.com/_media/university/tools/m1k/alice/alice_whats-a-smu.pdf>`_ `What is a Curve Tracer vs an Analog Signature Analyzer vs a SMU? <https://wiki.analog.com/_media/university/tools/m1k/alice/alice_curve-tracing_what-is-analog_signature_analysis.pdf>`_ `Measuring current with the ADALM1000 <https://wiki.analog.com/_media/university/tools/m1k/alice/alice_measuring-current.pdf>`_ :doc:`ADALM1000 Accessory Boards </wiki-migration/university/tools/adalm1000/accessory-boards-index>` :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` :doc:`ADALM1000 Analog Multiplexers </wiki-migration/university/tools/m1k/analog-mux>` :doc:`ADALM1000 Digital Outputs </wiki-migration/university/tools/m1k/digital-outputs>` :doc:`ADALM1000 Low Capacitance FET Input Buffers </wiki-migration/university/tools/m1k/fet-probes>`
 
 The Windows executable installer, in addition to the main ALICE Desktop program, includes the following DC measurement tools:
 
@@ -137,11 +121,7 @@ The Windows executable installer, in addition to the main ALICE Desktop program,
 -  DC Strip Chart Tool (`Python source <https://raw.githubusercontent.com/analogdevicesinc/alice/Version-1.3/strip-chart-tool-1.3.pyw>`_)
 -  DC Data-Logger Tool (`Python source <https://raw.githubusercontent.com/analogdevicesinc/alice/Version-1.3/data-logger-tool-1.3.pyw>`_)
 
-| A few notes on nomenclature used in this document:
-| CA-V refers to the Channel A voltage signal
-| CA-I refers to the Channel A current signal
-| CB-V refers to the Channel B voltage signal
-| CB-I refers to the Channel B current signal
+A few notes on nomenclature used in this document: CA-V refers to the Channel A voltage signal CA-I refers to the Channel A current signal CB-V refers to the Channel B voltage signal CB-I refers to the Channel B current signal
 
 Customizing ALICE Desktop
 -------------------------
@@ -292,17 +272,9 @@ ALICE Desk-Top provides software interfaces advanced features and external plug-
 
 The software interfaces for these can be enabled or disabled by setting the following variables to either 1 or 0 in the alice_init.ini file, see :doc:`ALICE Advanced User’s Guide </wiki-migration/university/tools/m1k/alice/desk-top-advanced-guide>` for more details.
 
-| global EnableCommandInterface; EnableCommandInterface = 0
-| global EnableMuxMode; EnableMuxMode = 0
-| global EnableMinigenMode; EnableMinigenMode = 0
-| global EnablePIODACMode; EnablePIODACMode = 0
-| global EnablePmodDA1Mode; EnablePmodDA1Mode = 0
-| global EnableDigPotMode; EnableDigPotMode = 0 global EnableGenericSerialMode; EnableGenericSerialMode = 0
-| global EnableAD5626SerialMode; EnableAD5626SerialMode = 0
-| global EnableDigitalFilter; EnableDigitalFilter = 0
-| global EnableMeasureScreen; EnableMeasureScreen = 0
-| global EnableETSScreen; EnableETSScreen = 0
-| All of these optional add-on functions are set to 0 by default in the alice_init.ini file supplied with the Windows installer. When these variables are set to a 1 a button to open their respective control window will appear in the right side of the main ALICE window.
+global EnableCommandInterface; EnableCommandInterface = 0 global EnableMuxMode; EnableMuxMode = 0 global EnableMinigenMode; EnableMinigenMode = 0 global EnablePIODACMode; EnablePIODACMode = 0 global EnablePmodDA1Mode; EnablePmodDA1Mode = 0 global EnableDigPotMode; EnableDigPotMode = 0 global EnableGenericSerialMode; EnableGenericSerialMode = 0 global EnableAD5626SerialMode; EnableAD5626SerialMode = 0 global EnableDigitalFilter; EnableDigitalFilter = 0 global EnableMeasureScreen; EnableMeasureScreen = 0 global EnableETSScreen; EnableETSScreen = 0
+
+All of these optional add-on functions are set to 0 by default in the alice_init.ini file supplied with the Windows installer. When these variables are set to a 1 a button to open their respective control window will appear in the right side of the main ALICE window.
 
 Multichannel analog interface for the ADALM1000
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

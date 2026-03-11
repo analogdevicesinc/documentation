@@ -52,13 +52,7 @@ Before starting the Lab look up the R\ :sub:`DS(on)` - Drain Source On Resistanc
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Jumper wire set
-| 1 - ZVP2110A enhancement mode PMOS
-| 1 - 2N3906 PNP transistor
-| 1 – 47 Ω resistor
-| 1 - 1 KΩ resistor
-| 1 - 10 KΩ resistor
+ADALM1000 hardware module Jumper wire set 1 - ZVP2110A enhancement mode PMOS 1 - 2N3906 PNP transistor 1 – 47 Ω resistor 1 - 1 KΩ resistor 1 - 10 KΩ resistor
 
 Directions:
 ~~~~~~~~~~~
@@ -157,21 +151,15 @@ As with the PMOS version the base of the NPN transistor Q1 is slightly pre-biase
    Figure 9, NMOS simulation schematic
 
 
-.. _directions-1:
-
 Directions:
 ~~~~~~~~~~~
 
 Using a ZVN2110A and 2N3904 from the ALP2000 part kit, construct the circuit in figure 9 on your solderless bread board. The direction of the current from the active load channel B is different compared to the PMOS circuits.
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 For the CHA AWG, set Min value to 0, set Max value to 4 such that the load current starts at zero and ramps up.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -188,8 +176,6 @@ Be careful to also note that the source and drain orientation of the switch devi
 
    Figure 10, Boosted NMOS switch
 
-
-.. _directions-2:
 
 Directions:
 ~~~~~~~~~~~
@@ -257,11 +243,8 @@ PMOS and NMOS On resistance curves.
    Figure A2, ZVN2110A On-resistance Gate-Source voltage
 
 
-\**For Further Reading: \*\*
+**For Further Reading:**
 
-| No R\ :sub:`SENSE`\ ™ :adi:`Electronic Circuit Breaker <media/en/technical-documentation/data-sheets/4213f.pdf>`
-| :adi:`Electronic Circuit Breaker in Small DFN Package Eliminates Sense Resistor <media/en/reference-design-documentation/design-notes/dn402.pdf>`
-| :adi:`LT1153 Auto-Reset Electronic Circuit Breaker <media/en/technical-documentation/data-sheets/lt1153.pdf>`
-| :adi:`ADM1177 digital power monitor <media/en/technical-documentation/data-sheets/ADM1177.pdf>`
+No R\ :sub:`SENSE`\ ™ :adi:`Electronic Circuit Breaker <media/en/technical-documentation/data-sheets/4213f.pdf>` :adi:`Electronic Circuit Breaker in Small DFN Package Eliminates Sense Resistor <media/en/reference-design-documentation/design-notes/dn402.pdf>` :adi:`LT1153 Auto-Reset Electronic Circuit Breaker <media/en/technical-documentation/data-sheets/lt1153.pdf>` :adi:`ADM1177 digital power monitor <media/en/technical-documentation/data-sheets/ADM1177.pdf>`
 
 **Return to Lab Activity Table of Contents**

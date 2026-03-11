@@ -197,7 +197,7 @@ Analyzing the plot, the fist half of the transaction contains a write sequence c
 Conclusion
 ----------
 
-| In addition to I2C, the application includes a set of decoders covering a large number of communication protocols such as SPI, I2S, UART, JTAG, and others, making ADALM2000 a powerful tool for analyzing and debugging digital signals.
+In addition to I2C, the application includes a set of decoders covering a large number of communication protocols such as SPI, I2S, UART, JTAG, and others, making ADALM2000 a powerful tool for analyzing and debugging digital signals.
 
 Further Reading:
 ~~~~~~~~~~~~~~~~

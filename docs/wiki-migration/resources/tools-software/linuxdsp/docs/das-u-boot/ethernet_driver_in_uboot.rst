@@ -54,8 +54,8 @@ For example:
    Err:   serial
    other init
    Net:   dwmac.3100c000
-   Hit any key to stop autoboot:  0 
-   sc #  
+   Hit any key to stop autoboot:  0
+   sc #
    sc # dhcp
    Speed: 100, full duplex
    BOOTP broadcast 1
@@ -79,22 +79,19 @@ For example:
    done
    Bytes transferred = 10502080 (a03fc0 hex)
 
- 
-
-| 
-| ----
+--------------
 
 .. container:: group
 
    
    .. container:: half column
 
-      \**Pre: :doc:`Das U-boot </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot>`\ **
+      **Pre: :doc:`Das U-boot </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot>`\ **
 
    
    .. container:: half column
 
-      **\ Next: \*\*\ :doc:`Loading file from USB storage in u-boot </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot/loading_file_from_usb_storage_in_uboot>`
+      **Next: *\*\ :doc:`Loading file from USB storage in u-boot </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot/loading_file_from_usb_storage_in_uboot>`
 
    
 

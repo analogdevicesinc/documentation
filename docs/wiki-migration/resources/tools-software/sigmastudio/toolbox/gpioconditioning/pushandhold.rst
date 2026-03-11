@@ -1,8 +1,9 @@
 Push and Hold
 =============
 
-| :doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
-| |pushandholdpic1.png| This block can be used for functions like a pushbutton, to condition a GPIO input to create pulses in response to the user pushing or holding the button.
+:doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
+
+|pushandholdpic1.png| This block can be used for functions like a pushbutton, to condition a GPIO input to create pulses in response to the user pushing or holding the button.
 
 A typical application would be a volume control comprising two buttons, one for up and the other for down.
 

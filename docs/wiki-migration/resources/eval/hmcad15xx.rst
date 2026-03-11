@@ -34,10 +34,7 @@ Helpful Files
 -  `hmcad_sdph1_xxxdeg FPGA Images <https://wiki.analog.com/_media/resources/eval/hmcad_sdph1_xxxdeg.zip>`_
 -  `HMCAD15xx SDP-H1 Phase DDR Slides <https://wiki.analog.com/_media/resources/eval/hmcad_sdph1_phase_ddr.pptx>`_
 
-.. container:: hide
-
-   \ `HMCAD15xx-EBZ Interleaving Spurs Calculator <https://wiki.analog.com/_media/resources/eval/hmcad15xx_interleaving_spur_calculator.xls>`_\
-
+`HMCAD15xx-EBZ Interleaving Spurs Calculator <https://wiki.analog.com/_media/resources/eval/hmcad15xx_interleaving_spur_calculator.xls>`_
 
 Software Needed:
 ----------------
@@ -180,15 +177,7 @@ The following procedure below shows how to setup the evaluation board to capture
 Interleaving Spurs Calculation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  You can download the
-
-.. admonition:: Download
-   :class: download
-
-   \ **HMCAD15xx-EBZ Interleaving Spurs Calculator**\
-
-
-in the :doc:`Helpful Files </wiki-migration/resources/eval/hmcad15xx>`, and input both the sampling and input frequencies on the yellow boxes provided. The calculator will provide the spur frequencies depending on the selected number of channels. In figure 6, the analog input signal is around **70MHz** with different sampling rate.
+-  You can download the **HMCAD15xx-EBZ Interleaving Spurs Calculator** in the :doc:`Helpful Files </wiki-migration/resources/eval/hmcad15xx>`, and input both the sampling and input frequencies on the yellow boxes provided. The calculator will provide the spur frequencies depending on the selected number of channels. In figure 6, the analog input signal is around **70MHz** with different sampling rate.
 
 .. container:: centeralign
 

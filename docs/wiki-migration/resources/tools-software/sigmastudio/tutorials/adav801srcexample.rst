@@ -1,8 +1,9 @@
 Sample Rate Converter (SRC) example
 ===================================
 
-| :doc:`Click here to return to the Tutorials page </wiki-migration/resources/tools-software/sigmastudio/tutorials>`
-| Here is an example of how to use the Sample Rate Converter in the ADAV801 audio codec. The input will be an 1kHz test tone with a sample rate of 11.5kHz and the codec will output the same 1 kHz tone with a new sample rate of 44.1 kHz.
+:doc:`Click here to return to the Tutorials page </wiki-migration/resources/tools-software/sigmastudio/tutorials>`
+
+Here is an example of how to use the Sample Rate Converter in the ADAV801 audio codec. The input will be an 1kHz test tone with a sample rate of 11.5kHz and the codec will output the same 1 kHz tone with a new sample rate of 44.1 kHz.
 
 The routing inside the chip will be as follows:
 
@@ -11,8 +12,9 @@ The routing inside the chip will be as follows:
 -  Route from SRC to Record Port at new sample rate (44.1 kHz)
 -  Use the I\ :sup:`2`\ S Record Port as output
 
-| |SRCrouting.png|
-|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/SRCrouting.png
+   :alt: SRCrouting.png
+   :align: center
 
 .. tip::
 
@@ -77,18 +79,15 @@ Verify Functionality
 
 To verify that the sample rate conversion is working correctly, a 1 Khz tone with a 11.5kHz sample rate was created using SigmaStudio and an ADAU1781 evaluation board which output to the I\ :sup:`2`\ S Playback Port of an ADAV801. The sample rate was verified with an oscilloscope by placing a probe on the LRCLK of the input.
 
-| 
-| |InputFreq.png|
-| To verify the correct output, a probe was placed on the LRCLK pin of the Record Port I\ :sup:`2`\ S output of the ADAV801. The signal was also analyzed to ensure the correct 1 kHz tone output.
-
-| 
-| |OutputFreq.png|
-| |fft.png|
-| |levels.png|
-
-.. |SRCrouting.png| image:: https://wiki.analog.com/_media/SRCrouting.png
-.. |InputFreq.png| image:: https://wiki.analog.com/_media/InputFreq.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/InputFreq.png
+   :alt: InputFreq.png
+   :align: center
    :width: 600px
+
+To verify the correct output, a probe was placed on the LRCLK pin of the Record Port I\ :sup:`2`\ S output of the ADAV801. The signal was also analyzed to ensure the correct 1 kHz tone output.
+
+|OutputFreq.png| |fft.png| |levels.png|
+
 .. |OutputFreq.png| image:: https://wiki.analog.com/_media/OutputFreq.png
    :width: 600px
 .. |fft.png| image:: https://wiki.analog.com/_media/fft.png

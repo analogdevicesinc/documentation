@@ -77,12 +77,7 @@ One very useful mental model is to think of thermal resistances as electrical re
 Materials:
 ----------
 
-| ADALM1000 hardware module (M1k)
-| ADALM2000 hardware module (M2k)
-| TIP31 power NPN transistor
-| IRF510 power NMOS transistor
-| 6.2 ohm power resistor and / or various other resistors
-| TO-220 heat sink
+ADALM1000 hardware module (M1k) ADALM2000 hardware module (M2k) TIP31 power NPN transistor IRF510 power NMOS transistor 6.2 ohm power resistor and / or various other resistors TO-220 heat sink
 
 Use Examples for M1k as an active load
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,7 +185,6 @@ To test negative power sources that are referenced to ground a current source ac
 
 **For Further Reading:**
 
-| `Active Load <https://en.wikipedia.org/wiki/Active_load>`_
-| :adi:`A Closed-Loop, Wideband, 100A Active Load <media/en/technical-documentation/application-notes/an133f.pdf>`
+`Active Load <https://en.wikipedia.org/wiki/Active_load>`_ :adi:`A Closed-Loop, Wideband, 100A Active Load <media/en/technical-documentation/application-notes/an133f.pdf>`
 
 **Return to Lab Activity Table of Contents**

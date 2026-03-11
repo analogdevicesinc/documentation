@@ -1,5 +1,5 @@
-Monopulse Tracking using Phased Array Beamforming​
-==================================================
+Monopulse Tracking using Phased Array Beamforming
+=================================================
 
 Overview
 --------
@@ -23,16 +23,15 @@ By comparing the Sum and Delta signals, the system can determine the exact angle
 
 Today, monopulse tracking is used in various applications, including military, air traffic control, space and satellite tracking, aerospace, weather radars, surveillance, reconnaissance, and telecommunications.
 
-| 
-| ----
+--------------
 
 Demo Objective
 --------------
 
 This demo explores the capability of the :adi:`CN0566` to accurately determine the direction of a target by comparing signals received in multiple, closed spaced beams.
 
-| 
-| ===== Demo Setup =====
+Demo Setup
+----------
 
 Requirements
 ~~~~~~~~~~~~
@@ -51,18 +50,20 @@ Requirements
 
    -  :doc:`ADI Kuiper Linux image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
-| 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/demo_req.jpg
+   :align: center
 
-| 
-| ===== Hardware Setup ===== |image2|
+Hardware Setup
+--------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/system_setup.jpg
+   :align: center
 
 **CN0566 Phaser Array**
 
 The CN0566 board comes fully assembled and does not require any additional hardware setup for the demo. For more details about the hardware, you can check out the :doc:`Phaser Hardware Overview page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/overview_setup>`.
 
-| 
-| **HB100 Microwave Sensor**
+**HB100 Microwave Sensor**
 
 To set up the HB100 Microwave Sensor:
 
@@ -70,8 +71,7 @@ To set up the HB100 Microwave Sensor:
 
 **Mounting**: Attach the HB100 to the casing and then mount the casing onto a tripod or mount. Ensure the center of the HB100 is at the same height as the center of the CN0566.
 
-| 
-| **Connecting Power Supply and Other Peripherals**
+**Connecting Power Supply and Other Peripherals**
 
 -  Connect the Raspberry Pi HDMI output closest to the power connector to the monitor via an HDMI cable.
 -  Connect the USB keyboard and mouse to the Raspberry Pi USB ports.
@@ -79,9 +79,11 @@ To set up the HB100 Microwave Sensor:
 -  Carefully thread the tripod into the tripod mount.
 -  Power up the HB100 microwave source with 5V power bank using a micro USB to USB cable. Aim this at the array.
 
-| 
-| ===== Software Setup =====
-| === CN0566 Phaser Setup ===
+Software Setup
+--------------
+
+CN0566 Phaser Setup
+~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
@@ -92,8 +94,7 @@ To set up the HB100 Microwave Sensor:
    
    Pay close attention to localization settings, keyboard settings, etc., especially when running examples directly on the Raspberry Pi.
    
-   | 
-   | \*\* SD Card Configuration*\*
+   \*\* SD Card Configuration*\*
    
    After burning the image, log into the Raspberry Pi and open the configuration utility. Set the hostname to **"phaser"** and configure the locale, keyboard, and Wi-Fi country (if using Wi-Fi).
    
@@ -107,8 +108,10 @@ To set up the HB100 Microwave Sensor:
    
 
 
-| 
-| === Python Installation === This part assumes a fresh installation of all required software.
+Python Installation
+~~~~~~~~~~~~~~~~~~~
+
+This part assumes a fresh installation of all required software.
 
 -  Download the latest version of Python. Choose the latest available version depending on the operating system.
 -  Run installer as Administrator.
@@ -117,11 +120,8 @@ To set up the HB100 Microwave Sensor:
 
 -  To check if the download is successful, go to command prompt and type the command line below: <code> Python --version </code>
 
-
-| 
-
 Libiio Installation
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
@@ -144,10 +144,8 @@ Libiio Installation
 
 -Install the libIIO bindings through pip <code> Pip install pylibiio </code>
 
-|
-
 Pyadi-iio Installation
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
@@ -161,8 +159,8 @@ Pyadi-iio Installation
    -Install the pre-requisite packages using the requirement text files. <code>Pip install -r requirements.txt</code>
    -Install the PyADI-IIO bindings through pip. <code>Pip install pyadi-iio</code>
 
-| 
-| ===== Running the System =====
+Running the System
+------------------
 
 ::
 
@@ -172,13 +170,12 @@ Pyadi-iio Installation
    python phaser_gui.py </code>
    * After running the Phaser GUI, select **''Tracking''** in mode selection and select ''Lab 8. Monopulse Tracking'' on the middle lower part of the GUI. {{ :resources:eval:user-guides:circuits-from-the-lab:cn0566:gui.png |}}
    * Click the check boxes for ''Show Delta'' and ''Show Error'' in the ''Digital'' tab. Turning the phaser would result to a response to the sum and delta plot, tracking the direction of the HB100.{{ :resources:eval:user-guides:circuits-from-the-lab:cn0566:monopulse.png |}}
-   * Select ''Tracking'' from the ''Mode Selection'' in the ''Config'' tab, this will create a new window named ''Signal Tracking''. {{ :resources:eval:user-guides:circuits-from-the-lab:cn0566:steering_angle.png
+   * Select ''Tracking'' from the ''Mode Selection'' in the ''Config'' tab, this will create a new window named ''Signal Tracking''. {{ :resources:eval:user-guides:circuits-from-the-lab:cn0566:steering_angle.png |}}
 
-   |}}
+Help and Support
+----------------
 
-|
-
-| ===== Help and Support ===== For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer Zone.
 
 .. hint::
 
@@ -197,6 +194,3 @@ Related Documents
    *[[/resources/eval/user-guides/circuits-from-the-lab/cn0566|EVAL-CN0566-RPIZ User Guide]]
    *[[/resources/eval/user-guides/circuits-from-the-lab/cn0566/overview_setup|EVAL-CN0566-RPIZ Hardware User Guide]]
    *[[/resources/eval/user-guides/circuits-from-the-lab/cn0566/software|EVAL-CN0566-RPIZ Software User Guide]]
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/demo_req.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/system_setup.jpg

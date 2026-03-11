@@ -6,9 +6,7 @@ Overview
 
 This article gives a brief overview of how to add your own custom shell commands. Let's take the following simple example, where we want to add a new shell command called *custom*, that takes a single input value of 0 or 1, performs some error handling and validation checks on the input, and outputs "Hello 0" or "Hello 1" depending on the input parameter or an error message on invalid inputs.
 
-| |image1|
-| |image2|
-| |image3|
+|image1| |image2| |image3|
 
 Details
 -------
@@ -36,13 +34,13 @@ Adding the Hooks
 
 The following instructions detail the minimum code changes to add to achieve the minimum framework as described above. To add a new shell command, the following source code files are typically affected (though this may depend on the project and version):
 
-+--------------+--------------------------------------------------------------------------+------------------------------------------------------+
-| \**File \*\* | **Description**                                                          | \**Typical Source Path \*\*                          |
-+--------------+--------------------------------------------------------------------------+------------------------------------------------------+
++----------+--------------------------------------------------------------------------+---------------------------------------------------+
+| **File** | **Description**                                                          | \**Typical Source Path**                          |
++----------+--------------------------------------------------------------------------+---------------------------------------------------+
 | shell.c      | This contains the core implementation for the shell                      | *<project_root>/<ARM|SHARC0>/src/oss-services/shell* |
-+--------------+--------------------------------------------------------------------------+------------------------------------------------------+
++----------+--------------------------------------------------------------------------+---------------------------------------------------+
 | shell_cmds.c | This contains the project specific implementations of the shell commands | *<project_root>/<ARM|SHARC0>/src/oss-services/shell* |
-+--------------+--------------------------------------------------------------------------+------------------------------------------------------+
++----------+--------------------------------------------------------------------------+---------------------------------------------------+
 
 We would follow the steps below:
 
@@ -51,7 +49,7 @@ We would follow the steps below:
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | 1. Add shell function prototype in *shell.c*. The name of the new custom shell must be in the following required format:                                                                                                                                                                                                                                                                                        | |image22|       |
 | ``SHELL_FUNC( shell_<cmd> );`` Where *<cmd>* is the Command Name identifier.                                                                                                                                                                                                                                                                                                                                    | |image23|       |
-| *Note that* **SHELL_FUNC** *is a helper macro that will resolve the function prototype to:*                                                                                                                                                                                                                                                                                                                     |                 |
+| *Note that **SHELL_FUNC** is a helper macro that will resolve the function prototype to:*                                                                                                                                                                                                                                                                                                                       |                 |
 | ``extern void shell_<cmd>( SHELL_CONTEXT *ctx, int argc, char **argv )``                                                                                                                                                                                                                                                                                                                                        |                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | 2. Add shell function command summary and help summary string attribute variable declarations in *shell.c*. This is done by adding the following instantiation:                                                                                                                                                                                                                                                 | |image24|       |
@@ -121,11 +119,13 @@ Array of input arguments (char \**argv)
 
 This is an array of strings (array of characters) that hold all of the inputs to the shell command. The <cmd> parameter plus their inputs are accessible by array index notation, starting from index 0:
 
-| *<cmd> <input1> <input2>...* *argv[0] = <cmd>, argv[1] = <input1>, argv[2] = <input2>...* and so on.
-| Then for our specific case:
+*<cmd> <input1> <input2>...* *argv[0] = <cmd>, argv[1] = <input1>, argv[2] = <input2>...* and so on.
 
-| *custom 1*-> *argv[0] = custom* and *argv[1] = 1*
-| Noting again that these are fed to the shell command as strings (array of chars). Any inputs that are numerical must be converted as such when used in this form.
+Then for our specific case:
+
+*custom 1*-> *argv[0] = custom* and *argv[1] = 1*
+
+Noting again that these are fed to the shell command as strings (array of chars). Any inputs that are numerical must be converted as such when used in this form.
 
 With this information provided above, this gives us the following example implementation for our custom shell function:
 
@@ -134,16 +134,16 @@ With this information provided above, this gives us the following example implem
    void shell_custom(SHELL_CONTEXT *ctx, int argc, char **argv)
    {
        uint8_t input;
-       
+
        /* Validate number of arguments */
        if (argc != 2 ) {
            printf( "Invalid arguments. Type help [<command>] for usage.\n" );
            return;
        }
-       
+
        /* Convert second input to an integer */
        input = strtoul(argv[1], NULL, 0);
-       
+
        /* Print expected output when the input matches our expectations */
        if (input == 0 ) {
            printf("Hello 0\n");

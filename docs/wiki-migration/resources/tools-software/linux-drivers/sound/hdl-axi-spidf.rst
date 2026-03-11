@@ -110,7 +110,7 @@ Example DAI configuration
        .codec_dai_name = "adv7511",
        .dai_fmt = SND_SOC_DAIFMT_SPDIF
 
-       |
+
                SND_SOC_DAIFMT_NB_NF |
 
                SND_SOC_DAIFMT_CBS_CFS,
@@ -131,8 +131,6 @@ The HDL AXI SPDIF driver is currently used in conjunction with the ADV7511 HDMI 
 Source
 ------
 
-.. _status-1:
-
 Status
 ~~~~~~
 
@@ -141,8 +139,6 @@ Status
 +======================================================================================================+========================================================================================================================+
 | :git-linux:`In progress <sound/soc/adi/adv7511_hdmi.c>`                                              | `In progress <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/adi/adv7511_hdmi.c>`_  |
 +------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-
-.. _files-1:
 
 Files
 ~~~~~
@@ -166,8 +162,6 @@ Enable ALSA SoC evaluation board driver:
    <*>     ALSA for SoC audio support  --->
    <*>       SoC Audio for Xilinx based boards
    <*>       ADV7511 HDMI transmitter sound support
-
-.. _example-device-initialization-1:
 
 Example device initialization
 -----------------------------
@@ -229,10 +223,7 @@ Make sure the sound card is properly instantiated.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -248,10 +239,7 @@ To test audio playback you can use the *speaker-test* utility, which allows to p
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -279,10 +267,7 @@ To test audio record you can use the *arecord* utility. *arecord* will record th
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -296,10 +281,7 @@ To playback a wav file you can use the *aplay* utility. You can also create a au
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -317,4 +299,8 @@ More information
 -  :doc:`AD-FMCOMMS1-EBZ Reference Design </wiki-migration/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz>`
 -  `Linux with HDMI video output on the ZED and ZC702 boards <https://wiki.analog.com/../platforms/zynq>`_
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

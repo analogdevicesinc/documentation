@@ -32,7 +32,7 @@ For example, with release 6.0.1 on Windows:
 
 ::
 
-   cd C:\Analog Devices\TOF_Evaluation_ADTF3175D-Rel6.0.1\bin>data_collect.exe --ip 10.43.0.1 --fw ..\image\NXP-Img-Rel6.0.1-ADTF3175D-6E34B7B1\Fw_Update_5.2.5.bin 
+   cd C:\Analog Devices\TOF_Evaluation_ADTF3175D-Rel6.0.1\bin>data_collect.exe --ip 10.43.0.1 --fw ..\image\NXP-Img-Rel6.0.1-ADTF3175D-6E34B7B1\Fw_Update_5.2.5.bin
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175d-nxz/adi-tof-firmware-update-2.png
    :align: center

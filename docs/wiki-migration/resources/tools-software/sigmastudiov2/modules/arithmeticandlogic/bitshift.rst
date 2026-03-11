@@ -3,8 +3,10 @@
 Bit Shift
 =========
 
-| The Shift block allows you to perform an arithmetic shift operation on the input data.
-| |bitshift.png|
+The Shift block allows you to perform an arithmetic shift operation on the input data.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/bitshift.png
+   :alt: bitshift.png
 
 Click the image to switch between left shift or right shift. The shift value represents the number of bits to shift the incoming value.
 
@@ -19,7 +21,7 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Bit Shift NA         NA               S             NA
 ========= ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -43,7 +45,9 @@ Output0 Audio Bit shifted output
 Configurable Parameters
 -----------------------
 
-| No Configurable parameters
-| ===== DSP Parameters ===== NO DSP parameters
+No Configurable parameters
 
-.. |bitshift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/bitshift.png
+DSP Parameters
+--------------
+
+NO DSP parameters

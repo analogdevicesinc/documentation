@@ -3,9 +3,16 @@
 Synthesis Window
 ================
 
-| |synthesis.png|
-| ===== Description ===== Performs the FFT synthesis window operation.
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/advanceddsp/synthesis.png
+   :alt: synthesis.png
+
+Description
+===========
+
+Performs the FFT synthesis window operation.
+
+Targets Supported
+=================
 
 +------------------+------------+------------------+---------------+------------------+
 | Name             | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -34,7 +41,7 @@ Name    Type  Description
 Output0 Audio Output channel
 ======= ===== ==============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +-------------------+---------------+---------------+-------------------------------------------------------------------------+
@@ -55,5 +62,3 @@ Output0 Audio Output channel
 +--------------------------------------------------------+---------------------+-------------------+
 
 | 
-
-.. |synthesis.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/advanceddsp/synthesis.png

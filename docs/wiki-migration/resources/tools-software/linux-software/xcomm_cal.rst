@@ -16,7 +16,7 @@ AD-FMCOMMS1-EBZ Calibration EEPROM Utility
           xcomm_cal [-s] [-f FREQUENCY] INPUT_FILE
 
    **DESCRIPTION**
-       Print and set EEPROM calibration data. 
+       Print and set EEPROM calibration data.
        Without option - print all calibration sets available.
 
        -f Target frequency in MHz
@@ -56,10 +56,7 @@ Query best match calibration set for a given Frequency
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

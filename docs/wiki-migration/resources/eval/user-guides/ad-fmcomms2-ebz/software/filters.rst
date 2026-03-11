@@ -9,14 +9,14 @@ With this wizard, users can perform the following tasks:
 -  Design the programmable FIR filters, get the filter coefficients and save them in a .ftr file, which can be directly loaded into the hardware.
 -  Examine the independent response of each filter, and the composite response of all the filters, including both digital and analog filters.
 
-For information about the transmit and receive paths consult `AD9361, AD9363, AD9364 transceiver outline </>resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`__. This also includes information on alternative solutions for programming the transceiver's filters.
+For information about the transmit and receive paths consult :doc:`AD9361, AD9363, AD9364 transceiver outline </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`. This also includes information on alternative solutions for programming the transceiver's filters.
 
 Videos
 ------
 
 Here is a brief introduction on why everyone needs to, and how to use this tool.
 
-.. image:: https://wiki.analog.com/_media/analogTV>3845680080001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/analogTV>3845680080001
    :alt: analogTV>3845680080001
 
 .. important::
@@ -139,13 +139,13 @@ The LTE Release-8 physical layer specification actually supports 105 different b
 
 In addition, you can also save your favorite parameter settings in this list, such as "foobar (Rx & Tx)" shown in the figure.
 
-.. image:: https://wiki.analog.com/_media/1start.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/1start.png
    :alt: Block diagram
    :width: 600px
 
 Assume that you choose the "LTE10 (Rx & Tx)" profile, after you click it, all the parameters are filled in automatically for you, as shown in the figure below. There are three categories of input parameters: magnitude specifications, frequency specifications, and AD936x clock settings. If you are satisfied with all the parameters, you can go ahead and click "Design Filter" to start the design.
 
-.. image:: https://wiki.analog.com/_media/2basic.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/2basic.png
    :alt: Block diagram
    :width: 600px
 
@@ -153,7 +153,7 @@ As soon as the design process completes, you will see a magnitude plot displayed
 
 If you are interested in more details of the design performance, you can click the "FVTool" buttons left to "Filter Results" to launch the `Filter Visualization Tool (fvtool) <https://www.mathworks.com//help/signal/ref/fvtool.html>`_ provided by The MathWorks. For your convenience, we provide this tool on two different frequency scales. One is from 0 Hz to half of the data rate, the other is from 0 Hz up to half of the converter rate.
 
-.. image:: https://wiki.analog.com/_media/3basicdesign.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/3basicdesign.png
    :alt: Block diagram
    :width: 600px
 
@@ -161,19 +161,19 @@ If you are mainly interested in pass band, click the top button, it will open th
 
 -  Magnitude response of half band filters and HB + designed FIR filter.
 
-.. image:: https://wiki.analog.com/_media/fvtooldatarate.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/fvtooldatarate.png
    :alt: Block diagram
    :width: 600px
 
 -  Magnitude Response of the designed FIR only. Besides the magnitude response, you can use the toolbar on the upper left corner (as highlighted in square) to navigate to the other responses, including phase response, group delay response, impulse response, poles/zeros and etc. It will enable you to have a better understanding of the designed FIR.
 
-.. image:: https://wiki.analog.com/_media/6fironly.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/6fironly.png
    :alt: Block diagram
    :width: 600px
 
 -  Overall group delay on pass band. For your convenience, the group delay variance has been calculated and indicated on the figure.
 
-.. image:: https://wiki.analog.com/_media/5fvt2.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/5fvt2.png
    :alt: Block diagram
    :width: 600px
 
@@ -181,7 +181,7 @@ If you are interested in the whole frequency band, click the bottom button, it w
 
 -  Magnitude response of half band filters and HB + designed FIR filter. You can easily have a closer observation on certain portion of the magnitude response by using the "Zoom In/Out" functions on the toolbar (as highlighted in square).
 
-.. image:: https://wiki.analog.com/_media/4fvt1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/4fvt1.png
    :alt: Block diagram
    :width: 600px
 
@@ -194,7 +194,7 @@ After the deeper analysis, if you are satisfied with the results and would like 
 
 -  Save object and data to workspace: If you will use the designed filter chain with some other MATLAB functions or Simulink models, you can simply leave it in the workspace by clicking "Save to Workspace" button, as shown in the figure below. After click this button and exit the App, you will find a mfilt.cascade object named "AD9361_Tx_Filter_object" or "AD9361_Rx_Filter_object" depending on whether it is on Tx or Rx.
 
-.. image:: https://wiki.analog.com/_media/7save2ws.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/7save2ws.png
    :alt: Block diagram
    :width: 600px
 
@@ -208,7 +208,7 @@ After the deeper analysis, if you are satisfied with the results and would like 
 
 -  Save coefficients to a ftr file: If you will use the designed FIR filter with the IIO Oscilloscope application  [2]_, you can save the FIR coefficients by clicking “Coefficients to ftr File” button, as shown in the figure below.
 
-.. image:: https://wiki.analog.com/_media/fig7.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/fig7.png
    :alt: Block diagram
    :width: 600px
 
@@ -219,7 +219,7 @@ After the deeper analysis, if you are satisfied with the results and would like 
 
 After that, a window will pop up, asking you to specify the name and the location of the ftr file, as shown in the figure below.
 
-.. image:: https://wiki.analog.com/_media/8savecoeff.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/8savecoeff.png
    :alt: Block diagram
    :width: 600px
 
@@ -227,19 +227,19 @@ If you plan to use the Filter Design Wizard with a zyqn-based platform, there ar
 
 -  Connect to the target: In the IP box, you should input the IP address of the target. In Linux system, it can be easily found by the "ifconfig" command. Then, click the "Connect to Target" button.
 
-.. image:: https://wiki.analog.com/_media/13connecttozynq.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/13connecttozynq.png
    :alt: Block diagram
    :width: 600px
 
 -  Read clock settings: If a target is detected at the specified IP address, the "Read Clock Settings" button will show up, as shown in the picture below. If you want to overwrite the current clock settings with the ones belong to the target, you can click this button.
 
-.. image:: https://wiki.analog.com/_media/14readclock.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/14readclock.png
    :alt: Block diagram
    :width: 600px
 
 -  Save FIR coefficients to the target: If an FIR filter is designed for the target, the FIR coefficients can be saved directly to the target by clicking the "Coefficients to Target" button, as shown in the picture below.
 
-.. image:: https://wiki.analog.com/_media/15tozynq.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/15tozynq.png
    :alt: Block diagram
    :width: 600px
 
@@ -248,13 +248,13 @@ Advanced Functions
 
 The functions introduced so far provide a basic infrastructure to design and observe the FIR filter. If you would like to have more control and functionality, you can turn on the "Advanced" option, as shown in the figure below, which provides you with several more advanced options.
 
-.. image:: https://wiki.analog.com/_media/9advanced.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/9advanced.png
    :alt: Block diagram
    :width: 600px
 
 -  Phase Equalization: If you would like to have the FIR filter do phase equalization, you can turn on the "Phase Equalization" option, as shown in the figure below. The main purpose of the phase equalization is to reduce the pass band group delay \*variance\* brought by analog filters, digital filters and FIR filter, so that for signals at different frequencies, they will be delayed by an almost identical amount when going through the filter chain.
 
-.. image:: https://wiki.analog.com/_media/10targetdelay.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/10targetdelay.png
    :alt: Block diagram
    :width: 600px
 
@@ -262,7 +262,7 @@ After you click "Design Filter", the phase equalization part of the FIR design f
 
 Please note the phase equalization process may take a few minutes, depending on the performance of your PC, since it tries to find a best target delay which yields the minimum group delay variance.
 
-.. image:: https://wiki.analog.com/_media/10pheq.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/10pheq.png
    :alt: Block diagram
    :width: 600px
 
@@ -272,13 +272,13 @@ Please note the phase equalization process may take a few minutes, depending on 
 
 -  Use Internal FIR: Due to the constraint on power consumption, some users may not want to use the FIR filter on AD936x. Instead, they want to move the FIR filter implementation on FPGA or some other processors. The Filter Design Wizard can also accommodate this requirement. If you decide not to use the AD936x FIR, you can turn off the "Use Internal FIR" option, as shown in the figure below, and click "Design Filter". In this case, there is no longer any constraint on the number of the FIR taps, so the design file conducts a minimum order design. Comparing the FIR Taps in the Results portion, it is decreased from 128 to 105 if the AD936x FIR is not used.
 
-.. image:: https://wiki.analog.com/_media/11usefir.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/11usefir.png
    :alt: Block diagram
    :width: 600px
 
 -  Generate HDL: Following the previous step, if you decide to have the FIR filter implemented on FPGA, the design wizard can help you generate the HDL code. By clicking "Generate HDL", the 'fdhdltool' function (http://www.mathworks.com/help/hdlfilter/fdhdltool.html) is called and the Generate HDL dialog box will pop up, as shown in the figure below. There are quite a few options you can choose concerning how you would like the HDL to be generated. In the end, by clicking "Generate", the HDL will be generated for you.
 
-.. image:: https://wiki.analog.com/_media/12createhdl.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/12createhdl.png
    :alt: Block diagram
    :width: 600px
 
@@ -287,7 +287,7 @@ Toolbar
 
 The icons shown on the toolbar below provide a shortcut to some frequently used functions.
 
-.. image:: https://wiki.analog.com/_media/13toolbar.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/13toolbar.png
    :alt: Block diagram
    :width: 600px
 
@@ -365,7 +365,7 @@ Transmit
 
 According to AD9361 Filter Guide, the TX signal path is as following:
 
-.. image:: https://wiki.analog.com/_media/txfilter.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/txfilter.png
    :alt: Block diagram
 
 The digital and analog paths are separated by DAC. Before DAC, there are four digital filters. The first one (PROG TX FIR) is a programmable poly-phase FIR filter, which can interpolate by a factor of 1, 2, or 4, or it can be bypassed if not needed. The others (HB1, HB2, HB3 and INT3) are all digital filters with fixed coefficients, and they can be turned on or turned off. After DAC, there are two low-pass analog filters.
@@ -375,7 +375,7 @@ Receive
 
 According to AD9361 Filter Guide, the RX signal path is as following:
 
-.. image:: https://wiki.analog.com/_media/rxfilter.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/rxfilter.png
    :alt: Block diagram
 
 The analog and digital paths are separated by ADC. Before ADC, there are two low-pass analog filters. After ADC, there are three digital filters with fixed coefficients (HB3/DEC3, HB2, HB1) followed by a programmable poly-phase FIR filter (PROG RX FIR). The FIR filter can be decimated by a factor of 1, 2, or 4, or it can be bypassed if not needed.
@@ -413,7 +413,7 @@ If you are interested in the filter response of HB1, you can proceed to apply th
 
 and you will get:
 
-.. image:: https://wiki.analog.com/_media/HB1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/HB1.png
    :alt: Block diagram
    :width: 600px
 
@@ -572,9 +572,9 @@ For users wishing to deploy or embed this filter designer into their own C/C++ s
 Getting MATLAB Source and Testing
 ---------------------------------
 
-| Required MathWorks Toolboxes and Products:
-| \* `MATLAB <https://www.mathworks.com/products/matlab/>`_
+Required MathWorks Toolboxes and Products:
 
+-  `MATLAB <https://www.mathworks.com/products/matlab/>`_
 -  `Signal Processing Toolbox <https://www.mathworks.com/products/signal/>`_
 -  `Fixed-Point Designer <https://www.mathworks.com/products/fixed-point-designer/>`_
 -  `MATLAB Coder <https://www.mathworks.com/products/matlab-coder/>`_
@@ -598,7 +598,7 @@ If you have MATLAB configured correctly you should observe the following output 
 
 ::
 
-                          Name                         Passed    Failed    Incomplete    Duration      Details   
+                          Name                         Passed    Failed    Incomplete    Duration      Details
        _____________________________________________    ______    ______    __________    ________    ____________
 
        'FilterDesignerTests/testRXMEX'                  true      false     false         160.63      [1x1 struct]
@@ -617,8 +617,9 @@ These tests evaluate the numerical output of the generated designer with respect
 Generating C/C++ Source Code From MATLAB
 ----------------------------------------
 
-| For convenience, an example script called ``generate_internal_designer.m`` is provided in the repository to generate C/C++ source and optionally compile a DLL. This script utilizes the ``coder.Config`` class to configure MATLAB Coder. For additional configuration options not used in the script consult `coder.CodeConfig <https://www.mathworks.com/help/coder/ref/coder.codeconfig.html?searchHighlight=coder.codeconfig-class&s_tid=srchtitle>`. MATLAB Coder can be used to generate source code only, compile the generate code into a library, or compile external code with the newly generated code.
-| In the provided script, which we show a portion of here, a ``coder.config`` object is created and configured to generate C code with the majority of the code output to a single file. We disable binary compilation and turn off OpenMP calls which are enabled by default. Since MATLAB Coder requires knowledge of input types they are provided as the ``args`` input to the codegen call.
+For convenience, an example script called ``generate_internal_designer.m`` is provided in the repository to generate C/C++ source and optionally compile a DLL. This script utilizes the ``coder.Config`` class to configure MATLAB Coder. For additional configuration options not used in the script consult `coder.CodeConfig <https://www.mathworks.com/help/coder/ref/coder.codeconfig.html?searchHighlight=coder.codeconfig-class&s_tid=srchtitle>`. MATLAB Coder can be used to generate source code only, compile the generate code into a library, or compile external code with the newly generated code.
+
+In the provided script, which we show a portion of here, a ``coder.config`` object is created and configured to generate C code with the majority of the code output to a single file. We disable binary compilation and turn off OpenMP calls which are enabled by default. Since MATLAB Coder requires knowledge of input types they are provided as the ``args`` input to the codegen call.
 
 .. code:: matlab
 

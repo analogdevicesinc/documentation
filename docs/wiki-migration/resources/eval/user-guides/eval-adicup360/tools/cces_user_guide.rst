@@ -93,7 +93,8 @@ A project for ADuCM360 can be created using the New CrossCore Project Wizard. Th
 -  Project configuration allows you to add additional Add-ins to your project, such as Pin Multiplexing and changing the template language for a generated main function etc. Typically no configuration or add-ons are necessary.
 -  Finally, press *Finish* and the project will be created and you can begin writing your program.
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_new_project.gif
+   :align: center
 
 How to add startup code and core components to a new project for the ADuCM360
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -109,7 +110,8 @@ At minimum, a new ADuCM360 project **requires** the *Device::Startup*, *CMSIS::C
 -  Click Save (Ctrl+S)
 -  *You can also choose Device::Startup and click the Resolve button to add dependant components*
 
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_project_structure.gif
+   :align: right
 
 How to import existing projects into your workspace
 ---------------------------------------------------
@@ -129,12 +131,11 @@ How to Import Existing Projects Saved to a Local Drive
 -  (Optional) If the *Copy projects into workspace* option is checked, the project will be copied to your workspace folder and the newly copied project will be opened and used. This preserves the original version of the project.
 -  Click *Finish*
 
-| |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_import_project.gif
+   :align: right
 
 How to Import Examples that come with the ADuCM36x Device Family Pack (DFP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| 
 
 Opening CCES Examples using the CMSIS Pack Manager Perspective
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -144,17 +145,17 @@ Opening CCES Examples using the CMSIS Pack Manager Perspective
 -  Click the *Copy* Action button.
 -  A dialog will pop-up showing the location where the example will be copied to. Click *Copy* to copy and open the example project.
 
-| |image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_open_example.gif
+   :align: right
 
 Opening Examples using the CCES Example Browser
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| 
-
 -  Launch the CCES Example Broswer by clicking on *Help --> Browse Examples*.
 -  Select ADuCM36x_DFP[x.y.z] in Product drop-down list, select the example and click Open example. Then the example will be copied to your workspace.
 
-| |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_example_browser.gif
+   :align: right
 
 How to Import Existing Projects from the GIT Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,7 +170,8 @@ How to Import Existing Projects from the GIT Repository
 -  Select *Import existing Eclipse projects*
 -  Click *Next* and then *Finish*
 
-| |image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_git.gif
+   :align: right
 
 How to configure the Tools Settings used by an ADuCM360 project
 ---------------------------------------------------------------
@@ -181,7 +183,8 @@ How to configure the Tools Settings used by an ADuCM360 project
 
 -  After configuring your project, click Apply and/or OK.
 
-| |image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_tool_settings.gif
+   :align: right
 
 Disabling/Enabling Semihosting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -202,7 +205,8 @@ Disabling/Enabling Semihosting
 
    -  Or click the *Hammer* icon from the toolbar.
 
-| |image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_no_sys.gif
+   :align: right
 
 How to build projects for programming the ADuCM360
 --------------------------------------------------
@@ -212,7 +216,8 @@ How to build projects for programming the ADuCM360
 
    -  Or click the *Hammer* icon from the toolbar.
 
-| |image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_build_project.gif
+   :align: right
 
 How to configure the debug session for an ADuCM360 application
 --------------------------------------------------------------
@@ -234,7 +239,8 @@ You will need to create a launch configuration to debug your ADuCM360 program.
 
 -  In the *Common* tab, you can add the debug configuration to your menu bar shortcuts, for both *Debug mode* or // Run mode// by simply ticking the checkboxes.
 
-| |image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_debug_launch.gif
+   :align: right
 
 How to start and stop debugging an ADuCM360 application
 -------------------------------------------------------
@@ -245,7 +251,7 @@ How to start and stop debugging an ADuCM360 application
 -  You will be prompted to switch perspective to the Debug perspective. Click *Yes*. You can opt to not show this dialog again.
 -  If your binary (program) was built with semi-hosting enabled, then CCES will warn you that you need to re-build the program when you want to run the program without a debugger attached.\
 
-|image11|
+|image1|
 
 -  If everything goes fine, in the Console window, you will see a report without errors.
 
@@ -281,7 +287,7 @@ Windows Firewall Access
 -  If this is the first time you have launched OpenOCD, the Windows Firewall may pop-up a window asking for access. Click on "*Allow Access*".\
 
 
-|image12|
+|image2|
 
 Linux USB Access
 ~~~~~~~~~~~~~~~~
@@ -296,7 +302,7 @@ Starting with CrossCore Embedded Studio (CCES) 2.8.0, the Artifact of your proje
 -  Ensure that your program is built with semi-hosting disabled by visiting *Tools Settings \| Linker \| Libraries* and change *Semihosting support* to *nosys.specs* or *None*, depending on your application set-up.
 -  Rebuild your application.\
 
-|image13|
+|image3|
 
 -  Convert your application into Binary (.bin) or Intel Hex (.hex) format by visiting Tools Settings once more.
 -  Select the Build Artifact tab.
@@ -304,7 +310,7 @@ Starting with CrossCore Embedded Studio (CCES) 2.8.0, the Artifact of your proje
 -  Apply and Close
 -  Rebuild your application.\
 
-|image14|
+|image4|
 
 How to debug programs using ADuCM362 and ADuCM363 Evaluation Boards
 -------------------------------------------------------------------
@@ -358,22 +364,12 @@ The :adi:`ADuCM362/ADuCM363 evaluation board <en/design-center/evaluation-hardwa
    continue``
 -  Click Debug to start loading and running your program.\
 
-|image15|
+|image5|
 
 *End of Document*
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_new_project.gif
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_project_structure.gif
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_import_project.gif
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_open_example.gif
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_example_browser.gif
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_git.gif
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_tool_settings.gif
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_no_sys.gif
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_build_project.gif
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_debug_launch.gif
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-openocd-firewall.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_no_sys.gif
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_bin.gif
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/362_eval.gif
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-openocd-firewall.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_no_sys.gif
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_bin.gif
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/362_eval.gif

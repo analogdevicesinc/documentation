@@ -4,8 +4,7 @@ AXI HDMI HDL Linux Driver
 Supported Devices
 -----------------
 
-| This driver supports the
-| :doc:`AXI HDMI HDL </wiki-migration/resources/fpga/xilinx/kc705/adv7511>`
+This driver supports the :doc:`AXI HDMI HDL </wiki-migration/resources/fpga/xilinx/kc705/adv7511>`
 
 Description
 -----------
@@ -65,29 +64,29 @@ Example:
            #address-cells = <1>;
        };
 
-       axi_vdma_0: axivdma@43000000 { 
-           #address-cells = <1>; 
-           #size-cells = <1>; 
-           #dma-cells = <1>; 
-           compatible = "xlnx,axi-vdma"; 
-           reg = <0x43000000 0x1000>; 
-           xlnx,include-sg = <0x0>; 
-           xlnx,num-fstores = <0x3>; 
-           dma-channel@7e200000 { 
-               compatible = "xlnx,axi-vdma-mm2s-channel"; 
-               interrupts = <0 59 0x4>; 
-               xlnx,datawidth = <0x40>; 
-               xlnx,genlock-mode = <0x0>; 
-               xlnx,include-dre = <0x0>; 
-           }; 
-       }; 
+       axi_vdma_0: axivdma@43000000 {
+           #address-cells = <1>;
+           #size-cells = <1>;
+           #dma-cells = <1>;
+           compatible = "xlnx,axi-vdma";
+           reg = <0x43000000 0x1000>;
+           xlnx,include-sg = <0x0>;
+           xlnx,num-fstores = <0x3>;
+           dma-channel@7e200000 {
+               compatible = "xlnx,axi-vdma-mm2s-channel";
+               interrupts = <0 59 0x4>;
+               xlnx,datawidth = <0x40>;
+               xlnx,genlock-mode = <0x0>;
+               xlnx,include-dre = <0x0>;
+           };
+       };
 
-       axi-hdmi@6c000000 { 
-           compatible = "adi,cf-axi-hdmi-1.00.a"; 
-           reg = <0x6c000000 0x10000 
-                  0x66000000 0x10000>; 
-           slave_adapter = <&axi_iic_0>; 
-           dma-request = <&axi_vdma_0 0>; 
+       axi-hdmi@6c000000 {
+           compatible = "adi,cf-axi-hdmi-1.00.a";
+           reg = <0x6c000000 0x10000
+                  0x66000000 0x10000>;
+           slave_adapter = <&axi_iic_0>;
+           dma-request = <&axi_vdma_0 0>;
        };
 
 Enabling Linux driver support
@@ -104,10 +103,10 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
    Linux Kernel Configuration
        Device Drivers  --->
-           Graphics support  --->  
-               <*> Direct Rendering Manager (XFree86 4.1.0 and higher DRI support)  ---> 
+           Graphics support  --->
+               <*> Direct Rendering Manager (XFree86 4.1.0 and higher DRI support)  --->
                ...
-               <*> DRM Support for Analog FPGA platforms 
+               <*> DRM Support for Analog FPGA platforms
 
 Driver testing
 ==============
@@ -123,7 +122,7 @@ Enable framebuffer support in the kernel config:
 
    Linux Kernel Configuration
        Device Drivers  --->
-           Graphics support  --->  
+           Graphics support  --->
                ...
                            Console display driver support  --->
                            <*> Framebuffer Console support
@@ -165,4 +164,8 @@ More information
 -  `AD7511 HDMI transmitter Linux Driver <https://wiki.analog.com/../drm/adv7511>`_
 -  `Linux with HDMI video output on the ZED and ZC702 boards <https://wiki.analog.com/../platforms/zynq>`_
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

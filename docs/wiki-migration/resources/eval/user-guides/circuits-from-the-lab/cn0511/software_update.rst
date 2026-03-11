@@ -17,10 +17,9 @@ Installation of Latest Lib-IIO and Other Requirements Needed to Run the Example 
          
 
    
-   --------------
    
-   Step 1: Installation of the latest libad9166-iio from Github
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Step 1: Installation of the latest libad9166-iio from Github**
+
    
    After the reboot, open command prompt or terminal again to clone the libad9166-iio from Github
    
@@ -72,10 +71,9 @@ Installation of Latest Lib-IIO and Other Requirements Needed to Run the Example 
    
       analog@analog:~/python $ sudo make install
    
-   --------------
    
-   Step 2: Installation of the latest pyadi-iio from github
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Step 2: Installation of the latest pyadi-iio from github**
+
    
    ::
    
@@ -89,14 +87,11 @@ Installation of Latest Lib-IIO and Other Requirements Needed to Run the Example 
    
    ::
    
-      analog@analog:~$ sudo apt-get install libatlas-base-dev linux packages 
+      analog@analog:~$ sudo apt-get install libatlas-base-dev linux packages
    
    Then choose 'Y' if were asked to continue
    
-   --------------
    
    After all these requirements has been loaded in the Raspberry Pi, example found in ~/home/analog/pyadi-iio/examples for CN0511 can now be run.
-
    
-   | 
-   |
+

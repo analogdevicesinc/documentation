@@ -5,8 +5,7 @@ SigmaStudio+ Scripting
 
 As a startup guide, this page simply introduces to the Scripting functionality supported by SigmaStudio+ Application. This uses Apache Thrift and RPC protocol in order to connect to the server application(SS+). An example (i.e., CSharp client/Python) is also given along with the package to make the user understand basic actions that are available for Scripting. Refer to :doc:`Remote Execute </wiki-migration/resources/tools-software/sigmastudiov2/tutorials/remoteexecute>` for detailed example for client application.
 
-
-| Available actions for SigmaStudio+ scripting:
+Available actions for SigmaStudio+ scripting:
 
 -  :doc:`CreateNewProject </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/scripting/createnewproject>`
 -  :doc:`SaveProject </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/scripting/saveproject>`
@@ -55,10 +54,11 @@ As a startup guide, this page simply introduces to the Scripting functionality s
 -  :doc:`CloseProject </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/scripting/closeproject>`
 -  :doc:`GetPinCollections </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/scripting/getpincollections>`
 
-|
+Scripting.Thrift
+----------------
 
-| ==== Scripting.Thrift==== We support Apache Thrift up to version 20.0, ensuring compatibility with the latest features and improvements.
+We support Apache Thrift up to version 20.0, ensuring compatibility with the latest features and improvements.
 
 This file is given out for the user to generate files in a specific language with the help of commands as given in the Apache Thrift startup guide.
 
-| https://thrift.apache.org/tutorial/.
+https://thrift.apache.org/tutorial/.

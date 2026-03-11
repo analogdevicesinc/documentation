@@ -74,19 +74,21 @@ Sensor Connection
 
 -  Connect Thermocouple to AIN+ and AIN- terminals
 
-| 
-
 Power Options
 ~~~~~~~~~~~~~
 
-| **Jumper Positon EXT**
-| |image3|
+**Jumper Positon EXT**
+
+
+|image3|
 
 -  System is powered using termnial block P3 (input range:+5.5V to +36V DC)
 -  When no supply is present on P3, the system draws power from USB when using the SDP
 
-| **Jumper Positon PMOD**
-| |image4|
+**Jumper Positon PMOD**
+
+
+|image4|
 
 -  System is powered using the PMOD headers (+3.3V DC)
 
@@ -108,9 +110,9 @@ Installing the Evaluation Software
 
 |image6|
 
--  Click **Next** to start the installation
+   \* Click **Next** to start the installation
 
-|image7|
+   |image7|
 
 -  Upon completion of the installation of the **CN-0376 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
@@ -121,7 +123,7 @@ Installing the Evaluation Software
 
    |image8|
 
--  Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
 .. tip::
 
@@ -214,40 +216,28 @@ Histogram Tab
    User needs to sample data first using **Run** to get histogram data on this page.
 
 
--  **Select Channel**
+| \**Select Channel**
 
-   -  Channel selection for Histogram display
+::
 
--  **Get Histogram**
-
-   -  Analyzes the data from the selected channel and displays the histogram data
-
--  **Maximum Code**
-
-   -  Display for the highest code from the sampled data of the selected channel
-
--  **Minimum Code**
-
-   -  Display for the lowest code from the sampled data of the selected channel
-
--  **Code Spread**
-
-   -  Display for the difference between the highest and lowest code from the sampled data of the selected channel
-
--  **Peak-to-Peak Resolution**
-
-   -  Display for computed Peak-to-Peak Resolution(bits) of the selected channel
-
--  **Histogram Graph**
-
-   -  Plot for the histogram data
+     * Channel selection for Histogram display
+   **Get Histogram**
+     * Analyzes the data from the selected channel and displays the histogram data
+   **Maximum Code**
+     * Display for the highest code from the sampled data of the selected channel
+   **Minimum Code**
+     * Display for the lowest code from the sampled data of the selected channel
+   **Code Spread**
+     * Display for the difference between the highest and lowest code from the sampled data of the selected channel
+   **Peak-to-Peak Resolution**
+     * Display for computed Peak-to-Peak Resolution(bits) of the selected channel
+   **Histogram Graph**
+     * Plot for the histogram data
 
 Configuration Tab
 ^^^^^^^^^^^^^^^^^
 
-| Allows for ADC configuration of either channel
-| |image15|
-| **Input Type**
+Allows for ADC configuration of either channel |image15| **Input Type**
 
 -  PT100 - activates the Excitation current source and configures the ADC to read from PT100 RTD
 -  PT1000 - activates the Excitation current source and configures the ADC to read from PT1000 RTD
@@ -298,7 +288,7 @@ Saving Data to a Spreadsheet File
 -  Name the file.
 -  Click the **OK Button**.
 
-|
+
 
 .. note::
 

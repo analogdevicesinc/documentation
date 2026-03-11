@@ -6,8 +6,8 @@ Introduction
 
 This document introduces two kind of core control solutions which support ADSP-SC573, SC584, SC589 EZ-Kits and SC589-MINI. One method is to control SHARC Cores with u-boot ICC command. Other way includes a kernel device driver and a command-line utility, for enabling and disabling the SHARC cores (Core 1 & 2) from the ARM core (Core 0), which have been added to the Yocto Linux distribution for ADSP-SC573, SC584, SC589 and SHARC AUDIO MODULE.
 
-| 
-| ===== Method 1: Enable SHARC cores with u-boot ICC command =====
+Method 1: Enable SHARC cores with u-boot ICC command
+----------------------------------------------------
 
 Configure u-boot to Enable Slave Cores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,7 +19,6 @@ The slave SHARC core 0 and 1 in SC5xx silicon can be enabled and disabled in u-b
    $ bitbake u-boot-adi -c menuconfig
    ARM architecture  --->
        [*] ICC command to enable and disable slave cores
-       
 
 After saving the configuration in u-boot, rebuild the u-boot ldr image for sc5xx boards.
 
@@ -44,8 +43,8 @@ The ICC command can enable or disable a specific slave core. The SHARC core ids 
    icc disable <coreid>
      * disable coreid
 
-| 
-| ===== Method 2: Enable SHARC Cores with corecontrol Utility in Linux =====
+Method 2: Enable SHARC Cores with corecontrol Utility in Linux
+--------------------------------------------------------------
 
 Linux Core Control Driver
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,15 +58,15 @@ Enable the core control driver by using the below command:
 
    $ bitbake linux-adi -c menuconfig
    CONFIG_CORE_CONTROL:
-      ICC core control, control the DSP devices at the side of ARM Core, which 
-      provides some commands e.g. Start, Stop, and Set the vector value  
-      Symbol: CORE_CONTROL [=y] 
-      Type  : bool  
-      Prompt: icc core control 
-         Location:  
+      ICC core control, control the DSP devices at the side of ARM Core, which
+      provides some commands e.g. Start, Stop, and Set the vector value
+      Symbol: CORE_CONTROL [=y]
+      Type  : bool
+      Prompt: icc core control
+         Location:
            -> Device Drivers
-             -> Staging drivers (STAGING [=y]) 
-               -> icc driver (ICC [=y]) 
+             -> Staging drivers (STAGING [=y])
+               -> icc driver (ICC [=y])
 
 A new corectrl device would be created to allow Linux user to enable and disable the SHARC cores. See icc.h for macro values. The device, /dev/corectrl, supports the following ioctl requests:
 
@@ -83,9 +82,9 @@ Both requests return 0 on success and -1 on failure.
 
 ::
 
-   ;<FD> 
+   ;<FD>
    :File descriptor of /dev/corectrl
-   ;<COREID> 
+   ;<COREID>
    :The number of the core to start or stop.  Values accepted are CCTRL_CORE1 and CCTRL_CORE2.
 
 Example: Use corectrl device from source code
@@ -112,8 +111,10 @@ An example to enable both cores is as follows:
      exit(3);
    }
 
-| 
-| ==== Package Configuration ==== The SHARC cores can be controlled from the Linux command line using the corecontrol utility. To use corecontrol, first add the package in local.conf:
+Package Configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+The SHARC cores can be controlled from the Linux command line using the corecontrol utility. To use corecontrol, first add the package in local.conf:
 
 ::
 
@@ -122,8 +123,8 @@ An example to enable both cores is as follows:
 
 With the corecontrol utility, sharc cores can be controlled to start or stop.
 
-| 
-| ==== Example: Use corecontrol from user space ====
+Example: Use corecontrol from user space
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
@@ -134,5 +135,6 @@ With the corecontrol utility, sharc cores can be controlled to start or stop.
    # corecontrol --start 1
    # corecontrol --stop 1
 
-| 
-| ---- **BACK TO** :doc:`Multi-Core Support </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/start>`
+--------------
+
+**BACK TO** :doc:`Multi-Core Support </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/start>`

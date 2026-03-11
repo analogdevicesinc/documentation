@@ -1,13 +1,9 @@
 ADI AD-FMCJESDADC1-EBZ Boards & Xilinx Reference Design
 =======================================================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support for the ad-fmcjesdadc1-ebz was discontinued on all carriers starting with 2022_R2 Kuiper Linux release and it won't be supported anymore in future releases. Latest MicroBlaze images with pre-build files can be downloaded from `here <:doc:`/wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading`>`_. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The project source code can still be found on :git-hdl:`hdl_2021_r2 <projects/fmcjesdadc1>` release branch.
+   \ **NOTE:** Support for the ad-fmcjesdadc1-ebz was discontinued on all carriers starting with 2022_R2 Kuiper Linux release and it won't be supported anymore in future releases. Latest MicroBlaze images with pre-build files can be downloaded from `here <:doc:`/wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading`>`_. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The project source code can still be found on `hdl_2021_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2021_r2/projects/fmcjesdadc1>`_ release branch.
 
 
 .. important::
@@ -92,9 +88,9 @@ The ADC sampling rate can vary from 40MHz to 250MHz. However, there are limitati
 
 As of this writing, the GTX specification & switching characteristics may be found at:
 
-| `ug476_7Series_Transceivers.pdf <https://www.xilinx.com/support/documentation/user_guides/ug476_7Series_Transceivers.pdf>`_
-| `ds182_Kintex_7_Data_Sheet.pdf <https://www.xilinx.com/support/documentation/data_sheets/ds182_Kintex_7_Data_Sheet.pdf>`_
-| The key switching characteristics are-
+`ug476_7Series_Transceivers.pdf <https://www.xilinx.com/support/documentation/user_guides/ug476_7Series_Transceivers.pdf>`_ `ds182_Kintex_7_Data_Sheet.pdf <https://www.xilinx.com/support/documentation/data_sheets/ds182_Kintex_7_Data_Sheet.pdf>`_
+
+The key switching characteristics are-
 
 The reference clock has a range of 60MHz to 670MHz (700MHz). This limits the minimum sampling clock to 60MHz. Though it is NOT recommended, it is possible to use AD9517 to generate a 40MHz sampling clock to AD9250 and a 80MHz reference clock to the FPGA.
 

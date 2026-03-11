@@ -26,11 +26,7 @@ A DAC produces a quantized (discrete step) analog output in response to a binary
    :align: center
    :width: 150px
 
-| where
-| Ao is the analog output
-| Di is the digital input code
-| N is the number of digital input bits (resolution)
-| Ref is the reference value (full-scale)
+where Ao is the analog output Di is the digital input code N is the number of digital input bits (resolution) Ref is the reference value (full-scale)
 
 Analog signals are continuous time-domain signals with infinite resolution and possibly infinite bandwidth. However, the DAC's output is a signal constructed from discrete values (quantization) generated at uniform, but finite, time intervals (sampling). In other words, the DAC output attempts to represent an analog signal with one that features finite resolution and bandwidth. Quantization and sampling impose fundamental, yet predictable, limits on DAC performance. Quantization determines the maximum dynamic range of the converter and results in quantization error or noise in the output. Sampling determines the maximum bandwidth of the DAC output signal according to Nyquist criteria. The Nyquist theory states that the signal frequency (that is, the DAC output) must be less than or equal to one-half the sampling frequency to prevent sampling images from occurring in the frequency band of the DAC output. In an ideal DAC, the analog outputs are exactly one least significant bit (LSB) apart, where one LSB is the full-scale analog output amplitude divided by 2\ :sup:`N`, and N is the DAC resolution expressed in number of bits. In addition, DAC operation is also affected by nonideal effects beyond those dictated by quantization and sampling. These errors are characterized by a number of AC and DC performance specifications that determine the converter's static and dynamic performance.
 
@@ -247,12 +243,11 @@ An INL mechanism that results from the use of a switched multiple current source
    :align: center
    :width: 200px
 
-| where
-| Iunit is the magnitude of the unit current source
-| RL is the load impedance
-| Nu is the number of unit current elements
-| Rsw is the impedance of a unit current source
-| |image1|
+where Iunit is the magnitude of the unit current source RL is the load impedance Nu is the number of unit current elements Rsw is the impedance of a unit current source
+
+.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure14.png
+   :align: center
+   :width: 620px
 
 .. container:: centeralign
 
@@ -265,11 +260,9 @@ What we actually need to know is Rsw to design the DAC unit element. This formul
    :align: center
    :width: 200px
 
-| where
-| RL is the load impedance
-| Nu is the number of unit current elements
-| NR is the number of bits for the overall DAC
-| While it is true that switch output resistance requirements are greatly reduced for fully differential output configurations, as pointed out in Ref.[14], it is important to design the output switches and their gate voltages so as to keep the output switches in saturation. This maximizes the attenuation of the output swing seen at the common source nodes of the differential switches. The small signal attenuation of the switches is given by the ratio of the device gm to gds. Typical values of this ratio can be in the range of 20 to 50.
+where RL is the load impedance Nu is the number of unit current elements NR is the number of bits for the overall DAC
+
+While it is true that switch output resistance requirements are greatly reduced for fully differential output configurations, as pointed out in Ref.[14], it is important to design the output switches and their gate voltages so as to keep the output switches in saturation. This maximizes the attenuation of the output swing seen at the common source nodes of the differential switches. The small signal attenuation of the switches is given by the ratio of the device gm to gds. Typical values of this ratio can be in the range of 20 to 50.
 
 The parasitic capacitances shown in Figure 14b reduce the current source impedance as the output frequency increases [21]. As indicated in the figure, one or more cascode stages can be included to improve low-frequency output impedance, and extend the frequency range over which the current source output impedance is acceptable. The simulated output impedance versus frequency for an example unit cell in a standard 0.18 µm CMOS process is shown in Figure 15. The triangle curve is for the total of the drain to gate and drain to bulk junction capacitance of switches MP1 and MP2, which always appear on the output nodes independent of whether the switch is off or on. The other three curves are the impedance seen when the switch is on (excluding the fixed drain capacitance). The circle is for the case where the main current source devices connect directly to the switch pair. The square curve includes one cascode and the x curve includes two levels of cascode. For the two cascoded cases, the drain capacitance dominates the impedance until the DC resistance is reached. We can use the same INL formula to gauge at what frequency the distortion will cross the required specification level. Again for differential output configurations, the even order distortion terms are greatly attenuated. At some point, the unavoidable nonlinearity of the drain to bulk junction capacitance will dominate.
 
@@ -558,6 +551,3 @@ REFERENCES
 32. AD9744 data sheet.
 
 33. T. Chen et al., The analysis and improvement of a current-steering DACs dynamic SFDR—I: The cell- dependent delay differences, IEEE Trans. Circuits Syst.-I, 53(1), 3–15, 2006.
-
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure14.png
-   :width: 620px

@@ -18,13 +18,13 @@ You should plug the AD-T1LUSB-EBZ into an USB port and then open a terminal and 
        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
        inet 127.0.0.1/8 scope host lo
           valid_lft forever preferred_lft forever
-       inet6 ::1/128 scope host noprefixroute 
+       inet6 ::1/128 scope host noprefixroute
           valid_lft forever preferred_lft forever
    2: enx381428d8dcf4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
        link/ether 38:14:28:d8:dc:f4 brd ff:ff:ff:ff:ff:ff
        inet 10.48.65.147/24 brd 10.48.65.255 scope global dynamic noprefixroute enx381428d8dcf4
           valid_lft 21392sec preferred_lft 21392sec
-       inet6 fe80::3a14:28ff:fed8:dcf4/64 scope link noprefixroute 
+       inet6 fe80::3a14:28ff:fed8:dcf4/64 scope link noprefixroute
           valid_lft forever preferred_lft forever
    4: enx00e04c68045c: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
        link/ether 00:e0:4c:68:04:5c brd ff:ff:ff:ff:ff:ff
@@ -34,15 +34,15 @@ You should plug the AD-T1LUSB-EBZ into an USB port and then open a terminal and 
        link/ether 2a:ee:a2:3b:72:c0 brd ff:ff:ff:ff:ff:ff permaddr 48:51:c5:63:37:60
    3150: ztugavxm3z: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 2800 qdisc fq_codel state UNKNOWN group default qlen 1000
        link/ether 16:af:6e:75:9b:81 brd ff:ff:ff:ff:ff:ff
-       inet6 fe80::14af:6eff:fe75:9b81/64 scope link 
+       inet6 fe80::14af:6eff:fe75:9b81/64 scope link
           valid_lft forever preferred_lft forever
    3151: ztugatxm3z: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 2800 qdisc fq_codel state UNKNOWN group default qlen 1000
        link/ether 16:af:0e:75:9b:81 brd ff:ff:ff:ff:ff:ff
        inet 192.168.192.30/24 brd 192.168.192.255 scope global ztugatxm3z
           valid_lft forever preferred_lft forever
-       inet6 fcbe:2234:666e:c018:e974::1/40 scope global 
+       inet6 fcbe:2234:666e:c018:e974::1/40 scope global
           valid_lft forever preferred_lft forever
-       inet6 fe80::14af:eff:fe75:9b81/64 scope link 
+       inet6 fe80::14af:eff:fe75:9b81/64 scope link
           valid_lft forever preferred_lft forever
    2727: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
        link/ether 06:d6:97:8c:32:37 brd ff:ff:ff:ff:ff:ff

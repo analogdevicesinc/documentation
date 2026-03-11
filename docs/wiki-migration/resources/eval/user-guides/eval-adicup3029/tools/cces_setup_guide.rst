@@ -45,7 +45,7 @@ CrossCore Embedded Studio Download Packages
    :class: download
 
    
-   | The EVAL-ADICUP3029 **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EVAL-ADICUP3029.
+   The EVAL-ADICUP3029 **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EVAL-ADICUP3029.
    
    :adi:`CrossCore Embedded Studio for Windows and Linux <en/design-center/evaluation-hardware-and-software/software/adswt-cces.html>`
    

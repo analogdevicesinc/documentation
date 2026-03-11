@@ -1,7 +1,7 @@
 SuperBass
 =========
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+
 | The Superbass block is a bass enhancement algorithm specifically designed to compensate for the poor low end response of small speakers by using psychoacoustic principles to improve the perceived bass response. | |superbass1.png| |

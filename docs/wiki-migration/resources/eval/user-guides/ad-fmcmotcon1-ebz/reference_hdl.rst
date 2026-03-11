@@ -5,7 +5,9 @@ HDL Reference Designs
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- Two HDL reference designs are provided targeting different use cases and system complexity levels:
+
+
+Two HDL reference designs are provided targeting different use cases and system complexity levels:
 
 -  :doc:`Xilinx ISE HDL Project + Chipscope Interface </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/reference_hdl/ise>`
 
@@ -23,5 +25,5 @@ HDL Reference Designs
       -  Integration of automatically generated HDL code for Simulink designed motor controller
       -  EDK and Vivado projects
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#hardware
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/navigation AD-FMCMOTCON1-EBZ#hardware
    :alt: Hardware#.:\|Overview#software|Software

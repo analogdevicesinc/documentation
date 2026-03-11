@@ -9,7 +9,8 @@ Sawtooth Wave
 
 | 
 | |image3|
-| To change the source's Sampling Rate, Right-click in the block and select Set Sampling Rate, which will open the Sampling Rate window (default is 44.1 kHz).
+
+To change the source's Sampling Rate, Right-click in the block and select Set Sampling Rate, which will open the Sampling Rate window (default is 44.1 kHz).
 
 .. note::
 

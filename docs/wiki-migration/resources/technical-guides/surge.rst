@@ -19,7 +19,7 @@ Level Voltage Peak (kV)
 4     4
 ===== =================
 
-| 
+
 | |image1|
 
 .. container:: centeralign
@@ -27,8 +27,10 @@ Level Voltage Peak (kV)
    *Figure 1 ADP1034 and AD74115H Surge Block Diagram*
 
 
-| 
-| ===Hardware Configuration=== The use cases tested during surge testing were voltage output (and voltage input by reconfiguring the ADC input nodes), internal digital output sourcing and sinking. The external sense pins SENSE_EXT1 and SENSE_EXT2 were also subject to testing. The reasoning for these particular use cases were to ensure the integrity of the I/O and sense screw terminals along with the internal fets used for the internal digital output use case. The surge was coupled to each screw terminal one at a time with respect to IO_N (AGND). Unshielded cable was used for all use cases.
+Hardware Configuration
+----------------------
+
+The use cases tested during surge testing were voltage output (and voltage input by reconfiguring the ADC input nodes), internal digital output sourcing and sinking. The external sense pins SENSE_EXT1 and SENSE_EXT2 were also subject to testing. The reasoning for these particular use cases were to ensure the integrity of the I/O and sense screw terminals along with the internal fets used for the internal digital output use case. The surge was coupled to each screw terminal one at a time with respect to IO_N (AGND). Unshielded cable was used for all use cases.
 
 For the voltage output use case, 6 V was configured as the output into a 100 kΩ load connected between IO_P and IO_N. The measurement (voltage input) was configured as IO_P to IO_N in the range 0 V to 12 V. The SENSE_EXT1 and SENSE_EXT2 nodes were selected as diagnostic nodes and configured as inputs to the ADC in the range 0 V to 12 V. Two AA batteries connected in series were used as a 3.1 V input to each of the SENSE_EXTx pins.
 
@@ -58,12 +60,10 @@ Pre and Post Measurement Flow
    *Read ADC data
    *Save data to file
 
-| 
-
 Performance Summary
 -------------------
 
-| Table 2 gives a summary of the surge test results. For the digital output use cases a deviation is not recorded as the accuracy is dependent on the load. The test verified that the digital output did not turn off unexpectedly. The ADC conversion error bit in the Alert Status register was set after each test. The ADC error indicates a saturation error (ADC measurement is reading full scale) indicating that > 12 V of the surge voltage was observed on the pin under test.
+Table 2 gives a summary of the surge test results. For the digital output use cases a deviation is not recorded as the accuracy is dependent on the load. The test verified that the digital output did not turn off unexpectedly. The ADC conversion error bit in the Alert Status register was set after each test. The ADC error indicates a saturation error (ADC measurement is reading full scale) indicating that > 12 V of the surge voltage was observed on the pin under test.
 
 Table 2 Surge Results
 ---------------------

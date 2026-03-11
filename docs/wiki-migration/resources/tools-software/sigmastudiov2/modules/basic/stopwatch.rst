@@ -3,20 +3,21 @@
 Stop Watch
 ==========
 
-| 
-| |stopwatchext.png| |stopwatchwreset.png|
+|stopwatchext.png| |stopwatchwreset.png|
 
 Description
 -----------
 
-| The StopWatch block is used to know how long something takes (i.e. how many samples have passed between start and stop event). A control signal greater than zero to Start pin triggers the Stopwatch counter, While the control signal to Stop pin is zero. A control signal greater than zero to Stop pin stops the counter increment regardless of the control signal to the Start pin. Reset button(pin for External Reset, the control signal is high) resets the counter value to zero.
-| ===== Variants =====
+The StopWatch block is used to know how long something takes (i.e. how many samples have passed between start and stop event). A control signal greater than zero to Start pin triggers the Stopwatch counter, While the control signal to Stop pin is zero. A control signal greater than zero to Stop pin stops the counter increment regardless of the control signal to the Start pin. Reset button(pin for External Reset, the control signal is high) resets the counter value to zero.
+
+Variants
+--------
 
 -  StopWatch
 -  StopWatchExtReset
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +-------------------+------------+------------------+---------------+------------------+
 | Name              | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -51,7 +52,7 @@ Name   Type    Description
 Output Control Stop Watch counter output
 ====== ======= =========================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+--------------+-------------------------------------------------------+

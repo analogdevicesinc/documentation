@@ -132,7 +132,7 @@ Main Window
    :align: center
    :width: 600px
 
--  **Title Bar** <fc #9400d3>(Highlighted Violet)</fc>
+-  **Title Bar** (Highlighted Violet)
 
    -  **Connect Button**
 
@@ -141,7 +141,7 @@ Main Window
 
          -  Ends the connection with the :adi:`CN0203 Evaluation Board <CN0203>`
 
--  **System Configuration** <fc #ffa500>(Highlighted Orange)</fc>
+-  **System Configuration** (Highlighted Orange)
 
    -  **Connector**
 
@@ -150,7 +150,7 @@ Main Window
 
          -  Sets the SPI clock frequency used by the evaluation board
 
--  **AD5750-1 Configuration** <fc #4682b4>(Highlighted Blue)</fc>
+-  **AD5750-1 Configuration** (Highlighted Blue)
 
    -  **JP1 Configuration**
 
@@ -163,7 +163,7 @@ Main Window
 
          -  Sets the outputs to the zero/midscale voltage value or the minimum value of the selected current range
 
--  **AD5750-1 Error Indicator** <fc #ffff00>(Highlighted Yellow)</fc>
+-  **AD5750-1 Error Indicator** (Highlighted Yellow)
 
    -  **Vout Fault**
 
@@ -180,7 +180,7 @@ Main Window
 
          -  CRC-8 error checking detected an interface error
 
--  **Output Setting** <fc #ff0000>Highlighted Red</fc>
+-  **Output Setting** Highlighted Red
 
    -  **Write AD5660-1**
 

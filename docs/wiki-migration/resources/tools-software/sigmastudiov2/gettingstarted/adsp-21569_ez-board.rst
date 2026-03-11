@@ -6,9 +6,13 @@ ADSP-21569 EZ BOARD
 Connections
 -----------
 
-| |image1|
-| ADSP-21569 Board Connections
-| =====Settings=====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21569.png
+   :width: 600px
+
+ADSP-21569 Board Connections
+
+Settings
+--------
 
 The board settings for running SigmaStudio on ADSP-21569 EZ-BOARD, using the Default Application is given in the below tables.
 
@@ -19,25 +23,24 @@ SW5    ON, OFF, ON, OFF, ON, OFF
 SW6    ON, OFF, ON, OFF, OFF, OFF
 ====== ==========================
 
-| Switch Settings for ADSP-21569 EZ-BOARD
-| ^ Jumper ^ Setting ^
+Switch Settings for ADSP-21569 EZ-BOARD
 
-=== =============
-JP1 Not connected
-JP7 Not connected
-JP8 Not connected
-=== =============
+====== =============
+Jumper Setting
+====== =============
+JP1    Not connected
+JP7    Not connected
+JP8    Not connected
+====== =============
 
-| Jumper Settings for ADSP-21569 EZ-BOARD
-| ^ Port ^ Setting ^
+Jumper Settings for ADSP-21569 EZ-BOARD
 
-=== ==============================================
-P4  Debug port connected to ADZS-ICE-2000/ICE-1000
-P5  Connected with SigmaStudio USBi
-P10 Connected to Power
-=== ==============================================
+==== ==============================================
+Port Setting
+==== ==============================================
+P4   Debug port connected to ADZS-ICE-2000/ICE-1000
+P5   Connected with SigmaStudio USBi
+P10  Connected to Power
+==== ==============================================
 
 Port Settings for ADSP-21569 EZ-BOARD
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21569.png
-   :width: 600px

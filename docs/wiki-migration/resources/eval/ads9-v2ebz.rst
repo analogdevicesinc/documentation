@@ -51,14 +51,16 @@ ADS9-V2EBZ Features
    *Figure 2. ADS9-V2EBZ High Speed Carrier Card (Bottom)*
 
 
-| 
-| ====== Using the ADS9-V2EBZ to evaluate High Speed Converters ======
+Using the ADS9-V2EBZ to evaluate High Speed Converters
+======================================================
 
 Overview
 --------
 
-| When connected to a specified Analog Devices high speed converter evaluation board, the ADS9-V2EBZ works as a data generation and acquisition board. Designed to support the highest speed JESD204B/C converters, the FPGA on the ADS9-V2EBZ acts as the data and control interface. A typical test setup is shown below.
-| |image3|
+When connected to a specified Analog Devices high speed converter evaluation board, the ADS9-V2EBZ works as a data generation and acquisition board. Designed to support the highest speed JESD204B/C converters, the FPGA on the ADS9-V2EBZ acts as the data and control interface. A typical test setup is shown below.
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -85,12 +87,12 @@ Design and Integration Files
 -  BRD Archive: `BRD-08_045361c.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/BRD-08_045361c.zip>`_
 -  Schematic Archive: `SCH-02-045361-01-e.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/SCH-02-045361-01-e.zip>`_
 
-| Data sheets and user guides provide additional product specific information and should be consulted when using high speed converter evaluation boards. All documents and software tools are available at :adi:`High Speed Converter Eval Boards <hsadcevalboard>`. For additional information or questions, visit our High-Speed ADC and DAC Ezone Support Portal at :ez:`Data Converters EngineerZone <data_converters>` or call 1-800-ANALOGD.
+Data sheets and user guides provide additional product specific information and should be consulted when using high speed converter evaluation boards. All documents and software tools are available at :adi:`High Speed Converter Eval Boards <hsadcevalboard>`. For additional information or questions, visit our High-Speed ADC and DAC Ezone Support Portal at :ez:`Data Converters EngineerZone <data_converters>` or call 1-800-ANALOGD.
 
 ADS9-V2EBZ Supported Evaluation Boards
 --------------------------------------
 
-| Refer to the Analog Devices High Speed Converter evaluation board product page at :adi:`High Speed Converter Eval Boards <hsadcevalboard>` for a table of ADS9-V2EBZ compatible evaluation boards.
+Refer to the Analog Devices High Speed Converter evaluation board product page at :adi:`High Speed Converter Eval Boards <hsadcevalboard>` for a table of ADS9-V2EBZ compatible evaluation boards.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/ads9-v2ebztop-web.jpg
    :width: 600px

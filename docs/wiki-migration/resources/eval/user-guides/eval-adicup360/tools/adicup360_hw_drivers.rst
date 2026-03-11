@@ -24,7 +24,10 @@ This mode allows users to drag and drop or copy and paste a .BIN file directly i
 
 The PC will start searching for and install the following drivers:|image2|
 
-| Then go to the **My Computer** view and search for the MBED drive, if you see this then the drivers are complete and correct.\ |image3|
+Then go to the **My Computer** view and search for the MBED drive, if you see this then the drivers are complete and correct.\
+
+
+|image3|
 
 Bootloader Drive
 ~~~~~~~~~~~~~~~~
@@ -33,8 +36,10 @@ When the ADICUP360 is connected to your computer via the **DEBUG USB** port (P14
 
 The PC will still use the same drivers that were installed initially:|image4|
 
-| Then go to the **My Computer** view and search for the Bootloader drive, if you see this then the drivers are complete and correct.\ |image5|
-|
+Then go to the **My Computer** view and search for the Bootloader drive, if you see this then the drivers are complete and correct.\
+
+
+|image5|
 
 .. admonition:: Download
    :class: download

@@ -11,10 +11,7 @@ Shell Scripts for the FMC RF boards
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -65,7 +62,7 @@ DDS passing by
    }
 
    for i in 10 20 30 40 50 60 70 80 90 100 110
-   do 
+   do
      freq_A `expr $i \\* 1000000`
      freq_B `expr \( 120 - $i \) \\* 1000000`
      sleep 1
@@ -184,7 +181,7 @@ Sweeping the Tx
    fi
 
    if [ -z $inc ] ; then
-     inc=5 
+     inc=5
    fi
 
    if [ -z $pause ] ; then

@@ -76,21 +76,7 @@ If we turn on both the carrier and modulation signals, in figure 5, the result i
 Materials:
 ----------
 
-| ADALM1000 hardware module
-| Solder-less Breadboard
-| Jumper wires
-| 4 – 2N3904 NPN transistors
-| 2 – 1K resistors
-| 2 – 1.5K resistors
-| 2 – 2.2K resistors
-| 2 – 4.7K resistors
-| 2 – 10K resistors
-| 4 – 20K resistors
-| 2 – 1 uF capacitors
-| 1 – 4.7 uF capacitor
-| 1 – 10 uF capacitor
-| 1 – AD8542 rail-to-rail op-amp
-| 1 – HPH1-1400L 6 winding transformer
+ADALM1000 hardware module Solder-less Breadboard Jumper wires 4 – 2N3904 NPN transistors 2 – 1K resistors 2 – 1.5K resistors 2 – 2.2K resistors 2 – 4.7K resistors 2 – 10K resistors 4 – 20K resistors 2 – 1 uF capacitors 1 – 4.7 uF capacitor 1 – 10 uF capacitor 1 – AD8542 rail-to-rail op-amp 1 – HPH1-1400L 6 winding transformer
 
 Directions:
 -----------

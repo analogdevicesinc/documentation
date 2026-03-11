@@ -1,7 +1,7 @@
 Analog Devices Sensor Drivers and Examples
 ==========================================
 
-<note > **There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section.** </WRAP>
+<note > **There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section.** 
 
 General Description/Overview
 ----------------------------
@@ -52,8 +52,7 @@ The software pack can be downloaded in following ways.
    
    `Sensor Software Pack 1.1.0 <http://download.analog.com/tools/Sensor_Software/Releases/AnalogDevices.ADI-SensorSoftware.1.1.0.pack>`_
    
-   | 
-   | Link to Github Repository for Cloning or Viewing.
+   Link to Github Repository for Cloning or Viewing.
    
    `EV-COG-AD3029LZ Github <https://github.com/analogdevicesinc/EV-COG-AD3029LZ>`_
    

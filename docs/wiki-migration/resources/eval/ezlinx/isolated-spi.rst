@@ -1,8 +1,9 @@
-| 
-| :doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
-| ====== ezLINX™ Isolated SPI Implementation======
+:doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
 
-Two Isolated SPI ports are implemented using the :adi:`adum3401` and the :adi:`adum3402` *i*\ Coupler signal isolators and the :adi:`adum5000` *iso*\ Power Isolated DC to DC converter. The :adi:`adum3401` of the isolated SPI1 is connected to SPI0 of the ADSP-BF548. The :adi:`adum3402` is used for isolating the SPI slave select lines. Figure 1 below shows a circuit diagram of the implementation of Isolated SPI1 using the :adi:`adum3401`, :adi:`adum3402`, and :adi:`adum5000` on the *ez*\ LINX hardware.
+ezLINX™ Isolated SPI Implementation
+===================================
+
+Two Isolated SPI ports are implemented using the :adi:`adum3401` and the :adi:`adum3402` *i*Coupler signal isolators and the :adi:`adum5000`\ *iso*Power Isolated DC to DC converter. The :adi:`adum3401` of the isolated SPI1 is connected to SPI0 of the ADSP-BF548. The :adi:`adum3402` is used for isolating the SPI slave select lines. Figure 1 below shows a circuit diagram of the implementation of Isolated SPI1 using the :adi:`adum3401`, :adi:`adum3402`, and :adi:`adum5000` on the*ez*\ LINX hardware.
 
 .. image:: https://wiki.analog.com/_media/ezlinx/isolatedspi1.png
    :alt: Figure 1. Isolated SPI1 schematic

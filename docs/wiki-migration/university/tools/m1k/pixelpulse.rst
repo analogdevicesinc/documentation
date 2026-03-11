@@ -32,9 +32,12 @@ If multiple ADALM1000 are connected to Pixelpulse2, you can identify each device
 Acquisition Settings
 --------------------
 
-| There are use cases where a specific circuit may provide a delayed response to a given excitation signal.
-| In **Repeated Sweep** mode Pixelpulse2 feeds such a signal periodically and since some circuits may provide a delayed response, it is sometimes desired to skip a few of the received samples (or maybe more) from the beginning, up to the time position that is desired.
-| |Acquisition Settings Panel|
+There are use cases where a specific circuit may provide a delayed response to a given excitation signal. In **Repeated Sweep** mode Pixelpulse2 feeds such a signal periodically and since some circuits may provide a delayed response, it is sometimes desired to skip a few of the received samples (or maybe more) from the beginning, up to the time position that is desired.
+
+.. image:: https://wiki.analog.com/_media/university/tools/m1k/pp2_acquisition_settings.png
+   :alt: Acquisition Settings Panel
+   :align: right
+   :width: 350px
 
 This can be done from the **Acquisition Settings** menu that will open up a settings dialog where the desired delay can be set.
 
@@ -100,9 +103,7 @@ The typical list of files that a release contains:
 -  **Source code (zip)**: The source code at the time the release was made, archived as a zip archive.
 -  **Source code (tar.gz)**: The source code at the time the release was made, archived as a tarball.
 
-| where:
-| X = major version of a release
-| YZ = minor version of a release
+where: X = major version of a release YZ = minor version of a release
 
 Building from source
 ====================
@@ -114,7 +115,5 @@ Building from source
    When running Pixelpulse under Linux please make sure to run it as root.
 
 
-.. |Acquisition Settings Panel| image:: https://wiki.analog.com/_media/university/tools/m1k/pp2_acquisition_settings.png
-   :width: 350px
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/data_logging.png
    :width: 200px

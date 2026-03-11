@@ -1,19 +1,29 @@
-| 
-| ====== Spectrum Analyzer - Test Case ======
-| ===== Initial Setup ===== In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
+Spectrum Analyzer - Test Case
+=============================
+
+Initial Setup
+-------------
+
+In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
 Open the Spectrum Analyzer instrument. The interface should look like the picture below:
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-front-panel.png
    :align: center
 
-| Press multiple times on the "Run" button to check if the instrument works.
-| ===== Test Title =====
-| ==== A. Channel 1 Operation==== 
+Press multiple times on the "Run" button to check if the instrument works.
+
+Test Title
+----------
+
+A. Channel 1 Operation
+~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                         | Test Steps                                                                                                                                                                                                                          | Steps Resources | Expected Results                                                                                                                                         |
@@ -73,13 +83,13 @@ Open the Spectrum Analyzer instrument. The interface should look like the pictur
 
 
 B. Channel 2 Operation
-======================
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                         | Test Steps                                                                                                                                                                                                                          | Steps Resources | Expected Results                                                                                                                                         |
@@ -139,13 +149,13 @@ B. Channel 2 Operation
 
 
 C. Channel 1 and 2 Operation
-============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                     | Test Steps                                                                                                                                                                                                                                                                                                            | Steps Resources | Expected Results                                                                                                                             |
@@ -229,13 +239,13 @@ C. Channel 1 and 2 Operation
 
 
 D. Additional Features
-======================
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                             | Test Steps                                                                                                                                                                                                                                                                                          | Steps Resources | Expected Results                                                                                                                                                                                                                                                                                |
@@ -274,9 +284,11 @@ D. Additional Features
    </details>
 
 
-| Test Results will be recorded in the following document:
-| `spectrum_analyzer\_-\_test_case.xlsx <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum_analyzer_-_test_case.xlsx>`_
-| **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
+Test Results will be recorded in the following document:
+
+`spectrum_analyzer\_-\_test_case.xlsx <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum_analyzer_-_test_case.xlsx>`_
+
+**Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_1a.png
    :width: 200px

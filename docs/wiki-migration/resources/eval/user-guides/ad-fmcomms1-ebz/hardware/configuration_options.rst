@@ -5,7 +5,9 @@ AD-FMCOMMS1-EBZ Configuration Options
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- There is one main configuration which needs to be made during use of the `ad-fmcomms1-ebz <https://wiki.analog.com/../../ad-fmcomms1-ebz>`_ - to use or not to use the RF section. When not using the RF section of the board, the analog interface is directly to the ADC inputs and DAC outputs. (The RF section is not powered down, so it still consumes the same amount of power).
+
+
+There is one main configuration which needs to be made during use of the `ad-fmcomms1-ebz <https://wiki.analog.com/../../ad-fmcomms1-ebz>`_ - to use or not to use the RF section. When not using the RF section of the board, the analog interface is directly to the ADC inputs and DAC outputs. (The RF section is not powered down, so it still consumes the same amount of power).
 
 The following "jumpers" are solder jumpers - typically three pads, where a solder blob is places across two of the pins. (This is as good as you can do for RF signals, and still have jumpers). Without these connected in either the RF or bypass direction, the inputs and outputs will be floating, and the performance will suffer... :)
 
@@ -38,7 +40,7 @@ JP3    X---X
 JP7          X---X   
 ====== ===== ======= =====
 
-| 
+
 
 Connecting the DAC RF Section
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,7 +61,7 @@ JP6    X---X
 JP17   X---X         
 ====== ===== ======= =====
 
-| 
+
 | -----
 
 RF Disabled
@@ -91,7 +93,7 @@ JP3          X---X
 JP7    X---X         
 ====== ===== ======= =====
 
-| 
+
 
 Bypassing the DAC RF Section
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,7 +112,7 @@ JP6          X---X
 JP17         X---X   
 ====== ===== ======= =====
 
-| 
+
 
 Pi Attenuators
 --------------

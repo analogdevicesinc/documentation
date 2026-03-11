@@ -58,7 +58,8 @@ J4 connection 1-2 to provide 3.3V VDDL supply to MAX22531 logic-side circuitry t
 There are a number of connections to make between the ADC evaluation board and the Linux machine.
 
 +-----------------------------+------------------------------+------------------------------------------------+
-| MAX22531_EVKIT_A test point | Pin Function                 | `RPI-5 <https://www.raspberrypi.com/products   |
+| MAX22531_EVKIT_A test point | Pin Function                 | `RPI-5 <https://www.raspberrypi.com/products ^ |
+|                             |                              |                                                |
 |                             |                              | /raspberry-pi-5/>`_ Pin function (Pin number)  |
 +=============================+==============================+================================================+
 | CS (J1-1)                   | Chip Select                  | CE0 (pin 24)                                   |
@@ -111,7 +112,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            <*>     Industrial I/O support --->
                --- Industrial I/O support
                ...
-               Analog to digital converters  ---> 
+               Analog to digital converters  --->
                    ...
                    <*>   Analog Devices MAX22531 ADC Driver
                    ...
@@ -154,7 +155,7 @@ Device tree overlay example
 
    // SPDX-License-Identifier: (GPL-2.0+)
    /*
-     * Device Tree Overlay for MAX22531 
+     * Device Tree Overlay for MAX22531
     */
 
    /dts-v1/;
@@ -201,7 +202,8 @@ Device tree overlay example
 Driver testing
 ==============
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. tip::
 
@@ -210,7 +212,6 @@ Driver testing
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-   |
 
 
 Show device name
@@ -218,10 +219,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -234,20 +232,16 @@ Show device name
 Show channel scale
 ------------------
 
-| **Description:**
-| Scale to be applied to in_voltageX_raw in order to obtain the measured voltage in millivolts
+**Description:** Scale to be applied to in_voltageX_raw in order to obtain the measured voltage in millivolts
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage_scale 
+      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage_scale
       0.439453125
    
 
@@ -256,10 +250,7 @@ Example test single-shot readings through IIO device sysfs interface.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -281,21 +272,21 @@ Example test single-shot readings through IIO device sysfs interface.
       lrwxrwxrwx 1 root root     0 Aug 21 22:44 subsystem -> ../../../../../../../../../bus/iio
       -rw-r--r-- 1 root root 16384 Aug 21 22:41 uevent
       -r--r--r-- 1 root root 16384 Aug 21 22:44 waiting_for_supplier
-      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage0_raw 
+      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage0_raw
       131
-      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage1_raw 
+      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage1_raw
       133
-      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage2_raw 
+      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage2_raw
       1
-      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage3_raw 
+      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage3_raw
       1
-      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage0_mean_raw 
+      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage0_mean_raw
       131
-      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage1_mean_raw 
+      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage1_mean_raw
       133
-      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage2_mean_raw 
+      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage2_mean_raw
       1
-      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage3_mean_raw 
+      root@rpi5:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage3_mean_raw
       1
    
 
@@ -303,4 +294,21 @@ Example test single-shot readings through IIO device sysfs interface.
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

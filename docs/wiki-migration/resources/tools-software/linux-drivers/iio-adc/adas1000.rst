@@ -30,7 +30,7 @@ Status
 +---------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | Source                                                                                                              | Mainlined?                                                                                                           |
 +=====================================================================================================================+======================================================================================================================+
-| :git-linux:`drivers/iio/adc/adas1000.c`                                                                             | `In progress <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/adas1000.c>`_  |
+| `drivers/iio/adc/adas1000.c <https://github.com/analogdevicesinc/linux/blob/adas1000/drivers/iio/adc/adas1000.c>`_  | `In progress <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/adas1000.c>`_  |
 +---------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Files
@@ -39,15 +39,18 @@ Files
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                        |
 +==========+=============================================================================================================================================+
-| driver   | :git-linux:`drivers/iio/adc/adas1000.c`                                                                                                     |
+| driver   | `drivers/iio/adc/adas1000.c <https://github.com/analogdevicesinc/linux/blob/adas1000/drivers/iio/adc/adas1000.c>`_                          |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| include  | :git-linux:`include/linux/platform_data/adas1000.h`                                                                                         |
+| include  | `include/linux/platform_data/adas1000.h <https://github.com/analogdevicesinc/linux/blob/adas1000/include/linux/platform_data/adas1000.h>`_  |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example platform device initialization
 ======================================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 .. code:: c
 
@@ -78,7 +81,12 @@ Example platform device initialization
 
 If no platform data is provided the driver will use the device's default setting for all registers.
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
 
@@ -126,8 +134,8 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            <*>     Industrial I/O support --->
                --- Industrial I/O support
                [--snip--]
-               Analog to digital converters  --->  
-                   *** Analog to digital converters ***
+               Analog to digital converters  --->
+                   ** Analog to digital converters **
                    [--snip--]
                    <*> Analog Devices ADAS1000 ECG driver
                    [--snip--]
@@ -138,14 +146,12 @@ Hardware configuration
 Driver testing
 ==============
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -210,10 +216,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -228,17 +231,13 @@ Contains the device name, this will always be "adas1000" for the adas1000 driver
 List available low filter frequencies
 -------------------------------------
 
-| **Description:**
-| in_voltage-voltage_filter_low_pass_3db_frequency_available
+**Description:** in_voltage-voltage_filter_low_pass_3db_frequency_available
 
 Lists all available low pass filter frequencies, which may be set by writing to in_voltage-voltage_filter_low_pass_3db_frequency.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -252,17 +251,13 @@ Lists all available low pass filter frequencies, which may be set by writing to 
 Set and show low filter frequency
 ---------------------------------
 
-| **Description:**
-| in_voltage-voltage_filter_low_pass_3db_frequency
+**Description:** in_voltage-voltage_filter_low_pass_3db_frequency
 
 Writing to this file will set the low pass filter frequency, reading from this file will show the currently selected low pass filter.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -281,17 +276,13 @@ Writing to this file will set the low pass filter frequency, reading from this f
    The low pass filter will only be active when sampling with 2kHz base frequency.
 
 
-| === List available sampling frequencies === **Description:**
-| in_voltage-voltage_sampling_frequency_available
+=== List available sampling frequencies === **Description:** in_voltage-voltage_sampling_frequency_available
 
 Lists all available sampling frequencies, which may be set by writing to in_voltage-voltage_sampling_frequency.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -310,17 +301,13 @@ Lists all available sampling frequencies, which may be set by writing to in_volt
 Set and show filter frequency
 -----------------------------
 
-| **Description:**
-| in_voltage-voltage_sampling_frequency
+**Description:** in_voltage-voltage_sampling_frequency
 
 Writing to this file will set the sampling frequency, reading from the file will return the currently selected sampling frequency.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -335,10 +322,7 @@ Setting a new sampling frequency can be done by writing to the file.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -353,17 +337,13 @@ Setting a new sampling frequency can be done by writing to the file.
 List available ADC gain values
 ------------------------------
 
-| **Description:**
-| in_voltage-voltage_scale_available
+**Description:** in_voltage-voltage_scale_available
 
 List the available ADC gain settings, which can be set using in_voltage-voltage_scale.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -377,17 +357,13 @@ List the available ADC gain settings, which can be set using in_voltage-voltage_
 Set and ADC gain value
 ----------------------
 
-| **Description:**
-| in_voltage-voltage_scale
+**Description:** in_voltage-voltage_scale
 
 Scale to be applied to in_voltageY-voltageZ_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -404,23 +380,13 @@ Scale to be applied to in_voltageY-voltageZ_raw in order to obtain the measured 
 Set ADC calibration gain
 ------------------------
 
-| **Description:**
-| in_voltage0-voltage2_calibscale
-| in_voltage0-voltage5_calibscale
-| in_voltage1-voltage0_calibscale
-| in_voltage1-voltage2_calibscale
-| in_voltage1-voltage5_calibscale
-| in_voltage2-voltage5_calibscale
-| in_voltage3-voltage5_calibscale
-| in_voltage4-voltage5_calibscale
-| Set the channel calibration gain. Writing to these files will set the calibration gain for the respective channel. Valid values are in the range of -2048 to 2047.
+**Description:** in_voltage0-voltage2_calibscale in_voltage0-voltage5_calibscale in_voltage1-voltage0_calibscale in_voltage1-voltage2_calibscale in_voltage1-voltage5_calibscale in_voltage2-voltage5_calibscale in_voltage3-voltage5_calibscale in_voltage4-voltage5_calibscale
+
+Set the channel calibration gain. Writing to these files will set the calibration gain for the respective channel. Valid values are in the range of -2048 to 2047.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -440,17 +406,13 @@ Set ADC calibration gain
 List available Right Leg drive outputs
 --------------------------------------
 
-| **Description:**
-| rld_out_select_available
+**Description:** rld_out_select_available
 
 List available values for the rld_out_select file.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -464,17 +426,13 @@ List available values for the rld_out_select file.
 Select Right Leg drive output electrode
 ---------------------------------------
 
-| **Description:**
-| rld_out_select
+**Description:** rld_out_select
 
 Set the Right Leg drive output electrode.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -489,17 +447,13 @@ Set the Right Leg drive output electrode.
 Enable/Disable Right Leg drive output
 -------------------------------------
 
-| **Description:**
-| rld_powerdown
+**Description:** rld_powerdown
 
 Enable or disable the Right Leg drive output. Writing a '0' to this file will enable the Right Leg drive, writing a '1' to this file will enable the Right Leg drive.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -515,22 +469,13 @@ Enable or disable the Right Leg drive output. Writing a '0' to this file will en
 Setup Right Leg drive summing junction configuration
 ----------------------------------------------------
 
-| **Description:**
-| rld_summing_junction_ce_en
-| rld_summing_junction_la_en
-| rld_summing_junction_ll_en
-| rld_summing_junction_ra_en
-| rld_summing_junction_v1_en
-| rld_summing_junction_v2_en
+**Description:** rld_summing_junction_ce_en rld_summing_junction_la_en rld_summing_junction_ll_en rld_summing_junction_ra_en rld_summing_junction_v1_en rld_summing_junction_v2_en
 
 Writing a '1' to a file will add the respective channel to the Right Leg driver summing junction, writing a '0' will remove it.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -546,22 +491,13 @@ Writing a '1' to a file will add the respective channel to the Right Leg driver 
 Setup VCM summing junction configuration
 ----------------------------------------
 
-| **Description:**
-| vcm_summing_junction_ce_en
-| vcm_summing_junction_la_en
-| vcm_summing_junction_ll_en
-| vcm_summing_junction_ra_en
-| vcm_summing_junction_v1_en
-| vcm_summing_junction_v2_en
+**Description:** vcm_summing_junction_ce_en vcm_summing_junction_la_en vcm_summing_junction_ll_en vcm_summing_junction_ra_en vcm_summing_junction_v1_en vcm_summing_junction_v2_en
 
 Writing a '1' to a file will add the respective channel to the VCM summing junction, writing a '0' will remove it.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -577,17 +513,13 @@ Writing a '1' to a file will add the respective channel to the VCM summing junct
 Enable/Disable shield driver
 ----------------------------
 
-| **Description:**
-| shield_driver_powerdown
+**Description:** shield_driver_powerdown
 
 Enable or disable the shield driver. Writing a '0' to this file will enable the shild driver, writing a '1' to this file will enable the shield driver.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -605,17 +537,13 @@ out_voltage6_calibration_offset
 Enable/Disable calibration DAC
 ------------------------------
 
-| **Description:**
-| out_voltage6_calibration_powerdown
+**Description:** out_voltage6_calibration_powerdown
 
 Enable or disable the calibration DAC. Writing a '0' to this file will enable the calibration DAC, writing a '1' to this file will disable the calibration DAC.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -631,17 +559,13 @@ Enable or disable the calibration DAC. Writing a '0' to this file will enable th
 Set calibration DAC output value
 --------------------------------
 
-| **Description:**
-| out_voltage6_calibration_raw
+**Description:** out_voltage6_calibration_raw
 
 Sets the calibration DAC output value. Valid values are in the range of 0-1023.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -655,15 +579,11 @@ Sets the calibration DAC output value. Valid values are in the range of 0-1023.
 Show calibration DAC scale
 --------------------------
 
-| **Description:**
-| out_voltage6_calibration_scale
+**Description:** out_voltage6_calibration_scale
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -685,17 +605,13 @@ root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access pll_locked testtone
 Direct register read and write acccess
 --------------------------------------
 
-| **Description:**
-| direct_reg_access
+**Description:** direct_reg_access
 
 Allows direct register access to the device. To write to a register write the register address and the register value seperated by a space to the file.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -708,10 +624,7 @@ To read a register value, first write the register address to the file followed 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -724,32 +637,28 @@ To read a register value, first write the register address to the file followed 
 Check fuse CRC status
 ---------------------
 
-| **Description:**
-| fuse_crc_failure
+**Description:** fuse_crc_failure
 
 '1' if a fuse CRC failure has been detected, '0' otherwise.
 
 Check fuse status
 -----------------
 
-| **Description:**
-| fuse_status
+**Description:** fuse_status
 
 '0' if the fuse bits have been read, '1' otherwise.
 
 Check PLL status
 ----------------
 
-| **Description:**
-| pll_locked
+**Description:** pll_locked
 
 '1' if the PLL is locked, '0' otherwise.
 
 Enable testtone
 ---------------
 
-| **Description:**
-| testtone_en
+**Description:** testtone_en
 
 Enable the testtone generator.
 
@@ -761,8 +670,7 @@ Enable the testtone generator.
 Set testtone frequnecy
 ----------------------
 
-| **Description:**
-| testtone_frequency
+**Description:** testtone_frequency
 
 Select the testtone frequency and waveform.
 
@@ -775,16 +683,14 @@ Valid values are:
 Enable internal testtone routing
 --------------------------------
 
-| **Description:**
-| testtone_internal
+**Description:** testtone_internal
 
 Route the testtone signal internally ECG channels.
 
 Enable external testtone output
 -------------------------------
 
-| **Description:**
-| testtone_out_en
+**Description:** testtone_out_en
 
 Enables or disables testtone output to the external CAL_DAC_IO pin.
 
@@ -796,13 +702,9 @@ Enables or disables testtone output to the external CAL_DAC_IO pin.
 Enable testtone routing to individual ECG channels
 --------------------------------------------------
 
-| **Description:**
-| testtone_la_en
-| testtone_ll_en
-| testtone_ra_en
-| testtone_v1_en
-| testtone_v2_en
-| Enables the internal testtone routing to the individual ECG channels.
+**Description:** testtone_la_en testtone_ll_en testtone_ra_en testtone_v1_en testtone_v2_en
+
+Enables the internal testtone routing to the individual ECG channels.
 
 Trigger management
 ------------------
@@ -811,16 +713,13 @@ The adas1000 driver will register a IIO trigger for the device. The trigger will
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root:/sys/devices/platform/bfin-spi.0/spi_master/spi0/spi0.18/iio:device0/> **echo adas1000-dev0 > trigger/current_trigger**
-      root:/sys/devices/platform/bfin-spi.0/spi_master/spi0/spi0.18/iio:device0/> **cat trigger/current_trigger** 
+      root:/sys/devices/platform/bfin-spi.0/spi_master/spi0/spi0.18/iio:device0/> **cat trigger/current_trigger**
       adas1000-dev0
    
 
@@ -828,14 +727,32 @@ The adas1000 driver will register a IIO trigger for the device. The trigger will
 Buffer management
 -----------------
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+
+Every buffer implementation features a set of files:
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **length_align_bytes**
+| Using the high-speed interface. DMA buffers may have an alignment requirement for the buffer length. Newer versions of the kernel will report the alignment requirements associated with a device through the \`length_align_bytes\` property.
+
+| **scan_elements**
+| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -872,9 +789,34 @@ in_voltage4-voltage5 V2-VCM (V2')
 
 If any of the first three channels is selected the device will operate in Lead mode, otherwise it will operate in single-end mode. If channels from the first three channels are selected channels from the second three channels can not be selected and vice versa.
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+| **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in_voltageX_type / in_voltageX-voltageY_type / timestamp_type:**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space. Form is [s|u]bits/storage-bits. s or u specifies if signed (2's complement) or unsigned. bits is the number of bits of data and storage-bits is the space (after padding) that it occupies in the buffer. Note that some devices will have additional information in the unused bits so to get a clean value, the bits value must be used to mask the buffer output value appropriately. The storage-bits value also specifies the data alignment. So u12/16 will be a unsigned 12 bit integer stored in a 16 bit location aligned to a 16 bit boundary. For other storage combinations this attribute will be extended appropriately.
+
+| **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
+
 
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

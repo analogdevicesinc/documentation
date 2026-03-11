@@ -8,8 +8,8 @@ The DEMO-AD5758-AO8Z Board demonstrates a system-level concept where the :adi:`A
 .. warning::
 
    
-   High Voltage Capability
-   ~~~~~~~~~~~~~~~~~~~~~~~
+   **High Voltage Capability**
+
    
    | Take appropriate care when using this demo board at high voltages. Do not rely on the PCB for safety functions as it has not been hipot tested\ :sup:`1`\ nor has it been certified for safety.
    | :sup:`1`\ *Also known as high potential or dielectric withstanding voltage tested.*

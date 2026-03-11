@@ -55,8 +55,7 @@ The software pack can be downloaded in following ways.
    
    `Sensor Software Pack 1.1.0 <http://download.analog.com/tools/Sensor_Software/Releases/>`_
    
-   | 
-   | Link to Github Repository for Cloning or Viewing.
+   Link to Github Repository for Cloning or Viewing.
    
    ADD GITHUB LINK HERE
    

@@ -46,7 +46,7 @@ General Setup
 -  The :adi:`EVAL-CFTL-6V-PWRZ` **(+6V DC Power Supply)** powers the :adi:`EVAL-CN0287-SDPZ` **(CN-0288 Board)** via the DC barrel jack
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
 
-| 
+
 | |image1|
 
 --------------
@@ -67,11 +67,11 @@ Installing the Software
 
 |image3|
 
--  Click **Next** to start the installation
+   \* Click **Next** to start the installation
 
-|image4|
+   |image4|
 
--  Upon completion of the installation of the **CN0287 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute.
+   \* Upon completion of the installation of the **CN0287 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute.
 
 .. tip::
 
@@ -80,7 +80,7 @@ Installing the Software
 
    |image5|
 
--  Press **Next** to set the installation location for the **SDP Drivers**.
+   \* Press **Next** to set the installation location for the **SDP Drivers**.
 
 .. tip::
 
@@ -89,16 +89,16 @@ Installing the Software
 
    |image6|
 
--  Press **Next** to install the SDP Drivers and complete the installation of all software. Click **Finish** when done.
+   \* Press **Next** to install the SDP Drivers and complete the installation of all software. Click **Finish** when done.
 
-|image7|
+   |image7|
 
 --------------
 
 Connecting the Hardware
 -----------------------
 
-| 
+
 | |image8|
 | *Picture of Hardware Connection*
 | |image9|
@@ -106,12 +106,12 @@ Connecting the Hardware
 
 ::
 
-   ***Step 1**. Connect the [[:adi:`CN0287|EVAL-CN0287-SDPZ]](CN0287` Board) to [[:adi:`en/system-demonstration-platform/evaluation/index`.html|EVAL-SDP-CB1Z]](SDP Board) through the 120-pin SMD connector.\\ \\ 
-   ***Step 2**. Do the jumper setting correctly based on the type of temperature sensor for evaluation.\\ \\ 
-   ***Step 3**. Plug the mini-USB side of the cable into the mini-USB connector J1 on [[:adi:`en/system-demonstration-platform/evaluation/index`.html|SDP Board]] and leave the other side of the cable(USB Type A) floated.\\ \\ 
-   ***Step 4**. Connect the sensor correctly by the way shown in the figure "//Connector Configuration and Jumper Placements//".\\ \\ 
-   ***Step 5**. With DC power supply off, plug the [[:adi:`CN0287|EVAL-CFTL-6V-PWRZ]](6V` DC Power Supply)into J2 on [[:adi:`CN0287|CN0287` Board]]. (CN5 is also screw terminal for connecting to 6V power supply by ordinary wire.)\\ \\ 
-   ***Step 6**. Connect the USB-Type-A side of the USB cable to the PC.\\ \\ 
+   **Step 1**. Connect the [[:adi:`CN0287|EVAL-CN0287-SDPZ]](CN0287` Board) to [[:adi:`en/system-demonstration-platform/evaluation/index`.html|EVAL-SDP-CB1Z]](SDP Board) through the 120-pin SMD connector.\\
+   **Step 2**. Do the jumper setting correctly based on the type of temperature sensor for evaluation.\\
+   **Step 3**. Plug the mini-USB side of the cable into the mini-USB connector J1 on [[:adi:`en/system-demonstration-platform/evaluation/index`.html|SDP Board]] and leave the other side of the cable(USB Type A) floated.\\
+   **Step 4**. Connect the sensor correctly by the way shown in the figure "//Connector Configuration and Jumper Placements//".\\
+   **Step 5**. With DC power supply off, plug the [[:adi:`CN0287|EVAL-CFTL-6V-PWRZ]](6V` DC Power Supply)into J2 on [[:adi:`CN0287|CN0287` Board]]. (CN5 is also screw terminal for connecting to 6V power supply by ordinary wire.)\\
+   **Step 6**. Connect the USB-Type-A side of the USB cable to the PC.\\
 
 --------------
 
@@ -196,8 +196,7 @@ Configuration Tab
    \ **NOTE:** Make change based on the default settling on the **Advanced Setting** pop-up window when clearly know the meaning and effect of the configuration. It is recommended to read :adi:`ad7193` Datasheet and :adi:`CN0287` Circuit Note for more details.
 
 
--  **Schematic Diagram for Current Channel**
-
+- **Schematic Diagram for Current Channel**
    -  This schematic diagram shows the type of the sensor, way of connecting the sensor to the connector and the on-board jumper setting based on the current configuration.
 
 -  **Alarm High** and **Alarm Low** text boxes
@@ -214,7 +213,9 @@ Configuration Tab
 Temperature Tab
 ~~~~~~~~~~~~~~~
 
-| |image14|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/channeltemperature_with_label.png
+   :align: right
+   :width: 200px
 
 -  **Temperature(degC)**
 
@@ -251,14 +252,15 @@ Temperature Tab
    -  High Alarm !!: the current temperature is higher than the **"High Alarm"** value on the **Configuration Tab**.
    -  Low Alarm !! the current temperature is lower than the **"Low Alarm"** value on the **Configuration Tab**.
 
-| 
+
 
 --------------
 
 Temperature Graph Tab
 ~~~~~~~~~~~~~~~~~~~~~
 
-| |image15|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/sw_frontpanel_temepraturegraphtab_withlabel.png
+   :width: 600px
 
 -  **CH [x]**: Channel Number of the graph below.
 -  **This text indicator** shows the digital value of current temperature measurement result.
@@ -281,12 +283,12 @@ Establishing a USB Connection Link
    **C:\\Program Files\\Analog Devices\\CN0287\\CN0287.exe**\
 
 
-\* Select the connector to use from the **SDP Connector Dropdown Menu**.
+- Select the connector to use from the **SDP Connector Dropdown Menu**.
 -  Click the **Connect Button**. A window with a progress bar will load.
 
-|image16|
+|image14|
 
--  Upon success, the **System Status String Indicator** will display *SDP-B Ready to Acquire Data*
+   \* Upon success, the **System Status String Indicator** will display *SDP-B Ready to Acquire Data*
 
 --------------
 
@@ -423,8 +425,4 @@ Registration
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/cn0272-software-inactive.png
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/cn0272-software-busy.png
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/cn0272-software-error.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/channeltemperature_with_label.png
-   :width: 200px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/sw_frontpanel_temepraturegraphtab_withlabel.png
-   :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/cn0272-software-wait.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/cn0272-software-wait.png

@@ -84,10 +84,7 @@ Testing
 
 .. container:: centeralign
 
-   \ *Figure 2. AD9213-10GEBZ-B standoff and jumper locations.*\
-
-
--  You can install standoffs at the locations (marked with an \*) if needed. Alternatively, you can use foam sheets to support the board.
+   \ *Figure 2. AD9213-10GEBZ-B standoff and jumper locations.*-  You can install standoffs at the locations (marked with an *) if needed. Alternatively, you can use foam sheets to support the board.
 -  Connect the AD9213/9217 evaluation board to the ADS8-V1EBZ board together as shown in the following figure.\ |AD9213-10GEBZB TO ADS8-V1EBZ connection.png|\
 
 .. container:: centeralign
@@ -124,71 +121,70 @@ ad9213_ce_external_board_view.png\
 
 .. container:: centeralign
 
-   *\ AD9213/AD9217 external clocking board view *
+   *AD9213/AD9217 external clocking board view*
 
 
-\* After “State=Good” appears in the lower left, turn on the signal generators for the clock, reference clock, and signal. \* Open the menu “Initial Configuration”. ad9213_ce\__onboard_open_initial_config.png\
+- After “State=Good” appears in the lower left, turn on the signal generators for the clock, reference clock, and signal. \* Open the menu “Initial Configuration”. ad9213_ce\__onboard_open_initial_config.png\
 
 .. container:: centeralign
 
-   *\ On-board clocking: Open the Initial Configuration menu to apply the default configuration settings.\ *
+   *On-board clocking: Open the Initial Configuration menu to apply the default configuration settings.*
 
 
 ad9213_ce_external_open_initial_config.png\
 
 .. container:: centeralign
 
-   *\ External clocking: Open the Initial Configuration menu to apply the default configuration settings.\ *
+   *External clocking: Open the Initial Configuration menu to apply the default configuration settings.*
 
 
-\* Click the Apply button to configure AD9213 in its default full bandwidth mode configuration. Then double-click on the chip to proceed.\ ad9213_ce_onboard_apply_default_config_fbw.png\
-
-.. container:: centeralign
-
-   *\ On-board clocking: Apply default settings in the Initial Configuration menu before double-clicking on the chip.\ *
-
-
-\* "Output Interface PLL Locked" will appear green. Confirm that "Common mode" is set to "Startup: Internal VCM Control" and then click "Proceed to Analysis\ ad9213_ce_onboard_proceed_to_analysis_fbw.png \* For DDC mode, please set the chip mode to "DDC on" and configure as necessary. Please note the ref clock frequency can change based on which modes are selected, and adjusting the frequency applied to the ADS8-V1EBZ may be necessary. After applying desired settings, click "apply", and then double click on the part.\ ad9213_ce_onboard_apply_default_config_ddc.png\
+- Click the Apply button to configure AD9213 in its default full bandwidth mode configuration. Then double-click on the chip to proceed.\ ad9213_ce_onboard_apply_default_config_fbw.png\
 
 .. container:: centeralign
 
-   *\ On-board clocking: Apply default settings in the Initial Configuration menu before double-clicking on the chip.\ *
+   *On-board clocking: Apply default settings in the Initial Configuration menu before double-clicking on the chip.*
 
 
-\* "Output Interface PLL Locked" will appear green. Confirm that 'Common mode" is set to "Startup: Internal VCM Control" and then click "Proceed to Analysis\ ad9213_ce_onboard_proceed_to_analysis_ddc.png \* The analysis page appears. Click "Run Once" to get a time domain view at the converted data.\ AD9213_ce_analysis_page_appears.png \* Using the full bandwidth mode setup from step 17, the time domain analysis of converted data appears.\ AD9213_ce_run_once_time_domain_fbw.png\
-
-.. container:: centeralign
-
-   *\ Full bandwidth mode time domain waveform\ *
-
-
-\* Click on the FFT icon to display the frequency domain view (FFT).\ ad9213_ce_click_fft_fbw.png\
+- "Output Interface PLL Locked" will appear green. Confirm that "Common mode" is set to "Startup: Internal VCM Control" and then click "Proceed to Analysis\ ad9213_ce_onboard_proceed_to_analysis_fbw.png \* For DDC mode, please set the chip mode to "DDC on" and configure as necessary. Please note the ref clock frequency can change based on which modes are selected, and adjusting the frequency applied to the ADS8-V1EBZ may be necessary. After applying desired settings, click "apply", and then double click on the part.\ ad9213_ce_onboard_apply_default_config_ddc.png\
 
 .. container:: centeralign
 
-   *\ Analysis Page with Time Domain Data\ *
+   *On-board clocking: Apply default settings in the Initial Configuration menu before double-clicking on the chip.*
 
 
-\* Click "Run Continuously" to view repetitive FFTs.\ ad9213_ce_run_continuously_fbw.png\
-
-.. container:: centeralign
-
-   *\ Full bandwidth mode FFT\ *
-
-
-\* Using the DDC setup from step 19, the time domain domain analysis of converted data appears.\ AD9213_ce_run_once_time_domain_ddc.png\
+- "Output Interface PLL Locked" will appear green. Confirm that 'Common mode" is set to "Startup: Internal VCM Control" and then click "Proceed to Analysis\ ad9213_ce_onboard_proceed_to_analysis_ddc.png \* The analysis page appears. Click "Run Once" to get a time domain view at the converted data.\ AD9213_ce_analysis_page_appears.png \* Using the full bandwidth mode setup from step 17, the time domain analysis of converted data appears.\ AD9213_ce_run_once_time_domain_fbw.png\
 
 .. container:: centeralign
 
-   *\ DDC mode time domain waveform\ *
+   *Full bandwidth mode time domain waveform*
 
 
-\* Click "Run Continuously" to view repetitive FFTs.\ ad9213_ce_run_continuously_ddc.png\
+- Click on the FFT icon to display the frequency domain view (FFT).\ ad9213_ce_click_fft_fbw.png\
 
 .. container:: centeralign
 
-   *\ DDC mode FFT//
+   *Analysis Page with Time Domain Data*
 
+
+- Click "Run Continuously" to view repetitive FFTs.\ ad9213_ce_run_continuously_fbw.png\
+
+.. container:: centeralign
+
+   *Full bandwidth mode FFT*
+
+
+- Using the DDC setup from step 19, the time domain domain analysis of converted data appears.\ AD9213_ce_run_once_time_domain_ddc.png\
+
+.. container:: centeralign
+
+   *DDC mode time domain waveform*
+
+
+- Click "Run Continuously" to view repetitive FFTs.\ ad9213_ce_run_continuously_ddc.png\
+
+.. container:: centeralign
+
+   *DDC mode FFT*
 
 Notes
 -----

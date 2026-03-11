@@ -15,7 +15,7 @@ ADZS-SC589-MINI
 | 1. Power on your SAM board and plug in the 12V Power Supply to the 12V connector. If the board is properly powered, the green LED9/PWR will light up. | |image4| |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 | 2. Plug the USB Micro Type B side to the SAM board USB connector and the USB Type A side to a USB connection on the PC.                               | |image5| |
-| *Note if using SAM v2.1 or greater, the USB Micro connection on the board is labeled* **USB OTG**                                                     |          |
+| *Note if using SAM v2.1 or greater, the USB Micro connection on the board is labeled **USB OTG**                                                      |          |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 | 3. Connect a Portable speaker or headphones to the *LINE OUT* connector on the SAM (ensure the speaker is turned on!).                                | |image6| |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
@@ -48,7 +48,6 @@ EV-SC594-SOM/EV-SC598-SOM + Carrier
 | 4. Proceed to the software setup instructions *(common for all hardware variants)*                                                                                                           | NA        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 Software Setup
 --------------
@@ -58,9 +57,7 @@ Software Setup
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
 
-*This tutorial uses TeraTerm as the serial interface to your hardware.*
-
-**Follow the instructions below to set up a connection to your hardware:**
+*This tutorial uses TeraTerm as the serial interface to your hardware.**Follow the instructions below to set up a connection to your hardware:**
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | 1. Open TeraTerm and connect to a new Serial Session, connecting to the Port labeled *SC5xx Communications Port*.                                                                     | |image25| |image26| |
@@ -93,7 +90,6 @@ Audio Connection Setup
 | 5. You should now be able to hear the audio from the input device coming out of the speaker connected to *LINE OUT* or *HEADPHONES*.                                                                                                                                     | NA        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 .. important::
 

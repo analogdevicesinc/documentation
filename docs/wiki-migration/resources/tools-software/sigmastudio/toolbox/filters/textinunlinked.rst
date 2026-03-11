@@ -1,8 +1,9 @@
 Text-In (unlinked)
 ==================
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| |textinpic1.png| An alternative to the :doc:`General-Purpose </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/general2ndorder>` filter, the Text-In block lets you set parameters using text fields, without having to open another window. The algorithms are the same, giving access to the wide variety of 2nd-order-filter behaviors, although not all the algorithms are offered with Text-In.
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+|textinpic1.png| An alternative to the :doc:`General-Purpose </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/general2ndorder>` filter, the Text-In block lets you set parameters using text fields, without having to open another window. The algorithms are the same, giving access to the wide variety of 2nd-order-filter behaviors, although not all the algorithms are offered with Text-In.
 
 See the :doc:`General 2nd Order Algorithms </wiki-migration/resources/tools-software/sigmastudio/toolbox/algorithminformation/general2ndorderfilters>` page for information about the algorithms driving these blocks. The available filters are:
 

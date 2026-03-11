@@ -1,8 +1,9 @@
 Imploader
 =========
 
-| :doc:`Click here to return to the Hardware Windows page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
-| The Imploader window (**AD1940 and AD1941 only**) allows you to compile and download previously compiled projects without the need to load the project files. This is useful for comparing among different settings or flows.
+:doc:`Click here to return to the Hardware Windows page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
+
+The Imploader window (**AD1940 and AD1941 only**) allows you to compile and download previously compiled projects without the need to load the project files. This is useful for comparing among different settings or flows.
 
 To access the Imploader window:
 

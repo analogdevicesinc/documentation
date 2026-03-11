@@ -9,21 +9,12 @@ The objective of this activity is to gain experience with the tools electrical e
 Background:
 -----------
 
-| Before doing this experiment, students should be able to
-| - Determine the values of resistors connected in series and parallel
-| - Identify the audible frequency range in humans
-| - Identify the value of standard resistors from the ALP2000 kit by color code
-| - Download and install ALICE desktop software on a Windows machine
-| - Download and install LTspice software on a Windows machine
+Before doing this experiment, students should be able to - Determine the values of resistors connected in series and parallel - Identify the audible frequency range in humans - Identify the value of standard resistors from the ALP2000 kit by color code - Download and install ALICE desktop software on a Windows machine - Download and install LTspice software on a Windows machine
 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solderless Breadboard
-| Jumper wires
-| 3.5mm headphone jack adapter
-| Headphone or ear bubs (loudspeaker as option)
+ADALM1000 hardware module Solderless Breadboard Jumper wires 3.5mm headphone jack adapter Headphone or ear bubs (loudspeaker as option)
 
 Sine Waves and Hearing
 ----------------------
@@ -223,8 +214,6 @@ A slide deck is provided as a companion to this exercise, and can be used to hel
    `LTspice Basic Lab Class Slide Deck <https://wiki.analog.com/_media/university/courses/electronics/ltspice/ltspice_basic_lab_class_03-18-19.pptx>`_
 
 
-.. _background-1:
-
 Background
 ~~~~~~~~~~
 
@@ -251,15 +240,15 @@ The software we will be using to simulate the operation of circuits in this lab 
 Experiment (Simulation)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-\**Opening a New Simulation \*\*
+**Opening a New Simulation**
 
 In this part of the experiment, we will draw the simple circuit we have been studying, a combination of resistors and a sinusoidal voltage source representing a resistive divider.
 
-\**Run the “LTspice” program \*\*
+**Run the “LTspice” program**
 
 It will open with no schematic or simulation loaded. Click on the File pull-down menu and select New Schematic. You will name your project when you save it. You should also decide where you want to save schematics. You will have to choose a directory when you save your work.
 
-\**Drawing a Circuit \*\*
+**Drawing a Circuit**
 
 Figure 11 is the LTspice main screen with the circuit we will be drawing. Note that this is the circuit used in the resistor divider activity including the input resistance of one channel of the ADALM1000 as R3.
 
@@ -302,7 +291,7 @@ After you have changed all the resistor values and moved them to neat and readab
    Figure 13.
 
 
-\**Setting Up the Analysis \*\*
+**Setting Up the Analysis**
 
 After all the components are defined, wired up and their values are set appropriately, you are ready to run a simulation.
 
@@ -321,7 +310,7 @@ The final time (Stop Time:) has been set at 5ms because the period of a 1 kHz si
 
 When you have finished, you can run the simulation either by clicking the button that looks like a little person running or select Run from the Simulation drop-down menu.
 
-\**Transient Analysis \*\*
+**Transient Analysis**
 
 You are now ready to run the simulation.
 
@@ -355,18 +344,11 @@ Change the values of the resistors in the voltage divider to 1 Meg and rerun the
 
 Show your results for the 1 Meg simulation to a TA or instructor and have them check-off on your hand-drawn circuit diagram for this simulation.
 
-| For this and other activities in this course, you must explain:
-| - the purpose of the data (using your hand-drawn circuit diagram),
-| - what information is contained in the plot and
-| - why you believe that the plot is correct.
-
-.. _summary-1:
+For this and other activities in this course, you must explain: - the purpose of the data (using your hand-drawn circuit diagram), - what information is contained in the plot and - why you believe that the plot is correct.
 
 Summary
 ~~~~~~~
 
 LTspice is a very powerful simulation tool meant to address the circuit simulation needs of all engineers who must do circuit design and analysis. Thus, there are many, many opportunities to make what seem like silly mistakes that prevent the analysis from working properly. In your first attempt at using these tools, it is likely that you have already made some of these mistakes. You should also have heard about some of them in class. What mistakes did you make?
 
-\**For Further Reading: \*\*
-
-**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+**For Further Reading:***Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**

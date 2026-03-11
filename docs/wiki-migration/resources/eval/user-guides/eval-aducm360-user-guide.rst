@@ -118,14 +118,11 @@ Programs Installed
 
 The software described in this section has now been copied or installed.
 
-| **CM3WSD.exe**
-| The folder **\\ADuCMxxxV1.3\\Software Tools\\CM3WSD** provides an executable called **CM3WSD.exe**. This software accepts a hex file and allows it to be downloaded via the USB interface to the :adi:`ADuCM360` device on your evaluation board. You may want to add a shortcut link for this executable to your desktop.
+**CM3WSD.exe** The folder **\\ADuCMxxxV1.3\\Software Tools\\CM3WSD** provides an executable called **CM3WSD.exe**. This software accepts a hex file and allows it to be downloaded via the USB interface to the :adi:`ADuCM360` device on your evaluation board. You may want to add a shortcut link for this executable to your desktop.
 
-| **elves.exe**
-| The **\\ADuCMxxxV1.3\\Software Tools\\Elves** folder contains the elves.exe files. These files are useful tools that accompany the software function libraries in **\\ADuCMxxxV1.3\\Code\\ADuCM360\\common**. Again, no installation is required here, but you may want to add a shortcut link for this executable to your desktop.
+**elves.exe** The **\\ADuCMxxxV1.3\\Software Tools\\Elves** folder contains the elves.exe files. These files are useful tools that accompany the software function libraries in **\\ADuCMxxxV1.3\\Code\\ADuCM360\\common**. Again, no installation is required here, but you may want to add a shortcut link for this executable to your desktop.
 
-| **Driver**
-| The J-Link OB emulator requires a driver, which is installed automatically when the Segger J-Link Software is selected (see Step 4 of the :doc:`Software Installation Instructions </wiki-migration/resources/eval/user-guides/eval-aducm360-user-guide>` section). At this point, check that the driver is installed correctly. Plug in the emulator and check the device manager (see Figure 6). Check that it appears in the Windows Device Manager in both the communications port and the USB controllers lists.
+**Driver** The J-Link OB emulator requires a driver, which is installed automatically when the Segger J-Link Software is selected (see Step 4 of the :doc:`Software Installation Instructions </wiki-migration/resources/eval/user-guides/eval-aducm360-user-guide>` section). At this point, check that the driver is installed correctly. Plug in the emulator and check the device manager (see Figure 6). Check that it appears in the Windows Device Manager in both the communications port and the USB controllers lists.
 
 |Device Manager|\
 
@@ -136,8 +133,6 @@ The software described in this section has now been copied or installed.
 
 Keil μVision5 Integrated Development Environment
 ------------------------------------------------
-
-.. _introduction-1:
 
 Introduction
 ~~~~~~~~~~~~
@@ -220,8 +215,6 @@ Under the **View** menu, two toolbars are available:
 
 The **File** toolbar is always available. The **Build** toolbar is active only when the IDE is in edit/compile mode. The **Debug** toolbar is active only in download/debug mode.
 
-.. _starting-a-project-1:
-
 Starting a project
 ^^^^^^^^^^^^^^^^^^
 
@@ -232,35 +225,35 @@ Starting a project
    // Project Menu\ *
 
 
-\* Create a new folder (*\ **ADIDemo**\ *). To do so, go to* **C:\\Analog Devices\\ADuCM36x\\ADIDemo** *and enter* **Demo** *as the project name.\  \* In the* **Select Device for Target 'Target 1'** *window, select* **Software Packs** *and select* **ADuCM360**\ *\ \
+- Create a new folder (**ADIDemo**). To do so, go to **C:\\Analog Devices\\ADuCM36x\\ADIDemo** and enter **Demo** as the project name.\  \* In the **Select Device for Target 'Target 1'** window, select **Software Packs** and select **ADuCM360**\ *\ \
 
 .. container:: centeralign
 
    * Select Device\ *
 
 
-\* In the* **Manage Run-Time Environment** *select the desired drivers to import to the project. For our example, select* **CMSIS -> CORE**\ *,* **Device -> Startup**\ *, and all the drivers in* **Device -> Drivers**\ *, and click* **OK**\ *.\ \
+- In the **Manage Run-Time Environment** select the desired drivers to import to the project. For our example, select **CMSIS -> CORE**,**Device -> Startup**, and all the drivers in **Device -> Drivers**, and click **OK**.\ \
 
 .. container:: centeralign
 
    * Manage Run-Time Environment\ *
 
 
-\* In the project window, right-click on* **Target1** *and select* **Options for Target 'Target1...'**\ *\* Select the* **Target** *tab. \* Ensure the* **IROM1** *and* **IRAM1 Start** *and* **Size** *fields are filled as shown in the picture below \* In* **ARM Compiler**\ *, select* **Use default compiler version 5**\ *\* Ensure that the* **Use MicroLIB** *option is enabled. \
+- In the project window, right-click on **Target1** and select **Options for Target 'Target1...'*** Select the **Target** tab. \* Ensure the **IROM1** and **IRAM1 Start** and **Size** fields are filled as shown in the picture below \* In **ARM Compiler**, select **Use default compiler version 5**\* Ensure that the **Use MicroLIB** option is enabled. \
 
 .. container:: centeralign
 
    * Target Options\ *
 
 
-\* Select the* **Linker** *tab and then select* **Use Memory Layout from Target Dialog**\ *\ \
+- Select the **Linker** tab and then select **Use Memory Layout from Target Dialog**\ *\ \
 
 .. container:: centeralign
 
    * Linker Options\ *
 
 
-\* In the* **Output** *tab, serlect* **Create HEX File**\ *. The hex file can be used by the JLINK Commander. Then select* **OK**\ *.\ \
+- In the **Output** tab, serlect **Create HEX File**. The hex file can be used by the JLINK Commander. Then select **OK**.\ \
 
 .. container:: centeralign
 
@@ -280,21 +273,21 @@ Configuring the J-Link Debugger Driver
    Selecting a debugger// *
 
 
-\* Configure the* **Cortex JLink/JTrace Target Driver Setup** *window as in the following picture:\
+- Configure the **Cortex JLink/JTrace Target Driver Setup** window as in the following picture:\
 
 .. container:: centeralign
 
    J-Link Target Driver Setup* *
 
 
-\* Select* **OK**\ *\* Under the* **Utilities** *tab, select* **Use Target Driver for Flash Programming**\ *. Then, select* **Use Debug Driver** *and select the option* **Update Target before Debugging**\ *.\ \
+- Select **OK*** Under the **Utilities** tab, select **Use Target Driver for Flash Programming**. Then, select **Use Debug Driver** and select the option **Update Target before Debugging**.\ \
 
 .. container:: centeralign
 
    Configuration of the Utilities Menu* *
 
 
-\* Click on* **Settings**\ *, and check that the* **Flash Download** *tab is configured as the following picture: \
+- Click on **Settings**, and check that the **Flash Download**\ tab is configured as the following picture: \
 
 .. container:: centeralign
 
@@ -348,8 +341,6 @@ Starting IAR Embedded Workbench
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From the **Start Menu**, choose **IAR Embedded Workbench for ARM -> IAR EW For ARM**. This loads the IAR Embedded Workbench IDE.
-
-.. _quick-start-steps-1:
 
 Quick Start Steps
 ~~~~~~~~~~~~~~~~~

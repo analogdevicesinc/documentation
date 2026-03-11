@@ -60,24 +60,23 @@ Quick Start Guide
    \ |image3|//Figure 2b. EVAL-AD9102 Default Board Configuration *
 
 
-\* Click the AD9106 / AD9102 Chip to proceed to chip view. Apply the chip settings enumerated below and shown in Figure 3. \* DDS Output Frequency:* **10MHz**\ *\* Waveform Selector Dropdown Menus:* **Prestored**\ *\* Prestored Waveform Selector Dropdown Menus:* **DDSx output**\ *\* DAC1 Dig Gain:* **1**\ *\* DAC2 Dig Gain:* **0.75**\ *\* DAC3 Dig Gain:* **0.5**\ *\* DAC4 Dig Gain:* **0.25** *
+- Click the AD9106 / AD9102 Chip to proceed to chip view. Apply the chip settings enumerated below and shown in Figure 3. \* DDS Output Frequency:**10MHz*** Waveform Selector Dropdown Menus:**Prestored*** Prestored Waveform Selector Dropdown Menus:**DDSx output*** DAC1 Dig Gain:**1*** DAC2 Dig Gain:**0.75*** DAC3 Dig Gain:**0.5*** DAC4 Dig Gain:**0.25** *
 
 .. container:: centeralign
 
-   \ *\ Figure 3a. AD9106 Chip View\ *
+   \ *Figure 3a. AD9106 Chip View*
 
 
 .. container:: centeralign
 
-   \ *\ Figure 3b. AD9102 Chip View\ *
+   \ *Figure 3b. AD9102 Chip View*
 
 
-\* Click* **Apply Changes** *to update SPI register values.
+- Click **Apply Changes** to update SPI register values.
 
 .. container:: centeralign
 
-   \ *\ Figure 4. AD910x Apply Changes Button in Chip View//
-
+   \ *Figure 4. AD910x Apply Changes Button in Chip View*
 
 -  Click **Trigger** to generate output waveforms. Waveform captures are shown in Figures 5a and 5b.
 
@@ -115,10 +114,10 @@ There are six available sample waveform settings that can be loaded from the plu
    -  click **Back to AD910x** then modify the settings from the chip view; or
    -  open **Memory Map** then change register values.
    
-   | Click **Apply Changes** then **Trigger**.
+   Click **Apply Changes** then **Trigger**.
 
 
-| ===== Extracting power up sequence and SPI registers ===== When transitioning from an evaluation platform to custom designed hardware it is often necessary to understand the state of the hardware settings or interactions occurring during an evaluation session. ACE provides the option to :doc:`Export Interaction With Hardware </wiki-migration/resources/tools-software/ace/exporting>`.
+===== Extracting power up sequence and SPI registers ===== When transitioning from an evaluation platform to custom designed hardware it is often necessary to understand the state of the hardware settings or interactions occurring during an evaluation session. ACE provides the option to :doc:`Export Interaction With Hardware </wiki-migration/resources/tools-software/ace/exporting>`.
 
 Using ACE Macro Tool
 ~~~~~~~~~~~~~~~~~~~~
@@ -216,8 +215,6 @@ To Preview a Vector file
 
    There are sample vector text file in the default Vector File Path that can be used as reference.
 
-
-| 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/sdp-k1_vio_config.jpg
    :width: 600px

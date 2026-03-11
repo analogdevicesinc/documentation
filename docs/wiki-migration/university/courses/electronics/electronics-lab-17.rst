@@ -27,17 +27,7 @@ The difference between the analog input and the analog feedback DAC ( delta ) is
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - AD8541 CMOS rail-to-rail Op-Amp
-| 1 - 74HC74 Dual D-type flip flop
-| 2 - 10 KΩ Resistors
-| 2 - 20 KΩ Resistors
-| 1 - 2.2 KΩ Resistor
-| 1 - 0.1 uF capacitor
-| 1 - 0.02 uF capacitor
-| 1 - 10 uF capacitor
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - AD8541 CMOS rail-to-rail Op-Amp 1 - 74HC74 Dual D-type flip flop 2 - 10 KΩ Resistors 2 - 20 KΩ Resistors 1 - 2.2 KΩ Resistor 1 - 0.1 uF capacitor 1 - 0.02 uF capacitor 1 - 10 uF capacitor
 
 Directions:
 -----------
@@ -74,20 +64,10 @@ Now set the offset of the waveform generator to 1.75V and the amplitude to 1.6V 
 Questions:
 ----------
 
-| What is the effect of changing the DC value of the analog input?
-| What is the effect of changing the frequency of analog input?
-| What is the maximum analog input frequency?
-| Looking at the spectrum of the digital output, why does the noise level increase with frequency?
-| What is the effect of changing the value of integrator capacitor C\ :sub:`1`?
-| Does the spectrum change? Is there a minimum value for C\ :sub:`1`? Is there a maximum value for C\ :sub:`1`?
-| What is the effect of changing the frequency of the digital pulse?
-| How is the spectrum of the digital output changed? Is there a minimum? or a maximum?
-| The simple single pole RC low pass filter R\ :sub:`5` C\ :sub:`2` removes some of high frequency the noise in the analog output spectrum. What would be the effect of a higher order ( active ) filter on the analog output spectrum?
+What is the effect of changing the DC value of the analog input? What is the effect of changing the frequency of analog input? What is the maximum analog input frequency? Looking at the spectrum of the digital output, why does the noise level increase with frequency? What is the effect of changing the value of integrator capacitor C\ :sub:`1`? Does the spectrum change? Is there a minimum value for C\ :sub:`1`? Is there a maximum value for C\ :sub:`1`? What is the effect of changing the frequency of the digital pulse? How is the spectrum of the digital output changed? Is there a minimum? or a maximum? The simple single pole RC low pass filter R\ :sub:`5` C\ :sub:`2` removes some of high frequency the noise in the analog output spectrum. What would be the effect of a higher order ( active ) filter on the analog output spectrum?
 
 **For Further Reading:**
 
-| :adi:`ADC Architectures IV: Sigma-Del ta ADC Advanced Concepts and Applications <static/imported-files/tutorials/MT-023.pdf>`
-| `Delta Sigma Toolbox <https://www.mathworks.com/matlabcentral/fileexchange/19-delta-sigma-toolbox>`_
-| http://en.wikipedia.org/wiki/Delta-sigma_modulation
+:adi:`ADC Architectures IV: Sigma-Del ta ADC Advanced Concepts and Applications <static/imported-files/tutorials/MT-023.pdf>` `Delta Sigma Toolbox <https://www.mathworks.com/matlabcentral/fileexchange/19-delta-sigma-toolbox>`_ http://en.wikipedia.org/wiki/Delta-sigma_modulation
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**

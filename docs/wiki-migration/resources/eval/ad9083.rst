@@ -54,8 +54,8 @@ To ensure proper connection between the microSD card and the MicroZed™ board, 
 ::
 
    -Locate the microSD card labeled ADS8-HSx from the contents of ADS8-V3EBZ packaging.
-   -Connect the microSD card to the MicroZed™ board (the contacts of the microSD card are face up). 
-   -As a precaution, ensure that the MicroZed™ board is seated properly on the ADS8-V3EBZ. Only a visual inspection is needed. 
+   -Connect the microSD card to the MicroZed™ board (the contacts of the microSD card are face up).
+   -As a precaution, ensure that the MicroZed™ board is seated properly on the ADS8-V3EBZ. Only a visual inspection is needed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/sd-card-location.jpg
    :width: 400px
@@ -72,14 +72,14 @@ To configure the network interface to the MicroZed™ board, follow these steps:
    -One end of the Ethernet cable can be connected directly to the PC Ethernet port or to a USB to Ethernet adapter, with the other end connected to the MicroZed™ board.
    -Power on the ADS8-V3EBZ board. Allow up to 10 sec for the MicroZed™ board to boot up.
    -Open the local area connection settings. On Windows 7: Start Menu > Control Panel > Network and Sharing Center > Change adapter settings. On Windows 10: Start Menu > Settings > Network & Internet > Change adapter options.
-   -If the Local Area Connection icon does not appear in the Network Connections window, unplug the Ethernet connection from the MicroZed™ board and then reconnect it. 
+   -If the Local Area Connection icon does not appear in the Network Connections window, unplug the Ethernet connection from the MicroZed™ board and then reconnect it.
    -Double click the Local Area Connection icon that appears.
    -Click Properties.
    -Select Internet Protocol Version 4 (TCP/IPv4).
    -Click Properties.
    -Enter 192.168.0.1 in the IP address field.
    -Ensure the Subnet mask field shows 255.255.255.0.
-   -Click OK. 
+   -Click OK.
 
 Evaluation Software Configuration
 ---------------------------------
@@ -104,9 +104,7 @@ To install a plugin from ACE, follow these steps:
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/manage_plugins.png
    :width: 600px
 
-*Figure 3. ACE Manage Plug-ins Window*
-
-**Plugin Installation from the Web**
+*Figure 3. ACE Manage Plug-ins Window **Plugin Installation from the Web**
 
 To install the plugin from the web, follow these steps:
 
@@ -143,9 +141,7 @@ The board view tab enables the user to quickly set up the AD9083. Figure 4 shows
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/ad9083_-_2_narrow_bw_mode_startup_wizzard.png
    :width: 800px
 
-*Figure 5. AD9083EBZ Evaluation Board Quick Configuration*
-
-**Chip View**
+*Figure 5. AD9083EBZ Evaluation Board Quick Configuration **Chip View**
 
 Double clicking the AD9083 icon in the board view opens the chip view. The chip view enables the user to customize the AD9083 beyond the functions available in the board view.
 
@@ -316,7 +312,7 @@ V1P8V  TP14       1.8V
 ::
 
    *Make sure the USB cable is making good connection on the ADS8-V3EBZ board and the PC. Try another USB port on the PC if needed. Some PCs work best with a SuperSpeed USB 3.0 port.
-     *The ADS8-V3EBZ should show up on the PC Device Manager 
+     *The ADS8-V3EBZ should show up on the PC Device Manager
    *Make sure that the FPGA on the ADS8-V3 has been programmed - a lit FPGA_DONE LED DS15 on the top of the ADS8-V3 and a powered fan are good indicators of the FPGA being programmed.
    *Check the common mode voltage on the JESD204B traces. On the evaluation board, the common mode voltage should be roughly 0.5V. On the ADS8-V3, the common mode voltage should be around 0.8V.
    *To test SPI operation, attempt to both read and write to register 0x000A (Scratch Pad Register) using ACE's Register Debugger. If the register reads back the same value written to it, SPI is operational.

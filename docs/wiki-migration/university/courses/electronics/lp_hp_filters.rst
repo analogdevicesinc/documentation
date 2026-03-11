@@ -55,11 +55,7 @@ Frequency Response: It is a graph of magnitude of the output voltage of the filt
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 1 KΩ resistor
-| 1 1 µF capacitor
-| 1 10 mH inductor
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 1 KΩ resistor 1 1 µF capacitor 1 10 mH inductor
 
 A. RC Low-pass filter
 ---------------------
@@ -126,8 +122,6 @@ If the frequency of the input signal increases to a value greater than the cutof
 B. RL High-pass filter
 ----------------------
 
-.. _hardware-setup-1:
-
 Hardware setup:
 ~~~~~~~~~~~~~~~
 
@@ -150,8 +144,6 @@ On the solderless breadboard build the circuit presented in Figure 9.
 
    Figure 10: Breadboard connections of RL high pass filter
 
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~

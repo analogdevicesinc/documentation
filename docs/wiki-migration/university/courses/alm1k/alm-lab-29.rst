@@ -39,11 +39,7 @@ The CD4007 like many CMOS integrated circuits, it is easily damaged by static di
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less Breadboard and jumper wire kit
-| 1 CD4007 ( CMOS array)
-| 2 ZVN2110A NMOS transistors
-| 2 ZVP2110A PMOS transistors
+ADALM1000 hardware module Solder-less Breadboard and jumper wire kit 1 CD4007 ( CMOS array) 2 ZVN2110A NMOS transistors 2 ZVP2110A PMOS transistors
 
 Directions:
 ~~~~~~~~~~~
@@ -114,8 +110,6 @@ For many design cases in integrated circuits where internal signals just pass be
 
    Figure 4 6 transistor falling edge D-Type latch
 
-
-.. _directions-1:
 
 Directions:
 ~~~~~~~~~~~

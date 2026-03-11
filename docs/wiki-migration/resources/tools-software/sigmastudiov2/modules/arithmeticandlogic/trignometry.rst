@@ -9,7 +9,7 @@ Trigonometry
 Description
 -----------
 
-| This Module implements the basic trigonometric functions such as sine, cosine, tan, inverse sine, inverse cosine, inverse tan. This Module can be grown. When grown, both control and input, output pins are grown.
+This Module implements the basic trigonometric functions such as sine, cosine, tan, inverse sine, inverse cosine, inverse tan. This Module can be grown. When grown, both control and input, output pins are grown.
 
 Targets Supported
 -----------------

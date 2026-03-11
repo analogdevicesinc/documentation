@@ -5,46 +5,45 @@ Gas detection instruments are used in a wide range of applications ranging from 
 
 By utilizing built-in diagnostics features (such as impedance spectroscopy or bias voltage pulsing and ramping) it is possible to inspect sensor health, compensate for accuracy drift due to aging or temperature, and estimate the remaining lifetime of the sensor right at the edge of the sensor network without user intervention. This functionality allows smart, accurate sensor replacement at the individual edge nodes. An integrated, ultra low power microcontroller directly biases the electrochemical gas sensor and runs onboard diagnostic algorithms.
 
-| The :adi:`CN0429` circuit shows how an electrochemical gas sensor is connected to the potentiostat circuit and how it is biased and measured. Common 2-lead, 3-lead, and 4-lead electrochemical gas sensors can be used interchangeably. The integration of this signal chain dramatically reduces cost, size, complexity, and power consumption at the sensor node.
-| |image1|
+The :adi:`CN0429` circuit shows how an electrochemical gas sensor is connected to the potentiostat circuit and how it is biased and measured. Common 2-lead, 3-lead, and 4-lead electrochemical gas sensors can be used interchangeably. The integration of this signal chain dramatically reduces cost, size, complexity, and power consumption at the sensor node.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_complete_setup_no_sensors.jpg
+   :align: center
+   :width: 600px
 
 Boards Used
 -----------
 
 Following are the boards used:
 
-|
+.. container:: centeralign
+
+
+   ..
+
+|image1|
+
+   *EVAL-M355-ARDZ-INT Arduino Shield Board*
+
 
 .. container:: centeralign
+
 
 
    ..
 
 |image2|
 
-   *EVAL-M355-ARDZ-INT Arduino Shield Board*
+   *EVAL-ADICUP3029 Board*
 
-
-|
 
 .. container:: centeralign
+
 
 
    ..
 
 |image3|
-
-   *EVAL-ADICUP3029 Board*
-
-
-|
-
-.. container:: centeralign
-
-
-   ..
-
-|image4|
 
    *EVAL-CN0429-EBZ Gas Sensor Daughter Board*
 
@@ -91,8 +90,9 @@ To set up the circuit for evaluation, consider the following steps:
 -  Connect the system to the PC using USB cable
 -  Connect the sensors to the dedicated connectors on the EVAL-CN0429-EBZ
 
-| 
-| |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_blockdiagram.png
+   :align: center
+   :width: 600px
 
 Hardware Setup
 --------------
@@ -100,15 +100,17 @@ Hardware Setup
 Connecting the Electrochemical Gas Sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The CN0429 is compatible with electrochemical gas sensors in "4-series" form factor. 2-, 3- and 4-electrode sensors are supported. See the drawing below for form factor dimensions.
-| |image6|
-| Examples of sensors supported by this reference design:
+The CN0429 is compatible with electrochemical gas sensors in "4-series" form factor. 2-, 3- and 4-electrode sensors are supported. See the drawing below for form factor dimensions.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_gas_sensor_dimensions.png
+   :align: center
+   :width: 600px
+
+Examples of sensors supported by this reference design:
 
 -  CiTicel® 4CF+
 -  Alphasense CO-A4
 -  DD Scientific GS+4CO
-
-| 
 
 Temperature & Humidity Sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -121,7 +123,7 @@ Connector P1
 Connector P1 is used for interfacing with the CN0429 board. It is used to provide power to the board and also to communicate with it using I2C, SPI or UART interfaces. There is also one GPIO available, which can be used as an interrupt input to wake-up the ADuCM355 or provide any other interrupt function.
 
 
-|image7|
+|image4|
 
 .. container:: centeralign
 
@@ -133,8 +135,6 @@ The connector used on the CN0429 board is `Samtec SFM-107-02-L-D <http://suddend
 Switch Configurations
 ~~~~~~~~~~~~~~~~~~~~~
 
-| 
-
 Switch Configuration for EVAL-M355–ARDZ–INT Arduino Shield Board
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -145,8 +145,6 @@ There as two switches present on the :adi:`EVAL-M355–ARDZ–INT <en/design-cen
 
 -  Switch S1 selects which channel on the EVAL-M355-ARDZ-INT that is currently programmable. This is only needed/used when flashing custom firmware onto the EVAL-CN0429-EBZ
 -  Switch S2 selects the communication method for the connected EVAL-CN0429-EBZ boards. This should be set to I2C.
-
-|
 
 Switch Configurations for EVAL–ADICUP3029 Board
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -162,8 +160,6 @@ There are 5 switches present on the :adi:`EVAL–ADICUP3029 <en/design-center/ev
 -  Switch S1 is a reset switch, used to reset the board.
 -  Switch S3 is a boot switch, used to put the board into boot mode for downloading firmware. Press and hold the boot switch, then press and release reset switch and finally release the boot switch to activate the boot mode.
 -  Switch S4 is a WiFi reset switch, used to reset the externally connected WiFi board.
-
-| 
 
 Obtaining the Software
 ----------------------
@@ -191,18 +187,18 @@ The software for the **ADuCM3029_demo_cn0429** can be found here:
    
    -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_cn0428_cn0429 Source Code <projects/ADuCM3029_demo_cn0428_cn0429>`
    
-   |
+
 
 Downloading Firmware to the ADICUP3029
 --------------------------------------
 
-| **To download the binary file onto the ADICUP3029 board, follow this procedure:**
-| \* Connect the ADICUP3029 board to the PC with Micro USB cable
+**To download the binary file onto the ADICUP3029 board, follow this procedure:**
 
+-  Connect the ADICUP3029 board to the PC with Micro USB cable
 -  If the mbed software does not automatically install, `download <https://os.mbed.com/handbook/Windows-serial-configuration>`_ and install the mbed driver
 -  Verify that you can see a "DAPLINK" device in "This PC"
 
-|image8|
+|image5|
 
 -  Copy and Paste or Drag and Drop the ADuCM3029_demo_cn0428_cn0429.hex file onto the DAPLINK device/folder. This downloads the firmware onto the CUP3029 board.
 -  The DAPLINK device should disappear momentarily and then reappear.
@@ -244,21 +240,35 @@ The user can save these settings by a particular name (in the example above it i
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0428/sessions1.jpg
    :align: center
 
-| Once all the configurations have been defined, launch the PuTTY terminal by selecting the 'Open' option. After the PuTTY terminal launches, write 'help' ane press Enter to see the different commands in the PuTTY terminal for various gas measurements. See the :doc:`Command Line Interface </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0429>` section for more details.
-| ===== Example of System Setup ===== In this section, step by step instructions are provided to configure the system and the sensor for correct operation. It is recommended to always use this procedure.
-| \*\* Preparing the system **
-  \* Plug the** :adi:`EVAL-M355-ARDZ-INT` **board into the** :adi:`EVAL-ADICUP3029` **board. \* Plug the EC sensor to the** :adi:`EVAL-CN0429-EBZ <CN0429>` **board. \* Plug the EVAL-CN0429-EBZ board with EC sensor to any of the four positions on the EVAL-M355-ARDZ-INT board \* Connect the assembled system to the PC with MicroUSB cable. \* Open PUTTY serial terminal, set the COM port to 115200 8N1 configuration, and enable forced local echo. \* Connect to the board using PUTTY terminal. \* Wait for 10 seconds. Afterwards, you can start using the system.
-  The EVAL-CN0429-EBZ boards come pre-programmed and pre-configured. Sensor configuration needs to be modified according to the datasheet of the sensor used. Refer to the** `Sensor Configuration <https://wiki.analog.com/cn0429>`_ **section for more details.
-  **\ Note:\*\* If it is necessary to reset the system for any reason, e.g. if more than four sensors are being tested, it should be done by power cycling the board rather than just pressing the RESET button. This is done by simply unplugging the board from the PC.
+Once all the configurations have been defined, launch the PuTTY terminal by selecting the 'Open' option. After the PuTTY terminal launches, write 'help' ane press Enter to see the different commands in the PuTTY terminal for various gas measurements. See the :doc:`Command Line Interface </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0429>` section for more details.
+
+Example of System Setup
+-----------------------
+
+In this section, step by step instructions are provided to configure the system and the sensor for correct operation. It is recommended to always use this procedure.
+
+\*\* Preparing the system \*\*
+
+-  Plug the :adi:`EVAL-M355-ARDZ-INT` board into the :adi:`EVAL-ADICUP3029` board.
+-  Plug the EC sensor to the :adi:`EVAL-CN0429-EBZ <CN0429>` board.
+-  Plug the EVAL-CN0429-EBZ board with EC sensor to any of the four positions on the EVAL-M355-ARDZ-INT board
+-  Connect the assembled system to the PC with MicroUSB cable.
+-  Open PUTTY serial terminal, set the COM port to 115200 8N1 configuration, and enable forced local echo.
+-  Connect to the board using PUTTY terminal.
+-  Wait for 10 seconds. Afterwards, you can start using the system.
+
+The EVAL-CN0429-EBZ boards come pre-programmed and pre-configured. Sensor configuration needs to be modified according to the datasheet of the sensor used. Refer to the `Sensor Configuration <https://wiki.analog.com/cn0429>`_ section for more details.
+
+**Note:** If it is necessary to reset the system for any reason, e.g. if more than four sensors are being tested, it should be done by power cycling the board rather than just pressing the RESET button. This is done by simply unplugging the board from the PC.
 
 Programming the CN0429
 ----------------------
 
-| The :adi:`Eval-CN0429-EBZ <cn0429>` board comes with a pre-loaded base code. However if the user wishes to modify the firmware for custom measurements, they need to download and install IAR ARM 8.30.2 (or above) workbench. Along with this the user also needs to download the ADuCM355 support package (link in the `Software <https://wiki.analog.com/cn0429>`_).
-| After installing the software package, there are two options how to program the :adi:`EVAL-CN0429-EBZ <cn0429>`:
-| a) Using a stand-alone debugger with a 9-pin Cortex-M adapter,
-| b) using the on-board debugger on the :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>` and the 10-pin ribbon cable included with the :adi:`EVAL-M355-ARDZ-INT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html>`.
-| Please refer to :doc:`Programming EVAL-CN0428-EBZ or EVAL-CN0429-EBZ with Custom Firmware </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0428-cn0429-programming-with-custom-firmware>` page for detailed instructions.
+The :adi:`Eval-CN0429-EBZ <cn0429>` board comes with a pre-loaded base code. However if the user wishes to modify the firmware for custom measurements, they need to download and install IAR ARM 8.30.2 (or above) workbench. Along with this the user also needs to download the ADuCM355 support package (link in the `Software <https://wiki.analog.com/cn0429>`_).
+
+After installing the software package, there are two options how to program the :adi:`EVAL-CN0429-EBZ <cn0429>`: a) Using a stand-alone debugger with a 9-pin Cortex-M adapter, b) using the on-board debugger on the :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>` and the 10-pin ribbon cable included with the :adi:`EVAL-M355-ARDZ-INT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html>`.
+
+Please refer to :doc:`Programming EVAL-CN0428-EBZ or EVAL-CN0429-EBZ with Custom Firmware </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0428-cn0429-programming-with-custom-firmware>` page for detailed instructions.
 
 Command Line Interface (CLI)
 ----------------------------
@@ -334,8 +344,9 @@ The following table lists all available commands for the CN0429. Some of the com
 Select the Sensor
 ~~~~~~~~~~~~~~~~~
 
-| To be able to use any local command, a sensor needs to be selected first. Use following command to list all available (detected) sensors. <code> sensorsconnected </code>
-| Afterwards, select the desired sensor, for example using: <code> defaultsensor 1 </code> This command selects the sensor site. When using local commands, these apply to the selected site only. When no sensor site is selected, or there is no sensor connected at the selected site, an ERROR message will be displayed when trying to execute a local command.
+To be able to use any local command, a sensor needs to be selected first. Use following command to list all available (detected) sensors. <code> sensorsconnected </code>
+
+Afterwards, select the desired sensor, for example using: <code> defaultsensor 1 </code> This command selects the sensor site. When using local commands, these apply to the selected site only. When no sensor site is selected, or there is no sensor connected at the selected site, an ERROR message will be displayed when trying to execute a local command.
 
 Sensor Configuration
 ~~~~~~~~~~~~~~~~~~~~
@@ -348,29 +359,35 @@ The ADuCM355 firmware comes with pre-programmed default gas sensor configuration
 -  RLOAD [ohm]
 -  Measurement time [msec]
 
-| 
-| **Note:** Select the correct sensor site prior to using any of the following commands.
+**Note:** Select the correct sensor site prior to using any of the following commands.
 
 Bias voltage
 ^^^^^^^^^^^^
 
-| Bias voltage is the voltage applied between RE and WE (SE) electrode of the gas sensor. Its value can be found in the sensor datasheet.
-| // Example: setting bias voltage to 20 mV *<code> setvbias 20 </code>
-  === Sensor sensitivity === Sensor sensitivity value is used to calculate the gas concentration from the measured current produced by the sensor. If the sensor datasheet only states a range of currents instead of an exact value, please contact the sensor manufacturer and ask for more accurate value.
-  * Example: setting setsensitivity to 73 nA/ppm *<code> setsensitivity 73 </code>
-  === TIA Gain - RTIA === The RTIA resistor value should be selected so that it maximizes the ADC input range of ±900 mV. The RTIA value is calculated using following equation:
+Bias voltage is the voltage applied between RE and WE (SE) electrode of the gas sensor. Its value can be found in the sensor datasheet.
+
+// Example: setting bias voltage to 20 mV // <code> setvbias 20 </code>
+
+Sensor sensitivity
+^^^^^^^^^^^^^^^^^^
+
+Sensor sensitivity value is used to calculate the gas concentration from the measured current produced by the sensor. If the sensor datasheet only states a range of currents instead of an exact value, please contact the sensor manufacturer and ask for more accurate value.
+
+// Example: setting setsensitivity to 73 nA/ppm // <code> setsensitivity 73 </code>
+
+TIA Gain - RTIA
+^^^^^^^^^^^^^^^
+
+The RTIA resistor value should be selected so that it maximizes the ADC input range of ±900 mV. The RTIA value is calculated using following equation:
 
 .. container:: centeralign
 
    :math:`R_{TIA}=0.9V/Sensitivity \times Max_Range`
 
 
+where: 0.9 V is ADC input range, *Sensitivity* is defined as A/ppm and *Max_Range* is the sensor’s maximum range in ppm.
 
-where:
-  0.9 V is ADC input range,
-  *\ Sensitivity// is defined as A/ppm and
-| *Max_Range* is the sensor’s maximum range in ppm.
-| From the table below, select the closest lower value to the calculated RTIA value.
+From the table below, select the closest lower value to the calculated RTIA value.
 
 ============== === === ==== ==== ==== ==== ==== ==== ====
 <rtia> value   0   1   2    3    4    5    6    7    8
@@ -382,20 +399,20 @@ Resistor [ohm] 12k 16k 20k  24k  30k  32k  40k  48k  64k
 Resistor [ohm] 85k 96k 100k 120k 128k 160k 196k 256k 512k
 ============== === === ==== ==== ==== ==== ==== ==== ====
 
-| 
-| *Example - CO sensor:
-  Sensitivity = 73 nA/ppm
-  Max_Range = 500 ppm
+
+| *Example - CO sensor: Sensitivity = 73 nA/ppm Max_Range = 500 ppm
 
 .. container:: centeralign
 
    :math:`\displaystyle R_{TIA}=0.\frac{9}{73} \times 10^{-9} \times 500=0.\frac{9}{3}.65 \times {10^{-5}} approx 24.7 k \Omega`
 
 
+Closest lower value to 24.7 kΩ is 24 kΩ, i.e.* **<rtia> = 12**\ *.* <code> setrtia 12 </code>
 
-Closest lower value to 24.7 kΩ is 24 kΩ, i.e.* **<rtia> = 12**\ *.*
-| <code> setrtia 12 </code>
-| === Load Resistor - RLOAD === The load resistor value can be obtained from the sensor datasheet. If there is no exact match between the datasheet value and table below, select the closest value.
+Load Resistor - RLOAD
+^^^^^^^^^^^^^^^^^^^^^
+
+The load resistor value can be obtained from the sensor datasheet. If there is no exact match between the datasheet value and table below, select the closest value.
 
 ============== = == == == === === === ===
 <rload> value  0 1  2  3  4   5   6   7
@@ -403,109 +420,116 @@ Closest lower value to 24.7 kΩ is 24 kΩ, i.e.* **<rtia> = 12**\ *.*
 Resistor [ohm] 0 10 30 50 100 1k6 3k1 3k6
 ============== = == == == === === === ===
 
-| // Example - CO sensor:
-| Datasheet value is 47 Ω. The closest available value is 50 Ω:*
-  <code> setrload 3 </code>
-  === Measurement Time === The EC sensor is sampled by the ADC with a certain time period, at which it performs an average of 10 samples, each 2.2 ms long. Default value of this time period is 500 ms, but can be configured to in the range of 50 - 32 000 ms.
-  * Example: setting measurement period to 1000 ms // <code> setmeastime 1000 </code>
-| === Reading Sensor Configuration === Once the configuration has been performed, use the *readconfigs* command to verify that configuration is complete. This command reads configuration of all detected sensors.
-| <code> readconfigs</code>
+// Example - CO sensor: Datasheet value is 47 Ω. The closest available value is 50 Ω:// <code> setrload 3 </code>
+
+Measurement Time
+^^^^^^^^^^^^^^^^
+
+The EC sensor is sampled by the ADC with a certain time period, at which it performs an average of 10 samples, each 2.2 ms long. Default value of this time period is 500 ms, but can be configured to in the range of 50 - 32 000 ms.
+
+// Example: setting measurement period to 1000 ms // <code> setmeastime 1000 </code>
+
+Reading Sensor Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once the configuration has been performed, use the *readconfigs* command to verify that configuration is complete. This command reads configuration of all detected sensors. <code> readconfigs</code>
 
 Reading Sensor Data
 ~~~~~~~~~~~~~~~~~~~
 
-| Once all the sensors are configured, sensor data can be obtained. Temperature and humidity data from on-board sensor can be read one value at a time with dedicated commands. Gas data are read as a continuous stream with configurable update rate.
+Once all the sensors are configured, sensor data can be obtained. Temperature and humidity data from on-board sensor can be read one value at a time with dedicated commands. Gas data are read as a continuous stream with configurable update rate.
 
 Start ADC sampling
 ^^^^^^^^^^^^^^^^^^
 
-| This local command instructs the ADC of selected sensor to start sampling the sensor at the time interval configured by the *setmeastime* command.
-| <code> startmeas </code>
-| **Note:** It is not needed to run this command as a part of sensor initialization. ADC sampling starts automatically, default value of 500 ms is used.
-| === Stop ADC sampling === This local command instructs the ADC of selected sensor to stop sampling the sensor.
-| <code> stopmeas </code>
-| === Start reading gas sensor data === Use this global command to start reading gas sensor data from all sensors.
-| <code> readsensors</code>
-| The data is read back as a continuous stream in a following format:
-| |image9|
+This local command instructs the ADC of selected sensor to start sampling the sensor at the time interval configured by the *setmeastime* command. <code> startmeas </code> **Note:** It is not needed to run this command as a part of sensor initialization. ADC sampling starts automatically, default value of 500 ms is used.
+
+Stop ADC sampling
+^^^^^^^^^^^^^^^^^
+
+This local command instructs the ADC of selected sensor to stop sampling the sensor. <code> stopmeas </code>
+
+Start reading gas sensor data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use this global command to start reading gas sensor data from all sensors. <code> readsensors</code> The data is read back as a continuous stream in a following format:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_readsensors.png
+   :align: center
+   :width: 600px
 
 Stop reading gas sensor data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| Data stream can be stopped at any time using the *stopread* command.
-| <code> stopread </code>
+Data stream can be stopped at any time using the *stopread* command. <code> stopread </code>
 
 Set stream update rate
 ^^^^^^^^^^^^^^^^^^^^^^
 
-| The update rate of the data stream is configurable in the range of 1 – 3600 seconds. Stop the data stream before using this command.
-| *Example: setting update rate to 5 seconds*
-| <code> setupdaterate 5 </code>
+The update rate of the data stream is configurable in the range of 1 – 3600 seconds. Stop the data stream before using this command. *Example: setting update rate to 5 seconds* <code> setupdaterate 5 </code>
 
 Read temperature
 ^^^^^^^^^^^^^^^^
 
-| This local command prints temperature value from the temperature & humidity sensor on gas sensor daughter board.
-| <code> readtemp </code>
+This local command prints temperature value from the temperature & humidity sensor on gas sensor daughter board. <code> readtemp </code>
 
 Read humidity
 ^^^^^^^^^^^^^
 
-| This local command prints humidity value from the temperature & humidity sensor on gas sensor daughter board.
-| <code> readhum </code>
+This local command prints humidity value from the temperature & humidity sensor on gas sensor daughter board. <code> readhum </code>
 
 Sensor Diagnostics
 ~~~~~~~~~~~~~~~~~~
 
-| This reference design supports two diagnostics measurements of electrochemical sensors:
-| \* Electrochemical Impedance Spectroscopy (EIS)
+This reference design supports two diagnostics measurements of electrochemical sensors:
 
+-  Electrochemical Impedance Spectroscopy (EIS)
 -  Bias voltage pulse test
-
-| 
 
 Electrochemical Impedance Spectroscopy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| The EIS test is a diagnostics method where sensor impedance is measured at various frequencies of AC signal injected into the electrochemical sensor itself. The default set of frequencies supported by the sensor daughter board firmware is:
-| 1kHz, 5kHz, 10kHz, 20kHz, 30kHz, 40kHz, 50kHz, 60kHz, 70kHz, 90kHz, 160kHz and 200kHz.
-| **Note:** It is possible to add additional frequencies to the EIS test. However, this has to be accounted for in both gas sensor daughter board firmware and ADICUP3029 firmware.
-| The test is executed by following these steps:
-| \* Run the EIS test (*runeis*)
+The EIS test is a diagnostics method where sensor impedance is measured at various frequencies of AC signal injected into the electrochemical sensor itself. The default set of frequencies supported by the sensor daughter board firmware is: 1kHz, 5kHz, 10kHz, 20kHz, 30kHz, 40kHz, 50kHz, 60kHz, 70kHz, 90kHz, 160kHz and 200kHz.
 
+**Note:** It is possible to add additional frequencies to the EIS test. However, this has to be accounted for in both gas sensor daughter board firmware and ADICUP3029 firmware.
+
+The test is executed by following these steps:
+
+-  Run the EIS test (*runeis*)
 -  Wait for at least 5 seconds until the test is finished
 -  Read the test results (*readeis*)
 
-| 
-| <code> runeis </code>
-| <code> readeis </code> The results of the EIS test are in a format shown below. The values are comma delimited to enable importing the data to Microsoft Excel or similar tool for further processing.
-| Bode magnitude and Bode phase values are printed for every measured frequency.
-| |image10|
-| To obtain **full set** of results including all magnitudes and impedances, use the following command: <code> readeisfull </code> |image11|
-| The full set of EIS results contains the following values:
-| \* *Frequency [Hz]* - Frequency at which the data point was taken.
-| \* *Rload+Rsens_real* - Real part of impedance of the sensor and the load resistor.
-| \* *Rload+Rsens_imag* - Imaginary part of impedance of the sensor and the load resistor.
-| \* *Rload_real* - Real part of impedance of the load resistor only.
-| \* *Rload_imag* - Imaginary part of impedance of the load resistor only.
-| \* *Rcal_real* - Real part of impedance of the calibration resistor Rcal.
-| \* *Rcal_imag* - Imaginary part of impedance of the calibration resistor Rcal.
-| \* *Mag_Rsense+Rload [Ohm]* - Impedance of the sensor and the load resistor.
-| \* *Mag_Rload [Ohm]* - Impedance of the load resistor.
-| \* *Mag_Rcal [Ohm]* - Impedance of the calibration resistor Rcal.
+<code> runeis </code> <code> readeis </code> The results of the EIS test are in a format shown below. The values are comma delimited to enable importing the data to Microsoft Excel or similar tool for further processing. Bode magnitude and Bode phase values are printed for every measured frequency.
 
+
+|image6|
+
+To obtain **full set** of results including all magnitudes and impedances, use the following command: <code> readeisfull </code>
+
+
+|image7|
+
+The full set of EIS results contains the following values:
+
+-  *Frequency [Hz]* - Frequency at which the data point was taken.
+-  *Rload+Rsens_real* - Real part of impedance of the sensor and the load resistor.
+-  *Rload+Rsens_imag* - Imaginary part of impedance of the sensor and the load resistor.
+-  *Rload_real* - Real part of impedance of the load resistor only.
+-  *Rload_imag* - Imaginary part of impedance of the load resistor only.
+-  *Rcal_real* - Real part of impedance of the calibration resistor Rcal.
+-  *Rcal_imag* - Imaginary part of impedance of the calibration resistor Rcal.
+-  *Mag_Rsense+Rload [Ohm]* - Impedance of the sensor and the load resistor.
+-  *Mag_Rload [Ohm]* - Impedance of the load resistor.
+-  *Mag_Rcal [Ohm]* - Impedance of the calibration resistor Rcal.
 -  *Magnitude* - Magnitude of the complex impedance of the sensor. This is the ratio of the voltage amplitude to the current amplitude.
-   \* *Phase [deg]* - Phase of the complex impedance of the sensor by which the current lags the voltage.
-   More information about the AC impedance measurement can be found in the :adi:`ADuCM355 Hardware Reference Manual <media/en/technical-documentation/user-guides/ADuCM355-Hardware-Reference-Manual-UG-1262.pdf#%5B%7B%22num%22%3A477%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C34%2C530%2C0%5D>`.
+-  *Phase [deg]* - Phase of the complex impedance of the sensor by which the current lags the voltage.
 
-| 
+More information about the AC impedance measurement can be found in the :adi:`ADuCM355 Hardware Reference Manual <media/en/technical-documentation/user-guides/ADuCM355-Hardware-Reference-Manual-UG-1262.pdf#%5B%7B%22num%22%3A477%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C34%2C530%2C0%5D>`.
 
 Bias voltage pulse test
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-| This diagnostics method can be used, for example, to detect open circuit, i.e. unplugged sensor. This proved to be a common issue with some portable instruments which can fall on the ground and sensor can disconnect from its socket.
-| The principle of this test is applying small voltage pulse (typically 1 mV for <200 ms) to the sensor electrodes and measuring the current response to this pulse.
-| Test execution procedure follows these steps:
+This diagnostics method can be used, for example, to detect open circuit, i.e. unplugged sensor. This proved to be a common issue with some portable instruments which can fall on the ground and sensor can disconnect from its socket. The principle of this test is applying small voltage pulse (typically 1 mV for <200 ms) to the sensor electrodes and measuring the current response to this pulse. Test execution procedure follows these steps:
 
 -  Set pulse amplitude (*pulseamplitude*)
 -  Set pulse duration (*pulseduration*)
@@ -513,14 +537,16 @@ Bias voltage pulse test
 -  Wait for at least 10 seconds
 -  Read the test results (*readpulse*)
 
-| 
-| // Example: setting pulse amplitude to 1 mV *
-  <code> pulseamplitude 1 </code>
-  * Example: setting pulse duration to 100 ms //
-| <code> pulseduration 100 </code>
-| <code> runpulse </code> <code> readpulse </code>
-| The example below shows portion of the pulse test results. The values are comma delimited to enable importing the data to Microsoft Excel or similar tool for further processing.
-| |image12|
+// Example: setting pulse amplitude to 1 mV // <code> pulseamplitude 1 </code>
+
+// Example: setting pulse duration to 100 ms // <code> pulseduration 100 </code>
+
+<code> runpulse </code> <code> readpulse </code>
+
+The example below shows portion of the pulse test results. The values are comma delimited to enable importing the data to Microsoft Excel or similar tool for further processing.
+
+
+|image8|
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -554,25 +580,17 @@ Registration
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_complete_setup_no_sensors.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0428/shield_board.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0428/eval-adicup3029-angle.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn-0429_daughterboard.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0428/shield_board.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0428/eval-adicup3029-angle.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn-0429_daughterboard.jpg
    :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_blockdiagram.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_gas_sensor_dimensions.png
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_p1_pinout.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_p1_pinout.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_fw_download.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_fw_download.jpg
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_readsensors.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_eis.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_eis.png
-   :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_eisfull.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_eisfull.png
    :width: 800px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_pulse.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_pulse.png
    :width: 600px

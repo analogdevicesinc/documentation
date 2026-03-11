@@ -3,22 +3,26 @@
 Chime Frequency
 ===============
 
-| |chimelin.png|
-| |chimelinwindow.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/chimelin.png
+   :alt: chimelin.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/chimelinwindow.png
+   :alt: chimelinwindow.png
+   :width: 600px
 
 Description
 -----------
 
 The chime Frequency algorithm has fully programmable frequency envelopes. The envelopes are accessible by clicking the cell’s icon The length of the chime is controlled by the Maximum Time control, which is set in milliseconds. In Chime frequency envelope window points on the curve can be moved by click-dragging. New points can be added by double-clicking. Points can be removed by right-clicking and selecting “remove point.” In this case, the point closest to the mouse cursor will be removed. Chime Frequency window must have at least 3 points. Point values can be fine-tuned using the text input boxes on the right side of the envelope control window. When the control input goes to 1, the chime begins. When the control input goes to 0, the chime output stops, regardless of whether the envelope has completed or not.
 
-| 
-| ===== Variants =====
+Variants
+--------
 
 -  Chime FrequencyLin
 -  Chime FrequencyLog
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +-----------------------+------------+-----------------------+---------------+------------------+
 | Name                  | ADSP-214xx | ADSP-215xx/ADSP-SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -40,7 +44,7 @@ Name                 Type    Description
 Enable/Disable chime Control Control Input
 ==================== ======= =============
 
-| 
+
 | ==== Output ====
 
 ======= ======= ===============================
@@ -50,7 +54,7 @@ Output0 Audio   chime output
 Output1 Control chime end flag (only for SHARC)
 ======= ======= ===============================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +-------------------------+---------------+-------------------+-------------------------------------------------------------------------------+
@@ -88,9 +92,7 @@ Output1 Control chime end flag (only for SHARC)
 
 | 
 | ===== DSP Parameter Computation ===== sin_c=sin(initialFrequency[0] \* pi))
-| cos_c=cos(initialFrequency[0] \* pi))
-| PhaseInc=initialFrequency[0] \* 2.0 / fs
 
-.. |chimelin.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/chimelin.png
-.. |chimelinwindow.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/chimelinwindow.png
-   :width: 600px
+cos_c=cos(initialFrequency[0] \* pi))
+
+PhaseInc=initialFrequency[0] \* 2.0 / fs

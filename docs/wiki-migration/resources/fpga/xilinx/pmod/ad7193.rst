@@ -34,16 +34,14 @@ Required Software
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+
 
 .. tip::
 
    If you are not familiar with LX9 and/or Xilix tools, please visit
 
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
-   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
-   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
-   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details. If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
 
@@ -99,22 +97,39 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 If programming was successful, you should be seeing messages appear on the terminal window as shown in the figures below. After programming the AD7193, the program will display the values of all internal registers. After that, it will go through 5 Demo Modes.
 
-| |Display internal registers values|
-| **Read Voltage Values referenced to AINCOM, UNIPOLAR Mode.**
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu1.jpg
+   :alt: Display internal registers values
+   :width: 600px
 
-| |Demo mode 1|
-| **Read Voltage Values referenced to AINCOM, BIPOLAR Mode.**
+**Read Voltage Values referenced to AINCOM, UNIPOLAR Mode.**
 
-| |Demo mode 2|
-| **Read Differential Voltage Values, UNIPOLAR Mode.**
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu2.jpg
+   :alt: Demo mode 1
+   :width: 600px
 
-| |Demo mode 3|
-| **Read Differential Voltage Values, BIPOLAR Mode.**
+**Read Voltage Values referenced to AINCOM, BIPOLAR Mode.**
 
-| |Demo mode 4|
-| **Read Die Temperature Value.**
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu3.jpg
+   :alt: Demo mode 2
+   :width: 600px
 
-| |Demo mode 5|
+**Read Differential Voltage Values, UNIPOLAR Mode.**
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu4.jpg
+   :alt: Demo mode 3
+   :width: 600px
+
+**Read Differential Voltage Values, BIPOLAR Mode.**
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu5.jpg
+   :alt: Demo mode 4
+   :width: 600px
+
+**Read Die Temperature Value.**
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu6.jpg
+   :alt: Demo mode 5
+   :width: 600px
 
 Using the reference design
 --------------------------
@@ -161,21 +176,25 @@ The hardware SPI access allows sending and receiving data from the AD7193, progr
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \**Avnet LX-9 MicroBoard: **
-     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7193_lx9.zip>`_\ **
-     **\ Digilent Nexys™3:**
-     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7193_nexys3.zip>`_\ **
-     **\ Avnet ZedBoard:\*\*
-   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
-   | \* :git-no-OS:`PmodAD5 Driver Files <Pmods/PmodAD5>`
-   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
-   | \* :git-no-OS:`Programming Script <Pmods/PmodAD5/bin>`
-   |
+   
+   **Avnet LX-9 MicroBoard:**
+   
+   -  `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7193_lx9.zip>`_
+   
+   **Digilent Nexys™3:**
+   
+   -  `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7193_nexys3.zip>`_
+   
+   **Avnet ZedBoard:**
+   
+   -  :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   -  :git-no-OS:`PmodAD5 Driver Files <Pmods/PmodAD5>`
+   -  :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
+   -  :git-no-OS:`Programming Script <Pmods/PmodAD5/bin>`
+   
 
 
 More information
@@ -186,16 +205,4 @@ More information
 
 |//ez.analog.com/community/feeds/allcontent/atom|
 
-.. |Display internal registers values| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu1.jpg
-   :width: 600px
-.. |Demo mode 1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu2.jpg
-   :width: 600px
-.. |Demo mode 2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu3.jpg
-   :width: 600px
-.. |Demo mode 3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu4.jpg
-   :width: 600px
-.. |Demo mode 4| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu5.jpg
-   :width: 600px
-.. |Demo mode 5| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu6.jpg
-   :width: 600px
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

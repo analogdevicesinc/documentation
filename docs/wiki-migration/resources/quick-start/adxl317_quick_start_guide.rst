@@ -12,10 +12,7 @@ The ADXL317 reports positive acceleration when it is accelerated in the directio
    :align: center
    :width: 200px
 
-.. container:: center lo
-
-   **Figure 1:** Sensing axis.
-
+**Figure 1:** Sensing axis.
 
 Gravity, which is a constant +1 *g* acceleration force, also factors into the overall response of the ADXL317. Figure 2 shows the output response to gravity. The user must be careful to account for gravity, because it can affect the output of one or more of the sensor axes.
 
@@ -23,10 +20,7 @@ Gravity, which is a constant +1 *g* acceleration force, also factors into the ov
    :align: center
    :width: 500px
 
-.. container:: center lo
-
-   **Figure 2:** Acceleration response with respect to gravity.
-
+**Figure 2:** Acceleration response with respect to gravity.
 
 The ADXL317 is supplied in a small, thin, 5 mm × 5 mm × 1.45 mm, 32-pin LFCSP package. The device is qualified for use in automotive applications over the entire operating temperature range of –40°C to +125°C.
 
@@ -41,10 +35,7 @@ The figure bellow shows the recommended application circuit for this device.
    :align: center
    :width: 500px
 
-.. container:: center lo
-
-   **Figure 3:** Recommended application circuit. ALT_ADDR may be grounded or connected to VDD. The exposed pad on the bottom of the package must be connected to ground.
-
+**Figure 3:** Recommended application circuit. ALT_ADDR may be grounded or connected to VDD. The exposed pad on the bottom of the package must be connected to ground.
 
 The ADXL317 counts with two digital interfaces i2C and I2S. In both cases, the ADXL317 operates as a slave device, receiving commands and responding with requested data. These two ports operate independently and use separate pins. Therefore, these ports can be used simultaneously.
 
@@ -83,54 +74,26 @@ Note that 32-bit I2S/TDM2 mode requires two data pins, whereas the other three m
 
 There are a few tips that we recommend when initializing the ADXL317:
 
-.. container:: hi
+**1)** After the part is powered up (VCC = 3.3V), wait 1ms before attempting to read/write its register map.
 
-   \ **1)**\
+**2)** After the startup time has passed (1ms), confirm the validity of a I2C communication sequence by reading the DEVID_ID0 register (Address 0x00). The DEVID register is read-only, and contains the value 0x22. If the data read from DEVID_ID0 is not 0x22, it indicates that either the physical connection or command sequence is incorrect.
 
-
-After the part is powered up (VCC = 3.3V), wait 1ms before attempting to read/write its register map.
-
-.. container:: hi
-
-   \ **2)**\
-
-
-After the startup time has passed (1ms), confirm the validity of a I2C communication sequence by reading the DEVID_ID0 register (Address 0x00). The DEVID register is read-only, and contains the value 0x22. If the data read from DEVID_ID0 is not 0x22, it indicates that either the physical connection or command sequence is incorrect.
-
-.. container:: hi
-
-   \ **3)**\
-
-
-All attempts to write to any of the device writeable registers are ignored until the proper key is written to the USER_REG_KEY register (Address 0x80). This protects the device from entering into an unexpected state during potential transient activity on the I2C bus. To unlock all writeable registers complete the following procedure:
+**3)** All attempts to write to any of the device writeable registers are ignored until the proper key is written to the USER_REG_KEY register (Address 0x80). This protects the device from entering into an unexpected state during potential transient activity on the I2C bus. To unlock all writeable registers complete the following procedure:
 
 -  Write 0xBC to the USER_REG_KEY register (Address 0x80).
 -  Write 0x43 to the USER_REG_KEY register (Address 0x80).
 
 After writing these two values, all writeable registers are unlocked and can be written to as normal. The two writes must be performed using two separate, single-byte writes. A multibyte write cannot be used.
 
-.. container:: hi
+**4)** Each axis has its own digital output filter stage (CIC filter, low pass IIR filter and high pass filter). By default all axis are configured for the higher bandwidth setting (4kHz). Modify the filters settings to adjust your needs.
 
-   \ **4)**\
-
-
-Each axis has its own digital output filter stage (CIC filter, low pass IIR filter and high pass filter). By default all axis are configured for the higher bandwidth setting (4kHz). Modify the filters settings to adjust your needs.
-
-.. container:: hi
-
-   \ **5)**\
-
-
-I2S/TDM package format, clock rate, frame shape and data output pin can be configured by writing on the I2S_CFG0, I2S_CFG1, and CLOCK_RATE register. The Figure 4 shows an example of the timing diagram for the following registers configuration: I2S_CFG0 = 0x91, I2S_CFG1 = 0x01 and CLOCK_RATE = 0x01. This configuration results on a 3.072MHz 16-bits TDM4 package format, with data transmission beginning on the falling edge of SYNC, and SYNC asserted for one BCLK cycle only.
+**5)** I2S/TDM package format, clock rate, frame shape and data output pin can be configured by writing on the I2S_CFG0, I2S_CFG1, and CLOCK_RATE register. The Figure 4 shows an example of the timing diagram for the following registers configuration: I2S_CFG0 = 0x91, I2S_CFG1 = 0x01 and CLOCK_RATE = 0x01. This configuration results on a 3.072MHz 16-bits TDM4 package format, with data transmission beginning on the falling edge of SYNC, and SYNC asserted for one BCLK cycle only.
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/xl317_tdm4_2.png
    :align: center
    :width: 600px
 
-.. container:: center lo
-
-   **Figure 4:** Timing diagram for I2S_CFG0 = 0x91, I2S_CFG1 = 0x01 and CLOCK_RATE = 0x01.
-
+**Figure 4:** Timing diagram for I2S_CFG0 = 0x91, I2S_CFG1 = 0x01 and CLOCK_RATE = 0x01.
 
 Data format
 -----------

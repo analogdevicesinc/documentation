@@ -3,9 +3,16 @@
 Sample to Block
 ===============
 
-| |sample2block.png|
-| ===== Description ===== This module is used to transition from sample processing schematic to block processing schematic.
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sample2block.png
+   :alt: sample2block.png
+
+Description
+-----------
+
+This module is used to transition from sample processing schematic to block processing schematic.
+
+Targets Supported
+-----------------
 
 +-----------------+------------+------------------+---------------+------------------+
 | Name            | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -17,7 +24,7 @@ Sample to Block
 | ===== Pins =====
 
 Input
------
+~~~~~
 
 ===== ===== ====================
 Name  Type  Description
@@ -26,7 +33,7 @@ Input Audio Sample Input channel
 ===== ===== ====================
 
 Output
-------
+~~~~~~
 
 ====== ===== ====================
 Name   Type  Description
@@ -34,7 +41,7 @@ Name   Type  Description
 Output Audio Block Output channel
 ====== ===== ====================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +---------------+---------------+------------------------------+-------------------------------------+
@@ -47,5 +54,3 @@ Output Audio Block Output channel
 
 | 
 | ===== DSP Parameters ===== NO DSP parameters
-
-.. |sample2block.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sample2block.png

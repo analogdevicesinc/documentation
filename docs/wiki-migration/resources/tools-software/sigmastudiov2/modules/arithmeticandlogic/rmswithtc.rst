@@ -3,14 +3,16 @@
 RMS With TC
 ===========
 
-| 
-| |rmswtc.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/rmswtc.png
+   :alt: rmswtc.png
 
 Description
 -----------
 
-| The RMSWithTC block computes the RMS of the input signals with time constant specified in the text field.
-| ===== Targets Supported =====
+The RMSWithTC block computes the RMS of the input signals with time constant specified in the text field.
+
+Targets Supported
+-----------------
 
 ========= ========== ================ ============= ================
 Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -18,7 +20,7 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 RMSWithTC S/B        S/B              NA            B
 ========= ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -65,5 +67,3 @@ DSP Parameter Computation
 -------------------------
 
 TimeConstant = ABS(1-10^(TimeConstant(linear)/(10\*FS))) Where FS is the Sampling rate
-
-.. |rmswtc.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/rmswtc.png

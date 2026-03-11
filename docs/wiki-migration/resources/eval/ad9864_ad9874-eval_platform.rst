@@ -8,28 +8,28 @@ This wiki site includes information about the :adi:`AD9864` and :adi:`AD9874` ev
 
 Any questions can be submitted via Analog Device's :ez:`EZONE <welcome>`.
 
-| 
-| ===== Features =====
+Features
+--------
 
 -  Full featured “Plug-and-Play” evaluation board
 -  Enables quick start-up of evaluation platform to operational state after software installation.
 -  Only requires IF input, +5 V Supply, and HSC-ADC-EVALCZ capture board.
 
-\* Flexible design allowing user to optimize for different modes of operation
+- Flexible design allowing user to optimize for different modes of operation
 
 -  LO and CLK signals can be externally applied or internally derived from on-board VCO circuits.
 -  Reference for LO and CLK synthesizer can be supplied by on-board 26 MHz XO or external source.
 -  IF input supports 3-element matching network
 -  Digital I/O interfaces to the HSC-ADC-EVALCZ or other FPGA, DSP, or uC platform
 
-\* PCB layout can be used as guideline for end product layout.
+- PCB layout can be used as guideline for end product layout.
 
-\* Dedicated software GUI enables simple control and configuration of the device.
+- Dedicated software GUI enables simple control and configuration of the device.
 
-\* Data analysis supported by ADI’s Visual Analog software.
+- Data analysis supported by ADI’s Visual Analog software.
 
-| 
-| ===== Helpful Links =====
+Helpful Links
+-------------
 
 -  :adi:`AD9864`\ and :adi:`AD9874` data sheet (:adi:`HSC-ADC-EVALCZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HSC-ADC-EVALCZ.html#eb-overview>`)
 -  High Speed ADC Capture Evaluation Kit Rev C
@@ -37,20 +37,25 @@ Any questions can be submitted via Analog Device's :ez:`EZONE <welcome>`.
 -  :adi:`ADI RF Impedance Matching Tool <en/design-center/interactive-design-tools/rf-impedance-matching-calculator.html>`
 -  `ADIsimRF Software <https://form.analog.com/form_pages/rfcomms/adisimrf.aspx>`_
 
-| 
-
 AD9864/AD9874 Evaluation Platform User Guides
 ---------------------------------------------
 
-| `Users Guide for the AD9864/AD9874[pdf file <https://wiki.analog.com/_media/resources/eval/user-guides/ad9864_ad9874_users_guide.pdf>`_]
-| ===== Evaluation Board PCB Files ===== AD9864/AD9874 Evalaution Board Schematic Board 15006 Rev D `02-059396-01-d.pdf <https://wiki.analog.com/_media/resources/eval/02-059396-01-d.pdf>`_
-| AD9864/AD9874 Evaluation Board Gerber Files Board 15006 Rev C `GERBERS [Zip File <https://wiki.analog.com/_media/resources/eval/user-guides/gerber_15006c.zip>`_]
-| AD9864/AD9874 Evaluation Board Bill of Materials 15006 Rev D `05-059396-01-d.zip <https://wiki.analog.com/_media/resources/eval/05-059396-01-d.zip>`_
-| ===== AD9864/AD9874 Software Files ===== AD9864/AD9874 DemoTool Software Installation Files `AD9864_74 SPI GUI [Zip File <https://wiki.analog.com/_media/resources/eval/user-guides/ad9864_74_spi_gui_.zip>`_]
+`Users Guide for the AD9864/AD9874[pdf file <https://wiki.analog.com/_media/resources/eval/user-guides/ad9864_ad9874_users_guide.pdf>`_]
 
-| ADI Visual Analog Software Installation Files :adi:`ADI Visual Analog <en/design-center/interactive-design-tools/visualanalog.html>`
+Evaluation Board PCB Files
+--------------------------
+
+| AD9864/AD9874 Evalaution Board Schematic Board 15006 Rev D `02-059396-01-d.pdf <https://wiki.analog.com/_media/resources/eval/02-059396-01-d.pdf>`_ AD9864/AD9874 Evaluation Board Gerber Files Board 15006 Rev C `GERBERS [Zip File <https://wiki.analog.com/_media/resources/eval/user-guides/gerber_15006c.zip>`_]
+| AD9864/AD9874 Evaluation Board Bill of Materials 15006 Rev D `05-059396-01-d.zip <https://wiki.analog.com/_media/resources/eval/05-059396-01-d.zip>`_
+
+AD9864/AD9874 Software Files
+----------------------------
+
+AD9864/AD9874 DemoTool Software Installation Files `AD9864_74 SPI GUI [Zip File <https://wiki.analog.com/_media/resources/eval/user-guides/ad9864_74_spi_gui_.zip>`_]
+
+ADI Visual Analog Software Installation Files :adi:`ADI Visual Analog <en/design-center/interactive-design-tools/visualanalog.html>`
 
 Ibis Model Files
 ----------------
 
-| AD9864/AD9874 Ibis Model `AD9864_74 Ibis [ZIP file <https://wiki.analog.com/_media/resources/eval/user-guides/ad9864_r1.zip>`_]
+AD9864/AD9874 Ibis Model `AD9864_74 Ibis [ZIP file <https://wiki.analog.com/_media/resources/eval/user-guides/ad9864_r1.zip>`_]

@@ -175,22 +175,16 @@ Renesas RX62N Quick Start Guide
 
 This section contains a description of the steps required to run the AD7730 demonstration project on a Renesas RX62N platform.
 
-.. _required-hardware-1:
-
 Required Hardware
 -----------------
 
 -  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
 -  :adi:`EVAL-AD7730LEBZ(ADI) <AD7730L>`
 
-.. _required-software-1:
-
 Required Software
 -----------------
 
 -  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -211,8 +205,6 @@ An EVAL-AD7730LEBZ board has to be interfaced with the Renesas Demonstration Kit
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7730_rx62n.jpg
    :align: center
 
-.. _reference-project-overview-1:
-
 Reference Project Overview
 --------------------------
 
@@ -220,8 +212,6 @@ The reference project initializes the device, calibrates it and performs single 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7730_rx62n_screen.jpg
    :align: center
-
-.. _software-project-setup-1:
 
 Software Project Setup
 ----------------------

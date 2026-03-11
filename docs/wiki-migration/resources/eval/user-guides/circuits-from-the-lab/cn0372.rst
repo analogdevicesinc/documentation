@@ -134,47 +134,29 @@ Main Tab
    \ **NOTE:** Blocks 6,7,8 and 10 have expand buttons (|image10|) that when clicked brings up the window shown in these blocks' description.
 
 
--  **Analysis Ch**
-
-   -  Selects the channel analyzed and the channel whose parametric performance data is displayed in the plot analysis blocks.
-
--  **Samples**
-
-   -  Selects number of samples to be taken in a single acquisition.
-
--  **Single Capture**
+| \**Analysis Ch**
 
 ::
 
-     *Initiates the sampling and readback of the defined number of measurements. 
-   * **Continuous Capture**
-     *Continuously captures and updates the display and chart. Click a second time to stop sampling. 
-   * **Device Status**
-     *Displays the device generic and operating mode.
-   * **I/P MUX**
-     *Writes to the channel register. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:15.png?direct|}}
-   * **2.5 Vref** 
-     *Source of the Reference Input. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:16.png?direct|}} 
-   * **Control Logic and Registers**
-     *Writes to the configuration Register. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:17.png?direct|}}   
-   * **SCL Rate**
+     * Selects the channel analyzed and the channel whose parametric performance data is displayed in the plot analysis blocks.
+   **Samples**
+     * Selects number of samples to be taken in a single acquisition.
+   **Single Capture** Initiates the sampling and readback of the defined number of measurements.
+   **Continuous Capture** Continuously captures and updates the display and chart. Click a second time to stop sampling.
+   **Device Status** Displays the device generic and operating mode.
+   **I/P MUX** Writes to the channel register. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:15.png?direct|}}
+   **2.5 Vref** Source of the Reference Input. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:16.png?direct|}}
+   **Control Logic and Registers** Writes to the configuration Register. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:17.png?direct|}}
+   **SCL Rate**
      * Selects the SCL clock rate. Standard mode is 100 kHz. Fast mode is 400 kHz. Fast mode is the default configuration.
-   * **Alert Register**
-     *Writes to the Alert Register \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:18.png?direct|}}   
-   * **DPS Duty Cycle**
-     *Duty cycle dropdown menu. Options from 10% to 90%.
-   * **Reference Settings**
-     *Displays current reference setting. If **External Reference** is selected, provide an off-board external reference. If this option is selected, the supplied reference value must be entered in **Ref. Value**.
-   * **DPS** 
-     *Toggles dynamic power scaling when [[:adi:`ADA4805-1|ADA4805-1]]` is used.
-   * **Amp PD**
-     *Toggles power down of buffer when [[:adi:`ADA4805-1|ADA4805-1]]` is used.
-   * **Flash LED**
-     *Flashes **LED1A** on the **SDP-B board**, useful for debugging purposes.
-   * **Reset**
-     *Resets ADC and places the default configuration in the control register. 
-   * **Status Bar**
-     *Displays a message to the user detailing the current state of the software.
+   **Alert Register** Writes to the Alert Register \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:18.png?direct|}}
+   **DPS Duty Cycle** Duty cycle dropdown menu. Options from 10% to 90%.
+   **Reference Settings** Displays current reference setting. If **External Reference** is selected, provide an off-board external reference. If this option is selected, the supplied reference value must be entered in **Ref. Value**.
+   **DPS** Toggles dynamic power scaling when [[:adi:`ADA4805-1|ADA4805-1]]` is used.
+   **Amp PD** Toggles power down of buffer when [[:adi:`ADA4805-1|ADA4805-1]]` is used.
+   **Flash LED** Flashes **LED1A** on the **SDP-B board**, useful for debugging purposes.
+   **Reset** Resets ADC and places the default configuration in the control register.
+   **Status Bar** Displays a message to the user detailing the current state of the software.
 
 Waveform Tab
 ^^^^^^^^^^^^
@@ -188,10 +170,8 @@ Waveform Tab
 ::
 
      *Selects the channel analyzed and the channel whose parametric performance data is displayed in the plot analysis blocks.
-   * **Alert**
-     *Illuminates if an alert is generated.
-   * **Plot Legend**
-     *Shows all enabled channels. To remove any undesired channel(s) from the plot, deselect that channel.    
+   **Alert** Illuminates if an alert is generated.
+   **Plot Legend** Shows all enabled channels. To remove any undesired channel(s) from the plot, deselect that channel.
 
 Histogram Tab
 ^^^^^^^^^^^^^

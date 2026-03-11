@@ -3,9 +3,10 @@ Accelerometer Demo
 
 The **ADuCM360_demo_adxl362** is an accelerometer demo project for the EVAL-ADICUP360 base board with additional EVAL-ADXL362-ARDZ shield, created using Eclipse based CrossCore Embedded Studios interactive development environment.
 
-| 
-| ===== General description =====
-| The ADuCM360_demo_adxl362 project uses the :doc:`EVAL-ADXL362-ARDZ shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/adxl362>` which has an **ADXL362 3-axis MEMS accelerometer** and a incorporated **NHD-C12832A1Z-NSW-BBW display** (128x32).
+General description
+-------------------
+
+The ADuCM360_demo_adxl362 project uses the :doc:`EVAL-ADXL362-ARDZ shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/adxl362>` which has an **ADXL362 3-axis MEMS accelerometer** and a incorporated **NHD-C12832A1Z-NSW-BBW display** (128x32).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adlx362_adicup360.jpg
    :align: left
@@ -13,9 +14,7 @@ The **ADuCM360_demo_adxl362** is an accelerometer demo project for the EVAL-ADIC
 
 The application reads the \*\* X \*\* , \*\* Y \*\*, and \*\* Z \*\* acceleration registers each **500 [ms]**. The acceleration in the 3 axes is displayed in **[mG]** on the LCD. Also this application demonstrates the usage of the motion switch. Movement zones - **UP**, **DOWN**, **RIGHT**, **LEFT**, **CENTER** - are displayed in the right side of the LCD.
 
-The **EVAL-ADXL362-ARDZ** shield provide an internal temperature sensor as an additional features which is read in the same software loop. The value is displayed in ADC codes or in Celsius degrees. The temperature \*\* Treal \*\* is derived from the ADC readings \*\* Tadc \*\* using the predefined formula:
-
-| 
+The **EVAL-ADXL362-ARDZ** shield provide an internal temperature sensor as an additional features which is read in the same software loop. The value is displayed in ADC codes or in Celsius degrees. The temperature** Treal \*\* is derived from the ADC readings \*\* Tadc \*\* using the predefined formula:
 
 ::
 
@@ -29,8 +28,7 @@ Each **ADXL362** chip requires individual calibration which can be done by setti
 
 The software puts the LCD in a "sleep" mode after **10 sec** if no movement of the boards is present. The system "wakes-up" if the acceleration on any axes is greater than **50 [mG]**. The threshold values can be adjusted by the user (:doc:`See the configuration part </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_adxl362>`).
 
-
-| The acceleration axes, the temperature values and the motion grid are displayed as is presented in the picture on the right.
+The acceleration axes, the temperature values and the motion grid are displayed as is presented in the picture on the right.
 
 Demo Requirements
 -----------------
@@ -54,8 +52,6 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
-|
-
 -  To program the base board, set the jumpers as shown in the next figure. The important jumpers are highlighted in red.\
 
 
@@ -73,8 +69,10 @@ Setting up the hardware
 -  Plug the EVAL-ADXL362-ARDZ shield in the EVAL-ADICUP360 base board.
 -  Power EVAL-ADICUP360 base board via the DEBUG USB port (P14).
 
-| 
-| ===== Obtaining the Source Code ===== There are two basic ways to program the ADICUP360 with the software for the ADXL362.
+Obtaining the Source Code
+-------------------------
+
+There are two basic ways to program the ADICUP360 with the software for the ADXL362.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
@@ -180,8 +178,7 @@ There is a movement plane offset to the right of the LDC screen which shows whic
 
 Also this application demonstrates the usage of the motion switch. The software puts the LCD in a "sleep" mode after **10 sec** if no movement of the boards is present. The system "wakes-up" if the acceleration on any axes is greater than **50 [mG]**. The threshold values can be adjusted by the user (:doc:`by configurating the software </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_adxl362>`).
 
-
-| The acceleration axes, the temperature values and the motion grid are displayed as is presented in the picture on the right.
+The acceleration axes, the temperature values and the motion grid are displayed as is presented in the picture on the right.
 
 How to use the Tools
 --------------------
@@ -201,25 +198,22 @@ For more detailed instructions on importing this application/demo example into t
 Project structure
 -----------------
 
-|
+The **ADuCM360_demo_adxl362** project use basic ARM Cortex-M C/C++ Project structure. This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripheral; port configuration for SPI1, accelerometer sensor and LCD use; SPI read/write functions; sensor monitoring and LCD handle parts.
 
-| The **ADuCM360_demo_adxl362** project use basic ARM Cortex-M C/C++ Project structure. This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripheral; port configuration for SPI1, accelerometer sensor and LCD use; SPI read/write functions; sensor monitoring and LCD handle parts.
-| |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/structure_adxl362_03_09_2015.png
+   :align: left
+   :width: 400px
 
 In the **src** and **include** folders you will find the source and header files related to adxl362 application. You can modify as you wanted those files. The *Communication.c/h* files contain SPI specific data, meanwhile the *ADXL362.c/h* files contain the accelerometer data and the *Lcd.c/h* files contain the LCD related information. Here you can configure:
 
-| 
-| The **RTE** folder contains device and system related files:
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| *End of Document*
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
    :width: 500px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/eval-adxl362-ardz_default_software_config.png
    :width: 360px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/structure_adxl362_03_09_2015.png
-   :width: 400px

@@ -1,8 +1,9 @@
 Appendix A: Diagnostics and Debugging
 =====================================
 
-| :doc:`Click here to return to the A2B SSPLUS STACK USER GUIDE </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide>`
-| Diagnostic and debugging is one of the most powerful aspects of the Stack. Every logged event is timestamped and presented to the PAL for storage or reporting. Internally logged items include:
+:doc:`Click here to return to the A2B SSPLUS STACK USER GUIDE </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide>`
+
+Diagnostic and debugging is one of the most powerful aspects of the Stack. Every logged event is timestamped and presented to the PAL for storage or reporting. Internally logged items include:
 
 -  All I2C transactions
 -  All messages
@@ -80,8 +81,10 @@ Enabling Sequence Chart in Sample Demo Applications
    \ **Figure: Sample Sequence Chart**\
 
 
-| 
-| ===== Capturing Trace Messages ===== In addition to sequence charts, the Stack also provides mechanisms to emit trace messages. Like sequence charts, trace messages are also sent through the logging subsystem of the PAL. It is important that a unique URI be used for trace messages, so the PAL can distinguish between trace messages and sequence charts. Similarly, if one is running two stack contexts concurrently, insure that each context has a unique URI to keep the trace outputs from mixing together.
+Capturing Trace Messages
+------------------------
+
+In addition to sequence charts, the Stack also provides mechanisms to emit trace messages. Like sequence charts, trace messages are also sent through the logging subsystem of the PAL. It is important that a unique URI be used for trace messages, so the PAL can distinguish between trace messages and sequence charts. Similarly, if one is running two stack contexts concurrently, insure that each context has a unique URI to keep the trace outputs from mixing together.
 
 Trace support in the Stack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

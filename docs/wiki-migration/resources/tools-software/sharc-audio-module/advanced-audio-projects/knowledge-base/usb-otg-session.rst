@@ -11,9 +11,7 @@ Details
 
 *This article assumes that the hardware is already up and running and proper connection to the USB port has been established. There are various instructions on setting this up. The* :doc:`Analog Audio </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/examples-analog-audio>` *example is a great place to start.*
 
-*This tutorial uses TeraTerm as the serial interface to your hardware.*
-
-**Follow the instructions below to set up a connection to your hardware:**
+*This tutorial uses TeraTerm as the serial interface to your hardware.**Follow the instructions below to set up a connection to your hardware:**
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+
 | 1. Open TeraTerm and connect to a new Serial Session, connecting to the Port labeled *SC5xx Communications Port* or *FTDI COMxx Port*.                                                | |image8| |image9| OR |image10| |
@@ -29,7 +27,6 @@ Details
 |                                                                                                                                                                                       | |image14|                      |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+
 
---------------
 
 `Knowledge Base#.|Knowledge Base#.|Knowledge Base <https://wiki.analog.com/_media/navigation Knowledge Base#.>`_
 

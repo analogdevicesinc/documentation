@@ -16,11 +16,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| 5 - Resistors
-| 1 - 50KΩ Variable resistor, potentiometer
-| 1 - small signal NMOS transistor (enhancement mode ZVN2110A or CD4007)
+ADALM1000 hardware module Solder-less breadboard 5 - Resistors 1 - 50KΩ Variable resistor, potentiometer 1 - small signal NMOS transistor (enhancement mode ZVN2110A or CD4007)
 
 Directions:
 ~~~~~~~~~~~
@@ -68,8 +64,6 @@ The small signal source resistance is 1/g\ :sub:`m` and can be viewed as being i
 Self-biased configuration with negative feedback.
 -------------------------------------------------
 
-.. _objective-1:
-
 Objective:
 ~~~~~~~~~~
 
@@ -89,8 +83,6 @@ Questions:
 
 How does adding negative feedback help to stabilize the DC operating point? Adding source degeneration
 
-.. _objective-2:
-
 Objective:
 ~~~~~~~~~~
 
@@ -100,8 +92,6 @@ Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
 1 - 5KΩ Variable resistor, potentiometer
-
-.. _directions-1:
 
 Directions:
 ~~~~~~~~~~~
@@ -117,8 +107,6 @@ Disconnect the source of M\ :sub:`1` from ground and insert R\ :sub:`S`, a 5KΩ 
    Figure 3 Source degeneration added
 
 
-.. _questions-1:
-
 Questions:
 ~~~~~~~~~~
 
@@ -126,8 +114,11 @@ What effect does adding R\ :sub:`S` have to the DC operating point of the circui
 
 What is the effect on the voltage gain, A, by increasing R\ :sub:`S`? Write down the new gain equation similar to equation (2) above.
 
-| Source degeneration gain equation:
-| |image3|
+Source degeneration gain equation:
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_e3.png
+   :align: center
+   :width: 170px
 
 Increasing AC gain of source degenerated amplifier
 --------------------------------------------------
@@ -158,5 +149,3 @@ http://en.wikipedia.org/wiki/Common_source_amplifier
    :width: 170px
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_e2.png
    :width: 160px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_e3.png
-   :width: 170px

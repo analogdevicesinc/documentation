@@ -60,9 +60,9 @@ Installing the Software
 
 |image3|
 
--  Click **Next** to start the installation
+   \* Click **Next** to start the installation
 
-|image4|
+   |image4|
 
    \* Upon completion of the installation of the **CN-0271 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
@@ -105,7 +105,7 @@ Software Control and Indicator Descriptions
 ::
 
    -**Connect/Reconnect Button**
-   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0288 Board.  A connection to the SDP-B Board must be made to use the software.   
+   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0288 Board.  A connection to the SDP-B Board must be made to use the software.
    -**Samples Numerical Control**
    * This numerical control determines how many samples to acquire after the **Acquire Samples Button** has been pressed.
 
@@ -119,7 +119,7 @@ Software Control and Indicator Descriptions
    -**Stop Acquiring Button**
    * When this button is pressed, the software stop collecting data from the CN-0288 Board
    -**Save Data Button**
-   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file. 
+   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
    -**Control Tabs**
    * __Acquire Data__ - Clicking this tab brings the data collection chart to the front.
    * __Configure System__ - Clicking this tab brings the system configuration settings to the front.
@@ -133,7 +133,7 @@ Software Control and Indicator Descriptions
    -**System Status String Indicator**
    * This indicator displays a message to the user detailing the current state of the software.
    -**System Status LED Indicator**
-   * This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-inactive.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-busy.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-error.png?nolink&|}}Error\\ 
+   * This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-inactive.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-busy.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-error.png?nolink&|}}Error
    -**Update Rate Radio Buttons**
    * This control is used to change the output word rate of the [[:adi:`AD7790|AD7790]]`.  The default value is __120 Hz__ and is highlighted in **bold** on the **Configure System Tab**.
    -**Burnout Current Radio Buttons**
@@ -150,7 +150,7 @@ Software Control and Indicator Descriptions
      * __Unbuffered Mode__ - Selecting this radio button turns the on-chip analog input channel buffer of the [[:adi:`AD7790|AD7790]]` **OFF**.
    -**Channel Selection Radio Buttons**
    * This control is used to select the analog input channel of the [[:adi:`AD7790|AD7790]]` for conversion.  The default value is __AIN(+)-AIN(-)__ and is highlighted in **bold** on the **Configure System Tab**.
-     * __AIN(+)-AIN(-)__ - Selecting this radio button allows for normal operation of the [[:adi:`AD7790|AD7790]]`.  
+     * __AIN(+)-AIN(-)__ - Selecting this radio button allows for normal operation of the [[:adi:`AD7790|AD7790]]`.
      * __AIN(-)-AIN(-)__ - Selecting this radio button shorts the analog input channels of the [[:adi:`AD7790|AD7790]]`.
      * __Vdd Monitor__ - Selecting this radio button monitors the voltage applied to the Vdd pin of the [[:adi:`AD7790|AD7790]]`.  The voltage is attenuated by 5 and the resultant voltage is applied to the ∑-Δ modulator using an internal 1.17 V reference for analog to digital conversion.
    -**Mode Register Numerical Indicator**
@@ -181,13 +181,13 @@ Establishing a USB Connection Link
    **C:\\Program Files\\Analog Devices\\CN0271\\CN0271.exe**\
 
 
--  Click the **Connect/Reconnect Button**. A window with a progress bar will load.
+- Click the **Connect/Reconnect Button**. A window with a progress bar will load.
 
 
 
 |image8|
 
--  Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
+   \* Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
 
 --------------
 
@@ -218,7 +218,7 @@ Saving Data to a Spreadsheet File
 -  Name the file.
 -  Click the **OK Button**.
 
-|
+
 
 .. note::
 

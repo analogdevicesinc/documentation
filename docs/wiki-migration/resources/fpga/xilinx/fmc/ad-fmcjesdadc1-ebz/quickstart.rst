@@ -1,13 +1,9 @@
 AD-FMCJESDADC1-EBZ Zynq Quick Start Guide
 =========================================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support for the ad-fmcjesdadc1-ebz was discontinued on all carriers starting with 2022_R2 Kuiper Linux release and it won't be supported anymore in future releases. Latest MicroBlaze images with pre-build files can be downloaded from `here <:doc:`/wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading`>`_. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can still be found on :git-hdl:`hdl_2022_r2 <projects/fmcjesdadc1>` release branch.
+   \ **NOTE:** Support for the ad-fmcjesdadc1-ebz was discontinued on all carriers starting with 2022_R2 Kuiper Linux release and it won't be supported anymore in future releases. Latest MicroBlaze images with pre-build files can be downloaded from `here <:doc:`/wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading`>`_. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can still be found on `hdl_2022_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2022_r2/projects/fmcjesdadc1>`_ release branch.
 
 
 This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the `ad-fmcjesdadc1-ebz <https://wiki.analog.com/../ad-fmcjesdadc1-ebz>`_ on the:
@@ -131,19 +127,19 @@ Goto the systems settings icon on the left side of the screen
 
 |Click for bigger|
 
-| 
+
 | This should bring up the system settings pannel. |image1|
 
-| 
+
 | Click on the "network" settings. |image2|
 
-| 
+
 | Click on the "options" button. This should bring up the "Editing Wired Connection" panel. |image3|
 
-| 
+
 | Move over to the "IPv4 Settings" tab, and change the "Method" to "Link-Local Only". |image4|
 
-| 
+
 | Click "Save". You will normally be asked for the *root* password. This is "analog" (all lower case, no quotes). Then you should see a IP Address of 169.254.x.x in the window. Copy this address down, as it is the address you will need for Visual Analog.\ |image5|
 
 This is what you would type into the address box in the IIO client for Visual Analog.

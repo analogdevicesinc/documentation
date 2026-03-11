@@ -32,16 +32,7 @@ Phase-locked loops are the subject of many in depth books and much discussion an
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 1 – 1.5 KΩ Resistor
-| 1 – 47 KΩ Resistor
-| 1 – 4.7 KΩ Resistor
-| 1 – 4.7 nF capacitor (marked 472)
-| 1 – 1nF pF capacitor (marked 102)
-| 1 – XOR gate (74HC86 or See Appendix for other XOR circuit options)
-| 1 – AD654 voltage to frequency converter
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 – 1.5 KΩ Resistor 1 – 47 KΩ Resistor 1 – 4.7 KΩ Resistor 1 – 4.7 nF capacitor (marked 472) 1 – 1nF pF capacitor (marked 102) 1 – XOR gate (74HC86 or See Appendix for other XOR circuit options) 1 – AD654 voltage to frequency converter
 
 Step 1 Directions:
 ~~~~~~~~~~~~~~~~~~
@@ -97,14 +88,10 @@ Next add the XOR gate phase detector circuit from an earlier Lab on you breadboa
    Figure 4, Complete PLL circuit
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Connect the fixed +5 volt power supply to your circuit. Connect CHA output to F\ :sub:`REF` as shown in figure 4. Configure CH-A as a square wave with a Min value of 0 V and a Max of 5 V (0 to 5 V swing) and initially set the frequency to what you measured in step 1 when V\ :sub:`IN` was set to 2.5 V (should be around 22 KHz). Connect scope channel CH-B to V\ :sub:`SQR` output as shown in figure 4. Set the scope to trigger off the rising edge of channel A (the F\ :sub:`REF` signal).
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -144,7 +131,6 @@ The divide by two circuit from the :doc:`BJT Multivibrator Lab Activity </wiki-m
 
 **For Further Reading:**
 
-| :adi:`Fundamentals of Phase Locked Loops (PLLs) <static/imported-files/tutorials/MT-086.pdf>`
-| `Phase-locked loop <https://en.wikipedia.org/wiki/Phase-locked_loop>`_
+:adi:`Fundamentals of Phase Locked Loops (PLLs) <static/imported-files/tutorials/MT-086.pdf>` `Phase-locked loop <https://en.wikipedia.org/wiki/Phase-locked_loop>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`

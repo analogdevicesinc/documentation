@@ -13,15 +13,11 @@ Known Issues
 
 -  'Generate Run-Time Statistics' doesn't have the prerequisite portGET_RUN_TIME_COUNTER_VALUE or portCONFIGURE_TIMER_FOR_RUN_TIME_STATS functionality.
 
-.. _section-1:
-
 1.0.1
 =====
 
 -  Fixed a bug where if the previous git hash wasn't found we didn't update the new hash.
 -  Fixed a bug where the configUSE_QUEUE_SETS value wasn't being saved.
-
-.. _section-2:
 
 1.0.0
 =====

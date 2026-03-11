@@ -1,14 +1,19 @@
 Input
 =====
 
-| :doc:`Click here to return to the IO page </wiki-migration/resources/tools-software/sigmastudio/toolbox/io>`
-| The Input block receives input from the hardware's input pins and makes it available in the schematic design.
-| |inputpic1.png|
+:doc:`Click here to return to the IO page </wiki-migration/resources/tools-software/sigmastudio/toolbox/io>`
+
+The Input block receives input from the hardware's input pins and makes it available in the schematic design.
+
+
+|inputpic1.png|
 
 **To enable/disable an input:**
 
-| Check the block for the input channel(s) you with to enable. Un-check the box disable an input channel. The pin will turn blue when an input is enabled and grey when disabled. The default block has two pins enabled, for stereo connection.
-| |inputpic2.png|
+Check the block for the input channel(s) you with to enable. Un-check the box disable an input channel. The pin will turn blue when an input is enabled and grey when disabled. The default block has two pins enabled, for stereo connection.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/inputpic2.png
+   :alt: inputpic2.png
 
 If you have multiple DSP processors in your design, specify which DSP is associated with the input block by right-clicking and selecting Add Algorithm > IC # > DSP Type.
 
@@ -16,8 +21,9 @@ If you have multiple DSP processors in your design, specify which DSP is associa
 -  Only a single input block can be associated with a processor. You will receive an error if you attempt to add multiple inputs to a schematic.
 -  To change the Input's Sampling Rate, Right-click the block name and select Set Sampling Rate, which will open the Sampling Rate window (default is 44.1 kHz):
 
-| 
-| |inputpic3.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/inputpic3.png
+   :alt: inputpic3.png
+   :align: center
 
 Relationship Between Hardware Inputs and Input Cell Channels
 ------------------------------------------------------------
@@ -136,5 +142,3 @@ TDM8 (8 channel) Routing
    :align: center
 
 .. |inputpic1.png| image:: https://wiki.analog.com/_media/inputpic1.png
-.. |inputpic2.png| image:: https://wiki.analog.com/_media/inputpic2.png
-.. |inputpic3.png| image:: https://wiki.analog.com/_media/inputpic3.png

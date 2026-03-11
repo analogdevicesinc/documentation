@@ -1,10 +1,11 @@
 Toolbars
 ========
 
-| :doc:`Click here to return to the Development Environment page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment>`
-| The application toolbars provide shortcut buttons for common commands. Three toolbars are displayed in the main program window by default. To hide or show a toolbar, right-click on the menu bar, then select the toolbar to be shown or hidden.
-| |toolbarspic1.png| |toolbarspic.png|
-|
+:doc:`Click here to return to the Development Environment page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment>`
+
+The application toolbars provide shortcut buttons for common commands. Three toolbars are displayed in the main program window by default. To hide or show a toolbar, right-click on the menu bar, then select the toolbar to be shown or hidden.
+
+|toolbarspic1.png| |toolbarspic.png|
 
 .. tip::
 

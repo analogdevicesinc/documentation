@@ -1,5 +1,9 @@
-| :doc:`Click here to return to the SigmaStudio+ Documentation landing page </wiki-migration/resources/tools-software/sigmastudiov2>`
-| ====== Algorithm Toolbox ====== Toolbox library contains the following categories:
+:doc:`Click here to return to the SigmaStudio+ Documentation landing page </wiki-migration/resources/tools-software/sigmastudiov2>`
+
+Algorithm Toolbox
+=================
+
+Toolbox library contains the following categories:
 
 -  :doc:`ADI Algorithms </wiki-migration/resources/tools-software/sigmastudiov2/modules/adialgorithms>`
 -  :doc:`Advanced DSP </wiki-migration/resources/tools-software/sigmastudiov2/modules/advanceddsp>`

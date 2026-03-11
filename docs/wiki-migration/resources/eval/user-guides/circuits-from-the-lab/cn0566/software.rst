@@ -20,8 +20,7 @@ There are several calibration and configuration files that the software uses. Ca
 
 While these are intended to be generated once and re-used each time a program is run, they are easy to recreate as the physical surroundings change - microwave reflective surfaces, distance between the phaser array and source, changing between the onboard transmitter or independent microwave source, etc. If these files are deleted (or not present in the first place), default values will be used.
 
-| The **config.py** file contains parameters for the operation of the phaser, including signal frequencies, sample rates, bandwidths, etc. This file can be edited directly, after which any software using it must be restarted.
-| As a convenience for staying consistent with the Pyadi-iio Git repository, the config.py file can be copied to \**config_custom.py\*. If present, software will use config_custom.py - this file can be edited without affecting the Git repository.
+The **config.py** file contains parameters for the operation of the phaser, including signal frequencies, sample rates, bandwidths, etc. This file can be edited directly, after which any software using it must be restarted. As a convenience for staying consistent with the Pyadi-iio Git repository, the config.py file can be copied to \**config_custom.py\*. If present, software will use config_custom.py - this file can be edited without affecting the Git repository.
 
 GUI operation
 -------------
@@ -32,12 +31,11 @@ The GUI can be launched either from the command line or from the Thonny IDE. Fro
 
    python3 cn0566_gui.py
 
-| which will print debug information to the console as shown below. In this case, gain and phase calibration files were not present, but a frequency measurement file for an HB100 was found.
-| **Typical console output:**
+which will print debug information to the console as shown below. In this case, gain and phase calibration files were not present, but a frequency measurement file for an HB100 was found. **Typical console output:**
 
 ::
 
-   analog@phaser:~/pyadi-iio/examples/cn0566 $ python3 cn0566_gui.py 
+   analog@phaser:~/pyadi-iio/examples/cn0566 $ python3 cn0566_gui.py
    file not found, loading default (all gain at maximum)
    file not found, loading default (no phase shift)
    Gain cal:  [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -56,8 +54,10 @@ The GUI will launch and display an FFT of the incoming signal, with the beam set
    Figure 1. GUI overview (FFT plot)
 
 
-| If no signal is present, this indicates that the frequency is not set properly, or if you are using an antenna connected to J1, the "Transmit Disabled" is selected. If using an HB100, run the cn0566_find_hb100.py script again.
-| Switch to the Rectangular Plot and select "Enable All" in the drop-down menu. An uncalibrated beam pattern will be displayed, which typically appears as a distorted SINC1 pattern.
+If no signal is present, this indicates that the frequency is not set properly, or if you are using an antenna connected to J1, the "Transmit Disabled" is selected. If using an HB100, run the cn0566_find_hb100.py script again.
+
+Switch to the Rectangular Plot and select "Enable All" in the drop-down menu. An uncalibrated beam pattern will be displayed, which typically appears as a distorted SINC1 pattern.
+
 
 |image2|
 

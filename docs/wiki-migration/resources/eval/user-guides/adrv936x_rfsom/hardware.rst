@@ -152,8 +152,6 @@ This is the first publicly available revision.
    
 
 
-.. _why-do-a-rev-d-1:
-
 Why do a Rev D?
 ^^^^^^^^^^^^^^^
 

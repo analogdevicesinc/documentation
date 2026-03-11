@@ -49,40 +49,39 @@ ADZS-SC589-MINI
 ADZS-SC584-EZLITE
 ~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| 1. Power on your board and plug in the 12V Power Supply to the 12V connector. If the board is properly powered, the green PWR LED will light up.                                                 | |image32|           |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| 2. Plug the USB Micro Type B side to the board USB OTG connector and the USB Type A side to a USB connection on the PC.                                                                          | |image33|           |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| 3. **For VBAN->CODEC**                                                                                                                                                                           | |image34| |image35| |
-| Connect the Portable speaker ​to the *HEADPHONES* connector on the board (ensure the speaker is turned on!).                                                                                     |                     |
-| **For CODEC->VBAN**                                                                                                                                                                              |                     |
-| Connect the RCA Left and Right side connector to the INPUT/OUTPUT connector on the hardware and the 3.5mm stereo audio cable to an audio source with audio jack support (such as a cell phone).  |                     |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| 4. Connect the other end of the second ethernet cable to the ethernet port on the hardware labelled *J4*                                                                                         | |image36|           |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| 5. Proceed to the software setup instructions *(common for all hardware variants)*                                                                                                               | NA                  |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+| 1. Power on your board and plug in the 12V Power Supply to the 12V connector. If the board is properly powered, the green PWR LED will light up.                                                | |image32|           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+| 2. Plug the USB Micro Type B side to the board USB OTG connector and the USB Type A side to a USB connection on the PC.                                                                         | |image33|           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+| 3. **For VBAN->CODEC**                                                                                                                                                                          | |image34| |image35| |
+| Connect the Portable speaker to the *HEADPHONES* connector on the board (ensure the speaker is turned on!).                                                                                     |                     |
+| **For CODEC->VBAN**                                                                                                                                                                             |                     |
+| Connect the RCA Left and Right side connector to the INPUT/OUTPUT connector on the hardware and the 3.5mm stereo audio cable to an audio source with audio jack support (such as a cell phone). |                     |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+| 4. Connect the other end of the second ethernet cable to the ethernet port on the hardware labelled *J4*                                                                                        | |image36|           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+| 5. Proceed to the software setup instructions *(common for all hardware variants)*                                                                                                              | NA                  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 
 EV-SC594-SOM/EV-SC598-SOM + Carrier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| 1. Power on your SOM board by plugging in the 12V Power Supply to the 12V connector on the career board. If the board is properly powered, the green PWR LED on the SOM board will light up.  | |image41| |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| 2. Plug the USB Micro side to the Carrier board labeled USB PHY and the USB Type A side to a USB connection on the PC.                                                                        | |image42| |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| 3. **For VBAN->CODEC**                                                                                                                                                                        | |image43| |
-| Connect the Portable speaker ​to the *HEADPHONES* connector on the board (ensure the speaker is turned on!).                                                                                  |           |
-| **For CODEC->VBAN**                                                                                                                                                                           |           |
-| Connect the 3.5mm stereo audio cable to an audio source with audio jack support (such as a cell phone) and to the AN1/2 connector on the Carrier board.                                       |           |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| 4. Connect the other end of the second ethernet cable to the ethernet port on the hardware labelled *J13*                                                                                     | |image44| |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| 5. Proceed to the software setup instructions *(common for all hardware variants)*                                                                                                            | NA        |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| 1. Power on your SOM board by plugging in the 12V Power Supply to the 12V connector on the career board. If the board is properly powered, the green PWR LED on the SOM board will light up. | |image41| |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| 2. Plug the USB Micro side to the Carrier board labeled USB PHY and the USB Type A side to a USB connection on the PC.                                                                       | |image42| |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| 3. **For VBAN->CODEC**                                                                                                                                                                       | |image43| |
+| Connect the Portable speaker to the *HEADPHONES* connector on the board (ensure the speaker is turned on!).                                                                                  |           |
+| **For CODEC->VBAN**                                                                                                                                                                          |           |
+| Connect the 3.5mm stereo audio cable to an audio source with audio jack support (such as a cell phone) and to the AN1/2 connector on the Carrier board.                                      |           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| 4. Connect the other end of the second ethernet cable to the ethernet port on the hardware labelled *J13*                                                                                    | |image44| |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| 5. Proceed to the software setup instructions *(common for all hardware variants)*                                                                                                           | NA        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 Software Setup
 --------------
@@ -92,9 +91,7 @@ Software Setup
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
 
-*This tutorial uses TeraTerm as the serial interface to your hardware.*
-
-**Follow the instructions below to set up a connection to your hardware:**
+*This tutorial uses TeraTerm as the serial interface to your hardware.**Follow the instructions below to set up a connection to your hardware:**
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | 1. Open TeraTerm and connect to a new Serial Session, connecting to the Port labeled *SC5xx Communications Port*.                                                                         | |image52| |image53| |
@@ -193,7 +190,6 @@ Audio Connection Setup: CODEC->VBAN
 | 9. Finally, on your PC, Phone, or other analog source, enable audio through a preferred method, such as Youtube. You should now be able to hear the audio from your analog source, input to the codec, and out through the Ethernet port via VBAN. | NA        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
---------------
 
 .. important::
 

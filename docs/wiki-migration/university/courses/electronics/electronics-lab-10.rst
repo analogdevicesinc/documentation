@@ -9,14 +9,7 @@ The zero gain amplifier (Q\ :sub:`1`, R\ :sub:`2`) and stabilized current source
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 2.2KΩ Resistor (or any similar value)
-| 1 - 100Ω resistor
-| 1 - 1KΩ resistor (or similar value)
-| 1 - 10KΩ variable resistor (potentiometer)
-| 3 - small signal NPN transistors (2N3904 and SSM2212)
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - 2.2KΩ Resistor (or any similar value) 1 - 100Ω resistor 1 - 1KΩ resistor (or similar value) 1 - 10KΩ variable resistor (potentiometer) 3 - small signal NPN transistors (2N3904 and SSM2212)
 
 Directions:
 -----------

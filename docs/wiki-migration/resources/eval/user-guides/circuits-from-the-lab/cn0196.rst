@@ -9,7 +9,7 @@ The :adi:`ADuM7234` is an isolated, half-bridge gate driver that employs Analog 
 
 The 4 A peak drive current of the ADuM7234 ensures that the power MOSFETs can switch on and off very fast, thereby minimizing the power dissipation in the H-bridge stage. The maximum drive current of the H-bridge in this circuit can be up to 85 A, which is limited by the maximum allowable MOSFET current.
 
-| The :adi:`ADuC7061` is a low power, ARM7 based precision analog microcontroller with integrated pulse width modulated (PWM) controllers that have outputs that can be configured to drive an H-bridge after suitable level translation and conditioning.
+The :adi:`ADuC7061` is a low power, ARM7 based precision analog microcontroller with integrated pulse width modulated (PWM) controllers that have outputs that can be configured to drive an H-bridge after suitable level translation and conditioning.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/board.png
 
@@ -45,9 +45,7 @@ Connectors and Jumper Configurations
 Description
 ~~~~~~~~~~~
 
-| 1. **Switch S1**: ON state provides an isolated side PWM pulses, OFF states makes the PWM disappears
-| 2. **Jumper Link LK1**: Shorting pin 1 and 2 sets the Source Terminal of ADG787 to 5V while pin 2 and 3 sets to 0V.
-| 3. **Header J1**: Provides connection of the controlling signals between EVAL-CN0196-EB1Z and EVAL-ADuC7061MKZ as seen in below table
+1. **Switch S1**: ON state provides an isolated side PWM pulses, OFF states makes the PWM disappears 2. **Jumper Link LK1**: Shorting pin 1 and 2 sets the Source Terminal of ADG787 to 5V while pin 2 and 3 sets to 0V. 3. **Header J1**: Provides connection of the controlling signals between EVAL-CN0196-EB1Z and EVAL-ADuC7061MKZ as seen in below table
 
 ================ ================
 EVAL-ADuC7061MKZ EVAL-CN0196-EB1Z
@@ -59,9 +57,7 @@ PWM0 J2-26       PWM0_I J1-5
 DVDD J2-28       +2V5 J1-3
 ================ ================
 
-| 4. **Jumper Link LK2**: Shorting pin 1 and 2 sets the Source Terminal of ADG787 to 5V while pin 2 and 3 sets to 0V.
-| 5. **Jumper Link LK3**: If pin 1 and 2 is shorted, disabling the ADUM7234 for under voltage condition is generated on board. Shorting pin 2 and 3 will provide externally disabling the isolator via J1-6 header.
-| 6.*\* Connector J3*\*: See below table
+4. **Jumper Link LK2**: Shorting pin 1 and 2 sets the Source Terminal of ADG787 to 5V while pin 2 and 3 sets to 0V. 5. **Jumper Link LK3**: If pin 1 and 2 is shorted, disabling the ADUM7234 for under voltage condition is generated on board. Shorting pin 2 and 3 will provide externally disabling the isolator via J1-6 header. 6.*\* Connector J3*\*: See below table
 
 ========== =====================================
 Pin Number Description
@@ -74,9 +70,7 @@ J3-5       GND: Ground connection
 J3-6       GND: Ground connection
 ========== =====================================
 
-| 7. **Connector J4**: Connects +12V power supply and Ground return
-| 8. **Connector J2**: Connection of an external supply up to +20V if jumper link LK4 is not shorted
-| 9. **Jumper link LK4**: Shorting this pin sets the VDD voltage to +12V
+7. **Connector J4**: Connects +12V power supply and Ground return 8. **Connector J2**: Connection of an external supply up to +20V if jumper link LK4 is not shorted 9. **Jumper link LK4**: Shorting this pin sets the VDD voltage to +12V
 
 Software and Driver Installation
 --------------------------------
@@ -90,11 +84,7 @@ Software and Driver Installation
 
 -  Follow the on screen prompts to install the software
 
-| |image1|
-| |image2|
-| |image3|
-| |image4|
-| |image5|
+|image1| |image2| |image3| |image4| |image5|
 
 Downloading Firmware to EVAL-ADuC7061-MKZ
 -----------------------------------------
@@ -127,8 +117,6 @@ Software Front Panel
 
 |image6| |image7|
 
-.. _description-1:
-
 Description
 ~~~~~~~~~~~
 
@@ -153,9 +141,7 @@ Description
 -  **Low Side Shot**: When this button is pressed, the PWM waveform will display the Voltage on the low side Mosfets Q3 and Q4
 -  **Reset**: Resets all the configuration and hardware connection
 
-| 3. Displays the PWM waveform (V) vs Time(s) depending on the configuration set on the PWM controls
-| 4. Displays the current status/activity being done in the software
-| 5. Provides control to the following:
+3. Displays the PWM waveform (V) vs Time(s) depending on the configuration set on the PWM controls 4. Displays the current status/activity being done in the software 5. Provides control to the following:
 
 -  **VDD**: Controls the supply voltage up to 20V
 -  **Inductor**: Controls the inductor value up to 100mH to be used as a load

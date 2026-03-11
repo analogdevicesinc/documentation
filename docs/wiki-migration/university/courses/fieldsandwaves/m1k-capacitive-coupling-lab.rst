@@ -21,17 +21,13 @@ Capacitive coupling is the transfer of signals or energy within an electrical ne
 Materials:
 ----------
 
-| ADALM1000 hardware module
-| 2 12 inch / 30 cm long 3 wire female to female header jumper wires (should be included with ADALM1000)
+ADALM1000 hardware module 2 12 inch / 30 cm long 3 wire female to female header jumper wires (should be included with ADALM1000)
 
-| From ADALP2000 parts kit:
-| Solder-less breadboard
-| Male to Male jumper wires
-| Male to male header pins (gender changers)
-| 1 100 KΩ resistor
+From ADALP2000 parts kit: Solder-less breadboard Male to Male jumper wires Male to male header pins (gender changers) 1 100 KΩ resistor
 
-| 8 solid core jumper wires, 4 Red and 4 Green
-| The jumper wires may need to be cut from the reels of solid hook-up wire. Cut them to be about the length of the solder-less breadboard. Note that the spatial layout of the jumper wires is important in this experiment.
+8 solid core jumper wires, 4 Red and 4 Green
+
+The jumper wires may need to be cut from the reels of solid hook-up wire. Cut them to be about the length of the solder-less breadboard. Note that the spatial layout of the jumper wires is important in this experiment.
 
 Directions:
 -----------
@@ -160,8 +156,6 @@ Find some other cables to measure. The ADALP2000 kit contains a micro USB breako
 
 **For Further Reading:**
 
-| `Capacitive coupling <https://en.wikipedia.org/wiki/Capacitive_coupling>`_
-| `Crosstalk <https://en.wikipedia.org/wiki/Crosstalk>`_
-| `From learn EMC <https://learnemc.com/electric-field-coupling>`_
+`Capacitive coupling <https://en.wikipedia.org/wiki/Capacitive_coupling>`_ `Crosstalk <https://en.wikipedia.org/wiki/Crosstalk>`_ `From learn EMC <https://learnemc.com/electric-field-coupling>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/fieldsandwaves>`\ **.**

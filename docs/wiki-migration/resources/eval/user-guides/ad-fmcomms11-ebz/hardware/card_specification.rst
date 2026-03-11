@@ -230,8 +230,6 @@ Band TX In-Band (dB) Expanded TX Band (MHz)
 22   0.7             4.0
 ==== =============== ======================
 
-.. _spurious-free-dynamic-range-sfdr-test-1:
-
 Spurious-Free Dynamic Range (SFDR) Test
 ---------------------------------------
 

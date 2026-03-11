@@ -25,18 +25,7 @@ The difference between the analog input and the analog feedback DAC (delta) is i
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Lab hardware
-| Solder-less breadboard
-| Jumper wires
-| 1 – AD8541 CMOS rail-to-rail Op-Amp (1/2 AD8542 dual) or OP97
-| 1 – 74HC273 Octal D-type flip flop (or 74HC74 Dual D-type flip flop)
-| 1 – 74HC04 Hex inverter
-| 2 – 10KΩ Resistors
-| 2 – 20KΩ Resistors
-| 1 – 2.2KΩ Resistor
-| 1 – 0.1uF capacitor (104)
-| 1 – 10 nF capacitor (103)
-| 1 – 10uF capacitor
+ADALM1000 Lab hardware Solder-less breadboard Jumper wires 1 – AD8541 CMOS rail-to-rail Op-Amp (1/2 AD8542 dual) or OP97 1 – 74HC273 Octal D-type flip flop (or 74HC74 Dual D-type flip flop) 1 – 74HC04 Hex inverter 2 – 10KΩ Resistors 2 – 20KΩ Resistors 1 – 2.2KΩ Resistor 1 – 0.1uF capacitor (104) 1 – 10 nF capacitor (103) 1 – 10uF capacitor
 
 Directions:
 ~~~~~~~~~~~
@@ -59,22 +48,10 @@ Clock source:
 
 This experiment needs a square wave clock source for the D-type FF. A variable frequency square wave source can be built using the AD654 voltage-to-frequency converter IC, as shown in figure 3.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 – 10Ω resistor
-| 2 – 220 Ω resistors
-| 1 – 1.5 KΩ resistor
-| 1 – 4.7 KΩ resistor
-| 1 – 5 KΩ potentiometer
-| 1 – 2.2 nF capacitor (222)
-| 1 – 0.56 uF capacitor (564)
-| 1 – 10 uF capacitor
-| 1 – AD654 Voltage-to-frequency Converter
-
-.. _directions-1:
+1 – 10Ω resistor 2 – 220 Ω resistors 1 – 1.5 KΩ resistor 1 – 4.7 KΩ resistor 1 – 5 KΩ potentiometer 1 – 2.2 nF capacitor (222) 1 – 0.56 uF capacitor (564) 1 – 10 uF capacitor 1 – AD654 Voltage-to-frequency Converter
 
 Directions:
 ~~~~~~~~~~~
@@ -123,15 +100,7 @@ Change the shape of AWG channel A to Sine. Change the Min value to 1.5 and the M
 Questions:
 ~~~~~~~~~~
 
-| What is the effect of changing the DC value of the analog input?
-| What is the effect of changing the frequency of analog input?
-| What is the maximum analog input frequency?
-| Looking at the spectrum of the digital output, why does the noise level increase with frequency?
-| What is the effect of changing the value of integrator capacitor C\ :sub:`1`?
-| Does the spectrum change? Is there a minimum value for C\ :sub:`1`? Is there a maximum value for C\ :sub:`1`?
-| What is the effect of changing the frequency of the digital pulse?
-| How is the spectrum of the digital output changed? Is there a minimum? or a maximum?
-| The simple single pole RC low pass filter R\ :sub:`5` C\ :sub:`2` removes some of high frequency the noise in the analog output spectrum. What would be the effect of a higher order (active) filter on the analog output spectrum?
+What is the effect of changing the DC value of the analog input? What is the effect of changing the frequency of analog input? What is the maximum analog input frequency? Looking at the spectrum of the digital output, why does the noise level increase with frequency? What is the effect of changing the value of integrator capacitor C\ :sub:`1`? Does the spectrum change? Is there a minimum value for C\ :sub:`1`? Is there a maximum value for C\ :sub:`1`? What is the effect of changing the frequency of the digital pulse? How is the spectrum of the digital output changed? Is there a minimum? or a maximum? The simple single pole RC low pass filter R\ :sub:`5` C\ :sub:`2` removes some of high frequency the noise in the analog output spectrum. What would be the effect of a higher order (active) filter on the analog output spectrum?
 
 Using Semi-Digital FIR Reconstruction Filter:
 ---------------------------------------------
@@ -174,7 +143,7 @@ Again use the frequency spectrum analyzer to observe of the FIR output without t
 Appendix:
 ---------
 
-\**74HC273 functional block diagram \*\*
+**74HC273 functional block diagram**
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_6.png
    :align: center
@@ -193,15 +162,7 @@ The Analog Parts Kit includes the 74HC273 Octal D-type flip-flop but a functiona
 Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
-| 3 – 1 KΩ resistors
-| 3 – 100 KΩ resistors
-| 2 – 47 KΩ resistors
-| 3 – small signal PNP transistors (2N3906)
-| 2 – small signal diodes (1N914)
-| 2 – 39 pF capacitors
-| 2 – 100 pF capacitors
-
-.. _directions-2:
+3 – 1 KΩ resistors 3 – 100 KΩ resistors 2 – 47 KΩ resistors 3 – small signal PNP transistors (2N3906) 2 – small signal diodes (1N914) 2 – 39 pF capacitors 2 – 100 pF capacitors
 
 Directions:
 ~~~~~~~~~~~
@@ -219,12 +180,6 @@ Construct the D type flip-flop circuit as shown in figure A1 on your solder-less
 
 **For Further Pre-Lab Reading:**
 
-| http:*www.analog.com/media/en/training-seminars/tutorials/MT-023.pdf
-  http:*\ www.analog.com/en/analog-dialogue/articles/using-sigma-delta-converters-1.html
-| http:*www.analog.com/en/analog-dialogue/articles/using-sigma-delta-converters-2.html
-  http:*\ www.analog.com/en/design-center/interactive-design-tools/sigma-delta-adc-tutorial.html
-| http://www.mathworks.com/matlabcentral/fileexchange/19-delta-sigma-toolbox
-| http://en.wikipedia.org/wiki/Delta-sigma_modulation]]
-| http://www2.ece.rochester.edu/~zduan/teaching/ece472/reading/Aziz_1996.pdf
+http://www.analog.com/media/en/training-seminars/tutorials/MT-023.pdf http://www.analog.com/en/analog-dialogue/articles/using-sigma-delta-converters-1.html http://www.analog.com/en/analog-dialogue/articles/using-sigma-delta-converters-2.html http://www.analog.com/en/design-center/interactive-design-tools/sigma-delta-adc-tutorial.html http://www.mathworks.com/matlabcentral/fileexchange/19-delta-sigma-toolbox http://en.wikipedia.org/wiki/Delta-sigma_modulation]] http://www2.ece.rochester.edu/~zduan/teaching/ece472/reading/Aziz_1996.pdf
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**

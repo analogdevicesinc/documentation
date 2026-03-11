@@ -72,14 +72,7 @@ What happens if there’s not enough gain around the loop? Reduce R\ :sub:`6` to
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solderless breadboard and jumper wires
-| 2 – 1.5 KΩ resistors
-| 2 – 10 KΩ resistors
-| 1 – 10 K Pot
-| 2 – 0.1 uF capacitors
-| 2 – 1N914 small signal diodes
-| 1 – OP484 R-R op-amp (or AD8542)
+ADALM1000 hardware module Solderless breadboard and jumper wires 2 – 1.5 KΩ resistors 2 – 10 KΩ resistors 1 – 10 K Pot 2 – 0.1 uF capacitors 2 – 1N914 small signal diodes 1 – OP484 R-R op-amp (or AD8542)
 
 Directions:
 ~~~~~~~~~~~
@@ -106,11 +99,6 @@ To measure the loop gain use the Bode Plotting tool. Open the loop by disconnect
 
 **For Further Reading:**
 
-| :adi:`Bridge Circuits Application Note 43 <media/en/technical-documentation/application-notes/an43f.pdf>`
-| :adi:`LT1007/LT1037 Ultrapure 1kHz Sine Wave Generator <en/design-center/reference-designs/circuit-collections/lt1007-lt1037-ultrapure-1khz-sine-wave-generator.html>`
-| :adi:`Injection-Lock a Wien-Bridge Oscillator <en/technical-articles/injection-lock-a-wien-bridge-oscillator.html>`
-| `"Thank You, Bill Hewlett", Jim Williams, EDN Magazine Feb. 2001 <https://m.eet.com/media/1146147/22254-61856.pdf>`_
-| `U.S. Patent 2,268,872 <https://www.hp.com/us-en/pdf/002patent_tcm_245_921599.pdf>`_
-| `Wien_bridge_oscillator <https://en.wikipedia.org/wiki/Wien_bridge_oscillator>`_
+:adi:`Bridge Circuits Application Note 43 <media/en/technical-documentation/application-notes/an43f.pdf>` :adi:`LT1007/LT1037 Ultrapure 1kHz Sine Wave Generator <en/design-center/reference-designs/circuit-collections/lt1007-lt1037-ultrapure-1khz-sine-wave-generator.html>` :adi:`Injection-Lock a Wien-Bridge Oscillator <en/technical-articles/injection-lock-a-wien-bridge-oscillator.html>` `"Thank You, Bill Hewlett", Jim Williams, EDN Magazine Feb. 2001 <https://m.eet.com/media/1146147/22254-61856.pdf>`_ `U.S. Patent 2,268,872 <https://www.hp.com/us-en/pdf/002patent_tcm_245_921599.pdf>`_ `Wien_bridge_oscillator <https://en.wikipedia.org/wiki/Wien_bridge_oscillator>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**

@@ -1,8 +1,9 @@
 AXI_ADC_DECIMATE
 ================
 
-| The AXI_ADC_DECIMATE IP allows decimating of the input data by 10/100/1000/10000/100000, with filtering and arbitrary decimation by dropping samples.
-| More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`.
+The AXI_ADC_DECIMATE IP allows decimating of the input data by 10/100/1000/10000/100000, with filtering and arbitrary decimation by dropping samples.
+
+More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`.
 
 .. important::
 
@@ -137,9 +138,9 @@ References
 ----------
 
 -  :git-hdl:`AXI_ADC_DECIMATE IP source code <library/axi_adc_decimate>`
-   \* :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
-   \* `ADI Linux repository <https://github.com/analogdevicesinc/linux/>`_
+-  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
+-  `ADI Linux repository <https://github.com/analogdevicesinc/linux/>`_
 -  `7 Series libraries <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2016_2/ug953-vivado-7series-libraries.pdf>`_
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

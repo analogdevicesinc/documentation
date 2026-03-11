@@ -144,7 +144,7 @@ OK, someone asked for the C code - it's pretty trivial, just longer. You will ne
            iio_device_debug_attr_write_bool(dev, "adi,gpo0-slave-rx-enable", 1);
            iio_device_debug_attr_write_bool(dev, "adi,gpo1-slave-tx-enable", 1);
            iio_device_debug_attr_write_bool(dev, "initialize", 1);
-           
+
            while (!stop) {
                    ret++;
                    iio_device_attr_write(dev, "ensm_mode", "rx");
@@ -155,8 +155,8 @@ OK, someone asked for the C code - it's pretty trivial, just longer. You will ne
            return EXIT_SUCCESS;
    }
 
-Over USB, you get:``time ./foo 
-^Citteration = 2693
+Over USB, you get:``time ./foo
+^Citteration = 2693 ^
 
 real    0m5.283s``
 

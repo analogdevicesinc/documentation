@@ -118,14 +118,7 @@ It is common in ULP applications to power cycle the accelerometer to reduce powe
 
 If this is not possible, care must be taken regarding the following specifications:
 
--  *V
-
-.. container:: lo
-
-   RESET
-
-
-*: During start-up or power cycling, the VS and VDDIO supplies must always be started up from below V_RESET voltage. Also, when the device is in operation, any time power is removed or falls below the accelerometer power supply lower range voltage (VS_MIN), VS and VDDIO supplies must be discharged below V_RESET and powered back up for proper operation. **This specification is mandatory**.
+-  *V RESET*: During start-up or power cycling, the VS and VDDIO supplies must always be started up from below V_RESET voltage. Also, when the device is in operation, any time power is removed or falls below the accelerometer power supply lower range voltage (VS_MIN), VS and VDDIO supplies must be discharged below V_RESET and powered back up for proper operation. **This specification is mandatory**.
 -  *Hold time*: VS and VDDIO supplies must be held below V_RESET for at least the specified hold time before re-powering the part.
 -  *Rise time*: The supply voltage rise time is defined as the time from 0 V to 90% of VS.
 
@@ -135,14 +128,7 @@ If this is not possible, care must be taken regarding the following specificatio
 
 For example for the ADXL362 and ADXL37x devices, the power cycling requirements are:
 
--  *V
-
-.. container:: lo
-
-   RESET
-
-
-*: equal or lower than 100 [mV].
+-  *V RESET*: equal or lower than 100 [mV].
 -  *Hold time*: equal or grater than 200 [ms].
 -  *Rise time*: should be linear and with a slope equal or higher than 6 [V/ms].
 

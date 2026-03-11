@@ -27,10 +27,7 @@ The ADALP2000 parts kit contains a number of 1/8W resistors (125 mW). What's the
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solderless Breadboard
-| Jumper wires
-| Various Resistors
+ADALM1000 hardware module Solderless Breadboard Jumper wires Various Resistors
 
 Procedure:
 ----------
@@ -74,5 +71,4 @@ Again, if you use the ALICE DC Meter-Source Tool it will also measure the curren
 
 **For Further Reading:**
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**

@@ -8,17 +8,19 @@ The **AD-GMSL522-SL GMSL Carrier Board** (also referred as Viper board) is a hig
 
 It is compatible with MAXIM deserializer/serializer EVkits and has 4 GMSL inputs and 2 GMSL outputs.
 
-| It is a user-friendly GMSL platform for receiving and transmitting data over a GMSL link. The platform enables NPI, demonstrations, customer, and ecosystem development.  This platform has hardware interconnects and software tools that enable customers in their development of GMSL.
-| |image1|
+It is a user-friendly GMSL platform for receiving and transmitting data over a GMSL link. The platform enables NPI, demonstrations, customer, and ecosystem development.  This platform has hardware interconnects and software tools that enable customers in their development of GMSL.
 
-| 
-| ===== Carrier Board feature list =====
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_revb.drawio.png
+   :width: 600px
+
+Carrier Board feature list
+--------------------------
 
 -  Connection to Jetson Xavier NX
 
 ::
 
-               *260-pin SO-DIMM connector  
+               *260-pin SO-DIMM connector
 
 -  GMSL/CSI inputs
 
@@ -60,7 +62,7 @@ It is compatible with MAXIM deserializer/serializer EVkits and has 4 GMSL inputs
 
 ::
 
-       * LEDs: Power 
+       * LEDs: Power
 
 -  Miscellaneous
 
@@ -80,14 +82,14 @@ It is compatible with MAXIM deserializer/serializer EVkits and has 4 GMSL inputs
 
    -  0⁰C to 35⁰C
 
-| 
-| ===== Power =====
+Power
+-----
 
 .. container:: indent
 
    
-   Power Input
-   ~~~~~~~~~~~
+   **Power Input**
+
    
    The AD-GMSL522-SL has a single 12 V supply input, distributed to the internal power supplies and interface connectors.
    
@@ -97,12 +99,9 @@ It is compatible with MAXIM deserializer/serializer EVkits and has 4 GMSL inputs
    -  Mating barrel jack connector dimensions: 2.50 mm ID (0.098"), 5.50 mm OD (0.217"), with positive center pin.
    
    The ADM1177 hot swap controller monitors current and voltage via an on-chip, 12-bit analog-to-digital converter. The ADM1177 charges up the gate of the FET to turn on the load. It continues to charge up the GATE pin until the linear current limit (set to 100 mV/RSENSE) is reached. On this carrier board RSENSE is 0.01Ω which sets the current limit at 10 A. The input voltage and current can be read from this device by accessing it at the 0xB4 I2C address.
+   
+   **Power Supplies**
 
-   
-   | 
-   
-   Power Supplies
-   ~~~~~~~~~~~~~~
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_power_tree.png
       :align: center
@@ -120,16 +119,14 @@ It is compatible with MAXIM deserializer/serializer EVkits and has 4 GMSL inputs
    
    All the supplies are monitored by the onboard voltage monitor AD7291BCPZ (U40). The voltages are divided at the input because the device has an on-chip 2.5 V reference. The AD7291 provides a 2-wire serial interface compatible with I2C interfaces and has the following I2C address: 0x2FF
    
-   |
+   **Power Sequence**
 
-   | ====Power Sequence====
    
    The power-up sequence is similar to the one implemented in the official NVIDIA Jetson Nano carrier board. The circuit will provide at least 430 ms delay between SHUTDOWN_REQ\* and POWER_EN.
    
    U38 and U44 are connected to form a SR latch with NAND gates. POWER_EN has 100k pull-down on module, so initial state is always 0.
    
-   | 
-   | <fc #6495ed>\ **Jumper on P11 pins 9 and 10 - Auto-power-on enabled**\ </fc>
+   **Jumper on P11 pins 9 and 10 - Auto-power-on enabled**
    
    At power-on, both LATCH_SET and LATCH_RESET are pulled-up to VDD_5V_SYS.
    
@@ -141,8 +138,7 @@ It is compatible with MAXIM deserializer/serializer EVkits and has 4 GMSL inputs
    
    The board will remain off until the power cable is plugged back in again (LATCH_SET is always HIGH as long as VDD_5V_SYS is present)
    
-   | 
-   | <fc #6495ed>\ **Jumper on P11 pins 7 and 8 - Auto-power-on disabled**\ </fc>
+   **Jumper on P11 pins 7 and 8 - Auto-power-on disabled**
    
    At power on, both LATCH_SET and LATCH_RESET are pulled-up to VDD_5V_SYS. U26 has Hi-Z output until C323 is charged and LATCH_RESET is HIGH. The time constant for C297 is significantly decreased since now R292 and R389 are in parallel so LATCH_SET will be HIGH after 0.011ms while C323 is charging slower, LATCH_RESET is HIGH After ~10ms. This results in a LOW state for POWER_EN. When PWR_BTN\* is pressed, LATCH_SET changes state to 0, resulting in HIGH on POWER_EN
    
@@ -150,8 +146,10 @@ It is compatible with MAXIM deserializer/serializer EVkits and has 4 GMSL inputs
    
    But since SHUTDOWN_REQ\* is not driven during power-up, it will go high again so LATCH_RESET=1 and output of U26 becomes active. Now it's possible to power on back the board using the PWR_BTN\* signal and not by unplugging the power cable. If pins 1 and 2 of P11 are connected for a short time, at least 50 ms, this will result in LATCH_SET going LOW while LATCH_RESET is HIGH so POWER_EN will go HIGH and the SOM powers on. When releasing the pins 1 and 2 LATCH_SET will be HIGH again, but no change will be seen at the at the output of the latch.
    
-   | 
-   | ==== Power over Coax ==== The AD-GMSL522-SL carrier board is designed to send power as well as data over coax cables, enabling to power remote devices such as automotive cameras without the need for extra wiring or power circuitry.
+   **Power over Coax**
+
+   
+   The AD-GMSL522-SL carrier board is designed to send power as well as data over coax cables, enabling to power remote devices such as automotive cameras without the need for extra wiring or power circuitry.
    
    There is a power over coax (PoC) filter for each GMSL input connector that covers the forward and reverse channel frequency bands.
    
@@ -159,8 +157,6 @@ It is compatible with MAXIM deserializer/serializer EVkits and has 4 GMSL inputs
    
    By default, the 12 V supply that is supposed to power the remote devices is connected to the outputs of the camera power protector with 0 Ohm resistors R401, R403, R407, R405. This will limit the current per channel to 500 mA, but in case more current is needed and the 12 V supply allows this, R402, R404, R408, R406 can be populated instead of R401, R403, R407, R405 and the devices will be powered directly from the 12 V supply without any current limitation, or protection.
 
-   
-   | 
 
 Inputs
 ------
@@ -168,8 +164,8 @@ Inputs
 .. container:: indent
 
    
-   CSI Inputs-Samtec Connector
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   **CSI Inputs-Samtec Connector**
+
    
    A QTH-030-01-L-D-A high speed connector is present on the bottom of the board. GMSL to CSI deserializer evKits can be connected here. In the default configuration, if an EvKit is mounted on the carrier board, it will not be supplied by the carrier board. R136, R153, R152 can be soldered on the carrier to connect the Evkit to the power supplies of the AD-GMSL522-SL carrier board.
    
@@ -182,23 +178,22 @@ Inputs
    
    12 MIPI CSI lanes (CSI0-CSI3) of the XavierNX are routed to this connector, supporting either 4x2, 2x4 CSI-2 DPHY v1.2 configurations.
    
-   |
+   **GMSL (Deserializer)**
 
-   | ====GMSL (Deserializer)====
    
    J1, J2, J3, J4 Fakra connectors(59S2AQ-40MT5-Z_1) on the right side of the board are connected to the inputs of MAX96724GTN/VY+. This provides reliable platform to evaluate the MAX96724 device using standard FAKRA coaxial cables. This deserializer device support high-bandwidth, gigabit multimedia serial links (GMSL-1 or GMSL-2) and offers spread spectrum and full-duplex control channel features.
 
 
-| 
-| =====On-board SERDES =====
+On-board SERDES
+---------------
 
 .. container:: indent
 
    
-   Quad Deserializer
-   ~~~~~~~~~~~~~~~~~
+   **Quad Deserializer**
+
    
-   <fc #6495ed>\ **MAX96724GTN/VY+ Quad tunneling GMSL2/1 to CSI-2 deserializer** </fc>
+   **MAX96724GTN/VY+ Quad tunneling GMSL2/1 to CSI-2 deserializer**
    
    Port B D-PHY signals of the MAX96724 are routed to MIPI D-PHY inputs of Xavier.
    
@@ -217,10 +212,10 @@ Inputs
       If the state of the configuration pins needs to be changed, please refer to the MAX96724 data sheet to see the recommended resistor values to select each configuration.
 
    
-   | 
-   | ====Single Serializer====
+   **Single Serializer**
+
    
-   <fc #6495ed>\ **MAX96717GTJ/VY+ CSI-2 to GMSL2 serializer**\ </fc>
+   **MAX96717GTJ/VY+ CSI-2 to GMSL2 serializer**
    
    The AD-GMSL522-SL provides a proven design to evaluate the MAX96717 high-bandwidth GMSL serializer with spread spectrum and full-duplex control channel with the use of a standard FAKRA coaxial cable.
    
@@ -232,78 +227,92 @@ Inputs
    
    Address of I2C potentiometers for CFG pins of MAX96724
    
-   |
-   
    .. tip::
 
       If the state of the configuration pins needs to be changed, please refer to the MAX96717 data sheet to see the recommended resistor values to select each configuration.
 
+   
 
-      | ===== Outputs=====
+
+Outputs
+-------
 
 .. container:: indent
 
    
-   HDMI
-   ~~~~
+   **HDMI**
+
    
    HDMI Type A connector (P10) is directly routed to the HDMI V2.0 interface supported by the Xavier NX module.
    
-   |
+   **GMSL (Serializer)**
 
-   | ====GMSL (Serializer) ====
    
-   | J7 is the Fakra connector that is tied to the MAX96717 GMSL output pin. It is labeled on the board silkscreen as "OUT MAX96717”. This connection does not support Power-over-Coax due to the fact that the AD-GMSL522-SL board has its own power supply. This does not mean that a deserializer board with Power-over-Coax enabled cannot be connected to this connection. This output can be used to evaluate deserializer designs or to emulate a camera device via sending a colorbar from the deserializer.
+   J7 is the Fakra connector that is tied to the MAX96717 GMSL output pin. It is labeled on the board silkscreen as "OUT MAX96717”. This connection does not support Power-over-Coax due to the fact that the AD-GMSL522-SL board has its own power supply. This does not mean that a deserializer board with Power-over-Coax enabled cannot be connected to this connection. This output can be used to evaluate deserializer designs or to emulate a camera device via sending a colorbar from the deserializer.
 
 
-| ===== Other interfaces =====
+Other interfaces
+----------------
 
 .. container:: indent
 
    
-   USB
-   ~~~
+   **USB**
+
    
    Jetson Xavier NX supports up to three USB 2.0 ports and a single USB 3.2 port. On AD-GMSL522-SL, the USB interfaces are used as follows:
    
-   | 
-   | ====Ethernet==== M1 is a RJ45 Gigabit ethernet connector that has all the necessary magnetics integrated.
-   | ====MicroSD card==== The AD-GMSL522-SL carrier board brings the SDMMC interface from the connector pins for SD card use. P12 is a surface mount, right angle connector, for microSD™ card.
+   **Ethernet**
+
    
-   | 
-   | ====NVMe ==== The AD-GMSL522-SL board includes an M.2 Key M NVMe Expansion slot (P5). The PCIE signals are routed to PCIE0 interface of the Xavier NX Module. This supports up to Gen4 speed.
+   M1 is a RJ45 Gigabit ethernet connector that has all the necessary magnetics integrated.
+   
+   **MicroSD card**
+
+   
+   The AD-GMSL522-SL carrier board brings the SDMMC interface from the connector pins for SD card use. P12 is a surface mount, right angle connector, for microSD™ card.
+   
+   **NVMe**
+
+   
+   The AD-GMSL522-SL board includes an M.2 Key M NVMe Expansion slot (P5). The PCIE signals are routed to PCIE0 interface of the Xavier NX Module. This supports up to Gen4 speed.
 
 
-| 
-| =====Fan Connector===== The AD-GMSL522-SL carrier board includes a 4-pin Fan header (P26). This connector is compatible with 70797 Auvidea Cooling Kit.
+Fan Connector
+-------------
 
-| 
-| =====Reset Header===== System signals such as POWER_BTN\*, FORCE_RECOVERY\*, SYS_RESET\*, are brought to a standard 0.254 mm pitch header P11.
-| \| <fc #6495ed>\ **Reset header signals and functions**\ </fc>||\|
+The AD-GMSL522-SL carrier board includes a 4-pin Fan header (P26). This connector is compatible with 70797 Auvidea Cooling Kit.
 
-+---------+------------------+--------------------------------------------------------------------------+
-| **Pin** | **Signal**       | **Usage/Description**                                                    |
-+---------+------------------+--------------------------------------------------------------------------+
-| 1       | PWR_BTN\*        | Connect Pins 1 and 2 to initiate POWER-ON (if AUTO POWER-ON is disabled) |
-+---------+------------------+--------------------------------------------------------------------------+
-| 2       | GND              |                                                                          |
-+---------+------------------+--------------------------------------------------------------------------+
-| 3       | FORCE_RECOVERY\* | Connect Pins 3 and 4 during POWER-ON for USB FORCE RECOVERY MODE         |
-+---------+------------------+--------------------------------------------------------------------------+
-| 4       | GND              |                                                                          |
-+---------+------------------+--------------------------------------------------------------------------+
-| 5       | SYS_RESET\*      | Temporarily connect Pins 5 and 6 to reset the system                     |
-+---------+------------------+--------------------------------------------------------------------------+
-| 6       | GND              |                                                                          |
-+---------+------------------+--------------------------------------------------------------------------+
-| 7       | AUTO_PWR_ON      | Jumper on Pins 7 and 8 to disable AUTO POWER-ON                          |
-+---------+------------------+--------------------------------------------------------------------------+
-| 8       | LATCH_SET        |                                                                          |
-+---------+------------------+--------------------------------------------------------------------------+
-| 9       | Not used         | Jumper on Pins 9 and 10: AUTO POWER-ON is enabled                        |
-+---------+------------------+--------------------------------------------------------------------------+
-| 10      | Not used         |                                                                          |
-+---------+------------------+--------------------------------------------------------------------------+
+Reset Header
+------------
+
+System signals such as POWER_BTN\*, FORCE_RECOVERY\*, SYS_RESET\*, are brought to a standard 0.254 mm pitch header P11.
+
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| **Reset header signals and functions** |                  |                                                                          |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| **Pin**                                | **Signal**       | **Usage/Description**                                                    |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| 1                                      | PWR_BTN\*        | Connect Pins 1 and 2 to initiate POWER-ON (if AUTO POWER-ON is disabled) |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| 2                                      | GND              |                                                                          |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| 3                                      | FORCE_RECOVERY\* | Connect Pins 3 and 4 during POWER-ON for USB FORCE RECOVERY MODE         |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| 4                                      | GND              |                                                                          |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| 5                                      | SYS_RESET\*      | Temporarily connect Pins 5 and 6 to reset the system                     |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| 6                                      | GND              |                                                                          |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| 7                                      | AUTO_PWR_ON      | Jumper on Pins 7 and 8 to disable AUTO POWER-ON                          |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| 8                                      | LATCH_SET        |                                                                          |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| 9                                      | Not used         | Jumper on Pins 9 and 10: AUTO POWER-ON is enabled                        |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
+| 10                                     | Not used         |                                                                          |
++----------------------------------------+------------------+--------------------------------------------------------------------------+
 
 .. admonition:: Download
    :class: download
@@ -312,6 +321,3 @@ Inputs
    -  `AD-GMSL522-SL schematics <https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/02_074767b_top_public.pdf>`_
    
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_revb.drawio.png
-   :width: 600px

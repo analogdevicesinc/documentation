@@ -4,9 +4,7 @@ Activity: Band Stop Filters, For ADALM1000
 Objective:
 ----------
 
-| The objective of this Lab activity is to:
-| 1. Construct a Band Stop Filter by combining a low pass filter and a high pass filter. A Series LC circuit will be used.
-| 2. Obtain the frequency response of the filter by using Bode plotter software tool.
+The objective of this Lab activity is to: 1. Construct a Band Stop Filter by combining a low pass filter and a high pass filter. A Series LC circuit will be used. 2. Obtain the frequency response of the filter by using Bode plotter software tool.
 
 Notes:
 ------
@@ -57,7 +55,7 @@ OR
 
 :math:`f_o = 1/(2pi sqrtLC)` Hertz
 
-\**Frequency Response: \*\*
+**Frequency Response:**
 
 To show how a circuit responds to a range of frequencies a plot of the magnitude ( amplitude ) of the output voltage of the filter as a function of the frequency can be drawn. It is generally used to characterize the range of frequencies in which the filter is designed to operate within. Figure 2 shows a typical frequency response of a Band Pass filter.
 
@@ -73,10 +71,7 @@ To show how a circuit responds to a range of frequencies a plot of the magnitude
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Resistor R\ :sub:`1` 1.0 KΩ
-| Capacitor C\ :sub:`1` 0.1 µF (marked 104)
-| Inductor L\ :sub:`1` (1 20 mH or 2 10 mH in series)
+ADALM1000 hardware module Resistor R\ :sub:`1` 1.0 KΩ Capacitor C\ :sub:`1` 0.1 µF (marked 104) Inductor L\ :sub:`1` (1 20 mH or 2 10 mH in series)
 
 Procedure:
 ~~~~~~~~~~
@@ -144,7 +139,6 @@ Questions:
 
 **For Further Reading:**
 
-| :doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
-| `RLC Band-stop Filter Design Tool <http://sim.okawa-denshi.jp/en/RLCtool.php>`_
+:doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` `RLC Band-stop Filter Design Tool <http://sim.okawa-denshi.jp/en/RLCtool.php>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

@@ -15,11 +15,11 @@ Hardware Setup
 
    ; ADSP-SC5xx Board:
    : ADSP-SC589 Ezkit v1.1 and above, or,
-   : ADSP-SC589 MINI 
+   : ADSP-SC589 MINI
    : ADSP-SC584 Ezkit v1.0 and above, or,
    : ADSP-SC573 Ezkit v1.2 (BOM 1.8) and above
    ; Bluetooth USB dongle
-   : Bluetooth 5.0 
+   : Bluetooth 5.0
    : Bluetooth 4.0
 
 Software Configuration
@@ -40,10 +40,10 @@ Please enable Bluetooth Support and the HCI USB driver.
            <*>     BNEP protocol support
            [*]       Multicast filter support
            [*]       Protocol filter support
-           <*>     HIDP protocol support 
-           [*]     Bluetooth High Speed (HS) features (NEW) 
+           <*>     HIDP protocol support
+           [*]     Bluetooth High Speed (HS) features (NEW)
            [*]   Bluetooth device drivers
-                 <*> HCI USB driver             
+                 <*> HCI USB driver
 
 Note that by the default configuration, the USB port works on OTG mode. Users need to probe the USB Bluetooth dongle before it can work.
 
@@ -75,7 +75,7 @@ Add the Bluetooth relevant packages in the filesystem, they're enabled in adsp-s
            expat \
            play "
    DISTRO_FEATURES_append = " \
-          bluetooth \ 
+          bluetooth \
           "
 
 Then run “bitbake adsp-sc5xx-minimal -C compile” or “bitbake adsp-sc5xx-full -C compile” to generate the filesystem.
@@ -87,7 +87,7 @@ Plug in the USB dongle. If the USB interface is in host mode the device should b
 
 .. code:: c++
 
-   usbhid: USB HID core driver 
+   usbhid: USB HID core driver
    usb 1-1: new full-speed USB device number 2 using musb-hdrc
 
 If the USB interface is in OTG mode then the device must be probed first:
@@ -101,7 +101,7 @@ Bring up the interface:
 .. code:: c++
 
    # hciconfig hci0 up
-   # hciconfig 
+   # hciconfig
    hci0:   Type: BR/EDR  Bus: USB
            BD Address: 00:18:E4:08:CC:30  ACL MTU: 192:8  SCO MTU: 64:8
            UP RUNNING PSCAN

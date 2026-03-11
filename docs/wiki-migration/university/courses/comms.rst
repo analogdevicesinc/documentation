@@ -53,5 +53,3 @@ Table of Contents
 
 -  `Labs to accompany text <https://github.com/sdrforengineers/LabGuides>`_
 -  :doc:`Lab Activity Material for Communications </wiki-migration/university/labs/comms>`
-
-| 

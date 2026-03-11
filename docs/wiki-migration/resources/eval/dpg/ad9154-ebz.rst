@@ -94,7 +94,7 @@ Using ACE
 1. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1.5 GHz, and the output level to 3dBm. The spectrum analyzer can be configured as shown in Figure 9 with a resolution bandwidth of 100kHz. Choose an Input Attenuation of 24dB.
 
 | 2. Open ACE (Start > All Programs > Analog Devices > ACE > ACE). The |ace_icon_small.png| icon indicates the ACE software. If the board is connected properly, the screen should look similar to Figure 3. Double click on this board.
-|
+
 
 .. container:: center
 
@@ -208,7 +208,7 @@ Double click on the dark blue AD9154 chip block in the board block diagram. The 
 
 
 | 5. Here is what you will see at the output of DAC0 on the Spectrum Analyzer.
-|
+
 
 .. container:: center
 
@@ -346,7 +346,7 @@ f. Click Download (|image14|) and Play (|image15|) in the DPG Downloader screen.
    +--------------------------------------------------+
 
    | 7. Here is what you will see at the output of DAC0 on the Spectrum Analyzer.
-|
+
 
 .. container:: center
 

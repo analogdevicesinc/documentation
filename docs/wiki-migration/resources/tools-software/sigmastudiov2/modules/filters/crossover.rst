@@ -3,20 +3,32 @@
 Crossover Filters
 =================
 
-| 
-| |crossover3wayicon.png|
-| |crossover3way.png|
-| |crossover2wayicon.png|
-| |crossover2way.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover3wayicon.png
+   :alt: crossover3wayicon.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover3way.png
+   :alt: crossover3way.png
+   :width: 550px
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover2wayicon.png
+   :alt: crossover2wayicon.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover2way.png
+   :alt: crossover2way.png
+   :width: 550px
 
 Description
 -----------
 
 The Crossover block includes 2-way and 3-way crossover filters, typically used in loudspeaker systems to split the audio signal into separate frequency bands.
 
-| This filter provides: 2-way or 3-way crossover filtering. Graphical design of crossover response. Selectable crossover types: Linkwitz-Riley, Butterworth, Bessel. Selectable filter orders: 2nd, 3rd, 4th, 6th, and 8th
-| ===== Usage =====
-| ===== Targets Supported =====
+This filter provides: 2-way or 3-way crossover filtering. Graphical design of crossover response. Selectable crossover types: Linkwitz-Riley, Butterworth, Bessel. Selectable filter orders: 2nd, 3rd, 4th, 6th, and 8th
+
+Usage
+-----
+
+Targets Supported
+-----------------
 
 +-----------------+------------+------------------+---------------+------------------+
 | Name            | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -49,7 +61,7 @@ Output1                        Audio Output channel 1
 Output2 (CrossOver 3 Way Only) Audio Output channel 2
 ============================== ===== ================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+----------------+---------------+--------------------------------------------------------------------------------------------+
@@ -120,10 +132,3 @@ DSP Parameters
 
 | 
 | Note FilterType Refers to Low, Mid-Low, Mid-High and High.
-
-.. |crossover3wayicon.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover3wayicon.png
-.. |crossover3way.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover3way.png
-   :width: 550px
-.. |crossover2wayicon.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover2wayicon.png
-.. |crossover2way.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover2way.png
-   :width: 550px

@@ -149,7 +149,7 @@ However, if we have a (for example +10ppm offset), the numbers work out to somet
 
 -  F\ :sub:`OSC` = 40.000000 \* 1.00001 = 40.0004 MHz
 -  F\ :sub:`LO` = 40.0004 MHz \* 60 = 2400.024 MHz
--  F\ :sub:`S` = 40.0004 MHz \* 0.192 = 7.680768 MSPS <fc #ff0000>"Should be 7.6800768, all others results should be corrected according to this correction"</fc>
+-  F\ :sub:`S` = 40.0004 MHz \* 0.192 = 7.680768 MSPS "Should be 7.6800768, all others results should be corrected according to this correction"
 -  FFT bin size (for 16384 samples) = 7.680768 MHz / 16384 = 468.796875 Hz/bin
 
 A 2401.000000 MHz CW tone shows up as a (2401.0000 MHz - 2400.024 MHz) = 0.976 MHz offset, or in the 2081 bin (based on 468.796875 Hz/bin), however, it would be reported as 0.97546875 MHz offset (due to the application thinking it is 40.00000000MHz, and using 468.75 Hz/bin; and would be reported as 2400.9759902401 MHz, which is a 10.21 ppm error.
@@ -197,10 +197,7 @@ Once we find the offset in terms of ppm, it is a quick matter of programming the
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -218,10 +215,7 @@ To make this easier for ADALM-PLUTO users, the :git-plutosdr_scripts:`cal_ad9361
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the PlutoSDR
+   This specifies any shell prompt running on the PlutoSDR
 
    
    ::
@@ -230,10 +224,11 @@ To make this easier for ADALM-PLUTO users, the :git-plutosdr_scripts:`cal_ad9361
       root@192.168.2.1's password: **analog**
       Welcome to:
       %%______ _       _        _________________
-      | ___ \ |     | |      /  ___|  _  \ ___ \
-      | |_/ / |_   _| |_ ___ \ `--.| | | | |_/ /
-      |  __/| | | | | __/ _ \ `--. \ | | |    /
-      | |   | | |_| | || (_) /\__/ / |/ /| |\ \
+      | ___ \ |     | |      /  ___|  _  \ ___ \ |
+      | |_/ / |_   _| |_ ___ \ `--.| | | | |_/ / |
+      |  __/| | | | | __/ _ \ `--. \ | | |    / |
+      | |   | | |_| | || (_) /\__/ / |/ /| |\ \ |
+   
       \_|   |_|\__,_|\__\___/\____/|___/ \_| \_|
       %%
       v0.31-dirty

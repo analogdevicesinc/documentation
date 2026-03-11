@@ -1,12 +1,14 @@
-| :doc:`Click here to return to the filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+:doc:`Click here to return to the filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
 Tracking Filter(ADSP-SC5xx/215xx)
 =================================
 
-| 
-| Tracking Filters are useful for dynamic shifting of filtering. The tracking filter allows for the centre frequency to be determined by an external input.
-| |image1|
-| ====Input Pins====
+Tracking Filters are useful for dynamic shifting of filtering. The tracking filter allows for the centre frequency to be determined by an external input.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/trackingfilter-tbx.jpg
+
+Input Pins
+----------
 
 +----------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | Name                 | Format [int/dec] - [control/audio] | Function Description                                                                                         |
@@ -25,50 +27,61 @@ Name          Format [int/dec] - [control/audio] Function Description
 Pin 0: Output decimal - Audio                    Filtered Output
 ============= ================================== ====================
 
-| 
-| ==== Grow Algorithm ==== The module does not support Add and Growth.
-| ====Configuration====
-| |image2|
-| ^GUI Control Name^Default Value^Range^Function Description^
 
-====== ==== ============= ============================
-Gain   0    -15dB to 15dB Gain of the filter in DB
-QValue 0.04 0.04 to 16    Quiscent value of the filter
-Boost  0dB  -15dB to 15dB Filter boost value in DB
-====== ==== ============= ============================
+| ==== Grow Algorithm ==== The module does not support Add and Growth.
+
+Configuration
+-------------
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/trackingfilter-gui.jpg
+
++------------------+---------------+---------------+------------------------------+
+| GUI Control Name | Default Value | Range         | Function Description         |
++==================+===============+===============+==============================+
+| Gain             | 0             | -15dB to 15dB | Gain of the filter in DB     |
++------------------+---------------+---------------+------------------------------+
+| QValue           | 0.04          | 0.04 to 16    | Quiscent value of the filter |
++------------------+---------------+---------------+------------------------------+
+| Boost            | 0dB           | -15dB to 15dB | Filter boost value in DB     |
++------------------+---------------+---------------+------------------------------+
 
 | 
 | ====DSP Parameter Information====
 
-+------------------+-----------------------------------------------------------------------------------+------------------------------+
-| GUI Control Name | Compiler Name                                                                     | Function Description         |
-+==================+===================================================================================+==============================+
-| Gain             | <fc #008000>TrackingFilter_SC5xxAlg</fc><fc #ff0000>1</fc><fc #000080>Gain</fc>   | Gain of the filter in DB     |
-+------------------+-----------------------------------------------------------------------------------+------------------------------+
-| QValue           | <fc #008000>TrackingFilter_SC5xxAlg</fc><fc #ff0000>1</fc><fc #000080>QValue</fc> | Quiscent value of the filter |
-+------------------+-----------------------------------------------------------------------------------+------------------------------+
-| boost            | <fc #008000>TrackingFilter_SC5xxAlg</fc><fc #ff0000>1</fc><fc #000080>boost</fc>  | Filter boost value in DB     |
-+------------------+-----------------------------------------------------------------------------------+------------------------------+
++------------------+--------------------------------+------------------------------+
+| GUI Control Name | Compiler Name                  | Function Description         |
++==================+================================+==============================+
+| Gain             | TrackingFilter_SC5xxAlg1Gain   | Gain of the filter in DB     |
++------------------+--------------------------------+------------------------------+
+| QValue           | TrackingFilter_SC5xxAlg1QValue | Quiscent value of the filter |
++------------------+--------------------------------+------------------------------+
+| boost            | TrackingFilter_SC5xxAlg1boost  | Filter boost value in DB     |
++------------------+--------------------------------+------------------------------+
 
 | 
 | Here,
 
--  <fc #008000> Green</fc> - Algorithm Name
--  <fc #ff0000> Red</fc> - Instance Number (Changes for each instance)
--  <fc #000080> Blue</fc> - Parameter Name
+-   Green - Algorithm Name
+-   Red - Instance Number (Changes for each instance)
+-   Blue - Parameter Name
 
-| 
-| ==== Algorithm Description ==== Tracking Filters are useful for dynamic shifting of filtering. The tracking filter allows for the centre frequency to be determined by an external input.Control Input is calculated as (2\*fc)/fs, where fc is the centre frequency and fs is the Schematic Sampling Rate
-| ==== Supported ICs ====
+Algorithm Description
+---------------------
+
+Tracking Filters are useful for dynamic shifting of filtering. The tracking filter allows for the centre frequency to be determined by an external input.Control Input is calculated as (2\*fc)/fs, where fc is the centre frequency and fs is the Schematic Sampling Rate
+
+Supported ICs
+-------------
 
 -  ADSP215xx
 -  ADSPSC5xx
 
-| 
-| ======Tracking(ADAU145x)======
+Tracking(ADAU145x)
+==================
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| |trackingpic1.png| Tracking Filters are useful for dynamic shifting of filtering. This particular tracking Filter is a Peaking Filter algorithm. In many applications rather than having a fixed center frequency for a Peaking filter, it would be useful to have a moving center frequency. For example a LFO (low-frequency oscillator) could drive a Tracking Filter in order to produce a phasing audio effect. The tracking filter allows for the center frequency to be determined by an external input.
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+|trackingpic1.png| Tracking Filters are useful for dynamic shifting of filtering. This particular tracking Filter is a Peaking Filter algorithm. In many applications rather than having a fixed center frequency for a Peaking filter, it would be useful to have a moving center frequency. For example a LFO (low-frequency oscillator) could drive a Tracking Filter in order to produce a phasing audio effect. The tracking filter allows for the center frequency to be determined by an external input.
 
 Input Pins:
 -----------
@@ -96,8 +109,11 @@ The tracking filter can be used in many situations. It should be used when a cha
 Example 1:
 ----------
 
-| Here a DC entry block is connected to the second pin of the tracking filter. The value inside the block corresponds to 500Hz. Thus the audio coming in on the first pin will be boosted 5dB at 500Hz with a Q of 1.71, and an overall gain adjustment of -3dB will be applied over the entire frequency range.
-| |trackingpic2.png|
+Here a DC entry block is connected to the second pin of the tracking filter. The value inside the block corresponds to 500Hz. Thus the audio coming in on the first pin will be boosted 5dB at 500Hz with a Q of 1.71, and an overall gain adjustment of -3dB will be applied over the entire frequency range.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/trackingpic2.png
+   :alt: trackingpic2.png
+   :align: center
 
 Example 2:
 ----------
@@ -118,11 +134,10 @@ Then to figure out what the frequencies are in Hz corresponding to .01 and .25 i
 
 Keep in mind though that F1 and F2 are the numbers in the DC block, but the range will go from 2\*F1 to 2\*F2, so first multiply by 2 to get the correct range value, then use the above formula to find out the value in Hz:
 
-| (0.01\*2)*44100/2 = 441 Hz (0.25\*2)*(44100/2) = 11025 Hz
-| |trackingpic3.png|
+(0.01\*2)*44100/2 = 441 Hz (0.25\*2)*(44100/2) = 11025 Hz
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/trackingfilter-tbx.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/trackingfilter-gui.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/trackingpic3.png
+   :alt: trackingpic3.png
+   :align: center
+
 .. |trackingpic1.png| image:: https://wiki.analog.com/_media/trackingpic1.png
-.. |trackingpic2.png| image:: https://wiki.analog.com/_media/trackingpic2.png
-.. |trackingpic3.png| image:: https://wiki.analog.com/_media/trackingpic3.png

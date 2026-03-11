@@ -11,7 +11,7 @@ The Pluto will automount any `USB mass storage device <https://en.wikipedia.org/
 -  ``runme[0-9].sh`` which it will run as a shell script
 -  ``runme[0-9]`` which it will run as a binary file.
 
-For those interested, it will do that via the automounter script in ``/lib/mdev/automounter.sh`` which is maintained :git-buildroot:`here <board/pluto/automounter.sh>`.
+For those interested, it will do that via the automounter script in ``/lib/mdev/automounter.sh`` which is maintained `here <https://github.com/analogdevicesinc/buildroot/blob/pluto/board/pluto/automounter.sh>`_.
 
 Note 1 : if you're editing the runme.sh file from windows, make sure you use 'LF' as file line ending.
 
@@ -83,4 +83,4 @@ The below script will change the function of the button. Rather than unmounting 
 
 This requires a few different scripts, and modification of a configuration file.
 
-To manage the button, pluto uses the `input event daemon <https://github.com/gandro/input-event-daemon>`_ (`doc <https://htmlpreview.github.io/?https://github.com/gandro/input-event-daemon/blob/master/docs/input-event-daemon.html>`_). The default configuration file can be found at :git-buildroot:`here <board/pluto/input-event-daemon.conf>`, and simply calls the automounter (unmounter), when you press the button. Our script kills that, and re-starts things with different configuration file (our our mass storage device).
+To manage the button, pluto uses the `input event daemon <https://github.com/gandro/input-event-daemon>`_ (`doc <https://htmlpreview.github.io/?https://github.com/gandro/input-event-daemon/blob/master/docs/input-event-daemon.html>`_). The default configuration file can be found at `here <https://github.com/analogdevicesinc/buildroot/blob/pluto/board/pluto/input-event-daemon.conf>`_, and simply calls the automounter (unmounter), when you press the button. Our script kills that, and re-starts things with different configuration file (our our mass storage device).

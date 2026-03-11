@@ -54,8 +54,7 @@ The software pack can be downloaded in several ways.
    
    `Sensors Software Pack 1.1.0 <http://download.analog.com/tools/Sensor_Software/Releases/AnalogDevices.ADI-SensorSoftware.1.1.0.pack>`_
    
-   | 
-   | Link to Github Repository for Cloning or Viewing.
+   Link to Github Repository for Cloning or Viewing.
    
    :git-sensor-sw-pack:`EVAL-ADICUP3029 Sensor Software Pack Github Repository <Boards/EVAL-ADICUP3029/Examples>`
    

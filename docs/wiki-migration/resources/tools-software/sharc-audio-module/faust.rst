@@ -35,14 +35,12 @@ The Faust Compiler
 
 The new `Faust Online Editor <https://fausteditor.grame.fr/>`_ can be used to edit, compile, and run Faust code from any modern Web Browser with `WebAssembly <http://www.webassembly.org>`_ support. All prototyping is done in a web browser and the browser can export C++ code targeted for the SHARC Audio Module platform.
 
-|
-
 .. tip::
 
    \ **Recommended Browsers**
 
-   | \* *Chrome* (Recommended)
    
+   -  *Chrome* (Recommended)
    -  *Firefox* (Note: MIDI is not currently supported)
    
 
@@ -257,7 +255,7 @@ Example Workflows
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#hardware
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation SHARC Audio Module#hardware
    :alt: Hardware Reference#.|SHARC Audio Module#.micropython|MicroPython Overview
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png

@@ -21,17 +21,14 @@ A stub or resonant stub is a length of transmission line that is connected to so
 Materials:
 ----------
 
-| ADALM1000 hardware module
-| 20 inductors with values in the range of 47 uH to 150 uH
-| 21 capacitors with values in the range of 6.8 nF to 100 nF
-| 2 resistors with values in the range of 27 Ω to 56 Ω
+ADALM1000 hardware module 20 inductors with values in the range of 47 uH to 150 uH 21 capacitors with values in the range of 6.8 nF to 100 nF 2 resistors with values in the range of 27 Ω to 56 Ω
 
 Setup Directions:
 -----------------
 
 While it is potentially possible to construct a 20 section LC transmission line model on a solder-less breadboard using thru-hole devices it is difficult and can be problematic to get the expected results. Constructing the transmission line model on a more compact PC board using surface mount components is a more reliable solution and produces better results.
 
-The experiment PC board shown figure 1 is from the education tools on the :git-education_tools:`ADI GitHub repository <experiment-boards>` and has 20 unit LC sections. The specific board shown is populated with 100 uH surface mount inductors and 47 nF thru-hole capacitors. The PC board can be populated with either SMD or thru-hole components. The above L and C values give a characteristic line impedance of close to 50 ohms so 47 ohm source and termination resistors are used.
+The experiment PC board shown figure 1 is from the education tools on the `ADI GitHub repository <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/experiment-boards>`_ and has 20 unit LC sections. The specific board shown is populated with 100 uH surface mount inductors and 47 nF thru-hole capacitors. The PC board can be populated with either SMD or thru-hole components. The above L and C values give a characteristic line impedance of close to 50 ohms so 47 ohm source and termination resistors are used.
 
 .. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig1.png
    :align: center
@@ -169,7 +166,6 @@ Appendix:
 
 **For Further Reading:**
 
-| `Transmission Line Stub <https://en.wikipedia.org/wiki/Stub_(electronics)>`_
-| `Distributed-element Filter <https://en.wikipedia.org/wiki/Distributed-element_filter>`_
+`Transmission Line Stub <https://en.wikipedia.org/wiki/Stub_(electronics)>`_ `Distributed-element Filter <https://en.wikipedia.org/wiki/Distributed-element_filter>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/fieldsandwaves>`\ **.**

@@ -11,15 +11,8 @@ The DC and AC performance of this system have been optimized to provide exceptio
 
 The ADC has fully programmable digital filters with adjustable bandwidth and data rate, which can be tailor fitted to specific system requirements. The system’s analog filter rejects frequencies at multiples of the sampling frequency, eliminating aliasing concerns.
 
-
-| 
-
-|
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/block_diagram.jpg
    :align: center
-
-| 
 
 Hardware Setup
 --------------
@@ -66,7 +59,10 @@ FFT Tab
 
 |image3|
 
-| Waveform Tab |image4|
+Waveform Tab
+
+
+|image4|
 
 System Gain Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,8 +72,6 @@ Select the gain by configuring the switch (S2) on the EVAL-CN0535-FMCZ board. Ta
 
 |image5|
 
-| 
-
 ADC Driver (ADA4945-1) Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -85,8 +79,6 @@ Select the ADC driver mode by configuring the switch (S2) on the EVAL-CN0535-FMC
 
 
 |image6|
-
-| 
 
 Software GUI Setup
 ------------------
@@ -121,8 +113,6 @@ The main window of the GUI allows the user to configure the following settings o
 
 
 |image8|
-
-| 
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------

@@ -1,7 +1,7 @@
 Class A NPN Common-Emitter Amplifier
 ====================================
 
-.. image:: https://wiki.analog.com/_media/analogTV>5179788276001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>5179788276001
    :alt: analogTV>5179788276001
    :align: right
 

@@ -1,8 +1,9 @@
 Value Cross Detection
 =====================
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| --------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+--------------
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | The Value Cross Detection outputs a pulse every time the input signal has crossed the value specified in the cell. As a default this cell acts as a zero-cross detector, but it can compare the signal to any threshold value. | |valuepic1.png| |
@@ -47,14 +48,18 @@ DSP parameter Information
 Algorithm Description
 ---------------------
 
-| The Input signal is compared to the Value Threshold. Each time the input signal crosses this value (whether rising or falling) the output of the cell goes high. Otherwise the output of the cell is low. Below is a sample of the algorithm doing zero-cross detection, which is the default state of the block.
-| |valuepic2.png|
+The Input signal is compared to the Value Threshold. Each time the input signal crosses this value (whether rising or falling) the output of the cell goes high. Otherwise the output of the cell is low. Below is a sample of the algorithm doing zero-cross detection, which is the default state of the block.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/valuepic2.png
+   :alt: valuepic2.png
 
 Example
 -------
 
-| In some applications it is useful not just to know when there is a value cross, but also count the number of times that this happens during a specified time. Using the Value-Cross Detection block along with the :doc:`Pulse Counter </wiki-migration/resources/tools-software/sigmastudio/toolbox/counters/pulsecounter>`, allows the number of value-crosses to be counted. The following image uses a :doc:`sine tone </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources/sinetone>` input, :doc:`on/off switches </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources/onoffswitch>`, Pulse Counter, :doc:`Readback </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/dspreadback>` cell, and :doc:`GPIO output </wiki-migration/resources/tools-software/sigmastudio/toolbox/io/generalpurposeoutput>`.
-| |valuepic3.png|
+In some applications it is useful not just to know when there is a value cross, but also count the number of times that this happens during a specified time. Using the Value-Cross Detection block along with the :doc:`Pulse Counter </wiki-migration/resources/tools-software/sigmastudio/toolbox/counters/pulsecounter>`, allows the number of value-crosses to be counted. The following image uses a :doc:`sine tone </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources/sinetone>` input, :doc:`on/off switches </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources/onoffswitch>`, Pulse Counter, :doc:`Readback </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/dspreadback>` cell, and :doc:`GPIO output </wiki-migration/resources/tools-software/sigmastudio/toolbox/io/generalpurposeoutput>`.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/valuepic3.png
+   :alt: valuepic3.png
 
 Algorithm Details
 -----------------
@@ -90,6 +95,4 @@ Algorithm Addition Information
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 .. |valuepic1.png| image:: https://wiki.analog.com/_media/valuepic1.png
-.. |valuepic2.png| image:: https://wiki.analog.com/_media/valuepic2.png
-.. |valuepic3.png| image:: https://wiki.analog.com/_media/valuepic3.png
 .. |valuepic4.png| image:: https://wiki.analog.com/_media/valuepic4.png

@@ -14,8 +14,7 @@ A comprehensive User Guide can be found at `LTspice User guide for Power Op Amp 
 LTspice Sample Circuits
 =======================
 
-| All LTspice Circuits used are available at `LTspice Schematics <https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/power_opamp_thermal_ltspice.zip>`_.
-|
+All LTspice Circuits used are available at `LTspice Schematics <https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/power_opamp_thermal_ltspice.zip>`_.
 
 .. tip::
 
@@ -27,7 +26,5 @@ LTspice Sample Circuits
 Power Op Amp Thermal Model Block Diagram
 ========================================
 
-| |image1|
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/thermal_model_block_diagram.png
+.. image:: https://wiki.analog.com/_media/resources/quick-start/thermal_model_block_diagram.png
    :width: 1000px

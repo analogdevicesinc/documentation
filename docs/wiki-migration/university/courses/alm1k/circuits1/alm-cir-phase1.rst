@@ -114,59 +114,46 @@ The phase relationship of the current relative to the voltage is then:
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 2 – 470 Ω resistors
-| 1 – 1 uF capacitor
+ADALM1000 hardware module 2 – 470 Ω resistors 1 – 1 uF capacitor
 
 **Oscilloscope:**
 
-| You are going to use the ALM1000 board and the ALICE desktop software for the scope functions. The :doc:`user's guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` tells how to set things up.
-| **Signal Generator:**
+You are going to use the ALM1000 board and the ALICE desktop software for the scope functions. The :doc:`user's guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` tells how to set things up.
+
+**Signal Generator:**
 
 You are going to also use the ALM1000 board for the signal generator functions. The :doc:`user's guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` tells how to set up the signal generator.
 
 **Instructional Objectives:**
 
-| 1. Explore the phase relationship of voltage and current in a resistive circuit.
-| 2. Explore the phase relationship of voltage and current in a capacitive, resistive (RC) circuit.
+1. Explore the phase relationship of voltage and current in a resistive circuit. 2. Explore the phase relationship of voltage and current in a capacitive, resistive (RC) circuit.
 
 Procedure:
 ~~~~~~~~~~
 
 Setup a quick measurement using ALICE Desktop:
 
-| • Be sure the ALM1000 is plugged into a USB port and start up the ALICE Desktop application.
-| • The Main screen should look like a scope display with adjustable range, position and measurement parameters.
-| • Along the bottom of the screen be sure that CA V/Div and CB V/Div are both set to 0.5.
-| • Also check that CA V Pos and CB V Pos are set to 2.5.
-| • CA I mA/Div should be set to 2.0 and CA I Pos should be set to 5.0.
-| • In the AWG controls window, set the Frequency of CHA and CHB to 1000 Hz with 90° Phase, 0 V Min and 5 V Max values (5.000V Pk-Pk output). Select SVMI mode and Sin waveform shape.
+• Be sure the ALM1000 is plugged into a USB port and start up the ALICE Desktop application. • The Main screen should look like a scope display with adjustable range, position and measurement parameters. • Along the bottom of the screen be sure that CA V/Div and CB V/Div are both set to 0.5. • Also check that CA V Pos and CB V Pos are set to 2.5. • CA I mA/Div should be set to 2.0 and CA I Pos should be set to 5.0. • In the AWG controls window, set the Frequency of CHA and CHB to 1000 Hz with 90° Phase, 0 V Min and 5 V Max values (5.000V Pk-Pk output). Select SVMI mode and Sin waveform shape.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-4.png
    :align: center
    :width: 200px
 
-| • Under the Meas drop down select P-P for both CA-V, CA-I and CB-V.
-| • Set the Time/Div to 0.5 mS and under Curves drop down select CA-V, CA-I and CB-V.
+• Under the Meas drop down select P-P for both CA-V, CA-I and CB-V. • Set the Time/Div to 0.5 mS and under Curves drop down select CA-V, CA-I and CB-V.
 
 Note that the CHA and CHB function generator outputs connect to the channel inputs directly on the board. You don't need a wire to make the connection.
 
-| • On your solderless breadboard connect the CHA output to one end of a 470 Ω resistor.
-| • Connect the other end of the resistor to GND.
-| • Click on the scope Start button.
+• On your solderless breadboard connect the CHA output to one end of a 470 Ω resistor. • Connect the other end of the resistor to GND. • Click on the scope Start button.
 
 If the board has been calibrated correctly you should see one sine wave on top of the other. With CHA and CHB both equal to 5.00 Vpp. If the calibration isn't correct you might see 2 sine waves in phase with the amplitude of CHA different from CHB. Re-calibrate if there is a significant voltage difference.
 
 2. Measure the phase angle between two generated waveforms:
 
-| • Be sure that CA V/Div and CB V/Div are both still set to 0.5 and that CA V Pos and CB V Pos are set to 2.5.
-| • CA I mA/Div should be set to 2.0 and CA I Pos should be set to 5.0
-| • Set the Frequency of CHA and CHB to 1000 Hz with 90° Phase, 0 V Min and 5 V Max values (5.0V Pk-Pk output). Select SVMI mode and Sin waveform shape.
+• Be sure that CA V/Div and CB V/Div are both still set to 0.5 and that CA V Pos and CB V Pos are set to 2.5. • CA I mA/Div should be set to 2.0 and CA I Pos should be set to 5.0 • Set the Frequency of CHA and CHB to 1000 Hz with 90° Phase, 0 V Min and 5 V Max values (5.0V Pk-Pk output). Select SVMI mode and Sin waveform shape.
 
 You should see what looks like 1 sine wave. There are two just one is on top of the other.
 
-| • In the AWG control window, change the phase, θ, of CH B to 135° ( 90 + 45 ).
-| • Which Channel looks like the sine is occurring before the other? \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+• In the AWG control window, change the phase, θ, of CH B to 135° ( 90 + 45 ). • Which Channel looks like the sine is occurring before the other? \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 The CHB signal should look like it is leading (happening before) the CHA signal. The CHB signal crosses the 2.5 V axis from below to above before the CHA signal. It turns out a positive θ is called a phase lead. The low to high crossing time reference point is arbitrary. The high to low crossing could also be used.
 
@@ -174,14 +161,11 @@ The CHB signal should look like it is leading (happening before) the CHA signal.
 
 Now it looks like the CHB signal lags the CHA signal.
 
-| • Set the Meas display for CA to Frequency and A-B Phase. For CB display B-A Delay.
-| • Set the Time/Div to 0.2 mS.
-| • Press the red Stop button to pause the program. Using the left mouse button we can add marker point on the display.
+• Set the Meas display for CA to Frequency and A-B Phase. For CB display B-A Delay. • Set the Time/Div to 0.2 mS. • Press the red Stop button to pause the program. Using the left mouse button we can add marker point on the display.
 
 If the CHA sine wave crosses 'first' and the CHB 'second' we can measure the time offset between them.
 
-| • Make sure the vertical position of the 2 signals is set to 2.5.
-| • Measure the time difference between the CHA and CHB signal zero crossings using the markers.
+• Make sure the vertical position of the 2 signals is set to 2.5. • Measure the time difference between the CHA and CHB signal zero crossings using the markers.
 
 What is the ∆t? \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -209,24 +193,17 @@ Note you cannot measure the frequency of a signal that does not have at least on
    Figure 5: R-R breadboard connections.
 
 
-| • Build the circuit shown in Figure 4 on your solderless breadboard using two 470 Ω resistors.
-| • In the AWG controls window, set the Frequency of CHA to 200 Hz with 90° Phase, 0 V Min and 5 V Max values (5.0V Pk-Pk output). Select SVMI mode and Sin waveform shape.
-| • Select Hi-Z mode for CHB. The rest of the settings for CHB do not matter because it is now being used just as an input.
+• Build the circuit shown in Figure 4 on your solderless breadboard using two 470 Ω resistors. • In the AWG controls window, set the Frequency of CHA to 200 Hz with 90° Phase, 0 V Min and 5 V Max values (5.0V Pk-Pk output). Select SVMI mode and Sin waveform shape. • Select Hi-Z mode for CHB. The rest of the settings for CHB do not matter because it is now being used just as an input.
 
-| • Connect the CHA output CHB input and GND with wires as shown by the colored test points.
-| • Set the horizontal time scale to 1.0 mS/Div to display two cycles of the waveform.
-| • Click on the scope Start button if it is not already running.
+• Connect the CHA output CHB input and GND with wires as shown by the colored test points. • Set the horizontal time scale to 1.0 mS/Div to display two cycles of the waveform. • Click on the scope Start button if it is not already running.
 
 The voltage waveform displayed in CHA is the voltage across both resistors (V\ :sub:`R1`\ +V\ :sub:`R2`). The voltage waveform displayed in CHB is the voltage across just R\ :sub:`2` (V\ :sub:`R2`). To display the voltage across R\ :sub:`1` we use the Math waveform display options. Under the Math drop down menu select the CAV-CBV equation. You should now see a third waveform for the voltage across R\ :sub:`1` (V\ :sub:`R1`). To see both traces you can adjust the vertical position of a channel to separate them. Make sure to set the vertical positon back to realign the signals.
 
 • Record V\ :sub:`R1` and V\ :sub:`R2`.
 
-| V\ :sub:`R1`\ \_\_\_\_\_\__V\ :sub:`PP`.
-| V\ :sub:`R2`\ \_\_\_\_\_\__V\ :sub:`PP`.
-| V\ :sub:`R1`\ +V\ :sub:`R2`\ \_\_\_\_\_\__V\ :sub:`PP`.
+V\ :sub:`R1`\ \_\_\_\_\_\__V\ :sub:`PP`. V\ :sub:`R2`\ \_\_\_\_\_\__V\ :sub:`PP`. V\ :sub:`R1`\ +V\ :sub:`R2`\ \_\_\_\_\_\__V\ :sub:`PP`.
 
-| • Can you see any difference between the zero crossings of V\ :sub:`R1` and V\ :sub:`R2`? \_\_\_\_\_\_\_\_\_
-| • Can you even see two distinct sine waves? \_\_\_\_\_\_\_\_
+• Can you see any difference between the zero crossings of V\ :sub:`R1` and V\ :sub:`R2`? \_\_\_\_\_\_\_\_\_ • Can you even see two distinct sine waves? \_\_\_\_\_\_\_\_
 
 Probably not. There should be no observable time offset and thus no phase shift.
 
@@ -252,9 +229,7 @@ Probably not. There should be no observable time offset and thus no phase shift.
    Figure 7: RC breadboard connections.
 
 
-| • In the AWG controls window, set the Frequency of CHA to 500 Hz with 90° Phase, 0 V Min and 5 V Max values (5.0V Pk-Pk output). Select SVMI mode and Sin waveform shape.
-| • Select Hi-Z mode for CHB.
-| • Set the horizontal time scale to 0.5 mS/Div to display two cycles of the waveform.
+• In the AWG controls window, set the Frequency of CHA to 500 Hz with 90° Phase, 0 V Min and 5 V Max values (5.0V Pk-Pk output). Select SVMI mode and Sin waveform shape. • Select Hi-Z mode for CHB. • Set the horizontal time scale to 0.5 mS/Div to display two cycles of the waveform.
 
 Because there is no DC current through the capacitor we have to handle the average (DC) values of the waveforms differently.
 
@@ -266,17 +241,13 @@ Because there is no DC current through the capacitor we have to handle the avera
 
 • Now that we have removed the offset from the inputs we need to change the vertical position of the waveforms to re-center them on the grid. Set CA V Pos and CB V Pos to 0.0.
 
-| • Click on the scope Start button if it is not already running.
-| • Measure CA-V, CA-I, CB-V and Math (CAV - CBV) pk-pk.
+• Click on the scope Start button if it is not already running. • Measure CA-V, CA-I, CB-V and Math (CAV - CBV) pk-pk.
 
 What signal is the Math waveform? \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 • Record V\ :sub:`R1`, V\ :sub:`C1` and V\ :sub:`R1`\ +V\ :sub:`C1`.
 
-| V\ :sub:`R1`\ \_\_\_\_\_\_\_\_\_\_\__V\ :sub:`PP`.
-| I\ :sub:`R1`\ \_\_\_\_\_\_\_\_\_\_\__mA\ :sub:`PP`.
-| V\ :sub:`C1`\ \_\_\_\_\_\_\_\_\_\_\_\_\_\__V\ :sub:`PP`.
-| V\ :sub:`R1`\ +V\ :sub:`C1`\ \_\_\_\_\_\_\_\_\_\_\__V\ :sub:`PP`.
+V\ :sub:`R1`\ \_\_\_\_\_\_\_\_\_\_\__V\ :sub:`PP`. I\ :sub:`R1`\ \_\_\_\_\_\_\_\_\_\_\__mA\ :sub:`PP`. V\ :sub:`C1`\ \_\_\_\_\_\_\_\_\_\_\_\_\_\__V\ :sub:`PP`. V\ :sub:`R1`\ +V\ :sub:`C1`\ \_\_\_\_\_\_\_\_\_\_\__V\ :sub:`PP`.
 
 Now something to do with phase. Hopefully you see a few sine waves with time offsets or phase differences displayed on the grid. Let's measure the time offsets and calculate the phase differences.
 
@@ -316,8 +287,7 @@ Is there any measurable time different ( phase shift ) between the Math ( V\ :su
 
 6. Measure the time difference and calculate the phase θ offset at a different frequency.
 
-| • Set AWG CHA to 1000 Hz and the time / div to 0.2 mSec/div.
-| • Put a first marker at the neg. to pos. zero crossing location for the CA-V ( V\ :sub:`R1` + V\ :sub:`C1`) signal. Put a second marker at the nearest neg. to pos. zero crossing location for the Math ( V\ :sub:`R1` ) signal. Record the time difference and calculate the phase angle. Note ∆t maybe a negative number. Does this mean the phase angle leads or lags?
+• Set AWG CHA to 1000 Hz and the time / div to 0.2 mSec/div. • Put a first marker at the neg. to pos. zero crossing location for the CA-V ( V\ :sub:`R1` + V\ :sub:`C1`) signal. Put a second marker at the nearest neg. to pos. zero crossing location for the Math ( V\ :sub:`R1` ) signal. Record the time difference and calculate the phase angle. Note ∆t maybe a negative number. Does this mean the phase angle leads or lags?
 
 ∆t \_\_\_\_\_\_\_\_\_, θ\_\_\_\_\_\_\_\_\_
 
@@ -361,8 +331,6 @@ ALICE includes a Phase Analyzer Virtual Instrument that can assist in understand
 
 **For Further Reading:**
 
-| :doc:`ALICE Desktop User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
-| `Wikipedia page on Phase and waves <https://en.wikipedia.org/wiki/Phase_(waves)>`_
+:doc:`ALICE Desktop User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` `Wikipedia page on Phase and waves <https://en.wikipedia.org/wiki/Phase_(waves)>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**

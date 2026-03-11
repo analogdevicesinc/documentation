@@ -56,16 +56,12 @@ Initial Set-Up
 | 1. Install the DPG Downloader and ACE or the AD9136/AD9135 SPI software and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
 | 2. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB.
 | 3. Connect the DGP3 unit to your PC and turn on the unit.
-
-Single-Tone Test
-~~~~~~~~~~~~~~~~
-
-| These settings configure the AD9136/AD9135 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the DAC output, under the condition: Fdata = 1.6GHz, 1X interpolation, 4-carrier WCDMA signal with center frequency = 100MHz.
+| ==== Single-Tone Test ==== These settings configure the AD9136/AD9135 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the DAC output, under the condition: Fdata = 1.6GHz, 1X interpolation, 4-carrier WCDMA signal with center frequency = 100MHz.
 | === Configure DPG Vector Software === 1. To begin, turn on the external +5V supply.
 | 2. Open DPG Downloader if you have not done so. (Start > All Programs > Analog Devices > DPG > DPGDownloader). Ensure that the program detects the AD9136/AD9135, as indicated in the “Evaluation Board” drop-down list, and select it. Select "QBF 2X4 85G 425M" from the "Port Configuration" drop-down list and "Mode 8" from the "JESD Mode" drop-down list.
 | 3. Click on “Add Generated Waveform”, and then “Wireless Infrastructure”. A WIFR panel will be added to the vector list. Enter the Data Rate, in this case 1.6GHz and the desired frequency, 100MHz. Enter the digital amplitude. In this case we use 0dBFS. Select "2's Complement" from the Number Format drop-down list. Input the center frequency of "100MHz" at the bottom of the panel, choose "WCDMA" from the Standard drop-down menu and increase the No. of Carriers to "4" - then hit the "Add Carriers" button.
 | 4. Select the WIFR vector (I) in the “DAC0” drop down menu and the WIFR vector (Q) in the “DAC1”. At this point, the DPG Downloader panel should look like Figure 3.
-|
+
 
 .. container:: center
 
@@ -85,7 +81,7 @@ Configuring SPI using ACE
 
 | 1. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1.6GHz, and the output level to 3dBm. The spectrum analyzer can be configured with Start Frequency = 1 MHz, Stop Frequency = 800 MHz, and Resolution Bandwidth of 30 kHz, and Trace Detector to Average (Log/RMS/V). Choose Input Attenuation to be 8dB. This can be adjusted later if indications are that the analyzer is causing degradations.
 | 2. Open ACE (Start > All Programs > Analog Devices > ACE > ACE). The |ace_icon_small.png| icon indicates the ACE software. If the board is connected properly, the screen should look similar to Figure 4. Double click on this board.
-|
+
 
 .. container:: center
 
@@ -177,7 +173,6 @@ Double click on the dark blue AD9135 chip block in the board block diagram. The 
 
 | 3. On the DPGDownloader panel, seen in Figure 3, the Serial Line Rate in the should read 8Gbps.
 | Click Download (|image11|) and Play (|image12|) in the DPG Downloader screen.
-
 | The current on the 5V supply should read about 1430mA. If you do not see the output, gently push the board toward the DPG3. This ensures that the board is firmly connected to the DPG3. The four registers codeGrpSync, FrameSync, GoodCheckSum and Initial LaneSync should all read 0F indicating the lanes are working correctly.
 | 4. The output spectrum of the DAC should look like Figure 9 below.
 
@@ -198,7 +193,7 @@ Configuring SPI using the legacy SPI Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 1. Open the AD9136/AD9135 SPI application (Start > All Programs > Analog Devices > AD9136/AD9135 > AD9136/AD9135 SPI). The screen should look similar to Figure 10.
-|
+
 
 .. container:: center
 
@@ -220,7 +215,7 @@ Configuring SPI using the legacy SPI Application
 | 3. Follow the sequence below to configure the AD9136/AD9135 SPI registers.
 | a. The Links should be set to dual link. The JESD Mode is set to 8, Subclass 1 box checked, Interpolation set to 1, and FDAC set to 1.6GHz. Click “Commit” button to initialize the AD9136/AD9135. The JESD204B PLL should be locked indicated with bright green JESD204B PLL readback LED.
 | b. At this point the Serial Line Rate in the DPG3 software panel should read 8Gbps.
-|
+
 
 .. container:: center
 
@@ -236,7 +231,6 @@ Configuring SPI using the legacy SPI Application
 
 
 | d. Click Download (|image16|) and Play (|image17|) in the DPG Downloader screen.
-
 | e. The current on the 5V supply should read about 1430mA. If you do not see the output, gently push the board toward the DPG3. This ensures that the board is firmly connected to the DPG3. The four registers codeGrpSync, FrameSync, GoodCheckSum and Initial LaneSync should all read 0F indicating the lanes are working correctly.
 | 4. The output spectrum of the DAC should look like Figure 12 below.
 

@@ -53,46 +53,25 @@ High Level Functions in libpysmu:
 
 There is are a few pre-defined python functions that interface to the C++ libsmu library. Contained in the pysmu.py file they provide the high level access functions to configure and control the ALM1000 hardware. The pysmu.py file must be imported or cut and pasted into your python program. The following lists the functions currently implemented:
 
-| Smu()
-| Must be run first
-| Returns a list of the devices currently plugged into the computer
-| Example:
-| devx = Smu()
+Smu() Must be run first Returns a list of the devices currently plugged into the computer Example: devx = Smu()
 
-| devx.devices[int]
-| takes a integer for the device, 0 for first device in list, 1 for second etc.
-| returns index to that device
+devx.devices[int] takes a integer for the device, 0 for first device in list, 1 for second etc. returns index to that device
 
-| Example:
-| Both = devx.devices[0]
+Example: Both = devx.devices[0]
 
-| devx.channels[string]
-| takes one of the following strings as input 'A' , 'B' for first device, 'C' , 'D' for second device etc.
-| returns index to that channel
+devx.channels[string] takes one of the following strings as input 'A' , 'B' for first device, 'C' , 'D' for second device etc. returns index to that channel
 
-| Examples:
-| CHA = devx.channels['A']
-| CHB = devx.channels['B']
+Examples: CHA = devx.channels['A'] CHB = devx.channels['B']
 
-| AllChan = Both.get_samples(n_samples):
-| query device for a list of samples from all channels
-| n_samples parameter is number of samples
-| n_samples is of type int
-| returns list of n samples from all the device's channels
+AllChan = Both.get_samples(n_samples): query device for a list of samples from all channels n_samples parameter is number of samples n_samples is of type int returns list of n samples from all the device's channels
 
 AnalogInA = CHA.get_samples(20) get 20 readings and return them to list variable AnalogInA
 
-| CHA.set_mode(mode) or CHB.set_mode(mode):
-| mode can be one of the following strings:
-| 'V' or 'v' sets channel to source voltage measure current ( SVMI )
-| 'I' or 'I' sets channel to source current measure voltage ( SIMV )
-| 'D' or 'd' set channel to high impedance mode, measure voltage
+CHA.set_mode(mode) or CHB.set_mode(mode): mode can be one of the following strings: 'V' or 'v' sets channel to source voltage measure current ( SVMI ) 'I' or 'I' sets channel to source current measure voltage ( SIMV ) 'D' or 'd' set channel to high impedance mode, measure voltage
 
 The following functions control the waveform of the analog output channels (could be CHA or CHB).
 
-| CHA.constant(value)
-| value is a floating point number from 0 to 5 representing the DC output voltage for that channel
-| or value is a floating point number from -0.200 to + 0.200 representing the DC output current for that channel
+CHA.constant(value) value is a floating point number from 0 to 5 representing the DC output voltage for that channel or value is a floating point number from -0.200 to + 0.200 representing the DC output current for that channel
 
 CHA.sine(value1, value2, periodvalue, delayvalue)
 
@@ -104,11 +83,7 @@ CHA.square(value1, value2, periodvalue, delayvalue, dutycyclevalue)
 
 CHA.stairstep(value1, value2, periodvalue, delayvalue)
 
-| To better visualize how to specify a waveform look at figure 1 where:
-| value1 is the first peak value of the waveform, could be the minimum or the maximum peak.
-| value2 is the second peak value of the waveform, could be the minimum or the maximum peak.
-| If for example value1 is less than value 2 the apparent phase of the wave is 180 degrees from a wave where value1 is greater than value2.
-| dutycyclevalue is a fractional number from 0 to 1. dutycyclevalue only applies to the square waveform.
+To better visualize how to specify a waveform look at figure 1 where: value1 is the first peak value of the waveform, could be the minimum or the maximum peak. value2 is the second peak value of the waveform, could be the minimum or the maximum peak. If for example value1 is less than value 2 the apparent phase of the wave is 180 degrees from a wave where value1 is greater than value2. dutycyclevalue is a fractional number from 0 to 1. dutycyclevalue only applies to the square waveform.
 
 .. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial0_f1.png
    :align: center
@@ -119,19 +94,17 @@ CHA.stairstep(value1, value2, periodvalue, delayvalue)
    Figure 1 How to build a waveform.
 
 
-| To calculate the period from frequency ( in Hertz ) use the following formula:
-| periodvalue = SAMPLErate/freqvalue where SAMPLErate is generally fixed at 100,000 SPS
+To calculate the period from frequency ( in Hertz ) use the following formula: periodvalue = SAMPLErate/freqvalue where SAMPLErate is generally fixed at 100,000 SPS
 
-| To calculate the delay from the phase ( in degrees ) use the following formula:
-| delayvalue = periodvalue \* phasevalue / 360
+To calculate the delay from the phase ( in degrees ) use the following formula: delayvalue = periodvalue \* phasevalue / 360
 
 Direct control over ADALM1000 functionality can be accomplished using the implemented control transfers, a synchronous and slow communication endpoint accessible regardless of the configuration of the device.
 
 Note that the higher level functions libpysmu implements on top of LIBSMU make use of many of the control transfers to configure device state during normal operation. As such, using these low level control transfers while streaming data may not produce the expected results.
 
-| The ALM1000 implements many control transfers, including the following:
-| \* 0x17 - read a number of bytes from the ADM1177 hot-swap controller
+The ALM1000 implements many control transfers, including the following:
 
+-  0x17 - read a number of bytes from the ADM1177 hot-swap controller
 -  0x50 - Set a GPIO pin low
 -  0x51 - Set a GPIO pin high
 -  0x91 - Get a GPIO input pin value
@@ -167,48 +140,32 @@ PB20    SWMODE-B   ChB switch SVMI - SIMV              52
 Examples:
 ~~~~~~~~~
 
-| #
-| import libpysmu
-| import pysmu.py
+# import libpysmu import pysmu.py
 
-| devx = Smu()
-| DevID = devx.serials[0] # device ID for 1\ :sup:`st` M1000 in list
+devx = Smu() DevID = devx.serials[0] # device ID for 1\ :sup:`st` M1000 in list
 
-| # set PIO1 high
-| devx.ctrl_transfer(DevID, 0x40, 0x51, 1, 0, 0, 0, 100)
+# set PIO1 high devx.ctrl_transfer(DevID, 0x40, 0x51, 1, 0, 0, 0, 100)
 
-| # set PIO1 low
-| devx.ctrl_transfer(DevID, 0x40, 0x50, 1, 0, 0, 0, 100)
+# set PIO1 low devx.ctrl_transfer(DevID, 0x40, 0x50, 1, 0, 0, 0, 100)
 
-| # get state of PIO0
-| print devx.ctrl_transfer(DevID, 0xc0, 0x91, 0, 0, 0, 1, 100)
+# get state of PIO0 print devx.ctrl_transfer(DevID, 0xc0, 0x91, 0, 0, 0, 1, 100)
 
-| # get state of PIO1
-| print devx.ctrl_transfer(DevID, 0xc0, 0x91, 1, 0, 0, 1, 100)
+# get state of PIO1 print devx.ctrl_transfer(DevID, 0xc0, 0x91, 1, 0, 0, 1, 100)
 
-| # set CHA 2.5 V switch to open
-| devx.ctrl_transfer(DevID, 0x40, 0x51, 32, 0, 0, 0, 100)
+# set CHA 2.5 V switch to open devx.ctrl_transfer(DevID, 0x40, 0x51, 32, 0, 0, 0, 100)
 
-| # set CHA GND switch to open
-| devx.ctrl_transfer(DevID, 0x40, 0x51, 33, 0, 0, 0, 100)
+# set CHA GND switch to open devx.ctrl_transfer(DevID, 0x40, 0x51, 33, 0, 0, 0, 100)
 
-| # set CHB 2.5 V switch to open
-| devx.ctrl_transfer(DevID, 0x40, 0x51, 37, 0, 0, 0, 100)
+# set CHB 2.5 V switch to open devx.ctrl_transfer(DevID, 0x40, 0x51, 37, 0, 0, 0, 100)
 
-| # set CHB GND switch to open
-| devx.ctrl_transfer(DevID, 0x40, 0x51, 38, 0, 0, 0, 100)
+# set CHB GND switch to open devx.ctrl_transfer(DevID, 0x40, 0x51, 38, 0, 0, 0, 100)
 
-| # open CHA voltage sense loop
-| devx.ctrl_transfer(DevID, 0x40, 0x51, 34, 0, 0, 0, 100)
+# open CHA voltage sense loop devx.ctrl_transfer(DevID, 0x40, 0x51, 34, 0, 0, 0, 100)
 
-| # open CHB voltage sense loop
-| devx.ctrl_transfer(DevID, 0x40, 0x51, 39, 0, 0, 0, 100)
+# open CHB voltage sense loop devx.ctrl_transfer(DevID, 0x40, 0x51, 39, 0, 0, 0, 100)
 
 **For Further Reading:**
 
-| :doc:`Active Learning Interface (for) Circuits (and) Electronics </wiki-migration/university/tools/m1k/alice/users-guide>` (Python program)
-| :doc:`ALICE-SA Spectrum Analyzer </wiki-migration/university/tools/m1k/alice/sa-users-guide>` (Python program)
-| :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
-| :doc:`ADALM1000 Digital Outputs </wiki-migration/university/tools/m1k/digital-outputs>`
+:doc:`Active Learning Interface (for) Circuits (and) Electronics </wiki-migration/university/tools/m1k/alice/users-guide>` (Python program) :doc:`ALICE-SA Spectrum Analyzer </wiki-migration/university/tools/m1k/alice/sa-users-guide>` (Python program) :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` :doc:`ADALM1000 Digital Outputs </wiki-migration/university/tools/m1k/digital-outputs>`
 
 **Return to ALM** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`

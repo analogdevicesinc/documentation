@@ -19,7 +19,7 @@ The system can be used to enable quick time-to-market development programs for a
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adquadmxfe1ebztop-web.gif
    :alt: adquadmxfe1ebztop-web.gif
 
-.. image:: https://wiki.analog.com/_media/analogTV>6184061669001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/analogTV>6184061669001
    :alt: analogTV>6184061669001
    :align: center
 
@@ -61,7 +61,7 @@ User Resources
 
 -  :doc:`HDL </wiki-migration/resources/eval/user-guides/ad_quadmxfe1_ebz/ad_quadmxfe1_ebz_hdl>`
 
-   -  :git-hdl:`Rev A/B. Quad-MxFE HDL Reference Design <projects/ad_quadmxfe1_ebz>`
+   -  `Rev A/B. Quad-MxFE HDL Reference Design <https://github.com/analogdevicesinc/hdl/tree/dev_quad_mxfe_revab/projects/ad_quadmxfe1_ebz>`_
    -  :git-hdl:`Rev C. Quad-MxFE HDL Reference Design <projects/ad_quadmxfe1_ebz>`
 
 -  :doc:`Multi-Chip Synchronization Guide </wiki-migration/resources/eval/user-guides/quadmxfe/multichipsynchronization>`

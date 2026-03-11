@@ -6,7 +6,7 @@ Introduction
 
 This page gives an overview of using the ARM platforms supported (default is Mbed) firmware example with Analog Devices AD4130 Evaluation board and SDP-K1 controller board. This example code leverages the ADI developed IIO (Industrial Input Output) ecosystem to evaluate the AD4130 device by providing a device debug and data capture support.
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
 
 --------------
@@ -14,7 +14,7 @@ This page gives an overview of using the ARM platforms supported (default is Mbe
 Useful links
 ------------
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :adi:`AD4130 Product Page <en/products/ad4130-8.html>`
@@ -44,7 +44,7 @@ Jumper Settings
 
 AD4130 uses SPI communication for device register access and data capture.
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
 
 --------------
@@ -52,7 +52,7 @@ AD4130 uses SPI communication for device register access and data capture.
 Software Downloads
 ==================
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
 
 --------------
@@ -60,7 +60,7 @@ Software Downloads
 Evaluating AD4130 Using IIO Ecosystem
 -------------------------------------
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
 
 Running IIO Oscilloscope (Client)
@@ -96,7 +96,7 @@ Using DMM Tab to Read DC Voltage on Input Channels
 
 DMM tab can be used read the instantaneous voltage applied on analog input channels. Simply select the device and channels to read and press start button.
 
-<fc #ff0000>\ *\*Note: The voltage is just instantaneous, so it is not possible to get RMS AC voltage or averaged DC voltage. Also, when using DMM tab, do not access/use the Data Capture or Debug tab as this could impact data capturing. Both DMM scan and data capture uses different methods of conversion. The DMM data is read using single conversion, while data capture uses continuous conversion mode of operation.*\ </fc>
+*\*Note: The voltage is just instantaneous, so it is not possible to get RMS AC voltage or averaged DC voltage. Also, when using DMM tab, do not access/use the Data Capture or Debug tab as this could impact data capturing. Both DMM scan and data capture uses different methods of conversion. The DMM data is read using single conversion, while data capture uses continuous conversion mode of operation.*
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad4130_iio_osc_dmm_tab.png
    :align: center
@@ -107,7 +107,7 @@ Data Capture from IIO Device
 
 To capture the data from AD4130 IIO device, simply select the device and channels to read/capture data. The data is plotted as “ADC Raw Value” Vs “Number of Samples” and is just used for Visualization. The data is read as is from device without any processing. If user wants to process the data, it must be done externally by capturing data from the Serial link on controller board.
 
-<fc #ff0000>\ *\*Note: The DMM or Debug tab should not be accessed when capturing data as this would impact data capturing. Both DMM scan and data capture uses different methods of conversion. The DMM data is read using single conversion, while data capture uses continuous conversion mode of operation.*\ </fc>
+*\*Note: The DMM or Debug tab should not be accessed when capturing data as this would impact data capturing. Both DMM scan and data capture uses different methods of conversion. The DMM data is read using single conversion, while data capture uses continuous conversion mode of operation.*
 
 More info here: :doc:`Data Capture using IIO App </wiki-migration/resources/tools-software/product-support-software/data-capture-using-iio-app>`
 
@@ -120,7 +120,7 @@ Data capturing utilizes two modes:
 Time Domain Plot
 ----------------
 
-<fc #ff0000>\ *\*Note: Due to low sampling rate (50SPS) for temperature sensor measurement, select 50 or less samples during data capturing for sensor demo mode channels.*\ </fc>
+*\*Note: Due to low sampling rate (50SPS) for temperature sensor measurement, select 50 or less samples during data capturing for sensor demo mode channels.*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/ad4130_iio_osc_time_domain_plot.png
    :align: center
@@ -129,7 +129,7 @@ Time Domain Plot
 Frequency Domain Plot
 ---------------------
 
-<fc #ff0000>\ *\*Note: Max 4096 samples can be selected for plotting frequency domain response due to limited buffer size in the firmware.*\ </fc>
+*\*Note: Max 4096 samples can be selected for plotting frequency domain response due to limited buffer size in the firmware.*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/ad4130_iio_osc_freq_domain_plot.png
    :align: center
@@ -142,7 +142,7 @@ Python Environment and Scripts
 
 Data capture, sensor measurement, device calibration, etc. can be achieved with python based IIO clients, using 'pyadi-iio' library. A possible option using ADI's pyadi-iio library in python has been demonstrated in the forthcoming sections. The python scripts are provided along with firmware package.
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/iio_support_python_application#Python Application&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/section>resources/tools-software/product-support-software/iio_support_python_application#Python Application&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_python_application#Python Application&showfooter=nofooter
 
 --------------
@@ -161,7 +161,7 @@ AD4130 IIO firmware provides support for interfacing different sensors to analog
 -  ECG
 -  Power Test (ADC internal channels voltage/current measurement)
 
-<fc #ff0000>\ *\*Note: The selection of default sensor types can be changed from ‘ad4130_temperature_sensor.cpp’ file to large extent and from respective user config header files to some extent.*\ </fc>
+*\*Note: The selection of default sensor types can be changed from ‘ad4130_temperature_sensor.cpp’ file to large extent and from respective user config header files to some extent.*
 
 Demo Mode Selection
 -------------------

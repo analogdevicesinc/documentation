@@ -86,9 +86,7 @@ Run the alice-desktop-2.0-setup.exe installer program. ALICE M2K desktop opens a
 
 Or run ALICE Desktop from the Python 2.7 compatible source code with the following packages installed:
 
-| Python 2.7.11 (or higher, 32 bit version recommended)
-| numpy numerical package extension
-| libiio and iio.py
+Python 2.7.11 (or higher, 32 bit version recommended) numpy numerical package extension libiio and iio.py
 
 Linux and OSX:
 ~~~~~~~~~~~~~~
@@ -124,11 +122,9 @@ Directions:
 
 It is assumed that the reader is somewhat familiar with the functionality and capabilities of the ADALM2000 hardware. For more on the ADALM2000 hardware please refer to the following documents:
 
-| :doc:`ADALM2000 Overview </wiki-migration/university/tools/m2k>`
-| ADALM2000 Hardware
-| ADALM2000 Design Document
-| ADALM2000 Analog Inputs
-| Below for reference is the pinout for the ADALM2000 connector.
+:doc:`ADALM2000 Overview </wiki-migration/university/tools/m2k>` ADALM2000 Hardware ADALM2000 Design Document ADALM2000 Analog Inputs
+
+Below for reference is the pinout for the ADALM2000 connector.
 
 |image2| |image3|
 
@@ -241,7 +237,7 @@ A second example would be the gain of a circuit where channel 1 is considered th
 
 A third example is to calculate the rms value of just the AC portion of a signal. The built-in True RMS calculation includes any DC offset component. To remove the DC portion and just display the rms value of the AC portion of Channel 1 you can use the following formula:
 
-math.sqrt(SV1**2 - DCV1**2)
+math.sqrt(SV1**2 - DCV1**\ 2)
 
 The Crest factor can be calculated which is the ratio of peak-to-RMS values. The crest factor for single frequency sine waves is 1.414 (1/0.707), but can be as high as five or more for random noise. The crest factor for the channel A waveform would be the ratio of the Max and RMS values:
 
@@ -253,44 +249,21 @@ MaxV1/DCV1
 
 Two more examples are to calculate the Peak positive and negative slew rates. The Numpy ediff1d function takes the differences between consecutive elements of an array. We can use this to calculate the dv/dt or the time rate of change between samples. Each sample is 10 uSec apart so we get V/10uS or we can divide by 10 for V/uS or multiply by 100 for V/mS. We can then use the Numpy max or min function to find the positive ( maximum ) slew rate or the negative ( minimum ) Slew Rate using the following formulas:
 
-| numpy.max(numpy.ediff1d(VBuffA))*100 or
-| numpy.min(numpy.ediff1d(VBuffA))*100
+numpy.max(numpy.ediff1d(VBuffA))*100 or numpy.min(numpy.ediff1d(VBuffA))*100
 
 We can extend this calculation to estimate the rise and fall times for square wave signals assuming a more or less constant ( peak ) slew rate between the 10% to 90% levels. If we divide 0.8 ( 80% ) times the peak-to-peak value of the waveform by the peak slew rate we get the rise or fall times.
 
-| (MaxV1-MinV1)*0.8 / (numpy.max(numpy.ediff1d(VBuffA))*100) or
-| (MaxV1-MinV1)*0.8 / (numpy.min(numpy.ediff1d(VBuffA))*100)
+(MaxV1-MinV1)*0.8 / (numpy.max(numpy.ediff1d(VBuffA))*100) or (MaxV1-MinV1)*0.8 / (numpy.min(numpy.ediff1d(VBuffA))*100)
 
 If the waveform has significant overshoot or undershoot you could alternatively use the VATop and VABase values rather than the Max and Min values.
 
 **Waveform calculated Vertical measurement scalars:**
 
-| DCV1 is the channel 1 Average voltage
-| MinV1 is the channel 1 Minimum voltage
-| MaxV1 is the channel 1 Maximum voltage
-| VATop is the channel 1 Top voltage
-| VABase is the channel 1 Base voltage
-| SV1 is the channel 1 RMS voltage
-| DCV2 is the channel 2 Average voltage
-| MinV2 is the channel 2 Minimum voltage
-| MaxV2 is the channel 2 Maximum voltage
-| VBTop is the channel 2 Top voltage
-| VBBase is the channel 2 Base voltage
-| SV2 is the channel 2 RMS voltage
+DCV1 is the channel 1 Average voltage MinV1 is the channel 1 Minimum voltage MaxV1 is the channel 1 Maximum voltage VATop is the channel 1 Top voltage VABase is the channel 1 Base voltage SV1 is the channel 1 RMS voltage DCV2 is the channel 2 Average voltage MinV2 is the channel 2 Minimum voltage MaxV2 is the channel 2 Maximum voltage VBTop is the channel 2 Top voltage VBBase is the channel 2 Base voltage SV2 is the channel 2 RMS voltage
 
 Waveform calculated Horizontal measurement constants:
 
-| CHAHW is the channel 1 High Pulse Width
-| CHALW is the channel 1 Low Pulse Width
-| CHADCy is the channel 1 Duty Cycle
-| CHAperiod is the channel 1 Period
-| CHAfreq is the channel 1 Frequency
-| CHABphase is the channel 1 to channel 2 relative phase angle
-| CHBHW is the channel 2 High Pulse Width
-| CHBLW is the channel 2 Low Pulse Width
-| CHBDCy is the channel 2 Duty Cycle
-| CHBperiod is the channel 2 Period
-| CHBfreq is the channel 2 Frequency
+CHAHW is the channel 1 High Pulse Width CHALW is the channel 1 Low Pulse Width CHADCy is the channel 1 Duty Cycle CHAperiod is the channel 1 Period CHAfreq is the channel 1 Frequency CHABphase is the channel 1 to channel 2 relative phase angle CHBHW is the channel 2 High Pulse Width CHBLW is the channel 2 Low Pulse Width CHBDCy is the channel 2 Duty Cycle CHBperiod is the channel 2 Period CHBfreq is the channel 2 Frequency
 
 The Math drop down menu, figure 4, lists which sample point by sample point calculated waveform combining the Channel A and B voltage and current signals is to be displayed vs time.
 
@@ -332,8 +305,7 @@ The external positive and negative User power supply values can be set here. The
 
 At the bottom of this section, just above the ADI logo, are entry windows which allow input gain and offset adjustments or corrections for any external resistor divider attenuator networks that might be added to the channel 1 and 2 inputs. Save and Load Adj buttons can be found under the File drop down menu. For more on the use of input attenuators please refer to the following two documents:
 
-| M2K Analog Inputs
-| M2K Breadboard Adapters
+M2K Analog Inputs M2K Breadboard Adapters
 
 The Top Menu Section
 ~~~~~~~~~~~~~~~~~~~~
@@ -397,20 +369,13 @@ In addition to the pre-programed Math traces, ALICE Desktop provides a method of
 
 Waveform Buffers:
 
-| VBuffA is the Channel 1 voltage sample array ( in volts )
-| VBuffB is the Channel 2 voltage sample array ( in volts )
-| VmemoryA is the Channel 1 voltage memory array used for Trace Averaging
-| VmemoryB is the Channel 2 voltage memory array used for Trace Averaging
-| AWGAwaveform is the AWG 1 waveform memory array
-| AWGBwaveform is the AWG 2 waveform memory array
-| t is the time index ( 10 uSec per point )
-| SAMPLErate is the sampling rate, which can be 1KSPS, 10KSPS, 100KSPS, 1MSPS, 10MSPS or 100MSPS
+VBuffA is the Channel 1 voltage sample array ( in volts ) VBuffB is the Channel 2 voltage sample array ( in volts ) VmemoryA is the Channel 1 voltage memory array used for Trace Averaging VmemoryB is the Channel 2 voltage memory array used for Trace Averaging AWGAwaveform is the AWG 1 waveform memory array AWGBwaveform is the AWG 2 waveform memory array t is the time index ( 10 uSec per point ) SAMPLErate is the sampling rate, which can be 1KSPS, 10KSPS, 100KSPS, 1MSPS, 10MSPS or 100MSPS
 
 Vertical Position variables:
 
-| CHAOffset is the value in the channel 1 voltage position entry window
-| CHBOffset is the value in the channel 2 voltage position entry window
-| As a simple example, to plot the difference between the channel A and B voltage waveforms the following formula would be used:
+CHAOffset is the value in the channel 1 voltage position entry window CHBOffset is the value in the channel 2 voltage position entry window
+
+As a simple example, to plot the difference between the channel A and B voltage waveforms the following formula would be used:
 
 (VBuffA[t] - VBuffB[t] - CHAOffset)
 
@@ -766,7 +731,7 @@ The menu buttons:
 
 The following sections cover the functions of the various menu buttons. All of the program controls can be found under the buttons, there are no scrollbars, or rotating knobs.
 
-\**File drop down menu \*\*
+**File drop down menu**
 
 Save Config Load Config, commands for saving and loading configuration settings (.cfg file).
 
@@ -834,8 +799,6 @@ Used to set the top line of the grid or reference level. Sometimes called the "s
 
 The Bode Plotter:
 -----------------
-
-.. _window-setup-1:
 
 Window Setup:
 ~~~~~~~~~~~~~
@@ -960,14 +923,7 @@ At the expense of a little wider bandwidth the Nuttall window function provides 
 
 A special filter is the Flat Top filter. It has a flat top as the name implies. That is why it is very usable for accurate amplitude measurements. The peak of the signal does not have to be exactly on the center of an FFT frequency bin.
 
-| ALICE Desktop has 7 built in windowing functions.
-| Rectangular, no window function B=1
-| Cosine window function, medium-dynamic range B=1.24
-| Triangular non-zero endpoints, medium-dynamic range B=1.33
-| Hann window function, medium-dynamic range B=1.5
-| Blackman window, continuous first derivate function, medium-dynamic range B=1.73
-| Nuttall window, continuous first derivate function, high-dynamic range B=2.02
-| Flat top window, medium-dynamic range, extra wide bandwidth B=3.77
+ALICE Desktop has 7 built in windowing functions. Rectangular, no window function B=1 Cosine window function, medium-dynamic range B=1.24 Triangular non-zero endpoints, medium-dynamic range B=1.33 Hann window function, medium-dynamic range B=1.5 Blackman window, continuous first derivate function, medium-dynamic range B=1.73 Nuttall window, continuous first derivate function, high-dynamic range B=2.02 Flat top window, medium-dynamic range, extra wide bandwidth B=3.77
 
 ALICE desktop also allows the user to enter a function, generally from the numpy library, for the FFT window. Under the FFTwindow drop down menu click on Enter User Function and type in the function. Then select User Defined Window. It is also possible to enter the FFT window shape as an array from a .csv file. The length of the window shape has to be a power of 2, i.e. 256, 512, 1024, 2048, 4096.... When using an FFT window shape from a file, changing the number of samples up or down is not permitted. The number of FFT samples will be set by the length of the shape file.
 
@@ -1022,21 +978,9 @@ There must be an input to the network which you can observe and record. There mu
 
 If we set the number of FFT samples to 8192 the total sample time will be 81.92 mSec which is more than one cycle at 20 Hz. By setting the AWG 1 function generator to a 20 Hz square wave with a very narrow duty cycle of only a few samples wide the resulting test signal will contain frequency content every 20 Hz with nearly equal amplitude out to high frequencies. At 20 Hz each 10 uSec sample period is equal to about 0.012 % of duty cycle. We can set the duty cycle to anything from 0.01% to 0.08% and get similar results. The only difference is how fast the signal level falls off with increasing frequency. For a given pulse amplitude, the narrower the pulse the less energy in each 20 Hz spaced frequency but the flatter vs frequency they will be. The wider the pulse the more signal energy but a faster frequency roll off. 0.04% gives an acceptable frequency roll off out to 20 KHz.
 
-| The detailed settings for Channel A are as follows:
-| Shape - Square
-| Mode - Enab
-| VMIN = -2.4
-| VMAX = 2.4 (pulse amplitude set to allow some headroom for overshoot and ringing, it may be necessary to reduce the pulse size if inputs overload)
-| Freq = 20
-| Phase = 0
-| DutyCycle = 0.04 ( can be adjusted down to 0.02% for flatter input signal energy )
+The detailed settings for Channel A are as follows: Shape - Square Mode - Enab VMIN = -2.4 VMAX = 2.4 (pulse amplitude set to allow some headroom for overshoot and ringing, it may be necessary to reduce the pulse size if inputs overload) Freq = 20 Phase = 0 DutyCycle = 0.04 ( can be adjusted down to 0.02% for flatter input signal energy )
 
-| Other Settings:
-| FFT Window – Nuttall ( has an FFT bandwidth which is wider than 20 Hz )
-| FFT Samples = 8192
-| Start Freq = 100 ( set to something other than 0, to ignore DC content )
-| Stop Freq = 20000
-| ZeroStuffing = 0 ( can be adjusted but generally has little effect on resultant plot )
+Other Settings: FFT Window – Nuttall ( has an FFT bandwidth which is wider than 20 Hz ) FFT Samples = 8192 Start Freq = 100 ( set to something other than 0, to ignore DC content ) Stop Freq = 20000 ZeroStuffing = 0 ( can be adjusted but generally has little effect on resultant plot )
 
 Below in figure E12 is a screen shot for the bandpass RLC configuration of figure E1. The green trace for channel 1 is the narrow pulse forcing function response. The light and dark orange traces are the output responses seen by channel 2 for C1 = 0.44 uf and 0.22 uF respectively. The light and dark magenta traces are the subtraction of the Channel 1 trace ( in dBV ) and the Channel 2 trace ( in dBV ). As we know subtraction in dB ( logs ) is the same as division in magnitude. The magenta traces are the actual input to output transfer function of the RLC network. The Yellow trace is the phase response.
 
@@ -1062,16 +1006,10 @@ Similarly in figure E13 is a screen shot for the bandstop RLC configuration of f
 
 **For Further Reading:**
 
-| https:*en.wikipedia.org/wiki/Fast_Fourier_transform
-  http:*\ www.analog.com/media/en/training-seminars/design-handbooks/MixedSignal_Sect5.pdf
-| https:*en.wikipedia.org/wiki/Window_function
-  https:*\ en.wikipedia.org/wiki/Spectral_leakage
-| http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html
+https://en.wikipedia.org/wiki/Fast_Fourier_transform http://www.analog.com/media/en/training-seminars/design-handbooks/MixedSignal_Sect5.pdf https://en.wikipedia.org/wiki/Window_function https://en.wikipedia.org/wiki/Spectral_leakage http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html
 
 Impedance Analyzer / LCR Meter
 ------------------------------
-
-.. _background-1:
 
 Background:
 ~~~~~~~~~~~
@@ -1091,10 +1029,7 @@ The unknown impedance to be measured is modeled as a series circuit consisting o
    Figure 23: Basic Concept
 
 
-| Three voltages are measured:
-| 1. VA is the applied voltage ( from AWG Channel 1 of the ALM2000 ).
-| 2. VZ is the voltage across the unknown impedance ( from Channel 2 of the ALM2000 ).
-| 3. VI, the voltage across the known resistor R\ :sub:`EXT` is calculated from VA and VZ and is related to the current in both R\ :sub:`EXT` and the unknown impedance.
+Three voltages are measured: 1. VA is the applied voltage ( from AWG Channel 1 of the ALM2000 ). 2. VZ is the voltage across the unknown impedance ( from Channel 2 of the ALM2000 ). 3. VI, the voltage across the known resistor R\ :sub:`EXT` is calculated from VA and VZ and is related to the current in both R\ :sub:`EXT` and the unknown impedance.
 
 These three voltages are actually vectors and indicated in figure 24.
 
@@ -1159,8 +1094,6 @@ Connections to the ALM2000 and the network to be measured are shown in figure 25
    Figure 25, Measurement setup
 
 
-.. _window-setup-2:
-
 Window Setup:
 ~~~~~~~~~~~~~
 
@@ -1174,8 +1107,6 @@ The main impedance analyzer window should appear, as in figure 26. It is sub div
 
    Figure 26, ALICE Impedance Analyzer window
 
-
-.. _the-right-side-menu-section-1:
 
 The Right Side Menu Section
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1192,7 +1123,7 @@ Used to change the number of samples in the FFT calculation. This number has to 
 
 Used to select an FFT window. It is generally better not to select the "Rectangle window" or no window. This window has a poor dynamic range due to the high side bands that are generated with no weighting function in the FFT calculation. The Flat Top window gives the highest amplitude accuracy but also has a large bandwidth, so less selectivity. Using the narrowest bandwidth FFT window and increasing the zero-stuffing factor can improve the measurement results. The program starts up set to the Nuttall window (BW=2.02).
 
-\**File drop down menu \*\*
+**File drop down menu**
 
 Save Config Load Config buttons. Commands for saving and loading the configuration settings to a file. (.cfg file)
 
@@ -1206,9 +1137,7 @@ Cut-DC, an option that will remove the DC component from the sampled data record
 
 The section along the right hand side contains the controls for making the measurements. There is a place to enter the external resistor value. The program starts up with this set to 1000. Next is a spin box to set the number of Ohms/div for the polar ( circular ) grid.
 
-| M2K Analog Inputs
-| ADALM2000 Low Capacitance FET Input Buffers
-| M2K Breadboard Adapters
+M2K Analog Inputs ADALM2000 Low Capacitance FET Input Buffers M2K Breadboard Adapters
 
 Main Graphics area
 ~~~~~~~~~~~~~~~~~~
@@ -1443,10 +1372,7 @@ ALICE Desk-Top provides software interfaces for external plug-in boards which ex
 
 The software interfaces for these can be enabled or disabled by setting the following variables to either 1 or 0 in the alice_init.ini file, see :doc:`ALICE Advanced User’s Guide </wiki-migration/university/tools/m1k/alice/desk-top-advanced-guide>` for more details.
 
-| EnableMuxMode
-| EnableMinigenMode
-| EnablePmodDA1Mode
-| EnableDigPotMode
+EnableMuxMode EnableMinigenMode EnablePmodDA1Mode EnableDigPotMode
 
 EnableMuxMode is set to 1 by default, the rest are set to 0. When these variables are set a button to open their respective control window will appear in the right side of the main ALICE window.
 
@@ -1603,7 +1529,7 @@ The digital potentiometer controls window has check boxes to select which of the
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 Generic 3 wire SPI output:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

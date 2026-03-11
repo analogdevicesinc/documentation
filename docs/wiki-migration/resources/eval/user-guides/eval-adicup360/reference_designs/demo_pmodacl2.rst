@@ -20,8 +20,11 @@ All the outputs are printed from the UART to the USER USB port and can be read o
 
 For precision applications, each **ADXL362** chip requires individual calibration which can be done by measuring and setting the definitions // ACC_TEMP_BIAS// and // ACC_TEMP_SENSITIVITY// parameters in the *ADXL362.h* file.
 
-| The temperature in degrees celsius, \*\* Treal \*\*, can be derived from the ADC readings \*\* Tadc \*\* using the predefined formula:
-| ``Treal = (Tadc + ACC_TEMP_BIAS)/(1 / ACC_TEMP_SENSITIVITY)``
+The temperature in degrees celsius, \*\* Treal \*\*, can be derived from the ADC readings \*\* Tadc \*\* using the predefined formula:
+
+::
+
+       Treal = (Tadc + ACC_TEMP_BIAS)/(1 / ACC_TEMP_SENSITIVITY)
 
 Demo Requirements
 -----------------
@@ -162,8 +165,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -175,9 +176,7 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
-|
-
-| The user must press the **<ENTER>** key each time they want to display the results.
+The user must press the **<ENTER>** key each time they want to display the results.
 
 How to use the Tools
 --------------------
@@ -197,23 +196,20 @@ For more detailed instructions on importing this application/demo example into t
 Project structure
 -----------------
 
-| 
-| The **ADuCM360_demo_pmodacl2** project use basic ARM Cortex-M C/C++ Project structure. This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripheral; port configuration for SPI0, accelerometer sensor use; SPI read/write functions; sensor monitoring.
-| |image2|
+The **ADuCM360_demo_pmodacl2** project use basic ARM Cortex-M C/C++ Project structure. This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripheral; port configuration for SPI0, accelerometer sensor use; SPI read/write functions; sensor monitoring.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/pmodacl2_project_structure.png
+   :align: left
+   :width: 400px
 
 In the **src** and **include** folders you will find the source and header files related to pmodacl2 application. You can modify as you wanted those files. The *Communication.c/h* files contain SPI and UART specific data, meanwhile the *ADXL362.c/h* files contain the accelerometer data. Here are parameters you can configure:
 
-| 
-| The **RTE** folder contains device and system related files:
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
-
-| 
 
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/pmodacl2_project_structure.png
-   :width: 400px

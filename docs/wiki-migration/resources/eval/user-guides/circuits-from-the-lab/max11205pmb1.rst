@@ -13,11 +13,17 @@ Hardware
 Power Supply Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The voltage reference for the IC is supplied by a :adi:`MAX6037` (2.5V) that is also on the module. The filtered power-supply voltage from the host can be optionally passed (jumper selectable) through a :adi:`MAX8510` ultra-low-noise LDO, allowing empirical evaluation of performance with different power sources. For complete PMOD power specifications, please click\ `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
-| ==== Serial-Digital Interface ==== The :adi:`MAX11205PMB1` peripheral module interfaces with a host using a 2-wire serial interface. When an ADC conversion is complete, the IC pulls the data line low. The host must then supply a clock signal to shift out the conversion data.
+The voltage reference for the IC is supplied by a :adi:`MAX6037` (2.5V) that is also on the module. The filtered power-supply voltage from the host can be optionally passed (jumper selectable) through a :adi:`MAX8510` ultra-low-noise LDO, allowing empirical evaluation of performance with different power sources. For complete PMOD power specifications, please click\ `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
-| 
-| ==== Digital Interface (PMOD) ==== The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
+Serial-Digital Interface
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :adi:`MAX11205PMB1` peripheral module interfaces with a host using a 2-wire serial interface. When an ADC conversion is complete, the IC pulls the data line low. The host must then supply a clock signal to shift out the conversion data.
+
+Digital Interface (PMOD)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
 The :adi:`MAX11205PMB1` peripheral module can plug directly into a Pmod-compatible port (configured for SPI) through connector J1. Connector J1 provides a connection of the module to the host. The pin functions and pin assignments adhere to the Pmod standard recommended by Digilent.
 
@@ -35,8 +41,6 @@ Pin 6         Digital Power       VDD
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/max11205pmb1/max11205pmb1-layout.png
    :width: 300px
 
-| 
-
 Device Driver Support
 ---------------------
 
@@ -51,7 +55,9 @@ There are two device driver solutions that are provided for controlling the **MA
    -  The :doc:`MAX11205 Linux driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/max11205>` is used in applications running the Linux operating system, typically on larger processors and SoC devices.
 
       -  The MAX11205 Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
-         ===== System Setup Using MAX32655FTHR =====
+
+System Setup Using MAX32655FTHR
+-------------------------------
 
 The :adi:`MAX11205PMB1` can be used with the :adi:`MAX32655FTHR`.
 
@@ -109,8 +115,8 @@ The expected output viewed in the PuTTY is shown below.
 
 |image2|
 
-| 
-| ===== Application Software (All Platforms) =====
+Application Software (All Platforms)
+------------------------------------
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
@@ -127,7 +133,7 @@ To be able to connect your device, the software must be able to create a context
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-| Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to access it.
 
 For Windows machine connected to MAX32655FTHR:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -158,21 +164,18 @@ Example:
 
    analog@analog:~$ iio_attr -a -C
 
-| 
-| The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the MAX32655FTHR platform.
+The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the MAX32655FTHR platform.
 
 ::
 
    analog@analog:~$ iio_reg -u <context> <device> <register> [<value>]
-
-| 
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application.  The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
@@ -202,8 +205,9 @@ Access the DMM panel to see the instantaneous reading of the voltage.
 PyADI-IIO
 ~~~~~~~~~
 
-| :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
-| Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
+:doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+
+Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
 
 Running the example
 ^^^^^^^^^^^^^^^^^^^

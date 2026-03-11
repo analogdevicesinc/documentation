@@ -56,9 +56,9 @@ Example device tree
 +----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                                 |
 +==========+======================================================================================================================================================+
-| i2c dts  | :git-linux:`arch/arm/boot/dts/overlays/rpi-max14830-i2c-overlay.dts`                                                                                 |
+| i2c dts  | `rpi-max14830-i2c-overlay.dts <https://github.com/analogdevicesinc/linux/blob/rpi-5.10.y/arch/arm/boot/dts/overlays/rpi-max14830-i2c-overlay.dts>`_  |
 +----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| spi dts  | :git-linux:`arch/arm/boot/dts/overlays/rpi-max14830-spi-overlay.dts`                                                                                 |
+| spi dts  | `rpi-max14830-spi-overlay.dts <https://github.com/analogdevicesinc/linux/blob/rpi-5.10.y/arch/arm/boot/dts/overlays/rpi-max14830-spi-overlay.dts>`_  |
 +----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Driver testing
@@ -72,10 +72,7 @@ For example, to use Picocom to connect to UART port 0 of a MAX14830 device using
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

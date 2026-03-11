@@ -10,7 +10,7 @@ An active device is any type of component with the ability to electrically contr
 
 As a side note: The origin of the term transistor is a contraction of "transconductance varistor", as proposed by Bell Telephone Laboratories. It is sometimes incorrectly attributed to a contraction of transresistance.
 
-A simple and general form of such a device is shown in figure 8.1.1. It has three terminals; we will call them X, Y and Z for the moment. Let's also assume that the controlled current flows into terminal X and back out terminal Y. The third terminal, Z, is the control terminal. To describe the function of this block we first need to define the terminal currents *IX*\ <sub></sub>, //IY //and *IZ*\ :sub:`,` and the terminal voltages //VXY //and *VZY* as shown in the figure. Because current flows into terminal X, we generally assume the voltage seen at X is greater than terminal Y and voltage *VXY* is a positive number. The same can be said for the voltage seen at terminal Z with respect to terminal Y and voltage *VZY* is a positive number.
+A simple and general form of such a device is shown in figure 8.1.1. It has three terminals; we will call them X, Y and Z for the moment. Let's also assume that the controlled current flows into terminal X and back out terminal Y. The third terminal, Z, is the control terminal. To describe the function of this block we first need to define the terminal currents *IX*<sub></sub>, //IY //and*IZ*:sub:`,` and the terminal voltages //VXY //and*VZY* as shown in the figure. Because current flows into terminal X, we generally assume the voltage seen at X is greater than terminal Y and voltage *VXY* is a positive number. The same can be said for the voltage seen at terminal Z with respect to terminal Y and voltage *VZY* is a positive number.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f1.png
    :align: center
@@ -21,7 +21,7 @@ A simple and general form of such a device is shown in figure 8.1.1. It has thre
    Figure 8.1.1 General Model
 
 
-In the case of a current controlled device, let's assume that the control current *IZ,*\ <sub></sub>flows into terminal Z and back out terminal Y. Conservation of charge tells us that the sum of the currents flowing into a box must equal the sum of the currents flowing out. Thus *IY*\ <sub></sub>= *IX* + *IZ*. To make the device useful it would be desirable to have the control current *IZ* very small relative to the much larger controlled current *IX*. The ratio of *IX* to *IZ* is the gain of the device and the Greek letter β (beta) is used to represent this gain. The ratio of *IX*\ <sub></sub>to *IY* which is always less than unity, is also a measure of the device gain and is most often represented by the Greek letter α (alpha).
+In the case of a current controlled device, let's assume that the control current *IZ,*<sub></sub>flows into terminal Z and back out terminal Y. Conservation of charge tells us that the sum of the currents flowing into a box must equal the sum of the currents flowing out. Thus*IY*<sub></sub>=*IX* + *IZ*. To make the device useful it would be desirable to have the control current *IZ* very small relative to the much larger controlled current *IX*. The ratio of *IX* to *IZ* is the gain of the device and the Greek letter β (beta) is used to represent this gain. The ratio of *IX*<sub></sub>to*IY* which is always less than unity, is also a measure of the device gain and is most often represented by the Greek letter α (alpha).
 
 For the voltage controlled device let's assume, as we did before, that the current flows into terminal X and out terminal Y. The voltage on terminal Z now controls the amount of current in terminals X and Y. This voltage now needs to be referenced with respect to one of the two other terminals and we will use terminal Y for our purposes here. Also, since a voltage is the control signal in this case, we will assume that no current flows into (or out of) terminal Z. Comparing this back to the current controlled device we can say that α = 1 and β is infinite. The output current to control voltage relationship, expressed as amps/volt, is dimensionally a conductance and the letter *g* is most often used to represent conductance. This parameter of a transistor is called transconductance and *gm* is the common usage.
 
@@ -138,7 +138,7 @@ When this exponential is linearized such that the transistor can be modeled as a
 8.3.2 Transistor alpha and beta
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The proportion of electrons able to cross the base and reach the collector is a measure of the BJT efficiency. The asymmetric heavy doping of the emitter region and light doping of the base region cause many more electrons to be injected from the emitter into the base than holes to be injected from the base into the emitter. The common\ *-*\ emitter// *current* //gain is represented by ß\ :sub:`F` or h\ :sub:`fe` and is approximately the ratio of the DC collector current to the DC base current in the forward-active region. It is typically greater than 100 for small-signal transistors but can be smaller in transistors designed for high-power applications. Another important parameter is the common-base current gain, a\ :sub:`F`. The common-base current gain is approximately the gain of current from emitter to collector in the forward-active region. This ratio usually has a value close to unity; between 0.98 and 0.998. Alpha and beta are more precisely related by the following identities (NPN transistor):
+The proportion of electrons able to cross the base and reach the collector is a measure of the BJT efficiency. The asymmetric heavy doping of the emitter region and light doping of the base region cause many more electrons to be injected from the emitter into the base than holes to be injected from the base into the emitter. The common\ *-*emitter//*current* //gain is represented by ß\ :sub:`F` or h\ :sub:`fe` and is approximately the ratio of the DC collector current to the DC base current in the forward-active region. It is typically greater than 100 for small-signal transistors but can be smaller in transistors designed for high-power applications. Another important parameter is the common-base current gain, a\ :sub:`F`. The common-base current gain is approximately the gain of current from emitter to collector in the forward-active region. This ratio usually has a value close to unity; between 0.98 and 0.998. Alpha and beta are more precisely related by the following identities (NPN transistor):
 
 |image1| |image2| |image3|
 
@@ -176,7 +176,7 @@ NPN transistors consist of a layer of P-doped semiconductor (the "base") sandwic
    :align: center
    :width: 400px
 
-One mnemonic device for identifying the symbol for the NPN transistor is "**n**\ ot **p**\ ointing i\ **n**, or '**n**\ ot **p**\ ointing, **n**\ o' "
+One mnemonic device for identifying the symbol for the NPN transistor is "**n**\ ot **p**\ ointing i**n**, or '**n**\ ot **p**\ ointing, **n**\ o' "
 
 8.3.4 PNP
 ~~~~~~~~~
@@ -197,17 +197,17 @@ Bipolar transistors have five distinct regions of operation, defined by the way 
 The valve is base, and two sides of the pipe are collector and emitter. Now the amount of water (current) going through depends on how much the valve is open (base to emitter voltage), and how much water you have on top of the pipe (collector to base voltage). If you write the biases in term of applied voltages (V\ :sub:`CB`, V\ :sub:`BE`) instead of junction biasing the modes of operation can be described as:
 
 -   Forward Active: Base higher than Emitter, Collector higher than Base ( in this mode the collector current is proportional to base current by β\ :sub:`F`).
-   \* Saturation: Base higher than emitter, but collector is not higher than base.
-   \* Cut-Off: Base lower than emitter, but collector is higher than base. It means the transistor is not letting conventional current to go through collector to emitter.
-   \* Reverse Active: Base lower than emitter, collector lower than base: reverse conventional current goes through transistor.
+-   Saturation: Base higher than emitter, but collector is not higher than base.
+-   Cut-Off: Base lower than emitter, but collector is higher than base. It means the transistor is not letting conventional current to go through collector to emitter.
+-   Reverse Active: Base lower than emitter, collector lower than base: reverse conventional current goes through transistor.
 
-| In terms of junction biasing: ('reverse biased base-collector junction' means V\ :sub:`BC`\ <0 or V\ :sub:`CB`>0)
-| \* Forward\ **-**\ active (or simply, active): The base-emitter junction is forward biased and the base-collector junction is reverse biased. Most bipolar transistors are designed to afford the greatest common-emitter current gain, β\ :sub:`F`, in forward-active mode. If this is the case, the collector-emitter current is approximately proportional to the base current, but many times larger, for small base current variations.
-| \* Reverse\ **-**\ active (or inverse\ **-**\ active or inverted): By reversing the biasing conditions of the forward-active region, a bipolar transistor goes into reverse-active mode. In this mode, the emitter and collector regions switch roles. Because most BJTs are designed to maximize current gain in forward-active mode, the β\ :sub:`F` in inverted mode is several (2-3 for the ordinary germanium transistor) times smaller. This transistor mode is seldom used, usually being considered only for failsafe conditions and some types of bipolar logic. The reverse bias breakdown voltage to the base may be an order of magnitude lower in this region.
-| \* Saturation: With both junctions forward-biased, a BJT is in saturation mode and facilitates high current conduction from the emitter to the collector. This mode corresponds to a logical "on", or a closed switch.
-| \* Cutoff: In cutoff, biasing conditions opposite of saturation (both junctions reverse biased) are present. There is very little current flow, which corresponds to a logical "off", or an open switch.
+In terms of junction biasing: ('reverse biased base-collector junction' means V\ :sub:`BC`\ <0 or V\ :sub:`CB`>0)
 
--   Avalanche*\* **breakdown** \**region
+-   Forward\ **-**\ active (or simply, active): The base-emitter junction is forward biased and the base-collector junction is reverse biased. Most bipolar transistors are designed to afford the greatest common-emitter current gain, β\ :sub:`F`, in forward-active mode. If this is the case, the collector-emitter current is approximately proportional to the base current, but many times larger, for small base current variations.
+-   Reverse\ **-**active (or inverse**-**\ active or inverted): By reversing the biasing conditions of the forward-active region, a bipolar transistor goes into reverse-active mode. In this mode, the emitter and collector regions switch roles. Because most BJTs are designed to maximize current gain in forward-active mode, the β\ :sub:`F` in inverted mode is several (2-3 for the ordinary germanium transistor) times smaller. This transistor mode is seldom used, usually being considered only for failsafe conditions and some types of bipolar logic. The reverse bias breakdown voltage to the base may be an order of magnitude lower in this region.
+-   Saturation: With both junctions forward-biased, a BJT is in saturation mode and facilitates high current conduction from the emitter to the collector. This mode corresponds to a logical "on", or a closed switch.
+-   Cutoff: In cutoff, biasing conditions opposite of saturation (both junctions reverse biased) are present. There is very little current flow, which corresponds to a logical "off", or an open switch.
+-   Avalanche*\**breakdown** \**region
 
 Although these regions are well defined for sufficiently large applied voltage, they overlap somewhat for small (less than a few hundred millivolts) biases. For example, in the typical grounded-emitter configuration of an NPN BJT used as a pull-down switch in digital logic, the "off" state never involves a reverse-biased junction because the base voltage never goes below ground; nevertheless the forward bias is close enough to zero that essentially no current flows, so this extreme of the forward active region can be regarded as the cutoff region.
 
@@ -217,8 +217,8 @@ Although these regions are well defined for sufficiently large applied voltage, 
 As we just learned, the bipolar junction transistor (BJT) can operate in one of three regions:
 
 -   Cutoff region: Transistor is off and no current flows between collector and emitter (i.e., collector-emitter resistance is infinite).
-   \* Active region: Transistor acts like a current controlled current source between collector and emitter as in the basic model.
-   \* Saturation region: When the voltage between collector and emitter drops below a certain level (typically when the collector to base voltage is zero or less) the base current increases and the ratio of *I\ C* to *I\ B*, or β is much smaller than in the active region.
+-   Active region: Transistor acts like a current controlled current source between collector and emitter as in the basic model.
+-   Saturation region: When the voltage between collector and emitter drops below a certain level (typically when the collector to base voltage is zero or less) the base current increases and the ratio of *I\ C* to *I\ B*, or β is much smaller than in the active region.
 
 In the active region, the transistor adjusts the collector current to be ? times the base current. If the base current I\ :sub:`B`, falls to 0, the transistor enters the cutoff region and shuts off. When the collector voltage becomes less than or equal to the base voltage the base current rises and β falls. In this case, the transistor enters the saturation region. To keep the transistor out of the saturation region, the general rule of thumb is that the voltage on the collector should be more positive than the voltage on the base. That is the collector base junction is always reversed biased.
 
@@ -303,11 +303,9 @@ The typical current versus voltage (I-V) characteristics of a MOSFET are shown i
 
 The operation of a MOSFET can be separated into three different modes, depending on the voltages at the terminals. In the following discussion, a simplified algebraic model is used that is accurate only for old technology. Modern MOSFET characteristics require computer models that have rather more complex behavior.
 
-For an enhancement\ **-**\ mode*\*, **n-channel** \**MOSFET, the three operational modes are:
+For an enhancement\ **-**mode**, **n-channel** \**MOSFET, the three operational modes are:
 
-| Cutoff, subthreshold, or weak-inversion mode
-| When :math:`V_GS < V_th` :
-| Where V\ :sub:`th` is the threshold voltage of the device.
+Cutoff, subthreshold, or weak-inversion mode When :math:`V_GS < V_th` : Where V\ :sub:`th` is the threshold voltage of the device.
 
 According to the basic threshold model, the transistor is turned off, and there is no conduction between drain and source. In reality, the Boltzmann distribution of electron energies allows some of the more energetic electrons at the source to enter the channel and flow to the drain, resulting in a subthreshold current that is an exponential function of gate-source voltage. While the current between drain and source should ideally be zero when the transistor is being used as a turned-off switch, there is a weak-inversion current, sometimes called subthreshold leakage. In weak inversion the current varies exponentially with gate-to-source bias V\ :sub:`GS` as given approximately by:
 
@@ -315,8 +313,7 @@ According to the basic threshold model, the transistor is turned off, and there 
    :align: center
    :width: 200px
 
-| Where:
-| I\ :sub:`D0` = current at V\ :sub:`GS` = V\ :sub:`th`
+Where: I\ :sub:`D0` = current at V\ :sub:`GS` = V\ :sub:`th`
 
 and the slope factor *n* is given by
 
@@ -360,11 +357,7 @@ The transistor is turned on, and a channel has been created which allows current
    :align: center
    :width: 300px
 
-| Where:
-| μ\ :sub:`n` is the charge-carrier effective mobility,
-| W is the gate width,
-| L is the gate length
-| C\ :sub:`ox` is the gate oxide capacitance per unit area.
+Where: μ\ :sub:`n` is the charge-carrier effective mobility, W is the gate width, L is the gate length C\ :sub:`ox` is the gate oxide capacitance per unit area.
 
 The transition from the exponential subthreshold region to the triode region is not as sharp as the equations suggest.
 
@@ -433,15 +426,15 @@ The transconductance, g\ :sub:`m`, in siemens, is given by the following equatio
    :align: center
    :width: 100px
 
-| where:
-| //I\ :sub:`C` // is the quiescent collector current (also called the collector bias or DC collector current) |image4| is the thermal voltage, calculated from Boltzmann's constant *k*, the charge of an electron *q*, and the transistor temperature in kelvins, *T*. At 300 K (approximately room temperature) *V\ T* is about 26 mV.
+where:
+
+//I\ :sub:`C` // is the quiescent collector current (also called the collector bias or DC collector current) |image4| is the thermal voltage, calculated from Boltzmann's constant *k*, the charge of an electron *q*, and the transistor temperature in kelvins, *T*. At 300 K (approximately room temperature) *V\ T* is about 26 mV.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e16.png
    :align: center
    :width: 175px
 
-| where:
-| |image5| is the current gain at low frequencies (also referred to as *h\ FE*).
+where: |image5| is the current gain at low frequencies (also referred to as *h\ FE*).
 
 Here *I\ B* is the quiescent point base current. This is a parameter specific to each transistor, and can be found on a datasheet; ß is a function of the choice of collector current.
 
@@ -550,11 +543,9 @@ Some important BJT equations.
 Lab Activities
 --------------
 
-| **ADALM1000 Lab Activity 3,** :doc:`BJT as a diode </wiki-migration/university/courses/alm1k/alm-lab-3>`
-| **ADALM1000 Lab Activity 4,** :doc:`BJT I/V curves </wiki-migration/university/courses/alm1k/alm-lab-4>`
+**ADALM1000 Lab Activity 3,** :doc:`BJT as a diode </wiki-migration/university/courses/alm1k/alm-lab-3>` **ADALM1000 Lab Activity 4,** :doc:`BJT I/V curves </wiki-migration/university/courses/alm1k/alm-lab-4>`
 
-| **ADALM1000 Lab Activity 3M,** :doc:`MOS as a diode </wiki-migration/university/courses/alm1k/alm-lab-3m>`
-| **ADALM1000 Lab Activity 4M,** :doc:`MOS I/V curves </wiki-migration/university/courses/alm1k/alm-lab-4m>`
+**ADALM1000 Lab Activity 3M,** :doc:`MOS as a diode </wiki-migration/university/courses/alm1k/alm-lab-3m>` **ADALM1000 Lab Activity 4M,** :doc:`MOS I/V curves </wiki-migration/university/courses/alm1k/alm-lab-4m>`
 
 **Return to** :doc:`Previous Chapter </wiki-migration/university/courses/electronics/text/chapter-7>`
 

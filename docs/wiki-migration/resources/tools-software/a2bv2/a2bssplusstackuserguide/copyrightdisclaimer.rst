@@ -1,8 +1,9 @@
 Copyright Information And Disclaimer
 ====================================
 
-| :doc:`Click here to return to the A2B SSPLUS STACK USER GUIDE </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide>`
-| Copyright Information and Disclaimer Statements
+:doc:`Click here to return to the A2B SSPLUS STACK USER GUIDE </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide>`
+
+Copyright Information and Disclaimer Statements
 
 Copyright Information
 ---------------------

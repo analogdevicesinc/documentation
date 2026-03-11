@@ -10,144 +10,126 @@ http://www.interfacebus.com/Glossary-of-Terms.html
 A
 -
 
-| **A**
-|
+**A**
 
 .. container:: indent
 
    Abbreviation for ampere, the unit of electrical current.
 
 
-   | **acceptor atoms**
-|
+**acceptor atoms**
 
 .. container:: indent
 
    Trivalent atoms that accept free electrons from pentavalent atoms.
 
 
-   | **AC coupling**
-|
+**AC coupling**
 
 .. container:: indent
 
    Circuit that passes an AC signal while blocking a DC voltage.
 
 
-   | **AC load line**
-|
+**AC load line**
 
 .. container:: indent
 
    A graph representing all possible combinations of AC output voltage and current for an amplifier.
 
 
-   | **active component**
-|
+**active component**
 
 .. container:: indent
 
    A component that changes the amplitude of a signal between input and output.
 
 
-   | **active filter**
-|
+**active filter**
 
 .. container:: indent
 
    A filter that uses an amplifier in addition to reactive components to pass or reject selected frequencies.
 
 
-   | **active region**
-|
+**active region**
 
 .. container:: indent
 
    The region of BJT operation between saturation and cutoff used for linear amplification.
 
 
-   | **ADC**
-|
+**ADC**
 
 .. container:: indent
 
    Abbreviation for Analog to Digital Converter.
 
 
-   | **Aliased signals**
-|
+**Aliased signals**
 
 .. container:: indent
 
    A signal (normally electrical) sampled below the Nyquist Rate (twice the maximum frequency content of the signal) so that the frequency content of signal is erroneously rearranged.
 
 
-   | **alpha**
-|
+**alpha**
 
 .. container:: indent
 
    Ratio of collector current to emitter current in a bipolar junction transistor (BJT). Greek letter alpha "α" is the symbol used.
 
 
-   | **amplifier**
-|
+**amplifier**
 
 .. container:: indent
 
    A circuit that increases the voltage, current, or power of a signal.
 
 
-   | **amplitude**
-|
+**amplitude**
 
 .. container:: indent
 
    Magnitude or size of a signal voltage or current.
 
 
-   | **analog**
-|
+**analog**
 
 .. container:: indent
 
    Information represented as continuously varying voltage or current rather than in discrete levels as opposed to digital data varying between two discrete levels.
 
 
-   | **anode**
-|
+**anode**
 
 .. container:: indent
 
    The positive electrode or terminal of a device. The "P" material of a diode.
 
 
-   | **Astable**
-|
+**Astable**
 
 .. container:: indent
 
    A circuit that cannot remain in one state. That is it will periodically switch between states or oscillate.
 
 
-   | **attenuate**
-|
+**attenuate**
 
 .. container:: indent
 
    To reduce the amplitude of an action or signal. The opposite of amplification.
 
 
-   | **average value**
-|
+**average value**
 
 .. container:: indent
 
    A value of voltage or current where the area of the wave above the value equals the area of the wave below the value.
 
 
-   | **AWG**
-|
+**AWG**
 
 .. container:: indent
 
@@ -164,112 +146,98 @@ B
    Width of the band of frequencies between the half power points.
 
 
-   | **barrier potential**
-|
+**barrier potential**
 
 .. container:: indent
 
    The natural difference of potential that exists across a forward biased pn junction.
 
 
-   | **base**
-|
+**base**
 
 .. container:: indent
 
    The region that lies between the emitter and collector of a bipolar junction transistor (BJT).
 
 
-   | **base biasing**
-|
+**base biasing**
 
 .. container:: indent
 
    A method of biasing a BJT in which the bias voltage is supplied to the base by means of a resistor.
 
 
-   | **beta**
-|
+**beta**
 
 .. container:: indent
 
    (β) The ratio of collector current to base current in a bipolar junction transistor (BJT).
 
 
-   | **bias**
-|
+**bias**
 
 .. container:: indent
 
    A DC voltage applied to a device to control its operation.
 
 
-   | **bipolar junction transistor**
-|
+**bipolar junction transistor**
 
 .. container:: indent
 
    (BJT), A three terminal device in which emitter to collector current is controlled by base current.
 
 
-   | **bode plot**
-|
+**bode plot**
 
 .. container:: indent
 
    A graph of gain versus frequency.
 
 
-   | **branch current**
-|
+**branch current**
 
 .. container:: indent
 
    The portion of total current flowing in one path of a parallel circuit.
 
 
-   | **breakdown voltage**
-|
+**breakdown voltage**
 
 .. container:: indent
 
    Voltage at which the breakdown of a dielectric or insulator occurs.
 
 
-   | **bridge rectifier**
-|
+**bridge rectifier**
 
 .. container:: indent
 
    A circuit using four diodes to provide full wave rectification. Converts an AC voltage to a pulsating DC voltage.
 
 
-   | **buffer**
-|
+**buffer**
 
 .. container:: indent
 
    An amplifier used to isolate a load from a source.
 
 
-   | **bulk resistance**
-|
+**bulk resistance**
 
 .. container:: indent
 
    The natural resistance of a "P" type or "N" type semiconductor material.
 
 
-   | **BW**
-|
+**BW**
 
 .. container:: indent
 
    Abbreviation for bandwidth.
 
 
-   | **bypass capacitor**
-|
+**bypass capacitor**
 
 .. container:: indent
 

@@ -142,8 +142,8 @@ Hardware Link Options
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_links.png
    :align: left
 
-| 
-| ====== On Board Connections ======
+On Board Connections
+====================
 
 3.5mm Jack Connector A1
 -----------------------
@@ -152,9 +152,19 @@ Hardware Link Options
 
 -  **ECG**
 
-| |image2|
-| ==== Thermocouple Connector A2 ==== |image3|
-| ==== Connector J8: DC (Analog Input) ==== **Functionality:**
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_ecg.png
+   :width: 600px
+
+Thermocouple Connector A2
+-------------------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_thermocouple.png
+   :width: 600px
+
+Connector J8: DC (Analog Input)
+-------------------------------
+
+**Functionality:**
 
 -  **Noise Test**
 -  **RTD**
@@ -242,8 +252,8 @@ Arduino Connector P1-P5
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_arduino_sch.png
    :align: left
 
-| 
-| === PMOD Connector P7 ===
+PMOD Connector P7
+~~~~~~~~~~~~~~~~~
 
 ========== ========= ========== ========
 Connection Function  Connection Function
@@ -286,19 +296,19 @@ AVDD (S1) and AVSS (LK12) selection
 
       -  AVSS tied to GND [LK1-3 (Blue)]
 
--  \**1.8V supply \*\*
+-  **1.8V supply**
 
    -  1.8V regulator supplies AVDD
 
       -  AVSS tied to GND [LK1-3 (Blue)]
 
--  \**±1.8V split supply \*\*
+-  **±1.8V split supply**
 
    -  1.8 regulator supplies AVDD
 
       -  -3 regulator to a -1.8V regulator supplied AVSS
 
--  \**VREF supply \*\*
+-  **VREF supply**
 
    -  The external reference supplies AVDD [LK14]
 
@@ -329,19 +339,19 @@ IOVDD (S2) selection
 
       -  GND tied to AVSS [LK1-3 (Blue)]
 
--  \**1.8V supply \*\*
+-  **1.8V supply**
 
    -  1.8V regulator supplies IOVDD
 
       -  GND tied to AVSS [LK1-3 (Blue)]
 
--  \**±1.8V split supply \*\*
+-  **±1.8V split supply**
 
    -  1.8 regulator supplies AVDD
 
       -  GND Split from AVSS [LK1-3 (Blue)]
 
--  \**Tied to AVDD (LK45) \*\*
+-  **Tied to AVDD (LK45)**
 
    -  AVDD supplies IOVDD
 
@@ -441,7 +451,7 @@ Silk Screen
 ======================================== ===========================
 Location of Reference related components Location of Reference Links
 ======================================== ===========================
-|image4|                                 |image5|
+|image2|                                 |image3|
 ======================================== ===========================
 
 Schematics
@@ -460,11 +470,7 @@ Bill of Materials
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/20220308_110921.jpg
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_ecg.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_thermocouple.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_refs.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_refs.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_refin_links.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_refin_links.png
    :width: 400px

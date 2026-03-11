@@ -17,10 +17,9 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
          The ADIN1300 Ethernet PHY supports all the standard functions and pins of an Ethernet PHY and it is very straight forward to migrate an existing design to the ADIN1300. The following sections detail the modifications at the schematic level required to migrate from a DP83869 device to the ADIN1300 device. Including a description of differences corresponding to each functional group of pins and differences in the hardware pin configuration of the device. A side-by-side pinout and package comparison and a feature comparison table are included for easy reference. The ADIN1300 datasheet provides a detailed description of all functions of the device and should also be consulted for reference.
          
          Hardware Changes By Function
-         ----------------------------
          
-         Power Supplies Overview
-         ~~~~~~~~~~~~~~~~~~~~~~~
+         **Power Supplies Overview**
+
          
          Both devices require a minimum of 2 power supply rails, where the VDDIO is connected to the same power supply voltage as the MAC or as the PHY analog supply AVDD_3P3 (VDDA2P5). The VDDIO supply rail powers the MAC interface and MDIO blocks, this can operate from 1.8V, 2.5V or 3.3V. The supply requirements are listed in Table 1.
          
@@ -30,27 +29,27 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_decoupling_requirements_for_each_phy_table2.png
          
-         RESET Operation
-         ~~~~~~~~~~~~~~~
+         **RESET Operation**
+
          
          Both devices have a RESET_N pin which initializes the device and latches the hardware pin configuration. To reset the ADIN1300 the RESET_N pin should be held low for >10 μs. Deglitch circuitry is included on this pin to reject pulses shorter than ~1 μs. This pin requires a 1 kΩ pull-up resistor to AVDD_3P3. The ADIN1300 includes power monitoring circuitry to monitor all of the supplies. At power-up, the ADIN1300 is held in hardware reset until each of the supplies has crossed its minimum rising threshold value. The hardware strapping pins are read and updated at the de-assertion of reset for both devices. For the ADIN1300, the RESET_N pin resides in the AVDD_3P3 voltage domain. After 5 ms from the deassertion of RESET_N, the management interface registers are accessible and the device can be programmed. In applications where the MAC interface is powered from VDDIO of 1.8V, level shifting of the RESET_N signal applied to the ADIN1300 may be required to ensure the voltage level on the RESET_N pin is in excess of the minimum input high threshold level.
          
          The DP83869 requires external control over the RESET_N pin during power up and a much longer time to when the management registers are accessible. If the RESET_N pin is connected to a host controller, then the PHY must be held in reset for a minimum of 200 ms after the last supply powers up. If the host controller cannot be connected to RESET_N, then a 100-Ω resistor and 47-uF capacitor are required to be connected in series between the RESET_N pin and ground.
          
-         Clocking
-         ~~~~~~~~
+         **Clocking**
+
          
          A 25 MHz crystal or external clock source is used to provide the reference clock for both devices. A crystal can be connected to pins XTAL_I/XTAL_O (XI/XO), with both devices using the same external circuit. Or a 25 MHz refence clock can be provided on the input clock pin CLK_IN (XI). The DP83869 does not support the RMII MAC interface. The ADIN1300 does support RMII and requires an external 50 MHz REF_CLK on the XTAL_I/REF_CLK pin in RMII mode.
          
-         Bias Resistor
-         ~~~~~~~~~~~~~
+         **Bias Resistor**
+
          
          An external resistor is required to bias internal reference circuitry for both DP83869 and ADIN1300. The ADIN1300 requires a 3.01 kΩ resistor (1% tolerance, 100 ppm/°C temperature coefficient) connected to pin 10. The DP83687 uses an 11 kΩ (1%) on pin 12.
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_bias_resistor_values_table3.png
          
-         Media Dependent Interface (MDI)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         **Media Dependent Interface (MDI)**
+
          
          The ADIN1300 has voltage mode line drivers with on-chip terminations so no external termination resistors are required. Both devices use voltage mode line drive for connection from the MDI_0:3_P/N (TD_P/M_A:D) pins to the magnetics and RJ-45 line using the same external circuit. The recommended external circuit for the interface to the magnetics and RJ-45 is shown in Figure 2.
          
@@ -61,25 +60,25 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_isolation_using_discrete_magnetics_figure_2.png
          
-         MDIO/Management Interface
-         ~~~~~~~~~~~~~~~~~~~~~~~~~
+         **MDIO/Management Interface**
+
          
          Both devices support the IEEE management interface using the MDIO/MDC pins and require a pullup resistor on the MDIO pin (Management Data Open Drain Input/Output). The recommended value for ADIN1300 is a 1.5kΩ resistor connected to pin 24. The DP83869 also recommends a 1.5kΩ resistor connected to pin 41. Both devices provide an interrupt pin, INT_N (¯INT). This pin requires a 1.5 kΩ pull-up resistor to VDDIO. The DP83869 recommends 2.2kΩ pull-up resistors for their interrupt pin.
          
-         LED Function
-         ~~~~~~~~~~~~
+         **LED Function**
+
          
          The ADIN1300 support two LED pins on LED_0 and LINK_ST. The LED_0 has programmability of LED functions, with different blinking operation possible through MDIO configuration, the default mode is ON when Link is Up, blink if activity. The LINK_ST provides static information about Link up or down status. The DP83869 supports 3 LEDs pins 45, 46, 47 in addition to one GPIO pin that can be configured to operate as LED_3. Both devices use these pins for strapping purposes.
          
-         LED Circuit
-         ^^^^^^^^^^^
+         **LED Circuit**
+
          
          The ADIN1300 LED_0 operates from the AVDD_3P3 voltage domain, therefore can support driving LEDs even when the MAC interface is running at the lower voltage of 1.8V. The default LED operation is on if the Link is up and blinks when there is activity, this operation can be reprogrammed through MDIO write. For the LED_0 of the ADIN1300, it can be configured with 4-level strapping. The strapping configuration will have an impact on how the LED function operates and needs to be considered if the LED pins are used to directly drive an LED. If the strap pin is pulled high by the strapping resistors, (MODE_3/MODE_4) the output will be configured as an active low driver and conversely if the strapping input is pulled low (MODE_0/MODE_1), the output will be configured as active high. This LED circuit should be configured accordingly.
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_led_0_hardware_configuation_pin_interaction_figure3.png
          
-         Link Status, LINK_ST
-         ^^^^^^^^^^^^^^^^^^^^
+         **Link Status, LINK_ST**
+
          
          The ADIN1300 has a dedicated LINK_ST pin to provide information to the MAC on the status of the Link. By default, the LINK_ST pin goes high indicating the link is up and low to indicate the link is down. The LINK_ST polarity is programmable by setting the bit high GE_LNK_STAT_INV_EN. The LINK_ST could be used to drive an LED, however it resides in the VDDIO voltage domain, therefore, when driving an LED in an integrated RJ45 jack where the PHY VDDIO is 1.8V, level shifting will be required. This can be done using a FET.
          
@@ -107,8 +106,8 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_rgmii_mac_interface_mode_pin_comparison_table4.png
          
-         MII Interface
-         ^^^^^^^^^^^^^
+         **MII Interface**
+
          
          The MII interface is the communication path between the PHY and MAC devices. The MII interface has a high pin count, with a total of 15 pins for data transmission, reception and to signal errors or collision. It is sometimes used in 100M applications as it has a lower latency than RGMII and is much lower than RMII. Table 5 shows a pin overview of both devices for the MII MAC interface mode. When using the ADIN1300 in MII mode, the multifunction pin “LED_0/COL/TX_ER” automatically becomes either COL or TX_ER. If EEE advertisement is disabled, the pin function is COL as full and half-duplex operation is supported and TX_ER is not required as an input. If EEE advertisement is enabled the pin function is TX_ER as only full duplex operation is supported with EEE and the COL pin is not required. Similarly, the “INT_N/CRS” becomes CRS. The ADIN1300 sub-system registers provide user with ability to reconfigure which pin the COL and CRS functions are provided on (option of redirecting to GP_CLK, LINK_ST or INT_N). This requires a register write over MDIO interface to reconfigure. The DP83869 can configure pin 21 (GPIO_0) using software as COL or CRS.
          
@@ -119,8 +118,8 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_mii_mac_interface_mode_pin_comparison_table5.png
          
-         RMII Interface
-         ^^^^^^^^^^^^^^
+         **RMII Interface**
+
          
          The DP83869 does not support the RMII interface. RMII is a reduced MII interface using fewer pins as shown in Table 6. The pin count for this interface is 8 pins.
          
@@ -128,8 +127,8 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
          
          In RMII mode, the ADIN1300 requires an external 50MHz clock applied to XTAL_I. This clock could come from the MAC.
          
-         Output Clocks
-         ~~~~~~~~~~~~~
+         **Output Clocks**
+
          
          The ADIN1300 provides a 25 MHz output reference clock on the REF_CLK pin. This can be used a 25 MHz input reference clock for another PHY device. The ADIN1300 can optionally provide a number of clock signals on the GP_CLK pin. This is configured via MDIO writes and the clocks available are a 125 MHz free running clock, 25 MHz clock and 25 MHz/125 MHz recovered clock.
          
@@ -145,8 +144,7 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
    .. container:: half column
 
          
-         **Hardware Configuration**
-
+         Hardware Configuration
          
          Both devices have a number of strapping options to enable managed or unmanaged configurations of the PHY function such as PHY address, mode of operation, Auto-Negotiation and MAC Interface. After power on, the strapping pin voltages get sensed and latched upon existing from a reset and the sensed voltages are used to set the personality of the PHY. When configuring any strapping configurations, ensure to review the default state of the MAC side, whether the pins are being driven when coming out of reset or if there are internal pulls. Understanding the behavior on the MAC side is key to ensuring there are no conflicts with the hardware strapping implemented, or to adjust the strapping resistor values if required. The ADIN1300 and DP83869 both use a mix of 2-level and 4-level strapping options. In general, strapping pins are multi-functional and have different operation after the device is brought out of reset. The ADIN1300 has internal pull downs on many of its strapping pins (not all), therefore it would be possible to minimize external strapping resistors.
          
@@ -158,8 +156,8 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_4_level_strapping_resistor_ratios_table_8.png
          
-         Hardware Configuration of Speed
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         **Hardware Configuration of Speed**
+
          
          For the ADIN1300, speed configuration is done using two pins, PHY_CFG0 and PHY_CFG1. These pins do not have any internal pull resistors, therefore external strapping is required. Both pins support 4-level strapping, providing much flexibility in terms of the possible combinations, such as Auto-neg speeds shown in Table 9 or Forced modes shown in Table 10. Review the datasheet hardware configuration pin section for full detail on the possible settings using these pins.
          
@@ -177,15 +175,15 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_auto_mdix_mode_adin1300_table_11.png
          
-         MAC Interface Selection
-         ~~~~~~~~~~~~~~~~~~~~~~~
+         **MAC Interface Selection**
+
          
          The ADIN1300 uses two hardware pins, MACIF_SEL0 and MACIF_SEL1 to provide user ability to select different MAC interfaces. These two pins have internal weak pull downs, therefore the default operation would be RGMII with delays as shown in Table 12. To configure any other MAC interface mode, use 10kΩ pull up or pull down resistors to select accordingly.
          
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_mac_interface_selection_adin1300_table_12.png
          
-         Hardware Configuration of PHY Address
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         **Hardware Configuration of PHY Address**
+
          
          Both devices have a default strapping providing a PHY address of 0x0000. The ADIN1300 uses two-level strapping for the four PHY address pins, either pull high or low to configure the PHY address, with an option of 16 unique addresses possible. Two level strapping provides a very robust PHY addressing scheme. The DP83869 provides four level strapping for the PHY address pins, capable of 16 unique address. When configuring any strapping configurations, assess the default state of the MAC side, in case it conflicts with the hardware strapping implemented.
          
@@ -201,8 +199,7 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
    .. container:: half column
 
          
-         **Package**
-
+         Package
          
          The ADIN1300 is available in a 40 lead LFCSP (6 mm x 6 mm footprint). The DP83869 is available in a 48 lead QFN (7 mm x 7 mm). Due to the smaller package footprint and differing pinout, the ADIN1300 is not a drop-in replacement for the DP83869 product. It will require a re-spin of schematic and board layout to achieve this exchange.
          
@@ -211,15 +208,14 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
          The underside of the LFCSP package for the ADIN1300 includes an exposed paddle which should be soldered directly to the board with an array of vias for thermal purposes. There are also two exposed stripes adjacent to the exposed paddle. These do not need to be soldered to the board, they should be treated as a keep out area as they are connected to supply rails in the device, therefore should not be tied to ground and there should be no routing or traces on the PCB layer directly underneath them.
          
          Other Pinout Considerations
-         ---------------------------
          
-         Integrated MDI Termination
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+         **Integrated MDI Termination**
+
          
          Both devices include integrated termination resistors on the MDI paths. These are voltage mode PHYs, no external resistors are required for biasing and no supply voltage is required at the center tap of the transformer.
          
-         RGMII Drive/Termination resistors
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         **RGMII Drive/Termination resistors**
+
          
          The ADIN1300 provides user with ability to adjust the RGMII drive current through the GE_RGMII_IO_CNTRL register.
          
@@ -253,8 +249,7 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
          
          The DP83869 supports 1000BASE-X and 100BASE-FX Fiber protocols. The ADIN1300 does not support fiber protocols.
          
-         **Software Considerations**
-
+         Software Considerations
          
          Both devices can be hardware strapped to be used in an unmanaged configuration. Alternatively, they can provide SMI/MII access over the MDIO interface. The DP83869 supports Clause 22 register access, while the ADIN1300 supports both Clause 22 and Clause 45 register access using both the 802.3 Clause 22 and Clause 45 management frame structures. Registers 0x0 to 0xF are common across all PHYs.
          

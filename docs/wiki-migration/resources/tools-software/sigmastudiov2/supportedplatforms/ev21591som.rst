@@ -3,5 +3,4 @@
 ADSP-21591 Processor
 ====================
 
-| 
-| Find more details online - :adi:`ADSP-21591 <en/products/adsp-21591.html>`
+Find more details online - :adi:`ADSP-21591 <en/products/adsp-21591.html>`

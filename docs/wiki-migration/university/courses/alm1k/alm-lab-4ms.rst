@@ -42,13 +42,13 @@ This state is similar to a closed switch connecting the bottom of R\ :sub:`D` to
 The characteristics for an enhancement mode NMOS switch assume that:
 
 -   -V\ :sub:`in` is low enough to drive the transistor into cutoff.
-   \* +V\ :sub:`in` must be greater than V\ :sub:`TH` to drive the transistor into triode.
-   \* The transistor is an ideal component.
+-   +V\ :sub:`in` must be greater than V\ :sub:`TH` to drive the transistor into triode.
+-   The transistor is an ideal component.
 
 These conditions can be assured by designing the circuit so that:
 
 -   -V\ :sub:`in` < V\ :sub:`TH`
-   \* +V\ :sub:`in` > V\ :sub:`TH` (V\ :sub:`DD` is a good maximum)
+-   +V\ :sub:`in` > V\ :sub:`TH` (V\ :sub:`DD` is a good maximum)
 
 Condition 1 guarantees that the circuit is driven into the cutoff region by the input. Conditions 2 assure that the transistor will be driven into the triode region.
 
@@ -57,11 +57,7 @@ An actual NMOS switch differs from the ideal switch in several aspects. In pract
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Hardware module
-| Solder-less Breadboard
-| 1 - 100Ω Resistor (R\ :sub:`D`)
-| 1 - 5mm LED (any color)
-| 1 - small signal NMOS transistor (ZVN2110A or CD4007 CMOS array)
+ADALM1000 Hardware module Solder-less Breadboard 1 - 100Ω Resistor (R\ :sub:`D`) 1 - 5mm LED (any color) 1 - small signal NMOS transistor (ZVN2110A or CD4007 CMOS array)
 
 Directions:
 ~~~~~~~~~~~
@@ -139,10 +135,6 @@ Modify the circuit on your breadboard to look like figure 4. Now the second NMOS
 
 **For Further Reading:**
 
-| `Transistor <https://en.wikipedia.org/wiki/Transistor>`_
-| `Light emitting diode <https://en.wikipedia.org/wiki/Light-emitting_diode>`_
-| `LED circuit <https://en.wikipedia.org/wiki/LED_circuit>`_
+`Transistor <https://en.wikipedia.org/wiki/Transistor>`_ `Light emitting diode <https://en.wikipedia.org/wiki/Light-emitting_diode>`_ `LED circuit <https://en.wikipedia.org/wiki/LED_circuit>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
-| **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents** **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**

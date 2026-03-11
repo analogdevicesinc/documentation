@@ -21,14 +21,7 @@ In this :doc:`Lab Activity </wiki-migration/university/courses/alm1k/alm-lab-dif
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 1 – OP484 quad rail to rail amplifier
-| 2 – 10 KΩ resistors
-| 2 – 100 KΩ resistors
-| 1 – 10 Ω resistor
-| 1 – 220 Ω resistor
-| Various loads, 470 Ω resistor, 2 - 0.1 uF capacitors, 4.7 mH inductor
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 – OP484 quad rail to rail amplifier 2 – 10 KΩ resistors 2 – 100 KΩ resistors 1 – 10 Ω resistor 1 – 220 Ω resistor Various loads, 470 Ω resistor, 2 - 0.1 uF capacitors, 4.7 mH inductor
 
 Directions:
 ~~~~~~~~~~~
@@ -112,7 +105,6 @@ As an extra check on your results you can turn on the CA-I curve which measures 
 
 **For Further Reading:**
 
-| :adi:`Difference and Current Sense Amplifiers <media/en/training-seminars/tutorials/MT-068.pdf>`
-| :adi:`A Deeper Look into Difference Amplifiers <library/analogDialogue/archives/48-02/diff_amp.html>`
+:adi:`Difference and Current Sense Amplifiers <media/en/training-seminars/tutorials/MT-068.pdf>` :adi:`A Deeper Look into Difference Amplifiers <library/analogDialogue/archives/48-02/diff_amp.html>`
 
 **Return to the ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

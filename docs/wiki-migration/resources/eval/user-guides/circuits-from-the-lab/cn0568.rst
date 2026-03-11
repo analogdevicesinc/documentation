@@ -88,16 +88,19 @@ The phase of an output signal can be incremented by specifying the value in the 
 Hop Function Tab
 ~~~~~~~~~~~~~~~~
 
-| A frequency hop can be performed continuously between 2 frequencies within the Hop Function tab. VCO Freq. A and VCO Freq. B are the two frequencies that the user specifies for the hop. The dwell time at each frequency is input in the Time Delay field. A frequency hop is started by pressing the Start button. Likewise the frequency hop is stopped using the Stop button.
-| |image5|
+A frequency hop can be performed continuously between 2 frequencies within the Hop Function tab. VCO Freq. A and VCO Freq. B are the two frequencies that the user specifies for the hop. The dwell time at each frequency is input in the Time Delay field. A frequency hop is started by pressing the Start button. Likewise the frequency hop is stopped using the Stop button.
+
+
+|image5|
 
 Dual Board Control
 ^^^^^^^^^^^^^^^^^^
 
-| A dual board configuration can be used when two boards of the same VCO variant are connected via a stacked connection from the Arduino style header. This first must be selected in the Board Configuration section prior to a software connection being established to the board. When using the dual board configuration, the user has the ability to select which board is being controlled through SPI writes by selecting the board in the Board Select drop-down box on the upper right within the main controls tab. This control is only visible if the dual board configuration had been selected at the connection stage.
-| |image6|
+A dual board configuration can be used when two boards of the same VCO variant are connected via a stacked connection from the Arduino style header. This first must be selected in the Board Configuration section prior to a software connection being established to the board. When using the dual board configuration, the user has the ability to select which board is being controlled through SPI writes by selecting the board in the Board Select drop-down box on the upper right within the main controls tab. This control is only visible if the dual board configuration had been selected at the connection stage.
 
-| To use the dual board configuration, one of the boards needs to first be reconfigured to receive SPI on a different LE signal line. To do this, remove R41 on the upper board of the stack and insert R42 instead.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/boardselect.png
+
+To use the dual board configuration, one of the boards needs to first be reconfigured to receive SPI on a different LE signal line. To do this, remove R41 on the upper board of the stack and insert R42 instead.
 
 Other Functions
 ^^^^^^^^^^^^^^^
@@ -145,7 +148,7 @@ Procedure
 7. Table 1. below lists the test frequencies for each part variant. On the evaluation software, in the ‘VCO Out’ box, input the first frequency for the variant used and press ‘Update Frequency’ button.
 
 
-|image7|
+|image6|
 
 8. Wait until the instrument locks to the output frequency and displays the phase noise profile on screen. Note the phase noise at offsets of 100kHz, 1MHz and 10MHz.
 
@@ -162,5 +165,4 @@ Procedure
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/installer5.jpg
    :width: 400px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/hopfunction.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/boardselect.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/updatefrequency.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/updatefrequency.png

@@ -62,10 +62,7 @@ Frequency Response: It is a graph of magnitude of the output voltage of the filt
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Resistors (1 KΩ)
-| Capacitor (1µF)
-| Inductor (22 mH)
+ADALM1000 hardware module Resistors (1 KΩ) Capacitor (1µF) Inductor (22 mH)
 
 Procedure:
 ~~~~~~~~~~
@@ -146,5 +143,4 @@ You should now be able to press the green Run button and run the frequency sweep
 
 :doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**

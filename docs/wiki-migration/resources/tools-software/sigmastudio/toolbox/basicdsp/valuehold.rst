@@ -1,8 +1,9 @@
 Value Hold
 ==========
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| --------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+--------------
 
 |valueholdpic1.png| The Value Hold block is used to retain an incoming signal (green pin). The signal is held based on the presence and level of a control signal (red pin).
 

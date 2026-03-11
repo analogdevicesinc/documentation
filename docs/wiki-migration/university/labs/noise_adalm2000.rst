@@ -25,17 +25,9 @@ Not only is it true that resistance contributes to loss in power delivery circui
 
 ERMS = √(4\*k*T\*R*ΔF)
 
-| Where:
-| ERMS = total noise voltage in nVRMS
-| k = Boltzmann's constant, 1.380649×10−23 J⋅K−1
-| T = Absolute temperature, Kelvin
-| R = Resistance in Ohms
-| ΔF = Bandwidth being considered, in Hertz
-| Noise is often specified normalized to a 1Hz bandwidth, and expressed as a noise "density" given by:
-| eRMS = √(4\*k*T\*R)
+Where: ERMS = total noise voltage in nVRMS k = Boltzmann's constant, 1.380649×10−23 J⋅K−1 T = Absolute temperature, Kelvin R = Resistance in Ohms ΔF = Bandwidth being considered, in Hertz Noise is often specified normalized to a 1Hz bandwidth, and expressed as a noise "density" given by: eRMS = √(4\*k*T\*R)
 
-| where :
-| eRMS is the noise **density** in nV/√Hz.
+where : eRMS is the noise **density** in nV/√Hz.
 
 Operational amplifiers also introduce noise, and will include one or more noise density specification under different conditions, and often at different frequencies.
 
@@ -44,14 +36,7 @@ Reality Check: If you're an undergrad EE student, or even a practicing EE in a f
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| Jumper wires
-| 1 - OP482 JFET op amp
-| 2 - 4.7 uF capacitor
-| 1 - 1kΩ resistor 1 - 22 KΩ resistor
-| 1 - 100 KΩ resistor
-| 1 - 1M Ω resistor
+ADALM2000 Active Learning Module Solder-less Breadboard Jumper wires 1 - OP482 JFET op amp 2 - 4.7 uF capacitor 1 - 1kΩ resistor 1 - 22 KΩ resistor 1 - 100 KΩ resistor 1 - 1M Ω resistor
 
 Directions:
 -----------
@@ -86,24 +71,20 @@ Other uses for this circuit:
 
 **For Further Reading:**
 
-| :adi:`Technical Article: 11 Myths About Analog Noise Analysis <en/technical-articles/11-myths-about-analog-noise-analysis.html>`
-| `Noise\_(electronics) <https://en.wikipedia.org/wiki/Noise_(electronics)>`_
+:adi:`Technical Article: 11 Myths About Analog Noise Analysis <en/technical-articles/11-myths-about-analog-noise-analysis.html>` `Noise\_(electronics) <https://en.wikipedia.org/wiki/Noise_(electronics)>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
 --------------
 
 Using Python for Analysis and Verification of Mixed-mode Signal Chains
-----------------------------------------------------------------------
 
---------------
 
 Any application involving sensitive measurements of the physical world starts with accurate, precise, and low-noise signal chain. Modern, highly integrated data acquisition devices can often be directly connected to sensor outputs, performing analog signal conditioning, digitization, and digital filtering on a single silicon device, greatly simplifying system electronics. However, a complete understanding of the signal chain's noise sources and noise limiting filters is still required to extract maximum performance from and debug these modern devices.
 
 Introduction
 ~~~~~~~~~~~~
 
---------------
 
 Mixed-mode signal chains are everywhere. Simply put, any system that transforms a real-world signal to an electrical representation, which is then digitized can be classified as a mixed-mode signal chain. At every point along the chain the signal is degraded in various ways that can usually be characterized either as some form of distortion or additive noise. Once in the digital domain, the processing of the digitized data is not perfect either, but at least it is, for all practical purposes, immune to many of the offenders that affect analog signals - component tolerances, temperature drift, interference from adjacent signals or supply voltage variations.
 
@@ -114,7 +95,6 @@ This tutorial is in extension of Converter Connectivity Tutorial [1]\_ and assoc
 A Generic Mixed Signal Chain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 Figure :ref:\`mixmode\` shows a generic signal chain typical of a precision instrumentation application, with a physical input and digital output. There are numerous background references on analog to digital converters available [5]\_, and most readers will have a sense that an analog to digital converter samples an input signal at some point in time (or measures the average of a signal over some observation time), and produces a numerical representation of that signal - most often as a binary number with some value between zero and :math:`2^N - 1` where :math:`N` is the number of bits in the output word.
 
@@ -131,7 +111,6 @@ Figure :ref:\`mixmode\` shows a generic signal chain typical of a precision inst
 ADC Noise Sources
 ~~~~~~~~~~~~~~~~~
 
---------------
 
 While there are several noise sources in Figure :ref:\`mixmode\`, one that is often either ignored, or over-emphasized, is the number of bits in the ADC's digital output. Historically, an ADC's "number of bits" was considered the ultimate figure of merit, where a 16-bit converter was 4 times better than a 14-bit converter [6]\_. But in the case of modern, high-resolution converters, the "number of bits" can be safely ignored. Note a general principle of signal chain design:
 
@@ -162,7 +141,6 @@ Very high resolution converters, such as the AD7124-8 that will be used as an ex
 Modeling and Measuring ADC noise
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 Modeling the noise of a thermal-noise limited ADC’s is straightforward. If the noise is "well behaved" (Gaussian, as it is in Figure :ref:\`ad7124hist\`) and constant across the ADC’s input span, the ADC’s time-domain noise can be modelled using NumPy’s [9]\_ :code:\`random.normal\` function , then verified by taking the standard deviation, as seen in the Model Gaussian Noise code block.
 
@@ -248,7 +226,6 @@ The "wandering" can be due to a number of factors - the internal reference warmi
 Expressing ADC Noise as a Density
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 The general principle of analog signal chain design (that the input noise of one stage should be somewhat lower than the output noise of the preceding stage) is an easy calculation if all elements include noise density specifications, as most well-specified sensors, and nearly all amplifiers do.
 
@@ -281,7 +258,6 @@ This runs counter to the conventional wisdom of "filling" the ADC’s input rang
 Measuring ADC filter response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 The AD7124-8 is a sigma-delta ADC, in which a modulator produces a high sample rate, but noisy (low resolution), representation of the analog input. This noisy data is then filtered by an internal digital filter, producing a lower rate, lower noise output. The type of filter varies from ADC to ADC, depending on the intended end application. The AD7124-8 is general-purpose, targeted at precision applications. As such, the digital filter response and output data rate are highly configurable. While the filter response is well-defined in the datasheet, there are occasions when one may want to measure the impact of the filter on a given signal. The AD7124-8 Filter Response code block measures the filter response by applying sinewaves to the ADC input and analyzing the output. This method can be easily adapted to measuring other waveforms - wavelets, simulated physical events. The ADALM2000 is connected to the AD7124-8 circuit as shown in Figure :ref:\`ad7124m2k\`.
 
@@ -340,7 +316,6 @@ While measuring high attenuation values requires a quieter and lower distortion 
 Modeling ADC filters
 ~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 The ability to measure an ADC’s filter response is a practical tool for bench verification. However, in order to fully simulate a signal chain, a model of the filter is needed. This isn’t explicitly provided for many converters (including the AD7124-8), but a workable model can be reverse engineered from the information provided in the datasheet.
 
@@ -424,7 +399,7 @@ And finally, the frequency response can be calculated using NumPy’s freqz func
 ::
 
 
-       # AD7124 Frequency Response 
+       # AD7124 Frequency Response
        import numpy as np
        from scipy import signal
        f0 = 19200
@@ -437,7 +412,6 @@ And finally, the frequency response can be calculated using NumPy’s freqz func
 Resistance is Futile: A Fundamental Sensor Limitation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 All sensors, no matter how perfect, have some maximum input value (and a corresponding maximum output - which may be a voltage, current, resistance, or even dial position) and a finite noise floor - "wiggles" at the output that exist even if the input is perfectly still. At some point, a sensor with an electrical output will include an element with a finite resistance (or more generally, impedance) represented by Rsensor in Figure :ref:\`genericsensor\`. This represents one fundamental noise limit that cannot be improved upon - this resistance will produce, at a minimum:
 
@@ -470,7 +444,6 @@ There are numerous other sensor limitations - mechanical, chemical, optical, eac
 A Laboratory Noise Source
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 A calibrated noise generator functions as a "world’s worst sensor", that emulates the noise of a sensor without actually sensing anything. Such a generator allows a signal chain's response to noise to be measured directly. The circuit shown in Figure :ref:\`ananoisesrc\` uses a 1M resistor as a 127nV/ :math:`\sqrtHz` (at room temperature) noise source with "okay accuracy" and bandwidth. While the accuracy is only "okay", this method has advantages:
 
@@ -526,7 +499,6 @@ We are now armed with a known noise source and a method to measure said source, 
 Modeling Signal Chains in LTspice
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 LTspice is a freely available, general-purpose analog circuit simulator that can be applied to signal chain design. It can perform transient analysis, frequency-domain analysis (AC sweep), and noise analysis, the results of which can be exported and incorporated into mixed signal models using Python.
 
@@ -588,7 +560,6 @@ Reading in the exported noise data and passing to the integrate_psd function res
 Generating Test Noise
 ~~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 Expanding on the functionality of the purely analog noise generator above, it is very useful to be able to produce not only flat, but arbitrary noise profiles - flat "bands" of noise, "pink noise", "noise mountains" emulating peaking in some amplifiers. The Generate Time-series From Half-spectrum code block starts with a desired noise spectral density (which can be generated manually, or taken from an LTspice simulation), the sample rate of the time series, and produces a time series of voltage values that can be sent to a DAC.
 
@@ -655,7 +626,6 @@ This noise generator can be used in conjunction with the pure analog generator f
 Modeling and verifying ADC Noise Bandwidth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 External noise sources and spurious tones above Fs/2 will fold back (alias) into the DC-Fs/2 region - and a converter may be sensitive to noise far beyond Fs/2 - the AD872A mentioned above has a sample rate of 10Msps, but an input bandwidth of 35MHz. While performance may not be the best at such high frequencies, this converter will happily digitize 7 Nyquist zones of noise and fold them back on top of your signal. This illustrates the importance of antialias filters for wideband ADCs. But converters for precision applications, which are typically sigma-delta (like the AD7124-8) or oversampling SAR architectures, in which the input bandwidth is limited by design.
 
@@ -686,7 +656,7 @@ The ENBW Example code block accepts a filter magnitude response, and returns the
        for i in range(65536):
            frst_ord[i] = (1.0 /
                           (1.0 +
-                           (i\*bw_per_point)**2.0)**0.5)
+                           (i\*bw_per_point)**2.0)**\ 0.5)
        fo_enbw = arb_enbw(frst_ord, bw_per_point)
 
 This function can be used to calculate the ENBW of an arbitrary filter response, including the AD7124's internal filters. The frequency response of the AD7124 SINC4 filter, 128sps sample rate can be calculated similar to the previous 50/60Hz rejection filter example. The arb_anbw function returns a ENBW of about 31Hz.
@@ -706,7 +676,6 @@ The ADALM2000 noise generator can be used to validate this result. Setting the t
 Conclusion
 ~~~~~~~~~~
 
---------------
 
 Noise is a limiting factor in any signal chain; once noise contaminates a signal, information is lost. Before building a signal acquisition system, the application requirements must be understood, components selected accordingly, and the prototype circuit tested. This tutorial offers a collection of methods that accurately model and measure sensor and signal chain noise that can be used during the design and testing process.
 
@@ -715,7 +684,6 @@ The techniques detailed in this tutorial are, individually, nothing new. However
 Acknowledgements
 ~~~~~~~~~~~~~~~~
 
---------------
 
 -  Jesper Steensgaard, who enabled/forced a paradigm shift in thinking about signal chain design, starting with the LTC2378-20.
 -  Travis Collins, Architect of Pyadi-iio (among many other things).
@@ -725,7 +693,6 @@ Acknowledgements
 References
 ~~~~~~~~~~
 
---------------
 
 [1] "Converter Connectivity Tutorial", https://wiki.analog.com/university/labs/software/iio_intro_toolbox, accessed 1 July, 2021.
 

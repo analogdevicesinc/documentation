@@ -1,7 +1,7 @@
 MCU Cog Quick Start Guide [using CCES]
 ======================================
 
-<note > \*\* There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. \*\* </WRAP>
+<note > \*\* There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. \*\* 
 
 Setting up EV-COG-AD3029WZ is a three step process.
 
@@ -80,14 +80,15 @@ For Sensor based application with BLE connectivity please download and install b
      * Download below packs
        * [[http://download.analog.com/tools/Sensor_Software/Releases/AnalogDevices.ADI-SensorSoftware.1.1.0.pack| Analog Devices Sensor Drivers and Examples]] - [[/resources/eval/user-guides/ev-cog-ad3029lz/software/sensor|Refer for more details]]
        * [[http://download.analog.com/tools/BLE_Software/Releases/AnalogDevices.ADI-BleSoftware.1.0.0.pack|Analog Devices Bluetooth Low Energy Software]] - [[/resources/eval/user-guides/ev-cog-ad3029lz/software/connectivity|Refer for more details]]
-   * Start CrossCore Embedded Studio. 
+   * Start CrossCore Embedded Studio.
    * Go to CMSIS Pack Manager by navigating to Windows ->Perspective ->Open Perspective ->Others -> CMSIS Pack Manager.
    * Install above downloaded packs by clicking Import Existing Packs icon  {{:resources:eval:user-guides:ev-cog-ad3029lz:import_existing_packs_icon.jpg?nolink|}}.
    * Refer "Running Example Project" section as mentioned above to copy existing sensor or BLE based application to workspace.
 
-| 
+
 | End Document
-| :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz/quickstart_1>`
+
+:doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz/quickstart_1>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/import_existing_packs_icon.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/img_2668.jpg

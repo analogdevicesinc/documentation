@@ -65,8 +65,6 @@ EVAL-AD2435WJ3LZ
    \ **Figure:** EVAL-AD2435WJ3LZ board Connections
 
 
-.. _jumper-settings-1:
-
 Jumper settings
 ^^^^^^^^^^^^^^^
 

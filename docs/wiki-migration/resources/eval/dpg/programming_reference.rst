@@ -78,8 +78,6 @@ This interface describes the basic functions that all Hardware Device drivers wi
 
 COM Guid:108DE7EA-B745-4b45-A90C-0533998CACBD
 
-.. _properties-1:
-
 Properties
 ~~~~~~~~~~
 
@@ -141,7 +139,7 @@ Sets or returns if the DPG should continuously loop its vector upon playback, or
 
    ulong PlayCount
 
-When *PlayMode*\ =Count, this value determines how many loops the playback will perform before stopping. *Read/Write.*
+When *PlayMode*=Count, this value determines how many loops the playback will perform before stopping.*Read/Write.*
 
 .. code:: csharp
 
@@ -276,25 +274,25 @@ Downloads an array of doubles. If all the values of the array are less than 1, e
 
    bool DownloadInterleavedVectorInt1D(int[] data, int channels, bool ShowProgress)
 
-Downloads an interleaved array of integers. Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*\ +1)-th point will be sent to the second data port, and so on. Setting *ShowProgress* to true will show a pop-up progress bar during the download. This method will not return until the download is complete (blocking call).
+Downloads an interleaved array of integers. Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*+1)-th point will be sent to the second data port, and so on. Setting*ShowProgress* to true will show a pop-up progress bar during the download. This method will not return until the download is complete (blocking call).
 
 .. code:: csharp
 
    bool DownloadInterleavedVectorInt2D(int[,] data, int channels, bool ShowProgress)
 
-Downloads an interleaved array of integers (only the first column/row of data is considered). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*\ +1)-th point will be sent to the second data port, and so on. Setting *ShowProgress* to true will show a pop-up progress bar during the download. This method will not return until the download is complete (blocking call).
+Downloads an interleaved array of integers (only the first column/row of data is considered). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*+1)-th point will be sent to the second data port, and so on. Setting*ShowProgress* to true will show a pop-up progress bar during the download. This method will not return until the download is complete (blocking call).
 
 .. code:: csharp
 
    bool DownloadInterleavedVectorDouble1D(double[] data, int channels, bool ShowProgress)
 
-Downloads an interleaved array of doubles. If all the values of the array are less than 1, each value will be multiplied by the digital full-scale value (computed from *DataWidth*). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*\ +1)-th point will be sent to the second data port, and so on. Setting *ShowProgress* to true will show a pop-up progress bar during the download. This method will not return until the download is complete (blocking call).
+Downloads an interleaved array of doubles. If all the values of the array are less than 1, each value will be multiplied by the digital full-scale value (computed from *DataWidth*). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*+1)-th point will be sent to the second data port, and so on. Setting*ShowProgress* to true will show a pop-up progress bar during the download. This method will not return until the download is complete (blocking call).
 
 .. code:: csharp
 
    bool DownloadInterleavedVectorDouble2D(double[,] data, int channels, bool ShowProgress)
 
-Downloads an interleaved array of doubles (only the first column/row of data is considered). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*\ +1)-th point will be sent to the second data port, and so on. Setting *ShowProgress* to true will show a pop-up progress bar during the download. This method will not return until the download is complete (blocking call).
+Downloads an interleaved array of doubles (only the first column/row of data is considered). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*+1)-th point will be sent to the second data port, and so on. Setting*ShowProgress* to true will show a pop-up progress bar during the download. This method will not return until the download is complete (blocking call).
 
 .. code:: csharp
 
@@ -324,25 +322,25 @@ Asynchronously downloads an array of doubles. If all the values of the array are
 
    void DownloadInterleavedVectorAsyncInt1D(int[] data, int channels, bool ShowProgress)
 
-Asynchronously downloads an interleaved array of integers. Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*\ +1)-th point will be sent to the second data port, and so on. Setting *ShowProgress* to true will show a pop-up progress bar during the download. This method will return immediately (non-blocking call).
+Asynchronously downloads an interleaved array of integers. Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*+1)-th point will be sent to the second data port, and so on. Setting*ShowProgress* to true will show a pop-up progress bar during the download. This method will return immediately (non-blocking call).
 
 .. code:: csharp
 
    void DownloadInterleavedVectorAsyncInt2D(int[,] data, int channels, bool ShowProgress)
 
-Asynchronously downloads an interleaved array of integers (only the first column/row of data is considered). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*\ +1)-th point will be sent to the second data port, and so on. Setting *ShowProgress* to true will show a pop-up progress bar during the download. This method will return immediately (non-blocking call).
+Asynchronously downloads an interleaved array of integers (only the first column/row of data is considered). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*+1)-th point will be sent to the second data port, and so on. Setting*ShowProgress* to true will show a pop-up progress bar during the download. This method will return immediately (non-blocking call).
 
 .. code:: csharp
 
    void DownloadInterleavedVectorAsyncDouble1D(double[] data, int channels, bool ShowProgress)
 
-Asynchronously downloads an interleaved array of doubles. If all the values of the array are less than 1, each value will be multiplied by the digital full-scale value (computed from *DataWidth*). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*\ +1)-th point will be sent to the second data port, and so on. Setting *ShowProgress* to true will show a pop-up progress bar during the download. This method will return immediately (non-blocking call).
+Asynchronously downloads an interleaved array of doubles. If all the values of the array are less than 1, each value will be multiplied by the digital full-scale value (computed from *DataWidth*). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*+1)-th point will be sent to the second data port, and so on. Setting*ShowProgress* to true will show a pop-up progress bar during the download. This method will return immediately (non-blocking call).
 
 .. code:: csharp
 
    void DownloadInterleavedVectorAsyncDouble2D(double[,] data, int channels, bool ShowProgress)
 
-Asynchronously downloads an interleaved array of doubles (only the first column/row of data is considered). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*\ +1)-th point will be sent to the second data port, and so on. Setting *ShowProgress* to true will show a pop-up progress bar during the download. This method will return immediately (non-blocking call).
+Asynchronously downloads an interleaved array of doubles (only the first column/row of data is considered). Every *channels*-th point will be sent to the first data port on the DPG, every (*channels*+1)-th point will be sent to the second data port, and so on. Setting*ShowProgress* to true will show a pop-up progress bar during the download. This method will return immediately (non-blocking call).
 
 .. code:: csharp
 
@@ -414,8 +412,6 @@ This interface describes the properties and methods used to read, alter, and ena
 
 COM Guid: 2EB6E57E-DCC1-4f48-B0CC-4FDD8E28759A
 
-.. _properties-2:
-
 Properties
 ~~~~~~~~~~
 
@@ -430,8 +426,6 @@ This property enables or disables the Idle Pattern. When enabled (Enabled = true
    int[] Pattern
 
 The Idle Pattern is set or retrieved as an array of integer values. When enabled, the Idle Pattern feature will loop through these values while the DPG is not playing out a vector. *Read/Write.*
-
-.. _methods-1:
 
 Methods
 ~~~~~~~
@@ -452,8 +446,6 @@ JESD204Interface
 ----------------
 
 Provides access to the JESD204 capabilities of a pattern generator.
-
-.. _properties-3:
 
 Properties
 ~~~~~~~~~~
@@ -507,8 +499,6 @@ eJESD204Revision
 +-----------+-----------+--------------------------------------------------------+
 |           | Subclass2 | JESD204B Subclass 2 (Low-Speed Deterministic Latency)  |
 +-----------+-----------+--------------------------------------------------------+
-
-.. _properties-4:
 
 Properties
 ~~~~~~~~~~
@@ -579,8 +569,6 @@ Gets or sets the JESD204 parameter HD *Read-Write.*
 
 Turns on or off JESD204 scrambling *Read-Write.*
 
-.. _methods-2:
-
 Methods
 ~~~~~~~
 
@@ -601,8 +589,6 @@ JESD204Lane
 
 Provides access to one (of one or more) JESD204 physical lanes inside the DPG.
 
-.. _properties-5:
-
 Properties
 ~~~~~~~~~~
 
@@ -614,8 +600,6 @@ When true, the polarity of the differential pair is reversed (effectively swappi
 
 AnalogDevices.DPG.Interfaces.HardwareTypes Namespace
 ----------------------------------------------------
-
-.. _enumerations-1:
 
 Enumerations
 ~~~~~~~~~~~~
@@ -682,8 +666,6 @@ The following are the default configurations that ship with the DPG2:
 | LVCMOS-1.8V (DCO) | 1.8V LVCMOS Signaling, Data Clock provided to DPG2 via main connector                   |
 +-------------------+-----------------------------------------------------------------------------------------+
 
-.. _properties-6:
-
 Properties
 ~~~~~~~~~~
 
@@ -692,8 +674,6 @@ Properties
    eFrameSyncMode FrameSyncMode
 
 This property determines what the second data clock input (DCI) line will be. Under normal operation (FrameSyncMode=None), the second DCI is the normal data clock. When FrameSyncMode is any other mode, the second DCI is a divided-down version of the data clock, suitable for use as a frame sync signal for some parts. *Read/Write.*
-
-.. _enumerations-2:
 
 Enumerations
 ~~~~~~~~~~~~
@@ -738,8 +718,6 @@ QBF (Implementation of JESD204Framer)
 
 In addition to the base implementation of JESD204Framer, this class also exposes:
 
-.. _enumerations-3:
-
 Enumerations
 ^^^^^^^^^^^^
 
@@ -750,8 +728,6 @@ Enumerations
 +-------------+----------+----------------------------------------------------------------+
 |             | External | Use the Sync line provided from the connected evaluation board |
 +-------------+----------+----------------------------------------------------------------+
-
-.. _properties-7:
 
 Properties
 ^^^^^^^^^^

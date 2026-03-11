@@ -183,4 +183,3 @@ we also provide an approach of using the FreeRTOS Add-In with command line for u
 
 -  `FreeRTOS Add-In From the Command Line <https://wiki.analog.com/resources/tools-software/freertos/freertos-addin/tools/freertos-add-in-from-the-command-line>`_
 
---------------

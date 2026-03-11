@@ -1,13 +1,15 @@
 AD-FMCDAQ3-EBZ (Rev C) Functional Overview
 ==========================================
 
-| 
-| The system consists of four functional partitions - transmit path, receive path, clocking and power supply. A functional block diagram of the system's main components and signal paths is given below. The power tree and voltage monitoring are included in the Power section below. |image1|
+The system consists of four functional partitions - transmit path, receive path, clocking and power supply. A functional block diagram of the system's main components and signal paths is given below. The power tree and voltage monitoring are included in the Power section below.
+
+
+|image1|
 
 Transmit
 --------
 
-| Key component:
+Key component:
 
 +---------------+-----------------------------------------------------------------------------------------------------------------+
 | :adi:`AD9152` | Dual, 16-Bit, 2500 MSPS, TxDAC+® Digital-to-Analog JESD204B Converter with offset, phase and gain compensation. |
@@ -18,7 +20,7 @@ The reference design generates the signals for AD9152 either from an internal DD
 Receive
 -------
 
-| Key component:
+Key component:
 
 +---------------+---------------------------------------------------------------------+
 | :adi:`AD9680` | 14-Bit, 1250 MSPS, Dual Analog-to-Digital JESD204B Converter (ADC). |
@@ -29,7 +31,7 @@ The reference design transfers the received data to DDR via DMA. An optional off
 Clocking
 --------
 
-| Key component:
+Key component:
 
 +---------------+---------------------------------------------------------------+
 | :adi:`AD9528` | Low Jitter Clock Generator (1MHz to 1.25GHz) with 14 Outputs. |
@@ -52,9 +54,9 @@ These clocks can be changed, but the key thing to remember is that the AD9528 dr
 Power
 -----
 
-| The system-level power tree .ltp3 file simulated in :adi:`LTpowerPlanner <en/design-center/ltpowercad.html>` is given below.
-| `220309_fmcdaq3_power.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/hardware/220309_fmcdaq3_power.zip>`_
-| Key components in the power tree:
+The system-level power tree .ltp3 file simulated in :adi:`LTpowerPlanner <en/design-center/ltpowercad.html>` is given below. `220309_fmcdaq3_power.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/hardware/220309_fmcdaq3_power.zip>`_
+
+Key components in the power tree:
 
 +-----------------+---------------------------------+
 | :adi:`ADP2384`  | 4A, 20V step-down switcher.     |
@@ -70,17 +72,20 @@ Power
 | :adi:`ADM7154`  | Low VIN, 600mA LDO              |
 +-----------------+---------------------------------+
 
-| The board receives all the power from the FPGA board through FMC.
-| The monitoring function of board's DC voltages is accomplished using :adi:`AD7291` SAR ADC. The block diagram of the ADC and the corresponding monitored voltages is shown below.
-| |image2|
-| **VADJ** pin from FMC connector is used for supplying the translators VCCA voltage. Supported voltage values of this pin are: 1.2V/1.5V/1.8V/2.5V/3.3V.
-| For differential to single-ended conversion and for minimizing 2nd harmonic distortion in transmitting and receiving, a double-balun configuration is used for TX and RX as front-end interface. More topology detail and information about the front-end design insights are presented in the following articles:
-| 1. :adi:`"Wideband A/D Converter Front-End Design Considerations: When to Use a Double Transformer Configuration" by Rob Reeder and Ramya Ramachandran <en/analog-dialogue/articles/wideband-a-d-converter-front-end-design-considerations.html>`
-| 2. :adi:`"Ask The Application Engineer—36: Wideband A/D Converter Front-End Design Considerations II: Amplifier-or Transformer Drive for the ADC?" by Rob Reeder and Jim Caserta <en/analog-dialogue/articles/wideband-adc-design-considerations-2.html>`
-| 3. :adi:`"Transformer-Coupled Front-End for Wideband A/D Converters" by Rob Reeder <en/analog-dialogue/articles/transformer-coupled-front-end-a-d-converters.html>`
-| |Hardware#card_specification|Card specifications|
+The board receives all the power from the FPGA board through FMC.
+
+The monitoring function of board's DC voltages is accomplished using :adi:`AD7291` SAR ADC. The block diagram of the ADC and the corresponding monitored voltages is shown below.
+
+
+|image2|
+
+**VADJ** pin from FMC connector is used for supplying the translators VCCA voltage. Supported voltage values of this pin are: 1.2V/1.5V/1.8V/2.5V/3.3V.
+
+For differential to single-ended conversion and for minimizing 2nd harmonic distortion in transmitting and receiving, a double-balun configuration is used for TX and RX as front-end interface. More topology detail and information about the front-end design insights are presented in the following articles: 1. :adi:`"Wideband A/D Converter Front-End Design Considerations: When to Use a Double Transformer Configuration" by Rob Reeder and Ramya Ramachandran <en/analog-dialogue/articles/wideband-a-d-converter-front-end-design-considerations.html>` 2. :adi:`"Ask The Application Engineer—36: Wideband A/D Converter Front-End Design Considerations II: Amplifier-or Transformer Drive for the ADC?" by Rob Reeder and Jim Caserta <en/analog-dialogue/articles/wideband-adc-design-considerations-2.html>` 3. :adi:`"Transformer-Coupled Front-End for Wideband A/D Converters" by Rob Reeder <en/analog-dialogue/articles/transformer-coupled-front-end-a-d-converters.html>`
+
+.. image:: https://wiki.analog.com/_media/navigation AD-FMCDAQ3-EBZ#none#./
+   :alt: Hardware#card_specification|Card specifications
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/hardware/220128block_diagram_fmcdaq3.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/hardware/220127_fmcdaq3_monitoring_adc.jpg
    :width: 600px
-.. |Hardware#card_specification|Card specifications| image:: /navigation AD-FMCDAQ3-EBZ#none#./

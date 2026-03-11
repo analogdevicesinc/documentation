@@ -65,46 +65,46 @@ Initial Connection and Setup
 
 |image7|
 
-   \* Select the correct COM Port of the device and connect (see `Quick Setup Guide <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_gui_quick_start_guide.docx>`_ for help)
+-  Select the correct COM Port of the device and connect (see `Quick Setup Guide <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_gui_quick_start_guide.docx>`_ for help)
 
-   |image8|
+|image8|
 
 -  Load the configuration file for Nitrate Measurement `cn0503_defaults_nitrate.zip <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_defaults_nitrate.zip>`_
-   \* Configure the settings for path 3 with the desired name, set wavelength to 530 nm and select measurement type: absorption.
+-  Configure the settings for path 3 with the desired name, set wavelength to 530 nm and select measurement type: absorption.
 
-   |image9|
+|image9|
 
 -  Add empty cuvette (or filled with distilled water) to the cuvette holder assembly and insert to path 3 and click Optimize LED. This properly sets the LED current in this path so that the light intensity is close to 50%.
 
 |image10|
 
-| 
-| ==== Setting a Baseline Ratio ==== The baseline ratio is used to remove small factors introduced to the measurement by the optical glass elements, such as beam splitter, lens, and filters. The baseline ratio is the ARAT value of a known setups such as with an empty cuvette or distilled water sample where it is known that the ratio of incident and transmitted light should be approximately 1. This value is used as a reference for successive measurements which will be defined as the relative ratio RRAT.
+Setting a Baseline Ratio
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The baseline ratio is used to remove small factors introduced to the measurement by the optical glass elements, such as beam splitter, lens, and filters. The baseline ratio is the ARAT value of a known setups such as with an empty cuvette or distilled water sample where it is known that the ratio of incident and transmitted light should be approximately 1. This value is used as a reference for successive measurements which will be defined as the relative ratio RRAT.
 
 -  Click OK on the settings window and on the main window select optical path 3 and display mode ARAT.
 
 
 |image11|
 
-   \* Click on Start Measurement and note the average value on the graph. Remember that the solution should still be in the path. The average value will be used as the baseline ratio for this path.
+-  Click on Start Measurement and note the average value on the graph. Remember that the solution should still be in the path. The average value will be used as the baseline ratio for this path.
 
-   |image12|
+|image12|
 
-   \* Record the average value and click on Stop Measurement then, click on the settings icon on the top right corner to bring back the settings and click on Advanced to bring up another window.
+-  Record the average value and click on Stop Measurement then, click on the settings icon on the top right corner to bring back the settings and click on Advanced to bring up another window.
 
-   |image13|
+|image13|
 
-   \* In the “Enter a direct command” text field, type “DEF1 RATB <average value>” for path 3, then press Send Command. Replace the <average value> to the value you have noted earlier and click ok.
+-  In the “Enter a direct command” text field, type “DEF1 RATB <average value>” for path 3, then press Send Command. Replace the <average value> to the value you have noted earlier and click ok.
 
-   |image14|
+|image14|
 
-   \* Optionally, you can write mg/L to the primary unit field of path 3. These are just labels and are not necessary.
+-  Optionally, you can write mg/L to the primary unit field of path 3. These are just labels and are not necessary.
 
-   |image15|
+|image15|
 
-   \* Click Okay here and on the settings window to go back to the main. Remove the empty cuvette/s or distilled water sample/s. The device is now ready to measure Nitrate.
-
-| 
+-  Click Okay here and on the settings window to go back to the main. Remove the empty cuvette/s or distilled water sample/s. The device is now ready to measure Nitrate.
 
 Performing a Nitrate Measurement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,11 +114,9 @@ Performing a Nitrate Measurement
 
 |image16|
 
-   \* Select path 3, set display mode to INS1, and press Start Measurement.
+-  Select path 3, set display mode to INS1, and press Start Measurement.
 
-   |image17|
-
-| 
+|image17|
 
 Preparing Test Samples
 ----------------------
@@ -138,21 +136,14 @@ Using colorimetry for Nitrate measurement requires a reagent or indicator. The d
 
 |image19|
 
-| 
-
 Generating a Measurement
 ------------------------
 
-| The Nitrate measurement curve is a function which models the characteristic curve of the different levels of Nitrate present in the mixture. You can generate your own measurement curve using samples with known Nitrate. The CN0503 is capable of approximating this using a 5th order polynomial function.
+The Nitrate measurement curve is a function which models the characteristic curve of the different levels of Nitrate present in the mixture. You can generate your own measurement curve using samples with known Nitrate. The CN0503 is capable of approximating this using a 5th order polynomial function.
 
 .. important::
 
-   While measurement curves use absorbance to measure pH, the CN0503 uses the relative ratio RRAT. RRAT is the absolute ratio (ARAT) of the transmitted light intensity to the incident light intensity and divided by the baseline ratio. RRAT is related to absorbance using the equation below.
-
-
-   |image20|
-
-   | It is possible to change the mathematical expression for the ARAT but this demo will stick to using the default
+   While measurement curves use absorbance to measure pH, the CN0503 uses the relative ratio RRAT. RRAT is the absolute ratio (ARAT) of the transmitted light intensity to the incident light intensity and divided by the baseline ratio. RRAT is related to absorbance using the equation below. |image20| It is possible to change the mathematical expression for the ARAT but this demo will stick to using the default
 
 
 Using Microsoft Excel, it is easy to generate the measurement curve by following the steps outlined below.
@@ -162,22 +153,24 @@ Using Microsoft Excel, it is easy to generate the measurement curve by following
 
 |image21|
 
-   \* To get the RRAT measurement of a solution, select 3 and RRAT in the display units, and click Start Measurement
-   \* Use the average or median of the measurement values.
+   -  To get the RRAT measurement of a solution, select 3 and RRAT in the display units, and click Start Measurement
+   -  Use the average or median of the measurement values.
+
 -  Create a scatter plot of the two columns with RRAT as the X-variable and Nitrate level as the y-Variable
+
 
 |image22|
 
-   \* Create a trend-line for the scatter plot and select the polynomial option with an order of up to 5 depending on characteristic of the curve. Also, check the box at the bottom to Display Equation on chart.
+-  Create a trend-line for the scatter plot and select the polynomial option with an order of up to 5 depending on characteristic of the curve. Also, check the box at the bottom to Display Equation on chart.
 
-   |image23|
+|image23|
 
-   \* Use the equation of the trendline and input the coefficients to the CN0503 using the Command field in the Advanced settings. See the :doc:`Software User Guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/reference_designs/demo_cn0503>` for details on the command.
+-  Use the equation of the trendline and input the coefficients to the CN0503 using the Command field in the Advanced settings. See the :doc:`Software User Guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/reference_designs/demo_cn0503>` for details on the command.
 
-   |image24|
+|image24|
 
-| 
-| ===== Reference Links =====
+Reference Links
+---------------
 
 -  :doc:`Hardware User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503>`
 -  :doc:`Software User Guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/reference_designs/demo_cn0503>`

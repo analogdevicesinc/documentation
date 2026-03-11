@@ -1,9 +1,13 @@
 Real IFFT(ADAU145x)
 ===================
 
-| :doc:`Click here to return to the Frequency Domain page </wiki-migration/resources/tools-software/sigmastudio/toolbox/frequencydomain>`
-| |image1|
-| Real IFFT is a block processing module which computes the IFFT of real signals
+:doc:`Click here to return to the Frequency Domain page </wiki-migration/resources/tools-software/sigmastudio/toolbox/frequencydomain>`
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifft.png
+   :align: center
+   :width: 300px
+
+Real IFFT is a block processing module which computes the IFFT of real signals
 
 Input Pins
 ----------
@@ -26,7 +30,7 @@ Output Pins
 Grow Algorithm
 --------------
 
-| Add and Growth are not supported.
+Add and Growth are not supported.
 
 DSP Parameter Information
 -------------------------
@@ -42,20 +46,18 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-| This module computes the IFFT for Real input signals. IFFT is computed from the first half of the FFT output, using the complex conjugate symmetry properties of the FFT output, of real signals.
+This module computes the IFFT for Real input signals. IFFT is computed from the first half of the FFT output, using the complex conjugate symmetry properties of the FFT output, of real signals.
 
 Example
 -------
 
-| In the example shown below, IFFT of the FFT output of a real signal is computed, to retrieve the original signal back in time domain.
-| |image2|
+In the example shown below, IFFT of the FFT output of a real signal is computed, to retrieve the original signal back in time domain.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifftexample.png
+   :align: center
+   :width: 500px
 
 Supported IC's
 --------------
 
-| 1. ADAU145x
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifft.png
-   :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifftexample.png
-   :width: 500px
+1. ADAU145x

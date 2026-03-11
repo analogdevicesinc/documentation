@@ -48,17 +48,25 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-| The Growable Single Volume Control applies gain to any number of input signals. It is implemented using a slew curve approximating an RC curve. The same instantaneous gain value is applied to all input signals simultaneously.
-| This plot shows the response of an input signal when the gain is changed from zero (linear) to one (full scale, linear):
-| |growablesinglevolumecontrol2.jpg|
-| This plot shows the response of an input signal when the gain is changed from one (full scale, linear) to zero (linear):
-| |growablesinglevolumecontrol3.jpg|
+The Growable Single Volume Control applies gain to any number of input signals. It is implemented using a slew curve approximating an RC curve. The same instantaneous gain value is applied to all input signals simultaneously.
+
+This plot shows the response of an input signal when the gain is changed from zero (linear) to one (full scale, linear):
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/growablesinglevolumecontrol2.jpg
+   :alt: growablesinglevolumecontrol2.jpg
+
+This plot shows the response of an input signal when the gain is changed from one (full scale, linear) to zero (linear):
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/growablesinglevolumecontrol3.jpg
+   :alt: growablesinglevolumecontrol3.jpg
 
 Example
 -------
 
-| This example shows 4 digital audio channels being processed by a Growable Single Volume Control cell. When the slider is moved, the gain of all 4 channels will be uniformly changed, following an RC slew curve.
-| |growablesinglevolumecontrol4.jpg|
+This example shows 4 digital audio channels being processed by a Growable Single Volume Control cell. When the slider is moved, the gain of all 4 channels will be uniformly changed, following an RC slew curve.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/growablesinglevolumecontrol4.jpg
+   :alt: growablesinglevolumecontrol4.jpg
 
 Algorithm Details
 -----------------
@@ -112,6 +120,3 @@ Algorithm Addition Information
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. |growablesinglevolumecontrol1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/growablesinglevolumecontrol1.jpg
-.. |growablesinglevolumecontrol2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/growablesinglevolumecontrol2.jpg
-.. |growablesinglevolumecontrol3.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/growablesinglevolumecontrol3.jpg
-.. |growablesinglevolumecontrol4.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/growablesinglevolumecontrol4.jpg

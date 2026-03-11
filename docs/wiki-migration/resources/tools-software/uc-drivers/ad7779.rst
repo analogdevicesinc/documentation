@@ -118,168 +118,189 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``typedef enum {                                                              |
+    typedef enum {
+        AD7779_INT_REG,
+        AD7779_SD_CONV,
+        AD7779_SAR_CONV,
+    } ad7779_spi_op_mode;
 
-|     AD7779_INT_REG,                                                           |
-|     AD7779_SD_CONV,                                                           |
-|     AD7779_SAR_CONV,                                                          |
-| } ad7779_spi_op_mode;                                                         |
-|                                                                               |
-| typedef enum {                                                                |
-|     AD7779_CH0,                                                               |
-|     AD7779_CH1,                                                               |
-|     AD7779_CH2,                                                               |
-|     AD7779_CH3,                                                               |
-|     AD7779_CH4,                                                               |
-|     AD7779_CH5,                                                               |
-|     AD7779_CH6,                                                               |
-|     AD7779_CH7,                                                               |
-| } ad7779_ch;                                                                  |
-|                                                                               |
-| typedef enum {                                                                |
-|     AD7779_ENABLE,                                                            |
-|     AD7779_DISABLE,                                                           |
-| } ad7779_state;                                                               |
-|                                                                               |
-| typedef enum {                                                                |
-|     AD7779_GAIN_1,                                                            |
-|     AD7779_GAIN_2,                                                            |
-|     AD7779_GAIN_4,                                                            |
-|     AD7779_GAIN_8,                                                            |
-| } ad7779_gain;                                                                |
-|                                                                               |
-| typedef enum {                                                                |
-|     AD7779_DCLK_DIV_1,                                                        |
-|     AD7779_DCLK_DIV_2,                                                        |
-|     AD7779_DCLK_DIV_4,                                                        |
-|     AD7779_DCLK_DIV_8,                                                        |
-|     AD7779_DCLK_DIV_16,                                                       |
-|     AD7779_DCLK_DIV_32,                                                       |
-|     AD7779_DCLK_DIV_64,                                                       |
-|     AD7779_DCLK_DIV_128,                                                      |
-| } ad7768_dclk_div;                                                            |
-|                                                                               |
-| typedef enum {                                                                |
-|     AD7779_HIGH_RES,                                                          |
-|     AD7779_LOW_PWR,                                                           |
-| } ad7779_pwr_mode;                                                            |
-|                                                                               |
-| typedef enum {                                                                |
-|     AD7779_EXT_REF,                                                           |
-|     AD7779_INT_REF,                                                           |
-| } ad7779_ref_type;                                                            |
-|                                                                               |
-| typedef enum {                                                                |
-|     AD7779_REFX_P,                                                            |
-|     AD7779_REFX_N,                                                            |
-| } ad7779_refx_pin;                                                            |
-|                                                                               |
-| typedef enum {                                                                |
-|     AD7779_REF_BUF_ENABLED,                                                   |
-|     AD7779_REF_BUF_PRECHARGED,                                                |
-|     AD7779_REF_BUF_DISABLED,                                                  |
-| } ad7779_ref_buf_op_mode;                                                     |
-|                                                                               |
-| typedef enum {                                                                |
-|     AD7779_AUXAINP_AUXAINN,                                                   |
-|     AD7779_DVBE_AVSSX,                                                        |
-|     AD7779_REF1P_REF1N,                                                       |
-|     AD7779_REF2P_REF2N,                                                       |
-|     AD7779_REF_OUT_AVSSX,                                                     |
-|     AD7779_VCM_AVSSX,                                                         |
-|     AD7779_AREG1CAP_AVSSX_ATT,                                                |
-|     AD7779_AREG2CAP_AVSSX_ATT,                                                |
-|     AD7779_DREGCAP_DGND_ATT,                                                  |
-|     AD7779_AVDD1A_AVSSX_ATT,                                                  |
-|     AD7779_AVDD1B_AVSSX_ATT,                                                  |
-|     AD7779_AVDD2A_AVSSX_ATT,                                                  |
-|     AD7779_AVDD2B_AVSSX_ATT,                                                  |
-|     AD7779_IOVDD_DGND_ATT,                                                    |
-|     AD7779_AVDD4_AVSSX,                                                       |
-|     AD7779_DGND_AVSS1A_ATT,                                                   |
-|     AD7779_DGND_AVSS1B_ATT,                                                   |
-|     AD7779_DGND_AVSSX_ATT,                                                    |
-|     AD7779_AVDD4_AVSSX_ATT,                                                   |
-|     AD7779_REF1P_AVSSX,                                                       |
-|     AD7779_REF2P_AVSSX,                                                       |
-|     AD7779_AVSSX_AVDD4_ATT,                                                   |
-| } ad7779_sar_mux;                                                             |
-|                                                                               |
-| typedef struct {                                                              |
-|     /* SPI */                                                                 |
-|     spi_device              spi_dev;                                          |
-|     /* GPIO */                                                                |
-|     gpio_device             gpio_dev;                                         |
-|     int8_t                  gpio_reset;                                       |
-|     int8_t                  gpio_mode0;                                       |
-|     int8_t                  gpio_mode1;                                       |
-|     int8_t                  gpio_mode2;                                       |
-|     int8_t                  gpio_mode3;                                       |
-|     int8_t                  gpio_dclk0;                                       |
-|     int8_t                  gpio_dclk1;                                       |
-|     int8_t                  gpio_dclk2;                                       |
-|     int8_t                  gpio_sync_in;                                     |
-|     int8_t                  gpio_convst_sar;                                  |
-|     /* Device Settings */                                                     |
-|     ad7779_ctrl_mode        ctrl_mode;                                        |
-|     ad7779_state            spi_crc_en;                                       |
-|     ad7779_spi_op_mode      spi_op_mode;                                      |
-|     ad7779_state            state[8];                                         |
-|     ad7779_gain             gain[8];                                          |
-|     uint16_t                dec_rate_int;                                     |
-|     uint16_t                dec_rate_dec;                                     |
-|     ad7779_ref_type         ref_type;                                         |
-|     ad7779_pwr_mode         pwr_mode;                                         |
-|     ad7768_dclk_div         dclk_div;                                         |
-|     uint8_t                 sync_offset[8];                                   |
-|     uint32_t                offset_corr[8];                                   |
-|     uint32_t                gain_corr[8];                                     |
-|     ad7779_ref_buf_op_mode  ref_buf_op_mode[2];                               |
-|     ad7779_state            sar_state;                                        |
-|     ad7779_sar_mux          sar_mux;                                          |
-|     ad7779_state            sinc5_state;    // Can be enabled only for AD7771 |
-|     uint8_t                 cached_reg_val[AD7779_REG_SRC_UPDATE + 1];        |
-| } ad7779_dev;                                                                 |
-|                                                                               |
-| typedef struct {                                                              |
-|     /* SPI */                                                                 |
-|     uint8_t                 spi_chip_select;                                  |
-|     spi_mode                spi_mode;                                         |
-|     spi_type                spi_type;                                         |
-|     uint32_t                spi_device_id;                                    |
-|     /* GPIO */                                                                |
-|     gpio_type               gpio_type;                                        |
-|     uint32_t                gpio_device_id;                                   |
-|     int8_t                  gpio_reset;                                       |
-|     int8_t                  gpio_mode0;                                       |
-|     int8_t                  gpio_mode1;                                       |
-|     int8_t                  gpio_mode2;                                       |
-|     int8_t                  gpio_mode3;                                       |
-|     int8_t                  gpio_dclk0;                                       |
-|     int8_t                  gpio_dclk1;                                       |
-|     int8_t                  gpio_dclk2;                                       |
-|     int8_t                  gpio_sync_in;                                     |
-|     int8_t                  gpio_convst_sar;                                  |
-|     /* Device Settings */                                                     |
-|     ad7779_ctrl_mode        ctrl_mode;                                        |
-|     ad7779_state            spi_crc_en;                                       |
-|     ad7779_state            state[8];                                         |
-|     ad7779_gain             gain[8];                                          |
-|     uint16_t                dec_rate_int;                                     |
-|     uint16_t                dec_rate_dec;                                     |
-|     ad7779_ref_type         ref_type;                                         |
-|     ad7779_pwr_mode         pwr_mode;                                         |
-|     ad7768_dclk_div         dclk_div;                                         |
-|     uint8_t                 sync_offset[8];                                   |
-|     uint32_t                offset_corr[8];                                   |
-|     uint32_t                gain_corr[8];                                     |
-|     ad7779_ref_buf_op_mode  ref_buf_op_mode[2];                               |
-|     ad7779_state            sinc5_state;    // Can be enabled only for AD7771 |
-| } ad7779_init_param;``                                                        |
-+-------------------------------------------------------------------------------+
+::
+
+    typedef enum {
+        AD7779_CH0,
+        AD7779_CH1,
+        AD7779_CH2,
+        AD7779_CH3,
+        AD7779_CH4,
+        AD7779_CH5,
+        AD7779_CH6,
+        AD7779_CH7,
+    } ad7779_ch;
+
+::
+
+    typedef enum {
+        AD7779_ENABLE,
+        AD7779_DISABLE,
+    } ad7779_state;
+
+::
+
+    typedef enum {
+        AD7779_GAIN_1,
+        AD7779_GAIN_2,
+        AD7779_GAIN_4,
+        AD7779_GAIN_8,
+    } ad7779_gain;
+
+::
+
+    typedef enum {
+        AD7779_DCLK_DIV_1,
+        AD7779_DCLK_DIV_2,
+        AD7779_DCLK_DIV_4,
+        AD7779_DCLK_DIV_8,
+        AD7779_DCLK_DIV_16,
+        AD7779_DCLK_DIV_32,
+        AD7779_DCLK_DIV_64,
+        AD7779_DCLK_DIV_128,
+    } ad7768_dclk_div;
+
+::
+
+    typedef enum {
+        AD7779_HIGH_RES,
+        AD7779_LOW_PWR,
+    } ad7779_pwr_mode;
+
+::
+
+    typedef enum {
+        AD7779_EXT_REF,
+        AD7779_INT_REF,
+    } ad7779_ref_type;
+
+::
+
+    typedef enum {
+        AD7779_REFX_P,
+        AD7779_REFX_N,
+    } ad7779_refx_pin;
+
+::
+
+    typedef enum {
+        AD7779_REF_BUF_ENABLED,
+        AD7779_REF_BUF_PRECHARGED,
+        AD7779_REF_BUF_DISABLED,
+    } ad7779_ref_buf_op_mode;
+
+::
+
+    typedef enum {
+        AD7779_AUXAINP_AUXAINN,
+        AD7779_DVBE_AVSSX,
+        AD7779_REF1P_REF1N,
+        AD7779_REF2P_REF2N,
+        AD7779_REF_OUT_AVSSX,
+        AD7779_VCM_AVSSX,
+        AD7779_AREG1CAP_AVSSX_ATT,
+        AD7779_AREG2CAP_AVSSX_ATT,
+        AD7779_DREGCAP_DGND_ATT,
+        AD7779_AVDD1A_AVSSX_ATT,
+        AD7779_AVDD1B_AVSSX_ATT,
+        AD7779_AVDD2A_AVSSX_ATT,
+        AD7779_AVDD2B_AVSSX_ATT,
+        AD7779_IOVDD_DGND_ATT,
+        AD7779_AVDD4_AVSSX,
+        AD7779_DGND_AVSS1A_ATT,
+        AD7779_DGND_AVSS1B_ATT,
+        AD7779_DGND_AVSSX_ATT,
+        AD7779_AVDD4_AVSSX_ATT,
+        AD7779_REF1P_AVSSX,
+        AD7779_REF2P_AVSSX,
+        AD7779_AVSSX_AVDD4_ATT,
+    } ad7779_sar_mux;
+
+::
+
+    typedef struct {
+        /* SPI */
+        spi_device              spi_dev;
+        /* GPIO */
+        gpio_device             gpio_dev;
+        int8_t                  gpio_reset;
+        int8_t                  gpio_mode0;
+        int8_t                  gpio_mode1;
+        int8_t                  gpio_mode2;
+        int8_t                  gpio_mode3;
+        int8_t                  gpio_dclk0;
+        int8_t                  gpio_dclk1;
+        int8_t                  gpio_dclk2;
+        int8_t                  gpio_sync_in;
+        int8_t                  gpio_convst_sar;
+        /* Device Settings */
+        ad7779_ctrl_mode        ctrl_mode;
+        ad7779_state            spi_crc_en;
+        ad7779_spi_op_mode      spi_op_mode;
+        ad7779_state            state[8];
+        ad7779_gain             gain[8];
+        uint16_t                dec_rate_int;
+        uint16_t                dec_rate_dec;
+        ad7779_ref_type         ref_type;
+        ad7779_pwr_mode         pwr_mode;
+        ad7768_dclk_div         dclk_div;
+        uint8_t                 sync_offset[8];
+        uint32_t                offset_corr[8];
+        uint32_t                gain_corr[8];
+        ad7779_ref_buf_op_mode  ref_buf_op_mode[2];
+        ad7779_state            sar_state;
+        ad7779_sar_mux          sar_mux;
+        ad7779_state            sinc5_state;    // Can be enabled only for AD7771
+        uint8_t                 cached_reg_val[AD7779_REG_SRC_UPDATE + 1];
+    } ad7779_dev;
+
+::
+
+    typedef struct {
+        /* SPI */
+        uint8_t                 spi_chip_select;
+        spi_mode                spi_mode;
+        spi_type                spi_type;
+        uint32_t                spi_device_id;
+        /* GPIO */
+        gpio_type               gpio_type;
+        uint32_t                gpio_device_id;
+        int8_t                  gpio_reset;
+        int8_t                  gpio_mode0;
+        int8_t                  gpio_mode1;
+        int8_t                  gpio_mode2;
+        int8_t                  gpio_mode3;
+        int8_t                  gpio_dclk0;
+        int8_t                  gpio_dclk1;
+        int8_t                  gpio_dclk2;
+        int8_t                  gpio_sync_in;
+        int8_t                  gpio_convst_sar;
+        /* Device Settings */
+        ad7779_ctrl_mode        ctrl_mode;
+        ad7779_state            spi_crc_en;
+        ad7779_state            state[8];
+        ad7779_gain             gain[8];
+        uint16_t                dec_rate_int;
+        uint16_t                dec_rate_dec;
+        ad7779_ref_type         ref_type;
+        ad7779_pwr_mode         pwr_mode;
+        ad7768_dclk_div         dclk_div;
+        uint8_t                 sync_offset[8];
+        uint32_t                offset_corr[8];
+        uint32_t                gain_corr[8];
+        ad7779_ref_buf_op_mode  ref_buf_op_mode[2];
+        ad7779_state            sinc5_state;    // Can be enabled only for AD7771
+    } ad7779_init_param;
 
 Downloads
 ---------

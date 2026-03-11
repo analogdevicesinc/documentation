@@ -40,44 +40,49 @@ Select the following components from the ADALP2000 Analog Parts Kit. Note, the p
 
 There are two black plastic devices with two leads in the kit that look almost exactly the same. One is the photo transistor and the other is a photo diode. The one with the slightly shorter leads should be the photo transistor. If you have a DMM with a diode test function handy you can verify which is the photo diode and which is the photo transistor (the photo diode will conduct in one direction and the photo transistor will not conduct in either direction)
 
-| ADALM1000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - OP484 precision rail-to-rail I/O op amp (14 pin DIP package)
-| |image1|
+ADALM1000 Active Learning Module Solder-less breadboard Jumper wires 1 - OP484 precision rail-to-rail I/O op amp (14 pin DIP package)
+
+
+|image1|
 
 .. container:: centeralign
 
    **OP484 Quad op-amp**
 
 
-| Resistors are marked with color bands like this:
-| |image2|
+Resistors are marked with color bands like this:
 
-| Find resistors with the following color bands:
-| 1 - 100Ω resistor (brown black brown)
-| 1 - 470Ω resistor (yellow purple brown)
-| 1 - 1KΩ resistor (brown black red)
-| 1 - 1.5KΩ resistor (brown green red)
-| 1 - 10KΩ resistor (brown black orange)
-| 1 - 20KΩ resistor (red black orange)
-| 1 - 47KΩ resistor (yellow purple orange)
-| 2 - 1uF capacitors
-| |image3|
 
-| 1 - 47uF capacitor
-| |image4|
 
-| 1 - Infrared LED (QED-123) the longer of the two leads is the anode (+) and the shorter lead is the cathode (-).
-| |image5|
+|image2|
+
+Find resistors with the following color bands: 1 - 100Ω resistor (brown black brown) 1 - 470Ω resistor (yellow purple brown) 1 - 1KΩ resistor (brown black red) 1 - 1.5KΩ resistor (brown green red) 1 - 10KΩ resistor (brown black orange) 1 - 20KΩ resistor (red black orange) 1 - 47KΩ resistor (yellow purple orange)
+
+2 - 1uF capacitors
+
+
+|image3|
+
+1 - 47uF capacitor
+
+
+|image4|
+
+1 - Infrared LED (QED-123) the longer of the two leads is the anode (+) and the shorter lead is the cathode (-).
+
+
+|image5|
 
 .. container:: centeralign
 
    **QED-123 Infrared LED**
 
 
-| 1 - Infrared Transistor (QSD-123) the longer of the two leads is the collector and the shorter lead is the emitter.
-| |image6|
+1 - Infrared Transistor (QSD-123) the longer of the two leads is the collector and the shorter lead is the emitter.
+
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g2.jpg
+   :align: center
+   :width: 250px
 
 .. container:: centeralign
 
@@ -88,7 +93,7 @@ There are two black plastic devices with two leads in the kit that look almost e
 
 
 
-|image7|
+|image6|
 
 Directions
 ----------
@@ -203,7 +208,7 @@ Considering the circuit designed in LTSpice or ADIsimPE, two types of simulation
    *AC Sweep - Connect at the input of the circuit a AC Source. Configure the source to have a magnitude of 250uV. Observe the output signal in a chosen frequency domain (100mHz - 1kHz) in order to determine graphically in which frequency range the output signal has the biggest amplification (Figure 3).
 
 
-   |image8|
+   |image7|
 
 .. container:: centeralign
 
@@ -221,7 +226,7 @@ Procedure
 The Heart Rate monitor can operate in either of two modes. In the first mode, as shown on the left of figure 4, the light from the LED is reflected as it passes into the tip of the finger and bounces back into the photo transistor. Arrange the LED and photo transistor right next to each other both facing up. It might be useful to shorten the leads so that they sit against the breadboard surface. In the second mode, as shown on the right of figure 4, the light from the LED passes through the tip of the finger and into the photo transistor on the other side. Put the tip of your finger between the IR LED (D1) and the Photo transistor (Q1). The emitter and the receiver should be aligned and pointing one to another.
 
 
-|image9|
+|image8|
 
 .. container:: centeralign
 
@@ -233,7 +238,7 @@ The red LED should blink on and off once per heart beat, about once per second.
 Observe the voltage waveform seen at the the output of the 3rd stage op amp (A\ :sub:`3`). The signal is very slow, low frequency, and is best viewed using the Alice M1K Strip Chart tool. Start the Strip Chart and select CH-A on 1 grid, then hit Run. An example of the output waveform is shown in Figure 5.
 
 
-|image10|
+|image9|
 
 .. container:: centeralign
 
@@ -263,10 +268,6 @@ Questions
 
 6. On the Heartbeat Output Waveform the signal is not centered on 0V, even though the DC component should have been removed. Why is this happening? What should be added at the output of the circuit to reduce the offset?
 
-
-| 
-|
-
 .. admonition:: Download
    :class: download
 
@@ -279,8 +280,7 @@ Questions
 
 **For further reading:**
 
-| `Photoplethysmogram <https://en.wikipedia.org/wiki/Photoplethysmogram>`_
-| `Heart rate monitor <https://en.wikipedia.org/wiki/Heart_rate_monitor>`_
+`Photoplethysmogram <https://en.wikipedia.org/wiki/Photoplethysmogram>`_ `Heart rate monitor <https://en.wikipedia.org/wiki/Heart_rate_monitor>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**
 
@@ -303,12 +303,10 @@ Questions
    :width: 250px
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g1.jpg
    :width: 250px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g2.jpg
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/adalp2000/leds.jpg
    :width: 250px
-.. |image7| image:: https://wiki.analog.com/_media/university/tools/adalp2000/leds.jpg
-   :width: 250px
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-graph-ac.png
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab_heart-rate-mon-2modes.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-graph-ac.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab_heart-rate-mon-2modes.png
    :width: 500px
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab_heart-rate-mon-wave.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab_heart-rate-mon-wave.png
    :width: 750px

@@ -88,9 +88,9 @@ Installing the Software
 
 |image3|
 
--  Click **Next** to start the installation
+   \* Click **Next** to start the installation
 
-|image4|
+   |image4|
 
 -  Upon completion of the installation of the **CN-0364 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
@@ -101,7 +101,7 @@ Installing the Software
 
    |image5|
 
--  Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
 .. tip::
 
@@ -319,7 +319,7 @@ Saving Data to a Spreadsheet File
 -  Name the file.
 -  Click the **OK Button**.
 
-|
+
 
 .. note::
 

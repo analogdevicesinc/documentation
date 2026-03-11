@@ -1,7 +1,7 @@
 How to develop ADI Yocto Linux with your own repositories
 =========================================================
 
-This documentation guides users how to develop Yocto Linux Products on ADI SC5XX platforms with developers' own repositories. 
+This documentation guides users how to develop Yocto Linux Products on ADI SC5XX platforms with developers' own repositories.
 
 HOST Setup
 ----------
@@ -39,12 +39,12 @@ Aplly below patches into the lnxdsp-repo-manifest
    --- a/default.xml
    +++ b/default.xml
    @@ -5,12 +5,12 @@
-    
+
       <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
       <remote fetch="https://github.com/openembedded" name="oe"/>
    -  <remote fetch="https://github.com/analogdevicesinc" name="adigithub"/>
    +  <remote fetch="$YOUR_REPO_PATH" name="dte"/>
-    
+
       <project remote="yocto" revision="50f33d3bfebcbfb1538d932fb487cfd789872026" name="poky" path="sources/poky"/> <!-- thud revision -->
       <project remote="oe" revision="4cd3a39f22a2712bfa8fc657d09fe2c7765a4005" name="meta-openembedded" path="sources/meta-openembedded"/> <!-- thud revision -->
    -  <project remote="adigithub" revision="develop/yocto-1.0.0" name="lnxdsp-adi-meta" path="sources/meta-adi"/>
@@ -76,7 +76,7 @@ Aplly below patches into your own build script, take adsp-sc589-ezkit as an exa
    @@ -21,6 +21,11 @@
     # This sets the default machine to be adsp-sc589-ezkit if no other machine is selected:
     MACHINE ?= "adsp-sc589-ezkit"
-    
+
    +UBOOT_GIT_URI ?= "git://$YOUR_REPO_PATH/u-boot.git"
    +UBOOT_BRANCH ?= "develop/yocto-1.0.0"
    +KERNEL_GIT_URI ?= "git://$YOUR_REPO_PATH/lnxdsp-linux.git"

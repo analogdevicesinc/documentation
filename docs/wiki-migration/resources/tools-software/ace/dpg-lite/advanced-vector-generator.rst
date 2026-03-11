@@ -138,8 +138,6 @@ The first carrier in the list is considered the Primary Carrier. This carrier is
 
 To change the order of the carriers, select the carrier to move, and use the up and down arrow buttons on the right side of the carrier list.
 
-.. _digital-backoff-1:
-
 Digital Backoff
 ~~~~~~~~~~~~~~~
 
@@ -149,8 +147,6 @@ When the vector is generated, the signal will be scaled such that the peak of th
 
    \ **Note:** Some DACs have a digital and/or analog backoff which is independent of this function. This digital backoff is applied before any backoff that the DAC may perform.
 
-
-.. _generating-the-vector-1:
 
 Generating the Vector
 ~~~~~~~~~~~~~~~~~~~~~

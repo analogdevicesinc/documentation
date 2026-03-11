@@ -166,13 +166,10 @@ For more information of the register and the bitfields in the register, double c
 AD7192 Demo Modes
 -----------------
 
-.. _ad7192-demo-modes-1:
-
 AD7192 Demo Modes
 =================
 
-| :doc:`Visit the demo mode section here </wiki-migration/resources/eval/user-guides/ad7192/softwareguide/demo_modes>`
-| **Contents of the demo modes section:**
+:doc:`Visit the demo mode section here </wiki-migration/resources/eval/user-guides/ad7192/softwareguide/demo_modes>` **Contents of the demo modes section:**
 
 -  :doc:`Low Noise Test Demo </wiki-migration/resources/eval/user-guides/ad7192/softwareguide/demo_modes>`
 -  :doc:`Weigh scale Demo </wiki-migration/resources/eval/user-guides/ad7192/softwareguide/demo_modes>`

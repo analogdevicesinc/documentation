@@ -175,21 +175,21 @@ These are referencing definitions for ``ref_clk`` and ``axi_pwm_gen`` specified 
 
 ::
 
-           ref_clk: clock@0x44a80000 {                                                                                                                                                                                                                           
-                   compatible = "adi,axi-clkgen-2.00.a";                                                                                                                                                                                                         
-                   reg = <0x44a80000 0x10000>;                                                                                                                                                                                                                   
-                   #clock-cells = <0>;                                                                                                                                                                                                                           
-                   clocks = <&clkc 15>, <&clkc 15>;                                                                                                                                                                                                              
-                   clock-names = "s_axi_aclk", "clkin1";                                                                                                                                                                                                         
-                   clock-output-names = "ref_clk";                                                                                                                                                                                                               
-           };                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                 
-           axi_pwm_gen: pwm@0x44a60000 {                                                                                                                                                                                                                         
-                   compatible = "adi,axi-pwmgen-2.00.a";                                                                                                                                                                                                         
-                   reg = <0x44a60000 0x1000>;                                                                                                                                                                                                                    
-                   label = "adc_conversion_trigger";                                                                                                                                                                                                             
-                   #pwm-cells = <2>;                                                                                                                                                                                                                             
-                   clocks = <&ref_clk>;                                                                                                                                                                                                                          
+           ref_clk: clock@0x44a80000 {
+                   compatible = "adi,axi-clkgen-2.00.a";
+                   reg = <0x44a80000 0x10000>;
+                   #clock-cells = <0>;
+                   clocks = <&clkc 15>, <&clkc 15>;
+                   clock-names = "s_axi_aclk", "clkin1";
+                   clock-output-names = "ref_clk";
+           };
+
+           axi_pwm_gen: pwm@0x44a60000 {
+                   compatible = "adi,axi-pwmgen-2.00.a";
+                   reg = <0x44a60000 0x1000>;
+                   label = "adc_conversion_trigger";
+                   #pwm-cells = <2>;
+                   clocks = <&ref_clk>;
            };
 
 Where the `AXI CLK Generator <https://analogdevicesinc.github.io/hdl/library/axi_clkgen/index.html>`_ and `AXI PWM Generator <https://analogdevicesinc.github.io/hdl/library/axi_pwm_gen/index.html>`_ drivers are used, respectively.
@@ -210,7 +210,7 @@ Precompiled kernels from ADI should have this driver already enabled. If buildin
        Device Drivers  --->
            <*>     Industrial I/O support --->
                --- Industrial I/O support
-                   *** Analog to digital converters ***
+                   ** Analog to digital converters **
                    [--snip--]
 
                    <*>   Analog Devices AD7625/AD7626 High-Speed ADC driver
@@ -237,8 +237,6 @@ These can be found at ``/sys/bus/iio/devices/iio:deviceX/``, where ``X`` is the 
 | ``sampling_frequency``         | The device's current sample rate                          |
 +--------------------------------+-----------------------------------------------------------+
 
-.. _examples-1:
-
 Examples
 ^^^^^^^^
 
@@ -260,8 +258,6 @@ Interfacing With the AD7625 via iio_attr
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Instead of using sysfs attributes to interact with the device, the attributes can be viewed and configured using the ``iio_attr`` command included with the :doc:`Libiio </wiki-migration/resources/tools-software/linux-software/libiio>` package.
-
-.. _examples-2:
 
 Examples
 ^^^^^^^^

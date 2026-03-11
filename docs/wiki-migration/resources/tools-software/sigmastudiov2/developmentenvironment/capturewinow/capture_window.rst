@@ -1,10 +1,13 @@
-| :doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/developmentenvironment>`
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/developmentenvironment>`
 
 Capture Window
 ==============
 
-| |1000|
-| The Capture Window captures all data packets send from SigmaStudio+ to the target hardware. This includes packets sent as part of Link-Compile-Download operation, Parameter Tuning, Register Updates, Sequence Window writes etc. Capturing data packets is active only when a communication device is present in the project. This window is docked at the bottom of the application by default.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/developmentenvironment/capturewinow/capturewindow.png
+   :alt: 1000
+   :align: center
+
+The Capture Window captures all data packets send from SigmaStudio+ to the target hardware. This includes packets sent as part of Link-Compile-Download operation, Parameter Tuning, Register Updates, Sequence Window writes etc. Capturing data packets is active only when a communication device is present in the project. This window is docked at the bottom of the application by default.
 
 The following controls are provided on the Capture Window:
 
@@ -24,5 +27,3 @@ The following controls are provided on the Capture Window:
 -  **Copy to Sequence Window** - Adds the selected capture window entries to sequence window.
 -  **Copy to Real Time Variant** - Adds the selected capture window entries to real-time variant.
 -  **Clear** - Clears the contents of the capture window.
-
-.. |1000| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/developmentenvironment/capturewinow/capturewindow.png

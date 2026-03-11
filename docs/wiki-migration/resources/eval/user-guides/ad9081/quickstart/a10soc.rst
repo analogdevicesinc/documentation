@@ -36,7 +36,7 @@ Creating / Configuring the SD Card
 
 :doc:`Create SD Image. (it is a single image for all boards) </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
--   Copy next boot files from <fc #ff0000>\ ``socfpga_arria10_socdk_ad9081``\ </fc> directory directly on SD Card ``BOOT`` partition :
+-   Copy next boot files from ``socfpga_arria10_socdk_ad9081`` directory directly on SD Card ``BOOT`` partition :
 
    -  ``fit_spl_fpga.itb``
    -  ``socfpga_arria10_socdk_sdmmc.dtb``
@@ -44,16 +44,16 @@ Creating / Configuring the SD Card
    -  ``zImage`` (from ``socfpga_arria10-common`` folder)
    -  ``extlinux.conf`` in the extlinux folder from SD Card
 
--  Write u-boot-splx4.sfp from <fc #ff0000>\ ``socfpga_arria10_socdk_ad9081``\ </fc> folder on third SD Card partition:
+-  Write u-boot-splx4.sfp from ``socfpga_arria10_socdk_ad9081`` folder on third SD Card partition:
 
 ::
 
        root@raspberrypi:~# lsblk
        NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-       sda           8:0    1 14.9G  0 disk 
+       sda           8:0    1 14.9G  0 disk
        ├─sda1        8:1    1    1G  0 part /media/pi/BOOT
        ├─sda2        8:2    1  7.6G  0 part /media/pi/rootfs
-       └─sda3        8:3    1    4M  0 part 
+       └─sda3        8:3    1    4M  0 part
        root@raspberrypi:~# dd if="./u-boot-splx4.sfp" of="/dev/sda3" bs=512
        2048+0 records in
        2048+0 records out
@@ -483,7 +483,7 @@ Configuring the FPGA will take a few seconds. Once the FPGA has been configured 
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 ::
 

@@ -6,14 +6,13 @@ You can return to the ACE Application User Guide Homepage here:
 -  :doc:`Application User Guide </wiki-migration/resources/tools-software/ace/applicationuserguide>`
 -  `Previous (Capture View) <https://wiki.analog.com/resources/tools/software/ace/understandingtheui/captureview.txt>`_
 
-|
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
 
 
-| ===== Tool Views =====
+Tool Views
+----------
 
 .. container:: centeralign
 
@@ -34,7 +33,7 @@ The **Tool Views** are a collection of views that add functionality to the main 
 -  Platform API Logger
 
 Macro Tool
-----------
+~~~~~~~~~~
 
 .. container:: centeralign
 
@@ -115,7 +114,7 @@ This code can then be imported into an IDE for execution, as seen in Figure 6. U
 
 XHIDDENEND
 
-XHIDDENSTART See More Details...</summary>
+XHIDDENSTART See More Details...
 
 If there is a macro currently open and the **Record** button is selected, a window will pop up giving the options to either record a new macro or to append the recording onto the currently open macro. If a new macro will be created and added to the Macros List, select **Record new macro**. This macro will automatically become the current macro and the transactions will be recorded as components of this new macro. This will have no effect on any other open macros which will still be available in the Macros List. If the next transaction recorded will be added to the Commands List of the currently open macro, select the **Append** option.
 
@@ -136,7 +135,7 @@ The **Comment** column allows the user to record non-executable comments about t
 
 .. raw:: html
 
-   <details><summary>Macro Command Format and Supported Transactions</summary>
+   <details><summary>Macro Command Format and Supported Transactions
 
 **MACRO COMMAND FORMAT**
 
@@ -177,10 +176,10 @@ The **Comment** column allows the user to record non-executable comments about t
 +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
 | Reset              | @Reset()                            | -                                         | Resets the part.                                                         |
 +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-
-.. container:: hide
-
-   \| Apply Settings \| @ApplySettings() \| - \| Applies ACE values to the part. \| \| Read Settings \| @ReadSettings() \| - \| Reads values from the part. \|
+| Apply Settings     | @ApplySettings()                    | -                                         | Applies ACE values to the part.                                          |
++--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+| Read Settings      | @ReadSettings()                     | -                                         | Reads values from the part.                                              |
++--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
 
 .. raw:: html
 
@@ -191,7 +190,7 @@ The **Comment** column allows the user to record non-executable comments about t
 
 .. raw:: html
 
-   <details><summary>Creating and Loading Macro File to ACE Macro Tool</summary>
+   <details><summary>Creating and Loading Macro File to ACE Macro Tool
 
 **CREATE AND LOAD MACRO FILE**
 
@@ -245,7 +244,7 @@ The **Comment** column allows the user to record non-executable comments about t
 
 
 System Explorer
----------------
+~~~~~~~~~~~~~~~
 
 The **System Explorer**, as seen in Figure 8, is used to navigate and show all the subsystems that have been added by the user to the system. By definition, a subsystem is a unit that represents a placeholder for hardware components grouped together under a system. It represents a group of physically connected boards. A subsystem can consist of just a single component at a minimum.
 
@@ -257,7 +256,7 @@ Subsystem details include **boards**, **chips** (or components), **chip memory m
 
 
 Register Debugger
------------------
+~~~~~~~~~~~~~~~~~
 
 |image9| The **Register Debugger**, as seen in Figure 9, is used to perform raw register writes to and reads from the chip.
 
@@ -265,11 +264,12 @@ The **Register Address Dropdown** is populated with a list of all registers in t
 
 Similarly when the **Read** button is selected, the selected register is read from and its value populates the Read Data Textbox. It is important to note that since this view preforms raw writes, there is no write verification step, so the value on the hardware after the write may not match the value that was written.
 
-| The **History Grid** shows previous writes and reads performed from within this view. These writes and reads can be repeated by selecting the step to be repeated and clicking the **Repeat** button. All previous actions can be removed from the **History Grid** using the **Clear** button.
-| *Figure 9. Register Debugger View*
+The **History Grid** shows previous writes and reads performed from within this view. These writes and reads can be repeated by selecting the step to be repeated and clicking the **Repeat** button. All previous actions can be removed from the **History Grid** using the **Clear** button.
+
+*Figure 9. Register Debugger View*
 
 Events
-------
+~~~~~~
 
 .. container:: centeralign
 
@@ -295,8 +295,10 @@ The **Events Tool View**, as seen in Figure 10, contains a list of event logs in
 
 -  **Description** – Details about why the message appeared.
 
-| 
-| ==== SDP-K1 Recovery Tool View ==== The **SDP-K1 Recovery Tool** is used to recover the firmware loaded to the SDP-K1 Controller Board. The SDP-K1 board is designed to be used in conjunction with various ADI evaluation boards as part of a customer evaluation environment. To know more about SDP-K1, refer to `SDP-K1 <https://wiki.analog.com/resources/eval/sdp/sdp-k1>`_ wiki page.
+SDP-K1 Recovery Tool View
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **SDP-K1 Recovery Tool** is used to recover the firmware loaded to the SDP-K1 Controller Board. The SDP-K1 board is designed to be used in conjunction with various ADI evaluation boards as part of a customer evaluation environment. To know more about SDP-K1, refer to `SDP-K1 <https://wiki.analog.com/resources/eval/sdp/sdp-k1>`_ wiki page.
 
 To use the SDP-K1 Recovery Tool, refer to Figure 11 and follow the steps below:
 

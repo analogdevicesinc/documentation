@@ -51,12 +51,7 @@ An actual BJT switch differs from the ideal switch in several aspects. In practi
 Materials:
 ----------
 
-| Analog Discovery Lab Instrument Hardware
-| Solder-less Breadboard
-| 1 - 6.8KΩ Resistor (R\ :sub:`B`)
-| 1 - 100Ω Resistor (R\ :sub:`C`)
-| 1 - 5mm LED (any color)
-| 1 - small signal NPN transistor (2N3904)
+Analog Discovery Lab Instrument Hardware Solder-less Breadboard 1 - 6.8KΩ Resistor (R\ :sub:`B`) 1 - 100Ω Resistor (R\ :sub:`C`) 1 - 5mm LED (any color) 1 - small signal NPN transistor (2N3904)
 
 Directions:
 -----------
@@ -91,8 +86,6 @@ How much current is flowing in resistors R\ :sub:`C` and R\ :sub:`B` when the LE
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/Transistor
-  https:*\ en.wikipedia.org/wiki/Light-emitting_diode
-| https://en.wikipedia.org/wiki/LED_circuit
+http://en.wikipedia.org/wiki/Transistor https://en.wikipedia.org/wiki/Light-emitting_diode https://en.wikipedia.org/wiki/LED_circuit
 
 **Return to EPS Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**

@@ -3,21 +3,23 @@
 Balance Fader Generic
 =====================
 
-| 
-| |balancefadergeneric.png|
-| |balanceconfig.png| |faderconfig.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/balancefadergeneric.png
+   :alt: balancefadergeneric.png
+
+|balanceconfig.png| |faderconfig.png|
 
 Description
 -----------
 
-| 
-| Reposition the image in front of the listener by adjusting gain levels of speakers. User can configure all the front and rear channel coefficients values.
+Reposition the image in front of the listener by adjusting gain levels of speakers. User can configure all the front and rear channel coefficients values.
 
 Usage
 -----
 
-| Click on the config button to open the balance fader coefficient window to configure the gain for respective input channels for respective outputs.
-| ===== Targets Supported =====
+Click on the config button to open the balance fader coefficient window to configure the gain for respective input channels for respective outputs.
+
+Targets Supported
+-----------------
 
 +-----------------------+------------+------------------+---------------+------------------+
 | Name                  | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -115,7 +117,6 @@ Output
 
 | 
 
-.. |balancefadergeneric.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/balancefadergeneric.png
 .. |balanceconfig.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/balanceconfig.png
    :width: 300px
 .. |faderconfig.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/faderconfig.png

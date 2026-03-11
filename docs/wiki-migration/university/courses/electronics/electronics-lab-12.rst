@@ -6,10 +6,11 @@ Objective:
 
 To investigate the simple differential amplifier using NPN transistors. First a few notes on hardware limitation issues. The waveform generator in the ADALM2000 system has a high output bandwidth and with that high bandwidth comes wide band noise. The input signal level needed for the measurements in this lab activity is rather small because of the gain of the differential amplifier. If the waveform generator output were used directly the signal to noise ratio of its output is not high enough. The signal to noise ratio can be improved by increasing the signal level and then placing an attenuator and filter ( figure 1 ) between the generator outputs and the circuit inputs. The materials needed for this are:
 
-| 2 - 100Ω resistors
-| 2 - 1KΩ resistors
-| 2 - 0.1uF capacitors (marked 104)
-| |image1|
+2 - 100Ω resistors 2 - 1KΩ resistors 2 - 0.1uF capacitors (marked 104)
+
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a12_f1.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -21,12 +22,7 @@ This attenuator and filter will be used in all parts of this lab.
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 10KΩ resistors
-| 1 - 15KΩ Resistor (use a 10KΩ in series with a 4.7KΩ)
-| 2 - Small signal NPN transistors (2N3904 or SSM2212 NPN matched pair)
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 10KΩ resistors 1 - 15KΩ Resistor (use a 10KΩ in series with a 4.7KΩ) 2 - Small signal NPN transistors (2N3904 or SSM2212 NPN matched pair)
 
 Directions:
 -----------
@@ -61,7 +57,7 @@ The following data should be taken: the X axis is the output of the arbitrary wa
 
 .. container:: centeralign
 
-   \ |image2|\
+   \ |image1|\
 
 
 .. container:: centeralign
@@ -88,8 +84,6 @@ Additional Materials:
    Figure 5 Diff pair with tail current source
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -100,8 +94,6 @@ Hardware Setup:
    Figure 6 Differential pair with tail current source Breadboard Circuit
 
 
-.. _procedure-1:
-
 Procedure:
 ----------
 
@@ -109,7 +101,7 @@ Same procedure as for the tail resistor.
 
 .. container:: centeralign
 
-   \ |image3|\
+   \ |image2|\
 
 
 .. container:: centeralign
@@ -131,8 +123,6 @@ Measuring Common Mode gain
 
 Common mode rejection is a key aspect of the differential amplifier. CMR can be measured by connecting the base of both transistors Q\ :sub:`1` and Q\ :sub:`2` to the same input source. The plot below shows the differential output for both the resistively biased and current source biased differential pair as the common mode voltage from W1 is swept from +2.9V to -4.5V around ground. The maximum positive swing on the input is limited to the point where the base voltage of the transistors exceed the collector voltage and the transistors saturate. This can be checked by observing the collector voltage of the transistors single ended with respect to ground (i.e. grounding the 2- scope input.)
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
@@ -142,8 +132,6 @@ Hardware Setup:
 
    Figure 8 Common Mode Gain Breadboard Circuit
 
-
-.. _procedure-2:
 
 Procedure:
 ----------
@@ -181,9 +169,7 @@ Repeat the common mode gain measurements on the circuit shown in figure 3 with t
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a12_f1.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/diff_pair_tail_res-wav.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/diff_pair_tail_res-wav.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/diff_pair_tail_cs-wav.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/diff_pair_tail_cs-wav.png
    :width: 500px

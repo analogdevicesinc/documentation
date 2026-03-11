@@ -1,13 +1,10 @@
 AXI JESD204B HDL Linux Driver
 =============================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
+   \ **NOTE:** This driver is RETIRED, DEPRECATED and not used anymore in any of the recent projects!
 
-   | This driver is RETIRED, DEPRECATED and not used anymore in any of the recent projects!
    
    Please see here instead:
    
@@ -109,7 +106,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            -*-     Industrial I/O lock free software ring
            -*-   Enable triggered sampling support
 
-                 *** Analog to digital converters ***
+                 ** Analog to digital converters **
            [--snip--]
 
            <*>   Generic AXI JESD204B configuration driver
@@ -141,7 +138,7 @@ Driver Testing
    lrwxrwxrwx    1 root     root             0 Jan  1 00:21 subsystem -> ../../../bus/platform
    -rw-r--r--    1 root     root          4096 Jan  1 00:21 uevent
 
-   # cat lane0_info 
+   # cat lane0_info
    DID: 0, BID: 1, LID: 1, L: 4, SCR: 1, F: 1
    K: 32, M: 2, N: 14, CS: 0, S: 1, N': 16, HD: 1
    FCHK: 0x81, CF: 0
@@ -152,7 +149,7 @@ Driver Testing
    BUFCNT: 0x14
    LECNT: 0x0
    FC: 500000000
-   # 
-   # cat lane0_syncstat 
+   #
+   # cat lane0_syncstat
    NOT_IN_TAB: 0, DISPARITY: 0, UNEXPECTED_K: 0
-   # 
+   #

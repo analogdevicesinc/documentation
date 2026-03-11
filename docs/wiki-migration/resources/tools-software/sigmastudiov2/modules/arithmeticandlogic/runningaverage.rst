@@ -3,14 +3,16 @@
 Running Average
 ===============
 
-| 
-| |runningavg.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/runningavg.png
+   :alt: runningavg.png
 
 Description
 -----------
 
-| The RunningAverage block computes the average of N samples. Where N is specified in the CurrentBlockSize text field.
-| ===== Targets Supported =====
+The RunningAverage block computes the average of N samples. Where N is specified in the CurrentBlockSize text field.
+
+Targets Supported
+-----------------
 
 =========== ========== ================ ============= ================
 Name        ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -18,7 +20,7 @@ Name        ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Running Avg B          B                NA            B
 =========== ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -69,5 +71,3 @@ DSP Parameter Computation
 -------------------------
 
 NA
-
-.. |runningavg.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/runningavg.png

@@ -3,19 +3,25 @@
 Up Down Control LUT
 ===================
 
-| |up_down_lut_ssp.jpg|
-| ===== Description =====
-| This block takes in two inputs, one up and one down, and uses them to generate an index for a lookup table. The starting index is pre-loaded into an interface register and the up/down inputs increment or decrement the value.
-| ===== Usage =====
-| \* Drag the block into your schematic.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gpioconditioning/up_down_lut_ssp.jpg
+   :alt: up_down_lut_ssp.jpg
 
+Description
+-----------
+
+This block takes in two inputs, one up and one down, and uses them to generate an index for a lookup table. The starting index is pre-loaded into an interface register and the up/down inputs increment or decrement the value.
+
+Usage
+-----
+
+-  Drag the block into your schematic.
 -  Connect the red control inputs to GPIOs that have been conditioned by Push and Hold, or to the outputs of the Rotary Encoder.
 -  Connect the yellow input pin to an Interface Read block.
 -  Connect the yellow output to an Interface Write block, with the same register selected for both the interface read and write blocks.
 -  The output will be the value in the table corresponding to the index.
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +---------------------+------------+-----------------------+---------------+------------------+
 | Name                | ADSP-214xx | ADSP-215xx/ADSP-SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -27,7 +33,7 @@ Up Down Control LUT
 | ===== Pins =====
 
 Input
------
+~~~~~
 
 +--------+---------+-------------------------------------------------------------------------------------+
 | Name   | Type    | Description                                                                         |
@@ -40,7 +46,7 @@ Input
 +--------+---------+-------------------------------------------------------------------------------------+
 
 Output
-------
+~~~~~~
 
 +---------+---------+---------------------------------------------------------------------------+
 | Name    | Type    | Description                                                               |
@@ -76,6 +82,5 @@ Output
 
 | 
 | ===== DSP Parameter Computation =====
-| Not applicable
 
-.. |up_down_lut_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gpioconditioning/up_down_lut_ssp.jpg
+Not applicable

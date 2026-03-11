@@ -6,7 +6,10 @@ EVAL-CN0411-ARDZ Shield Overview
 | The range of conductivity measurement can be adjusted using gain resistors switched using the :adi:`ADG1608`, a 16:1 multiplexer.
 | The conductivity cell signal is measured by the :adi:`AD8220`, a low-input current JFET instrumentation amplifier. Then, A track-and-hold amplifier implemented using :adi:`AD8628`, a zero-drift rail-to-rail single supply op amp, samples the signal for the :adi:`AD7124-8`, a low noise low power 24-bit Sigma-Delta ADC. With the software calibration, the calibrated system accuracy is less than 2% for all conductivity ranges from 1 μS to 0.01 S and less than 7% for conductivity ranges greater than 0.01 S. This makes the system reliable for conductivity measurement used to compute TDS.
 | This design uses a combination of components that allow for single supply operation which minimize circuit complexity, making this suitable for low-power and portable instrument applications. Applications include chemical water analysis for field research, and monitoring water systems and natural bodies of water.
-| |image1|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/20180628_145941.jpg
+   :align: center
+   :width: 600px
 
 Total Dissolved Solids Measurement
 ----------------------------------
@@ -16,9 +19,15 @@ The measurement of the total dissolved solids in a solution relies primarily on 
 Hardware Connection and Jumper Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The :adi:`CN0411` connects to the :adi:`EVAL-ADICUP360 <ADICUP360>` using the Arduino mating headers. Shown below is the :adi:`CN0411`, connected to the :adi:`EVAL-ADICUP360 <ADICUP360>`, with labels for the hardware connections and jumper headers.
-| |image2|
-| ===Sensor Connections=== The CN-0411 has three hardware connectors which have no polarity and can connect directly to the sensors:
+The :adi:`CN0411` connects to the :adi:`EVAL-ADICUP360 <ADICUP360>` using the Arduino mating headers. Shown below is the :adi:`CN0411`, connected to the :adi:`EVAL-ADICUP360 <ADICUP360>`, with labels for the hardware connections and jumper headers.
+
+
+|image1|
+
+Sensor Connections
+^^^^^^^^^^^^^^^^^^
+
+| The CN-0411 has three hardware connectors which have no polarity and can connect directly to the sensors:
 | J1 is for 2-wire conductivity probes with a BNC plug. This is compatible with common commercial probes. Below are recommended probes of different cell constants.
 
 ============= =============================== ========
@@ -26,28 +35,35 @@ Cell Constant Description                     Images
 ============= =============================== ========
 0.1           CS SK21T 2-Electrode Glass Cell
 
-|image3|
+|image2|
 
 1             CS SK20T 2-Electrode Glass Cell
 
-|image4|
+|image3|
 
 10            CS SK23T 2-Electrode Glass Cell
 
-|image5|
+|image4|
 
 ============= =============================== ========
 
-| P2 is a terminal block connector for conductivity probe's with no BNC plug. The connection diagram is shown below
-| |image6| P3 is a terminal block connector for a 2-wire RTD. The software is compatible with Pt100 and Pt1000 RTDs. The connection diagram is shown below
-| |image7|
+P2 is a terminal block connector for conductivity probe's with no BNC plug. The connection diagram is shown below |image5| P3 is a terminal block connector for a 2-wire RTD. The software is compatible with Pt100 and Pt1000 RTDs. The connection diagram is shown below
+
+
+|image6|
 
 Jumper Configurations
 ^^^^^^^^^^^^^^^^^^^^^
 
-| The :adi:`CN0411` has four jumper headers which configure different settings as shown below. Also, the default shunt positions are highlighted.
-| |image8|
-| ===Sensor Select=== PRB_SEL selects the connection to the conductivity sensor. By default, the shunt is placed connecting pin 1 and 2 to measure the conductivity of the solution.
+The :adi:`CN0411` has four jumper headers which configure different settings as shown below. Also, the default shunt positions are highlighted.
+
+
+|image7|
+
+Sensor Select
+^^^^^^^^^^^^^
+
+PRB_SEL selects the connection to the conductivity sensor. By default, the shunt is placed connecting pin 1 and 2 to measure the conductivity of the solution.
 
 ====================== ==============================
 PRB_SEL Shunt Position Conductivity Sensor Connection
@@ -64,7 +80,7 @@ PRB_SEL Shunt Position Conductivity Sensor Connection
 Signal Input Select
 ^^^^^^^^^^^^^^^^^^^
 
-| P6 selects selects the input to the :adi:`AD8220` instrumentation amplifier. By default, the shunt position connects pins 1 and 2 to sample the conductivity sensor.
+P6 selects selects the input to the :adi:`AD8220` instrumentation amplifier. By default, the shunt position connects pins 1 and 2 to sample the conductivity sensor.
 
 ================= ======================================
 P6 Shunt Position AD8220 Instrumentation Amplifier Input
@@ -79,7 +95,7 @@ P6 Shunt Position AD8220 Instrumentation Amplifier Input
 ADC Chip Select
 ^^^^^^^^^^^^^^^
 
-| CS_ADC selects the chip select GPIO pin for the :adi:`AD7124-8`. This allows for multiple board stack-up of :adi:`CN0411` for customer applications requiring 2 conductivity readings. By default, the shunt position connects pins 3 and 4 to set the chip select to GPIO30.
+CS_ADC selects the chip select GPIO pin for the :adi:`AD7124-8`. This allows for multiple board stack-up of :adi:`CN0411` for customer applications requiring 2 conductivity readings. By default, the shunt position connects pins 3 and 4 to set the chip select to GPIO30.
 
 ===================== =====================
 CS_ADC Shunt Position AD7124-4 Chip Select
@@ -91,7 +107,7 @@ CS_ADC Shunt Position AD7124-4 Chip Select
 DAC Chip Select
 ^^^^^^^^^^^^^^^
 
-| CS_DAC selects the chip select GPIO pin for the :adi:`AD5683R`. This allows multiple board stack-up of :adi:`CN0411` for customer applications requiring the interface of 2 conductivity sensors. By default, the shunt position connects pins 1 and 2 to set the chip select to GPIO26.
+CS_DAC selects the chip select GPIO pin for the :adi:`AD5683R`. This allows multiple board stack-up of :adi:`CN0411` for customer applications requiring the interface of 2 conductivity sensors. By default, the shunt position connects pins 1 and 2 to set the chip select to GPIO26.
 
 ===================== =====================
 CS_DAC Shunt Position AD5683R Chip Select
@@ -103,9 +119,7 @@ CS_DAC Shunt Position AD5683R Chip Select
 Conductivity Measurement
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The system measures conductivity using a 2-wire conductivity probe to be immersed in the solution as shown below.
-| |image9|
-| It is preferable that the conductivity probe be positioned at the center of the container to maximize the accuracy of the measurement. The cell constant of a 2-wire conductivity probe is the distance between its two cells or electrodes divided by their inner surface area. The cell constant of the conductivity probe sets the range of conductivity measurements it is suitable to use. Proper selection of the probe makes it easier for the system to measure at a certain conductivity range. Below is the table listing the range of conductivity measurements appropriate for the probe's cell constant.
+The system measures conductivity using a 2-wire conductivity probe to be immersed in the solution as shown below. |image8| It is preferable that the conductivity probe be positioned at the center of the container to maximize the accuracy of the measurement. The cell constant of a 2-wire conductivity probe is the distance between its two cells or electrodes divided by their inner surface area. The cell constant of the conductivity probe sets the range of conductivity measurements it is suitable to use. Proper selection of the probe makes it easier for the system to measure at a certain conductivity range. Below is the table listing the range of conductivity measurements appropriate for the probe's cell constant.
 
 ============= ==============================
 Cell Constant Range of Measured Conductivity
@@ -126,8 +140,7 @@ The frequency of the excitation signal across the conductivity cells depends on 
 Temperature Measurement
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| The system can use either Pt100 or Pt1000 RTD sensors and is configurable through the software. Most commercial probes in the market have these RTDs built in the conductivity probe.
-| The temperature coefficient depends on the type of solution and can be configured in the software. The system has built-in stored values for sodium chloride (NaCl) and potassium chloride (KCl) solutions as shown in the table below.
+The system can use either Pt100 or Pt1000 RTD sensors and is configurable through the software. Most commercial probes in the market have these RTDs built in the conductivity probe. The temperature coefficient depends on the type of solution and can be configured in the software. The system has built-in stored values for sodium chloride (NaCl) and potassium chloride (KCl) solutions as shown in the table below.
 
 ======================== ===========================
 Salt Solution            Temperature Coefficient (α)
@@ -136,12 +149,10 @@ Potassium Chloride (KCl) 1.88
 Sodium Chloride (NaCl)   2.14
 ======================== ===========================
 
-.. _total-dissolved-solids-measurement-1:
-
 Total Dissolved Solids Measurement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The total dissolved solids in the solution is computed from the temperature-compensated conductivity measurement by the TDS factor which varies per type of dissolved solid. This can be configured through software and the system has built-in stored values for NaCl and KCl solutions.
+The total dissolved solids in the solution is computed from the temperature-compensated conductivity measurement by the TDS factor which varies per type of dissolved solid. This can be configured through software and the system has built-in stored values for NaCl and KCl solutions.
 
 ======================== ========================
 Salt Solution            Range of TDS Factor (ke)
@@ -153,17 +164,13 @@ Sodium Chloride (NaCl)   0.47 to 0.50
 Calibration and Auto-ranging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The system can automatically select the proper gain resistance from the user-defined excitation voltage when commanding the system to measure TDS. Below is the procedure used to select the gain resistance appropriate to the measured conductivity range.
-| |image10|
-| To decrease the effect of system noise to the measurement, the zero-scale calibration should be performed once per board. Every measured voltage level will be referenced to the zero-scale calibration voltage. Below are the steps to perform zero-scale calibration.
+The system can automatically select the proper gain resistance from the user-defined excitation voltage when commanding the system to measure TDS. Below is the procedure used to select the gain resistance appropriate to the measured conductivity range. |image9| To decrease the effect of system noise to the measurement, the zero-scale calibration should be performed once per board. Every measured voltage level will be referenced to the zero-scale calibration voltage. Below are the steps to perform zero-scale calibration.
 
 -  Place the shunt position of jumper header P6 to connect pins 2 and 3.
 -  Command the software to perform zero-scale calibration.
 -  Wait for the command to finish
 -  Place the shunt position of the jumper header P6 back to pins 1 and 2
-
-To increase the accuracy of the system in the 0.01 S range or 0.1 S range, reference-resistor calibration should be performed once per board. This calibrates the system to a known 200 Ω and 20 Ω precision resistance, respectively. Below are the steps to perform reference-resistor calibration.
-
+   To increase the accuracy of the system in the 0.01 S range or 0.1 S range, reference-resistor calibration should be performed once per board. This calibrates the system to a known 200 Ω and 20 Ω precision resistance, respectively. Below are the steps to perform reference-resistor calibration.
 -  Place the shunt position of PRB_SEL to connect pins 3 and 4 for a 0.01 S range calibration or to connect pins 5 and 6 for a 0.1 S range calibration.
 -  Command the software to perform a reference resistor calibration
 -  Wait for the command to finish
@@ -181,7 +188,7 @@ Schematic, PCB Layout, Bill of Materials
    :class: download
 
    
-   | :adi:`EVAL-CN0411-ARDZ Design & Integration Files <cn0411-designsupport>`
+   :adi:`EVAL-CN0411-ARDZ Design & Integration Files <cn0411-designsupport>`
    
    -  Schematics
    -  PCB Layout
@@ -200,23 +207,21 @@ Registration
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/20180628_145941.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/shunt_header_positions.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/shunt_header_positions.jpg
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/s217t.gif
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/s217t.gif
    :width: 200px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/cs-sk20.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/cs-sk20.jpg
    :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/s218t.gif
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/s218t.gif
    :width: 200px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/probe_connection.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/probe_connection.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/rtd_connection.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/rtd_connection.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/board_silkscreen_with_edits.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/board_silkscreen_with_edits.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/probe_immersion.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/probe_immersion.png
    :width: 200px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/auto-range_flowchart.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0411/auto-range_flowchart.png
    :width: 600px

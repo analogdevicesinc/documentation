@@ -30,5 +30,5 @@ Location of the sources
 
 All the HDL sources can be found at Analog Devices Inc. `Git <https://github.com/analogdevicesinc>`_ repository. Later in this guide, the structure of this repository will be presented.
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#none#hdl
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#none#hdl
    :alt: Main page#git|Git Repository

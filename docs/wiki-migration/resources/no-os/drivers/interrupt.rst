@@ -96,9 +96,9 @@ This example shows how to register callbacks and enable/disable global interrupt
            .handle = MXC_UART0
    };
 
-   /** 
+   /**
      * Register a new callback for an event/peripheral pair (in case there is already one registered, it will be overwritten).
-     * In the case of the global interrupt controller, the irq_id refers to the interrupt vector entry number 
+     * In the case of the global interrupt controller, the irq_id refers to the interrupt vector entry number
      * of the peripheral (this should be unique).
    */
    ret = no_os_irq_register_callback(global_desc, UART0_IRQn, &uart_cb);
@@ -111,7 +111,7 @@ This example shows how to register callbacks and enable/disable global interrupt
    ret = no_os_irq_set_priority(global_desc, UART0_IRQn, 1);
    if (ret)
            return ret;
-   /** 
+   /**
      * Enable the handling of interrupts from a peripheral specified by **irq_id**.
      * Without this step, the interrupt routine won't be called.
    */
@@ -119,17 +119,17 @@ This example shows how to register callbacks and enable/disable global interrupt
    if (ret)
            return ret;
 
-   /** 
+   /**
      * The callback will now be triggered once a RX complete event occurs on UART0.
    */
 
-   /** 
+   /**
      * Registering a callback for a GPIO peripheral from the global interrupt controller will result in an error.
    */
    ret = no_os_irq_register_callback(global_desc, GPIO0_IRQn, &uart_cb);
 
    /**
-     * Unregistering a callback is done in this way. 
+     * Unregistering a callback is done in this way.
    */
    ret = no_os_irq_unregister_callback(global_desc, UART0_IRQn, &uart_cb);
    if (ret)
@@ -170,7 +170,7 @@ The following example shows how to handle GPIO interrupts. This assumes that bot
 
    /**
      * In the context of using the GPIO interrupt controller specific platform ops, the irq_id refers to the pin number.
-     * The callback will be registered on pin 5 of the GPIO port 0 (the port is specified by the id field of the 
+     * The callback will be registered on pin 5 of the GPIO port 0 (the port is specified by the id field of the
      * gpio_irq_desc).
    */
    ret = no_os_register_callback(gpio_irq_desc, 5, &gpio_cb);
@@ -197,14 +197,14 @@ The following example shows how to handle GPIO interrupts. This assumes that bot
    ret = no_os_irq_enable(gpio_irq_desc, 5);
    if (ret)
            return ret;
-          
+
    ret = no_os_irq_enable(global_desc, GPIO0_IRQn);
    if (ret)
            return ret;
-           
+
    /**
      * The callbacks on pin 5 (GPIO 0) now get triggered on rising edge.
-   /* 
+   /*
 
 Platform specific fields
 ------------------------

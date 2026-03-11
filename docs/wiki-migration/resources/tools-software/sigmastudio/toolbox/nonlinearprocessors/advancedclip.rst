@@ -1,7 +1,7 @@
 Advanced Clip
 =============
 
-| :doc:`Click here to return to the Non Linear Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/nonlinearprocessors>`
+:doc:`Click here to return to the Non Linear Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/nonlinearprocessors>`
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 | The Advanced Clip cell takes an input signal and rounds its edges to avoid clipping at large signal levels. As the input signal reaches the clip threshold, the algorithm rounds the edges for a smoother clipped output. | |image2| |
@@ -51,8 +51,12 @@ DSP Parameter Information
 | n/a              | SoftClipNew1thRange1 | Constants                                 |
 +------------------+----------------------+-------------------------------------------+
 
-| Note: The SoftClipNew1p1val and SoftClipNew1thRange1 parameters do not need to change when the GUI control is updated.
-| ===== Algorithm Description ===== The input is compared with the threshold value:
+Note: The SoftClipNew1p1val and SoftClipNew1thRange1 parameters do not need to change when the GUI control is updated.
+
+Algorithm Description
+---------------------
+
+The input is compared with the threshold value:
 
 If abs(input) < = threshold, output = input
 
@@ -64,8 +68,8 @@ If abs(input) < = threshold, output = input
              output = - threshold*(1+tanh(theta))
      where:  theta = (abs(input)-threshold)/threshold
 
-| 
-| ===== Algorithm Details =====
+Algorithm Details
+-----------------
 
 +----------------------------+---------------------------------------------------------------+
 | Toolbox Path               | Non Linear Processors - Clippers - Soft Clip - Standard Cubic |

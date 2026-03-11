@@ -71,7 +71,7 @@ IOSEL      Shorted Pin 1 and 2
 Set the following :adi:`EVAL-ADICUP3029` switches according to their configuration on the table below.
 
 ========== =====================
-**Switch** \**Configuration \*\*
+**Switch** \**Configuration**
 ========== =====================
 UART (S2)  USB
 POWER (S5) WALL/USB
@@ -103,7 +103,7 @@ Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. D
 Optical Path Setup
 ------------------
 
-| The demo utilizes an optical path similar to the one used by :adi:`CN0503`, but only for a single channel. The single path base and cuvette holder are available as 3D-printable designs () and can also be ordered using Shapeways.
+The demo utilizes an optical path similar to the one used by :adi:`CN0503`, but only for a single channel. The single path base and cuvette holder are available as 3D-printable designs () and can also be ordered using Shapeways.
 
 -  Assemble the cuvette holder. See :doc:`Assembling the Tower </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503>` for instructions.
 -  Insert the 365 nm LED Board to the base, as shown below.

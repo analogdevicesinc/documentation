@@ -59,7 +59,7 @@ Jumper settings (default) for EVAL-AD2430WD1BZ / EVAL-AD2438WD1BZ (Main) is as s
 
 
 ============ ================================ =================
-**Jumper**   \**Purpose in AD2430/AD2438 \*\* **Main**
+**Jumper**   \**Purpose in AD2430/AD2438***Main**
 ============ ================================ =================
 JP1          Voltage Selector                 1-2
 JP2          Voltage Selector                 1-2
@@ -94,8 +94,6 @@ Connections
 -----------
 
 To run the sample demo, the following setup connections are to be made.
-
-.. _evaluation-boards-1:
 
 Evaluation boards
 ~~~~~~~~~~~~~~~~~

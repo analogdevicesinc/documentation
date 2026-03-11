@@ -62,8 +62,6 @@ System level testbenches
 
 The system level testbenches reside in a separate github repository: :git-testbenches:`testbenches <tree/main>` repo
 
-.. _supported-simulators-1:
-
 Supported simulators
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -91,8 +89,6 @@ SV API packages
 
 -  `adi_jesd204_pkg.sv <https://www.github.com/analogdevicesinc/testbenches/blob/main/common/sv/adi_jesd204_pkg.sv>`_ - JESD204 link layer package, a collection of tasks and functions to high level control the link layer transmit and receive peripherals
 -  `adi_xcvr_pkg.sv <https://www.github.com/analogdevicesinc/testbenches/blob/main/common/sv/adi_xcvr_pkg.sv>`_ - JESD204 physical layer package, a collection of tasks and functions to high level control and automatically configure the transceivers for a given lane rate and reference clock
-
-.. _how-to-run-the-tb-1:
 
 How to run the tb
 ~~~~~~~~~~~~~~~~~

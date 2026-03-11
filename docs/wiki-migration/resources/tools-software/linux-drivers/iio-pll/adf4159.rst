@@ -10,7 +10,7 @@ Supported Devices
 Supported Boards
 ----------------
 
-| This driver supports the
+This driver supports the
 
 -  :adi:`EV-ADF4159EB1Z`
 -  :adi:`EV-ADF4159EB3Z`
@@ -63,7 +63,7 @@ Example device tree
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                      |
 +==========+===========================================================================================================================================+
-| dts      | :git-linux:`arch/arm/boot/dts/overlays/rpi-adf4159-overlay.dts`                                                                           |
+| dts      | `rpi-adf4159-overlay.dts <https://github.com/analogdevicesinc/linux/blob/rpi-5.4.y/arch/arm/boot/dts/overlays/rpi-adf4159-overlay.dts>`_  |
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example platform device initialization
@@ -168,7 +168,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        <*>     Industrial I/O support --->
            --- Industrial I/O support
                     Frequency Synthesizers DDS/PLL --->
-                                *** Phase-Locked Loop (PLL) frequency synthesizers ***
+                                ** Phase-Locked Loop (PLL) frequency synthesizers **
                                 <*> Analog Devices ADF4159/ADF4169 Waveform Generating Synthesizers
 
 Hardware configuration
@@ -182,10 +182,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -222,10 +219,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -240,10 +234,7 @@ Read output frequency
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -260,17 +251,14 @@ Frequencies are in Hz
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root@analog:/sys/bus/iio/devices/iio:device1# **echo 6001000000 > out_altvoltage0_frequency**
       root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency**
-      **6001000000 **
+      **6001000000**
    
 
 
@@ -279,10 +267,7 @@ Output power down
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -312,10 +297,7 @@ The ``ramp_mode`` attribute allows the user to control the output ramp mode of t
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -323,7 +305,7 @@ The ``ramp_mode`` attribute allows the user to control the output ramp mode of t
       root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage_ramp_mode_available**
       disabled continuous_sawtooth continuous_triangular single_sawtooth_burst single_ramp_burst
       root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_ramp_mode**
-      disabled 
+      disabled
       root@analog:/sys/bus/iio/devices/iio:device1# **echo continuous_sawtooth > out_altvoltage0_ramp_mode**
       root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_ramp_mode**
       continuous_sawtooth
@@ -337,10 +319,7 @@ This attribute sets the ``deviation_step`` in Hz. Values can be positive or nega
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -360,18 +339,15 @@ This attribute sets the ``deviation_range`` in Hz.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency_deviation_range **
+      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency_deviation_range**
       0
       root@analog:/sys/bus/iio/devices/iio:device1# **echo 10000000 > out_altvoltage0_frequency_deviation_range **
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency_deviation_range **
+      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency_deviation_range**
       9999960
    
 
@@ -383,10 +359,7 @@ This attribute sets the ``deviation_time`` in us.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -406,10 +379,7 @@ This device features an additional debugfs ABI, allowing the user to control add
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -463,7 +433,7 @@ This device features an additional debugfs ABI, allowing the user to control add
       dev 'adf4159', debug attr 'adi,frequency-deviation-step-hz', value :'1000'
       dev 'adf4159', debug attr 'adi,power-up-frequency-hz', value :'6000000000'
       dev 'adf4159', debug attr 'direct_reg_access', value :'0x781E0000'
-      root@analog:~# 
+      root@analog:~#
    
 
 
@@ -471,10 +441,7 @@ This device features an additional debugfs ABI, allowing the user to control add
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -502,7 +469,7 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24

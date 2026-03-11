@@ -3,17 +3,18 @@ EVAL-CN0410-ARDZ Shield
 
 :adi:`CN0410` is an Arduino compatible shield that is optimized for smart agriculture to control current passing through LED's. The :adi:`CN0410` is used along the the CFTL-LED Bar that has LED's with specific wavelengths that plants utilize.
 
-| 
-| The circuit shown below is a complete 3-channel single-supply, 16-bit unbuffered voltage output DAC that maintains ±2 LSB integral and differential nonlinearity by utilizing a CMOS DAC. This circuit has a voltage to current conversion that controls the amount of current passing through an LED by using a MOSFET in its configuration. The circuit also has an isoSPI repeater that allows multiple boards to be controlled with a single master.
+The circuit shown below is a complete 3-channel single-supply, 16-bit unbuffered voltage output DAC that maintains ±2 LSB integral and differential nonlinearity by utilizing a CMOS DAC. This circuit has a voltage to current conversion that controls the amount of current passing through an LED by using a MOSFET in its configuration. The circuit also has an isoSPI repeater that allows multiple boards to be controlled with a single master.
 
-| 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cn04010/img_0009a.jpg
+   :align: center
 
 Connectors and Jumper Configurations
 ------------------------------------
 
-| 
-| ==== Chip Select ==== The chip select pin of the AD5686 is hardware configurable and routed to 3 general purpose I/O pins on the board. Use the table below to change the location of the chip select simply by moving the shunt on P21, and ensuring the software is configured the same way. By default the chip select is located on GPIO 8. This feature allows multiple boards using SPI communications protocol to be stacked on top of each other.
+Chip Select
+~~~~~~~~~~~
+
+The chip select pin of the AD5686 is hardware configurable and routed to 3 general purpose I/O pins on the board. Use the table below to change the location of the chip select simply by moving the shunt on P21, and ensuring the software is configured the same way. By default the chip select is located on GPIO 8. This feature allows multiple boards using SPI communications protocol to be stacked on top of each other.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0410/cs.jpg
 
@@ -67,7 +68,7 @@ Transmit/Receive Connector
 LT6820 allows for SPI communications protocol to be converted to pulses for long distance transmission. The transmit and receive connectors can be used to connect boards for up to 100 meters in length. Multiple boards can be connected with a single master using its multi-drop configuration, attaching board is series to each other.
 
 
-|image2|
+|image1|
 
 Master Mode Settings
 ^^^^^^^^^^^^^^^^^^^^
@@ -134,5 +135,4 @@ Registration
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cn04010/img_0009a.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0410/multidrop2.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0410/multidrop2.jpg

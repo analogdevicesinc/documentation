@@ -119,7 +119,9 @@ Driver testing / API
 ====================
 
 Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
- This device can be found under **/sys/bus/iio/devices/**
+
+
+This device can be found under **/sys/bus/iio/devices/**
 
 ::
 
@@ -139,17 +141,14 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    lrwxrwxrwx 1 root root    0 Oct 26 22:20 subsystem -> ../../../../bus/iio
    -rw-r--r-- 1 root root 4096 Oct 26 22:20 uevent
    -r--r--r-- 1 root root 4096 Oct 26 22:20 waiting_for_supplier
-   root@analog:/sys/bus/iio/devices/iio:device0# 
+   root@analog:/sys/bus/iio/devices/iio:device0#
 
 Show device name
 ----------------
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -162,15 +161,13 @@ Show device name
 Set ChannelY Gain
 -----------------
 
-| /sys/bus/iio/devices/iio:deviceX/out_voltageY_hardwaregain
-| Hardware applied gain factor. If shared across all channels, <type>_hardwaregain is used.
+/sys/bus/iio/devices/iio:deviceX/out_voltageY_hardwaregain
+
+Hardware applied gain factor. If shared across all channels, <type>_hardwaregain is used.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -200,7 +197,7 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24

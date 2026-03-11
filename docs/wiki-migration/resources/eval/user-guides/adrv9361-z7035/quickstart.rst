@@ -1,7 +1,7 @@
 ADRV9361-Z7035 Quick Start Guide
 ================================
 
-.. image:: https://wiki.analog.com/_media/:adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web`.gif
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9361-z7035/:adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web`.gif
    :alt: :adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web`.gif
    :align: right
    :width: 250px
@@ -94,14 +94,11 @@ Messages
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -661,10 +658,7 @@ Show hardware sysid:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -680,10 +674,7 @@ This command display or list all the errors from logs:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -696,10 +687,7 @@ These devices should be present:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -712,7 +700,6 @@ These devices should be present:
               iio:device3: ad9517-3
               iio:device4: cf-ad9361-dds-core-lpc (buffer capable)
               iio:device5: cf-ad9361-lpc (buffer capable)
-              
    
 
 
@@ -729,10 +716,7 @@ Getting of IP address:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -802,9 +786,7 @@ Plugins
 
 These plugins enhance the capabilities of the IIO Oscilloscope tool and enable users to visualize and analyze the data from the ADRV9361 module in different ways. These provide a convenient and easy-to-use interface for configuring and controlling the module and performing various signal processing functions. ADRV9361 plugins:(formerly known as the FMComms2/3/4 Plugin)
 
-| check out:
-| :doc:`ADRV936X Plugins </wiki-migration/resources/tools-software/linux-software/fmcomms2_plugin>`
-| :doc:`ADRV936X Advanced Plugins </wiki-migration/resources/tools-software/linux-software/fmcomms2_advanced_plugin>`
+check out: :doc:`ADRV936X Plugins </wiki-migration/resources/tools-software/linux-software/fmcomms2_plugin>` :doc:`ADRV936X Advanced Plugins </wiki-migration/resources/tools-software/linux-software/fmcomms2_advanced_plugin>`
 
 Shut down
 ---------

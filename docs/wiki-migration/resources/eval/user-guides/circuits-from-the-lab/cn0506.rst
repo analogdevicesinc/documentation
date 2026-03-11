@@ -8,7 +8,7 @@ The circuit consists of two indivudual, independent 10/100/1000Mb PHYs, each wit
 Unboxing Video
 --------------
 
-.. image:: https://wiki.analog.com/_media/youtube>OL8T3RPe_Yk
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>OL8T3RPe_Yk
    :alt: youtube>OL8T3RPe_Yk
 
 Connectors and Jumper Configurations

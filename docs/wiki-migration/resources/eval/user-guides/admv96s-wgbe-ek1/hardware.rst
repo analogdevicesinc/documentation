@@ -46,8 +46,11 @@ Block diagram of the system
 
 |image1|
 
-| |image2|
-| Set up the hardware following these steps:
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek/image-2023-6-12_14-45-19-1.png
+   :align: center
+   :width: 600px
+
+Set up the hardware following these steps:
 
 -  For both boards, make sure the S1 switch is in a position that corresponds to the label printed on the module inserted in P2. The wireless link will only work between an ADMV9615 and an ADMV9625 with the S1 switches correctly configured.
 -  Mount the ADMV9615 and ADMV9625 assemblies onto the rail system as pictured
@@ -55,13 +58,13 @@ Block diagram of the system
 -  *Optionally, connect the MAXDAP programmers (7) using micro-USB cables to your PC’s COM ports to be able to use the Wethlink GUI application*
 -  Connect the 12 V power supplies (2)
 
-| 
-| ==== Connectors and Buttons ====
+Connectors and Buttons
+~~~~~~~~~~~~~~~~~~~~~~
 
 ======== ========
 Front    Back
 ======== ========
-|image3| |image4|
+|image2| |image3|
 ======== ========
 
 +-----------+---------------------------------------------------------------------------------------------------------------+
@@ -85,12 +88,16 @@ Front    Back
 | 
 | ==== Power Supply ==== The ADMV96S-WGBE-EK1 kit contains two VEL36US120-US-JA 12 V, 36 W AC/DC external wall mount (Class II) adapters. The board has a DC barrel jack connector dedicated for power supply with the following mating dimensions: 2.10 mm ID (0.083") and 5.50 mm OD (0.217"). It accepts voltages between 4 V and 16 V, but it is recommended to be supplied with 12 V.
 
-| 
-| ===Power tree===
+Power tree
+^^^^^^^^^^
 
-| |image5|
-| The main DC/DC regulator is the :adi:`LTM4623`, designed for 5 V output. This will supply the ADMV96x5 and all the circuits on the ADMV96S-WGBE-EK1 board. The LTM4623 supports selectable discontinuous mode operation and output voltage tracking for supply rail sequencing. Its high switching frequency and current mode control enable a very fast transient response to line and load changes while providing very good stability.
-| The :adi:`LTC3621` synchronous step-down regulator is the next in the power chain. The board uses the fixed version of this regulator but is also designed to be compatible with the adjustable version. The 3V3 rail is used to supply the PHY, MCU, and SerDes VDDIO, and is also used as an input for the :adi:`ADP170` and :adi:`LT3020` linear regulators that generate the lower voltage rails.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek/60ghz_pwmap.png
+   :align: center
+   :width: 700px
+
+The main DC/DC regulator is the :adi:`LTM4623`, designed for 5 V output. This will supply the ADMV96x5 and all the circuits on the ADMV96S-WGBE-EK1 board. The LTM4623 supports selectable discontinuous mode operation and output voltage tracking for supply rail sequencing. Its high switching frequency and current mode control enable a very fast transient response to line and load changes while providing very good stability.
+
+The :adi:`LTC3621` synchronous step-down regulator is the next in the power chain. The board uses the fixed version of this regulator but is also designed to be compatible with the adjustable version. The 3V3 rail is used to supply the PHY, MCU, and SerDes VDDIO, and is also used as an input for the :adi:`ADP170` and :adi:`LT3020` linear regulators that generate the lower voltage rails.
 
 Status Indicators
 ~~~~~~~~~~~~~~~~~
@@ -188,11 +195,7 @@ Registration
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek/block_diagram_of_the_system.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek/image-2023-6-12_14-45-19-1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/front.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/front.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/back.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/back.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek/60ghz_pwmap.png
-   :width: 700px

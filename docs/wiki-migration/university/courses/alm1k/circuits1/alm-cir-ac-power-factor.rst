@@ -111,12 +111,7 @@ With the correct capacitor connected in parallel with the RL load (motor) the po
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solderless breadboard and jumper wires
-| 1 – 47 Ω resistor
-| 1 – 100 Ω resistor
-| 1 – 10 uF capacitor
-| 1 – 47 mH inductor
+ADALM1000 hardware module Solderless breadboard and jumper wires 1 – 47 Ω resistor 1 – 100 Ω resistor 1 – 10 uF capacitor 1 – 47 mH inductor
 
 Directions for RC circuit:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -195,8 +190,6 @@ Construct the RL circuit shown in figure 4 on your solderless breadboard with th
    Figure 5. RL AC load circuit
 
 
-.. _procedure-1:
-
 Procedure:
 ~~~~~~~~~~
 
@@ -234,8 +227,6 @@ Construct the RLC circuit shown in figure 6 on your solderless breadboard with t
 
    Figure 7. RLC AC load breadboard connections
 
-
-.. _procedure-2:
 
 Procedure:
 ~~~~~~~~~~
@@ -284,8 +275,6 @@ The circuit shown in figure 9 for power factor correction is the same as figure 
 
 Based on your measurements from figure 4 and the equations in the power factor correction section in the background information for this lab activity calculate the appropriate value for C\ :sub:`1` at 250 Hz. Use the closest standard value (or parallel combination of standard values) capacitor for C\ :sub:`1`.
 
-.. _procedure-3:
-
 Procedure:
 ~~~~~~~~~~
 
@@ -319,8 +308,6 @@ ALICE desktop includes an :doc:`Impedance Analyzer </wiki-migration/university/t
 
 **For Further Reading:**
 
-| `Power Factor <https://en.wikipedia.org/wiki/Power_factor>`_
-| `Power in Resistive and Reactive AC circuits <https://www.allaboutcircuits.com/textbook/alternating-current/chpt-11/power-resistive-reactive-ac-circuits/>`_
-| `Practical Power Factor Correction <https://www.allaboutcircuits.com/textbook/alternating-current/chpt-11/practical-power-factor-correction/>`_
+`Power Factor <https://en.wikipedia.org/wiki/Power_factor>`_ `Power in Resistive and Reactive AC circuits <https://www.allaboutcircuits.com/textbook/alternating-current/chpt-11/power-resistive-reactive-ac-circuits/>`_ `Practical Power Factor Correction <https://www.allaboutcircuits.com/textbook/alternating-current/chpt-11/practical-power-factor-correction/>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

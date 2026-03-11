@@ -106,8 +106,7 @@ sys_gpio_bd   0   40              72
 Building the HDL project
 ------------------------
 
-| The design is built upon ADI's generic HDL reference design framework.
-| ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must `clone <https::`here </git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>` the HDL repository.
+The design is built upon ADI's generic HDL reference design framework. ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must `clone <https::`here </git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>` the HDL repository.
 
 In order to build the HDL design the user has to confirm that they have the right tools (see :doc:`build </wiki-migration/resources/fpga/docs/build>`). Then go to the projects/dc2677a/c5soc location and run the make command by typing in your command prompt:
 
@@ -125,9 +124,9 @@ Running ``make`` with no parameters will build the project using the default pro
 0  CMOS (default) LTC2358-18 (default)
 1  LVDS           LTC2358-16
 2  N/A            LTC2357-18
-3  :::            LTC2357-16
-4  :::            LTC2353-18
-5  :::            LTC2353-16
+3                 LTC2357-16
+4                 LTC2353-18
+5                 LTC2353-16
 == ============== ====================
 
 E.g., to build the project for LVDS mode, run the make command by typing in your command prompt:
@@ -154,8 +153,7 @@ E.g., to build the project for LVDS mode and LTC2358-16, run the make command by
 
 It will create a folder called ``LVDSCMOSN1_LTC235XFAMILY1`` that contains the built project files.
 
-| Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files.
-| A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
+Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files. A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
 
 System setup
 ------------

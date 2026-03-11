@@ -47,7 +47,7 @@ Clock scheme
 | Depending on the configuration used (CMOS or LVDS), the scheme differs a little bit. See the differences between the diagrams from below.
 | |image1|
 
-| Because of limitations from the evaluation board, we used an internal clock of the FPGA.
+Because of limitations from the evaluation board, we used an internal clock of the FPGA.
 
 Therefore, the external clocks given to AXI_AD4858 IP are:
 
@@ -60,9 +60,7 @@ Therefore, the external clocks given to AXI_AD4858 IP are:
 
    -  ``external_clk`` = 100MHz (F_CLK0)
 
-| ++++About the frequency calculation for the MMCM from axi_pwm_gen\| :math:`F_VCO = 1000 \times (CLKFBOUT__MULT__F) / (CLKIN_PERIOD \times DIVCLK_DIVIDE)` (MHz)
-| :math:`F_CLK0 = F_VCO / CLKOUT0_DIVIDE_F` (MHz)
-| :math:`F_CLK1 = F_VCO / CLKOUT1_DIVIDE_F` (MHz)
+++++About the frequency calculation for the MMCM from axi_pwm_gen\| :math:`F_VCO = 1000 \times (CLKFBOUT__MULT__F) / (CLKIN_PERIOD \times DIVCLK_DIVIDE)` (MHz) :math:`F_CLK0 = F_VCO / CLKOUT0_DIVIDE_F` (MHz) :math:`F_CLK1 = F_VCO / CLKOUT1_DIVIDE_F` (MHz)
 
 In :git-hdl:`our designs <projects/ad485x_fmcz/common/ad485x_fmcz_bd.tcl>`, the following parameters mean:
 
@@ -73,8 +71,7 @@ In :git-hdl:`our designs <projects/ad485x_fmcz/common/ad485x_fmcz_bd.tcl>`, the 
 
 For more details regarding the MMCM clock frequencies, check the `UG472 (7 series) <https://www.xilinx.com/content/dam/xilinx/support/documents/user_guides/ug472_7Series_Clocking.pdf>`_ and `UG572 (UltraScale/+) <https://www.xilinx.com/support/documents/user_guides/ug572-ultrascale-clocking.pdf>`_. ++++
 
-| 
-| For custom systems where the :adi:`AD4858 <en/products/ad4858.html>` chip is used, we recommend using an external clock, and not a clock from the FPGA like it is done in this reference design.
+For custom systems where the :adi:`AD4858 <en/products/ad4858.html>` chip is used, we recommend using an external clock, and not a clock from the FPGA like it is done in this reference design.
 
 Description of components
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,8 +88,9 @@ The :adi:`AD4858 <en/products/ad4858.html>` chip has 3 modes of configuration re
 Limitations
 ^^^^^^^^^^^
 
-| The period of the SCKI clock signal is limited to a minimum of 2.5ns (at most 400MHz). Having SCKI frequency constrained, the case where the conversion time is maximum (715ns) is not achievable with the 24 and 32-bit packet formats.
-| In other words, if you want to use the maximum conversion rate of 400MHz, then you can use **only** the 20-bit packet format.
+The period of the SCKI clock signal is limited to a minimum of 2.5ns (at most 400MHz). Having SCKI frequency constrained, the case where the conversion time is maximum (715ns) is not achievable with the 24 and 32-bit packet formats.
+
+In other words, if you want to use the maximum conversion rate of 400MHz, then you can use **only** the 20-bit packet format.
 
 IP list
 ~~~~~~~
@@ -160,8 +158,7 @@ Then go to :git-hdl:`projects/ad485x_fmcz/zed` location and run the make command
    user@analog:~$ cd hdl/projects/ad485x_fmcz/zed
    user@analog:~/hdl/projects/ad485x_fmcz/zed$ make LVDS_CMOS_N=0
 
-| Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files.
-| A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
+Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files. A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
 
 System setup
 ------------
@@ -191,8 +188,6 @@ Connections
 -  2x BNC to SMA cables connected from SMA0+/- (AD4858-FMCZ) to W1/W2 (BNC adapter board)
 -  1x Micro-B USB for M2K connectivity to the PC
 -  1x Micro-B USB for UART on Zedboard
-
-.. _resources-1:
 
 Resources
 ---------

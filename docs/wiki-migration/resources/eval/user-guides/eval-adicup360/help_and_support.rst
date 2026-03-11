@@ -78,8 +78,10 @@ If you have questions regarding the tools used with the EVAL-ADICUP360, either p
 
    -  `processor.tools.support@analog.com <https://wiki.analog.com/mailto/processor.tools.support@analog.com>`_
 
-| 
-| ===== ADuCM360-IDE questions (Deprecated) =====
+ADuCM360-IDE questions (Deprecated)
+-----------------------------------
+
+
 
 .. warning::
 
@@ -87,7 +89,6 @@ If you have questions regarding the tools used with the EVAL-ADICUP360, either p
 
    | We are moving the EVAL-ADICUP360 tools support over to CrossCore Embedded Studios(CCES). You should consider migrating to CCES at your earliest convenience. We will be **removing support** for the ADuCM360-IDE tools **April 30th 2018**.
    | Here is a link to download the :doc:`CrossCore tools. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_setup_guide>`
-   |
 
 
 Questions about the Analog Devices Eclipse IDE should be asked at the :ez:`ADuCM Eclipse IDE support community <community/analog-microcontrollers/aducm-eclipse-ide>`.

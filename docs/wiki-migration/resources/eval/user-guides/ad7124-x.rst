@@ -48,7 +48,7 @@ To begin using the evaluation board, please do the following
 
    |image1|
 
--  If using the Arduino connector on the SDP-K1, connect as shown in the image below: (**<fc #ff0000>Currently not supported by EVAL+, use SDP-B</fc>**)\
+-  If using the Arduino connector on the SDP-K1, connect as shown in the image below: (**Currently not supported by EVAL+, use SDP-B**)\
 
 
 |image2|
@@ -68,14 +68,12 @@ To begin using the evaluation board, please do the following
 
 -  Click select on the dialog box and you will then be at the Eval+ homescreen.
 
-| A detailed **description of the various Eval+ windows** can be found `here <https://wiki.analog.com/resources/eval/user-guides/ad7124/software>`_.
-| The `Noise Test Demo <https://wiki.analog.com/resources/eval/user-guides/ad7124/software/demo_modes>`_ is a quick example to ensure that the boards and software have been set up correctly.
+A detailed **description of the various Eval+ windows** can be found `here <https://wiki.analog.com/resources/eval/user-guides/ad7124/software>`_. The `Noise Test Demo <https://wiki.analog.com/resources/eval/user-guides/ad7124/software/demo_modes>`_ is a quick example to ensure that the boards and software have been set up correctly.
 
 Hardware Guide
 ==============
 
-| :doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>` **Contents of the Hardware guide:**
 
 -  :doc:`Description </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>`
 -  :doc:`Set Up Procedures </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>`
@@ -91,8 +89,7 @@ Hardware Guide
 Software Guide
 ==============
 
-| :doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad7124-x/software>`
-| **Contents of the Software guide:**
+:doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad7124-x/software>` **Contents of the Software guide:**
 
 -  :doc:`Evaluation+ Software </wiki-migration/resources/eval/user-guides/ad7124-x/software>`
 

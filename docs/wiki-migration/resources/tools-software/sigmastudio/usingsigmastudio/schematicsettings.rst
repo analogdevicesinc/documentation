@@ -1,8 +1,9 @@
 Schematic Settings (Presets)
 ============================
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| Settings are a snapshot of all control values (knobs, sliders, spin-controls, and combo-boxes) which are saved to a settings file (\*.bin). Settings include: the block(s) name(s), all control values, and the min/max and step size for any knobs or sliders. Settings files can be saved and recalled within a project and imported or exported between projects.
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+
+Settings are a snapshot of all control values (knobs, sliders, spin-controls, and combo-boxes) which are saved to a settings file (\*.bin). Settings include: the block(s) name(s), all control values, and the min/max and step size for any knobs or sliders. Settings files can be saved and recalled within a project and imported or exported between projects.
 
 It is possible to copy/paste settings among blocks, hierarchy boards, and projects. When pasting settings between projects or hierarchy boards, the blocks names are used for identification; pasted settings are applied to blocks that have the same name in both the source and destination schematics.
 
@@ -17,32 +18,40 @@ Settings can be saved for:
 Cell Settings:
 --------------
 
-| To manage settings for an individual block, right click on the block's border or label and select **Cell Settings** from the pop-up menu:
-| |schemsettingspic1.png|
+To manage settings for an individual block, right click on the block's border or label and select **Cell Settings** from the pop-up menu:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic1.png
+   :alt: schemsettingspic1.png
 
 --------------
 
 Board Settings:
 ---------------
 
-| To manage the settings for a hierarchy board (the settings of all blocks contained in the hierarchy board tab), select the hierarchy tab at the bottom of the schematic window, then right click in the schematic window and select **Board Settings** from the pop-up menu:
-| |schemsettingspic2.png|
+To manage the settings for a hierarchy board (the settings of all blocks contained in the hierarchy board tab), select the hierarchy tab at the bottom of the schematic window, then right click in the schematic window and select **Board Settings** from the pop-up menu:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic2.png
+   :alt: schemsettingspic2.png
 
 --------------
 
 Project Settings:
 -----------------
 
-| To manage the settings for an entire project, right click in the schematic window and select Project Settings from the pop-up menu:
-| |schemsettingspic3.png|
+To manage the settings for an entire project, right click in the schematic window and select Project Settings from the pop-up menu:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic3.png
+   :alt: schemsettingspic3.png
 
 --------------
 
 Setting History:
 ----------------
 
-| The most recent settings that are saved or opened will be displayed at the bottom of the settings menu as shown below. Note, you can clear the settings history or customize the history size in the settings options dialog.
-| |schemsettingspic4.png|
+The most recent settings that are saved or opened will be displayed at the bottom of the settings menu as shown below. Note, you can clear the settings history or customize the history size in the settings options dialog.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic4.png
+   :alt: schemsettingspic4.png
 
 --------------
 
@@ -63,10 +72,6 @@ Block Settings Example:
 | 6. Now there are two settings files which can be recalled at any time:                                                                                                                                                                                                                   | |schemsettingspic10.png|\ |schemsettingspic11.png| |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
 
-.. |schemsettingspic1.png| image:: https://wiki.analog.com/_media/schemsettingspic1.png
-.. |schemsettingspic2.png| image:: https://wiki.analog.com/_media/schemsettingspic2.png
-.. |schemsettingspic3.png| image:: https://wiki.analog.com/_media/schemsettingspic3.png
-.. |schemsettingspic4.png| image:: https://wiki.analog.com/_media/schemsettingspic4.png
 .. |schemsettingspic5.png| image:: https://wiki.analog.com/_media/schemsettingspic5.png
 .. |schemsettingspic6.png| image:: https://wiki.analog.com/_media/schemsettingspic6.png
 .. |schemsettingspic7.png| image:: https://wiki.analog.com/_media/schemsettingspic7.png

@@ -1,13 +1,9 @@
 EVALUATING THE AD9739A / AD9737A RF DIGITAL-TO-ANALOG CONVERTER
 ===============================================================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support for the eval-ad9739a is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
+   \ **NOTE:** Support for the eval-ad9739a is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
 
 
 Preface
@@ -20,14 +16,14 @@ This guide shows how AD9739A-EBZ works with SDP-H1 or ADS7-V2 controller board d
 Typical Setup
 -------------
 
-<fc #ff0000>\ |image1|\ </fc>
+|image1|
 
 .. container:: centeralign
 
    \ *Figure 1a. EVAL-AD9739A Setup with SDP-H1*\
 
 
-<fc #ff0000>\ |image2|\ </fc>
+   |image2|
 
 .. container:: centeralign
 

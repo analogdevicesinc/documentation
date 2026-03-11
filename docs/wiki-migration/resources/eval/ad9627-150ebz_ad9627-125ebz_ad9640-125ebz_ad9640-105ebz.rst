@@ -4,8 +4,9 @@ EVALUATING THE AD9627 / AD6655 / AD6653 ANALOG-TO-DIGITAL CONVERTER
 Preface
 -------
 
-| This user guide describes the evaluation boards, :adi:`AD9627-125EBZ <AD9627>`, :adi:`AD9627-150EBZ <AD9627>`, and :adi:`AD6655-125EBZ <AD6655>` that are used to evaluate the following Analog Devices, Inc., products: :adi:`AD9627`, :adi:`AD6655`, and :adi:`AD6653`. These evaluation boards provide all of the support circuitry required to operate these parts in their various modes and configurations. The application software used to interface with the devices is also described.
-| The :adi:`AD9627`, :adi:`AD6655`, and :adi:`AD6653` data sheets provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`. For additional information or questions, send an email to highspeedproductssupport@analog.com.
+This user guide describes the evaluation boards, :adi:`AD9627-125EBZ <AD9627>`, :adi:`AD9627-150EBZ <AD9627>`, and :adi:`AD6655-125EBZ <AD6655>` that are used to evaluate the following Analog Devices, Inc., products: :adi:`AD9627`, :adi:`AD6655`, and :adi:`AD6653`. These evaluation boards provide all of the support circuitry required to operate these parts in their various modes and configurations. The application software used to interface with the devices is also described.
+
+The :adi:`AD9627`, :adi:`AD6655`, and :adi:`AD6653` data sheets provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`. For additional information or questions, send an email to highspeedproductssupport@analog.com.
 
 Typical Measurement Setup
 -------------------------
@@ -65,7 +66,7 @@ Equipment Needed
 Getting Started
 ---------------
 
-| This section provides quick start procedures for using the :adi:`AD9627-125EBZ <AD9627>`, :adi:`AD9627-150EBZ <AD9627>`, or :adi:`AD6655-125EBZ <AD6655>` board. Both the default and optional settings are described.
+This section provides quick start procedures for using the :adi:`AD9627-125EBZ <AD9627>`, :adi:`AD9627-150EBZ <AD9627>`, or :adi:`AD6655-125EBZ <AD6655>` board. Both the default and optional settings are described.
 
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
@@ -86,8 +87,9 @@ Evaluation Board Hardware
 Power Supplies
 ~~~~~~~~~~~~~~
 
-| This evaluation board comes with a wall-mountable switching power supply that provides a 6 V, 2 A maximum output. Connect the supply to the rated 100 V ac to 240 V ac wall outlet at 47 Hz to 63 Hz. The output of the supply is a 2.1 mm inner diameter circular jack that connects to the PCB at J16. Once on the PC board, the 6 V supply is fused and conditioned before connection to six low dropout linear regulators that supply the proper bias to each of the various sections on the board.
-| External supplies can be used to operate the evaluation board by removing L1, L3, L4, and L13 to disconnect the voltage regulators supplied from the switching power supply. This enables the user to individually bias each section of the board. Use P3 and P4 to connect a different supply for each section. At least one 1.8 V supply is needed with a 1 A current capability for AVDD and DVDD; a separate 1.8 V to 3.3 V supply is recommended for DRVDD. To operate the evaluation board using the AD8352 option, a separate 5.0 V supply (AMP VDD) with a 1 A current capability is needed. To operate the evaluation board using the alternate SPI options, a separate 3.3 V analog supply (VS) is needed, in addition to the other supplies. The 3.3 V supply (VS) should have a 1 A current capability, as well. Solder Jumper SJ35 allows the user to separate AVDD and DVDD, if desired.
+This evaluation board comes with a wall-mountable switching power supply that provides a 6 V, 2 A maximum output. Connect the supply to the rated 100 V ac to 240 V ac wall outlet at 47 Hz to 63 Hz. The output of the supply is a 2.1 mm inner diameter circular jack that connects to the PCB at J16. Once on the PC board, the 6 V supply is fused and conditioned before connection to six low dropout linear regulators that supply the proper bias to each of the various sections on the board.
+
+External supplies can be used to operate the evaluation board by removing L1, L3, L4, and L13 to disconnect the voltage regulators supplied from the switching power supply. This enables the user to individually bias each section of the board. Use P3 and P4 to connect a different supply for each section. At least one 1.8 V supply is needed with a 1 A current capability for AVDD and DVDD; a separate 1.8 V to 3.3 V supply is recommended for DRVDD. To operate the evaluation board using the AD8352 option, a separate 5.0 V supply (AMP VDD) with a 1 A current capability is needed. To operate the evaluation board using the alternate SPI options, a separate 3.3 V analog supply (VS) is needed, in addition to the other supplies. The 3.3 V supply (VS) should have a 1 A current capability, as well. Solder Jumper SJ35 allows the user to separate AVDD and DVDD, if desired.
 
 Input Signals
 ~~~~~~~~~~~~~
@@ -102,7 +104,7 @@ The parallel CMOS outputs interface directly with the Analog Devices standard AD
 Default Operation and Jumper Selection Settings
 -----------------------------------------------
 
-| This section explains the default and optional settings or modes allowed on the :adi:`AD9627`, :adi:`AD6655`, and :adi:`AD6653`.
+This section explains the default and optional settings or modes allowed on the :adi:`AD9627`, :adi:`AD6655`, and :adi:`AD6653`.
 
 Power Circuitry
 ~~~~~~~~~~~~~~~
@@ -174,7 +176,7 @@ Using The Software for Testing
 Setting up the ADC Data Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| After configuring the board, set up the ADC data capture using the following steps:
+After configuring the board, set up the ADC data capture using the following steps:
 
 -  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 2, where the :adi:`AD9627` is shown as example).
    |image2|\
@@ -189,10 +191,7 @@ Setting up the ADC Data Capture
 
 .. container:: centeralign
 
-   \ *Figure 3. VisualAnalog Default Configuration Message*\
-
-
--  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 5. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 4).
+   \ *Figure 3. VisualAnalog Default Configuration Message*-  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 5. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`,*VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 4).
 
 
 
@@ -216,7 +215,7 @@ Evaluation And Test
 Setting up the SPI Controller Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
+After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
 
 -  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 6).\ |image6|\
 
@@ -229,17 +228,11 @@ Setting up the SPI Controller Software
 
 .. container:: centeralign
 
-   \ *Figure 7. SPI Controller, New DUT Button*\
-
-
--  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 8). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.\ |image8|\
+   \ *Figure 7. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 8). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.\ |image8|\
 
 .. container:: centeralign
 
-   \ *Figure 8. SPI Controller, ADCBase0 Page*\
-
-
--  Note that other settings can be changed on the **ADCBase 0** page (see Figure 8) and the **ADC A** and **ADC B** pages (see Figure 9) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.\ |image9|\
+   \ *Figure 8. SPI Controller, ADCBase0 Page*-  Note that other settings can be changed on the **ADCBase 0** page (see Figure 8) and the **ADC A** and **ADC B** pages (see Figure 9) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.\ |image9|\
 
 .. container:: centeralign
 
@@ -265,7 +258,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
    //Figure 11. Graph Window of VisualAnalog *
 
 
-\* Repeat this procedure for Channel B. \* Click the disk icon within the* **Graph** *window to save the performance plot data as .csv formatted file. See Figure 12 for AD9627 example. Please refer to the respective data sheet of the product of interest for its typical FFT performance.\ \
+- Repeat this procedure for Channel B. \* Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file. See Figure 12 for AD9627 example. Please refer to the respective data sheet of the product of interest for its typical FFT performance.\ \
 
 .. container:: centeralign
 

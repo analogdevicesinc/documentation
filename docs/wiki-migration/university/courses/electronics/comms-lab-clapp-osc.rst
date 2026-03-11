@@ -42,18 +42,7 @@ Build a simulation schematic of the Clapp oscillator as shown in figure 1. Calcu
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 2N3904 NPN transistor
-| 1 - 1 uH inductor
-| 1 - 10 uH inductor
-| 1 - 100 uH inductor
-| 1 - 10 mH inductor ( L\ :sub:`3` )
-| 1 - 1 nF capacitor ( C\ :sub:`1` )
-| 1 - 4.7 nF capacitor ( C\ :sub:`2` )
-| 2 - 0.1 uF capacitors ( marked 104 )
-| 1 - 470 Ω resistor ( R\ :sub:`3`)
-| Other resistor, capacitors and inductors as needed
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 2N3904 NPN transistor 1 - 1 uH inductor 1 - 10 uH inductor 1 - 100 uH inductor 1 - 10 mH inductor ( L\ :sub:`3` ) 1 - 1 nF capacitor ( C\ :sub:`1` ) 1 - 4.7 nF capacitor ( C\ :sub:`2` ) 2 - 0.1 uF capacitors ( marked 104 ) 1 - 470 Ω resistor ( R\ :sub:`3`) Other resistor, capacitors and inductors as needed
 
 Directions:
 -----------
@@ -104,8 +93,7 @@ A plot example using R\ :sub:`1`\ =10KΩ, R\ :sub:`2`\ =1KΩ, R\ :sub:`3`\ =100�
 Questions:
 ----------
 
-| Measure the peak to peak output voltage of the output. Measure the DC ( average ) level of the output waveform at the collector of Q\ :sub:`1` and on the other (output) side of AC coupling capacitor C\ :sub:`4`. Measure the voltage at the emitter of Q\ :sub:`1`. Calculate the average emitter current by measuring the voltage across R\ :sub:`3`. Compare your measurements with your calculations and simulations. Measure the period (time T) of the output waveform and its frequency (1/T). Compare this measured frequency to what you calculated by:
-| :math:`F_R = 1 / 2 \pi sqrt(LC)` .
+Measure the peak to peak output voltage of the output. Measure the DC ( average ) level of the output waveform at the collector of Q\ :sub:`1` and on the other (output) side of AC coupling capacitor C\ :sub:`4`. Measure the voltage at the emitter of Q\ :sub:`1`. Calculate the average emitter current by measuring the voltage across R\ :sub:`3`. Compare your measurements with your calculations and simulations. Measure the period (time T) of the output waveform and its frequency (1/T). Compare this measured frequency to what you calculated by: :math:`F_R = 1 / 2 \pi sqrt(LC)` .
 
 Fill in the table below with the measured frequency for other L\ :sub:`1` values for two different values of C\ :sub:`3`. Use the values in the table as suggested options but try to include as many different values as possible using series and parallel combinations of the inductors supplied in your parts kit. Any of the L\ :sub:`1` optional values shown below should give reliable oscillation.
 
@@ -136,9 +124,9 @@ Fill in the table below with the measured frequency for other L\ :sub:`1` values
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/Clapp_oscillator
-  http:*\ en.wikipedia.org/wiki/Barkhausen_stability_criterion
-| **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
+http://en.wikipedia.org/wiki/Clapp_oscillator http://en.wikipedia.org/wiki/Barkhausen_stability_criterion
+
+**Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/clapp_osc-bb.png
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/clapp_osc-wav.png

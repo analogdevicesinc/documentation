@@ -31,8 +31,8 @@ The versions are specified in the following format.
 
 ::
 
-   add_instance sys_cpu altera_nios2_gen2 16.0 
-   set sys_mb [create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:9.5 sys_mb] 
+   add_instance sys_cpu altera_nios2_gen2 16.0
+   set sys_mb [create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:9.5 sys_mb]
 
 You should now be able to build the design and test things out. In most cases, it should work without much effort. If it doesn't do an incremental update and debug accordingly.
 
@@ -79,5 +79,5 @@ Release Branches
 | :git-hdl:`tree/hdl_2014_r1`                                                       | Quartus 14.0     | Vivado 2013.4   | :git-hdl:`Release Notes <releases/tag/2014_r1>`                                      | :doc:`2014_r1 </wiki-migration/resources/fpga/docs/downloads_2014_r1>`     |
 +-----------------------------------------------------------------------------------+------------------+-----------------+--------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#git
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#git
    :alt: Git Repository#hdl|Main page#build|Building & Generating programming files

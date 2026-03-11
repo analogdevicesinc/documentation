@@ -18,15 +18,7 @@ The activity in this lab exercise investigates an alternate differential input s
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 3 - 1 KΩ resistors
-| 2 - 2.2 KΩ resistors
-| 1 - 47 KΩ resistor
-| 2 - 10 uF capacitors
-| 2 - NPN transistors ( 2N3904 or SSM2212 )
-| 2 - PNP transistors ( 2N3906 or SSM2220 )
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 3 - 1 KΩ resistors 2 - 2.2 KΩ resistors 1 - 47 KΩ resistor 2 - 10 uF capacitors 2 - NPN transistors ( 2N3904 or SSM2212 ) 2 - PNP transistors ( 2N3906 or SSM2220 )
 
 Directions:
 ~~~~~~~~~~~
@@ -77,9 +69,7 @@ Configure for Voltage drive:
 Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
-| 1 - 470Ω resistor
-
-.. _directions-1:
+1 - 470Ω resistor
 
 Directions:
 ~~~~~~~~~~~
@@ -95,8 +85,6 @@ Now we are going to reconfigure the input for voltage drive. Replace R\ :sub:`IN
    Figure 4 Transresistance amplifier input stage with voltage drive
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
@@ -106,8 +94,6 @@ Hardware Setup:
 
    Figure 5 Transresistance amplifier input stage with voltage drive - Breadboard Circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -122,8 +108,6 @@ Procedure:
 Observe the output at R\ :sub:`L`, which is the AC coupled sum of the signals at the collectors of Q\ :sub:`1` and Q\ :sub:`3`. Measure the voltage gain from the AWG1 output to R\ :sub:`L` and compare it to your calculated value. Observe the voltage amplitude of the signal seen at the current input node, at the emitters of Q\ :sub:`1` and Q\ :sub:`3`.<sub></sub>Based on the this amplitude calculate the input current amplitude ( voltage across R\ :sub:`IN` divided by R\ :sub:`IN` ) and the effective input resistance of the amplifier. Compare these values to your calculated values.
 
 To measure the current that is required from the input driver (W1) in this voltage drive configuration, insert the 1KΩ resistor in series with AWG1 (and the emitters of Q\ :sub:`2` and Q\ :sub:`4`). Connect the differential channel 1 scope inputs 1+,1- across the 1KΩ resistor. Observe this voltage and calculate the current as AWG1 swings over the +/- 400mV swing.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -146,6 +130,6 @@ For Further Reading:
 
 -  :adi:`Current Feedback (CFB) Op Amps <MT-034>`
 -  `Op Amp Fundamentals: The Transresistance Amplifier <http://www.wisc-online.com/objects/ViewObject.aspx?ID=SSE3103>`_
-   \* `Current-to-voltage converter <https://en.wikipedia.org/wiki/Transimpedance_amplifier>`_
+-  `Current-to-voltage converter <https://en.wikipedia.org/wiki/Transimpedance_amplifier>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**

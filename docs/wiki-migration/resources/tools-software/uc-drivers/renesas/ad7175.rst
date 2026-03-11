@@ -100,7 +100,6 @@ An EVAL-AD7175-2SDZ board has to be interfaced with the Renesas Demonstration Ki
      EVAL-AD7175-2SDZ Pin DOUT   →  YRDKRL78G13 J11 connector Pin 3
      EVAL-AD7175-2SDZ Pin TSCLK  →  YRDKRL78G13 J11 connector Pin 4
      EVAL-AD7175-2SDZ Pin GND1   →  YRDKRL78G13 J11 connector Pin 5
-     
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7175_rl78g13.jpg
    :align: center

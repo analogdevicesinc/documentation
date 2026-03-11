@@ -113,10 +113,7 @@ EVAL-HMC7044 modifications
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      There is no over-voltage or reverse polarity protection
+   There is no over-voltage or reverse polarity protection
 
    
    ::
@@ -183,7 +180,7 @@ The System Clocking Tree Diagram is located here:
 
 During multi-chip synchronization (MCS), which is a feature of the ADRV9009s, all baseband data from the converters is synchronized across transceiver chips. This requires specific sysrefs to be captured at each of the transceiver simultaneously. This will also create deterministic phase differences between transceivers, when RFPLL sync is enabled, as well. The individual API rights to the transceivers, clock chips, and their sequences are detailed in the rx method of the python class :git-pyadi-iio:`adi/adrv9009_zu11eg_multi.py`.
 
-| For more information on:
+For more information on:
 
 -  :doc:`Clock Tree Setup and Synchronization </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
 -  :doc:`Synchronizing distributed multi-topology systems </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
@@ -195,7 +192,7 @@ Please visit the :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-mig
    **It's important to know, while the devices are not yet fully initialized, they must not be accessed via their regular API, since they are not yet fully initialized.**
 
    
-   | You need to make sure:
+   You need to make sure:
    
    -  OSC doesn't start automatically remove it from /home/analog/.config/autostart/ADI IIO Oscilloscope.
    -  No other script starts automatically which tries to access the adrv9009-phy IIO devices.
@@ -211,8 +208,7 @@ Synchronization at the application layer across multiple FPGAs is achieved using
 -  :doc:`ADC JESD204B/C Transport Peripheral - External synchronization </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_adc>`
 -  :doc:`DAC JESD204B/C Transport Peripheral - External synchronization </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_dac>`
 
-| Once the JESD links are up the SYSREF pulses are no longer required from the JESD link perspective. However later assertions of the SYSREF pulses must respect the timing of the initial pulses in terms of phase and frequency to match the LMCF/LEMC of the link layer. These later SYSREF pulses can be used as references for simultaneous data capture/drive on multiple FPGAs.
-| The synchronization mechanism must be orchestrated by software, software must disable the SYSREF generation to FPGAs before arming the external synchronization mechanisms from all the transport layer cores from all FPGAs, it must program all DMA cores to prepare moving data to or from system memory depending on direction, then software must program the clock chips for a single SYSREF pulse that will reach the transport layer cores simultaneously.
+Once the JESD links are up the SYSREF pulses are no longer required from the JESD link perspective. However later assertions of the SYSREF pulses must respect the timing of the initial pulses in terms of phase and frequency to match the LMCF/LEMC of the link layer. These later SYSREF pulses can be used as references for simultaneous data capture/drive on multiple FPGAs. The synchronization mechanism must be orchestrated by software, software must disable the SYSREF generation to FPGAs before arming the external synchronization mechanisms from all the transport layer cores from all FPGAs, it must program all DMA cores to prepare moving data to or from system memory depending on direction, then software must program the clock chips for a single SYSREF pulse that will reach the transport layer cores simultaneously.
 
 Running the software
 ~~~~~~~~~~~~~~~~~~~~
@@ -221,7 +217,7 @@ Running the software
 
 ::
 
-   michael@mhenneri-D06:~/devel/git/pyadi-iio$ python3 examples/adrv9009_som_multi.py 
+   michael@mhenneri-D06:~/devel/git/pyadi-iio$ python3 examples/adrv9009_som_multi.py
    --Connecting to devices
 
 
@@ -428,15 +424,12 @@ On the primary setup check the status of the external clockchip. This chip repor
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:~# **iio_attr -D <fc #ff0000>hmc7044-ext</fc> status**
+      root@analog:~# **iio_attr -D hmc7044-ext status**
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 30720000 Hz
@@ -447,7 +440,7 @@ On the primary setup check the status of the external clockchip. This chip repor
       SYSREF Status:  Valid & Locked
       SYNC Status:    Unsynchronized
       Lock Status:    PLL1 & PLL2 Locked
-      root@analog:~# 
+      root@analog:~#
    
 
 
@@ -455,15 +448,12 @@ On the primary and secondary setup check the status of all clockchips in the top
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:~# **iio_attr -D <fc #ff0000>hmc7044-car</fc> status**
+      root@analog:~# **iio_attr -D hmc7044-car status**
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 30720000 Hz
@@ -475,7 +465,7 @@ On the primary and secondary setup check the status of all clockchips in the top
       SYNC Status:    Synchronized
       Lock Status:    PLL1 & PLL2 Locked
    
-      root@analog:~# **iio_attr -D <fc #ff0000>hmc7044</fc> status**
+      root@analog:~# **iio_attr -D hmc7044 status**
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 30720000 Hz
@@ -487,7 +477,7 @@ On the primary and secondary setup check the status of all clockchips in the top
       SYNC Status:    Synchronized
       Lock Status:    PLL1 & PLL2 Locked
    
-      root@analog:~# **iio_attr -D <fc #ff0000>hmc7044-fmc</fc> status**
+      root@analog:~# **iio_attr -D hmc7044-fmc status**
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 30720000 Hz
@@ -498,7 +488,7 @@ On the primary and secondary setup check the status of all clockchips in the top
       SYSREF Status:  Valid & Locked
       SYNC Status:    Synchronized
       Lock Status:    PLL1 & PLL2 Locked
-      root@analog:~# 
+      root@analog:~#
    
 
 

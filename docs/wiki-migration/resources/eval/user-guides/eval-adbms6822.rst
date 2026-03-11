@@ -4,13 +4,16 @@ EVAL-ADBMS6822 User Guide
 Overview
 --------
 
-| The :adi:`EVAL-ADBMS6822` is a dual SPI to 2-wire isolated serial port interface (isoSPI) adapter featuring the :adi:`ADBMS6822`. This board allows multiple ADBMS68xx battery monitors through daisy-chain connections. The EVAL-ADBMS6822 evaluation board also features reversible isoSPI, which enables a redundant path to the peripheral units. The PCB components and DuraClik connectors are optimized for low electromagnetic interference (EMI) susceptibility and emissions.
-| The :adi:`EVAL-ADBMS6822` evaluation board can communicate to PC by connecting together with EVAL-SDP-CK1Z. The EVAL-ADBMS6822 evaluation board provides a standard SPI, which can be translated to isoSPI and then onward to a peripheral device or daisy chain as applicable.
-| The :adi:`EVAL-ADBMS6822` evaluation board can also be used to evaluate the ADBMS6821. Note that for the ADBMS6821, there is only one SPI port; therefore, ignore the second SPI port and auxiliary isoSPI when using the ADBMS6821.
-| Full specifications on the ADBMS6822 dual isoSPI adapter are available in the ADBMS6821/ADBMS6822 data sheet available from Analog Devices, Inc. and must be consulted with this user guide when using the EVAL-ADBMS6822 evaluation board.
+The :adi:`EVAL-ADBMS6822` is a dual SPI to 2-wire isolated serial port interface (isoSPI) adapter featuring the :adi:`ADBMS6822`. This board allows multiple ADBMS68xx battery monitors through daisy-chain connections. The EVAL-ADBMS6822 evaluation board also features reversible isoSPI, which enables a redundant path to the peripheral units. The PCB components and DuraClik connectors are optimized for low electromagnetic interference (EMI) susceptibility and emissions.
 
-| 
-| ==== Features ====
+The :adi:`EVAL-ADBMS6822` evaluation board can communicate to PC by connecting together with EVAL-SDP-CK1Z. The EVAL-ADBMS6822 evaluation board provides a standard SPI, which can be translated to isoSPI and then onward to a peripheral device or daisy chain as applicable.
+
+The :adi:`EVAL-ADBMS6822` evaluation board can also be used to evaluate the ADBMS6821. Note that for the ADBMS6821, there is only one SPI port; therefore, ignore the second SPI port and auxiliary isoSPI when using the ADBMS6821.
+
+Full specifications on the ADBMS6822 dual isoSPI adapter are available in the ADBMS6821/ADBMS6822 data sheet available from Analog Devices, Inc. and must be consulted with this user guide when using the EVAL-ADBMS6822 evaluation board.
+
+Features
+~~~~~~~~
 
 -  Full-featured evaluation board for the ADBMS6822
 -  Demonstrates SPI to isoSPI 2-wire datalinks
@@ -19,8 +22,8 @@ Overview
 -  Compatible with the EVAL-ADBMS68xx boards, battery monitor boards, EVAL-SDP-CK1Z controller board
 -  With PC-based software for control and data analysis using Broad Market Browser BMS GUI
 
-| 
-| ==== Applications ====
+Applications
+~~~~~~~~~~~~
 
 -  Electric and hybrid electric vehicles
 -  Backup battery systems
@@ -33,12 +36,16 @@ Overview
 -  Metering Technology
 -  Power Tools
 
-| 
-| ===== System Architecture =====
-| |image1|
-| |image2|
+System Architecture
+-------------------
 
-| 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6822_block_diagram.png
+   :align: center
+   :width: 600px
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6822_system_setup.png
+   :align: center
+   :width: 600px
 
 Specifications
 --------------
@@ -58,32 +65,31 @@ Specifications
    
 
 
-| 
-| ----
+--------------
 
 Hardware Connections
 --------------------
 
-| 
-|
-
 .. container:: indent
 
    
-   Shield-Mount Board Connection
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   **Shield-Mount Board Connection**
+
    
-   | The primary connection for the EVAL-ADBMS6822 is by plugging it into a microcontroller board (for example, the SDP-K1 or the AD-APARD32690-SL). The pins on the backside of the EVAL-ADBMS6822 connect directly with the sockets of the MCU board. The shield connections provide all the default data and power connections.
-   | Note that the microcontroller board's interface voltage must be set to 3.3 V through Pin P4.
+   The primary connection for the EVAL-ADBMS6822 is by plugging it into a microcontroller board (for example, the SDP-K1 or the AD-APARD32690-SL). The pins on the backside of the EVAL-ADBMS6822 connect directly with the sockets of the MCU board. The shield connections provide all the default data and power connections.
    
-   | 
-   | ==== isoSPI Connections ==== J1 is the main isoSPI port. The applications that only use one port use this connection to make daisy-chain connections to peripheral isoSPI devices. J2 is an auxiliary port that is used as a redundant controller in a reversible isoSPI daisy-chain network, and as another indpendent isoSPI interface.
+   Note that the microcontroller board's interface voltage must be set to 3.3 V through Pin P4.
    
-   | 
-   | ==== Optional Connections ====
+   **isoSPI Connections**
+
    
-   SPI AUX Optional Header (J7)
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   J1 is the main isoSPI port. The applications that only use one port use this connection to make daisy-chain connections to peripheral isoSPI devices. J2 is an auxiliary port that is used as a redundant controller in a reversible isoSPI daisy-chain network, and as another indpendent isoSPI interface.
+   
+   **Optional Connections**
+
+   
+   **SPI AUX Optional Header (J7)**
+
    
    This double row of through-holes (hole field) can be used to connect a fully independent AUX SPI channel. A connector or discrete wires can be soldered to this array.
    
@@ -108,14 +114,14 @@ Hardware Connections
    +----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    | 
-   |
+
 
    .. container:: center
 
          
          ================================================= ===========
          **Pin Designations for the J7 SPI AUX Connector** 
-         **Number**                                        \*\* Pin*\*
+         **Number**** Pin*\*
          1                                                 POCI2
          2                                                 VDDS
          3                                                 SCLK2
@@ -128,8 +134,7 @@ Hardware Connections
    
 
 
-| 
-| ----
+--------------
 
 Help and Support
 ----------------
@@ -141,11 +146,4 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-| 
-
 *End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6822_block_diagram.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6822_system_setup.png
-   :width: 600px

@@ -147,7 +147,12 @@ Below example specifies a 2.5 Volt reference for the SPI device 3 on SPI-Bus 0. 
    }
    arch_initcall(board_init);
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
 
@@ -199,7 +204,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            <*>     Industrial I/O support --->
                --- Industrial I/O support
                ...
-               Digital to analog converters  ---> 
+               Digital to analog converters  --->
                    ...
                    <*>  Analog Devices AD5064 and similar multi-channel DAC driver
                    ...
@@ -212,14 +217,12 @@ Hardware configuration
 Driver testing
 ==============
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -263,10 +266,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -281,14 +281,12 @@ Show scale
 
 | **Description:**
 | /sys/bus/iio/devices/iio:deviceX/out_voltageY_scale
-| scale to be applied to out_voltage0_raw in order to obtain the measured voltage in millivolts.
+
+scale to be applied to out_voltage0_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -301,16 +299,13 @@ Show scale
 Set channel Y output voltage
 ----------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/out_voltageY_raw
-| Raw (unscaled, no bias etc.) output voltage for channel Y.
+**Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_raw
+
+Raw (unscaled, no bias etc.) output voltage for channel Y.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -326,15 +321,11 @@ List available power down modes
 
 /sys/bus/iio/devices/iio:deviceX/out_voltage_powerdown_mode_available
 
-| **Description:**
-| Lists all available output power down modes.
+**Description:** Lists all available output power down modes.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -349,8 +340,7 @@ Set power down mode
 
 /sys/bus/iio/devices/iio:deviceX/out_voltage_powerdown_mode
 
-| **Description:**
-| Specifies the output power down mode. DAC output stage is disconnected from the amplifier and
+**Description:** Specifies the output power down mode. DAC output stage is disconnected from the amplifier and
 
 ============== ===========================================
 1kohm_to_gnd   connected to ground via an 1kOhm resistor
@@ -362,10 +352,7 @@ For a list of available output power down options read out_voltage_powerdown_mod
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -381,15 +368,11 @@ Enable power down mode on output Y
 
 /sys/bus/iio/devices/iio:deviceX/out_voltageY_powerdown
 
-| **Description:**
-| Writing 1 causes output Y to enter the power down mode specified by the corresponding out_voltageY_powerdown_mode. Clearing returns to normal operation.
+**Description:** Writing 1 causes output Y to enter the power down mode specified by the corresponding out_voltageY_powerdown_mode. Clearing returns to normal operation.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -409,8 +392,6 @@ PMOD-DA4
 The PMOD-DA4 is a PMOD board made by Digilent Inc. which features the AD5628
 
 The following example shows how to connect the PMOD-DA4 to a Blackfin BF537-STAMP board.
-
-.. _hardware-configuration-1:
 
 Hardware configuration
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -432,4 +413,21 @@ PIN                         Function PIN      Function
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

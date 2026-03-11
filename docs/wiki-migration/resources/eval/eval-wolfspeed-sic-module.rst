@@ -38,7 +38,7 @@ GATE DRIVER MODULE WOLFSPEED SiC
 Product Details
 ===============
 
-For more information, email <fc #6495ed>RenwBoards@analog.com</fc>
+For more information, email RenwBoards@analog.com
 
 --------------
 

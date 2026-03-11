@@ -59,7 +59,7 @@ The default design, which uses some of the FPGA for :
 
 A typical utilization report is below. If you do not need some of the above logic, it can be turned off, and you can re-use the FPGA for your custom logic.
 
-.. image:: https://wiki.analog.com/_media/pluto_utilization.jpg
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/users/pluto_utilization.jpg
    :alt: pluto_utilization.jpg
    :align: center
    :width: 425px

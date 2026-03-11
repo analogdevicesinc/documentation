@@ -61,7 +61,7 @@ Software Needed
 
 • Xilinx Vivado Lab Link: https://www.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Vivado_Lab_Win_2023.1_0507_1903.tar.gz
 
-Notes: You will need to create an account with AMD.  • Extract files using 7-zip to known folder. Run the xsetup application (you will need admin role for this). • Version: Most versions are fine. 2023.1 is latest at the time of writing. It is known to be working.
+Notes: You will need to create an account with AMD. • Extract files using 7-zip to known folder. Run the xsetup application (you will need admin role for this). • Version: Most versions are fine. 2023.1 is latest at the time of writing. It is known to be working.
 
 Pre-Release High Speed Converters Toolbox • Link to file: hsx-ad9081-Aug15.zip • Link to instructions for installing custom toolbox: Toolboxes in Development in Wiki https://www.mathworks.com/hardware-support/adalm-pluto-radio.html • ADI RF and Microwave Toolbox Analog Devices, Inc. RF and Microwave Toolbox - File Exchange - MATLAB Central (mathworks.com)
 
@@ -71,27 +71,27 @@ Genalyzer
 
 ::
 
-     Launch Matlab Add-On Explorer 
+     Launch Matlab Add-On Explorer
 
 2. Download MinGW-w64 C/C++ compiler for Windows
 
 ::
 
      Download --> File Sent
-         Extract to desired folder 
-     Add to Matlab's Set Path 
+         Extract to desired folder
+     Add to Matlab's Set Path
 
 3. Download latest Genalyzer EXE Installer from Github
 
 ::
 
-     [[:git-genalyzer:`actions/runs/5677400027/job/15385644518]]` 
+     [[:git-genalyzer:`actions/runs/5677400027/job/15385644518]]`
 
 4. Run fft_analysis.m example
 
 ::
 
-     It generates a .json file that can be used to configure settings for custom FFT analysis 
+     It generates a .json file that can be used to configure settings for custom FFT analysis
 
 5. In matlab command window, type help genalyzer for more info on properties
 
@@ -112,7 +112,7 @@ Install the latest libIIO package from github https://swdownloads.analog.com/cse
 Booting ADXBAND16EBZ
 ====================
 
-1. You will already have needed to follow the Software Installation instructions above and have a Triton image on your PC. The images come as Zip files so be sure to extract the zip before beginning. 
+1. You will already have needed to follow the Software Installation instructions above and have a Triton image on your PC. The images come as Zip files so be sure to extract the zip before beginning.
 
 2. Latest Build Files: vcu118_quad_ad9084_2023-09-28.zip
 
@@ -130,14 +130,14 @@ Example: cd "C:/MyTritonStuff/vcu118_quad_ad9084_2023-09-28"
 
 7. Run source run.tcl you may also have run_26p4.tcl or others. The procedure is the same just use source <Whichever file you want to run .tcl> instead.
 
-8. The file transfer will begin and take a couple minutes. After the file transfer you will start seeing the boot happen in Putty. 
+8. The file transfer will begin and take a couple minutes. After the file transfer you will start seeing the boot happen in Putty.
 
 9. After the board is fully booted and you are asked for your login
 
 ::
 
-     Username: root 
-     Password: analog 
+     Username: root
+     Password: analog
 
 NIC setup
 =========
@@ -150,7 +150,7 @@ The IP Address for that interface will need to be changed to Static. see below.
 
 2. Most of the USB ethernet adapters we have in the lab are Realtek based and will show up with a Description similar to "Realtex USB GbE Family Controller"
 
-3. If you have more than one the easiest way to identify the one you want is unfortunately to just unplug it and see which disappears. 
+3. If you have more than one the easiest way to identify the one you want is unfortunately to just unplug it and see which disappears.
 
 4. The following steps will require elevated user permissions. \*If you don't have admin see below for a work around
 
@@ -191,7 +191,7 @@ The Xilinx VCU118 Exposes a UART console which we use to interact with the Micro
 
 Open up PUTTY
 
-3. Change connection type to Serial. 
+3. Change connection type to Serial.
 
 4. Type in the "COM<the number for the standard port>" in Serial line
 
@@ -220,7 +220,7 @@ IIO Oscilloscope is a handy way to test with Triton. Note: The instructions belo
 
 7. Click Connect
 
-8. You're good to go :D 
+8. You're good to go :D
 
 Putty After the board is booted
 ===============================

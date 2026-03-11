@@ -69,36 +69,39 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------+
+.. code-block:: c
 
+::
 
-| ``typedef enum {                    |
+    typedef enum {
+        ADGS5412_ENABLE,
+        ADGS5412_DISABLE,
+    } adgs5412_state;
 
-|     ADGS5412_ENABLE,                |
-|     ADGS5412_DISABLE,               |
-| } adgs5412_state;                   |
-|                                     |
-| typedef struct {                    |
-|     /* SPI */                       |
-|     spi_device      spi_dev;        |
-|     /* Device Settings */           |
-|     adgs5412_state  crc_en;         |
-|     adgs5412_state  burst_mode_en;  |
-|     adgs5412_state  daisy_chain_en; |
-| } adgs5412_dev;                     |
-|                                     |
-| typedef struct {                    |
-|     /* SPI */                       |
-|     uint8_t     spi_chip_select;    |
-|     spi_mode        spi_mode;       |
-|     spi_type        spi_type;       |
-|     uint32_t        spi_device_id;  |
-|     /* Device Settings */           |
-|     adgs5412_state  crc_en;         |
-|     adgs5412_state  burst_mode_en;  |
-|     adgs5412_state  daisy_chain_en; |
-| } adgs5412_init_param;``            |
-+-------------------------------------+
+::
+
+    typedef struct {
+        /* SPI */
+        spi_device       spi_dev;
+        /* Device Settings */
+        adgs5412_state   crc_en;
+        adgs5412_state   burst_mode_en;
+        adgs5412_state   daisy_chain_en;
+    } adgs5412_dev;
+
+::
+
+    typedef struct {
+        /* SPI */
+        uint8_t      spi_chip_select;
+        spi_mode     spi_mode;
+        spi_type     spi_type;
+        uint32_t     spi_device_id;
+        /* Device Settings */
+        adgs5412_state   crc_en;
+        adgs5412_state   burst_mode_en;
+        adgs5412_state   daisy_chain_en;
+    } adgs5412_init_param;
 
 Downloads
 ---------

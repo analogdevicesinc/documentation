@@ -18,8 +18,9 @@ Identifying Current Paths
 
 In switching converter designs, high current paths and low current paths are all in close proximity. Alternating current (ac) paths carry spikes and noise, high direct current (dc) produces significant voltage drops, and low current paths tend to be sensitive to noise. The key to proper PCB layout is to identify the critical paths and then arrange the components and provide sufficient copper area to avoid high currents from corrupting low currents. Symptoms of poor performance show up as ground bounce and noise injected into the IC and the rest of the system.
 
-| Figure 1 shows a synchronous buck regulator design with a switching controller and the external power components: high-side switch, low-side switch, inductor, input capacitor, output capacitor, and bypass capacitor. The arrows in Figure 1 show the flow of the high switching current. It is important to place these power components carefully to avoid unwanted parasitic capacitance and inductance, which cause excess noise, overshoot, ringing, and ground bounce.
-| |an1119-image001_110dpi.png| *Figure 1. Typical Switching Regulator (Showing AC and DC Current Paths)*
+Figure 1 shows a synchronous buck regulator design with a switching controller and the external power components: high-side switch, low-side switch, inductor, input capacitor, output capacitor, and bypass capacitor. The arrows in Figure 1 show the flow of the high switching current. It is important to place these power components carefully to avoid unwanted parasitic capacitance and inductance, which cause excess noise, overshoot, ringing, and ground bounce.
+
+|an1119-image001_110dpi.png| *Figure 1. Typical Switching Regulator (Showing AC and DC Current Paths)*
 
 Switch current paths, such as DH, DL, BST, and SW, come off the controller and need proper placement to avoid excessive parasitic inductance. These lines carry high :math:`\delta` I/ :math:`\delta` t ac switching pulse currents that can reach more than 3 A for a few nanoseconds. Keeping the high current loops small is critical to avoid additional noise pickup and minimize output ringing.
 

@@ -1,21 +1,26 @@
 Master Control Port Boot time I/O (ADAU145x)
 ============================================
 
-| :doc:`Click here to return to the Master Control Port page </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
+:doc:`Click here to return to the Master Control Port page </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
 
-| The master control port I/O block allows communication with one external device during DSP program initialization. Typically this block is used to configure an external device like a converter or codec. Communication (read or write) over the master control port bus (I2C or SPI) occurs only once at start-up of the DSP program, and prior to audio processing. The data transferred between host and device is defined in a SigmaStudio sequence file which can be generated using the :doc:`SigmaStudio sequence window </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/workspacewindows>`.
-| |image1|
+The master control port I/O block allows communication with one external device during DSP program initialization. Typically this block is used to configure an external device like a converter or codec. Communication (read or write) over the master control port bus (I2C or SPI) occurs only once at start-up of the DSP program, and prior to audio processing. The data transferred between host and device is defined in a SigmaStudio sequence file which can be generated using the :doc:`SigmaStudio sequence window </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/workspacewindows>`.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/mcpbootup.png
+   :align: center
 
 Configuration
 -------------
 
-Click on |image2| to configure the parameters.
+Click on |image1| to configure the parameters.
 
 I2C configuration
 ~~~~~~~~~~~~~~~~~
 
-| |image3|
-| ===GUI Control===
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/masterbooti2cconfig.png
+   :align: center
+
+GUI Control
+^^^^^^^^^^^
 
 +-------------------+---------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | GUI Control Name  | Default Value | Range            | Function Description                                                                                                                                                                                                            |
@@ -34,7 +39,8 @@ I2C configuration
 SPI configuration
 ~~~~~~~~~~~~~~~~~
 
-| |image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/masterbootspiconfig.png
+   :align: center
 
 GUI Control
 ^^^^^^^^^^^
@@ -59,21 +65,25 @@ GUI Control
 
 | 
 | ===== Support for Multiple Slaves ===== Multiple external devices can be configured by creating multiple instances of the master control port boot time IO module and selecting appropriate slave select in the configuration parameters.
-| The sequence of booting up of different slaves can be configured by using the drop down list next to the |image5| image as shown below |image6|
+
+The sequence of booting up of different slaves can be configured by using the drop down list next to the |image2| image as shown below
+
+
+|image3|
 
 Support for Different SPI Slave Select Pins
 -------------------------------------------
 
 If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration -> ICx - ADAU145x Register Controls -> MULTIPURPOSE/AUXADC)
 
-| |image7|
-| \* Slave Select Channel -> 'Slave Select Channel x'
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
+   :align: center
 
+-  Slave Select Channel -> 'Slave Select Channel x'
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-| 
-| The following table shows the mapping between module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
+The following table shows the mapping between module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
 
 +----------------------------------------+------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register control |
@@ -128,8 +138,8 @@ Please follow the steps below to edit the XML for your Slave.
 
 ::
 
-   Please match all the fields as follows. 
-         instr => "writeXBytes" 
+   Please match all the fields as follows.
+         instr => "writeXBytes"
          len => Data Length in bytes+ Address_byte_length
          addr => Register Address in decimal (not hexadecimal)
          Then the value part should have the register values in Hexadecimal. A space should separate each data as shown in the example.   In this example len => 6 (data length)  + 2 (Address_byte_length) = 8
@@ -148,10 +158,6 @@ Supported ICs
 -  ADAU145x
 -  ADAU1467
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/mcpbootup.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2c_spi.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2c_spi.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/masterbooti2cconfig.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/masterbootspiconfig.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2c_spi.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/multiinst_mcp.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/multiinst_mcp.png

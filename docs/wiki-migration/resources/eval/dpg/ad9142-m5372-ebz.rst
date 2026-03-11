@@ -56,13 +56,9 @@ Initial Set-Up
 | 1. Install the DPG Downloader and AD9142 SPI software and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
 | 2. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB.
 | 3. Connect the DGP2 unit to your PC and turn on the unit.
-
-Single-Tone Test
-~~~~~~~~~~~~~~~~
-
-| These settings configure the AD9142 to output a sine wave using the DPG2 and allow the user to view the single-tone performance at the IQMOD output, under the condition: Fdata = 200MHz, 8X interpolation, IF = 20MHz, LO = 1850MHz, RF = 1870MHz.
+| ==== Single-Tone Test ==== These settings configure the AD9142 to output a sine wave using the DPG2 and allow the user to view the single-tone performance at the IQMOD output, under the condition: Fdata = 200MHz, 8X interpolation, IF = 20MHz, LO = 1850MHz, RF = 1870MHz.
 | 1. To begin, open the AD9142 SPI application (Start > All Programs > Analog Devices > AD9142 > AD9142 SPI). The screen should look similar to Figure 3.
-|
+
 
 .. container:: center
 
@@ -85,7 +81,7 @@ Single-Tone Test
 | d. There may be a few registers highlighted in red. The red highlights mean mismatches between the SPI read and write values in the software. Clicking “Read All Registers” reads back all the current values in the registers, which should resolve the highlights.
 | e. Toggle register “FIFO SPI RESET REQUEST”. The FIFO level readback registers (INTEGRAL and FRACTIOANAL) should now match the FIFO level request registers.
 | f. Open DPG Downloader if you have not done so. (Start > All Programs > Analog Devices > DPG > DPGDownloader). Ensure that the program detects the AD9142, as indicated in the “Evaluation Board” drop-down list, and select it. For this evaluation board, LVDS is the only valid Port Configuration, and it will be selected automatically. The “DCO Frequency” window should show the correct data rate (200 MHz). The actual detected frequency may not be exactly 200 MHz but it should be stable and very close to it as shown in Figure 4.
-|
+
 
 .. container:: center
 
@@ -99,7 +95,7 @@ Single-Tone Test
    +-------------------------------+
 
    | g. Click on “Add Generated Waveform”, and then “Single Tone”. As shown in Figure 5, A Single Tone panel will be added to the vector list. Enter the sample rate, in this case 200 MHz and the desired frequency, 20MHz. Enter the digital amplitude. In this case we use -14dBFS. Check the “Generate Complex Data (I & Q)” box and uncheck the “Unsigned Data” box. Select the In-Phase data vector in the “I Data Vector” drop down menu and the Quadrature data vector in the “Q Data Vector”.
-|
+
 
 .. container:: center
 
@@ -116,7 +112,7 @@ Single-Tone Test
 
 | h. Click Download (|image8|) and Play (|image9|).
 | i. Go back to the AD9142 SPI software and toggle the “FIFO SPI RESET REQUEST” button (from 0 to 1 and back to 0) to reset the FIFO. The FIFO level readback registers (INTEGRAL and FRACTIOANAL) should now match the FIFO level request registers. The AD9142 SPI software and the spectrum analyzer should look like Figure 6 and Figure 7 respectively.
-|
+
 
 .. container:: center
 
@@ -128,9 +124,10 @@ Single-Tone Test
    | Figure 6 Configured Quick Start Tab of the AD9142 SPI software |
 
    +----------------------------------------------------------------+
+   
 
-   | 4. The current on the 5V supply should read about 1220mA.
-|
+
+4. The current on the 5V supply should read about 1220mA.
 
 .. container:: center
 
@@ -148,8 +145,7 @@ Single-Tone Test
 SPI SOFTWARE
 ------------
 
-| The AD9142 SPI software is conveniently organized in a series of tabs that groups registers according to their functions. In this way, all registers associated with the digital functions, for example, are on the “Digital Functions” tab. All registers associated with the PLL are on the “PLL” tab, and so on. Normally the “Quick Start” tab is sufficient for a quick evaluation. The most frequently used register controls are included on this tab. A full description of each register and its settings is given in the AD9142 data sheet. Some of the registers and their functions are described here as they pertain to the AD9142 evaluation board. Please note that some of the screen images in this document may not match exactly with the latest revision of the software, due to ongoing improvements and enhancements to the software.
-| The full screen layout is shown in Figure 5. The tabs can be seen across the top of the work area, and four function buttons in the menu area. “Save Registers to File” and “Restore Registers from File” allow the user to save the current register settings into a file for later uses. A register is immediately updated when the value in the control is changed. Switching between tabs does not update register values. “Read All Registers” can be used to monitor a resister with changing readback values. “ Record Sequence” allows the user to record a series of SPI writes in a particular order and to play back the sequence later. A short description of the register is shown in the status bar on the bottom of the work area when the mouse curser hovers over the control. Some of the tabs are discussed below.
+The AD9142 SPI software is conveniently organized in a series of tabs that groups registers according to their functions. In this way, all registers associated with the digital functions, for example, are on the “Digital Functions” tab. All registers associated with the PLL are on the “PLL” tab, and so on. Normally the “Quick Start” tab is sufficient for a quick evaluation. The most frequently used register controls are included on this tab. A full description of each register and its settings is given in the AD9142 data sheet. Some of the registers and their functions are described here as they pertain to the AD9142 evaluation board. Please note that some of the screen images in this document may not match exactly with the latest revision of the software, due to ongoing improvements and enhancements to the software. The full screen layout is shown in Figure 5. The tabs can be seen across the top of the work area, and four function buttons in the menu area. “Save Registers to File” and “Restore Registers from File” allow the user to save the current register settings into a file for later uses. A register is immediately updated when the value in the control is changed. Switching between tabs does not update register values. “Read All Registers” can be used to monitor a resister with changing readback values. “ Record Sequence” allows the user to record a series of SPI writes in a particular order and to play back the sequence later. A short description of the register is shown in the status bar on the bottom of the work area when the mouse curser hovers over the control. Some of the tabs are discussed below.
 
 Quick Start
 ~~~~~~~~~~~
@@ -172,12 +168,7 @@ The “Quick Start” tab has selections that apply to the general configuration
 PLL
 ~~~
 
-| The “PLL” tab includes all the PLL control registers. The recommended settings for the best performance is PLL Charge Pump Current = 7 and PLL LOOP BW = 7. The user needs to follow the sequence below to enable the PLL. 1. Choose the desired divide ratios in the Loop Divider and the VCO Divider.
-| 2. Set PLL Charge Pump Current and PLL Loop BW settings to 7.
-| 3. Set the PLL Mode to Manual.
-| 4. Turn on PLL Enable.
-| 5. Set the PLL Mode to Auto.
-|
+The “PLL” tab includes all the PLL control registers. The recommended settings for the best performance is PLL Charge Pump Current = 7 and PLL LOOP BW = 7. The user needs to follow the sequence below to enable the PLL. 1. Choose the desired divide ratios in the Loop Divider and the VCO Divider. 2. Set PLL Charge Pump Current and PLL Loop BW settings to 7. 3. Set the PLL Mode to Manual. 4. Turn on PLL Enable. 5. Set the PLL Mode to Auto.
 
 .. container:: center
 
@@ -195,8 +186,7 @@ PLL
 EVB Jumper Configurations
 -------------------------
 
-| This evaluation board allows evaluation of both the DAC IF outputs as well as the modulator RF outputs. By default, the solder jumpers are configured to look at the modulator RF outputs. Below is a table listing the jumper configurations and SMA connector connections needed to view either output on a spectrum analyzer.
-|
+This evaluation board allows evaluation of both the DAC IF outputs as well as the modulator RF outputs. By default, the solder jumpers are configured to look at the modulator RF outputs. Below is a table listing the jumper configurations and SMA connector connections needed to view either output on a spectrum analyzer.
 
 .. container:: center
 

@@ -3,14 +3,18 @@ RTD Temperature Measurement Demo
 
 The **ADuCM360_demo_cn0337** is a RTD temperature measurement demo project for the EVAL-ADICUP360 base board with additional EVAL-CN0337-PMDZ pmod, created using the GNU ARM Eclipse Plug-ins in Eclipse environment.
 
-| 
-| ===== General description =====
-| This project is a good example for how to use :doc:`EVAL-ADICUP360 board </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/base_board>` in different combinations with pmod boards. It expand the list of possible applications that can be done with the base board.
+General description
+-------------------
+
+This project is a good example for how to use :doc:`EVAL-ADICUP360 board </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/base_board>` in different combinations with pmod boards. It expand the list of possible applications that can be done with the base board.
 
 The **ADuCM360_demo_cn0337** project uses the :adi:`EVAL-CN0337-PMDZ pmod <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/cn0337>` which is a completely isolated **12-bits**, **300 kSPS RTD** temperature measuring system (with only three active devices) that processes the output of a **Pt100 RTD** and includes an innovative circuit for lead-wire compensation using a standard **3-wire** connection.
 
-| |image1|
-| The CN0337 circuit translates the **RTD** input **resistance** range (**100 Ω** - **212.05 Ω** for a **0°C** - **300°C** temperature) into **voltage** levels compatible with the input range of the ADC (**0 V** - **2.5 V**). The 12-bits ADC value is received via SPI interface of the EVAL-ADICUP360 board.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_1.png
+   :align: left
+   :width: 550px
+
+The CN0337 circuit translates the **RTD** input **resistance** range (**100 Ω** - **212.05 Ω** for a **0°C** - **300°C** temperature) into **voltage** levels compatible with the input range of the ADC (**0 V** - **2.5 V**). The 12-bits ADC value is received via SPI interface of the EVAL-ADICUP360 board.
 
 The **EVAL-CN0337-PMDZ** comes with an evaluation software which can help you to test and to calibrate your pmod before you use it with an RTD sensor.
 
@@ -29,23 +33,24 @@ The output values are displayed when you press ENTER key (CR) from the keyboard.
 
 The project offers two method to calculate the RTD resistance, giving you the possibility to get more accurate RTD measurement results (see :adi:`CN0337 circuit note <cn0337>`).
 
-You can use <fc #008000>\ **transfer function**\ </fc> of the circuit which calculate <fc #008080>RTD resistance</fc> based on <fc #008080>voltage</fc> changed value and circuit <fc #008080>gain</fc>:
+You can use **transfer function** of the circuit which calculate RTD resistance based on voltage changed value and circuit gain:
 
 ::
 
        Rrtd = (Vout - Voffset)/Gain
 
-| 
-| Or you can use the <fc #008000>\ **two-point calibration**\ </fc> method which used the <fc #008080>ADC output</fc> values for 2 different measurements: first using <fc #008080>Rmin = 100 Ω</fc> (ADC1) precision resistor and second with <fc #008080>Rmax = 212.05 Ω</fc> (ADC2) resistor.
+Or you can use the **two-point calibration** method which used the ADC output values for 2 different measurements: first using Rmin = 100 Ω (ADC1) precision resistor and second with Rmax = 212.05 Ω (ADC2) resistor.
 
 ::
 
        Rrtd = Rmin + [(Rmax - Rmin)/(ADC2 - ADC1)]*(ADCrtd - ADC1)
 
-| 
-| Because the transfer function of the RTD (resistance vs. temperature) is nonlinear is needed a software linearization to eliminate the nonlinearity error of the RTD Pt100 sensor. This project used so called **Piecewise Linear Approximation** method.
-| ==== Piecewise Linear Approximation Method ====
-| This method characterized by taking linear approximation one step further, one can conceptualize any number of linear segments strung together to better approximate the nonlinear RTD transfer function. Generating this series of linear segments so that each segment’s endpoints meet those of neighboring segments results in what can be viewed as a number of points connected by straight lines.
+Because the transfer function of the RTD (resistance vs. temperature) is nonlinear is needed a software linearization to eliminate the nonlinearity error of the RTD Pt100 sensor. This project used so called **Piecewise Linear Approximation** method.
+
+Piecewise Linear Approximation Method
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This method characterized by taking linear approximation one step further, one can conceptualize any number of linear segments strung together to better approximate the nonlinear RTD transfer function. Generating this series of linear segments so that each segment’s endpoints meet those of neighboring segments results in what can be viewed as a number of points connected by straight lines.
 
 These coefficients is calculated once to best match the RTD’s nonlinear transfer function and then stored permanently in a look-up table (see *C_rtd[]* table). From this table of coefficients, the software can perform simple linear interpolation to determine temperature based on measured RTD resistance.
 
@@ -85,7 +90,7 @@ Setting up the hardware
 -  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
 
 
-|image2|
+|image1|
 
 -  Plug the EVAL-CN0337-PMDZ PMOD in the EVAL-ADICUP360 base board, via the PMOD_SPI port (P4).
 -  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
@@ -126,29 +131,29 @@ The software for the **ADuCM360_demo_cn0337** demo can be found here:
 Configuring the Software Parameters
 -----------------------------------
 
--  **Converter operation mode** - <fc #008000>AD7091R_OPERATION_MODE</fc> - <fc #008080>POWER_DOWN</fc> to select power-down AD7091R mode of operation or <fc #008080>NORMAL</fc> for normal mode (*AD7091R.h*).
+-  **Converter operation mode** - AD7091R_OPERATION_MODE - POWER_DOWN to select power-down AD7091R mode of operation or NORMAL for normal mode (*AD7091R.h*).
 
 ::
 
       #define AD7091R_OPERATION_MODE      POWER_DOWN
 
--  **Converter scan time** - <fc #008000>SCAN_TIME</fc> - how often (msec) to read conversion results (*AD7091R.h*).
+-  **Converter scan time** - SCAN_TIME - how often (msec) to read conversion results (*AD7091R.h*).
 
 ::
 
       #define SCAN_TIME          500
 
--  \*\* Converter reference voltage*\* - <fc #008000>VREF</fc> - reference voltage (V) for AD7091R converter (*AD7091R.h*).
+-  \*\* Converter reference voltage*\* - VREF - reference voltage (V) for AD7091R converter (*AD7091R.h*).
 
 ::
 
-       #define VREF              2.5 
+       #define VREF              2.5
 
--  **RTD resistance calculation method** - <fc #008000>RTD_FORMULA</fc> - this parameter can be set as <fc #008080>TRANSFER_FUNCTION</fc> or <fc #008080>TWO_POINT_CALIBRATION</fc> (*CN0337.h*).
+-  **RTD resistance calculation method** - RTD_FORMULA - this parameter can be set as TRANSFER_FUNCTION or TWO_POINT_CALIBRATION (*CN0337.h*).
 
 ::
 
-       #define RTD_FORMULA     TRANSFER_FUNCTION 
+       #define RTD_FORMULA     TRANSFER_FUNCTION
 
 -  **RTD parameters** - all needed parameters for RTD calculations (*CN0337.h*).
 
@@ -173,8 +178,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -185,8 +188,6 @@ Following is the UART configuration.
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-|
 
 -  The user must press the **<ENTER>** key every time they want new data.
 
@@ -212,24 +213,22 @@ For more detailed instructions on importing this application/demo example into t
 Project structure
 -----------------
 
-| 
-| The **ADuCM360_demo_cn0337** project use ADuCM36x C/C++ Project structure.
+The **ADuCM360_demo_cn0337** project use ADuCM36x C/C++ Project structure.
 
 This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI0, UART via P0.1/P0.2; SPI, UART read/write functions; AD7091R control and RTD conversions.
 
-| In the **src** and **include** folders you will find the source and header files related to CN0337 software application. The *Communication.c/h* files contain SPI and UART specific data, meanwhile the *AD7091R.c/h* files contain the ADC control data and the *CN0337.c/h* files contain the RTD measurements management.
-| |image3|
-| The **RTE** folder contains device and system related files:
+In the **src** and **include** folders you will find the source and header files related to CN0337 software application. The *Communication.c/h* files contain SPI and UART specific data, meanwhile the *AD7091R.c/h* files contain the ADC control data and the *CN0337.c/h* files contain the RTD measurements management.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_5.png
+   :align: left
+   :width: 340px
+
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| // End of Document //
+// End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_1.png
-   :width: 550px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_3.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_3.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_5.png
-   :width: 340px

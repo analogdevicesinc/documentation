@@ -43,13 +43,7 @@ The ADALP2000 Analog Parts Kit does not include an SCR but we can emulate one by
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 2 - 1 KΩ Resistors
-| 2 - 100 KΩ Resistors
-| 1 - 0.1 uF capacitor (marked 104)
-| 1 - small signal NPN transistor (2N3904)
-| 1 - small signal PNP transistor (2N3906)
+ADALM2000 Active Learning Module Solder-less Breadboard 2 - 1 KΩ Resistors 2 - 100 KΩ Resistors 1 - 0.1 uF capacitor (marked 104) 1 - small signal NPN transistor (2N3904) 1 - small signal PNP transistor (2N3906)
 
 Directions:
 -----------
@@ -162,9 +156,7 @@ The Programmable unijunction transistor or PUT is a close relative of other four
 
 **For Further Reading:**
 
-| `The Silicon Controlled Rectifier <http://en.wikipedia.org/wiki/Silicon-controlled_rectifier>`_
-| :adi:`Electrically Induced Damage to Standard Linear Integrated Circuits <static/imported-files/application_notes/AN-397.pdf>`
-| :adi:`Winning the Battle Against Latch-up in CMOS Analog Switches <library/analogDialogue/archives/35-05/latchup/latchup.pdf>`
+`The Silicon Controlled Rectifier <http://en.wikipedia.org/wiki/Silicon-controlled_rectifier>`_ :adi:`Electrically Induced Damage to Standard Linear Integrated Circuits <static/imported-files/application_notes/AN-397.pdf>` :adi:`Winning the Battle Against Latch-up in CMOS Analog Switches <library/analogDialogue/archives/35-05/latchup/latchup.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 

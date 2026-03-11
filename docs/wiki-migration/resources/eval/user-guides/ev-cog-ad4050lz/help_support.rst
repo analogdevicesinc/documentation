@@ -1,7 +1,7 @@
 Help and Support
 ================
 
-<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. </WRAP>
+<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. 
 
 Do you need help or have general support questions, than I hope this page helps you resolve those.
 

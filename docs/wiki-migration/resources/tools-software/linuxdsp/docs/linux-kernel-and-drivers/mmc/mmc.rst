@@ -24,8 +24,8 @@ The SD/MMC card slot is **J18** on the SC589/SC573 EZKIT board and is **J6** on 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mmc/lkad-mobile_storage_interface_for_mmc-hw_setup.jpg
    :width: 400px
 
-| 
-| ===== Software Configuration =====
+Software Configuration
+----------------------
 
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
@@ -37,8 +37,10 @@ Add Bonnie++ package in the filesystem. Bonnie++ is a program for testing filesy
    vim build/conf/local.conf
    IMAGE_INSTALL_append = " dosfstools e2fsprogs bonnie++"
 
-| 
-| ==== Configure Linux Kernel ==== Run “\ **bitbake linux-adi -c menuconfig**\ ” to configure the linux kernel.
+Configure Linux Kernel
+~~~~~~~~~~~~~~~~~~~~~~
+
+Run “\ **bitbake linux-adi -c menuconfig**\ ” to configure the linux kernel.
 
 Enable MSI Support
 ^^^^^^^^^^^^^^^^^^
@@ -49,7 +51,7 @@ Enable MSI Support
        MMC/SD/SDIO card support  --->
            <*> Synopsys DesignWare Memory Card Interface
            -*-   Synopsys Designware MCI Support as platform device
-           <*>   ADI specific extensions for Synopsys DW Memory Card Interface  
+           <*>   ADI specific extensions for Synopsys DW Memory Card Interface
 
 File System Support
 ^^^^^^^^^^^^^^^^^^^
@@ -74,7 +76,7 @@ If you want to mount an SD card in a particular format, you should compile the L
        <*> Second extended fs support
        [*]   Ext2 extended attributes
        [*]     Ext2 POSIX Access Control Lists
-       [*]     Ext2 Security Labels 
+       [*]     Ext2 Security Labels
 
 Build and Load Linux Kernel
 ---------------------------
@@ -83,8 +85,10 @@ Run “\ **bitbake linux-adi -C compile**\ ” to compile the linux kernel to ge
 
 A kernel image and dtb file can now be built and loaded onto the target board.  See SC5xx ezkit Linux quick start guide for details.
 
-| 
-| ===== Usage of MSI ===== The most typical use of an SD Card in embedded applications is as a removable storage device (disk) that can be easily taken from the embedded target board. In such contexts, the SD Card installed to the embedded target board is typically already formatted with an MS-DOS file system. The Linux kernel must be specially configured to allow mounting the MS-DOS file system. See part 2 in section 2.1 for details. The mount utility is also needed. Typically,  mount will already be enabled in your busybox configuration.
+Usage of MSI
+------------
+
+The most typical use of an SD Card in embedded applications is as a removable storage device (disk) that can be easily taken from the embedded target board. In such contexts, the SD Card installed to the embedded target board is typically already formatted with an MS-DOS file system. The Linux kernel must be specially configured to allow mounting the MS-DOS file system. See part 2 in section 2.1 for details. The mount utility is also needed. Typically,  mount will already be enabled in your busybox configuration.
 
 Formatting the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +108,7 @@ To format the SD Card, follow the commands below. The example code in this secti
    Partition number (1-4, default 1): 1
    First sector (2048-3887103, default 2048): PRESS ENTER
    Last sector, +sectors or +size{K,M,G} (2048-3887103, default 3887103): PRESS ENTER
-    
+
    /* Save partition */
    Command (m for help): w
 
@@ -120,22 +124,26 @@ To format the SD Card, follow the commands below. The example code in this secti
 
    # mkfs.ext3 /dev/mmcblk0p1
 
-| 
-| === Insert a pre-formatted card with an MS-DOS (FAT) file system to the SD Card slot on the ADSP-SC5xx === When you boot the zImage on the ADSP-SC5xx, there should be messages similar to the ones shown below. In the below example, Linux has detected an SD Card with a single partition on it:
+Insert a pre-formatted card with an MS-DOS (FAT) file system to the SD Card slot on the ADSP-SC5xx
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When you boot the zImage on the ADSP-SC5xx, there should be messages similar to the ones shown below. In the below example, Linux has detected an SD Card with a single partition on it:
 
 ::
 
    mmc_host mmc0: Bus speed (slot 0) = 50000000Hz (slot req 25000000Hz, actual 25000000HZ div = 1)
    mmc0: new SD card at address b368
-   mmcblk0: mmc0:b368 FFFFF 1.85 GiB   
+   mmcblk0: mmc0:b368 FFFFF 1.85 GiB
 
-| 
-| ==== Mount the MS-DOS file system on the SD Card ==== This is done as follows:
+Mount the MS-DOS file system on the SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is done as follows:
 
 ::
 
 
-   # mount -t vfat -o sync /dev/mmcblk0p1 /mnt 
+   # mount -t vfat -o sync /dev/mmcblk0p1 /mnt
 
 Check that the file system has indeed been mounted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,17 +152,17 @@ Refer to the last line in the below output:
 
 ::
 
-   # mount 
-   rootfs on / type rootfs (rw) 
-   devtmpfs on /dev type devtmpfs (rw,relatime,size=42740k,nr_inodes=10685,mode=755) 
-   proc on /proc type proc (rw,relatime) 
-   devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620) 
-   tmpfs on /dev/shm type tmpfs (rw,relatime,mode=777) 
-   tmpfs on /tmp type tmpfs (rw,relatime,mode=777) 
-   sysfs on /sys type sysfs (rw,relatime) 
-   debugfs on /sys/kernel/debug type 
-   debugfs (rw,relatime) 
-   /dev/mmcblk0p1 on /mnt type vfat (rw,sync,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)  
+   # mount
+   rootfs on / type rootfs (rw)
+   devtmpfs on /dev type devtmpfs (rw,relatime,size=42740k,nr_inodes=10685,mode=755)
+   proc on /proc type proc (rw,relatime)
+   devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620)
+   tmpfs on /dev/shm type tmpfs (rw,relatime,mode=777)
+   tmpfs on /tmp type tmpfs (rw,relatime,mode=777)
+   sysfs on /sys type sysfs (rw,relatime)
+   debugfs on /sys/kernel/debug type
+   debugfs (rw,relatime)
+   /dev/mmcblk0p1 on /mnt type vfat (rw,sync,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
 
 Write something to the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,7 +171,7 @@ In the below example, we store the current date and time to a log file, although
 
 ::
 
-   # date > /mnt/log.file 
+   # date > /mnt/log.file
 
 Verify the written content by reading the log file back
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -183,8 +191,8 @@ Now you can remove the card the from the embedded target board.
    # umount /mnt
    mmc0: card b368 removed
 
-| 
-| ===== Test MSI Performance with Bonnie++ =====
+Test MSI Performance with Bonnie++
+----------------------------------
 
 1) Test Case 1: Bonnie++ on Ext2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -195,7 +203,7 @@ Input the following command on the target board console
 
    root@adsp-sc589-ezkit:~# mkfs.ext2 /dev/mmcblk0p1
    root@adsp-sc589-ezkit:~# mount /dev/mmcblk0p1 /mnt/
-   root@adsp-sc589-ezkit:~# bonnie++ -u root -d /mnt/ 
+   root@adsp-sc589-ezkit:~# bonnie++ -u root -d /mnt/
 
 Result
 ^^^^^^
@@ -225,14 +233,16 @@ Result
                     16  6513  92 16713  84 10240  97   149  98 +++++ +++ 12912  98
    adsp-sc589-ezkit,424M,7985,77,8227,8,3920,6,8538,90,8660,6,1220.4,18,16,6513,92,16713,84,10240,97,149,98,+++++,+++,12912,98
 
-| 
-| ==== 2) Test Case 2: Bonnie++ on FAT32 ==== Input the following command on the target board console
+2) Test Case 2: Bonnie++ on FAT32
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Input the following command on the target board console
 
 ::
 
    root@adsp-sc589-ezkit:~# mkfs.vfat -F 32 /dev/mmcblk0p1
    root@adsp-sc589-ezkit:~# mount /dev/mmcblk0p1 /mnt/
-   root@adsp-sc589-ezkit:~# bonnie++ -u root -d /mnt/ 
+   root@adsp-sc589-ezkit:~# bonnie++ -u root -d /mnt/
    Using uid:0, gid:0.
    Writing with putc()...done
    Writing intelligently...done
@@ -256,5 +266,6 @@ Result
                     16     9  99 +++++ +++   147  99    17  99 +++++ +++    39  98
    adsp-sc589-ezkit,424M,4405,44,6886,10,4026,7,8360,89,8658,6,803.4,12,16,9,99,+++++,+++,147,99,17,99,+++++,+++,39,98
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

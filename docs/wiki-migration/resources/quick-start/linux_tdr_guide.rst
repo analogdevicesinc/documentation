@@ -112,17 +112,17 @@ Change the kernel configure with "make menuconfig" in order to enable the ADIN11
 
 ::
 
-   Symbol: ADIN1110 [=y]                                                                                                                                                                 
-   Type  : tristate                                                                                                                                                                        
-   Defined at drivers/net/ethernet/adi/Kconfig:20                                                                                                                                          
-     Prompt: Analog Devices ADIN1110 MAC-PHY                                                                                                                                               
-     Depends on: NETDEVICES [=y] && ETHERNET [=y] && NET_VENDOR_ADI [=y] && SPI [=y] && NET_SWITCHDEV [=y]                                                                               
-     │   Location:                                                                                                                                                                           │  
-     │     -> Device Drivers                                                                                                                                                                 │  
-     │       -> Network device support (NETDEVICES [=y])                                                                                                                                     │  
-     │         -> Ethernet driver support (ETHERNET [=y])                                                                                                                                    │  
-     │           -> Analog Devices devices (NET_VENDOR_ADI [=y])                                                                                                                             │  
-     │ (1)         -> Analog Devices ADIN1110 MAC-PHY (ADIN1110 [=y])                                                                                                                        │  
+   Symbol: ADIN1110 [=y]
+   Type  : tristate
+   Defined at drivers/net/ethernet/adi/Kconfig:20
+     Prompt: Analog Devices ADIN1110 MAC-PHY
+     Depends on: NETDEVICES [=y] && ETHERNET [=y] && NET_VENDOR_ADI [=y] && SPI [=y] && NET_SWITCHDEV [=y]
+     │   Location:                                                                                                                                                                           │
+     │     -> Device Drivers                                                                                                                                                                 │
+     │       -> Network device support (NETDEVICES [=y])                                                                                                                                     │
+     │         -> Ethernet driver support (ETHERNET [=y])                                                                                                                                    │
+     │           -> Analog Devices devices (NET_VENDOR_ADI [=y])                                                                                                                             │
+     │ (1)         -> Analog Devices ADIN1110 MAC-PHY (ADIN1110 [=y])                                                                                                                        │
      │ Selects: CRC8 [=y] && PHYLIB [=y]
 
 Exit menuconfig and go back to the Linux terminal.
@@ -245,8 +245,6 @@ Connect the AD-T1LUSB2.0-EBZ to your board using a micro USB cable.
 TDR testing
 -----------
 
-.. _arm32arm64-1:
-
 ARM32/ARM64
 ~~~~~~~~~~~
 
@@ -259,19 +257,19 @@ Copy the TDR library archive to the rootfs partition of the SD card. You can now
        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
        inet 127.0.0.1/8 scope host lo
           valid_lft forever preferred_lft forever
-       inet6 ::1/128 scope host 
+       inet6 ::1/128 scope host
           valid_lft forever preferred_lft forever
    2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 1000
        link/ether 26:e1:6f:ab:e2:87 brd ff:ff:ff:ff:ff:ff
    3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
        link/ether ca:2f:b7:10:23:63 brd ff:ff:ff:ff:ff:ff
-       inet6 fe80::af3b:584c:73b7:6c4c/64 scope link noprefixroute 
+       inet6 fe80::af3b:584c:73b7:6c4c/64 scope link noprefixroute
           valid_lft forever preferred_lft forever
    4: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
        link/ether 00:04:4b:ea:59:ee brd ff:ff:ff:ff:ff:ff
        inet 10.48.65.145/24 brd 10.48.65.255 scope global dynamic noprefixroute eth1
           valid_lft 21053sec preferred_lft 21053sec
-       inet6 fe80::509a:e324:c836:2fa2/64 scope link noprefixroute 
+       inet6 fe80::509a:e324:c836:2fa2/64 scope link noprefixroute
           valid_lft forever preferred_lft forever
    5: l4tbr0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
        link/ether f2:79:c1:47:c6:11 brd ff:ff:ff:ff:ff:ff
@@ -311,8 +309,6 @@ After this, you may now run your application:
 
    sudo ./CableDiagTDR
 
-.. _x86_64-1:
-
 x86_64
 ~~~~~~
 
@@ -324,11 +320,9 @@ Power up the target PC and copy the TDR library archive in your user's home dire
        link/ether 00:e0:4c:68:04:5c brd ff:ff:ff:ff:ff:ff
    31: eth2: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN group default qlen 1000
        link/ether 76:f2:44:3a:52:2f brd ff:ff:ff:ff:ff:ff
-       
-   $ cat /sys/class/net/eth2/device/modalias 
-   usb:v0424p9E00d0300dcFFdsc00dpFFicFFisc00ipFFin00
 
-.. _running-the-tdr-example-1:
+   $ cat /sys/class/net/eth2/device/modalias
+   usb:v0424p9E00d0300dcFFdsc00dpFFicFFisc00ipFFin00
 
 Running the TDR example
 ^^^^^^^^^^^^^^^^^^^^^^^

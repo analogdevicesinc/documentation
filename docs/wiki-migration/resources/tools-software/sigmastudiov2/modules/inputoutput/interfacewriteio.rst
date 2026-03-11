@@ -3,19 +3,21 @@
 Master Control Port Write IO
 ============================
 
-| 
-| |mc_interfacewrite_cell_ssp.jpg|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/inputoutput/mc_interfacewrite_cell_ssp.jpg
+   :alt: mc_interfacewrite_cell_ssp.jpg
 
-| 
-| ===== Description =====
-| The Interface Write module writes the value of the parameter setting to the EEPROM when required, so that the parameter setting can be used after the power down(via selfboot).The module can write the value to EEPROM when the parameter value is changed or periodically or an external trigger(rising edge). The module supports writes through SPI or I2C protocols.
+Description
+-----------
+
+The Interface Write module writes the value of the parameter setting to the EEPROM when required, so that the parameter setting can be used after the power down(via selfboot).The module can write the value to EEPROM when the parameter value is changed or periodically or an external trigger(rising edge). The module supports writes through SPI or I2C protocols.
 
 Usage
 -----
 
-| 
-| The Interface Write module has the following properties which can be set by the user in the form to configure the I2C or SPI modes
-| |mc_interfacewrite_wnd_ssp.jpg|
+The Interface Write module has the following properties which can be set by the user in the form to configure the I2C or SPI modes
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/inputoutput/mc_interfacewrite_wnd_ssp.jpg
+   :alt: mc_interfacewrite_wnd_ssp.jpg
 
 Targets Supported
 -----------------
@@ -38,7 +40,7 @@ Name           Type  Description
 InterfaceWrite Logic Input
 ============== ===== ===========
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------------------+---------------+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,9 +74,10 @@ InterfaceWrite Logic Input
 
 | 
 | ===== DSP Parameters=====
-| Not applicable
-| ===== DSP Parameter Computation =====
-| Not applicable
 
-.. |mc_interfacewrite_cell_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/inputoutput/mc_interfacewrite_cell_ssp.jpg
-.. |mc_interfacewrite_wnd_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/inputoutput/mc_interfacewrite_wnd_ssp.jpg
+Not applicable
+
+DSP Parameter Computation
+-------------------------
+
+Not applicable

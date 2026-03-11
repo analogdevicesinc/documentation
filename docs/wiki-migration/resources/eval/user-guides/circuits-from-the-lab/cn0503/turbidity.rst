@@ -6,9 +6,9 @@ An important water quality indicator for almost any use is the presence of dispe
 General Description/Overview
 ----------------------------
 
-| The EVAL-CN0503-ARDZ is a four-channel optical platform capable of fluorescence, absorbance and scattering measurements. The two middle channels/light paths are only capable of absorbance and 180-degree scattering measurements. This demo uses one of the side paths for 90- and 180-degree scattering measurements.
+The EVAL-CN0503-ARDZ is a four-channel optical platform capable of fluorescence, absorbance and scattering measurements. The two middle channels/light paths are only capable of absorbance and 180-degree scattering measurements. This demo uses one of the side paths for 90- and 180-degree scattering measurements.
 
-| Turbidity measurements follow design standards requiring specific types of light sources and number and angle of detectors. One of the standards is ISO7027 Water Quality - Determination of Turbidity which requires a monochromatic light source usually an IR LED, and a primary detector at a 90-degree angle. The demo will follow the standard using a single 940nm LED and two detectors at 90- and 180-degree angles. The unit for turbidity under the standard is FTU and the CN0503 computes this using 2 linear approximations (for low and high turbidity measurements) obtained from a 3-point calibration.
+Turbidity measurements follow design standards requiring specific types of light sources and number and angle of detectors. One of the standards is ISO7027 Water Quality - Determination of Turbidity which requires a monochromatic light source usually an IR LED, and a primary detector at a 90-degree angle. The demo will follow the standard using a single 940nm LED and two detectors at 90- and 180-degree angles. The unit for turbidity under the standard is FTU and the CN0503 computes this using 2 linear approximations (for low and high turbidity measurements) obtained from a 3-point calibration.
 
 Demo Requirements
 -----------------
@@ -165,7 +165,7 @@ Performing a Turbidity Measurement
 
 |image24|
 
-|
+
 
 .. important::
 

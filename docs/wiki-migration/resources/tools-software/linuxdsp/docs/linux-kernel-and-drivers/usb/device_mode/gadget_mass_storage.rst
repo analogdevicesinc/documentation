@@ -23,7 +23,7 @@ Software Configuration
 
 On the Yocto, Configure the linux-kernel as below to set the USB controller in Gadget only mode, and enable the USB Gadget Mass Storage relevant options.
 
-.. code:: c++
+.. code:: console
 
    $ bitbake linux-adi -c menuconfig
 
@@ -35,14 +35,14 @@ On the Yocto, Configure the linux-kernel as below to set the USB controller in G
        [*] USB support  --->
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Gadget only mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                    <*>   USB Gadget Support  --->
 
-\**Configure the Gadget Mass Storage Support \*\*
+**Configure the Gadget Mass Storage Support**
 
 .. code:: shell
 
@@ -51,7 +51,7 @@ On the Yocto, Configure the linux-kernel as below to set the USB controller in G
        [*] USB support  --->
                    <*>   USB Gadget Support  --->
                          <M>   USB Gadget precomposed configurations
-                         <M>     Mass Storage Gadget   
+                         <M>     Mass Storage Gadget
 
 --------------
 
@@ -60,7 +60,7 @@ Example Usage
 
 **on the target Ez-Kit board**
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# dd if=/dev/zero of=/fsg.block bs=1M count=16
    16+0 records in
@@ -79,7 +79,7 @@ Example Usage
 
 -  **Fdisk and format the usb mass storage**
 
-.. code:: c++
+.. code:: console
 
    root@madara:~# sudo su
    root@madara:~# ls /dev/sdb
@@ -124,7 +124,7 @@ Example Usage
 
 -  **Read/write test**
 
-.. code:: c++
+.. code:: console
 
    root@madara:~# mkdir /met/usb
    root@madara:~# mount /dev/sdb1 /mnt/usb/

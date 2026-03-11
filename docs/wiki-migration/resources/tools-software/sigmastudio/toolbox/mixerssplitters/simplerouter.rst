@@ -13,9 +13,9 @@ This module supports multiple router configurations. Any input can be routed to 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/simplerouterform.png
    :align: center
 
-| 
-| ===== Grow Algorithm ===== Simple router supports growth to a maximum of 34 input and output channels
+Grow Algorithm
+--------------
 
-| 
+Simple router supports growth to a maximum of 34 input and output channels
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/simplerouter.png

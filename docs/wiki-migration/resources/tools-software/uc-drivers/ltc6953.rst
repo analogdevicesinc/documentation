@@ -11,8 +11,10 @@ Evaluation Boards
 
 -  :adi:`DC2610A`
 
-| 
-| ===== Overview ===== The :adi:`LTC6953` is a high performance, ultralow jitter, JESD204B/C clock distribution IC. The :adi:`LTC6953`\ ’s 11 outputs can be configured as up to five JESD204B/C subclass 1 device clock/SYSREF pairs plus one general-purpose output, or simply 11 general-purpose clock outputs for non-JESD204B/C applications. Each output has its own individually programmable frequency divider and output driver. All outputs can also be synchronized and set to precise phase alignment using individual coarse half cycle digital delays and fine analog time delays.
+Overview
+~~~~~~~~
+
+The :adi:`LTC6953` is a high performance, ultralow jitter, JESD204B/C clock distribution IC. The :adi:`LTC6953`\ ’s 11 outputs can be configured as up to five JESD204B/C subclass 1 device clock/SYSREF pairs plus one general-purpose output, or simply 11 general-purpose clock outputs for non-JESD204B/C applications. Each output has its own individually programmable frequency divider and output driver. All outputs can also be synchronized and set to precise phase alignment using individual coarse half cycle digital delays and fine analog time delays.
 
 For applications requiring more than 11 total outputs, multiple LTC6953s can be connected together with :adi:`LTC6952`'s and :adi:`LTC6955`'s using the EZSync or ParallelSync synchronization protocols.
 
@@ -23,25 +25,17 @@ Applications
 -  Wireless Infrastructure
 -  Test and Measurement
 
-.. container:: center
-
-
-   ..
-
-|image1|
-
-.. container:: center
-
-   *<fc #000000>DC2610A (with LTC6953 on-board chip) </fc>*
-
+|image1| //DC2610A (with LTC6953 on-board chip) //
 
 ADI No-OS
 ~~~~~~~~~
 
 The goal of ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
 
-| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
-| ===== LTC6953 ADI No-OS Driver =====
+For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+
+LTC6953 ADI No-OS Driver
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Driver Source Code
 ------------------
@@ -78,8 +72,9 @@ The LTC6953 driver also uses the ADI utility library, so make sure you add the n
 
    |Implementation file of ADI util library|
 
-| To use the LTC6953 No-OS Driver, you need to provide the specific implementation for the communication APIs as well as the specific data types to be used.
-| If SPI communication is chosen, these are the three functions to be called by the LTC6953 driver and have to be implemented:
+To use the LTC6953 No-OS Driver, you need to provide the specific implementation for the communication APIs as well as the specific data types to be used.
+
+If SPI communication is chosen, these are the three functions to be called by the LTC6953 driver and have to be implemented:
 
 .. container:: center box
 
@@ -140,9 +135,12 @@ Source code documentation for the driver is automatically generated using the Do
 Device Configuration
 --------------------
 
-| 
-| === Driver Initialization === To use the device, you need to provide the support for the communication protocol (SPI) as mentioned above.
-| The first API function to be called is **ltc6953_init**. Make sure that it returns 0, this indicates a successful driver initialization.
+Driver Initialization
+~~~~~~~~~~~~~~~~~~~~~
+
+To use the device, you need to provide the support for the communication protocol (SPI) as mentioned above.
+
+The first API function to be called is **ltc6953_init**. Make sure that it returns 0, this indicates a successful driver initialization.
 
 Reset Options
 ~~~~~~~~~~~~~
@@ -226,8 +224,12 @@ Synchronization allows the start times of each output divider to be delayed by t
 Channel SYNC Enable
 ~~~~~~~~~~~~~~~~~~~
 
-| Enables SYNC or SYSREF on output channel. Use function **ltc6953_enable_sync**.
-| === Channel SYSREF Mode === Can be configured when output channel's SRQEN bit is set to 1. Use function **ltc6953_set_mode**.
+Enables SYNC or SYSREF on output channel. Use function **ltc6953_enable_sync**.
+
+Channel SYSREF Mode
+~~~~~~~~~~~~~~~~~~~
+
+Can be configured when output channel's SRQEN bit is set to 1. Use function **ltc6953_set_mode**.
 
 .. container:: center box
 
@@ -248,8 +250,8 @@ Channel Output Inversion
 
 The OINV bits of the channel can selectively invert the sense of each output to facilitate board routing without having to cross matched-length traces. Use function **ltc6953_invert_output**.
 
-| 
-| ==== Driver Initialization Example ====
+Driver Initialization Example
+-----------------------------
 
 Example Initialization Using Maxim SDK as Platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -287,9 +289,9 @@ Example Initialization Using Maxim SDK as Platform
        struct ltc6953_init_param ltc6953_dev_ip = {
            .spi_init = ltc6953_spi_ip,
        };
-       
+
        ret = ltc6953_init(&ltc6953_dev, &ltc6953_dev_ip);
-       if (ret) 
+       if (ret)
                return ret;
 
        /* Enable VCO Input Filter */

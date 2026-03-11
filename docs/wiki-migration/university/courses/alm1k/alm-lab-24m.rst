@@ -24,16 +24,7 @@ The objective of this first experiment is to build an astable multivibrator. Two
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 470Ω Resistors
-| 2 - 20KΩ Resistors
-| 2 - 10KΩ Resistors
-| 2 - small signal NMOS transistors (ZVN2110A)
-| 1 - Red LED
-| 1 - Green LED
-| 2 - 47uF Capacitors
+ADALM1000 hardware module Solder-less breadboard Jumper wires 2 - 470Ω Resistors 2 - 20KΩ Resistors 2 - 10KΩ Resistors 2 - small signal NMOS transistors (ZVN2110A) 1 - Red LED 1 - Green LED 2 - 47uF Capacitors
 
 Directions:
 ~~~~~~~~~~~
@@ -59,39 +50,20 @@ The frequency of oscillation is very slow due to the large values of capacitors 
 Questions:
 ~~~~~~~~~~
 
-| What would be the effect of decreasing or increasing the values of both capacitors?
-| What would be the effect of decreasing C\ :sub:`1` and increasing C\ :sub:`2` but keeping the total of C\ :sub:`1`\ +C\ :sub:`2` the same?
+What would be the effect of decreasing or increasing the values of both capacitors? What would be the effect of decreasing C\ :sub:`1` and increasing C\ :sub:`2` but keeping the total of C\ :sub:`1`\ +C\ :sub:`2` the same?
 
 The Monostable Multivibrator
 ----------------------------
-
-.. _objectives-1:
 
 Objectives:
 ~~~~~~~~~~~
 
 The objective of this second experiment is to build an monostable multivibrator. One resistance-capacitance network determines the duration of the one-shot output. The amplifying devices (transistors) are connected in a common-source configuration, as shown in figure 2.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 470Ω Resistors
-| 1 - 1KΩ Resistors
-| 1 - 20KΩ Resistor
-| 1 - 10KΩ Resistor
-| 1 - 47KΩ Resistor
-| 1 - small signal diode (1N914)
-| 2 - small signal NMOS transistors (ZVN2110A)
-| 1 - Red LED
-| 1 - Green LED
-| 1 - 47uF Capacitor
-
-.. _directions-1:
+ADALM1000 hardware module Solder-less breadboard Jumper wires 2 - 470Ω Resistors 1 - 1KΩ Resistors 1 - 20KΩ Resistor 1 - 10KΩ Resistor 1 - 47KΩ Resistor 1 - small signal diode (1N914) 2 - small signal NMOS transistors (ZVN2110A) 1 - Red LED 1 - Green LED 1 - 47uF Capacitor
 
 Directions:
 ~~~~~~~~~~~
@@ -107,16 +79,12 @@ Construct the circuit as shown in figure 2 on your solder-less breadboard. Disco
    Figure 2, Monostable Multivibrator
 
 
-.. _procedure-1:
-
 Procedure:
 ~~~~~~~~~~
 
 Connect the +5 V power supply only after you have completely built and checked the circuit. The red LED should be lit and the green LED should be dark. With a length of wire, momentarily touch the Trigger input (end of R\ :sub:`5`) to +5 V and immediately let go. The red LED should go out and the green LED come on for about a second and then go back to the stable state with the red on and green off. Try this a few times.
 
 Now replace C\ :sub:`2` with a 0.1uF capacitor. Connect the channel A generator output, CA-V to the Trigger input. Configure the generator as a square wave with a Max of 5V and a Min of 0 V. Set the frequency to 50 Hz and the duty cycle to 10%. Use the channel B scope input CB-H to observe the output waveforms seen at Q and Qbar.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -126,30 +94,15 @@ What would be the effect of decreasing or increasing the value of capacitor C\ :
 The Bistable Multivibrator (or flip-flop)
 -----------------------------------------
 
-.. _objectives-2:
-
 Objectives:
 ~~~~~~~~~~~
 
 The objective of this third experiment is to build an bistable multivibrator. The amplifying devices (transistors) are connected in a common-source configuration, as shown in figure 3.
 
-.. _materials-2:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 470Ω Resistors
-| 2 - 1KΩ Resistors
-| 2 - 47KΩ Resistors
-| 2 - small signal NMOS transistors (ZVN2110A)
-| 2 - small signal diodes (1N914)
-| 1 - Red LED
-| 1 - Green LED
-
-.. _directions-2:
+ADALM1000 hardware module Solder-less breadboard Jumper wires 2 - 470Ω Resistors 2 - 1KΩ Resistors 2 - 47KΩ Resistors 2 - small signal NMOS transistors (ZVN2110A) 2 - small signal diodes (1N914) 1 - Red LED 1 - Green LED
 
 Directions:
 ~~~~~~~~~~~
@@ -165,21 +118,16 @@ Construct the circuit as shown in figure 3 on your solder-less breadboard. Disco
    Figure 3, Bistable Multivibrator
 
 
-.. _procedure-2:
-
 Procedure:
 ~~~~~~~~~~
 
 Connect the +5 V power supply only after you have completely built and checked the circuit. Either the red LED should be lit with the green LED dark or the green LED should be lit with the red LED dark. With a length of wire, momentarily touch either the SET or RESET input (end of R\ :sub:`5` or R\ :sub:`6`) to +5 V and immediately let go. The LEDs should change state or toggle back and forth depending which input is touched to +5 V. Try this a few times.
-
-.. _questions-2:
 
 Questions:
 ~~~~~~~~~~
 
 **For Further Reading:**
 
-| http://en.wikipedia.org/wiki/Multivibrator
-| http://www.wisc-online.com/objects/ViewObject.aspx?ID=DIG5303
+http://en.wikipedia.org/wiki/Multivibrator http://www.wisc-online.com/objects/ViewObject.aspx?ID=DIG5303
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

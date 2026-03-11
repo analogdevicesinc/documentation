@@ -3,13 +3,21 @@
 Toggle On-Off
 =============
 
-| 
-| |toggle_on_off_ssp.jpg|
-| ===== Description =====
-| The Toggle On/Off cell toggles its output when it detects a rising edge on its input. The amplitude of the output signal can be set using the drop-down control in the cell's GUI.
-| ===== Usage =====
-| The toggle on/off cell detects rising edges on its input and toggles its output each time another rising edge is encountered. In other words, if the output is zero and a rising edge appears on the input, the output will change to one. Conversely, if the output is one and a rising edge appears on the input, the output will change to zero. The bit to be toggled at the output is chosen using the drop down in the module UI. The other bits (other than the selected one) of the output remain zero.
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gpioconditioning/toggle_on_off_ssp.jpg
+   :alt: toggle_on_off_ssp.jpg
+
+Description
+-----------
+
+The Toggle On/Off cell toggles its output when it detects a rising edge on its input. The amplitude of the output signal can be set using the drop-down control in the cell's GUI.
+
+Usage
+-----
+
+The toggle on/off cell detects rising edges on its input and toggles its output each time another rising edge is encountered. In other words, if the output is zero and a rising edge appears on the input, the output will change to one. Conversely, if the output is one and a rising edge appears on the input, the output will change to zero. The bit to be toggled at the output is chosen using the drop down in the module UI. The other bits (other than the selected one) of the output remain zero.
+
+Targets Supported
+-----------------
 
 +---------------+------------+-----------------------+---------------+------------------+
 | Name          | ADSP-214xx | ADSP-215xx/ADSP-SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -21,7 +29,7 @@ Toggle On-Off
 | ===== Pins =====
 
 Input
------
+~~~~~
 
 +----------------------+---------+-------------------------------------------------------------------------------------+
 | Name                 | Type    | Description                                                                         |
@@ -32,7 +40,7 @@ Input
 +----------------------+---------+-------------------------------------------------------------------------------------+
 
 Output
-------
+~~~~~~
 
 +------------------------+---------+-------------------------------------------------------------------------------------------------+
 | Name                   | Type    | Description                                                                                     |
@@ -62,6 +70,5 @@ Output
 
 | 
 | ===== DSP Parameter Computation =====
-| Not applicable
 
-.. |toggle_on_off_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gpioconditioning/toggle_on_off_ssp.jpg
+Not applicable

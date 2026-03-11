@@ -97,11 +97,7 @@ For a given tolerable ripple the required capacitor size is proportional to the 
    :align: center
    :width: 200px
 
-| Where:
-| V\ :sub:`ripple`\ is the maximum ripple voltage on the DC output
-| I\ :sub:`Load` is the DC load current
-| F is the frequency of the ripple (generally 2X the AC frequency)
-| C is the smoothing capacitor
+Where: V\ :sub:`ripple`\ is the maximum ripple voltage on the DC output I\ :sub:`Load` is the DC load current F is the frequency of the ripple (generally 2X the AC frequency) C is the smoothing capacitor
 
 A half-wave rectifier, figure 6.5(a) will only give one peak per cycle and for this and other reasons is only used in very small power supplies and where cost and complexity are of concern. A full wave rectifier, figure 6.5(b) achieves two peaks per cycle and this is the best that can be done with single-phase input. For three-phase inputs a three-phase bridge will give six peaks per cycle and even higher numbers of peaks can be achieved by using transformer networks placed before the rectifier to convert to a higher phase order.
 
@@ -138,9 +134,9 @@ Section Review:
 ~~~~~~~~~~~~~~~
 
 -   Rectification is the conversion of alternating current (AC) to direct current (DC).
-   \* A half-wave rectifier is a circuit that allows only one half-cycle of the AC voltage waveform to be applied to the load, resulting in one non-alternating polarity across it. The resulting DC delivered to the load "pulsates" significantly.
-   \* A full-wave rectifier is a circuit that converts both half-cycles of the AC voltage waveform to an unbroken series of voltage pulses of the same polarity. The resulting DC delivered to the load doesn't "pulsate" as much.
-   \* Capacitors are used to smooth out or filter the ripple present in the rectified DC, and sometimes more complex filters using inductors as well as capacitors are used.
+-   A half-wave rectifier is a circuit that allows only one half-cycle of the AC voltage waveform to be applied to the load, resulting in one non-alternating polarity across it. The resulting DC delivered to the load "pulsates" significantly.
+-   A full-wave rectifier is a circuit that converts both half-cycles of the AC voltage waveform to an unbroken series of voltage pulses of the same polarity. The resulting DC delivered to the load doesn't "pulsate" as much.
+-   Capacitors are used to smooth out or filter the ripple present in the rectified DC, and sometimes more complex filters using inductors as well as capacitors are used.
 
 6.3 Zener Diode as Voltage Regulator
 ------------------------------------
@@ -165,6 +161,7 @@ In the case of this simple reference, the current flowing in the diode is determ
 The value of R\ :sub:`S` must satisfy two conditions:
 
 -   R\ :sub:`S` must be small enough that the current through D\ :sub:`Z` keeps D\ :sub:`Z` in reverse breakdown. The value of this current is given in the manufacturer's data sheet for D\ :sub:`Z`. For example, the common BZX79C5V6 device, a 5.6 V 0.5 ? zener diode, has a recommended reverse current of 5 mA. If insufficient current exists through D\ :sub:`Z`, then V\ :sub:`OUT` will be unregulated, and less than the nominal breakdown voltage. When calculating R\ :sub:`S`, allowance must be made for any current through any external load that might be connected to V\ :sub:`OUT`, not shown in this diagram.
+
 -   R\ :sub:`S` must be large enough that the current through D\ :sub:`Z` does not exceed the rated maximum and destroy the device. If the current through D\ :sub:`Z` is I\ :sub:`D`, its breakdown voltage V\ :sub:`B` and its maximum power dissipation P\ :sub:`MAX`, then:
 
 :math:`I_D \times V_B < P_MAX`
@@ -194,43 +191,47 @@ The resistor power rating P\ :sub:`RS` > (8V - 4.7V) × 66mA = 218mW, so we choo
 
 The maximum power that could be dissipated in the zener when there is zero current in the output load can be calculated as P\ :sub:`Z` > 4.7V × 66mA = 310mW, so we would choose P\ :sub:`Z` = 400mW.
 
-\**ADALM2000 Lab Activity: :doc:`Zener Diode Regulator </wiki-migration/university/courses/electronics/electronics-lab-26>` \*\*
-
-**Exercise 6.3.1**
+**ADALM2000 Lab Activity: :doc:`Zener Diode Regulator </wiki-migration/university/courses/electronics/electronics-lab-26>`***Exercise 6.3.1**
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f16.png
    :align: center
    :width: 400px
 
-| For the circuit shown, if the power supply voltage V\ :sub:`IN` increases, the voltage across the load resistor R\ :sub:`L` will:
-| \* increase
-| \* decrease
-| \* remain the same
+For the circuit shown, if the power supply voltage V\ :sub:`IN` increases, the voltage across the load resistor R\ :sub:`L` will:
 
-| For the circuit shown, if the power supply voltage V\ :sub:`IN` decreases, the voltage across the load resistor R\ :sub:`L` will:
-| \* increase
-| \* decrease
-| \* remain the same
+-  increase
+-  decrease
+-  remain the same
 
-| For the circuit shown, if the power supply voltage V\ :sub:`IN` increases, the voltage across the series resistor R\ :sub:`S` will:
-| \* increase
-| \* decrease
-| \* remain the same
+For the circuit shown, if the power supply voltage V\ :sub:`IN` decreases, the voltage across the load resistor R\ :sub:`L` will:
 
-| For the circuit shown, if the power supply voltage V\ :sub:`IN` increases, the current through the load resistor R\ :sub:`L` will:
-| \* increase
-| \* decrease
-| \* remain the same
+-  increase
+-  decrease
+-  remain the same
 
-| For the circuit shown, if the power supply voltage V\ :sub:`IN` decreases, the current through the zener diode D\ :sub:`Z` will:
-| \* increase
-| \* decrease
-| \* remain the same
+For the circuit shown, if the power supply voltage V\ :sub:`IN` increases, the voltage across the series resistor R\ :sub:`S` will:
 
-| For the circuit shown, if the power supply voltage V\ :sub:`IN` increases, the current through the series resistor R\ :sub:`L` will:
-| \* increase
-| \* decrease
-| \* remain the same
+-  increase
+-  decrease
+-  remain the same
+
+For the circuit shown, if the power supply voltage V\ :sub:`IN` increases, the current through the load resistor R\ :sub:`L` will:
+
+-  increase
+-  decrease
+-  remain the same
+
+For the circuit shown, if the power supply voltage V\ :sub:`IN` decreases, the current through the zener diode D\ :sub:`Z` will:
+
+-  increase
+-  decrease
+-  remain the same
+
+For the circuit shown, if the power supply voltage V\ :sub:`IN` increases, the current through the series resistor R\ :sub:`L` will:
+
+-  increase
+-  decrease
+-  remain the same
 
 **Return to** :doc:`Previous Chapter </wiki-migration/university/courses/electronics/text/chapter-5>`
 

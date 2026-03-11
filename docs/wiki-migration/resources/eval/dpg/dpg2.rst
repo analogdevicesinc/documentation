@@ -3,7 +3,7 @@ DPG2
 
 The Data Pattern Generator is a bench-top instrument for driving vectors into Analog Devices' high-speed Digital-to-Analog converters. The DPG connects to a PC over USB, and allows a user to download a vector from their PC into the DPG’s internal memory. Once downloaded, the vector can be played out to an attached Evaluation Board for a specific DAC at full speed. This allows for rapid evaluation of the DAC with both generic and customer-generated test data.
 
-**Please note:** *Analog Devices' pattern generators and high-speed DAC evaluation boards are designed and sold solely to support an efficient and thorough means by which to evaluate Analog Devices high speed DACs in a lab environment for a wide range of end applications. Any application or use of the pattern generators and/or high-speed DAC evaluation boards, other than specified above, will not be supported.*
+**Please note:** Analog Devices' pattern generators and high-speed DAC evaluation boards are designed and sold solely to support an efficient and thorough means by which to evaluate Analog Devices high speed DACs in a lab environment for a wide range of end applications. Any application or use of the pattern generators and/or high-speed DAC evaluation boards, other than specified above, will not be supported.*
 
 The DPG2 has been replaced by the :doc:`DPG3 </wiki-migration/resources/eval/dpg/dpg3>`. For information on the software used to control the DPG2 and DPG3, see the :doc:`High-Speed DAC Software Suite </wiki-migration/resources/eval/dpg/dacsoftwaresuite>` page.
 

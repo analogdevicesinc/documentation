@@ -130,7 +130,6 @@ An EVAL-AD5443SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) 
      EVAL-AD5443SDZ Pin SDIN  (MOSI)    → YRDKRX63N J15 connector Pin 2
      EVAL-AD5443SDZ Pin SDO   (MISO)    → YRDKRX63N J15 connector Pin 3
      EVAL-AD5443SDZ Pin SCLK  (SCLK)    → YRDKRX63N J15 connector Pin 4
-     
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5443_rx63n.jpg
    :align: center
@@ -155,7 +154,15 @@ Software Project Setup
 More information
 ================
 
-.. include:: ../more-information.rst
+
+-  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5443_rx63n_screen.jpg

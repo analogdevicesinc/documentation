@@ -99,7 +99,7 @@ People who follow the flow that is outlined, have a much better experience with 
 Videos
 ======
 
-.. image:: https://wiki.analog.com/_media/youtube>rdwdi8eIxRQ
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>rdwdi8eIxRQ
    :alt: youtube>rdwdi8eIxRQ
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcadc2-ebz/rfc_top_01.jpg

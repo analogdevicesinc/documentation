@@ -42,14 +42,7 @@ For this test an LTE10 signal was transmitted at various LO frequencies, and the
    :align: center
    :width: 600px
 
-This differs from the a continuous sine wave (CW) at various LOs, were the LO was swept from 70 MHz to 6 GHz. This is not measuring power in the channel, just peak transmit power (the spectrum analyzer was set up to do a peak hold). The two graphs show the difference between the Tx attenuation settings. The default setting of -10dB ensures that the analog output stages are running completely in the linear range, and will not saturate or come close to the 1PdB point. It is also safe at this setting to loop the Tx directly into the Rx with an SMA cable.
-
-.. warning::
-
-   Do not set the TX attenuation to anything less than -10dB and loop the Tx (output) signal into the Rx (input) connector.
-
-
-However, using the AD9361 or any SDR should be calibrated before attempting any measurement in absolute units. This is necessary since data that is provided from the AD9361 is in reference to the full scale range of the ADC which is dependent on the gain stages of the transceiver. The values produced are therefore best described in dBFS or ADC codes, and not dBm or volts.
+This differs from the a continuous sine wave (CW) at various LOs, were the LO was swept from 70 MHz to 6 GHz. This is not measuring power in the channel, just peak transmit power (the spectrum analyzer was set up to do a peak hold). The two graphs show the difference between the Tx attenuation settings. The default setting of -10dB ensures that the analog output stages are running completely in the linear range, and will not saturate or come close to the 1PdB point. It is also safe at this setting to loop the Tx directly into the Rx with an SMA cable. Do not set the TX attenuation to anything less than -10dB and loop the Tx (output) signal into the Rx (input) connector. However, using the AD9361 or any SDR should be calibrated before attempting any measurement in absolute units. This is necessary since data that is provided from the AD9361 is in reference to the full scale range of the ADC which is dependent on the gain stages of the transceiver. The values produced are therefore best described in dBFS or ADC codes, and not dBm or volts.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/txat0.png
    :alt: CW at 0dB attenuation

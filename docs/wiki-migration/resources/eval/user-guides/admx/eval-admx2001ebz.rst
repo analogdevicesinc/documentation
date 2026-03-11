@@ -33,8 +33,8 @@ EVAL-ADMX2001EBZ Evaluation Kit Contents
 -  Universal power adapter with 9VDC output
 -  LCR meter test clips
 
-| 
-| ==== Additional Equipment Required ====
+Additional Equipment Required
+-----------------------------
 
 -  **ADMX2001B** High-Performance Precision Impedance Analyzer Measurement Module
 
@@ -65,8 +65,10 @@ Optional Equipment
 
    -  `Keysight E4980A Precision LCR Meter <https://www.keysight.com/en/pd-715495-pn-E4980A/precision-lcr-meter-20-hz-to-2-mhz>`_
 
-| 
-| ===== Quick Start ===== There are five simple steps to start evaluating the ADMX2001:
+Quick Start
+~~~~~~~~~~~
+
+There are five simple steps to start evaluating the ADMX2001:
 
 -  Driver Installation
 -  Terminal Emulator Installation
@@ -101,8 +103,6 @@ These steps are explained in detail in the following sections.
    :align: center
    :width: 600px
 
-| 
-
 --------------
 
 2. Terminal Emulator Installation
@@ -118,27 +118,28 @@ To communicate with ADMX2001B via its command-line interface and UART, a termina
 
 Download and run the latest stable release. Follow the on-screen instructions.
 
-| Alternatives like PuTTY can also be used, but some users have had issues with PuTTY where the terminal window does not open. Additionally, some terminals do not support the ANSI Escape Codes which manipulate the cursor position and text color. If the ANSI Escape Codes are not supported, the terminal will render them as boxes. TeraTerm supports these characters.
-| ----
+Alternatives like PuTTY can also be used, but some users have had issues with PuTTY where the terminal window does not open. Additionally, some terminals do not support the ANSI Escape Codes which manipulate the cursor position and text color. If the ANSI Escape Codes are not supported, the terminal will render them as boxes. TeraTerm supports these characters.
+
+--------------
 
 3. Basic Hardware Setup
 -----------------------
 
-The following figure shows the basic connections required for evaluating the EVAL-ADMX2001. <WRAP>\ |image1|\ </WRAP>
+The following figure shows the basic connections required for evaluating the EVAL-ADMX2001. \ |image1|\ 
 
 -  Insert the ADMX2001B module into the EVAL-ADMX2001EBZ board in the location shown above. The connectors are keyed, so they can only be inserted in the orientation shown
--  Set the load select switches to OPEN and GND, as shown below. This is required for the self-test to pass, indicated by the red/green LED on the underside of the ADMX2001B module<WRAP>\ |image2|\ </WRAP>
+-  Set the load select switches to OPEN and GND, as shown below. This is required for the self-test to pass, indicated by the red/green LED on the underside of the ADMX2001B module\ |image2|\ 
 
 -  Connect the power adapter to the power jack and to the AC outlet
 -  Verify that the self-test light is green (light is on the bottom of the board, but is visible if viewed from the side where the oscillator and FPGA are mounted)
--  Connect the UART to USB cable to the UART terminals TX (orange)-->TX, RX (yellow)-->RX and GND (black)-->GND:<WRAP>\ |image3|\ </WRAP>
+-  Connect the UART to USB cable to the UART terminals TX (orange)-->TX, RX (yellow)-->RX and GND (black)-->GND:\ |image3|\ 
 
 -  Ensure that the CLK_SEL jumper cap (located under the UART header) is set to INT (internal clock)
--  Set the load select switches to DUT and GND, as shown below:<WRAP>\ |image4|\ </WRAP>
+-  Set the load select switches to DUT and GND, as shown below:\ |image4|\ 
 
 -  Use the test leads to connect to the device under test (DUT):
 
-<WRAP>\ |image5|\ </WRAP>
+\ |image5|\ 
 
 The two BNC connectors from the red leads go to the HCUR/HPOT ports, the two BNC connectors from the black leads go to the LPOT/LCUR ports.
 
@@ -147,11 +148,9 @@ The two BNC connectors from the red leads go to the HCUR/HPOT ports, the two BNC
    Inspect the BNC connectors on the test clips. The housing can become partially unscrewed, allowing the conductor to be pushed back inside and preventing it from making good contact. Additionally, when using the clips in the "open" configuration, each clip should clamp on its own small wire scrap to ensure both sides of the clip are electrically connected.
 
 
-An example of an unscrewed housing of a test clip: <WRAP>\ |image6|\ </WRAP>
+An example of an unscrewed housing of a test clip: \ |image6|\ 
 
-An example of how to use the wire scrap in each of the test clips, when using them in the open configuration: <WRAP>\ |image7|\ </WRAP>
-
-| 
+An example of how to use the wire scrap in each of the test clips, when using them in the open configuration: \ |image7|\ 
 
 Self-Test Functionality
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,7 +172,7 @@ Make sure the hardware is properly installed and that power is available to the 
 -  Type ``*idn`` and press ENTER to display the firmware version
 -  Type ``help`` and press ENTER to see a list of commands supported by ADMX2001B.
 
-| Please note that closing the TeraTerm window does not reset the ADMX2001B settings from the last session.
+Please note that closing the TeraTerm window does not reset the ADMX2001B settings from the last session.
 
 --------------
 
@@ -231,7 +230,7 @@ Perform a capacitance measurement in parallel with an equivalent resistor (Cp-Rp
 --------------
 
 Using the Help Functionality in the Command-Line Interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``help`` command will display all the commands available to the user from the command-line interface (CLI). |image8| To get help for any command, simply type
 
@@ -250,12 +249,10 @@ Which should show a similar screen to the picture shown below
 
 |image9|
 
-| 
-
 --------------
 
 Useful Hints
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 Measurement Display Modes
 -------------------------
@@ -404,23 +401,31 @@ Estimating the Impedance and Admittance of Capacitive and Inductive Devices
 
 Impedance is defined as the opposition to the flow of alternating current. Admittance is the reciprocal of impedance, or how easy is for alternating current to flow. Electrical components such as resistors, capacitors and inductors have a direct relationship between their value and the expected impedance (Z):
 
-| Z = X = -1/(2πfC) for capacitors
-| Z = X = 2πfL for inductors
-| Z = R for resistors
-| Where f is the frequency of the signal; C, L, and R are the component values in Farads, Henries and Ohms respectively. R represents resistance and X reactance.
+Z = X = -1/(2πfC) for capacitors Z = X = 2πfL for inductors Z = R for resistors
+
+Where f is the frequency of the signal; C, L, and R are the component values in Farads, Henries and Ohms respectively. R represents resistance and X reactance.
 
 For admittance (Y):
 
-| Y = B = 2πfC for capacitors
-| Y = B = -1/(2πfL) for inductors
-| Y = G = 1/R for resistors
-| Where f is the frequency of the signal; C, L, and R are the component values in Farads, Henries and Ohms respectively. G represents conductivity and B susceptance.
+Y = B = 2πfC for capacitors Y = B = -1/(2πfL) for inductors Y = G = 1/R for resistors
+
+Where f is the frequency of the signal; C, L, and R are the component values in Farads, Henries and Ohms respectively. G represents conductivity and B susceptance.
 
 All components, regardless of their construction, will show a combination of resistive (conductive) and reactive (susceptive) properties. These properties can be expressed in the form of ideal electrical components combined either in series or parallel. At any given frequency, impedance/admittance can be expressed as a combination of the reactive element (capacitor or inductor) and a resistive element. The total impedance or admittance magnitude can be obtained by calculating the square-root of the sum of squares (RSS) of the two components or
 
-| 
-| %% \|Z\| = sqrt(R\*R + X\*X)%%
-| %% \|Y\| = sqrt(G\*G + B\*B)%%
+%%
+
+= ===================
+Z = sqrt(R\*R + X\*X)%%
+= ===================
+
+%%
+
+= ===================
+Y = sqrt(G\*G + B\*B)%%
+= ===================
+
+
 | To determine the best measurement range for measurement, it is necessary to estimate the impedance or admittance of the device under test at the frequency of measurement using the equations above. A simpler method to obtain an approximate value based on the expected capacitance or inductance value is through the reactance chart shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/reactance_chart_labeled.jpg
@@ -432,14 +437,17 @@ To find the approximate impedance or admittance value for a capacitor or inducto
 Reducing Measurement Noise
 --------------------------
 
-| The ``average`` command determines how many samples are averaged for each reading returned. Averaging reduces noise and is helpful in applications that require to detect small changes in a value or when the impedance component of interest is small in comparison to the total impedance magnitude (e.g. ESR of capacitors). The default is set to 1, which means that no averaging is done.
+The ``average`` command determines how many samples are averaged for each reading returned. Averaging reduces noise and is helpful in applications that require to detect small changes in a value or when the impedance component of interest is small in comparison to the total impedance magnitude (e.g. ESR of capacitors). The default is set to 1, which means that no averaging is done.
 
 .. tip::
 
    Averaging increases the time required to return a reading. Values greater than 256 have been observed to have little effect in reducing measurement noise and have a significant impact on measurement speed.
 
 
-| ==== Improving Measurement Precision ==== To ensure precise and accurate measurements, impedance measurements should be performed with appropriate test fixtures. Measurement leads can introduce additional errors due to parasitic impedances that will vary depending on mechanical configuration.
+Improving Measurement Precision
+-------------------------------
+
+To ensure precise and accurate measurements, impedance measurements should be performed with appropriate test fixtures. Measurement leads can introduce additional errors due to parasitic impedances that will vary depending on mechanical configuration.
 
 .. tip::
 
@@ -458,8 +466,6 @@ The ADMX2001B can automatically perform measurements that sweep different measur
 -  Magnitude
 
 By default, the sweep function is off. To enable parametric sweeps, use the ``sweep_type`` command and specify the sweep type. The command also requires the user to enter the start and end points of the sweep. The number of points is determined by the ``count`` command.
-
-.. _example-1:
 
 Example
 ~~~~~~~
@@ -670,7 +676,7 @@ Note that measurements taken over the UART will be slower.
 --------------
 
 Calibration Procedure
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 A few milliseconds after power up, the ADMX2001B is ready to perform measurements. However, any readings and their units are scaled and assigned using nominal circuit parameters. Measurement accuracy can only be evaluated after performing calibration on the module with an external calibration source with certified traceability. For example, the `Keysight E4980A <https://www.keysight.com/us/en/product/E4980A/precision-lcr-meter-20-hz-2-mhz.html>`_ can be used.
 
@@ -702,12 +708,7 @@ To calibrate the module in a specific gain combination, follow the steps below:
 
 -  Select the desired measurement configuration (gain, frequency, magnitude and offset)
 
-   -
-
-.. important::
-
-   Autorange must be disabled during calibration.
-
+   -  Autorange must be disabled during calibration.
 
 -  Set the averaging to at least 200 samples.
 -  Ensure the load select switches are in the DUT and GND positions, described in `Basic Hardware Setup <https://wiki.analog.com/eval-admx2001ebz>`_
@@ -721,14 +722,8 @@ To calibrate the module in a specific gain combination, follow the steps below:
 -  Run the ``calibrate open`` command
 -  Connect all the measurement terminals together
 
-   -
-
-.. important::
-
-   Short calibration can be performed only when gain channel 1 is set to 0 or 1. When channel 1 is in gain 1, the magnitude of the source must be less than 0.2Vpk.
-
-
--  When measuring extremely tiny impedances (<100mΩ), short calibration becomes extremely important. Many fixtures have a low repeatability under these conditions. Optimizing the repeatability of the fixture is critical to getting a meaningful result, for both calibration and measurement
+   -  Short calibration can be performed only when gain channel 1 is set to 0 or 1. When channel 1 is in gain 1, the magnitude of the source must be less than 0.2Vpk.
+   -  When measuring extremely tiny impedances (<100mΩ), short calibration becomes extremely important. Many fixtures have a low repeatability under these conditions. Optimizing the repeatability of the fixture is critical to getting a meaningful result, for both calibration and measurement
    -  For better results, use `Keysight 42091A Short Termination <https://www.keysight.com/en/pd-1000003830%3Aepsg%3Apro-pn-42091A/short-termination-4-terminal-pair>`_
 
 -  Run the ``calibrate short`` command, if possible
@@ -802,7 +797,7 @@ Calibrate the gain setting (0, 1) at 100kHz with a resistor of value 1k Ohms. Th
    short:Done
    load:Done
    ADMX2001> calibrate commit 1689959855   <--- The timestamp can be omitted here
-   PASSWORD> *********
+   PASSWORD> ********
    commit : success
    ADMX2001> display 6
    Measurement model: 6 - Impedance in rectangular coordinates (default) (Rs,Xs)
@@ -849,23 +844,16 @@ When calibration is enabled, taking a measurement with ``z`` will automatically 
 
 There are no restrictions on what frequencies the user can calibrate at. However, there are two hardware revisions of the ADMX2001B module; one has EEPROM for the nonvolatile memory (older) and the other has flash memory. Modules with the EEPROM can store 25 calibration sets at different frequency points before new sets start to overwrite the oldest ones. Modules with the flash can store up to 450 calibration sets. The command ``selftest run`` will report whether the module has EEPROM or flash installed.
 
-| New commands have been added to facilitate calibration over frequency:
-| ``resetcal`` (unchanged) will erase only the currently loaded calibration set from RAM.
-| ``calibrate reload`` will load the nearest frequency calibration coefficients from the nonvolatile memory and store them in the RAM (taking a measurement implicitly runs ``calibrate reload``).
-| ``calibrate erase`` will permanently delete all saved calibration sets from memory, restoring to the default configuration. This requires the password (default is Analog123) and cannot be undone!
-| ``calibrate list`` will report all frequencies that have any calibration data saved (at least one gain setting).
-| ``calibrate list <freq>`` will report what gain settings at a given frequency have been calibrated.
-| The commands for reading and writing calibration coefficients detailed in `Reading and Writing Calibration Coefficients <https://wiki.analog.com/eval-admx2001ebz>`_ apply to the currently selected frequency.
+New commands have been added to facilitate calibration over frequency: ``resetcal`` (unchanged) will erase only the currently loaded calibration set from RAM. ``calibrate reload`` will load the nearest frequency calibration coefficients from the nonvolatile memory and store them in the RAM (taking a measurement implicitly runs ``calibrate reload``). ``calibrate erase`` will permanently delete all saved calibration sets from memory, restoring to the default configuration. This requires the password (default is Analog123) and cannot be undone! ``calibrate list`` will report all frequencies that have any calibration data saved (at least one gain setting). ``calibrate list <freq>`` will report what gain settings at a given frequency have been calibrated.
+
+The commands for reading and writing calibration coefficients detailed in `Reading and Writing Calibration Coefficients <https://wiki.analog.com/eval-admx2001ebz>`_ apply to the currently selected frequency.
 
 Preloaded Calibration Sets
 --------------------------
 
 Version 1.2.2 also adds support for ADMX2001B modules to ship with a set of calibration coefficients intended to help with evaluating the board. Although the firmware supports it, boards that are currently shipping will not have calibration coefficients preloaded. This will be a future development.
 
-| Preloaded coefficients may not apply to a given test setup and their accuracy is not guaranteed. If the board came with them pre-loaded, then the below new commands apply:
-| ``calibrate switch <evalkit/default>`` choosing evalkit will apply the preloaded coefficients. Choosing default will apply user generated coefficients. Generating calibration coefficients will automatically change the active set to default.
-| ``calibrate`` with no arguments will report the active set.
-| The evalkit set cannot be modified or erased. Only the default (user) set should be modified or erased.
+Preloaded coefficients may not apply to a given test setup and their accuracy is not guaranteed. If the board came with them pre-loaded, then the below new commands apply: ``calibrate switch <evalkit/default>`` choosing evalkit will apply the preloaded coefficients. Choosing default will apply user generated coefficients. Generating calibration coefficients will automatically change the active set to default. ``calibrate`` with no arguments will report the active set. The evalkit set cannot be modified or erased. Only the default (user) set should be modified or erased.
 
 --------------
 
@@ -937,57 +925,29 @@ When a measurement is initiated from the WAIT_FOR_TRIGGER state, either by an ex
 
 Immediately after running ``initiate``, the autorange algorithm will run (if the autorange is enabled). The gain chosen by this instance of the autorange will be locked in for subsequent measurements in trigger mode. If the DC offset is enabled, then the DC offset will be applied as soon as the ``initiate`` command runs. The DC offset and autorange cannot be used at the same time.
 
-.. important::
-
-   Warning: when the ``initiate`` command is run, the board will reload the calibration data automatically from the flash. Any coefficients that were not committed (saved to the flash) will be lost. This process is the same as running the command ``calibrate reload``. Verify that any calibration data that should be applied during trigger mode measurements is saved for it to be applied, and not lost.
-
+Warning: when the ``initiate`` command is run, the board will reload the calibration data automatically from the flash. Any coefficients that were not committed (saved to the flash) will be lost. This process is the same as running the command ``calibrate reload``. Verify that any calibration data that should be applied during trigger mode measurements is saved for it to be applied, and not lost.
 
 PMOD Headers
 ------------
 
 The EVAL-ADMX2001EBZ features PMOD_IN and PMOD_OUT headers for interfacing with a host over SPI.
 
-+------------+------------+-----------------------------------------------------------------------+
-| Pin Number | Pinout     | Note                                                                  |
-+============+============+=======================================================================+
-| 1          | No Connect |                                                                       |
-+------------+------------+-----------------------------------------------------------------------+
-| 2          | SDI        |                                                                       |
-+------------+------------+-----------------------------------------------------------------------+
-| 3          | SDO        |                                                                       |
-+------------+------------+-----------------------------------------------------------------------+
-| 4          | SCLK       | 20 MHz max                                                            |
-+------------+------------+-----------------------------------------------------------------------+
-| 5          | GND        |                                                                       |
-+------------+------------+-----------------------------------------------------------------------+
-| 6          | VCC        | 3.3V, PMOD_OUT only.
-
-.. important::
-
-   VCC current not limited
-
-
-|
-+------------+------------+-----------------------------------------------------------------------+
-| 7          | No Connect |                                                                       |
-+------------+------------+-----------------------------------------------------------------------+
-| 8          | No Connect |                                                                       |
-+------------+------------+-----------------------------------------------------------------------+
-| 9          | CS         |                                                                       |
-+------------+------------+-----------------------------------------------------------------------+
-| 10         | No Connect |                                                                       |
-+------------+------------+-----------------------------------------------------------------------+
-| 11         | GND        |                                                                       |
-+------------+------------+-----------------------------------------------------------------------+
-| 12         | VCC        | 3.3V, PMOD_OUT only.
-
-.. important::
-
-   VCC current not limited
-
-
-|
-+------------+------------+-----------------------------------------------------------------------+
+========== ========== ============================================
+Pin Number Pinout     Note
+========== ========== ============================================
+1          No Connect 
+2          SDI        
+3          SDO        
+4          SCLK       20 MHz max
+5          GND        
+6          VCC        3.3V, PMOD_OUT only. VCC current not limited
+7          No Connect 
+8          No Connect 
+9          CS         
+10         No Connect 
+11         GND        
+12         VCC        3.3V, PMOD_OUT only. VCC current not limited
+========== ========== ============================================
 
 Pins 6 and 12 are No Connect on PMOD_IN (P12). On PMOD_OUT (P11), they connect to the 3.3V supply, and there is no current limiting on the board.
 
@@ -1088,14 +1048,7 @@ Firmware Updates
 
 The ADMX2001B module firmware is user-updatable. Programming files must be requested by contacting admx-support@analog.com. Make a myAnalog account on :adi:`(analog.com) <en/index.html>`, by clicking in the top right. Then, email admx-support@analog.com, and mention the email associated with the myAnalog account.
 
-
-| 
-|
-
-.. important::
-
-   Warning: updating between certain firmware versions can cause saved calibration coefficients to be lost.
-
+Warning: updating between certain firmware versions can cause saved calibration coefficients to be lost.
 
 **Equipment List:**
 
@@ -1121,21 +1074,14 @@ The ADMX2001B module firmware is user-updatable. Programming files must be reque
 -  Connect the USB blaster to the port labeled "P8 JTAG" on the EVAL-ADMX2001EBZ
 -  Connect the EVAL-ADMX2001EBZ to a 9V DC supply
 
-| 
-
 Update Using Installation Script
 --------------------------------
 
-| Versions 1.2.4+ comes bundled with an installation script to simplify the firmware installation process.
-|
+Versions 1.2.4+ comes bundled with an installation script to simplify the firmware installation process.
 
-.. note::
+This script is the preferred installation method.
 
-   This script is the preferred installation method.
-
-
-   | \* Follow the steps under **Board Programming Setup**
-
+-  Follow the steps under **Board Programming Setup**
 -  Ensure that Quartus Prime 18.1 or newer is installed in the following path: ``C:\intelFPGA_lite\<version_number>\quartus``
 -  Open a command prompt window
 -  Navigate to the Tools folder present in the installation directory of ``Admx2001Firmware-Relx.y.z``, ``C:\Analog Devices\Admx2001Firmware-Relx.y.z\Tools``
@@ -1148,18 +1094,11 @@ Update Using Installation Script
 
 -  Wait until the message "Programming POF completed successfully" is displayed in the terminal. It may take around 20 to 30 seconds for the process to complete.
 
-   -
-
-.. important::
-
-   Do not unplug the board or otherwise interrupt the programming process.
-
+   -   Do not unplug the board or otherwise interrupt the programming process.
 
 -  When the programming is completed (message displayed and prompt appears) close the terminal and unplug the USB blaster. The firmware update is complete.
 
-|
-
-| ----
+--------------
 
 Update Using Manual Programmer
 ------------------------------
@@ -1168,8 +1107,7 @@ Versions 1.2.2 and older do not come bundled with an installation script. The Qu
 
 If there are issues preventing the installation script from working to program the board, the manual programmer method can be used. In this case, contact admx-support@analog.com for assistance using the manual programmer.
 
-| 
-| ----
+--------------
 
 Firmware Release Highlights
 ---------------------------

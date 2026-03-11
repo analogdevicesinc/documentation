@@ -161,15 +161,13 @@ For example, GPIO30 is connected to the on board ADT7420 temperature sensor by d
 MCU Cog Design and Integration Files
 ------------------------------------
 
-|
-
 .. admonition:: Download
    :class: download
 
    `EV-COG-AD3029LZ MCU Cog RevB Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/21052017-iot-devkit-tile-revb-schematics.pdf>`_
 
-
-   | `EV-COG-AD3029LZ MCU Cog RevB Layout and BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/ev-cog-ad3029lzboarddesigndatabase.zip>`_
+   
+   `EV-COG-AD3029LZ MCU Cog RevB Layout and BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/ev-cog-ad3029lzboarddesigndatabase.zip>`_
    
 
 
@@ -184,10 +182,10 @@ For developers designing a Cog add-on board, the template schematic/board files 
    `Gear Template Design Database <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/geartemplatedesigndatabase.zip>`_
 
 
-|
 
 | End Document
-| :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
+
+:doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 
 .. |direct| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/24072017-tile-revb-adp5300-gpio.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/c1-conn-mapping.png

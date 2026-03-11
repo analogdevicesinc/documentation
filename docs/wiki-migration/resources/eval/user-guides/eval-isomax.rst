@@ -1,14 +1,13 @@
 EVAL-ISOMAX User Guide
 ======================
 
-|
+
 
 .. note::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
-   | This user guide is now available at
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-isomax/index.html
+   | This user guide is now available at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-isomax/index.html
 
 
 Overview
@@ -20,8 +19,8 @@ The :adi:`EVAL-ISOMAX` is an integrated dual isoSPI adapter and microcontroller 
    :align: center
    :width: 500px
 
-| 
-| ==== Features ====
+Features
+~~~~~~~~
 
 -  Low-cost integrated monitoring for BMS with on-board MCU and dual isoSPI chip
 -  Demonstrates SPI to isoSPI 2-wire datalinks
@@ -30,8 +29,8 @@ The :adi:`EVAL-ISOMAX` is an integrated dual isoSPI adapter and microcontroller 
 -  Stackable and allows daisy chain of up to eight (8) ADBMS6830BMSW boards
 -  With PC-based software for control and data analysis using Broad Market Browser BMS GUI
 
-| 
-| ==== Applications ====
+Applications
+~~~~~~~~~~~~
 
 -  IOT Battery Management
 -  Industrial Machine Vision
@@ -43,26 +42,33 @@ The :adi:`EVAL-ISOMAX` is an integrated dual isoSPI adapter and microcontroller 
 -  Electric 2-Wheelers (E2Ws) such as E-scooter, E-bikes
 -  Light Electric Vehicles (LEV)
 
-| 
-| ==== What's Inside the Box? ==== |image1|
+What's Inside the Box?
+~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| ==== System Architecture ====
-| |image2|
-| ----
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_package_contents.png
+   :align: center
+   :width: 600px
+
+System Architecture
+~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_block_diagram.png
+   :align: center
+   :width: 600px
+
+--------------
 
 Components and Connections
 ==========================
 
-|image3|
+|image1|
 
 .. container:: center
 
    **EVAL-ISOMAX Hardware Components**
 
 
-| 
-| ----
+--------------
 
 Use Cases
 =========
@@ -71,61 +77,56 @@ The EVAL-ISOMAX has an on-board ultralow-power Arm-Cortex M4-based MCU that is s
 
 Users may also opt to use other microcontrollers for other applications requiring more stringent timing, higher memory, or faster computing speed. Other possible microcontrollers to be paired are the :adi:`SDP-K1` and :adi:`AD-APARD32690-SL`.
 
-| 
-| ==== Option 1: Using the EVAL-ISOMAX as Standalone MCU with other ADI Broad Market BMS Boards ==== |image4|
-|
+Option 1: Using the EVAL-ISOMAX as Standalone MCU with other ADI Broad Market BMS Boards
+----------------------------------------------------------------------------------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/using_isomax_with_other_adi_bm_boards.png
+   :align: center
+   :width: 800px
 
 .. container:: center
 
    **Sample Battery Monitoring Setup with the EVAL-ADBMS6830BMSW**
 
 
-| 
-| ==== Option 2: Using the EVAL-ISOMAX as a Secondary Device to other MCU Boards ====
-|
+Option 2: Using the EVAL-ISOMAX as a Secondary Device to other MCU Boards
+-------------------------------------------------------------------------
 
 .. container:: indent
 
    See below configuration using different MCUs:
 
 
-   |image5|
+   |image2|
 
 .. container:: center
 
    **Sample Cell Monitoring Setup using the AD-APARD32690-SL as Main Microcontroller Board and EVAL-ISOMAX as isoSPI Adapter**
 
 
-| 
-| |image6|
+   |image3|
 
 .. container:: center
 
    **Sample Pack Monitoring Setup using the SDP-K1 as Main Microcontroller Board and EVAL-ISOMAX as isoSPI Adapter**
 
 
-| 
-| ----
+--------------
 
 Getting Started
 ===============
-
-|
 
 .. tip::
 
    Please refer to the following pages for detailed instructions on how to set up the EVAL-ISOMAX for evaluation.
 
-
-   | \* :doc:`EVAL-ISOMAX Hardware User Guide </wiki-migration/resources/eval/user-guides/eval-isomax/hardware>`
    
+   -  :doc:`EVAL-ISOMAX Hardware User Guide </wiki-migration/resources/eval/user-guides/eval-isomax/hardware>`
    -  :doc:`EVAL-ISOMAX Software User Guide </wiki-migration/resources/eval/user-guides/eval-isomax/software>`
    
 
 
-|
-
-| ----
+--------------
 
 Resources
 =========
@@ -137,8 +138,8 @@ Resources
 -  :doc:`EVAL-ADBMS6830BMSW User Guide </wiki-migration/resources/eval/user-guides/eval-adbms6830bmsw>`
 -  :doc:`EVAL-ADBMS2950-BASIC User Guide </wiki-migration/resources/eval/user-guides/eval-adbms2950-basic>`
 
-| 
-| ==== Design and Integration Files ====
+Design and Integration Files
+----------------------------
 
 .. admonition:: Download
    :class: download
@@ -153,27 +154,22 @@ Resources
    
 
 
-| 
-| ==== Help and Support ==== For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-| 
-| |Overview #:resources:eval:user-guides:eval-isomax:hardware\| EVAL-ISOMAX Hardware Guide# :resources:eval:user-guides:eval-isomax:software\| EVAL-ISOMAX Software Guide#none|
+.. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/eval-isomax
+   :alt: Overview #:resources:eval:user-guides:eval-isomax:hardware\| EVAL-ISOMAX Hardware Guide# :resources:eval:user-guides:eval-isomax:software\| EVAL-ISOMAX Software Guide#none
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_package_contents.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_block_diagram.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/primary_side.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/primary_side.png
    :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/using_isomax_with_other_adi_bm_boards.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_with_ad-apard32690-sl.png
    :width: 800px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_with_ad-apard32690-sl.png
-   :width: 800px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/adbms2950_with_isomax_and_sdp-k1.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/adbms2950_with_isomax_and_sdp-k1.png
    :width: 700px
-.. |Overview #:resources:eval:user-guides:eval-isomax:hardware\| EVAL-ISOMAX Hardware Guide# :resources:eval:user-guides:eval-isomax:software\| EVAL-ISOMAX Software Guide#none| image:: /navigation #/resources/eval/user-guides/eval-isomax

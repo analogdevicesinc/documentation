@@ -64,7 +64,7 @@ From Simulation to Production Workflow
 
 The following sections will follow the workflow shown in the figure below:
 
-.. image:: https://wiki.analog.com/_media/flow.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/flow.png
    :alt: Block diagram
    :width: 700px
 
@@ -92,7 +92,7 @@ The tuning frequency and bandwidth are well within the capabilities of the AD936
 
 The Mode S waveform is fairly simple, as shown below, but there are still several challenges involved in receiving and decoding the transmitted messages.
 
-.. image:: https://wiki.analog.com/_media/fig1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/fig1.png
    :alt: fig1.png
 
 -  The receive environment typically contains very short messages interspersed with long idle periods. The signals being received can be very weak when the transmitting aircraft is a long distance from the receiver. Legacy waveforms are also transmitted at 1090 MHz. The receiver needs to use the preamble to identify both high and low amplitude Mode S transmissions in a congested frequency band.
@@ -139,7 +139,7 @@ The receiver model **ModeS_Simulink_Decode.mdl** and its associated files can be
 
 The model itself is quite straightforward. It takes the pre-recorded ADS-B data, saved in *data_Yb.mat* as input, and then decode the message. The subsystem of decoding algorithm is shown in the figure below:
 
-.. image:: https://wiki.analog.com/_media/fig9.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/fig9.png
    :alt: Block diagram
    :width: 700px
 
@@ -152,12 +152,12 @@ After you run the model, the figure below from the MATLAB command window shows t
 
 In order to verify the detect and decoding algorithm works properly, double click on the Signal From Workspace block, and use the synthetic data *txData* we just created as the signal source:
 
-.. image:: https://wiki.analog.com/_media/txdata.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/txdata.png
    :alt: txdata.png
 
 Click play button to run the model. In the command window, you will see the following results:
 
-.. image:: https://wiki.analog.com/_media/txresult.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/txresult.png
    :alt: txresult.png
 
 Since we select the cyclic repetition mode for *txData*, the decoded result will repeat until the simulation ends. As you can see, the decoded result matches what we have transmitted, so it verifies the receiver model, including the detect and decoding algorithm, works properly.
@@ -269,10 +269,10 @@ Live Data
 
 In this case, we are receiving the real-time ADS-B signals over the air, instead of the signals transmitted by PicoZed. According to ADS-B specification, it is transmitted at the center frequency of 1090 MHz, so the requirements for this case is:
 
--  *RX_LO_FREQ*\ =1090 MHz, *TX_LO_FREQ* far away from 1090 MHz in order to avoid interference
+-  *RX_LO_FREQ*=1090 MHz,*TX_LO_FREQ* far away from 1090 MHz in order to avoid interference
 -  Use a proper antenna on the Rx side, which is capable of covering the 1090 MHz band. Using a poorly tuned or poorly made antenna will result in a lack of range for your air radar.
 
-.. image:: https://wiki.analog.com/_media/setup.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/setup.jpg
    :alt: Block diagram
    :width: 700px
 
@@ -304,7 +304,7 @@ Simulink
 
 The Simulink model shown below is based upon the model introduced in the behavioral simulation section. The detector and decoding piece comes directly from that model, and we add the Simulink IIO System object to conduct the signal reception and radio I/O simulation.
 
-.. image:: https://wiki.analog.com/_media/fig11.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/fig11.png
    :alt: Block diagram
    :width: 700px
 
@@ -312,7 +312,7 @@ The original model works with sample time = 1 and frame size = 1. However, the S
 
 The Simulink IIO System object is set up as below. Similar to the MATLAB one, it creates a System object, and then defines the IP address, device name, and input/output channels number and sizes related to this System object.
 
-.. image:: https://wiki.analog.com/_media/fig12.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/fig12.png
    :alt: Block diagram
 
 The input and output ports of this Simulink block corresponding to an IIO System object are defined through the properties dialog of the object's block as well as through a configuration file that is specific to the targeted ADI SDR platform. The input and output ports are categorized as data and control ports. The data ports are used to receive/transmit buffers of continuous data from/to the target system in a frame based processing mode, while the control ports are used to configure and monitor different target system parameters. The number and size of the data ports are configured from the block's configuration dialog while the control ports are defined in the configuration file. The attributes of AD9361 is set up according to the same factors as introduced in MATLAB model. The only difference is the Tx/Rx sampling frequency. We use 12.5 MSPS in the Simulink model, instead of 2.5 MSPS used in the MATLAB model, since here, we do not up sample by 5 on the receiver side, as we did in the MATLAB example. All the other theories and methods employed in the MATLAB model can be applied here.
@@ -321,7 +321,7 @@ Depending on how you set up the *TX_LO_FREQ* and *RX_LO_FREQ*, this Simulink mod
 
 In order to verify this model works properly, we run it in pre-captured mode, and use the *txData* generated by the transmitter model as the signal source, as shown below:
 
-.. image:: https://wiki.analog.com/_media/simulinklibiio.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/simulinklibiio.png
    :alt: Block diagram
 
 In the command window, we get the same decoded message as the one we transmit, which means the Simulink model using libiio also works properly.
@@ -408,7 +408,7 @@ Steps to Follow
    
       devzynq = zynq();
       % The following address should match the board address
-      devzynq.IPAddress = '192.168.3.2'; 
+      devzynq.IPAddress = '192.168.3.2';
       % Path to the generated bitstream
       devzynq.programFPGA(...
          'hdl_prj\vivado_ip_prj\vivado_prj.runs\impl_1\system_wrapper.bit')
@@ -469,7 +469,7 @@ To install the Analog Devices BSP, set the MATLAB current folder to the */vendor
 
 in the MATLAB command window. After the installation process is complete, run *ver* in the MATLAB command window to list all the installed packages. If the installation was successful, the *HDL Coder BSP Tools* and *HDL Coder BSP: Analog Devices Inc* should appear in the list, as shown below:
 
-.. image:: https://wiki.analog.com/_media/install.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/install.png
    :alt: Block diagram
 
 .. tip::
@@ -511,32 +511,32 @@ Open model *ModeS_ADI_Codegen.slx* in MATLAB.
 
 Right click on *Detector* subsystem, choose *HDL Code* from the menu, and click on *HDL Workflow Advisor* to launch this tool, as shown below:
 
-.. image:: https://wiki.analog.com/_media/hdlwa.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/hdlwa.png
    :alt: Block diagram
 
 In step 1.1, select *IP Core Generation* for Target Workflow:
 
-.. image:: https://wiki.analog.com/_media/step1.1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/step1.1.png
    :alt: Block diagram
 
 In step 1.2, set target interface as below, where all the signals we want to observe are set as AXI4-Lite:
 
-.. image:: https://wiki.analog.com/_media/external.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/external.png
    :alt: Block diagram
 
 In step 3.1.2, set reset asserted level to *Active-high*:
 
-.. image:: https://wiki.analog.com/_media/step3.1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/step3.1.png
    :alt: Block diagram
 
 Then, run each task including Step 4.2. In the end of Step 4.2, you will see a software interface model generated. The external mode runs in this model, which will be introduced later.
 
-.. image:: https://wiki.analog.com/_media/step4.2gm.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/step4.2gm.png
    :alt: Block diagram
 
 In Step 4.3, select **Custom** for Tcl file for synthesis build, and use *adi_build.tcl* from *\\ADSB\\hdl_prj\\vivado_ip_prj\\projects\\scripts\\* folder:
 
-.. image:: https://wiki.analog.com/_media/step4.3.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/step4.3.png
    :alt: Block diagram
 
 .. tip::
@@ -548,7 +548,7 @@ For the other steps not mentioned above, use default settings from HDL Workflow 
 
 After Step 4.3 finishes running, you will find the newly generated *BOOT.BIN* inside *\\ADSB\\hdl_prj\\vivado_ip_prj\\boot\\* folder:
 
-.. image:: https://wiki.analog.com/_media/bootbin.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/bootbin.png
    :alt: Block diagram
 
 **Step 5: Copy and paste the generated BOOT.BIN onto SD card**
@@ -559,12 +559,12 @@ Use the latest :doc:`image </wiki-migration/resources/tools-software/linux-softw
 
 Open *DecodeBits_ADI.prj* from your ADSB model folder and fill in the settings as following:
 
-.. image:: https://wiki.analog.com/_media/prj.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/prj.png
    :alt: Block diagram
 
 Then click the "Generate" button, and the code generation process will run automatically. In the end, you will find a new folder called *codegen* in your current MATLAB directory, which includes the files generated from MATLAB Coder.
 
-.. image:: https://wiki.analog.com/_media/codegen.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/codegen.png
    :alt: Block diagram
 
 **Step 7: Interface the C code with the data from FPGA**
@@ -573,7 +573,7 @@ The generated C code contains the implementation of the ADS-B data decoding algo
 
 To transfer the files to your Linux system. You can use tools such as `WinSCP <https://winscp.net/eng/docs/guide_install>`_:
 
-.. image:: https://wiki.analog.com/_media/winscp.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/winscp.png
    :alt: Block diagram
 
 .. tip::
@@ -594,9 +594,9 @@ Use pre-captured data to verify
 
 Before we use *adsb_decode* to decode real world ADS-B signals, we can verify this file, the new BOOT.BIN, as well as the hardware settings using some pre-captured data and the :doc:`ADI IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
 
-In IIO scope, set the Receive Chain and Transmit Chain according to the specifications of ADS-B signals. Then, use *DAC Buffer Output* for DDS Mode. In the end, select file :git-MathWorks_tools:`targeting_models/ADSB/data_noise.mat`, which includes the pre-captured data and click Load. You will see the message saying "Waveform loaded successfully" if your file has been applied to the DAC channels you selected.
+In IIO scope, set the Receive Chain and Transmit Chain according to the specifications of ADS-B signals. Then, use *DAC Buffer Output* for DDS Mode. In the end, select file `data_noise.mat <https://github.com/analogdevicesinc/MathWorks_tools/blob/2016a/targeting_models/ADSB/data_noise.mat>`_, which includes the pre-captured data and click Load. You will see the message saying "Waveform loaded successfully" if your file has been applied to the DAC channels you selected.
 
-.. image:: https://wiki.analog.com/_media/oscverify.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/oscverify.png
    :alt: Block diagram
    :width: 700px
 
@@ -608,7 +608,7 @@ On Linux side, open a terminal and run the following command:
 
 You will see the following results almost immediately after you execute the command:
 
-.. image:: https://wiki.analog.com/_media/oscverify_results.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/oscverify_results.png
    :alt: Block diagram
 
 .. tip::
@@ -629,7 +629,7 @@ Note: lat and lon are latitude and longitude of your current location.
 
 Wait a few seconds to a few minutes, depending on your local air traffic, and you will observe the decoded ADSB messages in the terminal, such as following:
 
-.. image:: https://wiki.analog.com/_media/result.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/result.png
    :alt: Block diagram
 
 .. tip::
@@ -648,36 +648,36 @@ Before you run external mode, first set up the environment variable *'ADI_ZYNQ_S
 
 .. code:: matlab
 
-   >> setenv('ADI_ZYNQ_SDR_IPADDRESS', '192.168.3.2'); 
+   >> setenv('ADI_ZYNQ_SDR_IPADDRESS', '192.168.3.2');
 
 Open the software interface model generated in Step 4.2 of the HDL Workflow Advisor, as shown below:
 
-.. image:: https://wiki.analog.com/_media/softwareinterfacemdl.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/softwareinterfacemdl.png
    :alt: Block diagram
 
 Before running the external mode, make sure that the “Hardware Implementation” options are set as below. Select **Analog Devices Zynq SDR** for Hardware board, and click **Apply**.
 
-.. image:: https://wiki.analog.com/_media/after.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/after.png
    :alt: Block diagram
 
 Go to "Code Generation" options, select **Debug** for Build Configuration, and click **Apply**:
 
-.. image:: https://wiki.analog.com/_media/buildconfig.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/buildconfig.png
    :alt: Block diagram
 
 Now you can open the software interface model and run it in external mode. Select **External** from the menu, and click **Play** button.
 
-.. image:: https://wiki.analog.com/_media/playbutton.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/playbutton.png
    :alt: Block diagram
 
 You will see a new terminal open up and show the results on hardware:
 
-.. image:: https://wiki.analog.com/_media/externalresult.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/externalresult.png
    :alt: Block diagram
 
 Besides, you can open each scope in the interface model and see how the signals behave on hardware. The following is a capture of the Correlators scope:
 
-.. image:: https://wiki.analog.com/_media/extresult.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/extresult.png
    :alt: Block diagram
 
 Reference

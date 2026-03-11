@@ -34,16 +34,14 @@ Required Software
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+
 
 .. tip::
 
    If you are not familiar with LX9 and/or Xilix tools, please visit
 
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
-   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
-   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
-   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details. If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
 
@@ -175,20 +173,12 @@ Functional Description
 
 The reference design is a simple SPI interface used to communicate with the PmodDA4. The software programs the device sending 12-bit data values read from the keyboard input or from predefined look up tables. The user has the ability to select between two modes: a Fixed Value Mode or a Waveform Generation Mode. Communication between the user and the board is done via UART.
 
-|
-
 .. important::
 
-
-   ..
-
-| \* Connecting the PmodDA4 to the boards using an extension cable provides ease of use.
    
+   -  Connecting the PmodDA4 to the boards using an extension cable provides ease of use.
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-   |
-
-   |
 
 
 .. important::
@@ -216,120 +206,122 @@ The reference design is a simple SPI interface used to communicate with the Pmod
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \**Avnet LX-9 MicroBoard: **
-     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/AD5628_LX9.zip>`_\ **
-     **\ Digilent Nexys™3:**
-     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/AD5628_NEXYS3.zip>`_\ **
-     **\ Avnet ZedBoard:\*\*
-   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
-   | \* :git-no-OS:`PmodDA4 Driver Files <Pmods/PmodDA4>`
-   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
-   | \* :git-no-OS:`Programming Script <Pmods/PmodDA4/bin>`
-   |
+   
+   **Avnet LX-9 MicroBoard:**
+   
+   -  `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/AD5628_LX9.zip>`_
+   
+   **Digilent Nexys™3:**
+   
+   -  `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/AD5628_NEXYS3.zip>`_
+   
+   **Avnet ZedBoard:**
+   
+   -  :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   -  :git-no-OS:`PmodDA4 Driver Files <Pmods/PmodDA4>`
+   -  :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
+   -  :git-no-OS:`Programming Script <Pmods/PmodDA4/bin>`
+   
 
 
-.. container:: hide
+Linux Device Driver
+===================
 
-   
-   Linux Device Driver
-   ===================
-   
-   Connect PmodDA4 to the JB1 connector of the ZedBoard (upper row of pins).
-   
-   Preparing the SD Card
-   ---------------------
-   
-   In order to prepare the SD Card for booting Linux on the ZedBoard:
-   
-   -  Download the device tree: :git-no-OS:`PmodDA4 Linux devicetree <Pmods/PmodDA4/dts>`
-   -  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
-   
-      -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
-   
-   Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
-   
-   There are 2 ways to test the driver.
-   
-   -  Using the terminal window
-   -  Using a serial terminal
-   
-   Using the terminal window
-   -------------------------
-   
-   Open a new terminal window by pressing **Ctrl+Alt+T**.
-   
-   Navigate to the location of the device and identify it using the following commands:
-   
-   ::
-   
-      cd /sys/bus/iio/devices/
-      ls
-      iio:device0 iio:device1 trigger0
-      cd iio\:device0
-      cat name
-      ad5628-1
-   
-   If the **cat name** command doesn't return **ad5628-1**, then change the number of the iio:device, and check again.
-   
-   ::
-   
-      cd ..
-      cd iio\:device1
-      cat name
-   
-   To see the list of options that the AD5628 driver provides, type:
-   
-   ::
-   
-      ls
-      dev                          out_voltage4_powerdown_mode
-      name                         out_voltage4_raw
-      out_voltage0_powerdown       out_voltage4_scale
-      out_voltage0_powerdown_mode  out_voltage5_powerdown
-      out_voltage0_raw             out_voltage5_powerdown_mode
-      out_voltage0_scale           out_voltage5_raw
-      out_voltage1_powerdown       out_voltage5_scale
-      out_voltage1_powerdown_mode  out_voltage6_powerdown
-      out_voltage1_raw             out_voltage6_powerdown_mode
-      out_voltage1_scale           out_voltage6_raw
-      out_voltage2_powerdown       out_voltage6_scale
-      out_voltage2_powerdown_mode  out_voltage7_powerdown
-      out_voltage2_raw             out_voltage7_powerdown_mode
-      out_voltage2_scale           out_voltage7_raw
-      out_voltage3_powerdown       out_voltage7_scale
-      out_voltage3_powerdown_mode  out_voltage_powerdown_mode_available
-      out_voltage3_raw             power
-      out_voltage3_scale           subsystem
-      out_voltage4_powerdown       uevent
-   
-   To set the raw output voltage for channel A, type:
-   
-   ::
-   
-      echo 1200 > out_voltage0_raw
-   
-   To check that the raw output voltage has been set, you can type:
-   
-   ::
-   
-      cat out_voltage0_raw
-      1200
-   
-   If you want to set the voltage for another channel, replace **out_voltage0_raw** with, for example, **out_voltage1_raw**.
-   
-   .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5628_linaro_terminal.jpg
-      :alt: AD5628 Set Voltage from Terminal
-      :width: 600px
-   
-   The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+Connect PmodDA4 to the JB1 connector of the ZedBoard (upper row of pins).
 
-   
-   |AD5628 Read Voltage from Serial Terminal|
+Preparing the SD Card
+---------------------
+
+In order to prepare the SD Card for booting Linux on the ZedBoard:
+
+-  Download the device tree: :git-no-OS:`PmodDA4 Linux devicetree <Pmods/PmodDA4/dts>`
+-  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
+
+   -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
+
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+
+There are 2 ways to test the driver.
+
+-  Using the terminal window
+-  Using a serial terminal
+
+Using the terminal window
+-------------------------
+
+Open a new terminal window by pressing **Ctrl+Alt+T**.
+
+Navigate to the location of the device and identify it using the following commands:
+
+::
+
+   cd /sys/bus/iio/devices/
+   ls
+   iio:device0 iio:device1 trigger0
+   cd iio\:device0
+   cat name
+   ad5628-1
+
+If the **cat name** command doesn't return **ad5628-1**, then change the number of the iio:device, and check again.
+
+::
+
+   cd ..
+   cd iio\:device1
+   cat name
+
+To see the list of options that the AD5628 driver provides, type:
+
+::
+
+   ls
+   dev                          out_voltage4_powerdown_mode
+   name                         out_voltage4_raw
+   out_voltage0_powerdown       out_voltage4_scale
+   out_voltage0_powerdown_mode  out_voltage5_powerdown
+   out_voltage0_raw             out_voltage5_powerdown_mode
+   out_voltage0_scale           out_voltage5_raw
+   out_voltage1_powerdown       out_voltage5_scale
+   out_voltage1_powerdown_mode  out_voltage6_powerdown
+   out_voltage1_raw             out_voltage6_powerdown_mode
+   out_voltage1_scale           out_voltage6_raw
+   out_voltage2_powerdown       out_voltage6_scale
+   out_voltage2_powerdown_mode  out_voltage7_powerdown
+   out_voltage2_raw             out_voltage7_powerdown_mode
+   out_voltage2_scale           out_voltage7_raw
+   out_voltage3_powerdown       out_voltage7_scale
+   out_voltage3_powerdown_mode  out_voltage_powerdown_mode_available
+   out_voltage3_raw             power
+   out_voltage3_scale           subsystem
+   out_voltage4_powerdown       uevent
+
+To set the raw output voltage for channel A, type:
+
+::
+
+   echo 1200 > out_voltage0_raw
+
+To check that the raw output voltage has been set, you can type:
+
+::
+
+   cat out_voltage0_raw
+   1200
+
+If you want to set the voltage for another channel, replace **out_voltage0_raw** with, for example, **out_voltage1_raw**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5628_linaro_terminal.jpg
+   :alt: AD5628 Set Voltage from Terminal
+   :width: 600px
+
+The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5628_linux_serial.jpg
+   :alt: AD5628 Read Voltage from Serial Terminal
+   :width: 600px
 
 More information
 ----------------
@@ -339,6 +331,4 @@ More information
 
 |//ez.analog.com/community/feeds/allcontent/atom|
 
-.. |AD5628 Read Voltage from Serial Terminal| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5628_linux_serial.jpg
-   :width: 600px
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

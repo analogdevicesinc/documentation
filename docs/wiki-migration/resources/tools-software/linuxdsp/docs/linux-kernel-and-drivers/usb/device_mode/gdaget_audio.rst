@@ -41,7 +41,7 @@ Then run “bitbake adsp-sc5xx-minimal -C compile” or “bitbake adsp-sc5xx-fu
 Kernel Configuration
 ~~~~~~~~~~~~~~~~~~~~
 
-.. code:: c++
+.. code:: console
 
    $ bitbake linux-adi -c menuconfig
 
@@ -52,13 +52,13 @@ Configure the USB drivers to Gadget only mode (or Dual role mode )
 
    Device Drivers  --->
        [*] USB support  --->
-                   <*>   Support for Host-side USB  
+                   <*>   Support for Host-side USB
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Dual role mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                    <*>   USB Gadget Support  --->
 
@@ -69,14 +69,14 @@ Configure the Gadget Audio support
 
 .. code:: shell
 
-   Device Drivers  --->  
-        <*> USB support 
-              <*>   Support for Host-side USB  
-        <*> Sound card support  ---> 
-             <*>   Advanced Linux Sound Architecture  ---> 
+   Device Drivers  --->
+        <*> USB support
+              <*>   Support for Host-side USB
+        <*> Sound card support  --->
+             <*>   Advanced Linux Sound Architecture  --->
                  [*]   USB sound devices
 
--  **<fc #ff00ff>For Class 1.0</fc>**
+-  **For Class 1.0**
 
 .. code:: shell
 
@@ -88,7 +88,7 @@ Configure the Gadget Audio support
                           [*] UAC 1.0
                           [*]  UAC 1.0(Legacy
 
--  **<fc #ff00ff>For Class 2.0</fc>**
+-  **For Class 2.0**
 
 .. code:: shell
 
@@ -111,12 +111,12 @@ Class 1.0
 Ez-Kit target board
 ^^^^^^^^^^^^^^^^^^^
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# ls /dev/snd/
    controlC0  pcmC0D0p   pcmC0D1c   timer
-   root@adsp-sc589-ezkit:~# modprobe g_audio 
-   modprobe g_audio fn_play=/dev/snd/pcmC0D0p fn_cap=/dev/snd/pcmC0D1c   
+   root@adsp-sc589-ezkit:~# modprobe g_audio
+   modprobe g_audio fn_play=/dev/snd/pcmC0D0p fn_cap=/dev/snd/pcmC0D1c
    g_audio gadget: Hardware params: access 3, format 2, channels 2, rate 48000
    g_audio gadget: Linux USB Audio Gadget, version: Feb 2, 2012
    g_audio gadget: g_audio ready
@@ -127,14 +127,14 @@ On the Linux-Host PC
 
 With following command you should be able to see the USB Gadget Audio device is there on your HOST:
 
-.. code:: c++
+.. code:: console
 
    test@madara:~$ lsusb
    Bus 002 Device 033: ID 1d6b:0101 Linux Foundation Audio Gadget
 
 Then we list the available sound card on host PC, to decide which sound card is associated with EZKIT board
 
-.. code:: c++
+.. code:: console
 
    test@madara:~$ cat /proc/asound/cards
     0 [PCH            ]: HDA-Intel - HDA Intel PCH
@@ -142,10 +142,10 @@ Then we list the available sound card on host PC, to decide which sound card is 
     1 [Gadget         ]: USB-Audio - Linux USB Audio Gadget
                          Linux 4.19.0-yocto-standard with musb-hdrc Linux USB Audio Gadget at usb-0000:0
 
-.. code:: c++
+.. code:: console
 
    test@madara:~$ aplay -l
-   **** List of PLAYBACK Hardware Devices ****
+   *** List of PLAYBACK Hardware Devices ***
    card 0: PCH [HDA Intel PCH], device 0: CX20641 Analog [CX20641 Analog]
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -170,12 +170,10 @@ Now, from the headset we can hear music is playing out.
 Class 2.0
 ~~~~~~~~~
 
-.. _ez-kit-target-board-1:
-
 Ez-Kit target board
 ^^^^^^^^^^^^^^^^^^^
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# ls /dev/snd/
    controlC0  pcmC0D0p   pcmC0D1c   timer
@@ -186,10 +184,10 @@ Ez-Kit target board
 
 New Sound Card UAC2Gadget(card 1) is generated both for playback and capture on ezkit board:
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# arecord -l
-   **** List of CAPTURE Hardware Devices ****
+   *** List of CAPTURE Hardware Devices ***
    card 0: sc5xxasoccard [sc5xx-asoc-card], device 1: ADAU1979 adau1977-hifi-1 []
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -197,7 +195,7 @@ New Sound Card UAC2Gadget(card 1) is generated both for playback and capture on 
      Subdevices: 1/1
      Subdevice #0: subdevice #0
    root@adsp-sc589-ezkit:~# aplay -l
-   **** List of PLAYBACK Hardware Devices ****
+   *** List of PLAYBACK Hardware Devices ***
    card 0: sc5xxasoccard [sc5xx-asoc-card], device 0: ADAU1962 adau1962.0-0004-0 []
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -207,7 +205,7 @@ New Sound Card UAC2Gadget(card 1) is generated both for playback and capture on 
 
 Record audio data from the new generated UAC2 sound card (arecord **``card 1``**, **``device 0``**) and play the record data via normal playback device (aplay **``card 0``**, **``device 1``**)
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# arecord -f dat -t wav -D hw:1,0 -c 2 -r 48000 -f S16_LE |aplay -D hw:0,0
    Recording WAVE 'stdin' : Signed 16 bit Little Endian, Rate 48000 Hz, Stereo
@@ -221,21 +219,19 @@ On Iphone
 
 Just play music on your Iphone, you will hear the sound output from ezkit board.
 
-.. _on-the-linux-host-pc-1:
-
 On the Linux-Host PC
 """"""""""""""""""""
 
 With following command you should be able to see the USB Gadget Audio device is there on your HOST:
 
-.. code:: c++
+.. code:: console
 
    test@madara:~$ lsusb
    Bus 002 Device 033: ID 1d6b:0101 Linux Foundation Audio Gadget
 
 Then we list the available sound card on host PC, to decide which sound card is associated with EZKIT board
 
-.. code:: c++
+.. code:: console
 
    test@madara:~$ cat /proc/asound/cards
     0 [PCH            ]: HDA-Intel - HDA Intel PCH
@@ -243,10 +239,10 @@ Then we list the available sound card on host PC, to decide which sound card is 
     1 [Gadget         ]: USB-Audio - Linux USB Audio Gadget
                          Linux 4.19.0-yocto-standard with musb-hdrc Linux USB Audio Gadget at usb-0000:0
 
-.. code:: c++
+.. code:: console
 
    test@madara:~$ aplay -l
-   **** List of PLAYBACK Hardware Devices ****
+   *** List of PLAYBACK Hardware Devices ***
    card 0: PCH [HDA Intel PCH], device 0: CX20641 Analog [CX20641 Analog]
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -257,7 +253,7 @@ Then we list the available sound card on host PC, to decide which sound card is 
      Subdevices: 1/1
      Subdevice #0: subdevice #0
    test@madara:~$ arecord -l
-   **** List of CAPTURE Hardware Devices ****
+   *** List of CAPTURE Hardware Devices ***
    card 0: PCH [HDA Intel PCH], device 0: CX20641 Analog [CX20641 Analog]
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -270,7 +266,7 @@ Then we list the available sound card on host PC, to decide which sound card is 
 
 USB Auido Gadget is the sound card 1 (aplay **``card 1``**, **``device 0``**) and Play audio file
 
-.. code:: c++
+.. code:: console
 
    test@madara:~$ aplay -D hw:1,0 sample_s16_le.wav
    Playing WAVE 'sample_s16_le.wav' : Signed 16 bit Little Endian, Rate 48000 Hz, Stereo

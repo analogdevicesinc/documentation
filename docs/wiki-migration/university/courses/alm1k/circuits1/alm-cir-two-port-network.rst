@@ -180,13 +180,7 @@ Before you start it is a good idea to measure all the resistors to be used in th
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 module
-| Solderless breadboard
-| Jumper wires
-| 1 – 68 Ω resistor
-| 2 – 100 Ω resistors
-| 3 – 470 Ω resistors
-| 1 – 1 kΩ resistor
+ADALM1000 module Solderless breadboard Jumper wires 1 – 68 Ω resistor 2 – 100 Ω resistors 3 – 470 Ω resistors 1 – 1 kΩ resistor
 
 Construct the two-port network on the solderless breadboard as shown in figure . Since the negative terminal of port 1 and negative terminal of port 2 are the same node (i.e. shorted together) only one connection to the ground of the M1k connector is needed.
 

@@ -10,9 +10,7 @@ ADTF3175
 
 The ADTF3175 is a complete Time-Of-Flight (ToF) module for high resolution 3D depth sensing and vision systems. Using the ADSD3100 ToF image sensor, the ADTF3175 also integrates the lens and optical band-pass filter for the imager, an infrared illumination source containing optics, laser diode driver and photodetector, a flash memory, and power regulators to generate local supply voltages.
 
-\*\* Product Page \*\*
-
-**IMAGE OF CROSBY**
+\*\* Product Page \*\**IMAGE OF CROSBY**
 
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -22,7 +20,7 @@ Simplified Block Diagram
 
 For full block diagram please refer to datasheet
 
-\* Link to ADSD3100 datasheet \* Link to NVM
+- Link to ADSD3100 datasheet \* Link to NVM
 
 NVM Contents
 ~~~~~~~~~~~~
@@ -45,11 +43,7 @@ ADSD3500
 
 The ADSD3500 is a depth ISP, designed to compute the raw data of the ADSD3100 and ADSD3030 ToF imagers into Radial Depth and Active Brightness (AB) frames. The ADSD3500 greatly lightens the load on the host processer and makes it simpler to implement applications at the edge.
 
-\*\* Product Page \*\*
-
-**IMAGE OF ADSD3500**
-
-.. _simplified-block-diagram-1:
+\*\* Product Page \*\**IMAGE OF ADSD3500**
 
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,9 +54,7 @@ Simplified Block Diagram
 
 For full block diagram please refer to datasheet
 
-\* Link to ADSD3500 datasheet
-
-.. _eval-adtf3175d-nxz-usecase-1:
+- Link to ADSD3500 datasheet
 
 EVAL-ADTF3175D-NXZ Usecase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,8 +73,6 @@ An NXP i.MX8M SOM is used as the embedded devkit for this evaluation platform. A
 -  `carrier-schematic.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175-nxz/carrier-schematic.pdf>`_
 -  `som_carrier-datasheet.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175-nxz/som_carrier-datasheet.pdf>`_
 
-.. _simplified-block-diagram-2:
-
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -95,8 +85,6 @@ NXP i.MX8M reference drivers
 
 -  Custom V4L2 Camera Sensor Driver
 -  USB Video Driver (UVC)
-
-.. _eval-adtf3175d-nxz-usecase-2:
 
 EVAL-ADTF3175D-NXZ Usecase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,8 +106,6 @@ The Host PC captures data provided by the SOM through network over USB, and also
 
 Once data is received via the SDK, the data run through a depth compute library to generate radial depth, active brightness and confidence data. XYZ data can also be generated using the lens calibration parameters stored on the ADTF3175 NVM.
 
-.. _simplified-block-diagram-3:
-
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -133,8 +119,6 @@ SDK
 An open source SDK for this evaluation platform is provided on :git-ToF>`__. The SDK also requires the depth compute libraries which are provided as binaries in the installer @ ` <https::`ToF </github.com/analogdevicesinc/ToF/releases>`.
 
 The SDK comes with a GUI and first frame examples. As well as bindings for Python, OpenCV, ROS and Open3D.
-
-.. _eval-adtf3175d-nxz-usecase-3:
 
 EVAL-ADTF3175D-NXZ Usecase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -16,8 +16,7 @@ After following the instructions in the Software Installation Procedures section
    The ACE software and drivers must be installed before connecting the EVAL-AD7173-8ARDZ and the EVAL-SDP-CK1Z board to the USB port of the PC to ensure that the PC correctly recognizes the evaluation system
 
 
-| **Configuring the Evaluation and SDP Boards**
-| Use the following procedure to configure the boards
+**Configuring the Evaluation and SDP Boards** Use the following procedure to configure the boards
 
 -  Connect the SDP-K1 to the Arduino headers of the evaluation board.
 -  If using the SDP-K1 board the Arduino headers can also be used to connect to the board
@@ -183,7 +182,7 @@ There are four primary signals: CS, SCLK, MOSI/DIN, and MISO/DOUT (all are input
 Serial communication options
 ----------------------------
 
--  Arduino connection using the SDP-K1 
+-  Arduino connection using the SDP-K1
 -  PMOD connector
 -  Standalone mode
 
@@ -261,5 +260,4 @@ Schematic, PCB Layout, Bill of Materials
    
 
 
-| :doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/software>`
-| :doc:`Return to Homepage </wiki-migration/resources/eval/eval-ad7173-8ardz>`
+:doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/software>` :doc:`Return to Homepage </wiki-migration/resources/eval/eval-ad7173-8ardz>`

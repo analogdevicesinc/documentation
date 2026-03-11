@@ -78,8 +78,7 @@ Then go to the **\*PROJECT LOCATION WITHIN HDL (EX: projects/ad353xr/coraz7s or 
    user@analog:~$ cd hdl/projects/ad353xr/coraz7s
    user@analog:~/hdl/projects/ad353xr/coraz7s$ make
 
-| Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files.
-| A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
+Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files. A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
 
 Connections
 ~~~~~~~~~~~

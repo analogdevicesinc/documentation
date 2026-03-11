@@ -63,8 +63,6 @@ Data Collect, Eval Kit 5.0.0
    \ **Note:** In eval kit **v5.0.0** --ft option is removed. The output of data collect is a **.bin** file which contain Active brightness, depth, confidence and point cloud. These frames can be visualized using **ADIToFGUI.**\
 
 
-.. _description-1:
-
 Description
 -----------
 
@@ -105,8 +103,6 @@ Since the ADTF3175D eval kit works via ethernet over usb, the user must specify 
 Data Collect, Eval Kit 4.3.0 or earlier
 =======================================
 
-.. _description-2:
-
 Description
 -----------
 
@@ -125,8 +121,6 @@ Flag descriptions:
 -  --h : Call help string for all options
 
 More information can be found in readme
-
-.. _eval-adtf3175d-nxz-example-1:
 
 EVAL-ADTF3175D-NXZ Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

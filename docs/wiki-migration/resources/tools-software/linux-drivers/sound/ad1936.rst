@@ -45,7 +45,12 @@ Files
 Example device initialization
 =============================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 You need to set the modalias of your SPI info according to your codec. Valid values are "ad1935" and "ad1937", You'll also have to adjust bus_num and chip_select according to your board setup.
 
@@ -233,16 +238,16 @@ To add support for the built-in codec AD193X of BF5XX to the kernel build system
 ::
 
    Linux Kernel Configuration
-     Device Drivers  ---> 
-       Sound  ---> 
+     Device Drivers  --->
+       Sound  --->
          <M> Sound card support
            Advanced Linux Sound Architecture  --->
              <M> Advanced Linux Sound Architecture
              < > Sequencer support
-             <M> OSS Mixer API 
+             <M> OSS Mixer API
              <M> OSS PCM (digital audio) API
              <M>   ALSA for SoC audio support  --->
                  <M>   SoC I2S(TDM mode) Audio for the ADI BF5xx chip
-                 <M>   SoC AD193X Audio support for BF5xx                      
+                 <M>   SoC AD193X Audio support for BF5xx
 
 Doing this will create modules (outside the kernel). The modules will be inserted automatically when it is needed. You can also build sound driver into kernel.

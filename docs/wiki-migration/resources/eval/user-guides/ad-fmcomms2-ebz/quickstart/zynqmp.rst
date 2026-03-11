@@ -47,16 +47,13 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
 
    .. raw:: html
 
-      <details><summary>Boot log (click to expand)</summary>
+      <details><summary>Boot log (click to expand)
 
    ::
    
@@ -74,7 +71,7 @@ Messages
       EL Level:       EL2
       Chip ID:        zu9eg
       MMC:   sdhci@ff170000: 0 (SD)
-      *** Warning - bad CRC, using default environment
+      ** Warning - bad CRC, using default environment
    
       In:    serial@ff000000
       Out:   serial@ff000000
@@ -775,10 +772,7 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -794,10 +788,7 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

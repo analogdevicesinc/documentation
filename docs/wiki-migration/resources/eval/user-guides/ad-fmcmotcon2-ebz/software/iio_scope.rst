@@ -46,8 +46,12 @@ The IIO Oscilloscope allows to monitor current, voltage, speed and control signa
 Control
 ~~~~~~~
 
-| This dialog allows the control of the two motors in manual mode by directly specifying the fill factor of the PWM signals applied used to control the 3 phase inverters. The motors are driven using a 6 step comutation algorithm.
-| |Manual Control|
+This dialog allows the control of the two motors in manual mode by directly specifying the fill factor of the PWM signals applied used to control the 3 phase inverters. The motors are driven using a 6 step comutation algorithm.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/software/mc_manual_ctrl.png
+   :alt: Manual Control
+   :align: left
+   :width: 400px
 
 +-----------+--------------------------------------------------------------------------------+
 | Control   | Description                                                                    |
@@ -61,8 +65,5 @@ Control
 | PWM       | In Manual mode, the PWM can be set between 50% - 100%                          |
 +-----------+--------------------------------------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON2-EBZ#linux_drivers
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/software/navigation AD-FMCMOTCON2-EBZ#linux_drivers
    :alt: Linux Drivers#..:\|Overview#none
-
-.. |Manual Control| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/software/mc_manual_ctrl.png
-   :width: 400px

@@ -16,20 +16,15 @@ Under Bus configuration, there are multiple sections as shown in the below image
 Section Specification
 ---------------------
 
-| :doc:`Version_Info </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/version>` - Version Information of Bus Configuration File
-| :doc:`Bus_Properties </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/busprop>` - Bus Properties indicating number of nodes in the A2B Network
-| :doc:`Master_Slave_Chains </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/masterslavechains>` - Label used for A2B Chain
-| :doc:`Master_Slave_Chain </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/masterslavechain>` - Details of main node and slave nodes configurations
-| :doc:`Network_Configuration </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/networkcfg>` - Properties of the A2B Network
-| :doc:`Stream_Configuration </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/streamcfg>` - Details of Stream Configuration
-| :doc:`TimeStamp and Signature </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/timestamp>`
-| Differences in Specification on different plugins
+:doc:`Version_Info </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/version>` - Version Information of Bus Configuration File :doc:`Bus_Properties </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/busprop>` - Bus Properties indicating number of nodes in the A2B Network :doc:`Master_Slave_Chains </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/masterslavechains>` - Label used for A2B Chain :doc:`Master_Slave_Chain </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/masterslavechain>` - Details of main node and slave nodes configurations :doc:`Network_Configuration </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/networkcfg>` - Properties of the A2B Network :doc:`Stream_Configuration </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/streamcfg>` - Details of Stream Configuration :doc:`TimeStamp and Signature </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml/timestamp>`
+
+Differences in Specification on different plugins
 
 +---+
 | \*\* Xml Fields\ **\|** SigmaStudio+                     |
 | (ADI_A2B-SSPlus_Software-Rel1.3.2) **\|** SigmaStudio    |
 | (ADI_A2B_Software-Rel19.10.0) **\|** SigmaStudio         |
-| (ADI_A2B_Software-Rel19.4.5) **\|** Comments \*\*        |
+| (ADI_A2B_Software-Rel19.4.5) **\|** Comments**        |
 +---+
 
 | A2BDLL_Version (A2B Plugin Version)                      |

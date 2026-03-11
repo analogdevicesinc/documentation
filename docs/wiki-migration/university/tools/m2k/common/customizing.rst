@@ -84,19 +84,16 @@ Use the ``device_passwd`` command to permanently change the password. This scrip
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
    
-      # **device_passwd** 
+      # **device_passwd**
       Changing password for root
-      New password: 
+      New password:
       Bad password: too short
-      Retype password: 
+      Retype password:
       passwd: password for root changed by root
       #
    
@@ -113,15 +110,12 @@ Use the ``device_persistent_keys`` command to permanently store your private SSH
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
    
-      # **device_persistent_keys** 
+      # **device_persistent_keys**
       Generating 256 bit ecdsa key, this may take a while...
       Public key portion is:
       ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH+cMtkirbmWjOq+EjW0Lzir5LVuWXFwRTOMOnb0eWo

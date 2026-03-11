@@ -11,8 +11,7 @@ The :adi:`AD74115H` is a single-channel software configurable input/output devic
 Circuit Description
 -------------------
 
-| Figure 1 shows the connectivity between the AD74115H and the ADP1034. This diagram shows a fully isolated solution for a single channel software configurable I/O. The AVDD, AVCC, DVCC and AVSS supply voltages for the AD74115H are provided by the ADP1034. The AVDD supply is fixed at 24 V. To improve the accuracy of the input/output functions the ADR4525 2.5 V external reference is used. HART functionality is not enabled. The interface to the ADP1034 used is the SDP-K1 controller board. The resistor connecting the SDP-K1 GPIO to the AD74115H RESET pin is removed to mitigate the SDP-K1 pulling Reset low during testing.
-| On-chip line protectors ensure that the I/OP screw terminal does not provide power to the IC when brought to a higher potential than the AVDD pin. The recommended external components documented in the :adi:`AD74115H` datasheet, including the TVS, are selected to withstand surge on the input/output terminals. With the recommended components, the I/OP and I/ON screw terminals tolerate over-voltages up to ± 36 V (limited by the external TVS).
+Figure 1 shows the connectivity between the AD74115H and the ADP1034. This diagram shows a fully isolated solution for a single channel software configurable I/O. The AVDD, AVCC, DVCC and AVSS supply voltages for the AD74115H are provided by the ADP1034. The AVDD supply is fixed at 24 V. To improve the accuracy of the input/output functions the ADR4525 2.5 V external reference is used. HART functionality is not enabled. The interface to the ADP1034 used is the SDP-K1 controller board. The resistor connecting the SDP-K1 GPIO to the AD74115H RESET pin is removed to mitigate the SDP-K1 pulling Reset low during testing. On-chip line protectors ensure that the I/OP screw terminal does not provide power to the IC when brought to a higher potential than the AVDD pin. The recommended external components documented in the :adi:`AD74115H` datasheet, including the TVS, are selected to withstand surge on the input/output terminals. With the recommended components, the I/OP and I/ON screw terminals tolerate over-voltages up to ± 36 V (limited by the external TVS).
 
 Below is a summary of the configuration settings on the board:
 
@@ -24,7 +23,10 @@ Below is a summary of the configuration settings on the board:
    *AVSS = − 15 V
    *DVCC = AVCC = 5 V
 
-| The AD74115H board was configured using the SDP-K1 interface board and a python script. |image1|
+The AD74115H board was configured using the SDP-K1 interface board and a python script.
+
+
+|image1|
 
 .. container:: centeralign
 
@@ -56,7 +58,7 @@ Table 1
 Performance Summary
 -------------------
 
-| Table 2 gives a summary of the immunity test results. More details are available on each test result linked at the end.
+Table 2 gives a summary of the immunity test results. More details are available on each test result linked at the end.
 
 Table 2
 ~~~~~~~
@@ -90,9 +92,9 @@ Table 2
 
 ::
 
-   *[[/resources/technical-guides/esd|AD74115H ESD Test Results]] - Provides all the details of the ESD tests and results. 
-   *[[/resources/technical-guides/eft|AD74115H EFT Test Results]] - Provides all the details of the ESD tests and results. 
-   *[[/resources/technical-guides/surge|AD74115H Surge Test Results]] - Provides all the details of the ESD tests and results. 
+   *[[/resources/technical-guides/esd|AD74115H ESD Test Results]] - Provides all the details of the ESD tests and results.
+   *[[/resources/technical-guides/eft|AD74115H EFT Test Results]] - Provides all the details of the ESD tests and results.
+   *[[/resources/technical-guides/surge|AD74115H Surge Test Results]] - Provides all the details of the ESD tests and results.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/technical-guides/ad74115h_adp1034_circuit_diagram.png
    :width: 900px

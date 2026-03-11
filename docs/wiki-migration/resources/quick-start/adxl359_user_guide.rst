@@ -1,10 +1,12 @@
 -- ADXL359 User Guide --
 ========================
 
-| *Useful links:
-  ADXL359* :adi:`product page <adxl359>` *\|* :adi:`datasheet <media/en/technical-documentation/data-sheets/adxl359.pdf>`\ *.
-  *
-| ===== Device Overview ===== The :adi:`adxl359` is a low noise density, low 0 g offset drift, low power, 3-axis accelerometer with selectable measurement range (10g, 20g, and 40g). The ADXL359 offers industrial leading noise, minimal offset drift over temperature, and long-term stability, enabling precision applications with minimal calibration.
+*Useful links: ADXL359* :adi:`product page <adxl359>` *\|* :adi:`datasheet <media/en/technical-documentation/data-sheets/adxl359.pdf>`\ *.*
+
+Device Overview
+---------------
+
+The :adi:`adxl359` is a low noise density, low 0 g offset drift, low power, 3-axis accelerometer with selectable measurement range (10g, 20g, and 40g). The ADXL359 offers industrial leading noise, minimal offset drift over temperature, and long-term stability, enabling precision applications with minimal calibration.
 
 The low drift, low noise, and low power ADXL359 enables accurate tilt measurement in an environment with high vibration, such as airborne IMUs. The low noise over higher frequencies is ideal for wireless condition monitoring.
 

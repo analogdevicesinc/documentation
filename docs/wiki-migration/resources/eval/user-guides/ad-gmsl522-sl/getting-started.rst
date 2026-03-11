@@ -1,14 +1,14 @@
 AD-GMSL522-SL Getting Started Guide
 ===================================
 
-|
-
 .. note::
 
    The default username and password for the device are as follows:
 
-   | Username: analog
-   | Password: analog
+   
+   Username: analog
+   
+   Password: analog
 
 
 Introduction
@@ -28,19 +28,23 @@ This page will go over high-level features and functions of the AD-GMSL522-SL Bo
 -  Required software download/install
 -  Recommended tools/software
 
-| 
-| ==== Pre-Requisites ==== No prior training is required to go through the content of this document. A basic understanding of the GMSL technology, however, is recommended. The following sub-sections detail the required and recommended hardware/software to get the AD-GMSL522-SL board up and running properly.
+Pre-Requisites
+~~~~~~~~~~~~~~
 
-| 
-| ==== Required Hardware ==== The following hardware is required to enable critical features of the AD-GMSL522-SL Board. The AD-GMSL522-SL board and vetted hardware is shown below. The customer will need to procure their own Jetson Module and corresponding heatsink.
+No prior training is required to go through the content of this document. A basic understanding of the GMSL technology, however, is recommended. The following sub-sections detail the required and recommended hardware/software to get the AD-GMSL522-SL board up and running properly.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+The following hardware is required to enable critical features of the AD-GMSL522-SL Board. The AD-GMSL522-SL board and vetted hardware is shown below. The customer will need to procure their own Jetson Module and corresponding heatsink.
 
 -  AD-GMSL522-SL Board: https://wcm2.cldnet.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-gmsl522-sl.html
 -  (If not using SoM-included version) Compatible Jetson SOM: https://www.arrow.com/en/products/900-83668-0000-000/nvidia
 -  (If not using SoM-included version) Heat Sink for SOM: https://www.mouser.com/ProductDetail/Auvidea/70797?qs=vmHwEFxEFR%2FrptlH5I2KWQ%3D%3D
 -  12V 8A Power Supply: https://www.amazon.com/TOBWOLF-100V-240V-Transformer-Switching-Converter/dp/B0B1DGBVKB?th=1
 
-| 
-| ==== Recommended Hardware ====
+Recommended Hardware
+~~~~~~~~~~~~~~~~~~~~
 
 -  Ethernet Cable or USB<->WIFI Adapter
 -  MicroUSB Cable
@@ -48,27 +52,30 @@ This page will go over high-level features and functions of the AD-GMSL522-SL Bo
 -  NVMe Module: https://www.amazon.com/dp/B09QVP977F?ref_=cm_sw_r_cso_em_apin_dp_G1BNY16H5HNVZBR4SAHA
 -  SD Card: https://www.amazon.com/dp/B09X7CRKRZ?psc=1
 
-| 
-| ==== Required Software and Downloads ====
+Required Software and Downloads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  AD-GMSL522-SL image for flashing: https://swdownloads.analog.com/cse/aditof/Viper/gmsl522_1.tar.gz
--  GMSL GUI Server and other useful tools: :git-gmsl:`AD-GMSL522-SL`
+-  GMSL GUI Server and other useful tools: `AD-GMSL522-SL <https://github.com/analogdevicesinc/gmsl/tree/tools/AD-GMSL522-SL>`_
 
-| 
-| ==== Recommended Tools and Software ==== The following software are tools that are commonly referenced and used during different examples, demos and tutorials for AD-GMSL522-SL. To be able to easily follow along with these lessons, it is recommended to download and install these tools.
+Recommended Tools and Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following software are tools that are commonly referenced and used during different examples, demos and tutorials for AD-GMSL522-SL. To be able to easily follow along with these lessons, it is recommended to download and install these tools.
 
 -  NoMachine (there is a following section below for more information)
 
-| 
-| ----
+--------------
 
 AD-GMSL522-SL Hardware Overview
 -------------------------------
 
 In this section, the inputs, outputs, and other general hardware features of the AD-GMSL522-SL board will be discussed.
 
-| 
-| ==== GMSL Camera Inputs ==== One way to send video data to the AD-GMSL522-SL board is through GMSL-2 compatible camera modules. They can be connected to the onboard FAKRA connectors, INA+, INB+, INC+, and IND+. These FAKRA connectors are connected directly to the onboard MAX96724. In addition to being connected to the deserializer these connectors are also shorted to +12V. This means that the camera modules can be powered from the AD-GMSL522-SL board and do not need to be powered internally. This is important to note because it means that another voltage source should not be connected to these FAKRA connectors, otherwise damage could be caused to either the AD-GMSL522-SL board, or the user’s module.
+GMSL Camera Inputs
+~~~~~~~~~~~~~~~~~~
+
+One way to send video data to the AD-GMSL522-SL board is through GMSL-2 compatible camera modules. They can be connected to the onboard FAKRA connectors, INA+, INB+, INC+, and IND+. These FAKRA connectors are connected directly to the onboard MAX96724. In addition to being connected to the deserializer these connectors are also shorted to +12V. This means that the camera modules can be powered from the AD-GMSL522-SL board and do not need to be powered internally. This is important to note because it means that another voltage source should not be connected to these FAKRA connectors, otherwise damage could be caused to either the AD-GMSL522-SL board, or the user’s module.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_fakra_Board_correct_output.png
    :align: center
@@ -80,14 +87,19 @@ The MAX96724 has its Port B CSI-2 DPHY bus connected to the input of the Jetson 
    :align: center
    :width: 800px
 
-| 
-| ==== CSI Input to Jetson SoM ==== Depending on whether you are using camera modules through the onboard MAX96724, or an Evkit connected to the onboard CSI SAMTEC connector, or both, you will need to know which CSI input port to the Jetson is connected. The below graphic shows which CSI Ports on the Jetson go to which video inputs to the AD-GMSL522-SL board.
+CSI Input to Jetson SoM
+~~~~~~~~~~~~~~~~~~~~~~~
 
-| For more specifics about CSI connections, refer to the hardware overview document: :doc:`hardware </wiki-migration/resources/eval/user-guides/ad-gmsl522-sl/hardware>`
-| ==== I2C Busses ==== The Jetson has many different possible I2C busses and therefore it is important to know which I2C bus connects to where on AD-GMSL522-SL board. For more specifics about the I2C busses on AD-GMSL522-SL board, refer to the hardware overview document: :doc:`hardware </wiki-migration/resources/eval/user-guides/ad-gmsl522-sl/hardware>`
+Depending on whether you are using camera modules through the onboard MAX96724, or an Evkit connected to the onboard CSI SAMTEC connector, or both, you will need to know which CSI input port to the Jetson is connected. The below graphic shows which CSI Ports on the Jetson go to which video inputs to the AD-GMSL522-SL board.
 
-| 
-| ----
+For more specifics about CSI connections, refer to the hardware overview document: :doc:`hardware </wiki-migration/resources/eval/user-guides/ad-gmsl522-sl/hardware>`
+
+I2C Busses
+~~~~~~~~~~
+
+The Jetson has many different possible I2C busses and therefore it is important to know which I2C bus connects to where on AD-GMSL522-SL board. For more specifics about the I2C busses on AD-GMSL522-SL board, refer to the hardware overview document: :doc:`hardware </wiki-migration/resources/eval/user-guides/ad-gmsl522-sl/hardware>`
+
+--------------
 
 First Time Setup / Getting Started
 ----------------------------------
@@ -99,15 +111,17 @@ Assembling the SoM to the Board
 -  Next, plug in the SOM to the AD-GMSL522-SL board at an angle, and once the SOM is seated into the connector, push the SOM down until it is parallel with the carrier board, at which point the locks should engage to keep the SOM at a certain position.
 -  Install standoffs to keep SOM safely in a firm and locked position.
 
-| 
-| ==== Flashing the AD-GMSL522-SL Board ====
+Flashing the AD-GMSL522-SL Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
 
    In this next section, if you see an error during flashing, indicating 'strings' is not installed, run the following commands on your host PC to install the required libraries:
 
-   | *sudo apt update*
-   | *sudo apt install binutils*\
+   
+   *sudo apt update*
+   
+   *sudo apt install binutils*\
 
 
 First, your Linux PC needs to be configured to be able to flash Jetson devices. To do this, follow NVIDIA’s documentation to install and run their “SDK Manager” program: https://docs.nvidia.com/sdk-manager/download-run-sdkm/index.html Now, let’s begin with flashing the AD-GMSL522-SL image onto the NVIDIA Xavier SOM. Follow the next steps to do so:
@@ -140,8 +154,8 @@ First, your Linux PC needs to be configured to be able to flash Jetson devices. 
    It is very important at this point not to run automatic installing commands like apt-get update because the current viper file system was created with an older version of JetPack -- 5.3.1.
 
 
-| 
-| ==== Updating the Digital Potentiometers on AD-GMSL522-SL ====
+Updating the Digital Potentiometers on AD-GMSL522-SL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -162,15 +176,19 @@ The digital potentiometers on the AD-GMSL522-SL board control the voltage that i
 
    -  sudo ./vr_config.sh
 
-| 
-| === How to Change Configuration Pin Voltages for Onboard SERDES === Below is an example of the digital potentiometer circuit on the AD-GMSL522-SL board. As you can see, the digital pot sets the point along the internal where the voltage is measured. Because the internal resistor of the potentiometer is 200k, the pullup and pulldown resistors on the H and L pins have almost no effect and can therefore be ignored. With this in mind, it can be stated that the voltage see on the configuration pins of the SERDES is almost exactly the voltage set by the programming of the potentiometer between 0 and 255. i.e., the voltage on the configuration pin can be summarized by this equation: CFG(V)=VDDIO\*ProgrammedValue Where ProgrammedValue is a hex value between 0 and 255 and is set per device in the vr_config file. A snippet of the configuration file is shown below. Additionally, there are comments in the configuration file to give example hex values to set for different configuration profiles at the bottom of the file.
+How to Change Configuration Pin Voltages for Onboard SERDES
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Below is an example of the digital potentiometer circuit on the AD-GMSL522-SL board. As you can see, the digital pot sets the point along the internal where the voltage is measured. Because the internal resistor of the potentiometer is 200k, the pullup and pulldown resistors on the H and L pins have almost no effect and can therefore be ignored. With this in mind, it can be stated that the voltage see on the configuration pins of the SERDES is almost exactly the voltage set by the programming of the potentiometer between 0 and 255. i.e., the voltage on the configuration pin can be summarized by this equation: CFG(V)=VDDIO\*ProgrammedValue Where ProgrammedValue is a hex value between 0 and 255 and is set per device in the vr_config file. A snippet of the configuration file is shown below. Additionally, there are comments in the configuration file to give example hex values to set for different configuration profiles at the bottom of the file.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/vr_config.png
    :align: center
    :width: 800px
 
-| 
-| ==== Updating/Changing Device Tree Blobs (boot modes) ==== Multiple different device tree blobs (dtbs) are available for AD-GMSL522-SL user’s convenience. They each have a separate use. For example, one dtb will allow any™ sensor resolution to be streamed to AD-GMSL522-SL but the user will need to program the SERDES and sensor themselves. Another dtb, however, will only allow a certain sensor to be streamed and viewed with the Jetson, but the sensor and SERDES programming will be executed at power up and is not configurable. To change the dtb to boot from, follow these steps:
+Updating/Changing Device Tree Blobs (boot modes)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Multiple different device tree blobs (dtbs) are available for AD-GMSL522-SL user’s convenience. They each have a separate use. For example, one dtb will allow any™ sensor resolution to be streamed to AD-GMSL522-SL but the user will need to program the SERDES and sensor themselves. Another dtb, however, will only allow a certain sensor to be streamed and viewed with the Jetson, but the sensor and SERDES programming will be executed at power up and is not configurable. To change the dtb to boot from, follow these steps:
 
 -  Download the dtb files from: LINK_TO_GITHUB_TBD
 -  use the update_dtb.sh script found in the tools portion of the github:
@@ -221,7 +239,7 @@ Onboard MAX96724 Port B VC2            /dev/video7
 Onboard MAX96724 Port B VC3            /dev/video8
 ====================================== ============
 
-| 
+
 | ==== Verify Proper Flashing/Setup ==== Once the Jetson has been flashed and the configuration pins of the SERDES have been properly updated, you should be able to probe the i2c bus of the AD-GMSL522-SL board and see the SERDES there. Open a terminal and run the following command:
 
 -  i2cdetect -y -r 1 (reads all devices on the I2C Bus #1. If a device is detected, its 7-bit address is noted)
@@ -232,8 +250,7 @@ If the board and SERDES are properly configured, you should see the following:
    :align: center
    :width: 800px
 
-| 
-| ----
+--------------
 
 General Tips for Using the AD-GMSL522-SL Board
 ----------------------------------------------
@@ -242,8 +259,7 @@ General Tips for Using the AD-GMSL522-SL Board
 -  The MAX96724 has two MIPI ports. One of these ports is connected to the Jetson while the other port is connected to the MAX96717. Specifically, MIPI Port B is connected to the Jetson, while MIPI Port A is connected to the MAX96717. This will be important when specifying in the GUI tools where to send the video data.
 -  There are two micro-USB inputs to the Jetson. One is used for debug information from the Jetson while the other is used for GPIO. Unless you are looking for kernel and boot messages from the Jetson, P6 is the correct connector to use. P6 should be used if you are trying to connect the GMSL GUI to the Jetson, for example.
 
-| 
-| ----
+--------------
 
 Streaming Video Data via “Generic Sensor Driver”
 ------------------------------------------------
@@ -299,8 +315,7 @@ The “generic sensor driver” device tree of the AD-GMSL522-SL board allows a 
    :align: center
    :width: 800px
 
-| 
-| ----
+--------------
 
 Loopback Testing and Exercises
 ------------------------------
@@ -324,9 +339,13 @@ In this exercise, the functionality of both the MAX96717 and the MAX96724 on the
 -  qv4l2 on the Jetson
 -  Device Tree “-3” to allow generic input video stream resolutions, datatypes, and frame rates. Make sure to update the extconf.txt file. If you do not know how to do this, refer back to this section.
 
-| Follow these steps to stream the pattern generator tool on the AD-GMSL522-SL board:
-| To start, set up your hardware like in the diagram below. Depending on whether or not you are using NoMachine or some other remote-viewing software, your setup may differ. The critical part is that there is a COAX cable connected between the MAX96717 output, and the MAX96724 input "A".
-| |image2|
+Follow these steps to stream the pattern generator tool on the AD-GMSL522-SL board:
+
+To start, set up your hardware like in the diagram below. Depending on whether or not you are using NoMachine or some other remote-viewing software, your setup may differ. The critical part is that there is a COAX cable connected between the MAX96717 output, and the MAX96724 input "A".
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/viper_pattern_generator_setup.png
+   :align: center
+   :width: 600px
 
 -  On the AD-GMSL522-SL board, start the GMSL server:
 
@@ -345,8 +364,9 @@ In this exercise, the functionality of both the MAX96717 and the MAX96724 on the
 -  Now, open the “Video Timing and Pattern Generator” Tool in the GUI
 -  Set the parameters of the tool to match what is shown below:
 
-| |image3| 9. Click the “Start Video Generation” button at the bottom of the window to start the generator.
-| If everything has been done correctly up to this point, MIPI data should be leaving the MAX96724 from MIPI Port B and going to the Jetson. This can be verified by reading register 0x08D1 in the MAX96724. If the register value is toggling, you know data is outputting the deserializer.
+|image2| 9. Click the “Start Video Generation” button at the bottom of the window to start the generator.
+
+If everything has been done correctly up to this point, MIPI data should be leaving the MAX96724 from MIPI Port B and going to the Jetson. This can be verified by reading register 0x08D1 in the MAX96724. If the register value is toggling, you know data is outputting the deserializer.
 
 -  Configure the jetson to expect an input resolution of 1920x1080 and RAW12 pixel format
 
@@ -361,15 +381,14 @@ In this exercise, the functionality of both the MAX96717 and the MAX96724 on the
 At this point, a black and white checkboard should be shown on the display. Because the pattern generator builds a static image, it will look like the frame is frozen. Your screen should look similar to this:
 
 
-|image4|
+|image3|
 
-| 
-| ----
+--------------
 
 Scripting with the AD-GMSL522-SL Board
 --------------------------------------
 
-| WIP
+WIP
 
 Debugging CSI Input to AD-GMSL522-SL Board
 ------------------------------------------
@@ -397,8 +416,8 @@ sudo cat /sys/kernel/debug/tracing/trace</blockquote>
 
 ::
 
-     * Make this file executable 
-       * chmod +x <file name> (E.g. chmod +x enable_tracing.sh)
+     * Make this file executable
+       * chmod +x <code name> (E.g. chmod +x enable_tracing.sh)
        * execute the script
          * enable_tracing.sh
    * now enable streaming using qv4l2, for instance.
@@ -410,7 +429,7 @@ sudo cat /sys/kernel/debug/tracing/trace</blockquote>
 The error codes can be found in the logs. Here is one example:
 
 
-|image5|
+|image4|
 
 Additionally, the Orin Technical Reference Manual (TRM) can be found on NVIDIA’s collateral site to get more information on the errors. This is an excerpt from the TRM:
 
@@ -420,8 +439,7 @@ Additionally, the Orin Technical Reference Manual (TRM) can be found on NVIDIA�
 
 More info on this technique and what the trace is saying can be found here: https://elinux.org/Jetson/l4t/Camera_BringUp
 
-| 
-| ----
+--------------
 
 Other Helpful Software and Improvements
 ---------------------------------------
@@ -449,8 +467,7 @@ Restarting the Fan Service
 
 There is a known bug on the NVIDIA forums stating that sometimes, the fan will run at full speed constantly. This appeared in Jetpack Version 5.1 it is believed. To fix this issue, run the following command: <code> sudo systemctl restart nvfancontrol.service </code>
 
-| 
-| ----
+--------------
 
 AD-GMSL522-SL Hardware Specifics
 --------------------------------
@@ -491,8 +508,8 @@ A QTH-030-01-L-D-A high speed connector is present on the bottom of the board. G
 
 12 MIPI CSI lanes (CSI0-CSI3) of the XavierNX are routed to this connector, supporting either 4x2, 2x4 CSI-2 DPHY v1.2 configurations.
 
-| 
-| ===== Appendix 1 (proper script for pattern generator viewing exercise) =====
+Appendix 1 (proper script for pattern generator viewing exercise)
+-----------------------------------------------------------------
 
 ::
 
@@ -516,31 +533,31 @@ A QTH-030-01-L-D-A high speed connector is present on the bottom of the board. G
    # THE CONTENT OF THIS DATA FILE IN CONNECTION WITH THEIR PRODUCTS AND SYSTEM(S).
    # ---------------------------------------------------------------------------------
    #
-   #            _____ _____  
+   #            _____ _____
    #      /\
 
    |  __ \_   _|
 
-   #     /  \  | |  | || |   
-   #    / /\ \ | |  | || |   
+   #     /  \  | |  | || |
+   #    / /\ \ | |  | || |
    #   / ____ \| |__| ||
 
-   |_  
+   |_
    #  /_/    \_\_____/_____|
 
    #
    # ---------------------------------------------------------------------------------
    */
    /*
-   # This script is validated on: 
+   # This script is validated on:
    # MAX96717
    # MAX96724
    # Please refer to the Errata sheet for each device.
    # ---------------------------------------------------------------------------------
    */
-   //  
+   //
    // CSIConfigurationTool
-   //  
+   //
    // GMSL-A / Serializer: MAX96717 (Pixel Mode) / Mode: 1x4 / Device Address: 0x84 / Multiple-VC Case: Single VC / Pipe Sharing: Separate Pipes
    // PipeZ:
    // Input Stream: VC0 RGB888 PortB (D-PHY)
@@ -557,9 +574,9 @@ A QTH-030-01-L-D-A high speed connector is present on the bottom of the board. G
    // Video Transmit Configuration for Serializer(s)
    0x04,0x84,0x00,0x02,0x03, // DEV : REG2 | VID_TX_EN_Z (VID_TX_EN_Z): Disabled
    0x04,0x84,0x00,0x02,0x03, // DEV : REG2 | (Default) VID_TX_EN_Z (VID_TX_EN_Z): Disabled
-   //  
+   //
    // INSTRUCTIONS FOR GMSL-A SERIALIZER MAX96717
-   //  
+   //
    // MIPI D-PHY Configuration
    0x04,0x84,0x03,0x30,0x00, // MIPI_RX : MIPI_RX0 | (Default) RSVD (Port Configuration): 1x4
    0x04,0x84,0x03,0x83,0x00, // MIPI_RX_EXT : EXT11 | Tun_Mode (Tunnel Mode): Disabled
@@ -574,9 +591,9 @@ A QTH-030-01-L-D-A high speed connector is present on the bottom of the board. G
    0x04,0x84,0x03,0x18,0x64, // FRONTTOP : FRONTTOP_16 | mem_dt1_selz (mem_dt1_selz): 0x64
    // Pipe Configuration
    0x04,0x84,0x00,0x5B,0x00, // CFGV__VIDEO_Z : TX3 | TX_STR_SEL (TX_STR_SEL Pipe Z): 0x0
-   //  
+   //
    // INSTRUCTIONS FOR DESERIALIZER MAX96724
-   //  
+   //
    // Video Pipes And Routing Configuration
    0x04,0x4E,0x00,0xF0,0x60, // VIDEO_PIPE_SEL : VIDEO_PIPE_SEL_0 | (Default) VIDEO_PIPE_SEL_0 (Pipe 0 GMSL2 PHY): A | VIDEO_PIPE_SEL_0 (Pipe 0 Input Pipe): X
    0x04,0x4E,0x00,0xF4,0x01, // VIDEO_PIPE_SEL : VIDEO_PIPE_EN | (Default) VIDEO_PIPE_EN (Video Pipe 0): Enabled | VIDEO_PIPE_EN (Video Pipe 1): Disabled | VIDEO_PIPE_EN (Video Pipe 2): Disabled | VIDEO_PIPE_EN (Video Pipe 3): Disabled | STREAM_SEL_ALL (Stream Select All): Disabled
@@ -601,26 +618,20 @@ A QTH-030-01-L-D-A high speed connector is present on the bottom of the board. G
    0x04,0x4E,0x1E,0x00,0xF4, //  (config_soft_rst_n - PHY2): 0x0
    // This is to set predefined (coarse) CSI output frequency
    // CSI Phy 2 is 1500 Mbps/lane.
-   0x04,0x4E,0x1E,0x00,0xF4, // (Default) 
-   0x04,0x4E,0x04,0x1B,0x2F, // (Default) 
+   0x04,0x4E,0x1E,0x00,0xF4, // (Default)
+   0x04,0x4E,0x04,0x1B,0x2F, // (Default)
    0x04,0x4E,0x1E,0x00,0xF5, //  | (Default)  (config_soft_rst_n - PHY2): 0x1
    0x04,0x4E,0x08,0xA2,0xC4, // MIPI_PHY : MIPI_PHY2 | phy_Stdby_n (phy_Stdby_0): Put PHY0 in standby mode | phy_Stdby_n (phy_Stdby_1): Put PHY1 in standby mode
    0x04,0x4E,0x04,0x0B,0x02, // BACKTOP : BACKTOP12 | CSI_OUT_EN (CSI_OUT_EN): CSI output enabled
    // Video Transmit Configuration for Serializer(s)
    0x04,0x84,0x00,0x02,0x43, // DEV : REG2 | VID_TX_EN_Z (VID_TX_EN_Z): Enabled
-   0x04,0x84,0x00,0x02,0x43, // DEV : REG2
-
-   | (Default) VID_TX_EN_Z (VID_TX_EN_Z): Enabled
-
-|
+   0x04,0x84,0x00,0x02,0x43, // DEV : REG2 | (Default) VID_TX_EN_Z (VID_TX_EN_Z): Enabled
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_block_diagram_using_loopback_section.png
    :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/viper_pattern_generator_setup.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/viper_video_pattern_generator.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/viper_video_pattern_generator.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/gmsl_gui_pattern_generator_output_showing.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/gmsl_gui_pattern_generator_output_showing.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_debugging_csi_shortframe.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_debugging_csi_shortframe.png
    :width: 800px

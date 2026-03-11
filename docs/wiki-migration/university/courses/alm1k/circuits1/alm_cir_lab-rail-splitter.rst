@@ -27,10 +27,7 @@ A rail splitter that creates a new common ground reference must be able to sourc
 Materials:
 ~~~~~~~~~~
 
-| ADM660
-| 1 – 10 uF capacitor C\ :sub:`1`
-| 2 – 47 uF capacitor C\ :sub:`2,3`
-| 1 – 9 V battery and connector
+ADM660 1 – 10 uF capacitor C\ :sub:`1` 2 – 47 uF capacitor C\ :sub:`2,3` 1 – 9 V battery and connector
 
 In Figure 1, a switched-capacitor voltage inverter, ADM660, is configured as a "rail-splitter". This configuration provides a bipolar, +/- 4.5 Volt, dual-rail power supply from a 9 V battery. The circuit is useful in battery powered systems that include one or more dual-supply ICs. After the power is applied, the flying capacitor, C\ :sub:`1`, is connected alternately across the storage capacitors, C\ :sub:`2` and C\ :sub:`3`. This switching operation equalizes the voltages across those capacitors and draws current from the battery as required to maintain the two output voltages with respect to ground (GND node) equal to the battery voltage divided by 2. Generally C\ :sub:`2` and C\ :sub:`3` are the same value.
 
@@ -59,16 +56,10 @@ When using the ADALM1000 hardware module to measure nodes in a circuit with volt
 Using the LT1054 from the ADALP2000 parts kit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| LT1054
-| 1 – 10 uF capacitor C\ :sub:`1`
-| 2 – 47 uF capacitor C\ :sub:`2,3`
-| 1 – 4.7 KΩ resistor R\ :sub:`1`
-| 1 – 9 V battery and connector
+LT1054 1 – 10 uF capacitor C\ :sub:`1` 2 – 47 uF capacitor C\ :sub:`2,3` 1 – 4.7 KΩ resistor R\ :sub:`1` 1 – 9 V battery and connector
 
 The larger 3 mA typical quiescent current of the LT1054 flowing from pin 8 to pin 3 causes an imbalance in the charge (current) delivered from the flying capacitor C\ :sub:`1` to storage capacitor C\ :sub:`2`. This imbalance for small load currents on the negative rail to ground, i.e. less than the quiescent current, will cause an imbalance in the two output voltages with respect to ground. R\ :sub:`1` is added to set a minimum current from GND to the negative output.
 
@@ -85,7 +76,6 @@ Other than the inclusion of R\ :sub:`1` the LT1054 circuit operates exactly like
 
 **For Further Reading:**
 
-| :adi:`ADM660 Datasheet <media/en/technical-documentation/data-sheets/ADM660_8660.pdf>`
-| :adi:`LT1054 Datasheet <media/en/technical-documentation/data-sheets/1054lfh.pdf>`
+:adi:`ADM660 Datasheet <media/en/technical-documentation/data-sheets/ADM660_8660.pdf>` :adi:`LT1054 Datasheet <media/en/technical-documentation/data-sheets/1054lfh.pdf>`
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

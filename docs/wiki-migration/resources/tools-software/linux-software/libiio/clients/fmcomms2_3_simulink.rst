@@ -12,6 +12,7 @@ ADI maintains support for all FMComms, ADALM-PLUTO, and ADRV board variants, as 
 ADI libiio Support
 ==================
 
+
 IIO System Object
 =================
 
@@ -48,15 +49,14 @@ The configuration file for a device has the .cfg extension and the name must mat
 
 -  **data_in_device** - name of the Linux driver used for sending data to the device
 -  **data_out_device** - name of the Linux driver used for reading data from the device
--  \**ctrl_device \*\* - name of the Linux driver used for controlling and monitoring the device
+-  **ctrl_device** - name of the Linux driver used for controlling and monitoring the device
 -  **channel** - defines a control/monitoring channel. A channel is defined by a sequence of parameters as follows *<channel name, channel type, Linux attribute, associated device>*
 
-::
+   -  *channel name* - represents the name of the channel to be displayed on the corresponding Simulink block port
 
-       * //channel name// - represents the name of the channel to be displayed on the corresponding Simulink block port
-       * //channel type// - can be either IN or OUT
-       * //Linux attribute// - the Linux attribute that will be called to set/get data for the channel
-       * //associated device// - the device to which the Linux attribute is associated to. This parameter can have the values //'data_in_device'//, //'data_out_device'// or //'ctrl_device'//. The parameter is optional, if it isn't specified then it is implied to be //'ctrl_device'//.  
+      -  *channel type* - can be either IN or OUT
+      -  *Linux attribute* - the Linux attribute that will be called to set/get data for the channel
+      -  *associated device* - the device to which the Linux attribute is associated to. This parameter can have the values *'data_in_device'*, *'data_out_device'* or *'ctrl_device'*. The parameter is optional, if it isn't specified then it is implied to be *'ctrl_device'*.
 
 Below is presented a configuration file example for the AD9361.
 
@@ -160,15 +160,15 @@ In order to establish the connection between the host PC and the target, there a
 
 Target side:
 
-#. Get the latest libiio library by following the :doc:`instructions </wiki-migration/resources/tools-software/linux-software/libiio>`.
+-  Get the latest libiio library by following the :doc:`instructions </wiki-migration/resources/tools-software/linux-software/libiio>`.
 
 PC side:
 
-#. Run the Windows libiio installer provided in "Downloads" section, which will install all the dlls and dependencies on your PC.
-#. Find out the IP address of the target by typing "ifconfig" in a terminal on the Linux side
+-  Run the Windows libiio installer provided in "Downloads" section, which will install all the dlls and dependencies on your PC.
+-  Find out the IP address of the target by typing "ifconfig" in a terminal on the Linux side
 
-   #. If used in MATLAB: Assign the IP address of the target to your object.
-   #. If used in Simulink: Open the Simulink block and type the IP address of the target in the block. Please note even if the IP address in the System objects property window seems correct, it is a good idea to edit it and click 'Apply' to avoid any caching issues.
+   -  If used in MATLAB: Assign the IP address of the target to your object.
+   -  If used in Simulink: Open the Simulink block and type the IP address of the target in the block. Please note even if the IP address in the System objects property window seems correct, it is a good idea to edit it and click 'Apply' to avoid any caching issues.
 
 Next Generation System Objects
 ==============================
@@ -179,6 +179,7 @@ Starting with MATLAB R2018b, ADI is transitioning to a new system object infrast
    :width: 400px
 .. |Configuration Dialog| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/sys_obj_block_cfg.png
    :width: 250px
+
 
 
 Data Streaming Example in MATLAB
@@ -201,7 +202,7 @@ There are two other parameters of the AD9361 you can set according to your model
 
 Since we are streaming two sine waves to the target, we will also receive two sine waves back in MATLAB. This is what you should be able to get in the end:
 
-.. image:: https://wiki.analog.com/_media/iio_matlabexample.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/iio_matlabexample.png
    :alt: Block diagram
 
 Besides the two sine waves in the plot, we also see the RSSI indicator for both channel 1 and channel 2 in the workspace.
@@ -222,7 +223,7 @@ In this section, we will show an example of data streaming using Simulink libiio
 
 In this model, DATA_IN1 to DATA_IN4 are four pins used to stream two sine waves (one for I channel, and the other for Q channel) from Simulink to target, and DATA_OUT1 to DATA_OUT4 are four pins used to observe the time-domain streamed data from target in a Time Scope, as highlighted below. The other pins all represent certain settings you can find from :doc:`ADI IIO Scope </wiki-migration/resources/tools-software/linux-software/fmcomms2_plugin>`.
 
-.. image:: https://wiki.analog.com/_media/sinkmodel.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/sinkmodel.png
    :alt: Block diagram
    :width: 600px
 
@@ -238,7 +239,7 @@ Make sure:
 
 Since we are streaming two sine waves to the target, we will also see two sine waves in the Time Scope. This is what you should be able to observe:
 
-.. image:: https://wiki.analog.com/_media/iio_example2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/iio_example2.png
    :alt: Block diagram
    :width: 800px
 
@@ -259,7 +260,7 @@ Download the Simulink model **ad9361_sim.slx** from GitHub and open the model fr
 
 In this Simulink model, you will find the Rx block on the top and the Tx block on the bottom, as shown below:
 
-.. image:: https://wiki.analog.com/_media/TxandRx.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/TxandRx.png
    :alt: Block diagram
    :width: 600px
 

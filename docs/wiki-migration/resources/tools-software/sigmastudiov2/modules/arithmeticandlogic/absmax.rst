@@ -3,13 +3,13 @@
 Absolute Maximum
 ================
 
-| 
-| |absmax.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/absmax.png
+   :alt: absmax.png
 
 Description
 -----------
 
-| The Absolute Maximum block compares the two (or more) inputs and outputs the absolute of the highest value.
+The Absolute Maximum block compares the two (or more) inputs and outputs the absolute of the highest value.
 
 Targets Supported
 -----------------
@@ -55,5 +55,3 @@ DSP Parameters
 --------------
 
 NO DSP parameters
-
-.. |absmax.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/absmax.png

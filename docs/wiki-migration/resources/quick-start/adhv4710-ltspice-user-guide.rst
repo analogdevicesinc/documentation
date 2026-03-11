@@ -14,8 +14,7 @@ A comprehensive User Guide can be found at `LTspice User guide for ADHV4710 Mode
 LTspice Sample Circuits
 -----------------------
 
-| All LTspice Circuits used are available at `LTspice Schematics <https://wiki.analog.com/_media/resources/quick-start/adhv4710_ltspice.zip>`_.
-|
+All LTspice Circuits used are available at `LTspice Schematics <https://wiki.analog.com/_media/resources/quick-start/adhv4710_ltspice.zip>`_.
 
 .. tip::
 
@@ -27,7 +26,5 @@ LTspice Sample Circuits
 ADHV4710 Block Diagram
 ----------------------
 
-| |image1|
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/adhv4710_simplified_block_diagram.jpg
+.. image:: https://wiki.analog.com/_media/resources/quick-start/adhv4710_simplified_block_diagram.jpg
    :width: 1000px

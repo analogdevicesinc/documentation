@@ -66,20 +66,15 @@ Required Software
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \* **AD5421 Driver:** :git-no-OS:`drivers/dac/ad5421`
    
+   -  **AD5421 Driver:** :git-no-OS:`drivers/dac/ad5421`
    -  **AD5421 Commands:** :git-no-OS:`device_commands/AD5421`
    -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
    -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
    
-   |
-
-   |
 
 
 Run the Demonstration Project
@@ -88,24 +83,19 @@ Run the Demonstration Project
 Hardware setup
 --------------
 
-|
-
 .. important::
 
-
-   ..
-
-| Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+   
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
 
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
 
-|
-
 .. important::
 
-   | To power on the EVAL-AD5421 evaluation board, you need to provide external differential supply voltage from LOOP- to LOOP+ (for more information see: :adi:`EVAL-AD5421SDZ evaluation board user guide </static/imported-files/user_guides/UG-250.pdf>`).
+   
+   To power on the EVAL-AD5421 evaluation board, you need to provide external differential supply voltage from LOOP- to LOOP+ (for more information see: :adi:`EVAL-AD5421SDZ evaluation board user guide </static/imported-files/user_guides/UG-250.pdf>`).
 
 
 Reference Project Overview
@@ -150,8 +140,6 @@ Software Project Setup
 
    See `import_workspace <https://wiki.analog.com/import_workspace>`_
 
-
-.. _more-information-1:
 
 More information
 ================

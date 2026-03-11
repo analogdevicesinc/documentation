@@ -74,13 +74,9 @@ Installing the SHARC Audio Module Bare Metal SDK
    
    Click the link to the release notes below to see the full list of changes in this release.
    
-   |
-   
    .. container:: indent
 
-      |image1| `Release Notes for SHARC Audio Module Bare Metal SDK 2.2.0 <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/release_notes_for_sharc_audio_module_bare_metal_sdk_2.2.0.pdf>`_
-
-      | |image2| `Microsoft Windows Installer (.exe) <https://download.analog.com/tools/sharcaudiomodule/baremetal/releases/2.2.0/ADI_SAM_BareMetal_SDK-Rel2.2.0.exe>`_
+      |image1| `Release Notes for SHARC Audio Module Bare Metal SDK 2.2.0 <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/release_notes_for_sharc_audio_module_bare_metal_sdk_2.2.0.pdf>`_ |image2| `Microsoft Windows Installer (.exe) <https://download.analog.com/tools/sharcaudiomodule/baremetal/releases/2.2.0/ADI_SAM_BareMetal_SDK-Rel2.2.0.exe>`_
 
    
 
@@ -93,13 +89,9 @@ Installing the SHARC Audio Module Bare Metal SDK
    
    Click the link to the release notes below to see the full list of changes in this release.
    
-   |
-   
    .. container:: indent
 
-      |image3| `Release Notes for SHARC Audio Module Bare Metal SDK 2.1.2 <http://download.analog.com/tools/sharcaudiomodule/baremetal/releases/2.1.2/SAM_BareMetal_SDK_2.1.2_Release_Notes.pdf>`_
-
-      | |image4| `Microsoft Windows Installer (.exe) <http://download.analog.com/tools/sharcaudiomodule/baremetal/releases/2.1.2/ADI_SAM_BareMetal_SDK-Rel2.1.2.exe>`_
+      |image3| `Release Notes for SHARC Audio Module Bare Metal SDK 2.1.2 <http://download.analog.com/tools/sharcaudiomodule/baremetal/releases/2.1.2/SAM_BareMetal_SDK_2.1.2_Release_Notes.pdf>`_ |image4| `Microsoft Windows Installer (.exe) <http://download.analog.com/tools/sharcaudiomodule/baremetal/releases/2.1.2/ADI_SAM_BareMetal_SDK-Rel2.1.2.exe>`_
 
    
 

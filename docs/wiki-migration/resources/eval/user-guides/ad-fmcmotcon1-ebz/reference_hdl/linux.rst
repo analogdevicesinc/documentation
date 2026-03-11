@@ -5,7 +5,9 @@ Xilinx HDL Reference Design
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- This design is targeted for Zynq based FPGA systems. It has the complete infrastructure for Linux support.
+
+
+This design is targeted for Zynq based FPGA systems. It has the complete infrastructure for Linux support.
 
 Reference Design
 ----------------
@@ -38,8 +40,8 @@ Downloads
    :class: download
 
    
-   -  :git-hdl:`Vivado ADI Libraries <library>`
-   -  :git-hdl:`Vivado Motor Control Reference Design <projects/motor_control>`
+   -  `Vivado ADI Libraries <https://github.com/analogdevicesinc/hdl/tree/hdl_2014_r1/library>`_
+   -  `Vivado Motor Control Reference Design <https://github.com/analogdevicesinc/hdl/tree/hdl_2014_r1/projects/motor_control>`_
    
    :
    
@@ -48,15 +50,10 @@ Downloads
 Setting up Linux
 ----------------
 
-|
-
 .. note::
 
-   For instructions on how to setup linux on the ZED board, please follow instructions at:
+   For instructions on how to setup linux on the ZED board, please follow instructions at: :doc:`Linux on Zynq Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/quickstart/zynq>`
 
-
-   | :doc:`Linux on Zynq Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/quickstart/zynq>`
-   |
 
 Support
 -------

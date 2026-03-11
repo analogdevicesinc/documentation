@@ -122,7 +122,7 @@ Configuring the FPGA will take a few seconds. Once the FPGA has been configured 
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 ::
 
@@ -340,7 +340,7 @@ Configuring the FPGA will take a few seconds. Once the FPGA has been configured 
 
      * Documentation:  https://wiki.analog.com/ https://ez.analog.com/
 
-   root@analog:~# 
+   root@analog:~#
    </nowiki>
 
 .. raw:: html

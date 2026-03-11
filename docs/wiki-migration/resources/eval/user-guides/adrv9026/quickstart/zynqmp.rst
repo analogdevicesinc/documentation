@@ -64,20 +64,17 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
 
    .. raw:: html
 
-      <details><summary>Boot log (click to expand)</summary>
+      <details><summary>Boot log (click to expand)
 
    ::
    
-      Xilinx Zynq MP First Stage Boot Loader 
+      Xilinx Zynq MP First Stage Boot Loader
       Release 2022.2   Jan 22 2024  -  09:52:25
       NOTICE:  BL31: Non secure code at 0x8000000
       NOTICE:  BL31: v2.8(release):xilinx-v2023.1
@@ -92,7 +89,7 @@ Messages
       EL Level:   EL2
       Chip ID:    zu9eg
       MMC:   sdhci@ff170000: 0 (SD)
-      *** Warning - bad CRC, using default environment
+      ** Warning - bad CRC, using default environment
    
       In:    serial@ff000000
       Out:   serial@ff000000
@@ -102,13 +99,13 @@ Messages
    
       Warning: ethernet@ff0e0000 (eth0) using random MAC address - 2a:3e:1f:45:54:1b
       eth0: ethernet@ff0e0000
-      Hit any key to stop autoboot:  0 
+      Hit any key to stop autoboot:  0
       switch to partitions #0, OK
       mmc0 is current device
       Device: sdhci@ff170000
       Manufacturer ID: 27
       OEM: 5048
-      Name: SD32G 
+      Name: SD32G
       Tran Speed: 50000000
       Rd Block Len: 512
       SD version 3.0
@@ -233,8 +230,8 @@ Messages
       [    0.820304] raid6: using algorithm neonx4 gen() 2196 MB/s
       [    0.888322] raid6: .... xor() 1567 MB/s, rmw enabled
       [    0.888368] raid6: using neon recovery algorithm
-      [    0.892643] iommu: Default domain type: Translated 
-      [    0.897078] iommu: DMA domain TLB invalidation policy: strict mode 
+      [    0.892643] iommu: Default domain type: Translated
+      [    0.897078] iommu: DMA domain TLB invalidation policy: strict mode
       [    0.903509] SCSI subsystem initialized
       [    0.907166] usbcore: registered new interface driver usbfs
       [    0.912502] usbcore: registered new interface driver hub
@@ -581,7 +578,7 @@ Messages
       [    3.792722] axi_adxcvr 84a60000.axi-adxcvr-rx: AXI-ADXCVR-RX (17.05.a) using CPLL on GTH4 at 0x84A60000. Number of lanes: 4.
       [    3.797594] mmc0: new high speed SDHC card at address 0001
       [    3.804915] axi_adxcvr 84a80000.axi-adxcvr-tx: AXI-ADXCVR-TX (17.05.a) using QPLL on GTH4 at 0x84A80000. Number of lanes: 4.
-      [    3.809837] mmcblk0: mmc0:0001 SD32G 28.8 GiB 
+      [    3.809837] mmcblk0: mmc0:0001 SD32G 28.8 GiB
       [    3.821123] axi-jesd204-rx 84aa0000.axi-jesd204-rx: AXI-JESD204-RX (1.07.a) at 0x84AA0000. Encoder 8b10b, width 4/4, lanes 4, jesd204-fsm.
       [    3.826707]  mmcblk0: p1 p2 p3
       [    3.837882] jesd204: /axi/spi@ff040000/adrv9025-phy@0,jesd204:1,parent=spi1.0: JESD204[0:0] transition initialized -> probed
@@ -633,7 +630,7 @@ Messages
       [   17.774764] ahci-ceva fd0c0000.ahci: supply phy not found, using dummy regulator
       [   17.782226] ahci-ceva fd0c0000.ahci: supply target not found, using dummy regulator
       [   17.790103] ahci-ceva fd0c0000.ahci: AHCI 0001.0301 32 slots 2 ports 6 Gbps 0x3 impl platform mode
-      [   17.799060] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst 
+      [   17.799060] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst
       [   17.809536] scsi host0: ahci-ceva
       [   17.813127] scsi host1: ahci-ceva
       [   17.816549] ata1: SATA max UDMA/133 mmio [mem 0xfd0c0000-0xfd0c1fff] port 0x100 irq 53
@@ -929,10 +926,7 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -948,21 +942,18 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:~# fru-dump -b /sys/bus/i2c/devices/15-0050/eeprom 
+      root@analog:~# fru-dump -b /sys/bus/i2c/devices/15-0050/eeprom
       read 256 bytes from /sys/bus/i2c/devices/15-0050/eeprom
       Date of Man : Wed Oct 25 12:20:00 2017
       Manufacturer    : Analog Devices
       Product Name    : ADRV9029 CE Board
       Serial Number   : 031621035
-      Part Number : ADRV9029-MB/PCBZ 
+      Part Number : ADRV9029-MB/PCBZ
       FRU File ID : Empty Field
       PCB Rev     : 01C
       PCB ID      : 9029CE01C

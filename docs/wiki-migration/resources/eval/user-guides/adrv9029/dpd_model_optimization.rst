@@ -22,7 +22,6 @@ In order to identify a DPD model for that is optimum for a Power Amplifier, the 
 ::
 
      {{ :resources:eval:user-guides:adrv9029:adrv9029_loadingscript.png?direct |}}
-    
 
 6. After loading the script, execute the script by clicking **Build->Run** in the Iron Python tab of ADRV9029 TES GUI
 

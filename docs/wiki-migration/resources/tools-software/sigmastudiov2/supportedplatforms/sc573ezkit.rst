@@ -3,8 +3,7 @@
 ADZS-SC573-EZLITE
 =================
 
-| 
-| Evaluation Hardware for the ADSP-SC57x/ADSP-2157x SHARC Family
+Evaluation Hardware for the ADSP-SC57x/ADSP-2157x SHARC Family
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/adzs-sc573-ezlite.jpg
    :width: 600px

@@ -39,7 +39,12 @@ Files
 | Documentation | `sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/testing/sysfs-bus-iio>`_  |
 +---------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 properties
 ~~~~~~~~~~
@@ -76,7 +81,7 @@ properties
 Example
 ~~~~~~~
 
-.. code:: c
+.. code:: dts
 
    spi {
          spi {
@@ -114,14 +119,12 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Hardware configuration
 ======================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -196,10 +199,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -213,15 +213,13 @@ Show device name
 Set ChannelY Current offset value
 ---------------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/in_currentY_offset
-| Set offset value for the corresponding current sensor channel.
+/sys/bus/iio/devices/iio:deviceX/in_currentY_offset
+
+Set offset value for the corresponding current sensor channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -229,7 +227,7 @@ Set ChannelY Current offset value
       root:/> **cat in_current0_offset**
       0
    
-      root:/> **echo 20 > in_current0_offset **
+      root:/> **echo 20 > in_current0_offset**
       root:/> **cat in_current0_offset**
       20
    
@@ -238,15 +236,13 @@ Set ChannelY Current offset value
 Set ChannelY Current gain value
 -------------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/in_currentY_scale
-| Set gain value for the corresponding current sensor channel.
+/sys/bus/iio/devices/iio:deviceX/in_currentY_scale
+
+Set gain value for the corresponding current sensor channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -254,7 +250,7 @@ Set ChannelY Current gain value
       root:/> **cat in_current0_scale**
       0
    
-      root:/> **echo 2 > in_current0_scale **
+      root:/> **echo 2 > in_current0_scale**
       root:/> **cat in_current0_scale**
       2
    
@@ -263,15 +259,13 @@ Set ChannelY Current gain value
 Get Current gain available values
 ---------------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/in_current_scale_available
-| Read available values for the current sensor channel gain.
+/sys/bus/iio/devices/iio:deviceX/in_current_scale_available
+
+Read available values for the current sensor channel gain.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -284,15 +278,13 @@ Get Current gain available values
 Get ChannelY Current raw value
 ------------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/in_currentY_raw
-| Read raw value for the current sensor channel.
+/sys/bus/iio/devices/iio:deviceX/in_currentY_raw
+
+Read raw value for the current sensor channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -305,15 +297,13 @@ Get ChannelY Current raw value
 Set ChannelY Temperature offset value
 -------------------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/in_tempY_offset
-| Set offset value for the corresponding temperature sensor channel.
+/sys/bus/iio/devices/iio:deviceX/in_tempY_offset
+
+Set offset value for the corresponding temperature sensor channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -321,7 +311,7 @@ Set ChannelY Temperature offset value
       root:/> **cat in_temp0_offset**
       0
    
-      root:/> **echo 20 > in_temp0_offset **
+      root:/> **echo 20 > in_temp0_offset**
       root:/> **cat in_temp0_offset**
       20
    
@@ -330,15 +320,13 @@ Set ChannelY Temperature offset value
 Get ChannelY Temperature raw value
 ----------------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/in_tempY_raw
-| Read raw value for the temperature sensor channel.
+/sys/bus/iio/devices/iio:deviceX/in_tempY_raw
+
+Read raw value for the temperature sensor channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -351,15 +339,13 @@ Get ChannelY Temperature raw value
 Set ChannelY ADC offset value
 -----------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/in_voltageY_offset
-| Set offset value for the corresponding ADC channel.
+/sys/bus/iio/devices/iio:deviceX/in_voltageY_offset
+
+Set offset value for the corresponding ADC channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -367,7 +353,7 @@ Set ChannelY ADC offset value
       root:/> **cat in_voltage0_offset**
       0
    
-      root:/> **echo 20 > in_voltage0_offset **
+      root:/> **echo 20 > in_voltage0_offset**
       root:/> **cat in_voltage0_offset**
       20
    
@@ -376,15 +362,13 @@ Set ChannelY ADC offset value
 Set ChannelY ADC range value
 ----------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/in_voltageY_scale
-| Set VIN range value for the corresponding ADC channel.
+/sys/bus/iio/devices/iio:deviceX/in_voltageY_scale
+
+Set VIN range value for the corresponding ADC channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -392,7 +376,7 @@ Set ChannelY ADC range value
       root:/> **cat in_voltage0_scale**
       0
    
-      root:/> **echo 2 > in_voltage0_scale **
+      root:/> **echo 2 > in_voltage0_scale**
       root:/> **cat in_voltage0_scale**
       2
    
@@ -401,15 +385,13 @@ Set ChannelY ADC range value
 Get ADC range available values
 ------------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/in_voltage_scale_available
-| Read available values for the ADC VIN range.
+/sys/bus/iio/devices/iio:deviceX/in_voltage_scale_available
+
+Read available values for the ADC VIN range.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -422,15 +404,13 @@ Get ADC range available values
 Get ChannelY ADC raw value
 --------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/in_voltageY_raw
-| Read raw value for the ADC channel.
+/sys/bus/iio/devices/iio:deviceX/in_voltageY_raw
+
+Read raw value for the ADC channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -443,15 +423,13 @@ Get ChannelY ADC raw value
 Set ChannelY DAC offset value
 -----------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/out_voltageY_offset
-| Set offset value for the corresponding ADC channel.
+/sys/bus/iio/devices/iio:deviceX/out_voltageY_offset
+
+Set offset value for the corresponding ADC channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -459,7 +437,7 @@ Set ChannelY DAC offset value
       root:/> **cat out_voltage0_offset**
       0
    
-      root:/> **echo 2 > out_voltage0_offset **
+      root:/> **echo 2 > out_voltage0_offset**
       root:/> **cat out_voltage0_offset**
       2
    
@@ -468,15 +446,13 @@ Set ChannelY DAC offset value
 Get DAC offset available values
 -------------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/out_voltage_offset_available
-| Read available values for the DAC offset.
+/sys/bus/iio/devices/iio:deviceX/out_voltage_offset_available
+
+Read available values for the DAC offset.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -489,15 +465,13 @@ Get DAC offset available values
 Get ChannelY DAC raw value
 --------------------------
 
-| /sys/bus/iio/devices/iio:deviceX/out_voltageY_raw
-| Read raw value for the DAC channel.
+/sys/bus/iio/devices/iio:deviceX/out_voltageY_raw
+
+Read raw value for the DAC channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -505,7 +479,7 @@ Get ChannelY DAC raw value
       root:/> **cat out_voltage0_raw**
       0
    
-      root:/> **echo 2000 > out_voltage0_raw **
+      root:/> **echo 2000 > out_voltage0_raw**
       root:/> **cat out_voltage0_raw**
       2000
    
@@ -518,16 +492,13 @@ Some IIO drivers feature an optional debug facility, allowing users to read or w
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root:/> **/sys/kernel/debug/iio/iio:device0/**
-      root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access  
+      root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access
       direct_reg_access
    
 
@@ -536,16 +507,13 @@ Reading
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root:/sys/kernel/debug/iio/iio:device0> echo 0x2000C > direct_reg_access
-      root:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access 
+      root:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access
       0x18
    
 
@@ -556,16 +524,13 @@ Write ADDRESS VALUE
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device0> echo 0x20214 0x80 > direct_reg_access   
-      root@analog:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access 
+      root@analog:/sys/kernel/debug/iio/iio:device0> echo 0x20214 0x80 > direct_reg_access
+      root@analog:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access
       0x80
    
 
@@ -573,4 +538,21 @@ Write ADDRESS VALUE
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

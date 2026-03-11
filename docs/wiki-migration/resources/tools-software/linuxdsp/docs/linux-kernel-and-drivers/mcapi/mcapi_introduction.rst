@@ -19,8 +19,7 @@ There are 3 MCAPI inter-operability demos included in the libmcapi tests, curr
 
 There are 2 ways to load the MCAPI baremetal project: loaded by remoteproc and loaded by ICE1000 in CCES.
 
-| For more information about "**loaded by Remoteproc**", please refer to ``Multicore loading using the Remoteproc``
-| For more information about "**loaded by ICE1000 in CCES**", please refer to ``Run Linux on ARM and bare-metal application on SHARC``
+For more information about "**loaded by Remoteproc**", please refer to ``Multicore loading using the Remoteproc`` For more information about "**loaded by ICE1000 in CCES**", please refer to ``Run Linux on ARM and bare-metal application on SHARC``
 
 MCAPI Baremetal test examples
 -----------------------------
@@ -42,10 +41,10 @@ Once the linux boot finished, one command for MCAPI demo test can be found in l
    Usage: arm_sharc_msg_demo <options>
    Available options:
            -h,--help               this help
-           -m,--mode               select the mode:                    
-                                   0 --- nonblocking mode0(default)                    
-                                   1 --- nonblocking mode1             
-                                   2 --- nonblocking mode2             
+           -m,--mode               select the mode:
+                                   0 --- nonblocking mode0(default)
+                                   1 --- nonblocking mode1
+                                   2 --- nonblocking mode2
                                    3 --- blocking mode
            -t,--timeout            timeout value in jiffies(default:5000)
            -r,--round              number of test round(default:100)
@@ -61,18 +60,16 @@ Each mode means the different ways to do message transaction between two endpoin
 
 ::
 
-   ;**-m,--mode** 
-   :mode 0   |nonblocking send    |nonblocking recv  |mcapi_test() / mcapi_msg_available() 
-   :mode 1   |nonblocking send    |nonblocking recv  |mcapi_test()                         
-   :mode 2   |nonblocking send    |nonblocking recv  |mcapi_wait()                         
-   :mode 3   |blocking send
-
-   |blocking recv  
-   ;**-t,--timeout**   
+   ;**-m,--mode**
+   :mode 0   |nonblocking send    |nonblocking recv  |mcapi_test() / mcapi_msg_available()
+   :mode 1   |nonblocking send    |nonblocking recv  |mcapi_test()
+   :mode 2   |nonblocking send    |nonblocking recv  |mcapi_wait()
+   :mode 3   |blocking send    |blocking recv
+   ;**-t,--timeout**
    :Timeout value is used to set the maximum wait time for wait and blocking function
-   ;**-r,--round**     
-   :Round is the number of rounds you want to test, the default check round is 100, if number equals 100,  passed log will be output in CCES. 
+   ;**-r,--round**
+   :Round is the number of rounds you want to test, the default check round is 100, if number equals 100,  passed log will be output in CCES.
 
-|
+--------------
 
-| ---- **BACK TO** :doc:`Multi-Core Support </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/start>`
+**BACK TO** :doc:`Multi-Core Support </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/start>`

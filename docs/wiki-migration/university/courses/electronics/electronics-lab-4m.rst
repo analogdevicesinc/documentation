@@ -12,11 +12,7 @@ The purpose of this activity is to investigate the drain current vs. gate voltag
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 100Ω resistor
-| 1 - Small signal NMOS transistor (CD4007 or ZVN2110A)
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - 100Ω resistor 1 - Small signal NMOS transistor (CD4007 or ZVN2110A)
 
 Directions:
 -----------
@@ -72,22 +68,15 @@ Add Questions here:
 ID vs. VDS curves
 =================
 
-.. _objective-1:
-
 Objective:
 ----------
 
 The purpose of this activity is to investigate the drain current I\ :sub:`D` vs. drain to source voltage V\ :sub:`DS` characteristic curves of an NMOS FET transistor.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 1 - 100Ω resistor
-| 1 - Small signal NMOS transistor (CD4007 or ZVN2110A)
-
-.. _directions-1:
+1 - 100Ω resistor 1 - Small signal NMOS transistor (CD4007 or ZVN2110A)
 
 Directions:
 -----------
@@ -102,8 +91,6 @@ Starting with the previous breadboard setup, Remove the Vp supply connection and
 
    Figure 4 NMOS I\ :sub:`D` vs V\ :sub:`DS` setup
 
-
-.. _hardware-setup-1:
 
 Hardware Setup:
 ---------------
@@ -122,8 +109,6 @@ The setup is the same as the previous experiment except now Scope channel 1 is s
 
 A stair-step waveform will be needed to drive the gate of the transistor. Using the buffer in the Scopy Signal Generator tool, construct a stair-step waveform with 5 levels on channel 2 (W2). Load the following csv file (extract from archive): `stair-step.zip <https://wiki.analog.com/_media/university/courses/electronics/stair-step.zip>`_. Set the amplitude to 3V peak-to-peak and sampleRate to 100Hz.
 
-.. _procedure-1:
-
 Procedure:
 ----------
 
@@ -138,8 +123,6 @@ Procedure:
 
 
 Once the V\ :sub:`TH` of the device is known from the previous measurement, the starting offset for the stair step waveform used on the gate, from waveform generator 2, can be established. The height of the steps should be set, or adjusted according to the gain (mA/V\ :sup:`2`) of the transistor being measured. This can also be gotten from the previous I\ :sub:`D` vs. V\ :sub:`GS` data.
-
-.. _questions-1:
 
 Questions:
 ----------

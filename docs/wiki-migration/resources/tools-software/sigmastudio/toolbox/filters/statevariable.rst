@@ -1,8 +1,9 @@
 State Variable
 ==============
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| |statepic1.png| The State-Variable block allows for simultaneous access to three different filter types: lowpass, highpass, and bandpass.
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+|statepic1.png| The State-Variable block allows for simultaneous access to three different filter types: lowpass, highpass, and bandpass.
 
 Set the center frequency in the Freq (Hz) field or by dragging the arrows. For examples and details, see :doc:`Filters Example </wiki-migration/resources/tools-software/sigmastudio/tutorials/filterexamples>`.
 

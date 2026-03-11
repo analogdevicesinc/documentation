@@ -69,14 +69,7 @@ Heat sinks are large, expensive, and lose effectiveness if they accumulate dust.
 Materials
 ~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| PC running LTspice and Scopy
-| Solder-less breadboard and jumper wire kit or Perma Proto solder breadboard
-| ADALP2000 parts kit parts as required
-| Optional: :doc:`ADALM-BUCK-ARDZ Module </wiki-migration/university/tools/lab_hw/adalm_buck>`
-| 12V power supply (preferred) or 5V USB power supply (workable)
-| Voltmeter (optional, can use M2K in Voltmeter mode.)
-| LTspice files for this activity: :git-education_tools:`m2k/ltspice/buck_ltspice`
+ADALM2000 Active Learning Module PC running LTspice and Scopy Solder-less breadboard and jumper wire kit or Perma Proto solder breadboard ADALP2000 parts kit parts as required Optional: :doc:`ADALM-BUCK-ARDZ Module </wiki-migration/university/tools/lab_hw/adalm_buck>` 12V power supply (preferred) or 5V USB power supply (workable) Voltmeter (optional, can use M2K in Voltmeter mode.) LTspice files for this activity: :git-education_tools:`m2k/ltspice/buck_ltspice`
 
 Activity 1: An Open-Loop 2:1 Buck Converter
 -------------------------------------------
@@ -311,8 +304,6 @@ The animated figure below shows the ripple voltage for output capacitances of 22
 Activity 2: An Open-Loop Variable Buck Converter
 ------------------------------------------------
 
-.. _theory-and-simulation-1:
-
 Theory and Simulation
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -330,8 +321,6 @@ This circuit is also included in the LT1054_buck_complete.asc LTspice simulation
 
 Open the circuit and run the simulation; the duty cycle and frequency are parameterized so that they can be easily changed. Test several values of the duty cycle (20%, 40%, 60%, 80%), show that VOUT = VIN \* Duty Cycle
 
-.. _circuit-construction-and-testing-1:
-
 Circuit Construction and Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -339,8 +328,6 @@ Use M2K to override the LT1054's internal oscillator. Open Scopy's pattern gener
 
 Activity 3: A closed-Loop, Voltage Mode Buck Converter
 ------------------------------------------------------
-
-.. _theory-and-simulation-2:
 
 Theory and Simulation
 ~~~~~~~~~~~~~~~~~~~~~
@@ -350,8 +337,6 @@ Obviously, sensitivity to input voltage changes and output loading is undesirabl
 This feedback path can be implemented in another way - using a software-programmable feedback loop. The M2K already has the required elements - it can measure the output voltage, and control the duty cycle of a digital output. Scopy includes a "debug mode" that allows interaction with JavaScript programs, and a script is included in the resources section that does this.
 
 Yet another way is to use an Arduino Uno microcontroller to close the loop. The Uno has 6 analog inputs, one of which can be used to measure the output voltage. It also includes several PWM outputs, that can be used to control the duty cycle of the LT1054.
-
-.. _circuit-construction-and-testing-2:
 
 Circuit Construction and Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -403,20 +388,16 @@ The following figure shows the operation of the closed-loop circuit. The setpoin
 Going Further
 -------------
 
-| This activity borrows heavily from Analog Devices Application Note 140, which is an excellent reference to build upon concepts in this activity:
-| `Application Note 140 <http://www.analog.com/media/en/technical-documentation/application-notes/AN140fb.pdf>`_
+This activity borrows heavily from Analog Devices Application Note 140, which is an excellent reference to build upon concepts in this activity: `Application Note 140 <http://www.analog.com/media/en/technical-documentation/application-notes/AN140fb.pdf>`_
 
-| AN19 is the LT1070 design manual, rich with examples:
-| `Application Note 19 <http://www.analog.com/media/en/technical-documentation/application-notes/an19fc.pdf>`_
+AN19 is the LT1070 design manual, rich with examples: `Application Note 19 <http://www.analog.com/media/en/technical-documentation/application-notes/an19fc.pdf>`_
 
-| Article on simulating SMPS loop gain (and why it's often unnecessary):
-| `Extracting Switch Mode Power Supply Loop Gain in Simulation <http://www.analog.com/en/technical-articles/ltspice-extracting-switch-mode-power-supply-loop-gain-in-simulation-and-why-you-usually-don-t-need.html>`_
+Article on simulating SMPS loop gain (and why it's often unnecessary): `Extracting Switch Mode Power Supply Loop Gain in Simulation <http://www.analog.com/en/technical-articles/ltspice-extracting-switch-mode-power-supply-loop-gain-in-simulation-and-why-you-usually-don-t-need.html>`_
 
 Questions:
 ----------
 
-| Return to :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>`
-| Return to :doc:`Engineering University Program Home </wiki-migration/university>`
+Return to :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>` Return to :doc:`Engineering University Program Home </wiki-migration/university>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ldo_hi_v_lo_i.png
    :width: 500px

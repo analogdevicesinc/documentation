@@ -49,8 +49,8 @@ Pin 11        Digital Ground      DGND
 Pin 12        Digital Power       VDD
 ============= =================== ========
 
-| 
-|
+
+
 
 .. important::
 

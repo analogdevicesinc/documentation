@@ -25,13 +25,7 @@ Voltage feedback op amps operate as a voltage in / voltage out amplifier and the
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 – OP97 opamp
-| 2 – 100 Ω resistors
-| 2 – 4.7 KΩ resistors
-| 1 – 470 KΩ resistor ( for optional offset trim )
-| 1 – 1 MΩ resistor
-| 1 – 10 KΩ potentiometer ( for optional offset trim )
+ADALM1000 hardware module 1 – OP97 opamp 2 – 100 Ω resistors 2 – 4.7 KΩ resistors 1 – 470 KΩ resistor ( for optional offset trim ) 1 – 1 MΩ resistor 1 – 10 KΩ potentiometer ( for optional offset trim )
 
 **Method 1**
 
@@ -91,7 +85,6 @@ Reminder: You must take into account the scaling factor of the resistive divider
 
 **For Further Reading:**
 
-| Here is a good technical paper on how to make :adi:`Simple Op Amp Measurements <en/analog-dialogue/articles/simple-op-amp-measurements.html>`
-| :adi:`Open Loop Gain and Open Loop Gain Nonlinearity <media/en/training-seminars/tutorials/MT-044.pdf>`
+Here is a good technical paper on how to make :adi:`Simple Op Amp Measurements <en/analog-dialogue/articles/simple-op-amp-measurements.html>` :adi:`Open Loop Gain and Open Loop Gain Nonlinearity <media/en/training-seminars/tutorials/MT-044.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

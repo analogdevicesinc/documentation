@@ -6,14 +6,14 @@ Overview
 
 The optimal performance of RF power amplifiers depends on precise biasing control, which enhances factors like linearity and efficiency. GaN HEMTs have proven superior in high-frequency and high-power RF applications but require careful bias voltage timing to prevent device damage. To ensure safe and reliable operation, proper biasing sequence and protection are essential. This reference design utilizes ADI’s portfolio for control, protection, and appropriate bias sequencing of RF power amplifier arrays designed for massive MIMO and macro base-station applications. The system manages the power-up and power-down progression of Power Amplifier arrays while continuously monitoring the system’s crucial parameters.
 
-| |block_diagram.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/block_diagram.jpg
+   :alt: block_diagram.jpg
+   :align: center
+   :width: 600px
 
-.. container:: center
+//Figure 1. System Architecture //
 
-   *<fc #000000>Figure 1. System Architecture </fc>*
-
-
-| The conventional approach of powering up and powering down of GaN amplifiers involves using multiple bench power supplies and manually turning them on and off based on the specific amplifier requirements. However, this method carries a high risk of damaging the amplifier due to potential human errors and is neither time-efficient nor cost-effective.
+The conventional approach of powering up and powering down of GaN amplifiers involves using multiple bench power supplies and manually turning them on and off based on the specific amplifier requirements. However, this method carries a high risk of damaging the amplifier due to potential human errors and is neither time-efficient nor cost-effective.
 
 The PA Array Board reference design helps address these challenges, this innovative reference design eliminates human errors and fully automates the power-up and power-down procedure, ensuring the safe and reliable operation of GaN amplifiers.
 
@@ -38,12 +38,12 @@ Reference Design Hardware
 Primary Side
 ~~~~~~~~~~~~
 
-|hw_top_label.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/hw_top_label.jpg
+   :alt: hw_top_label.jpg
+   :align: center
+   :width: 600px
 
-.. container:: center
-
-   *<fc #000000>Figure 2. Top View</fc>*
-
+*Figure 2. Top View*
 
 Power Supply Connectors
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -137,17 +137,15 @@ Pin Turrets and Hooks
 
 -  The PA Array Controler Board was designed for specific power amplifiers and is used on the RF signal chain as shown below.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/8t8r_signal_chain.jpg
+   :align: center
+   :width: 800px
 
-|image1|
-
-.. container:: center
-
-   *<fc #000000>Figure 3. RF Signal Chain</fc>*
-
+*Figure 3. RF Signal Chain*
 
 ::
 
-   *The bias lines of these amplifiers must be connected to their desired pinouts on the reference design board. Refer to the table below for the correct pin assignments. 
+   *The bias lines of these amplifiers must be connected to their desired pinouts on the reference design board. Refer to the table below for the correct pin assignments.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/pinouts.jpg
    :align: center
@@ -184,12 +182,11 @@ Pin Turrets and Hooks
 Secondary Side
 ~~~~~~~~~~~~~~
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/hw_bottom.png
+   :align: center
+   :width: 350px
 
-.. container:: center
-
-   *<fc #000000>Figure 4. Bottom View</fc>*
-
+*Figure 4. Bottom View*
 
 --------------
 
@@ -251,12 +248,11 @@ This section describes the basic setup and connections in order for the user to 
 Hardware Setup
 ^^^^^^^^^^^^^^
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/hw_setup.jpg
+   :align: left
+   :width: 700px
 
-.. container:: center
-
-   *<fc #000000>Figure 5. Setting up the hardware </fc>*
-
+//Figure 5. Setting up the hardware //
 
 -  First, connect the 10-pin SWD debug cable to port P6 of the PA Array Board.
 -  Next is to connect the other end of the SWD debug cable to the MAX32625 Pico.
@@ -264,13 +260,9 @@ Hardware Setup
 -  Then, connect the other micro-USB to USB cable to port P5. This connection allows the USB-UART communication that enables the user to access the Graphical User Interface (GUI).
 -  From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.\
 
-|image4|
+|image1|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 6. DAPLINK Drive </fc>*
-
+//Figure 6. DAPLINK Drive //
 
 -  Connect the positive terminal of the +48V Power Supply to port P2.1.
 -  Then, connect the negative terminal to port P2.2. Do not turn-on the power supply yet.
@@ -283,47 +275,47 @@ Software Setup
 -  If the user would like to re-upload the firmware again, simply drag and drop the provided ADI PA Array Firmware v0.0.10112023[BETA] (.hex) file onto the DAPLINNK drive.
 -  To access the graphical user interface (GUI), open the provided PA Array UI (.exe) file. For a better understanding of the GUI's functionality and features, please refer to the image provided below, which offers a concise description of the graphical user interface.
 
-|gui_dashboard.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_dashboard.png
+   :alt: gui_dashboard.png
+   :align: center
+   :width: 600px
 
-.. container:: center
+*Figure 7. Dashboard*
 
-   *<fc #000000>Figure 7. Dashboard</fc>*
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_home.png
+   :alt: gui_home.png
+   :align: center
+   :width: 600px
 
+//Figure 8. Monitor and Control Panel //
 
-   |gui_home.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des1.png
+   :alt: gui_des1.png
+   :align: center
+   :width: 600px
 
-.. container:: center
+*Figure 9. GUI Overview*
 
-   *<fc #000000>Figure 8. Monitor and Control Panel </fc>*
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des2.png
+   :alt: gui_des2.png
+   :align: center
+   :width: 600px
 
+//Figure 10. GUI Historical Graph //
 
-   |gui_des1.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des3.png
+   :alt: gui_des3.png
+   :align: center
+   :width: 600px
 
-.. container:: center
+//Figure 11. GUI Device Group //
 
-   *<fc #000000>Figure 9. GUI Overview</fc>*
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des4.png
+   :alt: gui_des4.png
+   :align: center
+   :width: 600px
 
-
-   |gui_des2.png|
-
-.. container:: center
-
-   *<fc #000000>Figure 10. GUI Historical Graph </fc>*
-
-
-   |gui_des3.png|
-
-.. container:: center
-
-   *<fc #000000>Figure 11. GUI Device Group </fc>*
-
-
-   |gui_des4.png|
-
-.. container:: center
-
-   *<fc #000000>Figure 12. GUI Control Group </fc>*
-
+//Figure 12. GUI Control Group //
 
 Basic Operation
 ^^^^^^^^^^^^^^^
@@ -349,57 +341,16 @@ Basic Operation
 -  There are two ways to set the voltages. The first is by using the spin box and the second is by using the slider.\
 
 
-|image5|
+|image2|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 7. Setting the GaN gate voltages through GUI</fc>*
-
+*Figure 7. Setting the GaN gate voltages through GUI*
 
 -  Once the voltages are entered, press the set button. Do this process on each of the GaN gates to replicate the oscilloscope result.
 -  You will see the voltage translation from pinch-off to operating voltage. The oscilloscope will display the voltage transition and the time response. The result should be the same as the images below.\
 
-|image6|
+|image3|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 7. VGC2 Voltage Time Response</fc>*
-
-
-\
-
-
-
-|image7|
-
-.. container:: center
-
-   *<fc #000000>Figure 8. VGP2 Voltage Time Response</fc>*
-
-
-\
-
-
-
-|image8|
-
-.. container:: center
-
-   *<fc #000000>Figure 9. VG1 Voltage Time Response</fc>*
-
-
-\
-
-
-
-|image9|
-
-.. container:: center
-
-   *<fc #000000>Figure 10. VG2 Voltage Time Response</fc>*
-
+*Figure 7. VGC2 Voltage Time Response* |image4| *Figure 8. VGP2 Voltage Time Response* |image5| *Figure 9. VG1 Voltage Time Response* |image6| *Figure 10. VG2 Voltage Time Response*
 
 -  Let's measure this time the DAC voltage transition of the LDMOS gate pins (VGC1, VGP1).
 -  Connect a 10nF capacitive load on each LDMOS gate pins (VGC1, VGP1) pin with respect to ground.
@@ -413,36 +364,16 @@ Basic Operation
    -  VGC1: +3.8V
    -  VGP1: +1.9V\
 
-   |image10|
+   |image7|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 7. Setting the LDMOS gate voltages through GUI</fc>*
-
+*Figure 7. Setting the LDMOS gate voltages through GUI*
 
 -  Once the voltages are entered, press the set button. You will see the voltage translation from pinch-off to operating voltage. The oscilloscope will display the voltage transition and the time response. The result should be the same as the images below.\
 
 
+|image8|
 
-|image11|
-
-.. container:: center
-
-   
-   *<fc #000000>Figure 11. VGC1 Voltage Time Response</fc>*
-
-
-\
-
-
-
-|image12|
-
-.. container:: center
-
-   *<fc #000000>Figure 12. VGP1 Voltage Time Response</fc>*
-
+*Figure 11. VGC1 Voltage Time Response* |image9| *Figure 12. VGP1 Voltage Time Response*
 
 -  At this point, all the gate pins are in the normal operating voltage state. We are now ready to measure the voltage transition from normal operating to pinch-off voltage.
 -  Connect all 4-channels of the oscilloscope probes in parallel with all the capacitor pins.
@@ -459,80 +390,16 @@ Basic Operation
    -  VG1: -5V
    -  VG2: -5V\
 
-   |image13|
+   |image10|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 7. Setting the GaN gate voltages through GUI</fc>*
-
+*Figure 7. Setting the GaN gate voltages through GUI*
 
 -  Press the set button to reflect the changes. The result should be the same as the image below.\
 
 
+|image11|
 
-|image14|
-
-.. container:: center
-
-   
-   *<fc #000000>Figure 13. VGC2 Voltage Time Response</fc>*
-
-
-\
-
-
-
-|image15|
-
-.. container:: center
-
-   *<fc #000000>Figure 14. VGP2 Voltage Time Response</fc>*
-
-
-\
-
-
-
-|image16|
-
-.. container:: center
-
-   *<fc #000000>Figure 15. VG1 Voltage Time Response</fc>*
-
-
-\
-
-
-
-|image17|
-
-.. container:: center
-
-   *<fc #000000>Figure 16. VG2 Voltage Time Response</fc>*
-
-
-\
-
-
-
-|image18|
-
-.. container:: center
-
-   *<fc #000000>Figure 17. VGC1 Voltage Time Response</fc>*
-
-
-\
-
-
-
-|image19|
-
-.. container:: center
-
-   *<fc #000000>Figure 18. VGP1 Voltage Time Response</fc>*
-
+*Figure 13. VGC2 Voltage Time Response* |image12| *Figure 14. VGP2 Voltage Time Response* |image13| *Figure 15. VG1 Voltage Time Response* |image14| *Figure 16. VG2 Voltage Time Response* |image15| *Figure 17. VGC1 Voltage Time Response* |image16| *Figure 18. VGP1 Voltage Time Response*
 
 .. note::
 
@@ -542,24 +409,16 @@ Basic Operation
 -  We are done capturing the voltage transition from power-up and power-down. Now, we will capture the time it takes from when the fault is detected until the DAC outputs the gate pinch-off voltage.
 -  We have already gathered data from the fault protection circuit, LTC7000. When it detects a fault event, it sends a signal from LTC7000 to the MCU in approximately 1 microsecond. This value will then be added to the system power-down measurement and the time it takes for the MCU to process the fault flag up to the DAC command.\
 
-|image20|
+|image17|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 19. LTC7000 -> MCU GPIO Fault Flag Time </fc>*
-
+//Figure 19. LTC7000 -> MCU GPIO Fault Flag Time //
 
 -  Follow the below steps:
 -  Place the positive terminal of the oscilloscope probe into the provided wire as shown in the image below. Then connect the negative terminal of the oscilloscope probe to the GND of the board.\
 
-|image21|
+|image18|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 20. Fault Detection Time Measurement Setup</fc>*
-
+*Figure 20. Fault Detection Time Measurement Setup*
 
 -  Set the required oscilloscope settings.
 
@@ -569,37 +428,23 @@ Basic Operation
 -  For this test, we will introduce an overvoltage fault. To do this, increase the voltage from the external power supply from +48V to +56V. This will cause a fault event since the preset threshold for an overvoltage is +55V.
 -  The oscilloscope will display a similar time response as shown below.\
 
-|image22|
+|image19|
 
-.. container:: center
-
-   
-   *<fc #000000>Figure 21. MCU Processing Time</fc>*\
-
+*Figure 21. MCU Processing Time*
 
 -  On the GUI, it will notify the user that a fault event occurred and show a warning message as in the image below.\
 
 
+|image20|
 
-|image23|
-
-.. container:: center
-
-   
-   *<fc #000000>Figure 21. Warning Message</fc>*
-
+*Figure 21. Warning Message*
 
 -  Also, the GUI is capable of logging and displaying the fault event time and on which device it occurs.\
 
 
+|image21|
 
-|image24|
-
-.. container:: center
-
-   
-   *<fc #000000>Figure 21. Fault Logging </fc>*
-
+//Figure 21. Fault Logging //
 
 -  The overall time from LTC7000 fault detection up to the DAC pinch-off voltage is shown on the Fault Event Time Summary below.
 
@@ -631,10 +476,7 @@ System Power Up and System Power Down Summary
 | VG2             | GTRB384608FC-V1 GaN Peak Gate | -5                        | -2.75                     | 1.81                   | 2.00                     |
 +-----------------+-------------------------------+---------------------------+---------------------------+------------------------+--------------------------+
 
-.. container:: center
-
-   \ *<fc #000000>Table 1. Gate Voltages Timing response Summary</fc>*
-
+*Table 1. Gate Voltages Timing response Summary*
 
 -  Power-up time -> from pinch-off voltage to operating voltage.
 -  Power-down time -> from operating voltage to pinch-off voltage.
@@ -674,96 +516,58 @@ Do note that the firmware loaded on the board doesn't include these measurements
 -7V to -1.2V DAC Settling Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The DAC output voltage settling time from -7V pinch-off to -1.2V is 2.31us. See the image below.
-
-
-|image25|
-
-.. container:: center
-
-   *<fc #000000>Figure 22. -7V to -1.2V DAC Settling Time</fc>*
-
+The DAC output voltage settling time from -7V pinch-off to -1.2V is 2.31us. See the image below. |image22| *Figure 22. -7V to -1.2V DAC Settling Time*
 
 -1.2V to -7V DAC Settling Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The DAC output voltage settling time from -1.2V pinch-off to -2V is 2.31us. See the image below.
-
-
-|image26|
-
-.. container:: center
-
-   *<fc #000000>Figure 23. -1.2V to -7V DAC Settling Time</fc>*
-
+The DAC output voltage settling time from -1.2V pinch-off to -2V is 2.31us. See the image below. |image23| *Figure 23. -1.2V to -7V DAC Settling Time*
 
 *End of Document*
 
-.. |block_diagram.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/block_diagram.jpg
-   :width: 600px
-.. |hw_top_label.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/hw_top_label.jpg
-   :width: 600px
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/8t8r_signal_chain.jpg
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/hw_bottom.png
-   :width: 350px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/hw_setup.jpg
-   :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/daplink.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/daplink.jpg
    :width: 300px
-.. |gui_dashboard.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_dashboard.png
-   :width: 600px
-.. |gui_home.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_home.png
-   :width: 600px
-.. |gui_des1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des1.png
-   :width: 600px
-.. |gui_des2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des2.png
-   :width: 600px
-.. |gui_des3.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des3.png
-   :width: 600px
-.. |gui_des4.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des4.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gan1_gan2_set.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gan1_gan2_set.jpg
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc2_pwr_up_time.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc2_pwr_up_time.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp2_pwr_up_time.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp2_pwr_up_time.png
    :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_up_time.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_up_time.png
    :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_up_time.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_up_time.png
    :width: 500px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/ldmos_set.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/ldmos_set.jpg
    :width: 200px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc1_pwr_up_time.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc1_pwr_up_time.png
    :width: 500px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp1_pwr_up_time.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp1_pwr_up_time.png
    :width: 500px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/pinch_off_set.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/pinch_off_set.jpg
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc2_pwr_dwn_time.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc2_pwr_dwn_time.png
    :width: 500px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp2_pwr_dwn_time.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp2_pwr_dwn_time.png
    :width: 500px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_dwn_time.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_dwn_time.png
    :width: 500px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_dwn_time.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_dwn_time.png
    :width: 500px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc1_pwr_dwn_time.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc1_pwr_dwn_time.png
    :width: 500px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp1_pwr_dwn_time.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp1_pwr_dwn_time.png
    :width: 500px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/flag_time.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/flag_time.png
    :width: 500px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/fault_setup.jpg
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/fault_setup.jpg
    :width: 500px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/mcu_time.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/mcu_time.png
    :width: 500px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/fault_detected.jpg
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/fault_detected.jpg
    :width: 500px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/fault_log.jpg
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/fault_log.jpg
    :width: 300px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/-7vto-1.2v.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/-7vto-1.2v.png
    :width: 500px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/-1.2vto-7v.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/-1.2vto-7v.png
    :width: 500px

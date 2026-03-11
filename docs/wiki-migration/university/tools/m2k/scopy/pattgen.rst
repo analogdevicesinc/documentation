@@ -4,7 +4,7 @@ Scopy Pattern Generator
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/youtube>3uU97QMPhGQ
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>3uU97QMPhGQ
    :alt: youtube>3uU97QMPhGQ
 
 General Description
@@ -49,23 +49,22 @@ The user can enable channels by clicking the blue checkbox button, setting the c
 
 |image4| |image5|
 
-| 
-
 Use cases
 ---------
 
 Enable & run one channel
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
+
 
 .. raw:: html
 
    <details><summary>Click to expand XHIDDENSTARTSTOP 1. Enable channel 0 - select it and enable the clock pattern
-| |image6|
 
-| 
-| 2. Start pattern generator
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_4.png
+   :align: center
+
+2. Start pattern generator
 
 3. Connect channel 0 to the oscilloscope
 
@@ -78,15 +77,14 @@ Enable & run one channel
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_5.png
    :align: center
 
-| 
-| 6. Run pattern generator
+6. Run pattern generator
 
-|image7| XHIDDENEND
+|image6| XHIDDENEND
 
 Create a 4 channel binary counter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-XHIDDENSTART Click to expand</summary>
+XHIDDENSTART Click to expand
 
 3.1 Select multiple channels (Selecting a channel is done by double clicking the handle of the channel on the left side of the plot). Enable multiple channels from the channel enumerator
 
@@ -107,15 +105,13 @@ XHIDDENSTART Click to expand</summary>
 
 3.8 Using the Scopy's logic analyzer (or an external tool) verify channels 0,1,2,3
 
-
-|image8|
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_7.png
+   :align: center
 
 .. raw:: html
 
    </details>
 
-
- 
 
 Change settings while running
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +120,7 @@ Change settings while running
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 1. Channels can be modified/enabled/disabled while running. The pattern generator will reconfigure and resume running the patterns. While reconfiguring, all pins of the M2K will be taken high impedance in the meantime.
 
@@ -133,8 +129,6 @@ Change settings while running
    </details>
 
 
- 
-
 Single-shot generation
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -142,7 +136,7 @@ Single-shot generation
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 1. Select single
 
@@ -155,8 +149,6 @@ Clicking single shot will generate a single buffer and then switch all pins to h
    </details>
 
 
- 
-
 Special patterns
 ~~~~~~~~~~~~~~~~
 
@@ -164,7 +156,7 @@ Special patterns
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 1. Enable a channel and set UART pattern
 
@@ -198,6 +190,4 @@ Special patterns
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_3.png
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_8.png
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_9.png
-.. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_4.png
-.. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pg-uc/2017-06-12_12_45_26-ubuntu_running_-_oracle_vm_virtualbox_1.png
-.. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_7.png
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pg-uc/2017-06-12_12_45_26-ubuntu_running_-_oracle_vm_virtualbox_1.png

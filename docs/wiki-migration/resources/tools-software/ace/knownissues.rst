@@ -56,11 +56,12 @@ High-Speed DAC Eval Boards are not discovered
 
 The High-Speed DAC boards have a second on-board USB controller, make sure this is connected as well as the main FPGA controller board. To avoid potential confusion, ACE only reports boards on the second controller (where it is required).
 
-| 
-| As of version 1.15, ACE includes an option to use ADI SDP driver for the on-board USB controller to avoid any of the conflicts with VISA drivers listed below and another option to install the DPG Lite application to replace the High-Speed DAC Software Suite. Both options can be activated by selecting the "High Speed DAC Components" option upon installation: |image2|
+As of version 1.15, ACE includes an option to use ADI SDP driver for the on-board USB controller to avoid any of the conflicts with VISA drivers listed below and another option to install the DPG Lite application to replace the High-Speed DAC Software Suite. Both options can be activated by selecting the "High Speed DAC Components" option upon installation:
 
-| 
-| However, at this time, the High-Speed DAC Eval Boards listed below are not yet supported through ACE but through a dedicated SPI application that requires the NI VISA driver. The recommended action if you are actively using these High-Speed DAC Eval Boards with dedicated SPI applications is to not select the options discussed above.
+
+|image2|
+
+However, at this time, the High-Speed DAC Eval Boards listed below are not yet supported through ACE but through a dedicated SPI application that requires the NI VISA driver. The recommended action if you are actively using these High-Speed DAC Eval Boards with dedicated SPI applications is to not select the options discussed above.
 
 ================================= ===================================
 Not yet supported through ACE ••• Supported through ACE with DPG Lite
@@ -88,15 +89,14 @@ AD9993                            AD9136
 \                                 AD9767/65/63/09 (on DPG Lite only)
 ================================= ===================================
 
-| 
+
 | If the HSDAC components are not installed, there is a known driver conflict issue between the NI VISA driver and Keysight's VISA driver (used for automation of equipment). To work around this, try setting the Keysight VISA driver as the secondary VISA driver. This can be done with the Keysight installer. If this doesn't work, you may need to uninstall the Keysight Driver.
-| The same workaround may be necessary for Rhode-Schwarz VISA.
 
-| 
-| If you need to automate equipment and use ACE at the same time you might have to use two separate PCs. The ACE remote control/scripting interface can be used by networking the PCs and setting Firewall rules appropriately.
+The same workaround may be necessary for Rhode-Schwarz VISA.
 
-| 
-| Another possible issue causing ACE to not detect Hsdac boards is an outdated version of the "Evaluation Board Service" library. This library is installed as part of DPGDownloader. The "BitFlipper" application installer overwrites the currently installed version of the library with an incompatible one. Reinstalling the :doc:`latest version of High-Speed DAC Software Suite </wiki-migration/resources/eval/dpg/dacsoftwaresuite>` will restore the correct version of the library.
+If you need to automate equipment and use ACE at the same time you might have to use two separate PCs. The ACE remote control/scripting interface can be used by networking the PCs and setting Firewall rules appropriately.
+
+Another possible issue causing ACE to not detect Hsdac boards is an outdated version of the "Evaluation Board Service" library. This library is installed as part of DPGDownloader. The "BitFlipper" application installer overwrites the currently installed version of the library with an incompatible one. Reinstalling the :doc:`latest version of High-Speed DAC Software Suite </wiki-migration/resources/eval/dpg/dacsoftwaresuite>` will restore the correct version of the library.
 
 This is the ACE log entry indicating an incompatible version of the "Evaluation Board Service"
 
@@ -111,16 +111,15 @@ Register Debugger Does Not Update Software Values
 
 While not a bug, the behavior of the register debugger can be confusing and lead users to think that ACE is not successful communicating to the hardware. The register debugger reads and writes directly to the hardware, and it does not update register values stored in the software. This allows the user to avoid any events that would be triggered in the plug-in based on the register change, but this will cause the register map to be out of sync between the hardware and the software. The registers that are out of sync will be indicated by bold lettering in the register map, as seen in the figure below. If the user clicks the "Apply Changes" or if the Apply Changes transaction is executed by any other sequence in the plug-in, then ACE will update the hardware to match the UI, overriding changes made in the register debugger.
 
-| 
-| |image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/updatesoftwareregisersunchecked.png
+   :align: center
+   :width: 600px
 
 As of ACE 1.13, there is an option to change the behavior of the register debugger using the "Update Software Registers" option. Selecting this will cause both the GUI and the hardware to update when registers are read or written through the register debugger.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/updatesoftwareregiserschecked.png
    :align: center
    :width: 600px
-
-| 
 
 To preserve the changes made in the register debugger, click the "Read All" toolbar button after completing register debugger writes and before performing any additional operations in ACE.
 
@@ -175,17 +174,17 @@ When a machine is shared between users, the file access permissions may not be s
 -  Right Click on the "Plugins" folder and select "Properties"
 -  Select the "Security" tab and click "Advanced"
 
-|image4|
+|image3|
 
 -  Choose "Change Permissions"
 -  If you see "Everyone" or "Users" click "Edit" otherwise click "Add"
 -  Grant "Full Control" or at minimum read/write/execute, click OK to dismiss the dialog
 
-|image5|
+|image4|
 
 -  Check the box "Replace all child object..."
 
-|image6|
+|image5|
 
 -  Click Apply
 
@@ -216,7 +215,7 @@ When updating from an older version of ACE there is an issue that can cause ACE 
    
    ::
    
-       System.NullReferenceException: 
+       System.NullReferenceException:
        Object reference not set to an instance of an object.
        at AnalogDevices.Csa.UI.Themes.ThemeSelector.ApplyPreferredTheme()
        at AnalogDevices.Csa.App.Wpf.CsaApplication..ctor()
@@ -326,14 +325,12 @@ Contact ACE Support
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/ace/hsdac_install.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/ace/updatesoftwareregisersunchecked.png
-   :width: 600px
 .. |UpdateRoot.png| image:: https://wiki.analog.com/_media/resources/tools-software/updateroot.png
    :width: 1000px
 .. |CodeSigning.png| image:: https://wiki.analog.com/_media/resources/tools-software/codesigning.png
    :width: 1000px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.folderproperties.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.folderproperties.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.fullcontrol.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.fullcontrol.png
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.advancedfilepermissions.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.advancedfilepermissions.png

@@ -4,8 +4,9 @@ EVALUATING THE AD9684 ANALOG-TO-DIGITAL CONVERTER
 Preface
 -------
 
-| This user guide describes the :adi:`AD9684` evaluation board which provides all of the support circuitry required to operate the ADC in its various modes and configurations. The application software used to interface with the devices is also described.
-| The :adi:`AD9684` data sheet provides additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`. For additional information or questions, send an email to highspeed.converters@analog.com.
+This user guide describes the :adi:`AD9684` evaluation board which provides all of the support circuitry required to operate the ADC in its various modes and configurations. The application software used to interface with the devices is also described.
+
+The :adi:`AD9684` data sheet provides additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`. For additional information or questions, send an email to highspeed.converters@analog.com.
 
 AD9684 Evaluation Board
 -----------------------
@@ -24,7 +25,7 @@ Typical Measurement Setup
 
 .. container:: centeralign
 
-   *Figure 2. Evaluation Board Connection—*\ :adi:`AD9684-500EBZ <AD9684>` *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
+   *Figure 2. Evaluation Board Connection—*\ :adi:`AD9684-500EBZ <AD9684>`\ *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
 
 
 Features
@@ -74,7 +75,7 @@ Equipment Needed
 Getting Started
 ---------------
 
-| This section provides quick start procedures for using the evaluation board for AD9684.
+This section provides quick start procedures for using the evaluation board for AD9684.
 
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
@@ -102,54 +103,53 @@ Visual Analog Setup
    //Figure 3. Selecting the :adi:`AD9684` canvas *
 
 
-\* Select the AD9684 \
+- Select the AD9684 \
 
 .. container:: centeralign
 
-   *\ Figure 4. Selecting the :adi:`AD9684` canvas *
+   *Figure 4. Selecting the :adi:`AD9684` canvas*
 
 
-\* View the AD9684 canvas \
-
-.. container:: centeralign
-
-   *\ Figure 5. The\ :adi:`AD9684` canvas *
-
-
-\* If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 6)\ \
+- View the AD9684 canvas \
 
 .. container:: centeralign
 
-   *\ Figure 6. Expanding Display in VA\ *
+   *Figure 5. The\ :adi:`AD9684` canvas*
 
 
-\* Click the* **Settings** *button in the* **ADC Data Capture** *block to view the capture size as shown in Figure 7 \
-
-.. container:: centeralign
-
-   *\ Figure 7. Setting the capture length\ *
-
-
-\* On the* **General** *tab make sure the clock frequency is set to* **500MHz** *(or other clock frequency). The FFT capture length may be changed to 131072 (128k) per channel. The* :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` *FPGA software supports up to 256K FFT capture (128K per channel)\ \
+- If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 6)\ \
 
 .. container:: centeralign
 
-   *\ Figure 8. Setting the clock frequency *
+   *Figure 6. Expanding Display in VA*
 
 
-\* Click on the* **Capture Board** *tab and browse to the* **ad9684_evalez_05202014_0903am.mcs** *file. Click the* **Program** *button. The* **FPGA_DONE** *LED should illuminate on the* :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` *board indicating that the FPGA has been correctly programmed. The bin file is available at the* **Design and Integration Files** *section \* Click* **OK**\ *==== SPIController Setup ==== \* Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController \* Select the appropriate configuration file when prompted. \* In the* **Global** *tab, under the* **Generic Read/Write** *section, write 0x81 to register 0x000. This issues a Soft reset for the DUT. \
-
-.. container:: centeralign
-
-   *\ Figure 9. Sending a Soft Reset to the AD9684\ *
-
-
-\* Individual Channel control for* **ADC A** *and* **ADC B** *are done using the Device Index Register (0x008) in the Global tab.\ \
+- Click the **Settings** button in the **ADC Data Capture** block to view the capture size as shown in Figure 7 \
 
 .. container:: centeralign
 
-   *\ Figure 10. Device Index for ADC Channel A and Channel B//
+   *Figure 7. Setting the capture length*
 
+
+- On the **General** tab make sure the clock frequency is set to **500MHz** *(or other clock frequency). The FFT capture length may be changed to 131072 (128k) per channel. The* :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` *FPGA software supports up to 256K FFT capture (128K per channel)\ \
+
+.. container:: centeralign
+
+   *Figure 8. Setting the clock frequency*
+
+
+- Click on the **Capture Board** tab and browse to the **ad9684_evalez_05202014_0903am.mcs** file. Click the **Program** button. The **FPGA_DONE** LED should illuminate on the* :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` *board indicating that the FPGA has been correctly programmed. The bin file is available at the **Design and Integration Files** section \* Click **OK**==== SPIController Setup ==== * Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController \* Select the appropriate configuration file when prompted. \* In the **Global** tab, under the **Generic Read/Write** section, write 0x81 to register 0x000. This issues a Soft reset for the DUT. \
+
+.. container:: centeralign
+
+   *Figure 9. Sending a Soft Reset to the AD9684*
+
+
+- Individual Channel control for **ADC A** and **ADC B** are done using the Device Index Register (0x008) in the Global tab.\ \
+
+.. container:: centeralign
+
+   *Figure 10. Device Index for ADC Channel A and Channel B*
 
 -  Under **ADC A** and **ADC B** tabs the options for Channel A and B are listed. Default settings have been programmed to ensure optimal performance for the input bandwidth and sample rate. Only the following options need to be operated with:
 
@@ -327,10 +327,7 @@ Troubleshooting Tips
 
 .. container:: centeralign
 
-   \ *Figure 27. Issuing a data path soft reset through SPIController*\
-
-
-\*\* The FFT plot appears normal, but performance is poor. \*\*
+   \ *Figure 27. Issuing a data path soft reset through SPIController*\** The FFT plot appears normal, but performance is poor.**
 
 -  Make sure you are using the appropriate band-pass filter on the analog input.
 -  Make sure the signal generators for the clock and the analog input are clean (low phase noise).

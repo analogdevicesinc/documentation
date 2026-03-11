@@ -4,7 +4,7 @@ Scopy Digital IO
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/youtube>9cYstnAoUpk
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>9cYstnAoUpk
    :alt: youtube>9cYstnAoUpk
 
 General description
@@ -28,7 +28,7 @@ IO operation
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 1. Run instrument
 
@@ -56,7 +56,7 @@ Grouped operation
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 1. Make the following connections
 
@@ -109,7 +109,7 @@ Interaction with pattern generator
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 1. Start digital IO instrument
 

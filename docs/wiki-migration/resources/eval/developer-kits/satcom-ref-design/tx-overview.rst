@@ -121,17 +121,11 @@ The Genesys workspace incorporates various system level cascade analyses that ta
 -  Two-Tone Test Spectral Simulation
 -  System Cascade highlighting gain (CGAIN), noise figure (CNF), third order output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR)
 
-.. _noise-power-spectral-simulation-1:
-
 Noise Power Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. _two-tone-test-spectral-simulation-1:
-
 Two-Tone Test Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. _system-cascade-1:
 
 System Cascade
 ^^^^^^^^^^^^^^
@@ -150,7 +144,7 @@ The following simulations were created using Keysight SystemVue/Genesys. All com
 
 ::
 
-   * 
+   *
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_tx_genesys_schematic_combined_v1.jpg
    :align: center
@@ -161,19 +155,13 @@ The Genesys workspace incorporates various system level cascade analyses that ta
 -  Two-Tone Test Spectral Simulation
 -  System Cascade highlighting gain (CGAIN), noise figure (CNF), third order output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR)
 
-.. _noise-power-spectral-simulation-2:
-
 Noise Power Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |image1| |image2|
 
-.. _two-tone-test-spectral-simulation-2:
-
 Two-Tone Test Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. _system-cascade-2:
 
 System Cascade
 ^^^^^^^^^^^^^^

@@ -17,10 +17,15 @@ The AD22100 is a monolithic temperature sensor with on-chip signal conditioning.
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| AD22100 temperature sensor
-| ====Hardware Setup==== For temperature measuring is necessary to connect the sensor to the power supply and the output to the oscilloscope. In Figure 2 are presented the sensor connections on a solderless breadboard. |image1|
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit AD22100 temperature sensor
+
+Hardware Setup
+--------------
+
+For temperature measuring is necessary to connect the sensor to the power supply and the output to the oscilloscope. In Figure 2 are presented the sensor connections on a solderless breadboard.
+
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,11 +42,18 @@ Materials
 Procedure
 ---------
 
-| Open Scopy and enable the positive power supply to 5V. On the channel 1 of the oscilloscope you will see the output voltage of the sensor. To obtain the value of the temperature is necessary to refer to the sensor's :adi:`datasheet <media/en/technical-documentation/data-sheets/AD22100.pdf>` to get the output voltage function.
-| :math:`V_out = (V_+/(5V)) \times (1.375 V + 22.5(mV/degC) \times TA)` (1)
-| From the output voltage function given by equation (1) you can extract the equation for the ambiental temperature (TA).
-| :math:`TA=( V_out/(V_+/(5V)) - 1.375V ) / (22.5 (mV/degC))` (2)
-| Add a new math channel to the oscilloscope where you will see the value of the temperature. Insert equation (2) in the f(t) field and set the M1 channel resolution to 10 Volts/Div. Enable the Measure feature of the oscilloscope. The Mean measurement of M1 will display the actual ambiental temperature. |image3|
+Open Scopy and enable the positive power supply to 5V. On the channel 1 of the oscilloscope you will see the output voltage of the sensor. To obtain the value of the temperature is necessary to refer to the sensor's :adi:`datasheet <media/en/technical-documentation/data-sheets/AD22100.pdf>` to get the output voltage function.
+
+:math:`V_out = (V_+/(5V)) \times (1.375 V + 22.5(mV/degC) \times TA)` (1)
+
+From the output voltage function given by equation (1) you can extract the equation for the ambiental temperature (TA).
+
+:math:`TA=( V_out/(V_+/(5V)) - 1.375V ) / (22.5 (mV/degC))` (2)
+
+Add a new math channel to the oscilloscope where you will see the value of the temperature. Insert equation (2) in the f(t) field and set the M1 channel resolution to 10 Volts/Div. Enable the Measure feature of the oscilloscope. The Mean measurement of M1 will display the actual ambiental temperature.
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -51,22 +63,15 @@ Procedure
 Temperature measuring using AD592
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _background-1:
-
 Background
 ----------
 
 The AD592 is a two terminal monolithic integrated circuit temperature transducer that provides an output current proportional to absolute temperature. For a wide range of supply voltages the transducer acts as a high impedance temperature dependent current source of 1 µA/K. with a single voltage supply (4V to 30 V) the AD592 offers 0.5°C measurement accuracy on a wide operating temperature range (–25°C to +105°C).
 
-.. _materials-1:
-
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| AD592 current temperature sensor
-| 1 1kΩ resistor
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit AD592 current temperature sensor 1 1kΩ resistor
 
 Hardware Setup
 --------------
@@ -92,14 +97,17 @@ Make the connections as shown in figure 5.
    Figure 5: AD592 breadboard connections
 
 
-.. _procedure-1:
-
 Procedure
 ---------
 
-| Open Scopy and enable the positive power supply to 5V. On the channel 1 of the oscilloscope you will see the voltage on the resistor. To obtain the current apply Ohm's law.
-| :math:`V=I \times R` (1)
-| The current through the resistor is the voltage read on channel 1 divided to it's resistance value. Because the resistor used is 1kΩ, the numeric value of the current is the same as the voltage but in micro amperes. From the sensor's :adi:`datasheet <media/en/technical-documentation/data-sheets/AD592.pdf>` we know that it's output current increases with 1 µA/K and that the output at 0 °C is 273 µA. |image6|
+Open Scopy and enable the positive power supply to 5V. On the channel 1 of the oscilloscope you will see the voltage on the resistor. To obtain the current apply Ohm's law.
+
+:math:`V=I \times R` (1)
+
+The current through the resistor is the voltage read on channel 1 divided to it's resistance value. Because the resistor used is 1kΩ, the numeric value of the current is the same as the voltage but in micro amperes. From the sensor's :adi:`datasheet <media/en/technical-documentation/data-sheets/AD592.pdf>` we know that it's output current increases with 1 µA/K and that the output at 0 °C is 273 µA.
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -107,8 +115,13 @@ Procedure
 
 
 Knowing this we can apply the formula for conversion from K to °C:
-| :math:`C=K-273.15` (2)
-| To display the temperature on the oscilloscope tool, add a new math channel with equation 2 as a function. Keep in mind that Channel 1 voltage is in mV and the sensor's output current is in µA. This means that if you want to obtain the temperature on the channel M1 you have to subtract 0.273 from the value read on CH1. |image7|
+
+:math:`C=K-273.15` (2)
+
+To display the temperature on the oscilloscope tool, add a new math channel with equation 2 as a function. Keep in mind that Channel 1 voltage is in mV and the sensor's output current is in µA. This means that if you want to obtain the temperature on the channel M1 you have to subtract 0.273 from the value read on CH1.
+
+
+|image7|
 
 .. container:: centeralign
 

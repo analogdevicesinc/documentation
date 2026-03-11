@@ -82,5 +82,5 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#quickstart
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/navigation AD-FMCMOTCON1-EBZ#quickstart
    :alt: Quick Start Guides#.:\|Overview#reference_hdl|HDL

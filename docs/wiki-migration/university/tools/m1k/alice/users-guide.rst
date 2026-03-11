@@ -27,11 +27,12 @@ NUMPY
 All OS:
 ~~~~~~~
 
-| alice-1.0.py(w)
-| `ALICE zip file <https://wiki.analog.com/_media/university/tools/alice-1.0.zip>`_
+alice-1.0.py(w) `ALICE zip file <https://wiki.analog.com/_media/university/tools/alice-1.0.zip>`_
 
-| The zip file also contains the :doc:`spectrum analyzer </wiki-migration/university/tools/m1k/alice/sa-users-guide>` version and the :doc:`analog input multiplexer </wiki-migration/university/tools/m1k/analog-mux>` version of the program, alice-mux-1.0.py(w), which is used in conjunction with the circuit outlined in this Blog:
-| |Two Input Channels Not Enough for Ya|
+The zip file also contains the :doc:`spectrum analyzer </wiki-migration/university/tools/m1k/alice/sa-users-guide>` version and the :doc:`analog input multiplexer </wiki-migration/university/tools/m1k/analog-mux>` version of the program, alice-mux-1.0.py(w), which is used in conjunction with the circuit outlined in this Blog:
+
+
+|Two Input Channels Not Enough for Ya|
 
 Windows:
 ~~~~~~~~
@@ -50,18 +51,11 @@ Directions:
 
 It is assumed that the reader is somewhat familiar with the functionality and capabilities of the ADALM1000 hardware. For more on the ADALM1000 hardware please refer to the following documents:
 
-| :doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>`
-| :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>`
-| :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>`
-| :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
-| :doc:`ADALM1000 Digital Outputs </wiki-migration/university/tools/m1k/digital-outputs>`
+:doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>` :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>` :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>` :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` :doc:`ADALM1000 Digital Outputs </wiki-migration/university/tools/m1k/digital-outputs>`
 
 First a few notes on nomenclature used in this document:
 
-| CA-V refers to the Channel A voltage signal
-| CA-I refers to the Channel A current signal
-| CB-V refers to the Channel B voltage signal
-| CB-I refers to the Channel B current signal
+CA-V refers to the Channel A voltage signal CA-I refers to the Channel A current signal CB-V refers to the Channel B voltage signal CB-I refers to the Channel B current signal
 
 Screen Setup:
 -------------
@@ -185,8 +179,7 @@ At the bottom of this section, just above the ADI logo, are entry slots for both
 
 The correction factors can be used for any external resistor divider attenuator networks that might be added to the channel A and B inputs ( possibly used when in the high impedance or Split I/O modes ). For more on the use of input attenuators please refer to the following two documents:
 
-| :doc:`M1K Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
-| :doc:`M1K Breadboard Adapters </wiki-migration/university/tools/m1k/breadboard-adapter>`
+:doc:`M1K Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` :doc:`M1K Breadboard Adapters </wiki-migration/university/tools/m1k/breadboard-adapter>`
 
 The Bottom Menu Section
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -229,28 +222,11 @@ Customizing ALICE
 
 There are a number of variables that the user can use to customize the appearance of the user interface. These variables are located near the top of the Python program file. These two variables set the size of the graphics drawing area in screen pixels. The default values are sized to optimally fill a screen with 1024X600 resolution. The menu buttons surrounding the graphics area need this much space to be properly displayed on most screens so using sizes smaller than the default may result in mangled menus.
 
-| GRW = 720 # Width of the grid
-| GRH = 390 # Height of the grid
+GRW = 720 # Width of the grid GRH = 390 # Height of the grid
 
 The colors that are used to draw the various parts of the screen can be modified.
 
-| Color = "#rrggbb" rr=red gg=green bb=blue, Hexadecimal values 00 - ff
-| COLORframes = "#000080" # 50% blue
-| COLORcanvas = "#000000" # 100% black used for background color
-| COLORgrid = "#808080" # 50% Gray used for grid lines
-| COLORzeroline = "#0000ff" # 100% blue used for vertical and horizontal center grid lines
-| COLORtrace1 = "#00ff00" # 100% green
-| COLORtrace2 = "#ff8000" # 100% orange CH B voltage trace
-| COLORtrace3 = "#00ffff" # 100% cyan CH A current trace
-| COLORtrace4 = "#ffff00" # 100% yellow CH B current trace
-| COLORtrace5 = "#ff00ff" # 100% magenta Math trace
-| COLORtraceR1 = "#008000" # 50% green CH A voltage snapshot trace
-| COLORtraceR2 = "#804000" # 50% orange CH B voltage snapshot trace
-| COLORtraceR3 = "#008080" # 50% cyan CH A current snapshot trace
-| COLORtraceR4 = "#808000" # 50% yellow CH B current snapshot trace
-| COLORtraceR5 = "#800080" # 50% magenta Math snapshot trace
-| COLORtext = "#ffffff" # 100% white used for Text display
-| COLORtrigger = "#ff0000" # 100% red used for trigger point
+Color = "#rrggbb" rr=red gg=green bb=blue, Hexadecimal values 00 - ff COLORframes = "#000080" # 50% blue COLORcanvas = "#000000" # 100% black used for background color COLORgrid = "#808080" # 50% Gray used for grid lines COLORzeroline = "#0000ff" # 100% blue used for vertical and horizontal center grid lines COLORtrace1 = "#00ff00" # 100% green COLORtrace2 = "#ff8000" # 100% orange CH B voltage trace COLORtrace3 = "#00ffff" # 100% cyan CH A current trace COLORtrace4 = "#ffff00" # 100% yellow CH B current trace COLORtrace5 = "#ff00ff" # 100% magenta Math trace COLORtraceR1 = "#008000" # 50% green CH A voltage snapshot trace COLORtraceR2 = "#804000" # 50% orange CH B voltage snapshot trace COLORtraceR3 = "#008080" # 50% cyan CH A current snapshot trace COLORtraceR4 = "#808000" # 50% yellow CH B current snapshot trace COLORtraceR5 = "#800080" # 50% magenta Math snapshot trace COLORtext = "#ffffff" # 100% white used for Text display COLORtrigger = "#ff0000" # 100% red used for trigger point
 
 Appendix A: Advanced Math Traces
 --------------------------------
@@ -259,14 +235,7 @@ In addition to the pre-programed Math traces, ALICE provides a method of plottin
 
 Waveform Buffers:
 
-| VBuffA is the Channel A voltage sample array ( in volts )
-| VBuffB is the Channel B voltage sample array ( in volts )
-| IBuffA is the Channel A current sample array ( in amps, multiply by 1000 for mA )
-| IBuffB is the Channel B current sample array ( in amps, multiply by 1000 for mA )
-| VmemoryA is the Channel A voltage memory array used for Trace Averaging
-| VmemoryB is the Channel B voltage memory array used for Trace Averaging
-| ImemoryA is the Channel A current memory array used for Trace Averaging
-| ImemoryB is the Channel B current memory array used for Trace Averaging
+VBuffA is the Channel A voltage sample array ( in volts ) VBuffB is the Channel B voltage sample array ( in volts ) IBuffA is the Channel A current sample array ( in amps, multiply by 1000 for mA ) IBuffB is the Channel B current sample array ( in amps, multiply by 1000 for mA ) VmemoryA is the Channel A voltage memory array used for Trace Averaging VmemoryB is the Channel B voltage memory array used for Trace Averaging ImemoryA is the Channel A current memory array used for Trace Averaging ImemoryB is the Channel B current memory array used for Trace Averaging
 
 t is the time index ( 10 uSec per point )
 
@@ -274,25 +243,11 @@ SAMPLErate is the sampling rate, 100000 samples per Sec, or 10 uSec per sample
 
 Vertical Position variables:
 
-| CHAOffset is the value in the channel A voltage position entry window
-| CHBOffset is the value in the channel B voltage position entry window
-| CHAIOffset is the value in the channel A current position entry window
-| CHBIOffset is the value in the channel B current position entry window
+CHAOffset is the value in the channel A voltage position entry window CHBOffset is the value in the channel B voltage position entry window CHAIOffset is the value in the channel A current position entry window CHBIOffset is the value in the channel B current position entry window
 
 Waveform calculated measurements:
 
-| DCV1 is the channel A Average voltage
-| MinV1 is the channel A Minimum voltage
-| MaxV1 is the channel A Maximum voltage
-| DCV2 is the channel B Average voltage
-| MinV2 is the channel B Minimum voltage
-| MaxV2 is the channel B Maximum voltage
-| DCI1is the channel A Average current in mA
-| MinI1 is the channel A Minimum current in mA
-| MaxI1 is the channel A Maximum current in mA
-| DCI2 is the channel B Average current in mA
-| MinI2 is the channel B Minimum current in mA
-| MaxI2 is the channel B Maximum current in mA
+DCV1 is the channel A Average voltage MinV1 is the channel A Minimum voltage MaxV1 is the channel A Maximum voltage DCV2 is the channel B Average voltage MinV2 is the channel B Minimum voltage MaxV2 is the channel B Maximum voltage DCI1is the channel A Average current in mA MinI1 is the channel A Minimum current in mA MaxI1 is the channel A Maximum current in mA DCI2 is the channel B Average current in mA MinI2 is the channel B Minimum current in mA MaxI2 is the channel B Maximum current in mA
 
 As a simple example, to plot the difference between the channel A and B voltage waveforms the following formula would be used:
 
@@ -386,11 +341,7 @@ To turn the plot of V\ :sub:`CE` into I\ :sub:`C` we can use the gain and offset
 
 :math:`V_dis = (V_raw - Offset ) \times Gain`
 
-| Where:
-| V\ :sub:`dis` is the calibrated value to be displayed
-| V\ :sub:`raw` is the raw measured value
-| Offset is the calibration value entered
-| Gain is the calibration value entered
+Where: V\ :sub:`dis` is the calibrated value to be displayed V\ :sub:`raw` is the raw measured value Offset is the calibration value entered Gain is the calibration value entered
 
 If we set the Offset equal to the actual value of the +5 V supply divided by the Gain calibration factor and change the sign of the Gain factor ( i.e. make it negative ) we have the formula for I\ :sub:`C` from figure E1. After changing the channel B offset and gain factors press the green Run button and you should see something like figure E5.
 

@@ -23,18 +23,13 @@ In order for the settings made on these plugin to take affect, the Save Settings
    
    .. container:: box bggreen
 
-         
-         .. note::
-
-            This specifies any shell prompt running on the target
+      This specifies any shell prompt running on the target
 
          
          ::
          
             root@analog:/sys/bus/iio/devices/iio:device3# **cd /sys/kernel/debug/iio/iio\:device3**
-            root@analog:/sys/kernel/debug/iio/iio:device3# **grep "" * | sed "s/:/ = </g"
-
-            | awk '{print $0">;"}'**
+            root@analog:/sys/kernel/debug/iio/iio:device3# **grep "" * | sed "s/:/ = </g" | awk '{print $0">;"}'**
             adi,clocks-clk-pll-hs-div = <4>;
             adi,clocks-clk-pll-vco-div = <2>;
             adi,clocks-clk-pll-vco-freq_khz = <9830400>;
@@ -60,12 +55,13 @@ In order for the settings made on these plugin to take affect, the Save Settings
    
    For the No-OS driver the mapping can be found here: :doc:`AD9371 Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9371-customization>`
    
-   |
 
-| ===== Screenshots / Descriptions =====
+
+Screenshots / Descriptions
+--------------------------
 
 Clock Settings
---------------
+~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_clk.png
    :alt: BIST
@@ -73,7 +69,7 @@ Clock Settings
    :width: 600px
 
 Calibrations
-------------
+~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_cal.png
    :alt: BIST
@@ -81,7 +77,7 @@ Calibrations
    :width: 600px
 
 TX Settings
------------
+~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_tx.png
    :alt: BIST
@@ -89,7 +85,7 @@ TX Settings
    :width: 600px
 
 RX Settings
------------
+~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_rx.png
    :alt: BIST
@@ -97,7 +93,7 @@ RX Settings
    :width: 600px
 
 Observation RX Settings
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_obs.png
    :alt: BIST
@@ -105,7 +101,7 @@ Observation RX Settings
    :width: 600px
 
 Gain Settings
--------------
+~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_gain.png
    :alt: BIST
@@ -113,7 +109,7 @@ Gain Settings
    :width: 600px
 
 AGC Settings
-------------
+~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_agc.png
    :alt: BIST
@@ -121,7 +117,7 @@ AGC Settings
    :width: 600px
 
 ARM GPIO Settings
------------------
+~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_arm_gpio.png
    :alt: BIST
@@ -129,7 +125,7 @@ ARM GPIO Settings
    :width: 600px
 
 GPIO Settings
--------------
+~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_gpio.png
    :alt: BIST
@@ -137,7 +133,7 @@ GPIO Settings
    :width: 600px
 
 AUX DAC Settings
-----------------
+~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_aux_dac.png
    :alt: BIST
@@ -145,7 +141,7 @@ AUX DAC Settings
    :width: 600px
 
 JESD204B Framer Settings
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_framer.png
    :alt: BIST
@@ -153,7 +149,7 @@ JESD204B Framer Settings
    :width: 600px
 
 JESD204B Deframer Settings
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_deframer.png
    :alt: BIST
@@ -161,7 +157,7 @@ JESD204B Deframer Settings
    :width: 600px
 
 BIST
-----
+~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_bist.png
    :alt: BIST
@@ -173,22 +169,22 @@ BIST stands for Build-In Self-Test. Selections on this Tab take immediately effe
 There are three major facilities.
 
 BIST Tone
-~~~~~~~~~
+^^^^^^^^^
 
 User selectable tone with frequency in kHz, that can be injected into the TX path.
 
 BIST PRBS
-~~~~~~~~~
+^^^^^^^^^
 
 Pseudorandom Binary Sequence (PRBS) that can either injected into the RX or TX path.
 
 BIST Loopback
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Allows to digitally loopback TX data into the RX path.
 
 DPD Setup (AD9375 only)
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_dpd.png
    :alt: BIST
@@ -196,7 +192,7 @@ DPD Setup (AD9375 only)
    :width: 600px
 
 CLGC Setup (AD9375 only)
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_clgc.png
    :alt: BIST
@@ -204,7 +200,7 @@ CLGC Setup (AD9375 only)
    :width: 600px
 
 VSWR Setup (AD9375 only)
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_vswr.png
    :alt: BIST

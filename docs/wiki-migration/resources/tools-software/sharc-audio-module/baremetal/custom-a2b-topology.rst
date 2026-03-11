@@ -117,8 +117,6 @@ The Bare Metal Project Wizard for the SHARC Audio Module Bare Metal SDK version 
 Executing the Code in CCES
 --------------------------
 
-|
-
 .. tip::
 
    Some knowledge of CrossCore Embedded Studio(CCES) is assumed here. If unfamiliar with CCES, please go through the :doc:`CCES Getting Started Guide </wiki-migration/resources/tools-software/crosscore/cces/getting-started>` prior to working in CCES.
@@ -137,7 +135,7 @@ Executing the Code in CCES
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#preconfigured-a2b-topology
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#preconfigured-a2b-topology
    :alt: Using Pre-configured A2B Topology Files#.|Bare Metal Framework#driver-creation-tutorial|Creating Drivers for New Audio Components
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/export_ss.png

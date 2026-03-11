@@ -21,10 +21,7 @@ Prerequisites
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on your Linux development host
+   This specifies any shell prompt running on your Linux development host
 
    
    ::
@@ -36,7 +33,7 @@ Prerequisites
    
    ::
    
-      michael@HAL9000:~/devel$ **dpkg --add-architecture i386** 
+      michael@HAL9000:~/devel$ **dpkg --add-architecture i386**
       michael@HAL9000:~/devel$ **apt-get update**
       michael@HAL9000:~/devel$ **sudo apt-get install libc6:i386 libstdc++6:i386**
    
@@ -46,10 +43,7 @@ There are a few other tools that are necessary in order to build your own Firmwa
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on your Linux development host
+   This specifies any shell prompt running on your Linux development host
 
    
    ::
@@ -70,10 +64,7 @@ Starting the build process is just a matter of typing ``make`` within the firmwa
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on your Linux development host
+   This specifies any shell prompt running on your Linux development host
 
    
    ::
@@ -95,10 +86,7 @@ The initial build takes some time to complete, and also requires an INTERNET con
    
    .. container:: box bggreen
 
-         
-         .. note::
-
-            This specifies any shell prompt running on your Linux development host
+      This specifies any shell prompt running on your Linux development host
 
          
          ::
@@ -115,10 +103,7 @@ Build Artifacts
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on your Linux development host
+   This specifies any shell prompt running on your Linux development host
 
    
    ::
@@ -145,7 +130,7 @@ Build Artifacts
             -rw-rw-r-- 1 michael 4,6K Apr 19 17:45 uboot-env.txt
             -rwxrwxr-x 1 michael 3,2M Apr 19 17:33 zImage
             -rw-rw-r-- 1 michael  16K Apr 19 17:39 zynq-pluto-sdr.dtb
-            -rw-rw-r-- 1 michael  16K Apr 19 17:39 zynq-pluto-sdr-revb.dtb 
+            -rw-rw-r-- 1 michael  16K Apr 19 17:39 zynq-pluto-sdr-revb.dtb
    
 
 
@@ -156,10 +141,7 @@ There is a script in the `plutosdr_scripts <https://github.com/plutosdr_scripts>
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on your Linux development host
+   This specifies any shell prompt running on your Linux development host
 
    
    ::
@@ -171,7 +153,7 @@ There is a script in the `plutosdr_scripts <https://github.com/plutosdr_scripts>
       successfully downloaded
       Found new PlutoSDR at 192.168.3.1, running kernel:
           Linux pluto 5.4.0-00535-g9c04de11ae53 #1 SMP PREEMPT Tue Feb 15 16:17:50 EST 2022 armv7l GNU/Linux
-      rgetz@brain:~/github/plutosdr-fw$ 
+      rgetz@brain:~/github/plutosdr-fw$
    
 
 

@@ -29,19 +29,7 @@ In order to have a relevant output, the input signal is passed through multiple 
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - OP484 precision rail-to-rail I/O op amp
-| 1 - 100Ω resistor
-| 1 - 470Ω resistor
-| 1 - 1KΩ resistor
-| 1 - 10KΩ resistor
-| 2 - 47KΩ resistor
-| 2 - 1uF capacitor
-| 1 - 47uF capacitor
-| 1 - Infrared LED ( QED-123 )
-| 1 - Infrared Transistor ( QSD-123)
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - OP484 precision rail-to-rail I/O op amp 1 - 100Ω resistor 1 - 470Ω resistor 1 - 1KΩ resistor 1 - 10KΩ resistor 2 - 47KΩ resistor 2 - 1uF capacitor 1 - 47uF capacitor 1 - Infrared LED ( QED-123 ) 1 - Infrared Transistor ( QSD-123)
 
 Directions
 ----------
@@ -177,8 +165,7 @@ The circuit implemented on the breadboard should look similar to the one in Figu
 Procedure
 ---------
 
-| Put the top of your finger between the IR LED(D1) and the Phototransistor(Q1). The emitter and the receiver should be alligned and pointing one to another.
-| Observe the voltage waveform seen at the the output of the 3rd stage op amp (A\ :sub:`3`). An example of output waveform is presented in Figure 5.
+Put the top of your finger between the IR LED(D1) and the Phototransistor(Q1). The emitter and the receiver should be alligned and pointing one to another. Observe the voltage waveform seen at the the output of the 3rd stage op amp (A\ :sub:`3`). An example of output waveform is presented in Figure 5.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-waveform.png
 
@@ -211,10 +198,6 @@ Questions
 5. What parameters change if R\ :sub:`6` is modified? How will the signal look on the Oscilloscope?
 
 6. On the Heartbeat Output Waveform the signal is not centered on 0V, even though the DC component should have been removed. Why is this happening? What should be added at the output of the circuit to reduce the offset?
-
-
-| 
-|
 
 .. admonition:: Download
    :class: download

@@ -29,16 +29,7 @@ For further reading on PN junction depletion region:
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 1 - 10 KΩ resistor
-| 1 - 39 pF capacitor
-| 1 - 1N4001 diode
-| 1 - 1N3064 diode
-| 1 - 1N914 diode
-| Red, yellow and green LEDs
-| 1 - 2N3904 NPN transistor
-| 1 - 2N3906 PNP transistor
+ADALM2000 Active Learning Module Solder-less Breadboard 1 - 10 KΩ resistor 1 - 39 pF capacitor 1 - 1N4001 diode 1 - 1N3064 diode 1 - 1N914 diode Red, yellow and green LEDs 1 - 2N3904 NPN transistor 1 - 2N3906 PNP transistor
 
 Directions Step 1:
 ------------------
@@ -102,8 +93,6 @@ Now we will measure the capacitance of the various diodes from the ADALP2000 Ana
 
    Figure 5 Step 2 setup to measure diode capacitance
 
-
-.. _hardware-setup-1:
 
 Hardware Setup:
 ---------------

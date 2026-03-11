@@ -62,20 +62,20 @@ In Windows, you can run the XSCT terminal from start menu → Xilinx Design Tool
 
 ::
 
-   ****** Xilinx Software Commandline Tool (XSCT) v2021.1
-     **** SW Build 1933 on 2021-06-09-14:19:58
+   ***** Xilinx Software Commandline Tool (XSCT) v2021.1
+     *** SW Build 1933 on 2021-06-09-14:19:58
        ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
    xsct% connect
 
    attempting to launch hw_server
-   ****** Xilinx hw_server v2021.1
-     **** Build date : Jun 10 2021 at 20:17:23
+   ***** Xilinx hw_server v2021.1
+     *** Build date : Jun 10 2021 at 20:17:23
        ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved
    INFO: hw_server application started
    INFO: Use Ctrl-C to exit hw_server application
-   ****** Xilinx hw_server v2021.1
-     **** Build date : Jun 10 2021 at 20:17:23
+   ***** Xilinx hw_server v2021.1
+     *** Build date : Jun 10 2021 at 20:17:23
        ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
    INFO: hw_server application started
    INFO: Use Ctrl-C to exit hw_server application
@@ -92,7 +92,7 @@ In Windows, you can run the XSCT terminal from start menu → Xilinx Design Tool
         2  MicroBlaze Debug Module at USER2
            3  MicroBlaze #0 (Running)
         4  Legacy Debug Hub
-        
+
    xsct% target 3
    xsct% targets
 
@@ -100,7 +100,7 @@ In Windows, you can run the XSCT terminal from start menu → Xilinx Design Tool
         2  MicroBlaze Debug Module at USER2
            3* MicroBlaze #0 (Running)
         4  Legacy Debug Hub
-        
+
    xsct% dow simpleImage.vcu118_fmcdaq3.strip
 
    Downloading Program -- C:/Users/PPop/Downloads/simpleImage.vcu118_fmcdaq3/simpleImage.vcu118_fmcdaq3.strip
@@ -130,7 +130,7 @@ In Windows, you can run the XSCT terminal from start menu → Xilinx Design Tool
    Successfully downloaded C:/Users/PPop/Downloads/simpleImage.vcu118_fmcdaq3/simpleImage.vcu118_fmcdaq3.strip
    xsct% Info: MicroBlaze #0 (target 3) Stopped at 0x0 (Stop)
 
-   xsct% con 
+   xsct% con
 
    Info: MicroBlaze #0 (target 3) Running
 
@@ -145,16 +145,16 @@ Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado 
 
 ::
 
-   ****** Vivado v2021.1 (64-bit)
-     **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
-     **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+   ***** Vivado v2021.1 (64-bit)
+     *** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+     *** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
        ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
-       
+
    Vivado% cd \path\to\simpleImage.vcu118_fmcdaq3
    Vivado% xsct run.tcl
 
-   ***** Xilinx hw_server v2021.1
-     **** Build date : Jun 10 2021 at 20:17:23
+   **** Xilinx hw_server v2021.1
+     *** Build date : Jun 10 2021 at 20:17:23
        ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
    INFO: hw_server application started
    NFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121

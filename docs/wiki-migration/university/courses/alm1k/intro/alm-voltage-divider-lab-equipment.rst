@@ -48,7 +48,7 @@ In Figure 1, voltage source V\ :sub:`S` is divided between R\ :sub:`1` and R\ :s
 
 Note that R\ :sub:`1`\ +R\ :sub:`2` is the total resistance of the circuit.
 
-\**Series and parallel circuits: \*\*
+**Series and parallel circuits:**
 
 Another fundamental concept needed to understand in order to analyze the circuits you will build and measure is how to mathematically combine resistances. If any number of resistances are connected in series, you simply add them to find the total resistance. If any number of resistances are wired in parallel, the total resistance is the reciprocal of the sum of the reciprocals of all of the resistances. This is summarized in figure 2.
 
@@ -109,14 +109,7 @@ For inductors in parallel:
 Materials:
 ----------
 
-| ADALM1000 hardware module
-| Solder-less breadboard, and jumper wire kit
-| Battery (can be 1, 2, or 3 AAA or AA cells in series)
-| Battery holder with breadboard leads
-| 1 100 Ω resistor
-| 2 1 KΩ resistors
-| 2 47 KΩ resistors
-| 2 470 KΩ resistors
+ADALM1000 hardware module Solder-less breadboard, and jumper wire kit Battery (can be 1, 2, or 3 AAA or AA cells in series) Battery holder with breadboard leads 1 100 Ω resistor 2 1 KΩ resistors 2 47 KΩ resistors 2 470 KΩ resistors
 
 DC Experiment :
 ~~~~~~~~~~~~~~~
@@ -180,9 +173,6 @@ You can change the thickness of the waveform trace line by: Under the Options dr
 
 **Additional related Lab Activities:**
 
-| :doc:`Measuring voltages beyond 0 to 5V with the ADALM1000 (M1K) </wiki-migration/university/courses/alm1k/circuits1/alm-measure-outside-0-5-range>`
-| :doc:`Series, Parallel Resistors </wiki-migration/university/courses/alm1k/intro/series-parallel-2>`
-| :doc:`Voltage and Current Division </wiki-migration/university/courses/alm1k/circuits1/alm-cir-2>`
-| :doc:`Frequency compensated voltage dividers </wiki-migration/university/courses/alm1k/circuits1/alm-cir-voltage-divider>`
+:doc:`Measuring voltages beyond 0 to 5V with the ADALM1000 (M1K) </wiki-migration/university/courses/alm1k/circuits1/alm-measure-outside-0-5-range>` :doc:`Series, Parallel Resistors </wiki-migration/university/courses/alm1k/intro/series-parallel-2>` :doc:`Voltage and Current Division </wiki-migration/university/courses/alm1k/circuits1/alm-cir-2>` :doc:`Frequency compensated voltage dividers </wiki-migration/university/courses/alm1k/circuits1/alm-cir-voltage-divider>`
 
 **Return to Lab Activity Table of Contents**

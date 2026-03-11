@@ -29,10 +29,10 @@ Hands-on activity
 -  breadboard Low-Pass filter implementation, two stages, with Bode plot visualisation, usage of power supplies and scope inputs
 -  SPI communication with ADALP2000 AD5626 part, DAC converter, usage of Pattern Generator SPI interface and Scope channels for analog signals
 
-What is Software Defined Instrumentation?​
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What is Software Defined Instrumentation?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A single device encapsulating more instruments used for measurements, signal generation, signal acquisition, etc., powered by a PC open-source software that allows the user to customize the measurements, since the software is residing more on the host PC/mobile device instead of on the instrument. ​
+A single device encapsulating more instruments used for measurements, signal generation, signal acquisition, etc., powered by a PC open-source software that allows the user to customize the measurements, since the software is residing more on the host PC/mobile device instead of on the instrument.
 
 Bonus: it has a pocket size!
 
@@ -42,15 +42,13 @@ Bonus: it has a pocket size!
 ADALM2000
 ~~~~~~~~~
 
-The ADALM2000 (M2K) Advanced Active Learning Module is an affordable USB-powered data acquisition module, that can be used to introduce fundamentals of electrical engineering in a self or instructor lead setting.​
+The ADALM2000 (M2K) Advanced Active Learning Module is an affordable USB-powered data acquisition module, that can be used to introduce fundamentals of electrical engineering in a self or instructor lead setting.
 
-​With 12-bit ADCs and DACs running at 100 MSPS, brings the power of high-performance lab equipment to the palm of your hand, enabling electrical engineering students and hobbyists to explore signals and systems into the tens of MHz without the cost and bulk associated with traditional lab gear. ​
+With 12-bit ADCs and DACs running at 100 MSPS, brings the power of high-performance lab equipment to the palm of your hand, enabling electrical engineering students and hobbyists to explore signals and systems into the tens of MHz without the cost and bulk associated with traditional lab gear.
 
-​When coupled with Analog Devices' Scopy™ graphical application software running on a computer, provides the user with high performance instrumentation.​
+When coupled with Analog Devices' Scopy™ graphical application software running on a computer, provides the user with high performance instrumentation.
 
 |image1| |image2|
-
-.. _hands-on-activity-1:
 
 Hands-on activity
 =================
@@ -101,8 +99,6 @@ Second stage filter
 
 |image5| |image6|
 
-.. _steps-1:
-
 Steps:
 ^^^^^^
 
@@ -116,8 +112,6 @@ Steps:
 
 Demo 2 - Digital Pattern Generator and Scope – AD5626 component – SPI controlled and analog signal visualized using Scope
 -------------------------------------------------------------------------------------------------------------------------
-
-.. _materials-1:
 
 Materials
 ~~~~~~~~~
@@ -143,14 +137,10 @@ SPI Transfer:
    :align: center
    :width: 400px
 
-.. _hardware-setup-1:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
 |image8| |image9|
-
-.. _steps-2:
 
 Steps
 ~~~~~

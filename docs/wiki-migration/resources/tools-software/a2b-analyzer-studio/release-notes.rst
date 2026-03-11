@@ -114,7 +114,7 @@ System Hardware Requirements
 
 Verify that your PC meets the following minimum operating system version and requirements to install and run A\ :sup:`2`\ B Analyzer Studio.
 
-A\ :sup:`2`\ B Analyzer Studio runs on Windows, Linux, and macOS. The Operating Systems table describes the operating system versions supported in this release. 
+A\ :sup:`2`\ B Analyzer Studio runs on Windows, Linux, and macOS. The Operating Systems table describes the operating system versions supported in this release.
 
 +------------------+---------------------------------------------------------------------------------------------+
 | Platform         | Details                                                                                     |
@@ -165,8 +165,6 @@ macOS
 -  Follow the installation wizard to install the A\ *2*\ B Analyzer Studio. You may choose your desired install location
 -  To uninstall the A\ *2*\ B Analyzer Studio, find the application in your install location, right click it and click "Move to Bin"
 
-.. _new-and-noteworthy-1:
-
 New and Noteworthy
 ------------------
 
@@ -175,7 +173,7 @@ While A\ :sup:`2`\ B Analyzer Studio is a continuation of A\ :sup:`2`\ B Bus Ana
 Installed alongside A2B Bus Analyzer Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A\ :sup:`2`\ B Analyzer Studio can be installed in the same machine as the A\ :sup:`2`\ B Bus Analyzer since their install locations are different. For example on Windows this product is installed in 
+A\ :sup:`2`\ B Analyzer Studio can be installed in the same machine as the A\ :sup:`2`\ B Bus Analyzer since their install locations are different. For example on Windows this product is installed in
 
 c:\\Analog Devices\\A2B Analyzer Studio
 
@@ -207,7 +205,7 @@ While the A\ :sup:`2`\ B Bus Analyzer Software SDK API is still supported for bo
 
 To replace it, a new API has been introduced where one of the main changes is that all monitor/emulator APIs use a monitor/emulator handle instead of a device handle. To find documentation about this new API export the User-Accessible SDK in the SDK menu and open the C/Python documentation at
 
--  C/C++: uasdk/C/docs/A2B_Analyzer_UASDK_help.html 
+-  C/C++: uasdk/C/docs/A2B_Analyzer_UASDK_help.html
 -  Python: uasdk/python/docs/a2ba_python_sdk_help.html
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_sdk_docs.png
@@ -225,9 +223,7 @@ The A\ :sup:`2`\ B Bus Analyzer Software SDK for python contained a different wh
 
 You can find the Python wheels in your exported SDK in the uasdk/python folder
 
-| a2ba_sdk-1.0.0-py3-none-linux_x86_64.whl
-| a2ba_sdk-1.0.0-py3-none-macosx_14_0_arm64.whl
-| a2ba_sdk-1.0.0-py3-none-win_amd64.whl
+a2ba_sdk-1.0.0-py3-none-linux_x86_64.whl a2ba_sdk-1.0.0-py3-none-macosx_14_0_arm64.whl a2ba_sdk-1.0.0-py3-none-win_amd64.whl
 
 The wheels are still OS-specific since they internally use the C/C++ libraries which are OS-specific
 
@@ -283,7 +279,7 @@ For further A\ :sup:`2`\ B Analyzer Studio documentation, please see the docume
 Support
 -------
 
-For technical support contact Analog Devices A\ :sup:`2`\ B Analyzer Studio and A\ :sup:`2`\ B Bus Analyzer Support at: *<fc #4682b4>a2b.analyzer.support@analog.com</fc>*
+For technical support contact Analog Devices A\ :sup:`2`\ B Analyzer Studio and A\ :sup:`2`\ B Bus Analyzer Support at: *a2b.analyzer.support@analog.com*
 
 Known Issues
 ------------

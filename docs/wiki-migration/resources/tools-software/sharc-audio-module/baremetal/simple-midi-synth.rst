@@ -25,9 +25,9 @@ Open up ``/common/audio_system_config.h`` and be sure that Faust is not enabled 
 
 .. code:: c
 
-   //*****************************************************************************
+   //****************************************************************************
    // 6. Faust and MIDI configuration
-   //*****************************************************************************
+   //****************************************************************************
    #define FAUST_INSTALLED                                 FALSE
 
 ...and a bit below...
@@ -67,9 +67,9 @@ And in ``processaudio_setup()``, we'll initialize each "voice" of our synthesize
     */
    void processaudio_setup( void ) {
 
-       // *******************************************************************************
+       // ******************************************************************************
        // Add any custom setup code here
-       // *******************************************************************************
+       // ******************************************************************************
 
        int i;
        for (i=0;i<16;i++) {
@@ -97,7 +97,7 @@ At this point, we've initialized all 16 voices of our synth engine. Now, we'll a
        // Scan remaining channels and synthesize when playing
        for (int i=0;i<16;i++) {
            synth_read(&synth_voices[i], temp_audio, AUDIO_BLOCK_SIZE );
-           
+
            // Mix this synth voice with our accumulated audio
            mix_2x1(temp_audio, temp_audio_accum, temp_audio_accum, AUDIO_BLOCK_SIZE);
        }
@@ -105,7 +105,7 @@ At this point, we've initialized all 16 voices of our synth engine. Now, we'll a
        // Scale and copy the synthesized audio to our output buffers
        gain_buffer(audiochannel_0_left_out, 0.25, AUDIO_BLOCK_SIZE);
        gain_buffer(audiochannel_0_right_out, 0.25, AUDIO_BLOCK_SIZE);
-       
+
    }
 
 Setting up the MIDI Control
@@ -205,5 +205,5 @@ Replace the contents of ``midi_rx_callback_sharc1()`` with the code below. This 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#class-d-2-1-amp
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#class-d-2-1-amp
    :alt: Building a 2.1 Amp#.|Bare Metal Framework#..hardware|Hardware Reference

@@ -123,7 +123,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            -*-     Industrial I/O lock free software ring
            -*-   Enable triggered sampling support
 
-                 *** Direct Digital Synthesis ***
+                 ** Direct Digital Synthesis **
            [--snip--]
 
            <*>   Analog Devices CoreFPGA AXI DDS driver
@@ -134,7 +134,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Device Tree Example
 -------------------
 
-.. code:: c
+.. code:: dts
 
    #include <dt-bindings/iio/adc/adi,ad9083.h>
    &spi0 {
@@ -197,10 +197,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -240,10 +237,7 @@ Therefore read the name attribute of each IIO device
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -260,16 +254,13 @@ Change directory to /sys/kernel/debug/iio/iio:deviceX and check if the direct_re
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root@analog:~# cd /sys/kernel/debug/iio/iio\:device2/
-      root@analog:/sys/kernel/debug/iio/iio:device2# ls direct_reg_access  
+      root@analog:/sys/kernel/debug/iio/iio:device2# ls direct_reg_access
       ls direct_reg_access
       root@analog:/sys/kernel/debug/iio/iio:device2#
    
@@ -279,17 +270,14 @@ Reading
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# echo 0x0 > direct_reg_access   
-        
-      root@analog:/sys/kernel/debug/iio/iio:device2# cat direct_reg_access 
+      root@analog:/sys/kernel/debug/iio/iio:device2# echo 0x0 > direct_reg_access
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# cat direct_reg_access
       0xAD
       root@analog:/sys/kernel/debug/iio/iio:device2#
    
@@ -301,16 +289,13 @@ Write ADDRESS VALUE
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# echo 0x3D 0x80 > direct_reg_access   
-      root@analog:/sys/kernel/debug/iio/iio:device2# cat direct_reg_access 
+      root@analog:/sys/kernel/debug/iio/iio:device2# echo 0x3D 0x80 > direct_reg_access
+      root@analog:/sys/kernel/debug/iio/iio:device2# cat direct_reg_access
       0x80
       root@analog:/sys/kernel/debug/iio/iio:device2#
    
@@ -332,7 +317,7 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24

@@ -18,8 +18,8 @@ The voltage fed to the ADC with respect to current passing through the solenoid 
 
 ::
 
-          VADC = Isolenoid * Rsense * 20       Isolenoid - Current through solenoid    
-                                               Rsense    - Sense resistor (0.1Ω)  
+          VADC = Isolenoid * Rsense * 20       Isolenoid - Current through solenoid
+                                               Rsense    - Sense resistor (0.1Ω)
 
 The code output by the ADC is then calculated:
 

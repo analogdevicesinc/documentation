@@ -3,15 +3,21 @@
 Single Control Mixer
 ====================
 
-| 
-| |scmixer.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/scmixer.png
+   :alt: scmixer.png
 
 Description
 -----------
 
-| The Single Control Mixer lets you mix multiple inputs down to one output, with a single knob to set the gain of all inputs.
-| ===== Usage ===== To set the output gain, click the knob with the left mouse button and drag while holding down the button. The knob's range, value, and step size can be customized in the control pop-up window. To change the knob's settings, right-click on the knob control.
-| ===== Varaints =====
+The Single Control Mixer lets you mix multiple inputs down to one output, with a single knob to set the gain of all inputs.
+
+Usage
+-----
+
+To set the output gain, click the knob with the left mouse button and drag while holding down the button. The knob's range, value, and step size can be customized in the control pop-up window. To change the knob's settings, right-click on the knob control.
+
+Varaints
+--------
 
 ::
 
@@ -20,8 +26,8 @@ Description
    -Single Control Mixer (HW Slew)
    -Complex Single Control Mixer
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +--------------------------------+------------+------------------+---------------+------------------+
 | Name                           | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -41,15 +47,15 @@ Description
 Input
 ~~~~~
 
-+--------------------------+--------------------------------------+-----------------+
-| Name                     | Type                                 | Description     |
-+==========================+======================================+=================+
-| Input <fc #ff0000>X</fc> | Audio(ComplexPin for complex module) | Input channel X |
-+--------------------------+--------------------------------------+-----------------+
+======= ==================================== ===============
+Name    Type                                 Description
+======= ==================================== ===============
+Input X Audio(ComplexPin for complex module) Input channel X
+======= ==================================== ===============
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
 Output
 ~~~~~~
@@ -60,7 +66,7 @@ Name   Type                                   Description
 Output Control(ComplexPin for complex module) Output channel 0
 ====== ====================================== ================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+----------------+------------------------------------------------------------------------+
@@ -87,5 +93,3 @@ Output Control(ComplexPin for complex module) Output channel 0
 +----------------+----------------------------------------------------+------------------------+---------------+
 
 | 
-
-.. |scmixer.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/scmixer.png

@@ -71,7 +71,7 @@ The ADIsimCLK tool provides the following data about the clocking system on the 
      Phase Jitter EVM = 0.05% rms
      Phase Jitter = 0.027 degrees rms
      ACI/ACR = -69.6dBc
-   Delay from Ref to OUT2 is 420ps 
+   Delay from Ref to OUT2 is 420ps
 
 This matches up with the datasheet when using the internal VCO. To improve this number, a external VCXO could have been used (would decrease the jitter to ~54 fs rms), but this would have increased the size, and violated the height requirements of the FMC specification (most VCXO's which good performance are tall).
 
@@ -84,10 +84,7 @@ The datasheet for the AD9250 and the golden evaluation board recommend a Differe
 
 .. important::
 
-   \ **From the AD9250 Datasheet:**
-
-   
-   *At input frequencies in the second Nyquist zone and above, the noise performance of most amplifiers is not adequate to achieve the true SNR performance of the AD9250. For applications where SNR is a key parameter, differential double balun coupling is the recommended input configuration (see Figure 41).*
+   \ **From the AD9250 Datasheet:** At input frequencies in the second Nyquist zone and above, the noise performance of most amplifiers is not adequate to achieve the true SNR performance of the AD9250. For applications where SNR is a key parameter, differential double balun coupling is the recommended input configuration (see Figure 41).*
 
 
 The AD-FMCJESDADC1-EBZ card uses a single differential transformer (`Minicircuits TC4-1W <http://www.minicircuits.com/pdfs/TC4-1W.pdf>`_) - as shown in figure 40 of the datasheet - due to its smaller size (reduced footprint). The specific transformer used is specified from 3 to 800 MHz, but is only linear (in terms of insertion loss/input return loss) +/- 0.5dB, from 10 to 100MHz (limiting things to the first nyquist, before the converter sees massive losses on the input side.

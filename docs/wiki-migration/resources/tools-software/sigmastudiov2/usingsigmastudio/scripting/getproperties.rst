@@ -5,17 +5,19 @@ Get Properties
 
 This action allows the user to get all the available properties of a given plugin. The function call takes in 1 argument. Returns the shape properties in the form of list of strings.
 
-| 
-| ===API===
+API
+---
 
 ::
 
    list<string> GetProperties(string elementUid)
 
-| 
-| ===Arguments====
+Arguments
+---------
 
 -  elementUid- Uid of the plugin whose properties are to be known
-   ===Result===
 
-| Returns all the properties of a given plugin in the form of list of strings.
+Result
+------
+
+Returns all the properties of a given plugin in the form of list of strings.

@@ -4,15 +4,7 @@ User Guide for the Dual SOIC Evaluation Board for Low Bias Current Amplifiers
 Features
 --------
 
-**Full featured evaluation board for dual low bias current
-amplifiers in narrow-body SOIC
-Enables quick prototyping
-User defined circuit configuration
-Edge mounted SMA connector provisions
-Easy connection to test equipment and other circuits
-Available provision for photodiode for quick evaluation
-\* Connections available for photodiode bias
-\* Guard trace available to minimize leakage** x
+**Full featured evaluation board for dual low bias current amplifiers in narrow-body SOIC Enables quick prototyping User defined circuit configuration Edge mounted SMA connector provisions Easy connection to test equipment and other circuits Available provision for photodiode for quick evaluation \* Connections available for photodiode bias \* Guard trace available to minimize leakage** x
 
 GENERAL DESCRIPTION
 -------------------
@@ -64,18 +56,16 @@ Both channels on the evaluation board are configured in a noninverting configura
 POWER-UP PROCEDURE
 ~~~~~~~~~~~~~~~~~~
 
-| To begin using the evaluation board, use the following procedure.
-| 1. Set the power supplies to 15 V, −15 V, and ground, and connect to the VS+, VS−, and GND turrets, respectively.
-| 2. Connect an oscilloscope to the OUTA and OUTB Subminiature Version A (SMA) connectors.
-| 3. Connect an input signal source to INA+ and INB+. Set the signal source to the preferred amplitude and frequency. Keep the amplitude within the input voltage range of the device to ensure proper operation.
-| 4. Turn on the power supplies, then turn on the input signal source.
-| The oscilloscope now reads the same amplitude and frequency as the input signal
+To begin using the evaluation board, use the following procedure. 1. Set the power supplies to 15 V, −15 V, and ground, and connect to the VS+, VS−, and GND turrets, respectively. 2. Connect an oscilloscope to the OUTA and OUTB Subminiature Version A (SMA) connectors. 3. Connect an input signal source to INA+ and INB+. Set the signal source to the preferred amplitude and frequency. Keep the amplitude within the input voltage range of the device to ensure proper operation. 4. Turn on the power supplies, then turn on the input signal source.
+
+The oscilloscope now reads the same amplitude and frequency as the input signal
 
 TRANSIMPEDANCE AMPLIFIER (TIA) CONFIGURATION
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The low input bias current and low input capacitance of these amplifiers make this device a good choice for transimpedance configurations. The evaluation board has an on-board provision for a photodiode (radial package) on both channels of the amplifier. The evaluation board is fabricated with a guard trace around the −IN x pin to ensure minimal leakage when evaluating in a transimpedance configuration. R1 for Channel A and R2 for Channel B provide quick connections of the guard trace to the noninverting pin of the amplifier in an inverting TIA configuration.
-| When operating in a TIA configuration, a bias voltage can be applied to VPDA or VPDB. If no bias voltage needs to be applied, install a 0 Ω resistor at RPDA or RPDB to connect the anode of the photodiode to ground. For this TIA configuration, install the photodiode at either PDA or PDB, along with the feedback resistor at RFA and RFB, for Channel A and Channel B, respectively. A capacitor at C5 and C12 can be added for stability of the circuit.
+The low input bias current and low input capacitance of these amplifiers make this device a good choice for transimpedance configurations. The evaluation board has an on-board provision for a photodiode (radial package) on both channels of the amplifier. The evaluation board is fabricated with a guard trace around the −IN x pin to ensure minimal leakage when evaluating in a transimpedance configuration. R1 for Channel A and R2 for Channel B provide quick connections of the guard trace to the noninverting pin of the amplifier in an inverting TIA configuration.
+
+When operating in a TIA configuration, a bias voltage can be applied to VPDA or VPDB. If no bias voltage needs to be applied, install a 0 Ω resistor at RPDA or RPDB to connect the anode of the photodiode to ground. For this TIA configuration, install the photodiode at either PDA or PDB, along with the feedback resistor at RFA and RFB, for Channel A and Channel B, respectively. A capacitor at C5 and C12 can be added for stability of the circuit.
 
 EVALUATION BOARD SCHEMATICS AND ARTWORK
 ---------------------------------------
@@ -128,34 +118,35 @@ ORDERING INFORMATION
 BILL OF MATERIALS
 ~~~~~~~~~~~~~~~~~
 
-| **Table 2. Bill of Materials**
-| ^Quantity^Reference Designator^Description^Supplier^Part Number^
+**Table 2. Bill of Materials**
 
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 1  | U1                                                                                                               | 8-lead SOIC                                | Analog Devices, Inc.         | ADA4510-2ARZ            |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 2  | C1, C3                                                                                                           | Ceramic capacitors, X7R, 0603, 0.1 µF, 50V | Vishay                       | VJ0603Y104KXAAC31X      |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 2  | C2, C6                                                                                                           | Ceramic capacitors, X5R, 0603, 10 µF, 50 V | TDK                          | C3216X5R1H106K160AB     |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 10 | C4, C5, C7, C11, C12, C13, CLA, CLB, CSA, CSB                                                                    | User defined capacitors, 0603              | Not applicable               | Not applicable          |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 12 | CFA, CFB, R4, R7, R8, R15, RFA, RFB, RO1, RO2, RO3, RO4                                                          | 0 Ω resistors, 0603                        | Panasonic                    | ERJ-3GEY0R00V           |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 16 | R1, R2, RPDA, RPDB, R3, R5, R6, R9, R10, R14, R16, R17, RLA, RLB, RSA, RSB                                       | User defined resistors, 0603               | Not applicable               | Not applicable          |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 4  | RT1, RT2, RT3, RT4                                                                                               | User defined resistors, 1206               | Not applicable               | Not applicable          |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 3  | GND, VS+, VS−                                                                                                    | Connectors, solder terminal turrets        | Mill-Max                     | 2501-2-00-80-00-00-07-0 |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 2  | GND1, GND2                                                                                                       | Test points, black                         | Components Corporation       | TP-104-01-00            |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 2  | PDA, PDB                                                                                                         | User defined photodiodes                   | Not applicable               | Not applicable          |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 6  | INA+, INA−, INB+, INB−, OUTA, OUTB                                                                               | Coaxial SMA end launches                   | Cinch Connectivity Solutions | 142-0701-801            |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
-| 16 | GND1, GND2, GND3, GND4, GND5, GND6, GRDA, GRDB, TP_INA+, TP_INA−, TP_INB+, TP_INB−, TP_OUTA, TP_OUTB, VPDA, VPDB | Connectors, PCB test points                | Keystone Electronics         | 5115                    |
-+----+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| Quantity | Reference Designator                                                                                             | Description                                | Supplier                     | Part Number             |
++==========+==================================================================================================================+============================================+==============================+=========================+
+| 1        | U1                                                                                                               | 8-lead SOIC                                | Analog Devices, Inc.         | ADA4510-2ARZ            |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 2        | C1, C3                                                                                                           | Ceramic capacitors, X7R, 0603, 0.1 µF, 50V | Vishay                       | VJ0603Y104KXAAC31X      |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 2        | C2, C6                                                                                                           | Ceramic capacitors, X5R, 0603, 10 µF, 50 V | TDK                          | C3216X5R1H106K160AB     |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 10       | C4, C5, C7, C11, C12, C13, CLA, CLB, CSA, CSB                                                                    | User defined capacitors, 0603              | Not applicable               | Not applicable          |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 12       | CFA, CFB, R4, R7, R8, R15, RFA, RFB, RO1, RO2, RO3, RO4                                                          | 0 Ω resistors, 0603                        | Panasonic                    | ERJ-3GEY0R00V           |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 16       | R1, R2, RPDA, RPDB, R3, R5, R6, R9, R10, R14, R16, R17, RLA, RLB, RSA, RSB                                       | User defined resistors, 0603               | Not applicable               | Not applicable          |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 4        | RT1, RT2, RT3, RT4                                                                                               | User defined resistors, 1206               | Not applicable               | Not applicable          |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 3        | GND, VS+, VS−                                                                                                    | Connectors, solder terminal turrets        | Mill-Max                     | 2501-2-00-80-00-00-07-0 |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 2        | GND1, GND2                                                                                                       | Test points, black                         | Components Corporation       | TP-104-01-00            |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 2        | PDA, PDB                                                                                                         | User defined photodiodes                   | Not applicable               | Not applicable          |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 6        | INA+, INA−, INB+, INB−, OUTA, OUTB                                                                               | Coaxial SMA end launches                   | Cinch Connectivity Solutions | 142-0701-801            |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
+| 16       | GND1, GND2, GND3, GND4, GND5, GND6, GRDA, GRDB, TP_INA+, TP_INA−, TP_INB+, TP_INB−, TP_OUTA, TP_OUTB, VPDA, VPDB | Connectors, PCB test points                | Keystone Electronics         | 5115                    |
++----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/figure_2._default_connection.png
    :width: 400px

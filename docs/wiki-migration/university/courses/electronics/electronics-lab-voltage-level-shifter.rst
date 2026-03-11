@@ -40,14 +40,7 @@ For example, applications for low voltage to high voltage translation are Thin F
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard and Jumper wires
-| 1 - 9 Volt battery with snap connector
-| 2 Each 10KΩ, 4.7KΩ and 1KΩ resistors
-| 1 - CMOS Hex Inverter, 74HC004 or CD4069
-| 1 - CD4007 CMOS complementary pair array
-| 2 - NMOS transistors (ZVN2110A)
-| 2 - PMOS transistors (ZVP2110A)
+ADALM2000 Active Learning Module Solder-less breadboard and Jumper wires 1 - 9 Volt battery with snap connector 2 Each 10KΩ, 4.7KΩ and 1KΩ resistors 1 - CMOS Hex Inverter, 74HC004 or CD4069 1 - CD4007 CMOS complementary pair array 2 - NMOS transistors (ZVN2110A) 2 - PMOS transistors (ZVP2110A)
 
 Directions:
 -----------
@@ -80,8 +73,6 @@ Questions:
 
 Are there any differences in delay or rise/fall times between the two versions of the level shifter? If so why?
 
-.. _directions-1:
-
 Directions:
 -----------
 
@@ -97,8 +88,6 @@ Build the circuit shown in figure 4 on your solder-less breadboard. Use AWG1 to 
 
 
 The ADG3123 is an 8-channel, non-inverting CMOS to high voltage level translator.
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -133,7 +122,6 @@ These three inverters can be used to construct the three inverters in figure 3 f
 
 **For Further Reading:**
 
-| http://en.wikipedia.org/wiki/Logic_level
-| http://www.analog.com/static/imported-files/tutorials/MT-098.pdf
+http://en.wikipedia.org/wiki/Logic_level http://www.analog.com/static/imported-files/tutorials/MT-098.pdf
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**

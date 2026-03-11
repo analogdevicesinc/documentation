@@ -18,11 +18,11 @@ Stream_Assignment_Info consists of
 
 ::
 
-     * Stream_ID 
-     * Stream_Name 
-   *  Source_Name 
-   *  Source_ID 
-   *  Dest_Count 
+     * Stream_ID
+     * Stream_Name
+   *  Source_Name
+   *  Source_ID
+   *  Dest_Count
    * Destination_Name_x
    * Destination_ID_0
    *  Routing_style

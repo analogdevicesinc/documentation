@@ -106,4 +106,8 @@ More information
 
 -  :doc:`SigmaStudio </wiki-migration/resources/tools-software/sigmastudio>`
 
-.. include:: ../linux-drivers/need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

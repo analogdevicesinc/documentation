@@ -92,8 +92,6 @@ To have both COMMON and CHANNEL instances inside the generated core, in the **St
    :alt: Ultrascale FPGAs Transcevier Wizard Structural Options Tab
    :align: center
 
-.. _generated-files-1:
-
 Generated files
 ^^^^^^^^^^^^^^^
 

@@ -20,7 +20,7 @@ See the following example diff for required changes to the launcher to run the t
    --- ./.config/autostart/config_autostart_osc.desktop    2013-12-09 15:55:41.774730469 -0500
    +++ ./.config/autostart/config_autostart_osc.desktop    2012-12-31 19:20:18.000000000 -0500
    @@ -1,11 +1,11 @@
-    
+
     [Desktop Entry]
     Type=Application
    -Exec=/usr/local/bin/osc
@@ -60,7 +60,7 @@ The TRXBOOST1 testing should be done using the following steps:
 
 -  Remove the TRXBOOST1 card and return to step 1 to continue with the next board.
 
-.. image:: https://wiki.analog.com/_media/navigation AD-TRXBOOST1-EBZ#Hardware
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/navigation AD-TRXBOOST1-EBZ#Hardware
    :alt: Hardware#.:\|User Guide#.:help_and_support|Help and Support
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/trxboost1_-_close_crop_-_copy.jpg

@@ -4,7 +4,7 @@ Link Port driver
 Introduction
 ------------
 
-Link ports allow the processor to connect to other processors or peripheral link ports using a simple communication protocol for high-speed parallel data transfer. This peripheral allows a variety of I/O peripheral interconnection schemes to I/O peripheral devices as well as co-processing and multiprocessing schemes.This document describes how to do a data transaction test via link ports on SC5xx EZ-Board.  
+Link ports allow the processor to connect to other processors or peripheral link ports using a simple communication protocol for high-speed parallel data transfer. This peripheral allows a variety of I/O peripheral interconnection schemes to I/O peripheral devices as well as co-processing and multiprocessing schemes.This document describes how to do a data transaction test via link ports on SC5xx EZ-Board.
 
 Hardware Setup
 --------------
@@ -26,7 +26,7 @@ Hardware Setup
 Software configuration
 ----------------------
 
-The following configuration should be done on top of the SC589-ezkit/SC584-ezkit/SC573-ezkit default configuration. 
+The following configuration should be done on top of the SC589-ezkit/SC584-ezkit/SC573-ezkit default configuration.
 
 Configure Packages
 ~~~~~~~~~~~~~~~~~~
@@ -46,7 +46,7 @@ Linux kernel configuration
 ::
 
    Device Drivers --->
-       Character devices ---> 
+       Character devices --->
        <*> ADI LINKPORT driver
 
 **Note:** For **SC589-ezkit/SC584-ezkit/SC573-ezkit**:
@@ -61,9 +61,9 @@ Linux kernel configuration
    [*] Networking support --->
        <N> CAN bus subsystem support ----
    Device Drivers --->
-       <N> Memory Technology Device (MTD) support ---- 
-       [N] SPI support ---- 
-       [N] Network device support ---- 
+       <N> Memory Technology Device (MTD) support ----
+       [N] SPI support ----
+       [N] Network device support ----
 
 Then run bitbake linux-adi -C compile to generate kernel image zImage and dtb file.
 
@@ -79,5 +79,6 @@ linkport_test will send data to linkport1, and receive data from linkport0, then
    # linkport_test
    linkport test passed
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

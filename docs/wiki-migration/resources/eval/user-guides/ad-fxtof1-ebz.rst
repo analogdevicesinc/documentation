@@ -80,8 +80,8 @@ The :adi:`AD-FXTOF1-EBZ <en/design-center/evaluation-hardware-and-software/evalu
 
    
    -  `Mechanical drawing & Pinout <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz_mechanical_drawing.pdf>`_
-      \* `ToF module 3D step model <https://wiki.analog.com/_media/resources/eval/user-guides/tofcam.zip>`_
-      \* `High level BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz_high_level_bom.xlsx>`_
+   -  `ToF module 3D step model <https://wiki.analog.com/_media/resources/eval/user-guides/tofcam.zip>`_
+   -  `High level BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz_high_level_bom.xlsx>`_
    
 
 
@@ -146,13 +146,9 @@ The Depth Perception Rapid Prototyping Platform supports a wide range of operati
    :git-aditof_sdk>`__
 
 
-|
-
 .. note::
 
-   `Get more information abut the available 3D ToF algorithms from Analog Devices <https::`Access the full ADI 3D ToF software suite to get started </www.arrow.com/tofalgorithms>`
-
-   | `Explore the available 3D vision algorithms demos <https://github.com/robotics-ai/tof_process_public>`_
+   `Get more information abut the available 3D ToF algorithms from Analog Devices <https::`Access the full ADI 3D ToF software suite to get started </www.arrow.com/tofalgorithms>` `Explore the available 3D vision algorithms demos <https://github.com/robotics-ai/tof_process_public>`_
 
 
 --------------
@@ -160,16 +156,16 @@ The Depth Perception Rapid Prototyping Platform supports a wide range of operati
 Videos
 ------
 
-.. image:: https://wiki.analog.com/_media/youtube>-CErH6ROli8
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>-CErH6ROli8
    :alt: youtube>-CErH6ROli8
 
-.. image:: https://wiki.analog.com/_media/youtube>G-9UfaZXUCk
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>G-9UfaZXUCk
    :alt: youtube>G-9UfaZXUCk
 
-.. image:: https://wiki.analog.com/_media/youtube>_ew0QKQMUtI
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>_ew0QKQMUtI
    :alt: youtube>_ew0QKQMUtI
 
-.. image:: https://wiki.analog.com/_media/youtube>uRY2UZ0E5_o
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>uRY2UZ0E5_o
    :alt: youtube>uRY2UZ0E5_o
 
 --------------

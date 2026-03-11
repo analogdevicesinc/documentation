@@ -1,8 +1,9 @@
 Flash Downloader
 ================
 
-| :doc:`Click here to return to the Hardware Windows page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
-| The **Flash Downloader** lets you store your compiled projects to the flash RAM on the USB Serial Converter board. Eight slots are available. This allows quick comparisons among projects; you can Link-Compile-Download each project to RAM and then switch easily among them.
+:doc:`Click here to return to the Hardware Windows page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
+
+The **Flash Downloader** lets you store your compiled projects to the flash RAM on the USB Serial Converter board. Eight slots are available. This allows quick comparisons among projects; you can Link-Compile-Download each project to RAM and then switch easily among them.
 
 **Steps**
 
@@ -13,7 +14,8 @@ Flash Downloader
 -  Enter the Program Location to be stored. (**Note:** The Program Location number listed on the popup window begins with 1, whereas the rotary switch on the USB converter board begins with 0; please adjust accordingly).
 -  Click **Download to Flash**.
 
-| |flashpic1.png|
-| Now your project is accessible in the Program Location you entered. Select it on the USB board and push **Program Load**.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/flashpic1.png
+   :alt: flashpic1.png
+   :align: center
 
-.. |flashpic1.png| image:: https://wiki.analog.com/_media/flashpic1.png
+Now your project is accessible in the Program Location you entered. Select it on the USB board and push **Program Load**.

@@ -23,10 +23,7 @@ For example a custom board has a different reference clock.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -35,6 +32,6 @@ For example a custom board has a different reference clock.
       analog@analog:/media/analog/BOOT$ dtc -I dtb devicetree.dtb -O dts -o devicetree.dts
       analog@analog:/media/analog/BOOT$ mousepad devicetree.dts &
       analog@analog:/media/analog/BOOT$ dtc -I dts devicetree.dts -O dtb -o devicetree.dtb
-      analog@analog:/media/analog/BOOT$ 
+      analog@analog:/media/analog/BOOT$
    
 

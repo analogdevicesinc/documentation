@@ -41,5 +41,6 @@ Yocto provides a build-time configuration option that allows you to avoid specif
 
 For more information please refer to the `Yocto Reference Manual <https://www.yoctoproject.org/docs/2.4/ref-manual/ref-manual.html#var-INCOMPATIBLE_LICENSE>`_.
 
-| 
-| ---- \**HOME PAGE: \*\* :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`
+--------------
+
+**HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`

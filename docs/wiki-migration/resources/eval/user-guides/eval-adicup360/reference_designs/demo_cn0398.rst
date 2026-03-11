@@ -8,30 +8,32 @@ General description
 
 The **ADuCM360_demo_cn0398** project uses the :adi:`EVAL-CN0398-ARDZ shield <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/cn0398>` which is a single supply, low power, high precision complete solution for soil moisture and pH measurements, including temperature compensation. The circuit is optimized for capacitive soil moisture sensors that are insensitive to water salinity and do not corrode over time. The circuit also measures soil pH so it increases the range of applications where this shield can be used.
 
-| The circuit is divided into three independent measurement front ends: pH, soil moisture, and temperature. After signal conditioning, the three channels share an :adi:`ad7124-8`, 24-bit sigma-delta (Σ-Δ) ADC. The :adi:`ad7124-8`, is a low power, low noise, completely integrated analog front end for high precision measurement applications.
-| |image1| The board offers the possibility to configure **Vin** supply voltage (**P10** connector) in order to use **5V** or **7V-12V**. Considering moisture sensor which is used, the **P8** connector configure **3.3V** or **5V** supply. The user has the possibility to select one of the three GPIOs available for ADC CS pin using **P5** connector (default configuration for P5 is 1-2 position). For temperature compensation can be used an RTD PT100 sensor, 2-wire (this is used in the demo), 3-wire or 4-wire connection (see **P1** connector). For this demo was used for the moisture measurement the *VH400* sensor (**P2**) and for pH measurement *Atlas Scientific* sensor (**J1**). The **DS1** LED is *ON* as long the pH value is measured and calculated and the **DS3** is *ON* as long as the moisture value is measured and calculated. The ADuCM360_demo_cn0398 application processes ADC outputs for all 3 channels (RTD, pH and moisture), calculates pH and moisture values using as input RTD temperature value. Those data are sent to serial interface, usig **UART** communication (**115200** baud rate and **8-bits** data length). The **24-bits** ADC data are received using **SPI** interface of the EVAL-ADICUP360 board.
-| |image2|
+The circuit is divided into three independent measurement front ends: pH, soil moisture, and temperature. After signal conditioning, the three channels share an :adi:`ad7124-8`, 24-bit sigma-delta (Σ-Δ) ADC. The :adi:`ad7124-8`, is a low power, low noise, completely integrated analog front end for high precision measurement applications.
 
-| 
-| The **temperature** value is calculated based on the **RTD resistance**:
+|image1| The board offers the possibility to configure **Vin** supply voltage (**P10** connector) in order to use **5V** or **7V-12V**. Considering moisture sensor which is used, the **P8** connector configure **3.3V** or **5V** supply. The user has the possibility to select one of the three GPIOs available for ADC CS pin using **P5** connector (default configuration for P5 is 1-2 position). For temperature compensation can be used an RTD PT100 sensor, 2-wire (this is used in the demo), 3-wire or 4-wire connection (see **P1** connector). For this demo was used for the moisture measurement the *VH400* sensor (**P2**) and for pH measurement *Atlas Scientific* sensor (**J1**). The **DS1** LED is *ON* as long the pH value is measured and calculated and the **DS3** is *ON* as long as the moisture value is measured and calculated. The ADuCM360_demo_cn0398 application processes ADC outputs for all 3 channels (RTD, pH and moisture), calculates pH and moisture values using as input RTD temperature value. Those data are sent to serial interface, usig **UART** communication (**115200** baud rate and **8-bits** data length). The **24-bits** ADC data are received using **SPI** interface of the EVAL-ADICUP360 board.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_3.png
+   :width: 800px
+
+The **temperature** value is calculated based on the **RTD resistance**:
 
 ::
 
                                                                   CODE - ADC output
-          Rrtd = ((CODE - 2^23)* Rref)/GAIN\*2^23                  Rref - Reference resistor (5kΩ)        
+          Rrtd = ((CODE - 2^23)* Rref)/GAIN\*2^23                  Rref - Reference resistor (5kΩ)
                                                                   GAIN - used gain for RTD channel (16)
 
-| 
-| **1. RTD resistance > 100Ω**
+**1. RTD resistance > 100Ω**
 
-| |image3|
-| **2. RTD resistance ≤ 100Ω**
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_1.png
+   :width: 800px
+
+**2. RTD resistance ≤ 100Ω**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_2.png
    :width: 800px
 
-| 
-| The **pH** value can be calculated in two ways, so user can configure which one did he want for his application: using *two-point calibration* data or using *Nernst equation*. After initialization the user will be asked in the terminal window if he want to perform pH calibration -> in this case the pH value will be calculated using calibration measured value:
+The **pH** value can be calculated in two ways, so user can configure which one did he want for his application: using *two-point calibration* data or using *Nernst equation*. After initialization the user will be asked in the terminal window if he want to perform pH calibration -> in this case the pH value will be calculated using calibration measured value:
 
 ::
 
@@ -46,16 +48,15 @@ A default calibration package can be loaded (in case is not wanted to perform ca
 
 ::
 
-         ph  = [PH_ISO -((V - a) / ((2.303 * AVOGADRO * (T + 273.1))]    
-           
+         ph  = [PH_ISO -((V - a) / ((2.303 * AVOGADRO * (T + 273.1))]
+
          PH_ISO - reference hydrogen ion concentration (7)
          V - pH channel measured voltage
          a - zero point tolerance (see //ZERO_POINT_TOLERANCE// parameter)
          AVOGADRO - Avogadro's number (8.314)
-         T - RTD temperature       
+         T - RTD temperature
 
-| 
-| The **moisture** value can be also calculated in two ways. First way is to use *piece-wise formulas* given by manufacturer (check *USE_MANUFACTURER_MOISTURE_EQ* parameter. For **Vegetronix** may use the follow formulas (*m* - moisture value and *Vm* - moisture channel measured voltage):
+The **moisture** value can be also calculated in two ways. First way is to use *piece-wise formulas* given by manufacturer (check *USE_MANUFACTURER_MOISTURE_EQ* parameter. For **Vegetronix** may use the follow formulas (*m* - moisture value and *Vm* - moisture channel measured voltage):
 
 ================= ======================
 **Voltage Range** **Equation**
@@ -70,7 +71,7 @@ Otherwise the moisture value can be calculated using *transfer function* for the
 
 ::
 
-   m =-1.18467 + 21.5371\*Vm - 110.996\*Vm^2 + 397.025\*Vm^3 - 666.986\*Vm^4 + 569.236\*Vm^5 -246.005\*Vm^6 + 49.4867\*Vm^7 -3.37077\*Vm^8 
+   m =-1.18467 + 21.5371\*Vm - 110.996\*Vm^2 + 397.025\*Vm^3 - 666.986\*Vm^4 + 569.236\*Vm^5 -246.005\*Vm^6 + 49.4867\*Vm^7 -3.37077\*Vm^8
 
 Demo Requirements
 -----------------
@@ -101,7 +102,7 @@ The following is a list of items needed in order to replicate this demo.
 Video
 -----
 
-| |youtube>43GfiE8uAa4| *All About Circuits* created a video showing users how they can use the moisture sensor portion of the CN0398 to monitor the water level of your household plants. Check it out!
+|youtube>43GfiE8uAa4| *All About Circuits* created a video showing users how they can use the moisture sensor portion of the CN0398 to monitor the water level of your household plants. Check it out!
 
 Setting up the hardware
 -----------------------
@@ -109,7 +110,7 @@ Setting up the hardware
 -  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
 
 
-|image4|
+|image2|
 
 -  Connect the **EVAL-CN0398-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Connect the pH sensor to the **J1** connector of the EVAL-CN0398-ARDZ.
@@ -174,8 +175,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -186,8 +185,6 @@ Following is the UART configuration.
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-|
 
 -  The software will ask if you want to do a calibration, so type in [**n**] or [**y**].
 -  If [n] is selected, the software will ask if you would like to load the default configuration, or use the Nernst equations. Select one option.
@@ -223,24 +220,17 @@ This project contains: system initialization part - disabling watchdog, setting 
    :align: left
    :width: 220px
 
-| 
-| In the **src** and **include** folders you will find the source and header files related to CN0398 software application. The *Communication.cpp/h* files contain **SPI** and **UART** specific data, meanwhile the *CN0398.cpp/h* files contain the calculation part, the *AD7124.c/h* files contain ADC channels handling. The pH calibration parameters are set at the run time, after initialization in the terminal window will appear information messages how to perform calibration part.
+In the **src** and **include** folders you will find the source and header files related to CN0398 software application. The *Communication.cpp/h* files contain **SPI** and **UART** specific data, meanwhile the *CN0398.cpp/h* files contain the calculation part, the *AD7124.c/h* files contain ADC channels handling. The pH calibration parameters are set at the run time, after initialization in the terminal window will appear information messages how to perform calibration part.
 
-| 
-| The **RTE** folder contains device and system related files:
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| // End of Document //
+// End of Document //
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/398andaicup.png
    :width: 650px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_3.png
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_1.png
-   :width: 800px
 .. |youtube>43GfiE8uAa4| image:: https://wiki.analog.com/_media/youtube>43GfiE8uAa4
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/adicup360_hardware.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/adicup360_hardware.jpg
    :width: 650px

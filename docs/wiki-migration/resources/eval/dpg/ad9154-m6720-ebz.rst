@@ -77,7 +77,7 @@ Single Tone Demonstration
 
 These settings configure the AD9154 to output a 182Mhz -1dbFS sine wave using the DPG3 on all four AD9154 DACs. The DAC output signals are I/Q pairs. An external LO of 1.36GHz is supplied to the ADRF6720-27 chips. The AD9720-27 chips perform a complex single sideband up-conversion of the sine wave I/Q pairs to a 1542MHz RF signal at the RF_OUT_1 and RF_OUT_2 connectors J4 and J14. 1. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1500MHz, and the output level to 3dBm. Set the frequency of the ADRF6720-27 Synthesizer Local Oscillator Source to 1.36GHz and set its output amplitude to +4dbm. The spectrum analyzer can be configured as shown in Figure 7 with a resolution bandwidth of 100kHz. Choose an Input Attenuation of 24dB. 2. On your lab computer, open the AD9154 SPIPro application (Start > All Programs > Analog Devices > AD9154 > AD9154 SPI). You will see the GUI shown in Figure 7 come up.
 
-<WRAP center>
+
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/9154m6720_figure_3.png
 
@@ -90,7 +90,7 @@ These settings configure the AD9154 to output a 182Mhz -1dbFS sine wave using th
 
 </WRAP center>
 
-<WRAP center>
+
 
 
 |image2|
@@ -118,7 +118,7 @@ g. Load Register Settings into the ADRF6720 devices by clicking “Restore Regis
 
 h. Click on “ADRF6720” tab for Mod 1 and confirm the GUI matches Figure 5 below.
 
-<WRAP center>
+
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/9154m6720_figure_5.png
 
@@ -166,7 +166,7 @@ f. Click Download Button and the Play Button. The spectrum in Figure 9 will appe
 
 </WRAP center>
 
-<WRAP>
+
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/9154m6720_figure_8.png
 

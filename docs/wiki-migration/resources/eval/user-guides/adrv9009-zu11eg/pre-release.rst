@@ -11,7 +11,7 @@ Details on how to write the SD card can be found at https://wiki.analog.com/reso
 ADRV9009-ZU11EG Specific Boot Files
 -----------------------------------
 
-After writing the image, on the boot partition root, the ADRV9009-ZU11EG specific files can be added from any folder matching \**zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb\* \*\* from boot partition. More information can be found in boot partition ReadMe.txt.
+After writing the image, on the boot partition root, the ADRV9009-ZU11EG specific files can be added from any folder matching \**zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb\*** from boot partition. More information can be found in boot partition ReadMe.txt.
 
 Video Configuration
 -------------------

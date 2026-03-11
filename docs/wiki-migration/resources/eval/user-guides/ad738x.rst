@@ -104,65 +104,80 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``typedef enum {                           |
+    typedef enum {
+     TWO_WIRE_MODE,
+     ONE_WIRE_MODE
+    } ad738x_conv_mode;
 
-|     TWO_WIRE_MODE,                         |
-|     ONE_WIRE_MODE                          |
-| } ad738x_conv_mode;                        |
-|                                            |
-| typedef enum {                             |
-|     NORMAL_OS_MODE,                        |
-|     ROLLING_OS_MODE                        |
-| } ad738x_os_mode;                          |
-|                                            |
-| typedef enum {                             |
-|     OSR_DISABLED,                          |
-|     OSR_X2,                                |
-|     OSR_X4,                                |
-|     OSR_X8,                                |
-|     OSR_X16,                               |
-|     OSR_X32,                               |
-| } ad738x_os_ratio;                         |
-|                                            |
-| typedef enum {                             |
-|     RES_16_BIT,                            |
-|     RES_18_BIT                             |
-| } ad738x_resolution;                       |
-|                                            |
-| typedef enum {                             |
-|     SOFT_RESET,                            |
-|     HARD_RESET                             |
-| } ad738x_reset_type;                       |
-|                                            |
-| typedef enum {                             |
-|     NORMAL_PWDM,                           |
-|     FULL_PWDM                              |
-| } ad738x_pwd_mode;                         |
-|                                            |
-| typedef enum {                             |
-|     INT_REF,                               |
-|     EXT_REF                                |
-| } ad738x_ref_sel;                          |
-|                                            |
-| typedef struct {                           |
-|         /* SPI */                          |
-|         spi_desc            *spi_desc;     |
-|         /* Device Settings */              |
-|         ad738x_conv_mode    conv_mode;     |
-|     ad738x_resolution   resolution;        |
-| } ad738x_dev;                              |
-|                                            |
-| typedef struct {                           |
-|         /* SPI */                          |
-|         spi_init_param          spi_init;  |
-|         /* Device Settings */              |
-|         ad738x_conv_mode        conv_mode; |
-|         ad738x_ref_sel          ref_sel;   |
-| } ad738x_init_param;``                     |
-+--------------------------------------------+
+::
+
+    typedef enum {
+     NORMAL_OS_MODE,
+     ROLLING_OS_MODE
+    } ad738x_os_mode;
+
+::
+
+    typedef enum {
+     OSR_DISABLED,
+     OSR_X2,
+     OSR_X4,
+     OSR_X8,
+     OSR_X16,
+     OSR_X32,
+    } ad738x_os_ratio;
+
+::
+
+    typedef enum {
+     RES_16_BIT,
+     RES_18_BIT
+    } ad738x_resolution;
+
+::
+
+    typedef enum {
+     SOFT_RESET,
+     HARD_RESET
+    } ad738x_reset_type;
+
+::
+
+    typedef enum {
+     NORMAL_PWDM,
+     FULL_PWDM
+    } ad738x_pwd_mode;
+
+::
+
+    typedef enum {
+     INT_REF,
+     EXT_REF
+    } ad738x_ref_sel;
+
+::
+
+    typedef struct {
+            /* SPI */
+            spi_desc         *spi_desc;
+            /* Device Settings */
+            ad738x_conv_mode     conv_mode;
+     ad738x_resolution   resolution;
+    } ad738x_dev;
+
+::
+
+    typedef struct {
+            /* SPI */
+            spi_init_param           spi_init;
+            /* Device Settings */
+            ad738x_conv_mode         conv_mode;
+            ad738x_ref_sel           ref_sel;
+    } ad738x_init_param;
 
 HDL Downloads
 -------------

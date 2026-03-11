@@ -141,19 +141,16 @@ Most practical envelope detectors use either half-wave or full-wave rectificatio
 
 .. container:: centeralign
 
-   Figure 7.3.2 Envelope detector <fc #0000FF>input</fc> and <fc #FF0000>output</fc> waveforms
+   Figure 7.3.2 Envelope detector input and output waveforms
 
 
 The simple diode envelope detector has several drawbacks:
 
-| 1) The input to the detector must be band-pass filtered around the desired carrier signal, or else the detector will simultaneously demodulate several signals. The filtering can be done with a tunable filter or, more practically, a superheterodyne receiver
-| 2) It is more susceptible to noise than a product detector
-| 3) If the signal is overmodulated, distortion will occur
+1) The input to the detector must be band-pass filtered around the desired carrier signal, or else the detector will simultaneously demodulate several signals. The filtering can be done with a tunable filter or, more practically, a superheterodyne receiver 2) It is more susceptible to noise than a product detector 3) If the signal is overmodulated, distortion will occur
 
 Most of these drawbacks are relatively minor and are usually acceptable tradeoffs for the simplicity and low cost of using an envelope detector.
 
-| **ADALM1000 Lab Activity,** :doc:`AM Modulation and the Envelope Detector </wiki-migration/university/courses/alm1k/circuits1/alm-cir-envelope-detector>`
-| **ADALM2000 Lab Activity,** :doc:`Envelope Detector </wiki-migration/university/courses/electronics/electronics-lab-envelope-detector>`
+**ADALM1000 Lab Activity,** :doc:`AM Modulation and the Envelope Detector </wiki-migration/university/courses/alm1k/circuits1/alm-cir-envelope-detector>` **ADALM2000 Lab Activity,** :doc:`Envelope Detector </wiki-migration/university/courses/electronics/electronics-lab-envelope-detector>`
 
 7.4 Diode Clamp
 ---------------
@@ -273,13 +270,7 @@ The purpose of C\ :sub:`1` (and C\ :sub:`2`) is to block DC current from the inp
    :align: center
    :width: 300px
 
-| Where:
-| n is the diode area (size) scale factor
-| V\ :sub:`T` is the Thermal Voltage
-| I\ :sub:`D` is the diode current
-| k is Boltzmann's constant
-| q is the electron charge
-| T is the absolute temperature
+Where: n is the diode area (size) scale factor V\ :sub:`T` is the Thermal Voltage I\ :sub:`D` is the diode current k is Boltzmann's constant q is the electron charge T is the absolute temperature
 
 In the circuit a voltage divider is set up between R\ :sub:`1` and the resistance of D\ :sub:`1`. The current in D\ :sub:`1`\ is varied by changing the current in R\ :sub:`2`. When the current in D\ :sub:`1` is small r\ :sub:`D`\ is large and the fraction of the input signal seen at the output is large. As the current in D\ :sub:`1` increases, its resistance decreases and the fraction of the input seen at the output decreases.
 

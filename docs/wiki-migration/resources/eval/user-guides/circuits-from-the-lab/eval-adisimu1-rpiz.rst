@@ -97,15 +97,11 @@ Unboxing and Hardware Setup
 
 The following video is a walkthrough for the unboxing experience and a guide for setting up the hardware to be ready for your own application development.
 
-.. image:: https://wiki.analog.com/_media/youtube>vesoMeTnPW8
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>vesoMeTnPW8
    :alt: youtube>vesoMeTnPW8
 
 | |youtube>G-k81W2yJRY|
-
-Inertial Measurement Unit(IMU)/Gyroscope Mounting
--------------------------------------------------
-
-There are two ways you can mount components on the EVAL-ADISIMU1-RPIZ.
+| ===== Inertial Measurement Unit(IMU)/Gyroscope Mounting ===== There are two ways you can mount components on the EVAL-ADISIMU1-RPIZ.
 
 -  Directly mount the IMU using the proper mounting location
 -  Indirect connection using the P3 connector along with the ribbon cable and the breakout board
@@ -121,7 +117,7 @@ Any IMU can use the indirect method of connecting to the P3 header using the rib
    There are four(4) mounting holes without any labels. These mounting holes are assigned to mount the EVAL-ADISIMU1-RPIZ to the Raspberry Pi host board. There are four(4) nylon screws and spacers provided in the kit, and these should be used for this purpose. The nominal diameter of the four(4) holes is 3.175mm.
 
 
-|
+
 
 .. note::
 
@@ -298,8 +294,6 @@ Test Points
 ^^^
 
 This test point provides connection to the +5V rail.
-
-.. _v-1:
 
 +3.3V
 ^^^^^

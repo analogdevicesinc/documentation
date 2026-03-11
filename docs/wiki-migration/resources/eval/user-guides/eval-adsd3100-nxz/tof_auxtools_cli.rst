@@ -28,8 +28,6 @@ Usage
 Linux
 ^^^^^
 
-.. _installation-1:
-
 Installation
 """"""""""""
 
@@ -44,8 +42,6 @@ Installation
 -  source py_bindings_env/bin/activate
 -  python3 -m pip install --upgrade pip
 -  python3 -m pip install -r ./requirements.txt
-
-.. _usage-1:
 
 Usage
 """""
@@ -418,8 +414,6 @@ In general the auxiliary tools require Python.
    These tools have been only tested on Windows 10 64-bit
 
 
-.. _setting-up-python-1:
-
 Setting up Python
 ~~~~~~~~~~~~~~~~~
 
@@ -466,7 +460,7 @@ tofi_compute_depth application processes the input raw files captured using ADI 
 ::
 
    tofi_compute_depth --I=<input_fsf_or_raw_file> --O=<output_path> --CCB=<calibration> --MODE=<mode>
-   tofi_compute_depth (-h | --help) 
+   tofi_compute_depth (-h | --help)
    tofi_compute_depth --version
 
    Command Line Parameters:
@@ -475,7 +469,7 @@ tofi_compute_depth application processes the input raw files captured using ADI 
      --I=<s>        Input file or folder
      --O=<s>        Output folder
      --CCB=<s>      Calibration Binary [default: 0]
-     --MODE=<n>     mode of operation(Mode=10 for 1MP)  
+     --MODE=<n>     mode of operation(Mode=10 for 1MP)
      --INI=<s>      INI File (optional)
 
    Unit Testing Command Line Parameters:
@@ -507,11 +501,11 @@ Note: The filenames mentioned in the above example are for reference only, they 
 
 **Output**
 
-\* The output files will be generated in <output_path> folder specified while running the tofi_compute_depth.
+- The output files will be generated in <output_path> folder specified while running the tofi_compute_depth.
 
 **Visualize Depth Image**
 
-\* Dependency : Requires Python 3.1(or later), numpy, and matplotlib libraries for visualization. \* The output AB (active brightness) and Radial depth images can be visualized using the python scripts 'visualize_ab.py' and 'visualize_depth.py', with a specific filename.
+- Dependency : Requires Python 3.1(or later), numpy, and matplotlib libraries for visualization. \* The output AB (active brightness) and Radial depth images can be visualized using the python scripts 'visualize_ab.py' and 'visualize_depth.py', with a specific filename.
 
 ::
 
@@ -539,11 +533,11 @@ Note: The filenames mentioned in the above example are for reference only, they 
 
 ::
 
-   python visualize_depth.py test_data\MP\RadialDepth\frame_1001229429_0.bin 1024 1024  
+   python visualize_depth.py test_data\MP\RadialDepth\frame_1001229429_0.bin 1024 1024
 
 **Visualize Point Cloud**
 
-\* Dependency : Requires Python 3.1(or later) and Open3D library for visualization. Open3D can be installed using python installer package as "pip install open3D". \* The output XYZ image (point cloud) can be visualized using the python script "visualize_pointcloud.py"
+- Dependency : Requires Python 3.1(or later) and Open3D library for visualization. Open3D can be installed using python installer package as "pip install open3D". \* The output XYZ image (point cloud) can be visualized using the python script "visualize_pointcloud.py"
 
 ::
 
@@ -566,7 +560,7 @@ Note: The filenames mentioned in the above example are for reference only, they 
 
 **Known Issues**
 
-\* The application may crash if wrong calibartion/config data is used. \* Frames/sec value may be reported incorrectly as 'inf', define argument '--b=1' to return a valid frames/sec estimate.
+- The application may crash if wrong calibartion/config data is used. \* Frames/sec value may be reported incorrectly as 'inf', define argument '--b=1' to return a valid frames/sec estimate.
 
 --------------
 
@@ -590,19 +584,17 @@ Run the python file to extract FSF information (AB, Depth, Point-Cloud), the pyt
    -  cd <TOF installation folder>\\bin\\tools
    -  conda activate tof-tools-py39
 
-**Example usage with the example FSF file that is included**
-
-*Extract all frames*
+**Example usage with the example FSF file that is included** Extract all frames*
 
 ::
 
-   python fsf_extract.py data/example_XYZ.fsf 
+   python fsf_extract.py data/example_XYZ.fsf
 
 *Extract frame 0 only*
 
 ::
 
-   python fsf_extract.py data/example_XYZ.fsf 0 0 
+   python fsf_extract.py data/example_XYZ.fsf 0 0
 
 *Extract frame 1, 2, 3*
 
@@ -620,4 +612,3 @@ Run the python file to extract FSF information (AB, Depth, Point-Cloud), the pyt
 -  frame_x_depth_r_gray16.png
 -  frame_x.ply
 
---------------

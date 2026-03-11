@@ -12,8 +12,7 @@ They are generally written to be performed using principally the components prov
 Pre-Lab Circuit Simulation
 --------------------------
 
-| Notes on :doc:`circuit simulation </wiki-migration/university/courses/electronics/circuitsimulationnotes>`.
-| Links to an archive of example simulation schematic files are provided below.
+Notes on :doc:`circuit simulation </wiki-migration/university/courses/electronics/circuitsimulationnotes>`. Links to an archive of example simulation schematic files are provided below.
 
 General Lab materials
 ---------------------

@@ -1,13 +1,16 @@
 Dynamic Bass Boost
 ==================
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
-| The Dynamic Bass Boost block provides boost that varies with input-signal level: lower levels require, and receive, more bass than higher levels. Using a variable-Q filter, this block dynamically adjusts the amount of boost.
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+
+The Dynamic Bass Boost block provides boost that varies with input-signal level: lower levels require, and receive, more bass than higher levels. Using a variable-Q filter, this block dynamically adjusts the amount of boost.
 
 The filter calculates its bass boost between the Threshold and the Min(imum) Gain settings. A fixed maximum is applied to inputs above minimum gain and below threshold.
 
-| Seven parameters, described below, control this block's performance. Enter their values in the appropriate field or use the arrows. While it is important for you to know how these parameters work and precisely what they do, nothing surpasses playing with each one and getting a feel for how it affects, singly and in combination, the sound you are trying to achieve.
-| |DynamicBasspic1.png|
+Seven parameters, described below, control this block's performance. Enter their values in the appropriate field or use the arrows. While it is important for you to know how these parameters work and precisely what they do, nothing surpasses playing with each one and getting a feel for how it affects, singly and in combination, the sound you are trying to achieve.
+
+
+|DynamicBasspic1.png|
 
 **Lowpass Freq** - The lowpass frequency ranges from 20Hz to 250Hz; frequencies below the selected point are used by the detector for determining the boost amount.
 

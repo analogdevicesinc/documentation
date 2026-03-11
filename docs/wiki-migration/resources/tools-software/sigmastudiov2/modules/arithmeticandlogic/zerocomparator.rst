@@ -3,13 +3,13 @@
 Zero Comparator
 ===============
 
-| 
-| |zerocomparator.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/zerocomparator.png
+   :alt: zerocomparator.png
 
 Description
 -----------
 
-| The Zero Comparator block takes any input and compares the value to 0. If the input signal is non-zero, the output will be zero. If the input is zero, the output will be a flag of “1” in the bit position designated by the drop-down box
+The Zero Comparator block takes any input and compares the value to 0. If the input signal is non-zero, the output will be zero. If the input is zero, the output will be a flag of “1” in the bit position designated by the drop-down box
 
 Targets Supported
 -----------------
@@ -60,5 +60,3 @@ DSP Parameters
 +================+======================================+========================+===============+
 | CompValue      | Compute & set the bit position value | FixInt32               | FixInt32      |
 +----------------+--------------------------------------+------------------------+---------------+
-
-.. |zerocomparator.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/zerocomparator.png

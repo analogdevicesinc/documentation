@@ -7,7 +7,7 @@ Differences in Specification on different plugins
 | \*\* BCF Fields\ **\|** SigmaStudio+                     |
 | (ADI_A2B-SSPlus_Software-Rel1.3.1) **\|** SigmaStudio    |
 | (ADI_A2B_Software-Rel19.10.x) **\|** SigmaStudio         |
-| (ADI_A2B_Software-Rel19.4.5) **\|** Comments \*\*        |
+| (ADI_A2B_Software-Rel19.4.5) **\|** Comments**        |
 +---+
 
 | A2B DLL Version (A2B Plugin Version)                     |

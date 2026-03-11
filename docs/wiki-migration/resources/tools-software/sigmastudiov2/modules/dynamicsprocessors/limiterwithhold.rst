@@ -3,14 +3,16 @@
 Limiter With Hold
 =================
 
-| 
-| |limiterwhold.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/limiterwhold.png
+   :alt: limiterwhold.png
 
 Description
 -----------
 
-| The LimiterWithHold block computes the RMS level of the incoming audio signal and attempts to prevent it from exceeding the threshold by automatically reducing its gain. Hold controls the rate of the time limiter will respond to change in input signal.
-| ===== Targets Supported =====
+The LimiterWithHold block computes the RMS level of the incoming audio signal and attempts to prevent it from exceeding the threshold by automatically reducing its gain. Hold controls the rate of the time limiter will respond to change in input signal.
+
+Targets Supported
+-----------------
 
 +-------------------+------------+------------------+---------------+------------------+
 | Name              | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -39,7 +41,7 @@ Name    Type  Description
 Output0 Audio Output channel0
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,16 +73,15 @@ Output0 Audio Output channel0
 | Threshold_Channel<n> | limiter threshold                                     | Float                  | 8.24 format   |
 +----------------------+-------------------------------------------------------+------------------------+---------------+
 
-| \*Note: <n> -> indicates channel number
+\*Note: <n> -> indicates channel number
 
 DSP Parameter Computation
 -------------------------
 
-| Decay = 1/P^(1000/(Decay \* FS))
-| Hold = FS \* HOld/1000
-| Where P is 1/9 and FS is the sampling rate
+Decay = 1/P^(1000/(Decay \* FS))
 
-| 
-| Where FS is the sampling rate
+Hold = FS \* HOld/1000
 
-.. |limiterwhold.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/limiterwhold.png
+Where P is 1/9 and FS is the sampling rate
+
+Where FS is the sampling rate

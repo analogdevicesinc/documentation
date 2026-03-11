@@ -69,22 +69,13 @@ For an enhancement mode, NMOS device the body effect upon threshold voltage is c
 
 :math:`V_TB=V_TO +\\gamma (\sqrt {V_SB + 2\\phi _F}-\sqrt {2\\phi _F})`
 
-| Where:
-| V\ :sub:`TB` is the threshold voltage when substrate bias is present,
-| V\ :sub:`SB` is the source-to-body substrate bias
-| 2f\ :sub:`F` is the surface potential
-| V\ :sub:`TO` is threshold voltage for zero substrate bias
+Where: V\ :sub:`TB` is the threshold voltage when substrate bias is present, V\ :sub:`SB` is the source-to-body substrate bias 2f\ :sub:`F` is the surface potential V\ :sub:`TO` is threshold voltage for zero substrate bias
 
 The body effect parameter:
 
 :math:`\displaystyle \\gamma = \frac{t_ox}{\\epsilon _ox} \sqrt {2q\\epsilon _si N_A}`
 
-| Where:
-| t\ :sub:`ox` is oxide thickness
-| ε\ :sub:`ox` is oxide permittivity
-| ε\ :sub:`si` is the permittivity of silicon
-| N\ :sub:`A` is a doping concentration
-| q is the charge of an electron
+Where: t\ :sub:`ox` is oxide thickness ε\ :sub:`ox` is oxide permittivity ε\ :sub:`si` is the permittivity of silicon N\ :sub:`A` is a doping concentration q is the charge of an electron
 
 16.3 Improved series voltage regulator
 --------------------------------------
@@ -97,9 +88,7 @@ where, V\ :sub:`Z` is the Zener voltage, I\ :sub:`B` is the transistor's base cu
 
 :math:`I_B=I_L/ß`
 
-| where:
-| I\ :sub:`L` is the required load current, also the transistor's emitter current (assumed to be approximately equal to the collector current)
-| ß\ :sub:`(min)` is the minimum acceptable DC current gain for the transistor.
+where: I\ :sub:`L` is the required load current, also the transistor's emitter current (assumed to be approximately equal to the collector current) ß\ :sub:`(min)` is the minimum acceptable DC current gain for the transistor.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f3.png
    :align: center
@@ -184,10 +173,7 @@ This is for values where the effect of the emitter follower transistor itself wi
 
 :math:`f_o = 1.414 / (4 π R_1 C_2)`
 
-| Where:
-| β = the forward current gain of the transistor
-| f\ :sub:`o` = the cut-off frequency of the high pass filter
-| π = equal to 3.14159
+Where: β = the forward current gain of the transistor f\ :sub:`o` = the cut-off frequency of the high pass filter π = equal to 3.14159
 
 The equations for determining the component values provide a Butterworth response, which provides maximum flatness within the pass-band at the expense of achieving the ultimate roll off as quickly as possible. This has been chosen because this form of filter suits most applications and the mathematics works out easily.
 

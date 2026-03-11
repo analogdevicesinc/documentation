@@ -1,11 +1,13 @@
-| :doc:`Return to the parent page </wiki-migration/resources/tools-software/sigmastudiov2>`
-| ======Release Information======
+:doc:`Return to the parent page </wiki-migration/resources/tools-software/sigmastudiov2>`
+
+Release Information
+===================
 
 3.3.0
-=====
+-----
 
 Features
---------
+~~~~~~~~
 
 -  Adds software support for ADSP-2183x/ADSP-SC83x series of processors from the SHARC-FX processor family.
 -  Absorbs all SigmaStudio+ 2.3.0.4 patch changes.
@@ -32,13 +34,11 @@ Features
    -  External Volume Control (with Dual slew) for ADSP-215xx/SC5xx and ADSP-2183x/SC83x family of processors.
    -  Wav Player support for ADSP-215xx/SC5xx family of processors
 
-| 
-| =====2.4.0=====
-
-.. _features-1:
+2.4.0
+-----
 
 Features
---------
+~~~~~~~~
 
 -  Introduces a new user interface for SigmaStudio+
 
@@ -58,7 +58,7 @@ Features
    -  Schematic by-pass feature.
 
 Bug Fixes
----------
+~~~~~~~~~
 
 -  Fixes in SigmaDSP ADAU145x/ADAU146x registers and EEPROM functionality.
 -  Fixes in hierarchy board for pin-re-arrangement during load and save shape feature.
@@ -66,13 +66,11 @@ Bug Fixes
 -  User experience improvements added while opening huge projects and performing UI operations on huge projects
 -  Addresses other miscellaneous bugfixes.
 
-| 
-| =====2.3.0=====
-
-.. _features-2:
+2.3.0
+-----
 
 Features
---------
+~~~~~~~~
 
 -  Supports new ADSP-215xx/SC5xx platforms – ADSP-21568 processor using EV-21568-SOM board and ADZS-SC589-MINI (SAM) platform.
 -  Enables A2B patch updates in SS+ Update Manager.
@@ -91,10 +89,8 @@ Features
    -  Support for Code B in SHARC demo microcontroller mode application.
    -  Improves SS+ console command interface with additional commands.
 
-.. _bug-fixes-1:
-
 Bug Fixes
----------
+~~~~~~~~~
 
 -  Delay while loading SS+ File Explorers during New project, Open Project etc. resolved.
 -  Resolves the shrinking of connectors issue when multiple shapes and connectors are selected moved across the canvas.
@@ -108,13 +104,11 @@ Bug Fixes
 -  Re-enables the connector context menu to align the connected modules, knob and slider controls.
 -  Enhances general user interface for SS+ Update Manager
 
-| 
-| =====2.2.0=====
-
-.. _features-3:
+2.2.0
+-----
 
 Features
---------
+~~~~~~~~
 
 -  Support for Pitch Shifter module for ADSP-SC5xx family of processors
 -  Link Compile Connect feature.
@@ -129,10 +123,8 @@ Features
    -  Logging feature for output and capture window.
    -  More detailed compilation result in output window
 
-.. _bug-fixes-2:
-
 Bug Fixes
----------
+~~~~~~~~~
 
 -  Improves hierarchy board tool tip between connections.
 -  Selection of modules to be retained after copy paste operation.
@@ -146,13 +138,11 @@ Bug Fixes
 -  Addresses graphical parametric filter modules issues.
 -  Addresses generic alias pin issues
 
-| 
-| =====2.1.0=====
-
-.. _features-4:
+2.1.0
+-----
 
 Features
---------
+~~~~~~~~
 
 -  Support for ADSP-SC596 and ADSP-SC598
 -  Provision to define new standard platforms using existing platforms
@@ -167,10 +157,8 @@ Features
    -  Auto scroll while expanding in project window and toolbox entries
    -  Double click on a SigmaStudio+ project file to launch SigmaStudio+ and load the project
 
-.. _bug-fixes-3:
-
 Bug Fixes
----------
+~~~~~~~~~
 
 -  Added Copy/Paste functionality in the system level and addressed other Copy/Paste issues
 -  Addressed distortions/overlapping of connections while re-opening the project and moving multiple shapes
@@ -189,13 +177,11 @@ Bug Fixes
 -  Addressed the issue of not able to close or move undocked windows on top of application title bar
 -  Miscellaneous fixes in module UI
 
-| 
-| =====2.0.0=====
-
-.. _features-5:
+2.0.0
+-----
 
 Features
---------
+~~~~~~~~
 
 -  Support for Networks and Network View
 -  Provision to store multiple alternate canvases and set one of the canvases as the active canvas for processing
@@ -204,23 +190,19 @@ Features
 
    -  Migration of ADAU145x/146x register settings from SigmaStudio projects
 
-.. _bug-fixes-4:
-
 Bug Fixes
----------
+~~~~~~~~~
 
 -  TCPIP readback for ADSP-SC5xx/215xx
 -  Misc. fixes in ADAU145x/ADAU146x and ADSP-SC5xx/215xx modules
 -  Fixes in checksum, self-boot features
 -  Misc. user interface improvements
 
-| 
-| =====1.3.0 Eval=====
-
-.. _features-6:
+1.3.0 Eval
+----------
 
 Features
---------
+~~~~~~~~
 
 -  Support for ADSP-21593 and ADSP-SC594 processors
 -  Support for S/PDIF transmitter in default framework
@@ -236,10 +218,8 @@ Features
    -  Port configuration for scripting
    -  Ctrl+ Drag option to create a copy of shape
 
-.. _bug-fixes-5:
-
 Bug Fixes
----------
+~~~~~~~~~
 
 -  Enhancements in capture and sequence windows
 -  Fixes in hierarchy board creation
@@ -249,13 +229,11 @@ Bug Fixes
 -  Enhancements to Alias Pin
 -  Enhancements to Copy-Paste operation
 
-| 
-| =====1.2.0 Eval=====
-
-.. _features-7:
+1.2.0 Eval
+----------
 
 Features
---------
+~~~~~~~~
 
 -  Inbuilt Software Update
 -  Downloadable Plugin Management
@@ -276,10 +254,8 @@ Features
    -  Save-Load Shapes
    -  While background for canvas
 
-.. _bug-fixes-6:
-
 Bug Fixes
----------
+~~~~~~~~~
 
 -  Rotation of Shapes not happening on canvas
 -  Group selection and Copy-Paste
@@ -289,14 +265,13 @@ Bug Fixes
 -  Faster loading of SigmaStudio+ and faster rendering of schematic canvases
 -  Application layout optimized for more canvas space
 
-| 
-| **$**: Available as separate add-on package
-| =====1.1.0 Beta=====
+**$**: Available as separate add-on package
 
-.. _features-8:
+1.1.0 Beta
+----------
 
 Features
---------
+~~~~~~~~
 
 -  Project Migration from SigmaStudio to SigmaStudio+
 -  Additional modules for ADSP-215xx/ADSP-SC5xx
@@ -312,10 +287,8 @@ Features
 -  Support for ADAU145x and ADAU146x processors with a comprehensive algorithm toolbox comprising of 250+ modules for evaluation and early engagement
 -  TCP/IP Communication
 
-.. _bug-fixes-7:
-
 Bug Fixes
----------
+~~~~~~~~~
 
 -  Error in SPORT Configuration while using non-default number of sources and sinks
 -  Wiring distortion in the canvas when a project is saved and reopened
@@ -324,13 +297,11 @@ Bug Fixes
 -  Module library filter for ADSP-214xx
 -  Improvements in module UIs
 
-| 
-| =====1.0.1 Beta=====
-
-.. _features-9:
+1.0.1 Beta
+----------
 
 Features
---------
+~~~~~~~~
 
 -  A/B Preset Testing
 -  Instant Transfer Function Display
@@ -362,22 +333,18 @@ Features
    -  Effects - Reverb, Phat Stereo
    -  Advanced Filters – NLMS, Parametric EQ
 
-.. _bug-fixes-8:
-
 Bug Fixes
----------
+~~~~~~~~~
 
 -  Multi-instance schematic download issue has been resolved.
 -  Issue in modifying the number of audio sources and sinks used in target framework has ben resolved.
 -  Miscellaneous module UI issues have been addressed.
 
-| 
-| =====1.0.0 Alpha=====
-
-.. _features-10:
+1.0.0 Alpha
+-----------
 
 Features
---------
+~~~~~~~~
 
 -  Design systems having one or more platforms belonging to ADSP-214xx, ADSP-SC5xx and ADSP-215xx family of SHARC processors
 -  Realtime parameter tuning using graphical controls
@@ -410,11 +377,7 @@ Features
 -  Tuning features like algorithm bypass, tuning presets etc.
 -  Schematic design features like hierarchy boards (with password lock), algorithm version control etc.
 
-.. _bug-fixes-9:
-
 Bug Fixes
----------
+~~~~~~~~~
 
 -  None. This is the first version.
-
-| 

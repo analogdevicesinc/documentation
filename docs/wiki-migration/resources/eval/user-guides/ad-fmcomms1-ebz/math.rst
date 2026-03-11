@@ -103,7 +103,7 @@ If we expand this, we get:
 .. math::
 
 
-   x(t) = \frac{1}{2} \times ((Ae^{-j \kappa -j \omega} + Ae^{j \kappa -j \omega} - Ae^{-j \kappa + j \omega} - Ae^{j \kappa + j \omega}) + 
+   x(t) = \frac{1}{2} \times ((Ae^{-j \kappa -j \omega} + Ae^{j \kappa -j \omega} - Ae^{-j \kappa + j \omega} - Ae^{j \kappa + j \omega}) +
              (Be^{-j \kappa -j \omega} - Be^{j \kappa -j \omega} + Be^{-j \kappa + j \omega} - Be^{j \kappa + j \omega}))
 
 and then:

@@ -19,11 +19,11 @@ Serial
       Password: **analog**
       # uname -a
       Linux pluto 4.6.0-08511-gc1315e6-dirty #247 SMP PREEMPT Mon Oct 24 16:46:25 CEST 2016 armv7l GNU/Linux
-      # 
-      **CNTRL-A** **CNTRL-\**
+      #
+      **CNTRL-A** **CNTRL-**
       Really quit and kill all your windows [y/n] **y**
       [screen is terminating]
-      adi-mm:tests analogdevices$ 
+      adi-mm:tests analogdevices$
    
 
 
@@ -76,8 +76,8 @@ You should see something like this when you goto -> System Preferences -> Networ
    
       adi-mm:tests analogdevices$ **ifconfig  | grep -B 3 -A 3 192**
       en4: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1486
-          ether 00:e0:22:6d:b2:d8 
-          inet6 fe80::2e0:22ff:fe6d:b2d8%en4 prefixlen 64 scopeid 0xa 
+          ether 00:e0:22:6d:b2:d8
+          inet6 fe80::2e0:22ff:fe6d:b2d8%en4 prefixlen 64 scopeid 0xa
           inet 192.168.2.10 netmask 0xffffff00 broadcast 192.168.2.255
           nd6 options=1<PERFORMNUD>
           media: autoselect

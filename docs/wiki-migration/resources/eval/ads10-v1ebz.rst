@@ -36,14 +36,16 @@ ADS10-V1EBZ Features
    *Figure 2. ADS10-V1EBZ High Speed Carrier Card (Bottom)*
 
 
-| 
-| ====== Using the ADS10-V1EBZ to evaluate High Speed Converters ======
+Using the ADS10-V1EBZ to evaluate High Speed Converters
+=======================================================
 
 Overview
 --------
 
-| When connected to a specified Analog Devices high speed converter evaluation board, the ADS10-V1EBZ works as a data generation and acquisition board. Designed to support the highest speed JESD204B/C converters, the FPGA on the ADS10-V1EBZ acts as the data and control interface. An example test setup is shown below.
-| |image3|
+When connected to a specified Analog Devices high speed converter evaluation board, the ADS10-V1EBZ works as a data generation and acquisition board. Designed to support the highest speed JESD204B/C converters, the FPGA on the ADS10-V1EBZ acts as the data and control interface. An example test setup is shown below.
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -71,12 +73,12 @@ Design and Integration Files
 -  Schematic Archive: `SCH-02-053489-01-f-1.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/SCH-02-053489-01-f-1.zip>`_
 -  Kit Contents Archive: `KIT-053489-01-f.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/KIT-053489-01-f.zip>`_
 
-| Data sheets and user guides provide additional product specific information and should be consulted when using high speed converter evaluation boards. All documents and software tools are available at :adi:`High Speed Converter Eval Boards <hsadcevalboard>`. For additional information or questions, visit our High-Speed ADC and DAC Ezone Support Portal at :ez:`Data Converters EngineerZone <data_converters>` or call 1-800-ANALOGD.
+Data sheets and user guides provide additional product specific information and should be consulted when using high speed converter evaluation boards. All documents and software tools are available at :adi:`High Speed Converter Eval Boards <hsadcevalboard>`. For additional information or questions, visit our High-Speed ADC and DAC Ezone Support Portal at :ez:`Data Converters EngineerZone <data_converters>` or call 1-800-ANALOGD.
 
 ADS10-V1EBZ Supported Evaluation Boards
 ---------------------------------------
 
-| Refer to the Analog Devices High Speed Converter evaluation board product page at :adi:`High Speed Converter Eval Boards <hsadcevalboard>` for a table of ADS10-V1EBZ compatible evaluation boards.
+Refer to the Analog Devices High Speed Converter evaluation board product page at :adi:`High Speed Converter Eval Boards <hsadcevalboard>` for a table of ADS10-V1EBZ compatible evaluation boards.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/ads10-v1ebztop.png
    :width: 600px

@@ -150,9 +150,9 @@ FPGA Referece Designs:
    :class: download
 
    
-   -  \**ML605 \*\* `cf_ad9467_ebz_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_edk_14_4_2013_03_08.tar.gz>`_
-   -  \**KC705 \*\* `cf_ad9467_ebz_kc705_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_kc705_edk_14_4_2013_03_08.tar.gz>`_
-   -  \**VC707 \*\* `cf_ad9467_ebz_vc707_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_vc707_edk_14_4_2013_03_08.tar.gz>`_
+   -  **ML605** `cf_ad9467_ebz_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_edk_14_4_2013_03_08.tar.gz>`_
+   -  **KC705** `cf_ad9467_ebz_kc705_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_kc705_edk_14_4_2013_03_08.tar.gz>`_
+   -  **VC707** `cf_ad9467_ebz_vc707_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_vc707_edk_14_4_2013_03_08.tar.gz>`_
    
 
 

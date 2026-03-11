@@ -97,7 +97,7 @@ The reference frequency and GPIO numbers may vary between boards. The platform_d
      * @mux_out_sel:       Controls the on-chip multiplexer (MUXOUT).
      * @mux_out_3V3_en:    MUXOUT is programmable to two logic levels. Clear this to
     *          select 1.8 V logic, and set it to select 3.3 V logic.
-     * 
+    *
     */
 
     struct adf5355_platform_data {
@@ -155,21 +155,21 @@ Devicetree bindings
        - gpios:    GPIO Lock detect - If set with a valid phandle and GPIO
                number, pll lock state is tested upon read.
        - clock-output-names : From common clock binding to override the
-               default output clock name.          
+               default output clock name.
        - adi,power-up-frequency: If set in Hz the PLL tunes to
                the desired frequency on probe.
        - adi,reference-div-factor: If set the driver skips dynamic calculation
                and uses this default value instead.
        - adi,reference-doubler-enable: Enables reference doubler.
        - adi,reference-div2-enable: Enables reference divider.
-       - adi,reference-differential-input-enable: The device permits use of 
-               either differential or single ended reference sources. 
+       - adi,reference-differential-input-enable: The device permits use of
+               either differential or single ended reference sources.
                For differential sources set this property.
-       - adi,phase-detector-polarity-negative-enable: When a passive loop 
+       - adi,phase-detector-polarity-negative-enable: When a passive loop
                filter or a noninverting active loop filter is used,
-               clear for positive. If an active filter with an 
+               clear for positive. If an active filter with an
                inverting characteristic is used, set this to negative.
-       - adi,charge-pump-current: Set the charge pump current in uA. 
+       - adi,charge-pump-current: Set the charge pump current in uA.
                Set this value to the charge pump current that the loop
                filter is designed with. For the lowest spurs, the
                900 uA setting is recommended.
@@ -185,15 +185,15 @@ Devicetree bindings
                4: N-Divider output
                5: Analog lock detect
                6: Digital lock detect
-       - adi,muxout-level-3v3-enable: MUXOUT is programmable to two logic 
-               levels. Clear this to select 1.8 V logic, 
+       - adi,muxout-level-3v3-enable: MUXOUT is programmable to two logic
+               levels. Clear this to select 1.8 V logic,
                and set it to select 3.3 V logic.
        - adi,mute-till-lock-enable: If enabled, the supply current to the RF
                output stage is shut down until the device achieves lock,
                as determined by the digital lock detect circuitry.
        - adi,output-b-enable: Enables or disables the primary RF output
        - adi,output-a-enable: Enables or disables the auxiliary/high RF output
-       - adi,output-a-power: Primary RF output power selection. 
+       - adi,output-a-power: Primary RF output power selection.
                Valid values for the power mode are:
                0: -4dBm (default)
                1: -1dBm
@@ -277,7 +277,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                -*-     Industrial I/O lock free software ring
                -*-   Enable triggered sampling support
 
-                         *** Phase-Locked Loop (PLL) frequency synthesizers ***
+                         ** Phase-Locked Loop (PLL) frequency synthesizers **
 
                [--snip--]
                    <*>   Analog Devices ADF5355/ADF4355 Wideband Synthesizers
@@ -294,10 +294,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -330,15 +327,12 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# cat name 
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# cat name
       adf5355
    
 
@@ -346,21 +340,19 @@ Show device name
 Set Output Frequency
 --------------------
 
-| /sys/bus/iio/devices/iio:deviceX/out_altvoltageY_frequency
-| Stores PLL Y frequency in Hz. Reading returns the actual frequency in Hz.
+/sys/bus/iio/devices/iio:deviceX/out_altvoltageY_frequency
+
+Stores PLL Y frequency in Hz. Reading returns the actual frequency in Hz.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# echo 2512345678 > out_altvoltage0_frequency                                                                                                     
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency 
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# echo 2512345678 > out_altvoltage0_frequency
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency
       2512345678
    
 
@@ -368,20 +360,18 @@ Set Output Frequency
 Set reference frequency
 -----------------------
 
-| /sys/bus/iio/devices/iio:deviceX/out_altvoltageY_refin_frequency
-| Sets PLL Y REFin frequency in Hz. In some clock chained applications, the reference frequency used by the PLL may change during runtime. This attribute allows the user to adjust the reference frequency accordingly. The value written has no effect until out_altvoltageY_freq is updated.
+/sys/bus/iio/devices/iio:deviceX/out_altvoltageY_refin_frequency
+
+Sets PLL Y REFin frequency in Hz. In some clock chained applications, the reference frequency used by the PLL may change during runtime. This attribute allows the user to adjust the reference frequency accordingly. The value written has no effect until out_altvoltageY_freq is updated.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# cat out_altvoltage_refin_frequency                                                                                                              
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# cat out_altvoltage_refin_frequency
       122880000
    
 
@@ -389,21 +379,19 @@ Set reference frequency
 Enable Power-Down
 -----------------
 
-| /sys/bus/iio/devices/iio:deviceX/out_altvoltageY_powerdown
-| If available, this attribute allows the user to power down the PLL and it's RFOut buffers. This is in particular useful during REFin changes.
+/sys/bus/iio/devices/iio:deviceX/out_altvoltageY_powerdown
+
+If available, this attribute allows the user to power down the PLL and it's RFOut buffers. This is in particular useful during REFin changes.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# echo 1 > out_altvoltage0_powerdown 
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_powerdown 
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# echo 1 > out_altvoltage0_powerdown
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_powerdown
       1
    
 
@@ -424,7 +412,7 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24

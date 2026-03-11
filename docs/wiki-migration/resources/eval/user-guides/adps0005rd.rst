@@ -1,31 +1,30 @@
 AD-PS0005-RD User Guide
 =======================
 
-| 
-| |AD-PS0005-RD Board|
+|AD-PS0005-RD Board|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 1. AD-PS0005-RD Board**\ *\ </fc>*
+   **Figure 1. AD-PS0005-RD Board**
 
 
-   | ===== Overview ===== The :adi:`AD-PS0005-RD` reference design delivers a robust power solution for 48V systems, featuring multiple outputs and hot-swap capability for high reliability and flexibility. It incorporates the following key components:
+Overview
+--------
+
+The :adi:`AD-PS0005-RD` reference design delivers a robust power solution for 48V systems, featuring multiple outputs and hot-swap capability for high reliability and flexibility. It incorporates the following key components:
 
 -  :adi:`LTC4286` – A high-power positive hot-swap controller for safe board insertion and removal.
 -  :adi:`LTM4660` – A 60V/300W hybrid step-down µModule® bus converter that generates the 12V output.
 -  :adi:`LTM4681` – A quad 31.25A µModule regulator with integrated digital power management for precise control and monitoring.
 -  :adi:`LTM4655` – A 40V dual 4A step-down or 50W inverting µModule regulator for versatile power conversion
 
-|
-
-| ===== Features =====
+Features
+--------
 
 -  Designed for 48V power systems that provides higher power density
 -  Hot swap capability for servers and data centers
 -  Power source conversion from 48V to 12V for existing 12V systems
 -  High power and low voltage capability for FPGAs, microcontrollers, etc.
-
-| 
 
 Applications
 ------------
@@ -34,16 +33,14 @@ Applications
 -  Data Centers
 -  Microcontrollers and FPGAs
 
-|
-
 Block Diagram
 -------------
 
-| |Simplified System Block Diagram|
+|Simplified System Block Diagram|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 2. Simplified System Block Diagram**\ *\ </fc>*
+   **Figure 2. Simplified System Block Diagram**
 
 
 Specifications
@@ -66,28 +63,26 @@ Specifications
    +-----------------+---------------------------------------+--------------------------------------+
    |                 | 12V Output and Load Current up to 50A | 90%                                  |
    +-----------------+---------------------------------------+--------------------------------------+
-
-   |
+   
 
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Table 1. Board Performance Summary**\ *\ </fc>*
+   **Table 1. Board Performance Summary**
 
 
 Components and Connections
 --------------------------
 
-|
-
-| |AD-PS0005-RD Inputs and Outputs|
+|AD-PS0005-RD Inputs and Outputs|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 3. Inputs and Outputs**\ *\ </fc>*
+   **Figure 3. Inputs and Outputs**
 
 
-   | ==== Power Supply Connection ====
+Power Supply Connection
+~~~~~~~~~~~~~~~~~~~~~~~
 
 -  TP10 (Positive Terminal)/TP12(Negative Terminal) - Banana Jack Connector
 -  TP11 (Positive Terminal)/E5(Negative Terminal) - Turret Terminal
@@ -97,22 +92,20 @@ Components and Connections
    Supply power to either TP10/TP12 or TP11/E5.
 
 
-|
-
 .. warning::
 
    Observe the correct polarity to prevent damage to the board.
 
 
-| ==== LED Indicators ====
-| |AD-PS0005-RD LED Location|
+LED Indicators
+~~~~~~~~~~~~~~
+
+|AD-PS0005-RD LED Location|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 4. LED Location**\ *\ </fc>*
+   **Figure 4. LED Location**
 
-
-   |
 
 .. container:: center
 
@@ -135,33 +128,36 @@ Components and Connections
    DS14         Indicates if there is output at LTM4681 channel 4 or OUT4
    ============ =========================================================
    
-   |
+
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Table 2. LED Designation and Description**\ *\ </fc>*
+   **Table 2. LED Designation and Description**
 
 
-| ==== Switches ==== |AD-PS0005-RD Switch Location|
+Switches
+~~~~~~~~
+
+|AD-PS0005-RD Switch Location|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 5. Switch Location**\ *\ </fc>*
+   **Figure 5. Switch Location**
 
 
 Hardware switches used to set Device Address:
 
 -  S1 – L TC4286 (Default OFF). 40H for 7-bit and 80H for 8-bit
 
-| 
-| ==== Turrets ==== |AD-PS0005-RD Turrets Location|
+Turrets
+~~~~~~~
+
+|AD-PS0005-RD Turrets Location|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 6. Turrets Location**\ *\ </fc>*
+   **Figure 6. Turrets Location**
 
-
-   |
 
 .. container:: center
 
@@ -185,21 +181,22 @@ Hardware switches used to set Device Address:
    TP26     1.8V OUT    Turret
    ======== =========== ========
    
-   |
+
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Table 3. Turrets Designation and Description**\ *\ </fc>*
+   **Table 3. Turrets Designation and Description**
 
 
-| ==== Jumpers ==== |AD-PS0005-RD Jumpers Locations|
+Jumpers
+~~~~~~~
+
+|AD-PS0005-RD Jumpers Locations|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 7. Jumpers Location**\ *\ </fc>*
+   **Figure 7. Jumpers Location**
 
-
-   |
 
 .. container:: center
 
@@ -222,14 +219,15 @@ Hardware switches used to set Device Address:
    J7          LTM4681 WP23 2-3
    =========== ============ ===============
    
-   |
+
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Table 4. Jumpers Designation and Description**\ *\ </fc>*
+   **Table 4. Jumpers Designation and Description**
 
 
-| ===== Board Evaluation =====
+Board Evaluation
+----------------
 
 Equipment Needed
 ~~~~~~~~~~~~~~~~
@@ -238,7 +236,7 @@ Equipment Needed
 -  Digital Multimeter
 
 Hardware Setup
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 -  Confirm the jumper settings.
 -  Set the DC Power supply to 48V.
@@ -247,14 +245,15 @@ Hardware Setup
 -  Turn on the DC Power supply. You will notice DS4 (Green LED) will light up.
 -  Output measurements can be done using the Pin Turrets as reference.
 
-| |Sample Setup for Voltage Measurement|
+|Sample Setup for Voltage Measurement|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 8. Sample Setup for Voltage Measurement**\ *\ </fc>*
+   **Figure 8. Sample Setup for Voltage Measurement**
 
 
-| ==== Test Measurement ====
+Test Measurement
+~~~~~~~~~~~~~~~~
 
 -  Configure the digital multimeter for DC voltage measurement.
 -  Refer to Figure 3 for the location of the test points and Table 5 for the expected results.
@@ -286,66 +285,72 @@ Hardware Setup
    | 9              | E1        | GND       | 11.808                 | 12.192                  |
    +----------------+-----------+-----------+------------------------+-------------------------+
    
-   |
 
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Table 5. Expected Voltage Measurements**\ *\ </fc>*
+   **Table 5. Expected Voltage Measurements**
 
 
-| |Sample Setup for Efficiency Test|
+   |Sample Setup for Efficiency Test|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 9. Sample Setup for Efficiency Test**\ *\ </fc>*
+   **Figure 9. Sample Setup for Efficiency Test**
 
 
 Efficiency
-^^^^^^^^^^
+~~~~~~~~~~
 
-| 
-| |Efficiency vs. Load Current|
+|Efficiency vs. Load Current|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 10. Efficiency vs. Load Current**\ *\ </fc>*
+   **Figure 10. Efficiency vs. Load Current**
 
-
-|
 
 .. note::
 
    :adi:`LTM4681` and :adi:`LTM4655` efficiency results are referenced to VIN 12V to be comparable with their datasheet specifications.
 
 
-| ==== Output Regulation ====
-| |Output Regulation vs Load Current|
+Output Regulation
+~~~~~~~~~~~~~~~~~
+
+|Output Regulation vs Load Current|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 11. Output Regulation vs. Load Current**\ *\ </fc>*
+   **Figure 11. Output Regulation vs. Load Current**
 
 
-| ===== Software Setup =====
-| The Status, Faults, Voltage, Current, Power, etc. of both the :adi:`LTC4286` and :adi:`LTM4681` can be monitored using :adi:`LTpowerPlay` and :adi:`DC1613A`.
+Software Setup
+--------------
 
-| :adi:`LTpowerPlay` is a windows-based development environment supporting Analog Devices' Digital Power Systems Management (PSM) products.
-| === Requirements ===
+The Status, Faults, Voltage, Current, Power, etc. of both the :adi:`LTC4286` and :adi:`LTM4681` can be monitored using :adi:`LTpowerPlay` and :adi:`DC1613A`.
+
+:adi:`LTpowerPlay` is a windows-based development environment supporting Analog Devices' Digital Power Systems Management (PSM) products.
+
+Requirements
+~~~~~~~~~~~~
 
 -  :adi:`LTpowerPlay`
 -  :adi:`DC1613A`
 
-| 
-| Connect the :adi:`DC1613A` as shown below:
-| |DC1613A Connection|
+Connect the :adi:`DC1613A` as shown below:
+
+
+|DC1613A Connection|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 12. DC1613A Connection Location**\ *\ </fc>*
+   **Figure 12. DC1613A Connection Location**
 
 
-   | ==== Software Installation ==== 1. Download and install :adi:`LTpowerPlay`.
+Software Installation
+~~~~~~~~~~~~~~~~~~~~~
+
+1. Download and install :adi:`LTpowerPlay`.
 
 2. Request an LTpowerPlay License. When LTpowerPlay launches the first time, it will prompt you to request a license.
 
@@ -360,34 +365,40 @@ Efficiency
 -  You will receive an email containing your license file and installation instructions.
 -  Follow the steps in the email to complete the license installation.
 
-|
+Software Operation
+~~~~~~~~~~~~~~~~~~
 
-| ==== Software Operation ==== 1. Double click on LTpowerPlay icon and follow the onscreen instructions.
-| |LTpowerPlay Startup Screen|
+1. Double click on LTpowerPlay icon and follow the onscreen instructions.
+
+
+|LTpowerPlay Startup Screen|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 13. LTpowerPlay Startup Screen**\ *\ </fc>*
+   **Figure 13. LTpowerPlay Startup Screen**
 
 
 2. Once you clicked on **Detect Chips**, it will open the main screen. The devices should be enumerated in the left pane.
-| |LTpowerPlay Main Screen|
+
+
+
+|LTpowerPlay Main Screen|
 
 .. container:: center
 
-   *<fc #000000>\ *\ **Figure 14. LTpowerPlay Main Screen**\ *\ </fc>*
+   **Figure 14. LTpowerPlay Main Screen**
 
 
-| 
-| ===== Resources =====
+Resources
+---------
 
 -  :adi:`LTC4286 Product Page <LTC4286>`
 -  :adi:`LTM4660 Product Page <LTM4660>`
 -  :adi:`LTM4681 Product Page <LTM4681>`
 -  :adi:`LTM4655 Product Page <LTM4655>`
 
-| 
-| ===== Design & Integration Files =====
+Design & Integration Files
+--------------------------
 
 .. admonition:: Download
    :class: download
@@ -400,7 +411,6 @@ Efficiency
    -  Bill of Materials
    -  Allegro Project
    
-   |
 
 
 Help and Support

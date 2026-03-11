@@ -5,15 +5,17 @@ The EVAL-AD7195ASDZ evaluation kit features the AD7195 which is 4.8 kHz ultralow
 
 The AD7195 ACE Plugin fully configures the AD7195 device register functionality and provides dc time domain analysis in the form of waveform graphs, histograms, and associated noise analysis for ADC performance evaluation.
 
-| Full specifications on the AD7195 are available in the product data sheet, which should be consulted in conjunction with this user guide when working with the evaluation board.
+Full specifications on the AD7195 are available in the product data sheet, which should be consulted in conjunction with this user guide when working with the evaluation board.
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7195_blockdiag.png
+   :align: center
+   :width: 600px
 
 Features
 --------
 
 -  Full featured evaluation board for the AD7195
-   \* PC control in conjunction with the system demonstration platform (EVAL-SDP-CB1Z/EVAL-SDP-CK1Z)
+-  PC control in conjunction with the system demonstration platform (EVAL-SDP-CB1Z/EVAL-SDP-CK1Z)
 -  PC software for control and data analysis (time and frequency domain)
 
 Related Documents
@@ -25,7 +27,7 @@ Required Software
 -----------------
 
 -  :adi:`ACE Software <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7195asdz.html#eb-documentation>`
-   \* :adi:`AD7195 ACE Plugin <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7195asdz.html#eb-documentation>`
+-  :adi:`AD7195 ACE Plugin <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7195asdz.html#eb-documentation>`
 
 Quick Start Guide
 ~~~~~~~~~~~~~~~~~
@@ -64,7 +66,7 @@ Getting started
          -   Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
          -  Using the Arduino Connectors
 
-         |image2|
+         |image1|
 
    -  **Option B:** Connect the EVAL-AD7195ASDZ to the EVAL-SDP-CB1Z
 
@@ -75,15 +77,14 @@ Getting started
 -  If using Windows® XP, it may be needed to search for the controller board drivers. Choose to automatically search for the drivers for the controller board if prompted by the operating system.
 -  Launch the ACE plugin from the **Analog Devices** subfolder in the **Programs** Menu.\
 
-|image3|
+|image2|
 
 -  The :doc:`Low Noise Test Demo </wiki-migration/resources/eval/user-guides/ad7195/softwareguide>` is a useful demo mode of the Ace Plugin software to ensure that the Evaluation board is communicating correctly with the Ace Plugin software.
 
 Hardware Guide
 ~~~~~~~~~~~~~~
 
-| :doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad7195/hardwareguide>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad7195/hardwareguide>` **Contents of the Hardware guide:**
 
 -  :doc:`Set-up Procedures </wiki-migration/resources/eval/user-guides/ad7195/hardwareguide>`
 -  :doc:`Block Diagram </wiki-migration/resources/eval/user-guides/ad7195/hardwareguide>`
@@ -99,8 +100,7 @@ Hardware Guide
 Software Guide
 ~~~~~~~~~~~~~~
 
-| :doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad7195/softwareguide>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad7195/softwareguide>` **Contents of the Hardware guide:**
 
 -  :doc:`Ace Plugin </wiki-migration/resources/eval/user-guides/ad7195/softwareguide>`
 
@@ -116,9 +116,7 @@ Software Guide
 -  :doc:`Virtual Eval Guide </wiki-migration/resources/eval/user-guides/ad7195/softwareguide>`
 -  :doc:`AD7195 Firmware </wiki-migration/resources/tools-software/product-support-software/ad719x_mbed_iio_application>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7195_blockdiag.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/sdp_connect.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/sdp_connect.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_plugin_open.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_plugin_open.png
    :width: 300px

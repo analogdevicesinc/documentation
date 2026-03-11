@@ -145,10 +145,9 @@ The active clock tree can be viewed with:
 
 ::
 
-   root@analog:/sys/kernel/debug/clk# cat /sys/kernel/debug/clk/clk_summary 
+   root@analog:/sys/kernel/debug/clk# cat /sys/kernel/debug/clk/clk_summary
                                     enable  prepare  protect                                duty
       clock                          count    count    count        rate   accuracy phase  cycle  nshot
-   ----------------------------------------------------------------------------------------------------
     AUX_NCO0                             1        1        0       10000          0     0  50000        0
        PLL0                              1        1        0  1344000000          0     0  50000        0
           Q0A-div                        1        1        0    38400000          0     0  50000        0

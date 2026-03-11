@@ -1,13 +1,9 @@
 Setting up the system
 =====================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support for the ad_fmclidar_ebz is discontinued on all supported carriers: Arria10 SOC, ZC706 and ZCU102. ad_fmclidar_ebz will not be supported in future releases, last release image in which pre-build files can be found is 2021_r1. (check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all available Kuiper Linux releases).
+   \ **NOTE:** Support for the ad_fmclidar_ebz is discontinued on all supported carriers: Arria10 SOC, ZC706 and ZCU102. ad_fmclidar_ebz will not be supported in future releases, last release image in which pre-build files can be found is 2021_r1. (check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all available Kuiper Linux releases).
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/Lidar_System_1.jpg

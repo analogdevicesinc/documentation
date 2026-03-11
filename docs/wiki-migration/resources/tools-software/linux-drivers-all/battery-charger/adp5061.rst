@@ -52,10 +52,7 @@ Driver testing
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -93,10 +90,7 @@ Show Charger status
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -111,10 +105,7 @@ Show charge type
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -129,10 +120,7 @@ Show the battery status
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -147,10 +135,7 @@ Enable Charging
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -168,10 +153,7 @@ Enable Charging Voltage Limit
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -189,10 +171,7 @@ Show Termination Voltage (VTRM)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -207,15 +186,12 @@ Set Termination Voltage (VTRM)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **echo 3800000 > voltage_max** 
+      root:/sys/class/power_supply/adp5061> **echo 3800000 > voltage_max**
       root:/sys/class/power_supply/adp5061> **cat voltage_max**
       3800000
    
@@ -226,10 +202,7 @@ Set the Input Current Limit into VINx (ILIM)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -247,10 +220,7 @@ Set the Trickle to Fast Charge Threshold (VTRK_DEAD)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -268,10 +238,7 @@ Set the Charging Voltage Limit (CHG_VLIM)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -289,10 +256,7 @@ Set the Constant Charge Current (ICHG)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -310,10 +274,7 @@ Set the Trickle and Weak Charge Currents (ITRK_DEAD)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -331,10 +292,7 @@ Set the VWEAK Threshold
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -352,10 +310,7 @@ Set Termination Current (IEND)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -364,7 +319,7 @@ Set Termination Current (IEND)
       52500
       root:/sys/class/power_supply/adp5061> **echo 72500 > charge_term_current**
       root:/sys/class/power_supply/adp5061> **cat charge_term_current**
-      72500 
+      72500
    
 
 

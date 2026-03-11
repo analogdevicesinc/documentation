@@ -3,21 +3,23 @@
 Signal Add
 ==========
 
-| 
-| |add.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/add.png
+   :alt: add.png
 
 Description
 -----------
 
-| The Signal Add block adds the inputs together and no other modification of the signal is done. Care must be taken to avoid clipping.
-| ===== Variants =====
+The Signal Add block adds the inputs together and no other modification of the signal is done. Care must be taken to avoid clipping.
+
+Variants
+--------
 
 -  Signal Add
 -  Complex Signal Add
 -  Scalar Add
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +--------------------+------------+------------------+---------------+------------------+
 | Name               | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -66,5 +68,3 @@ DSP Parameters
 --------------
 
 NO DSP Parameters
-
-.. |add.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/add.png

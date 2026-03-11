@@ -13,14 +13,7 @@ A variable-gain or voltage-controlled amplifier is an electronic amplifier that 
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 2 1 kΩ resistor
-| 1 4.7 kΩ resistors
-| 3 10 kΩ resistors
-| 1 10 kΩ potentiometer
-| 1 OP97 operational amplifier
-| 1 2N3904 npn transistor
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 2 1 kΩ resistor 1 4.7 kΩ resistors 3 10 kΩ resistors 1 10 kΩ potentiometer 1 OP97 operational amplifier 1 2N3904 npn transistor
 
 Voltage Controlled Amplifier using transistor
 ---------------------------------------------
@@ -85,8 +78,6 @@ The output signal varies between two values, determined by the two gain settings
 Variable Gain Inverting Amplifier using potetiometer
 ----------------------------------------------------
 
-.. _background-1:
-
 Background
 ~~~~~~~~~~
 
@@ -106,8 +97,6 @@ Consider the circuit schematic presented in Figure 4.
 
 On the inverting amplifier a potentiometer is used to control manually the output voltage, replacing the standard feedback resistor.
 
-.. _hardware-setup-1:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -124,8 +113,6 @@ Build the following breadboard circuit for the voltage-controlled amplifier usin
 
    Figure 5. Variable Gain Inverting Amplifier using potetiometer - breadboard circuit
 
-
-.. _procedure-1:
 
 Procedure
 ~~~~~~~~~
@@ -151,8 +138,6 @@ Using this type of configuration, the output is inverted and amplified based on 
 Variable Gain Inverting/Non-Inverting Amplifier using potetiometer
 ------------------------------------------------------------------
 
-.. _background-2:
-
 Background
 ~~~~~~~~~~
 
@@ -172,8 +157,6 @@ Consider the circuit schematic presented in Figure 7.
 
 In this amplifier configuration a potentiometer is used to control manually the output voltage, being able to invert the input by adjusting properly the potentiometer.
 
-.. _hardware-setup-2:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -190,8 +173,6 @@ Build the following breadboard circuit for the voltage-controlled amplifier usin
 
    Figure 8. Variable Gain Inverting/Non-Inverting Amplifier using potetiometer - breadboard circuit
 
-
-.. _procedure-2:
 
 Procedure
 ~~~~~~~~~

@@ -28,7 +28,7 @@ HDL source code
    **Reference design location:**
 
    
-   -  <Rev A. Rev B.> :git-hdl:`projects/ad_quadmxfe1_ebz`
+   -  <Rev A. Rev B.> https://github.com/analogdevicesinc/hdl/tree/dev_quad_mxfe_revab/projects/ad_quadmxfe1_ebz
    -  <Rev C.> added starting with release hdl_2021_r1; this is the latest version -> :git-hdl:`projects/ad_quadmxfe1_ebz`
    
 
@@ -82,14 +82,14 @@ Block design parameters
 ::
 
     Parameter description:
-      JESD_MODE : used link layer encoder mode 
+      JESD_MODE : used link layer encoder mode
          64B66B - 64b66b link layer defined in JESD 204C, uses Xilinx IP as Physical layer
          8B10B  - 8b10b link layer defined in JESD 204B, uses ADI IP as Physical layer
-       
-      RX_RATE :  line rate of the Rx link ( MxFE to FPGA ) used in 64B66B mode 
-      TX_RATE :  line rate of the Tx link ( FPGA to MxFE ) used in 64B66B mode 
+
+      RX_RATE :  line rate of the Rx link ( MxFE to FPGA ) used in 64B66B mode
+      TX_RATE :  line rate of the Tx link ( FPGA to MxFE ) used in 64B66B mode
       REF_CLK_RATE : frequency of reference clock in MHz used in 64B66B mode
-      [RX/TX]_PLL_SEL :  used in 64B66B mode, 
+      [RX/TX]_PLL_SEL :  used in 64B66B mode,
                         0 - CPLL   for lane rates 4-12.5 Gbps and integer sub-multiples
                         1 - QPLL0  for lane rates 19.6–32.75 Gbps and integer sub-multiples (e.g. 9.8–16.375;)
                         2 - QPLL1  for lane rates 16.0–26.0 Gbps and integer sub-multiple (e.g. 8.0–13.0;)
@@ -147,8 +147,7 @@ Supported build configurations
 | DAC_TPL_XBAR_ENABLE | 0       |        |         |        |         |         |         |        |
 +---------------------+---------+--------+---------+--------+---------+---------+---------+--------+
 
-| If parameter not specified the default value applies.
-| Configuration names are encoded with ``<B_C>_<TX_MODE>_<RX_MODE>`` where ``<B_C>`` is B for 8B/10B (a.k.a. 204B) and C for 64B66B (a.k.a. 204C)
+If parameter not specified the default value applies. Configuration names are encoded with ``<B_C>_<TX_MODE>_<RX_MODE>`` where ``<B_C>`` is B for 8B/10B (a.k.a. 204B) and C for 64B66B (a.k.a. 204C)
 
 +--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Configuration name | Linux device tree                                                                                                                                                                              |

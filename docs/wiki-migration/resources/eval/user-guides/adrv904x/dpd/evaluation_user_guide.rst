@@ -64,17 +64,21 @@ CONFIGURING THE ADRV904x TRANSCEIVER
 
 ::
 
-   {{ :resources:eval:user-guides:adrv904x:dpd:dpdmodelload.jpg |}} 
+   {{ :resources:eval:user-guides:adrv904x:dpd:dpdmodelload.jpg |}}
    * The DPD capture configuration can be setup to search for the highest peak in a 10ms search window by setting the "**Window Length**" to 4915200 samples at 983.040 MHz capture rate for this profile. There is an internal multiplication factor of 2x for the window length. Therefore, we set the window length to be equal to 983400 divided by 2 for a total of 10ms.
-        {{ :resources:eval:user-guides:adrv904x:dpd:dpdcaptureconfig.jpg |}}  
-        
-   * Setup the DPD tracking configuration as shown in the picture below. Apply the configuration by clicking on the "**Apply Tracking Config**" button. Click the "**Reset DPD**" button to reset DPD to a known good state and then enable DPD tracking calibration by clicking on the "**Enable DPD Tracking Cal**" button.
-        {{ :resources:eval:user-guides:adrv904x:dpd:dpdtrackingconfig.jpg?400 |}} 
-        
-   * At this point we must see the ACLR converge on the spectrum analyzer and also see the DPD update count continuously incrementing.
+        {{ :resources:eval:user-guides:adrv904x:dpd:dpdcaptureconfig.jpg |}}
+
+-  Setup the DPD tracking configuration as shown in the picture below. Apply the configuration by clicking on the "**Apply Tracking Config**" button. Click the "**Reset DPD**" button to reset DPD to a known good state and then enable DPD tracking calibration by clicking on the "**Enable DPD Tracking Cal**" button.
+
+::
+
+        {{ :resources:eval:user-guides:adrv904x:dpd:dpdtrackingconfig.jpg?400 |}}
+
+-  At this point we must see the ACLR converge on the spectrum analyzer and also see the DPD update count continuously incrementing.
+
+::
+
           {{ :resources:eval:user-guides:adrv904x:dpd:dpdupdating.jpg |}}
-          
-          
 
 .. image:: https://wiki.analog.com/_media/navigation ADRV904x DPD USER GUIDE#resources/eval/user-guides/adrv904x/dpd/pre-requisites
    :alt: ADRV904x DPD EVAL PRE-REQUISITES#resources:eval:user-guides:adrv904x:dpd|ADRV904x DPD HOME #resources:eval:user-guides:adrv904x:dpd:error_troubleshooting|ADRV904x DPD ERROR TROUBLESHOOTING

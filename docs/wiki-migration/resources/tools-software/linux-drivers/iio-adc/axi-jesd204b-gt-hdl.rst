@@ -1,13 +1,10 @@
 AXI JESD204B GT HDL Linux Driver
 ================================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
+   \ **NOTE:** This driver is RETIRED, DEPRECATED and not used anymore in any of the recent projects!
 
-   | This driver is RETIRED, DEPRECATED and not used anymore in any of the recent projects!
    
    Please see here instead: :doc:`ADI JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
    
@@ -16,8 +13,9 @@ AXI JESD204B GT HDL Linux Driver
 Supported Devices
 -----------------
 
-| This driver supports the
-| \* Deprecated
+This driver supports the
+
+-  Deprecated
 
 Description
 -----------
@@ -167,7 +165,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            -*-     Industrial I/O lock free software ring
            -*-   Enable triggered sampling support
 
-                 *** Analog to digital converters ***
+                 ** Analog to digital converters **
            [--snip--]
 
            <*>   Generic AXI JESD204B configuration driver
@@ -197,5 +195,5 @@ Driver Testing
    -rw-r--r--    1 root     root          4096 Jan  1 00:24 uevent
 
 
-   # cat info 
+   # cat info
    x65,y255 CDRDW: 40

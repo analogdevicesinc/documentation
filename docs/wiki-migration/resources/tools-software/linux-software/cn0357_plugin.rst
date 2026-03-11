@@ -7,8 +7,9 @@ The CN0357 view is divided in three sections:
 -  **Feedback Settings:** Lists the available options of the :adi:`AD5270` rheostat or fixed resistor feedback.
 -  **System:** Lists measurements and parameters of the :adi:`CN0357` system.
 
-| 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/cn0357_plugin.png
+   :align: right
+   :width: 460px
 
 ADC Settings
 ------------
@@ -39,6 +40,3 @@ System
    -  **mV/ppm:** The system conversion coefficient of mV/ppm.
 
 The measurements are being continuously displayed at regular intervals of 1 second.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/cn0357_plugin.png
-   :width: 460px

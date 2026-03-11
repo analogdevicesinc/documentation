@@ -104,9 +104,9 @@ An EVAL-ADN2850SDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
      EVAL-ADN2850SDZ A connector Pin SCLK_BF  (SCLK)   → YRDKRL78G13 J11 connector Pin 4
      EVAL-ADN2850SDZ A connector Pin RESET_BF (Reset)  → YRDKRL78G13 J11 connector Pin 9
      EVAL-ADN2850SDZ A connector Pin WP_BF    (WP)     → YRDKRL78G13 J11 connector Pin 10
-     EVAL-ADN2850SDZ A connector Pin MUX-A0   (MUX_A0) → YRDKRL78G13 J18 connector Pin 30  
-     EVAL-ADN2850SDZ A connector Pin MUX-A1   (MUX_A1) → YRDKRL78G13 J18 connector Pin 29  
-     EVAL-ADN2850SDZ A connector Pin MUX-A2   (MUX_A2) → YRDKRL78G13 J18 connector Pin 28  
+     EVAL-ADN2850SDZ A connector Pin MUX-A0   (MUX_A0) → YRDKRL78G13 J18 connector Pin 30
+     EVAL-ADN2850SDZ A connector Pin MUX-A1   (MUX_A1) → YRDKRL78G13 J18 connector Pin 29
+     EVAL-ADN2850SDZ A connector Pin MUX-A2   (MUX_A2) → YRDKRL78G13 J18 connector Pin 28
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adn2850_rl78g13.jpg
    :align: center
@@ -168,22 +168,16 @@ Renesas RX62N Quick Start Guide
 
 This section contains a description of the steps required to run the ADN2850 demonstration project on a Renesas RX62N platform.
 
-.. _required-hardware-1:
-
 Required Hardware
 -----------------
 
 -  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
 -  :adi:`EVAL-ADN2850SDZ(ADI) <ADN2850>`
 
-.. _required-software-1:
-
 Required Software
 -----------------
 
 -  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -198,14 +192,12 @@ An EVAL-ADN2850SDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
      EVAL-ADN2850SDZ A connector Pin SCLK_BF  (SCLK)   → YRDKRX62N J8 connector Pin 20
      EVAL-ADN2850SDZ A connector Pin RESET_BF (Reset)  → YRDKRX62N JN1 connector Pin 16
      EVAL-ADN2850SDZ A connector Pin WP_BF    (WP)     → YRDKRX62N JN1 connector Pin 17
-     EVAL-ADN2850SDZ A connector Pin MUX-A0   (MUX_A0) → YRDKRX62N JN2 connector Pin 15 
-     EVAL-ADN2850SDZ A connector Pin MUX-A1   (MUX_A1) → YRDKRX62N JN2 connector Pin 16  
-     EVAL-ADN2850SDZ A connector Pin MUX-A2   (MUX_A2) → YRDKRX62N JN2 connector Pin 17  
+     EVAL-ADN2850SDZ A connector Pin MUX-A0   (MUX_A0) → YRDKRX62N JN2 connector Pin 15
+     EVAL-ADN2850SDZ A connector Pin MUX-A1   (MUX_A1) → YRDKRX62N JN2 connector Pin 16
+     EVAL-ADN2850SDZ A connector Pin MUX-A2   (MUX_A2) → YRDKRX62N JN2 connector Pin 17
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adn2850_rx62n.jpg
    :align: center
-
-.. _reference-project-overview-1:
 
 Reference Project Overview
 --------------------------
@@ -214,8 +206,6 @@ The reference project initializes the device, reads the tolerance from EEMEM, an
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adn2850_rx62n_screen.jpg
    :align: center
-
-.. _software-project-setup-1:
 
 Software Project Setup
 ----------------------

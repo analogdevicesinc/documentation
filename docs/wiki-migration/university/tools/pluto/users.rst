@@ -10,10 +10,7 @@ Everyone using Pluto should read these pages. They will demonstrate how to inter
 Contents
 --------
 
-.. container:: hide
-
-   Make sure all things are in ./users
-
+Make sure all things are in ./users
 
 -  :doc:`Introduction to the Hardware </wiki-migration/university/tools/pluto/users/intro>`
 

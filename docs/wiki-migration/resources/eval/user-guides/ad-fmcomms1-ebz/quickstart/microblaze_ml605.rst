@@ -101,15 +101,12 @@ Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should b
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      Ramdisk addr 0x00000000, 
+      Ramdisk addr 0x00000000,
       Compiled-in FDT at c029f4d8
       Linux version 3.13.0-68971-g879e3f3 (michael@mhenneri-D04) (gcc version 4.6.4 20120924 (prerelease) (crosstool-NG 1.15.3) ) #1210 Wed Mar 54
       setup_cpuinfo: initialising
@@ -131,7 +128,7 @@ Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should b
         DMA zone: 0 pages reserved
         DMA zone: 131072 pages, LIFO batch:31
       pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
-      pcpu-alloc: [0] 0 
+      pcpu-alloc: [0] 0
       Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 130048
       Kernel command line: console=ttyUL0,57600 root=/dev/ram
       PID hash table entries: 2048 (order: 1, 8192 bytes)

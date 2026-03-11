@@ -3,8 +3,11 @@
 RMS Table
 =========
 
-| |rmstable.png|
-| |rmstablepopup.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/rmstable.png
+   :alt: rmstable.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/rmstablepopup.png
+   :alt: rmstablepopup.png
 
 Description
 -----------
@@ -79,10 +82,10 @@ DSP Parameters
 DSP Parameter Computation
 -------------------------
 
-| RmsTC = Abs(1-(10)^(RmsTC/(10*(FS+0.000001) )))
-| Hold= Hold\*FS /1000
-| Decay = Decay/ (FS + 0.000001)
-| Decay = Decay /(3\* (\_FS + 0.000001)) ( Decay calculation for ADAU145x/146x)
+RmsTC = Abs(1-(10)^(RmsTC/(10*(FS+0.000001) )))
 
-.. |rmstable.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/rmstable.png
-.. |rmstablepopup.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/rmstablepopup.png
+Hold= Hold\*FS /1000
+
+Decay = Decay/ (FS + 0.000001)
+
+Decay = Decay /(3\* (\_FS + 0.000001)) ( Decay calculation for ADAU145x/146x)

@@ -1,7 +1,7 @@
 Rotary Volume
 =============
 
-| :doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
+:doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | The Rotary Volume block controls the volume level of an input audio signal, using the GPIO rotary encoder inputs. This block has the functionality of the Rotary Encoder, Up/Down Control, Index lookup Table, and SW External Volume control blocks all in one algorithm control. The user has the flexibility to define a custom volume curve that will be scrolled through by the rotary encoder. | |rotaryvolpic1.png| |
@@ -72,8 +72,10 @@ The Rotary Volume control allows a GPIO inputs from a rotary encoder to control 
 Example
 -------
 
-| The following image shows how two GPIO inputs are used to control the volume algorithm in the Rotary Volume block. The Rotary Volume algorithm has been grown in order to support stereo audio. A mux switch allows comparison between the direct signal from the Inputs, and the volume adjusted signal, routed to the Outputs. The Interface Read and Write blocks allow the last volume level to be saved and recalled.
-| |rotaryvolpic2.png|
+The following image shows how two GPIO inputs are used to control the volume algorithm in the Rotary Volume block. The Rotary Volume algorithm has been grown in order to support stereo audio. A mux switch allows comparison between the direct signal from the Inputs, and the volume adjusted signal, routed to the Outputs. The Interface Read and Write blocks allow the last volume level to be saved and recalled.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/rotaryvolpic2.png
+   :alt: rotaryvolpic2.png
 
 Algorithm Details
 -----------------
@@ -115,5 +117,4 @@ Algorithm Growth Information
 +--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 
 .. |rotaryvolpic1.png| image:: https://wiki.analog.com/_media/rotaryvolpic1.png
-.. |rotaryvolpic2.png| image:: https://wiki.analog.com/_media/rotaryvolpic2.png
 .. |rotaryvolpic3.png| image:: https://wiki.analog.com/_media/rotaryvolpic3.png

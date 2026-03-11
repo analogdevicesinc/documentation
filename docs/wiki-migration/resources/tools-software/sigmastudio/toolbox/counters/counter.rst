@@ -1,8 +1,9 @@
 Counter
 =======
 
-| :doc:`Click here to return to the Counters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/counters>`
-| ----------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Counters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/counters>`
+
+--------------
 
 |counterpic1.png| The Counter block can be used with a State Machine to process your input at a particular time interval, in ms. The counter starts from 0 (or any other user-defined value).\|
 
@@ -27,8 +28,10 @@ Controls (parameters)
 Counter example:
 ----------------
 
-| This schematic shows how the Counter (in conjunction with a `tone <https://wiki.analog.com/resources/tools-software/sigmastudio/toolbox/sources/tonelookupsine>`_ cell) can be used with the State Machine. The :doc:`state machine </wiki-migration/resources/tools-software/sigmastudio/toolbox/multiplexersdemultiplexers/statemachine>` block passes signal (green pin to blue pin) only when the Counter's control value to the red pin is between the given limits.
-| |counterpic7.png|
+This schematic shows how the Counter (in conjunction with a `tone <https://wiki.analog.com/resources/tools-software/sigmastudio/toolbox/sources/tonelookupsine>`_ cell) can be used with the State Machine. The :doc:`state machine </wiki-migration/resources/tools-software/sigmastudio/toolbox/multiplexersdemultiplexers/statemachine>` block passes signal (green pin to blue pin) only when the Counter's control value to the red pin is between the given limits.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/counterpic7.png
+   :alt: counterpic7.png
 
 .. |counterpic1.png| image:: https://wiki.analog.com/_media/counterpic1.png
 .. |counterpic2.png| image:: https://wiki.analog.com/_media/counterpic2.png
@@ -36,4 +39,3 @@ Counter example:
 .. |counterpic4.png| image:: https://wiki.analog.com/_media/counterpic4.png
 .. |counterpic5.png| image:: https://wiki.analog.com/_media/counterpic5.png
 .. |counterpic6.png| image:: https://wiki.analog.com/_media/counterpic6.png
-.. |counterpic7.png| image:: https://wiki.analog.com/_media/counterpic7.png

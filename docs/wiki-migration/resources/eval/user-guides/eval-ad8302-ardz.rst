@@ -51,14 +51,14 @@ Software Installation
 
 -  Set up **EVAL-ADICUP3029 serial driver** as in :doc:`1. Install mBed windows serial driver... </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/keil_iar_support>`
 -  Download the software on the :adi:`product page <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad8302-ardz.html#>` or click :adi:`here <media/en/evaluation-boards-kits/evaluation-software/eval-ad8302-ardz-evaluation-software.zip>`.
-   <WRAP>
+   
 
 .. important::
 
    If previously downloaded evaluation software cannot detect board, download the evaluation software again to get the software fix version.
 
 
-</WRAP>
+
 
 -  Extract the Software GUI.zip to your computer.
 -  Connect the EVAL-ADICUP3029 board using micro USB cable
@@ -68,19 +68,20 @@ Software Installation
 
 -  In the extracted files look for **power_detector-firmware.hex** then copy the hex file to **Computer>>DAPLINK** drive
    |\|DAPLINK_screencap|
-   <WRAP>
+   
 
 .. important::
 
    After loading the hex file to the DAPLINK drive the window explorer must automatically close or else you need to load the hex file to the drive again.
 
 
-</WRAP>
+
 
 -  After the **windows explorer automatically closes**, reset the EVAL-ADICUP3029 board by pressing the S1 (reset) button on the board.
 -  Go to extracted files and look for **power_detector.exe** file and double click to run the software. The Connection Window will open.
 
-|APP_window|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection.png
+   :alt: APP_window
 
 Software Operation
 ------------------
@@ -90,43 +91,41 @@ Connection Window
 
 -  Mount EVAL-AD8302-ARDZ to the EVAL-ADICUP3029 and connect EVAL-ADICUP3029 to computer as in `Typical Hardware Setup for Measurement <https://wiki.analog.com/>`_
 -  Click the **refresh button** on Port Name to Identify the **port** where an EVAL-ADICUP3029 is installed
-   |image1| <WRAP>
+   |APP_window| 
 
 .. note::
 
    If there is more than one EVAL-ADICUP3029 installed, select the port where EVAL-ADICUP3029 and EVAL-AD8302-ARDZ connected
 
 
-</WRAP>
+
 
 -  Set Baudrate to 115200
 -  Select Auto-detect on Shield type.
 -  Click Connect. The Measurement Window should Open.
 
-<WRAP>
+
 
 .. important::
 
    Console Log must indicate **AD8302 shield detected with ADiCUP**. If previously downloaded evaluation software cannot connect, go back to `Software Installation <https://wiki.analog.com/>`_ step 2 and **download the evaluation software again** to get the software fix version.
 
 
-</WRAP>
+
 
 Measurement Window
 ~~~~~~~~~~~~~~~~~~
 
-| |image2|
-| The shield measures Gain and Phase Difference based on a 2-point calibrated linear response characterized for a specific frequency. By using default calibration coefficients, the 2-point linear response corresponds to the :adi:`datasheet specifications of AD8302 <media/en/technical-documentation/data-sheets/AD8302.pdf>`. By using the user calibration coefficients, the frequency dependent 2-point linear response corresponds to the calibration made by the user.
-| <WRAP>
+|image1| The shield measures Gain and Phase Difference based on a 2-point calibrated linear response characterized for a specific frequency. By using default calibration coefficients, the 2-point linear response corresponds to the :adi:`datasheet specifications of AD8302 <media/en/technical-documentation/data-sheets/AD8302.pdf>`. By using the user calibration coefficients, the frequency dependent 2-point linear response corresponds to the calibration made by the user. 
 
 .. note::
 
    If calibration is skipped at some frequencies, the default calibration coefficients will be used (user calibration coefficients and default calibration coefficients are INITIALLY the same).
 
 
-</WRAP>
 
-| Related topic: `Calibration of EVAL-AD8302-ARDZ <https://wiki.analog.com/>`_
+
+Related topic: `Calibration of EVAL-AD8302-ARDZ <https://wiki.analog.com/>`_
 
 To skip Calibration and use Default Calibration Coefficients:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -141,14 +140,14 @@ To make single measurement:
 -  Uncheck Continuous Measurement
 -  Click Measure Button
 
-| <WRAP>
+
 
 .. important::
 
    Not entering the correct frequency may result to less accurate measurements.
 
 
-</WRAP>
+
 
 To continuously make measurements:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -158,14 +157,14 @@ To continuously make measurements:
 -  Click Measure Button
 -  Click Stop to stop measuring at the last measurement
 
-| <WRAP>
+
 
 .. important::
 
    Not entering the correct frequency may result to less accurate measurements.
 
 
-</WRAP>
+
 
 To switch windows:
 ^^^^^^^^^^^^^^^^^^
@@ -177,21 +176,23 @@ Calibration Window
 
 -  Gain Calibration
 
-| |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-calibrate_gain-steps.png
+   :alt: APP_window
 
 ::
 
      * Select the frequency
-       * Input to J1 an RF signal of-20dBm 
-       * Input to J2 an RF signal of-40dBm 
+       * Input to J1 an RF signal of-20dBm
+       * Input to J2 an RF signal of-40dBm
        * Click **Measure**
-       * Input to J1 an RF signal of-40dBm 
-       * Input to J2 an RF signal of-20dBm 
+       * Input to J1 an RF signal of-40dBm
+       * Input to J2 an RF signal of-20dBm
        * Click **Measure**
        * Click **Calibrate**
-   * Phase Calibration\\
+   * Phase Calibration
 
-| |image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-calibrate_phase-steps.png
+   :alt: APP_window
 
 -  Select frequency
 -  Set the signal power of inputs to -30dBm
@@ -248,9 +249,6 @@ SLOPE and INTERCEPT are calculated and stored during the calibration process by 
 
    SLOPE = (CODE1–CODE2)/(MAG1−MAG2)
 
-
-   | 
-
 ::
 
    INTERCEPT = MAG1-(CODE1/SLOPE)
@@ -263,11 +261,17 @@ This results in two SLOPE values and two INTERCEPT values which are calculated u
 
    SLOPE1 = (CODE1–CODE2)/(MAG1−MAG2)
 
-|
+::
 
-| SLOPE2 = (CODE2–CODE3)/(MAG2−MAG3)
-| INTERCEPT1 = MAG1-(CODE1/SLOPE1)
-| INTERCEPT2 = MAG2-(CODE2/SLOPE2)
+   SLOPE2 = (CODE2–CODE3)/(MAG2−MAG3)
+
+::
+
+   INTERCEPT1 = MAG1-(CODE1/SLOPE1)
+
+::
+
+   INTERCEPT2 = MAG2-(CODE2/SLOPE2)
 
 After calibration when measuring RF input power, the power is calculated using the appropriate equation
 
@@ -275,7 +279,11 @@ After calibration when measuring RF input power, the power is calculated using t
 
    MAG = (CODE/SLOPE1)+INTERCEPT1   (if CODE > CODE2)
 
+::
+
    or
+
+::
 
    MAG = (CODE/SLOPE2)+INTERCEPT2   (if CODE < CODE2)
 
@@ -321,9 +329,9 @@ Setting Up CrossCore Embedded Studio
 
 |rfdet-c-workspace|
 
-   \* To open the unzipped folder in the workspace, click **File -> Open Projects from File System**. A new window will pop up and ask you to select the project or folder that you want to open. Select the proper directory then click **Finish**.
+-  To open the unzipped folder in the workspace, click **File -> Open Projects from File System**. A new window will pop up and ask you to select the project or folder that you want to open. Select the proper directory then click **Finish**.
 
-   |rfdet-c-import-ad8302|
+|rfdet-c-import-ad8302|
 
 | On the left side of the window, the structure of the loaded sample code should match the structure in the image shown below.
 | |rfdet-c-proj-ad8302|
@@ -342,15 +350,13 @@ Development on CrossCore Embedded Studio
 Python Development Guide
 ------------------------
 
-.. _installations-1:
-
 Installations
 ~~~~~~~~~~~~~
 
 Assumes a fresh installation of all required software
 
 -  Download `python 3.7.0 <https://wiki.analog.com/http/www.python.org/downloads/release/python-370>`_ version. Choose the right version depending on operating system. For windows, choose `Windows x86-64 executable installer <http://www.python.org/downloads/release/python-370/>`_. (Do not run installer yet)
--  Run installer as Administrator. During installation, \**check **Add Python 3.7 to PATH** before clicking **Install Now**\ \*\*
+-  Run installer as Administrator. During installation, \**check **\ Add Python 3.7 to PATH** before clicking **Install Now**\**
 
 |rfdet-py-path|
 
@@ -384,13 +390,13 @@ Python Development
 Hardware Reference Information
 ==============================
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | Downloadable files contain the hardware reference information of EVAL-AD8302-ARDZ:
-   | `Schematic Diagram of EVAL-AD8302-ARDZ <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-sch.pdf>`_
+   
+   Downloadable files contain the hardware reference information of EVAL-AD8302-ARDZ:
+   
+   `Schematic Diagram of EVAL-AD8302-ARDZ <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-sch.pdf>`_
    
    `Layout Design of EVAL-AD8302-ARDZ <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-layout.pdf>`_
    
@@ -407,11 +413,8 @@ For any queries regarding the hardware and evaluation software, contact as at :e
 
 .. |EVAL-ADICUP3029pic_selectUSB| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-adicup3029-usb.png
 .. |\|DAPLINK_screencap| image:: /resources/eval/user-guides/rfdet-daplink.png
-.. |APP_window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection-refresh.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-measurement.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-calibrate_gain-steps.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-calibrate_phase-steps.png
+.. |APP_window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection-refresh.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-measurement.png
 .. |c-dev-window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-dev-window.png
 .. |rfdet-c-unzip| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-unzip.png
 .. |rfdet-c-folder-ad8302| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-folder-ad8302.png

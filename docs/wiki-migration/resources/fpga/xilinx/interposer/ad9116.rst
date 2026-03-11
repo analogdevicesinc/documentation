@@ -27,8 +27,7 @@ Introduction
 
 The :adi:`AD9114`/:adi:`AD9115`/:adi:`AD9116`/:adi:`AD9117` are pin-compatible dual, 8-/10-/12-/14-bit, low power digital-to-analog converters (DACs) that provide a sample rate of 125 MSPS. These TxDAC® converters are optimized for the transmit signal path of commu-nication systems. All the devices share the same interface, package, and pinout, providing an upward or downward component selection path based on performance, resolution, and cost. The AD9114/AD9115/AD9116/AD9117 offer exceptional ac and dc performance and support update rates up to 125 MSPS. The flexible power supply operating range of 1.8 V to 3.3 V and low power dissipation of the AD9114/AD9115/AD9116/AD9117 make them well suited for portable and low power applications.
 
-| **HW Platform(s):** `Virtex-6 ML605 (Xilinx) <https://www.xilinx.com/products/boards-and-kits/EK-V6-ML605-G.htm>`_, :adi:`AD9114 Evaluation Board (ADI) <EVAL-AD9114>` / :adi:`AD9115 Evaluation Board (ADI) <EVAL-AD9115>` / :adi:`AD9116 Evaluation Board (ADI) <EVAL-AD9116>` / :adi:`AD9117 Evaluation Board (ADI) <EVAL-AD9117>`, :adi:`DAC FMC Interposer Board (ADI) <ad-dac-fmc>`
-| **System:** Microblaze, AXI, UART
+**HW Platform(s):** `Virtex-6 ML605 (Xilinx) <https://www.xilinx.com/products/boards-and-kits/EK-V6-ML605-G.htm>`_, :adi:`AD9114 Evaluation Board (ADI) <EVAL-AD9114>` / :adi:`AD9115 Evaluation Board (ADI) <EVAL-AD9115>` / :adi:`AD9116 Evaluation Board (ADI) <EVAL-AD9116>` / :adi:`AD9117 Evaluation Board (ADI) <EVAL-AD9117>`, :adi:`DAC FMC Interposer Board (ADI) <ad-dac-fmc>` **System:** Microblaze, AXI, UART
 
 Quick Start Guide
 -----------------
@@ -58,7 +57,7 @@ Bit file
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+
 
 .. tip::
 

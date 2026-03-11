@@ -56,13 +56,9 @@ Initial Set-Up
 | 1. Install the DPG Downloader and AD9139 DUAL SPI software and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
 | 2. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB.
 | 3. Connect the DGP3 unit to your PC and turn on the unit.
-
-Single-Tone Test
-~~~~~~~~~~~~~~~~
-
-| These settings configure the dual AD9139s to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the IQMOD output, under the condition: Fdata = 515MHz, 1X interpolation, IF = 71MHz, LO = 2000MHz, RF = 2071MHz.
+| ==== Single-Tone Test ==== These settings configure the dual AD9139s to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the IQMOD output, under the condition: Fdata = 515MHz, 1X interpolation, IF = 71MHz, LO = 2000MHz, RF = 2071MHz.
 | 1. To begin, open the AD9139 DUAL SPI application (Start > All Programs > Analog Devices > AD9139 > AD9139 DUAL SPI). The screen should look similar to Figure 3. Each AD9139 should be set respectively.
-|
+
 
 .. container:: center
 
@@ -81,7 +77,7 @@ Single-Tone Test
 | 3. Follow the sequence below to configure the AD9139s/AD9516 SPI registers and DPG downloader.
 | a. Click “Reset DAC” button on the “Quick Start” and “Quick Start2” tab.
 | b. Set AD9516 as Figure 4 shows below before click “AD9516 Update” button.
-|
+
 
 .. container:: center
 
@@ -99,7 +95,7 @@ Single-Tone Test
 | c. Click “Restore Registers from File” and select the configuration file “AD9139Dual_1x_Sync.csv”. This will configure the registers of both AD9139s with correct values under the condition we are testing.
 | d. There may be a few registers highlighted in red. The red highlights mean mismatches between the SPI read and write values in the software. Clicking “Read All Registers” reads back all the current values in the registers, which should resolve the highlights.
 | e. Open DPG Downloader if you have not done so. (Start > All Programs > Analog Devices > DPG > DPGDownloader). Ensure that the program detects the AD9139-Dual, as indicated in the “Evaluation Board” drop-down list, and select it. For this evaluation board, LVDS is the only valid Port Configuration, and it will be selected automatically. The “DCO Frequency” window should show the correct data rate (575 MHz). The actual detected frequency may not be exactly 575 MHz but it should be stable and very close to it as shown in Figure 5.
-|
+
 
 .. container:: center
 
@@ -113,7 +109,7 @@ Single-Tone Test
    +-------------------------------+
 
    | f. Click on “Add Generated Waveform”, and then “Single Tone”. As shown in Figure 6, A Single Tone panel will be added to the vector list. Enter the sample rate, in this case 575 MHz and the desired frequency, 71MHz. Enter the digital amplitude. In this case we use -14dBFS. Check the “Generate Complex Data (I & Q)” box and uncheck the “Unsigned Data” box. Select the In-Phase data vector in the “I Data Vector” drop down menu and the Quadrature data vector in the “Q Data Vector”.
-|
+
 
 .. container:: center
 
@@ -130,7 +126,7 @@ Single-Tone Test
 
 | g. Click Download (|image9|) and Play (|image10|).
 | h. The AD9139 DUAL SPI software should look like Figure 7 (for 1st AD9139) and Figure 8 (for 2nd AD9139) respectively.
-|
+
 
 .. container:: center
 
@@ -157,7 +153,7 @@ Single-Tone Test
    +---------------------------------------------------+
 
    | h. The Spectrum Analyzer should look like Figure 9.
-|
+
 
 .. container:: center
 
@@ -172,13 +168,12 @@ Single-Tone Test
    
 
 
-| 4. The current on the 5V supply should read about 1383mA.
+4. The current on the 5V supply should read about 1383mA.
 
 SPI SOFTWARE
 ------------
 
-| The AD9139 DUAL SPI software is conveniently organized in a series of tabs that groups registers according to their functions. In this way, all registers associated with the digital functions, for example, are on the “Digital Functions” tab. All registers associated with the PLL are on the “PLL” tab, and so on. Since there are dual AD9139s on the board, two sets of settings appear on the panel accordingly. For example, “Digital Functions2” tab is for 2nd AD9139 on the board. Normally the “Quick Start” tab is sufficient for a quick evaluation. The most frequently used register controls are included on this tab. A full description of each register and its settings is given in the AD9139 data sheet. Some of the registers and their functions are described here as they pertain to the AD9139 DUAL evaluation board. Please note that some of the screen images in this document may not match exactly with the latest revision of the software, due to ongoing improvements and enhancements to the software.
-| The full screen layout is shown in Figure 3. The tabs can be seen across the top of the work area, and four function buttons in the menu area. “Save Registers to File” and “Restore Registers from File” allow the user to save the current register settings into a file for later uses. A register is immediately updated when the value in the control is changed. Switching between tabs does not update register values. “Read All Registers” can be used to monitor a resister with changing readback values. “ Record Sequence” allows the user to record a series of SPI writes in a particular order and to play back the sequence later. A short description of the register is shown in the status bar on the bottom of the work area when the mouse curser hovers over the control. Some of the tabs are discussed below.
+The AD9139 DUAL SPI software is conveniently organized in a series of tabs that groups registers according to their functions. In this way, all registers associated with the digital functions, for example, are on the “Digital Functions” tab. All registers associated with the PLL are on the “PLL” tab, and so on. Since there are dual AD9139s on the board, two sets of settings appear on the panel accordingly. For example, “Digital Functions2” tab is for 2nd AD9139 on the board. Normally the “Quick Start” tab is sufficient for a quick evaluation. The most frequently used register controls are included on this tab. A full description of each register and its settings is given in the AD9139 data sheet. Some of the registers and their functions are described here as they pertain to the AD9139 DUAL evaluation board. Please note that some of the screen images in this document may not match exactly with the latest revision of the software, due to ongoing improvements and enhancements to the software. The full screen layout is shown in Figure 3. The tabs can be seen across the top of the work area, and four function buttons in the menu area. “Save Registers to File” and “Restore Registers from File” allow the user to save the current register settings into a file for later uses. A register is immediately updated when the value in the control is changed. Switching between tabs does not update register values. “Read All Registers” can be used to monitor a resister with changing readback values. “ Record Sequence” allows the user to record a series of SPI writes in a particular order and to play back the sequence later. A short description of the register is shown in the status bar on the bottom of the work area when the mouse curser hovers over the control. Some of the tabs are discussed below.
 
 Quick Start
 ~~~~~~~~~~~
@@ -201,12 +196,7 @@ The “Quick Start/Quick Start2” tab has selections that apply to the general 
 PLL
 ~~~
 
-| The “PLL/PLL2” tab includes all the PLL control registers. Both PLLs should be set respectively. The recommended settings for the best performance is PLL Charge Pump Current = 7 and PLL LOOP BW = 7. The user needs to follow the sequence below to enable the PLL. 1. Choose the desired divide ratios in the Loop Divider and the VCO Divider.
-| 2. Set PLL Charge Pump Current and PLL Loop BW settings to 7.
-| 3. Set the PLL Mode to Manual.
-| 4. Turn on PLL Enable.
-| 5. Set the PLL Mode to Auto.
-|
+The “PLL/PLL2” tab includes all the PLL control registers. Both PLLs should be set respectively. The recommended settings for the best performance is PLL Charge Pump Current = 7 and PLL LOOP BW = 7. The user needs to follow the sequence below to enable the PLL. 1. Choose the desired divide ratios in the Loop Divider and the VCO Divider. 2. Set PLL Charge Pump Current and PLL Loop BW settings to 7. 3. Set the PLL Mode to Manual. 4. Turn on PLL Enable. 5. Set the PLL Mode to Auto.
 
 .. container:: center
 
@@ -224,8 +214,7 @@ PLL
 EVB Jumper Configurations
 -------------------------
 
-| This evaluation board allows evaluation of both the DAC IF outputs as well as the modulator RF outputs. By default, the solder jumpers are configured to look at the modulator RF outputs. Below is a table listing the jumper configurations and SMA connector connections needed to view either output on a spectrum analyzer.
-|
+This evaluation board allows evaluation of both the DAC IF outputs as well as the modulator RF outputs. By default, the solder jumpers are configured to look at the modulator RF outputs. Below is a table listing the jumper configurations and SMA connector connections needed to view either output on a spectrum analyzer.
 
 .. container:: center
 

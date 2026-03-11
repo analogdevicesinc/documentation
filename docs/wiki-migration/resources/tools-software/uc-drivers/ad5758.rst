@@ -105,143 +105,162 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``enum ad5758_dc_dc_mode {                   |
+    enum ad5758_dc_dc_mode {
+     DC_DC_POWER_OFF,
+     DPC_CURRENT_MODE,
+     DPC_VOLTAGE_MODE,
+     PPC_CURRENT_MODE,
+    };
 
-|     DC_DC_POWER_OFF,                         |
-|     DPC_CURRENT_MODE,                        |
-|     DPC_VOLTAGE_MODE,                        |
-|     PPC_CURRENT_MODE,                        |
-| };                                           |
-|                                              |
-| enum ad5758_dig_diag_flags {                 |
-|     DIAG_SPI_CRC_ERR,                        |
-|     DIAG_SLIPBIT_ERR,                        |
-|     DIAG_SCLK_COUNT_ERR,                     |
-|     DIAG_INVALID_SPI_ACCESS_ERR = 4,         |
-|     DIAG_CAL_MEM_CRC_ERR,                    |
-|     DIAG_INVERSE_DAC_CHECK_ERR,              |
-|     DIAG_DAC_LATCH_MON_ERR = 8,              |
-|     DIAG_THREE_WI_RC_ERR,                    |
-|     DIAG_WDT_ERR = 11,                       |
-|     DIAG_ERR_3WI,                            |
-|     DIAG_RESET_OCCURRED,                     |
-| };                                           |
-|                                              |
-| enum ad5758_clkout_config {                  |
-|     CLKOUT_DISABLE,                          |
-|     CLKOUT_ENABLE,                           |
-| };                                           |
-|                                              |
-| enum ad5758_clkout_freq {                    |
-|     CLKOUT_FREQ_416_KHZ,                     |
-|     CLKOUT_FREQ_435_KHZ,                     |
-|     CLKOUT_FREQ_454_KHZ,                     |
-|     CLKOUT_FREQ_476_KHZ,                     |
-|     CLKOUT_FREQ_500_KHZ,                     |
-|     CLKOUT_FREQ_526_KHZ,                     |
-|     CLKOUT_FREQ_555_KHZ,                     |
-|     CLKOUT_FREQ_588_KHZ,                     |
-| };                                           |
-|                                              |
-| enum ad5758_slew_rate_clk {                  |
-|     SR_CLOCK_240_KHZ,                        |
-|     SR_CLOCK_200_KHZ,                        |
-|     SR_CLOCK_150_KHZ,                        |
-|     SR_CLOCK_128_KHZ,                        |
-|     SR_CLOCK_64_KHZ,                         |
-|     SR_CLOCK_32_KHZ,                         |
-|     SR_CLOCK_16_KHZ,                         |
-|     SR_CLOCK_8_KHZ,                          |
-|     SR_CLOCK_4_KHZ,                          |
-|     SR_CLOCK_2_KHZ,                          |
-|     SR_CLOCK_1_KHZ,                          |
-|     SR_CLOCK_512_HZ,                         |
-|     SR_CLOCK_256_HZ,                         |
-|     SR_CLOCK_128_HZ,                         |
-|     SR_CLOCK_64_HZ,                          |
-|     SR_CLOCK_16_HZ,                          |
-| };                                           |
-|                                              |
-| enum ad5758_dc_dc_ilimt {                    |
-|     ILIMIT_150_mA,                           |
-|     ILIMIT_200_mA,                           |
-|     ILIMIT_250_mA,                           |
-|     ILIMIT_300_mA,                           |
-|     ILIMIT_350_mA,                           |
-|     ILIMIT_400_mA,                           |
-| };                                           |
-|                                              |
-| enum ad5758_output_range {                   |
-|     RANGE_0V_5V,                             |
-|     RANGE_0V_10V,                            |
-|     RANGE_M5V_5V,                            |
-|     RANGE_M10V_10V,                          |
-|     RANGE_0mA_20mA = 8,                      |
-|     RANGE_0mA_24mA,                          |
-|     RANGE_4mA_24mA,                          |
-|     RANGE_M20mA_20mA,                        |
-|     RANGE_M24mA_24mA,                        |
-|     RANGE_M1mA_22mA,                         |
-| };                                           |
-|                                              |
-| enum ad5758_adc_ip {                         |
-|     ADC_IP_MAIN_DIE_TEMP,                    |
-|     ADC_IP_DCDC_DIE_TEMP,                    |
-|     ADC_IP_REFIN = 3,                        |
-|     ADC_IP_REF2,                             |
-|     ADC_IP_VSENSE = 13,                      |
-|     ADC_IP_MVSENSE,                          |
-|     ADC_IP_INT_AVCC = 20,                    |
-|     ADC_IP_REGOUT,                           |
-|     ADC_IP_VLOGIC,                           |
-|     ADC_IP_INT_CURR_MON_VOUT,                |
-|     ADC_IP_REFGND,                           |
-|     ADC_IP_AGND,                             |
-|     ADC_IP_DGND,                             |
-|     ADC_IP_VDPC,                             |
-|     ADC_IP_AVDD2,                            |
-|     ADC_IP_AVSS,                             |
-|     ADC_IP_DCDC_DIE_NODE,                    |
-|     ADC_IP_REFOUT,                           |
-| };                                           |
-|                                              |
-| enum ad5758_adc_mode {                       |
-|     ADC_MODE_KEY_SEQ = 2,                    |
-|     ADC_MODE_AUTO_SEQ,                       |
-|     ADC_MODE_SINGLE_CONV,                    |
-|     ADC_MODE_SINGLE_KEY_CONV,                |
-| };                                           |
-|                                              |
-| struct ad5758_dev {                          |
-|     /* SPI */                                |
-|     struct spi_desc *spi_desc;               |
-|         /* GPIO */                           |
-|         struct gpio_desc *reset_n;           |
-|         struct gpio_desc *ldac_n;            |
-|     /* Device Settings */                    |
-|     uint8_t crc_en;                          |
-|     enum ad5758_dc_dc_mode dc_dc_mode;       |
-| };                                           |
-|                                              |
-| struct ad5758_init_param {                   |
-|     /* SPI */                                |
-|     struct spi_init_param spi_init;          |
-|         /* GPIO */                           |
-|     struct gpio_init_param reset_n;          |
-|     struct gpio_init_param ldac_n;           |
-|     /* Device Settings */                    |
-|     uint8_t crc_en;                          |
-|     enum ad5758_dc_dc_mode dc_dc_mode;       |
-|     enum ad5758_clkout_config clkout_config; |
-|     enum ad5758_clkout_freq clkout_freq;     |
-|     enum ad5758_dc_dc_ilimt dc_dc_ilimt;     |
-|     enum ad5758_output_range output_range;   |
-|     enum ad5758_slew_rate_clk slew_rate_clk; |
-| };``                                         |
-+----------------------------------------------+
+::
+
+    enum ad5758_dig_diag_flags {
+     DIAG_SPI_CRC_ERR,
+     DIAG_SLIPBIT_ERR,
+     DIAG_SCLK_COUNT_ERR,
+     DIAG_INVALID_SPI_ACCESS_ERR = 4,
+     DIAG_CAL_MEM_CRC_ERR,
+     DIAG_INVERSE_DAC_CHECK_ERR,
+     DIAG_DAC_LATCH_MON_ERR = 8,
+     DIAG_THREE_WI_RC_ERR,
+     DIAG_WDT_ERR = 11,
+     DIAG_ERR_3WI,
+     DIAG_RESET_OCCURRED,
+    };
+
+::
+
+    enum ad5758_clkout_config {
+     CLKOUT_DISABLE,
+     CLKOUT_ENABLE,
+    };
+
+::
+
+    enum ad5758_clkout_freq {
+     CLKOUT_FREQ_416_KHZ,
+     CLKOUT_FREQ_435_KHZ,
+     CLKOUT_FREQ_454_KHZ,
+     CLKOUT_FREQ_476_KHZ,
+     CLKOUT_FREQ_500_KHZ,
+     CLKOUT_FREQ_526_KHZ,
+     CLKOUT_FREQ_555_KHZ,
+     CLKOUT_FREQ_588_KHZ,
+    };
+
+::
+
+    enum ad5758_slew_rate_clk {
+     SR_CLOCK_240_KHZ,
+     SR_CLOCK_200_KHZ,
+     SR_CLOCK_150_KHZ,
+     SR_CLOCK_128_KHZ,
+     SR_CLOCK_64_KHZ,
+     SR_CLOCK_32_KHZ,
+     SR_CLOCK_16_KHZ,
+     SR_CLOCK_8_KHZ,
+     SR_CLOCK_4_KHZ,
+     SR_CLOCK_2_KHZ,
+     SR_CLOCK_1_KHZ,
+     SR_CLOCK_512_HZ,
+     SR_CLOCK_256_HZ,
+     SR_CLOCK_128_HZ,
+     SR_CLOCK_64_HZ,
+     SR_CLOCK_16_HZ,
+    };
+
+::
+
+    enum ad5758_dc_dc_ilimt {
+     ILIMIT_150_mA,
+     ILIMIT_200_mA,
+     ILIMIT_250_mA,
+     ILIMIT_300_mA,
+     ILIMIT_350_mA,
+     ILIMIT_400_mA,
+    };
+
+::
+
+    enum ad5758_output_range {
+     RANGE_0V_5V,
+     RANGE_0V_10V,
+     RANGE_M5V_5V,
+     RANGE_M10V_10V,
+     RANGE_0mA_20mA = 8,
+     RANGE_0mA_24mA,
+     RANGE_4mA_24mA,
+     RANGE_M20mA_20mA,
+     RANGE_M24mA_24mA,
+     RANGE_M1mA_22mA,
+    };
+
+::
+
+    enum ad5758_adc_ip {
+     ADC_IP_MAIN_DIE_TEMP,
+     ADC_IP_DCDC_DIE_TEMP,
+     ADC_IP_REFIN = 3,
+     ADC_IP_REF2,
+     ADC_IP_VSENSE = 13,
+     ADC_IP_MVSENSE,
+     ADC_IP_INT_AVCC = 20,
+     ADC_IP_REGOUT,
+     ADC_IP_VLOGIC,
+     ADC_IP_INT_CURR_MON_VOUT,
+     ADC_IP_REFGND,
+     ADC_IP_AGND,
+     ADC_IP_DGND,
+     ADC_IP_VDPC,
+     ADC_IP_AVDD2,
+     ADC_IP_AVSS,
+     ADC_IP_DCDC_DIE_NODE,
+     ADC_IP_REFOUT,
+    };
+
+::
+
+    enum ad5758_adc_mode {
+     ADC_MODE_KEY_SEQ = 2,
+     ADC_MODE_AUTO_SEQ,
+     ADC_MODE_SINGLE_CONV,
+     ADC_MODE_SINGLE_KEY_CONV,
+    };
+
+::
+
+    struct ad5758_dev {
+     /* SPI */
+     struct spi_desc *spi_desc;
+            /* GPIO */
+            struct gpio_desc *reset_n;
+            struct gpio_desc *ldac_n;
+     /* Device Settings */
+     uint8_t crc_en;
+     enum ad5758_dc_dc_mode dc_dc_mode;
+    };
+
+::
+
+    struct ad5758_init_param {
+     /* SPI */
+     struct spi_init_param spi_init;
+            /* GPIO */
+     struct gpio_init_param reset_n;
+     struct gpio_init_param ldac_n;
+     /* Device Settings */
+     uint8_t crc_en;
+     enum ad5758_dc_dc_mode dc_dc_mode;
+     enum ad5758_clkout_config clkout_config;
+     enum ad5758_clkout_freq clkout_freq;
+     enum ad5758_dc_dc_ilimt dc_dc_ilimt;
+     enum ad5758_output_range output_range;
+     enum ad5758_slew_rate_clk slew_rate_clk;
+    };
 
 Reference Design
 ----------------

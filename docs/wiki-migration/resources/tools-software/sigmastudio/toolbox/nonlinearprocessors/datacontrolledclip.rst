@@ -32,19 +32,17 @@ Algorithm Description
 
 The data controlled clipper strictly saturates the input signal once it crosses an upper or lower threshold boundary. The output signal will be retained at the threshold value so long as the input signal is above the upper threshold limit, or below the lower threshold limit. For values within the threshold boundaries, the output signal will equal the input signal.
 
-| 
+
 | The graph below shows an input sine tone and the resulting clipped output with threshold values at: High: 0.8 Low: -0.2
 
-| 
-| |image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/datacontrolledclip014.jpg
 
 Example
 -------
 
 The following image shows the Data Controlled Clip, being compared to a Hard Clipper and also the direct signal coming from the Inputs. A stereo switch mux allows for selection of the processing type, and then the signals are routed to the Outputs. Two DC Input blocks are used to define the threshold values for the Data Controlled Clip. They are currently set with the same values in the Hard Clip cell. The output from both clip blocks will be the same, but have different ways to control the thresholds (coefficients vs. data inputs).
 
-| 
-| |image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/datacontrolledclip015.jpg
 
 Algorithm Details
 -----------------
@@ -77,7 +75,7 @@ Algorithm Growth Information
 ----------------------------
 
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
-| Description              | When the Data Controlled Clip is grown, an extra pair of Input/Output pins is added to the control. The High and Low Threshold pins do not grow as the same values will apply to all audio pairs grown on the control. | |image6| |
+| Description              | When the Data Controlled Clip is grown, an extra pair of Input/Output pins is added to the control. The High and Low Threshold pins do not grow as the same values will apply to all audio pairs grown on the control. | |image4| |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 | Program RAM Repetition   | 10 per growth                                                                                                                                                                                                          |          |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
@@ -88,7 +86,5 @@ Algorithm Growth Information
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/datacontrolledclip013.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/datacontrolledclip013.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/datacontrolledclip014.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/datacontrolledclip015.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/datacontrolledclip016.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/datacontrolledclip016.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/datacontrolledclip016.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocesses/datacontrolledclip016.jpg

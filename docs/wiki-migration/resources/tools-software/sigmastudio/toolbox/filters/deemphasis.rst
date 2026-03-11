@@ -1,7 +1,8 @@
 =======De-Emphasis======
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| -------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+--------------
 
 |deemphasispic1.png| The De-Emphasis filter is pre-configured, with set parameters, and is used to attenuate the high-frequency components boosted during recording with pre-emphasis.
 

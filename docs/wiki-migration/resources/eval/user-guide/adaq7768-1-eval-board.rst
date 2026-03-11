@@ -62,7 +62,7 @@ To power off, first close the software. Then press the reset button on the SDP-H
 Design Overview
 ---------------
 
-|
+
 
 .. container:: centeralign
 
@@ -425,8 +425,7 @@ There are two ways to control the DUT input range.
 -  Through the GPIO of the DUT, controlled over the SPI interface.
 -  Through on-board mechanical switch S2.
 
-| 
-| By default, the ACE software uses the GPIO to control the input range. The user can configure the PGIA gain by clicking the PGIA icon in the **Chip View** of the ACE software to select the input ranges. Once done, the user must click **Apply Changes** located at the upper left corner in order for the PGIA gain to take effect.
+By default, the ACE software uses the GPIO to control the input range. The user can configure the PGIA gain by clicking the PGIA icon in the **Chip View** of the ACE software to select the input ranges. Once done, the user must click **Apply Changes** located at the upper left corner in order for the PGIA gain to take effect.
 
 The user needs to set S2 switches to LO in order to properly control the device input range using GPIO.
 
@@ -504,7 +503,7 @@ By default, the software configures the DUT to perform wide bandwidth measuremen
 
 In this mode the user can evaluate the wide band dynamic range (noise) as well as other AC performances such as SNR, THD and SFDR etc.
 
-| The user can also test the device’s anti-aliasing performance by sweeping an out of band signal to the input across frequency.
+The user can also test the device’s anti-aliasing performance by sweeping an out of band signal to the input across frequency.
 
 .. container:: centeralign
 
@@ -575,7 +574,7 @@ Calculating SINC3_DEC_RATE Value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | For a 16.384 MHz MCLK to achieve an ODR of 50 Hz using the Sinc3 filter, use the following equation and determine the DEC_RATE:
-|
+
 
 .. container:: centeralign
 
@@ -589,7 +588,7 @@ With the ADAQ7768-1 MCLK_DIV = 2,
    :math:`DecRate = Mclk/MclkDiv \times ODR = 163,840`
 
 
-| To program the Sinc3 decimation ratio, the user must first calculate for the equivalent Sinc3 decimation ratio to be written on SINC3_DECIMATION_RATE registers (SINC3_DEC_RATE_MSB and SINC3_DEC_RATE_LSB) using the equation below:
+To program the Sinc3 decimation ratio, the user must first calculate for the equivalent Sinc3 decimation ratio to be written on SINC3_DECIMATION_RATE registers (SINC3_DEC_RATE_MSB and SINC3_DEC_RATE_LSB) using the equation below:
 
 .. container:: centeralign
 

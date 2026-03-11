@@ -282,8 +282,7 @@ Save and Load (38)
 
 -  **Save** and **Load** (Label 38 in Figure 20) allow the user to save the current register map setting to a file and to load the setting from the same file, respectively.
 
-| :doc:`Return to Hardware Guide </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/hardware_guide>`
-| :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/eval-ad4116asdz>`
+:doc:`Return to Hardware Guide </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/hardware_guide>` :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/eval-ad4116asdz>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-004.png
    :width: 400px

@@ -6,7 +6,7 @@ Video Tutorial
 
 View the quick video tutorial to learn how to monitor the Wiki for changes.
 
-.. image:: https://wiki.analog.com/_media/analogTV>1051906354001
+.. image:: https://wiki.analog.com/_media/wiki/help/getting-started/analogTV>1051906354001
    :alt: analogTV>1051906354001
    :width: 640px
    :height: 530px

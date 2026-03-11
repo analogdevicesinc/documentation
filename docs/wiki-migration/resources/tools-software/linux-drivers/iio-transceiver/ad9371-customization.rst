@@ -9,8 +9,7 @@ AD9371/AD9375 Device Driver Customization
    If unsure please see the manual or don't change!
 
 
-| The Linux platform allows you to examine and determine optimal settings for your target application:
-| See here: :doc:`AD9371/AD9375 Advanced Plugin </wiki-migration/resources/tools-software/linux-software/ad9371_advanced_plugin>`
+The Linux platform allows you to examine and determine optimal settings for your target application: See here: :doc:`AD9371/AD9375 Advanced Plugin </wiki-migration/resources/tools-software/linux-software/ad9371_advanced_plugin>`
 
 +------------------------------------------------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Devicetree property                            | Default | Description                                                                                                                                                                                                                                   |

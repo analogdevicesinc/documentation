@@ -65,12 +65,7 @@ The two additional frequencies ω\ :sub:`1` and ω\ :sub:`2` are also indicated 
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 100 Ω resistor
-| 1 1 kΩ resistor
-| 1 1 µF capacitor
-| 1 20 mH inductor ( 2 x 10 mH inductors in series)
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 100 Ω resistor 1 1 kΩ resistor 1 1 µF capacitor 1 20 mH inductor ( 2 x 10 mH inductors in series)
 
 Hardware setup:
 ---------------

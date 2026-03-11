@@ -79,7 +79,7 @@ Jumpers for Selecting the DAC Output
 
 Jumpers JP4, JP5, JP6, and JP7 select the output configuration. By default, the DAC output connected to the LPF and the ADL537x analog quadrature modulator. For selecting DAC output configuration, refer to Table 1 and Figure 2.
 
-<WRAP >\ *Table 1. Jumper Configurations for Viewing DAC Output and Modulator Output*\ </WRAP>
+\ *Table 1. Jumper Configurations for Viewing DAC Output and Modulator Output*\ 
 
 +----------------------------+--------------------------------------+----------------------------------------------------------------------------------+
 | Output Viewed              | SMA Output                           | Jumper Configuration                                                             |
@@ -104,7 +104,7 @@ Jumper for Selecting Clock Configuration
 
 The AD9142A-M5372-EBZ / AD9142A-M5375-EBZ evaluates both the DAC outputs as well as the AQM outputs. Refer to Table 3 for clock configuration.
 
-<WRAP >\ *Table 3. Clock Configuration*\ </WRAP>
+\ *Table 3. Clock Configuration*\ 
 
 ========================== =========== ======================
 Output Viewed              Clock Input Local Oscillator Input

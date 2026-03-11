@@ -40,14 +40,7 @@ If we include a circuit to convert these current pulses to a voltage we can prod
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 – CD4007 CMOS array
-| 3 – 0.1 uF capacitors
-| 2 – 2N3906 PNP transistors
-| 1 – 47 Ω resistor
-| 1 – 6.8 KΩ resistor
-| 1 – AD8210 current sense monitor
-| 1 – 470 Ω resistor
+ADALM1000 hardware module 1 – CD4007 CMOS array 3 – 0.1 uF capacitors 2 – 2N3906 PNP transistors 1 – 47 Ω resistor 1 – 6.8 KΩ resistor 1 – AD8210 current sense monitor 1 – 470 Ω resistor
 
 Making inverters with the CD4007 transistor array
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,7 +143,6 @@ The output of the oscillator is not a very good square wave with sharp rise and 
 
 **For Further Reading:**
 
-| `Ring oscillator <https://en.wikipedia.org/wiki/Ring_oscillator>`_
-| :adi:`AD8210 datasheet <media/en/technical-documentation/data-sheets/AD8210.pdf>`
+`Ring oscillator <https://en.wikipedia.org/wiki/Ring_oscillator>`_ :adi:`AD8210 datasheet <media/en/technical-documentation/data-sheets/AD8210.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

@@ -77,80 +77,97 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``enum ad5770r_output_filter_resistor {                             |
+    enum ad5770r_output_filter_resistor {
+     AD5770R_OUTPUT_FILTER_RESISTOR_60_OHM = 0x0,
+     AD5770R_OUTPUT_FILTER_RESISTOR_5_6_KOHM = 0x5,
+     AD5770R_OUTPUT_FILTER_RESISTOR_11_2_KOHM,
+     AD5770R_OUTPUT_FILTER_RESISTOR_22_2_KOHM,
+     AD5770R_OUTPUT_FILTER_RESISTOR_44_4_KOHM,
+     AD5770R_OUTPUT_FILTER_RESISTOR_104_KOHM,
+    };
 
-|     AD5770R_OUTPUT_FILTER_RESISTOR_60_OHM = 0x0,                    |
-|     AD5770R_OUTPUT_FILTER_RESISTOR_5_6_KOHM = 0x5,                  |
-|     AD5770R_OUTPUT_FILTER_RESISTOR_11_2_KOHM,                       |
-|     AD5770R_OUTPUT_FILTER_RESISTOR_22_2_KOHM,                       |
-|     AD5770R_OUTPUT_FILTER_RESISTOR_44_4_KOHM,                       |
-|     AD5770R_OUTPUT_FILTER_RESISTOR_104_KOHM,                        |
-| };                                                                  |
-|                                                                     |
-| enum ad5770r_monitor_function {                                     |
-|     AD5770R_DISABLE = 0,                                            |
-|     AD5770R_VOLTAGE_MONITORING,                                     |
-|     AD5770R_CURRENT_MONITORING,                                     |
-|     AD5770R_TEMPERATURE_MONITORING                                  |
-| };                                                                  |
-|                                                                     |
-| enum ad5770r_channels {                                             |
-|     AD5770R_CH0 = 0,                                                |
-|     AD5770R_CH1,                                                    |
-|     AD5770R_CH2,                                                    |
-|     AD5770R_CH3,                                                    |
-|     AD5770R_CH4,                                                    |
-|     AD5770R_CH5                                                     |
-| };                                                                  |
-|                                                                     |
-| enum ad5770r_reference_voltage {                                    |
-|     AD5770R_EXT_REF_2_5_V = 0,                                      |
-|     AD5770R_INT_REF_1_25_V_OUT_ON,                                  |
-|     AD5770R_EXT_REF_1_25_V,                                         |
-|     AD5770R_INT_REF_1_25_V_OUT_OFF                                  |
-| };                                                                  |
-|                                                                     |
-| struct ad5770r_monitor_setup {                                      |
-|     enum ad5770r_monitor_function       monitor_function;           |
-|     bool                    mux_buffer;                             |
-|     bool                    ib_ext_en;                              |
-|     enum ad5770r_channels           monitor_channel;                |
-| };                                                                  |
-|                                                                     |
-| struct ad5770r_dac_page_mask {                                      |
-|     uint16_t        dac_data_page_mask;                             |
-|     uint16_t        input_page_mask;                                |
-| };                                                                  |
-|                                                                     |
-| struct ad5770r_output_range {                                       |
-|     uint8_t     output_scale;                                       |
-|     uint8_t     output_range_mode;                                  |
-| };                                                                  |
-|                                                                     |
-| struct ad5770r_device_spi_settings {                                |
-|     bool            addr_ascension;                                 |
-|     bool            single_instruction; // for multibyte read/write |
-|     uint8_t     stream_mode_length;                                 |
-| };                                                                  |
-|                                                                     |
-| struct ad5770r_channel_switches {                                   |
-|     bool en0, en1, en2, en3, en4, en5, sink0;                       |
-| };                                                                  |
-|                                                                     |
-| struct ad5770r_alarm_cfg {                                          |
-|     bool open_drain_en;                                             |
-|     bool thermal_shutdown_en;                                       |
-|     bool background_crc_en;                                         |
-|     bool temp_warning_msk;                                          |
-|     bool over_temp_msk;                                             |
-|     bool neg_ch0_msk;                                               |
-|     bool iref_fault_msk;                                            |
-|     bool background_crc_msk;                                        |
-| };``                                                                |
-+---------------------------------------------------------------------+
+::
+
+    enum ad5770r_monitor_function {
+     AD5770R_DISABLE = 0,
+     AD5770R_VOLTAGE_MONITORING,
+     AD5770R_CURRENT_MONITORING,
+     AD5770R_TEMPERATURE_MONITORING
+    };
+
+::
+
+    enum ad5770r_channels {
+     AD5770R_CH0 = 0,
+     AD5770R_CH1,
+     AD5770R_CH2,
+     AD5770R_CH3,
+     AD5770R_CH4,
+     AD5770R_CH5
+    };
+
+::
+
+    enum ad5770r_reference_voltage {
+     AD5770R_EXT_REF_2_5_V = 0,
+     AD5770R_INT_REF_1_25_V_OUT_ON,
+     AD5770R_EXT_REF_1_25_V,
+     AD5770R_INT_REF_1_25_V_OUT_OFF
+    };
+
+::
+
+    struct ad5770r_monitor_setup {
+     enum ad5770r_monitor_function       monitor_function;
+     bool                    mux_buffer;
+     bool                    ib_ext_en;
+     enum ad5770r_channels           monitor_channel;
+    };
+
+::
+
+    struct ad5770r_dac_page_mask {
+     uint16_t        dac_data_page_mask;
+     uint16_t        input_page_mask;
+    };
+
+::
+
+    struct ad5770r_output_range {
+     uint8_t     output_scale;
+     uint8_t     output_range_mode;
+    };
+
+::
+
+    struct ad5770r_device_spi_settings {
+     bool            addr_ascension;
+     bool            single_instruction; // for multibyte read/write
+     uint8_t     stream_mode_length;
+    };
+
+::
+
+    struct ad5770r_channel_switches {
+     bool en0, en1, en2, en3, en4, en5, sink0;
+    };
+
+::
+
+    struct ad5770r_alarm_cfg {
+     bool open_drain_en;
+     bool thermal_shutdown_en;
+     bool background_crc_en;
+     bool temp_warning_msk;
+     bool over_temp_msk;
+     bool neg_ch0_msk;
+     bool iref_fault_msk;
+     bool background_crc_msk;
+    };
 
 Downloads
 ---------

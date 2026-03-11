@@ -1,4 +1,4 @@
-| :doc:`Click here to return to the SigmaStudio Plus Documentation landing page </wiki-migration/resources/tools-software/sigmastudiov2>`
+:doc:`Click here to return to the SigmaStudio Plus Documentation landing page </wiki-migration/resources/tools-software/sigmastudiov2>`
 
 Using SigmaStudio+
 ==================

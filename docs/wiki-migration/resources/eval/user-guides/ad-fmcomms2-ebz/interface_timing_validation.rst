@@ -9,13 +9,10 @@ In the ADI provided designs, the tuning algorithm works as follows (irrespective
 
 The receive chain is validated first. The AD9361 is programmed to generate a `PRBS <https://en.wikipedia.org/wiki/Pseudorandom_binary_sequence>`_ (PN) BIST pattern at the digital interface. A corresponding (and matched) sequence monitor is implemented in the FPGA. The delay is sweeped from minimum to maximum monitoring the status signals. More precisely the function first sweeps all data delays (0..15) and then all clock delays (0..15). This happens at three different interface rates. A low rate of 25MSPS and a higher rates of 40 and 61.44MSPS. All pass and fails are stored in a field, while the results of the low and high rate are overlayed. The optimal delay is selected as the mid point of the range where the monitor locks.
 
-|
-
 .. tip::
 
-   \ **NOTE:**
+   \ **NOTE:** **bist_timing_analysis** shown below only does a 2D pretty print of all Clock and Data delays combinations on RX at a given baseband rate.
 
-   | **bist_timing_analysis** shown below only does a 2D pretty print of all Clock and Data delays combinations on RX at a given baseband rate.
    
    -  "``o``" = PASS
    -  "``.``" = FAIL
@@ -25,7 +22,7 @@ The receive chain is validated first. The AD9361 is programmed to generate a `PR
 
 ::
 
-   root@analog:/sys/kernel/debug/iio/iio:device1# echo 1 > bist_timing_analysis                                                                                                                                
+   root@analog:/sys/kernel/debug/iio/iio:device1# echo 1 > bist_timing_analysis
    root@analog:/sys/kernel/debug/iio/iio:device1# cat bist_timing_analysis
    CLK: 10000000 Hz 'o' = PASS
    DC0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
@@ -46,7 +43,7 @@ The receive chain is validated first. The AD9361 is programmed to generate a `PR
    e:o o o o o o o . . . . . . . . .
    f:o o o o o o o o . . . . . . . .
 
-   root@analog:/sys/kernel/debug/iio/iio:device1# echo 1 > bist_timing_analysis                                                                                                                                
+   root@analog:/sys/kernel/debug/iio/iio:device1# echo 1 > bist_timing_analysis
    root@analog:/sys/kernel/debug/iio/iio:device1# cat bist_timing_analysis
    CLK: 60000000 Hz 'o' = PASS
    DC0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
@@ -128,7 +125,7 @@ Enabling them requires a driver rebuild in some situations. There is also a debu
 
 Additional debug information can be enabled by adding the BE_VERBOSE and BE_MOREVERBOSE flags in the ad9361_post_setup() function.
 
-.. code:: c
+.. code:: diff
 
    @@ -621,11 +621,11 @@ static int ad9361_post_setup(struct iio_dev *indio_dev)
            axiadc_write(st, ADI_REG_CHAN_CNTRL(i),
@@ -138,10 +135,10 @@ Additional debug information can be enabled by adding the BE_VERBOSE and BE_MORE
 
                     ADI_ENABLE | ADI_IQCOR_ENB);
        }
-    
+
    -   flags = 0;
    +   flags = BE_VERBOSE | BE_MOREVERBOSE;
-    
+
        ret = ad9361_dig_tune(phy, (axiadc_read(st, ADI_REG_ID)) ?
            0 : 61440000, flags);
        if (ret < 0)
@@ -159,43 +156,43 @@ With these flags set you should observe following kernel/debugging messages
 
    SAMPL CLK: 25000000 tuning: **RX**
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-   0:o o o o o o o o o # # # # o o o 
-   1:o o o o o o o o o o o # # # # o 
+   0:o o o o o o o o o # # # # o o o
+   1:o o o o o o o o o o o # # # # o
 
    SAMPL CLK: 40000000 tuning: **RX**
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-   0:o o o o o o o o o # # # # o o o 
-   1:o o # # # # o o o o o # # # # o 
+   0:o o o o o o o o o # # # # o o o
+   1:o o # # # # o o o o o # # # # o
 
    SAMPL CLK: 61440000 tuning: **RX**
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-   0:# # # # o o o o o # # # # o o o 
-   1:# o # # # # # # # # o # # # # # 
+   0:# # # # o o o o o # # # # o o o
+   1:# o # # # # # # # # o # # # # #
 
-   SAMPL CLK: 61440000 tuning: **RX**          <fc #6495ed><- Composite overlay of the above RX</fc>
+   SAMPL CLK: 61440000 tuning: **RX**          <- Composite overlay of the above RX
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-   0:# # # # o o <fc #ff0000>**o**</fc> o o # # # # o o o      <fc #6495ed><- Algorithm selects RX Data Delay = 6</fc>
-   1:# o # # # # # # # # o # # # # # 
+   0:# # # # o o **o** o o # # # # o o o       <- Algorithm selects RX Data Delay = 6
+   1:# o # # # # # # # # o # # # # #
 
    SAMPL CLK: 25000000 tuning: **TX**
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-   0:# # # # # # # # # # # # # # # # 
-   1:# o o o o o o o o o o o o o # # 
+   0:# # # # # # # # # # # # # # # #
+   1:# o o o o o o o o o o o o o # #
 
    SAMPL CLK: 40000000 tuning: **TX**
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-   0:# # # # # # # # # # # # # # # # 
-   1:# o o o o o o o o o o o # # # # 
+   0:# # # # # # # # # # # # # # # #
+   1:# o o o o o o o o o o o # # # #
 
    SAMPL CLK: 61440000 tuning: **TX**
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-   0:# # # # # # # # # # # # # # # # 
-   1:# o o o o o o # # # # # # # # # 
+   0:# # # # # # # # # # # # # # # #
+   1:# o o o o o o # # # # # # # # #
 
-   SAMPL CLK: 61440000 tuning: **TX**          <fc #6495ed><- Composite Overlay of the above TX</fc>
+   SAMPL CLK: 61440000 tuning: **TX**          <- Composite Overlay of the above TX
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-   0:# # # # # # # # # # # # # # # # 
-   1:# o o o <fc #ff0000>**o**</fc> o o # # # # # # # # #      <fc #6495ed><- Algorithm selects TX Clock Delay = 4</fc>
+   0:# # # # # # # # # # # # # # # #
+   1:# o o o **o** o o # # # # # # # # #       <- Algorithm selects TX Clock Delay = 4
 
    cf_axi_adc 79020000.cf-ad9361-lpc: ADI AIM (9.00.b) at 0x79020000 mapped to 0xf0358000, probed ADC AD9361 as MASTER
 
@@ -223,10 +220,7 @@ The second argument is a bit mask flag which sets the verbosity level and possib
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -235,16 +229,16 @@ The second argument is a bit mask flag which sets the verbosity level and possib
       //Current baseband rate only and be verbose//
    
       root@analog:/sys/kernel/debug/iio/iio:device1# dmesg -n7
-      root@analog:/sys/kernel/debug/iio/iio:device1# echo **0** **3** > **digital_tune** 
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo **0** **3** > **digital_tune**
       SAMPL CLK: 30720000 tuning: RX
         0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-      0:o o o o o o o o o o # # # # o o 
-      1:o o o o o o # # # # # o o o o o 
+      0:o o o o o o o o o o # # # # o o
+      1:o o o o o o # # # # # o o o o o
    
       SAMPL CLK: 30720000 tuning: TX
         0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-      0:# # # # # # # # # # # # # # # # 
-      1:# o o o o o o o o o o o o o o o 
+      0:# # # # # # # # # # # # # # # #
+      1:# o o o o o o o o o o o o o o o
    
 
 

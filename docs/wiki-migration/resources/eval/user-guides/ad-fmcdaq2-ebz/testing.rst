@@ -36,13 +36,13 @@ Required Software
    :class: download
 
    
-   -  \**15 December 2022 release \*\*
+   -  **15 December 2022 release**
    -   `Actual file for FMCDAQ3 <https://swdownloads.analog.com/cse/prod_test_rel/fmcdaq3_test/fmcdaq3_carrier.zip>`_
    -  Checksum ``57ade50f1add6596c1501e0388f7fcfa``
    
 
 
-\**Creating a Raspberry Pi SD test card \*\*
+**Creating a Raspberry Pi SD test card**
 
 -  The SD image used is based on Raspbian with Desktop.
 
@@ -50,7 +50,7 @@ Required Software
    :class: download
 
    
-   -  \**15 December 2022 release \*\*
+   -  **15 December 2022 release**
    -   `Actual file for FMCDAQ3 <https://swdownloads.analog.com/cse/prod_test_rel/fmcdaq3_test/rpi_daq3_prod.zip>`_
    -  Checksum ``7b49ab20b2f9d28afdb8703e6f19b498``
    

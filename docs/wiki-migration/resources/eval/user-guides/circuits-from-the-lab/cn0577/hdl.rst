@@ -13,8 +13,9 @@ The :adi:`CN0577` provides an analog front-end and an FMC digital interface for 
 
 CN0577 includes an on-board reference oscillator and a retiming circuit to minimize signal-to-noise ratio (SNR) degradation due to the FPGA additive jitter.
 
-| In order to support high speed operations while minimizing the number of data lines, a serial LVDS digital interface is used. It has a one-lane and two-lane output modes, allowing the user to optimize the interface data rate for each application, through setting a parameter.
-| More details about ADI reference designs architecture :doc:`here </wiki-migration/resources/fpga/docs/arch>`.
+In order to support high speed operations while minimizing the number of data lines, a serial LVDS digital interface is used. It has a one-lane and two-lane output modes, allowing the user to optimize the interface data rate for each application, through setting a parameter.
+
+More details about ADI reference designs architecture :doc:`here </wiki-migration/resources/fpga/docs/arch>`.
 
 Evaluation board
 ----------------

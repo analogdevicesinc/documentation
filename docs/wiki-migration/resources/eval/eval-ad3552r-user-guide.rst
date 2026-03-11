@@ -33,10 +33,13 @@ Software Required
 General Description
 -------------------
 
-| The EVAL-AD3552RFMCxZ is an evaluation board for the AD3552R ultrafast 16-bit precision DAC. The board is available in two variants: EVAL-AD3552RFMC1Z for higher speed and EVALAD3552RFMC2Z for higher precision, the only difference being the transimpedance amplifier and its corresponding feedback capacitor.
-| The board allows testing all the output ranges of the DAC, waveform generation, power supply and reference options.
-| The EVAL-AD3552RFMCxZ interfaces to the USB port of a PC via a system demonstration platform (:adi:`SDP-H1` board). It can also be connected to a different controller board using the pin header connector at position P5.
-| This user guide covers the details of the configuration and operation of the EVAL-AD3552RFMCxZ board and the associated ACE plug-in. For additional information on the DAC operation refer to the :adi:`AD3552R` data sheet.
+The EVAL-AD3552RFMCxZ is an evaluation board for the AD3552R ultrafast 16-bit precision DAC. The board is available in two variants: EVAL-AD3552RFMC1Z for higher speed and EVALAD3552RFMC2Z for higher precision, the only difference being the transimpedance amplifier and its corresponding feedback capacitor.
+
+The board allows testing all the output ranges of the DAC, waveform generation, power supply and reference options.
+
+The EVAL-AD3552RFMCxZ interfaces to the USB port of a PC via a system demonstration platform (:adi:`SDP-H1` board). It can also be connected to a different controller board using the pin header connector at position P5.
+
+This user guide covers the details of the configuration and operation of the EVAL-AD3552RFMCxZ board and the associated ACE plug-in. For additional information on the DAC operation refer to the :adi:`AD3552R` data sheet.
 
 Evaluation Board Photograph
 ---------------------------
@@ -56,10 +59,15 @@ The EVAL-AD3552R uses the :adi:`ACE` software with the AD3552R Plugin for evalua
 -  Go to Available Packages, select Board.AD35X2R and click on the Install Selected button at the bottom of the list. Once the plugin is installed, it moves to the Installed Packages section.
 -  Click on the Home item on the left-hand menu. If the EVALAD3552R board is connected it will show up in the Attached Hardware section as shown in Figure 2. If you don't have an EVAL-AD3552R board, you can still explore the functionality of the plugin by double clicking on the desired board in the Explore Without Hardware list.
 
-| |image3|
-| **Figure 1. Plug-in Manager**
-| |image4|
-| **Figure 2. Start Tab**
+.. image:: https://wiki.analog.com/_media/resources/eval/ad3552r-plug-in_manager_with_red_squares.png
+   :width: 400px
+
+**Figure 1. Plug-in Manager**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad3552r-start_tab_with_red_squares.png
+   :width: 400px
+
+**Figure 2. Start Tab**
 
 Connecting The Board
 ~~~~~~~~~~~~~~~~~~~~
@@ -78,8 +86,9 @@ Evaluation Board Hardware
 Power Supplies
 ~~~~~~~~~~~~~~
 
-| The EVAL-AD3552R includes a complete power conversion solution to allow powering the evaluation board from the SDP-H1. The board includes two DC/DC converters LT8336 and LTC7149 to generate ±16V from the 12V power provided by SDP-H1. LDOs LT3045 and LT3094 are used to generate ±12V for the transimpedance amplifiers. LDOs ADM7170 and LT3045 are used to generate the supplies for the AD3552R. This power solution is configured with the default link settings shown in Table 2.
-| Alternatively, the board can be powered from a collection of external power supplies via connector P3. The assignment of the pins in connector P3 is listed in Table 1.
+The EVAL-AD3552R includes a complete power conversion solution to allow powering the evaluation board from the SDP-H1. The board includes two DC/DC converters LT8336 and LTC7149 to generate ±16V from the 12V power provided by SDP-H1. LDOs LT3045 and LT3094 are used to generate ±12V for the transimpedance amplifiers. LDOs ADM7170 and LT3045 are used to generate the supplies for the AD3552R. This power solution is configured with the default link settings shown in Table 2.
+
+Alternatively, the board can be powered from a collection of external power supplies via connector P3. The assignment of the pins in connector P3 is listed in Table 1.
 
 Table 1. Pin Assignment on Power Supply Connector P3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -271,22 +280,34 @@ ACE Plug-In Description And Features
 ACE Plug-In Hierarchy
 ~~~~~~~~~~~~~~~~~~~~~
 
-| ACE has several views to control different aspects of the DAC. When a view is first opened it creates a new tab at the top of the main window. The AD3552R plugin has a Board View, a Chip View, a Memory Map view, a Waveform Generator view, and a Vector Generator view. Figure 3 shows the hierarchical relation between these views. Refer to the ACE User Manual for more details. The user manual is accessible from the help panel displayed when click on the Help button on the lower left angle of the application. |image5|
-| **Figure 3. ACE Plugin Hierarchy**
+ACE has several views to control different aspects of the DAC. When a view is first opened it creates a new tab at the top of the main window. The AD3552R plugin has a Board View, a Chip View, a Memory Map view, a Waveform Generator view, and a Vector Generator view. Figure 3 shows the hierarchical relation between these views. Refer to the ACE User Manual for more details. The user manual is accessible from the help panel displayed when click on the Help button on the lower left angle of the application.
+
+
+|image3|
+
+**Figure 3. ACE Plugin Hierarchy**
 
 Board View
 ~~~~~~~~~~
 
-| The board view displays a simplified diagram of the evaluation board including some relevant connectors and the interconnection between chips, as seen in Figure 4. Analog Devices chips are shown with their part number and the AD3552R is highlighted in darker blue. |image6|
-| **Figure 4. AD3552R Board View**
-| The actions that can be performed at this level are displayed as buttons at the top of the main window, as seen in Figure 5.
+The board view displays a simplified diagram of the evaluation board including some relevant connectors and the interconnection between chips, as seen in Figure 4. Analog Devices chips are shown with their part number and the AD3552R is highlighted in darker blue.
+
+
+|image4|
+
+**Figure 4. AD3552R Board View**
+
+The actions that can be performed at this level are displayed as buttons at the top of the main window, as seen in Figure 5.
 
 -  **Poll Device:** this action is performed automatically every second to verify that the evaluation board is connected to the system. The button allows turning on or off this feature.
 -  **Reset Board:** this action performs a power cycle on the evaluation board, bringing everything back to default.
 
-| |image7|
-| **Figure 5. AD3552R Board View Buttons**
-| To open the chip view, double-click on the AD3552R block.
+.. image:: https://wiki.analog.com/_media/resources/eval/ad3552r-board_view_buttons.png
+   :width: 400px
+
+**Figure 5. AD3552R Board View Buttons**
+
+To open the chip view, double-click on the AD3552R block.
 
 Chip View
 ~~~~~~~~~
@@ -305,14 +326,17 @@ The Chip View displays a simplified internal diagram of the chip showing the int
 -  **DAC Registers.** Each DAC symbol contains an editable field where the hexadecimal code can be written to the DAC Output register. This allows performing an static update of the DAC. After writing the value, the button Apply Changes must be pressed to update the DAC output.
 -  **Shortcuts to other views.** There are two buttons on the lower right corner to access the Register Map view and the Waveform Generator view. The use of these panels is explained in the sections Memory Map View and Generating a Waveform.
 
-| |image8|
-| **Figure 6. Chip View**
+.. image:: https://wiki.analog.com/_media/resources/eval/chip_view_with_labels.png
+   :width: 400px
+
+**Figure 6. Chip View**
 
 Memory Map View
 ~~~~~~~~~~~~~~~
 
-| The Memory Map view displays the entire configuration space of the AD3552R. The configuration space can be displayed as a list of registers or as a list of bit fields. The application allows sorting by any of the column categories or searching by register name or field name. Registers can be displayed collapsed or expanded into its bit fields, as shown in Figure 7.
-| This view has the following interactive elements:
+The Memory Map view displays the entire configuration space of the AD3552R. The configuration space can be displayed as a list of registers or as a list of bit fields. The application allows sorting by any of the column categories or searching by register name or field name. Registers can be displayed collapsed or expanded into its bit fields, as shown in Figure 7.
+
+This view has the following interactive elements:
 
 -  **Button list.** These buttons perform the following actions:
 
@@ -331,16 +355,22 @@ Memory Map View
 -  **Register value.** This field allows editing the entire register value in hexadecimal (left side) or toggling the bits one by one (right side). Modified registers are highlighted in bold.
 -  **Bit field values.** Registers can be expanded into their bit fields and each bit can be edited individually by clicking on it to toggle its value. Modified registers are highlighted in bold.
 
-| |image9|
-| **Figure 7. AD3552R Memory Map View**
+.. image:: https://wiki.analog.com/_media/resources/eval/ad3552r-register_map_with_labels.png
+   :width: 400px
+
+**Figure 7. AD3552R Memory Map View**
 
 Waveform Generator View
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| The waveform generator view allows assigning vectors to the channels and starting or stopping waveform generation. A screenshot of this view is given in Figure 8.
-| |image10|
-| **Figure 8. Waveform Generator View**
-| The operation mode of AD3552R and the assignment of the waveforms is controlled from the Transmit pane that contains the following controls:
+The waveform generator view allows assigning vectors to the channels and starting or stopping waveform generation. A screenshot of this view is given in Figure 8.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad3552r-waveform_generator_view.png
+   :width: 400px
+
+**Figure 8. Waveform Generator View**
+
+The operation mode of AD3552R and the assignment of the waveforms is controlled from the Transmit pane that contains the following controls:
 
 -  **Generate Vectors:** this button opens the Vector Generator view there waveforms can be defined, scaled, loaded or exported. The use of this generator is covered in section Vector Generator View.
 -  **DAC Mode:** radio buttons allow selecting Fast Mode that uses 16-bit data or Precision Mode that uses 24-bit data. The same mode is used for both DAC channels when operated simultaneously.
@@ -360,10 +390,15 @@ Table 7. Update Rate Combinations
 | Single Channel / Simultaneous Mode | 25                 | 16.66                   |
 +------------------------------------+--------------------+-------------------------+
 
-| |image11|
-| **Figure 9. Waveform Generation in Dual Mode**
-| |image12|
-| **Figure 10. Waveform Generation in Simultanoeus Mode**
+.. image:: https://wiki.analog.com/_media/resources/eval/ad3552r-transmit_pane_dual_mode.png
+   :width: 200px
+
+**Figure 9. Waveform Generation in Dual Mode**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad3552r-transmit_pane_simultaneous_mode.png
+   :width: 200px
+
+**Figure 10. Waveform Generation in Simultanoeus Mode**
 
 Manual Register Configuration for Streaming Mode
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -388,8 +423,9 @@ Table 8. Stream Mode Length Values
 Vector Generator View
 ~~~~~~~~~~~~~~~~~~~~~
 
-| The Vector Generator view allows defining or loading waveforms that can later be assigned to the DAC channels. Waveforms are identified by name. The generator automatically adapts the sample rate based on the operating mode and the number of DAC channels enabled. A snapshot of this view if presented in Figure 11.
-| The Vector Generator tool is composed of the following sections:
+The Vector Generator view allows defining or loading waveforms that can later be assigned to the DAC channels. Waveforms are identified by name. The generator automatically adapts the sample rate based on the operating mode and the number of DAC channels enabled. A snapshot of this view if presented in Figure 11.
+
+The Vector Generator tool is composed of the following sections:
 
 -  **Predefined Waveforms.** The generator has several predefined waveforms: DC, single tone, square, triangle, sawtooth, chirp, noise and multi-tone. Clicking the **+** button adds this waveform to the Generate panel where it can be customized.
 -  **Waveforms from File.** The generator can load waveforms from file in three different formats: text file, hexadecimal file or ACE Vector file. Refer to the ACE User Manual for further details on the file formats. When loading a waveform all the samples are played irrespective of the update rate. Therefor the waveform files must be generated for a specific update rate.
@@ -407,8 +443,10 @@ Vector Generator View
 -  **Time-domain waveform preview.** A preview of the selected waveform is displayed in this window. Only one waveform is displayed at a time. The plot window allows zooming, panning and measuring on the waveform.
 -  **Waveform FFT.** The frequency-domain analysis of the selected waveform is displayed in this window. The plot window allows zooming, panning and measuring on the spectrum.
 
-| |image13|
-| **Figure 11. Vector Generator View**
+.. image:: https://wiki.analog.com/_media/resources/eval/ad3552r-vector_generator_with_labels.png
+   :width: 400px
+
+**Figure 11. Vector Generator View**
 
 Creating a Waveform
 ~~~~~~~~~~~~~~~~~~~
@@ -425,8 +463,10 @@ Follow these steps to produce a dual waveform playback on the EVAL-AD3552R evalu
 -  Select Fast Mode and enable channels 1 and 2. Then unfold the Channel 1 and Channel 2 sections to select each of the waveforms you created. Finally click the Play button.
 -  The LED on EVAL-AD3552R changes from green to blue and the playback starts. The waveforms should look like the ones shown in Figure 12 in the oscilloscope.
 
-| |image14|
-| **Figure 12. Simultaneous Waveform Output**
+.. image:: https://wiki.analog.com/_media/resources/eval/ad3552r-waveforms-on-oscilloscope.png
+   :width: 400px
+
+**Figure 12. Simultaneous Waveform Output**
 
 Unsupported Features in the Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -460,27 +500,7 @@ Schematic, PCB Layout, Bill of Materials
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/eval-ad3552rfmcxzbottom-web.gif
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-plug-in_manager_with_red_squares.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-ace_hierarchy.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-start_tab_with_red_squares.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-ace_hierarchy.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-board_view.png
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-board_view_buttons.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/chip_view_with_labels.png
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-register_map_with_labels.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-waveform_generator_view.png
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-transmit_pane_dual_mode.png
-   :width: 200px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-transmit_pane_simultaneous_mode.png
-   :width: 200px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-vector_generator_with_labels.png
-   :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-waveforms-on-oscilloscope.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad3552r-board_view.png
    :width: 400px

@@ -1,8 +1,9 @@
 Filters
 =======
 
-| :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
-| -----------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
+
+--------------
 
 .. hint::
 

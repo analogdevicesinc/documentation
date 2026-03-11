@@ -27,7 +27,7 @@ Configure the baremetal framework to use A2B and select the SAM->Class D tutoria
 
    /**
      * If this SHARC Audio Module board is a master, select an A2B topology
-     * 
+    *
      * Note that these topologies are created in SigmaStudio and stored
      * within drivers/bm_a2b_driver/a2b_topologies. See documentation for a
      * full description of these configurations.
@@ -86,16 +86,16 @@ Finally, in ``void processaudio_callback(void)``, we're going to filter our audi
 
    void processaudio_callback(void) {
        float filter_mixed[AUDIO_BLOCK_SIZE];
-       
-       // First we'll mix the L and R channels together 
+
+       // First we'll mix the L and R channels together
        mix_2x1(audiochannel_0_left_in, audiochannel_0_right_in, filter_mixed);
-       
+
        // Next, we'll apply the filters to this data in place
        filter_read(&lpf_stage1, filter_mixed, filter_mixed, AUDIO_BLOCK_SIZE);
        filter_read(&lpf_stage2, filter_mixed, filter_mixed, AUDIO_BLOCK_SIZE);
-       
+
        // Finally, we'll copy our input buffers to the first two A2B channels, and our filtered data to our second two A2B channels.
-       
+
        // Original stereo audio to our stereo speakers
        copy_buffer(audiochannel_0_left_in, audiochannel_a2b_0_left_out, AUDIO_BLOCK_SIZE);
        copy_buffer(audiochannel_0_right_in, audiochannel_a2b_0_right_out, AUDIO_BLOCK_SIZE);
@@ -106,5 +106,5 @@ Finally, in ``void processaudio_callback(void)``, we're going to filter our audi
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#chaining-audio-elements
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#chaining-audio-elements
    :alt: Chaining Audio Elements#.|Bare Metal Framework#simple-midi-synth|Simple MIDI Synthesizer

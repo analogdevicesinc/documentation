@@ -12,9 +12,10 @@ The ADXL100X and ADAQ7980 Speaker Demo utilizes the key features of high bandwid
 Documents
 ~~~~~~~~~
 
-| //`Speaker Demo User Guide <https://wiki.analog.com/_media/mems/final_format_speaker_demo_user_guide_march_14.pdf>`_
-| //`Speaker Demo Assembly Guide <https://wiki.analog.com/_media/mems/speaker_demo_assembly_guide_march_14.pdf>`_
-| ==== Devices ====
+//`Speaker Demo User Guide <https://wiki.analog.com/_media/mems/final_format_speaker_demo_user_guide_march_14.pdf>`_ //`Speaker Demo Assembly Guide <https://wiki.analog.com/_media/mems/speaker_demo_assembly_guide_march_14.pdf>`_
+
+Devices
+~~~~~~~
 
 ADXL100x Low Noise, High Frequency, MEMS Accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

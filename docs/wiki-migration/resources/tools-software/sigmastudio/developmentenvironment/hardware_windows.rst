@@ -1,8 +1,9 @@
 Hardware Window
 ===============
 
-| :doc:`Click here to return to the Development Environment page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment>`
-| The :doc:`Hardware Configuration tab </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardwareconfigurationtab>` provides access to advanced hardware configuration, communication, and control. These tools are described in the following pages:
+:doc:`Click here to return to the Development Environment page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment>`
+
+The :doc:`Hardware Configuration tab </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardwareconfigurationtab>` provides access to advanced hardware configuration, communication, and control. These tools are described in the following pages:
 
 -  :doc:`Register Read/Write Window </wiki-migration/resources/tools-software/sigmastudio/developmentenvironmnent/hardware_windows/registerreadwritewindow>`
 -  :doc:`Register Control Window </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/registercontrolwindow>`

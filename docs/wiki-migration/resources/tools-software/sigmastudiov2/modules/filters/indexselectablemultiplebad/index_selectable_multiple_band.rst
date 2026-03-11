@@ -3,9 +3,10 @@
 Index Selectable Multiple Band
 ==============================
 
-| 
-| |isibfiltmono.png| |isibfiltstereo.png|
-| |isibfiltsettings.png|
+|isibfiltmono.png| |isibfiltstereo.png|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/indexselectablemultiplebad/isibfiltsettings.png
+   :alt: isibfiltsettings.png
 
 Description
 -----------
@@ -27,17 +28,14 @@ The available filter types are:
 -  High pass filter
 -  Low pass filter
 
-| 
-
 Variants
 --------
 
 -  Index Selectable Multiple Band (1 Ch)
 -  Index Selectable Multiple Band (2 Ch)
 
-|
-
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +---------------------------------------+------------+------------------+---------------+------------------+
 | Name                                  | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -69,7 +67,7 @@ Name    Type  Description
 Output1 Audio The filtered output
 ======= ===== ===================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+-------------------+------------------------+--------------------------------------------------------------------+
@@ -95,33 +93,30 @@ Output1 Audio The filtered output
 | 
 | ===== DSP Parameters =====
 
-+----------------------------+---------------------------------------------------+------------------------+---------------+
-| Parameter Name             | Description                                       | ADSP-214xx/SC5xx/215xx | ADAU145x/146x |
-+============================+===================================================+========================+===============+
-| Stage<fc #ff0000>0</fc>_B0 | B0 Filter Coefficient                             | Float                  | FixPoint8d24  |
-+----------------------------+---------------------------------------------------+------------------------+---------------+
-| Stage<fc #ff0000>0</fc>_B1 | B1 Filter Coefficient                             | Float                  | FixPoint8d24  |
-+----------------------------+---------------------------------------------------+------------------------+---------------+
-| Stage<fc #ff0000>0</fc>_B2 | B2 Filter Coefficient                             | Float                  | FixPoint8d24  |
-+----------------------------+---------------------------------------------------+------------------------+---------------+
-| Stage<fc #ff0000>0</fc>_A1 | A1 Filter Coefficient                             | Float                  | FixPoint8d24  |
-+----------------------------+---------------------------------------------------+------------------------+---------------+
-| Stage<fc #ff0000>0</fc>_A2 | A2 Filter Coefficient                             | Float                  | FixPoint8d24  |
-+----------------------------+---------------------------------------------------+------------------------+---------------+
-| alpha                      | Exponential decay factor                          | Float                  | FixPoint8d24  |
-+----------------------------+---------------------------------------------------+------------------------+---------------+
-| CascadeCounts              | Number of Cascaded Stages                         | Integer32              | Integer32     |
-+----------------------------+---------------------------------------------------+------------------------+---------------+
-| ParamSize                  | Total number of filter coefficients of all stages | Integer32              | Integer32     |
-+----------------------------+---------------------------------------------------+------------------------+---------------+
++----------------+---------------------------------------------------+------------------------+---------------+
+| Parameter Name | Description                                       | ADSP-214xx/SC5xx/215xx | ADAU145x/146x |
++================+===================================================+========================+===============+
+| Stage0_B0      | B0 Filter Coefficient                             | Float                  | FixPoint8d24  |
++----------------+---------------------------------------------------+------------------------+---------------+
+| Stage0_B1      | B1 Filter Coefficient                             | Float                  | FixPoint8d24  |
++----------------+---------------------------------------------------+------------------------+---------------+
+| Stage0_B2      | B2 Filter Coefficient                             | Float                  | FixPoint8d24  |
++----------------+---------------------------------------------------+------------------------+---------------+
+| Stage0_A1      | A1 Filter Coefficient                             | Float                  | FixPoint8d24  |
++----------------+---------------------------------------------------+------------------------+---------------+
+| Stage0_A2      | A2 Filter Coefficient                             | Float                  | FixPoint8d24  |
++----------------+---------------------------------------------------+------------------------+---------------+
+| alpha          | Exponential decay factor                          | Float                  | FixPoint8d24  |
++----------------+---------------------------------------------------+------------------------+---------------+
+| CascadeCounts  | Number of Cascaded Stages                         | Integer32              | Integer32     |
++----------------+---------------------------------------------------+------------------------+---------------+
+| ParamSize      | Total number of filter coefficients of all stages | Integer32              | Integer32     |
++----------------+---------------------------------------------------+------------------------+---------------+
 
 | 
 | Here,
 
--  <fc #ff0000> Red</fc> - Stage Number (Changes for each stage coefficients)
-
-| 
+-   Red - Stage Number (Changes for each stage coefficients)
 
 .. |isibfiltmono.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/indexselectablemultiplebad/isibfiltmono.png
 .. |isibfiltstereo.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/indexselectablemultiplebad/isibfiltstereo.png
-.. |isibfiltsettings.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/indexselectablemultiplebad/isibfiltsettings.png

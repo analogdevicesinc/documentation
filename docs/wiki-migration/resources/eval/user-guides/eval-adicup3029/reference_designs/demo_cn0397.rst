@@ -8,8 +8,7 @@ General Description/Overview
 
 The **ADICUP3029_CN0397** project uses the :adi:`EVAL-CN0397-ARDZ shield <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/cn0397>` which is a single-supply, low power, low noise, 16-bit light detector utilizing wavelength specific photodiodes. The photodiodes used in this circuit are sensitive at different wavelengths, to read light intensity levels over the visible light spectrum where the plants are photosynthetically active.
 
-| 
-| The **EVAL-CN0397-ARDZ** board uses :adi:`ad8500`, a low power, precision CMOS op amp with a low input bias current of a typical 1pA which is used in a transipedance amplifier configuration to convert the current output of the photodiodes into voltage. It also features :adi:`ad7798` a 3-channel, low noise, low power 16-bit ADC that converts the analog voltage into digital data in for the processing of data into light intensity. The circuit utilizes RGB photodiodes from Everlight with their peak sensitivities 620nm (**R**), 550nm (**G**) and 470nm (**B**).
+The **EVAL-CN0397-ARDZ** board uses :adi:`ad8500`, a low power, precision CMOS op amp with a low input bias current of a typical 1pA which is used in a transipedance amplifier configuration to convert the current output of the photodiodes into voltage. It also features :adi:`ad7798` a 3-channel, low noise, low power 16-bit ADC that converts the analog voltage into digital data in for the processing of data into light intensity. The circuit utilizes RGB photodiodes from Everlight with their peak sensitivities 620nm (**R**), 550nm (**G**) and 470nm (**B**).
 
 The **ADICUP3029_CN0397** application perform ADC readings for all 3 channels, processes them and make all necessary calculations in order to provide light intensity and light concentration for each color.
 
@@ -33,7 +32,9 @@ The 16-bits ADC data are received using **SPI interface** of the EVAL-ADICUP3029
 
 Beside **light intensity** and **light concentration** values, for each channel will be displayed a **colored bar** in [0%, 100%] format for light concentration representation. It will inform the user when the concentration for a specific channel will reach **100%**. Application offer the possibility to perform a system offset calibration for each **RGB channel**. All calculation are using data specific to each color of the used LEDs:
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/table.png
+   :align: center
+   :width: 600px
 
 Demo Requirements
 -----------------
@@ -67,7 +68,7 @@ Setting up the Hardware
 -  Place the **(S5)** switch position to read "Wall/USB", and the **(S2)** switch position to read "USB".\
 
 
-|image2|
+|image1|
 
 -  Connect a jumper on **P1** between position **1-2** on EVAL-CN0397-ARDZ.
 -  Plug the **EVAL-CN0397-ARDZ** shield into the **EVAL-ADICUP3029** board, using (P3), (P4), (P5), (P6), and (P7).
@@ -76,10 +77,10 @@ Setting up the Hardware
 Configuring the Software
 ------------------------
 
-| In the *cn0397_app.h* header files you can configure the following parameters:
-| \* **ADI_APP_DISPATCH_TIMEOUT** - *DISPATCH TIMEOUT* will define how often the data is sent over Bluetooth.
+In the *cn0397_app.h* header files you can configure the following parameters:
 
--  \**ADI_APP_USE_BLUETOOTH \*\* - *ENABLE BLUETOOTH* parameter - will either use Bluetooth or will have the option to print to console window in debug mode or terminal in release mode.
+-  **ADI_APP_DISPATCH_TIMEOUT** - *DISPATCH TIMEOUT* will define how often the data is sent over Bluetooth.
+-  **ADI_APP_USE_BLUETOOTH** - *ENABLE BLUETOOTH* parameter - will either use Bluetooth or will have the option to print to console window in debug mode or terminal in release mode.
 
 Calibration procedure
 ---------------------
@@ -90,7 +91,8 @@ Calibration, which is enabled by default, can be done by covering and not allowi
 
 Once all the channels have been calibrated, the circuit is now ready for use. The output data will be available for each LED on android device if enabled.
 
-| |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/calibration_1.png
+   :align: center
 
 Outputting Data
 ---------------
@@ -103,7 +105,10 @@ There are **three** different ways to visualize the data:
 -  Serial Terminal Program (such as Putty or Tera Term)
 -  IoTNode Smart Device App
 
-| Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard. |image4|
+Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard.
+
+
+|image2|
 
 +---------------------------+-----------------------+---------------------------+
 | Data Output Destination   | Connected to Debugger | Configuration File        |
@@ -122,8 +127,10 @@ There are **three** different ways to visualize the data:
 Debug Launch Mode
 ~~~~~~~~~~~~~~~~~
 
-| **Debug launch mode** is used when connected to the debugger. In debug mode, all the outputs are directed to the console window of the CrossCore tools via semihosting. The data is also sent by default to the IoTNode smart app (ADI_APP_USE_BLUETOOTH =1), but can be turned of if desired by setting ADI_APP_USE_BLUETOOTH = 0.
-| |image5|
+**Debug launch mode** is used when connected to the debugger. In debug mode, all the outputs are directed to the console window of the CrossCore tools via semihosting. The data is also sent by default to the IoTNode smart app (ADI_APP_USE_BLUETOOTH =1), but can be turned of if desired by setting ADI_APP_USE_BLUETOOTH = 0.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/debug_mode_ble.png
+   :align: center
 
 Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to the smart app. If you have the app installed on your phone, these figure shows the output on android device.
 
@@ -138,11 +145,12 @@ Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to the 
    
 
 
-| 
-| |image6| |image7|
+|image3| |image4|
 
-| Figure shows when ADI_APP_USE_BLUETOOTH is set to 0.
-| |image8|
+Figure shows when ADI_APP_USE_BLUETOOTH is set to 0.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/debug_noble.png
+   :align: center
 
 Release Launch Mode
 ~~~~~~~~~~~~~~~~~~~
@@ -158,8 +166,7 @@ Release Launch Mode
      Stop: 1 bit
      Flow Control: none
 
-| 
-| If *ADI_APP_USE_BLUETOOTH* is set to 1, BLE will advertise and UART terminal will wait for an connection. Now start the Android App and tap scan. Once device is found, App will show **CN0397 Light Demo** which is the Bluetooth device name for **ADICUP3029_CN0397** demo. Tap on it to connect. Sensor data can now be seen on Android App as well as terminal. If you have the app installed on your phone, these figure shows the output on android device.
+If *ADI_APP_USE_BLUETOOTH* is set to 1, BLE will advertise and UART terminal will wait for an connection. Now start the Android App and tap scan. Once device is found, App will show **CN0397 Light Demo** which is the Bluetooth device name for **ADICUP3029_CN0397** demo. Tap on it to connect. Sensor data can now be seen on Android App as well as terminal. If you have the app installed on your phone, these figure shows the output on android device.
 
 .. important::
 
@@ -170,11 +177,12 @@ Release Launch Mode
    -  "Scan" for nearby demos.
    -  Once you find your demo, click on it to open it up.
    
-   |
 
 
-| |image9|
-| |image10| |image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/release_mode_ble.png
+   :align: center
+
+|image5| |image6|
 
 .. important::
 
@@ -224,41 +232,38 @@ Debugging
 
 For more detailed instructions on importing this application/demo example into the CrossCore Embedded Studios tools, please view our :doc:`How to configure the debug session </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` section.
 
--  Make sure the target board is connected to workstation (via **USB** at P10) and using the tool bar, navigate to the small Debug icon\ |image12| and select the debugging session you created. The application will programmed and the program execution will stop at the beginning of the main() function.
+-  Make sure the target board is connected to workstation (via **USB** at P10) and using the tool bar, navigate to the small Debug icon\ |image7| and select the debugging session you created. The application will programmed and the program execution will stop at the beginning of the main() function.
 -  Use step-by-step execution or directly run the program.
 
 After completion of the steps above the program will be loaded onto the system FLASH and it will run by default every time the board is powered up.
 
-| 
-| ==== Project Structure ==== The **ADICUP3029_CN0397** is a C project that uses ADuCM3029 C/C++ Project structure.
+Project Structure
+~~~~~~~~~~~~~~~~~
+
+The **ADICUP3029_CN0397** is a C project that uses ADuCM3029 C/C++ Project structure.
 
 This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for ADC, SPI read/write; configuring and reading from AD7798, UART read/write functions; calibration and calculation of light information.
 
-| |image13|
-| cn0397_app.cpp and cn0397.h are the main source and header files related to **ADICUP3029_CN0397** application. Visible light sensor (CN0397) drivers are located in RTE/Sensor folder. All ADuCM3029 related drivers can be found under RTE/ADuCM3029 folder. BLE related files can be seen under RTE/Board_Support folder.
-| **pinmux.c** – contains GPIO pinmuxing for UART and SPI.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/c_1.png
+   :align: left
 
-| 
-| // End of Document //
+cn0397_app.cpp and cn0397.h are the main source and header files related to **ADICUP3029_CN0397** application. Visible light sensor (CN0397) drivers are located in RTE/Sensor folder. All ADuCM3029 related drivers can be found under RTE/ADuCM3029 folder. BLE related files can be seen under RTE/Board_Support folder.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/table.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_usb_revc.png
+**pinmux.c** – contains GPIO pinmuxing for UART and SPI.
+
+// End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_usb_revc.png
    :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/calibration_1.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
    :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/debug_mode_ble.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-134458.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-134458.png
    :width: 450px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-140134.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-140134.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/debug_noble.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/release_mode_ble.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-134458.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-134458.png
    :width: 450px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-140134.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-140134.png
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png
    :width: 30px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/c_1.png

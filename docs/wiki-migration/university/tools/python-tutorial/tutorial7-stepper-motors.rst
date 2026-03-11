@@ -21,9 +21,7 @@ To rotate the stepper motor a sequence of "high" and "low" levels is applied to 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 2 - 74HC541 octal drivers
-| 1 - 5 V Stepper motor (Mitsumi M35SP-7T bipolar stepper motor or similar)
+ADALM1000 hardware module 2 - 74HC541 octal drivers 1 - 5 V Stepper motor (Mitsumi M35SP-7T bipolar stepper motor or similar)
 
 Directions:
 ~~~~~~~~~~~
@@ -86,11 +84,7 @@ The Python layer contains a function to configure and control the digital input 
 
 In this first code example we configure the four digital pins, PIO 0 - 3, as outputs using the basic devx.ctrl_transfer () function to turn them on and off one at a time in the desired sequence by looping through a look-up table.
 
-| # step tables for full steps
-| D0steptab = [1, 0, 0, 0]
-| D1steptab = [0, 1, 0, 0]
-| D2steptab = [0, 0, 1, 0]
-| D3steptab = [0, 0, 0, 1]
+# step tables for full steps D0steptab = [1, 0, 0, 0] D1steptab = [0, 1, 0, 0] D2steptab = [0, 0, 1, 0] D3steptab = [0, 0, 0, 1]
 
 While this is a fairly simple approach it is sort of brute force and the width and frequency of the pulses is highly dependent on the speed and activity level of the computer being used.
 
@@ -100,7 +94,9 @@ While this is a fairly simple approach it is sort of brute force and the width a
          pointer = pointer + 1
          if pointer > pointermax:
              pointer = 0
-             
+
+::
+
          D0stepcode = 0x50 + D0steptab[pointer] # 0x50 = set to 0, 0x51 = set to 1
          D1stepcode = 0x50 + D1steptab[pointer]
          D2stepcode = 0x50 + D2steptab[pointer]
@@ -108,8 +104,10 @@ While this is a fairly simple approach it is sort of brute force and the width a
          devx.ctrl_transfer(DevID, 0x40, D0stepcode, 0, 0, 0, 0, 100) # set PIO 0
          devx.ctrl_transfer(DevID, 0x40, D1stepcode, 1, 0, 0, 0, 100) # set PIO 1
          devx.ctrl_transfer(DevID, 0x40, D2stepcode, 2, 0, 0, 0, 100) # set PIO 2
-         devx.ctrl_transfer(DevID, 0x40, D3stepcode, 3, 0, 0, 0, 100) # set PIO 3     
-         
+         devx.ctrl_transfer(DevID, 0x40, D3stepcode, 3, 0, 0, 0, 100) # set PIO 3
+
+::
+
          time.sleep(steptime)
          i = i + 1
 
@@ -119,12 +117,9 @@ We need to define two functions, one for forward rotation and one for reverse ro
 
 To rotate the motor using half steps all we need to do is expand the look-up table as shown here:
 
-| # step tables for 1/2 steps
-| D0steptab = [1, 1, 0, 0, 0, 0, 0, 1]
-| D1steptab = [0, 1, 1, 1, 0, 0, 0, 0]
-| D2steptab = [0, 0, 0, 1, 1, 1, 0, 0]
-| D3steptab = [0, 0, 0, 0, 0, 1, 1, 1]
-| As we can see there are now 8 patterns in the table. The half way between steps are produced when both coils are on at the same time.
+# step tables for 1/2 steps D0steptab = [1, 1, 0, 0, 0, 0, 0, 1] D1steptab = [0, 1, 1, 1, 0, 0, 0, 0] D2steptab = [0, 0, 0, 1, 1, 1, 0, 0] D3steptab = [0, 0, 0, 0, 0, 1, 1, 1]
+
+As we can see there are now 8 patterns in the table. The half way between steps are produced when both coils are on at the same time.
 
 Questions:
 ~~~~~~~~~~

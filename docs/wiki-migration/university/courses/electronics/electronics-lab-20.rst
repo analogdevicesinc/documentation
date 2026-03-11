@@ -12,16 +12,7 @@ High gain inverting amplifier
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 3 - 100 KΩ Resistor
-| 1 - 10 KΩ Resistor
-| 1 - 4.7 KΩ Resistor
-| 2 - 22 uF capacitor
-| 2 - 1 uF capacitor
-| 1 - 10 pF capacitor
-| 1 - CD4069A, CD4069UB or 74HCU04 unbuffered hex inverter (be sure not to use the buffered 74HC04 version)
+| ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 3 - 100 KΩ Resistor 1 - 10 KΩ Resistor 1 - 4.7 KΩ Resistor 2 - 22 uF capacitor 2 - 1 uF capacitor 1 - 10 pF capacitor 1 - CD4069A, CD4069UB or 74HCU04 unbuffered hex inverter (be sure not to use the buffered 74HC04 version)
 | Alternatively a simple CMOS inverter can be built using the CD4007 transistor array. Note the appendix at the end.
 
 Background:
@@ -105,8 +96,6 @@ On your solder-less breadboard construct the amplifier circuit shown in figure 6
    Figure 6 single stage amplifier
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -120,14 +109,12 @@ Configure the waveform generator for a 1 KHz sine wave with 2V amplitude peak-to
    Figure 7 Hardware setup for single stage amplifier using CD4007
 
 
-.. _procedure-1:
-
 Procedure:
 ----------
 
 Apply a sinusoidal signal of 2V amplitude peak-to-peak with zero offset voltage to the input and measure the gain of the entire system from 10 to 100 KHz. Use the Network (Bode) analyzer to plot gain and phase vs. frequency for the entire system.
 
-Figure 8 Plot for single stage amplifier using CD4007 </WRAP>
+Figure 8 Plot for single stage amplifier using CD4007 
 
 Questions:
 ----------
@@ -150,8 +137,6 @@ On your solder-less breadboard construct the amplifier circuit shown in figure 8
    Figure 8 three stage amplifier
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
@@ -165,8 +150,6 @@ Configure the waveform generator for a 1 KHz sine wave with 2V amplitude peak-to
    Figure 9 three stage amplifier hardware setup using CD4007
 
 
-.. _procedure-2:
-
 Procedure:
 ----------
 
@@ -176,8 +159,6 @@ Apply a sinusoidal signal of 2V amplitude peak-to-peak with zero offset voltage 
 
    Figure 10. Plot for three stage amplifier hardware setup using CD4007
 
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -235,8 +216,6 @@ What sort of circuit could you make to generate the 100 KHz square wave other th
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a20_f7.png
    :align: center
    :width: 500px
-
-.. _questions-2:
 
 Questions:
 ----------

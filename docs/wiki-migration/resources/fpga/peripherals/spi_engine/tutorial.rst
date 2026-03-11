@@ -129,7 +129,7 @@ Key timing characteristics
 
    18 bit transfers
    750 ns T_CYC
-   500 ns T_CONV   
+   500 ns T_CONV
    250 ns T_ACQ
    12 ns T_SCLK @ >3V VIO (cora pmod is 3V3)
 

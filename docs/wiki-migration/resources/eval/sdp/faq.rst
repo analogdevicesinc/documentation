@@ -4,7 +4,7 @@ FAQ
 What is the System Demonstration Platform?
 ------------------------------------------
 
-| The System Demonstration Platform (SDP) is a hardware and software platform that provides a means to communicate from the PC to ADI products and systems that require digital control and/or read back. It can also form the core of complex demonstration/proof of concept systems or ‘Circuits from the Lab’ developments. The hardware element of the platform consists of a series of controller boards, interposer boards and daughter boards.
+The System Demonstration Platform (SDP) is a hardware and software platform that provides a means to communicate from the PC to ADI products and systems that require digital control and/or read back. It can also form the core of complex demonstration/proof of concept systems or ‘Circuits from the Lab’ developments. The hardware element of the platform consists of a series of controller boards, interposer boards and daughter boards.
 
 -  The controller boards allow a connection to the PC via USB 2.0.
 -  Interposer board’s route the signals from the SDP connector to a second connector.
@@ -18,17 +18,14 @@ What hardware does it use?
 Controller Boards
 ~~~~~~~~~~~~~~~~~
 
-| *SDP-B*
-| The SDP-B has a Blackfin (BF527) at its core. The ADZS-BF527 has on chip USB 2.0 capabilities as well as many external interface ports such as SPI, SPORT, I2C, GPIO, Timers, UART and a 16-bit parallel interface exposed through two identical 120 pin connectors. The board also has SDRAM and a serial flash to boot from.
+*SDP-B* The SDP-B has a Blackfin (BF527) at its core. The ADZS-BF527 has on chip USB 2.0 capabilities as well as many external interface ports such as SPI, SPORT, I2C, GPIO, Timers, UART and a 16-bit parallel interface exposed through two identical 120 pin connectors. The board also has SDRAM and a serial flash to boot from.
 
-| *SDP-S*
-| The SDP-B is a serial only controller board. It has USB 2.0 capabilities and external interfaces such as I2C, GPIO and SPI exposed through its single 120 pin connector.
+*SDP-S* The SDP-B is a serial only controller board. It has USB 2.0 capabilities and external interfaces such as I2C, GPIO and SPI exposed through its single 120 pin connector.
 
 Interposer Boards
 ~~~~~~~~~~~~~~~~~
 
-| *SDP Breakout Board*
-| The SDP breakout board allows each of the individual signals on the 120 pin connector to be monitored via through hole probe points.
+*SDP Breakout Board* The SDP breakout board allows each of the individual signals on the 120 pin connector to be monitored via through hole probe points.
 
 Daughter Boards
 ~~~~~~~~~~~~~~~
@@ -38,16 +35,12 @@ SDP daughter boards are designed to meet the SDP Design guidelines ensuring that
 3rd Party Boards
 ~~~~~~~~~~~~~~~~
 
-| *BeMicro-SDP Interposer Board*
-| This board allows for SDP compatible daughter boards to be connected to the Arrow BeMicro SDK embedded software development kit. The BeMicro-SDP Interposer boards has a 120 pin connector on one side of the board and a Samtec edge connector receptor at the other side.
+*BeMicro-SDP Interposer Board* This board allows for SDP compatible daughter boards to be connected to the Arrow BeMicro SDK embedded software development kit. The BeMicro-SDP Interposer boards has a 120 pin connector on one side of the board and a Samtec edge connector receptor at the other side.
 
 How big is it?
 --------------
 
-| The SDP-B board is 60mm (2.36”) x 70mm (2.75”). The form factor is such that it has two identical connectors.
-| The SDP-S board is 60mm (2.36") x 22mm (0.87"). It has one 120 pin connector.
-| The SDP Breakout Board is 120mm (4.72”) x 58mm (2.28”).
-| The BeMicro-SDP Interposer Board is 19mm (0.74") x 58mm (2.28").
+The SDP-B board is 60mm (2.36”) x 70mm (2.75”). The form factor is such that it has two identical connectors. The SDP-S board is 60mm (2.36") x 22mm (0.87"). It has one 120 pin connector. The SDP Breakout Board is 120mm (4.72”) x 58mm (2.28”). The BeMicro-SDP Interposer Board is 19mm (0.74") x 58mm (2.28").
 
 What about power?
 -----------------

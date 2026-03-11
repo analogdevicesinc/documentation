@@ -9,17 +9,20 @@ Signal Splitter
 Description
 -----------
 
-| The Splitter block splits an input signal to two are more outputs.
-| Complex Splitter module split the complex input to real part and imaginary part.
-| ===== Variants =====
+The Splitter block splits an input signal to two are more outputs.
+
+Complex Splitter module split the complex input to real part and imaginary part.
+
+Variants
+--------
 
 -  Splitter
 -  Block Splitter
 -  Splitter (Frequency Domain)
 -  Complex Splitter
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +-----------------------------+------------+------------------+---------------+------------------+
 | Name                        | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -48,18 +51,18 @@ Input
 Output
 ~~~~~~
 
-+--------------------------+----------------------------------------------------+------------------+
-| Name                     | Type                                               | Description      |
-+==========================+====================================================+==================+
-| Output<fc #ff0000>X</fc> | Control(Complex Pin for Splitter Frequency domain) | Output channel X |
-+--------------------------+----------------------------------------------------+------------------+
++---------+----------------------------------------------------+------------------+
+| Name    | Type                                               | Description      |
++=========+====================================================+==================+
+| OutputX | Control(Complex Pin for Splitter Frequency domain) | Output channel X |
++---------+----------------------------------------------------+------------------+
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +--------------------+---------------+-------+-------------------------------------------------------------------------+
 | GUI Parameter Name | Default Value | Range | Function Description                                                    |

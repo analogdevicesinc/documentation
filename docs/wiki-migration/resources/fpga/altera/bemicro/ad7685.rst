@@ -267,7 +267,7 @@ NIOS II Software Design
 Demonstration Project User Interface
 ====================================
 
-\* Execute **data_capture.bat** script. At this point 16 Kbyte of data will be acquired from the ADC and saved into the BeMicro SDK memory. The data stored in the BeMicro SDK memory is transfered to the PC. After the data is transferred to the PC it is converted to 16 bit values.
+- Execute **data_capture.bat** script. At this point 16 Kbyte of data will be acquired from the ADC and saved into the BeMicro SDK memory. The data stored in the BeMicro SDK memory is transfered to the PC. After the data is transferred to the PC it is converted to 16 bit values.
 
 -  The data captured from the ADC is saved into a comma separated values (.csv) file named **Acquisition.csv**, located in the same folder as the **data_capture.bat** file.
 -  The data capture status is also displayed in the opened command window as shown in the figure below.
@@ -289,8 +289,6 @@ Troubleshooting
 
    See `troubleshooting12 <https://wiki.analog.com/troubleshooting12>`_
 
-
-.. _more-information-1:
 
 More information
 ================

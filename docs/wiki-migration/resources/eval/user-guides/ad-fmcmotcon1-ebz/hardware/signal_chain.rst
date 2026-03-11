@@ -5,7 +5,9 @@ AD-FMCMOTCON1-EBZ Signal Measurement Chain
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- The motor control system allows the measurement of the Ia(phase A current), Ib(phase B current) and It(total current) as well as the measurement of Vbus using signal chains which involve components from both the controller and low voltage driver boards.
+
+
+The motor control system allows the measurement of the Ia(phase A current), Ib(phase B current) and It(total current) as well as the measurement of Vbus using signal chains which involve components from both the controller and low voltage driver boards.
 
 Ia, Ib Measurement Signal Chain
 -------------------------------
@@ -60,8 +62,9 @@ The It current is sensed using a 5mΩ shunt resistor. There are two possible mea
 -  The small differential voltage on the shunt resistor is measured directly with the :adi:`AD7401` isolated ΣΔ modulator without the need of extra interfacing and signal conditioning circuitry
 -  The formula for calculating It is:
 
-| :math:`I = (32768-counts) \times ADCrange / 2^{ADCbits-1} \times RS` where $delimlbracematrix{4}{1}\ |counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3 } {ADCbits = 16| $
-| **Case 2: The ADC is not placed in the proximity of the shunt resistor**
+:math:`I = (32768-counts) \times ADCrange / 2^{ADCbits-1} \times RS` where $delimlbracematrix{4}{1}\ |counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3 } {ADCbits = 16| $
+
+**Case 2: The ADC is not placed in the proximity of the shunt resistor**
 
 -  The small differential voltage on the shunt resistor is amplified on the drive board with the :adi:`AD8630` difference amplifier placed close to the shunt resistor in order to avoid noise coupling. The signal is amplified to 0..5V to minimize the effect of the coupled noise.
 -  The amplified signal goes on the drive board through another programmable amplification stage realized using the :adi:`AD8251` PGA. This ensures that the ADC will always receive at input signals properly scaled to fit its input range.
@@ -114,7 +117,7 @@ The Vbus XADC measurement chain utilizes the entire path of the regular measurem
 +---+
 +---+
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#lv_board
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/navigation AD-FMCMOTCON1-EBZ#lv_board
    :alt: Low Voltage Drive Board#..:\|Overview#dyno|Dynamometer Drive system
 
 .. |counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3 } {ADCbits = 16| image:: https://wiki.analog.com/_media/counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3 } {ADCbits = 16

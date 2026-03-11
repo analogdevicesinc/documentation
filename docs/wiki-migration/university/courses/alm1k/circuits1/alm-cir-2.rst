@@ -51,8 +51,7 @@ For the circuit of figure 2, the Current Division formulas are:
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Various Resistors 470 Ω, 1 KΩ, 4.7 KΩ. and 1.5 KΩ
+ADALM1000 hardware module Various Resistors 470 Ω, 1 KΩ, 4.7 KΩ. and 1.5 KΩ
 
 Procedure:
 ~~~~~~~~~~
@@ -156,9 +155,7 @@ Build the circuit from figure 7 using your values for R\ :sub:`1` and R\ :sub:`2
 
 **For Further Reading:**
 
-| DC Voltmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/voltmeter_lab-0.pdf>`_ (volt-meter-tool-1.2.exe)
-| DC Ohmmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/ohmmeter_lab-0.pdf>`_ (ohm-meter-vdiv-1.2.exe)
-| DC Meter-Source `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/meter-source-lab0.pdf>`_ (dc-meter-source-tool-1.3.exe)
+DC Voltmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/voltmeter_lab-0.pdf>`_ (volt-meter-tool-1.2.exe) DC Ohmmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/ohmmeter_lab-0.pdf>`_ (ohm-meter-vdiv-1.2.exe) DC Meter-Source `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/meter-source-lab0.pdf>`_ (dc-meter-source-tool-1.3.exe)
 
 :doc:`Oscilloscope Terminology </wiki-migration/university/courses/alm1k/intro/oscilloscope-terminology>`
 

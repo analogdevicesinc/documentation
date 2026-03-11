@@ -17,15 +17,7 @@ The objective of this first experiment is to build an astable multivibrator. Two
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 470 Ω Resistors
-| 2 - 20 KΩ Resistors
-| 2 - small signal NPN transistors (2N3904)
-| 1 - Red LED
-| 1 - Green LED
-| 2 - 47 uF Capacitors
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 470 Ω Resistors 2 - 20 KΩ Resistors 2 - small signal NPN transistors (2N3904) 1 - Red LED 1 - Green LED 2 - 47 uF Capacitors
 
 Directions:
 -----------
@@ -46,14 +38,15 @@ Procedure:
 
 | Turn on the Vp power supply only after you have completely built and checked the circuit. The red and green LEDs should alternately blink on and off at about a 1 second interval. You can also use the scope channels to monitor the output waveforms (Q and Qbar).
 | |image1|
-|
 
 .. container:: centeralign
 
    Figure 2, Astable Multivibrator Breadboard Circuit
 
 
-| The frequency of oscillation is very slow due to the large values of capacitors C\ :sub:`1` and C\ :sub:`2`. Replace C\ :sub:`1` and C\ :sub:`2` with 0.1uF capacitors. The circuit should oscillate much faster now such that both LEDs seem to be on at the same time. Using the scope channels you should now measure the frequency and period of the output waveforms.
+The frequency of oscillation is very slow due to the large values of capacitors C\ :sub:`1` and C\ :sub:`2`. Replace C\ :sub:`1` and C\ :sub:`2` with 0.1uF capacitors. The circuit should oscillate much faster now such that both LEDs seem to be on at the same time. Using the scope channels you should now measure the frequency and period of the output waveforms.
+
+
 
 |image2|
 
@@ -72,40 +65,22 @@ Procedure:
 Questions:
 ----------
 
-| 1. What are the two most important components in the multivibrator circuit shown in figure 1?
-| 2. What would be the effect of increasing or decreasing the value of only one capacitor?
-| 3. What would be the effect of increasing or decreasing the value of both capacitors?
-| Add more questions here:
+1. What are the two most important components in the multivibrator circuit shown in figure 1? 2. What would be the effect of increasing or decreasing the value of only one capacitor? 3. What would be the effect of increasing or decreasing the value of both capacitors?
+
+Add more questions here:
 
 The Monostable Multivibrator
 ============================
-
-.. _objectives-1:
 
 Objectives:
 -----------
 
 The objective of this second experiment is to build an monostable multivibrator. One resistance-capacitance network determines the duration of the one-shot output. The amplifying devices (transistors) are connected in a common-emitter configuration, as shown in figure 2.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 470 Ω Resistors
-| 1 - 1 KΩ Resistor
-| 1 - 20 KΩ Resistor
-| 1 - 47 KΩ Resistor
-| 1 - small signal diode (1N914)
-| 2 - small signal NPN transistors (2N3904)
-| 1 - Red LED
-| 1 - Green LED
-| 1 - 47 uF Capacitor
-
-.. _directions-1:
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 470 Ω Resistors 1 - 1 KΩ Resistor 1 - 20 KΩ Resistor 1 - 47 KΩ Resistor 1 - small signal diode (1N914) 2 - small signal NPN transistors (2N3904) 1 - Red LED 1 - Green LED 1 - 47 uF Capacitor
 
 Directions:
 -----------
@@ -116,36 +91,30 @@ Construct the circuit as shown in figure 2 on your solder-less breadboard. The g
    :align: center
    :width: 500px
 
-|
-
 .. container:: centeralign
 
    Figure 5, Monostable Multivibrator
 
 
-| |image4|
-|
+   |image4|
 
 .. container:: centeralign
 
    Figure 6, Monostable Multivibrator Breadboard Circuit
 
 
-.. _procedure-1:
-
 Procedure:
 ----------
 
 Turn on the Vp power supply only after you have completely built and checked the circuit. The red LED should be lit and the green LED should be dark. With a length of wire, momentarily touch the trigger input (end of R\ :sub:`5`) to Vp and immediately let go. The red LED should go out and the green LED come on for about a second and then go back to the stable state with the red on and green off. Try this a few times.
 
-| |image5|
+
+|image5|
 
 .. container:: centeralign
 
    Figure 6, Monostable Multivibrator Behavior on trigger
 
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -155,30 +124,15 @@ Add questions here:
 The Bistable Multivibrator ( or flip-flop )
 ===========================================
 
-.. _objectives-2:
-
 Objectives:
 -----------
 
 The objective of this third experiment is to build an bistable multivibrator. The amplifying devices (transistors) are connected in a common-emitter configuration, as shown in figure 3.
 
-.. _materials-2:
-
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 470 Ω Resistors
-| 2 - 1 KΩ Resistors
-| 2 - 47 KΩ Resistors
-| 2 - small signal NPN transistors (2N3904)
-| 2 - small signal diodes (1N914)
-| 1 - Red LED
-| 1 - Green LED
-
-.. _directions-2:
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 470 Ω Resistors 2 - 1 KΩ Resistors 2 - 47 KΩ Resistors 2 - small signal NPN transistors (2N3904) 2 - small signal diodes (1N914) 1 - Red LED 1 - Green LED
 
 Directions:
 -----------
@@ -202,8 +156,6 @@ Construct the circuit as shown in figure 3 on your solder-less breadboard. The g
    Figure 8, Bistable Multivibrator Breadboard Circuit
 
 
-.. _procedure-2:
-
 Procedure:
 ----------
 
@@ -226,8 +178,6 @@ Turn on the Vp power supply only after you have completely built and checked the
 
 Connect the SET and RESET inputs to two of the digital I/O pins on the ADALM2000 connector. Configure the pins as push-pull outputs. Used the static digital I/O screen to control the digital pins.
 
-.. _questions-2:
-
 Questions:
 ----------
 
@@ -236,31 +186,15 @@ Add Questions here:
 D-Type Flip-Flop
 ----------------
 
-.. _objectives-3:
-
 Objectives:
 ~~~~~~~~~~~
 
 The objective of this fourth experiment is to use the bistable or set - reset flip-flop from experiment 3 to build what is known as a D-Type flip-flop.
 
-.. _materials-3:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 3 - 1 KΩ resistors
-| 1 - 100 KΩ resistor
-| 2 - 200 KΩ resistors
-| 2 - 47 KΩ resistors
-| 3 - small signal NPN transistors (2N3904)
-| 2 - small signal diodes (1N914)
-| 2 - 39 pF capacitors
-| 2 - 100 pF capacitors
-
-.. _directions-3:
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 3 - 1 KΩ resistors 1 - 100 KΩ resistor 2 - 200 KΩ resistors 2 - 47 KΩ resistors 3 - small signal NPN transistors (2N3904) 2 - small signal diodes (1N914) 2 - 39 pF capacitors 2 - 100 pF capacitors
 
 Directions:
 ~~~~~~~~~~~
@@ -285,15 +219,15 @@ A negative going pulse on the Clock input, coupled through C\ :sub:`1` and C\ :s
 Hardware setup:
 ~~~~~~~~~~~~~~~
 
-| The AWG1 output should be connected to the input marked Clock in figure 4. The AWG2 output should be connected to the D input. The first scope channel 1 input should also be connected to Clock input. The second input scope channel 2 should be connected to the Q output of the flip-flop in figure 4. Both the AWG1 and AWG2 should be configured as a square wave with a 5 V amplitude peak-to-peak and 2.5 V offset ( 0 - 5V swing ). Set the frequency of AWG1 to 10 KHz and set the frequency of AWG2 to 5 KHz. Set the phase of AWG2 to 45 degrees. Be sure to configure the two AWG outputs to operate synchronously.
-| |image8|
+The AWG1 output should be connected to the input marked Clock in figure 4. The AWG2 output should be connected to the D input. The first scope channel 1 input should also be connected to Clock input. The second input scope channel 2 should be connected to the Q output of the flip-flop in figure 4. Both the AWG1 and AWG2 should be configured as a square wave with a 5 V amplitude peak-to-peak and 2.5 V offset ( 0 - 5V swing ). Set the frequency of AWG1 to 10 KHz and set the frequency of AWG2 to 5 KHz. Set the phase of AWG2 to 45 degrees. Be sure to configure the two AWG outputs to operate synchronously.
+
+
+|image8|
 
 .. container:: centeralign
 
    Figure 12 D type flip-flop breadboard circuit
 
-
-.. _procedure-3:
 
 Procedure:
 ~~~~~~~~~~
@@ -315,8 +249,6 @@ Turn on the Vp power supply and enable the AWG outputs only after you have compl
    Figure 14: Plot of Q and D signal
 
 
-.. _questions-3:
-
 Questions:
 ~~~~~~~~~~
 
@@ -329,30 +261,15 @@ The capacitor coupling ( AC coupling ) of the clock input relies on the rise and
 Divide by 2 Flip-Flop
 ---------------------
 
-.. _objectives-4:
-
 Objectives:
 ~~~~~~~~~~~
 
 The objective of this fifth experiment is to modify the D-type flip-flop from experiment 4 to build a circuit that divides the frequency of an input signal by 2.
 
-.. _materials-4:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 1 KΩ resistors
-| 2 - 200 KΩ resistors
-| 2 - 47 KΩ resistors
-| 2 - small signal NPN transistors (2N3904)
-| 2 - small signal diodes (1N914)
-| 2 - 39 pF capacitors
-| 2 - 100 pF capacitors
-
-.. _directions-4:
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 1 KΩ resistors 2 - 200 KΩ resistors 2 - 47 KΩ resistors 2 - small signal NPN transistors (2N3904) 2 - small signal diodes (1N914) 2 - 39 pF capacitors 2 - 100 pF capacitors
 
 Directions:
 ~~~~~~~~~~~
@@ -376,8 +293,6 @@ Since the collector voltage of Q\ :sub:`2` , the Q output node, changes state fo
    Figure 15 Divide by 2 circuit
 
 
-.. _hardware-setup-1:
-
 Hardware setup:
 ~~~~~~~~~~~~~~~
 
@@ -390,8 +305,6 @@ The AWG1 output and scope channel 1 input should both be connected to the input 
 
    Figure 16 Divide by 2 flipflop breadboard circuit
 
-
-.. _procedure-4:
 
 Procedure:
 ~~~~~~~~~~
@@ -412,8 +325,6 @@ Turn on the Vp power supply and enable AWG1 output only after you have completel
 
    Figure 16: Plot of Clock and QB output
 
-
-.. _questions-4:
 
 Questions:
 ~~~~~~~~~~

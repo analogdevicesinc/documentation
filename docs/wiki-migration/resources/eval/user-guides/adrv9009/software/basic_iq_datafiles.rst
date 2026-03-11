@@ -113,13 +113,12 @@ Two Symbols per line - one for TX1 and TX2
    0.001351,0.001351,0.001351,-0.001351
    ...
 
-|
-
 .. tip::
 
    The file is being analyzed and **automatically** scaled to full scale!
 
-   | The latest version of the fmcomms IIO scope plug-in supports the TEXTU option valid range with the 'TEXTU' option is:
+   
+   The latest version of the fmcomms IIO scope plug-in supports the TEXTU option valid range with the 'TEXTU' option is:
    
    ======== ===========
    Board    Range
@@ -213,10 +212,7 @@ Compiling the Sample Application
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -230,10 +226,7 @@ Usage Examples
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -265,10 +258,7 @@ Usage Examples
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

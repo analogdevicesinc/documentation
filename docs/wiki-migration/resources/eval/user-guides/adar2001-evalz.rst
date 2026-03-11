@@ -19,8 +19,8 @@ The :adi:`adar2001` has two integrated state machines, one for the Multiplier se
 
 -  SPI writes to the SEQUENCER_CTRL_SPI register (0x44)
 
-| 
-| |ADAR2001-EVALZ Board|
+
+|ADAR2001-EVALZ Board|
 
 .. container:: centeralign
 
@@ -94,8 +94,7 @@ There is an on-board LDO (U105) which generates the 1.8V required to safely driv
 RF Input and Output Signals
 ---------------------------
 
-| The ADAR2001-EVALZ board has 11 edge-mounted and 2 vertical RF connectors which are described in Table 1.
-| **Table 1: RF Connectors**
+The ADAR2001-EVALZ board has 11 edge-mounted and 2 vertical RF connectors which are described in Table 1. **Table 1: RF Connectors**
 
 +--------------+------------------+-------------+------------+----------------------------------+
 | Connector(s) | Name(s)          | Orientation | Series     | Description                      |
@@ -124,7 +123,6 @@ RF Input and Output Signals
    Figure 2: ADAR2001-EVALZ Connections
 
 
-**
 
 Digital Signals
 ---------------
@@ -146,8 +144,7 @@ The ADAR2001-EVALZ board has multiple interfaces for driving the :adi:`adar2001`
 Only the signals in/out of the :adi:`sdp` connector are routed through the level translation circuitry. Therefore, if either the test points or SMA connectors are used to drive the sequencer control lines, the input logic level must be set to 1.8V.
 
 | Also, if the SMA connectors are used to drive the sequencers at high speed, it’s best practice to terminate the signal lines in 50Ω using resistors R114 and R115. By default, these resistors are not installed.
-
---------------
+| ----
 
 EVALUATION AND TEST PROCEDURES
 ==============================
@@ -162,7 +159,6 @@ Hardware Setup
    Figure 3: Typical ADAR2001-EVALZ setup for RF measurements
 
 
-**
 
 `Figure 3 <https://wiki.analog.com/>`_ shows a typical test setup for RF measurements using a spectrum analyzer. Note that any loss in the test setup needs to be calibrated out for the most accurate measurements. The procedure for building this test setup is outlined below:
 
@@ -191,7 +187,6 @@ Software Initialization
    Figure 4: Access the** :adi:`adar2001` **Plugin from ACE
 
 
-**
 
 -  Download and install :adi:`ace` by following the instructions in the `ACE user manual <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_.
 -  Connect the :adi:`sdp` controller board to both the PC and the ADAR2001-EVALZ.
@@ -204,7 +199,6 @@ Software Initialization
    Figure 5:** :adi:`adar2001` **Main GUI Overview
 
 
-**
 
 Mutliplier Block Setup
 ----------------------
@@ -272,7 +266,6 @@ Multiplier/Filter Mode Settings
    Figure 6: Multiplier/Filter sequencer configuration page
 
 
-**
 
 To change any of the pre-programmed Multiplier/Filter Sequencer modes, follow the below steps:
 
@@ -296,14 +289,12 @@ To change the order and/or depth of the state machine, follow the below steps:
 
    |image6|
 
-**
 
 .. container:: centeralign
 
    Figure 7: Multiplier/Filter State machine pointer diagram
 
 
-**
 
 -  To set the order of the states, choose a mode from the middle Mode dropdown to apply to a state. Choose a state from the middle State dropdown. The current setting of that state will appear in the text on the right. Click the button labelled “Apply Selected Mode to State”, and the readout will update to reflect the change. See “RECONFIGURE STATE” in `Figure 6 <https://wiki.analog.com/>`_.
 -  Repeat the process until all the desired states are set.
@@ -319,7 +310,6 @@ Transmitter Mode Settings
    Figure 8: Transmitter sequencer configuration page
 
 
-**
 
 To change any of the pre-programmed Transmitter Sequencer modes, follow the below steps:
 
@@ -343,14 +333,12 @@ To change the order and/or depth of the state machine, follow the below steps:
 
    |image8|
 
-**
 
 .. container:: centeralign
 
    Figure 9: Transmitter State machine pointer diagram
 
 
-**
 
 -  To set the order of the states, choose a mode from the middle Mode dropdown to apply to a state. Choose a state from the middle State dropdown. The current setting of that state will appear in the text on the right. Click the button labelled “Apply Selected Mode to State”, and the readout will update to reflect the change. See “RECONFIGURE STATE” in `Figure 8 <https://wiki.analog.com/>`_.
 -  Repeat the process until all the desired states are set.

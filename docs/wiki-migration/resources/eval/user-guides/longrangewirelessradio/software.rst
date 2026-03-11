@@ -25,7 +25,7 @@ Requirements
              * [[http://sourceforge.net/project/showfiles.php?group_id=67297|UART serial monitor]]
              * [[https://etcher.balena.io|Balena Etcher]] image writing tool
              * [[https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html|Chirpstack Gateway OS]]
-   *  [[https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734|RAK5146 PiHAT Kit]] consisting of 
+   *  [[https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734|RAK5146 PiHAT Kit]] consisting of
      * One (1) RAK5146 SPI module
        * One (1) RAK5146 PiHAT
          * Long range and GPS antenna
@@ -35,8 +35,8 @@ Requirements
    * One (1) LAN cable
    * One (1) Micro USB to USB cable
 
-| 
-| ====== PHASE 2: Firmware Setup ======
+PHASE 2: Firmware Setup
+=======================
 
 .. note::
 
@@ -54,8 +54,8 @@ Requirements
 
 
 -  Download the `AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`_ and extract the file to a known location.
--  Double-click on the <fc #6495ed>\ **AD-MAX32WISE-SLZ-Rel1.0.0.exe.**\ </fc> and follow the installation prompts.
--  Go to <fc #6495ed>\ **C:\\Analog Devices\\AD-MAX32WISE-SLZ-Rel1.0.0\\Software\\ad_max32wise_src\\bin**\ </fc> and find the firmware you need to load based on the chosen sensor node.
+-  Double-click on the **AD-MAX32WISE-SLZ-Rel1.0.0.exe.** and follow the installation prompts.
+-  Go to **C:\\Analog Devices\\AD-MAX32WISE-SLZ-Rel1.0.0\\Software\\ad_max32wise_src\\bin** and find the firmware you need to load based on the chosen sensor node.
    The firmware folder should contain the BIN, ELF, and HEX file. |image1|
 
    |image2|
@@ -81,20 +81,20 @@ Requirements
 
    |image5|
 
-| 
-
 --------------
 
-| 
-| ====== PHASE 3: Gateway Setup ====== To demonstrate the long range radio communication capability based on the chirp spread spectrum (CSS) technique, a gateway connection must first be established.
-| A gateway transmits the data received from the Base Board and Sensor Nodes to the internet or to your local application server. In order to do this, you must properly set up the Concentrator and the Host MCU.
-| This setup uses the `Raspberry Pi 4 <https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734>`_ as the hardware and `ChirpStack v4 <https://www.chirpstack.io/docs/>`_ as the gateway OS. Follow below instructions to set up the gateway connection and use the web interface for your applications.
+PHASE 3: Gateway Setup
+======================
+
+To demonstrate the long range radio communication capability based on the chirp spread spectrum (CSS) technique, a gateway connection must first be established.
+
+A gateway transmits the data received from the Base Board and Sensor Nodes to the internet or to your local application server. In order to do this, you must properly set up the Concentrator and the Host MCU.
+
+This setup uses the `Raspberry Pi 4 <https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734>`_ as the hardware and `ChirpStack v4 <https://www.chirpstack.io/docs/>`_ as the gateway OS. Follow below instructions to set up the gateway connection and use the web interface for your applications.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_setup.png
    :align: center
    :width: 1000px
-
-.. _requirements-1:
 
 Requirements
 ------------
@@ -125,24 +125,28 @@ Hardware
 -  USB keyboard and mouse
 -  LAN cable
 
-| 
-| === Software ===
+Software
+--------
 
 -  `Balena Etcher <https://etcher.balena.io>`_ image writing tool
 -  `Chirpstack Gateway OS version 4.1.1 <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_
 
-| 
-| === Documentation ===
+Documentation
+-------------
 
 -  `About ChirpStack <https://www.chirpstack.io/docs/>`_
 -  `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/index.html>`_
 
-| 
-| ==== 3.1 Hardware Assembly of the Concentrator ====
-| <fc #6495ed>\ **What is a Concentrator?**\ </fc>
-| A concentrator is an essential part of any gateway because it enables the reception and transmission of data packets from and to the end devices. It can receive multiple signals to serve a large number of end device.
-| In this example, the `RAK5146 PiHAT Kit <https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734>`_ and the `Raspberry Pi 4 <https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>`_ act as the concentrator.
-| Follow below steps to setup the concentrator hardware:
+3.1 Hardware Assembly of the Concentrator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**What is a Concentrator?**
+
+A concentrator is an essential part of any gateway because it enables the reception and transmission of data packets from and to the end devices. It can receive multiple signals to serve a large number of end device.
+
+In this example, the `RAK5146 PiHAT Kit <https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734>`_ and the `Raspberry Pi 4 <https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>`_ act as the concentrator.
+
+Follow below steps to setup the concentrator hardware:
 
 -  Insert the RAK5146 SPI module into the mPCIe slot on the RAK2287 Pi HAT. Make sure the card fits snugly into the connector.
 -  Gently press the SPI module down and fasten it using the screws provided.
@@ -156,31 +160,30 @@ Hardware
 -  Connect the Raspberry Pi to the Host PC using the LAN cable.
 -  Power on the Raspberry Pi by plugging in a 5 V power supply using the Type-C USB connector.
 
-| 
-| ==== 3.2 Imaging the SD Card with ChirpStack OS ====
-| \* Download the `Chirpstack Gateway OS version 4.1.1 or latest <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_
+3.2 Imaging the SD Card with ChirpStack OS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Download the `Chirpstack Gateway OS version 4.1.1 or latest <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_
 
 .. tip::
 
+   
    This setup uses the Raspberry Pi 4B Full Image
 
 
 -  Download and install `Balena Etcher <https://etcher.balena.io>`_ image writing tool. Note that this setup uses the Balena Etcher tool for writing the image on SD card. You can use other image writing tools of your choice.
 -  Run the Balena Etcher tool.
 -  Insert the micro SD card into the Host PC.
--  Click <fc #6495ed>\ **Flash from file**\ </fc> from the options shown in the interface.
+-  Click **Flash from file** from the options shown in the interface.
 
 |image8|
 
 -  Navigate to the location where the downloaded Chirpstack Gateway OS is saved.
 -  Select target and choose the targeted micro SD card drive.
--  Click <fc #6495ed>\ **Flash**\ </fc> to start the burning process of the image in the chosen SD card.
+-  Click **Flash** to start the burning process of the image in the chosen SD card.
 -  Wait until it is done.
 
 |image9|
-
-| 
-|
 
 .. important::
 
@@ -192,12 +195,11 @@ Hardware
    After the first boot, the gateway might reboot automatically to apply some changes. The Full Image will set up the PostgreSQL database on its first boot. This could take a couple of minutes and during this time the gateway will be less responsive.
 
 
-| 
-| ==== 3.3 Gateway Configuration ====
-| \* Insert the imaged SD card on the designated slot on the Raspberry Pi.
+3.3 Gateway Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
+-  Insert the imaged SD card on the designated slot on the Raspberry Pi.
 -  Connect the Host PC to ChirpStack WiFi.
-
 
 |image10|
 
@@ -223,19 +225,20 @@ Hardware
    Chirpstack details
 
    
-   | 
-   | **Username: admin
-     Password: admin
-   StaticIP: 192.168.0.1**
+   **Username: admin
+   
+   Password: admin
+   
+   StaticIP: 192.168.0.1*\*
 
 
--  Once connected, check the assigned ChirpStack IP by typing <fc #6495ed>\ **ifconfig**\ </fc>
+-  Once connected, check the assigned ChirpStack IP by typing **ifconfig**
 
 
 
 |image13|
 
--  This will show all configs, look for <fc #6495ed>\ **eth0**\ </fc> and save the IP address assigned to it.
+-  This will show all configs, look for **eth0** and save the IP address assigned to it.
 
 .. tip::
 
@@ -267,16 +270,12 @@ Hardware
 
 -  Quit the main menu.
 
-| 
-| If you have properly configured the gateway and installed the required SD card image, then you are ready to use the ChirpStack Network Server.
+If you have properly configured the gateway and installed the required SD card image, then you are ready to use the ChirpStack Network Server.
 
-| 
-| ----
+--------------
 
 PHASE 4: Setting up a Self-Hosted Application Server
 ====================================================
-
-.. _requirements-2:
 
 Requirements
 ------------
@@ -286,20 +285,16 @@ Requirements
 -  `ADI Wireless Sensor Standalone Software <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`_
 -  LAN cable
 
-| 
-
 4.1 Configuring Host PC for the Gateway
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|
 
 .. note::
 
    Enabling Port 5050 facilitates seamless communication between the Gateway and the Local server machine via the specified open Port connection (in this instance, 5050). The selection of port 5050 is based on its recommendation, ensuring it falls within a universally understood range of ports that are not commonly used for standard purposes elsewhere.
 
 
--  Access <fc #6495ed>Advance Firewall</fc> settings in your computer. |\||
--  Create a new <fc #6495ed>Inbound Rule</fc>. |image20|
+-  Access Advance Firewall settings in your computer. |\||
+-  Create a new Inbound Rule. |image20|
 
 |image21|
 
@@ -307,12 +302,15 @@ Requirements
 
 |image27|
 
-| 
-| ==== 4.2 Installing the GUI and Accessing the Gateway ====
-| \* Download and extract the `ADI Wireless Sensor Standalone Software <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`_ |image28|
+4.2 Installing the GUI and Accessing the Gateway
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-   Download and extract the `ADI Wireless Sensor Standalone Software <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`_
+
+
+|image28|
 
 -  Once extracted, run the **ADI Wireless Sensor Standalone Software** with administrator privileges.
-
 
 |image29|
 
@@ -328,15 +326,14 @@ Requirements
 
 .. tip::
 
-   In this example, it is <fc #6495ed>\ **169.254.117.207**\ </fc>
+   In this example, it is **169.254.117.207**
 
    
-   | 
-   | If you haven't saved the IP address, revisit Steps 3 to 7 in :doc:`Gateway Configuration section </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`
+   If you haven't saved the IP address, revisit Steps 3 to 7 in :doc:`Gateway Configuration section </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`
    
 
 
--  Add the <fc #6495ed>ChirpStack Port (8080)</fc> to the end of IP address. Open a page in the browser using the <fc #6495ed>\ **URL 169.254.117.207:8080**\ </fc>
+-  Add the ChirpStack Port (8080) to the end of IP address. Open a page in the browser using the **URL 169.254.117.207:8080**
 
    
 
@@ -347,35 +344,32 @@ Requirements
 
 |image33|
 
-| 
-| ----
+--------------
 
 PHASE 5: Connecting a Sensor Node to the Gateway
 ================================================
 
-| This section describes how to connect your sensor node to ChirpStack and how to validate that it can successfully send data. At this point, it is assumed that you have a working ChirpStack environment with a connected gateway.
+This section describes how to connect your sensor node to ChirpStack and how to validate that it can successfully send data. At this point, it is assumed that you have a working ChirpStack environment with a connected gateway.
 
 5.1 Creating a Device Profile
 -----------------------------
 
-|
+Before you can add a device (sensor node) to ChirpStack, you need to create a device-profile. In general, it is a good practice to create separate device-profiles for different types of devices (sensor nodes). A device-profile contains the capabilities of your device.
 
-| Before you can add a device (sensor node) to ChirpStack, you need to create a device-profile. In general, it is a good practice to create separate device-profiles for different types of devices (sensor nodes). A device-profile contains the capabilities of your device.
-
--   Once you are in the ChirpStack landing page, navigate to the <fc #6495ed>\ **Applications tab**\ </fc>.
+-   Once you are in the ChirpStack landing page, navigate to the **Applications tab**.
 
 
 |image34|
 
--  Click <fc #6495ed>\ **Device profiles**\ </fc> under the <fc #6495ed>\ **Tenant**\ </fc> category, as shown below.
+-  Click **Device profiles** under the **Tenant** category, as shown below.
 
 |image35|
 
--  Click on the <fc #6495ed>\ **Add device profile**\ </fc> button.
+-  Click on the **Add device profile** button.
 
 |image36|
 
--  Answer all required information under the <fc #6495ed>\ **General**\ </fc> tab, and then click <fc #6495ed>\ **Submit**\ </fc> once done. For the Name, enter the desired sensor node name.
+-  Answer all required information under the **General** tab, and then click **Submit** once done. For the Name, enter the desired sensor node name.
 
 .. container:: center round box
 
@@ -392,35 +386,32 @@ PHASE 5: Connecting a Sensor Node to the Gateway
 
    |image37|
 
-| 
-| ==== 5.2 Enrolling Device Applications ====
-| \* After adding a device, click the <fc #6495ed>\ **Applications**\ </fc> option under Tenant.
+5.2 Enrolling Device Applications
+---------------------------------
 
--  Click on the <fc #6495ed>\ **Add application**\ </fc> button.
-
+-  After adding a device, click the **Applications** option under Tenant.
+-  Click on the **Add application** button.
 
 |image38|
 
--  Write the desired Application Name on the space provided. Hit <fc #6495ed>\ **Submit**\ </fc> once done.
+-  Write the desired Application Name on the space provided. Hit **Submit** once done.
 
 |image39|
 
 -  Open the Application created and add a device. Ensure that in naming the devices, you must include a SPECIFIC KEYWORD (not case-sensitive) to distinguish which sensor nodes will be shown on the GUI. The naming codes of sensor nodes are as follows:
 
-|
-
 .. tip::
 
-   | \| **Sensor** \| **Code Name** \|
    
-   ================== =======
+   ================== =============
+   **Sensor**         **Code Name**
    EV-FLOWMETER-ARDZ  flow
    EV-STRUCTURAL-ARDZ sms
    EV-CATTLETAG-ARDZ  cattle
    EV-ADE9000SHIELDZ  e-meter
-   ================== =======
+   ================== =============
    
-   | 
+
    | The following details are also needed:
    
    -  Name: previously defined application name set from the previous steps
@@ -433,36 +424,39 @@ PHASE 5: Connecting a Sensor Node to the Gateway
    :align: center
    :width: 600px
 
-5. Once done, click <fc #6495ed>\ **Submit**\ </fc>.
+5. Once done, click **Submit**.
 
 .. tip::
 
    
-   | For OTAA devices, confirm that when the device tries to OTAA activate, you see a **JoinRequest** message followed by a **JoinAccept** message.
-   | If you do not see a JoinRequest and JoinAccept, click on the <fc #6495ed>\ **Flush OTAA devices**\ </fc> button.
+   For OTAA devices, confirm that when the device tries to OTAA activate, you see a **JoinRequest** message followed by a **JoinAccept** message.
+   
+   If you do not see a JoinRequest and JoinAccept, click on the **Flush OTAA devices** button.
 
 
-| 6. Enter the <fc #6495ed>\ **Application key**\ </fc> and hit <fc #6495ed>\ **Submit**\ </fc> once done. |image40|
-|
+6. Enter the **Application key** and hit **Submit** once done.
+
+
+
+|image40|
 
 .. tip::
 
-   For this demo, the<fc #6495ed> Application key is **2b7e151628aed2a6abf7158809cf4f3c**\ </fc>
+   For this demo, the Application key is **2b7e151628aed2a6abf7158809cf4f3c**
+
+   
+   The App Key included in the LoraMAC was used as is for the purpose of evaluation. Users can generate the App Key and add it in the source code on their own.
 
 
-   | The App Key included in the LoraMAC was used as is for the purpose of evaluation. Users can generate the App Key and add it in the source code on their own.
+5.3 Setting up Local Host URL for the Application Server
+--------------------------------------------------------
 
-
-|
-
-| ==== 5.3 Setting up Local Host URL for the Application Server ====
-
--  Once you are in Applications tab, select and open <fc #6495ed>\ **WiSe_Sensors**\ </fc>.
+-  Once you are in Applications tab, select and open **WiSe_Sensors**.
 
 
 |image41|
 
--  Inside ADI_SENSOR_NODE application, navigate to the <fc #6495ed>Integrations</fc> tab.
+-  Inside ADI_SENSOR_NODE application, navigate to the Integrations tab.
 
 |image42|
 
@@ -496,49 +490,36 @@ PHASE 5: Connecting a Sensor Node to the Gateway
 
 -  Open your browser and enter the URL http://localhost:5050 . Now you’ll be able to see and monitor your active nodes.
 
-| 
-| ==== 5.4 Local Application Server GUI ==== After you have successfully added a device (sensor node) and an application in the Chirpstack network, you will be able to view the graphical representation of the data collected by the sensor, as shown in the example below:
+5.4 Local Application Server GUI
+--------------------------------
 
-| 
-| **\*Smart Motor Sensor GUI**
-| |image48|
-| **\*Flow Meter Sensor GUI**
-| |image49|
-| **\*E-meter Sensor GUI**
-| |image50|
+After you have successfully added a device (sensor node) and an application in the Chirpstack network, you will be able to view the graphical representation of the data collected by the sensor, as shown in the example below:
 
 ::
 
-   ***Cattle Tag Sensor GUI** \\ {{ :resources:eval:user-guides:longrangewirelessradio:gui_cattletag.png?1000
-
-
-   |}} \\
-
-|
+   **Smart Motor Sensor GUI** \\ {{ :resources:eval:user-guides:longrangewirelessradio:gui_smart_motor_sensor.png?1000 |}}
+   **Flow Meter Sensor GUI** \\ {{ :resources:eval:user-guides:longrangewirelessradio:gui_flow_meter_sensor.png?1000 |}}
+   **E-meter Sensor GUI** \\ {{ :resources:eval:user-guides:longrangewirelessradio:gui_e-meter_sensor.png?1000 |}}
+   **Cattle Tag Sensor GUI** \\ {{ :resources:eval:user-guides:longrangewirelessradio:gui_cattletag.png?1000 |}}
 
 --------------
 
 FAQs
 ====
 
-|
-
 .. container:: center round box
 
-   **Q. Why is the serial application not responding after opening the port?**\ ​
+   **Q. Why is the serial application not responding after opening the port?** A. It usually happens whenever the power of the base board is not enough to operate the board.
 
-   | A. It usually happens whenever the power of the base board is not enough to operate the board.
-   | **Q. Can we use other gateways aside from ChirpStack?**
-   | A. Customers are not limited to use ChirpStack gateway, it is possible to use other gateways available in the market.
-   | **Q. What maximum number a gateway can handle?**
-   | A. It depends on the channels available per assigned region and the time division set by the user on sending data from the nodes to gateway.
-   | **Q. Is there another way to see the GUI without using the local setup?**
-   | A. The GUI can also be accessed through cloud service, but it is not supported by ADI.
-   | **Q. What is the maximum distance the gateway and nodes can communicate?**
-   | A. The gateway and nodes' maximum and effective range may vary depending on the modulation parameters, transmit power, antenna gain, environmental conditions, and obstacles present in the communication path. In practice, it can reach several kilometers in rural areas with a clear line of sight. The effective range may be shorter in urban areas where obstacle and interference are present.
+   
+   **Q. Can we use other gateways aside from ChirpStack?** A. Customers are not limited to use ChirpStack gateway, it is possible to use other gateways available in the market.
+   
+   **Q. What maximum number a gateway can handle?** A. It depends on the channels available per assigned region and the time division set by the user on sending data from the nodes to gateway.
+   
+   **Q. Is there another way to see the GUI without using the local setup?** A. The GUI can also be accessed through cloud service, but it is not supported by ADI.
+   
+   **Q. What is the maximum distance the gateway and nodes can communicate?** A. The gateway and nodes' maximum and effective range may vary depending on the modulation parameters, transmit power, antenna gain, environmental conditions, and obstacles present in the communication path. In practice, it can reach several kilometers in rural areas with a clear line of sight. The effective range may be shorter in urban areas where obstacle and interference are present.
 
-
-| 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/bin_files.png
    :width: 600px
@@ -636,9 +617,3 @@ FAQs
    :width: 600px
 .. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/local_host_url.png
    :width: 600px
-.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_smart_motor_sensor.png
-   :width: 1000px
-.. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_flow_meter_sensor.png
-   :width: 1000px
-.. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_e-meter_sensor.png
-   :width: 1000px

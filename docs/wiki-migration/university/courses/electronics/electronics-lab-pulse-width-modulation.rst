@@ -27,10 +27,7 @@ By varying a digital signal off and on at a fast-enough rate, and with a certain
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 OP97 operational amplifier
-| 1 1kΩ resistor 1 10kΩ potentiometer
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 OP97 operational amplifier 1 1kΩ resistor 1 10kΩ potentiometer
 
 Pulse Width Modulator - Principle of operation
 ----------------------------------------------
@@ -139,8 +136,6 @@ Consider the circuit in Figure 5.
 
 The circuit works as a simple comparator where the negative input of the operational amplifier is connected to the carrier waveform, while the positive input acts as a threshold voltage which establishes when the transitions between high voltage output and low voltage output occur. The potentiometer acts as a voltage divider for the input reference voltage, adjusting the threshold voltage, and implicitly the duty cycle of the output signal.
 
-.. _hardware-setup-1:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -157,8 +152,6 @@ Build the following breadboard circuit for Pulse Width Control using a DC modula
 
    Figure 6. Pulse Width Control using a DC modulation Voltage - Breadboard circuit
 
-
-.. _procedure-1:
 
 Procedure
 ~~~~~~~~~
@@ -184,8 +177,6 @@ The output signal is a PWM representation of the input voltage. Notice that, by 
 Fixed 50% PWM with Astable Multivibrator
 ----------------------------------------
 
-.. _background-1:
-
 Background
 ~~~~~~~~~~
 
@@ -207,8 +198,6 @@ The circuit shows an astable multivibrator using a single operational amplifier.
 
 The advantage of this circuit is that it does not require an M2K to generate a carrier (but the duty cycle is fixed at 50%.)
 
-.. _hardware-setup-2:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -225,8 +214,6 @@ Build the following breadboard circuit for PWM with Astable Multivibrator.
 
    Figure 9. PWM with Astable Multivibrator Breadboard Circuit
 
-
-.. _procedure-2:
 
 Procedure
 ~~~~~~~~~
@@ -270,8 +257,6 @@ Consider the circuit presented in Figure 11.
 
 The resistor R\ :sub:`3` in Figure 8 was replaced by a potentiometer and two diodes were inserted. Now the charging current of the capacitor is running through D\ :sub:`1`, while the discharging current is running through D\ :sub:`2`. Depending on the adjustment of the potentiometer VR\ :sub:`1`, the resistance of the charging current - running through the upper branch of the circuit - is different from that of the discharging current - running through the lower branch.
 
-.. _hardware-setup-3:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -288,8 +273,6 @@ Build the following breadboard circuit for adjusting the duty cycle for PWM with
 
    Figure 12. Adjusting duty cycle for PWM with Multivibrator Breadboard Circuit
 
-
-.. _procedure-3:
 
 Procedure
 ~~~~~~~~~

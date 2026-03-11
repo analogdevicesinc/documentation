@@ -9,11 +9,7 @@ The purpose of this activity is to investigate the common emitter configuration 
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| 4 - Resistors
-| 1 - 50KΩ Variable resistor, potentiometer
-| 1 - small signal NPN transistor (2N3904)
+ADALM2000 Active Learning Module Solder-less breadboard 4 - Resistors 1 - 50KΩ Variable resistor, potentiometer 1 - small signal NPN transistor (2N3904)
 
 Directions:
 -----------
@@ -108,8 +104,6 @@ Alternately, the curve tracer circuit from activity 7 can be modified slightly, 
 Self-biased configuration with negative feedback
 ================================================
 
-.. _objective-1:
-
 Objective:
 ----------
 
@@ -153,8 +147,6 @@ How does adding negative feedback help to stabilize the DC operating point?
 Adding emitter degeneration
 ===========================
 
-.. _objective-2:
-
 Objective:
 ----------
 
@@ -164,8 +156,6 @@ Additional Materials:
 ---------------------
 
 1 - 5KΩ Variable resistor, potentiometer (500? if one is available)
-
-.. _directions-1:
 
 Directions:
 -----------
@@ -202,8 +192,6 @@ Disconnect the emitter of Q\ :sub:`1` from ground and insert R\ :sub:`E`, a 5KΩ
 
    Figure 16 Emitter degeneration added, V\ :sub:`in` and V\ :sub:`BE`
 
-
-.. _questions-1:
 
 Questions:
 ----------

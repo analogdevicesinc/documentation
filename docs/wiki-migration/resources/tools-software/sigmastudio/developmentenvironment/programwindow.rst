@@ -1,12 +1,18 @@
 Program Window
 ==============
 
-| :doc:`Click here to return to the Development Environment page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment>`
-| When you start SigmaStudio, you will see the main Program Window. To get started, create a New Project by selecting File - New Project from the main menu or by pressing the new project button on the toolbar, or open an existing project file.
-| The following screen will appear for a new project:
-| |programpic1.png|
-| The Program Window contains the main menu, toolbars, and the design workspace. The default design window is the Hardware Configuration tab and its toolbox to the left. This workspace lets you choose which DSP or IC to use.
-| SigmaStudio is an MDI application (meaning more than one project file can be open at a time), but only a single instance of the SigmaStudio application can be running at any time. To toggle between open projects, select **Window** in the application main menu or press **ALT + TAB**.
+:doc:`Click here to return to the Development Environment page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment>`
+
+When you start SigmaStudio, you will see the main Program Window. To get started, create a New Project by selecting File - New Project from the main menu or by pressing the new project button on the toolbar, or open an existing project file.
+
+The following screen will appear for a new project:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/programpic1.png
+   :alt: programpic1.png
+
+The Program Window contains the main menu, toolbars, and the design workspace. The default design window is the Hardware Configuration tab and its toolbox to the left. This workspace lets you choose which DSP or IC to use.
+
+SigmaStudio is an MDI application (meaning more than one project file can be open at a time), but only a single instance of the SigmaStudio application can be running at any time. To toggle between open projects, select **Window** in the application main menu or press **ALT + TAB**.
 
 .. tip::
 
@@ -32,5 +38,3 @@ It is possible to modify the workspace configuration to best meet your needs.
 
    Note: Workspace settings are stored in the "ToolbarLayout.dat" file which is located in the application's directory. Close SigmaStudio and delete this file and restart to restore the default layout.
 
-
-.. |programpic1.png| image:: https://wiki.analog.com/_media/programpic1.png

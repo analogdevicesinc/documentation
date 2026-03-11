@@ -5,19 +5,14 @@ Get Capture View Entries
 
 This action allows the user to clear all the capture view entries. This API returns the SSPResult type
 
-| 
-| ===API===
+API
+---
 
 ::
 
    SSPResult ClearCaptureViewEntries()
 
-
-   | 
-
 Result
 ------
 
 Clear all the capture view entries.
-
-|

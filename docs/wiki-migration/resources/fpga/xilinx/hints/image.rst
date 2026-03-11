@@ -20,7 +20,7 @@ The Linux kernel uses a "compressed" image format, which creates a header file f
    Length: 4525 (4.4K) [image/svg+xml]
    Saving to: \`Analog_Devices_Logo.svg'
 
-   100%[=============================================================>] 4,525       21.4K/s   in 0.2s    
+   100%[=============================================================>] 4,525       21.4K/s   in 0.2s
 
    2011-12-20 13:41:48 (21.4 KB/s) - \`Analog_Devices_Logo.svg' saved [4525/4525]`
 -  the next step is to size it (I create a 349x100), and save it as an ascii .ppm file ``rgetz@curly:~/logos$ **gimp Analog_Devices_Logo.svg**``\ Here I "save as" a ``.ppm`` file.
@@ -35,7 +35,7 @@ The Linux kernel uses a "compressed" image format, which creates a header file f
 
 And that's it - it's just a matter of including the image data into your application.
 
-.. code:: c
+.. code:: tcl
 
    #include "Analog_Devices_Logo_clut224.h"
 

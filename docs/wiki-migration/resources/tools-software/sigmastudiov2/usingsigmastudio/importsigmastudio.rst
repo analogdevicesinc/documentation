@@ -1,5 +1,7 @@
-| :doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio>`
-| ====== Import SigmaStudio Projects ======
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio>`
+
+Import SigmaStudio Projects
+===========================
 
 .. important::
 
@@ -14,10 +16,9 @@ This feature is used to convert a SigmaStudio project into a SigmaStudio+ projec
 
 
 1. Export System Files in SigmaStudio
-=====================================
+-------------------------------------
 
-| 
-| Follow the steps given below to generate system files of the SigmaStudio project:
+Follow the steps given below to generate system files of the SigmaStudio project:
 
 -  Launch SigmaStudio 4.6 or later version
 -  Open the SigmaStudio project to be converted as SigmaStudio+ project
@@ -30,10 +31,9 @@ This feature is used to convert a SigmaStudio project into a SigmaStudio+ projec
 
 
 2. Import SigmaStudio System Files in SigmaStudio+
-==================================================
+--------------------------------------------------
 
-| 
-| Follow the steps given below to reconstruct SigmaStudio project in SigmaStudio+ using the system files:
+Follow the steps given below to reconstruct SigmaStudio project in SigmaStudio+ using the system files:
 
 -  Click "Import SigmaStudio Projects" from the 'Action' menu
 -  In the File Open Dialog window that appears, select the exported XML file. There will be two XML files: <export name>.xml and <export name>_Netlist.xml. Select <export name>.xml and click 'Open'.

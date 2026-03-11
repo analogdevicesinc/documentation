@@ -44,8 +44,6 @@ The following changes have been applied since the 1.0 release of Yocto Linux for
 -  Added Packet Engine Driver (PKTE) for ADSP-SC598 EZ-KIT. The supported algorithms are: ``adi-ecb-des3``, ``adi-ecb-des``, ``adi-ecb-aes``, ``adi-cbc-des3``, ``adi-cbc-des``, ``adi-cbc-aes``, ``adi-hmac-sha256``, ``adi-sha256``, ``adi-hmac-sha224``, ``adi-sha224``, ``adi-hmac-sha1``, ``adi-sha1``, ``adi-hmac-md5`` and ``adi-md5``
 -  Added `U-Boot Falcon Mode <https://github.com/u-boot/u-boot/blob/master/doc/README.falcon>`_ support for SC59x and :doc:`example </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/u-boot-falcon-mode>`
 
-| 
-
 Supported Linux Distributions
 -----------------------------
 
@@ -118,4 +116,4 @@ You can reach Analog Devices software and tools technical support in the followi
 
 --------------
 
-\**HOME PAGE: \*\* :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`
+**HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`

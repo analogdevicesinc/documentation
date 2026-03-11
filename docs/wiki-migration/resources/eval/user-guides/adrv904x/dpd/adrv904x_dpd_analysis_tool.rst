@@ -31,7 +31,7 @@ The following code snippet shows how to configure the DPD to engage the actuator
        dpdStabilityConfig.bit[0].persistentCnt = 10
 
        #Configure Recovery Actions
-       
+
        #Skip LUT updates if mean Tu power(DPD actuator input power) exceeds threshold0 configured above
        dpdStabilityConfig.error[0].mask = 0x0001#0x01c1  #int(adi_adrvgen6_DfeAppCalDpdStability_e.ADI_ADRVGEN6_DFE_APP_CAL_DPD_DIRECT_EVM) | int(adi_adrvgen6_DfeAppCalDpdStability_e.ADI_ADRVGEN6_DFE_APP_CAL_DPD_INDIRECT_ERROR)
        dpdStabilityConfig.error[0].actionWord = 0x0001 #int(adi_adrvgen6_DfeAppCalDpdRecoveryAction_e.ADI_ADRVGEN6_DFE_APP_CAL_DPD_SKIP_UPDATE)

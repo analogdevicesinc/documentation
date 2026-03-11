@@ -4,5 +4,3 @@ Linear Sweep
 ============
 
 LinearSweepInput LinearSweepSwitch LinearSweepWithInputTB LinearSweepWithSwitchTB
-
-| 

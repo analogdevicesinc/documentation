@@ -578,7 +578,7 @@ To create the bindings, The “ctypes” module has been used:
    def _init():
        class _Device(Structure):
            pass
-           
+
        DevicePtr = POINTER(_Device)
 
        lib = cdll.LoadLibrary('libiio.so.0')

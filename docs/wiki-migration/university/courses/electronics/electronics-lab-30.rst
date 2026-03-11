@@ -39,11 +39,7 @@ The CD4007 like many CMOS integrated circuits, it is easily damaged by static di
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 1 CD4007 ( CMOS array)
-| 2 ZVN2110A NMOS transistors
-| 2 ZVP2110A PMOS transistors
+ADALM2000 Active Learning Module Solder-less Breadboard 1 CD4007 ( CMOS array) 2 ZVN2110A NMOS transistors 2 ZVP2110A PMOS transistors
 
 Directions:
 -----------
@@ -126,8 +122,6 @@ A phase detector for square wave signals can be made from an exclusive-OR (XOR) 
 
 When an XOR gate phase detector is used in a phase locked loop ( PLL ) system it generally locks near a 90° phase difference in the middle of the phase detection range. At 90° the XOR has a 50% duty cycle square-wave output at twice the frequency of the input. The square-wave changes duty-cycle in proportion to the phase difference of the two input signals. Passing the output of the XOR gate through a low-pass filter results in an analog voltage that is proportional to the phase difference between the two signals. It requires inputs that are symmetrical square waves. If the duty cycle of one input is slightly different than the duty cycle of the other, the low pass filtered output will have an offset from the ideal middle of the range at 90° of phase difference.
 
-.. _directions-1:
-
 Directions:
 -----------
 
@@ -141,8 +135,6 @@ Add the RC low pass filter shown in figure 4 to your XOR breadboard circuit. Con
    Figure 6: XOR Gate phase detector
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -155,8 +147,6 @@ Configure both AWG channels as square waves with 5 V amplitudes peak-to-peak and
 
    Figure 7: XOR Gate phase detector breadboard circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -186,8 +176,6 @@ AWG1 Phase AWG2 Phase Output Voltage
 
 Table 2 Phase detector output vs phase
 
-.. _questions-1:
-
 Questions:
 ----------
 
@@ -211,10 +199,7 @@ The pair of inverters made using the four individual NMOS and PMOS transistors (
 
 **For Further Reading:**
 
-| [1] :doc:`Build CMOS Logic Functions Using CD4007 Array </wiki-migration/university/courses/electronics/electronics-lab-28>`
-| Exclusive OR logic gate: [http:*en.wikipedia.org/wiki/XOR_gate]
-  Exclusive NOR logic gate: [http:*\ en.wikipedia.org/wiki/XNOR_gate]
-| Phase detector: [http://en.wikipedia.org/wiki/Phase_detector]
+[1] :doc:`Build CMOS Logic Functions Using CD4007 Array </wiki-migration/university/courses/electronics/electronics-lab-28>` Exclusive OR logic gate: [http://en.wikipedia.org/wiki/XOR_gate] Exclusive NOR logic gate: [http://en.wikipedia.org/wiki/XNOR_gate] Phase detector: [http://en.wikipedia.org/wiki/Phase_detector]
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 

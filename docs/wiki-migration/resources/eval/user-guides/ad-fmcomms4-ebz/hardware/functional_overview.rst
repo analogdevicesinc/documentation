@@ -52,7 +52,7 @@ The device also allows real-time monitoring of internal signals via another set 
 Power
 -----
 
-| Key components:
+Key components:
 
 +----------------+-----------------------------------------------------------+
 | :adi:`ADP1755` | Low dropout, linear regulator, 1.2A, 1.6 to 3.6V          |

@@ -20,9 +20,7 @@ Background:
 
 First a few notes on hardware limitation issues. While the waveform generator in the ALM1000 system uses a 16 bit wide dynamic range DAC there is still significant wide band noise which can reduce the signal to noise ration when generating very small amplitude signals. The input signal level needed for the measurements in this lab activity is rather small because of the gain of the differential amplifier. If the waveform generator output were used directly the signal to noise ratio of its output is not high enough. The signal to noise ratio can be improved in this case by increasing the signal level and then placing an attenuator and filter ( single ended example shown in figure 1 ) between the generator outputs and the circuit inputs. The materials needed for this are:
 
-| 1 - 47Ω resistor
-| 1 - 1KΩ resistor
-| 1 - 0.1uF capacitors (marked 104)
+1 - 47Ω resistor 1 - 1KΩ resistor 1 - 0.1uF capacitors (marked 104)
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f1.png
    :align: center
@@ -38,13 +36,7 @@ An attenuator and filter like this will be used in all parts of this lab.
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 3 - 10KΩ resistors
-| 1 - 47Ω resistor
-| 2 - 1KΩ resistor
-| 1 - 0.1uF capacitor (marked 104)
-| 2 - Small signal NPN transistors (2N3904 or SSM2212 NPN matched pair)
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 3 - 10KΩ resistors 1 - 47Ω resistor 2 - 1KΩ resistor 1 - 0.1uF capacitor (marked 104) 2 - Small signal NPN transistors (2N3904 or SSM2212 NPN matched pair)
 
 Directions:
 ~~~~~~~~~~~

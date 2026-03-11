@@ -1,8 +1,9 @@
 AXI_DAC_INTERPOLATE
 ===================
 
-| The AXI_DAC_INTERPOLATE IP allows interpolation of the input data by 10/100/1000/10000/100000, with filtering and arbitrary zero-hold interpolation.
-| More about the generic framework interfacing DACs can be read here: :doc:`axi_dac_ip </wiki-migration/resources/fpga/docs/axi_dac_ip>`.
+The AXI_DAC_INTERPOLATE IP allows interpolation of the input data by 10/100/1000/10000/100000, with filtering and arbitrary zero-hold interpolation.
+
+More about the generic framework interfacing DACs can be read here: :doc:`axi_dac_ip </wiki-migration/resources/fpga/docs/axi_dac_ip>`.
 
 Features
 --------
@@ -105,8 +106,10 @@ Another feature is the stop_sync. There is only one usecase for it. Stopping the
 
 The RAW transfer feature enables the user to transfer data(written into a register inside the axi_dac_interpolate)without needing DMA(buffer) config(delays).
 
-| For more info check the state machine below.
-| |image1|
+For more info check the state machine below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/axi_dac_interpolate_transfer_sm.svg
+   :align: center
 
 Register Map
 ------------
@@ -217,11 +220,9 @@ References
 ----------
 
 -  :git-hdl:`AXI_DAC_INTERPOLATE IP source code <library/axi_dac_interpolate>`
-   \* :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
-   \* `ADI Linux repository <https://github.com/analogdevicesinc/linux/>`_
+-  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
+-  `ADI Linux repository <https://github.com/analogdevicesinc/linux/>`_
 -  `7 Series libraries <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2016_2/ug953-vivado-7series-libraries.pdf>`_
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/axi_dac_interpolate_transfer_sm.svg

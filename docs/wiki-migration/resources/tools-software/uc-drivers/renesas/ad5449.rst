@@ -96,7 +96,7 @@ An EVAL-AD5449SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) 
      EVAL-AD5449SDZ Pin SDIN  (MOSI)    → YRDKRL78G13 J11 connector Pin 2
      EVAL-AD5449SDZ Pin SDO   (MISO)    → YRDKRL78G13 J11 connector Pin 3
      EVAL-AD5449SDZ Pin SCLK  (SCLK)    → YRDKRL78G13 J11 connector Pin 4
-     EVAL-AD5449SDZ Pin LDAC  (LDAC)    → YRDKRL78G13 J11 connector Pin 9  
+     EVAL-AD5449SDZ Pin LDAC  (LDAC)    → YRDKRL78G13 J11 connector Pin 9
      EVAL-AD5449SDZ Pin /CLR  (CLR)     → YRDKRL78G13 J11 connector Pin 10
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5449_rl78g13.jpg

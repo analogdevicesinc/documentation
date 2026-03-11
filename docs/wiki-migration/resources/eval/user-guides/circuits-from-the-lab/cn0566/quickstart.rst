@@ -49,17 +49,15 @@ Equipment Required
 
    -  Wired or Wireless network connection, with access to the internet (for accessing update files from Github.)
 
-
-   | 
-|
-
 .. admonition:: Download
    :class: download
 
    This is the step file for the HB100 holder, with a 1/4-20 thread for a standard camera mount. HB100s can vary from manufacturer to manufacturer, so please do a quick measurement on the one you have, and make any necessary adjustments to the step file.
 
-   | Alternatively, use one of the other mounting methods described in the quick-start video.
-   | `HB100 Holder Step File <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/hb100_holder.zip>`_
+   
+   Alternatively, use one of the other mounting methods described in the quick-start video.
+   
+   `HB100 Holder Step File <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/hb100_holder.zip>`_
 
 
 --------------
@@ -67,36 +65,35 @@ Equipment Required
 Overview Photo
 --------------
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-08-38_pm.png
+   :align: center
+   :width: 250px
 
-.. container:: center
+*<fc>Figure 2. EVAL-CN0566-RPIZ Circuit Evaluation Block assignment*
 
-   *<fc>Figure 2. EVAL-CN0566-RPIZ Circuit Evaluation Block assignment</fc>*
-
-
-| ----
+--------------
 
 SD card / Software Setup
 ------------------------
 
-| In order for the Raspberry Pi to control the Phaser devices, you will need to write the ADI Kuiper Linux image to an SD card and configure it. **The SD card that ships with the phaser kit MUST be updated with a new image.** The Phaser software is tested with Kuiper Linux 2021_R2, which, in spite of the "2021" in the name, was released in Spring, 2023. While there are newer Kuiper Linux releases, this version is required to maintain compatibility with the current phaser software packages.
-| Download the image from:
+In order for the Raspberry Pi to control the Phaser devices, you will need to write the ADI Kuiper Linux image to an SD card and configure it. **The SD card that ships with the phaser kit MUST be updated with a new image.** The Phaser software is tested with Kuiper Linux 2021_R2, which, in spite of the "2021" in the name, was released in Spring, 2023. While there are newer Kuiper Linux releases, this version is required to maintain compatibility with the current phaser software packages.
+
+Download the image from:
 
 .. admonition:: Download
    :class: download
 
    
-   -  \**2 April 2023 release (2021_r2) \*\*
+   -  **2 April 2023 release (2021_r2)**
    -  `Actual file <https://swdownloads.analog.com/cse/kuiper/image_2023-04-02-ADI-Kuiper-full.zip>`_
    -  Checksum image_2023-04-02-ADI-Kuiper-full.zip: ``0cdcf6e131318113a137cf54335b9614``
    -  Checksum 2023-04-02-ADI-Kuiper-full.img: ``aeff476b577b45cc6ce6ce02403a57c2``
    
 
 
-| Complete instructions for how to write it to the SD card and how to configure an example system are provided at :doc:`Analog Devices Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
-| **Hints:** The Kuiper Linux wiki pages give a few options, but the "official" Raspberry Pi imager is very straightforward:
-| `Raspberry Pi Imager <https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/>`_
-|
+Complete instructions for how to write it to the SD card and how to configure an example system are provided at :doc:`Analog Devices Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
+
+**Hints:** The Kuiper Linux wiki pages give a few options, but the "official" Raspberry Pi imager is very straightforward: `Raspberry Pi Imager <https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/>`_
 
 .. note::
 
@@ -108,12 +105,11 @@ After writing the image, if a window pops up saying "this card needs to be forma
 Assembling, Booting and Configuring the System
 ----------------------------------------------
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-37-00_pm.png
+   :align: center
+   :width: 400px
 
-.. container:: center
-
-   Figure 3. Test Setup Functional Block Diagram
-
+Figure 3. Test Setup Functional Block Diagram
 
 -  Connect ADALM-Pluto's **CENTER** micro-USB port to Raspberry Pi via micro-USB to USB cable.
 -  **CAREFULLY** thread the tripod into the tripod mount. Please minmize stress on the tripod mount while plugging in cables and other operations, as it is screwed directly to the PC board.
@@ -132,8 +128,7 @@ Assembling, Booting and Configuring the System
 Configuring the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| The easiest way to configure the SD card is by running a setup script. This does require a wired or wireless internet connection, but it is much easier than doing things manually. A wired connection is fairly straightforward if your network supports DHCP. If you need to use a wireless connection, you'll have to boot to the graphical desktop and connect manually.
-| Once connected to a network, run the following commands (and take a look at the setup script if you're suspicious, and note that there may be some updates as newer versions of Kuiper Linux are released.) The script is commented if you want a detailed description of what it's doing.
+The easiest way to configure the SD card is by running a setup script. This does require a wired or wireless internet connection, but it is much easier than doing things manually. A wired connection is fairly straightforward if your network supports DHCP. If you need to use a wireless connection, you'll have to boot to the graphical desktop and connect manually. Once connected to a network, run the following commands (and take a look at the setup script if you're suspicious, and note that there may be some updates as newer versions of Kuiper Linux are released.) The script is commented if you want a detailed description of what it's doing.
 
 ::
 
@@ -142,40 +137,43 @@ Configuring the SD Card
    ./phaser_sdcard_setup.sh
    sudo reboot
 
-| (Wait for the system to reboot)
-| **Note:** After running the script, the hostname will be **phaser.local**
-| If you are going to be running scripts and other software directly on the Raspberry Pi, it's a good idea set a few options using the Raspberry Pi configuration utility. This can be accessed from the Start Menu under Preferences, or by running:
+(Wait for the system to reboot) **Note:** After running the script, the hostname will be **phaser.local**
+
+If you are going to be running scripts and other software directly on the Raspberry Pi, it's a good idea set a few options using the Raspberry Pi configuration utility. This can be accessed from the Start Menu under Preferences, or by running:
 
 ::
 
    sudo raspi-config
 
-| from the command line. Set the locale, keyboard, timezone, and wifi country (if you'll be connecting to your network by wifi.)
-| You'll also need to downgrade the numpy version to fix a compatibility issue with our existing example python scripts:
+from the command line. Set the locale, keyboard, timezone, and wifi country (if you'll be connecting to your network by wifi.)
+
+You'll also need to downgrade the numpy version to fix a compatibility issue with our existing example python scripts:
 
 ::
 
    sudo pip install --force-reinstall numpy==1.22
 
-| 
-
 Software Quick Start
 ~~~~~~~~~~~~~~~~~~~~
 
-| At this point, the GUI can be run from the command line. Power up the HB100 source with either a 3V benchtop power supply or two AA cells and aim it a the phaser antenna. Run the following command to find the HB100 frequency:
-| ``cd ~/pyadi-iio/examples/phaser
-  python phaser_find_hb100.py``
+At this point, the GUI can be run from the command line. Power up the HB100 source with either a 3V benchtop power supply or two AA cells and aim it a the phaser antenna. Run the following command to find the HB100 frequency:
 
-| Ideally, there should be a single, sharp peak as shown in the figure below.
-| |image3|
+::
+
+   cd ~/pyadi-iio/examples/phaser
+   python phaser_find_hb100.py
+
+Ideally, there should be a single, sharp peak as shown in the figure below.
+
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1. Find HB100 script
 
 
-If there is a single prominent peak, enter "y". If there are several peaks or no visible peak, close the plot and enter 'n' at the prompt. Reposition the HB100 (and make sure there are no other sources nearby), then re-run the script.
-| Next run the GUI:
+If there is a single prominent peak, enter "y". If there are several peaks or no visible peak, close the plot and enter 'n' at the prompt. Reposition the HB100 (and make sure there are no other sources nearby), then re-run the script. Next run the GUI:
 
 ::
 
@@ -185,12 +183,9 @@ If there is a single prominent peak, enter "y". If there are several peaks or no
 The GUI should load and begin displaying the beam pattern as shown below.
 
 
-|image4|
+|image2|
 
-.. container:: center
-
-   *<fc>Figure x. Phaser GUI</fc>*
-
+*<fc>Figure x. Phaser GUI*
 
 Initial Calibration
 ~~~~~~~~~~~~~~~~~~~
@@ -213,14 +208,15 @@ The Pluto that ships with the phaser kit has been pre-configured. In case someth
 
 :git-plutosdr-fw:`releases`
 
-| The next step is to update the Pluto configuration to enable the AD9361's second channel. Follow the directions at:
-| :doc:`Updating to the AD9364, </wiki-migration/university/tools/pluto/users/customizing>`
-| For **setting the mode of a Rev. C PlutoSDR to 2r2t, the following would be sequence of commands:**
-| ``fw_setenv attr_name compatible
-  fw_setenv attr_val ad9361
-  fw_setenv compatible ad9361
-  fw_setenv mode 2r2t
-  reboot``
+The next step is to update the Pluto configuration to enable the AD9361's second channel. Follow the directions at: :doc:`Updating to the AD9364, </wiki-migration/university/tools/pluto/users/customizing>` For **setting the mode of a Rev. C PlutoSDR to 2r2t, the following would be sequence of commands:**
+
+::
+
+   fw_setenv attr_name compatible
+   fw_setenv attr_val ad9361
+   fw_setenv compatible ad9361
+   fw_setenv mode 2r2t
+   reboot
 
 Verify that the configuration was programmed properly by entering the following commands:
 
@@ -248,25 +244,24 @@ Wihich should return:
 Appendix: Configuration Script Notes
 ------------------------------------
 
-|
-
 .. tip::
 
    To manually edit config.txt, add the following:
 
-   | ``# Phaser board overlay:
-     dtoverlay=rpi-cn0566
    
-     # Heartbeat blinky:
-     dtparam=act_led_gpio=26
-     dtparam=act_led_trigger=heartbeat
+   ::
    
-     # Short GPIO121 (pin 40) to ground for shutdown:
-     dtoverlay=gpio-shutdown,gpio_pin=21,active_low=1,gpiopull=up``
+      # Phaser board overlay:
+      dtoverlay=rpi-cn0566
    
-   | If you will be logging in via VNC, see this article:
-   | `RPi 4 4gb slow VNC <https://raspberrypi.stackexchange.com/questions/141147/rpi-4-4gb-slow-vnc>`_
-   | Also if running "headless" without a monitor, set the HDMI group and mode accordingly:
+      # Heartbeat blinky:
+      dtparam=act_led_gpio=26
+      dtparam=act_led_trigger=heartbeat
+   
+      # Short GPIO121 (pin 40) to ground for shutdown:
+      dtoverlay=gpio-shutdown,gpio_pin=21,active_low=1,gpiopull=up
+   
+   If you will be logging in via VNC, see this article: `RPi 4 4gb slow VNC <https://raspberrypi.stackexchange.com/questions/141147/rpi-4-4gb-slow-vnc>`_ Also if running "headless" without a monitor, set the HDMI group and mode accordingly:
    
    ::
    
@@ -281,11 +276,7 @@ Appendix: Configuration Script Notes
 *End of Document*
 
 .. |youtube>a6MeTsatTUg| image:: https://wiki.analog.com/_media/youtube>a6MeTsatTUg
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-08-38_pm.png
-   :width: 250px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-37-00_pm.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/calibration/find_hb100_step_1.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/calibration/find_hb100_step_1.png
    :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phaser_gui_screenshot.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phaser_gui_screenshot.png
    :width: 600px

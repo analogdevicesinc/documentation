@@ -1,14 +1,18 @@
 RMS Compressor with Max/Avg IP
 ==============================
 
-| :doc:`Click here to return to the Dynamic Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| |rms_ip_avg.png|
+:doc:`Click here to return to the Dynamic Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rms_ip_avg.png
+   :alt: rms_ip_avg.png
 
 Description
 -----------
 
-| This Module computes the Gain of the Compressor. Compression happens by taking the RMS of the Average or Max of all inputs, and then looking up for the Gain based on the Compressor Graph.
-| ===== Targets Supported =====
+This Module computes the Gain of the Compressor. Compression happens by taking the RMS of the Average or Max of all inputs, and then looking up for the Gain based on the Compressor Graph.
+
+Targets Supported
+-----------------
 
 =========================== ========== ================ =============
 Name                        ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
@@ -16,7 +20,7 @@ Name                        ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
 RMS Compressor with Max/Avg Block      Block            NA
 =========================== ========== ================ =============
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -37,7 +41,7 @@ Name   Type    Description
 Output Control Compressor Gain
 ====== ======= ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -66,6 +70,4 @@ Hold           Hold                          Float
 Graph          Compressor Graph table values Float Array
 ============== ============================= ======================
 
-| 
 
-.. |rms_ip_avg.png| image:: https://wiki.analog.com/_media/rms_ip_avg.png

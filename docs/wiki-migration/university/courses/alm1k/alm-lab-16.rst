@@ -43,23 +43,11 @@ We will now replace the ideal switches in the diagram with actual electronic swi
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 1 – 1 MΩ resistor
-| 1 – 200 KΩ resistor
-| 1 – ZVN2110A NMOS FET ( 2N7000 )
-| 2 – ZVN3310 NMOS FET ( 2N7000 )
-| 1 – ZVP2110A PMOS FET
-| 2 – 74HC04 HEX CMOS Inverters ( CD4007, CD4069 )
-| 1 – LT1054
-| 2 – 10uF capacitors
-| 1 – 220uF capacitor
-| 2 – 1N914 diodes (1N4001 or 1N5819 Schottky diodes)
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 – 1 MΩ resistor 1 – 200 KΩ resistor 1 – ZVN2110A NMOS FET ( 2N7000 ) 2 – ZVN3310 NMOS FET ( 2N7000 ) 1 – ZVP2110A PMOS FET 2 – 74HC04 HEX CMOS Inverters ( CD4007, CD4069 ) 1 – LT1054 2 – 10uF capacitors 1 – 220uF capacitor 2 – 1N914 diodes (1N4001 or 1N5819 Schottky diodes)
 
 *Additional Equipment:*
 
-| Small handheld DMM ( optional )
-| +5 V bench power supply or 4.5 V battery ( optional )
+Small handheld DMM ( optional ) +5 V bench power supply or 4.5 V battery ( optional )
 
 Directions:
 ~~~~~~~~~~~
@@ -139,8 +127,6 @@ Change the value of C\ :sub:`1` and C\ :sub:`2` and redo the above. How have the
 
 Connect the other inverters in the 74HC04 package in parallel with INV1 and INV2 in the diagram. What effect do these added drivers have on the results?
 
-.. _directions-1:
-
 Directions:
 ~~~~~~~~~~~
 
@@ -180,8 +166,6 @@ What sort of circuit could you make to generate the 100 KHz square wave? There a
    Figure 8 square wave oscillator
 
 
-.. _questions-1:
-
 Questions:
 ~~~~~~~~~~
 
@@ -189,11 +173,7 @@ What other types of oscillator circuits might be used to generate the 100 KHz sq
 
 **For further reading:**
 
-| :adi:`The Interleaved Inverting Charge Pump—Part 1: A New Topology for Low Noise Negative Voltage Supplies <en/analog-dialogue/articles/the-interleaved-inverting-charge-pump-part-1.html>`
-| `Dc-DC Converter <http://en.wikipedia.org/wiki/DC-to-DC_converter>`_
-| `Charge Pump <http://en.wikipedia.org/wiki/Charge_pump>`_
-| `Capacitive voltage conversion aka the charge pump <https://www.radiolocman.com/review/article.html?di=619561>`_
-| :adi:`ADM660,8660 Data Sheet <static/imported-files/data_sheets/ADM660_8660.pdf>`
+:adi:`The Interleaved Inverting Charge Pump—Part 1: A New Topology for Low Noise Negative Voltage Supplies <en/analog-dialogue/articles/the-interleaved-inverting-charge-pump-part-1.html>` `Dc-DC Converter <http://en.wikipedia.org/wiki/DC-to-DC_converter>`_ `Charge Pump <http://en.wikipedia.org/wiki/Charge_pump>`_ `Capacitive voltage conversion aka the charge pump <https://www.radiolocman.com/review/article.html?di=619561>`_ :adi:`ADM660,8660 Data Sheet <static/imported-files/data_sheets/ADM660_8660.pdf>`
 
 Appendix:
 ~~~~~~~~~

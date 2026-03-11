@@ -29,7 +29,7 @@ People who follow the flow that is outlined, have a much better experience with 
 
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad-pzsdr2400tdd-eb/help_and_support>`
 
-.. image:: https://wiki.analog.com/_media/analogTV>4840956066001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/analogTV>4840956066001
    :alt: analogTV>4840956066001
    :align: center
 

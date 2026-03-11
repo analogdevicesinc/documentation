@@ -46,16 +46,12 @@ Do not connect power to the hardware until both the EVAL-AD7124-4SDZ/EVAL-AD7124
    :align: center
    :width: 400px
 
-.. _wire-rtd-1:
-
 3-wire RTD
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/3_wire_functional_diagram.png
    :align: center
    :width: 400px
-
-.. _wire-rtd-2:
 
 4-wire RTD
 ~~~~~~~~~~
@@ -151,8 +147,6 @@ To configure the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/
 -  IOUT0 Channel Enable = AIN1
 -  IOUT0 Select = 500 µA
 
-.. _wire-rtd-demo-mode-1:
-
 3-WIRE RTD demo mode
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -184,8 +178,6 @@ To configure the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/
 -  IOUT0 Select = 500 µA
 -  IOUT1 Channel Enable = AIN1
 -  IOUT1 Select = 500 µA
-
-.. _wire-rtd-demo-mode-2:
 
 4-WIRE RTD demo mode
 ^^^^^^^^^^^^^^^^^^^^
@@ -233,9 +225,9 @@ Calibrations
 
    4. Perform an internal zero-scale calibration.
    * Click the **Mode** bitfield of the ADC control register.
-   * In the **Mode** bitfield, select the internal zero-scale calibration option. 
+   * In the **Mode** bitfield, select the internal zero-scale calibration option.
    * Check the calibrations performed by clicking the **Offset0** register in the register tree, and check that the coefficients have changed.
-   5. When calibrations are complete, change the power mode to the required mode of operation, and ensure that the ADC is set to continuous conversion mode by selecting **Continuous** from the drop-down box in the *Mode* bit field of the **ADC_Control** register. 
+   5. When calibrations are complete, change the power mode to the required mode of operation, and ensure that the ADC is set to continuous conversion mode by selecting **Continuous** from the drop-down box in the *Mode* bit field of the **ADC_Control** register.
 
 RTD Measurements
 ~~~~~~~~~~~~~~~~

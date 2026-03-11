@@ -83,7 +83,7 @@ System Information
 
 ::
 
-   ; USB and Power : 
+   ; USB and Power :
 
 **Minimum Requirements**
 

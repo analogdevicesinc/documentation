@@ -62,11 +62,11 @@ Installing the Software
 
 |image3|
 
--  Click **Next** to start the installation
+   \* Click **Next** to start the installation
 
-|image4|
+   |image4|
 
--  Upon completion of the installation of the **CN0272 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute.
+   \* Upon completion of the installation of the **CN0272 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute.
 
 .. tip::
 
@@ -75,7 +75,7 @@ Installing the Software
 
    |image5|
 
--  Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
 .. tip::
 
@@ -100,14 +100,14 @@ Connecting the Hardware
 
 |image8|
 
--  Select the voltage bias of the photodiode.
+   \* Select the voltage bias of the photodiode.
 
    -  Select the onboard -5V bias by populating **JP1** with a shorting jumper as depicted below
 
 
    |image9|
 
-   -  Select an external voltage bias by populatign **JP1** with a shorting jumper as depicted below.
+      \* Select an external voltage bias by populatign **JP1** with a shorting jumper as depicted below.
 
 .. important::
 
@@ -116,14 +116,13 @@ Connecting the Hardware
 
    |image10|
 
--  Connect a 6V supply to the Barrel Jack or the Screw Terminal on the CN0272 Board
+      \* Connect a 6V supply to the Barrel Jack or the Screw Terminal on the CN0272 Board
 
+      |image11|
 
-|image11|
+      \* Connect the USB Cable to the SDP-B Board and the PC
 
--  Connect the USB Cable to the SDP-B Board and the PC
-
-|image12|
+      |image12|
 
 --------------
 
@@ -140,7 +139,7 @@ Software Control and Indicator Descriptions
    -**SDP Connector Dropdown Menu**
    * This control will select which connector (on the SDP-B Board) the CN0272 Board is currently connected to.  The options are "connectorA" or "connectorB".  The connector to be used must be selected before clicking the **Connect to SDP-B Board Button**
    -**Connect to SDP-B Board Button**
-   * When this button is pressed, the SDP-B Board makes a USB connection to the CN0272 Board.  A connection to the SDP-B Board must be made to use the software. This button is also used in conjunction with the **SDP Connector Dropdown Menu**.   
+   * When this button is pressed, the SDP-B Board makes a USB connection to the CN0272 Board.  A connection to the SDP-B Board must be made to use the software. This button is also used in conjunction with the **SDP Connector Dropdown Menu**.
    -**Take Snapshot(s) Button**
    * When this button is pressed, the SDP-B Board will collect a single Snapshot or a collection of Snapshots depending on the **Acquisition Mode** setting.\\ \\
 
@@ -149,7 +148,7 @@ Software Control and Indicator Descriptions
    **Snapshot** - a collection of analog to digital conversions, sampled at 20MSPS, acquired by the SDP-B Board and displayed in the graph.
 
 
-\\ \\ \\ \\ \\ \\
+\\ \\ \\ \\ \\
    -**Save Snapshot(s) Button**
    * When this button is pressed, the software will save a single Snapshot or a collection of Snapshots to a tab delimited ASCII spreadsheet file.
    -**Acquisition Mode Radio Buttons**
@@ -173,7 +172,7 @@ Software Control and Indicator Descriptions
    -**Graph Controls**
    * These controls allow the user to zoom-in, zoom-out, and pan through the Snapshot displayed.
    -**Graph Units Radio Buttons**
-   * This control determines the Y-Axis units of the "Snapshot" displayed in the graph. 
+   * This control determines the Y-Axis units of the "Snapshot" displayed in the graph.
    -**Snapshot Displayed Numerical Control/Indicator**
    * This control determines the current Snapshot to display in the graph.  When the value is changed, the graph is updated with the Snapshot specified.
    * This control also acts as an indicator of the current Snapshot displayed in the graph.  For example, when the software is in the process of collecting multiple Snapshots, the indicator is incremented as the Snapshots are collected.
@@ -198,12 +197,12 @@ Establishing a USB Connection Link
    **C:\\Program Files\\Analog Devices\\CN0272\\CN0272.exe**\
 
 
-\* Select the connector to use from the **SDP Connector Dropdown Menu**.
+- Select the connector to use from the **SDP Connector Dropdown Menu**.
 -  Click the **Connect to SDP-B Board Button**. A window with a progress bar will load.
 
 |image13|
 
--  Upon success, the **System Status String Indicator** will display *SDP-B Ready to Take Snapshot(s)*
+   \* Upon success, the **System Status String Indicator** will display *SDP-B Ready to Take Snapshot(s)*
 
 Capturing a Single Snapshot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -244,7 +243,7 @@ Saving a Single Snapshot to a Spreadsheet File
 
 |image14|
 
--  Click the **OK Button**.
+   \* Click the **OK Button**.
 -  Browse to the directory location where the spreadsheet file is to be saved.
 -  Name the file.
 -  Click the **OK Button**.
@@ -269,7 +268,7 @@ Saving Multiple Snapshots to a Spreadsheet File
 
 |image15|
 
--  Click the **OK button**.
+   \* Click the **OK button**.
 -  Browse to the directory location where the spreadsheet file is to be saved.
 -  Name the file.
 -  Click the **OK Button**.
@@ -279,7 +278,7 @@ Saving Multiple Snapshots to a Spreadsheet File
    The software saves the spreadsheet file as ASCII text with columns separated by tabs.
 
 
-| 
+
 
 Registration
 ------------

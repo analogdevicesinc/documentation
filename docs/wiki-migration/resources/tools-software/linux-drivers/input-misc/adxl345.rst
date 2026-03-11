@@ -36,11 +36,9 @@ Several special sensing functions are provided. Activity and inactivity sensing 
 
 Low power modes enable intelligent motion-based power management with threshold sensing and active acceleration measurement at extremely low power dissipation.
 
-| :adi:`ADXL345 <en/mems-and-sensors/imems-accelerometers/adxl345/products/product.html>` - Small, Ultra Low Power, 3-Axis, ±2/4/8/16g Digital Accelerometer
-| :adi:`ADXL346 <en/mems-and-sensors/imems-accelerometers/adxl346/products/product.html>` - Ultra Low Power, Three-Axis, +-2/4/8/16g Digital Accelerometer
-| :adi:`ADXL375 <en/mems-and-sensors/imems-accelerometers/adxl375/products/product.html>` - Low Power, Three-Axis, +-200g Digital Accelerometer
+:adi:`ADXL345 <en/mems-and-sensors/imems-accelerometers/adxl345/products/product.html>` - Small, Ultra Low Power, 3-Axis, ±2/4/8/16g Digital Accelerometer :adi:`ADXL346 <en/mems-and-sensors/imems-accelerometers/adxl346/products/product.html>` - Ultra Low Power, Three-Axis, +-2/4/8/16g Digital Accelerometer :adi:`ADXL375 <en/mems-and-sensors/imems-accelerometers/adxl375/products/product.html>` - Low Power, Three-Axis, +-200g Digital Accelerometer
 
-.. image:: https://wiki.analog.com/_media/youtube>8o_b2DO3d3E
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-misc/youtube>8o_b2DO3d3E
    :alt: iMEMS® Motion Sensors featuring the ADXL345
    :align: left
 
@@ -128,8 +126,6 @@ Source Code
 Status
 ------
 
-.. _status-1:
-
 Status
 ------
 
@@ -159,7 +155,7 @@ ADXL345/6 driver porting
 
 Starting with linux-2.6.36 the ADXL34x driver is mainlined. If you are using an pre linux-2.6.36 kernel get the source from our repositories and add them to your kernel tree.
 
-| If you are using a kernel version **without the threaded irq capabilities (< 2.6.30) get there driver from here:**
+If you are using a kernel version **without the threaded irq capabilities (< 2.6.30) get there driver from here:**
 
 -  :git-linux-kernel?drivers:`adxl34x.c <input/misc/adxl34x.c;h=c67bb179f81642fe1bf403d132567098fd492dee;hb=b03acb9bcd06d8495f9c2510a593a2adf9919aaa>`
 
@@ -181,8 +177,7 @@ Starting with linux-2.6.36 the ADXL34x driver is mainlined. If you are using an 
 
    -  Copy to linux-2.6.x/include/linux/input/adxl34x.h
 
-\**For the latest version of checkout the `Files <https://wiki.analog.com/>`_ section of this document. **
-**\ Add following lines to*\* *linux-2.6.x/drivers/input/misc/Kconfig*:
+**For the latest version of checkout the `Files <https://wiki.analog.com/>`_ section of this document.***Add following lines to** linux-2.6.x/drivers/input/misc/Kconfig*:
 
 ::
 
@@ -223,7 +218,7 @@ Starting with linux-2.6.36 the ADXL34x driver is mainlined. If you are using an 
          To compile this driver as a module, choose M here: the
          module will be called adxl34x-spi.
 
-**Add following lines to** *linux-2.6.x/drivers/input/misc/Makefile*:
+**Add following lines to** linux-2.6.x/drivers/input/misc/Makefile*:
 
 ::
 
@@ -234,7 +229,10 @@ Starting with linux-2.6.36 the ADXL34x driver is mainlined. If you are using an 
 Example platform device initialization
 ======================================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 Digital Accelerometer characteristics are highly application specific and may vary between boards and models. The platform_data for the device's "struct device" holds this information.
 
@@ -600,7 +598,12 @@ Digital Accelerometer characteristics are highly application specific and may va
 Example Platform / Board file (SPI Interface Option)
 ----------------------------------------------------
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 These snippets are all from the same file. ``arch/blackfin/mach-bf548/boards/ezkit.c``:
 
@@ -699,7 +702,7 @@ Required devicetree properties:
                   #size-cells = <0>;
                   compatible = "xlnx,axi-spi-1.02.a", "xlnx,xps-spi-2.00.a";
                   ...
-                  
+
                   adxl345@0 {
                           compatible = "adi,adxl34x";
                           reg = <0>;
@@ -714,7 +717,14 @@ Required devicetree properties:
 Example Platform / Board file (I2C Interface Option)
 ----------------------------------------------------
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+
+This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+
+So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+
+For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+
 
 These snippets are all from the same file. ``arch/blackfin/mach-bf548/boards/ezkit.c``:
 
@@ -744,8 +754,6 @@ These snippets are all from the same file. ``arch/blackfin/mach-bf548/boards/ezk
    }
    arch_initcall(board_init);
 
-.. _devicetree-1:
-
 Devicetree
 ----------
 
@@ -763,7 +771,7 @@ Required devicetree properties:
                   #size-cells = <0>;
                   compatible = "xlnx,axi-iic-1.02.a", "xlnx,xps-iic-2.00.a";
                   ...
-                  
+
                   adxl345@0 {
                           compatible = "adi,adxl34x";
                           reg = <0x53>;
@@ -789,12 +797,12 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
      < >   Support for memoryless force-feedback devices
      < >   Polled input device skeleton
      < >   Sparse keymap support library
-           *** Userland interfaces ***
+           ** Userland interfaces **
      < >   Mouse interface
      < >   Joystick interface
      <*>   Event interface
      < >   Event debugging
-           *** Input Device Drivers ***
+           ** Input Device Drivers **
      [ ]   Keyboards  --->
      [ ]   Mice  --->
      [ ]   Joysticks/Gamepads  --->
@@ -882,10 +890,7 @@ Check that the interrupt is registered.
 
 ::
 
-   root:~> **cat /proc/interrupts
-
-
-   | grep adxl34x**
+   root:~> **cat /proc/interrupts | grep adxl34x**
    140:          0   adxl34x
 
 ::
@@ -939,13 +944,9 @@ Use the evtest utility to test proper function
    Event: time 107831.632000, type 3 (Absolute), code 0 (X), value -16
    Event: time 107831.632000, type 3 (Absolute), code 2 (Z), value 11
 
-|
-
 .. tip::
 
-   In case you move the accelerometer and don't receive events, it's likely that something with your Interrupt is wrong.
-
-   | **check irq number in your platform device file**
+   In case you move the accelerometer and don't receive events, it's likely that something with your Interrupt is wrong. **check irq number in your platform device file**
 
 
 .. tip::
@@ -963,7 +964,6 @@ Visualizing Linux Input Events using df_input example from DirectFB
       ~~~~~~~~~~~~~~~~~~~~~~~~~~| DirectFB 1.2.7 |~~~~~~~~~~~~~~~~~~~~~~~~~~
            (c) 2001-2008  The world wide DirectFB Open Source Community
            (c) 2000-2004  Convergence (integrated media) GmbH
-         ----------------------------------------------------------------
 
    (*) DirectFB/Core: Single Application Core. (2009-05-27 15:03)
    [1] 401 df_input
@@ -1039,9 +1039,9 @@ Output Data Rate (Hz) Bandwidth (Hz) Value
 0.098                 0.048          0
 ===================== ============== =====
 
-| Writing '**value**' into **rate** sets the desired sample rate
-| Reading **rate** returns the current value
-| See table above for supported sample rates
+Writing '**value**' into **rate** sets the desired sample rate Reading **rate** returns the current value
+
+See table above for supported sample rates
 
 ::
 
@@ -1060,8 +1060,7 @@ Output Data Rate (Hz) Bandwidth (Hz) Value
 Enabling / Disabling the Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Writing '**1**' into disable - disables the ADXL34x (low power suspend mode)
-| Writing '**0**' into disable - enables the ADXL34x
+Writing '**1**' into disable - disables the ADXL34x (low power suspend mode) Writing '**0**' into disable - enables the ADXL34x
 
 ::
 
@@ -1072,8 +1071,7 @@ Enabling / Disabling the Device
 Enabling / Disabling Autosleep Upon Inactivity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Writing '**1**' into autosleep - enables Autosleep Upon Inactivity
-| Writing '**0**' into autosleep - disables Autosleep Upon Inactivity
+Writing '**1**' into autosleep - enables Autosleep Upon Inactivity Writing '**0**' into autosleep - disables Autosleep Upon Inactivity
 
 ::
 
@@ -1089,21 +1087,14 @@ Create an SD Card image
 
 Download Raspbian “wheezy” SD Card Image from here: http://www.raspberrypi.org/downloads
 
-|
-
 .. warning::
 
-   This example assumes that /dev/sdc is the SD-Card reader.
-
-   | All content will be lost!
+   This example assumes that /dev/sdc is the SD-Card reader. All content will be lost!
 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1124,9 +1115,9 @@ Download Raspbian “wheezy” SD Card Image from here: http://www.raspberrypi.o
 Compile a kernel
 ----------------
 
-| There are two ways to compile a new Kernel -
-| \* On the target itself
+There are two ways to compile a new Kernel -
 
+-  On the target itself
 -  On a development computer (host)
 
 .. tip::
@@ -1142,10 +1133,7 @@ Create an empty directory
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1160,10 +1148,7 @@ Get tools
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1184,10 +1169,7 @@ Get Kernel Source
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1212,16 +1194,16 @@ Get Kernel Source
 Download and apply patches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| Get patch files here:
-| \* `adxl34x_raspberrypi_patches.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-misc/adxl34x_raspberrypi_patches.zip>`_
+Get patch files here:
 
-|
+-  `adxl34x_raspberrypi_patches.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-misc/adxl34x_raspberrypi_patches.zip>`_
 
 .. important::
 
    This was tested with the Raspberry Pi Model B, PCB Version 2 (made in UK)
 
-   | **The primary and secondary I2C channels have been reversed.**
+   
+   **The primary and secondary I2C channels have been reversed.**
    
    You may need to register i2c board info for Bus-0 instead of Bus-1.
    
@@ -1238,10 +1220,7 @@ Download and apply patches
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1261,10 +1240,7 @@ Add ARM toolchain to the PATH variable and set ARCH and CROSS_COMPILE
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1280,10 +1256,7 @@ Load kernel config for bcmrpi
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1300,10 +1273,7 @@ Now build your kernel
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1317,10 +1287,7 @@ Copy kernel image and modules to SD Card
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1348,10 +1315,7 @@ Load the I2C Bus driver module
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1365,10 +1329,7 @@ Check if ADXL345 was successfully probed / instantiated
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1384,10 +1345,7 @@ Get evtest tool
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1401,10 +1359,7 @@ Driver test
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1462,10 +1417,7 @@ Driver test
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1488,10 +1440,7 @@ Driver test
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1510,7 +1459,7 @@ Driver test
       -rw-rw-r-- 1 root root 4096 Aug 16 01:22 rate
       lrwxrwxrwx 1 root root    0 Aug 16 01:22 subsystem -> ../../../../../bus/i2c
       -rw-r--r-- 1 root root 4096 Aug 16 01:22 uevent
-      pi@raspberrypi /sys/bus/i2c/devices/1-0053 $ 
+      pi@raspberrypi /sys/bus/i2c/devices/1-0053 $
    
 
 

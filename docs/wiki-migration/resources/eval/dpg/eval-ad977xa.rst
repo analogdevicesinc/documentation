@@ -74,33 +74,32 @@ Quick Start Guide
    //Figure 2. AD9779A Plugin *
 
 
-\* To change the settings of the AD977xA chip, double click on the AD977xA block on the board view to access the chip. The default values for the register is displayed and set. The values can be changed on the Chip View GUI, or on the* **Memory Map** *for registers not available in the GUI. For more info on the memory map, refer to* :adi:`AD977XA <static/imported-files/data_sheets/AD9776A_AD9778A_AD9779A.pdf>` *datasheet. Once the desired values are set, Click* **Apply Changes** *and then* **Read All** *on the upper right window. \
+- To change the settings of the AD977xA chip, double click on the AD977xA block on the board view to access the chip. The default values for the register is displayed and set. The values can be changed on the Chip View GUI, or on the **Memory Map** for registers not available in the GUI. For more info on the memory map, refer to* :adi:`AD977XA <static/imported-files/data_sheets/AD9776A_AD9778A_AD9779A.pdf>` *datasheet. Once the desired values are set, Click **Apply Changes** and then **Read All** on the upper right window. \
 
 .. container:: centeralign
 
-   *\ Figure 3. Apply Changes and Read All button *
+   *Figure 3. Apply Changes and Read All button*
 
 
-\* Apply the values in the* **Initial Configuration** *wizard as shown in Figure 4. \
-
-.. container:: centeralign
-
-   *\ Figure 4. AD9779A Initial Configuration Window\ *
-
-
-\* Start DPG Downloader Lite. At the SDP-H1 part of the software, the device part number and clock frequency should be displayed. \
+- Apply the values in the **Initial Configuration** wizard as shown in Figure 4. \
 
 .. container:: centeralign
 
-   *\ Figure 5. DPG Lite Session for EVAL-AD9779A *
+   *Figure 4. AD9779A Initial Configuration Window*
 
 
-\* In DPG Downloader Lite, from the* **Add Generator Waveforms** *pulldown menu select* **Single Tone** *and apply the settings as shown in Figure 5. Set the* **Data Rate** *to 100MHz and Desired Frequency to 10.2MHz. Uncheck the* **Unsigned Data** *box and Check the* **Generate Complex Data (I & Q)**\ *. \* Select the I/Q tone from the* **I/Q Data Vector** *pulldown menu. \* Press the download arrow and then the play button. The spectrum similar to Figure 6 should appear in the signal/spectrum analyzer.\ \
+- Start DPG Downloader Lite. At the SDP-H1 part of the software, the device part number and clock frequency should be displayed. \
 
 .. container:: centeralign
 
-   *\ Figure 6. Spectrum Output for AD9779A; Fdac = 100MSPS, Fout = 10.2MHz//
+   *Figure 5. DPG Lite Session for EVAL-AD9779A*
 
+
+- In DPG Downloader Lite, from the **Add Generator Waveforms** pulldown menu select **Single Tone** and apply the settings as shown in Figure 5. Set the **Data Rate** to 100MHz and Desired Frequency to 10.2MHz. Uncheck the **Unsigned Data** box and Check the **Generate Complex Data (I & Q)**. * Select the I/Q tone from the **I/Q Data Vector** pulldown menu. \* Press the download arrow and then the play button. The spectrum similar to Figure 6 should appear in the signal/spectrum analyzer.\ \
+
+.. container:: centeralign
+
+   *Figure 6. Spectrum Output for AD9779A; Fdac = 100MSPS, Fout = 10.2MHz*
 
 Using the AD9516 as clock source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

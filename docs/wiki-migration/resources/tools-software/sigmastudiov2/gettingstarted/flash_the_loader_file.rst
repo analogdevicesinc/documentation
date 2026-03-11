@@ -3,20 +3,21 @@
 Loader File Generation
 ======================
 
-|
-
 .. note::
 
    The path of elfloader.exe and initcode .exe should be updated based on the CCES version number and path of installation. The below commands by default will have the CCES version recommended for the given release and the default installation path
 
 
-   | ===ADSP-SC598 EV-SOM=== Use the following command to generate the loader file for ADSP-SC598 EV-SOM with Carrier board.
+ADSP-SC598 EV-SOM
+-----------------
+
+Use the following command to generate the loader file for ADSP-SC598 EV-SOM with Carrier board.
 
 ::
 
    "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-SC598 -core0=SS_App_Core0 -init
-   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkitSC598W_initcode_core0" -core1=SS_App_Core1.dxe 
-   -core2=SS_App_Core2.dxe -NoFinalTag=SS_App_Core0 -NoFinalTag=SS_App_Core1.dxe -b SPI -f BINARY -Width 8 -bcode 
+   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkitSC598W_initcode_core0" -core1=SS_App_Core1.dxe
+   -core2=SS_App_Core2.dxe -NoFinalTag=SS_App_Core0 -NoFinalTag=SS_App_Core1.dxe -b SPI -f BINARY -Width 8 -bcode
    0x1 -verbose -o SS_App_SC598.ldr
 
 --------------
@@ -28,7 +29,7 @@ Use the following command to generate the loader file for ADSP-SC594 EV-SOM with
 
 ::
 
-   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-SC594 -core0=SS_App_Core0 -init 
+   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-SC594 -core0=SS_App_Core0 -init
    "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkitSC594_initcode_core0" -core1=SS_App_Core1.dxe
    -core2=SS_App_Core2.dxe -NoFinalTag=SS_App_Core0 -NoFinalTag=SS_App_Core1.dxe -b SPI -f BINARY -Width 8 -bcode
    0x1 -verbose -o SS_App_SC594.ldr
@@ -43,7 +44,7 @@ Use the following command to generate the loader file for ADSP-21593 EV-SOM with
 ::
 
    "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-21593 -core1=SS_App_Core1.dxe -init
-   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkit21593_initcode_core1.dxe" -core2=SS_App_Core2.dxe 
+   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkit21593_initcode_core1.dxe" -core2=SS_App_Core2.dxe
    -NoFinalTag=SS_App_Core1.dxe -b SPI -f BINARY -Width 8 -bcode 0x1 -verbose -o SS_App_21593.ldr
 
 --------------
@@ -56,8 +57,8 @@ Use the following command to generate the loader file for ADSP-SC584 EZ-Board.
 ::
 
    "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-SC584 -core0=SS_App_Core0 -init
-   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkitSC584_initcode_core0_v10" -core1=SS_App_Core1.dxe 
-    -core2=SS_App_Core2.dxe -NoFinalTag=SS_App_Core0 -NoFinalTag=SS_App_Core1.dxe -b SPI -f BINARY -Width 8 -bcode 
+   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkitSC584_initcode_core0_v10" -core1=SS_App_Core1.dxe
+    -core2=SS_App_Core2.dxe -NoFinalTag=SS_App_Core0 -NoFinalTag=SS_App_Core1.dxe -b SPI -f BINARY -Width 8 -bcode
     0x1 -verbose -o SS_App_SC584.ldr
 
 --------------
@@ -69,9 +70,9 @@ Use the following command to generate the loader file for ADSP-SC589 EZ-Board.
 
 ::
 
-   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-SC589 -core0=SS_App_Core0 -init 
-   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkitSC589_initcode_core0_v10" -core1=SS_App_Core1.dxe 
-   -core2=SS_App_Core2.dxe -NoFinalTag=SS_App_Core0 -NoFinalTag=SS_App_Core1.dxe -b SPI -f BINARY -Width 8 -bcode 
+   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-SC589 -core0=SS_App_Core0 -init
+   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkitSC589_initcode_core0_v10" -core1=SS_App_Core1.dxe
+   -core2=SS_App_Core2.dxe -NoFinalTag=SS_App_Core0 -NoFinalTag=SS_App_Core1.dxe -b SPI -f BINARY -Width 8 -bcode
    0x1 -verbose -o SS_App_SC589.ldr
 
 --------------
@@ -83,9 +84,9 @@ Use the following command to generate the loader file for ADSP-SC573 EZ-Board.
 
 ::
 
-   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-SC573 -core0=SS_App_Core0 -init 
-   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkitSC573_initcode_core0" -core1=SS_App_Core1.dxe 
-   -core2=SS_App_Core2.dxe -NoFinalTag=SS_App_Core0 -NoFinalTag=SS_App_Core1.dxe -b SPI -f BINARY -Width 8 -bcode 
+   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-SC573 -core0=SS_App_Core0 -init
+   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\SHARC\ldr\ezkitSC573_initcode_core0" -core1=SS_App_Core1.dxe
+   -core2=SS_App_Core2.dxe -NoFinalTag=SS_App_Core0 -NoFinalTag=SS_App_Core1.dxe -b SPI -f BINARY -Width 8 -bcode
    0x1 -verbose -o SS_App_SC573.ldr
 
 --------------
@@ -97,7 +98,7 @@ Use the following command to generate the loader file for ADSP-21568 SOM with Ca
 
 ::
 
-   "C:\analog\cces\3.0.1\elfloader.exe" -proc ADSP-21568 SS_App_Core1 -init ezkit21568W_initcode.dxe -b SPI 
+   "C:\analog\cces\3.0.1\elfloader.exe" -proc ADSP-21568 SS_App_Core1 -init ezkit21568W_initcode.dxe -b SPI
    -f BINARY -Width 8 -bcode 0x1 -verbose -o SS_App_21568.ldr
 
 .. note::
@@ -116,7 +117,7 @@ Use the following command to generate the loader file for **ADSP-21569 EV-SOM** 
 
 ::
 
-   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-21569 SS_App_Core1 -init 
+   "C:\Analog Devices\CrossCore Embedded Studio 2.11.1\elfloader.exe" -proc ADSP-21569 SS_App_Core1 -init
    ezkit21569_initcode.dxe -b SPI -f BINARY -Width 8 -bcode 0x1 -verbose -o SS_App_21569.ldr
 
 .. note::
@@ -140,10 +141,7 @@ Use the following command to generate the loader file for ADSP-21489 or the exam
 Programming the Flash
 =====================
 
-|
-
-| Batch files for programming the flash are provided under '**SigmaStudioPlus-Relx.y.z\\Target\\Utilities\\FlashProgrammer**' folder and pre-built loader files (LDR) are provided under '**SigmaStudioPlus-Relx.y.z\\Target\\Examples\\LDR**' folder.
-|
+Batch files for programming the flash are provided under '**SigmaStudioPlus-Relx.y.z\\Target\\Utilities\\FlashProgrammer**' folder and pre-built loader files (LDR) are provided under '**SigmaStudioPlus-Relx.y.z\\Target\\Examples\\LDR**' folder.
 
 .. note::
 

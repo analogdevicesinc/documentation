@@ -55,10 +55,7 @@ The circuit in figure 1 has a dc resistance placed in series with a lossy parall
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less Breadboard
-| 2 – 100 Ω Resistors (or any similar value)
-| 1 – Loudspeaker from ADALP2000 Kit (it is even better if the speaker is one with a cone diameter larger than 4 inches such that is has a relatively low resonant frequency)
+ADALM1000 hardware module Solder-less Breadboard 2 – 100 Ω Resistors (or any similar value) 1 – Loudspeaker from ADALP2000 Kit (it is even better if the speaker is one with a cone diameter larger than 4 inches such that is has a relatively low resonant frequency)
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-fig2.png
    :align: center
@@ -214,8 +211,6 @@ Explain your results based on the parallel LC loudspeaker impedance model in fig
 
 **For Further Reading:**
 
-| :adi:`Measuring a Loudspeaker Impedance Profile Using the AD5933 <static/imported-files/application_notes/236037846AN_843.pdf>`
-| `Electrical characteristics of dynamic loudspeakers <https://en.wikipedia.org/wiki/Electrical_characteristics_of_dynamic_loudspeakers>`_
-| :doc:`ALICE 1.3 DeskTop Software </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
+:adi:`Measuring a Loudspeaker Impedance Profile Using the AD5933 <static/imported-files/application_notes/236037846AN_843.pdf>` `Electrical characteristics of dynamic loudspeakers <https://en.wikipedia.org/wiki/Electrical_characteristics_of_dynamic_loudspeakers>`_ :doc:`ALICE 1.3 DeskTop Software </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

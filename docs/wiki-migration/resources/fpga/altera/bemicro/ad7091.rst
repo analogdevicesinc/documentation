@@ -290,8 +290,6 @@ Troubleshooting
    See `troubleshooting12 <https://wiki.analog.com/troubleshooting12>`_
 
 
-.. _more-information-1:
-
 More information
 ================
 

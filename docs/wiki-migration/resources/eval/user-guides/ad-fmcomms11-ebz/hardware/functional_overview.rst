@@ -9,7 +9,7 @@ A functional block diagram of the system is given below. The system consists of 
 Transmit
 --------
 
-| Key component:
+Key component:
 
 +---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :adi:`AD9162` | The AD9162 is a high performance, 16-bit digital-to-analog converter (DAC) that supports data rates to 6 GSPS. The DAC core is based on a quad-switch architecture coupled with a 2× interpolator filter that enables an effective DAC update rate of up to 12 GSPS in some modes. The high dynamic range and bandwidth makes these DACs ideally suited for the most demanding high speed radio frequency (RF) DAC applications. |
@@ -22,7 +22,7 @@ Transmit
 Receive
 -------
 
-| Key component:
+Key component:
 
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :adi:`AD9625` | The AD9625 is a 12-bit monolithic sampling analog-to-digital converter (ADC) that operates at conversion rates of up to 2.6 giga samples per second (GSPS). This product is designed for sampling wide bandwidth analog signals up to the second Nyquist zone. The combination of wide input bandwidth, high sampling rate, and excellent linearity of the AD9625 is ideally suited for spectrum analyzers, data acquisition systems, and a wide assortment of military electronics applications, such as radar and jamming/antijamming measures. |
@@ -35,7 +35,7 @@ Receive
 Clock
 -----
 
-| Key component:
+Key component:
 
 +----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :adi:`ADF4355` | The ADF4355 allows implementation of fractional-N or integer-N phase-locked loop (PLL) frequency synthesizers when used with an external loop filter and an external reference frequency. A series of frequency dividers permits operation from 54 MHz to 6800 MHz.It has an integrated VCO with a fundamental output frequency ranging from 3400 MHz to 6800 MHz. In addition, the VCO frequency is connected to divide by 1, 2, 4, 8, 16, 32, or 64 circuits that allow the user to generate radio frequency (RF) output frequencies as low as 54 MHz. For applications that require isolation, the RF output stage can be muted. The mute function is both pin and software controllable. |
@@ -48,7 +48,7 @@ Clock
 Power
 -----
 
-| Key component:
+Key component:
 
 +-----------------+---------------------------------------------------------------------------------+
 | :adi:`ADM7170`  | 6.5 V, 500 mA, Ultralow Noise, High PSRR, Fast Transient Response CMOS LDO      |
@@ -81,7 +81,7 @@ Power
 Power Level Monitoring
 ----------------------
 
-| Key component:
+Key component:
 
 +---------------+--------------------------------------------------------+
 | :adi:`AD7291` | 8-Channel, I2C, 12-Bit SAR ADC with Temperature Sensor |

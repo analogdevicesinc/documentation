@@ -1,14 +1,13 @@
 Activity: Efficiency, Power Loss, and Thermal Management
 ========================================================
 
-|
+
 
 .. note::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
-   | This Active Learning exercise is now available at
-   | https://analogdevicesinc.github.io/documentation/university/active_learning/efficiency_power_loss/index.html
+   | This Active Learning exercise is now available at https://analogdevicesinc.github.io/documentation/university/active_learning/efficiency_power_loss/index.html
 
 
 Objective:
@@ -56,19 +55,7 @@ With that in mind, let's do some experiments, and try not to burn our fingers in
 Materials
 ---------
 
-| ADALM2000 Active Learning Module OR
-| 2 multimeters (minimum), preferably with a 1A current range
-| Solder-less breadboard
-| Jumper wires
-| PC/Mac running LTspice and Scopy
-| 0-24V, 1Amp, Adjustable Power supply
-| LT3080 LDO regulator
-| LTM8067 Isolated Switching Regulator (on BOB)
-| 6.2Ω, 10W power resistor
-| TO-220 heat sink, Aavid 7021 or similar, or various sizes of double-sided, copper-clad PCB material.
-| Heat sink compound / thermal grease
-| AD592 Temperature Sensor
-| Optional: Infrared thermometer
+ADALM2000 Active Learning Module OR 2 multimeters (minimum), preferably with a 1A current range Solder-less breadboard Jumper wires PC/Mac running LTspice and Scopy 0-24V, 1Amp, Adjustable Power supply LT3080 LDO regulator LTM8067 Isolated Switching Regulator (on BOB) 6.2Ω, 10W power resistor TO-220 heat sink, Aavid 7021 or similar, or various sizes of double-sided, copper-clad PCB material. Heat sink compound / thermal grease AD592 Temperature Sensor Optional: Infrared thermometer
 
 Thermal Resistance Primer
 -------------------------

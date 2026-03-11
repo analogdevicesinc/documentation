@@ -9,8 +9,9 @@ Tolerance Analyzer
 Description
 -----------
 
-| This block is for any application where you need to verify a given value's tolerance limits. It is especially useful for testing environments where the Sigma DSP needs to perform system diagnostics. The Tolerance Analyzer outputs either one or zero based on input level: if the level falls within the limits specified, it outputs one at the output pin; otherwise it outputs zero.
-| \**Values in the controls are integer (32.0 or 28.0) format. Audio data is not directly compatible with these inputs
+This block is for any application where you need to verify a given value's tolerance limits. It is especially useful for testing environments where the Sigma DSP needs to perform system diagnostics. The Tolerance Analyzer outputs either one or zero based on input level: if the level falls within the limits specified, it outputs one at the output pin; otherwise it outputs zero.
+
+**Values in the controls are integer (32.0 or 28.0) format. Audio data is not directly compatible with these inputs
 
 Targets Supported
 -----------------
@@ -45,17 +46,17 @@ Output0 Audio Output channel 0
 Configurable Parameters
 -----------------------
 
-+--------------------------------------+---------------+---------+-----------------------------------------------------------------+
-| GUI Parameter Name                   | Default Value | Range   | Function Description                                            |
-+======================================+===============+=========+=================================================================+
-| NumChannels                          | 1             | 15      | Number of input channels .Change in this requires recompilation |
-+--------------------------------------+---------------+---------+-----------------------------------------------------------------+
-| LowerLimit_Channel<fc #ff0000>x</fc> | INT_MIN       | INT_MAX | Lower Limit channel threshold                                   |
-+--------------------------------------+---------------+---------+-----------------------------------------------------------------+
-| UpperLimit_Channel<fc #ff0000>x</fc> | INT_MIN       | INT_MAX | Upper Limit channel threshold                                   |
-+--------------------------------------+---------------+---------+-----------------------------------------------------------------+
++---------------------+---------------+---------+-----------------------------------------------------------------+
+| GUI Parameter Name  | Default Value | Range   | Function Description                                            |
++=====================+===============+=========+=================================================================+
+| NumChannels         | 1             | 15      | Number of input channels .Change in this requires recompilation |
++---------------------+---------------+---------+-----------------------------------------------------------------+
+| LowerLimit_Channelx | INT_MIN       | INT_MAX | Lower Limit channel threshold                                   |
++---------------------+---------------+---------+-----------------------------------------------------------------+
+| UpperLimit_Channelx | INT_MIN       | INT_MAX | Upper Limit channel threshold                                   |
++---------------------+---------------+---------+-----------------------------------------------------------------+
 
-\\\\\* Note: <fc #ff0000>x</fc> represents the channel number in the above table.
+\\\\\* Note: x represents the channel number in the above table.
 
 DSP Parameters
 --------------

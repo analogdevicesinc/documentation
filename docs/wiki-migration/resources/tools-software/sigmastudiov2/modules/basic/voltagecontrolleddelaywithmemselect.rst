@@ -3,16 +3,31 @@
 Voltage Controlled Delay with Memory Selection
 ==============================================
 
-| |module.png|
-| ===== Description ===== The Multi-Tap Voltage Controlled Delay cell introduces a variable delay to a single audio input, generating multiple outputs known as 'taps.' The delay duration for each tap can be adjusted in real-time by changing the value on the corresponding control input pin. Additionally, this module provides an option to select the memory where the user wishes to create the delay buffer. Based on the memory selection of **StateA** or **StateB**, the delay buffer will be created in L1 memory, and for the option **StateC**, the buffer will be created in L3 memory.
-| Please refer the *Configurable Parameters* table for further details.
-| ===== Usage ===== The multi-tap voltage-controlled delay allows a single input signal to be output as multiple, independently delayed copies. By right-clicking and selecting the “NumChannels” option, the user can increase the number of copies, or “taps”, to be output.
-| The "Max Delay" and "Memory" chosen prior to compilation; the equivalent delay in milliseconds/samples is displayed below this. Note that this delay Max size is a shared Max-Delay that can be used by individual taps.
-| If the control input for any tap exceeds the maximum allowable delay for that tap, the maximum value will be used. The first input pin is the audio input signal, while the subsequent input pins are used to set the current delay for the input signal. The output pins provide the delayed output signal corresponding to the current delay of the tap. This algorithm can be expanded to support multiple input-tap/output pairs, allowing the same input signal to be delayed by various data control taps.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/module.png
+   :alt: module.png
 
-| The Max setting still corresponds to the maximum amount of delay reserved for the input signal. Therefore, any delay values designated by the data control pin must be between 0 samples and the Max Delay (samples) option.
-| Please see the image below depicting how the module needs to be connected and used in the schematic.
-| |voltagecontroldelayschematic.png|
+Description
+-----------
+
+The Multi-Tap Voltage Controlled Delay cell introduces a variable delay to a single audio input, generating multiple outputs known as 'taps.' The delay duration for each tap can be adjusted in real-time by changing the value on the corresponding control input pin. Additionally, this module provides an option to select the memory where the user wishes to create the delay buffer. Based on the memory selection of **StateA** or **StateB**, the delay buffer will be created in L1 memory, and for the option **StateC**, the buffer will be created in L3 memory.
+
+Please refer the *Configurable Parameters* table for further details.
+
+Usage
+-----
+
+The multi-tap voltage-controlled delay allows a single input signal to be output as multiple, independently delayed copies. By right-clicking and selecting the “NumChannels” option, the user can increase the number of copies, or “taps”, to be output.
+
+The "Max Delay" and "Memory" chosen prior to compilation; the equivalent delay in milliseconds/samples is displayed below this. Note that this delay Max size is a shared Max-Delay that can be used by individual taps.
+
+If the control input for any tap exceeds the maximum allowable delay for that tap, the maximum value will be used. The first input pin is the audio input signal, while the subsequent input pins are used to set the current delay for the input signal. The output pins provide the delayed output signal corresponding to the current delay of the tap. This algorithm can be expanded to support multiple input-tap/output pairs, allowing the same input signal to be delayed by various data control taps.
+
+The Max setting still corresponds to the maximum amount of delay reserved for the input signal. Therefore, any delay values designated by the data control pin must be between 0 samples and the Max Delay (samples) option.
+
+Please see the image below depicting how the module needs to be connected and used in the schematic.
+
+
+|voltagecontroldelayschematic.png|
 
 .. container:: centeralign
 
@@ -25,24 +40,26 @@ Pins
 Input
 ~~~~~
 
-=========================== ======= ==================================
-Name                        Type    Description
-=========================== ======= ==================================
-Input                       Audio   Input channel 0
-DelayTap <fc #ff0000>X</fc> Control Current delay for Output channel X
-=========================== ======= ==================================
+========== ======= ==================================
+Name       Type    Description
+========== ======= ==================================
+Input      Audio   Input channel 0
+DelayTap X Control Current delay for Output channel X
+========== ======= ==================================
 
 Output
 ~~~~~~
 
-========================= ===== ================
-Name                      Type  Description
-========================= ===== ================
-Output <fc #ff0000>X</fc> Audio Output channel X
-========================= ===== ================
+======== ===== ================
+Name     Type  Description
+======== ===== ================
+Output X Audio Output channel X
+======== ===== ================
 
-| Note: <fc #ff0000>X</fc> - Channel Index
-| ===== Configurable Parameters =====
+Note: X - Channel Index
+
+Configurable Parameters
+-----------------------
 
 +-----------------------+---------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | GUI Parameter Name    | Default Value | Range                | Function Description                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -65,7 +82,7 @@ Output <fc #ff0000>X</fc> Audio Output channel X
 
 | 
 | ===== DSP Parameter Computation ===== MaxDelay = ( MaxDelay in ms ) \* (FS/ 1000)
-| \* FS - Sampling Rate
 
-.. |module.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/module.png
+-  FS - Sampling Rate
+
 .. |voltagecontroldelayschematic.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/voltagecontroldelayschematic.png

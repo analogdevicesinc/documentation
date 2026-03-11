@@ -32,7 +32,7 @@ Required Equipment
 -  USB type A to USB type mini-B cable
 -  Tedeah Huntleigh Model 1042 Load Cell
 
-|
+
 
 .. note::
 
@@ -129,7 +129,7 @@ Software Control and Indicator Descriptions
 ::
 
    -**Connect/Reconnect Button**
-   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0216 Board.  A connection to the SDP-B Board must be made to use the software.   
+   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0216 Board.  A connection to the SDP-B Board must be made to use the software.
    -**Run Button**
    * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
    -**Stop Button**
@@ -144,11 +144,11 @@ Software Control and Indicator Descriptions
    -**Chart Controls**
    * These controls allow the user to zoom-in, zoom-out, and pan through the data collected.
    -**Select Units Radio Buttons**
-   * This control determines the Y-Axis units of the data displayed in the chart. 
+   * This control determines the Y-Axis units of the data displayed in the chart.
    -**System Status String Indicator**
    * This indicator displays a message to the user detailing the current state of the software.
    -**System Status LED Indicator**
-   * This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0216:cn0216-software-inactive.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0216:cn0216-software-busy.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0216:cn0216-software-error.png?nolink&|}}Error\\ 
+   * This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0216:cn0216-software-inactive.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0216:cn0216-software-busy.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0216:cn0216-software-error.png?nolink&|}}Error
    -**Calibration Weight Numerical Control**
    * Set this control to the weight of the object used to calibrate the load cell.
    -**Calibrate Button**
@@ -159,7 +159,7 @@ Software Control and Indicator Descriptions
      * __Unbuffered Mode__ - Selecting this radio button turns the on-chip analog input channel buffer of the [[:adi:`AD7791|AD7791]]` **OFF**.
    -**ADC Channel Select Radio Buttons**
    * This control is used to select the analog input channel of the [[:adi:`AD7791|AD7791]]` for conversion.  The default value is __AIN(+)-AIN(-)__ and is highlighted in **bold** on the **Calibrate System Tab**.
-     * __AIN(+)-AIN(-)__ - Selecting this radio button allows for normal operation of the [[:adi:`AD7791|AD7791]]`.  
+     * __AIN(+)-AIN(-)__ - Selecting this radio button allows for normal operation of the [[:adi:`AD7791|AD7791]]`.
      * __AIN(-)-AIN(-)__ - Selecting this radio button shorts the analog input channels of the [[:adi:`AD7791|AD7791]]`.
      * __Vdd Monitor__ - Selecting this radio button monitors the voltage applied to the Vdd pin of the [[:adi:`AD7791|AD7791]]`.  The voltage is attenuated by 5 and the resultant voltage is applied to the ∑-Δ modulator using an internal 1.17 V reference for analog to digital conversion.
    -**Update Rate Radio Buttons**
@@ -182,7 +182,7 @@ Establishing a USB Connection Link
    **C:\\Program Files\\Analog Devices\\CN0216\\CN0216.exe**\
 
 
-\* Click the **Connect/Reconnect Button**. A window with a progress bar will load.
+- Click the **Connect/Reconnect Button**. A window with a progress bar will load.
 
 
 
@@ -208,9 +208,9 @@ Calibrating the Load Cell
 
 |image13|
 
--  Remove the calibration weight when prompted to do so.
+   \* Remove the calibration weight when prompted to do so.
 
-|image14|
+   |image14|
 
    \* Click the **Continue Button**.
 -  Wait for calibration to complete.

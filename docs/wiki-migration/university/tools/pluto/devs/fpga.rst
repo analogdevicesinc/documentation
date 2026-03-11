@@ -21,20 +21,20 @@ Next we can go into vivado and check the hardware manager for connectivity. This
 
    tcollins@winston:/tmp$ xsct
    rlwrap: warning: your $TERM is 'xterm' but rlwrap couldn't find it in the terminfo database. Expect some problems.
-                                                                                                                       
-   ****** Xilinx Software Commandline Tool (XSCT) v2017.4.1
-     **** Build date : Jan 30 2018-15:42:35
+
+   ***** Xilinx Software Commandline Tool (XSCT) v2017.4.1
+     *** Build date : Jan 30 2018-15:42:35
        ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 
 
-   xsct% connect -host localhost -port 3121                                                                            
-   tcfchan#0                                                                                                           
-   xsct% targets                                                                                                       
+   xsct% connect -host localhost -port 3121
+   tcfchan#0
+   xsct% targets
      1  APU
         2  ARM Cortex-A9 MPCore #0 (Running)
         3  ARM Cortex-A9 MPCore #1 (Running)
      4  xc7z010
-   xsct%   
+   xsct%
 
 Alternatively in the GUI, PlutoSDR should appear as so:
 

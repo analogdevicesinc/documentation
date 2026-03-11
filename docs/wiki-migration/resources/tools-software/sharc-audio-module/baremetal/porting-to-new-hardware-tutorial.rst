@@ -41,9 +41,9 @@ The first thing we'll do is create a new definition in ``audio_system_config.h``
 
 .. code:: c
 
-   //*****************************************************************************
+   //****************************************************************************
    // 3. Select an audio processing framework to use (only select one)
-   //*****************************************************************************
+   //****************************************************************************
 
    // Standard audio processing framework (SHARC Audio Module and SHARC Audio Module + DIY board)
    #define FRAMEWORK_8CH_SINGLE_OR_DUAL_CORE_A2B           FALSE
@@ -464,11 +464,11 @@ The last step is reducing the DMA and SPORT enable code to enable just SPORT0 (a
 
    void audioframework_start() {
 
-       // Enable RX and TX DMAs for SPORT0 
+       // Enable RX and TX DMAs for SPORT0
        SPORT_DMA_ENABLE(0,1);
        SPORT_DMA_ENABLE(1,1);
-       
-       // Enable SPORT0 
+
+       // Enable SPORT0
        SPORT_ENABLE(0,A,0,1);
        SPORT_ENABLE(0,B,0,1);
 
@@ -496,7 +496,7 @@ The last thing we need to do is to update the ``processaudio_output_routing()`` 
 
        for (int i = 0; i < AUDIO_BLOCK_SIZE; i++) {
 
-           // Send all 8 channels from SHARC core 2 to our codec 
+           // Send all 8 channels from SHARC core 2 to our codec
            codec_0_left_out[i]  = audiochannel_from_sharc_core2_0_left[i];
            codec_0_right_out[i] = audiochannel_from_sharc_core2_0_right[i];
            codec_1_left_out[i]  = audiochannel_from_sharc_core2_1_left[i];
@@ -518,5 +518,5 @@ Depending on your hardware configuration, the ports assignments of the periphera
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#driver-creation-tutorial
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#driver-creation-tutorial
    :alt: Creating Drivers for New Audio Components#.|Bare Metal Framework#flashing|Programming BM Framework to Flash

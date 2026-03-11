@@ -36,7 +36,7 @@ Example
 
 ::
 
-   # iio_info 
+   # iio_info
    Library version: 0.15 (git tag: v0.15)
    Compiled with backends: local xml ip usb serial
    IIO context created with local backend.
@@ -57,13 +57,13 @@ Example
                            4 channel-specific attributes found:
                                    attr  0: calibscale value: 1.000000
                                    attr  1: calibphase value: 0.000000
-                                   attr  2: sampling_frequency_available value: 30720000 3840000 
+                                   attr  2: sampling_frequency_available value: 30720000 3840000
                                    attr  3: sampling_frequency value: 30720000
                            voltage1:  (output, index: 1, format: le:S16/16>>0)
                            4 channel-specific attributes found:
                                    attr  0: calibphase value: 0.000000
                                    attr  1: calibscale value: 1.000000
-                                   attr  2: sampling_frequency_available value: 30720000 3840000 
+                                   attr  2: sampling_frequency_available value: 30720000 3840000
                                    attr  3: sampling_frequency value: 30720000
                            altvoltage3: TX1_Q_F2 (output)
                            5 channel-specific attributes found:
@@ -396,7 +396,7 @@ Example
                                    attr  1: calibbias value: 0
                                    attr  2: calibscale value: 1.000000
                                    attr  3: samples_pps ERROR: No such device (-19)
-                                   attr  4: sampling_frequency_available value: 30720000 3840000 
+                                   attr  4: sampling_frequency_available value: 30720000 3840000
                                    attr  5: sampling_frequency value: 30720000
                            voltage1:  (input, index: 1, format: le:S12/16>>0)
                            6 channel-specific attributes found:
@@ -404,7 +404,7 @@ Example
                                    attr  1: calibphase value: 0.000000
                                    attr  2: calibscale value: 1.000000
                                    attr  3: samples_pps ERROR: No such device (-19)
-                                   attr  4: sampling_frequency_available value: 30720000 3840000 
+                                   attr  4: sampling_frequency_available value: 30720000 3840000
                                    attr  5: sampling_frequency value: 30720000
                    2 buffer-specific attributes found:
                                    attr  0: watermark value: 2048

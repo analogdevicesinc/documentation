@@ -18,15 +18,16 @@ Super Bass Stereo
 Description
 ~~~~~~~~~~~
 
-| 
-| The Super Bass block is a bass enhancement algorithm specifically designed to compensate for the poor low end response of small speakers by using psychoacoustic principles to improve the perceived bass response.
-| ===== Variants =====
+The Super Bass block is a bass enhancement algorithm specifically designed to compensate for the poor low end response of small speakers by using psychoacoustic principles to improve the perceived bass response.
+
+Variants
+~~~~~~~~
 
 -  Super Bass (Mono)
 -  Super Bass (Stereo)
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+~~~~~~~~~~~~~~~~~
 
 +---------------------+------------+------------------+---------------+------------------+
 | Name                | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |

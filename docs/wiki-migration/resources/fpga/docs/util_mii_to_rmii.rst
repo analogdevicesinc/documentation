@@ -152,13 +152,13 @@ References
 ----------
 
 -  :git-hdl:`util_mii_to_rmii IP source code <library/util_mii_to_rmii>`
-   \* :adi:`ADIN1300 PHY Information <adin1300>`
-   \* :adi:`ADIN1300 PHY Documentation <media/en/technical-documentation/data-sheets/ADIN1300.pdf>`
-   \* :doc:`ADIN1300 PHY Linux Driver </wiki-migration/resources/tools-software/linux-drivers/net-phy/adin>`
+-  :adi:`ADIN1300 PHY Information <adin1300>`
+-  :adi:`ADIN1300 PHY Documentation <media/en/technical-documentation/data-sheets/ADIN1300.pdf>`
+-  :doc:`ADIN1300 PHY Linux Driver </wiki-migration/resources/tools-software/linux-drivers/net-phy/adin>`
 -  :adi:`CN0506 Information <en/design-center/reference-designs/circuits-from-the-lab/cn0506.html>`
-   \* :adi:`CN0506 Reference Note <media/en/reference-design-documentation/reference-designs/cn0506.pdf>`
-   \* :doc:`CN0506 HDL Reference Design </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0506/hdl>`
-   \* :doc:`CN0506 User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0506>`
+-  :adi:`CN0506 Reference Note <media/en/reference-design-documentation/reference-designs/cn0506.pdf>`
+-  :doc:`CN0506 HDL Reference Design </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0506/hdl>`
+-  :doc:`CN0506 User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0506>`
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

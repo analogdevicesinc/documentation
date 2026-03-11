@@ -1,8 +1,9 @@
 I2C Read (ADAU145X)
 ===================
 
-| :doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
-| There are two different versions of I2C Read module.
+:doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
+
+There are two different versions of I2C Read module.
 
 -  I2C Periodic Read
 -  I2C Read with external Trigger
@@ -15,8 +16,8 @@ The 'I2C Periodic Read' block reads a particular sub address from any I2C slave 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2cperiodicread.jpg
    :align: center
 
-| 
-| ====Output Pins====
+Output Pins
+~~~~~~~~~~~
 
 +-----------------+------------------------------------+----------------------------+
 | Name            | Format [int/dec] - [control/audio] | Function Description       |
@@ -32,8 +33,8 @@ The 'I2C Periodic Read' block reads a particular sub address from any I2C slave 
 
 Create Multiple instances for monitoring multiple slaves/ multiple sub address from same slave.
 
-| 
-| ====GUI Control====
+GUI Control
+~~~~~~~~~~~
 
 +----------------------+---------------+---------------------------------+----------------------------------------------------------+
 | GUI Control Name     | Default Value | Range                           | Function Description                                     |
@@ -59,8 +60,8 @@ Create Multiple instances for monitoring multiple slaves/ multiple sub address f
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2cperiodicread.jpg
    :align: center
 
-| 
-| ====Input Pins====
+Input Pins
+~~~~~~~~~~
 
 +----------------+------------------------------------+--------------------------------------------+
 | Name           | Format [int/dec] - [control/audio] | Function Description                       |
@@ -85,8 +86,8 @@ Create Multiple instances for monitoring multiple slaves/ multiple sub address f
 
 Create Multiple instances for monitoring multiple slaves/ multiple sub address from same slave.
 
-| 
-| ====GUI Control====
+GUI Control
+~~~~~~~~~~~
 
 +----------------------+---------------+---------------------------------+----------------------------------------------------------+
 | GUI Control Name     | Default Value | Range                           | Function Description                                     |

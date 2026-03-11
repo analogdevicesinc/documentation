@@ -1,5 +1,4 @@
-| 
-| :doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
+:doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
 
 ezLINX™ Isolated RS-232 Implementation
 ======================================

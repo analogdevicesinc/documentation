@@ -35,8 +35,6 @@ Potentially useful `Introduction to electrical engineering <https://www.khanacad
 
 -  :doc:`Lab Activity Material Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>`
 
-| 
-
 Other Resources
 ---------------
 
@@ -54,7 +52,7 @@ Analog Device Supplied Content
 **Blogs and FAQs**
 
 -  :adi:`Ask the Applications Engineer: Op Amp Issues <library/analogDialogue/Anniversary/6.html>` – Discusses different types of operational amplifier and the reasons for those differences.
-   \* :adi:`Analog Computation in the Digital Age <media/en/analog-dialogue/raqs/computation.pdf>`
+-  :adi:`Analog Computation in the Digital Age <media/en/analog-dialogue/raqs/computation.pdf>`
 
 Wikipedia
 ~~~~~~~~~

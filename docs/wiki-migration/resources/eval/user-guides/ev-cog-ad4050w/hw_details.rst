@@ -7,6 +7,7 @@ The following boards are currently available:
 
 -  :doc:`EV-COG-AD4050WZ MCU Cog </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w/cog_hw_userguide>`
 
-| 
+
 | End Document
-| :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w>`
+
+:doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w>`

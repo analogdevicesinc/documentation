@@ -122,7 +122,7 @@ Download Source files
 Setup a workspace
 =================
 
-<fc #800000>*\* How to best use the ADI HDL repository? \**</fc>
+\*\* How to best use the ADI HDL repository? \*\*
 
 The ADI reference design repositories are hosted on GitHub and uses git version control system. However you may use your own repository and/or a different version control system. In any case, try not to download the repository as a zip file. The best strategy is to clone the repository and leave it as it is. Occassionally, perhaps, fetching and rebasing it. The RFBBP build flow shows how to setup the ADI HDL repository and another repository side by side. The two repositories are independent to each other but sharing files and frame work. ++++ Show/Hide Commands: \|
 
@@ -156,7 +156,7 @@ The build setup assumes you have cloned the "hdl" and "linux" repositories with 
 Creating the IP library
 =======================
 
-<fc #800000>\ **How do I create my own Vivado IP library and IP core?**\ </fc>
+**How do I create my own Vivado IP library and IP core?**
 
 The RFBBP is developed as an IP core that is part of a different library separate from the ADI library. A Vivado library is just a directory that needs to contain some specific files. In our case, we create a library (named "ip") and the RFBBP core (named "axi_xcomm2ip") inside our workspace. The generic set of files an IP needs are the Makefile, HDL files, constraints (if any) along with a TCL file to build the IP. The structure of our source files is presented below , that is - this is how you see the downloaded source files. You do NOT run these commands but simply extract the source files from the archive. The files simply falls into the directory structure referenced here. ++++ Show/Hide Commands: \|
 
@@ -178,7 +178,7 @@ This library can later be added to the Vivado library search paths to include al
 
 ++++
 
-<fc #800000>\ **Why write a TCL file to create a custom IP core?**\ </fc>
+**Why write a TCL file to create a custom IP core?**
 
 The TCL file is optional. You may create the IP and save the generated files. However, we like the TCL flow because it makes the tool conform to our needs. We do not wish to discuss the reasons (too many), but consider this- so far we were unable to generate the Vivado library files across various versions using the same tool commands. If you plan to stay with a single version of the tools you may not see these benefits. So the choice is up to you, but we encourage you to use the TCL flow. We have created some wrapper procedures around the tool commands. As Xilinx changes its commands and functionality over each version of the tool, we change them within these procedures so that bulk of our library remains unaltered. ++++ Show/Hide Commands: \|
 
@@ -207,7 +207,7 @@ The TCL file is optional. You may create the IP and save the generated files. Ho
 
 Note the use of the environment variable "AD_HDL_DIR" in the TCL file. This variable is used to point to the ADI HDL repository and use the files and scripts inside of it. This way, your IP may reside anywhere in your file system independent of the ADI HDL repository.
 
-<fc #800000>\ **Why write a Make file to create a custom IP core?**\ </fc>
+**Why write a Make file to create a custom IP core?**
 
 As with the TCL file, the Makefile is also a choice (watched the Matrix too many times). If you choose to follow our frame work, simply list your dependencies and targets. Again note the export of the environment variable. This variable is set based on the workspace setup we discussed above. ++++ Show/Hide Commands: \|
 
@@ -253,7 +253,7 @@ As with the TCL file, the Makefile is also a choice (watched the Matrix too many
 
 ++++
 
-<fc #800000>\ **How do I build the IP cores and library?**\ </fc>
+**How do I build the IP cores and library?**
 
 In order for our directory "ip" to be a library, it must alteast have one "ip-core" inside it. The "ip-core" is identified by the tool with the existence of the generated files from the TCL script. Also note that you don't need to generate this separately, the project make does check the existence of all the "ip-cores" it needs and builds them accordingly. ++++ Show/Hide Commands: \|
 
@@ -269,7 +269,7 @@ In order for our directory "ip" to be a library, it must alteast have one "ip-co
 Creating the IP core
 ====================
 
-<fc #800000>\ **How do I create a custom AXI IP core using ADI frame work?**\ </fc>
+**How do I create a custom AXI IP core using ADI frame work?**
 
 As mentioned in the article, the RFBBP IP is an AXI core, making it a peripheral that interfaces to the processor so that it can be accessed via software. In order to create an AXI IP core, one could make use of the ADI library common modules. All you need in such a case would be to instantiate the "up_axi" module. This module interfaces to the processor's AXI master bus (via an interconnect in most cases) and translates AXI bus transactions to simple memory like interface internally. The BBP IP core illustrates how to use this interface to implement the register and memory address space for the processor access. The "up_axi" module uses dword addressing, instead of the AXI byte addressing. The following code in the RFBBP core infers the "up_axi" module, there by in-effect creating it as an AXI IP core. ++++ Show/Hide Commands: \|
 
@@ -320,9 +320,9 @@ As mentioned in the article, the RFBBP IP is an AXI core, making it a peripheral
 
 ++++
 
-<fc #800000>\ **How do I infer register and memory space using the "up_axi" module?**\ </fc>
+**How do I infer register and memory space using the "up_axi" module?**
 
-<fc #800000>\ **How do I create a custom AXI IP core to be able to use inside an ADI project?**\ </fc>
+**How do I create a custom AXI IP core to be able to use inside an ADI project?**
 
 The BBP is implemented as an "insert-able" core in the ADI design. If you are pondering to do something similar in other designs, you could follow the same procedure. However, in terms of placement, this requires a better understanding of the design and the various data path components. If your custom IP core can meet the throughput, placing it next to the interface core is a logical choice. If you need it to be an offline core, place it along with a DMA engine off the DDR memory. This allows you to collect data in the DDR and pass it to your custom core at its own pace.
 
@@ -417,7 +417,7 @@ The data path can then be altered by infering a simple multiplexer. ++++ Show/Hi
 
 ++++
 
-<fc #800000>\ **How do I send my own data to the ADI IP core?**\ </fc>
+**How do I send my own data to the ADI IP core?**
 
 This is NOT something we can answer. It is also a question of "what" than "how". The "how" part is that you either generate the data in hardware or in software. As for the "what", note that the most of the interface cores are meant to for analog data. That is, though it is a digital interface, the data must be and considered to be analog. An often asked question is why the data one sent to the DAC does not match the data received at the ADC. This is a mis-conception, the digital data to the DAC is must be and in fact a "digitized" analog signal. The "data" in its commonly used sense, must be encoded and modulated before passing it to the analog domain.
 
@@ -426,7 +426,7 @@ As for our RFBBP core, it is suffice to say that the rest of the logic generate 
 Modifying and customizing ADI projects
 ======================================
 
-<fc #800000>\ **How do I insert a custom AXI IP core inside an ADI project?**\ </fc>
+**How do I insert a custom AXI IP core inside an ADI project?**
 
 As mentioned above, the RFBBP AXI core is designed for the "fmcomms2" projects and is to be placed next to the "axi_ad9361" core. In order to do this, we need to modify the "fmcomms2" project. This can be easily done using the ADI TCL frame work. We create this as a new project inheritting the "fmcomms2" board design and doing the necessary customizations. In the RFBBP design, this is all done using a single TCL file. ++++ Show/Hide Commands: \|
 
@@ -600,4 +600,3 @@ Accessing the HDL IP core in Linux
 ==================================
 
 How do I access a HDL IP core from Linux?
------------------------------------------

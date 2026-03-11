@@ -27,15 +27,16 @@ The following steps describe the procedure for exporting A2B system configuratio
 
 |image1|
 
-|
-
 .. container:: centeralign
 
    **Figure :** Exporting system configuration
 
 
-| A dialog box appears as shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles>`. Export required configuration file using appropriate tab.
-| |image2|
+A dialog box appears as shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles>`. Export required configuration file using appropriate tab.
+
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -115,7 +116,7 @@ An example project using command list for A2B network discovery and configuratio
 
 .. note::
 
-   Few SPI A2B commands requires polling of A2B_SPISTAT.SPI_BUSY bit using SPISTAT (0x04) command before issuing new commands. The command list contains a single command with the comment – “/\* **SPI_BUSY_STAT_CHECK:** Read in loop \*/”. The application is expected to issue this command in a loop till SPI is available.
+   Few SPI A2B commands requires polling of A2B_SPISTAT.SPI_BUSY bit using SPISTAT (0x04) command before issuing new commands. The command list contains a single command with the comment – “/\**SPI_BUSY_STAT_CHECK:** Read in loop \*/”. The application is expected to issue this command in a loop till SPI is available.
 
 
 .. note::
@@ -336,8 +337,6 @@ Also, there is a provision to export the information into an XML/ Dat file as sh
    \ **Figure:** Schematic Dump as XML
 
 
-.. _loading-network-configuration-1:
-
 Loading Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -377,11 +376,7 @@ The Custom Node Information is stored in .DAT in the format specified in below :
 Specifications of Export files from A2B plugin for SigmaStudio+
 ===============================================================
 
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/cmdlistxml>` for the Command List XML specification
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/cmdlisth>` for the Command List header specification
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/peripheralxml>` for the Peripheral XML specification
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml>` for the A2B BCF XML specification
-| :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfc>` for the A2B BCF.c specification
+:doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/cmdlistxml>` for the Command List XML specification :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/cmdlisth>` for the Command List header specification :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/peripheralxml>` for the Peripheral XML specification :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfxml>` for the A2B BCF XML specification :doc:`click here </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/bcfc>` for the A2B BCF.c specification
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/exportimport.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/system_config.png

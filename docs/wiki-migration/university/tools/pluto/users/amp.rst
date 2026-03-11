@@ -24,7 +24,7 @@ You can also look at this from the opposite way - if you need to read a book on 
 
 If you still are not sure lets go way back to the middle school butter gun analogy, by watching the excellent video, put together by `Roger Linsell <https://www.youtube.com/user/fizzicsorg>`_ of http://www.fizzics.org/.
 
-.. image:: https://wiki.analog.com/_media/youtube>JW3tT0L2gpc
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/users/youtube>JW3tT0L2gpc
    :alt: youtube>JW3tT0L2gpc
 
 Free Space Path Loss
@@ -254,8 +254,6 @@ However, the power unit is a bit tricker to determine. An instrument will provid
 :math:`\displaystyle P_{dBm} = 10log_{10} (P_{RMS}/1mW) = 10log_{10} \frac{I^2+Q^2}{2/R \times 1mW}`
 
 where :math:`R` is the input resistance of the device. For an SDR I/Q values will be based on some uncalibrated ADC values and we typically define them of unit dBFS. Resulting in a power calculation that is not relatable to Watts. If it was desired to use an SDR an a instrument we would need to relate each output of the ADC to a specific input voltage at the antenna. This mapping would allow us to accurate measure quantities in SI units instead of relative units.
-
-.. _s-parameters-1:
 
 S Parameters
 ------------

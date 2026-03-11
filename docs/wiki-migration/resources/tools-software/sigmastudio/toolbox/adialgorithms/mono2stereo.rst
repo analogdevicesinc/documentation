@@ -1,7 +1,7 @@
 Mono2Stereo
 ===========
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
 
 +------------------------------------------------------------------------------------------------+-----------------+
 | The Mono2Stereo algorithm takes a mono signal and creates a stereo image from a single source. | |mono2pic1.png| |
@@ -35,8 +35,10 @@ The Mono2Stereo algorithm uses filtering processing to create two separate chann
 Example
 -------
 
-| The following image shows the Mono2Stereo block being used to separate a single source input into a left and right output. The stereo selection `Mux <https://wiki.analog.com/resources/tools-software/sigmastudio/toolbox/multiplexersdemultiplexers/stereoswitchnx2>`_ allows selection for comparison between the same mono source being sent to left and right versus, the stereo signal from the Mono2Stereo block.
-| |mono2pic2.png|
+The following image shows the Mono2Stereo block being used to separate a single source input into a left and right output. The stereo selection `Mux <https://wiki.analog.com/resources/tools-software/sigmastudio/toolbox/multiplexersdemultiplexers/stereoswitchnx2>`_ allows selection for comparison between the same mono source being sent to left and right versus, the stereo signal from the Mono2Stereo block.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/mono2pic2.png
+   :alt: mono2pic2.png
 
 Algorithm Details
 -----------------
@@ -62,4 +64,3 @@ Algorithm Details
 +----------------------------+----------------------------------------------------+
 
 .. |mono2pic1.png| image:: https://wiki.analog.com/_media/mono2pic1.png
-.. |mono2pic2.png| image:: https://wiki.analog.com/_media/mono2pic2.png

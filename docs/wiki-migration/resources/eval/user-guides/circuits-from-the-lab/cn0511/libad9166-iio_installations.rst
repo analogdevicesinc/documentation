@@ -21,7 +21,7 @@ Go to libad9166-iio directory
 
 ::
 
-   analog@analog:~$ cd /usr/local/src/libad9166-iio 
+   analog@analog:~$ cd /usr/local/src/libad9166-iio
 
 Install the libad9166-iio
 
@@ -61,4 +61,3 @@ Install the requirements under this folder
 
    analog@analog:~/python $ sudo make install
 
---------------

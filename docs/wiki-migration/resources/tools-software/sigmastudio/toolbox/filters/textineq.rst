@@ -1,8 +1,11 @@
 Text-In
 =======
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| |image1|
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/tesxtineq.png
+   :align: center
+   :width: 100px
 
 An alternative to the :doc:`General-Purpose </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/general2ndorder>` filter, the Text-In block lets you set parameters using text fields, without having to open another window. The algorithms are the same, giving access to the wide variety of 2nd-order-filter behaviors, although not all the algorithms are offered with Text-In.
 
@@ -36,6 +39,3 @@ To use this block:
    -  Gain is the overall gain of filter.
 
 As with other blocks, there's the option :doc:`Grow </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithms>` this algorithm. Observe that with this block, growing the algorithm adds another frequency band to the block, which is equivalent to having two filters in series.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/tesxtineq.png
-   :width: 100px

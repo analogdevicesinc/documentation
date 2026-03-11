@@ -1,15 +1,16 @@
 EVAL-CN0518-EBZ User Guide
 ==========================
 
-|
-
 .. important::
 
    **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0518-ebz/index.html
-   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
-   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+   https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0518-ebz/index.html
+   
+   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   
+   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
    
 
 
@@ -24,23 +25,18 @@ Designed to be used with the :adi:`ADALM-PLUTO`, the :adi:`EVAL-CN0518-EBZ` feat
 
 A micro-USB connector is used for the input power, allowing the evaluation board to use most +5 V wall wart power supplies available in the market.
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/cn0518-top.png
+   :align: center
+   :width: 400px
 
-.. container:: center
+*Figure 1. EVAL-CN0518-EBZ Reference Design Board*
 
-   *<fc #000000>Figure 1. EVAL-CN0518-EBZ Reference Design Board</fc>*
+The :adi:`EVAL-CN0518-EBZ` features the :adi:`HMC376`, which is a GaAs, pHEMT, MMIC, low noise amplifier operating between 700 MHz to 1000 MHz. This amplifier is ideal for use in GSM and CDMA cellular base station front end receivers. This low noise noise amplifier does not require any external matching circuitry to operate.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/block_diagram.png
+   :align: center
 
-   | The :adi:`EVAL-CN0518-EBZ` features the :adi:`HMC376`, which is a GaAs, pHEMT, MMIC, low noise amplifier operating between 700 MHz to 1000 MHz. This amplifier is ideal for use in GSM and CDMA cellular base station front end receivers. This low noise noise amplifier does not require any external matching circuitry to operate.
-
-|
-
-| |image2|
-
-.. container:: center
-
-   *<fc #000000>Figure 2. EVAL-CN0518-EBZ Simplified Block Diagram</fc>*
-
+*Figure 2. EVAL-CN0518-EBZ Simplified Block Diagram*
 
 Reference Design Hardware
 -------------------------
@@ -48,48 +44,46 @@ Reference Design Hardware
 Primary Side
 ~~~~~~~~~~~~
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/primary_side.png
+   :align: center
+   :width: 600px
 
-.. container:: center
-
-   *<fc #000000>Figure 3. CN0518 Primary Side</fc>*
-
+*Figure 3. CN0518 Primary Side*
 
 Secondary Side
 ~~~~~~~~~~~~~~
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/secondary_side.png
+   :align: center
+   :width: 600px
 
-.. container:: center
-
-   *<fc #000000>Figure 6. CN0518 Secondary Side</fc>*
-
+*Figure 6. CN0518 Secondary Side*
 
 SMA Connectors
 ~~~~~~~~~~~~~~
 
 The SMA connectors are used for the RF input and output connections.
 
-+-------------------------------------+----------------------+-----------------------------------------------+
-| RF Port                             | Reference Designator | Description                                   |
-+=====================================+======================+===============================================+
-| RF Input ​​(SMA male connector)     | J2                   | Connect to a radio or piece of RF equipment ​ |
-+-------------------------------------+----------------------+-----------------------------------------------+
-| RF Output ​​(SMA female ​connector) | J1                   | Connect to an antenna ​                       |
-+-------------------------------------+----------------------+-----------------------------------------------+
++----------------------------------+----------------------+---------------------------------------------+
+| RF Port                          | Reference Designator | Description                                 |
++==================================+======================+=============================================+
+| RF Input (SMA male connector)    | J2                   | Connect to a radio or piece of RF equipment |
++----------------------------------+----------------------+---------------------------------------------+
+| RF Output (SMA female connector) | J1                   | Connect to an antenna                       |
++----------------------------------+----------------------+---------------------------------------------+
 
 LED Indicators
 ~~~~~~~~~~~~~~
 
 The reference design uses two LEDs to indicate its current status:
 
-+----------------+-----------------------+-------------------------------------------------+
-| RF Port        | Reference Designator  | Description                                     |
-+================+=======================+=================================================+
-| **Green ​LED** | (DS1)                 | Indicates that power is present on the board    |
-+----------------+-----------------------+-------------------------------------------------+
-| **Red ​LED**   | (DS2) ​               | ​Indicates when an overpower event occurs ​​    |
-+----------------+-----------------------+-------------------------------------------------+
++---------------+----------------------+----------------------------------------------+
+| RF Port       | Reference Designator | Description                                  |
++===============+======================+==============================================+
+| **Green LED** | (DS1)                | Indicates that power is present on the board |
++---------------+----------------------+----------------------------------------------+
+| **Red LED**   | (DS2)                | Indicates when an overpower event occurs     |
++---------------+----------------------+----------------------------------------------+
 
 This table shows the board status when the various LEDs are ON/OFF.
 
@@ -145,12 +139,11 @@ Follow the step-by-step process on how to configure the ADALM-PLUTO for proper o
 Test Setup
 ~~~~~~~~~~
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/test_setup.png
+   :align: center
+   :width: 600px
 
-.. container:: center
-
-   *<fc #000000>Figure 11. EVAL-CN0518-EBZ Test Setup</fc>*
-
+*Figure 11. EVAL-CN0518-EBZ Test Setup*
 
 -  Connect directly the **Rx port** of :adi:`ADALM-PLUTO` to **J1** of the :adi:`EVAL-CN0518-EBZ`.
 -  Connect the **Tx port** of the :adi:`ADALM-PLUTO` to **J2** of the :adi:`EVAL-CN0518-EBZ` using a male-to-male SMA cable.
@@ -168,40 +161,33 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download or update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download or update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope. The instructions can be seen in the previous section.
 -  Press refresh to display available IIO devices. Once the :adi:`ADALM-PLUTO` appeared, press connect.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/connecting_of_iio_osc.jpg
+   :align: center
+   :width: 400px
 
-.. container:: center
-
-   *<fc #000000>Figure 12. IIO Oscilloscope Configuration</fc>*
-
+*Figure 12. IIO Oscilloscope Configuration*
 
 -  On the AD936x tab, set the required parameters for the :adi:`EVAL-CN0518-EBZ` to operate properly.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/ad936x.png
+   :align: center
+   :width: 400px
 
-
-|image7|
-
-.. container:: center
-
-   *<fc #000000>Figure 13. ADALM-PLUTO Settings</fc>*
-
+*Figure 13. ADALM-PLUTO Settings*
 
 -  Using the capture window, you can see the RF output of the :adi:`EVAL-CN0518-EBZ` in the frequency domain.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/capture_window.png
+   :align: center
+   :width: 700px
 
-
-|image8|
-
-.. container:: center
-
-   *<fc #000000>Figure 14. CN0518 RF Output</fc>*
-
+*Figure 14. CN0518 RF Output*
 
 More Information and Useful Links
 ---------------------------------
@@ -243,19 +229,3 @@ Registration
 
 
 *End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/cn0518-top.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/block_diagram.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/primary_side.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/secondary_side.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/test_setup.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/connecting_of_iio_osc.jpg
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/ad936x.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/capture_window.png
-   :width: 700px

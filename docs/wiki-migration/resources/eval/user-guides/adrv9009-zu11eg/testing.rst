@@ -51,7 +51,7 @@ The SD card image used for production testing is based on official release of Zy
    :class: download
 
    
-   -  \**15 December 2022 release \*\*
+   -  **15 December 2022 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/talise_prod_15dec_2022.zip>`_
    -  Checksum ``b056120a53e13b197b5b366742d9f5c7``
    
@@ -61,7 +61,7 @@ The SD card image used for production testing is based on official release of Zy
    :class: download
 
    
-   -  \**28 May 2020 release \*\*
+   -  **28 May 2020 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_fmcomms8_test_card_28_05.img.tar.xz>`_
    -  Checksum ``9d3455a071f4151b9c320282abcb2f04``
    
@@ -71,7 +71,7 @@ The SD card image used for production testing is based on official release of Zy
    :class: download
 
    
-   -  \**27 May 2020 release \*\*
+   -  **27 May 2020 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_som_test_card_27_05.img.tar.xz>`_
    -  Checksum ``4efbaa39928f2f36b7b462156e6d00f6``
    
@@ -91,7 +91,7 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    :class: download
 
    
-   -  \**15 December 2022 release \*\*
+   -  **15 December 2022 release**
    -  `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/rpi_talise+prod_15dec.zip>`_
    -  Checksum ``0d8759784c1cebbcd908fe8a01083272``
    
@@ -101,7 +101,7 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    :class: download
 
    
-   -  \**02 Nov 2021 release \*\*
+   -  **02 Nov 2021 release**
    -  `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_pi_test_card_02_11.tar.xz>`_
    -  Checksum ``080fb8771e12195eba7196f9de05ec1c``
    
@@ -161,8 +161,6 @@ First make sure all the required setup explained above is completed. Once the te
 
 -  Before starting the test place the labels containing the serial number and MAC address on the RF shielding top cover.
 
-|
-
 .. warning::
 
    After this step, DO NOT SWAP the RF shielding top cover between boards.
@@ -172,16 +170,18 @@ First make sure all the required setup explained above is completed. Once the te
 
    When testing the ADRV9009-ZU11EG run the following tests in this exact order:
 
-   | \* **Test 1**
-   | \* **Test 2**
-   | \* **Test 4**
-   | \* **Test 5**
-   | \* **Test 6**
-   |
+   
+   -  **Test 1**
+   -  **Test 2**
+   -  **Test 4**
+   -  **Test 5**
+   -  **Test 6**
+   
 
 
 -  Testing sequence can be started by selecting one of the menu items. In order to start testing an Ethernet cable should be connected between Raspberry Pi and DUT. At the beginning of every test the correct connection with DUT is checked. If the connection cannot be established the following error message will be printed:
 
+   
 
 
 |image1|
@@ -199,12 +199,15 @@ First make sure all the required setup explained above is completed. Once the te
 
 -  Test 1 - Wait for 30 seconds after PS_DONE LED lights up.
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/talise_t1_led_on.jpg
+   :align: center
+   :width: 300px
 
 -  Test 2 - Power cycling needed after PS_DONE LED is OFF.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/talise_t1_led_off.jpg
+   :align: center
+   :width: 300px
 
 -  Test 5 – insert the last 4 digits of the MAC address from the RF shielding top cover.
 
@@ -248,7 +251,3 @@ First make sure all the required setup explained above is completed. Once the te
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/boot-pi-eth-conn.png
    :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/talise_t1_led_on.jpg
-   :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/talise_t1_led_off.jpg
-   :width: 300px

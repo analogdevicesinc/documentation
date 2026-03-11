@@ -1,27 +1,39 @@
 Link/Compile/Download
 =====================
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| Before a complete design can be evaluated, it must be linked, compiled, and downloaded to the hardware. To perform all these steps in a single operation, use the Link Compile Download command described below.
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+
+Before a complete design can be evaluated, it must be linked, compiled, and downloaded to the hardware. To perform all these steps in a single operation, use the Link Compile Download command described below.
 
 --------------
 
-| Link:
-| |linkcompilepic1.png|
-| The link operation analyzes the schematic's signal flow (blocks and wires), checks for any in design errors, generates the program flow, and sets algorithm sampling rates and DSP associations. To link a project, press the **Link Project** toolbar button, select **Action - Link Project** from the main menu, or press **Ctrl+I**.
+Link:
 
-| When linking is complete, the Link Window opens, displaying the project's algorithm and node list information.
-| |linkcompilepic2.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/linkcompilepic1.png
+   :alt: linkcompilepic1.png
 
-| Any errors encountered during the link operation are shown in the **Errors / Output** section of the Link Window. You cannot compile a project until all link errors are resolved. Note that all schematic block's pins must be connected or terminated or you will receive link errors.
-| |linkcompilepic3.png|
-| The linker generates a net list file, **net_list.cir2**, which contains the same information displayed in the Link Window's Node List pane.
+The link operation analyzes the schematic's signal flow (blocks and wires), checks for any in design errors, generates the program flow, and sets algorithm sampling rates and DSP associations. To link a project, press the **Link Project** toolbar button, select **Action - Link Project** from the main menu, or press **Ctrl+I**.
+
+When linking is complete, the Link Window opens, displaying the project's algorithm and node list information.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/linkcompilepic2.png
+   :alt: linkcompilepic2.png
+
+Any errors encountered during the link operation are shown in the **Errors / Output** section of the Link Window. You cannot compile a project until all link errors are resolved. Note that all schematic block's pins must be connected or terminated or you will receive link errors.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/linkcompilepic3.png
+   :alt: linkcompilepic3.png
+
+The linker generates a net list file, **net_list.cir2**, which contains the same information displayed in the Link Window's Node List pane.
 
 --------------
 
-| **Compile:**
-| |linkcompilepic4.png|
-| Following the link step, compilation is performed. Compile generates the DSP program code and parameter data from the graphical schematic design. To compile a project, press the **Link Compile Connect** toolbar button. This will first perform the link step and then compile the project. The link window will be displayed if there are link errors.
+**Compile:**
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/linkcompilepic4.png
+   :alt: linkcompilepic4.png
+
+Following the link step, compilation is performed. Compile generates the DSP program code and parameter data from the graphical schematic design. To compile a project, press the **Link Compile Connect** toolbar button. This will first perform the link step and then compile the project. The link window will be displayed if there are link errors.
 
 If compilation is successful, the schematic status bar turns green and **"100% Ready: Compiled"** is displayed in the application status bar.
 
@@ -40,8 +52,10 @@ Awareness of these files, both their format and their contents, will prove usefu
 
 --------------
 
-| **Download:**
-| |linkcompilepic5.png|
+**Download:**
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/linkcompilepic5.png
+   :alt: linkcompilepic5.png
 
 Once a project is compiled, the program and parameter data can be downloaded to the evaluation hardware for testing. To download your project, press the **Link Compile Download** toolbar button, select **Action - Link Compile Download** from the main menu, or press **F7**. This perform the link step, compile the project, and send your design code from the schematic to the DSP hardware.
 
@@ -51,8 +65,10 @@ If download is successful, the schematic status bar below the workspace will tur
 
 **Schematic Status Bar:**
 
-| The schematic status bar and application status bars display the state of the schematic design as well as indicating USB communication status. There are five status states:
-| |linkcompilepic6.png|
+The schematic status bar and application status bars display the state of the schematic design as well as indicating USB communication status. There are five status states:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/linkcompilepic6.png
+   :alt: linkcompilepic6.png
 
 .. tip::
 
@@ -80,11 +96,5 @@ Sometimes user does not want the ADAU145x clock to be reset during download. Thi
 
 |image2|
 
-.. |linkcompilepic1.png| image:: https://wiki.analog.com/_media/linkcompilepic1.png
-.. |linkcompilepic2.png| image:: https://wiki.analog.com/_media/linkcompilepic2.png
-.. |linkcompilepic3.png| image:: https://wiki.analog.com/_media/linkcompilepic3.png
-.. |linkcompilepic4.png| image:: https://wiki.analog.com/_media/linkcompilepic4.png
-.. |linkcompilepic5.png| image:: https://wiki.analog.com/_media/linkcompilepic5.png
-.. |linkcompilepic6.png| image:: https://wiki.analog.com/_media/linkcompilepic6.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/regdownload.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/regdownloadd.jpg

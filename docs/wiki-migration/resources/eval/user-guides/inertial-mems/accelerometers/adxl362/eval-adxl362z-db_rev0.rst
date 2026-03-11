@@ -1,7 +1,7 @@
 ADXL362 Datalogger & Development Board: Rev 0
 =============================================
 
-|
+
 
 .. important::
 
@@ -17,11 +17,7 @@ Resources
 Kit Contents
 ~~~~~~~~~~~~
 
-| 1 x ADXL362 Datalogger / Development Board
-| 1 x MicroSD card with USB reader
-| 1 x USB cable
-| 1 x E-Ink electronic paper display
-| 1 x Piece of double-sided foam tape
+1 x ADXL362 Datalogger / Development Board 1 x MicroSD card with USB reader 1 x USB cable 1 x E-Ink electronic paper display 1 x Piece of double-sided foam tape
 
 Not Included
 ~~~~~~~~~~~~
@@ -40,9 +36,9 @@ Design and Integration Files
 Programming Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| The firmware for the EVAL-ADXL362Z-DB was developed for the Renesas RL78/G13 microcontroller using the Renesas Electronics CubeSuite+ environment. The links below offer downloads and installation instructions for these tools:
-| http://www.renesas.eu/products/tools/evaluation_software/downloads.jsp (Global site)
-| https://www.renesas.com/us/en/design-support/software-and-tool (US site)
+The firmware for the EVAL-ADXL362Z-DB was developed for the Renesas RL78/G13 microcontroller using the Renesas Electronics CubeSuite+ environment. The links below offer downloads and installation instructions for these tools:
+
+http://www.renesas.eu/products/tools/evaluation_software/downloads.jsp (Global site) https://www.renesas.com/us/en/design-support/software-and-tool (US site)
 
 Getting Started
 ---------------
@@ -63,29 +59,25 @@ Analog Devices has developed firmware for implementing the following functions v
 Reconfiguring the Board
 -----------------------
 
-| The EVAL-ADXL362Z-DB firmware can be rewritten using the Renesas Flash Programmer (click `here <https://wiki.analog.com/>`_ for download links). Instructions for rewriting the firmware are as follows:
-| \* Download the desired firmware .hex file from `here <https://wiki.analog.com/>`_. Save it in a known location.
+The EVAL-ADXL362Z-DB firmware can be rewritten using the Renesas Flash Programmer (click `here <https://wiki.analog.com/>`_ for download links). Instructions for rewriting the firmware are as follows:
 
--  Set jumpers: J6, J7, J8, and J9 (between the USB connector and the switch) to the 1-2 position. Set jumper J2 (near the display connector) to the 2-3 position for USB power.<WRAP>
-
-.. container:: indent
-
-   :!: *We know the jumpers are a pain and we apologize in advance.*\
-
+-  Download the desired firmware .hex file from `here <https://wiki.analog.com/>`_. Save it in a known location.
+-  Set jumpers: J6, J7, J8, and J9 (between the USB connector and the switch) to the 1-2 position. Set jumper J2 (near the display connector) to the 2-3 position for USB power.
+   :!: *We know the jumpers are a pain and we apologize in advance.*
 
 ========== ============ = = ========
 **Jumper** **Position**
 
 |image1|
 
-J2         1            2 3 ::
-J6         1            2 3 ::
-J7         1            2 3 ::
-J8         1            2 3 ::
-J9         1            2 3 ::
+J2         1            2 3 
+J6         1            2 3 
+J7         1            2 3 
+J8         1            2 3 
+J9         1            2 3 
 ========== ============ = = ========
 
-</WRAP>
+
 
 -  Plug the USB cable in to the computer and to the USB port on the board.
 -  Launch the **Renesas Flash Programmer V1.03** (download `here <https://wiki.analog.com/>`_)
@@ -97,25 +89,23 @@ J9         1            2 3 ::
 -  The "Information Settings" screen shows a summary of inputted settings. Click Complete.
 -  The Workspace is now set up. Next to "User/Data area", browse to the desired .hex file (that you downloaded and saved in step **1.**)
 -  Click “Start”.
--  When flashing is complete, disconnect the USB cable (to power the board off) and set jumpers J6 - J9 back to the 2-3 position. Leave J2 where it is to USB power, or move it to the 1-2 position to power the board from the coin cell. <WRAP>
+-  When flashing is complete, disconnect the USB cable (to power the board off) and set jumpers J6 - J9 back to the 2-3 position. Leave J2 where it is to USB power, or move it to the 1-2 position to power the board from the coin cell. 
 
 ========== ============ = = ========
 **Jumper** **Position**
 
 |image2|
 
-J2         1            2 3 ::
-J6         1            2 3 ::
-J7         1            2 3 ::
-J8         1            2 3 ::
-J9         1            2 3 ::
+J2         1            2 3    
+J6         1            2 3 
+J7         1            2 3 
+J8         1            2 3 
+J9         1            2 3 
 ========== ============ = = ========
 
-</WRAP>
+
 
 -  Reconnect the USB cable OR plug in the battery and turn on the switch to begin using the board.
-
-| 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/board_front_jumpers_labeled.png
    :width: 400px

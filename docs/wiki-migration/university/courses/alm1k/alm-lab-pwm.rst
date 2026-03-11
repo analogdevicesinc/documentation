@@ -33,17 +33,7 @@ In this previous activity on :doc:`voltage comparators </wiki-migration/universi
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 1 – OP484 quad rail-to-rail op-amp
-| 1 – 4.7 KΩ resistor
-| 2 – 10 KΩ resistor
-| 1 – 20 KΩ resistor
-| 1 – 100 KΩ resistor
-| 1 – 4.7 nF capacitor
-| 1 – 10 nF capacitor
-| 1 – 47 nF capacitor
-| 1 – 100 nF capacitor
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 – OP484 quad rail-to-rail op-amp 1 – 4.7 KΩ resistor 2 – 10 KΩ resistor 1 – 20 KΩ resistor 1 – 100 KΩ resistor 1 – 4.7 nF capacitor 1 – 10 nF capacitor 1 – 47 nF capacitor 1 – 100 nF capacitor
 
 Directions:
 ~~~~~~~~~~~

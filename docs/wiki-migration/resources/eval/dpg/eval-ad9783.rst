@@ -6,8 +6,10 @@ Preface
 
 This user guide describes both the hardware and software setup needed to acquire data capture from :adi:`AD9783-DPG2-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9783.html#eb-relatedhardware>` evaluation board to characterize :adi:`AD9780`/:adi:`AD9781`/:adi:`AD9783` 12-/14-/16- bit 500MSPS high-speed digital-to-analog converter
 
-| This guide shows how AD9783-DPG2-EBZ works with ADS7-V2/SDP-H1 controller boards developed by Analog Devices. Link to the old user guide document is provided for customers who still have DPG2 and DPG3 controller boards.
-| =====Typical Setup=====
+This guide shows how AD9783-DPG2-EBZ works with ADS7-V2/SDP-H1 controller boards developed by Analog Devices. Link to the old user guide document is provided for customers who still have DPG2 and DPG3 controller boards.
+
+Typical Setup
+-------------
 
 .. container:: centeralign
 
@@ -86,19 +88,18 @@ Quick Start Guide
    //Figure 2. AD9783 Plugin *
 
 
-\* On the ACE Board View, double click the AD9783 block to access the Chip View.\ \
+- On the ACE Board View, double click the AD9783 block to access the Chip View.\ \
 
 .. container:: centeralign
 
-   *\ Figure 3. AD9783 Chip View *
+   *Figure 3. AD9783 Chip View*
 
 
-\* The default values for the register is displayed and set. The values can be changed on the Chip View GUI, or on the* **Memory Map** *for registers not available in the GUI. For more info on the memory map, refer to* :adi:`AD978x <static/imported-files/data_sheets/AD9780_9781_9783.pdf>` *datasheet. Once the desired values are set, Click* **Apply Changes** *and then* **Read All** *on the upper right window. \
+- The default values for the register is displayed and set. The values can be changed on the Chip View GUI, or on the **Memory Map** for registers not available in the GUI. For more info on the memory map, refer to* :adi:`AD978x <static/imported-files/data_sheets/AD9780_9781_9783.pdf>` *datasheet. Once the desired values are set, Click **Apply Changes** and then **Read All** on the upper right window. \
 
 .. container:: centeralign
 
-   *\ Figure 4. Apply Changes and Read All button //
-
+   *Figure 4. Apply Changes and Read All button*
 
 -  Start DPG Downloader Lite. The controller board (SDP-H1/ADS7-V2), the device part number and clock frequency should be displayed. Refer to Figures 5a and 5b.
 
@@ -118,12 +119,11 @@ Quick Start Guide
    //Figure 5b. DPG Lite Session for EVAL-AD9783 with ADS7-V2 *
 
 
-\* In DPG Downloader Lite, from the "Add Generator Waveforms" pulldown menu select* **Single Tone** *and apply the settings as shown in Figures 5a and 5b. Set the* **Data Rate** *to 200MHz and* **Desired Frequency** *to 16MHz. Set* **DAC Resolution** *to 16 for AD9783, 14 for AD9781, and 12 for AD9780. Uncheck the "Unsigned Data" box and Check the* **Generate Complex Data (I & Q)**\ *. \* Select the I/Q tone from the* **I/Q Data Vector** *pulldown menu. \* Press the download arrow and then the play button. The spectrum similar to Figure 6 should appear in the signal/spectrum analyzer. \
+- In DPG Downloader Lite, from the "Add Generator Waveforms" pulldown menu select **Single Tone** and apply the settings as shown in Figures 5a and 5b. Set the **Data Rate** to 200MHz and **Desired Frequency** to 16MHz. Set **DAC Resolution** to 16 for AD9783, 14 for AD9781, and 12 for AD9780. Uncheck the "Unsigned Data" box and Check the **Generate Complex Data (I & Q)**. * Select the I/Q tone from the **I/Q Data Vector** pulldown menu. \* Press the download arrow and then the play button. The spectrum similar to Figure 6 should appear in the signal/spectrum analyzer. \
 
 .. container:: centeralign
 
-   *\ Figure 6. Spectrum Output for AD9783; Fdac = 200MSPS, Fout = 16MHz//
-
+   *Figure 6. Spectrum Output for AD9783; Fdac = 200MSPS, Fout = 16MHz*
 
 Using the ADL5375 Modulator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

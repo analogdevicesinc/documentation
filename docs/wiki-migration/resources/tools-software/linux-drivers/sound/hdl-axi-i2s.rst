@@ -47,11 +47,11 @@ Example:
 
        axi_i2s_0: axi-i2s@77600000 {
            compatible = "adi,axi-i2s-1.00.a";
-           reg = <0x77600000 0x1000>;                                                                                                      
-           clocks = <&fpga_clock &audio_clock>;                                                                                            
+           reg = <0x77600000 0x1000>;
+           clocks = <&fpga_clock &audio_clock>;
            clock-names = "axi", "ref";
-           dmas = <&ps7_dma 0 &ps7_dma 1>;                                                                                                 
-           dma-names = "tx", "rx";      
+           dmas = <&ps7_dma 0 &ps7_dma 1>;
+           dma-names = "tx", "rx";
        };
 
 DAI configuration
@@ -113,7 +113,7 @@ Example DAI configuration
        .codec_dai_name = "adau-hifi",
        .dai_fmt = SND_SOC_DAIFMT_I2S
 
-       |
+
                SND_SOC_DAIFMT_NB_NF |
 
                SND_SOC_DAIFMT_CBS_CFS,
@@ -140,8 +140,6 @@ The HDL I2S SPDIF driver is currently used in conjunction with the ADAU1761 audi
 Source
 ------
 
-.. _status-1:
-
 Status
 ~~~~~~
 
@@ -150,8 +148,6 @@ Status
 +==============================================================================================+========================================================================================================================+
 | :git-linux:`git <sound/soc/adi/zed_adau1761.c>`                                              | `In progress <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/adi/zed_adau1761.c>`_  |
 +----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-
-.. _files-1:
 
 Files
 ~~~~~
@@ -175,8 +171,6 @@ Enable ALSA SoC evaluation board driver:
    <*>     ALSA for SoC audio support  --->
    <*>       Audio support for Analog Devices reference designs
    <*>         ZED board sound support
-
-.. _example-device-initialization-1:
 
 Example device initialization
 -----------------------------
@@ -210,12 +204,12 @@ Example:
 
        axi_i2s: axi-i2s@0x77600000 {
            compatible = "adi,axi-i2s-1.00.a";
-           reg = <0x77600000 0x1000>;                                                                                                      
-           clocks = <&fpga_clock &audio_clock>;                                                                                            
+           reg = <0x77600000 0x1000>;
+           clocks = <&fpga_clock &audio_clock>;
            clock-names = "axi", "ref";
-           dmas = <&ps7_dma 0 &ps7_dma 1>;                                                                                                 
-           dma-names = "tx", "rx";                                                                                                         
-       }; 
+           dmas = <&ps7_dma 0 &ps7_dma 1>;
+           dma-names = "tx", "rx";
+       };
 
        zed_adau1761_snd: zed_adau1761_snd {
            compatible = "zed-adau1761-snd";
@@ -230,10 +224,7 @@ Make sure the sound card is properly instantiated.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -247,10 +238,7 @@ To test audio playback you can use the speaker test utility, which allows to pla
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -278,10 +266,7 @@ To test audio record you can use the *arecord* utility. *arecord* will record th
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -295,10 +280,7 @@ To playback a wav file you can use the *aplay* utility. You can also create a au
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -313,4 +295,8 @@ For more information on the the *aplay* and *arecord* utilities please refer to 
 More information
 ----------------
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

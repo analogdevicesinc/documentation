@@ -61,26 +61,26 @@ RF Detector Block
 
 -  :adi:`HMC948 Log Detector <hmc948>`
 -  :adi:`ADA4807-1 180MHz, Rail-to-Rail Input/Output Operational Amplifier <ada4807-1>`
-   \* :adi:`LTC2314-14 14-Bit, 4.5Msps Serial Sampling ADC <ltc2314-14>`
+-  :adi:`LTC2314-14 14-Bit, 4.5Msps Serial Sampling ADC <ltc2314-14>`
 
 Power Generation
 ~~~~~~~~~~~~~~~~
 
 -  :adi:`LT8652S Dual Channel 18V/8.5A, Synchronous Step-Down Silent Switcher <lt8652s>`
-   \* :adi:`LT8642S 18V/10A Synchronous Step-Down Silent Switcher 2 <lt8642s>`
-   \* :adi:`LT3093 –20V/200mA, Ultralow Noise, Ultrahigh PSRR Negative Linear Regulator <lt3093>`
-   \* :adi:`LT3094 −20V/500mA, Ultralow Noise, Ultrahigh PSRR Negative Linear Regulator <lt3094>`
-   \* :adi:`LT8606 42V/350mA Synchronous Step-Down Regulator <lt8606>`
-   \* :adi:`ADP150-1.8 1.8V Ultralow Noise, 150 mA CMOS Linear Regulator <adp150>`
-   \* :adi:`ADP5074 2.4A, DC-to-DC Inverting Regulator <adp5074>`
+-  :adi:`LT8642S 18V/10A Synchronous Step-Down Silent Switcher 2 <lt8642s>`
+-  :adi:`LT3093 –20V/200mA, Ultralow Noise, Ultrahigh PSRR Negative Linear Regulator <lt3093>`
+-  :adi:`LT3094 −20V/500mA, Ultralow Noise, Ultrahigh PSRR Negative Linear Regulator <lt3094>`
+-  :adi:`LT8606 42V/350mA Synchronous Step-Down Regulator <lt8606>`
+-  :adi:`ADP150-1.8 1.8V Ultralow Noise, 150 mA CMOS Linear Regulator <adp150>`
+-  :adi:`ADP5074 2.4A, DC-to-DC Inverting Regulator <adp5074>`
 
 Control & Monitoring
 ~~~~~~~~~~~~~~~~~~~~
 
 -  :adi:`ADM1172-1 Hot Swap Controller with Power-Fail Comparator <adm1172>`
-   \* :adi:`ADM1186-2 Quad Voltage Sequencer and Monitor with Programmable Timing <adm1186>`
-   \* :adi:`LTC2992 Dual, Wide-Range Power Monitor with GPIO <ltc2992>` **(RevB only)**
-   \* :adi:`LTC4301 Supply Independent Hot Swappable 2-Wire Bus Buffer <ltc4301>` **(RevB only)**
+-  :adi:`ADM1186-2 Quad Voltage Sequencer and Monitor with Programmable Timing <adm1186>`
+-  :adi:`LTC2992 Dual, Wide-Range Power Monitor with GPIO <ltc2992>` **(RevB only)**
+-  :adi:`LTC4301 Supply Independent Hot Swappable 2-Wire Bus Buffer <ltc4301>` **(RevB only)**
 
 --------------
 
@@ -112,7 +112,7 @@ Hardware
 -  SMPM-SMA cabling to interface with the RF ports
 -  Digital controller and any associated hardware (:adi:`SDP-S` or PMOD)
 
-|
+
 
 .. warning::
 
@@ -196,7 +196,6 @@ The ADAR1000-EVAL1Z board has 41 surface-mounted SMPM connectors which are descr
    Table 1: RF Connectors
 
 
-**
 
 +----------------------------------------------------+---+--------------------------------------------------------------------+---+-----------------------------+
 | Connector(s)                                       |   | Name(s)                                                            |   | Description                 |
@@ -215,7 +214,6 @@ The ADAR1000-EVAL1Z board has 41 surface-mounted SMPM connectors which are descr
    Figure 2: ADAR1000-EVAL1Z Component Side Overview
 
 
-**
 
 |ADAR1000-EVAL1Z Antenna Side Overview| **
 
@@ -224,7 +222,6 @@ The ADAR1000-EVAL1Z board has 41 surface-mounted SMPM connectors which are descr
    Figure 3: ADAR1000-EVAL1Z Antenna Side Overview
 
 
-**
 
 Digital Signals
 ---------------
@@ -241,7 +238,6 @@ PMOD Pinout
    Figure 4: ADAR1000-EVAL1Z PMOD Pinout
 
 
-**
 
 SPI Control
 ~~~~~~~~~~~
@@ -257,7 +253,6 @@ Each :adi:`adar1000` has two ADDRx pins which can be used to control 4 separate 
    Figure 5: CSB Selector Switches
 
 
-**
 
 The ADAR1000-EVAL1Z alone demonstrates a small beamformer array, but multiple boards can also be stacked and combined to create larger arrays. In order to simplify the digital interface, two boards can be controlled using one digital controller if the two boards use all four of the available CSB lines without worrying about talking to the wrong IC.
 
@@ -315,18 +310,14 @@ Powerup Procedure
 -  -3.3V (U13, :adi:`lt3093`)
 -  -5.0V (U14, :adi:`lt3094`)
 
-|
-
 .. note::
 
    The :adi:`adm1186` power sequencer's **enable** and **power_good** signals can be read using the on-board :adi:`ltc2992`. The **enable** signal is connected to GPIO1 and the **power_good** signal is connected to GPIO3.
 
-
-   | **BE SURE TO CONFIGURE THE LTC2992 SUCH THAT ALL
-   GPIO PINS ARE HI-Z! SEE** `CONFIGURING THE LTC2992 <https://wiki.analog.com/>`_
-
-
-**4.** Initialize the ADAR1000s to put the ADAR1000-EVAL1Z into a known safe state with the ADTR1107 PAs pinched off. See the :doc:`Recommended ADAR1000 Initialization Sequences </wiki-migration/resources/eval/user-guides/stingray/userguide>` section for a recommended set of SPI writes.
+   
+   **BE SURE TO CONFIGURE THE LTC2992 SUCH THAT ALL
+   
+   GPIO PINS ARE HI-Z! SEE `CONFIGURING THE LTC2992 <https://wiki.analog.com/>`_\ \*\**4.** Initialize the ADAR1000s to put the ADAR1000-EVAL1Z into a known safe state with the ADTR1107 PAs pinched off. See the :doc:`Recommended ADAR1000 Initialization Sequences </wiki-migration/resources/eval/user-guides/stingray/userguide>` section for a recommended set of SPI writes.
 
 **5.** Now that the ADTR1107 PAs are pinched off, +5V can safely be applied. This is accomplished by pulsing the **+5V_CTRL** signal. Once the +5V rail is up, a green LED (D4) is lit showing that the board is fully powered up.
 
@@ -334,13 +325,12 @@ Powerup Procedure
 
 .. note::
 
-   The *internal* **+5V_CTRL** (after U3) and the :adi:`LT8652's <lt8652>` **power_good** signals can be read using the on-board :adi:`ltc2992`. The **+5V_CTRL** signal is connected to GPIO2 and the **power_good** signal is connected to GPIO4.
+   The *internal **+5V_CTRL** (after U3) and the :adi:`LT8652's <lt8652>` **power_good** signals can be read using the on-board :adi:`ltc2992`. The **+5V_CTRL** signal is connected to GPIO2 and the **power_good** signal is connected to GPIO4.
 
    
-   |
-
-   | **BE SURE TO CONFIGURE THE LTC2992 SUCH THAT ALL
-   GPIO PINS ARE HI-Z! SEE** `CONFIGURING THE LTC2992 <https://wiki.analog.com/>`_
+   **BE SURE TO CONFIGURE THE LTC2992 SUCH THAT ALL
+   
+   GPIO PINS ARE HI-Z! SEE `CONFIGURING THE LTC2992 <https://wiki.analog.com/>`_\ \*\*
 
 
 Powerdown Procedure
@@ -395,11 +385,11 @@ Initial Powerup
 .. code:: python
 
    """
-   This sequence is suggested to be run after powering the +3.3V, -3.3V, and -5.0V rails on the Stingray board, 
-   but before powering the +5.0V rail. This will help protect the ADTR1107 PAs. It will put the chips into a 
+   This sequence is suggested to be run after powering the +3.3V, -3.3V, and -5.0V rails on the Stingray board,
+   but before powering the +5.0V rail. This will help protect the ADTR1107 PAs. It will put the chips into a
    known safe state on powerup.
-       Format: (Register, Data, Description)
-   """
+       **Format: (Register, Data, Description)**
+
    INIT_SEQUENCE = [
        # HOUSEKEEPING
        (0x000, 0x81, 'Reset'),
@@ -441,15 +431,15 @@ Max Gain & 0° Phase
 
    """
    Sequence to set all ADAR1000 channels to maximum gain and 0° phase.
-       Format: (Register, Data, Description)
-   """
+       **Format: (Register, Data, Description)**
+
    CHANNEL_SETUP = [
        # Rx GAIN
        (0x010, 0xFF, 'Set channel 1 Rx to maximum gain'),
        (0x011, 0xFF, 'Set channel 2 Rx to maximum gain'),
        (0x012, 0xFF, 'Set channel 3 Rx to maximum gain'),
        (0x013, 0xFF, 'Set channel 4 Rx to maximum gain'),
-       
+
        # Rx PHASE
        (0x014, 0x3F, 'Set channel 1 Rx I Vector Modulator to 0°'),
        (0x015, 0x20, 'Set channel 1 Rx Q Vector Modulator to 0°'),
@@ -459,13 +449,13 @@ Max Gain & 0° Phase
        (0x019, 0x20, 'Set channel 3 Rx Q Vector Modulator to 0°'),
        (0x01A, 0x3F, 'Set channel 4 Rx I Vector Modulator to 0°'),
        (0x01B, 0x20, 'Set channel 4 Rx Q Vector Modulator to 0°'),
-       
+
        # Tx GAIN
        (0x01C, 0xFF, 'Set channel 1 Tx to maximum gain'),
        (0x01D, 0xFF, 'Set channel 2 Tx to maximum gain'),
        (0x01E, 0xFF, 'Set channel 3 Tx to maximum gain'),
        (0x01F, 0xFF, 'Set channel 4 Tx to maximum gain'),
-       
+
        # Tx PHASE
        (0x020, 0x3F, 'Set channel 1 Tx I Vector Modulator to 0°'),
        (0x021, 0x20, 'Set channel 1 Tx Q Vector Modulator to 0°'),
@@ -484,8 +474,8 @@ Disable
 
    """
    This sequence will disable the ADAR1000 and put the chip into a low power state.
-       Format: (Register, Data, Description)
-   """
+       **Format: (Register, Data, Description)**
+
    DISABLE = [
        (0x029, 0x85, 'Set CH1 PA_BIAS_ON to minimal power (≈ -2.5V)'),
        (0x02A, 0x85, 'Set CH2 PA_BIAS_ON to minimal power (≈ -2.5V)'),
@@ -504,8 +494,8 @@ Rx Enable
    """
    This sequence will configure the ADAR1000 for Rx and set the LNAs to full power.
    Be sure you know what you're doing!
-       Format: (Register, Data, Description)
-   """
+       **Format: (Register, Data, Description)**
+
    RX_SETUP = [
        (0x030, 0x40, 'Disable the LNA bias DAC output to allow the ADTR1107 LNAs to self-bias'),
        (0x031, 0xB0, 'Put ADAR1000 into SPI-controlled Rx mode')
@@ -519,8 +509,8 @@ Tx Enable (Reduced Power)
    """
    This sequence will configure the ADAR1000 for Tx and set the PAs to a reduced power state.
    Be sure you know what you're doing!
-       Format: (Register, Data, Description)
-   """
+       **Format: (Register, Data, Description)**
+
    TX_SETUP_REDUCED_POWER = [
        (0x029, 0x42, 'Set CH1 PA_BIAS_ON to reduced power (≈ -1.25V)'),
        (0x02A, 0x42, 'Set CH2 PA_BIAS_ON to reduced power (≈ -1.25V)'),
@@ -537,8 +527,8 @@ Tx Enable
    """
    This sequence will configure the ADAR1000 for Tx and set the PAs to full power.
    Be sure you know what you're doing!
-       Format: (Register, Data, Description)
-   """
+       **Format: (Register, Data, Description)**
+
    TX_SETUP = [
        (0x029, 0x38, 'Set CH1 PA_BIAS_ON to full power (≈ -1.06V)'),
        (0x02A, 0x38, 'Set CH2 PA_BIAS_ON to full power (≈ -1.06V)'),
@@ -558,8 +548,7 @@ Configuring the LTC2992
 
    The LTC2992's I2C 7-bit address is 0x6A, its 8-bit address is 0xD4.
 
-   
-   Looking at the schematic for the board, it would seem that the address pins are pulled down (resulting in the address being 0x6F according to Table 3 of the :adi:`LTC2992 datasheet <media/en/technical-documentation/data-sheets/ltc2992.pdf>`), but the 100kΩ resistors are too weak to overcome the internal circuitry of the LTC2992, so the actual address is 0x6A.
+   | Looking at the schematic for the board, it would seem that the address pins are pulled down (resulting in the address being 0x6F according to Table 3 of the :adi:`LTC2992 datasheet <media/en/technical-documentation/data-sheets/ltc2992.pdf>`), but the 100kΩ resistors are too weak to overcome the internal circuitry of the LTC2992, so the actual address is 0x6A.
 
 
 .. note::
@@ -571,8 +560,8 @@ Configuring the LTC2992
 
    """
    This sequence will set the LTC2992's GPIO pins to Hi-Z.
-       Format: (Register, Data, Description)
-   """
+       **Format: (Register, Data, Description)**
+
    LTC2992_SETUP = [
        (0x96, 0x00, 'Set GPIO1-GPIO3 pins to Hi-Z'),
        (0x97, 0x00, 'Set GPIO4 pin to Hi-Z')

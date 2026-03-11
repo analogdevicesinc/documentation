@@ -88,7 +88,7 @@ After installing **ACE** (see the Software Installation Procedures section), run
 
 .. container:: centeralign
 
-   |image4| *Figure 4. Launching* **ACE.exe** *from Start Menu*
+   |image4| *Figure 4. Launching **ACE.exe** from Start Menu*
 
 
 ACE Main Window

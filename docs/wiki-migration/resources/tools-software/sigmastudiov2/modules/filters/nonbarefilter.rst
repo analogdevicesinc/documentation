@@ -9,8 +9,10 @@ Non-Bare Filter
 Description
 -----------
 
-| NonBare filters are second order filters which take the parameters directly. The filter parameters are converted to filter coefficients by the Module itself. Regalia-Mitra algorithm is used for this implementation.
-| ===== Targets Supported =====
+NonBare filters are second order filters which take the parameters directly. The filter parameters are converted to filter coefficients by the Module itself. Regalia-Mitra algorithm is used for this implementation.
+
+Targets Supported
+-----------------
 
 +-----------------+------------+------------------+---------------+------------------+
 | Name            | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -39,7 +41,7 @@ Name   Type  Description
 Output Audio Output channel
 ====== ===== ==============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------------+----------------------------------------+

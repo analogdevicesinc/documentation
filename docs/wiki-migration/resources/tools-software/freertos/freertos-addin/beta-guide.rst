@@ -86,7 +86,7 @@ The FreeRTOS Add-In makes 3 modifications to your project: Main, user modifiable
 Main
 ----
 
-The FreeRTOS Add-In will add code to your applications main function, which will create a task userStartupTask and then start the scheduler. You can either modify userStartupTask or create your own task(s). 
+The FreeRTOS Add-In will add code to your applications main function, which will create a task userStartupTask and then start the scheduler. You can either modify userStartupTask or create your own task(s).
 
 User Modifiable Sources
 -----------------------
@@ -96,7 +96,7 @@ A directory, **CustomizableFreeRTOSSources** will be added to your project, whic
 System Sources
 --------------
 
-Another directory, **FreeRTOS** will be added to your project under **system**. This directory contains both the FreeRTOS Kernel and a generated configuration which is not user modifiable. You should not need to modify anything within the system directory, though it can be stepped through with the debugger or viewed for reference. 
+Another directory, **FreeRTOS** will be added to your project under **system**. This directory contains both the FreeRTOS Kernel and a generated configuration which is not user modifiable. You should not need to modify anything within the system directory, though it can be stepped through with the debugger or viewed for reference.
 
 Status View
 ===========

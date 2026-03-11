@@ -138,10 +138,7 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -205,10 +202,7 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -233,15 +227,12 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# **cat encoder** 
+      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# **cat encoder**
       8b10b
    
 
@@ -250,15 +241,12 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# **cat lane0_info** 
+      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# **cat lane0_info**
       Errors: 0
       CGS state: DATA
       Initial Frame Synchronization: Yes

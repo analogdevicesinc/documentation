@@ -8,7 +8,7 @@ ADS7-V1/-V2 for High-Speed DAC Evaluation
 
 The ADS7-V1 and ADS7-V2 are devices designed to support the evaluation of Analog Devices' High-Speed Digital-to-Analog Converters (DAC). The device is connected to a PC over USB, and allows a user to download a data vector into the ADS7, which is then played out to an attached DAC evaluation board at full speed.
 
-**Please note:** *Analog Devices' pattern generators and high-speed DAC evaluation boards are designed and sold solely to support an efficient and thorough means by which to evaluate Analog Devices high speed DACs in a lab environment for a wide range of end applications. Any application or use of the pattern generators and/or high-speed DAC evaluation boards, other than specified above, will not be supported.*
+**Please note:** Analog Devices' pattern generators and high-speed DAC evaluation boards are designed and sold solely to support an efficient and thorough means by which to evaluate Analog Devices high speed DACs in a lab environment for a wide range of end applications. Any application or use of the pattern generators and/or high-speed DAC evaluation boards, other than specified above, will not be supported.*
 
 This page describes the hardware of ADS7-V1 and ADS7-V2. The device can be driven from many different software applications. For more information on the software, please see the :doc:`High-Speed DAC Software Suite </wiki-migration/resources/eval/dpg/dacsoftwaresuite>` documentation.
 

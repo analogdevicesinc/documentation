@@ -28,20 +28,13 @@ The classical description of C is that it represents the turn-to-turn distribute
 
 At frequencies below the Self Resonate Frequency, the model appears to be inductive; at frequencies above the SRF it appears to be capacitive and at the SRF it is resistive, as the inductive and capacitive reactance are equal in magnitude but opposite in sign and thus cancel.
 
-| At the SRF of an inductor, all of the following conditions are met:
-| •The input impedance is at its peak.
-| •The phase angle of the input impedance is zero, crossing from positive (inductive) to negative (capacitive).
-| •Since the phase angle is zero, the Q is zero.
-| •The effective inductance is zero, since the negative capacitive reactance (X\ :sub:`C`\ =1/jωC) just cancels the positive inductive reactance (X\ :sub:`L`\ = jωL).
-| •The 2-port insertion loss (S21 dB) is a maximum, which corresponds to the minimum in the plot of frequency vs. S21 dB.
-| •The 2-port phase (S21 angle) is zero, crossing from negative at lower frequencies to positive at higher frequencies.
-| The following equation shows how the SRF is related to inductance and capacitance in the inductor model circuit.
+At the SRF of an inductor, all of the following conditions are met: •The input impedance is at its peak. •The phase angle of the input impedance is zero, crossing from positive (inductive) to negative (capacitive). •Since the phase angle is zero, the Q is zero. •The effective inductance is zero, since the negative capacitive reactance (X\ :sub:`C`\ =1/jωC) just cancels the positive inductive reactance (X\ :sub:`L`\ = jωL). •The 2-port insertion loss (S21 dB) is a maximum, which corresponds to the minimum in the plot of frequency vs. S21 dB. •The 2-port phase (S21 angle) is zero, crossing from negative at lower frequencies to positive at higher frequencies.
+
+The following equation shows how the SRF is related to inductance and capacitance in the inductor model circuit.
 
 :math:`F_SR = 1/(2 \pi sqrt(LC_p))` in Hz
 
-| where :
-| L is the inductance in Henries
-| C\ :sub:`p` is the parasitic capacitance in Farads
+where : L is the inductance in Henries C\ :sub:`p` is the parasitic capacitance in Farads
 
 From this equation, it is clear that increasing inductance or capacitance lowers the measured SRF. Reducing inductance or capacitance raises the SRF.
 
@@ -75,11 +68,7 @@ Two frequency sweep simulations were run from 10KHz to 10MHz as an example of a 
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 1 mH inductor
-| Various other value inductors
-| 2 - 200 Ω resistors ( may be made from 2 100 Ω resistors in series )
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 1 mH inductor Various other value inductors 2 - 200 Ω resistors ( may be made from 2 100 Ω resistors in series )
 
 Directions:
 -----------
@@ -153,11 +142,7 @@ To further explore this resonance, connect external 39 pF and/or 100 pF capacito
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/Inductor
-  http:*\ en.wikipedia.org/wiki/Self-resonant_frequency
-| http:*www.coilcraft.com/pdfs/Doc363_MeasuringSRF.pdf
-  http:*\ www.coilcraft.com/pdfs/doc671_Selecting_RF_Inductors.pdf
-| http://www.coilcraft.com/pdfs/doc119_TestAppFreq.pdf
+http://en.wikipedia.org/wiki/Inductor http://en.wikipedia.org/wiki/Self-resonant_frequency http://www.coilcraft.com/pdfs/Doc363_MeasuringSRF.pdf http://www.coilcraft.com/pdfs/doc671_Selecting_RF_Inductors.pdf http://www.coilcraft.com/pdfs/doc119_TestAppFreq.pdf
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 

@@ -32,7 +32,7 @@ Downloads
 
    
    -  The old plugin can be used by users that still run old versions of libiio on their targets. It also installs Libiio locally, next to the plugin.
-   -  The new plugin works with Libiio 0.10 which needs to be installed separately. \**First, look for 'LibIIO Setup x86' in 'Programs and Features' and uninstall it, then uninstall the old IIO plugin, if exists \*\* and then install the new one.
+   -  The new plugin works with Libiio 0.10 which needs to be installed separately. \**First, look for 'LibIIO Setup x86' in 'Programs and Features' and uninstall it, then uninstall the old IIO plugin, if exists** and then install the new one.
    
 
 

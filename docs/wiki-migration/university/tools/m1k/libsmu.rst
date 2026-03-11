@@ -102,8 +102,6 @@ Dependencies for the documentation
 Building on MacOS
 -----------------
 
-.. _dependencies-1:
-
 Dependencies
 ~~~~~~~~~~~~
 
@@ -115,8 +113,6 @@ Install prerequisites
    analog@analog:~$ brew install libusb cmake pkg-config boost
    (optional) analog@analog:~$ brew link --overwrite boost
 
-.. _dependencies-for-the-python-bindings-1:
-
 Dependencies for the Python bindings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -127,8 +123,6 @@ Dependencies for the Python bindings
    analog@analog:~$ pip3 install cython
 
 Setup tools and pip should be included in the "python3" package.
-
-.. _dependencies-for-the-documentation-1:
 
 Dependencies for the documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,7 +137,7 @@ Configure, clone and build
 ::
 
    analog@analog:~$ **git clone https://github.com/analogdevicesinc/libsmu.git**
-   analog@analog:~$ **cd libsmu** 
+   analog@analog:~$ **cd libsmu**
 
 Options:
 

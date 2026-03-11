@@ -109,10 +109,7 @@ The following pictures show the final steps for USB driver install. Click on **N
 
 |image9| |image10|
 
-.. warning::
-
-   **WARNING:** For those who are using Windows XP, Service Pack 3, additional steps are required for completing the driver installation. Please see page 8, on the :adi:`ADISUSB User Guide (UG-363) <static/imported-files/user_guides/UG-363.pdf#Page=08>` for additional information on these steps.
-
+**WARNING:** For those who are using Windows XP, Service Pack 3, additional steps are required for completing the driver installation. Please see page 8, on the :adi:`ADISUSB User Guide (UG-363) <static/imported-files/user_guides/UG-363.pdf#Page=08>` for additional information on these steps.
 
 Analog Devices ADIS16260/5 Evaluation SOFTWARE
 ----------------------------------------------

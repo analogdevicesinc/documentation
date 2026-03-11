@@ -60,7 +60,7 @@ Build U-Boot and copy u-boot.itb to SD card
 Generate .jic (JTAG Indirect Configuration) and .rbf (Raw Binary File) files
 ----------------------------------------------------------------------------
 
-<fc #ff0000>\ **Warning: This project was only tested using Quartus Pro 24.1.**\ </fc>
+**Warning: This project was only tested using Quartus Pro 24.1.**
 
 ::
 

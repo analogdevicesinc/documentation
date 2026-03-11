@@ -82,11 +82,11 @@ The following is leveraged directly from the ADRV9009-ZU11EG RF-SOM site.
      * [[/resources/eval/user-guides/adrv9009/adrv9009|Understanding the ADRV9009]]
        * [[:adi:`ADRV9009|ADRV9009` Product page]]
        * [[:adi:`en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources`.html|Full Datasheet and chip design package]]
-       * [[:adi:`media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2`.4.zip|MATLAB Filter Wizard / Profile Generator for ADRV9009]] 
+       * [[:adi:`media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2`.4.zip|MATLAB Filter Wizard / Profile Generator for ADRV9009]]
      * Hardware in the Loop / How to design your own custom BaseBand
        * [[/resources/tools-software/linux-software/gnuradio|GNU Radio]]
        * [[/resources/eval/user-guides/matlab_bsp|Board Support Package for MathWorks Tools]]
-     * Design with the ADRV9009-ZU11EG based platform 
+     * Design with the ADRV9009-ZU11EG based platform
        * Linux software
          * [[/resources/tools-software/linux-drivers/iio-transceiver/adrv9009|ADRV9009/ADRV9008 Linux Device Driver]]
            *  [[/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization|ADRV9009/ADRV9008 Device Driver Customization]]
@@ -95,9 +95,9 @@ The following is leveraged directly from the ADRV9009-ZU11EG RF-SOM site.
          * [[/resources/tools-software/linux-drivers/iio-pll/hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
          * [[/resources/tools-software/linux-drivers/axi-dmac|AXI-DMAC DMA Controller Linux Driver]]
          * [[/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx|JESD204B Transmit Linux Driver]]
-           * [[/resources/tools-software/linux-software/jesd_status|JESD204B Status Utility]] 
+           * [[/resources/tools-software/linux-software/jesd_status|JESD204B Status Utility]]
          * [[/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx|JESD204B Receive Linux Driver]]
-           * [[/resources/tools-software/linux-software/jesd_status|JESD204B Status Utility]] 
+           * [[/resources/tools-software/linux-software/jesd_status|JESD204B Status Utility]]
          * [[/resources/tools-software/linux-drivers/jesd204/axi_adxcvr|ADI JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
            * [[/resources/tools-software/linux-software/jesd_eye_scan|JESD204 Eye Scan]]
          * [[/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl|AXI ADC HDL Linux Driver]]

@@ -25,23 +25,7 @@ The most simple switched capacitor circuit is shown in figure 1, the switched ca
    Figure 1, Basic Switched Capacitor circuit
 
 
-| Each switching cycle transfers a charge Δq from the input to the output at the switching frequency F. Recall that the charge q on a capacitor C with a voltage V between the plates is given by:
-| q = CV
-| Where V is the voltage across the capacitor. Therefore, when S\ :sub:`1` is closed while S\ :sub:`2` is open, the charge transferred from the input source to C is:
-| q\ :sub:`IN` = C\ :sub:`1`\ V\ :sub:`IN`
-| And when S\ :sub:`2` is closed while S\ :sub:`1` is open, the charge transferred from C\ :sub:`1` to the output is:
-| q\ :sub:`OUT` = C\ :sub:`1` V\ :sub:`OUT`
-| The charge transferred in each cycle is:
-| Δq = q\ :sub:`OUT` - q\ :sub:`IN`\ = C\ :sub:`1`\ ( V\ :sub:`OUT` - V\ :sub:`IN` )
-| Since a charge Δq is transferred at a rate F, the rate of transfer of charge per unit time is:
-| I = ΔqF
-| Note that I is used, the symbol for electric current, for this quantity. This is to demonstrate that a continuous transfer of charge from one node to another is the same as current. Substituting for Δq in the equation above, we get:
-| I = C\ :sub:`1`\ ( V\ :sub:`OUT` - V\ :sub:`IN` ) F
-| We define ΔV, the voltage across the circuit from input to output, as:
-| ΔV = V\ :sub:`OUT` - V\ :sub:`IN`
-| We now have a relationship between I and V, which we can rearrange to give an equivalent resistance R:
-| R = V / I = 1 / (C\ :sub:`1` F)
-| Thus, the circuit behaves like a resistor whose value depends on C\ :sub:`1` and F.
+Each switching cycle transfers a charge Δq from the input to the output at the switching frequency F. Recall that the charge q on a capacitor C with a voltage V between the plates is given by: q = CV Where V is the voltage across the capacitor. Therefore, when S\ :sub:`1` is closed while S\ :sub:`2` is open, the charge transferred from the input source to C is: q\ :sub:`IN` = C\ :sub:`1`\ V\ :sub:`IN` And when S\ :sub:`2` is closed while S\ :sub:`1` is open, the charge transferred from C\ :sub:`1` to the output is: q\ :sub:`OUT` = C\ :sub:`1` V\ :sub:`OUT` The charge transferred in each cycle is: Δq = q\ :sub:`OUT` - q\ :sub:`IN`\ = C\ :sub:`1`\ ( V\ :sub:`OUT` - V\ :sub:`IN` ) Since a charge Δq is transferred at a rate F, the rate of transfer of charge per unit time is: I = ΔqF Note that I is used, the symbol for electric current, for this quantity. This is to demonstrate that a continuous transfer of charge from one node to another is the same as current. Substituting for Δq in the equation above, we get: I = C\ :sub:`1`\ ( V\ :sub:`OUT` - V\ :sub:`IN` ) F We define ΔV, the voltage across the circuit from input to output, as: ΔV = V\ :sub:`OUT` - V\ :sub:`IN` We now have a relationship between I and V, which we can rearrange to give an equivalent resistance R: R = V / I = 1 / (C\ :sub:`1` F) Thus, the circuit behaves like a resistor whose value depends on C\ :sub:`1` and F.
 
 The Switched Capacitor resistor is often used as a replacement for simple resistors in integrated circuits because it is easier to fabricate reliably with a wide range of values. It also has the benefit that the equivalent resistor value can be adjusted by changing the switching frequency.
 
@@ -69,13 +53,9 @@ The next step is to build an example circuit using the Switched Capacitor as a r
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - CD4007 ( configured as SPDT analog switch )
-| 1 - 0.0047uF capacitor
-| 1 - 100pF capacitor
-| Below in figure 3 is the schematic and pinout for the CD4007:
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - CD4007 ( configured as SPDT analog switch ) 1 - 0.0047uF capacitor 1 - 100pF capacitor
+
+Below in figure 3 is the schematic and pinout for the CD4007:
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/cd4007.png
    :align: center
@@ -140,21 +120,19 @@ How well do these Bode plot curves match a simple RC low pass filter response?
 Switched capacitor differencing circuit
 =======================================
 
-.. _objective-1:
-
 Objective:
 ----------
 
 The objective of this activity is to extend the switched capacitor concept beyond the single capacitor and switches circuit that can be built around the CD4007 transistor array. More complex configurations require multiple capacitors and switches. Analog switches and multiplexers such as the CD4066 and CD4053 can be used.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 1 - CD4053B triple analog SPDT switch
-| 2 - 1 nF capacitors (102 )
-| |image1|
+1 - CD4053B triple analog SPDT switch 2 - 1 nF capacitors (102 )
+
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/cd4053.png
+   :align: center
+   :width: 550px
 
 .. container:: centeralign
 
@@ -177,14 +155,10 @@ Switch control signals for both switches A and B should both be connected to dig
    Figure 8 differential to single ended circuit
 
 
-.. _hardware-setup-1:
-
 Hardware setup:
 ---------------
 
 Open up the Digital Patterns screen. Click on the green plus sign to add signals. Select DIO 0 and click on the ADD button. Open the edit parameters screen for DIO 0. The output should be set for PP (for push-pull), type should be set as clock, duty cycle set to 50% and set the frequency for 100 KHz. Close the edit window. Lastly, hit the Run button
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -192,8 +166,6 @@ Procedure:
 Start with AWG1 and AWG2 both set up for sine waves with equal amplitudes of 500 mV peak-to-peak and zero offset but with AWG2 set with 180 degree phase. This will result with a differential signal with 2 V amplitude peak-to-peak. Observe the signal at the output and record the minimum and maximum values along with the DC ( average ) value of the output.
 
 Repeat these measurements with the DC offset of both AWG1 and AWG2 set to 250 mV, 500 mV, -250 mV and -500 mV.
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -206,6 +178,3 @@ For Further Reading
 http://en.wikipedia.org/wiki/Switched_capacitor
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
-
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/cd4053.png
-   :width: 550px

@@ -34,7 +34,7 @@ The configuration file for a device has the .cfg extension and the name must mat
 
 -  **data_in_device** - name of the Linux driver used for sending data to the device
 -  **data_out_device** - name of the Linux driver used for reading data from the device
--  \**ctrl_device \*\* - name of the Linux driver used for controlling and monitoring the device
+-  **ctrl_device** - name of the Linux driver used for controlling and monitoring the device
 -  **channel** - defines a control/monitoring channel. A channel is defined by a sequence of parameters as follows *<channel name, channel type, Linux attribute, associated device>*
 
    -  *channel name* - represents the name of the channel to be displayed on the corresponding Simulink block port

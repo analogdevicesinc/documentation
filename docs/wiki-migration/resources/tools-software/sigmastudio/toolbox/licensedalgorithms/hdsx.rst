@@ -54,17 +54,16 @@ More infos under www.hdsx.audio.
 
 **Example HDSX Stereo Sound Widening 360**
 
-| A schematic, with the input block, the easy to use HDSX® plug in and the output block, is shown below.
-| |HDSXpic1.jpg|
+A schematic, with the input block, the easy to use HDSX® plug in and the output block, is shown below.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/licensedalgorithms/HDSXpic1.jpg
+   :alt: HDSXpic1.jpg
+   :align: center
 
 --------------
 
-| |docking-station.gif|
-| |tv_von_vorn.gif|
-| |car-audio.gif|
-| |headphones.gif|
+|docking-station.gif| |tv_von_vorn.gif| |car-audio.gif| |headphones.gif|
 
-.. |HDSXpic1.jpg| image:: https://wiki.analog.com/_media/HDSXpic1.jpg
 .. |docking-station.gif| image:: https://wiki.analog.com/_media/docking-station.gif
 .. |tv_von_vorn.gif| image:: https://wiki.analog.com/_media/tv_von_vorn.gif
 .. |car-audio.gif| image:: https://wiki.analog.com/_media/car-audio.gif

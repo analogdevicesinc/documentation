@@ -1,8 +1,9 @@
 N-Channel
 =========
 
-| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| ----------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 |nchannelpic1.png| This block, for multichannel use, uses an rms dynamics processor that lets you control the rms TC (time constant), Hold, Decay, and Soft Knee behavior, and displays the compression curve graph for your curve drawing. An rms compressor works on a longer average than a peak compressor, allowing some fast loud transients to pass while longer loud moments are prevented from doing so.
 

@@ -80,17 +80,13 @@ Follow along the instructions to complete the installation. Please note that the
 Board Support Package
 ~~~~~~~~~~~~~~~~~~~~~
 
-| After installing QNX Software Development Platform, the next step is to install Board Support Package for the BeagleBone Black platform from QNX software center. The list of all available BSPs for QNX 7.0 and their location is available in `QNX Website <https://blackberry.qnx.com/en/developers/board-support-packages>`_.
-| Some important folder that will be used for this demo described in :doc:`A2B Demo on QNX </wiki-migration/resources/tools-software/a2bv2/a2bqnxuserguide/a2bdemoonqnx>` are:
+After installing QNX Software Development Platform, the next step is to install Board Support Package for the BeagleBone Black platform from QNX software center. The list of all available BSPs for QNX 7.0 and their location is available in `QNX Website <https://blackberry.qnx.com/en/developers/board-support-packages>`_.
 
-| **QNX:**
-| **<QNX 7.0 installation path>/target/qnx7/usr/include/hw/i2c.h:** This header file is needed to build I2C related files in the a2bapp-qnx project.
-| **<QNX 7.0 installation path>/target/qnx7:** This contains the target files. This path is needed for Makefile based build.
-| **<QNX 7.0 installation path>/host/win64/x86_64:** This contains the QNX host files. This path is needed for Makefile based build.
+Some important folder that will be used for this demo described in :doc:`A2B Demo on QNX </wiki-migration/resources/tools-software/a2bv2/a2bqnxuserguide/a2bdemoonqnx>` are:
 
-| **BeagleBone Black BSP:**
-| **<BSP installation path>/images:** This contains the QNX binaries needed to boot the QNX OS
-| **<BSP installation path>/prebuilt\\armle-v7\\boot\\build:** This contains the build files that need to be modified for rebuilding the image.
+**QNX:** **<QNX 7.0 installation path>/target/qnx7/usr/include/hw/i2c.h:** This header file is needed to build I2C related files in the a2bapp-qnx project. **<QNX 7.0 installation path>/target/qnx7:** This contains the target files. This path is needed for Makefile based build. **<QNX 7.0 installation path>/host/win64/x86_64:** This contains the QNX host files. This path is needed for Makefile based build.
+
+**BeagleBone Black BSP:** **<BSP installation path>/images:** This contains the QNX binaries needed to boot the QNX OS **<BSP installation path>/prebuilt\\armle-v7\\boot\\build:** This contains the build files that need to be modified for rebuilding the image.
 
 Board Support Package for Custom Platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

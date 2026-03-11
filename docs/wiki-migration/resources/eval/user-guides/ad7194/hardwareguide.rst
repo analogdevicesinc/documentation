@@ -187,7 +187,7 @@ AVDD (LK9) selection
 
    -  5V regulator supplies AVDD :adi:`ADP7142 <en/products/adp7142.html>`
 
--  \**3.3V supply \*\*
+-  **3.3V supply**
 
    -  3.3V regulator supplies AVDD :adi:`ADP150 <en/products/adp150.html>`
 
@@ -233,8 +233,8 @@ Serial communication options
 
 ::
 
-     *When using the SDP-B connection (120 pin) The evaluation board connects via the serial peripheral interface (SPI) to the Blackfin® [[:adi:`en/products/adsp-bf527`.html|ADSP-BF527]] on the SDP-B board. 
-   * Arduino connection SDP-K1 
+     *When using the SDP-B connection (120 pin) The evaluation board connects via the serial peripheral interface (SPI) to the Blackfin® [[:adi:`en/products/adsp-bf527`.html|ADSP-BF527]] on the SDP-B board.
+   * Arduino connection SDP-K1
    * PMOD connector
    * Standalone mode
 
@@ -270,9 +270,9 @@ Board should be correctly connected to ACE
 
        Search for the Configuration register
    * Set the REFSEL[] to the desired reference source by using these bits
-     * **REFSEL[0]: External reference applied between REFIN1(+) and REFIN1(−).**
-       * **REFSEL[1]:External reference applied between P1/REFIN2(+) and P0/REFIN2(-) pins.**  
-   * **Option B:** Open AD7194 Chip View
+     **REFSEL[0]: External reference applied between REFIN1(+) and REFIN1(−).**
+       **REFSEL[1]:External reference applied between P1/REFIN2(+) and P0/REFIN2(-) pins.**
+   **Option B:** Open AD7194 Chip View
      * Right click on ADC block
      * Select Reference Source from the Reference Select option given as highlighted(1) below in the picture.
      * Click on Apply Changes as highlighted(2) below.

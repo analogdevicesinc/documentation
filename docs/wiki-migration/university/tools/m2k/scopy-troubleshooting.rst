@@ -80,7 +80,7 @@ Open a command prompt and run
 
 ::
 
-   iio_info -a 
+   iio_info -a
 
 or
 

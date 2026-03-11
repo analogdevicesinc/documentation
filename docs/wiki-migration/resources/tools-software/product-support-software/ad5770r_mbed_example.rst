@@ -30,7 +30,7 @@ The AD5770R Mbed firmware example can be used as a starting point for developing
 Useful links
 ============
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :doc:`AD5770R No-OS Driver </wiki-migration/resources/tools-software/uc-drivers/ad5770r>`

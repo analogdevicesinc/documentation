@@ -7,11 +7,9 @@ Installing the dependencies
 Before building Scopy on Linux system, you need to make sure all the requirements are installed.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| **Install a Qt 5 version (>5.12) using an online or offline installer from the official Qt downloads page.**
+**Install a Qt 5 version (>5.12) using an online or offline installer from the official Qt downloads page.**
 
-| 
-| **Install dependencies**
+**Install dependencies**
 
 ::
 
@@ -30,7 +28,6 @@ or if you want to use a custom version of Qt (the one you just installed) - scop
 ::
 
        **scopy/CI/appveyor/install_ubuntu_deps.sh /home/Adi/Qt/5.15.0/gcc_64**
-       
 
 This should install all of the dependencies required to build Scopy.
 

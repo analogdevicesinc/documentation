@@ -12,13 +12,7 @@ High gain inverting amplifier
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 0.1 uF capacitor (104)
-| 1 - 47 Ω resistor
-| 1 - 1 mH inductor
-| 1 - CD4069A, CD4069UB or 74HCU04 unbuffered hex inverter (be sure not to use the buffered 74HC04 version) Alternatively three simple CMOS inverters can be built using the CD4007 transistor array. Note the appendix at the end.
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 0.1 uF capacitor (104) 1 - 47 Ω resistor 1 - 1 mH inductor 1 - CD4069A, CD4069UB or 74HCU04 unbuffered hex inverter (be sure not to use the buffered 74HC04 version) Alternatively three simple CMOS inverters can be built using the CD4007 transistor array. Note the appendix at the end.
 
 Background:
 -----------
@@ -85,8 +79,6 @@ On your solder-less breadboard construct the filter network shown in figure 4 be
    Figure 4 LC filter network
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -111,14 +103,10 @@ Placing LC network in feedback of amplifier
    Figure 5 LC oscillator
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
 Be sure that pin 14 of the 74HCU04 (CD4069) is connected to Vp and Pin 7 is connected to ground. Turn on the power supplies. Both scope channels should be set to 1V/Div. and the time base to 20 uSec/Div.
-
-.. _procedure-1:
 
 Procedure:
 ----------

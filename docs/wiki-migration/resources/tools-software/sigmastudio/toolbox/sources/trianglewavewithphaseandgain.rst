@@ -9,9 +9,10 @@ The Triangle Wave block generates a triangle wave at a constant level and freque
    :align: center
    :width: 100px
 
-| 
-| |image1|
-| To change the source's Sampling Rate, Right-click in the block and select Set Sampling Rate, which will open the Sampling Rate window (default is 44.1 kHz).
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/triangle006.jpg
+   :align: center
+
+To change the source's Sampling Rate, Right-click in the block and select Set Sampling Rate, which will open the Sampling Rate window (default is 44.1 kHz).
 
 GUI Control
 -----------
@@ -32,5 +33,3 @@ GUI Control
 
    Note: The triangle wave is digitally generated and is non-bandlimited. This waveform is suitable for use as an internal control signal, but will produce aliasing distortion if used directly for audio output. If this configuration is desired, it is recommended that you apply a low-pass filter to the block's output before routing the signal to hardware outputs.
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/triangle006.jpg

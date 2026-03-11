@@ -58,14 +58,12 @@ For an independent source acting alone, all other independent voltage sources in
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Various Resistors (1 KΩ, 2.2 KΩ, 4.7 KΩ)
+ADALM1000 hardware module Various Resistors (1 KΩ, 2.2 KΩ, 4.7 KΩ)
 
 Procedure:
 ~~~~~~~~~~
 
-| 1. Verify the proportionality theorem:
-| a) Construct the circuit of figure 1. Using the Volt Meter Tool, accurately measure V\ :sub:`out` for the three input voltages (using the ALM1000 fixed power supply voltages) as shown in the table below. You should measure and record the actual fixed power supply voltages as well.
+1. Verify the proportionality theorem: a) Construct the circuit of figure 1. Using the Volt Meter Tool, accurately measure V\ :sub:`out` for the three input voltages (using the ALM1000 fixed power supply voltages) as shown in the table below. You should measure and record the actual fixed power supply voltages as well.
 
 ===================== ===================== ============
 V\ :sub:`in`\ (volts) V\ :sub:`out` (volts) A (no units)
@@ -81,8 +79,7 @@ b) Calculate the value of A in each case using equation 1.
 
 c) Plot a graph with Vin on x-axis and Vout on y-axis.
 
-| 2. Verifying the Superposition theorem:
-| a) Construct the circuit of figure 2. Measure and record the voltage across the 4.7 KΩ. resistor.
+2. Verifying the Superposition theorem: a) Construct the circuit of figure 2. Measure and record the voltage across the 4.7 KΩ. resistor.
 
 b) Construct the circuit of figure 3. Measure and record the voltage across the 4.7 KΩ. resistor.
 
@@ -97,9 +94,7 @@ Questions :
 
 **For Further Reading:**
 
-| DC Voltmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/voltmeter_lab-0.pdf>`_ (volt-meter-tool-1.2.exe)
-| DC Ohmmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/ohmmeter_lab-0.pdf>`_ (ohm-meter-vdiv-1.2.exe)
-| DC Meter-Source `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/meter-source-lab0.pdf>`_ (dc-meter-source-tool-1.3.exe)
+DC Voltmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/voltmeter_lab-0.pdf>`_ (volt-meter-tool-1.2.exe) DC Ohmmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/ohmmeter_lab-0.pdf>`_ (ohm-meter-vdiv-1.2.exe) DC Meter-Source `Quick Start Guide <https://wiki.analog.com/_media/university/tools/m1k/alice/meter-source-lab0.pdf>`_ (dc-meter-source-tool-1.3.exe)
 
 :doc:`Oscilloscope Terminology </wiki-migration/university/courses/alm1k/intro/oscilloscope-terminology>`
 

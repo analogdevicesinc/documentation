@@ -15,7 +15,7 @@ Your First Project: Stereo Audio Input/Output with Volume Control
 -  Connect the DSPSigma100 bottom blue output pin to the green input pin on the E2Prom block.
 -  The result should look something like this:
 
-.. image:: https://wiki.analog.com/_media/quickstart1.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/gettingstarted/quickstart/quickstart1.png
    :alt: quickstart1.png
 
 -  Click Schematic (tab at the top of workspace).
@@ -30,7 +30,7 @@ Your First Project: Stereo Audio Input/Output with Volume Control
 
 Assuming the project compiled without error, you will be in **Ready-Download** mode and see something similar to this figure.
 
-.. image:: https://wiki.analog.com/_media/quickstart2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/gettingstarted/quickstart/quickstart2.png
    :alt: quickstart2.png
 
 -  Start your source playing and you should hear audio. Move the volume slider to change the level.

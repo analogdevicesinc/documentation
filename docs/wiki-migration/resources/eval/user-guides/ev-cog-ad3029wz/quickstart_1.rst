@@ -1,7 +1,7 @@
 MCU Cog Quick Start Guide
 =========================
 
-<note > **There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section.** </WRAP>
+<note > **There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section.** 
 
 Setting up EV-COG-AD3029WZ is a three step process.
 
@@ -9,8 +9,7 @@ Setting up EV-COG-AD3029WZ is a three step process.
 -  Software Packs & Drivers Setup
 -  Running an Example Project
 
-| 
-| EV-COG-AD4050LZ can be used with following Toolchains. Please see below links for the quickstart guide with respect to different IDEs.
+EV-COG-AD4050LZ can be used with following Toolchains. Please see below links for the quickstart guide with respect to different IDEs.
 
 CrossCore Embedded Studio
 -------------------------
@@ -35,5 +34,5 @@ Click below link to go to Keil uVision IDE userguide.
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz>`
 
-| 
+
 | End Document

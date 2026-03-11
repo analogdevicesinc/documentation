@@ -5,15 +5,15 @@ A2B Chain Selection
 
 Selection of A2B chains from multiple chains to aid Variant handling can be done using **"Exclude node from discovery"** feature. Using exclude node from discovery feature we can exclude the complete chain or nodes.
 
-\**Exclude main node from discovery: \*\* To exclude complete chain from the discovery. follow the below steps to exclude the channel from the discovery.
+**Exclude main node from discovery:** To exclude complete chain from the discovery. follow the below steps to exclude the channel from the discovery.
 
-\**Exclude sub node from discovery: \*\* To exclude the node from discovery, as well as the down nodes that are connected to it.
+**Exclude sub node from discovery:** To exclude the node from discovery, as well as the down nodes that are connected to it.
 
 -  Open the Main node platform page for the chain you wanted the exclude from the discovery.
 -  Right click on the main node transceiver and click on "ExcludeNodeFromDiscovery" as shown below
 
 | |image1|
-|
+
 
 .. container:: centeralign
 

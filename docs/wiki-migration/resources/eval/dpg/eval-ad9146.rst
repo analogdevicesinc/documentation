@@ -142,7 +142,7 @@ Reconfiguring the Evaluation Board
 Jumpers for Selecting the Clock Source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The AD9146 has an on-chip phase-locked loop (PLL) that uses the REFCLKP and REFCLKN pins to supply the reference clock. The AD9146-M5375-EBZ can supply the clock either from the AD9516-0 clock chip or from an additional external signal generator by connecting to J14. Connecting the inner pads to JP10 and JP15 selects the option to use the AD9146 by default, whereas soldering the outer pads chooses the external option to drive from a sine source.
+The AD9146 has an on-chip phase-locked loop (PLL) that uses the REFCLKP and REFCLKN pins to supply the reference clock. The AD9146-M5375-EBZ can supply the clock either from the AD9516-0 clock chip or from an additional external signal generator by connecting to J14. Connecting the inner pads to JP10 and JP15 selects the option to use the AD9146 by default, whereas soldering the outer pads chooses the external option to drive from a sine source.
 
 .. container:: centeralign
 
@@ -152,8 +152,10 @@ Jumpers for Selecting the Clock Source
 Jumpers for Selecting DAC Output Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The AD9146-M5375-EBZ evaluates both the DAC I/Q outputs as well as the modulator RF outputs. Table 1 lists the jumper configurations and the SMA connections needed to view either the DAC IF outputs or the RF outputs on the spectrum analyzer.
-| |image8|
+The AD9146-M5375-EBZ evaluates both the DAC I/Q outputs as well as the modulator RF outputs. Table 1 lists the jumper configurations and the SMA connections needed to view either the DAC IF outputs or the RF outputs on the spectrum analyzer.
+
+
+|image8|
 
 The evaluation board has four three pad solder jumpers, two for each DAC (IOUT1N and IOUT1P, and IOUT2 N and IOUT2P). Use these solder jumpers, JP4 through JP7, to choose between viewing the DAC output or the modulator output. By default, the jumpers are configured to view the DAC output. For the modulator, solder the inner pads.
 
@@ -165,8 +167,10 @@ The evaluation board has four three pad solder jumpers, two for each DAC (IOUT1N
 Hardware Provisions for Power Supplies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The AD9146-M5375-EBZ has five, two pin jumpers for each of the different power supplies on the board (see Table 2). By default, all of these jumpers must be populated.
-| |image10|
+The AD9146-M5375-EBZ has five, two pin jumpers for each of the different power supplies on the board (see Table 2). By default, all of these jumpers must be populated.
+
+
+|image10|
 
 Jumper for Transmit Enable pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

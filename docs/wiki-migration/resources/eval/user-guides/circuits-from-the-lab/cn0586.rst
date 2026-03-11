@@ -4,8 +4,10 @@ EVAL-CN0586-ARDZ User Guide
 Overview
 --------
 
-| The :adi:`EVAL-CN0586-ARDZ <CN0586>` contains the full signal chain of CN0586 which is a precision bipolar high voltage output drive solution, with up to 200V output span and digital interface isolation. The evaluation board operates from +/-15V external dual supply and has an on-board low drop-out (LDO), precision reference and High Voltage (HV) power solution for the various parts of the signal chain.
-| The EVAL-CN0586-ARDZ utilizes the :adi:`AD5754R`, 4-channel voltage output DAC, and the :adi:`ADHV4702-1`, low noise HV amplifier, in a configuration shown in the figure below capable of producing up to 200V span and 20mA current drive at the outputs. CN0586 includes safety features such as digital interface isolation, temperature or software-controlled shutdown, DAC output protection as discussed in the :adi:`CN0586 circuit note <CN0586>`.
+The :adi:`EVAL-CN0586-ARDZ <CN0586>` contains the full signal chain of CN0586 which is a precision bipolar high voltage output drive solution, with up to 200V output span and digital interface isolation. The evaluation board operates from +/-15V external dual supply and has an on-board low drop-out (LDO), precision reference and High Voltage (HV) power solution for the various parts of the signal chain.
+
+The EVAL-CN0586-ARDZ utilizes the :adi:`AD5754R`, 4-channel voltage output DAC, and the :adi:`ADHV4702-1`, low noise HV amplifier, in a configuration shown in the figure below capable of producing up to 200V span and 20mA current drive at the outputs. CN0586 includes safety features such as digital interface isolation, temperature or software-controlled shutdown, DAC output protection as discussed in the :adi:`CN0586 circuit note <CN0586>`.
+
 | |image1|
 | When paired with the Analog Devices Inc. :adi:`SDP-K1` board (EVAL-SDP-CK1Z) and the open-source firmware, the application software in Analysis|Control|Evaluation (:adi:`ACE`) can easily communicate with the EVAL-CN0586-ARDZ over the Linux Industrial Input/Ouput (IIO) library (:doc:`libiio </wiki-migration/software/linux/docs/iio/iio>`), which includes the bindings for C, C#, MATLAB, Python and LabVIEW. The firmware simplifies the device configurations and allows the user to choose from the predefined HV Output Ranges and set the output with a few clicks.
 
@@ -20,7 +22,7 @@ Features
 -  Open-source firmware example
 -  Various safety features for High Voltage (HV)
 
-| 
+
 
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +69,7 @@ Quick Setup Steps
 
 -  Choose the desired HV Output Range. Set HV Out State to Enabled and enter the desired HV output value.
 
-| 
+
 
 Hardware Configuration
 ----------------------
@@ -193,7 +195,7 @@ A power solution capable of generating +/-100V or 0/+200V using the LT8365 is pr
 
 For the EVAL-CN0586-ARDZ, the outputs of the on-board LT8365 circuits can be modified via the switch S1 as shown below.
 
-|
+
 
 .. important::
 
@@ -212,7 +214,7 @@ B (default)        HV VCC: +110V
                    HV VSS: -110V
 ================== =================
 
-|
+
 
 HV Driver Circuit Variation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -255,14 +257,12 @@ Additionally, running with ACE includes loading the latest firmware version onto
    In Development
 
 
-   | 
+
 
 Python using PYADI-IIO
 ~~~~~~~~~~~~~~~~~~~~~~
 
 `PyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_ is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
-
-|
 
 Python Drivers and libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -272,7 +272,6 @@ Follow the step-by-step procedure on how to install, configure, and set up PYADI
 Python example codes and other useful files are included in the CN0586 Design files. For the CN0586 python example code, a list of required drivers and libraries can be found in the Requirements.txt file. Run the command prompt and enter the code below, replacing “/path/to” to the actual local path on your PC where the Requirements.txt file resides. <code> pip install -r /path/to/requirements.txt </code>
 
 
-| 
 
 Loading Firmware to the SDP-K1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -289,7 +288,7 @@ When ACE is not used, the firmware must be manually loaded into the SDP-K1. To d
 
 To confirm successful loading of the firmware, the LED1 (DS6) on the SDP-K1 should have a blinking red light when the EVAL-CN0586-ARDZ is not attached and powered up.
 
-|
+
 
 Running the python example code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

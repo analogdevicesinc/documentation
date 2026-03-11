@@ -6,12 +6,14 @@ General Description
 
 This software user guide is intended to introduce the next generation of evaluation software provided for clock generation and distribution products from Analog Devices Inc. This user guide will cover the basic functionality and feature set for new clock and distribution evaluation software GUIs. A list of all current products which are supported by this user guide are listed in the **Supported Products** section. All supported products will have an individualized wiki user guide associated with them to describe device specific GUI functionality.
 
-|
-
 .. container:: centeralign
 
-   | |image1|
-   | *Figure 1. Example of CSG Evaluation Software Main Window*
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/main_window_example.png
+      :align: center
+      :width: 700px
+   
+   *Figure 1. Example of CSG Evaluation Software Main Window*
 
 
 SUPPORTED PRODUCTS
@@ -50,10 +52,10 @@ Running the Software
 
 The evaluation software can be used with or without an evaluation board. Using the software without an evaluation board is useful for creating or verifying register settings for a given PLL setup without needing any hardware. When using the software with an evaluation board, power up and connect the board to the PC prior to starting the evaluation software. The evaluation board hardware is detailed on the evaluation boards specific product page in the **Evaluation Board Hardware** section.
 
--  Double-click appropriate AD95xx Evaluation Software icon to run the evaluation software. If the evaluation board was properly found by the software, the lower left hand corner of the Main Window (shown in **Figure 1**) will read "<fc #339933>AD95xx Evaluation Board \| SPI 3 -wire</fc>" in green. If the evaluation board was not found, the lower left hand corner of the screen will read "<fc #FF0000>No Hardware Connected!</fc>" in red.
+-  Double-click appropriate AD95xx Evaluation Software icon to run the evaluation software. If the evaluation board was properly found by the software, the lower left hand corner of the Main Window (shown in **Figure 1**) will read "AD95xx Evaluation Board \| SPI 3 -wire" in green. If the evaluation board was not found, the lower left hand corner of the screen will read "No Hardware Connected!" in red.
 -  If the evaluation board is found, proceed to the **Evaluation Software Components** section for details about using the software. If the evaluation board is not found, click **File > Select Hardware**. Select the appropriate evaluation board connected and press OK. The select hardware window is shown in **Figure 12**.
 
-   -  The bottom left corner of the main window should now read "<fc #339933>AD95xx Evaluation Board \| SPI 3 -wire</fc>" in green.
+   -  The bottom left corner of the main window should now read "AD95xx Evaluation Board \| SPI 3 -wire" in green.
 
 See the individual product wikis for detailed information about specific device software.
 
@@ -72,12 +74,14 @@ Frequency Limits
 
 The **Frequency Limits** tab features specification limit excerpts from the individual product datasheet. These limits are used by the GUI block diagram to display if any frequency limits are being violated by the current user configuration. Please refer to the product datasheet for limit verification.
 
-|
-
 .. container:: centeralign
 
-   | |image2|
-   | *Figure 2. Frequency Limits Tab*
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/figure2_frequencylimitestab.png
+      :align: center
+      :width: 500px
+   
+   *Figure 2. Frequency Limits Tab*
 
 
 Pinout
@@ -85,12 +89,14 @@ Pinout
 
 The **Pinout Tab** shows the pinout and pin descriptions of the product which is being evaluated. Please refer to the product datasheet for the most up to date version of the pinout and pin descriptions.
 
-|
-
 .. container:: centeralign
 
-   | |image3|
-   | *Figure 3. Pinout Tab*
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/figure3_pinouttab.png
+      :align: center
+      :width: 500px
+   
+   *Figure 3. Pinout Tab*
 
 
 EXPLANATION OF GUI FEATURES
@@ -101,8 +107,6 @@ Tool Tips
 
 The clock evaluation software incorporates **Tool Tips** to all interactive blocks, pins, wires, buttons, check boxes and indicators. These **Tool Tips** give the user active feedback of the state of a component, the limits of a component, and instruction about how to interact with the component if applicable. **Tool Tips** are brought up by simply hovering the cursor over a component of interest. The images below show examples of **Tool Tips** when hovering over a reference divider block, wire, and VCO.
 
-|
-
 .. container:: centeralign
 
 
@@ -110,59 +114,64 @@ The clock evaluation software incorporates **Tool Tips** to all interactive bloc
 
 |tool_tip.png|
 
-   | |Tool Tip_Wire.png|
-   | |Tool Tip_VCOcal.png|
-   | *Figure 4. Various Tool Tip Examples*
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/Tool Tip_Wire.png
+      :alt: Tool Tip_Wire.png
+      :width: 300px
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/Tool Tip_VCOcal.png
+      :alt: Tool Tip_VCOcal.png
+      :width: 300px
+   
+   *Figure 4. Various Tool Tip Examples*
 
 
 Latching Values Into Interactive Blocks and Text Fields
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Values may be entered into a block or text field by clicking the appropriate item. When a block/text field is selected, a blue outline and cursor appears as shown in **Figure 5**. All items which require text input from the user require an **Enter** keystroke to latch the value into the software. If an evaluation board is connected, a change to a block's value followed by an **Enter** keystroke will automatically load the value into the active registers of the device. Text fields within child windows require for the **Load** button to be pressed for any text values to be loaded into the device.
-| Automatic loading of user inputs can be disabled by unchecking the **Enable Auto IO Update** option within the **File**>\ **Options** menu.
+Values may be entered into a block or text field by clicking the appropriate item. When a block/text field is selected, a blue outline and cursor appears as shown in **Figure 5**. All items which require text input from the user require an **Enter** keystroke to latch the value into the software. If an evaluation board is connected, a change to a block's value followed by an **Enter** keystroke will automatically load the value into the active registers of the device. Text fields within child windows require for the **Load** button to be pressed for any text values to be loaded into the device.
 
-|
+Automatic loading of user inputs can be disabled by unchecking the **Enable Auto IO Update** option within the **File**>\ **Options** menu.
 
 .. container:: centeralign
 
 
    ..
 
-|image4|
+|image1|
 
-   | *Figure 5. Selecting a Block To Edit Text*
+   *Figure 5. Selecting a Block To Edit Text*
 
 
 Highlighted and Grayed Blocks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Various blocks within the GUI are represented as active by highlighting the block(white background). A block that is inactive is represented by graying the block and text. Blocks that are able to be activated and deactivated are done so by simply clicking the block. If an evaluation board is connected and a block is deactivated within the GUI, the appropriate register settings are automatically written to the active registers of the device by default. **Figure 5** below shows four reference inputs, with only RefA and RefC active.
-| Automatic loading of user inputs can be disabled by unchecking the **Enable Auto IO Update** option within the **File**>\ **Options** menu.
-|
+Various blocks within the GUI are represented as active by highlighting the block(white background). A block that is inactive is represented by graying the block and text. Blocks that are able to be activated and deactivated are done so by simply clicking the block. If an evaluation board is connected and a block is deactivated within the GUI, the appropriate register settings are automatically written to the active registers of the device by default. **Figure 5** below shows four reference inputs, with only RefA and RefC active.
+
+Automatic loading of user inputs can be disabled by unchecking the **Enable Auto IO Update** option within the **File**>\ **Options** menu.
 
 .. container:: centeralign
 
-   |image5| *Figure 6. Active and Deactive Block Representation*
+   |image2| *Figure 6. Active and Deactive Block Representation*
 
 
 Active Frequency Calculation and Frequency Violation Indication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The interactive GUI within the **Block Diagram** tab allows the user to configure the product to many valid functioning and non functioning states. The GUI uses the independent variable information contained in each block's state and text box to calculate dependent frequencies throughout the device. The GUI actively monitors and displays when a device frequency specification is being violated by highlighting the unsupported component in <fc #FF0000>red</fc>. Errors are also displayed when when reference and feedback frequencies are not matched for a given PLL. **Figure 7** below shows a user configuration with many frequency errors.
+The interactive GUI within the **Block Diagram** tab allows the user to configure the product to many valid functioning and non functioning states. The GUI uses the independent variable information contained in each block's state and text box to calculate dependent frequencies throughout the device. The GUI actively monitors and displays when a device frequency specification is being violated by highlighting the unsupported component in red. Errors are also displayed when when reference and feedback frequencies are not matched for a given PLL. **Figure 7** below shows a user configuration with many frequency errors.
 
 .. container:: centeralign
 
-   |image6| *Figure 7. Active Frequency Validation*
+   |image3| *Figure 7. Active Frequency Validation*
 
 
 Frequency Limits Tab
 ^^^^^^^^^^^^^^^^^^^^
 
-Frequency violations are also highlighted <fc #FF0000>red</fc> in the **Frequency Limits** tab. **Figure 8** shows an example of a maximum VCO frequency violation.
+Frequency violations are also highlighted red in the **Frequency Limits** tab. **Figure 8** shows an example of a maximum VCO frequency violation.
 
 .. container:: centeralign
 
-   |image7| *Figure 8. Active Frequency Validation in the Frequency Limits Tab*
+   |image4| *Figure 8. Active Frequency Validation in the Frequency Limits Tab*
 
 
 VCO Calibration
@@ -175,16 +184,14 @@ Expansion Windows
 
 **Expansion Windows** are used to display small sections of a part at a time. Expansion windows allow the user to switch between multiple PLL channels or output banks for devices with large output distribution. Each window uses a different background color to represent a different section of the device. Selecting an **Expansion Window** does not reconfigure the device or alter blocks contained in other expansion windows. **Figure 9** shows the **Expansion Window** buttons for the AD9554 which allow the user to select one of four channels.
 
-|
-
 .. container:: centeralign
 
 
    ..
 
-|image8|
+|image5|
 
-   | *Figure 9. Expansion Window Buttons*
+   *Figure 9. Expansion Window Buttons*
 
 
 Main Window Buttons
@@ -192,16 +199,14 @@ Main Window Buttons
 
 The following buttons are available at the bottom of the evaluation software main window:
 
-|
-
 .. container:: centeralign
 
 
    ..
 
-|image9|
+|image6|
 
-   | *Figure 10. Main Window Buttons*
+   *Figure 10. Main Window Buttons*
 
 
 -  **Wizard** - Opens the product configuration wizard. Wizards are product specific and not available for every product. See the individual evaluation board user guide page for detailed instruction on using a wizard.
@@ -215,16 +220,14 @@ The following buttons are available at the bottom of the evaluation software mai
    -  **Updated** - Shows all register settings which have been entered into the GUI but have not yet been written to the device.
    -  **NonDefault** -Shows all registers that have been changed from the on chip default values.
 
-|
-
 .. container:: centeralign
 
 
    ..
 
-|image10|
+|image7|
 
-   | *Figure 11. Register Map Window*
+   *Figure 11. Register Map Window*
 
 
 -  **SYNC** - Performs an output synchronization to phase align outputs.
@@ -254,16 +257,14 @@ Select Hardware
 
 **Select Hardware** brings up a window to show all of the available ADI CSG evaluation boards that are currently connected to the users PC. Select the appropriate board for a given piece of evaluation software. **Figure 12** below shows an example of the Select Hardware Window using the AD9554 evaluation board.
 
-|
-
 .. container:: centeralign
 
 
    ..
 
-|image11|
+|image8|
 
-   | *Figure 12. Select Hardware Window*
+   *Figure 12. Select Hardware Window*
 
 
 Options
@@ -302,31 +303,21 @@ About
 
 Selecting **About** brings up a window which details the revision of the evaluation board software being used.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/main_window_example.png
-   :width: 700px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/figure2_frequencylimitestab.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/figure3_pinouttab.png
-   :width: 500px
 .. |tool_tip.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/tool_tip.png
    :width: 300px
-.. |Tool Tip_Wire.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/Tool Tip_Wire.png
-   :width: 300px
-.. |Tool Tip_VCOcal.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/Tool Tip_VCOcal.png
-   :width: 300px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/editing_a_text_box.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/editing_a_text_box.png
    :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/enablingblocks.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/enablingblocks.png
    :width: 300px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/frequency_violation_indication.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/frequency_violation_indication.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/frequency_violation_indication_freqlimtab.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/frequency_violation_indication_freqlimtab.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/expansion_window.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/expansion_window.png
    :width: 300px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/mainwindowbuttonspng.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/mainwindowbuttonspng.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/viewregistermap.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/viewregistermap.png
    :width: 500px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/selecthardwarewindow.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/selecthardwarewindow.png
    :width: 300px

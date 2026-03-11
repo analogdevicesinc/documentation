@@ -101,13 +101,7 @@ In this section we cover many of the ways the LT1054 switched capacitor DC-DC co
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 – LT1054 Switch Cap DC-DC converter (or ADM660)
-| 2 – 4.7 uF capacitors
-| 2 – 10 uF capacitors
-| 2 – 22 uF capacitors
-| 2 – 47 uF capacitors
-| 5 – 1N4001 diodes (or 1N5819 Schottky diodes)
+ADALM1000 hardware module 1 – LT1054 Switch Cap DC-DC converter (or ADM660) 2 – 4.7 uF capacitors 2 – 10 uF capacitors 2 – 22 uF capacitors 2 – 47 uF capacitors 5 – 1N4001 diodes (or 1N5819 Schottky diodes)
 
 Directions:
 ~~~~~~~~~~~
@@ -258,11 +252,6 @@ The LT3080 produces an output voltage that is equal to the voltage on the SET pi
 
 **For Further Reading:**
 
-| `Voltage multiplier <https://en.wikipedia.org/wiki/Voltage_multiplier>`_
-| `Charge pump <https://en.wikipedia.org/wiki/Charge_pump>`_
-| `Voltage doubler <https://en.wikipedia.org/wiki/Voltage_doubler>`_
-| `ADM660 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADM660_8660.pdf>`_
-| :adi:`LT1054 datasheet <en/products/power-management/inductorless-charge-pump-dc-dc-converters/regulated-step-up-charge-pumps/lt1054.html>`
-| :adi:`AD5626 datasheet <AD5626>`
+`Voltage multiplier <https://en.wikipedia.org/wiki/Voltage_multiplier>`_ `Charge pump <https://en.wikipedia.org/wiki/Charge_pump>`_ `Voltage doubler <https://en.wikipedia.org/wiki/Voltage_doubler>`_ `ADM660 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADM660_8660.pdf>`_ :adi:`LT1054 datasheet <en/products/power-management/inductorless-charge-pump-dc-dc-converters/regulated-step-up-charge-pumps/lt1054.html>` :adi:`AD5626 datasheet <AD5626>`
 
 **Return to Lab Activity Table of Contents**

@@ -75,7 +75,7 @@ For example, using Visual Studio 2017 on Microsoft Windows:
    $cmake .. -DCMAKE_BUILD_TYPE=Release
    $cmake --build .
 
-\* Replace with the appropriate arguments for your compiler and platform—please refer to https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html  
+- Replace with the appropriate arguments for your compiler and platform—please refer to https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html
 
 Running the examples
 ^^^^^^^^^^^^^^^^^^^^
@@ -151,12 +151,12 @@ To use the SDK with your Python application or to run the example, you must firs
    > env\Scripts\activate
 
    # LINUX/MAC
-   $ source env/bin/activate 
+   $ source env/bin/activate
 
    # Install SDK wheel to new virtual environment
    (env) > pip install a2ba_sdk-3.0.0-cp38-cp38m-win_amd64.whl  # WINDOWS - choose correct wheel for your platform
 
-\* When you are finished using the Python SDK, exit your virtual environment by entering deactivate at the terminal/command prompt.
+- When you are finished using the Python SDK, exit your virtual environment by entering deactivate at the terminal/command prompt.
 
 Examples
 ~~~~~~~~
@@ -174,8 +174,6 @@ Set up the file config.py to match the network that you have. This is specially 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/python_config.png
    :width: 600px
 
-.. _running-the-examples-1:
-
 Running the examples
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -189,8 +187,6 @@ If successful, you should see output similar to:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/python_example.png
    :width: 600px
-
-.. _documentation-1:
 
 Documentation
 ~~~~~~~~~~~~~

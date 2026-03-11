@@ -14,7 +14,7 @@ To learn more about the reference designs, please refer their individual circuit
 Setup Requirements
 ==================
 
-\**Smart Greenhouse Demo Requirements \*\*
+**Smart Greenhouse Demo Requirements**
 
 -  Boards/Hardware
 
@@ -47,13 +47,30 @@ Setup Requirements
 How to setup Hardware
 =====================
 
-| Functional Block Diagram |image2|
-| ADICUP360 Hardware Setup |image3|
-| CN0398 Hardware Setup |image4|
-| CN0397 Hardware Setup |image5|
-| CN0370 Hardware Setup |image6|
-| Chip select Assignment for each CN0370 boards are as follows:
-| {{ :resources:eval:user-guides:eval-adicup360:application_demos:connect2.png \|\ |image7|
+Functional Block Diagram
+
+
+|image2|
+
+ADICUP360 Hardware Setup
+
+
+|image3|
+
+CN0398 Hardware Setup
+
+
+|image4|
+
+CN0397 Hardware Setup
+
+
+|image5|
+
+CN0370 Hardware Setup |image6| Chip select Assignment for each CN0370 boards are as follows: {{ :resources:eval:user-guides:eval-adicup360:application_demos:connect2.png \|\
+
+
+|image7|
 
 ============== ================== =================
 CN0370 Control ADICUP360 Pin (P4) ADuCM360 Pin/Port
@@ -68,25 +85,21 @@ GND            5                  DGND
 VDD            7                  DVDD
 ============== ================== =================
 
-|
-
 .. note::
 
    The demo used three CN0370 hardware routed on the same SPI bus with different chip selects and each hardware controls specific external LEDs which includes `BLUE LED <https://www.digikey.com/LXML-PB01-0040>`_, `GREEN LED <https://www.digikey.com/LXML-PM01-0100>`_ and `RED LED <https://www.digikey.com/LXM2-PD01-0050>`_
 
 
-| Complete setup |image8| Hardware Connections as follows
-| \* Connect P3, P4, P6 and P7 connectors of EVAL-CN0398-ARDZ board on top of connectors P2, P5, P7 and P8 of the ADICUP360 board.
+Complete setup |image8| Hardware Connections as follows
 
+-  Connect P3, P4, P6 and P7 connectors of EVAL-CN0398-ARDZ board on top of connectors P2, P5, P7 and P8 of the ADICUP360 board.
 -  On top of the EVAL-CN0398-ARDZ board, connect the EVAL-CN0397-ARDZ to the Analog, Power , DigI1 and DigI0 connectors.
 -  Route the SPI lines of three CN0370 boards to P4 (PMOD_SPI) of ADICUP360 board.
 -  Apply 7-12V supply to DC barrel jack(P11) of ADICUP360 board
-   \* Connect USB micro to P14(DEBUG) of ADICUP360 using a micro USB to USB on the PC.
-   \* Drag and drop the Smart_Ag.bin file onto the MBED drive.Allow a few seconds for the program to download.
+-  Connect USB micro to P14(DEBUG) of ADICUP360 using a micro USB to USB on the PC.
+-  Drag and drop the Smart_Ag.bin file onto the MBED drive.Allow a few seconds for the program to download.
 -  Disconnect the micro USB cable from P14(DEBUG) and connect the micro USB to P13(USER) of ADICUP360
 -  Apply +5V, 1A supply to each CN0370 board
-
-| 
 
 Software Description
 ====================

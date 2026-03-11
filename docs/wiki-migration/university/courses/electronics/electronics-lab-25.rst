@@ -9,10 +9,7 @@ A diode's forward voltage drop, V\ :sub:`D`, decreases by approximately 2 mV for
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 2 - Resistors (1KΩ)
-| 2 - small signal diode (1N914 or similar)
+ADALM2000 Active Learning Module Solder-less Breadboard 2 - Resistors (1KΩ) 2 - small signal diode (1N914 or similar)
 
 Directions:
 -----------
@@ -72,10 +69,7 @@ Procedure:
 Questions:
 ----------
 
-| Can you derive the sensitivity in mV/ºC you measured from the diode equation?
-| What is the purpose of the reference diode in this configuration?
-| This circuit only measures the difference in temperature not the absolute temperature of either diode. How could you use the temperature dependence of a simple diode circuit like this to determine the actual temperature of the sense diode ( i.e. relative to absolute zero )?
-|
+Can you derive the sensitivity in mV/ºC you measured from the diode equation? What is the purpose of the reference diode in this configuration? This circuit only measures the difference in temperature not the absolute temperature of either diode. How could you use the temperature dependence of a simple diode circuit like this to determine the actual temperature of the sense diode ( i.e. relative to absolute zero )?
 
 .. admonition:: Download
    :class: download

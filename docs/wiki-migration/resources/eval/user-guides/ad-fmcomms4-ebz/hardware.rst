@@ -1,8 +1,8 @@
 AD-FMCOMMS4-EBZ Hardware
 ========================
 
-| 
-| ===== Schematic, PCB Layout, Bill of Materials =====
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
 
 .. admonition:: Download
    :class: download

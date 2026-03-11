@@ -8,5 +8,5 @@ Hardware Reference Manuals
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#baremetal
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation SHARC Audio Module#baremetal
    :alt: Bare Metal Framework#.|SHARC Audio Module#.faust|Faust and the SHARC Audio Module

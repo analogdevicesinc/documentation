@@ -7,15 +7,15 @@ Renesas
 
    
    -  `main Page <http://www.renesas.com/>`_
-
-
    
-   |
 
 
 .. container:: column
 
-   |
+   
+
+
+   ..
 
 .. container:: column
 

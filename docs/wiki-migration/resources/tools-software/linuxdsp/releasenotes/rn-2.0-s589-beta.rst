@@ -28,7 +28,7 @@ Supported Processors and EZ-KITs
 
 The following processors and silicon revisions are supported by the Yocto Linux for ADSP-SC5xx product.
 
-\* ADSP-SC589 EZ-Kit
+- ADSP-SC589 EZ-Kit
 
 System Requirements
 -------------------
@@ -83,5 +83,6 @@ The following boot modes are supported by the product beta:
 -  sdcardboot
 -  ramboot_emmc
 
-| 
-| ---- \**HOME PAGE: \*\* :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`
+--------------
+
+**HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`

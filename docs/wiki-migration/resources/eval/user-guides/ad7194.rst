@@ -5,20 +5,17 @@ The EVAL-AD7194ASDZ evaluation kit features the AD7194 which is 4.8 kHz ultralow
 
 The AD7194 ACE Plugin fully configures the AD7194 device register functionality and provides dc time domain analysis in the form of waveform graphs, histograms, and associated noise analysis for ADC performance evaluation.
 
-
-| Full specifications on the AD7194 are available in the product data sheet, which should be consulted in conjunction with this user guide when working with the evaluation board.
+Full specifications on the AD7194 are available in the product data sheet, which should be consulted in conjunction with this user guide when working with the evaluation board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7194_blockdiag.png
    :align: center
    :width: 600px
 
-|
-
 Features
 --------
 
 -  Full featured evaluation board for the AD7194
-   \* PC control in conjunction with the system demonstration platform (EVAL-SDP-CB1Z/EVAL-SDP-CK1Z)
+-  PC control in conjunction with the system demonstration platform (EVAL-SDP-CB1Z/EVAL-SDP-CK1Z)
 -  PC software for control and data analysis (time and frequency domain)
 
 Related Documents
@@ -30,7 +27,7 @@ Required Software
 -----------------
 
 -  :adi:`ACE Software <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7194asdz.html#eb-documentation>`
-   \* :adi:`AD7194 ACE Plugin <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7194asdz.html#eb-documentation>`
+-  :adi:`AD7194 ACE Plugin <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7194asdz.html#eb-documentation>`
 
 Quick Start Guide
 ~~~~~~~~~~~~~~~~~
@@ -87,8 +84,7 @@ Getting started
 Hardware Guide
 ~~~~~~~~~~~~~~
 
-| :doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad7194/hardwareguide>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad7194/hardwareguide>` **Contents of the Hardware guide:**
 
 -  :doc:`Set-up Procedures </wiki-migration/resources/eval/user-guides/ad7194/hardwareguide>`
 -  :doc:`Block Diagram </wiki-migration/resources/eval/user-guides/ad7194/hardwareguide>`
@@ -104,8 +100,7 @@ Hardware Guide
 Software Guide
 ~~~~~~~~~~~~~~
 
-| :doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad7194/softwareguide>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad7194/softwareguide>` **Contents of the Hardware guide:**
 
 -  :doc:`Ace Plugin </wiki-migration/resources/eval/user-guides/ad7194/softwareguide>`
 

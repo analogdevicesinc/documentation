@@ -116,7 +116,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            <*>     Industrial I/O support --->
                --- Industrial I/O support
                ...
-               Digital to analog converters  ---> 
+               Digital to analog converters  --->
                    ...
                    <*> Analog Devices AD8460 driver
                    ...
@@ -126,14 +126,12 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-.. include:: ../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -187,10 +185,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -203,22 +198,18 @@ Show device name
 Enable power down mode for the device
 -------------------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/out_voltageY_powerdown
+**Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_powerdown
 
 Writing 1 causes channel Y to enter power down mode. Clearing returns to normal operation.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# echo 1 > out_voltage0_powerdown 
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 1 > out_voltage0_powerdown
       root@analog:/sys/bus/iio/devices/iio:device1# cat out_voltage0_powerdown
       1
       root@analog:/sys/bus/iio/devices/iio:device1# echo 0 > out_voltage0_powerdown
@@ -230,17 +221,13 @@ Writing 1 causes channel Y to enter power down mode. Clearing returns to normal 
 Manual toggling between input modes
 -----------------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/out_voltageY_toggle_en
+**Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_toggle_en
 
 Writing 1 causes channel Y to enter Arbitrary Pattern Generator (APG) mode. Clearing sets it to Arbitrary Waveform Generator (AWG) mode
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -257,17 +244,13 @@ Writing 1 causes channel Y to enter Arbitrary Pattern Generator (APG) mode. Clea
 Set pattern memory values for APG mode
 --------------------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/out_voltageY_raw[0~15]
+**Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_raw[0~15]
 
 Allows writing of up to 16 14-bit values in pattern memory
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -284,17 +267,13 @@ Allows writing of up to 16 14-bit values in pattern memory
 Set pattern depth for APG mode
 ------------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/out_voltageY_symbol
+**Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_symbol
 
 Writing any value from 0 to 15 will set pattern depth
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -308,17 +287,13 @@ Writing any value from 0 to 15 will set pattern depth
 Set programmable quiescent current
 ----------------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/out_currentY_raw
+**Description:** /sys/bus/iio/devices/iio:deviceX/out_currentY_raw
 
 Write raw value of programmable quiescent current. User must follow the format as per datasheet.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -332,20 +307,13 @@ Write raw value of programmable quiescent current. User must follow the format a
 Enable fault monitoring thresholds
 ----------------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_falling_en
-| /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_rising_en
-| /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_falling_en
-| /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_rising_en
-| /sys/bus/iio/devices/iio:deviceX/events/out_tempY_thresh_rising_en
-| Writing 1 will arm the device against fault events, while clearing disarms the device. The IIO event attributes correspond to the following: OVERCURRENT_SNK, OVERCURRENT_SRC, OVERVOLTAGE_NEG, OVERVOLTAGE_POS, and OVERTEMPERATURE.
+**Description:** /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_falling_en /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_rising_en /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_falling_en /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_rising_en /sys/bus/iio/devices/iio:deviceX/events/out_tempY_thresh_rising_en
+
+Writing 1 will arm the device against fault events, while clearing disarms the device. The IIO event attributes correspond to the following: OVERCURRENT_SNK, OVERCURRENT_SRC, OVERVOLTAGE_NEG, OVERVOLTAGE_POS, and OVERTEMPERATURE.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -360,20 +328,13 @@ Enable fault monitoring thresholds
 Set fault monitoring thresholds
 -------------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_falling_value
-| /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_rising_value
-| /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_falling_value
-| /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_rising_value
-| /sys/bus/iio/devices/iio:deviceX/events/out_tempY_thresh_rising_value
-| The raw value set determines the threshold that triggers the fault alarm, which automatically shuts down the device if the device is armed. The IIO event attributes correspond to the following: OVERCURRENT_SNK, OVERCURRENT_SRC, OVERVOLTAGE_NEG, OVERVOLTAGE_POS, and OVERTEMPERATURE.
+**Description:** /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_falling_value /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_rising_value /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_falling_value /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_rising_value /sys/bus/iio/devices/iio:deviceX/events/out_tempY_thresh_rising_value
+
+The raw value set determines the threshold that triggers the fault alarm, which automatically shuts down the device if the device is armed. The IIO event attributes correspond to the following: OVERCURRENT_SNK, OVERCURRENT_SRC, OVERVOLTAGE_NEG, OVERVOLTAGE_POS, and OVERTEMPERATURE.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

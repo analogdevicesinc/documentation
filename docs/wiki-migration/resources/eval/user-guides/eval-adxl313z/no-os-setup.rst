@@ -147,7 +147,7 @@ UART Output:
     x=-66 y=-10 z=114
    Single read:
     x=-5.56553898 y=0.689530077 z=8.887276548
-   Number of read entries from the FIFO 32. 
+   Number of read entries from the FIFO 32.
     x=  -4.979939445 m/s^2 y=   0.766144530 m/s^2 z=   8.734047642 m/s^2
     x=  -5.056553898 m/s^2 y=   0.766144530 m/s^2 z=   8.657433189 m/s^2
     x=  -5.056553898 m/s^2 y=   0.766144530 m/s^2 z=   8.734047642 m/s^2
@@ -181,18 +181,16 @@ UART Output:
     x=  -5.056553898 m/s^2 y=   0.689530077 m/s^2 z=   8.734047642 m/s^2
     x=  -4.979939445 m/s^2 y=   0.766144530 m/s^2 z=   8.657433189 m/s^2
    ==========================================================
-   Interrupt sources: 
-   DATA_READY event flag = 1. 
-   ACTIVITY event flag = 0. 
-   INACTIVITY event flag = 1. 
-   WATERMARK event flag = 1. 
-   OVERRUN event flag = 1. 
+   Interrupt sources:
+   DATA_READY event flag = 1.
+   ACTIVITY event flag = 0.
+   INACTIVITY event flag = 1.
+   WATERMARK event flag = 1.
+   OVERRUN event flag = 1.
    ===========================================================
 
 IIO Project
 ~~~~~~~~~~~
-
-.. _makefile-selection-1:
 
 Makefile Selection
 ^^^^^^^^^^^^^^^^^^
@@ -206,8 +204,6 @@ In order to build the IIO project make sure you have the following configuration
    IIO_EXAMPLE = y
 
 When running make command make sure to specify the platform you want to build the project for.
-
-.. _project-description-1:
 
 Project Description
 ^^^^^^^^^^^^^^^^^^^
@@ -253,8 +249,6 @@ The No-OS IIO Application together with the No-OS IIO ADXL313 driver take care o
        };
 
        return iio_app_run(iio_devices, NO_OS_ARRAY_SIZE(iio_devices));
-
-.. _project-execution-1:
 
 Project Execution
 ^^^^^^^^^^^^^^^^^

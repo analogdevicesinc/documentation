@@ -24,7 +24,7 @@ Software Configuration
 
 On the Yocto, Configure the linux-kernel as below to set the USB controller in Gadget only mode, and enable the USB Gadget zero relevant options.
 
-.. code:: c++
+.. code:: console
 
    $ bitbake linux-adi -c menuconfig
 
@@ -36,14 +36,14 @@ On the Yocto, Configure the linux-kernel as below to set the USB controller in G
        [*] USB support  --->
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Gadget only mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                    <*>   USB Gadget Support  --->
 
-\**Configure the Gadget zero support \*\*
+**Configure the Gadget zero support**
 
 .. code:: shell
 
@@ -51,7 +51,7 @@ On the Yocto, Configure the linux-kernel as below to set the USB controller in G
        [*] USB support  --->
                    <*>   USB Gadget Support  --->
                          <M>   USB Gadget precomposed configurations
-                         <M>     Gadget Zero (DEVELOPMENT) 
+                         <M>     Gadget Zero (DEVELOPMENT)
 
 --------------
 
@@ -60,7 +60,7 @@ Example Usage
 
 **Ez-Kit target board**
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# modprobe g_zero
    zero gadget: Gadget Zero, version: Cinco de Mayo 2008
@@ -79,7 +79,7 @@ Please following the `usbtest <http://www.linux-usb.org/usbtest>`_ to get the re
 
 -  **run the gadget zero test**
 
-.. code:: c++
+.. code:: bash
 
    #!/bin/sh
    #set -x
@@ -100,10 +100,10 @@ Please following the `usbtest <http://www.linux-usb.org/usbtest>`_ to get the re
    }
 
    echo "Gadget zero bulk mode test "
-   for i in $(seq 1 8)  
-   do   
+   for i in $(seq 1 8)
+   do
    do_test $i
-   done 
+   done
    do_test 13
 
    echo "Gadget zero control mode test "
@@ -113,13 +113,13 @@ Please following the `usbtest <http://www.linux-usb.org/usbtest>`_ to get the re
 
 -  **Test log:**
 
-.. code:: c++
+.. code:: console
 
-   test@madara:~$ sh usb_gadget_zero.sh 
+   test@madara:~$ sh usb_gadget_zero.sh
    usbtest                36864  0
    S:  Product=Gadget Zero
    002 023:
-   Gadget zero bulk mode test 
+   Gadget zero bulk mode test
    unknown speed   /dev/bus/usb/002/023    0
    /dev/bus/usb/002/023 test 1,    0.126166 secs
    unknown speed   /dev/bus/usb/002/023    0
@@ -138,7 +138,7 @@ Please following the `usbtest <http://www.linux-usb.org/usbtest>`_ to get the re
    /dev/bus/usb/002/023 test 8,    0.626151 secs
    unknown speed   /dev/bus/usb/002/023    0
    /dev/bus/usb/002/023 test 13,    2.774978 secs
-   Gadget zero control mode test 
+   Gadget zero control mode test
    unknown speed   /dev/bus/usb/002/023    0
    /dev/bus/usb/002/023 test 9,    1.920662 secs
    unknown speed   /dev/bus/usb/002/023    0

@@ -86,33 +86,28 @@ Start a UART terminal (set to 115200 baud rate), and program the device and run 
    Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
    Executing user script : sw/cf_ad9683_ebz_zc706.tcl
    Programming Bitstream -- sw/cf_ad9683_ebz_zc706.bit
-   Fpga Programming Progress 
+   Fpga Programming Progress
    
    ............10.........20.........30.........40.........50.........60.........70.........80.........90.....Done
    Successfully downloaded bit file.
    
    JTAG chain configuration
-   --------------------------------------------------
    Device   ID Code        IR Length    Part Name
     1       4ba00477           4        Cortex-A9
     2       03731093           6        XC7Z045
    
    
    JTAG chain configuration
-   --------------------------------------------------
    Device   ID Code        IR Length    Part Name
     1       4ba00477           4        Cortex-A9
     2       03731093           6        XC7Z045
    
-   --------------------------------------------------
    Enabling extended memory access checks for Zynq.
    Writes to reserved memory are not permitted and reads return 0.
    To disable this feature, run "debugconfig -memory_access_check disable".
    
-   --------------------------------------------------
    
    CortexA9 Processor Configuration
-   -------------------------------------
    Version.............................0x00000003
    User ID.............................0x00000000
    No of PC Breakpoints................6
@@ -180,8 +175,8 @@ FPGA Referece Designs:
    :class: download
 
    
-   -  \**ZC706 (Source files) \*\* `cf_ad9683_ebz_zc706_edk_14_4_2013_05_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_zc706_edk_14_4_2013_05_08.tar.gz>`_
-   -  \**ZC706 (Software files) \*\* `cf_ad9683_ebz_zc706_sw_14_4_2013_05_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_zc706_sw_14_4_2013_05_08.tar.gz>`_
+   -  **ZC706 (Source files)** `cf_ad9683_ebz_zc706_edk_14_4_2013_05_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_zc706_edk_14_4_2013_05_08.tar.gz>`_
+   -  **ZC706 (Software files)** `cf_ad9683_ebz_zc706_sw_14_4_2013_05_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_zc706_sw_14_4_2013_05_08.tar.gz>`_
    
 
 

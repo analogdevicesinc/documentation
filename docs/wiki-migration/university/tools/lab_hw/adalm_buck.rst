@@ -63,8 +63,6 @@ Figure 2 shows the ADALM2000 connections for measuring the switch node voltage o
    :align: center
    :width: 600px
 
-   |
-
 .. container:: centeralign
 
    Figure 2. ADALM-BUCK to ADALM2000 connections
@@ -84,6 +82,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Bill of Materials
    -  Allegro Project
    
-   |
 
-| *End of Document*
+
+*End of Document*

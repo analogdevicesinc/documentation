@@ -3,16 +3,23 @@
 Voice Activity Detector
 =======================
 
-| |vad.png| |vadaccelerator.png|
-| ===== Description ===== Voice Activity Detector takes an input signal and tracks the signal level compared to the noise floor. The Modulation Index is then later used to determine if speech is present or not.
-| The VAD w/ Accelerator provides extra conditions to accelerate or increase the time constants in voice detection. Either the Release time for TopTracker is affected or the Attack time for BottomTracker is affected when their corresponding conditions are met. Thus, if TopTracker has been in release mode for Top Wait time, then the Top Release time constant will be increased by a scalar of Top Factor. And if BottomTracker has been in attack mode for Bottom Wait time, then the Bottom Attack time constant will be increased by a scalar of Bottom Factor.
-| ===== Variants =====
+|vad.png| |vadaccelerator.png|
+
+Description
+-----------
+
+Voice Activity Detector takes an input signal and tracks the signal level compared to the noise floor. The Modulation Index is then later used to determine if speech is present or not.
+
+The VAD w/ Accelerator provides extra conditions to accelerate or increase the time constants in voice detection. Either the Release time for TopTracker is affected or the Attack time for BottomTracker is affected when their corresponding conditions are met. Thus, if TopTracker has been in release mode for Top Wait time, then the Top Release time constant will be increased by a scalar of Top Factor. And if BottomTracker has been in attack mode for Bottom Wait time, then the Bottom Attack time constant will be increased by a scalar of Bottom Factor.
+
+Variants
+--------
 
 -  Voice Activity Detector
 -  Voice Activity Detector with Accelerator
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +----------------------+------------+------------------+---------------+------------------+
 | Name                 | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -26,7 +33,7 @@ Voice Activity Detector
 | ===== Pins =====
 
 Input
------
+~~~~~
 
 ============= ===== ===================
 Name          Type  Description
@@ -35,7 +42,7 @@ Speech Signal Audio Speech Input signal
 ============= ===== ===================
 
 Output
-------
+~~~~~~
 
 +-----------------+-------+---------------------------------------------------------------+
 | Name            | Type  | Description                                                   |

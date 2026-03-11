@@ -19,11 +19,7 @@ The Diode Connected NMOS transistor
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Hardware Module
-| Solder-less Breadboard
-| 1 - 100 Ω Resistor
-| 1 - Small signal enhancement mode NMOS transistor (CD4007 CMOS array)
-| 1 - Small signal enhancement mode PMOS transistor (CD4007 CMOS array)
+ADALM1000 Hardware Module Solder-less Breadboard 1 - 100 Ω Resistor 1 - Small signal enhancement mode NMOS transistor (CD4007 CMOS array) 1 - Small signal enhancement mode PMOS transistor (CD4007 CMOS array)
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
    :align: center
@@ -61,8 +57,7 @@ Load the captured data into Excel and calculate the current. Calculate and plot 
 Questions:
 ~~~~~~~~~~
 
-| By plotting the data measured for I\ :sub:`D` vs V\ :sub:`GS`, find and report values of V\ :sub:`TH` and K (W/L).
-| Are these V\ :sub:`TH` and K (W/L) values consistent with your measurements on the other two NMOS transistors on the chip?
+By plotting the data measured for I\ :sub:`D` vs V\ :sub:`GS`, find and report values of V\ :sub:`TH` and K (W/L). Are these V\ :sub:`TH` and K (W/L) values consistent with your measurements on the other two NMOS transistors on the chip?
 
 PMOS Directions:
 ~~~~~~~~~~~~~~~~
@@ -78,28 +73,20 @@ Repeat the experiment using one of the PMOS devices in the CD4007. The connectio
    Figure 2 PMOS diode connection diagram
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A generator should be configured for a 100 Hz triangle wave with 5 volt Max and 0 V Min. The CA-I signal trace measures the current in the resistor (and in the transistor). The scope channel B is connected to measure the voltage across the transistor. The current flowing through the transistor is the current measured in channel A (CA-I) or the Math trace voltage difference between CB-V - CA-V divided by the resistor value (100 Ω).
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
 
 Load the captured data in to Excel and calculate the current. Calculate and plot the current vs. the voltage across the transistor (V\ :sub:`GS`). No current should flow in the reverse direction. In the forward conduction region, the voltage, current relationship should be quadratic. Also calculate and plot the square root of the current (I\ :sub:`D`) vs. the voltage across the transistor (V\ :sub:`GS`). Compare the shape of the two plots and comment.
 
-.. _questions-1:
-
 Questions:
 ~~~~~~~~~~
 
-| By plotting the data measured for I\ :sub:`D` vs V\ :sub:`GS`, find and report values of V\ :sub:`TH` and K (W/L).
-| Are these V\ :sub:`TH` and K (W/L) values consistent with your measurements on the other two PMOS transistors on the chip?
-| How do the V\ :sub:`TH` and K (W/L) values for the NMOS and PMOS compare?
+By plotting the data measured for I\ :sub:`D` vs V\ :sub:`GS`, find and report values of V\ :sub:`TH` and K (W/L). Are these V\ :sub:`TH` and K (W/L) values consistent with your measurements on the other two PMOS transistors on the chip? How do the V\ :sub:`TH` and K (W/L) values for the NMOS and PMOS compare?
 
 **Resources:**
 
@@ -108,7 +95,6 @@ Questions:
 
 **For Further Reading:**
 
-| http://en.wikipedia.org/wiki/Field-effect_transistor
-| http://en.wikipedia.org/wiki/MOSFET
+http://en.wikipedia.org/wiki/Field-effect_transistor http://en.wikipedia.org/wiki/MOSFET
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

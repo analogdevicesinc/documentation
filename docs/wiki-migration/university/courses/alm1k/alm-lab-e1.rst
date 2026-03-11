@@ -43,10 +43,7 @@ We know that an ideal voltage source will produce a constant output voltage inde
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard, and jumper wire kit
-| 1 NiCd or NiMH rechargeable battery (3 cell type see appendix for suggested sources)
-| 1 100 Ω resistor (R\ :sub:`L`)
+ADALM1000 hardware module Solder-less breadboard, and jumper wire kit 1 NiCd or NiMH rechargeable battery (3 cell type see appendix for suggested sources) 1 100 Ω resistor (R\ :sub:`L`)
 
 Directions:
 ~~~~~~~~~~~
@@ -81,9 +78,6 @@ Questions:
 
 **For further reading:**
 
-| :adi:`Battery Chargers <media/en/training-seminars/design-handbooks/Practical-Design-Techniques-Power-Thermal/Section5.pdf>`
-| `Rechargeable battery <https://en.wikipedia.org/wiki/Rechargeable_battery>`_
-| `Battery Specifications <http://web.mit.edu/evt/summary_battery_specifications.pdf>`_
-| :doc:`Electrochemical Impedance Spectroscopy </wiki-migration/university/courses/alm1k/alm-eis-lab>`
+:adi:`Battery Chargers <media/en/training-seminars/design-handbooks/Practical-Design-Techniques-Power-Thermal/Section5.pdf>` `Rechargeable battery <https://en.wikipedia.org/wiki/Rechargeable_battery>`_ `Battery Specifications <http://web.mit.edu/evt/summary_battery_specifications.pdf>`_ :doc:`Electrochemical Impedance Spectroscopy </wiki-migration/university/courses/alm1k/alm-eis-lab>`
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

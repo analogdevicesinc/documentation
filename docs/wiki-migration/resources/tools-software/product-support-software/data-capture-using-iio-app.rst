@@ -70,8 +70,6 @@ Another factor that determines the IIO oscilloscope timeout is 'sampling_frequen
 
 timeout = 400 (requested samples) \* (1 / 10000 SPS) + 1sec = 1.4 sec
 
-.. _capturing-rate-transmission-rate-1:
-
 Capturing Rate > Transmission Rate:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -150,8 +148,6 @@ This is a GUI (Graphical User Interface) based IIO client application for data v
    
 
 
-.. _data-capture-with-iio-firmware-application-1:
-
 Data Capture With IIO Firmware Application
 ------------------------------------------
 
@@ -176,8 +172,6 @@ The channels for which data is to be captured can be selected from the GUI windo
 
 -
 
-.. _limitations-of-data-capture-using-iio-application-1:
-
 Limitations of Data Capture Using IIO Application
 -------------------------------------------------
 
@@ -188,8 +182,6 @@ IIO oscilloscope is intended as a debugging tool and can only be used for data v
 -  Buffer size limitations in firmware
 
 -
-
-.. _data-capturingsampling-rate-1:
 
 Data Capturing/Sampling Rate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,14 +201,10 @@ Due to this limitations, IIO oscilloscope can capture frequencies which are very
 
 -
 
-.. _data-transmission-rate-serial-link-1:
-
 Data Transmission Rate (serial link)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the rate or speed at which data cane be transmitted to IIO oscilloscope over the serial link (e.g. UART). The data transmission rate and serial link used to capture the data plays an important role while capturing data at higher OSR's Or in scenarios where transmission rate is higher or lower than data capturing/sampling rate. The IIO oscilloscope requests the data in aperiodic manner, meaning that new data capture request is sent immediately when data from previous request is received.
-
-.. _capturing-rate-transmission-rate-2:
 
 Capturing Rate < Transmission Rate:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -227,16 +215,12 @@ Another factor that determines the IIO oscilloscope timeout is 'sampling_frequen
 
 timeout = 400 (requested samples) \* (1 / 10000 SPS) + 1sec = 1.4 sec
 
-.. _capturing-rate-transmission-rate-3:
-
 Capturing Rate > Transmission Rate:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If data capturing rate is too high compared to the transmission rate, the data acquisition into a buffer happens faster. So data buffer might fill faster compared to emptying operation. This might lead to a discontinuity on data visualization on IIO oscilloscope side as data visualization is limited by data transmission rate in this case (with slower serial communication link). If communication link is faster and matches to capturing/sampling rate, the visualization of data would be more continuous.
 
 -
-
-.. _buffer-size-limitations-in-firmware-1:
 
 Buffer size limitations in firmware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -276,8 +260,6 @@ If requested samples is set higher than the available buffer size, a constant va
    :align: center
 
 -
-
-.. _saving-captured-data-1:
 
 Saving Captured Data
 --------------------

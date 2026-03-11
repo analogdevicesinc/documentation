@@ -42,26 +42,21 @@ This state is similar to a closed switch connecting the bottom of R\ :sub:`C` to
 The characteristics for a BJT switch assume that:
 
 -   -V\ :sub:`in` is low enough to drive the transistor into cutoff.
-   \* +V\ :sub:`in` must produce enough base current through R\ :sub:`B` to drive the transistor into saturation.
-   \* The transistor is an ideal component.
+-   +V\ :sub:`in` must produce enough base current through R\ :sub:`B` to drive the transistor into saturation.
+-   The transistor is an ideal component.
 
 These conditions can be assured by designing the circuit so that:
 
 -   -V\ :sub:`in` = V\ :sub:`BE`
-   \* +V\ :sub:`in` = V\ :sub:`BE` + I\ :sub:`B`\ R\ :sub:`B` (V\ :sub:`CC` is a good maximum)
-   \* I\ :sub:`B` > I\ :sub:`Csat`/ß
+-   +V\ :sub:`in` = V\ :sub:`BE` + I\ :sub:`B`\ R\ :sub:`B` (V\ :sub:`CC` is a good maximum)
+-   I\ :sub:`B` > I\ :sub:`Csat`/ß
 
 Condition 1 guarantees that the circuit is driven into the cutoff region by the input. Conditions 2 and 3 assure that the transistor will be driven into the saturation region. An actual BJT switch differs from the ideal switch in several aspects. In practice, even in cutoff there is some small leakage current through the transistor. Also, in saturation, there is always some voltage dropped across the transistor's internal resistance. Typically, this will be between 0.2 and 0.4 V in saturation depending on the collector current and size of the device. These variations from the ideal are generally minor with a properly sized device, so we can assume near ideal conditions when analyzing or designing a BJT switch circuit.
 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 Hardware module
-| Solder-less Breadboard
-| 1 - 6.8KΩ Resistor (R\ :sub:`B`)
-| 1 - 100Ω Resistor (R\ :sub:`C`)
-| 1 - 5mm LED (any color)
-| 1 - small signal NPN transistor (2N3904)
+ADALM1000 Hardware module Solder-less Breadboard 1 - 6.8KΩ Resistor (R\ :sub:`B`) 1 - 100Ω Resistor (R\ :sub:`C`) 1 - 5mm LED (any color) 1 - small signal NPN transistor (2N3904)
 
 Directions:
 ~~~~~~~~~~~
@@ -153,10 +148,6 @@ Again, set PIO 0 and PIO 1 to all four combinations of logic 0 and 1. Note which
 
 **For Further Reading:**
 
-| `Transistor <https://en.wikipedia.org/wiki/Transistor>`_
-| `Light- emitting diode <https://en.wikipedia.org/wiki/Light-emitting_diode>`_
-| `LED circuit <https://en.wikipedia.org/wiki/LED_circuit>`_
+`Transistor <https://en.wikipedia.org/wiki/Transistor>`_ `Light- emitting diode <https://en.wikipedia.org/wiki/Light-emitting_diode>`_ `LED circuit <https://en.wikipedia.org/wiki/LED_circuit>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
-| **Return to Electronics Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents** **Return to Electronics Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**

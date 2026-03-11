@@ -1,14 +1,17 @@
 .. warning::
 
-   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki\`
+   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki`
 
 
 Configuring Peripherals for the ADSP-SC5xx When Using Linux and SHARC Applications
 ==================================================================================
 
-| 
-| ==== Default Peripheral allocation between SHARCs and ARM ==== By default all peripherals are allocated to the ARM. In order to access a peripheral it is necessary for the pinmux for the peripheral to be configured correctly. The pinmux should only be configured by a single core and by default this is handled by the ARM, which is the booting core.
-| Peripheral allocation is controlled by the device tree source file. The device tree source files are located in the Linux source repo in the /arch/arm/boot/dts folder. For the SC594 EZKIT there are two devicetree source files, a generic one for the device family named sc59x.dtsi and a board specific one named sc594-som-ezkit.dts.
+Default Peripheral allocation between SHARCs and ARM
+----------------------------------------------------
+
+By default all peripherals are allocated to the ARM. In order to access a peripheral it is necessary for the pinmux for the peripheral to be configured correctly. The pinmux should only be configured by a single core and by default this is handled by the ARM, which is the booting core.
+
+Peripheral allocation is controlled by the device tree source file. The device tree source files are located in the Linux source repo in the /arch/arm/boot/dts folder. For the SC594 EZKIT there are two devicetree source files, a generic one for the device family named sc59x.dtsi and a board specific one named sc594-som-ezkit.dts.
 
 For Linkport0 for example there will be an entry in both files. The sc594.dtsi file contains:
 

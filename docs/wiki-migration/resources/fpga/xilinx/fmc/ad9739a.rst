@@ -6,13 +6,9 @@ AD9739A Native FMC Card / Xilinx Reference Designs
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad9739a_fmc/index.html\
 
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support for the eval-ad9739a was discontinued starting with 2022_R2 Kuiper Linux release and it is not supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can be found on :git-hdl:`hdl_2021_r2 <projects/ad9739a_fmc>` release branch.
+   \ **NOTE:** Support for the eval-ad9739a was discontinued starting with 2022_R2 Kuiper Linux release and it is not supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can be found on `hdl_2021_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2021_r2/projects/ad9739a_fmc>`_ release branch.
 
 
 Introduction
@@ -110,17 +106,17 @@ Click on any picture, to make it bigger, and see the measurement results.
 Single Channel
 ^^^^^^^^^^^^^^
 
-| |image1| |image2|
+|image1| |image2|
 
 Four Channels
 ^^^^^^^^^^^^^
 
-| |image3| |image4|
+|image3| |image4|
 
 Eight Channels
 ^^^^^^^^^^^^^^
 
-| |image5| |image6|
+|image5| |image6|
 
 Using the reference design
 --------------------------
@@ -174,15 +170,12 @@ The first, which is used in the quick start guide above, is to have all the SPI 
 
 The other option for driving the SPI is to use the on-board USB microcontroller. In this case, jumper SPI SRC (P2) is set to USB. Now the data path is still connected to the FMC connector, but the SPI lines are driven by the microcontroller. This allows the use of the graphical interface PC software that is included with the standard Analog Devices evaluation boards(DAC Software Suite). This option makes it easier to experiment with various settings on the parts before programming the parts from the FPGA.
 
-|
-
 .. tip::
 
+   
+   For the highest performance (noise floor below -105dBm), do not power the USB microcontroller while taking measurements. After configuring the part over USB, remove jumper P2. This does not apply to the FMC SPI option, in which case the USB microcontroller is already powered down
+   
 
-   ..
-
-| For the highest performance (noise floor below -105dBm), do not power the USB microcontroller while taking measurements. After configuring the part over USB, remove jumper P2. This does not apply to the FMC SPI option, in which case the USB microcontroller is already powered down
-   |
 
 Using the Software Reference Design
 -----------------------------------
@@ -272,15 +265,12 @@ After installing the graphical interface PC software that is included with the s
 Downloads
 ---------
 
-| The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices github.
-|
+The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices github.
 
 .. important::
 
-
-   ..
-
-| The software project contains 3 components: the AD9739A-FMC-EBZ reference design files, the AD9739A driver and the ADF4350 driver. All the components have to be downloaded from the links below.
+   
+   The software project contains 3 components: the AD9739A-FMC-EBZ reference design files, the AD9739A driver and the ADF4350 driver. All the components have to be downloaded from the links below.
 
 
 **HDL Reference Designs:**
@@ -289,10 +279,10 @@ Downloads
    :class: download
 
    
-   -  \**ML605 HDL Reference Design: \*\* `cf_ad9739a_mb_edk_14_4_2013_02_11.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_mb_edk_14_4_2013_02_11.tar.gz>`_
-   -  \**KC705 HDL Reference Design: \*\* `cf_ad9739a_kc705_edk_14_4_2013_02_11.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_kc705_edk_14_4_2013_02_11.tar.gz>`_
-   -  \**VC707 HDL Reference Design: \*\* `cf_ad9739a_vc707_edk_14_4_2013_02_11.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_vc707_edk_14_4_2013_02_11.tar.gz>`_
-   -  \**AC701 HDL Reference Design: \*\* `cf_ad9739a_ac701_edk_14_4_2013_07_30.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_ac701_edk_14_4_2013_07_30.tar.gz>`_
+   -  **ML605 HDL Reference Design:** `cf_ad9739a_mb_edk_14_4_2013_02_11.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_mb_edk_14_4_2013_02_11.tar.gz>`_
+   -  **KC705 HDL Reference Design:** `cf_ad9739a_kc705_edk_14_4_2013_02_11.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_kc705_edk_14_4_2013_02_11.tar.gz>`_
+   -  **VC707 HDL Reference Design:** `cf_ad9739a_vc707_edk_14_4_2013_02_11.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_vc707_edk_14_4_2013_02_11.tar.gz>`_
+   -  **AC701 HDL Reference Design:** `cf_ad9739a_ac701_edk_14_4_2013_07_30.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_ac701_edk_14_4_2013_07_30.tar.gz>`_
    
 
 
@@ -302,7 +292,7 @@ Downloads
    :class: download
 
    
-   -  \**ZC706 HDL Reference Design: \*\*\ :git-hdl:`projects/ad9739a_fmc/zc706`
+   -  **ZC706 HDL Reference Design:**\ :git-hdl:`projects/ad9739a_fmc/zc706`
    
 
 
@@ -312,11 +302,11 @@ Downloads
    :class: download
 
    
-   -  \**AD9739A Driver: \*\* :git-no-OS:`drivers/dac/ad9739a`
-   -  \**ADF4350 Driver: \*\* :git-no-OS:`drivers/frequency/adf4350`
-   -  \**AD9739A-FMC-EBZ Reference Design: \*\* :git-no-OS:`ad9739a-fmc-ebz`
-   -  \**Xilinx Platform Drivers: \*\* :git-no-OS:`common_drivers/platform_drivers`
-   -  \**DAC Core Driver: \*\* :git-no-OS:`common_drivers/dac_core`
+   -  **AD9739A Driver:** :git-no-OS:`drivers/dac/ad9739a`
+   -  **ADF4350 Driver:** :git-no-OS:`drivers/frequency/adf4350`
+   -  **AD9739A-FMC-EBZ Reference Design:** :git-no-OS:`ad9739a-fmc-ebz`
+   -  **Xilinx Platform Drivers:** :git-no-OS:`common_drivers/platform_drivers`
+   -  **DAC Core Driver:** :git-no-OS:`common_drivers/dac_core`
    
 
 
@@ -341,15 +331,12 @@ Downloads
    Rev A and Rev B of this board mistakenly do not follow Rule 5.62 on the ANSI/VITA 57.1 spec - *"The FMC module shall connect TDI to TDO, if the module does not use the JTAG interface."* This may cause some FMC platforms (like the VC707 and KC705) to loose JTAG communication when this card is plugged in. It's normally a simple matter to short D30 and D31 on the development system (sorry, this will be fixed shortly)
 
 
-|
-
 .. hint::
 
+   
+   -  Questions? :ez:`Ask Help & Support <community/fpga>`.
+   
 
-   ..
-
-| \* Questions? :ez:`Ask Help & Support <community/fpga>`.
-   |
 
 Reference Design Contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -403,7 +390,12 @@ Reference Design Contents
 Third Party Bitstreams
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../../alliances/thirdparty.rst
+
+Below is a list of hardware, IP Cores, or reference designs. While this content is believed to be reliable, many have not been validated, verified or reviewed by Analog Devices. These boards/platforms may or may not be suitable for end product integration or development, and may not meet datasheet specifications. Since many of these platforms or IP Cores are not designed or reviewed by Analog Devices, care should be taken to ensure that these will meet your needs before purchase. While ADI will always provide chip level support on the EngineerZone™, board level, or reference design support is given by the manufacture or creator of the specific materials.
+
+References to manufacturer or third party software, websites, or to any specific commercial or non-commercial products are suggestions only and do not necessarily constitute or imply an endorsement, recommendation, or favoring by Analog Devices.
+
+
 
 -  `4 x independent DVB-T channels, RF output (0 to 1.250 GHz) from MVD Cores <http://www.mvd-fpga.com/cores/en/digilent_AD9739A_xilinx_eval.html>`_
 -  `4 x independent ATSC channels, RF output (0 to 1.250 GHz)from MVD Cores <http://www.mvd-fpga.com/cores/en/digilent_AD9739A_xilinx_eval.html>`_

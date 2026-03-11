@@ -9,8 +9,10 @@ AD-3DSMARTCAM1-PRZ
 Introduction
 ------------
 
-| The :adi:`AD-3DSMARTCAM1-PRZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/AD-SMARTCAM1-PRZ.html>` is a 2D & 3D machine vision solution with AI edge processing capabilities. It can be used for implementing advance machine vision applications for different industry segments including logistics, robotics, agriculture and people activity monitoring.
-| |3D Smart Camera|
+The :adi:`AD-3DSMARTCAM1-PRZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/AD-SMARTCAM1-PRZ.html>` is a 2D & 3D machine vision solution with AI edge processing capabilities. It can be used for implementing advance machine vision applications for different industry segments including logistics, robotics, agriculture and people activity monitoring.
+
+
+|3D Smart Camera|
 
 --------------
 
@@ -72,7 +74,6 @@ Specifications
 | Dimensions                     | |image2|                                                                                    |
 +--------------------------------+---------------------------------------------------------------------------------------------+
 
---------------
 
 Development
 -----------
@@ -104,13 +105,11 @@ A set of applications have been developed for the 3D Smart Camera to showcase th
 Box dimensioning
 ~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/youtube>G-9UfaZXUCk
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>G-9UfaZXUCk
    :alt: youtube>G-9UfaZXUCk
    :align: right
 
 Detecting and measuring the size of boxes is the base of many use cases for logistics, industrial and commercial applications. By combining the information received for the 3D and 2D sensors, the 3D Smart Camera can reliably measure boxes of various sizes with an accuracy between 0.5cm and 2cm per each dimension, depending on the operating conditions and box characteristics.
-
-|
 
 .. note::
 
@@ -122,8 +121,6 @@ People detection and tracking
 
 |youtube>-CErH6ROli8| Knowing the precise position of people in a space has many use cases for robotics, building management, healthcare and AV applications. The 3D Smart Camera enables precise detection and tracking of people in the 3D space as well as detecting the objects people are touching, carrying or sitting on and the boundaries of the space such as the floor, walls and ceiling.
 
-|
-
 .. note::
 
    `People detection and tracking app <https://github.com/robotics-ai/tof_process_public/tree/main/door_sense>`_
@@ -134,8 +131,6 @@ Robot navigation
 
 |youtube>XKTGsVNyvrg| Autonomous robots need to be able to "see" the objects and people which are around them to be able to move inside a space and accomplish their tasks without bumping into things or injuring people. By combining the people and objects detection with real time objects dimensioning and positioning is space, the 3D Smart Camera can enable an autonomous robot to navigate safely in an environment.
 
-|
-
 .. note::
 
    `Robot navigation app <https://github.com/robotics-ai/tof_process_public/tree/main/slam>`_
@@ -145,8 +140,6 @@ Space mapping
 ~~~~~~~~~~~~~
 
 |youtube>mL542eUw_dg| This application shows how the 3D and IR data can be used to create a 3D map of a space using the ROS RTAB-Map (Real-Time Appearance-Based Mapping), a RGB-D SLAM approach based on a global loop closure detector with real-time constraints. Applications include robot autonomous navigation and 3D space reconstruction.
-
-|
 
 .. note::
 

@@ -147,8 +147,8 @@ The steps to initialize a communication channel on Sub node is as follows. The :
 
 ::
 
-     * Application should define the PAL function for regwrite, regRead and timer functions specific to the platform. 
-   *       Next a communication channel context must be created with the I2C PAL function pointers for the platform using the //adi_a2b_CommChPalInit// API. 
+     * Application should define the PAL function for regwrite, regRead and timer functions specific to the platform.
+   *       Next a communication channel context must be created with the I2C PAL function pointers for the platform using the //adi_a2b_CommChPalInit// API.
    *       Next the communication channel instance should be created specifying the required configuration using the //adi_a2b_CommChCreate// API. The configuration should specify the memory for the instance and application callback for handling the events. The A2B Sub node transceiver local I2C address is specified using the **ADI_A2B_COMMCH_SLVNODE_I2C_ADDR** macro. The context for the Communication channel and default Rx and Tx mailbox are also to be specified.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/initialization_of_communication_channel_at_Slave.png
@@ -251,7 +251,7 @@ The sequence of events is as described below.
 ::
 
      * The Main node software on start-up performs the A2B network discovery and configures all the Sub nodes on start up. It configures the required mailbox register settings in all Sub nodes for communication channel. The mailbox registers    MBOX0_CTL and MBOX1_CTL should be configured to the values 0x3D and 0x3F to ensure the following configurations of mailbox:  \\  * Mailbox data length should be 4 bytes \\  * Mailbox full and empty interrupts should be enabled \\  * Mailbox 0 should be configured as receive mailbox (where Main transmits to Sub) and mailbox 1 should be configured as transmit (where Sub transmits to Main). \\ The Main node also initializes a PAL context and creates the communication instances using the APIs //adi_a2b_CommChPalInit// & //adi_a2b_CommChCreate// respectively. Similarly, the Sub node also initializes the PAL context and creates the communication instances using the APIs //adi_a2b_CommChPalInit// & //adi_a2b_CommChCreate// respectively.
-   *  Post initialization the Main and Sub node call the //adi_a2b_CommChTick// API periodically to poll the A2B node for mailbox interrupts (if configured for polling) and for transmitting message chunks once a transmission is initiated. 
+   *  Post initialization the Main and Sub node call the //adi_a2b_CommChTick// API periodically to poll the A2B node for mailbox interrupts (if configured for polling) and for transmitting message chunks once a transmission is initiated.
    * The Main node initiates the transmission of the message with the request message ID specifying the information required from Sub using the //adi_a2b_CommChTxMsg// API. Once all the message data has been written to the remote Sub receive mailbox and Sub has read the same, the application is notified that the transmission is complete via callback with transmission complete event and the message ID by the communication channel.
    * In the Sub node all the mailbox data received from Main is processed by the communication channel engine and once a valid message is decoded the same is notified to the application via callback. The callback contains the request message data and the ID with event type indicating that a new message has arrived.
    * Now the Sub node responds with the response message with the unique ID by initiating a new transmission using the //adi_a2b_CommChTxMsg// API. Once all the message data has been written to the local transmit Sub mailbox and Main has read the same, the application is notified that the transmission is complete via callback with transmission complete event and the message ID by the communication channel.

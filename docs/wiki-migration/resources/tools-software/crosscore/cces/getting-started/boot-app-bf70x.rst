@@ -19,7 +19,9 @@ With the initialization DXE generated and the application DXE finalized, the loa
 -  Boot Code: **0x01**
 -  Make sure **Use default start address** is checked
 -  Add the initialization file by clicking **Browse…** and navigating to
-   <CCES Root> \\Blackfin\\ldr\\init_code\\BF707_init\\BF707_init_v00\\Debug\\BF707_init_v00.dxe
+
+<CCES Root> \\Blackfin\\ldr\\init_code\\BF707_init\\BF707_init_v00\\Debug\\BF707_init_v00.dxe
+
 -  The window should now resemble Figure 28. Click **OK.**
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/loader_file_settings.png

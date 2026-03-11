@@ -9,11 +9,7 @@ In the design of a circuit it is important to take into account the wide variati
 Materials :
 -----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| 1 - 2.2KΩ Resistor (or any similar value)
-| 1 - 168Ω resistor ( use a 100Ω in series with a 68Ω )
-| 1 - small signal NMOS transistor (enhancement mode CD4007 or ZVN2110A)
+ADALM2000 Active Learning Module Solder-less breadboard 1 - 2.2KΩ Resistor (or any similar value) 1 - 168Ω resistor ( use a 100Ω in series with a 68Ω ) 1 - small signal NMOS transistor (enhancement mode CD4007 or ZVN2110A)
 
 Directions:
 -----------

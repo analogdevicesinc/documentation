@@ -86,20 +86,18 @@ Optional devicetree properties:
 +-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | Example Overlay | File                                                                                                                                      |
 +=================+===========================================================================================================================================+
-| Overlay         | :git-linux:`arch/arm/boot/dts/overlays/rpi-ltc2672-overlay.dts`                                                                           |
+| Overlay         | `rpi-ltc2672-overlay.dts <https://github.com/analogdevicesinc/linux/blob/rpi-6.1.y/arch/arm/boot/dts/overlays/rpi-ltc2672-overlay.dts>`_  |
 +-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Driver testing
 ==============
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -151,16 +149,13 @@ Driver testing
       lrwxrwxrwx 1 root root    0 Jul  2 07:20 subsystem -> ../../../../../../../../bus/iio
       -rw-r--r-- 1 root root 4096 Jul  2 07:20 uevent
       -r--r--r-- 1 root root 4096 Jul  2 07:20 waiting_for_supplier
-      root@analog:/sys/bus/iio/devices/iio:device0# 
+      root@analog:/sys/bus/iio/devices/iio:device0#
    
 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -237,7 +232,7 @@ Driver testing
                       1 debug attributes found:
                                       debug attr  0: direct_reg_access ERROR: Operation not supported (95)
                       No trigger on this device
-      root@analog:~# 
+      root@analog:~#
    
 
 
@@ -246,10 +241,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -262,15 +254,11 @@ Show device name
 Show scale
 ----------
 
-| **Description:**
-| Scale to be applied to out_currentY_raw in order to obtain the measured current in microamps.
+**Description:** Scale to be applied to out_currentY_raw in order to obtain the measured current in microamps.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -285,14 +273,12 @@ Show offset
 
 | **Description:**
 | /sys/bus/iio/devices/iio:deviceX/out_offset_raw
-| Raw offset to be applied to out_currentY_raw in order to obtain the measured current in microamps. The offset is applied before scale is applied.
+
+Raw offset to be applied to out_currentY_raw in order to obtain the measured current in microamps. The offset is applied before scale is applied.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -305,16 +291,13 @@ Show offset
 Set channel Y output current
 ----------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/out_currentY_raw
-| Raw (unscaled, no bias etc.) output current for channel Y.
+**Description:** /sys/bus/iio/devices/iio:deviceX/out_currentY_raw
+
+Raw (unscaled, no bias etc.) output current for channel Y.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -330,15 +313,11 @@ Enable power down mode on output Y
 
 /sys/bus/iio/devices/iio:deviceX/out_currentY_powerdown
 
-| **Description:**
-| Writing 1 causes output Y to enter the power down mode. Clearing returns to normal operation.
+**Description:** Writing 1 causes output Y to enter the power down mode. Clearing returns to normal operation.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -378,4 +357,21 @@ TGP        5V
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

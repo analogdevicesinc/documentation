@@ -16,14 +16,13 @@ Hardware Requirement
 -  1 Ubuntu PC with Gigabit Ethernet port
 -  1 Gigabit Ethernet switch
 
-|
-
 .. note::
 
    ADSP-SC573 EZ-kit board and ADSP-SC589 EZ-kit board version 2.0 have the TI DP83867 as the Gigabit Ethernet PHY device on the boards, other ADSP-SC5XX EZ-kit boards have the TI DP83865 as the Gigabit Ethernet PHY device on the boards.
 
 
-   | ===== Software Configuration =====
+Software Configuration
+----------------------
 
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
@@ -35,9 +34,8 @@ The netperf test utility is optional. You can build it for both the target boa
    vim build/conf/local.conf
    IMAGE_INSTALL_append = "netperf"
 
-|
-
-| ==== Kernel Configuration ====
+Kernel Configuration
+~~~~~~~~~~~~~~~~~~~~
 
 Enable EMAC driver
 ^^^^^^^^^^^^^^^^^^
@@ -77,9 +75,10 @@ Different version's EZ-kit has the different Gigabit Ethernet PHY device on boar
            -*-   PHY Device support and infrastructure  --->
                <*>  National Semiconductor PHYs
 
-| 
-| ==== Configure Device Tree ==== **Gigabit Ethernet** 
-| The GMAC device is based on the STM MAC IP.  MAC specific features can be tuned in the device tree Ethernet node. Node properties start with "snps" can be configured according to the requirement of the customer.  See the Documentation/devicetree/bindings/net/stmmac.txt document in the Linux sources for details.
+Configure Device Tree
+~~~~~~~~~~~~~~~~~~~~~
+
+**Gigabit Ethernet** The GMAC device is based on the STM MAC IP.  MAC specific features can be tuned in the device tree Ethernet node. Node properties start with "snps" can be configured according to the requirement of the customer.  See the Documentation/devicetree/bindings/net/stmmac.txt document in the Linux sources for details.
 
 ::
 
@@ -121,8 +120,7 @@ Different version's EZ-kit has the different Gigabit Ethernet PHY device on boar
        };
    };
 
-| **100M Ethernet**
-| The 100M EMAC device is based on the STM MAC IP.  MAC specific features start with "snps" in device node can be configured according to the Documentation/devicetree/bindings/net/stmmac.txt document in the Linux sources.
+**100M Ethernet** The 100M EMAC device is based on the STM MAC IP.  MAC specific features start with "snps" in device node can be configured according to the Documentation/devicetree/bindings/net/stmmac.txt document in the Linux sources.
 
 ::
 
@@ -132,10 +130,12 @@ Different version's EZ-kit has the different Gigabit Ethernet PHY device on boar
            pinctrl-names = "default";
            pinctrl-0 = <&eth1_default>;
            status = "okay";
-   };    
+   };
 
-| 
-| ===== Performance Benchmark Example ===== The Ethernet performance is tested with the netperf utility running on a Linux host on one end, and on the ADSP-SC5xx EZKIT board on the other end.
+Performance Benchmark Example
+-----------------------------
+
+The Ethernet performance is tested with the netperf utility running on a Linux host on one end, and on the ADSP-SC5xx EZKIT board on the other end.
 
 Netperf Example Usage
 ~~~~~~~~~~~~~~~~~~~~~
@@ -154,10 +154,7 @@ Test
 
 ::
 
-   $ ps -ef
-
-
-   | grep netserver
+   $ ps -ef | grep netserver
    root     16823     1  0 12:10 ?        00:00:00 /usr/bin/netserver
    test     17056  1732  0 12:11 pts/0    00:00:00 grep --color=auto netserver
 
@@ -169,23 +166,22 @@ Test
    MIGRATED TCP REQUEST/RESPONSE TEST from 0.0.0.0 () port 0 AF_INET to 10.100.4.174 () port 0 AF_INET : demo : first burst 0
    Local /Remote
    Socket Size   Request  Resp.   Elapsed  Trans.
-   Send   Recv   Size     Size    Time     Rate        
-   bytes  Bytes  bytes    bytes   secs.    per sec  
-    
-   16384  87380  1        1       6.00     1255.09  
+   Send   Recv   Size     Size    Time     Rate
+   bytes  Bytes  bytes    bytes   secs.    per sec
+
+   16384  87380  1        1       6.00     1255.09
    16384  87380
    # netperf -H 10.100.4.174 -t TCP_STREAM -l 6
    MIGRATED TCP STREAM TEST from 0.0.0.0 () port 0 AF_INET to 10.100.4.174 () port 0 AF_INET : demo
-   Recv   Send    Send                         
-   Socket Socket  Message  Elapsed             
-   Size   Size    Size     Time     Throughput 
-   bytes  bytes   bytes    secs.    10^6bits/sec 
-    
-    87380  16384  16384    6.03      315.89  
+   Recv   Send    Send
+   Socket Socket  Message  Elapsed
+   Size   Size    Size     Time     Throughput
+   bytes  bytes   bytes    secs.    10^6bits/sec
 
-|
+    87380  16384  16384    6.03      315.89
 
-| ==== Netperf GMAC Ethernet Result ====
+Netperf GMAC Ethernet Result
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------+-----------------------------+-----------------------------+------------------------------------+------------------------------------+---------------------------+---------------------------+
 |            | No Preemption Client(250HZ) | No Preemption Server(250HZ) | Voluntary Preemption Client(250HZ) | Voluntary Preemption Server(250HZ) | Preemptible Client(250HZ) | Preemptible Server(250HZ) |
@@ -199,9 +195,10 @@ Test
 | UDP_RR     | 1323.08 rps                 | 1341.38 rps                 | 1321.42 rps                        | 1338.78 rps                        | 1298.85 rps               | 1297.38 rps               |
 +------------+-----------------------------+-----------------------------+------------------------------------+------------------------------------+---------------------------+---------------------------+
 
-**Client** means the netperf tool is running as a test client on the ADSP-SC5xx EZKIT, while Server means it is running as a test server on the ADSP-SC5xx EZKIT. 
+**Client** means the netperf tool is running as a test client on the ADSP-SC5xx EZKIT, while Server means it is running as a test server on the ADSP-SC5xx EZKIT.
 
-**No Preemption**, **Voluntary Preemption** and **Preemptible** are 3 different kernel schedule policies. The ARM A5 core runs at 450M clock while the DDR is at 225M clock during the test.  
+**No Preemption**, **Voluntary Preemption** and **Preemptible** are 3 different kernel schedule policies. The ARM A5 core runs at 450M clock while the DDR is at 225M clock during the test.
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

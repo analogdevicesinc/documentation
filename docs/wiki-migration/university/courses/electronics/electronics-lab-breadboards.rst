@@ -50,12 +50,9 @@ Breadboarding tips:
 
 It is important to breadboard a circuit neatly and systematically, so that one can debug it and get it running easily and quickly. It also helps when someone else needs to understand and inspect the circuit. Here are some tips:
 
-| 1. Always use the top and bottom bus rails for power supply connections. Power the integrated circuits and other devices from these bus rails and not directly from the power supply.
-| 2. Color coding the jumper wires can help reduce confusion when building a circuit. For example, use green wires for ground connections (0V), red for +V and black for -V power connections.
-| 3. Arrange the jumper wires to lay flat on the board, so that the board does not become cluttered.
-| 4. Route jumper wires around the integrated circuits and not over the packages. This makes changing the chips easier as needed.
-| 5. Trimming the leads of components like resistors, capacitors, transistors and LEDs, so that they fit closely to the board and do not get pulled out by accident is a good practice. While short wires and leads look neater, the clipped components will only fit into a limited “span” of breadboard socket holes, limiting the use of the component in other experiments. It is perfectly permissible to use components with longer leads while exploring different circuit possibilities.
-| Be cautious when inserting components which have been removed from a tape reel used in automatic insertion equipment. Suppliers of surplus components often sell components in small batches cut from larger taped reels. Removing the tape from the components does not always remove the all the adhesive from the leads of the components. Placing a formerly taped component into a socket hole may result in a poor electrical connection and, even worse, may leave adhesive residue in the socket. To avoid this problem carefully clean the adhesive residue from component leads, clipping the taped portion of the lead off, or avoid using components that have been taped.
+1. Always use the top and bottom bus rails for power supply connections. Power the integrated circuits and other devices from these bus rails and not directly from the power supply. 2. Color coding the jumper wires can help reduce confusion when building a circuit. For example, use green wires for ground connections (0V), red for +V and black for -V power connections. 3. Arrange the jumper wires to lay flat on the board, so that the board does not become cluttered. 4. Route jumper wires around the integrated circuits and not over the packages. This makes changing the chips easier as needed. 5. Trimming the leads of components like resistors, capacitors, transistors and LEDs, so that they fit closely to the board and do not get pulled out by accident is a good practice. While short wires and leads look neater, the clipped components will only fit into a limited “span” of breadboard socket holes, limiting the use of the component in other experiments. It is perfectly permissible to use components with longer leads while exploring different circuit possibilities.
+
+Be cautious when inserting components which have been removed from a tape reel used in automatic insertion equipment. Suppliers of surplus components often sell components in small batches cut from larger taped reels. Removing the tape from the components does not always remove the all the adhesive from the leads of the components. Placing a formerly taped component into a socket hole may result in a poor electrical connection and, even worse, may leave adhesive residue in the socket. To avoid this problem carefully clean the adhesive residue from component leads, clipping the taped portion of the lead off, or avoid using components that have been taped.
 
 It is important to be especially careful when inserting integrated circuits into the breadboard holes. Unless the IC pins are straight, it is very easy to crush the pin into a zigzag shape or fold the pins underneath the body of the IC. Either way the result is a bad connection or no connection at all. Always use solid wire for breadboard connections. When stripping the wire ends, be careful not to strip more than about three-eighths of an inch of insulation from the wire. Too much bare wire may result in unintentional connections near the wire end. After you have built up a few circuits, you will have a good collection of pre-stripped jumper wires. Save them. By reusing these wires, you can save even more time and effort in assembling future circuits. Pre-formed wires of various lengths and colors are also available from many sources.
 
@@ -103,8 +100,7 @@ Eagle CAD schematic and PCB layout files can be down loaded here `ad_breadboard.
 For more on building advanced breadboards see:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| http://www.analog.com/static/imported-files/tutorials/MT-100.pdf
-| http://en.wikipedia.org/wiki/Breadboard
+http://www.analog.com/static/imported-files/tutorials/MT-100.pdf http://en.wikipedia.org/wiki/Breadboard
 
 **Return to Labs** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 

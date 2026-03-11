@@ -129,4 +129,3 @@ The ADI evaluation board uses small MDIO dongle board for USB to MDIO communicat
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/4_-_adin1200_gui_screenshot.png
    :align: center
 
---------------

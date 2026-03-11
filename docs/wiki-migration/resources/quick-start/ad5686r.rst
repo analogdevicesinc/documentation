@@ -3,9 +3,8 @@ AD5686R/AD5685R/AD5684R Quick Start Guide
 
 \*\* Quad, 16-/14-/12-Bit, Voltage Output DACs with a 2 ppm/ºC Reference, SPI Interface \*\*
 
-| 
-| |image1|
-|
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,9 +30,6 @@ Features
 
 Pin Configurations
 ------------------
-
-| 
-|
 
 .. container:: column
 
@@ -64,13 +60,7 @@ Pin Configurations
    
    .. container:: centeralign
 
-      \ *Figure 3. 16-Lead TSSOP*
-
-   
-
-
-
-| **Table 1. Function Descriptions for Quick Start**
+      \ *Figure 3. 16-Lead TSSOP **Table 1. Function Descriptions for Quick Start**
 
 +-----------------------+-------------------------------------------------------------------+
 | Mnemonic              | Description                                                       |
@@ -110,7 +100,6 @@ Pin Configurations
 
 | 
 | ===== Shift Register Contents ===== |image4|
-|
 
 .. container:: CENTERALIGN
 
@@ -143,54 +132,49 @@ Transfer Function
 
 ::
 
-   $\displaystyle V_OUT = V_REF \times Gain delim[\frac{D}{2^N}{]}$ \\
+   $\displaystyle V_OUT = V_REF \times Gain delim[\frac{D}{2^N}{]}$
 
-| where:
-| *D* is the decimal equivalent.
-| *N* is the number of bits.
-| ==== Simple Write: Example 1 ====
+where: *D* is the decimal equivalent. *N* is the number of bits.
+
+Simple Write: Example 1
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
-   To update Channel A, write the following over the serial interface: 0001 XXX1 1000000000000000 (four command bits, four address bits, 16 data bits for the :adi:`ad5686r`).
-
-   | This updates Channel A to midscale. GAIN = 1, V\ :sub:`OUT`\ A = 1.25 V.
+   To update Channel A, write the following over the serial interface: 0001 XXX1 1000000000000000 (four command bits, four address bits, 16 data bits for the :adi:`ad5686r`). This updates Channel A to midscale. GAIN = 1, V\ :sub:`OUT`\ A = 1.25 V.
 
 
-|image5|
-|
+   |image5|
 
 .. container:: CENTERALIGN
 
    \ *Figure 5. Simple Write—Update Channel A)*\
 
 
-| ==== Simple Write: Example 2 ====
+Simple Write: Example 2
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
-   To update Channel B, write the following over the serial interface: 0001 XX1X 1000000000000000.
-
-   | This updates Channel B to midscale. GAIN = 1, V\ :sub:`OUT`\ B = 1.25 V.
+   To update Channel B, write the following over the serial interface: 0001 XX1X 1000000000000000. This updates Channel B to midscale. GAIN = 1, V\ :sub:`OUT`\ B = 1.25 V.
 
 
-|image6|
-|
+   |image6|
 
 .. container:: CENTERALIGN
 
    \ *Figure 6. Simple Write—Update Channel B*\
 
 
-| ==== Simple Write: Example 3 ====
+Simple Write: Example 3
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
    To update both Channel A and Channel B, write the following over the serial interface: 0001 XX11 1111111111111111. This updates both channels to full scale. GAIN = 1, V\ :sub:`OUT`\ B = 2.5 V, V\ :sub:`OUT`\ A = 2.5 V.
 
 
-| |image7|
-|
+   |image7|
 
 .. container:: CENTERALIGN
 

@@ -26,9 +26,7 @@ Script files, typically in the filename format of *<filename>.cmd* typically res
 | 3        | :doc:`cp </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/filesystem-commands>`              | If you already have a *<filename>.cmd* file on your SD Card that you transferred from your PC to your SD Card, you can use the copy command to move the file from one filesystem to another. |
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
---------------
 
---------------
 
 Executing Script Commands
 -------------------------
@@ -39,8 +37,7 @@ Startup Script
 ~~~~~~~~~~~~~~
 
 =============== ======================= ==================
-**Script Name** **Required Filesystem** **Execution Type**
-*shell.cmd*     SPIFFS (*sf:*)          On Reset or POR
+**Script Name** **Required Filesystem** **Execution Type** shell.cmd*     SPIFFS (*sf:*)          On Reset or POR
 =============== ======================= ==================
 
 This script allows you to execute a set of commands, automatically at startup. This script MUST be called *shell.cmd* and must reside in the *sf:* filesystem. If you created this file and it resides on your SD Card, you can copy it over from your SD Card to *sf:* by typing in the shell:
@@ -49,8 +46,11 @@ This script allows you to execute a set of commands, automatically at startup. T
 
 Below is a simple example to set up a route, turn on a wav recording, record for 30 seconds, then stop and close the file.
 
-| |image1|
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase10.jpg
+   :width: 600px
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase11.jpg
+   :width: 400px
 
 .. important::
 
@@ -69,9 +69,7 @@ If you don't have your Audio Starter IP address, you can run a command like *arp
 
 It is highly recommended that you perform some validation on your startup scripts using the :doc:`run </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/development-commands>` command prior to putting them in the SPIFFS file system to avoid the above scenario.
 
---------------
 
---------------
 
 Pushbutton Scripts
 ~~~~~~~~~~~~~~~~~~
@@ -93,9 +91,7 @@ The following examples display the current :doc:`wav </wiki-migration/resources/
 
 Note that if the file with the exact names don't exist, this will be reported in the system log that the file could not be opened.
 
---------------
 
---------------
 
 Run Command Scripts
 ~~~~~~~~~~~~~~~~~~~
@@ -111,13 +107,6 @@ The run command works similarly to the pushbutton commands, except that you can 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/run.png
    :width: 400px
 
---------------
 
---------------
 
 `Knowledge Base#.|Knowledge Base#.|Knowledge Base <https://wiki.analog.com/_media/navigation Knowledge Base#.>`_
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase10.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase11.jpg
-   :width: 400px

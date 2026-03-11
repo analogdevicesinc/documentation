@@ -1,16 +1,22 @@
 CO Toxic Gas Measurement Demo (with EVAL-CN0357-ARDZ)
 =====================================================
 
-| The **cn0357_example_noos** is a toxic gas(CO) detector demo project for the EVAL-ADICUP3029 base board with additional :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield, created using the CrossCore Embedded Studio environment.
+The **cn0357_example_noos** is a toxic gas(CO) detector demo project for the EVAL-ADICUP3029 base board with additional :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield, created using the CrossCore Embedded Studio environment.
 
 General Description/Overview
 ----------------------------
 
-| This user guide gives a detailed explanation about **cn0357_example_noos** toxic gas (CO) detection project for :doc:`EVAL-ADICUP3029 </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` base board and :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` gas sensor shield. The gas sensor shield consists of portable gas detector circuit.
-| |image1|
-| The :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield circuit provides a potentiostatic circuit for biasing the electrochemical sensor and 16-bit Sigma-Delta ADC. The small currents passing in the sensor is being converted to a voltage that can be read by the ADC. The 16-bit ADC value is received via SPI interface of the EVAL-ADICUP3029 board, where the gas concentration is computed.
-| The **cn0357_example_noos** application configures the necessary components, processes ADC output value and make all necessary conversions in order to provide the gas concentration. A UART interface (38400 baud rate and 8-bits data length) is used to send the results to terminal window: CO Concentration in **Parts Per Million(PPM)** are the outputs provided in the terminal window.
-| At the start of the project, the software computes the necessary parameters and configure the digital rheostat(AD5270) . The required parameters are the sensor sensitivity and feedback resistor range. These can be modified by changing the values of the constants **CN0357_SENSOR_SENSITIVITY** and **CN0357_FEEDBACK_RESISTOR** found in the **adi_cn0357.h** header file of the project.
+This user guide gives a detailed explanation about **cn0357_example_noos** toxic gas (CO) detection project for :doc:`EVAL-ADICUP3029 </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` base board and :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` gas sensor shield. The gas sensor shield consists of portable gas detector circuit.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/picture1.jpg
+   :align: center
+   :width: 500px
+
+The :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield circuit provides a potentiostatic circuit for biasing the electrochemical sensor and 16-bit Sigma-Delta ADC. The small currents passing in the sensor is being converted to a voltage that can be read by the ADC. The 16-bit ADC value is received via SPI interface of the EVAL-ADICUP3029 board, where the gas concentration is computed.
+
+The **cn0357_example_noos** application configures the necessary components, processes ADC output value and make all necessary conversions in order to provide the gas concentration. A UART interface (38400 baud rate and 8-bits data length) is used to send the results to terminal window: CO Concentration in **Parts Per Million(PPM)** are the outputs provided in the terminal window.
+
+At the start of the project, the software computes the necessary parameters and configure the digital rheostat(AD5270) . The required parameters are the sensor sensitivity and feedback resistor range. These can be modified by changing the values of the constants **CN0357_SENSOR_SENSITIVITY** and **CN0357_FEEDBACK_RESISTOR** found in the **adi_cn0357.h** header file of the project.
 
 Demo Requirements
 -----------------
@@ -49,16 +55,14 @@ Setting up the hardware
 -  Ensure the jumper **AD5720_CS** has a shunt across Pin 3 and Pin 4 of the **EVAL-CN0357-ARDZ**
 -  Ensure the jumper **AD7790_CS** has a shunt across Pin 1 and Pin 2 of the **EVAL-CN0357-ARDZ**\
 
-|image2|
+|image1|
 
 -  Place the **(S5)** switch position to read "Wall/USB", and the **(S2)** switch position to read "USB" on the **EVAL-ADICUP3029**.\
 
-|image3|
+|image2|
 
 -  Mount **EVAL-CN0357-ARDZ** on the **EVAL-ADICUP3029** base board such that **DIGI1** and **DIGI0** of the EVAL-CN0357-ARDZ are connected to the **P6** and **P7** on the EVAL-ADICUP3029 board respectively.
 -  Plug in the micro USB cable into the **(P10)** USB port on the **EVAL-ADICUP3029**, and the other end into the PC or laptop.
-
-|
 
 .. important::
 
@@ -72,27 +76,22 @@ The CN0357 comes with a carbon monoxide sensor, and those default settings are p
 
 In *adi_cn0357.h* header file the user can configure parameters:
 
--  **CN0357_FEEDBACK_RESISTOR** - <fc #008000>CN0357_FEEDBACK_RESISTOR</fc> -This is the value that the rheostat needs to be configured to for proper operation (ohms). This value is dervied from equation 2 (located on page 2) on the CN0357 datasheet.
+-  **CN0357_FEEDBACK_RESISTOR** - CN0357_FEEDBACK_RESISTOR -This is the value that the rheostat needs to be configured to for proper operation (ohms). This value is dervied from equation 2 (located on page 2) on the CN0357 datasheet.
 
 ::
 
        #define CN0357_FEEDBACK_RESISTOR (9230.76)
 
--  **CN0357_SENSOR_SENSITIVTY** - <fc #008000>CN0357_SENSOR_SENSITIVTY</fc> - sensitivity (nA/ppm) of the electrochemical sensor being used.
+-  **CN0357_SENSOR_SENSITIVTY** - CN0357_SENSOR_SENSITIVTY - sensitivity (nA/ppm) of the electrochemical sensor being used.
 
 ::
 
-       #define CN0357_SENSOR_SENSITIVTY (0.0000000065)   
+       #define CN0357_SENSOR_SENSITIVTY (0.0000000065)
 
-|
+In the *cn0357_app.h* header files you can configure the following parameters:
 
-| In the *cn0357_app.h* header files you can configure the following parameters:
-| \* **ADI_APP_DISPATCH_TIMEOUT** - *DISPATCH TIMEOUT* will define how often the data is sent over Bluetooth.
-
--  \**ADI_APP_USE_BLUETOOTH \*\* - *ENABLE BLUETOOTH* parameter - will either use Bluetooth or will have the option to print to console window in debug mode or terminal in release mode.
-
-
-| 
+-  **ADI_APP_DISPATCH_TIMEOUT** - *DISPATCH TIMEOUT* will define how often the data is sent over Bluetooth.
+-  **ADI_APP_USE_BLUETOOTH** - *ENABLE BLUETOOTH* parameter - will either use Bluetooth or will have the option to print to console window in debug mode or terminal in release mode.
 
 Obtaining the Software
 ----------------------
@@ -120,7 +119,7 @@ The software for the **ADuCM3029_demo_cn0357** can be found here:
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0357 Source Code <projects/ADuCM3029_demo_cn0357>`
    
-   |
+
 
 Outputting Data
 ---------------
@@ -133,7 +132,10 @@ There are **three** different ways to visualize the data:
 -  Serial Terminal Program (such as Putty or Tera Term)
 -  IoTNode Smart Device App
 
-| Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard. |image4|
+Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard.
+
+
+|image3|
 
 +---------------------------+-----------------------+---------------------------+
 | Data Output Destination   | Connected to Debugger | Configuration File        |
@@ -153,12 +155,12 @@ There are **three** different ways to visualize the data:
 Debug Launch Mode
 ~~~~~~~~~~~~~~~~~
 
-| **Debug launch mode** is used when connected to the debugger. In debug mode, all the outputs are directed to the console window of the CrossCore tools via semihosting. The data is also sent by default to the IoTNode smart app (ADI_APP_USE_BLUETOOTH =1), but can be turned of if desired by setting ADI_APP_USE_BLUETOOTH = 0.
+**Debug launch mode** is used when connected to the debugger. In debug mode, all the outputs are directed to the console window of the CrossCore tools via semihosting. The data is also sent by default to the IoTNode smart app (ADI_APP_USE_BLUETOOTH =1), but can be turned of if desired by setting ADI_APP_USE_BLUETOOTH = 0.
 
 Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to the smart app and printed onto the console.
 
 
-|image5|
+|image4|
 
 If you have the app installed on your phone, these figure shows the output on android device.
 
@@ -176,8 +178,9 @@ If you have the app installed on your phone, these figure shows the output on an
 -  **Android App display**
 -  **iOS App display**
 
-| |image6| |image7|
-| |image8| |image9|
+|image5| |image6|
+
+|image7| |image8|
 
 Release Launch Mode
 ~~~~~~~~~~~~~~~~~~~
@@ -193,9 +196,10 @@ Release Launch Mode
      Stop: 1 bit
      Flow Control: none
 
-| 
-| Figure shows the UART terminal when ADI_APP_USE_BLUETOOTH is set to 1
-| |image10|
+Figure shows the UART terminal when ADI_APP_USE_BLUETOOTH is set to 1
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/disco.png
+   :width: 300px
 
 **iOS App and Android App display** If you have the app installed on your phone, these figure shows the output on android device.
 
@@ -213,34 +217,36 @@ Release Launch Mode
 -  **Android App display**
 -  **iOS App display**
 
-| |image11| |image12|
-| |image13| |image14|
+|image9| |image10|
+
+|image11| |image12|
 
 How to use the Tools
 --------------------
 
-| The official tool we promote for use with the EVAL-ADICUP3029 is CrossCore Embedded Studio. For more information on downloading the tools and a quick start guide on how to use the tool basics, please check out the :doc:`Tools Overview page. </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools>`
+The official tool we promote for use with the EVAL-ADICUP3029 is CrossCore Embedded Studio. For more information on downloading the tools and a quick start guide on how to use the tool basics, please check out the :doc:`Tools Overview page. </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools>`
 
 Importing
 ~~~~~~~~~
 
-| For more detailed instructions on importing this application/demo example into the CrossCore Embedded Studios tools, please view our :doc:`How to import existing projects into your workspace </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` section.
+For more detailed instructions on importing this application/demo example into the CrossCore Embedded Studios tools, please view our :doc:`How to import existing projects into your workspace </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` section.
 
 Debugging
 ~~~~~~~~~
 
 A debug configuration must be set up for this project in order to have the possibility to program and to debug the **ADICUP3029_CN0357** project. To do this, follow the instructions from :doc:`How to configure the debug session </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` section.
 
--  Make sure the target board is connected to workstation (via **USB** at P10) and using the tool bar, navigate to the small Debug icon\ |image15| and select the debugging session you created. The application will programmed and the program execution will stop at the beginning of the main() function.
+-  Make sure the target board is connected to workstation (via **USB** at P10) and using the tool bar, navigate to the small Debug icon\ |image13| and select the debugging session you created. The application will programmed and the program execution will stop at the beginning of the main() function.
 
 ::
 
      * Use step-by-step execution or directly run the program.
-     
 
 After completion of the steps above the program will be loaded onto the system FLASH and it will run by default every time the board is powered up.
 
-| |image16|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/debug_image.png
+   :align: center
+   :width: 1000px
 
 Project Structure
 ~~~~~~~~~~~~~~~~~
@@ -253,41 +259,35 @@ This project contains: system initialization part - disabling watchdog, enabling
    :align: left
    :width: 400px
 
-| The **cn0357_app.cpp** is the application file for the project. The **ADuCM3029** folder consists of pinmux for SPI0, SPI2 and UART0.
-| The **RTE** folder contains ADuCM3029 Device Family Pack,Board Support Package files and Sensor Config files related to cn0357_example_noos project.
+The **cn0357_app.cpp** is the application file for the project. The **ADuCM3029** folder consists of pinmux for SPI0, SPI2 and UART0.
 
-| 
-| // End of Document //
+The **RTE** folder contains ADuCM3029 Device Family Pack,Board Support Package files and Sensor Config files related to cn0357_example_noos project.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/picture1.jpg
+// End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/jumper_cn0357.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/jumper_cn0357.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/jumper_ble.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/jumper_ble.png
-   :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
    :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/console_image.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/console_image.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/appbef.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/appbef.png
    :width: 390px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/app.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/app.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ipad_connect.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ipad_connect.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/co_val.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/co_val.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/disco.png
-   :width: 300px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/appbef.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/appbef.png
    :width: 390px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/app.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/app.png
    :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ipad_connect.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ipad_connect.png
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/co_val.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/co_val.png
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png
    :width: 30px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/debug_image.png
-   :width: 1000px

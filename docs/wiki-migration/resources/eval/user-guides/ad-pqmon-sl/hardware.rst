@@ -69,8 +69,7 @@ The five on the ADE side are connected as follows:
 -  LED5 - 3V3 on the ADE side
 -  LED5 - IRQ1 ADE
 
-| 
-| |image6| The three on the MCU side are connected as:
+|image6| The three on the MCU side are connected as:
 
 -  DS1 - 3V3 MCU side
 -  DS2 - user led 0

@@ -56,11 +56,7 @@ Initial Set-Up
 | 1. Install the DPG Downloader and AD9152-ADRF6720 SPI software and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
 | 2. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB.
 | 3. Connect the DGP3 unit to your PC and turn on the unit.
-
-Single-Tone Test
-~~~~~~~~~~~~~~~~
-
-| These settings configure the AD9152_6720 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the Mod output, under the condition: Fdata = 375MHz, 4X interpolation, IF = 200MHz, LO = 2GHz (external).
+| ==== Single-Tone Test ==== These settings configure the AD9152_6720 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the Mod output, under the condition: Fdata = 375MHz, 4X interpolation, IF = 200MHz, LO = 2GHz (external).
 
 Configure DPG Vector Software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,7 +71,7 @@ Configure DPG Vector Software
 
 
 | 5. Select the data vector of 100MHz desired frequency ’in-phase’ data in the “DAC0” drop down menu and the ‘Quadrature’ data in the “DAC1”. At this point, the DPG Downloader panel should look like Figure 3.
-|
+
 
 .. container:: center
 
@@ -94,7 +90,7 @@ Configuring SPI
 ^^^^^^^^^^^^^^^
 
 | 1. Open the AD9152 SPI application (Start > All Programs > Analog Devices > AD9152 > AD9152 SPI). The screen should look similar to Figure 4.
-|
+
 
 .. container:: center
 
@@ -114,10 +110,10 @@ Configuring SPI
 
 | 2. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1.5GHz, and the output level to +3dBm. The spectrum analyzer can be configured with Start Frequency = 10 MHz, Stop Frequency = 1.5GHz, and Resolution Bandwidth of 30 kHz. Choose Input Attenuation to be 10dB. This can be adjusted later if indications are that the analyzer is causing degradations.
 | 3. Follow the sequence below to configure the AD9152 SPI registers.
-
 | a. The Links should be set to single link. The JESD Mode is set to 4, Interpolation set to 4, and FDAC set to 1.5GHz. Click “Commit” button to initialize the AD9152. The JESD204B PLL should be locked indicated with bright green JESD204B PLL readback LED.
 | b. . At this point the data clock frequency on the LED panel of the DPG3 should read 187MHz and the Serial Line Rate in the DPG3 software panel should read 3.75Gbps.
 | c. Click “Read All Registers” in the top menu bar. You should see “JESD204B PLL Lock Readback” LED readback is bright green indicating that the SERDES PLL is locked.
+
 
 .. container:: center
 
@@ -152,7 +148,7 @@ e. Configure the ADRF6720 by a startup sequence, Select “ Restore Registers fr
    
 
 
-| f. The current on the 5V supply should read about 1479mA. If you do not see the output, gently push the board toward the DPG3. This ensures that the board is firmly connected to the DPG3. The four registers codeGrpSync, FrameSync, GoodCheckSum and Initial LaneSync should all read 0F indicating the lanes are working correctly. The output should appear as Figure 7.
+f. The current on the 5V supply should read about 1479mA. If you do not see the output, gently push the board toward the DPG3. This ensures that the board is firmly connected to the DPG3. The four registers codeGrpSync, FrameSync, GoodCheckSum and Initial LaneSync should all read 0F indicating the lanes are working correctly. The output should appear as Figure 7.
 
 .. container:: center
 
@@ -171,8 +167,7 @@ Note
 ~~~~
 
 | In single link JESD204B mode 4,5,6,7,9,10, the Serdes line cross-bar setting as shown below, are added in this software to match the data mapping the DPG3 requires. They are not required if the data source is not a DPG3.
-| write(0x308,0x08)
-| write(0x309,0x1A)
+| write(0x308,0x08) write(0x309,0x1A)
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-6720-ebz_system1.png
    :width: 500px

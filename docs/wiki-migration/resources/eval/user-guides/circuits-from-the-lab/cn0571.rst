@@ -20,8 +20,9 @@ Building on the previous :adi:`CN0422` design (720p resolution Isolated HDMI), t
    *Figure 1. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram*
 
 
-| 
-| Figure 2 shows a simplified block diagram of the power isolation and the isolation of the HDMI signals. Number 1 through Number 5 show the start-up communication sequence through the :adi:`ADN4070` (1 - power), :adi:`ADuM321` (2 - HPD), :adi:`ADuM1252` (3 - DDC), and :adi:`ADN4624` with :adi:`AD8195` (4 - TMDS) between the HDMI source and HDMI sink.
+Figure 2 shows a simplified block diagram of the power isolation and the isolation of the HDMI signals. Number 1 through Number 5 show the start-up communication sequence through the :adi:`ADN4070` (1 - power), :adi:`ADuM321` (2 - HPD), :adi:`ADuM1252` (3 - DDC), and :adi:`ADN4624` with :adi:`AD8195` (4 - TMDS) between the HDMI source and HDMI sink.
+
+
 
 |Figure 2. Isolated HDMI Signal Flow Diagram|
 
@@ -30,8 +31,8 @@ Building on the previous :adi:`CN0422` design (720p resolution Isolated HDMI), t
    *Figure 2. Isolated HDMI Signal Flow Diagram*
 
 
-| 
-| ===== Hardware Setup =====
+Hardware Setup
+--------------
 
 Required Equipment
 ~~~~~~~~~~~~~~~~~~
@@ -53,19 +54,23 @@ Required Equipment
 
 -  2x HDMI Cable
 
-| 
-| **The device is plug and play, no programming is required to initialize the circuit board.**
+**The device is plug and play, no programming is required to initialize the circuit board.**
 
-| 
-| ==== Test Setup Functional Block Diagram ==== |Figure 4. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI test setup|
+Test Setup Functional Block Diagram
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571_test_setup.png
+   :alt: Figure 4. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI test setup
+   :align: center
+   :width: 2000px
 
 .. container:: center
 
    *Figure 4. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Test Setup*
 
 
-| 
-| ==== Video Stream/Data Transfer Test ====
+Video Stream/Data Transfer Test
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Set the display settings of your PC to 1920x1080/60Hz.
 
@@ -79,8 +84,8 @@ Required Equipment
 
 --------------
 
-| 
-| ===== Useful Links =====
+Useful Links
+------------
 
 -  :adi:`CN0571 Product Page <CN0571>`
 -  :adi:`ADN4624 Product Page <ADN4624>`
@@ -90,8 +95,8 @@ Required Equipment
 -  :adi:`ADuM321N Product Page <ADuM321N>`
 -  :adi:`ADuM6422A Product Page <ADuM6422A>`
 
-| 
-| ===== Schematics, PCB Layout, Bill of Materials =====
+Schematics, PCB Layout, Bill of Materials
+-----------------------------------------
 
 .. admonition:: Download
    :class: download
@@ -106,8 +111,8 @@ Required Equipment
    
 
 
-| 
-| =====Registration=====
+Registration
+------------
 
 .. tip::
 
@@ -120,7 +125,5 @@ Required Equipment
    :width: 3000px
 .. |Figure 2. Isolated HDMI Signal Flow Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/simplified_block_diagram_final_copy.svg.png
    :width: 600px
-.. |Figure 4. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI test setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571_test_setup.png
-   :width: 2000px
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/pc_display_settings.png
    :width: 600px

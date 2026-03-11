@@ -71,10 +71,7 @@ The device will interface with these components and follow the device tree bindi
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -104,7 +101,7 @@ The device will interface with these components and follow the device tree bindi
         dmas:
           description:
 
-          |
+
             DMA specifier, consisting of a phandle to DMA controller node.
           maxItems: 1
    
@@ -188,7 +185,7 @@ The device will interface with these components and follow the device tree bindi
       examples:
         *
 
-        |
+
           spi {
               #address-cells = <1>;
               #size-cells = <0>;
@@ -265,7 +262,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            <*>     Industrial I/O support --->
                --- Industrial I/O support
                ...
-               Analog to digital converters  ---> 
+               Analog to digital converters  --->
                    ...
                    <*>   Analog Devices AD400X ADC Driver
                    ...
@@ -284,20 +281,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
-
-
    
-   |
 
-
-|
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -331,10 +320,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -347,15 +333,11 @@ Show device name
 Show channel scale
 ------------------
 
-| **Description:**
-| Scale to be applied to in_voltagex_raw in order to obtain the measured voltage in millivolts
+**Description:** Scale to be applied to in_voltagex_raw in order to obtain the measured voltage in millivolts
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -368,15 +350,11 @@ Show channel scale
 Configure sampling rate
 -----------------------
 
-| **Description:** /sys/bus/iio/devices/iio:deviceX/sampling_frequency
-| Configures the input sampling rate.
+**Description:** /sys/bus/iio/devices/iio:deviceX/sampling_frequency Configures the input sampling rate.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -388,10 +366,7 @@ Configure sampling rate
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -407,10 +382,7 @@ Buffer management
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -451,10 +423,7 @@ Every buffer implementation features a set of files:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -479,10 +448,7 @@ Every buffer implementation features a set of files:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -501,10 +467,7 @@ When the buffer is enabled, the ad400x driver prepares a read transfer and confi
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target - Example command sequence
+   This specifies any shell prompt running on the target - Example command sequence
 
    
    ::
@@ -525,10 +488,7 @@ Each buffer entry contains one sample. The amount of bits and their meaning will
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -559,7 +519,7 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24

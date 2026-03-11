@@ -6,15 +6,16 @@ List of API for Register Access for A2B and Peripheral
 -  :doc:`Peripheral Write/Read (SPI/I2C) </wiki-migration/resources/tools-software/a2bv2/quickstartguide/thriftuserguide/registeraccessapi>`
 -  :doc:`Add Peripheral XML file and I2C address </wiki-migration/resources/tools-software/a2bv2/quickstartguide/thriftuserguide/registeraccessapi>`
 
-| 
-| ====Peripheral Write/Read (SPI/I2C)==== This API is used for performing Write/Read operations for both SPI and I2C mode based on selected peripherals and selected A2B network. It takes element Uid and ReadWritePacket info as arguments and returns int value.
+Peripheral Write/Read (SPI/I2C)
+-------------------------------
 
-| **API:**
-| int PeripheralReadWrite(string elementUid, AnalogDevices.SigmaStudio.Scripting.ReadWritePacket rdwrpkt);
+This API is used for performing Write/Read operations for both SPI and I2C mode based on selected peripherals and selected A2B network. It takes element Uid and ReadWritePacket info as arguments and returns int value.
 
-| **Arguments:**
-| \* “elementUid” = UID of the peripheral
+**API:** int PeripheralReadWrite(string elementUid, AnalogDevices.SigmaStudio.Scripting.ReadWritePacket rdwrpkt);
 
+**Arguments:**
+
+-  “elementUid” = UID of the peripheral
 -  “ReadWritePacket” = ReadWritePacket contains below parameters as shown below.
 
    -  DevAddr – Device Address used for I2C Read/Write
@@ -31,14 +32,13 @@ List of API for Register Access for A2B and Peripheral
 
                      false for SPI/I2C read operation.
 
-| **Result:**
-| It will return packet data. For error case, API will return exception.
+**Result:** It will return packet data. For error case, API will return exception.
 
-| **Csharp Example:**
-| 1. Peripheral Write SPI:
+**Csharp Example:**
 
 ::
 
+   1. Peripheral Write SPI:
           ReadWritePacket pkt = new ReadWritePacket();
           pkt.SPICmd = 0;
           pkt.Addr = 0;
@@ -58,7 +58,7 @@ List of API for Register Access for A2B and Peripheral
           pkt.PeriWrite = false; // Write Disable
           pkt.Data = client.PeripheralReadWrite("GenericDevices_4", pkt);
    3. Peripheral Write I2C:
-          ReadWritePacket pkt1 = new ReadWritePacket(); 
+          ReadWritePacket pkt1 = new ReadWritePacket();
           pkt1.DevAddr = 0x38;
           pkt1.Addr = 0xF798;
           pkt1.AddrWidth = 2;
@@ -75,11 +75,11 @@ List of API for Register Access for A2B and Peripheral
           pkt.PeriWrite = false; // Write disable
           pkt.Data = client.PeripheralReadWrite("GenericDevices_0", pkt);
 
-| **Python Example:**
-| 1. Peripheral Write SPI:
+**Python Example:**
 
 ::
 
+   1. Peripheral Write SPI:
           pkt = ReadWritePacket()
           pkt.SPICmdWidth = 0
           pkt.SPICmd = 0
@@ -116,15 +116,16 @@ List of API for Register Access for A2B and Peripheral
           pkt.PeriWrite = False
           pkt.Data = client.PeripheralReadWrite("GenericDevices_0", pkt)
 
-| 
-| ====Add Peripheral XML file and I2C address==== This API is used for adding Peripheral . It takes element Uid and property name and property value as arguments and returns SSPResult.
+Add Peripheral XML file and I2C address
+---------------------------------------
 
-| **API:**
-| SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal);
+This API is used for adding Peripheral . It takes element Uid and property name and property value as arguments and returns SSPResult.
 
-| **Arguments:**
-| \* “elementUid” = UID of the A2B Channel
+**API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal);
 
+**Arguments:**
+
+-  “elementUid” = UID of the A2B Channel
 -  “propertyName” = Name of the action property. Some of the property name examples are listed below
 
    -  PeripheralFile – Peripheral File
@@ -133,24 +134,23 @@ List of API for Register Access for A2B and Peripheral
 
 -  “PropertyValue” = Value of the property in string.
 
-| **Result:**
-| SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStringProperty action.
+**Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStringProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateStringProperty was successful else 'False'.
 -  Message contains the Success/Failure information in the form of list of string.
 
-| **Csharp Example:**
-| \_sspresult = client.UpdateStringProperty("GenericDevices_0", "PeripheralFile", @"C:\\Analog Devices\\ADI_A2B_Software-Rel19.4.4\\Schematics\\BF\\A2BSchematics\\xml\\adi_a2b_master_ADAU1761.xml");
+**Csharp Example:**
 
 ::
 
+   _sspresult = client.UpdateStringProperty("GenericDevices_0", "PeripheralFile", @"C:\Analog Devices\ADI_A2B_Software-Rel19.4.4\Schematics\BF\A2BSchematics\xml\adi_a2b_master_ADAU1761.xml");
    _sspresult = client.UpdateStringProperty("GenericDevices_0", "I2CAddress", "0x39");
 
-| **Python Example:**
-| ssp_result = client.UpdateStringProperty("GenericDevices_0", "PeripheralFile", "C:\\\\Analog Devices\\\\ADI_A2B_Software-Rel19.4.4\\\\Schematics\\\\BF\\\\A2BSchematics\\\\xml\\\\adi_a2b_master_ADAU1761.xml")
+**Python Example:**
 
 ::
 
+   ssp_result = client.UpdateStringProperty("GenericDevices_0", "PeripheralFile", "C:\\Analog Devices\\ADI_A2B_Software-Rel19.4.4\\Schematics\\BF\\A2BSchematics\\xml\\adi_a2b_master_ADAU1761.xml")
    ssp_result = client.UpdateStringProperty("GenericDevices_0", "I2CAddress", "0x39")
 
 .. tip::

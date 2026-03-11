@@ -32,16 +32,13 @@ Specifications
 
 --------------
 
-| 
-
 Interface Connector Signal Description
 --------------------------------------
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_1.png
+   :width: 400px
 
 --------------
-
-.. _interface-connector-signal-description-1:
 
 Interface Connector Signal Description
 --------------------------------------
@@ -54,8 +51,11 @@ Interface Connector Signal Description
 Functional Block Diagram
 ------------------------
 
-| |image2|
-| ===== Schematic, PCB Layout, Bill of Materials =====
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/block.png
+   :width: 900px
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
 
 .. admonition:: Download
    :class: download
@@ -68,10 +68,10 @@ Functional Block Diagram
    -  Bill of Materials
    -  Allegro Project
    
-   |
 
 
-| ===== Additional Information and Useful Links =====
+Additional Information and Useful Links
+---------------------------------------
 
 -  :adi:`ADF7242 Product Page <ADF7242>`
 -  :doc:`ADF7242 Linux driver </wiki-migration/resources/tools-software/linux-drivers/networking-mac802154/adf7242>`
@@ -81,16 +81,9 @@ Functional Block Diagram
 Registration
 ------------
 
-|
-
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-ADF7242-PMDZ?&v=RevA>`_ to receive all these great benefits and more!
 
 
-| // End of Document
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_1.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/block.png
-   :width: 900px
+// End of Document

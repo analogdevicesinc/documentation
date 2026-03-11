@@ -25,69 +25,67 @@ diagram.
 -  ``<processor name>_Target.xml``: This is similar to the above xml file. However, the data buffers are updated with the protocol packetizations, if applicable, as written to the target.
 -  ``<processor name>.json``: Contains the details of modules and their parameters present in the signal-flow diagram in JSON format.
 
-| 
-| ===== Netlist File ===== <IC> is the root element of the Netlist file.
+Netlist File
+------------
+
+<IC> is the root element of the Netlist file.
 
 <IC>
-----
+~~~~
 
 -  **name** - name of the IC.
 -  **partnumber** - part number of the IC.
 -  **<Core>** - one or more <Core> elements each representing the processing cores within the processor/IC.
 
 <Core>
-------
+~~~~~~
 
 -  **name** - unique id of the core.
 -  **coreid** - core id
 -  **<Schematic>** - one or more <Schematic> elements each representing the signal flow diagram executing on the core.
 
 <Schematic>
------------
+~~~~~~~~~~~
 
 -  **name** - unique id of the schematic.
 -  **<Algorithm>** - one or more <Algorithm> elements each representing the connected algorithm modules in the schematic.
 
 <Algorithm>
------------
+~~~~~~~~~~~
 
 -  **name** - unique id of the algorithm.
 -  **friendlyname** - description of the algorithm.
 -  **<Link>** - one or more <Link> elements each representing the input or output connections of the module.
 
 <Link>
-------
+~~~~~~
 
 -  **pin** - name of the pin.
 -  **dir** - indicates whether this is input or output pin.
 -  **link** - name of the link.
 -  **id** - unique id of the link.
 
-| 
-| ===== XML File ===== <IC> is the root element of the XML file.
+XML File
+--------
 
-.. _ic-1:
+<IC> is the root element of the XML file.
 
 <IC>
-----
+~~~~
 
 -  **<Name>** - name of the IC
 -  **<PartNumber>** - part number of the IC
 -  **<Core>** - cores within the IC/processor.
 
-.. _core-1:
-
 <Core>
-------
+~~~~~~
 
 -  **<Name>** - unique id of the core.
 -  **<CoreID>** - core id.
 -  **<Schematic>** - schematics within the core.
 
-.. _schematic-1:
-
 <Schematic>
------------
+~~~~~~~~~~~
 
 -  **<Name>** - unique id of the schematic.
 -  **<Meta>** - metadata buffers of the schematic.
@@ -97,7 +95,7 @@ diagram.
 -  **<Module>** - modules present in the schematic.
 
 <Meta>
-------
+~~~~~~
 
 -  **<Name>** - name of the meta-data buffer.
 -  **<AddrIncr>** - register byte length.
@@ -105,7 +103,7 @@ diagram.
 -  **<Data>** - data represented in hexadecimal format.
 
 <Register>
-----------
+~~~~~~~~~~
 
 -  **<Name>** - name of the register.
 -  **<Address>** - address of the register. 0 in case of Delay.
@@ -114,7 +112,7 @@ diagram.
 -  **<Data>** - data represented in hexadecimal format.
 
 <Program>
----------
+~~~~~~~~~
 
 -  **<Name>** - name of the program buffer.
 -  **<Address>** - address of the program buffer.
@@ -123,7 +121,7 @@ diagram.
 -  **<Data>** - program data represented in hexadecimal format.
 
 <Parameter>
------------
+~~~~~~~~~~~
 
 -  **<Name>** - name of the parameter buffer.
 -  **<Address>** - address of the parameter buffer.
@@ -132,14 +130,12 @@ diagram.
 -  **<Data>** - parameter data represented in hexadecimal format.
 
 <Module>
---------
+~~~~~~~~
 
 -  **<Algorithm>** - algorithm (typically only one) within the graphical module block.
 
-.. _algorithm-1:
-
 <Algorithm>
------------
+~~~~~~~~~~~
 
 -  **<AlgoName>** - unique id of the algorithm.
 -  **<DetailedName>** - full plugin name of the algorithm.
@@ -149,14 +145,14 @@ diagram.
 -  **<ModuleParameter>** - module parameters (target parameters) of the module.
 
 <AbstractParameter>
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 -  **<Name>** - name of the parameter.
 -  **<Type>** - type of the parameter (Numeric, Boolean, NumericArray, List etc.).
 -  **<Value>** - Abstract value of the parameter.
 
 <ModuleParameter>
------------------
+~~~~~~~~~~~~~~~~~
 
 -  **<Name>** - name of the parameter.
 -  **<Type>** - type of the parameter (Numeric or NumericArray).
@@ -167,5 +163,7 @@ diagram.
 -  **<Size>** - size of the parameter in bytes.
 -  **<Data>** - data bytes represented in hexadecimal.
 
-| 
-| ===== JSON File ===== This file is similar to the XML file described above but generated in JSON format.
+JSON File
+---------
+
+This file is similar to the XML file described above but generated in JSON format.

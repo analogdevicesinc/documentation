@@ -20,7 +20,7 @@ General Setup
    *One diametrically magnetized Neodymium magnet
    *One of the following:
      *6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
-     *DC power supply with a 0-6V output.  (HP6236B) 
+     *DC power supply with a 0-6V output.  (HP6236B)
 
 Minimum PC/System Requirements
 ------------------------------

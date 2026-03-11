@@ -1,7 +1,7 @@
 CrossCore Embedded Studio Download & Install
 ============================================
 
-<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. </WRAP>
+<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. 
 
 This page provides all the necessary steps to get CrossCore Embedded Studio (CCES) software environment up and running on Windows or Linux.
 
@@ -47,8 +47,11 @@ CrossCore Embedded Studio Download Packages
    :class: download
 
    
-   | The EV-COG-AD4050LZ **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EV-COG-AD3029LZ.
-   | |CrossCore Embedded Studio 2.7.0 Windows Installer(Executable)|
+   The EV-COG-AD4050LZ **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EV-COG-AD3029LZ.
+   
+   .. image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.7.0/ADI_CrossCoreEmbeddedStudio-Rel2.7.0.exe
+      :alt: CrossCore Embedded Studio 2.7.0 Windows Installer(Executable)
+      :align: left
    
    .. image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.7.0/adi-CrossCoreEmbeddedStudio-linux-x86-2.7.0.deb
       :alt: CrossCore Embedded Studio 2.7.0 Ubuntu Linux Installer(Debian)
@@ -129,5 +132,3 @@ For more details on CrossCore Embedded Studio, updated versions of the tools, re
 *End of Document*
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w>`
-
-.. |CrossCore Embedded Studio 2.7.0 Windows Installer(Executable)| image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.7.0/ADI_CrossCoreEmbeddedStudio-Rel2.7.0.exe

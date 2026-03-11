@@ -4,16 +4,12 @@ AD5758 + ADP1031 Eight Channel Analog Output Module
 Using the Demo Board
 --------------------
 
-|
-
 .. important::
 
    Before proceeding, please ensure you have the DEMO_AD5758-AO8Z Demo software installed on your PC or Laptop and that the latest version of the firmware has been uploaded to the board. Instructions on how to complete these steps can be found earlier in this guide in the `Software Details <https://wiki.analog.com/software>`_ section.
 
 
-   |image1|
-
-| Figure 1 - DEMO-AD5758-AO8Z Setup
+|image1| Figure 1 - DEMO-AD5758-AO8Z Setup
 
 Connecting the Board
 ~~~~~~~~~~~~~~~~~~~~
@@ -29,9 +25,9 @@ Connecting the Board
 
 -  Connect a USB cable from your PC or laptop to the USB port on the demo board.
 -  Start the DEMO-AD5758-AO8Z GUI Software and select the correct COM port, then click [**Connect**]
-   <WRAP>\ |image2|\ </WRAP>
+   \ |image2|\ 
 
--  The GUI display should resemble the following image. <WRAP>\ |image3|\ </WRAP>
+-  The GUI display should resemble the following image. \ |image3|\ 
 
 DPC ON vs. DPC OFF Demonstration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,14 +44,14 @@ DPC ON vs. DPC OFF Demonstration
    Resistor values between 0 Ω and 1 kΩ can be used. However, lower values provide a more challenging load and demonstrate the DPC mode power savings better.
 
 
--  Turn on Channel 0 by clicking the **DPC OFF** radio button. This turns on the channel but leaves DPC mode disabled by fixing the output of the DPC buck (and thus the power supply to the buffer) to 23.3 V<WRAP>\ |image4|\ </WRAP>
+-  Turn on Channel 0 by clicking the **DPC OFF** radio button. This turns on the channel but leaves DPC mode disabled by fixing the output of the DPC buck (and thus the power supply to the buffer) to 23.3 V\ |image4|\ 
 
--  Set Desired Output to 20 mA and click **Apply to all**. This will set the remaining channels to the same state as channel 0. i.e. 20 mA output, DPC OFF. <WRAP>\ |image5|\ </WRAP>
+-  Set Desired Output to 20 mA and click **Apply to all**. This will set the remaining channels to the same state as channel 0. i.e. 20 mA output, DPC OFF. \ |image5|\ 
 
 Observe that VDPC+ is fixed at 23.3 V even though the buffer output is at 0 V.
 -  I\ :sub:`FIELD` should now be around 207 mA ± 10 mA (~5 W). I\ :sub:`SYSTEM` should be relatively unchanged.
 -  Click the **Status** button of any channel to see a graph of the internal die temperature rise of the :adi:`AD5758`. Notice how the temperature rises rapidly when DPC is disabled.
-   <WRAP>\ |image6|\ </WRAP>
+   \ |image6|\ 
 
 .. note::
 
@@ -65,19 +61,19 @@ Observe that VDPC+ is fixed at 23.3 V even though the buffer output is at 0 V.
 
 
 -  Now select CH0 **DPC ON**
-   <WRAP>\ |image7|\ </WRAP>
+   \ |image7|\ 
 
 -  Click "**Apply to all**".
-   <WRAP>\ |image8|\ </WRAP>
+   \ |image8|\ 
 
 Notice how VDPC+ is now at its minimum value of approximately 4.95 V and the die temperature begins to drop rapidly as DPC power saving take effect.
-   <WRAP>\ |image9|\ </WRAP>
+   \ |image9|\ 
 
 .. note::
 
    When DPC mode is turned **on**, a high efficiency (η = 0.9) buck converter reduces the supply to the buffer to 2.5 V above the required output voltage or 4.95 V - whichever is higher, so there is now a small voltage drop of only 4.95 V across the :adi:`AD5758` output buffer\ :sup:`1`. This translates to 4.95V X 20mA = 99mW plus 99 mW X (1 - η) = 10 mW of heat dissipation in the output buffer of the :adi:`AD5758`. This is a power saving of 404 mW per channel.
 
-   :sup:`<fc #ff0000>1</fc>` <fc #ff0000>If VIOUT > 2.5 V, then the the DPC buck tracks the output to maintain a fixed 2.5 V headroom.</fc>
+   :sup:`1` If VIOUT > 2.5 V, then the the DPC buck tracks the output to maintain a fixed 2.5 V headroom.
 
 
 -  I\ :sub:`FIELD` should now be around 72 mA ± 5 mA (~ 1.7 W). I\ :sub:`SYSTEM` should be unchanged.

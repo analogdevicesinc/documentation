@@ -3,15 +3,17 @@
 Feedback
 ========
 
-| 
-| |feedbacknew1.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/feedbacknew1.png
+   :alt: feedbacknew1.png
 
 Description
 -----------
 
-| The feedback algorithm generates a delay in the signal path and reroutes signal to an input occurring earlier in the path. Note that this block must be used if feedback is required in your design.
-| In sample schematic it generates one sample delay in the signal path and reroutes the signal to an input occurring earlier in the path.
-| In block schematic it generates delay equal to one blocksize in the signal path and reroutes the signal to an input occurring earlier in the path.
+The feedback algorithm generates a delay in the signal path and reroutes signal to an input occurring earlier in the path. Note that this block must be used if feedback is required in your design.
+
+In sample schematic it generates one sample delay in the signal path and reroutes the signal to an input occurring earlier in the path.
+
+In block schematic it generates delay equal to one blocksize in the signal path and reroutes the signal to an input occurring earlier in the path.
 
 Targets Supported
 -----------------
@@ -43,8 +45,10 @@ Name    Type  Description
 Output0 Audio Output channel 0
 ======= ===== ================
 
-| 
-| ===== Configurable Parameters ===== No configurable parameters
-| ===== DSP Parameters ===== No DSP Parameters
 
-.. |feedbacknew1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/feedbacknew1.png
+| ===== Configurable Parameters ===== No configurable parameters
+
+DSP Parameters
+--------------
+
+No DSP Parameters

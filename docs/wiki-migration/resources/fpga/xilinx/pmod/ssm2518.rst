@@ -34,16 +34,14 @@ Required Software
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+
 
 .. tip::
 
    If you are not familiar with LX9 and/or Xilix tools, please visit
 
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
-   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
-   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
-   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details. If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
 
@@ -116,8 +114,6 @@ Avnet LX-9 MicroBoard and Digilent Nexys3
 
 The reference design is a simple IIC interface used to program the SSM2518. A custom I2S Core is also implemented, in order to transmit audio data to the SSM2518. The software programs the device and starts audio playback. Pausing the audio playback is done from an UART Terminal.
 
-.. _avnet-zedboard-1:
-
 Avnet ZedBoard
 ^^^^^^^^^^^^^^
 
@@ -139,22 +135,26 @@ The reference design is a simple IIC interface used to program the SSM2518. A cu
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \**Avnet LX-9 MicroBoard: **
-     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ssm2518_lx9.zip>`_\ **
-     **\ Digilent Nexys™3:**
-     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ssm2518_nexys3.zip>`_\ **
-     **\ Avnet ZedBoard:\*\*
-   | \* :git-no-OS:`XPS Project <Pmods/PmodAMP3/cf_ssm2518_zed>`
-   | \* :git-no-OS:`SSM2518 IPCore <Pmods/PmodAMP3/cf_lib/edk/pcores/axi_ssm2518_v1_00_a>`
-   | \* :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
-   | \* :git-no-OS:`PmodAMP3 Driver Files <Pmods/PmodAMP3>`
-   | \* :git-no-OS:`Programming Script <Pmods/PmodAMP3/bin>`
-   |
+   
+   **Avnet LX-9 MicroBoard:**
+   
+   -  `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ssm2518_lx9.zip>`_
+   
+   **Digilent Nexys™3:**
+   
+   -  `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ssm2518_nexys3.zip>`_
+   
+   **Avnet ZedBoard:**
+   
+   -  :git-no-OS:`XPS Project <Pmods/PmodAMP3/cf_ssm2518_zed>`
+   -  :git-no-OS:`SSM2518 IPCore <Pmods/PmodAMP3/cf_lib/edk/pcores/axi_ssm2518_v1_00_a>`
+   -  :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
+   -  :git-no-OS:`PmodAMP3 Driver Files <Pmods/PmodAMP3>`
+   -  :git-no-OS:`Programming Script <Pmods/PmodAMP3/bin>`
+   
 
 
 More information

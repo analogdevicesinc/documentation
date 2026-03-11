@@ -64,16 +64,13 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
 
    .. raw:: html
 
-      <details><summary>Boot log (click to expand)</summary>
+      <details><summary>Boot log (click to expand)
 
    ::
    
@@ -97,8 +94,8 @@ Messages
       Chip ID:        zu3eg
       NAND:  0 MiB
       MMC:   mmc@ff170000: 0
-      Loading Environment from FAT... *** Error - No Valid Environment Area found
-      *** Warning - bad env area, using default environment
+      Loading Environment from FAT... ** Error - No Valid Environment Area found
+      ** Warning - bad env area, using default environment
    
       In:    serial
       Out:   serial
@@ -779,10 +776,7 @@ Make sure all devices are present
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -804,10 +798,7 @@ The following commands enable the LNA on RX1A channel.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -825,10 +816,7 @@ When RXB or TXB channels need to be used the RF Add-on board could be powered on
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -848,10 +836,7 @@ The transceiver TX could be routed to the main board output connector (TXA) or t
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -866,8 +851,7 @@ The transceiver TX could be routed to the main board output connector (TXA) or t
 Video Configuration
 -------------------
 
-| The default configuration for most of the projects is to use the HDMI output, but for this project the DisplayPort is used. In order for it to work, you should follow the steps described here: :doc:`DisplayPort No Picture </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
-| After following the steps, the board should be rebooted.
+The default configuration for most of the projects is to use the HDMI output, but for this project the DisplayPort is used. In order for it to work, you should follow the steps described here: :doc:`DisplayPort No Picture </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>` After following the steps, the board should be rebooted.
 
 Setup Networking
 ----------------

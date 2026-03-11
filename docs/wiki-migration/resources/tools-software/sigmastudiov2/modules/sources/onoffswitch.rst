@@ -3,15 +3,16 @@
 ON/OFF Switch
 =============
 
-| 
-| |onoff.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/onoff.png
+   :alt: onoff.png
 
 Description
 -----------
 
-| 
-| The OnOffSwitch block outputs a constant value of either 0.0(OFF) or 1.0(ON).Click the switch control with mouse to toggle the switch 'OFF' or 'ON'.
-| ===== Targets Supported =====
+The OnOffSwitch block outputs a constant value of either 0.0(OFF) or 1.0(ON).Click the switch control with mouse to toggle the switch 'OFF' or 'ON'.
+
+Targets Supported
+-----------------
 
 +-------------+------------+-----------------------+---------------+------------------+
 | Name        | ADSP-214xx | ADSP-215xx/ADSP-SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -31,7 +32,7 @@ Name   Type    Description
 Enable Control Output channel 0
 ====== ======= ================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+------------+--------------------------------+
@@ -51,5 +52,3 @@ Enable Control Output channel 0
 
 | 
 | ===== DSP Parameter Computation ===== Switch_Enabled = Switch_Enabled? 1: 0
-
-.. |onoff.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/onoff.png

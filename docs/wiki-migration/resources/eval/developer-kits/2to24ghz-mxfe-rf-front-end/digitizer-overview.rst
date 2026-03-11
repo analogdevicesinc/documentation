@@ -13,13 +13,9 @@ The ADI Frequency Planning Utility tool was used to determine the optimal :adi:`
    :align: center
    :width: 600px
 
-|
-
 .. important::
 
    The receiver and transmitter front ends described in this CN use a frequency plan designed using the :adi:`AD9082`, specifically with 6GSPS and 12GSPS ADC and DAC sample rates, respectively. However, the RF components themselves are wideband enough to allow for flexibility in the frequency plan and filtering, which can be adjusted to work with the lower ADC sample rates.
 
 
-   | The :adi:`ADF4377` integrated PLL/VCO is an ideal choice for generating the MxFE sample clock. The [adi>ADF4377]] can generate a clean, low-jitter clock from 800MHz up to 12.8GHz, and it's differential outputs are capable of directly driving the MxFE clock pins.
-
-|
+The :adi:`ADF4377` integrated PLL/VCO is an ideal choice for generating the MxFE sample clock. The [adi>ADF4377]] can generate a clean, low-jitter clock from 800MHz up to 12.8GHz, and it's differential outputs are capable of directly driving the MxFE clock pins.

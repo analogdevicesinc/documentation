@@ -37,7 +37,7 @@ For the ALM2000 module we use the following terminology when referring to the co
    ALM2000 pin designations
 
 
-Scope traces are similarly referred to by channel number. Such as C1-V , C2-V for the voltage waveforms.  
+Scope traces are similarly referred to by channel number. Such as C1-V , C2-V for the voltage waveforms.
 
 Background:
 -----------
@@ -54,8 +54,9 @@ On the surface the supported voltage and current ranges would seem rather differ
 
 2. The single ended 0 to 5V range of the ALM1000 can be considered to be from -2.5 V to +2.5 V if the +2.5 V fixed supply is viewed as the common voltage reference rather than ground. The ground pin would be considered to be at -2.5 V with respect to the common and the +5 V supply would be considered to be at +2.5 V with respect to the common. On the ALM2000, this would map to using the variable power supplies set to -2.5 V and +2.5 V respectively. This remapping is shown in figure 1. **It is extremely important to note that the "Earth" ( USB connector ) ground of the ALM1000 and ALM2000 will be connected to different nodes within the circuit under test and any connections to other external devices may result in short circuiting a ground to something it should not be connected to.**
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f3.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -68,7 +69,7 @@ On the surface the supported voltage and current ranges would seem rather differ
 
 VBuffA[t]/0.1
 
-To convert volts to mA divide by the resistance in Kilo Ohms. Because 1 mA is equal to 100 mV across a 100 Ω resistor or 0.1 KΩ.  
+To convert volts to mA divide by the resistance in Kilo Ohms. Because 1 mA is equal to 100 mV across a 100 Ω resistor or 0.1 KΩ.
 
 Materials:
 ~~~~~~~~~~
@@ -78,7 +79,7 @@ ADALM1000 and ADALM2000 hardware modules
 Examples:
 ---------
 
-The following examples are not intended to completely cover how to perform all the Active Learning lab activities with either hardware module but rather to serve as guidance for the less obvious differences.  
+The following examples are not intended to completely cover how to perform all the Active Learning lab activities with either hardware module but rather to serve as guidance for the less obvious differences.
 
 Labs that measure voltage vs current characteristics:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,9 +99,9 @@ Case 1 is the measurement of the current vs voltage curve of a diode when forwar
 
 When performed with the ALM2000 the current I\ :sub:`D` can be obtained by connecting Channel 2 differentially across the resistor and dividing by the resistor value.
 
-
-
-|image2|
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f5.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -109,9 +110,9 @@ When performed with the ALM2000 the current I\ :sub:`D` can be obtained by conne
 
 Because the Zener diode provided in the ALP2000 Analog Parts kit has a reverse break down voltage larger than the +5.0 available when using the ALM1000, two ( or one or three ) 1.5 volt cells are used to bias the negative side of the diode below ground as shown in figure 3(a). The added external voltage is mathematically added to the Channel B measurement to obtain the voltage across the diode. As in the forward bias example the diode current is available as the Channel A current trace.
 
-
-
-|image3|
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f6.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -120,9 +121,9 @@ Because the Zener diode provided in the ALP2000 Analog Parts kit has a reverse b
 
 Because the ALM2000 has a built in negative supply it can be substituted for the external battery as shown in figure 3(b). The negative supply can be programed to any appropriate value up to the -5.0 volt limit. The voltage across the diode is measure differentially by connecting the 1- input to the negative end of the diode. The diode current trace is obtained as before using Channel 2 and dividing by the resistor value.
 
-
-
-|image4|
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f7.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -178,7 +179,7 @@ When measuring the collector current characteristic curves with the ALM2000 the 
 
 As shown in Figure 5(b) when using the ALM2000, the collector current for the various base current steps can be plotted vs the collector voltage using the X-Y plotting tool using a Math channel to plot Channel 1 voltage on the X axis and the other Math to calculate the collector current from the Channel 2 differential voltage divided by the 10 ohm resistor on the Y axis.
 
-Comparing figures 5(a) and 5(b) we can see the effect of the internal 50 Ω series resistor and external 10 Ω used to sense the collector current in the ALM2000 case. The collector, emitter voltage does not make it all the way to + 5 volts due to the drop across these resistors. However, in the ALM1000 case the collector, emitter voltage does swing all the way to +5 volts.  
+Comparing figures 5(a) and 5(b) we can see the effect of the internal 50 Ω series resistor and external 10 Ω used to sense the collector current in the ALM2000 case. The collector, emitter voltage does not make it all the way to + 5 volts due to the drop across these resistors. However, in the ALM1000 case the collector, emitter voltage does swing all the way to +5 volts.
 
 Labs that use op-amps:
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -222,9 +223,9 @@ There is not much difference in the connections for the unity gain follower exam
 
 For the ALM2000 the AWG voltage would generally be centered on 0.0 V. For example Min = -1.5 and Max = 1.5.
 
-
-
-|image5|
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f15.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -258,8 +259,9 @@ Current Mirror Labs:
 
 Because the ALM1000 can either source voltage or current while simultaneously measuring both current and voltage, testing the input current and voltage as well as the output current and voltage of the current mirror is a relatively simple matter as shown in figure 9(a). The channel A signal source is configured to source current (I\ :sub:`in`) while measuring voltage and the channel B signal source is configured to source voltage while measuring current (I\ :sub:`out`). All four traces can be displayed simultaneously.
 
-
-|image6|
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f18.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -268,9 +270,9 @@ Because the ALM1000 can either source voltage or current while simultaneously me
 
 On the other hand the ALM2000 can only source voltage and measure voltage. To supply a current to the input of the current mirror the voltage from AWG channel W1 is converted to a current by a resistor. The current is measured by dividing the differential voltage across the resistor, measured by scope Channel 1, by the value of the resistor. Similarly, on the output the current is converted to a voltage by the second resistor. The voltage across the resistor is measured differentially by scope Channel 2. Because there are only two measurement channels only the currents can be displayed or only the voltages ( in loopback mode or by connecting the 1- and 2- inputs to ground).
 
-
-
-|image7|
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f19.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -280,7 +282,11 @@ On the other hand the ALM2000 can only source voltage and measure voltage. To su
 Appendix, Techniques to Split A single Positive Supply:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image8|   Voltage Divider with op-amp buffer.
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f20.png
+   :align: center
+   :width: 500px
+
+Voltage Divider with op-amp buffer.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f21.png
    :align: center
@@ -290,26 +296,8 @@ Fixed voltage reference.
 
 **For Further Reading:**
 
-| :doc:`ALICE desktop user guide for ADALM1000 </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
-| :doc:`Scopy (User Guide for ADALM2000) </wiki-migration/university/tools/m2k/scopy>`
+:doc:`ALICE desktop user guide for ADALM1000 </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` :doc:`Scopy (User Guide for ADALM2000) </wiki-migration/university/tools/m2k/scopy>`
 
 **Return to Circuits Lab Activities** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
 
 **Return to Electronics Lab Activities** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
-
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f3.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f5.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f6.png
-   :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f7.png
-   :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f15.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f18.png
-   :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f19.png
-   :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f20.png
-   :width: 500px

@@ -19,7 +19,7 @@ Here is the Faust code for the MIDI controlled sawtooth synth. Notice the use of
    import("stdfaust.lib");
 
 
-   normMIDI(mv)  = mv/127.0; 
+   normMIDI(mv)  = mv/127.0;
    vol  = normMIDI(hslider("Ctrl Value IN (Ctrl 1) [midi:ctrl 1]", 60, 0, 127, 1)) ;
 
 
@@ -81,7 +81,7 @@ Creating Files for use with the Baremetal Framework
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#ex-work-reverb
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/navigation SHARC Audio Module#ex-work-reverb
    :alt: MIDI Controlled Reverb#.|Faust and the SHARC Audio Module#ex-work-virtual-analog|MIDI Virtual Analog Synth
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png

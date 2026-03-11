@@ -222,8 +222,7 @@ Import and Export (29)
 
 **Figure 10. Memory Map**
 
-| :doc:`Return to Hardware Guide </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/hardware_guide>`
-| :doc:`Return to Homepage </wiki-migration/resources/eval/eval-ad7173-8ardz>`
+:doc:`Return to Hardware Guide </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/hardware_guide>` :doc:`Return to Homepage </wiki-migration/resources/eval/eval-ad7173-8ardz>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad4111ardz/libiio_drivers.png
    :width: 400px

@@ -44,7 +44,7 @@ Get Linux Kernel Source
       Resolving deltas: 100% (3598928/3598928), done.
       Checking connectivity... done.
       Checking out files: 100% (49759/49759), done.
-      user@pc:~/nios2$ 
+      user@pc:~/nios2$
    
 
 
@@ -134,6 +134,6 @@ Build Kernel
         LD      arch/nios2/boot/compressed/vmlinux
         OBJCOPY arch/nios2/boot/zImage
       Kernel: arch/nios2/boot/zImage is ready
-      user@pc:~/nios2/linux$ 
+      user@pc:~/nios2/linux$
    
 

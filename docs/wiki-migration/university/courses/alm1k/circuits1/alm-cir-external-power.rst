@@ -216,13 +216,7 @@ In this section we cover many of the ways the LT1054 switched capacitor DC-DC co
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 – LT1054 Switch Cap DC-DC converter (or ADM660)
-| 2 – 4.7 uF capacitors
-| 2 – 10 uF capacitors
-| 2 – 22 uF capacitors
-| 2 – 47 uF capacitors
-| 5 – 1N4001 diodes (or 1N5819 Schottky diodes)
+ADALM1000 hardware module 1 – LT1054 Switch Cap DC-DC converter (or ADM660) 2 – 4.7 uF capacitors 2 – 10 uF capacitors 2 – 22 uF capacitors 2 – 47 uF capacitors 5 – 1N4001 diodes (or 1N5819 Schottky diodes)
 
 Directions:
 ~~~~~~~~~~~
@@ -309,10 +303,6 @@ Option 4, Linear Regulators:
 
 **For Further Reading:**
 
-| `Voltage multiplier <https://en.wikipedia.org/wiki/Voltage_multiplier>`_
-| `Charge pump <https://en.wikipedia.org/wiki/Charge_pump>`_
-| `Voltage doubler <https://en.wikipedia.org/wiki/Voltage_doubler>`_
-| :adi:`ADM660 Datasheet <media/en/technical-documentation/data-sheets/ADM660_8660.pdf>`
-| :adi:`LT1054 Datasheet <media/en/technical-documentation/data-sheets/1054lfh.pdf>`
+`Voltage multiplier <https://en.wikipedia.org/wiki/Voltage_multiplier>`_ `Charge pump <https://en.wikipedia.org/wiki/Charge_pump>`_ `Voltage doubler <https://en.wikipedia.org/wiki/Voltage_doubler>`_ :adi:`ADM660 Datasheet <media/en/technical-documentation/data-sheets/ADM660_8660.pdf>` :adi:`LT1054 Datasheet <media/en/technical-documentation/data-sheets/1054lfh.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

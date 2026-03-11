@@ -112,7 +112,7 @@ Check regulator driver initialization information at kernel booting.
 ::
 
    regulator: core version 0.5
-   regulator: adp122: 2500 mV                                                                     
+   regulator: adp122: 2500 mV
 
 Check if adp122 is probed properly.
 

@@ -20,8 +20,6 @@ Functional Block Diagram
 
 |an1108-09651-001.png| *Figure 1. AD9832 Functional Block Diagram*
 
-.. _programming-the-ad9832ad9835-1:
-
 Programming the AD9832/AD9835
 -----------------------------
 
@@ -34,15 +32,21 @@ The aim is to generate two output frequencies, loading 3 kHz to the FREQ0 regist
 
 The dial-up code for this is defined by the equation
 
-| :math:`FreqReg=f_{OUT} x 2^28/f_{MCLK}`
-| For *FREQ0* = 3000 Hz
-| :math:`\displaystyle Freq0=300 Hz x 2^\frac{32}{25} MHz`
+:math:`FreqReg=f_{OUT} x 2^28/f_{MCLK}`
 
-| = 515,396 decimal = 0x0007DD44
-| For *FREQ1* = 10 KHz
-| :math:`\displaystyle Freq1=10,000 Hz x 2^\frac{32}{25} MHz`
-| = 1,717,987 decimal = 0x001A363E
-| Note that the `ADIsimDDS tool <https://tools.analog.com/en/simdds/>`_ offers a quick and easy method of generating the desired code in hexadecimal, decimal or binary.
+For *FREQ0* = 3000 Hz
+
+:math:`\displaystyle Freq0=300 Hz x 2^\frac{32}{25} MHz`
+
+= 515,396 decimal = 0x0007DD44
+
+For *FREQ1* = 10 KHz
+
+:math:`\displaystyle Freq1=10,000 Hz x 2^\frac{32}{25} MHz`
+
+= 1,717,987 decimal = 0x001A363E
+
+Note that the `ADIsimDDS tool <https://tools.analog.com/en/simdds/>`_ offers a quick and easy method of generating the desired code in hexadecimal, decimal or binary.
 
 The required initialization sequence is shown in Table 1.
 
@@ -75,14 +79,13 @@ RESET Bit D12 is set to 1. This resets the internal registers to 0, which corres
 
 |an1108-09651-002.png| *Figure 2. Put AD9832/AD9835 in Reset--0xD000*
 
-| 0x3044
+0x3044
 
 -  Eight bits to defer.
 -  Frequency Register 0, L LSB data.
 -  8-bit data = 0x44.
 
-| 
-| 0x21DD
+0x21DD
 
 -  Present eight bits plus the deferred eight bits to the select frequency register.
 -  Frequency Register 0, H LSB data.
@@ -135,8 +138,9 @@ The next step is to change the FREQ1 register from 10 kHz to 40 kHz without ente
 
 -  For FREQ1 = 40 kHz
 
-| :math:`\displaystyle FREQ1 = 40,000 Hz x 2^\frac{32}{25} MHz`
-| = 6,871,948 decimal = 0x0068DB8C
+:math:`\displaystyle FREQ1 = 40,000 Hz x 2^\frac{32}{25} MHz`
+
+= 6,871,948 decimal = 0x0068DB8C
 
 Load the following command sequence:
 

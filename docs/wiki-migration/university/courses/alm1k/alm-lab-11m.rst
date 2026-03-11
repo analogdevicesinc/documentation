@@ -19,11 +19,7 @@ NMOS Source Follower:
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 1.5 KΩ Resistor (R\ :sub:`L`)
-| 1 - small signal NMOS transistor (enhancement mode CD4007 or ZVN2110A M\ :sub:`1`)
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 - 1.5 KΩ Resistor (R\ :sub:`L`) 1 - small signal NMOS transistor (enhancement mode CD4007 or ZVN2110A M\ :sub:`1`)
 
 Directions:
 ~~~~~~~~~~~
@@ -68,9 +64,7 @@ The current mirror from activity 6M is now substituted for the source load resis
 Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
 
-| 1 - 1 KΩ Resistor
-| 1 - small signal NMOS transistor (M\ :sub:`1`\ ZVN2110A)
-| 2 - small signal NMOS transistors (M\ :sub:`2`, M\ :sub:`3`\ CD4007)
+1 - 1 KΩ Resistor 1 - small signal NMOS transistor (M\ :sub:`1`\ ZVN2110A) 2 - small signal NMOS transistors (M\ :sub:`2`, M\ :sub:`3`\ CD4007)
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_f2.png
    :align: center
@@ -84,23 +78,15 @@ Additional Materials:
 Source follower output impedance
 --------------------------------
 
-.. _objective-1:
-
 Objective:
 ~~~~~~~~~~
 
 An important aspect of the source follower is to provide power or current gain. That is to say drive a lower resistance (impedance) load from a higher resistance (impedance) stage. Thus it is instructive to measure the source follower output impedance.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 - 4.7 KΩ Resistor
-| 1 - 10 KΩ Resistor
-| 1 - small signal NMOS transistor ( M\ :sub:`1` CD4007 or ZVN2110A)
-
-.. _directions-1:
+1 - 4.7 KΩ Resistor 1 - 10 KΩ Resistor 1 - small signal NMOS transistor ( M\ :sub:`1` CD4007 or ZVN2110A)
 
 Directions:
 ~~~~~~~~~~~
@@ -116,14 +102,10 @@ The circuit configuration in figure 3 adds a resistor R\ :sub:`2` to inject a te
    Figure 3 Output impedance test
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A voltage generator should be configured for a 100 Hz Sine wave with a Min an Max value set so that the voltage swings +/- 1 V around the source of of M\ :sub:`1`, the 2.5 volts at the gate minus V\ :sub:`GS`. This injects a +/- 0.1mA (1V/10KΩ) current into M\ :sub:`1`'s source. Scope input CB-H measures the change in voltage seen at the source.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~

@@ -46,8 +46,8 @@ CCES 2.6.0 does not comes with the Analog Device specific packs or the ARM CMSIS
 -  ADuCM302x Device Family Pack (DFP)
 -  ARM CMSIS Pack
 
-| 
-| |analogTV>5588113421001|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/analogTV>5588113421001
+   :alt: analogTV>5588113421001
 
 ADuCM302x Device Family Pack (DFP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,7 +89,7 @@ How to create a new project for the ADuCM3029
 
 A project for ADuCM3029 can be created using the New CrossCore Project Wizard. This wizard will guide you through the steps to create a new project.
 
-.. image:: https://wiki.analog.com/_media/analogTV>5588125388001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/analogTV>5588125388001
    :alt: analogTV>5588125388001
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-project-new.png
@@ -165,8 +165,8 @@ Opening Examples using the CCES Example Browser
 -  Launch the CCES Example Broswer by clicking on *Help --> Browse Examples*
 -  Select ADuCM302x_DFP[x.y.z] in Product drop-down list, select the example and click Open example. Then the example will be copied to your workspace.
 
-| 
-| |analogTV>5588123788001|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/analogTV>5588123788001
+   :alt: analogTV>5588123788001
 
 How to Import Existing Projects from the GIT Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -183,8 +183,8 @@ How to Import Existing Projects from the GIT Repository
 -  Select *Import existing Eclipse projects*
 -  Click *Next* and then *Finish*
 
-| 
-| |analogTV>5588103026001|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/analogTV>5588103026001
+   :alt: analogTV>5588103026001
 
 How to configure the Tools Settings used by an ADuCM3029 project
 ----------------------------------------------------------------
@@ -202,8 +202,8 @@ How to configure the Tools Settings used by an ADuCM3029 project
 Enabling/Disabling Semihosting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| |analogTV>5588123787001|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/analogTV>5588123787001
+   :alt: analogTV>5588123787001
 
 -  To enable/disable semi-hosting in your program, visit your project *Tools Settings*.
 -  Change the *semi-hosting support* option under *Linker \| Libraries*:
@@ -238,8 +238,8 @@ How to build projects for programming the ADuCM3029
 How to configure the debug session for an ADuCM3029 application
 ---------------------------------------------------------------
 
-| 
-| |analogTV>5588115358001|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/analogTV>5588115358001
+   :alt: analogTV>5588115358001
 
 You will need to create a launch configuration to debug your ADuCM3029 program.
 
@@ -341,11 +341,6 @@ How to create an Intel Hex (.hex) file or Binary (.bin) file for an ADuCM3029 ap
 
 *End of Document*
 
-.. |analogTV>5588113421001| image:: https://wiki.analog.com/_media/analogTV>5588113421001
-.. |analogTV>5588123788001| image:: https://wiki.analog.com/_media/analogTV>5588123788001
-.. |analogTV>5588103026001| image:: https://wiki.analog.com/_media/analogTV>5588103026001
-.. |analogTV>5588123787001| image:: https://wiki.analog.com/_media/analogTV>5588123787001
-.. |analogTV>5588115358001| image:: https://wiki.analog.com/_media/analogTV>5588115358001
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-toolbar.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-perspective.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png

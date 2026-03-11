@@ -23,15 +23,15 @@ IO layout
 Carrier   PMOD connector pin SPI interface FPGA pin name
 ========= ================== ============= =============
 **ZC706** PMOD1_0            CSN_TX        AJ21
-:::       PMOD1_4            CSN_RX        Y20
-:::       PMOD1_3            SCLK          AB16
-:::       PMOD1_1            DATA          AK21
+          PMOD1_4            CSN_RX        Y20
+          PMOD1_3            SCLK          AB16
+          PMOD1_1            DATA          AK21
 **ZC702** PMOD1_0            CSN_TX        E15
-:::       PL_PJTAG_TDI       CSN_RX        V8
-:::       PMOD1_3            SCLK          W5
-:::       PMOD1_1            DATA          D15
+          PL_PJTAG_TDI       CSN_RX        V8
+          PMOD1_3            SCLK          W5
+          PMOD1_1            DATA          D15
 **Zed**   JA1                CSN_TX        Y11
-:::       JA7                CSN_RX        AB11
-:::       JA4                SCLK          AA9
-:::       JA2                DATA          AA11
+          JA7                CSN_RX        AB11
+          JA4                SCLK          AA9
+          JA2                DATA          AA11
 ========= ================== ============= =============

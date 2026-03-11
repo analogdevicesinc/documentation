@@ -1,7 +1,8 @@
 =======High Resolution RMS======
 
-| :doc:`Click here to return to the Dynamic Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| ----------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamic Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 |highrespic1.png| This block uses a high-resolution rms dynamics processor that lets you control the rms TC (time constant), Hold, Decay, and Soft Knee behavior, and displays the compression curve graph for your curve drawing.
 
@@ -24,8 +25,10 @@ Controls
 | Show Graph    | |highrespic6.png| | Opens the Compression Curve editor window.                                                                                                                                                                                                                                                          |
 +---------------+-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-| Shown below are the curves of the Hi-Resolution RMS dynamics processor (right) and the regular RMS processor (left). The number of data points in this block is double that in the ordinary one (66 instead of 33).
-| |highrespic7.png|
+Shown below are the curves of the Hi-Resolution RMS dynamics processor (right) and the regular RMS processor (left). The number of data points in this block is double that in the ordinary one (66 instead of 33).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/highrespic7.png
+   :alt: highrespic7.png
 
 .. |highrespic1.png| image:: https://wiki.analog.com/_media/highrespic1.png
 .. |highrespic2.png| image:: https://wiki.analog.com/_media/highrespic2.png
@@ -33,4 +36,3 @@ Controls
 .. |highrespic4.png| image:: https://wiki.analog.com/_media/highrespic4.png
 .. |highrespic5.png| image:: https://wiki.analog.com/_media/highrespic5.png
 .. |highrespic6.png| image:: https://wiki.analog.com/_media/highrespic6.png
-.. |highrespic7.png| image:: https://wiki.analog.com/_media/highrespic7.png

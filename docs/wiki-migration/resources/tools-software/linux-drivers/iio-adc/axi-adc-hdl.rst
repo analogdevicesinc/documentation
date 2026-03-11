@@ -25,9 +25,9 @@ Supported Devices
 Supported Boards
 ----------------
 
-| This driver supports the
-| \* :doc:`AD-FMCOMMS1-EBZ FMC Card </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz>`
+This driver supports the
 
+-  :doc:`AD-FMCOMMS1-EBZ FMC Card </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz>`
 -  :doc:`AD-FMCOMMS2-EBZ FMC Card </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz>`
 -  :doc:`AD-FMCOMMS3-EBZ FMC Card </wiki-migration/resources/eval/user-guides/ad-fmcomms3-ebz>`
 -  :doc:`AD-FMCOMMS4-EBZ FMC Card </wiki-migration/resources/eval/user-guides/ad-fmcomms4-ebz>`
@@ -52,7 +52,7 @@ Description
 
 The AXI ADC HDL driver is the driver for :doc:`Generic AXI ADC IP core </wiki-migration/resources/fpga/docs/axi_adc_ip>` which is used on various FPGA designs. The driver is implemented as an Linux IIO driver. It's register map can be found here: :doc:`Base register map (common to all cores) </wiki-migration/resources/fpga/docs/hdl/regmap>`
 
-This driver is split into two parts. A control driver let’s call it SPI-ADC which configures the converter internal control registers, this part is typically instantiated via the SPI bus. (see: :git-linux:`drivers/iio/adc/ad9467.c`, :git-linux:`drivers/iio/adc/ad9361_conv.c` or :git-linux:`ad9371_conv.c <drivers/iio/adc/ad9361_conv.c>`) Device probing for the data capture driver (AXI-ADC) which controls the AXI HDL core registers and the DMA, is delayed until the SPI control driver is fully probed. The device tree phandle "**spibus-connected**" is used to connect the capture driver with is SPI control driver. This split is required since the AXI-ADC and the SPI-ADC parts are instantiated via different busses. The AXI-ADC driver registers the IIO device, the SPI-ADC instance doesn’t. However a shared data structure (struct axiadc_converter) is used so that the methods local to the SPI-ADC driver can extend the IIO attributes provided the AXI-ADC driver. There is also a callback provided (post_setup) which calls a from the AXI-ADC into the AXI-SPI driver after the AXI-ADC is fully alive. This post setup callback is then typically used to finally configure the digital data path, test and tune the digital data interface etc.
+This driver is split into two parts. A control driver let’s call it SPI-ADC which configures the converter internal control registers, this part is typically instantiated via the SPI bus. (see: :git-linux:`drivers/iio/adc/ad9467.c`, :git-linux:`drivers/iio/adc/ad9361_conv.c` or `ad9371_conv.c <https://github.com/analogdevicesinc/linux/blob/mykonos/drivers/iio/adc/ad9361_conv.c>`_) Device probing for the data capture driver (AXI-ADC) which controls the AXI HDL core registers and the DMA, is delayed until the SPI control driver is fully probed. The device tree phandle "**spibus-connected**" is used to connect the capture driver with is SPI control driver. This split is required since the AXI-ADC and the SPI-ADC parts are instantiated via different busses. The AXI-ADC driver registers the IIO device, the SPI-ADC instance doesn’t. However a shared data structure (struct axiadc_converter) is used so that the methods local to the SPI-ADC driver can extend the IIO attributes provided the AXI-ADC driver. There is also a callback provided (post_setup) which calls a from the AXI-ADC into the AXI-SPI driver after the AXI-ADC is fully alive. This post setup callback is then typically used to finally configure the digital data path, test and tune the digital data interface etc.
 
 For the **AD9361** and **AD9371** family of transceivers, things are a bit more differentiated. In fact these devices have a separate IIO device for the radio control portion. We call them the PHY devices. (:git-linux:`drivers/iio/adc/ad9361.c` and :git-linux:`drivers/iio/adc/ad9371.c` ) The **PHY** drivers are intended to be independent from our AXI-ADC capture drivers and underlying HDL designs. Therefore things related to the AXI-ADC driver are located in the ad93X1_conv.c files.
 
@@ -175,7 +175,7 @@ Example:
 
            spibus-connected = <&adc_ad9467>;
        };
-   }; 
+   };
 
 Enabling Linux driver support
 =============================
@@ -202,15 +202,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            -*-     Industrial I/O lock free software ring
            -*-   Enable triggered sampling support
 
-                 *** Analog to digital converters ***
+                 ** Analog to digital converters **
            [--snip--]
-               -*- Analog Devices High-Speed AXI ADC driver core             
-                   <*> Analog Devices AD9208 and similar high speed ADCs         
-                   <*> Analog Devices AD9371 RF Transceiver driver               
-                   <*> Analog Devices ADRV9009/ADRV9008 RF Transceiver driver    
-                   <*> Analog Devices AD6676 Wideband IF Receiver driver         
-                   <*> Analog Devices AD9467 etc. high speed ADCs                
-                   <*> Analog Devices AD9680 and similar high speed ADCs 
+               -*- Analog Devices High-Speed AXI ADC driver core
+                   <*> Analog Devices AD9208 and similar high speed ADCs
+                   <*> Analog Devices AD9371 RF Transceiver driver
+                   <*> Analog Devices ADRV9009/ADRV9008 RF Transceiver driver
+                   <*> Analog Devices AD6676 Wideband IF Receiver driver
+                   <*> Analog Devices AD9467 etc. high speed ADCs
+                   <*> Analog Devices AD9680 and similar high speed ADCs
            [--snip--]
 
 Hardware configuration
@@ -219,14 +219,12 @@ Hardware configuration
 Driver testing
 ==============
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -267,10 +265,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -283,15 +278,11 @@ Show device name
 Show scale
 ----------
 
-| **Description:**
-| scale to be applied to in_voltageX_raw in order to obtain the measured voltage in millivolts.
+**Description:** scale to be applied to in_voltageX_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -306,10 +297,7 @@ Show available scales
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -322,17 +310,13 @@ Show available scales
 Set ADC calibration gain
 ------------------------
 
-| **Description:**
-| in_voltage0_calibscale
-| in_voltage1_calibscale
-| Set the channel calibration gain. Writing to these files will set the calibration gain for the respective channel. Valid values are in the range of 0..1.999999
+**Description:** in_voltage0_calibscale in_voltage1_calibscale
+
+Set the channel calibration gain. Writing to these files will set the calibration gain for the respective channel. Valid values are in the range of 0..1.999999
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -345,17 +329,13 @@ Set ADC calibration gain
 Set ADC calibration bias
 ------------------------
 
-| **Description:**
-| in_voltage0_calibbias
-| in_voltage1_calibbias
-| Set the channel calibration bias/offset. Writing to these files will set the calibration bias for the respective channel. Valid values are in the range of +/- 16384.
+**Description:** in_voltage0_calibbias in_voltage1_calibbias
+
+Set the channel calibration bias/offset. Writing to these files will set the calibration bias for the respective channel. Valid values are in the range of +/- 16384.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -368,15 +348,13 @@ Set ADC calibration bias
 Show available ADC test modes
 -----------------------------
 
-| **Description:**
-| Show available test modes supported by the underlying ADC. These test modes are typically used to test the high speed digital interface between the converter and interface adaptor.
+**Description:**
+
+Show available test modes supported by the underlying ADC. These test modes are typically used to test the high speed digital interface between the converter and interface adaptor.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -389,17 +367,13 @@ Show available ADC test modes
 Set ADC test mode
 -----------------
 
-| **Description:**
-| in_voltage0_test_mode
-| in_voltage1_test_mode
-| Enter test modes supported by the underlying ADC. These test modes are typically used to test the high speed digital interface between the converter and interface adaptor.
+**Description:** in_voltage0_test_mode in_voltage1_test_mode
+
+Enter test modes supported by the underlying ADC. These test modes are typically used to test the high speed digital interface between the converter and interface adaptor.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -429,22 +403,19 @@ Example:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable_available**                                                                                                                       
+      root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable_available**
       **arm disarm trigger_manual**
       root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable**
       **disarm**
-      root@analog:/sys/bus/iio/devices/iio:device3# **echo arm > sync_start_enable**                                                                                                                                 
+      root@analog:/sys/bus/iio/devices/iio:device3# **echo arm > sync_start_enable**
       root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable**
       **arm**
-      root@analog:/sys/bus/iio/devices/iio:device3# **echo trigger_manual > sync_start_enable**                                                                                                                      
+      root@analog:/sys/bus/iio/devices/iio:device3# **echo trigger_manual > sync_start_enable**
       root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable**
       **disarm**
    
@@ -455,10 +426,7 @@ Buffer management
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -470,32 +438,75 @@ Buffer management
    
 
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+
+Every buffer implementation features a set of files:
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **length_align_bytes**
+| Using the high-speed interface. DMA buffers may have an alignment requirement for the buffer length. Newer versions of the kernel will report the alignment requirements associated with a device through the \`length_align_bytes\` property.
+
+| **scan_elements**
+| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root:/sys/bus/iio/devices/iio:device4/scan_elements> **ls**
-      in_voltage0_en         
-      in_voltage0_index      
-      in_voltage0_type 
-      in_voltage1_en         
-      in_voltage1_index      
-      in_voltage1_type        
+      in_voltage0_en
+      in_voltage0_index
+      in_voltage0_type
+      in_voltage1_en
+      in_voltage1_index
+      in_voltage1_type
       root:/sys/bus/iio/devices/iio:device4/scan_elements>
    
 
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+| **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in_voltageX_type / in_voltageX-voltageY_type / timestamp_type:**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space. Form is [s|u]bits/storage-bits. s or u specifies if signed (2's complement) or unsigned. bits is the number of bits of data and storage-bits is the space (after padding) that it occupies in the buffer. Note that some devices will have additional information in the unused bits so to get a clean value, the bits value must be used to mask the buffer output value appropriately. The storage-bits value also specifies the data alignment. So u12/16 will be a unsigned 12 bit integer stored in a 16 bit location aligned to a 16 bit boundary. For other storage combinations this attribute will be extended appropriately.
+
+| **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
+
 
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

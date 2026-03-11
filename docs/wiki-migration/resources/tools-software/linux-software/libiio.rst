@@ -30,7 +30,8 @@ If you just want to use libiio and iiod, which may be on a pre-compiled image - 
 Where to get libiio?
 ====================
 
-.. include:: ../../eval/user-guides/ad-fmcomms2-ebz/downloads.rst
+The libiio library can be obtained on the `Github <http://github.com/analogdevicesinc/libiio>`_ page of the project.
+
 
 How to build it?
 ================
@@ -202,10 +203,7 @@ In order to use the libIIO USB Backend - support must be built into IIOD. A simp
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -230,10 +228,7 @@ The fix:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

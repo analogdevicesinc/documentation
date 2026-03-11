@@ -1,7 +1,7 @@
 SuperPhat Spatializer
 =====================
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | The SuperPhat block is an advanced algorithm that allows for a wider stereo image to be played back from two closely spaced speakers. This spatializer algorithm is only meant to widen signals that are already in stereo format, in order to enhance the image. The function is similar to the :doc:`Phat-Stereo </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/phatstereo>` algorithm but performs a much more advanced implementation of the algorithm to get a better effect. | |superphatpic1.png| |
@@ -63,8 +63,10 @@ The two parameters available for adjustment Spread Frequency and Effect Gain, ch
 Example
 -------
 
-| The following schematic image shows the SuperPhat algorithm in comparison with the :doc:`Phat-Stereo </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/phatstereo>` algorithm. Both algorithms have similar functions, but the effect is more pronounced with the SuperPhat algorithm at the cost of more instructions. This image shows the :doc:`Inputs </wiki-migration/resources/tools-software/sigmastudio/toolbox/io/input>`, stereo `mux <https://wiki.analog.com/resources/tools-software/sigmastudio/toolbox/multiplexersdemultiplexers/stereoswitchnx2>`_, and :doc:`outputs </wiki-migration/resources/tools-software/sigmastudio/toolbox/io/output>`, along with the two methods for stereo spatialization offered in the SigmaStudio library.
-| |superphatpic2.png|
+The following schematic image shows the SuperPhat algorithm in comparison with the :doc:`Phat-Stereo </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/phatstereo>` algorithm. Both algorithms have similar functions, but the effect is more pronounced with the SuperPhat algorithm at the cost of more instructions. This image shows the :doc:`Inputs </wiki-migration/resources/tools-software/sigmastudio/toolbox/io/input>`, stereo `mux <https://wiki.analog.com/resources/tools-software/sigmastudio/toolbox/multiplexersdemultiplexers/stereoswitchnx2>`_, and :doc:`outputs </wiki-migration/resources/tools-software/sigmastudio/toolbox/io/output>`, along with the two methods for stereo spatialization offered in the SigmaStudio library.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/superphatpic2.png
+   :alt: superphatpic2.png
 
 Algorithm Details
 -----------------
@@ -92,4 +94,3 @@ Algorithm Details
 +----------------------------+--------------------------------------------------------------+
 
 .. |superphatpic1.png| image:: https://wiki.analog.com/_media/superphatpic1.png
-.. |superphatpic2.png| image:: https://wiki.analog.com/_media/superphatpic2.png

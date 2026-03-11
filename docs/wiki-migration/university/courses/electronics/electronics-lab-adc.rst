@@ -64,23 +64,10 @@ Any analog input in this range gives the same digital output code.
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 OP482 operational amplifiers
-| 2 AD654 Voltage-to-Frequency Converter
-| 3 1kΩ resistor
-| 5 10kΩ resistor
-| 1 nF capacitor
-| 1 SN74HC08 AND gate
-| 1 SN74HC32 OR gate
-| 1 SN74HC04 inverter
-| 1 1 uF capacitor
-| 1 AD7920 12-bit ADC
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 OP482 operational amplifiers 2 AD654 Voltage-to-Frequency Converter 3 1kΩ resistor 5 10kΩ resistor 1 nF capacitor 1 SN74HC08 AND gate 1 SN74HC32 OR gate 1 SN74HC04 inverter 1 1 uF capacitor 1 AD7920 12-bit ADC
 
 Flash ADC
 ---------
-
-.. _background-1:
 
 Background
 ~~~~~~~~~~
@@ -162,8 +149,6 @@ The Unary group channel represents the output thermometer code for the 2-bit Fla
 Voltage-to-Frequency Converter as ADC
 -------------------------------------
 
-.. _background-2:
-
 Background
 ~~~~~~~~~~
 
@@ -185,8 +170,6 @@ In order to achieve the conversion, the output of the converter should be connec
 
 The total number of signal edges (rising or falling) counted during the count period is proportional to the input voltage. For this particular setup a 1 V full-scale input voltage produces a 100 kHz signal. If the count period is 100 ms, then the total count will be 10,000. Scaling from this maximum is then used to determine the input voltage. Thus, a count of 5000 corresponds to an input voltage of 0.5 V.
 
-.. _hardware-setup-1:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -203,8 +186,6 @@ Build the following breadboard circuit for Voltage-to-Frequency Converter as ADC
 
    Figure 11. Voltage-to-Frequency Converter as ADC - breadboard connections
 
-
-.. _procedure-1:
 
 Procedure
 ~~~~~~~~~
@@ -248,8 +229,6 @@ The plot represents the output signal of the Voltage-to-Frequency Converter for 
 Successive Approximation Register (SAR) ADC
 -------------------------------------------
 
-.. _background-3:
-
 Background
 ~~~~~~~~~~
 
@@ -290,8 +269,6 @@ The SAR is initialized so that the most significant bit (MSB) is equal to a digi
 
 Figure 15 shows an example of a 4-bit conversion. The y-axis represents the DAC output voltage. In the example, the first comparison shows that VIN < VDAC. Thus, bit 3 is set to 0. The DAC is then set to 0100 and the second comparison is performed. As VIN > VDAC, bit 2 remains at 1. The DAC is then set to 0110, and the third comparison is performed. Bit 1 is set to 0, and the DAC is then set to 0101 for the final comparison. Finally, bit 0 remains at 1 because VIN > VDAC.
 
-.. _hardware-setup-2:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -324,8 +301,6 @@ Build the following breadboard circuit for SAR ADC.
 
 
 Two Precision Rail-to-Rail op-amps from the OP484 integrated circuit were used for the SAR ADC, one is used for the R-2R Ladder DAC, and the other one as comparator between the DAC output and input voltage.
-
-.. _procedure-2:
 
 Procedure
 ~~~~~~~~~
@@ -373,8 +348,6 @@ The output value trying to reach the input value (which is set to 2V in the scri
 AD7920 12-bit ADC
 -----------------
 
-.. _background-4:
-
 Background
 ~~~~~~~~~~
 
@@ -393,8 +366,6 @@ The :adi:`AD7920 <media/en/technical-documentation/data-sheets/AD7910_7920.pdf>`
 
 
 The acquisition phase is when the SW2 is closed and SW1 is in position A. With this setup, the comparator is held in a balanced condition, and the sampling capacitor acquires the signal on Vin. For the ADC to start a conversion, SW2 opens and SW1 moves to Position B causing the comparator to become unbalaced. the control logic and charge redistribution DAC are used to add and subtract fixed amounts of charge from the sampling capacitor to bring the comparator back to a balanced condition so the conversion is completed.
-
-.. _hardware-setup-3:
 
 Hardware Setup
 ~~~~~~~~~~~~~~
@@ -421,8 +392,6 @@ Figure 21 shows a typical connection setup for the AD7920. VREF is taken interna
    Figure 22. AD7920 breadboard connections
 
 
-.. _procedure-3:
-
 Procedure
 ~~~~~~~~~
 
@@ -442,8 +411,6 @@ In Logic Analyzer configure DIO0, DIO1 and DIO2 as a group channel. Set the grou
 
 In Patern Generator you should configure the clock signal. Enable DIO1 channel, set it's Pattern as Clock with a 5Mhz frequency and click Run. You can control the CS# from the Digital IO tool. The conversion will start when you toggle DIO0 pin, configured as output pin. If the fallnig edge of CS# and the low state of CLK happen the same time, the conversion is initiated and you shoud see the output sigal as well as MISO hexadecimal data in Logic Analyzer as in figure 24.
 
-|
-
 .. container:: centeralign
 
    \ |image19|\
@@ -455,7 +422,6 @@ In Patern Generator you should configure the clock signal. Enable DIO1 channel, 
 
 
 You can check the result using the formula for ADC transfer function, where the MISO data is the Digital output code, voltage read on Oscilloscope channel 1 is the Analog Input, voltage read on Oscilloscope channel 2 is the Reference Input and N is the number of bits of AD7920.
-|
 
 .. container:: centeralign
 
@@ -571,8 +537,6 @@ The simulation adds 60Hz line noise to a DC input voltage. Several cases are run
    Figure 30. Dual-Slope ADC Integrator Simulation 2
 
 
-.. _hardware-setup-4:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -589,8 +553,6 @@ Build the following breadboard circuit for the dual-slope ADC, and make the indi
 
    Figure 31. Dual-Slope ADC Integrator Breadboard Circuit
 
-
-.. _procedure-4:
 
 Procedure
 ~~~~~~~~~

@@ -5,7 +5,9 @@ Xilinx ISE HDL Reference Design
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- This design is targeted for Zynq based FPGA systems.
+
+
+This design is targeted for Zynq based FPGA systems.
 
 Reference Design
 ----------------
@@ -23,16 +25,11 @@ Details about the Chipscope interface and how to run the ISE project can be foun
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   :git-fpgahdl_xilinx:`ISE HDL Reference Design <motor_control/adi_zed_ise_rev2>`
+   :git-fpgahdl_xilinx:`ISE HDL Reference Design <motor_control/adi_zed_ise_rev2>` :git-fpgahdl_xilinx:`Chipscope Project <motor_control/adi_zed_ise_rev2/Chipscope>`
 
-
-   | :git-fpgahdl_xilinx:`Chipscope Project <motor_control/adi_zed_ise_rev2/Chipscope>`
-   |
 
 Support
 -------
@@ -44,5 +41,5 @@ Support
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#linux
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/reference_hdl/navigation AD-FMCMOTCON1-EBZ#linux
    :alt: HDL Design for Linux#..:\|Overview#none

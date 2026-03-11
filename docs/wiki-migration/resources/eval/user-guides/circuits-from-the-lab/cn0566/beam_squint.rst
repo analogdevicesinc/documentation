@@ -1,15 +1,18 @@
 Lab 6: Beam Squint
 ==================
 
---------------
 
 Training Objective
 ------------------
 
 In this lab, we will observe the change in steering angle as a function of signal frequency.
 
-| Recall that beam deviation (beam squint) vs frequency can be calculated as: |image1|
-| For example:
+Recall that beam deviation (beam squint) vs frequency can be calculated as:
+
+
+|image1|
+
+For example:
 
 -  Let’s set our carrier frequency to be 10.5 GHz, and f0 = 10 GHz (500 MHz of BW)
 -  We want to steer the beam to +/- 45° from mechanical boresight
@@ -19,15 +22,23 @@ In this lab, we will observe the change in steering angle as a function of signa
 Instructions
 ------------
 
-| 1- In the Phaser GUI, select “Lab 5: Beam Squint” |image2|
-| 2- Set the RF source (HB100) to an angle of about 50 degrees
+1- In the Phaser GUI, select “Lab 5: Beam Squint”
+
+
+|image2|
+
+2- Set the RF source (HB100) to an angle of about 50 degrees
 
 3- Click “Copy Plot to Memory”
 
 **4- Record the peak angle (you can also turn on “Show Peak Angle” under “Plot Options” tab)**
 
-| 5- Change the “Signal BW” slider bar to 500 MHz |image3|
-| 6- Record the new peak angle. Does the difference between the two peaks match our ~3° calculation?
+5- Change the “Signal BW” slider bar to 500 MHz
+
+
+|image3|
+
+6- Record the new peak angle. Does the difference between the two peaks match our ~3° calculation?
 
 7- Try other *signal bandwidths* and observe the effect.
 

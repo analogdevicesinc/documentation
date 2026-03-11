@@ -1,13 +1,27 @@
-| :doc:`Click here to go back </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/advanceddesign>`
-| =====Target and Communication Libraries Integration===== This section briefs about the implementation and configuration details of different components of the SigmaStudio+ for SHARCa
-| Integrating target and communication libraries into custom real-time application
-| In order to create an Application (SHARC in this case), running the communication library and target libraries, users must do the following:
-| 1. In CrossCore Embedded Studio, start a new CrossCore Project. Enter the name of the project, type of project, processor etc. when requested, and proceed by pressing ‘Next’.
-| 2. Add the SigmaStudio+ for SHARC communication library and target library to the project from the installed Add-ins for the project using system.svc setting.
-| |image1|
-| 3. Pin Multiplexing to be enable in system properties for enabling the SPI1 as mentions below:
-| |image2|
-| 4. Include the following header files in the main Application code.
+:doc:`Click here to go back </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/advanceddesign>`
+
+Target and Communication Libraries Integration
+==============================================
+
+This section briefs about the implementation and configuration details of different components of the SigmaStudio+ for SHARCa
+
+Integrating target and communication libraries into custom real-time application
+
+In order to create an Application (SHARC in this case), running the communication library and target libraries, users must do the following:
+
+1. In CrossCore Embedded Studio, start a new CrossCore Project. Enter the name of the project, type of project, processor etc. when requested, and proceed by pressing ‘Next’.
+
+2. Add the SigmaStudio+ for SHARC communication library and target library to the project from the installed Add-ins for the project using system.svc setting.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/library_21569.jpg
+   :width: 800px
+
+3. Pin Multiplexing to be enable in system properties for enabling the SPI1 as mentions below:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/pin_mux_21569_final.jpg
+   :width: 800px
+
+4. Include the following header files in the main Application code.
 
 ::
 
@@ -17,24 +31,28 @@
      d. adi_ss_communication.h
      e. adi_ss_ssn.h
 
-| 5. Copy the adi_ss_gmap.asm and adi_ss_app.ldf files from example lib Integration application (Example: C:\\Analog Devices\\SigmaStudioPlus-Relx.x.x\\Target\\Examples\\LibraryIntegration\\ADSP-21569\\LibIntegrationExample_Core1\\src) into your project source folder.
-| 6. Refer the app.ldf available in the respective processor library Integration example project in the below path: "C:\\Analog Devices\\SigmaStudioPlus-Relx.x.x\\Target\\Examples\\LibraryIntegration", and update the memory sections, stack and heap allocation and inclusion of “adi_ss_app.ldf” file in the app.ldf. The app.ldf will be present in the CCES project's "system-->startup_ldf" folder.
-| Also note that if your system does not have L3 memory, you need to make a change to the following section in your app.ldf as follows, which is needed for the SigmaStudio GMAP memory allocation.
-| mem_L2_bw { TYPE(BW RAM) START(0x20000000) END(0x200b9fff) WIDTH(8) }
+5. Copy the adi_ss_gmap.asm and adi_ss_app.ldf files from example lib Integration application (Example: C:\\Analog Devices\\SigmaStudioPlus-Relx.x.x\\Target\\Examples\\LibraryIntegration\\ADSP-21569\\LibIntegrationExample_Core1\\src) into your project source folder.
+
+6. Refer the app.ldf available in the respective processor library Integration example project in the below path: "C:\\Analog Devices\\SigmaStudioPlus-Relx.x.x\\Target\\Examples\\LibraryIntegration", and update the memory sections, stack and heap allocation and inclusion of “adi_ss_app.ldf” file in the app.ldf. The app.ldf will be present in the CCES project's "system-->startup_ldf" folder.
+
+Also note that if your system does not have L3 memory, you need to make a change to the following section in your app.ldf as follows, which is needed for the SigmaStudio GMAP memory allocation.
+
+::
+
+    mem_L2_bw               { TYPE(BW RAM) START(0x20000000) END(0x200b9fff) WIDTH(8) }
 
 ::
 
     #if !defined(MY_SDRAM_SWCODE_MEM)
     /* 96 kB reserverd for SS4G code  */
-    mem_L2_bw_SS4G_Code    { TYPE(BW RAM) START(0x200C0000) END(0x200D7fff) WIDTH(8) }   
-    #endif  
-    #if !defined(MY_SDRAM_DATA1_MEM)   
-    /* 160 kB reserverd for SS4G data  */   
-    mem_L2_bw_SS4G_Data    { TYPE(BW RAM) START(0x200D8000) END(0x200f9fff) WIDTH(8) }   
+    mem_L2_bw_SS4G_Code    { TYPE(BW RAM) START(0x200C0000) END(0x200D7fff) WIDTH(8) }
+    #endif
+    #if !defined(MY_SDRAM_DATA1_MEM)
+    /* 160 kB reserverd for SS4G data  */
+    mem_L2_bw_SS4G_Data    { TYPE(BW RAM) START(0x200D8000) END(0x200f9fff) WIDTH(8) }
     #endif
 
-| 
-| 7. Allocate instance memory for connection and communication component within the main application code, as shown below.
+7. Allocate instance memory for connection and communication component within the main application code, as shown below.
 
 ::
 
@@ -46,8 +64,7 @@
     SECTION("ss_app_data0_fast")
     uint8_t adi_ss_connection_mem[ADI_SS_CONNECTION_MEMSIZE];
 
-| 
-| 8.Declare the SSnconfig, Backchannel info variables and the functions needed for SSncofig, in the global space of the main application as shown below:
+8.Declare the SSnconfig, Backchannel info variables and the functions needed for SSncofig, in the global space of the main application as shown below:
 
 ::
 
@@ -141,7 +158,7 @@
 ::
 
       void adi_SMAP_Application_Callback(ADI_SS_PROC_ID eCoreID)
-      { 
+      {
        if(eCoreID==PROCESSOR_SH0)  // Corresponding SHARC core ID
         {
          nSMAPReceived = 1;
@@ -222,31 +239,25 @@
         CopyFix2Float((volatile uint32_t*)&nTempBuff[i], NUM_CHANNELS, pSSInBuff[i], 1, BLOCK_SIZE, 2u);
       }
       /* Call to the Schematic processing  */
-      adi_ss_schematic_process(hSSnHandle,BLOCK_SIZE,(adi_ss_sample_t **)pSSInBuff,(adi_ss_sample_t **)pSSOutBuff,pSSnProperties);
+      adi_ss_schematic_process(hSSnHandle,BLOCK_SIZE,(adi_ss_sample_t **)pSSInBuff,(adi_ss_sample_t**)pSSOutBuff,pSSnProperties);
       /* Float to fix conversion and copy back to SPORT buffer */
       for(i=0; i<NUM_CHANNELS; i++)
       {
         CopyFloat2Fix(pSSOutBuff[i], 1, (volatile uint32_t * )&pSportOut[i], NUM_CHANNELS, BLOCK_SIZE, 0u);
       }
-      
 
-| 14. Please include the “src” path for including the “adi_ss_app.ldf” file as shown below.
-| |image3|
+14. Please include the “src” path for including the “adi_ss_app.ldf” file as shown below.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/src_21569.jpg
+   :width: 800px
 
 **Note:**
 
 ::
 
-      •   This document explains about the Sigma Studio library integration. The I/O source configurations like 
-          ADC/DAC, SPORT configurations for receiving I/O data, SRU configurations for signal routing and I/O Buffer 
+      •   This document explains about the Sigma Studio library integration. The I/O source configurations like
+          ADC/DAC, SPORT configurations for receiving I/O data, SRU configurations for signal routing and I/O Buffer
           allocations should be taken care by the developer.
-      •   We have the different lib-Integration examples for different target processors which is available in the 
+      •   We have the different lib-Integration examples for different target processors which is available in the
           below path, please refer the same for any integration issues.
           C:\Analog Devices\SigmaStudioPlus-Rex.x.x\Target\Examples\LibraryIntegration
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/library_21569.jpg
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/pin_mux_21569_final.jpg
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/src_21569.jpg
-   :width: 800px

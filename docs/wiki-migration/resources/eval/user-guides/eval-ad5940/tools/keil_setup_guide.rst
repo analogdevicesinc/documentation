@@ -27,7 +27,7 @@ To edit and run example code in Keil follow these steps:
    
 
 
-*(*\ **Hint:** *Also download the included submodule in examples/ad5940lib. This can be done with the git bash in one step by executing: "git clone --recurse-submodules* https://github.com/analogdevicesinc/ad5940-examples.git\ *" (without the double quotes))*
+*(**Hint:** Also download the included submodule in examples/ad5940lib. This can be done with the git bash in one step by executing: "git clone --recurse-submodules* https://github.com/analogdevicesinc/ad5940-examples.git*" (without the double quotes))*
 
 -  Navigate to the **examples->AD5940_ADC->ADICUP3029**
 -  Double click on ADICUP3029.uvprojx file to open the project in Keil [The package at https://github.com/analogdevicesinc/ad5940-examples doesn't contain ADICUP3029.uvprojx in **examples->AD5940_ADC->ADICUP3029** or other folders]

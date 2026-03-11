@@ -7,8 +7,7 @@ Setting up EV-COG-AD3029LZ is a three step process.
 -  Software Packs & Drivers Setup
 -  Running an Example Project
 
-| 
-| EV-COG-AD4050LZ can be used with following Toolchains. Please see below links for the quickstart guide with respect to different IDEs.
+EV-COG-AD4050LZ can be used with following Toolchains. Please see below links for the quickstart guide with respect to different IDEs.
 
 CrossCore Embedded Studio
 -------------------------
@@ -22,8 +21,9 @@ IAR Embedded Workbench for ARM
 
 Click below link to go to CrossCore Embedded Studio userguide.
 
-| :doc:`EV-COG-AD3029LZ with IAR Embedded Workbench for ARM </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/tools/iar_guide>`
-| :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
+:doc:`EV-COG-AD3029LZ with IAR Embedded Workbench for ARM </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/tools/iar_guide>`
 
-| 
+:doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
+
+
 | End Document

@@ -1,7 +1,7 @@
 Loudness (Low and High) External Control
 ========================================
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
 
 --------------
 
@@ -18,7 +18,9 @@ The external control pin is used to set the loudness volume parameter for the al
    Note: The example below can be used to test the algorithm's functionality, but it is for demonstration purposes only. See below for a practical design example.
 
 
-| |loudnessextpic1.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/loudnessextpic1.png
+   :alt: loudnessextpic1.png
+   :align: center
 
 **Controls:**
 
@@ -31,14 +33,10 @@ The external control pin is used to set the loudness volume parameter for the al
 
 ::
 
-     selection bewteen General first order filter and Butter worth first order filter. 
+     selection bewteen General first order filter and Butter worth first order filter.
 
-| 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/loudness_ext_control_gui.png
 
 **Example:**
 
 The following example shows how a rotary encoder could be used to control the loudness level.
-
-.. |loudnessextpic1.png| image:: https://wiki.analog.com/_media/loudnessextpic1.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/loudness_ext_control_gui.png

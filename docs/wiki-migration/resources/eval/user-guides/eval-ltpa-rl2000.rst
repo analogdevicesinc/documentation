@@ -11,13 +11,13 @@ Overview
 
 The :adi:`EVAL-LTPA-RL2000` is a portable, USB efficiency meter based on the :adi:`LTpowerAnalyzer® <eval-ltpa-kit>` that allows you to plot DC efficiency and power loss of a DC-DC power supply, across multiple values of load current − a crucial step in evaluating design performance. This instrument can be used on its own, and is not dependent on the :adi:`ADALM2000` and the main board for operation.
 
-| 
-| |EVAL-LTPA-RL2000 (Angled)|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/eval-ltpa-rl2000_angle-evaluation-board.jpg
+   :alt: EVAL-LTPA-RL2000 (Angled)
+   :align: center
+   :width: 400px
 
-| 
+
 | The RL2000 has two ±125 V DC voltmeters for measuring the input and output voltages, a 30 A DC current meter with a programmable 0 V to 5 V voltage drop for the power supply input, and a 30 A (150 W max.) DC current load for the power supply output. Internal temperature sensing and a rear-mounted cooling fan provide thermal protection during high-power applications.
-
-| 
 
 Specifications
 --------------
@@ -63,9 +63,6 @@ Shutdown Temperature                      70           °C
 
 *\*Accuracy specifications are given in: ± (% of reading + % of range).*
 
-
-| 
-
 About Efficiency Measurements
 -----------------------------
 
@@ -80,23 +77,28 @@ To measure efficiency, you will need to first determine the input power and outp
 
 The diagram below shows a generic test setup for measuring efficiency. In this example, a programmable current load is used to sweep the output current of the device under test (DUT), while an ammeter is used to measure the input current. Two voltmeters monitor the input and output voltages; the input power, output power, efficiency, and power loss can then be calculated from the measurements.
 
-|
-
-| |Efficiency Test Setup|
-
-| 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/31._rl2000.png
+   :alt: Efficiency Test Setup
+   :align: center
+   :width: 400px
 
 Hardware Interface
 ------------------
 
-| 
-| |EVAL-LTPA-RL2000 (Front)|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/eval-ltpa-rl2000_front-evaluation-board.jpg
+   :alt: EVAL-LTPA-RL2000 (Front)
+   :align: center
+   :width: 500px
 
-| 
-| ==== USB-C Connector ==== The USB-C interface is used to connect to the host PC for power and data communication. The LTpowerAnalyzer® software will automatically detect the compensation probe and display its control interface window during start-up.
+USB-C Connector
+~~~~~~~~~~~~~~~
 
-| 
-| ==== Terminals ==== The EVAL-LTPA-RL2000 has four pairs of terminals for interfacing the meter with a DUT:
+The USB-C interface is used to connect to the host PC for power and data communication. The LTpowerAnalyzer® software will automatically detect the compensation probe and display its control interface window during start-up.
+
+Terminals
+~~~~~~~~~
+
+The EVAL-LTPA-RL2000 has four pairs of terminals for interfacing the meter with a DUT:
 
 +---------------+-----------------------------------------------------------------------------------+
 | Terminal Pair | Function                                                                          |
@@ -111,9 +113,7 @@ Hardware Interface
 +---------------+-----------------------------------------------------------------------------------+
 
 | 
-
-Hardware Setup
---------------
+| ===== Hardware Setup =====
 
 Setup Requirements
 ~~~~~~~~~~~~~~~~~~
@@ -122,7 +122,6 @@ Setup Requirements
 -  Device Under Test (e.g., LT8642S Demo Board)
 -  DC Power Supply
 
-|
 
 | Refer to the diagram below for the typical hardware setup for the RL2000 efficiency meter. It is recommended to use short cables to connect the RL2000 to the DUT to minimize parasitics.
 
@@ -131,9 +130,8 @@ Setup Requirements
    :align: center
    :width: 400px
 
-   | 
 
-**Step-by-Step Procedure:**
+| **Step-by-Step Procedure:**
 
 STEP #1: Connect the Current 1 terminals between the (+) terminal of the input power source and the (+) input of the DUT. This is used to monitor the input current of the DUT.
 
@@ -145,18 +143,20 @@ STEP #4: Connect the Current 2 terminals across the (+) and (-) output pins of D
 
 STEP #5: Connect a USB-C cable from the your PC to the USB port on the RL2000 to complete the setup.
 
-|
-
 Example Setup Using the LT8642S Demo Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A hardware setup of the RL2000 is shown below for reference. This example uses the LT8642S demo board included with the EVAL-LTPA-KIT as the device under test.
 
-| 
-| |EVAL-LTPA-RL2000 Example Setup|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/37._rl2000.png
+   :alt: EVAL-LTPA-RL2000 Example Setup
+   :align: center
+   :width: 400px
 
-| 
-| ===== Typical Applications ===== Example applications of the RL2000 efficiency meter are shown below:
+Typical Applications
+--------------------
+
+Example applications of the RL2000 efficiency meter are shown below:
 
 1. Basic Setup.
 
@@ -165,48 +165,42 @@ A hardware setup of the RL2000 is shown below for reference. This example uses t
    :align: center
    :width: 800px
 
-| 
-| 2. Basic Setup with Servo Voltage. This example demonstrates how the input voltage (V1) remains relatively stable when the servo voltage is enabled.
+2. Basic Setup with Servo Voltage. This example demonstrates how the input voltage (V1) remains relatively stable when the servo voltage is enabled.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/26._rl2000.png
    :alt: Basic Setup with Servo
    :align: center
    :width: 800px
 
-| 
-| 3. Basic Setup with Micro-Power DUT. When dealing with low power DUTs, the leakage currents flowing into Voltage 1 and Voltage 2 can skew the current measurements considerably. This example shows how the RL2000 can compensate for this in the software by calculating the leakage currents and removing them from the measured currents, as well as adding settling time to allow the load current time to stabilize (refer to RL2000 Control Panel).
+3. Basic Setup with Micro-Power DUT. When dealing with low power DUTs, the leakage currents flowing into Voltage 1 and Voltage 2 can skew the current measurements considerably. This example shows how the RL2000 can compensate for this in the software by calculating the leakage currents and removing them from the measured currents, as well as adding settling time to allow the load current time to stabilize (refer to RL2000 Control Panel).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/34._rl2000.png
    :alt: Basic Setup with Micro-Power DUT
    :align: center
    :width: 800px
 
-| 
-| 4. Basic Setup with Negative Output Voltages. This example shows that the RL2000 is also capable of measuring negative voltages.
+4. Basic Setup with Negative Output Voltages. This example shows that the RL2000 is also capable of measuring negative voltages.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/30._rl2000.png
    :alt: Basic Setup with Negative Output
    :align: center
    :width: 800px
 
-| 
-| 5. Setup for DUTs with Multiple Power Inputs. This example shows how to use two RL2000s to measure the efficiency of a DUT with two input supplies. In this test case, the output power measurement of the top RL2000 is disabled in the software (refer to RL2000 Control Panel).
+5. Setup for DUTs with Multiple Power Inputs. This example shows how to use two RL2000s to measure the efficiency of a DUT with two input supplies. In this test case, the output power measurement of the top RL2000 is disabled in the software (refer to RL2000 Control Panel).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/28._rl2000.png
    :alt: Setup with Multiple Inputs
    :align: center
    :width: 800px
 
-| 
-| 6. Setup for Higher Load Currents (>30 A). This example setup can be used to evaluate the efficiency at load currents up to 60 A by sharing the load current between two RL2000s connected in parallel. In this test case, the input power measurement of the top RL2000 is disabled in the software (refer to RL2000 Control Panel).
+6. Setup for Higher Load Currents (>30 A). This example setup can be used to evaluate the efficiency at load currents up to 60 A by sharing the load current between two RL2000s connected in parallel. In this test case, the input power measurement of the top RL2000 is disabled in the software (refer to RL2000 Control Panel).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/29._rl2000.png
    :alt: Setup for High Current
    :align: center
    :width: 800px
 
-| 
-| 7. Setup for Low Output Voltages. At low output voltages, the current load may no longer produce an accurate load current, depending on its setting. For this test case, an easy way to compensate for this is to use a second supply to bias the output with a negative voltage.
+7. Setup for Low Output Voltages. At low output voltages, the current load may no longer produce an accurate load current, depending on its setting. For this test case, an easy way to compensate for this is to use a second supply to bias the output with a negative voltage.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/35._rl2000.png
    :alt: Setup for Low Output
@@ -218,8 +212,6 @@ A hardware setup of the RL2000 is shown below for reference. This example uses t
    :align: center
    :width: 600px
 
-   | 
-
 Making an Efficiency Plot Measurement
 -------------------------------------
 
@@ -227,17 +219,16 @@ After setting-up the hardware shown in the Hardware Setup for DC Sweep Measureme
 
 This section provides a step-by-step guide on how to use the DC Sweep feature of the LTpowerAnalyzer® software.
 
-|
-
-| **1. Launch the LTpowerAnalyzer® software.**
+**1. Launch the LTpowerAnalyzer® software.**
 
 Check the status bar at the bottom of the main window. It should indicate that an RL2000 efficiency meter is connected with no errors. Please note that in this example, we are not using the M2K, the LTpowerAnalyzer main board, or any current probe since the DC sweep is done entirely by the RL2000.
 
-| 
-| |LTPA Software|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/14._rl2000.png
+   :alt: LTPA Software
+   :align: center
+   :width: 800px
 
-| 
-| **2. Run a DC Sweep.**
+**2. Run a DC Sweep.**
 
 Step-by-Step Procedure:
 
@@ -255,11 +246,12 @@ STEP #6: Click on the Run button the start the load current sweep and efficiency
 
 STEP #7: When the load current sweep is complete, select the measurement data (e.g., efficiency, power loss, etc.) to plot on the Y1 and Y2 axes. Adjust the graph settings as needed.
 
-| 
-| |LTPA DC Sweep|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/17._rl2000.png
+   :alt: LTPA DC Sweep
+   :align: center
+   :width: 1000px
 
-| 
-| **3. Rename the Measurements.**
+**3. Rename the Measurements.**
 
 Step-by-Step Procedure:
 
@@ -269,11 +261,12 @@ STEP #2: Click on the Name value you want to change. After typing the desired wa
 
 The legend will automatically be updated to the new name.
 
-| 
-| |LTPA DC Sweep Naming|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/10._rl2000.png
+   :alt: LTPA DC Sweep Naming
+   :align: center
+   :width: 800px
 
-| 
-| **4. Edit The Title.**
+**4. Edit The Title.**
 
 Step-by-Step Procedure:
 
@@ -285,16 +278,17 @@ STEP #3: Click the OK button.
 
 The plot title will be automatically updated to the new title.
 
-| 
-| |LTPA DC Sweep Title Edit 1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/18._rl2000.png
+   :alt: LTPA DC Sweep Title Edit 1
+   :align: center
+   :width: 800px
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/19._rl2000.png
    :alt: LTPA DC Sweep Title Edit 2
    :align: center
    :width: 800px
 
-| 
-| **5. Add a Text Annotation.**
+**5. Add a Text Annotation.**
 
 Step-by-Step Procedure:
 
@@ -306,8 +300,10 @@ STEP #3: Click the OK button.
 
 Next select the new annotation by placing the cursor over it and then left click. The annotation can then be resized and moved as needed.
 
-| 
-| |LTPA DC Sweep Text Annotation 1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/20._rl2000.png
+   :alt: LTPA DC Sweep Text Annotation 1
+   :align: center
+   :width: 800px
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/21._rl2000.png
    :alt: LTPA DC Sweep Text Annotation 2
@@ -319,8 +315,7 @@ Next select the new annotation by placing the cursor over it and then left click
    :align: center
    :width: 800px
 
-| 
-| **6. Saving Results.**
+**6. Saving Results.**
 
 Step-by-Step Procedure:
 
@@ -332,15 +327,15 @@ STEP #3: Click Save. A Data File type will save the setup and the data
 
 Note that the Setup File type will only save the setup.
 
-| 
-| |LTPA DC Sweep Saving 1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/23._rl2000.png
+   :alt: LTPA DC Sweep Saving 1
+   :align: center
+   :width: 800px
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/24._rl2000.png
    :alt: LTPA DC Sweep Saving 2
    :align: center
    :width: 800px
-
-   | 
 
 Software Interface
 ------------------
@@ -350,19 +345,22 @@ RL2000 Control Panel
 
 The RL2000 control panel automatically appears as a separate window in the LTpowerAnalyzer® software when an efficiency meter is connected.
 
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/1._rl2000.png
+   :alt: RL2000 Control Panel
+   :align: center
+   :width: 400px
 
-| |RL2000 Control Panel|
-
-| 
-| ^ 1. Power Loss and Efficiency Measurements ^^
-
-============ ============================================
-Input Power  Total input power of the device under test.
-Output Power Total output power of the device under test.
-Power Loss   Total power loss of the device under test.
-Efficiency   Efficiency of the device under test.
-============ ============================================
++-------------------------------------------+----------------------------------------------+
+| 1. Power Loss and Efficiency Measurements |                                              |
++===========================================+==============================================+
+| Input Power                               | Total input power of the device under test.  |
++-------------------------------------------+----------------------------------------------+
+| Output Power                              | Total output power of the device under test. |
++-------------------------------------------+----------------------------------------------+
+| Power Loss                                | Total power loss of the device under test.   |
++-------------------------------------------+----------------------------------------------+
+| Efficiency                                | Efficiency of the device under test.         |
++-------------------------------------------+----------------------------------------------+
 
 | 
 | ^ 2. Meter Selection ^^
@@ -439,17 +437,12 @@ Efficiency   Efficiency of the device under test.
 +-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
+| ==== DC Sweep Measurement and Graph Setup ==== The Measurement Setup is on the left side of the DC Sweep window. Click on the GRAPH tab on the right to bring up the graph setup.
 
-DC Sweep Measurement and Graph Setup
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Measurement Setup is on the left side of the DC Sweep window. Click on the GRAPH tab on the right to bring up the graph setup.
-
-|
-
-| |DC Sweep Plot Setup|
-
-| 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/13._rl2000.png
+   :alt: DC Sweep Plot Setup
+   :align: center
+   :width: 800px
 
 +----------------------------+----------------------------------------------------------------------------------------------------------------+
 | DC Sweep Measurement Setup |                                                                                                                |
@@ -484,22 +477,16 @@ The Measurement Setup is on the left side of the DC Sweep window. Click on the G
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
+| ^ DC Sweep Graph Setup ^^
 
-+----------------------+-------------------------------------------------------+
-| DC Sweep Graph Setup |                                                       |
-+======================+=======================================================+
-| **X Axis**           |                                                       |
-+----------------------+-------------------------------------------------------+
-| Minimum              | 1 μA to 100 A                                         |
-+----------------------+-------------------------------------------------------+
-| Maximum              | 1 μA to 100 A                                         |
-+----------------------+-------------------------------------------------------+
-| AutoScale            | The X Axis data will be automatically scaled.         |
-+----------------------+-------------------------------------------------------+
-| Log                  | The X Axis data will be plotted using a log-10 scale. |
-+----------------------+-------------------------------------------------------+
-| Increments           | 1 to 20 divisions                                     |
-+----------------------+-------------------------------------------------------+
+========== =====================================================
+**X Axis** 
+Minimum    1 μA to 100 A
+Maximum    1 μA to 100 A
+AutoScale  The X Axis data will be automatically scaled.
+Log        The X Axis data will be plotted using a log-10 scale.
+Increments 1 to 20 divisions
+========== =====================================================
 
 =========== ======================================================
 **Y1 Axis** 
@@ -523,37 +510,14 @@ Increments  1 to 20 divisions
 
 *\*The parameters that can be plotted on the Y1 and Y2 axes are: Input Voltage (V1), Input Current (I1), Output Voltage (V2), Output Current (I2), Efficiency, Input Power (Power1), Output Power (Power2), Power Loss, and Load Current (Iload).*
 
-| 
-| ===== Useful Links =====
+Useful Links
+------------
 
 -  `EVAL-LTPA-KIT Overview <https://wiki.analog.com/eval-ltpa-kit>`_
 -  :doc:`EVAL-LTPA-KIT Hardware Setup Guide </wiki-migration/resources/eval/user-guides/eval-ltpa-kit/hardware>`
 -  :doc:`EVAL-LTPA-KIT Software Setup Guide </wiki-migration/resources/eval/user-guides/eval-ltpa-kit/software>`
 
-| 
-| ===== Support ===== For questions and more information, please visit the Analog Devices :ez:`EngineerZone <reference-designs/ltpoweranalyzer>`.
+Support
+-------
 
-.. |EVAL-LTPA-RL2000 (Angled)| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/eval-ltpa-rl2000_angle-evaluation-board.jpg
-   :width: 400px
-.. |Efficiency Test Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/31._rl2000.png
-   :width: 400px
-.. |EVAL-LTPA-RL2000 (Front)| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/eval-ltpa-rl2000_front-evaluation-board.jpg
-   :width: 500px
-.. |EVAL-LTPA-RL2000 Example Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/37._rl2000.png
-   :width: 400px
-.. |LTPA Software| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/14._rl2000.png
-   :width: 800px
-.. |LTPA DC Sweep| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/17._rl2000.png
-   :width: 1000px
-.. |LTPA DC Sweep Naming| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/10._rl2000.png
-   :width: 800px
-.. |LTPA DC Sweep Title Edit 1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/18._rl2000.png
-   :width: 800px
-.. |LTPA DC Sweep Text Annotation 1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/20._rl2000.png
-   :width: 800px
-.. |LTPA DC Sweep Saving 1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/23._rl2000.png
-   :width: 800px
-.. |RL2000 Control Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/1._rl2000.png
-   :width: 400px
-.. |DC Sweep Plot Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-rl2000/13._rl2000.png
-   :width: 800px
+For questions and more information, please visit the Analog Devices :ez:`EngineerZone <reference-designs/ltpoweranalyzer>`.

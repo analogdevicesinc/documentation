@@ -90,7 +90,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            <*>     Industrial I/O support --->
                --- Industrial I/O support
                ...
-               Digital to analog converters  ---> 
+               Digital to analog converters  --->
                    ...
                    <*>   Analog Devices AD5592R ADC/DAC driver
                    ...
@@ -218,7 +218,7 @@ If the driver correctly detected the device, the "iio_info" program should infor
 
 ::
 
-   root@linaro-ubuntu-desktop:~# iio_info 
+   root@linaro-ubuntu-desktop:~# iio_info
    IIO context created: local
    IIO context has 3 devices:
            iio:device2: ad5593r
@@ -287,7 +287,7 @@ IIO sysfs interface
    drwxrwxrwx 2 root root    0 Jan  1  1970 power
    lrwxrwxrwx 1 root root    0 Jan  1  1970 subsystem -> ../../../../../../../bus/iio
    -rw-rw-rw- 1 root root 4096 Jan  1  1970 uevent
-   root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# 
+   root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2#
 
 ::
 
@@ -320,10 +320,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -343,15 +340,11 @@ The input range of the ADC is 0 V to VREF or 0 V to 2 × VREF. **in_voltage_scal
 Show current scale
 ~~~~~~~~~~~~~~~~~~
 
-| **Description:**
-| scale to be applied to out_voltageY_raw/in_voltageY_raw in order to obtain the measured voltage in millivolts.
+**Description:** scale to be applied to out_voltageY_raw/in_voltageY_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -364,15 +357,11 @@ Show current scale
 Show available scales
 ~~~~~~~~~~~~~~~~~~~~~
 
-| **Description:**
-| scale to be applied to out_voltageY_raw/in_voltageY_raw in order to obtain the measured voltage in millivolts.
+**Description:** scale to be applied to out_voltageY_raw/in_voltageY_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -385,15 +374,11 @@ Show available scales
 Change scales
 ~~~~~~~~~~~~~
 
-| **Description:**
-| scale to be applied to out_voltageY_raw/in_voltageY_raw in order to obtain the measured voltage in millivolts.
+**Description:** scale to be applied to out_voltageY_raw/in_voltageY_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -413,10 +398,7 @@ This specifies any shell prompt running on the target
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -431,15 +413,11 @@ U = in_voltage3_raw \* in_voltage_scale = 1491 \* 0.610351562 = 910 mV
 Set channel Y output voltage
 ----------------------------
 
-| **Description:**
-| Raw (unscaled, no bias etc.) output voltage for channel Y.
+**Description:** Raw (unscaled, no bias etc.) output voltage for channel Y.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -493,7 +471,7 @@ For more information see also here: `GPIO Kernel Documentation <https://git.kern
 
 
    root@linaro-ubuntu-desktop:/sys/class/gpio/gpiochip890# cd ..
-   root@linaro-ubuntu-desktop:/sys/class/gpio# echo 897 > export 
+   root@linaro-ubuntu-desktop:/sys/class/gpio# echo 897 > export
    root@linaro-ubuntu-desktop:/sys/class/gpio# cd gpio897/
    root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# ls -al
    total 0
@@ -507,21 +485,21 @@ For more information see also here: `GPIO Kernel Documentation <https://git.kern
    -rw-r--r-- 1 root root 4096 Feb 23 08:06 uevent
    -rw-r--r-- 1 root root 4096 Feb 23 08:06 value
 
-   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# cat direction 
+   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# cat direction
    in
 
-   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# cat value 
+   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# cat value
    0
 
-   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# echo low > direction 
+   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# echo low > direction
 
-   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# cat direction 
+   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# cat direction
    out
 
-   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# cat value 
+   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# cat value
    0
 
-   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# echo high > direction                                                                                                                                    
+   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# echo high > direction
 
-   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# cat value 
+   root@linaro-ubuntu-desktop:/sys/class/gpio/gpio897# cat value
    1

@@ -1,8 +1,9 @@
 General (2nd-Order / Lookup)
 ============================
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| ---------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+--------------
 
 |general2ndlookpic1.png| The General (2nd-Order / Lookup) block gives access to a wide variety of 2nd-order IIR (infinite impulse response) filter algorithms. See :doc:`General 2nd-Order Filters </wiki-migration/resources/tools-software/sigmastudio/toolbox/algorithminformation/general2ndorderfilters>` (in Algorithm Information) for details about the algorithms driving these blocks.
 
@@ -23,12 +24,9 @@ Click the icon button:|general2ndlookpic2.png|. The curve is defined using the T
 
 Enter the number of curves desired in the # Curves field. Enter Boosts, (overall) Gain, and Q in their fields. Enter the desired cutoff or center (peaking filters) frequency in the Frequency fields. Other parameters to enter will vary with filter type.
 
-| The variety and range of filters are remarkable, as can be seen from the following examples:
-| |general2ndlookpic3.png|
-| |general2ndlookpic4.png|
-| |general2ndlookpic5.png|
-| |general2ndlookpic6.png|
-| |general2ndlookpic7.png|
+The variety and range of filters are remarkable, as can be seen from the following examples:
+
+|general2ndlookpic3.png| |general2ndlookpic4.png| |general2ndlookpic5.png| |general2ndlookpic6.png| |general2ndlookpic7.png|
 
 .. hint::
 

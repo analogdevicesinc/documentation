@@ -45,12 +45,7 @@ Additionally, the instructions for installing RF Blockset Models for Analog Devi
 
 If you would like to come by the earlier in the morning before 9am, and check out things with your hardware, it would be appreciated.
 
-.. important::
-
-   If you run into any questions while downloading, or building, please ask on the Pluto Support Forum here: :ez:`ez>adieducation/university-program/f/q-a <adieducation/university-program/f/q-a>`
-
-
-.
+If you run into any questions while downloading, or building, please ask on the Pluto Support Forum here: :ez:`ez>adieducation/university-program/f/q-a <adieducation/university-program/f/q-a>` .
 
 Labs
 ====

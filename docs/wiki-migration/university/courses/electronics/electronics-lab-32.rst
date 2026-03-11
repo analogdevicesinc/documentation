@@ -20,17 +20,7 @@ Having to synchronize the gate signal used to turn on and off the FET complicate
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| Jumper wires
-| 1 - AD8541 CMOS op amp with rail-to-rail input/output
-| 1 - ZVP2110A PMOS transistor ( or equivalent )
-| 1 - 4.7 uF capacitor
-| 1 - 220 uF capacitor
-| 1 - 10 Ω resistor
-| 1 - 2.2 KΩ resistor
-| 1 - 47 KΩ resistor
-| 1 - 1 MΩ resistor
+ADALM2000 Active Learning Module Solder-less Breadboard Jumper wires 1 - AD8541 CMOS op amp with rail-to-rail input/output 1 - ZVP2110A PMOS transistor ( or equivalent ) 1 - 4.7 uF capacitor 1 - 220 uF capacitor 1 - 10 Ω resistor 1 - 2.2 KΩ resistor 1 - 47 KΩ resistor 1 - 1 MΩ resistor
 
 Directions:
 -----------
@@ -50,10 +40,7 @@ The op-amp will turn on the PMOS transistor when V\ :sub:`IN` is more positive t
 
 :math:`V_GATE = V_OUT - (R_2 / R_1 ) (V_IN - V_OUT )`
 
-| where: ( voltages with respect to ground )
-| V\ :sub:`GATE` is the voltage at the gate of M\ :sub:`1`
-| V\ :sub:`IN` is the AC input voltage
-| V\ :sub:`OUT` is the output voltage at C\ :sub:`1`\ and R\ :sub:`L`
+where: ( voltages with respect to ground ) V\ :sub:`GATE` is the voltage at the gate of M\ :sub:`1` V\ :sub:`IN` is the AC input voltage V\ :sub:`OUT` is the output voltage at C\ :sub:`1`\ and R\ :sub:`L`
 
 You can relate the input and the output voltages to the PMOS's drain-to-source, V\ :sub:`DS`, and gate-to-source voltage, V\ :sub:`GS`, according to the following equation:
 
@@ -87,8 +74,10 @@ Procedure:
 
 Start by using the large value 220 uF capacitor for C\ :sub:`1`. The 220 uF and 4.7 uF capacitors are polarized so be sure to connect the positive and negative terminals to your circuit correctly.
 
-| Use the two scope inputs to monitor the input AC waveform at V\ :sub:`IN` and the DC output wave form at V\ :sub:`OUT`. VOUT should be very close to the peak value of V\ :sub:`IN`. Now replace the large 220 uF capacitor with the much smaller 4.7 uF capacitor. Observe the change in the waveform seen at V\ :sub:`OUT`. When is V\ :sub:`OUT` closest in value to V\ :sub:`IN` and compare that interval of the AC input cycle with the voltage at the gate of transistor M\ :sub:`1`.
-| |image1|
+Use the two scope inputs to monitor the input AC waveform at V\ :sub:`IN` and the DC output wave form at V\ :sub:`OUT`. VOUT should be very close to the peak value of V\ :sub:`IN`. Now replace the large 220 uF capacitor with the much smaller 4.7 uF capacitor. Observe the change in the waveform seen at V\ :sub:`OUT`. When is V\ :sub:`OUT` closest in value to V\ :sub:`IN` and compare that interval of the AC input cycle with the voltage at the gate of transistor M\ :sub:`1`.
+
+
+|image1|
 
 .. container:: centeralign
 

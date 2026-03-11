@@ -9,13 +9,7 @@ The purpose of this activity is to investigate the operation of the enhancement 
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 1KΩ Resistors (values matched as close as possible, or measured to 3 digits or better)
-| 2 - small signal NMOS transistors (ZVN2110A or CD4007 NMOS array)
-| 1 - Dual Op Amp such as ADTL082)
-| 2 - 4.7uF decoupling capacitors
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - 1KΩ Resistors (values matched as close as possible, or measured to 3 digits or better) 2 - small signal NMOS transistors (ZVN2110A or CD4007 NMOS array) 1 - Dual Op Amp such as ADTL082) 2 - 4.7uF decoupling capacitors
 
 Directions:
 -----------
@@ -67,8 +61,10 @@ Two identical transistors with the same gate to source voltage will have the sam
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a6m_ne1.png
    :align: center
 
-| where K =μ\ :sub:`n`\ C\ :sub:`ox`/2<sub></sub> and λ can be taken as process technology constants.
-| Identical transistors by definition have the same W/L and process technology constants. In the simple current mirror, both transistors have the same V\ :sub:`GS`. Thus, both transistors will have the same I\ :sub:`D`. Since no current flows in the gate terminal of a FET I\ :sub:`in` = I\ :sub:`out`. |image3|
+where K =μ\ :sub:`n`\ C\ :sub:`ox`/2<sub></sub> and λ can be taken as process technology constants. Identical transistors by definition have the same W/L and process technology constants. In the simple current mirror, both transistors have the same V\ :sub:`GS`. Thus, both transistors will have the same I\ :sub:`D`. Since no current flows in the gate terminal of a FET I\ :sub:`in` = I\ :sub:`out`.
+
+
+|image3|
 
 .. container:: centeralign
 

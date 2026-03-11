@@ -6,9 +6,13 @@ ADSP-21489 EZ-KIT Lite
 Connections
 -----------
 
-| |image1|
-| ADSP-21489 EZ-KIT Board Connections
-| =====Settings=====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21489ezkit.png
+   :width: 600px
+
+ADSP-21489 EZ-KIT Board Connections
+
+Settings
+--------
 
 The board settings for running SigmaStudio on ADSP-21489 EZ-KIT Lite, using the Default Application is given in the below tables.
 
@@ -30,15 +34,13 @@ SW24   OFF, OFF, OFF, OFF
 SW25   OFF, OFF, OFF, OFF
 ====== =================================
 
-| Switch Settings for ADSP-21489 EZ-KIT Lite
-| ^ Jumper ^ Setting ^
+Switch Settings for ADSP-21489 EZ-KIT Lite
 
-=== ===
-JP2 OFF
-JP5 OFF
-=== ===
+====== =======
+Jumper Setting
+====== =======
+JP2    OFF
+JP5    OFF
+====== =======
 
 Jumper Settings for ADSP-21489 EZ-KIT Lite
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21489ezkit.png
-   :width: 600px

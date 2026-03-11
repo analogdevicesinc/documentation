@@ -151,7 +151,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            -*-     Industrial I/O lock free software ring
            -*-   Enable triggered sampling support
 
-                 *** Analog to digital converters ***
+                 ** Analog to digital converters **
            [--snip--]
 
            -*- Analog Devices High-Speed AXI ADC driver core
@@ -175,7 +175,8 @@ Hardware configuration
 Driver testing / API
 ====================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. tip::
 
@@ -185,10 +186,9 @@ Driver testing / API
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    -  :doc:`AD9371 Control IIO Scope Plugin </wiki-migration/resources/tools-software/linux-software/ad9371_plugin>`
    
-   |
 
 
-| *General attribute naming convention:*
+*General attribute naming convention:*
 
 ================================= ==============
 IIO sysfs attribute naming prefix Target
@@ -221,10 +221,7 @@ out_voltage11\_[…]                AUX DAC9
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -333,10 +330,7 @@ out_voltage11\_[…]                AUX DAC9
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      Additional AD9375 specific attributes
+   Additional AD9375 specific attributes
 
    
    ::
@@ -414,10 +408,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -434,25 +425,19 @@ The AD9371 transceiver includes an Enable State Machine (ENSM), allowing real ti
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat ensm_mode_available** 
+      root@analog:/sys/bus/iio/devices/iio:device3# **cat ensm_mode_available**
       radio_on radio_off
    
 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -477,10 +462,7 @@ The AD9371 contains three fractional-N PLLs to generate the RF LOs used by the t
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -495,10 +477,7 @@ The AD9371 contains three fractional-N PLLs to generate the RF LOs used by the t
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -521,16 +500,13 @@ Loading a Profile
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat /usr/local/mykonos/profiles/lte20.txt > profile_config** 
-      root@analog:/sys/bus/iio/devices/iio:device3# 
+      root@analog:/sys/bus/iio/devices/iio:device3# **cat /usr/local/mykonos/profiles/lte20.txt > profile_config**
+      root@analog:/sys/bus/iio/devices/iio:device3#
    
 
 
@@ -544,17 +520,14 @@ Querying the RX Sample Rate and Primary Signal Bandwidth
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root:/sys/bus/iio/devices/iio:device3> **cat in_voltage0_sampling_frequency**
       122880000
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage0_rf_bandwidth** 
+      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage0_rf_bandwidth**
       100000000
    
 
@@ -569,15 +542,12 @@ Querying the ORx Sample Rate
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage2_sampling_frequency** 
+      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage2_sampling_frequency**
       245760000
       root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage2_rf_bandwidth**
       200000000
@@ -602,16 +572,13 @@ When the ARM radio control is in ARM command mode, this attribute allows the use
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage_rf_port_select_available** 
-      OFF INTERNALCALS OBS_SNIFFER SN_A SN_B SN_C ORX1_TX_LO ORX2_TX_LO ORX1_SN_LO ORX2_SN_LO 
+      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage_rf_port_select_available**
+      OFF INTERNALCALS OBS_SNIFFER SN_A SN_B SN_C ORX1_TX_LO ORX2_TX_LO ORX1_SN_LO ORX2_SN_LO
    
       root@analog:/sys/bus/iio/devices/iio:device3# **echo ORX1_TX_LO > in_voltage2_rf_port_select**
    
@@ -630,17 +597,14 @@ Querying the TX Sample Rate and Primary Signal Bandwidth
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root:/sys/bus/iio/devices/iio:device3> **cat out_voltage_sampling_frequency**
       245760000
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat out_voltage0_rf_bandwidth** 
+      root@analog:/sys/bus/iio/devices/iio:device3# **cat out_voltage0_rf_bandwidth**
       75000000
    
 
@@ -668,7 +632,7 @@ Example: :git-linux:`firmware/ad9371_std_gaintable`
      gain_in_mdB, IntAttnWord, ExtAttnWord, DigGainAttenWord, DigAttenEn /* index 254 */
      gain_in_mdB, IntAttnWord, ExtAttnWord, DigGainAttenWord, DigAttenEn /* index 253 */
      gain_in_mdB, IntAttnWord, ExtAttnWord, DigGainAttenWord, DigAttenEn /* index 252 */
-    
+
     …
     </gaintable>
 
@@ -676,9 +640,9 @@ Example: :git-linux:`firmware/ad9371_std_gaintable`
 
    </list>
 
-| **Assumptions:**
-| \* Gain tables must be monotonic
+**Assumptions:**
 
+-  Gain tables must be monotonic
 -  The format of the columns in the Rx and ORx gain table rows are: {gain_in_mdB, Internal Attenuator Word, External Attenuator Word, Digital Gain/Atten Word, Digital Attenuation Enable}
 -  gain_in_mdB: is the absolute Gain in mdB (signed int format)
 -  end must be greater than start frequency (in Hz)
@@ -690,15 +654,12 @@ Loading a gain table
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **ls /lib/firmware/ad9***
+      root@analog:/sys/bus/iio/devices/iio:device3# **ls /lib/firmware/ad9**
       ad9371_std_gaintable
    
       root@analog:/sys/bus/iio/devices/iio:device3# **cat /lib/firmware/ad9371_std_gaintable > gain_table_config**
@@ -727,23 +688,17 @@ The AD9371 Rx supports three modes of gain control. These modes are described in
    
    -  Automatic Gain Control (AGC) and Hybrid Mode are available on RX1, RX2 and in OBS_SNIFFER, SN_A, SN_B and SN_C Observation Path Sources. (see in_voltage2_rf_port_select).
    -  In ORX1_TX_LO, ORX2_TX_LO, ORX1_SN_LO, ORX2_SN_LO modes only MGC mode is available.
+   
 
-   |
-
-
-|
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage_gain_control_mode_available** 
+      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage_gain_control_mode_available**
       manual automatic hybrid
    
 
@@ -753,10 +708,7 @@ Querying or Setting a Gain Control Mode
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -771,10 +723,7 @@ Querying or Setting a Gain Control Mode
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -791,10 +740,7 @@ Supported in all available Gain control modes
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -806,10 +752,7 @@ Supported in all available Gain control modes
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -840,10 +783,7 @@ Only available in Manual Gain Control Mode (MGC)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -861,10 +801,7 @@ The TX attenuation/gain can be individually controlled for TX1 and TX2. The rang
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -879,10 +816,7 @@ The TX attenuation/gain can be individually controlled for TX1 and TX2. The rang
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -899,10 +833,7 @@ This attribute will report RSSI - however currently it reports Decimated Power i
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -941,10 +872,7 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -972,10 +900,7 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1004,15 +929,12 @@ To obtain the reading in mV calculate: *(in_voltage3_raw + in_voltage3_offset) \
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **grep "" in_voltage3_***
+      root:/sys/bus/iio/devices/iio:device3> **grep "" in_voltage3_**
       in_voltage3_offset:45
       in_voltage3_raw:66
       in_voltage3_scale:0.775194
@@ -1033,15 +955,12 @@ Attributes are:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **grep "" out_voltage2***
+      root:/sys/bus/iio/devices/iio:device3> **grep "" out_voltage2**
       out_voltage2_offset:204
       out_voltage2_raw:0
       out_voltage2_scale:1.560671
@@ -1070,10 +989,7 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1098,10 +1014,7 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1126,10 +1039,7 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1170,10 +1080,7 @@ Value Description
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1193,10 +1100,7 @@ This control reads back the percent error of the PA model ×10 to include 1 deci
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1216,10 +1120,7 @@ This control reads back the external path delay from Tx output to ORx input, at 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1239,10 +1140,7 @@ This control reads back the number of times the DPD has successfully run since D
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1273,10 +1171,7 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1301,10 +1196,7 @@ Desired loop gain (can be negative if total attenuation is greater than amplific
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1329,10 +1221,7 @@ Current measured gain in 1/100ths dB scale. Current GaindB = currentGain/100
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1352,10 +1241,7 @@ This control returns the current Tx attenuation setting for a given channel in 0
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1375,10 +1261,7 @@ This control returns the RMS Tx digital sample power measured at the output of t
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1398,10 +1281,7 @@ This control returns the RMS ORx digital sample power measured within the DPD bl
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1440,10 +1320,7 @@ Value Description
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1463,10 +1340,7 @@ This control reads back the number of times the CLGC has successfully run since 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1497,10 +1371,7 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1539,10 +1410,7 @@ Value Description
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1562,10 +1430,7 @@ This control reads back the number of times the VSWR has successfully run since 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1606,10 +1471,7 @@ These controls provide various measurements. Elements are only listed for out_vo
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1633,10 +1495,7 @@ In order to identify if the IIO device in question (ad9371-phy) you first need t
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1649,7 +1508,7 @@ In order to identify if the IIO device in question (ad9371-phy) you first need t
       /sys/bus/iio/devices/iio:device4/name:axi-ad9371-rx-obs-hpc
       /sys/bus/iio/devices/iio:device5/name:axi-ad9371-tx-hpc
       /sys/bus/iio/devices/iio:device6/name:axi-ad9371-rx-hpc
-      root@analog:~# 
+      root@analog:~#
    
 
 
@@ -1657,16 +1516,13 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root@analog:~# **cd /sys/kernel/debug/iio/iio\:device3**
-      root@analog:/sys/kernel/debug/iio/iio:device3# **ls** 
+      root@analog:/sys/kernel/debug/iio/iio:device3# **ls**
       [--snip--]
       adi,tx-settings-tx-atten-step-size
       adi,tx-settings-tx-channels-enable
@@ -1689,10 +1545,7 @@ Example to change from internal to external TX LO
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -1701,7 +1554,7 @@ Example to change from internal to external TX LO
       0
    
       root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 > adi,tx-settings-tx-pll-use-external-lo**
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 > initialize** 
+      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 > initialize**
    
 
 
@@ -1717,9 +1570,7 @@ Digital numerically controlled oscillator (NCO) to create a CW test tone on the 
 
 **SYNTAX:**
 
-**bist_tone** *<Enable> <TX1 Tone Frequency in kHz> <TX2 Tone Frequency in kHz>*
-
-**NCO Tone frequency Valid range from -IQrate/2 to IQrate/2**
+**bist_tone**<Enable> <TX1 Tone Frequency in kHz> <TX2 Tone Frequency in kHz>**NCO Tone frequency Valid range from -IQrate/2 to IQrate/2**
 
 +--------+
 
@@ -1744,15 +1595,12 @@ Digital numerically controlled oscillator (NCO) to create a CW test tone on the 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 3000 5000 > bist_tone **
+      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 3000 5000 > bist_tone**
    
 
 
@@ -1763,8 +1611,7 @@ Pseudorandom Binary Sequence (`PRBS <https://en.wikipedia.org/wiki/Pseudorandom_
 
 **SYNTAX:**
 
-| **bist_prbs_rx** *<Value>*
-| **bist_prbs_obs** *<Value>*
+**bist_prbs_rx**<Value>**bist_prbs_obs** *<Value>*
 
 +-----------------+
 
@@ -1797,15 +1644,12 @@ Pseudorandom Binary Sequence (`PRBS <https://en.wikipedia.org/wiki/Pseudorandom_
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 2 > bist_prbs_rx **
+      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 2 > bist_prbs_rx**
    
 
 
@@ -1816,8 +1660,7 @@ Allows either to digitally loopback TX data (IQ samples) into the RX or OBS path
 
 **SYNTAX:**
 
-| **loopback_tx_rx** *<Enable>*
-| **loopback_tx_obs** *<Enable>*
+**loopback_tx_rx**<Enable>**loopback_tx_obs** *<Enable>*
 
 +--------+
 
@@ -1842,15 +1685,12 @@ Allows either to digitally loopback TX data (IQ samples) into the RX or OBS path
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 > loopback_tx_rx **
+      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 > loopback_tx_rx**
    
 
 
@@ -1869,9 +1709,44 @@ The monitor outputs are grouped in set of nibbles, the user can set individual n
 
 **SYNTAX:**
 
-**monitor_out** *<Monitor Index> <Monitor Mask>*
+**monitor_out**<Monitor Index> <Monitor Mask>**Example**: Enable all bits for Monitor Index: 0x01 (Name: AGC Monitor 1)
 
-**Example**: Enable all bits for Monitor Index: 0x01 (Name: AGC Monitor 1)
+.. container:: box bggreen
+
+   This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 255 > monitor_out**
+   
+
+
+Low level register access via debugfs (direct_reg_access)
+=========================================================
+
+This page contains a few lose documentation snippets used in various spots.
+
+IIO device files
+================
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+IIO devices with trigger consumer interface
+===========================================
+
+If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
+
+
+
+.. hint::
+
+   **Trigger Consumers:**
+
+   | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
+
+
+**Description:** Read name of triggerY
 
 .. container:: box bggreen
 
@@ -1883,19 +1758,336 @@ The monitor outputs are grouped in set of nibbles, the user can set individual n
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 255 > monitor_out **
+      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      irqtrig56
    
 
+
+**Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ), to current trigger of deviceX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+   
+
+
+**Description:** Read current trigger source of deviceX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      irqtrig56
+   
+
+
+Standalone trigger drivers
+==========================
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| name                                          | description                                                                   |
++===============================================+===============================================================================+
+| iio-trig-gpio                                 | Provides support for using GPIO pins as IIO triggers.                         |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| iio-trig-rtc                                  | Provides support for using periodic capable real time clocks as IIO triggers. |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-sysfs <iio-trig-sysfs>`_            | Provides support for using SYSFS entry as IIO triggers.                       |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-bfin-timer <iio-trig-bfin-timer>`_  | Provides support for using a Blackfin timer as IIO triggers.                  |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+Buffer management
+=================
+
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+
+Every buffer implementation features a set of files:
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **length_align_bytes**
+| Using the high-speed interface. DMA buffers may have an alignment requirement for the buffer length. Newer versions of the kernel will report the alignment requirements associated with a device through the \`length_align_bytes\` property.
+
+| **scan_elements**
+| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+
+Typical ADC scan elements
+=========================
+
+| **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in_voltageX_type / in_voltageX-voltageY_type / timestamp_type:**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space. Form is [s|u]bits/storage-bits. s or u specifies if signed (2's complement) or unsigned. bits is the number of bits of data and storage-bits is the space (after padding) that it occupies in the buffer. Note that some devices will have additional information in the unused bits so to get a clean value, the bits value must be used to mask the buffer output value appropriately. The storage-bits value also specifies the data alignment. So u12/16 will be a unsigned 12 bit integer stored in a 16 bit location aligned to a 16 bit boundary. For other storage combinations this attribute will be extended appropriately.
+
+| **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
+
+Event Management
+================
+
+The Industrial I/O subsystem provides support for passing hardware generated events up to userspace.
+
+In IIO events are not used for passing normal readings from the sensing devices to userspace, but rather for out of band information. Normal data reaches userspace through a low overhead character device - typically via either software or hardware buffer. The stream format is pseudo fixed, so is described and controlled via sysfs rather than adding headers to the data describing what is in it.
+
+Pretty much all IIO events correspond to thresholds on some value derived from one or more raw readings from the sensor. They are provided by the underlying hardware.
+
+**Examples include:**
+
+-  Straight crossing a voltage threshold
+-  Moving average crosses a threshold
+-  Motion detectors (lots of ways of doing this).
+-  Thresholds on sum squared or rms values.
+-  Rate of change thresholds.
+-  Lots more variants...
+
+Events have timestamps.
+
+**The Interface:**
+
+-  Single user at a time.
+
+-  Simple chrdev per device (aggregation across devices doesn't really make sense for IIO as you tend to really care which sensor caused the event rather than just that it happened.)
+
+**The format is:**
+
+.. code:: c
+
+   /**
+    * struct iio_event_data - The actual event being pushed to userspace
+    * @id:     event identifier
+    * @timestamp:  best estimate of time of event occurrence (often from
+    *      the interrupt handler)
+    */
+   struct iio_event_data {
+       u64 id;
+       s64 timestamp;
+   };
+
+Typical event attributes
+========================
+
+| **/sys/bus/iio/devices/iio:deviceX/events**
+| Configuration of which hardware generated events are passed up to user-space.
+
+-  **Threshold Events:**
+
+| **<type>Z[\_name]_thresh[\_rising|falling]_en**
+| Event generated when channel passes a threshold in the specified (\_rising|_falling) direction. If the direction is not specified, then either the device will report an event which ever direction a single threshold value is called in (e.g. <type>[Z][\_name]\_<raw|input>_thresh_value) or <type>[Z][\_name]\_<raw|input>_thresh_rising_value and <type>[Z][\_name]\_<raw|input>_thresh_falling_value may take different values, but the device can only enable both thresholds or neither. Note the driver will assume the last p events requested are to be enabled where p is however many it supports (which may vary depending on the exact set requested. So if you want to be sure you have set what you think you have, check the contents of these attributes after everything is configured. Drivers may have to buffer any parameters so that they are consistent when a given event type is enabled a future point (and not those for whatever event was previously enabled).
+
+| **<type>Z[\_name]_thresh[\_rising|falling]_value**
+| Specifies the value of threshold that the device is comparing against for the events enabled by <type>Z[\_name]_thresh[\_rising|falling]_en. If separate attributes exist for the two directions, but direction is not specified for this attribute, then a single threshold value applies to both directions. The raw or input element of the name indicates whether the value is in raw device units or in processed units (as \_raw and \_input do on sysfs direct channel read attributes).
+
+-  **Rate of Change Events:**
+
+| **<type>[Z][\_name]_roc[\_rising|falling]_en**
+| Event generated when channel passes a threshold on the rate of change (1st differential) in the specified (\_rising|_falling) direction. If the direction is not specified, then either the device will report an event which ever direction a single threshold value is called in (e.g. <type>[Z][\_name]\_<raw|input>_roc_value) or <type>[Z][\_name]\_<raw|input>_roc_rising_value and <type>[Z][\_name]\_<raw|input>_roc_falling_value may take different values, but the device can only enable both rate of change thresholds or neither. Note the driver will assume the last p events requested are to be enabled where p is however many it supports (which may vary depending on the exact set requested. So if you want to be sure you have set what you think you have, check the contents of these attributes after everything is configured. Drivers may have to buffer any parameters so that they are consistent when a given event type is enabled a future point (and not those for whatever event was previously enabled).
+
+| **<type>[Z][\_name]_roc[\_rising|falling]_value**
+| Specifies the value of rate of change threshold that the device is comparing against for the events enabled by <type>[Z][\_name]_roc[\_rising|falling]_en. If separate attributes exist for the two directions, but direction is not specified for this attribute, then a single threshold value applies to both directions. The raw or input element of the name indicates whether the value is in raw device units or in processed units (as \_raw and \_input do on sysfs direct channel read attributes).
+
+-  **Magnitude Events:**
+
+| **<type>Z[\_name]_mag[\_rising|falling]_en**
+| Similar to in_accel_x_thresh[\_rising|_falling]_en, but here the magnitude of the channel is compared to the threshold, not its signed value.
+
+| **<type>Z[\_name]_mag[\_rising|falling]_value**
+| The value to which the magnitude of the channel is compared. If number or direction is not specified, applies to all channels of this type.
+
+-  **Temporal Conditions:**
+
+| **<type>[Z][\_name][\_thresh|_roc][\_rising|falling]_period**
+| Period of time (in seconds) for which the condition must be met before an event is generated. If direction is not specified then this period applies to both directions.
 
 Low level register access via debugfs (direct_reg_access)
 =========================================================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver.
+
+.. tip::
+
+   To simplify direct register access you may want to use the libiio :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command line utility.
+
+
+Accessing debugfs requires root privileges.
+
+In order to identify if the IIO device in question feature this option you first need to identify the IIO device number.
+
+Therefore read the name attribute of each IIO device
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# grep "" /sys/bus/iio/devices/iio\:device*/name
+      /sys/bus/iio/devices/iio:device0/name:ad7291
+      /sys/bus/iio/devices/iio:device1/name:ad9361-phy
+      /sys/bus/iio/devices/iio:device2/name:xadc
+      /sys/bus/iio/devices/iio:device3/name:adf4351-udc-rx-pmod
+      /sys/bus/iio/devices/iio:device4/name:adf4351-udc-tx-pmod
+      /sys/bus/iio/devices/iio:device5/name:cf-ad9361-dds-core-lpc
+      /sys/bus/iio/devices/iio:device6/name:cf-ad9361-lpc
+      root@analog:~# 
+   
+
+
+Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the direct_reg_access file exists.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# cd /sys/kernel/debug/iio/iio\:device1
+      root@analog:/sys/kernel/debug/iio/iio:device1# ls direct_reg_access 
+      direct_reg_access
+   
+
+
+**Reading**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 0x7 > direct_reg_access                                                                                                                                 
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
+      0x40
+   
+
+
+**Writing**
+
+Write ADDRESS VALUE
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 0x7 0x50  > direct_reg_access                                                                                                                            
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
+      0x50
+   
+
+
+**Accessing HDL CORE registers**
+
+| Special ADI device driver convention for devices that have both:
+| \* a SPI/I2C control interface
+
+-  and some sort of HDL Core with registers (AXI)
+
+In this case when accessing the HDL Core Registers always set BIT31.
+
+The register map for typical ADI HDL cores can be found here: :doc:`Register Map </wiki-migration/resources/fpga/docs/hdl/regmap>`
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device6# echo 0x80000000 > direct_reg_access                                                                                                                           
+      root@analog:/sys/kernel/debug/iio/iio:device6# cat direct_reg_access 
+      0x80062
+   
+
+
+IIO pointers
+============
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+
 
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+
 
 .. |AD9371| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9371-bc_196-adi_m.png
    :width: 200px

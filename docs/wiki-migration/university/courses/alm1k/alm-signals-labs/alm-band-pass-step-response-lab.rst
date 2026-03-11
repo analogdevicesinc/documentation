@@ -4,14 +4,14 @@ Activity: Band-Pass Filter Step Response
 Objective:
 ----------
 
-The objective of this activity is to simulate, measure and analyze the time-domain step response of a simple first order Band-pass filter.  
+The objective of this activity is to simulate, measure and analyze the time-domain step response of a simple first order Band-pass filter.
 
 Notes:
 ------
 
 As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current –V is added as in CA-V or when configured to force current  / measure voltage –I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage –H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V, CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.  
+Scope traces are similarly referred to by channel and voltage / current. Such as CA-V, CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
 
 Introduction
 ------------
@@ -28,12 +28,7 @@ The waveform, Vhp, is applied to the low-pass filter through an op-amp “buffer
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solderless Breadboard
-| 1 - 2 KΩ resistor (made from 2 1 KΩ in series)
-| 1 – 4.7 KΩ resistor
-| 1 – AD8542 dual op-amp
-| 2 - 0.1 µF capacitors
+ADALM1000 hardware module Solderless Breadboard 1 - 2 KΩ resistor (made from 2 1 KΩ in series) 1 – 4.7 KΩ resistor 1 – AD8542 dual op-amp 2 - 0.1 µF capacitors
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-bp-step-lab-fig1.png
    :align: center
@@ -90,8 +85,8 @@ Analysis
 2. Compare the following measured results with the simulated results:
 
    a) Amplitude and decay rate of the exponential waveform Vhp.
-   > b) Amplitude and time of occurrence of the positive peak of the response at Vlp.
-   > c) Express the percent error of the measurements of (a) and (b) above compared to the simulated results.
+   b) Amplitude and time of occurrence of the positive peak of the response at Vlp.
+   c) Express the percent error of the measurements of (a) and (b) above compared to the simulated results.
 
 LTspice Example: Band-Pass Filter Pulse response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -3,16 +3,23 @@
 Automatic Speaker EQ
 ====================
 
-| |autoeq.png|
-| ===== Description ===== The Automatic Speaker EQ algorithm is aimed at reducing the design time of speaker systems by automatically tuning filters to create the desired frequency response of the speaker. The algorithm is capable of tuning one, two, and three way systems.
-| ===== Variants =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/autoeq.png
+   :alt: autoeq.png
+
+Description
+-----------
+
+The Automatic Speaker EQ algorithm is aimed at reducing the design time of speaker systems by automatically tuning filters to create the desired frequency response of the speaker. The algorithm is capable of tuning one, two, and three way systems.
+
+Variants
+--------
 
 -  Single Band Auto EQ
 -  Two Way Auto EQ
 -  Three Way Auto EQ
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +---------------------+------------+------------------+---------------+------------------+
 | Name                | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -28,7 +35,7 @@ Automatic Speaker EQ
 | ===== Pins =====
 
 Input
------
+~~~~~
 
 ====== ===== ===========
 Name   Type  Description
@@ -36,11 +43,11 @@ Name   Type  Description
 Input0 Audio Input
 ====== ===== ===========
 
-| 
+
 | ==== Output ====
 
 Single Band Auto EQ
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 ====== ===== ================
 Name   Type  Description
@@ -48,7 +55,7 @@ Name   Type  Description
 Driver Audio Equalized output
 ====== ===== ================
 
-| 
+
 | ===Two Way Auto EQ===
 
 ======= ===== =========================
@@ -58,7 +65,7 @@ Woofer  Audio Equalized Woofer Channel
 Tweeter Audio Equalized Tweeter Channel
 ======= ===== =========================
 
-| 
+
 | ===Three Way Auto EQ===
 
 ======= ===== ============================
@@ -69,11 +76,11 @@ Mid     Audio Equalized Mid Driver Channel
 Tweeter Audio Equalized Tweeter Channel
 ======= ===== ============================
 
-| 
+
 | ===== Configurable Parameters =====
 
 Source Tab
-^^^^^^^^^^
+----------
 
 When first opening the control, the source tab will be visible. This is where the response(s) of the desired speakers are loaded. Compatible formats include Impulse Responses with one measurement per line and Frequency responses in the MLSSA file format.
 
@@ -82,7 +89,7 @@ When first opening the control, the source tab will be visible. This is where th
    :width: 600px
 
 Controls
---------
+~~~~~~~~
 
 -  **Impulse Response Radio Button** – Click this to use an Impulse Response Measurement as the speaker response. Disables the Frequency Response file import.
 -  **Frequency Response Radio Button** – Click this to use a Frequency Response Measurement as the speaker response. The MLSSA file format is supported. Disables all Impulse Response related controls. Several example MLSSA response files are included with SigmaStudio. Under a standard SigmaStudio installation, they can be found under your home directory: C:\\Users\\Username\\Documents\\Analog Devices\\SigmaStudio x.y\\Projects\\Speaker Measurement Samples\\
@@ -97,7 +104,7 @@ Controls
 -  **Smoothing Control** – Changes the smoothing of the frequency response that is calculated from the impulse response.
 
 Target Response Tab
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 The next tab provides tools to allow the user to design the desired target response for each transducer.
 
@@ -105,10 +112,8 @@ The next tab provides tools to allow the user to design the desired target respo
    :align: center
    :width: 600px
 
-.. _controls-1:
-
 Controls
---------
+~~~~~~~~
 
 -  **Design Controls**
 
@@ -125,7 +130,7 @@ Controls
 -  **Combined Target Response Graph** – This graph shows exactly which part of each speaker the algorithm is going to design for. In multiband designs, this graph will have different colored sections for each speaker.
 
 Design Settings Tab
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 This tab provides controls to customize the operation of the Automatic Speaker EQ algorithm.
 
@@ -133,10 +138,8 @@ This tab provides controls to customize the operation of the Automatic Speaker E
    :align: center
    :width: 600px
 
-.. _controls-2:
-
 Controls
---------
+~~~~~~~~
 
 -  **Show Advanced Settings** – Displays the technical settings of the Automatic Speaker EQ algorithm. For information about Advanced Settings, see the Appendix.
 -  **# Filters Control** – This defines the number of filters that the Automatic Speaker EQ algorithm should use to match the target response.
@@ -149,7 +152,7 @@ Controls
 -  **Design All Button** – This will initiate the Automatic Speaker EQ algorithm for all speakers.
 
 Filter Tabs
-~~~~~~~~~~~
+-----------
 
 After running the Automatic Speaker EQ algorithm, the Filters tab is automatically displayed. The Filters tab shows the results of the algorithm and allows the user to change the values of the filters as desired. The control is the same as the Parametric EQ included in SigmaStudio.
 
@@ -157,10 +160,8 @@ After running the Automatic Speaker EQ algorithm, the Filters tab is automatical
    :align: center
    :width: 600px
 
-.. _controls-3:
-
 Controls
---------
+~~~~~~~~
 
 -  **Graph Controls** – These control the x and y axis zoom, as well as allow the user to add and remove filters.
 -  **Filter Table** – This displays all the information available about each filter, as well as allowing the user to edit each parameter.
@@ -174,7 +175,7 @@ Controls
 -  **Export Results Button** – Exports the filter coefficients in a text file to be used with the General 2nd order EQ filter included with Sigma Studio.
 
 Crossover Tab
-~~~~~~~~~~~~~
+-------------
 
 The crossover tab is the same as the crossover control included in Sigma Studio. The initial crossover points are set at the cutoff frequencies defined on the Target Tab. The user is then free to edit them as needed.
 
@@ -182,10 +183,8 @@ The crossover tab is the same as the crossover control included in Sigma Studio.
    :align: center
    :width: 600px
 
-.. _controls-4:
-
 Controls
---------
+~~~~~~~~
 
 -  **Crossover Graph** – This is the graphical display of the crossover response. There are two lines per band – the response of the filter and the response of the speaker after the filter is applied.
 -  **Enable Control** – In some cases it is necessary to disable to crossover filter. Uncheck this box to do so.
@@ -196,7 +195,7 @@ Controls
 -  **Link Enable** – Link the frequencies of the two crossover filters.
 
 Crossover Tab Alignment
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Because the Automatic Speaker EQ uses IIR filters, the phase of the signal is affected. This creates a need to align the crossover filters to prevent unwanted cancellation due to phase irregularities. The alignment tab will help fix any phase-related cancellation and allow the user to fine-tune the system.
 
@@ -204,10 +203,8 @@ Because the Automatic Speaker EQ uses IIR filters, the phase of the signal is af
    :align: center
    :width: 600px
 
-.. _controls-5:
-
 Controls
---------
+~~~~~~~~
 
 -  **Alignment Controls** – These add delay/gain to the currently selected speaker. Results are updated in real time on all graphs.
 -  **Individual Magnitude Graph** – This graph displays the response of the currently selected speaker.
@@ -216,7 +213,7 @@ Controls
 -  **Total Magnitude/Phase Graphs** – These graphs display the total output of the system, as well as the phase of each speaker together on the same graph to aid in aligning the crossover.
 
 Filter Initialization / Target From Filters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 The dialogs for defining a target from filters and for initializing filters are the same.
 
@@ -236,7 +233,7 @@ The dialogs for defining a target from filters and for initializing filters are 
 
 
 Advanced Settings
------------------
+~~~~~~~~~~~~~~~~~
 
 The advanced settings are located on the Design Settings tab. They are hidden by default, but pushing the “Show Advanced Settings” button will make them appear.
 
@@ -262,5 +259,3 @@ The advanced settings are located on the Design Settings tab. They are hidden by
 
    -  **Q Min/Max** – The smallest/largest Q value the algorithm can use when designing filters
    -  **Gain Min/Max** – The smallest/largest gain values the algorithm can apply to filters
-
-.. |autoeq.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/autoeq.png

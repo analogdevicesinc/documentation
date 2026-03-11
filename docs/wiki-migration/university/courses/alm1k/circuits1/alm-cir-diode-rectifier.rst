@@ -29,9 +29,7 @@ In the ALICE desktop software we can make the following adjustments. As shown in
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 – Resistor (100 Ω or any similar value)
-| 4 – small signal diode (1N914 or similar)
+ADALM1000 hardware module 1 – Resistor (100 Ω or any similar value) 4 – small signal diode (1N914 or similar)
 
 Directions:
 ~~~~~~~~~~~
@@ -62,9 +60,7 @@ Compare the measured voltage in CB-V with the voltage calculated by multiplying 
 Questions:
 ~~~~~~~~~~
 
-| Why is the peak value of the rectified output less than the peak value of the AC input and by how much?
-| At what point in the input waveform does the rectified waveform become positive i.e. something other than zero?
-| What happens if the direction of the diode is reversed? Repeat the experiment with the direction of the diode reversed.
+Why is the peak value of the rectified output less than the peak value of the AC input and by how much? At what point in the input waveform does the rectified waveform become positive i.e. something other than zero? What happens if the direction of the diode is reversed? Repeat the experiment with the direction of the diode reversed.
 
 Further Exploration:
 ~~~~~~~~~~~~~~~~~~~~
@@ -82,8 +78,6 @@ Full wave rectifier:
 
 The purpose of this activity is to investigate the use of two diodes as a full wave rectifier.
 
-.. _directions-1:
-
 Directions:
 ~~~~~~~~~~~
 
@@ -98,16 +92,12 @@ Again using 1N914 diodes, set up the breadboard with AWG CH-A attached to one en
    Figure 3, Connection diagram for full wave diode rectifier
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The AWG CH-A waveform generator should be configured for a 100 Hz Sine wave with 0 volt Min value and 5 volt Max value. The AWG CH-B generator should also be configured for a 100 Hz Sine wave but with 5 volt Min value and 0 volt Max value. This effectively inverts, 180° phase shift, CH-B with respect to CH-A.
 
 If both 0 degree and 180 degree phases of the AC input are available, then a second diode can fill in the missing half-wave of the input and produce the full-wave rectified signal. Again the forward voltage of the diodes will be apparent and the output waveform will not come to a sharp point at the zero crossing due to the non-zero turn on voltage of the diodes.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -120,16 +110,10 @@ To display the sum of the channel A and channel B current (in mA) enter the foll
 
 Under Math select Formula to display the calculated waveform. Set the Math-Axis to I-A. This also in effect displays the voltage across R\ :sub:`L`. The voltage is the current (in A) times the 100 Ω value of R\ :sub:`L`. You can turn off the individual CA-I and CB-I curves at this point.
 
-.. _questions-1:
-
 Questions:
 ~~~~~~~~~~
 
-| What happens if the direction of the diodes is reversed? Repeat experiment with the direction of both diodes reversed.
-| What happens if the direction of one diode is opposite of the other? Repeat experiment with the direction of one diode (D\ :sub:`1`) reversed.
-| How could both 0 degree and 180 degree phases be created from a single source? (how about a transformer?)
-
-.. _further-exploration-1:
+What happens if the direction of the diodes is reversed? Repeat experiment with the direction of both diodes reversed. What happens if the direction of one diode is opposite of the other? Repeat experiment with the direction of one diode (D\ :sub:`1`) reversed. How could both 0 degree and 180 degree phases be created from a single source? (how about a transformer?)
 
 Further exploration:
 ~~~~~~~~~~~~~~~~~~~~
@@ -147,8 +131,6 @@ Bridge rectifier
 
 The purpose of this part of the lab is to investigate the use of four diodes as a bridge rectifier.
 
-.. _directions-2:
-
 Directions:
 ~~~~~~~~~~~
 
@@ -162,8 +144,6 @@ Four diodes (1N914) can be arranged in a bridge configuration to provide a full-
 
    Figure 4 Connection diagram for diode bridge rectifier
 
-
-.. _hardware-setup-2:
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -180,8 +160,6 @@ The AWG CH-A waveform generator should be configured for a 100 Hz Sine wave with
 
 
 Checking the Sync AWG box means you will not need to set a trigger input source or level.
-
-.. _procedure-2:
 
 Procedure:
 ~~~~~~~~~~
@@ -207,8 +185,6 @@ Try replacing the diodes with RED (D\ :sub:`1`, D\ :sub:`4`) and GREEN (D\ :sub:
 
 Connect a 100 uF capacitor across the bridge output to filter the rectified voltages. Be sure to note the correct polarity of the electrolytic capacitor with respect to the positive and negative outputs of the bridge. How does this filter cap change the voltage and current waveforms?
 
-.. _questions-2:
-
 Questions:
 ~~~~~~~~~~
 
@@ -221,8 +197,6 @@ How could you reconfigure this circuit to allow one end of the load resistor to 
 
 **For Further Reading:**
 
-| `Rectifiers <https://en.wikipedia.org/wiki/Rectifier>`_
-| `Bridge Rectifier <https://en.wikipedia.org/wiki/Diode_bridge>`_
+`Rectifiers <https://en.wikipedia.org/wiki/Rectifier>`_ `Bridge Rectifier <https://en.wikipedia.org/wiki/Diode_bridge>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**

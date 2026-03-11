@@ -11,7 +11,7 @@ There are a few `Interwiki link <https://wiki.analog.com/syntax>`_ shortcuts whi
 Link to the mainline linux kernel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  ``[[:git-linux:`path|path]]``` translates to ``http://github.com/analogdevicesinc/linux/blob/{branch}/{path}``
+-  ``[[https://github.com/analogdevicesinc/linux/blob/branch/path|path]]`` translates to ``http://github.com/analogdevicesinc/linux/blob/{branch}/{path}``
 
    -  Example: ``[[:git-linux:`arch/arm/boot/dts/zynq-adrv9361-z7035-fmc-rfcard-tdd`.dts|device tree]]`` makes :git-linux:`device tree <arch/arm/boot/dts/zynq-adrv9361-z7035-fmc-rfcard-tdd.dts>` in the wiki.
 

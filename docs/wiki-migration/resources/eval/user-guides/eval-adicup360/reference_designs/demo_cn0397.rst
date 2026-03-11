@@ -8,8 +8,7 @@ General description
 
 The **ADuCM360_demo_cn0397** project uses the :adi:`EVAL-CN0397-ARDZ shield <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/cn0397>` which is a single-supply, low power, low noise, 16-bit light detector utilizing wavelength specific photodiodes. The photodiodes used in this circuit are sensitive at different wavelengths, to read light intensity levels over the visible light spectrum where the plants are photosynthetically active.
 
-| 
-| The **EVAL-CN0397-ARDZ** board uses :adi:`ad8500`, a low power, precision CMOS op amp with a low input bias current of a typical 1pA which is used in a transipedance amplifier configuration to convert the current output of the photodiodes into voltage. It also features :adi:`ad7798` a 3-channel, low noise, low power 16-bit ADC that converts the analog voltage into digital data in for the processing of data into light intensity. The circuit utilizes RGB photodiodes from Everlight with their peak sensitivities 620nm (**R**), 550nm (**G**) and 470nm (**B**).
+The **EVAL-CN0397-ARDZ** board uses :adi:`ad8500`, a low power, precision CMOS op amp with a low input bias current of a typical 1pA which is used in a transipedance amplifier configuration to convert the current output of the photodiodes into voltage. It also features :adi:`ad7798` a 3-channel, low noise, low power 16-bit ADC that converts the analog voltage into digital data in for the processing of data into light intensity. The circuit utilizes RGB photodiodes from Everlight with their peak sensitivities 620nm (**R**), 550nm (**G**) and 470nm (**B**).
 
 The **ADuCM360_demo_cn0397** application perform ADC readings for all 3 channels, processes them and make all necessary calculations in order to provide light intensity and light concentration for each color.
 
@@ -120,8 +119,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -133,8 +130,6 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
-|
-
 Calibration procedure
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -145,8 +140,7 @@ If the calibration routine is enabled (check *USE_CALIBRATION* parameter) in a t
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/cn0397_demo_2.png
    :width: 1000px
 
-| 
-| Once all the channels have been calibrated, the circuit is now ready for use. The output data will be available for each LED.
+Once all the channels have been calibrated, the circuit is now ready for use. The output data will be available for each LED.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/cn0397_demo_3.png
    :width: 1000px
@@ -176,17 +170,14 @@ This project contains: system initialization part - disabling watchdog, setting 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/cn0397_project_structure.jpg
    :align: left
 
-| 
-| In the **src** and **include** folders you will find the source and header files related to CN0397 software application. The *Communication.c/h* files contain **SPI** and **UART** specific data, meanwhile the *CN0397.c/h* files contain the calculation part, the *AD7798.c/h* files contain ADC channels handling.
+In the **src** and **include** folders you will find the source and header files related to CN0397 software application. The *Communication.c/h* files contain **SPI** and **UART** specific data, meanwhile the *CN0397.c/h* files contain the calculation part, the *AD7798.c/h* files contain ADC channels handling.
 
-| 
-| The **RTE** folder contains device and system related files:
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| // End of Document //
+// End of Document //
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/switch_cn0397.jpg
    :width: 600px

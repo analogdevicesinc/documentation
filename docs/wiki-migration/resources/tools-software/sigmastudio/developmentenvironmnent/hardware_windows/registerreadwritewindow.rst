@@ -1,15 +1,19 @@
 Register Read/Write Window
 ==========================
 
-| :doc:`Click here to return to the Hardware Windows page. </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
-| The Register Read/Write window allows you to read and write bytes of data from and to a DSP IC, for some DSPs it also performs program file loading and data capture.
-| To access the Register Control window:
+:doc:`Click here to return to the Hardware Windows page. </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
+
+The Register Read/Write window allows you to read and write bytes of data from and to a DSP IC, for some DSPs it also performs program file loading and data capture.
+
+To access the Register Control window:
 
 -  Click the Hardware Configuration tab at the top of the workspace.
 -  Right-click on the DSP processor block, (click outside of the part number field, e.g. AD1701) to display the context menu.
 -  Select Read/Write Window from the menu.
 
-| |registerpic1.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironmnent/hardware_windows/registerpic1.png
+   :alt: registerpic1.png
+   :align: center
 
 Register Read/Write
 -------------------
@@ -57,9 +61,8 @@ To load a file:
 -  Locate the \*.dat file you wish to load (e.g. hex_program_data.dat) and click open, he numerical control will display the size of the program bytes.
 -  Press Load to send data to the hardware.
 
-| |registerpic2.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironmnent/hardware_windows/registerpic2.png
+   :alt: registerpic2.png
+   :align: center
 
 File load functionality for the AD1940/AD1940 is available through the `Imploader <https://wiki.analog.com/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/imploader>`_.
-
-.. |registerpic1.png| image:: https://wiki.analog.com/_media/registerpic1.png
-.. |registerpic2.png| image:: https://wiki.analog.com/_media/registerpic2.png

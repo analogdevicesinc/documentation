@@ -233,7 +233,7 @@ Software Revision History
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +----------+--------------+-----------------------------------------------------------------------------------------------------------------------------+
 | REVISION | RELEASE DATE | SUMMARY OF UPDATES                                                                                                          |
@@ -486,7 +486,7 @@ Software Revision History
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +----------+--------------+-----------------------------------------------------------------------------------------------------------------------------+
 | REVISION | RELEASE DATE | SUMMARY OF UPDATES                                                                                                          |
@@ -739,7 +739,7 @@ Software Revision History
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +----------+--------------+-----------------------------------------------------------------------------------------------------------------------------+
 | REVISION | RELEASE DATE | SUMMARY OF UPDATES                                                                                                          |
@@ -842,7 +842,7 @@ IMU EVALUATION SOFTWARE REVISION HISTORY
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +----------+--------------+-----------------------------------------------------------------------------------------------------------------------------+
 | REVISION | RELEASE DATE | SUMMARY OF UPDATES                                                                                                          |

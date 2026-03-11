@@ -31,11 +31,7 @@ The variable analog outputs supplied by the ADALM2000 hardware are voltages. The
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 1 - 100KΩResistors
-| 1 - 100ΩResistor
-| 1 - small signal NPN transistor (2N3904 or SSM2212)
+ADALM2000 Active Learning Module Solder-less Breadboard 1 - 100KΩResistors 1 - 100ΩResistor 1 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions and Setup:
 ---------------------
@@ -72,14 +68,14 @@ The Gummel plot is the combined plot of the collector and base currents (I\ :sub
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a4_nf2.png
    :align: right
 
-|
-
 .. container:: centeralign
 
    Figure 4, Circuit to generate a Gummel Plot breadboard connection
 
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a4_f3.jpg
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -91,29 +87,15 @@ The Gummel plot is the combined plot of the collector and base currents (I\ :sub
 A more accurate approach to create IB
 =====================================
 
-.. _objective-1:
-
 Objective:
 ----------
 
 We need to somehow remove V\ :sub:`BE` from the equation in figure 1 which sets I\ :sub:`B`. The circuits shown in figures 6 and 8 perform the function to force V\ :sub:`AWG1` across the 10KΩ resistor independent of the value of V\ :sub:`BE`.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 1 - Dual Op AMP (such as ADTL082)
-| 4 - 10KΩ Resistors
-| 1 - 1KΩ Resistor
-| 1 - 100Ω Resistor
-| 1 - small signal NPN transistor / PNP transistor (2N3904, 2N3906, SSM2212, SSM2220)
-| 2 - 4.7 uF decoupling capacitors
-| 1 - 1 uF filter capacitor
-
-.. _directions-and-setup-1:
+ADALM2000 Active Learning Module Solder-less Breadboard 1 - Dual Op AMP (such as ADTL082) 4 - 10KΩ Resistors 1 - 1KΩ Resistor 1 - 100Ω Resistor 1 - small signal NPN transistor / PNP transistor (2N3904, 2N3906, SSM2212, SSM2220) 2 - 4.7 uF decoupling capacitors 1 - 1 uF filter capacitor
 
 Directions and Setup:
 ---------------------
@@ -203,22 +185,15 @@ Further reading: http://en.wikipedia.org/wiki/Transistor_curve_tracer
 Measuring Transistor VBE
 ========================
 
-.. _objective-2:
-
 Objective:
 ----------
 
 The purpose of this activity is to characterize the base emitter voltage of a BJT. The V\ :sub:`BE` vs. Collector current characteristic of the transistor is a key factor in circuits. Often transistors are used in pairs where the matching of the V\ :sub:`BE` is important to proper circuit operation. In other cases the difference between the V\ :sub:`BE` of two or more transistors is exploited in the operation of the circuit. Size matters, V\ :sub:`BE` is a strong function of the size of the transistor, the emitter region at least.
 
-.. _materials-2:
-
 Materials:
 ----------
 
-| Various -- small signal transistors (NPN and PNP)
-| 1 - Dual Op AMP (such as ADTL082)
-| 1 - 1KΩResistor
-| 2 - 4.7 uF decoupling capacitors
+Various -- small signal transistors (NPN and PNP) 1 - Dual Op AMP (such as ADTL082) 1 - 1KΩResistor 2 - 4.7 uF decoupling capacitors
 
 Directions:
 -----------
@@ -237,8 +212,8 @@ The circuit below, figure 14, can be used in conjunction with the ADALM2000 to a
 Hardware Setup:
 ---------------
 
-| 
-| |image2|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a4_nf10.png
+   :align: right
 
 .. container:: centeralign
 
@@ -246,8 +221,6 @@ Hardware Setup:
 
 
 The generator output W1 should be configured for a 100 Hz triangle wave with 2 volt amplitude peak-to-peak and -2 volt offset (for an NPN device). The single ended input of scope channel 2+ is used to measure the voltage at the base of the transistor (optionally connect 2- to the emitter to remove any input offset of the op-amp). The setup should be configured with channel 1 connected to display the output of W1 and channel 2 connected to display the base voltage. The emitter current is calculated as the voltage of W1 / 1KΩ.
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -284,7 +257,7 @@ where:
 | ln is the natural log
 | I\ :sub:`S` is the collector-emitter saturation current
 
-| When the collector-emitter saturation currents (emitter area) are equal, they cancel each other out, and Equation 4 reduces to Equation 5.
+When the collector-emitter saturation currents (emitter area) are equal, they cancel each other out, and Equation 4 reduces to Equation 5.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a4_nf16.png
    :align: center
@@ -325,8 +298,6 @@ The difference between these two curves, or delta V\ :sub:`BE`, is plotted here.
 
    Figure 19, DV\ :sub:`BE` 2S1815 / 2D438
 
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -376,7 +347,3 @@ http://michaelgellis.tripod.com/howland.html
 http://falstad.com/circuit/e-howland.html
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
-
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a4_f3.jpg
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a4_nf10.png

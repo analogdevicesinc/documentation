@@ -64,7 +64,7 @@ The following function is an example on how to calibrate the HSTIA gain resistor
          {
             AD5940_SweepNext(&AppBIACfg.SweepCfg, &hsrtia_cal.fFreq);
             AD5940_HSRtiaCal(&hsrtia_cal, AppBIACfg.RtiaCalTable[i]);
-            printf("Freq:%.2f,Mag:%.2f,Phase:%fDegree\n", hsrtia_cal.fFreq, AppBIACfg.RtiaCalTable[i][0], 
+            printf("Freq:%.2f,Mag:%.2f,Phase:%fDegree\n", hsrtia_cal.fFreq, AppBIACfg.RtiaCalTable[i][0],
             AppBIACfg.RtiaCalTable[i][1]*180/MATH_PI);
           }
           AppBIACfg.RtiaCurrValue[AppBIACfg.SweepCfg.SweepIndex] = AppBIACfg.RtiaCalTable[i][0];
@@ -75,7 +75,7 @@ The following function is an example on how to calibrate the HSTIA gain resistor
       {
          hsrtia_cal.fFreq = AppBIACfg.SinFreq;
          AD5940_HSRtiaCal(&hsrtia_cal, AppBIACfg.RtiaCurrValue);
-         printf("RtiaMag:%.2f,Phase:%fDegree\n", AppBIACfg.RtiaCurrValue[0], 
+         printf("RtiaMag:%.2f,Phase:%fDegree\n", AppBIACfg.RtiaCurrValue[0],
          AppBIACfg.RtiaCurrValue[1]*180/MATH_PI);
       }
       return AD5940ERR_OK;

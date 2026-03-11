@@ -168,8 +168,6 @@ The evaluation board is set up to use the external 2.5 V on-board reference (ADR
 
 -  Use the navigation tools within each graph to control the cursor, zooming, and panning.
 
-.. _reading-samples-from-the-adc-1:
-
 Reading Samples from the ADC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -240,8 +238,6 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 -  To display the waveform data in degrees Celsius pick DegC in y-axis units dropdown (Label 3)
 -  For more information on the Waveform window go to the software section :doc:`here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
 
-.. _reading-samples-from-the-adc-2:
-
 Reading Samples from the ADC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -256,8 +252,6 @@ The evaluation board is set up to use the external 2.044 V in the RTD demo mode(
    -  When selecting Run Continuous, the software performs a continuous capture from the ADC by clicking the Run Once button. Click the Stop Capture button again to stop capturing data.
 
 -  Use the navigation tools within each graph to control the cursor, zooming, and panning.
-
-.. _reading-samples-from-the-adc-3:
 
 Reading Samples from the ADC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

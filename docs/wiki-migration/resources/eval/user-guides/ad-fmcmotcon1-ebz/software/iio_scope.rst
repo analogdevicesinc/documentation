@@ -49,8 +49,11 @@ The second AD7401A measuring system is part of the Low Voltage Drive board. The 
 Speed monitoring
 ^^^^^^^^^^^^^^^^
 
-| This IP monitors the speed, and display the number of counts ( in 10ns units) between two motor commutations. In order to display the speed in RPM, the data should be processed by checking the 1/x option and multiply by 25.000.000
-| |Speed measurement|
+This IP monitors the speed, and display the number of counts ( in 10ns units) between two motor commutations. In order to display the speed in RPM, the data should be processed by checking the 1/x option and multiply by 25.000.000
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_speed_sc.png
+   :alt: Speed measurement
+   :width: 600px
 
 FOC Controller monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -76,8 +79,12 @@ Control
 Manual Control
 ^^^^^^^^^^^^^^
 
-| This controller allows the control of the motor in manual mode by directly specifying the fill factor of the PWM signal applied used to control the 3 phase inverter. The motor is driven using a 6 step comutation algorithm.
-| |Manual Control|
+This controller allows the control of the motor in manual mode by directly specifying the fill factor of the PWM signal applied used to control the 3 phase inverter. The motor is driven using a 6 step comutation algorithm.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_manual_ctrl.png
+   :alt: Manual Control
+   :align: left
+   :width: 400px
 
 +-----------------+--------------------------------------------------------------------------------+
 | Control         | Description                                                                    |
@@ -109,8 +116,3 @@ This selects the :doc:`MathWorks FOC IP </wiki-migration/resources/eval/user-gui
 
 .. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#none#../
    :alt: Overview#none
-
-.. |Speed measurement| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_speed_sc.png
-   :width: 600px
-.. |Manual Control| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_manual_ctrl.png
-   :width: 400px

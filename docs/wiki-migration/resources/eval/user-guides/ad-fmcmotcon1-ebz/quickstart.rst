@@ -5,7 +5,9 @@ AD-FMCMOTCON1-EBZ Quick Start Guides
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the `AD-FMCMOTCON1-EBZ </>`_ on various FPGA development boards.
+
+
+The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the `AD-FMCMOTCON1-EBZ </>`_ on various FPGA development boards.
 
 Quick Start Guides are available for
 

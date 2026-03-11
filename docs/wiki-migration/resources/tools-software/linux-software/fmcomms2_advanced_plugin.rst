@@ -18,18 +18,13 @@ See more details about :doc:`AD9361 Customization </wiki-migration/resources/too
    
    .. container:: box bggreen
 
-         
-         .. note::
-
-            This specifies any shell prompt running on the target
+      This specifies any shell prompt running on the target
 
          
          ::
          
             root@linaro-ubuntu-desktop:~# **cd /sys/kernel/debug/iio/iio\:device1/**
-            root@linaro-ubuntu-desktop:/sys/kernel/debug/iio/iio:device1# **grep "" * | sed "s/:/ = </g"
-
-            | awk '{print $0">;"}'**
+            root@linaro-ubuntu-desktop:/sys/kernel/debug/iio/iio:device1# **grep "" * | sed "s/:/ = </g" | awk '{print $0">;"}'**
             adi,2rx-2tx-mode-enable = <1>;
             adi,agc-adc-large-overload-exceed-counter = <10>;
          
@@ -41,7 +36,7 @@ See more details about :doc:`AD9361 Customization </wiki-migration/resources/too
    
    For the No-OS driver the mapping can be found here: :doc:`AD9361 Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361-customization>`
    
-   |
+
 
 Screenshots / Descriptions
 --------------------------

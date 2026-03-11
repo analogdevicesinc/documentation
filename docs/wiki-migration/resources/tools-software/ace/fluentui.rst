@@ -87,7 +87,7 @@ All features currently available in the sidebar menu:
    The menu also contains a pin/unpin button in the top left corner. By default the menu is pinned, if you want to unpin it just click the button and the sidebar menu will collapse whenever you move the mouse cursor out of the menu's boundary.
 
 
-.. image:: https://wiki.analog.com/_media/sidebar_menu.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/sidebar_menu.png
    :alt: sidebar_menu.png
    :align: center
 
@@ -141,7 +141,7 @@ The Help top bar menu has been replaced with a new toolview that can be docked w
 
 The Help tool view contains license information, links to useful documentation and any of the ACE feedback links. As the application grows this tool view may be used for more in depth user help functionality. The help tool view is shown in the image below docked as the main content in the application. You can decide where you would like to dock this tool view to suit your own needs.
 
-.. image:: https://wiki.analog.com/_media/help_tool_view.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/help_tool_view.png
    :alt: help_tool_view.png
    :align: center
 

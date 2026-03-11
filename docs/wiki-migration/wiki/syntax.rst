@@ -28,14 +28,13 @@ You can mark something as [STRIKEOUT:deleted] as well.
 **Paragraphs** are created from blank lines. If you want to **force a newline** without a paragraph, you can use two backslashes followed by a whitespace or the end of line.
 
 | This is some text with some linebreaks
-| Note that the two backslashes are only recognized at the end of a line
-| or followed by
+| Note that the two backslashes are only recognized at the end of a line or followed by
 | a whitespace \\\\this happens without it.
 
 ::
 
    This is some text with some linebreaks\\ Note that the
-   two backslashes are only recognized at the end of a line\\
+   two backslashes are only recognized at the end of a line
    or followed by\\ a whitespace \\this happens without it.
 
 You should use forced newlines only if really needed.
@@ -388,13 +387,23 @@ Some times you want to mark some text to show it's a reply or comment. You can u
 
    I think we should do it
 
+::
+
    > No we shouldn't
+
+::
 
    >> Well, I say we should
 
+::
+
    > Really?
 
+::
+
    >> Yes!
+
+::
 
    >>> Then lets do it!
 
@@ -458,7 +467,7 @@ As you can see, it's the cell separator before a cell which decides about the fo
 
    ^ Heading 4    | no colspan this time
 
-   |                    |
+
 
    ^ Heading 5    | Row 2 Col 2
 
@@ -470,8 +479,8 @@ You can have rowspans (vertically connected cells) by adding ``:::`` into the ce
 Heading 1   Heading 2                  Heading 3
 =========== ========================== ===========
 Row 1 Col 1 this cell spans vertically Row 1 Col 3
-Row 2 Col 1 :::                        Row 2 Col 3
-Row 3 Col 1 :::                        Row 2 Col 3
+Row 2 Col 1                            Row 2 Col 3
+Row 3 Col 1                            Row 2 Col 3
 =========== ========================== ===========
 
 Apart from the rowspan syntax those cells should not contain anything else.
@@ -531,9 +540,7 @@ You can include code blocks into your documents by either indenting them by at l
 
    This is preformatted code all spaces are preserved: like              <-this
 
-::
-
-   This is pretty much the same, but you could use it to show that you quoted a file.
+<file> This is pretty much the same, but you could use it to show that you quoted a file. </code>
 
 Those blocks were created by this source:
 
@@ -549,12 +556,12 @@ Those blocks were created by this source:
 
    <file>
    This is pretty much the same, but you could use it to show that you quoted a file.
-   </file>
+   </code>
 
 Syntax Highlighting
 ~~~~~~~~~~~~~~~~~~~
 
-:doc:`dokuwiki </wiki-migration/wiki/dokuwiki>` can highlight sourcecode, which makes it easier to read. It uses the `GeSHi <https://github.com/GeSHi/geshi-1.0>`_ Generic Syntax Highlighter -- so any language supported by GeSHi is supported. The syntax is the same like in the code and file blocks in the previous section, but this time the name of the used language is inserted inside the tag. Eg. ``<code java>`` or ``<file java>``.
+:doc:`dokuwiki </wiki-migration/wiki/dokuwiki>` can highlight sourcecode, which makes it easier to read. It uses the `GeSHi <https://github.com/GeSHi/geshi-1.0>`_ Generic Syntax Highlighter -- so any language supported by GeSHi is supported. The syntax is the same like in the code and file blocks in the previous section, but this time the name of the used language is inserted inside the tag. Eg. ``<code java>`` or ``<code java>``.
 
 .. code:: java
 
@@ -577,9 +584,10 @@ When you use the ``<code>`` or ``<file>`` syntax as above, you might want to mak
 
 ::
 
-   <file php myexample.php>
+   <code php myexample.php>
    <?php echo "hello world!"; ?>
-   </file>
+
+</code>
 
 .. code:: php
 

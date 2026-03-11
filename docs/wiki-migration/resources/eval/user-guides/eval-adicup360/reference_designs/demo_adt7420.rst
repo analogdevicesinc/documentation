@@ -102,11 +102,7 @@ Configure the ADT7420 in the operating mode you want using the //ADT7420.c // fi
 ::
 
 
-   uint8_t ui8configAdt7420 = (FAULT_TRIGGER_4 | CT_PIN_POLARITY | INT_PIN_POLARITY | INT_CT_MODE |CONTINUOUS_CONVERSION_MODE
-
-
-
-   | RESOLUTION_13_BITS);
+   uint8_t ui8configAdt7420 = (FAULT_TRIGGER_4 | CT_PIN_POLARITY | INT_PIN_POLARITY | INT_CT_MODE |CONTINUOUS_CONVERSION_MODE | RESOLUTION_13_BITS);
 
    /* False Trigger Count */
    #define FAULT_TRIGGER_1      /* 1 fault reading triggers an interrupt */
@@ -152,8 +148,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-|
-
 Following is the UART configuration.
 
 ::
@@ -165,8 +159,7 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
-| 
-| The user must press the **<ENTER>** key each time they want to display the results.
+The user must press the **<ENTER>** key each time they want to display the results.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adt7420/putty_output_display.png
    :align: center
@@ -190,20 +183,17 @@ For more detailed instructions on importing this application/demo example into t
 Project Structure
 ~~~~~~~~~~~~~~~~~
 
-| 
-| This is the **ADuCM360_demo_adt7420_pmdz** project structure. This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripheral; port configuration for I2C, temperature sensor data; I2C read/write functions; threshold monitoring.
-| |image1|
+This is the **ADuCM360_demo_adt7420_pmdz** project structure. This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripheral; port configuration for I2C, temperature sensor data; I2C read/write functions; threshold monitoring.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adt7420/adumc360_ide_project_structure.png
+   :align: left
+   :width: 400px
 
 In the **src** and **include** folders you will find the source and header files related to adt7420_pmdz application. You can modify those files as appropriate for your application. The *Communication.c/h* files contain I2C and UART specific data, meanwhile the *ADT7420.c/h* files contain the temperature information data and threshold registers. Here are parameters you can configure:
 
-| 
-| The **RTE** folder contains device and system related files:
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adt7420/adumc360_ide_project_structure.png
-   :width: 400px
+// End of Document //

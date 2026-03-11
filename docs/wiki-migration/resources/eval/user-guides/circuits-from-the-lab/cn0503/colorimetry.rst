@@ -6,9 +6,9 @@ Colorimetry can be used to determine the concentration of materials in a solutio
 General Description/Overview
 ----------------------------
 
-| The EVAL-CN0503-ARDZ is a four-channel optical platform capable of fluorescence, absorbance and scattering measurements. The two middle channels/light paths are only capable of absorbance and 180-degree scattering measurements. This demo uses the two paths for absorbance measurements for two different light wavelengths.
+The EVAL-CN0503-ARDZ is a four-channel optical platform capable of fluorescence, absorbance and scattering measurements. The two middle channels/light paths are only capable of absorbance and 180-degree scattering measurements. This demo uses the two paths for absorbance measurements for two different light wavelengths.
 
-| Measuring pH using colorimetry involves using a chemical reagent or indicator. Different indicators exhibit different color and light absorbance behavior. Some indicators break down into different ions which also exhibit different properties which is why the solution has very different color hues at the ends of the pH range. For this demo we will be using bromothymol blue from either a prepared solution or the API pH Test Kit. Bromothymol blue separates into a weak acid (HIn) and a conjugate base (In). HIn has high absorbance to 430nm light while In has high absorbance at 615nm light. The demo will use light sources with these two wavelengths for the two middle channels.
+Measuring pH using colorimetry involves using a chemical reagent or indicator. Different indicators exhibit different color and light absorbance behavior. Some indicators break down into different ions which also exhibit different properties which is why the solution has very different color hues at the ends of the pH range. For this demo we will be using bromothymol blue from either a prepared solution or the API pH Test Kit. Bromothymol blue separates into a weak acid (HIn) and a conjugate base (In). HIn has high absorbance to 430nm light while In has high absorbance at 615nm light. The demo will use light sources with these two wavelengths for the two middle channels.
 
 While bromothymol blue exhibits the most change in color in the 6 to 8 pH range, buffer solutions with known pH solutions can be used to set up the measurement/calibration curve. The demo uses the CN0503 GUI and details steps to set-up the pH measurement curve using a spreadsheet.
 
@@ -126,7 +126,7 @@ Performing a pH Measurement
 Preparing Test Samples
 ----------------------
 
-| Using colorimetry for pH measurement requires a reagent or indicator. The demo uses the API pH Test Kit which uses a reagent with hue similar to that of bromothymol blue. To prepare solutions in a cuvette for pH measurement with the CN0503, follow the steps outlined below.
+Using colorimetry for pH measurement requires a reagent or indicator. The demo uses the API pH Test Kit which uses a reagent with hue similar to that of bromothymol blue. To prepare solutions in a cuvette for pH measurement with the CN0503, follow the steps outlined below.
 
 -  If the cuvette was previously used, clean the cuvette with distilled water and let dry
 -  Add the solution to be tested to the cuvette up to 3/4 of the line at the top.

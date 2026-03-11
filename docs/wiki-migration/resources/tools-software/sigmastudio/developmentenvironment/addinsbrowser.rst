@@ -1,9 +1,13 @@
 Add-Ins Browser Dialog
 ======================
 
-| :doc:`Click here to return to the Dialogs page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/dialogs>`
-| Additional Schematic blocks including both Algorithms and ICs can be added to the SigmaStudio environment through the Add-Ins Browser Dialog. Go to **Tools - Add-Ins Browser...** in the main application menu to access this dialog.
-| |addinspic1.png|
+:doc:`Click here to return to the Dialogs page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/dialogs>`
+
+Additional Schematic blocks including both Algorithms and ICs can be added to the SigmaStudio environment through the Add-Ins Browser Dialog. Go to **Tools - Add-Ins Browser...** in the main application menu to access this dialog.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/addinspic1.png
+   :alt: addinspic1.png
+   :align: center
 
 To add a block:
 ---------------
@@ -32,5 +36,3 @@ Added blocks are immediately available for use, you do not need to restart Sigma
 
    Note: Add-In information is saved in the "AddIns.xml" file located in the application's installation directory. You may want to back-up this file when installing SigmaStudio updates. Also, you can view/edit this file a text editor if you prefer.
 
-
-.. |addinspic1.png| image:: https://wiki.analog.com/_media/addinspic1.png

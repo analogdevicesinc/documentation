@@ -50,7 +50,6 @@ Shown below, the sampling frequency is lowered to 5GHz from 6GHz to avoid the si
 Spurious performance
 ~~~~~~~~~~~~~~~~~~~~
 
---------------
 
 IF Section
 ----------
@@ -98,8 +97,6 @@ Timing and Control
 ------------------
 
 Automatic gain control (AGC), RF path switching, and beam switching/reconfiguration often have critical timing specs that drive component selection, especially in systems that require fast frequency hopping or wideband tuning. The RF switches, DSAs, and tunable beam states in the receiver signal chain offer fast switching and settling times, a high degree of configurability, and can be controlled via standard parallel and/or SPI interfaces. The tables below list the control interfaces and minimum configuration and settling time details at the component level for each of the sections of this reference design.
-
-.. _rx-beamforming-network-1:
 
 RX Beamforming Network
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -188,8 +185,6 @@ The Genesys workspace incorporates various system level cascade analyses that ta
    Simulations below use the :adi:`ADAR3001` definition for channel gain. Channel gain is the power ratio between a single RF output and single RF input, with all other inputs terminated with 50Ω, DSA code = 0, and TDU code = 0. In a real scenario, coherent gain would be used and is the power ratio between a single RF output and single RF input, with the other three inputs driven. All inputs would have similar amplitude and would be phased such that they combine coherently. For :adi:`ADAR3001` coherent gain (dB) = channel gain (dB) + 12 (dB). For :adi:`ADAR5000` coherent gain (dB) = channel gain (dB) + 6 (dB).
 
 
-.. _noise-power-spectral-simulation-1:
-
 Noise Power Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -197,16 +192,12 @@ The noise power spectral simulation shown below uses 76 individual carrier tones
 
 |image6| |image7|
 
-.. _two-tone-test-spectral-simulation-1:
-
 Two-Tone Test Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The two tone spectral simulation shown below uses 2 individual carrier tones each with an input power of -40 dBm centered around 30.5GHz to 31GHz and a delta of 50MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -200dBm are ignored.
 
 |image8| |image9|
-
-.. _system-cascade-1:
 
 System Cascade
 ^^^^^^^^^^^^^^
@@ -240,8 +231,6 @@ The Genesys workspace incorporates various system level cascade analyses that ta
    Simulations below use the :adi:`ADAR3001` definition for channel gain. Channel gain is the power ratio between a single RF output and single RF input, with all other inputs terminated with 50Ω, DSA code = 0, and TDU code = 0. In a real scenario, coherent gain would be used and is the power ratio between a single RF output and single RF input, with the other three inputs driven. All inputs would have similar amplitude and would be phased such that they combine coherently. For :adi:`ADAR3001` coherent gain (dB) = channel gain (dB) + 12 (dB). For :adi:`ADAR5000` coherent gain (dB) = channel gain (dB) + 6 (dB).
 
 
-.. _noise-power-spectral-simulation-2:
-
 Noise Power Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -249,16 +238,12 @@ The noise power spectral simulation shown below uses 76 individual carrier tones
 
 |image10| |image11|
 
-.. _two-tone-test-spectral-simulation-2:
-
 Two-Tone Test Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The two tone spectral simulation shown below uses 2 individual carrier tones with a total combined input power of -11 dBm centered around 30.5GHz to 31GHz and a delta of 50MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -150dBm are ignored.
 
 |image12| |image13|
-
-.. _system-cascade-2:
 
 System Cascade
 ^^^^^^^^^^^^^^

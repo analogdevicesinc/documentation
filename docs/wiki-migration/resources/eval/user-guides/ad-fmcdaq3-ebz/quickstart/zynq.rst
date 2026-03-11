@@ -71,16 +71,16 @@ Booting the SD Card
 
 -  You are done. You can interact with the GUI either over the network, or with the HDMI monitor/USB keyboard mouse.
 
-|
-
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with
 
-   | ``sudo shutdown -h now``
+   
+   ``sudo shutdown -h now``
+
+
    
    |image3|
-
 
 .. |http://www.xilinx.com/images/product-images/zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
 .. |zc706plusfmcjesdadc1.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png

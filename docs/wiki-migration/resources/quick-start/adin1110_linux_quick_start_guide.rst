@@ -74,8 +74,6 @@ NXP 8MMINI-BB
 .. image:: https://wiki.analog.com/_media/resources/quick-start/8mmini-bb-eval-adin1110ebz.jpg
    :width: 400px
 
-.. _wiring-1:
-
 Wiring
 ^^^^^^
 
@@ -94,8 +92,6 @@ GPIO 25 (Pin 37)     T1L_INT_N
    Connect both grounds (idealy) to the most accessible ground to you on the 8MMINI-BB.
 
 
-.. _board-settings-1:
-
 Board settings
 ^^^^^^^^^^^^^^
 
@@ -112,8 +108,6 @@ MS_SEL    OFF
 ========= ========
 
 Make sure IMX8MM-BB is set to boot from the SD Card, for more details go to `Boot Switch Setup <https://www.nxp.com/document/guide/get-started-with-the-i-mx-8m-mini-evkb:GS-iMX-8M-Mini-EVK>`_.
-
-.. _software-setup-1:
 
 Software Setup
 ^^^^^^^^^^^^^^
@@ -266,8 +260,6 @@ NVIDIA Jetson Nano
 .. image:: https://wiki.analog.com/_media/resources/quick-start/jetson_nano_adin1110_ebz.jpg
    :width: 400px
 
-.. _wiring-2:
-
 Wiring
 ^^^^^^
 
@@ -285,8 +277,6 @@ GPIO 13 (Pin 22)             T1L_INT_N
 
    Connect both grounds (AGND) (idealy) to the most accessible ground to you on the Jetson Nano. Also, avoid powering the EVAL-ADIN1110EBZ from the USB of Jetson Nano, driver won't probe correctly because on power-up (not reboot), power to the USB is given too late in boot stage. (Try powering from 5V pins or externally if possible).
 
-
-.. _board-settings-2:
 
 Board settings
 ^^^^^^^^^^^^^^
@@ -485,8 +475,6 @@ Make extlinux.conf point to the newly added dt:
 
 Reboot the Jetson Nano.
 
-.. _testing-1:
-
 Testing
 ^^^^^^^
 
@@ -499,19 +487,19 @@ If everything worked out fine, you should be able to see after typing `ip a <htt
        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
        inet 127.0.0.1/8 scope host lo
           valid_lft forever preferred_lft forever
-       inet6 ::1/128 scope host 
+       inet6 ::1/128 scope host
           valid_lft forever preferred_lft forever
    2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 1000
        link/ether 26:e1:6f:ab:e2:87 brd ff:ff:ff:ff:ff:ff
    3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
        link/ether ca:2f:b7:10:23:63 brd ff:ff:ff:ff:ff:ff
-       inet6 fe80::af3b:584c:73b7:6c4c/64 scope link noprefixroute 
+       inet6 fe80::af3b:584c:73b7:6c4c/64 scope link noprefixroute
           valid_lft forever preferred_lft forever
    4: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
        link/ether 00:04:4b:ea:59:ee brd ff:ff:ff:ff:ff:ff
        inet 10.48.65.145/24 brd 10.48.65.255 scope global dynamic noprefixroute eth1
           valid_lft 21053sec preferred_lft 21053sec
-       inet6 fe80::509a:e324:c836:2fa2/64 scope link noprefixroute 
+       inet6 fe80::509a:e324:c836:2fa2/64 scope link noprefixroute
           valid_lft forever preferred_lft forever
    5: l4tbr0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
        link/ether f2:79:c1:47:c6:11 brd ff:ff:ff:ff:ff:ff

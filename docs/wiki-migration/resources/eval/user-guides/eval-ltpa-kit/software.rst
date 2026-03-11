@@ -48,7 +48,7 @@ Installing the Software Dependencies
 Libiio Ver. 0.25
 ^^^^^^^^^^^^^^^^
 
--  Carefully read and understand the License Agreement form before proceeding. 
+-  Carefully read and understand the License Agreement form before proceeding.
 -  Click the **I accept the agreement** option.
 -  Click **Next** to proceed with the installation.
 -  Click **Install** to proceed with the installation.
@@ -60,7 +60,7 @@ Libiio Ver. 0.25
 Installing libm2k Ver. 0.7.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Carefully read and understand the License Agreement form before proceeding. 
+-  Carefully read and understand the License Agreement form before proceeding.
 -  Click the **I accept the agreement** option.
 -  Click **Next** to proceed with the installation.
 -  Select the additional installs with the libm2k. NOTE: The Overwrite libiio option appears when the was previously installed this in your system.
@@ -83,13 +83,14 @@ Installing M2K USB Drivers
 -  Click **Finish**.
 -  Proceed with finishing the M2K USB Device Drivers installation.
 
-| 
-| Complete the entire LTpowerAnalyzer Setup Wizard with all required dependencies.
+Complete the entire LTpowerAnalyzer Setup Wizard with all required dependencies.
 
 A desktop shortcut will be automatically created. Launch the LTpowerAnalyzer software by clicking the shortcut.
 
-| 
-| ===== Calibration ===== The LTpowerAnalyzer requires that a DC offset and gain system calibration be performed in order to achieve the most accurate results. The ADALM2000 W1 and W2 outputs will drift about 20 mV to 50 mV when power is first applied, and the circuit board starts to heat up. The outputs will stabilize after about 10 minutes, when another calibration should be run.
+Calibration
+-----------
+
+The LTpowerAnalyzer requires that a DC offset and gain system calibration be performed in order to achieve the most accurate results. The ADALM2000 W1 and W2 outputs will drift about 20 mV to 50 mV when power is first applied, and the circuit board starts to heat up. The outputs will stabilize after about 10 minutes, when another calibration should be run.
 
 When the program is started, it will try to restore the previously saved calibration. If no calibration has yet been run, a warning will be generated:
 
@@ -128,31 +129,33 @@ Below are the required connections when performing a calibration. It is importan
 .. container:: center
 
    
-   +------------------------------------+--------------------------------------------+
-   | **LTpowerAnalyzer Main Board       | **Connection During Calibration**          |
-   | (LB3031A) Pin**                    |                                            |
-   +------------------------------------+--------------------------------------------+
-   | OUT+, OUT-, IN+, IN-, VOUT+, VOUT- | Constant DC voltage or floating            |
-   +------------------------------------+--------------------------------------------+
-   | T+, T-,                            | Injection resistor termination or floating |
-   +------------------------------------+--------------------------------------------+
-   | GND                                | Ground                                     |
-   +------------------------------------+--------------------------------------------+
-   | **Current Probe (LB3058A) Pin**    |                                            |
-   +------------------------------------+--------------------------------------------+
-   | V+                                 | Floating or shorted to V- or GND           |
-   +------------------------------------+--------------------------------------------+
-   | V-                                 | Floating or connected to Ground            |
-   +------------------------------------+--------------------------------------------+
-   | (V+ ) - (V-)                       | 0V                                         |
-   +------------------------------------+--------------------------------------------+
+   +------------------------------------+---------------------------------------------+
+   | **LTpowerAnalyzer Main Board       |**\ Connection During Calibration**          |
+   | (LB3031A) Pin**                    |                                             |
+   +------------------------------------+---------------------------------------------+
+   | OUT+, OUT-, IN+, IN-, VOUT+, VOUT- | Constant DC voltage or floating             |
+   +------------------------------------+---------------------------------------------+
+   | T+, T-,                            | Injection resistor termination or floating  |
+   +------------------------------------+---------------------------------------------+
+   | GND                                | Ground                                      |
+   +------------------------------------+---------------------------------------------+
+   | **Current Probe (LB3058A) Pin**    |                                             |
+   +------------------------------------+---------------------------------------------+
+   | V+                                 | Floating or shorted to V- or GND            |
+   +------------------------------------+---------------------------------------------+
+   | V-                                 | Floating or connected to Ground             |
+   +------------------------------------+---------------------------------------------+
+   | (V+ ) - (V-)                       | 0V                                          |
+   +------------------------------------+---------------------------------------------+
    
 
 
-| 
-| ===== Sweep Amplitude Tab ===== The **Sweep Amplitude tab** contains the injection signal control for Bode plot measurements, and the loading current sweep for output impedance measurement. This feature allows users to program any arbitrary signal sweeping curve.
+Sweep Amplitude Tab
+-------------------
 
-<fc #6495ed>\ **Bode Plot Measurement: Voltage Injection Signal**\ </fc>
+The **Sweep Amplitude tab** contains the injection signal control for Bode plot measurements, and the loading current sweep for output impedance measurement. This feature allows users to program any arbitrary signal sweeping curve.
+
+**Bode Plot Measurement: Voltage Injection Signal**
 
 Program the voltage injection signal amplitude sweep based on your frequency of interest. This can be done by adding rows in the leftmost table in the Bode tab under the Sweep Amplitude window.
 
@@ -171,8 +174,7 @@ Program the voltage injection signal amplitude sweep based on your frequency of 
    **Amplitude Sweeping for Injection Signal Window for Bode Plot Measurements**
 
 
-| 
-| <fc #6495ed>\ **Output Impedance Measurement: Loading Current Sweep**\ </fc>
+**Output Impedance Measurement: Loading Current Sweep**
 
 Set the load current sweep level for output impedance measurement. Rows can be added at the leftmost table of the Impedance tab under the Sweep Amplitude window.
 
@@ -191,8 +193,7 @@ Set the load current sweep level for output impedance measurement. Rows can be a
    **Amplitude Sweeping for the Load Current Window for Output Impedance Measurement**
 
 
-| 
-| ----
+--------------
 
 Measurements
 ============
@@ -259,6 +260,8 @@ The Bode Measurement Setup is on the left side of the window.
    **Bode Plot Measurement Tab**
 
 
+>
+
 Bode Graph Tab Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -304,8 +307,10 @@ Click on the **Graph tab** on the right to bring up the graph setup.
    **Bode Plot Measurement Graph Tab**
 
 
-| 
-| === Bode Analysis Tab Interface === Click on the **Analysis tab** on the right to bring up the sweep results.
+Bode Analysis Tab Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Click on the **Analysis tab** on the right to bring up the sweep results.
 
 .. container:: center
 
@@ -335,8 +340,6 @@ Click on the **Graph tab** on the right to bring up the graph setup.
    **Bode Plot Measurement Analysis Tab**
 
 
-   | 
-
 Copying Analysis Data
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -345,8 +348,6 @@ Copying the measurement data from the analysis tab works differently. This secti
 -  Right-click on the **Analysis Tab** to see the **"Copy Data"** option.
 -  After the **"Copy Data"** option comes out, left-click to copy the measurement data.
 -  Paste the data to an excel spreadsheet by pressing **CTRL+V**.
-
-|
 
 Load, Modify, and Save Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -382,32 +383,31 @@ Right-click on the **Bode Plot** to show the pop-up menu.
 
 1. Launch the LTpowerAnalyzer software.
 
-| |image9|
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/launching_the_ltpoweranalyzer_software_without_the_current_probe.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Launching the LTpowerAnalyzer Software Without the Current Probe**
 
 
-| 
-| Check the status bar at the bottom of the main window. It should indicate that it found the M2k or Analog Discover 2 and the LTpowerAnalyzer main board is connected. In this example, we are not using the LB3058A current probe since we are only interested in taking a bode plot measurement.
+Check the status bar at the bottom of the main window. It should indicate that it found the M2k or Analog Discover 2 and the LTpowerAnalyzer main board is connected. In this example, we are not using the LB3058A current probe since we are only interested in taking a bode plot measurement.
 
-| 
-| 2. Run a calibration.
+2. Run a calibration.
 
 Turn off the power to the demo board, then run a calibration.
 
-| |image10|
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_plot_getting_started_calibration_2.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Running a Calibration**
 
 
-| 
-| 3. Set up the Injection Level.
+3. Set up the Injection Level.
 
 -  STEP #1: Click on the **Sweep Amplitude tab**.
 
@@ -417,16 +417,16 @@ Turn off the power to the demo board, then run a calibration.
 
 The sweep injection amplitude vs. frequency graph is updated as additional rows or points are added.
 
-| |image11|
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/impedanceinjectionlevelwithmenu.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Setting the Injection Level**
 
 
-| 
-| 4. Run a Sweep.
+4. Run a Sweep.
 
 -  STEP #1: Should an external load is unavailable, the current probe can be set as a DC load. Carefully select the desired DC Probe Current Level. Ensure that the selected DC Probe Current will not exceed the used Current Probe's rating and the DUT.
 
@@ -436,16 +436,16 @@ The sweep injection amplitude vs. frequency graph is updated as additional rows 
 
 -  STEP #4: When the measurement is complete, the measured parameters can be viewed by clicking on the **Analysis tab** on the right.
 
-| |image12|
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_bodemeas.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Running a Bode Plot Measurement**
 
 
-| 
-| 5. Rename the Measurements.
+5. Rename the Measurements.
 
 -  STEP #1: Click on the **Data** tab on the right.
 
@@ -453,16 +453,16 @@ The sweep injection amplitude vs. frequency graph is updated as additional rows 
 
 The legend will automatically be updated to the new name.
 
-| |image13|
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_bodemeas.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Renaming the Measurements**
 
 
-| 
-| 6. Edit the **Plot Title**.
+6. Edit the **Plot Title**.
 
 -  STEP #1: Right-click on the graph and select **Edit Title**.
 
@@ -472,16 +472,14 @@ The legend will automatically be updated to the new name.
 
 The plot title will be automatically updated to the new title.
 
-| |image14| |image15|
-|
+|image9| |image10|
 
 .. container:: center
 
    **Editing the Main Title**
 
 
-| 
-| 7. Add a Text Annotation.
+7. Add a Text Annotation.
 
 -  STEP #1: Right-click on the graph and select **Add Text Annotation**.
 
@@ -491,16 +489,14 @@ The plot title will be automatically updated to the new title.
 
 Next, select the new annotation by placing the cursor over it and then left click. The annotation can then be resized and moved as needed.
 
-| |image16| |image17| |image18|
-|
+|image11| |image12| |image13|
 
 .. container:: center
 
    **Adding a Text Annotation**
 
 
-| 
-| 8. Saving the Results.
+8. Saving the Results.
 
 -  STEP #1: Select the Save option in the **File tab: File > Save**
 
@@ -510,15 +506,12 @@ Next, select the new annotation by placing the cursor over it and then left clic
 
 Note that the **Setup File** type will only save the setup.
 
-| |image19| |image20|
-|
+|image14| |image15|
 
 .. container:: center
 
    **Saving a Bode Plot Measurement**
 
-
-| 
 
 Setting the Bode Plot Injection Level
 -------------------------------------
@@ -527,26 +520,23 @@ The injected signal level can affect the results of the gain and phase measureme
 
 The injection level vs. frequency can be set by clicking on the Bode Source tab and entering the break points into the table on the left. The maximum signal level is 500 mV pk-pk. Right click on the table to bring up a menu which will help edit the data in the table.
 
-| |image21|
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeinjlvl.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Setting the Bode Plot Injection Level**
 
 
-| 
-
 +-----------------------------------------------------------+------------------------------------------------------------+
-| |image24| **Tapered vs. Constant 20 mV Injection Levels** | |image25| **Tapered vs. Constant 100 mV Injection Levels** |
+| |image18| **Tapered vs. Constant 20 mV Injection Levels** | |image19| **Tapered vs. Constant 100 mV Injection Levels** |
 +-----------------------------------------------------------+------------------------------------------------------------+
 
 | 
 | With a constant 20 mV pk-pk injection level, both the gain and phase measurements are noticeably noisier at low frequencies because of the small input signal due to high open-loop gain.
 
 With a constant 100 mV pk-pk injection level, there is less noise at low frequencies, ripple in the phase along with gain and phase errors are noticeable beyond 10 kHz, indicating too much signal level.
-
-| 
 
 Saving and Importing Data to Excel
 ----------------------------------
@@ -579,23 +569,23 @@ Acquired data are arranged under the following:
 -  STEP #3: Type **CTRL+C** to copy the selected or highlighted data to the clipboard.
 -  Go to **EXCEL** and type **CTRL-V** to paste the data.
 
-|image26|
+|image20|
 
 .. container:: center
 
    **Bode Plot Measurement Data View**
 
 
-| 
-| |image27|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotanalysisdatatabexel.jpg
+   :align: center
+   :width: 400px
 
 .. container:: center
 
    **Bode Plot Data Pasted into Excel**
 
 
-| 
-| ----
+--------------
 
 TRANSIENT RESPONSE
 ==================
@@ -625,13 +615,13 @@ Navigate through the different functionalities of the transient response measure
          -  Transient PWL Measurement Setup
          -  Transient Rise & Fall Times
          -  Extending Vout Measurement Range
+         
 
-         | 
+   
+
 
 Transient Tab Interface
 -----------------------
-
-|
 
 Transient Pulse Measurement Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -669,132 +659,95 @@ Transient Pulse Measurement Setup
 |              | If the voltages are much less than 1mV like an LDO, then the switching frequency will be reported as 0. The switching frequency value is used to filter the voltage waveform before calculating the settling times |
 +--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image28|
+|image21|
 
 .. container:: center
 
    **Transient Pulse Measurement Setup**
 
 
-| 
-| === Transient PWL Measurement Setup === The current can also be described by a Piece Wise Linear (PWL) set of time, value points. The time must be increasing and greater than 0 for each data point and can be specified as an absolute time point relative to 0, or a differential time point relative to the previous time point in the list by placing a + sign before the value. Simply click on the box in the table and enter the value.
+Transient PWL Measurement Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The current can also be described by a Piece Wise Linear (PWL) set of time, value points. The time must be increasing and greater than 0 for each data point and can be specified as an absolute time point relative to 0, or a differential time point relative to the previous time point in the list by placing a + sign before the value. Simply click on the box in the table and enter the value.
 
 -  Right click on the **PWL table** to bring up the PWL menu to modify the contents of the table.
 
 
-|image29|
+|image22|
 
 .. container:: center
 
    **Transient PWL Measurement Setup**
 
 
-   | 
-
 Transient Graph Tab Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Trigger*           |                                                                                                                                                                                               |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Channel**         | Current or Voltage                                                                                                                                                                            |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Edge**            | Rising or Falling                                                                                                                                                                             |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Mode**            | Auto or Normal                                                                                                                                                                                |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Level**           | The trigger level in either Amps or Volts depending on the channel selected.                                                                                                                  |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **AutoLevel**       | The current trigger level is set automatically when checked                                                                                                                                   |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Time Base*         |                                                                                                                                                                                               |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Range**           | The time base range in seconds/division. Disabled when AutoScale is checked.                                                                                                                  |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Offset**          | Time base offset in number of divisions. Disabled when AutoScale is checked                                                                                                                   |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **AutoScale**       | The time base data will be automatically scaled when checked                                                                                                                                  |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Load Current*      |                                                                                                                                                                                               |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Range**           | The load current (Y1) range in amps/division. Disabled when AutoScale is checked                                                                                                              |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Offset**          | The load current offset in number of divisions. Disabled when AutoScale is checked                                                                                                            |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **DC Load Current** | The load current of an external parallel DC electronic load. Simply added to the measured values                                                                                              |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Enable**          | The load current waveform is visible when checked                                                                                                                                             |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **AutoScale**       | The load current data will be automatically scaled when checked                                                                                                                               |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Output Voltage*    |                                                                                                                                                                                               |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Range**           | The output voltage (Y2) range in amps/division. Disabled when AutoScale is checked                                                                                                            |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Offset**          | The output voltage offset in number of divisions. Disabled when AutoScale is checked                                                                                                          |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Scale Factor**    | The scale factor that will be multiplied by each measured Vout value. Allows for front end attenuation to expand the measurement range. See Extending Vout Measurement Range for more details |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Enable**          | The output voltage waveform is visible when checked                                                                                                                                           |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **AutoScale**       | The output voltage data will be automatically scaled when checked                                                                                                                             |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Graph Markers*     |                                                                                                                                                                                               |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Visible**         | The graph markers are visible when checked                                                                                                                                                    |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. container:: hi
-
-   *Trigger*\
-
-
-   |                                                                                                                                                                                               |
-
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Channel**                          | Current or Voltage                                                                                                                                                                            |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Edge**                             | Rising or Falling                                                                                                                                                                             |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Mode**                             | Auto or Normal                                                                                                                                                                                |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Level**                            | The trigger level in either Amps or Volts depending on the channel selected.                                                                                                                  |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **AutoLevel**                        | The current trigger level is set automatically when checked                                                                                                                                   |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *Time Base*\
-
-
-   |                                                                                                                                                                                               |
-
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Range**                            | The time base range in seconds/division. Disabled when AutoScale is checked.                                                                                                                  |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Offset**                           | Time base offset in number of divisions. Disabled when AutoScale is checked                                                                                                                   |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **AutoScale**                        | The time base data will be automatically scaled when checked                                                                                                                                  |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *Load Current*\
-
-
-   |                                                                                                                                                                                               |
-
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Range**                            | The load current (Y1) range in amps/division. Disabled when AutoScale is checked                                                                                                              |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Offset**                           | The load current offset in number of divisions. Disabled when AutoScale is checked                                                                                                            |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **DC Load Current**                  | The load current of an external parallel DC electronic load. Simply added to the measured values                                                                                              |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Enable**                           | The load current waveform is visible when checked                                                                                                                                             |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **AutoScale**                        | The load current data will be automatically scaled when checked                                                                                                                               |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *Output Voltage*\
-
-
-   |                                                                                                                                                                                               |
-
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Range**                            | The output voltage (Y2) range in amps/division. Disabled when AutoScale is checked                                                                                                            |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Offset**                           | The output voltage offset in number of divisions. Disabled when AutoScale is checked                                                                                                          |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Scale Factor**                     | The scale factor that will be multiplied by each measured Vout value. Allows for front end attenuation to expand the measurement range. See Extending Vout Measurement Range for more details |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Enable**                           | The output voltage waveform is visible when checked                                                                                                                                           |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **AutoScale**                        | The output voltage data will be automatically scaled when checked                                                                                                                             |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *Graph Markers*\
-
-
-   |                                                                                                                                                                                               |
-
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Visible**                          | The graph markers are visible when checked                                                                                                                                                    |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|image30|
+|image23|
 
 .. container:: center
 
    **Transient Graph Tab**
 
 
-| 
-| === Transient Analysis Limit Display === When the **Show Limits** box is checked, a light-gray box will be drawn around the voltage waveform with the Y values set by the values in the Lower Limit and Upper Limit combo boxes.
+Transient Analysis Limit Display
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image31|
+When the **Show Limits** box is checked, a light-gray box will be drawn around the voltage waveform with the Y values set by the values in the Lower Limit and Upper Limit combo boxes.
+
+
+|image24|
 
 .. container:: center
 
@@ -804,14 +757,12 @@ Transient Graph Tab Interface
 If the voltage waveform remains inside the box, the limit text will turn green, otherwise the text will be red.
 
 +-------------------------------------------------------------------+-----------------------------------------------------------------+
-| |image34|                                                         | |image35|                                                       |
+| |image27|                                                         | |image28|                                                       |
 | **Transient Analysis Passing Set Limits indicated by Green Text** | **Transient Analysis Failing Set Limits indicated by Red Text** |
 +-------------------------------------------------------------------+-----------------------------------------------------------------+
 
 | 
-
-Transient Analysis Tab
-~~~~~~~~~~~~~~~~~~~~~~
+| === Transient Analysis Tab ===
 
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | **Transient Number** | The transient sweep number to analyze                                                                                           |
@@ -827,49 +778,52 @@ Transient Analysis Tab
 | **Show Limits**      | The limits window will be displayed when checked                                                                                |
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
-|image36|
+|image29|
 
 .. container:: center
 
    **Transient Analysis Tab**
 
 
-| 
-| === Copying Analysis Data === Copying the measurement data from the analysis tab works differently. This section provides the step-by-step procedure to copy the data. This also applies for all the measurement tabs that provides analysis information.
+Copying Analysis Data
+~~~~~~~~~~~~~~~~~~~~~
+
+Copying the measurement data from the analysis tab works differently. This section provides the step-by-step procedure to copy the data. This also applies for all the measurement tabs that provides analysis information.
 
 -  Right click on the **Analysis Tab** to see the **Copy Data** option.
 -  After the **Copy Data** option comes out, left-click to copy the measurement data.
 -  Paste the data to an excel spreadsheet by pressing **CTRL+V**.
 
-|image37|
+|image30|
 
 .. container:: center
 
    **Oscilloscope Measurement Analysis Tab**
 
 
-| 
-| ==== Making a Transient Measurement ==== After setting up the hardware, here's a step-by-step guide on how to use the Transients Response Measurement feature of the LTpowerAnalyzer software.
+Making a Transient Measurement
+------------------------------
+
+After setting up the hardware, here's a step-by-step guide on how to use the Transients Response Measurement feature of the LTpowerAnalyzer software.
 
 1. Check the system status
 
 -  Click on the **Transient tab** and check the status bar at the bottom of the main window. It should indicate that it found the M2k or Analog Discover 2 and the LB3031A main board and LB3058A current probe is connected. The measurement output voltage and current probe temperature should be displayed.
 
 
-|image38|
+|image31|
 
 .. container:: center
 
    **Transient Tab with the Current Probe Connected**
 
 
-| 
-| 2. Run a calibration.
+2. Run a calibration.
 
 -  Turn off the power to the demo board, discharge the demo board output capacitor by shorting the outputs, then run a calibration.
 
 
-|image39|
+|image32|
 
 .. container:: center
 
@@ -878,11 +832,11 @@ Transient Analysis Tab
    
 
 
-| 
-| 3. Running Transients
+3. Running Transients
 
-| The Transient Control pane offers two controlled transients stimuli, the Pulse Control and Piecewise Linear Control. The use of each transient control features will be discussed in the following.
-| *3.a Pulse Control*
+The Transient Control pane offers two controlled transients stimuli, the Pulse Control and Piecewise Linear Control. The use of each transient control features will be discussed in the following.
+
+*3.a Pulse Control*
 
 This transient control sends a rectangular load pulse or a train of load pulses to the DUT to induce transience. Configure the Pulse transient control pane based on the intended application the DUT is to be simulated with.
 
@@ -890,22 +844,18 @@ This transient control sends a rectangular load pulse or a train of load pulses 
 -  STEP #2: Set the low current, high current, pulse width, pulse duty cycle, pulse count, and the rise and fall time of the pulse transient for the DUT.
 -  STEP #3: Click the **RUN** button to start the measurements. Wait until the graph of the transient measurements appear at the window.
 
-|image40|
+|image33|
 
 .. container:: center
 
    **Guide on Running a Pulse Control Transient**
 
 
-   |image41|
+   |image34|
 
 .. container:: center
 
-   **Sample Result of a Pulse Control Transient Stimuli**
-
-
-| 
-| *3.b Piecewise Linear Function Control*
+   **Sample Result of a Pulse Control Transient Stimuli** 3.b Piecewise Linear Function Control*
 
 The Piecewise Linear (PWL) control scheme sends a piecewise linear load waveform to the DUT. This allows users to simulate an arbitrary waveform as a load to the DUT. Configure the PWL transient control pane based on the intended application the DUT is to be simulated with.
 
@@ -913,19 +863,21 @@ The Piecewise Linear (PWL) control scheme sends a piecewise linear load waveform
 -  STEP #2: Set the different current levels for each point in time. Add succeeding rows to increase the number of data points for the PWL control.
 -  STEP #3: Click the RUN button to start the measurements. Wait until the graph of the transient measurements appear at the window.
 
-|image42|
+|image35|
 
 .. container:: center
 
    **Setting up a Piece Wise Linear Transient Control**
 
 
-   |image43|
+   |image36|
 
 .. container:: center
 
    **Running a PWL Transient Measurement**
 
+
+>
 
 Making Multiple Pulse Transient Analysis
 ----------------------------------------
@@ -938,28 +890,32 @@ Sometimes the voltage response depends on the timing of the current pulse with r
 -  STEP #2: Select the number of pulse counts.
 -  STEP #3: Indicate the desired pulse width of the pulse train.
 
-|image44|
+|image37|
 
 .. container:: center
 
    **Configuring the Transient Tab for Multiple Pulse Analysis**
 
 
-| 
-| 2. Click **RUN** to run a Transient Analysis.
+2. Click **RUN** to run a Transient Analysis.
 
-|image45|
+
+
+|image38|
 
 .. container:: center
 
    **Sample Multiple Pulse Transient Analysis**
 
 
-| 
-| ==== Transient Rise and Fall Times ==== The effect of different load current rise and fall times on the transient response can be explored by setting their values with the Rise Time and Fall Time combo boxes. The rise times are programmable only when the Low Current is set to a minimum value other than zero in order to overcome the offset of the amplifier in the current control loop on the current probe.
+Transient Rise and Fall Times
+-----------------------------
 
-| |image46|
-|
+The effect of different load current rise and fall times on the transient response can be explored by setting their values with the Rise Time and Fall Time combo boxes. The rise times are programmable only when the Low Current is set to a minimum value other than zero in order to overcome the offset of the amplifier in the current control loop on the current probe.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rifati.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -970,17 +926,20 @@ When the Low Current is set to zero, the rise and fall times will be fixed at ~2
 
 
 
-|image47|
+|image39|
 
 .. container:: center
 
    **Locked Control Parameters at Low Current = 0 A**
 
 
-| 
-| ==== Extending VOUT Measurement Range ==== The Vout+ to GND and Vout- to GND signal range is limited to ±600 mV which is sufficient for the majority of applications. The plot below shows Vout+ being driven with a sine wave generator at two different amplitudes to show the clipping that occurs when the signal level gets too high. Notice that the Output Voltage Scale Factor is set to 1.0
+Extending VOUT Measurement Range
+--------------------------------
 
-|image48|
+The Vout+ to GND and Vout- to GND signal range is limited to ±600 mV which is sufficient for the majority of applications. The plot below shows Vout+ being driven with a sine wave generator at two different amplitudes to show the clipping that occurs when the signal level gets too high. Notice that the Output Voltage Scale Factor is set to 1.0
+
+
+|image40|
 
 .. container:: center
 
@@ -991,7 +950,7 @@ Sometimes the range needs to be extended, which can be accomplished by placing a
 
 
 
-|image49|
+|image41|
 
 .. container:: center
 
@@ -1000,16 +959,16 @@ Sometimes the range needs to be extended, which can be accomplished by placing a
 
 The plot below shows the Vout+ input being driven with a sine wave generator with two different amplitudes driving the input to the 1k-1k resistor divider. Notice that the range has doubled and that the Output Voltage Scale Factor is set to 2.0 to get the right values.
 
-| |image50|
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extmeasran.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **1k-1k Resistor Divider on Vout+ Extends the Range**
 
 
-| 
-| ----
+--------------
 
 OUTPUT IMPEDANCE
 ================
@@ -1025,8 +984,10 @@ Navigate the following sections to learn about the Impedance Measurement feature
 -  Make and Impedance Measurement
 -  Setting The Impedance Current Level
 
-| 
-| ==== Impedance Tab Interface ==== Navigate the following sections to learn about the interface of the Impedance Measurement window.
+Impedance Tab Interface
+-----------------------
+
+Navigate the following sections to learn about the interface of the Impedance Measurement window.
 
 -  Impedance Measurement Setup
 -  Impedance Graph Tab
@@ -1034,7 +995,7 @@ Navigate the following sections to learn about the Impedance Measurement feature
 ›
 
 Impedance Measurement Setup
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After successfully connecting a current probe to the DUT, the status bar at the bottom indicates the maximum probe current, the DC output voltage of the DUT, and the temperature of the current probe. Set the current load levels in the **Sweep Amplitude Tab**, then click the **Run** button to take a measurement.
 
@@ -1065,17 +1026,15 @@ After successfully connecting a current probe to the DUT, the status bar at the 
 |              | If the voltages are much less than 1 mV like an LDO, then the switching frequency will be reported as 0. The switching frequency value is used to adjust the injection frequency in order to avoid aliased switching frequency harmonics. |
 +--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image51|
+|image42|
 
 .. container:: center
 
    **Impedance Measurement Setup**
 
 
-| 
-
 Impedance Graph Tab
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 .. container:: center
 
@@ -1110,41 +1069,44 @@ Impedance Graph Tab
    | **AutoScale**        | The Y2 Axis data will be automatically scaled when checked |
    +----------------------+------------------------------------------------------------+
 
-   |image52|
+   |image43|
 
 .. container:: center
 
    **Impedance Graph Tab**
 
 
-| 
-| ==== Making an Impedance Measurement ==== Ensure that the hardware has been properly set up as described in the :doc:`EVAL-LTPA-KIT Hardware Guide </wiki-migration/resources/eval/user-guides/eval-ltpa-kit/hardware>` before performing these measurements. The following section discusses the procedure to make an impedance measurement using the LTpowerAnalyzer software.
+Making an Impedance Measurement
+-------------------------------
+
+Ensure that the hardware has been properly set up as described in the :doc:`EVAL-LTPA-KIT Hardware Guide </wiki-migration/resources/eval/user-guides/eval-ltpa-kit/hardware>` before performing these measurements. The following section discusses the procedure to make an impedance measurement using the LTpowerAnalyzer software.
 
 1. Check the system status.
 
 Click on the **Impedance tab** and check the status bar at the bottom of the main window. It should indicate that it found the M2k or Analog Discover 2 and the LB3031A mother board and LB3058A current probe is connected. The measurement output voltage and current probe temperature should be displayed.
 
-| |image53|
+
+|image44|
 
 .. container:: center
 
    **Impedance Tab with the Current Probe Connected**
 
 
-| 2. Run a calibration if needed.
+2. Run a calibration if needed.
 
 Turn off the power to the demo board, discharge the demo board output capacitor by shorting the outputs, then run a calibration.
 
-| |image54|
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_impemeas.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Running a Calibration Procedure**
 
 
-| 
-| 3. Set up the impedance measurement injection current level.
+3. Set up the impedance measurement injection current level.
 
 -  STEP #1: Click on the*\* Sweep Amplitude tab*\*.
 -  STEP #2: Click the **Impedance tab**.
@@ -1153,21 +1115,20 @@ Turn off the power to the demo board, discharge the demo board output capacitor 
 The graph displaying the sweeping of the load current amplitude vs. frequency graph is updated as additional rows or points are added.
 
 
-|image55|
+|image45|
 
 .. container:: center
 
    **Set the Impedance Measurement Injection Current Level**
 
 
-| 
-| 4. Run an impedance measurement.
+4. Run an impedance measurement.
 
 -  STEP #1: Under the **Impedance functionality**, set the desired designed switching frequency and the tolerance associated with the device under testing.
 -  STEP #2: Set the Start and Stop frequency for the impedance sweep. You may also set the number of points and the acquisition speed for the output impedance measurement.
 -  STEP #3: Click **Run**. Wait until the output impedance measurement is finished.
 
-|image56|
+|image46|
 
 .. container:: center
 
@@ -1176,13 +1137,15 @@ The graph displaying the sweeping of the load current amplitude vs. frequency gr
 
 Set up the impedance control parameters, the expected switching frequency and tolerance window; set up the trigger and graph parameters, then click the **RUN** button.
 
-| 
-| ==== Setting the Impedance Current Level ==== The current load signal level can affect the results of the impedance measurement. At low frequencies, the supply impedance can be very low, so the voltage signal is small, leading to a noisy reading. By increasing the current load signal level at low frequencies, the noise in the reading can be reduced.
+Setting the Impedance Current Level
+-----------------------------------
+
+The current load signal level can affect the results of the impedance measurement. At low frequencies, the supply impedance can be very low, so the voltage signal is small, leading to a noisy reading. By increasing the current load signal level at low frequencies, the noise in the reading can be reduced.
 
 The current load amplitude vs. frequency can be set by clicking on the **Impedance Source tab** and entering the break points into the table on the left. The maximum current signal level is determined by which current probe is connected. Right-click on the table to bring up a menu which allows data editing in the table.
 
 
-|image57|
+|image47|
 
 .. container:: center
 
@@ -1194,15 +1157,14 @@ The average current of the sine wave is equal to approximately 1.1 (I\ :sub:`pea
 The 10 A current probe gives the best results for an output impedance measurement since the injection current is a larger fraction of the maximum probe current, leading to a less noisy sine wave.
 
 
-|image58|
+|image48|
 
 .. container:: center
 
    **Current Sine Wave**
 
 
-| 
-| ----
+--------------
 
 OSCILLOSCOPE
 ============
@@ -1213,125 +1175,65 @@ Navigate the scope feature of the LTpowerAnalyzer through the listed sections be
 -  Measuring Switcher Ripple Voltage
 -  Scope Missing Trigger
 
-| 
-| ==== Oscilloscope Interface ====
-| === Scope Graph Tab === Click on the **Scope tab** to display the oscilloscope instrument which lets the user enable the Bode transformer injection voltage, or impedance load current at given frequency and amplitude, then analyze the time domain and frequency domain FFT signals at the input and output.
+Oscilloscope Interface
+----------------------
 
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
+Scope Graph Tab
+~~~~~~~~~~~~~~~
 
-.. container:: hi
+Click on the **Scope tab** to display the oscilloscope instrument which lets the user enable the Bode transformer injection voltage, or impedance load current at given frequency and amplitude, then analyze the time domain and frequency domain FFT signals at the input and output.
 
-   \ *Configuration*\
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Configuration*                                                 |                                                                                                                                                                                                                                                                                                                                      |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Bode**                                                        | Select the Bode measurement mode with the transformer injection voltage enabled, and the differential signals measured on IN+, IN- and OUT+, OUT-                                                                                                                                                                                    |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Impedance**                                                   | Select the Impedance measurement mode with the probe current sine wave load enabled, and the signals measured on I+, I- and VOUT+, VOUT-                                                                                                                                                                                             |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Signal Generator Frequency*                                    |                                                                                                                                                                                                                                                                                                                                      |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Frequency**                                                   | The signal frequency from 100 Hz to 10 MHz                                                                                                                                                                                                                                                                                           |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Enable**                                                      | The Bode transformer injection voltage or impedance sine wave probe load current is enabled when checked, off when not checked                                                                                                                                                                                                       |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Slider**                                                      | A fast way to adjust the frequency                                                                                                                                                                                                                                                                                                   |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Signal Generator Amplitude*                                    |                                                                                                                                                                                                                                                                                                                                      |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Amplitude (pk-pk)**                                           | The peak-to-peak amplitude of the Bode transformer injection voltage or impedance sine wave probe load current. In the Bode configuration, the amplitude is set at the output of the transformer driver, so the impedance of the transformer coupled with the impedance of the transformer load will lower the actual value measured |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Signal Source*                                                 |                                                                                                                                                                                                                                                                                                                                      |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Transformer**                                                 | The signal amplitude is adjusted for using the transformer outputs (±500 mV). Default signal generator for impedance configuration                                                                                                                                                                                                   |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **W1**                                                          | The signal amplitude is adjusted for using the W1 output (±5 V). Not available during impedance configuration                                                                                                                                                                                                                        |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *FFT*                                                           |                                                                                                                                                                                                                                                                                                                                      |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Average**                                                     | Number of averages for the displayed FFT data                                                                                                                                                                                                                                                                                        |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Filter*                                                        |                                                                                                                                                                                                                                                                                                                                      |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Frequency**                                                   | The cutoff frequency of the 4th order low pass digital filter.                                                                                                                                                                                                                                                                       |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Enabled**                                                     | The filter is enabled when checked, off when not checked                                                                                                                                                                                                                                                                             |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *DC Probe Current (Unavailable during Impedance configuration)* |                                                                                                                                                                                                                                                                                                                                      |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **DC Current**                                                  | A dropdown box of selectable load current levels for using the current probe as a DC load. The available minimum and maximum values are determined by the used current probe                                                                                                                                                         |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Zero**                                                        | Zeroes the selected load current level                                                                                                                                                                                                                                                                                               |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Enabled**                                                     | Enables the use of the current probe as a DC load when the checkbox is clicked                                                                                                                                                                                                                                                       |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Buttons*                                                       |                                                                                                                                                                                                                                                                                                                                      |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Run/Stop**                                                    | Samples continuously when the RUN is clicked, stops when the STOP is clicked                                                                                                                                                                                                                                                         |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Single**                                                      | Make a single sample                                                                                                                                                                                                                                                                                                                 |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-   |                                                                                                                                                                                                                                                                                                                                      |
-
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Bode**                                                                            | Select the Bode measurement mode with the transformer injection voltage enabled, and the differential signals measured on IN+, IN- and OUT+, OUT-                                                                                                                                                                                    |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Impedance**                                                                       | Select the Impedance measurement mode with the probe current sine wave load enabled, and the signals measured on I+, I- and VOUT+, VOUT-                                                                                                                                                                                             |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *Signal Generator Frequency*\
-
-
-   |                                                                                                                                                                                                                                                                                                                                      |
-
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Frequency**                                                                       | The signal frequency from 100 Hz to 10 MHz                                                                                                                                                                                                                                                                                           |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Enable**                                                                          | The Bode transformer injection voltage or impedance sine wave probe load current is enabled when checked, off when not checked                                                                                                                                                                                                       |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Slider**                                                                          | A fast way to adjust the frequency                                                                                                                                                                                                                                                                                                   |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *Signal Generator Amplitude*\
-
-
-   |                                                                                                                                                                                                                                                                                                                                      |
-
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Amplitude (pk-pk)**                                                               | The peak-to-peak amplitude of the Bode transformer injection voltage or impedance sine wave probe load current. In the Bode configuration, the amplitude is set at the output of the transformer driver, so the impedance of the transformer coupled with the impedance of the transformer load will lower the actual value measured |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *Signal Source*\
-
-
-   |                                                                                                                                                                                                                                                                                                                                      |
-
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Transformer**                                                                     | The signal amplitude is adjusted for using the transformer outputs (±500 mV). Default signal generator for impedance configuration                                                                                                                                                                                                   |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **W1**                                                                              | The signal amplitude is adjusted for using the W1 output (±5 V). Not available during impedance configuration                                                                                                                                                                                                                        |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *FFT*\
-
-
-   |                                                                                                                                                                                                                                                                                                                                      |
-
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Average**                                                                         | Number of averages for the displayed FFT data                                                                                                                                                                                                                                                                                        |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *Filter*\
-
-
-   |                                                                                                                                                                                                                                                                                                                                      |
-
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Frequency**                                                                       | The cutoff frequency of the 4th order low pass digital filter.                                                                                                                                                                                                                                                                       |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Enabled**                                                                         | The filter is enabled when checked, off when not checked                                                                                                                                                                                                                                                                             |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *DC Probe Current (Unavailable during Impedance configuration)*\
-
-
-   |                                                                                                                                                                                                                                                                                                                                      |
-
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **DC Current**                                                                      | A dropdown box of selectable load current levels for using the current probe as a DC load. The available minimum and maximum values are determined by the used current probe                                                                                                                                                         |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Zero**                                                                            | Zeroes the selected load current level                                                                                                                                                                                                                                                                                               |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Enabled**                                                                         | Enables the use of the current probe as a DC load when the checkbox is clicked                                                                                                                                                                                                                                                       |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|
-
-.. container:: hi
-
-   \ *Buttons*\
-
-
-   |                                                                                                                                                                                                                                                                                                                                      |
-
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Run/Stop**                                                                        | Samples continuously when the RUN is clicked, stops when the STOP is clicked                                                                                                                                                                                                                                                         |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Single**                                                                          | Make a single sample                                                                                                                                                                                                                                                                                                                 |
-+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|image59|
+|image49|
 
 .. container:: center
 
@@ -1341,7 +1243,7 @@ Navigate the scope feature of the LTpowerAnalyzer through the listed sections be
 >
 
 Scope Cursor Tab
-----------------
+~~~~~~~~~~~~~~~~
 
 Click on the Cursor tab on the right to bring up the cursor setup. There are two cursors available, and can be moved by holding down the left mouse button while the pointer is over the dashed vertical black cursor line.
 
@@ -1361,15 +1263,17 @@ Click on the Cursor tab on the right to bring up the cursor setup. There are two
 | **Show Cross Hairs** | The horizontal cross hairs will be visible when checked.                                                                        |
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
-|image60|
+|image50|
 
 .. container:: center
 
    **Scope Cursors Tab**
 
 
-| 
-| === Scope Bode Analysis === When the Bode analysis configuration is selected, click on the **Analysis tab** to display the scope measurement data.
+Scope Bode Analysis
+~~~~~~~~~~~~~~~~~~~
+
+When the Bode analysis configuration is selected, click on the **Analysis tab** to display the scope measurement data.
 
 *Analysis Tab*
 
@@ -1401,7 +1305,7 @@ Click on the Cursor tab on the right to bring up the cursor setup. There are two
 | **Phase (IN-OUT)**     | The IN-OUT phase at the Signal FFT Bin in Deg                                                           |
 +------------------------+---------------------------------------------------------------------------------------------------------+
 
-|image61|
+|image51|
 
 .. container:: center
 
@@ -1410,17 +1314,13 @@ Click on the Cursor tab on the right to bring up the cursor setup. There are two
    
 
 
-| 
-
-.. _copying-analysis-data-1:
-
 Copying Analysis Data
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 Copying the measurement data from the analysis tab works differently. This section provides the step-by-step procedure to copy the data. This also applies for all the measurement tabs that provides analysis information.
 
 
-|image62|
+|image52|
 
 .. container:: center round box
 
@@ -1434,7 +1334,7 @@ Copying the measurement data from the analysis tab works differently. This secti
 >
 
 Scope Impedance Analysis
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the impedance analysis configuration is selected, click on the **Analysis tab** to display the scope measurement data.
 
@@ -1468,15 +1368,14 @@ When the impedance analysis configuration is selected, click on the **Analysis t
 | **Zphase**               | The ILOAD-VOUT phase at the Signal FFT Bin in Deg                                                                 |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------+
 
-|image63|
+|image53|
 
 .. container:: center
 
    **Scope Impedance Analysis Tab**
 
 
-| 
-| >
+>
 
 Missing Scope Trigger
 ---------------------
@@ -1486,22 +1385,24 @@ When the scope is not able to trigger on a waveform, the **Missing Trigger** mes
 Notice that measured Vout displayed at the bottom is close to ground in this screen shot. If the supply is on and it still won't trigger, check the trigger level or switch the trigger mode from Normal to Auto to force the trigger.
 
 
-|image64|
+|image54|
 
 .. container:: center
 
    **Oscilloscope Missing Trigger**
 
 
-   |image65|
+   |image55|
 
 .. container:: center
 
    **Changing the Trigger Mode from Normal to Auto**
 
 
-| 
-| ==== Measuring Switcher Ripple Voltage ==== The oscilloscope feature of the LTpowerAnalyzer provides automatic measurements of ripple in the voltage traces, and measurement of the switcher frequency by checking the FFT trace.
+Measuring Switcher Ripple Voltage
+---------------------------------
+
+The oscilloscope feature of the LTpowerAnalyzer provides automatic measurements of ripple in the voltage traces, and measurement of the switcher frequency by checking the FFT trace.
 
 1. Configuring the Oscilloscope Settings
 
@@ -1510,47 +1411,46 @@ Notice that measured Vout displayed at the bottom is close to ground in this scr
 -  If an external load is not available, attach a current probe to your DUT and set a DC current at the DC Probe Current setting and click the **Enable** checkbox.
 -  Click **RUN** to start displaying the signal waveform. The scope window should start showing the measured waveform.
 
-|image66|
+|image56|
 
 .. container:: center
 
    **Configuring the Scope Settings for Ripple Measurements**
 
 
-| 
-| 2. Measuring waveform ripple with the Analysis Tab
+2. Measuring waveform ripple with the Analysis Tab
 
 -  Waveform ripple in the scope window can be measured by checking the **Analysis tab**.
 
 
-|image67|
+|image57|
 
 .. container:: center
 
    **Ripple Measurements in the Analysis Tab**
 
 
-| 
-| 3. Measuring switcher frequency with FFT Waveform and Cursor Tab
+3. Measuring switcher frequency with FFT Waveform and Cursor Tab
 
 -  The switcher frequency can also be checked from the FFT waveform by using the cursor tab.
 
 
-|image68|
+|image58|
 
 .. container:: center
 
    **Switcher Frequency Measurement in the FFT Waveform**
 
 
-| 
-| ----
+--------------
 
 Additional GUI Controls
 =======================
 
-| 
-| ==== Cursor Tab ==== There are two cursors available, and each of the cursors can be moved by holding down the left mouse button while the pointer is over the dashed vertical black cursor line.
+Cursor Tab
+----------
+
+There are two cursors available, and each of the cursors can be moved by holding down the left mouse button while the pointer is over the dashed vertical black cursor line.
 
 Click on the **Cursor tab** on the right to bring up the cursor setup.
 
@@ -1570,15 +1470,17 @@ Click on the **Cursor tab** on the right to bring up the cursor setup.
 | **Show Cross Hairs** | The horizontal cross hairs will be visible when checked                                                                        |
 +----------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
-|image69|
+|image59|
 
 .. container:: center
 
    **Cursor Tab View**
 
 
-| 
-| ==== Data Tab ==== The **Data tab** allows users to modify each dataset, such as renaming, deleting, or changing the visibility. Click on the **Data tab** on the right to bring up the data setup.
+Data Tab
+--------
+
+The **Data tab** allows users to modify each dataset, such as renaming, deleting, or changing the visibility. Click on the **Data tab** on the right to bring up the data setup.
 
 .. container:: center
 
@@ -1606,87 +1508,83 @@ Click on the **Cursor tab** on the right to bring up the cursor setup.
    | **Delete**     | The selected data will be deleted when clicked                          |
    +----------------+-------------------------------------------------------------------------+
 
-   |image70|
+   |image60|
 
 .. container:: center
 
    **Data Tab View**
 
 
-| 
-| ==== Renaming, Hiding, and Deleting Traces ==== When appending many traces to a single graph, it is helpful to give a name to a trace that will show up in the legend.
+Renaming, Hiding, and Deleting Traces
+-------------------------------------
+
+When appending many traces to a single graph, it is helpful to give a name to a trace that will show up in the legend.
 
 To rename a trace, click on the **Data tab** on the right.
 
 -  Click on the **Data tab** to access the Waveform Data Editor.
 
 
-|image71|
+|image61|
 
 -  Click on a box in the **Name column** and change the name.
 
-|image72|
+|image62|
 
 -  Click the **RETURN** or **ENTER** key to update the trace names. Trace legend names are automatically updated.
 
-| 
-
 How to Hide Traces
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Appending multiple data increases the number of legends and start blocking measurement traces. This can be resolved using these ways: by removing the legends completely, editing the number of visible traces, or by adding an offset to the **Graph tab** or by dragging it up.
 
-| |image73|
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_hiding.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Legends Blocking Portions of the Traces**
 
 
-| 
-| 1. Moving the Origin Cursor
+1. Moving the Origin Cursor
 
 -  Click and drag the red origin cursor up or down to move the covered traces.
 
 
-|image74|
+|image63|
 
 .. container:: center
 
    **Movable Origin Cursor**
 
 
-| 
-| 2. Hiding All Trace Legends
+2. Hiding All Trace Legends
 
 -  Hide all trace labels by clicking the **Legend** checkbox.
 
 
-|image75|
+|image64|
 
 .. container:: center
 
    **Trace Legends Checkbox**
 
 
-| 
-| 3. Hiding a Specific Traces
+3. Hiding a Specific Traces
 
 -  Click on the **Data tab** to access the Waveform Data Editor.
 -  Click the corresponding checkbox of the trace under visible that you want to hide. Trace legends are automatically updated.
 
-|image76|
+|image65|
 
 .. container:: center
 
    **Hiding a Trace via the Visible Column**
 
 
-| 
-
 How to Delete Traces
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 Measurement traces that are no longer needed can be removed to avoid cluttering the entire measurement windowpane.
 
@@ -1695,36 +1593,37 @@ Measurement traces that are no longer needed can be removed to avoid cluttering 
 -  In the **Data tab**, under the Waveform Data Editor, tick the check box of the corresponding traces you would like to delete.
 -  Click **Delete**. Selected traces will be automatically removed.
 
-|image77|
+|image66|
 
 .. container:: center
 
    **Deleting Specific Traces**
 
 
-| 
-| 2. Deleting all traces
+2. Deleting all traces
 
 -  To delete all traces, click the **Delete All** button.
 -  The windowpane will be automatically updated with all traces removed.
 
-|image78|
+|image67|
 
 .. container:: center
 
    **Delete All Button**
 
 
-| 
-| ==== Docking and Undocking Forms ==== Each form in the main window (right window below) can be undocked by right clicking its tab.
+Docking and Undocking Forms
+---------------------------
+
+Each form in the main window (right window below) can be undocked by right clicking its tab.
 
 -  Point your cursor at the tab form you would like to undock (in this case the Bode Plot tab).
 -  Cursor still pointed at the tab form, right-click your mouse to undock the form.
 
-| 
-| The undocked form will appear as a separate pop-up window.
+The undocked form will appear as a separate pop-up window.
 
-|image79|
+
+|image68|
 
 .. container:: center
 
@@ -1735,15 +1634,14 @@ Separated forms can be merged back into the main window by clicking on the **X**
 
 
 
-|image80|
+|image69|
 
 .. container:: center
 
    **Merging Undocked Forms**
 
 
-| 
-| ----
+--------------
 
 Using the LTpowerAnalyzer with LTpowerCAD
 =========================================
@@ -1753,26 +1651,25 @@ The Bode Plot data measured by the LTpowerAnalyzer can be imported into the LTpo
 -  Launch LTpowerCAD and open LTpowerAnalyzer interface.
 
 
-|image81|
+|image70|
 
 -  Copy and paste from LTpowerAnalyzer to LTpowerCAD.
 
-|image82|
+|image71|
 
 -  Import LTpowerAnalyzer data to LTpowerCAD.
 
-|image83|
+|image72|
 
 -  Re-compensate measured loop gain in LTpowerCAD.
 
-|image84|
+|image73|
 
 -  Re-adjust loop compensation network.
 
-|image85|
+|image74|
 
-| 
-| ----
+--------------
 
 Checking for Software Updates
 =============================
@@ -1782,36 +1679,35 @@ Checking for Software Updates
 The updater will contact the server for the latest software version information, and if the server version is newer, the Update button will be enabled. Clicking on the **Update button** will download and launch the latest install file.
 
 
-|image86|
+|image75|
 
 .. container:: center
 
    **Checking for Updates in the Help Menu**
 
 
-   |image87|
+   |image76|
 
 .. container:: center
 
    **Local Version Out-of-Date Status Message**
 
 
-   |image88|
+   |image77|
 
 .. container:: center
 
    **LTpowerAnalyzer Software Installer File**
 
 
-   |image89|
+   |image78|
 
 .. container:: center
 
    **Checking for Updates After Installation**
 
 
-| 
-| ----
+--------------
 
 Additional Resources
 ====================
@@ -1842,165 +1738,143 @@ Additional Resources
    :width: 600px
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeanatab.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/launching_the_ltpoweranalyzer_software_without_the_current_probe.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_bodemeas.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_plot_getting_started_calibration_2.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib7_bodemeas.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/impedanceinjectionlevelwithmenu.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib8_bodemeas.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_bodemeas.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib9_bodemeas.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_bodemeas.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib10_bodemeas.png
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_bodemeas.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib11_bodemeas.png
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib7_bodemeas.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib12_bodemeas.png
    :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib8_bodemeas.png
-   :width: 600px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib9_bodemeas.png
-   :width: 600px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib10_bodemeas.png
-   :width: 600px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib11_bodemeas.png
-   :width: 600px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib12_bodemeas.png
-   :width: 600px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeinjlvl.png
-   :width: 600px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_bodeinjlvl.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_bodeinjlvl.png
    :width: 400px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_bodeinjlvl.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_bodeinjlvl.png
    :width: 400px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_bodeinjlvl.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_bodeinjlvl.png
    :width: 400px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_bodeinjlvl.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_bodeinjlvl.png
    :width: 400px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotdatagrid.jpg
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotdatagrid.jpg
    :width: 600px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotanalysisdatatabexel.jpg
-   :width: 400px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas.png
    :width: 600px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pwlmeas.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pwlmeas.png
    :width: 600px
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas1.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas1.png
    :width: 600px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_limidisp.png
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_limidisp.png
    :width: 600px
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_limidisp.png
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_limidisp.png
    :width: 500px
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_limidisp.png
+.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_limidisp.png
    :width: 500px
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_limidisp.png
+.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_limidisp.png
    :width: 500px
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_limidisp.png
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_limidisp.png
    :width: 500px
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_tranana.png
+.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_tranana.png
    :width: 600px
-.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1trananalysiscopy.png
+.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1trananalysiscopy.png
    :width: 600px
-.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png
    :width: 600px
-.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png
+.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png
    :width: 600px
-.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extranmeas.png
+.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extranmeas.png
    :width: 600px
-.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/pwltransient.jpg
+.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/pwltransient.jpg
    :width: 600px
-.. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_extranmeas.png
+.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_extranmeas.png
    :width: 600px
-.. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_extranmeas.png
+.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_extranmeas.png
    :width: 600px
-.. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_multipulana.png
+.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_multipulana.png
    :width: 600px
-.. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_multipulana.png
+.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_multipulana.png
    :width: 600px
-.. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rifati.png
+.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rifati.png
    :width: 600px
-.. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rifati.png
+.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_extmeasran.png
    :width: 600px
-.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_extmeasran.png
+.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_extmeasran.png
    :width: 600px
-.. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_extmeasran.png
+.. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impmeasset.png
    :width: 600px
-.. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extmeasran.png
+.. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impegraph.png
    :width: 600px
-.. |image51| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impmeasset.png
+.. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impemeas.png
    :width: 600px
-.. |image52| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impegraph.png
+.. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_impemeas.png
    :width: 600px
-.. |image53| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impemeas.png
+.. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_impemeas.png
    :width: 600px
-.. |image54| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_impemeas.png
+.. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impelvl.png
    :width: 600px
-.. |image55| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_impemeas.png
+.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impelvl.png
    :width: 600px
-.. |image56| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_impemeas.png
+.. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopegraph.jpg
    :width: 600px
-.. |image57| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impelvl.png
+.. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopecursors.jpg
    :width: 600px
-.. |image58| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impelvl.png
+.. |image51| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopebode.jpg
    :width: 600px
-.. |image59| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopegraph.jpg
+.. |image52| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_copyanalysis.png
    :width: 600px
-.. |image60| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopecursors.jpg
+.. |image53| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_scopeimpe.png
    :width: 600px
-.. |image61| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopebode.jpg
+.. |image54| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_mistrig.png
    :width: 600px
-.. |image62| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_copyanalysis.png
+.. |image55| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_mistrig.png
    :width: 600px
-.. |image63| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_scopeimpe.png
+.. |image56| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_meswripv.png
    :width: 600px
-.. |image64| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_mistrig.png
+.. |image57| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopeswitchingfrequency.jpg
    :width: 600px
-.. |image65| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_mistrig.png
+.. |image58| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_meswripv.png
    :width: 600px
-.. |image66| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_meswripv.png
+.. |image59| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_curstab.png
    :width: 600px
-.. |image67| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopeswitchingfrequency.jpg
+.. |image60| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_dattab.png
    :width: 600px
-.. |image68| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_meswripv.png
+.. |image61| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rename.png
    :width: 600px
-.. |image69| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_curstab.png
+.. |image62| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rename.png
    :width: 600px
-.. |image70| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_dattab.png
+.. |image63| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_hiding.png
    :width: 600px
-.. |image71| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rename.png
+.. |image64| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_hiding.png
    :width: 600px
-.. |image72| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rename.png
+.. |image65| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_hiding.png
    :width: 600px
-.. |image73| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_hiding.png
+.. |image66| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_delete.png
    :width: 600px
-.. |image74| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_hiding.png
+.. |image67| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_delete.png
    :width: 600px
-.. |image75| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_hiding.png
+.. |image68| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_undock.png
    :width: 600px
-.. |image76| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_hiding.png
+.. |image69| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_undock.png
    :width: 600px
-.. |image77| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_delete.png
+.. |image70| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad1.png
    :width: 600px
-.. |image78| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_delete.png
+.. |image71| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad2.png
    :width: 600px
-.. |image79| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_undock.png
+.. |image72| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad3.png
    :width: 600px
-.. |image80| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_undock.png
+.. |image73| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad4.png
    :width: 600px
-.. |image81| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad1.png
+.. |image74| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad5.png
    :width: 600px
-.. |image82| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad2.png
+.. |image75| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_upcheck.png
    :width: 600px
-.. |image83| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad3.png
-   :width: 600px
-.. |image84| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad4.png
-   :width: 600px
-.. |image85| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad5.png
-   :width: 600px
-.. |image86| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_upcheck.png
-   :width: 600px
-.. |image87| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_upcheck.png
+.. |image76| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_upcheck.png
    :width: 400px
-.. |image88| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_upcheck.png
+.. |image77| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_upcheck.png
    :width: 400px
-.. |image89| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_upcheck.png
+.. |image78| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_upcheck.png
    :width: 400px

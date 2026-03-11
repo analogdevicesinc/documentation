@@ -69,19 +69,19 @@ The parameters for Rx or Tx links can be changed from the system_project.tcl :
 .. code:: tcl
 
    # Parameter description:
-   #    JESD_MODE : used link layer encoder mode 
+   #    JESD_MODE : used link layer encoder mode
    #      64B66B - 64b66b link layer defined in JESD 204C
    #      8B10B  - 8b10b link layer defined in JESD 204B
-   #    
-   #    RX_RATE :  line rate of the Rx link ( MxFE to FPGA ) 
+   #
+   #    RX_RATE :  line rate of the Rx link ( MxFE to FPGA )
    #    TX_RATE :  line rate of the Tx link ( FPGA to MxFE )
    #    [RX/TX]_JESD_M : number of converters per link
    #    [RX/TX]_JESD_L : number of lanes per link
    #    [RX/TX]_JESD_NP : number of bits per sample, only 16 is supported
-   #    [RX/TX]_NUM_LINKS : number of links, 1 - single link; 2 - dual link. 
+   #    [RX/TX]_NUM_LINKS : number of links, 1 - single link; 2 - dual link.
 
    adi_project mxfe_zcu102 0 [list \
-       JESD_MODE 8B10B \   
+       JESD_MODE 8B10B \
        RX_JESD_M 8 \
        RX_JESD_L 4 \
        RX_JESD_S 1 \
@@ -104,10 +104,11 @@ For the parameter selection the following restrictions apply:
 IP list
 ~~~~~~~
 
-| Following IPs are used in the block design:
-| ^IP name^Wiki page^
+Following IPs are used in the block design:
 
 +--------------+-----------------------------------------------------------------------------------------------------------------+
+| IP name      | Wiki page                                                                                                       |
++==============+=================================================================================================================+
 | XCVR         | :doc:`UTIL_ADXCVR core for Xilinx devices </wiki-migration/resources/fpga/docs/util_xcvr>`                      |
 +--------------+-----------------------------------------------------------------------------------------------------------------+
 | XCVR         | :doc:`AXI_ADXCVR </wiki-migration/resources/fpga/docs/axi_adxcvr>`                                              |
@@ -341,4 +342,61 @@ Software support
 ----------------
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
- .. include:: common.rst
+
+
+Useful links
+------------
+
+-  :doc:`AD9081/AD9082/AD9988/AD9986 Quick Start Guides </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart>`
+
+   -  :doc:`Zynq-7000 SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynq>`
+   -  :doc:`Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynqmp>`
+   -  :doc:`Virtex UltraScale+ VCU118 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/microblaze>`
+   -  :doc:`Versal ACAP VCK190 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/versal>`
+   -  `Arria10 SoC Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081/quickstart/a10soc]>`_
+
+-  :doc:`AD9081-FMCA-EBZ (Single MxFE) HDL Reference Design </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_fmca_ebz_hdl>`
+
+   -  :doc:`ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
+   -  :doc:`Generic JESD204B block designs </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`
+   -  :doc:`JESD204B High-Speed Serial Interface Support </wiki-migration/resources/fpga/peripherals/jesd204>`
+
+-  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+
+::
+
+         - [[resources:tools-software:linux-drivers:jesd204:jesd204-fsm-framework|JESD204 (FSM) Interface Linux Kernel Framework]]
+         - [[resources:tools-software:linux-drivers:iio-pll:hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
+         - [[resources:tools-software:linux-drivers:axi-dmac| AXI-DMAC DMA Controller Linux Driver]]
+         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_tx|JESD204B Transmit Linux Driver]]
+           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
+         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_rx|JESD204B Receive Linux Driver]]
+           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
+         - [[resources:tools-software:linux-drivers:jesd204:axi_adxcvr|JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
+           - [[resources:tools-software:linux-software:jesd_eye_scan|JESD204 Eye Scan]]
+         - [[resources:tools-software:linux-drivers:iio-adc:axi-adc-hdl|AXI ADC HDL Linux Driver]]
+         - [[resources:tools-software:linux-drivers:iio-dds:axi-dac-dds-hdl|AXI DAC HDL Linux Driver]]
+   * [[:resources:tools-software:hsx-toolbox|MATLAB Support]]
+        * MATLAB support is provided through the [[:resources:tools-software:hsx-toolbox|High Speed Converter Toolbox]]
+   * [[resources:tools-software:linux-software:pyadi-iio| Python Support]]
+        * PYTHON support is provided through the [[resources:tools-software:linux-software:pyadi-iio|Device Specific Python Interfaces For IIO Drivers]] 
+        * [[https://analogdevicesinc.github.io/pyadi-iio/|PyADI-IIO Documentation]]
+        * [[https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html|AD9081 class documentation]]
+   * Product Datasheet
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9081`.pdf|AD9081]]
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9082`.pdf|AD9082]]
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9988`.pdf|AD9988]]
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9986`.pdf|AD9986]]
+   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578`.pdf|UG-1578, Device User Guide]]
+   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829`.pdf|UG-1829, Evaluation Board User Guide]]
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
+
+Software support
+----------------
+
+-  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+

@@ -52,13 +52,7 @@ Figure 2 shows an example of a 4-bit conversion. The y-axis represents the DAC o
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solderless Breadboard
-| AD8541 CMOS rail-rail op-amp (or 1/2 AD8542 dual op-amp)
-| AD5626 12 bit serial DAC
-| 10 KΩ Potentiometer
-| 220 Ω resistor
-| 470 Ω resistor
+ADALM1000 hardware module Solderless Breadboard AD8541 CMOS rail-rail op-amp (or 1/2 AD8542 dual op-amp) AD5626 12 bit serial DAC 10 KΩ Potentiometer 220 Ω resistor 470 Ω resistor
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -87,8 +81,8 @@ The routine to send serial data to the DAC looks like this:
 
    def ShiftOut(DValue):
        global PIO_0, PIO_1, PIO_2, PIO_3
-       # PIO 0 is strobe 
-       # PIO 1 is sdata    
+       # PIO 0 is strobe
+       # PIO 1 is sdata
        # PIO 2 is sclk
        # PIO 3 is Comp output
        binstr = bin(DValue)
@@ -98,7 +92,7 @@ The routine to send serial data to the DAC looks like this:
        if datalen < 12:
           datastr = str.rjust(datastr , 12 , '0')
           datalen = len(datastr)
-      
+
        i = 1
        while i < datalen+1:
        # sending 0x50 = set to 0, 0x51 = set to 1
@@ -139,7 +133,6 @@ The Successive Approximation algorithm that performs the binary search based on 
        # Update tasks and screens by TKinter
            root.update_idletasks()
            root.update()
-           
 
 Download the SAR ADC Python script from this link (`SAR-8541-5626.zip <https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/sar-8541-5626.zip>`_).
 
@@ -164,8 +157,6 @@ As an extra credit exercise, extend the Python program to draw a graph of the DA
 AD7920 12-bit ADC
 -----------------
 
-.. _background-1:
-
 Background
 ~~~~~~~~~~
 
@@ -184,8 +175,6 @@ The :adi:`AD7920 <media/en/technical-documentation/data-sheets/AD7910_7920.pdf>`
 
 
 The acquisition phase is when the SW2 is closed and SW1 is in position A. With this setup, the comparator is held in a balanced condition, and the sampling capacitor acquires the signal on Vin. For the ADC to start a conversion, SW2 opens and SW1 moves to Position B causing the comparator to become unbalanced. The control logic and charge redistribution DAC are used to add and subtract fixed amounts of charge from the sampling capacitor to bring the comparator back to a balanced condition as the conversion is completed.
-
-.. _hardware-setup-1:
 
 Hardware Setup
 ~~~~~~~~~~~~~~
@@ -282,10 +271,7 @@ For extra credit modify the program to display the ADC output results in volts. 
 
 **For Further Reading:**
 
-| `Successive approximation ADC <https://en.wikipedia.org/wiki/Successive_approximation_ADC>`_
-| :adi:`ADC Architectures II: Successive Approximation ADCs <media/en/training-seminars/tutorials/MT-021.pdf>`
-| :adi:`ADC and DAC <media/en/technical-documentation/dsp-book/dsp_book_Ch3.pdf>`
-| :adi:`Exploring Different SAR ADC Analog Input Architectures <en/technical-articles/exploring-different-sar-adc-analog-input-architectures.html>`
+`Successive approximation ADC <https://en.wikipedia.org/wiki/Successive_approximation_ADC>`_ :adi:`ADC Architectures II: Successive Approximation ADCs <media/en/training-seminars/tutorials/MT-021.pdf>` :adi:`ADC and DAC <media/en/technical-documentation/dsp-book/dsp_book_Ch3.pdf>` :adi:`Exploring Different SAR ADC Analog Input Architectures <en/technical-articles/exploring-different-sar-adc-analog-input-architectures.html>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
 

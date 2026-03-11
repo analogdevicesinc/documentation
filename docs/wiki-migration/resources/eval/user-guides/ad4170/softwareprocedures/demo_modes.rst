@@ -57,8 +57,6 @@ The evaluation board is set up to use the external 2.5 V on-board reference (ADR
 
 -  Use the navigation tools within each graph to control the cursor, zooming, and panning.
 
-.. _reading-samples-from-the-adc-1:
-
 Reading Samples from the ADC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

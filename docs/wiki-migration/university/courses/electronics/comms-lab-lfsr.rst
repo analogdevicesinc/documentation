@@ -22,11 +22,7 @@ The mathematics of a cyclic redundancy check, used to provide a quick check agai
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - CD4035 4 bit shift register or similar logic device
-| 1 - 74HC86 Quad two input XOR gate or similar logic device
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - CD4035 4 bit shift register or similar logic device 1 - 74HC86 Quad two input XOR gate or similar logic device
 
 Directions:
 -----------
@@ -80,8 +76,6 @@ Try using a second (and third) CD4035 to make a longer shift register to make a 
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/XOR_gate
-  http:*\ en.wikipedia.org/wiki/Shift_register
-| http://en.wikipedia.org/wiki/Linear_feedback_shift_register
+http://en.wikipedia.org/wiki/XOR_gate http://en.wikipedia.org/wiki/Shift_register http://en.wikipedia.org/wiki/Linear_feedback_shift_register
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**

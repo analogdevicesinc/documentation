@@ -1,8 +1,8 @@
-| 
-| ====== Network Analyzer - Test Case ======
+Network Analyzer - Test Case
+============================
 
 Initial Setup
-=============
+-------------
 
 In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
@@ -14,14 +14,16 @@ Open the Network Analyzer instrument. The interface should look like the picture
 Press multiple times on the "Run" button to check if the instrument works.
 
 Test Case
-=========
+---------
 
-| 
-| ==== Low Pass Filter Test==== 
+Low Pass Filter Test
+~~~~~~~~~~~~~~~~~~~~
+
+
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                       | Test Steps                                                                                                                                                                                                                | Steps Resources | Expected Results                                                                                                                                                                                                     |
@@ -113,13 +115,13 @@ Test Case
 
 
 High Pass Filter Test
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                        | Test Steps                                                                                                                                                                                                               | Steps Resources | Expected Results                                                                                                                                                                                                       |
@@ -203,13 +205,13 @@ High Pass Filter Test
 
 
 Band Pass Filter Test
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                        | Test Steps                                                                                                                                                                                                                                      | Steps Resources | Expected Results                                                                                                                                                                                                                         |
@@ -269,13 +271,13 @@ Band Pass Filter Test
 
 
 Band Stop Filter Test
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                    | Test Steps                                                                                                                                                                                                                                                                                                                                                                                                  | Steps Resources                                                         | Expected Results                                                                                                                                                                                                                                                   |
@@ -327,13 +329,13 @@ Band Stop Filter Test
 
 
 Other Features
---------------
+~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description              | Test Steps                                                                                                                                                                  | Steps Resources | Expected Results                                                                                                                                                                                                                                                           |
@@ -402,8 +404,7 @@ Other Features
 
 Test Results will be recorded in the following document: `Network Analyzer Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/network_analyzer_-_test_case.xlsx>`_
 
-| 
-| **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
+**Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.01.png
    :width: 100px

@@ -1,10 +1,12 @@
 Master Control Port Runtime Sequential Write (ADAU145x)
 =======================================================
 
-| :doc:`Click here to return to the Master Control Port page </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
+:doc:`Click here to return to the Master Control Port page </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
 
-| The master control port Runtime Sequential Write block allows communication with external devices during audio processing. Typically this block is used to transfer data to an external device like a converter or codec. Communication over the master control port bus (I2C or SPI) occurs once per external trigger. The data transferred between host and device is defined in a SigmaStudio sequence file which can be generated using the :doc:`SigmaStudio sequence window </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/workspacewindows>`.
-| |image1|
+The master control port Runtime Sequential Write block allows communication with external devices during audio processing. Typically this block is used to transfer data to an external device like a converter or codec. Communication over the master control port bus (I2C or SPI) occurs once per external trigger. The data transferred between host and device is defined in a SigmaStudio sequence file which can be generated using the :doc:`SigmaStudio sequence window </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/workspacewindows>`.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/mcpruntime.png
+   :align: center
 
 Input Pins
 ----------
@@ -27,13 +29,16 @@ Output Pins
 Configuration
 -------------
 
-Click on |image2| to configure the parameters.
+Click on |image1| to configure the parameters.
 
 I2C configuration
 ~~~~~~~~~~~~~~~~~
 
-| |image3|
-| ===GUI Control===
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/masterbooti2cconfig.png
+   :align: center
+
+GUI Control
+^^^^^^^^^^^
 
 +-------------------+---------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | GUI Control Name  | Default Value | Range            | Function Description                                                                                                                                                                                                            |
@@ -52,7 +57,8 @@ I2C configuration
 SPI configuration
 ~~~~~~~~~~~~~~~~~
 
-| |image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/masterbootspiconfig.png
+   :align: center
 
 GUI Control
 ^^^^^^^^^^^
@@ -81,25 +87,31 @@ Steps to Configure
 ~~~~~~~~~~~~~~~~~~
 
 -   Drag the block into a schematic design.
--   Open the control port property window by clicking on |image5| image and configure all the required properties.
+-   Open the control port property window by clicking on |image2| image and configure all the required properties.
 -   Ensure that the 'Sub-Address Bytes:' and the 'Device Address' are entered correctly.
 -   Select a "Sequence File" that defines the desired communication with the device.
 -   Click "OK". The control port data will be embedded in the DSP program. **This step is necessary whenever the sequence file is modified.**
 -   Connect the trigger signal to the input pin.
 -   Add multiple instances to configure multiple slaves during the runtime.
 
-| 
-| ===== Support for Multiple Slaves ===== Multiple external devices can be configured by creating multiple instances of the Runtime Sequential Write module and selecting appropriate slave select pins in the configuration parameters as detailed below.
-| ===== Support for Different SPI Slave Select ===== If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration → ICx - ADAU145x Register Controls → MULTIPURPOSE/AUXADC)
+Support for Multiple Slaves
+---------------------------
 
-| |image6|
-| \* Slave Select Channel -> 'Slave Select Channel x'
+Multiple external devices can be configured by creating multiple instances of the Runtime Sequential Write module and selecting appropriate slave select pins in the configuration parameters as detailed below.
 
+Support for Different SPI Slave Select
+--------------------------------------
+
+If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration → ICx - ADAU145x Register Controls → MULTIPURPOSE/AUXADC)
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
+   :align: center
+
+-  Slave Select Channel -> 'Slave Select Channel x'
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-| 
-| The following table shows the mapping between the module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
+The following table shows the mapping between the module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
 
 +----------------------------------------+-------------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register Control Window |
@@ -154,8 +166,8 @@ Please follow the steps below to edit the XML for your Slave.
 
 ::
 
-   Please match all the fields as follows. 
-         instr => "writeXBytes" 
+   Please match all the fields as follows.
+         instr => "writeXBytes"
          len => Data Length in bytes+ Address_byte_length
          addr => Register Address in decimal (not hexadecimal)
          Then the value part should have the register values in Hexadecimal. A space should separate each data as shown in the example.   In this example len => 6 (data length)  + 2 (Address_byte_length) = 8
@@ -173,9 +185,5 @@ Supported ICs
 
 -  ADAU145x
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/mcpruntime.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2c_spi.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2c_spi.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/masterbooti2cconfig.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/masterbootspiconfig.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2c_spi.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg

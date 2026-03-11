@@ -97,25 +97,25 @@ The software for the **ADuCM360_demo_cn0396** demo can be found here:
 Configuring the Software Parameters
 -----------------------------------
 
--  **Sensor Range** - <fc #008000>CO_RANGE</fc> & <fc #008000>H2S_RANGE</fc> - maximum value of the gas concentration (ppm) that can be detected by each of the electrodes of the electrochemical gas sensor being used (*CN0396.h*).
+-  **Sensor Range** - CO_RANGE & H2S_RANGE - maximum value of the gas concentration (ppm) that can be detected by each of the electrodes of the electrochemical gas sensor being used (*CN0396.h*).
 
 ::
 
        #define CO_RANGE   1000
        #define H2S_RANGE  200
 
--  **Sensor Gas Sensitivity** - <fc #008000>CO_SENS</fc> & <fc #008000>H2S_SENS</fc> - sensitivity (nA/ppm) of each of the 2 electrodes of the electrochemical sensor being used (*CN0396.h*).
+-  **Sensor Gas Sensitivity** - CO_SENS & H2S_SENS - sensitivity (nA/ppm) of each of the 2 electrodes of the electrochemical sensor being used (*CN0396.h*).
 
 ::
 
-       #define CO_SENS    (75 * pow(10, -9)) 
-       #define H2S_SENS   (800 * pow(10, -9)) 
+       #define CO_SENS    (75 * pow(10, -9))
+       #define H2S_SENS   (800 * pow(10, -9))
 
--  **Maximum Sensor Gas Sensitivity** - <fc #008000>MAX_CO_SENS</fc> & <fc #008000>MAX_H2S_SENS</fc> - sensitivity (nA/ppm) of each of the 2 electrodes of the electrochemical sensor being used (*CN0396.h*).
+-  **Maximum Sensor Gas Sensitivity** - MAX_CO_SENS & MAX_H2S_SENS - sensitivity (nA/ppm) of each of the 2 electrodes of the electrochemical sensor being used (*CN0396.h*).
 
 ::
 
-       #define MAX_CO_SENS  (100 * pow(10, -9)) 
+       #define MAX_CO_SENS  (100 * pow(10, -9))
        #define MAX_H2S_SENS (1000 * pow(10, -9))
 
 -  **Terminal refresh** - *DISPLAY_REFRESH* parameter - how often to refresh the output data - input time value in [msec] (*CN0396.h*).
@@ -134,8 +134,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -146,8 +144,6 @@ Following is the UART configuration.
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-|
 
 -  The data output refreshes in the console window at the rate of the "display_refresh" parameter with the following results.
 
@@ -177,15 +173,18 @@ The **ADuCM360_demo_cn0396** is a C project which uses ADuCM36x C/C++ Project st
 
 This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI1, UART via P0.6/P0.7; SPI, UART read/write functions, AD7798 control, AD5270 and ADT7310 control; gas concentration computation.
 
-| In the **src** and **include** folders you will find the source and header files related to CN0396 software application. The *Communication.c/h* files contain SPI and UART specific data, the *AD7798.c/h* files contain the ADC control, the *AD5270.c/h* files contain the rheostat control, the *ADT73100.c/h* files contain the temperature sensor control, and the *CN0396.c/h* files are for the gas calculations.
-| |image4|
-| The **RTE** folder contains device and system related files:
+In the **src** and **include** folders you will find the source and header files related to CN0396 software application. The *Communication.c/h* files contain SPI and UART specific data, the *AD7798.c/h* files contain the ADC control, the *AD5270.c/h* files contain the rheostat control, the *ADT73100.c/h* files contain the temperature sensor control, and the *CN0396.c/h* files are for the gas calculations.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_software_dir.png
+   :align: left
+   :width: 250px
+
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| // End of Document //
+// End of Document //
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_1.png
    :width: 650px
@@ -193,5 +192,3 @@ This project contains: system initialization part - disabling watchdog, setting 
    :width: 500px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_4.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_software_dir.png
-   :width: 250px

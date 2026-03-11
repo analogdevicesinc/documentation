@@ -79,12 +79,7 @@ For those attending the PlutoSDR workshop at GRCon 2021, hosted by ADI, thanks. 
    -  Installation instructions for Linux users are here: :doc:`GNU Radio </wiki-migration/resources/tools-software/linux-software/gnuradio>`
    -  For macOS GNU Radio and gr-iio can be installed from macports
 
-.. important::
-
-   If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions
-
-
-.
+If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions .
 
 Slides and Labs
 ---------------

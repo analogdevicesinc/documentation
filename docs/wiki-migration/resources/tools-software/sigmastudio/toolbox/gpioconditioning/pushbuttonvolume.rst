@@ -1,8 +1,9 @@
 PushButton Volume
 =================
 
-| :doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
-| |pushvolpic1.png| The PushButton Volume block can be used with the GPIO push buttons to control the volume of an input audio signal. This block has the functionality of the Push and Hold, Up/Down Control, Index lookup Table, and SW External Volume control all in one block. The user has the flexibility to define a custom volume curve that will be scrolled through by the pushbuttons.
+:doc:`Click here to return to the GPIO Conditioning page </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning>`
+
+|pushvolpic1.png| The PushButton Volume block can be used with the GPIO push buttons to control the volume of an input audio signal. This block has the functionality of the Push and Hold, Up/Down Control, Index lookup Table, and SW External Volume control all in one block. The user has the flexibility to define a custom volume curve that will be scrolled through by the pushbuttons.
 
 This block has the same functionality as the PushButton Volume, Mute algorithm, without the mute feature when both GPIO buttons are pressed simultaneously.
 
@@ -82,8 +83,10 @@ When a pushbutton is held up or down, the algorithm will scroll through the volu
 Example
 -------
 
-| The following image shows how two GPIO inputs are used to control the volume algorithm in the PushButton Volume block. The PushButton Volume algorithm has been grown in order to support stereo audio. A mux switch allows comparison between the direct signal from the Inputs, and the volume adjusted signal, routed to the Outputs. The Interface Read and Write blocks allow the last volume level to be saved and recalled.
-| |pushvolpic2.png|
+The following image shows how two GPIO inputs are used to control the volume algorithm in the PushButton Volume block. The PushButton Volume algorithm has been grown in order to support stereo audio. A mux switch allows comparison between the direct signal from the Inputs, and the volume adjusted signal, routed to the Outputs. The Interface Read and Write blocks allow the last volume level to be saved and recalled.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/pushvolpic2.png
+   :alt: pushvolpic2.png
 
 Algorithm Details
 -----------------
@@ -129,5 +132,4 @@ Algorithm Growth Information
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
 
 .. |pushvolpic1.png| image:: https://wiki.analog.com/_media/pushvolpic1.png
-.. |pushvolpic2.png| image:: https://wiki.analog.com/_media/pushvolpic2.png
 .. |pushvolpic3.png| image:: https://wiki.analog.com/_media/pushvolpic3.png

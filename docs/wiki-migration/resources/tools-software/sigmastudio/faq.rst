@@ -184,9 +184,15 @@ You can refer to the section "Loader file Flashing and Generation" in "AE_42_SS4
 
 A: The filter modules in SigmaStudio when using filtertypes like Peaking, PeakingZolzer, FirstOrderFilterLowShelf and FirstOrderFilterHighShelf are enabled with a bypass mode when the boost gain of the filter is set to 0 dB. This bypass mode which is enabled by default in SigmaStudio may cause pop sound when changing the boost from a non-zero value to 0 dB and vice-versa. The flag “Disable-Boost-Bypass” is used to disabled bypass mode for 0 dB Boost gain. The default settings may change in future releases.
 
-| The SS app settings config file “SStudio.exe.config” available in following location, “C:\\Program Files\\Analog Devices\\SigmaStudio x.x”. For disabling the 0 dB boost bypass mode, please update the “SStudio.exe.config” settings as below.
-| |image1|
-| ====== Framework and Schematic Configurations Q & A ====== **Q: What is the default sample rate supported in SigmaStudio? How can I change the sample rate to a value other than the default value (Example like 96KHz)?**
+The SS app settings config file “SStudio.exe.config” available in following location, “C:\\Program Files\\Analog Devices\\SigmaStudio x.x”. For disabling the 0 dB boost bypass mode, please update the “SStudio.exe.config” settings as below.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/1.png
+   :width: 400px
+
+Framework and Schematic Configurations Q & A
+============================================
+
+**Q: What is the default sample rate supported in SigmaStudio? How can I change the sample rate to a value other than the default value (Example like 96KHz)?**
 
 A: The default SigmaStudio sample rate support is 48 kHz.
 
@@ -218,14 +224,20 @@ A: The SigmaStudio for SHARC target application can support up to 3 SigmaStudio 
 
 -  Drag multiple ADSP-SC5xx/215xx IC’s and connect with USBi as shown in below image
 
-| 
-| |image2|
-| \* Select the same SHARC core (Either Core 1 or Core 2) for all instances in “IC x - ADSP-SC5xx Control à Hardware Configuration à Main” window.
-| |image3|
-| \* Change the instance ID of each instance in the order 0, 1, and 2.
-| |image4|
-| \* Select the application DXE in 0th instance of each SHARC core.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/2.png
+   :width: 400px
 
+-  Select the same SHARC core (Either Core 1 or Core 2) for all instances in “IC x - ADSP-SC5xx Control à Hardware Configuration à Main” window.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/3.png
+   :width: 400px
+
+-  Change the instance ID of each instance in the order 0, 1, and 2.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/4.png
+   :width: 400px
+
+-  Select the application DXE in 0th instance of each SHARC core.
 -  Create schematic to all IC instance of each SHARC core.
 -  As usual run target and perform link compile download for the schematic.
 
@@ -255,9 +267,10 @@ A: The following steps will guide to figure out the CCES tool chain in SigmaStud
 -  Select Settings
 -  Select SHARC – “Tool chain”
 
-| 
-| |image5|
-| **Q: What is the difference between Demo, Demo uC and Library integration examples?**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/5.png
+   :width: 400px
+
+**Q: What is the difference between Demo, Demo uC and Library integration examples?**
 
 A: **Demo:** The demo is the target application example for EZ kit evaluation board for different processors, which will help customers to get started with SigmaStudio applications and do customizations to meet their requirements. Additionally, this application will help customer to tune their audio processing application with the help of SigmaStudio host. This is a component-based target application for SigmaStudio schematic applications to achieve the audio signal processing. Some of the important components are,
 
@@ -280,7 +293,7 @@ For more details, please refer to the section “Target Framework” in “AE_42
 
 **Q: How to resolve the Linker warning as shown below in SigmaStudio for SHARC examples framework?**
 
-\**[Warning li2074] "C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Rel4.7.0\\Target\\Examples\\DemoUc\\ADSP-SC58x\\ADSP-SC589\\SS_uC_App_Core1\\system\\startup_ldf\\app.ldf":1780 RESERVE_EXPAND command on line 10 of file "..\\..\\..\\Source\\adi_ss_uc_app.ldf" might claim the remainder of 'mem_block0_bw' memory, leaving no space for 'dxe_block0_stack_and_heap_expand' output section.
+**[Warning li2074] "C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Rel4.7.0\\Target\\Examples\\DemoUc\\ADSP-SC58x\\ADSP-SC589\\SS_uC_App_Core1\\system\\startup_ldf\\app.ldf":1780 RESERVE_EXPAND command on line 10 of file "..\\..\\..\\Source\\adi_ss_uc_app.ldf" might claim the remainder of 'mem_block0_bw' memory, leaving no space for 'dxe_block0_stack_and_heap_expand' output section.
 
 [Warning li2074] "C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Rel4.7.0\\Target\\Examples\\DemoUc\\ADSP-SC58x\\ADSP-SC589\\SS_uC_App_Core1\\system\\startup_ldf\\app.ldf":1792 RESERVE_EXPAND command on line 71 of file "..\\..\\..\\Source\\adi_ss_uc_app.ldf" might claim the remainder of 'mem_L2B7B8_bw' memory, leaving no space for 'dxe_l2_stack_and_heap_expand' output section.
 
@@ -294,21 +307,27 @@ A: Lib integration example can be used as demoUc by generating the SigmaStudio s
 
 **Q: How can I change the Block Size?**
 
-| A: Please find the steps to change the block size in the SigmaStudio for SHARC schematic.
-| |image6|
-| \* The main window shown in above image for setting the block size for the schematic.
+A: Please find the steps to change the block size in the SigmaStudio for SHARC schematic.
 
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/6.png
+   :width: 400px
+
+-  The main window shown in above image for setting the block size for the schematic.
 -  The maximum block size value set in the target application needs to be changed when the SigmaStudio schematic block size is changed. The maximum block size “ADI_SS_FW_MAX_PROCESS_BLOCKSIZE” needs to be updated in “adi_ss_fw_common.h” file “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-x.x\\Target\\Examples\\Framework\\Include” folder.
 
-| 
-| |image7|
-| \* The input modules block size can be updated using “Set Block size” option shown in above image.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/7.png
+   :width: 400px
+
+-  The input modules block size can be updated using “Set Block size” option shown in above image.
 
 **Q: How can I configure the SPORT for IO in SigmaStudio for SHARC application?**
 
-| A: The SPORT configurations are received from the SigmaStudio host to SHARC target application. The SPORT configurations can be assigned in “IC 1 ADSP-SC5xx Control à Framework Config” window. For more details about the default SPORT configuration please refer section “Audio Input-Output Modes” in “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs”.
-| |image8|
-| **Q: How can I configure the memory mapping for code, parameter, and state memory?**
+A: The SPORT configurations are received from the SigmaStudio host to SHARC target application. The SPORT configurations can be assigned in “IC 1 ADSP-SC5xx Control à Framework Config” window. For more details about the default SPORT configuration please refer section “Audio Input-Output Modes” in “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs”.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/8.png
+   :width: 400px
+
+**Q: How can I configure the memory mapping for code, parameter, and state memory?**
 
 A: Please refer to section “GMAP and SMAP” in “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs”.
 
@@ -316,29 +335,53 @@ A: Please refer to section “GMAP and SMAP” in “AE_42_SS4G_IntegrationGuide
 
 A: SHARC+ DSP’s has maximum of two SHARC+ cores and each of the cores can have up to three SigmaStudio schematic instances. SHARC core selection for each of the instances need to be done in Default SHARC Core setting. The core instance should be in specific order, i.e. SHARC core 1 and followed by SHARC core 2.
 
-| **Single Core:**
-| |image9|
-| In ‘Single Core’ mode, the schematic instance runs on any one of the SHARC+ core. Multiple schematic instances are possible only when ‘Single Core’ mode is set. A dual SHARC+ core DSP is supported with two “IC” instance as shown below.
-| |image10|
-| The separate “IC” instance for each core helps to design the schematic for each core separately by dragging the modules from corresponding “IC” instance. The single core option is used to make the core processing mode as Serial or Parallel.
-| |image11|
-| The example schematic for Single core is available in “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Host\\Examples\\Sample Schematics” folder.
+**Single Core:**
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-10-34.png
+   :width: 400px
+
+In ‘Single Core’ mode, the schematic instance runs on any one of the SHARC+ core. Multiple schematic instances are possible only when ‘Single Core’ mode is set. A dual SHARC+ core DSP is supported with two “IC” instance as shown below.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-10-15.png
+   :width: 400px
+
+The separate “IC” instance for each core helps to design the schematic for each core separately by dragging the modules from corresponding “IC” instance. The single core option is used to make the core processing mode as Serial or Parallel.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-5-51.png
+   :width: 400px
+
+The example schematic for Single core is available in “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Host\\Examples\\Sample Schematics” folder.
 
 **Dual Core:**
 
-| In ‘Dual Core’ mode, the schematic modules are processed using both the SHARC+ core. Thus, the SHARC core selection is not possible in Dual core mode. Multiple schematic instances are also not supported in this mode.
-| |image12|
-| A dual SHARC+ core DSP can be supported with only one “IC” as shown below.
-| |image13|
-| The single “IC” instance for designing the schematic using the modules dragged from the same.
-| |image14|
-| The schematic processing is always serial and the modules to be processed on each of the cores can be assigned by the user using “Change Core” selection on the module.
-| |image15|
-| **Q: What is memory insufficiency error while compiling the SS Schematic? How to resolve it?**
+In ‘Dual Core’ mode, the schematic modules are processed using both the SHARC+ core. Thus, the SHARC core selection is not possible in Dual core mode. Multiple schematic instances are also not supported in this mode.
 
-| A: The memory insufficiency error can get reported due to the insufficiency of Code, Parameter or Data memory required by the modules used in SigmaStudio schematic. The developer should be aware of Memory and MIPS before adding any modules to the schematic. Refer to “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs” folder for more information about GMAP and SMAP block use in SigmaStudio. If there is any memory insufficiency, the Code/Parameter/Data memory requirements can be verified by mapping all the memory to L3 buffers. Please follow the below steps for L3 memory mapping to find the actual memory requirements of the schematic.
-| |image16|
-| **Code Memory mapping to Code B(L3):**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-44.png
+   :width: 400px
+
+A dual SHARC+ core DSP can be supported with only one “IC” as shown below.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-23.png
+   :width: 400px
+
+The single “IC” instance for designing the schematic using the modules dragged from the same.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-2.png
+   :width: 400px
+
+The schematic processing is always serial and the modules to be processed on each of the cores can be assigned by the user using “Change Core” selection on the module.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_1-59-41.png
+   :width: 400px
+
+**Q: What is memory insufficiency error while compiling the SS Schematic? How to resolve it?**
+
+A: The memory insufficiency error can get reported due to the insufficiency of Code, Parameter or Data memory required by the modules used in SigmaStudio schematic. The developer should be aware of Memory and MIPS before adding any modules to the schematic. Refer to “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs” folder for more information about GMAP and SMAP block use in SigmaStudio. If there is any memory insufficiency, the Code/Parameter/Data memory requirements can be verified by mapping all the memory to L3 buffers. Please follow the below steps for L3 memory mapping to find the actual memory requirements of the schematic.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-6-7.png
+   :width: 400px
+
+**Code Memory mapping to Code B(L3):**
 
 -  Select the code memory tab in “Memory Sections”
 -  Click on load Section Map
@@ -346,9 +389,10 @@ A: SHARC+ DSP’s has maximum of two SHARC+ cores and each of the cores can have
 -  Change the Code buffer to “Code B”
 -  Click on Update Section Map to change the code memory mapping
 
-| 
-| |image17|
-| **State Memory mapping to State C(L3):**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-5-30.png
+   :width: 400px
+
+**State Memory mapping to State C(L3):**
 
 -  Select the State memory tab in “Memory Sections”
 -  Click on load Section Map
@@ -356,9 +400,10 @@ A: SHARC+ DSP’s has maximum of two SHARC+ cores and each of the cores can have
 -  Change all the memory sections from “State A” buffer to “State C”
 -  Click on Update Section Map to change the state memory mapping
 
-| 
-| |image18|
-| **Parameter Memory mapping to State C(L3):**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-4-42.png
+   :width: 400px
+
+**Parameter Memory mapping to State C(L3):**
 
 -  Select the Parameter memory tab in “Memory Sections”
 -  Click on load Section Map
@@ -366,29 +411,45 @@ A: SHARC+ DSP’s has maximum of two SHARC+ cores and each of the cores can have
 -  Change the memory section from “Param” buffer to “Param B”
 -  Click on Update Section Map to change the parameter memory mapping
 
-| 
-| |image19|
-| Once Code/Parameter/Data memory are mapped to L3, perform link compile to see the memory requirements. The memory requirement information will help to modify the default SS buffers allocated in the target application. Please refer to section “GMAP and SMAP” in “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs”. Mapping schematic memory to L3 memory may cause a lot of overhead on MIPS consumption. The user doesn’t have any control on splitting the memory mapping but can only change the default sections to be mapped.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-4-17.png
+   :width: 400px
+
+Once Code/Parameter/Data memory are mapped to L3, perform link compile to see the memory requirements. The memory requirement information will help to modify the default SS buffers allocated in the target application. Please refer to section “GMAP and SMAP” in “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs”. Mapping schematic memory to L3 memory may cause a lot of overhead on MIPS consumption. The user doesn’t have any control on splitting the memory mapping but can only change the default sections to be mapped.
 
 **Q: Is it possible to allocate more memory for Param B when using a custom algorithm?**
 
-| A: The SigmaStudio framework supports either Param (L1) or ParamB (L3) memory mapping, as all parameters must reside within a single memory block. Therefore, Param and ParamB cannot be used simultaneously. Additionally, these memory blocks cannot be assigned through custom memory section mapping, since SigmaStudio internally determines the memory sections during compile time. If MIPS consumption is not a concern, the entire parameter block can be mapped to ParamB memory using the “Load Memory” and “Update Memory” options available in the Memory section tab.
-| |image20|
-| The other options are:
+A: The SigmaStudio framework supports either Param (L1) or ParamB (L3) memory mapping, as all parameters must reside within a single memory block. Therefore, Param and ParamB cannot be used simultaneously. Additionally, these memory blocks cannot be assigned through custom memory section mapping, since SigmaStudio internally determines the memory sections during compile time. If MIPS consumption is not a concern, the entire parameter block can be mapped to ParamB memory using the “Load Memory” and “Update Memory” options available in the Memory section tab.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/MemorySections.png
+   :width: 400px
+
+The other options are:
 
 1) Global parameters can be mapped to any of the L1, L2, or L3 memory sections in the target application. These parameter buffers can then be accessed in custom modules as extern variables. To ensure they are retained during linking, you can preserve these buffers using the KEEP command in the target application's LDF file.
 
       Define the global parameter buffer in target application.
 
-| 
-| |image21|
-| >> Preserve global parameter buffer symbol in ldf file
-| |image22|
-| >> Define the global parameter buffer as extern and use it in custom module.
-| |image23|
-| 2) The ParamB memory block, which is mapped to L3 by default, can be redirected to L2 memory if there are MIPS constraints. For L2 memory mapping please modify the “adi_ss_app.ldf” as shown below (Half of the memory will be reserved for StateC data buffer) .
-| |image24|
-| **Q: How can I configure register window in SigmaDSP?**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ParamBufferDefination.png
+   :width: 400px
+
+
+Preserve global parameter buffer symbol in ldf file
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/KeepSymbol.png
+   :width: 400px
+
+
+Define the global parameter buffer as extern and use it in custom module.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ExternDeclaration.png
+   :width: 400px
+
+2) The ParamB memory block, which is mapped to L3 by default, can be redirected to L2 memory if there are MIPS constraints. For L2 memory mapping please modify the “adi_ss_app.ldf” as shown below (Half of the memory will be reserved for StateC data buffer) .
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/l2mapping.png
+   :width: 400px
+
+**Q: How can I configure register window in SigmaDSP?**
 
 A: Register Control Window allows access to internal registers and DSP core Registers. Launch the Register Control Window by clicking on the Hardware Configuration tab at the top of the workspace, and then clicking on the Register Controls tab at the bottom of the Configuration workspace. Users can configure the SigmaDSP register on this window by referring to the corresponding IC data sheet which can be downloaded from:
 
@@ -398,9 +459,10 @@ A: Register Control Window allows access to internal registers and DSP core Regi
 
 :adi:`ADAU1467 Datasheet and Product Info \| Analog Devices <en/products/adau1467.html>`
 
-| 
-| |image25|
-| **Q: Where can I get ADAU1466 register config details? Or where can I get hardware setup details for ADAU1467 EVAL board?**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-3-44.png
+   :width: 400px
+
+**Q: Where can I get ADAU1466 register config details? Or where can I get hardware setup details for ADAU1467 EVAL board?**
 
 A: The ADAU1466 register configuration details can be referred from the data sheet and user guide. Refer :adi:`ADAU1466 Datasheet and Product Info \| Analog Devices <en/products/adau1466.html>`.
 
@@ -434,23 +496,32 @@ Please refer to the “AE_42_SS4G_IntegrationGuide.pdf” available in the Sigma
 
 **Q: How many I/O buffers are declared in ADSP-215xx SigmaStudio for SHARC Framework?**
 
-| A: The number of I/O buffers for each channel is declared in the “IC control – Hardware Configuration – Framework Config” window.
-| |image26|
-| **Q: Can customers use any unused framework buffer defined in the target firmware?**
+A: The number of I/O buffers for each channel is declared in the “IC control – Hardware Configuration – Framework Config” window.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-3-13.png
+   :width: 400px
+
+**Q: Can customers use any unused framework buffer defined in the target firmware?**
 
 A: Yes, if customers are sure that one or more of the defined buffers are unused, those buffers can be reused in the target firmware.
 
 **Q: Where can I get Serial port details of SigmaStudio for SHARC framework?**
 
-| A: Hardware schematic of the target hardware gives the information of the DAI pins used for I/O data. Configuration for the Serial port can be found in “IC control – Hardware Configuration – Framework Config” window.
-| |image27|
-| For more details, please refer to the “AE_42_SS4G_IntegrationGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs”.
+A: Hardware schematic of the target hardware gives the information of the DAI pins used for I/O data. Configuration for the Serial port can be found in “IC control – Hardware Configuration – Framework Config” window.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-2-48.png
+   :width: 400px
+
+For more details, please refer to the “AE_42_SS4G_IntegrationGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs”.
 
 **Q: How can I update SRU Routing for specific requirements in SigmaStudio for SHARC target application?**
 
-| A: SRU routing can be updated using CrossCore Embedded Studio project under the “system.svc” settings.
-| |image28|
-| **Q: Why does ADSP-215xx wait indefinitely for SSn code?**
+A: SRU routing can be updated using CrossCore Embedded Studio project under the “system.svc” settings.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_12-59-5.png
+   :width: 400px
+
+**Q: Why does ADSP-215xx wait indefinitely for SSn code?**
 
 A: Sometime communication error occurs while downloading code from SigmaStudio using USBi. This error may cause an indefinite wait. Please check the USBi or AARDVARK interface to the EZ Kit evaluation board.
 
@@ -485,15 +556,16 @@ A: The steps to be followed for finding the list of modules supported for the se
 -  Open SigmaStudio and select new project
 -  Drag the IC to Hardware config window
 
-| 
-| |image29|
-| \* Select the “Block Schematic” or “Schematic”
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-30-25.png
+   :width: 400px
 
+-  Select the “Block Schematic” or “Schematic”
 -  Enable the ToolBox view as shown in image to get details of modules supported in SigmaStudio
 
-| 
-| |image30|
-| **Q: How can I add the custom plug in to SigmaStudio?**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-31-32.png
+   :width: 400px
+
+**Q: How can I add the custom plug in to SigmaStudio?**
 
 A: The following step can be used to add the custom plug-in to SigmaStudio,
 
@@ -501,9 +573,10 @@ A: The following step can be used to add the custom plug-in to SigmaStudio,
 -  Select “Add Ins Browser.”
 -  Add the plug-in dll using “Add Dll” option.
 
-| 
-| |image31|
-| **Q: Do you have a separate Audio toolbox for SHARC?**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-32-53_1_.png
+   :width: 400px
+
+**Q: Do you have a separate Audio toolbox for SHARC?**
 
 A: Yes, there is a separate audio toolbox for SHARC ADSP-214xx processors with some special modules. The customers should separately request for SHARC audio toolbox for ADSP-214xx. The SHARC+ already have the modules of SHARC audio toolbox within SigmaStudio for SHARC package and there is no need of any separate SHARC audio toolbox for SHARC+ processors.
 
@@ -518,9 +591,10 @@ A: The modules available in the SigmaStudio for SHARC package can be viewed in t
 -  Drag the module to Block schematic/Schematic window
 -  Select the module and press “F1” to go to module help page.
 
-| 
-| |image32|
-| **Q: How to update parameter or coefficient for custom module?**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-15-53.png
+   :width: 400px
+
+**Q: How to update parameter or coefficient for custom module?**
 
 A: Please refer to the “AE_42_SS4G_AlgorithmDesignerGuide.pdf” document available in the SigmaStudio for SHARC installation folder “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs”.
 
@@ -542,11 +616,17 @@ A: **SigmaDSP:** SigmaStudio display MIPS and memory details in the output windo
 
 **SHARC:** SigmaStudio displays the memory details in the output window, which is at the right side of the tool. Output window also shows memory required for each of the modules in the schematic. The MIPS information of SHARC ADSP-214xx/ADSP-215xx schematic modules can be generated using “IC Control – Hardware Configuration” window, please refer the below images. User should know the memory and MIPS requirements of each module by adding the module into to the simple schematic. The difference in MIPS and memory before and after adding the module will give the MIPS and memory requirement for the given module. Once the memory and MIPS of the module known, user can add the module into the original custom schematic under design. Good practice is that the user can add the memory and MIPS details into the Microsoft excel to keep track of memory and MIPS overflow.
 
-| **Read MIPS ADSP-215xx:**
-| |image33|
-| **Read MIPS ADSP-214xx:**
-| |image34|
-| **Q: Is there any example for custom plugin?**
+**Read MIPS ADSP-215xx:**
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-20-34_2_.png
+   :width: 400px
+
+**Read MIPS ADSP-214xx:**
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-21-4.png
+   :width: 400px
+
+**Q: Is there any example for custom plugin?**
 
 A: The custom plugin example for ADSP-215xx processors is available in “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Host\\Examples\\Sample Plug-Ins\\ADSP-SC5xx” folder. Please refer to the “AE_42_SS4G_AlgorithmDesignerGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs” for more details.
 
@@ -569,9 +649,10 @@ A:Overall delay for the schematic processing is equal to the schematic block siz
 -  Enter the floating-point coefficient values in the form
 -  Click on the Update button to write the coefficients
 
-| 
-| |image35|
-| **Q: How can I extend the filter order with available blocks in SigmaStudio?**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-23-34.png
+   :width: 400px
+
+**Q: How can I extend the filter order with available blocks in SigmaStudio?**
 
 A: User can cascade the filters for required order or by using the “Nth order filter”. Please find the Wiki help page :doc:`NthOrderFilter. </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/nthorderfilter>`
 
@@ -582,19 +663,29 @@ A: Refer Wiki page :doc:`FIRFilterPool. </wiki-migration/resources/tools-softwar
 -  Drag the module to Block schematic/Schematic window
 -  Select the module and press “F1” to go to module help page.
 
-| 
-| |image36|
-| **Q: How can I add anti-aliasing filter IIR Up and Down sampler?**
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-24-54.png
+   :width: 400px
 
-| A: Anti-aliasing IIR filters need to be added after up sampling module and before Down sampling module.
-| |image37|
-| **Q: Does SigmaStudio for SHARC supports FIR/IIR accelerator for SOM boards? or How can I use FIR/IIR accelerator support for ADSP-SC598 SOM Board?**
+**Q: How can I add anti-aliasing filter IIR Up and Down sampler?**
 
-| A: Yes, the modules for FIR/IIR accelerators are available in SigmaStudio for SHARC. Please refer to the below tree tool path.
-| |image38|
-| **FIR Accelerator:**
-| |image39|
-| Please refer to section “FIR/IIR Hardware Accelerator Multi-Instance support on ADSP-2159x/ADSP-SC59x” in “AE_42_SS4G_QuickStartGuide.pdf” document which is present in the following installation path “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs”.
+A: Anti-aliasing IIR filters need to be added after up sampling module and before Down sampling module.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-25-39.png
+   :width: 400px
+
+**Q: Does SigmaStudio for SHARC supports FIR/IIR accelerator for SOM boards? or How can I use FIR/IIR accelerator support for ADSP-SC598 SOM Board?**
+
+A: Yes, the modules for FIR/IIR accelerators are available in SigmaStudio for SHARC. Please refer to the below tree tool path.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-26-26.png
+   :width: 400px
+
+**FIR Accelerator:**
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-26-51.png
+   :width: 400px
+
+Please refer to section “FIR/IIR Hardware Accelerator Multi-Instance support on ADSP-2159x/ADSP-SC59x” in “AE_42_SS4G_QuickStartGuide.pdf” document which is present in the following installation path “C:\\Analog Devices\\SoftwareModules\\SigmaStudioForSHARC-SH-Relx.x.x\\Docs”.
 
 **Q: How can I link the library function in SigmaStudio schematic process for SHARC?**
 
@@ -611,19 +702,38 @@ A:
 -  Default parameters should be added into the custom plugin .xml file
 -  Runtime parameters should be added in algorithm designer
 
-| 
-| |image2023-1-5_11-32-46.png|
-| \* The runtime parameter should be assigned to default parameters as shown below,
-| |image40|
-| \* The runtime parameter should be assigned to UI controls as shown below, Step 1: Select and right click on the UI control, click on “Assign” option
-| |image41|
-| Step 2: In Control Action drop down select “ValueChanged”
-| |image42|
-| Step 3: Select the runtime parameter for corresponding UI control and click on apply
-| |image43|
-| Step 4: Review the UI control settings in properties window for Minimum, Maximum, Values
-| |image44|
-| These steps to be followed for every UI control to avoid runtime parameter tuning issues.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-32-46.png
+   :alt: image2023-1-5_11-32-46.png
+   :width: 400px
+
+-  The runtime parameter should be assigned to default parameters as shown below,
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-51-58.png
+   :width: 400px
+
+-  The runtime parameter should be assigned to UI controls as shown below,
+
+Step 1: Select and right click on the UI control, click on “Assign” option
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-52-38.png
+   :width: 400px
+
+Step 2: In Control Action drop down select “ValueChanged”
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-53-54.png
+   :width: 400px
+
+Step 3: Select the runtime parameter for corresponding UI control and click on apply
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-54-38.png
+   :width: 400px
+
+Step 4: Review the UI control settings in properties window for Minimum, Maximum, Values
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-55-35.png
+   :width: 400px
+
+These steps to be followed for every UI control to avoid runtime parameter tuning issues.
 
 SigmaStudio for SHARC Host Packeting Q & A
 ==========================================
@@ -669,11 +779,17 @@ A: Yes, SigmaStudio for SHARC modules support automation scripts supported in Si
 
 **Q: How can I tune Custom modules through script?**
 
-| A: The control parameter names for custom modules can be seen after enabling “View Control Parameter Names”, please refer the below image.
-| |image45|
-| Just hover on the custom modules to see the control parameter names. Refer to the below image.
-| |image46|
-| The control parameters can be used to tune the parameters using SigmaStudio script. For example:
+A: The control parameter names for custom modules can be seen after enabling “View Control Parameter Names”, please refer the below image.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-33-7.png
+   :width: 400px
+
+Just hover on the custom modules to see the control parameter names. Refer to the below image.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-33-33.png
+   :width: 400px
+
+The control parameters can be used to tune the parameters using SigmaStudio script. For example:
 
 object[] output; ss.ObjectSetProperties("setControlValue", "BiquadCascade1", 0, 0, "checkBox1_Checked", 0 );
 
@@ -691,102 +807,7 @@ ss.ObjectGetProperties("getControlValue", "BiquadCascade1", out output, 0, 0, "c
 
 ss.PrintLine("BiquadCascade1 is in ON");
 
-| To change the name of the control parameter, refer below image,
-| |image47|
+To change the name of the control parameter, refer below image,
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/1.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/2.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/3.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/4.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/5.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/6.png
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/7.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/8.png
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-10-34.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-10-15.png
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-5-51.png
-   :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-44.png
-   :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-23.png
-   :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-2.png
-   :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_1-59-41.png
-   :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-6-7.png
-   :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-5-30.png
-   :width: 400px
-.. |image18| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-4-42.png
-   :width: 400px
-.. |image19| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-4-17.png
-   :width: 400px
-.. |image20| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/MemorySections.png
-   :width: 400px
-.. |image21| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ParamBufferDefination.png
-   :width: 400px
-.. |image22| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/KeepSymbol.png
-   :width: 400px
-.. |image23| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ExternDeclaration.png
-   :width: 400px
-.. |image24| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/l2mapping.png
-   :width: 400px
-.. |image25| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-3-44.png
-   :width: 400px
-.. |image26| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-3-13.png
-   :width: 400px
-.. |image27| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-2-48.png
-   :width: 400px
-.. |image28| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_12-59-5.png
-   :width: 400px
-.. |image29| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-30-25.png
-   :width: 400px
-.. |image30| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-31-32.png
-   :width: 400px
-.. |image31| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-32-53_1_.png
-   :width: 400px
-.. |image32| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-15-53.png
-   :width: 400px
-.. |image33| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-20-34_2_.png
-   :width: 400px
-.. |image34| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-21-4.png
-   :width: 400px
-.. |image35| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-23-34.png
-   :width: 400px
-.. |image36| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-24-54.png
-   :width: 400px
-.. |image37| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-25-39.png
-   :width: 400px
-.. |image38| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-26-26.png
-   :width: 400px
-.. |image39| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-26-51.png
-   :width: 400px
-.. |image2023-1-5_11-32-46.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-32-46.png
-   :width: 400px
-.. |image40| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-51-58.png
-   :width: 400px
-.. |image41| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-52-38.png
-   :width: 400px
-.. |image42| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-53-54.png
-   :width: 400px
-.. |image43| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-54-38.png
-   :width: 400px
-.. |image44| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-55-35.png
-   :width: 400px
-.. |image45| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-33-7.png
-   :width: 400px
-.. |image46| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-33-33.png
-   :width: 400px
-.. |image47| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-34-22.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-34-22.png
    :width: 400px

@@ -23,7 +23,7 @@ The Cog software development kit
 
 **As an example "LED_button_callback" is considered and the changes required is briefly explained.**
 
-\**Here, the changes are made only with respect to the GPIOs and only on the application source file. \*\*
+**Here, the changes are made only with respect to the GPIOs and only on the application source file.**
 
 -  Install the IAR BSP from the above link.
 -  Open the "LED_button_callback.c" source code in the editor of your choice and make the below changes:
@@ -34,15 +34,15 @@ The Cog software development kit
        * Macro definition changes under "defined(__ADUCM302x__)":
          * #define PB1_PORT_NUM        ADI_GPIO_PORT1
          * #define PB1_PIN_NUM         ADI_GPIO_PIN_0
-         * 
-         * #define PB2_PORT_NUM        ADI_GPIO_PORT0
-         * #define PB2_PIN_NUM         ADI_GPIO_PIN_9
-         * 
-         * #define LED1_PORT_NUM       ADI_GPIO_PORT2
-         * #define LED1_PIN_NUM        ADI_GPIO_PIN_2
-         * 
-         * #define LED2_PORT_NUM       ADI_GPIO_PORT2
-         * #define LED2_PIN_NUM        ADI_GPIO_PIN_10
+          *
+   * #define PB2_PORT_NUM        ADI_GPIO_PORT0
+   * #define PB2_PIN_NUM         ADI_GPIO_PIN_9
+          *
+   * #define LED1_PORT_NUM       ADI_GPIO_PORT2
+   * #define LED1_PIN_NUM        ADI_GPIO_PIN_2
+          *
+     * #define LED2_PORT_NUM       ADI_GPIO_PORT2
+       * #define LED2_PIN_NUM        ADI_GPIO_PIN_10
 
 ::
 

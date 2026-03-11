@@ -4,9 +4,7 @@ Activity: Impedance Measurement - Frequency Effects, For ADALM1000
 Objective:
 ----------
 
-| The objective of this Lab activity is to:
-| 1. Measure component impedance and circuit impedance using the ALICE-VVM Impedance Analyzer software.
-| 2. Study the magnitude and phase changes with change in frequency for an RLC circuit.
+The objective of this Lab activity is to: 1. Measure component impedance and circuit impedance using the ALICE-VVM Impedance Analyzer software. 2. Study the magnitude and phase changes with change in frequency for an RLC circuit.
 
 Notes:
 ------
@@ -69,10 +67,7 @@ This can also be represented as a phasor vector on a polar plot with:
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Resistors (1.0 KΩ, 470 Ω)
-| Capacitor (1.0 µF)
-| Inductor (10 mH)
+ADALM1000 hardware module Resistors (1.0 KΩ, 470 Ω) Capacitor (1.0 µF) Inductor (10 mH)
 
 Procedure:
 ~~~~~~~~~~

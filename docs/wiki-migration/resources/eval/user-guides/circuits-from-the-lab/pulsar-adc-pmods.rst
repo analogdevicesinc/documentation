@@ -3,8 +3,11 @@ PulSAR ADC PMODs
 
 These low power ADCs offer very high performance from 14-bits up to 18-bits with throughputs ranging from 100 kSPS to 1.3 MSPS. The boards are designed to demonstrate the ADC's performance and to provide an easy digital interface for a variety of system applications. A full description of these products is available in their respective data sheets and should be consulted when utilizing the boards. To purchase hardware, please visit our :adi:`website. <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/PulsarPMODs.html>`
 
-| |image1|
-| The products which have PMOD boards associated with them can be found in the table below.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/pulsar_pmod.jpg
+   :align: center
+   :width: 500px
+
+The products which have PMOD boards associated with them can be found in the table below.
 
 +------------------------------------------------+------------+------------------+------------------------------+----------------------------------------------+--------------------------------------------------------------------+
 | Products                                       | Resolution | ADC Throughput\* | Input Stage                  | Driver Amplifier                             | PMOD Part Number                                                   |
@@ -107,35 +110,35 @@ Evaluating the PulSAR ADC PMOD boards is very simple. Using the required equipme
 -  Plug in the Mini USB cable from a USB port on your PC, to the **J1** of the EVAL-SDP-CB1Z.\
 
 
-|image2|
+|image1|
 
    -  Make sure that the computer installs the device drivers, and that you can see the *ADI Development Tools* in your computer's device manager.\
 
 
-   |image3|
+   |image2|
 
 -  Ensure that you remove the shunt which is located at **JP1** of the SDP-PMD-IB1Z
 -  Next take the EVAL-SDP-CB1Z board and connect **CON A** up to **J4** of the SDP-PMD-IB1Z interposer board.
 
-|image4|
+|image3|
 
 -  Connect the EVAL-CFTL-6V-PWRZ to **J1** barrel jack of the SDP-PMD-IB1Z, and **WAIT 10 SECONDS** before continuing\
 
-|image5|
+|image4|
 
 -  Take the PulSAR ADC PMOD board you are using and connect it to **J3** of the SDP-PMD-IB1Z interposer board. This should finish the hardware setup.\
 
-|image6|
+|image5|
 
 -  With the power source turn **OFF**, connect your external power supplies (-2.5V, GND, and 7.5V) to the terminal block of your EVAL-AD7xxx-PMDZ board.
 -  Turn **ON** your external power supplies (-2.5V, GND, and 7.5V) connected in the previous step.
 -  Place the shunt across **JP1** of the SDP-PMD-IB1Z, according to the silkscreen so that you will have 3.3V going to the PMOD connector.\
 
-|image7|
+|image6|
 
 -  Check again in the device manager to make sure the *ADI Development Tools* are still displaying. If yes, then you'll be able to proceed onto the evaluation software section. If you don't see ADI Development Tools, than you will have to start the hardware evaluation procedure over at step 1.\
 
-|image8|
+|image7|
 
 -  Connect your SMB cable from your signal source to the Vin+ and Vin- connectors of the EVAL-AD7xxx-PMDZ board.
 
@@ -184,8 +187,7 @@ The following is the description of how to use the user panel:
    -  Histogram - Bin representation of the data
    -  FFT - Frequency domain representation of the data
 
-| 
-| The following screen shot is an example of using the AD7980 ADC, and looking at the frequency domain to view a 10kHz input sine wave. This tab provided several frequency domain calculations such as SINAD, THD, SNR.
+The following screen shot is an example of using the AD7980 ADC, and looking at the frequency domain to view a 10kHz input sine wave. This tab provided several frequency domain calculations such as SINAD, THD, SNR.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/software_fft_10khz.png
    :align: center
@@ -203,20 +205,33 @@ Schematics, PCB Layout, Bill of Materials
    -   Bill of Materials
    -   Allegro Project
    
-   | :adi:`EVAL-AD7685-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7685-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7686-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7686-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7687-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7687-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7688-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7688-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7690-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7690-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7691-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7691-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7693-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7693-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7946-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7946-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7980-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7980-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7982-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7982-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7983-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7983-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7984-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7984-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7988-1-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7988-1-pmdz-designsupport.zip>`
-   | :adi:`EVAL-AD7988-5-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7988-5-pmdz-designsupport.zip>`
+   :adi:`EVAL-AD7685-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7685-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7686-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7686-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7687-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7687-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7688-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7688-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7690-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7690-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7691-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7691-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7693-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7693-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7946-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7946-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7980-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7980-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7982-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7982-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7983-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7983-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7984-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7984-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7988-1-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7988-1-pmdz-designsupport.zip>`
+   
+   :adi:`EVAL-AD7988-5-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7988-5-pmdz-designsupport.zip>`
 
 
 Change Log
@@ -257,19 +272,17 @@ Registration
 
 *End of Document*
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/pulsar_pmod.jpg
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb.jpg
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer.jpg
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer_power.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer_power.jpg
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_evaluation_combo.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_evaluation_combo.jpg
    :width: 700px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer_power_jumper.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer_power_jumper.jpg
    :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
    :width: 500px

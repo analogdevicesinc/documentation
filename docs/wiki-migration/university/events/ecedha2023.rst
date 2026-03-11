@@ -1,12 +1,18 @@
 Education Conference Materials and Flyers (Save a Tree!)
 ========================================================
 
-| Thank you for stopping by our booth! Below are a few links for the modules, labs, and devices we showed:
-| |image1|
-| |image2|
-| |image3|
-| |image4|
-| |image5|
+Thank you for stopping by our booth! Below are a few links for the modules, labs, and devices we showed:
+
+
+|image1|
+
+|image2|
+
+|image3|
+
+|image4|
+
+|image5|
 
 .. |image1| image:: https://wiki.analog.com/_media/university/events/ecedha2023/rf_agile_thumbnail.png
    :width: 400px

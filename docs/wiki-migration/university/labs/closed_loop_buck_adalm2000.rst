@@ -29,15 +29,12 @@ Materials
 
 -  LTspice files for this exercise
 
-   -  :git-education_tools:`LTspice files for this exercise <m2k/ltspice/cl_buck>`
+   -  `LTspice files for this exercise <https://github.com/analogdevicesinc/education_tools/tree/sr1/m2k/ltspice/cl_buck>`_
 
 Background
 ----------
 
-| Applying traditional control theory to switching regulators presents some challenges. A continuous time system - even a "messy" one that may be nonlinear or time-variant - can often be approximated by a linear system by limiting the range of amplitudes and / or frequencies. There is no such good fortune with switching regulators - the power stage inherently involves a switching circuit that traverses several distinct states. One approach to this problem is to derive a continuous time model that approximates the behavior of the power stage at the timescales of interest. Once this model is derived, traditional methods can be used to design feedback compensators to meet the application requirements. :adi:`Application Note 149: Modeling and Loop Compensation Design of Switching Mode Power Supplies <media/en/technical-documentation/application-notes/AN149fa.pdf>` is an excellent resource for this general approach, while this lab exercise will focus on the specific case of the ADALM-SR1. Some additional resources on the subject are:
-| :adi:`Loop Gain and its Effect on Analog Control Systems <en/technical-articles/loop-gain-and-its-effect-on-analog-control-systems.html>`
-| :adi:`Application Note 170: Honing the Adjustable Compensation Feature of Power System Management Controllers <media/en/technical-documentation/application-notes/an170f.pdf>`
-| :adi:`Application Note 140 Basic Concepts of Linear Regulator and Switching Mode Power Supplies <media/en/technical-documentation/application-notes/AN140fb.pdf>`
+Applying traditional control theory to switching regulators presents some challenges. A continuous time system - even a "messy" one that may be nonlinear or time-variant - can often be approximated by a linear system by limiting the range of amplitudes and / or frequencies. There is no such good fortune with switching regulators - the power stage inherently involves a switching circuit that traverses several distinct states. One approach to this problem is to derive a continuous time model that approximates the behavior of the power stage at the timescales of interest. Once this model is derived, traditional methods can be used to design feedback compensators to meet the application requirements. :adi:`Application Note 149: Modeling and Loop Compensation Design of Switching Mode Power Supplies <media/en/technical-documentation/application-notes/AN149fa.pdf>` is an excellent resource for this general approach, while this lab exercise will focus on the specific case of the ADALM-SR1. Some additional resources on the subject are: :adi:`Loop Gain and its Effect on Analog Control Systems <en/technical-articles/loop-gain-and-its-effect-on-analog-control-systems.html>` :adi:`Application Note 170: Honing the Adjustable Compensation Feature of Power System Management Controllers <media/en/technical-documentation/application-notes/an170f.pdf>` :adi:`Application Note 140 Basic Concepts of Linear Regulator and Switching Mode Power Supplies <media/en/technical-documentation/application-notes/AN140fb.pdf>`
 
 Activity 1: An Overcompensated Voltage-Mode Buck Converter
 ----------------------------------------------------------
@@ -54,14 +51,14 @@ Figure X below shows the buck power stage from the open-loop exercise, but with 
 -  If the output voltage is MUCH too high, the output voltage ramps down quickly.
 -  And finally, if the output voltage is "just right", hold the output voltage constant
 
-| |image1|
+|image1|
 
 .. container:: centeralign
 
    Figure 1. Voltage Mode Buck Converter
 
 
-| But since the integrator output is connected to the LTC6992-1's MOD pin, an increase / decrease in voltage will directly cause a corresponding increase / decrease in the MOSFET's duty cycle, which will tend to bring the output voltage toward the "just right" voltage.
+But since the integrator output is connected to the LTC6992-1's MOD pin, an increase / decrease in voltage will directly cause a corresponding increase / decrease in the MOSFET's duty cycle, which will tend to bring the output voltage toward the "just right" voltage.
 
 Also note the following simplifications:
 
@@ -149,24 +146,28 @@ The first step in speeding up the response by adjusting the compensator is to un
 Buck Power Stage Continuous model, voltage-mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Consider the ADALM-SR1 power stage when configured for open-loop, duty cycle control mode, with the LTC6992-3 PWM generator providing the gate control:
-| |image5|
+Consider the ADALM-SR1 power stage when configured for open-loop, duty cycle control mode, with the LTC6992-3 PWM generator providing the gate control:
+
+
+|image5|
 
 .. container:: centeralign
 
    Figure 5. Buck Switching Power Stage
 
 
-| The property of this circuit that needs to be extracted is the transfer function from a "wiggle" at the MOD pin to a "wiggle" at the output (labeled "a"). Intuitively, sweeping the voltage at the MOD pin from 0V to 1.0V will produce a 0 to 100% duty cycle at its OUT pin. The power stage will then translate this duty cycle to an output voltage of 0V to 12V, on the condition that the circuit is operating in CCM. Following the logic in AN149, this circuit SHOULD be roughly equivalent to the following, purely linear circuit:
+The property of this circuit that needs to be extracted is the transfer function from a "wiggle" at the MOD pin to a "wiggle" at the output (labeled "a"). Intuitively, sweeping the voltage at the MOD pin from 0V to 1.0V will produce a 0 to 100% duty cycle at its OUT pin. The power stage will then translate this duty cycle to an output voltage of 0V to 12V, on the condition that the circuit is operating in CCM. Following the logic in AN149, this circuit SHOULD be roughly equivalent to the following, purely linear circuit:
 
-| |image6|
+
+
+|image6|
 
 .. container:: centeralign
 
    Figure 6. Buck Linearized Power Stage
 
 
-| noting that the inductance, output capacitors, and load resistor are identical to the switched circuit. E1 is a voltage-controlled voltage source, representing the inherent gain of 12 in the switching circuit. This circuit may look familiar - it is an RLC lowpass filter, so we should be able to simulate it as such with a .AC analysis. Including this SPICE directive:
+noting that the inductance, output capacitors, and load resistor are identical to the switched circuit. E1 is a voltage-controlled voltage source, representing the inherent gain of 12 in the switching circuit. This circuit may look familiar - it is an RLC lowpass filter, so we should be able to simulate it as such with a .AC analysis. Including this SPICE directive:
 
 ::
 
@@ -174,14 +175,15 @@ Buck Power Stage Continuous model, voltage-mode
 
 will allow us to measure the transfer function from 5Hz to 50kHz, with the result shown here:
 
-| |image7|
+
+|image7|
 
 .. container:: centeralign
 
    Figure 7. Buck Linearized Power Stage Response, AC Analysis
 
 
-| Which is great! But... remember that we can't use a .AC directive on the switching circuit because it has no operating point around which it can be analyzed. What we can do is apply a stepped frequency / measure analysis, described in the link below. Replacing the .AC directive with the following:
+Which is great! But... remember that we can't use a .AC directive on the switching circuit because it has no operating point around which it can be analyzed. What we can do is apply a stepped frequency / measure analysis, described in the link below. Replacing the .AC directive with the following:
 
 ::
 
@@ -201,23 +203,26 @@ will allow us to measure the transfer function from 5Hz to 50kHz, with the resul
 
 performs a roughly equivalent analysis, stepping the input frequency from 100Hz to 100kHz, but at each step, capturing the input and output waveforms and performing a Fourier analysis to extract gain and phase. The result is shown below:
 
-| |image8|
+
+|image8|
 
 .. container:: centeralign
 
    Figure 8. Buck Linearized Power Stage Response, Stepped Analysis
 
 
-| So now that we're convinced that these two simulation methods produce approximately the same result (Note: dig into discrepancies that do exist!), we can apply the second method to the switching circuit, with the following result:
+So now that we're convinced that these two simulation methods produce approximately the same result (Note: dig into discrepancies that do exist!), we can apply the second method to the switching circuit, with the following result:
 
-| |image9|
+
+
+|image9|
 
 .. container:: centeralign
 
    Figure 9. Buck Switching Power Stage Response
 
 
-| At low frequencies, it is remarkably similar! Note the strange behavior around 10kHz - this is because the power stage is switching at 20kHz, so it only has 20,000 discrete "opportunities" to modify the output voltage per second, and thus can be looked at as a sampled system - and all sampled systems are subject to Nyquist criterion, and will alias if this is violated. (We can dig into that later...)
+At low frequencies, it is remarkably similar! Note the strange behavior around 10kHz - this is because the power stage is switching at 20kHz, so it only has 20,000 discrete "opportunities" to modify the output voltage per second, and thus can be looked at as a sampled system - and all sampled systems are subject to Nyquist criterion, and will alias if this is violated. (We can dig into that later...)
 
 But we found the dominant pole of the power stage - about 362Hz for the linearized model, and about 232Hz for the switching model!
 
@@ -237,9 +242,9 @@ The last step, naturally is to measure the actual power stage and see how it com
    Figure 10. ADALM-SR1 Config. for Voltage Mode Buck Power Stage Response
 
 
-| This is also the point in our experiment where things get "interesting", in the sense that real-world messiness (switching noise) needs to be carefully balanced with signal levels and measurement resolution: No matter how big you make the inductance and output capacitor, there will always be some switching residue that will obscure the signal you're trying to measure.
-| \* Applying a large stimulus to the power stage will result in a larger signal that will be easier to measure, however, the response may become nonlinear (distort).
+This is also the point in our experiment where things get "interesting", in the sense that real-world messiness (switching noise) needs to be carefully balanced with signal levels and measurement resolution: No matter how big you make the inductance and output capacitor, there will always be some switching residue that will obscure the signal you're trying to measure.
 
+-  Applying a large stimulus to the power stage will result in a larger signal that will be easier to measure, however, the response may become nonlinear (distort).
 -  Applying a small signal will tend to keep the response more linear, but the smaller output signal will be more difficult to disginguish from noise.
 
 Start by connecting the ADALM-SR1's auxilary power. Set the input voltage to 12V. In Scopy's Logic Analyzer, verify that the switching frequency is still set to 20kHz. Set the duty cycle such that the output voltage is 5V. At this point the switching circuit is in the same conditions it would be if the loop were still closed, that is, the error integrater would adjust the duty cycle to the same value as we just did. The difference is, IF something did change: if the load were increased or the input voltage dropped, output would drop momentarily, but the error integrator would bring the output back into regulation by increasing the duty cycle. (The opposite would happen if the load were decreased or the input voltage increased - the error integrator would reduce the duty cycle.)
@@ -252,23 +257,24 @@ Set the Signal Generator Channel 1 (W1 in Figure 10) to 25Hz sinewave, 500mV p-p
 
 Set the oscilloscope to 10ms/div, CH1 to 5mV/div, and CH2 to 50mV/div. We know that a duty cyle range of 0 to 100% should correspond to an output voltage of 0 to 12V, which is "a bit more than 10", so the CH2 amplitude should apper about 20% larger than the CH1 amplitude. But let's illuminate one more subtelety about our test equipment - the output trace looks suspiciously "clean" given the regulator's switching nature, doesn't it? And the stimulus trace has some strange "steppiness" as well. It turns out that there are several filters in the ADALM2000 itself and Scopy, and we can use them to our advantage.
 
-| |image11|
+
+|image11|
 
 .. container:: centeralign
 
    Figure 11. Buck Switching Power Stage, 25Hz, Filters Enabled
 
 
-| Open the Settings (gear icon) in Scopy, and de-select sample rate filtering. The switching noise becomes MUCH more visible! Because the switching noise frequency is much higher than our signal of interest, as is the cutoff frequency of the sample rate filter, the impact of the filter on the measurement is negligible. The main reason for checking out the unfiltered mode is to get a feel for what is "really there", and how to process this data to make it more useful. Re-enable the filter.
+Open the Settings (gear icon) in Scopy, and de-select sample rate filtering. The switching noise becomes MUCH more visible! Because the switching noise frequency is much higher than our signal of interest, as is the cutoff frequency of the sample rate filter, the impact of the filter on the measurement is negligible. The main reason for checking out the unfiltered mode is to get a feel for what is "really there", and how to process this data to make it more useful. Re-enable the filter.
 
-| |image12|
+
+
+|image12|
 
 .. container:: centeralign
 
    Figure 12. Buck Switching Power Stage, 25Hz, Scope Unfiltered
 
-
-|
 
 .. tip::
 
@@ -279,14 +285,15 @@ The next step is to measure the relative amplitude of both the stimulus and the 
 
 Next, increase the frequency in 10Hz increments, until the output amplitude drops to 70.7% of its initial value. (about 160Hz in Figure 13) This is the -3dB, or cutoff frequency of the power stage. You should also see a delay between the stimulus and output - use the time cursors to measure the time between the peak of the stimulus waveform and the peak of the output waveform.
 
-| |image13|
+
+|image13|
 
 .. container:: centeralign
 
    Figure 13. Buck Switching Power Stage, -3dB at 160 Hz
 
 
-| Calculate the phase with the following formula:
+Calculate the phase with the following formula:
 
 phase = 360 \* delay \* Frequency
 
@@ -312,8 +319,7 @@ Intro on differences in control dynamics...
 
    ..
 
-| **Return to** :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>`
-| **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
+**Return to** :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>` **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_voltage_mode_no_mbrook.png
    :width: 800px

@@ -62,8 +62,11 @@ Transmission Lines – General Information
 
 A transmission line is defined as a system of conductors (wires, waveguides, coaxial cables), suitable for conducting electric power signals between two or more terminals. [McGraw-Hill Dictionary of Scientific and Technical Terms].
 
-| To send an electrical signal to a distant load, two wires are required. Since two metal conductors are, by definition, a capacitor, this implies that each section of a transmission line has some capacitance. On the other hand, as an inductor is defined essentially as a loop of wire, each section of the line also has an inductance. In reality, each "section" of the line is infinitesimally short, however, a "lumped" model of a transmission line can be constructed with discrete inductors and capacitors as shown in Figure 1. Suppose a constant DC voltage is applied to one end of the transmission line. The capacitance and inductance are what prevent the signal from traveling instantaneously. These capacitors and inductors are not components that we deliberately add to the circuit but are an inherent part of all wires that carry electrical signals.
-| |image1|
+To send an electrical signal to a distant load, two wires are required. Since two metal conductors are, by definition, a capacitor, this implies that each section of a transmission line has some capacitance. On the other hand, as an inductor is defined essentially as a loop of wire, each section of the line also has an inductance. In reality, each "section" of the line is infinitesimally short, however, a "lumped" model of a transmission line can be constructed with discrete inductors and capacitors as shown in Figure 1. Suppose a constant DC voltage is applied to one end of the transmission line. The capacitance and inductance are what prevent the signal from traveling instantaneously. These capacitors and inductors are not components that we deliberately add to the circuit but are an inherent part of all wires that carry electrical signals.
+
+.. image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/simple_lumped_tline.png
+   :align: center
+   :width: 1000px
 
 .. container:: centeralign
 
@@ -72,19 +75,15 @@ A transmission line is defined as a system of conductors (wires, waveguides, coa
 
 Voltage applied between two conductors creates an electric field between them. Equation 1 implies that the current drawn from the voltage source would be proportional to the voltage’s rate of change over time. In consonance with said equation, an instant rise in applied voltage, results in an infinite charging current. Nonetheless, the current drawn will not be infinite because of the series impedance, due to line inductance. Each wire from our pair develops a magnetic field as it carries charging current for the capacitance between the wires, dropping voltage according to equation 2. This voltage drop limits the voltage rate of change across the distributed capacitance, preventing the current from ever reaching an infinite magnitude. Thus, the wires are no longer simple conductors - they are themselves a circuit component called a transmission line, with their own characteristics. When voltage is suddenly applied, both a current wave and a voltage wave propagate along the line’s length at a significant fraction of the speed of light.
 
-| Equation 1:
-| :math:`\displaystyle i=C\frac{dv}{dt}`
+Equation 1: :math:`\displaystyle i=C\frac{dv}{dt}`
 
-| where i is the instantaneous current through the capacitor;
-| C is the capacitance in Farads;
-| :math:`\displaystyle \frac{dv}{dt}` is the instantaneous rate of voltage change, volts per second.
-| Equation 2:
-| :math:`\displaystyle v=L\frac{di}{dt}`
+where i is the instantaneous current through the capacitor; C is the capacitance in Farads; :math:`\displaystyle \frac{dv}{dt}` is the instantaneous rate of voltage change, volts per second.
 
-| where v is the instantaneous voltage across the inductor;
-| L is the inductance in Henrys;
-| :math:`\displaystyle \frac{di}{dt}` is the instantaneous rate of current change, amps per second.
-| The physical construction of a transmission line varies widely depending on the application. There are several different types of electrical transmission lines such as coaxial line (figure 4), two-wire line (figure5), parallel-plate line, strip line, microstrip line, coplanar waveguide (figure 6).
+Equation 2: :math:`\displaystyle v=L\frac{di}{dt}`
+
+where v is the instantaneous voltage across the inductor; L is the inductance in Henrys; :math:`\displaystyle \frac{di}{dt}` is the instantaneous rate of current change, amps per second.
+
+The physical construction of a transmission line varies widely depending on the application. There are several different types of electrical transmission lines such as coaxial line (figure 4), two-wire line (figure5), parallel-plate line, strip line, microstrip line, coplanar waveguide (figure 6).
 
 .. image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/coax_figure.png
    :align: center
@@ -104,7 +103,7 @@ Voltage applied between two conductors creates an electric field between them. E
    **Figure 5.** Two-wire line
 
 
-| A common example of a 2-wire transmission line is the usual un-shielded twisted pair (UTP ethernet cable everyone is familiar with. A twisted pair that is surrounded by a solid dielectric, the line becomes a shielded pair transmission line (STP). Both cables are shown in figure 9. When using UTP transmission lines, several parameters need to be considered: attenuation (amount of loss in signal’s strength as it travels down a wire), cross-talk (unwanted coupling caused by overlapping electric and magnetic fields), near-end cross-talk (measure of level of signal coupling within a cable). A visual representation of the latter is depicted in figure 10. There are a couple of advantages to using the shielded pair cable, such as:
+A common example of a 2-wire transmission line is the usual un-shielded twisted pair (UTP ethernet cable everyone is familiar with. A twisted pair that is surrounded by a solid dielectric, the line becomes a shielded pair transmission line (STP). Both cables are shown in figure 9. When using UTP transmission lines, several parameters need to be considered: attenuation (amount of loss in signal’s strength as it travels down a wire), cross-talk (unwanted coupling caused by overlapping electric and magnetic fields), near-end cross-talk (measure of level of signal coupling within a cable). A visual representation of the latter is depicted in figure 10. There are a couple of advantages to using the shielded pair cable, such as:
 
 -  Conductors are contained within in a copper braid shield, which isolates from external noise and prevents radiating and interfering with other systems.
 -  Conductors are balanced to ground, thus capacitance between wires is uniform throughout the length of the cable.
@@ -114,13 +113,11 @@ Characteristic Impedance
 
 Characteristic/ natural impedance refers to the equivalent resistance of a transmission line if it were infinitely long, owing to distributed capacitance and inductance, as the voltage and current waves travel along its length at a propagation velocity equal to some large fraction of the speed of light. Suppose the spacing between the two conductors is expanded. Under this condition, the distributed capacitance will decrease, while the distributed inductance will increase, as there is less cancellation between two opposing magnetic fields. Naturally, by bringing the capacitor plates (the two conductors) closer together, the antagonistic effect is obtained: increased parallel capacitance and decreased series inductance. Hence, one can note that the characteristic impedance of a transmission line increases as there is greater space between conductors. To calculate the natural impedance of a given transmission line, with known parameters, the following formula shown in equation 3 is to be used. This shows that characteristic impedance is purely a function of the capacitance and inductance distributed along the lines length and it would exist even if the dielectric were perfect (infinite parallel resistance) and the wires superconducting (zero series resistance).
 
-| Equation 3:
-| :math:`\displaystyle Z_{0} = sqrt\frac{L}{C}`
+Equation 3:
 
-| where :math:`Z_{0}` characteristic impedance of line;
-| L – inductance per unit length of line;
-| C – capacitance per unit length of line.
-|
+:math:`\displaystyle Z_{0} = sqrt\frac{L}{C}`
+
+where :math:`Z_{0}` characteristic impedance of line; L – inductance per unit length of line; C – capacitance per unit length of line.
 
 .. note::
 
@@ -149,8 +146,7 @@ The length of a transmission line is admitted short when the propagation effects
 
 Wavelength can be defined as the expression of distance traveled by a signal along a transmission line in relation to its source frequency. A simple formula, known as the wave relation (marked as equation 4), is used to solve most problems in this area, obeying the scheme shown in figure 12.
 
-| Equation 4:
-| :math:`v=lambdaf`
+Equation 4: :math:`v=lambdaf`
 
 where v is the velocity of propagation, f is the signal frequency, and λ is the wavelength.
 
@@ -180,18 +176,14 @@ Even more detailed background material on transmission lines can be found in thi
 Materials:
 ----------
 
-| ADALM1000 hardware module
-| 20 inductors with values in the range of 47 uH to 150 uH
-| 21 capacitors with values in the range of 6.8 nF to 100 nF
-| 2 resistors with values in the range of 27 Ω to 56 Ω
-| 1 CD4052 or 74HC4052 4:1 analog CMOS multiplexer (optional)
+ADALM1000 hardware module 20 inductors with values in the range of 47 uH to 150 uH 21 capacitors with values in the range of 6.8 nF to 100 nF 2 resistors with values in the range of 27 Ω to 56 Ω 1 CD4052 or 74HC4052 4:1 analog CMOS multiplexer (optional)
 
 Looking at the standing wave pattern along an artificial lumped LC transmission line.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While it is potentially possible to construct a 20 section LC transmission line model on a solderless breadboard using thru-hole devices it is difficult and can be problematic to get the expected results. Constructing the transmission line model on a more compact PC board using surface mount components is a more reliable solution and produces better results.
 
-The experiment PC board shown figure 2 is from the education tools on the :git-education_tools:`ADI GitHub repository <experiment-boards>` and has 20 sections. The specific board shown is populated with 100 uH surface mount inductors and 47 nF thru-hole capacitors. The board can be populated with either SMD or thru-hole components. The above L and C values give a characteristic line impedance of close to 50 ohms so 47 ohm source and termination resistors are used.
+The experiment PC board shown figure 2 is from the education tools on the `ADI GitHub repository <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/experiment-boards>`_ and has 20 sections. The specific board shown is populated with 100 uH surface mount inductors and 47 nF thru-hole capacitors. The board can be populated with either SMD or thru-hole components. The above L and C values give a characteristic line impedance of close to 50 ohms so 47 ohm source and termination resistors are used.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig2.png
    :align: center
@@ -202,7 +194,7 @@ The experiment PC board shown figure 2 is from the education tools on the :git-e
    Figure 2, Lumped LC transmission line experiment board.
 
 
-Male pin headers around the board provide connection points at each tap along the line to measure the delayed waveforms. The M1k has only two “Scope” inputs so measuring and displaying the waveforms at all 21 taps can be tedious. The ALICE desktop software has an option to employ an external 4:1 analog CMOS mux (such as a CD4052) to expand the number of signals that can be displayed using the CH B input to 4. This is a simple enough :doc:`circuit to build </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` on a solderless breadboard but an auxiliary PC board that plugs into the 8 pin analog connector of the M1k is also available from the education tools on the :git-education_tools:`ADI GitHub repository <m1k-accessory-boards/m1k_analog_mux-4052>`. Figure 3 shows the M1k with the mux board connected to one of the LC transmission line boards at 5 different taps more or less evenly spaced along the line.
+Male pin headers around the board provide connection points at each tap along the line to measure the delayed waveforms. The M1k has only two “Scope” inputs so measuring and displaying the waveforms at all 21 taps can be tedious. The ALICE desktop software has an option to employ an external 4:1 analog CMOS mux (such as a CD4052) to expand the number of signals that can be displayed using the CH B input to 4. This is a simple enough :doc:`circuit to build </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` on a solderless breadboard but an auxiliary PC board that plugs into the 8 pin analog connector of the M1k is also available from the education tools on the `ADI GitHub repository <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/m1k-accessory-boards/m1k_analog_mux-4052>`_. Figure 3 shows the M1k with the mux board connected to one of the LC transmission line boards at 5 different taps more or less evenly spaced along the line.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig3.png
    :align: center
@@ -386,12 +378,6 @@ A similar 8:1 analog multiplexer break-out board using the 74HC4051 circuit is a
 
 **For Further Reading:**
 
-| `Artificial transmission line, from Wikipedia, <https://en.wikipedia.org/wiki/Artificial_transmission_line>`_
-| `Artificial (lumped element) Transmission Line <https://hibp.ecse.rpi.edu/~connor/education/Fields/lumpline.pdf>`_
-| `Telegrapher's equations <https://en.wikipedia.org/wiki/Telegrapher's_equations#Distributed_components>`_
-| `Bounce Diagrams <https://cnx.org/contents/IE4zW5wX@4.3:DP9AaBBE@12/Bounce-Diagrams>`_
+`Artificial transmission line, from Wikipedia, <https://en.wikipedia.org/wiki/Artificial_transmission_line>`_ `Artificial (lumped element) Transmission Line <https://hibp.ecse.rpi.edu/~connor/education/Fields/lumpline.pdf>`_ `Telegrapher's equations <https://en.wikipedia.org/wiki/Telegrapher's_equations#Distributed_components>`_ `Bounce Diagrams <https://cnx.org/contents/IE4zW5wX@4.3:DP9AaBBE@12/Bounce-Diagrams>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/fieldsandwaves>`\ **.**
-
-.. |image1| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/simple_lumped_tline.png
-   :width: 1000px

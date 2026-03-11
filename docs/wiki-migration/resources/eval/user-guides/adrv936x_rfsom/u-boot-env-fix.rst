@@ -1,8 +1,9 @@
 ADRV9361/ADRV9364 u-boot Environment Fix
 ========================================
 
-| Due to an incident during production, on some boards the partition of the flash containing the u-boot environment variables, has not been written properly with the u-boot default environment variables, and therefore it does not contain the necessary information to boot. This is causing the device to remain in u-boot.
-| Note that this does not impact device hardware quality in any way, and that the flash memory that contains the u-boot variables has been functionally tested.
+Due to an incident during production, on some boards the partition of the flash containing the u-boot environment variables, has not been written properly with the u-boot default environment variables, and therefore it does not contain the necessary information to boot. This is causing the device to remain in u-boot.
+
+Note that this does not impact device hardware quality in any way, and that the flash memory that contains the u-boot variables has been functionally tested.
 
 How to check if your board has this issue
 -----------------------------------------
@@ -22,20 +23,16 @@ To check if your device is affected all you need is a MicroUSB cable. Connect th
    Err:   serial@e0001000
    Net:   ZYNQ GEM: e000b000, phyaddr 0, interface rgmii-id
    eth0: ethernet@e000b000
-   Zynq> 
+   Zynq>
 
 Instructions for resetting the environment
 ------------------------------------------
 
 Please perform the following steps to eliminate the issue:
 
-|
-
 .. important::
 
-   The board has a sticker with the MAC address, as presented in the picture below. The mac address should have ‘:’ after each two numbers, for example “00:05:f7:80:26:ef”
-
-   | |image1|\
+   The board has a sticker with the MAC address, as presented in the picture below. The mac address should have ‘:’ after each two numbers, for example “00:05:f7:80:26:ef” |image1|\
 
 
 From your serial port terminal run the following commands:

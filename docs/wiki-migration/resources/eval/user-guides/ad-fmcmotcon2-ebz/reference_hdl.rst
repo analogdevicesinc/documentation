@@ -29,8 +29,8 @@ Downloads
    :class: download
 
    
-   -  :git-hdl:`Vivado ADI Libraries <library>`
-   -  :git-hdl:`Vivado Motor Control 2 Reference Design <projects/motcon2_fmc>`
+   -  `Vivado ADI Libraries <https://github.com/analogdevicesinc/hdl/tree/hdl_2018_r2/library>`_
+   -  `Vivado Motor Control 2 Reference Design <https://github.com/analogdevicesinc/hdl/tree/hdl_2018_r2/projects/motcon2_fmc>`_
    
    :
    
@@ -39,15 +39,10 @@ Downloads
 Setting up Linux
 ----------------
 
-|
-
 .. note::
 
-   For instructions on how to setup linux on the ZED board, please follow instructions at:
+   For instructions on how to setup linux on the ZED board, please follow instructions at: :doc:`Linux on Zynq Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/quickstart/zynq>`
 
-
-   | :doc:`Linux on Zynq Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/quickstart/zynq>`
-   |
 
 Support
 -------
@@ -59,5 +54,5 @@ Support
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON2-EBZ#reference_hdl
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/navigation AD-FMCMOTCON2-EBZ#reference_hdl
    :alt: HDL Reference Design#.:\|Overview#software|Software

@@ -1,6 +1,6 @@
 .. warning::
 
-   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki\`
+   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki`
 
 
 Building The SDK
@@ -45,8 +45,10 @@ Sourcing the script will configure your build environment and create a build fol
    Note that the build environment needs to be sourced once only before building.  If later working in a different terminal the setup-environment script should be sourced again.  If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
 
 
-| 
-| ==== Building the SDK ==== The SDK can be built for the adsp-sc5xx-minimal image or the adsp-sc5xx-full image. To build the SDK for the adsp-sc5xx-minimal image invoke bitbake from within the build directory created previously.
+Building the SDK
+----------------
+
+The SDK can be built for the adsp-sc5xx-minimal image or the adsp-sc5xx-full image. To build the SDK for the adsp-sc5xx-minimal image invoke bitbake from within the build directory created previously.
 
 ::
 
@@ -80,15 +82,17 @@ or the full image on SC598:
 
 The poky-glibc-x86_64-adsp-sc5xx-minimal-armv7at2hf-neon-adsp-sc594-som-ezkit-toolchain-3.1.8.sh and the poky-glibc-x86_64-adsp-sc5xx-full-aarch64-adsp-sc598-som-ezkit-toolchain-3.1.8.sh are self-extracting archives containing the SDK.
 
-| 
-| ==== Installing the SDK ==== Invoke the self-extracting archive. It will default to installing to /opt/poky/3.1.8 but gives you the option to select your own install folder during the installation. For the minimal image on SC594
+Installing the SDK
+------------------
+
+Invoke the self-extracting archive. It will default to installing to /opt/poky/3.1.8 but gives you the option to select your own install folder during the installation. For the minimal image on SC594
 
 ::
 
    $ ./poky-glibc-x86_64-adsp-sc5xx-minimal-armv7at2hf-neon-adsp-sc594-som-ezkit-toolchain-3.1.8.sh
    Poky (Yocto Project Reference Distro) SDK installer version 3.1.8
    =================================================================
-   Enter target directory for SDK (default: /opt/poky/3.1.8): 
+   Enter target directory for SDK (default: /opt/poky/3.1.8):
    You are about to install the SDK to "/opt/poky/3.1.8". Proceed [Y/n]? y
    Extracting SDK...................................................................done
    Setting it up...done

@@ -24,7 +24,7 @@ For more information about building projects, go to: :doc:`:git-no-OS:`wiki/Buil
 
 .. raw:: html
 
-   <details><summary>Xilinx(Click to expand)</summary>
+   <details><summary>Xilinx(Click to expand)
 
 ``make run``
 
@@ -37,15 +37,13 @@ For more information about building projects, go to: :doc:`:git-no-OS:`wiki/Buil
 
 .. raw:: html
 
-   <details><summary>Linux (Click to expand)</summary>
+   <details><summary>Linux (Click to expand)
 
-| ``sudo ./build/project.out``
+``sudo ./build/project.out``
 
 .. important::
 
-   Make sure IIOD is not already running! It can be stopped it with:
-
-   | ``sudo systemctl stop iiod``
+   Make sure IIOD is not already running! It can be stopped it with: ``sudo systemctl stop iiod``
 
 .. raw:: html
 
@@ -104,9 +102,7 @@ A demo iio application can be found in the following location:
 
 This project is independent of a physical device and should be used as reference, when creating a new iio application for a new iio device. To view information regarding the devices, one can use:
 
-| ``iio_info -u serial:/dev/ttyUSB0,115200``
-| or,
-| ``iio_info -u ip:host`` (only on Linux)
+``iio_info -u serial:/dev/ttyUSB0,115200`` or, ``iio_info -u ip:host`` (only on Linux)
 
 To load data into RAM, that could be seen in iio-oscilloscope application, execute the following command:
 

@@ -3,16 +3,24 @@
 Simple Router
 =============
 
-| 
-| |simplerouter.png|
-| |simplerouterform.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/simplerouter.png
+   :alt: simplerouter.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/simplerouterform.png
+   :alt: simplerouterform.png
 
 Description
 -----------
 
-| The Simple Router block routes the N different inputs to M different Outputs with multiplied by respective gains. This module supports multiple router configurations. Any input can be routed to any output pin. A separate post gain is available for each of the output. All the gains has a corresponding mute control to quickly mute the particular gain. The current router/mixer(Mix #) can be changed during the runtime by changing the Tab in the mixer window. RC slew is applied for any change in the inputs/gains.
-| ===== Usage ===== Click on the icon to open the Router window to configure the gain for respective input channels for respective outputs.
-| ===== Variants =====
+The Simple Router block routes the N different inputs to M different Outputs with multiplied by respective gains. This module supports multiple router configurations. Any input can be routed to any output pin. A separate post gain is available for each of the output. All the gains has a corresponding mute control to quickly mute the particular gain. The current router/mixer(Mix #) can be changed during the runtime by changing the Tab in the mixer window. RC slew is applied for any change in the inputs/gains.
+
+Usage
+-----
+
+Click on the icon to open the Router window to configure the gain for respective input channels for respective outputs.
+
+Variants
+--------
 
 -  Simple Router
 -  Simple Router (Slew)
@@ -34,43 +42,43 @@ Targets Supported
 Input
 ~~~~~
 
-======================== ===== ===============
-Name                     Type  Description
-======================== ===== ===============
-Input <fc #ff0000>X</fc> Audio Input channel X
-======================== ===== ===============
+======= ===== ===============
+Name    Type  Description
+======= ===== ===============
+Input X Audio Input channel X
+======= ===== ===============
 
 Output
 ~~~~~~
 
-========================= ===== ================
-Name                      Type  Description
-========================= ===== ================
-Output <fc #ff0000>X</fc> Audio Output channel X
-========================= ===== ================
+======== ===== ================
+Name     Type  Description
+======== ===== ================
+Output X Audio Output channel X
+======== ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
-+------------------------------------------------------------+---------------+-------------+-----------------------------------------------------------------------------+
-| GUI Parameter Name                                         | Default Value | Range       | Function Description                                                        |
-+============================================================+===============+=============+=============================================================================+
-| SlectedInputTab<fc #ff0000>M</fc>_Output<fc #ff0000>N</fc> | 0 dB          | -30 to 6 dB | Gain factor                                                                 |
-+------------------------------------------------------------+---------------+-------------+-----------------------------------------------------------------------------+
-| GainDB_Output<fc #ff0000>M</fc>_Input<fc #ff0000>N</fc>    | 0 dB          | -30 to 6 dB | Gain factor                                                                 |
-+------------------------------------------------------------+---------------+-------------+-----------------------------------------------------------------------------+
-| ISDb_Output<fc #ff0000>M</fc>_Input<fc #ff0000>N</fc>      | True          | True/False  | Decides the Gain control in db/linear                                       |
-+------------------------------------------------------------+---------------+-------------+-----------------------------------------------------------------------------+
-| NumInputs                                                  | 2             | 2 to 20     | Number of input channels. Change in input channels requires re-compilation  |
-+------------------------------------------------------------+---------------+-------------+-----------------------------------------------------------------------------+
-| NumOutputs                                                 | 1             | 1 to 20     | Number of input channels. Change in output channels requires re-compilation |
-+------------------------------------------------------------+---------------+-------------+-----------------------------------------------------------------------------+
-| Slew                                                       | 12            | 1 to 24     | Slew Step Size. Applicable to SW Slew modules                               |
-+------------------------------------------------------------+---------------+-------------+-----------------------------------------------------------------------------+
++--------------------------+---------------+-------------+-----------------------------------------------------------------------------+
+| GUI Parameter Name       | Default Value | Range       | Function Description                                                        |
++==========================+===============+=============+=============================================================================+
+| SlectedInputTabM_OutputN | 0 dB          | -30 to 6 dB | Gain factor                                                                 |
++--------------------------+---------------+-------------+-----------------------------------------------------------------------------+
+| GainDB_OutputM_InputN    | 0 dB          | -30 to 6 dB | Gain factor                                                                 |
++--------------------------+---------------+-------------+-----------------------------------------------------------------------------+
+| ISDb_OutputM_InputN      | True          | True/False  | Decides the Gain control in db/linear                                       |
++--------------------------+---------------+-------------+-----------------------------------------------------------------------------+
+| NumInputs                | 2             | 2 to 20     | Number of input channels. Change in input channels requires re-compilation  |
++--------------------------+---------------+-------------+-----------------------------------------------------------------------------+
+| NumOutputs               | 1             | 1 to 20     | Number of input channels. Change in output channels requires re-compilation |
++--------------------------+---------------+-------------+-----------------------------------------------------------------------------+
+| Slew                     | 12            | 1 to 24     | Slew Step Size. Applicable to SW Slew modules                               |
++--------------------------+---------------+-------------+-----------------------------------------------------------------------------+
 
 | 
 | ===== DSP Parameters =====
@@ -87,6 +95,3 @@ Note:
 
 | 
 | ===== DSP Parameters Computation===== Alpha= Math.Exp( -1 / ( ( 0.04 \* 2^(SlewStep-1) / 1000 )*FS)
-
-.. |simplerouter.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/simplerouter.png
-.. |simplerouterform.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/simplerouterform.png

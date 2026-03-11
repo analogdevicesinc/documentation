@@ -6,8 +6,9 @@ Fluorescence occurs when the electrons of certain chemical compounds are excited
 General Description/Overview
 ----------------------------
 
-| The :adi:`CN0503` is a four-channel optical platform capable of fluorescence, absorbance and scattering measurements for liquid solutions. Getting the concentration of a compound in a liquid solution using fluorescence involves either directly measuring the emitted light from the compound or from an added a reagent which introduced fluorescent material proportional to the concentration of the target compound. The sensor used is the fluorescence photodiode placed perpendicular to the light path from the source LED. This photodiode is sensitive to longer wavelength light than the transmit photodiode placed directly in the light path. Its position and spectral sensitivity help to remove any interference from the source LED to the fluorescent light samples. Additionally, an optical fluorescent filter (narrowband longpass filter) is inserted in the slot in front of the sensor to further isolate fluorescent light from noise.
-| The demo shows how directly measuring fluorescent light from tonic water indicates the presence and level of quinine. Directing 365nm wavelength light to tonic water causes the quinine in the solution to fluoresce blue light at around 450nm. The intensity of light that fluoresces from quinine is proportional to its concentration at low levels.
+The :adi:`CN0503` is a four-channel optical platform capable of fluorescence, absorbance and scattering measurements for liquid solutions. Getting the concentration of a compound in a liquid solution using fluorescence involves either directly measuring the emitted light from the compound or from an added a reagent which introduced fluorescent material proportional to the concentration of the target compound. The sensor used is the fluorescence photodiode placed perpendicular to the light path from the source LED. This photodiode is sensitive to longer wavelength light than the transmit photodiode placed directly in the light path. Its position and spectral sensitivity help to remove any interference from the source LED to the fluorescent light samples. Additionally, an optical fluorescent filter (narrowband longpass filter) is inserted in the slot in front of the sensor to further isolate fluorescent light from noise.
+
+The demo shows how directly measuring fluorescent light from tonic water indicates the presence and level of quinine. Directing 365nm wavelength light to tonic water causes the quinine in the solution to fluoresce blue light at around 450nm. The intensity of light that fluoresces from quinine is proportional to its concentration at low levels.
 
 Demo Requirements
 -----------------
@@ -111,7 +112,7 @@ Performing a Fluorescence Measurement
 
    For quick demo purposes, the system was configured in path 1, by default, using a polynomial approximation. Check the :doc:`Computing Concentration </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503/fluorescence>` section for more details.
 
-|
+
 
 .. important::
 
@@ -123,8 +124,7 @@ Performing a Fluorescence Measurement
 Computing Concentration
 -----------------------
 
-| The CN0503 measures the intensity of the fluorescent light through a right angle photodiode and the intensity of the incident light through a reference photodiode. A polynomial approximation for computing quinine concentration can be modeled using the ratios of the two intensities measured from samples of known values.
-|
+The CN0503 measures the intensity of the fluorescent light through a right angle photodiode and the intensity of the incident light through a reference photodiode. A polynomial approximation for computing quinine concentration can be modeled using the ratios of the two intensities measured from samples of known values.
 
 .. important::
 
@@ -134,7 +134,7 @@ Computing Concentration
 -  The ratio of the fluorescent light intensity and incident light intensity is calculated using the CN0503 firmware and is called the **absolute ratio (ARAT)**.
 -  The computation of the ARAT is configurable through software in reverse polish notation (RPN). The variable naming format for the measured light intensities is shown below:
    ``<light path><photodiode number>
-   where: 
+   where:
    <light path> = A for path 1, B for path 2, C for path 3, D for path 4
    <photodiode number> = 1, 2``\ For path 1 and 4, the photodiode 1 can be configured to the transmit photodiode (directly in the light path) or the right-angle (fluorescent) photodiode, through the P1ASEL and P4ASEL headers, respectively, while photodiode 2 can be configured to the right-angle (fluorescent) photodiode or the reference (incident) photodiode. You can use the **DEFX ARAT** command to change the ARAT equation. The example shown below sets the ARAT computation in path 1 which subtracts a 2048 raw ADC offset from each light intensity value in the ratio.
 
@@ -149,7 +149,7 @@ Computing Concentration
 
 |image19|
 
-|
+
 
 .. important::
 

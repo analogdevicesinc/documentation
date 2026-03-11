@@ -1,8 +1,9 @@
 GPIO Conditioning
 =================
 
-| :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
-| GPIO stands for general-purpose input/output. The Toolbox's GPIO Conditioning library gives you access to the following blocks:
+:doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
+
+GPIO stands for general-purpose input/output. The Toolbox's GPIO Conditioning library gives you access to the following blocks:
 
 -  :doc:`Push and Hold </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning/pushandhold>`
 -  :doc:`PushButton Volume </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning/pushbuttonvolume>`
@@ -15,5 +16,4 @@ GPIO Conditioning
 -  `Up/Down Control w/ Lookup Table <https://wiki.analog.com/resources/tools-software/sigmastudio/toolbox/gpioconditioning/updowncontrolwlookuptable>`_
 -  :doc:`Up/Down Control, Index Output </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning/updowncontrolindexoutput>`
 
-| 
-| See the :doc:`GPIO Conditioning Examples </wiki-migration/resources/tools-software/sigmastudio/tutorials/gpioconditioningexample>` for schematic samples utilizing there blocks.
+See the :doc:`GPIO Conditioning Examples </wiki-migration/resources/tools-software/sigmastudio/tutorials/gpioconditioningexample>` for schematic samples utilizing there blocks.

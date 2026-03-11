@@ -9,8 +9,7 @@ Loudness With Filter
 Description
 -----------
 
-| 
-| The Loudness with filter block applies the filter to the input signal and loudness will apply to the filtered signal. The loudness with the filter block gives access to a variety of filter algorithms. The available filter types are
+The Loudness with filter block applies the filter to the input signal and loudness will apply to the filtered signal. The loudness with the filter block gives access to a variety of filter algorithms. The available filter types are
 
 -  Second-Order Low Shelf
 -  Second-Order High Shelf
@@ -19,9 +18,13 @@ Description
 -  First-Order High Shelf
 -  Peaking
 
-| 
-| ===== Usage ===== To access the filter click on the icon button and icon button image will change to reflect the selected filter type
-| ===== Targets Supported =====
+Usage
+-----
+
+To access the filter click on the icon button and icon button image will change to reflect the selected filter type
+
+Targets Supported
+-----------------
 
 +----------------------+------------+------------------+---------------+------------------+
 | Name                 | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -53,7 +56,7 @@ Name                   Type           Description
 Output0                Audio          Output channel0
 ====================== ============== ======================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+------------------+---------------+-----------------------------------------------------------------------------------+

@@ -11,8 +11,6 @@ This compact and cohesive single-board implementation offers a clear advantage i
    :align: center
    :width: 600px
 
-| 
-
 Simplified Block diagram
 ------------------------
 
@@ -240,9 +238,12 @@ Equipment Needed
 -  18650 battery
 -  PC with GUI
 
-| To be added soon:
-| \*Step-by-step instructions on how to connect the boards, power-up, how to run measurements
-| \*Sample measurements or readings that users are expected to get when they use the board
+To be added soon:
+
+::
+
+   *Step-by-step instructions on how to connect the boards, power-up, how to run measurements
+   *Sample measurements or readings that users are expected to get when they use the board
 
 Resources
 ---------

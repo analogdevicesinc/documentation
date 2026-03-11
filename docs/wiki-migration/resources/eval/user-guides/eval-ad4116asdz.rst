@@ -66,8 +66,7 @@ The **Samples** box in the top right corner of the main window sets the number o
 Hardware Guide
 ==============
 
-| :doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/hardware_guide>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/hardware_guide>` **Contents of the Hardware guide:**
 
 -  :doc:`Description </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/hardware_guide>`
 -  :doc:`Set Up Procedures </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/hardware_guide>`
@@ -83,8 +82,7 @@ Hardware Guide
 Software Guide
 ==============
 
-| :doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/software>`
-| **Contents of the Software guide:**
+:doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/software>` **Contents of the Software guide:**
 
 -  :doc:`Evaluation+ Software </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/software>`
 

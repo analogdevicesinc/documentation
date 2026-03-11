@@ -207,9 +207,13 @@ TX1B and TX2B channels include just an amplifier :adi:`HMC8413` that boosts by 2
 RF FE Add-on interface
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Main Board expose a control interface for the RF Add-on board to a 40 pin connector. The table below show the pinout of the interface connector. \|VAGPIO_1P8\| 1\| 2\| ADV9002_AUXADC_0 \| \|ADV9002_AUXADC_1\| 3\| 4\| ADV9002_AUXADC_2\| \|ADV9002_AUXADC_3\| 5\| 6\| ADV9002_AUXDAC_0\| \|ADV9002_AUXDAC_1\| 7\| 8\| ADV9002_AUXDAC_2
+Main Board expose a control interface for the RF Add-on board to a 40 pin connector. The table below show the pinout of the interface connector.
 
 ====================== == == =================
+VAGPIO_1P8             1  2  ADV9002_AUXADC_0
+ADV9002_AUXADC_1       3  4  ADV9002_AUXADC_2
+ADV9002_AUXADC_3       5  6  ADV9002_AUXDAC_0
+ADV9002_AUXDAC_1       7  8  ADV9002_AUXDAC_2
 ADV9002_AUXDAC_3       9  10 GND
 ADV9002_AGPIO_5        11 12 ADV9002_AGPIO_7
 ADV9002_AGPIO_8        13 14 ADV9002_AGPIO_9

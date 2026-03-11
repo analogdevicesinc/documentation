@@ -3,9 +3,12 @@
 SigmaStudio+ Settings
 =====================
 
-| This section provides the brief overview of SigmaStudio+ settings. Select '**Tools -> Settings**' from the main menu to navigate to the SigmaStudio+ settings page.
-| The settings in this page are grouped under \**6 categories \*\*
-| ===== Application =====
+This section provides the brief overview of SigmaStudio+ settings. Select '**Tools -> Settings**' from the main menu to navigate to the SigmaStudio+ settings page.
+
+The settings in this page are grouped under \**6 categories**
+
+Application
+-----------
 
 -  **Launch State (Maximized)** - Enable this to launch SigmaStudio+ application in maximized state.
 -  **Display 'Help' During Startup** - Choose whether to display the 'Help' page during the application startup
@@ -49,9 +52,10 @@ Export
 Custom Platforms
 ----------------
 
-| This section provides an option to specify the Custom Platforms folder location. SigmaStudio+ uses this location to load newly defined platforms and list them in the toolbox.
-| |image1|
-| Refer to :doc:`Defining new Platforms </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/defineplatforms>` for more details on defining new platforms.
+This section provides an option to specify the Custom Platforms folder location. SigmaStudio+ uses this location to load newly defined platforms and list them in the toolbox.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/settings6.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/settings6.png
+   :align: center
    :width: 500px
+
+Refer to :doc:`Defining new Platforms </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/defineplatforms>` for more details on defining new platforms.

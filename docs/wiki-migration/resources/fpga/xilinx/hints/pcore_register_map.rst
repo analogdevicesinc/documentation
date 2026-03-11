@@ -8,7 +8,7 @@ The table below lists the common register map used by all the device pcores in t
 
 .. note::
 
-   <fc #FF0000>**OBSOLETE: This register map is applicable only to the ISE/XPS older designs. The latest register map is here :doc:`/wiki-migration/resources/fpga/docs/hdl/regmap` \**</fc>
+   **OBSOLETE: This register map is applicable only to the ISE/XPS older designs. The latest register map is here :doc:`/wiki-migration/resources/fpga/docs/hdl/regmap`**
 
 
 Register Map

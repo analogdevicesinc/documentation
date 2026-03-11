@@ -1,8 +1,7 @@
 Evaluation Board DC1304B-A and -B for the LTC6602 and LTC6603
 =============================================================
 
-| **DESCRIPTION**
-| Demonstration Circuit 1304B-A/B is a dual, matched, fully differential, baseband signal chain for I and Q signals. A DC1304B connects to a Linduino board, DC2026C, for programable frequency and gain control. The DC1304B-A features the LTC6602 dual, matched, bandpass filter programable form 20kHz to 680 kHz. The DC1304B-B features the LTC6603 dual, matched, lowpass filter programable form 20kHz to 2MHz. The output of a DC1304B-A/B is a dual fully differential LPF-Driver for a dual ADC. A DC1304B-A/B can be used standalone (without a Linduino) with a fixed frequency response: Standalone frequency response for DC1304B-A and DC1304B-B is 6kHz–332.5kHz and DC-1.039MHz respectively.
+**DESCRIPTION** Demonstration Circuit 1304B-A/B is a dual, matched, fully differential, baseband signal chain for I and Q signals. A DC1304B connects to a Linduino board, DC2026C, for programable frequency and gain control. The DC1304B-A features the LTC6602 dual, matched, bandpass filter programable form 20kHz to 680 kHz. The DC1304B-B features the LTC6603 dual, matched, lowpass filter programable form 20kHz to 2MHz. The output of a DC1304B-A/B is a dual fully differential LPF-Driver for a dual ADC. A DC1304B-A/B can be used standalone (without a Linduino) with a fixed frequency response: Standalone frequency response for DC1304B-A and DC1304B-B is 6kHz–332.5kHz and DC-1.039MHz respectively.
 
 DC1304B-X USER GUIDE PDF `dc1304b-x_user_guide.pdf <https://wiki.analog.com/_media/resources/eval/dc1304b-x_user_guide.pdf>`_
 

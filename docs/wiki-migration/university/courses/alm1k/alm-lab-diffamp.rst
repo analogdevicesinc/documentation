@@ -16,13 +16,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 1 – OP484 quad rail to rail amplifier
-| 4 – 100 KΩ resistors
-| 1 – 470 Ω resistor
-| 1 – 220 Ω resistor
-| 1 – 1 uF capacitor
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 – OP484 quad rail to rail amplifier 4 – 100 KΩ resistors 1 – 470 Ω resistor 1 – 220 Ω resistor 1 – 1 uF capacitor
 
 Directions:
 ~~~~~~~~~~~
@@ -98,12 +92,6 @@ As an additional note, other wave shapes such as a square wave or triangle wave 
 
 **For Further Reading:**
 
-| :adi:`Difference and Current Sense Amplifiers <media/en/training-seminars/tutorials/MT-068.pdf>`
-| :adi:`Difference Amplifier Forms Heart of Precision Current Source <en/analog-dialogue/articles/diff-amp-heart-of-precision-current-source.html>`
-| :adi:`A Deeper Look into Difference Amplifiers <library/analogDialogue/archives/48-02/diff_amp.html>`
-| :adi:`Adjusting the Gain of a Fixed-Gain Difference Amplifier <media/en/analog-dialogue/raqs/raq-issue-171.pdf>`
-| :adi:`Simple Ambient Light Sensor Circuit <en/analog-dialogue/articles/simple-ambient-light-sensor-circuit.html>`
-| :adi:`MT-202 All Pass Filters <media/en/training-seminars/tutorials/MT-202.pdf>`
-| `All Pass Filter <https://en.wikipedia.org/wiki/All-pass_filter>`_
+:adi:`Difference and Current Sense Amplifiers <media/en/training-seminars/tutorials/MT-068.pdf>` :adi:`Difference Amplifier Forms Heart of Precision Current Source <en/analog-dialogue/articles/diff-amp-heart-of-precision-current-source.html>` :adi:`A Deeper Look into Difference Amplifiers <library/analogDialogue/archives/48-02/diff_amp.html>` :adi:`Adjusting the Gain of a Fixed-Gain Difference Amplifier <media/en/analog-dialogue/raqs/raq-issue-171.pdf>` :adi:`Simple Ambient Light Sensor Circuit <en/analog-dialogue/articles/simple-ambient-light-sensor-circuit.html>` :adi:`MT-202 All Pass Filters <media/en/training-seminars/tutorials/MT-202.pdf>` `All Pass Filter <https://en.wikipedia.org/wiki/All-pass_filter>`_
 
 **Return to the ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`

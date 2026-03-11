@@ -89,7 +89,6 @@ NOTE: For suse and probably other linux versions -- be sure you are also member 
        Escape character: Ctrl-\ (ASCII 28, FS): enabled
       Type the escape character followed by C to get back,
       or followed by ? to see other options.
-      ----------------------------------------------------
    
       Login timed out after 60 seconds
    
@@ -101,9 +100,8 @@ NOTE: For suse and probably other linux versions -- be sure you are also member 
       # exit
    
       Welcome to Pluto
-      pluto login: **Ctrl-\**
+      pluto login: **Ctrl-**
       (Back at imhotep.analog.com)
-      ----------------------------------------------------
       (/home/analog/github/iio-oscilloscope/) C-Kermit>exit
       Closing /dev/ttyACM0...OK
    
@@ -162,7 +160,7 @@ Unfortunately - nothing on your host understands the what the IP address of the 
           link/ether 00:e0:22:d6:d8:04 brd ff:ff:ff:ff:ff:ff
           inet 192.168.2.10/24 brd 192.168.2.255 scope global dynamic enx00e022d6d804
              valid_lft 862988sec preferred_lft 862988sec
-          inet6 fe80::2e0:22ff:fed6:d804/64 scope link 
+          inet6 fe80::2e0:22ff:fed6:d804/64 scope link
              valid_lft forever preferred_lft forever
    
 
@@ -187,7 +185,7 @@ Adding a quick/short :git-plutosdr_scripts:`ssh config file <ssh_config>`, which
       Length: 366 [text/plain]
       Saving to: ‘~/.ssh/config’
    
-      ~/.ssh/config         100%[===============>]     366  --.-KB/s    in 0s      
+      ~/.ssh/config         100%[===============>]     366  --.-KB/s    in 0s
    
       2017-01-26 19:47:51 (6.49 MB/s) - ‘~/.ssh/config’ saved [366/366]
    
@@ -207,7 +205,7 @@ Since the ssh key on the pluto changes every boot, we want to be able to never s
       Linux pluto 4.6.0-08511-gc1315e6-dirty #247 SMP PREEMPT Mon Oct 24 16:46:25 CEST 2016 armv7l GNU/Linux
       # **exit**
       Connection to 192.168.2.1 closed.
-      adi-mm:tests analogdevices$ 
+      adi-mm:tests analogdevices$
    
 
 
@@ -222,14 +220,15 @@ if you have ``sshpass`` installed, you can use that so you dont need to type in 
       Warning: Permanently added 'pluto' (ECDSA) to the list of known hosts.
       Welcome to:%%
       ______ _       _        _________________
-      | ___ \ |     | |      /  ___|  _  \ ___ \
-      | |_/ / |_   _| |_ ___ \ `--.| | | | |_/ /
-      |  __/| | | | | __/ _ \ `--. \ | | |    /
-      | |   | | |_| | || (_) /\__/ / |/ /| |\ \
+      | ___ \ |     | |      /  ___|  _  \ ___ \ |
+      | |_/ / |_   _| |_ ___ \ `--.| | | | |_/ / |
+      |  __/| | | | | __/ _ \ `--. \ | | |    / |
+      | |   | | |_| | || (_) /\__/ / |/ /| |\ \ |
+   
       \_|   |_|\__,_|\__\___/\____/|___/ \_| \_|
    
       http://wiki.analog.com/university/tools/pluto%%
-      # 
+      #
    
 
 
@@ -245,7 +244,7 @@ for SUSE: https://software.opensuse.org/package/libiio -- pick the repo and inst
    
       analog@imhotep:~$ **sudo apt-get install libiio-utils**
       Reading package lists... Done
-      Building dependency tree       
+      Building dependency tree
       Reading state information... Done
       The following NEW packages will be installed:
         libiio-utils
@@ -253,7 +252,7 @@ for SUSE: https://software.opensuse.org/package/libiio -- pick the repo and inst
       Need to get 13.9 kB of archives.
       After this operation, 74.8 kB of additional disk space will be used.
       Get:1 http:%%//%%ftp.us.debian.org/debian stretch/main amd64 libiio-utils amd64 0.7-1 [13.9 kB]
-      Fetched 13.9 kB in 0s (70.1 kB/s)     
+      Fetched 13.9 kB in 0s (70.1 kB/s)
       Selecting previously unselected package libiio-utils.
       (Reading database ... 279782 files and directories currently installed.)
       Preparing to unpack .../libiio-utils_0.7-1_amd64.deb ...

@@ -26,7 +26,7 @@ The :adi:`AD7124-EVAL <en/design-center/evaluation-hardware-and-software/evaluat
 Useful links
 ------------
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :doc:`AD7124 No-OS Software </wiki-migration/resources/tools-software/uc-drivers/ad7124>`

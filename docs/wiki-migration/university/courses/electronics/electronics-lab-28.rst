@@ -122,8 +122,6 @@ We now consider a CMOS inverter driven by a voltage pulse. Typical input/output 
    Figure 8 CMOS Inverter rise / fall time
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -167,14 +165,10 @@ The input of the Schmitt trigger, as shown in figure 11, is tied to the gates of
 
 When V\ :sub:`IN` is at 0V, transistors M\ :sub:`1` and M\ :sub:`3` are on, and M\ :sub:`2`, M\ :sub:`4` and M\ :sub:`5` are off. Since V\ :sub:`OUT` is high, M\ :sub:`6` is on and acts as a source follower, the drain of M\ :sub:`2`, which is also the source of M\ :sub:`4`, is at V\ :sub:`DD` - V\ :sub:`TH`. If the input voltage is ramped up to one threshold above ground transistor M\ :sub:`2` begins to turn on, M\ :sub:`2` and M\ :sub:`6` both being on form a voltage divider network biasing the source of M4 at roughly half the supply. When the input is a threshold above 1/2 V\ :sub:`DD`, M\ :sub:`4` begins to turn on and regenerative switching is about to take over. Any more voltage on the input causes V\ :sub:`OUT` to drop. When V\ :sub:`OUT` drops, the source of M\ :sub:`6` follows its gate, which is V\ :sub:`OUT`, the influence of M\ :sub:`6` in the voltage divider with M\ :sub:`2` rapidly diminishes, bringing V\ :sub:`OUT` down further yet. Meanwhile M\ :sub:`5` has started to turn on, its gate being brought low by the rapidly dropping V\ :sub:`OUT`. M\ :sub:`5` turning on brings the source of M\ :sub:`3` low and turns M\ :sub:`3` off. With M\ :sub:`3` off, V\ :sub:`OUT` will collapse all the way down to ground. The snapping action is due to greater than unity loop gain through the stack caused by positive feedback through the source follower transistors. When the input is brought low again a similar process occurs in the upper portion of the stack and the snapping action takes place when the lower threshold its reached.
 
-.. _directions-1:
-
 Directions:
 -----------
 
 On your solder-less breadboard build the Schmitt trigger circuit shown in figure 11 to test the input to output switching characteristics as you did with the plain inverter.
-
-.. _hardware-setup-2:
 
 Hardware Setup:
 ---------------
@@ -188,8 +182,6 @@ Configure the waveform generator for a 1 KHz triangle wave with 5V amplitude pea
 
    Figure 12 CMOS Schmitt trigger circuit breadboard connections
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -235,8 +227,6 @@ As shown in figure 14, one 2 input NAND gate and one inverter can be built from 
 The Inverter is made by connecting pin 2 to V\ :sub:`DD`, pin 4 to V\ :sub:`SS`, pins 1 and 5 are connected together as the output and with pin 3 as the input. An AND gate is made by connecting the output of the NAND at pins 12 and 13 to the inverter input at pin 3.
 
 A single 3 input NAND gate can be made by using all 6 devices as shown in figure 15.
-
-.. _directions-2:
 
 Directions:
 -----------
@@ -289,8 +279,6 @@ As shown in figure 16, one 2 input NOR gate and one inverter can be built from o
 
 A single 3 input NOR gate can be made by using all 6 devices as shown in figure 17.
 
-.. _directions-3:
-
 Directions:
 -----------
 
@@ -332,9 +320,7 @@ The width of the output pulse is determined by R\ :sub:`T` and C\ :sub:`T` accor
 Questions:
 ~~~~~~~~~~
 
-| What happens if the trigger input is held high longer than τ?
-| What happens if more than one trigger pulse is applied during τ?
-| How would you modify the one-shot circuit in figure 18 to use a 2 input NAND gate in place of the NOR gate?
+What happens if the trigger input is held high longer than τ? What happens if more than one trigger pulse is applied during τ? How would you modify the one-shot circuit in figure 18 to use a 2 input NAND gate in place of the NOR gate?
 
 Making a SPDT Analog Switch with the CD4007 transistor array
 ------------------------------------------------------------
@@ -366,13 +352,9 @@ The on resistance, R\ :sub:`ON` of a pass gate or switch is an important specifi
 For Further reading:
 --------------------
 
-| `4000 Series Logic and Analog Circuitry <https://wiki.analog.com/_media/university/courses/4000_series_article.pdf>`_
-| CMOS Logic: http:*en.wikipedia.org/wiki/CMOS
-  Noise Margin: http:*\ en.wikipedia.org/wiki/Noise_margin
-| Propagation Delay: http:*en.wikipedia.org/wiki/Propagation_delay
-  Rise / Fall time:* http://en.wikipedia.org/wiki/Rise_time *http:*\ en.wikipedia.org/wiki/Fall_time
-| Schmitt Trigger: http://en.wikipedia.org/wiki/Schmitt_trigger
-| **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
+`4000 Series Logic and Analog Circuitry <https://wiki.analog.com/_media/university/courses/4000_series_article.pdf>`_ CMOS Logic: http://en.wikipedia.org/wiki/CMOS Noise Margin: http://en.wikipedia.org/wiki/Noise_margin Propagation Delay: http://en.wikipedia.org/wiki/Propagation_delay Rise / Fall time: http://en.wikipedia.org/wiki/Rise_time http://en.wikipedia.org/wiki/Fall_time Schmitt Trigger: http://en.wikipedia.org/wiki/Schmitt_trigger
+
+**Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f3bb.JPG
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f4a.png

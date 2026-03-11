@@ -42,7 +42,7 @@ Troubleshooting
 
 ::
 
-       ~/Analog Devices/TOF_Evaluation_ADTF3175D-Rel3.2.0/bin$ ./ADIToFGUI 
+       ~/Analog Devices/TOF_Evaluation_ADTF3175D-Rel3.2.0/bin$ ./ADIToFGUI
        Conn established
        Connection Closed
        Conn established
@@ -53,8 +53,6 @@ Troubleshooting
 
 EVAL-ADSD3100-NXZ or EVAL-ADTF3175-NXZ
 --------------------------------------
-
-.. _known-issues-1:
 
 Known Issues
 ~~~~~~~~~~~~
@@ -78,8 +76,6 @@ Known Issues
 
       -  Connect USB-C hub between camera and NXP kit
       -  Use NXP Image with PD disabled : LINK
-
-.. _troubleshooting-1:
 
 Troubleshooting
 ~~~~~~~~~~~~~~~

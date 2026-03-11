@@ -14,7 +14,7 @@ Identify & Confirm the Chipset
 
 **STEP1:** Plug the USB Wireless Dongle into a Linux host PC and use the command "lsusb" to find the information of the device.
 
-.. code:: c++
+.. code:: console
 
    test@madara:~# lsusb
    Bus 002 Device 020: ID 2001:3306 D-Link Corp. DWL-G122 Wireless Adapter(rev.F1) [Realtek RTL8188SU]
@@ -43,7 +43,7 @@ Now we can get the information of the chipset and it corresponding drivers and F
    : firmware ''lib/firmware/ath9k_htc/htc_7010-1.4.0.fw''
    ; **ID 0bda:818b**
    : chipset:''Realtek RTL8192EU 802.11b/g/n ''
-   : driver: '' RTL8xxxEU.ko'' 
+   : driver: '' RTL8xxxEU.ko''
    : firmware: ''lib/firmware/rtlwifi/rtl8192eu_nic.bin''
 
 --------------
@@ -71,14 +71,14 @@ On the Yocto, Configure the linux-kernel as below to set the USB controller in H
    Device Drivers  --->
           [*] USB support  --->
                <*>   Support for Host-side USB
-                   [*]   Enable USB persist by default 
+                   [*]   Enable USB persist by default
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Dual role mode)  --->
-                           *** Platform Glue Layer *** 
+                           ** Platform Glue Layer **
                    <*>     ADI
-                           *** MUSB DMA mode ***
-                   [N]     Disable DMA (always use PIO)  
-                   [*]       Inventra 
+                           ** MUSB DMA mode **
+                   [N]     Disable DMA (always use PIO)
+                   [*]       Inventra
 
 dual role mode need the g_serial and CDC module
 
@@ -88,8 +88,8 @@ dual role mode need the g_serial and CDC module
           [*] USB support  --->
                    <*>   USB Gadget Support  --->
                          <M>   USB Gadget precomposed configurations
-                         <M>     Serial Gadget (with CDC ACM and CDC OBEX support) 
-                         <M>     CDC Composite Device (Ethernet and ACM)  
+                         <M>     Serial Gadget (with CDC ACM and CDC OBEX support)
+                         <M>     CDC Composite Device (Ethernet and ACM)
 
 **Configure the USB Wifi corresponding options**
 
@@ -97,19 +97,19 @@ dual role mode need the g_serial and CDC module
 
    [*] Networking support  --->
            Networking options --->
-               [*] TCP/IP networking 
-           [*]   IP: kernel level autoconfiguration 
-           [*]     IP: DHCP support  
+               [*] TCP/IP networking
+           [*]   IP: kernel level autoconfiguration
+           [*]     IP: DHCP support
            [*]     IP: BOOTP support
-           [*]     IP: RARP support 
-           <*>   The IPv6 protocol  ---> 
+           [*]     IP: RARP support
+           <*>   The IPv6 protocol  --->
        [*]   Wireless  --->
-           <*>   cfg80211 - wireless configuration API 
-           [*]     cfg80211 wireless extensions compatibility  
-           <*>   Generic IEEE 802.11 Networking Stack (mac80211) 
+           <*>   cfg80211 - wireless configuration API
+           [*]     cfg80211 wireless extensions compatibility
+           <*>   Generic IEEE 802.11 Networking Stack (mac80211)
            [*]   Minstrel
                [*]     Minstrel 802.11n support
-           [*]       Minstrel 802.11ac support 
+           [*]       Minstrel 802.11ac support
 
 **Enable the Wireless Chipset supported Drivers**
 
@@ -128,22 +128,22 @@ For the ID **``0cf3:7015``** chipset: Atheros **``AltAR7010+AR9287``**
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. code:: shell
 
    Device Drivers  --->
           [*] Network device support  --->
                  [*]   Wireless LAN  --->
-                       [*]   Atheros/Qualcomm devices 
+                       [*]   Atheros/Qualcomm devices
                        <*>     Atheros 802.11n wireless cards support
                        [*]     Atheros bluetooth coexistence support
                        [*]       Atheros ath9k AHB bus support
-                       [*]       Atheros ath9k ACK timeout estimation algorithm (EXPERIMENTAL) 
-                       [*]       Channel Context support 
-                       [*]       Atheros ath9k support for PC OEM cards   
-                       <*>     Atheros HTC based wireless cards support  
-                       <*>     Linux Community AR9170 802.11n USB support 
+                       [*]       Atheros ath9k ACK timeout estimation algorithm (EXPERIMENTAL)
+                       [*]       Channel Context support
+                       [*]       Atheros ath9k support for PC OEM cards
+                       <*>     Atheros HTC based wireless cards support
+                       <*>     Linux Community AR9170 802.11n USB support
                        [*]       SoftLED Support
 
 .. raw:: html
@@ -155,7 +155,7 @@ For the ID **``0bda:818b``** chipset **``rtl8188eu``**
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. code:: shell
 
@@ -163,7 +163,7 @@ For the ID **``0bda:818b``** chipset **``rtl8188eu``**
           [*] Network device support  --->
                  [*]   Wireless LAN  --->
                        [*]   Realtek devices
-                       <*>     RTL8723AU/RTL8188[CR]U/RTL819[12]CU (mac80211) support   
+                       <*>     RTL8723AU/RTL8188[CR]U/RTL819[12]CU (mac80211) support
                        [*]       Include support for untested Realtek 8xxx USB devices (EXPERIMENTAL)
           [*] Staging drivers  --->
                  <M>   Realtek RTL8188EU Wireless LAN NIC driver
@@ -176,7 +176,7 @@ For the ID **``0bda:818b``** chipset **``rtl8188eu``**
 
 **Adding the corresponding Firmware**
 
-Standard Yocto layer provides a "sources/poky/meta/recipes-kernel/linux-firmware/linux-firmware_git.bb" for user to get some common firmware. please modify and add the below codes to ``sources/meta-adi/meta-adi-adsp-sc5xx/recipes-adi/images/adsp-sc5xx-full.bb`` to enable the \**wpa-supplicant \*\* and \**wireless-tools \*\* tools and the chipset corresponding Firmware.
+Standard Yocto layer provides a "sources/poky/meta/recipes-kernel/linux-firmware/linux-firmware_git.bb" for user to get some common firmware. please modify and add the below codes to ``sources/meta-adi/meta-adi-adsp-sc5xx/recipes-adi/images/adsp-sc5xx-full.bb`` to enable the \**wpa-supplicant** and \**wireless-tools** tools and the chipset corresponding Firmware.
 
 .. code:: java
 
@@ -194,7 +194,7 @@ Add the additional Firmware:
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 If we can't find the target chipset supported firmware from the linux-firmware_git.bb, we should write our own .bb file to fetch the corresponding Firmware or just adding it manually.
 
@@ -215,7 +215,7 @@ Reference:
 -  ``sources/poky/meta/recipes-kernel/linux-firmware/linux-firmware_git.bb``
 -  https://kernel.googlesource.com/pub/scm/linux/kernel/git/vkoul/firmware/+/byt_new/rtlwifi/
 
-\**Busy box configuration \*\*
+**Busy box configuration**
 
 .. code:: c++
 
@@ -223,19 +223,19 @@ Reference:
 
 .. code:: shell
 
-   Coreutils  --->  
-          [*] mktemp (4 kb) 
+   Coreutils  --->
+          [*] mktemp (4 kb)
    Networking Utilities  --->
-          [*] Enable IPv6 support  
+          [*] Enable IPv6 support
           [*] udhcpc
-          [*]   Verify that the offered address is free, using ARP ping 
+          [*]   Verify that the offered address is free, using ARP ping
           [*]   Do not pass malformed host and domain names
-          --- Common options for DHCP applets 
+          --- Common options for DHCP applets
           (9) Maximum verbosity level (0..9)
-          (80) DHCP options slack buffer size 
+          (80) DHCP options slack buffer size
           [*] Support RFC 3397 domain search options
           [*] Support 802.1Q VLAN parameters options
-          (-R -b) ifup udhcpc command line options 
+          (-R -b) ifup udhcpc command line options
 
 --------------
 
@@ -246,7 +246,7 @@ Boot the generated Images and connect the USB Wireless Dongle to the target hard
 
 **Step1. USB Wireless Dongle Detected**
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# modprobe g_serial      (USB Dual mode)
    g_serial gadget: Gadget Serial v2.4
@@ -261,7 +261,7 @@ Boot the generated Images and connect the USB Wireless Dongle to the target hard
 
 **Step2. Enable the ``wlan0`` and Scan the available wifi host**
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# ifconfig wlan0 up
    r8712u 1-1:1.0 wlan0: 1 RCR=0x153f00e
@@ -300,10 +300,10 @@ Configure the `/etc/wpa_supplicant.conf <https://w1.fi/cgit/hostap/plain/wpa_sup
    }
 
    network={
-           ssid="corpave"                          # name 
-           psk="ADI12345"                          # password   
+           ssid="corpave"                          # name
+           psk="ADI12345"                          # password
            key_mgmt=WPA-EAP WPA-PSK IEEE8021X NONE # way of encryption
-           priority=1                              # priority    
+           priority=1                              # priority
    }
 
    network={
@@ -316,7 +316,7 @@ Configure the `/etc/wpa_supplicant.conf <https://w1.fi/cgit/hostap/plain/wpa_sup
 
 Run the **wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant.conf** to create the wireless establishment
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
    Successfully initialized wpa_supplicant
@@ -327,7 +327,7 @@ Run the **wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant.conf** to creat
              Mode:Managed  Frequency:2.437 GHz  Access Point: 14:D6:4D:32:3B:EA
              Bit Rate:150 Mb/s   Sensitivity:0/0
              Retry:off   RTS thr:off   Fragment thr:off
-             Encryption key:****-****-****-****-****-****-****-****   Security mode:open
+             Encryption key:***-***-***-***-***-***-***-***   Security mode:open
              Power Management:off
              Link Quality=100/100  Signal level=100/100  Noise level=0/100
              Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
@@ -335,7 +335,7 @@ Run the **wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant.conf** to creat
 
 **Step4. Dynamic IP acquisition with the ``udhcpc`` and Verification the wifi connection**
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# udhcpc -i wlan0
    udhcpc: started, v1.29.3
@@ -366,7 +366,8 @@ Run the **wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant.conf** to creat
    64 bytes from 192.168.0.1: seq=2 ttl=64 time=0.938 ms
    64 bytes from 192.168.0.1: seq=3 ttl=64 time=0.898 ms
    64 bytes from 192.168.0.1: seq=4 ttl=64 time=0.909 ms
-   ^C
+   ^C ^
+
    --- 192.168.0.1 ping statistics ---
    5 packets transmitted, 5 packets received, 0% packet loss
    round-trip min/avg/max = 0.898/0.957/1.088 ms
@@ -375,9 +376,9 @@ Run the **wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant.conf** to creat
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
-.. code:: c++
+.. code:: console
 
    root@adsp-sc589-ezkit:~# wpa_supplicant -h
    wpa_supplicant v2.6

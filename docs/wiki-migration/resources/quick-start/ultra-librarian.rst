@@ -16,7 +16,13 @@ ULTRA LIBRARIAN CONVERSION TOOL FOR SYMBOLS AND FOOTPRINTS
 
 -  The BXL files and the Ultra Librarian reader tool are available free of charge through the links provided on the symbol and footprint pages. http://www.accelerated-designs.com/BinaryReaders/ULADI_CIS.exe
 
- \*\* What is a .BXL file?\ **\* A .bxl file is a universal file provided to be used in the Ultra Librarian reader. \* The .bxl file consist of both a symbol and a footprint for the generic part that is being supported. \* The .bxl file will be offered for each package option offered by the generic. One .bxl file will represent all models using the same package option.**\ How Do I use The Ultra Librarian tool?*\* \* Unordered List Item
+ \*\* What is a .BXL file?*\*
+
+-  A .bxl file is a universal file provided to be used in the Ultra Librarian reader.
+-  The .bxl file consist of both a symbol and a footprint for the generic part that is being supported.
+-  The .bxl file will be offered for each package option offered by the generic. One .bxl file will represent all models using the same package option.
+
+**How Do I use The Ultra Librarian tool?** \* Unordered List Item
 
 -  Each Symbol and footprint page is equipped with a tutorial on how to use this tool and a short explanation of the purpose of the tool.
 

@@ -1,7 +1,7 @@
 An Introduction to Electrical Filters
 =====================================
 
-.. image:: https://wiki.analog.com/_media/analogTV>5087537094001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>5087537094001
    :alt: analogTV>5087537094001
    :align: right
 

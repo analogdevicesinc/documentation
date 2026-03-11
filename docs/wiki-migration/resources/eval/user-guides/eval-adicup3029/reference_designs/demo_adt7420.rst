@@ -11,7 +11,7 @@ The **ADICUP3029_ADT7420** project uses :adi:`EVAL-ADT7420-PMDZ <en/design-cente
 Demo Video
 ----------
 
-.. image:: https://wiki.analog.com/_media/analogTV>5554821977001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/analogTV>5554821977001
    :alt: analogTV>5554821977001
 
 Demo Requirements
@@ -53,10 +53,10 @@ Setting up the Hardware
 Configuring the Software
 ------------------------
 
-| In the *adt7420_app.h* header files you can configure the following parameters:
-| \* **ADI_APP_DISPATCH_TIMEOUT** - *DISPATCH TIMEOUT* will define how often the data is sent over Bluetooth.
+In the *adt7420_app.h* header files you can configure the following parameters:
 
--  \**ADI_APP_USE_BLUETOOTH \*\* - *ENABLE BLUETOOTH* parameter - will either use Bluetooth or will have the option to print to console window in debug mode or terminal in release mode.
+-  **ADI_APP_DISPATCH_TIMEOUT** - *DISPATCH TIMEOUT* will define how often the data is sent over Bluetooth.
+-  **ADI_APP_USE_BLUETOOTH** - *ENABLE BLUETOOTH* parameter - will either use Bluetooth or will have the option to print to console window in debug mode or terminal in release mode.
 
 Outputting Data
 ---------------
@@ -69,7 +69,10 @@ There are **three** different ways to visualize the data:
 -  Serial Terminal Program (such as Putty or Tera Term)
 -  IoTNode Smart Device App
 
-| Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard. |image1|
+Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard.
+
+
+|image1|
 
 +---------------------------+-----------------------+---------------------------+
 | Data Output Destination   | Connected to Debugger | Configuration File        |
@@ -88,8 +91,9 @@ There are **three** different ways to visualize the data:
 Debug Launch Mode
 ~~~~~~~~~~~~~~~~~
 
-| **Debug launch mode** is used when connected to the debugger. In debug mode, all the outputs are directed to the console window of the CrossCore tools via semihosting. The data is also sent by default to the IoTNode smart app (ADI_APP_USE_BLUETOOTH =1), but can be turned of if desired by setting ADI_APP_USE_BLUETOOTH = 0.
-| Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to android application.
+**Debug launch mode** is used when connected to the debugger. In debug mode, all the outputs are directed to the console window of the CrossCore tools via semihosting. The data is also sent by default to the IoTNode smart app (ADI_APP_USE_BLUETOOTH =1), but can be turned of if desired by setting ADI_APP_USE_BLUETOOTH = 0.
+
+Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to android application.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7420_debug_outputble.png
    :width: 920px
@@ -107,9 +111,9 @@ If you have the app installed on your phone, these figure shows the output on an
    
 
 
-| 
-| |image2| |image3|
-| It's important to remember that when you use the Debug.launch file that you hit the "play" button when using the tools or else your program will not run.
+|image2| |image3|
+
+It's important to remember that when you use the Debug.launch file that you hit the "play" button when using the tools or else your program will not run.
 
 Release Launch Mode
 ~~~~~~~~~~~~~~~~~~~
@@ -125,8 +129,7 @@ Release Launch Mode
      Stop: 1 bit
      Flow Control: none
 
-| 
-| Figure shows when ADI_APP_USE_BLUETOOTH is set to 1
+Figure shows when ADI_APP_USE_BLUETOOTH is set to 1
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_release_outputble.png
    :width: 920px
@@ -142,10 +145,9 @@ If you have the app installed on your phone, these figure shows the output on an
    -  "Scan" for nearby demos.
    -  Once you find your demo, click on it to open it up.
    
-   |
 
 
-| |image4| |image5|
+|image4| |image5|
 
 Obtaining the Software
 ----------------------
@@ -200,12 +202,17 @@ The **ADICUP3029_ADT7420** is a C project that uses ADuCM3029 C/C++ Project stru
 
 This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for I2C read/write; configuring and reading from ADT7420, UART read/write functions;
 
-| |image6|
-| adt7420_app.cpp and adt7420_app.h are the main source and header files related to **ADICUP3029_ADT7420** be found under RTE/ADuCM3029 folder.ADT7420 sensor software drivers are located in RTE/Sensor folder. All ADuCM3029 related drivers can BLE related files can be seen under RTE/Board_Support folder.
-| **pinmux.c** – contains GPIO pinmuxing for UART and SPI.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7420_project_directory.png
+   :width: 650px
 
-| 
-| ====== More Information ====== 
+adt7420_app.cpp and adt7420_app.h are the main source and header files related to **ADICUP3029_ADT7420** be found under RTE/ADuCM3029 folder.ADT7420 sensor software drivers are located in RTE/Sensor folder. All ADuCM3029 related drivers can BLE related files can be seen under RTE/Board_Support folder.
+
+**pinmux.c** – contains GPIO pinmuxing for UART and SPI.
+
+More Information
+================
+
+
 .. note::
 
    See `resources/eval/user-guides/eval-adicup3029/reference_designs/ble_packet <https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029/reference_designs/ble_packet>`_
@@ -223,5 +230,3 @@ This project contains: system initialization part - disabling watchdog, setting 
    :width: 400px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/screenshot_2017-05-28-15-43-32.png
    :width: 300px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7420_project_directory.png
-   :width: 650px

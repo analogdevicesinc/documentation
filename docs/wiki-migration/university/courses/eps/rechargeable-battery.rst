@@ -38,10 +38,7 @@ We know that an ideal voltage source will produce a constant output voltage inde
 Materials:
 ----------
 
-| Analog Discovery Lab hardware
-| Solder-less breadboard, and jumper wire kit
-| 1 NiCd or NiMH rechargeable battery (3 cell type see appendix for suggested sources)
-| 1 100 Ω resistor (R\ :sub:`L`)
+Analog Discovery Lab hardware Solder-less breadboard, and jumper wire kit 1 NiCd or NiMH rechargeable battery (3 cell type see appendix for suggested sources) 1 100 Ω resistor (R\ :sub:`L`)
 
 Directions:
 -----------
@@ -76,8 +73,6 @@ Questions:
 
 **For further reading:**
 
-| http:*www.analog.com/static/imported-files/tutorials/ptmsect5.pdf
-  http:*\ en.wikipedia.org/wiki/Rechargeable_battery
-| http://web.mit.edu/evt/summary_battery_specifications.pdf
+http://www.analog.com/static/imported-files/tutorials/ptmsect5.pdf http://en.wikipedia.org/wiki/Rechargeable_battery http://web.mit.edu/evt/summary_battery_specifications.pdf
 
 **Return to EPS Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**

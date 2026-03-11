@@ -1,7 +1,7 @@
 Analysis \| Control \| Evaluation - ACE Software
 ================================================
 
-|
+
 
 .. tip::
 

@@ -1,9 +1,12 @@
 Manage Downloadable Add-Ins
 ===========================
 
-| SigmaStudio Add-In Manager provides options to download SigmaStudio Add-Ins developed by third-party easily available for SigmaStudio users. Add-In Manager can be opened through the tools menu.
-| |image1|
-| Add-In Manager searches the SigmaStudio Add-In server and lists all the Add-ins available for download.
+SigmaStudio Add-In Manager provides options to download SigmaStudio Add-Ins developed by third-party easily available for SigmaStudio users. Add-In Manager can be opened through the tools menu.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/addinmanager1.jpg
+   :align: center
+
+Add-In Manager searches the SigmaStudio Add-In server and lists all the Add-ins available for download.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/addinmanager2.jpg
    :align: center
@@ -14,5 +17,3 @@ Manage Downloadable Add-Ins
 After the installation of the Add-in. The add-in contents will be available in the following directory.
 
 C:\\Analog Devices\\SigmaStudio Add-Ins\\SigmaStudio x.y\\PackageName.x.y.z
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/addinmanager1.jpg

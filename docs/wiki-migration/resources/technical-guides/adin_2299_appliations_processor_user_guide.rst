@@ -58,21 +58,21 @@ The ni-example-app software suite basically constructs what is known as a host p
 ::
 
     •    Calls to ui-init
-    o    This initializes the ui-stk on the host platform.   
+    o    This initializes the ui-stk on the host platform.
     •    Link type initialization
     o    This sets up the link type that shall be used.
 
 ::
 
     •    Set the response timeout
-    o    This sets up the link between the host and RPG2. 
+    o    This sets up the link between the host and RPG2.
     o    This can vary from platform to platform.
     •    Wait for the signal SDONE to go high.
     o    This signal goes high when RPG2 is ready to receive commands.
     o    This one may or may not be needed but it is highly recommended to install between RPG2 and the host processor.
     •    Send out the NI-Discover message
     o    This expects an echo of the discover almost like a ping.
-    •    Send out the NI-Init message 
+    •    Send out the NI-Init message
     o    This tells RPG2 to initialize and be ready for further communication.
     o    There is some warning in the ni-example-app for ui-stk compatibility.
     •    Resets RPG2 from the Host Processor side.
@@ -270,8 +270,8 @@ If not already selected, select ×86 as the Solution Platform. Specifying the En
 
 ::
 
-    -    In the Solution Explorer, right-click ui-stk. 
-    -    Under Configuration Properties, expand C/C++. 
+    -    In the Solution Explorer, right-click ui-stk.
+    -    Under Configuration Properties, expand C/C++.
     -    Select Preprocessor.
     -    Select Preprocessor Definitions (see Figure 4).
     -    Click the dropdown arrow and select <Edit…>.

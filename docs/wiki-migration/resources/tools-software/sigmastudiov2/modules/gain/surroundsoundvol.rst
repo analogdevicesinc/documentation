@@ -3,10 +3,13 @@
 Surround Sound Volume Control
 =============================
 
-| 
-| |surroundvol.png|
-| |surroundsoundcartesian.png| |surroundsoundpolar.png|
-| |setpositionswindow.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/surroundvol.png
+   :alt: surroundvol.png
+
+|surroundsoundcartesian.png| |surroundsoundpolar.png|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/setpositionswindow.png
+   :alt: setpositionswindow.png
 
 Description
 -----------
@@ -19,8 +22,7 @@ The Surround Sound Volume Control block enables positioning of source elements r
 -  Head location
 -  Source locations
 
-| 
-| Press Resize to accept changes. Grayed-out source locations mean the source is not currently added.
+Press Resize to accept changes. Grayed-out source locations mean the source is not currently added.
 
 Targets Supported
 -----------------
@@ -37,27 +39,27 @@ Targets Supported
 Input
 ~~~~~
 
-======================== ===== ===============
-Name                     Type  Description
-======================== ===== ===============
-Input <fc #ff0000>X</fc> Audio Input channel X
-======================== ===== ===============
+======= ===== ===============
+Name    Type  Description
+======= ===== ===============
+Input X Audio Input channel X
+======= ===== ===============
 
 Output
 ~~~~~~
 
-========================= ===== ================
-Name                      Type  Description
-========================= ===== ================
-Output <fc #ff0000>X</fc> Audio Output channel X
-========================= ===== ================
+======== ===== ================
+Name     Type  Description
+======== ===== ================
+Output X Audio Output channel X
+======== ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +--------------------+---------------+-------------------------------------+-----------------------------------------------------------------------------------+
 | GUI Parameter Name | Default Value | Range                               | Function Description                                                              |
@@ -94,24 +96,20 @@ Note:
 
 | 
 | ===== DSP Parameter Computation ===== Cartesian:
-| distance= Math.Sqrt(Math.Pow(sourceX - \_headLocationX, 2) + Math.Pow(sourceY - \_headLocationY, 2));
-| Polar:
-| headXCart = \_headLocationX \* Math.Sin(\_headLocationY);
-| headYCart = \_headLocationX \* Math.Cos(\_headLocationY);
 
-| sourceXCart = sourceX \* Math.Sin(sourceY);
-| sourceYCart = sourceX \* Math.Cos(sourceY);
-| distance = Math.Sqrt(Math.Pow(sourceXCart - headXCart, 2) + Math.Pow(sourceYCart - headYCart, 2));
+distance= Math.Sqrt(Math.Pow(sourceX - \_headLocationX, 2) + Math.Pow(sourceY - \_headLocationY, 2));
 
-| US-Feet:
-| if (distance <= 2) then, computedGain = \_globalGain + 6 - 10 \* Math.Log10((distance + 2) / 2);
-| if (distance > 2) then, computedGain = \_globalGain + 8.989 - 20 \* Math.Log10((distance + 2) / 2);
-| Metric:
+Polar: headXCart = \_headLocationX \* Math.Sin(\_headLocationY); headYCart = \_headLocationX \* Math.Cos(\_headLocationY);
 
-| 
-| Gain(Linear) = 10^(Gain(dB)/20)
+sourceXCart = sourceX \* Math.Sin(sourceY); sourceYCart = sourceX \* Math.Cos(sourceY);
 
-.. |surroundvol.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/surroundvol.png
+distance = Math.Sqrt(Math.Pow(sourceXCart - headXCart, 2) + Math.Pow(sourceYCart - headYCart, 2));
+
+US-Feet: if (distance <= 2) then, computedGain = \_globalGain + 6 - 10 \* Math.Log10((distance + 2) / 2); if (distance > 2) then, computedGain = \_globalGain + 8.989 - 20 \* Math.Log10((distance + 2) / 2);
+
+Metric:
+
+Gain(Linear) = 10^(Gain(dB)/20)
+
 .. |surroundsoundcartesian.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/surroundsoundcartesian.png
 .. |surroundsoundpolar.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/surroundsoundpolar.png
-.. |setpositionswindow.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/setpositionswindow.png

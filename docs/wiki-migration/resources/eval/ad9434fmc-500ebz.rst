@@ -1,20 +1,17 @@
 EVALUATING THE AD9434 ANALOG-TO-DIGITAL CONVERTER
 =================================================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support for the ad9434fmc is not part of 2022_r2 Kuiper Linux release. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. All the sources remained in main branches, and probably it will be added back in next releases, being supported on Zed Board.
+   \ **NOTE:** Support for the ad9434fmc is not part of 2022_r2 Kuiper Linux release. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. All the sources remained in main branches, and probably it will be added back in next releases, being supported on Zed Board.
 
 
 Preface
 -------
 
-| This user guide describes the evaluation board,\ :adi:`AD9434-FMC-500EBZ <AD9434>`, that is used to evaluate the following Analog Devices, Inc., product: :adi:`AD9434`. These evaluation board provide all of the support circuitry required to operate these parts in their various modes and configurations. The application software used to interface with the devices is also described.
-| The :adi:`AD9434` data sheet provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/sdp <sdp>`. For additional information or questions, send an email to highspeedproductssupport@analog.com.
+This user guide describes the evaluation board,\ :adi:`AD9434-FMC-500EBZ <AD9434>`, that is used to evaluate the following Analog Devices, Inc., product: :adi:`AD9434`. These evaluation board provide all of the support circuitry required to operate these parts in their various modes and configurations. The application software used to interface with the devices is also described.
+
+The :adi:`AD9434` data sheet provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/sdp <sdp>`. For additional information or questions, send an email to highspeedproductssupport@analog.com.
 
 Typical Measurement Setup
 -------------------------
@@ -23,9 +20,9 @@ Typical Measurement Setup
 
 .. container:: centeralign
 
-   *Figure 1. Evaluation Board Connection—*\ :adi:`AD9434-FMC-500EBZ <AD9434>` *(on Left) and
+   *Figure 1. Evaluation Board Connection—*\ :adi:`AD9434-FMC-500EBZ <AD9434>`\ *(on Left) and
 
-   *\ :adi:`EVAL-SDP-CH1Z <sdp>` *SDP-H1 (on Right)*
+   *:adi:`EVAL-SDP-CH1Z <sdp>`\ *SDP-H1 (on Right)*
 
 
 Features
@@ -79,7 +76,7 @@ Equipment Needed
 Getting Started
 ---------------
 
-| This section provides quick start procedures for using the :adi:`AD9434-FMC-500EBZ <AD9434>` board. Both the default and optional settings are described.
+This section provides quick start procedures for using the :adi:`AD9434-FMC-500EBZ <AD9434>` board. Both the default and optional settings are described.
 
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
@@ -207,12 +204,11 @@ The next step is to adjust the amplitude of the input signal for each channel as
    //Figure 14. Graph Window of VisualAnalog *
 
 
-\* Click the disk icon within the* **Graph** *window to save the performance plot data as .csv formatted file. \
+- Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file. \
 
 .. container:: centeralign
 
-   *\ Figure 15. VisualAnalog Disk Icon //
-
+   *Figure 15. VisualAnalog Disk Icon*
 
 Testing Additional AD9434 Boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -222,8 +218,12 @@ Power down the :adi:`EVAL-SDP-CH1Z <sdp>` SDP-H1 board first before swapping the
 Considerations on the Use of Different Clock Configurations
 -----------------------------------------------------------
 
-| This section is created to give highlight on the capability of :adi:`AD9434-FMC-500EBZ <AD9434>` board to cater different clock circuitries and its performance at maximum sample rate of 500MSPS. The board itself has provisions for external signal generator, oscillator, LVPECL, and LVDS. For oscillator, the board uses CCS575S Crystek SAW clock oscillator. For LVPECL and LVDS, :adi:`AD9517-4` is leveraged as clock buffer using internal VCO with clock distribution mode.
-| ==== SNR Performance of AD9434 ==== With reference to :adi:`an-501` and :adi:`an-756`, the SNR performance as shown in Figure 17 gives insight on the effect of clock jitter to the AD9434's signal-to-noise ratio (SNR) performed in evaluation board clock set-up depicted in Figure 16. The external signal generator clock circuitry provides the best performance among other clock configurations, which uses Rhode and Schwarz SMA100B. The CCS575S oscillator ranks second in terms of SNR performance, followed by LVPECL with voltage swing 960mVpp, then LVDS with 3.5mA current set-up. Both LVPECL and LVDS clock configurations were leveraged by :adi:`ad9517-4`. As an implication, the external signal generator has the lowest clock jitter among others.
+This section is created to give highlight on the capability of :adi:`AD9434-FMC-500EBZ <AD9434>` board to cater different clock circuitries and its performance at maximum sample rate of 500MSPS. The board itself has provisions for external signal generator, oscillator, LVPECL, and LVDS. For oscillator, the board uses CCS575S Crystek SAW clock oscillator. For LVPECL and LVDS, :adi:`AD9517-4` is leveraged as clock buffer using internal VCO with clock distribution mode.
+
+SNR Performance of AD9434
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+With reference to :adi:`an-501` and :adi:`an-756`, the SNR performance as shown in Figure 17 gives insight on the effect of clock jitter to the AD9434's signal-to-noise ratio (SNR) performed in evaluation board clock set-up depicted in Figure 16. The external signal generator clock circuitry provides the best performance among other clock configurations, which uses Rhode and Schwarz SMA100B. The CCS575S oscillator ranks second in terms of SNR performance, followed by LVPECL with voltage swing 960mVpp, then LVDS with 3.5mA current set-up. Both LVPECL and LVDS clock configurations were leveraged by :adi:`ad9517-4`. As an implication, the external signal generator has the lowest clock jitter among others.
 
 |image15|\
 
@@ -236,8 +236,7 @@ Considerations on the Use of Different Clock Configurations
 
 .. container:: centeralign
 
-   *\ Figure 17. AD9434 SNR Performance using Different Clock Configurations //
-
+   *Figure 17. AD9434 SNR Performance using Different Clock Configurations*
 
 As a trade-off in getting the best SNR performance, the material cost and resources are higher for external signal generator clock configuration. However, the user can get a better performance (almost -1 dB less than the external signal generator) with optimized material cost in oscillator clock configuration using CCS575S. For the lowest material cost compared to oscillator, the :adi:`ad9517-4` can offer a good functionality in using either LVPECL or LVDS configurations. In design considerations, the user should get a good balance between ease of resources and ADC performance.
 
@@ -266,7 +265,7 @@ How to use SPIController for AD9517-4 Register Setting
 After configuring the SPIController for AD9434 using FIFO Select 1, this section shows how to configure the SPIController by writing and reading values in :adi:`ad9517-4`. Below are the following steps:
 
 -  Start another SPIController
--  If a pop-up message saying **"Read Test Failure"**, select **Ignore**. |image16|\
+-  If a pop-up message saying **"Read Test Failure"**, select**Ignore**. |image16|\
 
 .. container:: centeralign
 
@@ -280,7 +279,7 @@ After configuring the SPIController for AD9434 using FIFO Select 1, this section
    \ *Figure 19. Configuration Settings*\
 
 
--  Again, if a message pop up saying **"Read Test Failure"**, select again **Ignore**. |image18|\
+-  Again, if a message pop up saying **"Read Test Failure"**, select again**Ignore**. |image18|\
 
 .. container:: centeralign
 
@@ -394,8 +393,6 @@ If the FFT appears normal but the analog input frequency is not matched in VA co
 
 -  Check and probe clock frequency in the ADC. Make sure the correct value is matched to the Clock Frequency Setting in ADC Data Capture Box of VA canvas.
 -  For LVPECL and LVDS configurations using :adi:`ad9517-4`, reset the board and redo the SPIcontroller settings for :adi:`ad9517-4`.
-
-| 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9434_fmc_500ebz_typical_setup.jpg
    :width: 600px

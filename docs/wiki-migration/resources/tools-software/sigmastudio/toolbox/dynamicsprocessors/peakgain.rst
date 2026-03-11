@@ -1,8 +1,9 @@
 Peak Gain
 =========
 
-| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| -----------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 |peakgainpic1.png| This block uses a peak-detecting dynamics processor that lets you control Hold, Decay, and Soft Knee behavior, and displays the compression curve graph for your curve drawing.
 

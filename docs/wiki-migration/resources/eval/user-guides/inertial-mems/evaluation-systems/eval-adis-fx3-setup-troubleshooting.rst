@@ -10,7 +10,7 @@ Expand the table below to find the breakout board for your specific IMU.
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +--------------------------------------------------------------+--------------------------------------------------------------+
 | MODEL NUMBER                                                 | BREAKOUT BOARD                                               |

@@ -44,8 +44,6 @@ The kernel tree path is the following:
            -> Device Drivers
             -> GPIO Support (GPIOLIB [=y])
 
- 
-
 Paths in Sysfs
 --------------
 
@@ -130,17 +128,15 @@ The control interfaces are write-only:
 
            "ngpio" ... how many GPIOs this manges (N to N + ngpio - 1)
 
- 
-
 Dump the GPIO configuration
 ---------------------------
 
 ::
 
-   # cat /sys/kernel/debug/gpio 
+   # cat /sys/kernel/debug/gpio
    GPIOs 0-15, platform/31004000.gport, adi-gpio:
    GPIOs 16-31, platform/31004080.gport, adi-gpio:
-    gpio-30  (mdio-reset          ) out hi    
+    gpio-30  (mdio-reset          ) out hi
    GPIOs 32-47, platform/31004100.gport, adi-gpio:
    GPIOs 48-63, platform/31004180.gport, adi-gpio:
    GPIOs 64-79, platform/31004200.gport, adi-gpio:

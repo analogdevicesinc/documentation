@@ -3,7 +3,7 @@
 High Order Shelving
 ===================
 
-| |higherordershelving.png| |higherordershelvingextgain.png|
+|higherordershelving.png| |higherordershelvingextgain.png|
 
 Targets Supported
 -----------------
@@ -38,7 +38,7 @@ Output0                           Audio   Filter Output
 ExtGain0(Table Interpolator Only) Control External Gain Input
 ================================= ======= ===================
 
-| 
+
 
 Configurable Parameters
 -----------------------
@@ -61,8 +61,10 @@ Configurable Parameters
 | Precisiontype_StageX | Single        | Single/Double | Precision type of individual filter stage         |
 +----------------------+---------------+---------------+---------------------------------------------------+
 
-| Note : \_StageX - Refers to parameters of each stage. X represents the stage index.
-| ===== DSP Parameters =====
+Note : \_StageX - Refers to parameters of each stage. X represents the stage index.
+
+DSP Parameters
+--------------
 
 +----------------+------------------------------------------------------------------------------------------+---------------+
 | Parameter Name | Description                                                                              | ADAU145x/146x |
@@ -70,7 +72,7 @@ Configurable Parameters
 | FilterX_b2x0   | Numeric Array consisting of all the filter coefficients belonging to a particular stage. | 8.24          |
 +----------------+------------------------------------------------------------------------------------------+---------------+
 
-| Note : X represents the stage index.
+Note : X represents the stage index.
 
 .. |higherordershelving.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/higherordershelving.png
 .. |higherordershelvingextgain.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/higherordershelvingextgain.png

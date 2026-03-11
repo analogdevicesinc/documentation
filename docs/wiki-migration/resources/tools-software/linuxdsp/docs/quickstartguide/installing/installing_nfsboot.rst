@@ -28,14 +28,19 @@ or
 
    $ bitbake adsp-sc5xx-minimal
 
-| If you want to compile and deploy the images at your second time, run the command "**bitbake <TARGET> -C compile**".
-| If you want to add packages to filesystem, you could add package to **IMAGE_INSTALL_append = "<PACKAGE_NAME>"** in build/conf/local.conf file.
+If you want to compile and deploy the images at your second time, run the command "**bitbake <TARGET> -C compile**".
 
-| 
-| ==== Setting Up NFS Server ==== First follow the section **Setting Up NFS Server** in :doc:`Setting Up The Host </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/setting_up_your_host_pc>` to set up the nfs server in HOST Ubuntu.
+If you want to add packages to filesystem, you could add package to **IMAGE_INSTALL_append = "<PACKAGE_NAME>"** in build/conf/local.conf file.
 
-| 
-| ==== Unzip Filesystem to NFS root Directory ==== Second unzip the filesystem tar image in deploy directory to NFS root diretory.
+Setting Up NFS Server
+~~~~~~~~~~~~~~~~~~~~~
+
+First follow the section **Setting Up NFS Server** in :doc:`Setting Up The Host </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/setting_up_your_host_pc>` to set up the nfs server in HOST Ubuntu.
+
+Unzip Filesystem to NFS root Directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Second unzip the filesystem tar image in deploy directory to NFS root diretory.
 
 ::
 
@@ -46,9 +51,6 @@ or
 
 See the **Appendix** at the bottom of this page to expand the <MACHINE> and <FULL_FS_IMAGE>or <MINIMAL_FS_IMAGE>.
 
-
-| 
-
 Copy zImage and dtb File
 ------------------------
 
@@ -58,8 +60,6 @@ The kernel image zImage and dtb file are loaded to target board through TFTP, fi
 
    $ cp build/tmp/deploy/images/<MACHINE>/zImage /tftpboot
    $ cp build/tmp/deploy/images/<MACHINE>/<DTB_FILE> /tftpboot
-
-|
 
 Boot Linux From NFS
 -------------------
@@ -76,14 +76,14 @@ Boot into U-boot and then run the command "**run nfsboot**":
           Watchdog enabled
    I2C:   ready
    DRAM:  224 MiB
-   MMC:   SC5XX SDH: 0                                                                                                        
-   SF: Detected IS25LP512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB                                           
-   In:    serial                                                                                                              
-   Out:   serial                                                                                                              
-   Err:   serial                                                                                                              
-   other init                                                                                                                 
-   Net:   dwmac.3100c000                                                                                                      
-   Hit any key to stop autoboot:  0                                                                                           
+   MMC:   SC5XX SDH: 0
+   SF: Detected IS25LP512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB
+   In:    serial
+   Out:   serial
+   Err:   serial
+   other init
+   Net:   dwmac.3100c000
+   Hit any key to stop autoboot:  0
    sc # run nfsboot
 
 The linux kernel would then boot up and the file system stored in HOST Ubuntu is mounted via NFS.
@@ -97,7 +97,7 @@ The linux kernel would then boot up and the file system stored in HOST Ubuntu is
 
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@     
+        @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@     @@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@            @@@@@@@@@@@@@@@@@@@
@@ -117,14 +117,16 @@ The linux kernel would then boot up and the file system stored in HOST Ubuntu is
            Analog Devices Yocto Distribution
                     www.analog.com
                  www.yoctoproject.org
-        
+
    adsp-sc589-mini login: root
    Password: adi
 
 The default username is **root** and the password is **adi**.
 
-| 
-| ====== Trouble Shooting ====== If the kernel stuck in the below and cannot enter into the login console, it should be a problem related with NFS server setup, you should run the above section "**Setting Up NFS Server**" again.
+Trouble Shooting
+================
+
+If the kernel stuck in the below and cannot enter into the login console, it should be a problem related with NFS server setup, you should run the above section "**Setting Up NFS Server**" again.
 
 ::
 
@@ -136,8 +138,8 @@ The default username is **root** and the password is **adi**.
    platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
    cfg80211: failed to load regulatory.db
 
-| 
-| ====== Appendix: Macro Definition ======
+Appendix: Macro Definition
+==========================
 
 +------------------+-----------------+-----------------------------------------+--------------------------------------------+
 | ``MACHINE``      | ``DTB_FILE``    | ``FULL_FS_IMAGE``                       | ``MINIMAL_FS_IMAGE``                       |
@@ -152,4 +154,4 @@ The default username is **root** and the password is **adi**.
 +------------------+-----------------+-----------------------------------------+--------------------------------------------+
 
 | 
-| ---- \**BACK TO: \*\* :doc:`Installing Linux On The Hardware </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing>` \**HOME PAGE: \*\* :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`
+| ---- \**BACK TO:** :doc:`Installing Linux On The Hardware </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing>` \**HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`

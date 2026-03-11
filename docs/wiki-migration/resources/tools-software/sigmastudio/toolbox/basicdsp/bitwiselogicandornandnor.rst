@@ -1,16 +1,18 @@
 Bitwise Logic - And, Or, Nand, Nor, Xor
 =======================================
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| --------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+--------------
 
 |logicpic1.png| The Bitwise Logic block applies one of five selectable logic operations to each bit of the two input signals and outputs the result on the output pin. And, Or, Nand, Nor, and Xor operators are available.
 
 Unlike the normal :doc:`Logic - And, Or, Nand, Nor </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/logicandornandnor>` cell, which applies the logic operation to the full data word from each input, this cell applies the logic operation to each bit in each word. The first bit in each of the two words are used to create the first bit in the output word, the second bit in each of the two words are used to create the second bit in the output word, and so on.
 
-| **To change the operator:** Left click on the icon button, each click will toggle the active operator which is shown in the icon image and label.
-| |logicpic2.png|
-|
+**To change the operator:** Left click on the icon button, each click will toggle the active operator which is shown in the icon image and label.
+
+
+|logicpic2.png|
 
 .. hint::
 

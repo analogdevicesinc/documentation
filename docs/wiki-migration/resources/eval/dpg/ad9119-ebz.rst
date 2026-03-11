@@ -1,13 +1,9 @@
 AD9119-EBZ Evaluation Board Quick Start Guide
 =============================================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support using DPG2/DPG3 project on this website only for legacy purposes. The support for this project has been discontinued, and ADS7 is the recommended replacement.
+   \ **NOTE:** Support using DPG2/DPG3 project on this website only for legacy purposes. The support for this project has been discontinued, and ADS7 is the recommended replacement.
 
 
 You can return to Homepage here: `AD9119/AD9129 Evaluation Boards <https://wiki.analog.com/resources/eval/dpg/eval-ad9129>`_
@@ -78,10 +74,7 @@ The PC software comes on the included Evaluation Board CD, but may also be downl
 Initial Set-Up
 ~~~~~~~~~~~~~~
 
-| 1. Install the DPG Downloader and AD9129 software and support files on your PC
-| 2. Start the AD9129 Control Panel GUI (but don’t hit the run arrow yet)
-| 3. Connect the EVB to your PC and lab equipment as shown in Figure 1 above. Use a USB cable to connect your PC to the EVB, and another USB cable to connect your PC to the DPG2 unit. Note that a DPG3 unit can also be used.
-| It is suggested that the basic set-up is verified before making any modifications to the evaluation board.
+1. Install the DPG Downloader and AD9129 software and support files on your PC 2. Start the AD9129 Control Panel GUI (but don’t hit the run arrow yet) 3. Connect the EVB to your PC and lab equipment as shown in Figure 1 above. Use a USB cable to connect your PC to the EVB, and another USB cable to connect your PC to the DPG2 unit. Note that a DPG3 unit can also be used. It is suggested that the basic set-up is verified before making any modifications to the evaluation board.
 
 Load Initial Settings
 ~~~~~~~~~~~~~~~~~~~~~

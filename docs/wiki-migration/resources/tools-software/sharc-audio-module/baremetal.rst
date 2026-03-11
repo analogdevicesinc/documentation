@@ -72,5 +72,5 @@ Using MATLAB Generated Code in the Bare Metal Framework
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#gettingstarted
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation SHARC Audio Module#gettingstarted
    :alt: Getting Started#.|SHARC Audio Module#.hardware|Hardware Reference

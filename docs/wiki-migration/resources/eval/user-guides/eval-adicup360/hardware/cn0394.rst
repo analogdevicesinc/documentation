@@ -87,7 +87,7 @@ Software
 
    -  :git-EVAL-ADICUP360:`CN0394 Demo <projects/ADuCM360_demo_cn0394>`
 
-.. image:: https://wiki.analog.com/_media/navigation EVAL-ADICUP360#base_board
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/navigation EVAL-ADICUP360#base_board
    :alt: EVAL-ADICUP360 Base Board#.:\|Hardware#none
 
 Registration

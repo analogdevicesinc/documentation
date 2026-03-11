@@ -50,7 +50,7 @@ Control/Monitor
 Power
 -----
 
-| Key components:
+Key components:
 
 +----------------+-------------------------------------------------------+
 | :adi:`ADP2370` | Buck regulator, 800mA, 3.2 to 15V                     |

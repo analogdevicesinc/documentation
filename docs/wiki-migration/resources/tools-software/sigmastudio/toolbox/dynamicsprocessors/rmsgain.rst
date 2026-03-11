@@ -1,8 +1,9 @@
 RMS (gain)
 ==========
 
-| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| ---------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 |rmsgainpic1.png| This block uses an rms dynamics processor that lets you control the rms TC (time constant), Hold, Decay, and Soft Knee behavior, and opens the compression curve graph for your curve drawing.
 
@@ -17,10 +18,6 @@ RMS works on a longer average than peak processors, thus allowing some fast loud
    -  **Stereo RMS (Post Gain)**
 
 -  Set these parameters to fit your application and click Show Graph and drag, add and remove (right-click) control points to achieve your desired processing curve.
-
-
-| 
-|
 
 .. hint::
 

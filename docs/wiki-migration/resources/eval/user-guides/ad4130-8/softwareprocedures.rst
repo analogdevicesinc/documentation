@@ -174,8 +174,7 @@ The Bitfields section shows the individual bitfield of the selected register. Th
 AD4130-8 Demo Modes
 -------------------
 
-| :doc:`Visit the demo mode section here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures/demo_modes>`
-| **Contents of the demo modes section:**
+:doc:`Visit the demo mode section here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures/demo_modes>` **Contents of the demo modes section:**
 
 -  :doc:`Noise Test Demo </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures/demo_modes>`
 -  :doc:`2 Wire RTD Demo </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures/demo_modes>`
@@ -194,8 +193,7 @@ Active Function Model Guide
 
 This page provides a step by step guide to launching and using ADI's new Active Function Model Tool. The AFM simulates crucial part performance characteristics within seconds. Configure operating conditions such as operation modes and sensor biasing/excitation, as well as device features like gain or FIFO. Performance characteristics include noise, histogram, resolution, power consumption, timing diagrams, response plots, and more.
 
-| :doc:`Visit the Active Functional Model (AFM) section here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures/afm>`
-| **Contents of the AFM section:**
+:doc:`Visit the Active Functional Model (AFM) section here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures/afm>` **Contents of the AFM section:**
 
 -  :doc:`Tools and Analysis Windows </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures/afm>`
 -  :doc:`Memory Map </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures/afm>`

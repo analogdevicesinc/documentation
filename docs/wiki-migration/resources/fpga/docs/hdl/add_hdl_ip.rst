@@ -42,7 +42,7 @@ Set the environment (hdl directory location).
 
 Source ADI processes for IP creation.
 
-.. code:: c
+.. code:: tcl
 
    source $ad_hdl_dir/library/scripts/adi_ip_xilinx.tcl
 
@@ -54,7 +54,7 @@ Source ADI processes for IP creation.
 Define the IP
 ~~~~~~~~~~~~~
 
-.. code:: c
+.. code:: tcl
 
    adi_ip_create my_ip # defines the ip name, in our case  my_ip
 
@@ -67,7 +67,7 @@ Point to the HDL files
 
 Creates a fileset with the files used by *my_ip*. The name list is separated by " "(space). As an example:
 
-.. code:: c
+.. code:: tcl
 
    adi_ip_files my_ip [list \
      "$ad_hdl_dir/library/common/ad_rst.v" \ # examples of adding some files used in my_ip
@@ -78,7 +78,7 @@ Creates a fileset with the files used by *my_ip*. The name list is separated by 
      "my_ip_interfaces.v" \
      "my_ip_constrains.xdc" ]
 
-For an actual IP implementation example see\ :git-hdl:`axi_ad9361 <library/axi_ad9361/axi_ad9361_ip.tcl#L7-L49>`
+For an actual IP implementation example see\ `axi_ad9361 <https://github.com/analogdevicesinc/hdl/blob/hdl_2016_r2/library/axi_ad9361/axi_ad9361_ip.tcl#L7-L49>`_
 
 Define IP parameters and interfaces
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +99,7 @@ The constraints go in the .xdc and .ttcl files.
 
 As an example for the .xdc, if the IP works with two clock domains and there is a FF sync stage implemented for a signal
 
-.. code:: c
+.. code:: verilog
 
    always @(posedge clk_1) begin
      s_toggle_reg <= control_event;
@@ -114,14 +114,14 @@ the following constraint will apply:
 
 .. code:: c
 
-   set_property ASYNC_REG TRUE [get_cells -hier -filter {name =~ *s_toggle*}] 
+   set_property ASYNC_REG TRUE [get_cells -hier -filter {name =~ *s_toggle*}]
 
    set_false_path -from [get_cells -hier -filter {name =~ *s_toggle_reg && IS_SEQUENTIAL}] \
-                  -to [get_cells -hier -filter {name =~ *s_toggle_m1_reg && IS_SEQUENTIAL}] 
+                  -to [get_cells -hier -filter {name =~ *s_toggle_m1_reg && IS_SEQUENTIAL}]
 
 Adding constraints dependent on the build arguments(parameters). These types of constraints are useful when working with an IP that gives the option for multiple interface selection and/or having synchronous or asynchronous clock domains.
 
-.. code:: c
+.. code:: tcl
 
    adi_ip_ttcl my_ip ttcl_path/sctipt.ttcl
 
@@ -166,7 +166,7 @@ How are the bd.tcl integrated/used?
 
 Adding the bd files the the IP fileset.
 
-.. code:: c
+.. code:: tcl
 
    adi_ip_bd my_ip "bd/bd.tcl"
 
@@ -210,7 +210,7 @@ The Intel tools search for IP files containing "\_hw.tcl into their name.
 
    source ../scripts/adi_env.tcl
 
-.. code:: c
+.. code:: tcl
 
    source ../scripts/adi_ip_intel.tcl
 

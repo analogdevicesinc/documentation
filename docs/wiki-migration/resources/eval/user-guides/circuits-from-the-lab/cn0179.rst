@@ -139,7 +139,7 @@ Descriptions:
    |image9| - Busy
    |image10| - Inactive
    |image11| - Error
-   \* **SDP Board Information** - provides details on the firmware version of the Blackfin used by the SDP board.
+-  **SDP Board Information** - provides details on the firmware version of the Blackfin used by the SDP board.
 
 Registration
 ------------

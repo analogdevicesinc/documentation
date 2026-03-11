@@ -30,7 +30,7 @@ Connection Diagram
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_joystick_pin.png
    :width: 600px
 
-\* The joystick and the I/O expander-MCP23s17 are embedded on the AD-GEAR-DISPLAY1Z.
+- The joystick and the I/O expander-MCP23s17 are embedded on the AD-GEAR-DISPLAY1Z.
 
 Board Interface
 ~~~~~~~~~~~~~~~
@@ -58,9 +58,9 @@ GPIO15 / INT_WAKE0   INTA          -
 -                    GPA4          SW5
 ==================== ============= ========
 
-\* A0, A1 and A2 of the I/O expander are connected to the ground.
+- A0, A1 and A2 of the I/O expander are connected to the ground.
 
-\* RESET_N of the I/O expander is connected to EXT_VDD_OUT of the COG board.
+- RESET_N of the I/O expander is connected to EXT_VDD_OUT of the COG board.
 
 Software Details
 ----------------
@@ -86,7 +86,7 @@ Application flow
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/joystick_flow.png
    :width: 800px
 
-\* All the APIs for using the I/O expander is within the mcp23s17_3.c with supporting definitions found in SPI_PE.h and adi_spi_pe.h. A separate driver file to use the I/O expander is yet to be created.
+- All the APIs for using the I/O expander is within the mcp23s17_3.c with supporting definitions found in SPI_PE.h and adi_spi_pe.h. A separate driver file to use the I/O expander is yet to be created.
 
 IDE Setup and example application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

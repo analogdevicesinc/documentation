@@ -1,9 +1,7 @@
 Evaluating the ADXL367
 ======================
 
-| *Useful links:
-  ADXL367* :adi:`product page <adxl367>` *\|* :adi:`datasheet <media/en/technical-documentation/data-sheets/ADXL367.pdf>`\ *.
-  ADXL367 pedometer algorithm implementation with Arduino Nano 33 BLE:* `adxl367_pedometer.zip <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl367_pedometer.zip>`_
+*Useful links: ADXL367* :adi:`product page <adxl367>` *\|* :adi:`datasheet <media/en/technical-documentation/data-sheets/ADXL367.pdf>`\ *. ADXL367 pedometer algorithm implementation with Arduino Nano 33 BLE:* `adxl367_pedometer.zip <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl367_pedometer.zip>`_
 
 ADXL367 Quick Start:
 --------------------

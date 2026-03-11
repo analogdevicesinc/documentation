@@ -9,8 +9,10 @@ Value Cross Detection
 Description
 -----------
 
-| The Value Cross Detection outputs a pulse every time the input signal has crossed the value specified in the cell. As a default this cell acts as a zero-cross detector, but it can compare the signal to any threshold value.
-| ===== Targets Supported =====
+The Value Cross Detection outputs a pulse every time the input signal has crossed the value specified in the cell. As a default this cell acts as a zero-cross detector, but it can compare the signal to any threshold value.
+
+Targets Supported
+-----------------
 
 +-----------------------+------------+------------------+---------------+------------------+
 | Name                  | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |

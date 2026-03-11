@@ -19,16 +19,15 @@ Simplified Block Diagram
    :align: center
    :width: 1000px
 
-| 
-| ----
+--------------
 
 Components
 ----------
 
-| 
-| === USB Host Plug (P1) === The USB host controller must be connected to the USB-C connector (P1).
+USB Host Plug (P1)
+~~~~~~~~~~~~~~~~~~
 
-| 
+The USB host controller must be connected to the USB-C connector (P1).
 
 USB Peripheral Port (P6)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,8 +52,7 @@ Equipment Needed
 -  USB Type C cable (must support both power and data signaling)
 -  Type C male to Type A female adapter
 
-| 
-| To test the USB 2.0 functionality of the EVAL-CN0590-EBZ, follow below steps:
+To test the USB 2.0 functionality of the EVAL-CN0590-EBZ, follow below steps:
 
 1. Using the type C to type A adapter, connect the USB flash drive to **P6** of EVAL-CN0590-EBZ.
 
@@ -82,8 +80,7 @@ Equipment Needed
    *Figure 2: Example USB Device Tree Viewer Screen for a High-Speed USB Device*
 
 
-| 
-| ----
+--------------
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------

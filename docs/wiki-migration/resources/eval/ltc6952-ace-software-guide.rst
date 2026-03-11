@@ -175,7 +175,7 @@ Troubleshooting
    -  U8 = 8V
    -  U11 = 5V
 
-\**If the green LED (D5) does not illuminate: \*\*
+**If the green LED (D5) does not illuminate:**
 
 -  Verify J32 measures between 4V and 6V (see the Typical DC2609A Requirements and Characteristics)
 -  Verify that JP4, JP6, and JP7 jumpers are installed correctly (refer to the DC2609A schematic sheet 3)
@@ -184,11 +184,11 @@ Troubleshooting
    -  JP6 = 3.3V
    -  JP7 = 3.3V
 
-\**If the red LED (D1) does not illuminate: \*\*
+**If the red LED (D1) does not illuminate:**
 
 -  In ACE Chip View, click “Check Register Status”. STAT Output Pin should match STAT Pin Mask And Output.
 
-\**Verify DC2609A and LTC6952 Plugin Communication: \*\*
+**Verify DC2609A and LTC6952 Plugin Communication:**
 
 To verify communication with the DC2609A, Go to the start page or system view page and click the button shown below.
 

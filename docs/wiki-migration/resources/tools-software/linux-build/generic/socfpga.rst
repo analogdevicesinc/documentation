@@ -24,7 +24,7 @@ Running the script in one line [with defaults]
 
 ::
 
-   wget https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/linux/build_socfpga_kernel_image.sh && chmod +x build_socfpga_kernel_image.sh && ./build_socfpga_kernel_image.sh 
+   wget https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/linux/build_socfpga_kernel_image.sh && chmod +x build_socfpga_kernel_image.sh && ./build_socfpga_kernel_image.sh
 
 Checkout the Release branch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

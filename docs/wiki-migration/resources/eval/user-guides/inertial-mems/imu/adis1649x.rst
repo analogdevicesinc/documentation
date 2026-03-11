@@ -288,35 +288,17 @@ Here are the pin assignments for J1, which is the connector that will interface 
 Connecting to the EVAL-ADIS2
 ----------------------------
 
-.. container:: em
-
-   J1
-
-
-on the :adi:`eval-adis2` has the same pin assignments as
-
-.. container:: em
-
-   J1
-
-
-on the :adi:`ADIS16IMU1/PCB <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADIS16IMU1.html>`. Use a 16-pin, 1mm ribbon cable to connect these two boards together.
+J1 on the :adi:`eval-adis2` has the same pin assignments as J1 on the :adi:`ADIS16IMU1/PCB <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADIS16IMU1.html>`. Use a 16-pin, 1mm ribbon cable to connect these two boards together.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_010.jpg
    :width: 600px
 
-.. note::
-
-   Do not connect the **EVAL-ADIS2** to the PC yet.
-
+Do not connect the **EVAL-ADIS2** to the PC yet.
 
 EVAL-ADIS USB Driver Installation
 ---------------------------------
 
-.. note::
-
-   Download and install the driver, **before** connecting the EVAL-ADIS2 to a PC or attempting to use the evaluation software
-
+Download and install the driver, **before** connecting the EVAL-ADIS2 to a PC or attempting to use the evaluation software
 
 STEP #1
 ~~~~~~~

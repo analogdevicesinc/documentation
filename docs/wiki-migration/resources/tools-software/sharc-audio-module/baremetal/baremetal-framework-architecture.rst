@@ -1,7 +1,7 @@
 Baremetal Framework Project Structure
 =====================================
 
-.. image:: https://wiki.analog.com/_media/youtube>uAER53AcOco
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>uAER53AcOco
    :alt: youtube>uAER53AcOco
 
 There are three distinct Project folders which each correspond to the code running on a distinct processor core of the ADSP-SC589. Furthermore, there are some folders which contain code that is shared between the three cores.
@@ -56,7 +56,7 @@ Project Folder Structure
 
 All three projects have a few key folders:
 
-\* ``src/``
+- ``src/``
 
 -  ``audio_frameworks/`` - this folder contains a number of .c/.h file pairs that are used to configure and operate specific audio processing configurations. These essentially manage the audio plumbing and abstract away the underlying DMAs, interrupts, etc. Based on the overall project configuration (described in the next section), .c files are enabled through pre-processor variables. This allows us to have a common set of calling conventions (while sticking with C) and swap out modular frameworks without changing our audio processing.
 -  ``drivers/`` - Device drivers used to initialize and control on-chip peripherals and external CODECs / ADCs / DACs, etc.
@@ -71,5 +71,5 @@ Each core also has one or more callbacks which is where your custom audio proces
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation SHARC Audio Module#configuring-cces
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#configuring-cces
    :alt: Configuring CCES#.|Bare Metal Framework#configuring-the-framework|Configuring the Framework

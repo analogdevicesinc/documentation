@@ -10,8 +10,11 @@ Description
 
    The IIR Elliptical Interpolated Lowpass Filter "Content should be added"
 
-| 
-| ===Mono=== |mono_eliptical_iir.png|
+Mono
+~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mono_eliptical_iir.png
+   :alt: mono_eliptical_iir.png
 
 Stereo
 ~~~~~~
@@ -22,14 +25,16 @@ Stereo
 Usage
 -----
 
-| To module has spin text box to control the order of the filter.
-| ===== Variants =====
+To module has spin text box to control the order of the filter.
+
+Variants
+--------
 
 -  IIR Elliptical LowPass (Mono)
 -  IIR Elliptical LowPass (Stereo)
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +---------------------------------+------------+------------------+---------------+
 | Name                            | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x |
@@ -62,7 +67,7 @@ Pin0 Audio filtered output
 Pin1 Audio filtered output
 ==== ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------+-------------------------------------------+
@@ -91,5 +96,3 @@ Pin1 Audio filtered output
 +----------------+-------------------------------+------------------------+---------------+
 
 | 
-
-.. |mono_eliptical_iir.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mono_eliptical_iir.png

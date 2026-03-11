@@ -76,20 +76,15 @@ Required Software
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \* **AD7887 Driver:** :git-no-OS:`device_drivers/AD7887`
    
+   -  **AD7887 Driver:** :git-no-OS:`device_drivers/AD7887`
    -  **CN0150 Commands:** :git-no-OS:`device_commands/CN0150`
    -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
    -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
    
-   |
-
-   |
 
 
 Run the Demonstration Project
@@ -98,11 +93,10 @@ Run the Demonstration Project
 Hardware setup
 --------------
 
-|
-
 .. important::
 
-   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+   
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
 
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
@@ -145,8 +139,6 @@ Software Project Setup
 
    See `import_workspace <https://wiki.analog.com/import_workspace>`_
 
-
-.. _more-information-1:
 
 More information
 ================

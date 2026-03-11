@@ -16,10 +16,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 2 - small signal NMOS transistors (ZVN2110A or CD4007 NMOS array)
+ADALM1000 hardware module Solder-less breadboard Jumper wires 2 - small signal NMOS transistors (ZVN2110A or CD4007 NMOS array)
 
 Directions:
 ~~~~~~~~~~~
@@ -65,7 +62,6 @@ Try building a PMOS version of the current mirror from the PMOS devices in the C
 
 **For Further Reading:**
 
-| `The Current Mirror <https://en.wikipedia.org/wiki/Current_mirror>`_
-| :doc:`/wiki-migration/university/courses/electronics/text/chapter-11`
+`The Current Mirror <https://en.wikipedia.org/wiki/Current_mirror>`_ :doc:`/wiki-migration/university/courses/electronics/text/chapter-11`
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`

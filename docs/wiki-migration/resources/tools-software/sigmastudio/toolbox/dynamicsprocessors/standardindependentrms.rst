@@ -1,8 +1,9 @@
 Standard Independent RMS
 ========================
 
-| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| ---------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 | The Standard Peak Compressor is a stereo compressor that allows direct control over threshold and ratio. In the pop-up GUI, graphical controls are given for threshold, ratio, and time constants. Also there are visual indicators showing input, output, and compression levels. The detection signals used for this Peak compressor, are independent for L and R channels. The detection signal can be linked in which case the greater signal of L or R will drive the compression. | |standardindpic1.png| |
@@ -33,8 +34,10 @@ Output Pins
 GUI Controls
 ------------
 
-| \*The GUI Controls for this block exist on another window. Click on the Compressor icon to open the following Compressor window that contains the following Compressor controls:
-| |standardindpic2.png|
+\*The GUI Controls for this block exist on another window. Click on the Compressor icon to open the following Compressor window that contains the following Compressor controls:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/standardindpic2.png
+   :alt: standardindpic2.png
 
 GUI Control
 -----------
@@ -111,8 +114,10 @@ If an average between left and right channels is desired for the detection metho
 Example
 -------
 
-| This is an example of the compressor being used directly on the input signal. The compressor is connected to an external Volume Control for a post gain level before sending to the outputs.
-| |standardindpic3.png|
+This is an example of the compressor being used directly on the input signal. The compressor is connected to an external Volume Control for a post gain level before sending to the outputs.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/standardindpic3.png
+   :alt: standardindpic3.png
 
 Algorithm Details
 -----------------
@@ -138,5 +143,3 @@ Algorithm Details
 +----------------------------+--------------------------------------------------------------------+
 
 .. |standardindpic1.png| image:: https://wiki.analog.com/_media/standardindpic1.png
-.. |standardindpic2.png| image:: https://wiki.analog.com/_media/standardindpic2.png
-.. |standardindpic3.png| image:: https://wiki.analog.com/_media/standardindpic3.png

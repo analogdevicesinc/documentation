@@ -8,10 +8,7 @@ While we do have a few examples, and show how to re-create the default software 
 Content
 -------
 
-.. container:: hide
-
-   please make sure that all these are in the ./devs subdirectory
-
+please make sure that all these are in the ./devs subdirectory
 
 -  Introduction *(Coming soon)*
 -  Hardware

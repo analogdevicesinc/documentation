@@ -40,12 +40,13 @@ Analog Switches and Multiplexers
 Analog to Digital Converters
 ----------------------------
 
-| :doc:`User Guide for the AD400x and ADAQ40xx SAR ADC Evaluation Boards </wiki-migration/resources/eval/ad400x-eval-board>`
-| \* :adi:`AD4000`, :adi:`AD4001`, :adi:`AD4002`, :adi:`AD4003`, :adi:`AD4004`, :adi:`AD4005`, :adi:`AD4006`, :adi:`AD4007`, :adi:`AD4008`, :adi:`AD4010`, :adi:`AD4011`, :adi:`AD4020`, :adi:`AD4021`, :adi:`AD4022`, :adi:`ADAQ4003`
+:doc:`User Guide for the AD400x and ADAQ40xx SAR ADC Evaluation Boards </wiki-migration/resources/eval/ad400x-eval-board>`
 
-| :doc:`User Guide for the AD4630-24, AD4030-24 and AD4630-16 SAR ADC Evaluation Board </wiki-migration/resources/eval/ad4630-24-eval-board>`
-| \* :adi:`ad4630-24`
+-  :adi:`AD4000`, :adi:`AD4001`, :adi:`AD4002`, :adi:`AD4003`, :adi:`AD4004`, :adi:`AD4005`, :adi:`AD4006`, :adi:`AD4007`, :adi:`AD4008`, :adi:`AD4010`, :adi:`AD4011`, :adi:`AD4020`, :adi:`AD4021`, :adi:`AD4022`, :adi:`ADAQ4003`
 
+:doc:`User Guide for the AD4630-24, AD4030-24 and AD4630-16 SAR ADC Evaluation Board </wiki-migration/resources/eval/ad4630-24-eval-board>`
+
+-  :adi:`ad4630-24`
 -  :adi:`ad4030-24`
 -  :adi:`ad4630-16`
 

@@ -81,7 +81,7 @@ System setup
 -  Flip the power switch labeled S4 to the ON position on the GMSL Deserializer EVK
 -  Connect the power supply to the Nvidia Orin Nano Developer Kit
 
-.. image:: https://wiki.analog.com/_media/:`Nvidia Orin Nano latest SD card image <resources/eval/user-guides/ad-gmslcamrpi-adp/nvidia_jetson_orin_system.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/:`Nvidia Orin Nano latest SD card image <resources/eval/user-guides/ad-gmslcamrpi-adp/nvidia_jetson_orin_system.jpg
    :align: left
    :width: 350px
 

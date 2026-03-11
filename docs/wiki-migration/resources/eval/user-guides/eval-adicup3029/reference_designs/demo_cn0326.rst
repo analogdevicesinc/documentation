@@ -13,15 +13,13 @@ The **ADuCM3029_demo_cn0326** project uses the :adi:`EVAL-CN0326-PMDZ pmod <en/d
 
 |image1|
 
-| 
-| The CN0326 circuit provides a complete solution for pH sensors with internal resistance between **1 MΩ** and several **GΩ**. It consist of **pH probe** buffer, **Pt1000 RTD** for temperature compensation and **24-bits ADC** with 3 differential analog inputs.
+The CN0326 circuit provides a complete solution for pH sensors with internal resistance between **1 MΩ** and several **GΩ**. It consist of **pH probe** buffer, **Pt1000 RTD** for temperature compensation and **24-bits ADC** with 3 differential analog inputs.
 
 The pH probe consists of a glass measuring electrode and a reference electrode, which is analogous to a battery. When the probe is place in a solution, the measuring electrode generates a voltage depending on the hydrogen activity of the solution, which is compared to the potential of the reference electrode. As the solution becomes more **acidic** (pH < 7) the potential of the glass electrode becomes more positive (**+mV**) in comparison to the reference electrode; and as the solution becomes more **alkaline** (pH > 7) the potential of the glass electrode becomes more negative (**−mV**) in comparison to the reference electrode.
 
 The change in temperature of the solution changes the activity of its hydrogen ions. When the solution is heated, the hydrogen ions move faster which result in an increase in potential difference across the two electrodes. In addition, when the solution is cooled, the hydrogen activity decreases causing a decrease in the potential difference. Electrodes are designed ideally to produce a zero volt (**0 V**) potential when placed in a buffer solution with a pH of 7 (**neutral** pH).
 
-| 
-| The **EVAL-CN0326-PMDZ** comes with an evaluation software which can help you to test and to calibrate your pmod before you use it.
+The **EVAL-CN0326-PMDZ** comes with an evaluation software which can help you to test and to calibrate your pmod before you use it.
 
 The potential changes are outputted as ADC 24-bits value which is received via SPI interface of the EVAL-ADICUP3039 board. The ADC analog differential channels are:
 
@@ -46,31 +44,43 @@ To start the command line interpreter you need to press ENTER key (CR) from the 
 
 The project uses below formula to determine output **ADC code** for an input voltage on either channel:
 
-| |image2|
-| **AIN** - analog input voltage
-| **GAIN** - gain value in the in-amp setting
-| **N** - ADC resolution (24)
-| The **temperature** value is calculated using RTD resistance value and it varies from 0°C (1000 Ω) to 100°C (1385 Ω):
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_1.png
+   :align: left
+   :width: 250px
+
+**AIN** - analog input voltage
+
+**GAIN** - gain value in the in-amp setting
+
+**N** - ADC resolution (24)
+
+The **temperature** value is calculated using RTD resistance value and it varies from 0°C (1000 Ω) to 100°C (1385 Ω):
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_2.png
    :align: left
    :width: 240px
 
-| 
-| **Rrtd** - RTD resistance at T°C
-| **Rmin** - RTD resistance at 0°C
-| **α** - temperature coefficient (0.00385 Ω/Ω/°C)
+**Rrtd** - RTD resistance at T°C
 
-| 
-| To calculate **pH** value is used Nernst equation:
+**Rmin** - RTD resistance at 0°C
 
-| |image3| **E** - voltage of the hydrogen electrode with unknown activity
-| **α** - zero point tolerance (±30 mV)
-| **T** - ambient temperature in °C
-| **n** - valence, number of charges on ion (1 at 25 °C)
-| **F** - Faraday constant (96485 coulombs/mol)
-| **R** - Avogadro's number (8314 mV-coulombs /°K mol)
-| **pHiso** - reference hydrogen ion concentration (7)
+**α** - temperature coefficient (0.00385 Ω/Ω/°C)
+
+To calculate **pH** value is used Nernst equation:
+
+|image2| **E** - voltage of the hydrogen electrode with unknown activity
+
+**α** - zero point tolerance (±30 mV)
+
+**T** - ambient temperature in °C
+
+**n** - valence, number of charges on ion (1 at 25 °C)
+
+**F** - Faraday constant (96485 coulombs/mol)
+
+**R** - Avogadro's number (8314 mV-coulombs /°K mol)
+
+**pHiso** - reference hydrogen ion concentration (7)
 
 Demo Requirements
 -----------------
@@ -102,7 +112,7 @@ Setting up the Hardware
 -  Make sure the switches are in the position indicated in the picture(**S2** in position **1(USB)**)\
 
 
-|image4|
+|image3|
 
 -  Connect the EVAL-CN0326-PMDZ to the SPI PMOD connector **P8** of the **EVAL-ADICUP3029** board.
 -  Plug in the USB cable from the PC to the **EVAL-ADICUP3029** base board via the USB connector.(**P10**)
@@ -143,19 +153,19 @@ The software for the **ADuCM3029_demo_cn0326** can be found here:
 Configuring the Software
 ------------------------
 
--  **ADC gain** - <fc #008000>AD7793_GAIN</fc> - set gain value for AD7793 converter (*AD7793.h*).
+-  **ADC gain** - AD7793_GAIN - set gain value for AD7793 converter (*AD7793.h*).
 
 ::
 
       #define AD7793_GAIN              AD7793_GAIN_1
 
--  **Excitation current** - <fc #008000>USE_IOUT2</fc> - select if you want to use bias current from the AIN3 channel: <fc #008080>YES</fc> or you want to use internal excitation current, 210 µA: <fc #008080>NO</fc>(*CN0326.h*).
+-  **Excitation current** - USE_IOUT2 - select if you want to use bias current from the AIN3 channel: YES or you want to use internal excitation current, 210 µA: NO(*CN0326.h*).
 
 ::
 
       #define  USE_IOUT2         NO
 
--  \*\* Zero point tolerance*\* - <fc #008000>TOLERANCE</fc> - tolerance used in Nernst equation (*CN0326.h*).
+-  \*\* Zero point tolerance*\* - TOLERANCE - tolerance used in Nernst equation (*CN0326.h*).
 
 ::
 
@@ -170,8 +180,6 @@ Serial Terminal Output
 -  In order to view the data, you must flash the program to the EVAL-ADICUP360.
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -182,8 +190,6 @@ Following is the UART configuration.
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-|
 
 -  The user must press the **<ENTER>** key to start the program.
 -  To get to the command menu the user must type **<help>** into the serial program.
@@ -226,9 +232,7 @@ For more detailed instructions on importing this application/demo example into t
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_front_cn0326_attached.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_1.png
-   :width: 250px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_3.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_3.png
    :width: 361px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_front_refrence_s2_position_for_usb.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_front_refrence_s2_position_for_usb.jpg
    :width: 800px

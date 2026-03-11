@@ -11,8 +11,10 @@ Setting Up Your Host PC
 
 The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-bit.
 
-| 
-| ==== Installing Required Packages ==== In order to build and deploy Linux to your ADSP-SC589-EZKIT or ADSP-SC589-MINI development board you will need to install the following packages on your host PC.
+Installing Required Packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to build and deploy Linux to your ADSP-SC589-EZKIT or ADSP-SC589-MINI development board you will need to install the following packages on your host PC.
 
 .. code:: bash
 
@@ -39,8 +41,10 @@ A TFTP server on the host is used to transfer images to the development board. I
    $ sudo chmod 777 /tftpboot
    $ sudo service tftpd-hpa restart
 
-| 
-| ==== Configure Minicom ==== In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
+Configure Minicom
+~~~~~~~~~~~~~~~~~
+
+In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
 
 On the host PC open a terminal and execute the following commands:
 
@@ -69,7 +73,7 @@ On the host PC open a terminal and execute the following commands:
         Set Serial Device to /dev/ttyUSB0
         Set Bps/Par/Bits to 115200 8N1
         Set Hardware Flow Control to No
-        
+
         Close the Serial port setup option by press Esc
     Select Save setup as dfl
     Select Exit
@@ -79,10 +83,12 @@ On the host PC open a terminal and execute the following commands:
    \ ``/dev/ttyUSB0`` might not correspond to the serial port of the board on every system. You can determine which ``/dev`` entry your board uses by running ``ls -l /dev/ttyUSB*`` twice, once when the serial port of the board is plugged in, and once when it isn't.
 
 
-| 
-| ==== Installing the Sources ==== The example is fully contained in the Analog Devices Yocto Linux github repositories.
+Installing the Sources
+~~~~~~~~~~~~~~~~~~~~~~
 
-To install the sources: 
+The example is fully contained in the Analog Devices Yocto Linux github repositories.
+
+To install the sources:
 
 .. code:: bash
 
@@ -97,11 +103,11 @@ To install the sources: 
       -m release-yocto-3.0.0.xml
    $ ./bin/repo sync
 
-| 
-| ===== Building the Image =====
+Building the Image
+==================
 
 Preparing the buildtool
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Yocto requires the environment to be configured before building is possible.  A setup-environment script in the griffin folder contains all the required environment settings for your build target. Source the setup script for your board:
 
@@ -122,8 +128,10 @@ Sourcing the script will configure your build environment and create a build fol
    Note that the build environment needs to be sourced once only before building.  If later working in a different terminal the setup-environment script should be sourced again.  If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
 
 
-| 
-| ==== Building the example ==== You can build two different versions of the root file system; minimal and full. To build the example images invoke bitbake from within the build directory created previously.
+Building the example
+--------------------
+
+You can build two different versions of the root file system; minimal and full. To build the example images invoke bitbake from within the build directory created previously.
 
 .. code:: bash
 
@@ -138,7 +146,7 @@ When the build completes you will see a warning that the ELF binary has reloca
 
 
 Building the SDK
-~~~~~~~~~~~~~~~~
+----------------
 
 The SDK will provide you with the cross toolchain needed to develop application for the target board, alongside various miscellaneous tools. Notably, it will provide you with OpenOCD and GDB, which you can use to run and flash U-Boot on the board.
 
@@ -167,15 +175,15 @@ When the build has completed you will find a set of files in the <BUILD_DIR>/tmp
 The ``adi-distro-glibc-glibc-x86_64-adsp-sc5xx-minimal-cortexa5t2hf-neon-adsp-sc589-ezkit-toolchain-3.0.0.sh`` or ``adi-distro-glibc-glibc-x86_64-adsp-sc5xx-minimal-cortexa5t2hf-neon-adsp-sc589-mini-toolchain-3.0.0.sh`` is a self-extracting archive containing the SDK.
 
 Installing the SDK
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Invoke the self-extracting archive. It will default to installing to ``/opt/adi-distro/3.0.0`` but gives you the option to select your own install folder during the installation. For the minimal image on SC589-EZKIT
 
 .. code:: bash
 
    $ ./adi-distro-glibc-glibc-x86_64-adsp-sc5xx-minimal-cortexa5t2hf-neon-adsp-sc589-ezkit-toolchain-3.0.0.sh
-   Analog Devices Inc Reference Distro (glibc) SDK installer version 3.0.0
-   =======================================================================
+   **Analog Devices Inc Reference Distro (glibc) SDK installer version 3.0.0**
+
    Enter target directory for SDK (default: /opt/adi-distro-glibc/3.0.0):
    You are about to install the SDK to "/opt/adi-distro-glibc/3.0.0". Proceed [Y/n]? y
    Extracting SDK................................................................................................................done
@@ -187,7 +195,7 @@ Invoke the self-extracting archive. It will default to installing to ``/opt/adi-
 Your SDK is now installed.
 
 Running U-Boot on the Board for the first time
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------
 
 .. note::
 
@@ -250,9 +258,9 @@ $ sdk_usr=/opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/ $
 .. code:: bash
 
        Open On-Chip Debugger (PKGVERSION)  OpenOCD 0.10.0-g40378454d (2023-04-05-10:35)
-       Licensed under GNU GPL v2 
+       Licensed under GNU GPL v2
        Report bugs to <processor.tools.support@analog.com>
-       adapter speed: 1000 kHz 
+       adapter speed: 1000 kHz
        Info : transports supported by the debug adapter: "jtag", "swd"
        Info : auto-select transport "jtag"
        halt and restart using CTI
@@ -271,14 +279,34 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
    ;''**Terminal3: GDB (sc589-ezkit)**''
    : <code bash>
 
-$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc589-ezkit.elf ... Reading symbols from u-boot-spl-sc589-ezkit.elf...done. (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9f2c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089f2c Loading section .dtb.init.rodata, size 0x12c0 lma 0x2008b0d0 Loading section .data, size 0x514 lma 0x2008c390 Loading section .u_boot_list, size 0xa50 lma 0x2008c8a4 Start address 0x20080000, load size 53992 Transfer rate: 30 KB/sec, 7713 bytes/write. (gdb) c Continuing. ^C Program received signal SIGINT, Interrupt. </code>
+$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc589-ezkit.elf ... Reading symbols from u-boot-spl-sc589-ezkit.elf...done. (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9f2c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089f2c Loading section .dtb.init.rodata, size 0x12c0 lma 0x2008b0d0 Loading section .data, size 0x514 lma 0x2008c390 Loading section .u_boot_list, size 0xa50 lma 0x2008c8a4 Start address 0x20080000, load size 53992 Transfer rate: 30 KB/sec, 7713 bytes/write. (gdb) c Continuing.
+
++---+
+
+
+| C |
+
++===+
++---+
+
+Program received signal SIGINT, Interrupt. </code>
 
 ::
 
    ;''**Terminal3: GDB (sc589-mini)**''
    : <code bash>
 
-$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc589-mini.elf ... Reading symbols from u-boot-spl-sc589-mini.elf...done. (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9f2c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089f2c Loading section .dtb.init.rodata, size 0x12c0 lma 0x2008b0d0 Loading section .data, size 0x514 lma 0x2008c390 Loading section .u_boot_list, size 0xa50 lma 0x2008c8a4 Start address 0x20080000, load size 53992 Transfer rate: 30 KB/sec, 7713 bytes/write. (gdb) c Continuing. ^C Program received signal SIGINT, Interrupt. </code>
+$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc589-mini.elf ... Reading symbols from u-boot-spl-sc589-mini.elf...done. (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9f2c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089f2c Loading section .dtb.init.rodata, size 0x12c0 lma 0x2008b0d0 Loading section .data, size 0x514 lma 0x2008c390 Loading section .u_boot_list, size 0xa50 lma 0x2008c8a4 Start address 0x20080000, load size 53992 Transfer rate: 30 KB/sec, 7713 bytes/write. (gdb) c Continuing.
+
++---+
+
+
+| C |
+
++===+
++---+
+
+Program received signal SIGINT, Interrupt. </code>
 
 You will see a message on Terminal 1 running minicom, informing you that you can now load U-Boot Proper
 
@@ -363,14 +391,15 @@ U-Boot 2020.10 (Mar 16 2023 - 13:07:24 +0000)
 
 CPU: ADSP ADSP-SC589-0.1 (spi flash boot) Detected Revision: 1.1 Model: ADI sc589-mini DRAM: 224 MiB WDT: Not found! MMC: mmc0@31010000: 0 Loading Environment from SPIFlash... SF: Detected w25q128 with page size 256 Bytes, erase size 4 KiB, total 16 MiB OK In: serial@0x31003000 Out: serial@0x31003000 Err: serial@0x31003000 Net: eth0: eth0 Hit any key to stop autoboot: 0 => </code>
 
-| 
-| == Flash U-Boot to SPI Flash ==
-| In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot loader files (``stage1-boot.ldr`` & ``stage2-boot.ldr``) on TFTP.
+Flash U-Boot to SPI Flash
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot loader files (``stage1-boot.ldr`` & ``stage2-boot.ldr``) on TFTP.
 
 ::
 
    ;''**Terminal1: minicom**''
-   :  
+   :
 
 .. code:: bash
 
@@ -445,7 +474,7 @@ In order to store the ``serverip`` and the DHCP or otherwise assigned IP address
    Saving Environment to SPIFlash... Erasing SPI flash...Writing to SPI flash...done
    OK
 
-   | At this point the U-Boot binary is stored in flash. You can now disconnect the ICE-1000 or ICE-2000 from the development board and make sure to switch the BMODE to position 1. You will only need to reconnect this if your board fails to boot and you need to re-follow these instructions.
+At this point the U-Boot binary is stored in flash. You can now disconnect the ICE-1000 or ICE-2000 from the development board and make sure to switch the BMODE to position 1. You will only need to reconnect this if your board fails to boot and you need to re-follow these instructions.
 
 Booting Linux
 -------------
@@ -488,7 +517,7 @@ If your network **does NOT support** DHCP, in the U-Boot console configure the b
    => setenv ipaddr <IPADDR>
    => edit start_update_spi
    => edit: <remove "run init_ethernet;" from here> sf probe ${sfdev}; sf erase 0 ${sfsize}; run update_spi_uboot; run update_spi_fit; run update_spi_rfs; sleep 3; saveenv
-   => run update_spi 
+   => run update_spi
 
 After removing "run init_ethernet;" from update_spi, issue the "run update_spi" command as above.
 
@@ -532,12 +561,12 @@ Now, by running ``update_spi``, the minimal image kernel and root filesystem wil
    TFTP from server 10.37.33.116; our IP address is 10.37.33.113
    Filename 'fitImage'.
    Load address: 0x82000000
-   Loading: #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
+   **Loading: #################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
             #################################################################
 
             5 MiB/s
@@ -551,28 +580,28 @@ Now, by running ``update_spi``, the minimal image kernel and root filesystem wil
    TFTP from server 10.37.33.116; our IP address is 10.37.33.113
    Filename 'adsp-sc5xx-minimal-adsp-sc589-mini.jffs2'.
    Load address: 0x82000000
-   Loading: #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
-            #################################################################
+   **Loading: #################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
+            **#################################################################**
+
             #####################################################
             5 MiB/s
    done
@@ -623,7 +652,7 @@ The U-Boot image, root filesystem and Linux kernel are now stored in SPI Flash. 
 
    adsp-sc589-mini login: root
    Password: adi
-   root@adsp-sc589-mini:~# 
+   root@adsp-sc589-mini:~#
 
 The username is **root** and the password is **adi**.
 
@@ -654,9 +683,10 @@ Format the SD card to EXT filesystem
 
    $ sudo mkfs.ext2 /dev/sdb1
 
-|
+Writing the kernel and file system to the SD Card
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| === Writing the kernel and file system to the SD Card === Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card. To allow the choice of booting using ramboot and sdcard boot we copy the ramboot image to the SD card as well as extract the minimal image to the SD card.
+Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card. To allow the choice of booting using ramboot and sdcard boot we copy the ramboot image to the SD card as well as extract the minimal image to the SD card.
 
 .. code:: bash
 
@@ -684,19 +714,18 @@ or
 
 The file system and kernel image are now installed on to the SD Card. The SD Card can now be safely removed from the Host PC.
 
-| 
-| === Booting Linux from the SD card === Insert the SD card to target board, and reset the board and enter into U-Boot
+Booting Linux from the SD card
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Insert the SD card to target board, and reset the board and enter into U-Boot
 
 .. code:: bash
 
    => run sdcardboot
-   or 
+   or
    => run ramboot_emmc
 
 The linux kernel will then boot up using the file system stored in SD card.
-
-
-| 
 
 Booting Linux from USB Mass Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -750,8 +779,6 @@ or for SC598-mini
    $ sudo cp tmp/deploy/images/adsp-sc589-mini/fitImage ~/mnt/boot/
    $ sudo umount ~/mnt
 
-.. _booting-linux-from-usb-mass-storage-1:
-
 Booting Linux from USB Mass Storage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -802,9 +829,10 @@ And type to boot
 
 Now the rootfs is set to your USB stick and amount of space equals of size of partition on USB stick.
 
-|
+Booting Linux Using TFTP
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-| ==== Booting Linux Using TFTP ==== In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc589>` and a copy of the kernel image should be copied into the **/tftpboot** directory.
+In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc589>` and a copy of the kernel image should be copied into the **/tftpboot** directory.
 
 .. code:: bash
 
@@ -816,8 +844,10 @@ or
 
    $ cp tmp/deploy/images/adsp-sc589-mini/fitImage /tftpboot
 
-| 
-| === NFS Boot === For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
+NFS Boot
+^^^^^^^^
+
+For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
 
 .. code:: bash
 
@@ -856,8 +886,9 @@ The output will indicate that the server is active, i.e.
 
 If it's reported as inactive, wait a few moments and check the status again.
 
-| The root filesystem should then be copied to /romfs.
-| If you are using the ADSP-SC589-EZKIT with the full image (you ran 'bitbake adsp-sc5xx-full'):
+The root filesystem should then be copied to /romfs.
+
+If you are using the ADSP-SC589-EZKIT with the full image (you ran 'bitbake adsp-sc5xx-full'):
 
 .. code:: bash
 
@@ -881,8 +912,10 @@ Or if you are using the ADSP-SC589-MINI with the minimal image (you ran 'bitbake
 
    $ sudo tar -xf tmp/deploy/images/adsp-sc589-mini/adsp-sc5xx-minimal-adsp-sc589-mini.tar.xz -C /romfs
 
-| 
-| === Booting into Linux from TFTP === Next, on the target, from u-boot, run the following command:
+Booting into Linux from TFTP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Next, on the target, from u-boot, run the following command:
 
 .. code:: bash
 

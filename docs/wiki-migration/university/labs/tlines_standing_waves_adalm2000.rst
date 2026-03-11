@@ -4,8 +4,7 @@ Activity: Transmission Lines and Standing Waves
 Objective:
 ----------
 
-| The objective of this exercise is to develop a basic understanding of the operation of an electrical transmission line and to explore the effects of "standing waves" in such a line. Transmission lines can be a daunting subject when they are first encountered. But this exercise will draw some analogies to acoustic transmission lines, examples of which are wind instruments (trombone, pipe organ, jug band jug), and even an echo along a hallway with a wall at one end. If you clap in a hallway, you may hear an echo of your own clap a perceptible time later. What if you walk closer to the closed end so that the echo is sooner and sooner after the incident clap? What do you think would happen if the reflected wave encountered the forward wave before it had ended? You would end up with a "standing wave". It is possible to set up such an experiment in a controlled and extreme way, with a 100-watt "clap" directed down a 2m long, 10cm diameter "hallway", as shown in this video:
-|
+The objective of this exercise is to develop a basic understanding of the operation of an electrical transmission line and to explore the effects of "standing waves" in such a line. Transmission lines can be a daunting subject when they are first encountered. But this exercise will draw some analogies to acoustic transmission lines, examples of which are wind instruments (trombone, pipe organ, jug band jug), and even an echo along a hallway with a wall at one end. If you clap in a hallway, you may hear an echo of your own clap a perceptible time later. What if you walk closer to the closed end so that the echo is sooner and sooner after the incident clap? What do you think would happen if the reflected wave encountered the forward wave before it had ended? You would end up with a "standing wave". It is possible to set up such an experiment in a controlled and extreme way, with a 100-watt "clap" directed down a 2m long, 10cm diameter "hallway", as shown in this video:
 
 .. container:: centeralign
 
@@ -22,67 +21,69 @@ Background
 Transmission Lines – General Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| A transmission line is defined as a system of conductors (wires, waveguides, coaxial cables), suitable for conducting electric power signals between two or more terminals. [McGraw-Hill Dictionary of Scientific and Technical Terms].
-| To send an electrical signal to a distant load, two wires are required. (The wires need not be symmetrical - in fact one wire can be the Earth itself.) Since two conductors are, by definition, a capacitor, this implies that each section of a transmission line has some capacitance. On the other hand, as an inductor is defined essentially as a loop of wire, each section of the line also has an inductance. In reality, each "section" of the line can be thoght of as an infinitesimally small unit capacitance and inductance. A "lumped" model of a transmission line can also be constructed with discrete inductors and capacitors as shown in Figure 1. (Naturally, the model is more accurate when a large number of smaller capacitors and inductors are used - at the expense of complexity and size.) Suppose a constant DC voltage is suddenly applied to one end of the transmission line. The capacitance and inductance prevent the signal from travelling down the line instantaneously.
-| |image1|
+A transmission line is defined as a system of conductors (wires, waveguides, coaxial cables), suitable for conducting electric power signals between two or more terminals. [McGraw-Hill Dictionary of Scientific and Technical Terms].
+
+To send an electrical signal to a distant load, two wires are required. (The wires need not be symmetrical - in fact one wire can be the Earth itself.) Since two conductors are, by definition, a capacitor, this implies that each section of a transmission line has some capacitance. On the other hand, as an inductor is defined essentially as a loop of wire, each section of the line also has an inductance. In reality, each "section" of the line can be thoght of as an infinitesimally small unit capacitance and inductance. A "lumped" model of a transmission line can also be constructed with discrete inductors and capacitors as shown in Figure 1. (Naturally, the model is more accurate when a large number of smaller capacitors and inductors are used - at the expense of complexity and size.) Suppose a constant DC voltage is suddenly applied to one end of the transmission line. The capacitance and inductance prevent the signal from travelling down the line instantaneously.
+
+.. image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/simple_lumped_tline.png
+   :align: center
+   :width: 1000px
 
 .. container:: centeralign
 
    **Figure 1.** Lumped Element equivalent of a transmission line
 
 
-| Voltage applied between two conductors creates an electric field between them. Equation 1 implies that the current drawn from the voltage source would be proportional to the voltage’s rate of change over time. In consonance with said equation, an instant rise in applied voltage, results in an infinite charging current. Nonetheless, the current drawn will not be infinite because of the series impedance, due to line inductance. Each wire from our pair develops a magnetic field as it carries charging current for the capacitance between the wires, dropping voltage according to equation 2. This voltage drop limits the voltage rate of change across the distributed capacitance, preventing the current from ever reaching an infinite magnitude. Thus, the wires are no longer simple conductors - they are themselves a circuit component called a transmission line, with their own characteristics. When voltage is suddenly applied, both a current wave and a voltage wave propagate along the line’s length at a significant fraction of the speed of light.
-| Equation 1:
+Voltage applied between two conductors creates an electric field between them. Equation 1 implies that the current drawn from the voltage source would be proportional to the voltage’s rate of change over time. In consonance with said equation, an instant rise in applied voltage, results in an infinite charging current. Nonetheless, the current drawn will not be infinite because of the series impedance, due to line inductance. Each wire from our pair develops a magnetic field as it carries charging current for the capacitance between the wires, dropping voltage according to equation 2. This voltage drop limits the voltage rate of change across the distributed capacitance, preventing the current from ever reaching an infinite magnitude. Thus, the wires are no longer simple conductors - they are themselves a circuit component called a transmission line, with their own characteristics. When voltage is suddenly applied, both a current wave and a voltage wave propagate along the line’s length at a significant fraction of the speed of light.
+
+Equation 1:
 
 .. container:: centeralign
 
    :math:`\displaystyle i=C\frac{dv}{dt}`
 
 
-| Where:
-| i is the instantaneous current through the capacitor;
-| C is the capacitance in Farads;
-| :math:`\displaystyle \frac{dv}{dt}` is the instantaneous rate of voltage change, volts per second.
-| Equation 2:
+Where: i is the instantaneous current through the capacitor; C is the capacitance in Farads; :math:`\displaystyle \frac{dv}{dt}` is the instantaneous rate of voltage change, volts per second.
+
+Equation 2:
 
 .. container:: centeralign
 
    :math:`\displaystyle v=L\frac{di}{dt}`
 
 
-| Where:
-| v is the instantaneous voltage across the inductor;
-| L is the inductance in Henrys;
-| :math:`\displaystyle \frac{di}{dt}` is the instantaneous rate of current change, amps per second.
-| The physical construction of a transmission line varies widely depending on the application. There are several different types of electrical transmission lines such as coaxial line (figure 2), two-wire line (figure 3), parallel-plate line, strip line, microstrip line, coplanar waveguide.
+Where: v is the instantaneous voltage across the inductor; L is the inductance in Henrys; :math:`\displaystyle \frac{di}{dt}` is the instantaneous rate of current change, amps per second.
 
-|image2|
+The physical construction of a transmission line varies widely depending on the application. There are several different types of electrical transmission lines such as coaxial line (figure 2), two-wire line (figure 3), parallel-plate line, strip line, microstrip line, coplanar waveguide.
+
+
+|image1|
 
 .. container:: centeralign
 
    **Figure 2.** Coaxial line
 
 
-   |image3|
+   |image2|
 
 .. container:: centeralign
 
    **Figure 3.** Two-wire line
 
 
-| A common example of a 2-wire transmission line is unshielded twisted pair (UTP) ethernet cable everyone is familiar with. If the twisted pair is surrounded by a solid dielectric (or "shield"), the line becomes a shielded pair transmission line (STP). Both cables are shown in figure 4. When using UTP transmission lines, several parameters need to be considered: attenuation (amount of loss in signal’s strength as it travels down a wire), crosstalk (unwanted coupling caused by overlapping electric and magnetic fields), near-end crosstalk (measure of level of signal coupling within a cable). A visual representation of the latter is depicted in figure 5. There are a couple of advantages to using the shielded pair cable, such as:
+A common example of a 2-wire transmission line is unshielded twisted pair (UTP) ethernet cable everyone is familiar with. If the twisted pair is surrounded by a solid dielectric (or "shield"), the line becomes a shielded pair transmission line (STP). Both cables are shown in figure 4. When using UTP transmission lines, several parameters need to be considered: attenuation (amount of loss in signal’s strength as it travels down a wire), crosstalk (unwanted coupling caused by overlapping electric and magnetic fields), near-end crosstalk (measure of level of signal coupling within a cable). A visual representation of the latter is depicted in figure 5. There are a couple of advantages to using the shielded pair cable, such as:
 
 -  Conductors are contained within in a copper braid shield, which isolates from external noise and prevents radiating and interfering with other systems.
 -  Near-end crosstalk between pairs in a multi-pair cable is reduced.
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
    **Figure 4:** UTP and STP cables
 
 
-   |image5|
+   |image4|
 
 .. container:: centeralign
 
@@ -94,43 +95,34 @@ Characteristic Impedance
 
 Characteristic/ natural impedance refers to the equivalent resistance of a transmission line if it were infinitely long, owing to distributed capacitance and inductance, as the voltage and current waves travel along its length at a propagation velocity equal to some large fraction of the speed of light (3.0\*10^8 m/s) Suppose the spacing between the two conductors is expanded. Under this condition, the distributed capacitance will decrease, while the distributed inductance will increase, as there is less cancelation between two opposing magnetic fields. Naturally, by bringing the capacitor plates (the two conductors) closer together, the antagonistic effect is obtained: increased parallel capacitance and decreased series inductance. Hence, one can note that the characteristic impedance of a transmission line increases as there is greater space between conductors. To calculate the natural impedance of a given transmission line, with known parameters, the following formula shown in equation 3 is to be used. This shows that characteristic impedance is purely a function of the capacitance and inductance distributed along the lines length and it would exist even if the dielectric were perfect (infinite parallel resistance) and the wires superconducting (zero series resistance).
 
-
-| Equation 3:
-|
+Equation 3:
 
 .. container:: centeralign
 
    :math:`\displaystyle Z_{0} = sqrt\frac{L}{C}`
 
 
-where :math:`Z_{0}` characteristic impedance of line;
-| L – inductance per unit length of line;
-| C – capacitance per unit length of line.
-| In an actual transmission line, the inductance and capacitance, and therefore the characteristic impedance, are functions of the geometry. The characteristic impedance of a parallel pair transmission line is shown in Equation 4, and the characteristic impedance of a coaxial transmission line is shown in Equation 5.
-| Equation 4:
-|
+where :math:`Z_{0}` characteristic impedance of line; L – inductance per unit length of line; C – capacitance per unit length of line.
+
+In an actual transmission line, the inductance and capacitance, and therefore the characteristic impedance, are functions of the geometry. The characteristic impedance of a parallel pair transmission line is shown in Equation 4, and the characteristic impedance of a coaxial transmission line is shown in Equation 5.
+
+Equation 4:
 
 .. container:: centeralign
 
    :math:`Z_{0} = (276/sqrtk) \times log(d/r)`
 
 
-Where:
-| k is the relative permittivity of the dielectric (unity for air)
-| d is the center-to-center distance between conductors in mm
-| r is the radius of the conductors in mm
-| Equation 5:
-|
+Where: k is the relative permittivity of the dielectric (unity for air) d is the center-to-center distance between conductors in mm r is the radius of the conductors in mm
+
+Equation 5:
 
 .. container:: centeralign
 
    :math:`Z_{0} = (138/sqrtk) \times log(d1/d2)`
 
 
-Where:
-| k is the relative permittivity of the dielectric (unity for air)
-| d1 is the inside diameter of the outer conductor in mm
-| d2 is the outside diameter of the inner conductor in mm
+Where: k is the relative permittivity of the dielectric (unity for air) d1 is the inside diameter of the outer conductor in mm d2 is the outside diameter of the inner conductor in mm
 
 Incident and Reflected Waves
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,22 +145,22 @@ Wavelength and Transmission Line Length
 
 The wavelength of a signal is defined as the distance between successive crests (or troughgs) of a wave. Equation 6 shows the relationship between wavelength, frequency, and velocity.
 
-
-| Equation 6:
-|
+Equation 6:
 
 .. container:: centeralign
 
    :math:`v=lambdaf`
 
 
-Where: v is the velocity of propagation
-| f is the signal frequency
-| λ is the wavelength
-| Whether a conductor can be considered a transmission line or not depends on the frequency content of the signal and the propagation speed along the conductor. One generally accepted rule of thumb is that if a transmission line is more than about 1/10 of a wavelength, then propagation effects should be considered. Cat-6 Ethernet cable has a typical velocity factor of about 0.65, or 1.95e8 meters per second. A 2m cable thus represents 1 wavelength at 97.5MHz. This is qualitatively a "high" frequency - it's well above audio, and in the middle of the FM broadcast band. But remember the rule of thumb - at 97MHz the 2m cable is definitely a transmission line. But transmission line effects - reflections and standing waves that can potentially corrupt communications - will begin to take effect around 9.7MHz!
-| 9.7MHz may still sound "fast", but consider a common situation where one microcontroller (such as an Arduino or Raspberry Pi) is communicating with another. 2 meters is "not too far" away, so perhaps the 2m Ethernet cable would work for typical UART Baud rates - 9600 Baud, 115200 Baud, or even a bit faster.
-| But other "medium speed" protocols can be considerably faster - Serial Peripheral Interface (SPI) clock rates of 10MHz are typically supported even on "slow" arduino processors, and can operate up to 100MHz.
-| But even at these rates - there is a BIG catch - from a transmission line standpoint, the **Baud rate** or SPI clock **frequency** is IRRELEVANT! A single rising clock edge can be approximated by a `Heaviside Step Function <https://en.wikipedia.org/wiki/Heaviside_step_function>`_, which has **infinite** frequency content(!). This means that even the shortest cable, or circuit board trace, must be treated as a transmission line. But in reality, the microcontroller's output pin can't drive an infinitely fast rising or falling edge. But it is indeed the **edge rate** of such signals that must be considered in order to keep reflections to an acceptable level.
+Where: v is the velocity of propagation f is the signal frequency λ is the wavelength
+
+Whether a conductor can be considered a transmission line or not depends on the frequency content of the signal and the propagation speed along the conductor. One generally accepted rule of thumb is that if a transmission line is more than about 1/10 of a wavelength, then propagation effects should be considered. Cat-6 Ethernet cable has a typical velocity factor of about 0.65, or 1.95e8 meters per second. A 2m cable thus represents 1 wavelength at 97.5MHz. This is qualitatively a "high" frequency - it's well above audio, and in the middle of the FM broadcast band. But remember the rule of thumb - at 97MHz the 2m cable is definitely a transmission line. But transmission line effects - reflections and standing waves that can potentially corrupt communications - will begin to take effect around 9.7MHz!
+
+9.7MHz may still sound "fast", but consider a common situation where one microcontroller (such as an Arduino or Raspberry Pi) is communicating with another. 2 meters is "not too far" away, so perhaps the 2m Ethernet cable would work for typical UART Baud rates - 9600 Baud, 115200 Baud, or even a bit faster.
+
+But other "medium speed" protocols can be considerably faster - Serial Peripheral Interface (SPI) clock rates of 10MHz are typically supported even on "slow" arduino processors, and can operate up to 100MHz.
+
+But even at these rates - there is a BIG catch - from a transmission line standpoint, the **Baud rate** or SPI clock **frequency** is IRRELEVANT! A single rising clock edge can be approximated by a `Heaviside Step Function <https://en.wikipedia.org/wiki/Heaviside_step_function>`_, which has **infinite** frequency content(!). This means that even the shortest cable, or circuit board trace, must be treated as a transmission line. But in reality, the microcontroller's output pin can't drive an infinitely fast rising or falling edge. But it is indeed the **edge rate** of such signals that must be considered in order to keep reflections to an acceptable level.
 
 Standing Waves and Resonance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,7 +168,7 @@ Standing Waves and Resonance
 Let there be a transmission line with a mismatch in impedance between the line and the load. Reflections which occur will add or subtract with the oncoming incident waveform, producing standing (stationary) waves. A standing wave is obtained by adding the reflected wave to the incident wave, as shown in figure 7. Though it oscillates in instantaneous magnitude, a standing wave does not propagate along the wire’s length. When analyzing standing waves, two categories of points arise: a node – a point on a standing wave where the amplitude is minimum, and an antinode – a point on a standing wave where the amplitude is maximum. Nodes remain fixed, while the position of the antinodes may vary. The standing wave pattern is given by alternating the nodal and anti-nodal positions. A method of expressing the magnitude of the effect that standing waves have on our transmission line is a as a ratio of maximum amplitude (antinode) to minimum amplitude(node), for either voltage or current. This is known as the standing wave ratio (SWR). A perfectly terminated transmission line implies SWR=1. Certain frequency values will determine a correlation between the nodes and antinodes, which results in resonance. Should the maximum values of amplitude of the standing waves be exceedingly high, the transmission line may be subject to deterioration. Voltage antinodes may degrade the insulation between conductors, while current antinodes may cause excess heat in the conductors.
 
 
-|image6|
+|image5|
 
 .. container:: centeralign
 
@@ -188,8 +180,7 @@ Although the concepts presented so far may seem abstract and difficult to envisi
 A Transmission Line Playground
 ------------------------------
 
-| A very flexible "transmission line plaground" LTspice simulation can be used to develop intuition about the operation of transmission lines, standing waves, and the differences between a transmission line and a model constructed of lumped elements:
-|
+A very flexible "transmission line plaground" LTspice simulation can be used to develop intuition about the operation of transmission lines, standing waves, and the differences between a transmission line and a model constructed of lumped elements:
 
 .. admonition:: Download
    :class: download
@@ -197,17 +188,22 @@ A Transmission Line Playground
    :git-education_tools:`Standing Waves Lab LTspice files <m2k/ltspice/standing_waves_and_tlines>`
 
 
-| Figure 8 shows an overview of the simulation schematic. Note that two sources are shown - connect V2 (sinewave source) via jumper X1 for AC analysis or time domain analysis with sinusoidal excitation. For step response, move X1 to connect V1 to the circuit. Note that all component values are parameterized, and are calculated depending on what the known parameters are in the "Parameter Setup" section. Make sure to set one column as SPICE directive and the other as comment (right-click, escape to bring up the options.)
+Figure 8 shows an overview of the simulation schematic. Note that two sources are shown - connect V2 (sinewave source) via jumper X1 for AC analysis or time domain analysis with sinusoidal excitation. For step response, move X1 to connect V1 to the circuit. Note that all component values are parameterized, and are calculated depending on what the known parameters are in the "Parameter Setup" section. Make sure to set one column as SPICE directive and the other as comment (right-click, escape to bring up the options.)
 
-| |image7|
+
+
+|image6|
 
 .. container:: centeralign
 
    **Figure 8.** Transmission Line Plaground Overview
 
 
-| Figure 9 shows the step response at the far end of the transmission line and lumped element model. The 669 microsecond propagation delay is clearly visible in the vfar_ideal (green) trace. The "wiggles" in the other traces are due to the non-ideal nature of the lumped model. Note that intermediate points along the lumped model can be probed as well, giving a sense of the propagation of the signal. (Similarly, the continuous transmission line could be broken up into 20 elements of t/20 length such that intermediate points can be observed.)
-| |image8|
+Figure 9 shows the step response at the far end of the transmission line and lumped element model. The 669 microsecond propagation delay is clearly visible in the vfar_ideal (green) trace. The "wiggles" in the other traces are due to the non-ideal nature of the lumped model. Note that intermediate points along the lumped model can be probed as well, giving a sense of the propagation of the signal. (Similarly, the continuous transmission line could be broken up into 20 elements of t/20 length such that intermediate points can be observed.)
+
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -218,7 +214,7 @@ Figure 10 shows the frequency-domain response at the near (driven) end of the li
 
 
 
-|image9|
+|image8|
 
 .. container:: centeralign
 
@@ -258,7 +254,7 @@ Directions
 The breadboard connections are as shown in figure 11 below. The waveform generator W1 drives the speaker. The 100Ω resistor, R1, limits the speaker’s output, so that it is not too loud. The capacitor, C1, is meant to ensure that the active learning module input is 0 on average, as a large offset can result in out of range data. The input wire 1+ is connected to the negative terminal of the capacitor C1, while 1- and the negative terminal of the speaker connect to ground. The microphone is powered by the positive power supply pin, applied voltage passing through a 20kΩ resistor, R2. A second capacitor, C2, with the same purpose is added in parallel with R2 and the positive terminal of C2 leads to 2+ analog input on the active learning module. The negative terminals of both the microphone and the analog input (2-) connect to ground.
 
 
-|image10|
+|image9|
 
 .. container:: centeralign
 
@@ -269,7 +265,7 @@ Hardware set-up:
 
 
 
-|image11|
+|image10|
 
 .. container:: centeralign
 
@@ -281,7 +277,7 @@ Procedure:
 Build the circuit as indicated. Place the speaker facing the ceiling and try to set the microphone above it, as indicated in figure 13 below.
 
 
-|image12|
+|image11|
 
 .. container:: centeralign
 
@@ -292,7 +288,7 @@ Afterwards, power the circuit by setting the positive power supply pin to 5 Volt
 
 
 
-|image13|
+|image12|
 
 .. container:: centeralign
 
@@ -304,7 +300,7 @@ Next, go to the Network Analyzer and set the parameters to the following values:
 Set channel 1 to be the reference and run the Network Analyzer, to obtain the speaker’s response in free air, without any constraints imposed by our improvised acoustical transmission lines. The output should be comparable to the plot shown in figure 15.
 
 
-|image14|
+|image13|
 
 .. container:: centeralign
 
@@ -315,7 +311,7 @@ Then, place the chip can metal side up over the speaker-mic ensemble, covering i
 
 
 
-|image15|
+|image14|
 
 .. container:: centeralign
 
@@ -327,7 +323,7 @@ Then, place the chip can metal side up over the speaker-mic ensemble, covering i
    Add in some diagrams showing the resonances in the Pringles can. Could even be LTspice sinewaves superimposed!
 
 
-   |image16|
+   |image15|
 
 .. container:: centeralign
 
@@ -338,7 +334,7 @@ As indicated on the plot, the first null is at about 390 Hz. Keep in mind that o
 
 
 
-|image17|
+|image16|
 
 .. container:: centeralign
 
@@ -349,14 +345,14 @@ For the next step, get a can opener and remove the metallic bottom side of the c
 
 
 
-|image18|
+|image17|
 
 .. container:: centeralign
 
    **Figure 19.** Speaker’s response with open Pringles tube
 
 
-   |image19|
+   |image18|
 
 .. container:: centeralign
 
@@ -380,41 +376,39 @@ The :doc:`Artificial Transmission Lines - ADALM1000 </wiki-migration/university/
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
 .. |youtube>QzigJ1URWlI| image:: https://wiki.analog.com/_media/youtube>QzigJ1URWlI
-.. |image1| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/simple_lumped_tline.png
-   :width: 1000px
-.. |image2| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/coax_figure.png
+.. |image1| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/coax_figure.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/parallel_tline_figure.png
+.. |image2| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/parallel_tline_figure.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/utp_cable.png
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/utp_cable.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/near_end_crosstalk.png
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/near_end_crosstalk.png
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/standing_wave_generation.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/standing_wave_generation.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/tline_playground_schematic.png
+.. |image6| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/tline_playground_schematic.png
    :width: 800px
-.. |image8| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/step_function_time_domain.png
+.. |image7| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/step_function_time_domain.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/freq_domain.png
+.. |image8| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/freq_domain.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/speaker_mic_schematic.png
+.. |image9| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/speaker_mic_schematic.png
    :width: 200px
-.. |image11| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/breadboard_circuit.png
+.. |image10| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/breadboard_circuit.png
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/speaker_mic_photo.png
+.. |image11| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/speaker_mic_photo.png
    :width: 200px
-.. |image13| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_speaker_mic_signs_of_life.png
+.. |image12| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_speaker_mic_signs_of_life.png
    :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_speaker_mic_free_air_response.png
+.. |image13| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_speaker_mic_free_air_response.png
    :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/Pringles_closed_Scopy.png
+.. |image14| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/Pringles_closed_Scopy.png
    :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/ltspice_closed_tube.png
+.. |image15| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/ltspice_closed_tube.png
    :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/can_measurement.png
+.. |image16| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/can_measurement.png
    :width: 400px
-.. |image18| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_open_tube.png
+.. |image17| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_open_tube.png
    :width: 400px
-.. |image19| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/ltspice_open_tube.png
+.. |image18| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/ltspice_open_tube.png
    :width: 400px

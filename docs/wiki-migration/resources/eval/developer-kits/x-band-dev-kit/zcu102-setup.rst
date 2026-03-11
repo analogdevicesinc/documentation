@@ -12,7 +12,7 @@ SD Card Setup
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 -  Follow the instructions on one of the below pages to install the |latest Linux kernel| on the SD card.
 
@@ -36,8 +36,7 @@ SD Card Setup
    \ **If your computer encrypts removable media for security purposes, it's easiest to use a personal computer to do this step.**\
 
 
-| 
-| `ZCU102 Configuration Files, 100MHz VCXO <https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_configuration_files_100mhz_vcxo.zip>`_
+`ZCU102 Configuration Files, 100MHz VCXO <https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_configuration_files_100mhz_vcxo.zip>`_
 
 `ZCU102 Configuration Files, 100MHz VCXO, AD9081 Direct Clock <https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_configuration_files_100mhz_vcxo_ad9081_direct_clk.zip>`_
 
@@ -46,8 +45,8 @@ SD Card Setup
    </details>
 
 
-| 
-| ===== ZCU102 Configuration =====
+ZCU102 Configuration
+--------------------
 
 Boot from SD Card
 ~~~~~~~~~~~~~~~~~
@@ -56,7 +55,7 @@ Boot from SD Card
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 To configure the ZCU102 to boot from the SD card, set SW6 as shown below. SW6 is halfway between the SD card input and the vertical SMA connectors on the ZCU102.
 
@@ -68,12 +67,14 @@ To configure the ZCU102 to boot from the SD card, set SW6 as shown below. SW6 is
    </details>
 
 
-| 
-| ==== USB Host Mode ==== 
+USB Host Mode
+~~~~~~~~~~~~~
+
+
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 Setting up the ZCU102 in USB Host Mode allows the use of USB peripherals such as a keyboard and mouse. This can be useful for operating the board directly rather than having to use the UART connection or some other form of indirect control. Configure the jumpers as indicated below:
 
@@ -83,22 +84,29 @@ Setting up the ZCU102 in USB Host Mode allows the use of USB peripherals such as
 -  J112 -> Shunt pins 1-2
 -  J113 -> Shunt pins 1-2
 
-|Jumper Configuration for USB Host Mode|
+.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_usb_host_mode.jpg
+   :alt: Jumper Configuration for USB Host Mode
+   :align: center
 
 .. raw:: html
 
    </details>
 
 
-| 
-| ==== DisplayPort Not Working ==== Once you have the board up and running (and control using the UART connection through PuTTy), :doc:`try this procedure at the bottom of the page </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`.
+DisplayPort Not Working
+~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| ==== USB to UART Bridge ==== The ZCU102 uses a mini-B USB cable to connect the USB UART port on the board to a host PC. If the USB to UART bridge is not installed or automatically recognized, then a drive must be installed. This will allow control using the UART connection through PuTTy or other SSH/Telnet Client, `select Downloads tab for Driver download <https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers>`_.
+Once you have the board up and running (and control using the UART connection through PuTTy), :doc:`try this procedure at the bottom of the page </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`.
 
-| 
-| ==== Network Configuration ==== The ZCU102 uses a RJ45 ethernet cable to connect the ethernet port on the board a host PC or network port to enable network access. Modifications to the network settings can be made following the guidance detailed on the :doc:`Network Configuration </wiki-migration/resources/tools-software/linux-software/network-config>` wiki.
+USB to UART Bridge
+~~~~~~~~~~~~~~~~~~
+
+The ZCU102 uses a mini-B USB cable to connect the USB UART port on the board to a host PC. If the USB to UART bridge is not installed or automatically recognized, then a drive must be installed. This will allow control using the UART connection through PuTTy or other SSH/Telnet Client, `select Downloads tab for Driver download <https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers>`_.
+
+Network Configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+The ZCU102 uses a RJ45 ethernet cable to connect the ethernet port on the board a host PC or network port to enable network access. Modifications to the network settings can be made following the guidance detailed on the :doc:`Network Configuration </wiki-migration/resources/tools-software/linux-software/network-config>` wiki.
 
 .. |latest Linux kernel| image:: http://swdownloads.analog.com/cse/2019_R1-2020_06_22.img.xz
 .. |SW6 Configuration for SD Card Boot| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_sw6_sdcard.jpg
-.. |Jumper Configuration for USB Host Mode| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_usb_host_mode.jpg

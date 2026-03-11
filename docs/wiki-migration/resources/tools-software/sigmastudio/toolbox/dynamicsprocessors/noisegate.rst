@@ -1,14 +1,18 @@
 Noise Gate
 ==========
 
-| :doc:`Click here to return to the Dynamic Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| |noise_gate.png|
+:doc:`Click here to return to the Dynamic Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/noise_gate.png
+   :alt: noise_gate.png
 
 Description
 -----------
 
-| The NoiseGate block is used to control the volume of an audio signal. Computes the RMS Level of an Incoming Audio Signal and Reduces the Noise which is Below a User-Defined Threshold by Setting the Gain as 0
-| ===== Targets Supported =====
+The NoiseGate block is used to control the volume of an audio signal. Computes the RMS Level of an Incoming Audio Signal and Reduces the Noise which is Below a User-Defined Threshold by Setting the Gain as 0
+
+Targets Supported
+-----------------
 
 ========= ========== ================ =============
 Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
@@ -16,7 +20,7 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
 NoiseGate Block      Block            Schematic
 ========= ========== ================ =============
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -37,7 +41,7 @@ Name    Type  Description
 Output0 Audio Output channel0
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,10 +75,9 @@ Output0 Audio Output channel0
 
 | 
 | ===== DSP Parameter Computation ===== Decay = 1/P^(1000/(Decay \* FS))
-| Hold = FS \* HOld/1000
-| Where P is 1/9 and FS is the sampling rate
 
-| 
-| Where FS is the sampling rate
+Hold = FS \* HOld/1000
 
-.. |noise_gate.png| image:: https://wiki.analog.com/_media/noise_gate.png
+Where P is 1/9 and FS is the sampling rate
+
+Where FS is the sampling rate

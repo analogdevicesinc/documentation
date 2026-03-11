@@ -14,8 +14,7 @@ A comprehensive User Guide can be found at `LTspice User guide for AD8460 Model 
 LTspice Sample Circuits
 -----------------------
 
-| All LTspice Circuits used are available at `LTspice Schematics <https://wiki.analog.com/_media/resources/quick-start/ad8460_ltspice.zip>`_.
-|
+All LTspice Circuits used are available at `LTspice Schematics <https://wiki.analog.com/_media/resources/quick-start/ad8460_ltspice.zip>`_.
 
 .. tip::
 
@@ -27,7 +26,7 @@ LTspice Sample Circuits
 AD8460 Block Diagram
 --------------------
 
-| |AD8460 Block Diagram|
-
-.. |AD8460 Block Diagram| image:: https://wiki.analog.com/_media/resources/quick-start/ad8460_reva.png
+.. image:: https://wiki.analog.com/_media/resources/quick-start/ad8460_reva.png
+   :alt: AD8460 Block Diagram
+   :align: center
    :width: 600px

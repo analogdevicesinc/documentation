@@ -16,12 +16,7 @@ In the first version shown in figure 1, A PTAT current source (Q\ :sub:`1`, Q\ :
 Materials:
 ----------
 
-| Analog Discovery Lab hardware
-| Solder-less breadboard
-| 1 - 2.2 KΩ Resistor ( or any similar value )
-| 1 - 100 Ω resistor
-| 3 - small signal NPN transistors (2N3904 or SSM2212)
-| 3 - small signal PNP transistors (2N3906 or SSM2220)
+Analog Discovery Lab hardware Solder-less breadboard 1 - 2.2 KΩ Resistor ( or any similar value ) 1 - 100 Ω resistor 3 - small signal NPN transistors (2N3904 or SSM2212) 3 - small signal PNP transistors (2N3906 or SSM2220)
 
 Directions:
 -----------
@@ -50,27 +45,15 @@ Plot the output voltage (as measured at the collector of Q\ :sub:`4`) vs. the in
 Version 2:
 ----------
 
-.. _background-1:
-
 Background:
 -----------
 
 Looking at the circuit in figure 2 we see many of the same basic components from figure 1. Q\ :sub:`1`,Q\ :sub:`2`, R\ :sub:`1` and R\ :sub:`2` serve the same basic functions as before. However rather than use the PNP current mirror to provide negative feedback to regulate the circuit, a common emitter amplifier consisting of Q\ :sub:`3` and R\ :sub:`4` driving emitter follower Q\ :sub:`4` closes the feedback to the top of resistor R\ :sub:`3`. The output voltage will be the sum of a PTAT voltage across R\ :sub:`3` and the V\ :sub:`BE` of Q\ :sub:`3`. Emitter follower Q\ :sub:`4` supplies any varying load current that might be taken from the output node.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 1 - 2.2 KΩ Resistor
-| 1 - 100 Ω resistor
-| 1 - 10 KΩ variable resistor (potentiometer)
-| 1 - 4.7 KΩ resistor
-| 1 - 1.0 nF capacitor (102)
-| (resistors can be any similar value selected for desired circuit operation)
-| 4 - small signal NPN transistors (2N3904, SSM2212, CA3045)
-
-.. _directions-1:
+1 - 2.2 KΩ Resistor 1 - 100 Ω resistor 1 - 10 KΩ variable resistor (potentiometer) 1 - 4.7 KΩ resistor 1 - 1.0 nF capacitor (102) (resistors can be any similar value selected for desired circuit operation) 4 - small signal NPN transistors (2N3904, SSM2212, CA3045)
 
 Directions:
 -----------
@@ -86,14 +69,10 @@ The breadboard connections are as shown in figure 2. As before transistor Q\ :su
    Figure 2 Regulator Version 2
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
 Waveform generator W1 should be configured for a 1 KHz triangle wave with 2 volt amplitude and 2V offset. Scope channel 2 (2+) is used to measure the stabilized output voltage at the emitter of Q\ :sub:`4`.
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -107,9 +86,7 @@ In the Version 1 circuit the net effective emitter ratio between Q\ :sub:`1` and
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/Bandgap_voltage_reference
-  http:*\ en.wikipedia.org/wiki/Brokaw_bandgap_reference
-| http://www.analog.com/static/imported-files/tutorials/MT-087.pdf
+http://en.wikipedia.org/wiki/Bandgap_voltage_reference http://en.wikipedia.org/wiki/Brokaw_bandgap_reference http://www.analog.com/static/imported-files/tutorials/MT-087.pdf
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**
 

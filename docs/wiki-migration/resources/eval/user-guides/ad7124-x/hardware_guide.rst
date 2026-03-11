@@ -252,8 +252,7 @@ Bill of Materials
    `AD7124 Bill of materials available here <https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/ad7124_bom.pdf>`_
 
 
-| :doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/ad7124-x/software>`
-| :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad7124-x>`
+:doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/ad7124-x/software>` :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad7124-x>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/quick_start.jpg
    :width: 600px

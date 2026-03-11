@@ -10,8 +10,10 @@ The :adi:`ADL5606` is a broadband, two-stage, 1 W RF driver amplifier that opera
 
 The :adi:`LTM8045` is an integrated switching DC/DC converter that contains a current mode controller, power switching element, power coupled inductor, power Schottky diode, and a modest amount of input and output capacitance. It can be configured as a SEPIC or inverting converter by simply grounding the appropriate output rail.
 
-| The EVAL-CN0417-EBZ board connects through SMA and is powered by the bus voltage from the USB port.
-| |image1|
+The EVAL-CN0417-EBZ board connects through SMA and is powered by the bus voltage from the USB port.
+
+
+|image1|
 
 Required Equipment
 ------------------
@@ -26,18 +28,22 @@ General Setup
 Block assignments
 ~~~~~~~~~~~~~~~~~
 
-| |image2|
-| \* Terminal block **J1** is the SMA female connector for RF input, and would normally be connected to an SDR.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417/revb_blockd.jpg
+   :align: center
+   :width: 700px
 
+-  Terminal block **J1** is the SMA female connector for RF input, and would normally be connected to an SDR.
 -  Terminal block **J2** is the SMA male connector for RF output, and would normally be connected to an antenna
 -  Terminal block **P1** is the micro USB port to provide power to the board
 
 Test setup
 ~~~~~~~~~~
 
-| |image3|
-| \* Plug in the micro-USB end of the micro-USB cable or power adapter to P1 of the :adi:`EVAL-CN0417-EBZ Board <CN0417>`
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417/10-31-2018_10-51-55_am.png
+   :align: center
+   :width: 600px
 
+-  Plug in the micro-USB end of the micro-USB cable or power adapter to P1 of the :adi:`EVAL-CN0417-EBZ Board <CN0417>`
 -  Plug the other end of the cable into a power outlet or a PC USB port providing at least 500 mA.
 -  An LED light will turn on indicating the board is on and is in operation.
 -  Connect the RF output of the RF signal source to J1 of the :adi:`EVAL-CN0417-EBZ Board <CN0417>`
@@ -53,7 +59,7 @@ Running the System
 Normal Operation
 ~~~~~~~~~~~~~~~~
 
-|image4| For normal operation, connect:
+|image2| For normal operation, connect:
 
 -  Connect P1 (micro USB) connector of the :adi:`EVAL-CN0417-EBZ Board <CN0417>` into a PC USB port or 5V USB charger.
 -  An LED light will turn on indicating the board is on and is in operation.
@@ -121,9 +127,5 @@ Registration
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417/block_diagram3.png
    :width: 900px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417/revb_blockd.jpg
-   :width: 700px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417/10-31-2018_10-51-55_am.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417.png
    :width: 300px

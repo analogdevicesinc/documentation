@@ -59,8 +59,6 @@ Command Line Interface
 
 The Command Line Interface can be used as an alternative to the Graphical User Interface, e.g. to debug issues with the graphic environment. The Command Line Interface can be launched directly from the serial console or via a terminal application. In order to be able to successfully gather all diagnostic information it is important to run the tool with root privileges. When not logged in as the root user the command should be executed with ``sudo``.
 
-.. _generate-diagnostic-report-1:
-
 Generate Diagnostic Report
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -98,8 +96,6 @@ Often it is necessary or useful to be able to copy the diagnostic report to a de
    $ poweroff
 
 </div>
-
-.. _select-sub-reports-1:
 
 Select Sub-Reports
 ~~~~~~~~~~~~~~~~~~

@@ -31,7 +31,7 @@ Creating / Configuring the SD Card
 
 :doc:`Create SD Image. (it is a single image for all boards) </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
--   Copy next boot files from <fc #ff0000>\ ``socfpga_arria10_socdk_adrv9371``\ </fc> directory directly on SD Card ``BOOT`` partition :
+-   Copy next boot files from ``socfpga_arria10_socdk_adrv9371`` directory directly on SD Card ``BOOT`` partition :
 
    -  ``fit_spl_fpga.itb``
    -  ``socfpga_arria10_socdk_sdmmc.dtb``
@@ -39,16 +39,16 @@ Creating / Configuring the SD Card
    -  ``zImage`` (from ``socfpga_arria10-common`` folder)
    -  ``extlinux.conf`` in the extlinux folder from SD Card
 
--  Write u-boot-splx4.sfp from <fc #ff0000>\ ``socfpga_arria10_socdk_adrv9371``\ </fc> folder on third SD Card partition:
+-  Write u-boot-splx4.sfp from ``socfpga_arria10_socdk_adrv9371`` folder on third SD Card partition:
 
 ::
 
        root@raspberrypi:~# lsblk
        NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-       sda           8:0    1 14.9G  0 disk 
+       sda           8:0    1 14.9G  0 disk
        ├─sda1        8:1    1    1G  0 part /media/pi/BOOT
        ├─sda2        8:2    1  7.6G  0 part /media/pi/rootfs
-       └─sda3        8:3    1    4M  0 part 
+       └─sda3        8:3    1    4M  0 part
        root@raspberrypi:~# dd if="./u-boot-splx4.sfp" of="/dev/sda3" bs=512
        2048+0 records in
        2048+0 records out
@@ -184,7 +184,7 @@ Configuring the FPGA will take a few seconds. Once the FPGA has been configured 
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 ::
 
@@ -657,7 +657,35 @@ More information
 
 :doc:`ADRV9371 User Guide </wiki-migration/resources/eval/user-guides/mykonos>`
 
-.. include:: ../../adrv9002/common.rst
+More Information
+----------------
+
+-  :doc:`ADRV9001/2 Quick Start Guides </wiki-migration/resources/eval/user-guides/adrv9002/quickstart>`
+
+   -  :doc:`ADRV9002 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynqmp>`
+   -  :doc:`ADRV9002 Zynq SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynq>`
+   -  :doc:`ADRV9002 Zynq Zed Board Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zed>`
+   -  :doc:`ADRV9002 Arria10 SoC Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/a10soc>`
+
+-  :doc:`ADRV9001/ADRV9002 HDL Reference Design </wiki-migration/resources/eval/user-guides/adrv9002/reference_hdl>`
+
+   -  :doc:`AXI_ADRV9001/AXI_ADRV9002 Interface Core </wiki-migration/resources/eval/user-guides/adrv9002/axi_adrv9002>`
+   -  :doc:`Building HDL how-to, ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
+
+-  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+-  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
+
+Software resources
+------------------
+
+-  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+-  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
    :width: 300px

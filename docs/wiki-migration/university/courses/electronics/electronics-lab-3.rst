@@ -9,10 +9,7 @@ The purpose of this activity is to investigate the forward and reverse current v
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 1 - 1KΩ Resistor (or any similar value)
-| 1 - small signal NPN transistor (2N3904)
+ADALM2000 Active Learning Module Solder-less Breadboard 1 - 1KΩ Resistor (or any similar value) 1 - small signal NPN transistor (2N3904)
 
 Directions:
 -----------
@@ -69,22 +66,15 @@ Derive the mathematical expression for the current, I\ :sub:`C`, given the volta
 Reverse Breakdown Characteristics
 =================================
 
-.. _objective-1:
-
 Objective:
 ----------
 
 The purpose of this activity is to investigate the reverse break down voltage characteristics of the emitter base junction of a bipolar junction transistor (BJT) connected as a diode.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 1 - 100Ω Resistor
-| 1 - small signal PNP transistor (2N3906)
-
-.. _directions-1:
+1 - 100Ω Resistor 1 - small signal PNP transistor (2N3906)
 
 Directions:
 -----------
@@ -99,8 +89,6 @@ Set up the breadboard with the waveform generator output attached to one end of 
    Figure 5 PNP Emitter Base Reverse breakdown configuration
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -113,8 +101,6 @@ The waveform generator should be configured for a 100 Hz triangle wave with 10 v
 
    Figure 6 PNP Emitter breadboard circuit
 
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -131,8 +117,6 @@ The Lab hardware power supplies limits the maximum voltage available to less tha
 
 Capture the scope waveforms and export them into a spreadsheet program such as Excel. For the 2N3906 PNP used in the example, the breakdown voltage of the emitter base junction is around 8.5 volts.
 
-.. _questions-1:
-
 Questions:
 ----------
 
@@ -143,24 +127,15 @@ Try measuring the NPN 2N3904 emitter base reverse breakdown voltage. You can als
 Lowering the effective forward voltage of the diode
 ===================================================
 
-.. _objective-2:
-
 Objective:
 ----------
 
 The purpose of this activity is to investigate a circuit configuration with smaller forward voltage characteristics than that of a bipolar junction transistor (BJT) connected as a diode.
 
-.. _materials-2:
-
 Materials:
 ----------
 
-| 1 - 1KΩ Resistor
-| 1 - 150KΩ Resistor ( or 100KΩ in series with 47KΩ )
-| 1 - small signal NPN transistor (2N3904)
-| 1 - small signal PNP transistor (2N3906)
-
-.. _directions-2:
+1 - 1KΩ Resistor 1 - 150KΩ Resistor ( or 100KΩ in series with 47KΩ ) 1 - small signal NPN transistor (2N3904) 1 - small signal PNP transistor (2N3906)
 
 Directions:
 -----------
@@ -176,8 +151,6 @@ Set up the breadboard with waveform generator W1 attached to one end of the seri
    Figure 8 Configuration to lower effective forward voltage drop of diode
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
@@ -190,8 +163,6 @@ The waveform generator should be configured for a 100 Hz triangle wave with 8 vo
 
    Figure 9 Lower effective forward voltage drop of diode - breadboard circuit
 
-
-.. _procedure-2:
 
 Procedure:
 ----------
@@ -206,8 +177,6 @@ The turn on voltage of the "diode" is now about 100mV compared to 650mV for the 
    Figure 10 Lower effective forward voltage drop of diode - waveform
 
 
-.. _questions-2:
-
 Questions:
 ----------
 
@@ -218,24 +187,15 @@ The value of R\ :sub:`2` sets the current in Q\ :sub:`2`. What is the effect of 
 VBE Multiplier Circuit
 ======================
 
-.. _objective-3:
-
 Objective:
 ----------
 
 Now that we have seen a way to make V\ :sub:`BE` effectively smaller, the purpose of this activity is to make V\ :sub:`BE` larger. Larger forward voltage characteristics than that of a single bipolar junction transistor (BJT) connected as a diode.
 
-.. _materials-3:
-
 Materials:
 ----------
 
-| 2 - 2.2KΩ Resistors
-| 1 - 1KΩ Resistor
-| 1 - 5KΩ Variable resistor, potentiometer
-| 1 - small signal NPN transistor (2N3904)
-
-.. _directions-3:
+2 - 2.2KΩ Resistors 1 - 1KΩ Resistor 1 - 5KΩ Variable resistor, potentiometer 1 - small signal NPN transistor (2N3904)
 
 Directions:
 -----------
@@ -251,8 +211,6 @@ Set up the breadboard with waveform generator W1 attached to one end of resistor
    Figure 11 V\ :sub:`BE` Multiplier configuration
 
 
-.. _hardware-setup-3:
-
 Hardware Setup:
 ---------------
 
@@ -265,8 +223,6 @@ The waveform generator should be configured for a 100 Hz triangle wave with 4 vo
 
    Figure 12 V\ :sub:`BE` Multiplier breadboard circuit
 
-
-.. _procedure-3:
 
 Procedure:
 ----------
@@ -291,8 +247,6 @@ Starting with the potentiometer R\ :sub:`3` set at the middle of its range the v
    -  LTSpice files: :git-education_tools:`m2k/ltspice/bjt_diode_ltspice`
    
 
-
-.. _questions-3:
 
 Questions:
 ----------

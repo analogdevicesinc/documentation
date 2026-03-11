@@ -1,23 +1,26 @@
 Evaluation Board Quick Start Setup
 ==================================
 
-| :doc:`Click here to return to the Tutorials section. </wiki-migration/resources/tools-software/sigmastudio/tutorials>`
-| For detailed information regarding Evaluation Board configuration, refer to the evaluation board data sheets, available at www.analog.com/sigmadsp.
+:doc:`Click here to return to the Tutorials section. </wiki-migration/resources/tools-software/sigmastudio/tutorials>`
+
+For detailed information regarding Evaluation Board configuration, refer to the evaluation board data sheets, available at www.analog.com/sigmadsp.
 
 **AD1940/AD1941** The three AD 194x boards are almost identical. The EB1940 has switches; the MINIB 1940 does not. Both boards use SPI (serial-peripheral interface) communication, while the 1941 uses the I2C (also written I²C) communication protocol. Read through the first sets of steps below for global instructions, then continue past them to see differences with the mini and the 1941 boards.
 
 **ADAU1701/ADAU1702** The ADAU1701 board provides for both analog and digital communication.
 
---------------------------------------------------------------------------------
+--------------
 
 *AD1940 (only) Evaluation Board Hardware Setup*, 6-channel Analog Input, Analog Output
 
-(*For further help finding switches/jumpers on the board, or for other setup i/o configurations, see the* **EVAL-AD1941-AD1941EB_Datasheet** *on the SigmaStudio CD and the Evaluation Board Setup topic.)*
+(*For further help finding switches/jumpers on the board, or for other setup i/o configurations, see the **EVAL-AD1941-AD1941EB_Datasheet** on the SigmaStudio CD and the Evaluation Board Setup topic.)*
 
 The switches and their settings:
 
-| |evalsetuppic1.png|
-| Any setting not listed may be considered unimportant (“don’t care”).
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/../gettingstarted/evalsetuppic1.png
+   :alt: evalsetuppic1.png
+
+Any setting not listed may be considered unimportant (“don’t care”).
 
 *Signal flow* Input will come from the six-channel analog inputs to AD1940 SDATA_IN0/1/2 and will output on whatever outputs (SDATA_OUTx) are designed in the software; defaults are SDATA_OUT0/1/2, or Analog Output 0-5. The AD1871 ADC is the master in this setup.
 
@@ -40,7 +43,7 @@ The switches and their settings:
 
 --------------
 
-**ADAU1701 Evaluation Board Setup** *Powering up the board*\ The board can be powered by either the USB connection or the included power supply. For the board to run independently from the computer, connect the power supply at J14 (colored red in the next figure). The power LED should be lit.
+**ADAU1701 Evaluation Board Setup** Powering up the board*\ The board can be powered by either the USB connection or the included power supply. For the board to run independently from the computer, connect the power supply at J14 (colored red in the next figure). The power LED should be lit.
 
 *Connecting the board to the computer*
 
@@ -56,8 +59,6 @@ The switches and their settings:
 
 *Switch and jumper settings* To configure the board for stereo analog in and out, make sure the switches and jumpers are set as shown below.
 
-.. image:: https://wiki.analog.com/_media/../gettingstarted/evalsetuppic2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/../gettingstarted/evalsetuppic2.png
    :alt: evalsetuppic2.png
    :align: center
-
-.. |evalsetuppic1.png| image:: https://wiki.analog.com/_media/../gettingstarted/evalsetuppic1.png

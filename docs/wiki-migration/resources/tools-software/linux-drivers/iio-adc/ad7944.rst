@@ -81,7 +81,7 @@ In this mode, the CS line of the SPI controller is connected to the CNV pin of t
 
 ::
 
-               adi,spi-mode = "single";    
+               adi,spi-mode = "single";
 
 If using the `Pulsar ADC HDL project <http://analogdevicesinc.github.io/hdl/projects/pulsar_adc/index.html>`_, with the FMCZ eval board, compile using the HDL using the ``make FMC_N_PMOD=1 SPI_OP_MODE=2`` options. And add the following extra node to the top level of the devicetree to pull the SDI pin high.
 
@@ -95,8 +95,6 @@ If using the `Pulsar ADC HDL project <http://analogdevicesinc.github.io/hdl/proj
            output-high;
        };
    };
-
-.. _wire-mode-1:
 
 4-wire mode
 ~~~~~~~~~~~
@@ -118,7 +116,7 @@ In this mode, the CS line of the SPI controller is connected to the CNV pin of a
 
 ::
 
-               adi,spi-mode = "chain";    
+               adi,spi-mode = "chain";
                #daisy-chained-devices = <1>;
 
 Change ``#daisy-chained-devices`` to the actual number of devices in the chain.
@@ -256,7 +254,7 @@ As seen above, reading the ``name`` attribute will return the name of the chip.
 
 ::
 
-   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/name 
+   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/name
    ad7985
 
 Channels
@@ -266,9 +264,9 @@ The voltage measurement done by the chip is represented as an IIO channel. These
 
 ::
 
-   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_scale 
+   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_scale
    0.076293945
-   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_raw 
+   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_raw
    1229
 
 .. note::
@@ -289,8 +287,8 @@ When using a SPI controller with SPI offload support, there is also an additiona
 
 ::
 
-   root@analog:~# echo 1000000 > /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency 
-   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency 
+   root@analog:~# echo 1000000 > /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency
+   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency
    1000000
 
 Reading returns the current sampling frequency in Hz and writing will set the value.
@@ -299,7 +297,7 @@ Reading returns the current sampling frequency in Hz and writing will set the va
 
 ::
 
-   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency_available 
+   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency_available
    [1 1 2500000]
 
 If not using SPI offload, a ``hrtimer`` trigger can be used to provide a periodic sample rate. See :doc:`example </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad738x>`.
@@ -344,18 +342,18 @@ Here is an example of how to read a few values at a low sample rate for testing 
 ::
 
    # set sample rate to 1kHz
-   root@analog:~# echo 1000 > /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency 
+   root@analog:~# echo 1000 > /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency
    # set buffer to receive 8 samples at a time
    root@analog:~# echo 8 > /sys/bus/iio/devices/iio\:device1/buffer0/length
    # enable the one and only input voltage channel
-   root@analog:~# echo 1 > /sys/bus/iio/devices/iio\:device1/buffer0/in_voltage0_en 
+   root@analog:~# echo 1 > /sys/bus/iio/devices/iio\:device1/buffer0/in_voltage0_en
    # enable the buffer
-   root@analog:~# echo 1 > /sys/bus/iio/devices/iio\:device1/buffer0/enable 
+   root@analog:~# echo 1 > /sys/bus/iio/devices/iio\:device1/buffer0/enable
    # read one buffer full of data
    root@analog:~# hexdump -n $((8 * 4)) -e'8/4  "%08X " "\n"' /dev/iio\:device1
    000004CA 000004C9 000004CB 000004CA 000004CC 000004CA 000004CB 000004CB
    # disable the buffer
-   root@analog:~# echo 0 > /sys/bus/iio/devices/iio\:device1/buffer0/enable 
+   root@analog:~# echo 0 > /sys/bus/iio/devices/iio\:device1/buffer0/enable
 
 Evaluation boards
 -----------------

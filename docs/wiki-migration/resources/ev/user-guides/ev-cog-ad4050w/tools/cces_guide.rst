@@ -1,7 +1,7 @@
 Cross Core Embedded Studio Quickstart User Guide
 ================================================
 
-<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. </WRAP>
+<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. 
 
 This page describes how to use the ADuCM4x50 Device Family Pack (DFP) with CrossCore Embedded Studio (CCES) to create, import, build and debug applications for the ADuCM4x50 processor. The ADuCM4x50 processor integrates an ARM Cortex-M4 microcontroller with various on-chip peripherals within a single package.
 

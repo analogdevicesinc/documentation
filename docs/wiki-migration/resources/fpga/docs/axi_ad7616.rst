@@ -9,8 +9,9 @@ AXI_AD7616
 Overview
 --------
 
-| The :git-hdl:`library/axi_ad7616` IP core can be used to interface the :adi:`AD7616` device using an FPGA. The core has a AXI Memory Map interface for configuration, supports the parallel data interface of the device, and has a simple FIFO interface for the DMAC.
-| More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`.
+The :git-hdl:`library/axi_ad7616` IP core can be used to interface the :adi:`AD7616` device using an FPGA. The core has a AXI Memory Map interface for configuration, supports the parallel data interface of the device, and has a simple FIFO interface for the DMAC.
+
+More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`.
 
 Parallel interface
 ------------------
@@ -107,5 +108,5 @@ Register map
 |         |        | [31:0]              | UP_WRITE_DATA   | WO   | This register can be used to write the device registers on PARALLEL software mode.                                               |
 +---------+--------+---------------------+-----------------+------+----------------------------------------------------------------------------------------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

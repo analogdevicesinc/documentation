@@ -1,6 +1,6 @@
 output ======Signal Detection======
 
-| :doc:`Click here to return to the Level Detectors Lookuptables page </wiki-migration/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables>`
+:doc:`Click here to return to the Level Detectors Lookuptables page </wiki-migration/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables>`
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 | The Signal Detection algorithm is a cell that will output a flag once no signal has been present at the input for a given amount of time. The "Threshold" setting will determine the value the input is compared to in order to determine whether or not a signal is present. The "Trig Time" setting will determine how long, in seconds, the cell will wait to output the flag. The peak of the signal is detected, not the RMS value. | |signaldetection.png| |
@@ -55,14 +55,19 @@ DSP Parameter Information
 Algorithm Description
 =====================
 
-| The following graph shows the output (red) of the Signal Detect cell based on a given input (blue). In this scenario the "Threshold(dB)" is set to '-60' and the "Trig Time(s)" is set to '6'. Notice how the output toggles to '1' after the silence following the audio signal, based on the "Trig Time(s)" value, and then returns back to '0' once the signal reappears.
-| |simulation_pic_1.png|
+The following graph shows the output (red) of the Signal Detect cell based on a given input (blue). In this scenario the "Threshold(dB)" is set to '-60' and the "Trig Time(s)" is set to '6'. Notice how the output toggles to '1' after the silence following the audio signal, based on the "Trig Time(s)" value, and then returns back to '0' once the signal reappears.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables/simulation_pic_1.png
+   :alt: simulation_pic_1.png
+   :width: 900px
 
 Example
 =======
 
-| In this example, the Signal Detection cell is being used to monitor the incoming audio signal to be processed by the equalizer. If the signal on both channels falls below the threshold for the duration of the "Trig Time(s)" parameter, a flag will be output to GPIO_0. This can be used, for example, to power down unneeded parts of the system when no signal is present.
-| |circuitexample.png|
+In this example, the Signal Detection cell is being used to monitor the incoming audio signal to be processed by the equalizer. If the signal on both channels falls below the threshold for the duration of the "Trig Time(s)" parameter, a flag will be output to GPIO_0. This can be used, for example, to power down unneeded parts of the system when no signal is present.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables/circuitexample.png
+   :alt: circuitexample.png
 
 Algorithm Details
 =================
@@ -89,6 +94,3 @@ Algorithm Details
 +----------------------------+------------------------------------------------------------------+
 
 .. |signaldetection.png| image:: https://wiki.analog.com/_media/signaldetection.png
-.. |simulation_pic_1.png| image:: https://wiki.analog.com/_media/simulation_pic_1.png
-   :width: 900px
-.. |circuitexample.png| image:: https://wiki.analog.com/_media/circuitexample.png

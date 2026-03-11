@@ -36,17 +36,9 @@ Instead of moving a magnet, a time varying current flowing through a coil of wir
 Materials:
 ----------
 
-| ADALM1000 hardware module
-| 2 12 inch / 30 cm long 3 wire female to female header jumper wires (should be included with ADALM1000)
+ADALM1000 hardware module 2 12 inch / 30 cm long 3 wire female to female header jumper wires (should be included with ADALM1000)
 
-| From ADALP2000 parts kit:
-| Solderless breadboard
-| Male to Male jumper wires
-| Male to male header pins (gender changers)
-| 2 10 Ω resistors
-| 2 10 mH Inductors (103)
-| 1 1 mH Inductor (102)
-| 1 100 uH Inductor (101)
+From ADALP2000 parts kit: Solderless breadboard Male to Male jumper wires Male to male header pins (gender changers) 2 10 Ω resistors 2 10 mH Inductors (103) 1 1 mH Inductor (102) 1 100 uH Inductor (101)
 
 Construction:
 -------------

@@ -51,9 +51,9 @@ GUI
 
    *Supports real-time plotting of incoming data, tested for up to 3 motes
    *Options to update mote parameters on-the-fly.
-   *Save incoming data to database. 
-   *Customise data plotting. 
-   *Available as both an executable or python file. 
+   *Save incoming data to database.
+   *Customise data plotting.
+   *Available as both an executable or python file.
 
 --------------
 

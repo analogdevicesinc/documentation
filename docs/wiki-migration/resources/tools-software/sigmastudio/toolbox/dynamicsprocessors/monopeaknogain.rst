@@ -1,8 +1,9 @@
 Mono peak No Gain
 =================
 
-| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| -----------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+
 | The Mono Peak (no gain) algorithm is a dynamics processor that can gate, expand, compress, and limit input signals. The detection path uses the peak level of the input signal to calculate the output gain. Hold and decay parameters are included to allow control of the output gain over time. The transfer function can be fully controlled (within the computational limits of the DSP) using the "Show Graph" GUI control. | |monopeakpic1.png| |
@@ -58,9 +59,12 @@ DSP Parameter Information
 Example
 -------
 
-| This example shows the mono peak compressor being used on an analog input. Depending on the application, a variety of transfer curves could be used to achieve the desired effect. For example, when used on a microphone input, a noise gate curve could be implemented to remove the noise floor when no signal of interest is present.
-| |monopeakpic2.png|
-| Other cells used in this example: Input, Output
+This example shows the mono peak compressor being used on an analog input. Depending on the application, a variety of transfer curves could be used to achieve the desired effect. For example, when used on a microphone input, a noise gate curve could be implemented to remove the noise floor when no signal of interest is present.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/monopeakpic2.png
+   :alt: monopeakpic2.png
+
+Other cells used in this example: Input, Output
 
 Algorithm Details
 -----------------
@@ -88,4 +92,3 @@ Algorithm Details
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
 .. |monopeakpic1.png| image:: https://wiki.analog.com/_media/monopeakpic1.png
-.. |monopeakpic2.png| image:: https://wiki.analog.com/_media/monopeakpic2.png

@@ -1,7 +1,7 @@
 EVAL-CN0565-ARDZ User Guide
 ===========================
 
-|
+
 
 .. important::
 
@@ -17,11 +17,15 @@ Overview
 | The design also features a complete power and signal isolation to the host controller, which can be used as reference for bioimpedance applications.
 | The board comes in an Arduino-compatible form factor and includes an industry-standard software interface, allowing easy integration to end-user systems as well to connect up to external development platforms such as the :adi:`EVAL-ADICUP3029`.
 | |image1|
-| ==== Simplified Block Diagram ==== |image2|
+
+Simplified Block Diagram
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+|image2|
 
 .. container:: centeralign
 
-   <fc>\ *Figure 2. EVAL-CN0565-ARDZ Simplified Block Diagram*\ </fc>
+   <fc>\ *Figure 2. EVAL-CN0565-ARDZ Simplified Block Diagram*
 
 
 Features
@@ -47,7 +51,7 @@ Connectors and Jumpers
 
 .. container:: centeralign
 
-   <fc>\ *Figure 3. EVAL-CN0565-ARDZ P7 Pin Location*\ </fc>
+   <fc>\ *Figure 3. EVAL-CN0565-ARDZ P7 Pin Location*
 
 
 -  P1 (DUT Connections) - shows the pin mapping diagram
@@ -58,7 +62,7 @@ Connectors and Jumpers
 
 .. container:: centeralign
 
-   <fc>\ *Figure 4. EVAL-CN0565-ARDZ P1 Pin Location*\ </fc>
+   <fc>\ *Figure 4. EVAL-CN0565-ARDZ P1 Pin Location*
 
 
 --------------
@@ -94,7 +98,7 @@ Hardware Setup
 
 .. container:: centeralign
 
-   <fc>\ *Figure 5. EVAL-CN0565-ARDZ Test Setup*\ </fc>
+   <fc>\ *Figure 5. EVAL-CN0565-ARDZ Test Setup*
 
 
 Getting Started
@@ -125,11 +129,14 @@ Assumes a fresh installation of all required software
 
 -  Download `Python Latest Version <https://wiki.analog.com/https/www.python.org/downloads>`_. Choose the latest available version depending on the operating system.
 -  Run installer as Administrator. During installation, check **"Add Python version to PATH"** before clicking **"Install Now"**
-   \* To check if the download is successful, go to command prompt and type the command line below: <code> python --version </code>
+-  To check if the download is successful, go to command prompt and type the command line below: <code> python --version </code>
 
-| 
-| ==== Installing Libiio ==== Libiio is a library that has been developed by Analog Devices to ease the development of software interfacing Linux :doc:`Industrial I/O (IIO) </wiki-migration/software/linux/docs/iio/iio>` devices.
-| \* Download and install the latest release of libIIO
+Installing Libiio
+~~~~~~~~~~~~~~~~~
+
+Libiio is a library that has been developed by Analog Devices to ease the development of software interfacing Linux :doc:`Industrial I/O (IIO) </wiki-migration/software/linux/docs/iio/iio>` devices.
+
+-  Download and install the latest release of libIIO
 
 .. admonition:: Download
    :class: download
@@ -142,32 +149,32 @@ Assumes a fresh installation of all required software
 
    -  If you need to update/overwrite your PyADI-IIO through pip, use the command below: <code> pip install -U pyadi-iio </code>
 
-| 
-| ==== Uploading the HEX File ==== In order to use the EVAL-CN0565-ARDZ with the EVAL-ADICUP3029, you must upload the CN0565 HEX file. The procedure is as follows:
+Uploading the HEX File
+~~~~~~~~~~~~~~~~~~~~~~
+
+In order to use the EVAL-CN0565-ARDZ with the EVAL-ADICUP3029, you must upload the CN0565 HEX file. The procedure is as follows:
 
 -  Open the file explorer in the Host PC (Windows)
 -  Open the folder where the CN0565.HEX file is located. If you don't have the HEX file, download this file: `CN0565 Embedded Firmware <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565_hex.zip>`_
 -  Launch another file explorer, and then open the DAPLINK folder.
 -  Drag and drop the CN0565.HEX file into the DAPLINK folder. The window will automatically close and temporarily disconnect the EVAL-ADICUP3029, and then reconnect again. This is an indication that the HEX file is properly installed.
 
-| 
-| ==== Installing Software Requirements ====
+Installing Software Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Clone the example firmware from GitHub `EVAL-CN0565-ARDZ Python Scripts <https://github.com/mc-so/pyadi-iio/tree/dev/cn0565-test/examples/cn0565>`_. This includes the .txt file that contains the required modules and libraries to run the example scripts.
 -  In Windows, open a command terminal. Point the current working directory to the cloned **pyadi-iio** repository by changing the directory using this command: <code> cd <folder address> </code>
 -  Navigate inside the **pyadi-iio** folder and install the following requirements using these commands: <code> pip install -r requirements.txt </code> <code> pip install -r requirements_dev.txt </code> <code> pip install -r requirements_doc.txt </code> <code> pip install -r requirements_prod_test.txt </code>
 -  To test the source as a standalone module, enter this command: <code> pip install -e . </code>
 -  After installing the required modules and libraries, launch the device manager and check for the active COM port where the board is connected. In the pyadi-iio folder > examples > cn0565, this is where the script is saved. Change the COM port in the script.
--  To run the test script, copy the address where the script is saved then enter this command: <code> cd <folder address> </code> <code> python <file name>.py </code>
-
-|
+-  To run the test script, copy the address where the script is saved then enter this command: <code> cd <folder address> </code> <code> python ``.py``
 
 .. note::
 
    Check the active port where the board is connected in your device manager.
 
-   | \* cn0565_example.py edit on line 122
    
+   -  cn0565_example.py edit on line 122
    -  cn0565_example_single.py edit on line 24
    
 
@@ -177,8 +184,10 @@ Assumes a fresh installation of all required software
 Python Example Scripts
 ----------------------
 
-| Two sample scripts have been created to execute EIT measurements in the EVAL-CN0565-ARDZ. The **Specific Electrode Pair script** allows the user to measure the impedance on a specific electrode pair, whereas the **Electrode Tomography script** examines the impedance of the entire test board across all electrodes.
-| ==== Using the Specific Electrode Pair Script ====
+Two sample scripts have been created to execute EIT measurements in the EVAL-CN0565-ARDZ. The **Specific Electrode Pair script** allows the user to measure the impedance on a specific electrode pair, whereas the **Electrode Tomography script** examines the impedance of the entire test board across all electrodes.
+
+Using the Specific Electrode Pair Script
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Open the command terminal and direct the current working directory to where the example script is saved.
 -  Run the script by entering this command: <code> python cn0565_example_single.py 0 1 1 0 </code>
@@ -188,7 +197,7 @@ Prompting these commands in the terminal will give you the **Amplitude, Frequenc
 
 |image6|
 
-<note 90%> The numbers 0, 1, 1, 0 indicate the electrode positions for Force Leads: F+, F-, and Sense Leads: S+, and S- </WRAP>
+<note 90%> The numbers 0, 1, 1, 0 indicate the electrode positions for Force Leads: F+, F-, and Sense Leads: S+, and S- 
 
 Using the Electrode Tomography Script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -196,10 +205,17 @@ Using the Electrode Tomography Script
 -  Open the command terminal and direct the current working directory to where the example script is saved.
 -  Run the script by entering this command: <code> python cn0565_example.py </code>
 
-| Prompting these commands in the terminal will give you the **Amplitude, Frequency and Baud Rate**, **Electrode Pair, Rectangular and Polar form impedance**. Then, the **Electrode Pair** followed by the **Rectangular and Polar Form Impedance** and the **Real and Imaginary Impedance** for each electrode pair that is being measured will display. |image7|
-| After running the sample script, the program will prompt a question whether you like to generate a csv file that contains the raw data.
-| Enter this command if you want to generate a .csv file: <code> Y </code> |image8| Enter this command if you don't need to generate a .csv file: <code> N </code> |image9|
-|
+Prompting these commands in the terminal will give you the **Amplitude, Frequency and Baud Rate**, **Electrode Pair, Rectangular and Polar form impedance**. Then, the **Electrode Pair** followed by the **Rectangular and Polar Form Impedance** and the **Real and Imaginary Impedance** for each electrode pair that is being measured will display.
+
+
+|image7|
+
+After running the sample script, the program will prompt a question whether you like to generate a csv file that contains the raw data.
+
+Enter this command if you want to generate a .csv file: <code> Y </code> |image8| Enter this command if you don't need to generate a .csv file: <code> N </code>
+
+
+|image9|
 
 .. note::
 
@@ -236,7 +252,7 @@ CN0565 Graphical User Interface (GUI) Test Example
 
 .. container:: centeralign
 
-   <fc>\ *Figure 6. Results Displayed in the CN0565 GUI*\ </fc>
+   <fc>\ *Figure 6. Results Displayed in the CN0565 GUI*
 
 
 --------------

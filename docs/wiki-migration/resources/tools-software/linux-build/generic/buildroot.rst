@@ -24,7 +24,7 @@ Example:
 
 .. important::
 
-   \ **<fc #ff0000>Note:</fc>** There are 2 toolchains for GCC. The recommended ones, should be under **/opt/Xilinx/Vitis/2021.2/gnu/microblaze/linux_toolchain/**.
+   \ **Note:** There are 2 toolchains for GCC. The recommended ones, should be under **/opt/Xilinx/Vitis/2021.2/gnu/microblaze/linux_toolchain/**.
 
    
    And also make sure that the the directory to the Vivado Vitis is correct. The current example assumes that it is Vivado 2021.2 and it's installed in **/opt/Xilinx/**

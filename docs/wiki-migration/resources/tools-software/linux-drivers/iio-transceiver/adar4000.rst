@@ -38,9 +38,9 @@ Files
 +---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function            | File                                                                                                                                                       |
 +=====================+============================================================================================================================================================+
-| driver              | :git-linux:`adar4000x.c <adar400x/drivers/iio/beamformer/adar400x.c>`                                                                                      |
+| driver              | `adar4000x.c <https://github.com/analogdevicesinc/linux/blob/staging/adar400x/drivers/iio/beamformer/adar400x.c>`_                                         |
 +---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| devicetree bindings | :git-linux:`adar400x/Documentation/devicetree/bindings/iio/beamformer/adi,adar400x.yaml`                                                                   |
+| devicetree bindings | `adi,adar400x.yaml <https://github.com/analogdevicesinc/linux/blob/staging/adar400x/Documentation/devicetree/bindings/iio/beamformer/adi,adar400x.yaml>`_  |
 +---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example Linux Device-Tree Initialization
@@ -57,11 +57,11 @@ Optional properties:
 
 -  adi,num-devices: Number of devices connected to the SPI bus. Default is 1.
 
-+-----------------+------------------------------------------------------------------------------------------------------------------------+
-| Function        | File                                                                                                                   |
-+=================+========================================================================================================================+
-| RPI Device Tree | :git-linux:`WIP <arch/arm/boot/dts/overlays/rpi-adar4000-overlay.dts>`                                                 |
-+-----------------+------------------------------------------------------------------------------------------------------------------------+
++-----------------+---------------------------------------------------------------------------------------------------------------------------+
+| Function        | File                                                                                                                      |
++=================+===========================================================================================================================+
+| RPI Device Tree | `\| WIP <https://github.com/analogdevicesinc/linux/tree/rpi-6.6.y/arch/arm/boot/dts/overlays/rpi-adar4000-overlay.dts>`_ |
++-----------------+---------------------------------------------------------------------------------------------------------------------------+
 
 Enabling Linux driver support
 =============================
@@ -88,7 +88,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            -*-     Industrial I/O lock free software ring
            -*-   Enable triggered sampling support
 
-                 *** Analog to digital converters ***
+                 ** Analog to digital converters **
            [--snip--]
 
            <*>   Analog Devices ADAR4000 and ADR4001 Beamformer driver
@@ -108,10 +108,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -254,10 +251,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -274,10 +268,7 @@ Read scratchpad:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -291,10 +282,7 @@ Write scratchpad:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -306,9 +294,9 @@ Write scratchpad:
 Beamstate Mode
 ~~~~~~~~~~~~~~
 
-| **Description:**
-| \* beam0_mode - Specifies the mode corresponding to where the values are saved. The device can be configured into one of the following modes:
+**Description:**
 
+-  beam0_mode - Specifies the mode corresponding to where the values are saved. The device can be configured into one of the following modes:
 -  Direct: Data will be saved into registers corresponding to the “direct” mode.
 -  RAM: Data will be saved into RAM, allowing for temporary storage and faster access.
 -  FIFO: Data will be saved into a First-In-First-Out queue, ensuring that the first data entered is the first to be processed.
@@ -319,10 +307,7 @@ When configuring beam0_mode to mute or reset this will set the commanded beam to
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -350,10 +335,7 @@ Read :
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -370,10 +352,7 @@ Writing beamstate in direct mode:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -394,10 +373,7 @@ Input value can be verified by reading the channel attribute.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -411,10 +387,7 @@ To load the current beamstate in the direct control registers into the VAPs, wri
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -469,10 +442,7 @@ The table can be applied to the attribute by setting first the beam mode to ram.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -485,10 +455,7 @@ Allow permission to write on the attribute.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -501,10 +468,7 @@ Lastly apply the beamstate table. Look through your beamstate table.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -517,10 +481,7 @@ Write 1 to beam0_update advances the active sequencer pointer and loads that bea
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -533,10 +494,7 @@ Alternatively, beamstate data can be applied directly using echo command. Exampl
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -552,10 +510,7 @@ Similar process with RAM mode. Table can be modified up to 16 beamstates.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -570,10 +525,7 @@ Write 1 to beam0_update to dequeue the next beamstate in the FIFO and load it in
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -598,7 +550,7 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24

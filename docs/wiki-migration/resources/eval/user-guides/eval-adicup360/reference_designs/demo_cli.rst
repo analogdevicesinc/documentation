@@ -3,9 +3,10 @@ Command Line Interpreter Demo
 
 The **ADuCM360_demo_cli** is a Command Line Interpreter (CLI) demo project for the EVAL-ADICUP360 base board, created using the GNU ARM Eclipse Plug-ins in Eclipse environment.
 
-| 
-| ===== General description =====
-| The purpose of this project is to help you to get used with UART peripheral of **ADuCM360** microcontroller. The source code example can serve as a template for a resident command line interpreter, complementing any other user application functionality. Interrupt-based receiving of text commands from the UART is implemented. As soon as a command is entered, an execution request flag is raised to signal the main loop. The commands are recognised and may be executed immediately or later depending on the priority of the current tasks.
+General description
+-------------------
+
+The purpose of this project is to help you to get used with UART peripheral of **ADuCM360** microcontroller. The source code example can serve as a template for a resident command line interpreter, complementing any other user application functionality. Interrupt-based receiving of text commands from the UART is implemented. As soon as a command is entered, an execution request flag is raised to signal the main loop. The commands are recognised and may be executed immediately or later depending on the priority of the current tasks.
 
 You can use any Terminal session you want, such as **Putty** or **Serial Terminal with Eclipse Kepler** (incorporated in Eclipse environment).
 
@@ -16,7 +17,7 @@ A serial connection of a PC to the EVAL-ADICUP360 board using the user USB conne
    :width: 450px
 
 Available commands
-------------------
+~~~~~~~~~~~~~~~~~~
 
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | Command                  | Description                                                                                                                          |
@@ -35,7 +36,7 @@ Available commands
 | 
 
 Demo Requirements
-~~~~~~~~~~~~~~~~~
+-----------------
 
 The following is a list of items needed in order to replicate this demo.
 
@@ -56,12 +57,14 @@ The following is a list of items needed in order to replicate this demo.
       -  Such as Putty or Tera Term
 
 Setting up the hardware
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 In order to program the EVAL-ADICUP360 you need to use the **DEBUG USB**. The jumper set up is shown in the next figure. The important jumpers are highlighted in red.
 
-| |image1|
-| The ADuCM360_cli_demo can connect to the serial port of a PC through two different USB ports on the board:
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/hw_rev1_1_setup.png
+   :width: 500px
+
+The ADuCM360_cli_demo can connect to the serial port of a PC through two different USB ports on the board:
 
 -  **USER USB** (using P0.1, P0.2 or P0.6, P0.7 of the ADuCM360)
 -  **DEBUG USB** (only P0.1, P0.2 of the ADuCM360)
@@ -73,17 +76,15 @@ A bank of jumpers provided near the PMOD ports of the EVAL-ADICUP360, makes this
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/cli_hw_p01_2_user.png
    :width: 500px
 
-| 
-| **Using UART via USER USB (P0.6, P0.7)**
+**Using UART via USER USB (P0.6, P0.7)**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/cli_hw_p06_7_user.png
    :width: 500px
 
-| 
-| **Using UART via DEBUG USB (P0.1, P0.2)**
+**Using UART via DEBUG USB (P0.1, P0.2)**
 
-| |image2|
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/cli_hw_p01_2_debug.png
+   :width: 500px
 
 .. note::
 
@@ -95,8 +96,10 @@ A bank of jumpers provided near the PMOD ports of the EVAL-ADICUP360, makes this
    If using UART in **DEBUG USB** configuration you first need to program the board using **DEBUG USB** and after the program runs on target, you need to change jumper (J1 and J2) positions
 
 
-| 
-| ===== Obtaining the Source Code ===== There are two basic ways to program the ADICUP360 with the software for the CLI Demo.
+Obtaining the Source Code
+-------------------------
+
+There are two basic ways to program the ADICUP360 with the software for the CLI Demo.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
@@ -118,9 +121,8 @@ The software for the **ADuCM360_demo_cli** demo can be found here:
    Complete CLI Demo Source Files
    
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_cli Source Code <projects/ADuCM360_demo_cli>`
-
    
-   |
+
 
 .. note::
 
@@ -128,7 +130,7 @@ The software for the **ADuCM360_demo_cli** demo can be found here:
 
 
 Configuring the Software Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------
 
 UART Configuration Settings can be found in the *Communications.h* file.
 
@@ -145,16 +147,14 @@ UART Configuration Settings can be found in the *Communications.h* file.
    #define UART_MODE UART_INT_MODE
 
 Outputting Data
-~~~~~~~~~~~~~~~
+---------------
 
 Serial Terminal Output
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 -  In order to view the data, you must flash the program to the EVAL-ADICUP360.
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
-
-|
 
 Following is the UART configuration.
 
@@ -167,12 +167,8 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
-| 
-
-.. _available-commands-1:
-
 Available commands
-------------------
+~~~~~~~~~~~~~~~~~~
 
 The user must type the word **<help>** in order to bring up the CLI menu shown below.
 
@@ -195,44 +191,36 @@ The user must type the word **<help>** in order to bring up the CLI menu shown b
    :width: 450px
 
 How to use the Tools
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 The official tool we promote for use with the EVAL-ADICUP360 is CrossCore Embedded Studio. For more information on downloading the tools and a quick start guide on how to use the tool basics, please check out the :doc:`Tools Overview page. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools>`
 
 Importing
----------
+~~~~~~~~~
 
 For more detailed instructions on importing this application/demo example into the CrossCore Embedded Studios tools, please view our :doc:`How to import existing projects into your workspace </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>` section.
 
 Debugging
----------
+~~~~~~~~~
 
 For more detailed instructions on importing this application/demo example into the CrossCore Embedded Studios tools, please view our :doc:`How to configure the debug session </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>` section.
 
 Project Structure
------------------
+~~~~~~~~~~~~~~~~~
 
-| 
-| The **ADuCM360_demo_cli** project Project structure is shown below:
-| |image3|
+The **ADuCM360_demo_cli** project Project structure is shown below:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/structure_cli_26_08_2105.png
+   :align: left
+   :width: 350px
 
 This project contains: initialization part - disabling watchdog, setting system clock, enabling clock for peripheral; UART interrupt service; port configuration for UART use; UART read/write management; command line interpreter application.
 
 In the **src** and **include** folders you will find the source and header files related to CLI application. You can modify as you wanted those files. The *Communication.c/h* files contain UART specific data, meanwhile the *cli.c/h* files contain the command interpreter data.
 
-| 
-| The **RTE** folder contains device and system related files:
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/hw_rev1_1_setup.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/cli_hw_p01_2_debug.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/structure_cli_26_08_2105.png
-   :width: 350px

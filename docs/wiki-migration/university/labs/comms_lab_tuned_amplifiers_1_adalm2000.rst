@@ -38,13 +38,7 @@ Build a simulation schematic of the tuned amplifier as shown in figure 1. Calcul
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 2N3904 NPN transistor
-| 1 - 100 uH inductor (Various other value inductors)
-| 2 - 0.1 uF capacitors ( marked 104 )
-| 1 - 100 Ω resistor
-| Other resistor and capacitors as needed
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 2N3904 NPN transistor 1 - 100 uH inductor (Various other value inductors) 2 - 0.1 uF capacitors ( marked 104 ) 1 - 100 Ω resistor Other resistor and capacitors as needed
 
 Directions:
 ~~~~~~~~~~~
@@ -95,10 +89,7 @@ Now add the load resistor, R\ :sub:`L`, in the circuit. Start with 100 KΩ and r
 Questions:
 ~~~~~~~~~~
 
-| What is the 3 dB bandwidth of the amplifier without R\ :sub:`L`?
-| What is the 3 dB bandwidth with R\ :sub:`L` equal to 100 KΩ, 10 KΩ and 1 KΩ?
-| What is the effect of connecting a capacitor in parallel ( across ) with emitter resistor R\ :sub:`3`?
-| Using the scope and function generator software instruments ( in the time domain ) what is the maximum peek to peek voltage swing possible at the output of the circuit? Be sure to measure it at the resonance frequency. What limits the positive and negative peak voltages? Can it be larger than the power supply voltage and why?
+What is the 3 dB bandwidth of the amplifier without R\ :sub:`L`? What is the 3 dB bandwidth with R\ :sub:`L` equal to 100 KΩ, 10 KΩ and 1 KΩ? What is the effect of connecting a capacitor in parallel ( across ) with emitter resistor R\ :sub:`3`? Using the scope and function generator software instruments ( in the time domain ) what is the maximum peek to peek voltage swing possible at the output of the circuit? Be sure to measure it at the resonance frequency. What limits the positive and negative peak voltages? Can it be larger than the power supply voltage and why?
 
 Frequency Multipliers
 ---------------------
@@ -107,14 +98,10 @@ Frequency Multipliers or harmonic generators are a special class of amplifiers t
 
 The tuned amplifier circuit of figure 2 can operate as a frequency multiplier. If an input signal, such as a square wave or pulse that contains a large enough harmonic, has a frequency of say 167 KHz, which is 1/3 of the 500 KHz resonant frequency of the output tank, the output signal would contain mostly 500 KHz where the gain is highest, or three times the input frequency. The fundamental frequency and other harmonics of the input will be greatly reduced by the tuned nature of the circuit. The fifth harmonic (frequency quintupler) is normally as high in multiplication as is practical, because harmonics of an input signal higher than the fifth are generally very weak, and the multiplied output diminishes to a very weak signal.
 
-.. _directions-1:
-
 Directions:
 ~~~~~~~~~~~
 
 Calculate new values for the input bias resistor divider R\ :sub:`1`, R\ :sub:`2` such that transistor Q\ :sub:`1` is nominally just cut off ( I\ :sub:`C` = 0 ) with no input signal applied. Sine waves generally do not contain any harmonics so set AWG1 to produce a square wave signal at 1/3 the resonate frequency you measured in the earlier tests. To generate large harmonics set the symmetry to 20% ( pulse high for 20% of the period). You will need to increase the amplitude of the input pulse to greater than 2 V or remove the input attenuation source resistor R\ :sub:`S`.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -134,23 +121,10 @@ Improved Tuned Amplifier Stage
 
 The following circuit, shown in figure 6 is a more versatile tuned amplifier stage using an NPN :doc:`differential pair </wiki-migration/university/courses/electronics/electronics-lab-12>` with an LC resonate output load.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 2N3904 NPN transistor
-| 1 - SSM2212 NPN matched transistor pair
-| 1 - 100 uH inductor (Various other value inductors)
-| 2 - 0.1 uF capacitors ( marked 104 )
-| 1 - 100 Ω resistor
-| 2 - 1 KΩ resistors
-| 1 - 2.2 KΩ resistor
-| Other resistor and capacitors as needed
-
-.. _directions-2:
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 2N3904 NPN transistor 1 - SSM2212 NPN matched transistor pair 1 - 100 uH inductor (Various other value inductors) 2 - 0.1 uF capacitors ( marked 104 ) 1 - 100 Ω resistor 2 - 1 KΩ resistors 1 - 2.2 KΩ resistor Other resistor and capacitors as needed
 
 Directions:
 ~~~~~~~~~~~
@@ -166,8 +140,6 @@ Build the circuit shown in figure 3 on your solder-less breadboard. Use the SSM2
    Figure 6 Differential amplifier stage with single ended resonate output load
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
@@ -180,8 +152,6 @@ The green squares indicate where to connect the ADALM2000 module AWG, scope chan
 
    Figure 7 Differential amplifier stage with single ended resonate output load breadboard connection
 
-
-.. _procedure-2:
 
 Procedure:
 ~~~~~~~~~~
@@ -224,27 +194,14 @@ This is for values where the effect of the transistor itself within the high pas
 
 :math:`F_o = 1.414 / (4 \pi R_4 C_2)`
 
-| Where:
-| β = the forward current gain of the transistor
-| F\ :sub:`o` = the cut-off frequency of the high pass filter
-| π = equal to 3.14159
+Where: β = the forward current gain of the transistor F\ :sub:`o` = the cut-off frequency of the high pass filter π = equal to 3.14159
 
 The equations for determining the component values provide a Butterworth response, which provides maximum flatness within the pass-band at the expense of achieving the ultimate roll off as quickly as possible. This has been chosen because this form of filter suits most applications and the mathematics works out easily.
-
-.. _materials-2:
 
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 2N3904 NPN transistor
-| 1 - 100 uH inductor (Various other value inductors)
-| 1 - 0.1 uF capacitors ( marked 104 )
-| 1 - 100 Ω resistor
-| Other resistor and capacitors as needed
-
-.. _directions-3:
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 2N3904 NPN transistor 1 - 100 uH inductor (Various other value inductors) 1 - 0.1 uF capacitors ( marked 104 ) 1 - 100 Ω resistor Other resistor and capacitors as needed
 
 Directions:
 ~~~~~~~~~~~
@@ -260,8 +217,6 @@ Build the circuit shown in figure 4 on your solder-less breadboard. Use the same
    Figure 9 Adding a 2 pole high pass input filter to the tuned amplifier
 
 
-.. _hardware-setup-2:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -274,8 +229,6 @@ The green squares indicate where to connect the ADALM2000 module AWG, scope chan
 
    Figure 10 Breadboard connection
 
-
-.. _procedure-3:
 
 Procedure:
 ~~~~~~~~~~
@@ -305,9 +258,7 @@ As in the first experiment, run a single frequency sweep with scope channel 2 co
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/LC_circuit
-  http:*\ en.wikipedia.org/wiki/Q_factor
-| http://en.wikipedia.org/wiki/Tuned_radio_frequency_receiver
+http://en.wikipedia.org/wiki/LC_circuit http://en.wikipedia.org/wiki/Q_factor http://en.wikipedia.org/wiki/Tuned_radio_frequency_receiver
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 

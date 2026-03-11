@@ -3,8 +3,7 @@
 EVAL-ADAU1452MINIZ
 ==================
 
-| 
-| Evaluation Hardware for the ADAU1452 processor
+Evaluation Hardware for the ADAU1452 processor
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/evaladau1452.jpg
    :width: 600px

@@ -3,9 +3,16 @@
 Index Selectable Demultiplexer
 ==============================
 
-| |demuuxwslew.png|
-| ===== Description ===== The Index Selectable Demultiplexer block route an input to one of many possible output pins. The output is selected based on a control signal value from an Index Lookup Table, RMS Table, or DC Input block. The slew variant of Index Selectable Demux allows smooth transition when switching outputs.
-| ===== Variants =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/muxesanddemuxes/demuuxwslew.png
+   :alt: demuuxwslew.png
+
+Description
+-----------
+
+The Index Selectable Demultiplexer block route an input to one of many possible output pins. The output is selected based on a control signal value from an Index Lookup Table, RMS Table, or DC Input block. The slew variant of Index Selectable Demux allows smooth transition when switching outputs.
+
+Variants
+--------
 
 -  Mono (Configurable Slew Mode)
 -  Stereo (Configurable Slew Mode)
@@ -13,8 +20,8 @@ Index Selectable Demultiplexer
 -  Mono (No Slew)
 -  Stereo (No Slew)
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +---------------------------------+------------+------------------+---------------+------------------+
 | Name                            | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -34,30 +41,30 @@ Index Selectable Demultiplexer
 | ===== Pins =====
 
 Input
------
+~~~~~
 
-======================= ======= ===============================
-Name                    Type    Description
-======================= ======= ===============================
-InputSel_In             Control Channel selection control input
-Input<fc #ff0000>X</fc> Audio   Input Channel X
-======================= ======= ===============================
+=========== ======= ===============================
+Name        Type    Description
+=========== ======= ===============================
+InputSel_In Control Channel selection control input
+InputX      Audio   Input Channel X
+=========== ======= ===============================
 
 Output
-------
+~~~~~~
 
-======================== ===== ================
-Name                     Type  Description
-======================== ===== ================
-Output<fc #ff0000>X</fc> Audio Output Channel X
-======================== ===== ================
+======= ===== ================
+Name    Type  Description
+======= ===== ================
+OutputX Audio Output Channel X
+======= ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +-------------------+---------------+---------+-------------------------------------------------------------------------------------------------------+
 | GUI Parameter     | Default Value | Range   | Function Description                                                                                  |
@@ -86,5 +93,3 @@ Note:
 
 | 
 | ===== DSP Parameter Computation ===== StepSize = 2^(-1 \* StepSize)
-
-.. |demuuxwslew.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/muxesanddemuxes/demuuxwslew.png

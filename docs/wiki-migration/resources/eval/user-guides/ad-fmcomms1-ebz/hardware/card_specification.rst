@@ -232,8 +232,6 @@ Dynamic range
 
 `Dynamic range <https://en.wikipedia.org/wiki/Dynamic range>`_
 
-.. _lo-bw-modified-board-1:
-
 LO BW (Modified Board)
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -253,8 +251,6 @@ LO BW (Modified Board)
 
 +----------------------------------------------------------------------------------+
 
-.. _intermodulation-distortion-modified-board-1:
-
 Intermodulation Distortion (Modified Board)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -271,8 +267,6 @@ Intermodulation Distortion (Modified Board)
 +------------------------------------+-------------------------------------+--------------------------------------+
 | 1MHz Offset, LO 3.6GHz, 0dBm input | 1MHz Offset, LO 3.6GHz, -6dBm input | 1MHz Offset, LO 3.6GHz, -12dBm input |
 +------------------------------------+-------------------------------------+--------------------------------------+
-
-.. _bandwidth-modified-board-1:
 
 Bandwidth (Modified Board)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

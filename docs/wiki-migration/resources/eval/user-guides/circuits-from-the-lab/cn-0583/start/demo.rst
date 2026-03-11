@@ -27,22 +27,24 @@ Residential Smart Smoke Sensor Demo Requirements
 -  Host PC with installed serial terminal program (e.g. Putty, TeraTerm)
 -  Smoke Check Smoke Detector Tester or any similar
 
-| |image1|
-| ===== Setup =====
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/start/requirements.png
+
+Setup
+-----
 
 Block Diagram
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Hardware Setup
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 -  Install the ADPD188BI smoke chamber on the primary side of the SOM.
 -  Carefully insert the SOM between P1 and P2 of the carrier board, following the cutout on the center. The proper orientation of the module will have pin 1 closest to the buzzer, and pin 28 on the side with the test button.
 -  Connect the P6 on the carrier board to the computer using the micro-USB cable.
 -  On the computer, check if the CN0583 hardware setup is recognized as a DAPLINK drive. This will indicate that the necessary drivers are complete and correct.
 
-| 
-| ==== Software Setup ====
+Software Setup
+~~~~~~~~~~~~~~
 
 Programming the SOM
 ~~~~~~~~~~~~~~~~~~~
@@ -71,26 +73,26 @@ This step is only required if you want to update the firmware of the CN0583 SOM.
 -  The hex file will now be written in the MAX32660's flash memory (this should take a few seconds). After that, the DAPLINK directory will be deleted.
 -  Wait for the DAPLINK directory to be created again (without unplugging the USB cable). After that, the CN0583 SOM is programmed with the new firmware. You may now use the CLI application by following the steps in the next section.
 
-| 
-| === Serial Terminal Setup ===
+Serial Terminal Setup
+~~~~~~~~~~~~~~~~~~~~~
 
 -  Plug in your connected device using a USB cable or other serial cable.
 -  Wait for the device driver of the connected device to install on your PC or Laptop.
 -  Open your device manager, and find out which COM port was assigned to your device.
 
+|image1|
+
+-  Open up your serial terminal program (e.g., PuTTY)
+-  Click on the serial configuration tab or window, and input the settings to match the requirements of your connected device. The default baud rate for most of the reference designs is 115200. Make sure that you use the correct baud rate for your application.
+
 |image2|
 
-   \* Open up your serial terminal program (e.g., PuTTY)
--  Click on the serial configuration tab or window, and input the settings to match the requirements of your connected device. The default baud rate for most of the reference designs is 115200. Make sure that you use the correct baud rate for your application.
+-  Ensure you click on the checkboxes for **Implicit CR in every LF** and **Implicit LF in every CF**.
+-  Ensure that local echo and line editing are enabled, so that you can see what you type and are able to correct mistakes. (Some devices may echo typed characters - if so, you will see each typed character twice. If this happens, turn off local echo.)
 
 |image3|
 
-   \* Ensure you click on the checkboxes for **Implicit CR in every LF** and **Implicit LF in every CF**.
--  Ensure that local echo and line editing are enabled, so that you can see what you type and are able to correct mistakes. (Some devices may echo typed characters - if so, you will see each typed character twice. If this happens, turn off local echo.)
-
-|image4|
-
-   \* Click on the open button, and as long as your connected device and serial terminal program are setup the same, then you should be able to start entering commands.
+-  Click on the open button, and as long as your connected device and serial terminal program are setup the same, then you should be able to start entering commands.
 
 Running the Demo
 ----------------
@@ -105,10 +107,14 @@ Running the Demo
 
    os 1 ---- Set the sample rate to 1 sample per second
 
-| Press ENTER.
-| ``s ---- Start the device in GO mode and stream data`` Press ENTER.
-| A stream of data in PTR value will appear. |image5| Observe that the alarm status is '0' which implies that there is no smoke event detected by the CN0583.
-| Set the opening of the smoke tester nozzle facing the CN0583 sensor 2 to 4 ft. away. Spray for 1-2 quick seconds and then observe that the alarm status on the terminal console will turn high '1'. |image6|
+Press ENTER.
+
+::
+
+   s ---- Start the device in GO mode and stream data
+
+| Press ENTER. A stream of data in PTR value will appear. |image4| Observe that the alarm status is '0' which implies that there is no smoke event detected by the CN0583.
+| Set the opening of the smoke tester nozzle facing the CN0583 sensor 2 to 4 ft. away. Spray for 1-2 quick seconds and then observe that the alarm status on the terminal console will turn high '1'. |image5|
 
 .. tip::
 
@@ -145,12 +151,11 @@ Typing **help** (or simply **h**) after the initial calibration sequence will di
 |                     |                  |                      | <**string**> = text to be printed.                                                                                                          | **n Note 1**                                            |
 +---------------------+------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/start/requirements.png
-.. |image2| image:: https://wiki.analog.com/_media/wiki/device_manager.png
+.. |image1| image:: https://wiki.analog.com/_media/wiki/device_manager.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/putty_settings.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/putty_settings.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/wiki/putty_terminal_options.png
+.. |image3| image:: https://wiki.analog.com/_media/wiki/putty_terminal_options.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/start/stream.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/start/stream_high.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/start/stream.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/start/stream_high.png

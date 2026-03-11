@@ -1,8 +1,9 @@
 Envelope Peak External Decay
 ============================
 
-| :doc:`Click here to return to the Dynamic Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
-| ---------------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Dynamic Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+
+--------------
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+
 | The Envelope Peak External Decay algorithm measures the absolute peak level of the incoming signal. A hold time is applied that will hold the value of an incoming peak level before starting the decay ramp. The decay ramp is linear and its speed can be controlled using the Decay Speed control input pin. | |envelopepeakextpic1.png| |
@@ -53,16 +54,23 @@ This cell calculates the peak envelope of the input signal and then applies a ho
 
 The variable decay input is approximately 1.82 times that of a normal peak envelope cell's decay speed. For example, in order to get a decay rate of 100 dB/s, 182 (in integer format) should be input to the variable decay pin.
 
-| With a fixed decay rate, the cell behaves just like a normal peak envelope cell. In the example below, the blue signal is the input, and the red signal is the peak envelope with a constant decay rate.
-| |envelopepeakextpic2.png|
-| If the decay rate is variable, then the envelope will decay at a variable rate. The example below shows the input (the blue burst signal at the right), the peak envelope, and the varying decay rate (fully-rectified sine wave).
-| |envelopepeakextpic3.png|
+With a fixed decay rate, the cell behaves just like a normal peak envelope cell. In the example below, the blue signal is the input, and the red signal is the peak envelope with a constant decay rate.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakextpic2.png
+   :alt: envelopepeakextpic2.png
+
+If the decay rate is variable, then the envelope will decay at a variable rate. The example below shows the input (the blue burst signal at the right), the peak envelope, and the varying decay rate (fully-rectified sine wave).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakextpic3.png
+   :alt: envelopepeakextpic3.png
 
 Example
 -------
 
-| The example below shows a digital input going into the peak envelope cell with a fixed decay of 1000, which equates to around 550 dB/s. The resulting envelope is output on a digital audio serial port.
-| |envelopepeakextpic4.png|
+The example below shows a digital input going into the peak envelope cell with a fixed decay of 1000, which equates to around 550 dB/s. The resulting envelope is output on a digital audio serial port.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakextpic4.png
+   :alt: envelopepeakextpic4.png
 
 Algorithm Details
 -----------------
@@ -90,6 +98,3 @@ Algorithm Details
 +----------------------------+----------------------------------------------------------------------+
 
 .. |envelopepeakextpic1.png| image:: https://wiki.analog.com/_media/envelopepeakextpic1.png
-.. |envelopepeakextpic2.png| image:: https://wiki.analog.com/_media/envelopepeakextpic2.png
-.. |envelopepeakextpic3.png| image:: https://wiki.analog.com/_media/envelopepeakextpic3.png
-.. |envelopepeakextpic4.png| image:: https://wiki.analog.com/_media/envelopepeakextpic4.png

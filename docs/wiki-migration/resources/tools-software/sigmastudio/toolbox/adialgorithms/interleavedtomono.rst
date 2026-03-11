@@ -1,8 +1,9 @@
 Interleaved to Mono
 ===================
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
-| |int_mono.png|\ \|
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+
+|int_mono.png|\ \|
 
 "Interleaved to Mono" is used to de-interleave two channels from an interleaved input into two separate mono channels.
 

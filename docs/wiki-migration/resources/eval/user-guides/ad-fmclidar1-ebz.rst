@@ -1,13 +1,9 @@
 AD-FMCLIDAR1-EBZ
 ================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support for the ad_fmclidar_ebz is discontinued on all supported carriers: Arria10 SOC, zc706 and zcu102. ad_fmclidar_ebz will not be supported in future releases, last release in which pre-build files can be found is 2021_r1. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all available Kuiper Linux releases.
+   \ **NOTE:** Support for the ad_fmclidar_ebz is discontinued on all supported carriers: Arria10 SOC, zc706 and zcu102. ad_fmclidar_ebz will not be supported in future releases, last release in which pre-build files can be found is 2021_r1. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all available Kuiper Linux releases.
 
 
 Introduction
@@ -76,7 +72,7 @@ The :adi:`AD-FMCLIDAR1-EBZ <en/design-center/evaluation-hardware-and-software/ev
 System setup & evaluation
 -------------------------
 
-The development kit is delivered with an SD card containing the evaluation software for the :git-hdl:`supported FPGA carrier boards <projects/ad_fmclidar1_ebz>` and a set of accessories required to put the system together and get it up and running in no time.
+The development kit is delivered with an SD card containing the evaluation software for the `supported FPGA carrier boards <https://github.com/analogdevicesinc/hdl/tree/hdl_2019_r1/projects/ad_fmclidar1_ebz>`_ and a set of accessories required to put the system together and get it up and running in no time.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/box_contents.jpg
    :alt: Box contents
@@ -157,7 +153,7 @@ Videos & Articles
 
 |youtube>776jK4yPvjI| |youtube>uOehjnhe7Zc| |youtube>9-KRkB00VMQ|
 
-.. image:: https://wiki.analog.com/_media/:adi:`-/media/images/analog-dialogue/en/volume-54/number-1/articles/open-source-lidar-prototyping-platform/open-source-lidar-prototyping-platform`.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/:adi:`-/media/images/analog-dialogue/en/volume-54/number-1/articles/open-source-lidar-prototyping-platform/open-source-lidar-prototyping-platform`.jpg
    :alt: :adi:`-/media/images/analog-dialogue/en/volume-54/number-1/articles/open-source-lidar-prototyping-platform/open-source-lidar-prototyping-platform`.jpg
    :align: left
    :width: 200px

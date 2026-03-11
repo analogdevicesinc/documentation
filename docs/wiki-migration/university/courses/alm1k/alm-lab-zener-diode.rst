@@ -58,22 +58,7 @@ Zener Breakdown voltage measurements:
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less Breadboard
-| Jumper wires
-| 1 – Resistor (100 Ω or any similar value from 100 Ω to 1 KΩ)
-| 1 – 470 KΩ Resistor
-| 1 – 1 MΩ Resistor
-| 1 – 1N4735 6.2 volt Zener diode
-| 2 - 1.5 Volt cells in series (AA cells for example)
-| Or
-| 1 – LT1054 voltage inverter
-| 1 - 10 KΩ Resistor
-| 1 - 20 KΩ Resistor
-| 1 - 50 KΩ potentiometer
-| 1 - 0.01 uF capacitor
-| 1 - 10 uF capacitor
-| 1 - 47 uF capacitor
+ADALM1000 hardware module Solder-less Breadboard Jumper wires 1 – Resistor (100 Ω or any similar value from 100 Ω to 1 KΩ) 1 – 470 KΩ Resistor 1 – 1 MΩ Resistor 1 – 1N4735 6.2 volt Zener diode 2 - 1.5 Volt cells in series (AA cells for example) Or 1 – LT1054 voltage inverter 1 - 10 KΩ Resistor 1 - 20 KΩ Resistor 1 - 50 KΩ potentiometer 1 - 0.01 uF capacitor 1 - 10 uF capacitor 1 - 47 uF capacitor
 
 Directions:
 ~~~~~~~~~~~
@@ -126,8 +111,7 @@ Load the raw captured data for each example Zener diode into a data analysis sof
 Questions:
 ~~~~~~~~~~
 
-| What is the slope (effective resistance) of the curve above the breakdown voltage?
-| How much does the voltage change as the current changes from 100uA to 10 mA?
+What is the slope (effective resistance) of the curve above the breakdown voltage? How much does the voltage change as the current changes from 100uA to 10 mA?
 
 Appendix:
 ---------
@@ -167,7 +151,7 @@ In figure A2 we show the controls for the input frequency compensation. To turn 
 
 A 500 Hz 0 to 5 V square wave from the Channel A AWG output is used to observe the step response of the resistor divider and adjust the compensation filter settings for a flat response.
 
-\**For Further Reading: \*\*
+**For Further Reading:**
 
 `Diodes <https://en.wikipedia.org/wiki/Diode>`_
 

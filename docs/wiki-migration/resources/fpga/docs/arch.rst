@@ -65,7 +65,7 @@ Typically, this contains:
 Microprocessor
 ^^^^^^^^^^^^^^
 
-| In our designs, we use only two types:
+In our designs, we use only two types:
 
 +--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | **Intel**                                                                                              |                                                                                                    | **Xilinx**                                                                                                                                                                   |                                                                                |                                                                                   |
@@ -75,7 +75,7 @@ Microprocessor
 | `HPS <https://www.intel.com/content/www/us/en/products/programmable/soc/arria-10/applications.html>`_  | `NIOS II <https://www.intel.com/content/www/us/en/products/programmable/processor/nios-ii.html>`_  | `PS7 <https://www.xilinx.com/products/intellectual-property/processing_system7.html>`_ `PS8 <https://www.xilinx.com/products/intellectual-property/zynq-ultra-ps-e.html>`_   | `MicroBlaze™ <https://www.xilinx.com/products/design-tools/microblaze.html>`_  | `Versal <https://www.xilinx.com/products/silicon-devices/acap/versal.html>`_      |
 +--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
-| Worth mentioning in case of SoCs, the **Hard Processor System** (HPS) or **Processing System 7/8** (PS7/8) do not contain just the dual-core ARM® Cortex® - A9 MPCore™ processor, they also have other integrated peripherals and memory interfaces. For more information please visit the manufacturer's website, listed in the table above.
+Worth mentioning in case of SoCs, the **Hard Processor System** (HPS) or **Processing System 7/8** (PS7/8) do not contain just the dual-core ARM® Cortex® - A9 MPCore™ processor, they also have other integrated peripherals and memory interfaces. For more information please visit the manufacturer's website, listed in the table above.
 
 -  ``PS7`` --- `Zynq-7000 SoC Processing System <https://docs.xilinx.com/v/u/en-US/pg082-processing-system7>`_ (``processing_system7``)
 -  ``PS8`` --- `Zynq UltraScale+ MPSoC Processing System <https://docs.xilinx.com/viewer/book-attachment/xFC3qkokxbD~75kj6nPLuw/2o4flzqn5OqWHaMHwpG3Qg>`_ (``zynq_ultra_ps_e``)
@@ -94,8 +94,7 @@ Under the two links below the user can find the landing page of the available me
 Peripheral Interfaces
 ^^^^^^^^^^^^^^^^^^^^^
 
-| These interfaces are used to control external peripherals located on the prototyping board or the FMC IO board.
-| In HDL, these ports are named slightly different than how they're in the documentations. Thus, to make it easier for beginners, here you have the naming of the ports depending on the microprocessor used.
+These interfaces are used to control external peripherals located on the prototyping board or the FMC IO board. In HDL, these ports are named slightly different than how they're in the documentations. Thus, to make it easier for beginners, here you have the naming of the ports depending on the microprocessor used.
 
 SPI
 """
@@ -167,9 +166,7 @@ HDL interrupt Linux Zynq Actual Zynq Linux ZynqMP Actual ZynqMP
 0             29         61          89           121
 ============= ========== =========== ============ =============
 
-++++
 
---------------
 
 Board design
 ~~~~~~~~~~~~
@@ -181,9 +178,89 @@ Board capabilities - Xilinx platforms
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
-++++ Board capabilities \| .. include:: arch/xilinx_platforms.rst ++++
+++++ Board capabilities \|
+
+Board capabilities - Xilinx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| Board name                                                                           | Boots from | FMC connector 1            | FMC connector 2            |
++======================================================================================+============+============================+============================+
+| `AC701 <https://www.xilinx.com/products/boards-and-kits/ek-a7-ac701-g.html>`_        | JTAG       | HPC (2 GTP @ 6.6Gbps)      | ---                        |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `Cora Z7-07S <https://digilent.com/reference/programmable-logic/cora-z7/start>`_     | SD card    | ---                        | ---                        |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `KC705 <https://www.xilinx.com/products/boards-and-kits/ek-k7-kc705-g.html>`_        | JTAG       | HPC (4 GTX @ 10.3125 Gbps) | LPC (1 GTX @ 10.3125 Gbps) |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `KCU105 <https://www.xilinx.com/products/boards-and-kits/kcu105.html>`_              | JTAG       | HPC (8 GTH @ 16.3 Gbps)    | LPC (1 GTH @ 16.3 Gbps)    |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `Microzed <http://zedboard.org/product/microzed>`_                                   | JTAG       | ---                        | ---                        |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `VC707 <https://www.xilinx.com/products/boards-and-kits/ek-v7-vc707-g.html>`_        | JTAG       | HPC (8 GTX @ 12.5 Gbps)    | HPC (8 GTX @ 12.5 Gbps)    |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `VC709 <https://www.xilinx.com/products/boards-and-kits/dk-v7-vc709-g.html>`_        | JTAG       | HPC (10 GTH @ 13.1 Gbps)   | ---                        |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `VCK190 <https://www.xilinx.com/products/boards-and-kits/vck190.html>`_              | SD card    | FMC+ (12 GTY @ 28.21 Gbps) | FMC+ (12 GTY @ 28.21 Gbps) |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `VCU118 <https://www.xilinx.com/products/boards-and-kits/vcu118.html>`_              | JTAG       | FMC+ (24 GTY @ 28.21 Gbps) | LPC                        |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `VCU128 <https://www.xilinx.com/products/boards-and-kits/vcu128.html>`_              | JTAG       | FMC+ (24 GTY @ 28.21 Gbps) | ---                        |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `VMK180 <https://www.xilinx.com/products/boards-and-kits/vmk180.html>`_              | SD card    | FMC+ (12 GTY @ 28.21 Gbps) | FMC+ (12 GTY @ 28.21 Gbps) |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `ZC702 <https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html>`_        | SD card    | LPC                        | LPC                        |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `ZC706 <https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html>`_        | SD card    | HPC (8 GTX @ 10.3125 Gbps) | LPC (1 GTX @ 10.3125 Gbps) |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `ZCU102 <https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-es2-g.html>`_  | SD card    | HPC (8 GTH @ 16.3 Gbps)    | HPC (8 GTH @ 16.3 Gbps)    |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+| `Zedboard <http://zedboard.org/product/zedboard>`_                                   | SD card    | LPC                        | ---                        |
++--------------------------------------------------------------------------------------+------------+----------------------------+----------------------------+
+
+VADJ values
+^^^^^^^^^^^
+
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| Board name                                                                           | FMC 1                | FMC 2                | Family              |
++======================================================================================+======================+======================+=====================+
+| `AC701 <https://www.xilinx.com/products/boards-and-kits/ek-a7-ac701-g.html>`_        | 3.3V/**\*2.5V**/1.8V | ---                  | Artix-7             |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `Cora Z7-07S <https://digilent.com/reference/programmable-logic/cora-z7/start>`_     | ---                  | ---                  | Zynq-7000           |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `KC705 <https://www.xilinx.com/products/boards-and-kits/ek-k7-kc705-g.html>`_        | 3.3V/**\*2.5V**/1.8V | 3.3V/**\*2.5V**/1.8V | Kintex-7            |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `KCU105 <https://www.xilinx.com/products/boards-and-kits/kcu105.html>`_              | **\*1.8V**/1.5V/1.2V | **\*1.8V**/1.5V/1.2V | Kintex UltraScale   |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `Microzed <http://zedboard.org/product/microzed>`_                                   | ---                  | ---                  | Zynq-7000           |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `VC707 <https://www.xilinx.com/products/boards-and-kits/ek-v7-vc707-g.html>`_        | **\*1.8V**/1.5V/1.2V | **\*1.8V**/1.5V/1.2V | Virtex-7            |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `VC709 <https://www.xilinx.com/products/boards-and-kits/dk-v7-vc709-g.html>`_        | **\*1.8V**           | ---                  | Virtex-7            |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `VCK190 <https://www.xilinx.com/products/boards-and-kits/vck190.html>`_              | **\*1.5V**/1.2V      | **\*1.5V**/1.2V      | Versal              |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `VCU118 <https://www.xilinx.com/products/boards-and-kits/vcu118.html>`_              | **\*1.8V**/1.5V/1.2V | **\*1.8V**/1.5V/1.2V | Virtex UltraScale+  |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `VCU128 <https://www.xilinx.com/products/boards-and-kits/vcu128.html>`_              | **\*1.8V**/1.5V/1.2V | ---                  | Virtex UltraScale+  |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `VMK180 <https://www.xilinx.com/products/boards-and-kits/vmk180.html>`_              | **\*1.5V**/1.2V      | **\*1.5V**/1.2V      | Versal              |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `ZC702 <https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html>`_        | 3.3V/**\*2.5V**/1.8V | 3.3V/**\*2.5V**/1.8V | Zynq-7000           |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `ZC706 <https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html>`_        | 3.3V/**\*2.5V**/1.8V | 3.3V/**\*2.5V**/1.8V | Zynq-7000           |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `ZCU102 <https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-es2-g.html>`_  | **\*1.8V**/1.5V/1.2V | **\*1.8V**/1.5V/1.2V | Zynq UltraScale+ MP |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+| `Zedboard <http://zedboard.org/product/zedboard>`_                                   | 3.3V/2.5V/**\*1.8V** | ---                  | Zynq-7000           |
++--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
+
+| (\* bold) = default VADJ
+| FMC1 & FMC2 columns -> depending on the power supply of the device connected to the FMC, the custom VADJ will have the value supported by both the carrier and the device(s)
+
+
+++++
 
 .. raw:: html
 
@@ -197,9 +274,41 @@ Board capabilities - Intel platforms
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
-++++ Board capabilities \| .. include:: arch/intel_platforms.rst ++++
+++++ Board capabilities \|
+
+Board capabilities - Intel
+==========================
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------+
+| Board name                                                                                                                                           | FMC connector 1       | FMC connector 2       |
++======================================================================================================================================================+=======================+=======================+
+| `A10GX <https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-a10-gx-fpga.html>`_                                                      | LPC ()                | HPC (8 x 17.4 Gbps)   |
++------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------+
+| `A10SOC <https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html>`_                                        | HPC (8)               | LPC (8)               |
++------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------+
+| `Stratix10SoC <https://www.intel.com/content/www/us/en/programmable/products/boards_and_kits/dev-kits/altera/stratix-10-soc-development-kit.html>`_  | FMC+ (24 @ 28.3 Gbps) | FMC+ (24 @ 28.3 Gbps) |
++------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------+
+
+VADJ values
+-----------
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+---------------------------------+
+| Board name                                                                                                                                           | FMC 1                                 | FMC 2                           |
++======================================================================================================================================================+=======================================+=================================+
+| `A10GX <https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-a10-gx-fpga.html>`_                                                      | **\*1.8V**/1.5V/1.35V/1.2V            | **\*1.8V**/1.5V/1.35V/1.2V      |
++------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+---------------------------------+
+| `A10SOC <https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html>`_                                        | **\*1.8V**/1.5V/1.35V/1.25V/1.2V/1.1V | **\*1.8V**/1.5V/1.35V/1.2V/1.1V |
++------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+---------------------------------+
+| `Stratix10SoC <https://www.intel.com/content/www/us/en/programmable/products/boards_and_kits/dev-kits/altera/stratix-10-soc-development-kit.html>`_  | **\*3.3V**/1.8V/1.2V                  | **\*3.3V**/1.8V/1.2V            |
++------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+---------------------------------+
+
+| (\* bold) = default VADJ
+| FMC1 & FMC2 columns -> depending on the power supply of the device connected to the FMC, the custom VADJ will have the value supported by both the carrier and the device(s)
+
+
+++++
 
 .. raw:: html
 
@@ -209,7 +318,7 @@ Board capabilities - Intel platforms
 --------------
 
 File structure of a project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 .. tip::
 
@@ -217,7 +326,7 @@ File structure of a project
 
 
 Project files for Xilinx boards
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A project for a Xilinx FPGA board should contain the following files:
 
@@ -238,7 +347,7 @@ A project for a Xilinx FPGA board should contain the following files:
       -  the base design, board design and system_bd.tcl describe this module, making the connections between the instantiated IPs
 
 Project files for Intel boards
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A project for an Intel FPGA board should contain the following files:
 
@@ -260,5 +369,5 @@ Some carriers have a different name for these files, for example A10SoC has cons
 -  a10soc_plddr4_assign.tcl --- constraints file for the PL
 -  a10soc_system_assign.tcl --- constraints file for the PS
 
-.. image:: https://wiki.analog.com/_media/navigation HDL User Guide#run
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#run
    :alt: Running on hardware#hdl|Main page#ip_cores|IP Cores

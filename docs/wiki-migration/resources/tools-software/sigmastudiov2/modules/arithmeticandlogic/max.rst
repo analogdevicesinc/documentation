@@ -3,13 +3,13 @@
 Max
 ===
 
-| 
-| |max.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/max.png
+   :alt: max.png
 
 Description
 -----------
 
-| The Max block compares the two (or more) inputs and outputs the highest value.
+The Max block compares the two (or more) inputs and outputs the highest value.
 
 Targets Supported
 -----------------
@@ -20,7 +20,6 @@ Name ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Max  B          B                S/B           B
 ==== ========== ================ ============= ================
 
-|
 
 | ===== Pins =====
 
@@ -56,5 +55,3 @@ DSP Parameters
 --------------
 
 NO DSP parameters
-
-.. |max.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/max.png

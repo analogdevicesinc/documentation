@@ -14,7 +14,7 @@ As in all the ALM labs we use the following terminology when referring to the co
 Background:
 -----------
 
-\**PN junction capacitance \*\*
+**PN junction capacitance**
 
 Increasing the reverse bias voltage, V\ :sub:`J`, across a PN junction leads to the redistribution of charge away from the interface leaving a depleted region or layer, W in figure 1. This depleted layer acts like the insulator between the two conducting plates of a capacitor. The thickness, W, of this layer is a function of the applied electric field and the doping concentration. The PN junction capacitance is divided into two components, the barrier capacitance and the diffusion capacitance. Under the conditions of reverse bias free carrier injection does not occur therefore, the diffusion capacitance is equal to zero. The barrier capacitance is the dominant source of capacitance for reverse and small positive bias voltages less than the diode turn on voltage (0.6V for Si). In practice, the barrier capacitance can be as small as a fraction of a picofarad to hundreds of picofarads depending on the area of the junction and the doping concentration. The dependence of the junction capacitance to the applied bias voltage called the capacitance-voltage (CV) characteristic of the junction. In this lab you will measure and plot this characteristic for various PN junctions (diodes).
 
@@ -27,23 +27,12 @@ Increasing the reverse bias voltage, V\ :sub:`J`, across a PN junction leads to 
    Figure 1 PN junction depletion region
 
 
-| For further reading on PN junction depletion region:
-| http://en.wikipedia.org/wiki/Depletion_region
+For further reading on PN junction depletion region: http://en.wikipedia.org/wiki/Depletion_region
 
 Materials:
 ~~~~~~~~~~
 
-| ALM1000 Module
-| Solder-less Breadboard
-| 1 – AD8541 single op-amp
-| 1 – 100 KΩ resistor
-| 1 – 39 pF capacitor
-| 1 – 1N4001 diode
-| 1 - 1N3064 diode
-| 1 – 1N914 diode
-| Red, yellow and green LEDs
-| 1 – NPN transistor, 2N3904 or TIP31
-| 1 – PNP transistor, 2N3906 or TIP32
+ALM1000 Module Solder-less Breadboard 1 – AD8541 single op-amp 1 – 100 KΩ resistor 1 – 39 pF capacitor 1 – 1N4001 diode 1 - 1N3064 diode 1 – 1N914 diode Red, yellow and green LEDs 1 – NPN transistor, 2N3904 or TIP31 1 – PNP transistor, 2N3906 or TIP32
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -122,8 +111,6 @@ Now we are ready to measure the capacitance of the various diodes from the Analo
 
    Figure 7, Step 3 setup to measure diode capacitance
 
-
-.. _hardware-setup-1:
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~

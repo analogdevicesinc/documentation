@@ -20,7 +20,7 @@ Status
 +---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | Source                                                                                      | Mainlined?                                                                                                   |
 +=============================================================================================+==============================================================================================================+
-| :git-linux:`git <sound/soc/codecs/ssm4567.c>`                                               | `yes <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/ssm4567.c>`_  |
+| `git <https://github.com/analogdevicesinc/linux/blob/ssm4329/sound/soc/codecs/ssm4567.c>`_  | `yes <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/ssm4567.c>`_  |
 +---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 Files
@@ -29,17 +29,27 @@ Files
 +----------+-------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                    |
 +==========+=========================================================================================================================+
-| driver   | :git-linux:`sound/soc/codecs/ssm4567.c`                                                                                 |
+| driver   | `sound/soc/codecs/ssm4567.c <https://github.com/analogdevicesinc/linux/blob/asoc-ssm4329/sound/soc/codecs/ssm4567.c>`_  |
 +----------+-------------------------------------------------------------------------------------------------------------------------+
-| include  | :git-linux:`sound/soc/codecs/ssm4567.h`                                                                                 |
+| include  | `sound/soc/codecs/ssm4567.h <https://github.com/analogdevicesinc/linux/blob/asoc-ssm4329/sound/soc/codecs/ssm4567.h>`_  |
 +----------+-------------------------------------------------------------------------------------------------------------------------+
 
 Example device initialization
 =============================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
+
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+
+This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+
+So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+
+For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+
 
 The I2C address of the SSM4567 depends on the setting of the ADDR pin.
 
@@ -85,7 +95,7 @@ Devicetree
 
        #size-cells = <0>;
        #address-cells = <1>;
-               
+
        ssm4567: ssm4567@34 {
            compatible = "adi,ssm4567";
            reg = <0x34>;
@@ -223,7 +233,7 @@ Example DAI configuration
        .codec_dai_name = "ssm4567-hifi",
        .dai_fmt = SND_SOC_DAIFMT_DSP_A
 
-       |
+
                SND_SOC_DAIFMT_NB_NF |
 
                SND_SOC_DAIFMT_CBS_CFS,
@@ -314,7 +324,7 @@ Note support for multiple CODECs on a single DAI link requires Linux v3.17 or hi
        .dai_fmt = SND_SOC_DAIFMT_DSP_A
 
 
-       |
+
            SND_SOC_DAIFMT_NB_NF |
 
            SND_SOC_DAIFMT_CBS_CFS,
@@ -338,4 +348,8 @@ More information
 
 -   `SSM4329 Linux Driver <https://wiki.analog.com/ssm4329>`_
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

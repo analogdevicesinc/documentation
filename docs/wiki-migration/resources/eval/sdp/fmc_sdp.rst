@@ -24,7 +24,7 @@ Product Overview
 | |image1| |image2|
 | Fig 1 : SDP FMC Adapter Board (a) top view (b) bottom view
 
-| The FMC-SDP Interposer routes signals from a Xilinx® evaluation board with a FMC connector to the SDP daughter board. There is no additional logic on board. There is a mating edge FMC connector and a 120 pin connector header for connecting to the SDP daughter boards.
+The FMC-SDP Interposer routes signals from a Xilinx® evaluation board with a FMC connector to the SDP daughter board. There is no additional logic on board. There is a mating edge FMC connector and a 120 pin connector header for connecting to the SDP daughter boards.
 
 Schematics
 ----------

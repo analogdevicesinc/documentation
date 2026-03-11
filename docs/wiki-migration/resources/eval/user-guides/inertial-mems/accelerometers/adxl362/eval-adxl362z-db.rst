@@ -1,7 +1,7 @@
 ADXL362 Datalogger & Development Board
 ======================================
 
-|
+
 
 .. important::
 
@@ -24,23 +24,17 @@ PDF User Guides
 Kit Contents
 ~~~~~~~~~~~~
 
-| 1 x ADXL362 Datalogger / Development Board
-| 1 x MicroSD card with USB reader
-| 1 x USB cable
-| 1 x E-Ink electronic paper display
-| 1 x Piece of double-sided foam tape
+1 x ADXL362 Datalogger / Development Board 1 x MicroSD card with USB reader 1 x USB cable 1 x E-Ink electronic paper display 1 x Piece of double-sided foam tape
 
 Not Included
 ^^^^^^^^^^^^
 
-| 1 x CR2450 coin cell battery, required only if stand-alone operation is desired. Full functionality of the board is availabe using USB power.
-| Multimeter or ammeter for measuring current consumption
+1 x CR2450 coin cell battery, required only if stand-alone operation is desired. Full functionality of the board is availabe using USB power. Multimeter or ammeter for measuring current consumption
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
 
-| PC running Windows
-| USB 2.0 Port
+PC running Windows USB 2.0 Port
 
 Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,15 +48,14 @@ Design and Integration Files
 Drivers
 ~~~~~~~
 
-| Download and install these drivers to connect the board to your PC, then follow these :doc:`written instructions </wiki-migration/resources/eval/user-guides/inertial-mems/evalsystem/installdrivers>` or :adi:`video instructions <static/imported-files/eval_boards/InstallDrivers.zip>` for installation.
-| `32-bit <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/vcomusbdriver_v2040a_32bit.zip>`_ or `64-bit <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/vcomusbdriver_v2040a_64bit.zip>`_
+Download and install these drivers to connect the board to your PC, then follow these :doc:`written instructions </wiki-migration/resources/eval/user-guides/inertial-mems/evalsystem/installdrivers>` or :adi:`video instructions <static/imported-files/eval_boards/InstallDrivers.zip>` for installation. `32-bit <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/vcomusbdriver_v2040a_32bit.zip>`_ or `64-bit <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/vcomusbdriver_v2040a_64bit.zip>`_
 
 Programming Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| The firmware for the EVAL-ADXL362Z-DB was developed for the Renesas RL78/G13 microcontroller using the Renesas Electronics CubeSuite+ environment. The links below offer downloads and installation instructions for these tools:
-| http://www.renesas.eu/products/tools/evaluation_software/downloads.jsp (Global site)
-| https://www.renesas.com/us/en/design-support/software-and-tool (US site)
+The firmware for the EVAL-ADXL362Z-DB was developed for the Renesas RL78/G13 microcontroller using the Renesas Electronics CubeSuite+ environment. The links below offer downloads and installation instructions for these tools:
+
+http://www.renesas.eu/products/tools/evaluation_software/downloads.jsp (Global site) https://www.renesas.com/us/en/design-support/software-and-tool (US site)
 
 Getting Started
 ===============
@@ -70,18 +63,16 @@ Getting Started
 If this is your first time using this board, you will need to follow these steps to get started.
 
 -  Assemble the board.
-   <wrap>
+   
 
-| - Insert the EInk display in to the connector by lifting the brown tab on the connector, inserting the tail of the display, and pressing the brown tab back into place.
-| - Optional: use the double-sided tape to fix the display in place. Stick the foam square to the board first, then gently press the display down onto the tape.
-| </wrap>
+- Insert the EInk display in to the connector by lifting the brown tab on the connector, inserting the tail of the display, and pressing the brown tab back into place. - Optional: use the double-sided tape to fix the display in place. Stick the foam square to the board first, then gently press the display down onto the tape.
 
 -  Power the board.
-   <wrap>
+   
 
-| - This board ships pre-programmed with the MultiDemo firmware that allows is to be used as a motion switch, data logger, or input to a real-time PC-connected user interface. The motion switch functionality can be used with the coin cell battery alone, without downloading any drivers or connecting to USB. Just insert a CR2450 coin cell batter in the holder on the back of the board, ensure all jumpers and switches are in the appropriate positions, and turn the board on. (this shows the back side of the board with the battery orientation - positive side of battery facing out\ |image1|)
-| - To use the data logger or real-time evaluation functionality, you will need to install drivers and other files. Proceed to the next step for instructions.
-| </wrap>
+- This board ships pre-programmed with the MultiDemo firmware that allows is to be used as a motion switch, data logger, or input to a real-time PC-connected user interface. The motion switch functionality can be used with the coin cell battery alone, without downloading any drivers or connecting to USB. Just insert a CR2450 coin cell batter in the holder on the back of the board, ensure all jumpers and switches are in the appropriate positions, and turn the board on. (this shows the back side of the board with the battery orientation - positive side of battery facing out\ |image1|)
+
+- To use the data logger or real-time evaluation functionality, you will need to install drivers and other files. Proceed to the next step for instructions.
 
 -  Install the drivers and verify COM port.
    - Download drivers `above <https://wiki.analog.com/>`_.
@@ -103,12 +94,12 @@ Analog Devices has developed firmware for implementing the following functions v
 Reconfiguring the Board
 -----------------------
 
-| The EVAL-ADXL362Z-DB firmware can be rewritten using the Renesas Flash Programmer (click `here <https://wiki.analog.com/>`_ for download links). Follow these instructions to flash a firmware ``.hex`` file to the board.
-| \* If you haven't done so already, download the desired firmware ``.hex`` file from `here <https://wiki.analog.com/>`_, or create one of your own. Save it in a known location.
+The EVAL-ADXL362Z-DB firmware can be rewritten using the Renesas Flash Programmer (click `here <https://wiki.analog.com/>`_ for download links). Follow these instructions to flash a firmware ``.hex`` file to the board.
 
--  Set the programming switch to the PROG setting, as shown in the image below. (The setting of the ON/OFF switch is ignored when using USB power.) <WRAP>
+-  If you haven't done so already, download the desired firmware ``.hex`` file from `here <https://wiki.analog.com/>`_, or create one of your own. Save it in a known location.
+-  Set the programming switch to the PROG setting, as shown in the image below. (The setting of the ON/OFF switch is ignored when using USB power.) 
 
-|Front of board showing switch settings| </WRAP>
+|Front of board showing switch settings| 
 
 -  If a battery is plugged in to the board, remove it or ensure that jumper J2 is in the USB position.
 -  Plug the USB cable in to the computer and to the USB port on the board.
@@ -154,7 +145,7 @@ To use the MultiDemo firmware:
 
 ::
 
-   * 
+   -
 
 Motion Switch
 -------------
@@ -169,7 +160,7 @@ The neat thing about this board is how little power it consumes. Between the low
 
 
 ======================== ================== ============
-Current Consumption [µA]                    ::
+Current Consumption [µA]                       
 ======================== ================== ============
 In Motion                Stationary         Measured by:
 *Your measurement*       *Your measurement* *Your Name*
@@ -205,15 +196,18 @@ Commands: 0xAA - Enable PC control, the board should respond (500+ ms) 0x55 and 
 ::
 
      Start collection can be augmented with additional commands which specify different modes
-        
+
+::
+
      0xB1 0x0L 0x00 0xGS 0xN2
      Where L is the length: 1 for 8-bit; 0 for 12-bit
      G is the maximum G: 1 - 2G; 5 - 4G; 9 - 8G
      S is the sampling rate: 0-12.5hz;1-25hz;2-50hz;3-100hz;4-200hz;5-400hz
      N is the filtering: 0-Normal; 1-Low Noise; 2-Ultra low noise
-     
-     EG: 0xB1 0x00 0x00 0x15 0x02   would be start, 12-bit samples, 2G max, 400hz sampling, normal noise mode.    
-     
+
+::
+
+     EG: 0xB1 0x00 0x00 0x15 0x02   would be start, 12-bit samples, 2G max, 400hz sampling, normal noise mode.
 
 0xB2 to end collecting data
 

@@ -140,8 +140,6 @@ The following items will be tested:
 -  Display
 -  Navigation Switch / Rotary Encoder
 
-.. _test-procedure-1:
-
 Test Procedure
 --------------
 

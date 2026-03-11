@@ -3,8 +3,9 @@ Using SigmaStudio
 
 This section describe the basic functions of the SigmaStudio software.
 
-| :doc:`Click here to return to the SigmaStudio and SigmaDSP Documentation top page. </wiki-migration/resources/tools-software/sigmastudio>`
-| These pages describe the basic functions of the SigmaStudio software:
+:doc:`Click here to return to the SigmaStudio and SigmaDSP Documentation top page. </wiki-migration/resources/tools-software/sigmastudio>`
+
+These pages describe the basic functions of the SigmaStudio software:
 
 -  :doc:`Building Schematics </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics>` (IC, Input/Output, Blocks, Algorithms and Wires)
 -  :doc:`Link/Compile/Download </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/linkcompiledownload>`

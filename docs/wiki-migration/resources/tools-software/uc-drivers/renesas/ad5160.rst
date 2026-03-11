@@ -1,7 +1,70 @@
 AD5160 - No-OS Driver for Renesas Microcontroller Platforms
 ===========================================================
 
-.. include:: ../ad5160.rst
+
+Supported Devices
+=================
+
+-  :adi:`AD5160`
+
+Evaluation Boards
+=================
+
+-  `PmodDPOT <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DPOT>`_
+
+Overview
+========
+
+
+The :adi:`AD5160` provides a compact 2.9 mm × 3 mm packaged solution for 256-position adjustment applications. These devices perform the same electronic adjustment function as mechanical potentiometers or variable resistors but with enhanced resolution, solid-state reliability, and superior low temperature coefficient performance.
+
+The wiper settings are controllable through an SPI-compatible digital interface. The resistance between the wiper and either end point of the fixed resistor varies linearly with respect to the digital code transferred into the RDAC latch.
+
+Operating from a 2.7 V to 5.5 V power supply and consuming less than 5 μA allows for usage in portable battery-operated applications.
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad5160_pmod_dpot.jpg
+   :align: center
+
+
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the AD5160 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5160 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD5160 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD5160 driver:
+
++--------------------------------------+-----------------------------------------------+
+| Function                             | Description                                   |
++======================================+===============================================+
+| char AD5160_Init(void)               | Initializes the SPI communication peripheral. |
++--------------------------------------+-----------------------------------------------+
+| void AD5160_Set(unsigned char value) | Writes data to AD5160.                        |
++--------------------------------------+-----------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+
+
 
 **HW Platform(s):**
 
@@ -18,9 +81,9 @@ Downloads
    -  `AD5160 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad5160_generic.zip>`_
    -  `AD5160 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5160_rl78g13.zip>`_
    -  `AD5160 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5160_rx62n.zip>`_
-   -  \**AD5160 Driver: \*\* :git-no-OS:`drivers/AD5160`
-   -  \**PmodDPOT Demo for RL78G14: \*\* :git-no-OS:`Renesas/RL78G14/PmodDPOT`
-   -  \**RL78G14 Common Drivers: \*\* :git-no-OS:`Renesas/RL78G14/Common`
+   -  **AD5160 Driver:** :git-no-OS:`drivers/AD5160`
+   -  **PmodDPOT Demo for RL78G14:** :git-no-OS:`Renesas/RL78G14/PmodDPOT`
+   -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
 
@@ -73,15 +136,11 @@ Renesas RL78G14 Quick Start Guide
 
 This section contains a description of the steps required to run the AD5160 demonstration project on a Renesas RL78G14 platform using the PmodDPOT.
 
-.. _required-hardware-1:
-
 Required Hardware
 -----------------
 
 -  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`_
 -  `PmodDPOT <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DPOT>`_
-
-.. _required-software-1:
 
 Required Software
 -----------------
@@ -97,8 +156,6 @@ Required Software
    All three parts have to be downloaded.
 
 
-.. _hardware-setup-1:
-
 Hardware Setup
 --------------
 
@@ -106,8 +163,6 @@ A PmodDPOT has to be connected to the PMOD1 connector, pins 1 to 6 (see image be
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_dpot_rl78g14.jpg
    :align: center
-
-.. _reference-project-overview-1:
 
 Reference Project Overview
 --------------------------
@@ -119,8 +174,6 @@ The reference project:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_dpot_rl78g14_screen.jpg
    :align: center
-
-.. _software-project-tutorial-1:
 
 Software Project Tutorial
 -------------------------
@@ -136,23 +189,17 @@ Renesas RX62N Quick Start Guide
 
 This section contains a description of the steps required to run the AD5160 demonstration project on a Renesas RX62N platform.
 
-.. _required-hardware-2:
-
 Required Hardware
 -----------------
 
 -  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
 -  PmodDPOT
 
-.. _required-software-2:
-
 Required Software
 -----------------
 
 -  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
 -  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
-
-.. _hardware-setup-2:
 
 Hardware Setup
 --------------
@@ -169,8 +216,6 @@ A PmodDPOT has to be interfaced with the Renesas Demonstration Kit (RDK) for RX6
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_dpot_rx62n.jpg
    :align: center
-
-.. _reference-project-overview-2:
 
 Reference Project Overview
 --------------------------
@@ -192,4 +237,12 @@ Software Project Setup
 More information
 ================
 
-.. include:: ../more-information.rst
+
+-  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
+

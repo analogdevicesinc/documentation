@@ -1,9 +1,13 @@
 Hierarchy Output
 ================
 
-| :doc:`Click here to return to the System page </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign>`
-| The Hierarchy output block is used to create signal outputs from a Schematic Hierarchy Tab. Hierarchy Boards are helpful for large schematic designs and for organizing design components.
-| |hierarchyoutputpic1.png|
+:doc:`Click here to return to the System page </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign>`
+
+The Hierarchy output block is used to create signal outputs from a Schematic Hierarchy Tab. Hierarchy Boards are helpful for large schematic designs and for organizing design components.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyoutputpic1.png
+   :alt: hierarchyoutputpic1.png
+   :align: center
 
 .. tip::
 
@@ -16,7 +20,9 @@ To create a Hierarchy Output:
 -  Drag a **Hierarchy Output** block into the schematic.
 -  This will create a Hierarchy Output block in the schematic and a corresponding output pin on the Hierarchy Board block.
 
-| |hierarchyoutputpic2.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyoutputpic2.png
+   :alt: hierarchyoutputpic2.png
+   :align: center
 
 .. hint::
 
@@ -24,6 +30,3 @@ To create a Hierarchy Output:
 
 
 See the Hierarchy Board :doc:`System Example </wiki-migration/resources/tools-software/sigmastudio/tutorials/systemexamples>` for a sample hierarchy board design.
-
-.. |hierarchyoutputpic1.png| image:: https://wiki.analog.com/_media/hierarchyoutputpic1.png
-.. |hierarchyoutputpic2.png| image:: https://wiki.analog.com/_media/hierarchyoutputpic2.png

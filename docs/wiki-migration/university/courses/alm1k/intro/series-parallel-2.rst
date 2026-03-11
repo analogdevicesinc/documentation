@@ -120,10 +120,7 @@ Experiments
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solderless breadboard and jumper wires
-| 3 – 100 Ω resistors
-| 3 – 470 Ω resistors
+ADALM1000 hardware module Solderless breadboard and jumper wires 3 – 100 Ω resistors 3 – 470 Ω resistors
 
 Resistors in Series:
 ~~~~~~~~~~~~~~~~~~~~
@@ -237,9 +234,6 @@ The combined resistance of R\ :sub:`2` and R\ :sub:`3` are in series with R1 so 
 
 For more complicated combination circuits, various parts can be identified as series or parallel, reduced to their equivalents, and then further reduced until a single resistance remains.
 
-| **For Further Study:**
-| `Khan Academy - Resistor circuits <https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-resistor-circuits/v/ee-series-resistors>`_
-| `Boundless Physics <https://courses.lumenlearning.com/boundless-physics/chapter/overview-5/>`_
-| `Series and parallel circuits (in Physics) <http://physics.bu.edu/py106/notes/Circuits.html>`_
+**For Further Study:** `Khan Academy - Resistor circuits <https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-resistor-circuits/v/ee-series-resistors>`_ `Boundless Physics <https://courses.lumenlearning.com/boundless-physics/chapter/overview-5/>`_ `Series and parallel circuits (in Physics) <http://physics.bu.edu/py106/notes/Circuits.html>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**

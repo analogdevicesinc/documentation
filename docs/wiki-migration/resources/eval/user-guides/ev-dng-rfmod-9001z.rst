@@ -57,15 +57,15 @@ For quick debugging purpose when hirose connector option is being used, followin
 EV-DNG-RFMOD-9001Z Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
-
 .. admonition:: Download
    :class: download
 
    `EV-DNG-RFMOD-9001Z Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/ev-dng-rfmod-9001z.pdf>`_
 
-   | `EV-DNG-RFMOD-9001Z Layout and BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ev-dng-rfmod-9001z_-_fab.zip>`_
-   | `EV-DNG-RFMOD-9001Z assembly <https://wiki.analog.com/_media/resources/eval/user-guides/ev-dng-rfmod-9001z_-_assembly.zip>`_
+   
+   `EV-DNG-RFMOD-9001Z Layout and BOM <https://wiki.analog.com/_media/resources/eval/user-guides/ev-dng-rfmod-9001z_-_fab.zip>`_
+   
+   `EV-DNG-RFMOD-9001Z assembly <https://wiki.analog.com/_media/resources/eval/user-guides/ev-dng-rfmod-9001z_-_assembly.zip>`_
 
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/rapidnet-ip>`

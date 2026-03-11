@@ -4,7 +4,7 @@ Scopy Network Analyzer
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/youtube>VZqPyR455UE
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>VZqPyR455UE
    :alt: youtube>VZqPyR455UE
 
 Introduction
@@ -12,7 +12,7 @@ Introduction
 
 For you to switch to this instrument, click on the “Network Analyzer” from the menu list as illustrated. The small white squares allows you to run/stop the instrument without having that instrument in the current display.
 
-.. container:: = centeralign
+.. container:: centeralign
 
    \ |image1|\
 
@@ -20,7 +20,7 @@ For you to switch to this instrument, click on the “Network Analyzer” from t
 Front Panel
 -----------
 
-.. container:: = centeralign
+.. container:: centeralign
 
    \ |image2|\
 
@@ -35,7 +35,7 @@ Starts and stops the capture of Network Analyzer Instrument. Alternatively, the 
 
 Shows or hides the general settings menu.
 
-.. container:: = rightalign
+.. container:: rightalign
 
    \ |?220|\
 
@@ -74,12 +74,10 @@ Allows you to adjust the view of the displays whether in Bode, Nyquist, or Nicho
 
 Allows you to view the acquired buffers in a time domain plot. The menu contains a switch used to turn ON/OFF the buffer previewer and a button which opens the current buffer in the Oscilloscope tool.
 
-| 
-
 Buffer Previewer
 ----------------
 
-.. container:: = centeralign
+.. container:: centeralign
 
    \ |image3|\
 
@@ -100,7 +98,7 @@ Buffer Previewer
 
 The "View in Osc" button will open the Oscilloscope tool and load the channels exported from the Network Analyzer tool.
 
-.. container:: = centeralign
+.. container:: centeralign
 
    \ |image4|\
 
@@ -108,7 +106,7 @@ The "View in Osc" button will open the Oscilloscope tool and load the channels e
 3. General Settings Menu Button
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. container:: = rightalign
+.. container:: rightalign
 
    \ |image5|\
 
@@ -123,12 +121,12 @@ You can choose what plot to be displayed in the plot area ( Bode, Nichols or Nyq
 
 \*\* 3. Reference \*\*
 
-| You can import a file to be used as a reference or create a snapshot from the current channel to be used as a reference.
+You can import a file to be used as a reference or create a snapshot from the current channel to be used as a reference.
 
 Snapshot
 --------
 
-.. container:: = centeralign
+.. container:: centeralign
 
    \ |image6|\
 
@@ -143,8 +141,6 @@ Shows or hides the cursors on Bode plot. When enabled, the cursors will show, an
 
 5. Plot area
 ~~~~~~~~~~~~
-
-| 
 
 Plots
 -----
@@ -182,7 +178,7 @@ To zoom in or out, you can use the + and - buttons (See above image). When zoome
 Nichols Plot
 ~~~~~~~~~~~~
 
-.. container:: = centeralign
+.. container:: centeralign
 
    \ |image9|\
 

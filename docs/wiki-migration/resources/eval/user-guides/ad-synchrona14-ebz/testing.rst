@@ -45,7 +45,7 @@ Firstly, write the latest available SD card image found to a spare card to boot 
    :class: download
 
    
-   -  \**22 June 2022 release \*\*
+   -  **22 June 2022 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/synchrona_test/synchrona_production_small.zip>`_
    
 
@@ -58,7 +58,7 @@ The SD image used is based on Raspbian with Desktop.
    :class: download
 
    
-   -  \**22 June 2022 release \*\*
+   -  **22 June 2022 release**
    -   `Actual file <http://swdownloads.analog.com/cse/prod_test_rel/synchrona_test/rpi_synchrona_production.zip>`_
    
 
@@ -126,11 +126,11 @@ Firstly, make sure all the required steps from the setup explained above are com
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/testt_5.png
    :align: right
 
--  The next step is testing the inputs, on the back panel. Use the SMA cable for back panel and attach it one at a time to REF IN, PPS, CH2 and CH3. \**For CH2 and CH3 inputs you only need to connect to one of the SMA connectors, P or N. On the input (P or N) you are not connecting the SMA cable place a SMA 50 Ohm terminator. \*\*
+-  The next step is testing the inputs, on the back panel. Use the SMA cable for back panel and attach it one at a time to REF IN, PPS, CH2 and CH3. \**For CH2 and CH3 inputs you only need to connect to one of the SMA connectors, P or N. On the input (P or N) you are not connecting the SMA cable place a SMA 50 Ohm terminator.**
 
 ::
 
-   * 
+   *
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/50ohm.jpg
    :align: center

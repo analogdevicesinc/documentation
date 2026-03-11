@@ -9,7 +9,7 @@ This document describes how to do a data transaction test via CAN bus on SC5xx E
 Hardware Setup
 --------------
 
-Two ADSP-SC5xx EZ-Boards: 
+Two ADSP-SC5xx EZ-Boards:
 
 -  ADSP-SC589 Ezkit v1.1 and above, or,
 -  ADSP-SC584 Ezkit v1.0 and above, or,
@@ -130,7 +130,7 @@ Run the data sending program on the other board:
 ::
 
    root:/> cansend can0 123#AABBCCDD
-   root:/> cansend can0 123#R 
+   root:/> cansend can0 123#R
    root:/> cansend can0 1F334455#1122334455667788
    root:/> cansend can0 1F334455#R
 
@@ -143,5 +143,6 @@ You should now see the transmitted data printing on the console of the receiving
    can0  1F334455  [8] 11 22 33 44 55 66 77 88
    can0  1F334455  [0] remote request
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

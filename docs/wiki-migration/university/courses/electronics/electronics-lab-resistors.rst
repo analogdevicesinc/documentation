@@ -256,12 +256,7 @@ A brief history of the resistor color code:
 
 The following is excerpted from a mixture of:
 
-| https:*en.wikipedia.org/wiki/Electronic_Industries_Alliance#History
-  https:*\ en.wikipedia.org/wiki/Electronic_color_code#History
-| https:*hsm.stackexchange.com/questions/7096/resistor-color-code
-  *\ https://hackaday.com/2020/01/13/why-do-resistors-have-a-color-code/\ *
-  https:*\ www.dailybreak.com/break/cabinet-of-curiosities-why-indigo-is-in-the-rainbow
-| https://en.wikipedia.org/wiki/Isaac_Newton's_occult_studies
+https://en.wikipedia.org/wiki/Electronic_Industries_Alliance#History https://en.wikipedia.org/wiki/Electronic_color_code#History https://hsm.stackexchange.com/questions/7096/resistor-color-code https://hackaday.com/2020/01/13/why-do-resistors-have-a-color-code/ https://www.dailybreak.com/break/cabinet-of-curiosities-why-indigo-is-in-the-rainbow https://en.wikipedia.org/wiki/Isaac_Newton's_occult_studies
 
 Before industry standards were established (1925), each manufacturer used their own unique system for color coding or marking their components.
 

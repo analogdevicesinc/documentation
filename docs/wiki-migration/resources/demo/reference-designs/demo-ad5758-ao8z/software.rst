@@ -20,14 +20,13 @@ The demo board comes with the latest version of the firmware pre-installed. If y
      * Select firmware file “adi5758_20180910.hex” in the <File to download> field. (This is the file you downloaded and unzipped in steps 1 & 2.)
      * Apply 24 V to the "**24 V SYS**" connector
      * Plug the USB cable into the demo board.
-     * Hold down S2 (Boot) button while briefly pressing the S1 (Reset) button. Then release S2. (See Figure 1) //This sequence is important//. \\ <wrap>{{:resources:demo:reference-designs:demo-ad5758-ao8z:demo-ad5758-ao8z:software:image2018-5-3_10-49-20.png?600|Reset and Boot buttons}} \\ //Figure 1 - **Reset** and **Boot** buttons//</wrap>
-
-* On the CrossCore SFP, select the correct COM port. (//Be sure to select the correct COM port here. It is usually the highest COMnn.//)
+     * Hold down S2 (Boot) button while briefly pressing the S1 (Reset) button. Then release S2. (See Figure 1) //This sequence is important//. \\ {{:resources:demo:reference-designs:demo-ad5758-ao8z:demo-ad5758-ao8z:software:image2018-5-3_10-49-20.png?600|Reset and Boot buttons}} \\ //Figure 1 - **Reset** and **Boot** buttons//
+   * On the CrossCore SFP, select the correct COM port. (//Be sure to select the correct COM port here. It is usually the highest COMnn.//)
    * Press [Start] to program device. (If you get the message “Failed to open serial device”, then repeat step 5 above, taking care to follow the exact button press sequence.)
-   * Programming the board takes about 10 seconds. When it is complete, you will see a message to that effect in the Status Window. (See Figure 2) \\ <wrap>
+   * Programming the board takes about 10 seconds. When it is complete, you will see a message to that effect in the Status Window. (See Figure 2) \\ 
 
 | |The CrossCore GUI|
-| *Figure 2 - The CrossCore GUI* </wrap>
+| *Figure 2 - The CrossCore GUI*
 
 -  Press the reset button (S1) on the demo board or unplug it from the USB cable and reconnect.
 
@@ -47,21 +46,19 @@ Step-by-step guide
 -  Unzip the file "*DEMO-AD5758-AO8Z_Installer.zip*"
 -  Double click the "*DEMO-AD5758-AO8Z_Installer.exe*" file to run it.
 -  Click Next in the pop-up that appears. (See Figure 3)
-   <wrap>
+   
 
    |Welcome to AD5758 8 Channel Setup|
 
-   *Figure 3 - Welcome to DEMO AD5758 AO8Z 11.12 Setup* </wrap>
+   *Figure 3 - Welcome to DEMO AD5758 AO8Z 11.12 Setup*
 
--  Read carefully the License Agreement and click "I Agree" if you agree to its content. <wrap>
-
+-  Read carefully the License Agreement and click "I Agree" if you agree to its content. 
 
 |image1|
 
-   *Figure 4 - The License Agreement* </wrap>
+   *Figure 4 - The License Agreement*
 
 -  Click **Install** to install the software in the default location or **Browse...** to a new location first.
-
 
 |image2|
 

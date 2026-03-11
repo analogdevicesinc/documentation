@@ -35,7 +35,7 @@ To learn more about AD9361 modeling and to download the Tx and Rx models, the su
    
 
 
-.. image:: https://wiki.analog.com/_media/download.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/download.png
    :alt: Block diagram
    :width: 600px
 

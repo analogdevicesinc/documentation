@@ -42,7 +42,7 @@ Connectors and Jumper Configurations
 EVAL-ADM2587EARDZ Arduino Shield & EVAL-ADM2587ERPIZ Raspberry Pi Shield Example Code
 =====================================================================================
 
-| 
+
 | Arduino UNO code is provided so that that user can perform a loopback test mode for the ADM2587E RS-485 transceiver. Load the 'eval_adm2587eardz_arduino_shield_example_code.zip' sketch to an Arduino UNO. Connect jumpers LK5 and LK7. Use an oscilloscope to measure the waveforms on the DI, /RE, A, B, Y, Z, and RxD test points. The Arduino sketch outputs a constant bit stream on the ADM2587E DI pin. The loopback test echos the DI voltage waveform to the RxD pin. The bus voltages on the A, B, Y, and Z pins can also be measured.
 
 Raspberry pi code is also provided so that the user can perform a loopback test mode for the ADM2587E RS-485 transceiver. Load the 'eval_adm2587erpiz_raspberry_pi_shield_example_code.zip' sketch to the Raspberry pi. Voltage waveforms can be measured on the RS-485 logic and bus interface pins, similar to the Arduino example given above.
@@ -72,7 +72,7 @@ Change Log
 
 ::
 
-     *Initial Revision 
+     *Initial Revision
 
 --------------
 

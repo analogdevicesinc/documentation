@@ -6,8 +6,9 @@ Level Detectors Examples
 Example 1
 ---------
 
-| Two Seven-Band Level Detectors show the difference between white and pink noise. They were created using White Noise Source and Pinking Filter blocks. For the difference between these two noise sources, refer to the Pink Filter page.
-| There are two outputs to complete the signal flow. Notice in the level detector displays athat the pink noise levels tend to be constant while the white noise level fluctuate.
+Two Seven-Band Level Detectors show the difference between white and pink noise. They were created using White Noise Source and Pinking Filter blocks. For the difference between these two noise sources, refer to the Pink Filter page.
+
+There are two outputs to complete the signal flow. Notice in the level detector displays athat the pink noise levels tend to be constant while the white noise level fluctuate.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/leveldetectorsexamples1.jpg
    :alt: leveldetectorsexamples1.jpg

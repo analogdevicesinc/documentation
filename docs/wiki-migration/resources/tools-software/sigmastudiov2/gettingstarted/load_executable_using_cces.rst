@@ -3,8 +3,8 @@
 Load Application using CCES
 ===========================
 
-| 
-| ===ADSP-SC573 / ADSP-SC584 / ADSP-SC589 / ADSP-SC594 Target===
+ADSP-SC573 / ADSP-SC584 / ADSP-SC589 / ADSP-SC594 Target
+--------------------------------------------------------
 
 -  Establish the hardware setup as described in :doc:`ADSP-215xx/ADSP-SC5xx Hardware Setup </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/adsp-215xx_and_adsp-sc5xx>`.
 -  Launch CrossCore Embedded Studio.
@@ -30,8 +30,8 @@ Load Application using CCES
    |image5|
 -  Link compile download the SigmaStudio+ schematic if Demo or Lib integration application is used.
 
-| 
-| ===ADSP-21573 / ADSP-21584 / ADSP-21593 Target===
+ADSP-21573 / ADSP-21584 / ADSP-21593 Target
+-------------------------------------------
 
 -  Establish the hardware setup as described in :doc:`ADSP-215xx/ADSP-SC5xx Hardware Setup </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/adsp-215xx_and_adsp-sc5xx>`.
 -  Launch CrossCore Embedded Studio.
@@ -57,8 +57,8 @@ Load Application using CCES
    |image10|
 -  Link compile download the SigmaStudio+ schematic if Demo or Lib integration application is used.
 
-| 
-| ===ADSP-21568 / ADSP-21569 Target===
+ADSP-21568 / ADSP-21569 Target
+------------------------------
 
 -  Establish the hardware setup as described in :doc:`ADSP-215xx/ADSP-SC5xx Hardware Setup </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/adsp-215xx_and_adsp-sc5xx>`.
 -  Launch CrossCore Embedded Studio.
@@ -83,8 +83,8 @@ Load Application using CCES
 
 -  Link compile download the SigmaStudio+ schematic if Demo or Lib integration application is used.
 
-| 
-| ===ADSP-SC598 EV-SOM Target===
+ADSP-SC598 EV-SOM Target
+------------------------
 
 -  Establish the hardware setup as described in :doc:`ADSP-215xx/ADSP-SC5xx Hardware Setup </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/adsp-215xx_and_adsp-sc5xx>`.
 -  Launch CrossCore Embedded Studio.
@@ -216,8 +216,8 @@ Using SOM + SOM-CRR On-Board Debug Agent
    -  After selecting the correct DXE files for each core, click "Apply" to save the configuration.
    -  Finally, click "Debug" to begin running the application.
 
-| 
-| ===Using SC598 SOM + SOM-CRR On-Board Debug Agent===
+Using SC598 SOM + SOM-CRR On-Board Debug Agent
+----------------------------------------------
 
 -  Powering Up the Boards:
 
@@ -297,20 +297,28 @@ Using SOM + SOM-CRR On-Board Debug Agent
 
    -  Click "Debug" to start the debugging session.
 
-| 
-| ===Downloading Schematic from SigmaStudioPlus UI to Target=== Once the above-mentioned steps for loading the DXE are completed, the target application will be up and running, waiting to receive schematic data (SMAP) from the SigmaStudioPlus UI.
-| Let’s take an example case with a dual-core processor:
+Downloading Schematic from SigmaStudioPlus UI to Target
+-------------------------------------------------------
+
+Once the above-mentioned steps for loading the DXE are completed, the target application will be up and running, waiting to receive schematic data (SMAP) from the SigmaStudioPlus UI.
+
+Let’s take an example case with a dual-core processor:
 
 -  Open the SigmaStudioPlus schematic and navigate to the Project window.
 -  For SHARC Core1, navigate to *SharcXICore_C1 -> Settings*. An option to browse and select the target application's SHARC Core1 DXE can be seen.
 
-|image41|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/ss_sh0_dxe.png
+   :align: center
 
-| 
-| \* For SHARC Core2, navigate to *SharcXICore_C2 -> Settings*. An option to browse and select the target application's SHARC Core2 DXE can be seen.
-| |image42|
-| \* Once the paths to both DXEs are specified, click the *Link Compile Download* button to compile the schematic using the selected DXEs and download the schematic data to the target application.
-| |image43|
+-  For SHARC Core2, navigate to *SharcXICore_C2 -> Settings*. An option to browse and select the target application's SHARC Core2 DXE can be seen.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/ss_sh1_dxe.png
+   :align: center
+
+-  Once the paths to both DXEs are specified, click the *Link Compile Download* button to compile the schematic using the selected DXEs and download the schematic data to the target application.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/ss_schemadownload.png
+   :align: center
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/584_1.png
    :width: 600px
@@ -392,6 +400,3 @@ Using SOM + SOM-CRR On-Board Debug Agent
    :width: 650px
 .. |image40| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_debug7.png
    :width: 650px
-.. |image41| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/ss_sh0_dxe.png
-.. |image42| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/ss_sh1_dxe.png
-.. |image43| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/ss_schemadownload.png

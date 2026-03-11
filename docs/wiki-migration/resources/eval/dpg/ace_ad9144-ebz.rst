@@ -59,7 +59,7 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 1. Open DPG Downloader. It will say AD9144 as shown in Figure 3
-|
+
 
 .. container:: center
 
@@ -75,7 +75,7 @@ Single Tone Demo Hardware and Software Start Up Procedure:
    +----------------------------------------+
 
    | 2. To load the proper panel, select the Port Configuration option for "QBF 1x8 85G 425M" for single link (for dual link cases choose "QBF 2x4 85G 425M"). Select the JESD Mode drop-down to Mode 0 and Subclass to 0. Create a single-tone vector with a Data Rate of 750MHz, Desired Frequency of 112MHz, Amplitude of -1dBFS, uncheck the Unsigned Data checkbox and check the Generate Complex I & Q Data box. Select the I and Q vectors for each of the 4 DAC vector input options, as shown in Figure 4.
-|
+
 
 .. container:: center
 
@@ -94,7 +94,7 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 
 
 3. Open ACE. It should recognize the AD9144-EBZ in the attached hardware section when the application startup screen displays, as shown in Figure 5. Double-click on the AD9144-EBZ icon to navigate to the board view.
-|
+
 
 .. container:: center
 
@@ -113,7 +113,7 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 
 
 4. In the Setup Wizard, select single link, JESD Mode 0, Interpolation 2 and FDAC 1.5GHz, as shown in Figure 6. Hit "Apply" and the wizard will execute a startup routine to configure the AD9516 and AD9144. // // Once complete, the SERDES PLL lock indicator on the board will turn green if it locked and the display will look like Figure 7.
-|
+
 
 .. container:: center
 
@@ -148,7 +148,7 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 
 
 | 5. Return to DPGDownloader and note the Serial Line Rate readback should read 7.5Gbps indicating that the clocks going to the FPGA are configured properly for this setup. 6. Click Download (|9154_down_arrow.png|) and Play (|9154_right_green_arrow.png|). The 'Sync Status' checkmark should turn green indicating that the SYNCOUTb level is high and the link is up, as shown in Figure 7. The spectrum in Figure 8 will appear on all 4 DAC outputs (J17, J4, J5, and J14).
-|
+
 
 .. container:: center
 

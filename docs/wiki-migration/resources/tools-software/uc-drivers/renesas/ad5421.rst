@@ -177,22 +177,16 @@ Renesas RX62N Quick Start Guide
 
 This section contains a description of the steps required to run the AD5421 demonstration project on a Renesas RX62N platform.
 
-.. _required-hardware-1:
-
 Required Hardware
 -----------------
 
 -  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
 -  :adi:`EVAL-AD5421SDZ (ADI) <EVAL-AD5421SDZ>`
 
-.. _required-software-1:
-
 Required Software
 -----------------
 
 -  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -208,8 +202,6 @@ An EVAL-AD5421SDZ board has to be interfaced with the Renesas Demonstration Kit 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5421_.x62n.jpg
    :align: center
-
-.. _reference-project-overview-1:
 
 Reference Project Overview
 --------------------------

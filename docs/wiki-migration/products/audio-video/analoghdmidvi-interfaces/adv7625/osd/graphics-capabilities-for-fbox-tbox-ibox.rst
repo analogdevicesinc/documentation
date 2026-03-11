@@ -77,8 +77,6 @@ Ibox
 -  Up to 64 blocks of 8x8 pixels with 32 colors support = 4096 pixels.
 -  Blocks of n multiple of 8x8 can be reused for maximum of 8192 pixels ( 128 8x8 blocks)
 
-.. _limitations-1:
-
 Limitations
 -----------
 

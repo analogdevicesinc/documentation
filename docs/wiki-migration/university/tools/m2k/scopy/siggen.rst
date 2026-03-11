@@ -4,7 +4,7 @@ Scopy Signal Generator
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/youtube>zWX7VnKDYq4
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>zWX7VnKDYq4
    :alt: youtube>zWX7VnKDYq4
 
 General Description
@@ -84,7 +84,7 @@ Create loopback between CH1 and CH2 of the oscilloscope and the signal generator
 Run a single channel
 ~~~~~~~~~~~~~~~~~~~~
 
-XHIDDENSTART Click to expand</summary>
+XHIDDENSTART Click to expand
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-16_17-25-33.png
    :align: center
@@ -107,7 +107,7 @@ Run both channels
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-16_17-30-13.png
    :align: center
@@ -130,7 +130,7 @@ Generate square waveform
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-16_17-33-14.png
    :align: center
@@ -152,7 +152,7 @@ Generate trapezoidal waveform
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-16_17-34-52.png
    :align: center
@@ -173,7 +173,7 @@ Generate waveform from wav file
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-16_17-36-05.png
    :align: center
@@ -195,7 +195,7 @@ Generate stairstep waveform
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-16_17-38-32.png
    :align: center
@@ -217,7 +217,7 @@ Generate waveform from math function
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/mathgenerator.png
    :align: center

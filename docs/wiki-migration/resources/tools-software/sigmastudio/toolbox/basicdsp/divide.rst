@@ -1,8 +1,9 @@
 Divide
 ======
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| There are two kinds of subtraction supported.
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+There are two kinds of subtraction supported.
 
 -  Division (Real Signals)
 -  Division (Complex Signals)
@@ -26,22 +27,37 @@ For a sample design using this block, see the :doc:`Basic DSP example </wiki-mig
 -  Connect your signals to the pins of the block so that you are performing the division
 -  pin1 / pin2
 
-| The Newton-Raphson iteration is performed according to the equation:
-| |divisionpic2.png|
-| This block lets you select the precision of the algorithm, whether to compute 3 or 4 iterations. There's a tradeoff between number of instructions and accuracy of computation for divisors (values of pin 2) less than 0.1. This means simply that fewer iterations are not as precise as more, but the more iterations the more instructions are entailed, with less room for programming the current DSP.
+The Newton-Raphson iteration is performed according to the equation:
 
-| Below are error graphs for the 3- (below top) and 4-iteration (below bottom) algorithms, showing a difference of approximately two orders of magnitude:
-| |divisionpic3.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/divisionpic2.png
+   :alt: divisionpic2.png
+
+This block lets you select the precision of the algorithm, whether to compute 3 or 4 iterations. There's a tradeoff between number of instructions and accuracy of computation for divisors (values of pin 2) less than 0.1. This means simply that fewer iterations are not as precise as more, but the more iterations the more instructions are entailed, with less room for programming the current DSP.
+
+Below are error graphs for the 3- (below top) and 4-iteration (below bottom) algorithms, showing a difference of approximately two orders of magnitude:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/divisionpic3.png
+   :alt: divisionpic3.png
 
 Division(Complex Signals)
 -------------------------
 
-| This module can be used to divide a complex signal with another complex signal.
-| |image1|
-| (x+iy) / (u+iv) = (xu + yv) + i(yu - xv) / (u^2 + v^2)
-| Note:- The Context Menu “Input Source” option added to this module to select the algorithm for Complex FFT and Real FFT as shown below
-| |image2|
-| ====Input Pins====
+This module can be used to divide a complex signal with another complex signal.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/cdiv1.jpg
+   :align: center
+
+::
+
+             (x+iy) / (u+iv) = (xu + yv) + i(yu - xv) / (u^2 + v^2)
+
+Note:- The Context Menu “Input Source” option added to this module to select the algorithm for Complex FFT and Real FFT as shown below
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/divisioncontextmenu.png
+   :align: center
+
+Input Pins
+~~~~~~~~~~
 
 +------------------+------------------------------------+------------------------+
 | Name             | Format [int/dec] - [control/audio] | Function Description   |
@@ -63,13 +79,18 @@ Division(Complex Signals)
 | 
 | ====Grow Algorithm==== Input pins growth not supported.
 
-| 
-| ====Supported DSPs===== ADAU145x (Block Schematic only)
-| ====Example Usage===== This can be used to divide complex signals |image3|
+Supported DSPs
+~~~~~~~~~~~~~~
+
+ADAU145x (Block Schematic only)
+
+Example Usage
+~~~~~~~~~~~~~
+
+This can be used to divide complex signals
+
+
+|image1|
 
 .. |divisionpic1.png| image:: https://wiki.analog.com/_media/divisionpic1.png
-.. |divisionpic2.png| image:: https://wiki.analog.com/_media/divisionpic2.png
-.. |divisionpic3.png| image:: https://wiki.analog.com/_media/divisionpic3.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/cdiv1.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/divisioncontextmenu.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/cdiv2.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/cdiv2.jpg

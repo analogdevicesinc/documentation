@@ -3,30 +3,45 @@
 Flash Programmer
 ================
 
-| 
-| |fp_ssp.jpg|
-| ===== Description =====
-| This module provides support to write raw data to the external flash memory using I2C/SPI. The I2C/SPI write is performed during the initialization before the audio processing in the schematic is started.
-| ===== Usage =====
-| ==== Writing a Wav file to SPI EEPROM using Flash Programmer (ADAU1452) ====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_ssp.jpg
+   :alt: fp_ssp.jpg
+
+Description
+-----------
+
+This module provides support to write raw data to the external flash memory using I2C/SPI. The I2C/SPI write is performed during the initialization before the audio processing in the schematic is started.
+
+Usage
+-----
+
+Writing a Wav file to SPI EEPROM using Flash Programmer (ADAU1452)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Add Flash Programmer module to the schematic.
 -  Configure SPI parameters in the Control Port Properties window. (Below window shows SPI configuration required to write to EEPROM in EVAL-ADAU1452MINIZ board)
 
-| 
-| |fp_window_ssp.jpg|
-| \* Select Binary mode
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_window_ssp.jpg
+   :alt: fp_window_ssp.jpg
+   :align: center
 
+-  Select Binary mode
 -  Select the Wav file to be written (Make sure size of the wav file is not greater than the size of EEPROM. In the case of EVAL-ADAU1452MINIZ, size of wav file should not be greater than 128 KB)
 -  Press OK. Then Link compile download.
 -  Press Write to write the data to the EEPROM
 -  The Output window indicates the progress of writing to the EEPROM
 
-| 
-| |image1|
-| \* To verify the data written to the flash, click on the read button. The output window will indicate the verification status
-| |image2|
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_op_wnd_ssp.jpg
+   :align: center
+   :width: 400px
+
+-  To verify the data written to the flash, click on the read button. The output window will indicate the verification status
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_verify_op_wnd_ssp.jpg
+   :align: center
+   :width: 400px
+
+Targets Supported
+-----------------
 
 +------------------+------------+-----------------------+---------------+------------------+
 | Name             | ADSP-214xx | ADSP-215xx/ADSP-SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -36,8 +51,11 @@ Flash Programmer
 
 | 
 | ===== Pins =====
-| None
-| ===== Configurable Parameters =====
+
+None
+
+Configurable Parameters
+-----------------------
 
 +-------------------------------------+---------------+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | GUI Control Name                    | Default Value | Range                                                             | Function Description                                                                                                                                                 |
@@ -76,26 +94,23 @@ Flash Programmer
 +-------------------------------------+---------------+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | SPIBlockAddressToErase              | 0             | 0-16777215                                                        | Block/Sector address to erase SPI falsh devices by block/section. This is an optional command. This can be disabled by disabling the Block/Sector Ersae Insutruction |
 +-------------------------------------+---------------+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| FilePath_File<fc #ff0000>X</fc>     | NA            | NA                                                                | Raw data to be written to the flash (Can be ascii text file/ binary files like wav file)                                                                             |
+| FilePath_FileX                      | NA            | NA                                                                | Raw data to be written to the flash (Can be ascii text file/ binary files like wav file)                                                                             |
 +-------------------------------------+---------------+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | DataFileType                        | ASCII         | ASCII/Binary                                                      | Mode to write the file. Audio files like .wav should be written in binary mode                                                                                       |
 +-------------------------------------+---------------+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | IsConfigurableAddress               | Disabled      | Enable/Disable                                                    | Enable/Disable the start address for each files                                                                                                                      |
 +-------------------------------------+---------------+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| StartAddress_File<fc #ff0000>X</fc> | 0             | 0 - Maximum of FLASH/EEPROM Size in bytes(Increment by page size) | Write the data in the flash/e2prom from the specified address                                                                                                        |
+| StartAddress_FileX                  | 0             | 0 - Maximum of FLASH/EEPROM Size in bytes(Increment by page size) | Write the data in the flash/e2prom from the specified address                                                                                                        |
 +-------------------------------------+---------------+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Any change in these SPI/I2C configuration parameters requires a recompilation.
 
-| 
-| ===== DSP Parameters=====
-| Not applicable
-| ===== DSP Parameter Computation =====
-| Not applicable
+DSP Parameters
+--------------
 
-.. |fp_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_ssp.jpg
-.. |fp_window_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_window_ssp.jpg
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_op_wnd_ssp.jpg
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_verify_op_wnd_ssp.jpg
-   :width: 400px
+Not applicable
+
+DSP Parameter Computation
+-------------------------
+
+Not applicable

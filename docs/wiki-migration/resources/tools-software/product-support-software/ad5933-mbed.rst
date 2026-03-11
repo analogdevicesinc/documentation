@@ -13,7 +13,7 @@ This guide uses the `Pmod IA <https://digilent.com/reference/pmod/pmodia/start/>
 Useful links
 ============
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :adi:`AD5933 <en/products/ad5933.html>`

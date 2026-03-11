@@ -8,13 +8,17 @@ The textbooks and teaching materials provided on this wiki are considered open s
 Table of Contents:
 ------------------
 
-+----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Course         | Session                   | Title                                                                                                                                                                                          |
-+================+===========================+================================================================================================================================================================================================+
-| Electronics I  | Chapter:1                 | :doc:`Introduction: circuit theory basics </wiki-migration/university/courses/electronics/text/chapter-1>`                                                                                     |
-+----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Electronics I  | Chapter:2                 | :doc:`Operational Amplifier basics </wiki-migration/university/courses/electronics/text/chapter-2>`                                                                                            |
-|                | Chapter:2 (*supplement*)  | :adi:`Biasing and Decoupling Op Amps in Single Supply Applications <media/en/technical-documentation/application-notes/AN-581.pdf>`                                                            |
++---------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| Course        | Session                  | Title                                                                                                                                     |
++===============+==========================+===========================================================================================================================================+
+| Electronics I | Chapter:1                | :doc:`Introduction: circuit theory basics </wiki-migration/university/courses/electronics/text/chapter-1>`                                |
++---------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| Electronics I | Chapter:2                | :doc:`Operational Amplifier basics </wiki-migration/university/courses/electronics/text/chapter-2>`                                       |
+|               | Chapter:2 (*supplement*) | [[:adi:`media/en/technical-documentation/application-notes/AN-581`.pdf%7CBiasing and Decoupling Op Amps                                   |
++---------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+in Single Supply Applications]] \|
+
 +----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Electronics I  | Chapter:3                 | :doc:`Op Amps - Non-ideal behavior </wiki-migration/university/courses/electronics/text/chapter-3>`                                                                                            |
 |                | Chapter:3 (*supplement*)  | :adi:`OP Amp Design Equation Summary <media/en/selection-guides/Equation_Pullout.pdf>`                                                                                                         |
@@ -67,8 +71,6 @@ Table of Contents:
 
 -  :doc:`Lab Activity Material Electronics I and II </wiki-migration/university/labs/electronics>`
 
-| 
-
 Other Information Sources
 -------------------------
 
@@ -86,7 +88,7 @@ Analog Device Supplied Content
 **Blogs and FAQs**
 
 -  :adi:`Ask the Applications Engineer: Op Amp Issues <library/analogDialogue/Anniversary/6.html>` – Discusses different types of operational amplifier and the reasons for those differences.
-   \* :adi:`Analog Computation in the Digital Age <media/en/analog-dialogue/raqs/computation.pdf>`
+-  :adi:`Analog Computation in the Digital Age <media/en/analog-dialogue/raqs/computation.pdf>`
 
 Wikipedia
 ~~~~~~~~~

@@ -61,7 +61,7 @@ More information can be found in the AD9361 Reference Manual :ez:`UG570 <cfs-fil
 Power
 -----
 
-| Key components:
+Key components:
 
 +----------------+-----------------------------------------------------------+
 | :adi:`ADP1755` | Low dropout, linear regulator, 1.2A, 1.6 to 3.6V          |

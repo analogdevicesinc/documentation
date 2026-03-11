@@ -28,7 +28,7 @@ Status
 +--------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | Source                                                                                           | Mainlined?                                                                                      |
 +==================================================================================================+=================================================================================================+
-| :git-linux:`git <drivers/iio/dac/axi-ad3552r.c>`                                                 | :git-linux:`No <drivers/iio/dac/axi-ad3552r.c>`                                                 |
+| `git <https://github.com/analogdevicesinc/linux/blob/cn0585_v1/drivers/iio/dac/axi-ad3552r.c>`_  | `No <https://github.com/analogdevicesinc/linux/blob/cn0585_v1/drivers/iio/dac/axi-ad3552r.c>`_  |
 +--------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 Files
@@ -37,7 +37,7 @@ Files
 +----------+----------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                       |
 +==========+============================================================================================================================+
-| driver   | :git-linux:`drivers/iio/dac/axi-ad3552r.c`                                                                                 |
+| driver   | `drivers/iio/dac/axi-ad3552r.c <https://github.com/analogdevicesinc/linux/blob/cn0585_v1/drivers/iio/dac/axi-ad3552r.c>`_  |
 +----------+----------------------------------------------------------------------------------------------------------------------------+
 
 Example Linux Device-Tree Initialization
@@ -61,7 +61,7 @@ Example:
            compatible = "adi,axi-ad3552r";
            reg = <0x44a74000 0x1000>;
 
-           reset-gpios = <&gpio0 92 GPIO_ACTIVE_LOW>;      
+           reset-gpios = <&gpio0 92 GPIO_ACTIVE_LOW>;
            clocks = <&ref_clk>;
 
            dmas = <&dac_tx_dma 0>;
@@ -72,7 +72,7 @@ Example:
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function                                                           | File                                                                                                                                                           |
 +====================================================================+================================================================================================================================================================+
-| :adi:`EVAL-AD3552R` Device Tree                                    | :git-linux:`/arch/arm/boot/dts/zynq-zed-adv7511-axi-ad3552r_evb.dts`                                                                                           |
+| :adi:`EVAL-AD3552R` Device Tree                                    | `zynq-zed-adv7511-axi-ad3552r_evb.dts <https://github.com/analogdevicesinc/linux/blob/ad3552r_eval//arch/arm/boot/dts/zynq-zed-adv7511-axi-ad3552r_evb.dts>`_  |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enabling Linux driver support
@@ -95,10 +95,10 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            -*-     Industrial I/O lock free software ring
            -*-   Enable triggered sampling support
 
-                 *** Digital to analog converters ***
+                 ** Digital to analog converters **
            [--snip--]
 
-           <*>   Analog Devices AXI_AD3552R DAC driver 
+           <*>   Analog Devices AXI_AD3552R DAC driver
 
            [--snip--]
 
@@ -113,10 +113,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -158,10 +155,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -178,10 +172,7 @@ Read only attribute which returns the DAC sampling rate in Hz.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -210,7 +201,7 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24

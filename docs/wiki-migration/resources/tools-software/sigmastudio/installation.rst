@@ -1,9 +1,9 @@
 Installation Procedure
 ======================
 
-| 
-| :doc:`Click here to return to the SigmaStudio and SigmaDSP Documentation top page. </wiki-migration/resources/tools-software/sigmastudio>`
-| This page describes how to install the SigmaStudio on a computer running the Microsoft Windows operating system.
+:doc:`Click here to return to the SigmaStudio and SigmaDSP Documentation top page. </wiki-migration/resources/tools-software/sigmastudio>`
+
+This page describes how to install the SigmaStudio on a computer running the Microsoft Windows operating system.
 
 .. admonition:: Download
    :class: download
@@ -18,7 +18,7 @@ Most modern Windows PCs will be able to run SigmaStudio. Expand the display belo
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 -  Windows 7/ Windows 10
 -  256 MB of RAM (1 GB recommended)
@@ -32,8 +32,6 @@ Most modern Windows PCs will be able to run SigmaStudio. Expand the display belo
 
    </details>
 
-
-   | 
 
 Step 1: Before You Install
 --------------------------
@@ -54,7 +52,7 @@ In most cases, driver installation is performed alongside SigmaStudio. If your m
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 -  Connect the USB cable between your evaluation hardware and a PC USB port.
 -  If this is your first time connecting the USB device, the Windows "Found New Hardware Wizard" will launch.
@@ -82,6 +80,4 @@ Step 4: Hardware Configuration
 -  For additional help, see the Evaluation Board Setup Examples.
 -  If you are using the USBi, there is a quick way to verify that the driver is installed properly. Make a new project and drag in a USBi object from the ToolBox. The "USBi" text is highlighted green when the USBi is detected, and red when disconnected.
 
-|
-
-| It is rare for users to have issues during installation. If something does come up, please create a new question in the :ez:`SigmaDSP EngineerZone <dsp/sigmadsp>` forum and describe what is happening.
+It is rare for users to have issues during installation. If something does come up, please create a new question in the :ez:`SigmaDSP EngineerZone <dsp/sigmadsp>` forum and describe what is happening.

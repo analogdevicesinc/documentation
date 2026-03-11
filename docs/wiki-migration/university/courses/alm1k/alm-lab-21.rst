@@ -19,12 +19,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 2 - 1uF capacitor
-| 1 - 68 Ω resistor
-| 2 - 10 mH inductors
-| 1 - CD4069A, CD4069UB or 74HCU04 unbuffered hex inverter (be sure not to use the buffered 74HC04 version) Alternatively three simple CMOS inverters can be built using the CD4007 transistor array. Note the appendix at the end.
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 2 - 1uF capacitor 1 - 68 Ω resistor 2 - 10 mH inductors 1 - CD4069A, CD4069UB or 74HCU04 unbuffered hex inverter (be sure not to use the buffered 74HC04 version) Alternatively three simple CMOS inverters can be built using the CD4007 transistor array. Note the appendix at the end.
 
 Background:
 ~~~~~~~~~~~
@@ -87,14 +82,10 @@ On your solder-less breadboard construct the filter network shown in figure 4 be
    Figure 4 LC filter network
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 The channel A voltage generator, CA-V, should be set as a sine wave with a 0.5 V Min value and a 4.5 V Max value. Channel B is set in the Hi-Z mode.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -105,10 +96,7 @@ There is a variety of different pi section filter variants that can be used depe
 
 :math:`F_C = 1 / (\pi \times sqrt(L \times C))`
 
-| Where:
-| C = C\ :sub:`1` + C\ :sub:`2` the total capacitance in Farads
-| L = Inductance of L\ :sub:`1` in Henries
-| Fc = Cutoff frequency in Hertz
+Where: C = C\ :sub:`1` + C\ :sub:`2` the total capacitance in Farads L = Inductance of L\ :sub:`1` in Henries Fc = Cutoff frequency in Hertz
 
 Measure the gain and phase response of the LC network at frequencies of one half F\ :sub:`C`, F\ :sub:`C` and twice F\ :sub:`C`.
 
@@ -133,21 +121,15 @@ Now place the two inductors in parallel for a total inductance of 5 mH. Again re
    Figure 5 LC oscillator
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Be sure that pin 14 of the 74HCU04 (CD4069) is connected to +5 V and Pin 7 is connected to ground. Both scope channels should in the HI-Z mode and be set to 0.5V/Div, and the time base to 0.2 mSec/Div.
 
-.. _procedure-2:
-
 Procedure:
 ~~~~~~~~~~
 
 Compare amplitudes and phases the waveforms you observe at pin 1, pin 2, and pin 4 of the Hex inverter (74HCU04). Measure the period and frequency of the oscillation. Using your second 10 mH inductor place it in series with the first 10 mH inductor to make the total inductance 20 mH. Measure the period and frequency of the oscillation with this higher inductance value. Now place the two inductors in parallel for a total inductance of 5 mH. Again measure the period and frequency of the oscillation with this lower inductance value.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~

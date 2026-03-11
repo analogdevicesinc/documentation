@@ -1,8 +1,8 @@
-| 
-| ====== Pattern Generator - Test Case ======
+Pattern Generator - Test Case
+=============================
 
 Initial Setup
-=============
+-------------
 
 In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
@@ -14,14 +14,16 @@ Open the Pattern Generator instrument. The interface should look like the pictur
 Enable a channel and press multiple times on the "Run" button to check if the instrument works.
 
 Test Title
-==========
+----------
 
-| 
-| ==== A. Individual Channel Operation==== 
+A. Individual Channel Operation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                    | Test Steps                                                                                                                                                                       | Steps Resources     | Expected Results                                                                                                                                                       |
@@ -61,13 +63,13 @@ Test Title
 
 
 B. Group Channel Operation
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                                            | Test Steps                                                                                                                                                                                                                 | Steps Resources     | Expected Results                                                                                                                                                             |
@@ -139,13 +141,13 @@ B. Group Channel Operation
 
 
 C. Simultaneous Group and Individual Channels Operation
--------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +--------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                                              | Test Steps                                                                                                                                                                                                                                                                 | Steps Resources       | Expected Results                                                                                                                                                                                                                     |
@@ -169,13 +171,13 @@ C. Simultaneous Group and Individual Channels Operation
 
 
 D. Other Features
------------------
+~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                        | Test Steps                                                                                                                                     | Steps Resources | Expected Results                                                                                                                           |
@@ -224,8 +226,7 @@ D. Other Features
 
 Test Results will be recorded in the following document: `Pattern Generator Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/patterngenerator_-_test_case.xlsx>`_
 
-| 
-| **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
+**Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/PG-A1.JPG
    :width: 100px

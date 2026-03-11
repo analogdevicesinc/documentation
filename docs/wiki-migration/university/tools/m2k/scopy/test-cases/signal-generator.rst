@@ -1,8 +1,8 @@
-| 
-| ====== Signal Generator - Test Case ======
+Signal Generator - Test Case
+============================
 
 Initial Setup
-=============
+-------------
 
 In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
@@ -11,14 +11,16 @@ Open the Signal Generator instrument. The interface should look like the picture
 |image1| Press multiple times on the “Run” button to check if the instrument works.
 
 Test Title
-==========
+----------
 
-| 
-| ==== A. Channel 1 Operation==== 
+A. Channel 1 Operation
+~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                                                                       | Test Steps                                                                                                                                                                                                                               | Steps Resources | Expected Results                                                                                                                                                                                                                                                                   |
@@ -98,13 +100,13 @@ Test Title
 
 
 B. Channel 2 Operation
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                                                                       | Test Steps                                                                                                                                                                                                                               | Steps Resources | Expected Results                                                                                                                                                                                                                                                                   |
@@ -184,13 +186,13 @@ B. Channel 2 Operation
 
 
 C. Channel 1 and Channel 2 Operation
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                                                      | Test Steps                                                                                                                                                                                                                                                                                                                                                 | Steps Resources        | Expected Results                                                                                                                            |
@@ -222,13 +224,13 @@ C. Channel 1 and Channel 2 Operation
 
 
 D. Additional Features
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description              | Test Steps                                                                                                                                                                                                                                                                                                                                             | Steps Resources | Expected Results                                                                                                                                                                         |
@@ -283,8 +285,7 @@ D. Additional Features
 
 Test Results will be recorded in the following document: `Signal Generator Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator_-_test_case.xlsx>`_
 
-| 
-| **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
+**Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-test-case-initial-setup.png
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step1.png

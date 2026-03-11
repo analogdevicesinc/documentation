@@ -1,9 +1,13 @@
 Hierarchy Input
 ===============
 
-| :doc:`Click here to return to the System page </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign>`
-| The Hierarchy input block is used to create signal inputs into a Schematic Hierarchy Tab. Hierarchy Boards are helpful for large schematic designs and for organizing design components.
-| |hierarchyinputpic1.png|
+:doc:`Click here to return to the System page </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign>`
+
+The Hierarchy input block is used to create signal inputs into a Schematic Hierarchy Tab. Hierarchy Boards are helpful for large schematic designs and for organizing design components.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyinputpic1.png
+   :alt: hierarchyinputpic1.png
+   :align: center
 
 .. tip::
 
@@ -16,7 +20,9 @@ To create a Hierarchy Input:
 -  Drag a Hierarchy Input block into the schematic.
 -  This will create a Hierarchy Input block in the schematic and a corresponding input pin on the Hierarchy Board block.
 
-| |hierarchyinputpic2.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyinputpic2.png
+   :alt: hierarchyinputpic2.png
+   :align: center
 
 .. hint::
 
@@ -24,6 +30,3 @@ To create a Hierarchy Input:
 
 
 See the Hierarchy Board :doc:`System Example </wiki-migration/resources/tools-software/sigmastudio/tutorials/systemexamples>` for a sample hierarchy board design.
-
-.. |hierarchyinputpic1.png| image:: https://wiki.analog.com/_media/hierarchyinputpic1.png
-.. |hierarchyinputpic2.png| image:: https://wiki.analog.com/_media/hierarchyinputpic2.png

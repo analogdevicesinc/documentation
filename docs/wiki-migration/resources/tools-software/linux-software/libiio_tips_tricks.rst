@@ -24,17 +24,12 @@ Typically set to a frame or chunk size suitable for signal processing (e.g. N x 
    :align: center
    :width: 400px
 
-|
-
 .. tip::
 
-   \ **Number of discrete buffers are configurable, default is 4.**
+   \ **Number of discrete buffers are configurable, default is 4.** Can change this using **iio_device_set_kernel_buffers_count()**\
 
 
-   | Can change this using **iio_device_set_kernel_buffers_count()**\
 
-
-|
 
 .. tip::
 
@@ -65,10 +60,7 @@ Set via **/sys/module/industrialio_buffer_dma/parameters/max_block_size** in byt
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -76,7 +68,7 @@ Set via **/sys/module/industrialio_buffer_dma/parameters/max_block_size** in byt
       root@analog:~# **echo 67108864 > /sys/module/industrialio_buffer_dma/parameters/max_block_size**
       root@analog:~# **cat /sys/module/industrialio_buffer_dma/parameters/max_block_size**
       67108864
-      root@analog:~# 
+      root@analog:~#
    
 
 

@@ -43,8 +43,6 @@ Documents Needed
 -  :adi:`AD9543 UG-1167 Register Map User's Guide <media/en/technical-documentation/user-guides/AD9543-Register-Map-Reference-Manual-UG-1167.pdf>`
 -  `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_
 
-| 
-
 GENERAL DESCRIPTION
 -------------------
 
@@ -52,9 +50,7 @@ The :adi:`AD9543` evaluation board is a compact, easy-to-use platform for evalua
 
 The :adi:`AD9543` can output up to 5 differential clock signals, plus two single-ended clocks driven by a mix of two high performance digital PLLs, plus two high-precision NCOs (numerically controlled oscillators). 10 total outputs and 4 reference inputs are accessible on the evaluation board.
 
-
-| The output differential transmission line pairs use 50Ω single ended characteristic impedance and are connected to standard edge launch SMA connectors. The :adi:`AD9543` has a fully configurable power supply to allow the user to evaluate the AD9543 while being powered directly by a step down switching regulator or external LDOs. The :adi:`AD9543` evaluation board uses RoHS-compliant FR-4 material. For convenience, detailed information from the :adi:`AD9543` data sheet has been included here. Use this user guide in conjunction with the datasheet that has been provided by ADI.
-|
+The output differential transmission line pairs use 50Ω single ended characteristic impedance and are connected to standard edge launch SMA connectors. The :adi:`AD9543` has a fully configurable power supply to allow the user to evaluate the AD9543 while being powered directly by a step down switching regulator or external LDOs. The :adi:`AD9543` evaluation board uses RoHS-compliant FR-4 material. For convenience, detailed information from the :adi:`AD9543` data sheet has been included here. Use this user guide in conjunction with the datasheet that has been provided by ADI.
 
 .. container:: centeralign
 
@@ -63,40 +59,39 @@ The :adi:`AD9543` can output up to 5 differential clock signals, plus two single
 
 |image1|
 
-   | **Figure 1.** :adi:`AD9543` **Evaluation Board**
+   **Figure 1.** :adi:`AD9543` **Evaluation Board**
 
 
 EVALUATION BOARD HARDWARE
--------------------------
 
---------------
 
 The following instructions are for setting up the physical connections to the :adi:`AD9543/PCBZ <EVAL-AD9543>` evaluation board. The user must install the evaluation software prior to connecting the evaluation board for the first time.
 
-| 
-| ==== Power Connections==== The :adi:`AD9543/PCBZ <EVAL-AD9543>` is set up by default to power the :adi:`AD9543` and remaining circuitry using the provided 6V wall power supply.
-| The 6V supply powers the following:
-| \* An Analog Devices :adi:`ADP2384A Switching Regulator <ADP2384>` configured to output 1.8 or 3.3V.
+Power Connections
+~~~~~~~~~~~~~~~~~
 
+The :adi:`AD9543/PCBZ <EVAL-AD9543>` is set up by default to power the :adi:`AD9543` and remaining circuitry using the provided 6V wall power supply.
+
+The 6V supply powers the following:
+
+-  An Analog Devices :adi:`ADP2384A Switching Regulator <ADP2384>` configured to output 1.8 or 3.3V.
 -  A dedicated Analog Devices 3.3V :adi:`ADP7104 Low Noise LDO <ADP7104>` for cases in which the user wishes to evaluate the :adi:`AD9543` with an ultra-quiet power supply.
-   \* A dedicated Analog Devices 3.3V :adi:`ADM7171 Low Noise LDO <ADM7171>` for an on-board 3.3V OCXO. (1.0A, max)
-   \* A dedicated Analog Devices 5V :adi:`ADM7171 Low Noise LDO <ADM7171>` for an on-board 5V OCXO.(1.0A, max)
-   By default, the 3.3V ADP2384A switcher output supply supplies a 1.8V Analog Devices :adi:`ADP7104 Low Noise LDO <ADP7104>` to power the :adi:`AD9543`. The :adi:`ADP2384A Switching Regulator <ADP2384>` can alternately be configured to output 1.8V and directly power the :adi:`AD9543` to evaluate the :adi:`AD9543` when powered with a switching power supply.
+-  A dedicated Analog Devices 3.3V :adi:`ADM7171 Low Noise LDO <ADM7171>` for an on-board 3.3V OCXO. (1.0A, max)
+-  A dedicated Analog Devices 5V :adi:`ADM7171 Low Noise LDO <ADM7171>` for an on-board 5V OCXO.(1.0A, max)
 
-   | 
+By default, the 3.3V ADP2384A switcher output supply supplies a 1.8V Analog Devices :adi:`ADP7104 Low Noise LDO <ADP7104>` to power the :adi:`AD9543`. The :adi:`ADP2384A Switching Regulator <ADP2384>` can alternately be configured to output 1.8V and directly power the :adi:`AD9543` to evaluate the :adi:`AD9543` when powered with a switching power supply.
 
 -  **AD9543 Powered by ADP2384A Step-down Switching Regulator cascaded with ADP7104 LDO (Default):**
-   \* Remove P802 (sets switcher output voltage to 3.3 V)
-   \* Remove P712/P728 (disconnects switcher output from VDD_DUT_EXT & VDD_DUT_IO_EXT)
+-  Remove P802 (sets switcher output voltage to 3.3 V)
+-  Remove P712/P728 (disconnects switcher output from VDD_DUT_EXT & VDD_DUT_IO_EXT)
 -  Install P704/P725/P727 to pins 1/2 (connects VDD_DUT & VDD_DUT_IO/VDD_MPIN to LDO output)
 -  Install P701/P721/P729 to pins 1/2 (enables LDOs that are being bypassed)
-   \* **AD9543 Powered by 1.8V ADP2384A Step-down Switching Regulator Directly:**
-   \* Install P802 (sets switcher output voltage to 1.8 V)
-   \* Install P712/P728 (connects switcher output to VDD_DUT_EXT & VDD_DUT_IO_EXT)
+
+-  **AD9543 Powered by 1.8V ADP2384A Step-down Switching Regulator Directly:**
+-  Install P802 (sets switcher output voltage to 1.8 V)
+-  Install P712/P728 (connects switcher output to VDD_DUT_EXT & VDD_DUT_IO_EXT)
 -  Change P704/P725/P727 to pins 2/3 (connects VDD_DUT & VDD_DUT_IO/VDD_MPIN to VDD_DUT_EXT & VDD_DUT_IO_EXT)
 -  Change P701/P721/P729 to pins 2/3 (disables LDOs that are being bypassed)
-
-|
 
 PC Connections
 ~~~~~~~~~~~~~~
@@ -108,8 +103,7 @@ PC Connections
 -  If the **Found New Hardware Wizard** window automatically appears when the evaluation board is connected, select **Install the software automatically** and click **Next**.
 -  The **Found New Hardware Wizard** window may appear twice, and a system restart may be required.
 
-| 
-| Refer to the Evaluation Board Software section for details on running the AD9543 evaluation board software.
+Refer to the Evaluation Board Software section for details on running the AD9543 evaluation board software.
 
 Reference Inputs
 ~~~~~~~~~~~~~~~~
@@ -124,8 +118,9 @@ In contrast, REF B/BB (Connectors J302 and J303, respectively) are configured fo
 System Clock Inputs
 ~~~~~~~~~~~~~~~~~~~
 
-| By default, the :adi:`AD9543` system clock input is configured to the on-board 49.152 or 50 MHz crystal. For applications that require either a TCXO or OCXO, The user use can select. Refer to **Table 3** for the jumper settings to configure the serial port.
-| **Table 3. System Clock Input Configuration**
+By default, the :adi:`AD9543` system clock input is configured to the on-board 49.152 or 50 MHz crystal. For applications that require either a TCXO or OCXO, The user use can select. Refer to **Table 3** for the jumper settings to configure the serial port.
+
+**Table 3. System Clock Input Configuration**
 
 ================== ====================== ======================
 SYSCLK Input       Jumper P402            Jumper P403
@@ -136,9 +131,10 @@ OCXO               Center and Top Pins    Center and Bottom Pins
 J400 SMA Connector Center and Bottom Pins Center and Top Pins
 ================== ====================== ======================
 
-| 
+
 | ==== Serial Port Configuration Pins ==== The :adi:`AD9543` serial port configuration is determined by the logic state of Multi-function pins M4, M5, and M6 upon exit from a reset state. M4 selects which protocol (SPI versus I²C), and M5 and M6 determine the I²C address. Jumper Block P605 allows the user to enable pull-up/down resistors to control the state of Pins M4, M5, and M6 on the AD9543. Refer to **Table 4** for the jumper settings to configure the serial port.
-| **Table 4. Serial Port configuration**
+
+**Table 4. Serial Port configuration**
 
 +-----------------+---------------+------------------------------------+-------------+-------------+
 | Serial Protocol | Slave Address | Jumper P605, Top/Middle/Bottom Row | Jumper P504 | Jumper P511 |
@@ -158,36 +154,32 @@ J400 SMA Connector Center and Bottom Pins Center and Top Pins
 
 | 
 | ==== EEPROM Loading at Power-up ==== The :adi:`AD9543` uses pin strapping of the M3 pin at reset or power-up to enable/disable EEPROM loading. To load the external EEPROM, place a jumper across the center and right pin of the top row of Jumper Block P604. This corresponds to Pins 10 and 11 in Jumper Block P604.
-| ===== EVALUATION BOARD SOFTWARE =====
 
---------------
+EVALUATION BOARD SOFTWARE
+
 
 The :adi:`AD9543` evaluation software allows the user to control the full functionality of the AD9543 through 3-wire SPI communication with the evaluation board. The AD9543 evaluation software is implemented as a component plug-in in ADI’s :doc:`Analysis \| Control \| Evaluation (ACE) Software </wiki-migration/resources/tools-software/ace>` desktop software. ACE allows the evaluation of control of multiple evaluation systems from across ADI’s product portfolio and is designed to educate the user in the functional operation of the component. The :doc:`ACE wiki page </wiki-migration/resources/tools-software/ace>` contains system requirement and prerequisite information as well as links to the most recent installer and user guide. The ACE user guide contains detailed information concerning all current aspects of the ACE environment. Much of that information will not be described in this document, but some main ACE operational points relevant to component level functionality will be described. It is highly recommended to review the ACE user guide to discover the myriad capabilities and offerings the ACE environment provides to the user.
 
 Software Installation
 ~~~~~~~~~~~~~~~~~~~~~
 
-| Use the following instructions to set up the AD9543 evaluation board software.
-| Do not connect the evaluation board until the software installation is complete.
+Use the following instructions to set up the AD9543 evaluation board software. Do not connect the evaluation board until the software installation is complete.
 
 -  Download and install ACE Version 1.10.2671.1118 `Analysis \| Control \| Evaluation (ACE) Software <http://swdownloads.analog.com/ACE/ACEInstall_1.10.2671.1118.exe>`_
 -  Follow the section 2.1, installation guide, of the ACE User Guide to completion.
 -  Launch the ACE application prior to installing ACE Plug-ins. This creates the directories used by the ACE Plug-in installers.
 -  Download and install the latest AD9543 ACE Plug-ins: `board.ad9543.1.1.8.zip <https://wiki.analog.com/_media/resources/eval/board.ad9543.1.1.8.zip>`_
 
-| (Note that there are a total of four plug-ins that must be installed. Please unzip it first)
+(Note that there are a total of four plug-ins that must be installed. Please unzip it first)
 
 General Operation
 ~~~~~~~~~~~~~~~~~
 
-| Power up and connect the evaluation board to the PC. Open the ACE software. After opening ACE, the user will be presented with the Start View shown in **Figure 2**. The Explore Local Plug-ins section shows all plug-ins that are locally installed and allows the user to operate the plug-in without the presence of the associated evaluation platform. The Attached Hardware section shows all ADI evaluation platforms which are found to be connected to the PC. The appearance of an Unknown Hardware plug-in means that the plug-in for a detected ADI evaluation platform is not locally installed. Double click on any of the shown plug-ins will open the associated plug-in and navigate to its default view, which is the board view for the AD9543. Note: opening a plug-in from the Explore Local Plug-ins section will not automatically establish a connection with the associated evaluation platform even if the hardware is connected. Only opening a plug-in from the Attached hardware section will automatically establish this connection.
-|
+Power up and connect the evaluation board to the PC. Open the ACE software. After opening ACE, the user will be presented with the Start View shown in **Figure 2**. The Explore Local Plug-ins section shows all plug-ins that are locally installed and allows the user to operate the plug-in without the presence of the associated evaluation platform. The Attached Hardware section shows all ADI evaluation platforms which are found to be connected to the PC. The appearance of an Unknown Hardware plug-in means that the plug-in for a detected ADI evaluation platform is not locally installed. Double click on any of the shown plug-ins will open the associated plug-in and navigate to its default view, which is the board view for the AD9543. Note: opening a plug-in from the Explore Local Plug-ins section will not automatically establish a connection with the associated evaluation platform even if the hardware is connected. Only opening a plug-in from the Attached hardware section will automatically establish this connection.
 
 .. container:: centeralign
 
    |image2| **Figure 2. ACE Start Screen (AD9545 Shown)**
-
-   |
 
 
 Board View
@@ -198,31 +190,25 @@ The AD9543 board view can be seen in **Figure 3**. As the AD9543 evaluation plat
 -  View toolbar
 -  AD9543 primaray component link
 
-|
-
 .. container:: centeralign
 
-
-   ..
-
-|image3|
-
-   | **Figure 3. AD9543 ACE Plug-in Board View (AD9545 Shown)**
-   |
+   |image3| **Figure 3. AD9543 ACE Plug-in Board View (AD9545 Shown)**
 
 
-| The board view toolbar provided three board level functions and a detailed description may be found in section 3.6.3 of the ACE user guide. The AD9543 primary component link allows the user to navigate to the AD9543 chip view, shown in **Figure 4**, by double clicking this link. The chip view is the primary conduit through which the user can interface with the AD9543.
-| ==== Chip View ====
+The board view toolbar provided three board level functions and a detailed description may be found in section 3.6.3 of the ACE user guide. The AD9543 primary component link allows the user to navigate to the AD9543 chip view, shown in **Figure 4**, by double clicking this link. The chip view is the primary conduit through which the user can interface with the AD9543.
+
+Chip View
+~~~~~~~~~
 
 .. container:: centeralign
 
    |image4| **Figure 4. AD9542/43/44/45 ACE Plug-in Chip View (AD9545 Shown)**
 
-   |
 
+The chip view is the primary interface used to configure the AD9543. It consists primarily of an interactive block diagram which shows the configuration of the device, calculates the frequency translation, implements frequency based error checking, and allows the user to intuitively configure the AD9543 parameters. It should be noted that in order to synchronize the register content of the software with that of the AD9543, the user must press the ‘Read All’ button in the chip view toolbar in the upper left hand portion of the window.
 
-| The chip view is the primary interface used to configure the AD9543. It consists primarily of an interactive block diagram which shows the configuration of the device, calculates the frequency translation, implements frequency based error checking, and allows the user to intuitively configure the AD9543 parameters. It should be noted that in order to synchronize the register content of the software with that of the AD9543, the user must press the ‘Read All’ button in the chip view toolbar in the upper left hand portion of the window.
-| ==== Configuration Wizard ====
+Configuration Wizard
+~~~~~~~~~~~~~~~~~~~~
 
 .. container:: group
 
@@ -231,22 +217,23 @@ The AD9543 board view can be seen in **Figure 3**. As the AD9543 evaluation plat
 
       The configuration wizard simplifies configuring the AD9543 by providing the most commonly needed configuration parameters in a simple user interface. Entered parameters are plugged into a powerful algorithm that calculates the optimal settings ensuring the best possible performance from the AD9543.
 
-         | The wizard is made up in multiple collapsible [1]_ steps. Each step contains parameters, which are used by the wizard algorithm to calculate an optimized configuration.
-         | Invalid parameters are outlined in red with an error indicator [2]_ in the upper left of the parameter, mouse-over the error indicator for an error description. Example see Figure 5 - OUT0B Expression
-      | Once the desired parameters have been entered and all errors [3]_ have been cleared, the Apply button may be clicked to apply the configuration to the chip.
+         
+         The wizard is made up in multiple collapsible [1]_ steps. Each step contains parameters, which are used by the wizard algorithm to calculate an optimized configuration.
+         
+         Invalid parameters are outlined in red with an error indicator [2]_ in the upper left of the parameter, mouse-over the error indicator for an error description. Example see Figure 5 - OUT0B Expression
+         
+      Once the desired parameters have been entered and all errors [3]_ have been cleared, the Apply button may be clicked to apply the configuration to the chip.
 
    
    .. container:: half column
 
       |image5| **Figure 5. Configuration Wizard**
 
-      |
-
    
 
 
-| 
-| ==== Numeric Expressions ====
+Numeric Expressions
+~~~~~~~~~~~~~~~~~~~
 
 .. container:: group
 
@@ -261,13 +248,10 @@ The AD9543 board view can be seen in **Figure 3**. As the AD9543 evaluation plat
                      
                      .. container:: round box
 
-                        **Expression Format**
+                        **Expression Format** An expression in it simplest form has three parts, a number followed by the SI prefix and Units. The units are not significant.
 
-                                             | An expression in it simplest form has three parts, a number followed by the SI prefix and Units. The units are not significant.
-                                             | [**Number**][**SI Prefix**][Unit]
-                                             | or
-                                             | [**Number**][*Space*][**SI Prefix**][Unit]
-                        |
+                                             
+                        [**Number**][**SI Prefix**][Unit] or [**Number**][*Space*][**SI Prefix**][Unit]
 
                      
                      For example.
@@ -313,111 +297,91 @@ The AD9543 board view can be seen in **Figure 3**. As the AD9543 evaluation plat
          
 
    
-   | A space between the number and SI prefix applies the SI prefix to all numbers in the expression.
-   | ^Expression ^Evaluated Value ^
+   A space between the number and SI prefix applies the SI prefix to all numbers in the expression.
    
-   ========== ==========
+   ========== ===============
+   Expression Evaluated Value
+   ========== ===============
    1+0.25 MHz 1250000 Hz
    1+0.25MHz  250001 Hz
-   ========== ==========
+   ========== ===============
    
-   | 
+
    | The following table has some example expressions and evaluated values.
-   | ^Expression ^Evaluated Value ^Note ^
    
-   ============= ============ ====================================
-   1+1 Mhz       2 MHz        SI prefix is applied to all numbers.
-   2+1MHz        1.000002 MHz 
-   1+1/2 MHz     1.5 MHz      
-   (1+1)/2 MHz   1 MHz        Order of operations example.
-   15/2\*10 MHz   75 MHz       
-   15M/2M\*10M Hz 75 MHz       
-   ============= ============ ====================================
+   ============= =============== ====================================
+   Expression    Evaluated Value Note
+   ============= =============== ====================================
+   1+1 Mhz       2 MHz           SI prefix is applied to all numbers.
+   2+1MHz        1.000002 MHz    
+   1+1/2 MHz     1.5 MHz         
+   (1+1)/2 MHz   1 MHz           Order of operations example.
+   15/2\*10 MHz   75 MHz          
+   15M/2M\*10M Hz 75 MHz          
+   ============= =============== ====================================
 
-   | 
-   |
 
-| 
-| ==== Block Interaction ====
-| A detailed explanation of the interaction with the block diagram is explained in the `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_ sections 3.7.1 through 3.7.3. However, it should be noted that the :adi:`AD9543` chip view heavily leverages the use of configuration menus for blocks with multiple associated bit fields. Clicking on such a block will pop up a menu as pictured in **Figure 6**.
+
+
+Block Interaction
+~~~~~~~~~~~~~~~~~
+
+A detailed explanation of the interaction with the block diagram is explained in the `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_ sections 3.7.1 through 3.7.3. However, it should be noted that the :adi:`AD9543` chip view heavily leverages the use of configuration menus for blocks with multiple associated bit fields. Clicking on such a block will pop up a menu as pictured in **Figure 6**.
 
 .. container:: centeralign
 
-   \\\\\
+   \\\\\ |image6| **Figure 6. Divider Q0A Configuration Menu**
 
 
-   |image6|
-
-   | **Figure 6. Divider Q0A Configuration Menu**
-   |
-
-
-| Clicking and dragging the title bar of the menu will allow the user to relocate the menu at one’s convenience. In order to close the menu, the user may close the ‘close’ button or simply click away from the menu.
+Clicking and dragging the title bar of the menu will allow the user to relocate the menu at one’s convenience. In order to close the menu, the user may close the ‘close’ button or simply click away from the menu.
 
 Frequency Translation Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The frequency translation of the :adi:`AD9543` is calculated from reference input frequency to output clock frequency based on the state of the intermediate blocks in between. Not every block in the block diagram impacts the frequency translation, but those that do contain a tool tip displaying the input and output frequencies associated with said block as illustrated in **Figure 7**.
+The frequency translation of the :adi:`AD9543` is calculated from reference input frequency to output clock frequency based on the state of the intermediate blocks in between. Not every block in the block diagram impacts the frequency translation, but those that do contain a tool tip displaying the input and output frequencies associated with said block as illustrated in **Figure 7**.
 
 .. container:: centeralign
 
-
-   ..
-
-|image7|
-
-   | **Figure 7. Frequency Display Tool Tip.**
-   |
+   |image7| **Figure 7. Frequency Display Tool Tip.**
 
 
-| Changing the configuration of a block that affects the frequency translation will produce an automatic calculation and error checking to inform the user of the impact the change has had on the operation of the AD9543. Any errors resulting from the error checking functionality will display visually as well as the Events Tool View. This view gives the user additional detail regarding the nature of the error and is explained in detail in the `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_, section 3.9.3.
+Changing the configuration of a block that affects the frequency translation will produce an automatic calculation and error checking to inform the user of the impact the change has had on the operation of the AD9543. Any errors resulting from the error checking functionality will display visually as well as the Events Tool View. This view gives the user additional detail regarding the nature of the error and is explained in detail in the `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_, section 3.9.3.
 
 Memory Map View
 ~~~~~~~~~~~~~~~
 
-| The :adi:`AD9543` ACE plug-in as contains a detailed view of the entire register map in either register or bit field based format, known as the Memory Map shown in **Figure 8**. This view may be accessed by clicking the ‘Proceed to Memory Map’ button in the lower right hand corner of the chip view.
-|
+The :adi:`AD9543` ACE plug-in as contains a detailed view of the entire register map in either register or bit field based format, known as the Memory Map shown in **Figure 8**. This view may be accessed by clicking the ‘Proceed to Memory Map’ button in the lower right hand corner of the chip view.
 
 .. container:: centeralign
 
-
-   ..
-
-|image8|
-
-   | **Figure 8. AD9542/43/44/45 ACE Plug-in Memory Map View. (AD9545 shown)**
-   |
+   |image8| **Figure 8. AD9542/43/44/45 ACE Plug-in Memory Map View. (AD9545 shown)**
 
 
-| The memory map view is explained in detail in the `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_ section 3.8, but one of the more useful features in the functional group filter shown in the left portion of **Figure 8**. The :adi:`AD9543` bit fields have been grouped by relevant functionality and the functional group filter allows the user to quickly and easily switch between viewing only bit fields or registers contained within these macro level functional groups.
-| ==== Sessions ==== The ACE application has the ability to save and recall a given configuration of the software including all currently open plug-ins.
-| These ‘states’ are referred to as ‘sessions’. The File selection in the application toolbar contains options to create, open, save, or close sessions, as shown in **Figure 9**.
-|
+The memory map view is explained in detail in the `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_ section 3.8, but one of the more useful features in the functional group filter shown in the left portion of **Figure 8**. The :adi:`AD9543` bit fields have been grouped by relevant functionality and the functional group filter allows the user to quickly and easily switch between viewing only bit fields or registers contained within these macro level functional groups.
+
+Sessions
+~~~~~~~~
+
+The ACE application has the ability to save and recall a given configuration of the software including all currently open plug-ins. These ‘states’ are referred to as ‘sessions’. The File selection in the application toolbar contains options to create, open, save, or close sessions, as shown in **Figure 9**.
 
 .. container:: centeralign
 
-
-   ..
-
-|image9|
-
-   | **Figure 9. ACE File Menu.**
-   |
+   |image9| **Figure 9. ACE File Menu.**
 
 
-| The left hand section of the Start View also exposes the ability to create and open sessions as well as maintaining a list of recent sessions that may be directly opened.
-| ==== Known Issues ====
+The left hand section of the Start View also exposes the ability to create and open sessions as well as maintaining a list of recent sessions that may be directly opened.
+
+Known Issues
+~~~~~~~~~~~~
 
 -  Please only use ACE software version 1.10.2671.1118 that can be downloaded here: `ACE Version 1.10.2671.1118 Installer <http://swdownloads.analog.com/ACE/ACEInstall_1.10.2671.1118.exe>`_
-
-| 
 
 EVALUATION BOARD QUICK START USING A SESSION FILE
 -------------------------------------------------
 
-| This quick start section covers the loading of a session file as provided by ADI.
-| \* Ensure the ACE evaluation software and AD9543 ACE Plug-ins are installed and running.
+This quick start section covers the loading of a session file as provided by ADI.
 
+-  Ensure the ACE evaluation software and AD9543 ACE Plug-ins are installed and running.
 -  Click File > Open Session…, and select the appropriate .cso file.
 -  In the AD9543 Chip View Toolbar, click the Apply Changes button.
 -  Apply a 0 dBm signal to the J301 SMA connector (REF0P) at a frequency corresponding to your AD9543 setup. This may also be applied prior to the session load.

@@ -29,12 +29,11 @@ A piezoelectric transducer has very high DC internal impedance, R\ :sub:`i` and 
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less Breadboard
-| 2 - small signal diode (1N914 or similar)
-| 2 - 1 uF electrolytic capacitors (or similar value)
-| 1 - LDT0 Piezo Film Vibra Tab Mass
-| |image1|
+ADALM2000 Active Learning Module Solder-less Breadboard 2 - small signal diode (1N914 or similar) 2 - 1 uF electrolytic capacitors (or similar value) 1 - LDT0 Piezo Film Vibra Tab Mass
+
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/aeh_f2.png
+   :align: center
+   :width: 300px
 
 Directions:
 -----------
@@ -83,14 +82,10 @@ Much like we saw with the loading effect of scope channel 1 on the output voltag
 For further reading:
 --------------------
 
-| http://en.wikipedia.org/wiki/Piezoelectric_sensor
-| http://en.wikipedia.org/wiki/Energy_harvesting
+http://en.wikipedia.org/wiki/Piezoelectric_sensor http://en.wikipedia.org/wiki/Energy_harvesting
 
 Device datasheet:
 
-| http:*dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/ForceFlex/LDT_Series.pdf
-  http:*\ www.parallax.com/Portals/0/Downloads/docs/prod/compshop/PiezoInfo.pdf
-| **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
+http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/ForceFlex/LDT_Series.pdf http://www.parallax.com/Portals/0/Downloads/docs/prod/compshop/PiezoInfo.pdf
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/aeh_f2.png
-   :width: 300px
+**Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`

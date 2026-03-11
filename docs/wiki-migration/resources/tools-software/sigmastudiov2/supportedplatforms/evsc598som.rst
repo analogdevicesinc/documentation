@@ -3,8 +3,7 @@
 EV-SC598-SOM
 ============
 
-| 
-| Evaluation Hardware for ADSP-SC59x SHARC Audio Processor family
+Evaluation Hardware for ADSP-SC59x SHARC Audio Processor family
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/ev-sc598.png
    :width: 400px

@@ -1,10 +1,9 @@
 Multi-Tap Voltage Controlled Delay
 ==================================
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| ---------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-.. _multi-tap-voltage-controlled-delay-1:
+--------------
 
 Multi-Tap Voltage Controlled Delay
 ----------------------------------
@@ -70,18 +69,28 @@ If the control input for any tap exceeds the maximum allowable delay for that ta
 
 Care must be taken so that the control inputs never go below zero (integer). If the control input a negative number, the output of the algorithm will jump to -1 (decimal).
 
-| As a simple example, a single tap can be used to delay an input signal. The example below shows three signals: input, output, and control signals. The output is a delayed copy of the input, and the control signal determines how much delay is used. In this example, 100 samples of delay is used.
-| |multitapvoltagepic2.png|
-| If multiple taps are used, then the delay for each output will be determined separately, based on its corresponding control input pin. In the example below, Output 0 is delayed by 40 samples and Output 1 is delayed by 80 samples.
-| |multitapvoltagepic3.png|
-| The delay can be modified in real-time, but this will cause frequency distortion on the output. If delay needs to be modified in real-time, then muting the audio when changing the delay length can help to avoid distortion. Also, changing the delay length gradually can help to mitigate the severity of the frequency distortion. An example of extreme frequency warping is shown below.
-| |multitapvoltagepic4.png|
+As a simple example, a single tap can be used to delay an input signal. The example below shows three signals: input, output, and control signals. The output is a delayed copy of the input, and the control signal determines how much delay is used. In this example, 100 samples of delay is used.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/multitapvoltagepic2.png
+   :alt: multitapvoltagepic2.png
+
+If multiple taps are used, then the delay for each output will be determined separately, based on its corresponding control input pin. In the example below, Output 0 is delayed by 40 samples and Output 1 is delayed by 80 samples.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/multitapvoltagepic3.png
+   :alt: multitapvoltagepic3.png
+
+The delay can be modified in real-time, but this will cause frequency distortion on the output. If delay needs to be modified in real-time, then muting the audio when changing the delay length can help to avoid distortion. Also, changing the delay length gradually can help to mitigate the severity of the frequency distortion. An example of extreme frequency warping is shown below.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/multitapvoltagepic4.png
+   :alt: multitapvoltagepic4.png
 
 Example
 ~~~~~~~
 
-| The following schematic image shows the Multi-Tap Voltage Controlled Delay being used with a sine tone generator as an input and two delay taps. The maximum delay is 100 samples. Output 0 is delayed by 20 samples and Output 1 is delayed by 40 samples. The schematic below additionally uses the Sine Tone, DC Source, and Output cells.
-| |image1|
+The following schematic image shows the Multi-Tap Voltage Controlled Delay being used with a sine tone generator as an input and two delay taps. The maximum delay is 100 samples. Output 0 is delayed by 20 samples and Output 1 is delayed by 40 samples. The schematic below additionally uses the Sine Tone, DC Source, and Output cells.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/fractionalvoltagecontrolled.png
+   :align: center
 
 Algorithm Details
 ~~~~~~~~~~~~~~~~~
@@ -113,9 +122,11 @@ Multi-Tap Voltage Controlled Delay (ADAU145x/ADAU146x)
 
 The Multi-Tap Voltage Controlled Delay for ADAU145x/ADAU146x provides a variable delay to a single audio input, producing multiple outputs. Each output signal is called a “tap.” The amount of delay for each tap can be modified in real-time by updating the value on the corresponding control input pin. It allows the user to choose in which memory the delay buffer to be stored.
 
-| 
-| |image2|
-| ==== Input Pins ====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/vcd_300.jpg
+   :align: center
+
+Input Pins
+~~~~~~~~~~
 
 +---------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | Name                | Format [int/dec] - [control/audio] | Function Description                                                                                                           |
@@ -124,8 +135,6 @@ The Multi-Tap Voltage Controlled Delay for ADAU145x/ADAU146x provides a variable
 +---------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | Pin 1: Dealy        | int- control                       | Delay in samples. Please note that, the dealy value in this pins hould always be in samples (Even the display of Max is in ms) |
 +---------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-
-.. _output-pins-1:
 
 Output Pins
 ~~~~~~~~~~~
@@ -152,8 +161,6 @@ Configurations
 | Memory           | DM1           | DM0/DM1/PM                    | Memory to store the delay line buffer. |
 +------------------+---------------+-------------------------------+----------------------------------------+
 
-.. _dsp-parameter-information-1:
-
 DSP Parameter Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -166,8 +173,3 @@ Supported ICs
 -  ADAU146x
 
 .. |multitapvoltagepic1.png| image:: https://wiki.analog.com/_media/multitapvoltagepic1.png
-.. |multitapvoltagepic2.png| image:: https://wiki.analog.com/_media/multitapvoltagepic2.png
-.. |multitapvoltagepic3.png| image:: https://wiki.analog.com/_media/multitapvoltagepic3.png
-.. |multitapvoltagepic4.png| image:: https://wiki.analog.com/_media/multitapvoltagepic4.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/fractionalvoltagecontrolled.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/vcd_300.jpg

@@ -12,20 +12,7 @@ By combining the circuit blocks already explored, the goal is to build a complet
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 8.2KΩ Resistor (close approx. can be made by connecting your 1.5KΩ and 6.8KΩ in series)
-| 1 - 47KΩ Resistor
-| 1 - 100KΩ Resistor
-| 2 - 470KΩ Resistor
-| 1 - 10KΩ Resistor
-| 1 - 1KΩ Resistor
-| 2 - 22uF capacitor
-| 1 - 1uF capacitor
-| 1 - 47nF capacitor
-| 1 - Small signal PNP transistors (2N3906)
-| 3 - Small signal NPN transistors (2N3904 SSM2212)
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - 8.2KΩ Resistor (close approx. can be made by connecting your 1.5KΩ and 6.8KΩ in series) 1 - 47KΩ Resistor 1 - 100KΩ Resistor 2 - 470KΩ Resistor 1 - 10KΩ Resistor 1 - 1KΩ Resistor 2 - 22uF capacitor 1 - 1uF capacitor 1 - 47nF capacitor 1 - Small signal PNP transistors (2N3906) 3 - Small signal NPN transistors (2N3904 SSM2212)
 
 Directions:
 -----------
@@ -87,26 +74,15 @@ What happens when C\ :sub:`2`\ is removed and why?
 Unity gain amplifier
 ====================
 
-.. _objective-1:
-
 Objective:
 ----------
 
 By combining some of the circuit blocks already explored, the goal is to build a complete unity gain buffer amplifier. The addition of the current mirror load for the differential stage is a key improvement to this simple amplifier.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 15KΩ Resistor (a 10KΩ in series with a 4.7KΩ can be substituted)
-| 2 - Small signal PNP transistors (2N3906, or SSM2220 PNP match pair can be used)
-| 6 - Small signal NPN transistors (2N3904, use SSM2212 NPN matched pair for Q\ :sub:`1` and Q\ :sub:`2` A TIP31C may be substituted for Q\ :sub:`5` if you don't have enough 2N3904 devices)
-
-.. _directions-1:
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - 15KΩ Resistor (a 10KΩ in series with a 4.7KΩ can be substituted) 2 - Small signal PNP transistors (2N3906, or SSM2220 PNP match pair can be used) 6 - Small signal NPN transistors (2N3904, use SSM2212 NPN matched pair for Q\ :sub:`1` and Q\ :sub:`2` A TIP31C may be substituted for Q\ :sub:`5` if you don't have enough 2N3904 devices)
 
 Directions:
 -----------
@@ -122,8 +98,6 @@ Construct the circuit shown in figure 4 on your solder-less breadboard. The brea
    Figure 4 Amplifier with unity gain
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -137,8 +111,6 @@ Connect your circuit to the ADALM2000 I/O connector as indicated by the green bo
    Figure 5 Amplifier with unity gain Breadboard Circuit
 
 
-.. _procedure-1:
-
 Procedure:
 ----------
 
@@ -151,8 +123,6 @@ Configure AWG1 for a 1 KHz sine wave with an amplitude of 2 V peak-to-peak and z
 
    Figure 6 Amplifier with unity gain Waveforms
 
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -180,6 +150,66 @@ Here is a good technical paper on how to make :adi:`Simple Op Amp Measurements <
 Appendix: More advanced versions on a PC board
 ----------------------------------------------
 
-.. include:: ../alm1k/alm-lab-13.rst
+PC board design files for this experiment, and other related extensions, can be found on the ADI GitHub education tool repository. The PCB schematic is shown in figure 3 and a photo of the board is shown in figure 4. Component placement is shown in figure 5.
+
+Power and bias rail decoupling capacitors C2, C3 and C4 are optional. Pin sockets are best used for Frequency compensation capacitor C1 to allow for experimenting with different values.
+
+Resistor R4 sets the bias current for the first and second stages based on the power supply voltage. The value can be adjusted based on the range of supply voltages the amplifier will be operating. For +5 operation 1.5kΩ is a good working value. For 10 V (+/- 5V) a 3.3kΩ is a good working value.
+
+Resistors R5 and R6 set the steady state bias current in the output stage. Using 2N3904 and 2N3906 in the output stage, R5 = 6.8kΩ and R6 = 10kΩ is a good safe starting point.
+
+Output emitter resistors R7 and R8 can be any small value in the range of 2.7 to 10 ohms.
+
+`Experiment board design files <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/experiment-boards>`_
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13-f2.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   Figure 3, Operational Amplifier PCB schematic.
+
+
+The PC Board version with the standard 8 pin DIP single op-amp footprint is shown in figure 4. A version with all the pins in a single row (SIP) footprint is shown in figure 5. Either version can be inserted into a solder-less breadboard.
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/trabsistor-op-amp-pcb.png
+   :align: center
+   :width: 500px
+
+.. container:: centeralign
+
+   Figure 4, Example constructed Operational Amplifier PC Board, DIP version.
+
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/transistor-op-amp-pcb2.png
+   :align: center
+   :width: 500px
+
+.. container:: centeralign
+
+   Figure 5, Example constructed Operational Amplifier PC Board, SIP version.
+
+
+To make it somewhat easier to install the components, figure 6 for the DIP version and figure 7 for the SIP version are provided.
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/transistor-op-amp-placement.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   Figure 6, DIP PC Board component placement.
+
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/transistor-op-amp-placement2.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   Figure 7, SIP PC Board component placement.
+
+
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a13_wf_ug.png

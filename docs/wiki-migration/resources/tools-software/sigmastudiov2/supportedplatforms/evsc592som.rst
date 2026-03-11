@@ -3,5 +3,4 @@
 ADSP-SC592 Processor
 ====================
 
-| 
-| Find more details online - :adi:`ADSP-SC592 <en/products/adsp-sc592.html>`
+Find more details online - :adi:`ADSP-SC592 <en/products/adsp-sc592.html>`

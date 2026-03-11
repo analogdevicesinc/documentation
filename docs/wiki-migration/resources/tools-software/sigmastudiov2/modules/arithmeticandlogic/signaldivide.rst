@@ -3,13 +3,13 @@
 Signal Divide
 =============
 
-| 
-| |div.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/div.png
+   :alt: div.png
 
 Description
 -----------
 
-| The Signal Divide block divide two incoming signals. The division is performed by using the Newton-Rapson method.
+The Signal Divide block divide two incoming signals. The division is performed by using the Newton-Rapson method.
 
 Variants
 --------
@@ -17,9 +17,8 @@ Variants
 -  Signal Divide
 -  Complex Signal Divide
 
-|
-
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +-----------------------+------------+------------------+---------------+------------------+
 | Name                  | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -60,5 +59,3 @@ DSP Parameters
 --------------
 
 NO DSP Parameters
-
-.. |div.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/div.png

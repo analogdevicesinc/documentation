@@ -72,10 +72,7 @@ The two additional frequencies, ω\ :sub:`1` and ω\ :sub:`2`, are also indicate
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Resistors 100 Ω, 1 KΩ
-| Capacitors 1 µF, 0.01 µF
-| Inductors 20 mH
+ADALM1000 hardware module Resistors 100 Ω, 1 KΩ Capacitors 1 µF, 0.01 µF Inductors 20 mH
 
 Procedure:
 ~~~~~~~~~~
@@ -150,5 +147,4 @@ You should now be able to press the green Run button and run the frequency sweep
 
 :doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**

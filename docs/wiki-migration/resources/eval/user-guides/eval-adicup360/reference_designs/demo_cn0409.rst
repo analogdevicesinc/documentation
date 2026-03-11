@@ -49,25 +49,20 @@ The following is a list of items needed in order to replicate this demo.
    -  Turbidity Calibration Solutions (0.02FTU,100FTU and 800FTU)
    -  Turbidity Solutions (10FTU,15FTU,10FTU,100FTU and 1000FTU)
 
-|
-
 .. note::
 
    The turbidity calibration solutions used in the evaluation are the `HI88703-11 <https://hannainst.com/turbidity-calibration-standards-for-hi88703-and-hi83414-hi88703-11.html>`_,\ `Oakton T100 <https://www.coleparmer.com/i/oakton-t100-replacement-turbidity-calibration-kit/3563552>`_ and `Cole Parmer kit <https://www.johnmorrisgroup.com/AU/Product/48740/Cole-Parmer-Turbidity-Standards-Pack>`_\
 
 
-| \* Software
+-  Software
 
-::
+   -  ADuCM360_demo_cn0409 software
+   -  CrossCore Embedded Studio (2.7.0 or higher)
+   -  ADuCM36x DFP (1.0.2 or higher)
+   -  CMSIS ARM Pack (4.3.0 or higher)
+   -  Serial Terminal Program
 
-     * ADuCM360_demo_cn0409 software
-     * CrossCore Embedded Studio (2.7.0 or higher)
-     * ADuCM36x DFP (1.0.2 or higher)
-     * CMSIS ARM Pack (4.3.0 or higher)
-     * Serial Terminal Program 
-       * Such as Putty or Tera Term
-
-.. _setting-up-the-hardware-1:
+      -  Such as Putty or Tera Term
 
 Setting up the hardware
 -----------------------
@@ -110,7 +105,7 @@ Measurement Procedure
 
 
 * 3-point calibration will perform using 0.02FTU,100 FTU and 800 FTU. Wait for the onscreen prompt before placing each solution. {{:resources:eval:user-guides:circuits-from-the-lab:putty2.png|}}
-   * After calibration, place the solution required to measure turbidity as prompted on the screen.{{:resources:eval:user-guides:circuits-from-the-lab:putty3.png|}} 
+   * After calibration, place the solution required to measure turbidity as prompted on the screen.{{:resources:eval:user-guides:circuits-from-the-lab:putty3.png|}}
    * For more details on the software, visit CN0409 Software User Guide.
 
 .. note::
@@ -163,8 +158,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -176,8 +169,6 @@ Following is the UART configuration.
      Start: 1 bit
      Stop: 2 bit
      Flow Control: none
-
-|
 
 How to use the Tools
 --------------------
@@ -199,11 +190,9 @@ Project structure
 
 |image6|\ The **ADuCM360_demo_cn0409** is a C++ project that uses ADuCM36x C/C++ Project structure.
 
-| 
-| This project contains: system initialization part, setting system clock, enabling clock for peripherals; i2c interface, UART via P0.6/P0.7; UART read/write functions; Memory read/write functions; turbidity calculations;
+This project contains: system initialization part, setting system clock, enabling clock for peripherals; i2c interface, UART via P0.6/P0.7; UART read/write functions; Memory read/write functions; turbidity calculations;
 
-| 
-| In the **src** and **include** folders you will find the source and header files related to CN0409 software application. The *Communication.cpp/h* files contain UART and I2C specific data, meanwhile the *CN0409.cpp/h* files contain the calculation part and *Flash.cpp/h* provide memory management. .
+In the **src** and **include** folders you will find the source and header files related to CN0409 software application. The *Communication.cpp/h* files contain UART and I2C specific data, meanwhile the *CN0409.cpp/h* files contain the calculation part and *Flash.cpp/h* provide memory management. .
 
 // End of Document //
 

@@ -146,7 +146,7 @@ Creating the Preloader and Bootloader partition
    user    0m0.020s
    sys 0m6.376s
    dragos@debian:~$ sync
-   dragos@debian:~$ sudo fdisk /dev/mmcblk0 
+   dragos@debian:~$ sudo fdisk /dev/mmcblk0
 
    Welcome to fdisk (util-linux 2.25.2).
 
@@ -226,8 +226,6 @@ IIO Oscilloscope
 ARRADIO + Terasic SoCkit Development Kit
 ----------------------------------------
 
-.. _download-links-1:
-
 Download Links
 ~~~~~~~~~~~~~~
 
@@ -239,8 +237,6 @@ Linux Kernel:
 |https://github.com/analogdevicesinc/linux|
 
 `ad9361.tar.gz <https://wiki.analog.com/_media/resources/tools-software/linux-software/altera_soc/ad9361.tar.gz>`_
-
-.. _building-the-linux-kernel-image-and-the-devicetree-1:
 
 Building the Linux Kernel image and the Devicetree
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -256,8 +252,6 @@ Clone the kernel tree, point environment to an arm architecture cross compiler, 
    /linux$ make socfpga_adi_defconfig
    /linux$ make zImage -j4
    /linux$ make socfpga_cyclone5_sockit_arradio.dtb
-
-.. _building-the-hardware-design-1:
 
 Building the Hardware Design
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -282,8 +276,6 @@ If you skipped the instruction on "Building the Linux Kernel image and the Devic
 ::
 
    $ quartus_cpf -c -o bitstream_compression=on ./arradio_c5soc.sof soc_system.rbf
-
-.. _building-the-preloader-and-bootloader-image-1:
 
 Building the Preloader and Bootloader Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -373,8 +365,6 @@ Terasic SoCkit Jumper Configuration
 **POS** 0     1     0     1     0     0
 ======= ===== ===== ===== ===== ===== =========
 
-.. _creating-the-preloader-and-bootloader-partition-1:
-
 Creating the Preloader and Bootloader partition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -439,8 +429,6 @@ Creating the Preloader and Bootloader partition
    486376 bytes (486 kB) copied, 1.2313 s, 395 kB/s
    dragos@dragos-debian:~$ sync
 
-.. _iio-oscilloscope-1:
-
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
@@ -479,8 +467,6 @@ Building the no-OS project using DS-5
 CN0540 + DE10Nano Development Kit
 ---------------------------------
 
-.. _download-links-2:
-
 Download Links
 ~~~~~~~~~~~~~~
 
@@ -501,8 +487,6 @@ SD Card Image:
 
 |https://wiki.analog.com/resources/tools-software/linux-software/adi-kuiper_images/release_notes|
 
-.. _building-the-linux-kernel-image-and-the-devicetree-2:
-
 Building the Linux Kernel image and the Devicetree
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -517,8 +501,6 @@ Clone the kernel tree, point environment to an arm architecture cross compiler, 
    /linux$ make socfpga_adi_defconfig
    /linux$ make zImage -j4
    /linux$ make socfpga_cyclone5_de10_nano_cn0540.dtb
-
-.. _building-the-hardware-design-2:
 
 Building the Hardware Design
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -543,8 +525,6 @@ If you skipped the instruction on "Building the Linux Kernel image and the Devic
 ::
 
    $ quartus_cpf -c -o bitstream_compression=on ./cn0540_de10nano.sof soc_system.rbf
-
-.. _building-the-preloader-and-bootloader-image-2:
 
 Building the Preloader and Bootloader Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -631,10 +611,10 @@ Creating the Micro-SD Card
    user@debian:~$ lsblk
 
    NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-   sdd           8:48   1  29.1G  0 disk 
-   ├─sdd1        8:49   1     2G  0 part 
-   ├─sdd2        8:50   1  27.1G  0 part 
-   └─sdd3        8:51   1     8M  0 part 
+   sdd           8:48   1  29.1G  0 disk
+   ├─sdd1        8:49   1     2G  0 part
+   ├─sdd2        8:50   1  27.1G  0 part
+   └─sdd3        8:51   1     8M  0 part
 
 Configuring the Micro-SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -646,10 +626,10 @@ Configuring the Micro-SD Card
    user@debian:~$ lsblk
 
    NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-   sdd           8:48   1  29.1G  0 disk 
+   sdd           8:48   1  29.1G  0 disk
    ├─sdd1        8:49   1     2G  0 part /media/data/BOOT
-   ├─sdd2        8:50   1  27.1G  0 part 
-   └─sdd3        8:51   1     8M  0 part 
+   ├─sdd2        8:50   1  27.1G  0 part
+   └─sdd3        8:51   1     8M  0 part
 
 
    user@debian:~/Workspace/hdl/projects/cn0540/de10nano$ sudo cp soc_system.rbf /media/data/BOOT/
@@ -665,13 +645,13 @@ Configuring the Micro-SD Card
    868996 bytes (869 kB, 849 KiB) copied, 0.21262 s, 4.1 MB/s
 
    user@debian:~$ sudo umount /dev/sdd1
-   user@debian:~$ lsblk 
-    
+   user@debian:~$ lsblk
+
    NAME        MAJ:MIN RM  SIZE  RO TYPE MOUNTPOINT
-   sdd           8:48  1   29.1G  0 disk 
-   ├─sdd1        8:49  1      2G  0 part 
-   ├─sdd2        8:50  1   27.1G  0 part 
-   └─sdd3        8:51  1      8M  0 part 
+   sdd           8:48  1   29.1G  0 disk
+   ├─sdd1        8:49  1      2G  0 part
+   ├─sdd2        8:50  1   27.1G  0 part
+   └─sdd3        8:51  1      8M  0 part
 
 The root of 'BOOT' should contain:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -702,24 +682,22 @@ You will need to:
 |zedboard.png|
 
 -  Insert the Micro-SD into the Micro-SD Interface Connector (J11).
-   \* Connect the CN0540-ARDZ to the DE10Nano FPGA using the Arduino shield connection.
-   \* Connect USB UART J4 (USB Mini B) to your host PC.
-   \* Plug your ethernet cable into the RJ45 ethernet connector(J10).
-   \* Plug the Power Supply into 5V Power input connector (J14) (DO NOT turn the device on).
-   \* Set the jumpers as seen in the below picture:
+-  Connect the CN0540-ARDZ to the DE10Nano FPGA using the Arduino shield connection.
+-  Connect USB UART J4 (USB Mini B) to your host PC.
+-  Plug your ethernet cable into the RJ45 ethernet connector(J10).
+-  Plug the Power Supply into 5V Power input connector (J14) (DO NOT turn the device on).
+-  Set the jumpers as seen in the below picture:
 
-   |image1|
+|image1|
 
-   \* Turn it on.
-   \* Wait ~30 seconds for the “DONE” LED to turn blue.
+-  Turn it on.
+-  Wait ~30 seconds for the “DONE” LED to turn blue.
 
 
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
 
-
-.. _iio-oscilloscope-2:
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~

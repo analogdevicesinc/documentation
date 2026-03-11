@@ -4,23 +4,24 @@ Power System Management on Linux Tutorial
 Introduction
 ------------
 
-| The goal of this tutorial is to equip the reader with a collection of hardware and software tools for working with Power System Management devices, and more generally, devices that fall under the Linux hardware monitoring kernel API (HWMON) framework.
-| The tutorial will focus on using standard tools and simple examples that can be used for debug and development.
-| Also note that the tutorial is geared toward Linux-based systems, in contrast to bare-metal, no-OS applications. A great resource for learning about this use case is the `Linduino to PSM adapter shield <ad>:adi:`dc2294a>`__`. The instructions for this board go over how to run several examples on the Linduino (A clone of the Arduino UNO).
+The goal of this tutorial is to equip the reader with a collection of hardware and software tools for working with Power System Management devices, and more generally, devices that fall under the Linux hardware monitoring kernel API (HWMON) framework.
+
+The tutorial will focus on using standard tools and simple examples that can be used for debug and development.
+
+Also note that the tutorial is geared toward Linux-based systems, in contrast to bare-metal, no-OS applications. A great resource for learning about this use case is the `Linduino to PSM adapter shield <ad>:adi:`dc2294a>`__`. The instructions for this board go over how to run several examples on the Linduino (A clone of the Arduino UNO).
 
 Videos
 ------
-
-|
 
 .. note::
 
    This video includes installation and configuration of Kuiper Linux, as well as building and installing the development branch of the libiio with HWMON support. The video will be re-done (and re-hosted on the CftL YouTube channel) once these features are merged to master and included in a Kuiper release.
 
-   | |youtube>mR9V8uN390M|
 
+   |youtube>mR9V8uN390M|
 
-| ==== Materials ====
+Materials
+---------
 
 -  Raspberry Pi 4; 2G, 4G, or 8G version. (3B, 3B Plus will work, but you will want the 4 :-) )
 -  5V USB-C wall adapter for Raspberry Pi (micro USB for model 3)
@@ -38,22 +39,18 @@ Videos
 
 -  Multimeters `7-Function Cen Tech <https://www.harborfreight.com/7-function-digital-multimeter-63759.html>`_ or equivalent
 
-| 
-
 Hardware Setup: Linux / Raspberry Pi
 ------------------------------------
 
-| Follow the directions for downloading and burning the ADI Kuiper Linux image to the SD card:
-| :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
-| Add the following line to config.txt:
+Follow the directions for downloading and burning the ADI Kuiper Linux image to the SD card: :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+
+Add the following line to config.txt:
 
 ::
 
    dtoverlay=rpi-dc1962c
 
-| 
-| Make the fllowing connections between the DC1962C and the Raspberry Pi, following the pin mapping in Figure 1 and corresponding photo in Figure 2.
-|
+Make the fllowing connections between the DC1962C and the Raspberry Pi, following the pin mapping in Figure 1 and corresponding photo in Figure 2.
 
 .. note::
 
@@ -65,27 +62,25 @@ Hardware Setup: Linux / Raspberry Pi
    Figure 1. Pin Mapping Diagram
 
 
-| |image1|
+   |image1|
 
 .. container:: centeralign
 
    Figure 2. Connections with Discrete Wires
 
 
-|
-
 .. note::
 
    Update photo when production boards arrive
 
-   | |image2|
-   
+
+   |image2|
+
    .. container:: centeralign
 
       Figure 3. Connections with DesignSpark adapter
 
    
-   |
 
 
 Toolbox Item: i2cdetect
@@ -97,7 +92,7 @@ When bringing up I2C devices on the Raspberry Pi (or any other processor / opera
 
    i2cdetect -y 1
 
-| And observe the output as shown in Figure X.
+And observe the output as shown in Figure X.
 
 .. note::
 
@@ -113,9 +108,10 @@ When bringing up I2C devices on the Raspberry Pi (or any other processor / opera
    
 
 
-The LTC2974, LTC2977, and LTC3880 are at I2C addresses 0x32, 0x33, and 0x30, respectively. i2c-detect reports "UU" for these addresses because these devices are controlled from kernelspace, and users cannot access them directly. The onboard 24AA02 EEPROM is not associated with a driver. The upper nibble of the i2c address is 0x5, and the lower 3 bits select banks within the device. Externally, addresses 0x50 to 0x57 are acknowledged.
-| Note that no data transfer actually occurs, the i2c-detect command is simply testing which devices acknowledge, then a stop condition is issued.
-| ==== Toolbox Item: LM Sensors utilities ====
+The LTC2974, LTC2977, and LTC3880 are at I2C addresses 0x32, 0x33, and 0x30, respectively. i2c-detect reports "UU" for these addresses because these devices are controlled from kernelspace, and users cannot access them directly. The onboard 24AA02 EEPROM is not associated with a driver. The upper nibble of the i2c address is 0x5, and the lower 3 bits select banks within the device. Externally, addresses 0x50 to 0x57 are acknowledged. Note that no data transfer actually occurs, the i2c-detect command is simply testing which devices acknowledge, then a stop condition is issued.
+
+Toolbox Item: LM Sensors utilities
+----------------------------------
 
 .. note::
 
@@ -165,12 +161,13 @@ Yup, this really works!
       mkdir build && cd build && cmake -DWITH_SYSTEMD=ON -DWITH_HWMON=ON -DWITH_EXAMPLES=ON ../ && make && sudo make install
       sudo reboot
    
-   |
 
 
-| iio_info
-| IIO Oscilloscope
-| Hopefully PyADI-IIO in the not too distant future
+iio_info
+
+IIO Oscilloscope
+
+Hopefully PyADI-IIO in the not too distant future
 
 Toolbox Item: pmbus_dpsm utilities
 ----------------------------------
@@ -187,8 +184,7 @@ Show both a python HWMON example running locally, and a libiio based example tha
 Conclusion
 ----------
 
-| 
-| Existing PSM tools are the workhorse of system design and bringup. The Linux HWMON drivers and utilities are additional tools available for run-time debug and monitoring. (obviously this conclusion needs work...)
+Existing PSM tools are the workhorse of system design and bringup. The Linux HWMON drivers and utilities are additional tools available for run-time debug and monitoring. (obviously this conclusion needs work...)
 
 .. |youtube>mR9V8uN390M| image:: https://wiki.analog.com/_media/youtube>mR9V8uN390M
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/software/psm_hwmon_linux_tutorial/rpi_power_stick_jumpers.jpg

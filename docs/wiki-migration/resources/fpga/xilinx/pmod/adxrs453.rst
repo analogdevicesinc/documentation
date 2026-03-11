@@ -38,7 +38,7 @@ Required Hardware
 -  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_
 -  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`_
 -  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`_
-   \* `PmodGYRO2 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-GYRO2>`_
+-  `PmodGYRO2 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-GYRO2>`_
 
 Required Software
 ~~~~~~~~~~~~~~~~~
@@ -49,16 +49,14 @@ Required Software
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+
 
 .. tip::
 
    If you are not familiar with LX9 and/or Xilix tools, please visit
 
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
-   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
-   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
-   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details. If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
 
@@ -133,12 +131,12 @@ The reference design is a simple SPI interface for the ADXRS453. The software pr
 
 The hardware SPI access allows reading or writing of any ADXRS453 registers via the address, write and read data registers.
 
-|
-
 .. important::
 
-   | \* Connecting the PmodGYRO2 to the boards using an extension cable provides ease of use.
-   | \* UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   
+   -  Connecting the PmodGYRO2 to the boards using an extension cable provides ease of use.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   
 
 
 .. important::
@@ -166,132 +164,134 @@ The hardware SPI access allows reading or writing of any ADXRS453 registers via 
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \**Avnet LX-9 MicroBoard: **
-     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453_lx9.zip>`_\ **
-     **\ Digilent Nexys™3:**
-     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453_nexys3.zip>`_\ **
-     **\ Avnet ZedBoard:\*\*
-   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
-   | \* :git-no-OS:`PmodGYRO2 Driver Files <legacy/Pmods/PmodGYRO2>`
-   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <legacy/Pmods/Common/sw>`
-   | \* :git-no-OS:`Programming Script <legacy/Pmods/PmodGYRO2/bin>`
-   |
+   
+   **Avnet LX-9 MicroBoard:**
+   
+   -  `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453_lx9.zip>`_
+   
+   **Digilent Nexys™3:**
+   
+   -  `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453_nexys3.zip>`_
+   
+   **Avnet ZedBoard:**
+   
+   -  :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   -  :git-no-OS:`PmodGYRO2 Driver Files <legacy/Pmods/PmodGYRO2>`
+   -  :git-no-OS:`ZYNQ SoC Peripherals Driver Files <legacy/Pmods/Common/sw>`
+   -  :git-no-OS:`Programming Script <legacy/Pmods/PmodGYRO2/bin>`
+   
 
 
-.. container:: hide
+Linux Device Driver
+===================
 
-   
-   Linux Device Driver
-   ===================
-   
-   Connect PmodGYRO2 to the JA1 connector of the ZedBoard (upper row of pins).
-   
-   Preparing the SD Card
-   ---------------------
-   
-   In order to prepare the SD Card for booting Linux on the ZedBoard:
-   
-   -  Download the device tree: :git-no-OS:`PmodGYRO2 Linux devicetree <legacy/Pmods/PmodGYRO2/dts>`
-   -  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
-   
-      -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
-   
-   Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
-   
-   There are 2 ways to test the driver.
-   
-   -  Using the terminal window
-   -  Using a serial terminal
-   
-   Using the terminal window
-   -------------------------
-   
-   Open a new terminal window by pressing **Ctrl+Alt+T**.
-   
-   Navigate to the location of the device and identify it using the following commands:
-   
-   ::
-   
-      cd /sys/bus/iio/devices/
-      ls
-      iio:device0 iio:device1 trigger0
-      cd iio\:device0
-      cat name
-      adxrs450
-   
-   If the **cat name** command doesn't return **adxrs453**, then change the number of the iio:device, and check again.
-   
-   ::
-   
-      cd ..
-      cd iio\:device1
-      cat name
-   
-   To see the list of options that the ADXRS453 driver provides, type:
-   
-   ::
-   
-      ls
-      dev                                     in_anglvel_z_scale  name       uevent
-      in_anglvel_z_quadrature_correction_raw  in_temp0_raw        power
-      in_anglvel_z_raw                        in_temp0_scale      subsystem
-   
-   To read the raw Z angle, type:
-   
-   ::
-   
-      cat in_anglvel_z_raw
-      24
-   
-   To read the raw temperature, type:
-   
-   ::
-   
-      cat in_temp0_raw
-      135
-   
-   .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453_linaro_terminal.jpg
-      :alt: ADXRS453 Set Voltage from Terminal
-      :width: 600px
-   
-   The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+Connect PmodGYRO2 to the JA1 connector of the ZedBoard (upper row of pins).
 
-   
-   |ADXRS453 Read Voltage from Serial Terminal|
+Preparing the SD Card
+---------------------
+
+In order to prepare the SD Card for booting Linux on the ZedBoard:
+
+-  Download the device tree: :git-no-OS:`PmodGYRO2 Linux devicetree <legacy/Pmods/PmodGYRO2/dts>`
+-  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
+
+   -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
+
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+
+There are 2 ways to test the driver.
+
+-  Using the terminal window
+-  Using a serial terminal
+
+Using the terminal window
+-------------------------
+
+Open a new terminal window by pressing **Ctrl+Alt+T**.
+
+Navigate to the location of the device and identify it using the following commands:
+
+::
+
+   cd /sys/bus/iio/devices/
+   ls
+   iio:device0 iio:device1 trigger0
+   cd iio\:device0
+   cat name
+   adxrs450
+
+If the **cat name** command doesn't return **adxrs453**, then change the number of the iio:device, and check again.
+
+::
+
+   cd ..
+   cd iio\:device1
+   cat name
+
+To see the list of options that the ADXRS453 driver provides, type:
+
+::
+
+   ls
+   dev                                     in_anglvel_z_scale  name       uevent
+   in_anglvel_z_quadrature_correction_raw  in_temp0_raw        power
+   in_anglvel_z_raw                        in_temp0_scale      subsystem
+
+To read the raw Z angle, type:
+
+::
+
+   cat in_anglvel_z_raw
+   24
+
+To read the raw temperature, type:
+
+::
+
+   cat in_temp0_raw
+   135
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453_linaro_terminal.jpg
+   :alt: ADXRS453 Set Voltage from Terminal
+   :width: 600px
+
+The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453_linux_serial.jpg
+   :alt: ADXRS453 Read Voltage from Serial Terminal
+   :width: 600px
 
 ADXRS453 Pmod and ADXL345 Pmod Reference Design
 ===============================================
 
+
 Quick Start Guide
------------------
+=================
 
 The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system.
 
 Required Hardware
-~~~~~~~~~~~~~~~~~
+-----------------
 
 -  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_
 -  `Pmod-ACL (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-ACL>`_
 -  `Pmod-GYRO2 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-GYRO2>`_
 
 Required Software
-~~~~~~~~~~~~~~~~~
+-----------------
 
 -  Xilinx 13.2 Design Suite (contains ISE, XPS, SDK and ChipScope Pro).
 -  A UART terminal (Tera Term/Hyperterminal), Baud rate 57600.
 
 Running Demo (SDK) Program
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|
+--------------------------
 
 .. tip::
 
+   
    | If you are not familiar with LX9 and/or Xilix tools, please visit
    | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
 
@@ -308,10 +308,13 @@ Start IMPACT, and double click "Boundary Scan". Right click and select Initializ
    :alt: Programming FPGA in IMPACT
    :width: 300px
 
-| Start a **Hyperterminal** program (Tera Term, puTTy, etc.), select the proper **COM Port** (look for the COM Port named Silicon Labs CP210x USB to UART Bridge in Windows Device Manager). Select **57600 Baud Rate** and **Odd Parity**. You should start seeing messeges in the Terminal Window, displayed on 4 columns, representing the rotation of the board in Degrees per Second, and the acceleration in g on each axis.
-| |Messeges displayed in the terminal window|
-| On the LX-9 MicroBoard D10 and D9 display the Tap/Double Tap status. If you tap the device once, D10 will turn on for a short period of time. If you double tap the device, D10 and D9 will both turn on at the same time.
-|
+Start a **Hyperterminal** program (Tera Term, puTTy, etc.), select the proper **COM Port** (look for the COM Port named Silicon Labs CP210x USB to UART Bridge in Windows Device Manager). Select **57600 Baud Rate** and **Odd Parity**. You should start seeing messeges in the Terminal Window, displayed on 4 columns, representing the rotation of the board in Degrees per Second, and the acceleration in g on each axis.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453_adxl345_hyper.jpg
+   :alt: Messeges displayed in the terminal window
+   :width: 300px
+
+On the LX-9 MicroBoard D10 and D9 display the Tap/Double Tap status. If you tap the device once, D10 will turn on for a short period of time. If you double tap the device, D10 and D9 will both turn on at the same time.
 
 .. important::
 
@@ -323,18 +326,15 @@ Start IMPACT, and double click "Boundary Scan". Right click and select Initializ
 
 
 Downloads
----------
-
-|
+=========
 
 .. admonition:: Download
    :class: download
 
-   | `Reference design source code <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ADXRS453_ADXL345.zip>`_
+   
+   `Reference design source code <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ADXRS453_ADXL345.zip>`_
 
 
-.. |Messeges displayed in the terminal window| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453_adxl345_hyper.jpg
-   :width: 300px
 
 
 More information
@@ -345,6 +345,4 @@ More information
 
 |//ez.analog.com/community/feeds/allcontent/atom|
 
-.. |ADXRS453 Read Voltage from Serial Terminal| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453_linux_serial.jpg
-   :width: 600px
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

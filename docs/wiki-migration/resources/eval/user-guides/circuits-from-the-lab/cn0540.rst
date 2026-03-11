@@ -19,8 +19,11 @@ This user guide will discuss how to use an Arduino compatible micro-controller b
    :align: center
    :width: 600px
 
-| 
-| ===== Simplified functional block diagram ===== |image1|
+Simplified functional block diagram
+-----------------------------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_revb_functional_block_diagram.png
+   :align: center
 
 Features
 --------
@@ -63,37 +66,37 @@ All connector pinouts for the EVAL-CN0540-ARDZ are described in the table below.
 Connector        Pin No. Pin Name CN0540 Pin Function
 ================ ======= ======== ===================
 Arduino DIO High 1       SCL      SCL
-:::              2       SDA      SDA
-:::              3       AREF     NC (Not connected)
-:::              4       AGND     DGND
-:::              5       SCLK     SCLK
-:::              6       MISO     DOUT_RDYB
-:::              7       MOSI     SDI
-:::              8       CS       CS_ADC
-:::              9       RDY      SHUTDOWN
-:::              10      IO28     NC
+                 2       SDA      SDA
+                 3       AREF     NC (Not connected)
+                 4       AGND     DGND
+                 5       SCLK     SCLK
+                 6       MISO     DOUT_RDYB
+                 7       MOSI     SDI
+                 8       CS       CS_ADC
+                 9       RDY      SHUTDOWN
+                 10      IO28     NC
 Arduino DIO Low  1       IO08     RESET_ADC
-:::              2       IO27     SYNC_IN
-:::              3       IO33     CSB_AUX
-:::              4       IO09     SW_FF
-:::              5       IO13     DRDY_AUX
-:::              6       IO15     DRDY
-:::              7       TX       LED1
-:::              8       RX       LED2
+                 2       IO27     SYNC_IN
+                 3       IO33     CSB_AUX
+                 4       IO09     SW_FF
+                 5       IO13     DRDY_AUX
+                 6       IO15     DRDY
+                 7       TX       LED1
+                 8       RX       LED2
 Arduino Analog   1       AIN0     IO5
-:::              2       AIN1     IO4
-:::              3       AIN2     IO3
-:::              4       AIN3     NC
-:::              5       AIN4     NC
-:::              6       AIN5     IO0
+                 2       AIN1     IO4
+                 3       AIN2     IO3
+                 4       AIN3     NC
+                 5       AIN4     NC
+                 6       AIN5     IO0
 Arduino Power    1       NC       NC
-:::              2       IOREF    IOREF
-:::              3       RESET    NC
-:::              4       3.3V     3V3
-:::              5       5V       NC
-:::              6       GND      GND
-:::              7       GND      GND
-:::              8       Vin      NC
+                 2       IOREF    IOREF
+                 3       RESET    NC
+                 4       3.3V     3V3
+                 5       5V       NC
+                 6       GND      GND
+                 7       GND      GND
+                 8       Vin      NC
 ================ ======= ======== ===================
 
 Piezo Accelerometer Sensor Results
@@ -108,25 +111,26 @@ The following figures show DC and AC coupled solution comparison, where the DC c
 
    ..
 
-|image2|
+|image1|
 
-   | *FFT for the DC coupled solution with passively stabilized piezo sensor connected.*
+   *FFT for the DC coupled solution with passively stabilized piezo sensor connected.*
 
-
-|
 
 .. container:: centeralign
 
 
+
    ..
 
-|image3|
+|image2|
 
    *FFT for the AC coupled solution with passively stabilized piezo sensor connected.*
 
 
-| 
-| ===== (Optional) Hardware Interface ===== The board includes many ways in its hardware to interface with the components. These are optional interfaces that can be used to externally control aspects of the components.
+(Optional) Hardware Interface
+-----------------------------
+
+The board includes many ways in its hardware to interface with the components. These are optional interfaces that can be used to externally control aspects of the components.
 
 +-----------+---------------------------------------------------------------------------------------------------------+
 | Connector | Description                                                                                             |
@@ -162,7 +166,7 @@ GPIO0      Connects to GPIO0 of the ADC.
 GPIO1      Connects to GPIO1 of the ADC.
 ========== =====================================================
 
-| 
+
 | ===== More Information and Useful Links =====
 
 -  :adi:`CN0540 Circuit Note Page <CN0540>`
@@ -206,6 +210,5 @@ Registration
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_revb_functional_block_diagram.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540dc.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540ac.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540dc.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540ac.png

@@ -18,16 +18,12 @@ The :adi:`ADALP2000` Parts Kit contains a large selection of components perfect 
 
 We are on Rev B of the ADALP2000 parts kit, and its BIGGER and more COMPREHENSIVE than ever. Below is a complete rundown of the components that can be found within the kit.
 
-
-| A :adi:`complete list <media/en/evaluation-boards-kits/evaluation-board/ADALP2000-product-highlights.pdf>` and description of components is listed below.
-|
+A :adi:`complete list <media/en/evaluation-boards-kits/evaluation-board/ADALP2000-product-highlights.pdf>` and description of components is listed below.
 
 .. important::
 
    |image1| It is possible that some inductors included in the ADALP2000 parts kit may have sustained some cosmetic impairments during shipping and handling. These inductors are 100% functional, and while the cosmetic issues does not *look* nice, it does not affect the electrical performance, and all devices meet their datasheet specifications.
 
-
-|
 
 .. important::
 

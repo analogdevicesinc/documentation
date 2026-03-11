@@ -20,27 +20,23 @@ Description
 ADP5589
 ~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/scrape>adi>adp5589#additional-details__paragraph
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-keyboard/scrape>adi>adp5589#additional-details__paragraph
    :alt: scrape>adi>adp5589#additional-details\__paragraph
 
 ADP5585
 ~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/scrape>adi>adp5585#additional-details__paragraph
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-keyboard/scrape>adi>adp5585#additional-details__paragraph
    :alt: scrape>adi>adp5585#additional-details\__paragraph
-
-.. _description-1:
 
 Description
 ~~~~~~~~~~~
 
-| The driver supports multiple key press detection and resolution.
-| It independently delivers key press and key release events in
-| chronological order to the Linux input device system.
-| This allows **SHIFT + ANYKEY**, **ALT + F1** or **CTRL + ALT + DEL** sequences.
-| Since the ADP5589 buffers events in its internal FIFO,
-| it’s unlikely that events are lost due to heavy system
-| load and interrupt latencies.
+The driver supports multiple key press detection and resolution. It independently delivers key press and key release events in chronological order to the Linux input device system.
+
+This allows **SHIFT + ANYKEY**, **ALT + F1** or **CTRL + ALT + DEL** sequences.
+
+Since the ADP5589 buffers events in its internal FIFO, it’s unlikely that events are lost due to heavy system load and interrupt latencies.
 
 Configuration
 -------------
@@ -83,7 +79,10 @@ Files
 Example platform device initialization
 ======================================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 <source trunk/include/linux/input/adp5589.h:/i2c_board_info/-EOF c linux-kernel>
 
@@ -173,7 +172,14 @@ Example platform device initialization
        .reset1_key_3 = KEY_ESC,
    };
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+
+This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+
+So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+
+For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+
 
 =============== ===================
 ADI part number I2C_BOARD_INFO Name
@@ -399,8 +405,6 @@ PMOD-IOXP
 The PMOD-IOXP is an PMOD board made by Digilent Inc. which features the ADP5589.
 
 The following example shows how to connect the PMOD-IOXP to a Blackfin BF537-STAMP board and a PMOD-KYPD. Also
-
-.. _hardware-configuration-1:
 
 Hardware configuration
 ----------------------

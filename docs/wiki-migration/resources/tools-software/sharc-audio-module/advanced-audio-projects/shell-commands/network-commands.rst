@@ -30,9 +30,8 @@ Ethernet Status - eth
 |                   | //Note that the IP Address and similar parameters can also be retrieved by running the :doc:`syslog </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/development-commands>` // command.                                                                                                                       |
 +-------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
---------------
 
-.. image:: https://wiki.analog.com/_media/navigation Shell Commands
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/navigation Shell Commands
    :alt: Filesystem Commands#.filesystem-commands|Filesystem Commands#.|Shell Commands#.development-commands|Development and Debug Commands#.development-commands\|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/eth_help.png

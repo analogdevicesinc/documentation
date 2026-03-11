@@ -1,26 +1,32 @@
 Hierarchy Boards
 ================
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| For complex system designs, it can become difficult to manage a large number schematic block's in a single design window and it is desirable to have additional schematic workspace and the ability to organize design components. Schematic Hierarchy Boards allows you to create multiple layers within the schematic design window expanding the schematic workspace.
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+
+For complex system designs, it can become difficult to manage a large number schematic block's in a single design window and it is desirable to have additional schematic workspace and the ability to organize design components. Schematic Hierarchy Boards allows you to create multiple layers within the schematic design window expanding the schematic workspace.
 
 -  Create Hierarchy Boards
 -  Hide, Freeze, and Navigation
 -  Hierarchy Board Files
 
-| A schematic Hierarchy Board consists of a :doc:`Hierarchy Board Block </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyboard>` and an associated schematic tab (or layer), located at the bottom of the schematic window. Hierarchy boards support Copy/Paste, schematic settings, and Undo operations. All projects include the Main tab by default. The **Main** hierarchy board is the root layer for any additional user defined Hierarchy boards and cannot be renamed.
-| |hierarchypic1.png|
+A schematic Hierarchy Board consists of a :doc:`Hierarchy Board Block </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyboard>` and an associated schematic tab (or layer), located at the bottom of the schematic window. Hierarchy boards support Copy/Paste, schematic settings, and Undo operations. All projects include the Main tab by default. The **Main** hierarchy board is the root layer for any additional user defined Hierarchy boards and cannot be renamed.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic1.png
+   :alt: hierarchypic1.png
+   :align: center
 
 --------------
 
 Create a Hierarchy Board:
 -------------------------
 
-| Select the Schematic Design category in the Tree ToolBox window (or the System Category in the ToolBox), and drag-and-drop a **Hierarchy Board** block into the schematic workspace.
-| |hierarchypic2.png|
-| Along with the hierarchy board block, a hierarchy tab is created, located at the bottom of the Schematic design window. The default name is *Board1* and the corresponding tab has the same name as the board block.
+Select the Schematic Design category in the Tree ToolBox window (or the System Category in the ToolBox), and drag-and-drop a **Hierarchy Board** block into the schematic workspace.
 
-|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic2.png
+   :alt: hierarchypic2.png
+   :align: center
+
+Along with the hierarchy board block, a hierarchy tab is created, located at the bottom of the Schematic design window. The default name is *Board1* and the corresponding tab has the same name as the board block.
 
 .. hint::
 
@@ -38,8 +44,11 @@ Hide, Freeze, and Navigation
 
 To locate the hierarchy board block for a particular hierarchy tab, select the hierarchy tab at the bottom of the Schematic window, then double click the tab. This will display the design layer that contains the associated Hierarchy board block. Similarly, you can double click a hierarchy board block to display its design layer.
 
-| Right-click the hierarchy block to display the block's context menu. This menu includes commands for view the board layer, hiding the board's tab, and freezing the board design.
-| |hierarchypic4.png|
+Right-click the hierarchy block to display the block's context menu. This menu includes commands for view the board layer, hiding the board's tab, and freezing the board design.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic4.png
+   :alt: hierarchypic4.png
+   :align: center
 
 --------------
 
@@ -50,8 +59,10 @@ The entire contents of a Hierarchy Board layer (inputs, outputs, blocks, wires, 
 
 **To Create a Board File:**
 
-| Right-Click on the hierarchy board block and select **File - Save Board** from the pop-up menu. SigmaStudio board files use the \*.dspbrd file extension.
-| |hierarchypic5.png|
+Right-Click on the hierarchy board block and select **File - Save Board** from the pop-up menu. SigmaStudio board files use the \*.dspbrd file extension.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic5.png
+   :alt: hierarchypic5.png
 
 **To Load a Board File:**
 
@@ -59,17 +70,17 @@ The entire contents of a Hierarchy Board layer (inputs, outputs, blocks, wires, 
 -  Right-Click the hierarchy board block and select **File - Load Board**... from the menu.
 -  Navigate to a previously saved board file (\*.dspbrd) and press **Open**.
 
-| |hierarchypic6.png|
-| The loaded board name is changed to match the saved board name, and all the blocks contained in the hierarchy board's layer are loaded into a new tab. In the example below, the Mixer block was saved to a file and then loaded into a new hierarchy board block, Mixer_2.
-| |hierarchypic7.png|
-| Note, the *Mixer* and *Mixer_2* schematic layers are identical.
-| |hierarchypic8.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic6.png
+   :alt: hierarchypic6.png
 
-.. |hierarchypic1.png| image:: https://wiki.analog.com/_media/hierarchypic1.png
-.. |hierarchypic2.png| image:: https://wiki.analog.com/_media/hierarchypic2.png
+The loaded board name is changed to match the saved board name, and all the blocks contained in the hierarchy board's layer are loaded into a new tab. In the example below, the Mixer block was saved to a file and then loaded into a new hierarchy board block, Mixer_2.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic7.png
+   :alt: hierarchypic7.png
+
+Note, the *Mixer* and *Mixer_2* schematic layers are identical.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic8.png
+   :alt: hierarchypic8.png
+
 .. |hierarchypic3.png| image:: https://wiki.analog.com/_media/hierarchypic3.png
-.. |hierarchypic4.png| image:: https://wiki.analog.com/_media/hierarchypic4.png
-.. |hierarchypic5.png| image:: https://wiki.analog.com/_media/hierarchypic5.png
-.. |hierarchypic6.png| image:: https://wiki.analog.com/_media/hierarchypic6.png
-.. |hierarchypic7.png| image:: https://wiki.analog.com/_media/hierarchypic7.png
-.. |hierarchypic8.png| image:: https://wiki.analog.com/_media/hierarchypic8.png

@@ -157,23 +157,17 @@ Renesas RX62N Quick Start Guide
 
 This section contains a description of the steps required to run the AD5754 demonstration project on a Renesas RX62N platform.
 
-.. _required-hardware-1:
-
 Required Hardware
 -----------------
 
 -  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
 -  :adi:`EVAL-AD5754REBZ (ADI) <EVAL-AD5754REBZ>`
 
-.. _required-software-1:
-
 Required Software
 -----------------
 
 -  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
 -  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -190,12 +184,9 @@ An EVAL-AD5754REBZ board has to be interfaced with the Renesas Demonstration Kit
      EVAL-AD5754REB J8 connector Pin 6 (LDAC) → YRDKRX62N JN1 connector Pin 17
      EVAL-AD5754REB J8 connector Pin 4 (CLR)  → YRDKRX62N JN1 connector Pin 16
      EVAL-AD5754REB J9 connector AVDD         → +5V
-     
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5754_rx62n.jpg
    :align: center
-
-.. _reference-project-overview-1:
 
 Reference Project Overview
 --------------------------
@@ -204,8 +195,6 @@ The reference project sets up the AD5754 part to output 2.5V on VOUTA connector
 
 
 |image2|
-
-.. _software-project-setup-1:
 
 Software Project Setup
 ----------------------

@@ -52,9 +52,11 @@ The AD5940 SDK contains an example project that demonstrates how to the use the 
    static AD5940Err AppHSDACCal(void)
    {
        HSDACCal_Type hsdac_cal;
-       
-       hsdac_cal.ExcitBufGain = EXCITBUFGAIN_2;  /**< Select from  EXCITBUFGAIN_2, EXCITBUFGAIN_0P25 */ 
-       hsdac_cal.HsDacGain = HSDACGAIN_1;                /**< Select from  HSDACGAIN_1, HSDACGAIN_0P2 */ 
+
+::
+
+       hsdac_cal.ExcitBufGain = EXCITBUFGAIN_2;  /**< Select from  EXCITBUFGAIN_2, EXCITBUFGAIN_0P25 */
+       hsdac_cal.HsDacGain = HSDACGAIN_1;                /**< Select from  HSDACGAIN_1, HSDACGAIN_0P2 */
        hsdac_cal.AfePwrMode = AFEPWR_LP;
        hsdac_cal.ADCSinc2Osr = ADCSINC2OSR_1333;
        hsdac_cal.ADCSinc3Osr = ADCSINC3OSR_4;

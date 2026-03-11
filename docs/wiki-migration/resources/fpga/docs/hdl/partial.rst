@@ -45,7 +45,7 @@ Design Flow
 
 The design flow that was used is the Tcl-based non-project flow. All the design phases are created and executed in the memory, and the user is responsible to generate reports, log files or save checkpoints, for later investigations.
 
-All the important Tcl processes, which define the necessary design phases can be found in :git-hdl:`projects/scripts/adi_prcfg_project.tcl` script. In the picture below can be seen the flow chart of the used design flow.
+All the important Tcl processes, which define the necessary design phases can be found in `adi_prcfg_project.tcl <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/projects/scripts/adi_prcfg_project.tcl>`_ script. In the picture below can be seen the flow chart of the used design flow.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/pr_design_flow.png
    :alt: pr_design_flow.png
@@ -71,36 +71,36 @@ After the **source ./system_project.tcl** script is executed, the workspace will
 
 
 
-|       |
+
 
     |       /checkpoints               # synthesis and route checkpoints
     |       +logs                      # log file after synthesis
     +prcfg_default                     # by-pass logic
 
-    |        |
+
 
     |        /bit                      # partial and overall bitstreams (*.bit and *.bin)
     |        +checkpoints              # synthesis and route checkpoints
-    |        +logs                     # log files after synthesis, place, route and optimization 
+    |        +logs                     # log files after synthesis, place, route and optimization
     |        +results                  # top_routed checkpoint, timing and utilization reports
     +prcfg_bist                        # BIST logic
 
-    |        |
+
 
     |        /bit                      # partial and overall bitstreams (*.bit and *.bin)
     |        +checkpoints              # synthesis and route checkpoints
-    |        +logs                     # log files after synthesis, place, route and optimization 
+    |        +logs                     # log files after synthesis, place, route and optimization
     |        +results                  # top_routed checkpoint, timing and utilization reports
     +prcfg_qpsk                        # QPSK modulation/demodulation logic
 
-    |       |
+
 
     |       /bit                       # partial and overall bitstreams (*.bit and *.bin)
     |       +checkpoints               # synthesis and route checkpoints
-    |       +logs                      # log files after synthesis, place, route and optimization 
+    |       +logs                      # log files after synthesis, place, route and optimization
     |       +results                   # top_routed checkpoint, timing and utilization reports
     +sdk_export                        # contains the hardware specification file for the SDK project
-    |
+
     +verify_design                     # contains the result of the bit stream verification
 
 </code>
@@ -136,12 +136,12 @@ In the HDL design of the FMCOMMS2, the re-configurable portion is defined in the
    :alt: fmcomms2_hdl_prcfg.png
    :width: 800px
 
-Initially, the top of the PR module is instantiated on the top of the design as a black box. The :git-hdl:`prcfg_setup.tcl <projects/fmcomms2/common/prcfg_bd.tcl>` script makes sure that the FIFO interfaces between the DMAs and device core are brought up to the top. The top of the PR is a generic :git-hdl:`hdl wrapper <library/prcfg/common/prcfg_top.v>`, where the :git-hdl:`TX <library/prcfg/default/prcfg_dac.v>` and :git-hdl:`RX <library/prcfg/default/prcfg_adc.v>` modules are instantiated.
+Initially, the top of the PR module is instantiated on the top of the design as a black box. The `prcfg_setup.tcl <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/projects/fmcomms2/common/prcfg_bd.tcl>`_ script makes sure that the FIFO interfaces between the DMAs and device core are brought up to the top. The top of the PR is a generic `hdl wrapper <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/library/prcfg/common/prcfg_top.v>`_, where the `TX <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/library/prcfg/default/prcfg_dac.v>`_ and `RX <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/library/prcfg/default/prcfg_adc.v>`_ modules are instantiated.
 
 Adding new PR logic to the design
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a new PR logic is defined, the user needs to make sure that the top modules (which should be named :git-hdl:`prcfg_dac.v <library/prcfg/default/prcfg_dac.v#L43#L61>` and :git-hdl:`prcfg_adc.v <library/prcfg/default/prcfg_adc.v#L43#L60>`) have the same interface as the already defined modules (**Default**, **Bist** or **Qpsk**). The new logic should be placed in the **hdl/library/prcfg/[logic_name]** directory, and should be added into the flow, by modifying :git-hdl:`projects/fmcomms2/mitx045/system_project.tcl` script.
+When a new PR logic is defined, the user needs to make sure that the top modules (which should be named `prcfg_dac.v <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/library/prcfg/default/prcfg_dac.v#L43#L61>`_ and `prcfg_adc.v <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/library/prcfg/default/prcfg_adc.v#L43#L60>`_) have the same interface as the already defined modules (**Default**, **Bist** or **Qpsk**). The new logic should be placed in the **hdl/library/prcfg/[logic_name]** directory, and should be added into the flow, by modifying `system_project.tcl <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/projects/fmcomms2/mitx045/system_project.tcl>`_ script.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/pr_generichdl.png
    :alt: pr_generichdl.png
@@ -226,10 +226,10 @@ Downloads
    :class: download
 
    
-   -  **HDL project** :git-hdl:`projects/fmcomms2`
-   -  **PR Logic** :git-hdl:`library/prcfg`
-   -  **Workflow script** :git-hdl:`projects/scripts/adi_prcfg_project`.tcl
-   -  **QPSK simulink model** :git-hdl:`library/prcfg/qpsk/qpsk`.slx
+   -  **HDL project** https://github.com/analogdevicesinc/hdl/tree/legacy_fmcomms2_pr/projects/fmcomms2
+   -  **PR Logic** https://github.com/analogdevicesinc/hdl/tree/legacy_fmcomms2_pr/library/prcfg
+   -  **Workflow script** https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/projects/scripts/adi_prcfg_project.tcl
+   -  **QPSK simulink model** https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/library/prcfg/qpsk/qpsk.slx
    
 
 

@@ -14,8 +14,6 @@ Virtex UltraScale
 | :doc:`htg-910 </wiki-migration/playground/playground/xilinx_fpga/htg-910>` | HTG-910: Xilinx Virtex UltraScale+ Low-Profile PCI Express Development Platform | VU190          |
 +----------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------------+
 
-.. _virtex-ultrascale-1:
-
 Virtex UltraScale+
 ==================
 

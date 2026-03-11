@@ -3,13 +3,13 @@
 Min
 ===
 
-| 
-| |min.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/min.png
+   :alt: min.png
 
 Description
 -----------
 
-| The Min block compares the two (or more) inputs and outputs the lowest value.
+The Min block compares the two (or more) inputs and outputs the lowest value.
 
 Targets Supported
 -----------------
@@ -20,7 +20,6 @@ Name    ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Minimum B          B                S/B           B
 ======= ========== ================ ============= ================
 
-|
 
 | ===== Pins =====
 
@@ -56,5 +55,3 @@ DSP Parameters
 --------------
 
 NO DSP parameters
-
-.. |min.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/min.png

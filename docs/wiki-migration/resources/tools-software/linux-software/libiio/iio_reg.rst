@@ -23,10 +23,7 @@ The ``iio_reg`` application can also connect to a libiio remote device via IP. P
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the host or target
+   This specifies any shell prompt running on the host or target
 
    
    ::

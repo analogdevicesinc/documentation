@@ -46,14 +46,12 @@ Parameters Description
 -  **freq_hz** - represents the timer count frequency
 -  **ticks_count** - represents the number of ticks the timer counts until it resets
 -  **\*platform_ops** - is a pointer to timer APIs. the value is MCU platform specific
--  **\*extra** - is a pointer to extra timer initialization parameters, which are specific the the used MCU platform. The definition of the extra timer initialization parameters can be found under the name *platform*\ \_timer_init_param, where platform can be *aducm, max, pico, stm32, xil*.
+-  **\*extra** - is a pointer to extra timer initialization parameters, which are specific the the used MCU platform. The definition of the extra timer initialization parameters can be found under the name *platform*\_timer_init_param, where platform can be*aducm, max, pico, stm32, xil*.
 
 Timer Descriptor
 ----------------
 
 **struct no_os_timer_desc** structure is filled by the initialization API based on the given initialization parameters. It describes the initialized timer instance which has to be given as a parameter when using the other APIs.
-
-.. _structure-definition-1:
 
 Structure Definition
 ~~~~~~~~~~~~~~~~~~~~
@@ -73,8 +71,6 @@ Structure Definition
        void *extra;
    };
 
-.. _parameters-description-1:
-
 Parameters Description
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -82,14 +78,12 @@ Parameters Description
 -  **freq_hz** - represents the timer count frequency - equal to the freq_hz given in the initialization structure
 -  **ticks_count** - represents the number of ticks the timer counts until it resets - equal to the ticks_count given in the initialization structure
 -  **\*platform_ops** - is a pointer to timer APIs - equal to the platform_ops given in the initialization structure
--  **\*extra** - is a pointer to extra timer description parameters, which are specific the the used MCU platform. The definition of the extra timer descriptor can be found under the name *platform*\ \_timer_desc, where platform can be *aducm, max, pico, stm32, xil*.
+-  **\*extra** - is a pointer to extra timer description parameters, which are specific the the used MCU platform. The definition of the extra timer descriptor can be found under the name *platform*\_timer_desc, where platform can be*aducm, max, pico, stm32, xil*.
 
 Timer APIs
 ----------
 
 The structure no_os_timer_platform_ops consists of pointers to timer APIs that point to platform specific functions. Each platform shall contain a specific implementation for each of these functions.
-
-.. _structure-definition-2:
 
 Structure Definition
 ~~~~~~~~~~~~~~~~~~~~
@@ -341,7 +335,7 @@ You may obtain delays using a hardware timer. Below you may find an example.
    {
        int ret;
        uint32_t count;
-    
+
        /* Timer initialization parameter */
        struct no_os_timer_init_param timer_ip = {
            .id = TIMER_DEVICE_ID, // platform specific
@@ -385,8 +379,6 @@ You may obtain delays using a hardware timer. Below you may find an example.
 
 Below you may find the platform specific definitions for each platform:
 
-.. _aducm3029-platform-1:
-
 Aducm3029 platform
 ^^^^^^^^^^^^^^^^^^
 
@@ -415,8 +407,6 @@ Aducm3029 parameters.c:
    For Aducm3029 platform TIMER_FREQ_HZ value is not used (initialization parameter freq_hz) because it cannot be set freely. The value of the source clock frequency is given in the extra parameter in the source_freq field. In this example the clock source frequency for the timer will be equal to the PCLK frequency divided by 256.
 
 
-.. _maxim-platform-1:
-
 Maxim platform
 ^^^^^^^^^^^^^^
 
@@ -429,8 +419,6 @@ Maxim parameters.h:
    #define TIMER_DEVICE_ID 0
    #define TIMER_OPS &max_timer_ops
    #define TIMER_EXTRA NULL // Not used for Maxim platform
-
-.. _mbed-platform-1:
 
 MBED Platform
 ^^^^^^^^^^^^^
@@ -445,8 +433,6 @@ MBED parameters.h:
    #define TIMER_OPS NULL // Not used for MBED platform
    #define TIMER_EXTRA NULL // Not used for MBED platform
 
-.. _pico-platform-1:
-
 Pico Platform
 ^^^^^^^^^^^^^
 
@@ -459,8 +445,6 @@ Pico parameters.h:
    #define TIMER_DEVICE_ID 0 // For alarm0 instance
    #define TIMER_OPS &pico_timer_ops
    #define TIMER_EXTRA NULL // Not used for pico platform
-
-.. _stm32-platform-1:
 
 STM32 platform
 ^^^^^^^^^^^^^^
@@ -500,8 +484,6 @@ The image below show that TIM13 is activated in STMCubeMx:
 
 
 |STMCubeMx TIM13 activated|
-
-.. _xilinx-platform-1:
 
 Xilinx Platform
 ^^^^^^^^^^^^^^^
@@ -615,17 +597,15 @@ Below you may find a code snippet, containing the needed steps to be able to use
        ret = no_os_irq_enable(irq_desc, TIMER_IRQ_ID);
        if (ret)
            return ret;
-       /* Start timer */    
-       ret = no_os_timer_start(timer_desc);​
-       if (ret)     
-           return ret; 
-    
+       /* Start timer */
+       ret = no_os_timer_start(timer_desc);
+       if (ret)
+           return ret;
+
        ...
    }
 
 Below you may find the platform specific definitions for each platform:
-
-.. _aducm3029-platform-2:
 
 Aducm3029 platform
 """"""""""""""""""
@@ -663,8 +643,6 @@ Aducm3029 parameters.c:
    For Aducm3029 platform TIMER_FREQ_HZ value is not used (initialization parameter freq_hz) because it cannot be set freely. The value of the source clock frequency is given in the extra parameter in the source_freq field. In this example the clock source frequency for the timer will be equal to the PCLK frequency divided by 256.
 
 
-.. _maxim-platform-2:
-
 Maxim platform
 """"""""""""""
 
@@ -686,14 +664,10 @@ Maxim parameters.h:
    #define CALLBACK_PARAMETERS NULL //application specific - can track the context from which the callback was registered
    #define TIMER_CB_HANDLE MXC_TMR0
 
-.. _mbed-platform-2:
-
 MBED Platform
 """""""""""""
 
 MBED platform does not offer timer interrupts support currently.
-
-.. _pico-platform-2:
 
 Pico Platform
 """""""""""""
@@ -723,8 +697,6 @@ Pico parameters.c:
 
    #include "parameters.h"
    uint8_t timer_cb_handle = 0; // for alarm0
-
-.. _stm32-platform-2:
 
 STM32 platform
 """"""""""""""
@@ -776,8 +748,6 @@ The images below show that TIM13 is activated and that the according interrupts 
 .. image:: https://wiki.analog.com/_media/resources/no-os/drivers/nvic_timer_stm32.png
    :alt: STMCubeMx TIMER13 IRQ activated
    :align: center
-
-.. _xilinx-platform-2:
 
 Xilinx Platform
 """""""""""""""

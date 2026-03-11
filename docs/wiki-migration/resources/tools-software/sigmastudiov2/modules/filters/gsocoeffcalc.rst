@@ -3,8 +3,13 @@
 General Second Order Coefficient Calculation
 ============================================
 
-| |gsocoeffcalc.png|
-| ===== Description ===== General Second Order Coefficient Calculation module is functionally similar to :doc:`General 2nd Order Filter </wiki-migration/resources/tools-software/sigmastudiov2/modules/filters/generalsecondorder>`. They both share the configurable parameters and pins. The difference lies in the computation of biquad filter coefficients. In General 2nd Order Filter, the coefficients are computed on the host and the computed biquad coefficients are used by the algorithm running on target to perform filtering. On the other hand, in General Second Order Coefficient Calculation module, the coefficient computation is also handled by the algorithm running on the target.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/gsocoeffcalc.png
+   :alt: gsocoeffcalc.png
+
+Description
+-----------
+
+General Second Order Coefficient Calculation module is functionally similar to :doc:`General 2nd Order Filter </wiki-migration/resources/tools-software/sigmastudiov2/modules/filters/generalsecondorder>`. They both share the configurable parameters and pins. The difference lies in the computation of biquad filter coefficients. In General 2nd Order Filter, the coefficients are computed on the host and the computed biquad coefficients are used by the algorithm running on target to perform filtering. On the other hand, in General Second Order Coefficient Calculation module, the coefficient computation is also handled by the algorithm running on the target.
 
 Following are the supported filter types:
 
@@ -21,8 +26,8 @@ Following are the supported filter types:
 -  Notch
 -  Chebyshev Low-Pass / High-Pass
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +-----------------------+------------+------------------+---------------+------------------+
 | Name                  | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -54,5 +59,3 @@ Following are the supported filter types:
 +-------------------------------------+--------------------------------+----------------+
 | ADDRESS_DSP_CALC<stage index>       | Parameter address              | Integer Format |
 +-------------------------------------+--------------------------------+----------------+
-
-.. |gsocoeffcalc.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/gsocoeffcalc.png

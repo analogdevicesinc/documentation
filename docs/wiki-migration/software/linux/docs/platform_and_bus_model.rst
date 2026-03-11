@@ -36,7 +36,7 @@ The following example shows a set of these configuration options. These variable
        .ev_code_y = ABS_Y,     /* EV_REL */
        .ev_code_z = ABS_Z,     /* EV_REL */
 
-       .ev_code_tap = {BTN_TOUCH, BTN_TOUCH, BTN_TOUCH}, /* EV_KEY x,y,z */ 
+       .ev_code_tap = {BTN_TOUCH, BTN_TOUCH, BTN_TOUCH}, /* EV_KEY x,y,z */
 
    .ev_code_ff = KEY_F,        /* EV_KEY */
    .ev_code_act_inactivity = KEY_A,    /* EV_KEY */

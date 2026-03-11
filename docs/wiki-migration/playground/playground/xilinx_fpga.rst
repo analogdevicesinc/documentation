@@ -14,18 +14,18 @@ Spartan 6
 \             Device
 ============= =========================================================
 Spartan 6 LX  `XC6SLX4 <https://wiki.analog.com/playground/playground/xilinx_xc6slx4>`_
-:::           `XC6SLX9 <https://wiki.analog.com/playground/playground/xilinx_xc6slx9>`_
-:::           `XC6SLX16 <https://wiki.analog.com/playground/playground/xilinx_xc6slx16>`_
-:::           `XC6SLX25 <https://wiki.analog.com/playground/playground/xilinx_xc6slx25>`_
-:::           `XC6SLX45 <https://wiki.analog.com/playground/playground/xilinx_xc6slx45>`_
-:::           `XC6SLX75 <https://wiki.analog.com/playground/playground/xilinx_xc6slx75>`_
-:::           `XC6SLX100 <https://wiki.analog.com/playground/playground/xilinx_xc6slx100>`_
-:::           `XC6SLX150 <https://wiki.analog.com/playground/playground/xilinx_xc6slx150>`_
+\             `XC6SLX9 <https://wiki.analog.com/playground/playground/xilinx_xc6slx9>`_
+\             `XC6SLX16 <https://wiki.analog.com/playground/playground/xilinx_xc6slx16>`_
+\             `XC6SLX25 <https://wiki.analog.com/playground/playground/xilinx_xc6slx25>`_
+\             `XC6SLX45 <https://wiki.analog.com/playground/playground/xilinx_xc6slx45>`_
+\             `XC6SLX75 <https://wiki.analog.com/playground/playground/xilinx_xc6slx75>`_
+\             `XC6SLX100 <https://wiki.analog.com/playground/playground/xilinx_xc6slx100>`_
+\             `XC6SLX150 <https://wiki.analog.com/playground/playground/xilinx_xc6slx150>`_
 Spartan 6 LXT `XC6SLX25T <https://wiki.analog.com/playground/playground/xilinx_xc6slx25t>`_
-:::           `XC6SLX45T <https://wiki.analog.com/playground/playground/xilinx_xc6slx45t>`_
-:::           `XC6SLX75T <https://wiki.analog.com/playground/playground/xilinx_xc6slx75t>`_
-:::           `XC6SLX100T <https://wiki.analog.com/playground/playground/xilinx_xc6slx100t>`_
-:::           `XC6SLX150T <https://wiki.analog.com/playground/playground/xilinx_xc6slx150t>`_
+\             `XC6SLX45T <https://wiki.analog.com/playground/playground/xilinx_xc6slx45t>`_
+\             `XC6SLX75T <https://wiki.analog.com/playground/playground/xilinx_xc6slx75t>`_
+\             `XC6SLX100T <https://wiki.analog.com/playground/playground/xilinx_xc6slx100t>`_
+\             `XC6SLX150T <https://wiki.analog.com/playground/playground/xilinx_xc6slx150t>`_
 ============= =========================================================
 
 Spartan 7
@@ -37,11 +37,11 @@ Spartan 7
 \         Device
 ========= ===================================================
 Spartan 7 `XC7S6 <https://wiki.analog.com/playground/playground/xilinx_xc7s6>`_
-:::       `XC7S15 <https://wiki.analog.com/playground/playground/xilinx_xc7s15>`_
-:::       `XC7S25 <https://wiki.analog.com/playground/playground/xilinx_xc7s25>`_
-:::       `XC7S50 <https://wiki.analog.com/playground/playground/xilinx_xc7s50>`_
-:::       `XC7S75 <https://wiki.analog.com/playground/playground/xilinx_xc7s75>`_
-:::       `XC7S100 <https://wiki.analog.com/playground/playground/xilinx_xc7s100>`_
+\         `XC7S15 <https://wiki.analog.com/playground/playground/xilinx_xc7s15>`_
+\         `XC7S25 <https://wiki.analog.com/playground/playground/xilinx_xc7s25>`_
+\         `XC7S50 <https://wiki.analog.com/playground/playground/xilinx_xc7s50>`_
+\         `XC7S75 <https://wiki.analog.com/playground/playground/xilinx_xc7s75>`_
+\         `XC7S100 <https://wiki.analog.com/playground/playground/xilinx_xc7s100>`_
 ========= ===================================================
 
 Artix 7
@@ -53,13 +53,13 @@ Artix 7
 \       Device
 ======= =====================================================
 Artix 7 `XC7A12T <https://wiki.analog.com/playground/playground/xilinx_xc7a12t>`_
-:::     `XC7A15T <https://wiki.analog.com/playground/playground/xilinx_xc7a15t>`_
-:::     `XC7A25T <https://wiki.analog.com/playground/playground/xilinx_xc7a25t>`_
-:::     `XC7A35T <https://wiki.analog.com/playground/playground/xilinx_xc7a35t>`_
-:::     `XC7A50T <https://wiki.analog.com/playground/playground/xilinx_xc7a50t>`_
-:::     `XC7A75T <https://wiki.analog.com/playground/playground/xilinx_xc7a75t>`_
-:::     `XC7A100T <https://wiki.analog.com/playground/playground/xilinx_xc7a100t>`_
-:::     `XC7A200T <https://wiki.analog.com/playground/playground/xilinx_xc7a200t>`_
+\       `XC7A15T <https://wiki.analog.com/playground/playground/xilinx_xc7a15t>`_
+\       `XC7A25T <https://wiki.analog.com/playground/playground/xilinx_xc7a25t>`_
+\       `XC7A35T <https://wiki.analog.com/playground/playground/xilinx_xc7a35t>`_
+\       `XC7A50T <https://wiki.analog.com/playground/playground/xilinx_xc7a50t>`_
+\       `XC7A75T <https://wiki.analog.com/playground/playground/xilinx_xc7a75t>`_
+\       `XC7A100T <https://wiki.analog.com/playground/playground/xilinx_xc7a100t>`_
+\       `XC7A200T <https://wiki.analog.com/playground/playground/xilinx_xc7a200t>`_
 ======= =====================================================
 
 Kintex 7
@@ -71,12 +71,12 @@ Kintex 7
 \        Device
 ======== =====================================================
 Kintex 7 `XC7K70T <https://wiki.analog.com/playground/playground/xilinx_xc7k70t>`_
-:::      `XC7K160T <https://wiki.analog.com/playground/playground/xilinx_xc7k160t>`_
-:::      `XC7K325T <https://wiki.analog.com/playground/playground/xilinx_xc7k325t>`_
-:::      `XC7K355T <https://wiki.analog.com/playground/playground/xilinx_xc7k355t>`_
-:::      `XC7K410T <https://wiki.analog.com/playground/playground/xilinx_xc7k410t>`_
-:::      `XC7K420T <https://wiki.analog.com/playground/playground/xilinx_xc7k420t>`_
-:::      `XC7K480T <https://wiki.analog.com/playground/playground/xilinx_xc7k480t>`_
+\        `XC7K160T <https://wiki.analog.com/playground/playground/xilinx_xc7k160t>`_
+\        `XC7K325T <https://wiki.analog.com/playground/playground/xilinx_xc7k325t>`_
+\        `XC7K355T <https://wiki.analog.com/playground/playground/xilinx_xc7k355t>`_
+\        `XC7K410T <https://wiki.analog.com/playground/playground/xilinx_xc7k410t>`_
+\        `XC7K420T <https://wiki.analog.com/playground/playground/xilinx_xc7k420t>`_
+\        `XC7K480T <https://wiki.analog.com/playground/playground/xilinx_xc7k480t>`_
 ======== =====================================================
 
 Virtex 7
@@ -88,16 +88,16 @@ Virtex 7
 \        Device
 ======== =========================================================
 Virtex 7 `XC7V585T <https://wiki.analog.com/playground/playground/xilinx_xc7v585t>`_
-:::      `XC7V2000T <https://wiki.analog.com/playground/playground/xilinx_xc7v2000t>`_
-:::      `XC7VX330T <https://wiki.analog.com/playground/playground/xilinx_xc7vx330t>`_
-:::      `XC7VX415T <https://wiki.analog.com/playground/playground/xilinx_xc7vx415t>`_
-:::      `XC7VX485T <https://wiki.analog.com/playground/playground/xilinx_xc7vx485t>`_
-:::      `XC7VX550T <https://wiki.analog.com/playground/playground/xilinx_xc7vx550t>`_
-:::      `XC7VX690T <https://wiki.analog.com/playground/playground/xilinx_xc7vx690t>`_
-:::      `XC7VX980T <https://wiki.analog.com/playground/playground/xilinx_xc7vx980t>`_
-:::      `XC7VX1140T <https://wiki.analog.com/playground/playground/xilinx_xc7vx1140t>`_
-:::      `XC7VH580T <https://wiki.analog.com/playground/playground/xilinx_xc7vh580t>`_
-:::      `XC7VH870T <https://wiki.analog.com/playground/playground/xilinx_xc7vh870t>`_
+\        `XC7V2000T <https://wiki.analog.com/playground/playground/xilinx_xc7v2000t>`_
+\        `XC7VX330T <https://wiki.analog.com/playground/playground/xilinx_xc7vx330t>`_
+\        `XC7VX415T <https://wiki.analog.com/playground/playground/xilinx_xc7vx415t>`_
+\        `XC7VX485T <https://wiki.analog.com/playground/playground/xilinx_xc7vx485t>`_
+\        `XC7VX550T <https://wiki.analog.com/playground/playground/xilinx_xc7vx550t>`_
+\        `XC7VX690T <https://wiki.analog.com/playground/playground/xilinx_xc7vx690t>`_
+\        `XC7VX980T <https://wiki.analog.com/playground/playground/xilinx_xc7vx980t>`_
+\        `XC7VX1140T <https://wiki.analog.com/playground/playground/xilinx_xc7vx1140t>`_
+\        `XC7VH580T <https://wiki.analog.com/playground/playground/xilinx_xc7vh580t>`_
+\        `XC7VH870T <https://wiki.analog.com/playground/playground/xilinx_xc7vh870t>`_
 ======== =========================================================
 
 Kintex UltraScale
@@ -109,12 +109,12 @@ Kintex UltraScale
 \                 Device
 ================= ===============================================
 Kintex UltraScale `KU025 <https://wiki.analog.com/playground/playground/xilinx_ku025>`_
-:::               `KU035 <https://wiki.analog.com/playground/playground/xilinx_ku035>`_
-:::               `KU040 <https://wiki.analog.com/playground/playground/xilinx_ku040>`_
-:::               `KU060 <https://wiki.analog.com/playground/playground/xilinx_ku060>`_
-:::               `KU085 <https://wiki.analog.com/playground/playground/xilinx_ku085>`_
-:::               `KU095 <https://wiki.analog.com/playground/playground/xilinx_ku095>`_
-:::               `KU115 <https://wiki.analog.com/playground/playground/xilinx_ku115>`_
+\                 `KU035 <https://wiki.analog.com/playground/playground/xilinx_ku035>`_
+\                 `KU040 <https://wiki.analog.com/playground/playground/xilinx_ku040>`_
+\                 `KU060 <https://wiki.analog.com/playground/playground/xilinx_ku060>`_
+\                 `KU085 <https://wiki.analog.com/playground/playground/xilinx_ku085>`_
+\                 `KU095 <https://wiki.analog.com/playground/playground/xilinx_ku095>`_
+\                 `KU115 <https://wiki.analog.com/playground/playground/xilinx_ku115>`_
 ================= ===============================================
 
 Virtex UltraScale
@@ -126,12 +126,12 @@ Virtex UltraScale
 \                 Device
 ================= ===============================================
 Virtex UltraScale `VU065 <https://wiki.analog.com/playground/playground/xilinx_vu065>`_
-:::               `VU080 <https://wiki.analog.com/playground/playground/xilinx_vu080>`_
-:::               `VU095 <https://wiki.analog.com/playground/playground/xilinx_vu095>`_
-:::               `VU125 <https://wiki.analog.com/playground/playground/xilinx_vu125>`_
-:::               `VU160 <https://wiki.analog.com/playground/playground/xilinx_vu160>`_
-:::               `VU190 <https://wiki.analog.com/playground/playground/xilinx_vu190>`_
-:::               `VU440 <https://wiki.analog.com/playground/playground/xilinx_vu440>`_
+\                 `VU080 <https://wiki.analog.com/playground/playground/xilinx_vu080>`_
+\                 `VU095 <https://wiki.analog.com/playground/playground/xilinx_vu095>`_
+\                 `VU125 <https://wiki.analog.com/playground/playground/xilinx_vu125>`_
+\                 `VU160 <https://wiki.analog.com/playground/playground/xilinx_vu160>`_
+\                 `VU190 <https://wiki.analog.com/playground/playground/xilinx_vu190>`_
+\                 `VU440 <https://wiki.analog.com/playground/playground/xilinx_vu440>`_
 ================= ===============================================
 
 Artix UltraScale+
@@ -143,12 +143,10 @@ Artix UltraScale+
 \                 Device
 ================= ===============================================
 Artix UltraScale+ `AU10P <https://wiki.analog.com/playground/playground/xilinx_au10p>`_
-:::               `AU15P <https://wiki.analog.com/playground/playground/xilinx_au15p>`_
-:::               `AU20P <https://wiki.analog.com/playground/playground/xilinx_au20p>`_
-:::               `AU25P <https://wiki.analog.com/playground/playground/xilinx_au25p>`_
+\                 `AU15P <https://wiki.analog.com/playground/playground/xilinx_au15p>`_
+\                 `AU20P <https://wiki.analog.com/playground/playground/xilinx_au20p>`_
+\                 `AU25P <https://wiki.analog.com/playground/playground/xilinx_au25p>`_
 ================= ===============================================
-
-.. _kintex-ultrascale-1:
 
 Kintex UltraScale+
 ==================
@@ -159,15 +157,13 @@ Kintex UltraScale+
 \                  Device
 ================== ===============================================
 Kintex UltraScale+ `KU3P <https://wiki.analog.com/playground/playground/xilinx_ku3p>`_
-:::                `KU5P <https://wiki.analog.com/playground/playground/xilinx_ku5p>`_
-:::                `KU9P <https://wiki.analog.com/playground/playground/xilinx_ku9p>`_
-:::                `KU11P <https://wiki.analog.com/playground/playground/xilinx_ku11p>`_
-:::                `KU13P <https://wiki.analog.com/playground/playground/xilinx_ku13p>`_
-:::                `KU15P <https://wiki.analog.com/playground/playground/xilinx_ku15p>`_
-:::                `KU19P <https://wiki.analog.com/playground/playground/xilinx_ku19p>`_
+\                  `KU5P <https://wiki.analog.com/playground/playground/xilinx_ku5p>`_
+\                  `KU9P <https://wiki.analog.com/playground/playground/xilinx_ku9p>`_
+\                  `KU11P <https://wiki.analog.com/playground/playground/xilinx_ku11p>`_
+\                  `KU13P <https://wiki.analog.com/playground/playground/xilinx_ku13p>`_
+\                  `KU15P <https://wiki.analog.com/playground/playground/xilinx_ku15p>`_
+\                  `KU19P <https://wiki.analog.com/playground/playground/xilinx_ku19p>`_
 ================== ===============================================
-
-.. _virtex-ultrascale-1:
 
 Virtex UltraScale+
 ==================
@@ -223,12 +219,12 @@ Zynq-7000 SOC
 \             Device
 ============= ===================================================
 Zynq-7000 SOC `XC7Z010 <https://wiki.analog.com/playground/playground/xilinx_xc7z010>`_
-:::           `XC7Z015 <https://wiki.analog.com/playground/playground/xilinx_xc7z015>`_
-:::           `XC7Z020 <https://wiki.analog.com/playground/playground/xilinx_xc7z020>`_
-:::           `XC7Z030 <https://wiki.analog.com/playground/playground/xilinx_xc7z030>`_
-:::           `XC7Z035 <https://wiki.analog.com/playground/playground/xilinx_xc7z035>`_
-:::           `XC7Z045 <https://wiki.analog.com/playground/playground/xilinx_xc7z045>`_
-:::           `XC7Z100 <https://wiki.analog.com/playground/playground/xilinx_xc7z100>`_
+\             `XC7Z015 <https://wiki.analog.com/playground/playground/xilinx_xc7z015>`_
+\             `XC7Z020 <https://wiki.analog.com/playground/playground/xilinx_xc7z020>`_
+\             `XC7Z030 <https://wiki.analog.com/playground/playground/xilinx_xc7z030>`_
+\             `XC7Z035 <https://wiki.analog.com/playground/playground/xilinx_xc7z035>`_
+\             `XC7Z045 <https://wiki.analog.com/playground/playground/xilinx_xc7z045>`_
+\             `XC7Z100 <https://wiki.analog.com/playground/playground/xilinx_xc7z100>`_
 ============= ===================================================
 
 Zynq-7000S SOC
@@ -240,8 +236,8 @@ Zynq-7000S SOC
 \              Device
 ============== =====================================================
 Zynq-7000S SOC `XC7Z007S <https://wiki.analog.com/playground/playground/xilinx_xc7z007s>`_
-:::            `XC7Z012S <https://wiki.analog.com/playground/playground/xilinx_xc7z012s>`_
-:::            `XC7Z014S <https://wiki.analog.com/playground/playground/xilinx_xc7z014s>`_
+\              `XC7Z012S <https://wiki.analog.com/playground/playground/xilinx_xc7z012s>`_
+\              `XC7Z014S <https://wiki.analog.com/playground/playground/xilinx_xc7z014s>`_
 ============== =====================================================
 
 Zynq UltraScale+ MPSoC

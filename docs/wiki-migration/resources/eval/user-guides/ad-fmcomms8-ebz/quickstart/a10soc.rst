@@ -18,22 +18,22 @@ Required Software
 -----------------
 
 -  SD Card 16GB image using the instructions here: :doc:`SDCARD for Zynq & Altera SoC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
--   Copy next boot files from <fc #ff0000>\ ``socfpga_arria10_socdk_fmcomms8``\ </fc> directory directly on SD Card ``BOOT`` partition :
+-   Copy next boot files from ``socfpga_arria10_socdk_fmcomms8`` directory directly on SD Card ``BOOT`` partition :
 
    -  ``socfpga_arria10_socdk.rbf``
    -  ``socfpga_arria10_socdk_sdmmc.dtb``
    -  ``zImage`` (from ``socfpga_arria10-common`` folder)
 
--  Write preloader_bootloader.bin from <fc #ff0000>\ ``socfpga_arria10_socdk_fmcomms8``\ </fc> folder on third SD Card partition:
+-  Write preloader_bootloader.bin from ``socfpga_arria10_socdk_fmcomms8`` folder on third SD Card partition:
 
 ::
 
        root@raspberrypi:~# lsblk
        NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-       sda           8:0    1 14.9G  0 disk 
+       sda           8:0    1 14.9G  0 disk
        ├─sda1        8:1    1    1G  0 part /media/pi/BOOT
        ├─sda2        8:2    1  7.6G  0 part /media/pi/rootfs
-       └─sda3        8:3    1    4M  0 part 
+       └─sda3        8:3    1    4M  0 part
        root@raspberrypi:~# dd if="./preloader_bootloader.bin" of="/dev/sda3" bs=512
        2048+0 records in
        2048+0 records out
@@ -99,21 +99,13 @@ Messages
 
 .. raw:: html
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   <details><summary>Complete kernel boot log (Click to expand)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
-
-   .. raw:: html
-
-      <details><summary>Boot log (click to expand)</summary>
-
    ::
    
       U-Boot 2014.10-00334-gf7a7e26-dirty (Jun 30 2021 - 18:17:34), Build: jenkins-master-hdl_jobs_for_linux-projects-fmcomms8.a10soc-125
@@ -130,7 +122,7 @@ Messages
       Reserving 2048 Bytes for IRQ stack at: ffe386e8
       DRAM  : 1 GiB
       WARNING: Caches not enabled
-      MMC:   *** Warning - bad CRC, using default environment
+      MMC:   ** Warning - bad CRC, using default environment
    
       In:    serial
       Out:   serial
@@ -700,11 +692,6 @@ Messages
       permitted by applicable law.
       root@analog:~#
 
-
-   .. raw:: html
-
-      </details>
-
 .. raw:: html
 
    </details>
@@ -714,10 +701,7 @@ These devices should be present:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -730,7 +714,6 @@ These devices should be present:
               iio:device6: axi-adrv9009-tx-hpc (buffer capable)
               iio:device7: axi-adrv9009-rx-hpc (buffer capable)
       root@analog:~#
-          
    
 
 

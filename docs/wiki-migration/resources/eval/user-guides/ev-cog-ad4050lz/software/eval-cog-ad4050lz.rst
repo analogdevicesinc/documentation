@@ -47,9 +47,9 @@ The software pack can be downloaded in following ways.
    :class: download
 
    
-   | Download EV-COG-AD4050LZ Board Support Pack.
-   | \* `EV-COG-AD4050LZ BSP 3.1.0 (Latest) <http://download.analog.com/tools/EZBoards/COG_4050/Releases/AnalogDevices.EV-COG-AD4050LZ_BSP.3.1.0.pack>`_
+   Download EV-COG-AD4050LZ Board Support Pack.
    
+   -  `EV-COG-AD4050LZ BSP 3.1.0 (Latest) <http://download.analog.com/tools/EZBoards/COG_4050/Releases/AnalogDevices.EV-COG-AD4050LZ_BSP.3.1.0.pack>`_
    -  `EV-COG-AD4050LZ BSP 1.0.0 <http://download.analog.com/tools/EZBoards/COG_4050/Releases/AnalogDevices.EV-COG-AD4050LZ_BSP.1.0.0.pack>`_
    
 
@@ -65,8 +65,9 @@ The software pack can be downloaded in following ways.
    :class: download
 
    
-   | Download ADuCM4x50 EZ KIT Board Support Pack.
-   | \* `AnalogDevices.ADuCM4x50_EZ_KIT_BSP.3.1.1 <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/software/analogdevices.aducm4x50_ez_kit_bsp.3.1.1.zip>`_
+   Download ADuCM4x50 EZ KIT Board Support Pack.
+   
+   -  `AnalogDevices.ADuCM4x50_EZ_KIT_BSP.3.1.1 <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/software/analogdevices.aducm4x50_ez_kit_bsp.3.1.1.zip>`_
    
 
 

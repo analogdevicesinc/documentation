@@ -294,8 +294,8 @@ LPF Bandwidth = 1MHz     X     X     X     1
 .. container:: box
 
    
-   EVAL-ADA4356EBZ Current-to-Bits Operation Overview and Evaluation Results
-   =========================================================================
+   **EVAL-ADA4356EBZ Current-to-Bits Operation Overview and Evaluation Results**
+
    
    The EVAL‑ADA4356EBZ provides two methods for generating an input current for the ADA4356:
    
@@ -332,8 +332,6 @@ LPF Bandwidth = 1MHz     X     X     X     1
    
    The Buffered Howland Current Source converts the applied input voltage into a current according to:
    
-   |
-   
    .. container:: group
 
          
@@ -354,11 +352,7 @@ LPF Bandwidth = 1MHz     X     X     X     1
                      
                      .. container:: indent
 
-                        V<sub> IN</sub> is the voltage applied at connector J1.
-
-                                             | R<sub>S </sub> is the selected BHCS range resistor (R14, R18, or R19).
-                                             | The factor of 5 arises from the internal resistor ratios of the BHCS topology.
-                        |
+                        V<sub> IN</sub> is the voltage applied at connector J1. R<sub>S </sub> is the selected BHCS range resistor (R14, R18, or R19). The factor of 5 arises from the internal resistor ratios of the BHCS topology.
 
                      
 
@@ -367,8 +361,8 @@ LPF Bandwidth = 1MHz     X     X     X     1
    
    The resulting current is sourced or sunk into the subsequent signal chain.
    
-   Input Current Range Extension via Current Divider (Optional)
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   **Input Current Range Extension via Current Divider (Optional)**
+
    
    The input current divider that can be enabled to extend the input current range by attenuating the signal current before it reaches the ADA4356’s input; This feature is optional and is controlled by the GSEL2 pin (divider enabled when GSEL2 = 1; disabled when GSEL2 = 0).
    
@@ -394,8 +388,8 @@ LPF Bandwidth = 1MHz     X     X     X     1
    
    When the divider is disabled (GSEL2 = 0): I\ :sub:`SIG_IN` = I\ :sub:`BHCS_OUT`
    
-   Current-to-Bits: The ADA4356 Internal Signal Chain
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   **Current-to-Bits: The ADA4356 Internal Signal Chain**
+
    
    The ADA4356 includes the following internal functional blocks:
    
@@ -404,8 +398,8 @@ LPF Bandwidth = 1MHz     X     X     X     1
    -  Low-pass filter
    -  14-bit, 125 MSPS ADC
    
-   Programmable gain transimpedance amplifier (PGTIA)
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Programmable gain transimpedance amplifier (PGTIA)**
+
    
    The PGTIA converts the input current into a voltage and is internally referenced to V\ :sub:`TIA_REF` = 1.65 V.
    
@@ -419,20 +413,21 @@ LPF Bandwidth = 1MHz     X     X     X     1
    
    For example, if 11kΩ transimpedance gain is selected and I\ :sub:`SIG_IN`\ =80µA, output of TIA will be the following: V\ :sub:`TIA_OUT` = 1.65V − 80μA \* 11kΩ = 0.77V
    
-   Fully Differential Amplifier (FDA)
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Fully Differential Amplifier (FDA)**
+
    
    The PGTIA output feeds into a Fully Differential Amplifier (FDA), whose inverting input is biased to: V\ :sub:`FDA_REF` = 0.825 V
    
    The FDA output is given by: V\ :sub:`FDA_OUT` = V\ :sub:`TIA_OUT` − V\ :sub:`FDA_REF`
    
-   | Substituting the TIA relationship: V\ :sub:`FDA_OUT` = (V\ :sub:`TIA_REF` − I\ :sub:`SIG_IN` \* R) − 0.825V
-   | With V\ :sub:`TIA_REF` = 1.65 V, this simplifies to: V\ :sub:`FDA_OUT` = 0.825V − (I\ :sub:`SIG_IN` \* R)
+   Substituting the TIA relationship: V\ :sub:`FDA_OUT` = (V\ :sub:`TIA_REF` − I\ :sub:`SIG_IN` \* R) − 0.825V
+   
+   With V\ :sub:`TIA_REF` = 1.65 V, this simplifies to: V\ :sub:`FDA_OUT` = 0.825V − (I\ :sub:`SIG_IN` \* R)
    
    This indicates that the FDA output voltage decreases linearly with increasing input current. The relationship between FDA input and output voltage can thus be derived as follows. V\ :sub:`FDA_OUT` = V\ :sub:`TIA_OUT` − V\ :sub:`FDA_REF` V\ :sub:`FDA_OUT` = (V\ :sub:`TIA_REF` − I\ :sub:`SIG_IN` \* R) − 0.825V V\ :sub:`FDA_OUT` = 0.825V − (I\ :sub:`SIG_IN` \* R)
    
-   14-bit, 125Msps ADC Transfer function
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **14-bit, 125Msps ADC Transfer function**
+
    
    The FDA output drives a 14-bit ADC with an input range of approximately ±1 V (2 V peak-to-peak). The ADC output code can be modeled as: ADC code = 2\ :sup:`14` \* V\ :sub:`FDA_OUT` / V\ :sub:`ADC_REF`
    

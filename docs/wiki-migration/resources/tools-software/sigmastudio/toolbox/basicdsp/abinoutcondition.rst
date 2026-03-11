@@ -1,8 +1,9 @@
 AB In/Out Condition
 ===================
 
-| :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
-| -------------------------------------------------------------------------------
+:doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
+
+--------------
 
 |abinoutpic1.png| The AB In / CD Out Condition block lets you compare the sample-by-sample level of two incoming signals (AB) and output the sample of the signal meeting the condition.
 

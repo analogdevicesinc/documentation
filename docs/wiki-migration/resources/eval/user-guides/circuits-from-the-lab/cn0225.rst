@@ -186,13 +186,13 @@ Main Window
 ::
 
              {{ :resources:eval:user-guides:circuits-from-the-lab:cn0225:11-3-2017_3-30-08_pm_-_edited.png?nolink&600 |}}
-   * **Histogram**
+   **Histogram**
      * Plots the number of occurrences of ADC sample values
              {{ :resources:eval:user-guides:circuits-from-the-lab:cn0225:11-3-2017_3-30-27_pm_-_edited.png?nolink&600 |}}
-   * **S/W Version Info**
+   **S/W Version Info**
      * Shows the software and hardware versions, vendor and product IDs
-       * **Flash LED Button** tests the SDP communication to the **CN0225**
-       * **Read Firmware Button** reads the current SDP firmware for debugging
+       **Flash LED Button** tests the SDP communication to the **CN0225**
+       **Read Firmware Button** reads the current SDP firmware for debugging
              {{ :resources:eval:user-guides:circuits-from-the-lab:cn0225:11-3-2017_3-30-38_pm_-_edited.png?nolink&600 |}}
 
 Running the System

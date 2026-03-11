@@ -9,9 +9,9 @@ The first line is the XML Prelog
 
    <?xml version="1.0" standalone="no"?>
 
-| 
-| **<ROM>** is the root element of the Sequence XML.
-| Root element contains **<dateTime>**, **<version>**, **<schemaVersion>** and one or more **<page>** elements.
+**<ROM>** is the root element of the Sequence XML.
+
+Root element contains **<dateTime>**, **<version>**, **<schemaVersion>** and one or more **<page>** elements.
 
 -  dateTime - Date and time of generation of the xml file.
 -  version - Version of SigmaStudio+ used for generating the XML.

@@ -21,9 +21,7 @@ The ‘line’ that is drawn on the screen (grid), which represents the signal a
    :align: center
    :width: 600px
 
-\*\* Example Grid with Trace*\*
-
-**Period (T):**
+\*\* Example Grid with Trace*\**Period (T):**
 
 Duration of one cycle of an AC waveform, shown as number 4 above. Equal to 1/f.
 
@@ -145,7 +143,7 @@ An adjustment for passive attenuation scope frontends that balances the capacita
 
 A DC measurement is always performed with respect to a ground or common level, so we need to define this level. If you do not set the DC reference, the readout might not be correct. In most cases, this ground level will be the center of the screen, however this is not mandatory.
 
-\**DC voltage: (DC:Direct Current) \*\*
+**DC voltage: (DC:Direct Current)**
 
 With DC, the current flows in a single direction, it does not reverse. A DC source has a polarity, (+) and (-).
 

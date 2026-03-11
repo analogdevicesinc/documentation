@@ -48,7 +48,7 @@ Example device tree
 +----------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                       |
 +==========+============================================================================================================================================+
-| dts      | :git-linux:`arch/arm/boot/dts/overlays/rpi-adxl367-overlay.dts`                                                                            |
+| dts      | `rpi-adxl367-overlay.dts <https://github.com/analogdevicesinc/linux/blob/rpi-4.19.y/arch/arm/boot/dts/overlays/rpi-adxl367-overlay.dts>`_  |
 +----------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example platform device initialization
@@ -103,10 +103,7 @@ Driver testing
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -148,10 +145,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -164,15 +158,11 @@ Show device name
 Show scale
 ----------
 
-| **Description:**
-| scale to be applied to in_accel\_\*_raw in order to obtain the acceleration.
+**Description:** scale to be applied to in_accel\_\*_raw in order to obtain the acceleration.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -185,15 +175,11 @@ Show scale
 Show axis x measurement
 -----------------------
 
-| **Description:**
-| Raw unscaled acceleration measurement on x axis
+**Description:** Raw unscaled acceleration measurement on x axis
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -208,10 +194,7 @@ Set sampling frequency
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -229,8 +212,7 @@ Set sampling frequency
 Using the FIFO Buffer
 ---------------------
 
-| **Description:**
-| The ADXL367 includes a deep, 512 sample FIFO buffer. The 512 FIFO samples can be allotted in several ways, such as the following:
+**Description:** The ADXL367 includes a deep, 512 sample FIFO buffer. The 512 FIFO samples can be allotted in several ways, such as the following:
 
 -  512 sample sets of single-axis data
 -  256 sample sets of concurrent 2-channel data
@@ -240,15 +222,11 @@ Using the FIFO Buffer
 Buffer management
 ~~~~~~~~~~~~~~~~~
 
-| **Description:**
-| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer
+**Description:** The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -279,10 +257,7 @@ Before enabling the buffer, a few steps need to be completed.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -295,10 +270,7 @@ Before enabling the buffer, a few steps need to be completed.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -320,10 +292,7 @@ Before enabling the buffer, a few steps need to be completed.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -336,10 +305,7 @@ Before enabling the buffer, a few steps need to be completed.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -352,10 +318,7 @@ Before enabling the buffer, a few steps need to be completed.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -368,10 +331,7 @@ Before enabling the buffer, a few steps need to be completed.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -387,16 +347,13 @@ Some IIO drivers feature an optional debug facility, allowing users to read or w
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root:/> **/sys/kernel/debug/iio/iio:device0/**
-      root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access  
+      root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access
       direct_reg_access
    
 
@@ -405,16 +362,13 @@ Reading
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root:/sys/kernel/debug/iio/iio:device0> echo 0x0 > direct_reg_access
-      root:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access 
+      root:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access
       0xAD
    
 
@@ -425,16 +379,13 @@ Write ADDRESS VALUE
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device0> echo 0x3D 0x80 > direct_reg_access   
-      root@analog:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access 
+      root@analog:/sys/kernel/debug/iio/iio:device0> echo 0x3D 0x80 > direct_reg_access
+      root@analog:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access
       0x80
    
 
@@ -442,4 +393,21 @@ Write ADDRESS VALUE
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-accelerometer/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

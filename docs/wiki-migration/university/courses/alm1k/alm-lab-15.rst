@@ -47,7 +47,7 @@ Materials
 
    -  0-12V, 3A Adjustable benchtop power supply
 
--  :git-education_tools:`LTspice files for this exercise <m2k/ltspice/ol_boost_and_buck>`
+-  `LTspice files for this exercise <https://github.com/analogdevicesinc/education_tools/tree/sr1/m2k/ltspice/ol_boost_and_buck>`_
 
 Background
 ----------
@@ -72,7 +72,7 @@ This exercise will expand on those concepts, deriving a converter that "boosts" 
 Activity 1: An Ideal\* Open-Loop Boost Converter Simulation
 -----------------------------------------------------------
 
-\* (This exercise will use the term "ideal" extensively. A more accurate term would be "almost ideal" - LTspice requires finite numbers in certain locations - switch on and off resistances can't be zero or infinity, so we're using values small enough and large enough to have negligible impact on the results.)
+- (This exercise will use the term "ideal" extensively. A more accurate term would be "almost ideal" - LTspice requires finite numbers in certain locations - switch on and off resistances can't be zero or infinity, so we're using values small enough and large enough to have negligible impact on the results.)
 
 Open the OL_Boost_concept_ideal_sw.asc LTSpice file. Notice the differences between this circuit and the buck converter:
 
@@ -221,7 +221,7 @@ Set potentiometers to the following approximate settings:
 -  Load Control: 7:00 (fully counterclockwise)
 
 | Connect a 5V, 1A USB power supply to the Auxiliary Power micro USB jack. At this point, the frequency and duty cycle can be fine-tuned by looking at the D0 signal in Scopy's logic analyzer. Set the frequency to 20kHz (50μs period) and duty cycle to 25% (high time of 12.5μs)
-|
+
 
 .. note::
 
@@ -404,7 +404,7 @@ Appendix: Current Sense Techniques
 
 But of course chip manufacturers can't ship a current probe with every device, so other smaller, lower cost, and lower (but adequate) performance methods must be used. Some of these include:
 
-\* Sensing the voltage across an external sense resistor, with an amplifier that is optimized for the common-mode voltage range (accurate, but lossy) \* Sensing the voltage across the R\ :sub:`DS`\ (on) of the switching MOSFET (not accurate, but not lossy) \* Sensing the voltage across the inductor's ESR (not accurate, not lossy, but requires filtering)
+- Sensing the voltage across an external sense resistor, with an amplifier that is optimized for the common-mode voltage range (accurate, but lossy) \* Sensing the voltage across the R\ :sub:`DS`\ (on) of the switching MOSFET (not accurate, but not lossy) \* Sensing the voltage across the inductor's ESR (not accurate, not lossy, but requires filtering)
 
 While some of these methods are not very accurate in absolute terms, this is typically not a concern as the current measurement (and current control) is enclosed in an outer voltage control loop that IS accurate. Also, these methods do not always measure the entire current waveform; depending on the sense amplifier topology and position within the circuit, they may only "catch" the rising slope of the current waveform, and they may not be able to sense reverse currents (even if they are small, as during the "ringing" portion of a discontinuous switch node waveform". This is fine if that is what is important (as it is in an actual switchign regulator), but for a complete analysis, a complete picture of both rising and falling waveforms, including negative currents.
 
@@ -467,7 +467,7 @@ Appendix: "Engineer Proofing"
 
 Given the fact that bad things sometimes happen to good people, and even the best engineers make mistakes, The ADALM-SR1 includes numerous protection features:
 
-\* Input Overvoltage (to +40V) \* Input Undervoltage (between 0V and 3.3V) \* Input Reverse Voltage (to -40V) \* Inductor overheating (above 50C) \* Load resistor overheating (above 50C) \* Output Overvoltage (above 22V)
+- Input Overvoltage (to +40V) \* Input Undervoltage (between 0V and 3.3V) \* Input Reverse Voltage (to -40V) \* Inductor overheating (above 50C) \* Load resistor overheating (above 50C) \* Output Overvoltage (above 22V)
 
 These are described in comments in the OL_engineer_proofing.asc schematic. Students are strongly encouraged to open and run this simulation, as it represents some "real world" design decisions that were wrapped around an otherwise "purely instructional" circuit.
 
@@ -536,20 +536,11 @@ A slide deck is provided as a companion to this exercise, and can be used to hel
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 1 - 2N3904 small signal NPN transistor
-| 1 - ZVN2110A NMOS FET (2N7000 or power FET device such as IRF510)
-| Various resistors
-| 1 - 1mH inductor
-| Various capacitors
-| 1 - HPH1-1400L (Coilcraft Hexapath inductor)
-| 2 - rectifier diodes (1N4001, 1N3064)
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 - 2N3904 small signal NPN transistor 1 - ZVN2110A NMOS FET (2N7000 or power FET device such as IRF510) Various resistors 1 - 1mH inductor Various capacitors 1 - HPH1-1400L (Coilcraft Hexapath inductor) 2 - rectifier diodes (1N4001, 1N3064)
 
 *Additional Equipment:*
 
-| Small handheld DMM
-| battery holder for 2 AA cells to provide 3V
+Small handheld DMM battery holder for 2 AA cells to provide 3V
 
 Simple inductor and switch DC/DC Converter:
 -------------------------------------------

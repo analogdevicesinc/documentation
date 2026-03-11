@@ -3,15 +3,19 @@ Volatile Organic Compounds (VOC) Measurement Demo
 
 The **ADuCM360_demo_cn0395** is a volatile organic compounds (VOC) detector demo project for the EVAL-ADICUP360 base board with additional :adi:`EVAL-CN0395-ARDZ shield <CN0395>`, created using the GNU ARM Eclipse Plug-ins in Eclipse environment.
 
-| 
-| ===== General description =====
-| This project is a good example for how to use :doc:`EVAL-ADICUP360 board </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/base_board>` in different combinations with various shield boards. It expand the list of possible applications that can be done with the base board.
-| The **ADuCM360_demo_cn0395** project uses the :adi:`EVAL-CN0395-ARDZ shield <CN0395>` which is a portable VOC detector which comes with a Figaro TGS8100 MOX sensor.
+General description
+-------------------
 
-| |image1|
-| The TGS8100 sensor requires two voltage inputs: heater voltage (VH) and circuit voltage (VC). The heater voltage (VH) is applied to the integrated heater in order to maintain the sensing element at a specific temperature which is optimal for sensing. The :adi:`CN0395` circuit provides the heater voltage (VH), by using :adi:`ADN8810` IDAC as a programmable current source. The default full scale current in the IDAC is 9.94mA and the default value of the RSN resistors is 41.2Ω.
+This project is a good example for how to use :doc:`EVAL-ADICUP360 board </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/base_board>` in different combinations with various shield boards. It expand the list of possible applications that can be done with the base board.
 
-The hardware also allows for two main modes of operation: <fc #008000>heater mode and sensor resistance measurement mode</fc>. In heater mode, the :adi:`AD7988-1` ADC receives as input the heater voltage (VH) while in sensor mode the input is the voltage from the sense circuit (VRS). The switching is done by using :adi:`ADG884`. The full scale voltage measured by the ADC is 4.096 V.
+The **ADuCM360_demo_cn0395** project uses the :adi:`EVAL-CN0395-ARDZ shield <CN0395>` which is a portable VOC detector which comes with a Figaro TGS8100 MOX sensor.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0395/eval-cn0395-ardz.jpg
+   :align: center
+
+The TGS8100 sensor requires two voltage inputs: heater voltage (VH) and circuit voltage (VC). The heater voltage (VH) is applied to the integrated heater in order to maintain the sensing element at a specific temperature which is optimal for sensing. The :adi:`CN0395` circuit provides the heater voltage (VH), by using :adi:`ADN8810` IDAC as a programmable current source. The default full scale current in the IDAC is 9.94mA and the default value of the RSN resistors is 41.2Ω.
+
+The hardware also allows for two main modes of operation: heater mode and sensor resistance measurement mode. In heater mode, the :adi:`AD7988-1` ADC receives as input the heater voltage (VH) while in sensor mode the input is the voltage from the sense circuit (VRS). The switching is done by using :adi:`ADG884`. The full scale voltage measured by the ADC is 4.096 V.
 
 Moreover, the hardware includes a gain select circuit which can add additional overlapping ranges if needed when performing a resistance sensor measurement. :adi:`ADG758` 8-channel multiplexer is used to accomplish this task.
 
@@ -47,7 +51,7 @@ Setting up the hardware
 -  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
 
 
-|image2|
+|image1|
 
 -  Connect the **EVAL-CN0395-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
@@ -100,8 +104,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -113,9 +115,7 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
-|
-
-| The application allows the user to select between the two modes of operation:
+The application allows the user to select between the two modes of operation:
 
 -  Heater mode (RH)
 -  Sensor Resistance mode (RS)
@@ -126,7 +126,7 @@ Heater Mode (RH)
 The user can further choose the subroutine which determines the heater current (IH):
 
 
-|image3|
+|image2|
 
 **voltage** is the routine for setting heater voltage to constant voltage VH (the default value is VH = 1.8V). The relationship between heater resistance RH and heater current IH or heater voltage VH is nonlinear. Therefore the software runs in background several iterations in order to get VH to the desired accuracy with a 0.5% max error.
 
@@ -150,12 +150,12 @@ The user can further choose the subroutine which determines the heater current (
 After the completion of the routine, the application displays the measured values: RH_A (Ambient Heater Res ), VH (heater voltage), IH (heater current), RH (heater resistance), T_A (ambient temperature), HUM (ambient humidity), PH (heater power consumption), TH (heater temperature), ADC data (raw data read from ADC in hex), Ro ( sensor resistance measured in clean air).
 
 
-|image4|
+|image3|
 
 At power up, the application starts in constant current mode and sets the default current to 8mA. Furthermore, it is assumed that the measurement circuit is placed in clean air, therefore we measure and store the sensor resistance in clean air (Ro). After each heater measurement mode change, it is assumed that the board is placed in clean air, and the Ro value is updated. This is required, because Ro is a function of the heater temperature.
 
 
-|image5|
+|image4|
 
 Sensor Resistance mode (RS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,7 +165,7 @@ Sensor measurement is performed. The application can switch at any time to this 
 In background every time the application runs the gain-ranging algorithm and determines RS and the gas concentration (C) measured in PPM (parts per million):
 
 
-|image6|
+|image5|
 
 RS reading can also be performed by typing <operation RS>, but it does the same thing as pressing the <ENTER> key.
 
@@ -183,14 +183,14 @@ RS reading can also be performed by typing <operation RS>, but it does the same 
 From this point on, K1 is stored in permanent memory and applied to currents that are input. To read the gain correction factor from memory, type <calibrate r>.
 
 
-|image7|
+|image6|
 
 **Help**
 
 Type <help> to see the available commands:
 
 
-|image8|
+|image7|
 
 How to use the Tools
 --------------------
@@ -210,35 +210,34 @@ For more detailed instructions on importing this application/demo example into t
 Project structure
 -----------------
 
-| 
-| The **ADuCM360_demo_cn0395** project use ADuCM36x C/C++ Project structure.
+The **ADuCM360_demo_cn0395** project use ADuCM36x C/C++ Project structure.
 
 This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI1, UART via P0.6/P0.7, I2C via P2.0/P2.1; SPI, UART, I2C read/write functions; Flash read/write functions, AD7988 control, ADN8810 control, SHT30 control and VOC concentration computation.
 
-| In the **src** and **include** folders you will find the source and header files related to CN0395 software application. The *Communication.c/h* files contain SPI, UART and I2C specific data, the *AD7988.c/h* files contain the ADC control, the *ADN8810.c/h* files contain the IDAC control, the *SHT30.c/h* files contain the temperature/humidity sensor control, the *Flash.c/h* files contain helper functions to read/write to the permanent memory, and the *CN0395.c/h* files contain commands, configurations and computations specific to the VOC detector application.
-| |image9|
-| The **RTE** folder contains device and system related files:
+In the **src** and **include** folders you will find the source and header files related to CN0395 software application. The *Communication.c/h* files contain SPI, UART and I2C specific data, the *AD7988.c/h* files contain the ADC control, the *ADN8810.c/h* files contain the IDAC control, the *SHT30.c/h* files contain the temperature/humidity sensor control, the *Flash.c/h* files contain helper functions to read/write to the permanent memory, and the *CN0395.c/h* files contain commands, configurations and computations specific to the VOC detector application.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/proj_struct.jpg
+   :align: left
+   :width: 340px
+
+The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| // End of Document //
+// End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0395/eval-cn0395-ardz.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rh_mode.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rh_mode.jpg
    :width: 850px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/constant_voltage.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/constant_voltage.jpg
    :width: 850px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/power_up.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/power_up.jpg
    :width: 850px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rs_mode_new.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rs_mode_new.png
    :width: 850px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/calibrate_read.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/calibrate_read.jpg
    :width: 850px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/help.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/help.jpg
    :width: 850px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/proj_struct.jpg
-   :width: 340px

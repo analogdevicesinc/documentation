@@ -1,12 +1,11 @@
 AD-PQMON-SL: Power Quality Analyzer
 ===================================
 
-|
+
 
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages
-
 
    | The latest version of this document can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-pqmon-sl/index.html
 
@@ -27,9 +26,8 @@ This reference design also has an on-board processor, the :adi:`MAX32650` an ult
    :align: center
    :width: 1000px
 
-|
-
-| ===== Features =====
+Features
+--------
 
 -  Allows prototyping of high performance, polyphase energy meters
 -  Modular hardware design:
@@ -49,8 +47,8 @@ This reference design also has an on-board processor, the :adi:`MAX32650` an ult
 -  Fully isolated design for safe operation
 -  Industry standard form factor compatible with DIN rail mounts
 
-| 
-| ===== Applications =====
+Applications
+------------
 
 -  Energy and power monitoring
 -  Standards compliant power quality monitoring
@@ -63,8 +61,6 @@ This reference design also has an on-board processor, the :adi:`MAX32650` an ult
 
    For more information about the hardware see the :doc:`AD-PQMON-SL Hardware User Guide </wiki-migration/resources/eval/user-guides/ad-pqmon-sl/hardware>`
 
-
-   | 
 
 System setup & evaluation
 -------------------------
@@ -105,8 +101,6 @@ Resources
 -  :adi:`ADM2587 Product Page <ADM2587>`
 -  :adi:`ADP225 Product Page <ADP225>`
 -  :adi:`ADIN1110 Product Page <ADIN1110>`
-
-|
 
 Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

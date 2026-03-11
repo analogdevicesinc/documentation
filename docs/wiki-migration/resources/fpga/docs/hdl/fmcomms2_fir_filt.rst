@@ -189,22 +189,22 @@ The same principle is applied to the RX path for the pack_core. The difference i
 .. code:: php
 
    set pack0_slice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 pack0_slice_0 ]
-   set_property -dict [list CONFIG.DIN_FROM {15}] $pack0_slice_0 
+   set_property -dict [list CONFIG.DIN_FROM {15}] $pack0_slice_0
    set_property -dict [list CONFIG.DIN_TO {0}] $pack0_slice_0
    set_property -dict [list CONFIG.DOUT_WIDTH {16}] $pack0_slice_0
 
    set pack0_slice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 pack0_slice_1 ]
-   set_property -dict [list CONFIG.DIN_FROM {31}] $pack0_slice_1 
+   set_property -dict [list CONFIG.DIN_FROM {31}] $pack0_slice_1
    set_property -dict [list CONFIG.DIN_TO {16}] $pack0_slice_1
    set_property -dict [list CONFIG.DOUT_WIDTH {16}] $pack0_slice_1
 
    set pack1_slice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 pack1_slice_0 ]
-   set_property -dict [list CONFIG.DIN_FROM {15}] $pack1_slice_0 
+   set_property -dict [list CONFIG.DIN_FROM {15}] $pack1_slice_0
    set_property -dict [list CONFIG.DIN_TO {0}] $pack1_slice_0
    set_property -dict [list CONFIG.DOUT_WIDTH {16}] $pack1_slice_0
 
    set pack1_slice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 pack1_slice_1 ]
-   set_property -dict [list CONFIG.DIN_FROM {31}] $pack1_slice_1 
+   set_property -dict [list CONFIG.DIN_FROM {31}] $pack1_slice_1
    set_property -dict [list CONFIG.DIN_TO {16}] $pack1_slice_1
    set_property -dict [list CONFIG.DOUT_WIDTH {16}] $pack1_slice_1
 
@@ -226,7 +226,7 @@ Connecting the FIR interpolation filters on the Tx side.
    ad_connect concat_0/In0 util_ad9361_dac_upack/dac_data_0
    ad_connect concat_0/In1 util_ad9361_dac_upack/dac_data_1
    ad_connect concat_0/dout fir_interpolator_0/s_axis_data_tdata
-    
+
    # fir interpolator 1
    ad_connect clkdiv/clk_out fir_interpolator_1/aclk
    ad_connect util_ad9361_dac_upack/dac_enable_2 dac_fifo/din_enable_2

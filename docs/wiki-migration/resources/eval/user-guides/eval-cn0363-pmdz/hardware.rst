@@ -4,20 +4,23 @@ EVAL-CN0363-PMDZ Hardware
 Power Supply Requirements
 -------------------------
 
-EVAL-CN0363-PMDZ requires an external DC power supply in the range of 6V to 12V fed in the <fc #003280>screw terminal</fc>. Please take note of the polarity indicated in the figure below. The fastest way to tell the EVAL-CN0363-PMDZ board is powered is by seeing if LED labeled <fc #ff0000>PWR_LED</fc> is illuminated. The analog portion of the circuit is supplied by AVDD = 5 V from an ADP7102 low dropout regulator. The digital portion of the circuit is supplied by IOVDD = 3.3 V developed from an ADP1720 low dropout regulator. Alternatively, IOVDD can be supplied from the PMOD connector, VCC, via a link option. The 2.5 V reference voltage is supplied by the internal 2.5 V reference of the AD7175-2 ADC.
+EVAL-CN0363-PMDZ requires an external DC power supply in the range of 6V to 12V fed in the screw terminal. Please take note of the polarity indicated in the figure below. The fastest way to tell the EVAL-CN0363-PMDZ board is powered is by seeing if LED labeled PWR_LED is illuminated. The analog portion of the circuit is supplied by AVDD = 5 V from an ADP7102 low dropout regulator. The digital portion of the circuit is supplied by IOVDD = 3.3 V developed from an ADP1720 low dropout regulator. Alternatively, IOVDD can be supplied from the PMOD connector, VCC, via a link option. The 2.5 V reference voltage is supplied by the internal 2.5 V reference of the AD7175-2 ADC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cn0363-pmdz/cn0363_top_pwr.jpg
    :width: 300px
 
 Interfaced with EVAL-CN0363-PMDZ is an FPGA development board (`ZED Board <http://zedboard.org/product/zedboard>`_ rev C or later). Zedboard requires a separate 12V DC power supply connected to its DC power jack.
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cn0363-pmdz/zed_brd_pwr.jpg
+   :width: 400px
 
 IOVDD Provisions
 ================
 
-| EVAL-CN0363-PMDZ provides two options of IOVDD using header <fc #ff0000>JP1</fc>. If pin 1 and pin 2 is shorted, IOVDD comes from the regulated supply of the board. If pin 2 and pin 3 is shorted, IOVDD comes from the PMOD interface.
-| |image2|
+EVAL-CN0363-PMDZ provides two options of IOVDD using header JP1. If pin 1 and pin 2 is shorted, IOVDD comes from the regulated supply of the board. If pin 2 and pin 3 is shorted, IOVDD comes from the PMOD interface.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cn0363-pmdz/cn0363_iovdd_1.jpg
+   :width: 400px
 
 Input Interface
 ---------------
@@ -27,14 +30,20 @@ EVAL-CN0363-PMDZ is designed to accommodate two vials. One is for the reference 
 Vial Holder
 ~~~~~~~~~~~
 
-| The beam-splitter, reference vial, and sample vial are held in a mechanical holder specifically designed for 18 mm x 30 mm plate beamsplitter. Slots are provided to hold the reference vial filled with distilled water and sample vial filled with the test liquid.
-| |image3|
+The beam-splitter, reference vial, and sample vial are held in a mechanical holder specifically designed for 18 mm x 30 mm plate beamsplitter. Slots are provided to hold the reference vial filled with distilled water and sample vial filled with the test liquid.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cn0363-pmdz/cn0363_top_1.jpg
+   :width: 300px
 
 Vials and Beamsplitter
 ~~~~~~~~~~~~~~~~~~~~~~
 
-| Vials that can fit inside a 1 inch x 1 inch slot can be used with EVAL-CN0363-PMDZ. A proper vial preparation is needed to minimize the error acquired in the colorimeter application.
-| ===Cleaning Procedure=== To obtain the most accurate results when taking measurements, process below should take into considerations:
+Vials that can fit inside a 1 inch x 1 inch slot can be used with EVAL-CN0363-PMDZ. A proper vial preparation is needed to minimize the error acquired in the colorimeter application.
+
+Cleaning Procedure
+^^^^^^^^^^^^^^^^^^
+
+To obtain the most accurate results when taking measurements, process below should take into considerations:
 
 -  The vials and beamsplitter must be meticulously cleaned.
 -  Wash the vials and beamsplitter with soap and deionized water
@@ -90,10 +99,3 @@ More Information
 ----------------
 
 -  :doc:`EVAL-CN0363-PMDZ User Guide </wiki-migration/resources/eval/user-guides/eval-cn0363-pmdz>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cn0363-pmdz/zed_brd_pwr.jpg
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cn0363-pmdz/cn0363_iovdd_1.jpg
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cn0363-pmdz/cn0363_top_1.jpg
-   :width: 300px

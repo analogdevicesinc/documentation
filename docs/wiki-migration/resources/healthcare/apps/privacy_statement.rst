@@ -86,7 +86,7 @@ ADI Study Watch Privacy Statement
    
    ::
    
-         c.to comply with legal obligations established outside the EU/EEA to which ADI is subject. 
+         c.to comply with legal obligations established outside the EU/EEA to which ADI is subject.
    
    3. Based on the necessity to comply with legal obligations established by or in the EU/EEA to which ADI is subject, Article 6(1)(c) GDPR.
    

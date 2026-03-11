@@ -1,12 +1,8 @@
 AD-FMCOMMS3-EBZ Hardware
 ========================
 
-| 
-
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
-
-|
 
 .. admonition:: Download
    :class: download
@@ -16,7 +12,8 @@ Schematic, PCB Layout, Bill of Materials
 
       This is the latest, greatest and production worthy Rev "A" of this board (Although it indicates "A", this is not the first version, and there is no Rev B planned).
 
-      | Note that the RF transformers used as baluns on the Rev A board are Mini Circuits `TCM1-63AX+ <http://www.minicircuits.com/pdfs/TCM1-63AX+.pdf>`_. They are rated for an operating frequency between 10 MHz and 6 GHz.
+         
+      Note that the RF transformers used as baluns on the Rev A board are Mini Circuits `TCM1-63AX+ <http://www.minicircuits.com/pdfs/TCM1-63AX+.pdf>`_. They are rated for an operating frequency between 10 MHz and 6 GHz.
 
    
    :adi:`AD-FMCOMMS3-EBZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/ad-fmcomms3-ebz-designsupport.zip>`

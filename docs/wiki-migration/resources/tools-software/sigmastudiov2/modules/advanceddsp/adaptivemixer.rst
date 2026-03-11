@@ -3,11 +3,24 @@
 Adaptive Mixer Dual Graph
 =========================
 
-| |mixershape.png|
-| ===== Description ===== The Adaptive Mixer Dual (graph) is an advanced method of mixing two signals based on a third control signal.
-| ===== Usage ===== The orange pin here indicates that the input control signal will be converted to a RMS average value, eliminating the need to use the RMS table for this application. The RMS table value is used to determine the scale factors for the signals to be mixed. Users can select and change the curves for both signals to be mixed.\|
-| |mixerpopup.png|
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/advanceddsp/mixershape.png
+   :alt: mixershape.png
+
+Description
+-----------
+
+The Adaptive Mixer Dual (graph) is an advanced method of mixing two signals based on a third control signal.
+
+Usage
+-----
+
+The orange pin here indicates that the input control signal will be converted to a RMS average value, eliminating the need to use the RMS table for this application. The RMS table value is used to determine the scale factors for the signals to be mixed. Users can select and change the curves for both signals to be mixed.\|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/advanceddsp/mixerpopup.png
+   :alt: mixerpopup.png
+
+Targets Supported
+-----------------
 
 +---------------------------+------------+------------------+---------------+------------------+
 | Name                      | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -19,7 +32,7 @@ Adaptive Mixer Dual Graph
 | ===== Pins =====
 
 Input
------
+~~~~~
 
 ======== ======= ================================================
 Name     Type    Description
@@ -30,7 +43,7 @@ Selector Control Calculates the RMS average for this input signal
 ======== ======= ================================================
 
 Output
-------
+~~~~~~
 
 ======= ===== ============================
 Name    Type  Description
@@ -38,7 +51,7 @@ Name    Type  Description
 Output0 Audio Compressed mono audio output
 ======= ===== ============================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +---------------+---------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,9 +83,6 @@ points_TWO     Second graph  FixPoint8d24
 ============== ============= =============
 
 DSP Parameter Computation
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 step = 2 ^ (-1 / Step) tc = (10 ^ (TimeConstant / (10 \* FS))) - 1
-
-.. |mixershape.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/advanceddsp/mixershape.png
-.. |mixerpopup.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/advanceddsp/mixerpopup.png

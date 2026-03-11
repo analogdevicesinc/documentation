@@ -21,14 +21,10 @@ Firmware Function Overview
 
 A simplified flow diagram is shown in below. The ADC sampling engine is time critical and is explained in a later section.
 
-|
-
 .. container:: center round box
 
    |image1| EV-HT-200CDAQ1 Firmware Flowchart
 
-
-|
 
 .. container:: center round box
 

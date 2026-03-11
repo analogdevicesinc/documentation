@@ -26,7 +26,7 @@ An ADSP-SC5xx EZ-Board:
 -  ADSP-SC589 Ezkit v1.1 and above, or,
 -  ADSP-SC589 Ezkit v1.1 and above, or,
 -  ADSP-SC584 Ezkit v1.0 and above, or,
--  ADSP-SC573 Ezkit v1.2 (BOM 1.8) and above 
+-  ADSP-SC573 Ezkit v1.2 (BOM 1.8) and above
 
 Software Configuration
 ----------------------
@@ -40,7 +40,7 @@ Run **bitbake linux-adi -c menuconfig** and configure the kernel as follows:
 
    Cryptographic API  --->
        -*-   Cryptographic algorithm manager
-       {*}   HMAC support 
+       {*}   HMAC support
        [*]   Hardware crypto devices  --->
            <*>   Support for ADI SC5XX CRC hareware
 
@@ -73,7 +73,8 @@ You can also run a full test with tcrypt kernel module. This test module always
 Linux Kernel Crypto API
 -----------------------
 
-If you want to use this CRC driver via the Linux kernel crypto API, please refer to the generic `Linux Kernel Crypto API <http://www.chronox.de/crypto-API/>`_ document . 
+If you want to use this CRC driver via the Linux kernel crypto API, please refer to the generic `Linux Kernel Crypto API <http://www.chronox.de/crypto-API/>`_ document .
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

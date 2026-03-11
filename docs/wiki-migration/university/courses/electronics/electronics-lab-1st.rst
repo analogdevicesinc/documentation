@@ -31,15 +31,7 @@ Measuring fast settling time to high accuracy is very difficult. Great care is r
 Materials:
 ~~~~~~~~~~
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 2 10 kΩ resistors
-| 1 10 kΩ potentiometer
-| 2 Schottky diodes (the 1N914 Si diodes supplied in the ADALP2000 Analog Parts Kit can be used but will not work as well)
-| 1 OP27 op-amp
-| 1 OP37 op-amp
-| 1 OP97 ( slow settling amplifier )
-| 2 0.1uF Capacitors (used to de-couple the Vp and Vn power supplies)
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 2 10 kΩ resistors 1 10 kΩ potentiometer 2 Schottky diodes (the 1N914 Si diodes supplied in the ADALP2000 Analog Parts Kit can be used but will not work as well) 1 OP27 op-amp 1 OP37 op-amp 1 OP97 ( slow settling amplifier ) 2 0.1uF Capacitors (used to de-couple the Vp and Vn power supplies)
 
 Directions:
 ~~~~~~~~~~~
@@ -138,9 +130,7 @@ The circuit in figure 4 works best if low capacitance Schottky diodes are used f
 For further reading:
 ~~~~~~~~~~~~~~~~~~~~
 
-| :adi:`MT-046.pdf <media/en/training-seminars/tutorials/MT-046.pdf>`
-| http://www.analog.com/static/imported-files/application_notes/466359863287538299597392756AN359.pdf
-| `Settling time <https://en.wikipedia.org/wiki/Settling_time>`_
+:adi:`MT-046.pdf <media/en/training-seminars/tutorials/MT-046.pdf>` http://www.analog.com/static/imported-files/application_notes/466359863287538299597392756AN359.pdf `Settling time <https://en.wikipedia.org/wiki/Settling_time>`_
 
 Return to Lab Activities :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 

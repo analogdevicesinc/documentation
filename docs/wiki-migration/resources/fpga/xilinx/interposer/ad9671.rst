@@ -20,7 +20,7 @@ Supported Carriers
 
 ::
 
-   * 
+   *
 
 Quick Start Guide
 -----------------
@@ -122,8 +122,8 @@ FPGA Referece Designs:
    :class: download
 
    
-   -  \**KC705 (Source files) \*\* `cf_ad9671_ebz_edk_14_4_2013_03_21.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9671_ebz_edk_14_4_2013_03_21.tar.gz>`_
-   -  \**KC705 (Bit files) \*\* `cf_ad9671_ebz_sw_14_4_2013_03_21.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9671_ebz_sw_14_4_2013_03_21.tar.gz>`_
+   -  **KC705 (Source files)** `cf_ad9671_ebz_edk_14_4_2013_03_21.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9671_ebz_edk_14_4_2013_03_21.tar.gz>`_
+   -  **KC705 (Bit files)** `cf_ad9671_ebz_sw_14_4_2013_03_21.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9671_ebz_sw_14_4_2013_03_21.tar.gz>`_
    
 
 

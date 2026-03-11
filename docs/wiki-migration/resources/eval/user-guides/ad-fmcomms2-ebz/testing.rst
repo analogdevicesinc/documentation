@@ -47,7 +47,7 @@ Required software
    :class: download
 
    
-   -  \**18 January 2022 release \*\*
+   -  **18 January 2022 release**
    -   `Actual file for FMCOMMS4 <https://swdownloads.analog.com/cse/prod_test_rel/fmcomms4_test/zc706_fmcomms4_prod_test_2022.zip>`_
    
 
@@ -56,7 +56,7 @@ Required software
    :class: download
 
    
-   -  \**27 June 2022 release \*\*
+   -  **27 June 2022 release**
    -   `Actual file for FMCOMMS2-3 <https://swdownloads.analog.com/cse/prod_test_rel/fmcomms2-3_test/fmcomms2-3_carrier_production.zip>`_
    
 
@@ -65,7 +65,7 @@ Required software
    :class: download
 
    
-   -  \**13 June 2023 release \*\*
+   -  **13 June 2023 release**
    -   `Image for FMCOMMS5 <https://swdownloads.analog.com/cse/prod_test_rel/fmcomms5_test/fmcomms5_production.zip>`_
    -  md5sum for zip file: 9c26146636e2e59a7f7e02f89508663d
    
@@ -85,7 +85,7 @@ Required software
    :class: download
 
    
-   -  \**18 January 2022 release \*\*
+   -  **18 January 2022 release**
    -   `Actual Raspberry Pi file for FMCOMMS4 <https://swdownloads.analog.com/cse/prod_test_rel/fmcomms4_test/rpi_fmcomms4_production_mongo.zip>`_
    -  `Actual Raspberry Pi file for FMCOMMS2-3 <https://swdownloads.analog.com/cse/prod_test_rel/fmcomms2-3_test/rpi_fmcomss2-3_production_fast.zip>`_
    -  `Raspberry Pi image file for FMCOMMS5 <https://swdownloads.analog.com/cse/prod_test_rel/fmcomms5_test/rpi_fmcomms5_prod.zip>`_

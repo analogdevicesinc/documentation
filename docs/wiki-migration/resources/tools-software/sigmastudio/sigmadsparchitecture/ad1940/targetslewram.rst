@@ -5,11 +5,17 @@ Target Slew Ram
 
 Target/Slew RAM is a hardware-optimized function that allows volume or other parameter level changes to ramp to subsequent levels without audible clicks/pops.
 
-| In audio systems, abrupt changes in volume position or other parameters produce unpredictable noises. See the sample schematic below showing possible real-time changes that can produce clicks/pops:
-| |targetslew1.png|
+In audio systems, abrupt changes in volume position or other parameters produce unpredictable noises. See the sample schematic below showing possible real-time changes that can produce clicks/pops:
 
-| This noise arises from an audio signal getting scaled by a step function, which causes an unwanted response. The step function contains an impulse (Dirac delta function d(k)). It can be shown that the impulse d(k) is a frequency-limited white noise. This noise is unwanted in all audio applications. See below for a graphic representation of this signal noise caused by the step function:
-| |targetslew2.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/sigmadsparchitecture/ad1940/targetslew1.png
+   :alt: targetslew1.png
+   :align: center
+
+This noise arises from an audio signal getting scaled by a step function, which causes an unwanted response. The step function contains an impulse (Dirac delta function d(k)). It can be shown that the impulse d(k) is a frequency-limited white noise. This noise is unwanted in all audio applications. See below for a graphic representation of this signal noise caused by the step function:
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/sigmadsparchitecture/ad1940/targetslew2.png
+   :alt: targetslew2.png
+   :align: center
 
 There are a couple of possible solutions to consider for this noise problem:
 
@@ -20,8 +26,9 @@ There are a couple of possible solutions to consider for this noise problem:
 
 -  We can use target/slew RAM to automatically do the required ramping with one simple command without the need to mute the DSP. Below is the result:
 
-| 
-| |targetslew3.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/sigmadsparchitecture/ad1940/targetslew3.png
+   :alt: targetslew3.png
+   :align: center
 
 SigmaStudio’s volume control and mux blocks both use the slew RAM to cleanly ramp volume from one level to another. Thus for the all the volume control cells, you have the option of using target/slew RAM as your algorithm to prevent the noise inherent in switching levels.
 
@@ -32,8 +39,11 @@ There are 4 types of slope that can be used with the target/slew RAM:
 -  RC-type -- Uses the difference between target and current values to calculate step size.
 -  Constant -- values change linearly, in a fixed number of steps.
 
-| For details, see the AD1940/1941 Volume Control Algorithms page.
-| |targetslew4.png|
+For details, see the AD1940/1941 Volume Control Algorithms page.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/sigmadsparchitecture/ad1940/targetslew4.png
+   :alt: targetslew4.png
+   :align: center
 
 Although target/slew RAM is useful for eliminating unwanted noise, there are some drawbacks:
 
@@ -41,8 +51,3 @@ Although target/slew RAM is useful for eliminating unwanted noise, there are som
 -  We cannot read back from the target/slew RAM to verify the written value.
 -  We can perform this functionality in software, although that will take possibly scarce program RAM (MIPS) and wouldn't be optimized.
 -  Limited number: the 1940 currently has 64 target/slew RAM locations, which should be used only when a parameter or set of parameters is going to get modified at runtime in the final application.
-
-.. |targetslew1.png| image:: https://wiki.analog.com/_media/targetslew1.png
-.. |targetslew2.png| image:: https://wiki.analog.com/_media/targetslew2.png
-.. |targetslew3.png| image:: https://wiki.analog.com/_media/targetslew3.png
-.. |targetslew4.png| image:: https://wiki.analog.com/_media/targetslew4.png

@@ -17,9 +17,7 @@ This project also uses the EVAL-CN0357-ARDZ shield which is a single-supply, low
 
 ::
 
-                                          /* Insert Images */    
-                                     
-                                   
+                                          /* Insert Images */
 
 The EVAL-CN0357-ARDZ shield circuit provides a potentiostatic circuit for biasing the electrochemical sensor, along with a programmable TIA and 16-bit Sigma-Delta ADC. The TIA converts the small currents passing in the sensor to a voltage that can be read by the ADC. The 16-bit ADC value is received via SPI interface of the EVAL-ADICUP360 board, where the gas concentration is computed. The ADuCM360_ISM43340_CN0357 application configures the necessary components, processes ADC output value and make all necessary conversions in order to provide the gas concentration in Parts Per Million (PPM). This gas concentration value (ppm) is then sent to cloud using the HTTP REST API. In other words, the ISMART Wi-Fi module acts as REST Client that sends gas concentration computed by EVAL-ADICUP360 to the cloud server.
 
@@ -50,7 +48,6 @@ The ADuCM360_demo_cn0357 uses UART connection to ISMART shield via P0.6/P0.7 and
 ::
 
                                                  /* Insert Image */
-                                                 
 
 Connect the ISMART shield into the Arduino connectors on the EVAL-CN0357-ARDZ sensor shield. Set the power jumper (J17) on the ISMART shield to receive power from base board. Set UART Switch (SW3) in position 3 (ie away from the module). This will allow the module to communicate with the base board via UART.
 
@@ -82,7 +79,6 @@ Debugging the ADuCM30_ISM43340_CN0357 project
 ::
 
      * Make sure the target board is connected to the computer (via **DEBUG USB**) and using the tool bar, navigate to the small Debug icon{{:resources:eval:user-guides:eval-aducm360-ardz:quickstart:bug.png?30|}} and select the debugging session you created. The application will be programmed and the program execution will stop at the beginning of the main() function.
-     
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0336_demo_4.png
    :align: center
@@ -91,68 +87,67 @@ Debugging the ADuCM30_ISM43340_CN0357 project
 ::
 
      * Use step-by-step execution or directly run the program.
-     
 
 After completion of the above steps, the program will remain written into the system flash and it will run by default every time the board is powered up.
 
-| 
-| ===== Project structure =====
-| The **ADuCM360_ISM43340_CN0357** project uses ADuCM36x C/C++ Project structure.
+Project structure
+-----------------
+
+The **ADuCM360_ISM43340_CN0357** project uses ADuCM36x C/C++ Project structure.
 
 This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI1, UART via P0.6/P0.7; SPI, UART read/write functions, AD7790 control, AD5270 control and gas concentration computation, ISM43340 control, cloud services executed via HTTP REST API calls.
 
-| In the **src** and **include** folders you will find the source and header files related to CN0357 software application. The *Communication.c/h* files contain SPI and UART specific data, the *AD7790.c/h* files contain the ADC control, the *AD5270.c/h* files contain the rheostat control, the *ISM43340.c/h* files contain Wi-Fi module control, the *Services.c/h* files contain cloud services, *HTTP_REST_API.c/h* files contain REST API Calls,and the *CN0357.c/h* files contain configurations and computations specific to the gas detector application.
-| |image1|
-| In the appropriate header files you can **configure** next **parameters**:
+In the **src** and **include** folders you will find the source and header files related to CN0357 software application. The *Communication.c/h* files contain SPI and UART specific data, the *AD7790.c/h* files contain the ADC control, the *AD5270.c/h* files contain the rheostat control, the *ISM43340.c/h* files contain Wi-Fi module control, the *Services.c/h* files contain cloud services, *HTTP_REST_API.c/h* files contain REST API Calls,and the *CN0357.c/h* files contain configurations and computations specific to the gas detector application.
 
--  **Sensor Range** - <fc #008000>SENSOR_RANGE</fc> - maximum value of the gas conentration (ppm) that can be detected by the electrochemical gas sensor being used (*CN0357.h*).
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0357_demo_projecttree1.png
+   :align: left
+   :width: 340px
 
-::
+In the appropriate header files you can **configure** next **parameters**:
 
-       #define SENSOR_RANGE     2000 
-
--  **Sensor Sensitivity** - <fc #008000>SENSOR_SENSITIVITY</fc> - sensitivity (nA/ppm) of the electrochemical sensor being used (*CN0357.h*).
+-  **Sensor Range** - SENSOR_RANGE - maximum value of the gas conentration (ppm) that can be detected by the electrochemical gas sensor being used (*CN0357.h*).
 
 ::
 
-       #define SENSOR_SENSITIVITY  65   
+       #define SENSOR_RANGE     2000
 
--  **WLAN SSID** - <fc #008000>ssid</fc> - Local Wi-Fi Network SSID (*User_Settings.h*).
-
-::
-
-       char ssid[] = "< Enter WLAN SSID >"  
-
--  **WLAN Password** - <fc #008000>password</fc> - Local Wi-Fi Network Password (*User_Settings.h*).
+-  **Sensor Sensitivity** - SENSOR_SENSITIVITY - sensitivity (nA/ppm) of the electrochemical sensor being used (*CN0357.h*).
 
 ::
 
-       char password[] = "< Enter WLAN Password >"  
+       #define SENSOR_SENSITIVITY  65
 
--  **WLAN Security Type** - <fc #008000>security_type</fc> - Local Wi-Fi Network Security Type (*User_Settings.h*).
-
-::
-
-       char security_type[] = "< Enter WLAN Security Type >"  
-
--  **Thing Name** - <fc #008000>Thing_Name</fc> - Name of device in cloud instance (*User_Settings.h*).\ ``char Thing_Name[] = "< Enter Thing Name >"``
-
--  **Application Key** - <fc #008000>app_key</fc> - Application Key associated with user account(*User_Settings.h*).
+-  **WLAN SSID** - ssid - Local Wi-Fi Network SSID (*User_Settings.h*).
 
 ::
 
-       char app_key[] = "< Enter Application Key >"  
+       char ssid[] = "< Enter WLAN SSID >"
 
-| 
-| The **system** folder contains system related files (try not to change these files):
+-  **WLAN Password** - password - Local Wi-Fi Network Password (*User_Settings.h*).
+
+::
+
+       char password[] = "< Enter WLAN Password >"
+
+-  **WLAN Security Type** - security_type - Local Wi-Fi Network Security Type (*User_Settings.h*).
+
+::
+
+       char security_type[] = "< Enter WLAN Security Type >"
+
+-  **Thing Name** - Thing_Name - Name of device in cloud instance (*User_Settings.h*).\ ``char Thing_Name[] = "< Enter Thing Name >"``
+
+-  **Application Key** - app_key - Application Key associated with user account(*User_Settings.h*).
+
+::
+
+       char app_key[] = "< Enter Application Key >"
+
+The **system** folder contains system related files (try not to change these files):
 
 -  **ADuCM360** – contains low levels drivers for ADuCM360 microcontroller.
 -  **CMSIS** – contains files related to ADuCM360 platform, such as: *ADuCM360.h* (registers definitions), *system_ADuCM360.c/h* (system clock), *vectors_ADuCM360.c* (interrupt vector table).
 -  **cortexm** – contains files for system management (start-up, reset, exception handler).
 
-| 
-| |Data Acquisition for Input Current Demo#.:\|Reference Designs#none|
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0357_demo_projecttree1.png
-   :width: 340px
-.. |Data Acquisition for Input Current Demo#.:\|Reference Designs#none| image:: navigation EVAL-ADICUP360#demo_cn0336
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/navigation EVAL-ADICUP360#demo_cn0336
+   :alt: Data Acquisition for Input Current Demo#.:\|Reference Designs#none

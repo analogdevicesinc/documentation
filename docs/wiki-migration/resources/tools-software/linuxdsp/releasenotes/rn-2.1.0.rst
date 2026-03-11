@@ -73,5 +73,6 @@ The following changes have been applied since the 1.0 release of Yocto Linux for
 -  Recommended host OS upgraded from Ubuntu 18.04 to 20.04 (Although both should work)
 -  Switched from Busybox to SystemD for boot
 
-| 
-| ---- \**HOME PAGE: \*\* :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`
+--------------
+
+**HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`

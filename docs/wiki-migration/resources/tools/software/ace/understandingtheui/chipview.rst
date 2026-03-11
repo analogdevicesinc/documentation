@@ -19,8 +19,11 @@ Block Types
 
 The diagram block classifications are:
 
-
-|ChipConfigurable13.png|
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ChipConfigurable13.png
+   :alt: ChipConfigurable13.png
+   :align: left
+   :width: 40px
+   :height: 40px
 
 -  **Configurable –** A block which is configurable by clicking on it. Depending upon the block and the associated component, clicking can enable/disable the block, allow inline editing of a single value, or present a popup for configuring multiple values
 
@@ -34,8 +37,11 @@ The diagram block classifications are:
 
 View.  They are included in the diagram to depict signal flow, or to help with understanding the component.
 
-
-|ChipDown.png|
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ChipDown.png
+   :alt: ChipDown.png
+   :align: left
+   :width: 50px
+   :height: 50px
 
 -  **Power down/ disabled –** A block which has been disabled, either because of enabled bits or because it is powered down. The tooltip will indicate whether it can be enabled
 
@@ -61,21 +67,13 @@ View Toolbar
 
 Unless the auto apply has been enabled in the Board View, section 3.6.3, values changed in the Chip View will affect the software values in the Chip and Memory Map views only, they will not affect the hardware state. The following view toolbar buttons can be used to update both the hardware and software values:
 
-  
-
 -  **Apply Changes –** Applies all of the register changes made in the software to the hardware.
 
-  
-
 -  **Read All –** Reads the register values from the hardware and updates the software values.
-
-  
 
 -  **Reset Device –**
 
 Resets hardware to its default state. This command does not affect the soft= ware values.
-
-  
 
 -  **Diff –** Shows registers that are different on the hardware in bold text when you navigate to the Memory Map View. If changes have been made to the device using an external tool, the operator should click diff before clicking apply changes to avoid unexpected writes.
 
@@ -89,10 +87,3 @@ Navigation from the Chip View
 The proceed to memory map button in the bottom-right corner of the diagram will open the Memory Map View for the device when clicked.
 
 If the product has data acquisition and analysis functionality you will be able to navigate to this view from the proceed to capture button at the bottom-right of the diagram.
-
-.. |ChipConfigurable13.png| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ChipConfigurable13.png
-   :width: 40px
-   :height: 40px
-.. |ChipDown.png| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ChipDown.png
-   :width: 50px
-   :height: 50px

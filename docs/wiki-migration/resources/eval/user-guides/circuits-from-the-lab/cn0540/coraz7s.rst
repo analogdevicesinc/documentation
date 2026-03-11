@@ -37,8 +37,7 @@ To prepare the SD-card for the CoraZ7-07s board:
 
       -  :doc:`Format and flash the SD Card using Linux </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
 
-| 
-| Once microSD card has been imaged, safely remove the hardware from the SD card writer, and insert the card directly into the microSD card slot on the CoraZ7-07s.
+Once microSD card has been imaged, safely remove the hardware from the SD card writer, and insert the card directly into the microSD card slot on the CoraZ7-07s.
 
 | |image1|\ |image2|
 

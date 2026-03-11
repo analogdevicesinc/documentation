@@ -1,7 +1,7 @@
 Numeric Formats
 ===============
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
 
 Audio data at the serial inputs and outputs is formatted as 24 bit, signed, integer values. SigmaDSP cores, however, use numeric formats with more than 24 bits for intermediate values, coefficients, and parameters to provide additional headroom and precision. The numeric format has increased in the more powerful DSP core architectures.
 
@@ -98,14 +98,10 @@ Similarly, for negative numbers:
 
 When outputting to the serial ports or DACs, signals will saturate to 24 bits by right shifting by one and ignoring the upper 8 bits. This means any signal with a peak outside the range (1.0 - LSB) to -1 in 8.24 format will be clipped to full-scale on the outputs.
 
-.. _bit-architectures-1:
-
 28 bit architectures
 --------------------
 
 In 28 bit SigmaDSP architectures, audio is represented with A = 5 and B = 23, resulting in a 5.23 bit number. However, control signals and index table values generally require an integer representation, and are therefore represented as A = 28 and B = 0 for a 28.0 value with no fractional part.
-
-.. _integer-format-1:
 
 28.0 (Integer) Format
 ~~~~~~~~~~~~~~~~~~~~~
@@ -144,8 +140,6 @@ Signals that are in integer format follow standard binary rules for representati
 In general, negative integers are not used in SigmaStudio or SigmaDSP algorithms.
 
 As mentioned, the serial ports and DACs are 24 bit integer values. In 28 bit architectures, the 24 least significant bit signals map to 0 dBFS. The four extra MSBs added for processing headroom are ignored. This means any signal exceeding 8388608 in 28.0 format will be limited to full-scale on the outputs. This clipping operation is one of the reasons negative 28 bit integers are avoided.
-
-.. _decimal-format-1:
 
 5.23 (Decimal) Format
 ~~~~~~~~~~~~~~~~~~~~~
@@ -209,7 +203,7 @@ So, a full-scale signal that was represented in 5.23 format as
 
    0000 1000 0000 0000 0000 0000 0000
 
-| would have its lower 4 bits truncated for 5.19 representation:
+would have its lower 4 bits truncated for 5.19 representation:
 
 ::
 
@@ -227,7 +221,8 @@ Concept for dB conversion:
 -  Count the number of leading 0s (minus 4) and multiply by 6; this is the integer part of the dB scale.
 -  Use the bits after the leading 1 to linearly interpolate between the 6 dB points.
 
-|numericpic1.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/numericpic1.png
+   :alt: numericpic1.png
 
 In order to get a linear value into a hex/binary number that can be written to the SigmaDSP, and vice versa, it is important to understand number conversions.
 
@@ -241,7 +236,7 @@ Take this linear value and multiply by 223 in order to get the decimal represent
 
 ::
 
-   .01 * 223 = 83886.08.  
+   .01 * 223 = 83886.08.
 
 Now take the integer part of this result and convert 83886 to hex, and you will get 0x00147AE.
 
@@ -250,5 +245,3 @@ The output of some blocks is a 5.19 number. The formula to determine the dB-outp
 ::
 
    dB_value = 96.32959861 * (readback_value / 219 - 1)
-
-.. |numericpic1.png| image:: https://wiki.analog.com/_media/numericpic1.png

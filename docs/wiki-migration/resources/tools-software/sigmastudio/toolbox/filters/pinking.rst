@@ -1,8 +1,9 @@
 Pinking
 =======
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| |pinkpic1.png| The classic use of this type of filter is to convert white noise, which is equal energy per hertz, to pink noise, which is equal energy per proportional or constant-percentage (e.g., logarithmic) band.
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+|pinkpic1.png| The classic use of this type of filter is to convert white noise, which is equal energy per hertz, to pink noise, which is equal energy per proportional or constant-percentage (e.g., logarithmic) band.
 
 Such energy displays as flat on any log scale graph when bundled (integrated) appropriately.
 

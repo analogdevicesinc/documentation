@@ -24,8 +24,8 @@ Moving or renaming these files will result in one with the original name being r
 This folder with containing files will be added under "project/src..."
 
 -  **FreeRTOSConfigExtend.h** *(Extends the base FreeRTOSConfig.h, user can override macros defs in here)*
--  **FreeRTOSHooks.h** *Basic Setup for all of the relevant hook functions that can be used in FreeRTOS*
--  **FreeRTOSMemory.h** *Basic Setup for all of the relevant memory functions that can be used in FreeRTOS*
+-  **FreeRTOSHooks.h** Basic Setup for all of the relevant hook functions that can be used in FreeRTOS*
+-  **FreeRTOSMemory.h** Basic Setup for all of the relevant memory functions that can be used in FreeRTOS*
 -  **FreeRTOSUserApplication.c** *(basic task implementation for user)*
 -  **FreeRTOSUserApplication.h** *(prototype functions for main file)*
 

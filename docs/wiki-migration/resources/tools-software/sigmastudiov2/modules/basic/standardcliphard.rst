@@ -3,8 +3,8 @@
 Standard Hard Clipper
 =====================
 
-| 
-| |standardclip.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/standardclip.png
+   :alt: standardclip.png
 
 Description
 -----------
@@ -14,8 +14,10 @@ This block clips off portions of signal voltages above and/or below certain limi
 Usage
 -----
 
-| Click the icon to switch among the clipper options: Hi, Low, or both. Enter upper and lower limits in their text fields. This algorithm can be grown to support multiple input/output pairs for multi-channel audio.
-| ===== Targets Supported =====
+Click the icon to switch among the clipper options: Hi, Low, or both. Enter upper and lower limits in their text fields. This algorithm can be grown to support multiple input/output pairs for multi-channel audio.
+
+Targets Supported
+-----------------
 
 +-------------------------+------------+------------------+---------------+------------------+
 | Name                    | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -29,27 +31,27 @@ Usage
 Input
 ~~~~~
 
-======================= ===== ===============
-Name                    Type  Description
-======================= ===== ===============
-Input<fc #ff0000>X</fc> Audio Input channel X
-======================= ===== ===============
+====== ===== ===============
+Name   Type  Description
+====== ===== ===============
+InputX Audio Input channel X
+====== ===== ===============
 
 Output
 ~~~~~~
 
-======================== ===== ================
-Name                     Type  Description
-======================== ===== ================
-Output<fc #ff0000>X</fc> Audio Output channel X
-======================== ===== ================
+======= ===== ================
+Name    Type  Description
+======= ===== ================
+OutputX Audio Output channel X
+======= ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +--------------------+---------------+--------------------+-----------------------------------------------------------------------------------+
 | GUI Parameter Name | Default Value | Range              | Function Description                                                              |
@@ -72,5 +74,3 @@ Parameter Name Description ADSP-214xx/SC5xx/215xx ADAU145x/146x
 up             Upper Limit NA                     FixedPoint8d24
 down           Lower Limit NA                     FixedPoint8d24
 ============== =========== ====================== ==============
-
-.. |standardclip.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/standardclip.png

@@ -24,16 +24,7 @@ Side note - A quick survey of switching regulators will reveal that the vast maj
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| PC running LTspice and Scopy
-| LT1054 Switched-Capacitor Voltage Converter
-| Electrolytic capacitors from ADALP2000 parts kit
-| Solderless breadboard
-| 5V USB power supply
-| Voltmeter (optional, can use M2K in Voltmeter mode.)
-| LTspice files for this activity: `switch_cap_ltspice_files.zip <https://wiki.analog.com/_media/university/courses/electronics/sw_cap/switch_cap_ltspice_files.zip>`_
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires PC running LTspice and Scopy LT1054 Switched-Capacitor Voltage Converter Electrolytic capacitors from ADALP2000 parts kit Solderless breadboard 5V USB power supply Voltmeter (optional, can use M2K in Voltmeter mode.) LTspice files for this activity: `switch_cap_ltspice_files.zip <https://wiki.analog.com/_media/university/courses/electronics/sw_cap/switch_cap_ltspice_files.zip>`_
 
 Activity 0: Human-switched capacitor power conversion
 =====================================================
@@ -96,7 +87,7 @@ Which says:
 -  When the ( + ) input is greater than the ( - ) input by more than 0.5V, the switch resistance is 0.01 ohms
 -  When the ( + ) input is not greater than the ( - ) input by more than 0.5V, the switch resistance is 100 million ohms
 
-**Why not zero ohms and infinity ohms?** *SPICE can get confused when the range of values in a simulation covers too great a range. In this simulation, we're charging and discharging capacitors, and without some simulated resistance, currents will approach infinity. The Vh parameter is the hysteresis at the input, which ensures that the switch changes state properly.*
+**Why not zero ohms and infinity ohms?** SPICE can get confused when the range of values in a simulation covers too great a range. In this simulation, we're charging and discharging capacitors, and without some simulated resistance, currents will approach infinity. The Vh parameter is the hysteresis at the input, which ensures that the switch changes state properly.*
 
 The 0.5V threshold was chosen so that the switch can be controlled by an intuitive voltage level, where 0V = OFF and 1V = ON.
 
@@ -280,8 +271,6 @@ It was mentioned above that "if the switching is fast enough, the output can com
 Activity 2: Charge Pump Voltage Doubler
 =======================================
 
-.. _theory-and-simulation-1:
-
 Theory and Simulation
 ---------------------
 
@@ -322,8 +311,6 @@ The result is that Vout is "pumped" to 2X Vusb, minus two diode drops. Probing V
 
 
 As with the inverter circuit, the output takes several clock cycles to reach its final value due to charge sharing.
-
-.. _circuit-construction-and-testing-1:
 
 Circuit Construction and Testing
 --------------------------------
@@ -409,8 +396,6 @@ Going Further: High-power switched capacitor circuits
 =====================================================
 
 Why are switched capacitor power circuits uncommon? High transient currents, EMI, etc. present challenges, but there are a number of practical, high-power switched-capacitor power converters. The LTC7820 is a fixed ratio high power charge pump controller - the evaluation board application circuit will halve the voltage of a 36V to 60V, at up to 10A (300W), at 99% efficiency.
-
-.. _questions-1:
 
 Questions:
 ----------

@@ -1,13 +1,9 @@
 AD-FMCADC2-EBZ FMC Board
 ========================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support for the ad-fmcadc2-ebz is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
+   \ **NOTE:** Support for the ad-fmcadc2-ebz is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
 
 
 The :adi:`AD-FMCADC2-EBZ` is a high speed data acquisition board featuring :adi:`AD9625` single channel ADC at 2500 MSPS, in a FMC form factor which supports the JESD204B high speed serial interface. This board meets most of the FMC specifications in terms of mechanical size, mounting hole locations, and more. For that information, please refer to the FMC specification.

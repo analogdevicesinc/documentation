@@ -23,7 +23,7 @@ A. Independent Controls
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------------------+
 | Description                                | Test Steps                                                                                                          | Steps Resources                              | Expected Results                                                                       |
@@ -67,7 +67,7 @@ B. Tracking
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                           | Test Steps                                                                                                                        | Steps Resources                    | Expected Results                                                                                                                           |
@@ -96,8 +96,7 @@ B. Tracking
 
 Test Results will be recorded in the following document: `Power Supply - Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/power_supply_-_test_case.xlsx>`_
 
-| 
-| **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
+**Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep1.JPG
    :width: 100px

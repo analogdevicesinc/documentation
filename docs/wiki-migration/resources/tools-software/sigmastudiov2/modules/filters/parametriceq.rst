@@ -3,9 +3,12 @@
 Parametric EQ
 =============
 
-| 
-| |parametriceqicon.png|
-| |parametriceq.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/parametriceqicon.png
+   :alt: parametriceqicon.png
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/parametriceq.png
+   :alt: parametriceq.png
+   :width: 850px
 
 Description
 ===========
@@ -14,8 +17,9 @@ The Parametric EQ block extends the functionality of the General (2nd-Order) fil
 
 This filter provides:
 
-| Graphical design of filter response curves. High order filtering, via cascaded 2nd order filters (maximum of 15) Independent filter type and settings for each filter stage.
-| The Filter Types Supported :
+Graphical design of filter response curves. High order filtering, via cascaded 2nd order filters (maximum of 15) Independent filter type and settings for each filter stage.
+
+The Filter Types Supported :
 
 ::
 
@@ -34,11 +38,15 @@ This filter provides:
          IIRCoefficient
          AllPass
 
-| 
-| =====Usage===== To open the graphical window, click on the icon button. This filter provides:
+Usage
+=====
 
-| Graphical design of filter response curves. Independent filter type and settings for each response curve. Loading of filter coefficients from a text file containing the same.
-| ===== Targets Supported =====
+To open the graphical window, click on the icon button. This filter provides:
+
+Graphical design of filter response curves. Independent filter type and settings for each response curve. Loading of filter coefficients from a text file containing the same.
+
+Targets Supported
+=================
 
 ============= ========== ================ ============= ================
 Name          ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -67,7 +75,7 @@ Name    Type  Description
 Output0 Audio The filtered output
 ======= ===== ===================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -118,7 +126,3 @@ Output0 Audio The filtered output
 +----------------+----------------------------------------------------------------+------------------------+---------------+
 
 Note : X Stands for the filter index
-
-.. |parametriceqicon.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/parametriceqicon.png
-.. |parametriceq.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/parametriceq.png
-   :width: 850px

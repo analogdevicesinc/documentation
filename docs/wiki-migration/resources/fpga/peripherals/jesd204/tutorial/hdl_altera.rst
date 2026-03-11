@@ -330,4 +330,4 @@ When building the project, you should always use the recommended version of the 
 References
 ----------
 
-| :doc:`/wiki-migration/resources/fpga/docs/build`
+:doc:`/wiki-migration/resources/fpga/docs/build`

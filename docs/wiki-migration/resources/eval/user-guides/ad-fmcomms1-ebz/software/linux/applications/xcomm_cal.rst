@@ -4,11 +4,15 @@
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
+
 AD-FMCOMMS1-EBZ Calibration EEPROM Utility
 ==========================================
 
-.. image:: https://wiki.analog.com/_media/page>/wiki/common#retired&nofooter&noheader
-   :alt: page>/wiki/common#retired&nofooter&noheader
+
+.. note::
+
+   See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
+
 
 ::
 
@@ -19,7 +23,7 @@ AD-FMCOMMS1-EBZ Calibration EEPROM Utility
           xcomm_cal [-s] [-f FREQUENCY] INPUT_FILE
 
    **DESCRIPTION**
-       Print and set EEPROM calibration data. 
+       Print and set EEPROM calibration data.
        Without option - print all calibration sets available.
 
        -f Target frequency in MHz
@@ -52,17 +56,14 @@ To find the eeprom - use the ``find`` command.
    /sys/devices/amba.1/41600000.i2c/i2c-1/1-0050/eeprom
    /sys/devices/amba.1/41600000.i2c/i2c-1/1-0054/eeprom
 
-It's normally the largest value. (the smaller value is the `FRU eeprom <https://wiki.analog.com/fru_dump>`_).
+It's normally the largest value. (the smaller value is the :doc:`FRU eeprom </wiki-migration/resources/tools-software/linux-software/fru_dump>`).
 
 Query best match calibration set for a given Frequency
 ------------------------------------------------------
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -82,6 +83,7 @@ Query best match calibration set for a given Frequency
       ADC I Gain Adj: 32853
       ADC Q Gain Adj: 32768
    
+
 
 
 

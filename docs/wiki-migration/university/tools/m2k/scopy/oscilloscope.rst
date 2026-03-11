@@ -3,7 +3,7 @@ Scopy Oscilloscope
 
 The oscilloscope instrument consists of a central signal plot and a control panel with the settings for the different instrument options. The plot displays the waveforms that are captured on the available scope channels.
 
-To switch to this instrument click on the \**Oscilloscope \*\* button from the left menu.
+To switch to this instrument click on the \**Oscilloscope** button from the left menu.
 
 .. note::
 
@@ -18,7 +18,7 @@ To switch to this instrument click on the \**Oscilloscope \*\* button from the l
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/youtube>zWX7VnKDYq4
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>zWX7VnKDYq4
    :alt: youtube>zWX7VnKDYq4
 
 General
@@ -52,8 +52,7 @@ When pressing on the channel, the name of the channel is selected. Only one chan
 -  **Software AC Coupling**: If enabled, this blocks the DC component of the signal. It is useful when the signal is too large for the current plot settings, seeing how it centers the signal at zero volts.
 -  **Autoset**: Automatically adjusts the offset, range, frequency and trigger configuration based on the input signals. The user should start the Oscilloscope before using this feature.
 
-| 
-| When pressing the General Settings button |image1| on the right side panel a checkbox will appear, providing the option to compute and plot the FFT and the XY view of the acquired signals. As shown in the following illustration, if the XY view is enabled, a new section appears in the right side menu, allowing the user to choose the channels used for each axis of the plot and the plot type.
+When pressing the General Settings button |image1| on the right side panel a checkbox will appear, providing the option to compute and plot the FFT and the XY view of the acquired signals. As shown in the following illustration, if the XY view is enabled, a new section appears in the right side menu, allowing the user to choose the channels used for each axis of the plot and the plot type.
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/osc-general-settings.png
    :alt: osc-general-settings.png
@@ -81,19 +80,80 @@ A signal source is required in order to introduce basic oscilloscope operation, 
 -  Yellow/White-to-Blue (Signal Generator 2 Output to Oscilloscope 2 Positive Input)
 -  Black (Adjacent to Yellow/White)-to-Blue/White (Ground to Oscilloscope 2 Negative Input)
 
-| The signal generator is invoked by clicking on the "Signal Generator" name in the instrument menu. The signal generator initializes with both channels turned on and only requires the waveform, amplitude, and frequency to be selected. Click on the Channel 1 menu and set the Waveform for "Sine," Amplitude for 4 Volts, Frequency for 1 kHz and the offset for 2 Volts. When the setup is complete, press "Run" as shown in the following illustration. Entries may be made by entering numbers directly and hitting "Enter" or by clicking on the "+" and "-" controls, and the units can be directly selected under the numbers.\ |sig-gen.png|
-| ===== Setting the Horizontal and Vertical Scales ===== Open the dual channel oscilloscope by clicking on the "Oscilloscope" name in the instrument menu. The oscilloscope initializes with both channels active so Channel 2 should be turned off in order to view Channel 1 only. Open the channel settings for Channel 1 and disable the Software AC Coupling. Then set the Time Base for 500 μs/Div and the Vertical Scale for 1 V/Div and click "Run" as shown in the following illustration.\ |osc-sig-1.png|
-| In order to block the DC component of the signal, enable the AC Coupling feature for the first channel. The signal should now be centered at zero volts. You can also change the memory depth using the dropdown, increasing the number of samples and the sample rate, as shown in the following illustration. If the horizontal trigger position is modified while in memory depth mode, the memory depth will be set to the default version, because the number of samples before the trigger is limited to 8k. |osc-sig-2.png|
-| ===== Oscilloscope Triggering ===== Basic oscilloscope trigger settings are made by clicking on the "Trigger" menu, which appears as shown in the illustration below. For this example, we have configured the oscilloscope to trigger on the rising edge of the Channel 1 input signal at a level of 0 volts. Hysteresis is also provided to improve triggering performance on noisy trigger signals. The hysteresis value is then set for the channel used as a trigger source. |osc-trigger.png|
-| ===== Making Signal Measurements Using Cursors ===== Measurement cursors are available for the timebase and vertical scale, and are accessed by clicking on the "Cursors" control located in the lower right section of the Scopy display. The cursor menu is accessed by clicking on the menu icon next to the "Cursors" label. The cursor menu appears to the right in the Scopy display, and allows each cursor pair to be individually turned on and off. The timebase cursors indicate absolute time relative to the horizontal position control as well as Δt and frequency calculated as 1/Δt. The vertical scale cursors indicate absolute voltage as well as ΔV. Cursors are moved by dragging the up/down arrow controls located at the cursor ends.
+The signal generator is invoked by clicking on the "Signal Generator" name in the instrument menu. The signal generator initializes with both channels turned on and only requires the waveform, amplitude, and frequency to be selected. Click on the Channel 1 menu and set the Waveform for "Sine," Amplitude for 4 Volts, Frequency for 1 kHz and the offset for 2 Volts. When the setup is complete, press "Run" as shown in the following illustration. Entries may be made by entering numbers directly and hitting "Enter" or by clicking on the "+" and "-" controls, and the units can be directly selected under the numbers.\
 
-| The Cursor Readings can be displayed in any corner of the plot, using the Position control from the right side menu. Also, for the transparency of the Readouts can be modified using the corresponding control from the right side menu. The following illustration shows the 4 V 1 KHz signal with the vertical and horizontal cursors on. |osc-cursors-sig.png|
-| ===== Using Built-In Signal Measurement Features ===== Mathematical calculations can be made by Scopy directly on the sampled data, and are accessed by clicking on the "Measure" control located in the lower right section of the Scopy display. The measurement menu is accessed by clicking on the menu icon next to the "Measure" label. The measurement menu appears to the right in the Scopy display, and makes many signal measurements available to the user. The following illustration shows all available signal measurements that can be accessed by switching the "Display All" feature to "on.". Measurements and statistics can be activated using the "Display All" feature, or separately, using the custom dropdown as shown in the following illustration. |osc-measure.png|
-| ===== Working with Math Channels ===== Math channels can be added to the instrument by clicking the plus(+) button located in the bottom menu bar, next to "Channel 2". The opened menu will provide controls for adding Math channels and Reference Channels. If the Math tab is chosen from the panel, the math configuration menu will open and provide controls to insert a math expression for the channels that is about to be added. The expression can be typed directly or edited by using the math pad which contains digits, various math functions, math operations and a drop-down "t" that represents the data from the hardware channels. The next step is to click the "Apply" button that checks if the expression is valid. The line under the expression will turn green for valid expressions and red otherwise. In this example set f(t) = sqrt(t0 \* t0) in order to create a math channel that contains the absolute values of Channel 1. Finally, to add the math channel a click to the "Add channel" is required. The newly added channel will be added in the bottom menu bar and can be deleted any time by clicking the X button next to the channel name. All actions described above can be visualized in the illustration below. |osc-math.png|
-| The expression of a Math channel can be edited after the channel was added to the list. In order to do this, you need to open the Math Channel Settings as shown in the following illustration. In the Math Channel Settings, the expression and a button named "Edit function" are displayed. The "Edit function" button will open a math panel, similar to the one used to add a new math channel. You can modify the function, then click "Save" and all the settings will be updated.\ |osc-math-edit.png|
-| ===== Working with Reference Channels ===== Using the same (+) button, described in the previous section, the Reference tab can be selected. This loads a configuration panel, which allows you to load a previously captured signal from a .csv file. After choosing the file, select which channels should be imported (or use the "Import all" switch) and click "Import selected channels". This will add a new channel in the bottom bar menu. Similar to the Math channels, the Reference channels can be deleted any time by clicking the X button next to the channel name. |osc-ref.png|
-| ===== Working with Mixed Signal View ===== Using the same (+) button, described in the previous section, the Logic tab can be selected. Here there will be some information regarding how the Mixed Signal View will work and the option to enable it. |mixed_signal_1.png| After clicking enable a Logic widget should be added at the bottom. Clicking on the settings here will open a menu similar in usage to the Logic Analyzer. Here digital channels can be enabled / disabled, decoders can be added and so on. The samplerate of the digital and the number of samples to capture is computed from the parameters of the Oscilloscope |mixed_signal_2.png|
-| **Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`
+
+|sig-gen.png|
+
+Setting the Horizontal and Vertical Scales
+------------------------------------------
+
+Open the dual channel oscilloscope by clicking on the "Oscilloscope" name in the instrument menu. The oscilloscope initializes with both channels active so Channel 2 should be turned off in order to view Channel 1 only. Open the channel settings for Channel 1 and disable the Software AC Coupling. Then set the Time Base for 500 μs/Div and the Vertical Scale for 1 V/Div and click "Run" as shown in the following illustration.\
+
+
+|osc-sig-1.png|
+
+In order to block the DC component of the signal, enable the AC Coupling feature for the first channel. The signal should now be centered at zero volts. You can also change the memory depth using the dropdown, increasing the number of samples and the sample rate, as shown in the following illustration. If the horizontal trigger position is modified while in memory depth mode, the memory depth will be set to the default version, because the number of samples before the trigger is limited to 8k.
+
+
+|osc-sig-2.png|
+
+Oscilloscope Triggering
+-----------------------
+
+Basic oscilloscope trigger settings are made by clicking on the "Trigger" menu, which appears as shown in the illustration below. For this example, we have configured the oscilloscope to trigger on the rising edge of the Channel 1 input signal at a level of 0 volts. Hysteresis is also provided to improve triggering performance on noisy trigger signals. The hysteresis value is then set for the channel used as a trigger source.
+
+
+|osc-trigger.png|
+
+Making Signal Measurements Using Cursors
+----------------------------------------
+
+Measurement cursors are available for the timebase and vertical scale, and are accessed by clicking on the "Cursors" control located in the lower right section of the Scopy display. The cursor menu is accessed by clicking on the menu icon next to the "Cursors" label. The cursor menu appears to the right in the Scopy display, and allows each cursor pair to be individually turned on and off. The timebase cursors indicate absolute time relative to the horizontal position control as well as Δt and frequency calculated as 1/Δt. The vertical scale cursors indicate absolute voltage as well as ΔV. Cursors are moved by dragging the up/down arrow controls located at the cursor ends.
+
+The Cursor Readings can be displayed in any corner of the plot, using the Position control from the right side menu. Also, for the transparency of the Readouts can be modified using the corresponding control from the right side menu. The following illustration shows the 4 V 1 KHz signal with the vertical and horizontal cursors on.
+
+
+|osc-cursors-sig.png|
+
+Using Built-In Signal Measurement Features
+------------------------------------------
+
+Mathematical calculations can be made by Scopy directly on the sampled data, and are accessed by clicking on the "Measure" control located in the lower right section of the Scopy display. The measurement menu is accessed by clicking on the menu icon next to the "Measure" label. The measurement menu appears to the right in the Scopy display, and makes many signal measurements available to the user. The following illustration shows all available signal measurements that can be accessed by switching the "Display All" feature to "on.". Measurements and statistics can be activated using the "Display All" feature, or separately, using the custom dropdown as shown in the following illustration.
+
+
+|osc-measure.png|
+
+Working with Math Channels
+--------------------------
+
+Math channels can be added to the instrument by clicking the plus(+) button located in the bottom menu bar, next to "Channel 2". The opened menu will provide controls for adding Math channels and Reference Channels. If the Math tab is chosen from the panel, the math configuration menu will open and provide controls to insert a math expression for the channels that is about to be added. The expression can be typed directly or edited by using the math pad which contains digits, various math functions, math operations and a drop-down "t" that represents the data from the hardware channels. The next step is to click the "Apply" button that checks if the expression is valid. The line under the expression will turn green for valid expressions and red otherwise. In this example set f(t) = sqrt(t0 \* t0) in order to create a math channel that contains the absolute values of Channel 1. Finally, to add the math channel a click to the "Add channel" is required. The newly added channel will be added in the bottom menu bar and can be deleted any time by clicking the X button next to the channel name. All actions described above can be visualized in the illustration below.
+
+
+|osc-math.png|
+
+The expression of a Math channel can be edited after the channel was added to the list. In order to do this, you need to open the Math Channel Settings as shown in the following illustration. In the Math Channel Settings, the expression and a button named "Edit function" are displayed. The "Edit function" button will open a math panel, similar to the one used to add a new math channel. You can modify the function, then click "Save" and all the settings will be updated.\
+
+
+|osc-math-edit.png|
+
+Working with Reference Channels
+-------------------------------
+
+Using the same (+) button, described in the previous section, the Reference tab can be selected. This loads a configuration panel, which allows you to load a previously captured signal from a .csv file. After choosing the file, select which channels should be imported (or use the "Import all" switch) and click "Import selected channels". This will add a new channel in the bottom bar menu. Similar to the Math channels, the Reference channels can be deleted any time by clicking the X button next to the channel name.
+
+
+|osc-ref.png|
+
+Working with Mixed Signal View
+------------------------------
+
+Using the same (+) button, described in the previous section, the Logic tab can be selected. Here there will be some information regarding how the Mixed Signal View will work and the option to enable it. |mixed_signal_1.png| After clicking enable a Logic widget should be added at the bottom. Clicking on the settings here will open a menu similar in usage to the Logic Analyzer. Here digital channels can be enabled / disabled, decoders can be added and so on. The samplerate of the digital and the number of samples to capture is computed from the parameters of the Oscilloscope
+
+
+|mixed_signal_2.png|
+
+**Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`
 
 .. |Scopy Right Panel Settings| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy_right_panel_settings.png
    :width: 40px

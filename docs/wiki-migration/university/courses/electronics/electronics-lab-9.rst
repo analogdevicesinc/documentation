@@ -12,12 +12,7 @@ The zero gain amplifier (Q\ :sub:`1`, R\ :sub:`2`) and stabilized current source
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| 1 - 2.2KΩ Resistor ( or any similar value )
-| 1 - 100Ω resistor
-| 2 - small signal NPN transistors (2N3904 or SSM2212)
-| 2 - small signal PNP transistors (2N3906 or SSM2220)
+ADALM2000 Active Learning Module Solder-less breadboard 1 - 2.2KΩ Resistor ( or any similar value ) 1 - 100Ω resistor 2 - small signal NPN transistors (2N3904 or SSM2212) 2 - small signal PNP transistors (2N3906 or SSM2220)
 
 Directions:
 -----------
@@ -63,25 +58,15 @@ Plot the output voltage (as measured at the collector of Q\ :sub:`4`) vs. the in
 Version 2:
 ==========
 
-.. _objective-1:
-
 Objective:
 ----------
 
 The problem with the circuit in regulator version 1 is that the current available to an output load is limited by the feedback current supplied from NPN Q\ :sub:`2` mirrored through PNPs Q\ :sub:`3` and Q\ :sub:`4`. It would be desirable to build a circuit which provides a constant or regulated output voltage over not only a range of input voltages but also output load currents. This second circuit utilizes an emitter follower output stage to provide the current to the output.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| 1 - 2.2KΩ Resistor
-| 1 - 100Ω resistor
-| 1 - 10KΩ variable resistor (potentiometer)
-| 1 - 4.7KΩ resistor (resistors can any similar value selected for desired circuit operation)
-| 4 - small signal NPN transistors (2N3904 and SSM2212)
-
-.. _directions-1:
+1 - 2.2KΩ Resistor 1 - 100Ω resistor 1 - 10KΩ variable resistor (potentiometer) 1 - 4.7KΩ resistor (resistors can any similar value selected for desired circuit operation) 4 - small signal NPN transistors (2N3904 and SSM2212)
 
 Directions:
 -----------
@@ -97,8 +82,6 @@ The breadboard connections are as shown in the diagram below. As before transist
    Figure 4 Regulator Version 2
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
@@ -110,8 +93,6 @@ Hardware Setup:
 
 
 Waveform generator W1 should be configured for a 1 KHz triangle wave with 4 volt amplitude peak-to-peak and 2V offset. Scope channel 2 (2+) is used to measure the stabilized output voltage at the emitter of Q\ :sub:`4`.
-
-.. _procedure-1:
 
 Procedure:
 ----------

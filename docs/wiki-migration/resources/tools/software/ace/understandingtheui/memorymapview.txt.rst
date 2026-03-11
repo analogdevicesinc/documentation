@@ -33,14 +33,29 @@ When the value of a register or bit field is changed so that the value in the so
 
 The colors of the bits indicate the access type of the bit:
 
-| |WriteReadBit.png|
-| A bit with a “Write Read” access type which can be written to and read from where the software value matches the expected hardware value.
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/WriteReadBit.png
+   :alt: WriteReadBit.png
+   :align: left
+   :width: 30px
+   :height: 30px
 
-| |ReadOnlyBit.png|
-| A bit with a “Read Only” access type which can only be read from.
+A bit with a “Write Read” access type which can be written to and read from where the software value matches the expected hardware value.
 
-| |NABit.png|
-| A bit which does not exist in the bit field.
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ReadOnlyBit.png
+   :alt: ReadOnlyBit.png
+   :align: left
+   :width: 30px
+   :height: 30px
+
+A bit with a “Read Only” access type which can only be read from.
+
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/NABit.png
+   :alt: NABit.png
+   :align: left
+   :width: 30px
+   :height: 30px
+
+A bit which does not exist in the bit field.
 
 Configuration
 ~~~~~~~~~~~~~
@@ -89,12 +104,3 @@ Duplicating Pages across a Page Group
 The copy button under each page group in the page selector group allows values to be copied from one page in a page group to others in the same group. To perform this select the page you want to copy the value from in the drop down menu and then check the boxes of the pages you want to copy the values to. Clicking the copy button will perform the change while clicking close or outside of the copy pop-up will close the pop-up without performing the copy.
 
 .. |Memory Map View – Registers Visible| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/MemoryMap.png
-.. |WriteReadBit.png| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/WriteReadBit.png
-   :width: 30px
-   :height: 30px
-.. |ReadOnlyBit.png| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ReadOnlyBit.png
-   :width: 30px
-   :height: 30px
-.. |NABit.png| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/NABit.png
-   :width: 30px
-   :height: 30px

@@ -145,21 +145,24 @@ Reference Design Table
 |                                                |            |          | Gate Drive Winding |            |            |                                                                                                                                                                               |
 +------------------------------------------------+------------+----------+--------------------+------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-| \* DC-DC Efficiency is measured from the input of the DC-DC converter to its output; this measurement does not include bridge or PD losses
-| =====DC-DC Converter Features===== **Isolation**
-| IEEE 802.3 requires isolation between the Ethernet cable and all accessible non-Ethernet conductors. As most systems have a conductive chassis or external non-Ethernet connections, this requirement is met with an isolated converter. If the system has no external non-Ethernet connections and uses a non-conductive enclosure, then a **non-isolated** converter may be used. Unless otherwise noted, all solutions are isolated.
-| **No-Opto Feedback**
-| Early isolated converters used opto-couplers to relay output information across the isolation barrier. Instead of using an opto-coupler, an isolated converter may support **no-opto** feedback. Flyback converters may use a third winding, and forward converters may use a coupled inductor. Unless otherwise noted, all isolated solutions use opto-coupler feedback.
-| **Integration**
-| ADI offers various levels of integration. Many solutions include an **integrated PD** controller for a single IC solution, as indicated by the **Integrated PD** column. The MAX5986A is a **monolithic** buck controller that includes power switches into the package. The LTM8027 **µModule** includes the switching controller, power switches, inductor and all support components into a single package.
-| **Synchronous Rectification**
-| Flyback and forward converters both have secondary rectifiers. **Non-synchronous** converters use diodes, while **synchronous** converters replace the diodes with MOSFETs for improved efficiency. ADI’s synchronous designs include options with dedicated secondary gate driver (precise control) and self-driven gate drive (reduced BOM). For self-driven synchronous designs, a dedicated **gate drive winding** can further simplify the BOM.
-| **Multiple Outputs**
-| Isolated converters can support **multiple outputs** from a single converter by using multiple transformer windings, simplifying the design and potentially increasing overall efficiency. Unless otherwise noted, all designs are single output.
-| **Wide Input Range**
-| IEEE 802.3 defines a 37V to 57V input voltage range, but some applications must support auxiliary inputs as low as 9V. This **wide input range** requires the right controller and modifications to the power stage. Unless otherwise noted, all solutions target 37V to 57V input only.
-| **Dual-Phase**
-| For higher powers and high output voltages, **dual-phase** operation allows for compact solutions with lower output ripple.
+- DC-DC Efficiency is measured from the input of the DC-DC converter to its output; this measurement does not include bridge or PD losses
+
+DC-DC Converter Features
+========================
+
+**Isolation** IEEE 802.3 requires isolation between the Ethernet cable and all accessible non-Ethernet conductors. As most systems have a conductive chassis or external non-Ethernet connections, this requirement is met with an isolated converter. If the system has no external non-Ethernet connections and uses a non-conductive enclosure, then a **non-isolated** converter may be used. Unless otherwise noted, all solutions are isolated.
+
+**No-Opto Feedback** Early isolated converters used opto-couplers to relay output information across the isolation barrier. Instead of using an opto-coupler, an isolated converter may support **no-opto** feedback. Flyback converters may use a third winding, and forward converters may use a coupled inductor. Unless otherwise noted, all isolated solutions use opto-coupler feedback.
+
+**Integration** ADI offers various levels of integration. Many solutions include an **integrated PD** controller for a single IC solution, as indicated by the **Integrated PD** column. The MAX5986A is a **monolithic** buck controller that includes power switches into the package. The LTM8027 **µModule** includes the switching controller, power switches, inductor and all support components into a single package.
+
+**Synchronous Rectification** Flyback and forward converters both have secondary rectifiers. **Non-synchronous** converters use diodes, while **synchronous** converters replace the diodes with MOSFETs for improved efficiency. ADI’s synchronous designs include options with dedicated secondary gate driver (precise control) and self-driven gate drive (reduced BOM). For self-driven synchronous designs, a dedicated **gate drive winding** can further simplify the BOM.
+
+**Multiple Outputs** Isolated converters can support **multiple outputs** from a single converter by using multiple transformer windings, simplifying the design and potentially increasing overall efficiency. Unless otherwise noted, all designs are single output.
+
+**Wide Input Range** IEEE 802.3 defines a 37V to 57V input voltage range, but some applications must support auxiliary inputs as low as 9V. This **wide input range** requires the right controller and modifications to the power stage. Unless otherwise noted, all solutions target 37V to 57V input only.
+
+| **Dual-Phase** For higher powers and high output voltages, **dual-phase** operation allows for compact solutions with lower output ripple.
 
 DC-DC Topology Recommendations
 ==============================
@@ -182,87 +185,102 @@ DC-DC Topology Recommendations
 Standalone PoE DC-DC Controllers
 ================================
 
-| **DC-DC Controllers** provide a regulated and optionally isolated supply for powering downstream circuitry. Standalone DC-DC controllers are paired with PD interface controllers for a Powered Device solution. ADI offers many solutions that cover a wide range of input voltages, output powers, and topologies. Featured below, the MAX5974 controller family feature-set is well-suited for PoE applications.
-| |image2|
-| **Recommended Standalone PoE DC-DC Controllers**
-| ^ DC-DC
-| Controller ^ Recommended
-| Topology ^ Input
-| Range ^ Feedback ^
+**DC-DC Controllers** provide a regulated and optionally isolated supply for powering downstream circuitry. Standalone DC-DC controllers are paired with PD interface controllers for a Powered Device solution. ADI offers many solutions that cover a wide range of input voltages, output powers, and topologies. Featured below, the MAX5974 controller family feature-set is well-suited for PoE applications.
 
-======== ======= ========= =======
-MAX5974A Flyback 20V - 57V No-Opto
-MAX5974B Flyback 10V - 57V No-Opto
-MAX5974C Forward 20V - 57V Opto
-MAX5974D Forward 10V - 57V Opto
-======== ======= ========= =======
+.. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_dc-dc_only_image.png
+   :width: 500px
+
+**Recommended Standalone PoE DC-DC Controllers**
+
+========== =========== ========= ========
+DC-DC      Recommended Input     Feedback
+Controller Topology    Range     
+========== =========== ========= ========
+MAX5974A   Flyback     20V - 57V No-Opto
+MAX5974B   Flyback     10V - 57V No-Opto
+MAX5974C   Forward     20V - 57V Opto
+MAX5974D   Forward     10V - 57V Opto
+========== =========== ========= ========
 
 PoE PD Controllers
 ==================
 
-| **PD Controllers** receive power from the cable by presenting IEEE 802.3af/at/bt-compliant Detection and Classification signatures to a compliant PSE. Once powered, the PD inrushes and enables the downstream circuitry such as DC-DC controllers. ADI provides solutions for IEEE 802.3af/at/bt/LTPoE++ standards and power levels.
-| |image3|
-| **Recommended PD Controllers**
-| ^ PD
-| Controller ^ Standard ^ Max PD
-| Power ^ PD Features ^ Integrated
-| Hotswap FET ^ Power Path
-| Resistance ^
+**PD Controllers** receive power from the cable by presenting IEEE 802.3af/at/bt-compliant Detection and Classification signatures to a compliant PSE. Once powered, the PD inrushes and enables the downstream circuitry such as DC-DC controllers. ADI provides solutions for IEEE 802.3af/at/bt/LTPoE++ standards and power levels.
 
-======== ============ ===== ==================== === =====
-MAX5969  IEEE 802.3af 25.5W Compact Solution     Yes 500mΩ
-         IEEE 802.3at                                
-MAX5995B IEEE 802.3af 71.3W Ultra-Low Power      Yes 100mΩ
-         IEEE 802.3at       and Sleep Modes          
-         IEEE 802.3bt                                
-MAX5996C IEEE 802.3af 71.3W Telemetry            Yes 100mΩ
-         IEEE 802.3at       Power Combination        
-         IEEE 802.3bt                                
-LTC9105  IEEE 802.3af 71.3W Telemetry                80mΩ
-         IEEE 802.3at       I2C Interface            
-         IEEE 802.3bt       Input Prioritization     
-LT4294   IEEE 802.3af 71.3W Compact Solution         30mΩ
-         IEEE 802.3at                                
-         IEEE 802.3bt                                
-LT4293   IEEE 802.3af ≥90W  Supports Custom          30mΩ
-         IEEE 802.3at       High Power Solutions     
-         IEEE 802.3bt                                
-         LTPoE++                                     
-======== ============ ===== ==================== === =====
+.. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_only_image.png
+   :width: 500px
+
+**Recommended PD Controllers**
+
++------------+--------------+--------+----------------------+-------------+------------+
+| PD         | Standard     | Max PD | PD Features          | Integrated  | Power Path |
+| Controller |              | Power  |                      | Hotswap FET | Resistance |
++============+==============+========+======================+=============+============+
+| MAX5969    | IEEE 802.3af | 25.5W  | Compact Solution     | Yes         | 500mΩ      |
+|            | IEEE 802.3at |        |                      |             |            |
++------------+--------------+--------+----------------------+-------------+------------+
+| MAX5995B   | IEEE 802.3af | 71.3W  | Ultra-Low Power      | Yes         | 100mΩ      |
+|            | IEEE 802.3at |        | and Sleep Modes      |             |            |
+|            | IEEE 802.3bt |        |                      |             |            |
++------------+--------------+--------+----------------------+-------------+------------+
+| MAX5996C   | IEEE 802.3af | 71.3W  | Telemetry            | Yes         | 100mΩ      |
+|            | IEEE 802.3at |        | Power Combination    |             |            |
+|            | IEEE 802.3bt |        |                      |             |            |
++------------+--------------+--------+----------------------+-------------+------------+
+| LTC9105    | IEEE 802.3af | 71.3W  | Telemetry            |             | 80mΩ       |
+|            | IEEE 802.3at |        | I2C Interface        |             |            |
+|            | IEEE 802.3bt |        | Input Prioritization |             |            |
++------------+--------------+--------+----------------------+-------------+------------+
+| LT4294     | IEEE 802.3af | 71.3W  | Compact Solution     |             | 30mΩ       |
+|            | IEEE 802.3at |        |                      |             |            |
+|            | IEEE 802.3bt |        |                      |             |            |
++------------+--------------+--------+----------------------+-------------+------------+
+| LT4293     | IEEE 802.3af | ≥90W   | Supports Custom      |             | 30mΩ       |
+|            | IEEE 802.3at |        | High Power Solutions |             |            |
+|            | IEEE 802.3bt |        |                      |             |            |
+|            | LTPoE++      |        |                      |             |            |
++------------+--------------+--------+----------------------+-------------+------------+
 
 PoE PD + DC-DC Controllers
 ==========================
 
-| **PD + DC-DC Controllers** combine the PD interface controller and DC-DC controller into an integrated solution. ADI provides solutions for IEEE 802.3af/at/bt/LTPoE++ standards, as well as a wide range of input voltages, output powers, and topologies.
-| |image4|
-| **Recommended PD + DC-DC Controllers**
-| ^ PD + DC-DC
-| Controller ^ Standard ^ Max PD
-| Power ^ Topology ^ DC-DC
-| Input Range ^ Integrated
-| PD ^ Integrated
-| Hotswap FET ^ Power Path
-| Resistance ^
+**PD + DC-DC Controllers** combine the PD interface controller and DC-DC controller into an integrated solution. ADI provides solutions for IEEE 802.3af/at/bt/LTPoE++ standards, as well as a wide range of input voltages, output powers, and topologies.
 
-========= ============ ===== ======= ========= === === ======
-MAX5986   IEEE 802.3af 6.49W Buck    10V - 57V Yes Yes 1000mΩ
-LTC4267   IEEE 802.3af 13W   Flyback 37V - 57V Yes Yes 1000mΩ
-LTC4269-1 IEEE 802.3af 25.5W Flyback 18V - 57V Yes Yes 700mΩ
-          IEEE 802.3at                                 
-LT4295    IEEE 802.3af 71.3W Flyback 9V - 57V  Yes     30mΩ
-          IEEE 802.3at       Forward                   
-          IEEE 802.3bt                                 
-LT4276A   IEEE 802.3af ≥90W  Flyback 9V - 57V  Yes     30mΩ
-          IEEE 802.3at       Forward                   
-          LTPoE++                                      
-========= ============ ===== ======= ========= === === ======
+.. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_dc-dc_image.png
+   :width: 500px
+
+**Recommended PD + DC-DC Controllers**
+
++------------+--------------+--------+----------+-------------+------------+-------------+------------+
+| PD + DC-DC | Standard     | Max PD | Topology | DC-DC       | Integrated | Integrated  | Power Path |
+| Controller |              | Power  |          | Input Range | PD         | Hotswap FET | Resistance |
++============+==============+========+==========+=============+============+=============+============+
+| MAX5986    | IEEE 802.3af | 6.49W  | Buck     | 10V - 57V   | Yes        | Yes         | 1000mΩ     |
++------------+--------------+--------+----------+-------------+------------+-------------+------------+
+| LTC4267    | IEEE 802.3af | 13W    | Flyback  | 37V - 57V   | Yes        | Yes         | 1000mΩ     |
++------------+--------------+--------+----------+-------------+------------+-------------+------------+
+| LTC4269-1  | IEEE 802.3af | 25.5W  | Flyback  | 18V - 57V   | Yes        | Yes         | 700mΩ      |
+|            | IEEE 802.3at |        |          |             |            |             |            |
++------------+--------------+--------+----------+-------------+------------+-------------+------------+
+| LT4295     | IEEE 802.3af | 71.3W  | Flyback  | 9V - 57V    | Yes        |             | 30mΩ       |
+|            | IEEE 802.3at |        | Forward  |             |            |             |            |
+|            | IEEE 802.3bt |        |          |             |            |             |            |
++------------+--------------+--------+----------+-------------+------------+-------------+------------+
+| LT4276A    | IEEE 802.3af | ≥90W   | Flyback  | 9V - 57V    | Yes        |             | 30mΩ       |
+|            | IEEE 802.3at |        | Forward  |             |            |             |            |
+|            | LTPoE++      |        |          |             |            |             |            |
++------------+--------------+--------+----------+-------------+------------+-------------+------------+
 
 PoE Ideal Diode Bridge Controllers
 ==================================
 
-| **Input Diode Bridges** polarity correct and OR the Ethernet cable voltages as required at the PD input. This is typically done with silicon or Schottky diode bridges which exhibit low efficiency. Ideal diode bridges replace diodes with MOSFETs for near zero losses. However, discrete implementations are leaky and have high component counts. LT4321-based ideal diode bridges eliminate more than 50 components and reduce solution size by 80% as compared to discrete ideal bridges. Auxiliary supply ORing diodes or AC to DC bridges may be replaced by the LT4320 for similar benefits.
-| |image5|
-| |image6|
+**Input Diode Bridges** polarity correct and OR the Ethernet cable voltages as required at the PD input. This is typically done with silicon or Schottky diode bridges which exhibit low efficiency. Ideal diode bridges replace diodes with MOSFETs for near zero losses. However, discrete implementations are leaky and have high component counts. LT4321-based ideal diode bridges eliminate more than 50 components and reduce solution size by 80% as compared to discrete ideal bridges. Auxiliary supply ORing diodes or AC to DC bridges may be replaced by the LT4320 for similar benefits.
+
+.. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_image.png
+   :width: 500px
+
+.. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_power.png
+   :width: 500px
 
 .. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_comp_image.png
    :width: 500px
@@ -274,17 +292,7 @@ Notes
 
 By using the evaluation board discussed herein (together with any tools, components documentation or support materials, the “Evaluation Board”), you are agreeing to be bound by the terms and conditions set forth below (“Agreement”) unless you have purchased the Evaluation Board, in which case the Analog Devices Standard Terms and Conditions of Sale shall govern. Do not use the Evaluation Board until you have read and agreed to the Agreement. Your use of the Evaluation Board shall signify your acceptance of the Agreement. This Agreement is made by and between you (“Customer”) and Analog Devices, Inc. (“ADI”), with its principal place of business at One Technology Way, Norwood, MA 02062, USA. Subject to the terms and conditions of the Agreement, ADI hereby grants to Customer a free, limited, personal, temporary, non-exclusive, non-sublicensable, non-transferable license to use the Evaluation Board FOR EVALUATION PURPOSES ONLY. Customer understands and agrees that the Evaluation Board is provided for the sole and exclusive purpose referenced above, and agrees not to use the Evaluation Board for any other purpose. Furthermore, the license granted is expressly made subject to the following additional limitations: Customer shall not (i) rent, lease, display, sell, transfer, assign, sublicense, or distribute the Evaluation Board; and (ii) permit any Third Party to access the Evaluation Board. As used herein, the term “Third Party” includes any entity other than ADI, Customer, their employees, affiliates and in-house consultants. The Evaluation Board is NOT sold to Customer; all rights not expressly granted herein, including ownership of the Evaluation Board, are reserved by ADI. CONFIDENTIALITY. This Agreement and the Evaluation Board shall all be considered the confidential and proprietary information of ADI. Customer may not disclose or transfer any portion of the Evaluation Board to any other party for any reason. Upon discontinuation of use of the Evaluation Board or termination of this Agreement, Customer agrees to promptly return the Evaluation Board to ADI. ADDITIONAL RESTRICTIONS. Customer may not disassemble, decompile or reverse engineer chips on the Evaluation Board. Customer shall inform ADI of any occurred damages or any modifications or alterations it makes to the Evaluation Board, including but not limited to soldering or any other activity that affects the material content of the Evaluation Board. Modifications to the Evaluation Board must comply with applicable law, including but not limited to the RoHS Directive. TERMINATION. ADI may terminate this Agreement at any time upon giving written notice to Customer. Customer agrees to return to ADI the Evaluation Board at that time. LIMITATION OF LIABILITY. THE EVALUATION BOARD PROVIDED HEREUNDER IS PROVIDED “AS IS” AND ADI MAKES NO WARRANTIES OR REPRESENTATIONS OF ANY KIND WITH RESPECT TO IT. ADI SPECIFICALLY DISCLAIMS ANY REPRESENTATIONS, ENDORSEMENTS, GUARANTEES, OR WARRANTIES, EXPRESS OR IMPLIED, RELATED TO THE EVALUATION BOARD INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS. IN NO EVENT WILL ADI AND ITS LICENSORS BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES RESULTING FROM CUSTOMER’S POSSESSION OR USE OF THE EVALUATION BOARD, INCLUDING BUT NOT LIMITED TO LOST PROFITS, DELAY COSTS, LABOR COSTS OR LOSS OF GOODWILL. ADI’S TOTAL LIABILITY FROM ANY AND ALL CAUSES SHALL BE LIMITED TO THE AMOUNT OF ONE HUNDRED US DOLLARS ($100.00). EXPORT. Customer agrees that it will not directly or indirectly export the Evaluation Board to another country, and that it will comply with all applicable United States federal laws and regulations relating to exports. GOVERNING LAW. This Agreement shall be governed by and construed in accordance with the substantive laws of the Commonwealth of Massachusetts (excluding conflict of law rules). Any legal action regarding this Agreement will be heard in the state or federal courts having jurisdiction in Suffolk County, Massachusetts, and Customer hereby submits to the personal jurisdiction and venue of such courts. The United Nations Convention on Contracts for the International Sale of Goods shall not apply to this Agreement and is expressly disclaimed.
 
-©2025 Analog Devices, Inc. All rights reserved. Trademarks and  registered trademarks are the property of their respective owners.
+©2025 Analog Devices, Inc. All rights reserved. Trademarks and registered trademarks are the property of their respective owners.
 
 .. |image1| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_diagram.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_dc-dc_only_image.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_only_image.png
-   :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_dc-dc_image.png
-   :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_image.png
-   :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_power.png
-   :width: 500px

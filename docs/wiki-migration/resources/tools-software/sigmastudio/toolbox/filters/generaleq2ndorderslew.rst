@@ -1,16 +1,22 @@
 General Eq (2nd order) Slew -(ADAU145x)
 =======================================
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| |image1|
-| The General (2nd-Order) filter is a variant of a second order bi quad filter which enables smooth transition of the filter parameters when filter parameters are changed, this is done by slewing from the current filter parameters(coefficients) to the one being set. The slewing takes place approximately in the time set by the user in the GUI. The slew time can be entered in the GUI slew Text box, or open the filter control window by clicking on the icon button and enter the slew time in the slew text box or by using the slew slider. The slew time range is limited between (0 to 1 second).
-| :math:`Slew function:`
-| :math:`\lambda= e^{-1/{timeconstant \times F_s}}`
-| :math:`Current Coefficient= Current Coffcicient \times \lambda + Target Coefficient \times (1-\lambda)`
-| The above slewing function implements RC slewing. The parameter :math:`\lambda` is calculated based on the slewing time constant. The computations for slewing of filter coefficients is done on the DSP. The slew computation is always performed in single precision.
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
-| **To open the filter control window, click on the icon button:** Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
-| |image2|
+|image1| The General (2nd-Order) filter is a variant of a second order bi quad filter which enables smooth transition of the filter parameters when filter parameters are changed, this is done by slewing from the current filter parameters(coefficients) to the one being set. The slewing takes place approximately in the time set by the user in the GUI. The slew time can be entered in the GUI slew Text box, or open the filter control window by clicking on the icon button and enter the slew time in the slew text box or by using the slew slider. The slew time range is limited between (0 to 1 second).
+
+:math:`Slew function:`
+
+:math:`\lambda= e^{-1/{timeconstant \times F_s}}`
+
+:math:`Current Coefficient= Current Coffcicient \times \lambda + Target Coefficient \times (1-\lambda)`
+
+The above slewing function implements RC slewing. The parameter :math:`\lambda` is calculated based on the slewing time constant. The computations for slewing of filter coefficients is done on the DSP. The slew computation is always performed in single precision.
+
+**To open the filter control window, click on the icon button:** Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+
+.. image:: https://wiki.analog.com/_media/{{/resources/tools-software/sigmastudio/toolbox/filters/generaleqslew2-form.png
+   :width: 300px
 
 Configuration
 =============
@@ -88,7 +94,6 @@ General
 | Q                | 1.41            | 0-16                                 | Q Factor for filter calculations   |
 +------------------+-----------------+--------------------------------------+------------------------------------+
 
---------------
 
 Butterworth/Bessel
 ------------------
@@ -106,7 +111,6 @@ Butterworth/Bessel
 | Gain             | 0dB             | -15 - 15 dB                                                                 | dB gain of the filter coefficients |
 +------------------+-----------------+-----------------------------------------------------------------------------+------------------------------------+
 
---------------
 
 Tone Control
 ------------
@@ -126,7 +130,6 @@ Tone Control
 | Bass Gain        | 0dB           | -15 - 15 dB | Bass dB gain of the filter coefficients   |
 +------------------+---------------+-------------+-------------------------------------------+
 
---------------
 
 IIR Coefficient
 ---------------
@@ -166,7 +169,6 @@ First Order Filters
 | Q                | 1.41                                        | 0-16              | Q Factor for filter calculations       |
 +------------------+---------------------------------------------+-------------------+----------------------------------------+
 
---------------
 
 All Pass,Peaking,Notch
 ----------------------
@@ -184,7 +186,6 @@ All Pass,Peaking,Notch
 | Q                | 1.41          | 0-16        | Q Factor for filter calculations   |
 +------------------+---------------+-------------+------------------------------------+
 
---------------
 
 Chebyshev
 ---------
@@ -202,44 +203,40 @@ Chebyshev
 | Ripple           | 0.1           | 0-10        | Ripple Factor for filter calculations |
 +------------------+---------------+-------------+---------------------------------------+
 
---------------
 
-| 
-| ===== DSP Parameter Information =====
+DSP Parameter Information
+=========================
 
-+------------------+-----------------------------------------------------------------------------------------------------+--------------------------------------------+
-| GUI Control Name | Compiler Name                                                                                       | Function Description                       |
-+==================+=====================================================================================================+============================================+
-| Targ_B2\_        | <fc #008000>EQS300MultiSpSlewAlg</fc><fc #ff0000>1</fc><fc #000080>Targ_B2\_</fc><fc #800000>1</fc> | Bi-quad filter coefficient B2 for filter 1 |
-+------------------+-----------------------------------------------------------------------------------------------------+--------------------------------------------+
-| Targ_B1\_        | <fc #008000>EQS300MultiSpSlewAlg</fc><fc #ff0000>1</fc><fc #000080>Targ_B1\_</fc><fc #800000>1</fc> | Bi-quad filter coefficient B1 for filter 1 |
-+------------------+-----------------------------------------------------------------------------------------------------+--------------------------------------------+
-| Targ_B0\_        | <fc #008000>EQS300MultiSpSlewAlg</fc><fc #ff0000>1</fc><fc #000080>Targ_B0\_</fc><fc #800000>1</fc> | Bi-quad filter coefficient B0 for filter 1 |
-+------------------+-----------------------------------------------------------------------------------------------------+--------------------------------------------+
-| Targ_A2\_        | <fc #008000>EQS300MultiSpSlewAlg</fc><fc #ff0000>1</fc><fc #000080>Targ_A2\_</fc><fc #800000>1</fc> | Bi-quad filter coefficient A2 for filter 1 |
-+------------------+-----------------------------------------------------------------------------------------------------+--------------------------------------------+
-| Targ_A1\_        | <fc #008000>EQS300MultiSpSlewAlg</fc><fc #ff0000>1</fc><fc #000080>Targ_A1\_</fc><fc #800000>1</fc> | Bi-quad filter coefficient A1 for filter 1 |
-+------------------+-----------------------------------------------------------------------------------------------------+--------------------------------------------+
-| lambda\_         | <fc #008000>EQS300MultiSpSlewAlg</fc><fc #ff0000>1</fc><fc #000080>lambda\_</fc><fc #800000>1</fc>  | Bi-quad Slewing parameter lambda           |
-+------------------+-----------------------------------------------------------------------------------------------------+--------------------------------------------+
++------------------+--------------------------------+--------------------------------------------+
+| GUI Control Name | Compiler Name                  | Function Description                       |
++==================+================================+============================================+
+| Targ_B2\_        | EQS300MultiSpSlewAlg1Targ_B2_1 | Bi-quad filter coefficient B2 for filter 1 |
++------------------+--------------------------------+--------------------------------------------+
+| Targ_B1\_        | EQS300MultiSpSlewAlg1Targ_B1_1 | Bi-quad filter coefficient B1 for filter 1 |
++------------------+--------------------------------+--------------------------------------------+
+| Targ_B0\_        | EQS300MultiSpSlewAlg1Targ_B0_1 | Bi-quad filter coefficient B0 for filter 1 |
++------------------+--------------------------------+--------------------------------------------+
+| Targ_A2\_        | EQS300MultiSpSlewAlg1Targ_A2_1 | Bi-quad filter coefficient A2 for filter 1 |
++------------------+--------------------------------+--------------------------------------------+
+| Targ_A1\_        | EQS300MultiSpSlewAlg1Targ_A1_1 | Bi-quad filter coefficient A1 for filter 1 |
++------------------+--------------------------------+--------------------------------------------+
+| lambda\_         | EQS300MultiSpSlewAlg1lambda_1  | Bi-quad Slewing parameter lambda           |
++------------------+--------------------------------+--------------------------------------------+
 
 | 
 | Here,
 
--  <fc #008000> Green</fc> - Algorithm Name
--  <fc #ff0000> Red</fc> - Instance Number (Changes for each instance)
--  <fc #000080> Blue</fc> - Parameter Name
--  <fc #800000> Brown</fc> - Stage number
+-   Green - Algorithm Name
+-   Red - Instance Number (Changes for each instance)
+-   Blue - Parameter Name
+-   Brown - Stage number
 
 Supported ICs
 -------------
 
 -  ADAU145x
 
-| 
-| **NOTE: Due to fixed point operations, the filter coefficients do not slew exactly in the set slew time.**
+**NOTE: Due to fixed point operations, the filter coefficients do not slew exactly in the set slew time.**
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/generaleqslew1.png
    :width: 100px
-.. |image2| image:: https://wiki.analog.com/_media/{{/resources/tools-software/sigmastudio/toolbox/filters/generaleqslew2-form.png
-   :width: 300px

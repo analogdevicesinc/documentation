@@ -7,5 +7,5 @@ Because ADI boards are custom built evaluation kits destined for professionals (
 
 If you choose to use your board to transmit using an antenna, it is your responsibility to make sure that you are in compliance with all laws for the country, frequency, and power levels in which the device is used. Additionally, some countries regulate reception in certain frequency bands. Again, it is the responsibility of the user to maintain compliance with all local laws and regulations.
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS11-EBZ
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/navigation AD-FMCOMMS11-EBZ
    :alt: #Configuration options#.:\|Hardware#none#

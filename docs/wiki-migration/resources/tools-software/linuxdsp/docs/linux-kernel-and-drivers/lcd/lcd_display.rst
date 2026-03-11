@@ -6,7 +6,7 @@ Introduction
 
 This section describes the steps required to build and use LCD device driver on Linux using an ADSP-SC58x board and a WVGA/LCD EI3 extender board.
 
-WVGA/LCD EI3 Extender LCD board is not supported on the ADSP-SC573 EZ-KIT due to some board level hardawre confilict, the SC573 processor itself is capable of doing this. 
+WVGA/LCD EI3 Extender LCD board is not supported on the ADSP-SC573 EZ-KIT due to some board level hardawre confilict, the SC573 processor itself is capable of doing this.
 
 Hardware Setup
 --------------
@@ -74,16 +74,16 @@ Enable LCD Back-light
 
 ::
 
-   # cat /sys/kernel/debug/gpio 
+   # cat /sys/kernel/debug/gpio
    mcp230xx 0-0022: restoring reg 0x00 from 0x0000 to 0xffff (power-loss?)
    mcp230xx 0-0021: restoring reg 0x00 from 0x0000 to 0xffff (power-loss?)
    gpiochip0: GPIOs 0-15, adi-gpio:
    gpiochip1: GPIOs 16-31, adi-gpio:
-    gpio-30  (                    |mdio-reset          ) out hi    
+    gpio-30  (                    |mdio-reset          ) out hi
    gpiochip2: GPIOs 32-47, adi-gpio:
-    gpio-32  (                    |spi0.32             ) out hi    
-    gpio-39  (                    |spi0.39             ) out hi    
-    gpio-44  (                    |spi0.44             ) out hi    
+    gpio-32  (                    |spi0.32             ) out hi
+    gpio-39  (                    |spi0.39             ) out hi
+    gpio-44  (                    |spi0.44             ) out hi
    gpiochip3: GPIOs 48-63, adi-gpio:
    gpiochip4: GPIOs 64-79, adi-gpio:
    gpiochip5: GPIOs 80-95, adi-gpio:
@@ -91,8 +91,8 @@ Enable LCD Back-light
    gpiochip9: GPIOs 479-479, parent: spi/spi0.32, AD7879-GPIO, can sleep:
    gpiochip8: GPIOs 480-495, parent: i2c/0-0022, mcp23017, can sleep:
    gpiochip7: GPIOs 496-511, parent: i2c/0-0021, mcp23017, can sleep:
-   # echo 479 > /sys/class/gpio/export 
-   # echo high > /sys/class/gpio/gpio479/direction 
+   # echo 479 > /sys/class/gpio/export
+   # echo high > /sys/class/gpio/gpio479/direction
 
 Make sure your LCD screen becomes white at this point.
 
@@ -124,7 +124,7 @@ Select these drivers as modules:
 
 ::
 
-   <M>   Analog Devices AD7879-1/AD7889-1 touchscreen interface    
+   <M>   Analog Devices AD7879-1/AD7889-1 touchscreen interface
    <M>     support SPI bus connection
    <M> Support for frame buffer devices  --->
    <M> NEC NL8048HL WVGA LCD for ADI SC5XX boards
@@ -136,9 +136,9 @@ If AD7879 module has already been installed, removed it first:
 ::
 
    # lsmod
-   Module                  Size  Used by 
-   ad7879_spi              2222  0 
-   ad7879                  3763  1 ad7879_spi 
+   Module                  Size  Used by
+   ad7879_spi              2222  0
+   ad7879                  3763  1 ad7879_spi
    # modprobe -r ad7879_spi
    # lsmod
    Module                  Size  Used by

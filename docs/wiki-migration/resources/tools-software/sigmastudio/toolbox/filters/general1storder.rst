@@ -1,8 +1,9 @@
 General (1st-Order)
 ===================
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| -----------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+--------------
 
 |general1stpic1.png| The General 1st-Order block allows you to design 1st-order lowpass and highpass filters.
 

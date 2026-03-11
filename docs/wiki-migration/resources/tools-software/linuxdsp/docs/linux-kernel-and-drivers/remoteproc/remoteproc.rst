@@ -44,8 +44,8 @@ Add the firmware package in the filesystem, it's enabled in adsp-sc5xx-full imag
 
 Then run "**bitbake adsp-sc5xx-minimal -C compile**" or "**bitbake adsp-sc5xx-full -C compile**" to generate the filesystem.
 
-| 
-| ===== How to Use the Remoteproc Framework =====
+How to Use the Remoteproc Framework
+-----------------------------------
 
 Remote Processor Start
 ~~~~~~~~~~~~~~~~~~~~~~

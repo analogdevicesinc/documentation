@@ -121,14 +121,7 @@ For a module or array of solar cells, the shape of the I/V curve does not change
 Materials:
 ----------
 
-| ADALM2000 Lab hardware
-| Solder-less breadboard, and jumper wire kit
-| 1 or more Solar Panels (see appendix for suggested types)
-| Light source, preferably full sunlight
-| 1 10 Ω resistor (R\ :sub:`1`)
-| 1 470 Ω resistor (R\ :sub:`2`)
-| 1 IRF510 NMOS power transistor (M\ :sub:`1`)
-| 2 1.5 V AA or AAA batteries with a battery holder
+ADALM2000 Lab hardware Solder-less breadboard, and jumper wire kit 1 or more Solar Panels (see appendix for suggested types) Light source, preferably full sunlight 1 10 Ω resistor (R\ :sub:`1`) 1 470 Ω resistor (R\ :sub:`2`) 1 IRF510 NMOS power transistor (M\ :sub:`1`) 2 1.5 V AA or AAA batteries with a battery holder
 
 Directions:
 -----------
@@ -186,8 +179,7 @@ Compare the different maximum powers, voltages, currents and external resistance
 
 Comment on how power output is affected by the external resistance connected to a photovoltaic panel.
 
-| Calculate the maximum output efficiency for each part as follows:
-| Maximum efficiency (%) = (P\ :sub:`MAX`/P\ :sub:`IN`) x 100
+Calculate the maximum output efficiency for each part as follows: Maximum efficiency (%) = (P\ :sub:`MAX`/P\ :sub:`IN`) x 100
 
 Comment on the significance of the size of the efficiency.
 
@@ -212,12 +204,7 @@ Much is made of the amount of energy lost by fixed Photovoltaic systems because 
 
 **For Further Reading:**
 
-| http:*en.wikipedia.org/wiki/Solar_cell
-  http:*\ en.wikipedia.org/wiki/Theory_of_solar_cells
-| http:*pveducation.org/pvcdrom/characterisation/introduction
-  http:*\ users.df.uba.ar/sgil/physics_paper_doc/papers_phys/e&m/I-V_measure_solar_cell.pdf
-| Mathworks Solar Cell model: http://www.mathworks.com/help/physmod/elec/ref/solarcell.html?searchHighlight=solar+cell
-| Solar Cell Spice model: http://www.intusoft.com/nlhtm/nl78.htm#The_Solar_Cell_SPICE_Model
+http://en.wikipedia.org/wiki/Solar_cell http://en.wikipedia.org/wiki/Theory_of_solar_cells http://pveducation.org/pvcdrom/characterisation/introduction http://users.df.uba.ar/sgil/physics_paper_doc/papers_phys/e&m/I-V_measure_solar_cell.pdf Mathworks Solar Cell model: http://www.mathworks.com/help/physmod/elec/ref/solarcell.html?searchHighlight=solar+cell Solar Cell Spice model: http://www.intusoft.com/nlhtm/nl78.htm#The_Solar_Cell_SPICE_Model
 
 **Return to EPS Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**
 
@@ -237,16 +224,15 @@ Sun Power panels are made of Copper Indium Diselenide. They are 60mm (2-3/8") sq
    60mm square solar panel
 
 
-| Suppliers:
-| `SOLAR CELL, 3V 40MA <https://www.allelectronics.com/item/spl-30/solar-cell-3v-40ma/1.html>`_
-| OSEPP SC10072 Monocrystalline Solar Cell - Barrel Plug Termination, 100mA I\ :sub:`SC`, 7.2 V\ :sub:`OC`. This one comes prewired with a power plug. A matching jack would be needed to connect the panel to your experiments.
+Suppliers: `SOLAR CELL, 3V 40MA <https://www.allelectronics.com/item/spl-30/solar-cell-3v-40ma/1.html>`_
+
+OSEPP SC10072 Monocrystalline Solar Cell - Barrel Plug Termination, 100mA I\ :sub:`SC`, 7.2 V\ :sub:`OC`. This one comes prewired with a power plug. A matching jack would be needed to connect the panel to your experiments.
 
 .. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f12.jpg
    :align: center
    :width: 400px
 
-| Supplier:
-| http://www.tigerdirect.com/applications/SearchTools/item-details.asp?EdpNo=4368549&csid=_61
+Supplier: http://www.tigerdirect.com/applications/SearchTools/item-details.asp?EdpNo=4368549&csid=_61
 
 .. |eps_photovoltais-f5.png| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f5.png
    :width: 350px

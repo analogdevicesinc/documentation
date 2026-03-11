@@ -33,15 +33,15 @@ The production test software running on the target device is available as a preb
 .. admonition:: Download
    :class: download
 
-   \* \**22 June 2022 release \*\*
+   \* \**22 June 2022 release**
 
    
    -  `Actual file for SOM2 Testing <https://swdownloads.analog.com/cse/prod_test_rel/adrv9361_bob/adrv9361_brk_production.zip>`_
-   -  \**22 January 2016 release \*\*
+   -  **22 January 2016 release**
    -  `Actual file for SOM2 Testing <http://swdownloads.analog.com/cse/picozed/picozed-sdr2-brk-test-2016_01_05.img.xz>`_
    -  Checksum picozed-sdr2-brk-test-2016_01_05.img.xz ``f070bb467a23d42f3bebe25f70876ed2``
    -  Checksum picozed-sdr2-brk-test-2016_01_05.img ``9fefaa3910f3d6103704978b848fbfd6``
-   -  \**14 August 2020 release \*\*
+   -  **14 August 2020 release**
    -  `Actual file for SOM2 Testing <https://swdownloads.analog.com/cse/prod_test_rel/picozed_test/picozed-sdr2-brk-test-2020_14_08.img.tar.xz>`_
    
 
@@ -55,9 +55,9 @@ The production test software running on the target device is available as a preb
    :class: download
 
    
-   -  \**27 July 2022 release \*\*
+   -  **27 July 2022 release**
    -  `Actual file for SOM1 Testing <https://swdownloads.analog.com/cse/prod_test_rel/adrv9364_bob/adrv9364_bob_production.zip>`_
-   -  \**14 August 2020 release \*\*
+   -  **14 August 2020 release**
    -  `Actual file for SOM1 Testing <https://swdownloads.analog.com/cse/prod_test_rel/picozed_test/picozed-sdr1-brk-test-2020_14_08.img.tar.xz>`_
    
 
@@ -66,9 +66,9 @@ The production test software running on the target device is available as a preb
    :class: download
 
    
-   -  \**27 July 2022 release \*\*
+   -  **27 July 2022 release**
    -  `Raspberry Pi file for SOM1 Testing <https://swdownloads.analog.com/cse/prod_test_rel/adrv9364_bob/rpi_adrv9364_production.zip>`_
-   -  \**22 June 2022 release \*\*
+   -  **22 June 2022 release**
    -  `Raspberry Pi file for SOM2 Testing <https://swdownloads.analog.com/cse/prod_test_rel/adrv9361_bob/raspberry_pi_som2_test.zip>`_
    
 
@@ -178,8 +178,6 @@ Test process
 FMC Carrier
 ~~~~~~~~~~~
 
-.. _overview-1:
-
 Overview
 --------
 
@@ -194,8 +192,6 @@ The carrier tests run on boot up on Raspberry Pi via a script in a terminal wind
 -  SFP+, FMC loopback test. This is an instance of the axi_adxcvr_lb which is used to test 2 transceiver lanes. One transceiver lane (lane 0) is used for the FMC connector P2 and the other one (lane 1) for the SFP peripheral on the P1 connector. The test is performed continuously inside the IP core and the result is written to an internal status register. Each lane will have a corresponding status bit. Data is generated and verified by the core for each lane individually. The software must read the register to get the result.
 -  FMC, Camera, Pmod gpio test.There are 3 instances of the axi_gpio IP core used to test general purpose signal paths for the FMC connector (P2), the camera connector (P9) and the (P11) PMOD connector. The FMC connector has the most signals (68) out of the three peripherals requiring three GPIO channels (GPIO_LB_0 ch1, ch2 and GPIO_LB_1 ch1), the CAM connector uses 2 channels and the PMOD uses 1. The test is performed by walking 0 across the signals of each channel, reading back the signals and checking for expected behaviour.
 
-.. _test-image-1:
-
 Test image
 ----------
 
@@ -208,7 +204,7 @@ The production test software running on the target device is available as a preb
    :class: download
 
    
-   -  \**20 Dec 2021 release \*\*
+   -  **20 Dec 2021 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/adrv1crr_test/adrv1_carrier_14_02_2023.zip>`_
    -  Checksum ``d2c1ad4dfd4d91c5601be28a7d227c9c``
    
@@ -223,7 +219,7 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    :class: download
 
    
-   -  \**20 Dec 2021 release \*\*
+   -  **20 Dec 2021 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/adrv1crr_test/adrv1crr_rpi_production_image.zip>`_
    -  Checksum ``d15c432f121141fc9cede87c0576e312``
    
@@ -233,8 +229,6 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
 
    To write it on SD card can follow the instructions: `Installing PI images <https://www.raspberrypi.org/documentation/installation/installing-images/>`_
 
-
-.. _required-hardware-1:
 
 Required hardware
 -----------------
@@ -257,8 +251,6 @@ Required hardware
 -  1 External monitor with HDMI input
 -  1 Scanner
 -  Keyboard and mouse to be connected to the RaspberryPi board
-
-.. _required-setup-1:
 
 Required setup
 --------------
@@ -294,8 +286,6 @@ Make sure to connect to your WIFI Network before testing. You can exit the test 
 
 
 |image5|
-
-.. _test-process-1:
 
 Test process
 ------------
@@ -336,8 +326,6 @@ Breakout board
 Raspberry Pi test suite
 -----------------------
 
-.. _overview-2:
-
 Overview
 ~~~~~~~~
 
@@ -346,8 +334,6 @@ The breakout board tests run via the U-Boot post testing framework while an atta
 -  USB media: Data is saved to an attached USB media drive, read back, and verified. If the data is different or there are other USB issues (device not attached, enumeration problems, etc) the test will fail.
 -  Ethernet: The breakout board give itself a static IP address and tries to ping the computer's static address that it's directly connected to. The test passes if a response is received, otherwise it fails.
 -  Buttons: The user running the test must interactively toggle the buttons which triggers a LED to blink. Note that when using adrv9364_rfsom boards only buttons S7, S8, and S9 are tested due to pin count limitations.
-
-.. _required-hardware-2:
 
 Required hardware
 ~~~~~~~~~~~~~~~~~
@@ -361,8 +347,6 @@ Required hardware
 -  1 adrv9364_rfsom breakout board and power adapter
 -  1 microSD card using the latest test image
 -  1 Raspberry Pi 2/3 with attached screen using the related test image
-
-.. _required-setup-2:
 
 Required setup
 ~~~~~~~~~~~~~~
@@ -378,8 +362,6 @@ See the following images of a Raspberry Pi and breakout board set up to run the 
 
 
 |rpi-setup.jpg|
-
-.. _test-process-2:
 
 Test process
 ~~~~~~~~~~~~
@@ -411,8 +393,6 @@ When done testing, hit button #23 on the Raspberry Pi to power down the system a
 Linux test suite
 ----------------
 
-.. _overview-3:
-
 Overview
 ~~~~~~~~
 
@@ -422,14 +402,10 @@ The breakout board tests run on boot up into Linux via a script. See the followi
 -  Ethernet: A loopback module is used to perform a simple loopback test.
 -  Switches/buttons: The user running the test must interactively toggle the switches and buttons which trigger the related LEDs.
 
-.. _test-image-2:
-
 Test image
 ~~~~~~~~~~
 
 The production test software running on the target device is the :doc:`standard ADI Zynq image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` modified slightly to run the :git-board-tests:`test suite <picozed-brk>`.
-
-.. _required-hardware-3:
 
 Required hardware
 ~~~~~~~~~~~~~~~~~
@@ -443,8 +419,6 @@ Required hardware
 -  1 adrv936x_rfsom breakout board and power adapter
 -  1 microSD card using the latest :doc:`ADI Zynq image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` configured to run the :git-board-tests:`test suite <picozed-brk>`
 -  1 External computer set up to monitor the serial connection
-
-.. _required-setup-3:
 
 Required setup
 ~~~~~~~~~~~~~~
@@ -460,8 +434,6 @@ See the following image of a board set up to run the production tests.
 
 
 |pzsdr-ccbrk-setup.jpg|
-
-.. _test-process-3:
 
 Test process
 ~~~~~~~~~~~~
@@ -484,8 +456,6 @@ First make sure all the required setup explained above is ready. Once that is do
 Breakout board Raspberry Pi test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _overview-4:
-
 Overview
 --------
 
@@ -504,11 +474,11 @@ The production test software running on the target device is available as a preb
    :class: download
 
    
-   -  \**5 January 2016 release \*\*
+   -  **5 January 2016 release**
    
    ::
    
-      * 
+      *
       * Checksum ''''
       * Checksum ''''
    
@@ -518,11 +488,11 @@ The production test software running on the target device is available as a preb
    :class: download
 
    
-   -  \**Raspberry Pi image \*\*
+   -  **Raspberry Pi image**
    
    ::
    
-      * 
+      *
       * Checksum ''''
       * Checksum ''''
    
@@ -532,8 +502,6 @@ The production test software running on the target device is available as a preb
 
    It is also possible to manually create one using :doc:`these instructions </wiki-migration/resources/eval/user-guides/pzsdr/testing/sd-cards>`.
 
-
-.. _required-hardware-4:
 
 Required hardware
 -----------------
@@ -547,8 +515,6 @@ Required hardware
 -   1 adrv936x_rfsom breakout board and power adapter
 -   1 microSD card using the latest ADI Zynq image configured to run the test suite
 
-.. _required-setup-4:
-
 Required setup
 --------------
 
@@ -557,48 +523,90 @@ Required setup
    This setup needs to be done only once.
 
 
-| **1. SDR2 SOM** board **with SD card inserted** configurated to run the test suite and **S1** dip switch on the **"SDSOM"** position. |image11|
-| **2. USB** media drive into the **OTG** adapter. |image12|
-| **3. Raspberry Pi powered on** configurated to run the breakout board test with a **USB cable attached**. After about a couple seconds the following message will be printed on the screen “POWER ON BRK”. At this point, the Raspberry Pi is ready to test the breakout board. |image13|
+**1. SDR2 SOM** board **with SD card inserted** configurated to run the test suite and **S1** dip switch on the **"SDSOM"** position.
 
-.. _test-process-4:
+
+
+|image11|
+
+**2. USB** media drive into the **OTG** adapter.
+
+
+|image12|
+
+**3. Raspberry Pi powered on** configurated to run the breakout board test with a **USB cable attached**. After about a couple seconds the following message will be printed on the screen “POWER ON BRK”. At this point, the Raspberry Pi is ready to test the breakout board.
+
+
+|image13|
 
 Test process
 ------------
 
-| **1.** Insert the SDR2 SOM board with test suite SD card into the breakout board.
-| **2.** Make sure all the switches (S1 through S4) are set to the off position.
-| **3.** Plug the micro USB on the UART port (P14) on the breakout board.
-| **4.** Plug the OTG adapter into the breakout board USB OTG port (P11).
-| **5.** Plug the Ethernet loopback module into breakout board Ethernet connector (M1).
-| **6.** Insert a jumper on the P9 header, between pin 1 & 2, to enable USB OTG mode.
-| |image14|
-| **7.** Make sure the power cable is plugged in and then power on the board. Confirm the green power LED and blue FPGA LED are both lit after a few seconds have passed (see the picture below). If two green LEDs are lit on the SOM without the blue FPGA LED being lit this means that the FPGA isn't getting configured properly which means there is an issue during early bring up such as the board's power sequence not running correctly.
-| **8.** The board will boot into Linux to run the tests.
-| **9.** Tests should start automatically and be shown on the Raspberry Pi display.
-| |image15|
-| **10.** When prompted, toggle the switches (S1 through S4) and buttons (S6 through S9) on the board. Note that the related LEDs should light up when the switches or buttons are in the on the state (e.g. LED DS3 should light up when switch S1 or button S6 are enabled). In order to pass the test, all switches and buttons must be toggled on and off. If this is not done within a minute of starting the test, it will timeout and fail.
-| |image16|
-| **11.** Wait for the test result. The other tests will run without requiring user input once the switch and button tests are finished. When the tests pass, the DS3 through DS6 LEDs will be solid.
+**1.** Insert the SDR2 SOM board with test suite SD card into the breakout board.
+
+**2.** Make sure all the switches (S1 through S4) are set to the off position.
+
+**3.** Plug the micro USB on the UART port (P14) on the breakout board.
+
+**4.** Plug the OTG adapter into the breakout board USB OTG port (P11).
+
+**5.** Plug the Ethernet loopback module into breakout board Ethernet connector (M1).
+
+**6.** Insert a jumper on the P9 header, between pin 1 & 2, to enable USB OTG mode.
+
+
+|image14|
+
+**7.** Make sure the power cable is plugged in and then power on the board. Confirm the green power LED and blue FPGA LED are both lit after a few seconds have passed (see the picture below). If two green LEDs are lit on the SOM without the blue FPGA LED being lit this means that the FPGA isn't getting configured properly which means there is an issue during early bring up such as the board's power sequence not running correctly.
+
+**8.** The board will boot into Linux to run the tests.
+
+**9.** Tests should start automatically and be shown on the Raspberry Pi display.
+
+
+|image15|
+
+**10.** When prompted, toggle the switches (S1 through S4) and buttons (S6 through S9) on the board. Note that the related LEDs should light up when the switches or buttons are in the on the state (e.g. LED DS3 should light up when switch S1 or button S6 are enabled). In order to pass the test, all switches and buttons must be toggled on and off. If this is not done within a minute of starting the test, it will timeout and fail.
+
+
+|image16|
+
+**11.** Wait for the test result. The other tests will run without requiring user input once the switch and button tests are finished. When the tests pass, the DS3 through DS6 LEDs will be solid.
 
 ========= =========
 |image17| |image18|
 ========= =========
 
-| If any test fails LEDs DS3 through DS6 will be blinking and the script output will note the failure.
-| \| |image19| \| |image20| \| |image21| \|
-| **12.** Finally wait for "TURN OFF BOARD! CONNECT NEXT BOARD TO BE TESTED!" to power down the system.
-| \| |image22| \| |image23| \|
-| **13.** Once the test is complete turn off the breakout board, unplug the power, USB cables and Ethernet loopback module from the breakout board in addition to removing the SDR2 SOM. Plug all the cables back into the next breakout board and repeat the process from the beginning. If you want to start the test again, for the same breakout board, power off and then power on the breakout board or reset the SDR2 SOM board to repeat the test automaticaly.
-| **When done testing**, hit **button #27 on the Raspberry Pi display** to **power down** the system and give the system a few seconds before pulling the power cable.
-| |image24|
-| If necessary, hit **button #23 on the Raspberry Pi display to restart** or hit **button #22 to display the Raspberry Pi IP addresses**.
-| \| |image25| \| |image26| \| \|
+If any test fails LEDs DS3 through DS6 will be blinking and the script output will note the failure.
+
+========= ========= =========
+|image19| |image20| |image21| 
+========= ========= =========
+
+**12.** Finally wait for "TURN OFF BOARD! CONNECT NEXT BOARD TO BE TESTED!" to power down the system.
+
+========= =========
+|image22| |image23| 
+========= =========
+
+**13.** Once the test is complete turn off the breakout board, unplug the power, USB cables and Ethernet loopback module from the breakout board in addition to removing the SDR2 SOM. Plug all the cables back into the next breakout board and repeat the process from the beginning. If you want to start the test again, for the same breakout board, power off and then power on the breakout board or reset the SDR2 SOM board to repeat the test automaticaly.
+
+**When done testing**, hit **button #27 on the Raspberry Pi display** to **power down** the system and give the system a few seconds before pulling the power cable.
+
+
+|image24|
+
+If necessary, hit **button #23 on the Raspberry Pi display to restart** or hit **button #22 to display the Raspberry Pi IP addresses**.
+
+========= =========
+|image25| |image26|  
+========= =========
 
 Demo Test process
 -----------------
 
-| |image27|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/breakout_board_test.gif
+   :align: center
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-rf-loopback.jpg
    :width: 400px
@@ -656,4 +664,3 @@ Demo Test process
    :width: 250px
 .. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/get_all_ip.png
    :width: 250px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/breakout_board_test.gif

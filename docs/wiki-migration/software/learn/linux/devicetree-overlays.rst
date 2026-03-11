@@ -27,17 +27,17 @@ Header
 
 Device tree overlays are essentially standalone device trees.  As such, all overlay files must start with the device tree header:
 
-.. code:: syntaxhighlighter-pre
+::
 
    /dts-v1/;
    /plugin/;
 
 If there are any include files (discussed later), the #include statements will occur prior to header:
 
-.. code:: syntaxhighlighter-pre
+::
 
    #include <dt-bindings/gpio/gpio.h>
-    
+
    /dts-v1/;
    /plugin/;
 
@@ -46,7 +46,7 @@ Root Node
 
 Following the header, the remainder of the overlay is encapsulated within the root node block. The root node starts with a ``%%/ { ''and is closed with a'' }; %%`` All of the text between these brackets make up the actual content of the overlay.
 
-.. code:: syntaxhighlighter-pre
+::
 
    /dts-v1/;
    /plugin/;
@@ -67,7 +67,7 @@ Fragments
 
 Fragments are a unique feature specific to overlay files.  For every node of the system's device tree that will be modified by the overlay, it should be encapsulated in a fragment.  The following example shows 2 fragments within the root node, but the count is not limited.
 
-.. code:: syntaxhighlighter-pre
+::
 
    /dts-v1/;
    /plugin/;
@@ -76,7 +76,7 @@ Fragments are a unique feature specific to overlay files.  For every node of th
        fragment@0 {
            //Fragment 0 work here
        };
-    
+
        fragment@1 {
            //Fragment 1 work here
        };
@@ -87,7 +87,7 @@ Defining the Target
 
 The first item within a fragment is defining the target node to modify.  This would be the alias of an existing node within the baseline device tree.  The ``__overlay__`` block is created to house the modified values.
 
-.. code:: syntaxhighlighter-pre
+::
 
    /dts-v1/;
    /plugin/;
@@ -99,12 +99,12 @@ The first item within a fragment is defining the target node to modify.  This w
                //The real work happens here
            };
        };
-    
+
        fragment@1 {
             target = <&spi0>;
            __overlay__ {
                //The real work happens here
-           }; 
+           };
        };
    };
 
@@ -113,7 +113,7 @@ Overlay Content
 
 Finally, the actual content of each overlay fragment is defined. In this very simple, hypothetical, example, an adxl375 is added to i2c1, and a ad5686 added to spi0.
 
-.. code:: syntaxhighlighter-pre
+::
 
    /dts-v1/;
    /plugin/;
@@ -131,7 +131,7 @@ Finally, the actual content of each overlay fragment is defined. In this very si
                };
            };
        };
-    
+
        fragment@1 {
             target = <&spi0>;
            __overlay__ {
@@ -142,7 +142,7 @@ Finally, the actual content of each overlay fragment is defined. In this very si
                    spi-max-frequency = <1000000>;
                    spi-cpha;
                };
-           }; 
+           };
        };
    };
 
@@ -151,7 +151,7 @@ Building an Overlay
 
 Compiling device tree overlays (and full device trees for that matter), is done using the device tree compiler or ``dtc`` tool.  Luckily for us, ``dtc`` is included with Kuiper Linux, so no additional installation is required.  To compile the device tree the command syntax is simple:
 
-.. code:: syntaxhighlighter-pre
+::
 
    dtc -I dts -O dtb my_overlay.dtso > my_overlay.dtbo
 
@@ -182,9 +182,9 @@ For RaspberryPI's the overlay .dtbo file can be placed in the /boot/overlays fol
    You'll need to be an administrator, or open the config.txt as ``sudo`` to be able to save the changes.
 
 
-The dtoverlay line(s) specify which overlay files should be incorporated at boot time.  The following example shows adding the rpi-adxl345.dtbo overlay, simply use your overlay file name instead. Important! Note the .dtbo file extension is omitted as this is automatically implied. 
+The dtoverlay line(s) specify which overlay files should be incorporated at boot time.  The following example shows adding the rpi-adxl345.dtbo overlay, simply use your overlay file name instead. Important! Note the .dtbo file extension is omitted as this is automatically implied.
 
-.. code:: syntaxhighlighter-pre
+::
 
    dtoverlay=rpi-adxl345
 

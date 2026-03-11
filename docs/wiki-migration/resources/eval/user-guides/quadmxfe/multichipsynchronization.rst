@@ -49,11 +49,14 @@ The :adi:`ADF4371` PLL synthesizers allow for relative sample clock phase adjust
 
 |image3|
 
-| A receiver data capture is obtained which then allows the user to apply cross-correlation techniques to determine the complex phase offsets between these four transmit channels, *φ\ TxOffset*. The :adi:`ADF4371` PLL synthesizer ICs contain within them a voltage-controlled oscillator (VCO) which are operating at a frequency *f\ VCO_PLL*. The measured phase offsets *φ\ TxOffset* are then related to the required PLL phase adjustment *φ\ PLL_Adj* and the RF frequency *f\ carrier* such that:
-| :math:`\phi_{PLLAdj}=[f_{VCOPLL}/f_{carrier}]\phi_{TxOffset}`
+A receiver data capture is obtained which then allows the user to apply cross-correlation techniques to determine the complex phase offsets between these four transmit channels, *φ\ TxOffset*. The :adi:`ADF4371` PLL synthesizer ICs contain within them a voltage-controlled oscillator (VCO) which are operating at a frequency *f\ VCO_PLL*. The measured phase offsets *φ\ TxOffset* are then related to the required PLL phase adjustment *φ\ PLL_Adj* and the RF frequency *f\ carrier* such that:
 
-| Using this formula, the :adi:`ADF4371` PLL synthesizer phases can be adjusted by a new known amount to establish a common Tx baseline between all digitizer ICs for all power cycles, as shown in the figure below. The open circles for each channel shown in the figure correspond to the first power cycle, whereas all the other solid dots correspond to subsequent power cycles. As can be seen from this figure, the calibrated Tx phase offsets for the first (and second) channelizers of all :adi:`AD9081`\ s are phase aligned. The second channelizer of each digitizer IC is aligned in this instance as well because two channelizers are used for each DAC in the system.
-| |image4|
+:math:`\phi_{PLLAdj}=[f_{VCOPLL}/f_{carrier}]\phi_{TxOffset}`
+
+Using this formula, the :adi:`ADF4371` PLL synthesizer phases can be adjusted by a new known amount to establish a common Tx baseline between all digitizer ICs for all power cycles, as shown in the figure below. The open circles for each channel shown in the figure correspond to the first power cycle, whereas all the other solid dots correspond to subsequent power cycles. As can be seen from this figure, the calibrated Tx phase offsets for the first (and second) channelizers of all :adi:`AD9081`\ s are phase aligned. The second channelizer of each digitizer IC is aligned in this instance as well because two channelizers are used for each DAC in the system.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/quadmxfe_txalignment.png
+   :width: 800px
 
 Publications
 ============
@@ -67,6 +70,4 @@ Publications
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/quadmxfe_mxfephaseadjustknobs.png
    :width: 800px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/quadmxfe_pllphaseadjustwithcalibrationboard.png
-   :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/quadmxfe_txalignment.png
    :width: 800px

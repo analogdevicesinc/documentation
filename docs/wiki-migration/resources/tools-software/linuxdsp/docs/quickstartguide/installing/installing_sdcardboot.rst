@@ -12,8 +12,7 @@ For users want to use ``run ramboot_emmc`` boot method, do the following command
 
    $ bitbake adsp-sc5xx-ramdisk
 
-| 
-| For users want to use ``run sdcardboot`` boot method, ADI provides two kinds of images to allow users to boot from SD Card using sdcardboot boot command.
+For users want to use ``run sdcardboot`` boot method, ADI provides two kinds of images to allow users to boot from SD Card using sdcardboot boot command.
 
 -  adsp-sc5xx-full
 -  adsp-sc5xx-minimal
@@ -37,10 +36,8 @@ or
    If you want to compile and deploy the images at your second time, run the command "**bitbake <TARGET> -C compile**".
 
    
-   | 
-   | If you want to add packages to filesystem, you could add package to **IMAGE_INSTALL_append = "<PACKAGE_NAME>"** in build/conf/local.conf file.
+   If you want to add packages to filesystem, you could add package to **IMAGE_INSTALL_append = "<PACKAGE_NAME>"** in build/conf/local.conf file.
    
-   |
 
 
 SD Card Set Up
@@ -70,8 +67,10 @@ In order to use an SD Card with Linux we need to prepare it by formatting it in 
 
    $ sudo mkfs.ext2 /dev/sdb1
 
-| 
-| ==== Writing the file system to the SD Card ==== Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card.
+Writing the file system to the SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card.
 
 ::
 
@@ -112,16 +111,16 @@ Insert the SD card to target board, and reset the board and enter into U-Boot
           Watchdog enabled
    I2C:   ready
    DRAM:  224 MiB
-   MMC:   SC5XX SDH: 0                                                                                                        
-   SF: Detected IS25LP512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB                                           
-   In:    serial                                                                                                              
-   Out:   serial                                                                                                              
-   Err:   serial                                                                                                              
-   other init                                                                                                                 
-   Net:   dwmac.3100c000                                                                                                      
-   Hit any key to stop autoboot:  0                                                                                           
+   MMC:   SC5XX SDH: 0
+   SF: Detected IS25LP512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB
+   In:    serial
+   Out:   serial
+   Err:   serial
+   other init
+   Net:   dwmac.3100c000
+   Hit any key to stop autoboot:  0
    sc # run sdcardboot
-   or 
+   or
    sc # run ramboot_emmc
 
 The linux kernel would then boot up and the file system stored in SD card.
@@ -135,7 +134,7 @@ The linux kernel would then boot up and the file system stored in SD card.
 
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@     
+        @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@     @@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@            @@@@@@@@@@@@@@@@@@@
@@ -155,14 +154,14 @@ The linux kernel would then boot up and the file system stored in SD card.
            Analog Devices Yocto Distribution
                     www.analog.com
                  www.yoctoproject.org
-        
+
    adsp-sc589-mini login: root
    Password: adi
 
 The default username is **root** and the password is **adi**.
 
-| 
-| ====== Appendix: Macro Definition ======
+Appendix: Macro Definition
+==========================
 
 +------------------+-----------------+-----------------------------------------+--------------------------------------------+----------------------------------------------------+
 | ``MACHINE``      | ``DTB_FILE``    | ``FULL_FS_IMAGE``                       | ``MINIMAL_FS_IMAGE``                       | '' RAMDISK_FILE''                                  |
@@ -177,4 +176,4 @@ The default username is **root** and the password is **adi**.
 +------------------+-----------------+-----------------------------------------+--------------------------------------------+----------------------------------------------------+
 
 | 
-| ---- \**BACK TO: \*\* :doc:`Installing Linux On The Hardware </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing>` \**HOME PAGE: \*\* :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`
+| ---- \**BACK TO:** :doc:`Installing Linux On The Hardware </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing>` \**HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>`

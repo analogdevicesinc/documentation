@@ -59,7 +59,7 @@ Alternatively, you can connect to board using USB-to-UART cable (using for examp
 
 .. raw:: html
 
-   <details><summary>**Boot Log** (Click to expand)</summary>
+   <details><summary>**Boot Log** (Click to expand)
 
 ::
 
@@ -72,7 +72,7 @@ Alternatively, you can connect to board using USB-to-UART cable (using for examp
    DRAM:  ECC disabled 1 GiB
    MMC:   sdhci@e0100000: 0 (SD)
    SF: Detected s25fl128s_64k with page size 512 Bytes, erase size 128 KiB, total 32 MiB
-   *** Warning - bad CRC, using default environment
+   ** Warning - bad CRC, using default environment
 
    In:    serial@e0001000
    Out:   serial@e0001000
@@ -654,13 +654,12 @@ Alternatively, you can connect to board using USB-to-UART cable (using for examp
 
 After booting process is complete, you can open IIO-Oscilloscope. Learn more about it :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can interact with the IIO-Osc GUI either directly or over the network.
 
-|
-
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. You can shut down the board from terminal as well with
 
-   | ``sudo shutdown -h now`` or ``sudo poweroff``
+   
+   ``sudo shutdown -h now`` or ``sudo poweroff``
    
 
 

@@ -3,13 +3,21 @@
 Master Control Port Status
 ==========================
 
-| 
-| |mc_status_ssp.jpg|
-| ===== Description =====
-| The master control port Status block sends out the Master control port status in the output pins. Master control errors can be cleared by setting input pin to non-zero value
-| ===== Usage =====
-| Use the output pins to monitor master control port status and error. The error can be cleared by inputting a non-zero value at the input.
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/mc_status_ssp.jpg
+   :alt: mc_status_ssp.jpg
+
+Description
+-----------
+
+The master control port Status block sends out the Master control port status in the output pins. Master control errors can be cleared by setting input pin to non-zero value
+
+Usage
+-----
+
+Use the output pins to monitor master control port status and error. The error can be cleared by inputting a non-zero value at the input.
+
+Targets Supported
+-----------------
 
 +----------------------------+------------+-----------------------+----------------+------------------+
 | Name                       | ADSP-214xx | ADSP-215xx/ADSP-SC5xx | ADAU145x/1456x | ADSP-218xx/SC8xx |
@@ -19,7 +27,9 @@ Master Control Port Status
 
 | 
 | ===== Pins =====
-| ====Input Pins====
+
+Input Pins
+~~~~~~~~~~
 
 =========== ======= ==================================================
 Name        Type    Description
@@ -27,7 +37,7 @@ Name        Type    Description
 ClearErrors Control Any non -zero value in the input clears the error.
 =========== ======= ==================================================
 
-| 
+
 | ====Output Pins====
 
 +----------------+---------+----------------------------------------------------------------------------------------------------------+
@@ -40,14 +50,15 @@ ClearErrors Control Any non -zero value in the input clears the error.
 
 | 
 | ===== Configurable Parameters =====
-| Not applicable
+
+Not applicable
 
 DSP Parameters
 --------------
 
-| 
-| Not applicable
-| ===== DSP Parameter Computation =====
-| Not applicable
+Not applicable
 
-.. |mc_status_ssp.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/mc_status_ssp.jpg
+DSP Parameter Computation
+-------------------------
+
+Not applicable

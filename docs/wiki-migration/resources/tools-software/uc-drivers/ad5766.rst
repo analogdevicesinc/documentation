@@ -69,81 +69,90 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``typedef enum {                           |
+    typedef enum {
+        AD5766_ENABLE,
+        AD5766_DISABLE,
+    } ad5766_state;
 
-|     AD5766_ENABLE,                         |
-|     AD5766_DISABLE,                        |
-| } ad5766_state;                            |
-|                                            |
-| typedef enum {                             |
-|     AD5766_DAC_0,                          |
-|     AD5766_DAC_1,                          |
-|     AD5766_DAC_2,                          |
-|     AD5766_DAC_3,                          |
-|     AD5766_DAC_4,                          |
-|     AD5766_DAC_5,                          |
-|     AD5766_DAC_6,                          |
-|     AD5766_DAC_7,                          |
-|     AD5766_DAC_8,                          |
-|     AD5766_DAC_9,                          |
-|     AD5766_DAC_10,                         |
-|     AD5766_DAC_11,                         |
-|     AD5766_DAC_12,                         |
-|     AD5766_DAC_13,                         |
-|     AD5766_DAC_14,                         |
-|     AD5766_DAC_15,                         |
-| } ad5766_dac;                              |
-|                                            |
-| typedef enum {                             |
-|     AD5766_M_20V_TO_0V,                    |
-|     AD5766_M_16V_TO_0V,                    |
-|     AD5766_M_10V_TO_0V,                    |
-|     AD5766_M_12V_TO_P_14V,                 |
-|     AD5766_M_16V_TO_P_10V,                 |
-|     AD5766_M_5V_TO_P_6V,                   |
-|     AD5766_M_10V_TO_P_10V,                 |
-| } ad5766_span;                             |
-|                                            |
-| typedef enum {                             |
-|     AD5766_ZERO,                           |
-|     AD5766_MID,                            |
-|     AD5766_FULL,                           |
-| } ad5766_clr;                              |
-|                                            |
-| typedef struct {                           |
-|     /* SPI */                              |
-|     spi_device      spi_dev;               |
-|     /* GPIO */                             |
-|     gpio_device     gpio_dev;              |
-|     int8_t      gpio_reset;                |
-|     /* Device Settings */                  |
-|     ad5766_state    daisy_chain_en;        |
-| } ad5766_dev;                              |
-|                                            |
-| typedef struct {                           |
-|     /* SPI */                              |
-|     uint8_t     spi_chip_select;           |
-|     spi_mode        spi_mode;              |
-|     spi_type        spi_type;              |
-|     uint32_t        spi_device_id;         |
-|     /* GPIO */                             |
-|     gpio_type       gpio_type;             |
-|     uint32_t        gpio_device_id;        |
-|     int8_t      gpio_reset;                |
-|     /* Device Settings */                  |
-|     ad5766_state    daisy_chain_en;        |
-|     ad5766_clr      clr;                   |
-|     ad5766_span     span;                  |
-|     uint16_t        pwr_dac_setting;       |
-|     uint16_t        pwr_dither_setting;    |
-|     uint32_t        dither_signal_setting; |
-|     uint16_t        inv_dither_setting;    |
-|     uint32_t        dither_scale_setting;  |
-| } ad5766_init_param;``                     |
-+--------------------------------------------+
+::
+
+    typedef enum {
+        AD5766_DAC_0,
+        AD5766_DAC_1,
+        AD5766_DAC_2,
+        AD5766_DAC_3,
+        AD5766_DAC_4,
+        AD5766_DAC_5,
+        AD5766_DAC_6,
+        AD5766_DAC_7,
+        AD5766_DAC_8,
+        AD5766_DAC_9,
+        AD5766_DAC_10,
+        AD5766_DAC_11,
+        AD5766_DAC_12,
+        AD5766_DAC_13,
+        AD5766_DAC_14,
+        AD5766_DAC_15,
+    } ad5766_dac;
+
+::
+
+    typedef enum {
+        AD5766_M_20V_TO_0V,
+        AD5766_M_16V_TO_0V,
+        AD5766_M_10V_TO_0V,
+        AD5766_M_12V_TO_P_14V,
+        AD5766_M_16V_TO_P_10V,
+        AD5766_M_5V_TO_P_6V,
+        AD5766_M_10V_TO_P_10V,
+    } ad5766_span;
+
+::
+
+    typedef enum {
+        AD5766_ZERO,
+        AD5766_MID,
+        AD5766_FULL,
+    } ad5766_clr;
+
+::
+
+    typedef struct {
+        /* SPI */
+        spi_device       spi_dev;
+        /* GPIO */
+        gpio_device      gpio_dev;
+        int8_t       gpio_reset;
+        /* Device Settings */
+        ad5766_state daisy_chain_en;
+    } ad5766_dev;
+
+::
+
+    typedef struct {
+        /* SPI */
+        uint8_t      spi_chip_select;
+        spi_mode     spi_mode;
+        spi_type     spi_type;
+        uint32_t     spi_device_id;
+        /* GPIO */
+        gpio_type        gpio_type;
+        uint32_t     gpio_device_id;
+        int8_t       gpio_reset;
+        /* Device Settings */
+        ad5766_state daisy_chain_en;
+        ad5766_clr       clr;
+        ad5766_span      span;
+        uint16_t     pwr_dac_setting;
+        uint16_t     pwr_dither_setting;
+        uint32_t     dither_signal_setting;
+        uint16_t     inv_dither_setting;
+        uint32_t     dither_scale_setting;
+    } ad5766_init_param;
 
 Reference Design
 ----------------

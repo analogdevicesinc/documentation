@@ -29,7 +29,7 @@ Materials
 
 -  LTspice files for this exercise
 
-   -  :git-education_tools:`LTspice files for this exercise <m2k/ltspice/cl_boost>`
+   -  `LTspice files for this exercise <https://github.com/analogdevicesinc/education_tools/tree/sr1/m2k/ltspice/cl_boost>`_
 
 Background
 ----------
@@ -51,14 +51,14 @@ Figure 1 below shows the boost power stage from the open-loop exercise, but with
 -  If the output voltage is MUCH too high, the output voltage ramps down quickly.
 -  And finally, if the output voltage is "just right", hold the output voltage constant
 
-| |image1|
+|image1|
 
 .. container:: centeralign
 
    Figure 1. Voltage Mode boost Converter
 
 
-| But since the integrator output is connected to the LTC6992-3's MOD pin, an increase / decrease in voltage will directly cause a corresponding increase / decrease in the MOSFET's duty cycle, which will tend to bring the output voltage toward the "just right" voltage.
+But since the integrator output is connected to the LTC6992-3's MOD pin, an increase / decrease in voltage will directly cause a corresponding increase / decrease in the MOSFET's duty cycle, which will tend to bring the output voltage toward the "just right" voltage.
 
 Also note the following simplifications:
 
@@ -167,8 +167,7 @@ The first step in speeding up the response by adjusting the compensator is to un
 Boost Power Stage Continuous model, voltage-mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Consider the ADALM-SR1 power stage when configured for open-loop, duty cycle control mode, with the LTC6992-3 PWM generator providing the gate control:
-|
+Consider the ADALM-SR1 power stage when configured for open-loop, duty cycle control mode, with the LTC6992-3 PWM generator providing the gate control:
 
 .. note::
 
@@ -195,8 +194,7 @@ Intro on differences in control dynamics...
 
    ..
 
-| **Return to** :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>`
-| **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
+**Return to** :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>` **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_voltage_mode_no_mbrook.png
    :width: 800px

@@ -21,19 +21,25 @@ For SD video, connect video cables to CVBS, S-Video or Component port.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/decoder.jpg
    :width: 600px
 
-| 
-| ===== Software Configuration ===== The following configuration should be done on top of the sc589-ezkit/sc573-ezkit default configuration.
+Software Configuration
+----------------------
 
-| 
-| ==== Package Configuration ==== Add the v4l2-video-test package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
+The following configuration should be done on top of the sc589-ezkit/sc573-ezkit default configuration.
+
+Package Configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+Add the v4l2-video-test package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
 
 ::
 
    vim build/conf/local.conf
    IMAGE_INSTALL_append = "v4l2-video-test"
 
-| 
-| ==== Kernel Configuration ==== Run "**bitbake linux-adi -c menuconfig**" to configure the linux kernel. Due to the conflicts with audio module, users should disable the audio driver before enable video drivers.
+Kernel Configuration
+~~~~~~~~~~~~~~~~~~~~
+
+Run "**bitbake linux-adi -c menuconfig**" to configure the linux kernel. Due to the conflicts with audio module, users should disable the audio driver before enable video drivers.
 
 -  **Disable audio driver**
 
@@ -50,7 +56,7 @@ For SD video, connect video cables to CVBS, S-Video or Component port.
        I2C support  --->
            I2C Hardware Bus support  --->
                    <*> ADI TWI I2C support
-                   (50) ADI TWI I2C clock (kHz) 
+                   (50) ADI TWI I2C clock (kHz)
 
 -  **Enable Microchip MCP23xxx I/O expander support**
 
@@ -74,7 +80,7 @@ For SD video, connect video cables to CVBS, S-Video or Component port.
            [N]   Autoselect ancillary drivers (tuners, sensors, i2c, spi, frontends)
            I2C Encoders, decoders, sensors and other helper chips  --->
                  <*> Analog Devices ADV7842 decoder
-                 [*]   Enable Analog Devices ADV7842 CEC support 
+                 [*]   Enable Analog Devices ADV7842 CEC support
 
 -  **Disable SPI driver**
 
@@ -86,8 +92,10 @@ As the PPI hardware pin conflicts with SPI on the **ADSP-SC573 EZ-Board**, you s
        [*] SPI support  --->
            <>   SPI controller v3 for ADI
 
-| 
-| ==== Device Tree ==== Run "**bitbake linux-adi -c devshell**" to enter into the kernel source code and then change the device tree files.
+Device Tree
+~~~~~~~~~~~
+
+Run "**bitbake linux-adi -c devshell**" to enter into the kernel source code and then change the device tree files.
 
 -  \*\* Device node for soft switch on Video Decoder EI3 Extender Board \*\*
 
@@ -117,8 +125,10 @@ Please add following child node ssw2 to i2c0 master node in the device tree(sc5
 
 Run "**bitbake linux-adi -C compile**" to compile the linux kernel to generate the zImage and dtb file.
 
-| 
-| ===== ADV7842 video decoder Test ===== The state of pins from IO expander is "uncertain" after we enable Soft Switch on the ADSP-SC573 EZ-Board, some pins are also the OE pins (active low) of modules, as the PPI signal pins are reused by many modules, you should disable related modules by setting Soft Switch first, otherwise the signals from ppi will be interfered. So extra configuration only for **ADSP-SC573 EZ-Board**:
+ADV7842 video decoder Test
+--------------------------
+
+The state of pins from IO expander is "uncertain" after we enable Soft Switch on the ADSP-SC573 EZ-Board, some pins are also the OE pins (active low) of modules, as the PPI signal pins are reused by many modules, you should disable related modules by setting Soft Switch first, otherwise the signals from ppi will be interfered. So extra configuration only for **ADSP-SC573 EZ-Board**:
 
 ::
 
@@ -163,5 +173,6 @@ And select Interleaved option.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/lkad-linux_video_driver-capture_video_stream.jpg
    :width: 600px
 
-| 
-| ---- **Back to** :doc:`Linux Video Driver </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/linux_video_driver>`
+--------------
+
+**Back to** :doc:`Linux Video Driver </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/linux_video_driver>`

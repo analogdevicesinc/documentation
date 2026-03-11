@@ -45,5 +45,6 @@ After the sync finished, you would get files just like the picture shows below.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/yocto.png
    :width: 400px
 
-| 
-| ---- **PREV:** :doc:`Setting Up The Host </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/setting_up_your_host_pc>` **NEXT:** :doc:`Building The Components </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/building>`
+--------------
+
+**PREV:** :doc:`Setting Up The Host </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/setting_up_your_host_pc>` **NEXT:** :doc:`Building The Components </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/building>`

@@ -1,8 +1,9 @@
 General 1st Order w/ param / lookup / Slew
 ==========================================
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| -----------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+--------------
 
 |firstorderwparampic1.png| The General (1st-Order / Lookup) block provides a selectable set of High-pass or Low-pass 1st-order filter responses with smooth (slew) transitions when selecting among responses.
 
@@ -23,9 +24,10 @@ Click the icon button:.\
 -  Enter desired filter Gain (-/+ dB).
 -  Enter the desired frequency range for the curves (low and high frequency targets)
 
-| |firstorderwparampic3.png|
-| **Slew:** The transition between two curves (selected by the red control input pin) is smooth, without any clicking sounds or instabilities because the hardware/software Slew is used to transition between one filter response and another. Essentially one filter is cross-faded into the next. Note: Using Slew requires double the memory space of non-slew filters.
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/firstorderwparampic3.png
+   :alt: firstorderwparampic3.png
+
+**Slew:** The transition between two curves (selected by the red control input pin) is smooth, without any clicking sounds or instabilities because the hardware/software Slew is used to transition between one filter response and another. Essentially one filter is cross-faded into the next. Note: Using Slew requires double the memory space of non-slew filters.
 
 .. |firstorderwparampic1.png| image:: https://wiki.analog.com/_media/firstorderwparampic1.png
 .. |firstorderwparampic2.png| image:: https://wiki.analog.com/_media/firstorderwparampic2.png
-.. |firstorderwparampic3.png| image:: https://wiki.analog.com/_media/firstorderwparampic3.png

@@ -76,7 +76,7 @@ Software sources
    :class: download
 
    
-   -  :git-no-OS:`AD4134/CN0561\* software support <projects/cn0561>`
+   -  `AD4134/CN0561\* software support <https://github.com/analogdevicesinc/no-OS/tree/cn0561_debug/projects/cn0561>`_
    
 
 

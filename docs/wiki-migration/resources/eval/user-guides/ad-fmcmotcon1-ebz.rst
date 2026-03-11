@@ -5,7 +5,9 @@ AD-FMCMOTCON1-EBZ User Guide
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- The :adi:`AD-FMCMOTCON1-EBZ` is a complete motor drive system on an FMC board. Information on the card, and how to use it, the design package that surrounds it, and the software which can make it work, can be found here.
+
+
+The :adi:`AD-FMCMOTCON1-EBZ` is a complete motor drive system on an FMC board. Information on the card, and how to use it, the design package that surrounds it, and the software which can make it work, can be found here.
 
 The purpose of the **AD-FMCMOTCON1-EBZ** is to provide a complete motor drive system demonstrating efficient control of Brushed DC, BLDC, PMSM and Stepper motors. It consists of 2 boards: a controller board and a drive board. The system incorporates high quality power sources; reliable power, control, and feedback signals isolation; accurate measurement of motor current & voltage signals; high speed interfaces for control signals to allow fast controller response; industrial Ethernet high speed interfaces; flexible control with FPGA/SoC interface.
 
@@ -55,7 +57,7 @@ Videos
 
 ADI/Avnet/MathWorks/Xilinx design seminar
 
-.. image:: https://wiki.analog.com/_media/analogTV>3540825244001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/analogTV>3540825244001
    :alt: analogTV>3540825244001
 
 From ADI's 2013 Design Conference

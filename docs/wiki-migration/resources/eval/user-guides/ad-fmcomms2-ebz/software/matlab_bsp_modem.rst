@@ -208,7 +208,7 @@ By using the model in External Mode it allows greater configurability of the run
 AXI Memory Mapped Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Under the hood Simulink and External are exposing some of the model's configuration parameters and status values as AXI-Lite registers provides the means to configure and monitor the IP at runtime from software. This way the IP does not have to be regenerated every time a tuning value needs to change and debugging becomes much more flexible. The External Mode demo is actually using these interfaces under the hood but it may not be obvious to the users. In the demos :git-TransceiverToolbox:`targeting_models/modem-qpsk/FixedPoint/demos/ADI_DMA_TT` and :git-TransceiverToolbox:`targeting_models/modem-qpsk/FixedPoint/demos/AXI_MM` these control interface are much more obvious, and arguably more flexible.
+Under the hood Simulink and External are exposing some of the model's configuration parameters and status values as AXI-Lite registers provides the means to configure and monitor the IP at runtime from software. This way the IP does not have to be regenerated every time a tuning value needs to change and debugging becomes much more flexible. The External Mode demo is actually using these interfaces under the hood but it may not be obvious to the users. In the demos :git-TransceiverToolbox:`targeting_models/modem-qpsk/FixedPoint/demos/ADI_DMA_TT` and `AXI_MM <https://github.com/analogdevicesinc/TransceiverToolbox/tree/a70ecd4bb0e0e765778ccc84d2d818c5975dd531/targeting_models/modem-qpsk/FixedPoint/demos/AXI_MM>`_ these control interface are much more obvious, and arguably more flexible.
 
 Register Map
 ^^^^^^^^^^^^
@@ -277,9 +277,9 @@ Video Streaming for PackRF and Demo Boot Files
 
 The ADI_DMA_TT design allows for video streaming example which has further detail in these articles::doc:`modem setup </wiki-migration/resources/eval/user-guides/pzsdr/carriers/packrf/example-use-case>` and :doc:`PackRF software </wiki-migration/resources/eval/user-guides/pzsdr/carriers/packrf/system-software-architecture>`. This design requires a specific kernel and devicetree, since it was designed for a specific platform (:doc:`PackRF </wiki-migration/resources/eval/user-guides/pzsdr/carriers/packrf>`). Prebuilt files have been provided here (Note that you may have to click on the \*View raw\* link to directly download the file from the forwarded page on GitHub):
 
--  :git-TransceiverToolbox:`BOOT.BIN <trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/BOOT.BIN?raw=true>`
--  :git-TransceiverToolbox:`uImage <trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/uImage?raw=true>`
--  :git-TransceiverToolbox:`Device Tree <trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/devicetree.dtb?raw=true>`
+-  `BOOT.BIN <https://github.com/analogdevicesinc/TransceiverToolbox/blob/modem-bootfiles/trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/BOOT.BIN?raw=true>`_
+-  `uImage <https://github.com/analogdevicesinc/TransceiverToolbox/blob/modem-bootfiles/trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/uImage?raw=true>`_
+-  `Device Tree <https://github.com/analogdevicesinc/TransceiverToolbox/blob/modem-bootfiles/trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/devicetree.dtb?raw=true>`_
 
 Additional resources
 --------------------

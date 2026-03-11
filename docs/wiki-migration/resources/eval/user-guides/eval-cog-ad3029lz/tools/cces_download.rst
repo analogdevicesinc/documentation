@@ -45,7 +45,7 @@ CrossCore Embedded Studio Download Packages
    :class: download
 
    
-   | The EV-COG-AD3029LZ **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EV-COG-AD3029LZ.
+   The EV-COG-AD3029LZ **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EV-COG-AD3029LZ.
    
    .. image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.6.0/ADI_CrossCoreEmbeddedStudio-Rel2.6.0.exe
       :alt: CrossCore Embedded Studio 2.6.0 Windows Installer(Executable)

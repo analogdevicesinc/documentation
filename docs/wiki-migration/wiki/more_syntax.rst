@@ -83,6 +83,8 @@ Allows you to `include <https://www.dokuwiki.org/plugin:include>`_ different wik
 
 
 
+
+
    
 .. note::
 
@@ -111,20 +113,114 @@ Allows you to `include <https://www.dokuwiki.org/plugin:include>`_ different wik
 
 Example:
 
-::
 
-   .. include:: ../start.rst
 
-provides the first section of the start page .. include:: ../start.rst
+
+
+   
+Analog Devices Wiki
+===================
+
+This wiki provides developers using Analog Devices products with software and documentation, including HDL interface code, software drivers, and reference project examples for FPGA connectivity. It also contains user guides for some Analog Devices evaluation boards to help developers get up and running fast.
+
+University students can find lab exercises built around the use of the Analog Devices Active Learning Modules, such as the :adi:`ADALM1000`, :adi:`ADALM2000`, :adi:`ADALM-PLUTO`.
+
+To find content on the Wiki, search for keywords or browse one of the categories below.
+
+Browse the Wiki
+---------------
+
+Resources and Tools
+~~~~~~~~~~~~~~~~~~~
+
+-  :doc:`Evaluation Board & Kit Documentation and User Guides </wiki-migration/resources/eval>`
+-  :doc:`FPGA Reference Designs </wiki-migration/resources/fpga>`
+-  :doc:`External Peripheral Drivers for Linux </wiki-migration/resources/tools-software/linux-drivers-all>`
+-  :doc:`External Peripheral Drivers for Microcontroller Software </wiki-migration/resources/no-os/drivers>`
+-  :doc:`SigmaStudio and SigmaDSP Documentation </wiki-migration/resources/tools-software/sigmastudio>`
+
+University Program
+~~~~~~~~~~~~~~~~~~
+
+-  :doc:`University Home Page </wiki-migration/university>`
+
+   -  Learning Material
+   -  Lab Exercises
+   -  Active Learning Instruments
+   -  Software, Tools, and other Kits
+   -  Technical Tutorials
+   -  Glossary and Terminology
+   -  and More...
+
+Help make the Wiki Better
+-------------------------
+
+We welcome user contributions to this wiki. To contribute, just `register/log in <this>start?do=login&sectok=137703aab4ae2af40b719b88eb5f214d>`__ and click edit on any of the pages. There is an extensive :doc:`help section </wiki-migration/wiki/help>` for those new to the wiki.
+
+:doc:`View Recent Updates to the wiki </wiki-migration/recent-updates>`
+
+Analog Devices Support
+----------------------
+
+Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the EngineerZone Support Community.
+
+
+
+provides the first section of the start page
+
+
+Analog Devices Wiki
+===================
+
+This wiki provides developers using Analog Devices products with software and documentation, including HDL interface code, software drivers, and reference project examples for FPGA connectivity. It also contains user guides for some Analog Devices evaluation boards to help developers get up and running fast.
+
+University students can find lab exercises built around the use of the Analog Devices Active Learning Modules, such as the :adi:`ADALM1000`, :adi:`ADALM2000`, :adi:`ADALM-PLUTO`.
+
+To find content on the Wiki, search for keywords or browse one of the categories below.
+
+Browse the Wiki
+---------------
+
+Resources and Tools
+~~~~~~~~~~~~~~~~~~~
+
+-  :doc:`Evaluation Board & Kit Documentation and User Guides </wiki-migration/resources/eval>`
+-  :doc:`FPGA Reference Designs </wiki-migration/resources/fpga>`
+-  :doc:`External Peripheral Drivers for Linux </wiki-migration/resources/tools-software/linux-drivers-all>`
+-  :doc:`External Peripheral Drivers for Microcontroller Software </wiki-migration/resources/no-os/drivers>`
+-  :doc:`SigmaStudio and SigmaDSP Documentation </wiki-migration/resources/tools-software/sigmastudio>`
+
+University Program
+~~~~~~~~~~~~~~~~~~
+
+-  :doc:`University Home Page </wiki-migration/university>`
+
+   -  Learning Material
+   -  Lab Exercises
+   -  Active Learning Instruments
+   -  Software, Tools, and other Kits
+   -  Technical Tutorials
+   -  Glossary and Terminology
+   -  and More...
+
+Help make the Wiki Better
+-------------------------
+
+We welcome user contributions to this wiki. To contribute, just `register/log in <this>start?do=login&sectok=137703aab4ae2af40b719b88eb5f214d>`__ and click edit on any of the pages. There is an extensive :doc:`help section </wiki-migration/wiki/help>` for those new to the wiki.
+
+:doc:`View Recent Updates to the wiki </wiki-migration/recent-updates>`
+
+Analog Devices Support
+----------------------
+
+Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the EngineerZone Support Community.
+
+
 
 interwiki links
 ---------------
 
-| analog devices
-| blackfin.uclinux.org
-| `digikey <https://www.digikey.com/ADDS-BF537-STAMP>`_
-| O'Reilly
-| docs.blackfin.uclinux.org
+analog devices blackfin.uclinux.org `digikey <https://www.digikey.com/ADDS-BF537-STAMP>`_ O'Reilly docs.blackfin.uclinux.org
 
 There are some *special* internal links which have icons associated with them:
 
@@ -311,120 +407,11 @@ Notes have changed recently -- please use the new format. With the new format, c
    
 
 
-You can use notes and boxes also inside text with paragraphs like this (the key thing to notice is the case of the ``WRAP`` or ``wrap`` keyword):
+You can use notes and boxes also inside text with paragraphs like this (the key thing to notice is the case of the ``WRAP`` or ``wrap`` keyword): info, text between help, text between alert, text between important, text between tip, text between download, text betweentodo and round box and danger, warning, caution, notice, safety.
 
-.. note::
+::
 
-   
-   .. note::
-
-      info
-
-   
-
-
-, text between
-
-.. hint::
-
-   help
-
-
-, text between
-
-.. warning::
-
-   alert
-
-
-, text between
-
-.. important::
-
-   important
-
-
-, text between
-
-.. tip::
-
-   tip
-
-
-, text between
-
-.. admonition:: Download
-   :class: download
-
-   download
-
-
-, text between
-
-.. note::
-
-   todo
-
-
-and
-
-.. container:: round box
-
-   round box
-
-
-and
-
-.. danger::
-
-   danger
-
-
-,
-
-.. warning::
-
-   warning
-
-
-,
-
-.. caution::
-
-   caution
-
-
-,
-
-.. container:: notice
-
-   notice
-
-
-,
-
-.. container:: safety
-
-   safety
-
-
-.
-
-
-
-.. note::
-
-   info
-
-
-,
-
-.. hint::
-
-   help
-
-
-, ...
+   info, help, ...
 
 source
 ------
@@ -458,7 +445,7 @@ path can also have globs in it - it help pick the latest version in a branch. fo
 
 ::
 
-   <source master/cf_lib/edk/pcores/axi_adc_2c_v1_00_a/regmap.txt:/REGISTER/-/0x02/ txt fpgahdl_xilinx> 
+   <source master/cf_lib/edk/pcores/axi_adc_2c_v1_00_a/regmap.txt:/REGISTER/-/0x02/ txt fpgahdl_xilinx>
 
 <source master/cf_lib/edk/pcores/axi_adc_2c_v1_00_a/regmap.txt:/REGISTER/-/0x02/ txt fpgahdl_xilinx>
 
@@ -485,14 +472,11 @@ xterm
 
 xterms within ``
 
-<WRAP box>`` tags, to give things different colours/titles:
+`` tags, to give things different colours/titles:
 
 .. container:: box bgred
 
-   
-   .. warning::
-
-      root user on the host, or development computer
+   root user on the host, or development computer
 
    
    ::
@@ -505,10 +489,7 @@ xterms within ``
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -528,7 +509,7 @@ Examples for the Wrap Plugin
 Basic syntax
 ------------
 
-An uppercase **<WRAP>** (or alternatively **<block>** or **<div>**) creates a **``div``** and should be used for **"big"** containers, **surrounding** paragraphs, lists, tables, etc.
+An uppercase **** (or alternatively **<block>** or **<div>**) creates a **``div``** and should be used for **"big"** containers, **surrounding** paragraphs, lists, tables, etc.
 
 
 
@@ -537,27 +518,32 @@ An uppercase **<WRAP>** (or alternatively **<block>** or **<div>**) creates a **
       "big" content
 
 
-or
+::
+
+   or
    <block classes width :language>
    "big" content
    </block>
+
+::
 
    or
    <div classes width :language>
    "big" content
    </div>
 
-A lowercase **<wrap>** (or alternatively **<inline>** or **<span>**) creates a **``span``** and should be used for **"small"** containers, **inside** paragraphs, lists, tables, etc.
+A lowercase **** (or alternatively **<inline>** or **<span>**) creates a **``span``** and should be used for **"small"** containers, **inside** paragraphs, lists, tables, etc.
 
-
-
-.. container:: classes width :language
+::
 
    "small" content
 
+::
 
-or
+   or
    <inline classes width :language>"small" content</inline>
+
+::
 
    or
    <span classes width :language>"small" content</span>
@@ -647,10 +633,7 @@ You can have columns easily by adding the class ``column`` and a width, e.g.
    
 
 
-.. container:: em
-
-   After using any of the float classes, you might come across something like this, where the following text protrudes into the space where only the floating containers should be ...
-
+After using any of the float classes, you might come across something like this, where the following text protrudes into the space where only the floating containers should be ...
 
 
 ... to prevent that, you should simply add
@@ -851,166 +834,20 @@ Boxes and Notes
 
 
 
-You can use notes and boxes also inside text with spans like this:
+You can use notes and boxes also inside text with spans like this: info, help, alert, important, tip, download, todo and round box and danger, warning, caution, notice, safety.
 
-.. note::
+::
 
-   info
-
-
-,
-
-.. hint::
-
-   help
-
-
-,
-
-.. warning::
-
-   alert
-
-
-,
-
-.. important::
-
-   important
-
-
-,
-
-.. tip::
-
-   tip
-
-
-,
-
-.. admonition:: Download
-   :class: download
-
-   download
-
-
-,
-
-.. note::
-
-   todo
-
-
-and
-
-.. container:: round box
-
-   round box
-
-
-and
-
-.. danger::
-
-   danger
-
-
-,
-
-.. warning::
-
-   warning
-
-
-,
-
-.. caution::
-
-   caution
-
-
-,
-
-.. container:: notice
-
-   notice
-
-
-,
-
-.. container:: safety
-
-   safety
-
-
-.
-
-
-
-.. note::
-
-   info
-
-
-,
-
-.. hint::
-
-   help
-
-
-, ...
+   info, help, ...
 
 Marks
 ~~~~~
 
-You can mark text as
-
-.. container:: hi
-
-   highlighted
-
-
-,
-
-.. container:: lo
-
-   less significant
-
-
-and
-
-.. container:: em
-
-   especially emphasised
-
-
-.
+You can mark text as highlighted, less significant and especially emphasised.
 
 ::
 
-   You can mark text as
-
-.. container:: hi
-
-   highlighted
-
-
-,
-
-.. container:: lo
-
-   less significant
-
-
-and
-
-.. container:: em
-
-   especially emphasised
-
-
-.
+   You can mark text as highlighted, less significant and especially emphasised.
 
 :!: This might look ugly in some templates and should be adjusted accordingly.
 
@@ -1020,32 +857,20 @@ Miscellaneous
 Indent
 ^^^^^^
 
-.. container:: indent
+This text will appear indented.
+
+::
 
    This text will appear indented.
-
-
-
-
-.. container:: indent
-
-   This text will appear indented.
-
 
 Outdent
 ^^^^^^^
 
-.. container:: outdent
+This text will appear "outdented".
+
+::
 
    This text will appear "outdented".
-
-
-
-
-.. container:: outdent
-
-   This text will appear "outdented".
-
 
 Prewrap
 ^^^^^^^
@@ -1075,42 +900,22 @@ Prewrap
 Spoiler
 ^^^^^^^
 
-Here follows a spoiler:
-
-.. container:: spoiler
-
-   Darth Vader is Luke's father.
-
+Here follows a spoiler: Darth Vader is Luke's father.
 
 ::
 
-   Here follows a spoiler:
-
-.. container:: spoiler
-
-   Darth Vader is Luke's father.
-
+   Here follows a spoiler: Darth Vader is Luke's father.
 
 Just select the text in the spoiler box to be able to read its content.
 
 Hide
 ^^^^
 
-The following text is hidden:
-
-.. container:: hide
-
-   John, please revise that sentence.
-
+The following text is hidden: John, please revise that sentence.
 
 ::
 
-   The following text is hidden:
-
-.. container:: hide
-
-   John, please revise that sentence.
-
+   The following text is hidden: John, please revise that sentence.
 
 :!: Warning: The text will still appear in the source code, in non-modern browsers and is searchable. Do not hide any security risky secrets with it!
 
@@ -1151,32 +956,20 @@ This also has no effect on the browser screen. It will try to `avoid a page brea
 Noprint
 ^^^^^^^
 
-.. container:: noprint
+This text appears on the screen, but not in print.
+
+::
 
    This text appears on the screen, but not in print.
-
-
-
-
-.. container:: noprint
-
-   This text appears on the screen, but not in print.
-
 
 Onlyprint
 ^^^^^^^^^
 
-.. container:: onlyprint
+This text does not appear on the screen, but only in print.
+
+::
 
    This text does not appear on the screen, but only in print.
-
-
-
-
-.. container:: onlyprint
-
-   This text does not appear on the screen, but only in print.
-
 
 Typography
 ~~~~~~~~~~
@@ -1200,23 +993,7 @@ You can combine and nest all classes and types of boxes, e.g.
    
    .. container:: 165px left
 
-      Inner nested box floats left and is partly
-
-         
-         .. container:: em hi
-
-            \ *em*\ phasized and *hi*\ ghlighted with nested
-
-                     
-                     .. container:: bigger
-
-                        \ *bigger* text
-
-                     
-            inside
-
-         
-      .
+      Inner nested box floats left and is partly *em*phasized and*hi*ghlighted with nested*bigger* text inside.
 
    
    Text inside outer right box, but beneath inner left box.
@@ -1237,22 +1014,7 @@ You can combine and nest all classes and types of boxes, e.g.
    
    .. container:: 165px left
 
-            Inner nested box floats left and is partly
-         
-         .. container:: em hi
-
-            __em__phasized and __hi__ghlighted with nested
-
-                     
-                     .. container:: bigger
-
-                        __bigger__ text
-
-                     
-            inside
-
-         
-         .
+            Inner nested box floats left and is partly __em__phasized and __hi__ghlighted with nested __bigger__ text inside.
 
    
    Text inside outer right box, but beneath inner left box.
@@ -1274,14 +1036,7 @@ You can change the language and the reading direction of a wrap container by sim
 
 .. container:: :he
 
-      זוהי עברית. ((
-   
-   .. container:: :en
-
-      This means "This is Hebrew.", at least according to [[http://translate.google.com/|Google Translate]].
-
-   
-   ))
+      זוהי עברית. ((This means "This is Hebrew.", at least according to [[http://translate.google.com/|Google Translate]].))
 
 
 .. container:: :he
@@ -1302,7 +1057,7 @@ If you goto the :adi:`videos section <en/education/education-library/videos.html
 
 Any video on ``www.analog.com`` will work this way.
 
-.. image:: https://wiki.analog.com/_media/analogTV>983688886001
+.. image:: https://wiki.analog.com/_media/wiki/analogTV>983688886001
    :alt: analogTV>983688886001
 
 YouTube
@@ -1314,15 +1069,11 @@ Works the same/similar way:
 
 find the video you want to watch, and then use it's "tag" in the url to encode it.
 
-.. image:: https://wiki.analog.com/_media/youtube>LCf-_iREESQ
+.. image:: https://wiki.analog.com/_media/wiki/youtube>LCf-_iREESQ
    :alt: youtube>LCf-\_iREESQ
 
 .. [1]
-
-.. container:: :en
-
    This means "This is Hebrew.", at least according to `Google Translate <http://translate.google.com/>`_.
-
 
 .. |3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0| image:: https://wiki.analog.com/_media/3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0
 .. |1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt| image:: https://wiki.analog.com/_media/1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt

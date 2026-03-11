@@ -1,20 +1,25 @@
 Output
 ======
 
-| :doc:`Click here to return to the IO page </wiki-migration/resources/tools-software/sigmastudio/toolbox/io>`
+:doc:`Click here to return to the IO page </wiki-migration/resources/tools-software/sigmastudio/toolbox/io>`
 
 --------------
 
-| The Output block routes signals to the hardwares physical outputs. Each block is linked to a single output channel.
-| |outputpic1.png|
-| Using the drop-down list, select the output channel to associate with a particular block.
+The Output block routes signals to the hardwares physical outputs. Each block is linked to a single output channel.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/outputpic1.png
+   :alt: outputpic1.png
+
+Using the drop-down list, select the output channel to associate with a particular block.
 
 Observe that as you drag more output blocks to your schematic, the number of output channels available in the drop-down list decreases because each output can only be associate with a single output block at a time.
 
 If you have multiple DSP processors in a design, specify which processor to associate with the output block by right-clicking the block and selecting Add Algorithm > IC # > *DSP Type* from the menu.
 
-| The hardware outputs for a particular processor are limited. While designing you can see the number of outputs that are still available from the HWOutputs item of the :doc:`Resources window </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/workspacewindows>`.
-| |outputpic2.png|
+The hardware outputs for a particular processor are limited. While designing you can see the number of outputs that are still available from the HWOutputs item of the :doc:`Resources window </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/workspacewindows>`.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/outputpic2.png
+   :alt: outputpic2.png
 
 Relationship Between Hardware Outputs and SigmaStudio Output Channels
 ---------------------------------------------------------------------
@@ -168,7 +173,6 @@ ADAU1781
 | DIG7                       | N/A                                     | Eighth TDM channel on ADC_SDATA  |
 +----------------------------+-----------------------------------------+----------------------------------+
 
---------------
 
 AD1953 Output
 -------------
@@ -178,8 +182,10 @@ AD1953 Output
    The AD1953 is not recommended for new designs. Information is included here for reference only.
 
 
-| The AD1953 has the DACs built into the DSP core, so you must choose an interpolation filter for the output. To use Output blocks with the AD1953 you will need to add an algorithm. As shown below, right-click the block to select which interpolating filter you would like to implement in the DSP core.
-| |outputpic3.png|
+The AD1953 has the DACs built into the DSP core, so you must choose an interpolation filter for the output. To use Output blocks with the AD1953 you will need to add an algorithm. As shown below, right-click the block to select which interpolating filter you would like to implement in the DSP core.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/outputpic3.png
+   :alt: outputpic3.png
 
 Next, designate the channel on the block to be left, right, or sub. Only one block can write to the same output channel.
 
@@ -219,13 +225,7 @@ Grow Algorithm
 
 This output module supports growth upto 16 channels. The output algorithm will be optimized to reduce MIPS when the grown output channels are consecutive and the starting index is a multiple of 4.
 
-.. _relationship-between-hardware-outputs-and-sigmastudio-output-channels-1:
-
 Relationship Between Hardware Outputs and SigmaStudio Output Channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The relationship between an output cell in SigmaStudio and the physical output pin on the chip can vary in some cases depending on register settings. Refer to *Serial Audio Outputs from DSP Core* section in the :adi:`datasheet <media/en/technical-documentation/data-sheets/ADAU1452_1451_1450.pdf>` for more infor mation on the same.
-
-.. |outputpic1.png| image:: https://wiki.analog.com/_media/outputpic1.png
-.. |outputpic2.png| image:: https://wiki.analog.com/_media/outputpic2.png
-.. |outputpic3.png| image:: https://wiki.analog.com/_media/outputpic3.png

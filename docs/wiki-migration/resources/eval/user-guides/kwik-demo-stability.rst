@@ -26,8 +26,7 @@ Lecture Materials
 LTspice Simulation Circuits
 ---------------------------
 
-| LTspice Circuits used in the lecture material are available at `KWIK Stability LTSpice Simulation Files <https://wiki.analog.com/_media/resources/eval/user-guides/stability_kwik_demo_ltspice_files.zip>`_.
-|
+LTspice Circuits used in the lecture material are available at `KWIK Stability LTSpice Simulation Files <https://wiki.analog.com/_media/resources/eval/user-guides/stability_kwik_demo_ltspice_files.zip>`_.
 
 .. tip::
 
@@ -44,8 +43,7 @@ A comprehensive User Guide for the evaluation hardware EVAL-KW4503Z can be found
 EVAL-KW4503Z Images
 -------------------
 
-| |Image EVAL-KW4503Z|
-| |Image ADALM2000 + EVAL-KW4503Z|
+|Image EVAL-KW4503Z| |Image ADALM2000 + EVAL-KW4503Z|
 
 ADALM2000 and Scopy Configuration Files
 ---------------------------------------
@@ -55,9 +53,17 @@ Configuration files for the ADALM2000 and Scopy that are referenced in the lectu
 KWIK Demo PCB Schematic
 -----------------------
 
-| `EVAL-KW4503Z Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/stability_kwik_demo_schematic.pdf>`_
-| ===== KWIK Demo PCB Bill of Materials ===== `EVAL-KW4503Z BOM <https://wiki.analog.com/_media/resources/eval/user-guides/stability_kwik_demo_bom.pdf>`_
-| ===== KWIK Demo Gerber Files ===== `EVAL-KW4503Z Gerber Files <https://wiki.analog.com/_media/resources/eval/user-guides/stability_kwik_demo_gerbers.zip>`_
+`EVAL-KW4503Z Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/stability_kwik_demo_schematic.pdf>`_
+
+KWIK Demo PCB Bill of Materials
+-------------------------------
+
+`EVAL-KW4503Z BOM <https://wiki.analog.com/_media/resources/eval/user-guides/stability_kwik_demo_bom.pdf>`_
+
+KWIK Demo Gerber Files
+----------------------
+
+`EVAL-KW4503Z Gerber Files <https://wiki.analog.com/_media/resources/eval/user-guides/stability_kwik_demo_gerbers.zip>`_
 
 ADALM2000 Active Learning Module and Scopy
 ------------------------------------------
@@ -71,7 +77,7 @@ ADALM2000 Active Learning Module and Scopy
 Additional Reading
 ------------------
 
-.. image:: https://wiki.analog.com/_media/:ez:`precision-technology-signal-chains/w/kwik-circuits/16183/1mhz-single-supply-photodiode-transimpedance-amplifier-tia-design`
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/:ez:`precision-technology-signal-chains/w/kwik-circuits/16183/1mhz-single-supply-photodiode-transimpedance-amplifier-tia-design`
    :alt: 1MHz, Single Supply, Photodiode Transimpedance Amplifier (TIA) Design
 
 :ez:`op-amp-stability-basics-part-1 - video <precision-technology-signal-chains/w/kwik-circuits/32237/op-amp-stability-basics-part-1>`

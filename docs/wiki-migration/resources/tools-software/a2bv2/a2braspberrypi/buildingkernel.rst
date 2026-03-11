@@ -64,7 +64,7 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
    The hw:Card#,Device# values for the command are derived from the aplay -l listing, as shown in above steps image.
 
 
--  The libasound2-dev package, which provides the necessary development files for ALSA, must be installed.\ ``sudo apt update 
+-  The libasound2-dev package, which provides the necessary development files for ALSA, must be installed.\ ``sudo apt update
    sudo apt install libasound2-dev:armhf``
 -  The customer needs to create their application, implement the appropriate PAL (Platform Abstraction Layer) functions, integrate the A2B stack into the repository, and create a Makefile to build the application. Refer to the following link to build the A2B application on the custom platform: :doc:`Building an A2B Application on a custom platform </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>`.
 -  In the Makefile, the correct path for the ALSA library needs to be provided, whether using a 32-bit or 64-bit toolchain. Ensure that the appropriate library path is specified based on the architecture.

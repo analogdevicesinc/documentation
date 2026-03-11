@@ -15,23 +15,17 @@ Required files:
 
 The ALICE-VVM program is written in Python and requires version 2.7.8 or higher of Python be installed on the user's computer. The program only imports modules generally included with standard Python installation packages. The following additional files are required to run ALICE-VVM:
 
-| All OS:
-| alice-VVM-1.0.py(w)
-| `alice-1.0.zip <https://wiki.analog.com/_media/university/tools/alice-1.0.zip>`_
+All OS: alice-VVM-1.0.py(w) `alice-1.0.zip <https://wiki.analog.com/_media/university/tools/alice-1.0.zip>`_
 
-| Windows:
-| `libpysmu.pyd (64 bit) <https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&job=Platform%3A%20x64>`_ `libpysmu.pyd (32 bit) <https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&job=Platform%3A%20x86>`_ (needs to be in Python27\\DLLs directory)
+Windows: `libpysmu.pyd (64 bit) <https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&job=Platform%3A%20x64>`_ `libpysmu.pyd (32 bit) <https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&job=Platform%3A%20x86>`_ (needs to be in Python27\\DLLs directory)
 
 Use of the :doc:`Windows installer </wiki-migration/university/tools/m1k/alice/install>` is highly recommended.
 
-| Linux:
-| `libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
+Linux: `libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
 
-| Required Python version:
-| Python version 2.7.8 or higher
+Required Python version: Python version 2.7.8 or higher
 
-| Required external modules (site-packages for the correct Python version):
-| NUMPY
+Required external modules (site-packages for the correct Python version): NUMPY
 
 Background:
 -----------
@@ -51,10 +45,7 @@ The unknown impedance to be measured is modeled as a series circuit consisting o
    Figure 1: Basic Concept
 
 
-| Three voltages are measured:
-| 1. VA is the applied voltage ( from Channel A of the ALM1000 ).
-| 2. VZ is the voltage across the unknown impedance ( from Channel B of the ALM1000 ).
-| 3. VI, the voltage across the known resistor R\ :sub:`EXT` is calculated from VA and VZ and is related to the current in both R\ :sub:`EXT` and the unknown impedance.
+Three voltages are measured: 1. VA is the applied voltage ( from Channel A of the ALM1000 ). 2. VZ is the voltage across the unknown impedance ( from Channel B of the ALM1000 ). 3. VI, the voltage across the known resistor R\ :sub:`EXT` is calculated from VA and VZ and is related to the current in both R\ :sub:`EXT` and the unknown impedance.
 
 These three voltages are actually vectors and indicated in figure 2.
 
@@ -110,12 +101,7 @@ Directions:
 
 It is assumed that the reader is somewhat familiar with the functionality and capabilities of the ADALM1000 hardware. For more on the ADALM1000 hardware please refer to the following documents:
 
-| :doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>`
-| :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>`
-| :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>`
-| :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
-| :doc:`ADALM1000 Spectrum Analyzer User's Guide </wiki-migration/university/tools/m1k/alice/sa-users-guide>`
-| :doc:`ADALM1000 Low Capacitance FET Input Buffers </wiki-migration/university/tools/m1k/fet-probes>`
+:doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>` :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>` :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>` :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` :doc:`ADALM1000 Spectrum Analyzer User's Guide </wiki-migration/university/tools/m1k/alice/sa-users-guide>` :doc:`ADALM1000 Low Capacitance FET Input Buffers </wiki-migration/university/tools/m1k/fet-probes>`
 
 Making Measurements:
 --------------------
@@ -182,10 +168,7 @@ The Conn / Recon button is used to indicate that ALM1000 is connected when green
 File drop down menu
 ~~~~~~~~~~~~~~~~~~~
 
-| Save Config Load Config buttons. Commands for saving and loading the configuration settings to a file. (.cfg file)
-| Save V-Cal, Load V-Cal buttons. ALICE-VVM uses the same calibration file as the Voltmeter Tool. To load the saved calibration factors press the Load button. To save the calibration values to the file for future use, press the Save button. The values are saved to a file with a unique name for this particular ALM1000 board based on the first 9 characters of the board device ID serial number. For example something like: 203131543_V.cal.
-| Save Screen button. Command for saving the graphics display area to an encapsulated postscript file (.eps).
-| The Help button will open a web browser to this document on the ADI Wiki site.
+Save Config Load Config buttons. Commands for saving and loading the configuration settings to a file. (.cfg file) Save V-Cal, Load V-Cal buttons. ALICE-VVM uses the same calibration file as the Voltmeter Tool. To load the saved calibration factors press the Load button. To save the calibration values to the file for future use, press the Save button. The values are saved to a file with a unique name for this particular ALM1000 board based on the first 9 characters of the board device ID serial number. For example something like: 203131543_V.cal. Save Screen button. Command for saving the graphics display area to an encapsulated postscript file (.eps). The Help button will open a web browser to this document on the ADI Wiki site.
 
 Options drop down menu
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -209,8 +192,7 @@ The ALM1000 hardware provides four 3.3V CMOS digital input / output pins. At thi
 
 At the bottom of this section, just above the ADI logo, are entry windows which allow input gain and offset calibration to be added to the channel A and B inputs. For more on the use of input attenuators please refer to the following two documents:
 
-| :doc:`M1K Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
-| :doc:`M1K Breadboard Adapters </wiki-migration/university/tools/m1k/breadboard-adapter>`
+:doc:`M1K Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` :doc:`M1K Breadboard Adapters </wiki-migration/university/tools/m1k/breadboard-adapter>`
 
 Examples:
 ---------
@@ -384,13 +366,7 @@ A special filter is the Flat Top filter. It has a flat top as the name implies. 
 
 ALICE-VVM has 7 built in windowing functions.
 
-| Rectangular, no window function B=1
-| Cosine window function, medium-dynamic range B=1.24
-| Triangular non-zero endpoints, medium-dynamic range B=1.33
-| Hann window function, medium-dynamic range B=1.5
-| Blackman window, continuous first derivate function, medium-dynamic range B=1.73
-| Nuttall window, continuous first derivate function, high-dynamic range B=2.02
-| Flat top window, medium-dynamic range, extra wide bandwidth B=3.77
+Rectangular, no window function B=1 Cosine window function, medium-dynamic range B=1.24 Triangular non-zero endpoints, medium-dynamic range B=1.33 Hann window function, medium-dynamic range B=1.5 Blackman window, continuous first derivate function, medium-dynamic range B=1.73 Nuttall window, continuous first derivate function, high-dynamic range B=2.02 Flat top window, medium-dynamic range, extra wide bandwidth B=3.77
 
 Zero Stuffing
 ~~~~~~~~~~~~~
@@ -421,9 +397,6 @@ In the program, you can choose a value between 0 and 5 for the Zero Stuffing. As
 
 **For Further Reading:**
 
-| https:*en.wikipedia.org/wiki/Fast_Fourier_transform
-  http:*\ www.analog.com/media/en/training-seminars/design-handbooks/MixedSignal_Sect5.pdf
-| https://en.wikipedia.org/wiki/Window_function
-| http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html
+https://en.wikipedia.org/wiki/Fast_Fourier_transform http://www.analog.com/media/en/training-seminars/design-handbooks/MixedSignal_Sect5.pdf https://en.wikipedia.org/wiki/Window_function http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html
 
 **Return to the** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`\ **.**

@@ -3,21 +3,26 @@
 IIR Elliptical LowPass Filter
 =============================
 
-| 
-| |ellipticalmonofilt.png| |ellipticalstereofilt.png|
+|ellipticalmonofilt.png| |ellipticalstereofilt.png|
 
 Description
 -----------
 
-| The IIR Elliptical LowPass Filter.
-| ===== Usage ===== To module has spin text box to control the order of the filter.
-| ===== Variants =====
+The IIR Elliptical LowPass Filter.
+
+Usage
+-----
+
+To module has spin text box to control the order of the filter.
+
+Variants
+--------
 
 -  IIR Elliptical LowPass (Mono)
 -  IIR Elliptical LowPass (Stereo)
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 +---------------------------------+------------+------------------+---------------+------------------+
 | Name                            | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -50,7 +55,7 @@ Output  Audio Filtered Output (Output0 for stereo)
 Output1 Audio Filtered Output1 (only for stereo)
 ======= ===== ====================================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------+-------------------------------------------+

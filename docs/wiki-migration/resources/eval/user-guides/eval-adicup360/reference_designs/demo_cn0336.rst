@@ -16,8 +16,7 @@ The **ADuCM360_demo_cn0336** project uses the :adi:`EVAL-CN0336-PMDZ pmod <en/de
 
 The CN0336 circuit consists of an input current-to-voltage converter, a level shifting circuit, an ADC stage and an output isolation stage. The **4 mA** to **20 mA** input signal is converted into **voltage** levels compatible with the input range of the ADC (**0 V** - **2.5 V**). The 12-bits ADC value is received via SPI interface of the EVAL-ADICUP360 board.
 
-| 
-| The **EVAL-CN0336-PMDZ** comes with an evaluation software which can help you to test and to calibrate your pmod before you use it.
+The **EVAL-CN0336-PMDZ** comes with an evaluation software which can help you to test and to calibrate your pmod before you use it.
 
 .. note::
 
@@ -32,15 +31,15 @@ The **ADuCM360_demo_cn0336** application processes ADC outputs and provide curre
 
 A UART interface (115200 baud rate and 8-bits data length) is used to send the results to terminal window: **input current** value, **voltage** calculation and **ADC code**. If the input value is out of range you get an error message which means that you need to check your settings.
 
-To start displaying data acquisition results on a terminal (<fc #4682b4>putty</fc> in this case) you need to press ENTER key (CR) from the keyboard and after that the data are updated every time the input values are changed. The output data are send via UART using semihosting.
+To start displaying data acquisition results on a terminal (putty in this case) you need to press ENTER key (CR) from the keyboard and after that the data are updated every time the input values are changed. The output data are send via UART using semihosting.
 
-The project offers two method to calculate the input current, giving you the possibility to get more accurate results (see :adi:`CN0336 circuit note <cn0336>`). You can use <fc #008000>\ **transfer function**\ </fc> of the circuit which calculate <fc #008080>input current</fc> based on <fc #008080>voltage</fc> changed value and circuit <fc #008080>gain</fc>:
+The project offers two method to calculate the input current, giving you the possibility to get more accurate results (see :adi:`CN0336 circuit note <cn0336>`). You can use **transfer function** of the circuit which calculate input current based on voltage changed value and circuit gain:
 
 ::
 
        I = Imin + (Vout - Voffset)/Gain
 
-Or you can use the <fc #008000>\ **two-point calibration**\ </fc> method which used the <fc #008080>ADC output</fc> values for 2 different measurements: first at <fc #008080>Imin = 4 mA</fc> (ADC1) and second at <fc #008080>Imax = 20 mA</fc> (ADC2):
+Or you can use the **two-point calibration** method which used the ADC output values for 2 different measurements: first at Imin = 4 mA (ADC1) and second at Imax = 20 mA (ADC2):
 
 ::
 
@@ -116,29 +115,29 @@ The software for the **ADuCM360_demo_cn0336** demo can be found here:
 Configuring the Software Parameters
 -----------------------------------
 
--  **Converter operation mode** - <fc #008000>AD7091R_OPERATION_MODE</fc> - <fc #008080>POWER_DOWN</fc> to select power-down AD7091R mode of operation or <fc #008080>NORMAL</fc> for normal mode (*AD7091R.h*).
+-  **Converter operation mode** - AD7091R_OPERATION_MODE - POWER_DOWN to select power-down AD7091R mode of operation or NORMAL for normal mode (*AD7091R.h*).
 
 ::
 
       #define AD7091R_OPERATION_MODE      POWER_DOWN
 
--  **Converter scan time** - <fc #008000>SCAN_TIME</fc> - how often (msec) to read conversion results (*AD7091R.h*).
+-  **Converter scan time** - SCAN_TIME - how often (msec) to read conversion results (*AD7091R.h*).
 
 ::
 
       #define SCAN_TIME          500
 
--  \*\* Converter reference voltage*\* - <fc #008000>VREF</fc> - reference voltage (V) for AD7091R converter (*AD7091R.h*).
+-  \*\* Converter reference voltage*\* - VREF - reference voltage (V) for AD7091R converter (*AD7091R.h*).
 
 ::
 
-       #define VREF              2.5 
+       #define VREF              2.5
 
--  **Current calculation formula** - <fc #008000>CALC_FORMULA</fc> - this parameter can be set as <fc #008080>TRANSFER_FUNCTION</fc> or <fc #008080>TWO_POINT_CALIBRATION</fc> (*CN0336.h*).
+-  **Current calculation formula** - CALC_FORMULA - this parameter can be set as TRANSFER_FUNCTION or TWO_POINT_CALIBRATION (*CN0336.h*).
 
 ::
 
-       #define CALC_FORMULA     TWO_POINT_CALIBRATION 
+       #define CALC_FORMULA     TWO_POINT_CALIBRATION
 
 -  **Data acquisition parameters** - all needed parameters for data calculations (*CN0336.h*).
 
@@ -159,8 +158,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -171,8 +168,6 @@ Following is the UART configuration.
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-|
 
 -  Semihosting must be enables to view the data via the UART
 -  The user must press the **<ENTER>** key to beginning transmitting the data to the serial terminal.
@@ -204,18 +199,18 @@ The **ADuCM360_demo_cn0336** project use ADuCM36x C/C++ Project structure.
 
 This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI0, UART via P0.6/P0.7; SPI, UART read/write functions; AD7091R control and current-voltage conversion.
 
-| In the **src** and **include** folders you will find the source and header files related to CN0336 software application. The *Communication.c/h* files contain SPI and UART specific data, meanwhile the *AD7091R.c/h* files contain the ADC control data and the *CN0336.c/h* files contain the data acquisition parts.
-| |image2|
+In the **src** and **include** folders you will find the source and header files related to CN0336 software application. The *Communication.c/h* files contain SPI and UART specific data, meanwhile the *AD7091R.c/h* files contain the ADC control data and the *CN0336.c/h* files contain the data acquisition parts.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0336_demo_5.png
+   :align: left
+   :width: 330px
 
 The **RTE** folder contains device and system related files:
 
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| // End of Document //
+// End of Document //
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0336_demo_3.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0336_demo_5.png
-   :width: 330px

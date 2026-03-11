@@ -97,13 +97,13 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
    Linux Kernel Configuration
    Symbol: ADIN1100_PHY [=y]
-   Type  : tristate                                                                                                                                                                      
+   Type  : tristate
    Prompt: Analog Devices Industrial Ethernet 10BASE-T1L PHYs
       Location:
         -> Device Drivers
-          -> Network device support (NETDEVICES [=y])│  
-    (1)     -> PHY Device support and infrastructure (PHYLIB [=y]) 
-      Defined at drivers/net/phy/Kconfig:208  
+          -> Network device support (NETDEVICES [=y])│
+    (1)     -> PHY Device support and infrastructure (PHYLIB [=y])
+      Defined at drivers/net/phy/Kconfig:208
       Depends on: NETDEVICES [=y] && PHYLIB [=y]
 
 Driver testing
@@ -129,30 +129,30 @@ Typically, if both TX & RX values are incremented, it means that it is working. 
 
 ::
 
-   root@analog:~# ifconfig 
-   eth0      Link encap:Ethernet  HWaddr d6:41:50:ed:3b:65  
+   root@analog:~# ifconfig
+   eth0      Link encap:Ethernet  HWaddr d6:41:50:ed:3b:65
              UP BROADCAST MULTICAST  MTU:1500  Metric:1
              RX packets:609895 errors:5 dropped:0 overruns:0 frame:0
              TX packets:286926 errors:0 dropped:0 overruns:0 carrier:0
-             collisions:0 txqueuelen:1000 
+             collisions:0 txqueuelen:1000
              RX bytes:0 (647.6 MB)  TX bytes:0 (38.7 MB)
-             Interrupt:23 
+             Interrupt:23
 
-   eth1      Link encap:Ethernet  HWaddr 00:0a:35:03:73:d9  
+   eth1      Link encap:Ethernet  HWaddr 00:0a:35:03:73:d9
              UP BROADCAST MULTICAST  MTU:1500  Metric:1
              RX packets:0 errors:0 dropped:0 overruns:0 frame:0
              TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-             collisions:0 txqueuelen:1000 
+             collisions:0 txqueuelen:1000
              RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
-             Interrupt:24 
+             Interrupt:24
 
-   lo        Link encap:Local Loopback  
+   lo        Link encap:Local Loopback
              inet addr:127.0.0.1  Mask:255.0.0.0
              inet6 addr: ::1/128 Scope:Host
              UP LOOPBACK RUNNING  MTU:65536  Metric:1
              RX packets:8 errors:0 dropped:0 overruns:0 frame:0
              TX packets:8 errors:0 dropped:0 overruns:0 carrier:0
-             collisions:0 txqueuelen:1000 
+             collisions:0 txqueuelen:1000
              RX bytes:480 (480.0 B)  TX bytes:480 (480.0 B)
 
 ethtool
@@ -185,15 +185,15 @@ Example: Seeing MAC & PHY info
    root@analog:~# ethtool eth0
    Settings for eth0:
            Supported ports: [ TP MII ]
-           Supported link modes:   10baseT/Full 
+           Supported link modes:   10baseT/Full
            Supported pause frame use: No
            Supports auto-negotiation: Yes
            Supported FEC modes: Not reported
-           Advertised link modes:  10baseT/Full 
+           Advertised link modes:  10baseT/Full
            Advertised pause frame use: No
            Advertised auto-negotiation: Yes
            Advertised FEC modes: Not reported
-           Link partner advertised link modes:  10baseT/Full 
+           Link partner advertised link modes:  10baseT/Full
            Link partner advertised pause frame use: Symmetric
            Link partner advertised auto-negotiation: Yes
            Link partner advertised FEC modes: Not reported
@@ -239,7 +239,7 @@ Or you can compile the tool:
 
 ::
 
-   root@analog:~/adin1100# cmake CMakeLists.txt 
+   root@analog:~/adin1100# cmake CMakeLists.txt
    -- The C compiler identification is GNU 8.3.0
    -- Check for working C compiler: /usr/bin/cc
    -- Check for working C compiler: /usr/bin/cc -- works
@@ -258,7 +258,7 @@ Or you can compile the tool:
    [100%] Built target adin10spe_phy_tool
    root@analog:~/adin1100# ls
    CMakeCache.txt  CMakeFiles  CMakeLists.txt  Makefile  adin10spe_phy.c  adin10spe_phy.h  adin10spe_phy_tool  adin10spe_phy_tool.c  cmake_install.cmake
-   root@analog:~/adin1100# 
+   root@analog:~/adin1100#
 
 Check command line formatting via:
 
@@ -280,7 +280,7 @@ Check command line formatting via:
 
        Test mode:
            Usage: adin10spe_phy_tool [interface name] [phy ID] [start-test | stop-test] [test-mode]
-               test-mode: 
+               test-mode:
                    test1: repeatedly transmits the data symbol sequence (+1, –1)
                    test2: transmits ten “+1” symbols followed by ten “-1” symbols
                    test3: transmits as in non-test operation and in the master data mode
@@ -299,7 +299,7 @@ Check command line formatting via:
            Usage: adin10spe_phy_tool [interface name] [phy ID] software-power-down [True | False]
 
            Example : adin10spe_phy_tool eth1 0 software-power-down True
-   root@analog:~/adin1100# 
+   root@analog:~/adin1100#
 
 Throughput testing - iperf
 --------------------------
@@ -357,4 +357,8 @@ Ethernet pointers
 -  `Ethernet Controller bindings doc <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/ethernet-controller.yaml>`_
 -  `Ethernet PHY bindings doc <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/ethernet-phy.yaml>`_
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+

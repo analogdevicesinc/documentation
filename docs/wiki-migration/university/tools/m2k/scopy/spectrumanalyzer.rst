@@ -4,7 +4,7 @@ Scopy Spectrum Analyzer
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/youtube>lsfvpkSOoPA
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>lsfvpkSOoPA
    :alt: youtube>lsfvpkSOoPA
 
 General Description
@@ -22,10 +22,10 @@ The Spectrum Analyzer instrument captures the signal in frequency domain where t
 Spectrum Analyzer Front Panel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| 
-| |image1|
-| \* **Spectrum Analyzer Tab**: Clicking this tab brings out the Spectrum Analyzer instrument in front. The white box will allow the user to run/stop the Spectrum Analyzer while other instrument tab is open.
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-frontpanel.png
+   :align: center
 
+-  **Spectrum Analyzer Tab**: Clicking this tab brings out the Spectrum Analyzer instrument in front. The white box will allow the user to run/stop the Spectrum Analyzer while other instrument tab is open.
 -  **Signal Plot**: Displays the signal in frequency domain. X-axis measures the frequency of the signal and Y-axis displays the amplitude in dBFS.
 -  **Channel Controls**: Clicking the orange or violet button allows the user to enable/disable the channels. Clicking the button on the right of the channel will bring out the channel settings.
 -  **Sweep**: Clicking the Sweep button will bring out the sweep settings that will allow the user to modify the signal plot window’s display.
@@ -35,26 +35,27 @@ Spectrum Analyzer Front Panel
 -  **Last opened panel**: Clicking this button will bring out the last opened panel.
 -  **Acquisition status**: Displays the percentage of acquired samples and the total number.
 
-| 
-| ----
+--------------
 
 Channel Settings
 ~~~~~~~~~~~~~~~~
 
-| |image2|
-| The channel setting allows the user to set the desired computation or variations on the signal that wants to be analyzed. The proper FFT computation and the type of averaging desired to use is set here.
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-ch-sample.png
+   :align: center
+
+The channel setting allows the user to set the desired computation or variations on the signal that wants to be analyzed. The proper FFT computation and the type of averaging desired to use is set here.
 
 -  **Channel menu button**: This button will bring out the channel settings either for channel 1 or 2.
 -  **Type**: The options available in the drop down menu are the several types of averaging available in Scopy’s Spectrum Analyzer. This will improve the accuracy and repeatability of measurements. The summary of the averaging types are written below.
 -  **Window**: Determines the type of FFT computation to be used.
--  \**CH Thickness \*\*: Sets the desired thickness for each plot signal.
-   \* **Gain mode**: Change the gain mode for each channel. Available options are "Low" (-25V to 25V) and "High" (-2.5V to 2.5V).
-   \* **Snapshot button**: Create a snapshot of the current channel and add it as a reference channel (see screenshot attached below).
-   Here’s a brief suggestion of the window functions based on the input signal:
+-  **CH Thickness**: Sets the desired thickness for each plot signal.
+-  **Gain mode**: Change the gain mode for each channel. Available options are "Low" (-25V to 25V) and "High" (-2.5V to 2.5V).
+-  **Snapshot button**: Create a snapshot of the current channel and add it as a reference channel (see screenshot attached below).
 
-| 
-| ^Signal Content^ Window ^
+Here’s a brief suggestion of the window functions based on the input signal:
 
+============================================== ========
+Signal Content                                 Window
 ============================================== ========
 Sinewave or combination of sinewaves           Hann
 Sinewave where amplitude accuracy is important Flat top
@@ -66,7 +67,7 @@ For the description of the *Window Function* see below:
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/use-cases/spectrum_analyzer_windowtype.png
    :align: right
@@ -74,13 +75,13 @@ For the description of the *Window Function* see below:
 
 ::
 
-     ***Hanning**: The most commonly used window. It has an amplitude variation about 1.5dB for signals between bins and provides reasonable selectivity. Its filter roll off is not particularly steep. Hanning windows can limit the performance of the analyzer when looking at signals close together in frequency with very different amplitude.
-     ***Flattop**: The Flattop window improves on the amplitude accuracy of the Hanning window. Its between-bin amplitude variation is about 0.02 dB. However, the selectivity is a little worse. Unlike the Hanning, the Flattop window has a wide pass band and very steep rolloff on either side. Thus, signals appear wide but do not leak across the whole spectrum.
-     ***Blackman-Harris**: The Blackman-Harris window is a very good window to use with FFT analyzers. It has better amplitude accuracy than the Hanning, very good selectivity, and the fastest filter rolloff. The filter is steep and narrow and reaches a lower attenuation than the other windows. This allows signals close together in frequency to be distinguished, even when their amplitudes are very different.
+     **Hanning**: The most commonly used window. It has an amplitude variation about 1.5dB for signals between bins and provides reasonable selectivity. Its filter roll off is not particularly steep. Hanning windows can limit the performance of the analyzer when looking at signals close together in frequency with very different amplitude.
+     **Flattop**: The Flattop window improves on the amplitude accuracy of the Hanning window. Its between-bin amplitude variation is about 0.02 dB. However, the selectivity is a little worse. Unlike the Hanning, the Flattop window has a wide pass band and very steep rolloff on either side. Thus, signals appear wide but do not leak across the whole spectrum.
+     **Blackman-Harris**: The Blackman-Harris window is a very good window to use with FFT analyzers. It has better amplitude accuracy than the Hanning, very good selectivity, and the fastest filter rolloff. The filter is steep and narrow and reaches a lower attenuation than the other windows. This allows signals close together in frequency to be distinguished, even when their amplitudes are very different.
 
 ::
 
-     ***Kaiser** : The Kaiser window, combines excellent selectivity and reasonable accuracy. The Kaiser window has the lowest side-lobes and the least broadening for non-bin frequencies. Because of these properties, it is the best window to use for measurements requiring a large dynamic range.
+     **Kaiser** : The Kaiser window, combines excellent selectivity and reasonable accuracy. The Kaiser window has the lowest side-lobes and the least broadening for non-bin frequencies. Because of these properties, it is the best window to use for measurements requiring a large dynamic range.
 
 Visit https://ccrma.stanford.edu/~jos/sasp/Spectrum_Analysis_Windows.html for a detailed explanation
 
@@ -89,12 +90,11 @@ Visit https://ccrma.stanford.edu/~jos/sasp/Spectrum_Analysis_Windows.html for a 
    </details>
 
 
-   | For the description of the *Averaging Types* see below:
-|
+For the description of the *Averaging Types* see below: 
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/use-cases/spectrum_analyzer_channeltype.png
    :align: right
@@ -115,8 +115,7 @@ Visit https://ccrma.stanford.edu/~jos/sasp/Spectrum_Analysis_Windows.html for a 
    </details>
 
 
-| 
-| ----
+--------------
 
 Averaging
 ~~~~~~~~~
@@ -126,21 +125,16 @@ Averaging
 
 -  **Averaging**: Sets the desired amount of averaging.
 
-| 
-| |image3|
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-avg-history.png
+   :align: center
 
 -  **Averaging status**: Display how many samples were processed from the maximum set averaging amount.
 -  **Averaging**: Sets the desired amount of averaging.
 -  **History button**: Turn average history on/off (this affects the way the average is being processed and it is available only for the following average types: Linear RMS and Linear DB).
 
-| The average value can be set to maximum 1000 for the following average types: Peak Hold, Min Hold, Linear RMS and Linear DB.
-| The average value can be set to maximum 1000000 for the following average types: Peak Hold Continuous, Min Hold Continuous, Exponential RMS, Exponential DB.
-| For Linear RMS and Linear DB the maximum average value is influenced by the History button.
-| If the History button is ON, the maximum value is 1000.
-| If the History button is OFF, the maximum value is 1000000.
-| ----
+The average value can be set to maximum 1000 for the following average types: Peak Hold, Min Hold, Linear RMS and Linear DB. The average value can be set to maximum 1000000 for the following average types: Peak Hold Continuous, Min Hold Continuous, Exponential RMS, Exponential DB. For Linear RMS and Linear DB the maximum average value is influenced by the History button. If the History button is ON, the maximum value is 1000. If the History button is OFF, the maximum value is 1000000.
 
---------------
+
 
 Snapshot
 ~~~~~~~~
@@ -148,8 +142,7 @@ Snapshot
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-ch-snapshot.png
    :align: center
 
-| 
-| ----
+--------------
 
 General Settings
 ~~~~~~~~~~~~~~~~
@@ -157,17 +150,19 @@ General Settings
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-general-settings.png
    :align: center
 
-| 
-| General settings contains the export data button. ----
+General settings contains the export data button.
+
+--------------
 
 Sweep Setting
 ~~~~~~~~~~~~~
 
-| 
-| |image4|
-| Sweep menu allows the user to make changes on the Spectrum Analyzer’s signal plot window depending on the desired frequency to be analyzed. All the changes made applies to both channels.
-| \* **Sweep menu button**: This button will bring out the sweep setting.
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-sweep-settings.png
+   :align: center
 
+Sweep menu allows the user to make changes on the Spectrum Analyzer’s signal plot window depending on the desired frequency to be analyzed. All the changes made applies to both channels.
+
+-  **Sweep menu button**: This button will bring out the sweep setting.
 -  **Logarithmic/Linear frequency switch**: Change the frequency displayed on the plot between linear and logarithmic.
 -  **Start and Stop Frequency**: Sets the start and stop frequency to be analyzed from 0Hz to 50MHz.
 -  **Center Frequency**: Sets the center frequency to be analyzed.
@@ -176,18 +171,18 @@ Sweep Setting
 -  **Units**: Sets the amplitude unit to \_dBFS, dBu, dBV, Vpeak, Vrms and V/√Hz.
 -  **Resolution Bandwidth**: Sets the frequency delta between two spectrum points.
 
-| 
-| ----
+--------------
 
 Markers
 ~~~~~~~
 
-| 
-| |image5|
-| Markers allow the user to measure the amplitude on a specific frequency. Scopy allows the user to have multiple markers on each channel. The marker controls makes it flexible enough for quick spectrum measurement.
-| \* \**Marker Settings \*\*: This button will bring out the Marker Settings.
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-markers.png
+   :align: center
 
--  \**Marker Enable button \*\*: Enable/Disable button of the markers. The marker is turned on when the box is filled with colors. Scopy allows 5 markers to be turned on at the same time.
+Markers allow the user to measure the amplitude on a specific frequency. Scopy allows the user to have multiple markers on each channel. The marker controls makes it flexible enough for quick spectrum measurement.
+
+-  **Marker Settings**: This button will bring out the Marker Settings.
+-  **Marker Enable button**: Enable/Disable button of the markers. The marker is turned on when the box is filled with colors. Scopy allows 5 markers to be turned on at the same time.
 -  **Marker Control**: Allows the user to move the marker on a specified frequency position.
 -  **Automatic Marker Control**: These buttons automatically positions the selected marker based on their function.
 
@@ -204,9 +199,3 @@ Markers
 
 
 **Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`
-
-.. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-frontpanel.png
-.. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-ch-sample.png
-.. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-avg-history.png
-.. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-sweep-settings.png
-.. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-markers.png

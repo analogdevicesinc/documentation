@@ -44,11 +44,7 @@ The mathematics of a cyclic redundancy check, used to provide a quick check agai
 Materials:
 ----------
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 1 – 74HC273 Octal D-Type register or similar logic device
-| 1 – 74HC86 Quad two input XOR gate (or XOR gate from CD4007 etc.)
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 – 74HC273 Octal D-Type register or similar logic device 1 – 74HC86 Quad two input XOR gate (or XOR gate from CD4007 etc.)
 
 Directions:
 -----------
@@ -137,10 +133,8 @@ Appendix:
    74HC273 Pinout
 
 
-\**For Further Reading: \*\*
+**For Further Reading:**
 
-| `XOR_gate <https://en.wikipedia.org/wiki/XOR_gate>`_
-| `Shift_register <https://en.wikipedia.org/wiki/Shift_register>`_
-| `Linear_feedback_shift_register <https://en.wikipedia.org/wiki/Linear_feedback_shift_register>`_
+`XOR_gate <https://en.wikipedia.org/wiki/XOR_gate>`_ `Shift_register <https://en.wikipedia.org/wiki/Shift_register>`_ `Linear_feedback_shift_register <https://en.wikipedia.org/wiki/Linear_feedback_shift_register>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**

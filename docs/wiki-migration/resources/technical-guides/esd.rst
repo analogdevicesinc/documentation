@@ -25,9 +25,12 @@ The air discharges are applied to both AD74115H output (P21) and sense (P8) term
 
 The coupling discharge are applied to the horizontal coupling plane (HCP) and vertical coupling plane (VCP). The coupling plane has two 470 kΩ bleeding resistors to the ground reference plane (GRP) which is connected to earth ground.
 
-| 
-| ===Hardware Configuration=== There was a digital multi meter (DMM) connected to the output load to ensure there was no loss of output during testing and also to ensure the integrity of the internal ADC measurement. To protect the DMM a low pass filter was placed between the load and DMM. The measurements were streamed back to the laptop throughout the testing.
-| The AD74115H was tested using 3 use cases to exercise all terminal blocks.
+Hardware Configuration
+----------------------
+
+There was a digital multi meter (DMM) connected to the output load to ensure there was no loss of output during testing and also to ensure the integrity of the internal ADC measurement. To protect the DMM a low pass filter was placed between the load and DMM. The measurements were streamed back to the laptop throughout the testing.
+
+The AD74115H was tested using 3 use cases to exercise all terminal blocks.
 
 -  Current Output Use Case:
 
@@ -44,23 +47,24 @@ The coupling discharge are applied to the horizontal coupling plane (HCP) and ve
 
 ::
 
-     * 
+     *
 
-| |image1|
+
+     |image1|
 
 .. container:: centeralign
 
    *Figure 1 ADP1034 and AD74115H Current Output ESD Setup*
 
 
-| |image2|
+   |image2|
 
 .. container:: centeralign
 
    *Figure 1 ADP1034 and AD74115H 4 wire RTD ESD Setup*
 
 
-| |image3|
+   |image3|
 
 .. container:: centeralign
 
@@ -90,8 +94,6 @@ Pre and Post Measurement Flow
    *Read DMM measurement
    *Save data to file
    *Repeat 1000 times
-
-| 
 
 Performance Summary
 -------------------

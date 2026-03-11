@@ -180,8 +180,6 @@ Register Structure
    -  **FIFO_CTRL**: For FIFO and watermark configuration.
    -  **SPI_CHKSUM**: Provides a checksum verifying burst mode data integrity.
 
-.. _data-communication-and-synchronization-1:
-
 Data Communication and Synchronization
 ======================================
 

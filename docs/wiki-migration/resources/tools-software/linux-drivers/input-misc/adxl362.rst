@@ -24,7 +24,7 @@ ADXL362: Micropower 3-Axis MEMS Accelerometer: Digital Output, ±2/±4/±8 g Ran
 
 -  :adi:`Product Page <ADXL362>`
 
-.. image:: https://wiki.analog.com/_media/scrape>adi>ADXL362#additional-details__paragraph
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-misc/scrape>adi>ADXL362#additional-details__paragraph
    :alt: scrape>adi>ADXL362#additional-details\__paragraph
 
 Source Code
@@ -36,7 +36,7 @@ Status
 +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | Source                                                                                        | Mainlined?                                                                                                             |
 +===============================================================================================+========================================================================================================================+
-| :git-linux:`git <drivers/input/misc/adxl362.c>`                                               | `In Progress <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/input/misc/adxl362.c>`_  |
+| `git <https://github.com/analogdevicesinc/linux/blob/adxl362/drivers/input/misc/adxl362.c>`_  | `In Progress <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/input/misc/adxl362.c>`_  |
 +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Files
@@ -45,15 +45,18 @@ Files
 +----------+--------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                     |
 +==========+==========================================================================================================================+
-| driver   | :git-linux:`drivers/input/misc/adxl362.c`                                                                                |
+| driver   | `drivers/input/misc/adxl362.c <https://github.com/analogdevicesinc/linux/blob/adxl362/drivers/input/misc/adxl362.c>`_    |
 +----------+--------------------------------------------------------------------------------------------------------------------------+
-| include  | :git-linux:`include/linux/input/adxl362.h`                                                                               |
+| include  | `include/linux/input/adxl362.h <https://github.com/analogdevicesinc/linux/blob/adxl362/include/linux/input/adxl362.h>`_  |
 +----------+--------------------------------------------------------------------------------------------------------------------------+
 
 Example platform device initialization
 ======================================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 Digital Accelerometer characteristics are application specific and may vary between boards and models. The platform_data for the device's “struct device” holds this information.
 
@@ -191,7 +194,12 @@ Digital Accelerometer characteristics are application specific and may vary betw
        .ev_code_z = ABS_Z,
    };
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 Depending on the DDS IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
 
@@ -365,13 +373,9 @@ Use the event_test utility to test proper function
    Event: time 43.656481, type 3 (Absolute), code 2 (Z), value 280
    Event: time 43.656486, -------------- Report Sync ------------
 
-|
-
 .. tip::
 
-   In case you move the accelerometer and don't receive events, it's likely that something with your Interrupt is wrong.
-
-   | **check irq number in your platform device file**
+   In case you move the accelerometer and don't receive events, it's likely that something with your Interrupt is wrong. **check irq number in your platform device file**
 
 
 .. tip::
@@ -411,9 +415,9 @@ Output Data Rate (Hz) Bandwidth (Hz)
 12.5                  6.25
 ===================== ==============
 
-| Writing '**Output Data Rate**' into **rate** sets the desired sample rate
-| Reading **rate** returns the current Output Data Rate
-| See table above for supported sample rates
+Writing '**Output Data Rate**' into **rate** sets the desired sample rate Reading **rate** returns the current Output Data Rate
+
+See table above for supported sample rates
 
 ::
 
@@ -424,8 +428,7 @@ Output Data Rate (Hz) Bandwidth (Hz)
 Enabling / Disabling Autosleep Upon Inactivity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Writing '**1**' into autosleep - enables Autosleep Upon Inactivity
-| Writing '**0**' into autosleep - disables Autosleep Upon Inactivity
+Writing '**1**' into autosleep - enables Autosleep Upon Inactivity Writing '**0**' into autosleep - disables Autosleep Upon Inactivity
 
 ::
 

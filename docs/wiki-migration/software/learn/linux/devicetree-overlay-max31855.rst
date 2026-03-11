@@ -27,7 +27,7 @@ Step 2b - Analyze the Bindings File
 
 In the case of the MAX31855 there is not a fully written Wiki page, but rather a device tree bindings file.  Looking at the :git-linux:`maxim,max31855k.yaml <Documentation/devicetree/bindings/iio/temperature/maxim%2Cmax31855k.yaml>` file, we can see human readable format describing how to utilize the device within a device tree. Device properties are described, indicating options available to the user, as well as an example device tree entry (in most cases).  In the case of our MAX31855 device, there are no additional properties with the exception of providing a maximum clock speed for the SPI bus. The provided example entry is quite simple:
 
-.. code:: syntaxhighlighter-pre
+::
 
    spi {
        #address-cells = <1>;
@@ -45,7 +45,7 @@ Step 3 - Starting the Overlay
 
 The next step is to start the actual overlay file.  We will be performing the work on the actual target RaspberryPI.  Once the RaspberryPI is booted, open your favorite text editor and start a new overlay file by including the necessary header and fragment blocks as a boiler plate:
 
-.. code:: syntaxhighlighter-pre
+::
 
    /dts-v1/;
    /plugin/;
@@ -59,9 +59,9 @@ The next step is to start the actual overlay file.  We will be performing the w
 Step 4 - Defining the Target
 ----------------------------
 
-Next we'll need to define the overlay target.  For this hardware setup, the PMOD will be plugged into P1 of a `PMD-RPI-INTZ <:doc:`/wiki-migration/resources/eval/user-guides/circuits-from-the-lab/pmd-rpi-intz`>`_ adapter board, which corresponds to SPI0.  To support SPI0, our target will be defined as follows. 
+Next we'll need to define the overlay target.  For this hardware setup, the PMOD will be plugged into P1 of a `PMD-RPI-INTZ <:doc:`/wiki-migration/resources/eval/user-guides/circuits-from-the-lab/pmd-rpi-intz`>`_ adapter board, which corresponds to SPI0.  To support SPI0, our target will be defined as follows.
 
-.. code:: syntaxhighlighter-pre
+::
 
    /dts-v1/;
    /plugin/;
@@ -73,7 +73,7 @@ Next we'll need to define the overlay target.  For this hardware setup, the PMO
            __overlay__ {
                #address-cells = <1>;
                #size-cells = <0>;
-               status = "okay"; 
+               status = "okay";
            };
 
        };
@@ -86,7 +86,7 @@ Step 5 - Adding the Device
 
 With the target defined, the device can be added.  The documentation provided a complete device tree entry for the MAX31855, which can be copied directly into the overlay.
 
-.. code:: syntaxhighlighter-pre
+::
 
    /dts-v1/;
    /plugin/;
@@ -98,13 +98,13 @@ With the target defined, the device can be added.  The documentation provided a
            __overlay__ {
                #address-cells = <1>;
                #size-cells = <0>;
-               status = "okay"; 
+               status = "okay";
 
                temp-sensor@0 {
                    compatible = "maxim,max31855k";
                    reg = <0>;
                    spi-max-frequency = <4300000>;
-               }; 
+               };
            };
        };
    };
@@ -116,7 +116,7 @@ Step 6 - Deconflicting the Tree
 
 Prior to building the overlay, we need to ensure there is no conflict with existing entries. This takes some knowledge of what is currently running in the hardware system, and when possible it is best to replicate work done on other overlays which may use the same hardware bus.  In the case of the RaspberryPI, we need to ensure the userspace SPI bus access is not available.  To do this the spidev0 device will be set to disabled.    It is not guaranteed that spidev0 was enabled in the baseline device tree, but this is a precautionary measure.
 
-.. code:: syntaxhighlighter-pre
+::
 
    /dts-v1/;
    /plugin/;
@@ -127,7 +127,7 @@ Prior to building the overlay, we need to ensure there is no conflict with exist
            __overlay__ {
                #address-cells = <1>;
            #size-cells = <0>;
-           status = "okay";  
+           status = "okay";
                temp-sensor@0 {
                    compatible = "maxim,max31855k";
                    reg = <0>;
@@ -142,14 +142,14 @@ Prior to building the overlay, we need to ensure there is no conflict with exist
                status = "disabled";
            };
        };
-   }; 
+   };
 
 Step 7 - Building the Overlay
 -----------------------------
 
 The overlay can now be built using the dtc utility. From the command line run ``dtc -I dts -O dtb rpi-max31855.dtso > rpi-max31855.dtbo``.  In my case, the source file was named rpi-max31855.dtso.
 
-.. code:: syntaxhighlighter-pre
+::
 
    analog@rpi1:~ $ dtc -I dts -O dtb rpi-max31855.dtso > rpi-max31855.dtbo
 
@@ -158,13 +158,13 @@ Step 8 - Deploying the Overlay
 
 Copy the output file from the ``%%dtc ''command, in this case ''rpi-max31855.dtbo'' to the'' /boot/overlays'' folder.  You will need to use ''sudo %%``\ to perform this operation.
 
-.. code:: syntaxhighlighter-pre
+::
 
    analog@rpi1:~ $ sudo cp rpi-max31855.dtbo /boot/overlays/
 
 Edit the /boot/config.txt file to include the new overlay.  You will also need to be sudo to perform this action.  Recall, the line is dtoverlay=<overlay>, with the file extension omitted.  Be sure to comment out (#) or delete any other overlays which may conflict on the SPI bus with this part.
 
-.. code:: syntaxhighlighter-pre
+::
 
    #dtoverlay=rpi-ad5592r
    dtoverlay=rpi-max31855

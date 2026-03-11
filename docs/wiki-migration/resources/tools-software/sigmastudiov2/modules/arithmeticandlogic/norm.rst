@@ -3,14 +3,13 @@
 Normalize
 =========
 
-| 
-| |norm.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/norm.png
+   :alt: norm.png
 
 Description
 -----------
 
-| 
-| The Norm module normalizes the input value with respect to the closest power of 2 (upper side). The output is the normalized out value and the closest power of two or the number of shifts in binary.
+The Norm module normalizes the input value with respect to the closest power of 2 (upper side). The output is the normalized out value and the closest power of two or the number of shifts in binary.
 
 Targets Supported
 -----------------
@@ -21,7 +20,7 @@ Name ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Norm NA         NA               S             NA
 ==== ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -52,5 +51,3 @@ DSP Parameters
 --------------
 
 NO DSP parameters
-
-.. |norm.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/norm.png

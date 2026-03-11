@@ -155,7 +155,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                -*-     Industrial I/O buffering based on kfifo
                -*-   Enable triggered sampling support
                [--snip--]
-               Inertial measurement units  ---> 
+               Inertial measurement units  --->
                    [--snip--]
                    <*> Analog Devices ADIS16475 and similar IMU driver
                    [--snip--]
@@ -174,7 +174,8 @@ The evaluation kits simplify the process of connecting an IMU to an embedded pro
    * DIN  <——————— SPI_MOSI
    * DOUT ———————> SPI_MISO
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. tip::
 
@@ -182,20 +183,12 @@ The evaluation kits simplify the process of connecting an IMU to an embedded pro
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
-
-
    
-   |
 
-
-|
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -300,10 +293,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -322,10 +312,7 @@ The sampling frequency of the device can be set by writing the desired value to 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -356,10 +343,7 @@ The units by the IIO framework are:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -382,10 +366,7 @@ The gyro and accel bandwidth can be set by writing the desired value to the ``fi
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -408,10 +389,7 @@ Trigger management
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -437,10 +415,7 @@ Buffer management
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -450,14 +425,32 @@ Buffer management
    
 
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+
+Every buffer implementation features a set of files:
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **length_align_bytes**
+| Using the high-speed interface. DMA buffers may have an alignment requirement for the buffer length. Newer versions of the kernel will report the alignment requirements associated with a device through the \`length_align_bytes\` property.
+
+| **scan_elements**
+| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -508,7 +501,15 @@ From the above list, note the following 2 elements:
    Both this elements are relevant only when **burst_mode_enable** is set
 
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+| **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in_voltageX_type / in_voltageX-voltageY_type / timestamp_type:**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space. Form is [s|u]bits/storage-bits. s or u specifies if signed (2's complement) or unsigned. bits is the number of bits of data and storage-bits is the space (after padding) that it occupies in the buffer. Note that some devices will have additional information in the unused bits so to get a clean value, the bits value must be used to mask the buffer output value appropriately. The storage-bits value also specifies the data alignment. So u12/16 will be a unsigned 12 bit integer stored in a 16 bit location aligned to a 16 bit boundary. For other storage combinations this attribute will be extended appropriately.
+
+| **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
+
 
 Setup on Raspbian image
 =======================
@@ -530,101 +531,100 @@ Resources:
 
 Overlay contents:
 
-+--------------------------------------------------------------------------+------------------------------------------------------------+
-| adis16475-overlay.dts                                                    | adis16480-overlay.dts                                      |
-+--------------------------------------------------------------------------+------------------------------------------------------------+
-| ``// SPDX-License-Identifier: GPL-2.0                                    | ``// SPDX-License-Identifier: GPL-2.0                      |
-| /dts-v1/;                                                                | /dts-v1/;                                                  |
-| /plugin/;                                                                | /plugin/;                                                  |
-|                                                                          |                                                            |
-| #include <dt-bindings/interrupt-controller/irq.h>                        | #include <dt-bindings/interrupt-controller/irq.h>          |
-| #include <dt-bindings/gpio/gpio.h>                                       | #include <dt-bindings/gpio/gpio.h>                         |
-|                                                                          |                                                            |
-| / {                                                                      | / {                                                        |
-|     compatible = "brcm,bcm2835";                                         |     compatible = "brcm,bcm2835";                           |
-|                                                                          |                                                            |
-|     fragment@0 {                                                         |     fragment@0 {                                           |
-|         target = <&spi0>;                                                |         target = <&spi0>;                                  |
-|         __overlay__ {                                                    |         __overlay__ {                                      |
-|             status = "okay";                                             |             status = "okay";                               |
-|         };                                                               |         };                                                 |
-|     };                                                                   |     };                                                     |
-|                                                                          |                                                            |
-|     fragment@1 {                                                         |     fragment@1 {                                           |
-|         target = <&spidev0>;                                             |         target = <&spidev0>;                               |
-|         __overlay__ {                                                    |         __overlay__ {                                      |
-|             status = "disabled";                                         |             status = "disabled";                           |
-|         };                                                               |         };                                                 |
-|     };                                                                   |     };                                                     |
-|                                                                          |                                                            |
-|     fragment@2 {                                                         |     fragment@2 {                                           |
-|         target = <&spidev1>;                                             |         target = <&spidev1>;                               |
-|         __overlay__ {                                                    |         __overlay__ {                                      |
-|             status = "disabled";                                         |             status = "disabled";                           |
-|         };                                                               |         };                                                 |
-|     };                                                                   |     };                                                     |
-|                                                                          |                                                            |
-|      fragment@3 {                                                        |      fragment@3 {                                          |
-|         target = <&gpio>;                                                |         target = <&gpio>;                                  |
-|         __overlay__ {                                                    |         __overlay__ {                                      |
-|             adis16475_pins: adis16475_pins {                             |             adis16480_pins: adis16480_pins {               |
-|                 brcm,pins = <4 12>; // interrupt and reset               |                 brcm,pins = <6 12>; // interrupt and reset |
-|                 brcm,function = <0 1>; // in out                         |                 brcm,function = <0 1>; // in out           |
-|             };                                                           |             };                                             |
-|         };                                                               |         };                                                 |
-|     };                                                                   |     };                                                     |
-|                                                                          |     fragment@4 {                                           |
-|     fragment@4 {                                                         |         target = <&spi0>;                                  |
-|         target-path = "/";                                               |         __overlay__ {                                      |
-|         __overlay__ {                                                    |             /* needed to avoid dtc warning */              |
-|             clocks {                                                     |             #address-cells = <1>;                          |
-|                 adis16475_ref_clk: clock@0 {                             |             #size-cells = <0>;                             |
-|                          #clock-cells = <0>;                             |                                                            |
-|                          compatible = "fixed-clock";                     |             adis16480: adis16480@0 {                       |
-|                 };                                                       |                 reg = <0>;                                 |
-|             };                                                           |                 pinctrl-names = "default";                 |
-|         };                                                               |                 pinctrl-0 = <&adis16480_pins>;             |
-|     };                                                                   |                 spi-cpha;                                  |
-|                                                                          |                 spi-cpol;                                  |
-|     fragment@5 {                                                         |                 reset-gpios = <&gpio 12 GPIO_ACTIVE_LOW>;  |
-|         target = <&spi0>;                                                |                 spi-max-frequency = <15000000>;            |
-|         __overlay__ {                                                    |                 /* use DIO1 as data ready by default */    |
-|             /* needed to avoid dtc warning */                            |                 interrupts = <6 IRQ_TYPE_EDGE_RISING>;     |
-|             #address-cells = <1>;                                        |                 interrupt-parent = <&gpio>;                |
-|             #size-cells = <0>;                                           |             };                                             |
-|                                                                          |         };                                                 |
-|             adis16475: adis16475@0 {                                     |     };                                                     |
-|                 reg = <0>;                                               |                                                            |
-|                 pinctrl-names = "default";                               |     __overrides__ {                                        |
-|                 pinctrl-0 = <&adis16475_pins>;                           |         device = <&adis16480>,"compatible";                |
-|                 spi-cpha;                                                |         drdy_dio2 = <&adis16480_pins>,"brcm,pins:0=25",    |
-|                 spi-cpol;                                                |                 <&adis16480>,"interrupts:0=25",            |
-|                 reset-gpios = <&gpio 12 GPIO_ACTIVE_LOW>;                |                 <&adis16480>,"interrupt-names=DIO2";       |
-|                 spi-max-frequency = <2000000>;                           |         drdy_dio3 = <&adis16480_pins>,"brcm,pins:0=4",     |
-|                 interrupts = <4 IRQ_TYPE_EDGE_RISING>;                   |                 <&adis16480>,"interrupts:0=4",             |
-|                 interrupt-parent = <&gpio>;                              |                 <&adis16480>,"interrupt-names=DIO3";       |
-|             };                                                           |         drdy_dio4 = <&adis16480_pins>,"brcm,pins:0=5",     |
-|         };                                                               |                 <&adis16480>,"interrupts:0=5",             |
-|     };                                                                   |                 <&adis16480>,"interrupt-names=DIO4";       |
-|                                                                          |     };                                                     |
-|     __overrides__ {                                                      | };``                                                       |
-|         /*                                                               |                                                            |
-|   * This gives an option to use the gpio25 as the data ready pin. This   |                                                            |
-|   * must be used for the adis16465/7 families as these devices use the   |                                                            |
-|   * 14 pin connector where DR is using gpio25. Note that this should     |                                                            |
-|   * not be used for the other devices as the gpio25 is both connected to |                                                            |
-|   * the sync selector and to the sync pin (because the sync and DR pins  |                                                            |
-|   * are swapped in the 16 pin connector).                                |                                                            |
-|          */                                                              |                                                            |
-|         drdy_gpio25 = <&adis16475_pins>,"brcm,pins:0=25",                |                                                            |
-|                 <&adis16475>,"interrupts:0=25";                          |                                                            |
-|         device = <&adis16475>,"compatible";                              |                                                            |
-|         sync_mode = <&adis16475>,"adi,sync-mode:0";                      |                                                            |
-|         ext_sync_freq = <&adis16475_ref_clk>, "clock-frequency:0",       |                                                            |
-|                 <&adis16475>,"clocks:0=",<&adis16475_ref_clk>;           |                                                            |
-|     };                                                                   |                                                            |
-| };``                                                                     |                                                            |
-+--------------------------------------------------------------------------+------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+| adis16475-overlay.dts                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | adis16480-overlay.dts |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+| <code c> // SPDX-License-Identifier: GPL-2.0 /dts-v1/; /plugin/; #include <dt-bindings/interrupt-controller/irq.h> #include <dt-bindings/gpio/gpio.h> / { compatible = "brcm,bcm2835"; fragment@0 { target = <&spi0>; *overlay* { status = "okay"; }; }; fragment@1 { target = <&spidev0>; *overlay* { status = "disabled"; }; }; fragment@2 { target = <&spidev1>; *overlay* { status = "disabled"; }; }; fragment@3 { target = <&gpio>; *overlay* { adis16475_pins: adis16475_pins { brcm,pins = <4 12>; // interrupt and reset brcm,function = <0 1>; // in out }; }; }; fragment@4 { target-path = "/"; *overlay* { clocks { adis16475_ref_clk: clock@0 { #clock-cells = <0>; compatible = "fixed-clock"; }; }; }; }; fragment@5 { target = <&spi0>; *overlay* { /\* needed to avoid dtc warning \*/ #address-cells = <1>; #size-cells = <0>; adis16475: adis16475@0 { reg = <0>; pinctrl-names = "default"; pinctrl-0 = <&adis16475_pins>; spi-cpha; spi-cpol; reset-gpios = <&gpio 12 GPIO_ACTIVE_LOW>; spi-max-frequency = <2000000>; interrupts = <4 IRQ_TYPE_EDGE_RISING>; interrupt-parent = <&gpio>; }; }; }; *overrides* { /\* \* This gives an option to use the gpio25 as the data ready pin. This \* must be used for the adis16465/7 families as these devices use the \* 14 pin connector where DR is using gpio25. Note that this should \* not be used for the other devices as the gpio25 is both connected to \* the sync selector and to the sync pin (because the sync and DR pins \* are swapped in the 16 pin connector). \*/ drdy_gpio25 = <&adis16475_pins>,"brcm,pins:0=25", <&adis16475>,"interrupts:0=25"; device = <&adis16475>,"compatible"; sync_mode = <&adis16475>,"adi,sync-mode:0"; ext_sync_freq = <&adis16475_ref_clk>, "clock-frequency:0", <&adis16475>,"clocks:0=",<&adis16475_ref_clk>; }; };</code> | <code c>              |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+
+// SPDX-License-Identifier: GPL-2.0 /dts-v1/; /plugin/;
+
+#include <dt-bindings/interrupt-controller/irq.h> #include <dt-bindings/gpio/gpio.h>
+
+/ {
+
+::
+
+     compatible = "brcm,bcm2835";
+
+::
+
+     fragment@0 {
+         target = <&spi0>;
+         __overlay__ {
+             status = "okay";
+         };
+     };
+
+::
+
+     fragment@1 {
+         target = <&spidev0>;
+         __overlay__ {
+             status = "disabled";
+         };
+     };
+
+::
+
+     fragment@2 {
+         target = <&spidev1>;
+         __overlay__ {
+             status = "disabled";
+         };
+     };
+
+::
+
+      fragment@3 {
+         target = <&gpio>;
+         __overlay__ {
+             adis16480_pins: adis16480_pins {
+                 brcm,pins = <6 12>; // interrupt and reset
+                 brcm,function = <0 1>; // in out
+             };
+         };
+     };
+     fragment@4 {
+         target = <&spi0>;
+         __overlay__ {
+             /* needed to avoid dtc warning */
+             #address-cells = <1>;
+             #size-cells = <0>;
+
+::
+
+             adis16480: adis16480@0 {
+                 reg = <0>;
+                 pinctrl-names = "default";
+                 pinctrl-0 = <&adis16480_pins>;
+                 spi-cpha;
+                 spi-cpol;
+                 reset-gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+                 spi-max-frequency = <15000000>;
+                 /* use DIO1 as data ready by default */
+                 interrupts = <6 IRQ_TYPE_EDGE_RISING>;
+                 interrupt-parent = <&gpio>;
+             };
+         };
+     };
+
+::
+
+     __overrides__ {
+         device = <&adis16480>,"compatible";
+         drdy_dio2 = <&adis16480_pins>,"brcm,pins:0=25",
+                 <&adis16480>,"interrupts:0=25",
+                 <&adis16480>,"interrupt-names=DIO2";
+         drdy_dio3 = <&adis16480_pins>,"brcm,pins:0=4",
+                 <&adis16480>,"interrupts:0=4",
+                 <&adis16480>,"interrupt-names=DIO3";
+         drdy_dio4 = <&adis16480_pins>,"brcm,pins:0=5",
+                 <&adis16480>,"interrupts:0=5",
+                 <&adis16480>,"interrupt-names=DIO4";
+     };
+
+};</code>\|
 
 -  Step 2.1: Follow instructions until "Customize the kernel" part
 -  Step 2.2: Activate the desired sensor module by running ``make menuconfig``, look for module by typing ``./adis16475`` or ``./adis16480`` and setting the module with ``[M]`` in front of their name. Save changes.
@@ -664,8 +664,8 @@ An example for adis16505-2, supported by module adis16475:
 
 ::
 
-   [all] 
-   dtoverlay=adis16475 
+   [all]
+   dtoverlay=adis16475
    dtparam=device="adi,adis16505-2"
 
 -  Step 3 (Optional): Install libiio according to: :doc:`/wiki-migration/resources/tools-software/linux-software/libiio`
@@ -675,4 +675,21 @@ After reboot, the driver should be ready to use.
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-inertial-measurement-units/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

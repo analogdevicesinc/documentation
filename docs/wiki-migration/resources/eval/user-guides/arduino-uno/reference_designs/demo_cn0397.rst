@@ -8,8 +8,7 @@ General Description/Overview
 
 The **CN0397_example** project uses the :adi:`EVAL-CN0397-ARDZ shield <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/cn0397>` which is a single-supply, low power, low noise, 16-bit light detector utilizing wavelength specific photodiodes. The photodiodes used in this circuit are sensitive at different wavelengths, to read light intensity levels over the visible light spectrum where the plants are photosynthetically active.
 
-| 
-| The **EVAL-CN0397-ARDZ** board uses :adi:`ad8500`, a low power, precision CMOS op amp with a low input bias current of a typical 1pA which is used in a transipedance amplifier configuration to convert the current output of the photodiodes into voltage. It also features :adi:`ad7798` a 3-channel, low noise, low power 16-bit ADC that converts the analog voltage into digital data in for the processing of data into light intensity. The circuit utilizes RGB photodiodes from Everlight with their peak sensitivities 620nm (**R**), 550nm (**G**) and 470nm (**B**).
+The **EVAL-CN0397-ARDZ** board uses :adi:`ad8500`, a low power, precision CMOS op amp with a low input bias current of a typical 1pA which is used in a transipedance amplifier configuration to convert the current output of the photodiodes into voltage. It also features :adi:`ad7798` a 3-channel, low noise, low power 16-bit ADC that converts the analog voltage into digital data in for the processing of data into light intensity. The circuit utilizes RGB photodiodes from Everlight with their peak sensitivities 620nm (**R**), 550nm (**G**) and 470nm (**B**).
 
 The **CN0397_example** application perform ADC readings for all 3 channels, processes them and make all necessary calculations in order to provide light intensity and light concentration for each color.
 
@@ -33,7 +32,9 @@ The 16-bits ADC data are received using **SPI interface** of the EVAL-ADICUP360 
 
 Beside **light intensity** and **light concentration** values, for each channel will be displayed a **colored bar** in [0%, 100%] format for light concentration representation. It will inform the user when the concentration for a specific channel will reach **100%**. Application offer the possibility to perform a system offset calibration for each **RGB channel**. All calculation are using data specific to each color of the used LEDs:
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/table.png
+   :align: center
+   :width: 600px
 
 Demo Requirements
 -----------------
@@ -103,7 +104,8 @@ Calibration, which is enabled by default, can be done by covering and not allowi
 
 Once all the channels have been calibrated, the circuit is now ready for use. The output data will be available for each LED on android device if enabled.
 
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/calibration_1.png
+   :align: center
 
 Compiling, Verifying, and Programming
 -------------------------------------
@@ -140,8 +142,6 @@ You may need to configure the serial terminal depending on the current settings 
      Stop: 1 bit
      Flow Control: none
 
-| 
-
 Tools Download and Help
 -----------------------
 
@@ -156,7 +156,3 @@ For more information on how to use the tool basics, please check out the `Arduin
 
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/table.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/calibration_1.png

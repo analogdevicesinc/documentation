@@ -52,7 +52,7 @@ Example device tree
 +----------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                       |
 +==========+============================================================================================================================================+
-| dts      | :git-linux:`arch/arm/boot/dts/overlays/rpi-adxl372-overlay.dts`                                                                            |
+| dts      | `rpi-adxl372-overlay.dts <https://github.com/analogdevicesinc/linux/blob/rpi-4.19.y/arch/arm/boot/dts/overlays/rpi-adxl372-overlay.dts>`_  |
 +----------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example platform device initialization
@@ -107,10 +107,7 @@ Driver testing
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -149,10 +146,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -165,15 +159,11 @@ Show device name
 Show scale
 ----------
 
-| **Description:**
-| scale to be applied to in_accel\_\*_raw in order to obtain the acceleration.
+**Description:** scale to be applied to in_accel\_\*_raw in order to obtain the acceleration.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -186,15 +176,11 @@ Show scale
 Show axis x measurement
 -----------------------
 
-| **Description:**
-| Raw unscaled acceleration measurement on x axis
+**Description:** Raw unscaled acceleration measurement on x axis
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -209,10 +195,7 @@ Set sampling frequency
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -232,10 +215,7 @@ Show available bandwidths for the current set frequency
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -253,10 +233,7 @@ Change the bandwidth
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -280,8 +257,7 @@ Change the bandwidth
 Using the FIFO Buffer
 ---------------------
 
-| **Description:**
-| The ADXL372 includes a deep, 512 sample FIFO buffer. The 512 FIFO samples can be allotted in several ways, such as the following:
+**Description:** The ADXL372 includes a deep, 512 sample FIFO buffer. The 512 FIFO samples can be allotted in several ways, such as the following:
 
 -  170 sample sets of concurrent 3-axis data
 -  256 sample sets of concurrent 2-axis data (user selectable)
@@ -291,20 +267,16 @@ Using the FIFO Buffer
 Trigger management
 ~~~~~~~~~~~~~~~~~~
 
-| **Description:**
-| The FIFO is configured in **Stream Mode** and **FIFO_FULL** interrupt is enabled. The interrupt will be triggered when the FIFO watermark is reached.
+**Description:** The FIFO is configured in **Stream Mode** and **FIFO_FULL** interrupt is enabled. The interrupt will be triggered when the FIFO watermark is reached.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat trigger/current_trigger** 
+      root:/sys/bus/iio/devices/iio:device0> **cat trigger/current_trigger**
       adxl372-dev-*
    
 
@@ -312,15 +284,11 @@ Trigger management
 Buffer management
 ~~~~~~~~~~~~~~~~~
 
-| **Description:**
-| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer
+**Description:** The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -348,10 +316,7 @@ Before enabling the buffer, a few steps need to be completed.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -364,16 +329,13 @@ Before enabling the buffer, a few steps need to be completed.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root:/sys/bus/iio/devices/iio:device0/buffer> ls
-      **enable** **hwfifo_enabled**  **hwfifo_watermark**  **hwfifo_watermark_max**  **hwfifo_watermark_min**  **length ** **watermark**
+      **enable** **hwfifo_enabled**  **hwfifo_watermark**  **hwfifo_watermark_max**  **hwfifo_watermark_min**  **length** **watermark**
       root:/sys/bus/iio/devices/iio:device0/buffer>
    
 
@@ -382,10 +344,7 @@ Before enabling the buffer, a few steps need to be completed.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -400,10 +359,7 @@ Because we enabled all three channels, then the watermark can be set to a maximu
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -416,10 +372,7 @@ The FIFO can also be configured to store peak acceleration (x, y, and z) for eve
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -434,10 +387,7 @@ Note that this mode can work only if all three axis are enabled.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -450,10 +400,7 @@ To read samples:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -473,17 +420,14 @@ Therefore read the name attribute of each IIO device
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root@analog:~# grep "" /sys/bus/iio/devices/iio\:device*/name
       adxl372
-      root@analog:~# 
+      root@analog:~#
    
 
 
@@ -491,16 +435,13 @@ Change directory to /sys/kernel/debug/iio/iio:deviceX and check if the direct_re
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       root@analog:~# cd /sys/kernel/debug/iio/iio\:device0/
-      root@analog:/sys/kernel/debug/iio/iio:device0# ls direct_reg_access  
+      root@analog:/sys/kernel/debug/iio/iio:device0# ls direct_reg_access
       ls direct_reg_access
       root@analog:/sys/kernel/debug/iio/iio:device0#
    
@@ -510,17 +451,14 @@ Reading
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device0# echo 0x0 > direct_reg_access   
-        
-      root@analog:/sys/kernel/debug/iio/iio:device0# cat direct_reg_access 
+      root@analog:/sys/kernel/debug/iio/iio:device0# echo 0x0 > direct_reg_access
+   
+      root@analog:/sys/kernel/debug/iio/iio:device0# cat direct_reg_access
       0xAD
       root@analog:/sys/kernel/debug/iio/iio:device0#
    
@@ -532,16 +470,13 @@ Write ADDRESS VALUE
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device0# echo 0x3D 0x80 > direct_reg_access   
-      root@analog:/sys/kernel/debug/iio/iio:device0# cat direct_reg_access 
+      root@analog:/sys/kernel/debug/iio/iio:device0# echo 0x3D 0x80 > direct_reg_access
+      root@analog:/sys/kernel/debug/iio/iio:device0# cat direct_reg_access
       0x80
       root@analog:/sys/kernel/debug/iio/iio:device0#
    
@@ -550,4 +485,21 @@ Write ADDRESS VALUE
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-accelerometer/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

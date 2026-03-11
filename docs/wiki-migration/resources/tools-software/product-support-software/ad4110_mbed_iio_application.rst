@@ -206,7 +206,7 @@ Setting-up Python Environment
 
 -  Install the “pyadi-iio” python package by executing command “python -m pip install pyadi-iio”. Detailed guide on installing it is available in `Python Interfaces for ADI Hardware <https://github.com/analogdevicesinc/pyadi-iio>`_
 
-<fc #008000>\ *\*Make sure to install additional support packages by running requirements.txt file using command “python -m pip install -r requirements.txt from “scripts/” directory”*\ </fc>
+*\*Make sure to install additional support packages by running requirements.txt file using command “python -m pip install -r requirements.txt from “scripts/” directory”*
 
 Modifying/running Python Scripts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

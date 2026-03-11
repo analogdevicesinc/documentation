@@ -397,7 +397,7 @@ To change the DAC voltage or current output level, write the appropriate hexadec
 
 .. container:: centeralign
 
-   \ |image10| *Figure 10.* :adi:`AD5423` **DAC Confif Register** *Pop-Up Menu*
+   \ |image10| *Figure 10.* :adi:`AD5423` **DAC Confif Register** Pop-Up Menu*
 
 
 Writing to the ADC Configuration Register

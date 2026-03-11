@@ -9,9 +9,14 @@ Linear Gain with Slew
 Description
 -----------
 
-| The Gain block scales the input signal by the specified value in the text field.
-| The value (Linear) specified in the textbox is the multiplication factor. The value of “1” will not change the gain value and the value of “0” will mute the audio. The major functionality of Linear Gain module with slew is that, RAM gradually ramps the signal from original to target value rather than a sudden jump of signal.
-| ===== Usage ===== Linear or dB value can be entered by clicking on "Lin" or "dB" selection on the UI ( Multiple Control Gain has Linear input only)
+The Gain block scales the input signal by the specified value in the text field.
+
+The value (Linear) specified in the textbox is the multiplication factor. The value of “1” will not change the gain value and the value of “0” will mute the audio. The major functionality of Linear Gain module with slew is that, RAM gradually ramps the signal from original to target value rather than a sudden jump of signal.
+
+Usage
+-----
+
+Linear or dB value can be entered by clicking on "Lin" or "dB" selection on the UI ( Multiple Control Gain has Linear input only)
 
 Pins
 ----
@@ -19,23 +24,25 @@ Pins
 Input
 ~~~~~
 
-+-------------------------+-------------------------------------+-----------------+
-| Name                    | Type                                | Description     |
-+=========================+=====================================+=================+
-| Input<fc #ff0000>X</fc> | Audio(Complex pin for Complex Gain) | Input channel X |
-+-------------------------+-------------------------------------+-----------------+
+====== =================================== ===============
+Name   Type                                Description
+====== =================================== ===============
+InputX Audio(Complex pin for Complex Gain) Input channel X
+====== =================================== ===============
 
 Output
 ~~~~~~
 
-+--------------------------+-------------------------------------+------------------+
-| Name                     | Type                                | Description      |
-+==========================+=====================================+==================+
-| Output<fc #ff0000>X</fc> | Audio(Complex pin for Complex Gain) | Output channel X |
-+--------------------------+-------------------------------------+------------------+
+======= =================================== ================
+Name    Type                                Description
+======= =================================== ================
+OutputX Audio(Complex pin for Complex Gain) Output channel X
+======= =================================== ================
 
-| Note: <fc #ff0000>X</fc> - Channel Index
-| ===== Configurable Parameters =====
+Note: X - Channel Index
+
+Configurable Parameters
+-----------------------
 
 +--------------------+---------------+--------------+-----------------------------------------------------------+
 | GUI Parameter Name | Default Value | Range        | Function Description                                      |
@@ -62,14 +69,15 @@ Output
 
 | 
 | Following graphs represent how the module behaves when Gain and Slew are set in certain conditions and when Sine wave is given as input to this module:
-| |image1|
+
+|image1|
 
 .. container:: centeralign
 
    \ **Figure:** Signal behavior when the Slew Duration (ms) is set to 100 ms and the Gain value transitions from 1 to 0
 
 
-| |image2|
+   |image2|
 
 .. container:: centeralign
 

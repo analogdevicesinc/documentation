@@ -25,7 +25,7 @@ Materials
 
    -  0-12V, 3A Adjustable benchtop power supply
 
--  :git-education_tools:`LTspice files for this exercise <m2k/ltspice/ol_boost_and_buck>`
+-  `LTspice files for this exercise <https://github.com/analogdevicesinc/education_tools/tree/sr1/m2k/ltspice/ol_boost_and_buck>`_
 
 Background
 ----------
@@ -42,15 +42,16 @@ The :doc:`Activity: Buck Converter Basics </wiki-migration/university/courses/el
 
 A simple expression for output voltage as a function of input voltage and the duty cycle, is then derived:
 
-| :math:`V_OUT = V_IN \times Duty Cycle`
-| This is followed by circuit construction, measurements of the open-loop properties of the circuit, and finally, "closing the loop" so that the output voltage remains constant, at the desired voltage, regardless of changes in loading.
+:math:`V_OUT = V_IN \times Duty Cycle`
+
+This is followed by circuit construction, measurements of the open-loop properties of the circuit, and finally, "closing the loop" so that the output voltage remains constant, at the desired voltage, regardless of changes in loading.
 
 This exercise will expand on those concepts, deriving a converter that "boosts" a low voltage to a high voltage. We will also design a more practical open-loop buck converter, and introduce a circuit that controls peak inductor current, rather than duty cycle. Subsequent exercises will close the loop around these circuits and examine loop stability and time-domain response. An appendix covers practical aspects of switching converter design such as current sensing, timing generation, selection of MOSFETs and diodes, and gate drive circuitry.
 
 Activity 1: An Ideal\* Open-Loop Boost Converter Simulation
 -----------------------------------------------------------
 
-\* (This exercise will use the term "ideal" extensively. A more accurate term would be "almost ideal" - LTspice requires finite numbers in certain locations - switch on and off resistances can't be zero or infinity, so we're using values small enough and large enough to have negligible impact on the results.)
+- (This exercise will use the term "ideal" extensively. A more accurate term would be "almost ideal" - LTspice requires finite numbers in certain locations - switch on and off resistances can't be zero or infinity, so we're using values small enough and large enough to have negligible impact on the results.)
 
 Open the OL_Boost_concept_ideal_sw.asc LTSpice file. Notice the differences between this circuit and the buck converter:
 
@@ -74,8 +75,9 @@ The figure below shows the "charge" state of the circuit’s operation, where S1
 
 When S1 closes, the left-hand side of the inductor is connected to the 5V supply, and the right-hand side is connected to ground. This means the voltage across the inductor is simply the 5V supply. This "charges" the inductor with a current that ramps up with a positive slope of:
 
-| :math:`di/dt = V_IN/L = 5V/L`
-| Note: The polarity of the voltage across the inductor is arbitrary, we're using the convention that a **positive** voltage is one that causes an **increase** in energy stored in the inductor.
+:math:`di/dt = V_IN/L = 5V/L`
+
+Note: The polarity of the voltage across the inductor is arbitrary, we're using the convention that a **positive** voltage is one that causes an **increase** in energy stored in the inductor.
 
 The next figure shows the other state, with S1 open and S2 closed.
 
@@ -87,8 +89,10 @@ The next figure shows the other state, with S1 open and S2 closed.
    Figure 3. Boost Converter Discharge
 
 
-| When S2 closes, the left-hand side of inductor L1 is still connected to Vin, while the right-hand side is now connected to Vout. The current through L1 is now flowing to the output, and decreasing with a negative slope of: :math:`\displaystyle di/dt = \frac{V_IN-V_OUT}{L} = \frac{5V-V_OUT}{L}`
-| Similar to the buck converter basics activity 1 the “freq” and “duty” parameters set the frequency of the switching to 25kHz and the duty cycle of the voltages imposed on this switch node (sw_node) to 50%. That is, the righthand side of the inductor spends half of the time connected to ground (charging phase), and half of the time connected to the output (discharging phase). Run the simulation, and probe sw_node, Vout, and the current through inductor L1. Zoom in toward the end of the run after the startup transient damps out (after 8ms). (You can right-click, Auto range y-axis to line up the two waveforms.)
+When S2 closes, the left-hand side of inductor L1 is still connected to Vin, while the right-hand side is now connected to Vout. The current through L1 is now flowing to the output, and decreasing with a negative slope of: :math:`\displaystyle di/dt = \frac{V_IN-V_OUT}{L} = \frac{5V-V_OUT}{L}`
+
+Similar to the buck converter basics activity 1 the “freq” and “duty” parameters set the frequency of the switching to 25kHz and the duty cycle of the voltages imposed on this switch node (sw_node) to 50%. That is, the righthand side of the inductor spends half of the time connected to ground (charging phase), and half of the time connected to the output (discharging phase). Run the simulation, and probe sw_node, Vout, and the current through inductor L1. Zoom in toward the end of the run after the startup transient damps out (after 8ms). (You can right-click, Auto range y-axis to line up the two waveforms.)
+
 
 |image4|
 
@@ -101,15 +105,15 @@ Observe the peak and valley of the waveform I(L1) (green waveform), noting the c
 
 The output voltage is almost exactly 10V - double the input voltage - with a small ripple imposed. Verify that the previously solved equations are true, using the cursors to measure the inductor current waveforms.
 
-| For the "charge" phase: :math:`di/dt=5V/100 \mu H`
-| And for the "discharge" phase: :math:`\displaystyle di/dt=\frac{5V-10V}{100} \mu H`
-| Revisiting the concept of zero DC across an inductor, how can we find the output voltage of a boost converter knowing the input voltage, frequency, and duty cycle? “Zero DC across an inductor” means that over a long period of time, the average volt-second product is zero. Thus:
+For the "charge" phase: :math:`di/dt=5V/100 \mu H` And for the "discharge" phase: :math:`\displaystyle di/dt=\frac{5V-10V}{100} \mu H`
 
-| :math:`(V_IN-0) \times ts1+(V_IN-V_OUT) \times ts2=0`
-| Where tS1 is the time that S1 is closed, tS2 is the time that S2 is closed. Rearranging, we see that: :math:`\displaystyle V_OUT=V _IN \times \frac{ts1+ts2}{ts2}`
-| Note that :math:`ts1/(ts1+ts2)`
-| is the duty cycle of the switch node, we can rewrite the expression for V\ :sub:`OUT` as a function of duty cycle: :math:`V_OUT=V_IN \times 1/(1-Duty Cycle)`
-| Since our duty cycle is based off ts1 and ts2, and the duty cycle is always between 0% and 100%, the above equation demonstrates that the average output voltage is always equal or larger than the input voltage, a basic property of a boost converter, and at a 50% duty cycle, the output voltage is double the input voltage.
+Revisiting the concept of zero DC across an inductor, how can we find the output voltage of a boost converter knowing the input voltage, frequency, and duty cycle? “Zero DC across an inductor” means that over a long period of time, the average volt-second product is zero. Thus:
+
+:math:`(V_IN-0) \times ts1+(V_IN-V_OUT) \times ts2=0`
+
+Where tS1 is the time that S1 is closed, tS2 is the time that S2 is closed. Rearranging, we see that: :math:`\displaystyle V_OUT=V _IN \times \frac{ts1+ts2}{ts2}` Note that :math:`ts1/(ts1+ts2)` is the duty cycle of the switch node, we can rewrite the expression for V\ :sub:`OUT` as a function of duty cycle: :math:`V_OUT=V_IN \times 1/(1-Duty Cycle)`
+
+Since our duty cycle is based off ts1 and ts2, and the duty cycle is always between 0% and 100%, the above equation demonstrates that the average output voltage is always equal or larger than the input voltage, a basic property of a boost converter, and at a 50% duty cycle, the output voltage is double the input voltage.
 
 Now change the duty cycle in the simulation and re-run. The following are screenshots show the output voltage at 20% duty cycle(expected output of 6.25V) and 80% duty cycle(expected output of 25V).
 
@@ -168,8 +172,7 @@ Note that the simulation includes some of the non-ideal aspects of the real-worl
 -  Add the 0.1Ω current sense resistors
 -  Add output capacitors, with ESR
 
-| Note that this schematic still contains many simplifications - the gate driver is not shown, nor are the current sense amplifiers. And since the circuit is powered from an ideal voltage source (zero impedance), input capacitors can be eliminated. This will be a recurring theme, deciding what to simulate and what to assume is close enough to ideal that it can be eliminated from the simulation in the interest of speed, or in some cases, converging at all. The most obvious substitution is the replacement of the top switch with a diode. This will be discussed in more detail shortly, but for now, note that a diode is in fact a switch that conducts when the voltage at the anode is higher than the voltage at the cathode, and does not conduct when the polarity of the voltages are reversed.
-| BEFORE APPLYING POWER... Configure the ADALM-SR1 board as shown in Figure 9 below:
+Note that this schematic still contains many simplifications - the gate driver is not shown, nor are the current sense amplifiers. And since the circuit is powered from an ideal voltage source (zero impedance), input capacitors can be eliminated. This will be a recurring theme, deciding what to simulate and what to assume is close enough to ideal that it can be eliminated from the simulation in the interest of speed, or in some cases, converging at all. The most obvious substitution is the replacement of the top switch with a diode. This will be discussed in more detail shortly, but for now, note that a diode is in fact a switch that conducts when the voltage at the anode is higher than the voltage at the cathode, and does not conduct when the polarity of the voltages are reversed. BEFORE APPLYING POWER... Configure the ADALM-SR1 board as shown in Figure 9 below:
 
 -  Duty Cycle: Manual
 -  Mode: Duty Cycle
@@ -198,8 +201,7 @@ Set potentiometers to the following approximate settings:
 -  Voltage Feedback: 12:00
 -  Load Control: 7:00 (fully counterclockwise)
 
-| Connect a 5V, 1A USB power supply to the Auxiliary Power micro USB jack. At this point, the frequency and duty cycle can be fine-tuned by looking at the D0 signal in Scopy's logic analyzer. Set the frequency to 20kHz (50μs period) and duty cycle to 25% (high time of 12.5μs)
-|
+Connect a 5V, 1A USB power supply to the Auxiliary Power micro USB jack. At this point, the frequency and duty cycle can be fine-tuned by looking at the D0 signal in Scopy's logic analyzer. Set the frequency to 20kHz (50μs period) and duty cycle to 25% (high time of 12.5μs)
 
 .. note::
 
@@ -316,11 +318,16 @@ The implemenation of the ADALM-SR1 peak current control circuit differs from tha
    Figure X. LT1930 Boost Converter Block Diagram
 
 
-| In both circuits, a master oscillator sets the operating frequency. The rising edge of the clock is shaped into a narrow "set" pulse (or "sliver"). A narrow pulse is necessary as it sets the "minimum on-time" of the switch, and hence, the minimum boost factor. So in theory, the output of an unloaded asynchronous boost converter would rise without bound! In practice, there is always some limiting factor, shuch as the feedback resistance, parasitic capacitances, or other losses that limti the upper bound. Furthermore, converters designed to operate at very light loads will incorporate additional methods - such as blanking the clock entirely.
-| Assume that both the LT1930 and ADALM-SR1 start out with zero inductor current (right after applicaiton of power), and the current control signal (usually called ITH) is nonzero. Also assume the LT1930's R-S flip-flop is reset, and the ADALM-SR1's LT1671 comparator's Q output is low, Q# is high, such that the LT1671 is latched OFF, even though its IN+ input (ITH) is higher than its IN- input (Ihigh current sense signal).
-| When the set pulse occurs, the LT1930's R-S flip flop is... set, the output switch is turned on, and inductor current starts to ramp up. Similarly, the ADALM-SR1's set pulse momentarily pulls the LT1671's LE pin low, unlatching the comaprator, which in turn turns on the switch (M1), and inductor current starts to ramp up.
-| Both the LT1930 and ADALM-SR1 current signals also begin to ramp up as inductor current increases. When the current sense signal reaches the same voltage as ITH, the comparators trip, shutting off the respective switches, and the process begins again at the next set pulse.
-| That is quite a lot of text to describe a rather strange (for those who've never seen it before), so the best thing to do is start out running the LTspice simulation, which is configured to modulate ITH with a 2kHz sinusoid. Results are shown in Figure X. Note that we can "trick" LTspice into displaying the ITH and Ihigh signals as the current they represent by adding some arithmetic to the traces - right-click the label (V(ith), for example), then add " \*(1A/0.7V) ", which is the gain of the current sense circuit.
+In both circuits, a master oscillator sets the operating frequency. The rising edge of the clock is shaped into a narrow "set" pulse (or "sliver"). A narrow pulse is necessary as it sets the "minimum on-time" of the switch, and hence, the minimum boost factor. So in theory, the output of an unloaded asynchronous boost converter would rise without bound! In practice, there is always some limiting factor, shuch as the feedback resistance, parasitic capacitances, or other losses that limti the upper bound. Furthermore, converters designed to operate at very light loads will incorporate additional methods - such as blanking the clock entirely.
+
+Assume that both the LT1930 and ADALM-SR1 start out with zero inductor current (right after applicaiton of power), and the current control signal (usually called ITH) is nonzero. Also assume the LT1930's R-S flip-flop is reset, and the ADALM-SR1's LT1671 comparator's Q output is low, Q# is high, such that the LT1671 is latched OFF, even though its IN+ input (ITH) is higher than its IN- input (Ihigh current sense signal).
+
+When the set pulse occurs, the LT1930's R-S flip flop is... set, the output switch is turned on, and inductor current starts to ramp up. Similarly, the ADALM-SR1's set pulse momentarily pulls the LT1671's LE pin low, unlatching the comaprator, which in turn turns on the switch (M1), and inductor current starts to ramp up.
+
+Both the LT1930 and ADALM-SR1 current signals also begin to ramp up as inductor current increases. When the current sense signal reaches the same voltage as ITH, the comparators trip, shutting off the respective switches, and the process begins again at the next set pulse.
+
+That is quite a lot of text to describe a rather strange (for those who've never seen it before), so the best thing to do is start out running the LTspice simulation, which is configured to modulate ITH with a 2kHz sinusoid. Results are shown in Figure X. Note that we can "trick" LTspice into displaying the ITH and Ihigh signals as the current they represent by adding some arithmetic to the traces - right-click the label (V(ith), for example), then add " \*(1A/0.7V) ", which is the gain of the current sense circuit.
+
 
 |image18|
 
@@ -372,8 +379,10 @@ Appendix: Extreme Boosting
 Appendix: Current Sense Techniques
 ----------------------------------
 
-| There are several methods of measuring current in a circuit. Like any electrical measurement, the act of measuring the current will have some effect on the circuit's operation. One of the least obtrusive when a convenient measuring point is physically accessible is a current probe. A wideband current probe that sensitive to DC (a steady-state current) uses a combination of a current transformer that is sensitive at high frequencies and a Hall-effect sensor that is sensitive to DC. Fine tuning the frequency responses of these curcuits such that the combined response is "flat" over all frequencies is a delicate task, and is one reason current probes tend to be very expensive. Also, current probes require that the curent flow through the probe's head, so an extra wire may need to be introduced into the circuit. If the added inductance of the extra wire is significant compared to other inductances in the cirucit, then circuit operation may be significantly impacted. Figure X shows a current probe being used to measure the ADALM-SR1 inductor current. The inductance selection jumper is replaced with a short jumper wire that is looped through the current probe twice to double the sensitivity (twice the current effectively flows through the probe.)
-| |image21|
+There are several methods of measuring current in a circuit. Like any electrical measurement, the act of measuring the current will have some effect on the circuit's operation. One of the least obtrusive when a convenient measuring point is physically accessible is a current probe. A wideband current probe that sensitive to DC (a steady-state current) uses a combination of a current transformer that is sensitive at high frequencies and a Hall-effect sensor that is sensitive to DC. Fine tuning the frequency responses of these curcuits such that the combined response is "flat" over all frequencies is a delicate task, and is one reason current probes tend to be very expensive. Also, current probes require that the curent flow through the probe's head, so an extra wire may need to be introduced into the circuit. If the added inductance of the extra wire is significant compared to other inductances in the cirucit, then circuit operation may be significantly impacted. Figure X shows a current probe being used to measure the ADALM-SR1 inductor current. The inductance selection jumper is replaced with a short jumper wire that is looped through the current probe twice to double the sensitivity (twice the current effectively flows through the probe.)
+
+
+|image21|
 
 .. container:: centeralign
 
@@ -400,9 +409,10 @@ Appendix: Gate Divers
 
 The MOSFETs in the LTspice simulations in this exercise are all either directly driven from a pulse voltage source, or by a VCVS (voltage-controlled voltage source) that "level shifts" a ground-referred signal. But what is used in the actual ADALM-SR1 circuit, and why aren't we using its LTspice model?
 
-| Driving the gate of the low-side (boost) MOSFET seems like such a simple job - Ground the gate, and the MOSFET is off. If you measure the resistance from the gate to ground, the resistance is so high that it is likely that your meter will overrange (assuming the board is clean from flux or other contamination.) And the low threshold voltage of the IRF7470 makes it compatible with 5V logic-level signals. But there are subtleties to driving a MOSFET: Even the boost MOSFET can be tricky to drive - as the MOSFET is turning on, the gate-drain capacitance will draw significant current. And if for some reason the gate drive voltage is too low, due to a collapsing housekeeping supply for example, the MOSFET may not be driven fully on, resulting in excessive power dissipation. The high side (buck) MOSFET is much trickier - the ground-referred gate control signal needs to be "level-shifted" and referred to the MOSFET's source, which toggles back and forth between about -0.4V and the input voltage - quite a challenge. For these reasons, LTC7001s were used. The LTC7001 is specifically designed to drive N-channel MOSFETS, addressing all of these issues.
-| Figure X shows LTspice simulations of both the LTC7001 gate driver, as well as its VCVS "equivalent".
-| |image22|
+Driving the gate of the low-side (boost) MOSFET seems like such a simple job - Ground the gate, and the MOSFET is off. If you measure the resistance from the gate to ground, the resistance is so high that it is likely that your meter will overrange (assuming the board is clean from flux or other contamination.) And the low threshold voltage of the IRF7470 makes it compatible with 5V logic-level signals. But there are subtleties to driving a MOSFET: Even the boost MOSFET can be tricky to drive - as the MOSFET is turning on, the gate-drain capacitance will draw significant current. And if for some reason the gate drive voltage is too low, due to a collapsing housekeeping supply for example, the MOSFET may not be driven fully on, resulting in excessive power dissipation. The high side (buck) MOSFET is much trickier - the ground-referred gate control signal needs to be "level-shifted" and referred to the MOSFET's source, which toggles back and forth between about -0.4V and the input voltage - quite a challenge. For these reasons, LTC7001s were used. The LTC7001 is specifically designed to drive N-channel MOSFETS, addressing all of these issues. Figure X shows LTspice simulations of both the LTC7001 gate driver, as well as its VCVS "equivalent".
+
+
+|image22|
 
 .. container:: centeralign
 
@@ -467,8 +477,7 @@ A slide deck is provided as a companion to this exercise, and can be used to hel
    (Insert slide deck here)
 
 
-| **Return to** :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>`
-| **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
+**Return to** :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>` **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ideal_buck_charge.png
    :width: 400px

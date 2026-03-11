@@ -47,14 +47,11 @@ A key component of this milliohm meter is the AD8210 current shunt monitor IC. T
    Figure 2, AD8210 data sheet block diagram
 
 
-| The output voltage of the AD8210 is given by:
-| :math:`V_OUT = I_SHUNT \times R_SHUNT \times 20`
+The output voltage of the AD8210 is given by: :math:`V_OUT = I_SHUNT \times R_SHUNT \times 20`
 
-| Rearranging for the measured current:
-| :math:`I_SHUNT = V_OUT /(R_SHUNT \times 20)`
+Rearranging for the measured current: :math:`I_SHUNT = V_OUT /(R_SHUNT \times 20)`
 
-| We can also flip this equation around to measure resistance:
-| :math:`R_DUT = V_OUT /(I_TEST \times 20)`
+We can also flip this equation around to measure resistance: :math:`R_DUT = V_OUT /(I_TEST \times 20)`
 
 Using the ADALM1000
 ~~~~~~~~~~~~~~~~~~~
@@ -76,8 +73,7 @@ The AD8210 will likely have some small output offset. With channel A set to Hi-Z
 
 To make the measurement, the channel A source is set to SIMV mode and DC. The value for the desired test current, say +150 mA is entered in the channel A Max value.
 
-| The measured resistance can be calculated using the following formula entered as the channel A User measurement formula:
-| DCV2/(20\*DCI1/1000)
+The measured resistance can be calculated using the following formula entered as the channel A User measurement formula: DCV2/(20\*DCI1/1000)
 
 The value returned in the DCV2 variable is the channel B average voltage and the value returned in DCI1 is the average channel A current (in mA). The factor of 20 is the fixed gain of the AD8210 and the factor of 1000 converts mAmps to Amps.
 
@@ -288,7 +284,4 @@ Here is another example of test leads for the Milliohm meter. Shown in figure 18
 
 **Additional resource links:**
 
-| `Two wire vs four wire resistance measurements <https://www.edn.com/design/test-and-measurement/4411117/Two-wire-vs--four-wire-resistance-measurements>`_
-| `Four wire sensing can make or break your measurements <http://www.electronicdesign.com/blog/four-wire-sensing-can-make-or-break-your-measurements>`_
-| `Optimize high current sensing accuracy <http://www.analog.com/en/analog-dialogue/articles/optimize-high-current-sensing-accuracy.html>`_
-| `Measuring low resistance 4 wire on the cheap <http://www.instructables.com/id/Measuring-low-resistance-4-wire-on-the-cheap/>`_
+`Two wire vs four wire resistance measurements <https://www.edn.com/design/test-and-measurement/4411117/Two-wire-vs--four-wire-resistance-measurements>`_ `Four wire sensing can make or break your measurements <http://www.electronicdesign.com/blog/four-wire-sensing-can-make-or-break-your-measurements>`_ `Optimize high current sensing accuracy <http://www.analog.com/en/analog-dialogue/articles/optimize-high-current-sensing-accuracy.html>`_ `Measuring low resistance 4 wire on the cheap <http://www.instructables.com/id/Measuring-low-resistance-4-wire-on-the-cheap/>`_

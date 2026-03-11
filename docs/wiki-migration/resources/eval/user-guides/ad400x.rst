@@ -118,36 +118,39 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``enum ad400x_supported_dev_ids{          |
+    enum ad400x_supported_dev_ids{
+     ID_AD4003,
+     ID_AD4007,
+     ID_AD4011,
+     ID_AD4020,
+    };
 
-|     ID_AD4003,                            |
-|     ID_AD4007,                            |
-|     ID_AD4011,                            |
-|     ID_AD4020,                            |
-| };                                        |
-|                                           |
-| struct ad400x_dev {                       |
-|     /* SPI */                             |
-|     spi_desc            *spi_desc;        |
-|     /* Device Settings */                 |
-|     enum ad400x_supported_dev_ids dev_id; |
-| };                                        |
-|                                           |
-| struct ad400x_init_param {                |
-|     /* SPI */                             |
-|     spi_init_param          spi_init;     |
-|     /* Device Settings */                 |
-|     enum ad400x_supported_dev_ids dev_id; |
-|         uint8_t num_bits;                 |
-|     bool turbo_mode;                      |
-|     bool high_z_mode;                     |
-|     bool span_compression;                |
-|     bool en_status_bits;                  |
-| };``                                      |
-+-------------------------------------------+
+::
+
+    struct ad400x_dev {
+     /* SPI */
+     spi_desc            *spi_desc;
+     /* Device Settings */
+     enum ad400x_supported_dev_ids dev_id;
+    };
+
+::
+
+    struct ad400x_init_param {
+     /* SPI */
+     spi_init_param          spi_init;
+     /* Device Settings */
+     enum ad400x_supported_dev_ids dev_id;
+            uint8_t num_bits;
+     bool turbo_mode;
+     bool high_z_mode;
+     bool span_compression;
+     bool en_status_bits;
+    };
 
 **HW Platform(s):**
 

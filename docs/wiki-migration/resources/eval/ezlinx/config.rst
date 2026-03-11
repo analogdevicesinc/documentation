@@ -4,13 +4,12 @@
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
-| 
-| :doc:`ezLINX™ iCoupler® Isolated Interface Development Platform Homepage </wiki-migration/resources/eval/ezlinx>`
+:doc:`ezLINX™ iCoupler® Isolated Interface Development Platform Homepage </wiki-migration/resources/eval/ezlinx>`
 
 ezLINX Hardware Configuration
 =============================
 
-| A list of jumper configurations for setting up the various interfaces on the *ez*\ LINX development platform is given below:
+A list of jumper configurations for setting up the various interfaces on the *ez*\ LINX development platform is given below:
 
 +-----------------+--------------------------------------------------------------------+------------------------------------------------+------------------------------------------------+
 | Interface       | Configuration                                                      | Jumpers Fitted                                 | Jumpers Open                                   |

@@ -73,20 +73,17 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
 
    .. raw:: html
 
-      <details><summary>Boot log (click to expand)</summary>
+      <details><summary>Boot log (click to expand)
 
    ::
    
-      Zynq MP First Stage Boot Loader 
+      Zynq MP First Stage Boot Loader
       Release 2023.1   Apr  4 2024  -  13:24:23
       NOTICE:  BL31: Non secure code at 0x8000000
       NOTICE:  BL31: v2.8(release):xilinx-v2023.2
@@ -111,13 +108,13 @@ Messages
       Address in ROM is          41:4c:2d:41:44:33
       Address in environment is  8a:5f:1c:0d:30:c0
       eth0: ethernet@ff0e0000
-      Hit any key to stop autoboot:  0 
+      Hit any key to stop autoboot:  0
       switch to partitions #0, OK
       mmc0 is current device
       Device: sdhci@ff170000
       Manufacturer ID: 3
       OEM: 5344
-      Name: SB16G 
+      Name: SB16G
       Tran Speed: 50000000
       Rd Block Len: 512
       SD version 3.0
@@ -242,8 +239,8 @@ Messages
       [    0.819519] raid6: using algorithm neonx4 gen() 2189 MB/s
       [    0.887528] raid6: .... xor() 1558 MB/s, rmw enabled
       [    0.887573] raid6: using neon recovery algorithm
-      [    0.891836] iommu: Default domain type: Translated 
-      [    0.896282] iommu: DMA domain TLB invalidation policy: strict mode 
+      [    0.891836] iommu: Default domain type: Translated
+      [    0.896282] iommu: DMA domain TLB invalidation policy: strict mode
       [    0.902700] SCSI subsystem initialized
       [    0.906377] usbcore: registered new interface driver usbfs
       [    0.911703] usbcore: registered new interface driver hub
@@ -511,7 +508,7 @@ Messages
       [    3.076253] adrv9040 spi1.0: adrv9040 Rev 0, API version: 2.10.0.4 found
       [    3.082954] MESSAGE: API_LOG:-> adi_adrv904x_InitDataExtract()
       [    3.088819] MESSAGE: API_LOG:<- adi_adrv904x_InitDataExtract()
-      [    3.094646] 
+      [    3.094646]
       [    3.094646]  Using the Profile Init and PostMcsInit Structures
       [    3.101949] MESSAGE: API_LOG:-> adi_adrv904x_DeviceInfoExtract()
       [    3.107983] MESSAGE: API_LOG:<- adi_adrv904x_DeviceInfoExtract()
@@ -615,7 +612,7 @@ Messages
       [    3.987796] cf_axi_dds 84a04000.axi-adrv904x-tx-hpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.02.b) at 0x84A04000 mapped to 0x(____ptrval____), probed DDS ADRV904X
       [    4.002849] axi_adxcvr 84a60000.axi-adxcvr-rx: adxcvr_enforce_settings: Using QPLL without access, assuming desired Lane rate will be configured by a different instance
       [    4.008562] mmc0: new high speed SDHC card at address aaaa
-      [    4.023763] mmcblk0: mmc0:aaaa SB16G 14.8 GiB 
+      [    4.023763] mmcblk0: mmc0:aaaa SB16G 14.8 GiB
       [    4.024310] axi_adxcvr 84a60000.axi-adxcvr-rx: AXI-ADXCVR-RX (17.05.a) using QPLL on GTH4 at 0x84A60000. Number of lanes: 8.
       [    4.040500] axi_adxcvr 84a80000.axi-adxcvr-tx: AXI-ADXCVR-TX (17.05.a) using QPLL on GTH4 at 0x84A80000. Number of lanes: 8.
       [    4.043663]  mmcblk0: p1 p2 p3
@@ -684,7 +681,7 @@ Messages
       [   30.868301] adrv9040 spi1.0: Link0 deframerStatus lane 7 0xE
       [   30.874637] jesd204: /axi/spi@ff040000/adrv904x-phy@0,jesd204:1,parent=spi1.0: JESD204[0:0] transition link_enable -> link_running
       [   30.886377] jesd204: /axi/spi@ff040000/adrv904x-phy@0,jesd204:1,parent=spi1.0: JESD204[0:2] transition link_enable -> link_running
-      [   30.905743] adrv9040 spi1.0: 
+      [   30.905743] adrv9040 spi1.0:
       [   30.905743] adrv9040 Rev 160, API version: 2.10.0.4 successfully initialized via jesd204-fsm
       [   30.917132] jesd204: /axi/spi@ff040000/adrv904x-phy@0,jesd204:1,parent=spi1.0: JESD204[0:0] transition link_running -> opt_post_running_stage
       [   30.929825] jesd204: /axi/spi@ff040000/adrv904x-phy@0,jesd204:1,parent=spi1.0: JESD204[0:2] transition link_running -> opt_post_running_stage
@@ -703,7 +700,7 @@ Messages
       [   32.125410] ahci-ceva fd0c0000.ahci: supply phy not found, using dummy regulator
       [   32.132872] ahci-ceva fd0c0000.ahci: supply target not found, using dummy regulator
       [   32.140751] ahci-ceva fd0c0000.ahci: AHCI 0001.0301 32 slots 2 ports 6 Gbps 0x3 impl platform mode
-      [   32.149707] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst 
+      [   32.149707] ahci-ceva fd0c0000.ahci: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst
       [   32.160184] scsi host0: ahci-ceva
       [   32.163785] scsi host1: ahci-ceva
       [   32.167203] ata1: SATA max UDMA/133 mmio [mem 0xfd0c0000-0xfd0c1fff] port 0x100 irq 55
@@ -994,7 +991,7 @@ Messages
       Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
       permitted by applicable law.
       Last login: Thu May  9 20:59:29 BST 2024 on ttyPS0
-      root@analog:~# 
+      root@analog:~#
    
 
    .. raw:: html
@@ -1005,10 +1002,7 @@ Messages
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

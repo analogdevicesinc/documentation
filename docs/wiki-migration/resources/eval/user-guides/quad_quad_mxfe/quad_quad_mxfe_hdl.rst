@@ -15,7 +15,7 @@ HDL source code
    **Reference design location:**
 
    
-   -  :git-hdl:`projects/quad_quad_mxfe`
+   -  https://github.com/analogdevicesinc/hdl/tree/dev_vcu128_2020_1/projects/quad_quad_mxfe
    
 
 
@@ -28,7 +28,7 @@ HDL testbench
    **Testbench location:**
 
    
-   -  :git-hdl:`testbenches/quad_quad_mxfe`
+   -  https://github.com/analogdevicesinc/hdl/tree/dev_vcu128/testbenches/quad_quad_mxfe
    
 
 
@@ -103,7 +103,7 @@ The transport layer cores have optional features (e.g DDS) which can be disabled
 Device Family     DDS CLB LUTs CLB Registers XCVR Lanes
 ================= === ======== ============= ==========
 Xilinx Virtex US+ Yes 68535    86163         16
-:::               No  20332    29426         16
+                  No  20332    29426         16
 ================= === ======== ============= ==========
 
 Addressing timing closure issues
@@ -126,9 +126,9 @@ Below are quoted few of the most important guidelines from the JESD standard. Fo
 -  "It is strongly recommended to use the same type of signal type for SYSREF and the device clock, to maintain an accurate timing relationship."
 -  "Transmission skew: The skew contribution due to the different propagation delays in the transmission medium for different lanes. Maximum of 4 ns propagation delay difference between lanes which corresponds e.g., to a lane length difference of 56 cm for stripline on an FR-4 board with ER=4.5. Larger lane length differences will not be likely in a JESD204 system."
 
-| Restriction/requirement particular to the current implementation using the JESD framework:
-| \* All four lanes within a link must be mapped in a way so they connect to a single transceiver quad, order within the transceiver quad is not relevant.
+Restriction/requirement particular to the current implementation using the JESD framework:
 
+-  All four lanes within a link must be mapped in a way so they connect to a single transceiver quad, order within the transceiver quad is not relevant.
 -  All transceiver quads must have access to a reference clock, connected to the MGTREFCLK pin of the same quad or to adjacent quads. The reference clock frequency should match across all transceiver quads but it does not have to be phase aligned.
 -  SYSREF signals connected to all MxFEs should be length matched
 -  Device clocks connected to all MxFEs should be length matched

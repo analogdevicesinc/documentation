@@ -8,7 +8,7 @@ The Faust Code for the MIDI Controlled Volume
 
 Here is the Faust code for the MIDI controlled stereo volume. Note that the metadata string “[midi:ctrl 2]” is used to map MIDI continuous controller 2 (CC-2) to control the gain slider.
 
-<WRAP clear/>
+
 
 .. code:: c
 

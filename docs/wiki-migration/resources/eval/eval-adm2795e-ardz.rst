@@ -78,8 +78,10 @@ Terminal Block
 Isolated Motor Control System using Arduino Form Factor Rapid Development Platforms
 ===================================================================================
 
-| \\\\In this set-up the stimulus from an ultrasonic sensor at one end of the RS-485 bus controls a motor and gearing or fan assembly at the far end of the bus. The EVAL-ADICUP-360 Arduino form factor compatible ARM Cortex-M3 Development Platform accepts inputs from a standard ultrasonic sensor. The EVAL-ADICUP-360 outputs are used to control the EVAL-ADM2795EARDZ logic signals. The first EVAL-ADM2795EARDZ then transmits to a second EVAL-ADM2795EARDZ node over 10 meters of RS-485 Category 5e cable. On the far end of the bus, the second receiving EVAL-ADM2795EARDZ, EVAL-ADICUP-360, and Arduino Motor control shield and provide output to a standard industrial motor. Sample Arduino code for the transmitting and receiving RS-485 nodes is located at the end of this Wiki guide.
-| |image3|
+\\\\In this set-up the stimulus from an ultrasonic sensor at one end of the RS-485 bus controls a motor and gearing or fan assembly at the far end of the bus. The EVAL-ADICUP-360 Arduino form factor compatible ARM Cortex-M3 Development Platform accepts inputs from a standard ultrasonic sensor. The EVAL-ADICUP-360 outputs are used to control the EVAL-ADM2795EARDZ logic signals. The first EVAL-ADM2795EARDZ then transmits to a second EVAL-ADM2795EARDZ node over 10 meters of RS-485 Category 5e cable. On the far end of the bus, the second receiving EVAL-ADM2795EARDZ, EVAL-ADICUP-360, and Arduino Motor control shield and provide output to a standard industrial motor. Sample Arduino code for the transmitting and receiving RS-485 nodes is located at the end of this Wiki guide.
+
+
+|image3|
 
 .. image:: https://wiki.analog.com/_media/eval-adm2795e-ardz_demo.png
    :width: 800px

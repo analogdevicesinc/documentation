@@ -3,14 +3,16 @@
 External SPI Delay
 ==================
 
-| 
-| |extspidelay.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/extspidelay.png
+   :alt: extspidelay.png
 
 Description
 -----------
 
-| The External SPI Delay cell can be used to implement off-chip delay using the SPI interface.
-| ===== Targets Supported =====
+The External SPI Delay cell can be used to implement off-chip delay using the SPI interface.
+
+Targets Supported
+-----------------
 
 +--------------------+------------+------------------+---------------+------------------+
 | Name               | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -24,23 +26,21 @@ Description
 Input
 ~~~~~
 
-======================== ===== ===============
-Name                     Type  Description
-======================== ===== ===============
-Input <fc #ff0000>X</fc> Audio Input Channel X
-======================== ===== ===============
+======= ===== ===============
+Name    Type  Description
+======= ===== ===============
+Input X Audio Input Channel X
+======= ===== ===============
 
-| 
+
 | ==== Output ====
 
-========================= ===== ================
-Name                      Type  Description
-========================= ===== ================
-Output <fc #ff0000>X</fc> Audio Output channel X
-========================= ===== ================
+======== ===== ================
+Name     Type  Description
+======== ===== ================
+Output X Audio Output channel X
+======== ===== ================
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
-
-.. |extspidelay.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/extspidelay.png
+-  X - Channel Index

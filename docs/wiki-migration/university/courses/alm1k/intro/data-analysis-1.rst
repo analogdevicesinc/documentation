@@ -389,8 +389,6 @@ An example gnuplot scripting .plt file below shows how you might do this. This s
    # Plot
    plot iguess(x) with lines linestyle 1, id(x) with lines linestyle 2, "diode-data.dat" with lines linestyle 3
 
-.. _curve-fitting-1:
-
 Curve Fitting:
 ^^^^^^^^^^^^^^
 

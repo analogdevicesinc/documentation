@@ -3,15 +3,19 @@ Volatile Organic Compounds (VOC) Measurement Demo
 
 The **CN0395_example** is a volatile organic compounds (VOC) detector demo project for the Arduino Uno base board with additional :doc:`EVAL-CN0395-ARDZ Shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0395>`, created using the Arduino Genuino IDE.
 
-| 
-| ===== General description =====
-| This project is a good example of using ADI shields with Arduino boards for fast and easy prototyping.
-| The **CN0395_example** project uses the :doc:`EVAL-CN0395-ARDZ Shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0395>` which is a portable VOC detector which comes with a Figaro TGS8100 MOX sensor.
+General description
+-------------------
 
-| |image1|
-| The TGS8100 sensor requires two voltage inputs: heater voltage (VH) and circuit voltage (VC). The heater voltage (VH) is applied to the integrated heater in order to maintain the sensing element at a specific temperature which is optimal for sensing. The :doc:`EVAL-CN0395-ARDZ Shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0395>` circuit provides the heater voltage (VH), by using :adi:`ADN8810` IDAC as a programmable current source. The default full scale current in the IDAC is 9.94mA and the default value of the RSN resistors is 41.2Ω.
+This project is a good example of using ADI shields with Arduino boards for fast and easy prototyping.
 
-The hardware also allows for two main modes of operation: <fc #008000>heater mode and sensor resistance measurement mode</fc>. In heater mode, the :adi:`AD7988-1` ADC receives as input the heater voltage (VH) while in sensor mode the input is the voltage from the sense circuit (VRS). The switching is done by using :adi:`ADG884`. The full scale voltage measured by the ADC is 4.096 V.
+The **CN0395_example** project uses the :doc:`EVAL-CN0395-ARDZ Shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0395>` which is a portable VOC detector which comes with a Figaro TGS8100 MOX sensor.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0395/eval-cn0395-ardz.jpg
+   :align: center
+
+The TGS8100 sensor requires two voltage inputs: heater voltage (VH) and circuit voltage (VC). The heater voltage (VH) is applied to the integrated heater in order to maintain the sensing element at a specific temperature which is optimal for sensing. The :doc:`EVAL-CN0395-ARDZ Shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0395>` circuit provides the heater voltage (VH), by using :adi:`ADN8810` IDAC as a programmable current source. The default full scale current in the IDAC is 9.94mA and the default value of the RSN resistors is 41.2Ω.
+
+The hardware also allows for two main modes of operation: heater mode and sensor resistance measurement mode. In heater mode, the :adi:`AD7988-1` ADC receives as input the heater voltage (VH) while in sensor mode the input is the voltage from the sense circuit (VRS). The switching is done by using :adi:`ADG884`. The full scale voltage measured by the ADC is 4.096 V.
 
 Moreover, the hardware includes a gain select circuit which can add additional overlapping ranges if needed when performing a resistance sensor measurement. :adi:`ADG758` 8-channel multiplexer is used to accomplish this task.
 
@@ -71,8 +75,6 @@ Serial Terminal Output
 -  Once complete Press the serial monitor button.
 -  Make sure the UART settings are “Carriage return” and “9600 baud”.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -80,9 +82,7 @@ Following is the UART configuration.
      Carriage return
      9600 baud
 
-|
-
-| The application allows the user to select between the two modes of operation:
+The application allows the user to select between the two modes of operation:
 
 -  Heater mode (RH)
 -  Sensor Resistance mode (RS)
@@ -93,7 +93,7 @@ Heater Mode (RH)
 The user can further choose the subroutine which determines the heater current (IH):
 
 
-|image2|
+|image1|
 
 **voltage** is the routine for setting heater voltage to constant voltage VH (the default value is VH = 1.8V). The relationship between heater resistance RH and heater current IH or heater voltage VH is nonlinear. Therefore the software runs in background several iterations in order to get VH to the desired accuracy with a 0.5% max error.
 
@@ -117,12 +117,12 @@ The user can further choose the subroutine which determines the heater current (
 After the completion of the routine, the application displays the measured values: RH_A (Ambient Heater Res ), VH (heater voltage), IH (heater current), RH (heater resistance), T_A (ambient temperature), HUM (ambient humidity), PH (heater power consumption), TH (heater temperature), ADC data (raw data read from ADC in hex), Ro ( sensor resistance measured in clean air).
 
 
-|image3|
+|image2|
 
 At power up, the application starts in constant current mode and sets the default current to 8mA. Furthermore, it is assumed that the measurement circuit is placed in clean air, therefore we measure and store the sensor resistance in clean air (Ro). After each heater measurement mode change, it is assumed that the board is placed in clean air, and the Ro value is updated. This is required, because Ro is a function of the heater temperature.
 
 
-|image4|
+|image3|
 
 Sensor Resistance mode (RS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +132,7 @@ Sensor measurement is performed. The application can switch at any time to this 
 In background every time the application runs the gain-ranging algorithm and determines RS and the gas concentration (C) measured in PPM (parts per million):
 
 
-|image5|
+|image4|
 
 RS reading can also be performed by typing <operation RS>, but it does the same thing as pressing the <ENTER> key.
 
@@ -150,36 +150,35 @@ RS reading can also be performed by typing <operation RS>, but it does the same 
 From this point on, K1 is stored in permanent memory and applied to currents that are input. To read the gain correction factor from memory, type <calibrate r>.
 
 
-|image6|
+|image5|
 
 **Help**
 
 Type <help> to see the available commands:
 
 
-|image7|
+|image6|
 
 Project structure
 -----------------
 
-| 
-| The CN0411_example is a C++ Arduino sketch.
+The CN0411_example is a C++ Arduino sketch.
 
 This project contains: system initialization part - setting Digital IO pins in the right mode; port configuration for SPI1, UART via Digital pin 0/Digital pin 1, I2C via SDA/SCL pins; SPI, UART, I2C read/write functions; AD7988 control, ADN8810 control, SHT30 control and VOC concentration computation.
 
-| All files are in the same folder as the .ino file and include the source and header files related to CN0395 software application. The *Communication.cpp/h* files contain SPI, UART and I2C specific data, the *AD7988.cpp/h* files contain the ADC control, the *ADN8810.cpp/h* files contain the IDAC control, the *SHT30.c/h* files contain the temperature/humidity sensor control, and the *CN0395.cpp/h* files contain commands, configurations and computations specific to the VOC detector application.
-| // End of Document //
+All files are in the same folder as the .ino file and include the source and header files related to CN0395 software application. The *Communication.cpp/h* files contain SPI, UART and I2C specific data, the *AD7988.cpp/h* files contain the ADC control, the *ADN8810.cpp/h* files contain the IDAC control, the *SHT30.c/h* files contain the temperature/humidity sensor control, and the *CN0395.cpp/h* files contain commands, configurations and computations specific to the VOC detector application.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0395/eval-cn0395-ardz.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rh_mode.jpg
+// End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rh_mode.jpg
    :width: 850px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/constant_voltage.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/constant_voltage.jpg
    :width: 850px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/power_up.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/power_up.jpg
    :width: 850px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rs_mode_new.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rs_mode_new.png
    :width: 850px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/calibrate_read.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/calibrate_read.jpg
    :width: 850px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/help.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/help.jpg
    :width: 850px

@@ -1,6 +1,6 @@
 .. warning::
 
-   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki\`
+   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki`
 
 
 Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux
@@ -40,5 +40,6 @@ The following kernel features, peripherals and devices are supported in Linux by
    -  :doc:`USB Gadget </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/start>`
    -  :doc:`USB Dual Role mode </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/start>`
 
-| 
-| ---- \**Back To: \*\*\ :doc:`Linux for ADSP-SC5xx: Documentation </wiki-migration/resources/tools-software/linuxdsp/docs>`
+--------------
+
+**Back To:**\ :doc:`Linux for ADSP-SC5xx: Documentation </wiki-migration/resources/tools-software/linuxdsp/docs>`

@@ -16,7 +16,7 @@ The following are the steps involved for calibrating the ADC PGA offset and gain
 
 ::
 
-   *Calibrate ADC offset for each PGA gain setting by connecting the 1.11V ADC reference to the P mux and N mux of the ADC. The expected coded is 0x8000. The offset error is expected code - measured code. The ADCOFFSET registers have a resolution of 0.25 bits. 
+   *Calibrate ADC offset for each PGA gain setting by connecting the 1.11V ADC reference to the P mux and N mux of the ADC. The expected coded is 0x8000. The offset error is expected code - measured code. The ADCOFFSET registers have a resolution of 0.25 bits.
    *For PGA gain of 1, 1.5 and 2 the gain calibration is done using the internal 1.82V reference. The precision reference is connected to the P mux and the 1.11V ADC reference is connected to the N mux.
    *For PGA gain of 4 and 9 the HSDAC is used to generate a voltage across the external RCAL resistor. The P-Node and N-Node are connected to the ADC mux.
 
@@ -42,7 +42,9 @@ If the PGA needs to be calibrated for a gain of 9 the PGA gain of 1 must be cali
    static AD5940Err AppADCPgaCal(void)
    {
       ADCPGACal_Type pga_cal;
-      
+
+::
+
       /* Calibrate ADC PGA(offset and gain) */
       pga_cal.AdcClkFreq = AppAMPCfg.AdcClkFreq;
       pga_cal.SysClkFreq = AppAMPCfg.SysClkFreq;
@@ -50,7 +52,7 @@ If the PGA needs to be calibrated for a gain of 9 the PGA gain of 1 must be cali
       pga_cal.ADCSinc2Osr = ADCSINC2OSR_1333;    /* 800kSPS/4/1333 = 150Hz,  T = 6.67ms*/
       pga_cal.ADCSinc3Osr = ADCSINC3OSR_4;
       pga_cal.TimeOut10us = 10\*100;          /* 10ms max */
-      pga_cal.VRef1p82 = AppAMPCfg.ADCRefVolt;  
+      pga_cal.VRef1p82 = AppAMPCfg.ADCRefVolt;
       pga_cal.VRef1p11  = 1.0979f;
       pga_cal.PGACalType = PGACALTYPE_OFFSETGAIN; /* Calibrate Offset and Gain errors */
       AD5940_ADCPGACal(&pga_cal);

@@ -80,14 +80,12 @@ Optional devicetree properties:
 Driver testing
 ==============
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -120,10 +118,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -136,15 +131,11 @@ Show device name
 Show scale
 ----------
 
-| **Description:**
-| scale to be applied to out_voltage0_raw and out_voltage1_raw in order to obtain the measured voltage in millivolts.
+**Description:** scale to be applied to out_voltage0_raw and out_voltage1_raw in order to obtain the measured voltage in millivolts.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -157,16 +148,13 @@ Show scale
 Set channel Y output voltage
 ----------------------------
 
-| **Description:**
-| /sys/bus/iio/devices/iio:deviceX/out_voltageY_raw
-| Raw (unscaled, no bias etc.) output voltage for channel Y.
+**Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_raw
+
+Raw (unscaled, no bias etc.) output voltage for channel Y.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -182,15 +170,11 @@ Enable power down mode on output Y
 
 /sys/bus/iio/devices/iio:deviceX/out_voltageY_powerdown
 
-| **Description:**
-| Writing 1 causes output Y to enter the power down mode. Clearing returns to normal operation.
+**Description:** Writing 1 causes output Y to enter the power down mode. Clearing returns to normal operation.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::

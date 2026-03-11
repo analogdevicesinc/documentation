@@ -23,7 +23,7 @@ A. IO Operation
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Description                           | Test Steps                                                                                                                                              | Steps Resources     | Expected Results                                                                                                                                                        |
@@ -73,7 +73,7 @@ B. Group Operation
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 Set DIO 0-7 and DIO 8-15 groups as Group pins:
 
@@ -106,8 +106,7 @@ Set DIO 0-7 and DIO 8-15 groups as Group pins:
 
 Test Results will be recorded in the following document: `Digital IO - Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/digitalio_-_test_case.xlsx>`_
 
-| 
-| **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
+**Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/dio-individual.png
    :width: 100px

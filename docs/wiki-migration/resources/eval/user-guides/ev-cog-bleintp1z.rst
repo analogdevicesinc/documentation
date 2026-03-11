@@ -4,20 +4,24 @@ EV-COG-BLEINTP1Z Connectivity Cog
 Introduction
 ------------
 
-| EV-COG-BLEINTP1Z board is a connectivity Cog board for MCU Cogs (EV-COG-AD3029LZ and EV-COG-AD4050LZ). This board enables wireless RF transceiver connectivity, Bluetooth Low Energy connectivity and WIFI connectivity for various IoT applications.
-| \* The following ADI wireless RF daughter boards are supported via SPI interface
+EV-COG-BLEINTP1Z board is a connectivity Cog board for MCU Cogs (EV-COG-AD3029LZ and EV-COG-AD4050LZ). This board enables wireless RF transceiver connectivity, Bluetooth Low Energy connectivity and WIFI connectivity for various IoT applications.
+
+-  The following ADI wireless RF daughter boards are supported via SPI interface
+
+   -  :adi:`ADF7023 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7023.html>`
+   -  :adi:`ADF7024 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7024.html>`
+   -  :adi:`ADF7030-1 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7030-1.html>`
 
 ::
 
-     * [[:adi:`en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7023`.html|ADF7023]]
-     * [[:adi:`en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7024`.html|ADF7024]]
-     * [[:adi:`en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7030-1`.html|ADF7030-1]]
-      *[[:adi:`en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7242`.html|ADF7242]] 
+      *[[:adi:`en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7242`.html|ADF7242]]
    * BTLE - available on board and can be communicated via SPI interface
    * WIFI - provision to support [[http://espressif.com/en/products/hardware/esp8266ex/overview|ESP8266]] via UART (not available in the kit)
 
-| This user guide describes the connector pin out, power options and jumper settings available on board.
-| ======Hardware details =====
+This user guide describes the connector pin out, power options and jumper settings available on board.
+
+Hardware details
+================
 
 Board image
 -----------
@@ -208,11 +212,11 @@ The EV-COG-BLEINTP1Z has a Bluetooth low energy chipset EM9304 from EM Microlect
 Component EM9304 pin number EM9304 pin name MCU cog signal
 ========= ================= =============== ==============
 U1        4                 ENABLE          GPIO27
-:::       15                GPIO0           SPI2_CS0
-:::       16                GPIO1           SPI2_CLK
-:::       17                GPIO2           SPI2_MISO
-:::       18                GPIO3           SPI2_MOSI
-:::       20                GPIO4           SPI2_RDY
+\         15                GPIO0           SPI2_CS0
+\         16                GPIO1           SPI2_CLK
+\         17                GPIO2           SPI2_MISO
+\         18                GPIO3           SPI2_MOSI
+\         20                GPIO4           SPI2_RDY
 ========= ================= =============== ==============
 
 .. important::
@@ -236,13 +240,13 @@ The following figure shows the orientation of the module. |image3| Pinout detail
 Component module pin number Module pin function cog signal
 ========= ================= =================== ============
 P9        1                 DGND                GND
-:::       2                 WIFI TX             MCU/UART0_RX
-:::       3                 GPIO0               WIFI_GPIO0
-:::       4                 Chip enable         VDD_WIFI
-:::       5                 GPIO2               WIFI_GPIO2
-:::       6                 WIFI Reset          WIFI_RESET
-:::       7                 WIFI RX             MCU/UART0_TX
-:::       8                 DVDD                VDD_WIFI
+\         2                 WIFI TX             MCU/UART0_RX
+\         3                 GPIO0               WIFI_GPIO0
+\         4                 Chip enable         VDD_WIFI
+\         5                 GPIO2               WIFI_GPIO2
+\         6                 WIFI Reset          WIFI_RESET
+\         7                 WIFI RX             MCU/UART0_TX
+\         8                 DVDD                VDD_WIFI
 ========= ================= =================== ============
 
 .. note::
@@ -264,19 +268,19 @@ TP3                     1          ADF7030-1_EEPROM_CSN
 TP4                     1          ADF7030-1_EEPROM_VDD
 TP5                     1          BLE_CHIP_ENABLE
 P8                      1          WIFI_GPIO0
-:::                     2          WIFI_GPIO2
+\                       2          WIFI_GPIO2
 P10                     1          XOSC26N
-:::                     2          ATB1/GPIO6
-:::                     3          ATB2/GPIO7
-:::                     4          ATB3
-:::                     5          ATB4
-:::                     6          VREF
-:::                     7          RF_GPIO0
-:::                     8          RF_GPIO1
-:::                     9          RF_GPIO4
-:::                     10         RF_GPIO5
-:::                     11         RF_SS
-:::                     12         GND
+\                       2          ATB1/GPIO6
+\                       3          ATB2/GPIO7
+\                       4          ATB3
+\                       5          ATB4
+\                       6          VREF
+\                       7          RF_GPIO0
+\                       8          RF_GPIO1
+\                       9          RF_GPIO4
+\                       10         RF_GPIO5
+\                       11         RF_SS
+\                       12         GND
 ======================= ========== ====================
 
 Schematics, PCB layout, Bill of materials
@@ -295,9 +299,10 @@ Schematics, PCB layout, Bill of materials
    
 
 
-| 
+
 | End Document
-| :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
+
+:doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picture4.png
    :width: 250px

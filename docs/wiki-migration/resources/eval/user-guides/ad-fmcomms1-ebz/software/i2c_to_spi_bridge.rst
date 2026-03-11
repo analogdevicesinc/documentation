@@ -5,7 +5,9 @@ AD-FMCOMMS1-EBZ Register Access
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
- The majority of the parts are accessible via SPI. To keep inside the LPC form factor, the board uses a micro-controller as an I\ :sup:`2`\ C to SPI bridge (SPI chip selects would have pushed things over the LPC pin count).
+
+
+The majority of the parts are accessible via SPI. To keep inside the LPC form factor, the board uses a micro-controller as an I\ :sup:`2`\ C to SPI bridge (SPI chip selects would have pushed things over the LPC pin count).
 
 The reference design SDK sample program provides general spi read and write access. It is possible to expand the access for burst mode.
 
@@ -149,7 +151,7 @@ The microcontroller on the board is a `Microchip PIC18F24J50-I/ML <http://www.mi
    
    ::
    
-      root@linaro-ubuntu-desktop:~# **ls -l _sys* **
+      root@linaro-ubuntu-desktop:~# **ls -l _sys**
       -rw-r--r-- 1 root root 256 Jan  1 00:04 _sys_devices_amba.1_41600000.i2c_i2c-1_1-0050_eeprom
       -rw-r--r-- 1 root root 256 Jan  1 00:04 _sys_devices_amba.1_41600000.i2c_i2c-1_1-0054_eeprom
    

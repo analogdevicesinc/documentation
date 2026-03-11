@@ -1,15 +1,16 @@
 AD-T1LUSB2.0-EBZ User Guide
 ===========================
 
-|
-
 .. important::
 
    **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
-   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html
-   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
-   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+   https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html
+   
+   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   
+   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
    
 
 
@@ -37,21 +38,27 @@ Features
 -  LEDs indicating MAC link status and user-programmable PHY status flags
 -  Operates without an external power supply, powered directly from the USB bus
 
-| 
-| ==== Applications ====
+Applications
+~~~~~~~~~~~~
 
 -  Industrial Ethernet Application Development
 -  Building Automation
 
-| 
-| ==== System Architecture ==== |image1|
+System Architecture
+~~~~~~~~~~~~~~~~~~~
 
-| 
-| ==== What's Inside the Box? ====
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-t1lusb2.0-ebz/ad-t1lusb2.0-ebz_block_diagram.png
+   :align: center
+   :width: 600px
 
-| 
-| ----
+What's Inside the Box?
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-t1lusb2.0-ebz/ad-t1lusb2.0-ebz_package_contents.png
+   :align: center
+   :width: 600px
+
+--------------
 
 Setup Examples
 --------------
@@ -68,8 +75,10 @@ A couple of design examples that have a 10BASE-T1L interface that will work toge
    \ **Note:** The **AD-T1LUSB2.0-EBZ** will **send or receive data only** over a FROFIBUS/SPE cable, so any design with a 10BASE-T1L interface will need to be powered separately.
 
 
-| 
-| ==== AD-SWIOT1L-SL Interfacing ==== |image3|
+AD-SWIOT1L-SL Interfacing
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-swiot1l-sl_ad-t1lusb20-ebz.png
 
 --------------
 
@@ -78,8 +87,10 @@ AD-APARD32690-SL Interfacing
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-adard32690-sl_ad-t1lusb20-ebz.png
 
-| 
-| ===== Network Testing ===== When the AD-T1LUSB2.0-EBZ board is connected to a computer via a USB cable, a new network interface should be available.
+Network Testing
+---------------
+
+When the AD-T1LUSB2.0-EBZ board is connected to a computer via a USB cable, a new network interface should be available.
 
 This can be verified by running on a shell terminal the **``ipconfig`` command on a Windows system** or **``ifconfig`` on a Linux system**.
 
@@ -113,8 +124,7 @@ After this we can run the ``ping`` command as ``ping -t 169.254.193.171`` to obt
 
 In this way, we can confirm that the connection between a computer and the AD-T1LUSB2.0-EBZ board works as expected.
 
-| 
-| ----
+--------------
 
 Resources
 ---------
@@ -135,16 +145,10 @@ Design and Integration Files
    
 
 
-| 
-| ==== Support ====
+Support
+~~~~~~~
 
 .. hint::
 
    Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone Reference Designs <reference-designs>` forum.
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-t1lusb2.0-ebz/ad-t1lusb2.0-ebz_block_diagram.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-t1lusb2.0-ebz/ad-t1lusb2.0-ebz_package_contents.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-swiot1l-sl_ad-t1lusb20-ebz.png

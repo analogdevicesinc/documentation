@@ -19,10 +19,7 @@ Simple Current Mirror
 Materials:
 ~~~~~~~~~~
 
-| Analog Discovery Lab hardware
-| Solder-less breadboard
-| Jumper wires
-| 2 - small signal NPN transistors (2N3904 or SSM2212)
+Analog Discovery Lab hardware Solder-less breadboard Jumper wires 2 - small signal NPN transistors (2N3904 or SSM2212)
 
 Directions:
 ~~~~~~~~~~~
@@ -52,10 +49,7 @@ Two identical transistors with the same base to emitter voltage will have the sa
    :align: center
    :width: 150px
 
-| where:
-| Is = the saturation current, and is a constant
-| V\ :sub:`BE` is the base emitter voltage
-| The thermal voltage, KT/q = 25.8 mV at room temperature
+where: Is = the saturation current, and is a constant V\ :sub:`BE` is the base emitter voltage The thermal voltage, KT/q = 25.8 mV at room temperature
 
 Identical transistors by definition have the same I\ :sub:`S`. In the simple current mirror, both transistors have the same V\ :sub:`BE`. Thus, both transistors will have the same I\ :sub:`C` and if base currents are ignored, Iin = Iout. Actually I\ :sub:`C1`\ is I\ :sub:`in` - (I\ :sub:`B1` + I\ :sub:`B2`).
 
@@ -96,8 +90,6 @@ Modify the simple mirror into a Wilson Mirror as shown below. Repeat the same pr
    Figure 3 Wilson current mirror
 
 
-.. _questions-1:
-
 Questions:
 ~~~~~~~~~~
 
@@ -119,25 +111,16 @@ Modify the simple mirror into a Widlar Mirror as shown below. Repeat the same pr
    Figure 4 Widlar current mirror
 
 
-.. _questions-2:
-
 Questions:
 ~~~~~~~~~~
 
-| 1. Use the output impedance of the simple mirror to determine the Early voltage for the NPN transistor.
-| 2. Build a mirror using PNP transistors and use the output impedance of the simple mirror to determine the Early voltage for the PNP transistor.
-| 3. The output impedance of a Widlar current mirror is approximately,
+1. Use the output impedance of the simple mirror to determine the Early voltage for the NPN transistor. 2. Build a mirror using PNP transistors and use the output impedance of the simple mirror to determine the Early voltage for the PNP transistor. 3. The output impedance of a Widlar current mirror is approximately,
 
 :math:`R_out = r_o[1 + g_m R_3]`
 
-| where: r\ :sub:`o` = V\ :sub:`AF`/I\ :sub:`C`
-| V\ :sub:`AF` is the Early voltage.
-| g\ :sub:`m` = I\ :sub:`C`/V\ :sub:`T` is the transconductance. And
-| R\ :sub:`E` is the emitter resistor.
+where: r\ :sub:`o` = V\ :sub:`AF`/I\ :sub:`C` V\ :sub:`AF` is the Early voltage. g\ :sub:`m` = I\ :sub:`C`/V\ :sub:`T` is the transconductance. And R\ :sub:`E` is the emitter resistor.
 
-| How accurately does this formula predict the output impedance of the Widlar current mirror you constructed?
-| 4. If base currents are not ignored, how is I\ :sub:`out` related to Iin in the simple current mirror?
-| 5. If I need a second (or third) copy of I\ :sub:`in` how would I make it?
+How accurately does this formula predict the output impedance of the Widlar current mirror you constructed? 4. If base currents are not ignored, how is I\ :sub:`out` related to Iin in the simple current mirror? 5. If I need a second (or third) copy of I\ :sub:`in` how would I make it?
 
 **For Further Reading:**
 
@@ -146,23 +129,15 @@ http://en.wikipedia.org/wiki/Widlar_current_source
 low Input Headroom Mirror
 -------------------------
 
-.. _objective-1:
-
 Objective:
 ~~~~~~~~~~
 
 The goal of this activity is to study BJT current source or current mirror with lower input headroom requirements.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| 1 - 150 KΩ Resistor (or a 100 KΩ in series with a 47 KΩ)
-| 2 - small signal NPN transistor (2N3904 or SSM2212)
-| 1 - small signal PNP transistor (2N3096)
-
-.. _directions-1:
+1 - 150 KΩ Resistor (or a 100 KΩ in series with a 47 KΩ) 2 - small signal NPN transistor (2N3904 or SSM2212) 1 - small signal PNP transistor (2N3096)
 
 Directions:
 ~~~~~~~~~~~

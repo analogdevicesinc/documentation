@@ -66,8 +66,9 @@ The sensor file is typically source code for the "board" variant. However for si
 
 --------------
 
-| **The files can be downloaded here:**
-| `android_hardware.zip <https://wiki.analog.com/_media/resources/tools-software/android-drivers/sensor-acceleration/android_hardware.zip>`_
+**The files can be downloaded here:**
+
+`android_hardware.zip <https://wiki.analog.com/_media/resources/tools-software/android-drivers/sensor-acceleration/android_hardware.zip>`_
 
 --------------
 
@@ -162,7 +163,7 @@ Upon start EventHub must emit classes=0x0:
 
 ::
 
-   I/EventHub( 1862): New device: path=/dev/input/event0 name=ADXL34x 
+   I/EventHub( 1862): New device: path=/dev/input/event0 name=ADXL34x
    accelerometer id=0x10003 (of 0x4) index=4 fd=50 classes=0x0
 
 classes=0x4 means that the ADXL34x driver is considered as Touchscreen.
@@ -261,7 +262,7 @@ sensors_adxl34x.c
 
    #include <hardware/sensors.h>
 
-   /******************************************************************************/
+   /*****************************************************************************/
    #define ID_BASE SENSORS_HANDLE_BASE
    #define ID_ACCELERATION (ID_BASE + 0)
    #define MAX_NUM_SENSORS 1
@@ -619,7 +620,7 @@ sensors_adxl34x.c
        return 0;
    }
 
-   /******************************************************************************/
+   /*****************************************************************************/
 
    /**
      * module methods

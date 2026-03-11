@@ -13,7 +13,7 @@ General Setup
 
    *One [[:adi:`CN0346|EVAL-CN0346-SDPZ]]` Evaluation Board
    *One [[:adi:`EVAL-SDP-CB1Z|EVAL-SDP-CB1Z]]` Evaluation board
-   *One [[:adi:`EVAL_SDP-PMOD|EVAL-SDP-PMOD]]` Evaluation board  
+   *One [[:adi:`EVAL_SDP-PMOD|EVAL-SDP-PMOD]]` Evaluation board
    *One [[:adi:`CN0346|CN0346` Evaluation Software]]
    *One USB Type-A plug to USB Mini-B plug cable.
    *Boveda Calibration Packs or other Humidity controlled environment.

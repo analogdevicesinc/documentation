@@ -239,7 +239,7 @@ For the Crosby, the frames are defined in the code block below. From this we can
 
        };
 
-For the definition of **DepthSensorFrameType** and \**DepthSensorFrameContent \*\*, see `sensor_definitions.h <https://github.com/ToF?master/sdk/include/aditof/sensor_definitions.h>`_.
+For the definition of **DepthSensorFrameType** and \**DepthSensorFrameContent**, see `sensor_definitions.h <https://github.com/ToF?master/sdk/include/aditof/sensor_definitions.h>`_.
 
 Step 6: Select the Mode/FrameType
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -346,7 +346,6 @@ Add all of the camera IPs in the list below
 ::
 
     IP_addr = ['10.42.0.1']
-     
 
 Trigger mode
 ~~~~~~~~~~~~
@@ -370,9 +369,6 @@ Gets cameras based on specified IP
     status = system.getCameraListAtIp(camera, IP_addr[i])
     print("system.getCameraListAtIp()", status)
     cameras.append(camera[0])
-       
-
-.. _initialize-cameras-1:
 
 Initialize Cameras
 ~~~~~~~~~~~~~~~~~~
@@ -385,7 +381,6 @@ Initializes camera based on settings in user-defined json file.
     status = cameras[i].initialize()
     print("camera"+IP_addr[i]+".initialize()", status)
     cameras[i].setControl("loadModuleData", "call")
-       
 
 Set Frame Type and start camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

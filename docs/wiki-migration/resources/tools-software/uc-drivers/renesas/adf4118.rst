@@ -126,23 +126,17 @@ Renesas RX62N Quick Start Guide
 
 This section contains a description of the steps required to run the ADF4118 demonstration project on a Renesas RX62N platform.
 
-.. _required-hardware-1:
-
 Required Hardware
 -----------------
 
 -  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
 -  :adi:`EVAL-ADF4118EBZ1 (ADI) <EVAL-ADF4118EBZ1>`
 
-.. _required-software-1:
-
 Required Software
 -----------------
 
 -  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
 -  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
-
-.. _hardware-setup-1:
 
 Hardware Setup
 --------------
@@ -158,8 +152,6 @@ An EVAL-ADF4118EBZ1 board has to be interfaced with the Renesas Demonstration Ki
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4118ebz1_rx62n.jpg
    :align: center
-
-.. _reference-project-overview-1:
 
 Reference Project Overview
 --------------------------

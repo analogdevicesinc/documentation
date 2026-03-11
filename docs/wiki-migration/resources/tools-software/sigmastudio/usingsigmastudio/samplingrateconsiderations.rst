@@ -1,8 +1,9 @@
 Sampling Rate Considerations
 ============================
 
-| :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
-| The number of instructions available on the DSP per audio sample depends on the sampling frequency selected. For example, AD1940/1941 DSPs can perform:
+:doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
+
+The number of instructions available on the DSP per audio sample depends on the sampling frequency selected. For example, AD1940/1941 DSPs can perform:
 
 -  1536 instructions per sample at 32 kHz
 -  1536 instructions per sample at 44.1 kHz

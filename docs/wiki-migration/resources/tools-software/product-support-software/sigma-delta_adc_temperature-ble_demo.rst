@@ -237,7 +237,7 @@ This file allows user to select active Sigma Delta ADC that is used for external
 
 .. code:: c
 
-   // **** Note for User: Active Device selection ****
+   // *** Note for User: Active Device selection ***
    // Select the device type from the list of below device type defines
    // e.g. #define DEV_AD7124 -> This will make AD7124 as an Active Device.
    // The Active Device is default set to AD7124, if device type is not defined.

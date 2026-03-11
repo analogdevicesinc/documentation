@@ -22,7 +22,7 @@ Cloning the repository
 
 .. important::
 
-   The <fc #ff0000>--recursive</fc> flag here is important otherwise the submodules are not included. The sources and all the build objects require approx 6 GByte of free disk space.
+   The --recursive flag here is important otherwise the submodules are not included. The sources and all the build objects require approx 6 GByte of free disk space.
 
 
 PlutoSDR-fw
@@ -30,15 +30,12 @@ PlutoSDR-fw
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on your Linux development host
+   This specifies any shell prompt running on your Linux development host
 
    
    ::
    
-      michael@HAL9000:~/devel$ **git clone <fc #ff0000>--recursive</fc> https:<nowiki>//</nowiki>github.com/analogdevicesinc/plutosdr-fw.git**
+      michael@HAL9000:~/devel$ **git clone --recursive https:<nowiki>//</nowiki>github.com/analogdevicesinc/plutosdr-fw.git**
    
 
 
@@ -47,15 +44,12 @@ M2k-fw
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on your Linux development host
+   This specifies any shell prompt running on your Linux development host
 
    
    ::
    
-      michael@HAL9000:~/devel$ **git clone <fc #ff0000>--recursive</fc> https:<nowiki>//</nowiki>github.com/analogdevicesinc/m2k-fw.git**
+      michael@HAL9000:~/devel$ **git clone --recursive https:<nowiki>//</nowiki>github.com/analogdevicesinc/m2k-fw.git**
    
 
 
@@ -64,14 +58,11 @@ Updating your repository
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on your Linux development host
+   This specifies any shell prompt running on your Linux development host
 
    
    ::
    
-      michael@HAL9000:~/devel/plutosdr-fw$ **git pull <fc #ff0000>--recurse-submodules</fc>**
+      michael@HAL9000:~/devel/plutosdr-fw$ **git pull --recurse-submodules**
    
 

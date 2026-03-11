@@ -47,7 +47,14 @@ Files
 | include  | `ad7746.h <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/cdc/ad7746.h>`_  |
 +----------+--------------------------------------------------------------------------------------------------------------------------+
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+
+This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+
+So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+
+For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+
 
 Depending on the converter IC used, you may need to set the I2C_BOARD_INFO name accordingly, matching your part name.
 
@@ -107,7 +114,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
                    [--snip--]
 
-                   *** Analog to digital converters ***
+                   ** Analog to digital converters **
                    <*>   Analog Devices AD7745, AD7746 AD7747 capacitive sensor driver
 
                    [--snip--]
@@ -121,14 +128,12 @@ Hardware configuration
 Driver testing
 ==============
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -183,10 +188,7 @@ Show device name
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -201,10 +203,7 @@ Show available sampling frequencies / update rates
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -223,10 +222,7 @@ Set sampling frequency / update rate
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -258,10 +254,7 @@ VIN_VDD_MON       in_voltage_supply_scale
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -274,8 +267,7 @@ VIN_VDD_MON       in_voltage_supply_scale
 Show channel CIN1(+) measurement
 --------------------------------
 
-| **Description:**
-| Raw unscaled capacitance measurement on channel in_capacitance0_raw
+**Description:** Raw unscaled capacitance measurement on channel in_capacitance0_raw
 
 ================= ================================
 ADC Input         Channel name
@@ -290,10 +282,7 @@ VIN_VDD_MON       in_voltage1_supply_raw
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -308,8 +297,7 @@ VIN_VDD_MON       in_voltage1_supply_raw
 Show internal temperature measurement
 -------------------------------------
 
-| **Description:**
-| Scaled temperature measurement on channel in_temp0_input. Results are in millidegrees Celsius.
+**Description:** Scaled temperature measurement on channel in_temp0_input. Results are in millidegrees Celsius.
 
 ============================ ==============
 ADC Input Channel            Channel name
@@ -320,10 +308,7 @@ TEMP (external sensor diode) in_temp1_input
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -338,8 +323,7 @@ TEMP (external sensor diode) in_temp1_input
 Set channel common mode offset (CAPDAC)
 ---------------------------------------
 
-| **Description:**
-| If known for a device, offset to be added to <type>[Y]_raw prior to scaling by <type>[Y]_scale in order to obtain value in the <type> units as specified in <type>[y]_raw documentation.
+**Description:** If known for a device, offset to be added to <type>[Y]_raw prior to scaling by <type>[Y]_scale in order to obtain value in the <type> units as specified in <type>[y]_raw documentation.
 
 ======= ========= ===================================
 Input   CAPDAC    Channel name
@@ -355,15 +339,11 @@ CIN2(-) CAPDAC(-) in_capacitance0-capacitance2_offset
    The AD7745/AD7746 CDC full-scale input range is ±4.096 pF. The part can accept a higher capacitance on the input and the common-mode or offset (not-changing component) capacitance can be balanced by programmable on-chip CAPDACs.
 
 
-| **Example 4pF Offset:**
-| **in_capacitance0_offset** = *Offset / in_capacitance_scale* = 4pF / 0.000000488 = **8196721**
+**Example 4pF Offset:** **in_capacitance0_offset** = *Offset / in_capacitance_scale* = 4pF / 0.000000488 = **8196721**
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -377,15 +357,11 @@ CIN2(-) CAPDAC(-) in_capacitance0-capacitance2_offset
 Perform channel gain calibration
 --------------------------------
 
-| **Description:**
-| Triggers gain calibration on channel in_capacitance0 or in_capacitance1
+**Description:** Triggers gain calibration on channel in_capacitance0 or in_capacitance1
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -399,15 +375,11 @@ Perform channel gain calibration
 Set channel gain coefficient
 ----------------------------
 
-| **Description:**
-| Write gain coefficient for channel in_capacitance0 or in_capacitance1 Valid range is between 1.0 and 1.99999999.
+**Description:** Write gain coefficient for channel in_capacitance0 or in_capacitance1 Valid range is between 1.0 and 1.99999999.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -421,15 +393,11 @@ Set channel gain coefficient
 Perform channel offset calibration
 ----------------------------------
 
-| **Description:**
-| Triggers offset calibration on channel in_capacitance0 or in_capacitance1
+**Description:** Triggers offset calibration on channel in_capacitance0 or in_capacitance1
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -443,4 +411,21 @@ Perform channel offset calibration
 More Information
 ================
 
-.. include:: ../../../../software/linux/docs/iio/iio_snippets.rst
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-cdc/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

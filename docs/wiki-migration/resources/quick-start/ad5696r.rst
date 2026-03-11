@@ -1,9 +1,10 @@
 AD5696R/AD5695R/AD5694R Quick Start Guide
 =========================================
 
-| 
-| **Quad, 16-/14-/12-Bit, Voltage Output DACs with a 2 ppm/ºC Reference, I\ 2\ C Interface**
-| |image1|
+**Quad, 16-/14-/12-Bit, Voltage Output DACs with a 2 ppm/ºC Reference, I\ 2\ C Interface**
+
+
+|image1|
 
 .. container:: centeralign
 
@@ -29,8 +30,6 @@ Features
 
 Pin Configurations
 ------------------
-
-|
 
 .. container:: column
 
@@ -61,13 +60,7 @@ Pin Configurations
    
    .. container:: centeralign
 
-      \ *Figure 3. 16-Lead TSSOP*\
-
-   
-
-
-
-| \*\* Table 1. Function Descriptions for Quick Start \*\*
+      \ *Figure 3. 16-Lead TSSOP*\** Table 1. Function Descriptions for Quick Start**
 
 +------------------------+-------------------------------------------------------------------+
 | Mnemonic               | Description                                                       |
@@ -114,10 +107,7 @@ Shift Register Contents
 
 .. container:: centeralign
 
-   \ *Figure 4. Shift Register Contents*\
-
-
-\*\* Table 2. Command Definitions \*\*
+   \ *Figure 4. Shift Register Contents*\** Table 2. Command Definitions**
 
 ======= == == == =======================================================
 Command          
@@ -138,61 +128,63 @@ C3      C2 C1 C0 Description
 1       1  1  1  Reserved
 ======= == == == =======================================================
 
-| 
+
 
 Transfer Function
 -----------------
 
 ::
 
-   $\displaystyle V_OUT = V_REF \times Gain delim[\frac{D}{2^N}{]}$ \\
+   $\displaystyle V_OUT = V_REF \times Gain delim[\frac{D}{2^N}{]}$
 
-| where:
-| *D* is the decimal equivalent.
-| *N* is the number of bits.
-| ==== Simple Write Example 1 ====
+where: *D* is the decimal equivalent. *N* is the number of bits.
+
+Simple Write Example 1
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
    To Update Channel A, write the following over the serial interface: 0001 XXX1 1000000000000000 (four command bits, four address bits, 16 data bits for the :adi:`AD5696R`). This updates Channel A to midscale. GAIN = 1, V\ :sub:`OUT`\ A = 1.25 V.
 
 
-| |image2|
+   |image2|
 
 .. container:: centeralign
 
    \ *Figure 5. Simple Write—Update Channel A*\
 
 
-| ==== Simple Write: Example 2 ====
+Simple Write: Example 2
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
    To update Channel B, write the following over the serial interface: 0001 XX1X 1000000000000000. This updates Channel B to midscale. GAIN = 1, V\ :sub:`OUT`\ B = 1.25 V.
 
 
-| |image3|
+   |image3|
 
 .. container:: centeralign
 
    \ *Figure 6. Simple Write—Update Channel B*\
 
 
-| ==== Simple Write: Example 3 ====
+Simple Write: Example 3
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
    To update both Channel A and Channel B, write the following: 0001 XX11 1111111111111111. This updates both channels to full scale. GAIN = 1, V\ :sub:`OUT`\ B = 2.5 V, V\ :sub:`OUT`\ A = 2.5 V.
 
 
-| |image4|
+   |image4|
 
 .. container:: centeralign
 
    \ *Figure 7. Simple Write—Update Channel A and Channel B*\
 
 
-| I\ :sup:`2`\ C refers to a communications protocol originally developed by Philips Semiconductors (now NXP Semiconductors).
+I\ :sup:`2`\ C refers to a communications protocol originally developed by Philips Semiconductors (now NXP Semiconductors).
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/ad5696r_block_diagram.png
 .. |16lfcsppinout.png| image:: https://wiki.analog.com/_media/resources/quick-start/16lfcsppinout.png

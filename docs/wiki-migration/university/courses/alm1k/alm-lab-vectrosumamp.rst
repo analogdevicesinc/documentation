@@ -16,13 +16,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 1 – OP484 quad rail to rail amplifier
-| 3 – 100 KΩ resistors
-| 1 – 470 Ω resistor
-| 1 – 220 Ω resistor
-| 1 – 1 uF capacitor
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 – OP484 quad rail to rail amplifier 3 – 100 KΩ resistors 1 – 470 Ω resistor 1 – 220 Ω resistor 1 – 1 uF capacitor
 
 Directions:
 ~~~~~~~~~~~

@@ -173,8 +173,6 @@ Setting up the Hardware
 
 |switch_config.png|
 
-<wrap center 30%>
-
 4. From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
 
 
@@ -198,8 +196,6 @@ System Setup Using Raspberry Pi
 -------------------------------
 
 The \*\* EVAL-AD5593R-PMDZ \*\* can be used with a Raspberry Pi.
-
-.. _demo-requirements-1:
 
 Demo Requirements
 ~~~~~~~~~~~~~~~~~
@@ -236,17 +232,16 @@ Follow the configuration procedure under **Configuring the SD Card for Raspberry
 
    dtoverlay=rpi-ad5593r
 
-|
-
 .. important::
 
-   The EVAL-AD5593R-PMDZ board has a 100k pullup resistor on the RESET pin, which correspond to Raspberry Pi GPIO13 and GPIO17 on PMD-RPI-INTZ P3 and P4, respectively. The default state of these pins is input, with a weak pulldown, but it is strong enough to pull the RESET line low.
+   The EVAL-AD5593R-PMDZ board has a 100k pullup resistor on the RESET pin, which correspond to Raspberry Pi GPIO13 and GPIO17 on PMD-RPI-INTZ P3 and P4, respectively. The default state of these pins is input, with a weak pulldown, but it is strong enough to pull the RESET line low. Adding the following line to config.txt will switch to pullup:
 
-   | Adding the following line to config.txt will switch to pullup:
-   | ``gpio=13,17=pu,ip``
+   
+   ::
+   
+      gpio=13,17=pu,ip
+   
 
-
-.. _setting-up-the-hardware-1:
 
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -287,8 +282,7 @@ To be able to connect your device, the software must be able to create a context
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-
-| Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to access it.
 
 For RPI Direct Local Access:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -330,9 +324,7 @@ Example:
 
    analog@analog:~$ iio_attr -a -C
 
-|
-
-| The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the ADICUP3029 platform.
+The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the ADICUP3029 platform.
 
 ::
 
@@ -346,14 +338,12 @@ Example:
 
    iio_reg -u ip:<ip address> ad5593r 0x02
 
-| 
-
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
@@ -383,8 +373,9 @@ Access the DMM panel to see the instantaneous reading of the input capacitances 
 PyADI-IIO
 ~~~~~~~~~
 
-| :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a Python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO Python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
-| Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
+:doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a Python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO Python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+
+Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
 
 Running the example
 ^^^^^^^^^^^^^^^^^^^

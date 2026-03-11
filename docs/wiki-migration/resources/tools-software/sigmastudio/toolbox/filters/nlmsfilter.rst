@@ -1,10 +1,15 @@
 NLMS Adaptive Filter
 ====================
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| The Normalized Least Mean Squares (NLMS) adaptive filter is an FIR based adaptive filter. The filter update equation is given by
-| w(n+1) = w(n) +[(μ \* e(n) \* x(n)) / Eng]
-| Where:
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
+
+The Normalized Least Mean Squares (NLMS) adaptive filter is an FIR based adaptive filter. The filter update equation is given by
+
+::
+
+        w(n+1) = w(n) +[(μ * e(n) * x(n)) / Eng]
+
+Where:
 
 ::
 
@@ -15,10 +20,13 @@ NLMS Adaptive Filter
         e(n)  = Error  = d(n)-y(n)
         d(n)  = Desired signal
         y(n)  = Output signal
-        Eng = Average energy over the duration of the filter = (1/M)*Σx(m) <sup>2</sup>      
+        Eng = Average energy over the duration of the filter = (1/M)*Σx(m) <sup>2</sup>
 
-| |image1|
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/nlms.jpg
+   :width: 200px
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/nlms_cell.png
+   :width: 100px
 
 Input Pins
 ----------
@@ -47,7 +55,7 @@ Output Pins
 Grow Algorithm
 --------------
 
-| The module does not support growth and add functionality.
+The module does not support growth and add functionality.
 
 GUI Controls
 ------------
@@ -61,25 +69,24 @@ GUI Controls
 DSP Parameter Information
 -------------------------
 
-+------------------+-----------------------------------------------------------------------------+----------------------+
-| GUI Control Name | Compiler Name                                                               | Function Description |
-+==================+=============================================================================+======================+
-| Alpha            | <fc #008000>NLMSFiltBlkAlg</fc><fc #ff0000>1</fc><fc #000080>lms_alpha</fc> | Filter learning rate |
-+------------------+-----------------------------------------------------------------------------+----------------------+
+================ ======================== ====================
+GUI Control Name Compiler Name            Function Description
+================ ======================== ====================
+Alpha            NLMSFiltBlkAlg1lms_alpha Filter learning rate
+================ ======================== ====================
 
 Here,
 
--  <fc #008000> Green</fc> - Algorithm Name
--  <fc #ff0000> Red</fc> - Instance Number (Changes for each instance)
--  <fc #000080> Blue</fc> - Parameter Name
+-   Green - Algorithm Name
+-   Red - Instance Number (Changes for each instance)
+-   Blue - Parameter Name
 
 Algorithm Description
 ---------------------
 
 This implementation of NLMS is a block based implementation. The weight update happens at the end of every processing block. The weight update equation is given below:
 
-| w(m+1) = w(m) + μ \* Err \* x(m) / Eng
-| Where:
+w(m+1) = w(m) + μ \* Err \* x(m) / Eng Where:
 
 ::
 
@@ -99,17 +106,8 @@ Note:
 
      N = Block Size and n varies over 0-(N-1)
      M = Filter tap length and m varies over 0-(M-1)
-     
 
 Supported IC's
 --------------
 
-| 1. ADSP-213xx
-| 2. ADSP-214xx
-| 3. ADSP-215xx
-| 4. ADSP-SC5xx
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/nlms.jpg
-   :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/nlms_cell.png
-   :width: 100px
+1. ADSP-213xx 2. ADSP-214xx 3. ADSP-215xx 4. ADSP-SC5xx

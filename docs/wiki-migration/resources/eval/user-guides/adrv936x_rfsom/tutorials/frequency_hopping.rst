@@ -76,7 +76,7 @@ Back in MATLAB, a new interface definition file set is created. This simply requ
 
 ::
 
-   tcollins@winston:/tmp/TransceiverToolbox$ ls -A trx_examples/targeting/frequency-hopping/ |grep -v /$ 
+   tcollins@winston:/tmp/TransceiverToolbox$ ls -A trx_examples/targeting/frequency-hopping/ |grep -v /$
    adi_build.tcl
    +AnalogDevicesDemo                  <--- MATLAB API to reference design
    build_kernel.sh

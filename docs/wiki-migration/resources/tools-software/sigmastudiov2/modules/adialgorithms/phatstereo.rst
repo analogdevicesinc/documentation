@@ -3,9 +3,16 @@
 Phat-Stereo
 ===========
 
-| |phatstereo.png|
-| ===== Description ===== Phat-Stereo is a spreading algorithm that uses stereo cross-coupling to simulate surround sound in stereo speakers and other 2-channel situations. The ear is most responsive to interaural phase shifts below 2 kHz, so this increase in phase shift results in a widening of the stereo image. A 3D enhancement, it yields an enriched surround field both for headphones and for stereo speakers.
-| ===== Targets Supported =====
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/phatstereo.png
+   :alt: phatstereo.png
+
+Description
+-----------
+
+Phat-Stereo is a spreading algorithm that uses stereo cross-coupling to simulate surround sound in stereo speakers and other 2-channel situations. The ear is most responsive to interaural phase shifts below 2 kHz, so this increase in phase shift results in a widening of the stereo image. A 3D enhancement, it yields an enriched surround field both for headphones and for stereo speakers.
+
+Targets Supported
+-----------------
 
 =========== ========== ================ ============= ================
 Name        ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -13,11 +20,11 @@ Name        ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Phat-Stereo S          S                S             NA
 =========== ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
------
+~~~~~
 
 ====== ===== ==============
 Name   Type  Description
@@ -27,7 +34,7 @@ Input1 Audio Input Channel1
 ====== ===== ==============
 
 Output
-------
+~~~~~~
 
 ======= ===== ===============
 Name    Type  Description
@@ -36,7 +43,7 @@ Output0 Audio Output channel0
 Output1 Audio Output channel1
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+----------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -59,7 +66,4 @@ Output1 Audio Output channel1
 +----------------+-------------------------------------+------------------------+---------------+
 
 | 
-| ===== DSP Parameter Computation ===== AlphaSpread = 1.0 - 2.7^(-6.28 \* CutFreq/ fs)
-| SpreadLevel = 10^(Level/ 20.0)
-
-.. |phatstereo.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/phatstereo.png
+| ===== DSP Parameter Computation ===== AlphaSpread = 1.0 - 2.7^(-6.28 \* CutFreq/ fs) SpreadLevel = 10^(Level/ 20.0)

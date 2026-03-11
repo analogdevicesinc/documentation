@@ -61,7 +61,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
    Linux Kernel Configuration
        Device Drivers  --->
        <*>  Industrial I/O support --->
-                Frequency Synthesizers DDS/PLL  ---> 
+                Frequency Synthesizers DDS/PLL  --->
                     Clock Generator/Distribution  --->
                     <*>  Analog Devices AD9528 Low Jitter Clock Generator
 

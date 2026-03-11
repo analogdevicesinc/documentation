@@ -56,18 +56,14 @@ Initial Set-Up
 | 1. Install the DPG Downloader and AD9144 SPI software and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
 | 2. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB.
 | 3. Connect the DGP3 unit to your PC and turn on the unit.
-
-Single-Tone Test with DAC PLL used
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| These settings configure the AD9144 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the IQMOD output, under the condition: Fdata = 500MHz, 4X interpolation, REFCLK = 250MHz Input signal = 70MHz,Nco =100MHz LO = 1000MHz, RF = 1170MHz.
+| ==== Single-Tone Test with DAC PLL used ==== These settings configure the AD9144 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the IQMOD output, under the condition: Fdata = 500MHz, 4X interpolation, REFCLK = 250MHz Input signal = 70MHz,Nco =100MHz LO = 1000MHz, RF = 1170MHz.
 
 Configure the DPG Downloader Vector Software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 1. To begin, turn on the external +5V supply.
 | 2. Open DPG Downloader if you have not done so. (Start > All Programs > Analog Devices > DPG > DPGDownloader). Ensure that the program detects the AD9144, as indicated in the “Evaluation Board” drop-down list and select the "QBF 2X4 5G 250M" option from the "Port Configuration" drop-down list. The “Serial Line Rate” window will show the incorrect clock rate until after the SPI software has been started; then it will change to the correct frequency. The DPG Downloader panel should look like Figure 3.
-|
+
 
 .. container:: center
 
@@ -81,7 +77,7 @@ Configure the DPG Downloader Vector Software
    +--------------------------------+
 
    | 3. Click on “Add Generated Waveform”, and then “Single Tone”. As shown in Figure 4, a Single Tone panel will be added to the vector list. Enter the sample rate, in this case 500MHz and the desired frequency, 70MHz. Enter the digital amplitude. In this case we use -4dBFS. Check the “Generate Complex Data (I & Q)” box and uncheck the “Unsigned Data” box. Select the In-Phase data vector in the “DAC0” and “DAC2” drop down menu and the Quadrature data vector in the “DAC1” and “DAC3”. Be sure to select the appropriate JESD Mode from the drop-down list ("Mode 4" for this example) that will match what is being set in the AD9144 through the SPI program.
-|
+
 
 .. container:: center
 
@@ -102,7 +98,7 @@ Configure the SPI Software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 1. Open the AD9144-6720 SPI application (Start > All Programs > Analog Devices > AD9144 > AD9144 SPI). The screen should look similar to Figure 5.
-|
+
 
 .. container:: center
 
@@ -130,7 +126,7 @@ Configure the SPI Software
 | g. For the "Select Sideband" control choose "Upper" on the Quick Start tab so that the output places the fout above the LO frequency.
 
 | 3. Once all the steps have been completed up to this point, the SPI software program should look like Figure 6.
-|
+
 
 .. container:: center
 
@@ -147,7 +143,7 @@ Configure the SPI Software
    +------------------------------------------------------+
 
    | 4. The current on the 5V supply should read about 2200mA. If you do not see the output, gently push the board toward the DPG3. This ensures that the board is firmly connected to the DPG3.
-|
+
 
 .. container:: center
 
@@ -169,7 +165,7 @@ Single-Tone Test with NCO used
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | 1. In the AD9144 customer SPI software go to the Quick Start tab. Set the FDAC to 2GHz and selecting the shift frequency, for this example we will use -50MHz. Select "Fine (uses FTW)" from the "Modulation Type" drop-down list, the NCO FTW will change from 00000 to F99999999998. Next click the ftw undate req button, the ftw update light should turn bring green at this point. See Figure 7. The analyzer spectrum shows the tone at 120MHz from the Lo frequency shown in Figure 8.
-|
+
 
 .. container:: center
 
@@ -200,16 +196,11 @@ Single-Tone Test with NCO used
    
 
 
-| 
-
 Note
 ~~~~
 
 | In single link JESD204B mode 2 through 10, four additional register writes, as shown below, are added in this software to match the data mapping the DPG3 requires. They are not required if the data source is not a DPG3.
-| write(0x308,0x2c)
-| write(0x309,0x3e)
-| write(0x30A,0x08)
-| write(0x30B,0x1a)
+| write(0x308,0x2c) write(0x309,0x3e) write(0x30A,0x08) write(0x30B,0x1a)
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/figure_1.png
    :width: 440px

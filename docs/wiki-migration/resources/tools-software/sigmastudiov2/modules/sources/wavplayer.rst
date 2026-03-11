@@ -11,8 +11,7 @@ The plug-in is located in the SigmaStudio+ Tree Toolbox window, as shown below. 
 Description
 -----------
 
-| 
-| The WAV Player module is designed to facilitate playback of audio files stored in external flash memory, interfaced with the ADSP-215xx/ADSP-SC5xx processor via the SPI (Serial Peripheral Interface). This module enables seamless reading of WAV files from flash and supports real-time pitch shifting, allowing dynamic adjustment of pitch during playback without affecting audio duration.
+The WAV Player module is designed to facilitate playback of audio files stored in external flash memory, interfaced with the ADSP-215xx/ADSP-SC5xx processor via the SPI (Serial Peripheral Interface). This module enables seamless reading of WAV files from flash and supports real-time pitch shifting, allowing dynamic adjustment of pitch during playback without affecting audio duration.
 
 The module supports WAV files that include a standard WAV header and adhere to the little-endian byte format. It is compatible with audio sample resolutions of 8, 16, 24, or 32 bits per sample, using signed integer data types. The WAV Player module does not have any audio input pins. It features five control input pins, one audio output pin, and one control output pin. And also, it Includes pause and loopback functionality.
 
@@ -45,7 +44,7 @@ Name       ADSP-215xx/ADSP-SC5xx
 WAV Player Block
 ========== =====================
 
-| 
+
 | ===== Pins =====
 
 Input
@@ -120,15 +119,22 @@ ADSP-215xx 1.1           2.1
 Package Information
 -------------------
 
-| Please find the attached package containing the necessary resources for running the WavPlayer module using ADSP-21569 and SC584 Eval boards:
-| `WAV Player Supported Files <https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/WavPlayerSupportedPackage.zip>`_
-| The package includes the following folders:
-| **Flash_Files:** A batch file along with the required WAV files for flashing onto the hardware.
+Please find the attached package containing the necessary resources for running the WavPlayer module using ADSP-21569 and SC584 Eval boards:
+
+`WAV Player Supported Files <https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/WavPlayerSupportedPackage.zip>`_
+
+The package includes the following folders:
+
+**Flash_Files:** A batch file along with the required WAV files for flashing onto the hardware.
 
 **SourceFiles:** Contains the necessary .c and .h files for integrating or modifying the target application.
 
-| **SchematicFiles:** Reference SigmaStudio+ schematic files for various channel configurations (ADSP-21569).
-| ===== Flashing Example WAV Files ===== Follow the steps below to flash the example WAV files to the external flash memory connected to the ADSP-215xx/ADSP-SC5xx EZ-KIT:
+**SchematicFiles:** Reference SigmaStudio+ schematic files for various channel configurations (ADSP-21569).
+
+Flashing Example WAV Files
+--------------------------
+
+Follow the steps below to flash the example WAV files to the external flash memory connected to the ADSP-215xx/ADSP-SC5xx EZ-KIT:
 
 **Connect the Emulator:** Attach the ICE-1000 or ICE-2000 emulator to the EZ-KIT board.
 
@@ -143,9 +149,9 @@ Package Information
 
 **Flashing Custom WAV Files:**
 
-\* To flash custom WAV files at different flash memory offsets, modify the filename and offset value within the batch script.
+- To flash custom WAV files at different flash memory offsets, modify the filename and offset value within the batch script.
 
-\* Ensure the custom WAV files are placed in the same directory as the batch file before execution.
+- Ensure the custom WAV files are placed in the same directory as the batch file before execution.
 
 Steps to run the Wav Player using Demo Application
 --------------------------------------------------
@@ -170,18 +176,18 @@ The following changes must be made to the ADSP-SC5xx/ADSP-215xxSigmaStudio demo 
 
 **Software switch configuration**
 
-Ensure the SPI2FLASH_CS_EN is enabled in adi_ss_softconfig_SC5xx.c file. |SoftConfiguration.jpg| \**Configuring Flash \*\*
+Ensure the SPI2FLASH_CS_EN is enabled in adi_ss_softconfig_SC5xx.c file. |SoftConfiguration.jpg| \**Configuring Flash**
 
 Add the callback function **wavplayerSetupFlash()** to **adi_ss_app_sh0.c** file and set the following flash configuration parameters:
 
 ::
 
-          1. Flash start address 
-          2. Flash end address 
-          3. Flash quad read command opcode 
-          4. Address size 
-          5. Address pins  
-          6. Dummy size 
+          1. Flash start address
+          2. Flash end address
+          3. Flash quad read command opcode
+          4. Address size
+          5. Address pins
+          6. Dummy size
 
 This call back function is called during initialization of the WAV player module. The flash configuration parameters for the ADSP-SC5xx EZ-KIT flash is as shown below.
 

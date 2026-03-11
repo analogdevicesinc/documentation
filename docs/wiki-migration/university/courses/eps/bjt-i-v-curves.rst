@@ -23,11 +23,7 @@ The variable analog outputs supplied by the Discovery hardware are voltages. The
 Materials:
 ----------
 
-| Analog Discovery Lab Instrument Hardware
-| Solder-less Breadboard
-| 1 - 100KΩ Resistor
-| 1 - 100Ω Resistor
-| 1 - small signal NPN transistor (2N3904)
+Analog Discovery Lab Instrument Hardware Solder-less Breadboard 1 - 100KΩ Resistor 1 - 100Ω Resistor 1 - small signal NPN transistor (2N3904)
 
 NPN device Directions:
 ----------------------
@@ -69,7 +65,6 @@ You can use the same 5 step staircase waveform you generated for the NPN device 
 
 **For Further Reading:**
 
-| Waveform file:
-| `5_steps.csv <https://wiki.analog.com/_media/university/courses/eps/5_steps.zip>`_
+Waveform file: `5_steps.csv <https://wiki.analog.com/_media/university/courses/eps/5_steps.zip>`_
 
 **Return to EPS Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**

@@ -56,13 +56,9 @@ Initial Set-Up
 | 1. Install the DPG Downloader and AD9144 SPI software and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
 | 2. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB.
 | 3. Connect the DGP3 unit to your PC and turn on the unit.
-
-Single-Tone Test using DAC PLL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| These settings configure the AD9144 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the DAC output, under the condition: Fdata = 250MHz, 4X interpolation, IF = 50MHz, DAC PLL RefClock 125MHz.
+| ==== Single-Tone Test using DAC PLL==== These settings configure the AD9144 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the DAC output, under the condition: Fdata = 250MHz, 4X interpolation, IF = 50MHz, DAC PLL RefClock 125MHz.
 | === Configure DPG Vector Software === 1. To begin, turn on the external +5V supply 2. Open DPG Downloader if you have not done so. (Start > All Programs > Analog Devices > DPG > DPGDownloader). Ensure that the program detects the AD9144, as indicated in the “Evaluation Board” drop-down list, and select "QBF 2X4 5G 250M" from the "Port Configuration" drop-down list. The “Serial Line Rate” window will not readback properly because the SPI software has not been executed. The DPG Downloader panel should look like Figure 3.
-|
+
 
 .. container:: center
 
@@ -76,7 +72,7 @@ Single-Tone Test using DAC PLL
    +--------------------------------+
 
    | 3. Click on “Add Generated Waveform”, and then “Single Tone”. As shown in Figure 4, a Single Tone panel will be added to the vector list. Enter the sample rate, in this case 250MHz and the desired frequency, 50MHz. Enter the digital amplitude. In this case we use -6dBFS. Check the “Generate Complex Data (I & Q)” box and uncheck the “Unsigned Data” box. Select the In-Phase data vector in the “DAC0” and “DAC2” drop down menu and the Quadrature data vector in the “DAC1” and “DAC3”. Be sure to select the appropriate JESD Mode from the drop-down list (“Mode 4” for this example) that will match what is being set in the AD9144 through the SPI program.
-|
+
 
 .. container:: center
 
@@ -95,7 +91,7 @@ Configuring SPI
 ^^^^^^^^^^^^^^^
 
 | 1. Open the AD9144 SPI application (Start > All Programs > Analog Devices > AD9144 > AD9144 SPI). The screen should look similar to Figure 5.
-|
+
 
 .. container:: center
 
@@ -115,15 +111,12 @@ Configuring SPI
 
 | 2. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 250MHz for AD9516 clock input (divides down to 125MHz for the RefClk frequency), and the output level to 3dBm. The spectrum analyzer can be configured with Center Frequency = 200 MHz, Span = 400 MHz, and Resolution Bandwidth of 30 kHz. Choose Input Attenuation to be 20dB. This can be adjusted later if indications are that the analyzer is causing degradations.
 | 3. Follow the sequence below to configure the AD9144 SPI registers.
-
 | a. Open the AD9144 customer SPI software and go to the Quick Start tab (See Figure 5). The parameters in top left corner need to be selected in the Quick Start List shown in the panel below. The Links should be set to dual link, mode which is interface mode set to 4, Subclass 1 box checked, Interpolation set to 4, the DAC PLL box checked,refCLK = 125MHz, Fin =250MHz and FDAC set to 1000 MHz.
 | b. Click “Configure DAC and Clock” button to initialize the AD9144. At this point both the JESD204B PLL should be locked and the DAC PLL should locked indicated with bright green PLL button.
 | c. Click “Read All Registers” in the top menu bar. You should see “JESD204B PLL Lock Readback” LED readback is bright green indicating that the SERDES PLL is locked. Similarly the DAC PLL is locked when the "PLL Lock" LED is bright green.
-
 | d. The four registers "codeGrpSync, FrameSync, GoodCheckSum and Initial LaneSync" should all read 0F indicating the lanes are working correctly. If you are using a different interface mode than 4 these register will read different codes. At this point the “Serial Line Rate” readback on the DPG3 panel should read 2.5Gbps.
 | e. Click Download (|image8|) and Play (|image9|) in the DPG Downloader screen.
 | g. The current on the 5V supply should read about 1600mA. If you do not see the output, gently push the board toward the DPG3. This ensures that the board is firmly connected to the DPG3. The four registers codeGrpSync, FrameSync, GoodCheckSum and Initial LaneSync should all read 0F indicating the lanes are working correctly.
-|
 
 .. container:: center
 
@@ -168,10 +161,7 @@ Note
 ~~~~
 
 | In single link JESD204B mode 2 through 10, four additional register writes, as shown below, are added in this software to match the data mapping the DPG3 requires. They are not required if the data source is not a DPG3.
-| write(0x308,0x2c)
-| write(0x309,0x3e)
-| write(0x30A,0x08)
-| write(0x30B,0x1a)
+| write(0x308,0x2c) write(0x309,0x3e) write(0x30A,0x08) write(0x30B,0x1a)
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/figure_1.png
    :width: 440px

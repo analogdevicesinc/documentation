@@ -166,13 +166,10 @@ For more information of the register and the bitfields in the register, double c
 AD7193 Demo Modes
 -----------------
 
-.. _ad7193-demo-modes-1:
-
 AD7193 Demo Modes
 =================
 
-| :doc:`Visit the demo mode section here </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures/demo_modes>`
-| **Contents of the demo modes section:**
+:doc:`Visit the demo mode section here </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures/demo_modes>` **Contents of the demo modes section:**
 
 -  :doc:`Low Noise Test Demo </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures/demo_modes>`
 -  :doc:`50 Hz Quick test </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures/demo_modes>`

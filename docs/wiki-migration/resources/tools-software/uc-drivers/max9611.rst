@@ -12,8 +12,10 @@ Evaluation Boards
 
 -  :adi:`MAX9611PMB1`
 
-| 
-| ===== Overview ===== The :adi:`MAX9611` / :adi:`MAX9612` are high-side current-sense amplifiers with an integrated 12-bit ADC and a gain block that can be configured either as an op amp or comparator, making these devices ideal for a number of industrial and automotive applications.
+Overview
+~~~~~~~~
+
+The :adi:`MAX9611` / :adi:`MAX9612` are high-side current-sense amplifiers with an integrated 12-bit ADC and a gain block that can be configured either as an op amp or comparator, making these devices ideal for a number of industrial and automotive applications.
 
 The high-side, current-sense amplifiers operate over a wide 0 V to 60 V input common-mode voltage range. The programmable full-scale voltage (440 mV, 110 mV, and 55 mV) of these amplifiers offers wide dynamic range, accurate current measurement, and application flexibility in choosing sense resistor values. A choice of either an internal op amp or a comparator is provided to the user.
 
@@ -41,8 +43,10 @@ ADI No-OS
 
 The goal of the ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
 
-| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
-| ===== MAX9611 ADI No-OS driver =====
+For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+
+MAX9611 ADI No-OS driver
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Driver Source Code
 ------------------
@@ -79,8 +83,9 @@ This driver also uses the ADI utility library, so make sure you also add the nec
 
    |Implementation file of ADI util library|
 
-| To use the MAX9611 No-OS driver, you need to provide the specific implementation for the communication APIs and the specific types they use.
-| If the SPI communication is chosen, there are three functions which are called by the MAX9611 driver and have to be implemented:
+To use the MAX9611 No-OS driver, you need to provide the specific implementation for the communication APIs and the specific types they use.
+
+If the SPI communication is chosen, there are three functions which are called by the MAX9611 driver and have to be implemented:
 
 .. container:: center box
 
@@ -139,9 +144,14 @@ Device Configuration
 Driver Initialization
 ~~~~~~~~~~~~~~~~~~~~~
 
-| To use the device, you need to provide the support for the communication protocol (I2C) as mentioned above.
-| The first API function to be called is **max9611_addr_gen** to generate the corresponding device's slave address. Once a proper address is generated, use the function **max9611_init** to initialize the device and make sure that it returns 0. This indicates a successful driver initialization.
-| === Device Address Generation === The :adi:`MAX9611` / :adi:`MAX9612` have the provision for multiple I2C slave addresses via the **A0** and **A1** pins. To generate the proper address, supply the voltage level going into pins **A0** and **A1** to the **max9611_addr_gen** function.
+To use the device, you need to provide the support for the communication protocol (I2C) as mentioned above.
+
+The first API function to be called is **max9611_addr_gen** to generate the corresponding device's slave address. Once a proper address is generated, use the function **max9611_init** to initialize the device and make sure that it returns 0. This indicates a successful driver initialization.
+
+Device Address Generation
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :adi:`MAX9611` / :adi:`MAX9612` have the provision for multiple I2C slave addresses via the **A0** and **A1** pins. To generate the proper address, supply the voltage level going into pins **A0** and **A1** to the **max9611_addr_gen** function.
 
 .. note::
 
@@ -151,11 +161,14 @@ Driver Initialization
 Output Amplifier / Comparator Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The :adi:`MAX9611` contains an internally selectable op amp and comparator whose inputs are the current sense amplifier with a 2.5 gain and the **SET** pin. By using the **max9611_set_mode** and **max9611_get_mode** functions, the user would be able to set and obtain the configuration of the **OUT** pin, respectively. The header file contains the enumerations pertaining to the valid operating modes.
-| === Configurable Analog-to-Digital Converter (ADC) === The :adi:`MAX9611` contains an internal dual-slope integrating 12-bit ADC with a 2 mS conversion time. This ADC is also compatible with 1.8 V or 3.3 V I2C logic level buses. This ADC contains an internal MUX to allow selection between the following measurements: input sense voltage, input common-mode voltage, SET pin voltage, OUT pin voltage, and die temperature.
+The :adi:`MAX9611` contains an internally selectable op amp and comparator whose inputs are the current sense amplifier with a 2.5 gain and the **SET** pin. By using the **max9611_set_mode** and **max9611_get_mode** functions, the user would be able to set and obtain the configuration of the **OUT** pin, respectively. The header file contains the enumerations pertaining to the valid operating modes.
 
-| Similarly, the mux configuration can be set or read through the **max9611_set_mux** and **max9611_get_mux** driver functions. The **max9611_set_mux** function also allows a burst read of all viable channels, which might be useful for certain applications. The valid enumerations corresponding to each usable mode can be seen below:
-|
+Configurable Analog-to-Digital Converter (ADC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :adi:`MAX9611` contains an internal dual-slope integrating 12-bit ADC with a 2 mS conversion time. This ADC is also compatible with 1.8 V or 3.3 V I2C logic level buses. This ADC contains an internal MUX to allow selection between the following measurements: input sense voltage, input common-mode voltage, SET pin voltage, OUT pin voltage, and die temperature.
+
+Similarly, the mux configuration can be set or read through the **max9611_set_mux** and **max9611_get_mux** driver functions. The **max9611_set_mux** function also allows a burst read of all viable channels, which might be useful for certain applications. The valid enumerations corresponding to each usable mode can be seen below:
 
 .. container:: center box
 
@@ -182,12 +195,9 @@ Output Amplifier / Comparator Configuration
 
 Once the mux configuration has been set, the selected channel measurement can be read using the **max9611_get_raw** function.
 
-| <note / important> The **max9611_get_raw** function only allows reading of single channel measurements i.e., Current Sense Amplifier (CSA) input only. Setting the device to fast mode via **max9611_set_mux** for a burst read of multiple channels will require a multi-byte register read starting from the CSA MSB register (0x00) up to the Temp LSB register (0x09) using the **max9611_read** function. </WRAP>
+<note / important> The **max9611_get_raw** function only allows reading of single channel measurements i.e., Current Sense Amplifier (CSA) input only. Setting the device to fast mode via **max9611_set_mux** for a burst read of multiple channels will require a multi-byte register read starting from the CSA MSB register (0x00) up to the Temp LSB register (0x09) using the **max9611_read** function. ** Die Temperature Measurement \*\*
 
-| \*\* Die Temperature Measurement \*\*
-| By configuring the internal mux using **max9611_set_mux** function, the die temperature of the :adi:`MAX9611` can also be measured. The temperature measurement ranges from -40°C to +125°C with a 0.48°C step size. The temperature measurement is encoded using 9 bits in two's complement format.
-
-|
+By configuring the internal mux using **max9611_set_mux** function, the die temperature of the :adi:`MAX9611` can also be measured. The temperature measurement ranges from -40°C to +125°C with a 0.48°C step size. The temperature measurement is encoded using 9 bits in two's complement format.
 
 .. note::
 
@@ -197,8 +207,7 @@ Once the mux configuration has been set, the selected channel measurement can be
 Watchdog/Retry/Latch Functionality
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The :adi:`MAX9611`'s internal digital block sports a watchdog function for handling false fault transients, applicable for both op amp and comparator operating modes. Different time delay options for the comparator are configured in CONTROL REGISTER 2 through the corresponding driver functions:
-|
+The :adi:`MAX9611`'s internal digital block sports a watchdog function for handling false fault transients, applicable for both op amp and comparator operating modes. Different time delay options for the comparator are configured in CONTROL REGISTER 2 through the corresponding driver functions:
 
 .. container:: center box
 
@@ -210,10 +219,9 @@ Watchdog/Retry/Latch Functionality
    **max9611_get_retry** acquires the configured watchdog retry delay time
    ===================== =================================================
    
-   |
 
 
-| The valid delay times for the watchdog delay and retry delay times are as follows:
+The valid delay times for the watchdog delay and retry delay times are as follows:
 
 \*\* Watchdog Delay Times \*\*
 
@@ -243,9 +251,15 @@ During Normal Operation (MAX9611_NORMAL_MODE), the internal amplifier output dep
 
 For op amp (MAX9611_OPAMP_MODE) or comparator (MAX9611_COMPARATOR_MODE), the comparator output ensures the CSA output stays above the **SET** voltage level for a watchdog delay time, and then latches on to this state. The retry delay time dictates the time taken before the comparator state is reset and the cycle repeats.
 
-| For more information on this, refer to the :adi:`MAX9611` data sheet under the **Watchdog/Latch/Retry Functionality** section and other related sections.
-| === Power Down Options === To save power, one may use the **max9611_shutdown** function resulting in a 5 µA supply current drawn. Alternatively, this function can also be used to bring the component back to its 'power on' state.
-| ==== Driver Initialization Example ====
+For more information on this, refer to the :adi:`MAX9611` data sheet under the **Watchdog/Latch/Retry Functionality** section and other related sections.
+
+Power Down Options
+~~~~~~~~~~~~~~~~~~
+
+To save power, one may use the **max9611_shutdown** function resulting in a 5 µA supply current drawn. Alternatively, this function can also be used to bring the component back to its 'power on' state.
+
+Driver Initialization Example
+-----------------------------
 
 Example Initialization Using Maxim SDK as Platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -390,9 +404,7 @@ Example Initialization Using Maxim SDK as Platform
            ret = max9611_shutdown(max9611_device, false);
            if (ret)
                return ret;
-       }   
-
-| 
+       }
 
 .. |Header file of MAX9611 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max9611pmb/max9611`.h
 .. |Implementation of MAX9611 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max9611pmb/max9611`.c

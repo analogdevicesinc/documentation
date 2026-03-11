@@ -64,8 +64,6 @@ Input IP3
 Transmit Mode
 =============
 
-.. _gain-return-loss-1:
-
 Gain, Return Loss
 -----------------
 
@@ -75,8 +73,6 @@ Gain, Return Loss
 
    \ **Figure 6: Gain and Return Loss vs. Frequency, at Maximum Gain, Transmit Channel**\
 
-
-.. _noise-figure-1:
 
 Noise Figure
 ------------

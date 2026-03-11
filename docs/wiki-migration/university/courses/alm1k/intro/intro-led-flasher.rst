@@ -26,14 +26,7 @@ Two identical resistance-capacitance networks determine the frequency at which o
 Materials:
 ----------
 
-| ADALM1000 hardware module
-| Solder-less breadboard and Jumper wire kit
-| 2 - 470 Ω Resistors
-| 2 - 20 KΩ Resistors
-| 2 - small signal NPN transistors (2N3904)
-| 1 - Red LED
-| 1 - Green LED
-| 2 - 47 uF Capacitors
+ADALM1000 hardware module Solder-less breadboard and Jumper wire kit 2 - 470 Ω Resistors 2 - 20 KΩ Resistors 2 - small signal NPN transistors (2N3904) 1 - Red LED 1 - Green LED 2 - 47 uF Capacitors
 
 Directions:
 -----------
@@ -59,31 +52,17 @@ The frequency of oscillation is very slow due to the large values of capacitors 
 Questions:
 ----------
 
-| What would be the effect of decreasing or increasing the values of both capacitors?
-| What would be the effect of decreasing C\ :sub:`1` and increasing C\ :sub:`2` but keeping the total of C\ :sub:`1`\ +C\ :sub:`2` the same?
+What would be the effect of decreasing or increasing the values of both capacitors? What would be the effect of decreasing C\ :sub:`1` and increasing C\ :sub:`2` but keeping the total of C\ :sub:`1`\ +C\ :sub:`2` the same?
 
 Substituting MOS transistors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The same circuit can be built substituting NMOS transistors for the NPN transistors used in figure 1. When MOS devices are used as amplifying devices we call the configuration common source, as shown in figure 2.
 
-.. _materials-1:
-
 Materials:
 ----------
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 2 - 470Ω Resistors
-| 2 - 20KΩ Resistors
-| 2 - 10KΩ Resistors
-| 2 - small signal NMOS transistors (ZVN2110A)
-| 1 - Red LED
-| 1 - Green LED
-| 2 - 47uF Capacitors
-
-.. _directions-1:
+ADALM1000 hardware module Solder-less breadboard Jumper wires 2 - 470Ω Resistors 2 - 20KΩ Resistors 2 - 10KΩ Resistors 2 - small signal NMOS transistors (ZVN2110A) 1 - Red LED 1 - Green LED 2 - 47uF Capacitors
 
 Directions:
 -----------
@@ -99,8 +78,6 @@ Construct the circuit as shown in figure 2 on your solder-less breadboard. The f
    Figure 2, NMOS Astable Multivibrator
 
 
-.. _procedure-1:
-
 Procedure:
 ----------
 
@@ -108,18 +85,13 @@ Connect the +5 V power supply only after you have completely built and checked t
 
 The frequency of oscillation is very slow due to the large values of capacitors C\ :sub:`1` and C\ :sub:`2`. Replace C\ :sub:`1` and C\ :sub:`2` with smaller 1uF or 0.1uF capacitors. The circuit should oscillate much faster now such that both LEDs seem to be on at the same time. Using the scope channels you should now measure the frequency and period of the output waveforms.
 
-.. _questions-1:
-
 Questions:
 ----------
 
-| What would be the effect of decreasing or increasing the values of both capacitors?
-| What would be the effect of decreasing C\ :sub:`1` and increasing C\ :sub:`2` but keeping the total of C\ :sub:`1`\ +C\ :sub:`2` the same?
+What would be the effect of decreasing or increasing the values of both capacitors? What would be the effect of decreasing C\ :sub:`1` and increasing C\ :sub:`2` but keeping the total of C\ :sub:`1`\ +C\ :sub:`2` the same?
 
 **For Further Reading:**
 
-| `The Multivibrator <https://en.wikipedia.org/wiki/Multivibrator>`_
-| :doc:`BJT as a Switch </wiki-migration/university/courses/alm1k/alm-lab-4s>`
-| :doc:`MOS as a Switch </wiki-migration/university/courses/alm1k/alm-lab-4ms>`
+`The Multivibrator <https://en.wikipedia.org/wiki/Multivibrator>`_ :doc:`BJT as a Switch </wiki-migration/university/courses/alm1k/alm-lab-4s>` :doc:`MOS as a Switch </wiki-migration/university/courses/alm1k/alm-lab-4ms>`
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**

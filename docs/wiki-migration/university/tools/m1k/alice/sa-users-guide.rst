@@ -15,34 +15,24 @@ Required files:
 
 The ALICE-SA program is written in Python and requires version 2.7.8 of Python be installed on the user's computer. The program only imports modules generally included with standard Python installation packages. The following additional files are required to run ALICE-SA:
 
-| All OS:
-| alice-SA-1.0.py(w)
-| `alice-1.0.zip <https://wiki.analog.com/_media/university/tools/alice-1.0.zip>`_
+All OS: alice-SA-1.0.py(w) `alice-1.0.zip <https://wiki.analog.com/_media/university/tools/alice-1.0.zip>`_
 
-| Windows:
-| `libpysmu.pyd (64 bit) <https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&job=Platform%3A%20x64>`_ `libpysmu.pyd (32 bit) <https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&job=Platform%3A%20x86>`_ (needs to be in Python27\\DLLs directory)
+Windows: `libpysmu.pyd (64 bit) <https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&job=Platform%3A%20x64>`_ `libpysmu.pyd (32 bit) <https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&job=Platform%3A%20x86>`_ (needs to be in Python27\\DLLs directory)
 
 Use of the :doc:`Windows installer </wiki-migration/university/tools/m1k/alice/install>` is highly recommended.
 
-| Linux:
-| `libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
+Linux: `libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
 
-| Required Python version:
-| Python version 2.7.8 or higher
+Required Python version: Python version 2.7.8 or higher
 
-| Required external modules (site-packages for the correct Python version):
-| NUMPY
+Required external modules (site-packages for the correct Python version): NUMPY
 
 Directions:
 -----------
 
 It is assumed that the reader is somewhat familiar with the functionality and capabilities of the ADALM1000 hardware. For more on the ADALM1000 hardware please refer to the following documents:
 
-| :doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>`
-| :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>`
-| :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>`
-| :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
-| :doc:`ADALM1000 Low Capacitance FET Input Buffers </wiki-migration/university/tools/m1k/fet-probes>`
+:doc:`ADALM1000 Overview </wiki-migration/university/tools/m1k>` :doc:`ADALM1000 Hardware </wiki-migration/university/tools/m1k/hw>` :doc:`ADALM1000 Design Document </wiki-migration/university/tools/m1k/design>` :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` :doc:`ADALM1000 Low Capacitance FET Input Buffers </wiki-migration/university/tools/m1k/fet-probes>`
 
 Screen Setup:
 -------------
@@ -104,10 +94,7 @@ Start and stop buttons for the sweep. Exit the program
 File drop down menu
 ~~~~~~~~~~~~~~~~~~~
 
-| Save Config
-| Load Config, commands for saving and loading configuration settings (.cfg file)
-| Save Screen, command for saving the graphics display area to an encapsulated postscript file (.eps)
-| Save Data, command for saving the captured channel A and B amplitude vs frequency data to a coma separated values file (.csv). The amplitude data can be saved as magnitude in Vrms ( type a 0 ) or in dBV ( type a 1 ).
+Save Config Load Config, commands for saving and loading configuration settings (.cfg file) Save Screen, command for saving the graphics display area to an encapsulated postscript file (.eps) Save Data, command for saving the captured channel A and B amplitude vs frequency data to a coma separated values file (.csv). The amplitude data can be saved as magnitude in Vrms ( type a 0 ) or in dBV ( type a 1 ).
 
 Options drop down menu
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -160,8 +147,7 @@ The ALM hardware provides four 3.3V CMOS digital input / output pins. At this ti
 
 At the bottom of this section, just above the ADI logo, are entry windows which allow input gain and offset correction for any external resistor divider attenuator networks that might be added to the channel A and B inputs ( possibly used when in the high impedance or Split I/O modes ). For more on the use of input attenuators please refer to the following two documents:
 
-| :doc:`M1K Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
-| :doc:`M1K Breadboard Adapters </wiki-migration/university/tools/m1k/breadboard-adapter>`
+:doc:`M1K Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` :doc:`M1K Breadboard Adapters </wiki-migration/university/tools/m1k/breadboard-adapter>`
 
 Frequency Analysis:
 -------------------
@@ -239,13 +225,7 @@ A special filter is the Flat Top filter. It has a flat top as the name implies. 
 
 ALICE-SA has 7 built in windowing functions.
 
-| Rectangular, no window function B=1
-| Cosine window function, medium-dynamic range B=1.24
-| Triangular non-zero endpoints, medium-dynamic range B=1.33
-| Hann window function, medium-dynamic range B=1.5
-| Blackman window, continuous first derivate function, medium-dynamic range B=1.73
-| Nuttall window, continuous first derivate function, high-dynamic range B=2.02
-| Flat top window, medium-dynamic range, extra wide bandwidth B=3.77
+Rectangular, no window function B=1 Cosine window function, medium-dynamic range B=1.24 Triangular non-zero endpoints, medium-dynamic range B=1.33 Hann window function, medium-dynamic range B=1.5 Blackman window, continuous first derivate function, medium-dynamic range B=1.73 Nuttall window, continuous first derivate function, high-dynamic range B=2.02 Flat top window, medium-dynamic range, extra wide bandwidth B=3.77
 
 Zero Stuffing
 ~~~~~~~~~~~~~
@@ -298,23 +278,11 @@ There must be an input to the network which you can observe and record. There mu
 
 If we set the number of FFT samples to 8192 the total sample time will be 81.92 mSec which is the same as one cycle at 12.2 Hz. By setting the Channel B function generator to a 12.2 Hz square wave with a very narrow duty cycle of only 4 – 6 samples wide the resulting test signal will contain frequency content every 12.2 Hz with nearly equal amplitude out to high frequencies. At 12 Hz each 10 uSec sample period is equal to about 0.012 % of duty cycle. We can set the duty cycle to anything from 0.012% to 0.08% and get similar results. The only difference is how fast the signal level falls off with increasing frequency. For a given pulse amplitude, the narrower the pulse the less energy in each 12.2 Hz spaced frequency but the flatter vs frequency they will be. The wider the pulse the more signal energy but a faster frequency roll off. 0.08% gives an acceptable frequency roll off out to 10 KHz.
 
-| The detailed settings for Channel B are as follows:
-| Shape - Square
-| Mode - SVMI
-| VMIN = 1.3
-| VMAX = 3.7 ( pulse amplitude set to allow some headroom for overshoot and ringing )
-| Freq = 12.2
-| Phase = 180 ( phase is set to 180 degrees to center the pulse in the time sample record )
-| DutyCycle = 0.08 ( can be adjusted down to 0.012% for flatter input signal energy )
+The detailed settings for Channel B are as follows: Shape - Square Mode - SVMI VMIN = 1.3 VMAX = 3.7 ( pulse amplitude set to allow some headroom for overshoot and ringing ) Freq = 12.2 Phase = 180 ( phase is set to 180 degrees to center the pulse in the time sample record ) DutyCycle = 0.08 ( can be adjusted down to 0.012% for flatter input signal energy )
 
 Channel A is set in Hi-Z mode as an input.
 
-| Other Settings:
-| FFT Window – Flat top ( has a wide FFT bandwidth which is wider than 12 Hz )
-| FFT Samples = 8192
-| Start Freq = 100 ( set to something other than 0, to ignore DC content )
-| Stop Freq = 10000
-| ZeroStuffing = 0 ( can be adjusted but generally has little effect on resultant plot )
+Other Settings: FFT Window – Flat top ( has a wide FFT bandwidth which is wider than 12 Hz ) FFT Samples = 8192 Start Freq = 100 ( set to something other than 0, to ignore DC content ) Stop Freq = 10000 ZeroStuffing = 0 ( can be adjusted but generally has little effect on resultant plot )
 
 Below in figure E2 is a screen shot for the bandpass RLC configuration of figure E1. The orange trace for channel B is the narrow pulse forcing function response. The light and dark green traces are the output responses seen by channel A for C\ :sub:`1` = 0.5 uf and 0.2uF respectively. The light and dark magenta traces are the subtraction of the Channel A trace ( in dBV ) and the Channel B trace ( in dBV ). As we know subtraction in dB ( logs ) is the same as division in magnitude. The magenta traces are the actual input to output transfer function of the RLC network.
 
@@ -340,10 +308,6 @@ Similarly in figure E3 is a screen shot for the bandstop RLC configuration of fi
 
 **For Further Reading:**
 
-| https:*en.wikipedia.org/wiki/Fast_Fourier_transform
-  http:*\ www.analog.com/media/en/training-seminars/design-handbooks/MixedSignal_Sect5.pdf
-| https:*en.wikipedia.org/wiki/Window_function
-  https:*\ en.wikipedia.org/wiki/Spectral_leakage
-| http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html
+https://en.wikipedia.org/wiki/Fast_Fourier_transform http://www.analog.com/media/en/training-seminars/design-handbooks/MixedSignal_Sect5.pdf https://en.wikipedia.org/wiki/Window_function https://en.wikipedia.org/wiki/Spectral_leakage http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html
 
 **Return to the** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`\ **.**

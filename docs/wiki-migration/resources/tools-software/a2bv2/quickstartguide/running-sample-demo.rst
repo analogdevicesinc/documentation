@@ -141,8 +141,6 @@ Jumper settings (default) for EVAL-AD2437A1NZ (Main) and EVAL-AD2437B1NZ (Sub 0 
 | X          | All Others                     | Open     |   | S1         | I2C BUS SEL                    | ALL ON    | ALL ON    |
 +------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
 
-.. _a2b-demo-system-1:
-
 A2B Demo system
 ^^^^^^^^^^^^^^^
 
@@ -174,8 +172,6 @@ Jumper settings (default) for EVAL-AD2437A1MZ (Main) and EVAL-AD2437B1MZ (Sub 0 
 | X          | All Others                     | Open     |   |            |                                |           |           |
 +------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
 
-.. _a2b-demo-system-2:
-
 A2B Demo system
 ^^^^^^^^^^^^^^^
 
@@ -183,8 +179,6 @@ All steps mentioned in :doc:`AD2437 </wiki-migration/resources/tools-software/a2
 
 Standard Power – AD243x
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. _jumper-settings-1:
 
 Jumper settings
 ^^^^^^^^^^^^^^^
@@ -228,8 +222,6 @@ Jumper settings (default) for EVAL-AD2433WA1BZ (Main) and EVAL-AD2433WB1BZ (Sub 
 | P7         | I2S Connector                   | Keep default |   |            |                                 |           |           |
 +------------+---------------------------------+--------------+---+------------+---------------------------------+-----------+-----------+
 
-.. _a2b-demo-system-3:
-
 A2B Demo system
 ^^^^^^^^^^^^^^^
 
@@ -237,8 +229,6 @@ All steps mentioned in :doc:`AD243x standard Power </wiki-migration/resources/to
 
 Standard Power – AD2430 / AD2438
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. _jumper-settings-2:
 
 Jumper settings
 ^^^^^^^^^^^^^^^
@@ -277,8 +267,6 @@ P8           +12V                            Keep default
 P10          Extender                        Connect to Target
 ============ =============================== =================
 
-.. _a2b-demo-system-4:
-
 A2B Demo system
 ^^^^^^^^^^^^^^^
 
@@ -286,8 +274,6 @@ All steps mentioned in Section :doc:`Sample Demo Setup </wiki-migration/resource
 
 Standard Power – AD242x
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. _jumper-settings-3:
 
 Jumper settings
 ^^^^^^^^^^^^^^^
@@ -299,14 +285,12 @@ Jumper settings (default) for EVAL-AD2428WD1BZ(Main) is as shown in Table.
    \ **Table:** Jumper Settings
 
 
-+---------+-----------+-----------+---------+---------+---------+---------+---------+---------+----------+---------+----------+
-| **JP1** | **JP2**   | **JP3**   | **JP4** | **JP5** | **JP6** | **JP7** | **JP8** | **JP9** | **JP10** | **JP11  | **JP14** |
-|         |           |           |         |         |         |         |         |         |          | 12/13** |          |
-+=========+===========+===========+=========+=========+=========+=========+=========+=========+==========+=========+==========+
-| 1-2     | 1-2 & 3-4 | 1-2 & 3-4 | 1-2     | 3-4     | 3-4     | 3-4     | 2-3     | 3-4     | 1-2      | Open    | 1-2      |
-+---------+-----------+-----------+---------+---------+---------+---------+---------+---------+----------+---------+----------+
-
-.. _a2b-demo-system-5:
++---------+-----------+-----------+---------+---------+---------+---------+---------+---------+----------+---------+-----------+
+| **JP1** | **JP2**   | **JP3**   | **JP4** | **JP5** | **JP6** | **JP7** | **JP8** | **JP9** | **JP10** | **JP11  |**\ JP14** |
+|         |           |           |         |         |         |         |         |         |          | 12/13** |           |
++=========+===========+===========+=========+=========+=========+=========+=========+=========+==========+=========+===========+
+| 1-2     | 1-2 & 3-4 | 1-2 & 3-4 | 1-2     | 3-4     | 3-4     | 3-4     | 2-3     | 3-4     | 1-2      | Open    | 1-2       |
++---------+-----------+-----------+---------+---------+---------+---------+---------+---------+----------+---------+-----------+
 
 A2B Demo system
 ^^^^^^^^^^^^^^^
@@ -485,21 +469,15 @@ System Requirements
 -  SDP-B board with BF527 (EVAL-SDP-CB1Z) - Rev1.3 used as Host
 -  JTAG Emulator to program ADSP-BF527 DSP or Flash on SDP board
 
-.. _hardware-setup-1:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
 Hardware connections shall be done as described `here <https://wiki.analog.com/[[/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad243x-standard-power>`_ . SDP-B board shall be mounted on EVAL-AD2433WA1BZ board that acts as A2B master.
 
-.. _jumper-settings-4:
-
 Jumper settings
 ~~~~~~~~~~~~~~~
 
 No configurable Jumpers available on SDP-B board. EVAL-AD2433WA1BZ and EVAL-AD2433WB1BZ board jumpers shall be set as mentioned in Table of the earlier section above.
-
-.. _a2b-demo-system-6:
 
 A2B Demo System
 ~~~~~~~~~~~~~~~
@@ -515,8 +493,6 @@ After completing all the connections, the A2B system should look as shown in :do
 
    \ **Figure:** A2B demo setup with BF527 as host
 
-
-.. _running-sample-demo-1:
 
 Running sample demo
 ~~~~~~~~~~~~~~~~~~~
@@ -574,7 +550,7 @@ The sample demo can be run using ADSP-SC594 as the host. In this case the ARM co
 -  Make all the connections described in section connections.
 -  Turn ON power to the SOM-CRR and A2B Main node.
 -  Connect the JTAG to PC.
--  \* **Note:** If Emulator is used the first time: Create a new debug configuration using Run- >Debug Configurations, create new session, select ADSP-SC594 and click NEXT, select Emulator and click NEXT, choose In-Circuit Emulator platform (typically: ADSP-SC594 via ICE1000) and click NEXT, then click FINISH.
+-  **Note:** If Emulator is used the first time: Create a new debug configuration using Run- >Debug Configurations, create new session, select ADSP-SC594 and click NEXT, select Emulator and click NEXT, choose In-Circuit Emulator platform (typically: ADSP-SC594 via ICE1000) and click NEXT, then click FINISH.
 -  Select a debug configuration and press F5 to run the project.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_demo_schematic_in_pc_mode.png

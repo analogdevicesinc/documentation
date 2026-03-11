@@ -16,7 +16,101 @@ Evaluation Boards
 Description
 -----------
 
-.. include:: ../../../eval/user-guides/circuits-from-the-lab/adf7242-pmod.rst
+2.4 GHz Wireless Transceiver PMOD
+=================================
+
+:adi:`EVAL-ADF7242-PMDZ (Product Page) <EVAL-ADF7242-PMDZ>`
+
+Overview
+--------
+
+The low cost and small profile RF solution 2.4 GHz, 802.15.4/Proprietary Wireless Transceiver PMOD board (:adi:`EVAL-ADF7242-PMDZ`) is designed to support RF to FPGA or processor applications system that utilizes PMOD-compatible expansion ports configurable for SPI communication (PACKET MODE). For applications that require data streaming, a synchronous bidirectional serial port (SPORT) interface is also available. The Wireless Transceiver PMOD board can be selectively configured to operate on the 2400 MHz to 2483.5 MHz ISM band. This uses single chip :adi:`ADF7242` 2.4Ghz transceiver, with most of the system blocks embedded on chip, and minimizing eternal RF components.
+
+This wireless transceiver PMOD board uses mini 2.4 GHz chip antennas. In conjunction with the impedance-matched (complex differential impedance value) filter balun, reduces the RF front end count. This PMOD board supports polarization diversity that uses two chip antennas which can greatly improve performance under multipath fading conditions.
+
+Refer to the :adi:`ADF7242` data sheet for detailed information regarding operation of the device.
+
+Applications
+~~~~~~~~~~~~
+
+-  Zigbee
+-  Home automation
+-  Consumer electronics
+-  Monitoring
+-  Remote control
+-  Wireless sensor networks
+
+--------------
+
+Specifications
+--------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_2_n.png
+   :width: 600px
+
+--------------
+
+
+
+Interface Connector Signal Description
+--------------------------------------
+
+| |image1|
+
+--------------
+
+Interface Connector Signal Description
+--------------------------------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_3.png
+   :width: 400px
+
+--------------
+
+Functional Block Diagram
+------------------------
+
+| |image2|
+| ===== Schematic, PCB Layout, Bill of Materials =====
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-ADF7242-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-adf7242-pmdz-designsupport.zip>`
+
+   
+   -  Schematic
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   
+
+
+
+| ===== Additional Information and Useful Links =====
+
+-  :adi:`ADF7242 Product Page <ADF7242>`
+-  :doc:`ADF7242 Linux driver </wiki-migration/resources/tools-software/linux-drivers/networking-mac802154/adf7242>`
+-  :doc:`Using ADF7242 with Contiki Operating System </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/contiki-os>`
+-  :adi:`AN-1151 Using a Johanson 2450BM14E0007 Impedance-Matched, Integrated Filter Balun with the ADF7241 and ADF7242 <static/imported-files/application_notes/AN-1151.pdf>`
+
+Registration
+------------
+
+
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-ADF7242-PMDZ?&v=RevA>`_ to receive all these great benefits and more!
+
+
+| // End of Document
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/block.png
+   :width: 900px
+
 
 Source Code
 ===========
@@ -45,7 +139,7 @@ Firmware for Automatic IEEE 802.15.4 Operating Modes (AN-1082)
 --------------------------------------------------------------
 
 -  `ram_lab_7242_2_0_ieee15dot4_full_r5.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/ram_lab_7242_2_0_ieee15dot4_full_r5.zip>`_
-   \* `ram_lab_7242_2_0_ieee15dot4_full_r6.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/ram_lab_7242_2_0_ieee15dot4_full_r6.zip>`_
+-  `ram_lab_7242_2_0_ieee15dot4_full_r6.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/ram_lab_7242_2_0_ieee15dot4_full_r6.zip>`_
 
 Below you can find a simple command line tool that was used to convert the original firmware HEX file into binary format consumed by the ADF7242 Linux device driver.
 
@@ -54,12 +148,20 @@ Below you can find a simple command line tool that was used to convert the origi
 Example platform device initialization
 ======================================
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
 
 Example Platform / Board file
 -----------------------------
 
-.. include:: ../../../../software/linux/docs/platform_and_bus_model.rst
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+
 
 .. code:: C
 
@@ -71,7 +173,7 @@ Example Platform / Board file
    /*
      * Specifies number of attempts to
      * retransmit unacknowledged
-     * frames while in automatic CSMA-CA 
+     * frames while in automatic CSMA-CA
      * Tx mode.
     */
        .max_frame_retries = 4,
@@ -79,15 +181,15 @@ Example Platform / Board file
      * Specifies number of attempts to
      * repeat CSMA-CA algorithm prior to
      * cancellation of RC_TX command.
-     * Valid range is 0 to 5; 
+     * Valid range is 0 to 5;
      * 7: CSMA-CA algorithm is off
     */
        .max_cca_retries = 4,
-   /* 
+   /*
      * Specifies the maximum back-off
      * exponent used in the CSMA-CA
      * algorithm; valid range is 4 to 8
-     * 
+    *
     */
        .max_csma_be = 6,
    /*
@@ -163,7 +265,13 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Hardware configuration
 ======================
 
-.. include:: ../../../eval/user-guides/circuits-from-the-lab/adf7242-pmod.rst
+| |image1|
+
+--------------
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_1.png
+   :width: 400px
+
 
 Driver testing
 ==============
@@ -182,15 +290,18 @@ Userspace tools for Linux IEEE 802.15.4 stack
    lowpan-tools are deprecated please use linux-wpan tools available here: `linux-wpan <https://github.com/linux-wpan/wpan-tools>`_
 
 
-| Example using lowpan-tools
-| ``iwpan dev wpan0 set pan_id 0x777
-  iwpan phy phy0 set channel 0 11
-  iwpan dev wpan0 set ackreq_default 1
-  ifconfig wpan0 up 
-  ip link add link wpan0 name lowpan0 type lowpan
-  ip route add 2001::/64 dev lowpan0
-  ip addr add  2001::4/128 dev lowpan0
-  ifconfig lowpan0 up``
+Example using lowpan-tools
+
+::
+
+   iwpan dev wpan0 set pan_id 0x777
+   iwpan phy phy0 set channel 0 11
+   iwpan dev wpan0 set ackreq_default 1
+   ifconfig wpan0 up
+   ip link add link wpan0 name lowpan0 type lowpan
+   ip route add 2001::/64 dev lowpan0
+   ip addr add  2001::4/128 dev lowpan0
+   ifconfig lowpan0 up
 
 Configuration of the IEEE 802.15.4 layer
 ----------------------------------------
@@ -259,7 +370,7 @@ Now that our two devices are correctly configured, we can verify that the two de
 
    root:/> izchat 0x0777 0x8001 0x8002
    Hello World!
-   >Thanks 
+   >Thanks
 
 **Raspberry Pi:**
 
@@ -276,8 +387,6 @@ Configuration of the 6loWPAN layer
 
 The previous example shows that communication is working, but it is not very useful. By using the 6loWPAN protocol on top (the low-power equivalent of the IPv6 protocol), we can allow standard Linux network applications to communicate over the IEEE 802.15.4 link with standard sockets.
 
-.. _configuration-for-the-first-node-zedboard-1:
-
 Configuration for the first node (ZedBoard)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -291,8 +400,6 @@ Configuration for the first node (ZedBoard)
    root:/>
    root:/> ip addr add ${IPV6_ADDR} dev lowpan0
    root:/> ip route add 2001::/64 dev lowpan0
-
-.. _configuration-for-the-second-node-raspberry-pi-1:
 
 Configuration for the second node (Raspberry Pi)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -354,11 +461,12 @@ From the Raspberry Pi, we can now ping the ZedBoard at the address **fe80::a200:
    64 bytes from 2001::3: icmp_seq=21 ttl=64 time=42.3 ms
    64 bytes from 2001::3: icmp_seq=22 ttl=64 time=32.7 ms
    64 bytes from 2001::3: icmp_seq=23 ttl=64 time=50.0 ms
-   ^C
+   ^C ^
+
    --- 2001::3 ping statistics ---
    23 packets transmitted, 23 received, 0% packet loss, time 2210ms
    rtt min/avg/max/mdev = 26.622/41.122/53.348/6.945 ms
-   root@analog:~# 
+   root@analog:~#
 
 We can as well ping the Raspberry Pi from the Zedboard using the address **fe80::a200:0:0:2%lowpan0**.
 
@@ -370,7 +478,7 @@ The following is just to demonstrate that any Linux program can, using standard 
 ::
 
    root@raspberrypi:/> ssh -6 analog@fe80::a200:0:0:1%lowpan0
-   analog@fe80::a200:0:0:1%lowpan0's password: 
+   analog@fe80::a200:0:0:1%lowpan0's password:
    Welcome to Linaro 14.04 (GNU/Linux 3.18.0-33199-g62cfd65-dirty armv7l)
 
    Last login: Thu Jan  1 00:02:21 1970 from fe80::a200:0:0:2%lowpan0

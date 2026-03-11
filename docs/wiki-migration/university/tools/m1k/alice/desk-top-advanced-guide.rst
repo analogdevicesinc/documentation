@@ -18,8 +18,7 @@ There are a number of variables that the user can use to customize the appearanc
 
 ALICE has the option to check the current firmware version and report if the version currently loaded on the board is up to date:
 
-| AllowFlashFirmware = 1 # allow user to flash new firmware on = 1, off = 0
-| IgnoreFirmwareCheck = 0 # Check firmware on startup on = 1, off = 0
+AllowFlashFirmware = 1 # allow user to flash new firmware on = 1, off = 0 IgnoreFirmwareCheck = 0 # Check firmware on startup on = 1, off = 0
 
 The default text font size can be set as follows:
 
@@ -35,36 +34,19 @@ How mouse focus is controlled can be either of two modes. The default is that th
 
 Many of the aspects of the User Interface appearance can be customized by changing the following variables from their default settings (as in these examples):
 
-| BorderSize = 1 # Border Width of frames in pixels
-| ButtonOrder = 0 # swap order of channel control labels
-| # Widget relief can be RAISED, SUNKEN, GROOVE, RIDGE, and FLAT, SOLID
-| ButRelief = SOLID
-| LabRelief = FLAT
-| FrameRefief = FLAT # RIDGE
-| GUITheme = "Light" # color theme can be "Dark" "Light" "Blue" "LtBlue" "Custom"
-| FrameBG = "#d7d7d7" # Med gray, frame background color
-| ButtonText = "#000000" # black, button text color
-| ButtonGreen = "#88ff88" # light green (RUN, Conn, Power, etc)
-| ButtonRed = "#ff8888" # light red (STOP, etc)
+BorderSize = 1 # Border Width of frames in pixels ButtonOrder = 0 # swap order of channel control labels # Widget relief can be RAISED, SUNKEN, GROOVE, RIDGE, and FLAT, SOLID ButRelief = SOLID LabRelief = FLAT FrameRefief = FLAT # RIDGE GUITheme = "Light" # color theme can be "Dark" "Light" "Blue" "LtBlue" "Custom" FrameBG = "#d7d7d7" # Med gray, frame background color ButtonText = "#000000" # black, button text color ButtonGreen = "#88ff88" # light green (RUN, Conn, Power, etc) ButtonRed = "#ff8888" # light red (STOP, etc)
 
 The mouse focus modes can be st as follows:
 
-| MouseFocus = 1 # focus follows mouse around from window to window
-| MouseFocus = 0 # mouse focus stays tied to selected window
+MouseFocus = 1 # focus follows mouse around from window to window MouseFocus = 0 # mouse focus stays tied to selected window
 
 Many of the buttons and controls have balloon help that appears if the mouse hovers over a control for more than a few seconds. This feature can be turned on and off by the following:
 
-| ShowBallonHelp = 0 # balloon help off
-| ShowBallonHelp = 1 # balloon help on
+ShowBallonHelp = 0 # balloon help off ShowBallonHelp = 1 # balloon help on
 
 To simplify the User interface controls for each virtual instrument, other than the AWG and Time display, can be optionally enabled / disabled (1=enabled, 0=disabled):
 
-| EnableXYPlotter = 1
-| EnablePhaseAnalizer = 1
-| EnableSpectrumAnalizer = 1
-| EnableBodePlotter = 1
-| EnableImpedanceAnalizer = 1
-| EnableOhmMeter = 1
+EnableXYPlotter = 1 EnablePhaseAnalizer = 1 EnableSpectrumAnalizer = 1 EnableBodePlotter = 1 EnableImpedanceAnalizer = 1 EnableOhmMeter = 1
 
 A simplified set of trace controls in the right side menu of the Scope screen can be optionally turned on:
 
@@ -96,53 +78,21 @@ Or by setting the variable to something other than "Horz", such as "Vert", can b
 
 Normally ALICE displays the board ID serial number at the top of each graphics display area. There is an option to supply a user specified text string instead:
 
-| LabelPlotText.set(0) # 1 = use user label string
-| PlotLabelText = "Custom Plot Label"
+LabelPlotText.set(0) # 1 = use user label string PlotLabelText = "Custom Plot Label"
 
 There are pairs of variables for each display window that set the size of the graphics drawing area in screen pixels. The default values are sized to optimally fill a screen with 1024X600 resolution. The menu buttons surrounding the graphics area need this much space to be properly displayed on most screens so using sizes smaller than the default may result in mangled menus.
 
-| GRW = 720 # Width of the Time grid
-| GRH = 390 # Height of the Time grid
-| GRWN = 720 # Width of the spectrum grid 720 default
-| GRHN = 390 # Height of the spectrum grid 390 default
-| GRWBP = 720 # Width of the Bode Plot grid 720 default
-| GRHBP = 390 # Height of the Bode Plot grid 390 default
-| GRWXY = 420 # Width of the XY grid 420 default
-| GRHXY = 390 # Height of the XY grid 390 default
-| GRWIA = 400 # Width of the Impedance grid 400 default
-| GRHIA = 400 # Height of the Impedance grid 400 default
+GRW = 720 # Width of the Time grid GRH = 390 # Height of the Time grid GRWN = 720 # Width of the spectrum grid 720 default GRHN = 390 # Height of the spectrum grid 390 default GRWBP = 720 # Width of the Bode Plot grid 720 default GRHBP = 390 # Height of the Bode Plot grid 390 default GRWXY = 420 # Width of the XY grid 420 default GRHXY = 390 # Height of the XY grid 390 default GRWIA = 400 # Width of the Impedance grid 400 default GRHIA = 400 # Height of the Impedance grid 400 default
 
 The colors that are used to draw the various parts of the screen can be modified.
 
 Color = "#rrggbb" rr=red gg=green bb=blue, Hexadecimal values 00 - ff
 
-| COLORframes = "#000080" # 50% blue
-| COLORcanvas = "#000000" # 100% black used for background color
-| COLORgrid = "#808080" # 50% Gray used for grid lines
-| COLORzeroline = "#0000ff" # 100% blue used for vertical and horizontal center grid lines
-| COLORtrace1 = "#00ff00" # 100% green CH A voltage trace
-| COLORtrace2 = "#ff8000" # 100% orange CH B voltage trace
-| COLORtrace3 = "#00ffff" # 100% cyan CH A current trace
-| COLORtrace4 = "#ffff00" # 100% yellow CH B current trace
-| COLORtrace5 = "#ff00ff" # 100% magenta Math trace
-| COLORtrace6 = "#ff0000" # 100% red
-| COLORtrace7 = "#8080ff" # 100% purple
-| COLORtraceR1 = "#008000" # 50% green CH A voltage snapshot trace
-| COLORtraceR2 = "#804000" # 50% orange CH B voltage snapshot trace
-| COLORtraceR3 = "#008080" # 50% cyan CH A current snapshot trace
-| COLORtraceR4 = "#808000" # 50% yellow CH B current snapshot trace
-| COLORtraceR5 = "#800080" # 50% magenta Math snapshot trace
-| COLORtraceR6 = "#800000" # 50% red
-| COLORtraceR7 = "#4040a0" # 70% purple
-| COLORtext = "#ffffff" # 100% white used for Text display
-| COLORtrigger = "#ff0000" # 100% red used for trigger point
-| COLORsignalband = "#ff0000" # 100% red
-| COLORzeroline; COLORzeroline = "#0000ff"
+COLORframes = "#000080" # 50% blue COLORcanvas = "#000000" # 100% black used for background color COLORgrid = "#808080" # 50% Gray used for grid lines COLORzeroline = "#0000ff" # 100% blue used for vertical and horizontal center grid lines COLORtrace1 = "#00ff00" # 100% green CH A voltage trace COLORtrace2 = "#ff8000" # 100% orange CH B voltage trace COLORtrace3 = "#00ffff" # 100% cyan CH A current trace COLORtrace4 = "#ffff00" # 100% yellow CH B current trace COLORtrace5 = "#ff00ff" # 100% magenta Math trace COLORtrace6 = "#ff0000" # 100% red COLORtrace7 = "#8080ff" # 100% purple COLORtraceR1 = "#008000" # 50% green CH A voltage snapshot trace COLORtraceR2 = "#804000" # 50% orange CH B voltage snapshot trace COLORtraceR3 = "#008080" # 50% cyan CH A current snapshot trace COLORtraceR4 = "#808000" # 50% yellow CH B current snapshot trace COLORtraceR5 = "#800080" # 50% magenta Math snapshot trace COLORtraceR6 = "#800000" # 50% red COLORtraceR7 = "#4040a0" # 70% purple COLORtext = "#ffffff" # 100% white used for Text display COLORtrigger = "#ff0000" # 100% red used for trigger point COLORsignalband = "#ff0000" # 100% red COLORzeroline; COLORzeroline = "#0000ff"
 
 Variable for selecting grid background color:
 
-| ColorMode.set(0) # = 0 black grid background, white text > 0 white grid background, black text
-| Sets COLORcanvas and COLORtext variables.
+ColorMode.set(0) # = 0 black grid background, white text > 0 white grid background, black text Sets COLORcanvas and COLORtext variables.
 
 Variable for width of grid lines in pixels:
 
@@ -150,37 +100,15 @@ GridWidth = 1
 
 Value for on board resistors and external AD584 reference used in the self calibration procedure:
 
-| OnBoardRes = 50.83
-| AD584act = 2.5
+OnBoardRes = 50.83 AD584act = 2.5
 
 Default math equations, These initialize the entry spaces the first time each matching dialog pop-up window opens.
 
-| MathString = "(VBuffA[t] + VBuffB[t] - CHAOffset)"
-| MathXString = "(VBuffA[t] - CHAOffset)"
-| MathYString = "(VBuffB[t] - CHBOffset)"
-| UserAString = "MaxV1-VATop"
-| UserALabel = "OverShoot"
-| UserBString = "MinV2-VBBase"
-| UserBLabel = "UnderShoot"
-| MathAxis = "V-A" # can be one of the following "V-A", "V-B", I-A", "I-B"
-| MathXAxis = "V-A"
-| MathYAxis = "V-B"
-| AWGAMathString = "(VBuffA + VBuffB)/2"
-| AWGBMathString = "(VBuffA + VBuffB)/2"
-| FFTUserWindowString = "numpy.kaiser(SMPfft, 14) \* 3"
-| DigFilterAString = "numpy.sinc(numpy.linspace(-1, 1, 91))"
-| DigFilterBString = "numpy.sinc(numpy.linspace(-1, 1, 91))"
+MathString = "(VBuffA[t] + VBuffB[t] - CHAOffset)" MathXString = "(VBuffA[t] - CHAOffset)" MathYString = "(VBuffB[t] - CHBOffset)" UserAString = "MaxV1-VATop" UserALabel = "OverShoot" UserBString = "MinV2-VBBase" UserBLabel = "UnderShoot" MathAxis = "V-A" # can be one of the following "V-A", "V-B", I-A", "I-B" MathXAxis = "V-A" MathYAxis = "V-B" AWGAMathString = "(VBuffA + VBuffB)/2" AWGBMathString = "(VBuffA + VBuffB)/2" FFTUserWindowString = "numpy.kaiser(SMPfft, 14) \* 3" DigFilterAString = "numpy.sinc(numpy.linspace(-1, 1, 91))" DigFilterBString = "numpy.sinc(numpy.linspace(-1, 1, 91))"
 
 Inside the alice_init.ini any of these variables can be set using the example format shown here:
 
-| GRW = 720
-| GRH = 390
-| GRWN = 720
-| GRHN = 390
-| GRWXY = 420
-| GRHXY = 390
-| GRWIA = 400
-| GRHIA = 400
+GRW = 720 GRH = 390 GRWN = 720 GRHN = 390 GRWXY = 420 GRHXY = 390 GRWIA = 400 GRHIA = 400
 
 User entry widgets can optionally be added to the Time (scope) and X-Y screens by setting the following variable in the init file:
 
@@ -190,19 +118,7 @@ The two Time user entries can be accessed using User1Entry.get(), User2Entry.get
 
 The optional software interfaces can be enabled or disabled by setting the following variables to either 1 or 0 in the alice_init.ini file.
 
-| EnableDigIO = 1
-| EnableCommandInterface = 0
-| EnableMuxMode = 1
-| EnableMinigenMode = 0
-| EnablePIODACMode = 0
-| EnablePmodDA1Mode = 0
-| EnableDigPotMode = 0
-| EnableGenericSerialMode = 0
-| EnableAD5626SerialMode = 0
-| EnableDigitalFilter = 0
-| EnableMeasureScreen = 0
-| EnableETSScreen = 0
-| EnableHSsampling = 0
+EnableDigIO = 1 EnableCommandInterface = 0 EnableMuxMode = 1 EnableMinigenMode = 0 EnablePIODACMode = 0 EnablePmodDA1Mode = 0 EnableDigPotMode = 0 EnableGenericSerialMode = 0 EnableAD5626SerialMode = 0 EnableDigitalFilter = 0 EnableMeasureScreen = 0 EnableETSScreen = 0 EnableHSsampling = 0
 
 Variables and Arrays:
 ---------------------
@@ -213,57 +129,15 @@ hldn = number of samples from start of buffer to ignore based on Hold Off time s
 
 **Waveform calculated Vertical measurement constants:**
 
-| Channel A Average voltage, DCV1 = numpy.mean(VBuffA[hldn:Endsample])
-| Channel A Minimum voltage, MinV1 = numpy.amin(VBuffA[hldn:Endsample])
-| Channel A Maximum voltage, MaxV1 = numpy.amax(VBuffA[hldn:Endsample])
-| Channel A Top voltage, VATop is the voltage of the most positive peak in the histogram
-| Channel A Base voltage, VABase is the voltage of the least positive peak in the histogram
-| Channel A RMS voltage, SV1 = numpy.sqrt(numpy.mean(numpy.square(VBuffA[hldn:Endsample])))
-| Channel B Average voltage, DCV2 = numpy.mean(VBuffB[hldn:Endsample])
-| Channel B Minimum voltage, MinV2 = numpy.amin(VBuffB[hldn:Endsample])
-| Channel B Maximum voltage, MaxV2 = numpy.amax(VBuffB[hldn:Endsample])
-| Channel B Top voltage, VBTop is the voltage of the most positive peak in the histogram
-| Channel B Base voltage, VBBase is the voltage of the least positive peak in the histogram
-| Channel B RMS voltage, SV2 = numpy.sqrt(numpy.mean(numpy.square(VBuffB[hldn:Endsample])))
-| Channel A Average current in mA, DCI1 = numpy.mean(IBuffA[hldn:Endsample])*1000
-| Channel A Minimum current in mA, MinI1 = numpy.amin(IBuffA[hldn:Endsample]) ])*1000
-| Channel A Maximum current in mA, MaxI1 = numpy.amax(IBuffA[hldn:Endsample]) ])*1000
-| Channel A RMS current in mA, SI1 = numpy.sqrt(numpy.mean(numpy.square(IBuffA[hldn:Endsample])))*1000
-| Channel B Average current in mA, DCI2 = numpy.mean(IBuffB[hldn:Endsample])*1000
-| Channel B Minimum current in mA, MinI2 = numpy.amin(IBuffB[hldn:Endsample])
-| Channel B Maximum current in mA, MaxI2 = numpy.amax(IBuffB[hldn:Endsample])
-| Channel B RMS current in mA, SI2 = numpy.sqrt(numpy.mean(numpy.square(IBuffB[hldn:Endsample])))*1000
+Channel A Average voltage, DCV1 = numpy.mean(VBuffA[hldn:Endsample]) Channel A Minimum voltage, MinV1 = numpy.amin(VBuffA[hldn:Endsample]) Channel A Maximum voltage, MaxV1 = numpy.amax(VBuffA[hldn:Endsample]) Channel A Top voltage, VATop is the voltage of the most positive peak in the histogram Channel A Base voltage, VABase is the voltage of the least positive peak in the histogram Channel A RMS voltage, SV1 = numpy.sqrt(numpy.mean(numpy.square(VBuffA[hldn:Endsample]))) Channel B Average voltage, DCV2 = numpy.mean(VBuffB[hldn:Endsample]) Channel B Minimum voltage, MinV2 = numpy.amin(VBuffB[hldn:Endsample]) Channel B Maximum voltage, MaxV2 = numpy.amax(VBuffB[hldn:Endsample]) Channel B Top voltage, VBTop is the voltage of the most positive peak in the histogram Channel B Base voltage, VBBase is the voltage of the least positive peak in the histogram Channel B RMS voltage, SV2 = numpy.sqrt(numpy.mean(numpy.square(VBuffB[hldn:Endsample]))) Channel A Average current in mA, DCI1 = numpy.mean(IBuffA[hldn:Endsample])*1000 Channel A Minimum current in mA, MinI1 = numpy.amin(IBuffA[hldn:Endsample]) ])*1000 Channel A Maximum current in mA, MaxI1 = numpy.amax(IBuffA[hldn:Endsample]) ])*1000 Channel A RMS current in mA, SI1 = numpy.sqrt(numpy.mean(numpy.square(IBuffA[hldn:Endsample])))*1000 Channel B Average current in mA, DCI2 = numpy.mean(IBuffB[hldn:Endsample])*1000 Channel B Minimum current in mA, MinI2 = numpy.amin(IBuffB[hldn:Endsample]) Channel B Maximum current in mA, MaxI2 = numpy.amax(IBuffB[hldn:Endsample]) Channel B RMS current in mA, SI2 = numpy.sqrt(numpy.mean(numpy.square(IBuffB[hldn:Endsample])))*1000
 
 **Waveform calculated Horizontal measurement constants:**
 
-| CHAHW is the channel A High Pulse Width
-| CHALW is the channel A Low Pulse Width
-| CHADCy is the channel A Duty Cycle
-| CHAperiod is the channel A Period
-| CHAfreq is the channel A Frequency
-| CHABphase is the channel A to channel B relative phase angle
-| CHBHW is the channel B High Pulse Width
-| CHBLW is the channel B Low Pulse Width
-| CHBDCy is the channel B Duty Cycle
-| CHBperiod is the channel B Period
-| CHBfreq is the channel B Frequency
+CHAHW is the channel A High Pulse Width CHALW is the channel A Low Pulse Width CHADCy is the channel A Duty Cycle CHAperiod is the channel A Period CHAfreq is the channel A Frequency CHABphase is the channel A to channel B relative phase angle CHBHW is the channel B High Pulse Width CHBLW is the channel B Low Pulse Width CHBDCy is the channel B Duty Cycle CHBperiod is the channel B Period CHBfreq is the channel B Frequency
 
 **Captured Data Waveform Buffers:**
 
-| VBuffA is the Channel A voltage sample array ( in volts )
-| VBuffB is the Channel B voltage sample array ( in volts )
-| IBuffA is the Channel A current sample array ( in amps, multiply by 1000 for mA )
-| IBuffB is the Channel B current sample array ( in amps, multiply by 1000 for mA )
-| VmemoryA is the Channel A voltage memory array used for Trace Averaging
-| VmemoryB is the Channel B voltage memory array used for Trace Averaging
-| ImemoryA is the Channel A current memory array used for Trace Averaging
-| ImemoryB is the Channel B current memory array used for Trace Averaging
-| HBuffA contains the histogram of the channel A voltage waveform
-| HBuffB contains the histogram of the channel B voltage waveform
-| VBuffMA is the Mux Mode A channel voltage sample array ( in volts )
-| VBuffMB is the Mux Mode B channel voltage sample array ( in volts )
-| VBuffMC is the Mux Mode C channel voltage sample array ( in volts )
-| VBuffMD is the Mux Mode D channel voltage sample array ( in volts )
+VBuffA is the Channel A voltage sample array ( in volts ) VBuffB is the Channel B voltage sample array ( in volts ) IBuffA is the Channel A current sample array ( in amps, multiply by 1000 for mA ) IBuffB is the Channel B current sample array ( in amps, multiply by 1000 for mA ) VmemoryA is the Channel A voltage memory array used for Trace Averaging VmemoryB is the Channel B voltage memory array used for Trace Averaging ImemoryA is the Channel A current memory array used for Trace Averaging ImemoryB is the Channel B current memory array used for Trace Averaging HBuffA contains the histogram of the channel A voltage waveform HBuffB contains the histogram of the channel B voltage waveform VBuffMA is the Mux Mode A channel voltage sample array ( in volts ) VBuffMB is the Mux Mode B channel voltage sample array ( in volts ) VBuffMC is the Mux Mode C channel voltage sample array ( in volts ) VBuffMD is the Mux Mode D channel voltage sample array ( in volts )
 
 t is the time index ( 10 uSec per point )
 
@@ -271,15 +145,11 @@ SAMPLErate is the sampling rate, 100000 samples per Sec, or 10 uSec per sample
 
 **Vertical Position variables:**
 
-| CHAOffset is the value in the channel A voltage position entry window
-| CHBOffset is the value in the channel B voltage position entry window
-| CHAIOffset is the value in the channel A current position entry window
-| CHBIOffset is the value in the channel B current position entry window
+CHAOffset is the value in the channel A voltage position entry window CHBOffset is the value in the channel B voltage position entry window CHAIOffset is the value in the channel A current position entry window CHBIOffset is the value in the channel B current position entry window
 
 **AWG waveform arrays:**
 
-| AWGAwaveform is the Channel A AWG waveform memory array (used for non-built in waveforms)
-| AWGBwaveform is the Channel B AWG waveform memory array (used for non-built in waveforms)
+AWGAwaveform is the Channel A AWG waveform memory array (used for non-built in waveforms) AWGBwaveform is the Channel B AWG waveform memory array (used for non-built in waveforms)
 
 The following example Python syntax allows setting the start and stop points to be used in an array:
 
@@ -287,10 +157,7 @@ AWGAwaveform[ start : stop ] where start and stop are integers.
 
 **Digital Filter coefficients:**
 
-| DFiltACoef # Scope channel A Digital filter coefficients
-| DFiltBCoef # Scope channel B Digital filter coefficients
-| AWGFiltACoef # AWG channel A Digital filter coefficients
-| AWGFiltBCoef # AWG channel B Digital filter coefficients
+DFiltACoef # Scope channel A Digital filter coefficients DFiltBCoef # Scope channel B Digital filter coefficients AWGFiltACoef # AWG channel A Digital filter coefficients AWGFiltBCoef # AWG channel B Digital filter coefficients
 
 Use Example: VBuffA = numpy.convolve(VBuffA, DFiltACoef)
 
@@ -331,8 +198,7 @@ AWGAwaveform = numpy.cos(numpy.linspace(0, 2\*numpy.pi, SAMPLErate/AWGAFreqvalue
 
 It then loops over k ( only odd numbers ), the number of requested terms, calculating the harmonic and adding it to the waveform:
 
-| Harmonic = (math.sin(k\*numpy.pi/2)/k)*(numpy.cos(numpy.linspace(0, k\*2*numpy.pi, SAMPLErate/AWGAFreqvalue)))
-| AWGAwaveform = AWGAwaveform + Harmonic
+Harmonic = (math.sin(k\*numpy.pi/2)/k)*(numpy.cos(numpy.linspace(0, k\*2*numpy.pi, SAMPLErate/AWGAFreqvalue))) AWGAwaveform = AWGAwaveform + Harmonic
 
 After all the harmonic terms have been added the waveform is scaled and offset based on the entered Min and Max values.
 
@@ -349,7 +215,7 @@ After all the harmonic terms have been added the waveform is scaled and offset b
        BAWGAOffset(0)
        BAWGAFreq(0)
        BAWGADutyCycle(0)
-       
+
        Max_term = int(AWGADutyCyclevalue\*100)
        if AWG_2X.get() == 1:
            TempRate = (BaseSampleRate\*2)
@@ -381,8 +247,7 @@ Fourier series of sines for a saw tooth wave:
 
 Similar to the above built in AWG waveform Shape, ALICE contains a function to generate the Fourier series of sines for a saw tooth wave. The function can be run using the Math wave Shape by entering the function and passing the appropriate values or executed in the Command line tool or in a script.
 
-| The routine starts by first making the cosine wave at the fundamental frequency based on the Length value (number of samples in waveform):
-| Sn = Const \* numpy.sin(numpy.pi\*x)
+The routine starts by first making the cosine wave at the fundamental frequency based on the Length value (number of samples in waveform): Sn = Const \* numpy.sin(numpy.pi\*x)
 
 It then loops over NumTerms, the number of requested terms, calculating the harmonic and adding it to the waveform. The final resulting waveform is then scaled by the Ampl value. Setting Ampl to a negative number will invert the waveform (direction of the saw tooth ramp).
 
@@ -499,7 +364,7 @@ It is often useful to be able to produce not only flat, but arbitrary noise spec
    # takes: a desired noise spectral density array (freq)
    # the sample rate of the time series (fs),
    # returns a time series of voltage samples that can be sent to the AWG
-   # 
+   #
    # DC in first element.
    # Output length is 2x input length
    def time_points_from_freq(freq, fs=1, density=False):
@@ -571,15 +436,15 @@ It is often useful to be able to produce not only flat, but arbitrary noise spec
        # Pink noise has equal power in bands that are proportionally wide.
        # Power spectral density decreases with 3 dB per octave.
        # N Length of sample array, mag magnitude scaling factor
-       
+
        x = numpy.random.normal(0.0, 1, N).astype(numpy.float32) # white Noise
        X = numpy.fft.rfft(x) / N
        S = numpy.sqrt(numpy.arange(X.size)+1.0)  # +1 to avoid divide by zero
        y = numpy.fft.irfft(X/S).real[:N] # extremely tiny value 1e-9 without normalization
        z = numpy.ndarray = mag
-       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**2).mean())
+       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**\ 2).mean())
 
-       return y 
+       return y
 
 ::
 
@@ -588,14 +453,14 @@ It is often useful to be able to produce not only flat, but arbitrary noise spec
        # Power increases with 6 dB per octave.
        # Power spectral density increases with 3 dB per octave.
        # N Length of sample array, mag magnitude scaling factor
-       
+
        x = numpy.random.normal(0.0, 1, N).astype(numpy.float32) # white Noise
        X = numpy.fft.rfft(x) / N
        S = numpy.sqrt(numpy.arange(X.size))  # Filter
        y = numpy.fft.irfft(X\*S).real[:N]
        z = numpy.ndarray = mag
-       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**2).mean())
-       
+       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**\ 2).mean())
+
        return y
 
 ::
@@ -605,14 +470,14 @@ It is often useful to be able to produce not only flat, but arbitrary noise spec
        # Power decreases with -3 dB per octave.
        # Power spectral density decreases with 6 dB per octave.
        # N Length of sample array, mag magnitude scaling factor
-       
+
        x = numpy.random.normal(0.0, 1, N).astype(numpy.float32) # white Noise
        X = numpy.fft.rfft(x) / N
        S = numpy.arange(X.size)+1  # Filter
        y = numpy.fft.irfft(X/S).real[:N]
        z = numpy.ndarray = mag
-       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**2).mean())
-       
+       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**\ 2).mean())
+
        return y
 
 ::
@@ -628,8 +493,8 @@ It is often useful to be able to produce not only flat, but arbitrary noise spec
        S = numpy.arange(X.size)  # Filter
        y = numpy.fft.irfft(X\*S).real[0:N]
        z = numpy.ndarray = mag
-       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**2).mean())
-       
+       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**\ 2).mean())
+
        return y
 
 \*\* Digital single pole RC filter \*\*
@@ -640,9 +505,9 @@ This function is used mainly for compensating the response of any analog input r
 
    ## Digital RC filter function for input divider frequency compensation
    # TC1 is in micro seconds
-   def Digital_RC_High_Pass( InBuff, TC1, Gain ): 
+   def Digital_RC_High_Pass( InBuff, TC1, Gain ):
        global SAMPLErate, Two_X_Sample
-       
+
        OutBuff = []
        n = len(InBuff)
        if Two_X_Sample.get() == 0:
@@ -659,7 +524,6 @@ This function is used mainly for compensating the response of any analog input r
        OutBuff = numpy.array(OutBuff)
        OutBuff = InBuff + (OutBuff * Gain)
        return OutBuff
-       
 
 \*\* Digital Filter Coefficient Generators*\*
 
@@ -673,7 +537,7 @@ Higher order SINC filters can be generated by convolving SINC1 filters. For exam
        # Order can be 1, 2, 3 or 4
        # Fsample = 100000
        # Calculate SINC1 oversample ratios for Freject
-       osr = int(Fsample/Freject) # 
+       osr = int(Fsample/Freject) #
        # osr60 = int(Fsample/60) # 60 Hz example
        # Create "boxcar" SINC1 filter
        sinc1 = numpy.ones(osr)
@@ -807,7 +671,7 @@ This method is strictly speaking only for use with sine wave signals of the same
           sum2 += (VBuffB[i]-DCV2)*(VBuffB[i]-DCV2)
           sum12 += (VBuffA[i]-DCV1)*(VBuffB[i]-DCV2)
           i += 1
-       return math.acos(sum12/math.sqrt(sum1\*sum2))*180.0/numpy.pi 
+       return math.acos(sum12/math.sqrt(sum1\*sum2))*180.0/numpy.pi
    #
 
 **Curve Fitting**
@@ -938,26 +802,17 @@ In these example we use AWGAwaveform as the array variable but any of the ALICE 
 Array Creation:
 ~~~~~~~~~~~~~~~
 
-| numpy.ones(length) Return a new array of given length filled with ones.
-| numpy.zeros(length) Return a new array of given length filled with zeros.
-| numpy.full(length, fill_value) Return a new array of given length, filled with fill_value.
-| numpy.linspace(start_value, stop_value, num=length) Return a new array of given length of evenly spaced numbers between start_value and stop_value.
-| numpy.logspace(start_value, stop_value, num=length, base=log_base) Return a new array of given length of numbers spaced evenly on a log scale. The base of the log can be optionally specified such as 10 or 2 etc.
+numpy.ones(length) Return a new array of given length filled with ones. numpy.zeros(length) Return a new array of given length filled with zeros. numpy.full(length, fill_value) Return a new array of given length, filled with fill_value. numpy.linspace(start_value, stop_value, num=length) Return a new array of given length of evenly spaced numbers between start_value and stop_value. numpy.logspace(start_value, stop_value, num=length, base=log_base) Return a new array of given length of numbers spaced evenly on a log scale. The base of the log can be optionally specified such as 10 or 2 etc.
 
 Arithmetic functions:
 ~~~~~~~~~~~~~~~~~~~~~
 
-| numpy.square(x) Return the element-wise square of the input.
-| numpy.sqrt(x) Return the positive square-root of an array, element-wise.
-| numpy.exp(x) Calculate the exponential of all elements in the input array.
-| numpy.log(x) Return the Natural logarithm, element-wise.
-| numpy.log10(x) Return the base 10 logarithm of the input array, element-wise.
+numpy.square(x) Return the element-wise square of the input. numpy.sqrt(x) Return the positive square-root of an array, element-wise. numpy.exp(x) Calculate the exponential of all elements in the input array. numpy.log(x) Return the Natural logarithm, element-wise. numpy.log10(x) Return the base 10 logarithm of the input array, element-wise.
 
 Trigonometric functions:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-| numpy.sin(x) Trigonometric Sine, element-wise.
-| numpy.cos(x) Cosine element-wise.
+numpy.sin(x) Trigonometric Sine, element-wise. numpy.cos(x) Cosine element-wise.
 
 To create one cycle of a sine wave 400 samples long you will first create an array of values from 0 to 2\*pi and then send it to the sine function like this.
 
@@ -1004,30 +859,16 @@ numpy.repeat(AWGAwaveform, repeats) Repeat elements of an array. This will effec
 
 The pad function adds samples to the beginning and end of the array.
 
-| numpy.pad(AWGAwaveform, (100, 100), ‘edge’)
-| numpy.pad(AWGAwaveform, (100,100), ‘maximum’)
+numpy.pad(AWGAwaveform, (100, 100), ‘edge’) numpy.pad(AWGAwaveform, (100,100), ‘maximum’)
 
 The first argument is the array variable, next is a list of the number of points to add. In the case of our one dimensional waveforms this is just two values for the beginning and end of the array. The third argument tells the function what values to use to extend the array. How the array is extended can be one of the following:
 
-| ‘constant’ - Pads with a constant value.
-| ‘edge’ - Pads with the edge values of array.
-| ‘linear_ramp’ - Pads with the linear ramp between end_value and the array edge value.
-| ‘maximum’ - Pads with the maximum value of all or part of the vector along each axis.
-| ‘mean’ - Pads with the mean value of all or part of the vector along the axis.
-| ‘median’ - Pads with the median value of all or part of the vector along the axis.
-| ‘minimum’ - Pads with the minimum value of all or part of the vector along the axis.
-| ‘reflect’ - Pads with the reflection of the vector mirrored on the first and last values of the vector along the axis.
-| ‘symmetric’ - Pads with the reflection of the vector mirrored along the edge of the array.
-| ‘wrap’ - Pads with the wrap of the vector along the axis. The first values are used to pad the end and the end values are used to pad the beginning.
+‘constant’ - Pads with a constant value. ‘edge’ - Pads with the edge values of array. ‘linear_ramp’ - Pads with the linear ramp between end_value and the array edge value. ‘maximum’ - Pads with the maximum value of all or part of the vector along each axis. ‘mean’ - Pads with the mean value of all or part of the vector along the axis. ‘median’ - Pads with the median value of all or part of the vector along the axis. ‘minimum’ - Pads with the minimum value of all or part of the vector along the axis. ‘reflect’ - Pads with the reflection of the vector mirrored on the first and last values of the vector along the axis. ‘symmetric’ - Pads with the reflection of the vector mirrored along the edge of the array. ‘wrap’ - Pads with the wrap of the vector along the axis. The first values are used to pad the end and the end values are used to pad the beginning.
 
 Window functions:
 ~~~~~~~~~~~~~~~~~
 
-| numpy.bartlett(length) Return the Bartlett window.
-| numpy.blackman(length) Return the Blackman window.
-| numpy.hamming(length) Return the Hamming window.
-| numpy.hanning(length) Return the Hanning window.
-| numpy.kaiser(length, beta) Return the Kaiser window
+numpy.bartlett(length) Return the Bartlett window. numpy.blackman(length) Return the Blackman window. numpy.hamming(length) Return the Hamming window. numpy.hanning(length) Return the Hanning window. numpy.kaiser(length, beta) Return the Kaiser window
 
 Special functions:
 ~~~~~~~~~~~~~~~~~~
@@ -1129,46 +970,11 @@ For completeness, here are a few of the more obscure arrays used in ALICE:
 
 These trace "lines" are 2d X-Y arrays in screen pixels.
 
-| T1Vline = [] # Voltage Trace line channel A
-| T2Vline = [] # Voltage Trace line channel B
-| T1Iline = [] # Current Trace line channel A
-| T2Iline = [] # Current Trace line channel B
-| TMAVline = [] # Voltage Trace line MUX channel A
-| TMBVline = [] # Voltage Trace line MUX channel B
-| TMCVline = [] # Voltage Trace line MUX channel C
-| TMDVline = [] # Voltage Trace line MUX channel D
-| TMBRline = [] # V reference Trace line MUX channel B
-| TMCRline = [] # V reference line MUX channel C
-| TXYline = [] # XY Trace line
-| TXYRline = [] # XY reference trace line
-| Tmathline = [] # Math trace line
-| T1VRline = [] # V reference Trace line channel A
-| T2VRline = [] # V reference Trace line channel B
-| T1IRline = [] # I reference Trace line channel A
-| T2IRline = [] # I reference Trace line channel B
-| TMRline = [] # Math reference Trace line
+T1Vline = [] # Voltage Trace line channel A T2Vline = [] # Voltage Trace line channel B T1Iline = [] # Current Trace line channel A T2Iline = [] # Current Trace line channel B TMAVline = [] # Voltage Trace line MUX channel A TMBVline = [] # Voltage Trace line MUX channel B TMCVline = [] # Voltage Trace line MUX channel C TMDVline = [] # Voltage Trace line MUX channel D TMBRline = [] # V reference Trace line MUX channel B TMCRline = [] # V reference line MUX channel C TXYline = [] # XY Trace line TXYRline = [] # XY reference trace line Tmathline = [] # Math trace line T1VRline = [] # V reference Trace line channel A T2VRline = [] # V reference Trace line channel B T1IRline = [] # I reference Trace line channel A T2IRline = [] # I reference Trace line channel B TMRline = [] # Math reference Trace line
 
-| T1Fline = [] # Frequency Trace line channel A
-| T2Fline = [] # Frequency Trace line channel B
-| T1Pline = [] # Phase angle Trace line channel A - B
-| T2Pline = [] # Phase angle Trace line channel B - A
-| T1FRline = [] # F reference Trace line channel A
-| T2FRline = [] # F reference Trace line channel B
-| T1PRline = [] # Phase reference Trace line channel A - B
-| T2PRline = [] # Phase reference Trace line channel B - A
-| TFMline = [] # Frequency Math Trace
-| TFRMline = [] # Frequency reference Math Trace
+T1Fline = [] # Frequency Trace line channel A T2Fline = [] # Frequency Trace line channel B T1Pline = [] # Phase angle Trace line channel A - B T2Pline = [] # Phase angle Trace line channel B - A T1FRline = [] # F reference Trace line channel A T2FRline = [] # F reference Trace line channel B T1PRline = [] # Phase reference Trace line channel A - B T2PRline = [] # Phase reference Trace line channel B - A TFMline = [] # Frequency Math Trace TFRMline = [] # Frequency reference Math Trace
 
-| TAFline = [] # Bode Freq Trace line channel A
-| TBFline = [] # Bode Freq Trace line channel B
-| TAPline = [] # Bode Phase angle Trace line channel A - B
-| TBPline = [] # Bode Phase angle Trace line channel B - A
-| TAFRline = [] # Bode F reference Trace line channel A
-| TBFRline = [] # Bode F reference Trace line channel B
-| TAPRline = [] # Bode Phase reference Trace line channel A - B
-| TBPRline = [] # Bode Phase reference Trace line channel B - A
-| TBPMline = [] # Bode Frequency Math Trace
-| TBPRMline = [] # Bode Frequency reference Math Trace
+TAFline = [] # Bode Freq Trace line channel A TBFline = [] # Bode Freq Trace line channel B TAPline = [] # Bode Phase angle Trace line channel A - B TBPline = [] # Bode Phase angle Trace line channel B - A TAFRline = [] # Bode F reference Trace line channel A TBFRline = [] # Bode F reference Trace line channel B TAPRline = [] # Bode Phase reference Trace line channel A - B TBPRline = [] # Bode Phase reference Trace line channel B - A TBPMline = [] # Bode Frequency Math Trace TBPRMline = [] # Bode Frequency reference Math Trace
 
 **For Further Reading:**
 

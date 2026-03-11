@@ -19,8 +19,9 @@ ADSP-SC5xx is a series of products with multiple processor cores (two SHARC+ cor
 
    ; **''MCAPI''**
    : [[/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_introduction|Introduction of MCAPI examples]]
-   : [[/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_example|Run Linux on ARM and bare-metal application on SHARC]] 
+   : [[/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_example|Run Linux on ARM and bare-metal application on SHARC]]
    : [[/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_api|MCAPI Supported Functions]]
 
-| 
-| ---- **Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`
+--------------
+
+**Back to** :doc:`Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/start>`

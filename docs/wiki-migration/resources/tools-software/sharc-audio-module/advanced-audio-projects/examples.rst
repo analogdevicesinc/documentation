@@ -6,9 +6,7 @@ Sharc Audio Module - Analog Audio Example
 Serial Terminal Setup
 ---------------------
 
-*This tutorial uses TeraTerm as the serial interface to the SAM.*
-
-**Follow the instructions below to set up a connection to the SAM:**
+*This tutorial uses TeraTerm as the serial interface to the SAM.**Follow the instructions below to set up a connection to the SAM:**
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | 1. Power on your SAM board and plug in the 12V Power Supply to the 12V connector. If the board is properly powered, the green LED9/PWR will light up.           | |image9|            |
@@ -52,7 +50,6 @@ Audio Connection Setup
 | 6. Finally, on your analog input device, enable audio. You should now be able to hear the audio from the input device coming out of the speaker connected to *LINE OUT*.                                                 | TODO |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+
 
---------------
 
 `Bootloader and Application Flash#.|Advanced Audio Projects#.|Application Examples <https://wiki.analog.com/_media/navigation Advanced Audio Projects#.program-flash>`_
 

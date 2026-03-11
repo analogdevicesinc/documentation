@@ -12,19 +12,33 @@ Description
 IFFT
 ~~~~
 
-| N-point IFFT is performed on the samples, where MaxN is configurable and should be a power of greater than or equal to N mentioned in the preceding FFT. The twiddle coefficients are calculated within the code and input of IFFT are PCMx samples, the BlockSize of which 3 \* Schematic BlockSize. The first Schematic Block Size number of samples in a PCMx input contains the header information carried from the previous Module (say in this case FFT). Only when the PCMx type matches, IFFT is performed and output is given as PCM samples. The header information contains fields such as PCMx type (Windowing done), N, Count (if N>Schematic BlockSize).
-| ===IFFT Windowed=== In the Windowed version, windowing is done in the FFT Module for 2N samples. Overlap and add for N samples are done at the IFFT end. Hence the output is delayed by N samples. Since memory size depends on the value of MaxN, downloading the Schematic (Link-Compile-Download) is necessary when MaxN value is changed.
-| === Real IFFT === Real IFFT is a block processing module which computes the IFFT of real signals.
-| === Complex IFFT === Complex IFFT is a block processing module which performs N point complex IFFT of the input signal, where N stands for BlockSize.
-| ===== Variants =====
+N-point IFFT is performed on the samples, where MaxN is configurable and should be a power of greater than or equal to N mentioned in the preceding FFT. The twiddle coefficients are calculated within the code and input of IFFT are PCMx samples, the BlockSize of which 3 \* Schematic BlockSize. The first Schematic Block Size number of samples in a PCMx input contains the header information carried from the previous Module (say in this case FFT). Only when the PCMx type matches, IFFT is performed and output is given as PCM samples. The header information contains fields such as PCMx type (Windowing done), N, Count (if N>Schematic BlockSize).
+
+IFFT Windowed
+~~~~~~~~~~~~~
+
+In the Windowed version, windowing is done in the FFT Module for 2N samples. Overlap and add for N samples are done at the IFFT end. Hence the output is delayed by N samples. Since memory size depends on the value of MaxN, downloading the Schematic (Link-Compile-Download) is necessary when MaxN value is changed.
+
+Real IFFT
+~~~~~~~~~
+
+Real IFFT is a block processing module which computes the IFFT of real signals.
+
+Complex IFFT
+~~~~~~~~~~~~
+
+Complex IFFT is a block processing module which performs N point complex IFFT of the input signal, where N stands for BlockSize.
+
+Variants
+--------
 
 -  IFFT
 -  IFFT Windowed
 -  Real IFFT
 -  Complex IFFT
 
-| 
-| ===== Targets Supported =====
+Targets Supported
+-----------------
 
 ============= ========== ================ ============= ================
 Name          ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
@@ -35,11 +49,11 @@ Real IFFT     NA         NA               B             NA
 Complex IFFT  NA         NA               B             NA
 ============= ========== ================ ============= ================
 
-| 
+
 | ===== Pins =====
 
 Input
-^^^^^
+~~~~~
 
 ====== ======= =============================================
 Name   Type    Description
@@ -51,7 +65,7 @@ Input  Complex Input channel (Complex IFFT)
 ====== ======= =============================================
 
 Output
-^^^^^^
+~~~~~~
 
 ======= ===== ==============================================
 Name    Type  Description
@@ -61,7 +75,7 @@ Output0 Audio Second Output channel (IFFT and IFFT Windowed)
 Output  Audio Output channel (Real IFFT and Complex IFFT)
 ======= ===== ==============================================
 
-| 
+
 | ===== Configurable Parameters =====
 
 +---------------+---------+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

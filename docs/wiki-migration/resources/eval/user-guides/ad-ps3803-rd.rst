@@ -1,26 +1,23 @@
 AD-PS3803-RD User Guide
 =======================
 
-|
+
 
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages
 
-
    | The latest version of this document can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-ps3803-rd/index.html
 
 
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_angle.jpg
+   :alt: AD-PS3803-RD Board
+   :align: center
+   :width: 500px
 
-| |AD-PS3803-RD Board|
+**Figure 1. AD-PS3803-RD Board**
 
-.. container:: center
-
-   <fc #000000>\ **Figure 1. AD-PS3803-RD Board**\ </fc>
-
-
-   | The :adi:`AD-PS3803-RD` reference design is a power converter capable of harnessing any IEEE802.3at (PoE+, Type 2)-compliant downstream power over Ethernet (PoE) supply to provide a galvanically isolated DC power.
+The :adi:`AD-PS3803-RD` reference design is a power converter capable of harnessing any IEEE802.3at (PoE+, Type 2)-compliant downstream power over Ethernet (PoE) supply to provide a galvanically isolated DC power.
 
 At the core of this solution is the :adi:`LT8306` 60 V no-opto flyback controller, stepping down the 37 V to 57 V PoE input voltage to a 12 V, 24 W DC output.
 
@@ -30,17 +27,16 @@ The :adi:`LT4321` ideal diode bridge controller is used for improved end-to-end 
 
 The AD-PS3803-RD also has auxiliary DC power support for a wide input range of 37 V to 57 V.
 
-|
-
-| ==== Features ====
+Features
+--------
 
 -  Galvanically isolated 12 V flyback DC output with up to 24 W of output power capability
 -  No transformer third winding or opto-isolator for output regulation
 -  Supports IEEE802.3at (PoE+, Type 2) and IEEE802.3bt (PoE++, Type 3 and 4) interfacing and power supply control via a configurable jumper array
 -  Supports a wide input DC auxiliary power of 37 V to 57 V
 
-| 
-| ==== Applications ====
+Applications
+------------
 
 -  Industrial Automation
 -  Surveillance Camera Systems
@@ -48,16 +44,15 @@ The AD-PS3803-RD also has auxiliary DC power support for a wide input range of 3
 -  Payment Terminal Systems
 -  Wireless Access Points
 
-| 
-| ==== Block Diagram ====
-| |Simplified Block Diagram|
+Block Diagram
+-------------
 
-|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_block_diagram.png
+   :alt: Simplified Block Diagram
+   :align: left
+   :width: 1000px
 
-.. container:: center
-
-   <fc #000000>\ **Figure 2. Simplified System Block Diagram**\ </fc>
-
+**Figure 2. Simplified System Block Diagram**
 
 Specifications
 --------------
@@ -82,33 +77,24 @@ Specifications
    +---------------------------------------+------------------------------------------------------+------------------------------------+
    | Efficiency                            | V\ :sub:`PORT` = 54 V, I\ :sub:`OUT` = 2 A           | 85.4% (Typ.)                       |
    +---------------------------------------+------------------------------------------------------+------------------------------------+
-
-   |
-
-
-.. container:: center
-
-   <fc #000000>\ **Table 1. Board Performance Summary**\ </fc>
+   
 
 
-----
+**Table 1. Board Performance Summary**
+
+--------------
 
 Components and Connections
 ==========================
 
-|
+Basic Input and Output Ports
+----------------------------
 
-| ==== Basic Input and Output Ports ====
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_03.png
+   :align: center
+   :width: 600px
 
-|
-
-.. container:: center
-
-   <fc #000000>\ **Figure 3. Basic Input Output Ports**\ </fc>
-
-
-   |
+**Figure 3. Basic Input Output Ports**
 
 .. warning::
 
@@ -116,25 +102,18 @@ Components and Connections
 
 
 Power Supply Ports
-------------------
+~~~~~~~~~~~~~~~~~~
 
-.. container:: indent
+Power the board either through its RJ45 female connector (PoE input) or via its DC auxiliary terminals.
 
-   Power the board either through its RJ45 female connector (PoE input) or via its DC auxiliary terminals.
-
-
-.. container:: indent
-
-   Both ports can handle input voltage of 37 V\ :sub:`DC` to 57 V\ :sub:`DC`.
-
+Both ports can handle input voltage of 37 V\ :sub:`DC` to 57 V\ :sub:`DC`.
 
 -  **P1** -> RJ45 input port for PoE from PSE
 -  **AUX+** -> Positive input terminal for auxiliary DC power supply
 -  **AUX-** -> Negative input terminal for auxiliary DC power supply
 
-|
-
-| === Output Ports ===
+Output Ports
+~~~~~~~~~~~~
 
 -  **VOUT+** -> Positive output terminal of the board
 -  **VOUT-** -> Negative output terminal of the board
@@ -142,23 +121,24 @@ Power Supply Ports
 -  **TP15** -> POE_OUT- terminal. This is the positive terminal of the passthrough voltage from either the PoE input or the auxiliary input.
 -  **P2** -> RJ45 output port for PHY
 
-| 
-| === LED Indicators ===
+LED Indicators
+~~~~~~~~~~~~~~
 
 -  **DS1** -> Indicator for successful PD and PSE handshaking. This should remain turned on during normal operation.
 
-| 
-| ==== Test Points ==== <wrap> Numerous test points such as turrets and test pads were added for easier probing of signals. </wrap>
+Test Points
+-----------
 
-| |image2|
+ Numerous test points such as turrets and test pads were added for easier probing of signals.
 
-.. container:: center
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_04.png
+   :align: center
+   :width: 600px
 
-   <fc #000000>\ **Figure 4. Board Test Points**\ </fc>
-
+**Figure 4. Board Test Points**
 
 Ethernet Pairs
---------------
+~~~~~~~~~~~~~~
 
 -  **TP1** -> DATA-1 wire pair test pad
 -  **TP2** -> DATA-2 wire pair test pad
@@ -166,7 +146,7 @@ Ethernet Pairs
 -  **TP4** -> SPARE-2 wire pair test pad
 
 Accessory Test Points
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 -  **TP5** -> Turret for AUX+ terminal
 -  **TP6** -> Turret for AUX- terminal
@@ -179,23 +159,16 @@ Accessory Test Points
 -  **TP16** -> Turret for VOUT+ terminal
 -  **TP17** -> Turret for VOUT- terminal
 
-| 
-
 Class Select Jumpers
 --------------------
 
-|
+ The board's operating power level can be configured by changing the position of the class select jumpers, allowing different PSEs to be compatible with the device.
 
-| <wrap> The board's operating power level can be configured by changing the position of the class select jumpers, allowing different PSEs to be compatible with the device. </wrap>
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_05.png
+   :align: center
+   :width: 500px
 
-| |image3|
-
-.. container:: center
-
-   <fc #000000>\ **// Figure 5. Class Select Jumper Array //**\ </fc>
-
-
-   |
+**// Figure 5. Class Select Jumper Array //**
 
 .. container:: center round box
 
@@ -212,10 +185,7 @@ Class Select Jumpers
    
 
 
-.. container:: center
-
-   <fc #000000>\ **Table 2. Jumper Position**\ </fc>
-
+**Table 2. Jumper Position**
 
 --------------
 
@@ -225,17 +195,15 @@ Circuit Evaluation
 AD-PS3803-RD Quick Start Procedure
 ----------------------------------
 
-|
-
-| === Power over Ethernet using a Power Sourcing Equipment (PSE) ===
-|
+Power over Ethernet using a Power Sourcing Equipment (PSE)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
    Figures 6 and 7 show the setup for evaluating the AD-PS3803-RD using a PSE. A resistive load or an active load can be used at the output stage of the device.
 
 
-|
+
 
 .. tip::
 
@@ -263,30 +231,28 @@ AD-PS3803-RD Quick Start Procedure
    The AD-PS3803-RD requires a very small minimum load to maintain good output voltage regulation. A Zener diode is placed on the output to clamp the voltage to 13 V at no load.
 
 
-   |image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_06.png
+   :align: center
+   :width: 800px
 
-.. container:: center
+**// Figure 6. AD-PS3803-RD Setup with a Power Sourcing Equipment (PSE) //**
 
-   **// Figure 6. AD-PS3803-RD Setup with a Power Sourcing Equipment (PSE) //**
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_07.png
+   :align: center
+   :width: 800px
 
+**// Figure 7. AD-PS3803-RD Setup Using a PSE Board Module //**
 
-| 
-| |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_08.png
+   :align: center
+   :width: 800px
 
-.. container:: center
+**// Figure 8. Example Setup using a PSE Module (DC2541A) //**
 
-   **// Figure 7. AD-PS3803-RD Setup Using a PSE Board Module
+Auxiliary Power Supply
+~~~~~~~~~~~~~~~~~~~~~~
 
-
-.. container:: center
-
-   Figure 8. Example Setup using a PSE Module (DC2541A) //**
-
-
-| 
-| === Auxiliary Power Supply ===
-
-<WRAP indent> Refer to Figure 9 for evaluating the AD-PS3803-RD using an auxiliary power supply. A resistive load or an active load can be used at the output stage of the device. <WRAP>
+ Refer to Figure 9 for evaluating the AD-PS3803-RD using an auxiliary power supply. A resistive load or an active load can be used at the output stage of the device. 
 
 -  Connect the auxiliary supply to the AUX+ to AUX- inputs. Observe proper polarity of voltage connection before turning on the auxiliary power supply.
 -  Turn on the auxiliary power supply and verify that the LED (DS1) is on.
@@ -298,15 +264,13 @@ AD-PS3803-RD Quick Start Procedure
    Observe correct polarity of connections to prevent damaging the device.
 
 
-| |image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_09.png
+   :align: center
+   :width: 800px
 
-.. container:: center
+**// Figure 9. AD-PS3803-RD Test Setup using an Auxiliary Power Supply //**
 
-   **// Figure 9. AD-PS3803-RD Test Setup using an Auxiliary Power Supply //**
-
-
-| 
-| ----
+--------------
 
 Demo Setup
 ----------
@@ -320,28 +284,23 @@ Equipment Needed
 -  One (1) Digital multimeter (Voltmeter #1)
 -  One (1) Electronic load capable of 12V/2A (DC electronic load)
 
-| 
-| === Getting Started ===
+Getting Started
+~~~~~~~~~~~~~~~
 
 .. note::
 
    The setup described below uses the DC2541A Demo Board as PSE Controller. Other PSE boards can also be used as alternative, but ensure that the interface and power range is compatible with the AD-PS3803-RD.
 
 
-| 1. Before connecting any power supplies, adjust the DC power supply’s output to 0 V and set the current limit to 0.1 A.
-| 2.Turn the supply OFF.
-| 3. Connect all the equipment, as shown in Figure 1. Do NOT connect the Ethernet cable to AD-PS3803-RD yet. |image7|
+1. Before connecting any power supplies, adjust the DC power supply’s output to 0 V and set the current limit to 0.1 A.
 
-.. container:: center
+2.Turn the supply OFF.
 
-   <fc #000000>\ **Figure 10. AD-PS3803 Test Setup Diagram**\ </fc>
+3. Connect all the equipment, as shown in Figure 1. Do NOT connect the Ethernet cable to AD-PS3803-RD yet. |image1| **Figure 10. AD-PS3803 Test Setup Diagram**
 
+4. Verify that the electronic load is initially at the OFF position.
 
-| 4. Verify that the electronic load is initially at the OFF position.
-| 5. Ensure that the indicated jumper position for DC2541A is set correctly, as shown in Table 1 and Figure 3.
-
-| 
-|
+5. Ensure that the indicated jumper position for DC2541A is set correctly, as shown in Table 1 and Figure 3.
 
 .. container:: center round box
 
@@ -353,16 +312,17 @@ Equipment Needed
    +-----------------------------------------------------+----------------------+-------------------------------+---------------+------------------+------------------+
    | IEEE 802.3at Type 2 (25.5W)                         | Type 2 (25.5W)       | 2-PAIR                        | LO/HI         | LO               | LO               |
    +-----------------------------------------------------+----------------------+-------------------------------+---------------+------------------+------------------+
-
-   |image8|
-
-.. container:: center
-
-   *<fc #000000>\ *\ **Figure 11. Jumper Connections**\ *\ </fc>*
+   
 
 
-| 
-| === Test Measurement ===
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_11.png
+   :align: center
+   :width: 500px
+
+**Figure 11. Jumper Connections**
+
+Test Measurement
+~~~~~~~~~~~~~~~~
 
 -  Turn the DC power supply ON and set the voltage to approximately 48 V.
 -  Set the DC power supply current limit to 1 A.
@@ -392,15 +352,13 @@ Equipment Needed
 -  Set the DC electronic load to 0 A.
 -  Disconnect the RJ45-to-RJ45 Ethernet cable from AD-PS3803-RD.
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_12.png
+   :align: center
+   :width: 800px
 
-.. container:: center
+**Figure 12. AD-PSD3803 Actual Test Setup**
 
-   *<fc #000000>\ *\ **Figure 12. AD-PSD3803 Actual Test Setup**\ *\ </fc>*
-
-
-| 
-| ----
+--------------
 
 System Performance
 ==================
@@ -411,7 +369,7 @@ Efficiency
 Figure 13 shows the efficiency performance of AD-PS3803-RD at PoE input voltage of 48 V and 57 V.
 
 
-|image10|
+|image2|
 
 .. container:: center
 
@@ -423,16 +381,13 @@ Output Regulation
 
 The AD-PS3803-RD maintains within ±5% across its entire output current capability.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/014.png
+   :align: center
+   :width: 600px
 
-|image11|
+**// Figure 14. AD-PS3803-RD: Output Voltage vs. Load Current Performance //**
 
-.. container:: center
-
-   **// Figure 14. AD-PS3803-RD: Output Voltage vs. Load Current Performance //**
-
-
-| 
-| ----
+--------------
 
 Resources
 =========
@@ -477,33 +432,9 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-| 
-
 *End of Document*
 
-.. |AD-PS3803-RD Board| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_angle.jpg
-   :width: 500px
-.. |Simplified Block Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_block_diagram.png
-   :width: 1000px
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_03.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_04.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_05.png
-   :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_06.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_10.png
    :width: 800px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_07.png
-   :width: 800px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_09.png
-   :width: 800px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_10.png
-   :width: 800px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_11.png
-   :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_12.png
-   :width: 800px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_13.png
-   :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/014.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd_13.png
    :width: 600px

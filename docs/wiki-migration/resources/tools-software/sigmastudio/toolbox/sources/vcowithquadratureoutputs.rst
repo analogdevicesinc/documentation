@@ -12,7 +12,7 @@ VCO with Quadrature Outputs
 | If the input applied is greater than 1, the derived output value will fold back to frequencies below fs/2.
 | To change the source's Sampling Rate, Right-click in the block and select Set Sampling Rate, which will open the Sampling Rate window (default is 44.1 kHz).
 | This cell can be found in the Voltage Controlled subfolder in the Sources section of the toolbox.
-| |image1|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/vco_quad_039.jpg
 
 .. |vco_q002.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/vco_q002.jpg
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/vco_quad_039.jpg

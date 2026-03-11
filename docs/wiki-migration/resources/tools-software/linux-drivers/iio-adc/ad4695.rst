@@ -271,7 +271,7 @@ As seen above, reading the ``name`` attribute will return the name of the chip.
 
 ::
 
-   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/name 
+   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/name
    ad4696
 
 Channels
@@ -281,11 +281,11 @@ The voltage measurement done by the chip is represented as an IIO channel. These
 
 ::
 
-   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_scale 
+   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_scale
    0.076293945
    root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_offset
    32768
-   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_raw 
+   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_raw
    -34
 
 The ``scale`` attribute is based on the reference voltage being used and returns the value needed to convert the ``raw`` value to millivolts.
@@ -307,9 +307,9 @@ The ``in_voltage0_calibbias_available`` and ``in_voltage0_calibscale_available``
 
 ::
 
-   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_calibbias_available 
+   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_calibbias_available
    [-8192.000000 0.250000 8191.750000]
-   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_calibscale_available 
+   root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_calibscale_available
    [0.000000000 0.000030517 1.999969482]
 
 This shows that the offset can be in the range [-8192, 8192) with a step size of 0.25 raw units. The gain can be in the range [0, 2) with a step size of approx 0.000030517.
@@ -363,15 +363,15 @@ Here is an example of how to read a few values at a low sample rate for testing 
 ::
 
    # set sample rate to 10 kHz
-   root@analog:~# echo 10000 > /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency 
+   root@analog:~# echo 10000 > /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency
    # set buffer to receive 8 samples at a time
    root@analog:~# echo 8 > /sys/bus/iio/devices/iio\:device1/buffer0/length
    # enable the first voltage channel
-   root@analog:~# echo 1 > /sys/bus/iio/devices/iio\:device1/buffer0/in_voltage0_en 
+   root@analog:~# echo 1 > /sys/bus/iio/devices/iio\:device1/buffer0/in_voltage0_en
    # enable the second voltage channel
-   root@analog:~# echo 1 > /sys/bus/iio/devices/iio\:device1/buffer0/in_voltage1_en 
+   root@analog:~# echo 1 > /sys/bus/iio/devices/iio\:device1/buffer0/in_voltage1_en
    # enable the buffer
-   root@analog:~# echo 1 > /sys/bus/iio/devices/iio\:device1/buffer0/enable 
+   root@analog:~# echo 1 > /sys/bus/iio/devices/iio\:device1/buffer0/enable
    # read one buffer full of data
    root@analog:~# hexdump -n $((8 * 2 * 2)) -e'2/4  "%04X " "\n"' /dev/iio\:device1
    AC6D 806A
@@ -379,7 +379,7 @@ Here is an example of how to read a few values at a low sample rate for testing 
    65C8 805F
    2102 8069
    # disable the buffer
-   root@analog:~# echo 0 > /sys/bus/iio/devices/iio\:device1/buffer0/enable 
+   root@analog:~# echo 0 > /sys/bus/iio/devices/iio\:device1/buffer0/enable
 
 Evaluation boards
 -----------------

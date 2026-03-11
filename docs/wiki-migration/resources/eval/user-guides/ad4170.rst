@@ -86,8 +86,7 @@ Getting started
 Hardware Guide
 ==============
 
-| :doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>` **Contents of the Hardware guide:**
 
 -  :doc:`Set-up Procedures </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
 -  :doc:`Block Diagram </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
@@ -112,8 +111,7 @@ Hardware Guide
 Software Guide
 ==============
 
-| :doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
-| **Contents of the Hardware guide:**
+:doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>` **Contents of the Hardware guide:**
 
 -  :doc:`Ace Plugin </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
 

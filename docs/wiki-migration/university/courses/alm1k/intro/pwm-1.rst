@@ -30,12 +30,7 @@ Pulse Width Modulation with ADALM1000
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Jumper Wires
-| 1 - 470Ω resistor
-| 1 - LED, any color is fine
-| 1 – 10 kΩ resistor
-| 1 – 1 uF capacitor
+ADALM1000 hardware module Jumper Wires 1 - 470Ω resistor 1 - LED, any color is fine 1 – 10 kΩ resistor 1 – 1 uF capacitor
 
 Connect the 470Ω and the LED to the channel A waveform generator (AWG1) and ground. Measure the input voltage waveform with the CA-V scope trace. It is not necessary to measure the voltage across the LED in this experiment. CH A is connected to the left end of the resistor and GND is connected to the bottom (-) end of the LED. The circuit is shown in figure 1.
 
@@ -123,10 +118,7 @@ Click on the green Run button to start the AWG generator and describe what you s
 For Further Reading:
 ~~~~~~~~~~~~~~~~~~~~
 
-| `Wikipedia - Pulse Width Modulation <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_
-| `Sparkfun PWM tutorial <https://learn.sparkfun.com/tutorials/pulse-width-modulation>`_
-| `All About Circuits: PWM <http://www.allaboutcircuits.com/textbook/semiconductors/chpt-11/pulse-width-modulation/>`_
-| `Low Pass Filter PWM signal <https://www.allaboutcircuits.com/technical-articles/low-pass-filter-a-pwm-signal-into-an-analog-voltage/>`_
+`Wikipedia - Pulse Width Modulation <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_ `Sparkfun PWM tutorial <https://learn.sparkfun.com/tutorials/pulse-width-modulation>`_ `All About Circuits: PWM <http://www.allaboutcircuits.com/textbook/semiconductors/chpt-11/pulse-width-modulation/>`_ `Low Pass Filter PWM signal <https://www.allaboutcircuits.com/technical-articles/low-pass-filter-a-pwm-signal-into-an-analog-voltage/>`_
 
 Going further with PWM - flickering LEDs.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -207,9 +199,7 @@ Not very musical but still interesting.
 
 Extra related links:
 
-| `Does this LED sound funny to you? <https://www.evilmadscientist.com/2011/does-this-led-sound-funny-to-you/>`_
-| `Reverse Engineering a candle flicker LED <https://hackaday.com/2013/12/16/reverse-engineering-a-candle-flicker-led/>`_
-| `Hacking a Candle flicker LED <https://cpldcpu.wordpress.com/2013/12/08/hacking-a-candleflicker-led/>`_
+`Does this LED sound funny to you? <https://www.evilmadscientist.com/2011/does-this-led-sound-funny-to-you/>`_ `Reverse Engineering a candle flicker LED <https://hackaday.com/2013/12/16/reverse-engineering-a-candle-flicker-led/>`_ `Hacking a Candle flicker LED <https://cpldcpu.wordpress.com/2013/12/08/hacking-a-candleflicker-led/>`_
 
 Another thing you can do is make another normal LED flicker in sync with the special LED. Connect a regular Red LED from the kit in series with the flicker LED as shown in figure 12. Be sure to note the proper polarity for the second LED. A lower value resistor will be needed because of the larger total voltage drop of the series combination of the two LEDs.
 
@@ -222,8 +212,6 @@ Another thing you can do is make another normal LED flicker in sync with the spe
    Figure 12, Flickering a second LED
 
 
-| Why does the second LED flicker as well?
-| Does it matter what order the LEDs and resistor are connected?
+Why does the second LED flicker as well? Does it matter what order the LEDs and resistor are connected?
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**

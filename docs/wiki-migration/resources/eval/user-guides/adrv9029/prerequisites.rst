@@ -15,7 +15,8 @@ EQUIPMENT NEEDED
 -  1x Coupler (Mini-Circuits ZFBDC16-63HP-S+ or equivalent)
 -  SMA connectors and RF cables to connect various components as shown in the figure below. Please note that the Observation Receiver (ORx) is on the bottom side of the ADRV9029 evaluation board.
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_hw_setup.png
+   :width: 800px
 
 SOFTWARE REQUIREMENTS
 ---------------------
@@ -26,14 +27,11 @@ SOFTWARE REQUIREMENTS
 OTHER REQUIREMENTS
 ------------------
 
--  A wideband OFDM test signal such as LTE5/LTE10/LTE20 or NR100 signal sampled at a Tx IQ rate of 245.76 MSPS in <fc #ff0000>tab separated IQ format</fc> for evaluating DPD. Ensure that the Peak power level of the OFDM signal does not exceed -4dBFS to provide sufficient head-room for DPD gain expansion.
+-  A wideband OFDM test signal such as LTE5/LTE10/LTE20 or NR100 signal sampled at a Tx IQ rate of 245.76 MSPS in tab separated IQ format for evaluating DPD. Ensure that the Peak power level of the OFDM signal does not exceed -4dBFS to provide sufficient head-room for DPD gain expansion.
 
    -  Typically, an OFDM signal with -14dBFS rms and 8dB Peak-To-Average-Power Ratio is used for DPD evaluation.
 
       -  Third party vector signal generation tools such as `Keysight Signal Studio <https://www.keysight.com/us/en/lib/resources/miscellaneous/signal-studio-software-free-trial-1368357.html>`_, `Matlab Vector Generation <https://www.mathworks.com/help/5g/ug/downlink-carrier-waveform-generation.html>`_ can be used for generating wideband OFDM signals.
 
-.. image:: https://wiki.analog.com/_media/navigation ADRV9029 DPD USER GUIDE#dpd_system_overview2
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation ADRV9029 DPD USER GUIDE#dpd_system_overview2
    :alt: DPD System Overview#resources:eval:user-guides:adrv9029|main page#evaluating_dpd_through_tes_gui|TES GUI
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_hw_setup.png
-   :width: 800px

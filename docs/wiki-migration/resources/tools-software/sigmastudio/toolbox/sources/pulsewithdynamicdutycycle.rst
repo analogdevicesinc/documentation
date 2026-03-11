@@ -1,15 +1,23 @@
 Pulse Generator
 ===============
 
-| :doc:`Click here to return to the Sources section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources>`
-| |image1|
+:doc:`Click here to return to the Sources section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources>`
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/pulsegen.png
+   :width: 400px
 
 Description
 -----------
 
-| The Pulse Generator block generates pulse at different frequencies with a configurable duty cycle.
-| ===== Usage ===== This block has checkbox to enabled or disabled the algorithm. Check the box to enable this algorithm. It has the text fields for frequency and duty cycle to generate the pulse at different frequencies with different "ON" and "OFF" time of the pulse.It has the radio button to round the coefficients.
-| ===== Targets Supported =====
+The Pulse Generator block generates pulse at different frequencies with a configurable duty cycle.
+
+Usage
+-----
+
+This block has checkbox to enabled or disabled the algorithm. Check the box to enable this algorithm. It has the text fields for frequency and duty cycle to generate the pulse at different frequencies with different "ON" and "OFF" time of the pulse.It has the radio button to round the coefficients.
+
+Targets Supported
+-----------------
 
 +------------------------------------------+--------------------------------------------+----------------------------------------------------+---------------------------------------------+
 | Name                                     | ADSP-214xx                                 | ADSP-215xx/ADSP-SC5xx                              | ADAU145x/146x                               |
@@ -76,8 +84,4 @@ Output
 -  Frequency = fs/FS (not rounded)
 -  DutyCycle = DutyCylce/100
 
-| 
-| Where fs is frequency and FS is the sampling rate
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/pulsegen.png
-   :width: 400px
+Where fs is frequency and FS is the sampling rate

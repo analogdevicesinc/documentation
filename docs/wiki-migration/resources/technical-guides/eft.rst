@@ -15,11 +15,13 @@ Level Voltage Peak (kV) Repetition Frequency(kHz)
 4     2                 5 or 100
 ===== ================= =========================
 
-| 
+
 | Per the IEC 61000-4-4 standard, the DUT (Device under test) is tested with 2000 V discharges on the analog input cable. Positive and negative polarity discharges are applied. The duration time of each test is 1 min. The transient and burst waveform is in accordance with IEC 61000-4-4, 5 ns rising time with 50 ns pulse width. 5 kHz repetition frequency was used for the test. The configuration consists of a 0.8 m high wooden table, covered with a sheet of copper that is at least 0.25 mm thick, and connected to the protective grounding system. The DUT is placed on a 0.1 m thick isolating support. A minimum distance of 0.5 m is provided between the DUT and the walls of the laboratory.
 
-| 
-| ===Hardware Configuration=== Due to the configurability of the AD74115H some use cases were covered other use cases by default reducing the amount of testing required. Some use cases used a different measurement path to cover another use case. The list below shows the coverage:
+Hardware Configuration
+----------------------
+
+Due to the configurability of the AD74115H some use cases were covered other use cases by default reducing the amount of testing required. Some use cases used a different measurement path to cover another use case. The list below shows the coverage:
 
 -  Current Output Use Case covers:
 
@@ -54,28 +56,29 @@ Level Voltage Peak (kV) Repetition Frequency(kHz)
 
 There was a digital multi meter (DMM) connected to the output load to ensure there was no loss of output during testing and also to ensure the integrity of the internal ADC measurement. To protect the DMM a low pass filter was placed between the load and DMM. The measurements were streamed back to the laptop throughout the testing.
 
-| |image1|
+
+|image1|
 
 .. container:: centeralign
 
    *Figure 1 ADP1034 and AD74115H EFT Current Use Case Setup*
 
 
-| |image2|
+   |image2|
 
 .. container:: centeralign
 
    *Figure 2 ADP1034 and AD74115H 4 wire RTD EFT Setup*
 
 
-| |image3|
+   |image3|
 
 .. container:: centeralign
 
    *Figure 3 ADP1034 and AD74115H Current Output Test Setup*
 
 
-| |image4|
+   |image4|
 
 .. container:: centeralign
 
@@ -105,8 +108,6 @@ Pre and Post Measurement Flow
    *Read DMM measurement
    *Save data to file
    *Repeat 1000 times
-
-| 
 
 Performance Summary
 -------------------

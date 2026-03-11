@@ -32,8 +32,7 @@ In this tutorial we will be using the AD8402 dual digital potentiometer in the 1
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 - AD8042 10 KΩ dual digital potentiometer (14 pin DIP package)
+ADALM1000 hardware module 1 - AD8042 10 KΩ dual digital potentiometer (14 pin DIP package)
 
 Directions:
 ~~~~~~~~~~~
@@ -99,19 +98,10 @@ Challenge:
 
 As a challenge build a variable frequency square wave generator with programmable pulse width (PWM) based on the NE555 timer chip and the AD8402.
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 1 - AD8042 10 KΩ dual digital potentiometer (14 pin DIP package)
-| 1 - NE555 Timer (8 pin DIP)
-| 2 - 0.1 uF capacitors (104)
-| 2 - 220 Ω resistors
-| 2 - 1N914 small signal diodes
-
-.. _directions-1:
+ADALM1000 hardware module 1 - AD8042 10 KΩ dual digital potentiometer (14 pin DIP package) 1 - NE555 Timer (8 pin DIP) 2 - 0.1 uF capacitors (104) 2 - 220 Ω resistors 2 - 1N914 small signal diodes
 
 Directions:
 ~~~~~~~~~~~
@@ -127,14 +117,10 @@ Before making any additions to your breadboard circuit it is probably best to un
    Figure 5, 555 timer PWM circuit
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 After carefully checking the connections, plug the USB cable into the ALM1000.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -147,7 +133,6 @@ Also explain the charging and discharging waveform on C\ :sub:`2` as the setting
 
 **For Further Reading:**
 
-| http://www.analog.com/media/en/technical-documentation/data-sheets/AD8400_8402_8403.pdf
-| https://en.wikipedia.org/wiki/555_timer_IC
+http://www.analog.com/media/en/technical-documentation/data-sheets/AD8400_8402_8403.pdf https://en.wikipedia.org/wiki/555_timer_IC
 
 **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`

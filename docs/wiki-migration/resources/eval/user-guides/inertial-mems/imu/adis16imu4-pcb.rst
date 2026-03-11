@@ -19,12 +19,7 @@ ORDERING
 FEATURES
 --------
 
-| \* ADIS1646x-Compatible Breakout Board
-| \* 44mm x 47mm Interface Board Size
-| \* M2x0.4mm Mounting Hardware Kit
-| \* 7mm Spacer for flat surface interface
-| \* 16-pinm 12-inch Ribbon Cable
-| \* RoHS Compliant
+- ADIS1646x-Compatible Breakout Board \* 44mm x 47mm Interface Board Size \* M2x0.4mm Mounting Hardware Kit \* 7mm Spacer for flat surface interface \* 16-pinm 12-inch Ribbon Cable \* RoHS Compliant
 
 PRODUCT SUPPORT
 ---------------

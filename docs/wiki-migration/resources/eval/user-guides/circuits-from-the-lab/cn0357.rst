@@ -59,11 +59,11 @@ Installing the Software
 
 |image2|
 
--  Click **Next** to start the installation
+   \* Click **Next** to start the installation
 
-|image3|
+   |image3|
 
--  Upon completion of the installation of the **CN-0357 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+   \* Upon completion of the installation of the **CN-0357 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
 .. tip::
 
@@ -72,7 +72,7 @@ Installing the Software
 
    |image4|
 
--  Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
 .. tip::
 
@@ -97,9 +97,9 @@ Connecting the Hardware
 
 |image7|
 
--  Connect the :adi:`EVAL-CFTL-6V-PWRZ` **(+6V DC Power Supply)** to the Barrel Jack at **J1** on the :adi:`SDP-PMD-IB1Z` **(SDP to Pmod Interposer Board)**
+   \* Connect the :adi:`EVAL-CFTL-6V-PWRZ` **(+6V DC Power Supply)** to the Barrel Jack at **J1** on the :adi:`SDP-PMD-IB1Z` **(SDP to Pmod Interposer Board)**
 
-|image8|
+   |image8|
 
    \* Connect the USB cable to **J1** of the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)**
 
@@ -128,7 +128,7 @@ Software Control and Indicator Descriptions
    -**Stop Button**
    * When this button is pressed, the software stop collecting data from the CN0357 Board
    -**Save Data Button**
-   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file. 
+   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
    -**Clear Data Button**
    * When this button is pressed, the software will clear all data collected from the chart history.
    -**Control Tabs**
@@ -139,9 +139,9 @@ Software Control and Indicator Descriptions
    * This indicator displays the current concentration measured by the system.
    -**Sensor Type Drop-down Menu**
    * __Oxidation (sink)__ - Select this option if the sensor sinks current
-   * __Reduction (source)__ - Select this option if the sensor sources current. 
+   * __Reduction (source)__ - Select this option if the sensor sources current.
    -**Max Sensor Sensitivity Numerical Control**
-   * The maximum amount of current in nanoamps (nA) the sensor will sink/source per part per million (ppm).  
+   * The maximum amount of current in nanoamps (nA) the sensor will sink/source per part per million (ppm).
    * This control influences the feedback resistance set by the Rheostat ([[:adi:`AD5270|AD5270]]`).
    -**Typical Sensor Sensitivity Drop-down Menu**
    * The typical amount of current in nanoamps (nA) the sensor will sink/source per part per million (ppm).
@@ -162,7 +162,7 @@ Software Control and Indicator Descriptions
    -**System Status String Indicator**
    * This indicator displays a message to the user detailing the current state of the software.
    -**System Status LED Indicator**
-   * This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0357:cn0357-software-inactive.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0357:cn0357-software-busy.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0357:cn0357-software-error.png?nolink&|}}Error\\ 
+   * This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0357:cn0357-software-inactive.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0357:cn0357-software-busy.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0357:cn0357-software-error.png?nolink&|}}Error
    -**Buffer Mode Radio Buttons**
    * __Buffered Mode__ - This allows the user to place source impedance on the front end without contributing to gain errors to the system.
    * __Unbuffered Mode__ - This disables the buffers, lowering the power consumption of the device.\\ \\
@@ -176,7 +176,7 @@ Software Control and Indicator Descriptions
    * This register is used to configure the ADC for range, enable or disable the buffer, or place the device into power-down mode.
    * The **Register Bit Designations** can be found on Page 11 of the [[:adi:`AD7790|AD7790]]` Datasheet in Table 9.
    -**Filter Register Numerical Indicator**
-   * This register is used to set the output word rate. 
+   * This register is used to set the output word rate.
    * Table 12 in the [[:adi:`AD7790|AD7790]]` Datasheet outlines the **Register Bit Designations** for the filter register.\\ \\
 
 .. note::
@@ -196,7 +196,7 @@ Software Control and Indicator Descriptions
    -**RDAC Value Numerical Indicator**
    * The value transmitted to the RDAC register of the Rheostat in hexadecimal format.
    -**Rheostat Resistance Numerical Indicator**
-   * The equivalent resistance of the Rheostat. 
+   * The equivalent resistance of the Rheostat.
    -**Program Rheostat Button**
    * Load the current RDAC value to the 50-TP Memory Block of the Digital Rheostat.\\ \\
 
@@ -223,7 +223,7 @@ Saving Data to a Spreadsheet File
 -  Name the file.
 -  Click the **OK Button**.
 
-|
+
 
 .. note::
 

@@ -34,20 +34,12 @@ We will now replace the ideal switches in the diagram with actual electronic swi
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| Jumper wires
-| 2 - ZVN2110A NMOS FET (2N7000)
-| 2 - 74HC04 HEX CMOS Inverters (CD4007, CD4069)
-| 2 - 10 uF capacitors
-| 1 - 220 uF capacitor
-| 2 - 1N914 small signal diodes
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 2 - ZVN2110A NMOS FET (2N7000) 2 - 74HC04 HEX CMOS Inverters (CD4007, CD4069) 2 - 10 uF capacitors 1 - 220 uF capacitor 2 - 1N914 small signal diodes
 
 Additional Equipment:
 ---------------------
 
-| Small handheld DMM
-| +5 V bench power supply
+Small handheld DMM +5 V bench power supply
 
 Directions:
 -----------
@@ -76,16 +68,7 @@ Be sure to start up the digital pulse source output on the ADALM2000 Lab board b
 Questions:
 ----------
 
-| What is the voltage on V\ :sub:`OUT`? Why is it not exactly 2 times V\ :sub:`IN`?
-| What is the effect of changing the frequency of the digital pulse output?
-| Is there a minimum or maximum frequency?
-| How much current can the circuit supply to a load? Try various resistors as a load.
-| Is that current affected by the frequency of the digital pulse output?
-| Calculate the conversion efficiency of the circuit. Ratio of output power (I\ :sub:`OUT`\ \*V\ :sub:`OUT`) to input power (I\ :sub:`IN`\ \* 5V)
-| Change the value of C\ :sub:`1` and C\ :sub:`2` and redo the above. How have the results changed?
-| Connect the other inverters in the 74HC04 package in parallel with INV1 and INV2 in the diagram. What effect do these added drivers have on the results?
-
-.. _directions-1:
+What is the voltage on V\ :sub:`OUT`? Why is it not exactly 2 times V\ :sub:`IN`? What is the effect of changing the frequency of the digital pulse output? Is there a minimum or maximum frequency? How much current can the circuit supply to a load? Try various resistors as a load. Is that current affected by the frequency of the digital pulse output? Calculate the conversion efficiency of the circuit. Ratio of output power (I\ :sub:`OUT`\ \*V\ :sub:`OUT`) to input power (I\ :sub:`IN`\ \* 5V) Change the value of C\ :sub:`1` and C\ :sub:`2` and redo the above. How have the results changed? Connect the other inverters in the 74HC04 package in parallel with INV1 and INV2 in the diagram. What effect do these added drivers have on the results?
 
 Directions:
 -----------
@@ -125,8 +108,6 @@ What sort of circuit could you make to generate the 100 KHz square wave other th
 
    Figure 6 square wave oscillator
 
-
-.. _questions-1:
 
 Questions:
 ----------
@@ -176,10 +157,7 @@ Two of these inverters can be used to construct the inverters needed in figure 3
 For further reading:
 --------------------
 
-| :adi:`The Interleaved Inverting Charge Pump—Part 1: A New Topology for Low Noise Negative Voltage Supplies <en/analog-dialogue/articles/the-interleaved-inverting-charge-pump-part-1.html>`
-| `Wikipedia page on DC-to-DC converters <https://en.wikipedia.org/wiki/DC-to-DC_converter>`_
-| `Wikipedia page on charge pumps <https://en.wikipedia.org/wiki/Charge_pump>`_
-| :adi:`ADM660: CMOS Switched-Capacitor Voltage Converter <static/imported-files/data_sheets/ADM660_8660.pdf>`
+:adi:`The Interleaved Inverting Charge Pump—Part 1: A New Topology for Low Noise Negative Voltage Supplies <en/analog-dialogue/articles/the-interleaved-inverting-charge-pump-part-1.html>` `Wikipedia page on DC-to-DC converters <https://en.wikipedia.org/wiki/DC-to-DC_converter>`_ `Wikipedia page on charge pumps <https://en.wikipedia.org/wiki/Charge_pump>`_ :adi:`ADM660: CMOS Switched-Capacitor Voltage Converter <static/imported-files/data_sheets/ADM660_8660.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 

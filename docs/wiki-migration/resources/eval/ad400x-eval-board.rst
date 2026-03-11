@@ -72,8 +72,6 @@ The :adi:`EVAL-ADAQ40xx` configuration mesaures (IN+ - IN-) as (J2 - J1). Connec
 ZedBoard Platform
 ~~~~~~~~~~~~~~~~~
 
-.. _hardware-required-1:
-
 Hardware Required
 ^^^^^^^^^^^^^^^^^
 

@@ -1,8 +1,7 @@
 Using EVAL-ADICUP360 with IAR and Keil IDEs
 ===========================================
 
-| 
-| This page provides detailed information about using the EVAL-ADICUP360 board with other IDEs than Eclipse, such as IAR Embedded Workbench and Keil µVision. You can find here how to import, build and debug existing IAR/Keil project and how to create your own projects for ADuCM360.
+This page provides detailed information about using the EVAL-ADICUP360 board with other IDEs than Eclipse, such as IAR Embedded Workbench and Keil µVision. You can find here how to import, build and debug existing IAR/Keil project and how to create your own projects for ADuCM360.
 
 .. note::
 
@@ -19,12 +18,10 @@ This page will outline:
    Before using below steps check your IAR and Keil software package version. If you want to use CMSIS-DAP interface you need to use the latest versions that have support for **CMSIS-DAP Debugger**.
 
 
-| 
-| ====== How to import and run an existing project ======
-| You can find the already created <fc #008080>IAR</fc> and <fc #008080>Keil</fc> projects on the **EVAL-ADICUP360 Git repository**, together with <fc #008080>Eclipse</fc> project. Further it will be used as example the **ADuCM360_demo_blink** projects. Please use the link below to download the package:
+How to import and run an existing project
+=========================================
 
-| 
-|
+You can find the already created IAR and Keil projects on the **EVAL-ADICUP360 Git repository**, together with Eclipse project. Further it will be used as example the **ADuCM360_demo_blink** projects. Please use the link below to download the package:
 
 .. admonition:: Download
    :class: download
@@ -34,96 +31,80 @@ This page will outline:
    
 
 
-Inside of the **ADuCM360_demo_blink** folder find **ADuCM360_demo_blink.eww** for <fc #008080>IAR</fc> and **ADuCM360_demo_blink.uvprojx** for <fc #008080>Keil</fc>.
-
-   
-
-
-| 
+Inside of the **ADuCM360_demo_blink** folder find **ADuCM360_demo_blink.eww** for IAR and **ADuCM360_demo_blink.uvprojx** for Keil.
 
 Run an existing IAR project
 ---------------------------
 
-|
-
-| Open **ADuCM360_demo_blink.eww** project and press <fc #ffa500>Make</fc> button:
+Open **ADuCM360_demo_blink.eww** project and press Make button:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/blink_demo_iar_1.png
    :width: 650px
 
-| 
-| Connect **EVAL-ADICUP360** via DEBUG USB and press <fc #ffa500>Download and Debug</fc> button:
+Connect **EVAL-ADICUP360** via DEBUG USB and press Download and Debug button:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/blink_demo_iar_2.png
    :width: 650px
 
-| 
-| A Debug session will open. You can run the program or can debug step by step:
+A Debug session will open. You can run the program or can debug step by step:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/blink_demo_iar_3.png
    :width: 650px
 
-| 
-| ===== Run an existing Keil project =====
-| Open **ADuCM360_demo_blink.uvprojx** project and press <fc #ffa500>Build</fc> button:
+Run an existing Keil project
+----------------------------
+
+Open **ADuCM360_demo_blink.uvprojx** project and press Build button:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/blink_demo_keil_1.png
    :width: 650px
 
-| 
-| Connect **EVAL-ADICUP360** via DEBUG USB and press <fc #ffa500>Download</fc> button:
+Connect **EVAL-ADICUP360** via DEBUG USB and press Download button:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/blink_demo_keil_2.png
    :width: 650px
 
-| 
-| A Debug session will open. You can run the program or can debug step by step:
+A Debug session will open. You can run the program or can debug step by step:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/blink_demo_keil_3.png
    :width: 650px
 
-| 
-| ====== How to create a new project for ADuCM360 ======
-| Both IDEs offer support for ADuCM360 microcontroller which make it very easy to use them with **EVAL-ADICUP360** board. In this chapter will be presented basic setup how to create a new ADuCM360 project. The build, download and debug steps were already explained above.
+How to create a new project for ADuCM360
+========================================
 
-| 
-| ===== Create IAR new project =====
-| Open **IAR Embedded Workbench**, go to <fc #4682b4>\ **Project**\ </fc> tab and select <fc #ffa500>Create New Project</fc> -> select an <fc #ffa500>Empty project</fc> as *Project Template* -> press <fc #ffa500>OK</fc> and save the project on your drive:
+Both IDEs offer support for ADuCM360 microcontroller which make it very easy to use them with **EVAL-ADICUP360** board. In this chapter will be presented basic setup how to create a new ADuCM360 project. The build, download and debug steps were already explained above.
+
+Create IAR new project
+----------------------
+
+Open **IAR Embedded Workbench**, go to **Project** tab and select Create New Project -> select an Empty project as *Project Template* -> press OK and save the project on your drive:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_1.png
    :width: 650px
 
-| 
-| Select project in left window -> <fc #4682b4>\ **Project**\ </fc> and select <fc #ffa500>Add Group</fc> - to create project folders and for each folder create new files (<fc #4682b4>\ **File**\ </fc> -> <fc #ffa500>New</fc> -> <fc #ffa500>File</fc>) or you can add files (<fc #4682b4>\ **Project**\ </fc> -> <fc #ffa500>Add files</fc>):
+Select project in left window -> **Project** and select Add Group - to create project folders and for each folder create new files (**File** -> New -> File) or you can add files (**Project** -> Add files):
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_2.png
    :width: 650px
-
-   | 
-|
 
 .. note::
 
    You need to have a startup code for ADuCM360 microcontroller. Write your own or just use the *startup_ADuCM360.s* file that we provide (:doc:`How to import and run an existing project </wiki-migration/resources/eval/user-guides/eval-adicup360/quickstart/keil_iar_support>`).
 
 
-| 
-| Select project in the left window -> <fc #4682b4>\ **Project**\ </fc> -> <fc #ffa500>Options</fc>:
+Select project in the left window -> **Project** -> Options:
 
--  <fc #ffa500>General Options</fc> ->\ **Target** tab -> select **Device** -> *AnalogDevices ADuCM360*
+-  General Options ->\ **Target** tab -> select **Device** -> *AnalogDevices ADuCM360*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_3.png
    :width: 650px
 
-| 
-| \* <fc #ffa500>General Options</fc> -> **Library Configuration** tab -> check *Use CMSIS*
+-  General Options -> **Library Configuration** tab -> check *Use CMSIS*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_4.png
    :width: 650px
 
-| 
-
--  <fc #ffa500>C/C++ Compiler</fc> -> **Preprocessor** tab -> *Additional include directories* - add path for all include files that will be used in the project:
+-  C/C++ Compiler -> **Preprocessor** tab -> *Additional include directories* - add path for all include files that will be used in the project:
 
 
 |image1|
@@ -133,7 +114,7 @@ Run an existing IAR project
    For **debugger** configuration you can select: **CMSIS-DAP** or **J-Link** interface (depending on your hardware possibilities).
 
 
--  <fc #ffa500>Debugger</fc> -> **Setup** tab -> **Driver** -> *CMSIS DAP*:
+-  Debugger -> **Setup** tab -> **Driver** -> *CMSIS DAP*:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_6.png
    :width: 650px
@@ -143,7 +124,7 @@ Run an existing IAR project
    You can use **CMSIS-DAP interface** with default settings and only connecting an USB cable to ADICUP360 board using **DEBUG** USB.
 
 
--  <fc #ffa500>Debugger</fc> -> **Setup** tab -> **Driver** -> *J-Link/J-Trace*:
+-  Debugger -> **Setup** tab -> **Driver** -> *J-Link/J-Trace*:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_8.png
    :width: 650px
@@ -153,38 +134,35 @@ Run an existing IAR project
    You can use **J-Link interface** with default settings and with J-Link adapter connected to ADICUP360 board using **P16** connector.
 
 
--  <fc #ffa500>Debugger</fc> -> **Download** tab -> check *Use flash loader(s)*:
+-  Debugger -> **Download** tab -> check *Use flash loader(s)*:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_7.png
    :width: 650px
 
-| 
-| ===== Create Keil new project =====
-| Open **Keil µVision**, go to <fc #4682b4>\ **Project**\ </fc> tab and select <fc #ffa500>New µVision Project</fc> -> give a name -> select in the <fc #ffa500>Device</fc> window -> *ADuCM360* -> press *OK*:
+Create Keil new project
+-----------------------
+
+Open **Keil µVision**, go to **Project** tab and select New µVision Project -> give a name -> select in the Device window -> *ADuCM360* -> press *OK*:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_keil_1.png
    :width: 650px
 
-| 
-| In the pop-up window check under <fc #ffa500>CMSIS</fc> -> *CORE* and under <fc #ffa500>Device</fc> -> *Startup*:
+In the pop-up window check under CMSIS -> *CORE* and under Device -> *Startup*:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_keil_2.png
    :width: 650px
 
-| 
-| Select <fc #4682b4>\ **Target 1**\ </fc> -> go to <fc #ffa500>Manage Project Items</fc> button and add your project folders and necessary files:
+Select **Target 1** -> go to Manage Project Items button and add your project folders and necessary files:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_keil_3.png
    :width: 650px
 
-| 
-| Select <fc #4682b4>\ **Target 1**\ </fc> -> go to <fc #ffa500>Options</fc> button -> <fc #ffa500>Debug</fc> tab -> select *CMSIS-DAP Debugger*:
+Select **Target 1** -> go to Options button -> Debug tab -> select *CMSIS-DAP Debugger*:
 
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_keil_4.png
+   :width: 650px
 
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_5.png
-   :width: 650px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_keil_4.png
    :width: 650px

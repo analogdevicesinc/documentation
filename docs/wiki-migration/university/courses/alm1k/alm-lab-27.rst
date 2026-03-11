@@ -67,14 +67,7 @@ The diode, D\ :sub:`1`, serves to increase the effective turn on voltage of Q\ :
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 1 - 100KΩ Resistor
-| 1 - 2.2KΩ Resistor
-| 1 - 470Ω Resistor
-| 1 - 100Ω Resistor
-| 1 - small signal diode (1N914)
-| 5 - small signal NPN transistors (2N3904)
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 - 100KΩ Resistor 1 - 2.2KΩ Resistor 1 - 470Ω Resistor 1 - 100Ω Resistor 1 - small signal diode (1N914) 5 - small signal NPN transistors (2N3904)
 
 Directions:
 ~~~~~~~~~~~
@@ -110,45 +103,41 @@ The transfer characteristic can be deduced by applying a slowly ramping input vo
 
 With the input near 0 volts and the base current supplied to Q\ :sub:`1`, this transistor can conduct in the forward mode. Since the only source of collector current is the leakage of Q\ :sub:`2` , Q\ :sub:`1` will be driven into saturation. This ensures that Q\ :sub:`2` is off which, in turn, means that Q\ :sub:`3` is off. While there is no load present, there are leakage currents flowing in the output stage which allow the transistor Q\ :sub:`4` and the diode D\ :sub:`1` to be barely conducting in the ON state.
 
-| **V\ OUT = V\ CC - V\ BE4 - V\ D1**
-| **V\ OUT = 5 - 0.6 - 0.6 = 3.8V**
-| **Point P1: V\ IN = 0.5, V\ OUT = 3.8V**
-| **Break Point P2**
+**V\ OUT = V\ CC - V\ BE4 - V\ D1** **V\ OUT = 5 - 0.6 - 0.6 = 3.8V** **Point P1: V\ IN = 0.5, V\ OUT = 3.8V**
+
+**Break Point P2**
 
 As the input voltage is slightly increased, the above state continues until, with Q\ :sub:`1` on and in saturation, the voltage at the base of Q\ :sub:`2` rises to the point of conduction. Then:
 
-| **V\ IN = V\ BE2 - V\ CE1(SAT) = 0.6 - 0.1 = 0.5**
-| **Point P2: V\ IN = 0.5, V\ OUT = 3.8V**
-| **Break Point P3**
+**V\ IN = V\ BE2 - V\ CE1(SAT) = 0.6 - 0.1 = 0.5** **Point P2: V\ IN = 0.5, V\ OUT = 3.8V**
+
+**Break Point P3**
 
 As the input voltage is further increased, Q\ :sub:`2` becomes more conducting, turning fully ON. Base current to Q\ :sub:`2` is supplied by the now forward biased base-collector junction of Q\ :sub:`1` which is still in saturation. Eventually, Q\ :sub:`3` reaches the point of conduction. This happens when:
 
-| **V\ IN = V\ BE2 + V\ BE3 - V\ CE1(SAT)**
-| **V\ IN = 0.7 + 0.6 - 0.1 = 1.2V**
-| Note that with transistor Q\ :sub:`3` just at turn on, V\ :sub:`BE3` = 0.6V which means that the current through R\ :sub:`3` is 0.6V/470Ω = 1.27mA. With operation in the linear active region, the collector current in Q\ :sub:`2` is 0.97 × 1.27mA = 1.23mA. ˜ a\ :sub:`F` I\ :sub:`E2`
+**V\ IN = V\ BE2 + V\ BE3 - V\ CE1(SAT)** **V\ IN = 0.7 + 0.6 - 0.1 = 1.2V**
+
+Note that with transistor Q\ :sub:`3` just at turn on, V\ :sub:`BE3` = 0.6V which means that the current through R\ :sub:`3` is 0.6V/470Ω = 1.27mA. With operation in the linear active region, the collector current in Q\ :sub:`2` is 0.97 × 1.27mA = 1.23mA. ˜ a\ :sub:`F` I\ :sub:`E2`
 
 The voltage drop across R\ :sub:`2` is then V\ :sub:`R2` = 1.23mA × 2.2 kΩ = 2.7V.
 
 Under this condition the collector to emitter voltage drop across Q\ :sub:`2` is:
 
-| **V\ CE2 = V\ CC - V\ R2 - V\ R3**
-| **V\ CE2 = 5 - 2.7 - 0.6 = 1.7V**
-| This confirms that Q\ :sub:`2` is still operating in the forward active mode.
+**V\ CE2 = V\ CC - V\ R2 - V\ R3** **V\ CE2 = 5 - 2.7 - 0.6 = 1.7V**
+
+This confirms that Q\ :sub:`2` is still operating in the forward active mode.
 
 With Q\ :sub:`3` beginning to conduct there is a conduction path for current through Q\ :sub:`4` and the diode, D\ :sub:`1`, which then turns fully ON. In this case:
 
-| **V\ O = V\ CC - V\ R1 - V\ BE4 - V\ D1**
-| **V\ O = 5 - 0.94 - 0.65 - 0.6 = 2.81V**
-| **Point 3: V\ i = 1.2V, V\ O = 2.81V**
-| **Break Point P4**
+**V\ O = V\ CC - V\ R1 - V\ BE4 - V\ D1** **V\ O = 5 - 0.94 - 0.65 - 0.6 = 2.81V** **Point 3: V\ i = 1.2V, V\ O = 2.81V**
+
+**Break Point P4**
 
 As the input voltage is further increased, Q\ :sub:`2` conducts more heavily, eventually saturating. Q\ :sub:`3` also conducts more heavily and eventually reaches the point of saturation also. As Q\ :sub:`2` becomes more conducting, its collector current increases. This in turn increases the voltage drop across R\ :sub:`1` which in turn means that the voltage across Q\ :sub:`2` i.e. V\ :sub:`CE2` drops. This falls below the requirement for conduction in Q\ :sub:`4` and the diode, D\ :sub:`1`, so that both of these turn OFF prior to the saturation of Q\ :sub:`3`.
 
 When Q\ :sub:`3` reaches the edge of saturation:
 
-| **V\ i = V\ BE2 + V\ BE3 - V\ CE1**
-| **V\ i = 0.7 + 0.7 - 0.1 = 1.5V**
-| **Point 4: V\ i = 1.4V, V\ O = 0.2V**
+**V\ i = V\ BE2 + V\ BE3 - V\ CE1** **V\ i = 0.7 + 0.7 - 0.1 = 1.5V** **Point 4: V\ i = 1.4V, V\ O = 0.2V**
 
 Questions:
 ~~~~~~~~~~

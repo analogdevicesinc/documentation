@@ -166,13 +166,10 @@ For more information of the register and the bitfields in the register, double c
 AD7194 Demo Modes
 -----------------
 
-.. _ad7194-demo-modes-1:
-
 AD7194 Demo Modes
 =================
 
-| `Visit the demo mode section here <https://wiki.analog.com/resources/eval/user-guides/ad7194/softwareguide/demo_modes>`_
-| **Contents of the demo modes section:**
+`Visit the demo mode section here <https://wiki.analog.com/resources/eval/user-guides/ad7194/softwareguide/demo_modes>`_ **Contents of the demo modes section:**
 
 -  `Low Noise Test Demo <https://wiki.analog.com/resources/eval/user-guides/ad7194/softwareguide/demo_modes>`_
 -  `Weigh scale Demo <https://wiki.analog.com/resources/eval/user-guides/ad7194/softwareguide/demo_modes>`_

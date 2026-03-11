@@ -42,16 +42,7 @@ Build a simulation schematic of the Colpitts oscillator as shown in figure 1. Ca
 Materials:
 ----------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard, and jumper wire kit
-| 1 - 2N3904 NPN transistor
-| 2 - 10 uH inductors
-| 2 - 100 uH inductors
-| 1 - 1 nF capacitor ( marked 102 )
-| 1 - 4.7 nF capacitor ( marked 472 )
-| 2 - 0.1 uF capacitors ( marked 104 )
-| 1 - 1 KΩ resistor
-| Other resistor, capacitors and inductors as needed
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 - 2N3904 NPN transistor 2 - 10 uH inductors 2 - 100 uH inductors 1 - 1 nF capacitor ( marked 102 ) 1 - 4.7 nF capacitor ( marked 472 ) 2 - 0.1 uF capacitors ( marked 104 ) 1 - 1 KΩ resistor Other resistor, capacitors and inductors as needed
 
 Directions:
 -----------
@@ -102,8 +93,7 @@ A plot example using R\ :sub:`1`\ =10KΩ, R\ :sub:`2`\ =1KΩ, C\ :sub:`1`\ =4.7n
 Questions:
 ----------
 
-| Measure the peak to peak output voltage of the output. Measure the DC ( average ) level of the output waveform at the collector of Q\ :sub:`1` and on the other (output) side of AC coupling capacitor C\ :sub:`4`. Measure the period (time T) of the output waveform and its frequency (1/T). Compare this measured frequency to what you calculated by:
-| :math:`F_R = 1 / 2 \pi sqrt(LC)` .
+Measure the peak to peak output voltage of the output. Measure the DC ( average ) level of the output waveform at the collector of Q\ :sub:`1` and on the other (output) side of AC coupling capacitor C\ :sub:`4`. Measure the period (time T) of the output waveform and its frequency (1/T). Compare this measured frequency to what you calculated by: :math:`F_R = 1 / 2 \pi sqrt(LC)` .
 
 Fill in the table below with the measured frequency for other L\ :sub:`1` values. Use the values in the table as suggested options but try to include as many different values as possible using series and parallel combinations of the inductors supplied in your parts kit. For example a 20 uH inductor value can be made from two 10 uH inductors in series and likewise a 50 uH value can be obtained by connecting two 100 uH inductors in parallel. Any of the L\ :sub:`1` optional values shown below should give reliable oscillation.
 
@@ -134,8 +124,7 @@ Fill in the table below with the measured frequency for other L\ :sub:`1` values
 
 **For Further Reading:**
 
-| http://en.wikipedia.org/wiki/Colpitts_oscillator
-| http://en.wikipedia.org/wiki/Barkhausen_stability_criterion
+http://en.wikipedia.org/wiki/Colpitts_oscillator http://en.wikipedia.org/wiki/Barkhausen_stability_criterion
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 

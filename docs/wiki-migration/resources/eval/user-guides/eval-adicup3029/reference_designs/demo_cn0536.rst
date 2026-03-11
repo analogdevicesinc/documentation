@@ -25,7 +25,7 @@ Software flow
 Demo Video
 ----------
 
-.. image:: https://wiki.analog.com/_media/youtube>moclurd4uis
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/youtube>moclurd4uis
    :alt: youtube>moclurd4uis
 
 Demo Requirements
@@ -61,7 +61,7 @@ UART demo with precompiled program
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 -  Set the :doc:`UART switch </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` to USB. |\||
 -  Place the **EVAL-CN0536-ARDZ** on top of the **EVAL-ADICUP3029**.
@@ -75,9 +75,9 @@ UART demo with precompiled program
    :class: download
 
    
-   | 
-   | Precompiled **ADuCM3029_demo_cn0536** project with **UART** communication:
-   | :git-EVAL-ADICUP3029:`releases/download/Latest/ADuCM3029_demo_cn0536_uart.hex`
+   Precompiled **ADuCM3029_demo_cn0536** project with **UART** communication:
+   
+   :git-EVAL-ADICUP3029:`releases/download/Latest/ADuCM3029_demo_cn0536_uart.hex`
 
 
 -  :doc:`Upload </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>` the precompiled .hex file to the board. (Copy the .hex file to the DAPLINK drive)
@@ -104,7 +104,7 @@ MQTT (Wi-Fi) demo with precompiled program
 
 .. raw:: html
 
-   <details><summary>initialState="visible"</summary>
+   <details><summary>initialState="visible"
 
 -  Set the :doc:`UART switch </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` to ARDUINO. |\||
 -  Place the **EVAL-CN0536-ARDZ** on top of the **EVAL-ADICUP3029**.
@@ -126,9 +126,9 @@ MQTT (Wi-Fi) demo with precompiled program
    :class: download
 
    
-   | 
-   | Precompiled **ADuCM3029_demo_cn0536** project with **MQTT** communication:
-   | :git-EVAL-ADICUP3029:`releases/download/Latest/ADuCM3029_demo_cn0536_mqtt.hex`
+   Precompiled **ADuCM3029_demo_cn0536** project with **MQTT** communication:
+   
+   :git-EVAL-ADICUP3029:`releases/download/Latest/ADuCM3029_demo_cn0536_mqtt.hex`
 
 
 -  Create a hotspot or set a WiFi network with the following values (It must have **Internet** connection):
@@ -181,7 +181,7 @@ XHIDDENSTART Use MQTT Web Client to view data initialState="visible" XHIDDENSTAR
 
 .. raw:: html
 
-   <details><summary>Use MQTT local html client to view data</summary>
+   <details><summary>Use MQTT local html client to view data
 
 -  Download the `HTML MQTT client <https://raw.githubusercontent.com/analogdevicesinc/EVAL-ADICUP3029/master/projects/ADuCM3029_demo_cn0536/demo.html>`_ (Rigth click on the link -> *Save link as...*)
 -  Open the saved file into your browser.
@@ -197,7 +197,7 @@ XHIDDENSTART Use MQTT Web Client to view data initialState="visible" XHIDDENSTAR
 
 .. raw:: html
 
-   <details><summary>Use MQTT python client to view data</summary>
+   <details><summary>Use MQTT python client to view data
 
 -  Get the `python script <https://raw.githubusercontent.com/analogdevicesinc/EVAL-ADICUP3029/master/projects/ADuCM3029_demo_cn0536/scripts/main.py>`_ (Rigth click on the link -> *Save link as...*).
 -  Run a terminal (cmd in windows) where the file was downloaded.
@@ -221,7 +221,7 @@ Working with the software
 
 .. raw:: html
 
-   <details><summary>Getting started with the software</summary>
+   <details><summary>Getting started with the software
 
 -  `Make <https://www.gnu.org/software/make>`_ program should be installed and available in the path.
 -  Open a **terminal** (linux) or a **cmd** (windows) and navigate to a directory where to start working.
@@ -244,7 +244,7 @@ Working with the software
 
 .. raw:: html
 
-   <details><summary>Editing software parameters</summary>
+   <details><summary>Editing software parameters
 
 -  For Geiger Counter configuration see geiger_counter.h. The default configuration means:
 
@@ -312,7 +312,7 @@ Working with the software
 
 .. raw:: html
 
-   <details><summary>Build and debug the project</summary>
+   <details><summary>Build and debug the project
 
 :doc:`How to build and a CCES project </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`
 

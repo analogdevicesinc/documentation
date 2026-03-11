@@ -19,15 +19,7 @@ Three stage operational amplifier
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and Jumper wire kit
-| 12 – Resistors, various values
-| 2 – Capacitors
-| 1 – 1N914 or similar diode
-| 5 – 2N3904 NPN transistors, for Q\ :sub:`1`,Q\ :sub:`2`, Q\ :sub:`3`, Q\ :sub:`4` and Q\ :sub:`5`
-| 4 – 2N3906 PNP transistors for Q\ :sub:`6`, Q\ :sub:`7`, Q\ :sub:`10` and Q\ :sub:`11`
-| 1 – TIP31 NPN power transistor Q\ :sub:`8` (or 2N3904)
-| 1 – TIP32 PNP power transistor Q\ :sub:`9` (or 2N3906)
+ADALM1000 hardware module Solder-less breadboard and Jumper wire kit 12 – Resistors, various values 2 – Capacitors 1 – 1N914 or similar diode 5 – 2N3904 NPN transistors, for Q\ :sub:`1`,Q\ :sub:`2`, Q\ :sub:`3`, Q\ :sub:`4` and Q\ :sub:`5` 4 – 2N3906 PNP transistors for Q\ :sub:`6`, Q\ :sub:`7`, Q\ :sub:`10` and Q\ :sub:`11` 1 – TIP31 NPN power transistor Q\ :sub:`8` (or 2N3904) 1 – TIP32 PNP power transistor Q\ :sub:`9` (or 2N3906)
 
 Directions:
 ~~~~~~~~~~~
@@ -79,11 +71,7 @@ C\ :sub:`1` provides frequency compensation in order to reduce the gain at high 
 
 While there are no perfect op amps, some monolithic devices are very, very good. This circuit has some real shortcomings as follows:
 
-| No provision for thermal stability – operate at room temperature only.
-| Relatively high input offset voltage, but can be nulled.
-| Lack of output overcurrent protection.
-| Limited open loop voltage gain – the open loop voltage gain of a monolithic device is at least an order of magnitude higher.
-| Potentially high crossover distortion
+No provision for thermal stability – operate at room temperature only. Relatively high input offset voltage, but can be nulled. Lack of output overcurrent protection. Limited open loop voltage gain – the open loop voltage gain of a monolithic device is at least an order of magnitude higher. Potentially high crossover distortion
 
 Questions:
 ~~~~~~~~~~
@@ -119,7 +107,7 @@ Resistors R5 and R6 set the steady state bias current in the output stage. Using
 
 Output emitter resistors R7 and R8 can be any small value in the range of 2.7 to 10 ohms.
 
-:git-education_tools:`Experiment board design files <experiment-boards>`
+`Experiment board design files <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/experiment-boards>`_
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13-f2.png
    :align: center

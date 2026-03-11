@@ -16,10 +16,10 @@ For example:
 
 ::
 
-   Enter the system_top.hdf location 
+   Enter the system_top.hdf location
    "example => C:/workspace/my_proj1_hdf/system_top.hdf"
    system_top.hdf
-   Enter the project build folder 
+   Enter the project build folder
    "example => C:/my_workspaces Note: use "/" instead of "\""
    fmcomms2_zc706
 
@@ -47,8 +47,8 @@ For example:
 
 ::
 
-   ****** Xilinx Software Commandline Tool (XSCT) v2015.2
-     **** Build date : Jun 26 2015-17:09:09
+   ***** Xilinx Software Commandline Tool (XSCT) v2015.2
+     *** Build date : Jun 26 2015-17:09:09
        ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 
 
@@ -128,8 +128,6 @@ For example:
 
    A default path of the Xilinx SDK installation folder is specified in the script. If you have installed the package in a different location, please modify the script accordingly
 
-
-.. _makefile-1:
 
 Makefile
 ~~~~~~~~

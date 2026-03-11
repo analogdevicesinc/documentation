@@ -27,8 +27,7 @@ It is recommended that the free introductory version of SIMetrix (or ADsimPE) be
 
 **Electronics lab simulation schematic files with LTspice:** :git-education_tools:`electronics-lab-ltspice <m2k/ltspice>`
 
-| **Mini-Tutorial on analog circuit simulation:**
-| http://www.analog.com/static/imported-files/tutorials/MT-099.pdf
+**Mini-Tutorial on analog circuit simulation:** http://www.analog.com/static/imported-files/tutorials/MT-099.pdf
 
 [1] L. W. Nagel, "SPICE2: A Computer Program to Simulate Semiconductor Circuits," May 1975, UCB/ERL M75/520, Univ. of California, Berkeley, CA, 94720.
 
@@ -39,13 +38,14 @@ Software Links:
 
 http://www.simetrix.co.uk/site/index.html
 
-| [4] **ADIsimPE:**
-| \* Extensive library of ADI IC models and application schematics.
-| \* Full schematics capture and editing capabilities with easy waveform viewing and analysis.
-| \* SPICE mode SIMetrix simulation ideal for op-amps, references, Linear Regulators, and more.
-| \* SIMPLIS mode simulation optimized for switching power supplies, PLLs, and more.
-| \* Integration capability with ADIsimPower design tools.
-| \* Supported by EngineerZone.
+[4] **ADIsimPE:**
+
+-   Extensive library of ADI IC models and application schematics.
+-   Full schematics capture and editing capabilities with easy waveform viewing and analysis.
+-   SPICE mode SIMetrix simulation ideal for op-amps, references, Linear Regulators, and more.
+-   SIMPLIS mode simulation optimized for switching power supplies, PLLs, and more.
+-   Integration capability with ADIsimPower design tools.
+-   Supported by EngineerZone.
 
 http://www.analog.com/en/content/adisimpe/fca.html
 
@@ -57,8 +57,7 @@ http://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simu
 
 http://fritzing.org/home/
 
-| Another public domain circuit simulation software package:
-| **Qucs - Quite Universal Circuit Simulator.**
+Another public domain circuit simulation software package: **Qucs - Quite Universal Circuit Simulator.**
 
 Qucs is an integrated circuit simulator with the ability to setup a circuit with a graphical user interface (GUI) and simulate the large-signal, small-signal and noise behavior of the circuit. After the simulation has finished the simulation results can be viewed on a presentation page or window.
 

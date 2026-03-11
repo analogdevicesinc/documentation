@@ -12,7 +12,7 @@ The **AD-GMSL2ETH-SL** is an edge compute platform enabling low latency data tra
 -  Embedded processing capabilities using the on-board `AMD Kria K26 System-on-Module Industrial <https://www.amd.com/en/products/system-on-modules/kria/k26/k26i-industrial.html>`_
 -  ROS2 compliant
 -  Open-source embedded Linux software and FPGA design
--  Advanced camera triggering functions and control features ​
+-  Advanced camera triggering functions and control features
 
 |image1| |image2|
 
@@ -49,7 +49,6 @@ Specifications
 | Network data protocol | RTP over UDP with software implementation and option for licensable FPGA accelerated RTP & UDP stack |
 +-----------------------+------------------------------------------------------------------------------------------------------+
 
---------------
 
 System setup & evaluation
 -------------------------

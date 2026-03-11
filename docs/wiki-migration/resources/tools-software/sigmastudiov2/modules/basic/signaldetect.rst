@@ -3,14 +3,16 @@
 Signal Detection
 ================
 
-| 
-| |signaldetection.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/signaldetection.png
+   :alt: signaldetection.png
 
 Description
 -----------
 
-| The Signal Detection algorithm is a cell that will output a flag once no signal has been present at the input for a given amount of time. The “Threshold” setting will determine the value the input is compared to in order to determine whether or not a signal is present. The “Trig Time” setting will determine how long, in seconds, the cell will wait to output the flag. The peak of the signal is detected, not the RMS value.
-| ===== Targets Supported =====
+The Signal Detection algorithm is a cell that will output a flag once no signal has been present at the input for a given amount of time. The “Threshold” setting will determine the value the input is compared to in order to determine whether or not a signal is present. The “Trig Time” setting will determine how long, in seconds, the cell will wait to output the flag. The peak of the signal is detected, not the RMS value.
+
+Targets Supported
+-----------------
 
 +-----------------+------------+------------------+---------------+------------------+
 | Name            | ADSP-214xx | ADSP-215xx/SC5xx | ADAU145x/146x | ADSP-218xx/SC8xx |
@@ -24,15 +26,15 @@ Description
 Input
 ~~~~~
 
-======================= ===== ===============
-Name                    Type  Description
-======================= ===== ===============
-Input<fc #ff0000>X</fc> Audio Input channel X
-======================= ===== ===============
+====== ===== ===============
+Name   Type  Description
+====== ===== ===============
+InputX Audio Input channel X
+====== ===== ===============
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
 Output
 ~~~~~~
@@ -43,7 +45,7 @@ Name    Type  Description
 Output0 Audio Output channel0
 ======= ===== ===============
 
-| 
+
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,7 +73,7 @@ Output0 Audio Output channel0
 
 | 
 | ===== DSP Parameter Computation ===== Threshold= 10^ (threshold/20)
-| TimeConstant = 10^(-1.0 \* Log10(16.0 - 0.0001) / (TrigTime \* FS / 2)
-| TimeConstant = TrigTime \* FS ( Applicable for ADAU145x/146x)
 
-.. |signaldetection.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/signaldetection.png
+TimeConstant = 10^(-1.0 \* Log10(16.0 - 0.0001) / (TrigTime \* FS / 2)
+
+TimeConstant = TrigTime \* FS ( Applicable for ADAU145x/146x)

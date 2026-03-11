@@ -27,7 +27,7 @@ Download and build gr-m2k
    mkdir build
    cd build
    cmake ..
-   make 
+   make
    sudo make install
    cd ../..
    sudo ldconfig
@@ -37,7 +37,7 @@ In order to use the digital interfaces please enable the digital option:
 ::
 
    cmake -DDIGITAL=ON ..
-   make 
+   make
    sudo make install
 
 Blocks

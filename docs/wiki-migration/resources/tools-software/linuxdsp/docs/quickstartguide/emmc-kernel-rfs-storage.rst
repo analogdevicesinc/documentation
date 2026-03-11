@@ -41,14 +41,14 @@ Two patches should be applied. The directory the changes needed to take place is
    +++ b/include/configs/sc_adi_common.h
    @@ -178,7 +178,7 @@
        "spiboot=run spi_boot\0"
-    
+
     #define ADI_MMC_BOOT \
    -   "update_mmc=setenv bootcmd \'run mmcboot\'; saveenv; run ramboot\0" \
    +   "update_mmc=setenv bootcmd \'run mmcboot\'; saveenv; setenv imagefile fitImage-emmc-tools; run ramboot\0" \
        "mmcargs=setenv bootargs " ADI_BOOTARGS_MMC "\0" \
        "mmcload=" ADI_MMC_LOAD "\0" \
-       "mmc_boot=" ADI_MMC_BOOTCMD "\0" \
-   -- 
+       **"mmc_boot=" ADI_MMC_BOOTCMD "\0" \**
+
    GitLab
 
 .. code:: diff
@@ -70,7 +70,7 @@ Two patches should be applied. The directory the changes needed to take place is
    --- a/meta-adi-adsp-sc5xx/classes/adsp-fit-generation.bbclass
    +++ b/meta-adi-adsp-sc5xx/classes/adsp-fit-generation.bbclass
    @@ -58,7 +58,7 @@ emit_its() {
-    
+
            ramdisk-3 {
                description = "Initial Ram File System";
    -           data = /incbin/("adsp-sc5xx-ramdisk-${MACHINE}.cpio.gz");
@@ -79,7 +79,7 @@ Two patches should be applied. The directory the changes needed to take place is
                arch = "${ARCH}";
                os = "linux";
    @@ -95,7 +95,15 @@ EOF
-    
+
     do_assemble_fitimage() {
        cd ${DEPLOY_DIR_IMAGE}
    -   emit_its;
@@ -94,17 +94,17 @@ Two patches should be applied. The directory the changes needed to take place is
    +   emit_its ramdisk;
        uboot-mkimage -D "${UBOOT_MKIMAGE_DTCOPTS}" -f fit-image.its fitImage
     }
-    
+
    diff --git a/meta-adi-adsp-sc5xx/recipes-adi/images/adsp-sc5xx-minimal-mmc.bb b/meta-adi-adsp-sc5xx/recipes-adi/images/adsp-sc5xx-minimal-mmc.bb
    index eb1bcfe..b856841 100644
    --- a/meta-adi-adsp-sc5xx/recipes-adi/images/adsp-sc5xx-minimal-mmc.bb
    +++ b/meta-adi-adsp-sc5xx/recipes-adi/images/adsp-sc5xx-minimal-mmc.bb
    @@ -1,13 +1,13 @@
     inherit adsp-sc5xx-minimal
-    
+
    -IMAGE_INSTALL += "kernel kernel-devicetree"
    +DEPENDS += "adsp-sc5xx-ramdisk-emmc-tools"
-    
+
    -#We do not need these files in the rootfs -- remove them to reduce the minimal rootfs size
    -fakeroot do_rootfs_cleanup(){
    -
@@ -113,24 +113,24 @@ Two patches should be applied. The directory the changes needed to take place is
    +do_rootfs[depends] += " \
    +   adsp-sc5xx-ramdisk-emmc-tools:do_image_complete \
    +"
-    
+
    +fakeroot do_rootfs_cleanup(){
    +   #We do not need these files in the rootfs -- remove them to reduce the minimal rootfs size
        rm -rf ${IMAGE_ROOTFS}/etc/udev/hwdb.bin
        rm -rf ${IMAGE_ROOTFS}/etc/udev/hwdb.d
-    
+
    @@ -16,8 +16,11 @@ fakeroot do_rootfs_cleanup(){
-    
+
        rm -rf ${IMAGE_ROOTFS}/usr/lib/libX11.so.6
        rm -rf ${IMAGE_ROOTFS}/usr/lib/libX11.so.6.3.0
    +
    +   #Pack fitImage into MMC RFS:
    +   cp ${DEPLOY_DIR_IMAGE}/fitImage ${IMAGE_ROOTFS}/boot
     }
-    
+
    -addtask rootfs_cleanup after do_rootfs before do_image
    +addtask rootfs_cleanup after do_assemble_fitimage before do_image_ext4
-    
+
     IMAGE_FSTYPES:append = " wic.gz ext4 "
    diff --git a/meta-adi-adsp-sc5xx/recipes-adi/images/adsp-sc5xx-ramdisk-emmc-tools.bb b/meta-adi-adsp-sc5xx/recipes-adi/images/adsp-sc5xx-ramdisk-emmc-tools.bb
    index e7872eb..dbf441e 100644
@@ -139,7 +139,7 @@ Two patches should be applied. The directory the changes needed to take place is
    @@ -1,4 +1,4 @@
    -inherit core-image extrausers adsp-sc5xx-compatible
    +inherit adsp-sc5xx-ramdisk adsp-fit-generation
-    
+
     SUMMARY = "eMMC/MMC provisioning ramdisk image for Analog Devices ADSP-SC5xx boards"
     LICENSE = "MIT"
    @@ -6,6 +6,7 @@ LICENSE = "MIT"
@@ -151,13 +151,13 @@ Two patches should be applied. The directory the changes needed to take place is
         gzip \
         adi-flash-emmc \
    @@ -15,4 +16,4 @@ MMC_UTILS = " \
-    
+
     IMAGE_INSTALL:append = " \
         ${MMC_UTILS} \
    -"
    +"
-   \ No newline at end of file
-   -- 
+   **\ No newline at end of file**
+
    GitLab
 
 You can copy and paste the contents of the above two patches in files under the target directory (``PROJECTDIR/sources/meta-adi/''), e.g. patch1.patch & patch2.patch, and apply them with git, e.g. '' git apply patch1.patch && git apply patch2.patch``

@@ -7,16 +7,18 @@ Dynamometer Drive System
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
-   |Dynamometer Drive System|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-dyno1-ebz.png
+   :alt: Dynamometer Drive System
+   :width: 400px
 
 Features
 --------
 
 ::
 
-   *[[http://www.anaheimautomation.com/products/brushless/brushless-motor-item.php?sID=143&pt=i&tID=96&cID=22|Two BLDC motors connected in a dyno setup (BLY171S-24V-4000 and BLY171D-24V-4000)]]\\
+   *[[http://www.anaheimautomation.com/products/brushless/brushless-motor-item.php?sID=143&pt=i&tID=96&cID=22|Two BLDC motors connected in a dyno setup (BLY171S-24V-4000 and BLY171D-24V-4000)]]
    * Electronically adjustable load – the load value is set using the onboard buttons + LCD
-   * Programmable step and ramp load changes 
+   * Programmable step and ramp load changes
    * Measurement and display of load motor phase currents
    * Measurement and display of load motor speed
    * External control using Analog Discovery
@@ -104,8 +106,8 @@ Two software packages are available for interfacing with Analog Discovery™:
 
 ::
 
-   *[[http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,66,849&Prod=WAVEFORMS|Digilent® WaveForms™]]\\
-   *[[http://www.mathworks.co.uk/help/daq/examples/getting-started-acquiring-data-with-digilent-analog-discovery.html|MathWorks Analog Discovery toolbox ]]\\
+   *[[http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,66,849&Prod=WAVEFORMS|Digilent® WaveForms™]]
+   *[[http://www.mathworks.co.uk/help/daq/examples/getting-started-acquiring-data-with-digilent-analog-discovery.html|MathWorks Analog Discovery toolbox ]]
 
 The signals available to the Analog Discovery™ are:
 
@@ -142,10 +144,8 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#signal_chain
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/navigation AD-FMCMOTCON1-EBZ#signal_chain
    :alt: Signal Measurement Chain#..:\|Overview#none
 
-.. |Dynamometer Drive System| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-dyno1-ebz.png
-   :width: 400px
 .. |Dyno menu| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/Dyno_Menu.png
    :width: 500px

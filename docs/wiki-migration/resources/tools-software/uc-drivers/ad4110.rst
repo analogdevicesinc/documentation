@@ -59,104 +59,119 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``typedef enum {                                                             |
+    typedef enum {
+     AD4110_DISABLE,
+     AD4110_ENABLE
+    } ad4110_state;
 
-|     AD4110_DISABLE,                                                          |
-|     AD4110_ENABLE                                                            |
-| } ad4110_state;                                                              |
-|                                                                              |
-| typedef enum {                                                               |
-|     AD4110_DATA_WL24,                                                        |
-|     AD4110_DATA_WL16,                                                        |
-| } ad4110_data_word_length;                                                   |
-|                                                                              |
-| typedef enum {                                                               |
-|     AD4110_CONTINOUS_CONV_MODE,                                              |
-|     AD4110_SINGLE_CONV_MODE,                                                 |
-|     AD4110_STANDBY_MODE,                                                     |
-|     AD4110_PW_DOWN_MODE,                                                     |
-|     AD4110_SYS_OFFSET_CAL = 6,                                               |
-|     AD4110_SYS_GAIN_CAL                                                      |
-| } ad4110_adc_mode;                                                           |
-|                                                                              |
-| typedef enum {                                                               |
-|     AD4110_VOLTAGE_MODE,                                                     |
-|     AD4110_CURRENT_MODE,                                                     |
-|     AD4110_CURRENT_MODE_EXT_R_SEL,                                           |
-|     AD4110_THERMOCOUPLE,                                                     |
-|     AD4110_FLD_POWER_MODE,                                                   |
-|     AD4110_RTD_2W_MODE,                                                      |
-|     AD4110_RTD_3W_MODE,                                                      |
-|     AD4110_RTD_4W_MODE                                                       |
-| } ad4110_op_mode;                                                            |
-|                                                                              |
-| typedef enum {                                                               |
-|     AD4110_ADC_CRC_DISABLE,                                                  |
-|     AD4110_ADC_XOR_CRC, // 8-bit XOR checksum on reads, 8-bit CRC on writes  |
-|     AD4110_ADC_CRC_CRC // 8-bit CRC on reads and writes.                     |
-| }ad4110_adc_crc_mode;                                                        |
-|                                                                              |
-| typedef enum {                                                               |
-|     AD4110_AFE_CRC_DISABLE,                                                  |
-|     AD4110_AFE_CRC  // 8-bit CRC on reads and writes.                        |
-| }ad4110_afe_crc_mode;                                                        |
-|                                                                              |
-| typedef enum{                                                                |
-|     AD4110_GAIN_0_2,                                                         |
-|     AD4110_GAIN_0_25,                                                        |
-|     AD4110_GAIN_0_3,                                                         |
-|     AD4110_GAIN_0_375,                                                       |
-|     AD4110_GAIN_0_5,                                                         |
-|     AD4110_GAIN_0_75,                                                        |
-|     AD4110_GAIN_1,                                                           |
-|     AD4110_GAIN_1_5,                                                         |
-|     AD4110_GAIN_2,                                                           |
-|     AD4110_GAIN_3,                                                           |
-|     AD4110_GAIN_4,                                                           |
-|     AD4110_GAIN_6,                                                           |
-|     AD4110_GAIN_8,                                                           |
-|     AD4110_GAIN_12,                                                          |
-|     AD4110_GAIN_16,                                                          |
-|     AD4110_GAIN_24                                                           |
-| }ad4110_gain;                                                                |
-|                                                                              |
-| typedef struct {                                                             |
-|     /* SPI */                                                                |
-|     spi_device                  spi_dev;                                     |
-|     /* GPIO */                                                               |
-|     gpio_device                 gpio_dev;                                    |
-|     int8_t                      gpio_reset;                                  |
-|     /* Device Settings */                                                    |
-|     ad4110_state                data_stat;                                   |
-|     ad4110_data_word_length     data_length;                                 |
-|     ad4110_adc_crc_mode         adc_crc_en;                                  |
-|     ad4110_afe_crc_mode         afe_crc_en;                                  |
-|     ad4110_op_mode              op_mode;                                     |
-|     ad4110_gain                 gain;                                        |
-| } ad4110_dev;                                                                |
-|                                                                              |
-| typedef struct {                                                             |
-|     /* SPI */                                                                |
-|     uint8_t                     spi_chip_select;                             |
-|     spi_mode                    spi_mode;                                    |
-|     spi_type                    spi_type;                                    |
-|     uint32_t                    spi_device_id;                               |
-|     /* GPIO */                                                               |
-|     gpio_type                   gpio_type;                                   |
-|     uint32_t                    gpio_device_id;                              |
-|     int8_t                      gpio_reset;                                  |
-|     /* Device Settings */                                                    |
-|     ad4110_state                data_stat;                                   |
-|     ad4110_data_word_length     data_length;                                 |
-|     ad4110_afe_crc_mode         afe_crc_en;                                  |
-|     ad4110_adc_crc_mode         adc_crc_en;                                  |
-|     ad4110_op_mode              op_mode;                                     |
-|     ad4110_gain                 gain;                                        |
-| } ad4110_init_param;``                                                       |
-+------------------------------------------------------------------------------+
+::
+
+    typedef enum {
+     AD4110_DATA_WL24,
+     AD4110_DATA_WL16,
+    } ad4110_data_word_length;
+
+::
+
+    typedef enum {
+     AD4110_CONTINOUS_CONV_MODE,
+     AD4110_SINGLE_CONV_MODE,
+     AD4110_STANDBY_MODE,
+     AD4110_PW_DOWN_MODE,
+     AD4110_SYS_OFFSET_CAL = 6,
+     AD4110_SYS_GAIN_CAL
+    } ad4110_adc_mode;
+
+::
+
+    typedef enum {
+     AD4110_VOLTAGE_MODE,
+     AD4110_CURRENT_MODE,
+     AD4110_CURRENT_MODE_EXT_R_SEL,
+     AD4110_THERMOCOUPLE,
+     AD4110_FLD_POWER_MODE,
+     AD4110_RTD_2W_MODE,
+     AD4110_RTD_3W_MODE,
+     AD4110_RTD_4W_MODE
+    } ad4110_op_mode;
+
+::
+
+    typedef enum {
+     AD4110_ADC_CRC_DISABLE,
+     AD4110_ADC_XOR_CRC, // 8-bit XOR checksum on reads, 8-bit CRC on writes
+     AD4110_ADC_CRC_CRC // 8-bit CRC on reads and writes.
+    }ad4110_adc_crc_mode;
+
+::
+
+    typedef enum {
+     AD4110_AFE_CRC_DISABLE,
+     AD4110_AFE_CRC  // 8-bit CRC on reads and writes.
+    }ad4110_afe_crc_mode;
+
+::
+
+    typedef enum{
+     AD4110_GAIN_0_2,
+     AD4110_GAIN_0_25,
+     AD4110_GAIN_0_3,
+     AD4110_GAIN_0_375,
+     AD4110_GAIN_0_5,
+     AD4110_GAIN_0_75,
+     AD4110_GAIN_1,
+     AD4110_GAIN_1_5,
+     AD4110_GAIN_2,
+     AD4110_GAIN_3,
+     AD4110_GAIN_4,
+     AD4110_GAIN_6,
+     AD4110_GAIN_8,
+     AD4110_GAIN_12,
+     AD4110_GAIN_16,
+     AD4110_GAIN_24
+    }ad4110_gain;
+
+::
+
+    typedef struct {
+     /* SPI */
+     spi_device                  spi_dev;
+     /* GPIO */
+     gpio_device                 gpio_dev;
+     int8_t                      gpio_reset;
+     /* Device Settings */
+     ad4110_state                data_stat;
+     ad4110_data_word_length     data_length;
+     ad4110_adc_crc_mode         adc_crc_en;
+     ad4110_afe_crc_mode         afe_crc_en;
+     ad4110_op_mode              op_mode;
+     ad4110_gain                 gain;
+    } ad4110_dev;
+
+::
+
+    typedef struct {
+     /* SPI */
+     uint8_t                     spi_chip_select;
+     spi_mode                    spi_mode;
+     spi_type                    spi_type;
+     uint32_t                    spi_device_id;
+     /* GPIO */
+     gpio_type                   gpio_type;
+     uint32_t                    gpio_device_id;
+     int8_t                      gpio_reset;
+     /* Device Settings */
+     ad4110_state                data_stat;
+     ad4110_data_word_length     data_length;
+     ad4110_afe_crc_mode         afe_crc_en;
+     ad4110_adc_crc_mode         adc_crc_en;
+     ad4110_op_mode              op_mode;
+     ad4110_gain                 gain;
+    } ad4110_init_param;
 
 Downloads
 ---------

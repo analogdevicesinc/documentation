@@ -76,16 +76,17 @@ Please do the following modifications on the AD9250 evaluation board.
 -  **Populate R549**\ \*
 -  **Populate R550**\ \*
 
-\* The reference design uses REFCLK2 as the reference clock source. If the board defaults to REFCLK1, follow these instructions to switch to REFCLK2.
+- The reference design uses REFCLK2 as the reference clock source. If the board defaults to REFCLK1, follow these instructions to switch to REFCLK2.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| To begin make the following connections (see image below):
+To begin make the following connections (see image below):
 
 .. tip::
 
-   | For proper operation, it is important that the steps must be done in this exact order
+   
+   For proper operation, it is important that the steps must be done in this exact order
    
 
 
@@ -272,14 +273,14 @@ The example code is located in the ”\ *main.c*\ ” file and the implementatio
 Downloads
 ---------
 
-| The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices github.
-|
+The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices github.
 
 .. important::
 
    Only Xilinx coregen xco files are provided with the HDL Reference Design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
 
-   | The software project contains 2 components: the AD9250-EBZ reference design files and the AD9250 driver. All the components have to be downloaded from the links below.
+   
+   The software project contains 2 components: the AD9250-EBZ reference design files and the AD9250 driver. All the components have to be downloaded from the links below.
 
 
 **HDL Reference Designs:**
@@ -288,49 +289,40 @@ Downloads
    :class: download
 
    
-   -  \**KC705 \*\* `cf_ad9250_ebz_edk_14_4_2013_04_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9250_ebz_edk_14_4_2013_04_04.tar.gz>`_
-   -  \**VC707 \*\* `cf_ad9250_ebz_vc707_edk_14_4_2013_04_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9250_ebz_vc707_edk_14_4_2013_04_04.tar.gz>`_
-   -  \**ZC706 \*\* `cf_ad9250_ebz_zc706_edk_14_4_2013_04_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9250_ebz_zc706_edk_14_4_2013_04_04.tar.gz>`_
+   -  **KC705** `cf_ad9250_ebz_edk_14_4_2013_04_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9250_ebz_edk_14_4_2013_04_04.tar.gz>`_
+   -  **VC707** `cf_ad9250_ebz_vc707_edk_14_4_2013_04_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9250_ebz_vc707_edk_14_4_2013_04_04.tar.gz>`_
+   -  **ZC706** `cf_ad9250_ebz_zc706_edk_14_4_2013_04_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9250_ebz_zc706_edk_14_4_2013_04_04.tar.gz>`_
    
 
 
-| **no-OS Software:**
+**no-OS Software:**
 
 .. admonition:: Download
    :class: download
 
-   | \* \**AD9250 Driver: \*\* :git-no-OS:`drivers/adc/ad9250`
    
-   -  \**AD9250-EBZ Reference Design: \*\* :git-no-OS:`AD9250-EBZ`
+   -  **AD9250 Driver:** :git-no-OS:`drivers/adc/ad9250`
+   -  **AD9250-EBZ Reference Design:** :git-no-OS:`AD9250-EBZ`
    
-   |
-
-   |
 
 
-| **Board Files:**
+**Board Files:**
 
 .. admonition:: Download
    :class: download
 
-   | \* `Rev C Schematics for the card <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9250_ebz/ad9250_schematic_02_12008.pdf>`_
    
+   -  `Rev C Schematics for the card <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9250_ebz/ad9250_schematic_02_12008.pdf>`_
    -  `AD9250-250EBZ Gerber/Layout Fabrication Files <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9250_ebz/ad9250_gerber_20_012008b.zip>`_
    
-   |
 
-   |
-
-
-|
 
 .. hint::
 
+   
+   -  Questions? `Ask Help & Support <https://ez.analog.com/>`_.
+   
 
-   ..
-
-| \* Questions? `Ask Help & Support <https://ez.analog.com/>`_.
-   |
 
 Reference Design Contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -376,18 +368,10 @@ Reference Design Contents
 More information
 ----------------
 
-|
-
 .. hint::
 
-
-   ..
-
-| \* `VITA's FMC info <http://www.vita.com/fmc>`_
    
+   -  `VITA's FMC info <http://www.vita.com/fmc>`_
    -  :ez:`Ask questions about the FPGA reference design <community/fpga>`
    
-   |
-
-   |
 

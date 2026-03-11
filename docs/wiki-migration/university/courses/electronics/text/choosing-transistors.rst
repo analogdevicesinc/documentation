@@ -184,7 +184,7 @@ Different devices in the same package may have different pinouts. It is importan
 
 In high frequency design it may be useful to select a device with a pinout which allows the least parasitic reactance in the PCB layout.
 
-\**Collector/drain leakage current. Ice0 or Idss0 \**(Sometimes called the **"cutoff current"**.) This is the small leakage current which flows from collector to emitter or drain to source when the transistor is turned off. It is usually in the order of tens of nA but data sheets sometimes set rather larger worst case maximum values to reduce testing costs. Transistors used as very low level switches or amplifiers should be chosen for leakage below 50 nA but for most applications 200 nA or even more is quite satisfactory.
+**Collector/drain leakage current. Ice0 or Idss0**(Sometimes called the **"cutoff current"**.) This is the small leakage current which flows from collector to emitter or drain to source when the transistor is turned off. It is usually in the order of tens of nA but data sheets sometimes set rather larger worst case maximum values to reduce testing costs. Transistors used as very low level switches or amplifiers should be chosen for leakage below 50 nA but for most applications 200 nA or even more is quite satisfactory.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f8.jpg
    :align: center
@@ -197,7 +197,7 @@ In high frequency design it may be useful to select a device with a pinout which
 
 The low power inverter shown in figure 8 is an example of circuits requiring very low collector/drain leakage. Drain leakage of 100 nA gives a voltage drop of 1V and an output voltage of 2.0V, only just on the threshold of permitted logic 1 levels, so practical designs should use an MOSFET having drain/source leakage =50 nA. (Note that although this inverter is very low power [300 nA = 0.9 µW when the transistor is on] it is also very slow - assuming a transistor output capacitance plus track capacitance plus next stage input capacitance of 20 pF, which is not unreasonable, it has a rise time of some 0.2 msec - not a problem for DC applications, but useless for even medium speed switching circuits.)
 
-\**Current gain. ß or hfe \**The current gain of a BJT is the ratio of the collector current to the base current when the device is not in saturation (i.e. the collector/base voltage is positive [for an NPN device]). ß is usually fairly constant over a wide range of currents, but it may be slightly lower at very low base currents and will almost certainly start to fall as the collector current approaches its absolute maximum value. Since it is a ratio it is a dimensionless value.
+**Current gain. ß or hfe**\ The current gain of a BJT is the ratio of the collector current to the base current when the device is not in saturation (i.e. the collector/base voltage is positive [for an NPN device]). ß is usually fairly constant over a wide range of currents, but it may be slightly lower at very low base currents and will almost certainly start to fall as the collector current approaches its absolute maximum value. Since it is a ratio it is a dimensionless value.
 
 TUNs and TUPs have ß = 100, but high current and high voltage BJTs may have slightly lower (=40 or 50) minimum specified values.
 
@@ -223,15 +223,15 @@ An emitter follower/source follower output stage, illustrated in figure 9, is eq
 
 Since some of the emitter current must flow in the base the collector and emitter currents of a BJT are not identical, which means that the current output stage in figure 10 should be made with a MOSFET rather than a BJT since MOSFETs have virtually zero gate current.
 
-\**Forward transconductance. gfs \**The forward transconductance of an FET is the ratio of ΔI\ :sub:`ds`/ΔV\ :sub:`gs` when the device is turned on and the drain circuit is not current-limited. It is measured in siemens (S) (or, for traditionalists amongst us, in mhos or reciprocal ohms [Ʊ], which are the obsolete name and symbol for exactly the same thing). Small-signal FETs and MOSFETs may have g\ :sub:`fs` as low as a few mS but larger ones can have gains of large fractions of a siemens to several siemens or more.
+**Forward transconductance. gfs**\ The forward transconductance of an FET is the ratio of ΔI\ :sub:`ds`/ΔV\ :sub:`gs` when the device is turned on and the drain circuit is not current-limited. It is measured in siemens (S) (or, for traditionalists amongst us, in mhos or reciprocal ohms [Ʊ], which are the obsolete name and symbol for exactly the same thing). Small-signal FETs and MOSFETs may have g\ :sub:`fs` as low as a few mS but larger ones can have gains of large fractions of a siemens to several siemens or more.
 
 In general a few volts change of gate voltage is sufficient to change the drain current from minimum (off) to its absolute maximum value. It is also important to know at what gate voltage conduction starts - see:-
 
-\**Gate threshold voltage. Vgs(th) \**The gate threshold voltage of a MOSFET is the gate/source voltage at which the correctly biased drain starts to draw current. The definition of "starts" will be specified on the data sheet and may be as low as a few µA, but is more likely to be defined as 1 mA, or even more with a high power MOSFET. Above this threshold drain current will rise very quickly with small increases of gate voltage.
+**Gate threshold voltage. Vgs(th)**\ The gate threshold voltage of a MOSFET is the gate/source voltage at which the correctly biased drain starts to draw current. The definition of "starts" will be specified on the data sheet and may be as low as a few µA, but is more likely to be defined as 1 mA, or even more with a high power MOSFET. Above this threshold drain current will rise very quickly with small increases of gate voltage.
 
 If an MOSFET is to be driven by logic it is important that its threshold voltage be above the worst case value of logic 0 over the temperature range of the circuit, which is likely to be at least several hundreds of mV, as otherwise it may start to turn on when it is supposed to be turned off.
 
-\**Saturation Voltage. Vce(sat) \**When a BJT is turned on hard enough that the voltage drop in its collector load is sufficient to bring the collector potential below the base potential (in other words the base-collector junction is forward biased) it is said to be *saturated*. This saturation voltage is not proportional to the collector current, so the model of a saturated transistor is not just a resistance between its collector and emitter.
+**Saturation Voltage. Vce(sat)**\ When a BJT is turned on hard enough that the voltage drop in its collector load is sufficient to bring the collector potential below the base potential (in other words the base-collector junction is forward biased) it is said to be *saturated*. This saturation voltage is not proportional to the collector current, so the model of a saturated transistor is not just a resistance between its collector and emitter.
 
 Two examples of the importance of a low saturation voltage are:-
 
@@ -275,24 +275,11 @@ So the answer to the question is make a list of necessary parameters and go onli
 
 We've already discussed what parameters to select for but to summarize the essential ones in order:-
 
-| **Polarity:-** NPN/N-channel or PNP/P-channel?
-| \**Type:- **BJT or FET?
-  **\ Operating voltage:-\*\* Select the minimum safe value of BV\ :sub:`ceo` or BV\ :sub:`ds` (It may be a good idea to select a maximum value too, as very high voltage transistors may have lower gain and higher V\ :sub:`ce(sat)` or R\ :sub:`on` and are sure to be a bit more expensive.)
-| \**Maximum current:- **Select a value =33% above the maximum expected collector/drain current. (You may need to consider peak transient currents as well as maximum steady state currents.)
-  **\ Package:-\*\* What package, *and pinout*, do you require? (If a device comes in several packages the absolute maximum current and power ratings may vary with the package chosen - check this. Also the parametric selection guide may not provide pinout details.)
-| **Power:-** What is the maximum dissipation? (Remember that a switch dissipates very little power when off, and when it is on most of the power is in the load, not the switch itself. During switching dissipation is higher but this is only important if the device is continually switching at a high rate.)
-| It is necessary to decide the above parameters whenever we choose a transistor. The remaining ones may be critical in some applications and unimportant in others, so you must decide for yourself which ones matter in your application, and select devices which meet your requirements. Consider all the remaining list but only specify the ones you actually care about:-
+**Polarity:-** NPN/N-channel or PNP/P-channel? \**Type:- **\ BJT or FET?**Operating voltage:-*\* Select the minimum safe value of BV\ :sub:`ceo` or BV\ :sub:`ds` (It may be a good idea to select a maximum value too, as very high voltage transistors may have lower gain and higher V\ :sub:`ce(sat)` or R\ :sub:`on` and are sure to be a bit more expensive.) \**Maximum current:- **\ Select a value =33% above the maximum expected collector/drain current. (You may need to consider peak transient currents as well as maximum steady state currents.)**Package:-*\* What package, *and pinout*, do you require? (If a device comes in several packages the absolute maximum current and power ratings may vary with the package chosen - check this. Also the parametric selection guide may not provide pinout details.) **Power:-** What is the maximum dissipation? (Remember that a switch dissipates very little power when off, and when it is on most of the power is in the load, not the switch itself. During switching dissipation is higher but this is only important if the device is continually switching at a high rate.)
 
-| \**Leakage current:- **I\ ce0 or I\ ds0
-  **\ Current gain:- **ß or h\ fe - Few applications need ß = 100
-  **\ Transconductance:- **g\ fs - Rarely needs to be specified.
-  **\ Gate threshold voltage:-\*\* V\ :sub:`gs(th)` - This must be compatible with the levels of any logic used to drive a MOSFET as a switch, and must not be too large if a MOSFET is used with a low supply voltage.
-| \**Saturation voltage:- **V\ ce(sat) - Only important when a BJT is used as a switch (logic or power).
-  **\ On resistance:- **R\ on - Important when a MOSFET is used as a power switch, but not usually in amplifier or logic applications
-  **\ Noise figure:- **NF - Only important in (very) small signal amplifiers or low noise oscillators.
-  **\ Transition frequency:- **f\ t - Only important in HF (High Frequency) amplifiers or oscillators.
-  **\ Switching time:- **t\ (on) & t\ (off) This parameter is rarely important except for transistors used in fast logic interfaces and fast power switching.
-  **\ Capacitance:- \**C\ :sub:`in`, C\ :sub:`out` & C\ :sub:`fb` (Or different manufacturers' versions of these.) - These parameters need rarely be specified for LF BJT applications, but since MOSFETs may have quite large C\ :sub:`in` it is sensible to put worst case values into SPICE models of circuits with discrete MOSFETs to ensure that their capacitance is not an issue.
+It is necessary to decide the above parameters whenever we choose a transistor. The remaining ones may be critical in some applications and unimportant in others, so you must decide for yourself which ones matter in your application, and select devices which meet your requirements. Consider all the remaining list but only specify the ones you actually care about:-
+
+**Leakage current:-**\ I\ ce0 or I\ ds0**Current gain:- **\ ß or h\ fe - Few applications need ß = 100**\ Transconductance:- **g\ fs - Rarely needs to be specified.**\ Gate threshold voltage:-*\* V\ :sub:`gs(th)` - This must be compatible with the levels of any logic used to drive a MOSFET as a switch, and must not be too large if a MOSFET is used with a low supply voltage. \**Saturation voltage:- **\ V\ ce(sat) - Only important when a BJT is used as a switch (logic or power).**On resistance:- **\ R\ on - Important when a MOSFET is used as a power switch, but not usually in amplifier or logic applications**\ Noise figure:- **NF - Only important in (very) small signal amplifiers or low noise oscillators.**\ Transition frequency:- **f\ t - Only important in HF (High Frequency) amplifiers or oscillators.**\ Switching time:- **t\ (on) & t\ (off) This parameter is rarely important except for transistors used in fast logic interfaces and fast power switching.**\ Capacitance:- **C\ :sub:`in`, C\ :sub:`out` & C\ :sub:`fb` (Or different manufacturers' versions of these.) - These parameters need rarely be specified for LF BJT applications, but since MOSFETs may have quite large C\ :sub:`in` it is sensible to put worst case values into SPICE models of circuits with discrete MOSFETs to ensure that their capacitance is not an issue.
 
 When you enter your chosen parameters into a search engine you will, with luck, obtain a list of devices with the characteristics you need. If you are sure that you have chosen your parameters correctly choose the five to ten cheapest which are available off the shelf. Do the same thing with a couple more distributors' search engines and then compare your lists. You should find that they are similar - if so choose the lowest cost device which is available from most suppliers.
 
@@ -315,9 +302,7 @@ References
 
 [1]Julius Lillienfield - Canadian Patent Application CA272437 (1925) / US Patent US1745175 - Method and apparatus for controlling electric currents 1930-01-28
 
-| [2]Shockley, Brattain & Bardeen - Bell Telephone Labs 1947
-| John Bardeen & Walter Brattain:- US Patent US2524035 - Three-electrode circuit element utilizing semiconductive materials 1948-02-26 (Issued 1950-10-03)
-| William Shockley:- US Patent US2569347 - Circuit element utilizing semiconductive material 1948-06-26 (Issued 1951-09-25)
+[2]Shockley, Brattain & Bardeen - Bell Telephone Labs 1947 John Bardeen & Walter Brattain:- US Patent US2524035 - Three-electrode circuit element utilizing semiconductive materials 1948-02-26 (Issued 1950-10-03) William Shockley:- US Patent US2569347 - Circuit element utilizing semiconductive material 1948-06-26 (Issued 1951-09-25)
 
 [3]\ http://www.elektor.com/
 
@@ -335,8 +320,7 @@ http://www.analog.com/en/all-operational-amplifiers-op-amps/operational-amplifie
 
 http://www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_opAmpNoise2.html
 
-| [8]Cadence do a good job at
-| http://www.cadence.com/Community/blogs/rf/archive/2008/07/16/measuring-transistor-ft.aspx
+[8]Cadence do a good job at http://www.cadence.com/Community/blogs/rf/archive/2008/07/16/measuring-transistor-ft.aspx
 
 [9]"Read The Friendly Data Sheet"
 
@@ -344,21 +328,14 @@ http://www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_
 
 https://en.wikipedia.org/wiki/John_Milton_Miller Miller was, of course, working with thermionic valves (tubes) but the name, and the effect, are still valid today with semiconductor triodes (BJTs & FETs).
 
-| [11] Transistor sources
-| https://avnetexpress.avnet.com/store/em/EMController/Discrete/Bipolar-Transistor/GP-BJT/_/N-100083?action=products&cat=1&catalogId=500201&categoryLink=true&cutTape=&inStock=&langId=-1&myCatalog=&npi=&proto=&regionalStock=&rohs=&storeId=500201&term=&topSellers=&categoryLink=true and
-| https://avnetexpress.avnet.com/store/em/EMController/Discrete/Transistor/MOSFET/_/N-100099?action=products&cat=1&catalogId=500201&categoryLink=true&cutTape=&inStock=&langId=-1&myCatalog=&npi=&proto=&regionalStock=&rohs=&storeId=500201&term=&topSellers=&categoryLink=true
+[11] Transistor sources https://avnetexpress.avnet.com/store/em/EMController/Discrete/Bipolar-Transistor/GP-BJT/_/N-100083?action=products&cat=1&catalogId=500201&categoryLink=true&cutTape=&inStock=&langId=-1&myCatalog=&npi=&proto=&regionalStock=&rohs=&storeId=500201&term=&topSellers=&categoryLink=true and https://avnetexpress.avnet.com/store/em/EMController/Discrete/Transistor/MOSFET/_/N-100099?action=products&cat=1&catalogId=500201&categoryLink=true&cutTape=&inStock=&langId=-1&myCatalog=&npi=&proto=&regionalStock=&rohs=&storeId=500201&term=&topSellers=&categoryLink=true
 
-| http://components.arrow.com/semiconductor-discrete/transistors/ and
-| http://components.arrow.com/part/search/%5E7/42/855?region=na&whereFrom=gnav and
-| http://components.arrow.com/part/search/%5E7/42/942?region=na&whereFrom=gnav
+http://components.arrow.com/semiconductor-discrete/transistors/ and http://components.arrow.com/part/search/%5E7/42/855?region=na&whereFrom=gnav and http://components.arrow.com/part/search/%5E7/42/942?region=na&whereFrom=gnav
 
-| http://www.digikey.com/product-search/en/discrete-semiconductor-products/transistors-bjt-single/1376376?k=transistor and
-| http://www.digikey.com/product-search/en/discrete-semiconductor-products/fets-single/1376381?k=transistor
+http://www.digikey.com/product-search/en/discrete-semiconductor-products/transistors-bjt-single/1376376?k=transistor and http://www.digikey.com/product-search/en/discrete-semiconductor-products/fets-single/1376381?k=transistor
 
-| http://www.mouser.com/Semiconductors/Discrete-Semiconductors/Transistors/Transistors-Bipolar-BJT/_/N-ax1sh/ and
-| http://www.mouser.com/Semiconductors/Discrete-Semiconductors/Transistors/MOSFET/_/N-ax1sf/
+http://www.mouser.com/Semiconductors/Discrete-Semiconductors/Transistors/Transistors-Bipolar-BJT/_/N-ax1sh/ and http://www.mouser.com/Semiconductors/Discrete-Semiconductors/Transistors/MOSFET/_/N-ax1sf/
 
 http://uk.farnell.com/transistors-bipolar-bjt-single and http://uk.farnell.com/mosfets
 
-| http://uk.rs-online.com/web/c/semiconductors/discrete-semiconductors/bipolar-transistors/ and
-| http://uk.rs-online.com/web/c/semiconductors/discrete-semiconductors/mosfet-transistors/
+http://uk.rs-online.com/web/c/semiconductors/discrete-semiconductors/bipolar-transistors/ and http://uk.rs-online.com/web/c/semiconductors/discrete-semiconductors/mosfet-transistors/

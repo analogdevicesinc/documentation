@@ -8,32 +8,34 @@ General Description/Overview
 
 The **ADuCM360_demo_cn0411** project uses the :adi:`EVAL-CN0411-ARDZ shield <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/cn0411>` which is a single supply, low power, high precision complete solution for Total Dissolved Solids measurements, including temperature compensation. The circuit is optimized for conductivity measurements used to determine the TDS values, using conductivity cells with BNC plug.
 
-| The circuit is divided into three independent measurement front ends: TDS, conductivity and temperature. After signal conditioning, the three channels share an :adi:`ad7124-8`, 24-bit sigma-delta (Σ-Δ) ADC. The :adi:`ad7124-8`, is a low power, low noise, completely integrated analog front end for high precision measurement applications.
-| |image1|
+The circuit is divided into three independent measurement front ends: TDS, conductivity and temperature. After signal conditioning, the three channels share an :adi:`ad7124-8`, 24-bit sigma-delta (Σ-Δ) ADC. The :adi:`ad7124-8`, is a low power, low noise, completely integrated analog front end for high precision measurement applications.
 
-| For temperature compensation can be used an RTD PT100 sensor, 2-wire. The ADuCM360_demo_cn0411 application processes ADC outputs for all 5 channels (RTD, Vpeak+ and Vpeak-, VDAC, VR20S, VR200S), calculates conductivity and TDS values using as input RTD temperature value and the peak-to-peak voltage. Those data are sent to serial interface, using **UART** communication (**115200** baud rate and **8-bits** data length). The **24-bits** ADC data are received using **SPI** interface of the EVAL-ADICUP360 board.
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0411_demo_4.jpg
+   :width: 600px
 
-| 
-| The **temperature** value is calculated based on the **RTD resistance**:
+For temperature compensation can be used an RTD PT100 sensor, 2-wire. The ADuCM360_demo_cn0411 application processes ADC outputs for all 5 channels (RTD, Vpeak+ and Vpeak-, VDAC, VR20S, VR200S), calculates conductivity and TDS values using as input RTD temperature value and the peak-to-peak voltage. Those data are sent to serial interface, using **UART** communication (**115200** baud rate and **8-bits** data length). The **24-bits** ADC data are received using **SPI** interface of the EVAL-ADICUP360 board.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0411_demo_1.png
+   :width: 400px
+
+The **temperature** value is calculated based on the **RTD resistance**:
 
 ::
 
-                                                                  
-          Rrtd = (CODE* Rref) / (2^24 -1)                         Rref - Reference resistor (4.02kΩ)        
+
+          Rrtd = (CODE* Rref) / (2^24 -1)                         Rref - Reference resistor (4.02kΩ)
                                                                   CODE - ADC output
-                                                                  
 
-| 
-| **1. RTD resistance > 100Ω**
+**1. RTD resistance > 100Ω**
 
-| |image3|
-| **2. RTD resistance ≤ 100Ω**
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_1.png
+   :width: 800px
+
+**2. RTD resistance ≤ 100Ω**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_2.png
 
-| 
-| In order to compute the **total dissolved solids** parameter a premeasurement procedure is run in the first place that aims to select the proper gain resistance for the measurement.
+In order to compute the **total dissolved solids** parameter a premeasurement procedure is run in the first place that aims to select the proper gain resistance for the measurement.
 
 The multiplexer is set to the highest gain resistance (20MΩ) and the DAC output to a value set by the user (initially set to 400mV). Then, the positive and negative input voltage are captured via ADC channel 1 and 2. If the following formula is met:
 
@@ -47,9 +49,8 @@ The excitation voltage used for computing **tds** is set to:
 
 ::
 
-                                                                          
-          Vexc = 0.4 * Vexc / (Vp + Vn)      
-                                                                         
+
+          Vexc = 0.4 * Vexc / (Vp + Vn)
 
 Otherwise, the gain resistor is dropped by 1 decade and the premeasurement process is repeated.
 
@@ -58,21 +59,19 @@ After the process is finished, the peak-to-peak voltage is measured again an the
 ::
 
 
-                                                     Ipp = peak-to-peak current              
+                                                     Ipp = peak-to-peak current
           Ipp = (2 * Vexc - (Vp + Vn)) / Rgain       Vexc = excitation voltage computed in the premeasurement procedure
                                                      Vp = positive input voltage
                                                      Vn = negative input voltage
-                                                     Rgain = gain resistor set via multiplexer    
-                                                                     
+                                                     Rgain = gain resistor set via multiplexer
 
 Based on the peak-to-peak current the **electrical conductance** is computed, also removing the **offset resistance** (optional) that is obtained via the software command *"refres"* found in the list of available commands :
 
 ::
 
-                                                     
-          g = Ipp / ((Vp + Vn) - (Ipp * Roff))       Roff = offset resistance    
+
+          g = Ipp / ((Vp + Vn) - (Ipp * Roff))       Roff = offset resistance
                                                      g = electrical conductance
-          
 
 The **electrical conductivity** is computed using the conductance and the cell constant which can be set accordingly for low conductivities, normal conductivities and high conductivities via software commands. A temperature compensation is also performed taking into account the temperature measured via RTD resistance.
 
@@ -81,10 +80,9 @@ The **electrical conductivity** is computed using the conductance and the cell c
 
                                                              s = electrical conductivity
           s = k * g                                          s_cal = temperature compensated electrical conductivity
-                                                             temp_coeff = solution temperature coefficient 
+                                                             temp_coeff = solution temperature coefficient
           s_cal = s / (1 + temp_coeff * (temp - t_cal))      temp = measured temperature
                                                              t_cal = reference temperature (25°C)
-                                                     
 
 The calculation of **total dissolved solids** is the product between the temperature compensated conductivity and the **tds factor** corresponding to the solution that is used.
 
@@ -93,7 +91,6 @@ The calculation of **total dissolved solids** is the product between the tempera
 
           tds = k_e * s_cal                                  k_e = tds factor
                                                              tds = total dissolved solids
-          
 
 Demo Requirements
 -----------------
@@ -125,7 +122,7 @@ Setting up the Hardware
 -  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
 
 
-|image4|
+|image1|
 
 -  Connect the **EVAL-CN0411-ARDZ Shield** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Connect the conductivity cell to the **J1** connector of the EVAL-CN0411-ARDZ.
@@ -169,31 +166,31 @@ The software for the **ADuCM360_demo_cn0411** demo can be found here:
 Configuring the Software Parameters
 -----------------------------------
 
--  **DAC default output value** - <fc #008000>DAC_OUT_DEFAULT_VAL</fc> - set default output voltage for the DAC. (*CN0411.h*).
+-  **DAC default output value** - DAC_OUT_DEFAULT_VAL - set default output voltage for the DAC. (*CN0411.h*).
 
 ::
 
       #define DAC_OUT_DEFAULT_VAL     0.4
 
--  \**KCl solution TDS factor \*\* - <fc #008000>TDS_KCL</fc> - set the TDS factor for the KCl solution. (*CN0411.h*).
+-  **KCl solution TDS factor** - TDS_KCL - set the TDS factor for the KCl solution. (*CN0411.h*).
 
 ::
 
       #define  TDS_KCL                0.5
 
--  \**NaCl solution TDS factor \*\* - <fc #008000>TDS_NACL</fc> - set the TDS factor for the NaCL solution. (*CN0411.h*).
+-  **NaCl solution TDS factor** - TDS_NACL - set the TDS factor for the NaCL solution. (*CN0411.h*).
 
 ::
 
       #define  TDS_NACL               0.47
 
--  \**KCl solution temperature coefficient \*\* - <fc #008000>TEMP_COEFF_KCL</fc> - set the temperature coefficient for the KCl solution. (*CN0411.h*).
+-  **KCl solution temperature coefficient** - TEMP_COEFF_KCL - set the temperature coefficient for the KCl solution. (*CN0411.h*).
 
 ::
 
       #define  TEMP_COEFF_KCL         1.88
 
--  \**NaCl solution temperature coefficient \*\* - <fc #008000>TEMP_COEFF_NACL</fc> - set the temperature coefficient for the NaCl solution. (*CN0411.h*).
+-  **NaCl solution temperature coefficient** - TEMP_COEFF_NACL - set the temperature coefficient for the NaCl solution. (*CN0411.h*).
 
 ::
 
@@ -209,8 +206,6 @@ Serial Terminal Output
 -  Once complete you will need to switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
 -  Then follow the UART settings below with the serial terminal program.
 
-| 
-
 Following is the UART configuration.
 
 ::
@@ -221,8 +216,6 @@ Following is the UART configuration.
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-|
 
 -  The user must press the **<ENTER>** key to start the program.
 -  To get to the command menu the user must type **<help>** into the serial program.
@@ -313,14 +306,7 @@ The **RTE** folder contains device and system related files:
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-| 
-| // End of Document //
+// End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0411_demo_4.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0411_demo_1.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_1.png
-   :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/adicup360_hardware.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/adicup360_hardware.jpg
    :width: 650px

@@ -48,7 +48,7 @@ To set a pin to output a low ( logic 0 ):
    PIO_0 = 28
    PIO_1 = 29
    PIO_2 = 47
-   PIO_3 = 3 
+   PIO_3 = 3
    # set PIO0 low
    devx.ctrl_transfer(0x40, 0x50, PIO_0, 0, 0, 0, 100)
 
@@ -61,9 +61,7 @@ The hex number 0x50 sets a pin low, the hex number 0x51 sets a pin high. The nex
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| 4 - LEDs
-| 4 - 100 Ω resistors
+ADALM1000 hardware module 4 - LEDs 4 - 100 Ω resistors
 
 Directions:
 ~~~~~~~~~~~
@@ -109,9 +107,6 @@ Modify the program to display the binary representation of a user specified numb
 
 **For Further Reading:**
 
-| `LEDs <https://en.wikipedia.org/wiki/LED>`_
-| `LED circuit <https://en.wikipedia.org/wiki/LED_circuit>`_
-| `Charlieplexing <https://en.wikipedia.org/wiki/Charlieplexing>`_
+`LEDs <https://en.wikipedia.org/wiki/LED>`_ `LED circuit <https://en.wikipedia.org/wiki/LED_circuit>`_ `Charlieplexing <https://en.wikipedia.org/wiki/Charlieplexing>`_
 
-| **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
-| **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
+**Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`

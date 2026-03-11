@@ -15,10 +15,7 @@ ADALM2000 for End Users
 Contents
 --------
 
-.. container:: hide
-
-   Make sure all things are in ./users
-
+Make sure all things are in ./users
 
 -  `Introduction to the Hardware <https://wiki.analog.com/../m2k/devs/intro>`_
 

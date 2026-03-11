@@ -67,7 +67,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
    Linux Kernel Configuration
        Device Drivers  --->
        <*>  Industrial I/O support --->
-                Frequency Synthesizers DDS/PLL  ---> 
+                Frequency Synthesizers DDS/PLL  --->
                     Clock Generator/Distribution  --->
                     <*>  Analog Devices AD9517 12-Output Clock Generator
 
@@ -89,11 +89,11 @@ The following example instantiates the ad9517 driver for a ad9517-3 device conne
                    compatible = "adi,ad9517-3";
                    reg = <1>;
                    spi-max-frequency = <10000000>;
-                   
+
            clocks = <&ad9517_ref_clk>, <&ad9517_ref_clk>;
                    clock-names = "refclk", "clkin";
                    clock-output-names = "out0", "out1", "out2", "out3", "out4", "out5", "out6", "out7";
-                   
+
            firmware = "pzsdr-fmc-ad9517.stp";
            };
    };

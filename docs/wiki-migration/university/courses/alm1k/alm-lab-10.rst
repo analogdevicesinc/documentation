@@ -16,14 +16,7 @@ Scope traces are similarly referred to by channel and voltage / current. Such as
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 1 - 2.2 KΩ Resistor (or any similar value)
-| 1 - 100 Ω resistor
-| 1 - 1K Ω resistor (or similar value)
-| 1 - 10 KΩ variable resistor (potentiometer)
-| 3 - small signal NPN transistors (2N3904 and SSM2212)
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 - 2.2 KΩ Resistor (or any similar value) 1 - 100 Ω resistor 1 - 1K Ω resistor (or similar value) 1 - 10 KΩ variable resistor (potentiometer) 3 - small signal NPN transistors (2N3904 and SSM2212)
 
 Directions:
 ~~~~~~~~~~~

@@ -36,14 +36,7 @@ The energy-storage device, the heart of the THA, is a capacitor. The input ampli
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| LTC1043 Switched Capacitor Building Block
-| OP484 Quad Rail-Rail Op-amp
-| AD8542 Dual CMOS Op-amp
-| C\ :sub:`H` 4.7 nF capacitor (472)
-| C\ :sub:`H` 100 pF capacitor (101)
-| C\ :sub:`H` 39 pF capacitor (39)
-| Cosc 4.7 nF capacitor (472)
+ADALM1000 hardware module LTC1043 Switched Capacitor Building Block OP484 Quad Rail-Rail Op-amp AD8542 Dual CMOS Op-amp C\ :sub:`H` 4.7 nF capacitor (472) C\ :sub:`H` 100 pF capacitor (101) C\ :sub:`H` 39 pF capacitor (39) Cosc 4.7 nF capacitor (472)
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-2.png
    :align: center
@@ -266,9 +259,6 @@ The Cosc pin can be used with an external capacitor, Cosc, connected from Pin 16
 
 **For Further Reading:**
 
-| :adi:`MT-090: Sample-and-Hold Amplifiers <media/en/training-seminars/tutorials/MT-090.pdf>`
-| :adi:`AN270: Applying IC Sample-Hold Amplifiers <media/en/technical-documentation/application-notes/4886613927731859762198006746AN270.pdf>`
-| :adi:`CN0058: Sample-and-Hold Circuit Note <media/en/technical-documentation/application-notes/an-1515.pdf>`
-| :adi:`MT-088: Analog Switches and Multiplexer Basics <media/en/training-seminars/tutorials/MT-088.pdf>`
+:adi:`MT-090: Sample-and-Hold Amplifiers <media/en/training-seminars/tutorials/MT-090.pdf>` :adi:`AN270: Applying IC Sample-Hold Amplifiers <media/en/technical-documentation/application-notes/4886613927731859762198006746AN270.pdf>` :adi:`CN0058: Sample-and-Hold Circuit Note <media/en/technical-documentation/application-notes/an-1515.pdf>` :adi:`MT-088: Analog Switches and Multiplexer Basics <media/en/training-seminars/tutorials/MT-088.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**

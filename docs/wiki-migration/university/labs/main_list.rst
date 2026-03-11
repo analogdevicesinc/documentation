@@ -1,19 +1,17 @@
 Main Lab Activities and Exercise List
 =====================================
 
-|
+
 
 .. tip::
 
    This is currently the main list of all the labs we have. The goal here is to use this list and either include the sub-table for a topic-specific page, or copy individual labs over the labs you desire for the course you need.
 
-
    | Please remember to **ADD** any new labs you may have created to keep this list as current as possible
 
 
-|
-
-| ===== Electronics I Lab Activities and Exercises =====
+Electronics I Lab Activities and Exercises
+------------------------------------------
 
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | Topic                              | ADALM1000 (M1K)                                                                                                                       | ADALM2000 (M2K)                                                                                                                          |

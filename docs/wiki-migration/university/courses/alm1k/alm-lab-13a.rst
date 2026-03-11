@@ -21,13 +21,7 @@ The role of an output stage is to provide power gain. It should have high input 
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard and jumper wire kit
-| 2 - 100 Ω resistors
-| 1 - 2.2 KΩ resistor
-| 2 - 10 KΩ resistors
-| 2 - NPN transistors ( 2N3904 or SSM2212 )
-| 2 - PNP transistors ( 2N3906 or SSM2220 )
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 2 - 100 Ω resistors 1 - 2.2 KΩ resistor 2 - 10 KΩ resistors 2 - NPN transistors ( 2N3904 or SSM2212 ) 2 - PNP transistors ( 2N3906 or SSM2220 )
 
 Directions:
 ~~~~~~~~~~~
@@ -73,8 +67,6 @@ Reducing Output Distortion:
 
 The large amount of distortion at the zero-crossings in the basic push-pull stage of figure 1 is a result of a dead zone when both the NPN and PNP emitter followers are off. The waveform's dead zone at the zero-crossings is dramatically reduced if we pre-bias the BJTs with two V\ :sub:`BE` drops, as shown in figure 2. Here, the pre-bias function is provided by diode connected NPN Q\ :sub:`1` and PNP Q\ :sub:`3`. Resistors R\ :sub:`1` and R\ :sub:`2` provide bias current and set the idle current that flows in the output devices Q\ :sub:`2` and Q\ :sub:`4`.
 
-.. _directions-1:
-
 Directions:
 ~~~~~~~~~~~
 
@@ -89,14 +81,10 @@ With the power disconnected, assemble the circuit of figure 2, keeping leads as 
    Figure 2 Push - pull output stage with zero-crossing distortion elimination.
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Use the same hardware setup as you did for the circuit in figure 1.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -104,8 +92,6 @@ Procedure:
 If we examine figure 2, the loop formed by the base emitter voltages of Q\ :sub:`1`, Q\ :sub:`2`, Q\ :sub:`3` and Q\ :sub:`4` we know that the sum of the voltage drops around the loop must sum to zero. Thus if Q\ :sub:`1` is identical to Q\ :sub:`2` and Q\ :sub:`3` is identical to Q\ :sub:`4`, the voltage around the loop will be zero only when the current in Q\ :sub:`1` is identical to the current in Q\ :sub:`2` and the current in Q\ :sub:`3` is identical to the current in Q\ :sub:`4`. Thus when the output is at 2.5 volts i.e. there is no current in R\ :sub:`L`, the input must also be at 2.5 volts.
 
 Use the oscilloscope in the X-Y mode to observe the voltage-transfer curve of the circuit. Save the curve to a .csv or .eps file for inclusion in your lab report, label all breakpoints, slopes, and saturation levels, and justify them in terms of circuit operation and given component values.
-
-.. _questions-1:
 
 Questions:
 ~~~~~~~~~~
@@ -134,21 +120,15 @@ Remembering the loop formed by the base emitter voltages of Q\ :sub:`1`, Q\ :sub
    Figure 3 Emitter follower zero-crossing distortion elimination
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Use the same hardware setup as you did for the circuit in figure 2.
 
-.. _procedure-2:
-
 Procedure:
 ~~~~~~~~~~
 
 Display the input / output transfer curve of the circuit of figure 3, save the date to a .csv file or save the cures to a .eps file, label all breakpoints, slopes, and saturation levels, and justify them in terms of circuit operation and the given component values. How do they compare to the circuit in figure 2?
-
-.. _questions-2:
 
 Questions:
 ~~~~~~~~~~
@@ -179,7 +159,6 @@ Repeat the same test you performed on the figure 2 and figure 3 circuits on the 
 
 **For Further Reading:**
 
-| `Push-Pull Output <https://en.wikipedia.org/wiki/Push-pull_output>`_
-| :adi:`Increase amplifier output drive using a push-pull stage <en/technical-articles/increase-amplifier-output-drive-using-a-push-pull-amplifier-stage.html>`
+`Push-Pull Output <https://en.wikipedia.org/wiki/Push-pull_output>`_ :adi:`Increase amplifier output drive using a push-pull stage <en/technical-articles/increase-amplifier-output-drive-using-a-push-pull-amplifier-stage.html>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/electronics>`

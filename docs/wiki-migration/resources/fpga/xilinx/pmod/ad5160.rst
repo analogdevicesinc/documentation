@@ -34,16 +34,14 @@ Required Software
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+
 
 .. tip::
 
    If you are not familiar with LX9 and/or Xilix tools, please visit
 
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
-   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
-   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
-   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details. If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
 
@@ -134,20 +132,12 @@ The reference design is a simple SPI interface with CS, SCLK and MOSI pins. The 
 
 The hardware SPI access allows sending data to the AD5160, programming its internal register with the required ratio between Rwb and Rwa according to Rab and Rwp.
 
-|
-
 .. important::
 
-
-   ..
-
-| \* Connecting the PmodDPOT to the boards using an extension cable provides ease of use.
    
+   -  Connecting the PmodDPOT to the boards using an extension cable provides ease of use.
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-   |
-
-   |
 
 
 .. important::
@@ -175,102 +165,104 @@ The hardware SPI access allows sending data to the AD5160, programming its inter
 Downloads
 ---------
 
-|
-
 .. admonition:: Download
    :class: download
 
-   | \**Avnet LX-9 MicroBoard: **
-     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5160_lx9.zip>`_\ **
-     **\ Digilent Nexys™3: **
-     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5160_nexys3.zip>`_\ **
-     **\ Avnet ZedBoard: \*\*
-   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
-   | \* :git-no-OS:`PmodDPOT Driver Files <Pmods/PmodDPOT>`
-   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
-   | \* :git-no-OS:`Programming Script <Pmods/PmodDPOT/bin>`
-   |
+   
+   **Avnet LX-9 MicroBoard:**
+   
+   -  `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5160_lx9.zip>`_
+   
+   **Digilent Nexys™3:**
+   
+   -  `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5160_nexys3.zip>`_
+   
+   **Avnet ZedBoard:**
+   
+   -  :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   -  :git-no-OS:`PmodDPOT Driver Files <Pmods/PmodDPOT>`
+   -  :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
+   -  :git-no-OS:`Programming Script <Pmods/PmodDPOT/bin>`
+   
 
 
-.. container:: hide
+Linux Device Driver
+===================
 
-   
-   Linux Device Driver
-   ===================
-   
-   Connect PmodDPOT to the JB1 connector of the ZedBoard (upper row of pins).
-   
-   Preparing the SD Card
-   ---------------------
-   
-   In order to prepare the SD Card for booting Linux on the ZedBoard:
-   
-   -  Download the device tree: :git-no-OS:`PmodDPOT Linux devicetree <Pmods/PmodDPOT/dts>`
-   -  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
-   
-      -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
-   
-   Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
-   
-   There are 2 ways to test the driver.
-   
-   -  Using the terminal window
-   -  Using a serial terminal
-   
-   Using the terminal window
-   -------------------------
-   
-   Open a new terminal window by pressing **Ctrl+Alt+T**.
-   
-   Navigate to the location of the device and identify it using the following commands:
-   
-   ::
-   
-      cd /sys/bus/spi/devices/
-      ls
-      spi32765.0  spi32766.0
-      cd spi32766.0
-      ls
-      driver  modalias  power  rdac0  subsystem  uevent
-      cat modalias
-      spi:ad5160
-   
-   If the **cat modalias** command doesn't return **spi:ad5160**, then change the number of the spi device, and check again.
-   
-   ::
-   
-      cd ..
-      cd spi32765.0
-      cat modalias
-   
-   To see the list of options that the AD5160 driver provides, type:
-   
-   ::
-   
-      ls
-      driver  modalias  power  rdac0  subsystem  uevent
-   
-   To set the rdac resistance, type:
-   
-   ::
-   
-      echo 100 > rdac0
-   
-   To read the set rdac value, type:
-   
-   ::
-   
-      cat rdac0
-      100
-   
-   .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5160_linaro_terminal.jpg
-      :alt: AD5628 Set Voltage from Terminal
-      :width: 600px
-   
-   The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+Connect PmodDPOT to the JB1 connector of the ZedBoard (upper row of pins).
 
-   
-   |AD5628 Read Voltage from Serial Terminal|
+Preparing the SD Card
+---------------------
+
+In order to prepare the SD Card for booting Linux on the ZedBoard:
+
+-  Download the device tree: :git-no-OS:`PmodDPOT Linux devicetree <Pmods/PmodDPOT/dts>`
+-  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
+
+   -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
+
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+
+There are 2 ways to test the driver.
+
+-  Using the terminal window
+-  Using a serial terminal
+
+Using the terminal window
+-------------------------
+
+Open a new terminal window by pressing **Ctrl+Alt+T**.
+
+Navigate to the location of the device and identify it using the following commands:
+
+::
+
+   cd /sys/bus/spi/devices/
+   ls
+   spi32765.0  spi32766.0
+   cd spi32766.0
+   ls
+   driver  modalias  power  rdac0  subsystem  uevent
+   cat modalias
+   spi:ad5160
+
+If the **cat modalias** command doesn't return **spi:ad5160**, then change the number of the spi device, and check again.
+
+::
+
+   cd ..
+   cd spi32765.0
+   cat modalias
+
+To see the list of options that the AD5160 driver provides, type:
+
+::
+
+   ls
+   driver  modalias  power  rdac0  subsystem  uevent
+
+To set the rdac resistance, type:
+
+::
+
+   echo 100 > rdac0
+
+To read the set rdac value, type:
+
+::
+
+   cat rdac0
+   100
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5160_linaro_terminal.jpg
+   :alt: AD5628 Set Voltage from Terminal
+   :width: 600px
+
+The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5160_linux_serial.jpg
+   :alt: AD5628 Read Voltage from Serial Terminal
+   :width: 600px
 
 More information
 ----------------
@@ -280,6 +272,4 @@ More information
 
 |//ez.analog.com/community/feeds/allcontent/atom|
 
-.. |AD5628 Read Voltage from Serial Terminal| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5160_linux_serial.jpg
-   :width: 600px
 .. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

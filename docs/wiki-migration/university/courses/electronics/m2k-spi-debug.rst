@@ -247,7 +247,7 @@ Therefore, we can conclude that SPI communication, both writing and reading, wor
 Conclusion
 ----------
 
-| In addition to SPI, the application includes a set of decoders covering a large number of communication protocols such as I2C, I2S, UART, JTAG, and others, making ADALM2000 a powerful tool for analyzing and debugging digital signals.
+In addition to SPI, the application includes a set of decoders covering a large number of communication protocols such as I2C, I2S, UART, JTAG, and others, making ADALM2000 a powerful tool for analyzing and debugging digital signals.
 
 Further Reading:
 ~~~~~~~~~~~~~~~~

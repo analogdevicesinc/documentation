@@ -9,14 +9,12 @@ Voltage Controlled Oscillator
 Description
 -----------
 
-| 
-| The Voltage Controlled Oscillator block, typically used for modulation applications. Takes the control input and generates a sine tone at particular frequency.
+The Voltage Controlled Oscillator block, typically used for modulation applications. Takes the control input and generates a sine tone at particular frequency.
 
 Usage
 -----
 
-| 
-| The input to the control pin could be varied from 0 to 1. VCO linearly interpolates its derived value into frequency from 0Hz (when input is 0) to FS/2(when input is 1). Where FS is the sampling frequency. If the input applied is greater than 1, the derived output value will fold back to frequencies below fs/2.
+The input to the control pin could be varied from 0 to 1. VCO linearly interpolates its derived value into frequency from 0Hz (when input is 0) to FS/2(when input is 1). Where FS is the sampling frequency. If the input applied is greater than 1, the derived output value will fold back to frequencies below fs/2.
 
 Targets Supported
 -----------------

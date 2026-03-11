@@ -47,8 +47,7 @@ There is no installer provided on Linux, you have to clone the repo, install the
    $ pip install PyQt6 pyserial pylibiio
    $ python wethlink.py
 
-| 
-| ----
+--------------
 
 Resources
 ---------

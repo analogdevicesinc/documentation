@@ -1,11 +1,13 @@
 Nth Order Filter
 ================
 
-| :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
-| ------------------------------------------------------------------------------------------------------
+:doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
-| 
-| |nthorderfilter.png|
+--------------
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/nthorderfilter.png
+   :alt: nthorderfilter.png
+   :align: right
 
 The Nth Order Filter is a combination of biquad filters to form Nth order filter.
 
@@ -16,9 +18,7 @@ The Nth Order Filter is a combination of biquad filters to form Nth order filter
 
 The Filter has 3 selectable filter types to perform LowPass/HighPass filtering.The algorithm can be extended upto 8 input pins.
 
-| 
-| |nthorderfiltergrowth.png|
-| The remaining parameters are similar to General 2nd Order Filters
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/nthorderfiltergrowth.png
+   :alt: nthorderfiltergrowth.png
 
-.. |nthorderfilter.png| image:: https://wiki.analog.com/_media/nthorderfilter.png
-.. |nthorderfiltergrowth.png| image:: https://wiki.analog.com/_media/nthorderfiltergrowth.png
+The remaining parameters are similar to General 2nd Order Filters

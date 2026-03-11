@@ -85,8 +85,9 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
-| 
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/capture.png
+   :align: center
+   :width: 500px
 
 Smart Device Output
 ~~~~~~~~~~~~~~~~~~~
@@ -110,8 +111,6 @@ Once the device is visible press connect to access the information provided over
    :width: 500px
 
 After connecting to the device and generating enough G acceleration(**minimum of 10 G** on any axis), information will be displayed on the application. To generate this high value of acceleration you can try and hit the board on your hand ( do not put to much force in order to avoid damages to the device ).
-
-|
 
 .. tip::
 
@@ -180,5 +179,3 @@ The ADXL372 transmits data to ADuCM3029 controller through the Communication lay
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
    :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/capture.png
-   :width: 500px

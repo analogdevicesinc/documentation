@@ -55,8 +55,7 @@ Obtaining the Source Code
 
 The source code and include files for the project can be found on Git
 
-| 
-| The source code and include files of the **AD5940_SqrWveVoltammetry** can be found in the SDK below:
+The source code and include files of the **AD5940_SqrWveVoltammetry** can be found in the SDK below:
 
 .. admonition:: Download
    :class: download
@@ -64,7 +63,6 @@ The source code and include files for the project can be found on Git
    
    `AD5940 SDK Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
    
-   |
 
 
 Configuring the Software

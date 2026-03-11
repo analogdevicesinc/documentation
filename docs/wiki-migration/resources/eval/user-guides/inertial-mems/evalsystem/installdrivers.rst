@@ -3,13 +3,9 @@ How to Install Drivers (Without an Installer)
 
 This page describes how to install drivers without an installer, as in the case of the :doc:`ADXL362 Datalogger / Development Board </wiki-migration/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/eval-adxl362z-db>`.
 
-|
-
 .. tip::
 
-   Use the Table of Contents on the right to scroll to instructions for your operating system.
-
-   | Note that your system may behave slightly differently, but the overall procedure remains the same.
+   Use the Table of Contents on the right to scroll to instructions for your operating system. Note that your system may behave slightly differently, but the overall procedure remains the same.
 
 
 Windows 7

@@ -54,7 +54,6 @@
 
     {{ :resources:fpga:altera:programmer.png?650 |Programmer}}
    * Double-click the first device under the **File** column and browser for the **.sof** file required for the project. Make sure the **Program/Configure** column is checked. Press the **Start** button to program the FPGA.
-    
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/add_sof.png
    :alt: Empty application project

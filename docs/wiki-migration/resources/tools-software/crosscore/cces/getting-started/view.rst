@@ -75,5 +75,5 @@ Further information about these views and the others available is located in CCE
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation CCES Getting Started#config
+.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#config
    :alt: System & Project Configuration#.|CCES Getting Started#help|Online Help & Example Browser

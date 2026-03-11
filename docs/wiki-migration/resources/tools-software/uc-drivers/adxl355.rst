@@ -237,7 +237,7 @@ SPI Communication Example
    if (ret < 0)
        goto error;
 
-   // Read single accel data 
+   // Read single accel data
    struct adxl355_frac_repr x;
    struct adxl355_frac_repr y;
    struct adxl355_frac_repr z;
@@ -363,7 +363,7 @@ The attributes are:
 
 ::
 
-   converted_accel [m/s^2] = (raw + calibbias << 4) * scale 
+   converted_accel [m/s^2] = (raw + calibbias << 4) * scale
    converted_accel [m/s^2] = (raw + calibbias << 4) * 0.000038245
 
 Temperature channel
@@ -381,8 +381,8 @@ The channel has 3 attributes, as follows:
 
 ::
 
-   converted_temp [degrees Celsius] = (raw + offset) * scale 
-   converted_temp [degrees Celsius] = (2111.25 - raw) * 110.497238 
+   converted_temp [degrees Celsius] = (raw + offset) * scale
+   converted_temp [degrees Celsius] = (2111.25 - raw) * 110.497238
 
 Device buffers
 ~~~~~~~~~~~~~~

@@ -80,9 +80,9 @@ Look for the right gpio number of target boards:
    gpiochip1: GPIOs 16-31, adi-gpio:
    gpio-30 ( |mdio-reset ) out hi
    gpiochip2: GPIOs 32-47, adi-gpio:
-   gpio-32 ( |spi0.32 ) out hi 
-   gpio-38 ( |spi2.38 ) out hi 
-   gpio-39 ( |spi0.39 ) out hi 
+   gpio-32 ( |spi0.32 ) out hi
+   gpio-38 ( |spi2.38 ) out hi
+   gpio-39 ( |spi0.39 ) out hi
    gpio-44 ( |spi0.44 ) out hi
    gpiochip3: GPIOs 48-63, adi-gpio:
    gpiochip4: GPIOs 64-79, adi-gpio:
@@ -91,18 +91,18 @@ Look for the right gpio number of target boards:
    gpiochip9: GPIOs 479-479, parent: spi/spi0.32, AD7879-GPIO, can sleep:
    gpiochip8: GPIOs 480-495, parent: i2c/0-0022, mcp23017, can sleep:
    gpiochip7: GPIOs 496-511, parent: i2c/0-0021, mcp23017, can sleep:
-   gpio-498 P0.2 (adi-uart4.0 ) out lo 
-   gpio-499 P0.3 (3100c000.ethernet) out lo 
-   gpio-500 P0.4 (3100e000.ethernet) out lo 
-   gpio-507 P0.11 (31010000.mmc) out lo 
-   gpio-508 P0.12 (spi2.38 ) out lo 
+   gpio-498 P0.2 (adi-uart4.0 ) out lo
+   gpio-499 P0.3 (3100c000.ethernet) out lo
+   gpio-500 P0.4 (3100e000.ethernet) out lo
+   gpio-507 P0.11 (31010000.mmc) out lo
+   gpio-508 P0.12 (spi2.38 ) out lo
    gpio-509 P0.13 (spi2.38 ) out lo
 
 As above showed, GPIO 479 is what we are looking for.
 
 ::
 
-   # echo 479 > /sys/class/gpio/export 
+   # echo 479 > /sys/class/gpio/export
    # echo high > /sys/class/gpio/gpio479/direction
 
 Make sure your LCD screen becomes white at this point.

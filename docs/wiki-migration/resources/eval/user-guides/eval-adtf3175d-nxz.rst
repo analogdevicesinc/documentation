@@ -13,7 +13,7 @@ News
    \* Please reference the release note to see important changes.
 
    
-   \* The documentation is now a part of the release and is also in the GitHub repo: :git-ToF:`External Link <doc/user-guide/ADTF3175D-EvalKit-610.md>`
+   \* The documentation is now a part of the release and is also in the GitHub repo: `External Link <https://github.com/analogdevicesinc/ToF/blob/v6.1.0/doc/user-guide/ADTF3175D-EvalKit-610.md>`_
 
 
 EVAL-ADTF3175D-NXZ
@@ -103,7 +103,7 @@ System Information
 
 ::
 
-   ; USB and Power : 
+   ; USB and Power :
 
 **Minimum Requirements**
 
@@ -135,7 +135,7 @@ Index of Pages
 
    
    -  :doc:`ADSD3500 Guide </wiki-migration/resources/eval/user-guides/eval-adtf3175x-adsd3500>`
-   -  :git-ToF:`User Guide for Release 6.1.0 <doc/user-guide/ADTF3175D-EvalKit-610.md>`
+   -  `User Guide for Release 6.1.0 <https://github.com/analogdevicesinc/ToF/blob/v6.1.0/doc/user-guide/ADTF3175D-EvalKit-610.md>`_
    
    ::
    

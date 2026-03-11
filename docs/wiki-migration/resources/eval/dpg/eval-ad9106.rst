@@ -75,7 +75,7 @@ On-board jumpers and other hardware provisions are listed, and their functions d
 
 |ad910x_table1.png|
 
-| 
+
 | ==== Clock Configuration ==== The evaluation board has a provision for on-board or external clocking configuration.
 
 -  The on-board clocking configuration is implemented by default. DAC CLKP and CLKN are connected to the differential outputs of the on-board crystal oscillator as shown in Figure 2a. The onboard oscillator has a frequency of 156.25 MHz. If a different clock frequency is desired, Use external clocking configuration.
@@ -87,8 +87,6 @@ On-board jumpers and other hardware provisions are listed, and their functions d
 
    \ *Figure 2a. DAC clock is connected to on-board oscillator (default) \| Figure 2b. DAC clock is connected to J10*\
 
-
-| 
 
 Output Configuration
 ~~~~~~~~~~~~~~~~~~~~
@@ -134,8 +132,6 @@ The common-mode voltage of the amplifier outputs can also be changed by installi
    :width: 600px
 
 The on-board amplifiers can be characterized using off-board power supplies by removing E1 and E2 then connecting 5.2V 0.2A across TP5 and ground and -5.2V 0.2A across TP4 and ground. Refer to Table 2.
-
-| 
 
 Sample Waveforms out of RF transformer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

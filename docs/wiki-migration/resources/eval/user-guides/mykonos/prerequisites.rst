@@ -8,7 +8,12 @@ What you need, depends on what you are trying to do. As a minimum, you need to s
 
    -  The `Xilinx ZC706 <https://www.xilinx.com/zc706>`_. The fabric on this device is much larger, and if you are looking at targeting - this is the recommended option.
    -  There are a few more boards, which do work, but are currently not yet supported. The experience of the fabric only solutions is very close to the ARM/FPGA SoC based solutions, but the GUI runs on a host PC (Windows or Linux).
-   -  
+
+::
+
+     *
+
+
 .. note::
 
    See `quickstart <https://wiki.analog.com/quickstart#supported_carriers>`_

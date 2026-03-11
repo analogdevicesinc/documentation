@@ -43,7 +43,7 @@ There is a `Avahi <http://avahi.org/>`_ deamon running on the PlutoSDR. Avahi is
 
 ::
 
-   michael@mhenneri-D04:~$ **iio_info -n <fc #ff0000>**pluto.local**</fc>**
+   michael@mhenneri-D04:~$ **iio_info -n**\ pluto.local***
    Library version: 0.9 (git tag: f7cde8f)
    Compiled with backends: local xml ip usb
    IIO context created with network backend.
@@ -67,7 +67,8 @@ Once everything is installed, you should be able to use ``pluto.local`` as the h
 PING pluto.local (192.168.2.1) 56(84) bytes of data.
 64 bytes from 192.168.2.1 (192.168.2.1): icmp_seq=1 ttl=64 time=0.208 ms
 64 bytes from 192.168.2.1 (192.168.2.1): icmp_seq=2 ttl=64 time=0.387 ms
-^C
+^C ^
+
 --- pluto.local ping statistics ---
 2 packets transmitted, 2 received, 0% packet loss, time 1001ms
 rtt min/avg/max/mdev = 0.208/0.297/0.387/0.091 ms``
@@ -197,10 +198,7 @@ This will be the default (based on the AD9363):
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
@@ -217,10 +215,7 @@ To change things to the AD9364 configuration:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
@@ -235,10 +230,7 @@ Starting with PlutoSDR firmware revision **v0.32** an additional variable should
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
@@ -252,10 +244,7 @@ Note that when setting the mode of a Rev. C PlutoSDR to ``2r2t``, the following 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
@@ -274,10 +263,7 @@ After rebooting the device, this is what the AD9364 configuration looks like:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
@@ -302,10 +288,7 @@ The first time you want to use this new feature you need to format/erase the mtd
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
@@ -326,7 +309,7 @@ The first time you want to use this new feature you need to format/erase the mtd
       Erasing 64 Kibyte @ b0000 -- 78 % complete flash_erase:  Cleanmarker Updated.
       Erasing 64 Kibyte @ c0000 -- 85 % complete flash_erase:  Cleanmarker Updated.
       Erasing 64 Kibyte @ d0000 -- 92 % complete flash_erase:  Cleanmarker Updated.
-      Erasing 64 Kibyte @ d0000 -- 100 % complete 
+      Erasing 64 Kibyte @ d0000 -- 100 % complete
    
 
 
@@ -334,19 +317,16 @@ After this is done you can use the ``device_passwd`` command to permanently chan
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
    
-      # **device_passwd** 
+      # **device_passwd**
       Changing password for root
-      New password: 
+      New password:
       Bad password: too short
-      Retype password: 
+      Retype password:
       passwd: password for root changed by root
       #
    
@@ -363,10 +343,7 @@ The first time you want to use this new feature you need to format/erase the mtd
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
@@ -387,7 +364,7 @@ The first time you want to use this new feature you need to format/erase the mtd
       Erasing 64 Kibyte @ b0000 -- 78 % complete flash_erase:  Cleanmarker Updated.
       Erasing 64 Kibyte @ c0000 -- 85 % complete flash_erase:  Cleanmarker Updated.
       Erasing 64 Kibyte @ d0000 -- 92 % complete flash_erase:  Cleanmarker Updated.
-      Erasing 64 Kibyte @ d0000 -- 100 % complete 
+      Erasing 64 Kibyte @ d0000 -- 100 % complete
    
 
 
@@ -395,15 +372,12 @@ After this is done you can use the ``device_persistent_keys`` command to permane
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::
    
-      # **device_persistent_keys** 
+      # **device_persistent_keys**
       Generating 256 bit ecdsa key, this may take a while...
       Public key portion is:
       ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH+cMtkirbmWjOq+EjW0Lzir5LVuWXFwRTOMOnb0eWo
@@ -417,15 +391,13 @@ Changing the USB Ethernet Compatibility Mode
 
 Starting with PlutoSDR Firmware version :git-plutosdr-fw:`releases/tag/v0.33`, M2k (:git-m2k-fw:`releases/tag/v0.27`) there is now support for selecting the USB Ethernet Compatibility Mode by setting/changing the ``usb_ethernet_mode`` variable. The main industry protocols are (in chronological order): Remote NDIS (`RNDIS <https://en.wikipedia.org/wiki/RNDIS>`_, a Microsoft vendor protocol), Ethernet Control Model (`ECM <https://en.wikipedia.org/wiki/Ethernet_over_USB>`_), and Network Control Model (`NCM <https://en.wikipedia.org/wiki/Ethernet_over_USB>`_) - all supported by both Pluto and M2k. You may need to change this based on your host PC operating system type:
 
-+-----------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-|                 | Windows            | Linux              | MacOS              | iPadOS             | Android            |
-+=================+====================+====================+====================+====================+====================+
-| RNDIS (default) | <fc #00ff00>✔</fc> | <fc #00ff00>✔</fc> | <fc #ff0000>✘</fc> | <fc #ff0000>✘</fc> | <fc #ff0000>✘</fc> |
-+-----------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-| CDC-NCM         | <fc #ff0000>✘</fc> | <fc #00ff00>✔</fc> | <fc #00ff00>✔</fc> | <fc #00ff00>✔</fc> | <fc #ff0000>✘</fc> |
-+-----------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-| CDC-ECM         | <fc #ff0000>✘</fc> | <fc #00ff00>✔</fc> | <fc #ff0000>✘</fc> | <fc #ff0000>✘</fc> | <fc #00ff00>✔</fc> |
-+-----------------+--------------------+--------------------+--------------------+--------------------+--------------------+
+=============== ======= ===== ===== ====== =======
+\               Windows Linux MacOS iPadOS Android
+=============== ======= ===== ===== ====== =======
+RNDIS (default) ✔       ✔     ✘     ✘      ✘
+CDC-NCM         ✘       ✔     ✔     ✔      ✘
+CDC-ECM         ✘       ✔     ✘     ✘      ✔
+=============== ======= ===== ===== ====== =======
 
 As you can see - the default of RNDIS does not work on Mac OS (sorry). The platform you are testing on - needs to support high power USB 2.0 devices (500mA). (iPad will support, iPhone will not).
 
@@ -451,7 +423,7 @@ Config File
    # Edit, Save and then Eject the USB Drive
 
    [SYSTEM]
-   xo_correction = 
+   xo_correction =
    udc_handle_suspend = 0
    # USB Communication Device Class Compatibility Mode [rndis|ncm|ecm]
    **usb_ethernet_mode = ncm**
@@ -461,10 +433,7 @@ u-boot environment
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
+   This specifies any shell prompt running on the target. The ``#`` is the prompt, and the **``bold``** is what you type
 
    
    ::

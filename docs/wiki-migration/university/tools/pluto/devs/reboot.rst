@@ -9,23 +9,24 @@ Pluto/M2k was designed never to have to be rebooted - but software bugs happen. 
 
    Welcome to:
    ______ _       _        _________________
-   | ___ \ |     | |      /  ___|  _  \ ___ \
-   | |_/ / |_   _| |_ ___ \ `--.| | | | |_/ /
-   |  __/| | | | | __/ _ \ `--. \ | | |    /
-   | |   | | |_| | || (_) /\__/ / |/ /| |\ \
+   | ___ \ |     | |      /  ___|  _  \ ___ \ |
+   | |_/ / |_   _| |_ ___ \ `--.| | | | |_/ / |
+   |  __/| | | | | __/ _ \ `--. \ | | |    / |
+   | |   | | |_| | || (_) /\__/ / |/ /| |\ \ |
+
    \_|   |_|\__,_|\__\___/\____/|___/ \_| \_|
 
    v0.20
    :doc:`/wiki-migration/university/tools/pluto`
 
-   # device_reboot 
+   # device_reboot
    Usage: /usr/sbin/device_reboot {ram|sf|reset|verbose|break}
      sf     : Reboot and enter Serial Flash DFU mode
      ram    : Reboot and enter RAM DFU mode
      reset  : Reboot
      verbose: Reboot and start serial console Verbose
      break  : Reboot and HALT in u-boot
-   # 
+   #
 
 Reboot to DFU-RAM
 -----------------
@@ -62,16 +63,13 @@ Reboot to DFU-RAM
    Out:   serial@e0001000
    Err:   serial@e0001000
    Model: Zynq Pluto SDR Board
-   Hit any key to stop autoboot:  0 
+   Hit any key to stop autoboot:  0
    **Entering DFU RAM mode ...**
    **Copying Linux from DFU to RAM...**
 
 .. tip::
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
+   This specifies any shell prompt running on the development host
 
    
    Following commands can be used to boot a fresh build of the firmware image. To simply things, there is a script in `plutosdr_scripts <https://github.com/plutosdr_scripts>`_ ``pluto_ramboot`` that can do all these steps in one command.
@@ -94,10 +92,10 @@ Reboot to DFU-RAM
           sudo dfu-util -d 0456:b673,0456:b674 -D ./build/pluto.dfu -a firmware.dfu
           sudo dfu-util -d 0456:b673,0456:b674  -a firmware.dfu -e
    
-   |
 
 
-| ===== Reboot to DFU-Flash =====
+Reboot to DFU-Flash
+-------------------
 
 ::
 
@@ -131,7 +129,7 @@ Reboot to DFU-RAM
    Out:   serial@e0001000
    Err:   serial@e0001000
    Model: Zynq Pluto SDR Board
-   Hit any key to stop autoboot:  0 
+   Hit any key to stop autoboot:  0
    **Entering DFU SF mode ...
    SF: Detected N25Q256A with page size 256 Bytes, erase size 4 KiB, total 32 MiB**
 

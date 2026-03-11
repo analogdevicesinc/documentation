@@ -27,10 +27,7 @@ The chip includes a strobe pin. Data from each stage of the shift register is la
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| CD4094 8 bit shift and store CMOS logic device
-| 8 LEDs
-| 8 100 Ω resistors
+ADALM1000 hardware module CD4094 8 bit shift and store CMOS logic device 8 LEDs 8 100 Ω resistors
 
 Directions:
 ~~~~~~~~~~~
@@ -43,14 +40,7 @@ Below is the pinout diagram for the CD4094 IC. Notice that pin OUTPUT ENABLE mus
    :align: center
    :width: 300px
 
-| Q1-Q8 - Output Pins
-| V\ :sub:`DD` - 3.3 V
-| V\ :sub:`SS` - 0 V
-| STROBE - storage register clock pin
-| CLOCK - shift register clock pin
-| OUTPUT ENABLE - enables outputs if set high (must be connected to 5 V for normal operation)
-| DATA - serial data input pin
-| QS, Q'S - allows more than one chip to be daisy-chained together by sending the least significant bit to another CD4094's DATA pin allowing for the effective creation of 16-bit (2 chips), 24-bit (3 chips), or larger shift and store registers.
+Q1-Q8 - Output Pins V\ :sub:`DD` - 3.3 V V\ :sub:`SS` - 0 V STROBE - storage register clock pin CLOCK - shift register clock pin OUTPUT ENABLE - enables outputs if set high (must be connected to 5 V for normal operation) DATA - serial data input pin QS, Q'S - allows more than one chip to be daisy-chained together by sending the least significant bit to another CD4094's DATA pin allowing for the effective creation of 16-bit (2 chips), 24-bit (3 chips), or larger shift and store registers.
 
 It is a fairly simple matter to connect the shift register to three of the general purpose digital I/O pins on the ALM1000. We can use PIO 0 for the CLOCK input, PIO 1 for the serial DATA input and PIO 2 for the STROBE input. Using Python we can step through the necessary sequence to serially shift an 8 bit number into the register and then set the STROBE bit high transferring the data in the register to the output pins.
 
@@ -81,14 +71,10 @@ Open the shift_register.py Python program in your favorite editor. The IDLE that
 Use the CD4094 to Control a Seven-Segment LED Display
 -----------------------------------------------------
 
-.. _objective-1:
-
 Objective:
 ~~~~~~~~~~
 
 Use a 7-Segment LED (Light Emitting Diode) display to output a numeric integer (and a few letters as well) using the digital outputs on your ALM1000 module. Many digital systems use seven segment displays for displaying digital values in a form that can be understood by the user. This information is often numerical data in the form of numbers, characters and symbols. Seven-segment displays produce the required number or symbol by illuminating the individual segments in various combinations.
-
-.. _background-1:
 
 Background:
 ~~~~~~~~~~~
@@ -115,32 +101,20 @@ Each of the 7 segments is identified by a letter as can be seen in figure 3 as w
    Figure 3, schematic and example pinout
 
 
-.. _materials-1:
-
 Materials:
 ~~~~~~~~~~
 
-| ADALM1000 hardware module
-| Solder-less breadboard
-| Jumper wires
-| 7 - 100Ω Resistors
-| 1 - 7 segment display
-
-.. _directions-1:
+ADALM1000 hardware module Solder-less breadboard Jumper wires 7 - 100Ω Resistors 1 - 7 segment display
 
 Directions:
 ~~~~~~~~~~~
 
 As stated in the datasheet for most displays each LED segment can handle a typical current up to 20 mA, and is recommended to be used with 16 to 18 mA; so at 15.15 mA we will be safe. Starting with the circuit connections from figure 1, substitute the individual LEDs for the segments in your display. This will be simple if your 7 segment display is a common cathode type. Be sure to make any changes if your 7 segment display is a common anode type i.e. move the common anode to the 3.3 V supply.
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
 Plug the USB cable into the ALM1000.
-
-.. _procedure-1:
 
 Procedure:
 ~~~~~~~~~~
@@ -177,12 +151,10 @@ To accomplish this the two shift registers must be daisy chained together.
 
 **For Further Reading:**
 
-| https://en.wikipedia.org/wiki/Shift_register
-| http://en.wikipedia.org/wiki/Seven-segment_display
+https://en.wikipedia.org/wiki/Shift_register http://en.wikipedia.org/wiki/Seven-segment_display
 
 Where to get a 7 segment display:
 
-| http://www.jameco.com/webapp/wcs/stores/servlet/Product_10001_10001_24782\_-1
-| https://www.sparkfun.com/products/8546
+http://www.jameco.com/webapp/wcs/stores/servlet/Product_10001_10001_24782_-1 https://www.sparkfun.com/products/8546
 
 **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`\ **.**

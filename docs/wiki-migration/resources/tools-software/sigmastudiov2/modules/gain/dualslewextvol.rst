@@ -3,8 +3,8 @@
 Dual Slew External Volume
 =========================
 
-| 
-| |dualslew.jpg|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/dualslew.jpg
+   :alt: dualslew.jpg
 
 Location of the Module:
 
@@ -14,9 +14,15 @@ Location of the Module:
 Description
 -----------
 
-| The Dual Slew External Volume Gain adjusts external audio signal levels with independent fade-in and fade-out times, using slew rate limiters to ensure smooth, click-free transitions.
-| ===== Usage ===== Use the Dual Slew External Volume Gain to control the amplitude of external audio sources with precise timing. Adjust the independent fade-in and fade-out parameters to define how quickly the signal reaches or leaves its target level. This feature is ideal for preventing clicks, pops, or abrupt volume changes in audio systems, ensuring smooth and consistent level transitions.
-| ===== Targets Supported =====
+The Dual Slew External Volume Gain adjusts external audio signal levels with independent fade-in and fade-out times, using slew rate limiters to ensure smooth, click-free transitions.
+
+Usage
+-----
+
+Use the Dual Slew External Volume Gain to control the amplitude of external audio sources with precise timing. Adjust the independent fade-in and fade-out parameters to define how quickly the signal reaches or leaves its target level. This feature is ideal for preventing clicks, pops, or abrupt volume changes in audio systems, ensuring smooth and consistent level transitions.
+
+Targets Supported
+-----------------
 
 +--------------------------------------------------------------+----------------------+----------------------------------+
 | Name                                                         | ADSP-214xx           | ADSP-215xx/SC5xx                 |
@@ -39,7 +45,7 @@ Input
 +--------------------------------+--------------------------------------------------------------+--------------------------------+
 | ControlInput                   | Control                                                      | Gain Value in DB               |
 +--------------------------------+--------------------------------------------------------------+--------------------------------+
-| Input <fc #ff0000>X</fc>       | Audio                                                        | Input channel X                |
+| Input X                        | Audio                                                        | Input channel X                |
 +--------------------------------+--------------------------------------------------------------+--------------------------------+
 
 Output
@@ -50,15 +56,15 @@ Output
 +================================+==============================================================+================================+
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------ |
 +--------------------------------+--------------------------------------------------------------+--------------------------------+
-| Output <fc #ff0000>X</fc>      | Audio                                                        | Output channel X               |
+| Output X                       | Audio                                                        | Output channel X               |
 +--------------------------------+--------------------------------------------------------------+--------------------------------+
 
 Note:
 
--  <fc #ff0000>X</fc> - Channel Index
+-  X - Channel Index
 
-| 
-| ===== Configurable Parameters =====
+Configurable Parameters
+-----------------------
 
 +--------------------------------+---------------------------+----------------------------------------------------------+--------------------------------------------------------------------------------+
 | GUI Parameter Name             | Default Value             | Range                                                    | Function Description                                                           |
@@ -114,7 +120,4 @@ ADSP-215xx 1.8           3.1            5.9
 ADSP-215xx Example Schematic
 ----------------------------
 
-| |image1|
-
-.. |dualslew.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/dualslew.jpg
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/schematic.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/schematic.jpg

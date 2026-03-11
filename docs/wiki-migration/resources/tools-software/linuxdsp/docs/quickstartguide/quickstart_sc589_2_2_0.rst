@@ -16,16 +16,20 @@ Setting Up Your Host PC
 
 The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-bit.
 
-| 
-| ==== Installing Required Packages ==== In order to build and deploy Linux to your ADSP-SC589-EZKIT or ADSP-SC589-MINI development board you will need to install the following packages on your host PC.
+Installing Required Packages
+----------------------------
+
+In order to build and deploy Linux to your ADSP-SC589-EZKIT or ADSP-SC589-MINI development board you will need to install the following packages on your host PC.
 
 ::
 
    $ sudo apt-get update
    $ sudo apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm u-boot-tools openssl curl tftpd-hpa python
 
-| 
-| ==== Installing CrossCore Embedded Studio ==== CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into RAM for the first initial boot of the device. The tools are created for 32-bit architecture and therefore requires a 32-bit libz package to run. Download and install it.
+Installing CrossCore Embedded Studio
+------------------------------------
+
+CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into RAM for the first initial boot of the device. The tools are created for 32-bit architecture and therefore requires a 32-bit libz package to run. Download and install it.
 
 ::
 
@@ -33,8 +37,10 @@ The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64
    $ sudo dpkg -i ./adi-CrossCoreEmbeddedStudio-linux-x86-2.10.0.deb
    $ sudo apt install lib32z1
 
-| 
-| ==== Configuring TFTP Service==== A TFTP server on the host is used to transfer images to the development board. Install and configure.
+Configuring TFTP Service
+------------------------
+
+A TFTP server on the host is used to transfer images to the development board. Install and configure.
 
 ::
 
@@ -51,8 +57,10 @@ The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64
    $ sudo chmod 777 /tftpboot
    $ sudo service tftpd-hpa restart
 
-| 
-| ==== Configure Minicom ==== In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
+Configure Minicom
+-----------------
+
+In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
 
 On the host PC open a terminal and execute the following commands:
 
@@ -81,7 +89,7 @@ On the host PC open a terminal and execute the following commands:
         Set Serial Device to /dev/ttyUSB0
         Set Bps/Par/Bits to 115200 8N1
         Set Hardware Flow Control to No
-        
+
         Close the Serial port setup option by press Esc
     Select Save setup as dfl
     Select Exit
@@ -91,10 +99,12 @@ On the host PC open a terminal and execute the following commands:
    \ ``/dev/ttyUSB0`` might not correspond to the serial port of the board on every system. You can determine which ``/dev`` entry your board uses by running ``ls -l /dev/ttyUSB*`` twice, once when the serial port of the board is plugged in, and once when it isn't.
 
 
-| 
-| ==== Installing the Sources ==== The example is fully contained in the Analog Devices Yocto Linux github repositories.
+Installing the Sources
+----------------------
 
-To install the sources: 
+The example is fully contained in the Analog Devices Yocto Linux github repositories.
+
+To install the sources:
 
 ::
 
@@ -109,8 +119,8 @@ To install the sources: 
       -m develop-yocto-2.2.0.xml
    $ ./bin/repo sync
 
-| 
-| ===== Building the Image =====
+Building the Image
+==================
 
 Preparing the buildtool
 -----------------------
@@ -134,8 +144,10 @@ Sourcing the script will configure your build environment and create a build fol
    Note that the build environment needs to be sourced once only before building.  If later working in a different terminal the setup-environment script should be sourced again.  If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
 
 
-| 
-| ==== Building the example ==== You can build three different versions of the root file system; minimal, ramdisk and full. To build the example images invoke bitbake from within the build directory created previously.
+Building the example
+--------------------
+
+You can build three different versions of the root file system; minimal, ramdisk and full. To build the example images invoke bitbake from within the build directory created previously.
 
 ::
 
@@ -154,20 +166,20 @@ Copy the U-Boot binary files to the tftp directory:
 
 ::
 
-   $ cp tmp/deploy/images/adsp-sc589-ezkit/init-sc589-ezkit.elf /tftpboot 
-   $ cp tmp/deploy/images/adsp-sc589-ezkit/u-boot-sc589-ezkit /tftpboot 
-   $ cp tmp/deploy/images/adsp-sc589-ezkit/u-boot-sc589-ezkit.ldr /tftpboot 
+   $ cp tmp/deploy/images/adsp-sc589-ezkit/init-sc589-ezkit.elf /tftpboot
+   $ cp tmp/deploy/images/adsp-sc589-ezkit/u-boot-sc589-ezkit /tftpboot
+   $ cp tmp/deploy/images/adsp-sc589-ezkit/u-boot-sc589-ezkit.ldr /tftpboot
 
 or
 
 ::
 
-   $ cp tmp/deploy/images/adsp-sc589-mini/init-sc589-mini.elf /tftpboot 
-   $ cp tmp/deploy/images/adsp-sc589-mini/u-boot-sc589-mini /tftpboot 
-   $ cp tmp/deploy/images/adsp-sc589-mini/u-boot-sc589-mini.ldr /tftpboot 
+   $ cp tmp/deploy/images/adsp-sc589-mini/init-sc589-mini.elf /tftpboot
+   $ cp tmp/deploy/images/adsp-sc589-mini/u-boot-sc589-mini /tftpboot
+   $ cp tmp/deploy/images/adsp-sc589-mini/u-boot-sc589-mini.ldr /tftpboot
 
-| 
-| ==== Running U-Boot on the Board for the first time====
+Running U-Boot on the Board for the first time
+----------------------------------------------
 
 .. note::
 
@@ -206,10 +218,10 @@ $ cd /opt/analog/cces/2.10.0/ARM/openocd/share/openocd/scripts $ sudo /opt/analo
 
 ::
 
-       Open On-Chip Debugger (Analog Devices CCES 2.10.0 OpenOCD 0.9.0-ga8d0a22) 0.9.0 
-       Licensed under GNU GPL v2 
+       Open On-Chip Debugger (Analog Devices CCES 2.10.0 OpenOCD 0.9.0-ga8d0a22) 0.9.0
+       Licensed under GNU GPL v2
        Report bugs to <processor.tools.support@analog.com>
-       adapter speed: 1000 kHz 
+       adapter speed: 1000 kHz
        Info : transports supported by the debug adapter: "jtag", "swd"
        Info : auto-select transport "jtag"
        halt and restart using CTI
@@ -228,14 +240,34 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
    ;''**Terminal3: GDB (sc589-ezkit)**''
    : <code>
 
-$ cd /tftpboot $ /opt/analog/cces/2.10.0/ARM/arm-none-eabi/bin/arm-none-eabi-gdb u-boot-sc589-ezkit ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load init-sc589-ezkit.elf Loading section .text, size 0xa70 lma 0x20080000 Start address 0x20080028, load size 2672 Transfer rate: 25 KB/sec, 2672 bytes/write. (gdb) c Continuing. ^C Program received signal SIGINT, Interrupt. 0x20080024 in ?? () </code>
+$ cd /tftpboot $ /opt/analog/cces/2.10.0/ARM/arm-none-eabi/bin/arm-none-eabi-gdb u-boot-sc589-ezkit ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load init-sc589-ezkit.elf Loading section .text, size 0xa70 lma 0x20080000 Start address 0x20080028, load size 2672 Transfer rate: 25 KB/sec, 2672 bytes/write. (gdb) c Continuing.
+
++---+
+
+
+| C |
+
++===+
++---+
+
+Program received signal SIGINT, Interrupt. 0x20080024 in ?? () </code>
 
 ::
 
    ;''**Terminal3: GDB (sc589-mini)**''
    : <code>
 
-$ cd /tftpboot $ /opt/analog/cces/2.10.0/ARM/arm-none-eabi/bin/arm-none-eabi-gdb u-boot-sc589-ezkit ... (gdb) target remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load init-sc589-mini.elf Loading section .text, size 0xa70 lma 0x20080000 Start address 0x20080028, load size 2672 Transfer rate: 25 KB/sec, 2672 bytes/write. (gdb) c Continuing. ^C Program received signal SIGINT, Interrupt. 0x20080024 in ?? () </code>
+$ cd /tftpboot $ /opt/analog/cces/2.10.0/ARM/arm-none-eabi/bin/arm-none-eabi-gdb u-boot-sc589-ezkit ... (gdb) target remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load init-sc589-mini.elf Loading section .text, size 0xa70 lma 0x20080000 Start address 0x20080028, load size 2672 Transfer rate: 25 KB/sec, 2672 bytes/write. (gdb) c Continuing.
+
++---+
+
+
+| C |
+
++===+
++---+
+
+Program received signal SIGINT, Interrupt. 0x20080024 in ?? () </code>
 
 Now, load U-Boot into RAM.
 
@@ -319,14 +351,15 @@ CPU: ADSP ADSP-SC589-0.1 (Detected Rev: 1.1) (spi flash boot) VCO: 450 MHz, Cclk
 
 In: serial@0x31003000 Out: serial@0x31003000 Err: serial@0x31003000 other init Net: dwmac.3100c000 Hit any key to stop autoboot: 0 => </code>
 
-| 
-| == Flash U-Boot to SPI Flash ==
-| In the U-Boot console, set the IP address of the Host Linux PC that hosts the U-Boot loader file (``u-boot-sc573-ezkit.ldr``) on TFTP.
+Flash U-Boot to SPI Flash
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the U-Boot console, set the IP address of the Host Linux PC that hosts the U-Boot loader file (``u-boot-sc573-ezkit.ldr``) on TFTP.
 
 ::
 
    ;''**Terminal1: minicom**''
-   :  
+   :
 
 ::
 
@@ -382,7 +415,7 @@ You will see an output similar to the one below:
    SF: 459144 bytes @ 0x0 Written: OK
    =>
 
-   | At this point the U-Boot binary is stored in flash. You can now disconnect the ICE-1000 or ICE-2000 from the development board and make sure to switch the BMODE to position 1. You will only need to reconnect this if your board fails to boot and you need to re-follow these instructions.
+At this point the U-Boot binary is stored in flash. You can now disconnect the ICE-1000 or ICE-2000 from the development board and make sure to switch the BMODE to position 1. You will only need to reconnect this if your board fails to boot and you need to re-follow these instructions.
 
 Booting Linux
 =============
@@ -414,9 +447,10 @@ Format the SD card to EXT filesystem
 
    $ sudo mkfs.ext2 /dev/sdb1
 
-|
+Writing the kernel and file system to the SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| === Writing the kernel and file system to the SD Card === Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card. To allow the choice of booting using ramboot and sdcard boot we copy the ramboot image to the SD card as well as extract the minimal image to the SD card.
+Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card. To allow the choice of booting using ramboot and sdcard boot we copy the ramboot image to the SD card as well as extract the minimal image to the SD card.
 
 ::
 
@@ -444,19 +478,18 @@ or
 
 The file system and kernel image are now installed on to the SD Card. The SD Card can now be safely removed from the Host PC.
 
-| 
-| === Booting Linux from the SD card === Insert the SD card to target board, and reset the board and enter into U-Boot
+Booting Linux from the SD card
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Insert the SD card to target board, and reset the board and enter into U-Boot
 
 ::
 
    => run sdcardboot
-   or 
+   or
    => run ramboot_emmc
 
 The linux kernel will then boot up using the file system stored in SD card.
-
-
-| 
 
 Booting Linux from the USB Mass Storage
 ---------------------------------------
@@ -560,9 +593,10 @@ And type to boot
 
 Now the rootfs is set to your USB stick and amount of space equals of size of partition on USB stick.
 
-|
+Booting Linux Using TFTP
+------------------------
 
-| ==== Booting Linux Using TFTP ==== In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc589>` and (for both NFS and RAM boot) a copy of the kernel image should be copied into the **/tftpboot** directory.
+In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc589>` and (for both NFS and RAM boot) a copy of the kernel image should be copied into the **/tftpboot** directory.
 
 ::
 
@@ -574,8 +608,10 @@ or
 
    $ cp tmp/deploy/images/adsp-sc589-mini/fitImage /tftpboot
 
-| 
-| === RAM Boot === For RAM boot we need to copy the image containing filesystem to the /tftpboot directory.
+RAM Boot
+~~~~~~~~
+
+For RAM boot we need to copy the image containing filesystem to the /tftpboot directory.
 
 ::
 
@@ -587,8 +623,10 @@ or
 
    $ cp tmp/deploy/images/adsp-sc589-mini/adsp-sc5xx-ramdisk-adsp-sc589-mini.cpio.xz.u-boot /tftpboot/ramdisk.cpio.xz.u-boot
 
-| 
-| === NFS Boot === For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
+NFS Boot
+~~~~~~~~
+
+For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
 
 ::
 
@@ -627,8 +665,9 @@ The output will indicate that the server is active, i.e.
 
 If it's reported as inactive, wait a few moments and check the status again.
 
-| The root filesystem should then be copied to /romfs.
-| If you are using the ADSP-SC589-EZKIT with the full image (you ran 'bitbake adsp-sc5xx-full'):
+The root filesystem should then be copied to /romfs.
+
+If you are using the ADSP-SC589-EZKIT with the full image (you ran 'bitbake adsp-sc5xx-full'):
 
 ::
 
@@ -652,8 +691,10 @@ Or if you are using the ADSP-SC589-MINI with the minimal image (you ran 'bitbake
 
    $ sudo tar -xf tmp/deploy/images/adsp-sc589-mini/adsp-sc5xx-minimal-adsp-sc589-mini.tar.xz -C /romfs
 
-| 
-| === Booting into Linux from TFTP === Next, on the target, from u-boot, run one of the following command:
+Booting into Linux from TFTP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Next, on the target, from u-boot, run one of the following command:
 
 ::
 
@@ -694,10 +735,10 @@ Or if you are using the ADSP-SC589-MINI with the minimal image (you ran 'bitbake
 
 The default username is **root** and the password is **adi**.
 
-| 
-| ==== Building the SDK ==== To build the SDK follow the instructions here :doc:`Building the SDK </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/building-the-sdk>`.
+Building the SDK
+----------------
 
-| 
+To build the SDK follow the instructions here :doc:`Building the SDK </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/building-the-sdk>`.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc589-ezkit_overview.jpg
    :width: 400px

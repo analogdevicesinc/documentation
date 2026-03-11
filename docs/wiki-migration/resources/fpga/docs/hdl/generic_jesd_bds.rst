@@ -140,14 +140,15 @@ The Link layer consists from L number of lanes which form the link. More informa
 Example 1 Tx link for L=4; M=1; S=1; F=2; NP=16
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| In this mode the Transport Layer will output two frames in every clock cycle. 32 bits / (F\*8) = 2;
-| The application layer must provide 8 samples each cycle to be able to fill the 2 frames. SPC = (L\*32) / (M\*NP) = (4\*32) / (1\*16) = 128/16 = 8 |image1|
+In this mode the Transport Layer will output two frames in every clock cycle. 32 bits / (F\*8) = 2; The application layer must provide 8 samples each cycle to be able to fill the 2 frames. SPC = (L\*32) / (M\*NP) = (4\*32) / (1\*16) = 128/16 = 8
+
+
+|image1|
 
 Example 2 Tx link for L=4; M=4; S=1; F=2; NP=16
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| In this mode the Transport Layer will output two frames in every clock cycle. 32 bits / (F\*8) = 2;
-| The application layer must provide 8 samples each cycle to be able to fill the 2 frames. SPC = (L\*32) / (M\*NP) = (4\*32) / (4\*16) = 128/64 = 2
+In this mode the Transport Layer will output two frames in every clock cycle. 32 bits / (F\*8) = 2; The application layer must provide 8 samples each cycle to be able to fill the 2 frames. SPC = (L\*32) / (M\*NP) = (4\*32) / (4\*16) = 128/64 = 2
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/generig_jesd_tx_samples_ex2.png
    :align: center
@@ -176,8 +177,10 @@ The Link layer consists from L number of lanes which form the link. More informa
 Example Rx link for L=4; M=1; S=1; F=2; NP=16
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| In this mode the Transport Layer will accept two frames in every clock cycle. 32 bits / (F\*8) = 2;
-| The application layer must accept 8 samples each cycle so the transport layer can deframe the 2 frames. SPC = (L\*32) / (M\*NP) = (4\*32) / (1\*16) = 128/16 = 8 |image2|
+In this mode the Transport Layer will accept two frames in every clock cycle. 32 bits / (F\*8) = 2; The application layer must accept 8 samples each cycle so the transport layer can deframe the 2 frames. SPC = (L\*32) / (M\*NP) = (4\*32) / (1\*16) = 128/16 = 8
+
+
+|image2|
 
 .. note::
 

@@ -49,8 +49,6 @@ ZCU102 FPGA
 Additional Required Equipment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _adar1000eval1z-1:
-
 ADAR1000EVAL1Z
 ^^^^^^^^^^^^^^
 
@@ -63,8 +61,6 @@ ADAR1000EVAL1Z
 
 -  `6x SMPM-SMA 12 Inch Cables <https://www.centricrf.com/cable-assemblies/sma-cable-assemblies/27-ghz-047-mini-smp-to-sma/c575-047-12-cable-mini-smp-f-to-sma-m-047-flexible-27ghz-vswr-1-35-12/>`_
 
-.. _adxud1aebz-1:
-
 ADXUD1AEBZ
 ^^^^^^^^^^
 
@@ -75,8 +71,6 @@ ADXUD1AEBZ
 
    The `FMC extension <https://www.digikey.com/HDR-169468-01>`_ is used both to move the interposer board and XUD1A away from the MxFE evaluation board as well as to allow access to the HPC1 connector which is otherwise blocked by the MxFE evaluation board.
 
-
-.. _ad9081-fmca-ebz-1:
 
 AD9081-FMCA-EBZ
 ^^^^^^^^^^^^^^^
@@ -136,8 +130,6 @@ Digital
 -  `FMC riser <https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-fmc-ext-g-3074457345635221630/>`_ to raise the MxFE board and allow access to the HPC1 connector for XUD1A control.
 -  `FMC extension <https://www.digikey.com/HDR-169468-01>`_ used to extend access to the HPC1 connector for XUD1A control.
 
-| 
-
 RF Connectors
 ~~~~~~~~~~~~~
 
@@ -158,17 +150,19 @@ ADAR1000EVAL1Z: Stingray
 Connect the Stingray board to the PMOD connectors on the ZCU102 as described below:
 
 -  J55 from the ZCU102 should connect to P3 on the Stingray board using a ribbon cable and any required adapters. Note that pin 1 should connect to pin 1. This will require two PMOD cables to vertically flip the pinout from the ZCU102 to match that of the Stingray board.
--  J87 from the ZCU102 should connect to P4 on the Stingray board using a ribbon cable and any required adapters. Note that pin 1 should connect to pin 1. This will require two PMOD cables to vertically flip the pinout from the ZCU102 to match that of the Stingray board.
+   \* J87 from the ZCU102 should connect to P4 on the Stingray board using a ribbon cable and any required adapters. Note that pin 1 should connect to pin 1. This will require two PMOD cables to vertically flip the pinout from the ZCU102 to match that of the Stingray board.
 
-|image3|
+   |image3|
 
 .. container:: centeralign
 
    \ **Figure 3: ZCU102-Stingray Digital Connections**\
 
 
-| 
-| ==== ADXUD1AEBZ:XUD1A ==== Connect the XUD1A evaluation board to the ZCU102's HPC1 port. The `FMC extension <https://www.digikey.com/HDR-169468-01>`_ is used both to move the interposer board and XUD1A away from the MxFE evaluation board as well as to allow access to the HPC1 connector which is otherwise blocked by the MxFE evaluation board.
+ADXUD1AEBZ:XUD1A
+~~~~~~~~~~~~~~~~
+
+Connect the XUD1A evaluation board to the ZCU102's HPC1 port. The `FMC extension <https://www.digikey.com/HDR-169468-01>`_ is used both to move the interposer board and XUD1A away from the MxFE evaluation board as well as to allow access to the HPC1 connector which is otherwise blocked by the MxFE evaluation board.
 
 .. note::
 
@@ -182,8 +176,10 @@ Connect the Stingray board to the PMOD connectors on the ZCU102 as described bel
    \ **Figure 4: ZCU102-XUD1A Digital Connections**\
 
 
-| 
-| ==== AD9081-FMCA-EBZ: MxFE ==== Connect the MxFE evaluation board to the ZCU102's HPC0 port as shown below.
+AD9081-FMCA-EBZ: MxFE
+~~~~~~~~~~~~~~~~~~~~~
+
+Connect the MxFE evaluation board to the ZCU102's HPC0 port as shown below.
 
 .. note::
 
@@ -251,8 +247,10 @@ Connect the MxFE and XUD1A together using SMA-SMPM cables as indicated below:
    \ **Figure 7: AD9081 - XUD1A Connections**\
 
 
-| 
-| ==== XUD1A to Stingray ==== The XUD1A has 4 RFIO ports whereas the Stingray board has 8 RFIO ports. For this system, the Stingray's 8 channels will be paired using external splitter/combiners (`Recommended Splitter/Combiner <https://www.minicircuits.com/WebStore/dashboard.html?model=ZX10-2-183-S%2B>`_) to create 4 digital channels which can interface with the XUD1A and MxFE thus created four subarrays where each subarray consists of eight analog channels each. The below tables show how these connections are to be made.
+XUD1A to Stingray
+~~~~~~~~~~~~~~~~~
+
+The XUD1A has 4 RFIO ports whereas the Stingray board has 8 RFIO ports. For this system, the Stingray's 8 channels will be paired using external splitter/combiners (`Recommended Splitter/Combiner <https://www.minicircuits.com/WebStore/dashboard.html?model=ZX10-2-183-S%2B>`_) to create 4 digital channels which can interface with the XUD1A and MxFE thus created four subarrays where each subarray consists of eight analog channels each. The below tables show how these connections are to be made.
 
 ============ =================== ======================
 Connection # Stingray Connectors Splitter # (Ports 1/2)
@@ -371,8 +369,10 @@ To configure the ZCU102 to boot from the SD card, set SW6 as shown below. SW6 is
 
 |SW6 Configuration for SD Card Boot|
 
-| 
-| ==== USB Host Mode ==== Setting up the ZCU102 in USB Host Mode allows the use of USB peripherals such as a keyboard and mouse. This can be useful for operating the board directly rather than having to use the UART connection or some other form of indirect control. Configure the jumpers as indicated below:
+USB Host Mode
+-------------
+
+Setting up the ZCU102 in USB Host Mode allows the use of USB peripherals such as a keyboard and mouse. This can be useful for operating the board directly rather than having to use the UART connection or some other form of indirect control. Configure the jumpers as indicated below:
 
 -  Shunt J7
 -  J109 -> Shunt pins 2-3
@@ -380,16 +380,24 @@ To configure the ZCU102 to boot from the SD card, set SW6 as shown below. SW6 is
 -  J112 -> Shunt pins 1-2
 -  J113 -> Shunt pins 1-2
 
-|Jumper Configuration for USB Host Mode|
+.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_usb_host_mode.jpg
+   :alt: Jumper Configuration for USB Host Mode
+   :align: center
 
-| 
-| ==== DisplayPort Not Working ==== Once you have the board up and running (and control using the UART connection through PuTTy), :doc:`try this procedure at the bottom of the page </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`.
+DisplayPort Not Working
+-----------------------
 
-| 
-| ==== USB to UART Bridge ==== The ZCU102 uses a mini-B USB cable to connect the USB UART port on the board to a host PC. If the USB to UART bridge is not installed or automatically recognized, then a drive must be installed. This will allow control using the UART connection through PuTTy or other SSH/Telnet Client, `select Downloads tab for Driver download <https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers>`_.
+Once you have the board up and running (and control using the UART connection through PuTTy), :doc:`try this procedure at the bottom of the page </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`.
 
-| 
-| ==== Network Configuration ==== The ZCU102 uses a RJ45 ethernet cable to connect the ethernet port on the board a host PC or network port to enable network access. Modifications to the network settings can be made following the guidance detailed on the :doc:`Network Configuration </wiki-migration/resources/tools-software/linux-software/network-config>` wiki.
+USB to UART Bridge
+------------------
+
+The ZCU102 uses a mini-B USB cable to connect the USB UART port on the board to a host PC. If the USB to UART bridge is not installed or automatically recognized, then a drive must be installed. This will allow control using the UART connection through PuTTy or other SSH/Telnet Client, `select Downloads tab for Driver download <https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers>`_.
+
+Network Configuration
+---------------------
+
+The ZCU102 uses a RJ45 ethernet cable to connect the ethernet port on the board a host PC or network port to enable network access. Modifications to the network settings can be made following the guidance detailed on the :doc:`Network Configuration </wiki-migration/resources/tools-software/linux-software/network-config>` wiki.
 
 Time Division Duplexing
 =======================
@@ -476,7 +484,6 @@ For additional questions or support, please visit the Engineering Zone forum at 
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/XUD1A_rework_onboard_pll.png
    :width: 600px
 .. |SW6 Configuration for SD Card Boot| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_sw6_sdcard.jpg
-.. |Jumper Configuration for USB Host Mode| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_usb_host_mode.jpg
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/adar1000eval1z_tr_probe.png
    :width: 400px
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_ltm4616_en_resistor_r1m.png

@@ -70,9 +70,6 @@ Creating a SigmaStudioServer process in MATLAB
    % Set the Gain Parameter
    ss_server.PARAMETER_WRITE("IC 1",22, 8,24,2.0);
 
-   | 
-|
-
 .. note::
 
    Launch SigmaStudio before running your client [Python or LabView/Matlab].

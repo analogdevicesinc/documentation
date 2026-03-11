@@ -130,8 +130,8 @@ Typing **help** or **h** after initial calibration sequence will display the lis
 -  For the "h", "stts", "m" and "t" commands press Enter without inserting any space afterwards.
 -  For the "ao", "ai", "do" and "di" commands, to invoke in application instructions, write just the command without parameters, insert a space afterwards and press Enter.
 
-| 
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5593r_cli_example.png
+   :align: center
 
 Obtaining the Software
 ----------------------
@@ -200,4 +200,3 @@ Project structure includes:
 .. |AD5592R-PMDZ connect| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5592r_adicup_connect-min.jpg
 .. |AD5593R-PMDZ connect| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5593r_adicup_connect-min.jpg
 .. |PC connect| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5593r_adicup_pc_connect-min.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5593r_cli_example.png

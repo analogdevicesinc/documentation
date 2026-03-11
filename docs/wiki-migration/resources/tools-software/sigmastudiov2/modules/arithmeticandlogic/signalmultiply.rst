@@ -3,13 +3,13 @@
 Signal Multiply
 ===============
 
-| 
-| |mult.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/mult.png
+   :alt: mult.png
 
 Description
 -----------
 
-| The Signal Multiply block multiplies two incoming signals together. This can be used for modulation or other design situations where multiply operation is needed.
+The Signal Multiply block multiplies two incoming signals together. This can be used for modulation or other design situations where multiply operation is needed.
 
 Variants
 --------
@@ -62,5 +62,3 @@ DSP Parameters
 --------------
 
 No DSP parameters
-
-.. |mult.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/arithmeticandlogic/mult.png

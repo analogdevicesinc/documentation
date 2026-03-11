@@ -1,7 +1,7 @@
 EV-COG-AD4050WZ with CrossCore Embedded Studio
 ==============================================
 
-<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. </WRAP>
+<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. 
 
 IDE Setup
 ---------
@@ -66,7 +66,7 @@ You are all set!
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w/quickstart>`
 
-| 
+
 | End Document
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/import_existing_packs_icon.jpg

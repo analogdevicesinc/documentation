@@ -70,17 +70,17 @@ Deprecated Non-jesd204-fsm mode
 Required devicetree properties:
 
 -  **compatible**: Must always be “adi,axi-adxcvr-1.00”
-   \* **reg**: Base address and register area size. This parameter expects a register range
-   \* **clock-names**: List of input clock names - “s_axi_aclk”, "conv", “div40”
-   \* **clocks**: Clock phandles and specifiers (See clock bindings for details on clock-names and clocks)
-   \* **clock-output-names**: Generated clocks
-   \* **adi,sys-clk-select**: 2 bit variable. For ultrascale, it selects the PLL reference clock source to be forwarded to the OUTCLK MUX: 0-CPLL, 3-QPLL0. Check RX/TXSYSCLKSEL parameter in the transceiver documentation for the FPGA you're using. :doc:`See Table </wiki-migration/resources/fpga/docs/axi_adxcvr>`
+-  **reg**: Base address and register area size. This parameter expects a register range
+-  **clock-names**: List of input clock names - “s_axi_aclk”, "conv", “div40”
+-  **clocks**: Clock phandles and specifiers (See clock bindings for details on clock-names and clocks)
+-  **clock-output-names**: Generated clocks
+-  **adi,sys-clk-select**: 2 bit variable. For ultrascale, it selects the PLL reference clock source to be forwarded to the OUTCLK MUX: 0-CPLL, 3-QPLL0. Check RX/TXSYSCLKSEL parameter in the transceiver documentation for the FPGA you're using. :doc:`See Table </wiki-migration/resources/fpga/docs/axi_adxcvr>`
 -  **adi,out-clk-select**: 3 bit variable. Controls the OUTCLKSEL multiplexer, controlling what will be forwarded to OUTCLK pin. Check RX/TXOUTCLKSEL parameter in the transceiver documentation for the FPGA you're using :doc:`See Table </wiki-migration/resources/fpga/docs/axi_adxcvr>`
 
 Optional devicetree properties:
 
 -  **adi,use-lpm-enable**: If set, the transceiver will be used in LPM mode. Otherwise, will be used in DFE mode. See transceiver documentation for details
-   \* **adi,use-cpll-enable**: If set, the CPLL will be used for these transceivers
+-  **adi,use-cpll-enable**: If set, the CPLL will be used for these transceivers
 
 Optional devicetree clock-names:
 
@@ -88,7 +88,7 @@ Optional devicetree clock-names:
 
 Example:
 
-.. code:: c
+.. code:: dts
 
    #include <dt-bindings/jesd204/adxcvr.h>
 
@@ -133,11 +133,11 @@ When using the :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migra
 Required devicetree properties:
 
 -  **compatible**: Must always be “adi,axi-adxcvr-1.00”
-   \* **reg**: Base address and register area size. This parameter expects a register range
-   \* **clock-names**: List of input clock names - “s_axi_aclk”, “conv”
-   \* **clocks**: Clock phandles and specifiers (See clock bindings for details on clock-names and clocks)
-   \* **clock-output-names**: Generated clocks
-   \* **adi,sys-clk-select**: 2 bit variable. For ultrascale, it selects the PLL reference clock source to be forwarded to the OUTCLK MUX: 0-CPLL, 3-QPLL0. Check RX/TXSYSCLKSEL parameter in the transceiver documentation for the FPGA you're using. :doc:`See Table </wiki-migration/resources/fpga/docs/axi_adxcvr>`
+-  **reg**: Base address and register area size. This parameter expects a register range
+-  **clock-names**: List of input clock names - “s_axi_aclk”, “conv”
+-  **clocks**: Clock phandles and specifiers (See clock bindings for details on clock-names and clocks)
+-  **clock-output-names**: Generated clocks
+-  **adi,sys-clk-select**: 2 bit variable. For ultrascale, it selects the PLL reference clock source to be forwarded to the OUTCLK MUX: 0-CPLL, 3-QPLL0. Check RX/TXSYSCLKSEL parameter in the transceiver documentation for the FPGA you're using. :doc:`See Table </wiki-migration/resources/fpga/docs/axi_adxcvr>`
 -  **adi,out-clk-select**: 3 bit variable. Controls the OUTCLKSEL multiplexer, controlling what will be forwarded to OUTCLK pin. Check RX/TXOUTCLKSEL parameter in the transceiver documentation for the FPGA you're using. :doc:`See Table </wiki-migration/resources/fpga/docs/axi_adxcvr>`
 -  **jesd204-device**: Adds device to the jesd204-fsm kernel framework
 -  **jesd204-inputs**: jesd204-fsm devices phandles and specifiers (used to build the link topology)
@@ -148,7 +148,7 @@ Optional devicetree properties:
 
 Example:
 
-.. code:: c
+.. code:: dts
 
    #include <dt-bindings/jesd204/adxcvr.h>
 
@@ -167,10 +167,10 @@ Example:
                adi,sys-clk-select = <XCVR_CPLL>;
                adi,out-clk-select = <XCVR_REFCLK>;
                adi,use-lpm-enable;
-               
+
                jesd204-device;
                #jesd204-cells = <2>;
-               jesd204-inputs =  <&hmc7044 0 FRAMER_LINK_RX>;          
+               jesd204-inputs =  <&hmc7044 0 FRAMER_LINK_RX>;
            };
 
            axi_adrv9009_adxcvr_tx: axi-adxcvr-tx@84a20000 {
@@ -190,8 +190,8 @@ Example:
 
                jesd204-device;
                #jesd204-cells = <2>;
-               jesd204-inputs =  <&hmc7044 0 DEFRAMER_LINK_TX>;            
-           };      
+               jesd204-inputs =  <&hmc7044 0 DEFRAMER_LINK_TX>;
+           };
 
 Enabling Linux driver support
 =============================
@@ -240,16 +240,13 @@ Example reading AXI register at offset 0 (REG_VERSION)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo axi 0x0 > reg_access** 
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat reg_access** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo axi 0x0 > reg_access**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat reg_access**
       **0x110261**
    
 
@@ -258,16 +255,13 @@ Example writing AXI register at offset 8 (REG_SCRATCH)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo axi 0x8 0x1234 > reg_access** 
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat reg_access** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo axi 0x8 0x1234 > reg_access**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat reg_access**
       **0x1234**
    
 
@@ -286,8 +280,6 @@ DRP register access
 
    drp <DRP PORT> <REGISTER ADDRESS> [<WRITE VAL>]
 
-| 
-
 ============ ======================
 DRP Port     Comment
 ============ ======================
@@ -299,16 +291,13 @@ DRP Port     Comment
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# echo drp 0x101 0x88 > reg_access 
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat reg_access 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# echo drp 0x101 0x88 > reg_access
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat reg_access
       0x2AA
    
 
@@ -318,10 +307,7 @@ axi-adxcvr-rx
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -371,16 +357,13 @@ Value Comment
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 23 > prbs_select** 
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prbs_select** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 23 > prbs_select**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prbs_select**
       **23**
       root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx#
    
@@ -408,15 +391,12 @@ error    The PRBS has locked but errors were detected
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prbs_status** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prbs_status**
       **valid**
    
 
@@ -430,16 +410,13 @@ Reading returns a string with error counts for each physical JESD204 lane.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prbs_error_counters** 
-      **0 0 0 0 0 0 0 0** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prbs_error_counters**
+      **0 0 0 0 0 0 0 0**
    
 
 
@@ -452,15 +429,12 @@ Writing 1 will clear the ``prbs_status`` and reset the ``prbs_error_counters``
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 1 > prbs_counter_reset** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 1 > prbs_counter_reset**
    
 
 
@@ -475,15 +449,12 @@ Following commands visualize how to control the eyescan from the command line. `
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat eyescan_info** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat eyescan_info**
       **x65,y255 CDRDW: 40 LPM: 1 NL: 8 LR: 15000000**
    
 
@@ -492,16 +463,13 @@ Following commands visualize how to control the eyescan from the command line. `
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 1 > prescale** 
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prescale** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 1 > prescale**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prescale**
       **1**
    
 
@@ -510,16 +478,13 @@ Following commands visualize how to control the eyescan from the command line. `
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 1 > enable** 
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat enable** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 1 > enable**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat enable**
       **cat: enable: Device or resource busy**
    
 
@@ -528,17 +493,14 @@ Following commands visualize how to control the eyescan from the command line. `
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat enable** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat enable**
       **1**
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx#** hexdump eye_data** 
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx#** hexdump eye_data**
       0000000 ffff 00a7 ffff 00a7 ffff 00a8 ffff 00a7
       0000010 ffff 00a7 ffff 00a9 ffff 00aa ffff 00ac
       0000020 ffff 00b1 ffff 00bb ffff 00c7 ffff 00d6
@@ -556,10 +518,7 @@ axi-adxcvr-tx
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -581,8 +540,6 @@ axi-adxcvr-tx
    
 
 
-.. _prbs_select-1:
-
 prbs_select
 ~~~~~~~~~~~
 
@@ -603,16 +560,13 @@ Value Comment
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# **echo 15 > prbs_select** 
-      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# **cat prbs_select** 
+      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# **echo 15 > prbs_select**
+      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# **cat prbs_select**
       **15**
       root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx#
    
@@ -627,15 +581,12 @@ Writing 1 injects a series of errors´(used for testing)
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# **echo 1 > prbs_error_inject** 
+      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# **echo 1 > prbs_error_inject**
       root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx#
    
 

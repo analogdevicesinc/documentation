@@ -52,8 +52,6 @@ Online resources
 
 --------------
 
-.. _online-resources-1:
-
 Online Resources
 ----------------
 
@@ -339,9 +337,10 @@ Click on Help menu on the top of the front panel (Figure 1) and the following en
 -  License - Displays the evaluation software license.
 -  About - Displays version information for the evaluation software.
 
-| The front panel has two tabs, (Figure 6b): Block Diagram and Pinout.
-| The Block Diagram provides a user interface to configure all of the AD9546 registers.
-| The Pinout provides the list of all the AD9546 pins, their position on the package and their description. |image8|
+The front panel has two tabs, (Figure 6b): Block Diagram and Pinout. The Block Diagram provides a user interface to configure all of the AD9546 registers. The Pinout provides the list of all the AD9546 pins, their position on the package and their description.
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -355,14 +354,14 @@ At the bottom of the front panel, the following buttons are available:
    * Figure 6c: Front Panel Buttons\ *
 
 
-\* WIZARD - Allows the user to introduce the broad requirements that the AD9546 needs to fulfill (like the frequency of the reference clocks, of the outputs, the system clock source, etc). The recommendation is to use the Wizard to calculate the AD9546 register values whenever a new configuration is required. \* READ ALL - Reads the entire AD9546 register map and updates the software. \* LOAD ALL - Loads the register values from the evaluation software into the AD9546 and if the Enable IO Update option is enabled in the Options entry in the File menu, an IO Update is executed automatically at the end of the registers download. \* CONTROL - Opens the window in Figure 7 below. Various tabs give access to serial port settings, calibration and synchronization commands, power down various AD9546 blocks and the Watchdog timer setting in Misc. Controls section.
+- WIZARD - Allows the user to introduce the broad requirements that the AD9546 needs to fulfill (like the frequency of the reference clocks, of the outputs, the system clock source, etc). The recommendation is to use the Wizard to calculate the AD9546 register values whenever a new configuration is required. \* READ ALL - Reads the entire AD9546 register map and updates the software. \* LOAD ALL - Loads the register values from the evaluation software into the AD9546 and if the Enable IO Update option is enabled in the Options entry in the File menu, an IO Update is executed automatically at the end of the registers download. \* CONTROL - Opens the window in Figure 7 below. Various tabs give access to serial port settings, calibration and synchronization commands, power down various AD9546 blocks and the Watchdog timer setting in Misc. Controls section.
 
 .. container:: centeralign
 
    * Figure 7: Control Window\ *
 
 
-\* STATUS - Opens the window in Figure 8 below. Various tabs give access to status flags of the AD9546 blocks.
+- STATUS - Opens the window in Figure 8 below. Various tabs give access to status flags of the AD9546 blocks.
 
 .. container:: centeralign
 

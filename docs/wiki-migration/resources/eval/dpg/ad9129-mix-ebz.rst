@@ -1,13 +1,9 @@
 AD9129-MIX-EBZ Evaluation Board Quick Start Guide
 =================================================
 
-|
-
 .. warning::
 
-   \ **NOTE:**
-
-   | Support using DPG2/DPG3 project on this website is only for legacy purposes. The support for this project has been discontinued, and ADS7 is the recommended replacement.
+   \ **NOTE:** Support using DPG2/DPG3 project on this website is only for legacy purposes. The support for this project has been discontinued, and ADS7 is the recommended replacement.
 
 
 You can return to Homepage here: `AD9119/AD9129 Evaluation Boards <https://wiki.analog.com/resources/eval/dpg/eval-ad9129>`_
@@ -140,15 +136,10 @@ The final result should be a clean 200 MHz tone as shown below. To best verify t
 B. SPI Software/GUI
 ~~~~~~~~~~~~~~~~~~~
 
-.. _initial-set-up-1:
-
 Initial Set-Up
 ^^^^^^^^^^^^^^
 
-| 1. Install the DPG Downloader and AD9129 software and support files on your PC
-| 2. Start the AD9129 Control Panel GUI (but don’t hit the run arrow yet)
-| 3. Connect the EVB to your PC and lab equipment as shown in Figure 1 above. Use a USB cable to connect your PC to the EVB, and another USB cable to connect your PC to the DPG2 unit. Note that a DPG3 unit can also be used.
-| It is suggested that the basic set-up is verified before making any modifications to the evaluation board.
+1. Install the DPG Downloader and AD9129 software and support files on your PC 2. Start the AD9129 Control Panel GUI (but don’t hit the run arrow yet) 3. Connect the EVB to your PC and lab equipment as shown in Figure 1 above. Use a USB cable to connect your PC to the EVB, and another USB cable to connect your PC to the DPG2 unit. Note that a DPG3 unit can also be used. It is suggested that the basic set-up is verified before making any modifications to the evaluation board.
 
 Load Initial Settings
 ^^^^^^^^^^^^^^^^^^^^^
@@ -162,8 +153,6 @@ To begin, open the AD9129 SPI application (Start > Programs > Analog Devices > A
 
    Figure 3. Entry screen of the AD9129 SPI GUI
 
-
-.. _configure-hardware-1:
 
 Configure Hardware
 ^^^^^^^^^^^^^^^^^^
@@ -182,8 +171,6 @@ On the “PLL” tab, the “Controller Ena” button should be green. Click the
 
    Figure 4. PLL screen of the AD9129 SPI GUI
 
-
-.. _load-pattern-from-the-dpg2-1:
 
 Load Pattern from the DPG2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -236,8 +223,6 @@ On the AD9129 SPI GUI’s “DLL” tab, the “DUTY Corr Ena” button and the 
 
 
 In rare cases, the data link may have gotten corrupted and the registers not programmed correctly. In these cases, the output of the DAC will show significantly degraded performance. To remedy this situation, click the “DUTY Corr Ena” button and the “DLL_ENA” buttons, and then click the (|image20|) button to program the registers. Then, re-click the “DUTY Corr Ena” button and the “DLL_ENA” buttons, and then click the (|image21|) button to program the registers. This disables and re-enables the Data Interface DLL and allows it to re-lock to the DCI. At this time, it is also possible to click the "Repeat" button (|image22|) to continuously program the part, making the SPI GUI run in a more interactive mode.
-
-.. _result-1:
 
 Result
 ^^^^^^

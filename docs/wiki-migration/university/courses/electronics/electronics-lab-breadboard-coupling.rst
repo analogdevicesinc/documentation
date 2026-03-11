@@ -48,9 +48,7 @@ By sweeping the frequency of AWG1 and measuring F\ :sub:`3dB` and G\ :sub:`HF` f
 Materials:
 ----------
 
-| ADALM2000 Lab Module
-| Solder-less Breadboard
-| Fly-Wire connector
+ADALM2000 Lab Module Solder-less Breadboard Fly-Wire connector
 
 Step 1 Directions:
 ------------------
@@ -92,14 +90,10 @@ The second step is to measure just the single row capacitance, C\ :sub:`row`, be
    **Figure 4 Measure single row coupling, opposite side floating**
 
 
-.. _hardware-setup-1:
-
 Hardware Setup:
 ---------------
 
 Leave all the settings the same as in step 1. Using the Network Analyzer instrument in the Scopy software obtain a gain (attenuation) vs. frequency plot from 10 Hz to 10 MHz by running a single sweep and export the data to a second .csv file with a different name.
-
-.. _procedure-1:
 
 Procedure:
 ----------
@@ -122,14 +116,10 @@ The third step is to measure the single row capacitance, C\ :sub:`row`, between 
    **Figure 5 Measure single row coupling, opposite side grounded**
 
 
-.. _hardware-setup-2:
-
 Hardware Setup:
 ---------------
 
 Leave all the settings the same as in steps 1,2. Using the Network Analyzer instrument in the Scopy software obtain a gain (attenuation) vs. frequency plot from 10 Hz to 10 MHz by running a single sweep and export the data to a third .csv file with a different name.
-
-.. _procedure-2:
 
 Procedure:
 ----------
@@ -152,14 +142,10 @@ The fourth step is to measure the combined capacitance, C\ :sub:`row`, with adja
    **Figure 6 Measure two rows coupling from both sides.**
 
 
-.. _hardware-setup-3:
-
 Hardware Setup:
 ---------------
 
 Leave all the settings the same as in steps 1,2,3. Using the Network Analyzer instrument in the Scopy software obtain a gain ( attenuation ) vs. frequency plot from 10 Hz to 10 MHz by running a single sweep and export the data to a fourth .csv file with a different name.
-
-.. _procedure-3:
 
 Procedure:
 ----------

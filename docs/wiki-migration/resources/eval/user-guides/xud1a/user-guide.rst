@@ -65,7 +65,7 @@ Hardware
 -  SMPM-SMA cabling to interface with the IF ports
 -  Digital controller and any associated hardware (:adi:`SDP-S` or PMOD)
 
-|
+
 
 .. warning::
 
@@ -210,17 +210,17 @@ The PMOD inputs are fed to a buffer and logic network for simplified board contr
 Channel Mode         TXRX0 TXRX1 TXRX2 TXRX3 Rx Gain Mode
 ======= ============ ===== ===== ===== ===== ============
 A       TX           1     -     -     -     0
-:::     RX Low Gain  0     -     -     -     0
-:::     RX High Gain 0     -     -     -     1
+        RX Low Gain  0     -     -     -     0
+        RX High Gain 0     -     -     -     1
 B       TX           -     1     -     -     0
-:::     RX Low Gain  -     0     -     -     0
-:::     RX High Gain -     0     -     -     1
+        RX Low Gain  -     0     -     -     0
+        RX High Gain -     0     -     -     1
 C       TX           -     -     1     -     0
-:::     RX Low Gain  -     -     0     -     0
-:::     RX High Gain -     -     0     -     1
+        RX Low Gain  -     -     0     -     0
+        RX High Gain -     -     0     -     1
 D       TX           -     -     -     1     0
-:::     RX Low Gain  -     -     -     0     0
-:::     RX High Gain -     -     -     0     1
+        RX Low Gain  -     -     -     0     0
+        RX High Gain -     -     -     0     1
 ======= ============ ===== ===== ===== ===== ============
 
 .. container:: centeralign

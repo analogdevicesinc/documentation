@@ -26,7 +26,7 @@ Expand the table below to view a list of compatible devices, breakout boards, an
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | MODEL NUMBER                                                 | BREAKOUT BOARD                                                                                                              | JP1 SUPPLY SETTING | SOFTWARE PACKAGE                                                                                                                                       |
@@ -212,7 +212,7 @@ Use the table below to identify the correct JP1 setting for your sensor.
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +--------------------------------------------------------------+----------------------------------------------------------+
 | JP1 = 3.3V                                                   | JP1 = 5V                                                 |
@@ -507,7 +507,7 @@ Use the table below to find and download the appropriate software for your speci
 
 .. raw:: html
 
-   <details><summary>Click to expand</summary>
+   <details><summary>Click to expand
 
 +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | MODEL NUMBER                                                 | BREAKOUT BOARD                                                                                                              | JP1 SUPPLY SETTING | SOFTWARE PACKAGE                                                                                                                                       |

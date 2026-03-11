@@ -4,21 +4,21 @@ EVALUATING THE AD9695/AD9697 ANALOG-TO-DIGITAL CONVERTER
 Preface
 =======
 
-This user guide describes the :adi:`AD9695-1300EBZ <AD9695>` evaluation board which provides all of the support circuitry required to operate the :adi:`AD9695` in its various modes and configurations. The :adi:`AD9697` ADC can be evaluated using the :adi:`AD9695-1300EBZ <AD9695>` evaluation board as well as the performance is identical except for power comsumption. This guide entails both the hardware and software setup needed to acquire data capture from the evaluation board. This guide assumes the usage of the accompanying :adi:`ADS7-V2 EBZ High Speed Evaluation Board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`. The user guide for the :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>` provides additional information available for consultation during usage. Documents and software tools, where available, can be found at the :adi:`HS-ADC Eval Board homepage <hsadcevalboard>`. For additional information or questions, post a question on :ez:`Engineer Zone <community/data_converters>`, or send an email to **highspeed.converters@analog.com**. <WRAP> </WRAP>
+This user guide describes the :adi:`AD9695-1300EBZ <AD9695>` evaluation board which provides all of the support circuitry required to operate the :adi:`AD9695` in its various modes and configurations. The :adi:`AD9697` ADC can be evaluated using the :adi:`AD9695-1300EBZ <AD9695>` evaluation board as well as the performance is identical except for power comsumption. This guide entails both the hardware and software setup needed to acquire data capture from the evaluation board. This guide assumes the usage of the accompanying :adi:`ADS7-V2 EBZ High Speed Evaluation Board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`. The user guide for the :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>` provides additional information available for consultation during usage. Documents and software tools, where available, can be found at the :adi:`HS-ADC Eval Board homepage <hsadcevalboard>`. For additional information or questions, post a question on :ez:`Engineer Zone <community/data_converters>`, or send an email to **highspeed.converters@analog.com**.  
 
-<WRAP> </WRAP>
+ 
 
-<WRAP> </WRAP>
+ 
 
-<WRAP> </WRAP>
+ 
 
-<WRAP> </WRAP>
+ 
 
-<WRAP> </WRAP>
+ 
 
-<WRAP> </WRAP>
+ 
 
-<WRAP> </WRAP>
+ 
 
 Typical Setup
 =============
@@ -58,13 +58,13 @@ Helpful Documents
 -  :adi:`AD9695` Data Sheet
 -  `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ Data Sheet
 -  :adi:`AN-905 Application Note <an-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*
--  `ADI SPI Application Note </>resources/technical-guides/adispi>>`__ // ADI Serial Control Interface Standard//
+-  :doc:`ADI SPI Application Note </wiki-migration/resources/technical-guides/adispi>` // ADI Serial Control Interface Standard//
 -  :adi:`AN-835 Application Note <an-835>`, *Understanding ADC Testing and Evaluation*
 
 Software Needed
 ===============
 
--  `ACE </>resources/tools-software/ace>>`__ (Analysis \| Control \| Evaluation)
+-  :doc:`ACE </wiki-migration/resources/tools-software/ace>` (Analysis \| Control \| Evaluation)
 
 Design and Integration Files
 ============================
@@ -130,7 +130,7 @@ Before using the software for testing, configure the evaluation boards as follow
 -  Before connecting the AD9695 to the ADS7-V2, jump the following pins: **P307**, **P308**, **P309**, **P311**, **P304**, **P305**, **P312**, and **P602** (SPI Enable). Do not jump **P100** (Power Down/Standby) and **P1**. Supply the Reference Clock through the ADS7-V2. Jump **P401** towards the inside of the board, to power the board via FMC. See Figure 5 for all jumper connections.
 -  Ensure that the data capture board is switched to “OFF.” (**S1** on the data capture board) Connect the evaluation board to the data capture board via the FMC connector found on the underside of the board, as shown in Figure 1. Connect the power supply and USB cable to the data capture board.
 -  Turn on the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_.
--  The `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ should appear in the Device Manager as shown in Figure 6.<WRAP>\ |image6|\ </WRAP>
+-  The `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ should appear in the Device Manager as shown in Figure 6.\ |image6|\ 
 
 .. container:: centeralign
 
@@ -171,15 +171,15 @@ Before using the software for testing, configure the evaluation boards as follow
 ACE Setup
 ---------
 
--  Download and install `ACE </>resources/tools-software/ace>>`__ if it is not already installed.
--  The AD9695 ACE plug-in can be found under the :adi:`9695 Evaluation Board Software Section <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9695.html#eb-relatedsoftware>`, or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).<WRAP>
+-  Download and install :doc:`ACE </wiki-migration/resources/tools-software/ace>` if it is not already installed.
+-  The AD9695 ACE plug-in can be found under the :adi:`9695 Evaluation Board Software Section <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9695.html#eb-relatedsoftware>`, or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).
 
 .. tip::
 
    Tip: Some browsers (Such as Internet Explorer) may save the file as a .zip file instead of an .acezip file. If this happens, simply download and rename the file with an .acezip file extension.
 
 
-</WRAP>
+
 
 -  Once the .acezip file has been downloaded from the Analog Devices website, right click on it and install the plug-in, or double click to install.
 -  Click Start -> All Programs -> Analog Devices -> ACE -> ACE
@@ -191,16 +191,16 @@ ACE Setup
    \ |image7|\ *Figure 7. ACE's AD9695 Plug-in*\
 
 
-<WRAP>
+
 
 .. note::
 
    Note: Differences may occur between ACE plug-in versions, including the version number seen in Figure 7 above or components in any of the other images below - however, these will not affect the performance of the part nor the fundamental features described in this user guide.
 
 
-</WRAP>
 
--  Click on the plug-in to open it. <WRAP>\ |image8|\ </WRAP>
+
+-  Click on the plug-in to open it. \ |image8|\ 
 
 .. container:: centeralign
 
@@ -221,105 +221,105 @@ ACE Setup
    \ *Figure 10. AD9695-1300EBZ Board View*\
 
 
--  Click on the "Program FPGA" button. This will program the FPGA on the ADS7-V2 to communicate with the AD9695-1300EBZ. <WRAP>
+-  Click on the "Program FPGA" button. This will program the FPGA on the ADS7-V2 to communicate with the AD9695-1300EBZ. 
 
 .. warning::
 
    \ **Warning: Programming the FPGA will power the AD9695 evaluation board via the FMC connector. Removing any of the board's power jumpers (as seen in Figure 5) while the board is on or in operation may cause damage to the board and/or chip. Removing the board while it is being powered via the FMC connector may also cause damage to the board.**\
 
 
-</WRAP>
+
 
 Obtaining a Full Bandwidth Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Under Initial Configuration, set the Clock Input to 1300 MHz. Set the Number of Lane to 4. Change the number of Virtual Converter to 1. Change the number of Octets per Frame to 1. Click Apply to apply the chip settings. Set the reference clock to 325 MHz to match these settings.<WRAP>\ |image11|\
+-  Under Initial Configuration, set the Clock Input to 1300 MHz. Set the Number of Lane to 4. Change the number of Virtual Converter to 1. Change the number of Octets per Frame to 1. Click Apply to apply the chip settings. Set the reference clock to 325 MHz to match these settings.\ |image11|\
 
 .. container:: centeralign
 
    \ *Figure 11. Chip Settings*\
 
 
-<WRAP>\ |image12|\ </WRAP>
+\ |image12|\ 
 
 .. container:: centeralign
 
    \ *Figure 12. Apply Settings*\
 
 
--  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the Read All button.<WRAP>\ |image13|\ </WRAP>
+-  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the Read All button.\ |image13|\ 
 
 .. container:: centeralign
 
    \ *Figure 13. Read All*\
 
 
--  Issue a data path reset to the AD9695 by clicking its checkbox and clicking Apply Changes. The data path reset bit will automatically self clear.<WRAP>\ |image14|\ </WRAP>
+-  Issue a data path reset to the AD9695 by clicking its checkbox and clicking Apply Changes. The data path reset bit will automatically self clear.\ |image14|\ 
 
 .. container:: centeralign
 
    \ *Figure 14. Data path reset*\
 
 
-<WRAP>\ |image15|\ </WRAP>
+\ |image15|\ 
 
 .. container:: centeralign
 
    \ *Figure 15. Apply Changes*\
 
 
--   If the PLL Lock Lost indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.<WRAP>\ |image16|\ </WRAP>
+-   If the PLL Lock Lost indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.\ |image16|\ 
 
 .. container:: centeralign
 
    \ *Figure 16. PLL Lock Lost*\
 
 
-<WRAP>\ |image17|\ </WRAP>
+\ |image17|\ 
 
 .. container:: centeralign
 
    \ *Figure 17. Link Power Down*\
 
 
--  Enable the link again and Apply Changes.<WRAP>\ |image18|\ </WRAP>
+-  Enable the link again and Apply Changes.\ |image18|\ 
 
 .. container:: centeralign
 
    \ *Figure 18. Link Enable*\
 
 
--  Click Proceed to Analysis. This is ACE's Analysis tool for data from the ADC, displaying both sample plots and FFTs. Click on DDCFFT and run one capture.<WRAP>\ |image19|\ </WRAP>
+-  Click Proceed to Analysis. This is ACE's Analysis tool for data from the ADC, displaying both sample plots and FFTs. Click on DDCFFT and run one capture.\ |image19|\ 
 
 .. container:: centeralign
 
    \ *Figure 19. Analysis Tool*\
 
 
-<WRAP>\ |image20|\ </WRAP>
+\ |image20|\ 
 
 .. container:: centeralign
 
    \ *Figure 20. Display FFTs*\
 
 
-<WRAP>\ |image21|\ </WRAP>
+\ |image21|\ 
 
 .. container:: centeralign
 
    \ *Figure 21. Run one capture*\
 
 
-<WRAP>
+
 
 .. important::
 
    Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE's data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.
 
 
-</WRAP>
 
--  Channel A and Channel B can be selected individually to display their FFTs.<WRAP>\ |image22|\ </WRAP>
+
+-  Channel A and Channel B can be selected individually to display their FFTs.\ |image22|\ 
 
 .. container:: centeralign
 
@@ -336,28 +336,28 @@ Obtaining a Full Bandwidth Capture
 Obtaining a DDC Capture
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Under Initial Configuration, set the Chip Operating Mode for two DDCs. The DDC settings will become available. For the decimation, select "HB1_HB2 Complex" - two half-band filters, i.e. Decimate-by-4. Set the number of lanes to 1, the number of converters to 4, and the number of Octets per Frame to 8. Apply the settings. <WRAP>\ |image24|\ </WRAP>
+-  Under Initial Configuration, set the Chip Operating Mode for two DDCs. The DDC settings will become available. For the decimation, select "HB1_HB2 Complex" - two half-band filters, i.e. Decimate-by-4. Set the number of lanes to 1, the number of converters to 4, and the number of Octets per Frame to 8. Apply the settings. \ |image24|\ 
 
 .. container:: centeralign
 
    \ *Figure 24. DDC Chip Settings*\
 
 
--  The chip view will update to reflect the changes. Click on the NCO block to change the Noise Controlled Oscillator's frequency to 500 MHz. Enable the 6dB gain for the DDC from the dropdown menu. Click Apply Changes to apply both.<WRAP>\ |image25|\ </WRAP>
+-  The chip view will update to reflect the changes. Click on the NCO block to change the Noise Controlled Oscillator's frequency to 500 MHz. Enable the 6dB gain for the DDC from the dropdown menu. Click Apply Changes to apply both.\ |image25|\ 
 
 .. container:: centeralign
 
    \ *Figure 25. NCO Frequency Setting*\
 
 
-<WRAP>\ |image26|\ </WRAP>
+\ |image26|\ 
 
 .. container:: centeralign
 
    \ *Figure 26. DDC Gain*\
 
 
--  Navigate to the second DDC (DDC1) and make the same changes.<WRAP>\ |image27|\ </WRAP>
+-  Navigate to the second DDC (DDC1) and make the same changes.\ |image27|\ 
 
 .. container:: centeralign
 
@@ -365,7 +365,7 @@ Obtaining a DDC Capture
 
 
 -  In Analysis, run a capture. DDC0 can be selected from Channel A and DDC1 can be selected from Channel B.
--  A successful capture is shown below, with a filtered 495 MHz signal inputted on Channel A / DDC0.<WRAP>\ |image28|\ </WRAP>
+-  A successful capture is shown below, with a filtered 495 MHz signal inputted on Channel A / DDC0.\ |image28|\ 
 
 .. container:: centeralign
 

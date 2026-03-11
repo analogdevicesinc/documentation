@@ -53,7 +53,7 @@ Download
 Installation
 ------------
 
-\**libm2k for Windows \*\*
+**libm2k for Windows**
 
 -  Download the **libm2k-Windows-setup.exe** and run through all the required steps.
 
@@ -67,7 +67,7 @@ Installation
    For libm2k versions older than v0.6.0: Make sure you only select the libm2k Python bindings that correspond to your installed Python version.
 
 
-\**libm2k for Linux \*\*
+**libm2k for Linux**
 
 -  Download the **libiio-ubuntu.deb** for your system (from the :git-libiio:`nightly builds <README.md>`) and install it by running:
 
@@ -81,7 +81,7 @@ Installation
 
    **sudo apt install -f ./libm2k-package.deb**
 
-\**libm2k for OSX \*\*
+**libm2k for OSX**
 
 -  Download the **libiio-darwin.pkg** for your system (from the :git-libiio:`nightly builds <README.md>`) and install it by running:
 
@@ -108,7 +108,7 @@ Installation
 
    install_name_tool -add_rpath /Library/Frameworks/ /Library/Frameworks/Python.framework/Versions/**3.11**/lib/python**3.11**/site-packages/_libm2k.cpython-**311**-darwin.so
 
--  \**Important: \*\* adjust the // 3.11 // and *311* references from the example to match your specific Python version.
+-  **Important:** adjust the // 3.11 // and *311* references from the example to match your specific Python version.
 
 How to build it?
 ================
@@ -220,8 +220,6 @@ If the Python bindings were enabled, they will be **automatically** installed in
 Building on OSX
 ---------------
 
-.. _dependencies-1:
-
 Dependencies
 ~~~~~~~~~~~~
 
@@ -232,8 +230,6 @@ Install git, cmake, swig and python:
    ~$ **brew install git cmake <nowiki>g+</nowiki>+ swig python3 libusb**
 
 Download and install :git-libiio:`libiio <releases>`.
-
-.. _install-libm2k-1:
 
 Install libm2k
 ~~~~~~~~~~~~~~
@@ -266,8 +262,6 @@ Building on Windows
 -------------------
 
 Get the latest installer from `here <https://ci.appveyor.com/project/analogdevicesinc/libm2k/build/artifacts>`_.
-
-.. _dependencies-2:
 
 Dependencies
 ~~~~~~~~~~~~
@@ -307,8 +301,6 @@ Dependencies
          -  Click 'Open Project' and build the solution.
          -  Note: glog.dll should be placed next to your libm2k application or in your system
 
-.. _install-libm2k-2:
-
 Install libm2k
 ~~~~~~~~~~~~~~
 
@@ -328,16 +320,14 @@ Install libm2k
 -  If no errors, click Generate button in CMake-gui
 -  Click Open Project in CMake-gui - this will open Visual Studio.
 
-| 
-| **Build solution in visual studio**
+**Build solution in visual studio**
 
 If you want to install the library in the system:
 
 -  Open a Command Prompt in the libiio folder and copy all the .dll files in ``C:\Windows\System32``.
 -  Open a Command Prompt in the build folder and copy libm2k.dll in ``C:\Windows\System32``.
 
-| 
-| **C# bindings**
+**C# bindings**
 
 -  The C# bindings are built by default. In order to disable them, set ``ENABLE_CSHARP=OFF`` in the CMake configuration.
 -  In order to use the C# bindings, you need to copy the following dlls in your build folder: ``libm2k-sharp.dll`` and ``libm2k-sharp-cxx-wrap.dll`` . These can be found in ``C:\Program Files\Common Files\libm2k`` if you installed libm2k using the system installer. Otherwise, you can download the latest archive from appveyor: Appveyor artifacts and get the dlls from there.

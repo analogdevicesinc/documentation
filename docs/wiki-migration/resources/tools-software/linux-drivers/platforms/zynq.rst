@@ -104,8 +104,9 @@ Clicking "Create Image" will now generate in the chosen location a new boot imag
 Alternative method of building the Zynq boot image
 --------------------------------------------------
 
-| {The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
-| Instructions on how to build the Hardware Description File (HDF) handover file can be found here:
+{The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
+
+Instructions on how to build the Hardware Description File (HDF) handover file can be found here:
 
 -  :doc:`Building HDL </wiki-migration/resources/fpga/docs/build>`
 
@@ -132,13 +133,15 @@ The script can be downloaded from here:
 
 -  `build_zynqmp_boot_bin.sh <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynqmp_boot_bin/build_zynqmp_boot_bin.sh>`_
 
-|
-
 .. tip::
 
    \ **NOTE: After downloading the script you need to make it executable**
 
-   | ``$ chmod +x build_zynqmp_boot_bin.sh``
+   
+   ::
+   
+      $ chmod +x build_zynqmp_boot_bin.sh
+   
 
 
 Usage
@@ -153,7 +156,8 @@ Usage
 -  An optionally 4th ``name`` parameter can be given to tar.gz the output directory. (``name``.tar.gz)
 -  Build output is located in a local directory named: output_boot_bin.
 -  This script requires Xilinx Vitis and bootgen in the PATH.
-   \* A simple way is to source vivado settings[32|64].sh for Linux:
+
+   -  A simple way is to source vivado settings[32|64].sh for Linux:
 
 ::
 
@@ -167,14 +171,10 @@ Usage
    export PATH=$PATH:/cygdrive/c/Xilinx/Vitis/202x.x/bin
    export PATH=$PATH:/cygdrive/c/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
 
-|
-
 .. tip::
 
-   \ **NOTE: u-boot.elf**
+   \ **NOTE: u-boot.elf** For those who don't want to build u-boot themselves. The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, **bootgen_sysfiles.tgz**
 
-   | For those who don't want to build u-boot themselves.
-   | The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, **bootgen_sysfiles.tgz**
    
 
 
@@ -199,10 +199,7 @@ Build and install the kernel image
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      root Download and build the kernel image
+   root Download and build the kernel image
 
    
    ::
@@ -217,7 +214,7 @@ Build and install the kernel image
       Checking out files: 100% (38170/38170), done.
       > **cd linux**
       > # For AD-FMCOMMS2-EBZ use
-      > # **git checkout master **
+      > # **git checkout master**
       > **export ARCH=arm**
       > **export CROSS_COMPILE=/path/to/your/arm/cross-compiler**
       > # e.g. export CROSS_COMPILE=/opt/CodeSourcery/Sourcery_G++_Lite/bin/arm-xilinxa9-linux-gnueabi-
@@ -314,10 +311,7 @@ To build the devicetree from the devicetree file run \`make name-dts-replaced-by
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      Build the devicetree for ZED with HDMI video out and XCOMM
+   Build the devicetree for ZED with HDMI video out and XCOMM
 
    
    ::
@@ -332,10 +326,7 @@ The last step is to copy both the kernel and the devicetree files to the first p
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      Copy kernel and device tree to SD card
+   Copy kernel and device tree to SD card
 
    
    ::
@@ -367,10 +358,7 @@ The first step is to download the `archive containing the root filesystem <https
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      Download Linaro Ubuntu ARM rootfs
+   Download Linaro Ubuntu ARM rootfs
 
    
    ::
@@ -383,10 +371,7 @@ The next step is to extract the root filesystem from the archive to the SD card.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      Extract the root filesystem onto the SD card
+   Extract the root filesystem onto the SD card
 
    
    ::
@@ -419,10 +404,7 @@ Unfortunately the current Linaro Ubuntu distribution does not contain a package 
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      Download and install xf86-video-modesetting
+   Download and install xf86-video-modesetting
 
    
    ::
@@ -455,10 +437,7 @@ PulseAudio is the audio daemon used by default on the Linaro Ubuntu installation
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      Disable pulse audio 'glitch-free' feature
+   Disable pulse audio 'glitch-free' feature
 
    
    ::
@@ -489,7 +468,11 @@ More information
 -  `AD9122: Dual, 16-Bit, 1200 MSPS, TxDAC+® Digital-to-Analog Converter <https://wiki.analog.com/../iio-dds/axi-dac-dds-hdl>`_
 -  :doc:`AD9361 high performance, highly integrated RF Agile Transceiver™ Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 
-.. include:: ../need_help.rst
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/linux-zynq-export-xps.png
    :width: 600px

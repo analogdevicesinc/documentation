@@ -117,7 +117,7 @@ Managing Error Messages
 
 .. container:: center round box
 
-   <fc #800000>\ **Typical Error Messages and Solutions:** </fc>
+   **Typical Error Messages and Solutions:**
 
    
    The application would fail to start in the event of no USB connection to the Evaluation board. When the user sees the following error message, Ensure that ADIS16000 is connected to the Eval Board.

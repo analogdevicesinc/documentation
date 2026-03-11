@@ -31,17 +31,7 @@ Figure 1 shows the idealized responses of the main type of filters:
 Materials
 ---------
 
-| ADALM2000 Active Learning Module
-| Solder-less breadboard
-| 4 - 1KΩ Resistor
-| 3 – 10KΩ Resistor
-| 1 - 470Ω Resistor
-| 1 – 9kΩ Resistor (series 6.8kΩ and 2.2kΩ)
-| 1 – 2kΩ Resistor (series two 1kΩ)
-| 2 – 1nF Capacitor
-| 2 – 10nF Capacitor
-| 1 – 1uF Capacitor
-| 5 – precision op amp (OP37, OP27)
+ADALM2000 Active Learning Module Solder-less breadboard 4 - 1KΩ Resistor 3 – 10KΩ Resistor 1 - 470Ω Resistor 1 – 9kΩ Resistor (series 6.8kΩ and 2.2kΩ) 1 – 2kΩ Resistor (series two 1kΩ) 2 – 1nF Capacitor 2 – 10nF Capacitor 1 – 1uF Capacitor 5 – precision op amp (OP37, OP27)
 
 Active Low Pass Filter with Gain Control
 ----------------------------------------
@@ -137,8 +127,6 @@ The filter acts as an inverting amplifier in the pass-band with gain A which is 
 
 Calculating for the cut-off frequency for this circuit is the same with the non-inverting active low pass filter circuit.
 
-.. _hardware-setup-1:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -151,8 +139,6 @@ Build the breadboard circuit presented in Figure 6. Set +5V for the positive sup
 
    Figure 6. Inverting Amplifier Low Pass Circuit breadboard connection
 
-
-.. _procedure-1:
 
 Procedure
 ~~~~~~~~~
@@ -196,8 +182,6 @@ Where:
 -  f = frequency of the input signal
 -  f\ :sub:`c` = cut-off frequency
 
-.. _hardware-setup-2:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -210,8 +194,6 @@ Construct the active high pass filter circuit shown in figure 8. Use the positiv
 
    Figure 9. Active High Pass Filter with Gain Control circuit
 
-
-.. _procedure-2:
 
 Procedure
 ~~~~~~~~~
@@ -281,8 +263,6 @@ Aside from the cut-off frequencies defining the resonant frequency, it also dete
 
 When Q is greater than 1, the band-pass filter has a much narrower pass band whereas when Q is lesser than 1, a wider pass band.
 
-.. _hardware-setup-3:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -295,8 +275,6 @@ Build the breadboard circuit presented in figure 12. Use the positive and negati
 
    Figure 12. Active Band Pass Filter breadboard connection
 
-
-.. _procedure-3:
 
 Procedure
 ~~~~~~~~~
@@ -335,8 +313,6 @@ Bandstop filter's definition for bandwidth, quality factor, and the resonant fre
 
 Like the band-pass filter, the band stop filter has a wider stop band when Q is less than 1 and a much narrower stop band when Q is greater than 1. A narrow-band band stop filter is referred to as a Notch Filter. The band stop filter in Figure 14 is an example of a notch filter.
 
-.. _hardware-setup-4:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -349,8 +325,6 @@ On your breadboard, build the circuit shown in Figure 15. Set +5V for the positi
 
    Figure 15. Active Band Stop Filter Circuit breadboard connection
 
-
-.. _procedure-4:
 
 Procedure
 ~~~~~~~~~
@@ -416,8 +390,6 @@ The value of Q can also be related to the dampness of the system. The relationsh
 
 The relationship between Q and A is critical in Sallen Key configuration which makes it its limitation. Q must be greater than ½ since A must be greater than 1.
 
-.. _hardware-setup-5:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -430,8 +402,6 @@ Build the breadboard circuit presented in Figure 18. Use the positive and negati
 
    Figure 18. Sallen Key Second Order Low Pass Filter breadboard connection
 
-
-.. _procedure-5:
 
 Procedure
 ~~~~~~~~~
@@ -461,8 +431,6 @@ Now consider the Sallen Key configuration of a high pass filter presented in Fig
 
 The configuration is like the low pass configuration except that the positions of the resistors and capacitors are interchanged. 2nd order Sallen-Key filters are also referred to as positive feedback filters since the output feeds back into the positive terminal of the op-amp.
 
-.. _hardware-setup-6:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -475,8 +443,6 @@ Build the breadboard circuit presented in Figure 21. Use the positive and negati
 
    Figure 21. Sallen Key Second Order High Pass Filter breadboard connection
 
-
-.. _procedure-6:
 
 Procedure
 ~~~~~~~~~
@@ -510,8 +476,6 @@ The band-pass configuration of the Sallen-Key filter has a severe limitation. Th
 
 Shown in Figure 23 is the Sallen Key second-order band pass filter configuration.
 
-.. _hardware-setup-7:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -524,8 +488,6 @@ Build the breadboard circuit presented in Figure 24. Use the positive and negati
 
    Figure 24. Sallen Key Second Order Band pass Filter breadboard connection
 
-
-.. _procedure-7:
 
 Procedure
 ~~~~~~~~~
@@ -560,8 +522,6 @@ State Variable Filter configuration offers the most precise implementation of th
 
 Tuning the resonant frequency of a state variable filter is accomplished by varying R4 and R5. While you do not have to tune both, it is generally preferable if you are varying over a wide range. Holding R1 constant, tuning R7 sets the low-pass gain and tuning R2 sets the high-pass gain. Band-pass gain and Q are set by the ratio of R3 and R7. Note that the low-pass and high-pass outputs are inverted in phase while the band-pass output maintains the phase.
 
-.. _hardware-setup-8:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -574,8 +534,6 @@ Build the breadboard circuit presented in Figure 27.
 
    Figure 27. State Variable Filter breadboard connection
 
-
-.. _procedure-8:
 
 Procedure
 ~~~~~~~~~
@@ -615,8 +573,6 @@ The Tow-Thomas Filter is tunable like the state variable (KHN) filter: Adjust R3
 
 Upon closer look, the Tow-Thomas Filter configuration is a minor rearrangement of the state variable filter. It has no separate high-pass output, but it generates two low-pass outputs, one in phase and the out of phase, and a band-pass output that inverts the phase. Connections of each output are seen in Figure 29. However, adding a fourth amplifier to the current filter configuration allows the filter to generate either high-pass, notch, or all-pass filters. An all-pass filter adds a phase shift response to the circuit while leaving the amplitude of the signal untouched. It has a unity gain for all frequencies.
 
-.. _hardware-setup-9:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -629,8 +585,6 @@ Build the breadboard circuit presented in Figure 30 on your breadboard. Set the 
 
    Figure 30. Tow-Thomas Filter Circuit breadboard connection
 
-
-.. _procedure-9:
 
 Procedure
 ~~~~~~~~~
@@ -690,8 +644,6 @@ The signal feedback is given by the resistors R4 and R5 determine the Q of the f
 
 To achieve the maximum notch depth, eliminate resistors R4 and R5 alongside the op-amp connected to them and connect the junction between R3 and C3 junction directly to the output.
 
-.. _hardware-setup-10:
-
 Hardware Setup
 ~~~~~~~~~~~~~~
 
@@ -712,8 +664,6 @@ On your breadboard, build the circuit in Figure 33. Use the positive and negativ
 
    Figure 34. Twin-T Notch Filter Circuit with Potentiometer breadboard connection
 
-
-.. _procedure-10:
 
 Procedure
 ~~~~~~~~~

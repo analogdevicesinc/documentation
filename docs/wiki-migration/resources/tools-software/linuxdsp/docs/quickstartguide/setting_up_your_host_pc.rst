@@ -19,8 +19,10 @@ If you are running on a 64-bit host, then you also need to install the following
 
    $ sudo apt-get install zlib1g:i386 libncurses5:i386
 
-| 
-| ==== Installing CrossCore Embedded Studio ==== Browse to :adi:`en/design-center/evaluation-hardware-and-software/software/linuxaddin`.html#software-overview and download the 2.8.3 release of CrossCore Embedded Studio. Install the .deb package.
+Installing CrossCore Embedded Studio
+====================================
+
+Browse to :adi:`en/design-center/evaluation-hardware-and-software/software/linuxaddin`.html#software-overview and download the 2.8.3 release of CrossCore Embedded Studio. Install the .deb package.
 
 ::
 
@@ -28,14 +30,16 @@ If you are running on a 64-bit host, then you also need to install the following
 
 Add the **/opt/analog/cces/2.8.3/ARM/arm-none-eabi/bin** directory to your path.
 
-| 
-| ==== Setting Up TFTP ==== We use the TFTP server on the host to transfer images to the EZ-KIT. This needs to be configured for use:
+Setting Up TFTP
+===============
+
+We use the TFTP server on the host to transfer images to the EZ-KIT. This needs to be configured for use:
 
 ::
 
    $ sudo vi /etc/default/tftpd-hpa
 
-   #add following commands 
+   #add following commands
    TFTP_USERNAME="tftp"
    TFTP_DIRECTORY="/tftpboot"
    TFTP_ADDRESS="0.0.0.0:69"
@@ -45,8 +49,10 @@ Add the **/opt/analog/cces/2.8.3/ARM/arm-none-eabi/bin** directory to your path.
    $ sudo chmod 777 /tftpboot
    $ sudo service tftpd-hpa restart
 
-| 
-| ==== Setting Up NFS Server ==== We can use the NFS server on the host to transfer images to the EZ-KIT. If you wish to use the NFS boot method you can install the NFS server on your host PC. This needs to be configured for use:
+Setting Up NFS Server
+=====================
+
+We can use the NFS server on the host to transfer images to the EZ-KIT. If you wish to use the NFS boot method you can install the NFS server on your host PC. This needs to be configured for use:
 
 ::
 
@@ -60,8 +66,10 @@ Add the **/opt/analog/cces/2.8.3/ARM/arm-none-eabi/bin** directory to your path.
    $ sudo chmod 777 /romfs/
    $ sudo service nfs-kernel-server start
 
-| 
-| ==== Configuring Minicom ==== In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use **minicom** to do this. Minicom must be configured to connect to U-Boot correctly.
+Configuring Minicom
+===================
+
+In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use **minicom** to do this. Minicom must be configured to connect to U-Boot correctly.
 
 On the host PC open a terminal and execute the following commands:
 
@@ -90,10 +98,11 @@ On the host PC open a terminal and execute the following commands:
         Set Serial Device to /dev/ttyUSB0
         Set Bps/Par/Bits to 57600 8N1
         Set Hardware Flow Control to No
-        
+
         Close the Serial port setup option by press Esc
     Select Save setup as dfl
     Select Exit
 
-| 
-| ---- **HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>` **NEXT:** :doc:`Setting Up Sources </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/source-setup>`
+--------------
+
+**HOME PAGE:** :doc:`Linux for ADSP-SC5xx Processors </wiki-migration/resources/tools-software/linuxdsp>` **NEXT:** :doc:`Setting Up Sources </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/source-setup>`

@@ -19,10 +19,20 @@ Additional pieces of hardware will be needed, such as cables, test equipment and
 
 With these 4 key pieces of hardware, the full signal chain (including Digitizer) can be evaluated for functionality and performance. Additionally, all control of the signal chain is conducted from a central location (FPGA on the ZCU102), which allows for coordinated control system prototyping.
 
-| Below is a diagram showing how these pieces will fit together to complete the prototyping system. |image1|
-| Once the hardware is connected as pictured above, the pinouts for the XMW bridge board can be distributed to the components in the signal chain to interface with the hardware platform. The following block diagram shows the receiver signal chain with LO circuits and XMW bridge board pinouts connected: |image2|
-| The following block diagram shows the transmit signal chain with LO circuits and XMW bridge board pinouts connected: |image3|
-|
+Below is a diagram showing how these pieces will fit together to complete the prototyping system.
+
+
+|image1|
+
+Once the hardware is connected as pictured above, the pinouts for the XMW bridge board can be distributed to the components in the signal chain to interface with the hardware platform. The following block diagram shows the receiver signal chain with LO circuits and XMW bridge board pinouts connected:
+
+
+|image2|
+
+The following block diagram shows the transmit signal chain with LO circuits and XMW bridge board pinouts connected:
+
+
+|image3|
 
 .. important::
 

@@ -6,7 +6,7 @@ Introduction
 
 This page gives an overview of using the ARM platforms supported (default is Mbed) firmware example with Analog Devices AD719x Evaluation board and SDP-K1 controller board. This example code leverages the ADI developed IIO (Industrial Input Output) ecosystem to evaluate the AD719x device by providing a device debug and data capture support.
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
 
 --------------
@@ -14,7 +14,7 @@ This page gives an overview of using the ARM platforms supported (default is Mbe
 Useful links
 ------------
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :git-no-OS:`AD719x No-OS drivers <drivers/adc/ad719x>`
@@ -40,7 +40,7 @@ EVAL-AD719X:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad719x_hardware_connection.png
    :width: 800px
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
 
 --------------
@@ -48,7 +48,7 @@ EVAL-AD719X:
 Software Downloads
 ==================
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
 
 --------------
@@ -56,7 +56,7 @@ Software Downloads
 Evaluating AD719x Using IIO Ecosystem
 -------------------------------------
 
-.. image:: https://wiki.analog.com/_media/section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
 
 Running IIO Oscilloscope (Client)
@@ -90,7 +90,7 @@ Using DMM Tab to Read DC Voltage on Input Channels
 
 DMM tab can be used read the instantaneous voltage applied on analog input channels. Simply select the device and channels to read and press start button.
 
-<fc #ff0000>\ *\*Note: The voltage is just instantaneous, so it is not possible to get RMS AC voltage or averaged DC voltage. Also, when using DMM tab, do not access/use the Data Capture or Debug tab as this could impact data capturing. Both DMM scan and data capture uses different methods of conversion. The DMM data is read using single conversion, while data capture uses continuous conversion mode of operation.*\ </fc>
+*\*Note: The voltage is just instantaneous, so it is not possible to get RMS AC voltage or averaged DC voltage. Also, when using DMM tab, do not access/use the Data Capture or Debug tab as this could impact data capturing. Both DMM scan and data capture uses different methods of conversion. The DMM data is read using single conversion, while data capture uses continuous conversion mode of operation.*
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad719x_iio_osc_dmm.png
    :width: 600px
@@ -100,21 +100,21 @@ Data Capture from IIO Device
 
 To capture the data from AD719x IIO device, simply select the device and channels to read/capture data. The data is plotted as “ADC Raw Value” Vs “Number of Samples” and is just used for Visualization. The data is read as is from device without any processing. If user wants to process the data, it must be done externally by capturing data from the Serial link on controller board.
 
-<fc #ff0000>\ *\*Note: The DMM or Debug tab should not be accessed when capturing data as this would impact data capturing. Both DMM scan and data capture uses different methods of conversion. The DMM data is read using single conversion, while data capture uses continuous conversion mode of operation.*\ </fc>
+*\*Note: The DMM or Debug tab should not be accessed when capturing data as this would impact data capturing. Both DMM scan and data capture uses different methods of conversion. The DMM data is read using single conversion, while data capture uses continuous conversion mode of operation.*
 
 More info here: :doc:`Data Capture using IIO App </wiki-migration/resources/tools-software/product-support-software/data-capture-using-iio-app>`
 
 Time Domain Plot
 ----------------
 
-<fc #ff0000>//\*Note: When enabling more than 4 channels, the number of samples should be decreased to 200 to avoid timeout in the IIO oscilloscope. //</fc>
+//\*Note: When enabling more than 4 channels, the number of samples should be decreased to 200 to avoid timeout in the IIO oscilloscope. //
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad719x_iio_osc_plot.png
 
 Frequency Domain Plot
 ---------------------
 
-<fc #ff0000>\ *\*Note: Max 4096 samples can be selected for plotting frequency domain response due to limited buffer size in the firmware.*\ </fc>
+*\*Note: Max 4096 samples can be selected for plotting frequency domain response due to limited buffer size in the firmware.*
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad719x_iio_osc_fft.png
 
@@ -131,7 +131,7 @@ Setting-up Python Environment
 -  Once python is installed, make sure the environment path (on windows machine) is set properly. You can verify if python is installed properly by typing “python --version” command on command line tool such as gitbash, command prompt, power shell, etc.
 -  Install the “pyadi-iio” python package by executing command “python -m pip install pyadi-iio”. Detailed guide on installing it is available in Python Interfaces for ADI Hardware
 
-\* Make sure to install additional support packages by running requirements.txt file using command “python -m pip install -r requirements.txt” from “scripts/” directory.”
+- Make sure to install additional support packages by running requirements.txt file using command “python -m pip install -r requirements.txt” from “scripts/” directory.”
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad719x_iio_python_requirement.png
 
@@ -157,7 +157,8 @@ Output Obtained from the Python Script While executing the ad719x_rms_50hz_test.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad719x_iio_python_output.png
    :alt:
 
-   |image1|
+
+|image1|
 
 --------------
 

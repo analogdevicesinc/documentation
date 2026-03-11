@@ -10,7 +10,7 @@ QDESYS Motor Control IP & EtherCAT Design
 
 |Phase currents| |Stator Currents vs Space|
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON2-EBZ#software
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/navigation AD-FMCMOTCON2-EBZ#software
    :alt: Software#.:\|Overview#help_and_support|Help and Support
 
 .. |Main panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_main_panel.png

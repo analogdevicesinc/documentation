@@ -94,8 +94,6 @@ Before you can start gathering data, you first must locate the CN0549 system set
 
 |image2|
 
-.. _system-block-diagram-1:
-
 System Block Diagram
 ~~~~~~~~~~~~~~~~~~~~
 

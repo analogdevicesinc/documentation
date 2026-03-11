@@ -1,8 +1,9 @@
 Mono to Interleaved
 ===================
 
-| :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
-| |mot_int.png|\ \|
+:doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
+
+|mot_int.png|\ \|
 
 Description
 -----------

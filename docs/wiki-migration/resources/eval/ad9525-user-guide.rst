@@ -46,13 +46,9 @@ Documents Needed
 -  :adi:`AD9525 Datasheet <static/imported-files/data_sheets/AD9525.pdf>`
 
 GENERAL DESCRIPTION
--------------------
 
---------------
 
 The :adi:`AD9525` evaluation board is a compact, easy to use platform for evaluating all features of the :adi:`AD9525`. Two versions of the evaluation board are available : one with a prepopulated external VCO and loop filter (AD9525/PCBZ-VCO) and one with no VCO/VCXO and no loop filter (AD9525/PCBZ). This user guide focuses on the AD9525/PCBZ-VCO, which already has a VCO and loop filter on board. The :adi:`AD9525` provides a low power, multioutput, clock distribution function with low jitter performance, along with an on-chip PLL that can be used with an external VCO or VCXO. The VCO input and eight LVPECL outputs can operate up to a frequency of 3.6 GHz. All outputs share a common divider that can provide a division of 1 to 6. The :adi:`AD9525` also offers a dedicated output that can be used to provide a programmable signal for resetting or synchronizing a data converter. For more information about the device, see the :adi:`AD9525` data sheet. This user guide should be used in conjunction with the :adi:`AD9525` data sheet and the software documentation available at www.analog.com/clocks
-
-|
 
 .. container:: centeralign
 
@@ -61,17 +57,14 @@ The :adi:`AD9525` evaluation board is a compact, easy to use platform for evalua
 
 |image1|
 
-   | **Figure 1. AD9525/PCBZ-VCO**
+   **Figure 1. AD9525/PCBZ-VCO**
 
 
 EVALUATION BOARD HARDWARE
--------------------------
 
---------------
 
 | The instructions in this section are for setting up the physical connections to the AD9525/PCBZ-VCO evaluation board with a prepopulated VCO. There is another version of the evaluation board (AD9525/PCBZ) that does not contain an external VCO. The two variations of the evaluation boards have slightly different default configurations.
-
-When connecting the evaluation board to a PC for the first time, you must install the evaluation software prior to connecting the evaluation board. If a previous version of the software is already installed, uninstall it before installing the latest version.
+| When connecting the evaluation board to a PC for the first time, you must install the evaluation software prior to connecting the evaluation board. If a previous version of the software is already installed, uninstall it before installing the latest version.
 
 Power and PC Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -121,11 +114,9 @@ To use an off-board VCO or VCXO:
 Note that the right angle SMA connectors on the evaluation board are not optimal for high speed signals. They are provided for ease of use but may cause loss of performance at speeds greater than 1.5 GHz.
 
 LOOP FILTER DESIGN
-------------------
 
---------------
 
-| The AD9525 PLL requires an external VCO or VCXO and a loop filter containing components tailored for a given application. The third-order passive configuration shown in Figure 2 usually results in the best performance for many applications and is the one found on the evaluation board.
+The AD9525 PLL requires an external VCO or VCXO and a loop filter containing components tailored for a given application. The third-order passive configuration shown in Figure 2 usually results in the best performance for many applications and is the one found on the evaluation board.
 
 .. container:: centeralign
 
@@ -134,11 +125,10 @@ LOOP FILTER DESIGN
 
 |image2|
 
-   | **Figure 2. PLL Loop Filter**
+   **Figure 2. PLL Loop Filter**
 
 
-| The loop bandwidth of a PLL with a second-order filter (excluding R2 and C3) can be approximated using the following equation:
-|
+The loop bandwidth of a PLL with a second-order filter (excluding R2 and C3) can be approximated using the following equation:
 
 .. container:: centeralign
 
@@ -153,16 +143,13 @@ where:
 -  **N\ TOTAL** is the total of the feedback divider (set by a prescaler P, divider B, and divider M). Divider M only alters **N\ TOTAL** if the output frequency of the AD9525 is an integer division of the VCO frequency. **N\ TOTAL** is defined by the following equation: :math:`N_Total=P \times B \times M`
 
 | Because **K\ VCO** is determined by the VCO vendor, the bandwidth of the loop can be adjusted by changing the values of **I\ CP** and **N\ TOTAL**. Note that **I\ CP** has a limited range, and **N\ TOTAL** is limited by the selectable values of Prescaler P, Divider B, and Divider M. For more information about **N\ TOTAL** and **I\ CP**, including possible values, see the AD9525 data sheet.
-
 | To determine the best loop filter for a given application, use :adi:`ADIsimCLK™ <ADISIMCLK>` (Version 1.5 or greater), which is free and can be downloaded from the :adi:`ADIsimCLK Design and Evaluation Software <ADISIMCLK>` Web page. This software aids in designing and exploring the capabilities and features of the AD9525, including designing the PLL loop filter.
-
-The AD9525 evaluation board can be purchased with either a Z-Comm CRO2950B-LF external VCO or with no VCO populated. This section discusses a couple of different external VCO possibilities and their respective loop filter designs and performance. Using a high performance VCO with low phase noise allows you to create a low loop bandwidth filter to remove the jitter contained on the input reference clock.
+| The AD9525 evaluation board can be purchased with either a Z-Comm CRO2950B-LF external VCO or with no VCO populated. This section discusses a couple of different external VCO possibilities and their respective loop filter designs and performance. Using a high performance VCO with low phase noise allows you to create a low loop bandwidth filter to remove the jitter contained on the input reference clock.
 
 Using the Evaluation Board with a Z-Comm CRO2950B-LF VCO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| The first setup discussed is the default evaluation board configured with a Z-Comm CRO2950B-LF VCO. With the charge pump set to 1.8 mA and the feedback divider set to 24, the on-board loop filter produces a loop bandwidth of ~6 kHz and ~69° of phase margin. Table 1 shows the parameters used to attain the resulting phase noise measurements described in Figure 4. A phase noise plot of the Z-Comm CRO2950B-LF VCO is shown in Figure 3.
-|
+The first setup discussed is the default evaluation board configured with a Z-Comm CRO2950B-LF VCO. With the charge pump set to 1.8 mA and the feedback divider set to 24, the on-board loop filter produces a loop bandwidth of ~6 kHz and ~69° of phase margin. Table 1 shows the parameters used to attain the resulting phase noise measurements described in Figure 4. A phase noise plot of the Z-Comm CRO2950B-LF VCO is shown in Figure 3.
 
 .. container:: column
 
@@ -188,8 +175,6 @@ Using the Evaluation Board with a Z-Comm CRO2950B-LF VCO
    
 
 
-|
-
 .. container:: column
 
    
@@ -201,7 +186,7 @@ Using the Evaluation Board with a Z-Comm CRO2950B-LF VCO
 
    |image3|
 
-      | **Figure 3. Z-Comm CRO2950B-LF VCO Phase Noise**
+      **Figure 3. Z-Comm CRO2950B-LF VCO Phase Noise**
 
    
 
@@ -241,13 +226,13 @@ Table 2 displays the loop filter component values to achieve ~6 kHz bandwidth an
 
    |image4|
 
-      | **Figure 4. AD9525 Output Phase Noise Using Z-Comm CRO2950B-LF VCO**
+      **Figure 4. AD9525 Output Phase Noise Using Z-Comm CRO2950B-LF VCO**
 
    
 
 
 
-| Figure 5 shows the simulated output phase noise generated by ADIsimCLK using this setup.
+Figure 5 shows the simulated output phase noise generated by ADIsimCLK using this setup.
 
 .. container:: centeralign
 
@@ -288,8 +273,6 @@ The second setup discussed uses the evaluation board with the on-board VCO and l
    
 
 
-|
-
 .. container:: column
 
    
@@ -301,14 +284,13 @@ The second setup discussed uses the evaluation board with the on-board VCO and l
 
    |image6|
 
-      | **Figure 6. Bowei MVCO1475 VCO Phase Noise**
+      **Figure 6. Bowei MVCO1475 VCO Phase Noise**
 
    
 
 
 
-| Table 4 displays the loop filter component values to achieve ~11 kHz bandwidth and ~70° of phase margin when operating the AD9525 as described in Table 1. Figure 7 shows the output phase noise of the AD9525 using a Bowei MVCO1475 and the loop filter as defined in Table 4.
-|
+Table 4 displays the loop filter component values to achieve ~11 kHz bandwidth and ~70° of phase margin when operating the AD9525 as described in Table 1. Figure 7 shows the output phase noise of the AD9525 using a Bowei MVCO1475 and the loop filter as defined in Table 4.
 
 .. container:: column
 
@@ -326,7 +308,7 @@ The second setup discussed uses the evaluation board with the on-board VCO and l
          C3        N/A
          ========= ==========================
          
-      | **Table 4. AD9525 Evaluation Board Loop Filter Values Used with Bowei MVCO1475**
+      **Table 4. AD9525 Evaluation Board Loop Filter Values Used with Bowei MVCO1475**
 
    
 
@@ -342,7 +324,7 @@ The second setup discussed uses the evaluation board with the on-board VCO and l
 
    |image7|
 
-      | **Figure 7. AD9525 Output Phase Noise Using Bowei MVCO1475 VCO**
+      **Figure 7. AD9525 Output Phase Noise Using Bowei MVCO1475 VCO**
 
    
 
@@ -361,9 +343,7 @@ Figure 8 shows the simulated output phase noise generated by ADIsimCLK using thi
 
 
 EVALUATION BOARD SOFTWARE
--------------------------
 
---------------
 
 The AD9525 evaluation software allows the user to control the full functionality of the AD9525 through SPI/I2C communication on the evaluation board. Use the following instructions to set up the AD9525 evaluation board software.
 
@@ -385,8 +365,9 @@ Power up and connect the evaluation board to the PC. See the Evaluation Board Ha
 .. container:: centeralign
 
    
-   | |image9|
-   | **Figure 9. Device Hardware Installation**
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_9.device_hardware_installation.png
+   
+   **Figure 9. Device Hardware Installation**
 
 
 -  Double-click AD9525 Evaluation Software to run the AD9525 software. If the evaluation board is found by the software, AD9525 Evaluation Board in green is displayed in the lower left corner of the main window (see Figure 12). If the evaluation board was not found, No Hardware Connected! in red is displayed in the lower left corner of the window.
@@ -395,19 +376,19 @@ Power up and connect the evaluation board to the PC. See the Evaluation Board Ha
 .. container:: centeralign
 
    
-   | |image10|
-   | **Figure 10. Select Hardware Window**
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_10_select_hardware_window.png
+   
+   **Figure 10. Select Hardware Window**
 
 
 AD9525 Evaluation Board in green should be displayed in the bottom left corner of the main window. Alternatively, you can use the software in standalone mode. The standalone mode is useful for verifying register settings for a given PLL setup.See the Evaluation Software Components section for a description of the evaluation software features, and see the Quick Start Guide to the AD9525 PLL section for information about the individual blocks of the AD9525.
 
 QUICK START GUIDE TO THE AD9525 PLL
------------------------------------
 
---------------
 
 | The AD9525 quick start guide is intended for direct use with the AD9525/PCBZ-VCO evaluation board containing a prepopulated Z-COMM CRO2950B-LF external VCO. Although the AD9525/PCBZ can be populated with a different external VCO/VCXO, the settings discussed in this quick start guide may not be directly applicable. This guide covers only simple PLL operation to lock the PLL. See the AD9525 data sheet and the Evaluation Software Components section for a detailed explanation of the various AD9525 features.
 | The AD9525 website contains a setup file to configure the AD9525/PCBZ-VCO to the settings discussed in this section. The setup file can be found online :adi:`here <en/clock-and-timing/clock-generation-and-distribution/ad9525/products/EVAL-AD9525/eb.html>`. After being downloaded, the setup file can be loaded into the evaluation board by opening the AD9525 evaluation software, selecting Load Setup from the File menu, and selecting the appropriate .stp file. The values in Table 5 are used for the example discussed in the Quick Start Steps section.
+
 
 .. container:: column
 
@@ -433,8 +414,6 @@ QUICK START GUIDE TO THE AD9525 PLL
    
 
 
-| 
-
 Quick Start Steps
 ~~~~~~~~~~~~~~~~~
 
@@ -446,8 +425,7 @@ When the evaluation software is installed, the evaluation board is connected, an
 .. container:: centeralign
 
    
-   | |image11|
-   | **Figure 11. Reference Inputs Block**
+   |image9| **Figure 11. Reference Inputs Block**
 
 
 -  Program the N (feedback) divider by clicking the N text box inside of the green APLL block (see Figure 12) Type the desired value and press ENTER. For this example, N = 48 is used (see Figure 12). Note that the N divider is limited to the range of values that can be obtained by multiplying the B and P dividers. See the AD9525 data sheet for more details.
@@ -455,8 +433,7 @@ When the evaluation software is installed, the evaluation board is connected, an
 .. container:: centeralign
 
    
-   | |image12|
-   | **Figure 12. APLL Block**
+   |image10| **Figure 12. APLL Block**
 
 
 -  Set the charge pump current multiplier (8× in this case) by clicking APLL Registers, located under the green APLL block, and selecting 8x (default) from the Charge Pump Current drop-down menu (see Figure 19).
@@ -466,8 +443,7 @@ When the evaluation software is installed, the evaluation board is connected, an
 .. container:: centeralign
 
    
-   | |image13|
-   | **Figure 13. Output Frequency Box**
+   |image11| **Figure 13. Output Frequency Box**
 
 
 -  Power down any unused drivers by clicking DIST REGISTERS, located under the blue OUTPUT DIST block (see Figure 14) on the right side of the main window. The Distribution window opens.
@@ -476,8 +452,9 @@ When the evaluation software is installed, the evaluation board is connected, an
 .. container:: centeralign
 
    
-   | |image14|
-   | **Figure 14. Output Distribution Block**
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_14_output_dist_block.png
+   
+   **Figure 14. Output Distribution Block**
 
 
 -  The PLL is then locked. This is indicated in the software by the small square labeled LD in the center of the green APLL block illuminating bright green (see Figure 15).
@@ -485,8 +462,9 @@ When the evaluation software is installed, the evaluation board is connected, an
 .. container:: centeralign
 
    
-   | |image15|
-   | **Figure 15. Software Lock Detect Indicator**
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_15_software_lock_detect_indicator.png
+   
+   **Figure 15. Software Lock Detect Indicator**
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/ad9525evb_cropped.png
@@ -498,10 +476,6 @@ When the evaluation software is installed, the evaluation board is connected, an
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_6._bowei_mvco1475_pn.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_7._ad9525pn_output_using_bowei.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_8.adisimclk_outputpn_using_bowei.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_9.device_hardware_installation.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_10_select_hardware_window.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_11_reference_inputs_block.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_12_apll_block.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_13_output_frequency_block.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_14_output_dist_block.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_15_software_lock_detect_indicator.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_11_reference_inputs_block.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_12_apll_block.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9525/figure_13_output_frequency_block.png

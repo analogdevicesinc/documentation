@@ -1,10 +1,15 @@
 Undo History Dialog
 ===================
 
-| :doc:`Click here to return to the Dialogs page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/dialogs>`
-| The Undo History dialog shows you a list of the actions you have performed on a schematic in the current editing session. To access this dialog go the **Edit - History...** in the main application menu. You can revert the schematic design to any point in its Undo History simply by selecting an entry in the list and pressing the OK button.
-| |undopic1.png|
-| SigmaStudio's undo mechanism uses system memory resources. You can empty the history and free these resources by pressing the **Clear**... button.
+:doc:`Click here to return to the Dialogs page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/dialogs>`
+
+The Undo History dialog shows you a list of the actions you have performed on a schematic in the current editing session. To access this dialog go the **Edit - History...** in the main application menu. You can revert the schematic design to any point in its Undo History simply by selecting an entry in the list and pressing the OK button.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/undopic1.png
+   :alt: undopic1.png
+   :align: center
+
+SigmaStudio's undo mechanism uses system memory resources. You can empty the history and free these resources by pressing the **Clear**... button.
 
 Undo:
 -----
@@ -15,5 +20,3 @@ Redo:
 -----
 
 Undoing can also be undone. After undoing an action, you can redo it by choosing **Edit - Redo** from the main menu or by using the keyboard shortcut, **Ctrl-Y** or **Ctrl-Shift-Z**.
-
-.. |undopic1.png| image:: https://wiki.analog.com/_media/undopic1.png

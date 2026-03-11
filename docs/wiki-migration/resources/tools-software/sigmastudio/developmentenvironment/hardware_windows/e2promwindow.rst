@@ -1,8 +1,9 @@
 E2Prom Read/Write Window
 ========================
 
-| :doc:`Click here to return to the Hardware Windows page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
-| The E2Prom Read/Write window allows you to read and write program data to an E2Prom IC. This tool can be used with your own hardware systems or with the E2Prom available on some SigmaDSP evaluation boards. It also supports saving and loading the program data to files.
+:doc:`Click here to return to the Hardware Windows page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
+
+The E2Prom Read/Write window allows you to read and write program data to an E2Prom IC. This tool can be used with your own hardware systems or with the E2Prom available on some SigmaDSP evaluation boards. It also supports saving and loading the program data to files.
 
 --------------
 
@@ -36,8 +37,11 @@ E2Prom Configruation:
 Using the E2Prom Read/Write window:
 -----------------------------------
 
-| To open the E2Prom Read/Write window, Click the WinE2PromLoader tab at the bottom of the Hardware Configuration window or Right-click on the E2Prom IC block and select Read/Write Window from the menu.
-| |e2prompic5.png|
+To open the E2Prom Read/Write window, Click the WinE2PromLoader tab at the bottom of the Hardware Configuration window or Right-click on the E2Prom IC block and select Read/Write Window from the menu.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/e2prompic5.png
+   :alt: e2prompic5.png
+   :align: center
 
 **Settings:**
 
@@ -74,4 +78,3 @@ Using the E2Prom Read/Write window:
 .. |e2prompic1.png| image:: https://wiki.analog.com/_media/e2prompic1.png
 .. |e2prompic2.png| image:: https://wiki.analog.com/_media/e2prompic2.png
 .. |e2prompic3.png| image:: https://wiki.analog.com/_media/e2prompic3.png
-.. |e2prompic5.png| image:: https://wiki.analog.com/_media/e2prompic5.png
