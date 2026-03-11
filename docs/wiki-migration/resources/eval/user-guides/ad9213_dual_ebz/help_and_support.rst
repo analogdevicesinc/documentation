@@ -1,7 +1,7 @@
 AD-9213-DUAL-EBZ Help and Support
 =================================
 
-If you have any questions regarding the AD-9213-DUAL-EBZ or are experiencing any problems while using the AD-9213-DUAL-EBZ or while following any of the :doc:`AD-9213-DUAL-EBZ user guides </wiki-migration/resources/eval/user-guides/ad9213_dual_ebz/quickstart>` feel free to ask us a question. Questions can be asked on our EngineerZone support community.
+If you have any questions regarding the AD-9213-DUAL-EBZ or are experiencing any problems while using the AD-9213-DUAL-EBZ or while following any of the :doc:`AD-9213-DUAL-EBZ user guides </wiki-migration/resources/eval/user-guides/ad9213_dual_ebz/quickstart>` feel free to ask us a question. Questions can be asked on our `EngineerZone support community <https://ez.analog.com/>`_.
 
 For questions regarding the AD-9213-DUAL-EBZ hardware or the HDL reference design please state them in the :ez:`FPGA Reference Designs <community/fpga>` sub-community. For questions regarding the Linux drivers for any of the components on the AD-9213-DUAL-EBZ please use the :ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>` sub-community.
 

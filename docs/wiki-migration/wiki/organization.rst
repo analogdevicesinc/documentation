@@ -27,7 +27,7 @@
 Layout
 ======
 
-Generally speaking, the wiki is organized into a taxonomy that matches the main ADI site taxonomy. Products have catagories, and are seperated into various namespaces (see below). There are various things that don't have specific product catagories, which are a little looser in organization. Since it's easy to move things around after - don't worry too much about exactly where things go - try to think of where it makes the most sense, and put it there.
+Generally speaking, the wiki is organized into a taxonomy that matches the main `ADI site <https://www.analog.com/>`_ taxonomy. Products have catagories, and are seperated into various namespaces (see below). There are various things that don't have specific product catagories, which are a little looser in organization. Since it's easy to move things around after - don't worry too much about exactly where things go - try to think of where it makes the most sense, and put it there.
 
 Some suggestions:
 
@@ -37,7 +37,7 @@ Some suggestions:
 Here are the current namespaces.
 
 -  **:** :doc:`Root Namespace </wiki-migration/start>` - Try not to put anything here, except the start page.
--  **:product catagory:** The wiki assumes a similar taxonomy as the main ADI site taxonomy. Not all name spaces will exist at the outside of the project, and will point back to the analog.com web page. For example:
+-  **:product catagory:** The wiki assumes a similar taxonomy as the main `ADI site <https://www.analog.com/>`_ taxonomy. Not all name spaces will exist at the outside of the project, and will point back to the analog.com web page. For example:
 
    -  **:analog-to-digital-converters:audio-ad-converters:** `audio-ad-converters <https://wiki.analog.com/analog-to-digital-converters/audio-ad-converters/audio-ad-converters>`_
    -  **:analog-to-digital-converters:broadband-codecs:** `broadband-codecs <https://wiki.analog.com/analog-to-digital-converters/broadband-codecs/broadband-codecs>`_

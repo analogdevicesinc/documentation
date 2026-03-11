@@ -1,7 +1,7 @@
 ADALM-PLUTO Troubleshooting
 ===========================
 
-Here are some common solutions to problems users run into when setting up or using PlutoSDR. If you issue is not address please create a post in the :ez:`Virtual Classroom subforum <university-program>`. Search in the EngineerZone forums is also a great resource.
+Here are some common solutions to problems users run into when setting up or using PlutoSDR. If you issue is not address please create a post in the :ez:`Virtual Classroom subforum <university-program>`. Search in the `EngineerZone <https://ez.analog.com/>`_ forums is also a great resource.
 
 Please make sure you are using the latest firmware, drivers, and interface libraries when possible. Everything gets updated regularly to fix bugs and add features. Here are some useful links for reference:
 

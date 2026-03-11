@@ -3,7 +3,7 @@ AN-1108: AD9832/AD9835 Programming Examples
 
 \*\* by Liam Riordan \*\*
 
-View the original :adi:`AN-1108 <media/en/technical-documentation/application-notes/AN-1108.pdf>` document posted to Analog.com.
+View the original :adi:`AN-1108 <media/en/technical-documentation/application-notes/AN-1108.pdf>` document posted to `Analog.com <https://www.analog.com/>`_.
 
 Introduction
 ------------

@@ -174,7 +174,7 @@ Design and Integration Files
 .. admonition:: Download
    :class: download
 
-   ` <ADI>>`__\ ADMV96S-WGBE-EK1 Design & Integration Files
+   ` <https://www.analog.com/>`__\ ADMV96S-WGBE-EK1 Design & Integration Files
 
    
    -   `Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek/02_073235b_top.pdf>`_

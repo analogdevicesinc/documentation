@@ -4,7 +4,7 @@ ADALM1000 Design Document
 Overview
 --------
 
-The :adi:`ADALM1000` is an USB analog multitool offered by Analog Devices Inc. for early explorations of physical and electrical systems. Offering power output equivalent to a few AA cells or a 9v battery, it is designed for interactive use in conjunction with an external system connected to the analog outputs of the device.
+The :adi:`ADALM1000` is an USB analog multitool offered by `Analog Devices Inc. <https://www.analog.com/>`_ for early explorations of physical and electrical systems. Offering power output equivalent to a few AA cells or a 9v battery, it is designed for interactive use in conjunction with an external system connected to the analog outputs of the device.
 
 While standard electrochemical battery cells offer a convenient portable source of electrical power for exciting systems, they suffer from a fixed set of outputs, no current consumption measurement or control, and poorly defined operation over a range of attached loads and discharge levels. The USB powered ADALM1000 is a convenient source of electrical power, without the limitations enumerated above - offering high speed analog waveform output and measurement, with well behaved operation across several orders of magnitude of `Amplitude <https://en.wikipedia.org/wiki/Amplitude>`_, `Frequency <https://en.wikipedia.org/wiki/Frequency>`_, `Voltage <https://en.wikipedia.org/wiki/Voltage>`_, and `Current <https://en.wikipedia.org/wiki/Electric_current>`_, it allows a wide array of explorations to be carried out using just the device, spare parts, and a computer of some sort.
 

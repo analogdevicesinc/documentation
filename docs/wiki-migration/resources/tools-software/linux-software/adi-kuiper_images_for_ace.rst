@@ -180,4 +180,4 @@ Getting Support
 ---------------
 
 -  If you are having difficulties getting up and running, refer to the following for assistance - :doc:`Troubleshooting Guide for ADI Kuiper Linux for Evaluation </wiki-migration/resources/tools-software/linux-software/adi-kuiper_ace_troubleshooting>`
--  Finally, if you need additional support, please contact ADI using the EngineerZone forums.
+-  Finally, if you need additional support, please contact ADI using the `EngineerZone <https://ez.analog.com/>`_ forums.

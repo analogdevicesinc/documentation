@@ -91,14 +91,14 @@ Beyond Evaluation…
 -  :doc:`ADI Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` supports development of software that interfaces with the Linux Industrial I/O (IIO) system using :doc:`libiio </wiki-migration/resources/tools-software/linux-software/libiio>`.
 -  Python can also be used to interact with ADI Kuiper Linux and IIO devices. The ADI :doc:`pyadi-iio </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` package makes using IIO devices from python much easier.
 -  MATLAB support for IIO devices is provided by :doc:`ADI Toolboxes for MATLAB and Simulink </wiki-migration/resources/tools-software/matlab>`
--  Source code for the :git-linux:`Linux drivers and kernel <linux>`, :git-hdl:`HDL <hdl>` and related software is available from analogdevicesinc on GitHub
+-  Source code for the :git-linux:`Linux drivers and kernel <linux>`, :git-hdl:`HDL <hdl>` and related software is available from `analogdevicesinc on GitHub <https://github.com/analogdevicesinc/>`_
 
 Getting Support
 ---------------
 
 -  If you are having difficulties getting up and running, refer to the following for assistance - :doc:`Troubleshooting Guide for ADI Kuiper Linux for ACE Evaluation </wiki-migration/resources/tools-software/linux-software/adi-kuiper_ace_troubleshooting>`
 -  Should there be a need to create a new or update an existing SD card image, instructions are available here - :doc:`wiki.analog.com/resources/tools-software/linux-software/adi-kuiper_images_for_ace </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images_for_ace>`
--  Finally, if you need additional support, please contact ADI using the EngineerZone forums.
+-  Finally, if you need additional support, please contact ADI using the `EngineerZone <https://ez.analog.com/>`_ forums.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ace_sidebar-plug-in_manager.png
    :width: 200px

@@ -130,7 +130,7 @@ EASY START Steps
 
 6. (Optional) Verify in the Windows device manager that Analog Devices HADV6 is listed under the USB hardware.
 
-7. Refer to the instructions included in the respective ADC data sheet found at www.analog.com for more information about connecting the ADC evaluation board’s power supply and other requirements. After verification of power supply connections, apply power to the ADC evaluation board and check the voltage levels on the ADC board to make sure they are correct.
+7. Refer to the instructions included in the respective ADC data sheet found at `www.analog.com <https://www.analog.com/>`_ for more information about connecting the ADC evaluation board’s power supply and other requirements. After verification of power supply connections, apply power to the ADC evaluation board and check the voltage levels on the ADC board to make sure they are correct.
 
 8. Make sure the evaluation boards are powered on before connecting the analog input and clock. Connect the appropriate analog input (which should be filtered with a band-pass filter) and low jitter clock signal.
 

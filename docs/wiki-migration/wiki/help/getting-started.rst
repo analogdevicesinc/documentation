@@ -1,7 +1,7 @@
 Wiki Getting Started Guide
 ==========================
 
-Welcome to the Analog Devices `Wiki <https://en.wikipedia.org/wiki/wiki>`_. This guide is intended to provide you with the basic information you need to get started using the Wiki. Each topic also includes a brief video tutorial.
+Welcome to the `Analog Devices <https://www.analog.com/>`_ `Wiki <https://en.wikipedia.org/wiki/wiki>`_. This guide is intended to provide you with the basic information you need to get started using the Wiki. Each topic also includes a brief video tutorial.
 
 A wiki is a hypertext publication collaboratively edited and managed by its own audience directly using a web browser, and this is no different. Wikis are enabled by wiki software, otherwise known as wiki engines. The "engine" that we us is `Dokuwiki <https://www.dokuwiki.org/dokuwiki>`_. A wiki engine, being a form of a content management system, differs from other web-based systems such as blog software, in that the content is created without any defined owner or leader, and wikis have little inherent structure, allowing structure to emerge according to the needs of the users. Dokuwiki allow content to be written using a simplified markup language. We permit control over different functions (levels of access); for example, editing rights may permit changing, adding, or removing material.
 

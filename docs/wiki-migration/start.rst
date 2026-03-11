@@ -42,4 +42,4 @@ We welcome user contributions to this wiki. To contribute, just `register/log in
 Analog Devices Support
 ----------------------
 
-Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the EngineerZone Support Community.
+Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the `EngineerZone Support Community <https://ez.analog.com/>`_.

@@ -8,7 +8,7 @@ ADI Toolboxes for MATLAB and Simulink
 
 |youtube>dQDUPi9l8kc|
 
-ADI offers many different toolboxes to provide native connections from MATLAB and Simulink to hardware. Whether you are looking for:
+ADI offers many different toolboxes to provide native connections from `MATLAB <https://www.mathworks.com/>`_ and `Simulink <https://www.mathworks.com/>`_ to hardware. Whether you are looking for:
 
 -  Live data streaming to and from hardware,
 -  Automatically generation of C, or HDL from your MATLAB or Simulink algorithms, and run them on microprocessors or FPGAs on ADI modules or components

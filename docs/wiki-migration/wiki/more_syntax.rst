@@ -162,7 +162,7 @@ We welcome user contributions to this wiki. To contribute, just `register/log in
 Analog Devices Support
 ----------------------
 
-Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the EngineerZone Support Community.
+Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the `EngineerZone Support Community <https://ez.analog.com/>`_.
 
 
 
@@ -213,14 +213,14 @@ We welcome user contributions to this wiki. To contribute, just `register/log in
 Analog Devices Support
 ----------------------
 
-Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the EngineerZone Support Community.
+Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the `EngineerZone Support Community <https://ez.analog.com/>`_.
 
 
 
 interwiki links
 ---------------
 
-analog devices blackfin.uclinux.org `digikey <https://www.digikey.com/ADDS-BF537-STAMP>`_ O'Reilly docs.blackfin.uclinux.org
+`analog devices <https://www.analog.com/>`_ blackfin.uclinux.org `digikey <https://www.digikey.com/ADDS-BF537-STAMP>`_ O'Reilly `docs.blackfin.uclinux.org <https://analogdevicesinc.github.io/>`_
 
 There are some *special* internal links which have icons associated with them:
 

@@ -1,7 +1,7 @@
 AD-FMCDAQ3-EBZ Help and Support
 ===============================
 
-If you have any questions regarding the :adi:`AD-FMCDAQ3-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-FMCDAQ3-EBZ.html#eb-overview>` or are experiencing any problems while using the AD-FMCDAQ3-EBZ or while following any of the AD-FMCDAQ3-EBZ user guides feel free to ask us a question. Questions can be asked on our EngineerZone support community.
+If you have any questions regarding the :adi:`AD-FMCDAQ3-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-FMCDAQ3-EBZ.html#eb-overview>` or are experiencing any problems while using the AD-FMCDAQ3-EBZ or while following any of the AD-FMCDAQ3-EBZ user guides feel free to ask us a question. Questions can be asked on our `EngineerZone support community <https://ez.analog.com/>`_.
 
 For questions regarding the AD-FMCDAQ3-EBZ hardware or the HDL reference design please state them in the :ez:`FPGA Reference Designs <community/fpga>` sub-community. For questions regarding the Linux drivers for any of the components on the AD-FMCDAQ3-EBZ please use the :ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>` sub-community.
 

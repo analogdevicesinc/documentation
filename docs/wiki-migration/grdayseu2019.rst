@@ -1,7 +1,7 @@
 European GNU Radio Days 2019 Workshops
 ======================================
 
-For those attending the :adi:`PlutoSDR` workshop at European GNU Radio Days 2019, hosted by ADI, thanks. In order to make your experience better (less installing software while others are using the hardware) please have the following software installed on your machine:
+For those attending the :adi:`PlutoSDR` workshop at European GNU Radio Days 2019, hosted by `ADI <https://www.analog.com/>`_, thanks. In order to make your experience better (less installing software while others are using the hardware) please have the following software installed on your machine:
 
 -  **libIIO library:**
 

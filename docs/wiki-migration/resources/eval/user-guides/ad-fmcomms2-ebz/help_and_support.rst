@@ -7,7 +7,7 @@ If you have any questions regarding the:
 -  Arrow ARRADIO board or
 -  ADI RF SoM (ADRV9364-Z7020, ADRV9361-Z7035 or ADRV9009-ZU11EG)
 
-or are experiencing any problems while using the board or following the user guides feel free to ask us a question. Questions can be asked on our EngineerZone support community. Calling on the phone, emailing someone directly, will only cause things to get answered in much slower manner.
+or are experiencing any problems while using the board or following the user guides feel free to ask us a question. Questions can be asked on our `EngineerZone support community <https://ez.analog.com/>`_. Calling on the phone, emailing someone directly, will only cause things to get answered in much slower manner.
 
 Why EngineerZone? Why can't I get one-on-one email/phone support on the AD9361? The AD9361 is a very complex part - it has over one thousand (1000) different registers with little way to understand (other than experience, and staring at things a long time) what is going on inside the part. The working system crosses many domains (RF, FIR Filter Design, driver software, HDL, user applications). One single person can't understand the entire thing, so a single email, which is forwarded around to multiple places actually takes longer to get questions answered (and has a higher chance of getting lost), than posting them on EngineerZone (Where things are tracked, and closed). Having experts in the field monitor the EngineerZone is a better use of everyone's time, and questions are actually answered faster for those asking. Please use it.
 

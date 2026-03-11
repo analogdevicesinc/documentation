@@ -323,7 +323,7 @@ Help
 
 -  Analog Devices Website
 
-   -  Opens the Analog Devices, Inc. website ` <adi>>`__ using the PC's current default web browser.
+   -  Opens the Analog Devices, Inc. website ` <https://www.analog.com/>`__ using the PC's current default web browser.
 
 -  User Guide
 

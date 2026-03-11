@@ -32,7 +32,7 @@ Digilent Inc.
    -  `Motor Control <http://motorcontrol.analog.com/en/segment/mc.html>`_,
    -  `Process Control & Industrial Automation <http://processcontrol.analog.com/en/segment/pcia.html>`_.
    
-   More information can be found by looking at the :adi:`all ADI products <en/allProducts.html>` or :adi:`application specific solutions <en/allApplications.html>` section of the main web site.
+   More information can be found by looking at the :adi:`all ADI products <en/allProducts.html>` or :adi:`application specific solutions <en/allApplications.html>` section of `the main web site <https://www.analog.com/>`_.
 
 
 

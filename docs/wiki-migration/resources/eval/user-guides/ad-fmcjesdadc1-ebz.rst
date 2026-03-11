@@ -109,7 +109,7 @@ Downloads
 Support
 =======
 
-If you have any questions regarding the AD-FMCJESDADC1-EBZ board or are experiencing any problems while using the board or following the user guides feel free to ask us a question. Questions can be asked on our EngineerZone support community. Calling on the phone, emailing someone directly, will only cause things to get answered in much slower manner.
+If you have any questions regarding the AD-FMCJESDADC1-EBZ board or are experiencing any problems while using the board or following the user guides feel free to ask us a question. Questions can be asked on our `EngineerZone support community <https://ez.analog.com/>`_. Calling on the phone, emailing someone directly, will only cause things to get answered in much slower manner.
 
 HDL / Hardware Questions
 ------------------------

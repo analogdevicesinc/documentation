@@ -1,7 +1,7 @@
 Pluto Support
 =============
 
-If you have any questions regarding the ADALM-PLUTO (PlutoSDR) or are experiencing any problems following the user guides, or experiments feel free to ask us a question. Questions can be asked on our EngineerZone support community, specifically the :ez:`Virtual Classroom <community/university-program>`. Calling on the phone, emailing someone directly, will only cause things to get answered in much slower manner - if at all.
+If you have any questions regarding the ADALM-PLUTO (PlutoSDR) or are experiencing any problems following the user guides, or experiments feel free to ask us a question. Questions can be asked on our `EngineerZone support community <https://ez.analog.com/>`_, specifically the :ez:`Virtual Classroom <community/university-program>`. Calling on the phone, emailing someone directly, will only cause things to get answered in much slower manner - if at all.
 
 Before asking questions please also take the time to check if somebody else already asked the same question and already got an answer. EngineerZone is a big place, with lots of places to post questions, and it's possible to ask a question in the wrong place, where no one familiar with these boards/parts/software monitors things, and it will go unanswered forever. Don't get mad if this happens. The problem is between the chair and the keyboard (you). If you are posting in the right place, and the question is unanswered for a few working days, please bump the thread (we are human, and sometimes miss things).
 

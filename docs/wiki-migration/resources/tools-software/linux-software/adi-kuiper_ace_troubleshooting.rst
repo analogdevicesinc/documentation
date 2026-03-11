@@ -1,7 +1,7 @@
 Troubleshooting Guide for ADI Kuiper Linux for ACE Evaluation
 =============================================================
 
-If you are having problems connecting to an ADI Product Evaluation Board on a supported Linux platform with ACE, the following suggestions may help. This guide will cover common issues seen for the ZedBoard and CoraZ7. If your issue is not addressed here, please search in the EngineerZone forums, and ask a question in the corresponding product support forum.
+If you are having problems connecting to an ADI Product Evaluation Board on a supported Linux platform with ACE, the following suggestions may help. This guide will cover common issues seen for the ZedBoard and CoraZ7. If your issue is not addressed here, please search in the `EngineerZone <https://ez.analog.com/>`_ forums, and ask a question in the corresponding product support forum.
 
 .. note::
 

@@ -1,9 +1,9 @@
 no-OS overview
 ==============
 
-no-OS is a software framework by Analog Devices Inc for systems without OS, otherwise known as baremetal. This framework defines a common interface (API) for accessing typical baremetal peripherals such as GPIO, SPI, I2C, RTC, Timer, Interrupt Controller. This common API may be then used to initialize and control these peripherals in a common way across multiple microcontroller platforms. Currently supported platforms are Intel and Xilinx microprocessors and SoC's as well as Analog Devices' own precision microcontrollers, several Maxim Integrated MAX32xxx microcontrollers, STMicroelectronics' STM32, Raspberry Pi's Pico, and mbedOS supported devices.
+no-OS is a software framework by `Analog Devices Inc <https://www.analog.com/>`_ for systems without OS, otherwise known as baremetal. This framework defines a common interface (API) for accessing typical baremetal peripherals such as GPIO, SPI, I2C, RTC, Timer, Interrupt Controller. This common API may be then used to initialize and control these peripherals in a common way across multiple microcontroller platforms. Currently supported platforms are Intel and Xilinx microprocessors and SoC's as well as `Analog Devices' <https://www.analog.com/>`_ own precision microcontrollers, several Maxim Integrated MAX32xxx microcontrollers, STMicroelectronics' STM32, Raspberry Pi's Pico, and mbedOS supported devices.
 
-By using this common driver API, the no-OS is able to provide reference projects for Analog Devices Inc evaluation boards running on various underlying hardware.
+By using this common driver API, the no-OS is able to provide reference projects for `Analog Devices Inc <https://www.analog.com/>`_ evaluation boards running on various underlying hardware.
 
 Thanks to the no-OS build system, no-OS users may generate standalone reference projects and use them as starting point for their own development.
 

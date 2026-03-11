@@ -1,7 +1,7 @@
 Design Support
 ==============
 
-EngineerZone The online support community for engineers.
+`EngineerZone <https://ez.analog.com/>`_ The online support community for engineers.
 
 :adi:`Circuits from the Lab <circuits>` Reference circuits for solving RF, precision and high-speed signal processing challenges.
 

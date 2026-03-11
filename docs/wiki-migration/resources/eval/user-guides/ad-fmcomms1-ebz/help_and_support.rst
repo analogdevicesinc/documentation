@@ -7,7 +7,7 @@ AD-FMCOMMS1-EBZ Help and Support
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
-If you have any questions regarding the AD-FMCOMMS1-EBZ or are experiencing any problems while using the AD-FMCOMMS1-EBZ or while following any of the AD-FMCOMMS1-EBZ user guides feel free to ask us a question. Questions can be asked on our EngineerZone support community.
+If you have any questions regarding the AD-FMCOMMS1-EBZ or are experiencing any problems while using the AD-FMCOMMS1-EBZ or while following any of the AD-FMCOMMS1-EBZ user guides feel free to ask us a question. Questions can be asked on our `EngineerZone support community <https://ez.analog.com/>`_.
 
 For questions regarding the AD-FMCOMMS1-EBZ hardware or the HDL reference design please state them in the :ez:`FPGA Reference Designs <community/fpga>` sub-community. For questions regarding the Linux drivers for any of the components on the AD-FMCOMMS1-EBZ please use the :ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>` sub-community.
 
