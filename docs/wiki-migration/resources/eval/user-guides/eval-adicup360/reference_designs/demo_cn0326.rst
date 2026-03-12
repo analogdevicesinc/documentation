@@ -24,7 +24,7 @@ The **EVAL-CN0326-PMDZ** comes with an evaluation software which can help you to
 
 .. note::
 
-   Please visit :doc:`CN0326 Software User Guide page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0326>` to find out how to get and how to use the **CN0326 evaluation software**.
+   Please visit :doc:`CN0326 Software User Guide page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0326>` to find out how to get and how to use the CN0326 evaluation software.
 
 
 The potential changes are outputted as ADC 24-bits value which is received via SPI interface of the EVAL-ADICUP360 board. The ADC analog differential channels are:
@@ -45,7 +45,7 @@ To start the command line interpreter you need to press ENTER key (CR) from the 
 
 .. note::
 
-   The **calibrate** command perform an **internal zero and full scale calibration** of the selected channel/channels (:adi:`AD7793 Datasheet <media/en/technical-documentation/data-sheets/AD7792_7793.pdf>`).
+   The calibrate command perform an internal zero and full scale calibration of the selected channel/channels (:adi:`AD7793 Datasheet <media/en/technical-documentation/data-sheets/AD7792_7793.pdf>`).
 
 
 The project uses below formula to determine output **ADC code** for an input voltage on either channel:

@@ -18,7 +18,7 @@ Download HDL
 
 .. note::
 
-   Please note that the projects **FMCOMMS2**, **FMCOMMS3** and **FMCOMMS4** are using the :git-hdl:`same <projects/fmcomms2>` hdl design. The **ARRADIO** Quartus project uses :git-hdl:`Arradio <projects/arradio/c5soc>` hdl design.
+   Please note that the projects FMCOMMS2, FMCOMMS3 and FMCOMMS4 are using the :git-hdl:`same <projects/fmcomms2>` hdl design. The ARRADIO Quartus project uses :git-hdl:`Arradio <projects/arradio/c5soc>` hdl design.
 
 
 Projects list and dependencies for main
@@ -2363,7 +2363,7 @@ For different platforms you'll need different images. Currently we provide a sin
 
 .. important::
 
-   Make sure you unzip the image using either `7-zip <https://www.7-zip.org/>`_ or on Linux it can be done via command-line **xz -d <image_name>.img.xz**. The actual file that needs to be dumped to the SD card has to have the **\*.img** extension.
+   Make sure you unzip the image using either `7-zip <https://www.7-zip.org/>`_ or on Linux it can be done via command-line xz -d <image_name>.img.xz. The actual file that needs to be dumped to the SD card has to have the \*.img extension.
 
 
 .. important::
@@ -2394,7 +2394,7 @@ Download Filters
 
 .. important::
 
-   \ **PREREQUISITES**
+   \ PREREQUISITES
 
    
    In order to run the wizard, your `MATLAB <https://www.mathworks.com/products/matlab/>`_ license needs to include the following components:

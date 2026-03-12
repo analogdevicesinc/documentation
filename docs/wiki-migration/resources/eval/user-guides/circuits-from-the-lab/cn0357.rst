@@ -50,7 +50,7 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0357 Evaluation Software <https://swdownloads.analog.com/cse/cftl/CN0357/1.0.0/CN0357_Evaluation_Software.zip>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0357\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the `CN0357 Evaluation Software <https://swdownloads.analog.com/cse/cftl/CN0357/1.0.0/CN0357_Evaluation_Software.zip>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0357\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
    |image1|
@@ -67,18 +67,18 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 
 
    |image4|
 
-   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press “Next” to set the installation location for the SDP Drivers.
 
 .. tip::
 
    It is recommended that you install the drivers to the default directory path
 
-   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+   C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
 
    |image5|
@@ -176,7 +176,7 @@ Software Control and Indicator Descriptions
 .. note::
 
    
-   Enabling the buffers also reduces the **Analog Input Range** of the ADC
+   Enabling the buffers also reduces the Analog Input Range of the ADC
 
 
 - **Mode Register Numerical Indicator**
@@ -189,7 +189,7 @@ Software Control and Indicator Descriptions
 .. note::
 
    
-   The CN0357 Evaluation Software uses the **Single Conversion Mode**.
+   The CN0357 Evaluation Software uses the Single Conversion Mode.
 
 
 - **Reset ADC Button**

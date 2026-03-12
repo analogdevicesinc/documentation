@@ -215,7 +215,7 @@ On-board SERDES
    **Single Serializer**
 
    
-   **MAX96717GTJ/VY+ CSI-2 to GMSL2 serializer**
+   MAX96717GTJ/VY+ CSI-2 to GMSL2 serializer
    
    The AD-GMSL522-SL provides a proven design to evaluate the MAX96717 high-bandwidth GMSL serializer with spread spectrum and full-duplex control channel with the use of a standard FAKRA coaxial cable.
    

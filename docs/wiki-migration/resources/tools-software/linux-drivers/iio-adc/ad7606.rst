@@ -80,7 +80,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        Device Drivers  --->
            <*>     Industrial I/O support --->
                --- Industrial I/O support
-                         ** Analog to digital converters **
+                          Analog to digital converters 
                    [--snip--]
 
                    <*>     Analog Devices AD7606 ADC driver with parallel interface support
@@ -281,13 +281,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0  iio:trigger0
    
-      root:/sys/bus/iio/devices> **cd iio:device0**
+      root:/sys/bus/iio/devices> cd iio:device0
    
-      root:/sys/bus/iio/devices/iio:device0> **ls -l**
+      root:/sys/bus/iio/devices/iio:device0> ls -l
       drwxr-xr-x    5 root     root             0 Jan  1 00:00 buffer
       -r--r--r--    1 root     root          4096 Jan  1 00:00 in_voltage0_raw
       -r--r--r--    1 root     root          4096 Jan  1 00:00 in_voltage1_raw
@@ -320,7 +320,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat name**
+      root:/sys/bus/iio/devices/iio:device0> cat name
       ad7606
    
 
@@ -335,7 +335,7 @@ Show available oversampling ratios
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat oversampling_ratio_available**
+      root:/sys/bus/iio/devices/iio:device0> cat oversampling_ratio_available
       0 2 4 8 16 32 64
    
 
@@ -350,7 +350,7 @@ Show available input ranges
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat range_available**
+      root:/sys/bus/iio/devices/iio:device0> cat range_available
       5000 10000
    
 
@@ -365,8 +365,8 @@ Set input range to 10Volt
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **echo 10000 > range**
-      root:/sys/bus/iio/devices/iio:device0> **cat range**
+      root:/sys/bus/iio/devices/iio:device0> echo 10000 > range
+      root:/sys/bus/iio/devices/iio:device0> cat range
       10000
    
 
@@ -383,7 +383,7 @@ Show scale
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage_scale**
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage_scale
       0.152
    
 
@@ -400,7 +400,7 @@ Show channel 2 measurement
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage2_raw**
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage2_raw
       5789
    
 
@@ -416,7 +416,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
 
 .. hint::
 
-   **Trigger Consumers:**
+   Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
 
@@ -433,7 +433,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      root:/sys/bus/iio/devices/triggerY/> cat name
       irqtrig56
    
 
@@ -450,7 +450,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
 
 
@@ -466,7 +466,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
 
@@ -498,9 +498,9 @@ Buffer management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **ls**
-      **enable**                   subsystem
-      **length**                   uevent
+      root:/sys/bus/iio/devices/iio:device0/buffer> ls
+      enable                   subsystem
+      length                   uevent
       root:/sys/bus/iio/devices/iio:device0/buffer>
    
 
@@ -535,7 +535,7 @@ Every buffer implementation features a set of files:
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **ls**
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> ls
       in_voltage0_en           in_voltage2_index        in_voltage5_en           in_voltage7_index
       in_voltage0_index        in_voltage3_en           in_voltage5_index        in_voltage_type
       in_voltage1_en           in_voltage3_index        in_voltage6_en           timestamp_en

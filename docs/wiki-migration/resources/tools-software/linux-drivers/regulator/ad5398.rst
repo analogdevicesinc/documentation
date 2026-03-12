@@ -45,7 +45,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD5398/AD5821 Driver depends on **CONFIG_I2C**
+   The AD5398/AD5821 Driver depends on CONFIG_I2C
 
 
 Select voltage and current regulator framework support and enable AD5398/AD5821 driver. Don't forget to select virtual regulator consumer and userspace regulator consumer as module. Because AD5398 driver is loaded after I2C bus finish initialization at kernel booting, built-in consumers may be loaded earlier and find supply in AD5398 driver is not available.

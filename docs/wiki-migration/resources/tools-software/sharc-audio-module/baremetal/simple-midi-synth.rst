@@ -25,9 +25,9 @@ Open up ``/common/audio_system_config.h`` and be sure that Faust is not enabled 
 
 .. code:: c
 
-   //****************************************************************************
+   //****************
    // 6. Faust and MIDI configuration
-   //****************************************************************************
+   //****************
    #define FAUST_INSTALLED                                 FALSE
 
 ...and a bit below...
@@ -67,9 +67,9 @@ And in ``processaudio_setup()``, we'll initialize each "voice" of our synthesize
     */
    void processaudio_setup( void ) {
 
-       // ******************************************************************************
+       // ******************
        // Add any custom setup code here
-       // ******************************************************************************
+       // ******************
 
        int i;
        for (i=0;i<16;i++) {

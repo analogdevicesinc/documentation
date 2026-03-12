@@ -61,31 +61,31 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0276_Evaluation_Software.zip <http://swdownloads.analog.com/cse/cftl/CN0276/1.0.0/CN0276_Evaluation_Software.zip>`_ to the default directory path **C:\\Program Files\\Analog Devices\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\** *(in 64-bit operational system)*, and all National Instruments products to **C:\\Program Files\\National Instruments\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\National Instruments\\** *(in 64-bit operational system)*
+   \ NOTE: It is recommended that you install the `CN0276_Evaluation_Software.zip <http://swdownloads.analog.com/cse/cftl/CN0276/1.0.0/CN0276_Evaluation_Software.zip>`_ to the default directory path C:\\Program Files\\Analog Devices\\ *(in 32-bit operational system)* or C:\\Program Files (x86)\\Analog Devices\\ *(in 64-bit operational system)*, and all National Instruments products to C:\\Program Files\\National Instruments\\ *(in 32-bit operational system)* or C:\\Program Files (x86)\\National Instruments\\ *(in 64-bit operational system)*
 
 
    |image2|
 
-   \* Click **Next** to view the installation review page
+   \* Click Next to view the installation review page
 
    |image3|
 
-   \* Click **Next** to start the installation, after the installation, the installer for the **ADI SDP Drivers** will execute.
+   \* Click Next to start the installation, after the installation, the installer for the ADI SDP Drivers will execute.
 
    |image4|
 
-   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press “Next” to set the installation location for the SDP Drivers.
 
 .. tip::
 
    It is recommended that you install the drivers to the default directory path
 
-   **C:\\Program Files\\Analog Devices\\SDP\\DriversR2\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\SDP\\DriversR2\\** *(in 64-bit operational system)*
+   C:\\Program Files\\Analog Devices\\SDP\\DriversR2\\ *(in 32-bit operational system)* or C:\\Program Files (x86)\\Analog Devices\\SDP\\DriversR2\\ *(in 64-bit operational system)*
 
 
    |image5|
 
-   \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+   \* Press “Next” to install the SDP Drivers and complete the installation of all software. Click "Finish" when done.
 
    |image6|
 
@@ -98,7 +98,7 @@ Connecting the Hardware
 
 .. tip::
 
-   \ **NOTE:** If a different resolver is used other than the TS2620N21E11 from Measurement Specialties, the wiring schematic maybe different!
+   \ NOTE: If a different resolver is used other than the TS2620N21E11 from Measurement Specialties, the wiring schematic maybe different!
 
 
 ======= ======= =================
@@ -135,36 +135,36 @@ Software Control and Indicator Descriptions
 
 ::
 
-   - **Connect/Disconnect Button**
+   - Connect/Disconnect Button
    * When this button is clicked, the SDP-B Board USB connection to the CN-0276 Board status will be filliped.  A connection to the SDP-B Board must be made to use the software.
-   - **Start Button**
+   - Start Button
    * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
-   - **Stop Button**
+   - Stop Button
    * When this button is pressed, the software stop collecting data from the CN-0276 Board.
-   - **Samples setting**
+   - Samples setting
    * The number which input to this box is use to set the samples for each time the start button pressed.
-   - **Run mode setting**
+   - Run mode setting
    * The check box set the persistent running mode of RDC samples.
-   - **Control Tabs**
+   - Control Tabs
    * __Data Analyze__ This Tab showing the acquired data analyzed result in histogram.
    * __RDC Output__ This Tab include two indicators to showing the position and velocity output of RDC, update in real time when RDC is converting.
    * __RDC Configuration__ This Tab use to write and read the internal register of AD2S1210
    * __SDP Information__ Showing the SDP-B Board information when USB connection available.
-   - **SDP Status String Indicator**
+   - SDP Status String Indicator
    * This indicator displays a message to the SDP-B Board.
-   - **RDC working Status LED**
+   - RDC working Status LED
    * This LED showing the RDC working status, when RDC is converting this LED will be light up, otherwise it will be turn off.
-   - **Position indicator**
+   - Position indicator
    * This indicator display the RDC position output in hexadecimal.
-   - **Velocity indicator**
+   - Velocity indicator
    * This indicator display the RDC velocity output in rps(revolutions per second).
-   - **Configuration write to AD2S1210**
+   - Configuration write to AD2S1210
    * These values will be write to the AD2S1210's register, when Write Configuration Button has been pressed.
-   - **AD2S1210 register value**
+   - AD2S1210 register value
    * These values is the read back of the AD2S1210's register.
-   - **AD2S1210 Fault LED**
+   - AD2S1210 Fault LED
    * These LED showing the fault status of AD2S1210.
-   - **Write Configuration Button**
+   - Write Configuration Button
    * When this button is pressed, the values on the configuration area will write to the AD2S1210's register.
 
 --------------
@@ -177,9 +177,9 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ **NOTE:** If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be found at
 
-   **C:\\Program Files\\Analog Devices\\CN0276\\CN0276.exe** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\CN0276\\CN0276.exe** *(in 64-bit operational system)*\
+   C:\\Program Files\\Analog Devices\\CN0276\\CN0276.exe *(in 32-bit operational system)* or C:\\Program Files (x86)\\Analog Devices\\CN0276\\CN0276.exe *(in 64-bit operational system)*\
 
 
 - Click the **Connect Button**. A window with a progress bar will load.
@@ -200,7 +200,7 @@ Capturing Data
 
 .. important::
 
-   \ **After power on the EVAL-CN0276-SDPZ, User must write the configure data to AD2S1210 before the first running.**\
+   \ After power on the EVAL-CN0276-SDPZ, User must write the configure data to AD2S1210 before the first running.\
 
 
 -  **Setting the sample times**.

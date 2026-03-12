@@ -199,7 +199,7 @@ The SHARC Audio Module was design for a 12V DC input, but can operated from 10v 
 
 .. note::
 
-   **The SHARC Audio Module is shipped with a US power supply. Here is a universal option:** https://www.digikey.com/products/en?keywords=102-3580-ND\
+   The SHARC Audio Module is shipped with a US power supply. Here is a universal option: https://www.digikey.com/products/en?keywords=102-3580-ND\
 
 
 MicroSD Card Slot (J6)
@@ -227,7 +227,7 @@ None           ``No Boot``
 
 .. important::
 
-   **SHARC Audio Module revisions 1.4 or older incorrectly use link port boot rather than UART boot**\
+   SHARC Audio Module revisions 1.4 or older incorrectly use link port boot rather than UART boot\
 
 
 Pushbuttons (PB1, PB2)

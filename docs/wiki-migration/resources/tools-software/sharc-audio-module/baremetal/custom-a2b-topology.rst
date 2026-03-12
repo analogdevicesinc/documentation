@@ -20,7 +20,7 @@ The following software components must be installed prior to using this custom d
 
 .. important::
 
-   After installing this package, copy **A2B.dll** and **A2Bstack.dll** from the "*\\GUI\\x86_x64*" folder into "*C:\\Program Files\\Analog Devices\\SigmaStudio 4.5*" before launching SigmaStudio
+   After installing this package, copy A2B.dll and A2Bstack.dll from the "*\\GUI\\x86_x64*" folder into "*C:\\Program Files\\Analog Devices\\SigmaStudio 4.5*" before launching SigmaStudio
 
 
 -  Extract the supplied .zip file: `Demo SAM-WB1BZ-ClassDAmp.zip <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/demo_sam-wb1bz-classdamp.zip>`_

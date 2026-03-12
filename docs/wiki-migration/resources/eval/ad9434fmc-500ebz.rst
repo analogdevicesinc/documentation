@@ -3,7 +3,7 @@ EVALUATING THE AD9434 ANALOG-TO-DIGITAL CONVERTER
 
 .. warning::
 
-   \ **NOTE:** Support for the ad9434fmc is not part of 2022_r2 Kuiper Linux release. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. All the sources remained in main branches, and probably it will be added back in next releases, being supported on Zed Board.
+   \ NOTE: Support for the ad9434fmc is not part of 2022_r2 Kuiper Linux release. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. All the sources remained in main branches, and probably it will be added back in next releases, being supported on Zed Board.
 
 
 Preface

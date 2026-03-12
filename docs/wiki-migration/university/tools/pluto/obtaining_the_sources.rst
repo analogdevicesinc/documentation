@@ -35,7 +35,7 @@ PlutoSDR-fw
    
    ::
    
-      michael@HAL9000:~/devel$ **git clone --recursive https:<nowiki>//</nowiki>github.com/analogdevicesinc/plutosdr-fw.git**
+      michael@HAL9000:~/devel$ git clone --recursive https:<nowiki>//</nowiki>github.com/analogdevicesinc/plutosdr-fw.git
    
 
 
@@ -49,7 +49,7 @@ M2k-fw
    
    ::
    
-      michael@HAL9000:~/devel$ **git clone --recursive https:<nowiki>//</nowiki>github.com/analogdevicesinc/m2k-fw.git**
+      michael@HAL9000:~/devel$ git clone --recursive https:<nowiki>//</nowiki>github.com/analogdevicesinc/m2k-fw.git
    
 
 
@@ -63,6 +63,6 @@ Updating your repository
    
    ::
    
-      michael@HAL9000:~/devel/plutosdr-fw$ **git pull --recurse-submodules**
+      michael@HAL9000:~/devel/plutosdr-fw$ git pull --recurse-submodules
    
 

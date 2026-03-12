@@ -24,7 +24,7 @@ The following picture (left side) shows JP1 in the **+3.3V** position (factory-d
 
 .. important::
 
-   If JP1 is left on **+3.3V**, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
+   If JP1 is left on +3.3V, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
 
    
    |image3|\
@@ -75,7 +75,7 @@ The following picture (left side) shows JP1 in the **+3.3V** position (factory-d
 
 .. important::
 
-   If JP1 is left on **+3.3V**, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
+   If JP1 is left on +3.3V, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
 
    
    |image3|\
@@ -215,7 +215,7 @@ The **Update Flash** command saves writable user register data.
 
 .. tip::
 
-   The **Register Access** screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the **Write Register** button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
+   The Register Access screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the Write Register button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
 
 
 Data Capture Menu
@@ -292,7 +292,7 @@ The following picture (left side) shows JP1 in the **+3.3V** position (factory-d
 
 .. important::
 
-   If JP1 is left on **+3.3V**, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
+   If JP1 is left on +3.3V, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
 
    
    |image3|\
@@ -432,7 +432,7 @@ The **Update Flash** command saves writable user register data.
 
 .. tip::
 
-   The **Register Access** screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the **Write Register** button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
+   The Register Access screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the Write Register button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
 
 
 Data Capture Menu
@@ -509,7 +509,7 @@ The following picture (left side) shows JP1 in the **+3.3V** position (factory-d
 
 .. important::
 
-   If JP1 is left on **+3.3V**, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
+   If JP1 is left on +3.3V, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
 
    
    |image3|\
@@ -649,7 +649,7 @@ The **Update Flash** command saves writable user register data.
 
 .. tip::
 
-   The **Register Access** screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the **Write Register** button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
+   The Register Access screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the Write Register button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
 
 
 Data Capture Menu
@@ -726,7 +726,7 @@ The following picture (left side) shows JP1 in the **+3.3V** position (factory-d
 
 .. important::
 
-   If JP1 is left on **+3.3V**, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
+   If JP1 is left on +3.3V, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
 
    
    |image3|\
@@ -866,7 +866,7 @@ The **Update Flash** command saves writable user register data.
 
 .. tip::
 
-   The **Register Access** screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the **Write Register** button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
+   The Register Access screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the Write Register button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
 
 
 Data Capture Menu

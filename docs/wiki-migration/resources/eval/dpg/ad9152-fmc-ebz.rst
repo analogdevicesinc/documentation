@@ -57,7 +57,7 @@ Software Needed
 
    
    -  Do not install ACE on a computer with DAC Software Suite.
-   -  **Known Issue:** ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
+   -  Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
    
 
 

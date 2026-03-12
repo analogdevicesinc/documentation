@@ -112,7 +112,7 @@ This example shows how to register callbacks and enable/disable global interrupt
    if (ret)
            return ret;
    /**
-     * Enable the handling of interrupts from a peripheral specified by **irq_id**.
+     * Enable the handling of interrupts from a peripheral specified by irq_id.
      * Without this step, the interrupt routine won't be called.
    */
    ret = no_os_irq_enable(global_desc, UART0_IRQn);

@@ -114,7 +114,7 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
 
 .. tip::
 
-   use gpio_start = **-1** for **dynamic allocation**
+   use gpio_start = -1 for dynamic allocation
 
 
 .. code:: c
@@ -222,7 +222,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADP5589 Driver depends on **CONFIG_I2C**
+   The ADP5589 Driver depends on CONFIG_I2C
 
 
 ::
@@ -237,11 +237,11 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
      <M>   Event interface
      < >   Event debugging
      ---   Input Device Drivers
-   **  [*]   Keyboards  --->**
+     [*]   Keyboards  --->
 
          --- Keyboards
            < >   ADP5588/87 I2C QWERTY Keypad and IO Expander
-           **<M>   ADP5589 ADP5585 I2C QWERTY Keypad and IO Expander**
+           <M>   ADP5589 ADP5585 I2C QWERTY Keypad and IO Expander
            < >   AT keyboard
            < >   Atmel AT42QT1070 Touch Sensor Chip
            < >   Atmel AT42QT2160 Touch Sensor Chip
@@ -294,16 +294,16 @@ Driver loading
 
 ::
 
-   root:/> **modprobe adp5589_keys**
-   **input: adp5589-keys as /devices/platform/i2c-bfin-twi.0/i2c-0/0-0034/input/input0**
-   **adp5589_keys 0-0034: Rev.0 keypad, irq 66**
+   root:/> modprobe adp5589_keys
+   input: adp5589-keys as /devices/platform/i2c-bfin-twi.0/i2c-0/0-0034/input/input0
+   adp5589_keys 0-0034: Rev.0 keypad, irq 66
 
 Keypad test
 -----------
 
 ::
 
-   root:/> **modprobe evdev**
+   root:/> modprobe evdev
 
 Simple event test utility
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -312,7 +312,7 @@ Simple event test utility
 
 ::
 
-   root:/> **event_test /dev/input/event0**
+   root:/> event_test /dev/input/event0
    Input driver version is 1.0.1
    Input device ID: bus 0x18 vendor 0x1 product 0x1 version 0x0
    Input device name: "adp5589-keys"
@@ -382,22 +382,22 @@ Access using the sysfs interface for userspace
 
 ::
 
-   root:/> **cd sys/class/gpio/**
+   root:/> cd sys/class/gpio/
 
-   root:/sys/class/gpio> **ls**
+   root:/sys/class/gpio> ls
    export      gpiochip0   gpiochip50  unexport
 
-   root:/sys/class/gpio> **echo 50 > export**
+   root:/sys/class/gpio> echo 50 > export
 
-   root:/sys/class/gpio> **ls**
+   root:/sys/class/gpio> ls
    export      gpio50      gpiochip0   gpiochip50  unexport
 
-   root:/sys/class/gpio> **cd gpio50**
+   root:/sys/class/gpio> cd gpio50
 
-   root:/sys/devices/virtual/gpio/gpio50> **ls**
+   root:/sys/devices/virtual/gpio/gpio50> ls
    active_low  direction   subsystem   uevent      value
-   root:/sys/devices/virtual/gpio/gpio50> **echo low > direction**
-   root:/sys/devices/virtual/gpio/gpio50> **echo high > direction**
+   root:/sys/devices/virtual/gpio/gpio50> echo low > direction
+   root:/sys/devices/virtual/gpio/gpio50> echo high > direction
 
 PMOD-IOXP
 =========

@@ -22,7 +22,7 @@ In other words, the capacitors network is optimized when designing the *VDD* pow
 
 .. important::
 
-   **DO NOT HOT PLUG THE VDD POWER SOURCE !**
+   DO NOT HOT PLUG THE VDD POWER SOURCE !
 
    | To power-up the circuit safely via the *VDD* power socket, it is strongly recommended to follow the steps below.
 

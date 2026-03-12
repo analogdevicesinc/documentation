@@ -88,7 +88,7 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
 
 
 If programming was successful, you should be seeing messages appear on the terminal window as shown in figures below. After programming the ADP5589 device, the program will display initialization messages, and afterwards it will enter Key Decoder Test Mode. In this mode, you can press any key on the PmodKYPD, and it will be displayed on the UART along with the corresponding event (press/release). Pressing the [F] key will exit Key Decoder Test Mode. Next the program will Lock the keypad. Unlocking it requires the combination [1] [A].

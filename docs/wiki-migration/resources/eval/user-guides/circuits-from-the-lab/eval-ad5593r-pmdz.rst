@@ -131,7 +131,7 @@ The following is the list of items needed in order to replicate this demo.
    
    -  Dragging and Dropping the Hex to the Daplink drive
    
-      -  Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the **EASIEST** way to get started with the reference design.
+      -  Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
    
    -  Building, Compiling, and Debugging using CCES
    

@@ -84,7 +84,7 @@ Pin 4             SPI_MOSI
 
 .. note::
 
-   If using SPI from **P7** connector, the Chip Select **must** come from the P8 connector.
+   If using SPI from P7 connector, the Chip Select must come from the P8 connector.
 
 
 Schematic, PCB Layout, Bill of Materials

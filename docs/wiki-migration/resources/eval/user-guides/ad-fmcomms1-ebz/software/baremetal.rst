@@ -1,6 +1,6 @@
 
 
-.. important::
+.. warning::
 
    Analog Devices uses six designations to inform our customers where a
    semiconductor product is in its
@@ -13,35 +13,16 @@
 
    This particular article/document/design has been retired or deprecated,
    which means it is no longer maintained or actively updated, even though the
-   devices themselves may be **Recommended for New Designs** or in
-   **Production**. This page is here for historical/reference purposes only.
-
+   devices themselves may be Recommended for New Designs or in
+   Production. This page is here for historical/reference purposes only.
 
 
 
 AD-FMComms1-EBZ : no-OS Software Drivers
 ========================================
 
-
-
-
-.. important::
-
-   Analog Devices uses six designations to inform our customers where a
-   semiconductor product is in its
-   `life cycle <https://www.analog.com/en/support/customer-service-resources/sales/product-life-cycle-information.html>`_.
-   From emerging innovations to products which have been in production for
-   twenty years, we understand that insight into life cycle status is important.
-   Device life cycles are tracked on their individual product pages on
-   `analog.com <https://www.analog.com/>`_, and should always be consulted
-   before making any design decisions.
-
-   This particular article/document/design has been retired or deprecated,
-   which means it is no longer maintained or actively updated, even though the
-   devices themselves may be **Recommended for New Designs** or in
-   **Production**. This page is here for historical/reference purposes only.
-
-
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/software/page>/wiki/common#retired&nofooter&noheader
+   :alt: page>/wiki/common#retired&nofooter&noheader
 
 The reference design is a combination of hardware (the FMComms1 Card + the FPGA base platform), the HDL, and the software that is either running on the Microblaze, or ARM Cores.
 
@@ -143,13 +124,14 @@ Downloads
 
 The latest stable source code can be downloaded from the Analog Devices github.
 
+
+
 .. admonition:: Download
    :class: download
 
    Release 2014_R2:
 
-   
-   https://github.com/analogdevicesinc/no-OS/tree/2014_R2/fmcomms1
+   | https://github.com/analogdevicesinc/no-OS/tree/2014_R2/fmcomms1
 
 
 Using the XCOMM API
@@ -185,7 +167,6 @@ After running the example program the system is configured to generate a sinewav
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/xcomm_chipscope.png
    :alt: ADC output
    :width: 500px
-
 
 
 .. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms1-ebz#linux#./

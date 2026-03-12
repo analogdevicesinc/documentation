@@ -171,11 +171,11 @@ First make sure all the required setup explained above is completed. Once the te
    When testing the ADRV9009-ZU11EG run the following tests in this exact order:
 
    
-   -  **Test 1**
-   -  **Test 2**
-   -  **Test 4**
-   -  **Test 5**
-   -  **Test 6**
+   -  Test 1
+   -  Test 2
+   -  Test 4
+   -  Test 5
+   -  Test 6
    
 
 

@@ -21,7 +21,7 @@ Here is a brief introduction on why everyone needs to, and how to use this tool.
 
 .. important::
 
-   \ **PREREQUISITES**
+   \ PREREQUISITES
 
    
    In order to run the wizard, your `MATLAB <https://www.mathworks.com/products/matlab/>`_ license needs to include the following components:

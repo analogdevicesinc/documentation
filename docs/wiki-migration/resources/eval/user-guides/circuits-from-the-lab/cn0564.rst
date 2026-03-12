@@ -78,7 +78,7 @@ Selectable Baud rates
 
 .. note::
 
-   **The SPI read command needs to be extended by one byte. If not, the last byte will be lost in the** :adi:`LTC4332` **MISO shift register when the Slave select is de-asserted.**
+   The SPI read command needs to be extended by one byte. If not, the last byte will be lost in the :adi:`LTC4332` MISO shift register when the Slave select is de-asserted.
 
    
    Because the data sent from the SPI master to the slave experiences the same delay as the master-initiated interface clock (SCK), both will remain in sync across the entire data link. In the opposite direction, however, the slave sends data (MISO) to the master only when the first clock edge reaches the slave. This data will experience a second delay on its way back to the master, so the slave data will be out of sync by twice the cable’s propagation delay. Physically distant devices would need a dramatically reduced clock rate to accommodate the prop. delay within each bit width. To overcome this limitation, the LTC4332 introduces a shift register into the MISO signal path.

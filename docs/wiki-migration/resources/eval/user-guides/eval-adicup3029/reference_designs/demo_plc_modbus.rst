@@ -57,7 +57,7 @@ Setting up the Hardware
    Depending on the PLC/DCS Node configuration the power needs to be provided as follows:
 
    
-   -  If the PLC/DCS Node contain at least a CN0418 board, then the power will be provided through any CN0418 board (the jumper for P17 **MUST** to be placed for each board).
+   -  If the PLC/DCS Node contain at least a CN0418 board, then the power will be provided through any CN0418 board (the jumper for P17 MUST to be placed for each board).
    -  If the PLC/DCS Node contain only CN0414 boards, then the power can be provided through any CN0414 board.
    
    Refer to the :doc:`CN0414 </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/cn0414>` and :doc:`CN0418 </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/cn0418>` user guides for detailed information on power requirements.

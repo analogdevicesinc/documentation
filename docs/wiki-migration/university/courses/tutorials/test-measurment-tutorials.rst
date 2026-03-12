@@ -3,10 +3,10 @@ Test And Measurement Tutorials
 
 .. tip::
 
-   Popularly attributed to Lord Kelvin (William Thomson), "In physical science, the first essential step in the direction of learning any subject is to find principles of numerical reckoning and practicable methods for **measuring** some quality connected with it. I often say that when you can **measure** what you are speaking about, and express it in numbers, you know something about it; but when you cannot measure it, when you cannot express it in numbers, your knowledge is of a meagre and unsatisfactory kind; it may be the beginning of knowledge, but you have scarcely in your thoughts advanced to the state of Science, whatever the matter may be." [Popular Lectures & Addresses, Vol. 1 "Electrical Units of Measurement" 1883-05-03]
+   Popularly attributed to Lord Kelvin (William Thomson), "In physical science, the first essential step in the direction of learning any subject is to find principles of numerical reckoning and practicable methods for measuring some quality connected with it. I often say that when you can measure what you are speaking about, and express it in numbers, you know something about it; but when you cannot measure it, when you cannot express it in numbers, your knowledge is of a meagre and unsatisfactory kind; it may be the beginning of knowledge, but you have scarcely in your thoughts advanced to the state of Science, whatever the matter may be." [Popular Lectures & Addresses, Vol. 1 "Electrical Units of Measurement" 1883-05-03]
 
    
-   He also is quoted as saying: "There is nothing new to be discovered in physics now. All that remains is **more and more precise measurement**."
+   He also is quoted as saying: "There is nothing new to be discovered in physics now. All that remains is more and more precise measurement."
 
 
 These tutorial pages are centered around testing and measurement techniques that can be used to extend the basic capabilities of USB based Personal Instruments such as the ADALM1000 and ADALM2000.

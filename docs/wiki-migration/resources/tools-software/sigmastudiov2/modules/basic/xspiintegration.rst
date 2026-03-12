@@ -55,7 +55,7 @@ xSPI Integration Steps within the Target Application
 
 .. note::
 
-   The **xSPI_RAM_Init** function is responsible for configuring the xSPI interface and initializing the external memory by setting its contents to zero. On the ADSP-21568 SOM EVAL board, which includes 32MB of external RAM, the size is defined as 0x02000000 bytes. This size should be adjusted to match the actual RAM capacity used on the target platform.
+   The xSPI_RAM_Init function is responsible for configuring the xSPI interface and initializing the external memory by setting its contents to zero. On the ADSP-21568 SOM EVAL board, which includes 32MB of external RAM, the size is defined as 0x02000000 bytes. This size should be adjusted to match the actual RAM capacity used on the target platform.
 
 
    |xspicodeupdate4.png|

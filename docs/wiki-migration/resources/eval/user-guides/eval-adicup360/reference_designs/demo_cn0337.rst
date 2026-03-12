@@ -20,7 +20,7 @@ The **EVAL-CN0337-PMDZ** comes with an evaluation software which can help you to
 
 .. note::
 
-   Please visit :doc:`CN0337 Software User Guide page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0337>` to find out how to get and how to use the **CN0337 evaluation software**.
+   Please visit :doc:`CN0337 Software User Guide page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0337>` to find out how to get and how to use the CN0337 evaluation software.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_2.png

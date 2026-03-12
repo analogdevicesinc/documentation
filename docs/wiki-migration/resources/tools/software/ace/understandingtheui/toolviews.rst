@@ -214,7 +214,7 @@ XHIDDENSTART See More Details...
       @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.ReadRegister(0x36);  //Reading data from NCO_FTW_update
       @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.ReadRegisterMap();  //Reading all registers data
 
-   **SAMPLE MACRO CODE WITH PAGE SELECTOR**
+   SAMPLE MACRO CODE WITH PAGE SELECTOR
 
    ``A sample macro to enable the digital gain and inverse sinc of AD9136-FMC-EBZ. DAC0 and DAC1 share the same register address (0x111). In order to write bits in the registers of each DAC, select the PageIndx (DIGITAL_DAC_PAGING) corresponding to each DAC channel.``
 

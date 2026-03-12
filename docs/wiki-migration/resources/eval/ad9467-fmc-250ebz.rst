@@ -103,7 +103,7 @@ Before using the software for testing, configure the evaluation board as follows
 
 ::
 
-             **When connecting the ADC clock and analog source, use clean signal generators with low phase noise, such as Rohde & Schwarz SMA or HP8644B signal generators or equivalent**
+             When connecting the ADC clock and analog source, use clean signal generators with low phase noise, such as Rohde & Schwarz SMA or HP8644B signal generators or equivalent
 
 Visual Analog Setup
 ~~~~~~~~~~~~~~~~~~~

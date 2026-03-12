@@ -29,7 +29,7 @@ Configure kernel with “make menuconfig” (alternatively use “make xconfig�
 
                    [--snip--]
 
-                         ** Triggers - standalone **
+                          Triggers - standalone 
                    < >   Periodic RTC triggers
                    < >   GPIO trigger
                    < >   SYSFS trigger
@@ -87,8 +87,8 @@ Driver testing
    
    ::
    
-      root:/> **cd sys/bus/iio/devices/**
-      root:/sys/bus/iio/devices> **ls**
+      root:/> cd sys/bus/iio/devices/
+      root:/sys/bus/iio/devices> ls
       device0                  device0:buffer0:event0   device1:buffer0:access0
       device0:buffer0          device1                  device1:buffer0:event0
       device0:buffer0:access0  device1:buffer0          trigger0
@@ -102,8 +102,8 @@ Driver testing
    
    ::
    
-      root:/sys/bus/iio/devices> **cd trigger0**
-      root:/sys/devices/trigger0> **ls**
+      root:/sys/bus/iio/devices> cd trigger0
+      root:/sys/devices/trigger0> ls
       name         subsystem    frequency  uevent
    
 
@@ -115,7 +115,7 @@ Driver testing
    
    ::
    
-      root:/sys/devices/trigger0> **cat name**
+      root:/sys/devices/trigger0> cat name
       bfintmr3
    
 
@@ -127,7 +127,7 @@ Driver testing
    
    ::
    
-      root:/sys/devices/trigger0> **echo 1000 > frequency**
-      root:/sys/devices/trigger0> **echo 0 > frequency**
+      root:/sys/devices/trigger0> echo 1000 > frequency
+      root:/sys/devices/trigger0> echo 0 > frequency
    
 

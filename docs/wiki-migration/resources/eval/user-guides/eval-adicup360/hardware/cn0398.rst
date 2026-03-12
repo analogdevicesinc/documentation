@@ -81,7 +81,7 @@ RTD Connector (P1)
 
 .. note::
 
-   3-wire **PT100** RTD was used during evaluation, Excitation currents are set to 500uA. For the 4-wire configuration, Do not connect the RSENSE(+) wire.
+   3-wire PT100 RTD was used during evaluation, Excitation currents are set to 500uA. For the 4-wire configuration, Do not connect the RSENSE(+) wire.
 
 
 pH Probe Connector (J1)

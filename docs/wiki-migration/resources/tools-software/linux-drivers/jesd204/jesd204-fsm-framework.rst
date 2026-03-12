@@ -397,8 +397,8 @@ Each driver hooks it's callback by adding the proper entry in the **state_ops** 
    /**
      * struct jesd204_state_op - JESD204 device per-state op
      * @mode       mode for this state op, depending on this @per_device or @per_link is called
-     * @per_device     op called for each JESD204 **device** during a transition
-     * @per_link       op called for each JESD204 **link** individually during a transition
+     * @per_device     op called for each JESD204 device during a transition
+     * @per_link       op called for each JESD204 link individually during a transition
      * @post_state_sysref  true if a SYSREF should be issued after the state change
     */
    struct jesd204_state_op {

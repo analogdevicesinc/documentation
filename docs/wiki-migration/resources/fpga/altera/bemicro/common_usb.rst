@@ -21,7 +21,7 @@ In the next dialog box select the option **Browse my computer for driver softwar
 
 .. tip::
 
-   If Windows presents you with a message that the drivers have not passed Windows Logo testing, please click “\ **Install this driver software anyway**\ ”. Upon installation completion a message will be displayed to inform that the installation is finished.
+   If Windows presents you with a message that the drivers have not passed Windows Logo testing, please click “\ Install this driver software anyway\ ”. Upon installation completion a message will be displayed to inform that the installation is finished.
 
 
 |image017.png|\ |image016.jpg|

@@ -93,7 +93,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD9162 driver depends on **CONFIG_SPI** and **CONFIG_CF_AXI_DDS**
+   The AD9162 driver depends on CONFIG_SPI and CONFIG_CF_AXI_DDS
 
 
 Adding Linux driver support
@@ -111,7 +111,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Direct Digital Synthesis **
+                  Direct Digital Synthesis 
            [--snip--]
 
            <*>   Analog Devices CoreFPGA AXI DDS driver

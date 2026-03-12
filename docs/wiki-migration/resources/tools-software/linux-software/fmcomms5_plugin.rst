@@ -5,7 +5,7 @@ The FMCOMMS5 plugin works with the `IIO Oscilloscope <https://wiki.analog.com/ii
 
 .. note::
 
-   **For the main OSC plot window: The allowed channel sections are based on following rules:**
+   For the main OSC plot window: The allowed channel sections are based on following rules:
 
    
    -  Channels need to enabled pairwise I & Q. (example voltage0 & voltage1 or voltage2 & voltage3, etc. )

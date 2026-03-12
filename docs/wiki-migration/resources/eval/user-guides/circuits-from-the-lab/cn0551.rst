@@ -10,7 +10,7 @@ Designed to be used with the :adi:`ADALM-PLUTO`, the :adi:`EVAL-CN0551-EBZ <en/d
 
 .. note::
 
-   **Evaluation Kit Contents:**
+   Evaluation Kit Contents:
 
    
    -  :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` Circuit Evaluation Board

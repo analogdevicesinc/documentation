@@ -208,7 +208,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD5360 Driver depends on **CONFIG_SPI**
+   The AD5360 Driver depends on CONFIG_SPI
 
 
 ::
@@ -242,13 +242,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
    
-      root:/sys/bus/iio/devices> **cd iio:device0**
+      root:/sys/bus/iio/devices> cd iio:device0
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **ls -l**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> ls -l
       -r--r--r--    1 root     root          4096 Jan  2 21:54 dev
       -r--r--r--    1 root     root          4096 Jan  2 21:54 name
       -rw-r--r--    1 root     root          4096 Jan  2 21:54 out_voltage0_calibbias
@@ -279,7 +279,7 @@ Show device name
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat name**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat name
       ad5360
    
 
@@ -299,7 +299,7 @@ scale to be applied to out_voltage0_raw in order to obtain the measured voltage 
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat out_voltage0_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat out_voltage0_scale
       0.038140
    
 
@@ -318,7 +318,7 @@ Raw (unscaled, no bias etc.) output voltage for channel Y.
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **echo 10000 > out_voltage0_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> echo 10000 > out_voltage0_raw
    
 
 
@@ -356,11 +356,11 @@ Enable power down mode for the device
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **echo 1 > out_voltage_powerdown**
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat out_voltage_powerdown**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> echo 1 > out_voltage_powerdown
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat out_voltage_powerdown
       1
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **echo 0 > out_voltage_powerdown**
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat out_voltage_powerdown**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> echo 0 > out_voltage_powerdown
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat out_voltage_powerdown
       0
    
 

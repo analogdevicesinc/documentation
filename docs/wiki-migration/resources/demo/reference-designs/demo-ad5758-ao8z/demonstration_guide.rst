@@ -55,7 +55,7 @@ Observe that VDPC+ is fixed at 23.3 V even though the buffer output is at 0 V.
 
 .. note::
 
-   When DPC mode is turned **off**, the DPC buck is programmed to output a fixed voltage of 23.3 V. Because the load resistance is low (1 Ω), there is a large voltage drop across the :adi:`AD5758` output buffer. There is 23.3V X 20mA = 466mW of power dissipated in the output buffer plus an additional 47 mW dissipation in the DPC buck regulator
+   When DPC mode is turned off, the DPC buck is programmed to output a fixed voltage of 23.3 V. Because the load resistance is low (1 Ω), there is a large voltage drop across the :adi:`AD5758` output buffer. There is 23.3V X 20mA = 466mW of power dissipated in the output buffer plus an additional 47 mW dissipation in the DPC buck regulator
 
    (466 mW X (1-η)). Which translates to 513 mW of dissipation per channel in the module.
 
@@ -71,7 +71,7 @@ Notice how VDPC+ is now at its minimum value of approximately 4.95 V and the die
 
 .. note::
 
-   When DPC mode is turned **on**, a high efficiency (η = 0.9) buck converter reduces the supply to the buffer to 2.5 V above the required output voltage or 4.95 V - whichever is higher, so there is now a small voltage drop of only 4.95 V across the :adi:`AD5758` output buffer\ :sup:`1`. This translates to 4.95V X 20mA = 99mW plus 99 mW X (1 - η) = 10 mW of heat dissipation in the output buffer of the :adi:`AD5758`. This is a power saving of 404 mW per channel.
+   When DPC mode is turned on, a high efficiency (η = 0.9) buck converter reduces the supply to the buffer to 2.5 V above the required output voltage or 4.95 V - whichever is higher, so there is now a small voltage drop of only 4.95 V across the :adi:`AD5758` output buffer\ :sup:`1`. This translates to 4.95V X 20mA = 99mW plus 99 mW X (1 - η) = 10 mW of heat dissipation in the output buffer of the :adi:`AD5758`. This is a power saving of 404 mW per channel.
 
    :sup:`1` If VIOUT > 2.5 V, then the the DPC buck tracks the output to maintain a fixed 2.5 V headroom.
 

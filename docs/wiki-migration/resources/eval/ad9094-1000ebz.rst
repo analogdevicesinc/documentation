@@ -54,7 +54,7 @@ The :adi:`AD9094-1000EBZ <AD9094>` can be evaluated using the `ADS7-V2EBZ <https
 
 .. warning::
 
-   \ **Warning: The AD9094-1000EBZ is electrostatic discharge (ESD) sensitive. Handle the device with care, and employ conducting wrist straps or antistatic bags when handling the board.**\
+   \ Warning: The AD9094-1000EBZ is electrostatic discharge (ESD) sensitive. Handle the device with care, and employ conducting wrist straps or antistatic bags when handling the board.\
 
 
 Features
@@ -184,7 +184,7 @@ ACE Setup
 
 .. warning::
 
-   \ **Warning: Programming the FPGA will power the AD9094 evaluation board via the FMC connector. Removing any of the board's power jumpers while the board is on or in operation may cause damage to the board and/or chip. Removing the board while it is being powered via the FMC connector may also cause damage to the board.**\
+   \ Warning: Programming the FPGA will power the AD9094 evaluation board via the FMC connector. Removing any of the board's power jumpers while the board is on or in operation may cause damage to the board and/or chip. Removing the board while it is being powered via the FMC connector may also cause damage to the board.\
 
 
 

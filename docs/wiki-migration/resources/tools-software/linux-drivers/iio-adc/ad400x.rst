@@ -251,7 +251,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD400x driver depends on **CONFIG_SPI_MASTER**
+   The AD400x driver depends on CONFIG_SPI_MASTER
 
 
 ::
@@ -277,7 +277,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. tip::
 
-   \ **TIP:** An example program which uses the interface can be found here:
+   \ TIP: An example program which uses the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
@@ -371,7 +371,7 @@ Configure sampling rate
    
    ::
    
-      root@analog:~# **echo 1000000 > /sys/bus/iio/devices/iio:device1/sampling_frequency**
+      root@analog:~# echo 1000000 > /sys/bus/iio/devices/iio:device1/sampling_frequency
       root@analog:~# cat /sys/bus/iio/devices/iio:device1/sampling_frequency
       1000000
    

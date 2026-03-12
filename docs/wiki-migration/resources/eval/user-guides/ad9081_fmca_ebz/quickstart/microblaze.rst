@@ -68,7 +68,7 @@ AD9081-FMCA-EBZ / AD9082-FMCA-EBZ (Single MxFE) HDL Reference Design
 
 .. important::
 
-   We are in the process of migrating our documentation to GitHub IO. Please check the following link for updated information regarding the **HDL project**: https://analogdevicesinc.github.io/hdl/projects/ad9081_fmca_ebz/index.html.
+   We are in the process of migrating our documentation to GitHub IO. Please check the following link for updated information regarding the HDL project: https://analogdevicesinc.github.io/hdl/projects/ad9081_fmca_ebz/index.html.
 
 
 Functional Overview
@@ -89,10 +89,10 @@ Board setup
 
 .. important::
 
-   **The following rework is required:**
+   The following rework is required:
 
    
-   -  In order to avoid using an external clock source and fully rely on the HMC7044 clock chip,*\* rotate the C6D/C4D caps in C5D/C3D position*\* (**Please note:** In the latest version of the board, this is now the default configuration, so this configuration step **might not be needed anymore**)
+   -  In order to avoid using an external clock source and fully rely on the HMC7044 clock chip,*\* rotate the C6D/C4D caps in C5D/C3D position*\* (Please note: In the latest version of the board, this is now the default configuration, so this configuration step might not be needed anymore)
    -  If LEDS V1P0_LED and VINT_LED are not on please \*\* depopulate R22M and populate R2M*\*
    
 
@@ -254,7 +254,7 @@ Observation: In 2019_R2 release the Xilinx JESD Physical layer IP Core is used, 
 
 .. important::
 
-   **Build instructions:**
+   Build instructions:
 
    
    The project must be built with the following parameters:
@@ -430,14 +430,14 @@ Next step is to program the board with xsct or similar tool. See generic instruc
 
          michael@mhenneri-D06:~/vcu118_ad9081_m8_l4$ xsdb
 
-         ***** Xilinx System Debugger (XSDB) v2019.1
+         * Xilinx System Debugger (XSDB) v2019.1
            *** Build date : May 24 2019-15:06:52
              ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
          xsdb% source run.tcl
          attempting to launch hw_server
 
-         ***** Xilinx hw_server v2019.1
+         * Xilinx hw_server v2019.1
            *** Build date : May 24 2019 at 15:06:40
              ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
@@ -719,7 +719,7 @@ The following devices should be present:
    
    ::
    
-      # **iio_info | grep iio:device**
+      # iio_info | grep iio:device
               iio:device0: hmc7044
               iio:device1: axi-ad9081-tx-hpc (buffer capable)
               iio:device2: axi-ad9081-rx-hpc (buffer capable)
@@ -735,7 +735,7 @@ All links should be in ``DATA`` without errors:
    
    ::
    
-      # **jesd_status -s**
+      # jesd_status -s
         (DEVICES) Found 2 JESD204 Link Layer peripherals
    
         (0): axi-jesd204-rx/44a90000.axi-jesd204-rx  [*]
@@ -820,10 +820,8 @@ Frequency Domain View
    :width: 400px
 
 
-
-
 AD9081 Plugin Description
-=========================
+-------------------------
 
 The AD9081 plugin works with the :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You always use the latest version if possible. Changing any field will immediately write changes which have been made to the AD9081 settings to the hardware, and then read it back to make sure the setting is valid. If you want to set something that the GUI changes to a different number, that either means that GUI is rounding (sorry), or the hardware (either the AD9081 or the FPGA fabric) does not support that mode/precision.
 
@@ -842,7 +840,7 @@ The AD9081 view is divided in three sections:
 --------------
 
 Receive Chain
--------------
+~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_rx.png
    :align: right
@@ -858,7 +856,7 @@ Receive Chain
 --------------
 
 Transmit Chain
---------------
+~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_tx.png
    :align: right
@@ -875,10 +873,10 @@ Transmit Chain
 --------------
 
 FPGA Settings
--------------
+~~~~~~~~~~~~~
 
 Transmit/DDS
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_fpga.png
    :align: center
@@ -891,7 +889,7 @@ It is possible to either use the built-in two tone **Direct Digital Synthesizer 
 This can be achieved by selecting one of the following options listed by the **DDS Mode**:
 
 One CW Tone
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/one_cw_tone.png
    :align: right
@@ -900,7 +898,7 @@ In **One CW Tone** mode one continuous wave (CW) tone will be outputted. The plu
 
 
 Two CW Tone
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/two_cw_tones.png
    :align: right
@@ -909,38 +907,43 @@ In **Two CW Tone** mode two continuous wave (CW) tones will be outputted. The pl
 
 
 Independent I/Q Control
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iq_independent.png
    :align: right
 
 In **Independent I/Q Control** the plugin displays the controls to set the frequencies, amplitudes and phases for the two tones that will be outputted on channel I and additionally it allows for the two tones that will be outputted on channel Q of the DAC to be configured independently.
 
+
+
 .. note::
 
-   Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) = A1 \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2), where A-amplitude, F-frequency, P-phase of a tone.
+   Note: The bi-tonal signal (T) is defined as the sum of two tones:
+
+   | T(t) = A1 \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2),
+   | where A-amplitude, F-frequency, P-phase of a tone.
 
 
 
 DAC Buffer Output
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 |image1| The file selector under the **File Selection** section is used to locate and choose the desired data file. Under the **DAC Channels** section the enabled channels will be used to transmit the data stored in the file. To finalize the process, a click on the **Load** button is required.
 
-**Restrictions:**
-
--  There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
--  Due to hardware limitation only specific combinations of enabled channels are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is enabled then it can be any of them. If two channels are enabled then channels 0, 1 or channels 2, 3 can be enabled and so on.
+| **Restrictions:**
+| \* There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
+| \* Due to hardware limitation only specific combinations of enabled channels are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is enabled then it can be any of them. If two channels are enabled then channels 0, 1 or channels 2, 3 can be enabled and so on.
 
 
 Disable
-~~~~~~~
+^^^^^^^
 
-In this mode both DDS and DMA are disabled causing the DAC channels to stop transmitting any data.
+| In this mode both DDS and DMA are disabled causing the DAC channels to stop transmitting any data.
+
 
 .. note::
 
-   Upon pressing **Reload Settings** button the values will be reloaded with the corresponding driver values. Useful in scenarios where the diver values get changed outside this plugin and a refresh on plugin's values is needed.
+   Upon pressing Reload Settings button the values will be reloaded with the corresponding driver values. Useful in scenarios where the diver values get changed outside this plugin and a refresh on plugin's values is needed.
 
 
 .. hint::
@@ -949,7 +952,6 @@ In this mode both DDS and DMA are disabled causing the DAC channels to stop tran
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/dac_output_buffer_panel.png
-
 
 
 Useful links

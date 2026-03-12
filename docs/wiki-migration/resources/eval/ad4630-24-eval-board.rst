@@ -36,7 +36,7 @@ Two different EVAL board revision has been released on the market for AD4630-24 
 
 .. important::
 
-   New boards EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ **REV E** have a date code bigger than DC>2435
+   New boards EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ REV E have a date code bigger than DC>2435
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/cb-ad464030-24fmcz_top-evaluation-board.jpg

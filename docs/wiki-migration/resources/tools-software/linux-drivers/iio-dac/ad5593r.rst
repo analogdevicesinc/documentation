@@ -71,7 +71,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD5593R Driver depends on **CONFIG_I2C**
+   The AD5593R Driver depends on CONFIG_I2C
 
 
 ::
@@ -301,7 +301,7 @@ Show device name
    
    ::
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# **cat name**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# cat name
       ad5593r
    
 
@@ -325,7 +325,7 @@ Show current scale
    
    ::
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# **cat out_voltage_scale**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# cat out_voltage_scale
       0.610351562
    
 
@@ -342,7 +342,7 @@ Show available scales
    
    ::
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# **cat in_voltage_scale_available**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# cat in_voltage_scale_available
       0.610351562 1.220703124
    
 
@@ -359,8 +359,8 @@ Change scales
    
    ::
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# **echo 1.220703124 > in_voltage_scale**
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# **cat in_voltage_scale**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# echo 1.220703124 > in_voltage_scale
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# cat in_voltage_scale
       1.220703124
    
 

@@ -113,7 +113,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
      <M>   Event interface
      < >   Event debugging
      ---   Input Device Drivers
-   **  [*]   Keyboards  --->**
+     [*]   Keyboards  --->
 
          --- Keyboards
          < >   AT keyboard
@@ -124,7 +124,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
          < >   Stowaway keyboard
          < >   GPIO Buttons
          < >   OpenCores Keyboard Controller
-       **  <M>   ADP5588 I2C QWERTY Keypad and IO Expander**
+         <M>   ADP5588 I2C QWERTY Keypad and IO Expander
 
      [ ]   Mouse  --->
      [ ]   Joysticks  --->
@@ -170,17 +170,17 @@ When the driver is loaded, you should see positive output that it found the ADP5
 
 ::
 
-   root:/> **modprobe adp5588_keys**
-   **input: adp5588-keys as /class/input/input0**
-   **adp5588-keys 0-0034: Rev.2 keypad, irq 66**
+   root:/> modprobe adp5588_keys
+   input: adp5588-keys as /class/input/input0
+   adp5588-keys 0-0034: Rev.2 keypad, irq 66
 
 ::
 
-   root:/> **modprobe evdev**
+   root:/> modprobe evdev
 
 ::
 
-   root:/> **event_test /dev/input/event0**
+   root:/> event_test /dev/input/event0
    Input driver version is 1.0.0
    Input device ID: bus 0x18 vendor 0x1 product 0x1 version 0x2
    Input device name: "adp5588-keys"

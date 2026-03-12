@@ -55,7 +55,7 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0270 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0270>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0270\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the `CN0270 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0270>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0270\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/install1.jpg

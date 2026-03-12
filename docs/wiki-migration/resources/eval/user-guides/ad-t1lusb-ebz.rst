@@ -3,7 +3,7 @@ AD-T1LUSB2.0-EBZ User Guide
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html
@@ -72,7 +72,7 @@ A couple of design examples that have a 10BASE-T1L interface that will work toge
 
 .. tip::
 
-   \ **Note:** The **AD-T1LUSB2.0-EBZ** will **send or receive data only** over a FROFIBUS/SPE cable, so any design with a 10BASE-T1L interface will need to be powered separately.
+   \ Note: The AD-T1LUSB2.0-EBZ will send or receive data only over a FROFIBUS/SPE cable, so any design with a 10BASE-T1L interface will need to be powered separately.
 
 
 AD-SWIOT1L-SL Interfacing
@@ -150,5 +150,5 @@ Support
 
 .. hint::
 
-   Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone Reference Designs <reference-designs>` forum.
+   Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone Reference Designs <reference-designs>` forum.
 

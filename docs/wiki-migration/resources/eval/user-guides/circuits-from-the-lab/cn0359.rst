@@ -100,8 +100,8 @@ Refer to following pictures for the proper conductivity sensor connections. **Se
    When using 2-electrode sensors with the CN0359 evaluation board:
 
    
-   -  Pin 1 ⇔ Pin 2 of J5 **MUST** be shorted.
-   -  Pin 3 ⇔ Pin 4 of J5 **MUST** be shorted.
+   -  Pin 1 ⇔ Pin 2 of J5 MUST be shorted.
+   -  Pin 3 ⇔ Pin 4 of J5 MUST be shorted.
    
 
 
@@ -189,7 +189,7 @@ Rev A: RS-485
       If multiple devices will be used on the same RS-485 network, R10 may need to be changed (or removed completely) to comply with the RS-485 standard. For more information about RS-485, refer to: www.analog.com/an-960 or ANSI/TIA/EIA-485 standard
 
 
-   **J2 Pin Map (Rev A)**
+   J2 Pin Map (Rev A)
 
 
 
@@ -459,62 +459,62 @@ Rev A: RS-485 Command Usage
 
    The following format is used to explain the different RS-485 commands in this user guide:
 
-   **SYNOPSIS**\ address**command** option **DESCRIPTION**
+   SYNOPSIS\ addresscommand option DESCRIPTION
 
    .. tip::
 
-      The *address* is the integer value of the RS-485 address, ranging from 1 to 254. The *address* should always go before the **command** and the *option* for proper communication to the corresponding CN0359.
+      The *address* is the integer value of the RS-485 address, ranging from 1 to 254. The *address* should always go before the command and the *option* for proper communication to the corresponding CN0359.
 
 
 
-   **poll - Query CN0359**\ address**poll**
+   poll - Query CN0359\ addresspoll
 
-   The **poll** command is used to query the CN0359 for its programmed settings and its sensor readings. For example, entering the following will query the CN0359 at address 100 for its settings and its measurements:
+   The poll command is used to query the CN0359 for its programmed settings and its sensor readings. For example, entering the following will query the CN0359 at address 100 for its settings and its measurements:
 
    ::
 
         100 poll
 
 
-   **setvolt - Set Excitation Voltage**\ address**setvolt** voltage*
+   setvolt - Set Excitation Voltage\ addresssetvolt voltage*
 
-   The **setvolt** command is used to set the peak voltage of the cell excitation signal, ranging from 0.1 V to 10 V. For example, the following command will set a 2.5 V peak excitation voltage for the CN0359 at address 100:
+   The setvolt command is used to set the peak voltage of the cell excitation signal, ranging from 0.1 V to 10 V. For example, the following command will set a 2.5 V peak excitation voltage for the CN0359 at address 100:
 
    ::
 
         100 setvolt 2.5
 
 
-   **setfreq - Set Excitation Frequency**\ address**setfreq** frequency*
+   setfreq - Set Excitation Frequency\ addresssetfreq frequency*
 
-   The **setfreq** command is used to set the frequency of the cell excitation signal, ranging from 10 Hz to 100000 Hz. For example, the following command will set an 85.6 Hz excitation frequency for the CN0359 at address 100:
+   The setfreq command is used to set the frequency of the cell excitation signal, ranging from 10 Hz to 100000 Hz. For example, the following command will set an 85.6 Hz excitation frequency for the CN0359 at address 100:
 
    ::
 
         100 setfreq 85.6
 
 
-   **setk - Set Cell Constant**\ address**setk** K*
+   setk - Set Cell Constant\ addresssetk K*
 
-   The **setk** command is used to input the cell constant of the conductivity sensor used, ranging from 0.01 cm\ :sup:`-1` to 100 cm\ :sup:`-1`. For example, the following command will input a cell constant of 1.268 cm\ :sup:`-1` to the CN0359 at address 100:
+   The setk command is used to input the cell constant of the conductivity sensor used, ranging from 0.01 cm\ :sup:`-1` to 100 cm\ :sup:`-1`. For example, the following command will input a cell constant of 1.268 cm\ :sup:`-1` to the CN0359 at address 100:
 
    ::
 
         100 setk 1.268
 
 
-   **setcof - Set Temperature Coefficient**\ address**setcof** coefficient*
+   setcof - Set Temperature Coefficient\ addresssetcof coefficient*
 
-   The **setcof** command is used to input the temperature coefficient of the test sample, ranging from -10%/°C to 10%/°C. For example, the following command will input a -2.58%/°C temperature coefficient to the CN0359 at address 100:
+   The setcof command is used to input the temperature coefficient of the test sample, ranging from -10%/°C to 10%/°C. For example, the following command will input a -2.58%/°C temperature coefficient to the CN0359 at address 100:
 
    ::
 
         100 setcof -2.58
 
 
-   **setstm - Set Track-And-Hold Setup Time**\ address**setstm** time*
+   setstm - Set Track-And-Hold Setup Time\ addresssetstm time*
 
-   The **setstm** command is used to set the track-and-hold setup time as a percentage of a half excitation period, ranging from 0% to 80%.
+   The setstm command is used to set the track-and-hold setup time as a percentage of a half excitation period, ranging from 0% to 80%.
 
    .. note::
 
@@ -530,9 +530,9 @@ Rev A: RS-485 Command Usage
    If the excitation frequency is 100Hz, then half of the period will be 5 ms. The track-and-hold setup time in this example will therefore be 290 μs.
 
 
-   **sethtm - Set Track-And-Hold Hold Time**\ address**sethtm** time*
+   sethtm - Set Track-And-Hold Hold Time\ addresssethtm time*
 
-   The **sethtm** command is used to set the track-and-hold hold time as a percentage of a half excitation period, ranging from 0% to 10%.
+   The sethtm command is used to set the track-and-hold hold time as a percentage of a half excitation period, ranging from 0% to 10%.
 
    .. note::
 
@@ -573,62 +573,62 @@ Rev B: UART Command Usage
 
         poll
 
-   Below is a sample UART output obtained using the **poll** command:
+   Below is a sample UART output obtained using the poll command:
 
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0359/poll_output.png
       :align: center
       :width: 600px
 
 
-   **setvolt - Set Excitation Voltage**
+   setvolt - Set Excitation Voltage
 
-   **setvolt** voltage*
+   setvolt voltage*
 
-   The **setvolt** command is used to set the peak voltage of the cell excitation signal, ranging from 0.1 V to 10 V. For example, the following command will set a 2.5 V peak excitation voltage for the CN0359 via UART:
+   The setvolt command is used to set the peak voltage of the cell excitation signal, ranging from 0.1 V to 10 V. For example, the following command will set a 2.5 V peak excitation voltage for the CN0359 via UART:
 
    ::
 
         setvolt 2.5
 
 
-   **setfreq - Set Excitation Frequency**
+   setfreq - Set Excitation Frequency
 
-   **setfreq** frequency*
+   setfreq frequency*
 
-   The **setfreq** command is used to set the frequency of the cell excitation signal, ranging from 10 Hz to 100000 Hz. For example, the following command will set an 85.6 Hz excitation frequency for the CN0359 via UART:
+   The setfreq command is used to set the frequency of the cell excitation signal, ranging from 10 Hz to 100000 Hz. For example, the following command will set an 85.6 Hz excitation frequency for the CN0359 via UART:
 
    ::
 
         setfreq 85.6
 
 
-   **setk - Set Cell Constant**
+   setk - Set Cell Constant
 
-   **setk** K*
+   setk K*
 
-   The **setk** command is used to input the cell constant of the conductivity sensor used, ranging from 0.01 cm\ :sup:`-1` to 100 cm\ :sup:`-1`. For example, the following command will input a cell constant of 1.268 cm\ :sup:`-1` to the CN0359 via UART:
+   The setk command is used to input the cell constant of the conductivity sensor used, ranging from 0.01 cm\ :sup:`-1` to 100 cm\ :sup:`-1`. For example, the following command will input a cell constant of 1.268 cm\ :sup:`-1` to the CN0359 via UART:
 
    ::
 
         setk 1.268
 
 
-   **setcof - Set Temperature Coefficient**
+   setcof - Set Temperature Coefficient
 
-   **setcof** coefficient*
+   setcof coefficient*
 
-   The **setcof** command is used to input the temperature coefficient of the test sample, ranging from -10%/°C to 10%/°C. For example, the following command will input a -2.58%/°C temperature coefficient to the CN0359 via UART:
+   The setcof command is used to input the temperature coefficient of the test sample, ranging from -10%/°C to 10%/°C. For example, the following command will input a -2.58%/°C temperature coefficient to the CN0359 via UART:
 
    ::
 
         setcof -2.58
 
 
-   **setstm - Set Track-And-Hold Setup Time**
+   setstm - Set Track-And-Hold Setup Time
 
-   **setstm** time*
+   setstm time*
 
-   The **setstm** command is used to set the track-and-hold setup time as a percentage of a half excitation period, ranging from 0% to 80%.
+   The setstm command is used to set the track-and-hold setup time as a percentage of a half excitation period, ranging from 0% to 80%.
 
    .. note::
 
@@ -644,11 +644,11 @@ Rev B: UART Command Usage
    If the excitation frequency is 100Hz, then half of the period will be 5 ms. The track-and-hold setup time in this example will therefore be 290 μs.
 
 
-   **sethtm - Set Track-And-Hold Hold Time**
+   sethtm - Set Track-And-Hold Hold Time
 
-   **sethtm** time*
+   sethtm time*
 
-   The **sethtm** command is used to set the track-and-hold hold time as a percentage of a half excitation period, ranging from 0% to 10%.
+   The sethtm command is used to set the track-and-hold hold time as a percentage of a half excitation period, ranging from 0% to 10%.
 
    .. note::
 
@@ -1114,9 +1114,9 @@ Rev A Structure
                     ├── core_sc300.h
                     └── system_ADuCM360.h
 
-   -  The **applications** folder contains the application layer source files. These include all serial commands and LCD dialogue routines.
-   -  The **hal** folder contains the hardware abstraction layer source files. These include the device drivers to access the newlib low level interface.
-   -  The **include** and **system** folders contain ADuCM360 support files for external declaration and Cortex-M3 cmsis library support.
+   -  The applications folder contains the application layer source files. These include all serial commands and LCD dialogue routines.
+   -  The hal folder contains the hardware abstraction layer source files. These include the device drivers to access the newlib low level interface.
+   -  The include and system folders contain ADuCM360 support files for external declaration and Cortex-M3 cmsis library support.
 
 
 
@@ -1228,9 +1228,9 @@ Rev B Structure
         ├── system.rteconfig
         └── system.svc
 
-   -  The **applications** folder contains the application layer source files. These include all serial commands and LCD dialogue routines.
-   -  The **hal** folder contains the hardware abstraction layer source files. These include the device drivers to access the newlib low level interface.
-   -  The **include** and **system** folders contain ADuCM360 support files for external declaration and Cortex-M3 cmsis library support.
+   -  The applications folder contains the application layer source files. These include all serial commands and LCD dialogue routines.
+   -  The hal folder contains the hardware abstraction layer source files. These include the device drivers to access the newlib low level interface.
+   -  The include and system folders contain ADuCM360 support files for external declaration and Cortex-M3 cmsis library support.
 
 
 

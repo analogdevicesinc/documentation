@@ -207,7 +207,7 @@ Power over Ethernet using a Power Sourcing Equipment (PSE)
 
 .. tip::
 
-   Default class select shunt positions are at **JP9** and **JP10** on the AD-PS3803-RD board.
+   Default class select shunt positions are at JP9 and JP10 on the AD-PS3803-RD board.
 
    | With this configuration, any PSE with sufficient power will turn on the board. Refer to Table 2 for the shunt positions in selecting a different power level.
 

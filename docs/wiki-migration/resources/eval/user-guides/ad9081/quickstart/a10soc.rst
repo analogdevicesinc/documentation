@@ -65,7 +65,7 @@ AD9081-FMCA-EBZ / AD9082-FMCA-EBZ (Single MxFE) HDL Reference Design
 
 .. important::
 
-   We are in the process of migrating our documentation to GitHub IO. Please check the following link for updated information regarding the **HDL project**: https://analogdevicesinc.github.io/hdl/projects/ad9081_fmca_ebz/index.html.
+   We are in the process of migrating our documentation to GitHub IO. Please check the following link for updated information regarding the HDL project: https://analogdevicesinc.github.io/hdl/projects/ad9081_fmca_ebz/index.html.
 
 
 Functional Overview
@@ -86,10 +86,10 @@ Board setup
 
 .. important::
 
-   **The following rework is required:**
+   The following rework is required:
 
    
-   -  In order to avoid using an external clock source and fully rely on the HMC7044 clock chip,*\* rotate the C6D/C4D caps in C5D/C3D position*\* (**Please note:** In the latest version of the board, this is now the default configuration, so this configuration step **might not be needed anymore**)
+   -  In order to avoid using an external clock source and fully rely on the HMC7044 clock chip,*\* rotate the C6D/C4D caps in C5D/C3D position*\* (Please note: In the latest version of the board, this is now the default configuration, so this configuration step might not be needed anymore)
    -  If LEDS V1P0_LED and VINT_LED are not on please \*\* depopulate R22M and populate R2M*\*
    
 
@@ -251,7 +251,7 @@ Observation: In 2019_R2 release the Xilinx JESD Physical layer IP Core is used, 
 
 .. important::
 
-   **Build instructions:**
+   Build instructions:
 
    
    The project must be built with the following parameters:

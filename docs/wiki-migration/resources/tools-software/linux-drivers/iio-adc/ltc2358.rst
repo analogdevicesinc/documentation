@@ -166,7 +166,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The LTC2358 driver depends on **PWM** and **SPI**
+   The LTC2358 driver depends on PWM and SPI
 
 
 ::
@@ -179,13 +179,13 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
                    - *- Analog Devices High-Speed AXI ADC driver core
            <*>   Analog Devices LTC2358 ADC driver
            [--snip--]
 
-                     ** Pulse-Width Modulation (PWM) Support **
+                      Pulse-Width Modulation (PWM) Support 
                [--snip--]
                    <*>   Analog Devices AXI PWM generator
                [--snip--]
@@ -200,11 +200,11 @@ This device can be found under **/sys/bus/iio/devices/**
 
 ::
 
-   root:/> **cd /sys/bus/iio/devices/**
+   root:/> cd /sys/bus/iio/devices/
    root:/sys/bus/iio/devices> ls
    iio:device0  iio:device1
 
-   root:/sys/bus/iio/devices> **cd iio:device0**
+   root:/sys/bus/iio/devices> cd iio:device0
 
    root:/sys/bus/iio/devices/iio:device0# ls -l
    drwxr-xr-x 2 root root    0 Apr  2 23:44 buffer
@@ -242,8 +242,8 @@ Show device name
 
 ::
 
-   root:/sys/bus/iio/devices/iio:device0> **cat name**
-   **axi-ltc235x**
+   root:/sys/bus/iio/devices/iio:device0> cat name
+   axi-ltc235x
 
 Show channel scale
 ------------------
@@ -252,8 +252,8 @@ Scale to be applied to in_voltagex_raw in order to obtain the measured voltage i
 
 ::
 
-   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage0_scale**
-   **0.015625000**
+   root:/sys/bus/iio/devices/iio:device0> cat in_voltage0_scale
+   0.015625000
 
 Show channel measurement
 ------------------------
@@ -262,8 +262,8 @@ Raw unscaled voltage measurement on the channel
 
 ::
 
-   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage0_raw**
-   **96352**
+   root:/sys/bus/iio/devices/iio:device0> cat in_voltage0_raw
+   96352
 
 **U** = in_voltage0_raw \* in_voltage0_scale = 96352 \* 0.015625000 = **1505.50 mV**
 
@@ -276,8 +276,8 @@ See current sampling rate:
 
 ::
 
-   root@analog:/sys/bus/iio/devices/iio:device0# **cat sampling_frequency**
-   **100000**
+   root@analog:/sys/bus/iio/devices/iio:device0# cat sampling_frequency
+   100000
 
 Change the sampling rate:
 
@@ -341,10 +341,10 @@ Enable and read 400 samples from both channels:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** echo 1 > scan_elements/in_voltage0_en
-   **root@analog:/sys/bus/iio/devices/iio:device0#** echo 400 > buffer/length
-   **root@analog:/sys/bus/iio/devices/iio:device0#** echo 1 > buffer/enable
-   **root@analog:/sys/bus/iio/devices/iio:device0#** hexdump -n 400 /dev/iio\:device0
+   root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > scan_elements/in_voltage0_en
+   root@analog:/sys/bus/iio/devices/iio:device0# echo 400 > buffer/length
+   root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > buffer/enable
+   root@analog:/sys/bus/iio/devices/iio:device0# hexdump -n 400 /dev/iio\:device0
    0000000 e942 000d 0011 0000 afaf 000d 0029 0000
    0000010 753b 000d fff5 00ff 39fa 000d 0018 0000
    0000020 013e 000d 0017 0000 c776 000c fff4 00ff
@@ -371,7 +371,7 @@ Enable and read 400 samples from both channels:
    0000170 4582 0003 ffe1 00ff 0921 0003 ffdf 00ff
    0000180 c9a5 0002 ffd1 00ff 8a1c 0002 0015 0000
    0000190
-   **root@analog:/sys/bus/iio/devices/iio:device0/#** echo 0 > buffer/enable
+   root@analog:/sys/bus/iio/devices/iio:device0/# echo 0 > buffer/enable
 
 Debug mode
 ----------
@@ -382,14 +382,14 @@ First go to the device debug folder:
 
 ::
 
-   **root@analog#** cd /sys/kernel/debug/iio/iio:device0
+   root@analog# cd /sys/kernel/debug/iio/iio:device0
 
 Read the 0x0440 register:
 
 ::
 
-   **root@analog:/sys/kernel/debug/iio/iio:device0#** echo 0x0440 > direct_reg_access
-   **root@analog:/sys/kernel/debug/iio/iio:device0#** cat direct_reg_access
+   root@analog:/sys/kernel/debug/iio/iio:device0# echo 0x0440 > direct_reg_access
+   root@analog:/sys/kernel/debug/iio/iio:device0# cat direct_reg_access
    0x1
 
 More Information

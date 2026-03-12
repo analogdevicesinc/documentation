@@ -1,6 +1,6 @@
 
 
-.. important::
+.. warning::
 
    Analog Devices uses six designations to inform our customers where a
    semiconductor product is in its
@@ -13,8 +13,8 @@
 
    This particular article/document/design has been retired or deprecated,
    which means it is no longer maintained or actively updated, even though the
-   devices themselves may be **Recommended for New Designs** or in
-   **Production**. This page is here for historical/reference purposes only.
+   devices themselves may be Recommended for New Designs or in
+   Production. This page is here for historical/reference purposes only.
 
 
 
@@ -36,7 +36,7 @@ A driver must be installed in order to connect to the *ez*\ LINX Development Pla
 
 .. important::
 
-   **Warning:** During install or uninstall of a new Ethernet gadget, Windows will reset all network connections. If there are any large downloads or sensitive connections (like VPN) in progress they will be interrupted.
+   Warning: During install or uninstall of a new Ethernet gadget, Windows will reset all network connections. If there are any large downloads or sensitive connections (like VPN) in progress they will be interrupted.
 
 
 First download and extract the above USB Gadget Driver file. To install the USB gadget plug it into the target PC. A pop-up will appear (see below) saying that Windows has found a new hardware device called a "RNDIS/Ethernet Gadget".
@@ -86,7 +86,7 @@ Select Ok to confirm. Now the host and the device are on the same network.
 
 .. important::
 
-   **Note:** Switching the USB port used for the Gadget Ethernet device will require you to perform the above steps again, setting up the appropriate IP address and gateway for the USB device.
+   Note: Switching the USB port used for the Gadget Ethernet device will require you to perform the above steps again, setting up the appropriate IP address and gateway for the USB device.
 
 
 **Note:** When connecting two *ez*\ LINX Development Platforms to the same P.C. for board to board communication, the two boards must be placed on a different network to allow for simultaneous connection. To do this you must connect to one of the development platforms individually using the Sample PC Application and change both the board's IP address and the network adapter IP address, as shown above.

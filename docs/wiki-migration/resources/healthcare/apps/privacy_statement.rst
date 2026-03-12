@@ -90,15 +90,15 @@ ADI Study Watch Privacy Statement
    
    3. Based on the necessity to comply with legal obligations established by or in the EU/EEA to which ADI is subject, Article 6(1)(c) GDPR.
    
-   **Data Transfers Outside of the EU/EEA**
+   Data Transfers Outside of the EU/EEA
    
    We and certain of our service providers with access to your Personal Information are located outside of the EU/EEA. To ensure an adequate level of protection of your Personal Information, we enter into data processing and data transfer agreements with our service providers outside of the EU/EEA that incorporate the provisions of the Standard Contractual Clauses approved by the EU Commission or implement other appropriate safeguards with them. You can ask for a copy of these safeguards by contacting external.webmaster@analog.com.
    
-   **How Long We Keep Your Personal Information**
+   How Long We Keep Your Personal Information
    
    We have implemented appropriate retention periods for your Personal Information collected or otherwise processed in connection with the Services. Personal Information processed in the context of a contract with you will be retained by us for the term of the contract and for a reasonable time afterwards as might be required to determine and settle any related claims. Where our processing of your Personal Information is based on legitimate interests or the compliance with legal obligations, it will be deleted as soon as the underlying purpose has expired.
    
-   **Your Rights Regarding the Processing of Your Personal Information**
+   Your Rights Regarding the Processing of Your Personal Information
    
    In the EU/EEA, subject to the conditions set out in applicable law, you have the rights to:
    
@@ -116,11 +116,11 @@ ADI Study Watch Privacy Statement
    
    To exercise any of your rights above, please email a request to external.webmaster@analog.com. ADI will review and respond to valid requests in accordance with applicable law. If the request is not deemed valid in accordance with applicable law, ADI will share the reasons why it is not valid and your options for seeking resolution through a supervisory authority or through judicial remedy. You have the right to lodge a complaint against us with a supervisory authority.
    
-   **Your Provision of Personal Information to Us**
+   Your Provision of Personal Information to Us
    
    Your use of the Services and your provision of Personal Information to us in the process is voluntary on your part. Subject to your sole discretion, you can stop using the Services or decline to provide Personal Information.
    
-   **Effective Date and Changes**
+   Effective Date and Changes
    
    The Privacy Statement and this Additional Privacy Notice for users in the EU/EEA is effective as of September 1, 2021. We may update it from time to time, at our sole discretion, in which case the updated Privacy Statement and Additional Privacy Notice for users in the EU/EEA will be posted in the mobile application or on the cloud hosted ADI Study Watch platform connected to the Services with a notice indicating the recent updated. If you have questions about the Services, the Privacy Statement or this Additional Privacy Notice for users in the EU/EEA, please email us at external.webmaster@analog.com.
    

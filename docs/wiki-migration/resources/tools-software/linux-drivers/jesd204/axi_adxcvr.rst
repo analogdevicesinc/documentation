@@ -245,9 +245,9 @@ Example reading AXI register at offset 0 (REG_VERSION)
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo axi 0x0 > reg_access**
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat reg_access**
-      **0x110261**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# echo axi 0x0 > reg_access
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat reg_access
+      0x110261
    
 
 
@@ -260,9 +260,9 @@ Example writing AXI register at offset 8 (REG_SCRATCH)
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo axi 0x8 0x1234 > reg_access**
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat reg_access**
-      **0x1234**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# echo axi 0x8 0x1234 > reg_access
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat reg_access
+      0x1234
    
 
 
@@ -312,8 +312,8 @@ axi-adxcvr-rx
    
    ::
    
-      root@analog:~# **cd /sys/bus/platform/devices/84a60000.axi-adxcvr-rx**
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **ls -al**
+      root@analog:~# cd /sys/bus/platform/devices/84a60000.axi-adxcvr-rx
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# ls -al
       total 0
       drwxr-xr-x  4 root root       0 Feb  6 13:41 .
       drwxr-xr-x 12 root root       0 Feb  6 13:41 ..
@@ -362,9 +362,9 @@ Value Comment
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 23 > prbs_select**
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prbs_select**
-      **23**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# echo 23 > prbs_select
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat prbs_select
+      23
       root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx#
    
 
@@ -396,8 +396,8 @@ error    The PRBS has locked but errors were detected
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prbs_status**
-      **valid**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat prbs_status
+      valid
    
 
 
@@ -415,8 +415,8 @@ Reading returns a string with error counts for each physical JESD204 lane.
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prbs_error_counters**
-      **0 0 0 0 0 0 0 0**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat prbs_error_counters
+      0 0 0 0 0 0 0 0
    
 
 
@@ -434,7 +434,7 @@ Writing 1 will clear the ``prbs_status`` and reset the ``prbs_error_counters``
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 1 > prbs_counter_reset**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# echo 1 > prbs_counter_reset
    
 
 
@@ -454,8 +454,8 @@ Following commands visualize how to control the eyescan from the command line. `
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat eyescan_info**
-      **x65,y255 CDRDW: 40 LPM: 1 NL: 8 LR: 15000000**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat eyescan_info
+      x65,y255 CDRDW: 40 LPM: 1 NL: 8 LR: 15000000
    
 
 
@@ -468,9 +468,9 @@ Following commands visualize how to control the eyescan from the command line. `
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 1 > prescale**
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat prescale**
-      **1**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# echo 1 > prescale
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat prescale
+      1
    
 
 
@@ -483,9 +483,9 @@ Following commands visualize how to control the eyescan from the command line. `
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **echo 1 > enable**
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat enable**
-      **cat: enable: Device or resource busy**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# echo 1 > enable
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat enable
+      cat: enable: Device or resource busy
    
 
 
@@ -498,9 +498,9 @@ Following commands visualize how to control the eyescan from the command line. `
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# **cat enable**
-      **1**
-      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx#** hexdump eye_data**
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat enable
+      1
+      root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# hexdump eye_data
       0000000 ffff 00a7 ffff 00a7 ffff 00a8 ffff 00a7
       0000010 ffff 00a7 ffff 00a9 ffff 00aa ffff 00ac
       0000020 ffff 00b1 ffff 00bb ffff 00c7 ffff 00d6
@@ -523,8 +523,8 @@ axi-adxcvr-tx
    
    ::
    
-      root@analog:~# **cd /sys/bus/platform/devices/84b60000.axi-adxcvr-tx**
-      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# **ls -l**
+      root@analog:~# cd /sys/bus/platform/devices/84b60000.axi-adxcvr-tx
+      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# ls -l
       total 0
       lrwxrwxrwx 1 root root    0 Feb  6 13:41 driver -> ../../../../bus/platform/drivers/axi_adxcvr
       -rw-r--r-- 1 root root 4096 Feb  6 14:32 driver_override
@@ -565,9 +565,9 @@ Value Comment
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# **echo 15 > prbs_select**
-      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# **cat prbs_select**
-      **15**
+      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# echo 15 > prbs_select
+      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# cat prbs_select
+      15
       root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx#
    
 
@@ -586,7 +586,7 @@ Writing 1 injects a series of errors´(used for testing)
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# **echo 1 > prbs_error_inject**
+      root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# echo 1 > prbs_error_inject
       root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx#
    
 

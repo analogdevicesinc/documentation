@@ -47,7 +47,7 @@ The emission plots were captured with a 2 layer PCB without internal PCB cap. Th
 
 .. important::
 
-   \ **It is not recommended to use a 2 Layer PCB. 4 layer PCB with an internal PCB cap is recommended.**\
+   \ It is not recommended to use a 2 Layer PCB. 4 layer PCB with an internal PCB cap is recommended.\
 
 
 .. container:: centeralign

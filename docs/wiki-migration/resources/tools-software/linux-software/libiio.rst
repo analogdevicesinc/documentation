@@ -55,39 +55,39 @@ On a Debian-flavoured GNU/Linux distribution, like Ubuntu for instance:
 
 ::
 
-   rgetz@pinky:~$ **sudo apt-get install build-essential libxml2 libzstd-dev libxml2-dev bison flex libcdk5-dev cmake**
+   rgetz@pinky:~$ sudo apt-get install build-essential libxml2 libzstd-dev libxml2-dev bison flex libcdk5-dev cmake
 
 Depending on the backend (how you want to attach the IIO device), you may need at least one of:
 
 ::
 
-   rgetz@pinky:~$ **sudo apt-get install libaio-dev libusb-1.0-0-dev libserialport-dev libxml2-dev libavahi-client-dev doxygen graphviz**
+   rgetz@pinky:~$ sudo apt-get install libaio-dev libusb-1.0-0-dev libserialport-dev libxml2-dev libavahi-client-dev doxygen graphviz
 
 RedHAT based distributions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-   [liveuser@localhost-live ~]$ **sudo dnf install libxml2 libzstd-dev libxml2-devel bison flex make gcc cmake rpmdevtools**
+   [liveuser@localhost-live ~]$ sudo dnf install libxml2 libzstd-dev libxml2-devel bison flex make gcc cmake rpmdevtools
 
 Depending on the backend (how you want to attach the IIO device), you may need at least one of:
 
 ::
 
-   [liveuser@localhost-live ~]$ **sudo dnf install libaio-devel libusb1-devel libserialport-devel avahi-devel doxygen graphviz**
+   [liveuser@localhost-live ~]$ sudo dnf install libaio-devel libusb1-devel libserialport-devel avahi-devel doxygen graphviz
 
 FreeBSD based distributions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-   rgetz@freebsd:~ $ **sudo pkg update && sudo pkg upgrade && sudo pkg install libzstd libxml2 bison flex gcc cmake git**
+   rgetz@freebsd:~ $ sudo pkg update && sudo pkg upgrade && sudo pkg install libzstd libxml2 bison flex gcc cmake git
 
 Depending on the backend (how you want to attach the IIO device), you may need at least one of:
 
 ::
 
-   rgetz@freebsd:~ $ **sudo pkg install libserialport avahi doxygen graphviz**
+   rgetz@freebsd:~ $ sudo pkg install libserialport avahi doxygen graphviz
 
 add these lines to ``/etc/rc.conf``:
 
@@ -101,7 +101,7 @@ FreeBSD does not automount USB drives by default, so you need to install an auto
 
 ::
 
-   rgetz@freebsd:~ $ **sudo pkg install automount**
+   rgetz@freebsd:~ $ sudo pkg install automount
 
 Remaining steps1
 ~~~~~~~~~~~~~~~~
@@ -115,13 +115,13 @@ Now you have the prerequisite installed, you can clone a release branch from the
 
 ::
 
-   rgetz@pinky:~$ **git clone https:%%//%%github.com/analogdevicesinc/libiio.git --branch v0.25**
+   rgetz@pinky:~$ git clone https:%%//%%github.com/analogdevicesinc/libiio.git --branch v0.25
 
 Finally, in the ``libiio/`` directory,
 
 ::
 
-   rgetz@pinky:~/libiio$ **mkdir build && cd build && cmake ../ && make && sudo make install**
+   rgetz@pinky:~/libiio$ mkdir build && cd build && cmake ../ && make && sudo make install
 
 This will build ``libiio`` in the ``build`` subdirectory, and install it to ``/usr``. Note that it is possible to install to a different location by setting the PREFIX variable.
 
@@ -138,14 +138,14 @@ During development, sometimes it can be a puzzle which version of libiio is bein
 
 ::
 
-   analog@imhotep:~/github/libiio$ **git describe --tags**
+   analog@imhotep:~/github/libiio$ git describe --tags
    v0.8-13-g6847e22
 
 To check what is running:
 
 ::
 
-   analog@imhotep:~/github/libiio/build$ **iio_info**
+   analog@imhotep:~/github/libiio/build$ iio_info
    Library version: 0.8 (git tag: 6847e22)
    Unable to create IIO context
 
@@ -153,35 +153,35 @@ If you are running an application, and want to find out:
 
 ::
 
-   analog@imhotep:~/github/libiio/build$ **strace -ofoo iio_info**
+   analog@imhotep:~/github/libiio/build$ strace -ofoo iio_info
    Library version: 0.8 (git tag: 6847e22)
    Unable to create IIO context
-   analog@imhotep:~/github/libiio/build$ **grep -e ^open  foo | grep libiio**
+   analog@imhotep:~/github/libiio/build$ grep -e ^open  foo | grep libiio
    open("./tls/x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
    open("./tls/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
    open("./x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
    open("./libiio.so.0", O_RDONLY|O_CLOEXEC) = 3
-   analog@imhotep:~/github/libiio/build$ **ls -l ./libiio.so.0**
+   analog@imhotep:~/github/libiio/build$ ls -l ./libiio.so.0
    lrwxrwxrwx 1 analog analog 13 Nov 15 10:36 ./libiio.so.0 -> libiio.so.0.8
-   analog@imhotep:~/github/libiio/build$ **ls -l ./libiio.so.0.8**
+   analog@imhotep:~/github/libiio/build$ ls -l ./libiio.so.0.8
    -rwxr-xr-x 1 analog analog 408432 Nov 15 10:36 ./libiio.so.0.8
 
 This found a version in the same directory.
 
 ::
 
-   analog@imhotep:~$ **strace -ofoo iio_info**
+   analog@imhotep:~$ strace -ofoo iio_info
    Library version: 0.8 (git tag: 6847e22)
    Unable to create IIO context
-   analog@imhotep:~$ **grep -e ^open  foo | grep libiio**
+   analog@imhotep:~$ grep -e ^open  foo | grep libiio
    open("./tls/x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
    open("./tls/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
    open("./x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
    open("./libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
    open("/usr/lib/x86_64-linux-gnu/libiio.so.0", O_RDONLY|O_CLOEXEC) = 3
-   analog@imhotep:~$ **ls -l /usr/lib/x86_64-linux-gnu/libiio.so.0**
+   analog@imhotep:~$ ls -l /usr/lib/x86_64-linux-gnu/libiio.so.0
    lrwxrwxrwx 1 root root 13 Nov  9 21:05 /usr/lib/x86_64-linux-gnu/libiio.so.0 -> libiio.so.0.8
-   analog@imhotep:~$ **ls -l /usr/lib/x86_64-linux-gnu/libiio.so.0.8**
+   analog@imhotep:~$ ls -l /usr/lib/x86_64-linux-gnu/libiio.so.0.8
    -rw-r--r-- 1 root root 408432 Nov 15 10:36 /usr/lib/x86_64-linux-gnu/libiio.so.0.8
 
 This found the version in ``/usr/lib/x86_64-linux-gnu/libiio.so.0``.
@@ -208,7 +208,7 @@ In order to use the libIIO USB Backend - support must be built into IIOD. A simp
    
    ::
    
-      root@analog:~# **iiod -F foo**
+      root@analog:~# iiod -F foo
       ERROR: IIOD was not compiled with USB support.
    
 
@@ -261,10 +261,10 @@ Kernel compiled with USB UDC Gadget support.
 
    CONFIG_USB_CHIPIDEA=y
    CONFIG_USB_CHIPIDEA_UDC=y
-   **CONFIG_USB_GADGET=y**
+   CONFIG_USB_GADGET=y
    CONFIG_USB_GADGET_XILINX=y
-   **CONFIG_USB_CONFIGFS=y**
-   **CONFIG_USB_CONFIGFS_F_FS=y**
+   CONFIG_USB_CONFIGFS=y
+   CONFIG_USB_CONFIGFS_F_FS=y
 
 Starting IIOD with USB Support
 ------------------------------

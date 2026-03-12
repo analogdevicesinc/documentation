@@ -147,7 +147,7 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84b90000.axi-jesd204-tx# **ls -l**
+      root@analog:/sys/bus/platform/devices/84b90000.axi-jesd204-tx# ls -l
       total 0
       lrwxrwxrwx 1 root root    0 Feb  6 16:38 driver -> ../../../../bus/platform/drivers/axi-jesd204-tx
       -rw-r--r-- 1 root root 4096 Feb  6 16:39 driver_override
@@ -201,7 +201,7 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84b90000.axi-jesd204-tx# **cat status**
+      root@analog:/sys/bus/platform/devices/84b90000.axi-jesd204-tx# cat status
       Link is enabled
       Measured Link Clock: 375.034 MHz
       Reported Link Clock: 375.000 MHz
@@ -227,7 +227,7 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84b90000.axi-jesd204-tx# **cat encoder**
+      root@analog:/sys/bus/platform/devices/84b90000.axi-jesd204-tx# cat encoder
       8b10b
    
 

@@ -254,13 +254,13 @@ Hardware Setup
    For high current applications requiring greater than 50 A, it is advisable to install a heat sink to protect the pre-charge, charge, and discharge MOSFETs from overheating.
 
    
-   The AD-BMSE2E3W-SL Kit has 7 available **HEATSINK PIN-FIN W/TAPE (375424B00034G)** easy-to install, adhesive type, aluminum top mount heat sink than can be installed directly on top of the board.
+   The AD-BMSE2E3W-SL Kit has 7 available HEATSINK PIN-FIN W/TAPE (375424B00034G) easy-to install, adhesive type, aluminum top mount heat sink than can be installed directly on top of the board.
    
    Peel off the protective film from the bottom of each heat sink and firmly press each one on top of the following FETs:
    
-   **(1)** Attach the 5 heat sinks on the top layer of the board **(Q4, Q5, Q6, Q7, and Q9)**,
+   (1) Attach the 5 heat sinks on the top layer of the board (Q4, Q5, Q6, Q7, and Q9),
    
-   **(2)** the remaining 2 heat sinks on the bottom layer of the board **(Q3 and Q8)**.
+   (2) the remaining 2 heat sinks on the bottom layer of the board (Q3 and Q8).
 
 
 The board utilizes the DC2472A battery emulator as input for cell voltage measurement. The DC2472A allows a cell voltage of 1.4 V (min) to 4.2 V (max). Follow below steps to set up the board for cell measurement:

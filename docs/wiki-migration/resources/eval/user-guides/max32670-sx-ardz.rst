@@ -3,7 +3,7 @@ MAX32670-SX-ARDZ: Long Range Wireless Radio Development Platform
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html
@@ -672,7 +672,7 @@ Programming Connectors
 
    .. important::
 
-      The debugger board will need to be **plugged in via the USB port** in order to program any board.
+      The debugger board will need to be plugged in via the USB port in order to program any board.
 
          
       In order to program the MAX32670 node board, that board must be powered by one (1) CR123A battery or by an external power supply through P11. Otherwise, there will be no connection between the two boards.
@@ -723,7 +723,7 @@ Equipment Needed
 
 ::
 
-      ** Note that this is not included in the kit**
+       Note that this is not included in the kit
    * One (1) Micro USB to USB cable
    * Host PC (Windows 10 or later)
 
@@ -748,7 +748,7 @@ Equipment Needed
 .. tip::
 
    
-   You do not have to set up the three sensor nodes altogether, just choose **one** from the available sensors in the kit:
+   You do not have to set up the three sensor nodes altogether, just choose one from the available sensors in the kit:
    
    -  :adi:`EV-STRUCTURAL-ARDZ` for Structural Monitoring
    -  :adi:`EV-FLOWMETER-ARDZ` for Flow Rate Metering
@@ -791,7 +791,7 @@ Equipment Needed
 .. note::
 
    
-   **Once you have completed this setup, proceed to PHASE 2 found in**\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
+   Once you have completed this setup, proceed to PHASE 2 found in\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
    
 
 

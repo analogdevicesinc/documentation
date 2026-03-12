@@ -22,7 +22,7 @@ This page covers:
 
 .. note::
 
-   We have a playlist of **YOU TUBE VIDEOS** that can help you understand different aspects of CrossCore Embedded Studio. The videos talk about the ADICUP360, but the tools information is relevant for the ADICUP360 as well. `CrossCore Embedded Studio Videos <https://www.youtube.com/playlist?list=PLiwaj4qabLWycR06TNf8eqSwX7qkDbSu_>`_
+   We have a playlist of YOU TUBE VIDEOS that can help you understand different aspects of CrossCore Embedded Studio. The videos talk about the ADICUP360, but the tools information is relevant for the ADICUP360 as well. `CrossCore Embedded Studio Videos <https://www.youtube.com/playlist?list=PLiwaj4qabLWycR06TNf8eqSwX7qkDbSu_>`_
 
 
 Workspace and Projects

@@ -73,13 +73,13 @@ Installation
 
 ::
 
-   **sudo apt install -f ./libiio-package.deb**
+   sudo apt install -f ./libiio-package.deb
 
 -  Download the **libm2k-ubuntu.deb** for your system and install it by running:
 
 ::
 
-   **sudo apt install -f ./libm2k-package.deb**
+   sudo apt install -f ./libm2k-package.deb
 
 **libm2k for OSX**
 
@@ -87,13 +87,13 @@ Installation
 
 ::
 
-   **sudo installer -pkg /path/to/package.pkg -target /**
+   sudo installer -pkg /path/to/package.pkg -target /
 
 -  Download the **libm2k-darwin.pkg** for your system and install it by running:
 
 ::
 
-   **sudo installer -pkg /path/to/package.pkg -target /**
+   sudo installer -pkg /path/to/package.pkg -target /
 
 -  The **m2kcli** command line tool is also installed with the package. In order to access it, the full path to it must be used (*/Library/Frameworks/libm2k.framework/Tools/m2kcli*) or a symbolic link can be created in the following way:
 
@@ -106,7 +106,7 @@ Installation
 
 ::
 
-   install_name_tool -add_rpath /Library/Frameworks/ /Library/Frameworks/Python.framework/Versions/**3.11**/lib/python**3.11**/site-packages/_libm2k.cpython-**311**-darwin.so
+   install_name_tool -add_rpath /Library/Frameworks/ /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/_libm2k.cpython-311-darwin.so
 
 -  **Important:** adjust the // 3.11 // and *311* references from the example to match your specific Python version.
 
@@ -133,7 +133,7 @@ Python bindings
 
 ::
 
-   ~/libm2k/build$ **cmake -DENABLE_PYTHON=ON/OFF ..**
+   ~/libm2k/build$ cmake -DENABLE_PYTHON=ON/OFF ..
 
 C# bindings
 ~~~~~~~~~~~
@@ -142,7 +142,7 @@ The C# bindings are **disabled** by default. They can be specifically enabled(re
 
 ::
 
-   ~/libm2k/build$ **cmake -DENABLE_CSHARP=ON/OFF ..**
+   ~/libm2k/build$ cmake -DENABLE_CSHARP=ON/OFF ..
 
 MATLAB bindings
 ~~~~~~~~~~~~~~~
@@ -164,7 +164,7 @@ Building m2kcli is disabled by default. It can be enabled by running the followi
 
 ::
 
-   ~/libm2k/build$ **cmake -DENABLE_TOOLS=ON ..**
+   ~/libm2k/build$ cmake -DENABLE_TOOLS=ON ..
 
 Building with logging support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,7 +173,7 @@ The logging system is **disabled** by default. It can be specifically enabled(re
 
 ::
 
-   ~/libm2k/build$ **cmake -DENABLE_LOG=ON/OFF ..**
+   ~/libm2k/build$ cmake -DENABLE_LOG=ON/OFF ..
 
 There is one more layer of controlling the logging. After building libm2k with logging support the user must enable the logging system from code, calling the method **enableLogging(true)**. By default the logging system is disabled.
 
@@ -184,7 +184,7 @@ Building the examples is disabled by default. It can be enabled by running the f
 
 ::
 
-   ~/libm2k/build$ **cmake -DENABLE_EXAMPLES=ON ..**
+   ~/libm2k/build$ cmake -DENABLE_EXAMPLES=ON ..
 
 Building on Linux
 -----------------
@@ -196,7 +196,7 @@ Install git, cmake, swig, python:
 
 ::
 
-   ~$ **sudo apt-get install git cmake swig <nowiki>g++</nowiki> python3-dev python3-setuptools libgoogle-glog-dev**
+   ~$ sudo apt-get install git cmake swig <nowiki>g++</nowiki> python3-dev python3-setuptools libgoogle-glog-dev
 
 Build and install libiio. Instructions can be found :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/libiio>`.
 
@@ -207,13 +207,13 @@ Build and install libm2k:
 
 ::
 
-   ~$ **git clone :git-libm2k:`libm2k`.git**
-   ~$ **cd libm2k**
-   ~/libm2k$ **mkdir build**
-   ~/libm2k$ **cd build**
-   ~/libm2k/build$ **cmake ../**
-   ~/libm2k/build$ **make**
-   ~/libm2k/build$ **sudo make install**
+   ~$ git clone :git-libm2k:`libm2k`.git
+   ~$ cd libm2k
+   ~/libm2k$ mkdir build
+   ~/libm2k$ cd build
+   ~/libm2k/build$ cmake ../
+   ~/libm2k/build$ make
+   ~/libm2k/build$ sudo make install
 
 If the Python bindings were enabled, they will be **automatically** installed in the site-packages folder specific for Python, once sudo make install is called.
 
@@ -227,7 +227,7 @@ Install git, cmake, swig and python:
 
 ::
 
-   ~$ **brew install git cmake <nowiki>g+</nowiki>+ swig python3 libusb**
+   ~$ brew install git cmake <nowiki>g+</nowiki>+ swig python3 libusb
 
 Download and install `libiio <https://github.com/analogdevicesinc/libiio/releases>`_.
 
@@ -238,13 +238,13 @@ Build and install libm2k:
 
 ::
 
-   ~$ **git clone :git-libm2k:`libm2k`.git**
-   ~$ **cd libm2k**
-   ~/libm2k$ **mkdir build**
-   ~/libm2k$ **cd build**
-   ~/libm2k/build$ **cmake ../**
-   ~/libm2k/build$ **make**
-   ~/libm2k/build$ **sudo make install**
+   ~$ git clone :git-libm2k:`libm2k`.git
+   ~$ cd libm2k
+   ~/libm2k$ mkdir build
+   ~/libm2k$ cd build
+   ~/libm2k/build$ cmake ../
+   ~/libm2k/build$ make
+   ~/libm2k/build$ sudo make install
 
 Install libm2k Python bindings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -253,8 +253,8 @@ Make sure you installed libm2k first then run the following commands in order to
 
 ::
 
-   ~/libm2k$ **cd libm2k/build**
-   ~/libm2k$ **python3 setup.py install_lib**
+   ~/libm2k$ cd libm2k/build
+   ~/libm2k$ python3 setup.py install_lib
 
 This will install **libm2k.py** and **\_libm2k.so** in the site-packages folder used by your **python3** executable.
 

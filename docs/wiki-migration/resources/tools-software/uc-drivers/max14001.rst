@@ -174,7 +174,7 @@ To reset the device, you may use the following functions:
 
 .. note::
 
-   The **max14001_reg_reset** resets only the SPI registers, while the **max14001_full_reset** acts as the global POR, wherein the DC-DC converter will turn off and field-side will be reset as well as the logic-side (SPI interface).
+   The max14001_reg_reset resets only the SPI registers, while the max14001_full_reset acts as the global POR, wherein the DC-DC converter will turn off and field-side will be reset as well as the logic-side (SPI interface).
 
 
 Configuration Commands
@@ -288,7 +288,7 @@ You may configure other settings with the following functions:
 
 .. note::
 
-   The **max14001_wen** needs to be enabled before any configuration and disabled after all configurations.
+   The max14001_wen needs to be enabled before any configuration and disabled after all configurations.
 
 
 For the valid corresponding mask or values, refer to the device driver header file.

@@ -7,8 +7,8 @@ ADXL362 Datalogger & Development Board: Rev 0
 
    Thanks for visiting!
 
-   | This page has has instructions that apply to the **Rev 0** Datalogger Board.
-   | If your board is labeled **REV 2** (on the back), please visit :doc:`this page </wiki-migration/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/eval-adxl362z-db>` instead.
+   | This page has has instructions that apply to the Rev 0 Datalogger Board.
+   | If your board is labeled REV 2 (on the back), please visit :doc:`this page </wiki-migration/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/eval-adxl362z-db>` instead.
 
 
 Resources

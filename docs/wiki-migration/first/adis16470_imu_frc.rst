@@ -28,12 +28,12 @@ To help the robot minimize start-up drift and improve overall sensor performance
 
 .. important::
 
-   The gyros used in the :adi:`ADIS16470` measure *angular rate*, not *angle!* Any movement during the offset calibration routine **will** introduce some error into **every** sensor measurement! Over time, this error, will appear as "drift" in your angle measurement. **It is VERY important that the robot remains completely stationary during this calibration period!**\
+   The gyros used in the :adi:`ADIS16470` measure *angular rate*, not *angle!* Any movement during the offset calibration routine will introduce some error into every sensor measurement! Over time, this error, will appear as "drift" in your angle measurement. It is VERY important that the robot remains completely stationary during this calibration period!\
 
 
 .. tip::
 
-   Offset calibration should be performed as soon as the robot is powered on to prevent the routine from interfering with any autonomous code execution. If your gyro angle readings are drifting drastically, clicking **Restart Robot Code** in the driver station will force the RoboRIO to re-execute the offset calibration routine. This should fix any drift issues caused by a bad offset measurement. You can also use the new Recalibrate function available in the 2020 libraries to re-perform the offset calibration (if, for example, the robot was kicked or moved during start-up). This function will also perform a "reset," or re-zero the sensor, so be sure the robot is facing in the direction you want "zero" to be!
+   Offset calibration should be performed as soon as the robot is powered on to prevent the routine from interfering with any autonomous code execution. If your gyro angle readings are drifting drastically, clicking Restart Robot Code in the driver station will force the RoboRIO to re-execute the offset calibration routine. This should fix any drift issues caused by a bad offset measurement. You can also use the new Recalibrate function available in the 2020 libraries to re-perform the offset calibration (if, for example, the robot was kicked or moved during start-up). This function will also perform a "reset," or re-zero the sensor, so be sure the robot is facing in the direction you want "zero" to be!
 
 
 "Reset" vs. "Recalibrate"
@@ -48,7 +48,7 @@ Recalibrate
 
 .. important::
 
-   The Recalibrate function should **never** be used during match play! Doing so may negatively affect sensor performance if the robot moves before Recalibrate is called, just as bumping the robot during the startup calibration will negatively affect sensor performance!
+   The Recalibrate function should never be used during match play! Doing so may negatively affect sensor performance if the robot moves before Recalibrate is called, just as bumping the robot during the startup calibration will negatively affect sensor performance!
 
 
 Reset

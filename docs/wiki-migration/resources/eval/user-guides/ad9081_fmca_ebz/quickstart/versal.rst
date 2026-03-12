@@ -31,7 +31,7 @@ AD9081-FMCA-EBZ / AD9082-FMCA-EBZ (Single MxFE) HDL Reference Design
 
 .. important::
 
-   We are in the process of migrating our documentation to GitHub IO. Please check the following link for updated information regarding the **HDL project**: https://analogdevicesinc.github.io/hdl/projects/ad9081_fmca_ebz/index.html.
+   We are in the process of migrating our documentation to GitHub IO. Please check the following link for updated information regarding the HDL project: https://analogdevicesinc.github.io/hdl/projects/ad9081_fmca_ebz/index.html.
 
 
 Functional Overview
@@ -52,10 +52,10 @@ Board setup
 
 .. important::
 
-   **The following rework is required:**
+   The following rework is required:
 
    
-   -  In order to avoid using an external clock source and fully rely on the HMC7044 clock chip,*\* rotate the C6D/C4D caps in C5D/C3D position*\* (**Please note:** In the latest version of the board, this is now the default configuration, so this configuration step **might not be needed anymore**)
+   -  In order to avoid using an external clock source and fully rely on the HMC7044 clock chip,*\* rotate the C6D/C4D caps in C5D/C3D position*\* (Please note: In the latest version of the board, this is now the default configuration, so this configuration step might not be needed anymore)
    -  If LEDS V1P0_LED and VINT_LED are not on please \*\* depopulate R22M and populate R2M*\*
    
 
@@ -217,7 +217,7 @@ Observation: In 2019_R2 release the Xilinx JESD Physical layer IP Core is used, 
 
 .. important::
 
-   **Build instructions:**
+   Build instructions:
 
    
    The project must be built with the following parameters:
@@ -412,15 +412,15 @@ The **latest master** pre-built Image based boot messages looks like the followi
       ::
 
 
-             [0.015]***************************************
+             [0.015]***********
              [0.071]Xilinx Versal Platform Loader and Manager
              [0.129]Release 2021.2   Oct 20 2022  -  23:01:07
              [0.189]Platform Version: v2.0 PMC: v2.0, PS: v2.0
              [0.255]BOOTMODE: 0xE, MULTIBOOT: 0xF0000000
-             [0.314]***************************************
+             [0.314]***********
              [0.522]Non Secure Boot
              [3.744]PLM Initialization Time
-             [3.794]**********Boot PDI Load: Started**********
+             [3.794]**Boot PDI Load: Started**
              [3.857]Loading PDI from SD1_LS
              [3.907]Monolithic/Master Device
              [318.960]315.075 ms: PDI initialization time
@@ -448,7 +448,7 @@ The **latest master** pre-built Image based boot messages looks like the followi
              [1033.735] 8.156 ms for Partition#: 0x9, Size: 47040 Bytes
              [1036.067]---Loading Partition#: 0xA, Id: 0x0
              [1222.180] 182.067 ms for Partition#: 0xA, Size: 1193936 Bytes
-             **NOT22E.  A]F r\*nn**g**\ n otliDI Voasa DSil\*con**
+             **NOT22E.  A]F r\*nng\ n otliDI Voasa DSil\*con**
 
              [1229.495]281.083 ms: ROM Time
              [1232.203]Total PLM Boot Time
@@ -1605,7 +1605,7 @@ The **2019_R2** Image based boot messages looks like the followings :
                   Importing environment from SD ...
                   Running uenvcmd ...
                   Copying Linux from SD to RAM...
-                  ** No boot file defined **
+                   No boot file defined 
                   reading system.dtb
                   44731 bytes read in 24 ms (1.8 MiB/s)
                   reading Image
@@ -2316,7 +2316,7 @@ Checking clocking and lock status
    
    ::
    
-      root@analog:~# **iio_attr -D hmc7044 status**
+      root@analog:~# iio_attr -D hmc7044 status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN0 @ 122880000 Hz
@@ -2418,7 +2418,7 @@ Read status information from the MxFE
    
    ::
    
-      root@analog:~# **iio_attr -D axi-ad9081-rx-hpc status**
+      root@analog:~# iio_attr -D axi-ad9081-rx-hpc status
       JESD TX (JRX) Link1 0xF lanes in DATA
       JESD TX (JRX) Link1 TPL Phase Difference Read 1, Set 3
       JESD RX (JTX) Link1 in DATA, SYNC deasserted, PLL locked, PHASE established, MODE valid
@@ -2725,7 +2725,7 @@ The **2019_R2** Image based boot messages looks like the followings :
                   Importing environment from SD ...
                   Running uenvcmd ...
                   Copying Linux from SD to RAM...
-                  ** No boot file defined **
+                   No boot file defined 
                   reading system.dtb
                   44731 bytes read in 24 ms (1.8 MiB/s)
                   reading Image
@@ -3436,7 +3436,7 @@ Checking clocking and lock status
    
    ::
    
-      root@analog:~# **iio_attr -D hmc7044 status**
+      root@analog:~# iio_attr -D hmc7044 status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN0 @ 122880000 Hz
@@ -3538,7 +3538,7 @@ Read status information from the MxFE
    
    ::
    
-      root@analog:~# **iio_attr -D axi-ad9081-rx-hpc status**
+      root@analog:~# iio_attr -D axi-ad9081-rx-hpc status
       JESD TX (JRX) Link1 0xF lanes in DATA
       JESD TX (JRX) Link1 TPL Phase Difference Read 1, Set 3
       JESD RX (JTX) Link1 in DATA, SYNC deasserted, PLL locked, PHASE established, MODE valid

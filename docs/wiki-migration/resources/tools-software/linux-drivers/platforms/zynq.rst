@@ -135,7 +135,7 @@ The script can be downloaded from here:
 
 .. tip::
 
-   \ **NOTE: After downloading the script you need to make it executable**
+   \ NOTE: After downloading the script you need to make it executable
 
    
    ::
@@ -173,7 +173,7 @@ Usage
 
 .. tip::
 
-   \ **NOTE: u-boot.elf** For those who don't want to build u-boot themselves. The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, **bootgen_sysfiles.tgz**
+   \ NOTE: u-boot.elf For those who don't want to build u-boot themselves. The u-boot.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz
 
    
 
@@ -204,7 +204,7 @@ Build and install the kernel image
    
    ::
    
-      > **git clone https:%%//%%github.com/analogdevicesinc/linux.git**
+      > git clone https:%%//%%github.com/analogdevicesinc/linux.git
       Cloning into 'linux'...
       remote: Counting objects: 2550298, done.
       remote: Compressing objects: 100% (466978/466978), done.
@@ -212,17 +212,17 @@ Build and install the kernel image
       Receiving objects: 100% (2550298/2550298), 727.70 MiB | 353 KiB/s, done.
       Resolving deltas: 100% (2118600/2118600), done.
       Checking out files: 100% (38170/38170), done.
-      > **cd linux**
+      > cd linux
       > # For AD-FMCOMMS2-EBZ use
-      > # **git checkout master**
-      > **export ARCH=arm**
-      > **export CROSS_COMPILE=/path/to/your/arm/cross-compiler**
+      > # git checkout master
+      > export ARCH=arm
+      > export CROSS_COMPILE=/path/to/your/arm/cross-compiler
       > # e.g. export CROSS_COMPILE=/opt/CodeSourcery/Sourcery_G++_Lite/bin/arm-xilinxa9-linux-gnueabi-
-      > **make zynq_xcomm_adv7511_defconfig**
+      > make zynq_xcomm_adv7511_defconfig
       #
       # configuration written to .config
       #
-      > **make uImage LOADADDR=0x00008000**
+      > make uImage LOADADDR=0x00008000
         ...
         OBJCOPY arch/arm/boot/uImage
         Kernel: arch/arm/boot/uImage is ready
@@ -316,7 +316,7 @@ To build the devicetree from the devicetree file run \`make name-dts-replaced-by
    
    ::
    
-      > **make zynq-zed-adv7511-xcomm.dtb**
+      > make zynq-zed-adv7511-xcomm.dtb
         DTC     arch/arm/boot/zynq-zed-adv7511-xcomm.dtb
       DTC: dts->dtb  on file "arch/arm/boot/dts/zynq-zed-adv7511-xcomm.dts"
    
@@ -331,8 +331,8 @@ The last step is to copy both the kernel and the devicetree files to the first p
    
    ::
    
-      > **cp arch/arm/boot/uImage /media/BOOT/uImage**
-      > **cp arch/arm/boot/zynq-zed-adv7511-xcomm.dtb /media/BOOT/devicetree.dtb**
+      > cp arch/arm/boot/uImage /media/BOOT/uImage
+      > cp arch/arm/boot/zynq-zed-adv7511-xcomm.dtb /media/BOOT/devicetree.dtb
    
 
 
@@ -363,7 +363,7 @@ The first step is to download the `archive containing the root filesystem <https
    
    ::
    
-      > **wget http:%%//%%releases.linaro.org/archive/12.12/ubuntu/vexpress/linaro-precise-ubuntu-desktop-20121124-560.tar.gz**
+      > wget http:%%//%%releases.linaro.org/archive/12.12/ubuntu/vexpress/linaro-precise-ubuntu-desktop-20121124-560.tar.gz
    
 
 
@@ -376,8 +376,8 @@ The next step is to extract the root filesystem from the archive to the SD card.
    
    ::
    
-      > **sudo tar --strip-components=3 -C /media/rootfs -xzpf linaro-precise-ubuntu-desktop-20121124-560.tar.gz binary/boot/filesystem.dir**
-      > **ls /media/rootfs/**
+      > sudo tar --strip-components=3 -C /media/rootfs -xzpf linaro-precise-ubuntu-desktop-20121124-560.tar.gz binary/boot/filesystem.dir
+      > ls /media/rootfs/
       bin/  boot/  dev/  etc/  home/  lib/  lost+found/  media/  mnt/ opt/
       proc/  root/  run/  sbin/  selinux/  srv/  sys/  tmp/  usr/  var/
    
@@ -409,13 +409,13 @@ Unfortunately the current Linaro Ubuntu distribution does not contain a package 
    
    ::
    
-      > **sudo apt-get install xserver-xorg-dev libdrm-dev xutils-dev**
-      > **wget http:%%//%%xorg.freedesktop.org/archive/individual/driver/xf86-video-modesetting-0.9.0.tar.bz2**
-      > **tar -xjf xf86-video-modesetting-0.9.0.tar.bz2**
-      > **cd xf86-video-modesetting-0.9.0**
-      > **./configure --prefix=/usr**
-      > **make**
-      > **sudo make install**
+      > sudo apt-get install xserver-xorg-dev libdrm-dev xutils-dev
+      > wget http:%%//%%xorg.freedesktop.org/archive/individual/driver/xf86-video-modesetting-0.9.0.tar.bz2
+      > tar -xjf xf86-video-modesetting-0.9.0.tar.bz2
+      > cd xf86-video-modesetting-0.9.0
+      > ./configure --prefix=/usr
+      > make
+      > sudo make install
    
 
 
@@ -442,7 +442,7 @@ PulseAudio is the audio daemon used by default on the Linaro Ubuntu installation
    
    ::
    
-      > **sed -i 's,load-module module-udev-detect.*,load-module module-udev-detect tsched=0,' /etc/pulse/default.pa**
+      > sed -i 's,load-module module-udev-detect.*,load-module module-udev-detect tsched=0,' /etc/pulse/default.pa
    
 
 

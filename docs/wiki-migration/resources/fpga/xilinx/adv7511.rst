@@ -505,7 +505,7 @@ Below is the list of all functions implemented in this library:
    
         * The TX_CS_AUTO setting will disable Colour Space Conversion.
    
-   -  **OutColorSpace** - Colour space output from TX device. This can be one of the following values:
+   -  OutColorSpace - Colour space output from TX device. This can be one of the following values:
    
    .. container:: box center
 
@@ -526,10 +526,10 @@ Below is the list of all functions implemented in this library:
    
    -  The TX_CS_AUTO setting will disable Colour Space Conversion.
    
-   **Return value**
+   Return value
    
-   -  **ATVERR_OK**
-   -  **ATVERR_INV_PARM**
+   -  ATVERR_OK
+   -  ATVERR_INV_PARM
    
 
 

@@ -144,7 +144,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD7280A Driver depends on **CONFIG_SPI**
+   The AD7280A Driver depends on CONFIG_SPI
 
 
 ::
@@ -158,7 +158,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                    - *-     Industrial I/O lock free software ring
                    - *-   Enable triggered sampling support
 
-                         ** Analog to digital converters **
+                          Analog to digital converters 
                    [--snip--]
 
                    <*>   Analog Devices AD7280A Lithium Ion Battery Monitoring System
@@ -184,12 +184,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       device0         device0:event0
-      root:/sys/bus/iio/devices> **cd device0**
+      root:/sys/bus/iio/devices> cd device0
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **ls -l**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> ls -l
       drwxr-xr-x    3 root     root             0 Mar 14 11:16 device0:event0
       -rw-r--r--    1 root     root          4096 Mar 14 11:16 in-in_scale
       -r--r--r--    1 root     root          4096 Mar 14 11:16 in0-in12_raw
@@ -260,7 +260,7 @@ Show device name
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat name**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat name
       ad7280a
    
 
@@ -277,7 +277,7 @@ Show cell channel scale
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat in-in_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat in-in_scale
       0.976000
    
 
@@ -294,7 +294,7 @@ Show channel 0-1 measurement
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat in0-in1_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat in0-in1_raw
       2254
    
 
@@ -313,7 +313,7 @@ Show voltage across all cells measurement
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat in0-in12_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat in0-in12_raw
       27048
    
 
@@ -332,7 +332,7 @@ Show auxiliary/temperature channel scale
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat temp_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat temp_scale
       1.220000
    
 
@@ -349,7 +349,7 @@ Show auxiliary/temperature channel measurement
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat temp0_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat temp0_raw
       2096
    
 
@@ -370,12 +370,12 @@ The AD7280A has cell balancing interface outputs designed to control external FE
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **echo 1 > in4-in5_balance_switch_en**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat in4-in5_balance_switch_en**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> echo 1 > in4-in5_balance_switch_en
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat in4-in5_balance_switch_en
       1
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **echo 0 > in4-in5_balance_switch_en**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat in4-in5_balance_switch_en**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> echo 0 > in4-in5_balance_switch_en
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat in4-in5_balance_switch_en
       0
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0>
    
@@ -393,8 +393,8 @@ Enable cell balance timer on channel 4-5
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **echo 150000 > in4-in5_balance_timer**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> **cat in4-in5_balance_timer**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> echo 150000 > in4-in5_balance_timer
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat in4-in5_balance_timer
       143000
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0>
    
@@ -410,12 +410,12 @@ Enabling cell and auxiliary/temperature channel threshold events
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       device0         device0:event0
-      root:/sys/bus/iio/devices> **cd device0:event0**
+      root:/sys/bus/iio/devices> cd device0:event0
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> **ls -l**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> ls -l
       -r--r--r--    1 root     root          4096 Mar 14 13:37 dev
       -rw-r--r--    1 root     root          4096 Mar 14 13:37 in-in_thresh_high_value
       -rw-r--r--    1 root     root          4096 Mar 14 13:37 in-in_thresh_low_value
@@ -439,12 +439,12 @@ The AD7280A includes a dynamic alert function that can detect whether the cell v
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> **echo 2300 > in-in_thresh_low_value**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> **cat in-in_thresh_low_value**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> echo 2300 > in-in_thresh_low_value
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> cat in-in_thresh_low_value
       2285
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> **echo 4000 > in-in_thresh_high_value**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> **cat in-in_thresh_high_value**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> echo 4000 > in-in_thresh_high_value
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> cat in-in_thresh_high_value
       3994
    
 

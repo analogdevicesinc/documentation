@@ -3,7 +3,7 @@ AD-SYNCHRONA14-EBZ User Guide
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-synchrona14-ebz/index.html
@@ -310,7 +310,7 @@ There are two VCXOs inside the AD-SYNCHRONA14-EBZ. Based on the frequencies you 
 
 .. important::
 
-   \ **The values on each channel need to be submultiples of the PLL frequency.**
+   \ The values on each channel need to be submultiples of the PLL frequency.
 
 
 If one or more of the values cannot be obtained from dividing the PLL frequency, the GUI will return the message:

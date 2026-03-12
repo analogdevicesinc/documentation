@@ -41,7 +41,7 @@ For detailed information regarding the ADuCM4x50 DFP, please see our complete AD
 .. important::
 
    
-   You **MUST** have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the **EV-COG-AD4050LZ** platform.
+   You MUST have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the EV-COG-AD4050LZ platform.
    
 
 

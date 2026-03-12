@@ -60,9 +60,9 @@ In ``Callback_Audio_Processing.cpp`` on SHARC Core 1, change processaudio_callba
        // Otherwise, perform our C-based block processing here!
        for (int i=0;i<AUDIO_BLOCK_SIZE;i++) {
 
-           // ******************************************************************************
+           // ******************
            // Replace the pass-through code below with your custom audio processing code here
-           // ******************************************************************************
+           // ******************
 
                            float sine_val = 0.5\*sinf(t);
                            t += 0.05;
@@ -84,9 +84,9 @@ If the unmodified framework is passing audio from the LINE IN to the LINE OUT ja
 
 .. code:: c
 
-   //****************************************************************************
+   //****************
    // 2. Set audio processing parameters
-   //****************************************************************************
+   //****************
 
    // This should be a base 2 number from 8 to 128
    #define AUDIO_BLOCK_SIZE                                (32)

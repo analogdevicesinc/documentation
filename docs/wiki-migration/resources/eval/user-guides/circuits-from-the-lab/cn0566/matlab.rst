@@ -26,7 +26,7 @@ Installing MATLAB
 
 .. tip::
 
-   If you already have a recent version of MATLAB installed, please skip ahead to the **Installing toolboxes** section below.
+   If you already have a recent version of MATLAB installed, please skip ahead to the Installing toolboxes section below.
 
 
 For the hardware board support packages to work, you must use Matlab version **R2022b** or newer. You can go to the download page by clicking `here <https://www.mathworks.com/downloads>`_, you may be required to sign in with your MathWorks account first.

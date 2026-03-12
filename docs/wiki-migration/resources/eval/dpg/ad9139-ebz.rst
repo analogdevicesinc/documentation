@@ -46,7 +46,7 @@ Software Needed:
 
    
    -  Do not install ACE on a computer with DAC Software Suite.
-   -  Use **ACE version 1.25** to evaluate AD9139-EBZ.
+   -  Use ACE version 1.25 to evaluate AD9139-EBZ.
    
 
 

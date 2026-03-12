@@ -55,14 +55,14 @@ General Setup
 
 .. note::
 
-   \ **NOTE:** Please see `AD7280A Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf>`_ page 17 and page 22 for proper battery connection for different number of cells.
+   \ NOTE: Please see `AD7280A Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf>`_ page 17 and page 22 for proper battery connection for different number of cells.
 
 
 -   **VIN7 to VIN12** – Lithium Ion battery stacks input. This connector is used when two devices are required for the application.
 
 .. note::
 
-   \ **NOTE:** Please see `AD7280A Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf>`_ page 18 for proper battery cell connection using two devices.
+   \ NOTE: Please see `AD7280A Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf>`_ page 18 for proper battery cell connection using two devices.
 
 
 -   **Power Supply** – The board may be powered up using a +6V wall-wart connected to the barrel jack or using an external power supply configured to +6V.
@@ -111,7 +111,7 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0235 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0235>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0235\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the `CN0235 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0235>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0235\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235-software-1.png
@@ -129,18 +129,18 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 
 
    |image5|
 
-   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press “Next” to set the installation location for the SDP Drivers.
 
 .. tip::
 
    It is recommended that you install the drivers to the default directory path
 
-   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+   C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
 
    |image6|
@@ -410,7 +410,7 @@ Configure AD7280A tab
 
 .. tip::
 
-   \ **NOTE:** The self-test conversion result varies between
+   \ NOTE: The self-test conversion result varies between
 
    *Code 970* and *Code 990*.
 
@@ -428,7 +428,7 @@ Configure AD7280A tab
 
 .. note::
 
-   \ **NOTE:** Due to settling time requirements, the thermistor termination resistor option should only be used when the acquisition time of :adi:`ad7280A` is set to the highest value which is 1.6us
+   \ NOTE: Due to settling time requirements, the thermistor termination resistor option should only be used when the acquisition time of :adi:`ad7280A` is set to the highest value which is 1.6us
 
 
 --------------
@@ -445,7 +445,7 @@ The advanced tab allows the user to read/write to the :adi:`ad7280A`\ ’s regis
 
 .. tip::
 
-   \ **NOTE:** It is recommended to read `AD7280A Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf>`_, `AD8280 datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD8280.pdf>`_ and :adi:`CN0235` and clearly understand the meaning and effect of the configuration before writing a new value in the AD7280A’s register.
+   \ NOTE: It is recommended to read `AD7280A Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf>`_, `AD8280 datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD8280.pdf>`_ and :adi:`CN0235` and clearly understand the meaning and effect of the configuration before writing a new value in the AD7280A’s register.
 
 
 | \**Dev0 and Dev1 Register Address**

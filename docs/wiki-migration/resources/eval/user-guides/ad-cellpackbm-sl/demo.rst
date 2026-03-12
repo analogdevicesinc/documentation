@@ -191,18 +191,18 @@ Battery Pack Assembly
    
    ::
    
-        * Make a **Parallel Connection**. Connect 3 batteries in parallel by linking all positive terminals and all negative terminals using the lithium-ion battery nickel strip. Use a spot welder, ensuring a strong and reliable connection. Repeat this process to form 13 cells.
-          * After completing the 13 cells, make a **Series Connection** by connecting the positive terminal of one cell to the negative terminal of the next cell. Continue this process until all 13 cells are connected in series.
-      **Adding Cell Terminal Strips**
+        * Make a Parallel Connection. Connect 3 batteries in parallel by linking all positive terminals and all negative terminals using the lithium-ion battery nickel strip. Use a spot welder, ensuring a strong and reliable connection. Repeat this process to form 13 cells.
+          * After completing the 13 cells, make a Series Connection by connecting the positive terminal of one cell to the negative terminal of the next cell. Continue this process until all 13 cells are connected in series.
+      Adding Cell Terminal Strips
         * Cut and prepare the appropriate lengths of nickel strips to be used as terminal connections.
           * Attach a nickel strip based on the picture below. Use a spot welder or suitable method to securely weld the strip to the terminal.
-          * Solder a single wire cable on each nickel strip terminal except for **Vbat**+ and **Vbat-**.
+          * Solder a single wire cable on each nickel strip terminal except for Vbat+ and Vbat-.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_terminal_strips.png
       :align: center
       :width: 2000px
    
-   -  **Insulation and Final Assembly**
+   -  Insulation and Final Assembly
    
       -  Ensure all connections are secure and properly insulated to prevent short circuits.
    
@@ -212,13 +212,13 @@ Battery Pack Assembly
    +--------------------------------------------------+-------------+-------+---------+---------+--------+--------------+
    | Thickness of Nickel Strip / Type of Nickel Strip | ---         | 0.1mm | 0.12 mm | 0.15 mm | 0.2 mm | 0.3 mm       |
    +==================================================+=============+=======+=========+=========+========+==============+
-   | **Nickel Plated Steel**                          | **Current** | 15    | 25      | 45      | 65     | 65           |
+   | Nickel Plated Steel                              | Current     | 15    | 25      | 45      | 65     | 65           |
    +--------------------------------------------------+-------------+-------+---------+---------+--------+--------------+
-   |                                                  | **Pulse**   | 1P    | 1P      | 2P      | 2P     | 2P + 4P + 6P |
+   |                                                  | Pulse       | 1P    | 1P      | 2P      | 2P     | 2P + 4P + 6P |
    +--------------------------------------------------+-------------+-------+---------+---------+--------+--------------+
-   | **Pure Nickel Strip**                            | **Current** | 25    | 25      | 65      | 95     | --           |
+   | Pure Nickel Strip                                | Current     | 25    | 25      | 65      | 95     | --           |
    +--------------------------------------------------+-------------+-------+---------+---------+--------+--------------+
-   |                                                  | **Pulse**   | 1P    | 1P      | 2P      | 2P     | --           |
+   |                                                  | Pulse       | 1P    | 1P      | 2P      | 2P     | --           |
    +--------------------------------------------------+-------------+-------+---------+---------+--------+--------------+
    
    .. warning::
@@ -226,7 +226,7 @@ Battery Pack Assembly
       Refer to the diagram above and make sure to connect the bottom part of the pack.
 
          
-      **Important:** Before connecting lithium-ion cells in parallel, ensure that all cells have the same or very close voltage levels (within ±0.05V). Connecting cells with different charge levels can result in large inrush currents, potentially causing: sparks or overheating, permanent cell damage, fire or thermal runaway, reduced battery life.
+      Important: Before connecting lithium-ion cells in parallel, ensure that all cells have the same or very close voltage levels (within ±0.05V). Connecting cells with different charge levels can result in large inrush currents, potentially causing: sparks or overheating, permanent cell damage, fire or thermal runaway, reduced battery life.
 
    
 
@@ -324,7 +324,7 @@ Running the Setup
    
    .. note::
 
-      **For Step 9:** If cell voltage measurement is the focus of the demo, place ADBMS6830 as the second device in the daisy chain—both in hardware wiring and software configuration. If battery pack current and voltage monitoring is the priority, place ADBMS2950 as the second device in the daisy chain. This is important because the BMS Browser GUI primarily recognizes and interacts with the second device in the daisy chain during operation
+      For Step 9: If cell voltage measurement is the focus of the demo, place ADBMS6830 as the second device in the daisy chain—both in hardware wiring and software configuration. If battery pack current and voltage monitoring is the priority, place ADBMS2950 as the second device in the daisy chain. This is important because the BMS Browser GUI primarily recognizes and interacts with the second device in the daisy chain during operation
 
    
 
@@ -378,7 +378,7 @@ Quick Measure Tab
 
    .. container:: centeralign
 
-      **Battery Pack Voltage Monitoring**
+      Battery Pack Voltage Monitoring
 
    
    ADBMS2950B features two dedicated battery-stack voltage measurements path that connect to one or two external resistor dividers via the VBAT1 and VBAT2. In this example, the battery-stack voltage is determined as:
@@ -423,7 +423,7 @@ Plots Tab
 
 .. note::
 
-   Refer to the **GUI Tabs** section of the :doc:`AD-CELLPACKBM-SL Software Guide </wiki-migration/resources/eval/user-guides/ad-cellpackbm-sl/software>` for a comprehensive overview of each tab's functions and descriptions.
+   Refer to the GUI Tabs section of the :doc:`AD-CELLPACKBM-SL Software Guide </wiki-migration/resources/eval/user-guides/ad-cellpackbm-sl/software>` for a comprehensive overview of each tab's functions and descriptions.
 
 
 Notes

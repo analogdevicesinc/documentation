@@ -138,7 +138,7 @@ For 3-phase setups the :adi:`ADE9430` technical reference manual can be consulte
 
 .. tip::
 
-   **If you want to go to the Software Page, click here:** `AD-PQMON-SL Getting the system up and running <https://wiki.analog.com/[[/resources/eval/user-guides/ad-pqmon-sl/software>`_
+   If you want to go to the Software Page, click here: `AD-PQMON-SL Getting the system up and running <https://wiki.analog.com/[[/resources/eval/user-guides/ad-pqmon-sl/software>`_
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/input_stage.jpg

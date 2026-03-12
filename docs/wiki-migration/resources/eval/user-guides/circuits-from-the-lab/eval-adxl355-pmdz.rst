@@ -107,7 +107,7 @@ The following is the list of items needed in order to replicate this demo.
    
    -  Dragging and Dropping the .Hex to the Daplink drive
    
-      -  Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the **EASIEST** way to get started with the reference design.
+      -  Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
    
    -  Building, Compiling, and Debugging using CCES
    
@@ -324,7 +324,7 @@ The original software example for the ADXL355 was developed on the ADICUP360 pla
 
 .. important::
 
-   In order to use the **EVAL-ADXL355-PMDZ** with the **ADICUP360**, the user **MUST** remove resistor R1. The ADXL355 holds the DATA_RDY pin low during powerup, and that holds the EVAL-ADICUP360 in UART boot mode. When this mode is active the MCU will stay in standby mode till it receives the proper command, effectively making the ADuCM360 not run. So to avoid this, please remove R1 and note that you can't use the DATA_RDY pin with the ADICUP360
+   In order to use the EVAL-ADXL355-PMDZ with the ADICUP360, the user MUST remove resistor R1. The ADXL355 holds the DATA_RDY pin low during powerup, and that holds the EVAL-ADICUP360 in UART boot mode. When this mode is active the MCU will stay in standby mode till it receives the proper command, effectively making the ADuCM360 not run. So to avoid this, please remove R1 and note that you can't use the DATA_RDY pin with the ADICUP360
 
 
 .. note::

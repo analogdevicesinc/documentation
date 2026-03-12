@@ -787,7 +787,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADXL34x Driver depends on **CONFIG_SPI** or **CONFIG_I2C**
+   The ADXL34x Driver depends on CONFIG_SPI or CONFIG_I2C
 
 
 ::
@@ -797,12 +797,12 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
      < >   Support for memoryless force-feedback devices
      < >   Polled input device skeleton
      < >   Sparse keymap support library
-           ** Userland interfaces **
+            Userland interfaces 
      < >   Mouse interface
      < >   Joystick interface
      <*>   Event interface
      < >   Event debugging
-           ** Input Device Drivers **
+            Input Device Drivers 
      [ ]   Keyboards  --->
      [ ]   Mice  --->
      [ ]   Joysticks/Gamepads  --->
@@ -828,8 +828,8 @@ I2C Interface:
 
 ::
 
-   root:~> **modprobe evdev**
-   root:~> **modprobe adxl34x**
+   root:~> modprobe evdev
+   root:~> modprobe adxl34x
    input: ADXL34x accelerometer as /devices/platform/i2c-bfin-twi.1/i2c-adapter/i2c-1/1-0053/input/input1
    adxl34x 1-0053: ADXL345 accelerometer, irq 140
 
@@ -837,8 +837,8 @@ SPI Interface:
 
 ::
 
-   root:~> **modprobe evdev**
-   root:~> **modprobe adxl34x**
+   root:~> modprobe evdev
+   root:~> modprobe adxl34x
    input: ADXL34x accelerometer as /devices/platform/bfin-spi.1/spi1.2/input/input1
    adxl34x spi1.2: ADXL345 accelerometer, irq 140
 
@@ -879,7 +879,7 @@ After the kernel boot your device folder should include at least one device node
 
 ::
 
-   root:/> **ls -al /dev/input/**
+   root:/> ls -al /dev/input/
    drw-r--r--    2 root     root            0 Jan  1 00:03 .
    drwxr-xr-x    5 root     root            0 Jan  1 00:03 ..
    crw-rw-r--    1 root     root      13,  64 Jan  1 00:03 event0
@@ -890,12 +890,12 @@ Check that the interrupt is registered.
 
 ::
 
-   root:~> **cat /proc/interrupts | grep adxl34x**
+   root:~> cat /proc/interrupts | grep adxl34x
    140:          0   adxl34x
 
 ::
 
-   root:~> **cat /sys/class/input/input1/name**
+   root:~> cat /sys/class/input/input1/name
    ADXL34x accelerometer
 
 Use the evtest utility to test proper function
@@ -946,7 +946,7 @@ Use the evtest utility to test proper function
 
 .. tip::
 
-   In case you move the accelerometer and don't receive events, it's likely that something with your Interrupt is wrong. **check irq number in your platform device file**
+   In case you move the accelerometer and don't receive events, it's likely that something with your Interrupt is wrong. check irq number in your platform device file
 
 
 .. tip::
@@ -1051,7 +1051,7 @@ See table above for supported sample rates
 
 .. tip::
 
-   **Be aware:** The ADXL34x conforms to The I2C Bus Specification, Version 2.1, January 2000, available from Phillips Semiconductor. It supports standard (100 kHz) and fast (400 kHz) data transfer modes.
+   Be aware: The ADXL34x conforms to The I2C Bus Specification, Version 2.1, January 2000, available from Phillips Semiconductor. It supports standard (100 kHz) and fast (400 kHz) data transfer modes.
 
    
    Very high output data rates are only possible via fast I2C (400kHz) or the SPI interface.
@@ -1099,11 +1099,11 @@ Download Raspbian “wheezy” SD Card Image from here: http://www.raspberrypi.o
    
    ::
    
-      Dave@HAL9000:~/devel/pshare/RaspberryPi$ **unzip 2012-08-16-wheezy-raspbian.zip**
+      Dave@HAL9000:~/devel/pshare/RaspberryPi$ unzip 2012-08-16-wheezy-raspbian.zip
       Archive:  2012-08-16-wheezy-raspbian.zip
         inflating: 2012-08-16-wheezy-raspbian.img
    
-      Dave@HAL9000:~/devel/pshare/RaspberryPi$ **sudo dd bs=1M if=2012-08-16-wheezy-raspbian.img of=/dev/sdc**
+      Dave@HAL9000:~/devel/pshare/RaspberryPi$ sudo dd bs=1M if=2012-08-16-wheezy-raspbian.img of=/dev/sdc
       [sudo] password for michael:
       1850+0 records in
       1850+0 records out
@@ -1138,8 +1138,8 @@ Create an empty directory
    
    ::
    
-      Dave@HAL9000:~/devel/git$ **mkdir RaspberryPi**
-      Dave@HAL9000:~/devel/git$ **cd RaspberryPi**
+      Dave@HAL9000:~/devel/git$ mkdir RaspberryPi
+      Dave@HAL9000:~/devel/git$ cd RaspberryPi
    
 
 
@@ -1153,7 +1153,7 @@ Get tools
    
    ::
    
-      Dave@HAL9000:~/devel/git/RaspberryPi$ **git clone https:%%//%%github.com/raspberrypi/tools.git**
+      Dave@HAL9000:~/devel/git/RaspberryPi$ git clone https:%%//%%github.com/raspberrypi/tools.git
       Initialized empty Git repository in /home/michael/devel/git/RaspberryPi/tools/.git/
       remote: Counting objects: 11148, done.
       remote: Compressing objects: 100% (5752/5752), done.
@@ -1174,7 +1174,7 @@ Get Kernel Source
    
    ::
    
-      Dave@HAL9000:~/devel/git/RaspberryPi$ **git clone https:%%//%%github.com/raspberrypi/linux.git**
+      Dave@HAL9000:~/devel/git/RaspberryPi$ git clone https:%%//%%github.com/raspberrypi/linux.git
       Initialized empty Git repository in /home/michael/devel/git/RaspberryPi/linux/.git/
       remote: Counting objects: 2287525, done.
       remote: Compressing objects: 100% (360373/360373), done.
@@ -1203,7 +1203,7 @@ Get patch files here:
    This was tested with the Raspberry Pi Model B, PCB Version 2 (made in UK)
 
    
-   **The primary and secondary I2C channels have been reversed.**
+   The primary and secondary I2C channels have been reversed.
    
    You may need to register i2c board info for Bus-0 instead of Bus-1.
    
@@ -1225,11 +1225,11 @@ Get patch files here:
    
    ::
    
-      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ **git am 0001-input-adxl34x-quick-hack-for-BCM2807-which-doesn-t-s.patch**
+      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ git am 0001-input-adxl34x-quick-hack-for-BCM2807-which-doesn-t-s.patch
       Applying: input: adxl34x: quick hack for BCM2807 which doesn't support level sensitive interrupts
    
    
-      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ **git am 0002-platform-RaspberryPi-provide-i2c-board-info-for-ADXL.patch**
+      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ git am 0002-platform-RaspberryPi-provide-i2c-board-info-for-ADXL.patch
       Applying: platform: RaspberryPi: provide i2c board info for ADXL345 Accelerometer.
       Dave@HAL9000:~/devel/git/RaspberryPi/linux$
    
@@ -1245,9 +1245,9 @@ Add ARM toolchain to the PATH variable and set ARCH and CROSS_COMPILE
    
    ::
    
-      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ **export PATH=/home/michael/devel/git/RaspberryPi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/:$PATH**
-      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ **export ARCH=arm**
-      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ **export CROSS_COMPILE=arm-linux-gnueabihf-**
+      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ export PATH=/home/michael/devel/git/RaspberryPi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/:$PATH
+      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ export ARCH=arm
+      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ export CROSS_COMPILE=arm-linux-gnueabihf-
    
 
 
@@ -1261,7 +1261,7 @@ Load kernel config for bcmrpi
    
    ::
    
-      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ **make bcmrpi_defconfig**
+      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ make bcmrpi_defconfig
       #
       # configuration written to .config
       #
@@ -1278,7 +1278,7 @@ Now build your kernel
    
    ::
    
-      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ **make -j5**
+      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ make -j5
    
 
 
@@ -1292,8 +1292,8 @@ Copy kernel image and modules to SD Card
    
    ::
    
-      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ **cp arch/arm/boot/zImage /media/A1B1-918F/kernel.img**
-      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ **sudo ARCH=arm make modules_install INSTALL_MOD_PATH=/media/10b4c001-2137-4418-b29e-57b7d15a6cbc**
+      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ cp arch/arm/boot/zImage /media/A1B1-918F/kernel.img
+      Dave@HAL9000:~/devel/git/RaspberryPi/linux$ sudo ARCH=arm make modules_install INSTALL_MOD_PATH=/media/10b4c001-2137-4418-b29e-57b7d15a6cbc
    
 
 
@@ -1320,7 +1320,7 @@ Load the I2C Bus driver module
    
    ::
    
-      pi@raspberrypi ~ $ **sudo modprobe i2c-bcm2708**
+      pi@raspberrypi ~ $ sudo modprobe i2c-bcm2708
    
 
 
@@ -1334,7 +1334,7 @@ Check if ADXL345 was successfully probed / instantiated
    
    ::
    
-      pi@raspberrypi ~ $ **dmesg | grep ADXL**
+      pi@raspberrypi ~ $ dmesg | grep ADXL
       [   44.858034] input: ADXL34x accelerometer as /devices/platform/bcm2708_i2c.1/i2c-1/1-0053/input/input2
       pi@raspberrypi ~ $
    
@@ -1350,7 +1350,7 @@ Get evtest tool
    
    ::
    
-      pi@raspberrypi ~ $ **sudo apt-get install evtest**
+      pi@raspberrypi ~ $ sudo apt-get install evtest
    
 
 
@@ -1364,7 +1364,7 @@ Driver test
    
    ::
    
-      pi@raspberrypi ~ $ **evtest /dev/input/event2**
+      pi@raspberrypi ~ $ evtest /dev/input/event2
       Input driver version is 1.0.1
       Input device ID: bus 0x18 vendor 0x0 product 0x159 version 0x0
       Input device name: "ADXL34x accelerometer"
@@ -1422,7 +1422,7 @@ Driver test
    
    ::
    
-      pi@raspberrypi ~ $ **cat /proc/interrupts**
+      pi@raspberrypi ~ $ cat /proc/interrupts
                  CPU0
         3:       9183   ARMCTRL  BCM2708 Timer Tick
        52:        784   ARMCTRL  BCM2708 GPIO catchall handler
@@ -1433,7 +1433,7 @@ Driver test
        79:       9469   ARMCTRL  bcm2708_i2c.0, bcm2708_i2c.1
        83:         20   ARMCTRL  uart-pl011
        84:      14411   ARMCTRL  mmc0
-      **187:        784      GPIO  1-0053**
+      187:        784      GPIO  1-0053
       Err:          0
    
 
@@ -1445,7 +1445,7 @@ Driver test
    
    ::
    
-      pi@raspberrypi /sys/bus/i2c/devices/1-0053 $ **ls -l**
+      pi@raspberrypi /sys/bus/i2c/devices/1-0053 $ ls -l
       total 0
       -rw-rw-r-- 1 root root 4096 Aug 16 01:22 autosleep
       -rw-rw-r-- 1 root root 4096 Aug 16 01:22 calibrate

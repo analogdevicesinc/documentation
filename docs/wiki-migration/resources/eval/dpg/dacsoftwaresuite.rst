@@ -37,10 +37,10 @@ Installation
 
 .. tip::
 
-   \ **Administrator Privileges:** Administrator privileges are required to install the DAC Software Suite.
+   \ Administrator Privileges: Administrator privileges are required to install the DAC Software Suite.
 
    
-   **Upgrading:** Previous versions of the DAC Software Suite do not need to be un-installed before installing a newer version. The installer will automatically upgrade from any existing versions already installed.
+   Upgrading: Previous versions of the DAC Software Suite do not need to be un-installed before installing a newer version. The installer will automatically upgrade from any existing versions already installed.
 
 
 Run the setup program. The following screen will be displayed after the installer loads:
@@ -62,7 +62,7 @@ The Choose Components page allows you to select which components of the DAC Soft
 
 .. important::
 
-   **Warning:** If you have another vendor's VISA libraries installed (for example, the Agilent IO Libraries), you should not install the NI-VISA runtime from within the DAC Software Suite Setup. NI-VISA will need to be manually installed according to both National Instruments' and your 3rd party VISA library's instructions, before installing the DAC Software Suite. For more information on NI-VISA, see http://www.ni.com/visa
+   Warning: If you have another vendor's VISA libraries installed (for example, the Agilent IO Libraries), you should not install the NI-VISA runtime from within the DAC Software Suite Setup. NI-VISA will need to be manually installed according to both National Instruments' and your 3rd party VISA library's instructions, before installing the DAC Software Suite. For more information on NI-VISA, see http://www.ni.com/visa
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/install_4.png

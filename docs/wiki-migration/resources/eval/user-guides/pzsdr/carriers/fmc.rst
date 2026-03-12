@@ -75,7 +75,7 @@ An external Reference Clock can be supplied via J1. In order the switch the sour
            xo_40mhz_fixed_clk: clock@0 {
                #clock-cells = <0>;
                compatible = "fixed-clock";
-               **clock-frequency = <40000000>;**
+               clock-frequency = <40000000>;
                clock-output-names = "XO_40MHz";
            };
 
@@ -83,7 +83,7 @@ An external Reference Clock can be supplied via J1. In order the switch the sour
                #clock-cells = <0>;
                compatible = "gpio-gate-clock";
                clocks = <&xo_40mhz_fixed_clk>;
-               **enable-gpios = <&gpio0 105 1>;** /* Set to 1 for extern AD9361_CLK */
+               enable-gpios = <&gpio0 105 1>; /* Set to 1 for extern AD9361_CLK */
                clock-output-names = "ad9361_ext_refclk";
            };
 

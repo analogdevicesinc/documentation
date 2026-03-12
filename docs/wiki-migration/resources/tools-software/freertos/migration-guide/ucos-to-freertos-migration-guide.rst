@@ -631,7 +631,7 @@ Please find the examples in using these APIs at the full documentations `uxTaskP
 
 .. tip::
 
-   Both of µC/OS-III and FreeRTOS support **multiple tasks at the same priority level**. For more information on task priorities in FreeRTOS see the full documentation on `Task Priorities <https://freertos.org/RTOS-task-priority.html>`_ of the FreeRTOS Feature/Tasks.
+   Both of µC/OS-III and FreeRTOS support multiple tasks at the same priority level. For more information on task priorities in FreeRTOS see the full documentation on `Task Priorities <https://freertos.org/RTOS-task-priority.html>`_ of the FreeRTOS Feature/Tasks.
 
 
 --------------
@@ -1189,7 +1189,7 @@ Both µC/OS-III and FreeRTOS allow a task to retain control of the CPU and suspe
    
    .. tip::
 
-      **xTaskResumeAll()** only resumes the scheduler. It does not unsuspend tasks that were previously suspended by a call to **vTaskSuspend()**.
+      xTaskResumeAll() only resumes the scheduler. It does not unsuspend tasks that were previously suspended by a call to vTaskSuspend().
 
    
 
@@ -1269,7 +1269,7 @@ Both µC/OS-III and FreeRTOS allow a task to retain control of the CPU and suspe
 
 .. note::
 
-   At some point the task wants to perform a long operation during which it does not want to get swapped out. It cannot use **taskENTER_CRITICAL()** or **taskEXIT_CRITICAL()** as the length of the operation may cause interrupts to be missed - including the ticks, so you can use the scheduler suspend/lock API **vTaskSuspendAll()** and **xTaskResumeAll()** in this moment.
+   At some point the task wants to perform a long operation during which it does not want to get swapped out. It cannot use taskENTER_CRITICAL() or taskEXIT_CRITICAL() as the length of the operation may cause interrupts to be missed - including the ticks, so you can use the scheduler suspend/lock API vTaskSuspendAll() and xTaskResumeAll() in this moment.
 
 
 For more information about the FreeRTOS ``vTaskSuspendAll()`` and ``xTaskResumeAll()``, please see the full documentation of `RTOS Kernel Control <https://www.freertos.org/a00134.html>`_ in FreeRTOS API Reference.
@@ -1876,8 +1876,8 @@ Both kernels provide a single to single communication mechanisms that allows a t
 
 ::
 
-   ;   * //**µC/OS-III**// : ''Task Message Queue''
-   ;   * //**FreeRTOS**// : ''Stream Buffer'' : ''Message Buffer''
+   ;   * //µC/OS-III// : ''Task Message Queue''
+   ;   * //FreeRTOS// : ''Stream Buffer'' : ''Message Buffer''
 
 **µC/OS-III**
 

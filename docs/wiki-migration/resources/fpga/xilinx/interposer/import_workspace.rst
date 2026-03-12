@@ -46,7 +46,7 @@ The hardware platform for each reference projects with FMC-SDP interposer and KC
 .. important::
 
    
-   -  Before compilation in the file called **Communication.h** you have to uncomment the name of the device that you currently use. In the picture below there is an example of this, which works only with AD5629R project. For another device, uncomment only the respective name. You can have one driver working on multiple devices, so the drivers's name and the uncommented name may not be the same for every project.
+   -  Before compilation in the file called Communication.h you have to uncomment the name of the device that you currently use. In the picture below there is an example of this, which works only with AD5629R project. For another device, uncomment only the respective name. You can have one driver working on multiple devices, so the drivers's name and the uncommented name may not be the same for every project.
    
 
 

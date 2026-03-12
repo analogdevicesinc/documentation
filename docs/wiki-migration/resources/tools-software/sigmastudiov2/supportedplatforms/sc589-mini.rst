@@ -19,7 +19,7 @@ For Sport configuration, please refer example schematic of ADSP-SC589Mini in the
 
 .. note::
 
-   The ADSP-SC589 Mini board version 2.1 is supported from SigmaStudio+ version 2.3.0 by default. To use the older version of ADSP-SC589 Mini boards, the “\ **ADSPSC589_SAM_BOARD_2_1**\ ” macro in the ADSP-SC589-SAM demo application can be disabled using CCES project compiler properties.
+   The ADSP-SC589 Mini board version 2.1 is supported from SigmaStudio+ version 2.3.0 by default. To use the older version of ADSP-SC589 Mini boards, the “\ ADSPSC589_SAM_BOARD_2_1\ ” macro in the ADSP-SC589-SAM demo application can be disabled using CCES project compiler properties.
 
 
 More details - :adi:`ADZS-SC589-MINI <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sharc-audio-module.html>`

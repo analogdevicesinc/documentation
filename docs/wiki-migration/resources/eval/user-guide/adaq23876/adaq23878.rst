@@ -241,9 +241,9 @@ Debug Tab/Plugin
 
 ::
 
-         **a. Enable AutoRead:** When enabled it allows the register to be read automatically as the register address changes.
-         **b. Address:** The address of the register
-         **c. Value:** The value of the register at the given address.
+         a. Enable AutoRead: When enabled it allows the register to be read automatically as the register address changes.
+         b. Address: The address of the register
+         c. Value: The value of the register at the given address.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/debug_tab.png
    :align: center

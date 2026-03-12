@@ -100,7 +100,7 @@ Configure kernel with “make menuconfig” (alternatively use “make xconfig�
 
 .. hint::
 
-   The AD9545 SPI driver depends **CONFIG_SPI** and the AD9545 I2C driver depends on **CONFIG_I2C**.
+   The AD9545 SPI driver depends CONFIG_SPI and the AD9545 I2C driver depends on CONFIG_I2C.
 
 
 Adding Linux driver support

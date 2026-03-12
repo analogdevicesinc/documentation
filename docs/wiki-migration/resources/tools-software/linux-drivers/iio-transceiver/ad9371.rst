@@ -133,7 +133,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD9371 driver depends on **CONFIG_SPI**
+   The AD9371 driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -151,7 +151,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
 
            - *- Analog Devices High-Speed AXI ADC driver core
@@ -180,7 +180,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. tip::
 
-   \ **TIP:** An example program which uses the interface can be found here:
+   \ TIP: An example program which uses the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
@@ -226,11 +226,11 @@ out_voltage11\_[…]                AUX DAC9
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0  iio:device3  iio:device2  iio:device3  iio:device4  iio:device5  iio:device6
    
-      root:/sys/bus/iio/devices> **cd iio:device3**
+      root:/sys/bus/iio/devices> cd iio:device3
    
       root@analog:/sys/bus/iio/devices/iio:device3# ls -l
       total 0
@@ -413,7 +413,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat name**
+      root:/sys/bus/iio/devices/iio:device3> cat name
       ad9371-phy
    
 
@@ -430,7 +430,7 @@ The AD9371 transceiver includes an Enable State Machine (ENSM), allowing real ti
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat ensm_mode_available**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat ensm_mode_available
       radio_on radio_off
    
 
@@ -442,11 +442,11 @@ The AD9371 transceiver includes an Enable State Machine (ENSM), allowing real ti
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat ensm_mode**
+      root:/sys/bus/iio/devices/iio:device3> cat ensm_mode
       radio_on
    
-      root:/sys/bus/iio/devices/iio:device3> **echo radio_off > ensm_mode**
-      root:/sys/bus/iio/devices/iio:device3> **cat ensm_mode**
+      root:/sys/bus/iio/devices/iio:device3> echo radio_off > ensm_mode
+      root:/sys/bus/iio/devices/iio:device3> cat ensm_mode
       radio_off
    
 
@@ -467,10 +467,10 @@ The AD9371 contains three fractional-N PLLs to generate the RF LOs used by the t
    
    ::
    
-       **cat out_altvoltage0_RX_LO_frequency**
+       cat out_altvoltage0_RX_LO_frequency
       2400000000
-      root:/sys/bus/iio/devices/iio:device3> **echo 2450000000 >  out_altvoltage0_RX_LO_frequency**
-      root:/sys/bus/iio/devices/iio:device3> **cat out_altvoltage0_RX_LO_frequency**
+      root:/sys/bus/iio/devices/iio:device3> echo 2450000000 >  out_altvoltage0_RX_LO_frequency
+      root:/sys/bus/iio/devices/iio:device3> cat out_altvoltage0_RX_LO_frequency
       2450000000
    
 
@@ -482,7 +482,7 @@ The AD9371 contains three fractional-N PLLs to generate the RF LOs used by the t
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_altvoltage1_TX_LO_frequency**
+      root:/sys/bus/iio/devices/iio:device3> cat out_altvoltage1_TX_LO_frequency
       2450000000
    
 
@@ -505,7 +505,7 @@ Loading a Profile
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat /usr/local/mykonos/profiles/lte20.txt > profile_config**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat /usr/local/mykonos/profiles/lte20.txt > profile_config
       root@analog:/sys/bus/iio/devices/iio:device3#
    
 
@@ -525,9 +525,9 @@ Querying the RX Sample Rate and Primary Signal Bandwidth
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat in_voltage0_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_sampling_frequency
       122880000
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage0_rf_bandwidth**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage0_rf_bandwidth
       100000000
    
 
@@ -547,9 +547,9 @@ Querying the ORx Sample Rate
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage2_sampling_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage2_sampling_frequency
       245760000
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage2_rf_bandwidth**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage2_rf_bandwidth
       200000000
    
 
@@ -577,12 +577,12 @@ When the ARM radio control is in ARM command mode, this attribute allows the use
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage_rf_port_select_available**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage_rf_port_select_available
       OFF INTERNALCALS OBS_SNIFFER SN_A SN_B SN_C ORX1_TX_LO ORX2_TX_LO ORX1_SN_LO ORX2_SN_LO
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **echo ORX1_TX_LO > in_voltage2_rf_port_select**
+      root@analog:/sys/bus/iio/devices/iio:device3# echo ORX1_TX_LO > in_voltage2_rf_port_select
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage2_rf_port_select**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage2_rf_port_select
       ORX1_TX_LO
    
 
@@ -602,9 +602,9 @@ Querying the TX Sample Rate and Primary Signal Bandwidth
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage_sampling_frequency
       245760000
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat out_voltage0_rf_bandwidth**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat out_voltage0_rf_bandwidth
       75000000
    
 
@@ -659,10 +659,10 @@ Loading a gain table
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **ls /lib/firmware/ad9**
+      root@analog:/sys/bus/iio/devices/iio:device3# ls /lib/firmware/ad9
       ad9371_std_gaintable
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat /lib/firmware/ad9371_std_gaintable > gain_table_config**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat /lib/firmware/ad9371_std_gaintable > gain_table_config
    
 
 
@@ -683,7 +683,7 @@ The AD9371 Rx supports three modes of gain control. These modes are described in
 
 .. tip::
 
-   \ **TIP:**
+   \ TIP:
 
    
    -  Automatic Gain Control (AGC) and Hybrid Mode are available on RX1, RX2 and in OBS_SNIFFER, SN_A, SN_B and SN_C Observation Path Sources. (see in_voltage2_rf_port_select).
@@ -698,7 +698,7 @@ The AD9371 Rx supports three modes of gain control. These modes are described in
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat in_voltage_gain_control_mode_available**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage_gain_control_mode_available
       manual automatic hybrid
    
 
@@ -713,10 +713,10 @@ Querying or Setting a Gain Control Mode
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat in_voltage0_gain_control_mode**
+      root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_gain_control_mode
       automatic
-      root:/sys/bus/iio/devices/iio:device3> **echo manual > in_voltage0_gain_control_mode**
-      root:/sys/bus/iio/devices/iio:device3> **cat in_voltage0_gain_control_mode**
+      root:/sys/bus/iio/devices/iio:device3> echo manual > in_voltage0_gain_control_mode
+      root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_gain_control_mode
       manual
    
 
@@ -728,7 +728,7 @@ Querying or Setting a Gain Control Mode
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat in_voltage1_gain_control_mode**
+      root:/sys/bus/iio/devices/iio:device3> cat in_voltage1_gain_control_mode
       automatic
    
 
@@ -745,7 +745,7 @@ Supported in all available Gain control modes
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat in_voltage0_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_hardwaregain
       30.000000 dB
    
 
@@ -757,7 +757,7 @@ Supported in all available Gain control modes
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat in_voltage1_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device3> cat in_voltage1_hardwaregain
       30.000000 dB
    
 
@@ -788,8 +788,8 @@ Only available in Manual Gain Control Mode (MGC)
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **echo 20 > in_voltage0_hardwaregain**
-      root:/sys/bus/iio/devices/iio:device3> **cat in_voltage0_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device3> echo 20 > in_voltage0_hardwaregain
+      root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_hardwaregain
       20.000000 dB
    
 
@@ -806,10 +806,10 @@ The TX attenuation/gain can be individually controlled for TX1 and TX2. The rang
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_hardwaregain
       -10.000000 dB
-      root:/sys/bus/iio/devices/iio:device3> **echo -40.25 >  out_voltage0_hardwaregain**
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device3> echo -40.25 >  out_voltage0_hardwaregain
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_hardwaregain
       -40.250000 dB
    
 
@@ -821,7 +821,7 @@ The TX attenuation/gain can be individually controlled for TX1 and TX2. The rang
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage1_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage1_hardwaregain
       -10.000000 dB
    
 
@@ -838,7 +838,7 @@ This attribute will report RSSI - however currently it reports Decimated Power i
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat in_voltage0_rssi**
+      root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_rssi
       12.75 dB
    
 
@@ -877,10 +877,10 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat in_voltage_quadrature_tracking_en**
+      root:/sys/bus/iio/devices/iio:device3> cat in_voltage_quadrature_tracking_en
       1
-      root:/sys/bus/iio/devices/iio:device3> **echo 0 > in_voltage0_quadrature_tracking_en**
-      root:/sys/bus/iio/devices/iio:device3> **cat in_voltage0_quadrature_tracking_en**
+      root:/sys/bus/iio/devices/iio:device3> echo 0 > in_voltage0_quadrature_tracking_en
+      root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_quadrature_tracking_en
       0
    
 
@@ -905,12 +905,12 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat calibrate_tx_lol_en**
+      root:/sys/bus/iio/devices/iio:device3> cat calibrate_tx_lol_en
       0
-      root:/sys/bus/iio/devices/iio:device3> **echo 1 > calibrate_tx_lol_en**
-      root:/sys/bus/iio/devices/iio:device3> **cat calibrate_tx_lol_en**
+      root:/sys/bus/iio/devices/iio:device3> echo 1 > calibrate_tx_lol_en
+      root:/sys/bus/iio/devices/iio:device3> cat calibrate_tx_lol_en
       1
-      root:/sys/bus/iio/devices/iio:device3> **echo 1 > calibrate**
+      root:/sys/bus/iio/devices/iio:device3> echo 1 > calibrate
    
 
 
@@ -934,7 +934,7 @@ To obtain the reading in mV calculate: *(in_voltage3_raw + in_voltage3_offset) \
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **grep "" in_voltage3_**
+      root:/sys/bus/iio/devices/iio:device3> grep "" in_voltage3_
       in_voltage3_offset:45
       in_voltage3_raw:66
       in_voltage3_scale:0.775194
@@ -960,11 +960,11 @@ Attributes are:
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **grep "" out_voltage2**
+      root:/sys/bus/iio/devices/iio:device3> grep "" out_voltage2
       out_voltage2_offset:204
       out_voltage2_raw:0
       out_voltage2_scale:1.560671
-      root:/sys/bus/iio/devices/iio:device3> **echo 1000 > out_voltage2_raw**
+      root:/sys/bus/iio/devices/iio:device3> echo 1000 > out_voltage2_raw
    
 
 
@@ -994,10 +994,10 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_dpd_tracking_en**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_dpd_tracking_en
       0
-      root:/sys/bus/iio/devices/iio:device3> **echo 1 > out_voltage0_dpd_tracking_en**
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_dpd_tracking_en**
+      root:/sys/bus/iio/devices/iio:device3> echo 1 > out_voltage0_dpd_tracking_en
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_dpd_tracking_en
       1
    
 
@@ -1019,10 +1019,10 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> ** cat out_voltage0_dpd_actuator_en**
+      root:/sys/bus/iio/devices/iio:device3>  cat out_voltage0_dpd_actuator_en
       0
-      root:/sys/bus/iio/devices/iio:device3> **echo 1 > out_voltage0_dpd_actuator_en**
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_dpd_actuator_en**
+      root:/sys/bus/iio/devices/iio:device3> echo 1 > out_voltage0_dpd_actuator_en
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_dpd_actuator_en
       1
    
 
@@ -1044,10 +1044,10 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_dpd_reset_en**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_dpd_reset_en
       0
-      root:/sys/bus/iio/devices/iio:device3> **echo 1 > out_voltage0_dpd_reset_en**
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_dpd_reset_en**
+      root:/sys/bus/iio/devices/iio:device3> echo 1 > out_voltage0_dpd_reset_en
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_dpd_reset_en
       1
    
 
@@ -1085,7 +1085,7 @@ Value Description
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_out_voltage0_dpd_status**
+      root:/sys/bus/iio/devices/iio:device3> cat out_out_voltage0_dpd_status
       0
    
 
@@ -1105,7 +1105,7 @@ This control reads back the percent error of the PA model ×10 to include 1 deci
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_dpd_model_error**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_dpd_model_error
       120
    
 
@@ -1125,7 +1125,7 @@ This control reads back the external path delay from Tx output to ORx input, at 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_dpd_external_path_delay**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_dpd_external_path_delay
       2326
    
 
@@ -1145,7 +1145,7 @@ This control reads back the number of times the DPD has successfully run since D
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_dpd_track_count**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_dpd_track_count
       42
    
 
@@ -1176,10 +1176,10 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_clgc_tracking_en**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_clgc_tracking_en
       0
-      root:/sys/bus/iio/devices/iio:device3> **echo 1 > out_voltage0_clgc_tracking_en**
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_clgc_tracking_en**
+      root:/sys/bus/iio/devices/iio:device3> echo 1 > out_voltage0_clgc_tracking_en
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_clgc_tracking_en
       1
    
 
@@ -1201,10 +1201,10 @@ Desired loop gain (can be negative if total attenuation is greater than amplific
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_clgc_desired_gain**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_clgc_desired_gain
       -20000
-      root:/sys/bus/iio/devices/iio:device3> **echo -6000 > out_voltage0_clgc_desired_gain**
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_clgc_desired_gain**
+      root:/sys/bus/iio/devices/iio:device3> echo -6000 > out_voltage0_clgc_desired_gain
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_clgc_desired_gain
       -6000
    
 
@@ -1226,7 +1226,7 @@ Current measured gain in 1/100ths dB scale. Current GaindB = currentGain/100
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_clgc_current_gain**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_clgc_current_gain
       -19956
    
 
@@ -1246,7 +1246,7 @@ This control returns the current Tx attenuation setting for a given channel in 0
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_clgc_tx_gain**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_clgc_tx_gain
       4050
    
 
@@ -1266,7 +1266,7 @@ This control returns the RMS Tx digital sample power measured at the output of t
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_clgc_tx_rms**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_clgc_tx_rms
       -1225
    
 
@@ -1286,7 +1286,7 @@ This control returns the RMS ORx digital sample power measured within the DPD bl
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_clgc_orx_rms**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_clgc_orx_rms
       -3214
    
 
@@ -1325,7 +1325,7 @@ Value Description
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_clgc_status**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_clgc_status
       0
    
 
@@ -1345,7 +1345,7 @@ This control reads back the number of times the CLGC has successfully run since 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_clgc_track_count**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_clgc_track_count
       42
    
 
@@ -1376,10 +1376,10 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_vswr_tracking_en**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_vswr_tracking_en
       0
-      root:/sys/bus/iio/devices/iio:device3> **echo 1 > out_voltage0_vswr_tracking_en**
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_vswr_tracking_en**
+      root:/sys/bus/iio/devices/iio:device3> echo 1 > out_voltage0_vswr_tracking_en
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_vswr_tracking_en
       1
    
 
@@ -1415,7 +1415,7 @@ Value Description
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_vswr_status**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_vswr_status
       0
    
 
@@ -1435,7 +1435,7 @@ This control reads back the number of times the VSWR has successfully run since 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_vswr_track_count**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_vswr_track_count
       54
    
 
@@ -1476,7 +1476,7 @@ These controls provide various measurements. Elements are only listed for out_vo
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **cat out_voltage0_vswr_reflected_gain**
+      root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_vswr_reflected_gain
       123
    
 
@@ -1504,7 +1504,7 @@ In order to identify if the IIO device in question (ad9371-phy) you first need t
       /sys/bus/iio/devices/iio:device0/name:ad7291
       /sys/bus/iio/devices/iio:device1/name:xadc
       /sys/bus/iio/devices/iio:device2/name:ad9528-1
-      **/sys/bus/iio/devices/iio:device3/name:ad9371-phy**
+      /sys/bus/iio/devices/iio:device3/name:ad9371-phy
       /sys/bus/iio/devices/iio:device4/name:axi-ad9371-rx-obs-hpc
       /sys/bus/iio/devices/iio:device5/name:axi-ad9371-tx-hpc
       /sys/bus/iio/devices/iio:device6/name:axi-ad9371-rx-hpc
@@ -1521,8 +1521,8 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX.
    
    ::
    
-      root@analog:~# **cd /sys/kernel/debug/iio/iio\:device3**
-      root@analog:/sys/kernel/debug/iio/iio:device3# **ls**
+      root@analog:~# cd /sys/kernel/debug/iio/iio\:device3
+      root@analog:/sys/kernel/debug/iio/iio:device3# ls
       [--snip--]
       adi,tx-settings-tx-atten-step-size
       adi,tx-settings-tx-channels-enable
@@ -1550,11 +1550,11 @@ Example to change from internal to external TX LO
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device3# **cat adi,tx-settings-tx-pll-use-external-lo**
+      root@analog:/sys/kernel/debug/iio/iio:device3# cat adi,tx-settings-tx-pll-use-external-lo
       0
    
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 > adi,tx-settings-tx-pll-use-external-lo**
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 > initialize**
+      root@analog:/sys/kernel/debug/iio/iio:device3# echo 1 > adi,tx-settings-tx-pll-use-external-lo
+      root@analog:/sys/kernel/debug/iio/iio:device3# echo 1 > initialize
    
 
 
@@ -1600,7 +1600,7 @@ Digital numerically controlled oscillator (NCO) to create a CW test tone on the 
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 3000 5000 > bist_tone**
+      root@analog:/sys/kernel/debug/iio/iio:device3# echo 1 3000 5000 > bist_tone
    
 
 
@@ -1649,7 +1649,7 @@ Pseudorandom Binary Sequence (`PRBS <https://en.wikipedia.org/wiki/Pseudorandom_
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 2 > bist_prbs_rx**
+      root@analog:/sys/kernel/debug/iio/iio:device3# echo 2 > bist_prbs_rx
    
 
 
@@ -1690,7 +1690,7 @@ Allows either to digitally loopback TX data (IQ samples) into the RX or OBS path
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 > loopback_tx_rx**
+      root@analog:/sys/kernel/debug/iio/iio:device3# echo 1 > loopback_tx_rx
    
 
 
@@ -1718,7 +1718,7 @@ The monitor outputs are grouped in set of nibbles, the user can set individual n
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device3# **echo 1 255 > monitor_out**
+      root@analog:/sys/kernel/debug/iio/iio:device3# echo 1 255 > monitor_out
    
 
 
@@ -1741,7 +1741,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
 
 .. hint::
 
-   **Trigger Consumers:**
+   Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
 
@@ -1758,7 +1758,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      root:/sys/bus/iio/devices/triggerY/> cat name
       irqtrig56
    
 
@@ -1775,7 +1775,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
 
 
@@ -1791,7 +1791,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
 

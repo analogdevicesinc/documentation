@@ -73,7 +73,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADAQ8092 driver depends on **SPI**
+   The ADAQ8092 driver depends on SPI
 
 
 Adding Linux driver support
@@ -91,7 +91,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
 
            <*>   Analog Devices ADAQ8092 uModule Data Acquisition Module
@@ -114,11 +114,11 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0  iio:device1
    
-      root:/sys/bus/iio/devices> **cd iio:device1**
+      root:/sys/bus/iio/devices> cd iio:device1
    
       root:/sys/bus/iio/devices/iio:device1# ls -l
       drwxr-xr-x 5 root root    0 Jan 22 08:19 .
@@ -149,8 +149,8 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat name**
-      **adaq8092**
+      root:/sys/bus/iio/devices/iio:device1> cat name
+      adaq8092
    
 
 
@@ -166,9 +166,9 @@ Read only attribute which returns the ADC sampling rate in Hz.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat sampling_frequency**
-      **105000000**
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 200000000 > sampling_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat sampling_frequency
+      105000000
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 200000000 > sampling_frequency
       -bash: echo: write error: Invalid argument
    
 

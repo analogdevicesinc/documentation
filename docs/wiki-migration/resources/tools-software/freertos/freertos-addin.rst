@@ -92,7 +92,7 @@ To add the FreeRTOS Add-In to the project:
 
 .. note::
 
-   If there are issues, you can highlight the affected add-in on the **Selected Add-Ins** tab and click Remove or **Quickfix**.
+   If there are issues, you can highlight the affected add-in on the Selected Add-Ins tab and click Remove or Quickfix.
 
 
 --------------
@@ -133,7 +133,7 @@ To remove the FreeRTOS add-in from the project:
 
 .. note::
 
-   Completion of some actions may require your clicking **Yes** in response to a message about removing files from the project.
+   Completion of some actions may require your clicking Yes in response to a message about removing files from the project.
 
 
 --------------

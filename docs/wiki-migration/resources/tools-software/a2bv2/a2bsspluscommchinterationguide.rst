@@ -149,7 +149,7 @@ The steps to initialize a communication channel on Sub node is as follows. The :
 
      * Application should define the PAL function for regwrite, regRead and timer functions specific to the platform.
    *       Next a communication channel context must be created with the I2C PAL function pointers for the platform using the //adi_a2b_CommChPalInit// API.
-   *       Next the communication channel instance should be created specifying the required configuration using the //adi_a2b_CommChCreate// API. The configuration should specify the memory for the instance and application callback for handling the events. The A2B Sub node transceiver local I2C address is specified using the **ADI_A2B_COMMCH_SLVNODE_I2C_ADDR** macro. The context for the Communication channel and default Rx and Tx mailbox are also to be specified.
+   *       Next the communication channel instance should be created specifying the required configuration using the //adi_a2b_CommChCreate// API. The configuration should specify the memory for the instance and application callback for handling the events. The A2B Sub node transceiver local I2C address is specified using the ADI_A2B_COMMCH_SLVNODE_I2C_ADDR macro. The context for the Communication channel and default Rx and Tx mailbox are also to be specified.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/initialization_of_communication_channel_at_slave.png
    :align: center

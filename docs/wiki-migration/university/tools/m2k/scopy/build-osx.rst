@@ -204,7 +204,7 @@ Building Scopy
 
 ::
 
-       **git clone :git-scopy:`scopy`.git**
+       git clone :git-scopy:`scopy`.git
 
 This will fetch the latest sources from GitHub to a "scopy" directory.
 
@@ -220,12 +220,12 @@ Now build the project:
 
 ::
 
-       **make**
+       make
 
 And run Scopy:
 
 ::
 
-       **./scopy**
+       ./scopy
 
 **Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`

@@ -134,7 +134,7 @@ Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado 
 
 ::
 
-   ***** Vivado v2021.1 (64-bit)
+   * Vivado v2021.1 (64-bit)
      *** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
      *** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
        ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
@@ -142,7 +142,7 @@ Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado 
    Vivado% cd /to/path/where/you/have/the/files
    Vivado% xsct run.tcl
 
-   ***** Xilinx hw_server v2021.1
+   * Xilinx hw_server v2021.1
      *** Build date : Jun 10 2021 at 20:17:23
        ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
    INFO: hw_server application started
@@ -151,7 +151,7 @@ Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado 
 
 .. tip::
 
-   In case of using older releases of VIVADO **xsct run.tcl** command is replaced by **xmd -tcl run.tcl**
+   In case of using older releases of VIVADO xsct run.tcl command is replaced by xmd -tcl run.tcl
 
 
 Remote IIO Oscilloscope
@@ -161,7 +161,7 @@ Remote IIO Oscilloscope
 
    -Plug your ethernet cable into the RJ45 ethernet connector (J21)
    -Observe kernel and serial console messages on your UART terminal
-   * You will see two COM ports in application. Choose the **COM port** that says "**Welcome to Buildroot**" and asks for a "//buildroot login//" (user) and then a password
+   * You will see two COM ports in application. Choose the COM port that says "Welcome to Buildroot" and asks for a "//buildroot login//" (user) and then a password
 
 ==== ========
 user password

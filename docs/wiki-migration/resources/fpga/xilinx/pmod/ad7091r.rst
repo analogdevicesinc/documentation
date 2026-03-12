@@ -110,7 +110,7 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
 
 
 If programming was successful, you should be seeing messages appear on the terminal window. The software is programmed with VRef = 2.5 V. If you wish to change Vref, you must modify its value in main.c.

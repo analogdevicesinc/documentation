@@ -11,7 +11,7 @@ iio_writedev
 
 ::
 
-   analog@imhotep:~$ **iio_writedev** -h
+   analog@imhotep:~$ iio_writedev -h
    Usage:
            iio_writedev [-n <hostname>] [-t <trigger>] [-T <timeout-ms>] [-b <buffer-size>] [-s <samples>] <iio_device> [<channel> ...]
 

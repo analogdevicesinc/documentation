@@ -13,12 +13,12 @@ SHARC-ALSA Example
 
 .. important::
 
-   For releases **prior** to :doc:`Linux for ADSP-SC5xx Processors 3.0.0 </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>`, follow :doc:`SHARC-ALSA example (legacy) </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/sharc-alsa-example_legacy>`\
+   For releases prior to :doc:`Linux for ADSP-SC5xx Processors 3.0.0 </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>`, follow :doc:`SHARC-ALSA example (legacy) </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/sharc-alsa-example_legacy>`\
 
 
 .. note::
 
-   SHARC-ALSA is **not** enabled by default when following the Quickstart guides within :doc:`Linux for ADSP-SC5xx Processors 3.0.0 </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>`. You need to change the final line in the ``conf/local.conf`` file from ``DISTRO_FEATURES:append = " linux_only_audio"`` to ``DISTRO_FEATURES:append = " adi_sharc_alsa_audio"`` before building the image.
+   SHARC-ALSA is not enabled by default when following the Quickstart guides within :doc:`Linux for ADSP-SC5xx Processors 3.0.0 </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>`. You need to change the final line in the ``conf/local.conf`` file from ``DISTRO_FEATURES:append = " linux_only_audio"`` to ``DISTRO_FEATURES:append = " adi_sharc_alsa_audio"`` before building the image.
 
 
 SHARC-ALSA is a framework designed to make a SHARC appear as an audio device in `ALSA <https://alsa-project.org/wiki/Main_Page>`_. It uses `RPMsg <https://www.kernel.org/doc/html/latest/staging/rpmsg.html>`_ for the communication between the ARM Core and the SHARC Core. When playing audio through ALSA the audio samples are transferred to the SHARC where additional processing can take place before the audio is played.

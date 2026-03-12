@@ -76,7 +76,7 @@ Run it:
 
 .. note::
 
-   The linux directory in the above example is optional. If unspecified, a **linux-adi** directory will be cloned
+   The linux directory in the above example is optional. If unspecified, a linux-adi directory will be cloned
 
 
 Adding the generated file on the SD-card
@@ -94,7 +94,7 @@ Any drivers built as modules must be installed onto the rootfs:
 
 .. important::
 
-   Always remember to run **sudo sync** or un-mount the SD-card safely so that whatever is copied on it, actually gets flushed to it.
+   Always remember to run sudo sync or un-mount the SD-card safely so that whatever is copied on it, actually gets flushed to it.
 
 
 Customizing the kernel/adding-drivers

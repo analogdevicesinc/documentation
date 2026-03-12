@@ -55,12 +55,12 @@ Data Collect, Eval Kit 5.0.0
 
 .. important::
 
-   \ **Note:** Camera IP is **10.43.0.1** if you are using SDK **v5.0.0** or later.
+   \ Note: Camera IP is 10.43.0.1 if you are using SDK v5.0.0 or later.
 
 
 .. important::
 
-   \ **Note:** In eval kit **v5.0.0** --ft option is removed. The output of data collect is a **.bin** file which contain Active brightness, depth, confidence and point cloud. These frames can be visualized using **ADIToFGUI.**\
+   \ Note: In eval kit v5.0.0 --ft option is removed. The output of data collect is a .bin file which contain Active brightness, depth, confidence and point cloud. These frames can be visualized using ADIToFGUI.\
 
 
 Description
@@ -140,10 +140,10 @@ Since the ADTF3175D eval kit works via ethernet over usb, the user must specify 
 
 .. important::
 
-   \ **Note:**
+   \ Note:
 
    
-   Version: for 4.3.0, data collect's default output is depth image. To get **raw frame** use **--ft** command line argument with **'RAW'** option. Refer data_collect --h for mode command line options. The get ccb flag is only required for the first capture. Once the ccb of your module is stored, it can be reused while running tofi_depth_compute.exe
+   Version: for 4.3.0, data collect's default output is depth image. To get raw frame use --ft command line argument with 'RAW' option. Refer data_collect --h for mode command line options. The get ccb flag is only required for the first capture. Once the ccb of your module is stored, it can be reused while running tofi_depth_compute.exe
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz-gui/data_collect_ip.png

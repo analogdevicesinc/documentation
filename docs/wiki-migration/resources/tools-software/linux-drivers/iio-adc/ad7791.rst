@@ -125,7 +125,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD7791 Driver depends on **CONFIG_SPI**
+   The AD7791 Driver depends on CONFIG_SPI
 
 
 ::
@@ -162,13 +162,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0         trigger0
    
-      root:/sys/bus/iio/devices> **cd device0**
+      root:/sys/bus/iio/devices> cd device0
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **ls -l**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> ls -l
       drwxr-xr-x    2 root     root             0 Jan  1 04:18 buffer
       -r--r--r--    1 root     root          4096 Jan  1 04:18 dev
       -rw-r--r--    1 root     root          4096 Jan  1 04:18 in_voltage-voltage_scale
@@ -204,7 +204,7 @@ Show device name
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat name**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat name
       ad7791
    
 
@@ -219,7 +219,7 @@ Show available sampling frequencies / update rates
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat sampling_frequency_available**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat sampling_frequency_available
       120 100 33.3 20 16.7 16.6 13.3 9.5
    
 
@@ -234,10 +234,10 @@ Set sampling frequency / update rate
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat sampling_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat sampling_frequency
       16.6
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **echo 100 > sampling_frequency**
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat sampling_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> echo 100 > sampling_frequency
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat sampling_frequency
       100
       root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0>
    
@@ -255,9 +255,9 @@ Show supply voltage
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat in_voltage1_supply_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat in_voltage1_supply_raw
       7817399
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat in_voltage_supply_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat in_voltage_supply_scale
       0.000697374
    
 
@@ -284,7 +284,7 @@ AVDD            in_voltage1_supply_raw
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat in_voltage0-voltage0_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat in_voltage0-voltage0_raw
       6710665
    
 
@@ -296,7 +296,7 @@ Trigger management
 
 .. hint::
 
-   This driver only supports it's own default trigger source **ad7791-dev0**
+   This driver only supports it's own default trigger source ad7791-dev0
 
 
 .. container:: box bggreen
@@ -306,7 +306,7 @@ Trigger management
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat trigger/current_trigger**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> cat trigger/current_trigger
       ad7791-dev0
    
 
@@ -344,7 +344,7 @@ Every buffer implementation features a set of files:
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0/scan_elements> **ls**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0/scan_elements> ls
       in_timestamp_en                     in_voltage0-voltage0_shorted_index
       in_timestamp_index                  in_voltage0-voltage0_shorted_type
       in_timestamp_type                   in_voltage0-voltage0_type

@@ -3,7 +3,7 @@ Linux on the Xilinx ML605 Virtex6 FPGA development Board
 
 
 
-.. important::
+.. warning::
 
    Analog Devices uses six designations to inform our customers where a
    semiconductor product is in its
@@ -16,8 +16,8 @@ Linux on the Xilinx ML605 Virtex6 FPGA development Board
 
    This particular article/document/design has been retired or deprecated,
    which means it is no longer maintained or actively updated, even though the
-   devices themselves may be **Recommended for New Designs** or in
-   **Production**. This page is here for historical/reference purposes only.
+   devices themselves may be Recommended for New Designs or in
+   Production. This page is here for historical/reference purposes only.
 
 
 
@@ -218,7 +218,7 @@ Generate ML605 SysACE Compact Flash File
 
 .. tip::
 
-   Following example shows building the System ACE file on a Linux host. Same steps can alternatively performed on a **Windows ISE** installation.
+   Following example shows building the System ACE file on a Linux host. Same steps can alternatively performed on a Windows ISE installation.
 
 
 Create a directory and gather required files

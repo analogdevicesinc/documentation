@@ -65,7 +65,7 @@ Setting up the hardware
 
 .. important::
 
-   Extremely important to plug in an acceptable power supply to the barrel jack **P11** for the **EVAL-CN0216-ARDZ**. The boards will not work if you try only to power it from the DEBUG_USB or the USER_USB.
+   Extremely important to plug in an acceptable power supply to the barrel jack P11 for the EVAL-CN0216-ARDZ. The boards will not work if you try only to power it from the DEBUG_USB or the USER_USB.
 
 
 -  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)

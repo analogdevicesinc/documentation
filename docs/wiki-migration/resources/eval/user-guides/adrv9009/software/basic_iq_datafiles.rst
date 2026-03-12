@@ -115,7 +115,7 @@ Two Symbols per line - one for TX1 and TX2
 
 .. tip::
 
-   The file is being analyzed and **automatically** scaled to full scale!
+   The file is being analyzed and automatically scaled to full scale!
 
    
    The latest version of the fmcomms IIO scope plug-in supports the TEXTU option valid range with the 'TEXTU' option is:
@@ -217,7 +217,7 @@ Compiling the Sample Application
    
    ::
    
-      root@linaro-ubuntu-desktop:/opt# **gcc do_iq.c -o do_iq -lm**
+      root@linaro-ubuntu-desktop:/opt# gcc do_iq.c -o do_iq -lm
    
 
 
@@ -231,7 +231,7 @@ Usage Examples
    
    ::
    
-      root@linaro-ubuntu-desktop:/opt# **./do_iq -a 1.0 -f 20 cw_fullscale_f20.bin**
+      root@linaro-ubuntu-desktop:/opt# ./do_iq -a 1.0 -f 20 cw_fullscale_f20.bin
       32-bit Word: I : Q
       0x00007FFF : 0 : 32767
       0x278D79BB : 10125 : 31163
@@ -264,7 +264,7 @@ Usage Examples
    ::
    
    
-      root@linaro-ubuntu-desktop:/opt# **./do_iq -a 0.5 -f 20 cw_halfscale_f20.bin**
+      root@linaro-ubuntu-desktop:/opt# ./do_iq -a 0.5 -f 20 cw_halfscale_f20.bin
       32-bit Word: I : Q
       0x00003FFF : 0 : 16383
       0x13C63CDD : 5062 : 15581

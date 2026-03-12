@@ -398,7 +398,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADV7511 Driver depends on **CONFIG_DRM** and **CONFIG_I2C**
+   The ADV7511 Driver depends on CONFIG_DRM and CONFIG_I2C
 
 
 ::

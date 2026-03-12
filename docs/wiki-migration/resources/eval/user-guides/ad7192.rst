@@ -72,11 +72,11 @@ Getting started
 
 ::
 
-     **Option B:** Connect the EVAL-AD7192ASDZ to the EVAL-SDP-CB1Z
+     Option B: Connect the EVAL-AD7192ASDZ to the EVAL-SDP-CB1Z
        * Using the 120 pin connector
          *  Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
    * If using Windows® XP, it may be needed to search for the controller board drivers. Choose to automatically search for the drivers for the controller board if prompted by the operating system.
-   * Launch the ACE plugin from the **Analog Devices** subfolder in the **Programs** Menu.
+   * Launch the ACE plugin from the Analog Devices subfolder in the Programs Menu.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_plugin_open.png
    :align: center

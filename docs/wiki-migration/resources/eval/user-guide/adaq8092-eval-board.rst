@@ -105,7 +105,7 @@ Channel Link Location
 
 .. important::
 
-   **Note:** Without changing other resistor values of the board, then this board is ready for a single ended source that drives the part single-endedly. But if the user uses a differential source, then install 49.9Ω resistors at R1 and R3 for Channel 1 and Channel 2, respectively. These should be implemented to properly balance the inputs when driven differentially. Refer to **Figure 6** and **Figure 7** for the schematic.**Table 2. Differentially driven using the balun**
+   Note: Without changing other resistor values of the board, then this board is ready for a single ended source that drives the part single-endedly. But if the user uses a differential source, then install 49.9Ω resistors at R1 and R3 for Channel 1 and Channel 2, respectively. These should be implemented to properly balance the inputs when driven differentially. Refer to Figure 6 and Figure 7 for the schematic.Table 2. Differentially driven using the balun
 
 ======= ==== ==============
 Channel Link Location
@@ -120,7 +120,7 @@ Channel Link Location
 
 .. important::
 
-   **Note:** When using this configuration, resistor values should also be changed to properly balance the impedance and make the gain approximately equal to 5. For channel 1: R8 & R9 = 200 Ω, and, R14 & R16 = 18.2Ω. For channel 2: R10 & R11 = 200Ω, and, R15 & R17 = 18.2Ω. Refer to **Figure 6** and **Figure 7** for schematic.*
+   Note: When using this configuration, resistor values should also be changed to properly balance the impedance and make the gain approximately equal to 5. For channel 1: R8 & R9 = 200 Ω, and, R14 & R16 = 18.2Ω. For channel 2: R10 & R11 = 200Ω, and, R15 & R17 = 18.2Ω. Refer to Figure 6 and Figure 7 for schematic.*
 
 
 Encode Circuitry

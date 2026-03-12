@@ -3,7 +3,7 @@ EVAL-CN0554-RPIZ Hardware User Guide
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0554-rpiz/index.html
@@ -163,7 +163,7 @@ This brings up the file in the terminal. Scroll down until the line that begins 
 
 .. note::
 
-   **Need to add overlay here since it isn't in Kuiper**
+   Need to add overlay here since it isn't in Kuiper
 
    
    ::
@@ -221,7 +221,7 @@ This demo uses a PyADI-IIO example script. This script will show the single-tone
 
 .. note::
 
-   **Update image, file name, and location**
+   Update image, file name, and location
 
 
    |image9|

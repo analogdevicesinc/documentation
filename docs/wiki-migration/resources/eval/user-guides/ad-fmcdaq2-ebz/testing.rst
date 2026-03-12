@@ -108,8 +108,8 @@ Firstly, make sure all the required steps from the setup explained above are com
 .. important::
 
    
-   -  **Test 1** for FMCDAQ3
-   -  **Test 2** for FMCDAQ2
+   -  Test 1 for FMCDAQ3
+   -  Test 2 for FMCDAQ2
    
 
 

@@ -50,9 +50,9 @@ In this demo, two 48V battery packs will be combined to create a 92V battery pac
 
 ::
 
-     * Make a **Parallel Connection**. Connect 3 batteries in parallel by linking all positive terminals and all negative terminals using the lithium-ion battery nickel strip. Repeat this process to form 13 cells.
-       * After completing the 13 cells, make a **Series Connection** by connecting the positive terminal of one cell to the negative terminal of the next cell. Continue this process until all 13 cells are connected in series.
-   **Insulation and Final Assembly**
+     * Make a Parallel Connection. Connect 3 batteries in parallel by linking all positive terminals and all negative terminals using the lithium-ion battery nickel strip. Repeat this process to form 13 cells.
+       * After completing the 13 cells, make a Series Connection by connecting the positive terminal of one cell to the negative terminal of the next cell. Continue this process until all 13 cells are connected in series.
+   Insulation and Final Assembly
      * Ensure all connections are secure and properly insulated to prevent short circuits.
        * Use heat shrink tubing or electrical tape to cover exposed connections.
        * Place the battery pack in a suitable enclosure for protection and ease of handling.
@@ -249,7 +249,7 @@ Diagnostic
 
 .. note::
 
-   Refer to the **Tabs** section of the :doc:`AD-BMSE2E3W-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-bmse2e3w-sl/software>` for a comprehensive overview of each tab's functions and descriptions.
+   Refer to the Tabs section of the :doc:`AD-BMSE2E3W-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-bmse2e3w-sl/software>` for a comprehensive overview of each tab's functions and descriptions.
 
 
 Help and Support

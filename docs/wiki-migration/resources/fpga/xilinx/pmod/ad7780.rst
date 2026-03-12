@@ -146,7 +146,7 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
 
 
 If programming was successful, you should be seeing messages appear on the terminal window. After programming the AD7780 device, the program will automatically read the value of the analog voltage input and print it via UART.

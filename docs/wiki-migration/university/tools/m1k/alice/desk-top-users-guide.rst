@@ -86,10 +86,10 @@ Manually installing libsmu / pysmu required by the ALICE Desktop Python source
 
 .. important::
 
-   **For all Non-Windows Operating Systems**
+   For all Non-Windows Operating Systems
 
    
-   If you are going to be using the ALICE Desktop software on a computer with an operating system other than Windows you will need to run the program from the Python source code (compatible with either Python 2 or 3). **DO NOT** proceed beyond this point without first installing the pysmu library (and the underlying libsmu package) following the instructions found in the readme file on the :git-libsmu:`Libsmu GitHub Repository <libsmu>`.** The Recommended Method for all non-Windows operating systems is to use Anaconda (Python) and the Conda installation packages as outlined here: :doc:`Conda Packages </wiki-migration/university/tools/conda>`\ \*\*
+   If you are going to be using the ALICE Desktop software on a computer with an operating system other than Windows you will need to run the program from the Python source code (compatible with either Python 2 or 3). DO NOT proceed beyond this point without first installing the pysmu library (and the underlying libsmu package) following the instructions found in the readme file on the :git-libsmu:`Libsmu GitHub Repository <libsmu>`.** The Recommended Method for all non-Windows operating systems is to use Anaconda (Python) and the Conda installation packages as outlined here: :doc:`Conda Packages </wiki-migration/university/tools/conda>`\ \*\*
 
 
 There are Python :git-libsmu:`test examples that can be found here <bindings/python/examples>` to assist in testing and confirming that you have a working version of pysmu installed.

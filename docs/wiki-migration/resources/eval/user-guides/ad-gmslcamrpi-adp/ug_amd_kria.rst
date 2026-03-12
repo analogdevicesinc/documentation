@@ -36,7 +36,7 @@ Hardware changes
 
 .. note::
 
-   Make sure you have all the PoC-related jumpers set to the corresponding **VPOC_x** point (ref. :adi:`datasheet <media/en/technical-documentation/data-sheets/max96724-bak-evk-max96724r-bak-evk.pdf>` p. 15/22) (1 to 4 for the possible serializer inputs to the quad deserializer).
+   Make sure you have all the PoC-related jumpers set to the corresponding VPOC_x point (ref. :adi:`datasheet <media/en/technical-documentation/data-sheets/max96724-bak-evk-max96724r-bak-evk.pdf>` p. 15/22) (1 to 4 for the possible serializer inputs to the quad deserializer).
 
 
 -  Example from the datasheet - J3 for SIOA input:
@@ -85,14 +85,14 @@ System setup
 
 .. note::
 
-   To change the number of cameras that would be used in the setup, you would need to change the default devicetree binary that is located in the boot partition of the SD card to the corresponding number of cameras (between 1 and 2), by overwriting the system.dtb to an one from the corresponding directory. The devicetree binary options are located in the bootfs partiiton (in **nr_cams/1cam or 2cams directory/system.dtb**). The **bootfs** partition can be mounted by using the mount utility: e.g. **mount /dev/mmcblk1p1 /mnt**.
+   To change the number of cameras that would be used in the setup, you would need to change the default devicetree binary that is located in the boot partition of the SD card to the corresponding number of cameras (between 1 and 2), by overwriting the system.dtb to an one from the corresponding directory. The devicetree binary options are located in the bootfs partiiton (in nr_cams/1cam or 2cams directory/system.dtb). The bootfs partition can be mounted by using the mount utility: e.g. mount /dev/mmcblk1p1 /mnt.
 
 
    |image3|
 
 .. note::
 
-   The setup from the attached figure contains the two SWs of the GMSL Deserializer RPi adapter as follows: the **SW1** set to the left side and the **SW3** oriented to the connected flex cable, in the upper part in this case, oriented to the P6 flex cable connector. In addition to the connections from the figure, please make sure that the **Kria KV260 and MAX96724 evaluation kits** are powered up using their corresponding power-related **barrel jack connectors**.
+   The setup from the attached figure contains the two SWs of the GMSL Deserializer RPi adapter as follows: the SW1 set to the left side and the SW3 oriented to the connected flex cable, in the upper part in this case, oriented to the P6 flex cable connector. In addition to the connections from the figure, please make sure that the Kria KV260 and MAX96724 evaluation kits are powered up using their corresponding power-related barrel jack connectors.
 
 
 --------------

@@ -151,7 +151,7 @@ LTspice compatible model files for the ZVN2110A and ZVP2110A are include below:
    .MODEL MN2110b NMOS VTO=0.9 RS=2 KP=0.1 PB=1 LAMBDA=2.6E-3
    .MODEL DN2110a D IS=1E-12 RS=0.37
    .ENDS ZVN2110A
-   **ZVP2110A Spice Model .lib file**
+   ZVP2110A Spice Model .lib file
 
 ::
 
@@ -180,7 +180,7 @@ LTspice compatible model files for the ZVN2110A and ZVP2110A are include below:
    .MODEL Rmod1 RES (TC1=8e-3 TC2=4.2E-5)
    .MODEL Rmod2 RES (TC1=-2e-3 TC2=3e-6)
    .ENDS ZVP2110A
-   **For Further Reading:**
+   For Further Reading:
 
 :adi:`Chopper Stabilized (Auto-Zero) Precision Op Amps (MT-055) <MT-055>`
 

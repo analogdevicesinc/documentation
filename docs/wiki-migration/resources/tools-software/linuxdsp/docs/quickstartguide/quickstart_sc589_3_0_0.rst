@@ -243,14 +243,14 @@ The console output from U-Boot and later on Linux will appear on the USB serial 
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :<code bash>$ sudo minicom </code>
 
 In a separate console launch OpenOCD and connect to the development board
 
 ::
 
-   ;''**Terminal2: OpenOCD**''
+   ;''Terminal2: OpenOCD''
    :<code bash>
 
 $ sdk_usr=/opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/ $ $sdk_usr/bin/openocd -f $sdk_usr/share/openocd/scripts/interface/<ICE>.cfg -f $sdk_usr/share/openocd/scripts/board/adspsc589_ezbrd.cfg</code> Where <ICE> should be replaced with ice1000 or ice2000 depending on your hardware. When successful you should see a message similar to the console output below
@@ -276,7 +276,7 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
 
 ::
 
-   ;''**Terminal3: GDB (sc589-ezkit)**''
+   ;''Terminal3: GDB (sc589-ezkit)''
    : <code bash>
 
 $ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc589-ezkit.elf ... Reading symbols from u-boot-spl-sc589-ezkit.elf...done. (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9f2c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089f2c Loading section .dtb.init.rodata, size 0x12c0 lma 0x2008b0d0 Loading section .data, size 0x514 lma 0x2008c390 Loading section .u_boot_list, size 0xa50 lma 0x2008c8a4 Start address 0x20080000, load size 53992 Transfer rate: 30 KB/sec, 7713 bytes/write. (gdb) c Continuing.
@@ -293,7 +293,7 @@ Program received signal SIGINT, Interrupt. </code>
 
 ::
 
-   ;''**Terminal3: GDB (sc589-mini)**''
+   ;''Terminal3: GDB (sc589-mini)''
    : <code bash>
 
 $ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc589-mini.elf ... Reading symbols from u-boot-spl-sc589-mini.elf...done. (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9f2c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089f2c Loading section .dtb.init.rodata, size 0x12c0 lma 0x2008b0d0 Loading section .data, size 0x514 lma 0x2008c390 Loading section .u_boot_list, size 0xa50 lma 0x2008c8a4 Start address 0x20080000, load size 53992 Transfer rate: 30 KB/sec, 7713 bytes/write. (gdb) c Continuing.
@@ -312,7 +312,7 @@ You will see a message on Terminal 1 running minicom, informing you that you can
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :<code bash>U-Boot SPL 2020.10 (Mar 16 2023 - 13:07:24 +0000)
 
 ADI Boot Mode: 0x0 (JTAG/BOOTROM) SPL execution has completed. Please load U-Boot Proper via JTAG </code>
@@ -321,7 +321,7 @@ Now, load U-Boot Proper into RAM.
 
 ::
 
-   ;''**Terminal3: GDB (sc589-ezkit)**''
+   ;''Terminal3: GDB (sc589-ezkit)''
    :
 
 .. code:: bash
@@ -347,7 +347,7 @@ Now, load U-Boot Proper into RAM.
 
 ::
 
-   ;''**Terminal3: GDB (sc589-mini)**''
+   ;''Terminal3: GDB (sc589-mini)''
    :
 
 .. code:: bash
@@ -375,7 +375,7 @@ At this point U-Boot will now be running in RAM on your target board. You should
 
 ::
 
-   ;''**Terminal1: minicom (sc589-ezkit)**''
+   ;''Terminal1: minicom (sc589-ezkit)''
    :  <code bash>
 
 U-Boot 2020.10 (Mar 16 2023 - 13:07:24 +0000)
@@ -384,7 +384,7 @@ CPU: ADSP ADSP-SC589-0.1 (spi flash boot) Detected Revision: 1.1 Model: ADI sc58
 
 ::
 
-   ;''**Terminal1: minicom (sc589-mini)**''
+   ;''Terminal1: minicom (sc589-mini)''
    :  <code bash>
 
 U-Boot 2020.10 (Mar 16 2023 - 13:07:24 +0000)
@@ -398,7 +398,7 @@ In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot 
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :
 
 .. code:: bash

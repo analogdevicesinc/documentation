@@ -5,7 +5,7 @@ The **ADuCM3029_demo_esp8266** is a Wi-Fi demo project for the **EVAL-ADICUP3029
 
 .. important::
 
-   This documentation is to be used with the source code hosted on **Github**. The link is available in the **Obtaining the Source Code** section.
+   This documentation is to be used with the source code hosted on Github. The link is available in the Obtaining the Source Code section.
 
 
 General Description/Overview

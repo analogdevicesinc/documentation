@@ -16,13 +16,13 @@ To set up the environment for your sc5xx board:
 
 .. note::
 
-   **$ source setup-environment -m <MACHINE> -b <BUILDDIR>**
+   $ source setup-environment -m <MACHINE> -b <BUILDDIR>
 
    
    ::
    
       ;options:
-      ;**-m <MACHINE>**
+      ;-m <MACHINE>
       :if you setup the MACHINE, the local.conf would be automatically set to the default template,
    
    so make sure to save your own changes in local.conf once you pass this option to the script Supported MACHINE:
@@ -36,7 +36,7 @@ To set up the environment for your sc5xx board:
    
    ::
    
-      ;**-b <BUILDDIR> **
+      ;-b <BUILDDIR> 
       :The default BUILDDIR is "build", you could pass another dir to the script
    
    If no option passed to the script, the YOCTO would reuse the build/ dir as your default build environment.
@@ -53,7 +53,7 @@ To build your components:
 
 ::
 
-   ;**''TARGET'':**
+   ;''TARGET'':
    :u-boot-adi
    :linux-adi
    :adsp-sc5xx-ramdisk

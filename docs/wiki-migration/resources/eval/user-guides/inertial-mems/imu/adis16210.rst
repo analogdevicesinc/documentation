@@ -6,7 +6,7 @@ OVERVIEW
 
 .. note::
 
-   UPDATE NOTICE: This Wiki Guide covers the use of evaluation tools (ADIS16210/PCBZ and EVAL-ADISZ) that are no longer available for purchase, but it remains online to support those who already have these tools. For all new :adi:`adis16210` users, please go to the :adi:`ADIS16210's product page <adis16210>`, then click on :adi:`Evaluation Kits <en/products/mems/accelerometers-special-purpose/adis16210.html#product-evaluationkit>` and then click on the **See All** tab to review a listing of the most current :adi:`adis16210` evaluation tools. Thank you!
+   UPDATE NOTICE: This Wiki Guide covers the use of evaluation tools (ADIS16210/PCBZ and EVAL-ADISZ) that are no longer available for purchase, but it remains online to support those who already have these tools. For all new :adi:`adis16210` users, please go to the :adi:`ADIS16210's product page <adis16210>`, then click on :adi:`Evaluation Kits <en/products/mems/accelerometers-special-purpose/adis16210.html#product-evaluationkit>` and then click on the See All tab to review a listing of the most current :adi:`adis16210` evaluation tools. Thank you!
 
 
 The :adi:`ADIS16210` iSensor® is a digital inclinometer system that provides precise measurements for both pitch and roll angles over a full orientation range of ±180°. It combines a MEMS tri-axial acceleration sensor with signal processing, addressable user registers for data collection/programming, and a SPI-compatible serial interface. The electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:

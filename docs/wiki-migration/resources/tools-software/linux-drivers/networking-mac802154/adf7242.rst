@@ -242,7 +242,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADF7242 Driver depends on **CONFIG_SPI** and **CONFIG_IEEE802154**
+   The ADF7242 Driver depends on CONFIG_SPI and CONFIG_IEEE802154
 
 
 ::

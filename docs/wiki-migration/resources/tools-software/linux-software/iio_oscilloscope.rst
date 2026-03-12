@@ -126,9 +126,9 @@ The application can be used to connect to another platform that has a connected 
    
    ::
    
-      > **export OSC_REMOTE=IP address of the remote platform** (old)
-      > **export IIOD_REMOTE=IP address of the remote platform** (new)
-      > **osc**
+      > export OSC_REMOTE=IP address of the remote platform (old)
+      > export IIOD_REMOTE=IP address of the remote platform (new)
+      > osc
    
 
 

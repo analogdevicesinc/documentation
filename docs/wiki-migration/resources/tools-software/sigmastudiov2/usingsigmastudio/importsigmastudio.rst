@@ -5,7 +5,7 @@ Import SigmaStudio Projects
 
 .. important::
 
-   It is recommended to apply **SigmaStudio+ 2.2.0.2 update** before using the 'Import SigmaStudio Project' feature. This update can be applied only if SigmaStudio+ 2.2.0 is installed. Launch 'Update Manager' from the 'Help' menu to apply this update
+   It is recommended to apply SigmaStudio+ 2.2.0.2 update before using the 'Import SigmaStudio Project' feature. This update can be applied only if SigmaStudio+ 2.2.0 is installed. Launch 'Update Manager' from the 'Help' menu to apply this update
 
 
 This feature is used to convert a SigmaStudio project into a SigmaStudio+ project. The SigmaStudio project is opened in SigmaStudio and system files are generated. These system files are then imported in SigmaStudio+ using "Import SigmaStudio Projects" from the 'Action' menu. SigmaStudio+ will reconstruct the SigmaStudio project in SigmaStudio+ based on the information present in the imported system files.

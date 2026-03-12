@@ -26,16 +26,16 @@ Prerequisites
    
    ::
    
-      rgetz@brain:~/github/temp/plutosdr-fw$ **find /opt/Xilinx/ -name vivado -executable -type f | xargs file | grep ELF**
+      rgetz@brain:~/github/temp/plutosdr-fw$ find /opt/Xilinx/ -name vivado -executable -type f | xargs file | grep ELF
       /opt/Xilinx/Vivado/2021.2/bin/unwrapped/lnx64.o/vivado: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.18, not stripped
    
    If it reports as a 32-bit binary (which the above did not), and you are running on a 64-bit system, do:
    
    ::
    
-      michael@HAL9000:~/devel$ **dpkg --add-architecture i386**
-      michael@HAL9000:~/devel$ **apt-get update**
-      michael@HAL9000:~/devel$ **sudo apt-get install libc6:i386 libstdc++6:i386**
+      michael@HAL9000:~/devel$ dpkg --add-architecture i386
+      michael@HAL9000:~/devel$ apt-get update
+      michael@HAL9000:~/devel$ sudo apt-get install libc6:i386 libstdc++6:i386
    
 
 
@@ -48,7 +48,7 @@ There are a few other tools that are necessary in order to build your own Firmwa
    
    ::
    
-      michael@HAL9000:~/devel$ **sudo apt-get install git build-essential ccache device-tree-compiler dfu-util fakeroot help2man libncurses5-dev libssl1.0-dev mtools rsync u-boot-tools bc python cpio zip unzip file wget**
+      michael@HAL9000:~/devel$ sudo apt-get install git build-essential ccache device-tree-compiler dfu-util fakeroot help2man libncurses5-dev libssl1.0-dev mtools rsync u-boot-tools bc python cpio zip unzip file wget
    
 
 
@@ -69,11 +69,11 @@ Starting the build process is just a matter of typing ``make`` within the firmwa
    
    ::
    
-      michael@HAL9000:~/devel$ **cd plutosdr-fw** or **m2k-fw**
-      michael@HAL9000:~/devel/plutosdr-fw$ **export CROSS_COMPILE=arm-linux-gnueabihf-**
-      michael@HAL9000:~/devel/plutosdr-fw$ **export PATH=$PATH:/opt/Xilinx/Vitis/2021.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin**
-      michael@HAL9000:~/devel/plutosdr-fw$ **export VIVADO_SETTINGS=/opt/Xilinx/Vivado/2021.2/settings64.sh**
-      michael@HAL9000:~/devel/plutosdr-fw$ **make**
+      michael@HAL9000:~/devel$ cd plutosdr-fw or m2k-fw
+      michael@HAL9000:~/devel/plutosdr-fw$ export CROSS_COMPILE=arm-linux-gnueabihf-
+      michael@HAL9000:~/devel/plutosdr-fw$ export PATH=$PATH:/opt/Xilinx/Vitis/2021.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin
+      michael@HAL9000:~/devel/plutosdr-fw$ export VIVADO_SETTINGS=/opt/Xilinx/Vivado/2021.2/settings64.sh
+      michael@HAL9000:~/devel/plutosdr-fw$ make
    
 
 
@@ -91,7 +91,7 @@ The initial build takes some time to complete, and also requires an INTERNET con
          
          ::
          
-            michael@HAL9000:~/devel/plutosdr-fw$ **export SWT_GTK3=0**
+            michael@HAL9000:~/devel/plutosdr-fw$ export SWT_GTK3=0
          
 
    
@@ -146,7 +146,7 @@ There is a script in the `plutosdr_scripts <https://github.com/plutosdr_scripts>
    
    ::
    
-      rgetz@brain:~/github/plutosdr-fw$ **sudo ../plutosdr_scripts/pluto_ramboot**
+      rgetz@brain:~/github/plutosdr-fw$ sudo ../plutosdr_scripts/pluto_ramboot
       Found Pluto SDR at IP 192.168.3.1, running kernel:
           Linux pluto 5.4.0-00535-g9c04de11ae53 #1 SMP PREEMPT Fri Aug 20 13:01:03 CEST 2021 armv7l GNU/Linux
       Found Pluto SDR in dfu mode and downloading ./build/pluto.dfu

@@ -52,7 +52,7 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
 
 .. note::
 
-   **platform_data: Platform data specific to the ADP1650 device.** Includes feature selections and default initialization.
+   platform_data: Platform data specific to the ADP1650 device. Includes feature selections and default initialization.
 
    
    Please see `include/linux/i2c/adp1650.h <http://blackfin.uclinux.org/git/?p=linux-kernel;a=blob_plain;f=include/linux/i2c/adp1650.h;hb=HEAD>`_ for details.
@@ -166,10 +166,10 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        [*] LED Support  --->
            --- LED Support
            [*]   LED Class Support
-               ** LED drivers **
+                LED drivers 
 
            <--snip-->
-           **<*>   LED Support for ADP1650 I2C chips**
+           <*>   LED Support for ADP1650 I2C chips
            <--snip-->
 
 Driver testing
@@ -184,8 +184,8 @@ For more information read `linux/Documentaion/leds-class.txt <https://git.kernel
 
 ::
 
-   ; **brightness** : get/set LED brightness (an integer between 0 and 255)
-   ; **max_brightness** : the maximum brightness value.
+   ; brightness : get/set LED brightness (an integer between 0 and 255)
+   ; max_brightness : the maximum brightness value.
 
 Driver specific brightness interpretation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -239,7 +239,7 @@ Example LED usage
 
    root:/> cd sys/class/leds/adp1650/
 
-   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> **ls -l**
+   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> ls -l
    -rw-r--r--    1 root     root          4096 Jan  5 08:42 brightness
    lrwxrwxrwx    1 root     root             0 Jan  5 08:23 device -> ../../../0-0030
    -r--r--r--    1 root     root          4096 Jan  5 08:23 max_brightness
@@ -252,7 +252,7 @@ Enable TORCH/Assist Light (Intensity 100mA)
 
 .. hint::
 
-   A subsequent assert of **STROBE** will trigger the FLASH
+   A subsequent assert of STROBE will trigger the FLASH
 
 
 .. container:: box bggreen
@@ -262,7 +262,7 @@ Enable TORCH/Assist Light (Intensity 100mA)
    
    ::
    
-      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> **echo 4 > brightness**
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> echo 4 > brightness
    
 
 
@@ -271,7 +271,7 @@ Prepare TORCH/Assist Light for an GPIO1 enable trigger (Intensity 100mA)
 
 .. hint::
 
-   A subsequent assert of **STROBE** will trigger the FLASH
+   A subsequent assert of STROBE will trigger the FLASH
 
 
 .. container:: box bggreen
@@ -281,7 +281,7 @@ Prepare TORCH/Assist Light for an GPIO1 enable trigger (Intensity 100mA)
    
    ::
    
-      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> **echo 12 > brightness**
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> echo 12 > brightness
    
 
 
@@ -295,7 +295,7 @@ Initiate FLASH (Intensity set by I_FL)
    
    ::
    
-      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> **echo 254 > brightness**
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> echo 254 > brightness
    
 
 
@@ -309,7 +309,7 @@ Prepare FLASH for an STROBE triggered enable (Intensity set by I_FL)
    
    ::
    
-      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> **echo 255 > brightness**
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> echo 255 > brightness
    
 
 
@@ -323,7 +323,7 @@ Disable all LED activity
    
    ::
    
-      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> **echo 0 > brightness**
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> echo 0 > brightness
    
 
 

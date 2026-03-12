@@ -16,7 +16,7 @@ There are enclosures made for the EVAL-ADICUP360 and attachable daughter boards.
 
 .. important::
 
-   These 3D printer STL files were made by community contributors as additional collateral to the ADICUP360 ecosystem. Analog Devices is **NOT** responsible for 3D files that print incorrectly or are not compatible with your particular printer. It is up to the user to make sure the enclosures can be printed on their machines.
+   These 3D printer STL files were made by community contributors as additional collateral to the ADICUP360 ecosystem. Analog Devices is NOT responsible for 3D files that print incorrectly or are not compatible with your particular printer. It is up to the user to make sure the enclosures can be printed on their machines.
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------+--------------------------+-----------------------------------------------------------+----------+

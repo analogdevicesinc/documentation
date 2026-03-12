@@ -178,7 +178,7 @@ Software Setup
    
    .. note::
 
-      ACE Plugin currently supporting only **Nprime = 16** and capture board **ADS7-V2EBZ**.
+      ACE Plugin currently supporting only Nprime = 16 and capture board ADS7-V2EBZ.
 
    
    
@@ -382,12 +382,12 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 
    .. note::
 
-      Note: ACE will automatically load the default NSR mode configuration and can skip to step 6 to proceed to **Analysis** tab to capture data.
+      Note: ACE will automatically load the default NSR mode configuration and can skip to step 6 to proceed to Analysis tab to capture data.
 
 
    
 
-   -  Click **Apply** at **AD6674 Configuration**, and then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.
+   -  Click Apply at AD6674 Configuration, and then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the Read All button.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_read_all.png
       :align: center
@@ -398,7 +398,7 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
       \ *Figure 18. Read All Button*\
 
 
-   -  Issue a **Data Path Reset** to the AD6674 by clicking its checkbox and then **Apply Changes**. The data path reset bit will automatically self-clear.
+   -  Issue a Data Path Reset to the AD6674 by clicking its checkbox and then Apply Changes. The data path reset bit will automatically self-clear.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_datapath_reset.png
       :align: center
@@ -409,7 +409,7 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
       \ *Figure 19. Data Path Reset*\
 
 
-   -  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.
+   -  If the PLL Locked indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_link_control_powerdown.png
       :align: center
@@ -420,7 +420,7 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
       \ *Figure 20. PLL Lock, Link Power Down*\
 
 
-   -  Enable the **Link Control** again and **Apply Changes**.
+   -  Enable the Link Control again and Apply Changes.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_link_control_active.png
       :align: center
@@ -431,7 +431,7 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
       \ *Figure 21. PLL Lock, Link Enable*\
 
 
-   -  Click **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.
+   -  Click Proceed to Analysis. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on FFT and Run Once to capture once.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png
       :align: center
@@ -451,7 +451,7 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 
    
 
-   -  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75 MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at the desired level. NSR imposes a ~3dB loss in the signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -4.0 dBFS in the FFT.
+   -  Channel A and Channel B can be selected individually to display their FFTs. A successful capture is shown below, with a 75 MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at the desired level. NSR imposes a ~3dB loss in the signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -4.0 dBFS in the FFT.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_results.png
       :align: center
@@ -462,7 +462,7 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
       \ *Figure 23. Example Data Capture to Channel B*\
 
 
-   -  To save the FFT plot, click on **Export** button at **Analysis Results** tab and save it to a location of choice.
+   -  To save the FFT plot, click on Export button at Analysis Results tab and save it to a location of choice.
 
 
 
@@ -578,7 +578,7 @@ Sample Configuration 2: VDR Mode
 
    
 
-   -  In the chip view, set **Tuning Word** to **0** and click **Apply** at **AD6674 Configuration**. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.
+   -  In the chip view, set Tuning Word to 0 and click Apply at AD6674 Configuration. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the Read All button.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_read_all.png
       :align: center
@@ -589,7 +589,7 @@ Sample Configuration 2: VDR Mode
       \ *Figure 32. Read All Button*\
 
 
-   -  Issue a **Data Path Reset** to the AD6674 by clicking its checkbox and then **Apply Changes**. The data path reset bit will automatically self-clear.
+   -  Issue a Data Path Reset to the AD6674 by clicking its checkbox and then Apply Changes. The data path reset bit will automatically self-clear.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_datapath_reset.png
       :align: center
@@ -600,7 +600,7 @@ Sample Configuration 2: VDR Mode
       \ *Figure 33. Data Path Reset*\
 
 
-   -  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.
+   -  If the PLL Locked indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_link_control_powerdown.png
       :align: center
@@ -611,7 +611,7 @@ Sample Configuration 2: VDR Mode
       \ *Figure 34. PLL Lock, Link Power Down*\
 
 
-   -  Enable the **Link Control** again and **Apply Changes**.
+   -  Enable the Link Control again and Apply Changes.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_link_control_active.png
       :align: center
@@ -622,7 +622,7 @@ Sample Configuration 2: VDR Mode
       \ *Figure 35. PLL Lock, Link Enable*\
 
 
-   -  Click **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.
+   -  Click Proceed to Analysis. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on FFT and Run Once to capture once.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png
       :align: center
@@ -642,7 +642,7 @@ Sample Configuration 2: VDR Mode
 
    
 
-   -  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS.
+   -  Channel A and Channel B can be selected individually to display their FFTs. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_results.png
       :align: center
@@ -653,7 +653,7 @@ Sample Configuration 2: VDR Mode
       \ *Figure 37. Example Data Capture to Channel A and B*\
 
 
-   -  To save the FFT plot, click on **Export** button at **Analysis Results** tab and save it to a location of choice.
+   -  To save the FFT plot, click on Export button at Analysis Results tab and save it to a location of choice.
 
 
 
@@ -722,7 +722,7 @@ Sample Configuration 2: VDR Mode
       \ *Figure 42. AD6674-750 FFT with VDR Enabled*\
 
 
-   -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.) VDR imposes no loss on the input signal so a -1.0 dBFS input signal will show as -1.0 dBFS in the FFT in Visual Analog.
+   -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the Fund Power reading in the left panel of the VisualAnalog FFT window.) VDR imposes no loss on the input signal so a -1.0 dBFS input signal will show as -1.0 dBFS in the FFT in Visual Analog.
    -   To save the FFT plot do the following
 
       -  Click on the Float Form button in the FFT window
@@ -751,7 +751,7 @@ Sample Configuration 2.1: VDR Mode - Use Control Bits as VDR Punish Bits and the
 
 .. tip::
 
-   Logic Analyzer **not supported** on AD6674 ACE Plugin. *Converter Control bit 0, 1, and 2 (0x559 and 0x55A)* and *Number of control bits per sample (0x58F)* can be configured thru ACE by accessing Chip's Memory Map. For **Logic Analyzer**, Visual Analog can be used for data capture.
+   Logic Analyzer not supported on AD6674 ACE Plugin. *Converter Control bit 0, 1, and 2 (0x559 and 0x55A)* and *Number of control bits per sample (0x58F)* can be configured thru ACE by accessing Chip's Memory Map. For Logic Analyzer, Visual Analog can be used for data capture.
 
 
 
@@ -868,12 +868,12 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
    -  In the chip view, set the following additional configuration to DDC 0 and DDC 1 by selecting the dropdown:
 
-      -  NCO Frequency: **93.75 MHz**
-      -  IF Mode: **Variable IF Mode**
-      -  Gain Select: **6 dB**
-      -  Mixer Select: **Real Mixer**
+      -  NCO Frequency: 93.75 MHz
+      -  IF Mode: Variable IF Mode
+      -  Gain Select: 6 dB
+      -  Mixer Select: Real Mixer
 
-   -  Click **Apply** at **AD6674 Configuration**. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.
+   -  Click Apply at AD6674 Configuration. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the Read All button.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_read_all.png
       :align: center
@@ -884,7 +884,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
       \ *Figure 53. Read All Button*\
 
 
-   -  After applying DDC settings, set **DDC Soft Reset** to **DDC Held in Reset** and **Apply Changes**, then return it back to **Normal Operation** and **Apply Changes**.
+   -  After applying DDC settings, set DDC Soft Reset to DDC Held in Reset and Apply Changes, then return it back to Normal Operation and Apply Changes.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_ddc_softreset.png
       :align: center
@@ -895,7 +895,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
       \ *Figure 54. DDC Soft Reset*\
 
 
-   -  Issue a **Data Path Reset** to the AD6674 by clicking its checkbox and then **Apply Changes**. The data path reset bit will automatically self-clear.
+   -  Issue a Data Path Reset to the AD6674 by clicking its checkbox and then Apply Changes. The data path reset bit will automatically self-clear.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_datapath_reset.png
       :align: center
@@ -906,7 +906,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
       \ *Figure 55. Data Path Reset*\
 
 
-   -  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.
+   -  If the PLL Locked indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_link_control_powerdown.png
       :align: center
@@ -917,7 +917,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
       \ *Figure 56. PLL Lock, Link Power Down*\
 
 
-   -  Enable the **Link Control** again and **Apply Changes**.
+   -  Enable the Link Control again and Apply Changes.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_link_control_active.png
       :align: center
@@ -928,7 +928,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
       \ *Figure 57. PLL Lock, Link Enable*\
 
 
-   -  Click **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.
+   -  Click Proceed to Analysis. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on FFT and Run Once to capture once.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png
       :align: center
@@ -948,7 +948,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
    
 
-   -  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS.
+   -  Channel A and Channel B can be selected individually to display their FFTs. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_results.png
       :align: center
@@ -959,7 +959,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
       \ *Figure 59. Example Data Capture to Channel A and B*\
 
 
-   -  To save the FFT plot, click on **Export** button at **Analysis Results** tab and save it to a location of choice.
+   -  To save the FFT plot, click on Export button at Analysis Results tab and save it to a location of choice.
 
 
 
@@ -1035,7 +1035,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
       \ *Figure 63. AD6674-750 FFT with 2 DDCs in Real Mode with Dec2 Enabled*\
 
 
-   -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.) Real DDC operation imposes ~0.7 dB loss on the input signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -1.7 dBFS in the FFT in Visual Analog.
+   -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the Fund Power reading in the left panel of the VisualAnalog FFT window.) Real DDC operation imposes ~0.7 dB loss on the input signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -1.7 dBFS in the FFT in Visual Analog.
    -   To save the FFT plot do the following
 
       -  Click on the Float Form button in the FFT window

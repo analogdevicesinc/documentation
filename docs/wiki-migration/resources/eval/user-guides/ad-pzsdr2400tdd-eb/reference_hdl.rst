@@ -2945,7 +2945,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device5> **ls -l**
+      root:/sys/bus/iio/devices/iio:device5> ls -l
       -rw-rw-rw- 1 root root 4096 Jan  1  1970 burst_count
       -rw-rw-rw- 1 root root 4096 Jan  1  1970 dev
       -rw-rw-rw- 1 root root 4096 Jan  1  1970 dma_gateing_mode
@@ -2975,7 +2975,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device5> **cat name**
+      root:/sys/bus/iio/devices/iio:device5> cat name
       cf-ad9361-tdd-core-lpc
    
 
@@ -2990,7 +2990,7 @@ Enable the TDD controller
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device5> **echo 1 > enable**
+      root:/sys/bus/iio/devices/iio:device5> echo 1 > enable
    
 
 
@@ -3004,7 +3004,7 @@ Choose the desired configuration profile
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device5> **echo 1 > profile_config**
+      root:/sys/bus/iio/devices/iio:device5> echo 1 > profile_config
    
 
 
@@ -3018,9 +3018,9 @@ Configure the DMA gate
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device5> **cat dma_gateing_mode_available**
+      root:/sys/bus/iio/devices/iio:device5> cat dma_gateing_mode_available
       none rx_only tx_onlx rx_tx
-      root:/sys/bus/iio/devices/iio:device5> **echo none > dma_gateing_mode**
+      root:/sys/bus/iio/devices/iio:device5> echo none > dma_gateing_mode
    
 
 
@@ -3034,9 +3034,9 @@ Configure the RX/TX mode
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device5> **cat enable_mode_available**
+      root:/sys/bus/iio/devices/iio:device5> cat enable_mode_available
       rx_tx rx_only tx_onlx
-      root:/sys/bus/iio/devices/iio:device5> **echo rx_tx > enable_mode**
+      root:/sys/bus/iio/devices/iio:device5> echo rx_tx > enable_mode
    
 
 

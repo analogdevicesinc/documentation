@@ -20,7 +20,7 @@ Download MSYS2 from here: `MSYS2 Download <https://msys2.github.io>`_ Follow the
 
 ::
 
-   **pacman -Syu**
+   pacman -Syu
 
 When it's done, you need to install a couple of packages (64-bit or 32-bit) to be able to be build Scopy:
 
@@ -28,13 +28,13 @@ When it's done, you need to install a couple of packages (64-bit or 32-bit) to b
 
 ::
 
-   **pacman -Syu --needed git tar cmake mingw-w64-x86_64-cmake mingw-w64-x86_64-make mingw-w64-x86_64-gcc mingw-w64-x86_64-ninja mingw-w64-x86_64-gdb**
+   pacman -Syu --needed git tar cmake mingw-w64-x86_64-cmake mingw-w64-x86_64-make mingw-w64-x86_64-gcc mingw-w64-x86_64-ninja mingw-w64-x86_64-gdb
 
 **32-bit**
 
 ::
 
-   **pacman -Syu --needed git tar cmake mingw-w64-i686-cmake mingw-w64-i686-make mingw-w64-i686-gcc mingw-w64-i686-ninja mingw-w64-i686-gdb**
+   pacman -Syu --needed git tar cmake mingw-w64-i686-cmake mingw-w64-i686-make mingw-w64-i686-gcc mingw-w64-i686-ninja mingw-w64-i686-gdb
 
 Building Scopy
 --------------
@@ -85,7 +85,7 @@ Then, let's configure the build:
 
 ::
 
-   **cmake -GNinja $SCOPY_CMAKE_OPTS $CMAKE_OPTS ../**
+   cmake -GNinja $SCOPY_CMAKE_OPTS $CMAKE_OPTS ../
 
 If everything goes well, it should say "Configuring done" and "Generating done".
 
@@ -93,7 +93,7 @@ To build the project:
 
 ::
 
-   **ninja**
+   ninja
 
 This can take as long as 10 minutes or more, depending on your CPU.
 

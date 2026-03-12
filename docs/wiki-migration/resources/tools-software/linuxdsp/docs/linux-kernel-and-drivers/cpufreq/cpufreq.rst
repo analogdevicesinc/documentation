@@ -37,7 +37,7 @@ Run "**bitbake linux-adi -c menuconfig**" and configure the kernel as follows:
            <*>   'userspace' governor for userspace frequency scaling
            < >   'ondemand' cpufreq policy governor
            < >   'conservative' cpufreq governor
-                 ** CPU frequency scaling drivers **
+                  CPU frequency scaling drivers 
            < >   Generic DT based cpufreq driver
            [*]   SC58X CPUFreq support
 

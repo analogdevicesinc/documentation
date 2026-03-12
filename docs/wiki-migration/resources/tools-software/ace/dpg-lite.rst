@@ -5,7 +5,7 @@ DPG Lite is used to download data to supported HS-DAC evaluation boards. Refer t
 
 .. important::
 
-   \ **Known Issue:** ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
+   \ Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
 
 
 Supported Evaluation Boards
@@ -224,7 +224,6 @@ The Noise Generator generates a vector with pseudo-random noise, by a variety of
 Advanced Vector Generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 Advanced Vector Generator
 =========================
 
@@ -277,7 +276,7 @@ When the vector is generated, the signal will be scaled such that the peak of th
 
 .. hint::
 
-   \ **Note:** Some DACs have a digital and/or analog backoff which is independent of this function. This vector backoff is applied before any backoff that the DAC may perform.
+   \ Note: Some DACs have a digital and/or analog backoff which is independent of this function. This vector backoff is applied before any backoff that the DAC may perform.
 
 
 Generating the Vector
@@ -329,7 +328,7 @@ Multiple carrier types can be combined in a single vector. For example, one vect
 
 .. hint::
 
-   \ **Note:** The vectors created with this tool are spectrally accurate. However, in most cases they are not complete implementations of a given standard, and thus may not demodulate properly when received by a standards-compliant receiver or test equipment. They are provided as a way to quickly evaluate a signal chain's analog performance in a lab environment.
+   \ Note: The vectors created with this tool are spectrally accurate. However, in most cases they are not complete implementations of a given standard, and thus may not demodulate properly when received by a standards-compliant receiver or test equipment. They are provided as a way to quickly evaluate a signal chain's analog performance in a lab environment.
 
 
 Adding Carriers
@@ -372,7 +371,7 @@ When the vector is generated, the signal will be scaled such that the peak of th
 
 .. hint::
 
-   \ **Note:** Some DACs have a digital and/or analog backoff which is independent of this function. This digital backoff is applied before any backoff that the DAC may perform.
+   \ Note: Some DACs have a digital and/or analog backoff which is independent of this function. This digital backoff is applied before any backoff that the DAC may perform.
 
 
 Generating the Vector
@@ -511,7 +510,6 @@ Payload Graph
 """""""""""""
 
 This graph provides a visual representation of each frame's payload. Payloads can be added by clicking and dragging within the graph. Once a payload has been added, it can be removed by right-clicking on the payload and selecting Delete from the menu. To edit a payload, right-click the payload and select Properties. From the Payload Properties window, the Source, Modulation, and Power Level can be adjusted.
-
 
 
 Graphing Vectors

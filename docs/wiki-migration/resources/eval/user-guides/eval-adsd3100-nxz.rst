@@ -136,11 +136,11 @@ Terms
 
 ::
 
-   ; **FOI** : Field of Illumination
-   ; **FOV** : Field of View
-   ; **FPS** : Frames per Second
-   ; **SOM** : System On Module
-   ; **VCSEL** : Vertical-Cavity Surface-Emitting Laser
+   ; FOI : Field of Illumination
+   ; FOV : Field of View
+   ; FPS : Frames per Second
+   ; SOM : System On Module
+   ; VCSEL : Vertical-Cavity Surface-Emitting Laser
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adsd3100_noenc.png
    :width: 200px

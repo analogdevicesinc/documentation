@@ -139,7 +139,7 @@ Messages
             Importing environment from SD ...
             Running uenvcmd ...
             Copying Linux from SD to RAM...
-            ** No boot file defined **
+             No boot file defined 
             SF: Detected n25q512a with page size 512 Bytes, erase size 128 KiB, total 128 MiB
             device 0 offset 0x2000000, size 0x20000
             SF: 131072 bytes @ 0x2000000 Read: OK
@@ -841,7 +841,7 @@ Make sure all devices are present
    
    ::
    
-      root@analog:~# **iio_info | grep iio:device**
+      root@analog:~# iio_info | grep iio:device
               iio:device0: ams
               iio:device1: hmc7044-car
               iio:device2: adm1177
@@ -867,7 +867,7 @@ Check clock chip lock status (SoM)
    
    ::
    
-      root@analog:~# **iio_attr -q -D hmc7044 status**
+      root@analog:~# iio_attr -q -D hmc7044 status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 122880000 Hz
@@ -895,7 +895,7 @@ Check clock chip lock status (Carrier)
    
    ::
    
-      root@analog:~# **iio_attr -q -D hmc7044-car status**
+      root@analog:~# iio_attr -q -D hmc7044-car status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN3 @ 19200000 Hz
@@ -922,7 +922,7 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
    
    ::
    
-      root@analog:~# **TERM=vt100 jesd_status -s**
+      root@analog:~# TERM=vt100 jesd_status -s
    
    
         (DEVICES) Found 3 JESD204 Link Layer peripherals

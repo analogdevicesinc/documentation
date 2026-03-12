@@ -109,7 +109,7 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the software to the default directory path **C:\\Program Files (x86)\\Analog Devices\\ADV Register Control 7.0\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the software to the default directory path C:\\Program Files (x86)\\Analog Devices\\ADV Register Control 7.0\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0263/1.png

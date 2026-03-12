@@ -47,7 +47,7 @@ When the vector is generated, the signal will be scaled such that the peak of th
 
 .. hint::
 
-   \ **Note:** Some DACs have a digital and/or analog backoff which is independent of this function. This vector backoff is applied before any backoff that the DAC may perform.
+   \ Note: Some DACs have a digital and/or analog backoff which is independent of this function. This vector backoff is applied before any backoff that the DAC may perform.
 
 
 Generating the Vector
@@ -99,7 +99,7 @@ Multiple carrier types can be combined in a single vector. For example, one vect
 
 .. hint::
 
-   \ **Note:** The vectors created with this tool are spectrally accurate. However, in most cases they are not complete implementations of a given standard, and thus may not demodulate properly when received by a standards-compliant receiver or test equipment. They are provided as a way to quickly evaluate a signal chain's analog performance in a lab environment.
+   \ Note: The vectors created with this tool are spectrally accurate. However, in most cases they are not complete implementations of a given standard, and thus may not demodulate properly when received by a standards-compliant receiver or test equipment. They are provided as a way to quickly evaluate a signal chain's analog performance in a lab environment.
 
 
 Adding Carriers
@@ -142,7 +142,7 @@ When the vector is generated, the signal will be scaled such that the peak of th
 
 .. hint::
 
-   \ **Note:** Some DACs have a digital and/or analog backoff which is independent of this function. This digital backoff is applied before any backoff that the DAC may perform.
+   \ Note: Some DACs have a digital and/or analog backoff which is independent of this function. This digital backoff is applied before any backoff that the DAC may perform.
 
 
 Generating the Vector

@@ -147,7 +147,7 @@ Once rebuilt, the file twilcd_userspace_test.c is the main source code for this 
        char filename[20];
        snprintf(filename, 19, "/dev/i2c-%d", adapter_nr);
 
-       /** Open the I2C controller device node **/
+       / Open the I2C controller device node /
        file = open(filename, O_RDWR);
 
        if (file < 0) {
@@ -157,7 +157,7 @@ Once rebuilt, the file twilcd_userspace_test.c is the main source code for this 
 
        int addr = 0x40; /* The I2C address */
 
-       /** Set the address for the I2C peripheral device **/
+       / Set the address for the I2C peripheral device /
        if (ioctl(file, I2C_SLAVE, addr) < 0) {
              /* ERROR HANDLING; you can check errno to see what went wrong */
              exit(1);

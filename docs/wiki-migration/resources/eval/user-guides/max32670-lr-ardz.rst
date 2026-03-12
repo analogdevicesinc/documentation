@@ -3,7 +3,7 @@ MAX32670-LR-ARDZ Long Range Wireless Radio Development Platform for Asset Manage
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html
@@ -635,7 +635,7 @@ The connector used are based off the 10-pin Arm Cortex standard pinout (0.05" pi
 
 .. important::
 
-   The debugger board will need to be **plugged in via the USB port** in order to program any board.
+   The debugger board will need to be plugged in via the USB port in order to program any board.
 
    
    In order to program the MAX32670 node board, the board must be powered by (1) CR123A battery or by an external power supply through P11. Otherwise, there will be no connection between the two boards.
@@ -664,7 +664,7 @@ Equipment Needed
 
 ::
 
-      ** Note that this is not included in the kit**
+       Note that this is not included in the kit
    * One (1) Micro USB to USB cable
    * Host PC (Windows 10 or later)
 
@@ -720,7 +720,7 @@ Equipment Needed
 .. note::
 
    
-   **Once you have completed this setup, proceed to PHASE 2 found in**\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
+   Once you have completed this setup, proceed to PHASE 2 found in\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
    
 
 

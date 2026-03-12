@@ -179,7 +179,7 @@ Connector Layout
 
 .. warning::
 
-   \ **Warning: The AD9208-3000EBZ/AD9689-2600EBZ is electrostatic discharge (ESD) sensitive. Handle the device with care, and employ conducting wrist straps or antistatic bags when handling the board.**\
+   \ Warning: The AD9208-3000EBZ/AD9689-2600EBZ is electrostatic discharge (ESD) sensitive. Handle the device with care, and employ conducting wrist straps or antistatic bags when handling the board.\
 
 
 Configuring the Board
@@ -286,7 +286,7 @@ ACE Setup
 
 .. warning::
 
-   \ **Warning: Programming the FPGA will power the AD9208 evaluation board via the FMC connector. Removing any of the board's power jumpers (as seen in Figure 6) while the board is on or in operation may cause damage to the board, board components, and/or the chip. Removing the board while it is being powered via the FMC connector may also cause damage to the board.**\
+   \ Warning: Programming the FPGA will power the AD9208 evaluation board via the FMC connector. Removing any of the board's power jumpers (as seen in Figure 6) while the board is on or in operation may cause damage to the board, board components, and/or the chip. Removing the board while it is being powered via the FMC connector may also cause damage to the board.\
 
 
 

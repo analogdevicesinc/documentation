@@ -145,7 +145,7 @@ In this mode both DDS and DMA are disabled causing the DAC channels to stop tran
 
 .. note::
 
-   Upon pressing **Reload Settings** button the values will be reloaded with the corresponding driver values. Useful in scenarios where the diver values get changed outside this plugin (e.g with the use of Debug plugin) and a refresh on plugin's values is needed.
+   Upon pressing Reload Settings button the values will be reloaded with the corresponding driver values. Useful in scenarios where the diver values get changed outside this plugin (e.g with the use of Debug plugin) and a refresh on plugin's values is needed.
 
 
 .. hint::

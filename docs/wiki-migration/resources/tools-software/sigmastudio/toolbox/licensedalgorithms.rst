@@ -23,5 +23,5 @@ Additional algorithms may be available by request from 3rd Party vendors.
 
 .. note::
 
-   **Note:** None of these algorithm blocks are included with the SigmaStudio application installation. To evaluate or license algorithms from third parties, please contact their licensing departments directly.
+   Note: None of these algorithm blocks are included with the SigmaStudio application installation. To evaluate or license algorithms from third parties, please contact their licensing departments directly.
 

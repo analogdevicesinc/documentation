@@ -22,7 +22,6 @@ Reference Circuits
 Overview
 --------
 
-
 The :adi:`ADXL345` is a small, thin, low power, 3-axis accelerometer with high resolution (13-bit) measurement at up to ±16 g. Digital output data is formatted as 16-bit twos complement and is accessible through either a SPI (3- or 4-wire) or I2C digital interface.
 
 The :adi:`ADXL345` is well suited for mobile device applications. It measures the static acceleration of gravity in tilt-sensing applications, as well as dynamic acceleration resulting from motion or shock. Its high resolution (4 mg/LSB) enables measurement of inclination changes less than 1.0°.
@@ -34,13 +33,12 @@ Low power modes enable intelligent motion-based power management with threshold 
 The :adi:`ADXL345` is supplied in a small, thin, 3 mm × 5 mm × 1 mm, 14-lead, plastic package.
 
 Applications
-============
+~~~~~~~~~~~~
 
 -  ADXL345-EP Supports defense and aerospace applications (AQEC)
 
 .. image:: https://wiki.analog.com/_media/resources/pmods/adxl345_pmod_acl.jpg
    :align: center
-
 
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.

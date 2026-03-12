@@ -95,7 +95,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Digital to analog converters **
+                  Digital to analog converters 
            [--snip--]
 
            <*>   Analog Devices AXI_AD3552R DAC driver
@@ -118,14 +118,14 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root@analog:/> **cd /sys/bus/iio/devices/**
+      root@analog:/> cd /sys/bus/iio/devices/
       root@analog:/sys/bus/iio/device> ls -l
    
       iio:device0 -> ../../../devices/soc0/axi/f8007100.adc/iio:device0
       iio:device1 -> ../../../devices/soc0/fpga-axi@0/44a74000.axi-ad3552r/iio:device1
       iio_sysfs_trigger -> ../../../devices/iio_sysfs_trigger
    
-      root:/sys/bus/iio/devices> **cd iio:device1**
+      root:/sys/bus/iio/devices> cd iio:device1
    
       root@analog:/sys/bus/iio/devices/iio:device1# ls -l
       drwxr-xr-x 2 root root    0 May 16 07:42 buffer
@@ -160,8 +160,8 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat name**
-      **axi-ad3552r**
+      root:/sys/bus/iio/devices/iio:device1> cat name
+      axi-ad3552r
    
 
 
@@ -177,8 +177,8 @@ Read only attribute which returns the DAC sampling rate in Hz.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat sampling_frequency**
-      **16666667**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat sampling_frequency
+      16666667
       root@analog:/sys/bus/iio/devices/iio:device1# echo 15000000 > sampling_frequency
       -bash: echo: write error: Invalid argument
       root@analog:/sys/bus/iio/devices/iio:device1#

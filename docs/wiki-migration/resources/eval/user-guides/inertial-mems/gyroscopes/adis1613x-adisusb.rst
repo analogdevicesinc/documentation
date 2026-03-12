@@ -81,7 +81,7 @@ The **Update Flash** command saves writable user register data.
 
 .. tip::
 
-   The **Register Access** screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the **Write Register** button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
+   The Register Access screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the Write Register button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
 
 
 Data Capture Menu

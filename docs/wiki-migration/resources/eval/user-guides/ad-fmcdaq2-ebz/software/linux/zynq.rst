@@ -14,7 +14,6 @@ The default slot for the AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ is the HPC FMC slot, as s
    :align: center
    :width: 800px
 
-
 Linux with HDMI video output on the ZED, ZC702 and ZC706 boards
 ===============================================================
 
@@ -121,22 +120,22 @@ Clicking "Create Image" will now generate in the chosen location a new boot imag
 Alternative method of building the Zynq boot image
 --------------------------------------------------
 
-{The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
+| {The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
+| Instructions on how to build the Hardware Description File (HDF) handover file can be found here:
 
-Instructions on how to build the Hardware Description File (HDF) handover file can be found here:
-
--  :doc:`Building HDL </wiki-migration/resources/fpga/docs/build>`
+-  `Building HDL <resources/fpga/docs/build>`_
 
 All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wiki.xilinx.com>`_
 
 -  `Build u-boot <http://www.wiki.xilinx.com/Build+U-Boot>`_
 
-   -  Make sure you checkout the proper git tag matching your Vivado Version (xilinx-v2018.2, xilinx-v2017.4, ...)
+::
 
--  `Build FSBL <http://www.wiki.xilinx.com/Build+FSBL>`_
--  `Build PMU Frimware <http://www.wiki.xilinx.com/Build+PMU+Firmware>`_
--  `Build Arm Trusted Firmware (ATF) <http://www.wiki.xilinx.com/Build+Arm+Trusted+Firmware+%28ATF%29>`_
--  `Build BOOT image <http://www.wiki.xilinx.com/Prepare+Boot+Image>`_
+      * Make sure you checkout the proper git tag matching your Vivado Version (xilinx-v2018.2, xilinx-v2017.4, ...)
+   * `Build FSBL <http://www.wiki.xilinx.com/Build+FSBL>`_
+   * `Build PMU Frimware <http://www.wiki.xilinx.com/Build+PMU+Firmware>`_
+   * `Build Arm Trusted Firmware (ATF) <http://www.wiki.xilinx.com/Build+Arm+Trusted+Firmware+%28ATF%29>`_
+   * `Build BOOT image <http://www.wiki.xilinx.com/Prepare+Boot+Image>`_
 
 Use script to build BOOT.BIN
 ----------------------------
@@ -150,15 +149,13 @@ The script can be downloaded from here:
 
 -  `build_zynqmp_boot_bin.sh <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynqmp_boot_bin/build_zynqmp_boot_bin.sh>`_
 
+
+
 .. tip::
 
-   \ **NOTE: After downloading the script you need to make it executable**
+   \ NOTE: After downloading the script you need to make it executable
 
-   
-   ::
-   
-      $ chmod +x build_zynqmp_boot_bin.sh
-   
+   | ``$ chmod +x build_zynqmp_boot_bin.sh``
 
 
 Usage
@@ -173,14 +170,15 @@ Usage
 -  An optionally 4th ``name`` parameter can be given to tar.gz the output directory. (``name``.tar.gz)
 -  Build output is located in a local directory named: output_boot_bin.
 -  This script requires Xilinx Vitis and bootgen in the PATH.
-
-   -  A simple way is to source vivado settings[32|64].sh for Linux:
+   \* A simple way is to source vivado settings[32|64].sh for Linux:
 
 ::
 
    $ source /opt/Xilinx/Vivado/202x.x/settings64.sh
 
--  When using **cygwin**, you can add the following in the ~/.bashrc configuration file:
+::
+
+     * When using cygwin, you can add the following in the ~/.bashrc configuration file:
 
 ::
 
@@ -188,10 +186,14 @@ Usage
    export PATH=$PATH:/cygdrive/c/Xilinx/Vitis/202x.x/bin
    export PATH=$PATH:/cygdrive/c/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
 
+
+
 .. tip::
 
-   \ **NOTE: u-boot.elf** For those who don't want to build u-boot themselves. The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, **bootgen_sysfiles.tgz**
+   \ NOTE: u-boot.elf
 
+   | For those who don't want to build u-boot themselves.
+   | The u-boot.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz
    
 
 
@@ -216,12 +218,15 @@ Build and install the kernel image
 
 .. container:: box bggreen
 
-   root Download and build the kernel image
+   
+   .. note::
+
+      root Download and build the kernel image
 
    
    ::
    
-      > **git clone https:%%//%%github.com/analogdevicesinc/linux.git**
+      > git clone https:%%//%%github.com/analogdevicesinc/linux.git
       Cloning into 'linux'...
       remote: Counting objects: 2550298, done.
       remote: Compressing objects: 100% (466978/466978), done.
@@ -229,17 +234,17 @@ Build and install the kernel image
       Receiving objects: 100% (2550298/2550298), 727.70 MiB | 353 KiB/s, done.
       Resolving deltas: 100% (2118600/2118600), done.
       Checking out files: 100% (38170/38170), done.
-      > **cd linux**
+      > cd linux
       > # For AD-FMCOMMS2-EBZ use
-      > # **git checkout master**
-      > **export ARCH=arm**
-      > **export CROSS_COMPILE=/path/to/your/arm/cross-compiler**
+      > # git checkout master
+      > export ARCH=arm
+      > export CROSS_COMPILE=/path/to/your/arm/cross-compiler
       > # e.g. export CROSS_COMPILE=/opt/CodeSourcery/Sourcery_G++_Lite/bin/arm-xilinxa9-linux-gnueabi-
-      > **make zynq_xcomm_adv7511_defconfig**
+      > make zynq_xcomm_adv7511_defconfig
       #
       # configuration written to .config
       #
-      > **make uImage LOADADDR=0x00008000**
+      > make uImage LOADADDR=0x00008000
         ...
         OBJCOPY arch/arm/boot/uImage
         Kernel: arch/arm/boot/uImage is ready
@@ -284,7 +289,7 @@ The following devicetree files are available:
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | zynq-zc706-adv7511-ad9625-fmcadc2.dts          | `ZC706 <https://www.xilinx.com/ZC706>`_, the on-board :adi:`ADV7511` and the :doc:`AD-FMCADC2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcadc2-ebz>` board                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| zynq-zc706-adv7511-fmcadc4.dts                 | `ZC706 <https://www.xilinx.com/ZC706>`_, the on-board :adi:`ADV7511` and the :doc:`AD-FMCADC4-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcadc4-ebz>` board                                                                                                           |
+| zynq-zc706-adv7511-fmcadc4.dts                 | `ZC706 <https://www.xilinx.com/ZC706>`_, the on-board :adi:`ADV7511` and the `AD-FMCADC4-EBZ <resources/eval/user-guides/ad-fmcadc4-ebz>`_ board                                                                                                                               |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | zynq-zc706-adv7511-fmcdaq1.dts                 | `ZC706 <https://www.xilinx.com/ZC706>`_, the on-board :adi:`ADV7511` and the AD-FMCDAQ1-EBZ board                                                                                                                                                                              |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -302,7 +307,7 @@ The following devicetree files are available:
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | zynq-zed-adv7511-ad9364-fmcomms4.dts           | `Zed Board <http://zedboard.org/product/zedboard>`_, the on-board :adi:`ADV7511` and the :doc:`AD-FMCOMMS4-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcomms4-ebz>` board                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| zynq-zed-adv7511-ad9467-fmc-250ebz.dts         | `Zed Board <http://zedboard.org/product/zedboard>`_, the on-board :adi:`ADV7511` and the :doc:`AD9467-FMC-250EBZ </wiki-migration/resources/fpga/xilinx/fmc/ad9467>` board                                                                                                     |
+| zynq-zed-adv7511-ad9467-fmc-250ebz.dts         | `Zed Board <http://zedboard.org/product/zedboard>`_, the on-board :adi:`ADV7511` and the `AD9467-FMC-250EBZ <resources/fpga/xilinx/fmc/ad9467>`_ board                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | zynq-zed-adv7511-fmcmotcon1.dts                | `Zed Board <http://zedboard.org/product/zedboard>`_, the on-board :adi:`ADV7511` and the :doc:`AD-FMCMOTCON1-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz>` board                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -328,12 +333,15 @@ To build the devicetree from the devicetree file run \`make name-dts-replaced-by
 
 .. container:: box bggreen
 
-   Build the devicetree for ZED with HDMI video out and XCOMM
+   
+   .. note::
+
+      Build the devicetree for ZED with HDMI video out and XCOMM
 
    
    ::
    
-      > **make zynq-zed-adv7511-xcomm.dtb**
+      > make zynq-zed-adv7511-xcomm.dtb
         DTC     arch/arm/boot/zynq-zed-adv7511-xcomm.dtb
       DTC: dts->dtb  on file "arch/arm/boot/dts/zynq-zed-adv7511-xcomm.dts"
    
@@ -343,13 +351,16 @@ The last step is to copy both the kernel and the devicetree files to the first p
 
 .. container:: box bggreen
 
-   Copy kernel and device tree to SD card
+   
+   .. note::
+
+      Copy kernel and device tree to SD card
 
    
    ::
    
-      > **cp arch/arm/boot/uImage /media/BOOT/uImage**
-      > **cp arch/arm/boot/zynq-zed-adv7511-xcomm.dtb /media/BOOT/devicetree.dtb**
+      > cp arch/arm/boot/uImage /media/BOOT/uImage
+      > cp arch/arm/boot/zynq-zed-adv7511-xcomm.dtb /media/BOOT/devicetree.dtb
    
 
 
@@ -375,12 +386,15 @@ The first step is to download the `archive containing the root filesystem <https
 
 .. container:: box bggreen
 
-   Download Linaro Ubuntu ARM rootfs
+   
+   .. note::
+
+      Download Linaro Ubuntu ARM rootfs
 
    
    ::
    
-      > **wget http:%%//%%releases.linaro.org/archive/12.12/ubuntu/vexpress/linaro-precise-ubuntu-desktop-20121124-560.tar.gz**
+      > wget http:%%//%%releases.linaro.org/archive/12.12/ubuntu/vexpress/linaro-precise-ubuntu-desktop-20121124-560.tar.gz
    
 
 
@@ -388,13 +402,16 @@ The next step is to extract the root filesystem from the archive to the SD card.
 
 .. container:: box bggreen
 
-   Extract the root filesystem onto the SD card
+   
+   .. note::
+
+      Extract the root filesystem onto the SD card
 
    
    ::
    
-      > **sudo tar --strip-components=3 -C /media/rootfs -xzpf linaro-precise-ubuntu-desktop-20121124-560.tar.gz binary/boot/filesystem.dir**
-      > **ls /media/rootfs/**
+      > sudo tar --strip-components=3 -C /media/rootfs -xzpf linaro-precise-ubuntu-desktop-20121124-560.tar.gz binary/boot/filesystem.dir
+      > ls /media/rootfs/
       bin/  boot/  dev/  etc/  home/  lib/  lost+found/  media/  mnt/ opt/
       proc/  root/  run/  sbin/  selinux/  srv/  sys/  tmp/  usr/  var/
    
@@ -421,18 +438,21 @@ Unfortunately the current Linaro Ubuntu distribution does not contain a package 
 
 .. container:: box bggreen
 
-   Download and install xf86-video-modesetting
+   
+   .. note::
+
+      Download and install xf86-video-modesetting
 
    
    ::
    
-      > **sudo apt-get install xserver-xorg-dev libdrm-dev xutils-dev**
-      > **wget http:%%//%%xorg.freedesktop.org/archive/individual/driver/xf86-video-modesetting-0.9.0.tar.bz2**
-      > **tar -xjf xf86-video-modesetting-0.9.0.tar.bz2**
-      > **cd xf86-video-modesetting-0.9.0**
-      > **./configure --prefix=/usr**
-      > **make**
-      > **sudo make install**
+      > sudo apt-get install xserver-xorg-dev libdrm-dev xutils-dev
+      > wget http:%%//%%xorg.freedesktop.org/archive/individual/driver/xf86-video-modesetting-0.9.0.tar.bz2
+      > tar -xjf xf86-video-modesetting-0.9.0.tar.bz2
+      > cd xf86-video-modesetting-0.9.0
+      > ./configure --prefix=/usr
+      > make
+      > sudo make install
    
 
 
@@ -454,44 +474,43 @@ PulseAudio is the audio daemon used by default on the Linaro Ubuntu installation
 
 .. container:: box bggreen
 
-   Disable pulse audio 'glitch-free' feature
+   
+   .. note::
+
+      Disable pulse audio 'glitch-free' feature
 
    
    ::
    
-      > **sed -i 's,load-module module-udev-detect.*,load-module module-udev-detect tsched=0,' /etc/pulse/default.pa**
+      > sed -i 's,load-module module-udev-detect.*,load-module module-udev-detect tsched=0,' /etc/pulse/default.pa
    
 
 
 More information
 ----------------
 
--  :doc:`AD-FMCOMMS1-EBZ Reference Design </wiki-migration/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz>`
+-  `AD-FMCOMMS1-EBZ Reference Design <resources/fpga/xilinx/fmc/ad-fmcomms1-ebz>`_
 -  :doc:`AD-FMCOMMS2-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz>`
 -  :doc:`AD-FMCOMMS3-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcomms3-ebz>`
 -  :doc:`AD-FMCOMMS4-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcomms4-ebz>`
 -  AD-FMCOMMS5-EBZ User Guide
 -  :doc:`AD-FMCDAQ2-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz>`
 -  :doc:`AD-FMCADC2-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcadc2-ebz>`
--  `ADI IIO Oscilloscope <https://wiki.analog.com/../../linux-software/iio_oscilloscope>`_
--  `AD7511 HDMI transmitter Linux Driver <https://wiki.analog.com/../drm/adv7511>`_
--  `AXI HDMI HDL Linux Driver <https://wiki.analog.com/../drm/hdl-axi-hdmi>`_
--  `HDL AXI SPIDF Linux Driver <https://wiki.analog.com/../sound/hdl-axi-spidf>`_
--  `HDL AXI I2S Linux Driver <https://wiki.analog.com/../sound/hdl-axi-i2s>`_
--  `AD9523-1: Low Jitter Clock Generator with 14 LVPECL/LVDS/HSTL/29 LVCMOS Outputs <https://wiki.analog.com/../iio-pll/ad9523>`_
--  `ADF4351: Wideband Synthesizer with Integrated VCO <https://wiki.analog.com/../iio-pll/adf4350>`_
--  `AD8366: DC to 600 MHz, Dual-Digital Variable Gain Amplifiers <https://wiki.analog.com/../iio-amplifiers/ad8366>`_
--  `AD9643: 14-Bit, 170/210/250 MSPS, 1.8 V Dual Analog-to-Digital Converter (ADC) <https://wiki.analog.com/../iio-adc/axi-adc-hdl>`_
--  `AD9122: Dual, 16-Bit, 1200 MSPS, TxDAC+® Digital-to-Analog Converter <https://wiki.analog.com/../iio-dds/axi-dac-dds-hdl>`_
+-  `ADI IIO Oscilloscope <..//../linux-software/iio_oscilloscope>`_
+-  `AD7511 HDMI transmitter Linux Driver <..//drm/adv7511>`_
+-  `AXI HDMI HDL Linux Driver <..//drm/hdl-axi-hdmi>`_
+-  `HDL AXI SPIDF Linux Driver <..//sound/hdl-axi-spidf>`_
+-  `HDL AXI I2S Linux Driver <..//sound/hdl-axi-i2s>`_
+-  `AD9523-1: Low Jitter Clock Generator with 14 LVPECL/LVDS/HSTL/29 LVCMOS Outputs <..//iio-pll/ad9523>`_
+-  `ADF4351: Wideband Synthesizer with Integrated VCO <..//iio-pll/adf4350>`_
+-  `AD8366: DC to 600 MHz, Dual-Digital Variable Gain Amplifiers <..//iio-amplifiers/ad8366>`_
+-  `AD9643: 14-Bit, 170/210/250 MSPS, 1.8 V Dual Analog-to-Digital Converter (ADC) <..//iio-adc/axi-adc-hdl>`_
+-  `AD9122: Dual, 16-Bit, 1200 MSPS, TxDAC+® Digital-to-Analog Converter <..//iio-dds/axi-dac-dds-hdl>`_
 -  :doc:`AD9361 high performance, highly integrated RF Agile Transceiver™ Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 
-*Need Help?*
-
--  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
--  `Ask a Question <https://ez.analog.com/>`_
-
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/linux-zynq-export-xps.png
    :width: 600px
-
 

@@ -42,7 +42,7 @@ The first time you launch CrossCore Embedded Studio, you will be prompted to inp
 .. important::
 
    
-   | **SHARC Audio Module CrossCore Serial Number**
+   | SHARC Audio Module CrossCore Serial Number
    | ``EZK-CCES-9FYX-DSAC-FPNV-4WVP-E5X4-VGKC-GI01``
    
 

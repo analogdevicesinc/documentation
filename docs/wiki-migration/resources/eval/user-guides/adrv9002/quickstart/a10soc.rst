@@ -84,7 +84,7 @@ Testing
 
 .. warning::
 
-   **Before executing below steps, VADJ for FMCA must be set to 1.8V.**
+   Before executing below steps, VADJ for FMCA must be set to 1.8V.
 
    
    This can be done by changing VADJ FMCA Voltage using J42 (see below picture).
@@ -151,7 +151,7 @@ Messages
          FPGA must be in Early Release mode to program core.
          fpga - loadable FPGA image support
 
-         ** Unable to read file u-boot.scr **
+          Unable to read file u-boot.scr 
          7699728 bytes read in 353 ms (20.8 MiB/s)
          22104 bytes read in 4 ms (5.3 MiB/s)
          FPGA BRIDGES: enable

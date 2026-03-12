@@ -85,9 +85,9 @@ ADuCM360-IDE questions (Deprecated)
 
 .. warning::
 
-   This Interactive Development Environment(IDE) is being **phased out** as of **October 30th 2017**.
+   This Interactive Development Environment(IDE) is being phased out as of October 30th 2017.
 
-   | We are moving the EVAL-ADICUP360 tools support over to CrossCore Embedded Studios(CCES). You should consider migrating to CCES at your earliest convenience. We will be **removing support** for the ADuCM360-IDE tools **April 30th 2018**.
+   | We are moving the EVAL-ADICUP360 tools support over to CrossCore Embedded Studios(CCES). You should consider migrating to CCES at your earliest convenience. We will be removing support for the ADuCM360-IDE tools April 30th 2018.
    | Here is a link to download the :doc:`CrossCore tools. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_setup_guide>`
 
 

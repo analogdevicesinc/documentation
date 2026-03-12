@@ -92,7 +92,7 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
 
 
 If programming was successful, the **Main Menu** will apear in your UART terminal, as seen in the picture below. There are 7 options. Pressing [e], [d], [a], [s], [r], [t] or [q] key will allow you to select the desired option. After the end of every option, all the possible options (the Menu) will be shown again, allowing the user to make a new choice.

@@ -3,7 +3,7 @@ EVAL-ADIS2 Evaluation System Hardware User Guide
 
 .. warning::
 
-   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**.
+   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
 
 The :adi:`EVAL-ADIS2` is a PC-based evaluation system that supports communication with most ADIS16xxx products, using the "breakout board" evaluation tools for each product. The following diagram illustrates the data sensor data flow when using the :adi:`EVAL-ADIS2`.
@@ -155,7 +155,7 @@ EVAL-ADIS2 Kit Contents
 
 .. important::
 
-   The :adi:`EVAL-ADIS2` kit **does not** include any device-specific breakout board or sensor module.
+   The :adi:`EVAL-ADIS2` kit does not include any device-specific breakout board or sensor module.
 
 
 Minimum PC System Requirements
@@ -299,14 +299,14 @@ Use the table below to identify the correct JP1 setting for your sensor.
 
 .. important::
 
-   \ **External Supply Setting** To use the external supply option, remove the header from **JP1** and solder the middle post to the hole with the **EXT** label on the **EVAL-ADIS2**.
+   \ External Supply Setting To use the external supply option, remove the header from JP1 and solder the middle post to the hole with the EXT label on the EVAL-ADIS2.
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2_jp1_wikiguide_01.png
       :align: center
       :width: 350px
    
-   After soldering the connector, apply the external supply to **J3** as shown below.
+   After soldering the connector, apply the external supply to J3 as shown below.
 
    
    |image1|
@@ -316,7 +316,7 @@ Connecting a Sensor Breakout Board
 
 .. warning::
 
-   All sensor modules require a **breakout board** to interface with the :adi:`EVAL-ADIS2`. **Model-specific** breakout boards will only support products that require solder reflow attachment. **Generic** breakout boards support products that feature an onboard connector and must be purchased in addition to the sensor module.
+   All sensor modules require a breakout board to interface with the :adi:`EVAL-ADIS2`. Model-specific breakout boards will only support products that require solder reflow attachment. Generic breakout boards support products that feature an onboard connector and must be purchased in addition to the sensor module.
 
 
 The following table provides a summary of supported, **model-specific** breakout boards.
@@ -415,7 +415,7 @@ The J1 connector on the :adi:`EVAL-ADIS2` supports a remote connection to compat
 
 .. warning::
 
-   The mating connector on the following evaluation boards was designed for a legacy connector solution, but **remains compatible with the** :adi:`EVAL-ADIS2`.
+   The mating connector on the following evaluation boards was designed for a legacy connector solution, but remains compatible with the :adi:`EVAL-ADIS2`.
 
    
    +------------------------------------------------------------+
@@ -618,7 +618,7 @@ Connect the :adi:`EVAL-ADIS2` to any **USB 2.0** port on your PC using the inclu
 
 .. important::
 
-   \ **LED1** may take up to 10 seconds to illuminate.The images below show the different boot states of the :adi:`EVAL-ADIS2`.
+   \ LED1 may take up to 10 seconds to illuminate.The images below show the different boot states of the :adi:`EVAL-ADIS2`.
 
    
    ======================== =============== ===========================

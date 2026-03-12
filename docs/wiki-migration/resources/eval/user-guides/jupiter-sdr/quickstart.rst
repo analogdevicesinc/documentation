@@ -775,7 +775,7 @@ Make sure all devices are present
    
    ::
    
-      root@analog:~# **iio_info | grep iio:device**
+      root@analog:~# iio_info | grep iio:device
               iio:device0: ams
               iio:device1: adrv9002-phy
               iio:device2: axi-adrv9002-rx-lpc (buffer capable)

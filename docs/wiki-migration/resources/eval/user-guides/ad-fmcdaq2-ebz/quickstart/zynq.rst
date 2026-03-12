@@ -103,7 +103,7 @@ Alternatively, you can connect to board using USB-to-UART cable (using for examp
       7486816 bytes read in 432 ms (16.5 MiB/s)
       reading devicetree.dtb
       26702 bytes read in 26 ms (1002.9 KiB/s)
-      ** Unable to read file uramdisk.image.gz **
+       Unable to read file uramdisk.image.gz 
       ## Booting kernel from Legacy Image at 03000000 ...
          Image Name:   Linux-5.10.0-98156-g6b62b86d3dc7
          Image Type:   ARM Linux Kernel Image (uncompressed)

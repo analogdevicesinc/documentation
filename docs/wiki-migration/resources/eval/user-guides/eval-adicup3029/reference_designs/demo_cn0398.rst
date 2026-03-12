@@ -123,7 +123,7 @@ Setting up the Hardware
 
 .. important::
 
-   Extremely important to plug in an acceptable power supply to the barrel jack **P2** of the EVAL-ADICUP3029 if you are using a moisture sensor that requires voltage excitation greater than 5V on the **EVAL-CN0398-ARDZ**. Only moisture sensors using less than 3.3V can run off the USB power option.
+   Extremely important to plug in an acceptable power supply to the barrel jack P2 of the EVAL-ADICUP3029 if you are using a moisture sensor that requires voltage excitation greater than 5V on the EVAL-CN0398-ARDZ. Only moisture sensors using less than 3.3V can run off the USB power option.
 
 
 Configuring the Software
@@ -210,7 +210,7 @@ Setting up Mosquitto to Receive MQTT Data
 
 .. important::
 
-   Make sure that your computer or laptop is connected to the same network you are going to configure in the **ADuCM_demo_cn0398.h** file. Once you run the executable, Mosquitto assumes that you are running on that network.
+   Make sure that your computer or laptop is connected to the same network you are going to configure in the ADuCM_demo_cn0398.h file. Once you run the executable, Mosquitto assumes that you are running on that network.
 
 
 -  The mosquitto broker is now running locally and has the same IP as your machine and by default runs on port 1883. Open a new Command Prompt and type **ipconfig** to get your local IP address

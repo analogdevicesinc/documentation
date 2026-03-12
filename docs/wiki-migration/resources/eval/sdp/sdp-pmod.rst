@@ -60,7 +60,7 @@ The following picture showing the **P4** working on the Expanded UART mode jumpe
 
 .. important::
 
-   Please make sure the **P4** working mode selection jumper **JP1** in the right position before power on the system. If the PMOD daughter board used **P2** or **P3** I2C interface, **JP1** could set to any position but don't left it open.
+   Please make sure the P4 working mode selection jumper JP1 in the right position before power on the system. If the PMOD daughter board used P2 or P3 I2C interface, JP1 could set to any position but don't left it open.
 
 
 PMOD Power Rails Supplied
@@ -70,7 +70,7 @@ PMOD hardware modules recieve their power from the host controller board. So in 
 
 .. warning::
 
-   If you set the wrong PMOD power supply voltage configuration jumper **JP2**, permanent damage to the PMOD board may occur! Please make sure the PMOD power supply voltage configuration jumper **JP2** on the right position before power on the system.
+   If you set the wrong PMOD power supply voltage configuration jumper JP2, permanent damage to the PMOD board may occur! Please make sure the PMOD power supply voltage configuration jumper JP2 on the right position before power on the system.
 
 
 --------------
@@ -107,7 +107,7 @@ If you are using the SDP with the PMOD-SDP adaptor board, and any PMOD hardware 
 
 .. important::
 
-   When you finished your system evaluation, before disconnect any connector or remove any jumper please disconnect 6V power supply (EVAL-CFTL-6V-PWRZ) from **P5** of SDP-PMD-IB1Z first.
+   When you finished your system evaluation, before disconnect any connector or remove any jumper please disconnect 6V power supply (EVAL-CFTL-6V-PWRZ) from P5 of SDP-PMD-IB1Z first.
 
 
 ADI PMOD Compatible Boards

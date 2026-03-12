@@ -132,7 +132,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The driver depends on **CONFIG_I2C**
+   The driver depends on CONFIG_I2C
 
 
 ::
@@ -148,7 +148,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
                    [--snip--]
 
-                   ** Network Analyzer, Impedance Converters **
+                    Network Analyzer, Impedance Converters 
                    <*>   Analog Devices AD5933, AD5934 driver
 
                    [--snip--]
@@ -200,7 +200,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX> **cat name**
+      root:/sys/bus/iio/devices/iio:deviceX> cat name
       ad5933
    
 
@@ -219,7 +219,7 @@ Frequency sweep start frequency in Hz.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX> **echo 15000 > out_voltage0_freq_start**
+      root:/sys/bus/iio/devices/iio:deviceX> echo 15000 > out_voltage0_freq_start
       root:/sys/bus/iio/devices/iio:deviceX> cat out_voltage0_freq_start
       14999
    
@@ -237,7 +237,7 @@ Set frequency increment
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX> **echo 200 > out_voltageY_freq_increment**
+      root:/sys/bus/iio/devices/iio:deviceX> echo 200 > out_voltageY_freq_increment
    
 
 
@@ -253,7 +253,7 @@ Set number of frequency points
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX> **echo 100 > out_voltage0_freq_points**
+      root:/sys/bus/iio/devices/iio:deviceX> echo 100 > out_voltage0_freq_points
       root:/sys/bus/iio/devices/iio:deviceX> cat out_voltage0_freq_points
       100
    
@@ -271,7 +271,7 @@ Set number of settling time cycles
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX> **echo 15 > out_voltage0_settling_cycles**
+      root:/sys/bus/iio/devices/iio:deviceX> echo 15 > out_voltage0_settling_cycles
       root:/sys/bus/iio/devices/iio:deviceX> cat out_voltage0_settling_cycles
       15
    
@@ -289,7 +289,7 @@ Show available output ranges
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX> **cat out_voltage0_scale_available**
+      root:/sys/bus/iio/devices/iio:deviceX> cat out_voltage0_scale_available
       1980 970 383 198
    
 
@@ -306,8 +306,8 @@ Set output range
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX> **echo 1980 > out_voltage0_scale**
-      root:/sys/bus/iio/devices/iio:deviceX> **cat out_voltage0_scale**
+      root:/sys/bus/iio/devices/iio:deviceX> echo 1980 > out_voltage0_scale
+      root:/sys/bus/iio/devices/iio:deviceX> cat out_voltage0_scale
       1980
    
 
@@ -324,7 +324,7 @@ Show available input scales
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX> **cat in_voltage0_scale_available**
+      root:/sys/bus/iio/devices/iio:deviceX> cat in_voltage0_scale_available
       1 0.2
    
 
@@ -338,8 +338,8 @@ This specifies any shell prompt running on the target
 
 ::
 
-   root:/sys/bus/iio/devices/iio:deviceX> **echo 0.2 > in_voltage0_scale**
-   root:/sys/bus/iio/devices/iio:deviceX> **cat in_voltage0_scale**
+   root:/sys/bus/iio/devices/iio:deviceX> echo 0.2 > in_voltage0_scale
+   root:/sys/bus/iio/devices/iio:deviceX> cat in_voltage0_scale
    0.2
 
 </WRAP
@@ -358,7 +358,7 @@ The on-chip temperature sensor allows an accurate measurement of the ambient dev
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX> **cat in_temp0_input**
+      root:/sys/bus/iio/devices/iio:deviceX> cat in_temp0_input
       27987
    
 
@@ -373,8 +373,8 @@ Buffer management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/buffer> **ls**
-      **enable**              **length**
+      root:/sys/bus/iio/devices/iio:deviceX/buffer> ls
+      enable              length
       root:/sys/bus/iio/devices/iio:deviceX/buffer>
    
 
@@ -409,7 +409,7 @@ Every buffer implementation features a set of files:
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/scan_elements> **ls**
+      root:/sys/bus/iio/devices/iio:deviceX/scan_elements> ls
       in_voltage0_imag_en     in_voltage0_imag_type   in_voltage0_real_index
       in_voltage0_imag_index  in_voltage0_real_en     in0_voltage_real_type
    
@@ -432,7 +432,7 @@ Every buffer implementation features a set of files:
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/scan_elements> **grep ""**
+      root:/sys/bus/iio/devices/iio:deviceX/scan_elements> grep ""
       in_voltage0_imag_en:    1
       in_voltage0_imag_index: 1
       in_voltage0_imag_type:  s16/16>>0
@@ -452,12 +452,12 @@ Buffer Example
    
    ::
    
-      > **cd /sys/bus/iio/devices/iio:device0**
-      > **echo 10000 > out_voltage0_freq_start**
-      > **echo 100 > out_voltage0_freq_increment**
-      > **echo 100 > out_voltage0_freq_points**
-      > **echo 512 > buffer/length**
-      > **echo 1 > buffer/enable**
+      > cd /sys/bus/iio/devices/iio:device0
+      > echo 10000 > out_voltage0_freq_start
+      > echo 100 > out_voltage0_freq_increment
+      > echo 100 > out_voltage0_freq_points
+      > echo 512 > buffer/length
+      > echo 1 > buffer/enable
    
 
 
@@ -483,7 +483,7 @@ Z = **in_voltage0_real** + i \**in_voltage0_imag**
    ::
    
       root:> **hexdump -d /dev/iio:device0*
-      0000000   **09451**   **//01627//**   09541   01663   09622   01697   09708   01734
+      0000000   09451   //01627//   09541   01663   09622   01697   09708   01734
       0000010   09799   01757   09889   01791   09985   01820   10079   01856
       0000020   10172   01887   10264   01922   10357   01962   10451   02005
       0000030   10543   02044   10628   02082   10714   02123   10798   02153

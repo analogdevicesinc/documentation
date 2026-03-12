@@ -196,14 +196,14 @@ The console output from U-Boot and later on Linux will appear on the USB serial 
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :<code>$ sudo minicom </code>
 
 In a separate console launch OpenOCD and connect to the development board.
 
 ::
 
-   ;''**Terminal2: OpenOCD**''
+   ;''Terminal2: OpenOCD''
    :<code>
 
 $ cd /opt/analog/cces/2.11.0/ARM/openocd/share/openocd/scripts $ sudo /opt/analog/cces/2.11.0/ARM/openocd/bin/openocd -f interface/<ICE>.cfg -f target/adspsc59x_a55.cfg</code> Where ``<ICE>`` should be replaced with ``ice1000`` or ``ice2000`` depending on your hardware. When successful you should see a message similar to the console output below
@@ -231,7 +231,7 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
 
 ::
 
-   ;''**Terminal3: GDB**''
+   ;''Terminal3: GDB''
    : <code>
 
 $ cd /tftpboot $ /opt/analog/cces/2.11.0/ARM/aarch64-none-elf/bin/aarch64-none-elf-gdb u-boot-proper-sc598-som-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x000000000000352c in ?? () (gdb) load Loading section .text, size 0x150 lma 0x96000000 Loading section .efi_runtime, size 0xfb0 lma 0x96000150 Loading section .text_rest, size 0x5d480 lma 0x96001800 Loading section .rodata, size 0x13b7d lma 0x9605ec80 Loading section .hash, size 0x18 lma 0x96072800 Loading section .dtb.init.rodata, size 0x2260 lma 0x96072820 Loading section .data, size 0x41b0 lma 0x96074a80 Loading section .got, size 0x8 lma 0x96078c30 Loading section .got.plt, size 0x18 lma 0x96078c38 Loading section .u_boot_list, size 0x3318 lma 0x96078c50 Loading section .efi_runtime_rel, size 0x1b0 lma 0x9607bf68 Loading section .rela.dyn, size 0xbf28 lma 0x9607c118 Start address 0x96000000, load size 555317 Transfer rate: 29 KB/sec, 13221 bytes/write. (gdb) c Continuing. </code>
@@ -240,7 +240,7 @@ At this point U-Boot will now be running in RAM on your target board. You should
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :  <code>
 
 U-Boot 2020.10 (Nov 04 2022 - 18:07:17 +0000)
@@ -265,7 +265,7 @@ In the U-Boot console, set the IP address of the Host Linux PC that hosts the bi
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :
 
 ::

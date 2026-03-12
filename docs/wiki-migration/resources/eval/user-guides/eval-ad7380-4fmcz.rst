@@ -60,9 +60,9 @@ The EVAL-AD7380-4FMCZ is powered by the *SDP-H1* board by default. External powe
       -  Connect the *SDP-H1* board to the EVAL-AD7380-4FMCZ via the 160-way connector, as shown in Table 2.
       -  Connect the *SDP-H1* board to the PC via the USB cable.
       -  If using Windows® XP, search for the *SDP-H1* drivers. Choose to automatically search for the drivers for the SDP-H1 board if prompted by the operating system.
-      -  Copy the ACE plugins file, **Board.AD738x**, and the **Chip.AD738x** file from the EVAL-AD7380-4FMCZ evaluation board page to the **C:\ProgramData\Analog Devices\ACE\Plugins** folder.
+      -  Copy the ACE plugins file, Board.AD738x, and the Chip.AD738x file from the EVAL-AD7380-4FMCZ evaluation board page to the C:\ProgramData\Analog Devices\ACE\Plugins folder.
       -  Connect a −2.5V external power supply on the AMP− of the P6 connector terminal.
-      -  Launch the ACE software from the //ACE// subfolder in the **Analog Devices** folder in the **All Programs** menu.
+      -  Launch the ACE software from the //ACE// subfolder in the Analog Devices folder in the All Programs menu.
       -  Connect an input signal to Channel A, Channel B, Channel C, or Channel D.
 
 Evaluation Board Connection Diagram
@@ -322,11 +322,11 @@ When the EVAL-AD7380-4FMCZ and SDP-H1 boards are properly connected to the PC, l
 
 ::
 
-     - From the **Start** menu, select **All Programs** > **Analog Devices** > **ACE** > **ACE.exe** to open the main software window, as shown in Figure 12.
-     - The **AD7380-4 Eval Board** icon appears in the **Attached Hardware** section. If the EVAL-AD7380-4FMCZ is not connected to the USB port via the SDP-H1 board when the software is launched, the AD7380-4 Eval Board icon does not appear in the Attached Hardware section. In this case, connect the EVAL-AD7380-4FMCZ and SDP-H1 board to the USB port of the PC, wait a few seconds, and then continue following these instructions.
-     - Double click the **AD7380-4 Eval Board** icon to open the window shown in Figure 13.
-     - Double click the **AD7380-4** chip icon to open the window shown in Figure 14.
-     - Click **Software Defaults** and then click **Apply Changes**.
+     - From the Start menu, select All Programs > Analog Devices > ACE > ACE.exe to open the main software window, as shown in Figure 12.
+     - The AD7380-4 Eval Board icon appears in the Attached Hardware section. If the EVAL-AD7380-4FMCZ is not connected to the USB port via the SDP-H1 board when the software is launched, the AD7380-4 Eval Board icon does not appear in the Attached Hardware section. In this case, connect the EVAL-AD7380-4FMCZ and SDP-H1 board to the USB port of the PC, wait a few seconds, and then continue following these instructions.
+     - Double click the AD7380-4 Eval Board icon to open the window shown in Figure 13.
+     - Double click the AD7380-4 chip icon to open the window shown in Figure 14.
+     - Click Software Defaults and then click Apply Changes.
 
 .. container:: centeralign
 
@@ -347,7 +347,7 @@ When the software installation procedures and the evaluation board setup procedu
 ::
 
      - Block icons that are dark blue are programmable blocks. Click a dark blue block icon to open a configurable pop-up window that allows customization for data capture, as shown in the oversampling block in Figure 15.
-     - Enter the reference voltage value in the **Reference Voltage** box at the top of the window when External Reference is selected. The default value for the **external reference** is set to 3.3 V.
+     - Enter the reference voltage value in the Reference Voltage box at the top of the window when External Reference is selected. The default value for the external reference is set to 3.3 V.
 
 See the Software Installation Procedures section and the Evaluation Board Setup Procedures section for additional information.
 

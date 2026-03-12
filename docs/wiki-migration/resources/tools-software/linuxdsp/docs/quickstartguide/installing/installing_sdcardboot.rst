@@ -33,10 +33,10 @@ or
 
 .. note::
 
-   If you want to compile and deploy the images at your second time, run the command "**bitbake <TARGET> -C compile**".
+   If you want to compile and deploy the images at your second time, run the command "bitbake <TARGET> -C compile".
 
    
-   If you want to add packages to filesystem, you could add package to **IMAGE_INSTALL_append = "<PACKAGE_NAME>"** in build/conf/local.conf file.
+   If you want to add packages to filesystem, you could add package to IMAGE_INSTALL_append = "<PACKAGE_NAME>" in build/conf/local.conf file.
    
 
 

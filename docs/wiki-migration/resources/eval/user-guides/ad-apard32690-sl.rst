@@ -3,7 +3,7 @@ AD-APARD32690-SL User Guide
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-apard32690-sl/index.html
@@ -64,7 +64,7 @@ Specifications
 
 .. note::
 
-   **Hardware design files:**
+   Hardware design files:
 
    
    -  `Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/02-073637-01-c.pdf>`_

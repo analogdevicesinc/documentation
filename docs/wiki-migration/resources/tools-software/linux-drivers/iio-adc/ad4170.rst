@@ -49,7 +49,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. tip::
 
-   \ **TIP:** An example program which uses the interface can be found here:
+   \ TIP: An example program which uses the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
@@ -60,15 +60,15 @@ This specifies any shell prompt running on the target
 
 ::
 
-   root@analog:~# **cd /sys/bus/iio/devices/**
+   root@analog:~# cd /sys/bus/iio/devices/
 
-   root@analog:/sys/bus/iio/devices# **ls**
+   root@analog:/sys/bus/iio/devices# ls
 
    iio:device0  trigger0
 
-   root@analog:/sys/bus/iio/devices# **cd iio\:device0**
+   root@analog:/sys/bus/iio/devices# cd iio\:device0
 
-   root@analog:/sys/bus/iio/devices/iio:device0#** ls -l**
+   root@analog:/sys/bus/iio/devices/iio:device0# ls -l
 
    total 0
 
@@ -117,7 +117,7 @@ This specifies any shell prompt running on the target
 
 ::
 
-   root:/sys/bus/iio/devices/iio:device0> **cat name**
+   root:/sys/bus/iio/devices/iio:device0> cat name
    ad4170
 
 Show channel scale, offset, sampling_frequency, calibbias, calibscale
@@ -125,7 +125,7 @@ Show channel scale, offset, sampling_frequency, calibbias, calibscale
 
 ::
 
-   **Description:**
+   Description:
    Scale, offset, calibbias, calibscale, sampling frequency for the in_voltagex_voltagey channel
 
 This specifies any shell prompt running on the target
@@ -149,7 +149,7 @@ Show channel scale_available and sampling_frequency_available
 
 ::
 
-   **Description:**
+   Description:
    Scales and sampling rates to be applied to the channel.
 
 This specifies any shell prompt running on the target
@@ -164,7 +164,7 @@ Show filter_type_available
 
 ::
 
-   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage-voltage_filter_type_available**
+   root:/sys/bus/iio/devices/iio:device0> cat in_voltage-voltage_filter_type_available
    sinc5+avg sinc5 sinc3
 
 Device Tree

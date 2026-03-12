@@ -122,7 +122,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD9832 Driver depends on **CONFIG_SPI**
+   The AD9832 Driver depends on CONFIG_SPI
 
 
 ::
@@ -136,7 +136,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                    - *-     Industrial I/O lock free software ring
                    - *-   Enable triggered sampling support
 
-                         ** Direct Digital Synthesis **
+                          Direct Digital Synthesis 
                    [--snip--]
 
                    <*>   Analog Devices ad9832/5 driver
@@ -159,12 +159,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       device0
-      root:/sys/bus/iio/devices> **cd device0**
+      root:/sys/bus/iio/devices> cd device0
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **ls -l**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> ls -l
       --w-------    1 root     root          4096 Jan  3 15:11 dds0_freq0
       --w-------    1 root     root          4096 Jan  3 15:11 dds0_freq1
       -r--r--r--    1 root     root          4096 Jan  3 15:11 dds0_freq_scale
@@ -194,7 +194,7 @@ Show device name
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat name**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> cat name
       ad9832
    
 
@@ -213,7 +213,7 @@ Scale to be applied to ddsX_freqY in order to obtain the desired value in Hz. If
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat dds0_freq_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> cat dds0_freq_scale
       1
    
 
@@ -232,8 +232,8 @@ Stores frequency into tuning word Y. There will be more than one ddsX_freqY file
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 1000000 > dds0_freq0**
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 500000 > dds0_freq1**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 1000000 > dds0_freq0
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 500000 > dds0_freq1
    
 
 
@@ -253,7 +253,7 @@ Scale to be applied to ddsX_phaseY in order to obtain the desired value in rad. 
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat dds0_phase_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> cat dds0_phase_scale
       0.0015339808
    
 
@@ -272,10 +272,10 @@ Stores phase into Y. There will be more than one ddsX_phaseY file, which allows 
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 0 > dds0_phase0**
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 512 > dds0_phase1**
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 1024 > dds0_phase2**
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 2048 > dds0_phase3**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 0 > dds0_phase0
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 512 > dds0_phase1
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 1024 > dds0_phase2
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 2048 > dds0_phase3
    
 
 
@@ -295,7 +295,7 @@ ddsX_pincontrol_en: Both, the active frequency and phase is controlled by the re
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 0 > dds0_pincontrol_en**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 0 > dds0_pincontrol_en
    
 
 
@@ -313,7 +313,7 @@ ddsX_outY_enable controls signal generation on output Y of channel X. Y may be s
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 1 > dds0_out_enable**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 1 > dds0_out_enable
    
 
 
@@ -331,8 +331,8 @@ Specifies the active output frequency tuning word. The value corresponds to the 
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 1 > dds0_freqsymbol**
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 0 > dds0_freqsymbol**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 1 > dds0_freqsymbol
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 0 > dds0_freqsymbol
    
 
 
@@ -350,8 +350,8 @@ Specifies the active phase Y which is added to the phase accumulator output. The
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 0 > dds0_phasesymbol**
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 1 > dds0_phasesymbol**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 0 > dds0_phasesymbol
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 1 > dds0_phasesymbol
    
 
 

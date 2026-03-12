@@ -33,15 +33,15 @@ Now we can get the information of the chipset and it corresponding drivers and F
 ::
 
    ;
-   ; **ID 2001:3306**
+   ; ID 2001:3306
    : chipset: ''Realtek RTL8188SU''
    : driver: ''rtl8172u.ko''
    : firmware: ''lib/firmware/rtlwifi/rtl8712u.bin''
-   ; **ID 0cf3:7015**
+   ; ID 0cf3:7015
    : chipset: ''Atheros AR7010+AR9287''
    : driver: ''ath9k.ko''
    : firmware ''lib/firmware/ath9k_htc/htc_7010-1.4.0.fw''
-   ; **ID 0bda:818b**
+   ; ID 0bda:818b
    : chipset:''Realtek RTL8192EU 802.11b/g/n ''
    : driver: '' RTL8xxxEU.ko''
    : firmware: ''lib/firmware/rtlwifi/rtl8192eu_nic.bin''
@@ -74,9 +74,9 @@ On the Yocto, Configure the linux-kernel as below to set the USB controller in H
                    [*]   Enable USB persist by default
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Dual role mode)  --->
-                           ** Platform Glue Layer **
+                            Platform Glue Layer 
                    <*>     ADI
-                           ** MUSB DMA mode **
+                            MUSB DMA mode 
                    [N]     Disable DMA (always use PIO)
                    [*]       Inventra
 
@@ -312,7 +312,7 @@ Run the **wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant.conf** to creat
              Mode:Managed  Frequency:2.437 GHz  Access Point: 14:D6:4D:32:3B:EA
              Bit Rate:150 Mb/s   Sensitivity:0/0
              Retry:off   RTS thr:off   Fragment thr:off
-             Encryption key:***-***-***-***-***-***-***-***   Security mode:open
+             Encryption key:*-*-*-*-*-*-*-*   Security mode:open
              Power Management:off
              Link Quality=100/100  Signal level=100/100  Noise level=0/100
              Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0

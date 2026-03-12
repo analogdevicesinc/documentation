@@ -3,7 +3,7 @@ AD-FMCJESDADC1-EBZ Microblaze Quick Start Guide
 
 .. warning::
 
-   \ **NOTE:** Support for the ad-fmcjesdadc1-ebz was discontinued on all carriers starting with 2022_R2 Kuiper Linux release and it won't be supported anymore in future releases. Latest MicroBlaze images with pre-build files can be downloaded from :doc:`here </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The project source code can still be found on `hdl_2022_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2022_r2/projects/fmcjesdadc1>`_ release branch.
+   \ NOTE: Support for the ad-fmcjesdadc1-ebz was discontinued on all carriers starting with 2022_R2 Kuiper Linux release and it won't be supported anymore in future releases. Latest MicroBlaze images with pre-build files can be downloaded from :doc:`here </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The project source code can still be found on `hdl_2022_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2022_r2/projects/fmcjesdadc1>`_ release branch.
 
 
 This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCJESDADC1-EBZ on:
@@ -40,7 +40,7 @@ Download the pre-build image for you device in question.
 
 .. note::
 
-   **Latest Build: 2024-03-26 - 2023_R2**
+   Latest Build: 2024-03-26 - 2023_R2
 
    
    | Linux branch: 2023_R2
@@ -96,7 +96,7 @@ Download the pre-build image for you device in question.
 
 .. note::
 
-   **Latest Build: 2023-12-08 - 2022_R2**
+   Latest Build: 2023-12-08 - 2022_R2
 
    
    | Linux branch: 2022_R2
@@ -148,7 +148,7 @@ Download the pre-build image for you device in question.
 
 .. note::
 
-   **Latest Build: 2023-04-02 - 2021_R2**
+   Latest Build: 2023-04-02 - 2021_R2
 
    
    | Linux branch: 2021_R2
@@ -192,7 +192,7 @@ Download the pre-build image for you device in question.
 
 .. note::
 
-   **Latest Build: 2022_08_05 - 2021_R1**
+   Latest Build: 2022_08_05 - 2021_R1
 
    
    | Linux branch: 2021_R1
@@ -226,7 +226,7 @@ Download the pre-build image for you device in question.
 
 .. note::
 
-   **Latest Build: 2021_07_27 - 2019_R2**
+   Latest Build: 2021_07_27 - 2019_R2
 
    
    | Linux branch: 2019_R2
@@ -278,7 +278,7 @@ Download the pre-build image for you device in question.
 
 .. note::
 
-   **Latest Build: 2018_05_08 - 2018_R1**
+   Latest Build: 2018_05_08 - 2018_R1
 
    
    | Linux branch:2018_R1
@@ -349,8 +349,8 @@ Below is just a example and the file-names may vary.
 
          Dave@HAL9000:~$ xmd
 
-         ***** Xilinx Microprocessor Debugger (XMD) Engine
-         ***** XMD v2014.2 (64-bit)
+         * Xilinx Microprocessor Debugger (XMD) Engine
+         * XMD v2014.2 (64-bit)
            *** SW Build 932637 on Wed Jun 11 13:12:06 MDT 2014
              ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 
@@ -445,7 +445,7 @@ XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows, yo
    
    ::
    
-      ***** Xilinx System Debugger (XSDB) v2021.1
+      * Xilinx System Debugger (XSDB) v2021.1
         *** Build date : Jun 10 2021-20:11:58
           ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
    
@@ -453,7 +453,7 @@ XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows, yo
       xsdb% connect
       attempting to launch hw_server
    
-      ***** Xilinx hw_server v2021.1
+      * Xilinx hw_server v2021.1
         *** Build date : Jun 10 2021 at 20:11:57
           ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
    
@@ -518,7 +518,7 @@ Then run the tcl script:
    ::
    
    
-      ***** Xilinx System Debugger (XSDB) v2021.1
+      * Xilinx System Debugger (XSDB) v2021.1
         *** Build date : Jun 10 2021-20:11:58
           ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
    
@@ -526,7 +526,7 @@ Then run the tcl script:
       xsdb% source run.tcl
       attempting to launch hw_server
    
-      ***** Xilinx hw_server v2021.1
+      * Xilinx hw_server v2021.1
         *** Build date : Jun 10 2021 at 20:11:57
           ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
    

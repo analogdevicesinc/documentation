@@ -92,11 +92,11 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root@analog:/> **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices> **ls**
+      root@analog:/> cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices> ls
       iio:device0
    
-      root@analog:/sys/bus/iio/devices> **cd iio\:device0**
+      root@analog:/sys/bus/iio/devices> cd iio\:device0
    
       root@analog:/sys/bus/iio/devices/iio:device0# ls -l
       total 0
@@ -163,7 +163,7 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat name**
+      root@analog:/sys/bus/iio/devices/iio:device0> cat name
       ad3530r
    
 
@@ -182,7 +182,7 @@ Scale to be applied to out_voltageY_raw in order to obtain the measured voltage 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat out_voltage0_scale**
+      root@analog:/sys/bus/iio/devices/iio:device0> cat out_voltage0_scale
       0.038146972
    
 
@@ -201,7 +201,7 @@ Raw offset to be applied to out_voltageY_raw in order to obtain the measured vol
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat out_voltage0_offset**
+      root@analog:/sys/bus/iio/devices/iio:device0> cat out_voltage0_offset
       0
    
 
@@ -220,7 +220,7 @@ Raw (unscaled, no bias etc.) output voltage for channel Y.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **echo 10000 > out_voltage0_raw**
+      root@analog:/sys/bus/iio/devices/iio:device0> echo 10000 > out_voltage0_raw
    
 
 
@@ -240,11 +240,11 @@ Writing 1 causes output Y to enter the power down mode. Clearing returns to norm
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **echo 1 > out_voltage0_powerdown**
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat out_voltage0_powerdown**
+      root@analog:/sys/bus/iio/devices/iio:device0> echo 1 > out_voltage0_powerdown
+      root@analog:/sys/bus/iio/devices/iio:device0> cat out_voltage0_powerdown
       1
-      root@analog:/sys/bus/iio/devices/iio:device0> **echo 0 > out_voltage0_powerdown**
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat out_voltage0_powerdown**
+      root@analog:/sys/bus/iio/devices/iio:device0> echo 0 > out_voltage0_powerdown
+      root@analog:/sys/bus/iio/devices/iio:device0> cat out_voltage0_powerdown
       0
    
 
@@ -261,10 +261,10 @@ Muxout Select
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat muxout_select_available**
+      root@analog:/sys/bus/iio/devices/iio:device0> cat muxout_select_available
       powered_down vout0 iout0_source iout0_sink vout1 iout1_source iout1_sink vout2 iout2_source iout2_sink vout3 iout3_source iout3_sink vout4 iout4_source iout4_sink vout5 iout5_source iout5_sink vout6 iout6_source iout6_sink vout7 iout7_source iout7_sink die_temp agnd
-      root@analog:/sys/bus/iio/devices/iio:device0> **echo vout0 > muxout_select**
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat muxout_select**
+      root@analog:/sys/bus/iio/devices/iio:device0> echo vout0 > muxout_select
+      root@analog:/sys/bus/iio/devices/iio:device0> cat muxout_select
       vout0
    
 

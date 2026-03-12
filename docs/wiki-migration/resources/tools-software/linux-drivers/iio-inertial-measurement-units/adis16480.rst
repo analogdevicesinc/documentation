@@ -183,7 +183,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The adis16480 driver depends on **CONFIG_SPI_MASTER**
+   The adis16480 driver depends on CONFIG_SPI_MASTER
 
 
 ::
@@ -225,7 +225,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. tip::
 
-   \ **TIP:** An example program which uses the interface can be found here:
+   \ TIP: An example program which uses the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
@@ -239,12 +239,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
-      root:/sys/bus/iio/devices> **ls**
+      root:/> cd /sys/bus/iio/devices/
+      root:/sys/bus/iio/devices> ls
       iio:device0  trigger0
    
-      root:/sys/bus/iio/devices> **cd iio:device0**
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **ls -l**
+      root:/sys/bus/iio/devices> cd iio:device0
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> ls -l
       drwxr-xr-x    2 root     root             0 Jan  4 00:03 buffer
       -r--r--r--    1 root     root          4096 Jan  4 00:03 dev
       -rw-r--r--    1 root     root          4096 Jan  4 00:03 in_accel_filter_low_pass_3db_frequency
@@ -367,7 +367,7 @@ Show device name
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **cat name**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> cat name
       adis16480
    
 
@@ -386,11 +386,11 @@ The sampling frequency of the device can be set by writing the desired value to 
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **cat sampling_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> cat sampling_frequency
       4250.000000
       pi@raspberrypi:/s
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **echo 2000 > sampling_frequency**
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **cat sampling_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> echo 2000 > sampling_frequency
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> cat sampling_frequency
       2125.000000
    
 
@@ -419,9 +419,9 @@ The units by the IIO framework are:
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **cat in_accel_z_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> cat in_accel_z_raw
       265126938
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **cat in_accel_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> cat in_accel_scale
       0.002451731
    
 
@@ -444,10 +444,10 @@ Note that the low pass filter frequency depends on the sampling frequency, so ch
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **cat in_anglvel_filter_low_pass_3db_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> cat in_anglvel_filter_low_pass_3db_frequency
       TDB
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **echo TBD > in_anglvel_filter_low_pass_3db_frequency**
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **cat in_anglvel_filter_low_pass_3db_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> echo TBD > in_anglvel_filter_low_pass_3db_frequency
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> cat in_anglvel_filter_low_pass_3db_frequency
       TBD
    
 
@@ -457,7 +457,7 @@ Trigger management
 
 .. hint::
 
-   This driver only supports it's own default trigger source **adis16480-dev0**
+   This driver only supports it's own default trigger source adis16480-dev0
 
 
 .. container:: box bggreen
@@ -467,7 +467,7 @@ Trigger management
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **cat trigger/current_trigger**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> cat trigger/current_trigger
       adis16480-dev0
    
 
@@ -479,7 +479,7 @@ Trigger management
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **echo adis16480-dev0 > trigger/current_trigger**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> echo adis16480-dev0 > trigger/current_trigger
    
 
 
@@ -493,8 +493,8 @@ Buffer management
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0/buffer> **ls**
-      **enable**           **length**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0/buffer> ls
+      enable           length
    
 
 
@@ -528,7 +528,7 @@ Every buffer implementation features a set of files:
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0/scan_elements> **ls**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0/scan_elements> ls
       TBD
       root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0/scan_elements>
    

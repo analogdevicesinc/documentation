@@ -132,7 +132,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD6676 driver depends on **CONFIG_SPI**
+   The AD6676 driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -150,7 +150,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
 
            <*>   Analog Devices AD9467 AD9643 High-Speed AXI ADC driver
@@ -168,7 +168,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. tip::
 
-   \ **TIP:** An example program which uses the interface can be found here:
+   \ TIP: An example program which uses the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
@@ -186,11 +186,11 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0  iio:device1
    
-      root:/sys/bus/iio/devices> **cd iio:device1**
+      root:/sys/bus/iio/devices> cd iio:device1
    
       root:/sys/bus/iio/devices/iio:device1# ls -l
       drwxr-xr-x 5 root root    0 Jan 22 08:19 .
@@ -232,8 +232,8 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat name**
-      **axi-ad6676-hpc**
+      root:/sys/bus/iio/devices/iio:device1> cat name
+      axi-ad6676-hpc
    
 
 
@@ -251,16 +251,16 @@ Range using external synthesizer [2.0,3.2] GHz in Hz Range using internal synthe
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_adc_frequency**
-      **3200000000**
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 3000000000 > in_voltage_adc_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_adc_frequency
+      3200000000
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 3000000000 > in_voltage_adc_frequency
       -bash: echo: write error: Invalid argument
    
 
 
 .. tip::
 
-   \ **TIP:** If writing this attribute returns "Invalid argument" (-EINVAL) this means that the underlying HDL or Hardware's JESD204B Core and Gigabit Transceiver (GT) doesn't support changing the JESD204B Lane Rate.
+   \ TIP: If writing this attribute returns "Invalid argument" (-EINVAL) this means that the underlying HDL or Hardware's JESD204B Core and Gigabit Transceiver (GT) doesn't support changing the JESD204B Lane Rate.
 
    
 
@@ -279,8 +279,8 @@ In case the underlying HDL or Hardware's JESD204B Core and Gigabit Transceiver (
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_sampling_frequency**
-      **200000000**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_sampling_frequency
+      200000000
    
 
 
@@ -291,7 +291,7 @@ The IF (intermediate frequency) to which the ADC is tuned. The AD6676 supports I
 
 .. tip::
 
-   \ **TIP:** Please see paragraph Lext Selection in the datasheet: Maximum External Inductor Value as a Function of IF Frequency
+   \ TIP: Please see paragraph Lext Selection in the datasheet: Maximum External Inductor Value as a Function of IF Frequency
 
    
    The min/max values the device driver accepts can be set via following devicetree attributes:
@@ -312,13 +312,13 @@ Since the tuning accuracy is finite - reading back this value allows the user to
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 200000000 > in_voltage_intermediate_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_intermediate_frequency**
-      **200000000**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 200000000 > in_voltage_intermediate_frequency
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_intermediate_frequency
+      200000000
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 199000000 > in_voltage_intermediate_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_intermediate_frequency**
-      **199218750**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 199000000 > in_voltage_intermediate_frequency
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_intermediate_frequency
+      199218750
    
 
 
@@ -336,9 +336,9 @@ The allowed range is between [0.005,0.05]*FADC in Hz
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 100000000 > in_voltage_bandwidth**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_bandwidth**
-      **100000000**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 100000000 > in_voltage_bandwidth
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_bandwidth
+      100000000
    
 
 
@@ -358,9 +358,9 @@ Typical range [0,30] MHz in MHz
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 5 > in_voltage_bw_margin_low**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_bw_margin_low**
-      **5**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 5 > in_voltage_bw_margin_low
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_bw_margin_low
+      5
    
 
 
@@ -378,9 +378,9 @@ Typical range [-30,30] MHz in MHz
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo -1 > in_voltage_bw_margin_if**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_bw_margin_if**
-      **-1**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo -1 > in_voltage_bw_margin_if
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_bw_margin_if
+      -1
    
 
 
@@ -398,11 +398,11 @@ Writing a value of 0.5 to this device attribute lowers the PIN_0dBFS by 6 dB. Li
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_scale**
-      **1.000000**
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 0.25 > in_voltage_scale**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_scale**
-      **0.250000**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_scale
+      1.000000
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 0.25 > in_voltage_scale
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_scale
+      0.250000
    
 
 
@@ -420,10 +420,10 @@ The range is from 0 to -27.00 dB in 1dB steps. The nomenclature used here is gai
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo -10.00 > in_voltage_hardwaregain**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo -10.00 > in_voltage_hardwaregain
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_hardwaregain**
-      **-10.000000 dB**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_hardwaregain
+      -10.000000 dB
    
 
 
@@ -439,13 +439,13 @@ The AD6676 includes dynamic reordering of the comparators within the ADC in orde
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_shuffler_control_available**
-      **disable fadc fadc/2 fadc/3 fadc/4**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_shuffler_control**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_shuffler_control_available
+      disable fadc fadc/2 fadc/3 fadc/4
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_shuffler_control
       fadc
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo disable > in_voltage_shuffler_control**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_shuffler_control**
-      **disable**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo disable > in_voltage_shuffler_control
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_shuffler_control
+      disable
    
 
 
@@ -463,13 +463,13 @@ The supported range is from 0..8
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_shuffler_thresh_available**
-      **0 1 2 3 4 5 6 7 8**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_shuffler_thresh**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_shuffler_thresh_available
+      0 1 2 3 4 5 6 7 8
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_shuffler_thresh
       5
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 4 > in_voltage_shuffler_thresh**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_shuffler_thresh**
-      **4**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 4 > in_voltage_shuffler_thresh
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_shuffler_thresh
+      4
    
 
 
@@ -485,12 +485,12 @@ Interface test modes supported by the AD6676.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_test_mode_available**
-      **off checkerboard one_zero_toggle pn23 pn9 rep_user_pat sing_user_pat ramp mod_rpat jspat jtspat**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_test_mode_available
+      off checkerboard one_zero_toggle pn23 pn9 rep_user_pat sing_user_pat ramp mod_rpat jspat jtspat
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo ramp > in_voltage_test_mode**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat in_voltage_test_mode**
-      **ramp**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo ramp > in_voltage_test_mode
+      root@analog:/sys/bus/iio/devices/iio:device1# cat in_voltage_test_mode
+      ramp
    
 
 

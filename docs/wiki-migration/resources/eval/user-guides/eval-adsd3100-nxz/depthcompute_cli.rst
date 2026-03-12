@@ -3,7 +3,7 @@ Depth Compute Command Line Interface (CLI)
 
 .. important::
 
-   This tool has been removed from the host starting with Eval Kit version **5.0.0**.
+   This tool has been removed from the host starting with Eval Kit version 5.0.0.
 
 
 Description

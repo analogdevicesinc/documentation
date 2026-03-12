@@ -187,7 +187,7 @@ If *ADI_APP_USE_BLUETOOTH* is set to 1, BLE will advertise and UART terminal wil
 
 .. important::
 
-   Visible Light Detection Demo (**ADICUP3029_CN0397**) only works with Android App.
+   Visible Light Detection Demo (ADICUP3029_CN0397) only works with Android App.
 
 
 Obtaining the Sotware

@@ -231,14 +231,14 @@ The console output from U-Boot and later on Linux will appear on the USB serial 
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :<code bash>$ sudo minicom </code>
 
 In a separate console launch OpenOCD and connect to the development board.
 
 ::
 
-   ;''**Terminal2: OpenOCD**''
+   ;''Terminal2: OpenOCD''
    :<code bash>
 
 $ sdk_usr=/opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/ $ $sdk_usr/bin/openocd -f $sdk_usr/share/openocd/scripts/interface/<ICE>.cfg -f $sdk_usr/share/openocd/scripts/target/adspsc59x.cfg</code> Where ``<ICE>`` should be replaced with ``ice1000`` or ``ice2000`` depending on your hardware. When successful you should see a message similar to the console output below
@@ -264,7 +264,7 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
 
 ::
 
-   ;''**Terminal3: GDB**''
+   ;''Terminal3: GDB''
    : <code bash>
 
 $ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc594-som-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x00005f96 in ?? () (gdb) load Loading section .text, size 0xef3c lma 0x20080000 Loading section .rodata, size 0x204f lma 0x2008ef3c Loading section .dtb.init.rodata, size 0x1740 lma 0x20090f90 Loading section .data, size 0x548 lma 0x200926d0 Loading section .u_boot_list, size 0xc38 lma 0x20092c18 Start address 0x20080000, load size 79947 Transfer rate: 31 KB/sec, 9993 bytes/write. (gdb) c Continuing.
@@ -283,7 +283,7 @@ You will see a message on Terminal 1 running minicom, informing you that you can
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :<code bash>U-Boot SPL 2020.10 (Mar 16 2023 - 13:07:24 +0000)
 
 ADI Boot Mode: 0x0 (JTAG/BOOTROM) SPL execution has completed. Please load U-Boot Proper via JTAG </code>
@@ -292,7 +292,7 @@ Now, load U-Boot Proper into RAM.
 
 ::
 
-   ;''**Terminal3: GDB**''
+   ;''Terminal3: GDB''
    :
 
 .. code:: bash
@@ -322,7 +322,7 @@ At this point U-Boot will now be running in RAM on your target board. You should
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :  <code bash>
 
 U-Boot 2020.10 (Mar 16 2023 - 13:07:24 +0000)
@@ -338,7 +338,7 @@ In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot 
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :
 
 .. code:: bash

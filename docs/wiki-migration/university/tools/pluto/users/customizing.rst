@@ -43,7 +43,7 @@ There is a `Avahi <http://avahi.org/>`_ deamon running on the PlutoSDR. Avahi is
 
 ::
 
-   michael@mhenneri-D04:~$ **iio_info -n**\ pluto.local***
+   michael@mhenneri-D04:~$ iio_info -n\ pluto.local***
    Library version: 0.9 (git tag: f7cde8f)
    Compiled with backends: local xml ip usb
    IIO context created with network backend.
@@ -203,9 +203,9 @@ This will be the default (based on the AD9363):
    
    ::
    
-      # **fw_printenv attr_name**
+      # fw_printenv attr_name
       ## Error: "attr_name" not defined
-      # **fw_printenv attr_val**
+      # fw_printenv attr_val
       ## Error: "attr_val" not defined
       #
    
@@ -220,9 +220,9 @@ To change things to the AD9364 configuration:
    
    ::
    
-      # **fw_setenv attr_name compatible**
-      # **fw_setenv attr_val ad9364**
-      # **reboot**
+      # fw_setenv attr_name compatible
+      # fw_setenv attr_val ad9364
+      # reboot
    
 
 
@@ -235,8 +235,8 @@ Starting with PlutoSDR firmware revision **v0.32** an additional variable should
    
    ::
    
-      # **fw_setenv compatible ad9364**
-      # **reboot**
+      # fw_setenv compatible ad9364
+      # reboot
    
 
 
@@ -249,11 +249,11 @@ Note that when setting the mode of a Rev. C PlutoSDR to ``2r2t``, the following 
    
    ::
    
-      # **fw_setenv attr_name compatible**
-      # **fw_setenv attr_val ad9361**
-      # **fw_setenv compatible ad9361**
-      # **fw_setenv mode 2r2t**
-      # **reboot**
+      # fw_setenv attr_name compatible
+      # fw_setenv attr_val ad9361
+      # fw_setenv compatible ad9361
+      # fw_setenv mode 2r2t
+      # reboot
    
 
 
@@ -269,11 +269,11 @@ After rebooting the device, this is what the AD9364 configuration looks like:
    ::
    
       Welcome to Pluto
-      pluto login: **root**
-      Password: **analog**
-      # **fw_printenv attr_name**
+      pluto login: root
+      Password: analog
+      # fw_printenv attr_name
       attr_name=compatible
-      # **fw_printenv attr_val**
+      # fw_printenv attr_val
       attr_val=ad9364
       #
    
@@ -293,7 +293,7 @@ The first time you want to use this new feature you need to format/erase the mtd
    
    ::
    
-      # **device_format_jffs2**
+      # device_format_jffs2
       Are you sure to delete/format your mtd2 JFFS2 partition? (yes/no) yes
       Erasing 64 Kibyte @ 0 --  0 % complete flash_erase:  Cleanmarker Updated.
       Erasing 64 Kibyte @ 10000 --  7 % complete flash_erase:  Cleanmarker Updated.
@@ -322,7 +322,7 @@ After this is done you can use the ``device_passwd`` command to permanently chan
    
    ::
    
-      # **device_passwd**
+      # device_passwd
       Changing password for root
       New password:
       Bad password: too short
@@ -348,7 +348,7 @@ The first time you want to use this new feature you need to format/erase the mtd
    
    ::
    
-      # **device_format_jffs2**
+      # device_format_jffs2
       Are you sure to delete/format your mtd2 JFFS2 partition? (yes/no) yes
       Erasing 64 Kibyte @ 0 --  0 % complete flash_erase:  Cleanmarker Updated.
       Erasing 64 Kibyte @ 10000 --  7 % complete flash_erase:  Cleanmarker Updated.
@@ -377,7 +377,7 @@ After this is done you can use the ``device_persistent_keys`` command to permane
    
    ::
    
-      # **device_persistent_keys**
+      # device_persistent_keys
       Generating 256 bit ecdsa key, this may take a while...
       Public key portion is:
       ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH+cMtkirbmWjOq+EjW0Lzir5LVuWXFwRTOMOnb0eWo
@@ -426,7 +426,7 @@ Config File
    xo_correction =
    udc_handle_suspend = 0
    # USB Communication Device Class Compatibility Mode [rndis|ncm|ecm]
-   **usb_ethernet_mode = ncm**
+   usb_ethernet_mode = ncm
 
 u-boot environment
 ~~~~~~~~~~~~~~~~~~
@@ -438,7 +438,7 @@ u-boot environment
    
    ::
    
-      # **fw_setenv usb_ethernet_mode ncm**
-      # **reboot**
+      # fw_setenv usb_ethernet_mode ncm
+      # reboot
    
 

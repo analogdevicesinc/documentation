@@ -38,7 +38,7 @@ XHIDDENSTART Click to expand XHIDDENSTARTSTOP You will need to image an SD Card 
    
    -  If you just imaged your SD Card following the steps above, you will already have the latest Image file in the BOOT section.
    -  Be sure to select the appropriate .dtb (device tree file) and BOOT.bin (FPGA configuration file), depending on whether you are using the TX or RX Platform.
-   -  **Rename your device tree file to system.dtb**
+   -  Rename your device tree file to system.dtb
    
 
 
@@ -56,7 +56,7 @@ XHIDDENSTART Click to expand XHIDDENSTARTSTOP In order to configure the FPGA to 
 
 .. note::
 
-   You may refer to the **MPSoC Device Configuration** section in the `ZCU102 User Guide <https://docs.xilinx.com/v/u/en-US/ug1182-zcu102-eval-bd>`_ for more information.
+   You may refer to the MPSoC Device Configuration section in the `ZCU102 User Guide <https://docs.xilinx.com/v/u/en-US/ug1182-zcu102-eval-bd>`_ for more information.
 
 
 |SW6 Configuration to boot from SD Card| XHIDDENEND
@@ -68,7 +68,7 @@ XHIDDENSTART Click to expand XHIDDENSTARTSTOP The ZCU102 board uses a micro-B ca
 
 .. note::
 
-   You may refer to the **CP2108 USB UART Interface** section in the `ZCU102 User Guide <https://docs.xilinx.com/v/u/en-US/ug1182-zcu102-eval-bd>`_ for more information.
+   You may refer to the CP2108 USB UART Interface section in the `ZCU102 User Guide <https://docs.xilinx.com/v/u/en-US/ug1182-zcu102-eval-bd>`_ for more information.
 
 
    |ZCU102 USB UART Port|
@@ -89,7 +89,7 @@ XHIDDENSTART Click to expand XHIDDENSTARTSTOP The ZCU102 board uses an RJ45 ethe
 
 .. note::
 
-   You may refer to the **GEM3 Ethernet** section in the `ZCU102 User Guide <https://docs.xilinx.com/v/u/en-US/ug1182-zcu102-eval-bd>`_ for more information.
+   You may refer to the GEM3 Ethernet section in the `ZCU102 User Guide <https://docs.xilinx.com/v/u/en-US/ug1182-zcu102-eval-bd>`_ for more information.
 
 
 |ZCU102 Ethernet Port| The ethernet interface can then be used to control the ZCU102 board with higher level user applications based on Python or MATLAB.

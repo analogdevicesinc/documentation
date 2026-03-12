@@ -40,7 +40,7 @@ For different platforms you'll need different images. Currently we provide a sin
 
 .. important::
 
-   Make sure you unzip the image using either `7-zip <https://www.7-zip.org/>`_ or on Linux it can be done via command-line **xz -d <image_name>.img.xz**. The actual file that needs to be dumped to the SD card has to have the **\*.img** extension.
+   Make sure you unzip the image using either `7-zip <https://www.7-zip.org/>`_ or on Linux it can be done via command-line xz -d <image_name>.img.xz. The actual file that needs to be dumped to the SD card has to have the \*.img extension.
 
 
 .. important::
@@ -919,7 +919,7 @@ In order to update all ADI tools - simply call the update script as shown below:
    
    ::
    
-      root@analog:~# **adi_update_tools.sh**
+      root@analog:~# adi_update_tools.sh
    
 
 
@@ -931,7 +931,7 @@ In order to update all ADI tools - simply call the update script as shown below:
 
 
       2022-05-06 14:35:15 URL: http://github.com/analogdevicesinc 200 OK
-       ** Updating linux_image_ADI-scripts BRANCH origin/master **
+        Updating linux_image_ADI-scripts BRANCH origin/master 
       HEAD is now at 47416bc update_tools: Add HWMON and examples to libiio builds
       remote: Enumerating objects: 32, done.
       remote: Counting objects: 100% (32/32), done.
@@ -942,12 +942,12 @@ In order to update all ADI tools - simply call the update script as shown below:
         * [new branch]      add_2021_R1_release -> origin/add_2021_R1_release
          47416bc..425510e  master              -> origin/master
        + c989e52...4bf27ce rpi_boot_files      -> origin/rpi_boot_files  (forced update)
-       ** Building linux_image_ADI-scripts **
+        Building linux_image_ADI-scripts 
       ./adi_update_tools.sh has been updated, switching to new one
       2022-05-06 14:35:18 URL: http://github.com/analogdevicesinc 200 OK
-       ** Updating linux_image_ADI-scripts BRANCH origin/master **
+        Updating linux_image_ADI-scripts BRANCH origin/master 
       HEAD is now at 425510e adi_update_boot.sh: Replace windows carrige/return
-       ** Building linux_image_ADI-scripts **
+        Building linux_image_ADI-scripts 
       ./adi_update_tools.sh script is the same, continuing
       Reading package lists... Done
       Building dependency tree... Done
@@ -1126,7 +1126,7 @@ In order to update all ADI tools - simply call the update script as shown below:
       make[1]: Entering directory '/usr/local/src/libusbgx'
       Making all in src
       ....
-       ** Building libiio **
+        Building libiio 
       -- cmake version: 3.18.4
       -- The C compiler identification is GNU 10.2.1
       -- Detecting C compiler ABI info
@@ -1186,7 +1186,7 @@ In order to update all ADI tools - simply call the update script as shown below:
       -- Build files have been written to: /usr/local/src/libiio/build
       ....
       Building libiio target  finished Successfully
-       ** Updating libad9361-iio BRANCH origin/2019_R2 **
+        Updating libad9361-iio BRANCH origin/2019_R2 
       Previous HEAD position was fd44358 Fix flags for FMComms5 python tests
       HEAD is now at be7eb02 Update HW test to use environmental variables
       remote: Enumerating objects: 3, done.
@@ -1196,7 +1196,7 @@ In order to update all ADI tools - simply call the update script as shown below:
       From :git-libad9361-iio:`libad9361-iio`
         * [new branch]      2021_R1           -> origin/2021_R1
         * [new branch]      staging/ci-update -> origin/staging/ci-update
-       ** Building libad9361-iio **
+        Building libad9361-iio 
       -- The C compiler identification is GNU 10.2.1
       -- Detecting C compiler ABI info
       -- Detecting C compiler ABI info - done
@@ -1212,7 +1212,7 @@ In order to update all ADI tools - simply call the update script as shown below:
       -- Build files have been written to: /usr/local/src/libad9361-iio/build
       ....
       Building libad9361-iio target  finished Successfully
-      ** Updating iio-oscilloscope BRANCH origin/2019_R2 **
+       Updating iio-oscilloscope BRANCH origin/2019_R2 
       Previous HEAD position was fb9ec84 plugins: adrv9002: improve temperature reporting
       HEAD is now at 177dd7d filters: add adrv9002 new API profiles
       rm -rf /usr/local/lib/osc /usr/local/share/osc /usr/local/bin/osc /usr/local/lib/libosc.so

@@ -102,11 +102,11 @@ Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX, w
    
    ::
    
-      root:/> **cd /sys/class/hwmon/**
+      root:/> cd /sys/class/hwmon/
       root:/sys/class/hwmon> ls
       hwmon0  hwmon1
-      root:/sys/class/hwmon> **cd hwmon0**
-      root:/sys/class/hwmon/hwmon0> **ls -l**
+      root:/sys/class/hwmon> cd hwmon0
+      root:/sys/class/hwmon/hwmon0> ls -l
       total 0
       drwxr-xr-x 3 root root    0 Nov 16 11:17 .
       drwxr-xr-x 3 root root    0 Nov 16 11:17 ..
@@ -138,7 +138,7 @@ Show device name
    
    ::
    
-      root:/sys/class/hwmon/hwmon0> **cat name**
+      root:/sys/class/hwmon/hwmon0> cat name
       axi_fan_control
    
 
@@ -153,7 +153,7 @@ Show FAN input (in RPM)
    
    ::
    
-      root:/sys/class/hwmon/hwmon0> **cat fan1_input**
+      root:/sys/class/hwmon/hwmon0> cat fan1_input
       3600
    
 
@@ -168,7 +168,7 @@ Show FAN label
    
    ::
    
-      root:/sys/class/hwmon/hwmon0> **cat fan1_label**
+      root:/sys/class/hwmon/hwmon0> cat fan1_label
       SOM FAN
    
 
@@ -183,7 +183,7 @@ Show PWM input
    
    ::
    
-      root:/sys/class/hwmon/hwmon0> **cat pwm1**
+      root:/sys/class/hwmon/hwmon0> cat pwm1
       200
    
 
@@ -198,7 +198,7 @@ Show Temperature input (in milliC)
    
    ::
    
-      root:/sys/class/hwmon/hwmon0> **cat temp1_input**
+      root:/sys/class/hwmon/hwmon0> cat temp1_input
       32000
    
 
@@ -213,7 +213,7 @@ Show Temperature label
    
    ::
    
-      root:/sys/class/hwmon/hwmon0> **cat temp1_label**
+      root:/sys/class/hwmon/hwmon0> cat temp1_label
       SYSMON4
    
 
@@ -230,7 +230,7 @@ When reading **fan1_fault** returns 1, that means that either the FAN is physica
    
    ::
    
-      root:/sys/class/hwmon/hwmon0> **cat fan1_fault**
+      root:/sys/class/hwmon/hwmon0> cat fan1_fault
       0
    
 
@@ -245,7 +245,7 @@ Set PWM value
    
    ::
    
-      root:/sys/class/hwmon/hwmon0> **echo 250 > pwm1**
+      root:/sys/class/hwmon/hwmon0> echo 250 > pwm1
    
 
 

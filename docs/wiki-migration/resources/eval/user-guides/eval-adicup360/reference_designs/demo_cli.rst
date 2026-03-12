@@ -88,12 +88,12 @@ A bank of jumpers provided near the PMOD ports of the EVAL-ADICUP360, makes this
 
 .. note::
 
-   If using UART in **USER USB** configuration, you first need to program the board using **DEBUG USB**
+   If using UART in USER USB configuration, you first need to program the board using DEBUG USB
 
 
 .. note::
 
-   If using UART in **DEBUG USB** configuration you first need to program the board using **DEBUG USB** and after the program runs on target, you need to change jumper (J1 and J2) positions
+   If using UART in DEBUG USB configuration you first need to program the board using DEBUG USB and after the program runs on target, you need to change jumper (J1 and J2) positions
 
 
 Obtaining the Source Code

@@ -224,7 +224,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD9172 driver depends on **CONFIG_SPI**
+   The AD9172 driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -242,7 +242,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Direct Digital Synthesis **
+                  Direct Digital Synthesis 
            [--snip--]
 
            <*>   Analog Devices CoreFPGA AXI DDS driver
@@ -343,13 +343,13 @@ Some device attributes control the DDS HDL Core, others features of the DAC and 
    
    ::
    
-      analog:/sys/bus/iio/devices/iio:device2# **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices# **ls**
+      analog:/sys/bus/iio/devices/iio:device2# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0  iio:device1  iio:device2  iio:device3
       root@analog:/sys/bus/iio/devices#
    
-      root@analog:/sys/bus/iio/devices# **cd iio\:device2**
-      root@analog:/sys/bus/iio/devices/iio:device2# **ls -l**
+      root@analog:/sys/bus/iio/devices# cd iio\:device2
+      root@analog:/sys/bus/iio/devices/iio:device2# ls -l
       total 0
       drwxr-xr-x 5 root root    0 Apr 12 12:01 .
       drwxr-xr-x 4 root root    0 Apr 12 12:01 ..
@@ -462,8 +462,8 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat name**
-      **axi-ad9172-hpc**
+      root@analog:/sys/bus/iio/devices/iio:device2# cat name
+      axi-ad9172-hpc
    
 
 
@@ -492,9 +492,9 @@ Sets the scalar channel gain value. Range is from 0.0000 to 1.9999
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 0.85 > out_voltage0_q_scale**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_q_scale**
-      **0.849609375**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 0.85 > out_voltage0_q_scale
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_q_scale
+      0.849609375
    
 
 
@@ -512,9 +512,9 @@ Enable/Disable NCOs. (Values 0, 1)
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1 > out_voltage0_nco_enable**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_nco_enable**
-      **1**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 1 > out_voltage0_nco_enable
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_nco_enable
+      1
    
 
 
@@ -536,9 +536,9 @@ Set channel NCO frequency (fCARRIER) in Hz Range is: −(fDAC/Main Interpolation
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 400000000 > out_voltage0_nco_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_nco_frequency**
-      **400000000**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 400000000 > out_voltage0_nco_frequency
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_nco_frequency
+      400000000
    
 
 
@@ -556,9 +556,9 @@ Sets main datapath and/or channel datapath NCO phase offset. Range is −180° �
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 120000 > out_voltage0_nco_phase**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_nco_phase**
-      **119998**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 120000 > out_voltage0_nco_phase
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_nco_phase
+      119998
    
 
 
@@ -585,9 +585,9 @@ Enable/Disable main datapath DAC NCO. (Values 0, 1)
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1 > out_voltage6_nco_enable**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage6_nco_enable**
-      **1**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 1 > out_voltage6_nco_enable
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage6_nco_enable
+      1
    
 
 
@@ -605,9 +605,9 @@ Set main datapath DAC NCO frequency (fCARRIER) in Hz Range is: −fDAC/2 ≤ fCA
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 2250000000 > out_voltage6_nco_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage6_nco_frequency**
-      **2250000000**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 2250000000 > out_voltage6_nco_frequency
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage6_nco_frequency
+      2250000000
    
 
 
@@ -625,9 +625,9 @@ Sets main datapath and/or channel datapath NCO phase offset. Range is −180° �
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 120000 > out_voltage6_nco_phase**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage6_nco_phase**
-      **119998**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 120000 > out_voltage6_nco_phase
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage6_nco_phase
+      119998
    
 
 

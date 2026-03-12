@@ -167,7 +167,7 @@ Setup of the EVSE with the type 2 cable connected on the EV side.
 
 .. tip::
 
-   **If you want to go back to the SOFTWARE SETUP, click here:** :doc:`AD-ACEVSECRDSET-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-acevsecrdset-sl/software>`
+   If you want to go back to the SOFTWARE SETUP, click here: :doc:`AD-ACEVSECRDSET-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-acevsecrdset-sl/software>`
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/user_interface.png

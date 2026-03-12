@@ -7,7 +7,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 
 .. tip::
 
-   NOTE: Windows 7 users will need to right-click and select **Run as administrator**. Another method is to right-click and select **Properties** and click on the **Compatibility** tab and select the **Run This Program As An Administrator** checkbox, which will make this a permanent change.
+   NOTE: Windows 7 users will need to right-click and select Run as administrator. Another method is to right-click and select Properties and click on the Compatibility tab and select the Run This Program As An Administrator checkbox, which will make this a permanent change.
 
 
 1. Initialize Eclipse workspace
@@ -196,7 +196,7 @@ These 2 steps will compile and build the associated board support package, then 
 
 .. important::
 
-   In case an error appears at compile time with a description like : **//section .rodata loaded at [00400164,00400477] overlaps section .text loaded at [00400164,004054d7] //** the enable_alt_load_copy_exceptions option must be unchecked from BSP Editor -> Main -> Settings -> Advanced-> hal.linker
+   In case an error appears at compile time with a description like : //section .rodata loaded at [00400164,00400477] overlaps section .text loaded at [00400164,004054d7] // the enable_alt_load_copy_exceptions option must be unchecked from BSP Editor -> Main -> Settings -> Advanced-> hal.linker
 
 
 2. Verify the Board Connection

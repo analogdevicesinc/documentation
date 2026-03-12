@@ -233,7 +233,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD7192 Driver depends on **CONFIG_SPI**
+   The AD7192 Driver depends on CONFIG_SPI
 
 
 ::
@@ -247,7 +247,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                    - *-     Industrial I/O lock free software ring
                    - *-   Enable triggered sampling support
 
-                         ** Analog to digital converters **
+                          Analog to digital converters 
                    [--snip--]
 
                    <*>   Analog Devices AD7190 AD7192 AD7195 ADC driver
@@ -273,13 +273,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0          trigger0
    
-      root:/sys/bus/iio/devices> **cd iio:device0**
+      root:/sys/bus/iio/devices> cd iio:device0
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **ls -l**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> ls -l
       -rw-r--r--    1 root     root          4096 Jan  4 16:59 bridge_switch_en
       drwxr-xr-x    4 root     root             0 Jan  4 16:59 buffer
       -rw-r--r--    1 root     root          4096 Jan  4 16:59 in_voltage-in_voltage_scale
@@ -315,7 +315,7 @@ Show device name
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat name**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat name
       ad7192
    
 
@@ -330,10 +330,10 @@ Set sampling frequency / update rate
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat sampling_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat sampling_frequency
       10
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **echo 50 > sampling_frequency**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat sampling_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> echo 50 > sampling_frequency
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat sampling_frequency
       50
       root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0>
    
@@ -361,7 +361,7 @@ Setting these directly influences the ADC input range, by altering the GAIN ampl
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat in_voltage-in_voltage_scale_available**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in_voltage-in_voltage_scale_available
       0.000393390 0.000196690 0.000098340 0.000049170 0.000024580 0.000012290 0.000006140 0.000003070
    
 
@@ -389,7 +389,7 @@ Setting these directly influences the ADC input range, by altering the GAIN ampl
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat in_voltage_scale_available**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in_voltage_scale_available
       0.000393390 0.000196690 0.000098340 0.000049170 0.000024580 0.000012290 0.000006140 0.000003070
    
 
@@ -406,10 +406,10 @@ Scale to be applied to in1-in2_raw, in2-in3_raw in order to obtain the measured 
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat in_voltage-in_voltage_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in_voltage-in_voltage_scale
       0.000393390
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **echo 0.000196690 > in_voltage-in_voltage_scale**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat in_voltage-in_voltage_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> echo 0.000196690 > in_voltage-in_voltage_scale
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in_voltage-in_voltage_scale
       0.000196690
    
 
@@ -438,7 +438,7 @@ AIN4 - AINCOM     in_voltage4_raw
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat in1_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in1_raw
       -1
    
 
@@ -457,7 +457,7 @@ Show channel in_voltage1-in_voltage2 measurement
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat in_voltage1-in_voltage2_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in_voltage1-in_voltage2_raw
       -1
    
 
@@ -476,7 +476,7 @@ Show internal temperature
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat in_temp0_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in_temp0_raw
       -175
    
 
@@ -493,10 +493,10 @@ Bride power-down switch control
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **echo 1 > bridge_switch_en**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat bridge_switch_en**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> echo 1 > bridge_switch_en
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat bridge_switch_en
       1
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **echo 0 > bridge_switch_en**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> echo 0 > bridge_switch_en
    
 
 
@@ -512,10 +512,10 @@ AC excitation control (AD7195 only)
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **echo 1 > ac_excitation_en**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat ac_excitation_en**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> echo 1 > ac_excitation_en
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat ac_excitation_en
       1
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **echo 0 > ac_excitation_en**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> echo 0 > ac_excitation_en
    
 
 
@@ -524,7 +524,7 @@ Trigger management
 
 .. hint::
 
-   This driver only supports it's own default trigger source **ad7192-dev0**
+   This driver only supports it's own default trigger source ad7192-dev0
 
 
 .. container:: box bggreen
@@ -534,7 +534,7 @@ Trigger management
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat trigger/current_trigger**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat trigger/current_trigger
       ad7192-dev0
    
 
@@ -584,7 +584,7 @@ Every buffer implementation features a set of files:
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0/scan_elements> **ls**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0/scan_elements> ls
       in_voltage1-in_voltage2_en             in_voltage2_en                 in_voltage4_en
       in_voltage1-in_voltage2_index          in_voltage2_index              in_voltage4_index
       in_voltage1-in_voltage2_type           in_voltage2_type               in_voltage4_type

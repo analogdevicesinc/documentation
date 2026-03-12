@@ -101,7 +101,7 @@ SD Card Setup
 
    .. warning::
 
-      \ **If your computer encrypts removable media for security purposes, it's easiest to use a personal computer to do this step. If encryption issues persist, use the file below which has AES disabled. This is version 2021_R1.**\
+      \ If your computer encrypts removable media for security purposes, it's easiest to use a personal computer to do this step. If encryption issues persist, use the file below which has AES disabled. This is version 2021_R1.\
 
 
    `ZCU102 Configuration Files, 100MHz VCXO, AES Disabled <https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/zcu102_config_files_100mhz_vcxo_rev10_aes_disabled.zip>`_

@@ -184,8 +184,8 @@ This thread will then call an example of the user’s application in io-app\\src
        SetEndianFlag((CI_mode_t)protocolType);
      }
 
-     /********************************************************************/
-     /************ Configuration using the "basket" method **************/
+     /****************/
+     /** Configuration using the "basket" method ****/
      CI_DEBUG("Using \"basket\" configuration method\n");
 
      /* Get basket description from demo configuration data */
@@ -213,7 +213,7 @@ This thread will then call an example of the user’s application in io-app\\src
                   basket_p->ItemInfo[i].itemID);
        }
      }
-     /********************************************************************/
+     /****************/
 
      /* Tell the Network Application the configuration is complete */
      result = CI_ConfigComplete(100000);
@@ -239,7 +239,7 @@ This thread will then call an example of the user’s application in io-app\\src
    #ifdef USING_STANDARD_CONFIG_DATA
        // test with standard configuration data
 
-       /************************************************************************/
+       /****************/
        /* Read the digital data item */
        outputStatus = CI_ReadItem(itemHandle[0], CI_IO_valid, &largeData);
        if (outputStatus < 0) {
@@ -270,7 +270,7 @@ This thread will then call an example of the user’s application in io-app\\src
    #endif
    ……
 
-       /************************************************************************/
+       /****************/
        /* Read the analog data item */
        outputStatus = CI_ReadItem(itemHandle[1], CI_IO_valid, &largeData);
        if (outputStatus < 0) {
@@ -303,7 +303,7 @@ This thread will then call an example of the user’s application in io-app\\src
    //      CI_DEBUG("New Analog I/O Data received: 0x%08x\n", analogData);
        }
 
-       /************************************************************************/
+       /****************/
        /* Read the control register data item */
        outputStatus = CI_ReadItem(itemHandle[2], CI_IO_valid, &largeData);
        if (outputStatus < 0) {
@@ -553,10 +553,10 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #ifndef _CI_CODES_H_
     #define _CI_CODES_H_
 
-    // Includes ******************************************************************
-    // End Includes **************************************************************
+    // Includes **************
+    // End Includes **************
 
-    // Macros, typedefs, enums ***************************************************
+    // Macros, typedefs, enums ***********
     /* Success/error codes */
     #define CI_OK              0
     #define CI_ERROR          -1
@@ -580,15 +580,15 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
 
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Macros, typedefs, enums ***********************************************
+    // End Macros, typedefs, enums ***********
 
-    // Global Variables (externs, globals, static globals) ***********************
+    // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Global Variables ******************************************************
+    // End Global Variables **************
 
-    // Functions *****************************************************************
-    // End Functions *************************************************************
+    // Functions *************
+    // End Functions *************
 
     #endif /* _CI_CODES_H_ */
 
@@ -1319,19 +1319,19 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #ifndef _CI_DEVICES_H_
     #define _CI_DEVICES_H_
 
-    /****************************************************************************
+    /****************
      *
      * This file contains device structures to be used with the
      * CI_SetDeviceCustom() function
      *
-     ***************************************************************************/
+     ***************/
 
-    // Includes ******************************************************************
+    // Includes **************
     #include <stdint.h>
 
-    // End Includes **************************************************************
+    // End Includes **************
 
-    // Macros, typedefs, enums ***************************************************
+    // Macros, typedefs, enums ***********
     /* PROFINET macros */
     #define CI_PNET_DEVICE_TYPE_LENGTH        240
     #define CI_PNET_DEVICE_ORDER_ID_LENGTH    20
@@ -1450,15 +1450,15 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     } __attribute__ ((packed)) CI_ethercatDevice_t;
 
     // ----------------------------------------------------------------------------
-    // End Macros, typedefs, enums ***********************************************
+    // End Macros, typedefs, enums ***********
 
-    // Global Variables (externs, globals, static globals) ***********************
+    // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Global Variables ******************************************************
+    // End Global Variables **************
 
-    // Functions *****************************************************************
-    // End Functions *************************************************************
+    // Functions *************
+    // End Functions *************
 
     #endif /* _CI_DEVICES_H_ */
 
@@ -1653,27 +1653,27 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #ifndef _CI_HARDWARE_API_H_
     #define _CI_HARDWARE_API_H_
 
-    // Includes ******************************************************************
+    // Includes **************
     #include "CI_hardware_types.h"
 
-    // End Includes **************************************************************
+    // End Includes **************
 
-    // Macros, typedefs, enums ***************************************************
+    // Macros, typedefs, enums ***********
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Macros, typedefs, enums ***********************************************
+    // End Macros, typedefs, enums ***********
 
-    // Global Variables (externs, globals, static globals) ***********************
+    // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Global Variables ******************************************************
+    // End Global Variables **************
 
-    // Functions *****************************************************************
+    // Functions *************
     CI_getAvailableTimerCount_t CI_GetAvailableTimerCount;
 
     CI_timerSetSignal_t CI_ConfigureTimerSignal;
 
-    // End Functions *************************************************************
+    // End Functions *************
 
     #endif /* _CI_HARDWARE_API_H_ */
 
@@ -1693,14 +1693,14 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #ifndef _CI_HARDWARE_TYPES_H_
     #define _CI_HARDWARE_TYPES_H_
 
-    // Includes ******************************************************************
+    // Includes **************
     #include <stdint.h>
 
-    // End Includes **************************************************************
+    // End Includes **************
 
-    // Macros, typedefs, enums ***************************************************
+    // Macros, typedefs, enums ***********
 
-    /**************************************************************************
+    /******************
      * IMPORTANT: The interface version below is used to detect CHANGES the to
      * functions in the interface and SHALL be updated any time there is a change
      * to ANY function in this header that is part of a registered (i.e. used with
@@ -1708,7 +1708,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      * SIGNATURE of a function. The interface version need not be updated if the
      * number of functions in the interface changes (i.e. a function is added or
      * removed).
-     **************************************************************************/
+     ******************/
     #define  CI_HW_VER_MAJ  0x01
     #define  CI_HW_VER_MIN  0x02
     #define  CI_HW_VER      ((CI_HW_VER_MAJ << 16) | CI_HW_VER_MIN)
@@ -1747,15 +1747,15 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     typedef CI_timerSetSignal_t (*CI_timerSetSignal_tp);
 
     // ----------------------------------------------------------------------------
-    // End Macros, typedefs, enums ***********************************************
+    // End Macros, typedefs, enums ***********
 
-    // Global Variables (externs, globals, static globals) ***********************
+    // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Global Variables ******************************************************
+    // End Global Variables **************
 
-    // Functions *****************************************************************
-    // End Functions *************************************************************
+    // Functions *************
+    // End Functions *************
 
     #endif /* _CI_HARDWARE_TYPES_H_ */
 
@@ -1775,22 +1775,22 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
    #ifndef _CI_IO_API_H_
    #define _CI_IO_API_H_
 
-   // Includes ******************************************************************
+   // Includes **************
    #include "CI_io_types.h"
 
-   // End Includes **************************************************************
+   // End Includes **************
 
-   // Macros, typedefs, enums ***************************************************
+   // Macros, typedefs, enums ***********
    // ----------------------------------------------------------------------------
    // ----------------------------------------------------------------------------
-   // End Macros, typedefs, enums ***********************************************
+   // End Macros, typedefs, enums ***********
 
-   // Global Variables (externs, globals, static globals) ***********************
+   // Global Variables (externs, globals, static globals) *******
    // ----------------------------------------------------------------------------
    // ----------------------------------------------------------------------------
-   // End Global Variables ******************************************************
+   // End Global Variables **************
 
-   // Functions *****************************************************************
+   // Functions *************
    /**
      * Set the device for the system
     *
@@ -2148,7 +2148,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     */
    CI_ioComplete_t CI_IoComplete;
 
-   // End Functions *************************************************************
+   // End Functions *************
 
    #endif /* _CI_IO_API_H_ */
 
@@ -2168,14 +2168,14 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #ifndef _CI_IO_TYPES_H_
     #define _CI_IO_TYPES_H_
 
-    // Includes ******************************************************************
+    // Includes **************
     #include <stdint.h>
 
-    // End Includes **************************************************************
+    // End Includes **************
 
-    // Macros, typedefs, enums ***************************************************
+    // Macros, typedefs, enums ***********
 
-    /**************************************************************************
+    /******************
      * IMPORTANT: The interface version below is used to detect CHANGES the to
      * functions in the interface and SHALL be updated any time there is a change
      * to ANY function in this header that is part of a registered (i.e. used with
@@ -2183,7 +2183,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      * SIGNATURE of a function. The interface version need not be updated if the
      * number of functions in the interface changes (i.e. a function is added or
      * removed).
-     **************************************************************************/
+     ******************/
     #define  CI_IO_VER_MAJ  0x01
     #define  CI_IO_VER_MIN  0x00
     #define  CI_IO_VER     ((CI_IO_VER_MAJ << 16) | CI_IO_VER_MIN)
@@ -2337,15 +2337,15 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     typedef CI_ioComplete_t (*CI_ioComplete_tp);
 
     // ----------------------------------------------------------------------------
-    // End Macros, typedefs, enums ***********************************************
+    // End Macros, typedefs, enums ***********
 
-    // Global Variables (externs, globals, static globals) ***********************
+    // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Global Variables ******************************************************
+    // End Global Variables **************
 
-    // Functions *****************************************************************
-    // End Functions *************************************************************
+    // Functions *************
+    // End Functions *************
 
     #endif /* _CI_IO_TYPES_H_ */
 
@@ -2365,19 +2365,19 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #ifndef _CI_ITEMS_H_
     #define _CI_ITEMS_H_
 
-    /****************************************************************************
+    /****************
      *
      * This file contains structures to be used with the CI_AddItemCustom()
      * function
      *
-     ***************************************************************************/
+     ***************/
 
-    // Includes ******************************************************************
+    // Includes **************
     #include <stdint.h>
 
-    // End Includes **************************************************************
+    // End Includes **************
 
-    // Macros, typedefs, enums ***************************************************
+    // Macros, typedefs, enums ***********
     // ----------------------------------------------------------------------------
 
     /* PROFINET item section =================================================== */
@@ -2468,15 +2468,15 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     /* ========================================================================= */
 
     // ----------------------------------------------------------------------------
-    // End Macros, typedefs, enums ***********************************************
+    // End Macros, typedefs, enums ***********
 
-    // Global Variables (externs, globals, static globals) ***********************
+    // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Global Variables ******************************************************
+    // End Global Variables **************
 
-    // Functions *****************************************************************
-    // End Functions *************************************************************
+    // Functions *************
+    // End Functions *************
 
     #endif /* _CI_ITEMS_H_ */
 
@@ -2496,22 +2496,22 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
    #ifndef _CI_SOCKET_API_H_
    #define _CI_SOCKET_API_H_
 
-   // Includes ******************************************************************
+   // Includes **************
    #include "CI_socket_types.h"
 
-   // End Includes **************************************************************
+   // End Includes **************
 
-   // Macros, typedefs, enums ***************************************************
+   // Macros, typedefs, enums ***********
    // ----------------------------------------------------------------------------
    // ----------------------------------------------------------------------------
-   // End Macros, typedefs, enums ***********************************************
+   // End Macros, typedefs, enums ***********
 
-   // Global Variables (externs, globals, static globals) ***********************
+   // Global Variables (externs, globals, static globals) *******
    // ----------------------------------------------------------------------------
    // ----------------------------------------------------------------------------
-   // End Global Variables ******************************************************
+   // End Global Variables **************
 
-   // Functions *****************************************************************
+   // Functions *************
    /**
      * Set a socket to non-blocking IO
     *
@@ -3050,7 +3050,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     */
    CI_inetNtoA_t CI_InetNtoA;
 
-   // End Functions *************************************************************
+   // End Functions *************
 
    #endif /* _CI_SOCKET_API_H_ */
 
@@ -3072,15 +3072,15 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
 
     #pragma pack(push, 1)
 
-    // Includes ******************************************************************
+    // Includes **************
     #ifdef WIN32
       #include <winsock2.h>
     #endif
 
     #include "CI_codes.h"
-    // End Includes **************************************************************
+    // End Includes **************
 
-    // Macros, typedefs, enums ***************************************************
+    // Macros, typedefs, enums ***********
 
     #define CI_FDSET_SIZE             (CI_MAX_SOCKETS + 1)
     #define CI_FDSET_FD_NBITS         32
@@ -3402,15 +3402,15 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #endif
 
     // ----------------------------------------------------------------------------
-    // End Macros, typedefs, enums ***********************************************
+    // End Macros, typedefs, enums ***********
 
-    // Global Variables (externs, globals, static globals) ***********************
+    // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Global Variables ******************************************************
+    // End Global Variables **************
 
-    // Functions *****************************************************************
-    // End Functions *************************************************************
+    // Functions *************
+    // End Functions *************
 
     // Unset the packing setting used for this file to the previous one
     #pragma pack(pop)
@@ -3433,16 +3433,16 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #ifndef _CI_SOCKET_TYPES_H_
     #define _CI_SOCKET_TYPES_H_
 
-    // Includes ******************************************************************
+    // Includes **************
     #include <stdint.h>
 
     #include "CI_socket_defines.h"
 
-    // End Includes **************************************************************
+    // End Includes **************
 
-    // Macros, typedefs, enums ***************************************************
+    // Macros, typedefs, enums ***********
 
-    /**************************************************************************
+    /******************
      * IMPORTANT: The interface version below is used to detect CHANGES the to
      * functions in the interface and SHALL be updated any time there is a change
      * to ANY function in this header that is part of a registered (i.e. used with
@@ -3450,7 +3450,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      * SIGNATURE of a function. The interface version need not be updated if the
      * number of functions in the interface changes (i.e. a function is added or
      * removed).
-     **************************************************************************/
+     ******************/
     #define  CI_SOCKET_VER_MAJ  0x01
     #define  CI_SOCKET_VER_MIN  0x02
     #define  CI_SOCKET_VER      ((CI_SOCKET_VER_MAJ << 16) | CI_SOCKET_VER_MIN)
@@ -3490,7 +3490,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
 
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Macros, typedefs, enums ***********************************************
+    // End Macros, typedefs, enums ***********
 
     /* indexes must match order of CI_socketIf_g array */
     typedef enum {
@@ -3528,12 +3528,12 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     } CI_socketsIndex_t;
 
 
-    // Global Variables (externs, globals, static globals) ***********************
+    // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Global Variables ******************************************************
+    // End Global Variables **************
 
-    // Functions *****************************************************************
+    // Functions *************
 
     /* ------------------------------------------------------------------------- */
     /* ------------------- Function types for this interface ------------------- */
@@ -3681,7 +3681,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     typedef char * (CI_inetNtoA_t)(struct in_addr in);
     typedef CI_inetNtoA_t (*CI_inetNtoA_tp);
 
-    // End Functions *************************************************************
+    // End Functions *************
 
     #endif /* _CI_SOCKET_TYPES_H_ */
 
@@ -3701,22 +3701,22 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
    #ifndef _CI_SYSTEM_API_H_
    #define _CI_SYSTEM_API_H_
 
-   // Includes ******************************************************************
+   // Includes **************
    #include "CI_system_types.h"
 
-   // End Includes **************************************************************
+   // End Includes **************
 
-   // Macros, typedefs, enums ***************************************************
+   // Macros, typedefs, enums ***********
    // ----------------------------------------------------------------------------
    // ----------------------------------------------------------------------------
-   // End Macros, typedefs, enums ***********************************************
+   // End Macros, typedefs, enums ***********
 
-   // Global Variables (externs, globals, static globals) ***********************
+   // Global Variables (externs, globals, static globals) *******
    // ----------------------------------------------------------------------------
    // ----------------------------------------------------------------------------
-   // End Global Variables ******************************************************
+   // End Global Variables **************
 
-   // Functions *****************************************************************
+   // Functions *************
    /**
      * Get a basket from the IO configuration file
     *
@@ -4069,7 +4069,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     */
    CI_closePorts_t CI_ClosePorts;
 
-   // End Functions *************************************************************
+   // End Functions *************
 
    #endif /* _CI_SYSTEM_API_H_ */
 
@@ -4089,14 +4089,14 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #ifndef _CI_SYSTEM_TYPES_H_
     #define _CI_SYSTEM_TYPES_H_
 
-    // Includes ******************************************************************
+    // Includes **************
     #include <stdint.h>
     #include <stdbool.h>
-    // End Includes **************************************************************
+    // End Includes **************
 
-    // Macros, typedefs, enums ***************************************************
+    // Macros, typedefs, enums ***********
 
-    /**************************************************************************
+    /******************
      * IMPORTANT: The interface versions below is used to detect CHANGES the to
      * functions in the interfaces and SHALL be updated any time there is a change
      * to ANY function in this header that is part of a registered (i.e. used with
@@ -4104,7 +4104,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      * SIGNATURE of a function. The interface version need not be updated if the
      * number of functions in the interface changes (i.e. a function is added or
      * removed).
-     **************************************************************************/
+     ******************/
     #define  CI_SYS_VER_MAJ  0x01
     #define  CI_SYS_VER_MIN  0x02
     #define  CI_SYS_VER     ((CI_SYS_VER_MAJ << 16) | CI_SYS_VER_MIN)
@@ -4703,15 +4703,15 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     typedef CI_closePorts_t(*CI_closePorts_tp);
 
     // ----------------------------------------------------------------------------
-    // End Macros, typedefs, enums ***********************************************
+    // End Macros, typedefs, enums ***********
 
-    // Global Variables (externs, globals, static globals) ***********************
+    // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Global Variables ******************************************************
+    // End Global Variables **************
 
-    // Functions *****************************************************************
-    // End Functions *************************************************************
+    // Functions *************
+    // End Functions *************
 
     #endif /* _CI_SYSTEM_TYPES_H_ */
 
@@ -4727,29 +4727,29 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      *  its licensors.
     */
 
-   /***************************************************************************
+   /***************
    ** This header defines the CI webserver API.
    */
 
    #ifndef _CI_WEBSERVER_API_H_
    #define _CI_WEBSERVER_API_H_
 
-   // Includes ******************************************************************
+   // Includes **************
    #include "CI_webserver_types.h"
 
-   // End Includes **************************************************************
+   // End Includes **************
 
-   // Macros, typedefs, enums ***************************************************
+   // Macros, typedefs, enums ***********
    // ----------------------------------------------------------------------------
    // ----------------------------------------------------------------------------
-   // End Macros, typedefs, enums ***********************************************
+   // End Macros, typedefs, enums ***********
 
-   // Global Variables (externs, globals, static globals) ***********************
+   // Global Variables (externs, globals, static globals) *******
    // ----------------------------------------------------------------------------
    // ----------------------------------------------------------------------------
-   // End Global Variables ******************************************************
+   // End Global Variables **************
 
-   // Functions *****************************************************************
+   // Functions *************
 
    /**
      * Set http tunnel handler.
@@ -4847,7 +4847,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
 
    CI_registerCgiEntry_t  CI_RegisterCgiEntry;
 
-   // End Functions *************************************************************
+   // End Functions *************
 
    #endif /* _CI_WEBSERVER_API_H_ */
 
@@ -4864,22 +4864,22 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      *  its licensors.
      */
 
-    /***************************************************************************
+    /***************
     ** This header defines the CI web server API.
     */
 
     #ifndef _CI_WEBSERVER_TYPES_H_
     #define _CI_WEBSERVER_TYPES_H_
 
-    // Includes ******************************************************************
+    // Includes **************
     #include <stdint.h>
     #include <stdarg.h>
 
-    // End Includes **************************************************************
+    // End Includes **************
 
-    // Macros, typedefs, enums ***************************************************
+    // Macros, typedefs, enums ***********
 
-    /**************************************************************************
+    /******************
      * IMPORTANT: The interface version below is used to detect CHANGES the to
      * functions in the interface and SHALL be updated any time there is a change
      * to ANY function in this header that is part of a registered (i.e. used with
@@ -4887,7 +4887,7 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      * SIGNATURE of a function. The interface version need not be updated if the
      * number of functions in the interface changes (i.e. a function is added or
      * removed).
-     **************************************************************************/
+     ******************/
 
     #define  CI_WEBS_VER_MAJ  0x01
     #define  CI_WEBS_VER_MIN  0x01
@@ -5065,15 +5065,15 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     typedef CI_registerCgiEntry_t (*CI_registerCgiEntry_tp);
 
     // ----------------------------------------------------------------------------
-    // End Macros, typedefs, enums ***********************************************
+    // End Macros, typedefs, enums ***********
 
-    // Global Variables (externs, globals, static globals) ***********************
+    // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    // End Global Variables ******************************************************
+    // End Global Variables **************
 
-    // Functions *****************************************************************
-    // End Functions *************************************************************
+    // Functions *************
+    // End Functions *************
     #endif /* _CI_WEBSERVER_TYPES_H_ */
 
 7. Profinet Extension API

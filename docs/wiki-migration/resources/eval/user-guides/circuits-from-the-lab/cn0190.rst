@@ -120,7 +120,7 @@ Step by step details are provided below.
 
 .. note::
 
-   The ADM1066 comes **pre-programmed out of the box** where ALL the power outputs are active at the same time. So you do NOT need to program the board if you do not want to. The only time you need to program this board is if you want to create your own customer power sequencing/monitoring solution.
+   The ADM1066 comes pre-programmed out of the box where ALL the power outputs are active at the same time. So you do NOT need to program the board if you do not want to. The only time you need to program this board is if you want to create your own customer power sequencing/monitoring solution.
 
 
 Driver Installation

@@ -116,11 +116,11 @@ Driver testing
    
    ::
    
-      root@analog:~# **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices# **ls**
+      root@analog:~# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0  iio_sysfs_trigger
-      root@analog:/sys/bus/iio/devices# **cd iio\:device0**
-      root@analog:/sys/bus/iio/devices/iio:device0# **ls -l**
+      root@analog:/sys/bus/iio/devices# cd iio\:device0
+      root@analog:/sys/bus/iio/devices/iio:device0# ls -l
       total 0
       -r--r--r-- 1 root root 4096 Sep 23 14:33 dev
       -rw-r--r-- 1 root root 4096 Sep 23 14:33 in_accel_sampling_frequency
@@ -150,7 +150,7 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat name
       adxl313
    
 
@@ -167,7 +167,7 @@ Show scale
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_accel_scale**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_accel_scale
       0.009576806
    
 
@@ -184,7 +184,7 @@ Show axis x measurement
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_accel_x_raw**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_accel_x_raw
       -14
    
 
@@ -199,12 +199,12 @@ Set sampling frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_accel_sampling_frequency_available**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_accel_sampling_frequency_available
       6.250000 12.500000 25.000000 50.000000 100.000000 200.000000 400.000000 800.000000 1600.000000 3200.000000
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_accel_sampling_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_accel_sampling_frequency
       100.000000
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 12.5 > in_accel_sampling_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_accel_sampling_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 12.5 > in_accel_sampling_frequency
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_accel_sampling_frequency
       12.500000
    
 
@@ -219,10 +219,10 @@ Set calibbias for the Z channel
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_accel_z_calibbias**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_accel_z_calibbias
       0
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 4 > in_accel_z_calibbias**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_accel_z_calibbias**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 4 > in_accel_z_calibbias
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_accel_z_calibbias
       4
    
 

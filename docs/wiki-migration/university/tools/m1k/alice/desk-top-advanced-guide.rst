@@ -442,7 +442,7 @@ It is often useful to be able to produce not only flat, but arbitrary noise spec
        S = numpy.sqrt(numpy.arange(X.size)+1.0)  # +1 to avoid divide by zero
        y = numpy.fft.irfft(X/S).real[:N] # extremely tiny value 1e-9 without normalization
        z = numpy.ndarray = mag
-       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**\ 2).mean())
+       y = y * numpy.sqrt((numpy.abs(z)2).mean() / (numpy.abs(y)\ 2).mean())
 
        return y
 
@@ -459,7 +459,7 @@ It is often useful to be able to produce not only flat, but arbitrary noise spec
        S = numpy.sqrt(numpy.arange(X.size))  # Filter
        y = numpy.fft.irfft(X\*S).real[:N]
        z = numpy.ndarray = mag
-       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**\ 2).mean())
+       y = y * numpy.sqrt((numpy.abs(z)2).mean() / (numpy.abs(y)\ 2).mean())
 
        return y
 
@@ -476,7 +476,7 @@ It is often useful to be able to produce not only flat, but arbitrary noise spec
        S = numpy.arange(X.size)+1  # Filter
        y = numpy.fft.irfft(X/S).real[:N]
        z = numpy.ndarray = mag
-       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**\ 2).mean())
+       y = y * numpy.sqrt((numpy.abs(z)2).mean() / (numpy.abs(y)\ 2).mean())
 
        return y
 
@@ -493,7 +493,7 @@ It is often useful to be able to produce not only flat, but arbitrary noise spec
        S = numpy.arange(X.size)  # Filter
        y = numpy.fft.irfft(X\*S).real[0:N]
        z = numpy.ndarray = mag
-       y = y * numpy.sqrt((numpy.abs(z)**2).mean() / (numpy.abs(y)**\ 2).mean())
+       y = y * numpy.sqrt((numpy.abs(z)2).mean() / (numpy.abs(y)\ 2).mean())
 
        return y
 

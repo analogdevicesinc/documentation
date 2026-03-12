@@ -55,7 +55,7 @@ Configure kernel with “make menuconfig” (alternatively use “make xconfig�
 
 .. hint::
 
-   The LTC2983 driver depends **CONFIG_SPI**.
+   The LTC2983 driver depends CONFIG_SPI.
 
 
 ::
@@ -86,11 +86,11 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
-      root:/sys/bus/iio/devices> **cd iio:device0**
-      root:/sys/bus/iio/devices/iio:device0> **ls -l**
+      root:/sys/bus/iio/devices> cd iio:device0
+      root:/sys/bus/iio/devices/iio:device0> ls -l
       -r--r--r-- 1 root root 4096 Nov 16 11:17 dev
       -rw-r--r-- 1 root root 4096 Nov 16 11:17 in_temp0_thermistor_raw
       -rw-r--r-- 1 root root 4096 Nov 16 11:17 in_temp1_rtd_raw
@@ -118,7 +118,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat name**
+      root:/sys/bus/iio/devices/iio:device0> cat name
       ltc2983
    
 
@@ -133,7 +133,7 @@ Show temperature
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_temp0_thermistor_raw**
+      root:/sys/bus/iio/devices/iio:device0> cat in_temp0_thermistor_raw
       1048576
    
 
@@ -150,7 +150,7 @@ Show temperature scale
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_temp_scale**
+      root:/sys/bus/iio/devices/iio:device0> cat in_temp_scale
       0.000976562
    
 
@@ -165,7 +165,7 @@ Show voltage
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage0_direct_adc_raw**
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage0_direct_adc_raw
       2621440
    
 
@@ -182,7 +182,7 @@ Show Voltage scale
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage_scale**
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage_scale
       0.000000476
    
 

@@ -70,7 +70,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADAR4000 driver depends on **CONFIG_SPI**
+   The ADAR4000 driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -88,7 +88,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
 
            <*>   Analog Devices ADAR4000 and ADR4001 Beamformer driver
@@ -113,10 +113,10 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0  iio:device1  iio:device2  iio:device3
-      root:/sys/bus/iio/devices> **cd iio:device0**
+      root:/sys/bus/iio/devices> cd iio:device0
       root@analog:/sys/bus/iio/devices/iio:device0# ls -l
       total 0
       -rw-r--r-- 1 root root 4096 Oct  1 14:25 active_device
@@ -256,7 +256,7 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat name**
+      root@analog:/sys/bus/iio/devices/iio:device0> cat name
       adar4000
    
 

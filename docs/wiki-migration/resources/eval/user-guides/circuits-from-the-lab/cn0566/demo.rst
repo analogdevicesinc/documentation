@@ -168,7 +168,7 @@ Running the System
    cd <pyadi-iio directory>
    cd examples/phaser
    python phaser_gui.py </code>
-   * After running the Phaser GUI, select **''Tracking''** in mode selection and select ''Lab 8. Monopulse Tracking'' on the middle lower part of the GUI.
+   * After running the Phaser GUI, select ''Tracking'' in mode selection and select ''Lab 8. Monopulse Tracking'' on the middle lower part of the GUI.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/gui.png
    :align: center

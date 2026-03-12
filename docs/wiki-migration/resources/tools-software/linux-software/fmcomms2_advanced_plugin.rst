@@ -13,7 +13,7 @@ See more details about :doc:`AD9361 Customization </wiki-migration/resources/too
 
 .. tip::
 
-   \ **TIP:** After you customized the driver for your application needs you can read back all values from the Linux debugfs:
+   \ TIP: After you customized the driver for your application needs you can read back all values from the Linux debugfs:
 
    
    .. container:: box bggreen
@@ -23,8 +23,8 @@ See more details about :doc:`AD9361 Customization </wiki-migration/resources/too
          
          ::
          
-            root@linaro-ubuntu-desktop:~# **cd /sys/kernel/debug/iio/iio\:device1/**
-            root@linaro-ubuntu-desktop:/sys/kernel/debug/iio/iio:device1# **grep "" * | sed "s/:/ = </g" | awk '{print $0">;"}'**
+            root@linaro-ubuntu-desktop:~# cd /sys/kernel/debug/iio/iio\:device1/
+            root@linaro-ubuntu-desktop:/sys/kernel/debug/iio/iio:device1# grep "" * | sed "s/:/ = </g" | awk '{print $0">;"}'
             adi,2rx-2tx-mode-enable = <1>;
             adi,agc-adc-large-overload-exceed-counter = <10>;
          

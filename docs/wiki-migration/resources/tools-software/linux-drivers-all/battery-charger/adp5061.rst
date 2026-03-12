@@ -57,12 +57,12 @@ Driver testing
    
    ::
    
-      root:/> **cd /sys/class/power_supply**
+      root:/> cd /sys/class/power_supply
       root:/sys/class/power_supply> ls
       adp5061
    
-      root:/sys/class/power_supply>**cd adp5061**
-      root:/sys/class/power_supply/adp5061> **ls -l**
+      root:/sys/class/power_supply>cd adp5061
+      root:/sys/class/power_supply/adp5061> ls -l
       -r--r--r-- 1 root root 4096 Apr  2 14:25 capacity_level
       -rw-r--r-- 1 root root 4096 Apr  2 14:25 charge_term_current
       -r--r--r-- 1 root root 4096 Apr  2 14:25 charge_type
@@ -95,7 +95,7 @@ Show Charger status
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat status**
+      root:/sys/class/power_supply/adp5061> cat status
       Charging
    
 
@@ -110,7 +110,7 @@ Show charge type
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat charge_type**
+      root:/sys/class/power_supply/adp5061> cat charge_type
       Fast
    
 
@@ -125,7 +125,7 @@ Show the battery status
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat capacity_level**
+      root:/sys/class/power_supply/adp5061> cat capacity_level
       Normal
    
 
@@ -140,10 +140,10 @@ Enable Charging
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat charging_enabled**
+      root:/sys/class/power_supply/adp5061> cat charging_enabled
       0
-      root:/sys/class/power_supply/adp5061> **echo 1 > charging_enabled**
-      root:/sys/class/power_supply/adp5061> **cat charging_enabled**
+      root:/sys/class/power_supply/adp5061> echo 1 > charging_enabled
+      root:/sys/class/power_supply/adp5061> cat charging_enabled
       1
    
 
@@ -158,10 +158,10 @@ Enable Charging Voltage Limit
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat charging_vlim_enabled**
+      root:/sys/class/power_supply/adp5061> cat charging_vlim_enabled
       0
-      root:/sys/class/power_supply/adp5061> **echo 1 > charging_vlim_enabled**
-      root:/sys/class/power_supply/adp5061> **cat charging_vlim_enabled**
+      root:/sys/class/power_supply/adp5061> echo 1 > charging_vlim_enabled
+      root:/sys/class/power_supply/adp5061> cat charging_vlim_enabled
       1
    
 
@@ -176,7 +176,7 @@ Show Termination Voltage (VTRM)
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat voltage_max**
+      root:/sys/class/power_supply/adp5061> cat voltage_max
       4200000
    
 
@@ -191,8 +191,8 @@ Set Termination Voltage (VTRM)
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **echo 3800000 > voltage_max**
-      root:/sys/class/power_supply/adp5061> **cat voltage_max**
+      root:/sys/class/power_supply/adp5061> echo 3800000 > voltage_max
+      root:/sys/class/power_supply/adp5061> cat voltage_max
       3800000
    
 
@@ -207,10 +207,10 @@ Set the Input Current Limit into VINx (ILIM)
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat input_current_limit**
+      root:/sys/class/power_supply/adp5061> cat input_current_limit
       100000
-      root:/sys/class/power_supply/adp5061> **echo 200000 > input_current_limit**
-      root:/sys/class/power_supply/adp5061> **cat input_current_limit**
+      root:/sys/class/power_supply/adp5061> echo 200000 > input_current_limit
+      root:/sys/class/power_supply/adp5061> cat input_current_limit
       200000
    
 
@@ -225,10 +225,10 @@ Set the Trickle to Fast Charge Threshold (VTRK_DEAD)
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat voltage_min**
+      root:/sys/class/power_supply/adp5061> cat voltage_min
       2500000
-      root:/sys/class/power_supply/adp5061> **echo 200000 > voltage_min**
-      root:/sys/class/power_supply/adp5061> **cat voltage_min**
+      root:/sys/class/power_supply/adp5061> echo 200000 > voltage_min
+      root:/sys/class/power_supply/adp5061> cat voltage_min
       200000
    
 
@@ -243,10 +243,10 @@ Set the Charging Voltage Limit (CHG_VLIM)
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat constant_charge_voltage_max**
+      root:/sys/class/power_supply/adp5061> cat constant_charge_voltage_max
       3200000
-      root:/sys/class/power_supply/adp5061> **echo 3800000 > constant_charge_voltage_max**
-      root:/sys/class/power_supply/adp5061> **cat constant_charge_voltage_max**
+      root:/sys/class/power_supply/adp5061> echo 3800000 > constant_charge_voltage_max
+      root:/sys/class/power_supply/adp5061> cat constant_charge_voltage_max
       3800000
    
 
@@ -261,10 +261,10 @@ Set the Constant Charge Current (ICHG)
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat constant_charge_current**
+      root:/sys/class/power_supply/adp5061> cat constant_charge_current
       750000
-      root:/sys/class/power_supply/adp5061> **echo 500000 > constant_charge_current**
-      root:/sys/class/power_supply/adp5061> **cat constant_charge_current**
+      root:/sys/class/power_supply/adp5061> echo 500000 > constant_charge_current
+      root:/sys/class/power_supply/adp5061> cat constant_charge_current
       500000
    
 
@@ -279,10 +279,10 @@ Set the Trickle and Weak Charge Currents (ITRK_DEAD)
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat precharge_current**
+      root:/sys/class/power_supply/adp5061> cat precharge_current
       20000
-      root:/sys/class/power_supply/adp5061> **echo 10000 > precharge_current**
-      root:/sys/class/power_supply/adp5061> **cat precharge_current**
+      root:/sys/class/power_supply/adp5061> echo 10000 > precharge_current
+      root:/sys/class/power_supply/adp5061> cat precharge_current
       10000
    
 
@@ -297,10 +297,10 @@ Set the VWEAK Threshold
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat voltage_avg**
+      root:/sys/class/power_supply/adp5061> cat voltage_avg
       3000000
-      root:/sys/class/power_supply/adp5061> **echo 3400000 > voltage_avg**
-      root:/sys/class/power_supply/adp5061> **cat voltage_avg**
+      root:/sys/class/power_supply/adp5061> echo 3400000 > voltage_avg
+      root:/sys/class/power_supply/adp5061> cat voltage_avg
       3400000
    
 
@@ -315,10 +315,10 @@ Set Termination Current (IEND)
    
    ::
    
-      root:/sys/class/power_supply/adp5061> **cat charge_term_current**
+      root:/sys/class/power_supply/adp5061> cat charge_term_current
       52500
-      root:/sys/class/power_supply/adp5061> **echo 72500 > charge_term_current**
-      root:/sys/class/power_supply/adp5061> **cat charge_term_current**
+      root:/sys/class/power_supply/adp5061> echo 72500 > charge_term_current
+      root:/sys/class/power_supply/adp5061> cat charge_term_current
       72500
    
 

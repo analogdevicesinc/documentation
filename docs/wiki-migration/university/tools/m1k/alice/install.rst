@@ -1,6 +1,6 @@
 .. warning::
 
-   \ **This software uses an older version of libsmu / pysmu and is no longer recommended for use.**
+   \ This software uses an older version of libsmu / pysmu and is no longer recommended for use.
 
    
    :doc:`ALICE Desktop 1.3 </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` is now recommended.

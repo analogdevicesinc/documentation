@@ -31,7 +31,7 @@ The equipment should be connected as shown below, make sure that all power is of
 
 .. tip::
 
-   **Note !!!** that the Jumpers and Switches must be set as shown in the picture above. (Click on the picture to enlarge)
+   Note !!! that the Jumpers and Switches must be set as shown in the picture above. (Click on the picture to enlarge)
 
 
 Boot (JP7-JP11) and MIO0 (JP6) jumpers are set to SD card mode. To use USB peripheral devices with ZedBoard, install jumpers JP2 and JP3. The FMC interface spans over two PL I/O banks, banks 34 and 35. To meet the FMC spec, these banks are powered from an adjustable voltage set by jumper, J18. Selectable voltages include 1.8V and 2.5V (currently set).

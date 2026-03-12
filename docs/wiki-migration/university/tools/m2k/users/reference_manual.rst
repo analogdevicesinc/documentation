@@ -303,7 +303,7 @@ Digital IO connections to P1 are shown in the figure above. P1 is the end user s
 
 .. warning::
 
-   **Note:** When connecting the digital pins to any external device and the ADALM2000 is powered off, the ESD protection diodes on the ADALM2000 will turn on, pulling any signals to ground. Any high logic level of the external signal will be reduced to ~ 0.6V.
+   Note: When connecting the digital pins to any external device and the ADALM2000 is powered off, the ESD protection diodes on the ADALM2000 will turn on, pulling any signals to ground. Any high logic level of the external signal will be reduced to ~ 0.6V.
 
 
 .. note::

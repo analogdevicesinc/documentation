@@ -113,7 +113,7 @@ Once downloaded, double click on ``FX3DriverSetup.exe`` and follow the install p
 
 .. important::
 
-   The root cause of most FX3 driver issues is user permissions. The driver installer **must** be executed using native Windows administrator privileges. Running the installer using privilege elevation tools such as BeyondTrust (`link <https://beyondtrust.com>`_) will likely cause issues once the Windows Kernel attempts to load the driver.
+   The root cause of most FX3 driver issues is user permissions. The driver installer must be executed using native Windows administrator privileges. Running the installer using privilege elevation tools such as BeyondTrust (`link <https://beyondtrust.com>`_) will likely cause issues once the Windows Kernel attempts to load the driver.
 
 
    |image3|

@@ -13,7 +13,7 @@ Before building Scopy on Linux system, you need to make sure all the requirement
 
 ::
 
-       **git clone :git-scopy:`scopy`.git**
+       git clone :git-scopy:`scopy`.git
 
 This will fetch the latest sources from GitHub to a "scopy" directory.
 
@@ -21,13 +21,13 @@ This following command will use system Qt version
 
 ::
 
-       **scopy/CI/appveyor/install_ubuntu_deps.sh**
+       scopy/CI/appveyor/install_ubuntu_deps.sh
 
 or if you want to use a custom version of Qt (the one you just installed) - scopy/CI/appveyor/install_ubuntu_deps.sh <path_to_qt\_> for example:
 
 ::
 
-       **scopy/CI/appveyor/install_ubuntu_deps.sh /home/Adi/Qt/5.15.0/gcc_64**
+       scopy/CI/appveyor/install_ubuntu_deps.sh /home/Adi/Qt/5.15.0/gcc_64
 
 This should install all of the dependencies required to build Scopy.
 
@@ -48,13 +48,13 @@ Now build the project:
 
 ::
 
-       **make**
+       make
 
 And run Scopy:
 
 ::
 
-       **./scopy**
+       ./scopy
 
 Alternatively you can open QtCreator from the Qt folder. Open, configure and build the project.
 

@@ -73,13 +73,13 @@ For the description of the *Window Function* see below:
 
    ::
 
-        **Hanning**: The most commonly used window. It has an amplitude variation about 1.5dB for signals between bins and provides reasonable selectivity. Its filter roll off is not particularly steep. Hanning windows can limit the performance of the analyzer when looking at signals close together in frequency with very different amplitude.
-        **Flattop**: The Flattop window improves on the amplitude accuracy of the Hanning window. Its between-bin amplitude variation is about 0.02 dB. However, the selectivity is a little worse. Unlike the Hanning, the Flattop window has a wide pass band and very steep rolloff on either side. Thus, signals appear wide but do not leak across the whole spectrum.
-        **Blackman-Harris**: The Blackman-Harris window is a very good window to use with FFT analyzers. It has better amplitude accuracy than the Hanning, very good selectivity, and the fastest filter rolloff. The filter is steep and narrow and reaches a lower attenuation than the other windows. This allows signals close together in frequency to be distinguished, even when their amplitudes are very different.
+        Hanning: The most commonly used window. It has an amplitude variation about 1.5dB for signals between bins and provides reasonable selectivity. Its filter roll off is not particularly steep. Hanning windows can limit the performance of the analyzer when looking at signals close together in frequency with very different amplitude.
+        Flattop: The Flattop window improves on the amplitude accuracy of the Hanning window. Its between-bin amplitude variation is about 0.02 dB. However, the selectivity is a little worse. Unlike the Hanning, the Flattop window has a wide pass band and very steep rolloff on either side. Thus, signals appear wide but do not leak across the whole spectrum.
+        Blackman-Harris: The Blackman-Harris window is a very good window to use with FFT analyzers. It has better amplitude accuracy than the Hanning, very good selectivity, and the fastest filter rolloff. The filter is steep and narrow and reaches a lower attenuation than the other windows. This allows signals close together in frequency to be distinguished, even when their amplitudes are very different.
 
    ::
 
-        **Kaiser** : The Kaiser window, combines excellent selectivity and reasonable accuracy. The Kaiser window has the lowest side-lobes and the least broadening for non-bin frequencies. Because of these properties, it is the best window to use for measurements requiring a large dynamic range.
+        Kaiser : The Kaiser window, combines excellent selectivity and reasonable accuracy. The Kaiser window has the lowest side-lobes and the least broadening for non-bin frequencies. Because of these properties, it is the best window to use for measurements requiring a large dynamic range.
 
    Visit https://ccrma.stanford.edu/~jos/sasp/Spectrum_Analysis_Windows.html for a detailed explanation
 

@@ -435,7 +435,7 @@ If you are using a setup with SPI offload support, first select the sample rate 
 
 .. note::
 
-   If you are using a setup **without** SPI offload support, a trigger source must be set up manually and can't be controlled via the *IIO Oscilloscope* app. See :doc:`example </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad738x>`.
+   If you are using a setup without SPI offload support, a trigger source must be set up manually and can't be controlled via the *IIO Oscilloscope* app. See :doc:`example </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad738x>`.
 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7944/iio-osc-ad7985-debug-voltage0-samp-freq-1mhz.png

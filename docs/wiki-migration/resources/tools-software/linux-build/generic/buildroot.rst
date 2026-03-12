@@ -24,10 +24,10 @@ Example:
 
 .. important::
 
-   \ **Note:** There are 2 toolchains for GCC. The recommended ones, should be under **/opt/Xilinx/Vitis/2021.2/gnu/microblaze/linux_toolchain/**.
+   \ Note: There are 2 toolchains for GCC. The recommended ones, should be under /opt/Xilinx/Vitis/2021.2/gnu/microblaze/linux_toolchain/.
 
    
-   And also make sure that the the directory to the Vivado Vitis is correct. The current example assumes that it is Vivado 2021.2 and it's installed in **/opt/Xilinx/**
+   And also make sure that the the directory to the Vivado Vitis is correct. The current example assumes that it is Vivado 2021.2 and it's installed in /opt/Xilinx/
 
 
 Building for Microblaze - rootfs only
@@ -56,7 +56,7 @@ If building an entire simpleImage that can be ran on a board:
 
 .. tip::
 
-   \ **kcu105_fmcdaq2** is an example. Valid device-tree names can be found in :git-linux:`arch/microblaze/boot/dts` or in the list below
+   \ kcu105_fmcdaq2 is an example. Valid device-tree names can be found in :git-linux:`arch/microblaze/boot/dts` or in the list below
 
 
 A list of supported images for Microblaze:
@@ -123,7 +123,7 @@ If building an entire zImage that can be ran on a board:
 
 .. tip::
 
-   \ **a10gx_daq2** is an example. Valid device-tree names can be found in :git-linux:`linux/tree/master/arch/nios2/boot/dts <arch/nios2/boot/dts>`\
+   \ a10gx_daq2 is an example. Valid device-tree names can be found in :git-linux:`linux/tree/master/arch/nios2/boot/dts <arch/nios2/boot/dts>`\
 
 
 Build output & device images

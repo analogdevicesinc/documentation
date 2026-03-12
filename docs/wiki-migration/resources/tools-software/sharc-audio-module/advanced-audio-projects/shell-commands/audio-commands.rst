@@ -44,13 +44,13 @@ Wave Source/Sink Configuration (wav)
 
 .. note::
 
-   **Short options support status**:
+   Short options support status:
 
    
-   -  **ADZS-SC589-MINI** - v4.0.0 or greater
-   -  **ADZS-SC584-EZLITE** - TBD
-   -  **EV-SC594-SOM** - TBD
-   -  **EV-SC598-SOM** - TBD
+   -  ADZS-SC589-MINI - v4.0.0 or greater
+   -  ADZS-SC584-EZLITE - TBD
+   -  EV-SC594-SOM - TBD
+   -  EV-SC598-SOM - TBD
    
    For other variants and versions check if feature is supported in :doc:`Appendix A </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>`.
 
@@ -221,13 +221,13 @@ Volume Unit Meters Display (vu)
 
 .. note::
 
-   **Support status**:
+   Support status:
 
    
-   -  **ADZS-SC589-MINI** - v4.0.0 or greater
-   -  **ADZS-SC584-EZLITE** - TBD
-   -  **EV-SC594-SOM** - TBD
-   -  **EV-SC598-SOM** - TBD
+   -  ADZS-SC589-MINI - v4.0.0 or greater
+   -  ADZS-SC584-EZLITE - TBD
+   -  EV-SC594-SOM - TBD
+   -  EV-SC598-SOM - TBD
    
    For other variants and version check if feature is supported in :doc:`Appendix A </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>`. If it is supported, refer to the deprecated command on this page.
 
@@ -304,13 +304,13 @@ Signal generator (signal)
 
 .. note::
 
-   **Support status**:
+   Support status:
 
    
-   -  **ADZS-SC589-MINI** - TBD
-   -  **ADZS-SC584-EZLITE** - TBD
-   -  **EV-SC594-SOM** - TBD
-   -  **EV-SC598-SOM** - TBD
+   -  ADZS-SC589-MINI - TBD
+   -  ADZS-SC584-EZLITE - TBD
+   -  EV-SC594-SOM - TBD
+   -  EV-SC598-SOM - TBD
    
 
 
@@ -375,13 +375,13 @@ Asynchrnous Sample Rate Converter (asrc)
 
 .. note::
 
-   **Support status**:
+   Support status:
 
    
-   -  **ADZS-SC589-MINI** - TBD
-   -  **ADZS-SC584-EZLITE** - TBD
-   -  **EV-SC594-SOM** - TBD
-   -  **EV-SC598-SOM** - TBD
+   -  ADZS-SC589-MINI - TBD
+   -  ADZS-SC584-EZLITE - TBD
+   -  EV-SC594-SOM - TBD
+   -  EV-SC598-SOM - TBD
    
 
 

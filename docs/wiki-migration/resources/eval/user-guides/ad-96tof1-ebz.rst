@@ -76,7 +76,7 @@ Development kit contents:
 
 .. note::
 
-   **Getting the system up and running**
+   Getting the system up and running
 
    
    Host computer

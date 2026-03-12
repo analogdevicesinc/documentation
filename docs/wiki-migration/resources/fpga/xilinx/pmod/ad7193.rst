@@ -92,7 +92,7 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
 
 
 If programming was successful, you should be seeing messages appear on the terminal window as shown in the figures below. After programming the AD7193, the program will display the values of all internal registers. After that, it will go through 5 Demo Modes.
@@ -147,7 +147,7 @@ The hardware SPI access allows sending and receiving data from the AD7193, progr
    -  Connecting the PmodAD5 to the boards using an extension cable provides ease of use.
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD5 must be removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.25V
-   -  If using Xilinx Software Development Kit integrated Console as a Hyperterminal clinet, please uncomment all the commented **getchar();** in main.c, because the Console sees [Enter] as 2 consecutive keypresses, so 2 getchar(); are required. If using Tera Term or other similar software, do not modify anything.
+   -  If using Xilinx Software Development Kit integrated Console as a Hyperterminal clinet, please uncomment all the commented getchar(); in main.c, because the Console sees [Enter] as 2 consecutive keypresses, so 2 getchar(); are required. If using Tera Term or other similar software, do not modify anything.
    
 
 

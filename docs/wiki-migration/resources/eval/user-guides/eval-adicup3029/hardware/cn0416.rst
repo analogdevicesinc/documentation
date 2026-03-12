@@ -84,8 +84,8 @@ Full Duplex or Half Duplex Operation
 .. important::
 
    
-   -  When S4 and S5 are in switch position 1, S2 **MUST** be placed in switch position 1 or 4, depending on the part you are using.
-   -  When S4 and S5 are in switch position 2, S2 **MUST** be placed in switch position 2 or 3, depending on the part you are using.
+   -  When S4 and S5 are in switch position 1, S2 MUST be placed in switch position 1 or 4, depending on the part you are using.
+   -  When S4 and S5 are in switch position 2, S2 MUST be placed in switch position 2 or 3, depending on the part you are using.
    
 
 

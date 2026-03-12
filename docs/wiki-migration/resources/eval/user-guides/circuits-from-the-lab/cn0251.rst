@@ -120,7 +120,7 @@ Software Control and Indicator Descriptions
 
 .. important::
 
-   Jumpers **JP3** and **JP4** on the :adi:`EVAL-CN0251-SDPZ` **(CN-0251 Board)** must be populated to reflect the value displayed by this indicator
+   Jumpers JP3 and JP4 on the :adi:`EVAL-CN0251-SDPZ` (CN-0251 Board) must be populated to reflect the value displayed by this indicator
 
 
 - **AD7192 Gain Indicator**
@@ -144,9 +144,9 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ **NOTE:** If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be found at
 
-   **C:\\Program Files\\Analog Devices\\CN0251\\CN0251.exe**\
+   C:\\Program Files\\Analog Devices\\CN0251\\CN0251.exe\
 
 
 - Click the **Connect/Reconnect Button**. A window with a progress bar will load.
@@ -168,7 +168,7 @@ Capturing Data
 
 .. important::
 
-   Changing this control will change the **AD8475 Gain Indicator**. Please ensure that **JP3** and **JP4** on the :adi:`EVAL-CN0251-SDPZ` **(CN-0251 Board)** are populated to reflect the gain displayed by the **AD8475 Gain Indicator**.
+   Changing this control will change the AD8475 Gain Indicator. Please ensure that JP3 and JP4 on the :adi:`EVAL-CN0251-SDPZ` (CN-0251 Board) are populated to reflect the gain displayed by the AD8475 Gain Indicator.
 
 
 -  Input the number of samples to capture into the **Samples to Capture Control**

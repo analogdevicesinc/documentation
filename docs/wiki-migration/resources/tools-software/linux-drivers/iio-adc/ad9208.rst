@@ -289,7 +289,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD9208 driver depends on **CONFIG_SPI**
+   The AD9208 driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -307,7 +307,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
                - *- Analog Devices High-Speed AXI ADC driver core
                    <*> Analog Devices AD9208 and similar high speed ADCs
@@ -378,13 +378,13 @@ Some device attributes control the ADC HDL Core, others features of the ADC and 
    
    ::
    
-      analog:/sys/bus/iio/devices/iio:device1# **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices# **ls**
+      analog:/sys/bus/iio/devices/iio:device1# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0  iio:device1  iio:device2
       root@analog:/sys/bus/iio/devices#
    
-      root@analog:/sys/bus/iio/devices# **cd iio\:device1**
-      root@analog:/sys/bus/iio/devices/iio:device1# **ls -l**
+      root@analog:/sys/bus/iio/devices# cd iio\:device1
+      root@analog:/sys/bus/iio/devices/iio:device1# ls -l
       total 0
       drwxr-xr-x    5 root     root             0 Jan  1 00:00 .
       drwxr-xr-x    3 root     root             0 Jan  1 00:00 ..
@@ -419,8 +419,8 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat name**
-      **axi-ad9208-0-hpc**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat name
+      axi-ad9208-0-hpc
    
 
 

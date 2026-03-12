@@ -44,7 +44,7 @@ If we power down the Tx LO with (``0`` is on, ``1`` is powerdown):
 
 ::
 
-   # **iio_attr -c ad9361-phy TX_LO powerdown 1**
+   # iio_attr -c ad9361-phy TX_LO powerdown 1
    dev 'ad9361-phy', channel 'altvoltage1' (output), id 'TX_LO', attr 'powerdown', value '0'
    wrote 2 bytes to powerdown
    dev 'ad9361-phy', channel 'altvoltage1' (output), id 'TX_LO', attr 'powerdown', value '1'

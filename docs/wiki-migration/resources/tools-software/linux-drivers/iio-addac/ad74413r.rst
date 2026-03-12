@@ -56,13 +56,13 @@ When configured with channel 0 as voltage output, channel 1 as current output, c
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
    
-      root:/sys/bus/iio/devices> **cd iio\:device0**
+      root:/sys/bus/iio/devices> cd iio\:device0
    
-      root:/sys/bus/iio/devices/iio:device0> **ls -l**
+      root:/sys/bus/iio/devices/iio:device0> ls -l
       drwxr-xr-x 2 root root    0 Aug 17 09:56 buffer
       -r--r--r-- 1 root root 4096 Aug 17 09:56 dev
       -rw-r--r-- 1 root root 4096 Aug 17 09:56 in_current0_offset
@@ -109,7 +109,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat name**
+      root:/sys/bus/iio/devices/iio:device0> cat name
       ad74413r
    
 
@@ -126,7 +126,7 @@ Show raw measurement
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_current0_raw**
+      root:/sys/bus/iio/devices/iio:device0> cat in_current0_raw
       4608
    
 
@@ -143,7 +143,7 @@ Show scale
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_current0_scale**
+      root:/sys/bus/iio/devices/iio:device0> cat in_current0_scale
       0.001525902
    
 
@@ -160,12 +160,12 @@ Set sampling frequency
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_current0_sampling_frequency_available**
+      root:/sys/bus/iio/devices/iio:device0> cat in_current0_sampling_frequency_available
       10 20 1200 4800
-      root:/sys/bus/iio/devices/iio:device0> **cat in_current0_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device0> cat in_current0_sampling_frequency
       20
-      root:/sys/bus/iio/devices/iio:device0> **echo 4800 > in_current0_sampling_frequency**
-      root:/sys/bus/iio/devices/iio:device0> **cat in_current0_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device0> echo 4800 > in_current0_sampling_frequency
+      root:/sys/bus/iio/devices/iio:device0> cat in_current0_sampling_frequency
       4800
    
 
@@ -182,8 +182,8 @@ Buffer management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cd scan_elements/**
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **ls -l**
+      root:/sys/bus/iio/devices/iio:device0> cd scan_elements/
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> ls -l
       -rw-r--r-- 1 root root 4096 Aug 17 09:56 in_current0_en
       -r--r--r-- 1 root root 4096 Aug 17 09:56 in_current0_index
       -r--r--r-- 1 root root 4096 Aug 17 09:56 in_current0_type
@@ -210,10 +210,10 @@ Before enabling the buffer, a few steps need to be completed.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **echo 1 > in_current0_en**
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **echo 1 > in_voltage1_en**
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **echo 1 > in_voltage2_en**
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **echo 1 > in_current3_en**
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_current0_en
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_voltage1_en
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_voltage2_en
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_current3_en
    
 
 
@@ -224,7 +224,7 @@ Before enabling the buffer, a few steps need to be completed.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **cd ../buffer/**
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> cd ../buffer/
       root:/sys/bus/iio/devices/iio:device0/buffer> ls -l
       -r--r--r-- 1 root root 4096 Aug 17 09:56 data_available
       -rw-r--r-- 1 root root 4096 Aug 17 09:56 enable
@@ -242,7 +242,7 @@ Before enabling the buffer, a few steps need to be completed.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **echo 1024 > length**
+      root:/sys/bus/iio/devices/iio:device0/buffer> echo 1024 > length
    
 
 
@@ -255,7 +255,7 @@ Before enabling the buffer, a few steps need to be completed.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **echo 512 > watermark**
+      root:/sys/bus/iio/devices/iio:device0/buffer> echo 512 > watermark
    
 
 
@@ -268,7 +268,7 @@ Before enabling the buffer, a few steps need to be completed.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **echo 1 > enable**
+      root:/sys/bus/iio/devices/iio:device0/buffer> echo 1 > enable
    
 
 
@@ -281,7 +281,7 @@ Before enabling the buffer, a few steps need to be completed.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **cat /dev/iio:device0**
+      root:/sys/bus/iio/devices/iio:device0/buffer> cat /dev/iio:device0
    
 
 
@@ -297,7 +297,7 @@ Some IIO drivers feature an optional debug facility, allowing users to read or w
    
    ::
    
-      root:/> **/sys/kernel/debug/iio/iio:device0/**
+      root:/> /sys/kernel/debug/iio/iio:device0/
       root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access
       direct_reg_access
    

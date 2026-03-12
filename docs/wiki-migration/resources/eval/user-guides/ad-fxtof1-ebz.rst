@@ -117,7 +117,7 @@ The development kit can be connected to a number of processor boards for system 
 
 .. note::
 
-   **Getting the system up and running**
+   Getting the system up and running
 
    
    -  :doc:`Raspberry Pi 3 & 4 User Guide </wiki-migration/resources/eval/user-guides/ad-fxtof1-ebz/ug_rpi>`

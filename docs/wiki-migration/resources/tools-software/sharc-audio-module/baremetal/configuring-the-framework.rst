@@ -37,9 +37,9 @@ If either the Audio Project Fin or the Automotive Fin are connected to the SHARC
 .. code:: c
 
 
-   //****************************************************************************
+   //****************
    // 1. Select which (if any) daughter boards are connected to the SHARC Audio Module
-   //****************************************************************************
+   //****************
 
    // Select any connected daughter boards
 
@@ -88,9 +88,9 @@ If this value is set to TRUE, audio will be sent to core 2 after it has been pro
 .. code:: c
 
 
-   //****************************************************************************
+   //****************
    // 2. Set audio processing parameters
-   //****************************************************************************
+   //****************
 
    // This should be a base 2 number from 8 to 128
    #define AUDIO_BLOCK_SIZE                                (32)
@@ -126,9 +126,9 @@ If you'd like to use this framework on your own hardware configurations, you can
 .. code:: c
 
 
-   //****************************************************************************
+   //****************
    // 3. Select an audio processing framework to use (only select one)
-   //****************************************************************************
+   //****************
 
    // Standard audio processing framework (SHARC Audio Module and SHARC Audio Module + Audio Project board)
    #define FRAMEWORK_8CH_SINGLE_OR_DUAL_CORE_A2B           TRUE
@@ -151,9 +151,9 @@ If you'd like to create your own A2B topologies, see the :doc:`tutorial </wiki-m
 .. code:: c
 
 
-   //****************************************************************************
+   //****************
    // 4. Select whether or not to enable A2B in the framework
-   //****************************************************************************
+   //****************
 
    #define ENABLE_A2B                                      FALSE
 
@@ -191,9 +191,9 @@ The functionality implemented in the SigmaDSP is described in the comments below
 .. code:: c
 
 
-   //****************************************************************************
+   //****************
    // 5. Use enhanced ADAU1761 driver
-   //****************************************************************************
+   //****************
 
    #define USE_ENHANCED_ADAU1761_DRIVER                    FALSE
 
@@ -227,9 +227,9 @@ MIDI messages from the UART can be send to either the ARM core or the first SHAR
 
 .. code:: c
 
-   //****************************************************************************
+   //****************
    // 6. Faust and MIDI configuration
-   //****************************************************************************
+   //****************
 
    #define FAUST_INSTALLED                                 FALSE
 
@@ -268,9 +268,9 @@ The ``audio_system_config.h`` file can also be used to configure the system cloc
 
 .. code:: c
 
-   //****************************************************************************
+   //****************
    // 7. CPU clock speed
-   //****************************************************************************
+   //****************
 
    #define CORE_CLOCK_FREQ_HZ    (450000000)
    #define EXT_OSCILLATOR_FREQ_HZ  (25000000)

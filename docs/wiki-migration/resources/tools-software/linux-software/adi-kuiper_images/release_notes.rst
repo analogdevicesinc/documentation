@@ -3,7 +3,7 @@ Kuiper Linux Release Notes
 
 .. note::
 
-   **Kuiper for ACE**
+   Kuiper for ACE
 
    
    If you are planning to user Kuiper Linux with ACE - check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images_for_ace>` where you will find a Kuiper Linux image updated to provide a complete evaluation experience with ACE.

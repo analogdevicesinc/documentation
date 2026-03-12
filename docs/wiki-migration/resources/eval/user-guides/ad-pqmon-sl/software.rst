@@ -245,12 +245,12 @@ Settings tab
 
 .. note::
 
-   More information about the **Scopy PQMON addon** can be consulted `here <https://analogdevicesinc.github.io/scopy/plugins/pqm/index.html>`_
+   More information about the Scopy PQMON addon can be consulted `here <https://analogdevicesinc.github.io/scopy/plugins/pqm/index.html>`_
 
    
-   The system comes pre-programmed with a firmware that works with the **Scopy** application, allowing complete system evaluation.
+   The system comes pre-programmed with a firmware that works with the Scopy application, allowing complete system evaluation.
    
-   **Scopy** will work only with the official :git-no-OS:`firmware releases <projects/eval-pqmon>`
+   Scopy will work only with the official :git-no-OS:`firmware releases <projects/eval-pqmon>`
 
 
 Firmware Update
@@ -339,5 +339,5 @@ The project is based on a :adi:`MAX32650` microcontroller. It can be built and r
 
 .. tip::
 
-   **If you want to go to the Hardware Page, click here:** `AD-PQMON-SL Hardware User Guide <https://wiki.analog.com/[[/resources/eval/user-guides/ad-pqmon-sl/hardware>`_
+   If you want to go to the Hardware Page, click here: `AD-PQMON-SL Hardware User Guide <https://wiki.analog.com/[[/resources/eval/user-guides/ad-pqmon-sl/hardware>`_
 

@@ -59,31 +59,31 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0194_Evaluation_Software.zip <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0194/2.1.0/cn0194_evaluation_software.zip>`_ to the default directory path **C:\\Program Files\\Analog Devices\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\** *(in 64-bit operational system)*, and all National Instruments products to **C:\\Program Files\\National Instruments\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\National Instruments\\** *(in 64-bit operational system)*
+   \ NOTE: It is recommended that you install the `CN0194_Evaluation_Software.zip <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0194/2.1.0/cn0194_evaluation_software.zip>`_ to the default directory path C:\\Program Files\\Analog Devices\\ *(in 32-bit operational system)* or C:\\Program Files (x86)\\Analog Devices\\ *(in 64-bit operational system)*, and all National Instruments products to C:\\Program Files\\National Instruments\\ *(in 32-bit operational system)* or C:\\Program Files (x86)\\National Instruments\\ *(in 64-bit operational system)*
 
 
    |image2|
 
-   \* Click **Next** to view the installation review page
+   \* Click Next to view the installation review page
 
    |image3|
 
-   \* Click **Next** to start the installation, after the installation, the installer for the **ADI SDP Drivers** will execute.
+   \* Click Next to start the installation, after the installation, the installer for the ADI SDP Drivers will execute.
 
    |image4|
 
-   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press “Next” to set the installation location for the SDP Drivers.
 
 .. tip::
 
    It is recommended that you install the drivers to the default directory path
 
-   **C:\\Program Files\\Analog Devices\\SDP\\DriversR2\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\SDP\\DriversR2\\** *(in 64-bit operational system)*
+   C:\\Program Files\\Analog Devices\\SDP\\DriversR2\\ *(in 32-bit operational system)* or C:\\Program Files (x86)\\Analog Devices\\SDP\\DriversR2\\ *(in 64-bit operational system)*
 
 
    |image5|
 
-   \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+   \* Press “Next” to install the SDP Drivers and complete the installation of all software. Click "Finish" when done.
 
    |image6|
 
@@ -100,36 +100,36 @@ Software Control and Indicator Descriptions
 
 ::
 
-   - **Connect/Disconnect Button**
+   - Connect/Disconnect Button
    * When this button is clicked, the SDP-B Board USB connection to the CN-0194 Board status will be filliped.  A connection to the SDP-B Board must be made to use the software.
-   - **Capture Data Button**
+   - Capture Data Button
    * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
-   - **Save Data Button**
+   - Save Data Button
    * When this button is pressed, the acquired data will be saved (edit).
-   - **Sample Rate Setting**
+   - Sample Rate Setting
    * The speed at which the ADC will convert.
-   - **Samples Setting**
+   - Samples Setting
    * The number which input to this box is use to set the samples for each time the capture data button pressed.
-   - **Channel Display**
+   - Channel Display
    * Sets which channel is used and displayed.
-   - **Control Tabs**
+   - Control Tabs
    * __Time Domain__ : This tab shows the signal received in the ADC plotted in amplitude vs time.
    * __Frequency Domain__ : This tab shows the signal received in the ADC plotted in amplitude vs frequency. This Tab include two indicators to showing the position and velocity output of RDC, update in real time when RDC is converting.
    * __Histogram__ : This tab shows distribution of the captured signal amplitude displayed as the ADC code.
    * __S/W Version Info__ : Showing the SDP-B Board information when USB connection available.
-   - **Navigation Tools**
+   - Navigation Tools
    * __Cursor__
    * __Magnification__ : Contains magnification tools
    * __Hand__ : Used for navigating through the graph
-   - **Axis Tools**
+   - Axis Tools
    * __Text Box__ : Provides easy graph navigation
    * __Lock__ : Enables/Disables auto scroll of the graph
    * __Settings__ : Conatains axis settings
-   - **SDP Status String Indicator**
+   - SDP Status String Indicator
    * This indicator displays a message regarding the status of the SDP-B Board.
-   - **Status LED**
+   - Status LED
    * This LED showing the ADC working status, when ADC is converting this LED will be light up, otherwise it will be turn off.
-   - **Frequency Analysis**
+   - Frequency Analysis
    * __THD__ : Total harmonic distortion
    * __SNR__ : Signal to noise ratio in decibels
    * __SINAD__ : Signal over noise and amplitude distortion
@@ -138,7 +138,7 @@ Software Control and Indicator Descriptions
    * __Noise floor__ : Noise power level
    * __Fund ampl__ : Amplitude of fundamental frequency
    * __Fund Freq__ : Fundamental frequency of the signal
-   - ** SDP Firmware Revision Details **
+   -  SDP Firmware Revision Details 
    * __Major Rev__:
    * __Minor Rev__:
    * __Date__:
@@ -156,9 +156,9 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ **NOTE:** If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be found at
 
-   **C:\\Program Files\\Analog Devices\\CN0194\\CN0194.exe** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\CN0194\\CN0194.exe** *(in 64-bit operational system)*\
+   C:\\Program Files\\Analog Devices\\CN0194\\CN0194.exe *(in 32-bit operational system)* or C:\\Program Files (x86)\\Analog Devices\\CN0194\\CN0194.exe *(in 64-bit operational system)*\
 
 
 - Click the **Connect Button**. A window with a progress bar will load.

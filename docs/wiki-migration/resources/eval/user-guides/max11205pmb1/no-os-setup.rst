@@ -299,10 +299,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
       -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
       -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
-      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
-      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install GNU Arm Embedded Compiler (version: 9-2019-q4-major) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of requirements.txt inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
-      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
       -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
@@ -370,7 +370,7 @@ Go in the project directory that should be built.
 
    .. collapsible:: Xilinx (Click to expand)
 
-      Copy the **.xsa** in the project folder.
+      Copy the .xsa in the project folder.
 
       ::
 
@@ -787,9 +787,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -797,7 +797,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -1012,10 +1012,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
       -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
       -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
-      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
-      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install GNU Arm Embedded Compiler (version: 9-2019-q4-major) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of requirements.txt inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
-      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
       -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
@@ -1083,7 +1083,7 @@ Go in the project directory that should be built.
 
    .. collapsible:: Xilinx (Click to expand)
 
-      Copy the **.xsa** in the project folder.
+      Copy the .xsa in the project folder.
 
       ::
 
@@ -1500,9 +1500,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -1510,7 +1510,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -1725,10 +1725,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
       -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
       -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
-      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
-      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install GNU Arm Embedded Compiler (version: 9-2019-q4-major) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of requirements.txt inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
-      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
       -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
@@ -1796,7 +1796,7 @@ Go in the project directory that should be built.
 
    .. collapsible:: Xilinx (Click to expand)
 
-      Copy the **.xsa** in the project folder.
+      Copy the .xsa in the project folder.
 
       ::
 
@@ -2213,9 +2213,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -2223,7 +2223,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -2244,7 +2244,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. important::
 
-   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE architecture. **Vitis 2025.1 now features automatic debug configuration** - no manual setup required!
+   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE architecture. Vitis 2025.1 now features automatic debug configuration - no manual setup required!
 
 
 **Key Changes in Vitis 2025.1:**
@@ -2321,7 +2321,7 @@ Step 1: Build Project
 
 .. tip::
 
-   **Without DEBUG=1**, you'll experience:
+   Without DEBUG=1, you'll experience:
 
    
    -  Code stepping doesn't work properly (optimized code)
@@ -2360,7 +2360,7 @@ Step 2: Open Vitis IDE
 
 .. note::
 
-   **No manual configuration needed!** The debug configuration is ready to use immediately.
+   No manual configuration needed! The debug configuration is ready to use immediately.
 
 
 Step 3: Verify Configuration (Optional)
@@ -2395,7 +2395,7 @@ Start Debugging
 
 .. warning::
 
-   The **Start Debugging (F5)** button in the Debug panel does not currently work for Vitis 2025.1. Always use **FLOW → Debug** button.
+   The Start Debugging (F5) button in the Debug panel does not currently work for Vitis 2025.1. Always use FLOW → Debug button.
 
 
 **What happens:**
@@ -2492,12 +2492,12 @@ Troubleshooting
 
 .. important::
 
-   The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the **Classic Eclipse IDE** (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
+   The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the Classic Eclipse IDE (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
 
 
 .. warning::
 
-   **Manual debug configuration required** for Classic Eclipse mode. For automatic configuration, upgrade to Vitis 2025.1+.
+   Manual debug configuration required for Classic Eclipse mode. For automatic configuration, upgrade to Vitis 2025.1+.
 
 
 **Why Classic Mode for Vitis 2023.2-2024.x?**
@@ -2697,7 +2697,7 @@ The IDE typically auto-populates these fields:
 
 .. tip::
 
-   If the Application field is empty, click **"Search..."** and browse to ``build/your_project.elf``\
+   If the Application field is empty, click "Search..." and browse to ``build/your_project.elf``\
 
 
 **Stop at 'main':**
@@ -2998,10 +2998,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
       -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
       -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
-      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
-      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install GNU Arm Embedded Compiler (version: 9-2019-q4-major) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of requirements.txt inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
-      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
       -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
@@ -3072,7 +3072,7 @@ Go in the project directory that should be built.
 
    .. collapsible:: Xilinx (Click to expand)
 
-      Copy the **.xsa** in the project folder.
+      Copy the .xsa in the project folder.
 
       ::
 
@@ -3479,10 +3479,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
       -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
       -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
-      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
-      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install GNU Arm Embedded Compiler (version: 9-2019-q4-major) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of requirements.txt inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
-      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
       -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
@@ -3550,7 +3550,7 @@ Go in the project directory that should be built.
 
    .. collapsible:: Xilinx (Click to expand)
 
-      Copy the **.xsa** in the project folder.
+      Copy the .xsa in the project folder.
 
       ::
 
@@ -3967,9 +3967,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -3977,7 +3977,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -4192,10 +4192,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
       -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
       -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
-      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
-      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install GNU Arm Embedded Compiler (version: 9-2019-q4-major) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of requirements.txt inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
-      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
       -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
@@ -4263,7 +4263,7 @@ Go in the project directory that should be built.
 
    .. collapsible:: Xilinx (Click to expand)
 
-      Copy the **.xsa** in the project folder.
+      Copy the .xsa in the project folder.
 
       ::
 
@@ -4680,9 +4680,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -4690,7 +4690,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -4905,10 +4905,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
       -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
       -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
-      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
-      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install GNU Arm Embedded Compiler (version: 9-2019-q4-major) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of requirements.txt inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
-      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
       -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
@@ -4976,7 +4976,7 @@ Go in the project directory that should be built.
 
    .. collapsible:: Xilinx (Click to expand)
 
-      Copy the **.xsa** in the project folder.
+      Copy the .xsa in the project folder.
 
       ::
 
@@ -5393,9 +5393,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -5403,7 +5403,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -5424,7 +5424,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. important::
 
-   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE architecture. **Vitis 2025.1 now features automatic debug configuration** - no manual setup required!
+   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE architecture. Vitis 2025.1 now features automatic debug configuration - no manual setup required!
 
 
 **Key Changes in Vitis 2025.1:**
@@ -5501,7 +5501,7 @@ Step 1: Build Project
 
 .. tip::
 
-   **Without DEBUG=1**, you'll experience:
+   Without DEBUG=1, you'll experience:
 
    
    -  Code stepping doesn't work properly (optimized code)
@@ -5540,7 +5540,7 @@ Step 2: Open Vitis IDE
 
 .. note::
 
-   **No manual configuration needed!** The debug configuration is ready to use immediately.
+   No manual configuration needed! The debug configuration is ready to use immediately.
 
 
 Step 3: Verify Configuration (Optional)
@@ -5575,7 +5575,7 @@ Start Debugging
 
 .. warning::
 
-   The **Start Debugging (F5)** button in the Debug panel does not currently work for Vitis 2025.1. Always use **FLOW → Debug** button.
+   The Start Debugging (F5) button in the Debug panel does not currently work for Vitis 2025.1. Always use FLOW → Debug button.
 
 
 **What happens:**
@@ -5672,12 +5672,12 @@ Troubleshooting
 
 .. important::
 
-   The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the **Classic Eclipse IDE** (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
+   The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the Classic Eclipse IDE (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
 
 
 .. warning::
 
-   **Manual debug configuration required** for Classic Eclipse mode. For automatic configuration, upgrade to Vitis 2025.1+.
+   Manual debug configuration required for Classic Eclipse mode. For automatic configuration, upgrade to Vitis 2025.1+.
 
 
 **Why Classic Mode for Vitis 2023.2-2024.x?**
@@ -5877,7 +5877,7 @@ The IDE typically auto-populates these fields:
 
 .. tip::
 
-   If the Application field is empty, click **"Search..."** and browse to ``build/your_project.elf``\
+   If the Application field is empty, click "Search..." and browse to ``build/your_project.elf``\
 
 
 **Stop at 'main':**

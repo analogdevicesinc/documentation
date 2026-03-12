@@ -135,7 +135,7 @@ Revision D
 
 .. tip::
 
-   **If you want to go back to the HARDWARE SETUP, click here:** :doc:`AD-ACEVSECRDSET-SL Hardware User Guide </wiki-migration/resources/eval/user-guides/ad-acevsecrdset-sl/hardware>`
+   If you want to go back to the HARDWARE SETUP, click here: :doc:`AD-ACEVSECRDSET-SL Hardware User Guide </wiki-migration/resources/eval/user-guides/ad-acevsecrdset-sl/hardware>`
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/ad-acevsecrdset-sl_soft1.jpg

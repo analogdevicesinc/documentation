@@ -181,16 +181,16 @@ The source code for the diagnostic report tool can be downloaded from the `Analo
 
 ::
 
-   $ **git clone <nowiki>:git-diagnostic_report.git<:`nowiki>**`
+   $ git clone <nowiki>:git-diagnostic_report.git<:`nowiki>`
    Cloning into 'diagnostic_report'...
    remote: Counting objects: 7, done.
    remote: Compressing objects: 100% (6/6), done.
    remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
    Unpacking objects: 100% (7/7), done.
-   $ **cd diagnostic_report**
-   $ **make**
+   $ cd diagnostic_report
+   $ make
    sed 's/@PREFIX@/\/usr\/local/' adi-diagnostic-report.desktop.in > adi-diagnostic-report.desktop
-   $ **sudo make install**
+   $ sudo make install
    install -d /usr/local/bin
    install -d /usr/local/share/adi_diagnostic_report/
    install ./adi_diagnostic_report /usr/local/bin/

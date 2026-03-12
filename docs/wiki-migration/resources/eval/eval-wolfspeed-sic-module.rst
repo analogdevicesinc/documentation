@@ -51,7 +51,7 @@ Evaluation Boards Pricing displayed is based on 1-piece.
 
 .. danger::
 
-   **SAFETY NOTICE** - This is a high Voltage Board - 1200V. Only qualified person to test this device in a suitable Lab environment.
+   SAFETY NOTICE - This is a high Voltage Board - 1200V. Only qualified person to test this device in a suitable Lab environment.
 
 
 .. note::

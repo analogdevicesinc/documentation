@@ -100,7 +100,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADMV8818 driver depends on **SPI** and selects **REGMAP_SPI**
+   The ADMV8818 driver depends on SPI and selects REGMAP_SPI
 
 
 Adding Linux driver support
@@ -133,12 +133,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      analog:/sys/bus/iio/devices/iio:device0# **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices# **ls**
+      analog:/sys/bus/iio/devices/iio:device0# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0
       root@analog:/sys/bus/iio/devices#
    
-      root@analog:/sys/bus/iio/devices# **cd iio\:device0**
+      root@analog:/sys/bus/iio/devices# cd iio\:device0
       root@analog:/sys/bus/iio/devices/iio:device0# ls -l
       total 0
       -r--r--r-- 1 root root 4096 Mar 24 08:38 dev
@@ -168,8 +168,8 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
-      **admv8818**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat name
+      admv8818
    
 
 
@@ -183,8 +183,8 @@ Read channel bandwidth frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_filter_band_pass_bandwidth_3db_frequency**
-      **750**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_band_pass_bandwidth_3db_frequency
+      750
    
 
 
@@ -198,9 +198,9 @@ Set channel bandwidth frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 500 > out_altvoltage0_filter_band_pass_bandwidth_3db_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_filter_band_pass_bandwidth_3db_frequency**
-      **734**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 500 > out_altvoltage0_filter_band_pass_bandwidth_3db_frequency
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_band_pass_bandwidth_3db_frequency
+      734
    
 
 
@@ -214,8 +214,8 @@ Read channel center frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_filter_band_pass_center_frequency**
-      **5055**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_band_pass_center_frequency
+      5055
    
 
 
@@ -229,9 +229,9 @@ Set channel center frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 4000 > out_altvoltage0_filter_band_pass_bandwidth_3db_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_filter_band_pass_center_frequency**
-      **4023**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 4000 > out_altvoltage0_filter_band_pass_bandwidth_3db_frequency
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_band_pass_center_frequency
+      4023
    
 
 
@@ -245,8 +245,8 @@ Read low pass 3db frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_filter_low_pass_3db_frequency**
-      **5430**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_low_pass_3db_frequency
+      5430
    
 
 
@@ -260,9 +260,9 @@ Set channel low pass 3db frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 8000 > out_altvoltage0_filter_low_pass_3db_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_filter_low_pass_3db_frequency**
-      **8200**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 8000 > out_altvoltage0_filter_low_pass_3db_frequency
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_low_pass_3db_frequency
+      8200
    
 
 
@@ -276,8 +276,8 @@ Read high pass 3db frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_filter_high_pass_3db_frequency**
-      **4680**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_high_pass_3db_frequency
+      4680
    
 
 
@@ -291,9 +291,9 @@ Set channel high pass 3db frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 6000 > out_altvoltage0_filter_high_pass_3db_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_filter_high_pass_3db_frequency**
-      **5960**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 6000 > out_altvoltage0_filter_high_pass_3db_frequency
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_high_pass_3db_frequency
+      5960
    
 
 
@@ -307,8 +307,8 @@ Read scale
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_scale**
-      **1000000**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_scale
+      1000000
    
 
 
@@ -322,9 +322,9 @@ Set channel scale
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 10000000 > out_altvoltage0_scale**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_scale**
-      **10000000**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 10000000 > out_altvoltage0_scale
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_scale
+      10000000
    
 
 
@@ -340,12 +340,12 @@ The mode allows the user to access enable/disable/register/unregister the clock 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_mode_available**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_mode_available
       auto manual bypass
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_mode**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_mode
       auto
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo bypass > out_altvoltage0_mode**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_mode**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo bypass > out_altvoltage0_mode
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_mode
       bypass
    
 

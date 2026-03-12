@@ -133,7 +133,7 @@ EVAL-ADIS2 Evaluation Software User Guide
 
 .. warning::
 
-   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**.
+   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
 
 .. warning::
@@ -223,7 +223,7 @@ The purple box sorts each set of registers into a standard category. The availab
 
 .. important::
 
-   The calibration register section mentioned above **is separate from the factory calibration registers and procedures!**\
+   The calibration register section mentioned above is separate from the factory calibration registers and procedures!\
 
 
 The section highlighted by the red box lists all of the registers in the selected category. Click on the register name to select a register for individual read/write access.
@@ -243,7 +243,7 @@ The **Save Reg Settings to File** programmatically reads and saves the contents 
 
 .. important::
 
-   The **Register Access** form **always** writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format **before** clicking the **Write Register** button.
+   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
 
 
 Data Capture
@@ -381,7 +381,7 @@ EVAL-ADIS2 Evaluation Software User Guide
 
 .. warning::
 
-   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**.
+   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
 
 .. warning::
@@ -471,7 +471,7 @@ The purple box sorts each set of registers into a standard category. The availab
 
 .. important::
 
-   The calibration register section mentioned above **is separate from the factory calibration registers and procedures!**\
+   The calibration register section mentioned above is separate from the factory calibration registers and procedures!\
 
 
 The section highlighted by the red box lists all of the registers in the selected category. Click on the register name to select a register for individual read/write access.
@@ -491,7 +491,7 @@ The **Save Reg Settings to File** programmatically reads and saves the contents 
 
 .. important::
 
-   The **Register Access** form **always** writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format **before** clicking the **Write Register** button.
+   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
 
 
 Data Capture
@@ -629,7 +629,7 @@ EVAL-ADIS2 Evaluation Software User Guide
 
 .. warning::
 
-   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**.
+   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
 
 .. warning::
@@ -719,7 +719,7 @@ The purple box sorts each set of registers into a standard category. The availab
 
 .. important::
 
-   The calibration register section mentioned above **is separate from the factory calibration registers and procedures!**\
+   The calibration register section mentioned above is separate from the factory calibration registers and procedures!\
 
 
 The section highlighted by the red box lists all of the registers in the selected category. Click on the register name to select a register for individual read/write access.
@@ -739,7 +739,7 @@ The **Save Reg Settings to File** programmatically reads and saves the contents 
 
 .. important::
 
-   The **Register Access** form **always** writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format **before** clicking the **Write Register** button.
+   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
 
 
 Data Capture

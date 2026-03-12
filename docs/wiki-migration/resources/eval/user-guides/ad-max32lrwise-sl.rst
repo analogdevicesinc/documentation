@@ -210,7 +210,7 @@ Equipment Needed
 
 ::
 
-      ** Note that this is not included in the kit**
+       Note that this is not included in the kit
    * One (1) Micro USB to USB cable
    * Host PC (Windows 10 or later)
 
@@ -266,7 +266,7 @@ Equipment Needed
 .. note::
 
    
-   **Once you have completed this setup, proceed to PHASE 2 found in**\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
+   Once you have completed this setup, proceed to PHASE 2 found in\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
    
 
 

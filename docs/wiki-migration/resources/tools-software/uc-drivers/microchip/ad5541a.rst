@@ -1,16 +1,15 @@
 AD5541A - No-OS Driver for Microchip Microcontroller Platforms
 ==============================================================
 
-
 Supported Devices
-=================
+-----------------
 
 -  :adi:`AD5600`
 -  :adi:`AD5541A`
 -  :adi:`AD5542A`
 
 Evaluation Boards
-=================
+-----------------
 
 -  `PmodDA3 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DA3>`_
 -  :adi:`EVAL-AD5541ASDZ`
@@ -18,37 +17,15 @@ Evaluation Boards
 -  :adi:`EVAL-AD5600PMDZ`
 
 Overview
-========
+--------
 
-
-The :adi:`AD5541A`, :adi:`AD5600` are single, 16-bit, serial input, unbuffered voltage output digital-to-analog converter (DAC) that operate from a single 2.7 V to 5.5 V supply.
-
-The DAC output range extends from 0 V to VREF and is guaranteed monotonic, providing ±1 LSB INL accuracy at 16 bits without adjustment over the full specified temperature range of −40°C to +125°C. The :adi:`AD5541A` is available in a 3 mm × 3 mm, 10-lead LFCSP and 10-lead MSOP. The AD5541A-1 is available in a 3 mm × 3 mm, 8-lead LFCSP.
-
-Offering unbuffered outputs, the :adi:`AD5541A`, :adi:`AD5600` achieve a 1 μs settling time with low power consumption and low offset errors. Providing low noise performance of 11.8 nV/√Hz and low glitch, the :adi:`AD5541A`, :adi:`AD5600` are suitable for deployment across multiple end systems.
-
-The :adi:`AD5541A`, :adi:`AD5600` use a versatile 3-wire interface that is compatible with a 50 MHz SPI, QSPI™, MICROWIRE™, and DSP interface standards.
-
-Applications
-------------
-
--  Automatic test equipment
--  Precision Source-measure Instruments
--  Data Acquisition Systems
--  Medical Instrumentation
--  Aerospace Instrumentation
--  Communications Infrastructure equipment
--  Industrial Control
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/ad5541a_pmod_da3.jpg
-   :align: center
-
-
+.. image:: https://wiki.analog.com/_media/page>/resources/pmods/ad5541a
+   :alt: ad5541a
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-==================
+------------------
 
 The driver contains two parts:
 
@@ -63,8 +40,7 @@ There are three functions which are called by the AD5541A driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
-   :align: center
+|image1|
 
 .. container:: centeralign
 
@@ -83,6 +59,7 @@ The following functions are implemented in this version of AD5541A driver:
 | float AD5541A_SetVoltage(float outVoltage, float vRef)      | Sets the output voltage.                                          |
 +-------------------------------------------------------------+-------------------------------------------------------------------+
 
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
 
 
 **HW Platform(s):**
@@ -125,7 +102,7 @@ Required Software
 
 .. note::
 
-   The AD5541A demonstration project for PIC32MX320F128H consists of three parts: the **AD5541A Driver**, the **PmodDA3 Demo for PIC32MX320F128H** and the **PIC32MX320F128H Common Drivers**.
+   The AD5541A demonstration project for PIC32MX320F128H consists of three parts: the AD5541A Driver, the PmodDA3 Demo for PIC32MX320F128H and the PIC32MX320F128H Common Drivers.
 
    
    All three parts have to be downloaded.
@@ -166,7 +143,6 @@ The following image shows a generic list of commands in a serial terminal connec
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -205,7 +181,6 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
-
 
 
 Digilent Cerebot MC7 Quick Start Guide
@@ -258,7 +233,6 @@ The following image shows a list of commands in a serial terminal connected to p
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -297,7 +271,6 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
    :align: center
-
 
 
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
@@ -351,7 +324,6 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
@@ -376,17 +348,15 @@ This section presents the steps for developing a chipKIT application that will r
    :align: center
 
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+|//ez.analog.com/community/feeds/allcontent/atom|
 
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

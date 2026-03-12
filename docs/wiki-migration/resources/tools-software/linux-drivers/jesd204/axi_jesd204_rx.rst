@@ -143,7 +143,7 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# **ls -al**
+      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# ls -al
       total 0
       drwxr-xr-x  4 root root    0 Feb  6 13:41 .
       drwxr-xr-x 12 root root    0 Feb  6 13:41 ..
@@ -207,7 +207,7 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# **cat status**
+      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# cat status
       Link is enabled
       Measured Link Clock: 375.034 MHz
       Reported Link Clock: 375.000 MHz
@@ -232,7 +232,7 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# **cat encoder**
+      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# cat encoder
       8b10b
    
 
@@ -246,7 +246,7 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
    
    ::
    
-      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# **cat lane0_info**
+      root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# cat lane0_info
       Errors: 0
       CGS state: DATA
       Initial Frame Synchronization: Yes

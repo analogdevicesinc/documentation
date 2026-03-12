@@ -39,7 +39,7 @@ To start the command line interpreter you need to press ENTER key (CR) from the 
 
 .. note::
 
-   The **calibrate** command perform an **internal zero and full scale calibration** of the selected channel/channels (:adi:`AD7793 Datasheet <media/en/technical-documentation/data-sheets/AD7792_7793.pdf>`).
+   The calibrate command perform an internal zero and full scale calibration of the selected channel/channels (:adi:`AD7793 Datasheet <media/en/technical-documentation/data-sheets/AD7792_7793.pdf>`).
 
 
 The project uses below formula to determine output **ADC code** for an input voltage on either channel:

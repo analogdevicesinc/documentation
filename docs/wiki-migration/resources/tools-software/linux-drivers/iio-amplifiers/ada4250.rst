@@ -97,7 +97,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADA4250 Driver depends on **CONFIG_SPI**
+   The ADA4250 Driver depends on CONFIG_SPI
 
 
 ::
@@ -122,12 +122,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
-      root:/sys/bus/iio/devices> **iio:device0**
+      root:/sys/bus/iio/devices> iio:device0
    
-      root:/> **ls -l**
+      root:/> ls -l
       -r--r--r-- 1 root root 4096 May  6 12:20 dev
       -r--r--r-- 1 root root 4096 May  6 12:20 name
       -rw-r--r-- 1 root root 4096 May  6 13:00 out_voltage0_calibbias
@@ -150,8 +150,8 @@ Show device name
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/iio\:device0/**
-      root:/> **cat name**
+      root:/> cd /sys/bus/iio/devices/iio\:device0/
+      root:/> cat name
       ada4250
    
 
@@ -170,14 +170,14 @@ Hardware applied gain factor. If shared across all channels, <type>_hardwaregain
    
    ::
    
-      root:/> **cat out_voltage0_hardwaregain_available**
+      root:/> cat out_voltage0_hardwaregain_available
       0 1 2 3 4 5 6 7
    
-      root:/> **cat out_voltage0_hardwaregain**
+      root:/> cat out_voltage0_hardwaregain
       0
    
-      root:/> **echo 1 > out_voltage0_hardwaregain**
-      root:/> **cat out_voltage0_hardwaregain**
+      root:/> echo 1 > out_voltage0_hardwaregain
+      root:/> cat out_voltage0_hardwaregain
       1
    
 
@@ -196,14 +196,14 @@ Current bias for different ranges of the sensor offset calibration. If shared ac
    
    ::
    
-      root:/> **cat out_voltage0_calibbias_available**
+      root:/> cat out_voltage0_calibbias_available
       0 1 2 3
    
-      root:/> **cat out_voltage0_calibbias**
+      root:/> cat out_voltage0_calibbias
       0
    
-      root:/> **echo 2 > out_voltage0_calibbias**
-      root:/> **cat out_voltage0_calibbias**
+      root:/> echo 2 > out_voltage0_calibbias
+      root:/> cat out_voltage0_calibbias
       2
    
 
@@ -222,11 +222,11 @@ Sensor offset calibration value in uV. If shared across all channels, <type>_off
    
    ::
    
-      root:/> **cat out_voltage0_offset**
+      root:/> cat out_voltage0_offset
       0
    
-      root:/> **echo -32000 > out_voltage0_offset**
-      root:/> **cat out_voltage0_offset**
+      root:/> echo -32000 > out_voltage0_offset
+      root:/> cat out_voltage0_offset
       -31752
    
 

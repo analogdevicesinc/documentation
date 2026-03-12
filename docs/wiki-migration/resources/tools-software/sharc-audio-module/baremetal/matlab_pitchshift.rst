@@ -176,9 +176,9 @@ processaudio_setup(void) changes
    void processaudio_setup(void) {
        // Initialize the audio effects in the audio_processing/ folder
        audio_effects_setup_core1();
-       // *****************************************************************
+       // *************
        // Add any custom setup code here
-       // *****************************************************************
+       // *************
        /* Initialize reentrant memory structures */
        applyPitchShiftStackDataGlobal1.pd = &c_applyPitchShiftPersistentData1;
        /* Initialize the application.

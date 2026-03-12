@@ -34,7 +34,7 @@ Rev. B
    
    .. important::
 
-      **ERRATA**:
+      ERRATA:
 
          
          The FMCOMMS5, REV B has a bug in it, that doesn't allow the ADF5355 to function properly. (Pin 5, AVDD is a floating node). It's a simple fix - short pin 5 (AVDD) with pin 4 (CE) to make a connection to VDD_EXT_LO_3P3.

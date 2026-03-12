@@ -264,7 +264,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADF5355 Driver depends on **CONFIG_SPI**
+   The ADF5355 Driver depends on CONFIG_SPI
 
 
 ::
@@ -277,7 +277,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                - *-     Industrial I/O lock free software ring
                - *-   Enable triggered sampling support
 
-                         ** Phase-Locked Loop (PLL) frequency synthesizers **
+                          Phase-Locked Loop (PLL) frequency synthesizers 
 
                [--snip--]
                    <*>   Analog Devices ADF5355/ADF4355 Wideband Synthesizers

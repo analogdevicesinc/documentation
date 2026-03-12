@@ -1,4 +1,3 @@
-
 AD5755 - Microcontroller No-OS Driver
 =====================================
 
@@ -51,8 +50,7 @@ There are three functions which are called by the AD5755 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
-   :align: center
+|image1|
 
 .. container:: centeralign
 
@@ -153,19 +151,14 @@ The reference project outputs a square signal on channel A, and DC voltage signa
 Software Project Tutorial
 -------------------------
 
-
-.. note::
-
-   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
-
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>rl78g13_software_tutorial_without_applilet3
+   :alt: page>rl78g13_software_tutorial_without_applilet3
 
 More information
 ================
 
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>more-information
+   :alt: page>more-information
 
-.. note::
-
-   See `more-information <https://wiki.analog.com/more-information>`_
-
-
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
 

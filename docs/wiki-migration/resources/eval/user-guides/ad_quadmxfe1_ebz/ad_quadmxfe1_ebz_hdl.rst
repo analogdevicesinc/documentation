@@ -177,7 +177,7 @@ The 4 MxFE Rx and Tx links are connected to a single transceiver block having 16
 
 .. important::
 
-   **Build instructions:**
+   Build instructions:
 
    
    The project must be built with the following parameters:
@@ -218,7 +218,7 @@ The number of lanes on Rx is reduces to half in order to keep the same lane rate
 
 .. important::
 
-   **Build instructions:**
+   Build instructions:
 
    
    The project must be built with the following parameters:

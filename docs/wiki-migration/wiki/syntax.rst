@@ -10,8 +10,8 @@ DokuWiki supports **bold**, *italic*, *underlined* and ``monospaced`` texts. Of 
 
 ::
 
-   DokuWiki supports **bold**, //italic//, __underlined__ and ''monospaced'' texts.
-   Of course you can **__//''combine''//__** all these.
+   DokuWiki supports bold, //italic//, __underlined__ and ''monospaced'' texts.
+   Of course you can __//''combine''//__ all these.
 
 You can use :sub:`subscript` and :sup:`superscript`, too.
 
@@ -534,7 +534,7 @@ This is some text which contains addresses like this: http://www.splitbrain.org 
 ::
 
    <nowiki>
-   This is some text which contains addresses like this: http://www.splitbrain.org and **formatting**, but nothing is done with it.
+   This is some text which contains addresses like this: http://www.splitbrain.org and formatting, but nothing is done with it.
    </nowiki>
    The same is true for %%//__this__ text// with a smiley ;-)%%.
 

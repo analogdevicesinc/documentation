@@ -3,7 +3,7 @@ CN0341 -- Magneto Resistive Linear Position Measurement User Guide (DEPRECATED)
 
 .. important::
 
-   This reference design has been **RETIRED** or **DEPRECATED**, which means it is no longer supported nor being sold by Analog Devices. This page is here for historical/reference purposes only.
+   This reference design has been RETIRED or DEPRECATED, which means it is no longer supported nor being sold by Analog Devices. This page is here for historical/reference purposes only.
 
    
 

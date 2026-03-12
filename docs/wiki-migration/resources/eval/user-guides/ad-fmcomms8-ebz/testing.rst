@@ -133,7 +133,7 @@ First make sure all the required setup explained above is completed. Once the te
    When testing the AD-FMCOMMS8-EBZ run the following test:
 
    
-   -  **Test 7**
+   -  Test 7
    
 
 

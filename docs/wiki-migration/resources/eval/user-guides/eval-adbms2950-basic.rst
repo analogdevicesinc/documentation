@@ -266,9 +266,9 @@ Power Supply
 .. important::
 
    
-   **J10 and J12** bypass the on-board LDO used for the wide range supply input and instead connect directly to the :adi:`ADuM6020` isolated power supply module.
+   J10 and J12 bypass the on-board LDO used for the wide range supply input and instead connect directly to the :adi:`ADuM6020` isolated power supply module.
    
-   **J1** power input is connected to an :adi:`ADP7142` LDO to regulate input voltage to 5V and as input overvoltage protection. Do not operate above 15V for extended periods of time to keep the ADP7142 within thermal limits.
+   J1 power input is connected to an :adi:`ADP7142` LDO to regulate input voltage to 5V and as input overvoltage protection. Do not operate above 15V for extended periods of time to keep the ADP7142 within thermal limits.
    
 
 

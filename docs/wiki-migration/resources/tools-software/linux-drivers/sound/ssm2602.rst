@@ -364,9 +364,9 @@ Testing the audio module
 
 ::
 
-   root:~> **modprobe snd-ssm2602**
-   root:~> **modprobe snd-pcm-oss**
-   root:~> **lsmod**
+   root:~> modprobe snd-ssm2602
+   root:~> modprobe snd-pcm-oss
+   root:~> lsmod
    Module                  Size  Used by
    snd_pcm_oss            31968  0
    snd_mixer_oss          11360  1 snd_pcm_oss
@@ -381,7 +381,7 @@ Testing the audio module
    snd                    31092  6 snd_pcm_oss,snd_mixer_oss,snd_soc_ssm2602,snd_soc_core,snd_pcm,snd_timer
    soundcore               3940  1 snd
 
-   root:~> **tone**
+   root:~> tone
    TONE: generating sine wave at 1000 Hz...
 
 Testing Audio

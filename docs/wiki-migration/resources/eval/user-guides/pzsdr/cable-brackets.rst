@@ -50,7 +50,7 @@ Both designs were made in a free tool, www.Tinkercad.com, and printed on several
 
 .. important::
 
-   Analog Devices is **NOT** responsible for 3D files that print incorrectly or are not compatible with your particular printer. It is up to the user to make sure the enclosures can be printed on their machines.
+   Analog Devices is NOT responsible for 3D files that print incorrectly or are not compatible with your particular printer. It is up to the user to make sure the enclosures can be printed on their machines.
 
 
 .. |I included a second brace which is flipped over so the user can see the rectangular cutouts.| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/cable_holder.png

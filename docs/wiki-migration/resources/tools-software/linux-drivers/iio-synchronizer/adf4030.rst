@@ -159,7 +159,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADF4030 driver depends on **SPI** and selects **REGMAP_SPI**
+   The ADF4030 driver depends on SPI and selects REGMAP_SPI
 
 
 Adding Linux driver support
@@ -174,7 +174,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        <*>     Industrial I/O support --->
            --- Industrial I/O support
                     Frequency Synthesizers DDS/PLL --->
-                                ** Phase-Locked Loop (PLL) frequency synthesizers **
+                                 Phase-Locked Loop (PLL) frequency synthesizers 
                                 <*> Analog Devices ADF4030 10-Channel Precision Synchronizer
 
 Hardware configuration
@@ -193,13 +193,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      analog:/sys/bus/iio/devices/iio:device0# **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices# **ls**
+      analog:/sys/bus/iio/devices/iio:device0# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0
       root@analog:/sys/bus/iio/devices#
    
-      root@analog:/sys/bus/iio/devices# **cd iio\:device0**
-      root@analog:/sys/bus/iio/devices/iio:device0# **ls -l**
+      root@analog:/sys/bus/iio/devices# cd iio\:device0
+      root@analog:/sys/bus/iio/devices/iio:device0# ls -l
       total 0
       drwxr-xr-x    2 root   root       0 Jan  1 00:03 .
       drwxr-xr-x    5 root   root       0 Jan  1 00:03 ..
@@ -251,8 +251,8 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
-      **adf4030**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat name
+      adf4030
    
 
 
@@ -270,8 +270,8 @@ Returns the BSYNC frequency set via devicetree property ``adi,bsync-frequency-hz
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_SYSREF_0_frequency**
-      **6250000**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_SYSREF_0_frequency
+      6250000
    
 
 
@@ -305,7 +305,7 @@ Value  Input
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 8 > out_altvoltage0_SYSREF_0_reference_channel**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 8 > out_altvoltage0_SYSREF_0_reference_channel
    
 
 
@@ -323,7 +323,7 @@ Measure the time difference between this and the reference channel using the tim
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_SYSREF_0_phase**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_SYSREF_0_phase
       72412
    
 
@@ -342,7 +342,7 @@ Set the desired time delay offset for the Single-Channel Alignment in femtosecon
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 0 > out_altvoltage0_SYSREF_0_phase**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 0 > out_altvoltage0_SYSREF_0_phase
    
 
 
@@ -360,8 +360,8 @@ Writing ``1`` starts the Single-Channel Alignment procedure.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 1 > out_altvoltage0_SYSREF_0_autoalign_enable**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_SYSREF_0_phase**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > out_altvoltage0_SYSREF_0_autoalign_enable
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_SYSREF_0_phase
       104
    
 
@@ -380,7 +380,7 @@ Writing this attribute with ``1`` enables the BSYNC driver (output), writing it 
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 1 > out_altvoltage0_SYSREF_0_output_enable**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > out_altvoltage0_SYSREF_0_output_enable
    
 
 
@@ -411,7 +411,7 @@ Value Mode
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 7 > out_altvoltage0_SYSREF_0_autoalign_iteration**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 7 > out_altvoltage0_SYSREF_0_autoalign_iteration
    
 
 
@@ -429,7 +429,7 @@ The threshold alignment procedure repeats the alignment until either the alignme
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 100 > out_altvoltage_autoalign_threshold**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 100 > out_altvoltage_autoalign_threshold
    
 
 
@@ -449,8 +449,8 @@ This attribute returns this temperature in milli-degrees Celsius.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_temp0_input**
-      **45000**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_temp0_input
+      45000
    
 
 

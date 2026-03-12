@@ -48,7 +48,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The Driver depends on **CONFIG_SPI**
+   The Driver depends on CONFIG_SPI
 
 
 ::
@@ -62,7 +62,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                    - *-     Industrial I/O lock free software ring
                    - *-   Enable triggered sampling support
 
-                         ** Resolver to digital converters **
+                          Resolver to digital converters 
                    [--snip--]
 
                    <*>   Analog Devices AD2S120x driver

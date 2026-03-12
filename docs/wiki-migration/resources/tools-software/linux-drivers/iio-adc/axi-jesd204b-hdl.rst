@@ -3,7 +3,7 @@ AXI JESD204B HDL Linux Driver
 
 .. warning::
 
-   \ **NOTE:** This driver is RETIRED, DEPRECATED and not used anymore in any of the recent projects!
+   \ NOTE: This driver is RETIRED, DEPRECATED and not used anymore in any of the recent projects!
 
    
    Please see here instead:
@@ -106,7 +106,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
 
            <*>   Generic AXI JESD204B configuration driver

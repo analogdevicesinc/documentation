@@ -92,7 +92,7 @@ Ethernet Warning
    
    For example - the root password of Pluto is ``analog``. We post it on the Internet. Think about that for a moment. This could allow anyone with an IP connection to take over the device and use it for malicious purposes.
    
-   **Never** set up a bridge between the Internet and a network connected Pluto with the default images.
+   Never set up a bridge between the Internet and a network connected Pluto with the default images.
 
 
 Unfortunately - nothing on your host understands the what the IP address of the usb device is. You, the human behind the keyboard need to understand this before any sort of networking will work. There are two main ways to do this:
@@ -125,8 +125,8 @@ Open your favorite serial application:
    ::
    
       Welcome to Pluto
-      pluto login: **root**
-      Password: **analog**
+      pluto login: root
+      Password: analog
       Welcome to:
       %%
         ______ _       _        _________________
@@ -158,13 +158,13 @@ Bringing up a Windows Console should show you something like this:
 
 ::
 
-   c:/ **iio_info -s**
+   c:/ iio_info -s
    Library version: 0.16 (git tag: 5cdeaaa)
    Compiled with backends: local xml ip usb serial
    Available contexts:
        0: 0456:b673 (Analog Devices Inc. PlutoSDR (ADALM-PLUTO)), serial=104473222a87000618000600473ed57ae0 [usb:3.8.5]
 
-   c:\ **iio_attr -a -C**
+   c:\ iio_attr -a -C
    Using auto-detected IIO context at URI "usb:3.8.5"
    IIO context with 8 attributes:
    local,kernel: 4.6.0-g651ed13

@@ -23,9 +23,9 @@ Next, we'll set up the instances in the processaudio_setup() function in ``src/c
 
    void processaudio_setup(void) {
 
-       // ******************************************************************************
+       // ******************
        // Add any custom setup code here
-       // ******************************************************************************
+       // ******************
 
        // Set up filters
        filter_setup(&filt_300Hz,

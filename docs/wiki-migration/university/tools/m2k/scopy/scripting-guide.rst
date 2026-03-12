@@ -3,7 +3,7 @@ Scopy - Scripting Guide
 
 .. important::
 
-   **Important!** The following guide is in experimental phase, therefore no guarantee is offered regarding its functionality.
+   Important! The following guide is in experimental phase, therefore no guarantee is offered regarding its functionality.
 
 
 How to Use
@@ -18,7 +18,7 @@ Via command line:
 
 ::
 
-            **scopy --script my_script.js**
+            scopy --script my_script.js
 
 Via Debugger Instrument
 ~~~~~~~~~~~~~~~~~~~~~~~

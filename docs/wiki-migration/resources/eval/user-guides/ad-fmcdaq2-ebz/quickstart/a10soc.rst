@@ -98,7 +98,7 @@ Configuring the FPGA will take a few seconds. Once the FPGA has been configured 
    FPGA must be in Early Release mode to program core.
    fpga - loadable FPGA image support
 
-   ** Unable to read file u-boot.scr **
+    Unable to read file u-boot.scr 
    4845256 bytes read in 230 ms (20.1 MiB/s)
    36860 bytes read in 9 ms (3.9 MiB/s)
    FPGA BRIDGES: enable

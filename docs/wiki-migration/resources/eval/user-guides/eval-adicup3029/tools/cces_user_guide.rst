@@ -24,7 +24,7 @@ This page covers:
 
 .. note::
 
-   We have a playlist of **YOUTUBE VIDEOS** that can help you understand different functions and features of CrossCore Embedded Studio. `CrossCore Embedded Studio Videos <https://www.youtube.com/playlist?list=PLiwaj4qabLWycR06TNf8eqSwX7qkDbSu_>`_
+   We have a playlist of YOUTUBE VIDEOS that can help you understand different functions and features of CrossCore Embedded Studio. `CrossCore Embedded Studio Videos <https://www.youtube.com/playlist?list=PLiwaj4qabLWycR06TNf8eqSwX7qkDbSu_>`_
 
 
 Workspace and Projects

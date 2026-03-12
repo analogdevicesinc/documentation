@@ -3,7 +3,7 @@ AD-FMComms1-EBZ : Using the reference design
 
 
 
-.. important::
+.. warning::
 
    Analog Devices uses six designations to inform our customers where a
    semiconductor product is in its
@@ -16,8 +16,8 @@ AD-FMComms1-EBZ : Using the reference design
 
    This particular article/document/design has been retired or deprecated,
    which means it is no longer maintained or actively updated, even though the
-   devices themselves may be **Recommended for New Designs** or in
-   **Production**. This page is here for historical/reference purposes only.
+   devices themselves may be Recommended for New Designs or in
+   Production. This page is here for historical/reference purposes only.
 
 
 
@@ -41,7 +41,7 @@ Normally, when the Linux image is booted, it will search both the LPC and HPC FM
 
 ::
 
-   # **dmesg**
+   # dmesg
    [snip]
    at24 0-0051: 256 byte 24c02 EEPROM, writable, 1 bytes/write
    spi-xcomm: probe of 1-0058 failed with error -5
@@ -50,24 +50,24 @@ Normally, when the Linux image is booted, it will search both the LPC and HPC FM
    platform 7c820000.cf-ad9643-core-lpc: Driver cf_axi_adc requests probe deferral
    cf_axi_adc 7c800000.cf-ad9643-core-hpc: Device Tree Probing 'cf-ad9643-core-hpc'
    platform 7c800000.cf-ad9643-core-hpc: Driver cf_axi_adc requests probe deferral
-   **cf_axi_fft_core 7ee00000.axi-fft: Device Tree Probing 'axi-fft'**
-   **cf_axi_fft_core 7ee00000.axi-fft: ADI-FFT (0x10061) at 0x7EE00000 mapped to 0xf0160000, DMA-1, DMA-0 probed**
-   **ad9548 spi0.2: Rev. 0xC6 probed**
-   **ad9523 spi0.3: probed ad9523-lpc**
+   cf_axi_fft_core 7ee00000.axi-fft: Device Tree Probing 'axi-fft'
+   cf_axi_fft_core 7ee00000.axi-fft: ADI-FFT (0x10061) at 0x7EE00000 mapped to 0xf0160000, DMA-1, DMA-0 probed
+   ad9548 spi0.2: Rev. 0xC6 probed
+   ad9523 spi0.3: probed ad9523-lpc
    cf_axi_dds 7a020000.cf-ad9122-core-lpc: Device Tree Probing 'cf-ad9122-core-lpc'
    platform 7a020000.cf-ad9122-core-lpc: Driver cf_axi_dds requests probe deferral
    cf_axi_dds 7a000000.cf-ad9122-core-hpc: Device Tree Probing 'cf-ad9122-core-hpc'
    platform 7a000000.cf-ad9122-core-hpc: Driver cf_axi_dds requests probe deferral
    TCP: cubic registered
    NET: Registered protocol family 17
-   **cf_axi_adc 7c820000.cf-ad9643-core-lpc: Device Tree Probing 'cf-ad9643-core-lpc'**
-   **-------ooooooooooo|oooooooooo---- DCO 0x91**
-   **cf_axi_adc 7c820000.cf-ad9643-core-lpc: ADI AIM (0x10061) at 0x7C820000 mapped to 0xf0180000, DMA-0 probed ADC AD9643 as MASTER**
+   cf_axi_adc 7c820000.cf-ad9643-core-lpc: Device Tree Probing 'cf-ad9643-core-lpc'
+   -------ooooooooooo|oooooooooo---- DCO 0x91
+   cf_axi_adc 7c820000.cf-ad9643-core-lpc: ADI AIM (0x10061) at 0x7C820000 mapped to 0xf0180000, DMA-0 probed ADC AD9643 as MASTER
    cf_axi_adc 7c800000.cf-ad9643-core-hpc: Device Tree Probing 'cf-ad9643-core-hpc'
    platform 7c800000.cf-ad9643-core-hpc: Driver cf_axi_adc requests probe deferral
-   **cf_axi_dds 7a020000.cf-ad9122-core-lpc: Device Tree Probing 'cf-ad9122-core-lpc'**
-   **-o|o DCI 2**
-   **cf_axi_dds 7a020000.cf-ad9122-core-lpc: Analog Devices CF_AXI_DDS_DDS MASTER (0x10061) at 0x7A020000 mapped to 0xf01a0000, probed DDS AD9122**
+   cf_axi_dds 7a020000.cf-ad9122-core-lpc: Device Tree Probing 'cf-ad9122-core-lpc'
+   -o|o DCI 2
+   cf_axi_dds 7a020000.cf-ad9122-core-lpc: Analog Devices CF_AXI_DDS_DDS MASTER (0x10061) at 0x7A020000 mapped to 0xf01a0000, probed DDS AD9122
    cf_axi_dds 7a000000.cf-ad9122-core-hpc: Device Tree Probing 'cf-ad9122-core-hpc'
    platform 7a000000.cf-ad9122-core-hpc: Driver cf_axi_dds requests probe deferral
    cf_axi_adc 7c800000.cf-ad9643-core-hpc: Device Tree Probing 'cf-ad9643-core-hpc'
@@ -81,8 +81,8 @@ You can also check the status of things with:
 
 ::
 
-   # **cd /sys/bus/iio/devices/**
-   # **grep "" iio\:device*/name**
+   # cd /sys/bus/iio/devices/
+   # grep "" iio\:device*/name
    iio:device0/name:ad8366-lpc
    iio:device1/name:ad9523-lpc
    iio:device2/name:adf4351-rx-lpc
@@ -99,8 +99,8 @@ It's a simple matter of configuring the ethernet on the FPGA platform:
 
 ::
 
-   # **ifconfig eth0 192.168.1.2 up**
-   # **ifconfig eth0**
+   # ifconfig eth0 192.168.1.2 up
+   # ifconfig eth0
    eth0      Link encap:Ethernet  HWaddr 00:0A:35:69:1C:00
              inet addr:192.168.1.2  Bcast:192.168.1.255  Mask:255.255.255.0
              UP BROADCAST RUNNING  MTU:1500  Metric:1
@@ -123,8 +123,8 @@ To find the various "knobs", they are in the ``sysfs`` directory.
 
 ::
 
-   # **cd /sys/devices/axi.0/40800000.i2c/i2c-0/0-0059/spi_master/spi0/spi0.3/iio:device2**
-   # **ls**
+   # cd /sys/devices/axi.0/40800000.i2c/i2c-0/0-0059/spi_master/spi0/spi0.3/iio:device2
+   # ls
    dev
    name
    out_altvoltage0_ZD_OUTPUT_frequency
@@ -174,13 +174,13 @@ You can ``echo`` or ``cat`` into these files to change the various options.
 
 ::
 
-   # **cat out_altvoltage1_DAC_CLK_frequency**
+   # cat out_altvoltage1_DAC_CLK_frequency
    491520000
-   # **echo 500000000 > out_altvoltage1_DAC_CLK_frequency**
-   # **cat out_altvoltage1_DAC_CLK_frequency**
+   # echo 500000000 > out_altvoltage1_DAC_CLK_frequency
+   # cat out_altvoltage1_DAC_CLK_frequency
    983040000
-   # **echo 400000000 > out_altvoltage1_DAC_CLK_frequency**
-   # **cat out_altvoltage1_DAC_CLK_frequency**
+   # echo 400000000 > out_altvoltage1_DAC_CLK_frequency
+   # cat out_altvoltage1_DAC_CLK_frequency
    491520000
 
 Just like if you were trying to program the part with specific frequencies, there are only so many options you can pick, so it attempts to pick the "closest" option.
@@ -200,7 +200,7 @@ Dump FRU Board Information
    
    ::
    
-      # **fru_dump -i /sys/bus/i2c/devices/0-0051/eeprom -b**
+      # fru_dump -i /sys/bus/i2c/devices/0-0051/eeprom -b
       read 256 bytes from /sys/bus/i2c/devices/0-0051/eeprom
       Date of Man  : Tue Sep 18 16:30:00 2012
       Manufacture  : Analog Devices
@@ -221,7 +221,7 @@ Dump FRU Power Information
    
    ::
    
-      # **fru_dump -i /sys/bus/i2c/devices/0-0051/eeprom -p**
+      # fru_dump -i /sys/bus/i2c/devices/0-0051/eeprom -p
       read 256 bytes from /sys/bus/i2c/devices/0-0051/eeprom
       DC Load
         Output number: 0 (P1 VADJ)
@@ -284,7 +284,7 @@ Dump FRU Connector Information
    
    ::
    
-      # **fru_dump -i /sys/bus/i2c/devices/0-0051/eeprom -c**
+      # fru_dump -i /sys/bus/i2c/devices/0-0051/eeprom -c
       read 256 bytes from /sys/bus/i2c/devices/0-0051/eeprom
       Single Width Card
       P1 is LPC
@@ -310,7 +310,7 @@ Query best match calibration set for a given Frequency
    
    ::
    
-      # **xcomm_cal -f 2400 -s /sys/bus/i2c/devices/0-0055/eeprom**
+      # xcomm_cal -f 2400 -s /sys/bus/i2c/devices/0-0055/eeprom
    
       --- Best match ENTRY 1 ---
       Calibration Frequency:  2400 MHz

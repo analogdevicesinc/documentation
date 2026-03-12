@@ -177,7 +177,7 @@ Now that you have U-Boot flashed on the target board, you can boot the eMMC prov
 
 ::
 
-   ;''**Target board**''
+   ;''Target board''
    :<code bash>
 
 => env default -a
@@ -193,7 +193,7 @@ You need to start ``sshd`` on your target board:
 
 ::
 
-   ;''**Target board**''
+   ;''Target board''
    :<code bash>
 
 $ ssh-keygen -A
@@ -206,7 +206,7 @@ On your build machine, you need to flash the image to the target board via SSH:
 
 ::
 
-   ;''**Build machine**''
+   ;''Build machine''
    :<code bash>
 
 $ cd $PROJECTDIR/build/tmp/deploy/images/adsp-sc598-som-ezkit
@@ -219,7 +219,7 @@ Finally, reboot your target board:
 
 ::
 
-   ;''**Target board**''
+   ;''Target board''
    :<code bash>
 
 $ echo b > /proc/sysrq-trigger </code>

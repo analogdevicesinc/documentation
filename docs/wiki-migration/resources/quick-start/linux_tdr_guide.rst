@@ -181,7 +181,7 @@ Or
 
 .. note::
 
-   By default the Raspberry Pi 4 will boot the **kernel8.img** image (64 bit). If you want to use the 32 bit image, you'll have to add **kernel=kernel7l.img** to the config.txt file on the SD card.
+   By default the Raspberry Pi 4 will boot the kernel8.img image (64 bit). If you want to use the 32 bit image, you'll have to add kernel=kernel7l.img to the config.txt file on the SD card.
 
 
 x86_64

@@ -115,7 +115,7 @@ XHIDDENEND
 
    .. note::
 
-      Note: If you intend to build different project, then modify the .medignore file in the root directory as mentioned in step2 and **clean build** project as mentioned in step3
+      Note: If you intend to build different project, then modify the .medignore file in the root directory as mentioned in step2 and clean build project as mentioned in step3
 
 
 
@@ -133,7 +133,7 @@ XHIDDENEND
       NOTE: Default TARGET_BOARD is SDP_K1 and COMPILER is GCC_ARM. Current Make based build only support GCC_ARM Compiler.
 
 
-   -  By default project is built for "SDP_K1" Board and "GCC_ARM" Compiler. If you want to build for other Mbed Board, For example If you want to build the project for "DISCO_F769NI" Board then run **make TARGET_BOARD=DISCO_F769NI** command in Command Prompt. Run **make reset TARGET_BOARD=DISCO_F769NI** command in Command Prompt to delete the generated build files for the given project.
+   -  By default project is built for "SDP_K1" Board and "GCC_ARM" Compiler. If you want to build for other Mbed Board, For example If you want to build the project for "DISCO_F769NI" Board then run make TARGET_BOARD=DISCO_F769NI command in Command Prompt. Run make reset TARGET_BOARD=DISCO_F769NI command in Command Prompt to delete the generated build files for the given project.
 
 
 

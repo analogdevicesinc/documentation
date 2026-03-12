@@ -3,7 +3,7 @@ AD-FMCOMMS1-EBZ Calibration EEPROM Utility
 
 
 
-.. important::
+.. warning::
 
    Analog Devices uses six designations to inform our customers where a
    semiconductor product is in its
@@ -16,20 +16,20 @@ AD-FMCOMMS1-EBZ Calibration EEPROM Utility
 
    This particular article/document/design has been retired or deprecated,
    which means it is no longer maintained or actively updated, even though the
-   devices themselves may be **Recommended for New Designs** or in
-   **Production**. This page is here for historical/reference purposes only.
+   devices themselves may be Recommended for New Designs or in
+   Production. This page is here for historical/reference purposes only.
 
 
 
 ::
 
-   **NAME**
+   NAME
           xcomm_cal - print and set EEPROM calibration data
 
-   **SYNOPSIS**
+   SYNOPSIS
           xcomm_cal [-s] [-f FREQUENCY] INPUT_FILE
 
-   **DESCRIPTION**
+   DESCRIPTION
        Print and set EEPROM calibration data.
        Without option - print all calibration sets available.
 
@@ -45,10 +45,10 @@ Git: :git-fmcomms1-eeprom-cal:`fmcomms1-eeprom-cal`
 
 ::
 
-   root@linaro-ubuntu-desktop:~# **git clone :git-fmcomms1-eeprom-cal:`fmcomms1-eeprom-cal`.git**
-   root@linaro-ubuntu-desktop:~# **cd fmcomms1-eeprom-cal**
-   root@linaro-ubuntu-desktop:~# **make**
-   root@linaro-ubuntu-desktop:~# **make install**
+   root@linaro-ubuntu-desktop:~# git clone :git-fmcomms1-eeprom-cal:`fmcomms1-eeprom-cal`.git
+   root@linaro-ubuntu-desktop:~# cd fmcomms1-eeprom-cal
+   root@linaro-ubuntu-desktop:~# make
+   root@linaro-ubuntu-desktop:~# make install
 
 Find the EEPROM
 ---------------
@@ -59,7 +59,7 @@ To find the eeprom - use the ``find`` command.
 
 ::
 
-   root@linaro-ubuntu-desktop:~# **find /sys/ -name eeprom**
+   root@linaro-ubuntu-desktop:~# find /sys/ -name eeprom
    /sys/devices/amba.1/41600000.i2c/i2c-1/1-0050/eeprom
    /sys/devices/amba.1/41600000.i2c/i2c-1/1-0054/eeprom
 
@@ -75,7 +75,7 @@ Query best match calibration set for a given Frequency
    
    ::
    
-      # **xcomm_cal -f 2400 -s /sys/bus/i2c/devices/0-0055/eeprom**
+      # xcomm_cal -f 2400 -s /sys/bus/i2c/devices/0-0055/eeprom
    
       --- Best match ENTRY 1 ---
       Calibration Frequency:  2400 MHz

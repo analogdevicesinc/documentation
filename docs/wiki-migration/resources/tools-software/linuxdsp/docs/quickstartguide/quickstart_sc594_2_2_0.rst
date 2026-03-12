@@ -207,14 +207,14 @@ The console output from U-Boot and later on Linux will appear on the USB serial 
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :<code>$ sudo minicom </code>
 
 In a separate console launch OpenOCD and connect to the development board.
 
 ::
 
-   ;''**Terminal2: OpenOCD**''
+   ;''Terminal2: OpenOCD''
    :<code>
 
 $ cd /opt/analog/cces/2.11.0/ARM/openocd/share/openocd/scripts $ sudo /opt/analog/cces/2.11.0/ARM/openocd/bin/openocd -f interface/<ICE>.cfg -f board/ev-sc594-som.cfg</code> Where ``<ICE>`` should be replaced with ``ice1000`` or ``ice2000`` depending on your hardware. When successful you should see a message similar to the console output below
@@ -244,7 +244,7 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
 
 ::
 
-   ;''**Terminal3: GDB**''
+   ;''Terminal3: GDB''
    : <code>
 
 $ cd /tftpboot $ /opt/analog/cces/2.11.0/ARM/arm-none-eabi/bin/arm-none-eabi-gdb u-boot-proper-sc594-som-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x000000000000352c in ?? () (gdb) load Loading section .text, size 0x150 lma 0x96000000 Loading section .efi_runtime, size 0xfb0 lma 0x96000150 Loading section .text_rest, size 0x5ad94 lma 0x96001800 Loading section .rodata, size 0x12f1c lma 0x9605c594 Loading section .hash, size 0x18 lma 0x9606f4b8 Loading section .dtb.init.rodata, size 0xac0 lma 0x9606f4d0 Loading section .data, size 0x47e8 lma 0x9606ff90 Loading section .got, size 0x8 lma 0x96074778 Loading section .got.plt, size 0x18 lma 0x96074780 Loading section .u_boot_list, size 0x2800 lma 0x96074798 Loading section .efi_runtime_rel, size 0x1b0 lma 0x96076f98 Loading section .rela.dyn, size 0xb700 lma 0x96077148 Start address 0x96000000, load size 532800 Transfer rate: 29 KB/sec, 12685 bytes/write. (gdb) c Continuing. </code>
@@ -253,7 +253,7 @@ At this point U-Boot will now be running in RAM on your target board. You should
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :  <code>
 
 U-Boot SPL 2020.10 (Aug 23 2022 - 13:09:23 +0000) ADI Boot Mode: 0 (JTAG/BOOTROM) SPL execution has completed. Please load U-Boot Proper via JTAG
@@ -284,7 +284,7 @@ In the U-Boot console, set the IP address of the Host Linux PC that hosts the bi
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :
 
 ::

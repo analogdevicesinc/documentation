@@ -44,7 +44,7 @@
 
 .. important::
 
-   Some applications (e.g. FMCOMMSx), when a Microblaze processor is used, requires an increased HEAP size for dynamic memory allocation. Make sure the HEAP size is at least **0x100000**.
+   Some applications (e.g. FMCOMMSx), when a Microblaze processor is used, requires an increased HEAP size for dynamic memory allocation. Make sure the HEAP size is at least 0x100000.
 
 
    |image1|
@@ -96,11 +96,11 @@
 ::
 
      * As an alternative a UART terminal can be used to capture the output of the example program. The number of used UART port depends on the computer's configuration. The following settings must be used in the UART terminal:
-     **Baud Rate:** 115200bps
-     **Data:** 8 bit
-     **Parity:** None
-     **Stop bits:** 1 bit
-     **Flow Control:** none
+     Baud Rate: 115200bps
+     Data: 8 bit
+     Parity: None
+     Stop bits: 1 bit
+     Flow Control: none
 
 -  When the run configuration is done, the software can be started by clicking the **Run** button.
 

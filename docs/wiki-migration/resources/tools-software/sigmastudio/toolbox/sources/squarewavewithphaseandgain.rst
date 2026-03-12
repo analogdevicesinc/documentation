@@ -31,5 +31,5 @@ GUI Control
 
 .. note::
 
-   Note: The square wave is digitally generated and is **non-bandlimited**. This waveform is suitable for use as an internal control signal, but will produce aliasing distortion if used directly for audio output. If this configuration is desired, it is recommended that you apply a low-pass filter to the block's output before routing the signal to hardware outputs.
+   Note: The square wave is digitally generated and is non-bandlimited. This waveform is suitable for use as an internal control signal, but will produce aliasing distortion if used directly for audio output. If this configuration is desired, it is recommended that you apply a low-pass filter to the block's output before routing the signal to hardware outputs.
 

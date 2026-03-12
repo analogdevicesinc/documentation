@@ -47,7 +47,7 @@ For example:
 
 ::
 
-   ***** Xilinx Software Commandline Tool (XSCT) v2015.2
+   * Xilinx Software Commandline Tool (XSCT) v2015.2
      *** Build date : Jun 26 2015-17:09:09
        ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 

@@ -327,11 +327,11 @@ When the EVAL-AD7386FMCZ and SDP-H1 boards are properly connected to the PC, lau
 
 ::
 
-     - From the **Start** menu, select **All Programs** > **Analog Devices** > **ACE** > **ACE.exe** to open the main software window, as shown in Figure 12.
-     - The **AD7386 Eval Board** icon appears in the **Attached Hardware** section. If the EVAL-AD7386FMCZ is not connected to the USB port via the SDP-H1 board when the software is launched, the AD7386 Eval Board icon does not appear in the Attached Hardware section. In this case, connect the EVAL-AD7386FMCZ and SDP-H1 board to the USB port of the PC, wait a few seconds, and then continue following these instructions.
-     - Double click the **AD7386 Eval Board** icon to open the board view window shown in Figure 13.
-     - Double click the **AD7386** chip icon to open the chip window shown in Figure 14.
-     - Click **Software Defaults** and then click **Apply Changes**.
+     - From the Start menu, select All Programs > Analog Devices > ACE > ACE.exe to open the main software window, as shown in Figure 12.
+     - The AD7386 Eval Board icon appears in the Attached Hardware section. If the EVAL-AD7386FMCZ is not connected to the USB port via the SDP-H1 board when the software is launched, the AD7386 Eval Board icon does not appear in the Attached Hardware section. In this case, connect the EVAL-AD7386FMCZ and SDP-H1 board to the USB port of the PC, wait a few seconds, and then continue following these instructions.
+     - Double click the AD7386 Eval Board icon to open the board view window shown in Figure 13.
+     - Double click the AD7386 chip icon to open the chip window shown in Figure 14.
+     - Click Software Defaults and then click Apply Changes.
 
 .. container:: centeralign
 

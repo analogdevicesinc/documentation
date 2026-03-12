@@ -15,7 +15,7 @@ The ``smu`` executable (part of the :doc:`libsmu </wiki-migration/university/too
    
    ::
    
-      C:\WINDOWS\system32> **smu**
+      C:\WINDOWS\system32> smu
       smu: utility for managing M1K devices
    
        -h, --help                   print this help message and exit
@@ -36,7 +36,7 @@ After downloading the firmware binary, run the following command in your OS spec
 
 ::
 
-   C:\WINDOWS\system32> **smu -f /path/to/m1000.bin**
+   C:\WINDOWS\system32> smu -f /path/to/m1000.bin
 
 After installing ''libsmu, the smu executable's path is automatically added in the system path. If you build libsmu manually, you can find the smu executable in the build folder, under /src/cli.
 

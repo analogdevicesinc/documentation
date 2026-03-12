@@ -176,14 +176,14 @@ The console output from U-Boot and later on Linux will appear on the USB serial 
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :<code>$ sudo minicom </code>
 
 In a separate console launch OpenOCD and connect to the development board.
 
 ::
 
-   ;''**Terminal2: OpenOCD**''
+   ;''Terminal2: OpenOCD''
    :<code>
 
 $ cd /opt/analog/cces/2.10.0/ARM/openocd/share/openocd/scripts $ sudo /opt/analog/cces/2.10.0/ARM/openocd/bin/openocd -f interface/<ICE>.cfg -f board/adspsc573_ezkit.cfg</code> Where ``<ICE>`` should be replaced with ``ice1000`` or ``ice2000`` depending on your hardware. When successful you should see a message similar to the console output below
@@ -210,7 +210,7 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
 
 ::
 
-   ;''**Terminal3: GDB**''
+   ;''Terminal3: GDB''
    : <code>
 
 $ cd /tftpboot $ /opt/analog/cces/2.10.0/ARM/arm-none-eabi/bin/arm-none-eabi-gdb u-boot-sc573-ezkit ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load init-sc573-ezkit.elf Loading section .text, size 0x744 lma 0x20080000 Start address 0x20080028, load size 1860 Transfer rate: 22 KB/sec, 1860 bytes/write. (gdb) c Continuing.
@@ -229,7 +229,7 @@ Now, load U-Boot into RAM.
 
 ::
 
-   ;''**Terminal3: GDB**''
+   ;''Terminal3: GDB''
    :
 
 ::
@@ -259,7 +259,7 @@ At this point U-Boot will now be running in RAM on your target board. You should
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :  <code>
 
 U-Boot 2020.10 (Aug 23 2022 - 13:09:23 +0000)
@@ -273,7 +273,7 @@ In the U-Boot console, set the IP address of the Host Linux PC that hosts the U-
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :
 
 ::

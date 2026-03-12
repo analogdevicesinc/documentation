@@ -507,7 +507,7 @@ Make: supported targets
 
 .. tip::
 
-   `Make <https://www.gnu.org/software/make/manual/make.html>`_ is a build automation tool, which uses **Makefile(s)** to define a set of directives ('rules') about how to compile and/or link a program ('targets').
+   `Make <https://www.gnu.org/software/make/manual/make.html>`_ is a build automation tool, which uses Makefile(s) to define a set of directives ('rules') about how to compile and/or link a program ('targets').
 
 
 In general, always run 'make' within a project folder such as 'hdl/projects/daq2/a10soc' or 'hdl/projects/daq2/zc706'. There should not be a need for you to run 'make' inside the library or root folders. The 'make' framework passes the top level 'targets' to any sub-makes inside its sub-folders. What this means is that if you run 'make' inside 'hdl/projects/daq2', it builds all the carriers ('kc705', 'a10soc', 'kcu105', 'zc706' to 'zcu102') which is an overkill.

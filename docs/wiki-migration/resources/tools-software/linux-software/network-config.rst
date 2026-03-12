@@ -218,7 +218,7 @@ Now you will be ready to directly connect your ADI Kuiper Linux host directly to
 
 .. note::
 
-   Remember once you are done to come back into the setting on your PC to change the Ethernet port back to the **Obtain an IP address automatically** radio button. Otherwise anything connected to your PC using the Ethernet port will likely not work.
+   Remember once you are done to come back into the setting on your PC to change the Ethernet port back to the Obtain an IP address automatically radio button. Otherwise anything connected to your PC using the Ethernet port will likely not work.
 
 
 *End of Document*

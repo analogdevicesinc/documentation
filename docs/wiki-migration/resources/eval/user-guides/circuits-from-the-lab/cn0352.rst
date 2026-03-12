@@ -54,7 +54,7 @@ The picture below shows all 3 type of boards and give each connector a serial nu
 
 .. note::
 
-   See the **red dots** on the picture. Each dot indicate the 1st pin location on the connector. the Pin1-to-Pin1 hookup must always be done during EVAL-CN0352-EB1Z module setup process.
+   See the red dots on the picture. Each dot indicate the 1st pin location on the connector. the Pin1-to-Pin1 hookup must always be done during EVAL-CN0352-EB1Z module setup process.
 
 
 External Connectors
@@ -188,7 +188,7 @@ See the picture below showing the whole CN0352 demo system.
    -  [4] Using a battery with protection circuit integrated is highly recommended for demonstration.
    -  [5] 4-wire Kelvin connection is recommended.
    -  [6] There is no battery holding board in CN0352 package. Customer need to prepare the battery holding board for a good connection
-   -  [7] The default RT table if for **ERTJZEG103JA**, the Thermistor 10k NTC from Panisonic. If using different sensor, the RT table need to be modified to fit the new sensor.
+   -  [7] The default RT table if for ERTJZEG103JA, the Thermistor 10k NTC from Panisonic. If using different sensor, the RT table need to be modified to fit the new sensor.
    
 
 
@@ -388,7 +388,7 @@ Battery Testing
 .. note::
 
    
-   -  Click **Battery Scan** button, switch to **Battery Summary** tab. It shold listed all the battery channels available on RS485 bus. if not, click the **Stop** button and click **Run** button.
+   -  Click Battery Scan button, switch to Battery Summary tab. It shold listed all the battery channels available on RS485 bus. if not, click the Stop button and click Run button.
    -  This CN0352 evaluation software on PC is designed with simple testing and just for demonstration. The operation failure may happen during testing.
    -  The EVAL-CN0352-EB1Z firmware in C code is designed with simple test and just for demonstration. The operation failure may happen during testing.
    

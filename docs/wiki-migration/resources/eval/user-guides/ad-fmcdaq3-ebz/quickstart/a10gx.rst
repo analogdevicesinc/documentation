@@ -8,7 +8,7 @@ AD-FMCDAQ3-EBZ Arria 10 GX Quick Start Guide
 
 .. warning::
 
-   \ **NOTE:** Support for the A10GX carrier is discontinued and will not be supported in future releases. Last pre-build images can be found at :doc:`Nios2 Linux on the Altera FPGA Development Boards </wiki-migration/resources/tools-software/linux-drivers/platforms/nios2>` page.
+   \ NOTE: Support for the A10GX carrier is discontinued and will not be supported in future releases. Last pre-build images can be found at :doc:`Nios2 Linux on the Altera FPGA Development Boards </wiki-migration/resources/tools-software/linux-drivers/platforms/nios2>` page.
 
 
 This guide provides some quick instructions on how to setup the AD-FMCDAQ3-EBZ on `A10GX <https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx>`_
@@ -79,7 +79,7 @@ To flash the bitfield pre-build image, **nios2-configure-sof** command is used. 
    in .
      daq3_a10gx.sof
 
-   Info: ******************************************************************
+   Info: **************
    Info: Running Quartus Prime Programmer
    Info: Command: quartus_pgm --no_banner --mode=jtag -o p;./daq3_a10gx.sof
    Info (213045): Using programming cable "USB-BlasterII [USB-1]"

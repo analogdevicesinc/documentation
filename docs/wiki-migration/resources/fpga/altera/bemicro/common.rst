@@ -7,7 +7,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 
 .. tip::
 
-   NOTE: Windows 7 users will need to right-click and select **Run as administrator**. Another method is to right-click and select **Properties** and click on the **Compatibility** tab and select the **Run This Program As An Administrator** checkbox, which will make this a permanent change.
+   NOTE: Windows 7 users will need to right-click and select Run as administrator. Another method is to right-click and select Properties and click on the Compatibility tab and select the Run This Program As An Administrator checkbox, which will make this a permanent change.
 
 
 1. Initialize Eclipse workspace

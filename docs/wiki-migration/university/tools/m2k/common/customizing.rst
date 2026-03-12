@@ -89,7 +89,7 @@ Use the ``device_passwd`` command to permanently change the password. This scrip
    
    ::
    
-      # **device_passwd**
+      # device_passwd
       Changing password for root
       New password:
       Bad password: too short
@@ -115,7 +115,7 @@ Use the ``device_persistent_keys`` command to permanently store your private SSH
    
    ::
    
-      # **device_persistent_keys**
+      # device_persistent_keys
       Generating 256 bit ecdsa key, this may take a while...
       Public key portion is:
       ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH+cMtkirbmWjOq+EjW0Lzir5LVuWXFwRTOMOnb0eWo

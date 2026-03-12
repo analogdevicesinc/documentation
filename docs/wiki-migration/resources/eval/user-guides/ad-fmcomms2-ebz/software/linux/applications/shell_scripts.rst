@@ -10,16 +10,16 @@ Shell scripts
    
    ::
    
-      rgetz@pinky ~ $ **which sh**
+      rgetz@pinky ~ $ which sh
       /usr/bin/sh
-      rgetz@pinky ~ $ **ls -l /usr/bin/sh**
+      rgetz@pinky ~ $ ls -l /usr/bin/sh
       lrwxrwxrwx 1 root root 9 2009-05-13 20:39 /usr/bin/sh -> /bin/bash
    
    OR
    
    ::
    
-      rgetz@pinky ~ $ **ps -p $$**
+      rgetz@pinky ~ $ ps -p $$
         PID TTY          TIME CMD
        1321 pts/0    00:00:00 bash
    
@@ -34,7 +34,7 @@ To check out these scripts, simply do something like:
    
    ::
    
-      rgetz@pinky ~ $ **git clone :git-linux_image_ADI-scripts:`linux_image_ADI-scripts`.git**
+      rgetz@pinky ~ $ git clone :git-linux_image_ADI-scripts:`linux_image_ADI-scripts`.git
    
 
 
@@ -55,8 +55,8 @@ By default, the Linux setup provided by ADI will try to automatically get an IP 
    
    ::
    
-      root@linaro-ubuntu-desktop:~# **sudo adi_update_tools.sh**
-      root@linaro-ubuntu-desktop:~# **sudo enable_static_ip.sh <IP address>**
+      root@linaro-ubuntu-desktop:~# sudo adi_update_tools.sh
+      root@linaro-ubuntu-desktop:~# sudo enable_static_ip.sh <IP address>
    
 
 
@@ -71,7 +71,7 @@ An interface can be specified as the second argument otherwise the script defaul
    
    ::
    
-      root@linaro-ubuntu-desktop:~# **sudo enable_static_ip.sh 192.168.0.2 eth1**
+      root@linaro-ubuntu-desktop:~# sudo enable_static_ip.sh 192.168.0.2 eth1
    
 
 
@@ -84,7 +84,7 @@ In order to revert back to acquiring IP addresses for all interfaces via DHCP us
    
    ::
    
-      root@linaro-ubuntu-desktop:~# **sudo enable_dhcp.sh**
+      root@linaro-ubuntu-desktop:~# sudo enable_dhcp.sh
    
 
 

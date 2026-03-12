@@ -104,12 +104,12 @@ You are able to use arecord -l and aplay -l to find the card number.
 ::
 
    # arecord -l
-   *** List of CAPTURE Hardware Devices ***
+   * List of CAPTURE Hardware Devices *
    card 0: sc5xxasoccard [sc5xx-asoc-card], device 1: ADAU1979 adau1977-hifi-1 []
       Subdevices: 1/1
       Subdevice #0: subdevice #0
    # aplay -l
-   *** List of PLAYBACK Hardware Devices ***
+   * List of PLAYBACK Hardware Devices *
    card 0: sc5xxasoccard [sc5xx-asoc-card], device 0: ADAU1962 adau1962-hifi-0 []
       Subdevices: 1/1
       Subdevice #0: subdevice #0

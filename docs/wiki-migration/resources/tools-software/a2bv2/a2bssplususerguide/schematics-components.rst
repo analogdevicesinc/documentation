@@ -25,7 +25,7 @@ Drag a communication channel block corresponding to your host adapter and connec
 
 .. note::
 
-   A2B-USBi Rev1.4 (or below) SPI interface is not functional for AD243x. Use USBi **Rev1.5** for SPI interface
+   A2B-USBi Rev1.4 (or below) SPI interface is not functional for AD243x. Use USBi Rev1.5 for SPI interface
 
 
 Schematic Tab

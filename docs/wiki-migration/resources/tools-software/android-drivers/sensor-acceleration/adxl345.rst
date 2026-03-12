@@ -262,7 +262,7 @@ sensors_adxl34x.c
 
    #include <hardware/sensors.h>
 
-   /*****************************************************************************/
+   /*****************/
    #define ID_BASE SENSORS_HANDLE_BASE
    #define ID_ACCELERATION (ID_BASE + 0)
    #define MAX_NUM_SENSORS 1
@@ -620,7 +620,7 @@ sensors_adxl34x.c
        return 0;
    }
 
-   /*****************************************************************************/
+   /*****************/
 
    /**
      * module methods

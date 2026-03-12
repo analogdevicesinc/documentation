@@ -365,7 +365,7 @@ Since MathWorks example comes with detailed documentation, we are not going to e
 
 .. tip::
 
-   \ **SDK Tools Set Up**
+   \ SDK Tools Set Up
 
    
    1. Within MATLAB®, use Add-Ons > Get Hardware Support Packages to download Embedded Coder Support Package for Xilinx Zynq-7000 Platform.

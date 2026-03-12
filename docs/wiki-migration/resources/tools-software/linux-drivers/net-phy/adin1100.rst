@@ -116,7 +116,7 @@ This requires that another 10BASE-T1L PHY be connected to the other end of the n
    Depending on the userspace image that is being used, the network cards may [or may not get a DHCP address]. This is because there is a NetworkManager instance that handles this automatically.
 
    
-   If NetworkManager isn't running, it sometimes works to obtain a DHCP lease via **dhclient eth0** [or **eth1** or **eth2**, depending which MAC is attached to the ADIN 10BASE-T1L PHY].
+   If NetworkManager isn't running, it sometimes works to obtain a DHCP lease via dhclient eth0 [or eth1 or eth2, depending which MAC is attached to the ADIN 10BASE-T1L PHY].
    
 
 

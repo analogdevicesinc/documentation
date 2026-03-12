@@ -273,7 +273,7 @@ Required setup
 
 .. important::
 
-   Before starting the test process, please make sure to place the sticker with the QR code and the serial number **on top of the board**, as pictured below.
+   Before starting the test process, please make sure to place the sticker with the QR code and the serial number on top of the board, as pictured below.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/img_1735_qr.jpg

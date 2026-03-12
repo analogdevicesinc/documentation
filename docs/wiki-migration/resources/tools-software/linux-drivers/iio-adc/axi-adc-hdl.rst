@@ -184,7 +184,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AXI ADC HDL driver depends on **CONFIG_SPI**
+   The AXI ADC HDL driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -202,7 +202,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
                - *- Analog Devices High-Speed AXI ADC driver core
                    <*> Analog Devices AD9208 and similar high speed ADCs
@@ -229,13 +229,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device4  iio:trigger0
    
-      root:/sys/bus/iio/devices> **cd iio:device4**
+      root:/sys/bus/iio/devices> cd iio:device4
    
-      root:/sys/bus/iio/devices/iio:device4> **ls -l**
+      root:/sys/bus/iio/devices/iio:device4> ls -l
       drwxr-xr-x    2 root     root             0 Jan  1 00:00 buffer
       -r--r--r--    1 root     root          4096 Jan  1 00:00 dev
       -rw-r--r--    1 root     root          4096 Jan  1 00:00 in_voltage0_calibbias
@@ -270,7 +270,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device4> **cat name**
+      root:/sys/bus/iio/devices/iio:device4> cat name
       cf-ad9643-core-lpc
    
 
@@ -287,7 +287,7 @@ Show scale
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device4> **cat in_voltage_scale**
+      root:/sys/bus/iio/devices/iio:device4> cat in_voltage_scale
       0.026703
    
 
@@ -302,7 +302,7 @@ Show available scales
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device4> **cat in_voltage_scale_available**
+      root:/sys/bus/iio/devices/iio:device4> cat in_voltage_scale_available
       0.031738 0.031403 0.031067 0.030731 0.030396 0.030060 0.029724 0.029388 0.029053 0.028717 0.028381 0.028046 0.027710 0.027374 0.027039 0.026703 0.026367 0.026031 0.025696 0.025360 0.025024 0.024689 0.024353 0.024017 0.023682 0.023346 0.023010 0.022675 0.022339 0.022003 0.021667 0.021332
    
 
@@ -321,7 +321,7 @@ Set the channel calibration gain. Writing to these files will set the calibratio
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device4> **cat in_voltage0_calibscale**
+      root:/sys/bus/iio/devices/iio:device4> cat in_voltage0_calibscale
       1.000000
    
 
@@ -340,7 +340,7 @@ Set the channel calibration bias/offset. Writing to these files will set the cal
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device4> **cat in_voltage0_calibscale**
+      root:/sys/bus/iio/devices/iio:device4> cat in_voltage0_calibscale
       1.0
    
 
@@ -359,7 +359,7 @@ Show available test modes supported by the underlying ADC. These test modes are 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device4> **cat in_voltage_test_mode_available**
+      root:/sys/bus/iio/devices/iio:device4> cat in_voltage_test_mode_available
       off midscale_short pos_fullscale neg_fullscale checkerboard pn_long pn_short one_zero_toggle
    
 
@@ -378,10 +378,10 @@ Enter test modes supported by the underlying ADC. These test modes are typically
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device4> **echo one_zero_toggle > in_voltage0_test_mode**
-      root:/sys/bus/iio/devices/iio:device4> **cat in_voltage0_test_mode**
+      root:/sys/bus/iio/devices/iio:device4> echo one_zero_toggle > in_voltage0_test_mode
+      root:/sys/bus/iio/devices/iio:device4> cat in_voltage0_test_mode
       one_zero_toggle
-      root:/sys/bus/iio/devices/iio:device4> **echo off > in_voltage0_test_mode**
+      root:/sys/bus/iio/devices/iio:device4> echo off > in_voltage0_test_mode
    
 
 
@@ -408,16 +408,16 @@ Example:
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable_available**
-      **arm disarm trigger_manual**
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable**
-      **disarm**
-      root@analog:/sys/bus/iio/devices/iio:device3# **echo arm > sync_start_enable**
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable**
-      **arm**
-      root@analog:/sys/bus/iio/devices/iio:device3# **echo trigger_manual > sync_start_enable**
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable**
-      **disarm**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat sync_start_enable_available
+      arm disarm trigger_manual
+      root@analog:/sys/bus/iio/devices/iio:device3# cat sync_start_enable
+      disarm
+      root@analog:/sys/bus/iio/devices/iio:device3# echo arm > sync_start_enable
+      root@analog:/sys/bus/iio/devices/iio:device3# cat sync_start_enable
+      arm
+      root@analog:/sys/bus/iio/devices/iio:device3# echo trigger_manual > sync_start_enable
+      root@analog:/sys/bus/iio/devices/iio:device3# cat sync_start_enable
+      disarm
    
 
 
@@ -431,9 +431,9 @@ Buffer management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device4/buffer> **ls**
-      **bytes_per_datum**          **enable**                   subsystem
-      **length**                   uevent
+      root:/sys/bus/iio/devices/iio:device4/buffer> ls
+      bytes_per_datum          enable                   subsystem
+      length                   uevent
       root:/sys/bus/iio/devices/iio:device4/buffer>
    
 
@@ -468,7 +468,7 @@ Every buffer implementation features a set of files:
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device4/scan_elements> **ls**
+      root:/sys/bus/iio/devices/iio:device4/scan_elements> ls
       in_voltage0_en
       in_voltage0_index
       in_voltage0_type

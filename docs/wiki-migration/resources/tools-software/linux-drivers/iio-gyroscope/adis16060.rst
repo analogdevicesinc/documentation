@@ -91,7 +91,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADIS16060 Driver depends on **CONFIG_SPI**
+   The ADIS16060 Driver depends on CONFIG_SPI
 
 
 ::
@@ -105,7 +105,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                    - *-     Industrial I/O lock free software ring
                    - *-   Enable triggered sampling support
 
-                         ** Digital gyroscope sensors **
+                          Digital gyroscope sensors 
                    [--snip--]
 
                    <*>   Analog Devices ADIS16060 Yaw Rate Gyroscope with SPI driver
@@ -128,13 +128,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
-      root:/sys/bus/iio/devices> **ls**
+      root:/> cd /sys/bus/iio/devices/
+      root:/sys/bus/iio/devices> ls
       iio:device0  trigger0
    
    
-      root:/sys/bus/iio/devices> **cd iio:device0**
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **ls -l**
+      root:/sys/bus/iio/devices> cd iio:device0
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> ls -l
       -r--r--r--    1 root     root          4096 Jan  3 19:32 dev
       -r--r--r--    1 root     root          4096 Jan  3 19:32 in_gyro_z_raw
       -rw-r--r--    1 root     root          4096 Jan  3 19:32 in_temp0_offset
@@ -160,7 +160,7 @@ Show device name
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> **cat name**
+      root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> cat name
       adis16060_r
    
 

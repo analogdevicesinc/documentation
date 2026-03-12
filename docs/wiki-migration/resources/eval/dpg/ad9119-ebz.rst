@@ -3,7 +3,7 @@ AD9119-EBZ Evaluation Board Quick Start Guide
 
 .. warning::
 
-   \ **NOTE:** Support using DPG2/DPG3 project on this website only for legacy purposes. The support for this project has been discontinued, and ADS7 is the recommended replacement.
+   \ NOTE: Support using DPG2/DPG3 project on this website only for legacy purposes. The support for this project has been discontinued, and ADS7 is the recommended replacement.
 
 
 You can return to Homepage here: `AD9119/AD9129 Evaluation Boards <https://wiki.analog.com/resources/eval/dpg/eval-ad9129>`_

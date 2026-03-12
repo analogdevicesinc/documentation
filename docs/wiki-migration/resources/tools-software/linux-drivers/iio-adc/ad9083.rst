@@ -105,7 +105,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD9083 driver depends on **CONFIG_SPI**
+   The AD9083 driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -123,7 +123,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Direct Digital Synthesis **
+                  Direct Digital Synthesis 
            [--snip--]
 
            <*>   Analog Devices CoreFPGA AXI DDS driver
@@ -202,13 +202,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root@analog:/sys/bus/iio/devices# **ls**
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0  iio:device1  iio:device2  iio_sysfs_trigger
    
-      root@analog:/sys/bus/iio/devices# **cd iio:device2**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat name**
+      root@analog:/sys/bus/iio/devices# cd iio:device2
+      root@analog:/sys/bus/iio/devices/iio:device2# cat name
       axi-ad9083-rx-hpc
-      root@analog:/sys/bus/iio/devices/iio:device2# **ls -l**
+      root@analog:/sys/bus/iio/devices/iio:device2# ls -l
       total 0
       drwxr-xr-x 2 root root    0 Jun 23 08:02 buffer
       -r--r--r-- 1 root root 4096 Jun 23 08:02 dev

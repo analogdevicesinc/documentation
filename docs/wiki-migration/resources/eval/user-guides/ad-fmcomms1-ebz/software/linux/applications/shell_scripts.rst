@@ -3,7 +3,7 @@ Shell Scripts for the FMC RF boards
 
 
 
-.. important::
+.. warning::
 
    Analog Devices uses six designations to inform our customers where a
    semiconductor product is in its
@@ -16,8 +16,8 @@ Shell Scripts for the FMC RF boards
 
    This particular article/document/design has been retired or deprecated,
    which means it is no longer maintained or actively updated, even though the
-   devices themselves may be **Recommended for New Designs** or in
-   **Production**. This page is here for historical/reference purposes only.
+   devices themselves may be Recommended for New Designs or in
+   Production. This page is here for historical/reference purposes only.
 
 
 
@@ -30,16 +30,16 @@ Shell Scripts for the FMC RF boards
    
    ::
    
-      rgetz@pinky ~ $ **which sh**
+      rgetz@pinky ~ $ which sh
       /usr/bin/sh
-      rgetz@pinky ~ $ **ls -l /usr/bin/sh**
+      rgetz@pinky ~ $ ls -l /usr/bin/sh
       lrwxrwxrwx 1 root root 9 2009-05-13 20:39 /usr/bin/sh -> /bin/bash
    
    OR
    
    ::
    
-      rgetz@pinky ~ $ **ps -p $$**
+      rgetz@pinky ~ $ ps -p $$
         PID TTY          TIME CMD
        1321 pts/0    00:00:00 bash
    

@@ -50,7 +50,7 @@ Below is a simple example to set up a route, turn on a wav recording, record for
 
 .. important::
 
-   Startup script may be aborted halfway through its execution by pressing **CTRL+C** like any other shell script. However, user must be aware that depending on system timing some commands may be executed before terminal is connected to SAM and startup script is able to be aborted.
+   Startup script may be aborted halfway through its execution by pressing CTRL+C like any other shell script. However, user must be aware that depending on system timing some commands may be executed before terminal is connected to SAM and startup script is able to be aborted.
 
 
 If you find yourself in the above sticky situation, where you are blocked for too long, or you file has become corrupted such that the shell cannot boot any longer, you will need a way to remove the *sf:shell.cmd* file. You can do this by establishing a connection via :doc:`telent </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/telnet-session>`, assuming you have the Audio Starter IP Address, and remove the offending file. A system reset after this will allow you to boot properly.

@@ -101,7 +101,7 @@ Configure kernel with “make menuconfig” (alternatively use “make xconfig�
 
 .. hint::
 
-   The LTC2947 SPI driver depends **CONFIG_SPI** and the LTC2947 I2C driver depends on **CONFIG_I2C**.
+   The LTC2947 SPI driver depends CONFIG_SPI and the LTC2947 I2C driver depends on CONFIG_I2C.
 
 
 Adding Linux driver support
@@ -138,13 +138,13 @@ Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX, w
    
    ::
    
-      root:/> **cd /sys/class/hwmon/**
+      root:/> cd /sys/class/hwmon/
       root:/sys/class/hwmon> ls
       hwmon0  hwmon1
    
-      root:/sys/class/hwmon> **cd hwmon1**
+      root:/sys/class/hwmon> cd hwmon1
    
-      root:/sys/class/hwmon/hwmon1> **ls -l**
+      root:/sys/class/hwmon/hwmon1> ls -l
       total 0
       -r--r--r-- 1 root root 4096 Nov 16 09:25 curr1_fault
       -r--r--r-- 1 root root 4096 Nov 16 09:25 curr1_highest
@@ -237,7 +237,7 @@ Show device name
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat name**
+      root:/sys/class/hwmon/hwmon1> cat name
       ltc2947
    
 
@@ -254,7 +254,7 @@ The device supports readings of current, voltage, power, temperature and energy.
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat in0_input**
+      root:/sys/class/hwmon/hwmon1> cat in0_input
       4910
    
 
@@ -269,7 +269,7 @@ Show highest read value
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat in0_highest**
+      root:/sys/class/hwmon/hwmon1> cat in0_highest
       5026
    
 
@@ -284,7 +284,7 @@ Show lowest read value
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat in0_lowest**
+      root:/sys/class/hwmon/hwmon1> cat in0_lowest
       4754
    
 
@@ -299,7 +299,7 @@ Show high threshold
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat in0_max**
+      root:/sys/class/hwmon/hwmon1> cat in0_max
       5500
    
 
@@ -314,7 +314,7 @@ Show low threshold
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat in0_min**
+      root:/sys/class/hwmon/hwmon1> cat in0_min
       4500
    
 
@@ -329,7 +329,7 @@ Show high threshold alarm
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat in0_max_alarm**
+      root:/sys/class/hwmon/hwmon1> cat in0_max_alarm
       0
    
 
@@ -344,7 +344,7 @@ Show low threshold alarm
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat in0_min_alarm**
+      root:/sys/class/hwmon/hwmon1> cat in0_min_alarm
       0
    
 
@@ -361,7 +361,7 @@ When the **:math:`{type}_`\ {channel}_fault** files are present, the user can re
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat in0_fault**
+      root:/sys/class/hwmon/hwmon1> cat in0_fault
       0
    
 
@@ -378,7 +378,7 @@ Some channels, support a label attribute which specifies the name of the channel
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat in1_label**
+      root:/sys/class/hwmon/hwmon1> cat in1_label
       DVCC
    
 
@@ -395,7 +395,7 @@ These properties are custom and not part of the sysfs-hwmon interface. However, 
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **cat energy1_overflow_alarm**
+      root:/sys/class/hwmon/hwmon1> cat energy1_overflow_alarm
       0
    
 
@@ -410,7 +410,7 @@ Set High threshold
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **echo 5500 > in0_max**
+      root:/sys/class/hwmon/hwmon1> echo 5500 > in0_max
    
 
 
@@ -424,7 +424,7 @@ Set Low threshold
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **echo 4500 > in0_min**
+      root:/sys/class/hwmon/hwmon1> echo 4500 > in0_min
    
 
 
@@ -438,7 +438,7 @@ Reset History
    
    ::
    
-      root:/sys/class/hwmon/hwmon1> **echo 1 > in0_reset_history**
+      root:/sys/class/hwmon/hwmon1> echo 1 > in0_reset_history
    
 
 

@@ -32,7 +32,7 @@ The script can be downloaded from here:
 
 .. tip::
 
-   \ **NOTE: After downloading the script you need to make it executable**
+   \ NOTE: After downloading the script you need to make it executable
 
    
    ::
@@ -70,7 +70,7 @@ There is also a version of script that works in Windows Powershell: `build_boot_
 
 .. tip::
 
-   \ **NOTE: u-boot.elf** For those who don't want to build u-boot themselves. The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, **bootgen_sysfiles.tgz**
+   \ NOTE: u-boot.elf For those who don't want to build u-boot themselves. The u-boot.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz
 
    
 

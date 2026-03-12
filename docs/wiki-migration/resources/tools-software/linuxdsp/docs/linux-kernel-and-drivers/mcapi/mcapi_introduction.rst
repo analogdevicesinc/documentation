@@ -60,14 +60,14 @@ Each mode means the different ways to do message transaction between two endpoin
 
 ::
 
-   ;**-m,--mode**
+   ;-m,--mode
    :mode 0   |nonblocking send    |nonblocking recv  |mcapi_test() / mcapi_msg_available()
    :mode 1   |nonblocking send    |nonblocking recv  |mcapi_test()
    :mode 2   |nonblocking send    |nonblocking recv  |mcapi_wait()
    :mode 3   |blocking send    |blocking recv
-   ;**-t,--timeout**
+   ;-t,--timeout
    :Timeout value is used to set the maximum wait time for wait and blocking function
-   ;**-r,--round**
+   ;-r,--round
    :Round is the number of rounds you want to test, the default check round is 100, if number equals 100,  passed log will be output in CCES.
 
 --------------

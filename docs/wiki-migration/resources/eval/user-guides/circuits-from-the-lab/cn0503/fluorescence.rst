@@ -153,7 +153,7 @@ The CN0503 measures the intensity of the fluorescent light through a right angle
 
 .. important::
 
-   The number of significant digits of the coefficients of the polynomial equation is crucial to the accuracy of the approximation. However, the CN0503 also has an 80-character limit for each command. It is recommended to use a **3 decimal digit scientific notation** for the coefficients.
+   The number of significant digits of the coefficients of the polynomial equation is crucial to the accuracy of the approximation. However, the CN0503 also has an 80-character limit for each command. It is recommended to use a 3 decimal digit scientific notation for the coefficients.
 
    | |image20|\
 

@@ -195,7 +195,7 @@ General Purpose LED and Button Connections (JP14 and JP15)
 
 .. tip::
 
-   External hardware can be connected to the **TEST** button and **ALERT** LED using the **BTN_IO** and **LED_IO** test points, respectively.
+   External hardware can be connected to the TEST button and ALERT LED using the BTN_IO and LED_IO test points, respectively.
 
 
 --------------

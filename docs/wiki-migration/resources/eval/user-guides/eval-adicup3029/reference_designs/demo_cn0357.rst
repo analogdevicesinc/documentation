@@ -70,7 +70,7 @@ Setting up the hardware
 
 .. important::
 
-   Extremely important to plug in an acceptable power supply to the barrel jack **P2** of the EVAL-ADICUP3029 to supply power for the **EVAL-CN0357-ARDZ Rev B**. The boards will not work if you try only to power it from the USB. The external power supply is not required for **EVAL-CN0357-ARDZ Rev C**.
+   Extremely important to plug in an acceptable power supply to the barrel jack P2 of the EVAL-ADICUP3029 to supply power for the EVAL-CN0357-ARDZ Rev B. The boards will not work if you try only to power it from the USB. The external power supply is not required for EVAL-CN0357-ARDZ Rev C.
 
 
 Configuring the Software

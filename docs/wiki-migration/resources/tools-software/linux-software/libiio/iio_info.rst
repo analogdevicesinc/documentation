@@ -11,7 +11,7 @@ iio_info
 
 ::
 
-   analog@imhotep:~$ **iio_info** -h
+   analog@imhotep:~$ iio_info -h
    Usage:
            iio_info [-x <xml_file>]
            iio_info [-n <hostname>]

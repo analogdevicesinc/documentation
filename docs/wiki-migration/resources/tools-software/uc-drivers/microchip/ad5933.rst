@@ -1,50 +1,26 @@
 AD5933 - No-OS Driver for Microchip Microcontroller Platforms
 =============================================================
 
-
 Supported Devices
-=================
+-----------------
 
 -  :adi:`AD5933`
 
 Evaluation Boards
-=================
+-----------------
 
 -  `PmodIA <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-IA>`_
 
 Overview
-========
+--------
 
-
-The :adi:`AD5933` is a high precision impedance converter system solution that combines an on-board frequency generator with a 12-bit, 1 MSPS, analog-to-digital converter (ADC). The frequency generator allows an external complex impedance to be excited with a known frequency. The response signal from the impedance is sampled by the on-board ADC and a discrete Fourier transform (DFT) is processed by an on-board DSP engine. The DFT algorithm returns a real (R) and imaginary (I) data-word at each output frequency.
-
-Once calibrated, the magnitude of the impedance and relative phase of the impedance at each frequency point along the sweep is easily calculated. This is done off chip using the real and imaginary register contents, which can be read from the serial I2C interface.
-
-A similar device, also available from Analog Devices, Inc., is the :adi:`AD5934`, a 2.7 V to 5.5 V, 250 kSPS, 12-bit impedance converter, with an internal temperature sensor and is packaged in a 16-lead SSOP.
-
-Applications
-------------
-
--  Electrochemical analysis
--  Bioelectrical impedance analysis
--  Impedance spectroscopy
--  Complex impedance measurement
--  Corrosion monitoring and protection equipment
--  Biomedical and automotive sensors
--  Proximity sensing
--  Nondestructive testing
--  Material property analysis
--  Fuel/battery cell condition monitoring
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/ad5933_pmod_ia.jpg
-   :align: center
-
-
+.. image:: https://wiki.analog.com/_media/page>/resources/pmods/ad5933
+   :alt: ad5933
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-==================
+------------------
 
 The driver contains two parts:
 
@@ -59,8 +35,7 @@ There are three functions which are called by the AD5933 driver:
 -  I2C_Write() – writes data to the device.
 -  I2C_Read() – reads data from the device.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
-   :align: center
+|image1|
 
 .. container:: centeralign
 
@@ -95,6 +70,7 @@ The following functions are implemented in this version of AD5933 driver:
 | double AD5933_CalculateImpedance(double gainFactor, unsigned char freqFunction)                                     | Reads the real and the imaginary data and calculates the Impedance.                             |
 +---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
 
 
 **HW Platform(s):**
@@ -137,7 +113,7 @@ Required Software
 
 .. note::
 
-   The AD5933 demonstration project for PIC32MX320F128H consists of three parts: the **AD5933 Driver**, the **PmodIA Demo for PIC32MX320F128H** and the **PIC32MX320F128H Common Drivers**.
+   The AD5933 demonstration project for PIC32MX320F128H consists of three parts: the AD5933 Driver, the PmodIA Demo for PIC32MX320F128H and the PIC32MX320F128H Common Drivers.
 
    
    All three parts have to be downloaded.
@@ -192,7 +168,6 @@ The following image shows a generic list of commands in a serial terminal connec
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -231,7 +206,6 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
-
 
 
 Digilent Cerebot MC7 Quick Start Guide
@@ -296,7 +270,6 @@ The following image shows a list of commands in a serial terminal connected to p
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -335,7 +308,6 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
    :align: center
-
 
 
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
@@ -401,7 +373,6 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
@@ -426,17 +397,15 @@ This section presents the steps for developing a chipKIT application that will r
    :align: center
 
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+|//ez.analog.com/community/feeds/allcontent/atom|
 
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

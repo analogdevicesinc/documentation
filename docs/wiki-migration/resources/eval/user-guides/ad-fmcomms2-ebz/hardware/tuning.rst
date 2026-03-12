@@ -102,9 +102,9 @@ Process
 
 ::
 
-   root@analog:~# **sudo su**
-   root@analog:~# **export OSC_FORCE_PLUGIN=scpi**
-   root@analog:~# **osc**
+   root@analog:~# sudo su
+   root@analog:~# export OSC_FORCE_PLUGIN=scpi
+   root@analog:~# osc
 
 3. Select from the calibration methods described previously and hit the 'Calibrate DCXO' button on osc.
 
@@ -220,8 +220,8 @@ To make this easier for ADALM-PLUTO users, the :git-plutosdr_scripts:`cal_ad9361
    
    ::
    
-      login as: **root**
-      root@192.168.2.1's password: **analog**
+      login as: root
+      root@192.168.2.1's password: analog
       Welcome to:
       %%______ _       _        _________________
       | ___ \ |     | |      /  ___|  _  \ ___ \ |
@@ -233,7 +233,7 @@ To make this easier for ADALM-PLUTO users, the :git-plutosdr_scripts:`cal_ad9361
       %%
       v0.31-dirty
       http:%%//%%wiki.analog.com/university/tools/pluto
-      # **cal_ad9361**
+      # cal_ad9361
    
 
 

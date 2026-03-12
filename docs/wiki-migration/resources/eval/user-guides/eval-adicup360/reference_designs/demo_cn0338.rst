@@ -44,7 +44,7 @@ From command line you can set following parameters: ADC sample frequency; serial
 
 .. note::
 
-   To abort any running command you need to use '**Ctrl + c**' key combination.
+   To abort any running command you need to use 'Ctrl + c' key combination.
 
 
 Calibration procedure

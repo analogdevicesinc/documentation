@@ -3,7 +3,7 @@ EV-FLOWMETER-ARDZ Sensor for Flow Rate Metering
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html
@@ -169,7 +169,7 @@ Equipment Needed
 
 ::
 
-      ** Note that this is not included in the kit**
+       Note that this is not included in the kit
    * One (1) Micro USB to USB cable
    * Host PC (Windows 10 or later)
 
@@ -225,7 +225,7 @@ Equipment Needed
 .. note::
 
    
-   **Once you have completed this setup, proceed to PHASE 2 found in**\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
+   Once you have completed this setup, proceed to PHASE 2 found in\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
    
 
 

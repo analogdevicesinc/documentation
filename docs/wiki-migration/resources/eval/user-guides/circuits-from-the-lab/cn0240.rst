@@ -69,7 +69,7 @@ Block assignments
 
 .. warning::
 
-   \ **High voltage!** This circuit may contain lethal voltages. **Do not** operate, evaluate, or test this circuit, or board assembly, unless you are a trained professional, who is qualified to handle high voltage circuitry. Before applying power, you must be familiar with the circuitry and all required precautions for working with high voltage circuits.
+   \ High voltage! This circuit may contain lethal voltages. Do not operate, evaluate, or test this circuit, or board assembly, unless you are a trained professional, who is qualified to handle high voltage circuitry. Before applying power, you must be familiar with the circuitry and all required precautions for working with high voltage circuits.
 
 
 Test setup
@@ -93,7 +93,7 @@ Test setup
 
 .. important::
 
-   Connect the **system ground** and the **PCB isolated ground** to guarantee correct voltage levels and operation. **Test point 31** and **test point 32** give access to the GND_ISO required to properly make this connection.
+   Connect the system ground and the PCB isolated ground to guarantee correct voltage levels and operation. Test point 31 and test point 32 give access to the GND_ISO required to properly make this connection.
 
 
 --------------
@@ -105,7 +105,7 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0240 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0240>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0240\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the `CN0240 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0240>`_ to the default directory path C:\\Program Files (x86)\\Analog Devices\\CN0240\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/2.png
@@ -124,23 +124,23 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 
 
    |image3|
 
-   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press “Next” to set the installation location for the SDP Drivers.
 
 .. tip::
 
    It is recommended that you install the drivers to the default directory path
 
-   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+   C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
 
    |image4|
 
-   \* Press **“Install”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+   \* Press “Install” to install the SDP Drivers and complete the installation of all software. Click "Finish" when done.
 
    |image5|
 

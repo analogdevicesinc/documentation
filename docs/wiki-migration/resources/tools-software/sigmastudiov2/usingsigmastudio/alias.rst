@@ -7,7 +7,7 @@ To organize your project visually, it often helps to create an alias to provide 
 
 .. tip::
 
-   \ **Ctrl + Right-click** on the pin is the shortcut for creating an Alias for that given pin
+   \ Ctrl + Right-click on the pin is the shortcut for creating an Alias for that given pin
 
 
 An alias can be created in two ways:

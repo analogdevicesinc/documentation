@@ -240,7 +240,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADXL34x Driver depends on **CONFIG_SPI**
+   The ADXL34x Driver depends on CONFIG_SPI
 
 
 ::
@@ -274,7 +274,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            < >   PCF8574 Keypad input device
            < >   Rotary encoders connected to GPIO pins
            < >   Analog Devices ADXL34x Three-Axis Digital Accelerometer
-           **<*>   Analog Devices ADXL362 Three-Axis Digital Accelerometer**
+           <*>   Analog Devices ADXL362 Three-Axis Digital Accelerometer
            < >   VTI CMA3000 Tri-axis accelerometer
            Hardware I/O ports  --->
 
@@ -293,8 +293,8 @@ Driver compiled as a module
 
 ::
 
-   root:~> **modprobe evdev**
-   root:~> **modprobe adxl362**
+   root:~> modprobe evdev
+   root:~> modprobe adxl362
    input: ADXL362 accelerometer as /devices/platform/bfin-spi.0/spi_master/spi0/spi0.1/input/input0
 
 Driver compiled into the kernel
@@ -324,7 +324,7 @@ After the kernel boot your device folder should include at least one device node
 
 ::
 
-   root:/> **ls -al /dev/input/**
+   root:/> ls -al /dev/input/
    drw-r--r--    2 root     root            0 Jan  1 00:03 .
    drwxr-xr-x    5 root     root            0 Jan  1 00:03 ..
    crw-rw-r--    1 root     root      13,  64 Jan  1 00:03 event0
@@ -332,7 +332,7 @@ After the kernel boot your device folder should include at least one device node
 
 ::
 
-   root:~> **cat /sys/class/input/input0/name**
+   root:~> cat /sys/class/input/input0/name
    ADXL362 accelerometer
 
 Use the event_test utility to test proper function
@@ -375,7 +375,7 @@ Use the event_test utility to test proper function
 
 .. tip::
 
-   In case you move the accelerometer and don't receive events, it's likely that something with your Interrupt is wrong. **check irq number in your platform device file**
+   In case you move the accelerometer and don't receive events, it's likely that something with your Interrupt is wrong. check irq number in your platform device file
 
 
 .. tip::
@@ -389,7 +389,7 @@ ADXL34x Sysfs runtime controls
 ::
 
    root:/> cd sys/class/input/input0/device/
-   root:/sys/devices/platform/bfin-spi.0/spi_master/spi0/spi0.1> **ls -al**
+   root:/sys/devices/platform/bfin-spi.0/spi_master/spi0/spi0.1> ls -al
    drwxr-xr-x    4 root     root             0 Jan  1 01:40 .
    drwxr-xr-x    4 root     root             0 Jan  1 01:40 ..
    -rw-rw-r--    1 root     root          4096 Jan  1 01:50 autosleep

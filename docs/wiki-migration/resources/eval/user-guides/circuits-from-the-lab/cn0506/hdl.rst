@@ -26,7 +26,7 @@ Default MAC to PHY interface is the RGMII one. To build a specific interface of 
 
 .. tip::
 
-   hdl/projects/cn0506/zed> make INTF_CFG=\ **MII**\
+   hdl/projects/cn0506/zed> make INTF_CFG=\ MII\
 
 
 Management interface

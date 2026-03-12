@@ -7,7 +7,7 @@ Analysis \| Control \| Evaluation - ACE Software
 
    The ACE software installer and supported plug-ins are now available at :adi:`ace` on the Analog Devices website.
 
-   | For **release notes**, **highlights** and **previous versions** see :doc:`here </wiki-migration/resources/tools-software/ace/releasehighlights>`\
+   | For release notes, highlights and previous versions see :doc:`here </wiki-migration/resources/tools-software/ace/releasehighlights>`\
 
 
 User Guides

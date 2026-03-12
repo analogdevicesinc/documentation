@@ -67,7 +67,7 @@ When using the board, the power supply may come from different sources, and thes
 
 .. important::
 
-   When using an external power source, it is required to disconnect the on-board solar panel by removing the resistor **R30**\
+   When using an external power source, it is required to disconnect the on-board solar panel by removing the resistor R30\
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_solar_panel_option.png
@@ -80,7 +80,7 @@ When using the board, the power supply may come from different sources, and thes
 
 .. important::
 
-   When power supply directly from the host board is used, it is required to remove the **R84** resistor and placed a 0 Ω resistor at **R86**\
+   When power supply directly from the host board is used, it is required to remove the R84 resistor and placed a 0 Ω resistor at R86\
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_power_source_option.png
@@ -135,7 +135,7 @@ Equipment Needed
 
 ::
 
-      ** Note that this is not included in the kit**
+       Note that this is not included in the kit
    * One (1) Micro USB to USB cable
    * Host PC (Windows 10 or later)
 
@@ -191,7 +191,7 @@ Equipment Needed
 .. note::
 
    
-   **Once you have completed this setup, proceed to PHASE 2 found in**\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
+   Once you have completed this setup, proceed to PHASE 2 found in\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
    
 
 

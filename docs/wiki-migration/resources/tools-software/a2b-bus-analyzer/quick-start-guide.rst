@@ -272,7 +272,7 @@ For custom cabling, please use the below pinout details
    
    For usage with AD2438/30 evaluation boards, the monitor connection needs to be different as shown in below diagram. Ensure that the upstream node's A2B_CONTROL.XCVRBINV bit is set.
    
-   **Note**: AD2438 can only be used as Main node.
+   Note: AD2438 can only be used as Main node.
 
    
    |image8|

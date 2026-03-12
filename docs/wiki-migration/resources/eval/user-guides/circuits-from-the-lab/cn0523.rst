@@ -3,7 +3,7 @@ EVAL-CN0523-EBZ User Guide
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0523-ebz/index.html
@@ -197,7 +197,7 @@ Test Setup
 
 .. warning::
 
-   **Warning:** Connecting the CN0523 directly to the PlutoSDR input (Rx) may result in an exceedance of its absolute maximum ratings of +2.5 dBm. Such an action may lead to permanent damage to the PlutoSDR. It is strongly recommended to use a **30 dB or 40 dB attenuator** at the RX input of the ADALM PLUTO to avoid incurring damage.
+   Warning: Connecting the CN0523 directly to the PlutoSDR input (Rx) may result in an exceedance of its absolute maximum ratings of +2.5 dBm. Such an action may lead to permanent damage to the PlutoSDR. It is strongly recommended to use a 30 dB or 40 dB attenuator at the RX input of the ADALM PLUTO to avoid incurring damage.
 
    
 

@@ -18,7 +18,7 @@ First, if you don’t already have SigmaStudio installed, get the latest version
 .. important::
 
    
-   It's important to download and install **SigmaStudio** and not **SigmaStudio for SHARC**.
+   It's important to download and install SigmaStudio and not SigmaStudio for SHARC.
    
 
 

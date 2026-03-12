@@ -182,7 +182,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADRF6780 Driver depends on **CONFIG_SPI**
+   The ADRF6780 Driver depends on CONFIG_SPI
 
 
 ::
@@ -207,12 +207,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
-      root:/sys/bus/iio/devices> **iio:device0**
+      root:/sys/bus/iio/devices> iio:device0
    
-      root:/> **ls -l**
+      root:/> ls -l
       -r--r--r-- 1 root root 4096 May  6 12:20 dev
       -r--r--r-- 1 root root 4096 May  6 12:20 name
       -rw-r--r-- 1 root root 4096 May  6 13:01 out_voltage0_raw
@@ -234,8 +234,8 @@ Show device name
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/iio\:device0/**
-      root:/> **cat name**
+      root:/> cd /sys/bus/iio/devices/iio\:device0/
+      root:/> cat name
       adrf6780
    
 
@@ -254,7 +254,7 @@ ADC raw value. If shared across all channels, <type>_offset is used.
    
    ::
    
-      root:/> **cat out_voltage0_raw**
+      root:/> cat out_voltage0_raw
       0
    
 
@@ -273,11 +273,11 @@ RDAC Linearize. If shared across all channels, <type>_offset is used.
    
    ::
    
-      root:/> **cat out_voltage0_scale**
+      root:/> cat out_voltage0_scale
       0
    
-      root:/> **echo 1 > out_voltage0_scale**
-      root:/> **cat out_voltage0_scale**
+      root:/> echo 1 > out_voltage0_scale
+      root:/> cat out_voltage0_scale
       1
    
 
@@ -296,11 +296,11 @@ Phase value. If shared across all channels, <type>_phase is used.
    
    ::
    
-      root:/> **cat out_altvoltage0_i_phase**
+      root:/> cat out_altvoltage0_i_phase
       0
    
-      root:/> **echo 1 > out_altvoltage0_i_phase**
-      root:/> **cat out_altvoltage0_phase**
+      root:/> echo 1 > out_altvoltage0_i_phase
+      root:/> cat out_altvoltage0_phase
       1
    
 

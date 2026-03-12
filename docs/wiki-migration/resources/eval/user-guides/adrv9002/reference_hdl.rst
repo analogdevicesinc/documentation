@@ -25,7 +25,7 @@ Source code
 
 .. important::
 
-   **Build instructions:**
+   Build instructions:
 
    
    For an LVDS interface the project must be built with the following parameters:

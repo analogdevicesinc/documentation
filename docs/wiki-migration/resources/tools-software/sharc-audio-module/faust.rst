@@ -37,7 +37,7 @@ The new `Faust Online Editor <https://fausteditor.grame.fr/>`_ can be used to ed
 
 .. tip::
 
-   \ **Recommended Browsers**
+   \ Recommended Browsers
 
    
    -  *Chrome* (Recommended)
@@ -52,7 +52,7 @@ Faust programs may be targeted for many different platforms via what is known as
 
 .. tip::
 
-   **Note:** While it's possible to install and run faust2sam locally on your Linux or macOS machine we generally recommend the use of the `Faust Online Editor <http://faust.grame.fr/editor-page>`_ since it runs in your web browser and is available on all platforms including Microsoft Windows.
+   Note: While it's possible to install and run faust2sam locally on your Linux or macOS machine we generally recommend the use of the `Faust Online Editor <http://faust.grame.fr/editor-page>`_ since it runs in your web browser and is available on all platforms including Microsoft Windows.
 
 
 Hardware Setup for Faust

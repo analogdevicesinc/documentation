@@ -21,7 +21,7 @@ Enable tools on Linux or OSX
 
 ::
 
-   ~/libm2k/build$ **cmake -DENABLE_TOOLS=ON ../**
+   ~/libm2k/build$ cmake -DENABLE_TOOLS=ON ../
 
 Enable tools on Windows
 -----------------------

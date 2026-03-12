@@ -1,36 +1,26 @@
 ADP5589 - No-OS Driver for Microchip Microcontroller Platforms
 ==============================================================
 
-
 Supported Devices
-=================
+-----------------
 
 -  :adi:`ADP5589`
 
 Evaluation Boards
-=================
+-----------------
 
 -  `PmodIOXP <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-IOXP>`_
 
 Overview
-========
+--------
 
-
-The :adi:`ADP5589` is a 19 channel GPIO (General Purpose Input/Output) port expander with built-in keypad matrix decoder, programmable logic, reset logic, and PWM generator. The IC is capable of handling QWERTY size keyboards and GPIO expansion. I/O expander ICs are used in portable devices (phones, remote controls, & cameras) and non-portable applications (healthcare, industrial & instrumentation). I/O expanders can be used to increase the number of I/Os available to a processor or to reduce the number of I/Os required through interface connectors for front panel designs.
-
-The :adi:`ADP5589` handles all key scanning and decoding and can flag the main processor via an interrupt line that new key events have occurred. GPI changes and logic changes can also be tracked as events via the FIFO, eliminating the need to monitor different registers for event changes. The :adi:`ADP5589` is equipped with a FIFO to store up to 16 events. Events can be read back by the processor via an I2C-compatible interface.
-
-The :adi:`ADP5589` frees up the main processor from having to monitor the keypad, thereby reducing power consumption and/or increasing processor bandwidth for performing other functions. The programmable logic functions allow common logic requirements to be integrated as part of the GPIO expander, saving board area and cost. Reference software Linux driver is available.
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/adp5589_pmod_ioxp.jpg
-   :align: center
-
-
+.. image:: https://wiki.analog.com/_media/page>/resources/pmods/adp5589
+   :alt: adp5589
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-==================
+------------------
 
 The driver contains two parts:
 
@@ -45,8 +35,7 @@ There are three functions which are called by the ADP5589 driver:
 -  I2C_Write() – writes data to the device.
 -  I2C_Read() – reads data from the device.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
-   :align: center
+|image1|
 
 .. container:: centeralign
 
@@ -83,6 +72,7 @@ The following functions are implemented in this version of ADP5589 driver:
 | void ADP5589_KeyLock(unsigned char firstEvent, unsigned char secondEvent, unsigned char pmodPort)   | Locks the ADP5589 and requests Password for unlock.                                 |
 +-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
 
 
 **HW Platform(s):**
@@ -124,7 +114,7 @@ Required Software
 
 .. note::
 
-   The ADP5589 demonstration project for PIC32MX320F128H consists of three parts: the **ADP5589 Driver**, the **PmodIOXP Demo for PIC32MX320F128H** and the **PIC32MX320F128H Common Drivers**.
+   The ADP5589 demonstration project for PIC32MX320F128H consists of three parts: the ADP5589 Driver, the PmodIOXP Demo for PIC32MX320F128H and the PIC32MX320F128H Common Drivers.
 
    
    All three parts have to be downloaded.
@@ -165,7 +155,6 @@ The following image shows a generic list of commands in a serial terminal connec
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -204,7 +193,6 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
-
 
 
 Digilent Cerebot MC7 Quick Start Guide
@@ -256,7 +244,6 @@ The following image shows a list of commands in a serial terminal connected to p
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -297,17 +284,15 @@ This section presents the steps for developing a software application that will 
    :align: center
 
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+|//ez.analog.com/community/feeds/allcontent/atom|
 
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

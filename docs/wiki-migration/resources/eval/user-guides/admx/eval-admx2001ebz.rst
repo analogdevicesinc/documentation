@@ -40,7 +40,7 @@ Additional Equipment Required
 
 .. important::
 
-   It is critical to purchase **both** the **ADMX2001B** High-Performance Precision Impedance Analyzer Measurement Module and the **EVAL-ADMX2001EBZ** LCR Meter Demonstration Board. These are sold separately.
+   It is critical to purchase both the ADMX2001B High-Performance Precision Impedance Analyzer Measurement Module and the EVAL-ADMX2001EBZ LCR Meter Demonstration Board. These are sold separately.
 
 
 Optional Equipment
@@ -797,7 +797,7 @@ Calibrate the gain setting (0, 1) at 100kHz with a resistor of value 1k Ohms. Th
    short:Done
    load:Done
    ADMX2001> calibrate commit 1689959855   <--- The timestamp can be omitted here
-   PASSWORD> ********
+   PASSWORD> ****
    commit : success
    ADMX2001> display 6
    Measurement model: 6 - Impedance in rectangular coordinates (default) (Rs,Xs)

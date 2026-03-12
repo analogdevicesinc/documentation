@@ -165,7 +165,7 @@ Support
 
 .. hint::
 
-   For questions and more information, please contact us on the **Analog Devices Engineer Zone**.
+   For questions and more information, please contact us on the Analog Devices Engineer Zone.
 
    
    -  :ez:`EngineerZone Linux Support <linux-software-drivers>`

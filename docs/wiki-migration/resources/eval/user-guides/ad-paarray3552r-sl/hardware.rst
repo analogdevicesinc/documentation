@@ -60,7 +60,7 @@ Power Supply Connectors
    
    .. important::
 
-      **Supply power to either P1 or P2 only and not at the same time** Supplying power to both terminals may cause permanent damage to the device.
+      Supply power to either P1 or P2 only and not at the same time Supplying power to both terminals may cause permanent damage to the device.
 
    
 

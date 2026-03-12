@@ -210,7 +210,7 @@ Precompiled kernels from ADI should have this driver already enabled. If buildin
        Device Drivers  --->
            <*>     Industrial I/O support --->
                --- Industrial I/O support
-                   ** Analog to digital converters **
+                    Analog to digital converters 
                    [--snip--]
 
                    <*>   Analog Devices AD7625/AD7626 High-Speed ADC driver

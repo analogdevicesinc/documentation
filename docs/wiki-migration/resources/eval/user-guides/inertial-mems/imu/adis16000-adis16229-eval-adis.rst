@@ -55,7 +55,7 @@ Use the 4 M2 x.4 x 6mm screws from the included bag and line up the ADIS16COM1/P
 
 .. warning::
 
-   **WARNING:** Make sure that the connector cable going from J1 on the :adi:`EVAL-ADIS` is properly aligned to the J1 connector on the ADIS16COM1/PCBZ. The 16 pin cable is included with the :adi:`EVAL-ADIS` and proper mating is essential for correct operation.
+   WARNING: Make sure that the connector cable going from J1 on the :adi:`EVAL-ADIS` is properly aligned to the J1 connector on the ADIS16COM1/PCBZ. The 16 pin cable is included with the :adi:`EVAL-ADIS` and proper mating is essential for correct operation.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-interface-mnt.png
@@ -85,7 +85,7 @@ The :adi:`ADIS16229AMLZ <ADIS16229>` module is a 47.0x37.6x22.6mm PCB structure 
 
 .. warning::
 
-   **WARNING:** Make sure the connector cable and the battery are installed correctly or the :adi:`ADIS16229AMLZ <ADIS16229>` may be damaged.
+   WARNING: Make sure the connector cable and the battery are installed correctly or the :adi:`ADIS16229AMLZ <ADIS16229>` may be damaged.
 
 
 Step #2

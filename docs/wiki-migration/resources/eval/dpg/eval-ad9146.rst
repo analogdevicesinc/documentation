@@ -52,7 +52,7 @@ Software Needed:
 
 .. important::
 
-   \ **Known Issue:** ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
+   \ Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
 
 
 Hardware Needed:
@@ -101,16 +101,16 @@ Quick Start Guide
 
 ::
 
-     * If using **SDP-H1**, set **DAC frequency** to 100 MHz, **Interpolation** to 2x and **Data Format** to binary format.
-     * If using **ADS7-V2**, set **DAC frequency** to 500 MHz, **Interpolation** to 2x and **Data Format** to binary format.
-   * In ACE, AD9146 on-chip PLL can be enabled or not. To enable the on-chip PLL check the **Enable PLL Clock** in the wizard under **AD9146 PLL Setup**. Select **Auto Mode** for PLL Mode option. The **PLL Locked** LED on the ACE Board View should light up green. If the LED doesn't light up, try reapplying the wizard configuration and make sure that the VCO frequency is within the valid range of 1 - 2.1 GHz.
+     * If using SDP-H1, set DAC frequency to 100 MHz, Interpolation to 2x and Data Format to binary format.
+     * If using ADS7-V2, set DAC frequency to 500 MHz, Interpolation to 2x and Data Format to binary format.
+   * In ACE, AD9146 on-chip PLL can be enabled or not. To enable the on-chip PLL check the Enable PLL Clock in the wizard under AD9146 PLL Setup. Select Auto Mode for PLL Mode option. The PLL Locked LED on the ACE Board View should light up green. If the LED doesn't light up, try reapplying the wizard configuration and make sure that the VCO frequency is within the valid range of 1 - 2.1 GHz.
    * Start DPG Lite or DPG Downloader.
-     * At the SDP-H1 part of the software, the device part number and **DCO frequency** of around **100 MHz** should be displayed.
-     * At the ADS7-V2 part of the software, the device part number and **DCO frequency** of around **500 MHz** should be displayed.
-   * In DPG Lite or DPG Downloader, from the **Add Generator Waveforms** pulldown menu, select **Single Tone** and apply the settings as shown in Figures 3a and 3b. The data rate in DPG software should be equal to the data rate in ACE.
-     * When using SDP-H1, set **Data Rate** to 50 MHz and **Desired Frequency** to 10 MHz.
-     * When using ADS7-V2, set **Data Rate** to 250 MHz and **Desired Frequency** to 21 MHz.
-   * Continuing on setting up DPG Lite or DPG Downloader, set **DAC resolution** to 16 bits. Check off the **Generate Complex Data (I & Q)** box.\\
+     * At the SDP-H1 part of the software, the device part number and DCO frequency of around 100 MHz should be displayed.
+     * At the ADS7-V2 part of the software, the device part number and DCO frequency of around 500 MHz should be displayed.
+   * In DPG Lite or DPG Downloader, from the Add Generator Waveforms pulldown menu, select Single Tone and apply the settings as shown in Figures 3a and 3b. The data rate in DPG software should be equal to the data rate in ACE.
+     * When using SDP-H1, set Data Rate to 50 MHz and Desired Frequency to 10 MHz.
+     * When using ADS7-V2, set Data Rate to 250 MHz and Desired Frequency to 21 MHz.
+   * Continuing on setting up DPG Lite or DPG Downloader, set DAC resolution to 16 bits. Check off the Generate Complex Data (I & Q) box.\\
 
 .. container:: centeralign
 

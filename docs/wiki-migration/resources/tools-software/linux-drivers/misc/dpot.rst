@@ -218,7 +218,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ad525x_dpot driver depends on **CONFIG_SPI** or **CONFIG_I2C**
+   The ad525x_dpot driver depends on CONFIG_SPI or CONFIG_I2C
 
 
 ::

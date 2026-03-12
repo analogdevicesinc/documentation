@@ -22,7 +22,7 @@ General Setup
 
 .. tip::
 
-   \ **NOTE:** an RTD sensor can be bypassed by shorting P9 connector that can be seen in the :adi:`EVAL-CN0355-PMDZ` Evaluation Board
+   \ NOTE: an RTD sensor can be bypassed by shorting P9 connector that can be seen in the :adi:`EVAL-CN0355-PMDZ` Evaluation Board
 
 
 Minimum PC/System Requirements
@@ -42,7 +42,7 @@ How to Install the Evaluation Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0355 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0355>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0355\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the `CN0355 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0355>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0355\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
 | |image1|
@@ -58,7 +58,7 @@ How to Install the Evaluation Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers**
+   \ NOTE: It is recommended that you install the drivers to the default directory path C:\\Program Files\\Analog Devices\\SDP\\Drivers
 
 
 | |image6|
@@ -84,7 +84,7 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 
 .. tip::
 
-   \ **NOTE:** jumper pin configuration to set up the RTD sensor can be seen at the back of :adi:`EVAL-CN0355-PMDZ` eval board.
+   \ NOTE: jumper pin configuration to set up the RTD sensor can be seen at the back of :adi:`EVAL-CN0355-PMDZ` eval board.
 
 
 - Connect the Pressure transducer in P1 of :adi:`EVAL-CN0355-PMDZ`.
@@ -92,7 +92,7 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 
 .. tip::
 
-   \ **NOTE:** jumper pin configuration to set up the Bridge type transducer voltage drive can be seen at the back of :adi:`EVAL-CN0355-PMDZ` eval board.
+   \ NOTE: jumper pin configuration to set up the Bridge type transducer voltage drive can be seen at the back of :adi:`EVAL-CN0355-PMDZ` eval board.
 
 
 - Plug in the wall wart and connect it to connector P8 of the :adi:`EVAL-CN0355-PMDZ`.
@@ -144,7 +144,7 @@ STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
 
 .. tip::
 
-   \ **NOTE:** The chosen calibration settings will be enabled for configuration and the other calibration will be disabled and greyed out.
+   \ NOTE: The chosen calibration settings will be enabled for configuration and the other calibration will be disabled and greyed out.
 
 
 - **2 – Point Calibration** – This button defines the values of the parameters to be used to calculate for the pressure read by the transducer using two data points calibration system without temperature compensation.
@@ -160,7 +160,7 @@ STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
 
 .. tip::
 
-   \ **NOTE:** This information can be found in the transducer `datasheet <http://sensing.honeywell.com/product%20page?pr_id=141960>`_\
+   \ NOTE: This information can be found in the transducer `datasheet <http://sensing.honeywell.com/product%20page?pr_id=141960>`_\
 
 
 - **4 – Point Calibration** – This button defines the values of the parameters to be used to calculate for the pressure read by the transducer using four data points calibration system with temperature compensation.
@@ -198,7 +198,7 @@ CALIBRATION PROCEDURE
 
 .. tip::
 
-   **Pre-Calibration Note**:
+   Pre-Calibration Note:
 
    
    -  Choose the desired calibration option

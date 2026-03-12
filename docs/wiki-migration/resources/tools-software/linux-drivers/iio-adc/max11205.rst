@@ -88,7 +88,7 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat name
       max11205a
    
 
@@ -105,7 +105,7 @@ Show raw measurement
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_voltage0_raw**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_voltage0_raw
       20137
    
 
@@ -124,7 +124,7 @@ Show scale
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_voltage0_scale**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_voltage0_scale
       0.097656250
    
 
@@ -141,7 +141,7 @@ Show sampling frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_voltage0_sampling_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat in_voltage0_sampling_frequency
       116
    
 
@@ -156,7 +156,7 @@ Trigger management
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat trigger/current_trigger**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat trigger/current_trigger
       max11205a-dev0
    
 
@@ -194,7 +194,7 @@ Every buffer implementation features a set of files:
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0/scan_elements# **ls**
+      root@analog:/sys/bus/iio/devices/iio:device0/scan_elements# ls
       in_voltage0_en  in_voltage0_index  in_voltage0_type
    
 

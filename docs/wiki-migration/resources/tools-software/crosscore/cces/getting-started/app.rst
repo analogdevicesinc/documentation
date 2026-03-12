@@ -90,14 +90,14 @@ Just as the JTAG interface does not directly access DDR memory when downloading 
 
 .. tip::
 
-   This example uses the ICE-2000 emulator so this switch is set to **ICE-2000**. Consult CCES On-Line Help for CLDP settings appropriate for your configuration.
+   This example uses the ICE-2000 emulator so this switch is set to ICE-2000. Consult CCES On-Line Help for CLDP settings appropriate for your configuration.
 
 
 **-core** the core used to run the flash memory driver.
 
 .. important::
 
-   For processors containing ARM and SHARC+ cores, **core 1 must run the flash memory driver**.
+   For processors containing ARM and SHARC+ cores, core 1 must run the flash memory driver.
 
 
 **-driver**: flash memory device driver (included with the Board Support Package installation) the processor uses to work with the board's flash device

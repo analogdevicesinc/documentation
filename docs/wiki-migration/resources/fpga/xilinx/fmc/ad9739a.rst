@@ -8,7 +8,7 @@ AD9739A Native FMC Card / Xilinx Reference Designs
 
 .. warning::
 
-   \ **NOTE:** Support for the eval-ad9739a was discontinued starting with 2022_R2 Kuiper Linux release and it is not supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can be found on `hdl_2021_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2021_r2/projects/ad9739a_fmc>`_ release branch.
+   \ NOTE: Support for the eval-ad9739a was discontinued starting with 2022_R2 Kuiper Linux release and it is not supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can be found on `hdl_2021_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2021_r2/projects/ad9739a_fmc>`_ release branch.
 
 
 Introduction
@@ -390,11 +390,9 @@ Reference Design Contents
 Third Party Bitstreams
 ~~~~~~~~~~~~~~~~~~~~~~
 
-
 Below is a list of hardware, IP Cores, or reference designs. While this content is believed to be reliable, many have not been validated, verified or reviewed by Analog Devices. These boards/platforms may or may not be suitable for end product integration or development, and may not meet datasheet specifications. Since many of these platforms or IP Cores are not designed or reviewed by Analog Devices, care should be taken to ensure that these will meet your needs before purchase. While ADI will always provide chip level support on `the EngineerZone™ <https://ez.analog.com/>`_, board level, or reference design support is given by the manufacture or creator of the specific materials.
 
 References to manufacturer or third party software, websites, or to any specific commercial or non-commercial products are suggestions only and do not necessarily constitute or imply an endorsement, recommendation, or favoring by Analog Devices.
-
 
 
 -  `4 x independent DVB-T channels, RF output (0 to 1.250 GHz) from MVD Cores <http://www.mvd-fpga.com/cores/en/digilent_AD9739A_xilinx_eval.html>`_

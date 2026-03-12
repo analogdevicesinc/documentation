@@ -26,7 +26,7 @@ For detailed information regarding the EV-COG-AD4050LZ software pack, please see
 .. important::
 
    
-   You **MUST** have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the EV-COG-AD4050LZ platform.
+   You MUST have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the EV-COG-AD4050LZ platform.
    
 
 
@@ -58,7 +58,7 @@ The software pack can be downloaded in following ways.
 
 .. important::
 
-   This Board Support Pack is **Deprecated** already and basically **not intended** for EV-COG-AD4050LZ but you may use it for reference only.
+   This Board Support Pack is Deprecated already and basically not intended for EV-COG-AD4050LZ but you may use it for reference only.
 
 
 .. admonition:: Download

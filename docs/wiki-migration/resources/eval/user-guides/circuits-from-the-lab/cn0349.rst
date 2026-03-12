@@ -73,7 +73,7 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0349 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0349>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0349\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the `CN0349 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0349>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0349\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
    |image1|
@@ -90,7 +90,7 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 
 
 \\\\\
@@ -105,12 +105,12 @@ Installing the Software
 
    It is recommended that you install the drivers to the default directory path
 
-   **C:\\Program Files\\Analog Devices\\SDP\\DriversR2**\
+   C:\\Program Files\\Analog Devices\\SDP\\DriversR2\
 
 
    |image5|
 
-   \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+   \* Press “Next” to install the SDP Drivers and complete the installation of all software. Click "Finish" when done.
 
    |image6|
 
@@ -122,30 +122,30 @@ Connecting the Hardware
 
 .. tip::
 
-   \ **NOTE:** Make sure that the jumper is positioned as shown below!
+   \ NOTE: Make sure that the jumper is positioned as shown below!
 
 
    |image7|
 
-   \* Connect the 120-pin connector on the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** to the 120-pin connector marked **“CON A”** on the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)**
+   \* Connect the 120-pin connector on the :adi:`SDP-PMD-IB1Z` (Interposer Board) to the 120-pin connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` (SDP-B Board)
 
    |image8|
 
-   \* Connect the USB cable supplied with :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** to the USB port on the PC and the SDP Board
+   \* Connect the USB cable supplied with :adi:`EVAL-SDP-CB1Z` (SDP-B Board) to the USB port on the PC and the SDP Board
    |image9|}}
 
 .. tip::
 
-   \ **NOTE:** Verify that the SDP Drivers are loaded properly. For that purpose open the Device manager and check if the SDP Board is recognized. If not repeat steps 1-3
+   \ NOTE: Verify that the SDP Drivers are loaded properly. For that purpose open the Device manager and check if the SDP Board is recognized. If not repeat steps 1-3
 
 
    |image10|
 
-   \* Connect the :adi:`EVAL-CN0349-PMDZ` **(CN0349 Board)** to the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** via the 8 pin header Digilent Pmod I2C interface connector.
+   \* Connect the :adi:`EVAL-CN0349-PMDZ` (CN0349 Board) to the :adi:`SDP-PMD-IB1Z` (Interposer Board) via the 8 pin header Digilent Pmod I2C interface connector.
 
    |image11|
 
-   \* Connect the Resistance Decade Box/Conductivity Cell to pin4 and pin5 of J1 Terminal Block located on :adi:`EVAL-CN0349-PMDZ` **(CN0349 Board)**. If a Conductivity Cell with integrated Pt100 sensor is used, the sensor should be wired to **pin 3** and **pin 2** of **J1** Terminal Block. **Pin 1** can be used to wire the ground shield of the Conductivity Cell.
+   \* Connect the Resistance Decade Box/Conductivity Cell to pin4 and pin5 of J1 Terminal Block located on :adi:`EVAL-CN0349-PMDZ` (CN0349 Board). If a Conductivity Cell with integrated Pt100 sensor is used, the sensor should be wired to pin 3 and pin 2 of J1 Terminal Block. Pin 1 can be used to wire the ground shield of the Conductivity Cell.
 -  After a proper connection of the hardware to the PC the **CN0349 Evaluation Software** can be used to calibrate the board and capture data.
 
 --------------
@@ -229,8 +229,8 @@ Establishing a USB Connection Link
 .. tip::
 
    
-   | **NOTE:** If the software was installed to the default location it will be found at
-   | **C:\\Program Files\\Analog Devices\\CN0349\\CN0349.exe**
+   | NOTE: If the software was installed to the default location it will be found at
+   | C:\\Program Files\\Analog Devices\\CN0349\\CN0349.exe
    
 
 
@@ -312,7 +312,7 @@ For the customer platform to communicate with the CN0349 board, the I2C communic
 
 .. note::
 
-   On the EVAL-CN0349-PMDZ evaluation board, the ADG715 I2C address is set to: **0x48**, and the AD5934 I2C address is: **0x0d**. Please make sure in the host I2C bus there are no devices that have same address as the ADG715 and AD5934.
+   On the EVAL-CN0349-PMDZ evaluation board, the ADG715 I2C address is set to: 0x48, and the AD5934 I2C address is: 0x0d. Please make sure in the host I2C bus there are no devices that have same address as the ADG715 and AD5934.
 
 
 System Calibration and Ranging
@@ -327,7 +327,7 @@ When designing the software for the CN0349, there are particular register settin
 
 .. important::
 
-   The CN0349 board **MUST** be calibrated before measurement. The calibration theory and calculations are located in circuit note :adi:`CN0349`.
+   The CN0349 board MUST be calibrated before measurement. The calibration theory and calculations are located in circuit note :adi:`CN0349`.
 
 
 -  **INPUT SIGNAL SETTING**

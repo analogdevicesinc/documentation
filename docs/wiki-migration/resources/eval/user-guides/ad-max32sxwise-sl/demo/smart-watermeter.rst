@@ -157,7 +157,7 @@ Sensor Board Assembly
    .. note::
 
          
-         To **set up the firmware** of the sensor board, you may proceed to :doc:`Configuring the Sensor Board </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` under :doc:`Software Setup </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`. Since **this demo uses two sensor boards**, repeat all steps of :doc:`Sensor Board Assembly </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` for the second board.
+         To set up the firmware of the sensor board, you may proceed to :doc:`Configuring the Sensor Board </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` under :doc:`Software Setup </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`. Since this demo uses two sensor boards, repeat all steps of :doc:`Sensor Board Assembly </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` for the second board.
          
 
    
@@ -195,7 +195,7 @@ Gateway Assembly
    .. note::
 
          
-         To **configure the gateway**, you may proceed to :doc:`Imaging the SD Card with ChirpStack OS </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` and :doc:`Configuring the Gateway </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` under :doc:`Software Setup </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
+         To configure the gateway, you may proceed to :doc:`Imaging the SD Card with ChirpStack OS </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` and :doc:`Configuring the Gateway </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` under :doc:`Software Setup </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
          
 
    
@@ -212,9 +212,9 @@ Environment Assembly
    .. tip::
 
          
-         When using the sensor board, a general-purpose ultrasonic flow rate sensor probe can be used with it. An example of a probe is the **Flow Transducer with Pipe (Model：HS0003)** from Audiowell Sensor Technology.
+         When using the sensor board, a general-purpose ultrasonic flow rate sensor probe can be used with it. An example of a probe is the Flow Transducer with Pipe (Model：HS0003) from Audiowell Sensor Technology.
          
-      For temperature measurement, this board supports up to two 2-wire PT1000/500 platinum **resistive temperature detectors (RTD)**.
+      For temperature measurement, this board supports up to two 2-wire PT1000/500 platinum resistive temperature detectors (RTD).
 
    
 
@@ -225,7 +225,7 @@ Environment Assembly
 
 .. important::
 
-   An **RTD** or a **dummy sensor (1.0 kΩ resistor)** is required for each terminal in order for the board to run and capture the flow rate.
+   An RTD or a dummy sensor (1.0 kΩ resistor) is required for each terminal in order for the board to run and capture the flow rate.
 
 
 
@@ -237,7 +237,7 @@ Environment Assembly
 .. tip::
 
    
-   The :adi:`CN0508` **75 Watt, Single-Output Benchtop Power Supply** is connected to the water pump in order to vary water flow as needed for the demo.
+   The :adi:`CN0508` 75 Watt, Single-Output Benchtop Power Supply is connected to the water pump in order to vary water flow as needed for the demo.
    
 
 
@@ -263,14 +263,14 @@ Software Setup
    
    .. important::
 
-      Before proceeding with the steps listed below. **Make sure that all requirements under** :doc:`Software Requirements </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` **are met, with all needed software downloaded and installed**.
+      Before proceeding with the steps listed below. Make sure that all requirements under :doc:`Software Requirements </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` are met, with all needed software downloaded and installed.
 
    
-   This section describes the software setup of the demo divided into five phases: **configuring the sensor board**, **imaging the SD card with ChirpStack OS**, **configuring the gateway**, **setting up a self-hosted application server**, and **connecting a sensor node to the gateway**.
+   This section describes the software setup of the demo divided into five phases: configuring the sensor board, imaging the SD card with ChirpStack OS, configuring the gateway, setting up a self-hosted application server, and connecting a sensor node to the gateway.
    
-   **Configuring the sensor board** involves uploading the appropriate firmware to the sensor board using the :adi:`MAX32625PICO` programming adapter and obtaining the board's DevEUI. To prepare the gateway, **imaging the SD card with ChirpStack OS** involves flashing the ChirpStack Gateway OS to the Raspberry Pi 4's micro SD card, while **configuring the gateway** involves creating the gateway through the ChirpStack Network Server.
+   Configuring the sensor board involves uploading the appropriate firmware to the sensor board using the :adi:`MAX32625PICO` programming adapter and obtaining the board's DevEUI. To prepare the gateway, imaging the SD card with ChirpStack OS involves flashing the ChirpStack Gateway OS to the Raspberry Pi 4's micro SD card, while configuring the gateway involves creating the gateway through the ChirpStack Network Server.
    
-   To configure the GUI, **setting up a self-hosted application server** involves configuring the Host PC, installing the GUI, and accessing the gateway. Lastly, **connecting a sensor node to the gateway** involves creating a device for each board and accessing the GUI.
+   To configure the GUI, setting up a self-hosted application server involves configuring the Host PC, installing the GUI, and accessing the gateway. Lastly, connecting a sensor node to the gateway involves creating a device for each board and accessing the GUI.
    
    .. tip::
 
@@ -305,7 +305,7 @@ The **flow folder** should contain the BIN, ELF, and HEX file.
 
 .. tip::
 
-   To check if the flashing is successful, check the DAPLINK directory and make sure there is no **FAIL.TXT** file. In case there is, repeat the drag and drop step.
+   To check if the flashing is successful, check the DAPLINK directory and make sure there is no FAIL.TXT file. In case there is, repeat the drag and drop step.
 
 
 
@@ -340,7 +340,7 @@ The **flow folder** should contain the BIN, ELF, and HEX file.
 
 .. tip::
 
-   To **redisplay the DevEUI** on the screen, **reset the** :adi:`MAX32670-SX-ARDZ` **Base Board** by pressing the S1 button.
+   To redisplay the DevEUI on the screen, reset the :adi:`MAX32670-SX-ARDZ` Base Board by pressing the S1 button.
 
 
 
@@ -353,7 +353,7 @@ Imaging the SD Card with ChirpStack OS
    
    .. note::
 
-      This phase will require `Balena Etcher <https://etcher.balena.io>`_ **image writing tool** installed and `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_ downloaded. This phase will also use the **micro SD card** listed under :doc:`Gateway Essentials </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
+      This phase will require `Balena Etcher <https://etcher.balena.io>`_ image writing tool installed and `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_ downloaded. This phase will also use the micro SD card listed under :doc:`Gateway Essentials </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
 
    
 
@@ -377,7 +377,7 @@ Imaging the SD Card with ChirpStack OS
 
 .. tip::
 
-   In case the **flashing fails**, consult this guide to resolve the issue: `Balena Etcher FAQs <https://etcher.balena.io/#FAQs>`_.
+   In case the flashing fails, consult this guide to resolve the issue: `Balena Etcher FAQs <https://etcher.balena.io/#FAQs>`_.
 
 
 
@@ -387,7 +387,7 @@ Imaging the SD Card with ChirpStack OS
    
    .. important::
 
-      After the first boot, the **gateway might reboot automatically** to apply some changes. The full image will set up the **PostgreSQL database** on its first boot. This could take a couple of minutes and during this time the gateway will be less responsive.
+      After the first boot, the gateway might reboot automatically to apply some changes. The full image will set up the PostgreSQL database on its first boot. This could take a couple of minutes and during this time the gateway will be less responsive.
 
    
 
@@ -400,7 +400,7 @@ Configuring the Gateway
    
    .. note::
 
-      Make sure you have completed the steps described in :doc:`Gateway Assembly </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` before proceeding with the steps listed below. Make sure that the **Raspberry Pi (powered on) and Host PC are still connected** through the LAN cable.
+      Make sure you have completed the steps described in :doc:`Gateway Assembly </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` before proceeding with the steps listed below. Make sure that the Raspberry Pi (powered on) and Host PC are still connected through the LAN cable.
 
    
 
@@ -415,7 +415,7 @@ Configuring the Gateway
 
 .. tip::
 
-   When prompted to enter password, use **ChirpStackAP** (case-sensitive).
+   When prompted to enter password, use ChirpStackAP (case-sensitive).
 
 
 
@@ -444,7 +444,7 @@ Configuring the Gateway
 
 .. tip::
 
-   In this example, the IP assigned is **169.254.117.207**. This will be used in **Installing the GUI and Accessing the Gateway** under :doc:`Setting up a Self-Hosted Application Server </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
+   In this example, the IP assigned is 169.254.117.207. This will be used in Installing the GUI and Accessing the Gateway under :doc:`Setting up a Self-Hosted Application Server </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
 
 
 
@@ -474,7 +474,7 @@ Configuring the Gateway
    
    .. tip::
 
-      If you have properly configured the gateway and installed the required SD card image, then **you are ready to use the ChirpStack Network Server**.
+      If you have properly configured the gateway and installed the required SD card image, then you are ready to use the ChirpStack Network Server.
 
    
 
@@ -487,13 +487,13 @@ Setting up a Self-Hosted Application Server
    
    .. note::
 
-      Make sure that the **Raspberry Pi (powered on) and Host PC are still connected** through the LAN cable.
+      Make sure that the Raspberry Pi (powered on) and Host PC are still connected through the LAN cable.
 
          
       This phase will require `ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`_ downloaded and extracted.
 
    
-   **Configuring the Host PC for the Gateway**
+   Configuring the Host PC for the Gateway
 
 
 -   Access **Advance Firewall settings** in your computer.
@@ -536,7 +536,7 @@ Setting up a Self-Hosted Application Server
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ip_address.png
       :align: center
    
-   This information will be used in **Setting up a Local Host URL for the Application Server** under :doc:`Connecting a Sensor Node to the Gateway </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` to integrate data from the gateway to the GUI.
+   This information will be used in Setting up a Local Host URL for the Application Server under :doc:`Connecting a Sensor Node to the Gateway </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>` to integrate data from the gateway to the GUI.
 
 
 
@@ -545,10 +545,10 @@ Setting up a Self-Hosted Application Server
 
 .. tip::
 
-   In this example, the saved IP address is 169.254.117.207. Hence, the URL would be **169.254.117.207:8080**.
+   In this example, the saved IP address is 169.254.117.207. Hence, the URL would be 169.254.117.207:8080.
 
    
-   If you haven't saved the IP address, **revisit steps 3 to 7** in **Opening the SSH Client** under :doc:`Configuring the Gateway </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
+   If you haven't saved the IP address, revisit steps 3 to 7 in Opening the SSH Client under :doc:`Configuring the Gateway </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
 
 
 
@@ -569,10 +569,10 @@ Connecting a Sensor Node to the Gateway
    
    .. note::
 
-      At this point, it is assumed that you have a **working ChirpStack environment** with a connected gateway.
+      At this point, it is assumed that you have a working ChirpStack environment with a connected gateway.
 
    
-   **Creating a Device Profile**
+   Creating a Device Profile
 
 
 -  Once you are in the ChirpStack landing page, navigate to the **Applications tab**.
@@ -636,7 +636,7 @@ The following details are also needed:
 
 .. important::
 
-   In naming the devices, you must include a **specific keyword** (not case-sensitive) to distinguish the sensor nodes shown on the GUI. In this case, the two sensor nodes can be named **flow-1** and **flow-2** respectively.
+   In naming the devices, you must include a specific keyword (not case-sensitive) to distinguish the sensor nodes shown on the GUI. In this case, the two sensor nodes can be named flow-1 and flow-2 respectively.
 
 
 |image16| 
@@ -645,10 +645,10 @@ The following details are also needed:
 
 .. tip::
 
-   For OTAA devices, confirm that when the device tries to OTAA activate, you see a **JoinRequest** message followed by a **JoinAccept** message.
+   For OTAA devices, confirm that when the device tries to OTAA activate, you see a JoinRequest message followed by a JoinAccept message.
 
    
-   If you do not see a JoinRequest and JoinAccept, click on the **Flush OTAA devices** button.
+   If you do not see a JoinRequest and JoinAccept, click on the Flush OTAA devices button.
 
 
 
@@ -660,7 +660,7 @@ The following details are also needed:
 
 .. tip::
 
-   For this demo, the **Application key** is **2b7e151628aed2a6abf7158809cf4f3c**.
+   For this demo, the Application key is 2b7e151628aed2a6abf7158809cf4f3c.
 
    
    The App Key included in the LoraMAC was used as is for the purpose of evaluation. Users can generate the App Key and add it in the source code on their own.
@@ -689,7 +689,7 @@ The following details are also needed:
    In this example, it is the IP of the Apple Network Adapter, http://169.254.178.157:5050/api/data/post.
 
    
-   If you haven't saved the IP address, **revisit steps 1 to 2** in **Installing the GUI and Accessing the Gateway** under :doc:`Setting up a Self-Hosted Application Server </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
+   If you haven't saved the IP address, revisit steps 1 to 2 in Installing the GUI and Accessing the Gateway under :doc:`Setting up a Self-Hosted Application Server </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart-watermeter>`.
 
 
 

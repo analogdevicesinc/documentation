@@ -33,7 +33,7 @@ Reboot to DFU-RAM
 
 ::
 
-   # **device_reboot ram**
+   # device_reboot ram
    Stopping input-event-daemon: done
    Stopping dropbear sshd: OK
    Stopping MSD Daemon: OK
@@ -64,8 +64,8 @@ Reboot to DFU-RAM
    Err:   serial@e0001000
    Model: Zynq Pluto SDR Board
    Hit any key to stop autoboot:  0
-   **Entering DFU RAM mode ...**
-   **Copying Linux from DFU to RAM...**
+   Entering DFU RAM mode ...
+   Copying Linux from DFU to RAM...
 
 .. tip::
 
@@ -99,7 +99,7 @@ Reboot to DFU-Flash
 
 ::
 
-   # **device_reboot sf**
+   # device_reboot sf
    Stopping input-event-daemon: done
    Stopping dropbear sshd: OK
    Stopping MSD Daemon: OK
@@ -138,4 +138,4 @@ Reboot
 
 ::
 
-   # **reboot**
+   # reboot

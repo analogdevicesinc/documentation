@@ -120,7 +120,7 @@ Any IMU can use the indirect method of connecting to the P3 header using the rib
 
 .. note::
 
-   **MACHINE SCREWS IMPACT LOCAL MAGNETIC FIELDS**
+   MACHINE SCREWS IMPACT LOCAL MAGNETIC FIELDS
 
    | The machine screws in the EVAL-ADISIMU1-RPIZ kit are made out of stainless steel, which can have some moderate impact on magnetic fields, local to the IMU. For those whose application demands the best magnetometer performance offered by these IMUs, consider using plastic screws that will not impact the magnetic fields around the devices.
 
@@ -256,7 +256,7 @@ The board has a selectable power between +5V or +3.3V from the RPI. The default 
 
 .. warning::
 
-   It's critical to know the power supply required for the IMU you are using before changing this setting. If you power any IMU from 5V that was designed for 3.3V power, you will destroy the IMU and it will no longer function. This is a **VERY EXPENSIVE** mistake.
+   It's critical to know the power supply required for the IMU you are using before changing this setting. If you power any IMU from 5V that was designed for 3.3V power, you will destroy the IMU and it will no longer function. This is a VERY EXPENSIVE mistake.
 
 
 ===== ====================================

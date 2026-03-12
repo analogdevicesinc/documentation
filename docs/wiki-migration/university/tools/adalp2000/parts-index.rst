@@ -3,7 +3,7 @@ ADALP2000 Product Description
 
 .. important::
 
-   **Important Notice: Migration to GitHub.io Documentation**
+   Important Notice: Migration to GitHub.io Documentation
 
    
    We are in the process of migrating our documentation to GitHub.io.

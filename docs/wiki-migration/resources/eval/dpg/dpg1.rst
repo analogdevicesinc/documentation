@@ -83,7 +83,7 @@ The SPI port provides a direct interface with the DAC.
 
 .. hint::
 
-   \ **Note: Clock And Data Alignment** When running in LVDS HS mode, the firmware executes a clock tuning algorithm based on the mode settings (aligned or centered). This algorithm is triggered when data playback is started.
+   \ Note: Clock And Data Alignment When running in LVDS HS mode, the firmware executes a clock tuning algorithm based on the mode settings (aligned or centered). This algorithm is triggered when data playback is started.
 
    
    The hardware implementation for the tuning is based on Programmable Delay Controllers, which are unfortunately susceptible to temperature variations. What this means is that if a playback is started when the device is still cold, the clock and data may eventually be misaligned as the board heats up.

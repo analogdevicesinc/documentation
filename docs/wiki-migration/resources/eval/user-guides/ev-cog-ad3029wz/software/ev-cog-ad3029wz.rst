@@ -36,7 +36,7 @@ For detailed information regarding the EV-COG-AD3029LZ software pack, please see
 .. important::
 
    
-   You **MUST** have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the EV-COG-AD3029LZ platform.
+   You MUST have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the EV-COG-AD3029LZ platform.
    
 
 

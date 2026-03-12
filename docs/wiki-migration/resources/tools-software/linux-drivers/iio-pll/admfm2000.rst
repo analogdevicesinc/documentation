@@ -103,7 +103,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADMFM2000 driver depends on **GPIOLIB**
+   The ADMFM2000 driver depends on GPIOLIB
 
 
 ::
@@ -125,13 +125,13 @@ This device can be found under **/sys/bus/iio/devices/**
 
 ::
 
-   root:/> **cd /sys/bus/iio/devices/**
+   root:/> cd /sys/bus/iio/devices/
    root:/sys/bus/iio/devices> ls
    iio:device0
 
-   root:/sys/bus/iio/devices> **cd iio:device0**
+   root:/sys/bus/iio/devices> cd iio:device0
 
-   root@analog:/sys/bus/iio/devices/iio:device0# **ls -l**
+   root@analog:/sys/bus/iio/devices/iio:device0# ls -l
    total 0
    -r--r--r-- 1 root root 4096 Oct 26 22:20 name
    lrwxrwxrwx 1 root root    0 Oct 26 22:20 of_node -> ../../../../firmware/devicetree/base/admfm2000
@@ -154,7 +154,7 @@ Show device name
    ::
    
       root@analog:/sys/bus/iio/devices/iio:device0# cat name
-      **admfm2000**
+      admfm2000
    
 
 
@@ -172,11 +172,11 @@ Hardware applied gain factor. If shared across all channels, <type>_hardwaregain
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0#**cat out_voltage0_hardwaregain**
+      root@analog:/sys/bus/iio/devices/iio:device0#cat out_voltage0_hardwaregain
       -31.000000 dB
    
-      root@analog:/sys/bus/iio/devices/iio:device0#**echo -10 > out_voltage0_hardwaregain**
-      root@analog:/sys/bus/iio/devices/iio:device0#**cat out_voltage0_hardwaregain**
+      root@analog:/sys/bus/iio/devices/iio:device0#echo -10 > out_voltage0_hardwaregain
+      root@analog:/sys/bus/iio/devices/iio:device0#cat out_voltage0_hardwaregain
       -10.000000 dB
    
 

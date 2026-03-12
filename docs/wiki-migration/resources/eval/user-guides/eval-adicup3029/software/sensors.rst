@@ -3,7 +3,7 @@ Sensors Software Pack
 
 .. warning::
 
-   \ **This CMSIS pack and its contents are DEPRECATED. This should be removed from your tools, and please do not use this moving forward**\
+   \ This CMSIS pack and its contents are DEPRECATED. This should be removed from your tools, and please do not use this moving forward\
 
 
 General Description/Overview
@@ -25,7 +25,7 @@ For detailed information regarding the Sensor software pack, please see our comp
 .. important::
 
    
-   You **MUST** have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the ADICUP3029 platform.
+   You MUST have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the ADICUP3029 platform.
    
 
 

@@ -3,7 +3,7 @@ Nios2 Linux on the Altera FPGA Development Boards
 
 .. warning::
 
-   \ **NOTE:** Support for the A10GX carrier is discontinued and will not be supported in future releases. Last pre-build images can be found here.
+   \ NOTE: Support for the A10GX carrier is discontinued and will not be supported in future releases. Last pre-build images can be found here.
 
 
 Loading Pre-built Images
@@ -209,38 +209,39 @@ Some examples of the IIO Oscilloscope running on Windows and connected remotely 
 Build Linux
 -----------
 
-
 Build Linux - Script method
-===========================
+---------------------------
 
 We provide `a script that does automates <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/linux/build_nios2_kernel_image.sh>`_ the build for Nios 2.
 
 The script takes 4 parameters:
 
--  **<path_to_nios2_toolchain>** - this is mandatory, since already built Nios 2 toolchains are not very common ; point this to the **nios2eds** directory [e.g. **/home/<user>/intelFPGA/<version>/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-** ]
--  **<local_kernel_dir>** - default is **linux-adi** if left blank ; use this, if you want to use an already cloned kernel repo
--  **<altera_branch>** - default is **master** if left blank
--  **<devicetree_file>** - which device tree should be used for build; default is ``a10gx_adrv9371.dts``
+#. **<path_to_nios2_toolchain>** - this is mandatory, since already built Nios 2 toolchains are not very common ; point this to the **nios2eds** directory [e.g. **/home/<user>/intelFPGA/<version>/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-** ]
+#. **<local_kernel_dir>** - default is **linux-adi** if left blank ; use this, if you want to use an already cloned kernel repo
+#. **<altera_branch>** - default is **master** if left blank
+#. **<devicetree_file>** - which device tree should be used for build; default is ``a10gx_adrv9371.dts``
 
 The script will:
 
--  clone the ADI kernel tree
--  download the Linaro GCC toolchain [if no other is specified]
--  build the ADI kernel tree
--  export/copy the Image file and device tree file out of the kernel build folder
+::
+
+    - clone the ADI kernel tree
+    - download the Linaro GCC toolchain [if no other is specified]
+    - build the ADI kernel tree
+    - export/copy the Image file and device tree file out of the kernel build folder
 
 Running the script in one line
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
    wget https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/linux/build_nios2_kernel_image.sh && chmod +x build_nios2_kernel_image.sh && ./build_nios2_kernel_image.sh /home/<user>/intelFPGA/<version>/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-
 
 Build Linux - Step by Step Instructions
-=======================================
+---------------------------------------
 
 Get Linux Kernel Source
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: box bgblue
 
@@ -256,12 +257,12 @@ Get Linux Kernel Source
       Resolving deltas: 100% (3598928/3598928), done.
       Checking connectivity... done.
       Checking out files: 100% (49759/49759), done.
-      user@pc:~/nios2$
+      user@pc:~/nios2$ 
    
 
 
 Get Root Filesystem
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 .. container:: box bgblue
 
@@ -284,7 +285,7 @@ Get Root Filesystem
 
 
 Set Environmental Variables
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: box bgblue
 
@@ -298,7 +299,7 @@ Set Environmental Variables
 
 
 Configure Kernel for Nios2 Platforms
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: box bgblue
 
@@ -314,7 +315,7 @@ Configure Kernel for Nios2 Platforms
 
 
 Copy Corresponding Devicetree
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **your_setup.dts** is a generic file name - it should be replaced by the desired devicetree file name.
 
@@ -331,7 +332,7 @@ Valid options: **a5gt_fmcjesdadc1.dts** , **a10gx_daq2.dts** , **a10gx_daq3.dts*
 
 
 Build Kernel
-------------
+~~~~~~~~~~~~
 
 .. container:: box bgblue
 
@@ -346,9 +347,8 @@ Build Kernel
         LD      arch/nios2/boot/compressed/vmlinux
         OBJCOPY arch/nios2/boot/zImage
       Kernel: arch/nios2/boot/zImage is ready
-      user@pc:~/nios2/linux$
+      user@pc:~/nios2/linux$ 
    
-
 
 
 

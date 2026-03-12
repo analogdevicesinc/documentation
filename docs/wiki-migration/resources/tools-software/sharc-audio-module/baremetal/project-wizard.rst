@@ -10,7 +10,7 @@ To begin, open the wizard by selecting **File → New → SHARC Audio Module Bar
 
 .. important::
 
-   If the Bare Metal Framework Wizard does not currently show in CCES under **File → New → SHARC Audio Module Bare Metal Project** does not show, try clicking **File → New → Other** and it should show under the C/C++ tab. This is normally a result of installing a new version of CCES after the Bare Metal Framework has been installed.
+   If the Bare Metal Framework Wizard does not currently show in CCES under File → New → SHARC Audio Module Bare Metal Project does not show, try clicking File → New → Other and it should show under the C/C++ tab. This is normally a result of installing a new version of CCES after the Bare Metal Framework has been installed.
 
 
 General Project Information Page

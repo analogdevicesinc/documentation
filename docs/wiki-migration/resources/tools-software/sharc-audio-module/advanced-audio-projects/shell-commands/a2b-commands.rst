@@ -111,13 +111,13 @@ Expansion Port AD242x (tdm)
 
 .. note::
 
-   **Support status**:
+   Support status:
 
    
-   -  **ADZS-SC589-MINI** - TBD
-   -  **ADZS-SC584-EZLITE** - TBD
-   -  **EV-SC594-SOM** - TBD
-   -  **EV-SC598-SOM** - TBD
+   -  ADZS-SC589-MINI - TBD
+   -  ADZS-SC584-EZLITE - TBD
+   -  EV-SC594-SOM - TBD
+   -  EV-SC598-SOM - TBD
    
 
 

@@ -117,7 +117,7 @@ For the \`make run\` case. You can also run it using Vivado or SDK - up to you.
    xsdb  ../../../no-OS/scripts/xsdb.tcl ZYNQ_PS7
    attempting to launch hw_server
 
-   ***** Xilinx hw_server v2017.4.1
+   * Xilinx hw_server v2017.4.1
      *** Build date : Jan 30 2018-15:42:25
        ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 

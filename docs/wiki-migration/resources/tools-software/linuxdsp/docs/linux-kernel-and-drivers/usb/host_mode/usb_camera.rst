@@ -33,9 +33,9 @@ And In the pop-up window of linux-kenel configuration, configure as follows Conf
                    [*]   Enable USB persist by default
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Dual role mode)  --->
-                           ** Platform Glue Layer **
+                            Platform Glue Layer 
                    <*>     ADI
-                           ** MUSB DMA mode **
+                            MUSB DMA mode 
                    [N]     Disable DMA (always use PIO)
                    [*]       Inventra
 
@@ -45,11 +45,11 @@ Configure the USB camera corresponding options
 
    Device Drivers  --->
            <*> Multimedia support  --->
-                 ** Multimedia core support **
+                  Multimedia core support 
            [*]   Cameras/video grabbers support
            [*]   Media Controller API
            [*]   V4L2 sub-device userspace API
-                 ** Media drivers **
+                  Media drivers 
            [*]   Media USB Adapters  --->
                  <*>   USB Video Class (UVC)
                  [*]     UVC input events device support

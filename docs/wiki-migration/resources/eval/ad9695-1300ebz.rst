@@ -116,7 +116,7 @@ Connector Layout
 
 .. warning::
 
-   \ **Warning: The AD9695-1300EBZ is electrostatic discharge (ESD) sensitive. Handle the device with care, and employ conducting wrist straps or antistatic bags when handling the board.**\
+   \ Warning: The AD9695-1300EBZ is electrostatic discharge (ESD) sensitive. Handle the device with care, and employ conducting wrist straps or antistatic bags when handling the board.\
 
 
 Configuring the Board
@@ -235,7 +235,7 @@ ACE Setup
 
 .. warning::
 
-   \ **Warning: Programming the FPGA will power the AD9695 evaluation board via the FMC connector. Removing any of the board's power jumpers (as seen in Figure 5) while the board is on or in operation may cause damage to the board and/or chip. Removing the board while it is being powered via the FMC connector may also cause damage to the board.**\
+   \ Warning: Programming the FPGA will power the AD9695 evaluation board via the FMC connector. Removing any of the board's power jumpers (as seen in Figure 5) while the board is on or in operation may cause damage to the board and/or chip. Removing the board while it is being powered via the FMC connector may also cause damage to the board.\
 
 
 

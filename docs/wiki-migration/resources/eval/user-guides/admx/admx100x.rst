@@ -151,13 +151,13 @@ Follow the steps below to set up the full evaluation board.
 ::
 
      *After the power is applied, the “READY” LED turns on and then turns off. Then the “DONE” LED turns on and the “READY” LED turns on again.
-     **Caution**: If both LEDs do not turn on, power cycle the EVAL-ADMX100X-FMCZ evaluation board.
+     Caution: If both LEDs do not turn on, power cycle the EVAL-ADMX100X-FMCZ evaluation board.
    * Configure the LOOPBACK switch (S1).
      * If using the ADMX1002 or there is a need to view the source outputs via the OUTP and OUTN SMAs when using the ADMX1001, slide S1 on the EVAL-ADMX100X-FMCZ to the “LOOPBACK OFF” position.
      * If using the ADMX1001, the signal generator outputs can be looped back into the acquisition channel inputs by sliding S1 on the EVAL-ADMX100X-FMCZ to the “LOOPBACK ON” position The SMA outputs (OUTP and OUTN) and inputs (INP and INN) connectors are disengaged in this mode.
    * Start the ADMX100X GUI.
      * The GUI will display "Connected" in green text at the bottom left corner if the connection was successful.
-     **Caution**: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
+     Caution: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/complete_setup_using_sdp-h1.png
    :align: center
@@ -235,21 +235,21 @@ Follow the steps below to set up the full evaluation board.
 ::
 
      *Put jumper JP1 into the SPI position
-     **Caution**: Remove jumper JP2
+     Caution: Remove jumper JP2
    * Connect the SDP-I-PMD interposer board to the “SOURCE/DAC SPI” header (P2) on the EVAL-ADMX100X-FMCZ evaluation board through the 6-pin PMOD cable.
      *Connect the 6-pin male-to-male header to one end of the 6-pin PMOD cable.
-     **Caution**: Connect the male pins to the top row (pin 1-6) of the SDP-I-PMD PMOD connector (P4). Be careful to match pin number 1 of the PMOD cable with pin number 1 of the PMOD connector (P4) on the SDP-I-PMD board.
-     **Caution**: Connect the female side of the PMOD cable to the bottom row of the “SOURCE/DAC SPI” header (P2) on the EVAL-ADMX100X-FMCZ. Be careful to connect pin number 1 of the PMOD cable to pin number 1 of the “SOURCE/DAC SPI” header (P2).
+     Caution: Connect the male pins to the top row (pin 1-6) of the SDP-I-PMD PMOD connector (P4). Be careful to match pin number 1 of the PMOD cable with pin number 1 of the PMOD connector (P4) on the SDP-I-PMD board.
+     Caution: Connect the female side of the PMOD cable to the bottom row of the “SOURCE/DAC SPI” header (P2) on the EVAL-ADMX100X-FMCZ. Be careful to connect pin number 1 of the PMOD cable to pin number 1 of the “SOURCE/DAC SPI” header (P2).
    * Connect the SDP controller USB to the computer.
    * Apply the SDP-I-PMD board power. Wait 10 seconds after applying power before moving to the next step.
    * Apply the EVAL-ADMX100X-FMCZ power.
      *After the power is applied, the “READY” LED turns on and then turns off. Then the “DONE” LED turns on and the “READY” LED turns on again.
-     **Caution**: If both LEDs do not turn on, power cycle the EVAL-ADMX100X-FMCZ evaluation board.
+     Caution: If both LEDs do not turn on, power cycle the EVAL-ADMX100X-FMCZ evaluation board.
    * Configure the LOOPBACK switch (S1).
      * Slide S1 on the EVAL-ADMX100X-FMCZ to the “LOOPBACK OFF” position.
    * Start the ADMX100X GUI.
      * The GUI will display "Connected" in green text at the bottom left corner if the connection was successful.
-     **Caution**: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
+     Caution: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-pmod/sdp-i-pmod_jumper-spi.jpg
    :align: center

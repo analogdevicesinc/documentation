@@ -117,7 +117,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD7873 Driver depends on **CONFIG_SPI**
+   The AD7873 Driver depends on CONFIG_SPI
 
 
 ::
@@ -127,12 +127,12 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
      < >   Support for memoryless force-feedback devices
      < >   Polled input device skeleton
      < >   Sparse keymap support library
-           ** Userland interfaces **
+            Userland interfaces 
      < >   Mouse interface
      < >   Joystick interface
      <*>   Event interface
      < >   Event debugging
-           ** Input Device Drivers **
+            Input Device Drivers 
      [ ]   Keyboards  --->
      [ ]   Mice  --->
      [ ]   Joysticks/Gamepads  --->
@@ -158,8 +158,8 @@ Driver compiled as a module
 
 ::
 
-   root:~> **modprobe evdev**
-   root:~> **modprobe ads7846**
+   root:~> modprobe evdev
+   root:~> modprobe ads7846
    ads7846 spi0.18: touchscreen, irq 56
    input: ADS7873 Touchscreen as /devices/platform/bfin-spi.0/spi0.18/input/input0
 
@@ -180,7 +180,7 @@ After the kernel boot your device folder should include at least one device node
 
 ::
 
-   root:/> **ls -al /dev/input/**
+   root:/> ls -al /dev/input/
    drw-r--r--    2 root     root            0 Jan  1 00:03 .
    drwxr-xr-x    5 root     root            0 Jan  1 00:03 ..
    crw-rw-r--    1 root     root      13,  64 Jan  1 00:03 event0
@@ -190,12 +190,12 @@ Check that the interrupt is registered.
 
 ::
 
-   root:~> **cat /proc/interrupts | grep ads7846**
+   root:~> cat /proc/interrupts | grep ads7846
    56:         16      GPIO  ads7846
 
 ::
 
-   root:~> **cat /sys/class/input/input0/name**
+   root:~> cat /sys/class/input/input0/name
    ADS7873 Touchscreen
 
 Use the event_test utility to test proper function
@@ -247,7 +247,7 @@ Use the event_test utility to test proper function
 
 .. tip::
 
-   In case you touch the surface and don't receive events, it's likely that something with your /PENIRQ Interrupt is wrong. **check irq number in your platform device file**
+   In case you touch the surface and don't receive events, it's likely that something with your /PENIRQ Interrupt is wrong. check irq number in your platform device file
 
 
 More Information

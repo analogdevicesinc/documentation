@@ -153,7 +153,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The adf4159 driver depends on **SPI** and selects **REGMAP_SPI**
+   The adf4159 driver depends on SPI and selects REGMAP_SPI
 
 
 Adding Linux driver support
@@ -168,7 +168,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        <*>     Industrial I/O support --->
            --- Industrial I/O support
                     Frequency Synthesizers DDS/PLL --->
-                                ** Phase-Locked Loop (PLL) frequency synthesizers **
+                                 Phase-Locked Loop (PLL) frequency synthesizers 
                                 <*> Analog Devices ADF4159/ADF4169 Waveform Generating Synthesizers
 
 Hardware configuration
@@ -187,13 +187,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      analog:/sys/bus/iio/devices/iio:device0# **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices# **ls**
+      analog:/sys/bus/iio/devices/iio:device0# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0  iio:device1  iio:device2  iio:device3
       root@analog:/sys/bus/iio/devices#
    
-      root@analog:/sys/bus/iio/devices# **cd iio\:device0**
-      root@analog:/sys/bus/iio/devices/iio:device1# **ls -l**
+      root@analog:/sys/bus/iio/devices# cd iio\:device0
+      root@analog:/sys/bus/iio/devices/iio:device1# ls -l
       total 0
       drwxr-xr-x 3 root root    0 Jan  1 00:00 .
       drwxr-xr-x 5 root root    0 Jan  1 00:00 ..
@@ -224,8 +224,8 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat name**
-      **adf4159**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat name
+      adf4159
    
 
 
@@ -239,8 +239,8 @@ Read output frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency**
-      **6000000000**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency
+      6000000000
    
 
 
@@ -256,9 +256,9 @@ Frequencies are in Hz
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 6001000000 > out_altvoltage0_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency**
-      **6001000000**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 6001000000 > out_altvoltage0_frequency
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency
+      6001000000
    
 
 
@@ -272,10 +272,10 @@ Output power down
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_powerdown**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_powerdown
       0
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 1 > out_altvoltage0_powerdown**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_powerdown**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 1 > out_altvoltage0_powerdown
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_powerdown
       1
    
 
@@ -302,12 +302,12 @@ The ``ramp_mode`` attribute allows the user to control the output ramp mode of t
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage_ramp_mode_available**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage_ramp_mode_available
       disabled continuous_sawtooth continuous_triangular single_sawtooth_burst single_ramp_burst
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_ramp_mode**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_ramp_mode
       disabled
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo continuous_sawtooth > out_altvoltage0_ramp_mode**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_ramp_mode**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo continuous_sawtooth > out_altvoltage0_ramp_mode
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_ramp_mode
       continuous_sawtooth
    
 
@@ -324,10 +324,10 @@ This attribute sets the ``deviation_step`` in Hz. Values can be positive or nega
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency_deviation_step**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency_deviation_step
       0
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 1000 > out_altvoltage0_frequency_deviation_step**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency_deviation_step**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 1000 > out_altvoltage0_frequency_deviation_step
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency_deviation_step
       998
    
 
@@ -344,10 +344,10 @@ This attribute sets the ``deviation_range`` in Hz.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency_deviation_range**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency_deviation_range
       0
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 10000000 > out_altvoltage0_frequency_deviation_range **
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency_deviation_range**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 10000000 > out_altvoltage0_frequency_deviation_range 
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency_deviation_range
       9999960
    
 
@@ -364,10 +364,10 @@ This attribute sets the ``deviation_time`` in us.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency_deviation_time**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency_deviation_time
       0
-      root@analog:/sys/bus/iio/devices/iio:device1# **echo 10000 > out_altvoltage0_frequency_deviation_time**
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat out_altvoltage0_frequency_deviation_time**
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 10000 > out_altvoltage0_frequency_deviation_time
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency_deviation_time
       10020
    
 
@@ -384,7 +384,7 @@ This device features an additional debugfs ABI, allowing the user to control add
    
    ::
    
-      root@analog:~# **iio_attr -D adf4159**
+      root@analog:~# iio_attr -D adf4159
       dev 'adf4159', debug attr 'adi,txdata-trigger-delay-enable', value :'N'
       dev 'adf4159', debug attr 'adi,single-full-triangle-enable', value :'N'
       dev 'adf4159', debug attr 'adi,txdata-trigger-enable', value :'N'
@@ -446,9 +446,9 @@ This device features an additional debugfs ABI, allowing the user to control add
    
    ::
    
-      root@analog:~# **iio_attr -D adf4159 adi,ramp-delay-enable 1**
+      root@analog:~# iio_attr -D adf4159 adi,ramp-delay-enable 1
       Y
-      root@analog:~# **iio_attr -c adf4159 altvoltage0 powerdown 0**
+      root@analog:~# iio_attr -c adf4159 altvoltage0 powerdown 0
       0
    
 

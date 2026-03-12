@@ -74,17 +74,17 @@ NOTE: For suse and probably other linux versions -- be sure you are also member 
    
    ::
    
-      analog@imhotep:~$ **cat ~/.kermrc**
+      analog@imhotep:~$ cat ~/.kermrc
       set line /dev/ttyACM0
       set speed 115200
       set carrier-watch off
       set flow-control none
-      analog@imhotep:~$ **kermit -l /dev/ttyACM0 -b 115200**
+      analog@imhotep:~$ kermit -l /dev/ttyACM0 -b 115200
       C-Kermit 9.0.302 OPEN SOURCE:, 20 Aug 2011, for Linux+SSL+KRB5 (64-bit)
        Copyright (C) 1985, 2011,
         Trustees of Columbia University in the City of New York.
       Type ? or HELP for help.
-      (/home/analog/github/iio-oscilloscope/) C-Kermit>**c**
+      (/home/analog/github/iio-oscilloscope/) C-Kermit>c
       Connecting to /dev/ttyACM0, speed 115200
        Escape character: Ctrl-\ (ASCII 28, FS): enabled
       Type the escape character followed by C to get back,
@@ -93,14 +93,14 @@ NOTE: For suse and probably other linux versions -- be sure you are also member 
       Login timed out after 60 seconds
    
       Welcome to Pluto
-      pluto login: **root**
-      Password: **analog**
+      pluto login: root
+      Password: analog
       # uname -a
       Linux pluto 4.6.0-g88f1b2c #7 SMP PREEMPT Wed Nov 2 18:21:13 CET 2016 armv7l GNU/Linux
       # exit
    
       Welcome to Pluto
-      pluto login: **Ctrl-**
+      pluto login: Ctrl-
       (Back at imhotep.analog.com)
       (/home/analog/github/iio-oscilloscope/) C-Kermit>exit
       Closing /dev/ttyACM0...OK
@@ -115,13 +115,13 @@ Mass Storage
    
    ::
    
-      analog@imhotep:~$ **mount | grep -i pluto**
+      analog@imhotep:~$ mount | grep -i pluto
       /dev/sdb1 on /media/analog/PlutoSDR type vfat (rw,nosuid,nodev,relatime,uid=1000,gid=1000,fmask=0022,dmask=0022,codepage=437,iocharset=utf8,shortname=mixed,showexec,utf8,flush,errors=remount-ro,uhelper=udisks2)
-      analog@imhotep:~$ **ls -l /media/analog/PlutoSDR/**
+      analog@imhotep:~$ ls -l /media/analog/PlutoSDR/
       total 8
       -rw-r--r-- 1 analog analog  206 Dec 31  1979 config.txt
       -rw-r--r-- 1 analog analog 4721 Dec 31  1979 info.html
-      analog@imhotep:~$ **firefox /media/analog/PlutoSDR/info.html**
+      analog@imhotep:~$ firefox /media/analog/PlutoSDR/info.html
    
 
 
@@ -135,7 +135,7 @@ Ethernet
    
    For example - the root password of Pluto is ``analog``. We post it on the Internet. Think about that for a moment. This could allow anyone with an IP connection to take over the device and use it for malicious purposes.
    
-   **Never** set up a bridge between the Internet and a network connected Pluto with the default images.
+   Never set up a bridge between the Internet and a network connected Pluto with the default images.
 
 
 Unfortunately - nothing on your host understands the what the IP address of the usb device is. You, the human behind the keyboard need to understand this before any sort of networking will work. There are two main ways to do this:
@@ -146,7 +146,7 @@ Unfortunately - nothing on your host understands the what the IP address of the 
    
    ::
    
-      analog@imhotep:~$ **/sbin/ifconfig**
+      analog@imhotep:~$ /sbin/ifconfig
       enx00e022d6d804: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
               inet 192.168.2.10  netmask 255.255.255.0  broadcast 192.168.2.255
               inet6 fe80::2e0:22ff:fed6:d804  prefixlen 64  scopeid 0x20<link>
@@ -155,7 +155,7 @@ Unfortunately - nothing on your host understands the what the IP address of the 
               RX errors 0  dropped 0  overruns 0  frame 0
               TX packets 47  bytes 10604 (10.3 KiB)
               TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-      analog@imhotep:~$ **ip addr show**
+      analog@imhotep:~$ ip addr show
       7: c: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000
           link/ether 00:e0:22:d6:d8:04 brd ff:ff:ff:ff:ff:ff
           inet 192.168.2.10/24 brd 192.168.2.255 scope global dynamic enx00e022d6d804
@@ -177,7 +177,7 @@ Adding a quick/short :git-plutosdr_scripts:`ssh config file <ssh_config>`, which
    
    ::
    
-      analog@imhotep:~$ **wget https:%%//%%raw.githubusercontent.com/analogdevicesinc/plutosdr_scripts/master/ssh_config -O ~/.ssh/config**
+      analog@imhotep:~$ wget https:%%//%%raw.githubusercontent.com/analogdevicesinc/plutosdr_scripts/master/ssh_config -O ~/.ssh/config
       --2017-01-26 19:47:51--  https:%%//%%raw.githubusercontent.com/analogdevicesinc/plutosdr_scripts/master/ssh_config
       Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.116.133
       Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.116.133|:443... connected.
@@ -198,12 +198,12 @@ Since the ssh key on the pluto changes every boot, we want to be able to never s
    
    ::
    
-      adi-mm:tests analogdevices$ **ssh plutosdr**
+      adi-mm:tests analogdevices$ ssh plutosdr
       Warning: Permanently added 'pluto' (ECDSA) to the list of known hosts.
-      root@pluto's password: **analog**
-      # **uname -a**
+      root@pluto's password: analog
+      # uname -a
       Linux pluto 4.6.0-08511-gc1315e6-dirty #247 SMP PREEMPT Mon Oct 24 16:46:25 CEST 2016 armv7l GNU/Linux
-      # **exit**
+      # exit
       Connection to 192.168.2.1 closed.
       adi-mm:tests analogdevices$
    
@@ -216,7 +216,7 @@ if you have ``sshpass`` installed, you can use that so you dont need to type in 
    
    ::
    
-      analog@imhotep:~/pluto$ **sshpass -panalog ssh plutosdr**
+      analog@imhotep:~/pluto$ sshpass -panalog ssh plutosdr
       Warning: Permanently added 'pluto' (ECDSA) to the list of known hosts.
       Welcome to:%%
       ______ _       _        _________________
@@ -242,7 +242,7 @@ for SUSE: https://software.opensuse.org/package/libiio -- pick the repo and inst
    
    ::
    
-      analog@imhotep:~$ **sudo apt-get install libiio-utils**
+      analog@imhotep:~$ sudo apt-get install libiio-utils
       Reading package lists... Done
       Building dependency tree
       Reading state information... Done
@@ -268,7 +268,7 @@ Try to make sure you can talk to the device, and find the IIO devices:
    
    ::
    
-      analog@imhotep:~$ **iio_info -n 192.168.2.1 | grep device**
+      analog@imhotep:~$ iio_info -n 192.168.2.1 | grep device
       IIO context has 5 devices:
           iio:device0: adm1177
           iio:device1: ad9361-phy
@@ -285,7 +285,7 @@ Read from an IIO device buffer:
    
    ::
    
-      analog@imhotep:~$ **iio_readdev -n 192.168.2.1 -s 64 cf-ad9361-lpc | hexdump -x**
+      analog@imhotep:~$ iio_readdev -n 192.168.2.1 -s 64 cf-ad9361-lpc | hexdump -x
       0000000    ff8d    003b    002a    0013    006c    0045    ffdb    0001
       0000010    ffc1    ffd5    ffc0    0030    ffbf    0068    0042    008f
       0000020    0027    007e    fff5    ffe2    ffea    ffbb    ffd1    0039

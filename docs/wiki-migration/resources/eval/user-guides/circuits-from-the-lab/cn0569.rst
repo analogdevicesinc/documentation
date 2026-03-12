@@ -14,7 +14,7 @@ Designed to use the I²C Pmod hardware interface, the :adi:`EVAL-CN0569-PMDZ` fe
 
 .. note::
 
-   **Evaluation Kit:**
+   Evaluation Kit:
 
    
    -  EVAL-CN0569-PMDZ Circuit Evaluation Board (:adi:`Buy <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0569-PMDZ>`)
@@ -60,7 +60,7 @@ The controller board must be connected to the :adi:`EVAL-CN0569-PMDZ` through th
 
 .. note::
 
-   **Connecting Hardware Designed for Digilent I²C Pmod Interface Specification Ver. 1.0.0:**
+   Connecting Hardware Designed for Digilent I²C Pmod Interface Specification Ver. 1.0.0:
 
    
    Version 1.0.0 of the Digilent Pmod Interface Specification required 2×4 headers to be used for I²C devices, instead of the 1x6 headers specified by later versions.

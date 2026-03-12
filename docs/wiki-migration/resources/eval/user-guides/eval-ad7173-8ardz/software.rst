@@ -15,7 +15,7 @@ The EVAL-AD7173-8ARDZ evaluation kit includes a link to the software that needs 
 
 .. important::
 
-   \ **Warning**: The evaluation software and drivers must be installed before connecting both the evaluation board and the SDP-K1 board to the PC. This ensures that the evaluations system is correctly recognized when it is connected to the PC.
+   \ Warning: The evaluation software and drivers must be installed before connecting both the evaluation board and the SDP-K1 board to the PC. This ensures that the evaluations system is correctly recognized when it is connected to the PC.
 
 
 Installing the ACE Software

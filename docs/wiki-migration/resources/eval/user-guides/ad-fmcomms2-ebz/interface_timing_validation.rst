@@ -11,7 +11,7 @@ The receive chain is validated first. The AD9361 is programmed to generate a `PR
 
 .. tip::
 
-   \ **NOTE:** **bist_timing_analysis** shown below only does a 2D pretty print of all Clock and Data delays combinations on RX at a given baseband rate.
+   \ NOTE: bist_timing_analysis shown below only does a 2D pretty print of all Clock and Data delays combinations on RX at a given baseband rate.
 
    
    -  "``o``" = PASS
@@ -154,45 +154,45 @@ With these flags set you should observe following kernel/debugging messages
 
    [ --snip-- ]
 
-   SAMPL CLK: 25000000 tuning: **RX**
+   SAMPL CLK: 25000000 tuning: RX
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
    0:o o o o o o o o o # # # # o o o
    1:o o o o o o o o o o o # # # # o
 
-   SAMPL CLK: 40000000 tuning: **RX**
+   SAMPL CLK: 40000000 tuning: RX
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
    0:o o o o o o o o o # # # # o o o
    1:o o # # # # o o o o o # # # # o
 
-   SAMPL CLK: 61440000 tuning: **RX**
+   SAMPL CLK: 61440000 tuning: RX
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
    0:# # # # o o o o o # # # # o o o
    1:# o # # # # # # # # o # # # # #
 
-   SAMPL CLK: 61440000 tuning: **RX**          <- Composite overlay of the above RX
+   SAMPL CLK: 61440000 tuning: RX          <- Composite overlay of the above RX
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
-   0:# # # # o o **o** o o # # # # o o o       <- Algorithm selects RX Data Delay = 6
+   0:# # # # o o o o o # # # # o o o       <- Algorithm selects RX Data Delay = 6
    1:# o # # # # # # # # o # # # # #
 
-   SAMPL CLK: 25000000 tuning: **TX**
+   SAMPL CLK: 25000000 tuning: TX
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
    0:# # # # # # # # # # # # # # # #
    1:# o o o o o o o o o o o o o # #
 
-   SAMPL CLK: 40000000 tuning: **TX**
+   SAMPL CLK: 40000000 tuning: TX
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
    0:# # # # # # # # # # # # # # # #
    1:# o o o o o o o o o o o # # # #
 
-   SAMPL CLK: 61440000 tuning: **TX**
+   SAMPL CLK: 61440000 tuning: TX
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
    0:# # # # # # # # # # # # # # # #
    1:# o o o o o o # # # # # # # # #
 
-   SAMPL CLK: 61440000 tuning: **TX**          <- Composite Overlay of the above TX
+   SAMPL CLK: 61440000 tuning: TX          <- Composite Overlay of the above TX
      0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
    0:# # # # # # # # # # # # # # # #
-   1:# o o o **o** o o # # # # # # # # #       <- Algorithm selects TX Clock Delay = 4
+   1:# o o o o o o # # # # # # # # #       <- Algorithm selects TX Clock Delay = 4
 
    cf_axi_adc 79020000.cf-ad9361-lpc: ADI AIM (9.00.b) at 0x79020000 mapped to 0xf0358000, probed ADC AD9361 as MASTER
 
@@ -229,7 +229,7 @@ The second argument is a bit mask flag which sets the verbosity level and possib
       *Current baseband rate only and be verbose*
    
       root@analog:/sys/kernel/debug/iio/iio:device1# dmesg -n7
-      root@analog:/sys/kernel/debug/iio/iio:device1# echo **0** **3** > **digital_tune**
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 0 3 > digital_tune
       SAMPL CLK: 30720000 tuning: RX
         0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:
       0:o o o o o o o o o o # # # # o o

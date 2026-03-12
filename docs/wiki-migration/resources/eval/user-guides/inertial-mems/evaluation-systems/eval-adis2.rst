@@ -3,7 +3,7 @@ EVAL-ADIS2 Landing Page
 
 .. warning::
 
-   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**.
+   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2top-web.png

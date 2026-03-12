@@ -118,7 +118,7 @@ Hardware
 
    The SDP-S is the only SDP controller which will work with Stingray.
 
-   | All other SDP controllers (SDP-B, SDP-H1, SDP-K1) are **NOT** compatible with the Stingray platform.
+   | All other SDP controllers (SDP-B, SDP-H1, SDP-K1) are NOT compatible with the Stingray platform.
 
 
 Suggested Test Equipment
@@ -312,12 +312,12 @@ Powerup Procedure
 
 .. note::
 
-   The :adi:`adm1186` power sequencer's **enable** and **power_good** signals can be read using the on-board :adi:`ltc2992`. The **enable** signal is connected to GPIO1 and the **power_good** signal is connected to GPIO3.
+   The :adi:`adm1186` power sequencer's enable and power_good signals can be read using the on-board :adi:`ltc2992`. The enable signal is connected to GPIO1 and the power_good signal is connected to GPIO3.
 
    
    **BE SURE TO CONFIGURE THE LTC2992 SUCH THAT ALL
    
-   GPIO PINS ARE HI-Z! SEE `CONFIGURING THE LTC2992 <https://wiki.analog.com/>`_\ \*\**4.** Initialize the ADAR1000s to put the ADAR1000-EVAL1Z into a known safe state with the ADTR1107 PAs pinched off. See the :doc:`Recommended ADAR1000 Initialization Sequences </wiki-migration/resources/eval/user-guides/stingray/userguide>` section for a recommended set of SPI writes.
+   GPIO PINS ARE HI-Z! SEE `CONFIGURING THE LTC2992 <https://wiki.analog.com/>`_\ \*\4. Initialize the ADAR1000s to put the ADAR1000-EVAL1Z into a known safe state with the ADTR1107 PAs pinched off. See the :doc:`Recommended ADAR1000 Initialization Sequences </wiki-migration/resources/eval/user-guides/stingray/userguide>` section for a recommended set of SPI writes.
 
 **5.** Now that the ADTR1107 PAs are pinched off, +5V can safely be applied. This is accomplished by pulsing the **+5V_CTRL** signal. Once the +5V rail is up, a green LED (D4) is lit showing that the board is fully powered up.
 
@@ -325,7 +325,7 @@ Powerup Procedure
 
 .. note::
 
-   The *internal **+5V_CTRL** (after U3) and the :adi:`LT8652's <lt8652>` **power_good** signals can be read using the on-board :adi:`ltc2992`. The **+5V_CTRL** signal is connected to GPIO2 and the **power_good** signal is connected to GPIO4.
+   The *internal +5V_CTRL (after U3) and the :adi:`LT8652's <lt8652>` power_good signals can be read using the on-board :adi:`ltc2992`. The +5V_CTRL signal is connected to GPIO2 and the power_good signal is connected to GPIO4.
 
    
    **BE SURE TO CONFIGURE THE LTC2992 SUCH THAT ALL
@@ -341,7 +341,7 @@ Powerdown Procedure
 
 .. note::
 
-   It is possible to only pulse **PWR_UP_DOWN** to turn off the board as disabling the power sequencer will also bring down the +5V rail. This is not recommended as it's safer to intentionally bring down +5V first, and will guarantee that any software controlling the board will not lose the current state.
+   It is possible to only pulse PWR_UP_DOWN to turn off the board as disabling the power sequencer will also bring down the +5V rail. This is not recommended as it's safer to intentionally bring down +5V first, and will guarantee that any software controlling the board will not lose the current state.
 
 
 Software Control

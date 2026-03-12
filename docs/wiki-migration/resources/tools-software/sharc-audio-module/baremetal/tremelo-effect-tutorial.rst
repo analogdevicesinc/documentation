@@ -148,9 +148,9 @@ To do this, we'll add some code to our background loop. This loop is called repe
 
    void processaudio_background_loop( ) {
 
-       // ******************************************************************************
+       // ******************
        // Add any custom background processing here
-       // ******************************************************************************
+       // ******************
 
        static uint64_t last_press_cyclecounter = 0;
 

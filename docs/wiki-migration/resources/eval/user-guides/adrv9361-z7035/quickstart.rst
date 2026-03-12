@@ -137,7 +137,7 @@ Messages
          7754888 bytes read in 448 ms (16.5 MiB/s)
          reading devicetree.dtb
          28708 bytes read in 26 ms (1.1 MiB/s)
-         ** Unable to read file uramdisk.image.gz **
+          Unable to read file uramdisk.image.gz 
          ## Booting kernel from Legacy Image at 03000000 ...
             Image Name:   Linux-5.15.0-175730-gcdaccc1f233
             Image Type:   ARM Linux Kernel Image (uncompressed)
@@ -716,7 +716,7 @@ Getting of IP address:
    
       root@analog:~# ifconfig
       eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-              inet **192.168.10.110**  netmask 255.255.255.0  broadcast 192.168.10.255
+              inet 192.168.10.110  netmask 255.255.255.0  broadcast 192.168.10.255
               inet6 fe80::20a:35ff:fe02:ca02  prefixlen 64  scopeid 0x20<link>
               ether 00:0a:35:02:ca:02  txqueuelen 1000  (Ethernet)
               RX packets 20758  bytes 1355088 (1.2 MiB)

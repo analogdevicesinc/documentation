@@ -3,7 +3,7 @@ Driver Installation for On-board Debugger (CMSIS DAP)
 
 .. note::
 
-   \ **The following steps are valid for both EV-COG-AD3029WZ and EV-COG-AD3029LZ**\
+   \ The following steps are valid for both EV-COG-AD3029WZ and EV-COG-AD3029LZ\
 
 
 MCU Cog has an on-board debugger which supports the `ARM CMSIS DAP <https://developer.mbed.org/handbook/CMSIS-DAP>`_ interface. When connecting up the EV-COG-AD3029LZ to your computer or laptop, all the necessary drivers are automatically located and loaded up when using Windows operating systems.

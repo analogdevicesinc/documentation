@@ -167,7 +167,7 @@ Software
 
 .. tip::
 
-   The board which connects the external HMC7044 clockchip is refered as **primary** and requires the devicetree (system.dtb) from the primary folder in the archive. Likewise the board without the external clockchip connected is called **secondary**, and requires the devicetree from the secondary folder.
+   The board which connects the external HMC7044 clockchip is refered as primary and requires the devicetree (system.dtb) from the primary folder in the archive. Likewise the board without the external clockchip connected is called secondary, and requires the devicetree from the secondary folder.
 
 
 Theory of Operation
@@ -191,7 +191,7 @@ Please visit the :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-mig
 
 .. important::
 
-   **It's important to know, while the devices are not yet fully initialized, they must not be accessed via their regular API, since they are not yet fully initialized.**
+   It's important to know, while the devices are not yet fully initialized, they must not be accessed via their regular API, since they are not yet fully initialized.
 
    
    You need to make sure:
@@ -431,7 +431,7 @@ On the primary setup check the status of the external clockchip. This chip repor
    
    ::
    
-      root@analog:~# **iio_attr -D hmc7044-ext status**
+      root@analog:~# iio_attr -D hmc7044-ext status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 30720000 Hz
@@ -455,7 +455,7 @@ On the primary and secondary setup check the status of all clockchips in the top
    
    ::
    
-      root@analog:~# **iio_attr -D hmc7044-car status**
+      root@analog:~# iio_attr -D hmc7044-car status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 30720000 Hz
@@ -467,7 +467,7 @@ On the primary and secondary setup check the status of all clockchips in the top
       SYNC Status:    Synchronized
       Lock Status:    PLL1 & PLL2 Locked
    
-      root@analog:~# **iio_attr -D hmc7044 status**
+      root@analog:~# iio_attr -D hmc7044 status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 30720000 Hz
@@ -479,7 +479,7 @@ On the primary and secondary setup check the status of all clockchips in the top
       SYNC Status:    Synchronized
       Lock Status:    PLL1 & PLL2 Locked
    
-      root@analog:~# **iio_attr -D hmc7044-fmc status**
+      root@analog:~# iio_attr -D hmc7044-fmc status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 30720000 Hz

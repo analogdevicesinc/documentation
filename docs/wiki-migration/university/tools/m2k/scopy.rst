@@ -82,7 +82,7 @@ After this, get the **Scopy.flatpak** file from the downloaded archive and run:
 
 ::
 
-       **flatpak install scopy-v1.1.1-Linux-flatpak.flatpak**
+       flatpak install scopy-v1.1.1-Linux-flatpak.flatpak
 
 Video
 ~~~~~
@@ -120,7 +120,7 @@ On Linux, you can also run it using:
 
 ::
 
-       **flatpak run org.adi.Scopy**
+       flatpak run org.adi.Scopy
 
 Using the Application
 =====================

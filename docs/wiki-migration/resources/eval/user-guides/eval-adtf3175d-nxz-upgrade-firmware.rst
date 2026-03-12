@@ -3,7 +3,7 @@ EVAL-ADTF3175D-NXZ NVM upgrade guide
 
 .. important::
 
-   From Version 5.0.0 the IP address has change to **10.43.0.1**. Pre-5.0.0 releases the IP address is 10.42.0.1.
+   From Version 5.0.0 the IP address has change to 10.43.0.1. Pre-5.0.0 releases the IP address is 10.42.0.1.
 
 
 The ADSD3500 self boots from the NVM on the ADTF3175 module, and the host (IMX8M Plus) has no access. Therefore the host must communicate through the ADSD3500 to modify the contents of the NVM, which is typically required for upgrades. The :doc:`DataCollect CLI </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>` allows the user to achieve this.

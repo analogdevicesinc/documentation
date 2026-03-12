@@ -104,7 +104,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD7293 Driver depends on **CONFIG_SPI**
+   The AD7293 Driver depends on CONFIG_SPI
 
 
 ::
@@ -129,12 +129,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
-      root:/sys/bus/iio/devices> **iio:device0**
+      root:/sys/bus/iio/devices> iio:device0
    
-      root:/> **ls -l**
+      root:/> ls -l
       -r--r--r-- 1 root root 4096 Dec 14 11:48 dev
       -rw-r--r-- 1 root root 4096 Dec 14 11:48 in_current0_offset
       -rw-r--r-- 1 root root 4096 Dec 14 11:48 in_current0_raw
@@ -204,8 +204,8 @@ Show device name
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/iio\:device0/**
-      root:/> **cat name**
+      root:/> cd /sys/bus/iio/devices/iio\:device0/
+      root:/> cat name
       ad7293
    
 
@@ -224,11 +224,11 @@ Set offset value for the corresponding current sensor channel.
    
    ::
    
-      root:/> **cat in_current0_offset**
+      root:/> cat in_current0_offset
       0
    
-      root:/> **echo 20 > in_current0_offset**
-      root:/> **cat in_current0_offset**
+      root:/> echo 20 > in_current0_offset
+      root:/> cat in_current0_offset
       20
    
 
@@ -247,11 +247,11 @@ Set gain value for the corresponding current sensor channel.
    
    ::
    
-      root:/> **cat in_current0_scale**
+      root:/> cat in_current0_scale
       0
    
-      root:/> **echo 2 > in_current0_scale**
-      root:/> **cat in_current0_scale**
+      root:/> echo 2 > in_current0_scale
+      root:/> cat in_current0_scale
       2
    
 
@@ -270,7 +270,7 @@ Read available values for the current sensor channel gain.
    
    ::
    
-      root:/> **cat in_current_scale_available**
+      root:/> cat in_current_scale_available
       0 1 2 3 4 5 6 7 8 9 10
    
 
@@ -289,7 +289,7 @@ Read raw value for the current sensor channel.
    
    ::
    
-      root:/> **cat in_current0_raw**
+      root:/> cat in_current0_raw
       2177
    
 
@@ -308,11 +308,11 @@ Set offset value for the corresponding temperature sensor channel.
    
    ::
    
-      root:/> **cat in_temp0_offset**
+      root:/> cat in_temp0_offset
       0
    
-      root:/> **echo 20 > in_temp0_offset**
-      root:/> **cat in_temp0_offset**
+      root:/> echo 20 > in_temp0_offset
+      root:/> cat in_temp0_offset
       20
    
 
@@ -331,7 +331,7 @@ Read raw value for the temperature sensor channel.
    
    ::
    
-      root:/> **cat in_temp0_raw**
+      root:/> cat in_temp0_raw
       3977
    
 
@@ -350,11 +350,11 @@ Set offset value for the corresponding ADC channel.
    
    ::
    
-      root:/> **cat in_voltage0_offset**
+      root:/> cat in_voltage0_offset
       0
    
-      root:/> **echo 20 > in_voltage0_offset**
-      root:/> **cat in_voltage0_offset**
+      root:/> echo 20 > in_voltage0_offset
+      root:/> cat in_voltage0_offset
       20
    
 
@@ -373,11 +373,11 @@ Set VIN range value for the corresponding ADC channel.
    
    ::
    
-      root:/> **cat in_voltage0_scale**
+      root:/> cat in_voltage0_scale
       0
    
-      root:/> **echo 2 > in_voltage0_scale**
-      root:/> **cat in_voltage0_scale**
+      root:/> echo 2 > in_voltage0_scale
+      root:/> cat in_voltage0_scale
       2
    
 
@@ -396,7 +396,7 @@ Read available values for the ADC VIN range.
    
    ::
    
-      root:/> **cat in_voltage_scale_available**
+      root:/> cat in_voltage_scale_available
       0 1 2 3
    
 
@@ -415,7 +415,7 @@ Read raw value for the ADC channel.
    
    ::
    
-      root:/> **cat in_voltage0_raw**
+      root:/> cat in_voltage0_raw
       4095
    
 
@@ -434,11 +434,11 @@ Set offset value for the corresponding ADC channel.
    
    ::
    
-      root:/> **cat out_voltage0_offset**
+      root:/> cat out_voltage0_offset
       0
    
-      root:/> **echo 2 > out_voltage0_offset**
-      root:/> **cat out_voltage0_offset**
+      root:/> echo 2 > out_voltage0_offset
+      root:/> cat out_voltage0_offset
       2
    
 
@@ -457,7 +457,7 @@ Read available values for the DAC offset.
    
    ::
    
-      root:/> **cat out_voltage_offset_available**
+      root:/> cat out_voltage_offset_available
       0 1 2
    
 
@@ -476,11 +476,11 @@ Read raw value for the DAC channel.
    
    ::
    
-      root:/> **cat out_voltage0_raw**
+      root:/> cat out_voltage0_raw
       0
    
-      root:/> **echo 2000 > out_voltage0_raw**
-      root:/> **cat out_voltage0_raw**
+      root:/> echo 2000 > out_voltage0_raw
+      root:/> cat out_voltage0_raw
       2000
    
 
@@ -497,7 +497,7 @@ Some IIO drivers feature an optional debug facility, allowing users to read or w
    
    ::
    
-      root:/> **/sys/kernel/debug/iio/iio:device0/**
+      root:/> /sys/kernel/debug/iio/iio:device0/
       root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access
       direct_reg_access
    

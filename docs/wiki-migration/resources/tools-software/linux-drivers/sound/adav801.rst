@@ -170,7 +170,7 @@ For ADAV801, enable SPI:
 
    Device Drivers  --->
    [*] SPI support  --->
-   **   SPI Master Controller Drivers **
+      SPI Master Controller Drivers 
    <*>   SPI controller driver for ADI Blackfin5xx
 
 For ADAV803, enable I2C:
@@ -180,7 +180,7 @@ For ADAV803, enable I2C:
    Device Drivers  --->
    [*] I2C support  --->
    [*]   I2C Hardware Bus support  --->
-   **     I2C system bus drivers (mostly embedded / system-on-chip) **
+        I2C system bus drivers (mostly embedded / system-on-chip) 
    <*>       Blackfin TWI I2C support
    (100)     Blackfin TWI I2C clock (kHz)
 

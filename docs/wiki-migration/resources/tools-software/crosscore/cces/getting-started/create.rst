@@ -66,7 +66,7 @@ In the **Import Projects** window, click **Browse…** next to the **Select root
 
 .. important::
 
-   Make sure the **Copy projects into workspace** option is selected if you want to preserve the original project and make a local copy to make edits to. **NOTE:** Files outside of the project folder will not be copied.
+   Make sure the Copy projects into workspace option is selected if you want to preserve the original project and make a local copy to make edits to. NOTE: Files outside of the project folder will not be copied.
 
 
 --------------

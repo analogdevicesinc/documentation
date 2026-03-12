@@ -47,6 +47,6 @@ Safety Notice
 
 .. danger::
 
-   **SAFETY NOTICE** - This is a high Voltage Board 1200V. Only qualified person to test this device in a suitable Lab environment.
+   SAFETY NOTICE - This is a high Voltage Board 1200V. Only qualified person to test this device in a suitable Lab environment.
 
 

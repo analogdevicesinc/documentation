@@ -11,7 +11,7 @@ The :adi:`High Speed ADC FMC Interposer <en/evaluation/eval-adc-fmc-int/eb.html>
 
 .. note::
 
-   **The information on this page is preliminary and is subject to change.**
+   The information on this page is preliminary and is subject to change.
 
 
 Quick Check

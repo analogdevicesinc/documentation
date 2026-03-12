@@ -98,7 +98,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADF4377 driver depends on **SPI** and selects **REGMAP_SPI**
+   The ADF4377 driver depends on SPI and selects REGMAP_SPI
 
 
 Adding Linux driver support
@@ -113,7 +113,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        <*>     Industrial I/O support --->
            --- Industrial I/O support
                     Frequency Synthesizers DDS/PLL --->
-                                ** Phase-Locked Loop (PLL) frequency synthesizers **
+                                 Phase-Locked Loop (PLL) frequency synthesizers 
                                 <*> Analog Devices ADF4377 Microwave Wideband Synthesizer
 
 Hardware configuration
@@ -132,13 +132,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      analog:/sys/bus/iio/devices/iio:device0# **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices# **ls**
+      analog:/sys/bus/iio/devices/iio:device0# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0
       root@analog:/sys/bus/iio/devices#
    
-      root@analog:/sys/bus/iio/devices# **cd iio\:device0**
-      root@analog:/sys/bus/iio/devices/iio:device0# **ls -l**
+      root@analog:/sys/bus/iio/devices# cd iio\:device0
+      root@analog:/sys/bus/iio/devices/iio:device0# ls -l
       total 0
       -r--r--r-- 1 root root 4096 sep  4 14:05 dev
       -rw-r--r-- 1 root root 4096 sep  4 14:05 frequency
@@ -164,8 +164,8 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
-      **adf4377**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat name
+      adf4377
    
 
 
@@ -179,8 +179,8 @@ Read frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat frequency**
-      **1000000000**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat frequency
+      1000000000
    
 
 
@@ -194,9 +194,9 @@ Set frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 1000000000 > frequency**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat frequency**
-      **1000000000**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 1000000000 > frequency
+      root@analog:/sys/bus/iio/devices/iio:device0# cat frequency
+      1000000000
    
 
 
@@ -212,12 +212,12 @@ The mux output allows the user to access various internal points on the chip. Va
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat muxout_select_available**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat muxout_select_available
       high_z lock_detect muxout_low f_div_rclk_2 f_div_nclk_2 muxout_high
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat muxout_select**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat muxout_select
       digital_lock
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo lock_detect > muxout_select**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat muxout_select**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo lock_detect > muxout_select
+      root@analog:/sys/bus/iio/devices/iio:device0# cat muxout_select
       lock_detect
    
 

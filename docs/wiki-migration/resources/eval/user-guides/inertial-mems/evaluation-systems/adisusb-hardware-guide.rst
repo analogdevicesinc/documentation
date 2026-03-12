@@ -3,7 +3,7 @@ ADISUSB Hardware User Guide
 
 .. warning::
 
-   The :adi:`ADISUSB` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**. The :adi:`ADISUSB` has been obsoleted and is no longer available for purchase.
+   The :adi:`ADISUSB` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported. The :adi:`ADISUSB` has been obsoleted and is no longer available for purchase.
 
 
 Overview and User Guide
@@ -43,7 +43,7 @@ The table below shows a list of current, active products supported by the :adi:`
 
 .. warning::
 
-   This is **legacy** software! Windows 10 **is not supported!**\
+   This is legacy software! Windows 10 is not supported!\
 
 
 Downloading and Installing the Software
@@ -141,7 +141,7 @@ The color-coded boxes illustrate the different functions that this window provid
 
 .. tip::
 
-   The **Register Access** screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the **Write Register** button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
+   The Register Access screen writes to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the Write Register button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS1613x <ADIS16136>`, each command (16-bits) writes to one byte at a time.
 
 
 Data Capture Menu

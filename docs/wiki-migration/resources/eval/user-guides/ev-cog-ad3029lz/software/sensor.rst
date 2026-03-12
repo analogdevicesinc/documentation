@@ -27,7 +27,7 @@ For detailed information regarding the Sensor software pack, please see our comp
 .. important::
 
    
-   You **MUST** have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the EC-COG-AD3029LZ platform.
+   You MUST have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the EC-COG-AD3029LZ platform.
    
 
 

@@ -89,7 +89,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADP5588 Driver depends on **CONFIG_I2C** IRQ-Chip interrupt controller support is not available in case this driver is build as Module
+   The ADP5588 Driver depends on CONFIG_I2C IRQ-Chip interrupt controller support is not available in case this driver is build as Module
 
 
 Device Drivers  --->

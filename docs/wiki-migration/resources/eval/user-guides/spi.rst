@@ -3,7 +3,7 @@ Using the Serial Peripheral Interface on the AD5758
 
 .. note::
 
-   The **AD5758/ADFS5758/AD5753/AD5423/AD5413** contain the same serial peripheral interface and follow the below guide.
+   The AD5758/ADFS5758/AD5753/AD5423/AD5413 contain the same serial peripheral interface and follow the below guide.
 
 
 The AD5758 is controlled over a 4-wire serial interface with an 8-bit cyclic redundancy check (CRC-8) enabled by default. The input shift register is 32 bits wide, and data is loaded into the device MSB first under the control of a serial clock input, SCLK. Data is clocked in on the falling edge of SCLK. If CRC is disabled, the serial interface is reduced to 24 bits; a 32-bit frame is still accepted but the last 8 bits are ignored. The purpose of this guide is to explain how the AD5758 SPI works and show examples of the first required SPI writes including CRC as recommended in Figure 90 of the AD5758 datasheet.

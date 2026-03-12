@@ -178,7 +178,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADMV1013 Driver depends on **CONFIG_SPI**
+   The ADMV1013 Driver depends on CONFIG_SPI
 
 
 ::
@@ -203,12 +203,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
-      root:/sys/bus/iio/devices> **iio:device0**
+      root:/sys/bus/iio/devices> iio:device0
    
-      root:/> **ls -l**
+      root:/> ls -l
       -r--r--r-- 1 root root 4096 May  6 12:20 dev
       -r--r--r-- 1 root root 4096 May  6 12:20 name
       -rw-r--r-- 1 root root 4096 May  6 13:01 out_altvoltage0_i_offset
@@ -230,8 +230,8 @@ Show device name
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/iio\:device0/**
-      root:/> **cat name**
+      root:/> cd /sys/bus/iio/devices/iio\:device0/
+      root:/> cat name
       admv1013
    
 
@@ -250,11 +250,11 @@ Offset value. If shared across all channels, <type>_offset is used.
    
    ::
    
-      root:/> **cat out_altvoltage0_i_offset**
+      root:/> cat out_altvoltage0_i_offset
       0 0
    
-      root:/> **echo 1.1 > out_altvoltage0_i_offset**
-      root:/> **cat out_altvoltage0_offset**
+      root:/> echo 1.1 > out_altvoltage0_i_offset
+      root:/> cat out_altvoltage0_offset
       1 1
    
 
@@ -273,11 +273,11 @@ Phase value. If shared across all channels, <type>_phase is used.
    
    ::
    
-      root:/> **cat out_altvoltage0_i_phase**
+      root:/> cat out_altvoltage0_i_phase
       0
    
-      root:/> **echo 1 > out_altvoltage0_i_phase**
-      root:/> **cat out_altvoltage0_phase**
+      root:/> echo 1 > out_altvoltage0_i_phase
+      root:/> cat out_altvoltage0_phase
       1
    
 

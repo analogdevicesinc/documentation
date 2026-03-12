@@ -24,12 +24,12 @@ To help the robot minimize start-up drift and improve overall sensor performance
 
 .. important::
 
-   The gyros used in the :adi:`ADIS16448` measure *angular rate*, not *angle!* Any movement during the offset calibration routine **will** introduce some error into **every** sensor measurement! Over time, this error, will appear as "drift" in your angle measurement. **It is VERY important that the robot remains completely stationary during this calibration period!**\
+   The gyros used in the :adi:`ADIS16448` measure *angular rate*, not *angle!* Any movement during the offset calibration routine will introduce some error into every sensor measurement! Over time, this error, will appear as "drift" in your angle measurement. It is VERY important that the robot remains completely stationary during this calibration period!\
 
 
 .. tip::
 
-   Offset calibration should be performed as soon as the robot is powered on to prevent the routine from interfering with any autonomous code execution. If your gyro angle readings are drifting drastically, clicking **Restart Robot Code** in the driver station will force the RoboRIO to re-execute the offset calibration routine. This should fix any drift issues caused by a bad offset measurement.
+   Offset calibration should be performed as soon as the robot is powered on to prevent the routine from interfering with any autonomous code execution. If your gyro angle readings are drifting drastically, clicking Restart Robot Code in the driver station will force the RoboRIO to re-execute the offset calibration routine. This should fix any drift issues caused by a bad offset measurement.
 
 
 Using the ADIS16448 IMU on Your Robot

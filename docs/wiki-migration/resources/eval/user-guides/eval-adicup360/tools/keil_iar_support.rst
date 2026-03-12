@@ -15,7 +15,7 @@ This page will outline:
 
 .. important::
 
-   Before using below steps check your IAR and Keil software package version. If you want to use CMSIS-DAP interface you need to use the latest versions that have support for **CMSIS-DAP Debugger**.
+   Before using below steps check your IAR and Keil software package version. If you want to use CMSIS-DAP interface you need to use the latest versions that have support for CMSIS-DAP Debugger.
 
 
 How to import and run an existing project
@@ -111,7 +111,7 @@ Select project in the left window -> **Project** -> Options:
 
 .. note::
 
-   For **debugger** configuration you can select: **CMSIS-DAP** or **J-Link** interface (depending on your hardware possibilities).
+   For debugger configuration you can select: CMSIS-DAP or J-Link interface (depending on your hardware possibilities).
 
 
 -  Debugger -> **Setup** tab -> **Driver** -> *CMSIS DAP*:
@@ -121,7 +121,7 @@ Select project in the left window -> **Project** -> Options:
 
 .. note::
 
-   You can use **CMSIS-DAP interface** with default settings and only connecting an USB cable to ADICUP360 board using **DEBUG** USB.
+   You can use CMSIS-DAP interface with default settings and only connecting an USB cable to ADICUP360 board using DEBUG USB.
 
 
 -  Debugger -> **Setup** tab -> **Driver** -> *J-Link/J-Trace*:
@@ -131,7 +131,7 @@ Select project in the left window -> **Project** -> Options:
 
 .. note::
 
-   You can use **J-Link interface** with default settings and with J-Link adapter connected to ADICUP360 board using **P16** connector.
+   You can use J-Link interface with default settings and with J-Link adapter connected to ADICUP360 board using P16 connector.
 
 
 -  Debugger -> **Download** tab -> check *Use flash loader(s)*:

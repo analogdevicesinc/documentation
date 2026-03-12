@@ -9,19 +9,19 @@ Serial
    
    ::
    
-      adi-mm:tests analogdevices$ **ls -l /dev/tty.* **
+      adi-mm:tests analogdevices$ ls -l /dev/tty.* 
       crw-rw-rw-  1 root  wheel   17,   0 Nov  7 15:13 /dev/tty.Bluetooth-Incoming-Port
       crw-rw-rw-  1 root  wheel   17,   2 Nov  7 15:28 /dev/tty.usbmodem1414
-      adi-mm:tests analogdevices$ **screen /dev/tty.usbmodem1414 115200**
+      adi-mm:tests analogdevices$ screen /dev/tty.usbmodem1414 115200
    
       Welcome to Pluto
-      pluto login: **root**
-      Password: **analog**
+      pluto login: root
+      Password: analog
       # uname -a
       Linux pluto 4.6.0-08511-gc1315e6-dirty #247 SMP PREEMPT Mon Oct 24 16:46:25 CEST 2016 armv7l GNU/Linux
       #
-      **CNTRL-A** **CNTRL-**
-      Really quit and kill all your windows [y/n] **y**
+      CNTRL-A CNTRL-
+      Really quit and kill all your windows [y/n] y
       [screen is terminating]
       adi-mm:tests analogdevices$
    
@@ -35,7 +35,7 @@ Mass Storage
    
    ::
    
-      adi-mm:tests analogdevices$ **mount | grep Pluto**
+      adi-mm:tests analogdevices$ mount | grep Pluto
       /dev/disk1s1 on /Volumes/PlutoSDR (msdos, local, nodev, nosuid, noowners)
    
 
@@ -45,7 +45,7 @@ Ethernet
 
 .. tip::
 
-   In order to use the ADALM-PLUTO (aka. PlutoSDR) or ADALM2000 (aka. M2k) with Mac OSX the ethernet compatibility mode must be set to **USB CDC-NCM**.
+   In order to use the ADALM-PLUTO (aka. PlutoSDR) or ADALM2000 (aka. M2k) with Mac OSX the ethernet compatibility mode must be set to USB CDC-NCM.
 
    
    Please see instructions for :doc:`changing the usb ethernet compatibility mode </wiki-migration/university/tools/pluto/users/customizing>`.
@@ -58,7 +58,7 @@ Ethernet
    
    For example - the root password of Pluto is ``analog``. We post it on the Internet. Think about that for a moment. This could allow anyone with an IP connection to take over the device and use it for malicious purposes.
    
-   **Never** set up a bridge between the Internet and a network connected Pluto with the default images.
+   Never set up a bridge between the Internet and a network connected Pluto with the default images.
 
 
 Unfortunately - nothing on your host understands the what the IP address of the usb device is. You, the human behind the keyboard need to understand this before any sort of networking will work. There are two main ways to do this:
@@ -75,7 +75,7 @@ You should see something like this when you goto -> System Preferences -> Networ
    
    ::
    
-      adi-mm:tests analogdevices$ **ifconfig  | grep -B 3 -A 3 192**
+      adi-mm:tests analogdevices$ ifconfig  | grep -B 3 -A 3 192
       en4: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1486
           ether 00:e0:22:6d:b2:d8
           inet6 fe80::2e0:22ff:fe6d:b2d8%en4 prefixlen 64 scopeid 0xa
@@ -93,7 +93,7 @@ Adding a quick/short :git-plutosdr_scripts:`ssh config file <ssh_config>`, which
    
    ::
    
-      analog@imhotep:~$ **wget https:%%//%%raw.githubusercontent.com/analogdevicesinc/plutosdr_scripts/master/ssh_config -O ~/.ssh/config**
+      analog@imhotep:~$ wget https:%%//%%raw.githubusercontent.com/analogdevicesinc/plutosdr_scripts/master/ssh_config -O ~/.ssh/config
       --2017-01-26 19:47:51--  https:%%//%%raw.githubusercontent.com/analogdevicesinc/plutosdr_scripts/master/ssh_config
       Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.116.133
       Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.116.133|:443... connected.
@@ -114,12 +114,12 @@ Since the ssh key on the pluto changes every boot, we want to be able to never s
    
    ::
    
-      adi-mm:tests analogdevices$ **ssh plutosdr**
+      adi-mm:tests analogdevices$ ssh plutosdr
       Warning: Permanently added 'pluto' (ECDSA) to the list of known hosts.
-      root@pluto's password: **analog**
-      # **uname -a**
+      root@pluto's password: analog
+      # uname -a
       Linux pluto 4.6.0-08511-gc1315e6-dirty #247 SMP PREEMPT Mon Oct 24 16:46:25 CEST 2016 armv7l GNU/Linux
-      # **exit**
+      # exit
       Connection to 192.168.2.1 closed.
       adi-mm:tests analogdevices$ 
    
@@ -132,7 +132,7 @@ if you have ``sshpass`` installed, you can use that so you dont need to type in 
    
    ::
    
-      analog@imhotep:~/pluto$ **sshpass -panalog ssh plutosdr**
+      analog@imhotep:~/pluto$ sshpass -panalog ssh plutosdr
       Warning: Permanently added 'pluto' (ECDSA) to the list of known hosts.
       Welcome to:%%
       ______ _       _        _________________

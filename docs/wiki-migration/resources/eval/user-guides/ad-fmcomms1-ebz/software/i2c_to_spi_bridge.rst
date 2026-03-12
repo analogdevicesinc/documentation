@@ -3,7 +3,7 @@ AD-FMCOMMS1-EBZ Register Access
 
 
 
-.. important::
+.. warning::
 
    Analog Devices uses six designations to inform our customers where a
    semiconductor product is in its
@@ -16,8 +16,8 @@ AD-FMCOMMS1-EBZ Register Access
 
    This particular article/document/design has been retired or deprecated,
    which means it is no longer maintained or actively updated, even though the
-   devices themselves may be **Recommended for New Designs** or in
-   **Production**. This page is here for historical/reference purposes only.
+   devices themselves may be Recommended for New Designs or in
+   Production. This page is here for historical/reference purposes only.
 
 
 
@@ -159,13 +159,13 @@ The microcontroller on the board is a `Microchip PIC18F24J50-I/ML <http://www.mi
    
    ::
    
-      root@linaro-ubuntu-desktop:~# **for eeprom in $(find /sys -name eeprom); do cat $eeprom > $(echo $eeprom | sed 's:/:_:g') ; done**
+      root@linaro-ubuntu-desktop:~# for eeprom in $(find /sys -name eeprom); do cat $eeprom > $(echo $eeprom | sed 's:/:_:g') ; done
    
    Check to make sure the files are there properly (they should be 256 bytes each):
    
    ::
    
-      root@linaro-ubuntu-desktop:~# **ls -l _sys**
+      root@linaro-ubuntu-desktop:~# ls -l _sys
       -rw-r--r-- 1 root root 256 Jan  1 00:04 _sys_devices_amba.1_41600000.i2c_i2c-1_1-0050_eeprom
       -rw-r--r-- 1 root root 256 Jan  1 00:04 _sys_devices_amba.1_41600000.i2c_i2c-1_1-0054_eeprom
    
@@ -173,16 +173,16 @@ The microcontroller on the board is a `Microchip PIC18F24J50-I/ML <http://www.mi
    
    ::
    
-      root@linaro-ubuntu-desktop:~# **for eeprom in $(ls _sys*) ; do cat $eeprom > $(echo $eeprom | sed 's:_:/:g') ; done**
+      root@linaro-ubuntu-desktop:~# for eeprom in $(ls _sys*) ; do cat $eeprom > $(echo $eeprom | sed 's:_:/:g') ; done
    
    To make sure things are OK, try:
    
    ::
    
-      root@linaro-ubuntu-desktop:~# **find /sys/ -name eeprom**
+      root@linaro-ubuntu-desktop:~# find /sys/ -name eeprom
       /sys/devices/amba.1/41600000.i2c/i2c-1/1-0050/eeprom
       /sys/devices/amba.1/41600000.i2c/i2c-1/1-0054/eeprom
-      root@linaro-ubuntu-desktop:~# **cat /sys/devices/amba.1/41600000.i2c/i2c-1/1-0050/eeprom | hexdump -C**
+      root@linaro-ubuntu-desktop:~# cat /sys/devices/amba.1/41600000.i2c/i2c-1/1-0050/eeprom | hexdump -C
       00000000  01 00 00 01 00 09 00 f5  01 08 19 0e d3 88 ce 41
 
       |...............A|

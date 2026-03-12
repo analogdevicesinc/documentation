@@ -143,7 +143,7 @@ Support
 
 .. hint::
 
-   Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
+   Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
 
    
    It should be noted that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.

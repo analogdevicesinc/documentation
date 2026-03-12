@@ -48,12 +48,12 @@ To install the library on your system, follow the instructions below:
 
 ::
 
-   > **git clone :git-libad9361-iio:`libad9361-iio`.git**
-   > **cd libad9361-iio**
-   > **mkdir build && cd build**
-   > **cmake ../**
-   > **make**
-   > **sudo make install**
+   > git clone :git-libad9361-iio:`libad9361-iio`.git
+   > cd libad9361-iio
+   > mkdir build && cd build
+   > cmake ../
+   > make
+   > sudo make install
 
 No-OS
 -----

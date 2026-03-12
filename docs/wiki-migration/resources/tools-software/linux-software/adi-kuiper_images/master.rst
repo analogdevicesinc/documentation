@@ -19,14 +19,14 @@ Master Boot partition files
    .. important::
 
          
-         -  It is recommended to use **master boot files** only if you really need them (for example features that are not part of any release yet) since the files may not be always in a good state. Check :doc:`Latest release </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` for most recent tested boot files.
+         -  It is recommended to use master boot files only if you really need them (for example features that are not part of any release yet) since the files may not be always in a good state. Check :doc:`Latest release </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` for most recent tested boot files.
          
 
    
    .. tip::
 
          
-         -  Inside downloaded archive is a **ReadMe.txt** file describing what files you need to copy on boot partition root depending on your hardware setup, and **VERSION.txt** file containing build dates and git commits.
+         -  Inside downloaded archive is a ReadMe.txt file describing what files you need to copy on boot partition root depending on your hardware setup, and VERSION.txt file containing build dates and git commits.
          
 
    
@@ -49,7 +49,7 @@ Master Microblaze images
    .. important::
 
          
-         -  It is recommended to use **master microblaze images** only if you really need them (for example features that are not part of any release yet) since the files may not be always in a good state. Check :doc:`Latest microblaze released images </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>` for most recent and tested images.
+         -  It is recommended to use master microblaze images only if you really need them (for example features that are not part of any release yet) since the files may not be always in a good state. Check :doc:`Latest microblaze released images </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>` for most recent and tested images.
          
 
    
@@ -79,7 +79,7 @@ Master Nios2 images
    .. important::
 
          
-         -  It is recommended to use **master nios2 images** only if you really need them (for example features that are not part of any release yet) since the files may not be always in a good state. Check :doc:`Latest nios2 released images </wiki-migration/resources/tools-software/linux-drivers/platforms/nios2>` for most recent and tested images.
+         -  It is recommended to use master nios2 images only if you really need them (for example features that are not part of any release yet) since the files may not be always in a good state. Check :doc:`Latest nios2 released images </wiki-migration/resources/tools-software/linux-drivers/platforms/nios2>` for most recent and tested images.
          
 
    

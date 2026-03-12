@@ -14,7 +14,7 @@ The :adi:`PMD-RPI-INTZ` follows the standard Raspberry Pi HAT mechanical specifi
 
 .. note::
 
-   **Evaluation Kit Contents:**
+   Evaluation Kit Contents:
 
    
    -  :adi:`PMD-RPI-INTZ` Adapter Board (:adi:`Buy <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/PMD-RPI-INTZ>`)
@@ -159,7 +159,7 @@ Similarly, the table below lists the default Raspberry Pi GPIO pin assignments f
 
 .. note::
 
-   **Connecting Hardware Designed for Digilent I²C Pmod Interface Specification Ver. 1.0.0:**
+   Connecting Hardware Designed for Digilent I²C Pmod Interface Specification Ver. 1.0.0:
 
    
    Version 1.0.0 of the Digilent Pmod Interface Specification required 2×4 headers to be used for I²C devices; Pmod boards that follow this old standard should be connected to either P3 or P4 as shown below:

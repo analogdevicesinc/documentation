@@ -65,7 +65,7 @@ Cora Z7
 
 .. important::
 
-   Make sure you unzip the image using either `7-zip <https://www.7-zip.org/>`_ or on Linux it can be done via command-line **unzip <image_name>.zip**. The actual file that needs to be dumped to the SD card has to have the **\*.img** extension.
+   Make sure you unzip the image using either `7-zip <https://www.7-zip.org/>`_ or on Linux it can be done via command-line unzip <image_name>.zip. The actual file that needs to be dumped to the SD card has to have the \*.img extension.
 
 
 .. important::

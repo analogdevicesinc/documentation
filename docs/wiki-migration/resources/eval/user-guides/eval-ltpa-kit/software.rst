@@ -204,7 +204,7 @@ Measurements
 
 .. important::
 
-   Make sure that you have set up the hardware for **Bode Measurement** as described in the :doc:`EVAL-LTPA-KIT Hardware Setup Guide </wiki-migration/resources/eval/user-guides/eval-ltpa-kit/hardware>` before proceeding with the steps listed below.
+   Make sure that you have set up the hardware for Bode Measurement as described in the :doc:`EVAL-LTPA-KIT Hardware Setup Guide </wiki-migration/resources/eval/user-guides/eval-ltpa-kit/hardware>` before proceeding with the steps listed below.
 
 
 BODE PLOT

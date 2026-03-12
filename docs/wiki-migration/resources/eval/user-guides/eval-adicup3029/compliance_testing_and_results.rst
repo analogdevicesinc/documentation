@@ -31,7 +31,7 @@ What are all these logos?
 .. caution::
 
    Although this device has RF transmit capabilities, since the default
-   operation/firmware does not enable any RF emissions this product is **not**
+   operation/firmware does not enable any RF emissions this product is not
    certified as an intentional transmitter. While in the default mode, it has
    been verified not to emit harmful emissions to other devices, and has the
    ability to accept emissions from other devices. The RF transmit functionality

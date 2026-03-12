@@ -55,9 +55,9 @@ Configure the USB drivers to Gadget only mode (or Dual role mode )
                    <*>   Support for Host-side USB
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Dual role mode)  --->
-                           ** Platform Glue Layer **
+                            Platform Glue Layer 
                    <*>     ADI
-                           ** MUSB DMA mode **
+                            MUSB DMA mode 
                    [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                    <*>   USB Gadget Support  --->
@@ -145,7 +145,7 @@ Then we list the available sound card on host PC, to decide which sound card is 
 .. code:: console
 
    test@madara:~$ aplay -l
-   *** List of PLAYBACK Hardware Devices ***
+   * List of PLAYBACK Hardware Devices *
    card 0: PCH [HDA Intel PCH], device 0: CX20641 Analog [CX20641 Analog]
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -187,7 +187,7 @@ New Sound Card UAC2Gadget(card 1) is generated both for playback and capture on 
 .. code:: console
 
    root@adsp-sc589-ezkit:~# arecord -l
-   *** List of CAPTURE Hardware Devices ***
+   * List of CAPTURE Hardware Devices *
    card 0: sc5xxasoccard [sc5xx-asoc-card], device 1: ADAU1979 adau1977-hifi-1 []
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -195,7 +195,7 @@ New Sound Card UAC2Gadget(card 1) is generated both for playback and capture on 
      Subdevices: 1/1
      Subdevice #0: subdevice #0
    root@adsp-sc589-ezkit:~# aplay -l
-   *** List of PLAYBACK Hardware Devices ***
+   * List of PLAYBACK Hardware Devices *
    card 0: sc5xxasoccard [sc5xx-asoc-card], device 0: ADAU1962 adau1962.0-0004-0 []
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -242,7 +242,7 @@ Then we list the available sound card on host PC, to decide which sound card is 
 .. code:: console
 
    test@madara:~$ aplay -l
-   *** List of PLAYBACK Hardware Devices ***
+   * List of PLAYBACK Hardware Devices *
    card 0: PCH [HDA Intel PCH], device 0: CX20641 Analog [CX20641 Analog]
      Subdevices: 1/1
      Subdevice #0: subdevice #0
@@ -253,7 +253,7 @@ Then we list the available sound card on host PC, to decide which sound card is 
      Subdevices: 1/1
      Subdevice #0: subdevice #0
    test@madara:~$ arecord -l
-   *** List of CAPTURE Hardware Devices ***
+   * List of CAPTURE Hardware Devices *
    card 0: PCH [HDA Intel PCH], device 0: CX20641 Analog [CX20641 Analog]
      Subdevices: 1/1
      Subdevice #0: subdevice #0

@@ -404,7 +404,7 @@ The ability to measure an ADC's filter response is certainly a practical tool to
 
 .. warning::
 
-   **warning** What follows is only a model of the AD7124-8 filters, it is not a bit-accurate representation. Refer to the AD7124-8 datasheet for all guaranteed parameters.
+   warning What follows is only a model of the AD7124-8 filters, it is not a bit-accurate representation. Refer to the AD7124-8 datasheet for all guaranteed parameters.
 
 
 Figures 16 and 17 show the AD7124-8's 10Hz and 50Hz notch filters. Various combinations of Higher order SINC3 and SINC4 filters are also available.

@@ -52,13 +52,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root@analog:/# **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices# **ls**
+      root@analog:/# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0         trigger0
    
-      root@analog:/sys/bus/iio/devices# **cd iio:device0**
+      root@analog:/sys/bus/iio/devices# cd iio:device0
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **ls -l**
+      root@analog:/sys/bus/iio/devices/iio:device0> ls -l
       drwxr-xr-x 2 root root    0 May 17 14:36 buffer
       drwxr-xr-x 2 root root    0 May 17 14:36 buffer0
       -r--r--r-- 1 root root 4096 May 17 14:36 dev
@@ -85,7 +85,7 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat name
       ltc2387
    
 
@@ -100,10 +100,10 @@ Get/Set sampling frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat sampling_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat sampling_frequency
       15000000
-      root@analog:/sys/bus/iio/devices/iio:device3# **echo 10000000 > sampling_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat sampling_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device3# echo 10000000 > sampling_frequency
+      root@analog:/sys/bus/iio/devices/iio:device3# cat sampling_frequency
       10000000
    
 

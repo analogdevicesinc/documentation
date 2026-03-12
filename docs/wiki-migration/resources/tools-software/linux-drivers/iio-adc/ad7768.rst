@@ -80,7 +80,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. tip::
 
-   \ **TIP:** An example program which uses the interface can be found here:
+   \ TIP: An example program which uses the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
@@ -94,13 +94,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
    
-      root:/sys/bus/iio/devices> **cd iio\:device0**
+      root:/sys/bus/iio/devices> cd iio\:device0
    
-      root:/sys/bus/iio/devices/iio:device0> **ls -l**
+      root:/sys/bus/iio/devices/iio:device0> ls -l
       total 0
       drwxr-xr-x 2 root root    0 Apr  2 21:43 buffer
       drwxr-xr-x 2 root root    0 Apr  2 21:43 buffer0
@@ -131,7 +131,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat name**
+      root:/sys/bus/iio/devices/iio:device0> cat name
       ad7768
    
 
@@ -148,7 +148,7 @@ Show scale
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage_scale**
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage_scale
       0.000488281
    
 

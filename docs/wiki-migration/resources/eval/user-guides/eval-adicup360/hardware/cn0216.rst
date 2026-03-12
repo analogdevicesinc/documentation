@@ -13,7 +13,7 @@ This circuit allows great flexibility in designing a custom low-level signal con
 
 .. important::
 
-   Extremely important to note that the **EVAL-CN0216-ARDZ** is powered from the **VIN** connector on the Arduino Uno header. This is because the bridge drive voltage of the EVAL-CN0216-ARDZ requires more than 5V to power the bridge. Therefore it is required to supply power from the baseboard through the DC power connector in order for proper functionality. The board will not work properly if you try only to power it from the USB.
+   Extremely important to note that the EVAL-CN0216-ARDZ is powered from the VIN connector on the Arduino Uno header. This is because the bridge drive voltage of the EVAL-CN0216-ARDZ requires more than 5V to power the bridge. Therefore it is required to supply power from the baseboard through the DC power connector in order for proper functionality. The board will not work properly if you try only to power it from the USB.
 
 
 --------------
@@ -55,7 +55,7 @@ REF SEL / Bridge Configuration
 
 .. note::
 
-   | **NOTE** - Any 4 or 6 wire load cells can be used with the **EVAL-CN0216-ARDZ**.
+   | NOTE - Any 4 or 6 wire load cells can be used with the EVAL-CN0216-ARDZ.
    | The Tedeah Huntleigh Model 1042 load cell was used during testing.
 
 
@@ -85,9 +85,9 @@ This set of jumpers allows for changing the pin mapping of the AD7791 chip selec
    If using an EVAL-CN0216-ARDZ board prior to Rev.C: To change the CS pin, Install a 0-ohm resistor to resistor pads R7,R8 or R9
 
    
-   -  R7 - Arduino **Digital Pin 8**
-   -  R8 - Arduino **Digital Pin 9**
-   -  R9 - Arduino **Digital Pin 10**
+   -  R7 - Arduino Digital Pin 8
+   -  R8 - Arduino Digital Pin 9
+   -  R9 - Arduino Digital Pin 10
    
 
 

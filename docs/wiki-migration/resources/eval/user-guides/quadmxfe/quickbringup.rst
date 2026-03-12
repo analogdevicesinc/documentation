@@ -151,12 +151,12 @@ The main tool used for programming the FPGA is the Xilinx Software Commandline T
 
 ::
 
-   ***** Xilinx Software Commandline Tool (XSCT) v2019.1
+   * Xilinx Software Commandline Tool (XSCT) v2019.1
      *** Build date : May 24 2019-15:06:52
        ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
-   xsct% **cd Desktop/Quad_Mxfe_Files**
-   xsct% **source run.vcu118_quad_ad9081_204c_txmode_11_rxmode_4_revc.tcl**
+   xsct% cd Desktop/Quad_Mxfe_Files
+   xsct% source run.vcu118_quad_ad9081_204c_txmode_11_rxmode_4_revc.tcl
 
 --------------
 

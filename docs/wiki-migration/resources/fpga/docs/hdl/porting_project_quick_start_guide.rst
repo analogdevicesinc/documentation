@@ -85,7 +85,7 @@ You should define the board and its device in the project flow script, called (:
 
 .. tip::
 
-   The valid board parts and parts can be retrieved by running the following commands in Tcl console: **get_parts** and **get_board_parts**. Run the commands like **join [get_parts] \\n**, so each part name will be listed on a separate line.
+   The valid board parts and parts can be retrieved by running the following commands in Tcl console: get_parts and get_board_parts. Run the commands like join [get_parts] \\n, so each part name will be listed on a separate line.
 
 
 The **sys_zynq** constant variable should be set in the following way:

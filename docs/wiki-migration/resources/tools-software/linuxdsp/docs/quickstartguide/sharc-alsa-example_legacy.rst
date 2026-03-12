@@ -3,7 +3,7 @@ SHARC-ALSA Example (legacy)
 
 .. important::
 
-   These instructions refer to releases **prior** to :doc:`Linux for ADSP-SC5xx Processors 3.0.0 (develop) </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>`\
+   These instructions refer to releases prior to :doc:`Linux for ADSP-SC5xx Processors 3.0.0 (develop) </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>`\
 
 
 .. important::

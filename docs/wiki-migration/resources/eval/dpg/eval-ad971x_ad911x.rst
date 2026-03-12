@@ -41,7 +41,7 @@ Software Needed:
 
 .. important::
 
-   \ **Known Issue:** ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
+   \ Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
 
 
 Hardware Needed:

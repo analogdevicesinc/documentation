@@ -225,7 +225,7 @@ One way to check if the device and driver are present is using **iio_info**:
 ::
 
 
-   **root@analog#** iio_info
+   root@analog# iio_info
        iio:device0: ad4630-24 (buffer capable)
            2 channels found:
                voltage0: differential_0 (input, index: 0, format: le:s30/32>>0)
@@ -253,7 +253,7 @@ You can go to the device folder using:
 
 ::
 
-   **root@analog#** cd $(grep -rw /sys/bus/iio/devices/*/name -e "ad4630-24" -l | xargs dirname)
+   root@analog# cd $(grep -rw /sys/bus/iio/devices/*/name -e "ad4630-24" -l | xargs dirname)
 
 .. important::
 
@@ -264,7 +264,7 @@ In the folder there are several files that can set specific device attributes:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** ls -l
+   root@analog:/sys/bus/iio/devices/iio:device0# ls -l
    total 0
    drwxr-xr-x 2 root root    0 Dec 13 08:54 buffer
    -r--r--r-- 1 root root 4096 Dec 13 08:54 dev
@@ -292,22 +292,22 @@ The device an operate in normal and low power mode. This attribute displays the 
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** cat operating_mode_available
+   root@analog:/sys/bus/iio/devices/iio:device0# cat operating_mode_available
    normal_operating_mode low_power_mode
 
 Display current operating mode:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** cat operating_mode
+   root@analog:/sys/bus/iio/devices/iio:device0# cat operating_mode
    normal_operating_mode
 
 Change operating mode:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** echo low_power_mode > operating_mode
-   **root@analog:/sys/bus/iio/devices/iio:device0#** cat operating_mode
+   root@analog:/sys/bus/iio/devices/iio:device0# echo low_power_mode > operating_mode
+   root@analog:/sys/bus/iio/devices/iio:device0# cat operating_mode
    low_power_mode
 
 Sampling frequency
@@ -319,14 +319,14 @@ Display all available sampling rates:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** cat sampling_frequency_available
+   root@analog:/sys/bus/iio/devices/iio:device0# cat sampling_frequency_available
    10000 50000 100000 200000 500000 1000000 1750000 2000000
 
 See current sampling rate:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** cat sampling_frequency
+   root@analog:/sys/bus/iio/devices/iio:device0# cat sampling_frequency
    1000000
 
 Change the sampling rate:
@@ -351,22 +351,22 @@ Display all available number(in samples) of averaging operations on the buffer:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** cat sample_averaging_available
+   root@analog:/sys/bus/iio/devices/iio:device0# cat sample_averaging_available
    OFF 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384 32768 65536
 
 Display current sample averaging count:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** cat sample_averaging
+   root@analog:/sys/bus/iio/devices/iio:device0# cat sample_averaging
    64
 
 Change the sample averaging count:
 
 ::
 
-   **root@analog**:/sys/bus/iio/devices/iio:device0# echo 2048 > sample_averaging
-   **root@analog**:/sys/bus/iio/devices/iio:device0# cat sample_averaging
+   root@analog:/sys/bus/iio/devices/iio:device0# echo 2048 > sample_averaging
+   root@analog:/sys/bus/iio/devices/iio:device0# cat sample_averaging
    2048
 
 .. important::
@@ -381,7 +381,7 @@ The hardware gain can be changed for each channel with a value from 0.0001 to 1.
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** ls | grep hardwaregain
+   root@analog:/sys/bus/iio/devices/iio:device0# ls | grep hardwaregain
    in_voltage0_differential0_hardwaregain
    in_voltage1_differential1_hardwaregain
 
@@ -389,15 +389,15 @@ Read the gain for channel 0:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0**# cat in_voltage0_differential0_hardwaregain
+   root@analog:/sys/bus/iio/devices/iio:device0# cat in_voltage0_differential0_hardwaregain
    1.000000
 
 Set the gain for channel 1:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** echo 0.25 > in_voltage1_differential1_hardwaregain
-   **root@analog:/sys/bus/iio/devices/iio:device0#** cat in_voltage1_differential1_hardwaregain
+   root@analog:/sys/bus/iio/devices/iio:device0# echo 0.25 > in_voltage1_differential1_hardwaregain
+   root@analog:/sys/bus/iio/devices/iio:device0# cat in_voltage1_differential1_hardwaregain
    0.250000
 
 Channel offset
@@ -407,7 +407,7 @@ The offset can be changed for each channel with a value from -2\ :sup:`23`-1 to 
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** ls | grep offset
+   root@analog:/sys/bus/iio/devices/iio:device0# ls | grep offset
    in_voltage0_differential_0_offset
    in_voltage1_differential_1_offset
 
@@ -415,15 +415,15 @@ Read the offset for channel 0:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0**# cat in_voltage0_differential0_offset
+   root@analog:/sys/bus/iio/devices/iio:device0# cat in_voltage0_differential0_offset
    0
 
 Set the offset for channel 1:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** echo 256 > in_voltage1_differential1_offset
-   **root@analog:/sys/bus/iio/devices/iio:device0#** cat in_voltage1_differential1_offset
+   root@analog:/sys/bus/iio/devices/iio:device0# echo 256 > in_voltage1_differential1_offset
+   root@analog:/sys/bus/iio/devices/iio:device0# cat in_voltage1_differential1_offset
    256
 
 Data acquisition
@@ -433,7 +433,7 @@ The data acquisition is performed using a buffer system:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0/#** ls buffer
+   root@analog:/sys/bus/iio/devices/iio:device0/# ls buffer
    data_available  enable  length  length_align_bytes  watermark
    root@analog:/sys/bus/iio/devices/iio:device0# ls scan_elements/
    in_voltage0_differential0_en      in_voltage0_differential0_type  in_voltage1_differential1_index
@@ -451,11 +451,11 @@ Enable and read 400 samples from both channels:
 
 ::
 
-   **root@analog:/sys/bus/iio/devices/iio:device0#** echo 1 > scan_elements/in_voltage0_differential0_en
-   **root@analog:/sys/bus/iio/devices/iio:device0#** echo 1 > scan_elements/in_voltage1_differential1_en
-   **root@analog:/sys/bus/iio/devices/iio:device0#** echo 400 > buffer/length
-   **root@analog:/sys/bus/iio/devices/iio:device0#** echo 1 > buffer/enable
-   **root@analog:/sys/bus/iio/devices/iio:device0#** hexdump -n 400 /dev/iio\:device0
+   root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > scan_elements/in_voltage0_differential0_en
+   root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > scan_elements/in_voltage1_differential1_en
+   root@analog:/sys/bus/iio/devices/iio:device0# echo 400 > buffer/length
+   root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > buffer/enable
+   root@analog:/sys/bus/iio/devices/iio:device0# hexdump -n 400 /dev/iio\:device0
    0000000 e942 000d 0011 0000 afaf 000d 0029 0000
    0000010 753b 000d fff5 00ff 39fa 000d 0018 0000
    0000020 013e 000d 0017 0000 c776 000c fff4 00ff
@@ -482,7 +482,7 @@ Enable and read 400 samples from both channels:
    0000170 4582 0003 ffe1 00ff 0921 0003 ffdf 00ff
    0000180 c9a5 0002 ffd1 00ff 8a1c 0002 0015 0000
    0000190
-   **root@analog:/sys/bus/iio/devices/iio:device0/#** echo 0 > buffer/enable
+   root@analog:/sys/bus/iio/devices/iio:device0/# echo 0 > buffer/enable
 
 Debug mode
 ^^^^^^^^^^
@@ -493,22 +493,22 @@ First go to the device debug folder:
 
 ::
 
-   **root@analog#** cd /sys/kernel/debug/iio/iio:device0
+   root@analog# cd /sys/kernel/debug/iio/iio:device0
 
 Read the 0xA register:
 
 ::
 
-   **root@analog:/sys/kernel/debug/iio/iio:device0#** echo 0xA > direct_reg_access
-   **root@analog:/sys/kernel/debug/iio/iio:device0#** cat direct_reg_access
+   root@analog:/sys/kernel/debug/iio/iio:device0# echo 0xA > direct_reg_access
+   root@analog:/sys/kernel/debug/iio/iio:device0# cat direct_reg_access
    0x0
 
 Write and verify the value:
 
 ::
 
-   **root@analog:/sys/kernel/debug/iio/iio:device0#** echo 0xA 0x5F> direct_reg_access
-   **root@analog:/sys/kernel/debug/iio/iio:device0#** cat direct_reg_access
+   root@analog:/sys/kernel/debug/iio/iio:device0# echo 0xA 0x5F> direct_reg_access
+   root@analog:/sys/kernel/debug/iio/iio:device0# cat direct_reg_access
    0x5F
 
 More Information

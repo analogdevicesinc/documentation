@@ -44,5 +44,5 @@ After the configuration of the terminal was finished, the software application h
 
 .. tip::
 
-   If the script threw an error, verify if the Xilinx EDK path specified in the **Loadapp.bat** script is corresponding with the current install path. If not change it to the correct one.
+   If the script threw an error, verify if the Xilinx EDK path specified in the Loadapp.bat script is corresponding with the current install path. If not change it to the correct one.
 

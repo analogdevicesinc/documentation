@@ -122,7 +122,7 @@ In case of the **PARALLEL** interface:
 
 .. important::
 
-   Because of the **SDP-I-FMC** the level of the **VADJ** in the carrier board needs to be set to **3.3V**.
+   Because of the SDP-I-FMC the level of the VADJ in the carrier board needs to be set to 3.3V.
 
 
 CPU/Memory interconnects addresses
@@ -516,7 +516,7 @@ Support
 
 .. hint::
 
-   **Questions?** Feel free to ask your questions in EngineerZone support forums.
+   Questions? Feel free to ask your questions in EngineerZone support forums.
 
    
    -  :ez:`FPGA Reference Design <community/fpga>`

@@ -14,7 +14,7 @@ To change the source's Sampling Rate, Right-click in the block and select Set Sa
 
 .. note::
 
-   Note: The sawtooth wave is digitally generated and is **non-bandlimited**. This waveform is suitable for use as an internal control signal, but will produce aliasing distortion if used directly for audio output. If this configuration is desired, it is recommended that you apply a low-pass filter to the block's output before routing the signal to hardware outputs.
+   Note: The sawtooth wave is digitally generated and is non-bandlimited. This waveform is suitable for use as an internal control signal, but will produce aliasing distortion if used directly for audio output. If this configuration is desired, it is recommended that you apply a low-pass filter to the block's output before routing the signal to hardware outputs.
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sawtoothwave015.jpg

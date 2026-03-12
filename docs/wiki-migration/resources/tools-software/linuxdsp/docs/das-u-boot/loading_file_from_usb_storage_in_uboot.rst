@@ -42,7 +42,7 @@ In this case the /dev/sdb is for the USB stick we just plugged in.
 
 .. important::
 
-   **Caution** : Please double check the device node newly created for your memory stick, otherwise serious damage like system permanent crash down happens!
+   Caution : Please double check the device node newly created for your memory stick, otherwise serious damage like system permanent crash down happens!
 
 
 The format a vfat partiton on it:

@@ -92,7 +92,7 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
 
 
 If programming was successful, you should be seeing messages appear on the terminal window as shown in the figures below. After programming the AD5933 device, the program will automatically read the temperature value of the AD5933. Afterwards it will start a calibration process. Use a 47 Kohm resistor for this purpose. After calibration is complete, the user will be promped to change the 47 Kohm resistor with the desired component for measurement, and press [Enter] afterwards. The result of the measurement will be printed on the terminal window both in ohms and Kohms.
@@ -112,7 +112,7 @@ The reference design is a consists of an IIC interface between the FPGA and the 
    
    -  Connecting the PmodIA to the boards using an extension cable is mandatory.
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
-   -  The default value for the calibration resistor is 47 Kohms. If another resistor is used for calibration, please modify the parameter value in main.c, **AD5933_CalculateGainFactor** function.
+   -  The default value for the calibration resistor is 47 Kohms. If another resistor is used for calibration, please modify the parameter value in main.c, AD5933_CalculateGainFactor function.
    
 
 

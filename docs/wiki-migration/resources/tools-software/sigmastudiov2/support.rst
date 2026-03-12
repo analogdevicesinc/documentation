@@ -162,7 +162,7 @@ Workaround is to disconnect the USBi, reset the board (then successful boot happ
    
    -  The BCLK and LRCLK routing for SPORT will be automatically configured in the Demo/DemoUc framework based on the SPORT selection made in the SigmaStudio+ schematic configuration.
    -  The user must assign the DATA pin for the SPORT in the SigmaStudio+ schematic configuration. The DATA pin routing will then be automatically handled by the Demo/DemoUc framework.
-   -  The user must route BCLK and LRCLK to the external audio peripheral using the **system.svc – SRU Routing** and **adi_ss_fw_sport.c** option.
+   -  The user must route BCLK and LRCLK to the external audio peripheral using the system.svc – SRU Routing and adi_ss_fw_sport.c option.
    -  Any modification to the DAI pin or PCG clock requires corresponding pin assignment and signal routing within the default framework.
    
 

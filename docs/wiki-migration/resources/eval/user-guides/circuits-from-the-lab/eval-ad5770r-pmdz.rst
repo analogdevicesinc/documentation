@@ -47,7 +47,7 @@ An external power supply can be used for AVDD/DVDD instead of the system power i
 
 .. important::
 
-   **Below are the voltage ranges for the positive supplies:**
+   Below are the voltage ranges for the positive supplies:
 
    
    -  AVDD : 2.9 V to 5.5 V
@@ -59,7 +59,7 @@ Unlike the AD5770R evaluation board, the EVAL-AD5770R-PMDZ has no onboard power 
 
 .. tip::
 
-   **An example for single PVDDx supply:**
+   An example for single PVDDx supply:
 
    
    If PVDD0 to PVDD5 are all connected to +2.000 V, the maximum load voltage for each channel would be:
@@ -82,7 +82,7 @@ Pins 5 to 6 of connector P6 are mapped to the current output pins of the AD5770R
 
 .. tip::
 
-   **Output Current Scaling:** To increase the output current range,* tie multiple IDAC channels together to add their output currents. However, the load voltage must still fall within the output compliance range of both pins.
+   Output Current Scaling: To increase the output current range,* tie multiple IDAC channels together to add their output currents. However, the load voltage must still fall within the output compliance range of both pins.
    
    *To decrease the output current range,* use the OUTPUT_RANGE_CHx register as detailed in the AD5770R datasheet. The full scale current can only be scaled down to 50% of its nominal value.
 
@@ -101,7 +101,7 @@ If IDAC0 is configured to sink current, jumpers P3 and P4 should be open and ext
 
 .. important::
 
-   **Below are the voltage ranges for the negative supplies:**
+   Below are the voltage ranges for the negative supplies:
 
    
    -  AVEE : -3.0 V to 0 V

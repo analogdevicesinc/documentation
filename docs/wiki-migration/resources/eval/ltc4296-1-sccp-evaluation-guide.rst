@@ -169,7 +169,7 @@ Example C code for send_reset_pulse() is shown in Figure 6. The send_reset_pulse
 
 ::
 
-   /*****************************************************************************************************************
+   /*************************
    Copyright © 2023 by Analog Devices, Inc. All rights reserved. This software is proprietary to Analog Devices, Inc.
    and its licensors. This software is provided on an "as is" basis without any representations, warranties,
    guarantees or liability of any kind. Use of the software is subject to the terms and conditions of the Clear BSD
@@ -184,7 +184,7 @@ Example C code for send_reset_pulse() is shown in Figure 6. The send_reset_pulse
    *
    *uint8_t value of PD presence pulse voltage is returned
    *
-   *****************************************************************************************************************/
+   *************************/
    uint8_t send_reset_pulse()
    {
      /* assert pulse  */
@@ -220,7 +220,7 @@ Example C code for write_bit() is shown in Figure 7. Unlike the initialization s
 
 ::
 
-   /*****************************************************************************************************************
+   /*************************
    Copyright © 2023 by Analog Devices, Inc. All rights reserved. This software is proprietary to Analog Devices, Inc.
    and its licensors. This software is provided on an "as is" basis without any representations, warranties,
    guarantees or liability of any kind. Use of the software is subject to the terms and conditions of the Clear BSD
@@ -234,7 +234,7 @@ Example C code for write_bit() is shown in Figure 7. Unlike the initialization s
    * This function controls the pulldown FET to send a bit of a SCCP
    * transaction to the PD
    *
-   *****************************************************************************************************************/
+   *************************/
    void write_bit(uint8_t bit)
    {
      TimerDelay_resetCount(); /* timer->CNT = 0 */
@@ -270,7 +270,7 @@ Example C code for the read_bit() function is shown in Figure 8. The read_bit() 
 
 ::
 
-   /*****************************************************************************************************************
+   /*************************
    Copyright © 2023 by Analog Devices, Inc. All rights reserved. This software is proprietary to Analog Devices, Inc.
    and its licensors. This software is provided on an "as is" basis without any representations, warranties,
    guarantees or liability of any kind. Use of the software is subject to the terms and conditions of the Clear BSD
@@ -283,7 +283,7 @@ Example C code for the read_bit() function is shown in Figure 8. The read_bit() 
 ::
 
    *
-   *****************************************************************************************************************/
+   *************************/
    uint8_t read_bit()
    {
      TimerDelay_resetCount(); /* timer->CNT = 0
@@ -347,7 +347,7 @@ The example code in Figure 9 defines Class and Type codes as well as the PSE/PD 
 
 ::
 
-   /*****************************************************************************************************************
+   /*************************
    Copyright © 2023 by Analog Devices, Inc. All rights reserved. This software is proprietary to Analog Devices, Inc.
    and its licensors. This software is provided on an "as is" basis without any representations, warranties,
    guarantees or liability of any kind. Use of the software is subject to the terms and conditions of the Clear BSD
@@ -370,7 +370,7 @@ The example code in Figure 9 defines Class and Type codes as well as the PSE/PD 
    * CLASS_TYPE_INFO returned from PD should have bits[9:0] consisting of class code
    * and bits[15:12] consisting of type code.
    *
-   *****************************************************************************************************************/
+   *************************/
 
 ::
 
@@ -420,14 +420,14 @@ The example code in Figure 9 defines Class and Type codes as well as the PSE/PD 
 
 ::
 
-   /**********************************************************************************
+   /******************
    *
    * Function: int index_of(uint16_t val, uint16_t* buf, uint16_t buf_len)
    *
    * data bits parsed from SCCP_CLASS_INFO are interpreted for respective class and
    * type through this function.
    *
-   **********************************************************************************/
+   ******************/
    int index_of(uint16_t val, uint16_t* buf, uint16_t buf_len)
    {
      uint16_t i;
@@ -453,7 +453,7 @@ Figure 10 shows example code for transmit_byte(). The transmit_byte() function a
 
 ::
 
-   /*****************************************************************************************************************
+   /*************************
    Copyright © 2023 by Analog Devices, Inc. All rights reserved. This software is proprietary to Analog Devices, Inc.
    and its licensors. This software is provided on an "as is" basis without any representations, warranties,
    guarantees or liability of any kind. Use of the software is subject to the terms and conditions of the Clear BSD
@@ -464,7 +464,7 @@ Figure 10 shows example code for transmit_byte(). The transmit_byte() function a
    *Function: void transmit_byte(uint8_t tx_byte)
    *Byte to be transmitted is passed on to this function
    *
-   ******************************************************************************************************************/
+   **************************/
    void transmit_byte(uint8_t tx_byte)
    {
      uint8_t bit_pos = 0;
@@ -489,7 +489,7 @@ Figure 11 shows example code for receive_response(). The receive_response() func
 
 ::
 
-   /*****************************************************************************************************************
+   /*************************
    Copyright © 2023 by Analog Devices, Inc. All rights reserved. This software is proprietary to Analog Devices, Inc.
    and its licensors. This software is provided on an "as is" basis without any representations, warranties,
    guarantees or liability of any kind. Use of the software is subject to the terms and conditions of the Clear BSD
@@ -501,7 +501,7 @@ Figure 11 shows example code for receive_response(). The receive_response() func
 ::
 
    *
-   ******************************************************************************************************************/
+   **************************/
    void receive_response(uint8_t* buf)
    {
      uint8_t rx_byte = 0, bytes_rxd=0, bit_pos = 0;
@@ -537,7 +537,7 @@ Figure 12 shows example code for sccp_read_register(). The sccp_read_register() 
 
 ::
 
-   /*****************************************************************************************************************
+   /*************************
    Copyright © 2023 by Analog Devices, Inc. All rights reserved. This software is proprietary to Analog Devices, Inc.
    and its licensors. This software is provided on an "as is" basis without any representations, warranties,
    guarantees or liability of any kind. Use of the software is subject to the terms and conditions of the Clear BSD
@@ -549,7 +549,7 @@ Figure 12 shows example code for sccp_read_register(). The sccp_read_register() 
 ::
 
    *
-   ******************************************************************************************************************/
+   **************************/
    uint8_t sccp_read_register(uint8_t cmd, uint8_t* buf)
    {
      uint8_t present = send_reset_pulse();
@@ -578,7 +578,7 @@ Figure 13 shows example code for get_crc(). The get_crc() function returns the e
 
 ::
 
-   /*****************************************************************************************************************
+   /*************************
    Copyright © 2023 by Analog Devices, Inc. All rights reserved. This software is proprietary to Analog Devices, Inc.
    and its licensors. This software is provided on an "as is" basis without any representations, warranties,
    guarantees or liability of any kind. Use of the software is subject to the terms and conditions of the Clear BSD
@@ -590,7 +590,7 @@ Figure 13 shows example code for get_crc(). The get_crc() function returns the e
 ::
 
    *
-   ******************************************************************************************************************/
+   **************************/
    uint8_t get_crc(uint8_t* buf)
    {
      uint8_t byte, bit;
@@ -682,7 +682,7 @@ Outline of sccp_do_class():
 
 ::
 
-   /*****************************************************************************************************************
+   /*************************
    Copyright © 2023 by Analog Devices, Inc. All rights reserved. This software is proprietary to Analog Devices, Inc.
    and its licensors. This software is provided on an "as is" basis without any representations, warranties,
    guarantees or liability of any kind. Use of the software is subject to the terms and conditions of the Clear BSD
@@ -707,7 +707,7 @@ Outline of sccp_do_class():
    *Further this function assumes that the pse sccp information per port is already known.
    *Port_class[n] contains sccp class and type of port n
    *
-   *******************************************************************************************************************/
+   ***********************/
    void sccp_do_class()
    {
      uint8_t atLeastOneClassPort = 0;

@@ -53,7 +53,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD9528 Driver depends on **CONFIG_SPI**
+   The AD9528 Driver depends on CONFIG_SPI
 
 
 ::

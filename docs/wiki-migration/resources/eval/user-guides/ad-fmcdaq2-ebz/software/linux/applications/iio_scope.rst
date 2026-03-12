@@ -1,7 +1,6 @@
 AD-FMCDAQ2-EBZ/ AD-FMCDAQ3-EBZ IIO OSCILLOSCOPE
 ===============================================
 
-
 IIO Oscilloscope
 ================
 
@@ -20,16 +19,8 @@ Installation
 Windows
 ~~~~~~~
 
-.. admonition:: Download
-   :class: download
-
-   Latest releases (goto this page to download the file):
-
-   
-   -  https://github.com/analogdevicesinc/iio-oscilloscope/releases
-   
-
-
+.. image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad-fmcomms2-ebz/downloads#download_iio-oscilloscope
+   :alt: downloads#download_iio-oscilloscope
 
 Linux
 ~~~~~
@@ -38,28 +29,34 @@ To build on an embedded target (e.g. aarch64), we recommend using the :doc:`Kuip
 
 To build on a development host (e.g. x86 laptop or desktop) do the following:
 
--  On Ubuntu or Debian install the following dependencies (see :git-linux_image_ADI-scripts:`adi_update_tools.sh <adi_update_tools.sh#L331>` for a maintained list): ``$ apt-get -y install libglib2.0-dev libgtk-3-dev libgtkdatabox-dev libmatio-dev libfftw3-dev libxml2 libxml2-dev bison flex libavahi-common-dev libavahi-client-dev libcurl4-openssl-dev libjansson-dev cmake libaio-dev libserialport-dev``
--  Install the ``libiio-dev`` package in Debian or Ubuntu or build and install the libiio library from source, by following `these instructions <https://wiki.analog.com/libiio>`_. Make sure you do the final ``make install``.
+#. On Ubuntu or Debian install the following dependencies (see :git-linux_image_ADI-scripts:`adi_update_tools.sh <adi_update_tools.sh#L331>` for a maintained list): ``$ apt-get -y install libglib2.0-dev libgtk-3-dev libgtkdatabox-dev libmatio-dev libfftw3-dev libxml2 libxml2-dev bison flex libavahi-common-dev libavahi-client-dev libcurl4-openssl-dev libjansson-dev cmake libaio-dev libserialport-dev``
+#. Install the ``libiio-dev`` package in Debian or Ubuntu or build and install the libiio library from source, by following `these instructions <libiio#how_to_build_it>`_. Make sure you do the final ``make install``.
 
 .. important::
 
    Users building libiio from source, please use the following branch : :git-libiio:`libiio/tree/libiio-v0 <tree/libiio-v0>`\
 
 
--  Optionally build and install the libad9166-iio and libad9361-iio libraries, by following :doc:`these instructions </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
--  Download the source using git: ``$ git clone :git-iio-oscilloscope:`iio-oscilloscope`
+#. Optionally build and install the libad9166-iio and libad9361-iio libraries, by following :doc:`these instructions </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
+#. Download the source using git: ``$ git clone :git-iio-oscilloscope:`iio-oscilloscope`
    $ cd iio-oscilloscope
    $ git checkout origin/main``
--  Or, `download a zip <https://github.com/analogdevicesinc/iio-oscilloscope/archive/main.zip>`_, and uncompress it: ``$ wget https://github.com/analogdevicesinc/iio-oscilloscope/archive/main.zip
+#. Or, `download a zip <https://github.com/analogdevicesinc/iio-oscilloscope/archive/main.zip>`_, and uncompress it: ``$ wget https://github.com/analogdevicesinc/iio-oscilloscope/archive/main.zip
    $ unzip main.zip
    $ cd iio-oscilloscope``
--  Build and install: ``$ mkdir build && cd build
-   $ cmake ../ && make -j $(nproc)
-   $ sudo make install``
--  If you did not do a ``make install`` of the libiio, the libiio install location needs to be set in your path (i.e. ``PATH=/usr/lib:$PATH"`` or else an error ``"Package libiio not found.."`` will occur.
--  If you don't want to do a ``make install``, you will need to make sure that the most recently built shared libraries can be found, by setting the `LD_LIBRARY_PATH <http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html#AEN77>`_ environmental variable. ``export LD_LIBRARY_PATH=./`` otherwise you may get an error like: ``$ ./osc
-   ./osc: error while loading shared libraries: libosc.so: cannot open shared object file:
-   No such file or directory`` Or, worst case, when you are debugging things, you will see your modified source code, but it will be running/executing the older shared shared object which was loaded (since it didn't find things in the library path).
+
+::
+
+    - Build and install: <code bash>
+
+$ mkdir build && cd build $ cmake ../ && make -j $(nproc) $ sudo make install </code>
+
+::
+
+      - If you did not do a ''make install'' of the libiio, the libiio install location needs to be set in your path (i.e. ''PATH=/usr/lib:$PATH"'' or else an error ''"Package libiio not found.."'' will occur. 
+      - If you don't want to do a ''make install'', you will need to make sure that the most recently built shared libraries can be found, by setting the `LD_LIBRARY_PATH <http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html#AEN77>`_ environmental variable. ''export LD_LIBRARY_PATH=./'' otherwise you may get an error like: <code>
+
+$ ./osc ./osc: error while loading shared libraries: libosc.so: cannot open shared object file: No such file or directory </code> Or, worst case, when you are debugging things, you will see your modified source code, but it will be running/executing the older shared shared object which was loaded (since it didn't find things in the library path).
 
 Ubuntu 20 and Older
 ^^^^^^^^^^^^^^^^^^^
@@ -121,27 +118,32 @@ Running Remote
 
 The application can be used to connect to another platform that has a connected device in order to configure the device and read data from it. You can connect in 3 different ways:
 
--  Manually:
+#. Manually:
 
 .. container:: box bggreen
 
-   This specifies any shell prompt running on the host or target - Run IIO Oscilloscope in remote mode
+   
+   .. note::
+
+      This specifies any shell prompt running on the host or target - Run IIO Oscilloscope in remote mode
 
    
    ::
    
-      > **export OSC_REMOTE=IP address of the remote platform** (old)
-      > **export IIOD_REMOTE=IP address of the remote platform** (new)
-      > **osc**
+      > export OSC_REMOTE=IP address of the remote platform (old)
+      > export IIOD_REMOTE=IP address of the remote platform (new)
+      > osc
    
 
 
--  Settings -> Connect and enter "**ip:**" and then the IP address in the popup window, and click "OK" or "Refresh".
+#. Settings -> Connect and enter "**ip:**" and then the IP address in the popup window, and click "OK" or "Refresh".
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iio_connect_tab.jpg
-   :width: 300px
+   
 
--  Settings -> Connect and click "Refresh" with a blank IP number. If your network supports `zeroconf <http://avahi.org/>`_\  [1]_, you will be connected to the device on the network.
+
+|image1|
+
+#. Settings -> Connect and click "Refresh" with a blank IP number. If your network supports `zeroconf <http://avahi.org/>`_\  [1]_, you will be connected to the device on the network.
 
 The application can be used to connect to another platform that runs no-OS software: :doc:`/wiki-migration/resources/tools-software/no-os-software/iio`
 
@@ -192,7 +194,9 @@ Debug Tab/Plugin
 
 
 
-| === Hardware Specific Tab/Plugins === There may be hardware specific plugins/tabs, specific to the platform you are running on. Here are a few:
+| === Hardware Specific Tab/Plugins ===
+
+There may be hardware specific plugins/tabs, specific to the platform you are running on. Here are a few:
 
 Capture Window
 ~~~~~~~~~~~~~~
@@ -233,7 +237,7 @@ Capture Window
       -  **Frequency domain:** Plots the signal in the frequency domain. Performs a FFT on the signal and displays it.
 
          -  **FFT size:** Selects the size of the FFT for frequency domain plotting
-         -  **Window:** Selects the FFT Window. Selecting a window function is not a simple task. Each window function has its own characteristics and suitability for different applications (some are more frequency accurate, others are more amplitude accurate). To choose a window function, you (the user) must select the most appropriate one. Check the :doc:`details </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope/window_functions>`.
+         -  **Window:** Selects the FFT Window. Selecting a window function is not a simple task. Each window function has its own characteristics and suitability for different applications (some are more frequency accurate, others are more amplitude accurate). To choose a window function, you (the user) must select the most appropriate one. Check the `details <https://wiki.analog.com/iio_oscilloscope/window_functions>`_.
          -  **FFT Average:** Selects the average weight to be applied to the FFT samples.
          -  **PWR Offset:** Selects the offset of the FFT graph.
 
@@ -286,6 +290,9 @@ Fixed markers are designed to have their position moved by the user. Once the fi
 
 To disable the markers select Markers Off from the marker menu.
 
+
+
+
 Saving Captured Data
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -293,6 +300,7 @@ Saving Captured Data
    :alt: IIO Oscilloscope saveas window
    :align: right
    :width: 400px
+
 
 
 | Once the data is captured, it can be saved using one of the following formats:
@@ -306,6 +314,7 @@ Click on File→Save As to open the dialog needed to save the data.
 
 
 
+
 Channel Settings
 ^^^^^^^^^^^^^^^^
 
@@ -314,10 +323,12 @@ Channel Settings
    :align: right
    :width: 250px
 
--  Simple math operation can be applied to the channel data. Right click on the name of a channel listed in the Device list and select Math Settings to open the menu with the math operations.
--  The graph color associated with the channel can be modified. Right click on the name of the channel and select Color Settings to open a color selection panel that will allow you to pick the desired color.
+#. Simple math operation can be applied to the channel data. Right click on the name of a channel listed in the Device list and select Math Settings to open the menu with the math operations.
+#. The graph color associated with the channel can be modified. Right click on the name of the channel and select Color Settings to open a color selection panel that will allow you to pick the desired color.
 
 The settings can be applied only in Time domain.
+
+
 
 Trigger settings
 ^^^^^^^^^^^^^^^^
@@ -344,26 +355,24 @@ The source code for the entire application is at :git-iio-oscilloscope:`github <
 Internals
 ~~~~~~~~~
 
-If you want to make your own plugin, please refer to the :doc:`Internals </wiki-migration/resources/tools-software/linux-software/iio_scope/internals>` page.
+If you want to make your own plugin, please refer to the `Internals <https://wiki.analog.com/iio_scope/internals>`_ page.
 
 More information
 ----------------
 
--  :doc:`AD-FMCOMMS1-EBZ Reference Design </wiki-migration/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz>`
--  :doc:`Linux with HDMI video output on the ZED and ZC702 boards </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`
+-  `AD-FMCOMMS1-EBZ Reference Design <resources/fpga/xilinx/fmc/ad-fmcomms1-ebz>`_
+-  `Linux with HDMI video output on the ZED and ZC702 boards <resources/tools-software/linux-drivers/platforms/zynq>`_
 
-*Need Help?*
-
--  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
--  `Ask a Question <https://ez.analog.com/>`_
-
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
 .. [1]
    also referred to as multicast DNS/DNS-SD service discovery
 
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iio_connect_tab.jpg
+   :width: 300px
 .. |IIO Oscilloscope disconnect plugins| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/plugin_disconnect_button.png
    :width: 400px
 .. |IIO Oscilloscope plot window| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/osc_plot_window.png
    :width: 500px
-
 

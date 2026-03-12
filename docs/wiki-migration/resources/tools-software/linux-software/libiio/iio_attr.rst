@@ -11,7 +11,7 @@ iio_attr
 
 ::
 
-   analog@imhotep:~$ **iio_attr -h**
+   analog@imhotep:~$ iio_attr -h
    Usage:
            iio_attr [OPTION]...    -d [device] [attr] [value]
                                    -c [device] [channel] [attr] [value]
@@ -43,7 +43,7 @@ Look at Context Attributes
 
 ::
 
-   rgetz@brain:~/github/libiio$ **iio_attr -a -C**
+   rgetz@brain:~/github/libiio$ iio_attr -a -C
    Using auto-detected IIO context at URI "usb:3.8.5"
    IIO context with 14 attributes:
    hw_model: Analog Devices PlutoSDR Rev.B (Z7010-AD9364)
@@ -66,7 +66,7 @@ List Devices in a Context
 
 ::
 
-   rgetz@brain:~/github/libiio$ **iio_attr -u usb:3.8.5 -d**
+   rgetz@brain:~/github/libiio$ iio_attr -u usb:3.8.5 -d
    IIO context has 5 devices:
        iio:device0: adm1177, found 0 device attributes
        iio:device1: ad9361-phy, found 18 device attributes
@@ -76,7 +76,7 @@ List Devices in a Context
 
 ::
 
-   rgetz@brain:~/github/libiio$ **iio_attr -u usb:3.8.5 -c**
+   rgetz@brain:~/github/libiio$ iio_attr -u usb:3.8.5 -c
    IIO context has 5 devices:
        iio:device0: adm1177, found 2 channels
        iio:device1: ad9361-phy, found 9 channels
@@ -91,7 +91,7 @@ the ``.`` can be used as a wildcard if you don't know the name.
 
 ::
 
-   rgetz@brain:~/github/libiio$ **iio_attr -u ip:192.168.2.1 -c adm1177 .**
+   rgetz@brain:~/github/libiio$ iio_attr -u ip:192.168.2.1 -c adm1177 .
    dev 'adm1177', channel 'voltage0' (input), attr 'raw', value '771'
    dev 'adm1177', channel 'voltage0' (input), attr 'scale', value '6.433105468'
    dev 'adm1177', channel 'current0' (input), attr 'raw', value '776'
@@ -102,7 +102,7 @@ Read a channel attributes
 
 ::
 
-   rgetz@brain:~/github/libiio$ **iio_attr -u ip:192.168.2.1 -c ad9361-phy RX_LO**
+   rgetz@brain:~/github/libiio$ iio_attr -u ip:192.168.2.1 -c ad9361-phy RX_LO
    dev 'ad9361-phy', channel 'altvoltage0' (output), id 'RX_LO', attr 'external', value '0'
    dev 'ad9361-phy', channel 'altvoltage0' (output), id 'RX_LO', attr 'fastlock_load', value '0'
    dev 'ad9361-phy', channel 'altvoltage0' (output), id 'RX_LO', attr 'fastlock_recall', ERROR: Invalid argument (-22)
@@ -114,7 +114,7 @@ Read a channel attributes
 
 ::
 
-   rgetz@brain:~/github/libiio$ **iio_attr -u ip:192.168.2.1 -c ad9361-phy RX_LO frequency**
+   rgetz@brain:~/github/libiio$ iio_attr -u ip:192.168.2.1 -c ad9361-phy RX_LO frequency
    dev 'ad9361-phy', channel 'altvoltage0' (output), id 'RX_LO', attr 'frequency', value '2400000000'
 
 Write to a channel attribute
@@ -122,7 +122,7 @@ Write to a channel attribute
 
 ::
 
-   rgetz@brain:~/github/libiio$ **iio_attr -u ip:192.168.2.1 -c ad9361-phy RX_LO frequency 2400000100**
+   rgetz@brain:~/github/libiio$ iio_attr -u ip:192.168.2.1 -c ad9361-phy RX_LO frequency 2400000100
    dev 'ad9361-phy', channel 'altvoltage0' (output), id 'RX_LO', attr 'frequency', value '2400000000'
    wrote 11 bytes to frequency
    dev 'ad9361-phy', channel 'altvoltage0' (output), id 'RX_LO', attr 'frequency', value '2400000100'

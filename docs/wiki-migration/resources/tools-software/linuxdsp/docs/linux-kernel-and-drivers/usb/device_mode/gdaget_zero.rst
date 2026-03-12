@@ -36,9 +36,9 @@ On the Yocto, Configure the linux-kernel as below to set the USB controller in G
        [*] USB support  --->
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Gadget only mode)  --->
-                           ** Platform Glue Layer **
+                            Platform Glue Layer 
                    <*>     ADI
-                           ** MUSB DMA mode **
+                            MUSB DMA mode 
                    [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                    <*>   USB Gadget Support  --->

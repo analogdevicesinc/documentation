@@ -106,7 +106,7 @@ Configure kernel with “make menuconfig” (alternatively use “make xconfig�
 
 .. hint::
 
-   The ADM1xxxx I2C driver depends on **CONFIG_I2C**, **SENSORS_PMBUS**, and on **SENSORS_ADM1275**.
+   The ADM1xxxx I2C driver depends on CONFIG_I2C, SENSORS_PMBUS, and on SENSORS_ADM1275.
 
 
 Adding Linux driver support
@@ -142,13 +142,13 @@ Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX, w
    
    ::
    
-      root@raspberrypi:/home/embedded3/Desktop/joram/adm1281# **cd /sys/class/hwmon/**
+      root@raspberrypi:/home/embedded3/Desktop/joram/adm1281# cd /sys/class/hwmon/
       root@raspberrypi:/sys/class/hwmon# ls
       hwmon0  hwmon1  hwmon2
    
-      root@raspberrypi:/sys/class/hwmon# **cd hwmon2**
+      root@raspberrypi:/sys/class/hwmon# cd hwmon2
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **ls -l**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# ls -l
       total 0
       -rw-r--r-- 1 root root 4096 May  8 03:48 curr1_highest
       -r--r--r-- 1 root root 4096 May  8 03:48 curr1_input
@@ -210,7 +210,7 @@ Show device name
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat name**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat name
       adm1281
    
 
@@ -227,7 +227,7 @@ The device supports readings of current, voltage, power, temperature and energy.
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_input**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_input
       15199
    
 
@@ -242,7 +242,7 @@ Show highest read value
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_highest**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_highest
       15199
    
 
@@ -257,7 +257,7 @@ Show high threshold
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_max**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_max
       20893
    
 
@@ -272,7 +272,7 @@ Show low threshold
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_min**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_min
       0
    
 
@@ -287,7 +287,7 @@ Show high threshold alarm
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_max_alarm**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_max_alarm
       0
    
 
@@ -302,7 +302,7 @@ Show low threshold alarm
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_min_alarm**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_min_alarm
       0
    
 
@@ -319,7 +319,7 @@ Some channels, support a label attribute which specifies the name of the channel
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_label**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_label
       vin
    
 
@@ -334,8 +334,8 @@ Set High threshold
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **echo 20206 > in1_max**
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_max**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# echo 20206 > in1_max
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_max
       20205
       root@raspberrypi:/sys/class/hwmon/hwmon2#
    
@@ -351,8 +351,8 @@ Set Low threshold
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **echo 3341 > in1_min**
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_min**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# echo 3341 > in1_min
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_min
       3342
       root@raspberrypi:/sys/class/hwmon/hwmon2#
    
@@ -368,10 +368,10 @@ Reset History
    
    ::
    
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_reset_history**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_reset_history
       0
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **echo 1 > in1_reset_history**
-      root@raspberrypi:/sys/class/hwmon/hwmon2# **cat in1_reset_history**
+      root@raspberrypi:/sys/class/hwmon/hwmon2# echo 1 > in1_reset_history
+      root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_reset_history
       0
       root@raspberrypi:/sys/class/hwmon/hwmon2#
    

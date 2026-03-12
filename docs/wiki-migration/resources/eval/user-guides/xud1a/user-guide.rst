@@ -71,7 +71,7 @@ Hardware
 
    The SDP-S is the only SDP controller which will work with XUD1A.
 
-   | All other SDP controllers (SDP-B, SDP-H1, SDP-K1) are **NOT** compatible.
+   | All other SDP controllers (SDP-B, SDP-H1, SDP-K1) are NOT compatible.
 
 
 Suggested Test Equipment

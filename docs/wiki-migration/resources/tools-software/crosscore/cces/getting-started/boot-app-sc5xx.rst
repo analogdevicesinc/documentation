@@ -39,7 +39,7 @@ To build the application and create a bootable image:
 
 .. tip::
 
-   The **Build Settings** page has several tabs. If not all tabs are visible, use the left/right arrow buttons located beneath the **Manage Configurations...** button to scroll through all available tabs.
+   The Build Settings page has several tabs. If not all tabs are visible, use the left/right arrow buttons located beneath the Manage Configurations... button to scroll through all available tabs.
 
 
 4. On the **Tool Settings** tab, go to the **CrossCore SHARC Loader → General** page and select these settings:

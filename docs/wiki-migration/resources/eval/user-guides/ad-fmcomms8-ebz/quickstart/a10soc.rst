@@ -129,7 +129,7 @@ Messages
          FPGA must be in Early Release mode to program core.
          fpga - loadable FPGA image support
 
-         ** Unable to read file u-boot.scr **
+          Unable to read file u-boot.scr 
          7662488 bytes read in 381 ms (19.2 MiB/s)
          47522 bytes read in 17 ms (2.7 MiB/s)
          FPGA BRIDGES: enable

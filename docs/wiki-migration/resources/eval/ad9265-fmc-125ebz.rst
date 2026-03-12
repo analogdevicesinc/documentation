@@ -3,7 +3,7 @@ EVALUATING THE AD9265 ANALOG-TO-DIGITAL CONVERTER
 
 .. warning::
 
-   \ **NOTE:** Support for the AD9265-fmc is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
+   \ NOTE: Support for the AD9265-fmc is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
 
 
 Preface

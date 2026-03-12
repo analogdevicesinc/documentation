@@ -1,7 +1,6 @@
 FRU EEPROM Utility
 ==================
 
-
 FMC FRU EEPROM Utility
 ======================
 
@@ -15,13 +14,13 @@ In order to better use this data, Analog Devices has written a small utility whi
 
 ::
 
-   **NAME**
+   NAME
           fru-dump - print and manipulate FRU file information
 
-   **SYNOPSIS**
+   SYNOPSIS
           fru-dump [-b] [-c] [-p] [-o OUTPUT_FILE] [-s SERIAL_NUMBER] [-d DATE] [-i ] INPUT_FILE
 
-   **DESCRIPTION**
+   DESCRIPTION
 
    dump information about FRU files for FMC Cards
      file options
@@ -56,7 +55,7 @@ Finding the eeprom
    
    ::
    
-      # **find /sys -name eeprom**
+      # find /sys -name eeprom
       /sys/bus/i2c/devices/0-0051/eeprom
       #
    
@@ -74,7 +73,7 @@ Dump FRU Board Information
    
    ::
    
-      # **fru-dump -i /sys/bus/i2c/devices/0-0051/eeprom -b**
+      # fru-dump -i /sys/bus/i2c/devices/0-0051/eeprom -b
       read 256 bytes from /sys/bus/i2c/devices/0-0051/eeprom
       Date of Man  : Tue Sep 18 16:30:00 2012
       Manufacture  : Analog Devices
@@ -95,7 +94,7 @@ Dump FRU Power Information
    
    ::
    
-      # **fru-dump -i /sys/bus/i2c/devices/0-0051/eeprom -p**
+      # fru-dump -i /sys/bus/i2c/devices/0-0051/eeprom -p
       read 256 bytes from /sys/bus/i2c/devices/0-0051/eeprom
       DC Load
         Output number: 0 (P1 VADJ)
@@ -158,7 +157,7 @@ Dump FRU Connector Information
    
    ::
    
-      # **fru-dump -i /sys/bus/i2c/devices/0-0051/eeprom -c**
+      # fru-dump -i /sys/bus/i2c/devices/0-0051/eeprom -c
       read 256 bytes from /sys/bus/i2c/devices/0-0051/eeprom
       Single Width Card
       P1 is LPC
@@ -181,7 +180,7 @@ A tuning (or calibration) parameter for the related board can be written to the 
    
    ::
    
-      # **fru-dump -i /sys/bus/i2c/devices/0-0051/eeprom -o /sys/bus/i2c/devices/0-0051/eeprom -t 0b10db**
+      # fru-dump -i /sys/bus/i2c/devices/0-0051/eeprom -o /sys/bus/i2c/devices/0-0051/eeprom -t 0b10db
       read 256 bytes from /sys/bus/i2c/devices/0-0051/eeprom
       changing tuning parameter to 0b10db
    
@@ -191,5 +190,4 @@ For Help
 --------
 
 For help and assistance with the tool, check out :ez:`the EngineerZone <community/linux-device-drivers/linux-software-drivers>`.
-
 

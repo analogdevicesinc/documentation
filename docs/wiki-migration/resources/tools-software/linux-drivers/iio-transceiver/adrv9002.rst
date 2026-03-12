@@ -176,7 +176,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADRV9002 driver depends on **CONFIG_SPI**
+   The ADRV9002 driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -194,7 +194,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
 
            - *- Analog Devices High-Speed AXI ADC driver core
@@ -239,7 +239,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. tip::
 
-   \ **TIP:** An example program which uses the interface can be found here:
+   \ TIP: An example program which uses the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
@@ -384,7 +384,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat name**
+      root:/sys/bus/iio/devices/iio:device1> cat name
       adrv9002-phy
    
 
@@ -554,14 +554,14 @@ For each profile generated, there must be a correspondent stream binary that als
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat stream.bin > stream_config**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat stream.bin > stream_config
       root@analog:/sys/bus/iio/devices/iio:device1#
    
 
 
 .. warning::
 
-   The stream must be loaded **before** loading a new profile! The new stream is only configured in the device after loading the correspondent profile...
+   The stream must be loaded before loading a new profile! The new stream is only configured in the device after loading the correspondent profile...
 
 
 Loading a Profile
@@ -574,7 +574,7 @@ Loading a Profile
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device1# **cat LTE_2_4G_40BW_61MSPS.json > profile_config**
+      root@analog:/sys/bus/iio/devices/iio:device1# cat LTE_2_4G_40BW_61MSPS.json > profile_config
       root@analog:/sys/bus/iio/devices/iio:device1#
    
 
@@ -659,7 +659,7 @@ The ADRV9002 receivers (Rx1/Rx2) feature automatic and manual gain control modes
 
 .. warning::
 
-   This will only work if **gain_control_mode** is set to spi
+   This will only work if gain_control_mode is set to spi
 
 
 Digital Gain Control
@@ -740,7 +740,7 @@ Setting the value:
 
 .. warning::
 
-   This will only work if **digital_gain_control_mode** is set to one of the manual options. Furthermore, the port Enable State must be rf_enabled for this to take effect
+   This will only work if digital_gain_control_mode is set to one of the manual options. Furthermore, the port Enable State must be rf_enabled for this to take effect
 
 
 RSSI and Decimated power
@@ -905,7 +905,7 @@ The Tx attenuation block controls the Tx output power. A Tx gain table with 840 
 
 .. warning::
 
-   This will only work if **gain_control_mode** is set to spi
+   This will only work if gain_control_mode is set to spi
 
 
 NCO frequency
@@ -1341,7 +1341,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
 
 .. hint::
 
-   **Trigger Consumers:**
+   Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
 
@@ -1358,7 +1358,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      root:/sys/bus/iio/devices/triggerY/> cat name
       irqtrig56
    
 
@@ -1375,7 +1375,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
 
 
@@ -1391,7 +1391,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
 

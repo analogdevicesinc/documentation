@@ -141,7 +141,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADL5960 Driver depends on **CONFIG_SPI**
+   The ADL5960 Driver depends on CONFIG_SPI
 
 
 ::
@@ -166,13 +166,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root@analog:~# **cd /sys/bus/iio/devices/**
+      root@analog:~# cd /sys/bus/iio/devices/
    
-      root@analog:/sys/bus/iio/devices# **ls**
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0  iio:device10  iio:device12  iio:device14  iio:device16  iio:device18  iio:device3  iio:device5  iio:device7  iio:device9
       iio:device1  iio:device11  iio:device13  iio:device15  iio:device17  iio:device2   iio:device4  iio:device6  iio:device8  iio_sysfs_trigger
    
-      root@analog:/sys/bus/iio/devices# **grep "" */name**
+      root@analog:/sys/bus/iio/devices# grep "" */name
       iio:device0/name:ams
       iio:device1/name:adrf5720
       iio:device10/name:adl5960
@@ -193,9 +193,9 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       iio:device8/name:adl5960
       iio:device9/name:adl5960
    
-      root@analog:/sys/bus/iio/devices# **cd iio:device7**
+      root@analog:/sys/bus/iio/devices# cd iio:device7
    
-      root@analog:/sys/bus/iio/devices/iio:device7# **ls -al**
+      root@analog:/sys/bus/iio/devices/iio:device7# ls -al
       total 0
       drwxr-xr-x 3 root root    0 Mar 30 11:21 .
       drwxr-xr-x 5 root root    0 Mar 30 11:21 ..

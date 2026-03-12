@@ -14,7 +14,7 @@ The Interface Write module has the following properties which can be set by the 
 
 .. hint::
 
-   NOTE: Make sure that the interface read and interface write modules that are interacting with each other have the same **Interface number paramter**.
+   NOTE: Make sure that the interface read and interface write modules that are interacting with each other have the same Interface number paramter.
 
 
 Input Pins
@@ -89,7 +89,7 @@ GUI Control Name Compiler Name Function Description
 
 .. hint::
 
-   NOTE: The Periodic mode of operation of interface write for SPI requires some delay to be inserted after the write, the default value of which is set to 1ms. Every successive instance of the module will have an increment in the delay given by (interface number\*delay). This is available as a DSP parameter whose value can be set by writting the value to the particular memory location of the dsp parameter -**InterfaceWrite300_delayLoopCount**.
+   NOTE: The Periodic mode of operation of interface write for SPI requires some delay to be inserted after the write, the default value of which is set to 1ms. Every successive instance of the module will have an increment in the delay given by (interface number\*delay). This is available as a DSP parameter whose value can be set by writting the value to the particular memory location of the dsp parameter -InterfaceWrite300_delayLoopCount.
 
 
 Algorithm Description

@@ -41,7 +41,7 @@ Request for Software Access
 
 .. important::
 
-   Send the following details to this email address: **LEV_CSESupport@analog.com**
+   Send the following details to this email address: LEV_CSESupport@analog.com
 
    
    -  MyAnalog email address

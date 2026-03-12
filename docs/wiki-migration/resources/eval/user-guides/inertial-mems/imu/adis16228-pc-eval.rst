@@ -3,7 +3,7 @@ ADIS16228 EVALUATION ON A PERSONAL COMPUTER
 
 .. note::
 
-   UPDATE NOTICE: This Wiki Guide covers the use of evaluation tools (ADIS16228/PCBZ and EVAL-ADISZ) that are no longer available for purchase, but it remains online to support those who already have these tools. For all new :adi:`adis16228` users, please go to the :adi:`ADIS16228's product page <adis16228>`, then click on :adi:`Evaluation Kits <en/products/mems/accelerometers-special-purpose/adis16228.html#product-evaluationkit>` and then click on the **See All** tab to review a listing of the most current :adi:`adis16228` evaluation tools. Thank you!
+   UPDATE NOTICE: This Wiki Guide covers the use of evaluation tools (ADIS16228/PCBZ and EVAL-ADISZ) that are no longer available for purchase, but it remains online to support those who already have these tools. For all new :adi:`adis16228` users, please go to the :adi:`ADIS16228's product page <adis16228>`, then click on :adi:`Evaluation Kits <en/products/mems/accelerometers-special-purpose/adis16228.html#product-evaluationkit>` and then click on the See All tab to review a listing of the most current :adi:`adis16228` evaluation tools. Thank you!
 
 
 The :doc:`Vibration Evaluation Program </wiki-migration/resources/eval/user-guides/inertial-mems/imu/vibrationevaluationprogram>` enables PC-based evaluation of the :adi:`ADIS16228CMLZ <ADIS16228>`, using the following hardware: :adi:`ADIS16228/PCBZ <en/mems-sensors/mems-accelerometers/adis16228/products/EVAL-ADIS16228/eb.html>` breakout board and :adi:`EVAL-ADIS` evaluation system. Please the following picture for an example of how to use these two devices together for this purpose.
@@ -28,7 +28,7 @@ EVAL-ADIS2 Vibration Evaluation Software User Guide
 
 .. warning::
 
-   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**.
+   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
 
 .. warning::
@@ -119,7 +119,7 @@ Click on **Device**, located on the left side of the Menu bar, at the top of the
    Some menu options may appear "grayed out." This normal and indicates that some of the software features may not be available for the selected device type.
 
    
-   For example, all of the **Network** options presently only apply :adi:`ADIS16229`.
+   For example, all of the Network options presently only apply :adi:`ADIS16229`.
 
 
 Data Collection Mode
@@ -187,7 +187,7 @@ Use the following two steps to write a value to the register. 1. Enter the data 
 
 .. important::
 
-   The **Register Access** form **always** writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format **before** clicking the **Write Register** button.
+   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
 
 
 Single-Command Options
@@ -218,7 +218,7 @@ Select boxes in the matrix and enter values that are associated with the magnitu
 
 .. important::
 
-   The same results can be achieved by issuing individual writes to the respective registers using the **Register Access** window.
+   The same results can be achieved by issuing individual writes to the respective registers using the Register Access window.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_02.png
@@ -428,7 +428,7 @@ EVAL-ADIS2 Vibration Evaluation Software User Guide
 
 .. warning::
 
-   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**.
+   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
 
 .. warning::
@@ -519,7 +519,7 @@ Click on **Device**, located on the left side of the Menu bar, at the top of the
    Some menu options may appear "grayed out." This normal and indicates that some of the software features may not be available for the selected device type.
 
    
-   For example, all of the **Network** options presently only apply :adi:`ADIS16229`.
+   For example, all of the Network options presently only apply :adi:`ADIS16229`.
 
 
 Data Collection Mode
@@ -587,7 +587,7 @@ Use the following two steps to write a value to the register. 1. Enter the data 
 
 .. important::
 
-   The **Register Access** form **always** writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format **before** clicking the **Write Register** button.
+   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
 
 
 Single-Command Options
@@ -618,7 +618,7 @@ Select boxes in the matrix and enter values that are associated with the magnitu
 
 .. important::
 
-   The same results can be achieved by issuing individual writes to the respective registers using the **Register Access** window.
+   The same results can be achieved by issuing individual writes to the respective registers using the Register Access window.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_02.png
@@ -870,7 +870,7 @@ EVAL-ADIS2 Vibration Evaluation Software User Guide
 
 .. warning::
 
-   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**.
+   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
 
 .. warning::
@@ -961,7 +961,7 @@ Click on **Device**, located on the left side of the Menu bar, at the top of the
    Some menu options may appear "grayed out." This normal and indicates that some of the software features may not be available for the selected device type.
 
    
-   For example, all of the **Network** options presently only apply :adi:`ADIS16229`.
+   For example, all of the Network options presently only apply :adi:`ADIS16229`.
 
 
 Data Collection Mode
@@ -1029,7 +1029,7 @@ Use the following two steps to write a value to the register. 1. Enter the data 
 
 .. important::
 
-   The **Register Access** form **always** writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format **before** clicking the **Write Register** button.
+   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
 
 
 Single-Command Options
@@ -1060,7 +1060,7 @@ Select boxes in the matrix and enter values that are associated with the magnitu
 
 .. important::
 
-   The same results can be achieved by issuing individual writes to the respective registers using the **Register Access** window.
+   The same results can be achieved by issuing individual writes to the respective registers using the Register Access window.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_02.png
@@ -1275,7 +1275,7 @@ EVAL-ADIS2 Vibration Evaluation Software User Guide
 
 .. warning::
 
-   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**.
+   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
 
 .. warning::
@@ -1366,7 +1366,7 @@ Click on **Device**, located on the left side of the Menu bar, at the top of the
    Some menu options may appear "grayed out." This normal and indicates that some of the software features may not be available for the selected device type.
 
    
-   For example, all of the **Network** options presently only apply :adi:`ADIS16229`.
+   For example, all of the Network options presently only apply :adi:`ADIS16229`.
 
 
 Data Collection Mode
@@ -1434,7 +1434,7 @@ Use the following two steps to write a value to the register. 1. Enter the data 
 
 .. important::
 
-   The **Register Access** form **always** writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format **before** clicking the **Write Register** button.
+   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
 
 
 Single-Command Options
@@ -1465,7 +1465,7 @@ Select boxes in the matrix and enter values that are associated with the magnitu
 
 .. important::
 
-   The same results can be achieved by issuing individual writes to the respective registers using the **Register Access** window.
+   The same results can be achieved by issuing individual writes to the respective registers using the Register Access window.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_02.png
@@ -1679,7 +1679,7 @@ EVAL-ADIS2 Vibration Evaluation Software User Guide
 
 .. warning::
 
-   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is **no longer supported**.
+   The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
 
 .. warning::
@@ -1770,7 +1770,7 @@ Click on **Device**, located on the left side of the Menu bar, at the top of the
    Some menu options may appear "grayed out." This normal and indicates that some of the software features may not be available for the selected device type.
 
    
-   For example, all of the **Network** options presently only apply :adi:`ADIS16229`.
+   For example, all of the Network options presently only apply :adi:`ADIS16229`.
 
 
 Data Collection Mode
@@ -1838,7 +1838,7 @@ Use the following two steps to write a value to the register. 1. Enter the data 
 
 .. important::
 
-   The **Register Access** form **always** writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format **before** clicking the **Write Register** button.
+   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
 
 
 Single-Command Options
@@ -1869,7 +1869,7 @@ Select boxes in the matrix and enter values that are associated with the magnitu
 
 .. important::
 
-   The same results can be achieved by issuing individual writes to the respective registers using the **Register Access** window.
+   The same results can be achieved by issuing individual writes to the respective registers using the Register Access window.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_02.png

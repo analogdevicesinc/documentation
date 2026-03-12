@@ -59,7 +59,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ad9517 Driver depends on **CONFIG_SPI**
+   The ad9517 Driver depends on CONFIG_SPI
 
 
 ::

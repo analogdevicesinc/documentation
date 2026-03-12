@@ -13,12 +13,12 @@ You don't have to be a software engineer in order to leverage device drivers and
 
 .. tip::
 
-   **Update:** The first version of this tutorial was published in early 2020, after test driving the setup with a few select field engineers. A lot has happened since then:
+   Update: The first version of this tutorial was published in early 2020, after test driving the setup with a few select field engineers. A lot has happened since then:
 
    
    -  :doc:`ADI Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` has matured considerably, with broad support for ADI devices and popular processor and FPGA development platforms.
    -  The very popular :adi:`ADXL355 Pmod <eval-adxl355-pmdz>` would have been used initially, but the Linux driver had not been upstreamed yet. It has since been released, and is being added as an option for this tutorial. (The original ADXL345 / Digilent Pmod-ACL is still included.)
-   -  LibIIO now supports HWMON devices (if these terms aren't familiar, you'll learn about them soon), enabling the use of the absolute **best** device to start learning about embedded Linux systems: the LM75 temperature sensor. It is an industry standard with several manufacturers, including the :adi:`Maxim LM75 <LM75>` and ADI's variant, :adi:`ADT75`
+   -  LibIIO now supports HWMON devices (if these terms aren't familiar, you'll learn about them soon), enabling the use of the absolute best device to start learning about embedded Linux systems: the LM75 temperature sensor. It is an industry standard with several manufacturers, including the :adi:`Maxim LM75 <LM75>` and ADI's variant, :adi:`ADT75`
    
    So while it's genereally not a good idea to have too many options in a basic tutorial, we felt that having a couple was appropriate here, incuding one that is very low cost (the LM75).
    
@@ -97,7 +97,7 @@ In theory, any Raspberry Pi should work, although it is probably best to use a m
 
 .. note::
 
-   **To Do:** Add detailed pictures of ADXL355 Pmod and options for LM75 and ADT75. In the meantime - it's straightforward:
+   To Do: Add detailed pictures of ADXL355 Pmod and options for LM75 and ADT75. In the meantime - it's straightforward:
 
    
    -  The ADXL355 Pmod plugs into the same P1 location on the PMD-RPI-INTZ
@@ -385,7 +385,7 @@ Now it's (almost) trivial to grab data from the ADXL345 used in this tutorial, a
 
 .. note::
 
-   **To Do:** Update ADXL345 pyadi-iio example. As of Feb. 2024, the ADXL345 example has a hardcoded ip address. Most newer examples allow the context to be passed via command line argument, but in the meantime change line 10 from:
+   To Do: Update ADXL345 pyadi-iio example. As of Feb. 2024, the ADXL345 example has a hardcoded ip address. Most newer examples allow the context to be passed via command line argument, but in the meantime change line 10 from:
 
    
    ::

@@ -4,9 +4,9 @@ ADMV96S-WGBE-EK1 Hardware User Guide
 .. important::
 
    
-   **Important Notice: Migration to GitHub Pages**
+   Important Notice: Migration to GitHub Pages
    
-   We are in the process of migrating our documentation to **Analog Devices System Level Documentation - GitHub Pages**.
+   We are in the process of migrating our documentation to Analog Devices System Level Documentation - GitHub Pages.
    
    The latest version of this page can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/admv96s-wgbe-ek1/index.html
 

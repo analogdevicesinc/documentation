@@ -3,7 +3,7 @@ CN0583 Smoke Detector Module User Guide
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0583-som/index.html
@@ -113,16 +113,16 @@ The SOM has 28 castellated "pins" divided into two 14-pin rows and arranged in a
 
 .. important::
 
-   Do not set **P0.0** and **P0.1** to any other function besides **SWDIO** and **SWDCLK** to avoid issues with reprogramming the SOM using the carrier board.
+   Do not set P0.0 and P0.1 to any other function besides SWDIO and SWDCLK to avoid issues with reprogramming the SOM using the carrier board.
 
    
    If this was accidentally done and there is a need to upload a new firmware, the flash memory of the :adi:`MAX32660` must first be erased prior to reprogramming. To do this, install `Maxim Microcontrollers SDK <https://analog-devices-msdk.github.io/msdk/USERGUIDE/#installation>`_ and `Visual Studio Code <https://analog-devices-msdk.github.io/msdk/USERGUIDE/#getting-started-with-visual-studio-code>`_, then perform the following steps:
    
    -  Create a new project from MaximSDK’s examples for :adi:`MAX32660` in Visual Studio Code.
-   -  Build this project with the ‘\ **build**\ ’ task in Visual Studio Code.
-   -  Connect the **RESET** pin of the SOM to any **GND** pin.
-   -  Run the ‘\ **erase flash**\ ’ task in Visual Studio Code. (You may see a 'target not halted' message on the terminal, but this is expected).
-   -  Disconnect the **RESET** pin of the SOM from **GND**.
+   -  Build this project with the ‘\ build\ ’ task in Visual Studio Code.
+   -  Connect the RESET pin of the SOM to any GND pin.
+   -  Run the ‘\ erase flash\ ’ task in Visual Studio Code. (You may see a 'target not halted' message on the terminal, but this is expected).
+   -  Disconnect the RESET pin of the SOM from GND.
    -  Power cycle the SOM by disconnecting the power source, and then immediately reconnecting it afterward.
    
 
@@ -233,7 +233,7 @@ JP1    BATTERY       CR123A battery.
 
 .. important::
 
-   Only the input power source of the SOM can be switched using jumper **JP1**. The onboard programmer/debugger on the carrier board will always draw power from the USB connector.
+   Only the input power source of the SOM can be switched using jumper JP1. The onboard programmer/debugger on the carrier board will always draw power from the USB connector.
 
 
 Push Buttons

@@ -458,7 +458,7 @@ Support
 
 .. hint::
 
-   **Questions?** Feel free to ask your questions in EngineerZone support forums.
+   Questions? Feel free to ask your questions in EngineerZone support forums.
 
    
    -  :ez:`FPGA Reference Design <community/fpga>`

@@ -64,9 +64,9 @@ There are two main c files under the driver/sram/adi directory.
 
 ::
 
-   ; **''sram.c''**
+   ; ''sram.c''
    : will create a /proc/sraminfo in filesytem, control/monitor the sram memory, use the command "#cat /proc/sraminfo"
-   ; **''sram_mmap.c''**
+   ; ''sram_mmap.c''
    : one example to use the sram framework, allocate memory from the specified pool defined in dts, and then free the memory
 
 Reserved SRAM pools in dts file

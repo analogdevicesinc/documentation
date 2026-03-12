@@ -101,7 +101,7 @@ by placing a scope on the GPO0 and GPO1 pins, you can see the levels switch, as 
 
 .. hint::
 
-   While this shows the Rx/Tx switching in 30-35ms or so, this is based on **software** control over SPI, running in an interpreted bash shell. Doing things in a C application, would make things faster, and doing things via pin control (via a state machine in the FPGA) can make things sub ~30 μs between Rx and Tx swaps to handle slotted specifications like LTE. IF you need things to go faster - just ask.
+   While this shows the Rx/Tx switching in 30-35ms or so, this is based on software control over SPI, running in an interpreted bash shell. Doing things in a C application, would make things faster, and doing things via pin control (via a state machine in the FPGA) can make things sub ~30 μs between Rx and Tx swaps to handle slotted specifications like LTE. IF you need things to go faster - just ask.
 
 
 OK, someone asked for the C code - it's pretty trivial, just longer. You will need to change the uri, and put in proper error checking.

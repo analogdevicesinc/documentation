@@ -35,7 +35,7 @@ Enable tools on Linux or OSX
 
 ::
 
-   ~/libm2k/build$ **cmake -DENABLE_TOOLS=ON ../**
+   ~/libm2k/build$ cmake -DENABLE_TOOLS=ON ../
 
 Enable tools on Windows
 -----------------------
@@ -924,7 +924,7 @@ First terminal
    Checking uart-terminal...
 
    m2kcli uart-terminal: 43847 is running
-   Done, connect to **/dev/pts/3** to access the uart terminal
+   Done, connect to /dev/pts/3 to access the uart terminal
 
    Press any key to close the connection
 
@@ -934,7 +934,7 @@ Second terminal
 
 ::
 
-   $ picocom -b 115200 -r -l **/dev/pts/3**
+   $ picocom -b 115200 -r -l /dev/pts/3
 
    port is        : /dev/pts/3
    flowcontrol    : none

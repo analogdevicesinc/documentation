@@ -234,7 +234,7 @@ Click **Graph** (Label 1 in Figure 16) to show the measured data and its corresp
 
 .. note::
 
-   User may opt to hide the other displays by clicking on **Analysis** and/or the **yellow arrow** located on the lower left of the panel.
+   User may opt to hide the other displays by clicking on Analysis and/or the yellow arrow located on the lower left of the panel.
 
 
 *\*\* Configuration \*\**

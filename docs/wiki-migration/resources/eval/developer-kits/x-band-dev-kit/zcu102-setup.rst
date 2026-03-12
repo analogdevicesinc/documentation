@@ -31,7 +31,7 @@ SD Card Setup
 
    .. warning::
 
-      \ **If your computer encrypts removable media for security purposes, it's easiest to use a personal computer to do this step.**\
+      \ If your computer encrypts removable media for security purposes, it's easiest to use a personal computer to do this step.\
 
 
    `ZCU102 Configuration Files, 100MHz VCXO <https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_configuration_files_100mhz_vcxo.zip>`_

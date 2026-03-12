@@ -11,7 +11,7 @@ iio_readdev
 
 ::
 
-   analog@imhotep:~$ **iio_readdev -h**
+   analog@imhotep:~$ iio_readdev -h
    Usage:
        iio_readdev [-n <hostname>] [-t <trigger>] [-T <timeout-ms>] [-b <buffer-size>] [-s <samples>] <iio_device> [<channel> ...]
 

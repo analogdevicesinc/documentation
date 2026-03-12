@@ -69,7 +69,7 @@ Once this is done, you can have a quick look, to see how big things are.
 
 ::
 
-   rgetz@curly:~/logos$ **readelf -s Analog_Devices_Logo | grep Analog_Devices**
+   rgetz@curly:~/logos$ readelf -s Analog_Devices_Logo | grep Analog_Devices
        42: 0000000000601040 34900 OBJECT  LOCAL  DEFAULT   24 Analog_Devices_logo_data
        43: 00000000006098a0   672 OBJECT  LOCAL  DEFAULT   24 Analog_Devices_logo_clut
 
@@ -82,7 +82,7 @@ Using U-Boot's Logo Tools
 
 ::
 
-   rgetz@curly:~/u-boot$ **make tools-all HOST_TOOLS_ALL=y**
+   rgetz@curly:~/u-boot$ make tools-all HOST_TOOLS_ALL=y
 
 This will provide you with multple tools which you can used to create the header files.
 
@@ -93,7 +93,7 @@ bmp_logo
 
 ::
 
-   rgetz@curly:~/u-boot$ **~/u-boot/tools/bmp_logo Analog_Devices_Logo.bmp > Analog_Devices_Logo_bmp.h**
+   rgetz@curly:~/u-boot$ ~/u-boot/tools/bmp_logo Analog_Devices_Logo.bmp > Analog_Devices_Logo_bmp.h
 
 easylogo
 ~~~~~~~~
@@ -102,11 +102,11 @@ easylogo
 
 ::
 
-   rgetz@curly:~/fooo$ **ppmtotga -rgb -norle Analog_Devices_Logo.ppm > Analog_Devices_Logo.tga**
-   rgetz@curly:~/fooo$ **~/u-boot/tools/easylogo/easylogo Analog_Devices_Logo.tga -r Analog_Logo Analog_Devices_Logo_tga.h**
+   rgetz@curly:~/fooo$ ppmtotga -rgb -norle Analog_Devices_Logo.ppm > Analog_Devices_Logo.tga
+   rgetz@curly:~/fooo$ ~/u-boot/tools/easylogo/easylogo Analog_Devices_Logo.tga -r Analog_Logo Analog_Devices_Logo_tga.h
    Using 24-bit RGB888 Output Fromat
    Doing 'Analog_Devices_Logo_tga.h' (Analog_Logo) from 'Analog_Devices_Logo.tga'...LSS
-   rgetz@curly:~/fooo$ **~/u-boot/tools/easylogo/easylogo Analog_Devices_Logo.tga -r -g Analog_Logo Analog_Devices_Logo_tga_zip.h**
+   rgetz@curly:~/fooo$ ~/u-boot/tools/easylogo/easylogo Analog_Devices_Logo.tga -r -g Analog_Logo Analog_Devices_Logo_tga_zip.h
    Using 24-bit RGB888 Output Fromat
    Compressing with gzip
    Doing 'Analog_Devices_Logo_tga_zip.h' (Analog_Logo) from 'Analog_Devices_Logo.tga'...LSS
@@ -115,7 +115,7 @@ Using the gzip version, does require a little more processing on the target (to 
 
 ::
 
-   rgetz@curly:~/fooo$ **readelf -s Analog_Devices_Logo | grep Analog -i**
+   rgetz@curly:~/fooo$ readelf -s Analog_Devices_Logo | grep Analog -i
        41: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS Analog_Devices_Logo.c
        59: 00000000006032c0    32 OBJECT  GLOBAL DEFAULT   24 Analog_Logo
        64: 0000000000601040  8805 OBJECT  GLOBAL DEFAULT   24 DEF_ANALOG_LOGO_DATA

@@ -13,7 +13,7 @@ To keep production cost of the ADALM1000 board low, certain tradeoffs were made.
 
 .. important::
 
-   \ **One quick note of caution before proceeding!**\
+   \ One quick note of caution before proceeding!\
 
 
 Before building any circuits that generate or operate from power supplies outside the native 0 to 5 V range of the ADALM1000 you need to protect the analog inputs when in Hi-Z or Split I/O modes and extend the usable range of voltages. There are large protection diodes connected between the analog I/O pins and ground and the internal +5 volt power supply which are generally reverse biased when the voltage on the pins is in the range of 0 to 5 V. If the voltage on the pin were to go more than a forward diode voltage beyond this range the diodes will possibly conduct large currents.

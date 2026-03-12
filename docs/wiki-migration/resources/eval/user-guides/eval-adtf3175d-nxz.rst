@@ -172,8 +172,8 @@ Terms
 
 ::
 
-   ; **FOI** : Field of Illumination
-   ; **FOV** : Field of View
-   ; **FPS** : Frames per Second
-   ; **SOM** : System On Module
-   ; **VCSEL** : Vertical-Cavity Surface-Emitting Laser
+   ; FOI : Field of Illumination
+   ; FOV : Field of View
+   ; FPS : Frames per Second
+   ; SOM : System On Module
+   ; VCSEL : Vertical-Cavity Surface-Emitting Laser

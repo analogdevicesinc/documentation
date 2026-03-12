@@ -79,7 +79,7 @@ The :adi:`AD9680-1250EBZ <AD9680>`/:adi:`AD9234-1000EBZ <AD9234>` can be evaluat
 
 .. important::
 
-   \ **Note: ADS7-V1EBZ has been obsoleted and is NOT recommended for new evaluations.**\
+   \ Note: ADS7-V1EBZ has been obsoleted and is NOT recommended for new evaluations.\
 
 
    |image4|
@@ -210,7 +210,7 @@ Software Setup
    
    .. note::
 
-      ACE Plugin currently supporting only **Nprime = 16**.
+      ACE Plugin currently supporting only Nprime = 16.
 
    
    
@@ -414,12 +414,12 @@ Sample Configuration 1: Full Bandwidth Mode
 
       .. note::
 
-         Note: ACE will automatically load the default full bandwidth configuration and can skip to step 7 to proceed to **Analysis** tab to capture data.
+         Note: ACE will automatically load the default full bandwidth configuration and can skip to step 7 to proceed to Analysis tab to capture data.
 
 
 
 
-   -  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the **Read All button**.
+   -  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the Read All button.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_read_all.jpg
       :align: center
@@ -430,7 +430,7 @@ Sample Configuration 1: Full Bandwidth Mode
       \ *Figure 20. Read All Button*\
 
 
-   -  Set the **PLL Control** serial lane rate to 6.25 Gbps to 12.5 Gbps and click **Apply Changes**. The decision to use Maximum Lane Rate (6.25 Gbps to 12.5 Gbps) or Low Lane Rate (3.125 Gbps to 6.25 Gbps) should be based on the **Lane Line Rate** that was calculated in :doc:`Configuring the Board </wiki-migration/resources/eval/ad9680-1000ebz>` section.
+   -  Set the PLL Control serial lane rate to 6.25 Gbps to 12.5 Gbps and click Apply Changes. The decision to use Maximum Lane Rate (6.25 Gbps to 12.5 Gbps) or Low Lane Rate (3.125 Gbps to 6.25 Gbps) should be based on the Lane Line Rate that was calculated in :doc:`Configuring the Board </wiki-migration/resources/eval/ad9680-1000ebz>` section.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_pll_control.jpg
       :align: center
@@ -441,7 +441,7 @@ Sample Configuration 1: Full Bandwidth Mode
       \ *Figure 21. PLL Control*\
 
 
-   -  Issue a **Data Path Reset** to the AD9680 by clicking its checkbox and clicking **Apply Changes**. The data path reset bit will automatically self clear.
+   -  Issue a Data Path Reset to the AD9680 by clicking its checkbox and clicking Apply Changes. The data path reset bit will automatically self clear.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_data_path_reset.jpg
       :align: center
@@ -452,7 +452,7 @@ Sample Configuration 1: Full Bandwidth Mode
       \ *Figure 22. Data Path Reset*\
 
 
-   -  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.
+   -  If the PLL Locked indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_link_control.jpg
       :align: center
@@ -463,7 +463,7 @@ Sample Configuration 1: Full Bandwidth Mode
       \ *Figure 23. PLL Lock, Link Power Down*\
 
 
-   -  Enable the **Link Control** again and **Apply Changes**.
+   -  Enable the Link Control again and Apply Changes.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_link_enable.jpg
       :align: center
@@ -474,7 +474,7 @@ Sample Configuration 1: Full Bandwidth Mode
       \ *Figure 24. PLL Lock, Link Enable*\
 
 
-   -  Click **Apply** at **AD9680 Configuration** and then **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.
+   -  Click Apply at AD9680 Configuration and then Proceed to Analysis. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on FFT and Run Once to capture once.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_proceed_to_analysis.jpg
       :align: center
@@ -501,7 +501,7 @@ Sample Configuration 1: Full Bandwidth Mode
 
    
 
-   -  **Channel A** and **Channel B** can be selected individually to display their **FFTs**.
+   -  Channel A and Channel B can be selected individually to display their FFTs.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_channel.jpg
       :align: center
@@ -523,7 +523,7 @@ Sample Configuration 1: Full Bandwidth Mode
       \ *Figure 28. Example Input to Channel A*\
 
 
-   -  To save the FFT plot, click on **Export** button at **Analysis Results** tab and save it to a location of choice.
+   -  To save the FFT plot, click on Export button at Analysis Results tab and save it to a location of choice.
 
 
 
@@ -726,7 +726,7 @@ Sample Configuration 2: Two ADCs Plus Two DDCs, Decimate by 4
 
 
 
-      -  Change the **DDC Soft Reset** to **Normal Operation** in dropdown menu, and click **Apply Changes**. And then click on **Proceed to Analysis**.
+      -  Change the DDC Soft Reset to Normal Operation in dropdown menu, and click Apply Changes. And then click on Proceed to Analysis.
 
       .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_soft_reset_enable.jpg
          :align: center
@@ -737,8 +737,8 @@ Sample Configuration 2: Two ADCs Plus Two DDCs, Decimate by 4
          \ *Figure 44. DDC Soft Reset - Normal Operation*\
 
 
-      -  In **Analysis** tool, run a capture once. DDC0 can be selected from Channel A and DDC1 can be selected from Channel B (see figure 45).
-      -  A successful capture is shown below, with a filtered 170 MHz signal inputted on **Channel A / DDC0**. Adjust the amplitude of the input signal so that the fundamental is at the -1.0 dBFS level.
+      -  In Analysis tool, run a capture once. DDC0 can be selected from Channel A and DDC1 can be selected from Channel B (see figure 45).
+      -  A successful capture is shown below, with a filtered 170 MHz signal inputted on Channel A / DDC0. Adjust the amplitude of the input signal so that the fundamental is at the -1.0 dBFS level.
 
       .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_a.jpg
          :align: center

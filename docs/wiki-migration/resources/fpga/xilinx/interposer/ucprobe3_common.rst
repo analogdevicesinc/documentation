@@ -70,7 +70,7 @@ Load and Run the Demonstration Project
 .. tip::
 
    
-   -  In some cases it is possible that the uC-Probe interface will not respond to the commands the first time it is ran. In this situation just stop the interface by pressing the **Stop** button and run it again by pressing the **Play** button.
-   -  After starting the uC-Probe interface wait until the status of the connection with the board displayed on the bottom of the screen is set to **Connected**. It is possible to use the interface only after the status is changed to **Connected** and the data transfer speed displayed next to the connection status is different than 0.
+   -  In some cases it is possible that the uC-Probe interface will not respond to the commands the first time it is ran. In this situation just stop the interface by pressing the Stop button and run it again by pressing the Play button.
+   -  After starting the uC-Probe interface wait until the status of the connection with the board displayed on the bottom of the screen is set to Connected. It is possible to use the interface only after the status is changed to Connected and the data transfer speed displayed next to the connection status is different than 0.
    
 

@@ -33,7 +33,7 @@ SD Card Image and Release Notes
 
 .. warning::
 
-   **Warning: SD Card Write Issues** If your computer has security restrictions imposed by your company's IT department, which prevent you from writing data to SD-cards (or the data is encrypted when written on the SD-card), then consider using a computer that doesn't have such restrictions, or communicating with your IT department to find a solution.
+   Warning: SD Card Write Issues If your computer has security restrictions imposed by your company's IT department, which prevent you from writing data to SD-cards (or the data is encrypted when written on the SD-card), then consider using a computer that doesn't have such restrictions, or communicating with your IT department to find a solution.
 
 
 Imaging your SD Card

@@ -64,7 +64,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADAR1000 driver depends on **CONFIG_SPI**
+   The ADAR1000 driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -82,7 +82,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
 
            <*>   Analog Devices ADAR1000 Beamformer driver
@@ -111,11 +111,11 @@ out_voltage0\_[…]: targets TX1 out_voltage1\_[…]: targets TX2
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0  iio:device1  iio:device2  iio:device3
    
-      root:/sys/bus/iio/devices> **cd iio:device0**
+      root:/sys/bus/iio/devices> cd iio:device0
    
       root:/sys/bus/iio/devices/iio:device1# ls -l
       total 0
@@ -221,7 +221,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat name**
+      root:/sys/bus/iio/devices/iio:device0> cat name
       adar1000
    
 
@@ -430,7 +430,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
 
 .. hint::
 
-   **Trigger Consumers:**
+   Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
 
@@ -447,7 +447,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      root:/sys/bus/iio/devices/triggerY/> cat name
       irqtrig56
    
 
@@ -464,7 +464,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
 
 
@@ -480,7 +480,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
 

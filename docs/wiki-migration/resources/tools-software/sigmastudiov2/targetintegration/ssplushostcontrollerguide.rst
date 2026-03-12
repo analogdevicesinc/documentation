@@ -168,7 +168,7 @@ The system files can be exported manually after a schematic is compiled. Once th
 
 .. note::
 
-   The **Action -> Export System Files** menu item is inactive if the Schematic is not compiled after any modifications.
+   The Action -> Export System Files menu item is inactive if the Schematic is not compiled after any modifications.
 
 
 The name of system files and the folder to which it can be saved is to be decided by the user. The files contain code, parameter and version information to be sent to the SHARC Target. The files should be freshly generated every time the Schematic is modified.
@@ -231,7 +231,7 @@ Only part of the output XML file is shown below in the example.
 
 .. note::
 
-   The *\**xxx_PrcessorSeries_y_Target.xml*** files contain various chunks of host packets, detailing how they should be sent due to the block buffer size limitations of the communication library.
+   The *\xxx_PrcessorSeries_y_Target.xml* files contain various chunks of host packets, detailing how they should be sent due to the block buffer size limitations of the communication library.
 
 
 2.2.4 xxx_DiffDXESchematic_y_Defines.h
@@ -288,7 +288,7 @@ This file gives all the details regarding parameter data for the individual Cell
 
 .. note::
 
-   All the macros in **SigmaStudioFW.h** are not defined and therefore the user can customize and use the header file in the Application.
+   All the macros in SigmaStudioFW.h are not defined and therefore the user can customize and use the header file in the Application.
 
 
 **Example Contents**

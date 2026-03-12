@@ -32,7 +32,7 @@ Each USBi 2.0 device is encoded with a unique part number in its OTP. When the d
 
 .. tip::
 
-   \ **USBi 2.0 Drivers** - The USBi device inherently packages an FTDI FT4222H part inside the custom board. Most Windows systems support the FTDI driver by default. But if the user's system does not recognize the part during connection, then please install the drivers from the `FTDI Website <https://ftdichip.com/drivers/d2xx-drivers/>`_.
+   \ USBi 2.0 Drivers - The USBi device inherently packages an FTDI FT4222H part inside the custom board. Most Windows systems support the FTDI driver by default. But if the user's system does not recognize the part during connection, then please install the drivers from the `FTDI Website <https://ftdichip.com/drivers/d2xx-drivers/>`_.
 
 
 Context Menu

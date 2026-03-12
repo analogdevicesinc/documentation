@@ -65,13 +65,13 @@ Automated On-Target Command Execution (run)
 
 .. note::
 
-   **Short options support status**:
+   Short options support status:
 
    
-   -  **ADZS-SC589-MINI** - v4.0.0 or greater
-   -  **ADZS-SC584-EZLITE** - TBD
-   -  **EV-SC594-SOM** - TBD
-   -  **EV-SC598-SOM** - TBD
+   -  ADZS-SC589-MINI - v4.0.0 or greater
+   -  ADZS-SC584-EZLITE - TBD
+   -  EV-SC594-SOM - TBD
+   -  EV-SC598-SOM - TBD
    
 
 
@@ -429,13 +429,13 @@ Shell Output Redirect (shell)
 
 .. note::
 
-   **Support status**:
+   Support status:
 
    
-   -  **ADZS-SC589-MINI** - v4.0.0 or greater
-   -  **ADZS-SC584-EZLITE** - TBD
-   -  **EV-SC594-SOM** - TBD
-   -  **EV-SC598-SOM** - TBD
+   -  ADZS-SC589-MINI - v4.0.0 or greater
+   -  ADZS-SC584-EZLITE - TBD
+   -  EV-SC594-SOM - TBD
+   -  EV-SC598-SOM - TBD
    
 
 
@@ -476,13 +476,13 @@ Argument Echo (echo)
 
 .. note::
 
-   **Support status**:
+   Support status:
 
    
-   -  **ADZS-SC589-MINI** - v4.0.0 or greater
-   -  **ADZS-SC584-EZLITE** - TBD
-   -  **EV-SC594-SOM** - TBD
-   -  **EV-SC598-SOM** - TBD
+   -  ADZS-SC589-MINI - v4.0.0 or greater
+   -  ADZS-SC584-EZLITE - TBD
+   -  EV-SC594-SOM - TBD
+   -  EV-SC598-SOM - TBD
    
 
 

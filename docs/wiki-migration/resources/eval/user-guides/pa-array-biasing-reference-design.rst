@@ -232,7 +232,7 @@ Hardware
 
 .. important::
 
-   Warning: The PA Array Controller Board was not fully characterized yet. So, we **do not** recommend using the actual amplifiers as a load, but instead, use a 10 nF capacitor.
+   Warning: The PA Array Controller Board was not fully characterized yet. So, we do not recommend using the actual amplifiers as a load, but instead, use a 10 nF capacitor.
 
 
 Firmware

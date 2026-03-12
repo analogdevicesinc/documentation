@@ -143,7 +143,7 @@ But on the slightly more advanced side, see the sections below.
    Depending on the userspace image that is being used, the network cards may [or may not get a DHCP address]. This is because there is a NetworkManager instance that handles this automatically.
 
    
-   If NetworkManager isn't running, it sometimes works to obtain a DHCP lease via **dhclient eth0** [or **eth1** or **eth2**, depending which MAC is attached to the ADIN PHY].
+   If NetworkManager isn't running, it sometimes works to obtain a DHCP lease via dhclient eth0 [or eth1 or eth2, depending which MAC is attached to the ADIN PHY].
    
 
 
@@ -263,7 +263,7 @@ Example: PHY statistics
 
 .. important::
 
-   make sure to not confuse PHY stats with default stats. Ethtool provides stats from the MAC, via **ethtool --statistics eth0** or **ethtool -S eth0**\
+   make sure to not confuse PHY stats with default stats. Ethtool provides stats from the MAC, via ethtool --statistics eth0 or ethtool -S eth0\
 
 
 ::

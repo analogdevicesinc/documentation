@@ -11,7 +11,7 @@ iio_reg
 
 ::
 
-   analog@imhotep:~$ **iio_reg** -h
+   analog@imhotep:~$ iio_reg -h
    Usage:
 
    iio_reg <device> <register> [<value>]
@@ -28,7 +28,7 @@ The ``iio_reg`` application can also connect to a libiio remote device via IP. P
    
    ::
    
-      > **export IIOD_REMOTE=IP address of the remote platform**
+      > export IIOD_REMOTE=IP address of the remote platform
    
 
 
@@ -39,14 +39,14 @@ An IIO context can have multiple logical devices, and sometimes not all devices 
 
 ::
 
-   # **iio_attr  -u ip:192.168.2.1 -D**
+   # iio_attr  -u ip:192.168.2.1 -D
    IIO context has 4 devices:
        iio:device0, ad9361-phy: found 179 debug attributes
        iio:device1, xadc: found 0 debug attributes
        iio:device2, cf-ad9361-dds-core-lpc: found 1 debug attributes
        iio:device3, cf-ad9361-lpc: found 2 debug attributes
 
-   # **iio_attr  -u ip:192.168.2.1 -D . direct_reg_access**
+   # iio_attr  -u ip:192.168.2.1 -D . direct_reg_access
    dev 'ad9361-phy', debug attr 'direct_reg_access', value :'0x0'
    dev 'cf-ad9361-dds-core-lpc', debug attr 'direct_reg_access', value :'0x90162'
    dev 'cf-ad9361-lpc', debug attr 'direct_reg_access', value :'0x0'

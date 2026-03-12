@@ -248,7 +248,7 @@ Go in the project directory that should be built.
 
    XHIDDENSTART Intel (Click to expand) XHIDDENSTARTSTOP
 
-   Copy the **.sof** and **.sopcinfo** to the project folder.
+   Copy the .sof and .sopcinfo to the project folder.
 
    ::
 
@@ -377,7 +377,7 @@ XHIDDENEND
 
    XHIDDENSTART Xilinx (Click to expand) XHIDDENSTARTSTOP
 
-   Copy the **.xsa** to the project folder and run:
+   Copy the .xsa to the project folder and run:
 
    ::
 
@@ -677,9 +677,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -687,7 +687,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -954,7 +954,7 @@ Go in the project directory that should be built.
 
    XHIDDENSTART Intel (Click to expand) XHIDDENSTARTSTOP
 
-   Copy the **.sof** and **.sopcinfo** to the project folder.
+   Copy the .sof and .sopcinfo to the project folder.
 
    ::
 
@@ -1083,7 +1083,7 @@ XHIDDENEND
 
    XHIDDENSTART Xilinx (Click to expand) XHIDDENSTARTSTOP
 
-   Copy the **.xsa** to the project folder and run:
+   Copy the .xsa to the project folder and run:
 
    ::
 
@@ -1383,9 +1383,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -1393,7 +1393,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -1660,7 +1660,7 @@ Go in the project directory that should be built.
 
    XHIDDENSTART Intel (Click to expand) XHIDDENSTARTSTOP
 
-   Copy the **.sof** and **.sopcinfo** to the project folder.
+   Copy the .sof and .sopcinfo to the project folder.
 
    ::
 
@@ -1789,7 +1789,7 @@ XHIDDENEND
 
    XHIDDENSTART Xilinx (Click to expand) XHIDDENSTARTSTOP
 
-   Copy the **.xsa** to the project folder and run:
+   Copy the .xsa to the project folder and run:
 
    ::
 
@@ -2089,9 +2089,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -2099,7 +2099,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -2120,7 +2120,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. important::
 
-   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE architecture. **Vitis 2025.1 now features automatic debug configuration** - no manual setup required!
+   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE architecture. Vitis 2025.1 now features automatic debug configuration - no manual setup required!
 
 
 **Key Changes in Vitis 2025.1:**
@@ -2197,7 +2197,7 @@ Step 1: Build Project
 
 .. tip::
 
-   **Without DEBUG=1**, you'll experience:
+   Without DEBUG=1, you'll experience:
 
    
    -  Code stepping doesn't work properly (optimized code)
@@ -2236,7 +2236,7 @@ Step 2: Open Vitis IDE
 
 .. note::
 
-   **No manual configuration needed!** The debug configuration is ready to use immediately.
+   No manual configuration needed! The debug configuration is ready to use immediately.
 
 
 Step 3: Verify Configuration (Optional)
@@ -2271,7 +2271,7 @@ Start Debugging
 
 .. warning::
 
-   The **Start Debugging (F5)** button in the Debug panel does not currently work for Vitis 2025.1. Always use **FLOW → Debug** button.
+   The Start Debugging (F5) button in the Debug panel does not currently work for Vitis 2025.1. Always use FLOW → Debug button.
 
 
 **What happens:**
@@ -2368,12 +2368,12 @@ Troubleshooting
 
 .. important::
 
-   The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the **Classic Eclipse IDE** (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
+   The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the Classic Eclipse IDE (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
 
 
 .. warning::
 
-   **Manual debug configuration required** for Classic Eclipse mode. For automatic configuration, upgrade to Vitis 2025.1+.
+   Manual debug configuration required for Classic Eclipse mode. For automatic configuration, upgrade to Vitis 2025.1+.
 
 
 **Why Classic Mode for Vitis 2023.2-2024.x?**
@@ -2573,7 +2573,7 @@ The IDE typically auto-populates these fields:
 
 .. tip::
 
-   If the Application field is empty, click **"Search..."** and browse to ``build/your_project.elf``\
+   If the Application field is empty, click "Search..." and browse to ``build/your_project.elf``\
 
 
 **Stop at 'main':**

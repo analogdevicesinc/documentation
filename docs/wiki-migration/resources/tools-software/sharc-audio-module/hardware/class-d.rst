@@ -84,7 +84,7 @@ The A\ :sup:`2`\ B Class-D Amplifier Module is designed to run off a 12v to 16v 
 
 .. note::
 
-   **The Class-D Amplifier Module is shipped with a US power supply. Here is a universal option:** https://www.digikey.com/products/en?keywords=102-3580-ND\
+   The Class-D Amplifier Module is shipped with a US power supply. Here is a universal option: https://www.digikey.com/products/en?keywords=102-3580-ND\
 
 
 Power Supply Input (P10)

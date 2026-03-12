@@ -3,7 +3,7 @@ AD-FMCADC5-EBZ FMC Board
 
 .. warning::
 
-   \ **NOTE:** Support for the ad-fmcadc5-ebz is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
+   \ NOTE: Support for the ad-fmcadc5-ebz is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
 
 
 .. important::
@@ -90,8 +90,8 @@ The folder contains a vc707.tcl file that you can launch with xmd. You can also 
    [~/github/noos/ad-fmcadc5-ebz/vc707]> xmd -tcl vc707.tcl
    rlwrap: warning: your $TERM is 'xterm' but rlwrap couldn't find it in the terminfo database. Expect some problems.
 
-   ***** Xilinx Microprocessor Debugger (XMD) Engine
-   ***** XMD v2015.2 (64-bit)
+   * Xilinx Microprocessor Debugger (XMD) Engine
+   * XMD v2015.2 (64-bit)
      *** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
        ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 

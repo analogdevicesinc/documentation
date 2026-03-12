@@ -40,7 +40,7 @@ Open the minicom console, If you can see the output from minicom after you reset
 
 ::
 
-   ;''**Terminal1: minicom**''
+   ;''Terminal1: minicom''
    :<code>$ sudo minicom </code>
 
 Flash U-Boot for the First Time
@@ -52,8 +52,8 @@ Connect the ICE-1000 or ICE-2000 to DEBUG port via a USB cable as well as switch
 
 ::
 
-   ;''**Terminal2: Run OpenOCD**''
-   :In a second terminal window launch the OpenOCD and connect to the development board. The  **config file** parameters should be changed if you are using a different interface or target.
+   ;''Terminal2: Run OpenOCD''
+   :In a second terminal window launch the OpenOCD and connect to the development board. The  config file parameters should be changed if you are using a different interface or target.
 
 ::
 
@@ -90,7 +90,7 @@ When success you should see a message similar to the console output below:
 
 ::
 
-   ;''**Terminal3: Loading U-Boot With GDB**''
+   ;''Terminal3: Loading U-Boot With GDB''
    :In a third console window launch GDB and load the U-Boot image to flash:
 
 ::

@@ -75,7 +75,7 @@ Testing
 
 .. warning::
 
-   **<fc #ff0000>Before executing below steps, VADJ must be set to 1.8V.</fc>**
+   <fc #ff0000>Before executing below steps, VADJ must be set to 1.8V.</fc>
 
    
    Instruction for reprogramming the VADJ can be found `here <https://e2e.ti.com/support/power-management-group/power-management/f/power-management-forum/960099/configure-zc706-evaluation-board-vadj-for-3-3v>`_ and `here <https://support.xilinx.com/s/article/56811?language=en_US>`_.
@@ -159,7 +159,7 @@ Messages
          reading devicetree.dtb
          18382 bytes read in 28 ms (640.6 KiB/s)
          reading uramdisk.image.gz
-         ** Unable to read file uramdisk.image.gz **
+          Unable to read file uramdisk.image.gz 
          ## Booting kernel from Legacy Image at 03000000 ...
             Image Name:   Linux-5.4.0-g2d38bef770bc-dirty
             Image Type:   ARM Linux Kernel Image (uncompressed)
@@ -724,7 +724,7 @@ Testing
 
 .. warning::
 
-   **Before executing below steps, VADJ must be set to 1.8V.**
+   Before executing below steps, VADJ must be set to 1.8V.
 
    
    This can be done by changing VADJ jumper (JP18) from default (2V5) to 1V8 (see picture below).
@@ -808,7 +808,7 @@ Messages
          reading devicetree.dtb
          19730 bytes read in 42 ms (458 KiB/s)
          reading uramdisk.image.gz
-         ** Unable to read file uramdisk.image.gz **
+          Unable to read file uramdisk.image.gz 
          ## Booting kernel from Legacy Image at 03000000 ...
             Image Name:   Linux-4.19.0-ga6ef26d
             Image Type:   ARM Linux Kernel Image (uncompressed)

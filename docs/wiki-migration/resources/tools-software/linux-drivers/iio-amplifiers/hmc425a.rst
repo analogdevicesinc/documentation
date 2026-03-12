@@ -100,7 +100,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The HMC425A Driver depends on **CONFIG_GPIOLIB**
+   The HMC425A Driver depends on CONFIG_GPIOLIB
 
 
 ::
@@ -128,12 +128,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
-      root:/sys/bus/iio/devices> **iio:device0**
+      root:/sys/bus/iio/devices> iio:device0
    
-      root:/> **ls -l**
+      root:/> ls -l
       drwxr-xr-x    2 root     root             0 Jan  1 00:00 .
       drwxr-xr-x    3 root     root             0 Jan  1 00:00 ..
       -r--r--r--    1 root     root          4096 Jan  1 00:00 dev
@@ -154,8 +154,8 @@ Show device name
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/iio\:device0/**
-      root:/> **cat name**
+      root:/> cd /sys/bus/iio/devices/iio\:device0/
+      root:/> cat name
       hmc425a
    
 
@@ -174,11 +174,11 @@ Hardware applied gain factor. If shared across all channels, <type>_hardwaregain
    
    ::
    
-      root:/> **cat out_voltage0_hardwaregain**
+      root:/> cat out_voltage0_hardwaregain
       -31.500000 dB
    
-      root:/> **echo -10 > out_voltage0_hardwaregain**
-      root:/> **cat out_voltage0_hardwaregain**
+      root:/> echo -10 > out_voltage0_hardwaregain
+      root:/> cat out_voltage0_hardwaregain
       -10.000000 dB
    
 

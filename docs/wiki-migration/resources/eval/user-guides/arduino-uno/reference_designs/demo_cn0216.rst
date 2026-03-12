@@ -54,7 +54,7 @@ Setting up the Hardware
 
 .. important::
 
-   Extremely important to plug in an acceptable power supply to the power jack for the **EVAL-CN0216-ARDZ**. The boards will not work if you try only to power it from the USB.
+   Extremely important to plug in an acceptable power supply to the power jack for the EVAL-CN0216-ARDZ. The boards will not work if you try only to power it from the USB.
 
 
 -   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the other end into the PC or laptop.

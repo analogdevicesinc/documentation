@@ -40,7 +40,7 @@ In here, one can change the main profile type (LTE, DMR, etc), interface rate, d
 
 .. important::
 
-   Special care for the fields highlighted in channel 2 (also applies for channel 1) that must be set like in the image. The LVDS enforcement is specific to **jupiter**.
+   Special care for the fields highlighted in channel 2 (also applies for channel 1) that must be set like in the image. The LVDS enforcement is specific to jupiter.
 
 
 Once we are done with the settings, time to generate the stream and the profiles files:
@@ -60,7 +60,7 @@ Enable NCO Frequency offset
 
 .. note::
 
-   Enabling this setting, enables the IIO attribute ':doc:`in_voltage0_nco_frequency </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`'. These settings are on by default on **jupiter** default profile.
+   Enabling this setting, enables the IIO attribute ':doc:`in_voltage0_nco_frequency </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`'. These settings are on by default on jupiter default profile.
 
 
 Enable Antenna Diversity
@@ -77,7 +77,7 @@ Enable Antenna Diversity
 
 .. warning::
 
-   This settings is obviously only available if TDD is set in the **Device Configuration** tab
+   This settings is obviously only available if TDD is set in the Device Configuration tab
 
 
 Enable Frequency hopping

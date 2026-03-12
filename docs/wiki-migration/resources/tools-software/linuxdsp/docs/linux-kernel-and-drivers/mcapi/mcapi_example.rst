@@ -163,17 +163,17 @@ Import the mcapi example into CCES
 
 ::
 
-   ; **''Step 1''**
-   : Select the **File** menu and then select the **Import** option from the menu
-   : When the **Import** project window appears:
-   : Click on the **General** folder, then click on the **Existing Projects into Workspace** entry, and click **Next**
-   ; **''Step 2''**
-   : Click the **Select root directory** radio button and then click the **Browse** button
-   : Browse the root folder where you previously cloned the lnxdsp-example and then browse down into the **__//lnxdsp-examples\mcapi\mcapi-message-example\adsp-sc589-ezkit//__** folder
-   : Click **OK** to close the file browser dialog
-   ; **''Step 3''**
-   : The mcapi example projects should appear in the **projects** pane of the **Import** window
-   : Check the entry in the **projects** pane and click **Finish**
+   ; ''Step 1''
+   : Select the File menu and then select the Import option from the menu
+   : When the Import project window appears:
+   : Click on the General folder, then click on the Existing Projects into Workspace entry, and click Next
+   ; ''Step 2''
+   : Click the Select root directory radio button and then click the Browse button
+   : Browse the root folder where you previously cloned the lnxdsp-example and then browse down into the __//lnxdsp-examples\mcapi\mcapi-message-example\adsp-sc589-ezkit//__ folder
+   : Click OK to close the file browser dialog
+   ; ''Step 3''
+   : The mcapi example projects should appear in the projects pane of the Import window
+   : Check the entry in the projects pane and click Finish
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/001_import_mcapi_example_into_cces.png
    :align: center

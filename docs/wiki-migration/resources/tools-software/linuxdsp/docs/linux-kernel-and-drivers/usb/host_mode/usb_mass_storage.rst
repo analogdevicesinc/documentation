@@ -29,9 +29,9 @@ And In the pop-up window of linux-kenel configuration, configure as follows Conf
                    [*]   Enable USB persist by default
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Host only mode)  --->
-                           ** Platform Glue Layer **
+                            Platform Glue Layer 
                    <*>     ADI
-                           ** MUSB DMA mode **
+                            MUSB DMA mode 
                    [N]     Disable DMA (always use PIO)
                    [*]       Inventra
 

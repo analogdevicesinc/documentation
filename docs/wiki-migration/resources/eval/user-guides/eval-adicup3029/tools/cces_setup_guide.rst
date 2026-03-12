@@ -14,7 +14,7 @@ The CCES software development environment for EVAL-ADICUP3029 is based on open s
 
 .. important::
 
-   **CrossCore Embedded Studio** is based on **Eclipse**, but because the MBED platform provides a CMSIS-DAP interface to connect to the board, the EVAL-ADICUP3029 can be used without problems with **IAR Embedded Workbench IDE** or **Keil µVision IDE** as well.
+   CrossCore Embedded Studio is based on Eclipse, but because the MBED platform provides a CMSIS-DAP interface to connect to the board, the EVAL-ADICUP3029 can be used without problems with IAR Embedded Workbench IDE or Keil µVision IDE as well.
 
 
 Pre-Requisites and Requirements List
@@ -117,7 +117,7 @@ The first time you launch CrossCore Embedded Studio, you will be prompted to inp
 .. important::
 
    
-   | **EVAL-ADICUP3029 CrossCore Serial Number**
+   | EVAL-ADICUP3029 CrossCore Serial Number
    | EZK-CCES-QZJ9-PHY8-PWN5-2VEW-YMUB-HUI3-BW01
    
 

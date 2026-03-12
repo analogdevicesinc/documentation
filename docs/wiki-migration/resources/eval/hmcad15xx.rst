@@ -121,7 +121,7 @@ The following procedure below shows how to setup the evaluation board to capture
 
 .. tip::
 
-   Make sure that the state of the board is good (**State=Good**), check on the bottom-left corner.
+   Make sure that the state of the board is good (State=Good), check on the bottom-left corner.
 
 
 -  Configure the initialization wizard settings shown in Figure 3. For :adi:`HMCAD1511-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HMCAD1511.html>`, select **External Clock** as clock source and input **1GHz** on the CLKIN.
@@ -163,13 +163,13 @@ The following procedure below shows how to setup the evaluation board to capture
 
 .. note::
 
-   Note: SDP-H1 is limited to operate **Fin<375MHz**.
+   Note: SDP-H1 is limited to operate Fin<375MHz.
 
 
 .. tip::
 
    
-   -  If Spur_x is equal to Harm_x, then harmonic spectral power is **removed** and is set to -300dBc.
+   -  If Spur_x is equal to Harm_x, then harmonic spectral power is removed and is set to -300dBc.
    -  If the result is a little bit poor due to calculation rounding-off, increase at least 2 bins at harmonic bins settings.
    
 

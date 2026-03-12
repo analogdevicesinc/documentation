@@ -9,7 +9,7 @@ IIO context timeout (libiio)
 
 .. tip::
 
-   Increase **iio_context_set_timeout()** timeout parameter or set to 0 to disables the timeout
+   Increase iio_context_set_timeout() timeout parameter or set to 0 to disables the timeout
 
 
 Buffer handling, sizes and counts
@@ -26,21 +26,21 @@ Typically set to a frame or chunk size suitable for signal processing (e.g. N x 
 
 .. tip::
 
-   \ **Number of discrete buffers are configurable, default is 4.** Can change this using **iio_device_set_kernel_buffers_count()**\
+   \ Number of discrete buffers are configurable, default is 4. Can change this using iio_device_set_kernel_buffers_count()\
 
 
 
 
 .. tip::
 
-   \ **Capturing starts as soon as the buffer is created!**
+   \ Capturing starts as soon as the buffer is created!
 
    | *iio_device_create_buffer()*\
 
 
 .. tip::
 
-   \ **FIFO like behavior new data is dropped in case it's not consumed fast enough!**\
+   \ FIFO like behavior new data is dropped in case it's not consumed fast enough!\
 
 
 IIO buffer DMA max block size
@@ -65,8 +65,8 @@ Set via **/sys/module/industrialio_buffer_dma/parameters/max_block_size** in byt
    
    ::
    
-      root@analog:~# **echo 67108864 > /sys/module/industrialio_buffer_dma/parameters/max_block_size**
-      root@analog:~# **cat /sys/module/industrialio_buffer_dma/parameters/max_block_size**
+      root@analog:~# echo 67108864 > /sys/module/industrialio_buffer_dma/parameters/max_block_size
+      root@analog:~# cat /sys/module/industrialio_buffer_dma/parameters/max_block_size
       67108864
       root@analog:~#
    
@@ -90,7 +90,7 @@ Linux Contiguous Memory Allocator (or CMA)
 
 .. tip::
 
-   Depending on your **IIO buffer DMA max block size** and **number of kernel buffer count** you may need to **CMA size**\
+   Depending on your IIO buffer DMA max block size and number of kernel buffer count you may need to CMA size\
 
 
 Capturing large contiguous buffers

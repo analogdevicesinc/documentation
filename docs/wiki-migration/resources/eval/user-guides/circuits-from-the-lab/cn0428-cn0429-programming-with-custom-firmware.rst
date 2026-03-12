@@ -3,7 +3,7 @@ Programming EVAL-CN0428-EBZ or EVAL-CN0429-EBZ with Custom Firmware
 
 .. important::
 
-   \ **Important note: This page applies to both** :doc:`EVAL-CN0428-EBZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0428>` **and** :doc:`EVAL-CN0429-EBZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0429>`\ **. From here on, these will be referred to generically as "Sensor Board". Any differences are called out specifically.**
+   \ Important note: This page applies to both :doc:`EVAL-CN0428-EBZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0428>` and :doc:`EVAL-CN0429-EBZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0429>`\ . From here on, these will be referred to generically as "Sensor Board". Any differences are called out specifically.
 
    
    Some of the example setup images are of EVAL-CN0428-EBZ, but still apply to both projects.
@@ -82,7 +82,7 @@ Once the modifications are in place and the cable is connected between P12 on th
 
 .. important::
 
-   **Before Proceeding:**
+   Before Proceeding:
 
    
    Both programming options require the following conditions to be met:
@@ -121,7 +121,7 @@ Option 2: IAR programming/debugging (allows debugging)
 ::
 
    *In Linker > Config, check the box to override the default file
-   **Caution: CN0428 and CN0429 use a different linker file**
+   Caution: CN0428 and CN0429 use a different linker file
      * For CN0428 (water quality) choose 'ADuCM355.icf' (shown in the image)
      * For CN0429 (gas sensing), choose the custom linker file, which is distributed together with the M355 software. By default, it is located at: 'C:\Analog Devices\ADuCM355V2.1.0.54\examples\M355_CN0429\iar\ADuCM355_64kSRAM.icf'    (or current version number)
        * *Note: This custom linker file enables use of 64k of SRAM for diagnostics (pulse test)*

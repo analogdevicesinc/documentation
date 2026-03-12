@@ -6,7 +6,7 @@ OVERVIEW
 
 .. note::
 
-   UPDATE NOTICE: This Wiki Guide covers the use of an evaluation tool (EVAL-ADISZ) that is no longer available for purchase, but this Wiki Guide remains online to support those who already have these tools. For all new :adi:`adis16209` users, please go to the :adi:`ADIS16209's product page <adis16209>`, then click on :adi:`Evaluation Kits <en/products/mems/accelerometers-special-purpose/adis16209.html#product-evaluationkit>` and then click on the **See All** tab to review a listing of the most current :adi:`adis16209` evaluation tools. Thank you!
+   UPDATE NOTICE: This Wiki Guide covers the use of an evaluation tool (EVAL-ADISZ) that is no longer available for purchase, but this Wiki Guide remains online to support those who already have these tools. For all new :adi:`adis16209` users, please go to the :adi:`ADIS16209's product page <adis16209>`, then click on :adi:`Evaluation Kits <en/products/mems/accelerometers-special-purpose/adis16209.html#product-evaluationkit>` and then click on the See All tab to review a listing of the most current :adi:`adis16209` evaluation tools. Thank you!
 
 
 The :adi:`ADIS16209` is a high accuracy, digital inclinometer that accommodates both single-axis (±180°) and dual-axis (±90°) operation. The standard supply voltage (3.3 V) and serial peripheral interface (SPI) enable simple integration into most industrial system designs. A simple internal register structure handles all output data and configuration features. This includes access to the following output data: calibrated acceleration, accurate incline angles, power supply, internal temperature, auxiliary analog and digital input signals, diagnostic error flags, and programmable alarm conditions.

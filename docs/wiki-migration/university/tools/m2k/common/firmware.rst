@@ -79,10 +79,10 @@ It's exactly the same as the GUI instructions, copy it, and then eject it, then 
    
    ::
    
-      analog@imhotep:~/m2k$ **cp ./m2k.frm /media/analog/ADALM2000/**
-      analog@imhotep:~/m2k$ **mount | grep ADALM2000 | awk '{print $1}'**
+      analog@imhotep:~/m2k$ cp ./m2k.frm /media/analog/ADALM2000/
+      analog@imhotep:~/m2k$ mount | grep ADALM2000 | awk '{print $1}'
       /dev/sdb1
-      analog@imhotep:~/m2k$ **sudo eject /dev/sdb**
+      analog@imhotep:~/m2k$ sudo eject /dev/sdb
    
 
 

@@ -51,7 +51,7 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN-0271 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0271>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0271\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the `CN-0271 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0271>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0271\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
    |image2|
@@ -68,18 +68,18 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 
 
    |image5|
 
-   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \* Press “Next” to set the installation location for the SDP Drivers.
 
 .. tip::
 
    It is recommended that you install the drivers to the default directory path
 
-   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+   C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
 
    |image6|
@@ -112,7 +112,7 @@ Software Control and Indicator Descriptions
 .. note::
 
    
-   **NOTE:** If the **Enable Real-Time Checkbox** is **checked,** this value is ignored
+   NOTE: If the Enable Real-Time Checkbox is checked, this value is ignored
 
 
 - **Acquire Samples Button**
@@ -183,9 +183,9 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ **NOTE:** If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be found at
 
-   **C:\\Program Files\\Analog Devices\\CN0271\\CN0271.exe**\
+   C:\\Program Files\\Analog Devices\\CN0271\\CN0271.exe\
 
 
 - Click the **Connect/Reconnect Button**. A window with a progress bar will load.

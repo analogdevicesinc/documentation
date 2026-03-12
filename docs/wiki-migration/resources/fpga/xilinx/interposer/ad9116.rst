@@ -181,7 +181,7 @@ The User Interface is divided in 13 sections, described below:
    
    -  If you drag a slider and it doesn't change the value in the numeric indicator next to it, please press Stop and then Play again. At the bottom of the screen, the bytes/sec should be increasing with 200 per second. If they increase only with 50 per second, please press Stop and Play again.
    -  If you receive (Pc Port Open) at the bottom of the screen, please press Stop, close your COM port, reprogram the FPGA, launch the software and try again.
-   -  In **Section 10** please select DIVSEL so that (DCLKIO / 2^n) is between 0.5 MHz and 4 MHz for optimal Calibration results
+   -  In Section 10 please select DIVSEL so that (DCLKIO / 2^n) is between 0.5 MHz and 4 MHz for optimal Calibration results
    
 
 

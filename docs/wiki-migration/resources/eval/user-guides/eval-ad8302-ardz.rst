@@ -111,7 +111,7 @@ Connection Window
 
 .. important::
 
-   Console Log must indicate **AD8302 shield detected with ADiCUP**. If previously downloaded evaluation software cannot connect, go back to `Software Installation <https://wiki.analog.com/>`_ step 2 and **download the evaluation software again** to get the software fix version.
+   Console Log must indicate AD8302 shield detected with ADiCUP. If previously downloaded evaluation software cannot connect, go back to `Software Installation <https://wiki.analog.com/>`_ step 2 and download the evaluation software again to get the software fix version.
 
 
 
@@ -187,11 +187,11 @@ Calibration Window
      * Select the frequency
        * Input to J1 an RF signal of-20dBm
        * Input to J2 an RF signal of-40dBm
-       * Click **Measure**
+       * Click Measure
        * Input to J1 an RF signal of-40dBm
        * Input to J2 an RF signal of-20dBm
-       * Click **Measure**
-       * Click **Calibrate**
+       * Click Measure
+       * Click Calibrate
    * Phase Calibration
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-calibrate_phase-steps.png

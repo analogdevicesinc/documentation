@@ -41,7 +41,7 @@ IMPORTANT NOTES
 
 .. important::
 
-   **Pass Through Mode**: If the master wants to communicate with the slave using the general call address, it can temporarily disable address translation by pulling XORH high. This disables address translation and keeps N1 and N2 on regardless of the activity on the buses. Any translation that may be in progress is stopped immediately when XORH goes high.
+   Pass Through Mode: If the master wants to communicate with the slave using the general call address, it can temporarily disable address translation by pulling XORH high. This disables address translation and keeps N1 and N2 on regardless of the activity on the buses. Any translation that may be in progress is stopped immediately when XORH goes high.
 
 
 .. important::

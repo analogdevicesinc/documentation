@@ -60,7 +60,7 @@ Block Assignments
 
 .. important::
 
-   Power on the **(EVAL-CN0204-SDPZ)** through the triple output power supply and the **(SDP-B Board)** through the PC **SEPARATELY** before connecting the two boards together.
+   Power on the (EVAL-CN0204-SDPZ) through the triple output power supply and the (SDP-B Board) through the PC SEPARATELY before connecting the two boards together.
 
 
 Jumper Settings
@@ -81,7 +81,7 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0204 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0204\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the `CN0204 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_ to the default directory path C:\\Program Files (x86)\\Analog Devices\\CN0204\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
    |image1|
@@ -98,7 +98,7 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 
 
    |image4|
@@ -109,7 +109,7 @@ Installing the Evaluation Software
 
    It is recommended that you install the drivers to the default directory path
 
-   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+   C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
 
    |image5|

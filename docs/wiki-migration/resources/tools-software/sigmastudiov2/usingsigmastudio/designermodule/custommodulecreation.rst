@@ -76,7 +76,7 @@ Below are the said configurable parameters:
 
 .. note::
 
-   The **Advanced Customization** (Custom UI & Custom Code) options are advanced configuration settings and not be used in the regular designer flow. Developers can contact the support team for more information regarding this configuration.
+   The Advanced Customization (Custom UI & Custom Code) options are advanced configuration settings and not be used in the regular designer flow. Developers can contact the support team for more information regarding this configuration.
 
 
 Click Next button.
@@ -403,7 +403,7 @@ Please refer section :doc:`1.1.1 Configuration Tab </wiki-migration/resources/to
 
 .. note::
 
-   The **Advanced Customization** (Custom UI & Custom Code) options are advanced configuration settings and not be used in the regular designer flow. Developers can contact the support team for more information regarding this configuration.
+   The Advanced Customization (Custom UI & Custom Code) options are advanced configuration settings and not be used in the regular designer flow. Developers can contact the support team for more information regarding this configuration.
 
 
 1.2.1 Source and Libraries Tab

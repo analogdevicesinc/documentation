@@ -20,7 +20,7 @@ Root element contains **<dateTime>**, **<version>**, **<schemaVersion>** and one
 
 .. note::
 
-   Multiple sequences can be stored within one Sequence File. Each of the sequence of commands is a mode and is represented as **<page>** element. There can be multiple <page> elements in one Sequence File.
+   Multiple sequences can be stored within one Sequence File. Each of the sequence of commands is a mode and is represented as <page> element. There can be multiple <page> elements in one Sequence File.
 
 
 .. note::
@@ -100,7 +100,7 @@ Each **action** item represents a single sequence command. Each command can have
 
 .. note::
 
-   The **delay** commands will have **data_width**, **CellName**, **ParamName** and **data** fields in the sequence command. Since rest of the fields are not applicable for the delay command, they are not seen in the sequence XML.
+   The delay commands will have data_width, CellName, ParamName and data fields in the sequence command. Since rest of the fields are not applicable for the delay command, they are not seen in the sequence XML.
 
 
 .. note::
@@ -108,9 +108,9 @@ Each **action** item represents a single sequence command. Each command can have
    Differences between traditional SigmaStudio XMLs and Sigmastudio+ 2.0 schema XMLs -
 
    
-   -  **SpiCS** - This new field in the new scheme represents the SPI chip select. Applicable when protocol is "SPI".
-   -  **DataAlignment** - This new field in the new scheme specifies the alignment requirement in bytes for the start of the data following SPI Command and address. Applicable when protocol is "SPI".
-   -  **AddrIncr** - This field generated from SigmaStudio+ 2.0 schema version will always be non-zero.
+   -  SpiCS - This new field in the new scheme represents the SPI chip select. Applicable when protocol is "SPI".
+   -  DataAlignment - This new field in the new scheme specifies the alignment requirement in bytes for the start of the data following SPI Command and address. Applicable when protocol is "SPI".
+   -  AddrIncr - This field generated from SigmaStudio+ 2.0 schema version will always be non-zero.
    -  The new SigmaStudio+ 2.0 schema XMLs have their sequence fields re-arranged to align more towards the A2B command list XML format.
    
 

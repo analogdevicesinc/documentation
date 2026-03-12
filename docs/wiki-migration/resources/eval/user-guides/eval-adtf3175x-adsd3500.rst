@@ -3,7 +3,7 @@ ADSD3500 Guide
 
 .. important::
 
-   The latest ADSD3500 firmware version is **7.0.0**.
+   The latest ADSD3500 firmware version is 7.0.0.
 
 
 Host Processor Integration Guide
@@ -1003,7 +1003,7 @@ BURST MODE COMMANDS
 
 .. important::
 
-   The ADSD3500 data format is little-endian. However, when the stock ADSD3500 Linux device driver is used, **the payload size must be in big-endian** and **the checksum, the address and custom data are in little-endian**.
+   The ADSD3500 data format is little-endian. However, when the stock ADSD3500 Linux device driver is used, the payload size must be in big-endian and the checksum, the address and custom data are in little-endian.
 
 
 Get Camera Intrinsics

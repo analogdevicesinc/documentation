@@ -34,7 +34,7 @@ Required Equipment
 
 .. note::
 
-   **NOTE** - Any multimeter can be used with this board. However, for INL/DNL measurement, software interface was written with the Agilent 3458A in mind.
+   NOTE - Any multimeter can be used with this board. However, for INL/DNL measurement, software interface was written with the Agilent 3458A in mind.
 
 
 Installing the Software
@@ -44,7 +44,7 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0348 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0348>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0348\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the `CN0348 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0348>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0348\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
 | |image2|
@@ -56,7 +56,7 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 
 
 | |image4|
@@ -67,7 +67,7 @@ Installing the Software
 
    It is recommended that you install the drivers to the default directory path
 
-   | **C:\\Program Files\\Analog Devices\\SDP\\DriversR2**\
+   | C:\\Program Files\\Analog Devices\\SDP\\DriversR2\
 
 
 | |image5|
@@ -109,16 +109,16 @@ Software Control and Indicator Descriptions
 
 ::
 
-   - **Code Step Control**
+   - Code Step Control
    * Enter the code step between each digital input to be written to the DAC
-   - **Agilent 3458A GPIB Address Control**
+   - Agilent 3458A GPIB Address Control
    * Enter in the GPIB address of the multimeter
    * GPIB Address can be determined from the multimeter by manually pressing down on SHIFT+Local.  By default it should be 22
-   - **Current Code / Voltage Indicator**
+   - Current Code / Voltage Indicator
    * This indicates the current digital input code and output voltage of the DAC
-   - **File Directory Control**
+   - File Directory Control
    * This allows you to enter the file directory and name to save the INL/DNL measurement data
-   - **INL / DNL measurement graphs**
+   - INL / DNL measurement graphs
    * These graphs display the INL and DNL vs. input digital code when data collection is done\\ \\
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software3.png
@@ -127,7 +127,7 @@ Software Control and Indicator Descriptions
 
 ::
 
-   - **Transfer Function Graph**
+   - Transfer Function Graph
    * This graph shows the transfer function of the DAC output voltage vs. input digital code\\ \\
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software4.png
@@ -136,7 +136,7 @@ Software Control and Indicator Descriptions
 
 ::
 
-   - **SDP Board Firmware Information**
+   - SDP Board Firmware Information
    * This gives you the up to date information on the SDP board firmware
 
 Connecting the Hardware and Taking Measurements

@@ -40,7 +40,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADXRS450 Driver depends on **CONFIG_SPI**
+   The ADXRS450 Driver depends on CONFIG_SPI
 
 
 ::
@@ -138,7 +138,7 @@ Module loading
    
    ::
    
-      root:/> **modprobe adxrs450**
+      root:/> modprobe adxrs450
       adxrs450 spi0.18: The Part ID is 0x5201
       adxrs450 spi0.18: The Serial Number is 0xbaf2
    
@@ -154,12 +154,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
-      root:/sys/bus/iio/devices> **cd iio:device0**
+      root:/sys/bus/iio/devices> cd iio:device0
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > **ls -l**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > ls -l
       -r--r--r--    1 root     root          4096 Jan  3 16:24 dev
       -rw-r--r--    1 root     root          4096 Jan  3 16:24 in_anglvel_z_calibbias
       -rw-r--r--    1 root     root          4096 Jan  3 16:24 in_anglvel_z_quadrature_correction_raw
@@ -184,7 +184,7 @@ Show device name
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat name**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat name
       adxrs450
    
 
@@ -199,7 +199,7 @@ Show angular rate scale
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat in_anglvel_z_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in_anglvel_z_scale
       0.000218166
    
 
@@ -219,9 +219,9 @@ Rotate in positive direction
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > **cat in_anglvel_z_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > cat in_anglvel_z_raw
       42
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > **cat in_anglvel_z_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > cat in_anglvel_z_raw
       1456
    
 
@@ -236,9 +236,9 @@ Rotate in negative direction
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > **cat in_anglvel_z_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > cat in_anglvel_z_raw
       -1657
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > **cat in_anglvel_z_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > cat in_anglvel_z_raw
       -17215
    
 
@@ -255,7 +255,7 @@ This attribute is used to read the amount of quadrature error present in the dev
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > **cat in_anglvel_z_quadrature_correction_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > cat in_anglvel_z_quadrature_correction_raw
       9
    
 
@@ -272,12 +272,12 @@ This attribute is used to make small adjustments to the rateout of the device. T
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > **cat in_gyro_z_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > cat in_gyro_z_raw
       40
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > **echo 40 > in_anglvel_z_calibbias**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > echo 40 > in_anglvel_z_calibbias
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > **cat in_anglvel_z_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0 > cat in_anglvel_z_raw
       1
    
 
@@ -292,9 +292,9 @@ Show temperature
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat in_temp0_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in_temp0_scale
       200
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat in_temp0_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in_temp0_raw
       105
    
 

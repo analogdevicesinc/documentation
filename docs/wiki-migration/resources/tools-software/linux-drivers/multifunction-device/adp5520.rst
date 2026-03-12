@@ -163,7 +163,7 @@ For more information see: `Documentation/i2c/instantiating-devices.rst <https://
 
 .. tip::
 
-   **ADP5520 IRQ Usage:** If you aren’t planning to utilize the Keypad interface, you don’t need to specify an IRQ in bfin_i2c_board_info.
+   ADP5520 IRQ Usage: If you aren’t planning to utilize the Keypad interface, you don’t need to specify an IRQ in bfin_i2c_board_info.
 
 
 Adding Linux driver support
@@ -259,7 +259,7 @@ Backlight
 
 ::
 
-   root:/> **modprobe adp5520_bl**
+   root:/> modprobe adp5520_bl
    root:/>
 
    root:/> cd sys/class/backlight/adp5520-backlight/
@@ -278,16 +278,16 @@ Backlight
    drwxr-xr-x    2 root     root            0 Nov 12 10:31 power
    lrwxrwxrwx    1 root     root            0 Nov 12 10:31 subsystem -> ../../../../../../../../class/backlight
 
-   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 127 > brightness**
-   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 50 > brightness**
-   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 0 > brightness** For more information on Backlight handling in Linux read:* `Documentation/ABI/stable/sysfs-class-backlight <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/stable/sysfs-class-backlight>`_
+   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> echo 127 > brightness
+   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> echo 50 > brightness
+   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> echo 0 > brightness For more information on Backlight handling in Linux read:* `Documentation/ABI/stable/sysfs-class-backlight <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/stable/sysfs-class-backlight>`_
 
 LED
 ---
 
 ::
 
-   root:/> **modprobe leds-adp5520**
+   root:/> modprobe leds-adp5520
    Registered led device: adp5520-led1
    Registered led device: adp5520-led2
    Registered led device: adp5520-led3
@@ -303,11 +303,11 @@ LED
    drwxr-xr-x    2 root     root            0 Nov 12 10:34 power
    lrwxrwxrwx    1 root     root            0 Nov 12 10:34 subsystem -> ../../../../../../../../class/leds
    -rw-r--r--    1 root     root         4096 Nov 12 10:34 trigger
-   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/leds/adp5520-led1> **echo 10 > brightness**
-   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/leds/adp5520-led1> **echo 255 > brightness**
-   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/leds/adp5520-led1> **echo 0 > brightness**
+   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/leds/adp5520-led1> echo 10 > brightness
+   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/leds/adp5520-led1> echo 255 > brightness
+   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/leds/adp5520-led1> echo 0 > brightness
 
-   root:/> **modprobe -r leds-adp5520**
+   root:/> modprobe -r leds-adp5520
    root:/>
 
 *For more information on LEDs handling in Linux read:* `Documentation/leds-class.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/leds-class.txt>`_
@@ -317,7 +317,7 @@ GPIO
 
 ::
 
-   root:/> **modprobe adp5520-gpio**
+   root:/> modprobe adp5520-gpio
    root:/> cd sys/class/gpio/gpiochip50/
    root:/sys/devices/virtual/gpio/gpiochip50> ls -l
    -r--r--r--    1 root     root         4096 Nov 12 10:37 base
@@ -343,10 +343,10 @@ Keypad
 
 ::
 
-   root:/> **modprobe adp5520-keys**
+   root:/> modprobe adp5520-keys
    input: adp5520-keys as /devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/adp5520-keys.5520/input/input0
 
-   root:/> **event_test /dev/input/event0**
+   root:/> event_test /dev/input/event0
    Input driver version is 1.0.0
    Input device ID: bus 0x18 vendor 0x1 product 0x5520 version 0x1
    Input device name: "adp5520-keys"
@@ -384,7 +384,7 @@ Keypad
    Event: time 1415788676.092000, type 1 (Key), code 6 (5), value 0
    Event: time 1415788676.092000, type 0 (Reset), code 0 (Reset), value 0
 
-   root:/> **modprobe -r adp5520-keys**
+   root:/> modprobe -r adp5520-keys
    root:/>
 
 *For more information on Input handling in Linux read:* `Documentation/input/input.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/input/input.txt>`_

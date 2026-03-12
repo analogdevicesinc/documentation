@@ -37,7 +37,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD7091R5 Driver depends on **CONFIG_I2C**
+   The AD7091R5 Driver depends on CONFIG_I2C
 
 
 ::

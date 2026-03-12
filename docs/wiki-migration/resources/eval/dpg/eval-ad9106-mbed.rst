@@ -115,7 +115,7 @@ Single-Board Evaluation
 
 .. important::
 
-   Note: **DS1** in SDP-K1 will **blink** during the flashing process.
+   Note: DS1 in SDP-K1 will blink during the flashing process.
 
 
 -  After flashing, open the serial monitor window to configure the **AD910x-ARDZ-EBZ** board.
@@ -200,7 +200,7 @@ Multi-Board Evaluation / Multichip Synchronization Evaluation
 
 .. important::
 
-   Note: **DS1** in SDP-K1 will **blink** during the flashing process.
+   Note: DS1 in SDP-K1 will blink during the flashing process.
 
 
 -  After flashing, open the serial monitor window to configure the **AD910x-ARDZ-EBZ** boards.

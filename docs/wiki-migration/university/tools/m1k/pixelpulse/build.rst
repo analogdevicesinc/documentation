@@ -12,7 +12,7 @@ To build from source on Linux with an appropriate C++ compiler and libraries:
 
 ::
 
-   pi@raspberrypi:/home/pi/git# **sudo apt-get install libusb-1.0-0-dev libudev-dev**
+   pi@raspberrypi:/home/pi/git# sudo apt-get install libusb-1.0-0-dev libudev-dev
 
 -  Install Qt5.4
 
@@ -20,7 +20,7 @@ To build from source on Linux with an appropriate C++ compiler and libraries:
 
 ::
 
-   pi@raspberrypi:/home/pi/git# **sudo apt-get install qtbase5-dev qtdeclarative5-dev**
+   pi@raspberrypi:/home/pi/git# sudo apt-get install qtbase5-dev qtdeclarative5-dev
 
 -  Check out PixelPulse2:
 
@@ -33,8 +33,8 @@ To build from source on Linux with an appropriate C++ compiler and libraries:
 
 ::
 
-   pi@raspberrypi:/home/pi# **cd pixelpulse2**
-   pi@raspberrypi:/home/pi/pixelpulse2# **mkdir build**
-   pi@raspberrypi:/home/pi/pixelpulse2# **cd build**
+   pi@raspberrypi:/home/pi# cd pixelpulse2
+   pi@raspberrypi:/home/pi/pixelpulse2# mkdir build
+   pi@raspberrypi:/home/pi/pixelpulse2# cd build
    pi@raspberrypi:/home/pi/pixelpulse2/build# cmake ../
    pi@raspberrypi:/home/pi/pixelpulse2/build# make

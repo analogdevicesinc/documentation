@@ -326,7 +326,7 @@ The software frequency compensation for each channel consists of a cascade of tw
 
 .. tip::
 
-   **Exponential compensation** An Exponential compensation technique adds one or more exponentially decaying terms to a step in the signal. With 2 available stages, ALICE can correct for multiple spurious inductances and capacitances in the input divider circuit. Exponential compensation works best for overshoots and undershoots smaller than about 10% of the step height. In this case, a sum of exponential terms is an accurate generic model for such defects.
+   Exponential compensation An Exponential compensation technique adds one or more exponentially decaying terms to a step in the signal. With 2 available stages, ALICE can correct for multiple spurious inductances and capacitances in the input divider circuit. Exponential compensation works best for overshoots and undershoots smaller than about 10% of the step height. In this case, a sum of exponential terms is an accurate generic model for such defects.
 
 
 In figure In2 we show the new controls for the input compensation. To turn on and off the compensation for Channels A and B check boxes are added under the Curves drop down menu. Turning on compensation applies to both the Scope and Spectrum tools (time and frequency measurements). The filter time constant and gain settings can be set using new entry slots in the Settings Controls screen. The DC gain and offset adjust controls are unchanged.

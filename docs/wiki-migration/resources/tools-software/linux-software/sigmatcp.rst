@@ -25,10 +25,10 @@ Download the SigmaStudio Network Utility and extract the tar archive. To build t
    
    ::
    
-      > **wget http:%%//%%wiki.analog.com/_media/resources/tools-software/linux-software/sigma_tcp.tar.bz2**
-      > **tar -xjf sigma_tcp.tar.bz**
-      > **cd sigma_tcp**
-      > **make**
+      > wget http:%%//%%wiki.analog.com/_media/resources/tools-software/linux-software/sigma_tcp.tar.bz2
+      > tar -xjf sigma_tcp.tar.bz
+      > cd sigma_tcp
+      > make
    
 
 
@@ -46,7 +46,7 @@ Example:
    
    ::
    
-      > **sigmap_tcp debug**
+      > sigmap_tcp debug
       Using debug backend
       Waiting for connections...
       IP addresses:
@@ -73,7 +73,7 @@ In debug mode all register writes go to an internal cache and all register reads
    
    ::
    
-      > **sigmap_tcp debug**
+      > sigmap_tcp debug
       Using debug backend
       Waiting for connections...
       IP addresses:
@@ -93,7 +93,7 @@ In regmap mode sigma_tcp expects the path to a regmap debugfs file, which will b
    
    ::
    
-      > **sigma_tcp regmap /sys/kernel/debug/regmap/0-003b/registers**
+      > sigma_tcp regmap /sys/kernel/debug/regmap/0-003b/registers
       Using regmap backend
       Waiting for connections...
       IP addresses:

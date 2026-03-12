@@ -1,4 +1,3 @@
-
 Production testing of the AD-FMCDAQ2 / AD-FMCDAQ3
 =================================================
 
@@ -17,7 +16,7 @@ The ``ad7291.in_temp0_raw`` is the raw results from the AD7291 - which is 0.25°
 Voltage
 ~~~~~~~
 
-This section requires checking the :doc:`schematics </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/hardware>`. Specifically, sheet 7 shows how the AD7291 is connected. 1% resistors connect various voltages, and things are divided down to ensure that the voltage levels don't exceed full scale.
+This section requires checking the `schematics <https://wiki.analog.com/hardware>`_. Specifically, sheet 7 shows how the AD7291 is connected. 1% resistors connect various voltages, and things are divided down to ensure that the voltage levels don't exceed full scale.
 
 The explanation of how the valid ranges are calculated is similar to the same tests for the :doc:`FMComms boards </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/testing>`.
 
@@ -78,15 +77,17 @@ Required setup
    :align: center
    :width: 600px
 
--  Attach the RF loopback cables to the board. The images at the bottom of the page show the correct placement for each type of AD-FMCDAQ board.
--  Insert the SD card into the carrier board.
--  Insert the AD-FMCDAQ2/3 board onto the carrier
--  Connect the HDMI cable to Raspberry Pi
--  Connect USB keyboard to Raspberry Pi
--  Insert SD card into Raspberry Pi
--  Connect Ethernet cable between Raspberry Pi and the carrier
--  Connect the scanner to Raspberry Pi
--  Power the carrier board and Raspberry Pi
+::
+
+    - Attach the RF loopback cables to the board. The images at the bottom of the page show the correct placement for each type of AD-FMCDAQ board.
+    - Insert the SD card into the carrier board.
+    - Insert the AD-FMCDAQ2/3 board onto the carrier
+    - Connect the HDMI cable to Raspberry Pi
+    - Connect USB keyboard to Raspberry Pi
+    - Insert SD card into Raspberry Pi
+    - Connect Ethernet cable between Raspberry Pi and the carrier
+    - Connect the scanner to Raspberry Pi
+    - Power the carrier board and Raspberry Pi
 
 Make sure to connect to your WIFI Network before testing. You can exit the test window by pressing CTRL+C in order to access the connection. Reboot the system in order to return to the test window.
 
@@ -109,8 +110,8 @@ Firstly, make sure all the required steps from the setup explained above are com
 .. important::
 
    
-   -  **Test 1** for FMCDAQ3
-   -  **Test 2** for FMCDAQ2
+   -  Test 1 for FMCDAQ3
+   -  Test 2 for FMCDAQ2
    
 
 
@@ -158,5 +159,4 @@ FMCDAQ2             FMCDAQ3 top             FMCDAQ3 bottom
 .. |daq2_heatsink.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq2_heatsink.png
 .. |daq3_heatsink_top.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq3_heatsink_top.png
 .. |daq3_heatsink_bottom.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq3_heatsink_bottom.png
-
 

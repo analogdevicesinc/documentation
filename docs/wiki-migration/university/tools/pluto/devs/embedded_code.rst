@@ -48,7 +48,7 @@ This is a little easier, since the compiler is already for ARM. You can follow t
 
 ::
 
-   tcollins@rasberian: **gcc -mfloat-abi=hard  --sysroot=$HOME/pluto-0.30.sysroot -std=gnu99 -g -o pluto_stream ad9361-iiostream.c -lpthread -liio -lm -Wall -Wextra**
+   tcollins@rasberian: gcc -mfloat-abi=hard  --sysroot=$HOME/pluto-0.30.sysroot -std=gnu99 -g -o pluto_stream ad9361-iiostream.c -lpthread -liio -lm -Wall -Wextra
 
 Running on Pluto
 ----------------
@@ -57,14 +57,14 @@ Copy the executable to PlutoSDR
 
 ::
 
-   tcollins@winston: **scp pluto_stream root@192.168.2.1:/tmp/**
+   tcollins@winston: scp pluto_stream root@192.168.2.1:/tmp/
 
 Run the app:
 
 ::
 
-   tcollins@winston:/tmp/plutoapp$ **ssh -t root@192.168.2.1 /tmp/pluto_stream**
-   root@192.168.2.1's password: **analog**
+   tcollins@winston:/tmp/plutoapp$ ssh -t root@192.168.2.1 /tmp/pluto_stream
+   root@192.168.2.1's password: analog
    * Acquiring IIO context
    * Acquiring AD9361 streaming devices
    * Configuring AD9361 for streaming

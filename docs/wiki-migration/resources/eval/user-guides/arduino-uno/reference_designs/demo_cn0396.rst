@@ -20,7 +20,7 @@ Based on the **maximum sensor sensitivity** for each gas the system should be co
 
 .. note::
 
-   **Maximum sensitivity** and **gas sensitivity** are dependent on sensor type. These value will need to be updated in case of using another sensor that the one presented here.
+   Maximum sensitivity and gas sensitivity are dependent on sensor type. These value will need to be updated in case of using another sensor that the one presented here.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_3.png

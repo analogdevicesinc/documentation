@@ -30,7 +30,7 @@ The user has the option to modify the solutions that are used for calibrating th
 
 .. note::
 
-   These values can be edited in **CN0409.h** file inside the include folder within the project structure.
+   These values can be edited in CN0409.h file inside the include folder within the project structure.
 
 
 After the calibration sequence is done at least once, the calibration coefficients are saved in the controller flash memory and will be used the next time when a calibration is not done. The calibration can be repeated as desired. If the program is run for the first time and a calibration routine is not done, the program will prompt the user to manually input calibration coefficients.

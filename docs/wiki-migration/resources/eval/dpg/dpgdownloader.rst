@@ -168,7 +168,6 @@ The Noise Generator generates a vector with pseudo-random noise, by a variety of
 Advanced Vector Generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 Advanced Vector Generator
 =========================
 
@@ -218,7 +217,7 @@ When the vector is generated, the signal will be scaled such that the peak of th
 
 .. hint::
 
-   \ **Note:** Some DACs have a digital and/or analog backoff which is independent of this function. This vector backoff is applied before any backoff that the DAC may perform.
+   \ Note: Some DACs have a digital and/or analog backoff which is independent of this function. This vector backoff is applied before any backoff that the DAC may perform.
 
 
 Generating the Vector
@@ -270,7 +269,7 @@ Multiple carrier types can be combined in a single vector. For example, one vect
 
 .. hint::
 
-   \ **Note:** The vectors created with this tool are spectrally accurate. However, in most cases they are not complete implementations of a given standard, and thus may not demodulate properly when received by a standards-compliant receiver or test equipment. They are provided as a way to quickly evaluate a signal chain's analog performance in a lab environment.
+   \ Note: The vectors created with this tool are spectrally accurate. However, in most cases they are not complete implementations of a given standard, and thus may not demodulate properly when received by a standards-compliant receiver or test equipment. They are provided as a way to quickly evaluate a signal chain's analog performance in a lab environment.
 
 
 Adding Carriers
@@ -313,7 +312,7 @@ When the vector is generated, the signal will be scaled such that the peak of th
 
 .. hint::
 
-   \ **Note:** Some DACs have a digital and/or analog backoff which is independent of this function. This digital backoff is applied before any backoff that the DAC may perform.
+   \ Note: Some DACs have a digital and/or analog backoff which is independent of this function. This digital backoff is applied before any backoff that the DAC may perform.
 
 
 Generating the Vector
@@ -470,7 +469,8 @@ PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
 numpy
 ~~~~~
 
-Copyright (c) 2005, NumPy Developers All rights reserved.
+| Copyright (c) 2005, NumPy Developers
+| All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
@@ -479,7 +479,6 @@ Redistribution and use in source and binary forms, with or without modification,
 -  Neither the name of the NumPy Developers nor the names of any contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 
 
 Graphing Vectors

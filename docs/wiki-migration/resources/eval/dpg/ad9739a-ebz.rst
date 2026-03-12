@@ -3,7 +3,7 @@ AD9737A-EBZ/AD9739A-EBZ Quick Start Guide
 
 .. warning::
 
-   \ **NOTE:** Support for the eval-ad9739a is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can still be found on `hdl_2021_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2021_r2/projects/ad9739a_fmc>`_ release branch.
+   \ NOTE: Support for the eval-ad9739a is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can still be found on `hdl_2021_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2021_r2/projects/ad9739a_fmc>`_ release branch.
 
 
 Getting started with the AD9737A-EBZ/AD9739A-EBZ Evaluation Board

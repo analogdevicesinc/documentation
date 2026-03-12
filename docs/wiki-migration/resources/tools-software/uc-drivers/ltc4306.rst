@@ -133,7 +133,7 @@ The :adi:`LTC4306` has the provision for multiple I2C slave addresses through th
 
 .. note::
 
-   The header file of the :adi:`LTC4306` driver provides an enumeration for the valid **ADR0**, **ADR1**, **ADR2** input voltage level values. There are a total of 27 valid slave address combinations that can be generated depending on the voltage level supplied to the address pin. For reference, refer to Table 1 of the :adi:`LTC4306` data sheet.
+   The header file of the :adi:`LTC4306` driver provides an enumeration for the valid ADR0, ADR1, ADR2 input voltage level values. There are a total of 27 valid slave address combinations that can be generated depending on the voltage level supplied to the address pin. For reference, refer to Table 1 of the :adi:`LTC4306` data sheet.
 
 
 Control Register 0

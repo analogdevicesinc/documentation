@@ -206,7 +206,6 @@ The following image shows a list of commands in a serial terminal connected to p
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -245,7 +244,6 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
-
 
 
 Digilent Cerebot MX3cK Quick Start Guide - Arduino
@@ -316,7 +314,6 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
@@ -339,7 +336,6 @@ This section presents the steps for developing a chipKIT application that will r
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_3.png
    :align: center
-
 
 
 More information

@@ -52,7 +52,7 @@ Use your favourite shell to access ``iio_attr``, and ask the device:
 
 ::
 
-   rgetz@brain:~$ **iio_attr -a -C fw_version**
+   rgetz@brain:~$ iio_attr -a -C fw_version
    Using auto-detected IIO context at URI "usb:4.25.5"
    fw_version: v0.31
 
@@ -69,9 +69,9 @@ If you can't remember the username/password, if it is the default, it will be on
 
 ::
 
-   rgetz@brain:~$ **ssh root@192.168.2.1**
+   rgetz@brain:~$ ssh root@192.168.2.1
    Warning: Permanently added '192.168.2.1' (ECDSA) to the list of known hosts.
-   root@192.168.2.1's password: **analog**
+   root@192.168.2.1's password: analog
    Welcome to:
    %%______ _       _        _________________
    | ___ \ |     | |      /  ___|  _  \ ___ \ |
@@ -182,11 +182,11 @@ It's exactly the same as the GUI instructions, copy it, and then eject it, then 
    
    ::
    
-      analog@imhotep:~/pluto$ **cp ./pluto.frm /media/analog/PlutoSDR/**
-      analog@imhotep:~/pluto$ **mount | grep PlutoSDR | awk '{print $1}'**
+      analog@imhotep:~/pluto$ cp ./pluto.frm /media/analog/PlutoSDR/
+      analog@imhotep:~/pluto$ mount | grep PlutoSDR | awk '{print $1}'
       /dev/sdb1
-      analog@imhotep:~/pluto$ **sudo eject /dev/sdb**
-      analog@imhotep:~/pluto$ **echo "WAIT 4 minutes for firmware to update!!!! Do not unplug the device."**
+      analog@imhotep:~/pluto$ sudo eject /dev/sdb
+      analog@imhotep:~/pluto$ echo "WAIT 4 minutes for firmware to update!!!! Do not unplug the device."
    
 
 
@@ -197,8 +197,8 @@ Many people remotely deploy their PlutoSDR, (via a USB <-> Ethernet dongle), and
 
 ::
 
-   rgetz@brain:~/github/plutosdr_scripts$ **ssh root@pluto.local**
-   root@192.168.1.104's password: **analog**
+   rgetz@brain:~/github/plutosdr_scripts$ ssh root@pluto.local
+   root@192.168.1.104's password: analog
    Welcome to:
    %%______ _       _        _________________
    | ___ \ |     | |      /  ___|  _  \ ___ \ |
@@ -211,23 +211,23 @@ Many people remotely deploy their PlutoSDR, (via a USB <-> Ethernet dongle), and
    v0.33
    https://wiki.analog.com/university/tools/pluto%%
 
-   # **wget %%https://api.github.com/repos/analogdevicesinc/plutosdr-fw/releases/latest%%**
+   # wget %%https://api.github.com/repos/analogdevicesinc/plutosdr-fw/releases/latest%%
    Connecting to api.github.com (140.82.114.5:80)
    Connecting to api.github.com (140.82.114.5:443)
    wget: note: TLS certificate validation not implemented
    saving to 'latest'
    latest               100% |* * * * * *|  9728  0:00:00 ETA
    'latest' saved
-   # **grep "browser_download_url.*plutosdr-fw-" latest  | cut -d : -f 2,3 | awk '{print $1}' | tr -d \"**
+   # grep "browser_download_url.*plutosdr-fw-" latest  | cut -d : -f 2,3 | awk '{print $1}' | tr -d \"
    %%https://github.com/analogdevicesinc/plutosdr-fw/releases/download/v0.34/plutosdr-fw-v0.34.zip%%
-   # **wget %%https://github.com/analogdevicesinc/plutosdr-fw/releases/download/v0.34/plutosdr-fw-v0.34.zip%%**
+   # wget %%https://github.com/analogdevicesinc/plutosdr-fw/releases/download/v0.34/plutosdr-fw-v0.34.zip%%
    Connecting to github.com (140.82.114.3:443)
    wget: note: TLS certificate validation not implemented
    Connecting to objects.githubusercontent.com (185.199.109.133:443)
    saving to 'plutosdr-fw-v0.34.zip'
    plutosdr-fw-v0.34.zip 100% |* * * * * * * * *| 19.2M  0:00:00 ETA
    'plutosdr-fw-v0.34.zip' saved
-   # **unzip -l plutosdr-fw-v0.34.zip**
+   # unzip -l plutosdr-fw-v0.34.zip
    Archive:  plutosdr-fw-v0.34.zip
      Length      Date    Time    Name
    ---------  ---------- -----   ----
@@ -238,14 +238,14 @@ Many people remotely deploy their PlutoSDR, (via a USB <-> Ethernet dongle), and
       601645  08-20-2021 14:13   boot.frm
     --------                     -------
     22363984                     5 files
-   # **unzip plutosdr-fw-v0.34.zip pluto.frm**
+   # unzip plutosdr-fw-v0.34.zip pluto.frm
    Archive:  plutosdr-fw-v0.34.zip
      inflating: pluto.frm
-   # **update_frm.sh ./pluto.frm**
+   # update_frm.sh ./pluto.frm
    161+1 records in
    161+1 records out
    Done
-   # **reboot**
+   # reboot
 
 DFU Update
 ----------
@@ -296,14 +296,14 @@ on Linux
 
 ::
 
-   analog@imhotep:~$ **lsusb | grep 0456**
+   analog@imhotep:~$ lsusb | grep 0456
    Bus 003 Device 008: ID 0456:b673 Analog Devices, Inc.
 
 And in DFU mode:
 
 ::
 
-   analog@imhotep:~$ **lsusb | grep 0456**
+   analog@imhotep:~$ lsusb | grep 0456
    Bus 003 Device 009: ID 0456:b674 Analog Devices, Inc.
 
 On MAC
@@ -405,8 +405,8 @@ The first thing to try is to make sure the device (Pluto or M2k) is actually in 
    
    ::
    
-      C:\>**cd "c:\Program Files\Analog Devices\PlutoSDR-M2K"**
-      C:\Program Files\Analog Devices\PlutoSDR-M2K>**dfu-util.exe -l**
+      C:\>cd "c:\Program Files\Analog Devices\PlutoSDR-M2K"
+      C:\Program Files\Analog Devices\PlutoSDR-M2K>dfu-util.exe -l
       dfu-util 0.9
    
       Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
@@ -427,7 +427,7 @@ Here it found one device, with 5 "partitions" in the flash map.
 
 ::
 
-   rgetz@brain:~/$ **sudo dfu-util --list**
+   rgetz@brain:~/$ sudo dfu-util --list
    [sudo] password for rgetz:
    dfu-util 0.9
 
@@ -453,7 +453,7 @@ When the system boots, it follows this basic process:
 
 .. note::
 
-   **dfu-util** - a short dfu primer
+   dfu-util - a short dfu primer
 
    
    `DFU <http://dfu-util.sourceforge.net/dfu-util.1.html>`_ has lots of options, the ones to remember are:

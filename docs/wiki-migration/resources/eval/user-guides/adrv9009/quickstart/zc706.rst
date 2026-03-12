@@ -105,7 +105,7 @@ Messages
       6985272 bytes read in 411 ms (16.2 MiB/s)
       reading devicetree.dtb
       43645 bytes read in 30 ms (1.4 MiB/s)
-      ** Unable to read file uramdisk.image.gz **
+       Unable to read file uramdisk.image.gz 
       ## Booting kernel from Legacy Image at 03000000 ...
          Image Name:   Linux-5.10.0-97902-g12401977df5e
          Image Type:   ARM Linux Kernel Image (uncompressed)

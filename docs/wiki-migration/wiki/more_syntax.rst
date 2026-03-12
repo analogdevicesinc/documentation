@@ -19,8 +19,8 @@ You can apply normal wiki syntax to the definition list.
 
 ::
 
-   ; **Pizza** : Food : Delicious : Mausi
-   ; **''Curry''**
+   ; Pizza : Food : Delicious : Mausi
+   ; ''Curry''
    : Korma
      ; ''kasmiri'' : fruity
      ; //ceylonese// : coconutty
@@ -113,13 +113,12 @@ Allows you to `include <https://www.dokuwiki.org/plugin:include>`_ different wik
 
 Example:
 
+::
 
 
 
-
-   
-Analog Devices Wiki
-===================
+   Analog Devices Wiki
+======================
 
 This wiki provides developers using Analog Devices products with software and documentation, including HDL interface code, software drivers, and reference project examples for FPGA connectivity. It also contains user guides for some Analog Devices evaluation boards to help developers get up and running fast.
 
@@ -133,16 +132,16 @@ Browse the Wiki
 Resources and Tools
 ~~~~~~~~~~~~~~~~~~~
 
--  :doc:`Evaluation Board & Kit Documentation and User Guides </wiki-migration/resources/eval>`
--  :doc:`FPGA Reference Designs </wiki-migration/resources/fpga>`
--  :doc:`External Peripheral Drivers for Linux </wiki-migration/resources/tools-software/linux-drivers-all>`
--  :doc:`External Peripheral Drivers for Microcontroller Software </wiki-migration/resources/no-os/drivers>`
--  :doc:`SigmaStudio and SigmaDSP Documentation </wiki-migration/resources/tools-software/sigmastudio>`
+-  `Evaluation Board & Kit Documentation and User Guides <resources/eval>`_
+-  `FPGA Reference Designs <resources/fpga>`_
+-  `External Peripheral Drivers for Linux <resources/tools-software/linux-drivers-all>`_
+-  `External Peripheral Drivers for Microcontroller Software <resources/no-os/drivers>`_
+-  `SigmaStudio and SigmaDSP Documentation <resources/tools-software/sigmastudio>`_
 
 University Program
 ~~~~~~~~~~~~~~~~~~
 
--  :doc:`University Home Page </wiki-migration/university>`
+-  `University Home Page <university>`_
 
    -  Learning Material
    -  Lab Exercises
@@ -155,20 +154,18 @@ University Program
 Help make the Wiki Better
 -------------------------
 
-We welcome user contributions to this wiki. To contribute, just `register/log in <this>start?do=login&sectok=137703aab4ae2af40b719b88eb5f214d>`__ and click edit on any of the pages. There is an extensive :doc:`help section </wiki-migration/wiki/help>` for those new to the wiki.
+We welcome user contributions to this wiki. To contribute, just `register/log in <this>start?do=login&sectok=137703aab4ae2af40b719b88eb5f214d>`__ and click edit on any of the pages. There is an extensive `help section <wiki/help>`_ for those new to the wiki.
 
-:doc:`View Recent Updates to the wiki </wiki-migration/recent-updates>`
+`View Recent Updates to the wiki <recent-updates>`_
 
 Analog Devices Support
 ----------------------
 
 Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the `EngineerZone Support Community <https://ez.analog.com/>`_.
-
 
 
 provides the first section of the start page
 
-
 Analog Devices Wiki
 ===================
 
@@ -184,16 +181,16 @@ Browse the Wiki
 Resources and Tools
 ~~~~~~~~~~~~~~~~~~~
 
--  :doc:`Evaluation Board & Kit Documentation and User Guides </wiki-migration/resources/eval>`
--  :doc:`FPGA Reference Designs </wiki-migration/resources/fpga>`
--  :doc:`External Peripheral Drivers for Linux </wiki-migration/resources/tools-software/linux-drivers-all>`
--  :doc:`External Peripheral Drivers for Microcontroller Software </wiki-migration/resources/no-os/drivers>`
--  :doc:`SigmaStudio and SigmaDSP Documentation </wiki-migration/resources/tools-software/sigmastudio>`
+-  `Evaluation Board & Kit Documentation and User Guides <resources/eval>`_
+-  `FPGA Reference Designs <resources/fpga>`_
+-  `External Peripheral Drivers for Linux <resources/tools-software/linux-drivers-all>`_
+-  `External Peripheral Drivers for Microcontroller Software <resources/no-os/drivers>`_
+-  `SigmaStudio and SigmaDSP Documentation <resources/tools-software/sigmastudio>`_
 
 University Program
 ~~~~~~~~~~~~~~~~~~
 
--  :doc:`University Home Page </wiki-migration/university>`
+-  `University Home Page <university>`_
 
    -  Learning Material
    -  Lab Exercises
@@ -206,15 +203,14 @@ University Program
 Help make the Wiki Better
 -------------------------
 
-We welcome user contributions to this wiki. To contribute, just `register/log in <this>start?do=login&sectok=137703aab4ae2af40b719b88eb5f214d>`__ and click edit on any of the pages. There is an extensive :doc:`help section </wiki-migration/wiki/help>` for those new to the wiki.
+We welcome user contributions to this wiki. To contribute, just `register/log in <this>start?do=login&sectok=137703aab4ae2af40b719b88eb5f214d>`__ and click edit on any of the pages. There is an extensive `help section <wiki/help>`_ for those new to the wiki.
 
-:doc:`View Recent Updates to the wiki </wiki-migration/recent-updates>`
+`View Recent Updates to the wiki <recent-updates>`_
 
 Analog Devices Support
 ----------------------
 
 Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the `EngineerZone Support Community <https://ez.analog.com/>`_.
-
 
 
 interwiki links
@@ -339,42 +335,42 @@ Notes have changed recently -- please use the new format. With the new format, c
 
 .. danger::
 
-   **danger** - normal text is white.
+   danger - normal text is white.
 
    
    ::
    
    .. danger::
 
-            //**DANGER**// - normal text is white.
+            //DANGER// - normal text is white.
 
    
 
 
 .. warning::
 
-   **warning** - normal text is black.
+   warning - normal text is black.
 
    
    ::
    
    .. warning::
 
-            //**warning**// - normal text is black.
+            //warning// - normal text is black.
 
    
 
 
 .. caution::
 
-   **caution** - normal text is black.
+   caution - normal text is black.
 
    
    ::
    
    .. caution::
 
-            //**caution**// - normal text is black.
+            //caution// - normal text is black.
 
    
 
@@ -388,7 +384,7 @@ Notes have changed recently -- please use the new format. With the new format, c
    
    .. container:: round notice
 
-            //**notice**// - normal text is white
+            //notice// - normal text is white
 
    
 
@@ -402,7 +398,7 @@ Notes have changed recently -- please use the new format. With the new format, c
    
    .. container:: round safety
 
-            //**safety**// - normal text is white
+            //safety// - normal text is white
 
    
 
@@ -481,7 +477,7 @@ xterms within ``
    
    ::
    
-      test:~ #> **whoami**
+      test:~ #> whoami
       root
       test:~ #>
    
@@ -494,7 +490,7 @@ xterms within ``
    
    ::
    
-      Linux:~ $> **whoami**
+      Linux:~ $> whoami
       username
       Linux:~ $>
    
@@ -580,21 +576,21 @@ You can have columns easily by adding the class ``column`` and a width, e.g.
    
    ::
    
-      **__Emulated Big Headline__**
+      __Emulated Big Headline__
    
-   **Emulated Small Headline**
+   Emulated Small Headline
    
    A smaller headline uses no underlining, e.g.
    
    ::
    
-      **Emulated Small Headline**
+      Emulated Small Headline
    
    If you need text that is bold and italic, simply use it the other way around:
    
    ::
    
-      **No Headline**
+      No Headline
    
 
 
@@ -711,7 +707,7 @@ Boxes and Notes
 
 .. note::
 
-   **Info**
+   Info
 
    
    :
@@ -721,7 +717,7 @@ Boxes and Notes
 
 .. tip::
 
-   **Tip**
+   Tip
 
    
    :
@@ -731,7 +727,7 @@ Boxes and Notes
 
 .. important::
 
-   **Important**
+   Important
 
    
    :
@@ -741,7 +737,7 @@ Boxes and Notes
 
 .. warning::
 
-   **Alert**
+   Alert
 
    
    :
@@ -751,7 +747,7 @@ Boxes and Notes
 
 .. hint::
 
-   **Help**
+   Help
 
    
    :
@@ -772,7 +768,7 @@ Boxes and Notes
 
 .. note::
 
-   **Todo**
+   Todo
 
    
    :
@@ -785,7 +781,7 @@ Boxes and Notes
 
 .. danger::
 
-   **Danger**
+   Danger
 
    
    :
@@ -795,7 +791,7 @@ Boxes and Notes
 
 .. warning::
 
-   **Warning**
+   Warning
 
    
    :
@@ -805,7 +801,7 @@ Boxes and Notes
 
 .. caution::
 
-   **Caution**
+   Caution
 
    
    :

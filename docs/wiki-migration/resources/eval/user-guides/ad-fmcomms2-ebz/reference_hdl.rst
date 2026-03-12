@@ -78,7 +78,7 @@ Download HDL
 
 .. note::
 
-   Please note that the projects **FMCOMMS2**, **FMCOMMS3** and **FMCOMMS4** are using the :git-hdl:`same <projects/fmcomms2>` hdl design. The **ARRADIO** Quartus project uses :git-hdl:`Arradio <projects/arradio/c5soc>` hdl design.
+   Please note that the projects FMCOMMS2, FMCOMMS3 and FMCOMMS4 are using the :git-hdl:`same <projects/fmcomms2>` hdl design. The ARRADIO Quartus project uses :git-hdl:`Arradio <projects/arradio/c5soc>` hdl design.
 
 
 Projects list and dependencies for main

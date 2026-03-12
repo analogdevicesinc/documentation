@@ -25,7 +25,7 @@ Sensor Footprint
 
 .. note::
 
-   | **NOTE** - Three electrode electrochemical toxic gas sensors can be used with the **EVAL-CN0357-ARDZ** The footprint can accommodate 3 different sizes of sensors.
+   | NOTE - Three electrode electrochemical toxic gas sensors can be used with the EVAL-CN0357-ARDZ The footprint can accommodate 3 different sizes of sensors.
    | The Alphasense CO-AX electrochemical gas sensor was used during testing and programming.
 
 

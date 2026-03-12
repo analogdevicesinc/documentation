@@ -224,7 +224,7 @@ Follow below steps to setup the concentrator hardware:
 
 .. tip::
 
-   When prompted to enter password, use **ChirpStackAP** (case-sensitive)
+   When prompted to enter password, use ChirpStackAP (case-sensitive)
 
 
 -  Access the ChirpStack open network and check its assigned IP Address through SSH connection. Open CMD on the Host PC.
@@ -262,7 +262,7 @@ Follow below steps to setup the concentrator hardware:
 
 .. tip::
 
-   In this example, the IP assigned is **169.254.117.207**. By saving the assigned IP, you’ll be able to establish an SSH connection on your machine without having to connect through the ChirpStack open network.
+   In this example, the IP assigned is 169.254.117.207. By saving the assigned IP, you’ll be able to establish an SSH connection on your machine without having to connect through the ChirpStack open network.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/eth0_ip.png
@@ -381,7 +381,7 @@ Requirements
 
 .. tip::
 
-   In this example, it is **169.254.117.207**
+   In this example, it is 169.254.117.207
 
    
    If you haven't saved the IP address, revisit Steps 3 to 7 in :doc:`Gateway Configuration section </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`
@@ -473,7 +473,7 @@ Before you can add a device (sensor node) to ChirpStack, you need to create a de
 
    
    ================== =============
-   **Sensor**         **Code Name**
+   Sensor         Code Name
    EV-FLOWMETER-ARDZ  flow
    EV-STRUCTURAL-ARDZ sms
    EV-CATTLETAG-ARDZ  cattle
@@ -498,9 +498,9 @@ Before you can add a device (sensor node) to ChirpStack, you need to create a de
 .. tip::
 
    
-   For OTAA devices, confirm that when the device tries to OTAA activate, you see a **JoinRequest** message followed by a **JoinAccept** message.
+   For OTAA devices, confirm that when the device tries to OTAA activate, you see a JoinRequest message followed by a JoinAccept message.
    
-   If you do not see a JoinRequest and JoinAccept, click on the **Flush OTAA devices** button.
+   If you do not see a JoinRequest and JoinAccept, click on the Flush OTAA devices button.
 
 
 6. Enter the **Application key** and hit **Submit** once done.
@@ -511,7 +511,7 @@ Before you can add a device (sensor node) to ChirpStack, you need to create a de
 
 .. tip::
 
-   For this demo, the Application key is **2b7e151628aed2a6abf7158809cf4f3c**
+   For this demo, the Application key is 2b7e151628aed2a6abf7158809cf4f3c
 
    
    The App Key included in the LoraMAC was used as is for the purpose of evaluation. Users can generate the App Key and add it in the source code on their own.

@@ -3,7 +3,7 @@ AD8232 CHAR Z (A03321A) EVALUATION BOARD DOCUMENTATION
 
 .. tip::
 
-   This page contains the documentation for the board version **A03321A**. For the latest AD8232-EVALZ board revision documentation, please visit
+   This page contains the documentation for the board version A03321A. For the latest AD8232-EVALZ board revision documentation, please visit
 
    
    http://wiki.analog.com/resources/eval/ad8232-evaluation-guide/\

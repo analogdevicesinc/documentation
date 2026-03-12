@@ -107,7 +107,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The MAX14001 Driver depends on **CONFIG_SPI**
+   The MAX14001 Driver depends on CONFIG_SPI
 
 
 ::
@@ -264,7 +264,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. tip::
 
-   \ **TIP:** An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses the interface can be found here:
+   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`

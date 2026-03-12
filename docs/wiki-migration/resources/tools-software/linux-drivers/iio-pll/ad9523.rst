@@ -345,7 +345,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD9523 Driver depends on **CONFIG_SPI**
+   The AD9523 Driver depends on CONFIG_SPI
 
 
 ::
@@ -376,12 +376,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
-      root:/sys/bus/iio/devices> **iio:device0**
+      root:/sys/bus/iio/devices> iio:device0
    
-      root:/> **ls -l**
+      root:/> ls -l
       total 0
       drwxr-xr-x    2 root     root             0 Jan  1 00:00 .
       drwxr-xr-x    3 root     root             0 Jan  1 00:00 ..
@@ -436,8 +436,8 @@ Show device name
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/iio\:device0/**
-      root:/> **cat name**
+      root:/> cd /sys/bus/iio/devices/iio\:device0/
+      root:/> cat name
       ad9523-lpc
    
 
@@ -456,10 +456,10 @@ Output frequency for channel Y in Hz. The number must always be specified and un
    
    ::
    
-      root:/> **cat out_altvoltage1_DAC_CLK_frequency**
+      root:/> cat out_altvoltage1_DAC_CLK_frequency
       491520000
-      root:/> **echo 245760000 > out_altvoltage1_DAC_CLK_frequency**
-      root:/> **cat out_altvoltage1_DAC_CLK_frequency**
+      root:/> echo 245760000 > out_altvoltage1_DAC_CLK_frequency
+      root:/> cat out_altvoltage1_DAC_CLK_frequency
       245760000
    
 
@@ -478,10 +478,10 @@ Phase in radians of one frequency/clock output Y (out_altvoltageY) relative to a
    
    ::
    
-      root:/> **cat out_altvoltage1_DAC_CLK_phase**
+      root:/> cat out_altvoltage1_DAC_CLK_phase
       0.000000
-      root:/> **echo 3.142 >  out_altvoltage1_DAC_CLK_phase**
-      root:/> **cat out_altvoltage1_DAC_CLK_phase**
+      root:/> echo 3.142 >  out_altvoltage1_DAC_CLK_phase
+      root:/> cat out_altvoltage1_DAC_CLK_phase
       3.1415920
    
 
@@ -500,10 +500,10 @@ Writing '0' powers down channelY, while writing any any value > 0 enables the ch
    
    ::
    
-      root:/> **cat out_altvoltage1_DAC_CLK_raw**
+      root:/> cat out_altvoltage1_DAC_CLK_raw
       1
-      root:/> **echo 0 >  out_altvoltage1_DAC_CLK_raw**
-      root:/> **cat out_altvoltage1_DAC_CLK_raw**
+      root:/> echo 0 >  out_altvoltage1_DAC_CLK_raw
+      root:/> cat out_altvoltage1_DAC_CLK_raw
       0
    
 
@@ -522,10 +522,10 @@ Reading returns either '1' or '0'. '1' means that the clock in question is prese
    
    ::
    
-      root:/> **cat pll1_locked**
+      root:/> cat pll1_locked
       1
    
-      root:/> **grep "" pll* vcxo**
+      root:/> grep "" pll* vcxo
       pll1_locked:1
       pll1_reference_clk_a_present:1
       pll1_reference_clk_b_present:0
@@ -551,7 +551,7 @@ Writing '1' stores the current device configuration into on-chip EEPROM. After p
    
    ::
    
-      root:/> **echo 1 > store_eeprom**
+      root:/> echo 1 > store_eeprom
    
 
 
@@ -569,7 +569,7 @@ Writing '1' triggers the clock distribution synchronization functionality. All d
    
    ::
    
-      root:/> **echo 1 > sync_dividers**
+      root:/> echo 1 > sync_dividers
    
 
 

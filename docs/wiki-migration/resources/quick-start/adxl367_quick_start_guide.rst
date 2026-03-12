@@ -24,7 +24,7 @@ Main differences in terms of package and size are highlighted in orange, and per
 
 .. note::
 
-   \ **ADXL367 has better resolution, lower current consumption and noise density, while also providing a wider supply range and extra digital features compared to the ADXL362.**\
+   \ ADXL367 has better resolution, lower current consumption and noise density, while also providing a wider supply range and extra digital features compared to the ADXL362.\
 
 
 Sensor Orientation

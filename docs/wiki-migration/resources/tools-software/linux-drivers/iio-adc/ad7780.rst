@@ -75,7 +75,7 @@ The reference voltage may vary between boards and models. The platform_data for 
 
 .. hint::
 
-   The AD7780 doesn't feature a dedicated SPI chip select, in addition it features a dual use data out ready **DOUT/RDY** output. In order to avoid contentions on the SPI bus, it's therefore necessary to use spi bus locking combined with a dedicated GPIO to control the power down reset signal **PDRST** of the AD7780.
+   The AD7780 doesn't feature a dedicated SPI chip select, in addition it features a dual use data out ready DOUT/RDY output. In order to avoid contentions on the SPI bus, it's therefore necessary to use spi bus locking combined with a dedicated GPIO to control the power down reset signal PDRST of the AD7780.
 
    
    The AD7780 DOUT/RDY output typically connected to SPI MISO must also be wired to an interrupt capable GPIO.
@@ -194,7 +194,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD7780 Driver depends on **CONFIG_SPI**
+   The AD7780 Driver depends on CONFIG_SPI
 
 
 ::
@@ -208,7 +208,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                    - *-     Industrial I/O lock free software ring
                    - *-   Enable triggered sampling support
 
-                         ** Analog to digital converters **
+                          Analog to digital converters 
                    [--snip--]
 
                    <*>   Analog Devices AD7780 AD7781 ADC driver
@@ -231,12 +231,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       device0
-      root:/sys/bus/iio/devices> **cd device0**
+      root:/sys/bus/iio/devices> cd device0
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **ls -l**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> ls -l
       -r--r--r--    1 root     root          4096 Jan  3 12:41 in_voltage0_raw
       -r--r--r--    1 root     root          4096 Jan  3 12:41 in_scale
       -r--r--r--    1 root     root          4096 Jan  3 12:41 name
@@ -255,7 +255,7 @@ Show device name
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat name**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> cat name
       ad7780
    
 
@@ -272,7 +272,7 @@ Show scale
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat in_scale**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> cat in_scale
       0.00029
    
 
@@ -289,7 +289,7 @@ Show channel 0 measurement
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat in0_raw**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> cat in0_raw
       -1
    
 

@@ -129,7 +129,7 @@ Creating Files for use with the Baremetal Framework
 
 .. note::
 
-   \ **faust2sam** will generate the following three C++ source files, which is the algorithm.
+   \ faust2sam will generate the following three C++ source files, which is the algorithm.
 
    
    -  ``fast_pow2.h``
@@ -143,7 +143,7 @@ Creating Files for use with the Baremetal Framework
 
 .. important::
 
-   The files created from the **Virtual Analog Synth** project should be placed in the faust folder for **Core1** and the ones from the **Effects Chain** should be placed in the faust folder for **Core2**\
+   The files created from the Virtual Analog Synth project should be placed in the faust folder for Core1 and the ones from the Effects Chain should be placed in the faust folder for Core2\
 
 
 -  See :doc:`Faust with the CCES Bare Metal Framework </wiki-migration/resources/tools-software/sharc-audio-module/faust>` for more information

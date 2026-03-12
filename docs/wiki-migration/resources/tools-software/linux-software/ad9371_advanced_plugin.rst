@@ -18,7 +18,7 @@ In order for the settings made on these plugin to take affect, the Save Settings
 
 .. tip::
 
-   \ **TIP:** After you customized the driver for your application needs you can read back all values from the Linux debugfs:
+   \ TIP: After you customized the driver for your application needs you can read back all values from the Linux debugfs:
 
    
    .. container:: box bggreen
@@ -28,8 +28,8 @@ In order for the settings made on these plugin to take affect, the Save Settings
          
          ::
          
-            root@analog:/sys/bus/iio/devices/iio:device3# **cd /sys/kernel/debug/iio/iio\:device3**
-            root@analog:/sys/kernel/debug/iio/iio:device3# **grep "" * | sed "s/:/ = </g" | awk '{print $0">;"}'**
+            root@analog:/sys/bus/iio/devices/iio:device3# cd /sys/kernel/debug/iio/iio\:device3
+            root@analog:/sys/kernel/debug/iio/iio:device3# grep "" * | sed "s/:/ = </g" | awk '{print $0">;"}'
             adi,clocks-clk-pll-hs-div = <4>;
             adi,clocks-clk-pll-vco-div = <2>;
             adi,clocks-clk-pll-vco-freq_khz = <9830400>;

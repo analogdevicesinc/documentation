@@ -47,17 +47,17 @@ Build from the command line
 
 ::
 
-   C:\Users\rgetz\Documents\GitHub\libiio\build>**cmake -DWITH_USB_BACKEND=OFF -DWITH_SERIAL_BACKEND=OFF -DLIBXML2_LIBRARIES="C:\\deps\\libiio-win-deps\\libs\\64\\libxml2.lib" -DLIBXML2_INCLUDE_DIR="C://deps//libiio-win-deps//include//libxml2"  -DLOG_LEVEL=Debug ..**
+   C:\Users\rgetz\Documents\GitHub\libiio\build>cmake -DWITH_USB_BACKEND=OFF -DWITH_SERIAL_BACKEND=OFF -DLIBXML2_LIBRARIES="C:\\deps\\libiio-win-deps\\libs\\64\\libxml2.lib" -DLIBXML2_INCLUDE_DIR="C://deps//libiio-win-deps//include//libxml2"  -DLOG_LEVEL=Debug ..
 
-   C:\Users\rgetz\Documents\GitHub\libiio\build>**cmake --build . --config Release**
+   C:\Users\rgetz\Documents\GitHub\libiio\build>cmake --build . --config Release
 
-   C:\Users\rgetz\Documents\GitHub\libiio\build>**copy .\Release\* .\tests\Release\**
+   C:\Users\rgetz\Documents\GitHub\libiio\build>copy .\Release\* .\tests\Release\
 
 To test something in a loop (over and over again)
 
 ::
 
-   C:\Users\rgetz\Documents\GitHub\libiio\build>**FOR /L %L IN (0,0,1) DO @(.\tests\Release\iio_attr.exe -S)**
+   C:\Users\rgetz\Documents\GitHub\libiio\build>FOR /L %L IN (0,0,1) DO @(.\tests\Release\iio_attr.exe -S)
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/cmake/cmake-configure.png
    :width: 600px

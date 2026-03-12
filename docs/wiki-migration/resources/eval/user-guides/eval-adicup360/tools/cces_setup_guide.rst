@@ -14,7 +14,7 @@ The CCES software development environment for EVAL-ADICUP360 is based on open so
 
 .. important::
 
-   **CrossCore Embedded Studio** is based on **Eclipse**, but because the MBED platform provides a CMSIS-DAP interface to connect to the board, the EVAL-ADICUP360 can be used without problems with **IAR Embedded Workbench IDE** or **Keil µVision IDE** as well.
+   CrossCore Embedded Studio is based on Eclipse, but because the MBED platform provides a CMSIS-DAP interface to connect to the board, the EVAL-ADICUP360 can be used without problems with IAR Embedded Workbench IDE or Keil µVision IDE as well.
 
 
 Pre-Requisites and Requirements List
@@ -117,7 +117,7 @@ The first time you launch CrossCore Embedded Studio, you will be prompted to inp
 .. important::
 
    
-   **EVAL-ADICUP360 CrossCore Serial Number**
+   EVAL-ADICUP360 CrossCore Serial Number
    
    EZK-CCES-5JNP-FQH2-IAZZ-IJY4-E4HG-YIY6-JE01
    

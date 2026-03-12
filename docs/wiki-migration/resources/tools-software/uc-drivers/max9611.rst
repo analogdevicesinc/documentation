@@ -143,7 +143,7 @@ The :adi:`MAX9611` / :adi:`MAX9612` have the provision for multiple I2C slave ad
 
 .. note::
 
-   The header file of the :adi:`MAX9611` driver provides an enumeration for the valid **A0** and **A1** input voltage level values. There are a total of 16 valid slave address combinations that can be generated depending on the voltage level supplied to the address pin. For reference, refer to Table 2 of the :adi:`MAX9611` data sheet.
+   The header file of the :adi:`MAX9611` driver provides an enumeration for the valid A0 and A1 input voltage level values. There are a total of 16 valid slave address combinations that can be generated depending on the voltage level supplied to the address pin. For reference, refer to Table 2 of the :adi:`MAX9611` data sheet.
 
 
 Output Amplifier / Comparator Configuration

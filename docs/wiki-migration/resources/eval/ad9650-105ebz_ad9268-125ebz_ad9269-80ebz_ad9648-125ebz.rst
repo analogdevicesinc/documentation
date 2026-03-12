@@ -136,10 +136,10 @@ Power Supplies
       *E101, E102, E114, E103, E105 and E107 ferrite beads can be removed to disconnect the outputs from the on-board LDOs.
         *This enables the user to bias each section of the board individually.
       *Use P102 and P103 to connect a different supply for each section.
-        *A 1.8 V supply is needed with 1A current capability for **DUT_AVDD** and **DRVDD**; however, it is recommended that separate supplies be used for both analog and digital domains.
-        *An additional supply is also required to supply 1.8 V for digital support circuitry on the board, **DVDD**. This should also have a 1 A current capability and can be combined with DRVDD with little or no degradation in performance.
-        *To operate the evaluation board using the SPI and alternate clock options, a separate 3.3 V analog supply is needed in addition to the other supplies. This 3.3 V supply, or **3V_CLK**, should have a 1 A current capability.
-        *Two additional supplies, **5V_AMPVDD** and **3V_AMPVDD**, are used to bias the optional input path amplifiers and optional VREF buffer. If used, these supplies should each have 1 A current capability.
+        *A 1.8 V supply is needed with 1A current capability for DUT_AVDD and DRVDD; however, it is recommended that separate supplies be used for both analog and digital domains.
+        *An additional supply is also required to supply 1.8 V for digital support circuitry on the board, DVDD. This should also have a 1 A current capability and can be combined with DRVDD with little or no degradation in performance.
+        *To operate the evaluation board using the SPI and alternate clock options, a separate 3.3 V analog supply is needed in addition to the other supplies. This 3.3 V supply, or 3V_CLK, should have a 1 A current capability.
+        *Two additional supplies, 5V_AMPVDD and 3V_AMPVDD, are used to bias the optional input path amplifiers and optional VREF buffer. If used, these supplies should each have 1 A current capability.
    
    A second optional power supply configuration allows replacing the LDOs that supply the AVDD and DRVDD rails of the ADC with the dual switching power supply :adi:`ADP2114` step-down dc-to-dc regulator. To configure the board to operate from the ADP2114, the following changes must be incorporated. (See :doc:`Design and Integration Files </wiki-migration/resources/eval/ad9650-105ebz_ad9268-125ebz_ad9269-80ebz_ad9648-125ebz>` for specific recommendations for part values):
    

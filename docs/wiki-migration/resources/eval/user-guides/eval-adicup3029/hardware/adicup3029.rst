@@ -221,10 +221,10 @@ The BLE on the ADICUP3029 has a chip antenna on board, located in the upper-righ
 
 .. note::
 
-   **Powering the BLE Chipset**
+   Powering the BLE Chipset
 
    
-   In order to use the BLE function on the ADICUP3029, a shunt MUST be placed across **P15**.
+   In order to use the BLE function on the ADICUP3029, a shunt MUST be placed across P15.
    
    If you are wanting to save power and your application doesn't need BLE, you can simply remove the shunt across P15. Removing that shunt will remove power to the BLE chipset(U8).
 
@@ -278,7 +278,7 @@ The Arduino connectors, Grove connector, SPI PMOD connector, I2C PMOD connector,
 
 .. note::
 
-   The on board debugger, level translator, USB connector, JTAG/SWD, external power connector, or power management devices are **NOT INCLUDED** when measuring the current from jumper **P18** on the ADICUP3029 board.
+   The on board debugger, level translator, USB connector, JTAG/SWD, external power connector, or power management devices are NOT INCLUDED when measuring the current from jumper P18 on the ADICUP3029 board.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_current_measure_with_meter_revc.png
@@ -433,7 +433,7 @@ Once apart, the user can use the debugger board, and a standard 10-pin ARM JTAG/
 
 .. important::
 
-   The debugger board will need to be **plugged in via the USB port** in order to program any board. And in order to program the ADICUP3029 node board, that board must be powered by (2) AAA batteries and the power switch in the **BATT** position. Otherwise there will be no connection between the two boards, and the mass storage device on the debugger board will come up in "Maintenance" mode.
+   The debugger board will need to be plugged in via the USB port in order to program any board. And in order to program the ADICUP3029 node board, that board must be powered by (2) AAA batteries and the power switch in the BATT position. Otherwise there will be no connection between the two boards, and the mass storage device on the debugger board will come up in "Maintenance" mode.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_hw_split_ribboned_together_revb.png

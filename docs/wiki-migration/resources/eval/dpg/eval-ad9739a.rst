@@ -3,7 +3,7 @@ EVALUATING THE AD9739A / AD9737A RF DIGITAL-TO-ANALOG CONVERTER
 
 .. warning::
 
-   \ **NOTE:** Support for the eval-ad9739a is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
+   \ NOTE: Support for the eval-ad9739a is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
 
 
 Preface
@@ -57,7 +57,7 @@ Software Needed:
 
 .. important::
 
-   \ **Known Issue:** ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
+   \ Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
 
 
 Hardware Needed:

@@ -1,7 +1,6 @@
 ADXL345 - No-OS Driver for Renesas Microcontroller Platforms
 ============================================================
 
-
 ADXL345 No-OS Driver
 ====================
 
@@ -26,26 +25,8 @@ Reference Circuits
 Overview
 --------
 
-
-The :adi:`ADXL345` is a small, thin, low power, 3-axis accelerometer with high resolution (13-bit) measurement at up to ±16 g. Digital output data is formatted as 16-bit twos complement and is accessible through either a SPI (3- or 4-wire) or I2C digital interface.
-
-The :adi:`ADXL345` is well suited for mobile device applications. It measures the static acceleration of gravity in tilt-sensing applications, as well as dynamic acceleration resulting from motion or shock. Its high resolution (4 mg/LSB) enables measurement of inclination changes less than 1.0°.
-
-Several special sensing functions are provided. Activity and inactivity sensing detect the presence or lack of motion and if the acceleration on any axis exceeds a user-set level. Tap sensing detects single and double taps. Free-fall sensing detects if the device is falling. These functions can be mapped to one of two interrupt output pins. An integrated, patent pending 32-level first in, first out (FIFO) buffer can be used to store data to minimize host processor intervention.
-
-Low power modes enable intelligent motion-based power management with threshold sensing and active acceleration measurement at extremely low power dissipation.
-
-The :adi:`ADXL345` is supplied in a small, thin, 3 mm × 5 mm × 1 mm, 14-lead, plastic package.
-
-Applications
-============
-
--  ADXL345-EP Supports defense and aerospace applications (AQEC)
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/adxl345_pmod_acl.jpg
-   :align: center
-
-
+.. image:: https://wiki.analog.com/_media/page>/resources/pmods/adxl345
+   :alt: adxl345
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
@@ -65,8 +46,7 @@ If the SPI communication is chosen, there are three functions which are called b
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
-   :align: center
+|image1|
 
 .. container:: centeralign
 
@@ -79,8 +59,7 @@ If the I2C communication is chosen, there are three functions which are called b
 -  I2C_Write() – writes data to the device.
 -  I2C_Read() – reads data from the device.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
-   :align: center
+|image2|
 
 .. container:: centeralign
 
@@ -119,6 +98,8 @@ The following functions are implemented in this version of ADXL345 driver:
 | void ADXL345_SetRangeResolution(unsigned char gRange, unsigned char fullRes)                                                                                                                      | Selects the measurement range.                                                      |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
 
 
 **HW Platform(s):**
@@ -208,7 +189,7 @@ Required Software
 
 .. note::
 
-   The ADXL345 demonstration project for the Renesas RL78G14 platform consists of three parts: the **ADXL345 Driver**, the **PmodACL Demo for RL78G14** and the **RL78G14 Common Drivers**.
+   The ADXL345 demonstration project for the Renesas RL78G14 platform consists of three parts: the ADXL345 Driver, the PmodACL Demo for RL78G14 and the RL78G14 Common Drivers.
 
    
    All three parts have to be downloaded.
@@ -310,11 +291,10 @@ Software Project Setup
 More information
 ================
 
-
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+|//ez.analog.com/community/feeds/allcontent/atom|
 
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 

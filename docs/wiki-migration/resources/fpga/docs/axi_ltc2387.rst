@@ -122,7 +122,7 @@ Depending on ``TWOLANES`` parameter, whether it is set or not, the output *adc_d
 
 .. note::
 
-   Note that when using the **ONE LANE** configuration, the only resolution available is **18 bits**!
+   Note that when using the ONE LANE configuration, the only resolution available is 18 bits!
 
 
 Channel module description

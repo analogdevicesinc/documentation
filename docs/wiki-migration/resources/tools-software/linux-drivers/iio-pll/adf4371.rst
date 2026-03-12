@@ -133,7 +133,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADF4371 driver depends on **SPI** and selects **REGMAP_SPI**
+   The ADF4371 driver depends on SPI and selects REGMAP_SPI
 
 
 Adding Linux driver support
@@ -148,7 +148,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        <*>     Industrial I/O support --->
            --- Industrial I/O support
                     Frequency Synthesizers DDS/PLL --->
-                                ** Phase-Locked Loop (PLL) frequency synthesizers **
+                                 Phase-Locked Loop (PLL) frequency synthesizers 
                                 <*> Analog Devices ADF4371/ADF4372 Wideband Synthesizers
 
 Hardware configuration
@@ -167,13 +167,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      analog:/sys/bus/iio/devices/iio:device0# **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices# **ls**
+      analog:/sys/bus/iio/devices/iio:device0# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0  iio:device1  iio:device2  iio:device3
       root@analog:/sys/bus/iio/devices#
    
-      root@analog:/sys/bus/iio/devices# **cd iio\:device0**
-      root@analog:/sys/bus/iio/devices/iio:device0# **ls -l**
+      root@analog:/sys/bus/iio/devices# cd iio\:device0
+      root@analog:/sys/bus/iio/devices/iio:device0# ls -l
       total 0
       -r--r--r-- 1 root root 4096 sep  4 14:05 dev
       -rw-r--r-- 1 root root 4096 sep  4 14:05 muxout_enable
@@ -211,8 +211,8 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
-      **adf4371**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat name
+      adf4371
    
 
 
@@ -226,8 +226,8 @@ Read channel frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_frequency**
-      **8000000000**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_frequency
+      8000000000
    
 
 
@@ -241,8 +241,8 @@ Read channel name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_name**
-      **RF8x**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_name
+      RF8x
    
 
 
@@ -256,9 +256,9 @@ Set channel frequency
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 1000000000 > out_altvoltage0_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_frequency**
-      **1000000000**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 1000000000 > out_altvoltage0_frequency
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_frequency
+      1000000000
    
 
 
@@ -272,10 +272,10 @@ Channel power down
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_powerdown**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_powerdown
       0
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo 1 > out_altvoltage0_powerdown**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage0_powerdown**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > out_altvoltage0_powerdown
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_powerdown
       1
    
 
@@ -292,12 +292,12 @@ The mux output allows the user to access various internal points on the chip. Va
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat out_altvoltage_muxout_mode_available**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage_muxout_mode_available
       tristate digital_lock charge_pump_up charge_pump_down RDIV2 N_div_out VCO_test high VCO_calib_R_band VCO_calib_N_band
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat muxout_mode**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat muxout_mode
       digital_lock
-      root@analog:/sys/bus/iio/devices/iio:device0# **echo charge_pump_up > muxout_mode**
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat muxout_mode**
+      root@analog:/sys/bus/iio/devices/iio:device0# echo charge_pump_up > muxout_mode
+      root@analog:/sys/bus/iio/devices/iio:device0# cat muxout_mode
       charge_pump_up
    
 

@@ -35,7 +35,7 @@ Use the M3x0.5x12mm machine screws and M3x.5x Hex nuts with the M3 washers optio
 
 .. warning::
 
-   **WARNING:** Make sure that the connector pins are in alignment with J1 on the EVAL-ADIS and J1 on the ADIS16COM1/PCBZ, before pressing it into place.
+   WARNING: Make sure that the connector pins are in alignment with J1 on the EVAL-ADIS and J1 on the ADIS16COM1/PCBZ, before pressing it into place.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/conn-alignment.png

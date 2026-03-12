@@ -3,7 +3,7 @@ FTHR-PMD-INTZ Feather-to-PMOD Interposer Hardware User Guide
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/fthr-pmd-intz/index.html
@@ -23,7 +23,7 @@ This interposer board provides such solution and allows interfacing with up to t
 
 .. note::
 
-   **Evaluation Kit Contents:**
+   Evaluation Kit Contents:
 
    
    -  :adi:`FTHR-PMD-INTZ` Adapter Board (:adi:`Buy <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/FTHR-PMD-INTZ>`)

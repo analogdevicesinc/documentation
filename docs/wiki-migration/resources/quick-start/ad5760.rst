@@ -275,7 +275,7 @@ Initializing the DAC
    
    See Table 6 and Figure 6.
    
-   **Table 6. Bit Settings to Initialize and Write to the Part**
+   Table 6. Bit Settings to Initialize and Write to the Part
    
    +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Bit(s)  | Bit Name             | Setting | Description                                                                                                                                                      |
@@ -335,7 +335,7 @@ Writing to the DAC Register
    
    See Table 7 and Figure 7.
    
-   **Table 7. Bit Settings to Write to DAC Register**
+   Table 7. Bit Settings to Write to DAC Register
    
    +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Bit(s)  | Bit Name             | Setting | Description                                                                                                                                                      |

@@ -90,7 +90,7 @@ Running local
    
    ::
    
-      root@analog:~# **jesd_status**
+      root@analog:~# jesd_status
    
 
 
@@ -110,6 +110,6 @@ Depending on the terminal used colors might be unsupported and boxes, frames mig
    
    ::
    
-      root@analog:~# **TERM=vt100 jesd_status -s**
+      root@analog:~# TERM=vt100 jesd_status -s
    
 

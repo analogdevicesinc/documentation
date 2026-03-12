@@ -149,13 +149,13 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root@analog:/> **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices> **ls**
+      root@analog:/> cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices> ls
       iio:device0
    
-      root@analog:/sys/bus/iio/devices> **cd iio\:device0**
+      root@analog:/sys/bus/iio/devices> cd iio\:device0
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **ls -l**
+      root@analog:/sys/bus/iio/devices/iio:device0> ls -l
       total 0
       drwxr-xr-x 3 root root    0 Jan 25 16:17 .
       drwxr-xr-x 5 root root    0 Jan 25 16:17 ..
@@ -199,7 +199,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root@analog:~# **iio_info**
+      root@analog:~# iio_info
       iio_info version: 0.25 (git tag:8fb78e06)
       Libiio version: 0.25 (git tag: 8fb78e0) backends: local xml ip usb serial
       IIO context created with local backend.
@@ -274,7 +274,7 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat name**
+      root@analog:/sys/bus/iio/devices/iio:device0> cat name
       ltc2664
    
 
@@ -291,7 +291,7 @@ Show scale
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat out_voltage_scale**
+      root@analog:/sys/bus/iio/devices/iio:device0> cat out_voltage_scale
       0.305175781
    
 
@@ -311,7 +311,7 @@ Raw offset to be applied to out_voltage_raw in order to obtain the measured volt
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat out_voltage_offset**
+      root@analog:/sys/bus/iio/devices/iio:device0> cat out_voltage_offset
       -32768
    
 
@@ -330,7 +330,7 @@ Raw (unscaled, no bias etc.) output voltage for channel Y.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **echo 10000 > out_voltage0_raw**
+      root@analog:/sys/bus/iio/devices/iio:device0> echo 10000 > out_voltage0_raw
    
 
 
@@ -350,11 +350,11 @@ Enable power down mode on output Y
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0> **echo 1 > out_voltage0_powerdown**
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat out_voltage0_powerdown**
+      root@analog:/sys/bus/iio/devices/iio:device0> echo 1 > out_voltage0_powerdown
+      root@analog:/sys/bus/iio/devices/iio:device0> cat out_voltage0_powerdown
       1
-      root@analog:/sys/bus/iio/devices/iio:device0> **echo 0 > out_voltage0_powerdown**
-      root@analog:/sys/bus/iio/devices/iio:device0> **cat out_voltage0_powerdown**
+      root@analog:/sys/bus/iio/devices/iio:device0> echo 0 > out_voltage0_powerdown
+      root@analog:/sys/bus/iio/devices/iio:device0> cat out_voltage0_powerdown
       0
    
 
@@ -380,25 +380,25 @@ Test example
    
    ::
    
-      root@analog:~# **iio_attr -c**
+      root@analog:~# iio_attr -c
       IIO context has 2 devices:
           hwmon0, rpi_volt: found 1 channels
           iio:device0, ltc2664: found 4 channels
    
-      root@analog:~# **iio_attr -c ltc2664**
+      root@analog:~# iio_attr -c ltc2664
       dev 'ltc2664', channel 'voltage2' (output), found 5 channel-specific attributes
       dev 'ltc2664', channel 'voltage0' (output), found 5 channel-specific attributes
       dev 'ltc2664', channel 'voltage3' (output), found 5 channel-specific attributes
       dev 'ltc2664', channel 'voltage1' (output), found 8 channel-specific attributes
    
-      root@analog:~# **iio_attr -c ltc2664 voltage0**
+      root@analog:~# iio_attr -c ltc2664 voltage0
       dev 'ltc2664', channel 'voltage0' (output), attr 'offset', value '-32768'
       dev 'ltc2664', channel 'voltage0' (output), attr 'powerdown', value '1'
       dev 'ltc2664', channel 'voltage0' (output), attr 'raw', value '1'
       dev 'ltc2664', channel 'voltage0' (output), attr 'raw_available', value '[0 1 65535]'
       dev 'ltc2664', channel 'voltage0' (output), attr 'scale', value '0.305175781'
    
-      root@analog:~# **iio_attr -c ltc2664 voltage0 raw 10000**
+      root@analog:~# iio_attr -c ltc2664 voltage0 raw 10000
       10000
       root@analog:~#
    

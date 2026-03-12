@@ -148,7 +148,7 @@ First make sure all the required setup explained above is completed. Once the te
 
 .. important::
 
-   When testing the ADRV2CRR-FMC the following test needs to be run: **Test 3**\
+   When testing the ADRV2CRR-FMC the following test needs to be run: Test 3\
 
 
 -  Testing sequence can be started by selecting one of the menu items. In order to start testing an Ethernet cable should be connected between Raspberry Pi and DUT. At the beginning of every test the correct connection with DUT is checked. If the connection cannot be established the following error message will be printed:

@@ -3,7 +3,7 @@ AD-FMCLIDAR1-EBZ
 
 .. warning::
 
-   \ **NOTE:** Support for the ad_fmclidar_ebz is discontinued on all supported carriers: Arria10 SOC, zc706 and zcu102. ad_fmclidar_ebz will not be supported in future releases, last release in which pre-build files can be found is 2021_r1. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all available Kuiper Linux releases.
+   \ NOTE: Support for the ad_fmclidar_ebz is discontinued on all supported carriers: Arria10 SOC, zc706 and zcu102. ad_fmclidar_ebz will not be supported in future releases, last release in which pre-build files can be found is 2021_r1. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all available Kuiper Linux releases.
 
 
 Introduction
@@ -39,7 +39,7 @@ The :adi:`AD-FMCLIDAR1-EBZ <en/design-center/evaluation-hardware-and-software/ev
 
 ::
 
-     * *Laser optics are not provided with the system but ADI has a proven demo detecting an object upto 60m range at approx. 1m x 1m. Optional optics to achieve this are provided below in the **Example** section.*
+     * *Laser optics are not provided with the system but ADI has a proven demo detecting an object upto 60m range at approx. 1m x 1m. Optional optics to achieve this are provided below in the Example section.*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/highlevel_blk_dig.png
    :align: right
@@ -143,7 +143,7 @@ As an example to prove out the overall system functionality a demo using select 
 
 .. note::
 
-   **Application note:** `Making distance measurements with the AD-FMCLIDAR1-EBZ <https://wiki.analog.com/_media/resources/eval/user-guides/lidar_measurement.pdf>`_
+   Application note: `Making distance measurements with the AD-FMCLIDAR1-EBZ <https://wiki.analog.com/_media/resources/eval/user-guides/lidar_measurement.pdf>`_
 
 
 --------------

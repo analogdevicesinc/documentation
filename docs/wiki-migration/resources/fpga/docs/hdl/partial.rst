@@ -28,7 +28,7 @@ Supported carriers
 
 .. note::
 
-   **Mini-ITX** board definition file can be found at http://zedboard.org/support/documentation/2056 .
+   Mini-ITX board definition file can be found at http://zedboard.org/support/documentation/2056 .
 
 
 Design Flow
@@ -259,8 +259,8 @@ The functions, which do the update of the PR portion can be found :git-iio-oscil
    A few recommendations for the IIO oscilloscope setup:
 
    
-   -  The transmit side should be on **DAC Buffer Output** mode
-   -  If PRBS is used, the **Digital Loopback** should be enabled
+   -  The transmit side should be on DAC Buffer Output mode
+   -  If PRBS is used, the Digital Loopback should be enabled
    -  Because the IIO oscilloscope is using data from the memory, the ADC side should be on pass through configuration (0x0), in this way the user can examine the modulated data
    -  Use a higher sample count for the constellation plot
    

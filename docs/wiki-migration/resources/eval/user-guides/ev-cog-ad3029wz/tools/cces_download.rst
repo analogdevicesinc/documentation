@@ -16,7 +16,7 @@ The CCES software development environment for EV-COG-AD3029WZ is based on open s
 
 .. important::
 
-   **CrossCore Embedded Studio** is based on **Eclipse**, but because the MBED platform provides a CMSIS-DAP interface to connect to the board, the EV-COG-AD3029WZ can be used without problems with **IAR Embedded Workbench IDE** or **Keil µVision IDE** as well.
+   CrossCore Embedded Studio is based on Eclipse, but because the MBED platform provides a CMSIS-DAP interface to connect to the board, the EV-COG-AD3029WZ can be used without problems with IAR Embedded Workbench IDE or Keil µVision IDE as well.
 
 
 Pre-Requisites and Requirements List

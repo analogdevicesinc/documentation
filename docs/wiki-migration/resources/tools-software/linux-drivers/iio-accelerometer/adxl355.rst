@@ -108,13 +108,13 @@ Driver testing
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
    
-      root:/sys/bus/iio/devices> **cd iio\:device0**
+      root:/sys/bus/iio/devices> cd iio\:device0
    
-      root:/sys/bus/iio/devices/iio:device0> **ls -l**
+      root:/sys/bus/iio/devices/iio:device0> ls -l
       drwxr-xr-x  2 root root    0 Nov 11 15:44 buffer
       -rw-r--r--  1 root root 4096 Nov 11 15:44 current_timestamp_clock
       -r--r--r--  1 root root 4096 Nov 11 15:44 dev
@@ -151,7 +151,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat name**
+      root:/sys/bus/iio/devices/iio:device0> cat name
       adxl355
    
 
@@ -168,7 +168,7 @@ Show scale
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_scale**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_scale
       0.000038245
    
 
@@ -185,7 +185,7 @@ Show axis x measurement
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_x_raw**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_x_raw
       -33631
    
 
@@ -200,13 +200,13 @@ Set sampling frequency
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_sampling_frequency_available**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_sampling_frequency_available
       4000.000000 2000.000000 1000.000000 500.000000 250.000000 125.000000 62.500000 31.250000 15.625000 7.813000 3.906000
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_sampling_frequency
       6400
-      root:/sys/bus/iio/devices/iio:device0> **echo 4000 > in_accel_sampling_frequency**
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device0> echo 4000 > in_accel_sampling_frequency
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_sampling_frequency
       4000.000000
    
 
@@ -221,7 +221,7 @@ Show available bandwidths for the current set frequency
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_filter_low_pass_3db_frequency_available**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_filter_low_pass_3db_frequency_available
       0.000000 9.880000 2.483360 0.621800 0.154480 0.038160 0.009520
       root:/sys/bus/iio/devices/iio:device0>
    
@@ -237,12 +237,12 @@ Change the bandwidth
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_filter_low_pass_3db_frequency_available**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_filter_low_pass_3db_frequency_available
       0.000000 9.880000 2.483360 0.621800 0.154480 0.038160 0.009520
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_filter_low_pass_3db_frequency**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_filter_low_pass_3db_frequency
       0
-      root:/sys/bus/iio/devices/iio:device0> **echo 0.621800 > in_accel_filter_low_pass_3db_frequency**
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_filter_low_pass_3db_frequency**
+      root:/sys/bus/iio/devices/iio:device0> echo 0.621800 > in_accel_filter_low_pass_3db_frequency
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_filter_low_pass_3db_frequency
       0.621800
    
 
@@ -257,7 +257,7 @@ Trigger management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat trigger/current_trigger**
+      root:/sys/bus/iio/devices/iio:device0> cat trigger/current_trigger
       adxl355-dev-*
    
 
@@ -274,7 +274,7 @@ Buffer management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **ls -l**
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> ls -l
       -rw-r--r-- 1 root root 4096 Nov 11 15:44 in_accel_x_en
       -r--r--r-- 1 root root 4096 Nov 11 15:44 in_accel_x_index
       -r--r--r-- 1 root root 4096 Nov 11 15:44 in_accel_x_type
@@ -316,7 +316,7 @@ Buffer management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **echo 1024 > length**
+      root:/sys/bus/iio/devices/iio:device0/buffer> echo 1024 > length
    
 
 
@@ -329,7 +329,7 @@ Buffer management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **echo 1 > enable**
+      root:/sys/bus/iio/devices/iio:device0/buffer> echo 1 > enable
    
 
 
@@ -342,7 +342,7 @@ To read samples:
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **cat /dev/iio:device0**
+      root:/sys/bus/iio/devices/iio:device0/buffer> cat /dev/iio:device0
    
 
 

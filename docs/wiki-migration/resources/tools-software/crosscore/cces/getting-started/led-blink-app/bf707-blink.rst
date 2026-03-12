@@ -18,9 +18,9 @@ Provided here is the full code example needed to blink the LED on the ADSP-BF707
 
 .. code:: c
 
-   /****************************************************************************
+   /****************
      * CCES Example.c
-    ****************************************************************************/
+    ****************/
 
    #include "adi_initialize.h"
    #include "CCES Example.h"

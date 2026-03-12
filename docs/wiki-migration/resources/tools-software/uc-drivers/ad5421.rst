@@ -1,4 +1,3 @@
-
 AD5421 - Microcontroller No-OS Driver
 =====================================
 
@@ -57,8 +56,7 @@ The Communication Driver has a standard interface, so the AD5421 driver can be u
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
-   :align: center
+|image1|
 
 .. container:: centeralign
 
@@ -168,11 +166,8 @@ The demo program writes a value to the DAC register, reads the die temperature a
 Software Project Tutorial
 -------------------------
 
-
-.. note::
-
-   See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
-
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>rl78g13_software_tutorial
+   :alt: page>rl78g13_software_tutorial
 
 Renesas RX62N Quick Start Guide
 ===============================
@@ -216,19 +211,14 @@ The demo program writes a value to the DAC register, reads the die temperature a
 Software Project Setup
 ----------------------
 
-
-.. note::
-
-   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
-
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>rx62n_software_design
+   :alt: page>rx62n_software_design
 
 More information
 ================
 
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>more-information
+   :alt: page>more-information
 
-.. note::
-
-   See `more-information <https://wiki.analog.com/more-information>`_
-
-
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
 

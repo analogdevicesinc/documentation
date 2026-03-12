@@ -239,7 +239,7 @@ Also note that if your system does not have L3 memory, you need to make a change
         CopyFix2Float((volatile uint32_t*)&nTempBuff[i], NUM_CHANNELS, pSSInBuff[i], 1, BLOCK_SIZE, 2u);
       }
       /* Call to the Schematic processing  */
-      adi_ss_schematic_process(hSSnHandle,BLOCK_SIZE,(adi_ss_sample_t **)pSSInBuff,(adi_ss_sample_t**)pSSOutBuff,pSSnProperties);
+      adi_ss_schematic_process(hSSnHandle,BLOCK_SIZE,(adi_ss_sample_t )pSSInBuff,(adi_ss_sample_t)pSSOutBuff,pSSnProperties);
       /* Float to fix conversion and copy back to SPORT buffer */
       for(i=0; i<NUM_CHANNELS; i++)
       {

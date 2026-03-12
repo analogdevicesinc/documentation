@@ -203,7 +203,7 @@ After installing and configuring PYADI-IIO on your machine, you are now ready to
 
 .. important::
 
-   Cyclic mode is actually not enabled by defualt, please edit the file **examples/ad3552r_example.py** and set:
+   Cyclic mode is actually not enabled by defualt, please edit the file examples/ad3552r_example.py and set:
 
    
    ::

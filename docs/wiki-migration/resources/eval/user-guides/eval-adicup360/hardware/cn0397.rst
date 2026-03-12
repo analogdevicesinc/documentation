@@ -26,7 +26,7 @@ Sensor Footprint
 
 .. note::
 
-   Two types of photodiodes could be used in **EVAL-CN0397-ARDZ**, with provisions for two different types of footprints.
+   Two types of photodiodes could be used in EVAL-CN0397-ARDZ, with provisions for two different types of footprints.
 
    | Provision for S7505-01 Hamamatsu 3 Channel RGB Color Sensor is available on the board. The Everlight photodiodes are installed on the board as default and were used during testing and programming of this boards.
 

@@ -23,7 +23,7 @@ Software Needed
 
    
    -  Do not install ACE on a computer with DAC Software Suite.
-   -  **Known Issue:** ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
+   -  Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
    
 
 
@@ -122,10 +122,10 @@ There are six available sample waveform settings that can be loaded from the plu
    To modify sample waveform, either
 
    
-   -  click **Back to AD910x** then modify the settings from the chip view; or
-   -  open **Memory Map** then change register values.
+   -  click Back to AD910x then modify the settings from the chip view; or
+   -  open Memory Map then change register values.
    
-   Click **Apply Changes** then **Trigger**.
+   Click Apply Changes then Trigger.
 
 
 ===== Extracting power up sequence and SPI registers ===== When transitioning from an evaluation platform to custom designed hardware it is often necessary to understand the state of the hardware settings or interactions occurring during an evaluation session. ACE provides the option to :doc:`Export Interaction With Hardware </wiki-migration/resources/tools-software/ace/exporting>`.
@@ -182,7 +182,7 @@ From the SRAM Control Tab, select the vector file path in the Vector file text b
 
 .. note::
 
-   SRAM registers are left justified. Data written to memory map are automatically shifted to the left by **4 bits** for AD9106 and **2 bits** for AD9102.
+   SRAM registers are left justified. Data written to memory map are automatically shifted to the left by 4 bits for AD9106 and 2 bits for AD9102.
 
 
 ==== Using the Vector Generator ==== The plugin also includes a :doc:`vector generation tool </wiki-migration/resources/tools-software/ace/vector-generation>` also accessible in the **SRAM Control Tab**\ |ad9106_vector_generator.jpg|
@@ -211,10 +211,10 @@ To Generate a Vector
    Ensure that vector characteristics is similar to Figure 17 or that:
 
    
-   -  Data Rate is **similar** to DAC Clock.
-   -  Record length is **4096**.
-   -  Resolution is **12 bits** for AD9106 and **14 bits** for AD9102.
-   -  Amplitude control should be in **dB**.
+   -  Data Rate is similar to DAC Clock.
+   -  Record length is 4096.
+   -  Resolution is 12 bits for AD9106 and 14 bits for AD9102.
+   -  Amplitude control should be in dB.
    
 
 

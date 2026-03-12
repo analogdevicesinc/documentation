@@ -3,7 +3,7 @@ AD9467 Evaluation Board, ADC-FMC Interposer & Xilinx Reference Design
 
 .. important::
 
-   This design is **not supported anymore**, thus this wiki page is **kept for legacy purposes only**. The similar design **with an FMC connector is still supported** and can be found here :doc:`AD9467 Native FMC Card / Xilinx Reference Design </wiki-migration/resources/fpga/xilinx/fmc/ad9467>`\
+   This design is not supported anymore, thus this wiki page is kept for legacy purposes only. The similar design with an FMC connector is still supported and can be found here :doc:`AD9467 Native FMC Card / Xilinx Reference Design </wiki-migration/resources/fpga/xilinx/fmc/ad9467>`\
 
 
 Introduction

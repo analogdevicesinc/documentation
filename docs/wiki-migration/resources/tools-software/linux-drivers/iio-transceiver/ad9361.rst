@@ -113,7 +113,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD9361 driver depends on **CONFIG_SPI**
+   The AD9361 driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -131,7 +131,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
 
            <*>   Analog Devices AD9467 AD9643 High-Speed AXI ADC driver
@@ -149,7 +149,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. tip::
 
-   \ **TIP:** An example program which uses the interface can be found here:
+   \ TIP: An example program which uses the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
@@ -185,11 +185,11 @@ General attribute naming convention:
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0  iio:device1  iio:device2  iio:device3  iio:device4
    
-      root:/sys/bus/iio/devices> **cd iio:device1**
+      root:/sys/bus/iio/devices> cd iio:device1
    
       root:/sys/bus/iio/devices/iio:device1# ls -l
       total 0
@@ -269,7 +269,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat name**
+      root:/sys/bus/iio/devices/iio:device1> cat name
       ad9361-phy
    
 
@@ -286,7 +286,7 @@ The AD9361 transceiver includes an Enable State Machine (ENSM), allowing real ti
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat ensm_mode_available**
+      root:/sys/bus/iio/devices/iio:device1> cat ensm_mode_available
       sleep wait alert fdd pinctrl pinctrl_fdd_indep
    
 
@@ -314,18 +314,18 @@ The AD9361 transceiver includes an Enable State Machine (ENSM), allowing real ti
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat ensm_mode**
+      root:/sys/bus/iio/devices/iio:device1> cat ensm_mode
       fdd
    
-      root:/sys/bus/iio/devices/iio:device1> **echo alert > ensm_mode**
-      root:/sys/bus/iio/devices/iio:device1> **cat ensm_mode**
+      root:/sys/bus/iio/devices/iio:device1> echo alert > ensm_mode
+      root:/sys/bus/iio/devices/iio:device1> cat ensm_mode
       alert
    
 
 
 .. tip::
 
-   \ **NOTE:** Be aware if you you want to transition in TDD mode from RX to TX you have to go via ALERT. (Recent driver releases - do this now automatically...)
+   \ NOTE: Be aware if you you want to transition in TDD mode from RX to TX you have to go via ALERT. (Recent driver releases - do this now automatically...)
 
    
    You may want to checkout the ENSM Pin-Control test script here: :git-linux_image_ADI-scripts:`test_ensm_pinctrl.sh`
@@ -343,10 +343,10 @@ The AD9361 transceiver contains two identical RFPLL synthesizers to generate the
    
    ::
    
-       **cat out_altvoltage0_RX_LO_frequency**
+       cat out_altvoltage0_RX_LO_frequency
       2400000000
-      root:/sys/bus/iio/devices/iio:device1> **echo 2450000000 >  out_altvoltage0_RX_LO_frequency**
-      root:/sys/bus/iio/devices/iio:device1> **cat out_altvoltage0_RX_LO_frequency**
+      root:/sys/bus/iio/devices/iio:device1> echo 2450000000 >  out_altvoltage0_RX_LO_frequency
+      root:/sys/bus/iio/devices/iio:device1> cat out_altvoltage0_RX_LO_frequency
       2450000000
    
 
@@ -363,8 +363,8 @@ If both, the TX and RX Local Oscillators (LO) are set to the same frequency or v
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **echo 0 >  out_altvoltage1_TX_LO_powerdown**
-      root:/sys/bus/iio/devices/iio:device1> **cat out_altvoltage1_TX_LO_powerdown**
+      root:/sys/bus/iio/devices/iio:device1> echo 0 >  out_altvoltage1_TX_LO_powerdown
+      root:/sys/bus/iio/devices/iio:device1> cat out_altvoltage1_TX_LO_powerdown
       0
    
 
@@ -376,7 +376,7 @@ If both, the TX and RX Local Oscillators (LO) are set to the same frequency or v
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat out_altvoltage0_RX_LO_powerdown**
+      root:/sys/bus/iio/devices/iio:device1> cat out_altvoltage0_RX_LO_powerdown
       1
    
 
@@ -414,10 +414,10 @@ Example:
    
    ::
    
-       **cat out_altvoltage0_RX_LO_frequency**
+       cat out_altvoltage0_RX_LO_frequency
       2400000000
-      root:/sys/bus/iio/devices/iio:device1> **echo 1 >  out_altvoltage0_RX_LO_external**
-      root:/sys/bus/iio/devices/iio:device1> **cat out_altvoltage0_RX_LO_external**
+      root:/sys/bus/iio/devices/iio:device1> echo 1 >  out_altvoltage0_RX_LO_external
+      root:/sys/bus/iio/devices/iio:device1> cat out_altvoltage0_RX_LO_external
       1
    
 
@@ -429,7 +429,7 @@ The device includes a Fast Lock mode that makes it possible to achieve faster th
 
 .. tip::
 
-   \ **NOTE:** You may want to checkout the Fastlock Pin-Control test script here: :git-linux_image_ADI-scripts:`test_tx_fastlock_pinctrl.sh`
+   \ NOTE: You may want to checkout the Fastlock Pin-Control test script here: :git-linux_image_ADI-scripts:`test_tx_fastlock_pinctrl.sh`
 
 
 Create Profile
@@ -446,8 +446,8 @@ Valid profile range is from 0..7
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **echo 4242000000 >  out_altvoltage0_RX_LO_frequency**
-      root:/sys/bus/iio/devices/iio:device1> **echo 0 > out_altvoltage0_RX_LO_fastlock_store**
+      root:/sys/bus/iio/devices/iio:device1> echo 4242000000 >  out_altvoltage0_RX_LO_frequency
+      root:/sys/bus/iio/devices/iio:device1> echo 0 > out_altvoltage0_RX_LO_fastlock_store
    
 
 
@@ -467,7 +467,7 @@ When in fastlock pin select mode (adi,[tx|rx]-fastlock-pincontrol-enable). This 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **echo 0 > out_altvoltage0_RX_LO_fastlock_recall**
+      root:/sys/bus/iio/devices/iio:device1> echo 0 > out_altvoltage0_RX_LO_fastlock_recall
    
 
 
@@ -485,8 +485,8 @@ The format is: Profile# val0,val1,val2,…,val15
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> ** echo 0 > out_altvoltage0_RX_LO_fastlock_save **
-      root:/sys/bus/iio/devices/iio:device1> ** cat out_altvoltage0_RX_LO_fastlock_save **
+      root:/sys/bus/iio/devices/iio:device1>  echo 0 > out_altvoltage0_RX_LO_fastlock_save 
+      root:/sys/bus/iio/devices/iio:device1>  cat out_altvoltage0_RX_LO_fastlock_save 
       0 240,0,202,204,12,80,24,16,187,255,60,238,113,233,93,174
    
 
@@ -505,7 +505,7 @@ The format is: Profile# val0,val1,val2,…,val15
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> ** echo 0 240,0,202,204,12,80,24,16,187,255,60,238,113,233,93,174 > out_altvoltage0_RX_LO_fastlock_load **
+      root:/sys/bus/iio/devices/iio:device1>  echo 0 240,0,202,204,12,80,24,16,187,255,60,238,113,233,93,174 > out_altvoltage0_RX_LO_fastlock_load 
    
 
 
@@ -523,7 +523,7 @@ The high level in_voltage_sampling_frequency attribute effectively controls the 
 
 .. tip::
 
-   \ **NOTE:** In the minimum ADC rate is 25MSPS. Baseband rates below 2.083 MSPS (25MSPS/12) require FIR decimation/interpolation to be set. In other words the FIR filter needs to be configured and enabled. The minimum baseband rate with the FIR filter (decimate by 4) enabled is: 25MSPS /(4\*12) = 520.83 kSPS.
+   \ NOTE: In the minimum ADC rate is 25MSPS. Baseband rates below 2.083 MSPS (25MSPS/12) require FIR decimation/interpolation to be set. In other words the FIR filter needs to be configured and enabled. The minimum baseband rate with the FIR filter (decimate by 4) enabled is: 25MSPS /(4\*12) = 520.83 kSPS.
 
    
    Some example filters can be found here::git-iio-oscilloscope:`filters`
@@ -540,10 +540,10 @@ Setting / Querying the RX Sample Rate
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_sampling_frequency
       30720000
-      root:/sys/bus/iio/devices/iio:device1> **echo 10000000 >  in_voltage_sampling_frequency**
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device1> echo 10000000 >  in_voltage_sampling_frequency
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_sampling_frequency
       10000000
    
 
@@ -576,7 +576,7 @@ This attribute lists the current rates in the various digital blocks.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat rx_path_rates**
+      root:/sys/bus/iio/devices/iio:device1> cat rx_path_rates
       BBPLL:983040000 ADC:245760000 R2:122880000 R1:61440000 RF:30720000 RXSAMP:30720000
    
 
@@ -595,7 +595,7 @@ The high level out_voltage_sampling_frequency attribute effectively controls the
 
 .. tip::
 
-   \ **NOTE:** In the minimum ADC rate is 25MSPS. Baseband rates below 2.083 MSPS (25MSPS/12) require FIR decimation/interpolation to be set. In other words the FIR filter needs to be configured and enabled. The minimum baseband rate with the FIR filter (decimate by 4) enabled is: 25MSPS /(4\*12) = 520.83 kSPS.
+   \ NOTE: In the minimum ADC rate is 25MSPS. Baseband rates below 2.083 MSPS (25MSPS/12) require FIR decimation/interpolation to be set. In other words the FIR filter needs to be configured and enabled. The minimum baseband rate with the FIR filter (decimate by 4) enabled is: 25MSPS /(4\*12) = 520.83 kSPS.
 
    
    Some example filters can be found here::git-iio-oscilloscope:`filters`
@@ -612,10 +612,10 @@ Setting / Querying the TX Sample Rate
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat out_voltage_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device1> cat out_voltage_sampling_frequency
       30720000
-      root:/sys/bus/iio/devices/iio:device1> **echo 10000000 >  out _voltage_sampling_frequency**
-      root:/sys/bus/iio/devices/iio:device1> **cat out _voltage_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device1> echo 10000000 >  out _voltage_sampling_frequency
+      root:/sys/bus/iio/devices/iio:device1> cat out _voltage_sampling_frequency
       10000000
    
 
@@ -648,7 +648,7 @@ This attribute lists the current rates in the various digital blocks.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat tx_path_rates**
+      root:/sys/bus/iio/devices/iio:device1> cat tx_path_rates
       BBPLL:983040000 DAC:122880000 T2:122880000 T1:61440000 TF:30720000 TXSAMP:30720000
    
 
@@ -668,7 +668,7 @@ List available Rate Governors
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat trx_rate_governor_available**
+      root:/sys/bus/iio/devices/iio:device1> cat trx_rate_governor_available
       nominal highest_osr
    
 
@@ -683,10 +683,10 @@ Selecting Rate Governor
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat trx_rate_governor**
+      root:/sys/bus/iio/devices/iio:device1> cat trx_rate_governor
       highest_osr
-      root:/sys/bus/iio/devices/iio:device1> **echo nominal > trx_rate_governor**
-      root:/sys/bus/iio/devices/iio:device1> **cat trx_rate_governor**
+      root:/sys/bus/iio/devices/iio:device1> echo nominal > trx_rate_governor
+      root:/sys/bus/iio/devices/iio:device1> cat trx_rate_governor
       nominal
    
 
@@ -713,7 +713,7 @@ Query current filter Configuration
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat filter_fir_config**
+      root:/sys/bus/iio/devices/iio:device1> cat filter_fir_config
       FIR Rx  0,0 Tx 0,0
    
 
@@ -732,8 +732,8 @@ Query current filter Configuration
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat LTE20.txt >  filter_fir_config**
-      root:/sys/bus/iio/devices/iio:device1> **cat filter_fir_config**
+      root:/sys/bus/iio/devices/iio:device1> cat LTE20.txt >  filter_fir_config
+      root:/sys/bus/iio/devices/iio:device1> cat filter_fir_config
       FIR Rx  128,2 Tx 128,2
    
 
@@ -750,12 +750,12 @@ Syntax
 
 ::
 
-   **RX** [1,2,3(both)] **GAIN** [-12, -6, 0, 6] **DEC** [1,2,4]
-   **TX** [1,2,3(both)] **GAIN** [-6, 0] **INT** [1,2,4]
-   [**RRX** <BBPLL ADC R2 R1 RF RXSAMP>]
-   [**RTX** <BBPLL DAC T2 T1 TF TXSAMP>]
-   [**BWRX** <RX RF Bandwidth>]
-   [**BWTX** <RX TF Bandwidth>]
+   RX [1,2,3(both)] GAIN [-12, -6, 0, 6] DEC [1,2,4]
+   TX [1,2,3(both)] GAIN [-6, 0] INT [1,2,4]
+   [RRX <BBPLL ADC R2 R1 RF RXSAMP>]
+   [RTX <BBPLL DAC T2 T1 TF TXSAMP>]
+   [BWRX <RX RF Bandwidth>]
+   [BWTX <RX TF Bandwidth>]
    <tx-coef0, rx-coef0>
    <tx-coef1, rx-coef1>
    <…, …>
@@ -782,10 +782,10 @@ To enable or disable the RX or TX path filters simply write 0,N or 1,Y to one of
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_filter_fir_en**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_filter_fir_en
       0
-      root:/sys/bus/iio/devices/iio:device1> **echo 1 > in_voltage_filter_fir_en**
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_filter_fir_en**
+      root:/sys/bus/iio/devices/iio:device1> echo 1 > in_voltage_filter_fir_en
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_filter_fir_en
       1
    
 
@@ -797,7 +797,7 @@ To enable or disable the RX or TX path filters simply write 0,N or 1,Y to one of
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat out_voltage_filter_fir_en**
+      root:/sys/bus/iio/devices/iio:device1> cat out_voltage_filter_fir_en
       0
    
 
@@ -809,7 +809,7 @@ To enable or disable the RX or TX path filters simply write 0,N or 1,Y to one of
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_out_voltage_filter_fir_en**
+      root:/sys/bus/iio/devices/iio:device1> cat in_out_voltage_filter_fir_en
       0
    
 
@@ -831,10 +831,10 @@ These filters can be set by writing a single device attribute (in_voltage_rf_ban
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_rf_bandwidth**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_rf_bandwidth
       18000000
-      root:/sys/bus/iio/devices/iio:device1> **echo 9000000 >  in_voltage_rf_bandwidth**
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_rf_bandwidth**
+      root:/sys/bus/iio/devices/iio:device1> echo 9000000 >  in_voltage_rf_bandwidth
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_rf_bandwidth
       9000000
    
 
@@ -853,10 +853,10 @@ These filters can be set by writing a single device attribute (out_voltage_rf_ba
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat out_voltage_rf_bandwidth**
+      root:/sys/bus/iio/devices/iio:device1> cat out_voltage_rf_bandwidth
       18000000
-      root:/sys/bus/iio/devices/iio:device1> **echo 9000000 > out_voltage_rf_bandwidth**
-      root:/sys/bus/iio/devices/iio:device1> **cat out_voltage_rf_bandwidth**
+      root:/sys/bus/iio/devices/iio:device1> echo 9000000 > out_voltage_rf_bandwidth
+      root:/sys/bus/iio/devices/iio:device1> cat out_voltage_rf_bandwidth
       9000000
    
 
@@ -993,7 +993,7 @@ Gain control modes
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_gain_control_mode_available**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_gain_control_mode_available
       manual fast_attack slow_attack hybrid
    
 
@@ -1020,10 +1020,10 @@ Querying or Setting a Gain Control Mode
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage0_gain_control_mode**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage0_gain_control_mode
       slow_attack
-      root:/sys/bus/iio/devices/iio:device1> **echo manual > in_voltage0_gain_control_mode**
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage0_gain_control_mode**
+      root:/sys/bus/iio/devices/iio:device1> echo manual > in_voltage0_gain_control_mode
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage0_gain_control_mode
       manual
    
 
@@ -1035,7 +1035,7 @@ Querying or Setting a Gain Control Mode
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage1_gain_control_mode**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage1_gain_control_mode
       slow_attack
    
 
@@ -1052,7 +1052,7 @@ Supported in all available Gain control modes
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage0_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage0_hardwaregain
       61.000000 dB
    
 
@@ -1064,7 +1064,7 @@ Supported in all available Gain control modes
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage1_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage1_hardwaregain
       71.000000 dB
    
 
@@ -1081,8 +1081,8 @@ Only available in Manual Gain Control Mode (MGC)
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **echo 42 > in_voltage0_hardwaregain**
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage0_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device1> echo 42 > in_voltage0_hardwaregain
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage0_hardwaregain
       42.000000 dB
    
 
@@ -1099,10 +1099,10 @@ The TX attenuation/gain can be individually controlled for TX1 and TX2. The rang
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat out_voltage0_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device1> cat out_voltage0_hardwaregain
       -10.000000 dB
-      root:/sys/bus/iio/devices/iio:device1> **echo -42.25 >  out_voltage0_hardwaregain**
-      root:/sys/bus/iio/devices/iio:device1> **cat out_voltage0_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device1> echo -42.25 >  out_voltage0_hardwaregain
+      root:/sys/bus/iio/devices/iio:device1> cat out_voltage0_hardwaregain
       -42.250000 dB
    
 
@@ -1114,7 +1114,7 @@ The TX attenuation/gain can be individually controlled for TX1 and TX2. The rang
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat out_voltage1_hardwaregain**
+      root:/sys/bus/iio/devices/iio:device1> cat out_voltage1_hardwaregain
       -10.000000 dB
    
 
@@ -1131,7 +1131,7 @@ Given the wide variety of applications for which the AD9361 is suited, the recei
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage0_rssi**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage0_rssi
       104.50 dB
    
 
@@ -1143,7 +1143,7 @@ Given the wide variety of applications for which the AD9361 is suited, the recei
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage1_rssi**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage1_rssi
       116.75 dB
    
 
@@ -1155,7 +1155,7 @@ Recognizing that in TDD systems the receiver and transmitter are not operating s
 
 .. tip::
 
-   \ **NOTE:** This feature is only available in TX MONITOR MODE set **in_voltage0_rf_port_select** to one of the following modes: **TX_MONITOR**\ 1, **TX_MONITOR2** or **TX_MONITOR1_2**
+   \ NOTE: This feature is only available in TX MONITOR MODE set in_voltage0_rf_port_select to one of the following modes: TX_MONITOR\ 1, TX_MONITOR2 or TX_MONITOR1_2
 
 
 .. container:: box bggreen
@@ -1165,7 +1165,7 @@ Recognizing that in TDD systems the receiver and transmitter are not operating s
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat out_voltage0_rssi**
+      root:/sys/bus/iio/devices/iio:device1> cat out_voltage0_rssi
       30.50 dB
    
 
@@ -1177,7 +1177,7 @@ Recognizing that in TDD systems the receiver and transmitter are not operating s
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat out_voltage1_rssi**
+      root:/sys/bus/iio/devices/iio:device1> cat out_voltage1_rssi
       0.00 dB
    
 
@@ -1192,7 +1192,7 @@ Calibration Mode Controls
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat calib_mode_available**
+      root:/sys/bus/iio/devices/iio:device1> cat calib_mode_available
       auto manual manual_tx_quad tx_quad rf_dc_offs rssi_gain_step
    
 
@@ -1220,7 +1220,7 @@ Calibration Mode Controls
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat calib_mode**
+      root:/sys/bus/iio/devices/iio:device1> cat calib_mode
       auto
    
 
@@ -1232,7 +1232,7 @@ Calibration Mode Controls
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **echo tx_quad > calib_mode**
+      root:/sys/bus/iio/devices/iio:device1> echo tx_quad > calib_mode
    
 
 
@@ -1248,7 +1248,7 @@ With optional calibration phase offset value
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **echo tx_quad 14 > calib_mode**
+      root:/sys/bus/iio/devices/iio:device1> echo tx_quad 14 > calib_mode
    
 
 
@@ -1262,7 +1262,7 @@ Force tx quad phase search
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **echo tx_quad -2 > calib_mode**
+      root:/sys/bus/iio/devices/iio:device1> echo tx_quad -2 > calib_mode
    
 
 
@@ -1278,10 +1278,10 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_quadrature_tracking_en**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_quadrature_tracking_en
       1
-      root:/sys/bus/iio/devices/iio:device1> **echo 0 > in_voltage_quadrature_tracking_en**
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_quadrature_tracking_en**
+      root:/sys/bus/iio/devices/iio:device1> echo 0 > in_voltage_quadrature_tracking_en
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_quadrature_tracking_en
       0
    
 
@@ -1293,7 +1293,7 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_bb_dc_offset_tracking_en**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_bb_dc_offset_tracking_en
       1
    
 
@@ -1305,7 +1305,7 @@ Writing 0, N or 1, Y to the below attributes either disables or enables the corr
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_rf_dc_offset_tracking_en**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_rf_dc_offset_tracking_en
       1
    
 
@@ -1322,7 +1322,7 @@ Each receive channel has 3 differential or 6 single ended inputs that can be mul
 
 .. tip::
 
-   \ **NOTE: Switching the RF INPUT port:** Switching the RF input port:
+   \ NOTE: Switching the RF INPUT port: Switching the RF input port:
 
    
    During device driver initialization the driver runs the RF DC offset calibration only on the default RF input port specified with :doc:`these attributes </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361-customization>`. So if using the RF RX B or C inputs along with the RF RX A input, you should run the calibration also, once with other input band/port selected. After calibrating each band, switching between from the A input to the B or C input should not require another calibration unless a large frequency change is made. Since the B and C inputs use the same calibration results, switching from input B to input C may require running the RF DC offset calibration. See here: :doc:`Calibration Mode Controls: rf_dc_offs </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
@@ -1331,7 +1331,7 @@ Each receive channel has 3 differential or 6 single ended inputs that can be mul
 
 .. tip::
 
-   \ **NOTE: Switching the RF OUTPUT port:**
+   \ NOTE: Switching the RF OUTPUT port:
 
    
    During device driver initialization the driver runs the TX Quadrature calibration only on the default RF output port specified with :doc:`these attributes </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361-customization>`. During regular operation TX Quadrature is only run on the select RF output. However the TX quadrature calibration stores a separate set of calibration results for the RF TX_A and TX_B output path. So if switching the output, the calibration must be once manually triggered. See here: :doc:`Calibration Mode Controls: tx_quad </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
@@ -1345,11 +1345,11 @@ Each receive channel has 3 differential or 6 single ended inputs that can be mul
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat out_voltage_rf_port_select_available**
+      root:/sys/bus/iio/devices/iio:device1> cat out_voltage_rf_port_select_available
       A B
-      root:/sys/bus/iio/devices/iio:device1> **cat in_voltage_rf_port_select_available**
+      root:/sys/bus/iio/devices/iio:device1> cat in_voltage_rf_port_select_available
       A_BALANCED B_BALANCED C_BALANCED A_N A_P B_N B_P C_N C_P TX_MONITOR1 TX_MONITOR2 TX_MONITOR1_2
-      root:/sys/bus/iio/devices/iio:device1> **echo B_BALANCED > in_voltage0_rf_port_select**
+      root:/sys/bus/iio/devices/iio:device1> echo B_BALANCED > in_voltage0_rf_port_select
    
 
 
@@ -1380,7 +1380,7 @@ The DCXO can be tuned using the coarse and fine tune attributes detailed below.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat dcxo_tune_coarse**
+      root:/sys/bus/iio/devices/iio:device1> cat dcxo_tune_coarse
       8
    
 
@@ -1392,10 +1392,10 @@ The DCXO can be tuned using the coarse and fine tune attributes detailed below.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat dcxo_tune_fine**
+      root:/sys/bus/iio/devices/iio:device1> cat dcxo_tune_fine
       5920
-      root:/sys/bus/iio/devices/iio:device1> **echo 5930 > dcxo_tune_fine**
-      root:/sys/bus/iio/devices/iio:device1> **cat dcxo_tune_fine**
+      root:/sys/bus/iio/devices/iio:device1> echo 5930 > dcxo_tune_fine
+      root:/sys/bus/iio/devices/iio:device1> cat dcxo_tune_fine
       5930
    
 
@@ -1416,10 +1416,10 @@ Since every time this is written, it will re-calculate and re-program all the PL
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat xo_correction**
+      root:/sys/bus/iio/devices/iio:device1> cat xo_correction
       40000000
-      root:/sys/bus/iio/devices/iio:device1> **echo 40000005 > xo_correction**
-      root:/sys/bus/iio/devices/iio:device1> **cat xo_correction**
+      root:/sys/bus/iio/devices/iio:device1> echo 40000005 > xo_correction
+      root:/sys/bus/iio/devices/iio:device1> cat xo_correction
       40000005
    
 
@@ -1444,7 +1444,7 @@ Example:
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat in_temp0_input**
+      root:/sys/bus/iio/devices/iio:device1> cat in_temp0_input
       29825
    
 
@@ -1469,7 +1469,7 @@ To obtain the reading in mV calculate: *(in_voltage2_raw + in_voltage2_offset) \
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **grep "" in_voltage2_**
+      root:/sys/bus/iio/devices/iio:device1> grep "" in_voltage2_
       in_voltage2_offset:57
       in_voltage2_raw:1494
       in_voltage2_scale:0.305250
@@ -1495,12 +1495,12 @@ Attributes are:
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **grep "" out_voltage2* out_voltage3**
+      root:/sys/bus/iio/devices/iio:device1> grep "" out_voltage2* out_voltage3
       out_voltage2_raw:306
       out_voltage2_scale:1.000000
       out_voltage3_raw:306
       out_voltage3_scale:1.000000
-      root:/sys/bus/iio/devices/iio:device1> **echo 1000 > out_voltage2_raw**
+      root:/sys/bus/iio/devices/iio:device1> echo 1000 > out_voltage2_raw
    
 
 
@@ -1518,7 +1518,7 @@ Once the calibration is done, the error tables can be read and loaded again anyt
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device1> **cat rssi_gain_step_error**
+      root:/sys/bus/iio/devices/iio:device1> cat rssi_gain_step_error
       lna_error: 0 15 14 0
       mixer_error: 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 0
       gain_step_calib_reg_val: 192 44 16 6 0
@@ -1546,7 +1546,7 @@ In order to identify if the IIO device in question (ad9361-phy) you first need t
    
       root@analog:~# grep "" /sys/bus/iio/devices/iio\:device*/name
       /sys/bus/iio/devices/iio:device0/name:ad7291
-      **/sys/bus/iio/devices/iio:device1/name:ad9361-phy**
+      /sys/bus/iio/devices/iio:device1/name:ad9361-phy
       /sys/bus/iio/devices/iio:device2/name:xadc
       /sys/bus/iio/devices/iio:device3/name:adf4351-udc-rx-pmod
       /sys/bus/iio/devices/iio:device4/name:adf4351-udc-tx-pmod
@@ -1566,7 +1566,7 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX.
    ::
    
       root@analog:~# cd /sys/kernel/debug/iio/iio\:device1
-      root@analog:/sys/kernel/debug/iio/iio:device1# **ls**
+      root@analog:/sys/kernel/debug/iio/iio:device1# ls
       [--snip--]
       adi,txmon-2-lo-cm
       adi,txmon-dc-tracking-enable
@@ -1601,17 +1601,17 @@ Example to change the driver from FDD into TDD mode operation
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device1# **cat adi,frequency-division-duplex-mode-enable**
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat adi,frequency-division-duplex-mode-enable
       1
    
-      root@analog:/sys/kernel/debug/iio/iio:device1# **cat /sys/bus/iio/devices/iio\:device1/ensm_mode_available**
-      sleep wait alert **fdd pinctrl pinctrl_fdd_indep**
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat /sys/bus/iio/devices/iio\:device1/ensm_mode_available
+      sleep wait alert fdd pinctrl pinctrl_fdd_indep
    
-      root@analog:/sys/kernel/debug/iio/iio:device1# **echo 0 > adi,frequency-division-duplex-mode-enable**
-      root@analog:/sys/kernel/debug/iio/iio:device1# **echo 1 > initialize**
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 0 > adi,frequency-division-duplex-mode-enable
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 1 > initialize
    
-      root@analog:/sys/kernel/debug/iio/iio:device1# **cat /sys/bus/iio/devices/iio\:device1/ensm_mode_available**
-      sleep wait alert **rx tx pinctrl**
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat /sys/bus/iio/devices/iio\:device1/ensm_mode_available
+      sleep wait alert rx tx pinctrl
    
 
 
@@ -1803,7 +1803,7 @@ SYNTAX:
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device1# **echo 2 0 6 0 > bist_tone**
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 2 0 6 0 > bist_tone
    
 
 
@@ -1848,7 +1848,7 @@ SYNTAX:
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device1# **echo 2 > bist_prbs**
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 2 > bist_prbs
    
 
 
@@ -1881,7 +1881,7 @@ Value Mode
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device1# **echo 1 > loopback**
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 1 > loopback
    
 
 
@@ -1914,7 +1914,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
 
 .. hint::
 
-   **Trigger Consumers:**
+   Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
 
@@ -1931,7 +1931,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      root:/sys/bus/iio/devices/triggerY/> cat name
       irqtrig56
    
 
@@ -1948,7 +1948,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
 
 
@@ -1964,7 +1964,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
 

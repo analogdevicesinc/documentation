@@ -3,7 +3,7 @@ AD-GMSL522-SL User Guide
 
 .. important::
 
-   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-gmsl522-sl/index.html
@@ -171,7 +171,7 @@ Support
 
 .. hint::
 
-   For questions and more information, please contact us on the **Analog Devices Engineer Zone**.
+   For questions and more information, please contact us on the Analog Devices Engineer Zone.
 
    
    -  :ez:`EngineerZone Linux Software Drivers <community/linux-software-drivers>`

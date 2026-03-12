@@ -197,7 +197,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD7879 Driver depends on **CONFIG_SPI** or **CONFIG_I2C**
+   The AD7879 Driver depends on CONFIG_SPI or CONFIG_I2C
 
 
 ::
@@ -207,12 +207,12 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
      < >   Support for memoryless force-feedback devices
      < >   Polled input device skeleton
      < >   Sparse keymap support library
-           ** Userland interfaces **
+            Userland interfaces 
      < >   Mouse interface
      < >   Joystick interface
      <*>   Event interface
      < >   Event debugging
-           ** Input Device Drivers **
+            Input Device Drivers 
      [ ]   Keyboards  --->
      [ ]   Mice  --->
      [ ]   Joysticks/Gamepads  --->
@@ -244,8 +244,8 @@ Driver compiled as a module
 
 ::
 
-   root:~> **modprobe evdev**
-   root:~> **modprobe ad7879**
+   root:~> modprobe evdev
+   root:~> modprobe ad7879
    input: AD7879 Touchscreen as /class/input/input0
    ad7879 spi0.1: touchscreen, irq 57
 
@@ -277,7 +277,7 @@ After the kernel boot your device folder should include at least one device node
 
 ::
 
-   root:/> **ls -al /dev/input/**
+   root:/> ls -al /dev/input/
    drw-r--r--    2 root     root            0 Jan  1 00:03 .
    drwxr-xr-x    5 root     root            0 Jan  1 00:03 ..
    crw-rw-r--    1 root     root      13,  64 Jan  1 00:03 event0
@@ -289,12 +289,12 @@ Check that the interrupt is registered.
 
 ::
 
-   root:~> **cat /proc/interrupts | grep ad7879**
+   root:~> cat /proc/interrupts | grep ad7879
    57:          0   ad7879
 
 ::
 
-   root:~> **cat /sys/class/input/input0/name**
+   root:~> cat /sys/class/input/input0/name
    AD7879 Touchscreen
 
 Use the event_test utility to test proper function
@@ -345,7 +345,7 @@ Use the event_test utility to test proper function
 
 .. tip::
 
-   In case you touch the surface and don't receive events, it's likely that something with your /DAV Interrupt is wrong. **check irq number in your platform device file**
+   In case you touch the surface and don't receive events, it's likely that something with your /DAV Interrupt is wrong. check irq number in your platform device file
 
 
 .. tip::
@@ -373,7 +373,7 @@ In case you like to find out which input/event interface is connected to your to
 
 ::
 
-   root:/sys/class/input> **for i in `find /sys/class/input/ -name name` ; do echo -n %%"$i : "%%; cat $i; done**
+   root:/sys/class/input> for i in `find /sys/class/input/ -name name` ; do echo -n %%"$i : "%%; cat $i; done
    ./input2/name : Logitech USB Receive
    ./input1/name : Logitech USB Receiver
    ./input0/name : AD7879 Touchscreen

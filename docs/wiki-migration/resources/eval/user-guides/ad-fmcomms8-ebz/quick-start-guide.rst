@@ -573,7 +573,7 @@ Make sure all devices are present
    
    ::
    
-      root@analog:~# **iio_info | grep iio:device**
+      root@analog:~# iio_info | grep iio:device
               iio:device0: ams
               iio:device1: hmc7044-car
               iio:device10: axi-adrv9009-rx-obs-hpc (buffer capable)
@@ -602,7 +602,7 @@ Check clock chip lock status on SoM, FMCOMMS8 and Carrier
    
    ::
    
-      root@analog:~# **iio_attr -q -D hmc7044 status**
+      root@analog:~# iio_attr -q -D hmc7044 status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 30720000 Hz
@@ -614,7 +614,7 @@ Check clock chip lock status on SoM, FMCOMMS8 and Carrier
       SYNC Status:    Synchronized
       Lock Status:    PLL1 & PLL2 Locked
    
-      root@analog:~# **iio_attr -q -D hmc7044-fmc status**
+      root@analog:~# iio_attr -q -D hmc7044-fmc status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN1 @ 30720000 Hz
@@ -626,7 +626,7 @@ Check clock chip lock status on SoM, FMCOMMS8 and Carrier
       SYNC Status:    Synchronized
       Lock Status:    PLL1 & PLL2 Locked
    
-      root@analog:~# **iio_attr -q -D hmc7044-car status**
+      root@analog:~# iio_attr -q -D hmc7044-car status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN3 @ 38400000 Hz
@@ -657,7 +657,7 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
    
    ::
    
-      root@analog:~# **TERM=vt100 jesd_status -s**
+      root@analog:~# TERM=vt100 jesd_status -s
         (DEVICES) Found 3 JESD204 Link Layer peripherals
    
         (0): 84a50000.axi-jesd204-rx  [*]
@@ -1323,7 +1323,7 @@ Make sure all devices are present
    
    ::
    
-      root@analog:~# **iio_info | grep iio:device**
+      root@analog:~# iio_info | grep iio:device
               iio:device7: axi-adrv9009-tx-hpc (buffer capable)
               iio:device5: axi-adrv9009-rx-hpc (buffer capable)
               iio:device3: adrv9009-phy-c
@@ -1348,7 +1348,7 @@ Check clock chip lock status on FMCOMMS8
    
    ::
    
-      root@analog:~# **iio_attr -q -D hmc7044 status**
+      root@analog:~# iio_attr -q -D hmc7044 status
       --- PLL1 ---
       Status: Locked
       Using:  CLKIN3 @ 19200000 Hz
@@ -1379,7 +1379,7 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
    
    ::
    
-      root@analog:~# **TERM=vt100 jesd_status -s**
+      root@analog:~# TERM=vt100 jesd_status -s
         (DEVICES) Found 3 JESD204 Link Layer peripherals
    
         (0): 85a30000.axi-jesd204-tx

@@ -58,9 +58,9 @@ With the USB Host mode, we can add a lot of USB dongle peripheral to the Ez-Kits
                    [*]   Enable USB persist by default
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Host only mode)  --->
-                           ** Platform Glue Layer **
+                            Platform Glue Layer 
                    <*>     ADI
-                           ** MUSB DMA mode **
+                            MUSB DMA mode 
                    [N]     Disable DMA (always use PIO)
                    [*]       Inventra
 
@@ -109,9 +109,9 @@ With the USB Device mode, we can connect the the Ez-Kits to a host PC other Host
                    <N>   Support for Host-side USB
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Gadget only mode)  --->
-                           ** Platform Glue Layer **
+                            Platform Glue Layer 
                    <*>     ADI
-                           ** MUSB DMA mode **
+                            MUSB DMA mode 
                    [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                    <*>   USB Gadget Support  --->

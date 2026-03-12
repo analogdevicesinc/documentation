@@ -253,7 +253,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADF4350 Driver depends on **CONFIG_SPI**
+   The ADF4350 Driver depends on CONFIG_SPI
 
 
 ::
@@ -266,7 +266,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
                - *-     Industrial I/O lock free software ring
                - *-   Enable triggered sampling support
 
-                         ** Phase-Locked Loop (PLL) frequency synthesizers **
+                          Phase-Locked Loop (PLL) frequency synthesizers 
 
                [--snip--]
                    <*>   Analog Devices ADF4350/ADF4351 Wideband Synthesizers
@@ -288,12 +288,12 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
-      root:/sys/bus/iio/devices> **iio:device0**
+      root:/sys/bus/iio/devices> iio:device0
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **ls -l**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> ls -l
       -r--r--r--    1 root     root          4096 Jan  1 00:01 dev
       -r--r--r--    1 root     root          4096 Jan  1 00:01 name
       -rw-r--r--    1 root     root          4096 Jan  1 00:01 out_altvoltage0_frequency
@@ -317,7 +317,7 @@ Show device name
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat name**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat name
       adf4350
    
 
@@ -336,8 +336,8 @@ Stores PLL Y frequency in Hz. Reading returns the actual frequency in Hz. When s
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **echo 144825000 > out_altvoltage0_frequency**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat out_altvoltage0_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> echo 144825000 > out_altvoltage0_frequency
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat out_altvoltage0_frequency
       144825000
    
 
@@ -356,8 +356,8 @@ Stores PLL Y frequency resolution/channel spacing in Hz. The value given directl
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **echo 10000 > out_altvoltageY_refin_freq**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat out_altvoltageY_refin_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> echo 10000 > out_altvoltageY_refin_freq
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat out_altvoltageY_refin_frequency
       10000
    
 
@@ -376,8 +376,8 @@ Sets PLL Y REFin frequency in Hz. In some clock chained applications, the refere
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **echo 10000000 > out_altvoltageY_refin_frequency**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat out_altvoltageY_refin_frequency**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> echo 10000000 > out_altvoltageY_refin_frequency
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat out_altvoltageY_refin_frequency
       10000000
    
 
@@ -396,8 +396,8 @@ If available, this attribute allows the user to power down the PLL and it's RFOu
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **echo 1 > out_altvoltageY_powerdown**
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat out_altvoltageY_powerdown**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> echo 1 > out_altvoltageY_powerdown
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat out_altvoltageY_powerdown
       1
    
 
@@ -416,7 +416,7 @@ If available, this attribute allows the user to determine whether the PLL has lo
    
    ::
    
-      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> **cat out_altvoltageY_locked**
+      root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat out_altvoltageY_locked
       1
    
 

@@ -307,7 +307,7 @@ Starts playback of the data vector. If the DPG is currently stopped, or has not 
 
 .. hint::
 
-   \ **Note:** The Play VI will check for the presence of a Data Clock before starting playback. If a data clock isn't detected, an error will be thrown.
+   \ Note: The Play VI will check for the presence of a Data Clock before starting playback. If a data clock isn't detected, an error will be thrown.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/lv8_play_full.png

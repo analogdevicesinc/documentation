@@ -3,7 +3,7 @@ AD-FMCJESDADC1-EBZ Zynq Quick Start Guide
 
 .. warning::
 
-   \ **NOTE:** Support for the ad-fmcjesdadc1-ebz was discontinued on all carriers starting with 2022_R2 Kuiper Linux release and it won't be supported anymore in future releases. Latest MicroBlaze images with pre-build files can be downloaded from :doc:`here </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can still be found on `hdl_2022_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2022_r2/projects/fmcjesdadc1>`_ release branch.
+   \ NOTE: Support for the ad-fmcjesdadc1-ebz was discontinued on all carriers starting with 2022_R2 Kuiper Linux release and it won't be supported anymore in future releases. Latest MicroBlaze images with pre-build files can be downloaded from :doc:`here </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can still be found on `hdl_2022_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2022_r2/projects/fmcjesdadc1>`_ release branch.
 
 
 This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the `ad-fmcjesdadc1-ebz <https://wiki.analog.com/../ad-fmcjesdadc1-ebz>`_ on the:
@@ -101,7 +101,7 @@ Just plug both platforms (a) your PC running Visual Analog, and (b) your ZC706 i
 
 ::
 
-   analog@linaro-ubuntu-desktop:~$ **ip addr show**
+   analog@linaro-ubuntu-desktop:~$ ip addr show
    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN
        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
        inet 127.0.0.1/8 scope host lo

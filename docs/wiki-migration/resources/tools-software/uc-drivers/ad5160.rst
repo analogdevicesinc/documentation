@@ -11,7 +11,6 @@ Evaluation Boards
 Overview
 ========
 
-
 The :adi:`AD5160` provides a compact 2.9 mm × 3 mm packaged solution for 256-position adjustment applications. These devices perform the same electronic adjustment function as mechanical potentiometers or variable resistors but with enhanced resolution, solid-state reliability, and superior low temperature coefficient performance.
 
 The wiper settings are controllable through an SPI-compatible digital interface. The resistance between the wiper and either end point of the fixed resistor varies linearly with respect to the digital code transferred into the RDAC latch.
@@ -20,7 +19,6 @@ Operating from a 2.7 V to 5.5 V power supply and consuming less than 5 μA allow
 
 .. image:: https://wiki.analog.com/_media/resources/pmods/ad5160_pmod_dpot.jpg
    :align: center
-
 
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.

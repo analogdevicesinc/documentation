@@ -138,10 +138,10 @@ Calibrations
 ::
 
    4. Perform an internal zero-scale calibration.
-   * Click the **Mode** bitfield of the ADC control register.
-   * In the **Mode** bitfield, select the internal zero-scale calibration option.
-   * Check the calibrations performed by clicking the **Offset0** register in the register tree, and check that the coefficients have changed.
-   5. When calibrations are complete, change the power mode to the required mode of operation, and ensure that the ADC is set to continuous conversion mode by selecting **Continuous** from the drop-down box in the *Mode* bit field of the **ADC_Control** register.
+   * Click the Mode bitfield of the ADC control register.
+   * In the Mode bitfield, select the internal zero-scale calibration option.
+   * Check the calibrations performed by clicking the Offset0 register in the register tree, and check that the coefficients have changed.
+   5. When calibrations are complete, change the power mode to the required mode of operation, and ensure that the ADC is set to continuous conversion mode by selecting Continuous from the drop-down box in the *Mode* bit field of the ADC_Control register.
 
 Thermistor Measurements
 ~~~~~~~~~~~~~~~~~~~~~~~

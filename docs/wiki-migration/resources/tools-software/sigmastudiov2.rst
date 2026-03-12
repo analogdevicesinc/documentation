@@ -99,10 +99,10 @@ Documentation
 
 .. tip::
 
-   Use **<search keyword> @resources:tools-software:sigmastudiov2** in the search box to search for SigmaStudio+ specific information
+   Use <search keyword> @resources:tools-software:sigmastudiov2 in the search box to search for SigmaStudio+ specific information
 
 
 .. tip::
 
-   Pages from this Wiki can be exported by using the **Print \| Export Open Office \| PDF** options at the top of each page. You can subscribe to updates by using the **RSS \| Manage Subscriptions** options at the top of each page.
+   Pages from this Wiki can be exported by using the Print \| Export Open Office \| PDF options at the top of each page. You can subscribe to updates by using the RSS \| Manage Subscriptions options at the top of each page.
 

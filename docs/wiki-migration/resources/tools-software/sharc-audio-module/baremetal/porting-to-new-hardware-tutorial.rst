@@ -41,9 +41,9 @@ The first thing we'll do is create a new definition in ``audio_system_config.h``
 
 .. code:: c
 
-   //****************************************************************************
+   //****************
    // 3. Select an audio processing framework to use (only select one)
-   //****************************************************************************
+   //****************
 
    // Standard audio processing framework (SHARC Audio Module and SHARC Audio Module + DIY board)
    #define FRAMEWORK_8CH_SINGLE_OR_DUAL_CORE_A2B           FALSE

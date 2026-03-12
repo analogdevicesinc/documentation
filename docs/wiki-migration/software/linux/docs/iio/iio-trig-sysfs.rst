@@ -29,7 +29,7 @@ Configure kernel with “make menuconfig” (alternatively use “make xconfig�
 
                    [--snip--]
 
-                         ** Triggers - standalone **
+                          Triggers - standalone 
                    < >   Periodic RTC triggers
                    < >   GPIO trigger
                    <*>   SYSFS trigger
@@ -52,18 +52,18 @@ Driver testing
    
    ::
    
-      root:/> **cd sys/bus/iio/devices/**
-      root:/sys/bus/iio/devices> **ls**
+      root:/> cd sys/bus/iio/devices/
+      root:/sys/bus/iio/devices> ls
       iio:device0
       iio:device1
       iio:trigger0
-      root:/sys/bus/iio/devices> **cd iio:trigger0**
-      root:/sys/devices/iio:trigger0> **ls**
+      root:/sys/bus/iio/devices> cd iio:trigger0
+      root:/sys/devices/iio:trigger0> ls
       name         subsystem    trigger_now  uevent
-      root:/sys/devices/iio:trigger0> **cat name**
+      root:/sys/devices/iio:trigger0> cat name
       sysfstrig0
-      root:/sys/devices/iio:trigger0> **echo 1 > trigger_now**
-      root:/sys/devices/iio:trigger0> **echo 1 > trigger_now**
+      root:/sys/devices/iio:trigger0> echo 1 > trigger_now
+      root:/sys/devices/iio:trigger0> echo 1 > trigger_now
    
 
 

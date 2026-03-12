@@ -150,7 +150,7 @@ With all the above changes incorporated, the target application and SigmaStudioP
 .. note::
 
    
-   -  For ADSP-21569 EZ-KIT the SRU configuration should be updated as **DAI0_PB_02_O → SPDIF0_TX_DAT_I** for SPDIF Tx Data input. All other Eval boards, the SPDIF Tx data input pins were assigned in SRU by default.
+   -  For ADSP-21569 EZ-KIT the SRU configuration should be updated as DAI0_PB_02_O → SPDIF0_TX_DAT_I for SPDIF Tx Data input. All other Eval boards, the SPDIF Tx data input pins were assigned in SRU by default.
    -  The S/PDIF Tx feature is not supported for ADSP-SC589 Mini evaluation board.
    
 

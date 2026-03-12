@@ -78,7 +78,7 @@ Before you can start gathering data, you first must locate the CN0549 system set
 
    
    | For Analog Devices Kuiper Linux
-   | Username = **analog** and Password = **analog**.
+   | Username = analog and Password = analog.
    | Press the Enter key between each.
 
 

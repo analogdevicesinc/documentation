@@ -66,7 +66,7 @@ Creating Files for use with the Baremetal Framework
 
 .. note::
 
-   \ **faust2sam** will generate the following three C++ source files, which is the algorithm.
+   \ faust2sam will generate the following three C++ source files, which is the algorithm.
 
    
    -  ``fast_pow2.h``

@@ -158,7 +158,7 @@ Connection Window
 
 .. important::
 
-   Console Log must indicate **ADL5902 shield detected with ADiCUP**
+   Console Log must indicate ADL5902 shield detected with ADiCUP
 
 
 

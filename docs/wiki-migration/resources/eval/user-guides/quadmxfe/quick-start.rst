@@ -237,14 +237,14 @@ In windows, you can run the ``XSCT`` or ``XSDB`` terminal from start menu → Xi
       xsct% source run.vcu118_quad_ad9081_204c_txmode_11_rxmode_4_revc.tcl
       attempting to launch hw_server
    
-       ***** Xilinx hw_server v2018.2
+       * Xilinx hw_server v2018.2
         *** Build date : Jun 14 2018-20:42:52
           ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
    
       INFO: hw_server application started
       INFO: Use Ctrl-C to exit hw_server application
    
-      ***** Xilinx hw_server v2018.2
+      * Xilinx hw_server v2018.2
         *** Build date : Jun 14 2018-20:42:52
           ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
    
@@ -523,9 +523,9 @@ When the system starts it tries to acquire an IP using the DHCP protocol. In cas
    
    ::
    
-      # **ifconfig**
+      # ifconfig
       eth0      Link encap:Ethernet  HWaddr 00:0A:35:00:00:00
-                inet addr:**10.44.3.93**  Bcast:10.44.3.255  Mask:255.255.255.0
+                inet addr:10.44.3.93  Bcast:10.44.3.255  Mask:255.255.255.0
                 UP BROADCAST RUNNING  MTU:1500  Metric:1
                 RX packets:418 errors:0 dropped:32 overruns:0 frame:0
                 TX packets:2 errors:0 dropped:0 overruns:0 carrier:0
@@ -594,18 +594,16 @@ Useful IIO commands
    :align: center
    :width: 400px
 
-
 IIO Command Line Tools
 ======================
 
 There are a few command line tools that are included with the libIIO.
 
--  :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` : dump the IIO attributes
--  :doc:`iio_attr </wiki-migration/resources/tools-software/linux-software/libiio/iio_attr>` : read and write IIO attributes
--  :doc:`iio_readdev </wiki-migration/resources/tools-software/linux-software/libiio/iio_readdev>` : read an IIO buffer device
--  :doc:`iio_writedev </wiki-migration/resources/tools-software/linux-software/libiio/iio_writedev>` : write an IIO buffer device
--  :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` : read or write SPI or I2C registers in an IIO device (useful to debug drivers)
-
+-  `./iio_info <https://wiki.analog.com/iio_info>`_ : dump the IIO attributes
+-  `./iio_attr <https://wiki.analog.com/iio_attr>`_ : read and write IIO attributes
+-  `./iio_readdev <https://wiki.analog.com/iio_readdev>`_ : read an IIO buffer device
+-  `./iio_writedev <https://wiki.analog.com/iio_writedev>`_ : write an IIO buffer device
+-  `./iio_reg <https://wiki.analog.com/iio_reg>`_ : read or write SPI or I2C registers in an IIO device (useful to debug drivers)
 
 
 .. important::
@@ -643,7 +641,7 @@ The names of the iio devices can be obtained using ``iio_attr`` command.
    
    ::
    
-      C:\Users\dave>**iio_attr -u ip:10.44.3.56 -i -c axi-ad9081-rx-3 voltage0_i main_nco_frequency 1200000000**
+      C:\Users\dave>iio_attr -u ip:10.44.3.56 -i -c axi-ad9081-rx-3 voltage0_i main_nco_frequency 1200000000
    
       dev 'axi-ad9081-rx-3', channel 'voltage0_i' (input), attr 'main_nco_frequency', value '1000000000'
    
@@ -768,7 +766,7 @@ Instructions and Overview
 
 ::
 
-   **axi-ad9081-rx-0: spi.0.0 - MxFE U48**
+   axi-ad9081-rx-0: spi.0.0 - MxFE U48
    voltage0_i: (input, index: 0, format: le:S16/16>>0)
    voltage0_q: (input, index: 1, format: le:S16/16>>0)
    voltage1_i: (input, index: 2, format: le:S16/16>>0)
@@ -778,7 +776,7 @@ Instructions and Overview
    voltage3_i: (input, index: 6, format: le:S16/16>>0)
    voltage3_q: (input, index: 7, format: le:S16/16>>0)
 
-   **axi-ad9081-rx-1: spi.0.1 - MxFE U49**
+   axi-ad9081-rx-1: spi.0.1 - MxFE U49
    voltage4_i: (input, index: 8, format: le:S16/16>>0)
    voltage4_q: (input, index: 9, format: le:S16/16>>0)
    voltage5_i: (input, index: 10, format: le:S16/16>>0)
@@ -788,7 +786,7 @@ Instructions and Overview
    voltage7_i: (input, index: 14, format: le:S16/16>>0)
    voltage7_q: (input, index: 15, format: le:S16/16>>0)
 
-   **axi-ad9081-rx-2: spi.0.2 - MxFE U61**
+   axi-ad9081-rx-2: spi.0.2 - MxFE U61
    voltage8_i: (input, index: 16, format: le:S16/16>>0)
    voltage8_q: (input, index: 17, format: le:S16/16>>0)
    voltage9_i: (input, index: 18, format: le:S16/16>>0)
@@ -798,7 +796,7 @@ Instructions and Overview
    voltage11_i: (input, index: 22, format: le:S16/16>>0)
    voltage11_q: (input, index: 23, format: le:S16/16>>0)
 
-   **axi-ad9081-rx-3: spi.0.3 - MxFE U76**
+   axi-ad9081-rx-3: spi.0.3 - MxFE U76
    voltage12_i: (input, index: 24, format: le:S16/16>>0)
    voltage12_q: (input, index: 25, format: le:S16/16>>0)
    voltage13_i: (input, index: 26, format: le:S16/16>>0)
@@ -811,7 +809,7 @@ Instructions and Overview
 
 .. important::
 
-   \ **Note:** In Frequency Domain view channels can be only enabled pairwise (I+Q).
+   \ Note: In Frequency Domain view channels can be only enabled pairwise (I+Q).
 
    
    And not more that 2 frequency plots can be enabled in the same window.

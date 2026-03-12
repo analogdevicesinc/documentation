@@ -66,7 +66,6 @@ And this is how the corresponding drivers section looks like as a file tree (the
 Building
 --------
 
-
 No-OS Build Guide
 =================
 
@@ -183,9 +182,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -265,10 +264,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
       -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
       -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
-      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
-      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install GNU Arm Embedded Compiler (version: 9-2019-q4-major) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of requirements.txt inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
-      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
       -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
@@ -278,9 +277,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -324,7 +323,7 @@ Go in the project directory that should be built.
       ::
 
          $ ls
-         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
+         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof 
          $ make
 
          # Alternatively you may select a .sopcinfo file explicitly by:
@@ -336,7 +335,7 @@ Go in the project directory that should be built.
 
    .. collapsible:: Xilinx (Click to expand)
 
-      Copy the **.xsa** in the project folder.
+      Copy the .xsa in the project folder.
 
       ::
 
@@ -613,11 +612,10 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
 If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
 
--  It is recommended to have a version of Windows 10 or 11.
--  You must have all updates installed in WSL.
-
 ::
 
+    * It is recommended to have a version of Windows 10 or 11.
+    * You must have all updates installed in WSL.
         To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
 ::
@@ -627,8 +625,10 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
 
 WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
 
--  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
--  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
+::
+
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+    * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers: 
 
 ::
 
@@ -650,7 +650,9 @@ If there is a device connected to the USB port, it can be checked from the Devic
 
 To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
 
--  Open Command Prompt in Administrator mode and enter the command:
+::
+
+    * Open Command Prompt in Administrator mode and enter the command:
 
 ::
 
@@ -680,7 +682,9 @@ In WSL enter the following command:
 
 A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
 
--  To attach a USB device to WSL enter the following command in Command Prompt:
+::
+
+    * To attach a USB device to WSL enter the following command in Command Prompt:
 
 ::
 
@@ -718,7 +722,9 @@ In WSL if you run: **lsusb** we have:
 
 If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
 
--  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+::
+
+    * If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -746,9 +752,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -756,7 +762,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -889,9 +895,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -971,10 +977,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
       -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
       -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
-      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
-      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install GNU Arm Embedded Compiler (version: 9-2019-q4-major) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of requirements.txt inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
-      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
       -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
@@ -984,9 +990,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -1042,7 +1048,7 @@ Go in the project directory that should be built.
 
    .. collapsible:: Xilinx (Click to expand)
 
-      Copy the **.xsa** in the project folder.
+      Copy the .xsa in the project folder.
 
       ::
 
@@ -1319,11 +1325,10 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
 If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
 
--  It is recommended to have a version of Windows 10 or 11.
--  You must have all updates installed in WSL.
-
 ::
 
+    * It is recommended to have a version of Windows 10 or 11.
+    * You must have all updates installed in WSL.
         To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
 ::
@@ -1333,8 +1338,10 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
 
 WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
 
--  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
--  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
+::
+
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+    * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
 
@@ -1356,7 +1363,9 @@ If there is a device connected to the USB port, it can be checked from the Devic
 
 To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
 
--  Open Command Prompt in Administrator mode and enter the command:
+::
+
+    * Open Command Prompt in Administrator mode and enter the command:
 
 ::
 
@@ -1386,7 +1395,9 @@ In WSL enter the following command:
 
 A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
 
--  To attach a USB device to WSL enter the following command in Command Prompt:
+::
+
+    * To attach a USB device to WSL enter the following command in Command Prompt:
 
 ::
 
@@ -1424,7 +1435,9 @@ In WSL if you run: **lsusb** we have:
 
 If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
 
--  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+::
+
+    * If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -1452,9 +1465,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -1462,7 +1475,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -1595,9 +1608,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -1677,10 +1690,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
       -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
       -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
-      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
-      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install GNU Arm Embedded Compiler (version: 9-2019-q4-major) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of requirements.txt inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
-      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
       -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
@@ -1690,9 +1703,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -1748,7 +1761,7 @@ Go in the project directory that should be built.
 
    .. collapsible:: Xilinx (Click to expand)
 
-      Copy the **.xsa** in the project folder.
+      Copy the .xsa in the project folder.
 
       ::
 
@@ -2025,11 +2038,10 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
 If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
 
--  It is recommended to have a version of Windows 10 or 11.
--  You must have all updates installed in WSL.
-
 ::
 
+    * It is recommended to have a version of Windows 10 or 11.
+    * You must have all updates installed in WSL.
         To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
 ::
@@ -2039,8 +2051,10 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
 
 WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
 
--  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
--  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
+::
+
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+    * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
 
@@ -2062,7 +2076,9 @@ If there is a device connected to the USB port, it can be checked from the Devic
 
 To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
 
--  Open Command Prompt in Administrator mode and enter the command:
+::
+
+    * Open Command Prompt in Administrator mode and enter the command:
 
 ::
 
@@ -2092,7 +2108,9 @@ In WSL enter the following command:
 
 A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
 
--  To attach a USB device to WSL enter the following command in Command Prompt:
+::
+
+    * To attach a USB device to WSL enter the following command in Command Prompt:
 
 ::
 
@@ -2130,7 +2148,9 @@ In WSL if you run: **lsusb** we have:
 
 If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
 
--  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+::
+
+    * If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -2158,9 +2178,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
 
-      -  The **.openocd** will be the same regardless of the Makefile configuration.
+      -  The .openocd will be the same regardless of the Makefile configuration.
 
    -  Navigate to the folder in PowerShell
 
@@ -2168,7 +2188,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         cd ~\path\to\my_project
 
-   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   -  Set the <project>.elf.openocd <project>.elf (yes, the slashes are correct)
 
    ::
 
@@ -2189,7 +2209,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. important::
 
-   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE architecture. **Vitis 2025.1 now features automatic debug configuration** - no manual setup required!
+   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE architecture. Vitis 2025.1 now features automatic debug configuration - no manual setup required!
 
 
 **Key Changes in Vitis 2025.1:**
@@ -2266,7 +2286,7 @@ Step 1: Build Project
 
 .. tip::
 
-   **Without DEBUG=1**, you'll experience:
+   Without DEBUG=1, you'll experience:
 
    
    -  Code stepping doesn't work properly (optimized code)
@@ -2305,7 +2325,7 @@ Step 2: Open Vitis IDE
 
 .. note::
 
-   **No manual configuration needed!** The debug configuration is ready to use immediately.
+   No manual configuration needed! The debug configuration is ready to use immediately.
 
 
 Step 3: Verify Configuration (Optional)
@@ -2313,9 +2333,9 @@ Step 3: Verify Configuration (Optional)
 
 If you want to verify or customize the auto-generated configuration:
 
--  In Vitis Explorer, expand ``_ide`` folder
--  Open ``launch.json`` to view the configuration
--  Configuration named ``<project_name>_app_hw_1`` is ready to use
+#. In Vitis Explorer, expand ``_ide`` folder
+#. Open ``launch.json`` to view the configuration
+#. Configuration named ``<project_name>_app_hw_1`` is ready to use
 
 The configuration is automatically regenerated each time you run ``make sdkopen``.
 
@@ -2334,22 +2354,22 @@ Start Debugging
 
 **In Vitis IDE:**
 
--  Make sure you've built with ``make DEBUG=1``
--  Click **FLOW** panel (left side) → Click **"Debug"**
--  Debug session starts immediately!
+#. Make sure you've built with ``make DEBUG=1``
+#. Click **FLOW** panel (left side) → Click **"Debug"**
+#. Debug session starts immediately!
 
 .. warning::
 
-   The **Start Debugging (F5)** button in the Debug panel does not currently work for Vitis 2025.1. Always use **FLOW → Debug** button.
+   The Start Debugging (F5) button in the Debug panel does not currently work for Vitis 2025.1. Always use FLOW → Debug button.
 
 
 **What happens:**
 
--  Vitis connects to board via JTAG
--  Programs FPGA with bitstream
--  Runs FSBL to initialize processor (ZynqMP/Zynq only)
--  Loads your application ELF
--  Stops at entry point - ready to debug!
+#. Vitis connects to board via JTAG
+#. Programs FPGA with bitstream
+#. Runs FSBL to initialize processor (ZynqMP/Zynq only)
+#. Loads your application ELF
+#. Stops at entry point - ready to debug!
 
 **Debug Features:**
 
@@ -2437,12 +2457,12 @@ Troubleshooting
 
 .. important::
 
-   The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the **Classic Eclipse IDE** (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
+   The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the Classic Eclipse IDE (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
 
 
 .. warning::
 
-   **Manual debug configuration required** for Classic Eclipse mode. For automatic configuration, upgrade to Vitis 2025.1+.
+   Manual debug configuration required for Classic Eclipse mode. For automatic configuration, upgrade to Vitis 2025.1+.
 
 
 **Why Classic Mode for Vitis 2023.2-2024.x?**
@@ -2557,10 +2577,10 @@ The "Debug Configurations" dialog will open.
 
 **B. Create New Configuration:**
 
--  In the left panel, expand **"Single Application Debug"**
--  Click the **"New Configuration"** button (first icon in the toolbar - looks like a document with a star/plus)
--  A new configuration will be created (e.g., ``Debugger_-Default``)
--  You can rename it if desired (e.g., ``adrv904x-debug``)
+#. In the left panel, expand **"Single Application Debug"**
+#. Click the **"New Configuration"** button (first icon in the toolbar - looks like a document with a star/plus)
+#. A new configuration will be created (e.g., ``Debugger_-Default``)
+#. You can rename it if desired (e.g., ``adrv904x-debug``)
 
 **C. Configure Main Tab:**
 
@@ -2615,10 +2635,10 @@ Browse to or enter the FSBL path:
 
 After configuration, the Summary panel on the right shows the debug sequence:
 
--  Reset system and clear FPGA
--  Program FPGA with bitstream
--  Initialize PS using FSBL
--  Load application and suspend processors
+#. Reset system and clear FPGA
+#. Program FPGA with bitstream
+#. Initialize PS using FSBL
+#. Load application and suspend processors
 
 **E. Configure Application Tab:**
 
@@ -2642,7 +2662,7 @@ The IDE typically auto-populates these fields:
 
 .. tip::
 
-   If the Application field is empty, click **"Search..."** and browse to ``build/your_project.elf``\
+   If the Application field is empty, click "Search..." and browse to ``build/your_project.elf``\
 
 
 **Stop at 'main':**
@@ -2651,8 +2671,8 @@ The IDE typically auto-populates these fields:
 
 **F. Save and Apply:**
 
--  Click **"Apply"** to save the configuration
--  Click **"Debug"** to start debugging immediately, or **"Close"** to save for later
+#. Click **"Apply"** to save the configuration
+#. Click **"Debug"** to start debugging immediately, or **"Close"** to save for later
 
 The configuration is now saved and ready to use!
 
@@ -2671,19 +2691,19 @@ Start Debugging
 
 **In Vitis Classic Eclipse IDE:**
 
--  Make sure you've built with ``make DEBUG=1``
--  Go to **Run** → **Debug Configurations...**
--  Select your debug configuration (e.g., "adrv904x-debug")
--  Click **"Debug"** button
--  The Debug perspective will open automatically
+#. Make sure you've built with ``make DEBUG=1``
+#. Go to **Run** → **Debug Configurations...**
+#. Select your debug configuration (e.g., "adrv904x-debug")
+#. Click **"Debug"** button
+#. The Debug perspective will open automatically
 
 **What happens:**
 
--  Vitis connects to board via JTAG
--  Programs FPGA with bitstream
--  Runs FSBL to initialize processor (ZynqMP/Zynq only)
--  Loads your application ELF
--  Stops at entry point (usually ``main()``) - ready to debug!
+#. Vitis connects to board via JTAG
+#. Programs FPGA with bitstream
+#. Runs FSBL to initialize processor (ZynqMP/Zynq only)
+#. Loads your application ELF
+#. Stops at entry point (usually ``main()``) - ready to debug!
 
 **Debug Features:**
 
@@ -2755,7 +2775,7 @@ Troubleshooting
 
 **For complete documentation, see:** :git-no-OS:`Xilinx Vitis Debugging Guide <doc/sphinx/source/build_guides/build_xilinx_vitis2025.rst>`
 
-
+++++
 
 
 By default, the digital interface is CMOS. In case a LVDS digital interface is used, this has to be specified in the make command:
@@ -2773,9 +2793,8 @@ Make sure to connect your adrv9002 evaluation board to the correct FMC connector
 -  :doc:`ZC706 </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zynq>`
 -  :doc:`Zed Board </wiki-migration/resources/eval/user-guides/adrv9002/quickstart/zed>`
 
-
 DMA_EXAMPLE demo
-================
+----------------
 
 DMA_EXAMPLE is a standard example that sends a sinewave on Tx channels using DMA from a lookup table. If you physically loopback a Tx channel to an Rx channel via an electrical wire, you may run the DMA_EXAMPLE and read the received data at Rx from particular memory address.
 
@@ -2816,8 +2835,6 @@ After running the xsct command, some .csv files will be created in your director
 and a plot window will open showing the Rx channels.
 
 
-
-
 IIOD demo
 =========
 
@@ -2856,7 +2873,6 @@ With a serial terminal correctly configured and listening to incoming messages, 
        Flow control: none
 
 This message implies a IIOD server is being run and you may connect to it using a serial-backend enabled :git-iio-oscilloscope:`iio-oscilloscope` and with the settings indicated at the serial terminal.
-
 
 
 Here's an example of iio-oscilloscope connected to a NO-OS Navassa IIOD demo with electrical loopbacks between TX1-RX1 and TX2-RX2.

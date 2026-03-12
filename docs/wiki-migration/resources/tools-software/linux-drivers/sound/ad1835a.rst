@@ -301,7 +301,7 @@ Driver testing
 
 ::
 
-   root:~> **tone**
+   root:~> tone
    TONE: generating sine wave at 1000 Hz...
 
 You should hear something out of the headphone Jack.
@@ -366,14 +366,14 @@ You should hear something out of the headphone Jack.
 
    Also you can run "alsamixer" to get graphic configuration interface, OSS-based "mixer" can work too.
    * Check to make sure mp3s work (assuming you have built mp3play),
-     * The first step is to download a mp3 file onto the platform. The ''wget'' command assumes that networking is properly configured (you have an IP number, the default gateway is set, and DNS servers can be accessed), and working. <code>root:/> **cd /var**
+     * The first step is to download a mp3 file onto the platform. The ''wget'' command assumes that networking is properly configured (you have an IP number, the default gateway is set, and DNS servers can be accessed), and working. <code>root:/> cd /var
 
 root:/var> **wget** http://www.radiocrazy.com/shows/A/AbbottCostello/ABCOWhosOnFirstclip.mp3 </code>
 
 ::
 
-     * Next, play it with mp3play: <code>root:/var> **mp3play ABCOWhosOnFirstclip.mp3**</code>
-   * You can play it in one step with: <code>root:~> **mp3play http://www.radiocrazy.com/shows/A/AbbottCostello/ABCOWhosOnFirstclip.mp3**
+     * Next, play it with mp3play: <code>root:/var> mp3play ABCOWhosOnFirstclip.mp3</code>
+   * You can play it in one step with: <code>root:~> mp3play http://www.radiocrazy.com/shows/A/AbbottCostello/ABCOWhosOnFirstclip.mp3
 
 http://www.radiocrazy.com/shows/A/AbbottCostello/ABCOWhosOnFirstclip.mp3: MPEG2-III (0 ms) </code>
 

@@ -73,7 +73,7 @@ The CN0343 have six tactile button, the function of each button marked as red fo
 
 .. note::
 
-   If the CN0343 power up with the beep and LCD screen display murky or dull, please adjust **R1** with screwdriver gently to make LCD clear
+   If the CN0343 power up with the beep and LCD screen display murky or dull, please adjust R1 with screwdriver gently to make LCD clear
 
 
 The CN0343 have following of running status:
@@ -84,7 +84,7 @@ The CN0343 have following of running status:
 
 .. tip::
 
-   At the **SPLASH** status the CN0343 will not response any of button press or RS-485 input, please wait for 3 seconds, the CN0343 will enter the **MEASURING** status.
+   At the SPLASH status the CN0343 will not response any of button press or RS-485 input, please wait for 3 seconds, the CN0343 will enter the MEASURING status.
 
 
 -  **MEASURING:** At **MEASURING** status the CN0343 will showing:

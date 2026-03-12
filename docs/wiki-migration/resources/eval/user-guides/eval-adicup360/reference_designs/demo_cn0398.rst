@@ -120,7 +120,7 @@ Setting up the hardware
 
 .. important::
 
-   Extremely important to plug in an acceptable power supply to the barrel jack **P11** of the EVAL-ADICUP360 if you are using a moisture sensor that requires voltage excitation greater than 5V on the **EVAL-CN0398-ARDZ**. Only moisture sensors using less than 3.3V can run off the USB power option.
+   Extremely important to plug in an acceptable power supply to the barrel jack P11 of the EVAL-ADICUP360 if you are using a moisture sensor that requires voltage excitation greater than 5V on the EVAL-CN0398-ARDZ. Only moisture sensors using less than 3.3V can run off the USB power option.
 
 
 -  Set the jumpers on the **EVAL-CN0398-ARDZ** to the position shown below. FIXME (need picture)

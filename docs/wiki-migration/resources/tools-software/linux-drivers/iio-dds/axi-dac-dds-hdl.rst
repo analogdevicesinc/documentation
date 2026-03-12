@@ -207,7 +207,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AXI ADC HDL driver may depend on **CONFIG_SPI**
+   The AXI ADC HDL driver may depend on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -225,7 +225,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Direct Digital Synthesis **
+                  Direct Digital Synthesis 
            [--snip--]
 
            <*>   Analog Devices CoreFPGA AXI DDS driver
@@ -257,13 +257,13 @@ Some device attributes control the DDS HDL Core, others features of the DAC and 
    
    ::
    
-      analog:/sys/bus/iio/devices/iio:device2# **cd /sys/bus/iio/devices/**
-      root@analog:/sys/bus/iio/devices# **ls**
+      analog:/sys/bus/iio/devices/iio:device2# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
       iio:device0  iio:device1  iio:device2  iio:device3
       root@analog:/sys/bus/iio/devices#
    
-      root@analog:/sys/bus/iio/devices# **cd iio\:device2**
-      root@analog:/sys/bus/iio/devices/iio:device2# **ls -l**
+      root@analog:/sys/bus/iio/devices# cd iio\:device2
+      root@analog:/sys/bus/iio/devices/iio:device2# ls -l
       total 0
       drwxr-xr-x 5 root root    0 Jan  1 00:00 .
       drwxr-xr-x 4 root root    0 Jan  1 00:00 ..
@@ -331,7 +331,7 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat name**
+      root@analog:/sys/bus/iio/devices/iio:device2# cat name
       cf-ad9361-dds-core-lpc
    
 
@@ -348,10 +348,10 @@ Values are in Hz.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_altvoltage0_TX1_I_F1_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_altvoltage0_TX1_I_F1_frequency
       9279985
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 500000 > out_altvoltage0_TX1_I_F1_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_altvoltage0_TX1_I_F1_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 500000 > out_altvoltage0_TX1_I_F1_frequency
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_altvoltage0_TX1_I_F1_frequency
       500163
    
 
@@ -368,10 +368,10 @@ Values are in milli degrees.
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_altvoltage0_TX1_I_F1_phase**
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_altvoltage0_TX1_I_F1_phase
       89995
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 91000 > out_altvoltage0_TX1_I_F1_phase**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_altvoltage0_TX1_I_F1_phase**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 91000 > out_altvoltage0_TX1_I_F1_phase
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_altvoltage0_TX1_I_F1_phase
       90995
    
 
@@ -404,7 +404,7 @@ HDL Version > 7.00.a
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_altvoltage0_TX1_I_F1_raw**
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_altvoltage0_TX1_I_F1_raw
       1
    
 
@@ -426,12 +426,12 @@ DDS amplitude: range 0.00 ... 1.00 (relative to full scale)
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_altvoltage0_TX1_I_F1_scale**
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_altvoltage0_TX1_I_F1_scale
       0.500000
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_altvoltage0_TX1_I_F1_scale**
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_altvoltage0_TX1_I_F1_scale
       1.000000 0.500000 0.250000 0.125000 ...
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 0.25 > out_altvoltage0_TX1_I_F1_scale**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_altvoltage0_TX1_I_F1_scale**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 0.25 > out_altvoltage0_TX1_I_F1_scale
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_altvoltage0_TX1_I_F1_scale
       0.250000
    
 
@@ -457,7 +457,7 @@ The AD9122 features Gain, DC Offset, and Phase adjustment for sideband suppressi
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **grep "" out_voltage**
+      root@analog:/sys/bus/iio/devices/iio:device2# grep "" out_voltage
       out_voltage0_calibbias:0
       out_voltage0_calibscale:505
       out_voltage0_phase:0
@@ -490,16 +490,16 @@ Example:
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable_available**
-      **arm disarm trigger_manual**
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable**
-      **disarm**
-      root@analog:/sys/bus/iio/devices/iio:device3# **echo arm > sync_start_enable**
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable**
-      **arm**
-      root@analog:/sys/bus/iio/devices/iio:device3# **echo trigger_manual > sync_start_enable**
-      root@analog:/sys/bus/iio/devices/iio:device3# **cat sync_start_enable**
-      **disarm**
+      root@analog:/sys/bus/iio/devices/iio:device3# cat sync_start_enable_available
+      arm disarm trigger_manual
+      root@analog:/sys/bus/iio/devices/iio:device3# cat sync_start_enable
+      disarm
+      root@analog:/sys/bus/iio/devices/iio:device3# echo arm > sync_start_enable
+      root@analog:/sys/bus/iio/devices/iio:device3# cat sync_start_enable
+      arm
+      root@analog:/sys/bus/iio/devices/iio:device3# echo trigger_manual > sync_start_enable
+      root@analog:/sys/bus/iio/devices/iio:device3# cat sync_start_enable
+      disarm
    
 
 
@@ -513,7 +513,7 @@ Buffer management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **ls -l buffer**
+      root:/sys/bus/iio/devices/iio:device3> ls -l buffer
       total 0
       -rw-r--r--    1 root     root          4096 Jan  1 00:12 enable
       -rw-r--r--    1 root     root          4096 Jan  1 00:12 length
@@ -551,7 +551,7 @@ Every buffer implementation features a set of files:
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device3> **ls -l scan_elements**
+      root:/sys/bus/iio/devices/iio:device3> ls -l scan_elements
       total 0
       -rw-r--r--    1 root     root          4096 Jan  1 00:00 out_voltage0_en
       -r--r--r--    1 root     root          4096 Jan  1 00:00 out_voltage0_index
@@ -591,7 +591,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
 
 .. hint::
 
-   **Trigger Consumers:**
+   Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
 
@@ -608,7 +608,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      root:/sys/bus/iio/devices/triggerY/> cat name
       irqtrig56
    
 
@@ -625,7 +625,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
 
 
@@ -641,7 +641,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
 
@@ -961,16 +961,16 @@ The available center shift frequencies for a given Interface Clock (*out_altvolt
    
    ::
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **cat out_altvoltage_1A_sampling_frequency**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# cat out_altvoltage_1A_sampling_frequency
       491520000
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **cat out_altvoltage_interpolation_frequency_available**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# cat out_altvoltage_interpolation_frequency_available
       491520000 983040000
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **cat out_altvoltage_interpolation_frequency**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# cat out_altvoltage_interpolation_frequency
       491520000
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **cat out_altvoltage_interpolation_center_shift_frequency**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# cat out_altvoltage_interpolation_center_shift_frequency
       0
    
 
@@ -985,34 +985,34 @@ The available center shift frequencies for a given Interface Clock (*out_altvolt
    
       *[ Set data clock to 122.88 MHz ]*
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **echo 122880000 > out_altvoltage_1A_sampling_frequency**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# echo 122880000 > out_altvoltage_1A_sampling_frequency
    
       *[ List available interpolation DAC frequencies ]*
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **cat out_altvoltage_interpolation_frequency_available**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# cat out_altvoltage_interpolation_frequency_available
       122880000 245760000 491520000 983040000
    
       *[ Select 8x interpolation ]*
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **echo 983040000 > out_altvoltage_interpolation_frequency**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# echo 983040000 > out_altvoltage_interpolation_frequency
    
       *[ List available center shift frequencies ]*
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **cat out_altvoltage_interpolation_center_shift_frequency_available**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# cat out_altvoltage_interpolation_center_shift_frequency_available
       0 61440000 122880000 184320000 245760000 307200000 368640000 430080000 491520000 552960000 614400000 675840000 737280000 798720000 860160000 921600000
    
       *[ Select 2x interpolation ]*
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **echo 245760000 > out_altvoltage_interpolation_frequency**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# echo 245760000 > out_altvoltage_interpolation_frequency
    
       *[ List available center shift frequencies ]*
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **cat out_altvoltage_interpolation_center_shift_frequency_available**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# cat out_altvoltage_interpolation_center_shift_frequency_available
       0 61440000 122880000 184320000
    
       *[ Select center shift frequencies ]*
    
-      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **echo 61440000 > out_altvoltage_interpolation_center_shift_frequency**
+      root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# echo 61440000 > out_altvoltage_interpolation_center_shift_frequency
    
 
 

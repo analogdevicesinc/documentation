@@ -111,7 +111,7 @@ With the Voyager4 (EV-CBM-VOYAGER4-1Z) fully assembled in hand:
 
 .. note::
 
-   The USB cable **must be connected** to the Voyager **when powering or restarting it**, even if you plan on using the Voyager in wireless mode using the battery. This connection to the PC enables the correct power paths in the device for use with the battery.
+   The USB cable must be connected to the Voyager when powering or restarting it, even if you plan on using the Voyager in wireless mode using the battery. This connection to the PC enables the correct power paths in the device for use with the battery.
 
 
 --------------

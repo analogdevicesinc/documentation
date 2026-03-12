@@ -177,7 +177,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADRV9009 driver depends on **CONFIG_SPI**
+   The ADRV9009 driver depends on CONFIG_SPI
 
 
 Adding Linux driver support
@@ -196,7 +196,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            - *-     Industrial I/O lock free software ring
            - *-   Enable triggered sampling support
 
-                 ** Analog to digital converters **
+                  Analog to digital converters 
            [--snip--]
 
            - *- Analog Devices High-Speed AXI ADC driver core
@@ -978,11 +978,11 @@ Controlling the MxFE is done via the IIO sysfs interface. For convenience users 
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0  iio:device3  iio:device2
    
-      root:/sys/bus/iio/devices> **cd iio:device2**
+      root:/sys/bus/iio/devices> cd iio:device2
    
       root@analog:/sys/bus/iio/devices/iio:device2# ls -al
       total 0
@@ -1261,7 +1261,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device2> **cat name**
+      root:/sys/bus/iio/devices/iio:device2> cat name
       axi-ad9081-rx-hpc
    
 
@@ -1280,7 +1280,7 @@ Read only attribute which returns the RX ADC rate Hz.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device2> **cat in_voltage_adc_frequency**
+      root:/sys/bus/iio/devices/iio:device2> cat in_voltage_adc_frequency
       4000000000
    
 
@@ -1301,7 +1301,7 @@ in_voltage_sampling_frequency = in_voltage_adc_frequency / (MAIN_decimation \* C
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device2> **cat in_voltage_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device2> cat in_voltage_sampling_frequency
       250000000
    
 
@@ -1320,7 +1320,7 @@ Read only attribute which returns the TX DAC rate Hz.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device2> **cat out_voltage_dac_frequency**
+      root:/sys/bus/iio/devices/iio:device2> cat out_voltage_dac_frequency
       12000000000
    
 
@@ -1341,7 +1341,7 @@ out_voltage_sampling_frequency = fDAC / (MAIN_interpolation \* CHANNEL_interpola
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device2> **cat out_voltage_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device2> cat out_voltage_sampling_frequency
       250000000
    
 
@@ -1370,11 +1370,11 @@ The current Nyquist Zone can be queried and controlled via the ``in_voltage_nyqu
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device2> **cat in_voltage_nyquist_zone_available**
-      **odd even**
-      root:/sys/bus/iio/devices/iio:device2> **echo even > cat in_voltage0_i_nyquist_zone**
-      root:/sys/bus/iio/devices/iio:device2> **cat cat in_voltage0_i_nyquist_zone**
-      **even**
+      root:/sys/bus/iio/devices/iio:device2> cat in_voltage_nyquist_zone_available
+      odd even
+      root:/sys/bus/iio/devices/iio:device2> echo even > cat in_voltage0_i_nyquist_zone
+      root:/sys/bus/iio/devices/iio:device2> cat cat in_voltage0_i_nyquist_zone
+      even
    
 
 
@@ -1397,13 +1397,13 @@ Sets the main data path (CDDC/CDUC) NCO frequency (fCARRIER) in Hz
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1000000000 > out_voltage0_i_main_nco_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_main_nco_frequency**
-      **1000000000**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 1000000000 > out_voltage0_i_main_nco_frequency
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_main_nco_frequency
+      1000000000
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 300000000 > in_voltage0_i_main_nco_frequency**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat in_voltage0_i_main_nco_frequency**
-      **300000000**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 300000000 > in_voltage0_i_main_nco_frequency
+      root@analog:/sys/bus/iio/devices/iio:device2# cat in_voltage0_i_main_nco_frequency
+      300000000
    
 
 
@@ -1423,13 +1423,13 @@ Sets the channel data path (FDDC/FDUC) NCO frequency (fCARRIER) in Hz
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1000000000 > out_voltage0_i_channel_nco_frequency **
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_frequency**
-      **1000000000**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 1000000000 > out_voltage0_i_channel_nco_frequency 
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_channel_nco_frequency
+      1000000000
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 300000000 > out_voltage0_i_channel_nco_frequency **
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_frequency**
-      **300000000**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 300000000 > out_voltage0_i_channel_nco_frequency 
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_channel_nco_frequency
+      300000000
    
 
 
@@ -1452,13 +1452,13 @@ Sets the main data path (CDDC/CDUC) NCO phase offset in milli degrees
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 66000 > out_voltage0_i_main_nco_phase**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_main_nco_phase**
-      **66000**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 66000 > out_voltage0_i_main_nco_phase
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_main_nco_phase
+      66000
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo -42000 > in_voltage0_i_main_nco_phase**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat in_voltage0_i_main_nco_phase**
-      **-42000**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo -42000 > in_voltage0_i_main_nco_phase
+      root@analog:/sys/bus/iio/devices/iio:device2# cat in_voltage0_i_main_nco_phase
+      -42000
    
 
 
@@ -1478,13 +1478,13 @@ Sets the channel data path (FDDC/FDUC) NCO phase offset in milli degrees
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 13123 > out_voltage0_i_channel_nco_phase**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_phase**
-      **13123**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 13123 > out_voltage0_i_channel_nco_phase
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_channel_nco_phase
+      13123
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 13123 > out_voltage0_i_channel_nco_phase**
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_phase**
-      **13123**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 13123 > out_voltage0_i_channel_nco_phase
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_channel_nco_phase
+      13123
    
 
 
@@ -1504,7 +1504,7 @@ The input data into each channelizer stage can be rescaled prior to additional p
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 0.707 > out_voltage0_i_channel_nco_gain_scale**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 0.707 > out_voltage0_i_channel_nco_gain_scale
    
 
 
@@ -1528,8 +1528,8 @@ The ``out_voltageX_[i|q]_channel_nco_test_tone_en`` mode is most useful for appl
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 0.25 > out_voltage0_i_channel_nco_test_tone_scale**
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1 > out_voltage0_i_channel_nco_test_tone_en**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 0.25 > out_voltage0_i_channel_nco_test_tone_scale
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 1 > out_voltage0_i_channel_nco_test_tone_en
    
 
 
@@ -1577,7 +1577,7 @@ Filter configurations can be written as follows:
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat /root/pfilt.cfg > filter_fir_config**
+      root@analog:/sys/bus/iio/devices/iio:device2# cat /root/pfilt.cfg > filter_fir_config
    
 
 
@@ -1665,7 +1665,7 @@ The **direct loopback** path loops the ADC output data directly back into a spec
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1 > loopback_mode**
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 1 > loopback_mode
    
 
 
@@ -1683,8 +1683,8 @@ The device contains a Temperature Monitoring Unit (TMU) that functions as a digi
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device2# **cat in_temp0_input**
-      **86120**
+      root@analog:/sys/bus/iio/devices/iio:device2# cat in_temp0_input
+      86120
    
 
 
@@ -1721,7 +1721,7 @@ Reading ``status`` returns a status string.
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **cat status**
+      root@analog:/sys/kernel/debug/iio/iio:device2# cat status
       **JESD TX (JRX) Link1 0xF lanes in DATA
       JESD TX (JRX) Link1 TPL Phase Difference Read 0, Set 3
       JESD RX (JTX) Link1 in DATA, SYNC deasserted, PLL locked, PHASE established, MODE valid**
@@ -1743,7 +1743,7 @@ Writing ``dac-full-scale-current-ua`` controls the DAC full scale current in uA.
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 40000 > dac-full-scale-current-ua**
+      root@analog:/sys/kernel/debug/iio/iio:device2# echo 40000 > dac-full-scale-current-ua
       root@analog:/sys/kernel/debug/iio/iio:device2#
    
 
@@ -1781,11 +1781,11 @@ Value Comment
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 15 1 > bist_prbs_select_jrx**
-      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_select_jrx**
-      **15**
-      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_error_counters_jrx**
-      **0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1**
+      root@analog:/sys/kernel/debug/iio/iio:device2# echo 15 1 > bist_prbs_select_jrx
+      root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_prbs_select_jrx
+      15
+      root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_prbs_error_counters_jrx
+      0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1
    
 
 
@@ -1813,8 +1813,8 @@ Format is: <errors>/<pass>
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_error_counters_jrx**
-      **0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1**
+      root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_prbs_error_counters_jrx
+      0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1
    
 
 
@@ -1841,9 +1841,9 @@ Value Comment
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 31 > bist_prbs_select_jtx**
-      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_select_jtx**
-      **31**
+      root@analog:/sys/kernel/debug/iio/iio:device2# echo 31 > bist_prbs_select_jtx
+      root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_prbs_select_jtx
+      31
    
 
 
@@ -1878,9 +1878,9 @@ Value PRBS type
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 0 15 1 > bist_spo_sweep_jrx**
-      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_spo_sweep_jrx**
-      **l:18 r:20**
+      root@analog:/sys/kernel/debug/iio/iio:device2# echo 0 15 1 > bist_spo_sweep_jrx
+      root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_spo_sweep_jrx
+      l:18 r:20
    
 
 
@@ -1905,9 +1905,9 @@ QUART_RATE        > 16 Gbps   +/- 16
    
    ::
    
-      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 2 > bist_spo_set_jrx**
-      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_spo_set_jrx**
-      **2**
+      root@analog:/sys/kernel/debug/iio/iio:device2# echo 2 > bist_spo_set_jrx
+      root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_spo_set_jrx
+      2
    
 
 
@@ -2000,7 +2000,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
 
 .. hint::
 
-   **Trigger Consumers:**
+   Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
 
@@ -2017,7 +2017,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      root:/sys/bus/iio/devices/triggerY/> cat name
       irqtrig56
    
 
@@ -2034,7 +2034,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
 
 
@@ -2050,7 +2050,7 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
    ::
    
-      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
 

@@ -50,7 +50,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The ADF4360 Driver depends on **CONFIG_SPI**
+   The ADF4360 Driver depends on CONFIG_SPI
 
 
 ::

@@ -156,7 +156,7 @@ Follow the steps to generate and download a vector into the eval board.
 
 .. important::
 
-   \ **Note:** Select 14 bits DAC Resolution for all generics (AD9744, AD9740, AD9742 & AD9748).The NC pins are disconnected in the corresponding evaluation board.
+   \ Note: Select 14 bits DAC Resolution for all generics (AD9744, AD9740, AD9742 & AD9748).The NC pins are disconnected in the corresponding evaluation board.
 
 
 .. container:: centeralign

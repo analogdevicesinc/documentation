@@ -34,9 +34,9 @@ Configure the USB drivers to Gadget only mode (or Dual role mode )
                    <*>   Support for Host-side USB
                    <*>   Inventra Highspeed Dual Role Controller
                            MUSB Mode Selection (Dual role mode)  --->
-                           ** Platform Glue Layer **
+                            Platform Glue Layer 
                    <*>     ADI
-                           ** MUSB DMA mode **
+                            MUSB DMA mode 
                    [N]     Disable DMA (always use PIO)
                    [*]       Inventra
                    <*>   USB Gadget Support  --->

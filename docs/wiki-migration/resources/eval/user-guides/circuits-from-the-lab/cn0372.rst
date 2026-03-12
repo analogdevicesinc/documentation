@@ -79,7 +79,7 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0372 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0372>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0372\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ NOTE: It is recommended that you install the `CN0372 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0372>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0372\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
 
    |image2|
@@ -98,7 +98,7 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 
 
    |image6|
@@ -109,7 +109,7 @@ Installing the Software
 
    It is recommended that you install the drivers to the default directory path
 
-   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+   C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
 
    |image7|
@@ -133,7 +133,7 @@ Main Tab
 
 .. tip::
 
-   \ **NOTE:** Blocks 6,7,8 and 10 have expand buttons (|image9|) that when clicked brings up the window shown in these blocks' description.
+   \ NOTE: Blocks 6,7,8 and 10 have expand buttons (|image9|) that when clicked brings up the window shown in these blocks' description.
 
 
 | \**Analysis Ch**
@@ -141,36 +141,36 @@ Main Tab
 ::
 
      * Selects the channel analyzed and the channel whose parametric performance data is displayed in the plot analysis blocks.
-   **Samples**
+   Samples
      * Selects number of samples to be taken in a single acquisition.
-   **Single Capture** Initiates the sampling and readback of the defined number of measurements.
-   **Continuous Capture** Continuously captures and updates the display and chart. Click a second time to stop sampling.
-   **Device Status** Displays the device generic and operating mode.
-   **I/P MUX** Writes to the channel register. \\
+   Single Capture Initiates the sampling and readback of the defined number of measurements.
+   Continuous Capture Continuously captures and updates the display and chart. Click a second time to stop sampling.
+   Device Status Displays the device generic and operating mode.
+   I/P MUX Writes to the channel register. \\
 
      |resources-eval-user-guides-circuits-from-the-lab-cn0372-15.png|
 
-   **2.5 Vref** Source of the Reference Input. \\
+   2.5 Vref Source of the Reference Input. \\
 
      |resources-eval-user-guides-circuits-from-the-lab-cn0372-16.png|
 
-   **Control Logic and Registers** Writes to the configuration Register. \\
+   Control Logic and Registers Writes to the configuration Register. \\
 
      |resources-eval-user-guides-circuits-from-the-lab-cn0372-17.png|
 
-   **SCL Rate**
+   SCL Rate
      * Selects the SCL clock rate. Standard mode is 100 kHz. Fast mode is 400 kHz. Fast mode is the default configuration.
-   **Alert Register** Writes to the Alert Register \\
+   Alert Register Writes to the Alert Register \\
 
      |resources-eval-user-guides-circuits-from-the-lab-cn0372-18.png|
 
-   **DPS Duty Cycle** Duty cycle dropdown menu. Options from 10% to 90%.
-   **Reference Settings** Displays current reference setting. If **External Reference** is selected, provide an off-board external reference. If this option is selected, the supplied reference value must be entered in **Ref. Value**.
-   **DPS** Toggles dynamic power scaling when :adi:`ADA4805-1` is used.
-   **Amp PD** Toggles power down of buffer when :adi:`ADA4805-1` is used.
-   **Flash LED** Flashes **LED1A** on the **SDP-B board**, useful for debugging purposes.
-   **Reset** Resets ADC and places the default configuration in the control register.
-   **Status Bar** Displays a message to the user detailing the current state of the software.
+   DPS Duty Cycle Duty cycle dropdown menu. Options from 10% to 90%.
+   Reference Settings Displays current reference setting. If External Reference is selected, provide an off-board external reference. If this option is selected, the supplied reference value must be entered in Ref. Value.
+   DPS Toggles dynamic power scaling when :adi:`ADA4805-1` is used.
+   Amp PD Toggles power down of buffer when :adi:`ADA4805-1` is used.
+   Flash LED Flashes LED1A on the SDP-B board, useful for debugging purposes.
+   Reset Resets ADC and places the default configuration in the control register.
+   Status Bar Displays a message to the user detailing the current state of the software.
 
 Waveform Tab
 ^^^^^^^^^^^^
@@ -184,8 +184,8 @@ Waveform Tab
 ::
 
      *Selects the channel analyzed and the channel whose parametric performance data is displayed in the plot analysis blocks.
-   **Alert** Illuminates if an alert is generated.
-   **Plot Legend** Shows all enabled channels. To remove any undesired channel(s) from the plot, deselect that channel.
+   Alert Illuminates if an alert is generated.
+   Plot Legend Shows all enabled channels. To remove any undesired channel(s) from the plot, deselect that channel.
 
 Histogram Tab
 ^^^^^^^^^^^^^

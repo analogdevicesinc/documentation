@@ -96,7 +96,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The DRM AXI HDMI driver depends on **CONFIG_DRM**
+   The DRM AXI HDMI driver depends on CONFIG_DRM
 
 
 ::

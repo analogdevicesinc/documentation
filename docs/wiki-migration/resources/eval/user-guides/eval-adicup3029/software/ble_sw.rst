@@ -3,7 +3,7 @@ BLE Software Pack
 
 .. warning::
 
-   \ **This CMSIS pack and its contents are DEPRECATED and no longer supported. Please do not use this moving forward**
+   \ This CMSIS pack and its contents are DEPRECATED and no longer supported. Please do not use this moving forward
 
 
 General Description/Overview
@@ -29,7 +29,7 @@ For detailed information regarding the BLE software pack, please see our complet
 .. important::
 
    
-   You **MUST** have this software package installed on your laptop or PC in order to compile, debug, and run the applications using the Bluetooth for the ADICUP3029 platform.
+   You MUST have this software package installed on your laptop or PC in order to compile, debug, and run the applications using the Bluetooth for the ADICUP3029 platform.
    
 
 

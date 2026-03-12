@@ -182,7 +182,7 @@ Link status stays in CGS and SYNC~ is deasserted
       Link status: CGS
       SYNC~: deasserted
    
-   **Fix:** Make sure SYNC~ is connected to the Link Transmit peripheral and is properly driven.
+   Fix: Make sure SYNC~ is connected to the Link Transmit peripheral and is properly driven.
 
 
 .. container:: center round box
@@ -197,7 +197,7 @@ Link status stays in CGS and SYNC~ is deasserted
       Link status: CGS
       SYNC~: deasserted
    
-   **Fix:** Make sure software communicates correctly with the DAC, bring-up sequence was executed and JESD RX blocks configured and enabled.
+   Fix: Make sure software communicates correctly with the DAC, bring-up sequence was executed and JESD RX blocks configured and enabled.
 
 
 .. container:: center round box
@@ -213,7 +213,7 @@ Link status stays in CGS and SYNC~ is deasserted
       SYNC~: deasserted
       SYSREF captured         No
    
-   **Fix:** Make sure SYSREF is connected to the Link Transmit peripheral and is properly driven.
+   Fix: Make sure SYSREF is connected to the Link Transmit peripheral and is properly driven.
 
 
 --------------

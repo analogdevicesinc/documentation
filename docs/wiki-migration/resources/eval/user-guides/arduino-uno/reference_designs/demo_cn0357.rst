@@ -52,7 +52,7 @@ Setting up the Hardware
 
 .. important::
 
-   **Rev B** EVAL-CN0357-ARDZ boards **REQUIRE** an external power supply, plugged into the DC barrel jack of the Arduino Uno. If not supplied, the board **WILL NOT WORK PROPERLY.**
+   Rev B EVAL-CN0357-ARDZ boards REQUIRE an external power supply, plugged into the DC barrel jack of the Arduino Uno. If not supplied, the board WILL NOT WORK PROPERLY.
 
    
    Rev C Eval-CN0357-ARDZ boards do not require this extra power supply.

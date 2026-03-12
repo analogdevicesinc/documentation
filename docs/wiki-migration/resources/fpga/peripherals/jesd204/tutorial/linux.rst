@@ -76,7 +76,7 @@ Transport layer support, implementing ADC/DAC chip configuration and HDL IP conf
            <*>   Analog Devices AD9467 AD9643 High-Speed AXI ADC driver
            [--snip--]
 
-           ** Direct Digital Synthesis **
+            Direct Digital Synthesis 
            <*>   Analog Devices CoreFPGA AXI DDS driver
            <*>   Analog Devices AD9122 DAC
            [--snip--]

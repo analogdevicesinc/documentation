@@ -112,13 +112,13 @@ Driver testing
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
    
-      root:/sys/bus/iio/devices> **cd iio\:device0**
+      root:/sys/bus/iio/devices> cd iio\:device0
    
-      root:/sys/bus/iio/devices/iio:device0> **ls -l**
+      root:/sys/bus/iio/devices/iio:device0> ls -l
       drwxr-xr-x 2 root root    0 Oct 25 04:25 buffer
       -rw-r--r-- 1 root root 4096 Oct 25 04:25 current_timestamp_clock
       -r--r--r-- 1 root root 4096 Oct 25 04:25 dev
@@ -151,7 +151,7 @@ Show device name
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat name**
+      root:/sys/bus/iio/devices/iio:device0> cat name
       adxl372
    
 
@@ -168,7 +168,7 @@ Show scale
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_scale**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_scale
       0.958241
    
 
@@ -185,7 +185,7 @@ Show axis x measurement
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_x_raw**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_x_raw
       -5
    
 
@@ -200,12 +200,12 @@ Set sampling frequency
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat sampling_frequency_available**
+      root:/sys/bus/iio/devices/iio:device0> cat sampling_frequency_available
       400 800 1600 3200 6400
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_sampling_frequency
       6400
-      root:/sys/bus/iio/devices/iio:device0> **echo 3200 > in_accel_sampling_frequency**
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device0> echo 3200 > in_accel_sampling_frequency
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_sampling_frequency
       3200
    
 
@@ -220,9 +220,9 @@ Show available bandwidths for the current set frequency
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_sampling_frequency
       256000
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_filter_low_pass_3db_frequency_available**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_filter_low_pass_3db_frequency_available
       200 400 800 1600 3200
       root:/sys/bus/iio/devices/iio:device0>
    
@@ -238,18 +238,18 @@ Change the bandwidth
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_filter_low_pass_3db_frequency_available**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_filter_low_pass_3db_frequency_available
       200 400 800 1600 3200
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_filter_low_pass_3db_frequency**
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_filter_low_pass_3db_frequency
       3200
-      root:/sys/bus/iio/devices/iio:device0> **echo 1600 > in_accel_filter_low_pass_3db_frequency**
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_filter_low_pass_3db_frequency**
+      root:/sys/bus/iio/devices/iio:device0> echo 1600 > in_accel_filter_low_pass_3db_frequency
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_filter_low_pass_3db_frequency
       1600
-      root:/sys/bus/iio/devices/iio:device0> **echo 3200 > in_accel_sampling_frequency**
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_filter_low_pass_3db_frequency_available**
+      root:/sys/bus/iio/devices/iio:device0> echo 3200 > in_accel_sampling_frequency
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_filter_low_pass_3db_frequency_available
       200 400 800 1600
-      root:/sys/bus/iio/devices/iio:device0> **echo 1600 > in_accel_sampling_frequency**
-      root:/sys/bus/iio/devices/iio:device0> **cat in_accel_filter_low_pass_3db_frequency**
+      root:/sys/bus/iio/devices/iio:device0> echo 1600 > in_accel_sampling_frequency
+      root:/sys/bus/iio/devices/iio:device0> cat in_accel_filter_low_pass_3db_frequency
       800
    
 
@@ -276,7 +276,7 @@ Trigger management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat trigger/current_trigger**
+      root:/sys/bus/iio/devices/iio:device0> cat trigger/current_trigger
       adxl372-dev-*
    
 
@@ -293,7 +293,7 @@ Buffer management
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **ls -l**
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> ls -l
       -rw-r--r-- 1 root root 4096 Oct 25 08:08 in_accel_x_en
       -r--r--r-- 1 root root 4096 Oct 25 08:08 in_accel_x_index
       -r--r--r-- 1 root root 4096 Oct 25 08:08 in_accel_x_type
@@ -321,9 +321,9 @@ Before enabling the buffer, a few steps need to be completed.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **echo 1 > in_accel_x_en**
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **echo 1 > in_accel_y_en**
-      root:/sys/bus/iio/devices/iio:device0/scan_elements> **echo 1 > in_accel_z_en**
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_accel_x_en
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_accel_y_en
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_accel_z_en
    
 
 
@@ -335,7 +335,7 @@ Before enabling the buffer, a few steps need to be completed.
    ::
    
       root:/sys/bus/iio/devices/iio:device0/buffer> ls
-      **enable** **hwfifo_enabled**  **hwfifo_watermark**  **hwfifo_watermark_max**  **hwfifo_watermark_min**  **length** **watermark**
+      enable hwfifo_enabled  hwfifo_watermark  hwfifo_watermark_max  hwfifo_watermark_min  length watermark
       root:/sys/bus/iio/devices/iio:device0/buffer>
    
 
@@ -349,7 +349,7 @@ Before enabling the buffer, a few steps need to be completed.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **echo 1024 > length**
+      root:/sys/bus/iio/devices/iio:device0/buffer> echo 1024 > length
    
 
 
@@ -364,7 +364,7 @@ Because we enabled all three channels, then the watermark can be set to a maximu
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **echo 170 > watermark**
+      root:/sys/bus/iio/devices/iio:device0/buffer> echo 170 > watermark
    
 
 
@@ -377,7 +377,7 @@ The FIFO can also be configured to store peak acceleration (x, y, and z) for eve
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **echo 1 > peak_fifo_mode_enable**
+      root:/sys/bus/iio/devices/iio:device0> echo 1 > peak_fifo_mode_enable
    
 
 
@@ -392,7 +392,7 @@ Note that this mode can work only if all three axis are enabled.
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **echo 1 > enable**
+      root:/sys/bus/iio/devices/iio:device0/buffer> echo 1 > enable
    
 
 
@@ -405,7 +405,7 @@ To read samples:
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/buffer> **cat /dev/iio:device0**
+      root:/sys/bus/iio/devices/iio:device0/buffer> cat /dev/iio:device0
    
 
 

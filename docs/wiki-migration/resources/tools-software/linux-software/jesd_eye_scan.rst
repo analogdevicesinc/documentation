@@ -134,7 +134,7 @@ Running local
    
    ::
    
-      root ~ # **jesd_eye_scan &**
+      root ~ # jesd_eye_scan &
    
 
 
@@ -154,7 +154,7 @@ When using the :doc:`AD-FMC-SDCARD for Zynq/Intel SoC </wiki-migration/resources
    
    ::
    
-      dave@HAL9000:/home/dave& **ssh -X root@10.44.3.53 jesd_eye_scan**
+      dave@HAL9000:/home/dave& ssh -X root@10.44.3.53 jesd_eye_scan
       root@10.44.3.53's password:
       Select axi-adxcvr-rx device!
    
@@ -172,15 +172,15 @@ This remote option uses the Secure SHell FileSystem (SSHFS), and might be suitab
    
    ::
    
-      dave@HAL9000:/home/dave# **mkdir /home/dave/mnt**
-      dave@HAL9000:/home/dave# **sudo sshfs -o direct_io,sync_read,allow_other -o StrictHostKeyChecking=no root@10.44.2.224:/ /home/dave/mnt**
-      dave@HAL9000:/home/dave# **LC_ALL=c jesd_eye_scan -p /home/dave/mnt**
+      dave@HAL9000:/home/dave# mkdir /home/dave/mnt
+      dave@HAL9000:/home/dave# sudo sshfs -o direct_io,sync_read,allow_other -o StrictHostKeyChecking=no root@10.44.2.224:/ /home/dave/mnt
+      dave@HAL9000:/home/dave# LC_ALL=c jesd_eye_scan -p /home/dave/mnt
    
 
 
 .. important::
 
-   The **LC_ALL=c** prefix for the command is important when running remote, because the locale on the client system can influence the format of the data. If it is incorrect, the plot will be empty.
+   The LC_ALL=c prefix for the command is important when running remote, because the locale on the client system can influence the format of the data. If it is incorrect, the plot will be empty.
 
 
 Output

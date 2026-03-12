@@ -658,7 +658,7 @@ The ENBW Example code block accepts a filter magnitude response, and returns the
        for i in range(65536):
            frst_ord[i] = (1.0 /
                           (1.0 +
-                           (i\*bw_per_point)**2.0)**\ 0.5)
+                           (i\*bw_per_point)2.0)\ 0.5)
        fo_enbw = arb_enbw(frst_ord, bw_per_point)
 
 This function can be used to calculate the ENBW of an arbitrary filter response, including the AD7124's internal filters. The frequency response of the AD7124 SINC4 filter, 128sps sample rate can be calculated similar to the previous 50/60Hz rejection filter example. The arb_anbw function returns a ENBW of about 31Hz.

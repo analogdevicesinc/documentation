@@ -1,48 +1,26 @@
 AD7780 - No-OS Driver for Renesas Microcontroller Platforms
 ===========================================================
 
-
 Supported Devices
-=================
+-----------------
 
 -  :adi:`AD7780`
 
 Evaluation Boards
-=================
+-----------------
 
 -  PmodAD3
 
 Overview
-========
+--------
 
-
-The :adi:`AD7780` is a complete low power front-end solution for bridge sensor products, including weigh scales, strain gages, and pressure sensors. It contains a precision, low power, 24-bit sigma-delta (Σ-Δ) ADC; an on-chip, low noise programmable gain amplifier (PGA); and an on-chip oscillator.
-
-Consuming only 330 μA, the :adi:`AD7780` is particularly suitable for portable or battery-operated products where very low power is required. The :adi:`AD7780` also has a power-down mode that allows the user to switch off the power to the bridge sensor and power down the :adi:`AD7780` when not converting, thus increasing the battery life of the product.
-
-For ease of use, all the features of the :adi:`AD7780` are controlled by dedicated pins. Each time a data read occurs, eight status bits are appended to the 24-bit conversion. These status bits contain a pattern sequence that can be used to confirm the validity of the serial transfer.
-
-The on-chip PGA has a gain of 1 or 128, supporting a full-scale differential input of ±5 V or ±39 mV. The device has two filter response options. The filter response at the 16.7 Hz update rate provides superior dynamic performance. The settling time is 120 ms at this update rate. At the 10 Hz update rate, the filter response provides greater than −45 dB of stop-band attenuation. In load cell applications, this stop-band rejection is useful to reject low frequency mechanical vibrations of the load cell. The settling time is 300 ms at this update rate. Simultaneous 50 Hz/60 Hz rejection occurs at both the 10 Hz and 16.7 Hz update rates.
-
-The :adi:`AD7780` operates with a power supply from 2.7 V to 5.25 V. It is available in a narrow body, 14-lead SOIC package and a 16-lead TSSOP package.
-
-Applications
-------------
-
--  Weigh scales
--  Pressure Measurement
--  Industrial Process Control
--  Portable instrumentation
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/ad7780_pmod_ad3.jpg
-   :align: center
-
-
+.. image:: https://wiki.analog.com/_media/page>/resources/pmods/ad7780
+   :alt: ad7780
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-==================
+------------------
 
 The driver contains two parts:
 
@@ -57,8 +35,7 @@ There are three functions which are called by the AD7780 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
-   :align: center
+|image1|
 
 .. container:: centeralign
 
@@ -79,6 +56,7 @@ The following functions are implemented in this version of AD7780 driver:
 | float AD7780_ConvertToVoltage(unsigned long rawSample, float vRef, unsigned char gain) | Converts the 24-bit raw value to volts.                                       |
 +----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
 
 
 **HW Platform(s):**
@@ -182,7 +160,7 @@ Required Software
 
 .. note::
 
-   The AD7780 demonstration project for the Renesas RL78G14 platform consists of three parts: the **AD7780 Driver**, the **PmodAD3 Demo for RL78G14** and the **RL78G14 Common Drivers**.
+   The AD7780 demonstration project for the Renesas RL78G14 platform consists of three parts: the AD7780 Driver, the PmodAD3 Demo for RL78G14 and the RL78G14 Common Drivers.
 
    
    All three parts have to be downloaded.
@@ -238,13 +216,12 @@ Software Project Tutorial
 More information
 ================
 
-
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+|//ez.analog.com/community/feeds/allcontent/atom|
 
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad3_rl78g13.jpg

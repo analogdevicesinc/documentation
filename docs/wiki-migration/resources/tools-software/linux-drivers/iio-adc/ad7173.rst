@@ -174,7 +174,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
 .. hint::
 
-   The AD7173 driver depends on **CONFIG_IIO** and **CONFIG_SPI_MASTER**
+   The AD7173 driver depends on CONFIG_IIO and CONFIG_SPI_MASTER
 
 
 ::
@@ -214,7 +214,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 
 .. tip::
 
-   \ **TIP:** An example program which uses the interface can be found here:
+   \ TIP: An example program which uses the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
@@ -228,11 +228,11 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    ::
    
-      root@analog:~# **cd /sys/bus/iio/devices/**
+      root@analog:~# cd /sys/bus/iio/devices/
       root@analog:/sys/bus/iio/devices# ls
       iio:device0
-      root@analog:/sys/bus/iio/devices# **cd iio\:device0**
-      root@analog:/sys/bus/iio/devices/iio:device0# **ls -l**
+      root@analog:/sys/bus/iio/devices# cd iio\:device0
+      root@analog:/sys/bus/iio/devices/iio:device0# ls -l
       total 0
       drwxr-xr-x 2 root root    0 Feb 10 11:39 buffer
       drwxr-xr-x 2 root root    0 Feb 10 11:39 buffer0
@@ -293,7 +293,7 @@ Show device name
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
+      root@analog:/sys/bus/iio/devices/iio:device0# cat name
       ad7173-8
    
 
@@ -314,11 +314,11 @@ U = (in_voltage0-voltage1_raw + in_voltage0-voltage1_offset) \* cat in_voltage0-
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage0-voltage1_scale**
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage0-voltage1_scale
       0.000596046
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage0-voltage1_offset**
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage0-voltage1_offset
       -8388608
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage0-voltage1_raw**
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage0-voltage1_raw
       9257137
    
 
@@ -338,13 +338,13 @@ Set sampling frequency
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage0-voltage1_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage0-voltage1_sampling_frequency
       6211.000000
-      root:/sys/bus/iio/devices/iio:device0> **echo 10 > in_voltage0-voltage1_sampling_frequency**
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage0-voltage1_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device0> echo 10 > in_voltage0-voltage1_sampling_frequency
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage0-voltage1_sampling_frequency
       10.000000
-      root:/sys/bus/iio/devices/iio:device0> **echo 100.5 > in_voltage2_sampling_frequency**
-      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage2_sampling_frequency**
+      root:/sys/bus/iio/devices/iio:device0> echo 100.5 > in_voltage2_sampling_frequency
+      root:/sys/bus/iio/devices/iio:device0> cat in_voltage2_sampling_frequency
       100.500000
    
 
@@ -367,10 +367,10 @@ System zero/full scale can be done after bootup using the newly created iio inte
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0> **echo 'zero_scale' > sys_calibration_mode**
-      root:/sys/bus/iio/devices/iio:device0> **echo 1 > sys_calibration_mode**
-      root:/sys/bus/iio/devices/iio:device0> **echo 'full_scale' > sys_calibration_mode**
-      root:/sys/bus/iio/devices/iio:device0> **echo 1 > sys_calibration_mode**
+      root:/sys/bus/iio/devices/iio:device0> echo 'zero_scale' > sys_calibration_mode
+      root:/sys/bus/iio/devices/iio:device0> echo 1 > sys_calibration_mode
+      root:/sys/bus/iio/devices/iio:device0> echo 'full_scale' > sys_calibration_mode
+      root:/sys/bus/iio/devices/iio:device0> echo 1 > sys_calibration_mode
    
 
 
@@ -416,7 +416,7 @@ Every buffer implementation features a set of files:
    
    ::
    
-      root@analog:/sys/bus/iio/devices/iio:device0/scan_elements# **ls**
+      root@analog:/sys/bus/iio/devices/iio:device0/scan_elements# ls
       in_temp_en                  in_voltage10-voltage11_index  in_voltage14-voltage15_type  in_voltage6-voltage7_en
       in_temp_index               in_voltage10-voltage11_type   in_voltage2_en               in_voltage6-voltage7_index
       in_temp_type                in_voltage12-voltage13_en     in_voltage2_index            in_voltage6-voltage7_type

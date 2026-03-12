@@ -1,55 +1,26 @@
 AD7091R - No-OS Driver for Microchip Microcontroller Platforms
 ==============================================================
 
-
 Supported Devices
-=================
+-----------------
 
 -  :adi:`AD7091R`
 
 Evaluation Boards
-=================
+-----------------
 
 -  PmodAD6
 
 Overview
-========
+--------
 
-
-The :adi:`AD7091R` is a 12-bit successive approximation analog-to-digital converter (ADC) that offers ultralow power consumption (typically 349 µA at 3 V and 1 MSPS) while achieving fast throughput rates (1 MSPS with a 50 MHz SCLK). The :adi:`AD7091R` uses advanced design and process techniques to achieve this very low power dissipation at high throughput rates. The part also features an on-chip, accurate 2.5 V reference.
-
-Operating from a single 2.7 V to 5.25 V power supply, the part contains a wide bandwidth track-and-hold amplifier that can handle input frequencies in excess of 7 MHz. The :adi:`AD7091R` also features an on-chip conversion clock and high speed serial interface. The conversion process and data acquisition are controlled using a CONVST signal and an internal oscillator.
-
-Applications
-------------
-
--  Instrumentation and Measurement
-
-   -  Battery and USB powered systems
-
-      -  Data acquisition systems
-      -  Handheld meters
-
-   -  Field Instruments
-
--  Consumer
-
-   -  Battery powered devices
-
--  Communications
-
-   -  Optical systems
-   -  Mobile communications
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/ad7091r_pmod_ad6.jpg
-   :align: center
-
-
+.. image:: https://wiki.analog.com/_media/page>/resources/pmods/ad7091r
+   :alt: ad7091r
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-==================
+------------------
 
 The driver contains two parts:
 
@@ -64,8 +35,7 @@ There are three functions which are called by the AD7091R driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
-   :align: center
+|image1|
 
 .. container:: centeralign
 
@@ -90,6 +60,7 @@ The following functions are implemented in this version of AD7091R driver:
 | float AD7091R_ConvertToVolts(short rawSample, float vRef) | Converts a 12-bit raw sample to volts.              |
 +-----------------------------------------------------------+-----------------------------------------------------+
 
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
 
 
 **HW Platform(s):**
@@ -132,7 +103,7 @@ Required Software
 
 .. note::
 
-   The AD7091R demonstration project for PIC32MX320F128H consists of three parts: the **AD7091R Driver**, the **PmodAD6 Demo for PIC32MX320F128H** and the **PIC32MX320F128H Common Drivers**.
+   The AD7091R demonstration project for PIC32MX320F128H consists of three parts: the AD7091R Driver, the PmodAD6 Demo for PIC32MX320F128H and the PIC32MX320F128H Common Drivers.
 
    
    All three parts have to be downloaded.
@@ -194,7 +165,6 @@ The following image shows a generic list of commands in a serial terminal connec
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -233,7 +203,6 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
-
 
 
 Digilent Cerebot MC7 Quick Start Guide
@@ -290,7 +259,6 @@ The following image shows a list of commands in a serial terminal connected to p
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -329,7 +297,6 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
    :align: center
-
 
 
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
@@ -387,7 +354,6 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
@@ -412,17 +378,15 @@ This section presents the steps for developing a chipKIT application that will r
    :align: center
 
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+|//ez.analog.com/community/feeds/allcontent/atom|
 
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad6_pic32.jpg

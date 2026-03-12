@@ -11,7 +11,7 @@ Make a Copy of Shape
 
 .. note::
 
-   Select the shape to be copied. Click **Alt** and **drag** the shape to create a copy of the shape
+   Select the shape to be copied. Click Alt and drag the shape to create a copy of the shape
 
 
 Select Multiple Shapes
@@ -19,7 +19,7 @@ Select Multiple Shapes
 
 .. note::
 
-   Individually click on the items to select or click on the left mouse button and drag the cursor over relevant items while holding the **Ctrl** key
+   Individually click on the items to select or click on the left mouse button and drag the cursor over relevant items while holding the Ctrl key
 
 
 Insert Multiple Connections Between Two Shapes
@@ -27,7 +27,7 @@ Insert Multiple Connections Between Two Shapes
 
 .. note::
 
-   Press **Alt** while making a connection between an output pin of the first module to an input pin of the second module. The remaining output pins of the first module will get automatically connected to the remaining input pins of the second module in the same order of the pins
+   Press Alt while making a connection between an output pin of the first module to an input pin of the second module. The remaining output pins of the first module will get automatically connected to the remaining input pins of the second module in the same order of the pins
 
 
 Insert Alias Pin
@@ -35,7 +35,7 @@ Insert Alias Pin
 
 .. note::
 
-   Press **Ctrl** and **Right Click** on an output pin using mouse to insert an Alias pin connected to the output pin
+   Press Ctrl and Right Click on an output pin using mouse to insert an Alias pin connected to the output pin
 
 
 Toggle Control Value
@@ -43,7 +43,7 @@ Toggle Control Value
 
 .. note::
 
-   Use **Ctrl + T** to toggle between the current and previous values of the current control
+   Use Ctrl + T to toggle between the current and previous values of the current control
 
 
 Module Control Shortcuts
@@ -51,7 +51,7 @@ Module Control Shortcuts
 
 .. note::
 
-   Use **Spacebar** to toggle the value of checkbox control. Use **Up/Down** keys to change the value of knob, slider and numeric up-down controls
+   Use Spacebar to toggle the value of checkbox control. Use Up/Down keys to change the value of knob, slider and numeric up-down controls
 
 
 UI Shortcuts

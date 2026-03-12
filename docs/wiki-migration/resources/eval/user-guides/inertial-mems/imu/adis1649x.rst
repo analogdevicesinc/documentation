@@ -59,7 +59,7 @@ Use the M2x0.4x16mm machine screws (provided in pink bag) for mounting these pro
 
 .. warning::
 
-   **WARNING:** Remove the jumper from **JP1** when using the ADIS16IMU1/PCB to evaluate these products.
+   WARNING: Remove the jumper from JP1 when using the ADIS16IMU1/PCB to evaluate these products.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb_13x.jpg
@@ -72,7 +72,7 @@ Use the M2x0.4x4mm machine screws (provided in pink bag) for mounting these prod
 
 .. warning::
 
-   **WARNING:** Remove the jumper from **JP1** when using the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1/eb.html#buy>` to evaluate these products.
+   WARNING: Remove the jumper from JP1 when using the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1/eb.html#buy>` to evaluate these products.
 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb_36x.jpg

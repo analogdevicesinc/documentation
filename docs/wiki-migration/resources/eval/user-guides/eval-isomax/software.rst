@@ -33,7 +33,7 @@ The example projects feature the ADI Broad Market BMS boards such as the EVAL-AD
    *The BMS Embedded Drivers Installer is available upon request.*
    
    | To request for access, send the following details to this email address:
-   | ✉ **BM_BMSSoftwareSupport@analog.com**
+   | ✉ BM_BMSSoftwareSupport@analog.com
    
    -  Email address used for MyAnalog account creation
    -  Company/School

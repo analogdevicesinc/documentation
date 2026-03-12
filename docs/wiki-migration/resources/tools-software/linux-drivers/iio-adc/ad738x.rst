@@ -170,13 +170,13 @@ Driver testing
    
    ::
    
-      root:/> **cd /sys/bus/iio/devices/**
+      root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
       iio:device0
    
-      root:/sys/bus/iio/devices> **cd iio\:device0**
+      root:/sys/bus/iio/devices> cd iio\:device0
    
-      root:/sys/bus/iio/devices/iio:device0> **ls -l**
+      root:/sys/bus/iio/devices/iio:device0> ls -l
       drwxr-xr-x 2 root root    0 Sep 12 20:11 buffer
       -r--r--r-- 1 root root 4096 Sep 12 20:11 dev
       -rw-r--r-- 1 root root 4096 Sep 12 20:11 in_voltage0_raw
@@ -197,7 +197,7 @@ Show device name
 
 ::
 
-   root:/sys/bus/iio/devices/iio:device0> **cat name**
+   root:/sys/bus/iio/devices/iio:device0> cat name
    ad7380
 
 Show scale
@@ -207,7 +207,7 @@ Show scale
 
 ::
 
-   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage_scale**
+   root:/sys/bus/iio/devices/iio:device0> cat in_voltage_scale
    0.076293945
 
 Show offset
@@ -217,7 +217,7 @@ Show offset
 
 ::
 
-   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage0_offset**
+   root:/sys/bus/iio/devices/iio:device0> cat in_voltage0_offset
    32768
 
 This attribute only applies to pseduo-differential chips and will not be present on single-ended or fully differential chips. The value comes from the ``inx-supply`` voltage.
@@ -229,7 +229,7 @@ Show channel 0 measurement
 
 ::
 
-   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage0_raw**
+   root:/sys/bus/iio/devices/iio:device0> cat in_voltage0_raw
    28583
 
 **U** = *in_voltage0_raw \* in_voltage_scale* = 28583 \* 0.076293945 = **2180.70 mV**
@@ -269,7 +269,7 @@ Loading iio-trig-hrtimer module will register hrtimer trigger types allowing use
    
    ::
    
-      root:/sys/kernel/config/iio/triggers/hrtimer/> **mkdir trigger0**
+      root:/sys/kernel/config/iio/triggers/hrtimer/> mkdir trigger0
    
 
 
@@ -282,7 +282,7 @@ Loading iio-trig-hrtimer module will register hrtimer trigger types allowing use
    
    ::
    
-      root:/sys/bus/iio/devices/trigger0/> **cat name**
+      root:/sys/bus/iio/devices/trigger0/> cat name
       trigger0
    
 
@@ -296,7 +296,7 @@ Loading iio-trig-hrtimer module will register hrtimer trigger types allowing use
    
    ::
    
-      root:/sys/bus/iio/devices/trigger0/> **echo 500 > sampling_frequency**
+      root:/sys/bus/iio/devices/trigger0/> echo 500 > sampling_frequency
       trigger0
    
 
@@ -310,7 +310,7 @@ Loading iio-trig-hrtimer module will register hrtimer trigger types allowing use
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/> **echo trigger0 > trigger/current_trigger**
+      root:/sys/bus/iio/devices/iio:device0/> echo trigger0 > trigger/current_trigger
    
 
 
@@ -323,7 +323,7 @@ Loading iio-trig-hrtimer module will register hrtimer trigger types allowing use
    
    ::
    
-      root:/sys/bus/iio/devices/iio:device0/trigger> **cat current_trigger**
+      root:/sys/bus/iio/devices/iio:device0/trigger> cat current_trigger
       trigger0
    
 
@@ -339,7 +339,7 @@ Buffer management
    ::
    
       root:/sys/bus/iio/devices/iio:device0/buffer> ls
-      **enable**          **length**                   **watermark**
+      enable          length                   watermark
       root:/sys/bus/iio/devices/iio:device0/buffer>
    
 
@@ -367,7 +367,7 @@ Every buffer implementation features a set of files:
 
 .. important::
 
-   When using the driver with SPI offloading, **all** channels must be enabled for buffered reads, otherwise enabling the buffer will fail with an error.
+   When using the driver with SPI offloading, all channels must be enabled for buffered reads, otherwise enabling the buffer will fail with an error.
 
    
    There is one exception to this for single-ended chips. Since there is a MUX, enabling 1/2 of the channels is also permitted as long as all of the enabled channels have the same MUX position (the first contiguous 1/2 or the last contiguous 1/2).
