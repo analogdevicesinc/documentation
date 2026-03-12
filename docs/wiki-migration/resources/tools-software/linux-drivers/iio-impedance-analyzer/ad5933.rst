@@ -38,11 +38,11 @@ Status
 Files
 -----
 
-+----------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                                    |
-+==========+=========================================================================================================================================+
-| driver   | `ad5933.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/impedance-analyzer/ad5933.c>`_  |
-+----------+-----------------------------------------------------------------------------------------------------------------------------------------+
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                                                           |
++==========+================================================================================================================================================================================+
+| driver   | `drivers/staging/iio/impedance-analyzer/ad5933.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/impedance-analyzer/ad5933.c>`_  |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example platform device initialization
 ======================================
@@ -87,7 +87,7 @@ This method is appropriate when the I2C bus is a system bus, as in many embedded
 
 So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
 
-For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+For more information see: `Documentation/i2c/instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
 
 
 Depending on the converter IC used, you may need to set the I2C_BOARD_INFO name accordingly, matching your part name.

@@ -141,7 +141,7 @@ Running local
 Running remote (X11 forwarding)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When using the :doc:`AD-FMC-SDCARD for Zynq/Intel SoC </wiki-migration/resources/tools-software/linux-software/zynq_images>` without display connected,you can use X11 forwarding over SSH to run this application remotely
+When using the :doc:`AD-FMC-SDCARD for Zynq/Intel SoC </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` without display connected,you can use X11 forwarding over SSH to run this application remotely
 
 ::
 

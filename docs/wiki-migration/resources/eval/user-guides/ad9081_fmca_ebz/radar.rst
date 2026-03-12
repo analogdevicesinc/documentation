@@ -352,7 +352,7 @@ The HDL
    As of writing this document, not all HDL changes have made it into the :git-hdl:`upstream <hdl>` repository yet, thus you may either use my development branch, or make sure that the most recent commits from that branch have made it into master (Though at that point this paragraph should be updated): https://github.com/Yamakaja/hdl/tree/data_offload
 
 
-On the HDL side we will be using a Timing Division Duplexing (TDD) core, which was originally developed to control the :adi:`ad9361.html <en/products/ad9361.html>` family of transceivers: See the :doc:`reference_hdl </wiki-migration/resources/eval/user-guides/ad-pzsdr2400tdd-eb/reference_hdl>` for more information about what the TDD core can do.
+On the HDL side we will be using a Timing Division Duplexing (TDD) core, which was originally developed to control the :adi:`en/products/ad9361.html` family of transceivers: See the :doc:`reference_hdl </wiki-migration/resources/eval/user-guides/ad-pzsdr2400tdd-eb/reference_hdl>` for more information about what the TDD core can do.
 
 Because the TDD engine was previously not available as a standalone IP core, i created a small wrapper which just references the existing tdd files from the util and/or common directory: ```axi_tdd`` <https://github.com/analogdevicesinc/hdl/tree/master/library/axi_tdd>`__.
 
@@ -395,9 +395,9 @@ There are two drivers which may be interesting to take a look at here, the data 
 Data Offload
 ^^^^^^^^^^^^
 
-The :git-linux:`drivers/misc/adi-axi-data-offload.c` is for the most part just configuring the data offload registers based on the values provided in the device tree, and also providing a debugfs interface to modify those registers at runtime. For more information on the device tree options see :git-linux:`Documentation/devicetree/bindings/misc/adi,axi-data-offload.yaml`.
+The :git-linux:`master/drivers/misc/adi-axi-data-offload.c <drivers/misc/adi-axi-data-offload.c>` is for the most part just configuring the data offload registers based on the values provided in the device tree, and also providing a debugfs interface to modify those registers at runtime. For more information on the device tree options see :git-linux:`master/Documentation/devicetree/bindings/misc/adi,axi-data-offload.yaml <Documentation/devicetree/bindings/misc/adi,axi-data-offload.yaml>`.
 
-The second part of the driver is the integration into :git-linux:`drivers/iio/frequency/cf_axi_dds.c`, which allows cyclic / oneshot operation to be handled by the data offload - this feature in particular is interesting when you're sending the same radar waveform repeatedly, because if the data offload is set to cyclic mode and synchronization is enabled, it will wait for the sync signal before each iteration. Effectively this will allow you to replay a buffer on the transmit side as often as you'd like, while only ever loading it once.
+The second part of the driver is the integration into :git-linux:`master/drivers/iio/frequency/cf_axi_dds.c <drivers/iio/frequency/cf_axi_dds.c>`, which allows cyclic / oneshot operation to be handled by the data offload - this feature in particular is interesting when you're sending the same radar waveform repeatedly, because if the data offload is set to cyclic mode and synchronization is enabled, it will wait for the sync signal before each iteration. Effectively this will allow you to replay a buffer on the transmit side as often as you'd like, while only ever loading it once.
 
 TDD
 ^^^

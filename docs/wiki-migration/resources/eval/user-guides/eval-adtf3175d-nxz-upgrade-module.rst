@@ -83,7 +83,7 @@ Installation Steps
 
    -  Please note that ADSD3500 fw version below 4.2.0.0 are not supported
 
--  Run 4.3.0+ Release software : ` <https://github.com/analogdevicesinc/ToF/releases/>`__
+-  Run 4.3.0+ Release software : `ToF/releases/ <https://github.com/analogdevicesinc/ToF/releases>`_
 
 What to do if your module does not stream
 -----------------------------------------

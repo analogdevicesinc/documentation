@@ -26,27 +26,22 @@ IO operation
 
 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   1. Run instrument
 
-1. Run instrument
+   2. Connect digital channel 0 to channel 7
 
-2. Connect digital channel 0 to channel 7
+   3. Start digital IO instrument
 
-3. Start digital IO instrument
+   4. Monitor channel 0 using voltmeter/scope/logic analyzer
 
-4. Monitor channel 0 using voltmeter/scope/logic analyzer
+   5. Set channel 0 as output by clicking the direction button Channel 7 input state is the same as channel 0 output state Voltmeter shows the same state (5V/0V) as channel 0 output state
 
-5. Set channel 0 as output by clicking the direction button Channel 7 input state is the same as channel 0 output state Voltmeter shows the same state (5V/0V) as channel 0 output state
+   .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_16-51-11.png
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_16-51-11.png
+   6. Change channel 0 output state by clicking it (multiple times) Channel 7 input state is the same as channel 0 output state Voltmeter shows the same state (5V/0V) as channel 0 output state
 
-6. Change channel 0 output state by clicking it (multiple times) Channel 7 input state is the same as channel 0 output state Voltmeter shows the same state (5V/0V) as channel 0 output state
-
-.. raw:: html
-
-   </details>
 
 
 Grouped operation
@@ -54,52 +49,47 @@ Grouped operation
 
 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   1. Make the following connections
 
-1. Make the following connections
+   -  Channel 0 -> Channel 8
+   -  Channel 1 -> Channel 9
+   -  Channel 2 -> Channel 10
+   -  Channel 3 -> Channel 11
+   -  Channel 4 -> Channel 12
+   -  Channel 5 -> Channel 13
+   -  Channel 6 -> Channel 14
+   -  Channel 7 -> Channel 15
 
--  Channel 0 -> Channel 8
--  Channel 1 -> Channel 9
--  Channel 2 -> Channel 10
--  Channel 3 -> Channel 11
--  Channel 4 -> Channel 12
--  Channel 5 -> Channel 13
--  Channel 6 -> Channel 14
--  Channel 7 -> Channel 15
+   2. Start digital IO instrument
 
-2. Start digital IO instrument
+   3. Also monitor these connections with a logic analyzer (use breadboard to split the connection)
 
-3. Also monitor these connections with a logic analyzer (use breadboard to split the connection)
+   4. Set DIO 0-7 to Grouped interface
 
-4. Set DIO 0-7 to Grouped interface
+   .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/dio-uc/image5.png
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/dio-uc/image5.png
+   5. Set all channels DIO8-15 to output
 
-5. Set all channels DIO8-15 to output
+   6. Set each DIO8-15 output states at random
 
-6. Set each DIO8-15 output states at random
+   .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_17-10-13.png
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_17-10-13.png
+   DIO 0 – 7 grouped value should be the binary value of channels 8-15. Logic analyzer should show the same results
 
-DIO 0 – 7 grouped value should be the binary value of channels 8-15. Logic analyzer should show the same results
+   7. Set all channels 8-15 to input
 
-7. Set all channels 8-15 to input
+   8. Set Group direction to output
 
-8. Set Group direction to output
+   9. Set Group value to a random value
 
-9. Set Group value to a random value
+   Channels 8-15 input state should represent that value in binary
 
-Channels 8-15 input state should represent that value in binary
+   Logic analyzer should show the same results
 
-Logic analyzer should show the same results
+   .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_17-11-24.png
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_17-11-24.png
-
-.. raw:: html
-
-   </details>
 
 
 Interaction with pattern generator
@@ -107,41 +97,36 @@ Interaction with pattern generator
 
 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   1. Start digital IO instrument
 
-1. Start digital IO instrument
+   2. Generate clock signals on channels 0 and 8
 
-2. Generate clock signals on channels 0 and 8
+   In the digitalIO the group as well as channel 8 should have a red highlight indicating that the pattern generator has ownership of the channels.
 
-In the digitalIO the group as well as channel 8 should have a red highlight indicating that the pattern generator has ownership of the channels.
+   The user cannot interact with those channels. Logic analyzer shows clock signal correctly generated at channels 0 and 8
 
-The user cannot interact with those channels. Logic analyzer shows clock signal correctly generated at channels 0 and 8
+   3. Connect channel 10 to channel 11
 
-3. Connect channel 10 to channel 11
+   4. Set channel 10 as output and channel 11 as input
 
-4. Set channel 10 as output and channel 11 as input
+   5. Modify channel 10 output state
 
-5. Modify channel 10 output state
+   Channel 11 input state follows channel 10 output state
 
-Channel 11 input state follows channel 10 output state
+   Rest of the channels work properly. The user can set direction and output state and can read input state
 
-Rest of the channels work properly. The user can set direction and output state and can read input state
+   6. While running, set a clock signal on channel 10 in the pattern generator Channel 10 has a red highlight, the user cannot interact with it anymore. Channel 11 input state might flicker indicating that a signal can be read from channel 11.
 
-6. While running, set a clock signal on channel 10 in the pattern generator Channel 10 has a red highlight, the user cannot interact with it anymore. Channel 11 input state might flicker indicating that a signal can be read from channel 11.
+   Logic analyzer shows a new clock signal generated at channel 10 which can also be read on channel 11
 
-Logic analyzer shows a new clock signal generated at channel 10 which can also be read on channel 11
+   .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_17-13-47.png
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_17-13-47.png
+   7. Stop the pattern generator
 
-7. Stop the pattern generator
+   Red highlight is removed from the digitalIO, the channels now work properly.
 
-Red highlight is removed from the digitalIO, the channels now work properly.
-
-.. raw:: html
-
-   </details>
 
 
 **Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`

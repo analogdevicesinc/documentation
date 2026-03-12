@@ -101,7 +101,7 @@ Link: https://www.putty.org/ Version: Any version is fine
 
 IIO Oscilloscope
 
-Link: `5334364156 <https://github.com/analogdevicesinc/iio-oscilloscope/actions/runs/5334364156>`_ Note: Need a Github account with your ADI email to download Version: Above link is the latest version from the software team
+Link: `iio-oscilloscope/actions/runs/5334364156 <https://github.com/analogdevicesinc/iio-oscilloscope/actions/runs/5334364156>`_ Note: Need a Github account with your ADI email to download Version: Above link is the latest version from the software team
 
 LibIIO Installer
 

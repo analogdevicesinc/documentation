@@ -148,7 +148,7 @@ A: There are various options:
 -  Third option is to use a rotary encoder as a volume control.
 -  For more details, refer the following link
 
-:ez:`how-do-i-implement-external-volume-control-using-gpios-or-aux-adcs <dsp/sigmadsp/w/documents/5188/how-do-i-implement-external-volume-control-using-gpios-or-aux-adcs>`.
+:ez:`dsp/sigmadsp/w/documents/5188/how-do-i-implement-external-volume-control-using-gpios-or-aux-adcs`.
 
 **Q: Does ADSP-21569 support USB data transmission? Or What are the debug options available for USB data transmission?**
 
@@ -299,7 +299,7 @@ For more details, please refer to the section “Target Framework” in “AE_42
 
 Linker finished with 2 warnings.*\*
 
-A: Please refer the Ezone thread which we have already addressed this query :ez:`building-the-example-uc-project-for-adsp-sc589-ez-in-cces-warnings <dsp/software-and-development-tools/sigmastudio-for-sharc/f/q-a/565549/building-the-example-uc-project-for-adsp-sc589-ez-in-cces-warnings>`.
+A: Please refer the Ezone thread which we have already addressed this query :ez:`dsp/software-and-development-tools/sigmastudio-for-sharc/f/q-a/565549/building-the-example-uc-project-for-adsp-sc589-ez-in-cces-warnings`.
 
 **Q: How can I use the lib integration as demo uC application?**
 

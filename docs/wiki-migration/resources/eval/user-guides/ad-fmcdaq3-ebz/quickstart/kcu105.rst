@@ -49,9 +49,7 @@ You will need to:
 - Turn it on
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 Programming the FPGA

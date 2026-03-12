@@ -14,27 +14,27 @@ Below is a list of the hardware involved.
 
 \*\* ADI reference board: \*\*
 
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| Evaluation Board  | Link                                                                                                                                            |
-+===================+=================================================================================================================================================+
-| ADSP-BF707 EZ-kit | :adi:`eval-bf707.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-bf707.html>`                               |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ADSP-SC573 EZ-kit | :adi:`SC573EZKIT.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SC573EZKIT.html>`                               |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ADSP-SC584 EZ-kit | :adi:`EVAL-ADSP-SC584.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC584.html>`                     |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ADSP-SC589 EZ-kit | :adi:`EVAL-ADSP-SC589.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC589.html>`                     |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ADSP-21569 EZ-kit | :adi:`ev-21569-ezkit.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ev-21569-ezkit.html>`                       |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ADSP-SC594 EZ-kit | :adi:`ev-SC594-ezkit.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ev-SC594-ezkit.html>`                       |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ADSP-SC598 EZ-Kit | :adi:`EV-SC598-EZKIT.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EV-SC598-EZKIT.html>`                       |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Evaluation Board  | Link                                                                                                                                                                                                                     |
++===================+==========================================================================================================================================================================================================================+
+| ADSP-BF707 EZ-kit | :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-bf707.html`                                                                                                                          |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADSP-SC573 EZ-kit | :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SC573EZKIT.html`                                                                                                                          |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADSP-SC584 EZ-kit | :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC584.html`                                                                                                                     |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADSP-SC589 EZ-kit | :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC589.html`                                                                                                                     |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADSP-21569 EZ-kit | :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ev-21569-ezkit.html`                                                                                                                      |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADSP-SC594 EZ-kit | :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ev-SC594-ezkit.html`                                                                                                                      |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADSP-SC598 EZ-Kit | :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EV-SC598-EZKIT.html`                                                                                                                      |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 \*\* Jtag debugger: \*\*
 
--  ICE1000/2000: :adi:`emulators.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html>`
+-  ICE1000/2000: :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html`
 
 \*\* PC: \*\*
 
@@ -54,7 +54,7 @@ Get the source code ready
 Latest versions
 ~~~~~~~~~~~~~~~
 
-For ADI FreeRTOS version 2.0.0 and later, combined sources are available from GitHub: `FreeRTOSv10.4.x <https://github.com/analogdevicesinc/freertos/tree/release/FreeRTOSv10.4.x>`_
+For ADI FreeRTOS version 2.0.0 and later, combined sources are available from GitHub: `freertos/tree/release/FreeRTOSv10.4.x <https://github.com/analogdevicesinc/freertos/tree/release/FreeRTOSv10.4.x>`_
 
 The latest sources are automatically downloaded and configured via the FreeRTOS Add-In for CCES, more details can be found at :doc:`freertos-addin </wiki-migration/resources/tools-software/freertos/freertos-addin>`
 
@@ -68,7 +68,7 @@ For details on finding legacy versions of FreeRTOS, see :doc:`legacy-versions </
 CrossCore Embedded Studio
 -------------------------
 
-CrossCore Embedded Studio is available from :adi:`adswt-cces.html <en/design-center/evaluation-hardware-and-software/software/adswt-cces.html>`
+CrossCore Embedded Studio is available from :adi:`en/design-center/evaluation-hardware-and-software/software/adswt-cces.html`
 
 FreeRTOS is supported from CrossCore Embedded Studio version 2.8.0. The FreeRTOS Add-In is supported from CrossCore Embedded Studio version 2.10.1.
 

@@ -6,7 +6,7 @@ Pre-requisites
 
 To build and run the demo:
 
--  Create a :doc:`standard ADI SD card </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+-  Create a :doc:`standard ADI SD card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 -  Build the BOOT.BIN for the design from MATLAB using the provided :git-MathWorks_tools:`hdlworkflow <targeting_models/tuneAGC-ad9361/hdlworkflow.m>` script
 -  Copy the provided :git-MathWorks_tools:`targeting_models/tuneAGC-ad9361/reg/devicetree.dts` onto the BOOT partition of the SD card.
 -  Now the ADRV9361-Z7035 can be booted from the built SD card.

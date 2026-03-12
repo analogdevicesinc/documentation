@@ -151,7 +151,7 @@ ACE Setup
 ~~~~~~~~~
 
 -  Download and install :doc:`ACE </wiki-migration/resources/tools-software/ace>` if it is not already installed.
--  The AD9094 ACE plug-in can be found under the :adi:`AD9094 Evaluation Board Software Section <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9094.html#eb-relatedsoftware>` select the latest ACE plug-in for the AD9694, as it is also used for the AD9094 :adi:`board.ad9694.1.2024.43100.acezip <plugins/ace/board.ad9694.1.2024.43100.acezip>` or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).
+-  The AD9094 ACE plug-in can be found under the :adi:`AD9094 Evaluation Board Software Section <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9094.html#eb-relatedsoftware>` select the latest ACE plug-in for the AD9694, as it is also used for the AD9094 :adi:`plugins/ace/board.ad9694.1.2024.43100.acezip` or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).
 
 .. note::
 

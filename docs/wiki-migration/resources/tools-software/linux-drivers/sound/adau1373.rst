@@ -26,15 +26,15 @@ Status
 Files
 ~~~~~
 
-+----------+----------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                 |
-+==========+======================================================================================================================+
-| driver   | `adau1373.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/adau1373.c>`_  |
-+----------+----------------------------------------------------------------------------------------------------------------------+
-| include  | `adau1373.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/adau1373.h>`_  |
-+----------+----------------------------------------------------------------------------------------------------------------------+
-| include  | `adau1373.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/sound/adau1373.h>`_     |
-+----------+----------------------------------------------------------------------------------------------------------------------+
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                  |
++==========+=======================================================================================================================================+
+| driver   | `sound/soc/codecs/adau1373.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/adau1373.c>`_  |
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| include  | `sound/soc/codecs/adau1373.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/adau1373.h>`_  |
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| include  | `include/sound/adau1373.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/sound/adau1373.h>`_        |
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 Example device initialization
 -----------------------------
@@ -53,7 +53,7 @@ This method is appropriate when the I2C bus is a system bus, as in many embedded
 
 So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
 
-For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+For more information see: `Documentation/i2c/instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
 
 
 .. code:: c
@@ -451,11 +451,11 @@ Status
 Files
 ~~~~~
 
-+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                                       |
-+==========+============================================================================================================================================+
-| driver   | `bfin-eval-adau1373.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/blackfin/bfin-eval-adau1373.c>`_  |
-+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
++----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                                          |
++==========+===============================================================================================================================================================+
+| driver   | `sound/soc/blackfin/bfin-eval-adau1373.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/blackfin/bfin-eval-adau1373.c>`_  |
++----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Kernel configuration
 --------------------

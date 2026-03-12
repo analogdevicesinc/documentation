@@ -21,7 +21,7 @@ These specs may not be "one-size-fits-all" for every potential use case, but the
 Support
 -------
 
-For support on this reference design, please contact us through our technical support portal at the follow link: :adi:`technical-support.html <en/support/technical-support.html>`
+For support on this reference design, please contact us through our technical support portal at the follow link: :adi:`en/support/technical-support.html`
 
 Resources
 =========

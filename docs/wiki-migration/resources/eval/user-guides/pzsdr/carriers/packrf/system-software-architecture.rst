@@ -19,4 +19,4 @@ Getting Started
 
 For those starting out with the PackRF kit, using the standard :doc:`ADRV9361 user-guide </wiki-migration/resources/eval/user-guides/adrv9361-z7035>` is the best place to begin to understand how to use the device. As well as getting started with the basic ADI tools and 3rd party software support.
 
-If you need to create an SD card for the radios or update an existing card, follow :doc:`this guide </wiki-migration/resources/tools-software/linux-software/zynq_images>` selecting **zynq-adrv9361-z7035-box** boot files.
+If you need to create an SD card for the radios or update an existing card, follow :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` selecting **zynq-adrv9361-z7035-box** boot files.

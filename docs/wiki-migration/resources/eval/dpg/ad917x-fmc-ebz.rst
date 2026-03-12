@@ -10,7 +10,7 @@ What's In The Box
 Additional Components Needed for an ADS7 / ADS8-V1 Evaluation Platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Pattern generator board: ADS7 (up to 13Gbps SERDES) or ADS8-V1 (covers the full AD917x range): :adi:`ADS8-V1EBZ.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADS8-V1EBZ.html>`
+-  Pattern generator board: ADS7 (up to 13Gbps SERDES) or ADS8-V1 (covers the full AD917x range): :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADS8-V1EBZ.html`
 
 **Note: if using the Xilinx KCU105 evaluation kit as a pattern generator, customers will need to purchase the following additional components:**
 

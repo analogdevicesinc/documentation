@@ -1,7 +1,7 @@
 Embedded ARM and AD9361/AD9364
 ==============================
 
-The image for the AD9361/AD9364 based boards can be found, and created by following the directions :doc:`here </wiki-migration/resources/tools-software/linux-software/zynq_images>`.
+The image for the AD9361/AD9364 based boards can be found, and created by following the directions :doc:`here </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
 After that is complete, and running, you should see the IIO scope, which will be described :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 

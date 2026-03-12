@@ -10,18 +10,18 @@ Downloads
    No-OS:
 
    
-   -  AD6676-EBZ Main Driver - :git-no-OS:`projects/ad6676-ebz`
-   -  Xilinx Platform Drivers - :git-no-OS:`legacy/common_drivers/platform_drivers`
-   -  AD6676 Driver - :git-no-OS:`drivers/adc/ad6676`
-   -  ADC Core Driver - :git-no-OS:`legacy/common_drivers/adc_core`
-   -  DMAC Core Driver - :git-no-OS:`legacy/common_drivers/dmac_core`
-   -  JESD204B Core Driver - :git-no-OS:`legacy/common_drivers/jesd_core`
-   -  Transceiver Core Driver - :git-no-OS:`legacy/common_drivers/xcvr_core`
-   -  Transceiver Modules Drivers - :git-no-OS:`legacy/common_drivers/xcvr_core/xcvr_modules`
+   -  AD6676-EBZ Main Driver - :git-no-OS:`no-OS/tree/main/projects/ad6676-ebz <projects/ad6676-ebz>`
+   -  Xilinx Platform Drivers - :git-no-OS:`no-OS/tree/main/legacy/common_drivers/platform_drivers <legacy/common_drivers/platform_drivers>`
+   -  AD6676 Driver - :git-no-OS:`no-OS/tree/main/drivers/adc/ad6676 <drivers/adc/ad6676>`
+   -  ADC Core Driver - :git-no-OS:`no-OS/tree/main/legacy/common_drivers/adc_core <legacy/common_drivers/adc_core>`
+   -  DMAC Core Driver - :git-no-OS:`no-OS/tree/main/legacy/common_drivers/dmac_core <legacy/common_drivers/dmac_core>`
+   -  JESD204B Core Driver - :git-no-OS:`no-OS/tree/main/legacy/common_drivers/jesd_core <legacy/common_drivers/jesd_core>`
+   -  Transceiver Core Driver - :git-no-OS:`no-OS/tree/main/legacy/common_drivers/xcvr_core <legacy/common_drivers/xcvr_core>`
+   -  Transceiver Modules Drivers - :git-no-OS:`no-OS/tree/main/legacy/common_drivers/xcvr_core/xcvr_modules <legacy/common_drivers/xcvr_core/xcvr_modules>`
    
    HDL project:
    
-   -  AD6676EVB HDL project - :git-hdl:`projects/ad6676evb`
+   -  AD6676EVB HDL project - :git-hdl:`hdl/tree/main/projects/ad6676evb <projects/ad6676evb>`
    -  AD6676EVB HDL project documentation - https://analogdevicesinc.github.io/hdl/projects/ad6676evb/index.html
    
 

@@ -138,17 +138,17 @@ Status
 Files
 -----
 
-+-----------------+------------------------------------------------------------------------------------------------------------------------------+
-| Function        | File                                                                                                                         |
-+=================+==============================================================================================================================+
-| driver          | `adxl34x.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/input/misc/adxl34x.c>`_          |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------+
-| i2c bus support | `adxl34x-i2c.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/input/misc/adxl34x-i2c.c>`_  |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------+
-| spi bus support | `adxl34x-spi.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/input/misc/adxl34x-spi.c>`_  |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------+
-| include         | `adxl34x.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/input/adxl34x.h>`_         |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------+
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function        | File                                                                                                                                            |
++=================+=================================================================================================================================================+
+| driver          | `drivers/input/misc/adxl34x.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/input/misc/adxl34x.c>`_          |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| i2c bus support | `drivers/input/misc/adxl34x-i2c.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/input/misc/adxl34x-i2c.c>`_  |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| spi bus support | `drivers/input/misc/adxl34x-spi.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/input/misc/adxl34x-spi.c>`_  |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| include         | `include/linux/input/adxl34x.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/input/adxl34x.h>`_        |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ADXL345/6 driver porting
 ------------------------
@@ -602,7 +602,7 @@ Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
 
 This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
 
-For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+For more information see: `Documentation/spi/spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
 
 
 These snippets are all from the same file. ``arch/blackfin/mach-bf548/boards/ezkit.c``:
@@ -723,7 +723,7 @@ This method is appropriate when the I2C bus is a system bus, as in many embedded
 
 So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
 
-For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+For more information see: `Documentation/i2c/instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
 
 
 These snippets are all from the same file. ``arch/blackfin/mach-bf548/boards/ezkit.c``:

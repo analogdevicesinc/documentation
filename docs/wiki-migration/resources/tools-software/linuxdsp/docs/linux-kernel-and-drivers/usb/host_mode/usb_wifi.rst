@@ -126,52 +126,42 @@ For the ID **``2001:3306``** chipset Realtek **``RTL8188SU``**
 
 For the ID **``0cf3:7015``** chipset: Atheros **``AltAR7010+AR9287``** 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   .. code:: shell
 
-.. code:: shell
+      Device Drivers  --->
+             [*] Network device support  --->
+                    [*]   Wireless LAN  --->
+                          [*]   Atheros/Qualcomm devices
+                          <*>     Atheros 802.11n wireless cards support
+                          [*]     Atheros bluetooth coexistence support
+                          [*]       Atheros ath9k AHB bus support
+                          [*]       Atheros ath9k ACK timeout estimation algorithm (EXPERIMENTAL)
+                          [*]       Channel Context support
+                          [*]       Atheros ath9k support for PC OEM cards
+                          <*>     Atheros HTC based wireless cards support
+                          <*>     Linux Community AR9170 802.11n USB support
+                          [*]       SoftLED Support
 
-   Device Drivers  --->
-          [*] Network device support  --->
-                 [*]   Wireless LAN  --->
-                       [*]   Atheros/Qualcomm devices
-                       <*>     Atheros 802.11n wireless cards support
-                       [*]     Atheros bluetooth coexistence support
-                       [*]       Atheros ath9k AHB bus support
-                       [*]       Atheros ath9k ACK timeout estimation algorithm (EXPERIMENTAL)
-                       [*]       Channel Context support
-                       [*]       Atheros ath9k support for PC OEM cards
-                       <*>     Atheros HTC based wireless cards support
-                       <*>     Linux Community AR9170 802.11n USB support
-                       [*]       SoftLED Support
-
-.. raw:: html
-
-   </details>
 
 
 For the ID **``0bda:818b``** chipset **``rtl8188eu``** 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   .. code:: shell
 
-.. code:: shell
+      Device Drivers  --->
+             [*] Network device support  --->
+                    [*]   Wireless LAN  --->
+                          [*]   Realtek devices
+                          <*>     RTL8723AU/RTL8188[CR]U/RTL819[12]CU (mac80211) support
+                          [*]       Include support for untested Realtek 8xxx USB devices (EXPERIMENTAL)
+             [*] Staging drivers  --->
+                    <M>   Realtek RTL8188EU Wireless LAN NIC driver
+                [*]     Realtek RTL8188EU AP mode
 
-   Device Drivers  --->
-          [*] Network device support  --->
-                 [*]   Wireless LAN  --->
-                       [*]   Realtek devices
-                       <*>     RTL8723AU/RTL8188[CR]U/RTL819[12]CU (mac80211) support
-                       [*]       Include support for untested Realtek 8xxx USB devices (EXPERIMENTAL)
-          [*] Staging drivers  --->
-                 <M>   Realtek RTL8188EU Wireless LAN NIC driver
-             [*]     Realtek RTL8188EU AP mode
-
-.. raw:: html
-
-   </details>
 
 
 **Adding the corresponding Firmware**
@@ -192,22 +182,17 @@ Standard Yocto layer provides a "sources/poky/meta/recipes-kernel/linux-firmware
 
 Add the additional Firmware: 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   If we can't find the target chipset supported firmware from the linux-firmware_git.bb, we should write our own .bb file to fetch the corresponding Firmware or just adding it manually.
 
-If we can't find the target chipset supported firmware from the linux-firmware_git.bb, we should write our own .bb file to fetch the corresponding Firmware or just adding it manually.
+   **1. Manually fetch Firmware**
 
-**1. Manually fetch Firmware**
+   .. code:: c++
 
-.. code:: c++
+      git clone https://kernel.googlesource.com/pub/scm/linux/kernel/git/vkoul/firmware
+      sudo cp -r firmware/rtlwifi/rtl8192eu_nic.bin /romfs/lib/firmware/rtlwifi
 
-   git clone https://kernel.googlesource.com/pub/scm/linux/kernel/git/vkoul/firmware
-   sudo cp -r firmware/rtlwifi/rtl8192eu_nic.bin /romfs/lib/firmware/rtlwifi
-
-.. raw:: html
-
-   </details>
 
 
 Reference:
@@ -374,64 +359,59 @@ Run the **wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant.conf** to creat
 
 **Help of Command wpa_supplicant** 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   .. code:: c++
 
-.. code:: console
+      root@adsp-sc589-ezkit:~# wpa_supplicant -h
+      wpa_supplicant v2.6
+      Copyright (c) 2003-2016, Jouni Malinen <j@w1.fi> and contributors
 
-   root@adsp-sc589-ezkit:~# wpa_supplicant -h
-   wpa_supplicant v2.6
-   Copyright (c) 2003-2016, Jouni Malinen <j@w1.fi> and contributors
+      This software may be distributed under the terms of the BSD license.
+      See README for more details.
 
-   This software may be distributed under the terms of the BSD license.
-   See README for more details.
+      usage:
+        wpa_supplicant [-BddhKLqqtuvW] [-P<pid file>] [-g<global ctrl>] \
+              [-G<group>] \
+              -i<ifname> -c<config file> [-C<ctrl>] [-D<driver>] [-p<driver_param>] \
+              [-b<br_ifname>] [-e<entropy file>] \
+              [-o<override driver>] [-O<override ctrl>] \
+              [-N -i<ifname> -c<conf> [-C<ctrl>] [-D<driver>] \
+              [-p<driver_param>] [-b<br_ifname>] [-I<config file>] ...]
 
-   usage:
-     wpa_supplicant [-BddhKLqqtuvW] [-P<pid file>] [-g<global ctrl>] \
-           [-G<group>] \
-           -i<ifname> -c<config file> [-C<ctrl>] [-D<driver>] [-p<driver_param>] \
-           [-b<br_ifname>] [-e<entropy file>] \
-           [-o<override driver>] [-O<override ctrl>] \
-           [-N -i<ifname> -c<conf> [-C<ctrl>] [-D<driver>] \
-           [-p<driver_param>] [-b<br_ifname>] [-I<config file>] ...]
+      drivers:
+        nl80211 = Linux nl80211/cfg80211
+        wext = Linux wireless extensions (generic)
+        hostap = Host AP driver (Intersil Prism2/2.5/3)
+        wired = Wired Ethernet driver
+      options:
+        -b = optional bridge interface name
+        -B = run daemon in the background
+        -c = Configuration file
+        -C = ctrl_interface parameter (only used if -c is not)
+        -d = increase debugging verbosity (-dd even more)
+        -D = driver name (can be multiple drivers: nl80211,wext)
+        -e = entropy file
+        -g = global ctrl_interface
+        -G = global ctrl_interface group
+        -h = show this help text
+        -i = interface name
+        -I = additional configuration file
+        -K = include keys (passwords, etc.) in debug output
+        -L = show license (BSD)
+        -N = start describing new interface
+        -o = override driver parameter for new interfaces
+        -O = override ctrl_interface parameter for new interfaces
+        -p = driver parameters
+        -P = PID file
+        -q = decrease debugging verbosity (-qq even less)
+        -t = include timestamp in debug messages
+        -u = enable DBus control interface
+        -v = show version
+        -W = wait for a control interface monitor before starting
+      example:
+        wpa_supplicant -Dnl80211 -iwlan0 -c/etc/wpa_supplicant.conf
 
-   drivers:
-     nl80211 = Linux nl80211/cfg80211
-     wext = Linux wireless extensions (generic)
-     hostap = Host AP driver (Intersil Prism2/2.5/3)
-     wired = Wired Ethernet driver
-   options:
-     -b = optional bridge interface name
-     -B = run daemon in the background
-     -c = Configuration file
-     -C = ctrl_interface parameter (only used if -c is not)
-     -d = increase debugging verbosity (-dd even more)
-     -D = driver name (can be multiple drivers: nl80211,wext)
-     -e = entropy file
-     -g = global ctrl_interface
-     -G = global ctrl_interface group
-     -h = show this help text
-     -i = interface name
-     -I = additional configuration file
-     -K = include keys (passwords, etc.) in debug output
-     -L = show license (BSD)
-     -N = start describing new interface
-     -o = override driver parameter for new interfaces
-     -O = override ctrl_interface parameter for new interfaces
-     -p = driver parameters
-     -P = PID file
-     -q = decrease debugging verbosity (-qq even less)
-     -t = include timestamp in debug messages
-     -u = enable DBus control interface
-     -v = show version
-     -W = wait for a control interface monitor before starting
-   example:
-     wpa_supplicant -Dnl80211 -iwlan0 -c/etc/wpa_supplicant.conf
-
-.. raw:: html
-
-   </details>
 
 
 --------------

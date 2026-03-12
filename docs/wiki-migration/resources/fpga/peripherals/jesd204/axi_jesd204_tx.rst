@@ -32,34 +32,29 @@ Utilization
 
 
 
-.. raw:: html
+.. collapsible:: Detailed Utilization (Click to expand)
 
-   <details><summary>Detailed Utilization (Click to expand)
+   =============== ========= ==== ===
+   Device Family   NUM_LANES LUTs FFs
+   =============== ========= ==== ===
+   Intel Arria 10  1         TBD  TDB
+                   2         TBD  TBD
+                   4         TBD  TBD
+                   8         TBD  TBD
+   Xilinx Artix 7  1         TBD  TBD
+                   2         TBD  TBD
+                   4         TBD  TBD
+                   8         TBD  TBD
+   Xilinx Kintex 7 1         TBD  TBD
+                   2         TBD  TBD
+                   4         824  897
+                   8         TBD  TBD
+   Xilinx Virtex 7 1         TBD  TBD
+                   2         TBD  TBD
+                   4         TBD  TBD
+                   8         TBD  TBD
+   =============== ========= ==== ===
 
-=============== ========= ==== ===
-Device Family   NUM_LANES LUTs FFs
-=============== ========= ==== ===
-Intel Arria 10  1         TBD  TDB
-                2         TBD  TBD
-                4         TBD  TBD
-                8         TBD  TBD
-Xilinx Artix 7  1         TBD  TBD
-                2         TBD  TBD
-                4         TBD  TBD
-                8         TBD  TBD
-Xilinx Kintex 7 1         TBD  TBD
-                2         TBD  TBD
-                4         824  897
-                8         TBD  TBD
-Xilinx Virtex 7 1         TBD  TBD
-                2         TBD  TBD
-                4         TBD  TBD
-                8         TBD  TBD
-=============== ========= ==== ===
-
-.. raw:: html
-
-   </details>
 
 
 Files
@@ -3282,34 +3277,29 @@ Utilization
 
 
 
-.. raw:: html
+.. collapsible:: Detailed Utilization (Click to expand)
 
-   <details><summary>Detailed Utilization (Click to expand)
+   =============== ========= ==== ===
+   Device Family   NUM_LANES LUTs FFs
+   =============== ========= ==== ===
+   Intel Arria 10  1         TBD  TDB
+                   2         TBD  TBD
+                   4         TBD  TBD
+                   8         TBD  TBD
+   Xilinx Artix 7  1         TBD  TBD
+                   2         TBD  TBD
+                   4         TBD  TBD
+                   8         TBD  TBD
+   Xilinx Kintex 7 1         TBD  TBD
+                   2         TBD  TBD
+                   4         TBD  TBD
+                   8         TBD  TBD
+   Xilinx Virtex 7 1         TBD  TBD
+                   2         TBD  TBD
+                   4         TBD  TBD
+                   8         TBD  TBD
+   =============== ========= ==== ===
 
-=============== ========= ==== ===
-Device Family   NUM_LANES LUTs FFs
-=============== ========= ==== ===
-Intel Arria 10  1         TBD  TDB
-                2         TBD  TBD
-                4         TBD  TBD
-                8         TBD  TBD
-Xilinx Artix 7  1         TBD  TBD
-                2         TBD  TBD
-                4         TBD  TBD
-                8         TBD  TBD
-Xilinx Kintex 7 1         TBD  TBD
-                2         TBD  TBD
-                4         TBD  TBD
-                8         TBD  TBD
-Xilinx Virtex 7 1         TBD  TBD
-                2         TBD  TBD
-                4         TBD  TBD
-                8         TBD  TBD
-=============== ========= ==== ===
-
-.. raw:: html
-
-   </details>
 
 
 Files

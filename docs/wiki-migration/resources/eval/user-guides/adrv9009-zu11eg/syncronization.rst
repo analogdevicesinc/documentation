@@ -44,7 +44,7 @@ A additional ``SYNC`` signals is used to generate the synchronization event. If 
 
 .. warning::
 
-   Depending on the Linux/Devicetree version, the HMC7044 eval board got replaced by :doc:`AD-SYNCHRONA14-EBZ </wiki-migration/resources/eval/user-guides/ad-synchrona14-ebz>` please see here: :git-linux:`commit/ff537311d1fc7dc20d43a198b44007c22f2e9779`
+   Depending on the Linux/Devicetree version, the HMC7044 eval board got replaced by :doc:`AD-SYNCHRONA14-EBZ </wiki-migration/resources/eval/user-guides/ad-synchrona14-ebz>` please see here: :git-linux:`linux/commit/ff537311d1fc7dc20d43a198b44007c22f2e9779 <commit/ff537311d1fc7dc20d43a198b44007c22f2e9779>`
 
    
    ::

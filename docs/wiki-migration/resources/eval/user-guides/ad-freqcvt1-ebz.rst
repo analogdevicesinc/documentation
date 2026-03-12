@@ -26,7 +26,5 @@ The purpose of the AD-FREQCVT1-EBZ is frequency up and down conversion to allow 
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad-freqcvt1-ebz/help_and_support>`
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

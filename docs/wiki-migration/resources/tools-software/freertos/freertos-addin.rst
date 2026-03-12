@@ -141,7 +141,7 @@ To remove the FreeRTOS add-in from the project:
 FreeRTOS Add-In Examples
 ========================
 
-Example projects for each of the supported EZ-Kits can be found at ` <https://github.com/analogdevicesinc/freertos-examples/>`__
+Example projects for each of the supported EZ-Kits can be found at `freertos-examples/ <https://github.com/analogdevicesinc/freertos-examples/>`_
 
 --------------
 

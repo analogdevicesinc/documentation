@@ -6,9 +6,9 @@ AD7124 No-OS Software
    You're looking at a legacy page. The driver API has since changed and does not correspond anymore to the driver for ad7124 available in no-OS repository. However, you may use the code in the following no-OS projects to see examples of ad7124 driver usage:
 
    
-   :git-no-OS:`projects/ad7124-4sdz`
+   :git-no-OS:`no-OS/tree/master/projects/ad7124-4sdz <projects/ad7124-4sdz>`
    
-   :git-no-OS:`projects/ad7124-8pmdz`
+   :git-no-OS:`no-OS/tree/master/projects/ad7124-8pmdz <projects/ad7124-8pmdz>`
    
 
 

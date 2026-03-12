@@ -63,7 +63,7 @@ Running Demo (SDK) Program
 
    If you are not familiar with ML605 and/or Xilix tools, please visit
 
-   | `reference_designs.htm <https://www.xilinx.com/products/boards/ml605/reference_designs.htm>`_ for details.
+   | `products/boards/ml605/reference_designs.htm <https://www.xilinx.com/products/boards/ml605/reference_designs.htm>`_ for details.
 
 
 Extract the project from the archive file (AD911x.zip) to the location you desire.

@@ -75,42 +75,37 @@ SD Card Setup
 
 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   -  Follow the instructions on one of the below pages to install the `2021_r2 Linux kernel <https://swdownloads.analog.com/cse/kuiper/image_2023-04-02-ADI-Kuiper-full.zip>`_ on the SD card.
 
--  Follow the instructions on one of the below pages to install the `2021_r2 Linux kernel <https://swdownloads.analog.com/cse/kuiper/image_2023-04-02-ADI-Kuiper-full.zip>`_ on the SD card.
+      -  :doc:`Linux </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
+      -  :doc:`Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
 
-   -  :doc:`Linux </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
-   -  :doc:`Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
+   -  Determine which version of the MxFE board you have. The version is printed in copper on the bottom right corner of the board with the RF connectors facing North. The writing is covered in soldermask and can be somewhat difficult to read. The board version should either be "B", "C", or "D".
+   -  There are three pertinent files to copy to the root of the SD card's /BOOT/ section:
 
--  Determine which version of the MxFE board you have. The version is printed in copper on the bottom right corner of the board with the RF connectors facing North. The writing is covered in soldermask and can be somewhat difficult to read. The board version should either be "B", "C", or "D".
--  There are three pertinent files to copy to the root of the SD card's /BOOT/ section:
+      -  Image, located in "zynqmp-common" folder
+      -  BOOT.BIN, located in "zynqmp-zcu102-rev10-stingray" folder
+      -  system.dtb, located in subfolders of "zynqmp-zcu102-rev10-stingray" folder
 
-   -  Image, located in "zynqmp-common" folder
-   -  BOOT.BIN, located in "zynqmp-zcu102-rev10-stingray" folder
-   -  system.dtb, located in subfolders of "zynqmp-zcu102-rev10-stingray" folder
+   .. note::
 
-.. note::
-
-   There are 3 folders in the "zynqmp-zcu102-rev10-stingray" folder. Be sure to take the "system.dtb" that corresponds with the clocking architecture of your setup.
+      There are 3 folders in the "zynqmp-zcu102-rev10-stingray" folder. Be sure to take the "system.dtb" that corresponds with the clocking architecture of your setup.
 
 
-.. note::
+   .. note::
 
-   Be sure to rename the correct \*.dtb file for your version of the AD9081 board to "system.dtb".
-
-
-.. warning::
-
-   \ **If your computer encrypts removable media for security purposes, it's easiest to use a personal computer to do this step. If encryption issues persist, use the file below which has AES disabled. This is version 2021_R1.**\
+      Be sure to rename the correct \*.dtb file for your version of the AD9081 board to "system.dtb".
 
 
-`ZCU102 Configuration Files, 100MHz VCXO, AES Disabled <https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/zcu102_config_files_100mhz_vcxo_rev10_aes_disabled.zip>`_
+   .. warning::
 
-.. raw:: html
+      \ **If your computer encrypts removable media for security purposes, it's easiest to use a personal computer to do this step. If encryption issues persist, use the file below which has AES disabled. This is version 2021_R1.**\
 
-   </details>
+
+   `ZCU102 Configuration Files, 100MHz VCXO, AES Disabled <https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/zcu102_config_files_100mhz_vcxo_rev10_aes_disabled.zip>`_
+
 
 
 ZCU102 Configurations
@@ -121,44 +116,32 @@ Boot from SD Card
 
 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
-
-To configure the ZCU102 to boot from the SD card, set SW6 as shown below. SW6 is halfway between the SD card input and the vertical SMA connectors on the ZCU102.
+   To configure the ZCU102 to boot from the SD card, set SW6 as shown below. SW6 is halfway between the SD card input and the vertical SMA connectors on the ZCU102.
 
 
-|SW6 Configuration for SD Card Boot|
-
-.. raw:: html
-
-   </details>
-
+   |SW6 Configuration for SD Card Boot|
 
 USB Host Mode
 ~~~~~~~~~~~~~
 
 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   Setting up the ZCU102 in USB Host Mode allows the use of USB peripherals such as a keyboard and mouse. This can be useful for operating the board directly rather than having to use the UART connection or some other form of indirect control. Configure the jumpers as indicated below:
 
-Setting up the ZCU102 in USB Host Mode allows the use of USB peripherals such as a keyboard and mouse. This can be useful for operating the board directly rather than having to use the UART connection or some other form of indirect control. Configure the jumpers as indicated below:
+   -  Shunt J7
+   -  J109 -> Shunt pins 2-3
+   -  J110 -> Shunt pins 2-3
+   -  J112 -> Shunt pins 1-2
+   -  J113 -> Shunt pins 1-2
 
--  Shunt J7
--  J109 -> Shunt pins 2-3
--  J110 -> Shunt pins 2-3
--  J112 -> Shunt pins 1-2
--  J113 -> Shunt pins 1-2
+   .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_usb_host_mode.jpg
+      :alt: Jumper Configuration for USB Host Mode
+      :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_usb_host_mode.jpg
-   :alt: Jumper Configuration for USB Host Mode
-   :align: center
-
-.. raw:: html
-
-   </details>
 
 
 DisplayPort Not Working

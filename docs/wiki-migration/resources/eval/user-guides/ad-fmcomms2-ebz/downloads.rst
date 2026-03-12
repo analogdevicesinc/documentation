@@ -7,9 +7,9 @@ The source code of the no-OS software and the scripts can be downloaded from the
    :class: download
 
    
-   -  **AD9361 Example project** :git-no-OS:`projects/ad9361`
-   -  **AD9361 Generic Driver** :git-no-OS:`drivers/rf-transceiver/ad9361`
-   -  **Linux Makefile** :git-no-OS:`projects/ad9361/src/Makefile.linux`
+   -  **AD9361 Example project** :git-no-OS:`no-OS/tree/master/projects/ad9361 <projects/ad9361>`
+   -  **AD9361 Generic Driver** :git-no-OS:`no-OS/tree/master/drivers/rf-transceiver/ad9361 <drivers/rf-transceiver/ad9361>`
+   -  **Linux Makefile** :git-no-OS:`no-OS/tree/master/projects/ad9361/src/Makefile.linux <projects/ad9361/src/Makefile.linux>`
    
 
 

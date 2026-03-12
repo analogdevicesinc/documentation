@@ -1,7 +1,7 @@
 Optical Gesture Sensor Demo (w/ EVAL-CN0569-PMDZ)
 =================================================
 
-The :adi:`EVAL-CN0569-PMDZ` is a PMOD form factor circuit board that allows evaluation of :adi:`ADPD1080` working in tandem with two :adi:`ADPD2140` to create a Infrared Light Gesture Sensor. This example uses the :adi:`EVAL-ADICUP3029` as a motherboard as well as ` <https://github.com/analogdevicesinc/no-OS/>`__ software implementing an IIO server and ` <https://github.com/analogdevicesinc/pyadi-iio/>`__ code that runs on a host computer and implements gesture sensing algorithm.
+The :adi:`EVAL-CN0569-PMDZ` is a PMOD form factor circuit board that allows evaluation of :adi:`ADPD1080` working in tandem with two :adi:`ADPD2140` to create a Infrared Light Gesture Sensor. This example uses the :adi:`EVAL-ADICUP3029` as a motherboard as well as `no-OS/ <https://github.com/analogdevicesinc/no-OS/>`_ software implementing an IIO server and `pyadi-iio/ <https://github.com/analogdevicesinc/pyadi-iio/>`_ code that runs on a host computer and implements gesture sensing algorithm.
 
 General Description/Overview
 ----------------------------
@@ -31,8 +31,8 @@ The following is a list of items needed in order to replicate this demo.
 
 -  Software
 
-   -  ` <https://github.com/analogdevicesinc/no-OS/>`__ repository and specifically the :git-no-OS:`example project <projects/iio_adpd1080>`
-   -  ` <https://github.com/analogdevicesinc/pyadi-iio/>`__ repository and specifically the :git-pyadi-iio:`examples <examples/cn0569>`
+   -  `no-OS/ <https://github.com/analogdevicesinc/no-OS/>`_ repository and specifically the :git-no-OS:`example project <projects/iio_adpd1080>`
+   -  `pyadi-iio/ <https://github.com/analogdevicesinc/pyadi-iio/>`_ repository and specifically the :git-pyadi-iio:`examples <examples/cn0569>`
    -  CrossCore Embedded Studio (2.10.1 or higher)
    -  ADuCM302x DFP (3.2.0 or higher)
    -  ADICUP3029 BSP (1.1.0 or higher)
@@ -154,11 +154,11 @@ The software for the **ADuCM3029_demo_cn0569** can be found here:
    
    **CN0569 Firmware Source Files**
    
-   -  :git-no-OS:`projects/iio_adpd1080`
+   -  :git-no-OS:`no-OS/tree/master/projects/iio_adpd1080 <projects/iio_adpd1080>`
    
    **CN0569 Python Application Examples**
    
-   -  :git-pyadi-iio:`examples/cn0569`
+   -  :git-pyadi-iio:`pyadi-iio/tree/master/examples/cn0569 <examples/cn0569>`
    
 
 

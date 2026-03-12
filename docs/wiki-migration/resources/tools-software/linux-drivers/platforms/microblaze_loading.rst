@@ -358,99 +358,94 @@ Below is just a example and the file-names may vary.
 
    Xilinx XMD command console 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   ::
 
-::
-   
-      Dave@HAL9000:~$ xmd
-   
-      ***** Xilinx Microprocessor Debugger (XMD) Engine
-      ***** XMD v2014.2 (64-bit)
-        *** SW Build 932637 on Wed Jun 11 13:12:06 MDT 2014
-          ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
-   
-   
-      XMD% fpga -f download.bit
-      Configuring Device 1 (xcku040) with Bitstream -- download.bit
-      ....10....20....30....40....50....60.....70....80....90....Done
-      Successfully downloaded bit file.
-   
-      JTAG chain configuration
-      Device   ID Code        IR Length    Part Name
-       1       03822093           6        xcku040
-   
-      0
-      XMD% connect mb mdm
-   
-      JTAG chain configuration
-      Device   ID Code        IR Length    Part Name
-       1       03822093           6        xcku040
-   
-      MicroBlaze Processor Configuration :
-      Version............................9.3
-      Optimization.......................Performance
-      Interconnect.......................AXI-LE
-      MMU Type...........................Full_MMU
-      No of PC Breakpoints...............1
-      No of Read Addr/Data Watchpoints...0
-      No of Write Addr/Data Watchpoints..0
-      Instruction Cache Support..........on
-      Instruction Cache Base Address.....0x80000000
-      Instruction Cache High Address.....0xbfffffff
-      Data Cache Support.................on
-      Data Cache Base Address............0x80000000
-      Data Cache High Address............0xbfffffff
-      Exceptions  Support................on
-      FPU  Support.......................off
-      Hard Divider Support...............on
-      Hard Multiplier Support............on - (Mul64)
-      Barrel Shifter Support.............on
-      MSR clr/set Instruction Support....on
-      Compare Instruction Support........on
-      PVR Supported......................on
-      PVR Configuration Type.............Full
-      Data Cache Write-back Support......off
-      Fault Tolerance Support............off
-      Stack Protection Support...........off
-   
-      Connected to "mb" target. id = 0
-      Starting GDB server for "mb" target (id = 0) at TCP port no 1234
-   
-      XMD% dow /home/dace/linux/arch/microblaze/boot/simpleImage.kcu105_ad_fmcdaq2_ebz
-      System Reset .... DONE
-      Downloading Program -- /home/michael/linux/arch/microblaze/boot/simpleImage.kcu105_ad_fmcdaq2_ebz
-          section, .text: 0x80000000-0x8031cda7
-          section, .init.text: 0x803fc000-0x804185eb
-          section, .init.ivt: 0x8041afac-0x8041afd3
-          section, __fdt_blob: 0x8031cda8-0x80324da7
-          section, .rodata: 0x80325000-0x803b950f
-          section, __ksymtab: 0x803b9510-0x803be90f
-          section, __ksymtab_gpl: 0x803be910-0x803c1e27
-          section, __ksymtab_strings: 0x803c1e28-0x803d4dd7
-          section, __param: 0x803d4dd8-0x803d5147
-          section, __modver: 0x803d5148-0x803d5fff
-          section, __ex_table: 0x803d6000-0x803d75df
-          section, .notes: 0x803d75e0-0x803d7603
-          section, .sdata2: 0x803d7604-0x803d7fff
-          section, .data: 0x803d8000-0x803fbc5f
-          section, .init.data: 0x804185ec-0x8041afab
-          section, .init.setup: 0x8041afd4-0x8041b327
-          section, .initcall.init: 0x8041b328-0x8041b683
-          section, .con_initcall.init: 0x8041b684-0x8041b68b
-          section, .init.ramfs: 0x8041b68c-0x806f97b3
-          section, .bss: 0x806fa000-0x8070f8db
-      Download Progress........10.......20.......30.......40.......50........60.......70.......80.......90........Done
-      Setting PC with Program Start Address 0x80000000
-      XMD% con
-      Processor started. Type "stop" to stop processor
-   
-      RUNNING> XMD%
+         Dave@HAL9000:~$ xmd
 
-.. raw:: html
+         ***** Xilinx Microprocessor Debugger (XMD) Engine
+         ***** XMD v2014.2 (64-bit)
+           *** SW Build 932637 on Wed Jun 11 13:12:06 MDT 2014
+             ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 
-   </details>
+
+         XMD% fpga -f download.bit
+         Configuring Device 1 (xcku040) with Bitstream -- download.bit
+         ....10....20....30....40....50....60.....70....80....90....Done
+         Successfully downloaded bit file.
+
+         JTAG chain configuration
+         Device   ID Code        IR Length    Part Name
+          1       03822093           6        xcku040
+
+         0
+         XMD% connect mb mdm
+
+         JTAG chain configuration
+         Device   ID Code        IR Length    Part Name
+          1       03822093           6        xcku040
+
+         MicroBlaze Processor Configuration :
+         Version............................9.3
+         Optimization.......................Performance
+         Interconnect.......................AXI-LE
+         MMU Type...........................Full_MMU
+         No of PC Breakpoints...............1
+         No of Read Addr/Data Watchpoints...0
+         No of Write Addr/Data Watchpoints..0
+         Instruction Cache Support..........on
+         Instruction Cache Base Address.....0x80000000
+         Instruction Cache High Address.....0xbfffffff
+         Data Cache Support.................on
+         Data Cache Base Address............0x80000000
+         Data Cache High Address............0xbfffffff
+         Exceptions  Support................on
+         FPU  Support.......................off
+         Hard Divider Support...............on
+         Hard Multiplier Support............on - (Mul64)
+         Barrel Shifter Support.............on
+         MSR clr/set Instruction Support....on
+         Compare Instruction Support........on
+         PVR Supported......................on
+         PVR Configuration Type.............Full
+         Data Cache Write-back Support......off
+         Fault Tolerance Support............off
+         Stack Protection Support...........off
+
+         Connected to "mb" target. id = 0
+         Starting GDB server for "mb" target (id = 0) at TCP port no 1234
+
+         XMD% dow /home/dace/linux/arch/microblaze/boot/simpleImage.kcu105_ad_fmcdaq2_ebz
+         System Reset .... DONE
+         Downloading Program -- /home/michael/linux/arch/microblaze/boot/simpleImage.kcu105_ad_fmcdaq2_ebz
+             section, .text: 0x80000000-0x8031cda7
+             section, .init.text: 0x803fc000-0x804185eb
+             section, .init.ivt: 0x8041afac-0x8041afd3
+             section, __fdt_blob: 0x8031cda8-0x80324da7
+             section, .rodata: 0x80325000-0x803b950f
+             section, __ksymtab: 0x803b9510-0x803be90f
+             section, __ksymtab_gpl: 0x803be910-0x803c1e27
+             section, __ksymtab_strings: 0x803c1e28-0x803d4dd7
+             section, __param: 0x803d4dd8-0x803d5147
+             section, __modver: 0x803d5148-0x803d5fff
+             section, __ex_table: 0x803d6000-0x803d75df
+             section, .notes: 0x803d75e0-0x803d7603
+             section, .sdata2: 0x803d7604-0x803d7fff
+             section, .data: 0x803d8000-0x803fbc5f
+             section, .init.data: 0x804185ec-0x8041afab
+             section, .init.setup: 0x8041afd4-0x8041b327
+             section, .initcall.init: 0x8041b328-0x8041b683
+             section, .con_initcall.init: 0x8041b684-0x8041b68b
+             section, .init.ramfs: 0x8041b68c-0x806f97b3
+             section, .bss: 0x806fa000-0x8070f8db
+         Download Progress........10.......20.......30.......40.......50........60.......70.......80.......90........Done
+         Setting PC with Program Start Address 0x80000000
+         XMD% con
+         Processor started. Type "stop" to stop processor
+
+         RUNNING> XMD%
+
 
 
 XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows, you can run the XSCT terminal from start menu -> Xilinx Design Tools -> Xilinx Software Command Line Tool...

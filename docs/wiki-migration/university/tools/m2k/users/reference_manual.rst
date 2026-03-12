@@ -667,7 +667,7 @@ Other Features
 
 **Other Resources**
 
--  :doc:`ADALM2000 for End Users </wiki-migration/university/tools/adalm2000/users>`
+-  :doc:`ADALM2000 for End Users </wiki-migration/university/tools/m2k/users>`
 -  :doc:`ADALM2000 Based Lab Activity Material, Electronics I and II </wiki-migration/university/courses/electronics/labs>`
 -  Software:
 

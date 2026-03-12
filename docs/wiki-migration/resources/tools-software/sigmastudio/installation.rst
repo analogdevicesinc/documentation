@@ -16,21 +16,16 @@ System Requirements
 
 Most modern Windows PCs will be able to run SigmaStudio. Expand the display below to view requirements. 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   -  Windows 7/ Windows 10
+   -  256 MB of RAM (1 GB recommended)
+   -  80 MB of available hard disk space
+   -  1024 x 768 screen resolution
+   -  USB 1.1/2.0 data port (Required for use with Evaluation hardware only)
 
--  Windows 7/ Windows 10
--  256 MB of RAM (1 GB recommended)
--  80 MB of available hard disk space
--  1024 x 768 screen resolution
--  USB 1.1/2.0 data port (Required for use with Evaluation hardware only)
+      -  Note that USB 2.0 or higher is required for use with the USBi (EVAL-ADUSB2EBZ)
 
-   -  Note that USB 2.0 or higher is required for use with the USBi (EVAL-ADUSB2EBZ)
-
-.. raw:: html
-
-   </details>
 
 
 Step 1: Before You Install
@@ -50,27 +45,22 @@ Step 3: Driver Installation
 
 In most cases, driver installation is performed alongside SigmaStudio. If your machine is the rare exception, please follow these steps: 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   -  Connect the USB cable between your evaluation hardware and a PC USB port.
+   -  If this is your first time connecting the USB device, the Windows "Found New Hardware Wizard" will launch.
+   -  If prompted, choose “Install from a list or a specific location” and click "Next".
+   -  Select “Search for the best driver in these locations” and check the box for “Include this location in the search.”
+   -  Press the "Browse" button and locate the appropriate driver file in the SigmaStudio application folder (default folder is C:\\Program Files\\Analog Devices Inc\\Sigma Studio X.Y\\USB drivers, where X.Y represents the release version of the software)
 
--  Connect the USB cable between your evaluation hardware and a PC USB port.
--  If this is your first time connecting the USB device, the Windows "Found New Hardware Wizard" will launch.
--  If prompted, choose “Install from a list or a specific location” and click "Next".
--  Select “Search for the best driver in these locations” and check the box for “Include this location in the search.”
--  Press the "Browse" button and locate the appropriate driver file in the SigmaStudio application folder (default folder is C:\\Program Files\\Analog Devices Inc\\Sigma Studio X.Y\\USB drivers, where X.Y represents the release version of the software)
+      -  For **USB serial converter** and Eval-Boards (FDTIxx.inf) select **ftd2xx.inf** file.
 
-   -  For **USB serial converter** and Eval-Boards (FDTIxx.inf) select **ftd2xx.inf** file.
+         -  Any evaluation board sold after 2007 uses the USBi interface, but the FTDI drivers are included for backwards-compatibility.
 
-      -  Any evaluation board sold after 2007 uses the USBi interface, but the FTDI drivers are included for backwards-compatibility.
+      -  For the **USBi** interface select **CyUSB.inf file**.
 
-   -  For the **USBi** interface select **CyUSB.inf file**.
+   -  Click "Continue Anyway" if you're prompted with "This software has not passed Windows Logo testing."
 
--  Click "Continue Anyway" if you're prompted with "This software has not passed Windows Logo testing."
-
-.. raw:: html
-
-   </details>
 
 
 Step 4: Hardware Configuration

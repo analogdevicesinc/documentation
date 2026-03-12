@@ -23,12 +23,10 @@ Requirements
 Creating / Configuring the SD Card
 ----------------------------------
 
-Create the :doc:`SD Image </wiki-migration/resources/tools-software/linux-software/zynq_images>` for Zynq/ZED Boards. (it is a single image for all boards)
+Create the :doc:`SD Image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` for Zynq/ZED Boards. (it is a single image for all boards)
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 Setting up the hardware (ZC706)
@@ -43,7 +41,7 @@ You will need to:
 
    |http---www.xilinx.com-images-product-images-zc706-base-board.jpg|
 
--  Prepare the SD card with the proper Linux image (from :doc:`here </wiki-migration/resources/tools-software/linux-software/zynq_images>` and pay attention to the Linux/Windows setup).
+-  Prepare the SD card with the proper Linux image (from :doc:`here </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` and pay attention to the Linux/Windows setup).
 -  Insert the SD-CARD into the SD Card Interface Connector (J30)
 -  Plug the AD-FMCOMMS2-EBZ into the LPC LPC Connector (J5)
 -  Plug your HDMI display device into the HDMI Video Connector (P1)
@@ -94,7 +92,7 @@ You will need to:
 
 -  Get the `ZED Board <http://zedboard.org/product/zedboard>`_
 -  Set the Jumpers and Switches accordingly like shown on the picture. (click on the picture to enlarge)\ |ZED Board prepared|\ Boot (JP7-JP11) and MIO0 (JP6) jumpers are set to SD card mode. To use USB peripheral devices with ZedBoard, install jumpers JP2 and JP3. The FMC interface spans over two PL I/O banks, banks 34 and 35. To meet the FMC spec, these banks are powered from an adjustable voltage set by jumper, J18. Selectable voltages include 1.8V, default, and 2.5V.
--  Prepare the SD card with the proper Linux image (see :doc:`here </wiki-migration/resources/tools-software/linux-software/zynq_images>` and pay attention to the Linux/Windows setup)
+-  Prepare the SD card with the proper Linux image (see :doc:`here </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` and pay attention to the Linux/Windows setup)
 -  Insert the SD-CARD into the SD Card Interface Connector (J12)
 -  Plug the AD-FMCOMMS2-EBZ or AD-FMCOMMS3-EBZ into the LPC Connector (J1)
 -  Plug your HDMI display device into the HDMI Video Connector (J9)

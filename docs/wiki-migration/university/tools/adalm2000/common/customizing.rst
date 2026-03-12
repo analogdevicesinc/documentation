@@ -75,4 +75,3 @@ Calibrate
 
 Setting this to ``1`` will calibrate the board.
 
-~~REDIRECT>university:tools:m2k:common:customizing~~

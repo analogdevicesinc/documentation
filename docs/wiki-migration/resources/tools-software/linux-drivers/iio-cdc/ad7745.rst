@@ -39,13 +39,13 @@ Status
 Files
 -----
 
-+----------+--------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                     |
-+==========+==========================================================================================================================+
-| driver   | `ad7746.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/cdc/ad7746.c>`_  |
-+----------+--------------------------------------------------------------------------------------------------------------------------+
-| include  | `ad7746.h <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/cdc/ad7746.h>`_  |
-+----------+--------------------------------------------------------------------------------------------------------------------------+
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                             |
++==========+==================================================================================================================================================+
+| driver   | `drivers/staging/iio/cdc/ad7746.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/cdc/ad7746.c>`_  |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| include  | `drivers/staging/iio/cdc/ad7746.h <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/cdc/ad7746.h>`_  |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
 
@@ -53,7 +53,7 @@ This method is appropriate when the I2C bus is a system bus, as in many embedded
 
 So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
 
-For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+For more information see: `Documentation/i2c/instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
 
 
 Depending on the converter IC used, you may need to set the I2C_BOARD_INFO name accordingly, matching your part name.

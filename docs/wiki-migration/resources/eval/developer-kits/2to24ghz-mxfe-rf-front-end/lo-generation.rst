@@ -14,7 +14,7 @@ The 18GHz, fixed LO source can be supplied by any integrated PLL/VCO such as the
    :align: center
    :width: 600px
 
-More information on the CN0568 frequency synthesizer can be found here: :adi:`cn0568.html#rd-overview <en/design-center/reference-designs/circuits-from-the-lab/cn0568.html#rd-overview>`
+More information on the CN0568 frequency synthesizer can be found here: :adi:`en/design-center/reference-designs/circuits-from-the-lab/cn0568.html#rd-overview`
 
 This circuit was adapted to provide a cleaner output tone (reduced spurs) and a higher output power with the following block diagram:
 

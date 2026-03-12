@@ -74,7 +74,7 @@ Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. D
    
    The latest source code can be found here:
    
-   -  :git-EVAL-ADICUP3029:`projects/ADuCM3029_demo_adpd410x`
+   -  :git-EVAL-ADICUP3029:`EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_adpd410x <projects/ADuCM3029_demo_adpd410x>`
    
 
 

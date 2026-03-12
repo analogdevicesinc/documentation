@@ -13,7 +13,7 @@ Required hardware
 Prepare the SD card
 -------------------
 
-NOTE: Following instructions are valid if a Windows host is used. Instructions regarding other Operating Systems can be found here: :doc:`/wiki-migration/resources/tools-software/linux-software/zynq_images`
+NOTE: Following instructions are valid if a Windows host is used. Instructions regarding other Operating Systems can be found here: :doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux`
 
 -  Download the SD card image: `motcon2_2015_05_06.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/motcon2_2015_05_06.zip>`_
 -  Extract motcon2.img from motcon2_2015_05_06.zip archive.

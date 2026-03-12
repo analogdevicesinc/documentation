@@ -235,7 +235,7 @@ Creating a BOOT.BIN from HDL Workflow Advisor
 
 Unlike the support package provided by MathWorks, the update process for the bitstreams requires creation of a BOOT.BIN file which will be compatible with the ADI SD card.
 
-First make sure you have a valid SD card for your platform with the necessary devicetree and kernel image selected. :doc:`Follow this process here </wiki-migration/resources/tools-software/linux-software/zynq_images>`.
+First make sure you have a valid SD card for your platform with the necessary devicetree and kernel image selected. :doc:`Follow this process here </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
 Once your SD card is ready, in step 4.3 "Build FPGA Bitstream" of HDL Workflow Advisor select a custom Tcl file for synthesis build. Utilize this :git-MathWorks_tools:`CI/scripts/adi_build.tcl` file located within the BSP as your custom tcl file.
 

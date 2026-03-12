@@ -50,120 +50,115 @@ Installing ACE
 
 The latest version of ACE is available from www.analog.com/ace. Simply download the latest installer and run it to launch the ACE Setup Wizard. This step by step installation will guide you when installing ACE and it's accompanying software support modules as necessary. 
 
-.. raw:: html
+.. collapsible:: Click here to view the installation steps
 
-   <details><summary>Click here to view the installation steps
-
-.. container:: centeralign
-
-   
-   **Step 1: Launch the Setup Wizard**
-
-   
+   .. container:: centeralign
 
 
-.. container:: centeralign
-
-   Click Next to begin the installation process.
+      **Step 1: Launch the Setup Wizard**
 
 
-   |image1|
-
-.. container:: centeralign
-
-   
-   **Step 2: Check for Updates**
-
-   
 
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   Choose to check online for updates or continue installation offline. Click Next to continue.
-
-
-   |image2|
-
-.. container:: centeralign
-
-   
-   **Step 3: License Agreement**
-
-   
+      Click Next to begin the installation process.
 
 
-.. container:: centeralign
+      |image1|
 
-   Read the ACE software license agreement. If you agree to the terms and conditions, you must click "I Agree" to continue.
-
-
-   |image3|
-
-.. container:: centeralign
-
-   
-   **Step 4: Installation Directory**
-
-   
+   .. container:: centeralign
 
 
-.. container:: centeralign
-
-   Choose your installation directory or use the default location. Click Next to continue.
+      **Step 2: Check for Updates**
 
 
-   |image4|
-
-.. container:: centeralign
-
-   
-   **Step 5: Choose Components to Install**
-
-   
 
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   Choose the features of ACE you want to install. It is recommended that you install all of the prerequisites since ACE needs them to function correctly. Click Next to continue.
-
-
-   |image5|
-
-.. container:: centeralign
-
-   
-   **Step 6: Installation**
-
-   
+      Choose to check online for updates or continue installation offline. Click Next to continue.
 
 
-.. container:: centeralign
+      |image2|
 
-   Wait for the selected components to be installed. Click Next to continue.
-
-
-   |image6|
-
-.. container:: centeralign
-
-   
-   **Step 7: Complete Installation**
-
-   
+   .. container:: centeralign
 
 
-.. container:: centeralign
-
-   Final installer step, click Finish to complete the installation.
+      **Step 3: License Agreement**
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/userguide/page_7.png
-   :align: center
-   :width: 600px
 
-.. raw:: html
 
-   </details>
+   .. container:: centeralign
+
+      Read the ACE software license agreement. If you agree to the terms and conditions, you must click "I Agree" to continue.
+
+
+      |image3|
+
+   .. container:: centeralign
+
+
+      **Step 4: Installation Directory**
+
+
+
+
+   .. container:: centeralign
+
+      Choose your installation directory or use the default location. Click Next to continue.
+
+
+      |image4|
+
+   .. container:: centeralign
+
+
+      **Step 5: Choose Components to Install**
+
+
+
+
+   .. container:: centeralign
+
+      Choose the features of ACE you want to install. It is recommended that you install all of the prerequisites since ACE needs them to function correctly. Click Next to continue.
+
+
+      |image5|
+
+   .. container:: centeralign
+
+
+      **Step 6: Installation**
+
+
+
+
+   .. container:: centeralign
+
+      Wait for the selected components to be installed. Click Next to continue.
+
+
+      |image6|
+
+   .. container:: centeralign
+
+
+      **Step 7: Complete Installation**
+
+
+
+
+   .. container:: centeralign
+
+      Final installer step, click Finish to complete the installation.
+
+
+   .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/userguide/page_7.png
+      :align: center
+      :width: 600px
+
 
 
 Installation Directories

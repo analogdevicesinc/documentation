@@ -8,7 +8,7 @@ Creating / Configuring the SD card
 
 .. tip::
 
-   The EVAL-CN0363-PMDZ comes with a pre-populated SD card. When using the pre-polpulated SD card this step can be skipped. It is still recommended to run the :doc:`update procedure </wiki-migration/resources/tools-software/linux-software/zynq_images>` to get the latest software updates.
+   The EVAL-CN0363-PMDZ comes with a pre-populated SD card. When using the pre-polpulated SD card this step can be skipped. It is still recommended to run the :doc:`update procedure </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` to get the latest software updates.
 
 
 The first step is to create and configure the SD card. Follow the instructions to `download the image and populate the SD card <https://wiki.analog.com/[[resources/tools-software/linux-software/zynq_images>`_. Make sure the you configure the BOOT partition for the SD card for the EVAL-CN0363-PMDZ + ZED board.

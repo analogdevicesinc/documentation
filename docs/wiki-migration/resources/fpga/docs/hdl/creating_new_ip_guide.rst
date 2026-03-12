@@ -6,7 +6,7 @@ Creating a new IP
    We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest guide at https://analogdevicesinc.github.io/hdl/user_guide/ip_cores/creating_new_ip.html\
 
 
-Here is a quick start guide about creating a new IP. You can start from these files and modify them as you need. Here is the code for a fan control IP: :git-hdl:`library/axi_fan_control`. In this tutorial, we will make a led control IP, using AXI. In this case, <module_name> will be replaced in code with axi_led_control for Xilinx and axi_led_control_intel for Intel.
+Here is a quick start guide about creating a new IP. You can start from these files and modify them as you need. Here is the code for a fan control IP: :git-hdl:`hdl/tree/master/library/axi_fan_control <library/axi_fan_control>`. In this tutorial, we will make a led control IP, using AXI. In this case, <module_name> will be replaced in code with axi_led_control for Xilinx and axi_led_control_intel for Intel.
 
 Verilog File
 ------------
@@ -184,7 +184,7 @@ You don't need to run make for the IP to be visible in the Catalogue. Yet, here 
 
    include ../scripts/library.mk
 
-This example was made starting from the axi_ad9361 IP found in our repo, under the library directory: :git-hdl:`library/axi_ad9361`
+This example was made starting from the axi_ad9361 IP found in our repo, under the library directory: :git-hdl:`hdl/tree/master/library/axi_ad9361 <library/axi_ad9361>`
 
 If this tutorial was not enough and you need more in depth information about creating IPs, please visit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

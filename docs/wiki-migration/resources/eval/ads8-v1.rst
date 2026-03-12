@@ -62,9 +62,9 @@ Helpful Documents
 Software Download Links
 -----------------------
 
--  High Speed ADC SPI Control Software, :adi:`spicontroller.html <en/design-center/advanced-selection-and-design-tools/interactive-design-tools/spicontroller.html>`
--  High Speed ADC VisualAnalog Software, :adi:`visualanalog.html <en/design-center/advanced-selection-and-design-tools/interactive-design-tools/visualanalog.html>`
--  Analysis \| Control \| Evaluation (ACE) Software, :adi:`ace-software.html <en/design-center/evaluation-hardware-and-software/ace-software.html>`
+-  High Speed ADC SPI Control Software, :adi:`en/design-center/advanced-selection-and-design-tools/interactive-design-tools/spicontroller.html`
+-  High Speed ADC VisualAnalog Software, :adi:`en/design-center/advanced-selection-and-design-tools/interactive-design-tools/visualanalog.html`
+-  Analysis \| Control \| Evaluation (ACE) Software, :adi:`en/design-center/evaluation-hardware-and-software/ace-software.html`
 
 Design and Integration Files
 ----------------------------

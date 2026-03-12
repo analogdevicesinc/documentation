@@ -128,21 +128,16 @@ Now open 4 instances of Gstreamer for each port(5004-5007)
 
 
 
-.. raw:: html
+.. collapsible:: (Click) On x86 workstation
 
-   <details><summary>(Click) On x86 workstation
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5004" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5004" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5005" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5005" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5006" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5006" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5007" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5007" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
-
-.. raw:: html
-
-   </details>
 
 
 .. image:: https://wiki.analog.com/_media/playground/img_1252_1_.jpg
@@ -155,29 +150,24 @@ Now open 8 instances of Gstreamer for each port(5004-5011)
 
 
 
-.. raw:: html
+.. collapsible:: (Click) On x86 workstation
 
-   <details><summary>(Click) On x86 workstation
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5004" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5004" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5005" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5005" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5006" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5006" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5007" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5007" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5008" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5008" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5009" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5009" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5010" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5010" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5011" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
 
-$ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, depth=(string)8, width=(string)1920, height=(string )1080" port="5011" ! rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink text-overlay=true sync=false
-
-.. raw:: html
-
-   </details>
 
 
 --------------

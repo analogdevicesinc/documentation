@@ -25,4 +25,4 @@ In most carriers, the AD-FMCADC7-EBZ board connects to the HPC connector (unless
 Linux Quick Start Guide
 -----------------------
 
-All you need to do is build SD card or download the SD card image of the latest releases. The instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/zynq_images>`.
+All you need to do is build SD card or download the SD card image of the latest releases. The instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.

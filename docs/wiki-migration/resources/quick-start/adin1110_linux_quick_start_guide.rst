@@ -54,7 +54,7 @@ Software Setup
 Getting a Raspbian Image
 """"""""""""""""""""""""
 
-Download an SD Card Image: :doc:`ADI Kuiper </wiki-migration/resources/tools-software/linux-software/embedded_arm_images>` or other Raspbian Linux Image.
+Download an SD Card Image: :doc:`ADI Kuiper </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` or other Raspbian Linux Image.
 
 Preparing the SD card
 """""""""""""""""""""

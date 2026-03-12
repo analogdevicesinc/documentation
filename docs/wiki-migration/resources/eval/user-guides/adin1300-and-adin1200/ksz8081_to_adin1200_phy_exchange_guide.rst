@@ -233,7 +233,7 @@ PHY Exchange Guide, KSZ8081RNB/MNX to ADIN1200 10/100Mb
          **Non Operating System Driver**
 
          
-         The ADIN1200 has a Non Operating System Driver available from the devices product page here: :adi:`adin1200.html#product-requirement <en/products/adin1200.html#product-requirement>`
+         The ADIN1200 has a Non Operating System Driver available from the devices product page here: :adi:`en/products/adin1200.html#product-requirement`
          
 
    

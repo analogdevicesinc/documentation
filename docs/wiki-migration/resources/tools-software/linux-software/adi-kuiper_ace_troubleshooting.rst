@@ -5,7 +5,7 @@ If you are having problems connecting to an ADI Product Evaluation Board on a su
 
 .. note::
 
-   Ensure your Product Evaluation Board is supported by ADI Kuiper Linux for ACE Evaluation. You can search for Product Evaluation board information using :adi:`evaluation-boards-kits.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits.html>` - look for references to ACE Linux support in these search results
+   Ensure your Product Evaluation Board is supported by ADI Kuiper Linux for ACE Evaluation. You can search for Product Evaluation board information using :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits.html` - look for references to ACE Linux support in these search results
 
 
 It is also important that your software stack is up to date - ADI is committed to continually improving and updating our software.

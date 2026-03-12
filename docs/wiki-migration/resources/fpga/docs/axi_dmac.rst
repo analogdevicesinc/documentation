@@ -28,22 +28,17 @@ Utilization
 
 
 
-.. raw:: html
+.. collapsible:: Detailed Utilization (Click to expand)
 
-   <details><summary>Detailed Utilization (Click to expand)
+   =============== ==== ===
+   Device Family   LUTs FFs
+   =============== ==== ===
+   Intel Arria 10  TBD  TBD
+   Xilinx Artix 7  TBD  TBD
+   Xilinx Kintex 7 TBD  TBD
+   Xilinx Virtex 7 TBD  TBD
+   =============== ==== ===
 
-=============== ==== ===
-Device Family   LUTs FFs
-=============== ==== ===
-Intel Arria 10  TBD  TBD
-Xilinx Artix 7  TBD  TBD
-Xilinx Kintex 7 TBD  TBD
-Xilinx Virtex 7 TBD  TBD
-=============== ==== ===
-
-.. raw:: html
-
-   </details>
 
 
 Files
@@ -3005,18 +3000,13 @@ The size of the buffer in bytes is determined by the synthesis parameters of the
 
 
 
-.. raw:: html
+.. collapsible:: Buffer dimensions
 
-   <details><summary>Buffer dimensions
+   The width of the buffer is sized to be the largest width from the source and destination interfaces.
 
-The width of the buffer is sized to be the largest width from the source and destination interfaces.
+   -  BUFFER_WIDTH_IN_BYTES = MAX(``DMA_DATA_WIDTH_SRC``,\ ``DMA_DATA_WIDTH_DEST``)/8
+   -  BUFFER_DEPTH = ``FIFO_SIZE``\ \*\ ``MAX_BYTES_PER_BURST`` / BUFFER_WIDTH_IN_BYTES
 
--  BUFFER_WIDTH_IN_BYTES = MAX(``DMA_DATA_WIDTH_SRC``,\ ``DMA_DATA_WIDTH_DEST``)/8
--  BUFFER_DEPTH = ``FIFO_SIZE``\ \*\ ``MAX_BYTES_PER_BURST`` / BUFFER_WIDTH_IN_BYTES
-
-.. raw:: html
-
-   </details>
 
 
 Interfaces and Signals

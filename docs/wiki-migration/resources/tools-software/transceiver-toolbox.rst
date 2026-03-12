@@ -314,8 +314,8 @@ Some models may include all three aspects, some may only include one. It's very 
 
 Some models are "complete" models, were developed and maintained by MathWorks, outside of ADI's transceiver toolbox:
 
--  `ad9361-models.html <https://www.mathworks.com/help/simrf/ug/ad9361-models.html>`_
--  `ad9371-models.html <https://www.mathworks.com/help/simrf/ug/ad9371-models.html>`_
+-  `help/simrf/ug/ad9361-models.html <https://www.mathworks.com/help/simrf/ug/ad9361-models.html>`_
+-  `help/simrf/ug/ad9371-models.html <https://www.mathworks.com/help/simrf/ug/ad9371-models.html>`_
 
 Supported Boards
 ----------------

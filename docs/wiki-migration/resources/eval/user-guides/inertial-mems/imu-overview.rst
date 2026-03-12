@@ -35,7 +35,7 @@ Measured in °/hour/√Hz or °/√hour.
 
 Applies to gyroscopes. It is the "close-in" (small τ) on the AVAR curve and is noise that comes from the quantization process. Taken at Τ = 1 second. In order to calculate the ARW, take the value of the square-root of the AllanVariance and divide by 60 [iMAR].
 
-For an example consider the ADIS16153, with datasheet here: :adi:`ADIS16135.pdf#Page=08 <media/en/technical-documentation/data-sheets/ADIS16135.pdf#Page=08>`. The graph of the AllanVariance is this:
+For an example consider the ADIS16153, with datasheet here: :adi:`media/en/technical-documentation/data-sheets/ADIS16135.pdf#Page=08`. The graph of the AllanVariance is this:
 
 
 |image1|

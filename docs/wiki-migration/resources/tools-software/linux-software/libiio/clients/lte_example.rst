@@ -36,7 +36,7 @@ In order to run this example, you need:
    -  One of : :adi:`AD-FMCOMMS2-EBZ`, :adi:`AD-FMCOMMS3-EBZ`, :adi:`AD-FMCOMMS4-EBZ` or :adi:`AD-FMCOMMS5-EBZ`
    -  A Xilinx Development system, such as `ZC706 <https://www.xilinx.com/ZC706>`_, `ZC702 <https://www.xilinx.com/ZC702>`_, or `Avnet's Zedboard <http://zedboard.org/product/zedboard>`_.
 
--  A recent :doc:`Zynq image </wiki-migration/resources/tools-software/linux-software/zynq_images>` for the AD-FMCOMMS3-EBZ board.
+-  A recent :doc:`Zynq image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` for the AD-FMCOMMS3-EBZ board.
 -  A good understanding of how the :adi:`AD9361` works. At a minimum, you should read over a basic intro for the :doc:`AD9361 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`. If you have issues understanding some filtering needs/concepts described below, refer back to the `basic intro <https://wiki.analog.com/[[/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`_. You need to understand the device, since just like the traditional instruments have a setup that must be understood, the AD9361/64 device setup is critical to getting the proper measurements. There are many things about the device that can negatively effect the results, only a few are mentioned below.
 
 If you want to enable a static IP, use the script found :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/applications/shell_scripts>`
@@ -124,7 +124,7 @@ If you use a different bandwidth than 20MHz, expect to see a different length ve
 Copying it to the target
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are many ways to copy files to the target, which are explained in the :doc:`Zynq getting started guide </wiki-migration/resources/tools-software/linux-software/zynq_images>`.
+There are many ways to copy files to the target, which are explained in the :doc:`Zynq getting started guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
 Playing it via the osc application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

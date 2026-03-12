@@ -28,8 +28,8 @@ Table of Contents
    -  `Quick-Start Guides <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms11-ebz/quickstart>`_
 
       -  :doc:`Linux on ZC706 </wiki-migration/resources/eval/user-guides/ad-fmcomms11-ebz/quickstart/zynq>`
-      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/zynq_images>`
-      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
    -  Linux Applications
 
@@ -73,7 +73,5 @@ Warning
 -------
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

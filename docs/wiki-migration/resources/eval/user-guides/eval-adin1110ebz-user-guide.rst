@@ -60,7 +60,7 @@ Software (Optional)
 Documentation Needed
 --------------------
 
--  ADIN1110 Datasheet available from the product webpage: :adi:`adin1110.html <en/products/adin1110.html>`
+-  ADIN1110 Datasheet available from the product webpage: :adi:`en/products/adin1110.html`
 -  EVAL-ADIN1100EBZ User Guide: :doc:`adin1100_userguide </wiki-migration/resources/eval/user-guides/adin1100_userguide>`
 
 --------------

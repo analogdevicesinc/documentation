@@ -1,7 +1,7 @@
 AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ on Zynq ZC706
 ===========================================
 
-The image for the AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ FMC Card on the ZC706 can be found, and created by following the directions :doc:`here </wiki-migration/resources/tools-software/linux-software/zynq_images>`.
+The image for the AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ FMC Card on the ZC706 can be found, and created by following the directions :doc:`here </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
 After that is complete, and running, you should see the IIO scope.
 

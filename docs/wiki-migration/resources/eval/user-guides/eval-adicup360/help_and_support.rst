@@ -20,7 +20,7 @@ There are many things that can go wrong with an ecosystem this complex, but if y
    -  The first thing to try in this case, is to :doc:`drag and drop </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>` a known good .BIN program into flash.(something with quick visible indicators works best, for example a blink program)
    -  If drag and drop is not working, it may be necessary to erase the flash. To do so:
 
-      -  Download and install the CrossCore Serial Flash Programmer from here: :adi:`crosscore-serial-flash-programmer.html#dsp-overview <en/design-center/processors-and-dsp/evaluation-and-development-software/crosscore-serial-flash-programmer.html#dsp-overview>`.
+      -  Download and install the CrossCore Serial Flash Programmer from here: :adi:`en/design-center/processors-and-dsp/evaluation-and-development-software/crosscore-serial-flash-programmer.html#dsp-overview`.
       -  Make sure that the USB cable is plugged into the USER USB(P13)
       -  Ensure the switch matrix is set up like this: S1=0, S2=1, S3=0, S4=1
       -  Power cycle the ADICUP360 board while holding down the boot switch (S6)

@@ -1,7 +1,7 @@
 ADRV904x DPD Analysis Tool
 ==========================
 
-The ADRV904x DPD analysis tool can be downloaded from this link. :ez:`gen5-dpd-analysis-tool <rf/wide-band-rf-transceivers/design-support-adrv904x/w/documents/32553/gen5-dpd-analysis-tool>`
+The ADRV904x DPD analysis tool can be downloaded from this link. :ez:`rf/wide-band-rf-transceivers/design-support-adrv904x/w/documents/32553/gen5-dpd-analysis-tool`
 
 The v14 of the tool is capable of
 

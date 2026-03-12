@@ -176,7 +176,7 @@ The following is the list of items needed in order to replicate this demo.
 
    -  For MAX32650FTHR,
 
-      -  Maxim Micros SDK `swpart=SFW0010820A <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_
+      -  Maxim Micros SDK `en/design/software-description.html/swpart=SFW0010820A <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_
       -  Pre-built hex file: `MAX32650FTHR_demo_ADXL355.hex <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/eval-adxl355-pmdz.zip>`_
       -  PuTTY or other similar software
 

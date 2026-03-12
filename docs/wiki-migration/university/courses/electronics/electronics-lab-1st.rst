@@ -127,7 +127,7 @@ The circuit in figure 4 works best if low capacitance Schottky diodes are used f
 For further reading:
 ~~~~~~~~~~~~~~~~~~~~
 
-:adi:`MT-046.pdf <media/en/training-seminars/tutorials/MT-046.pdf>` http://www.analog.com/static/imported-files/application_notes/466359863287538299597392756AN359.pdf `Settling time <https://en.wikipedia.org/wiki/Settling_time>`_
+:adi:`media/en/training-seminars/tutorials/MT-046.pdf` http://www.analog.com/static/imported-files/application_notes/466359863287538299597392756AN359.pdf `Settling time <https://en.wikipedia.org/wiki/Settling_time>`_
 
 Return to Lab Activities :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 

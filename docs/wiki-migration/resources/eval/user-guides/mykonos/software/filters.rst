@@ -21,14 +21,14 @@ There are three ways you can use the AD9371 Filter Wizard:
 
 -  **Executable**: the executable includes the exe which allows the wizard to run as a separate application without requiring the MATLAB program to be running. The program provides a GUI that allows users to define the input parameters, generate filters, view the output results, and save all output parameters for their own use or use in the ADI EVB GUI software. To run this as a stand alone application, the MATLAB runtime engine needs to be installed (see link below). The runtime engine can take more than a minute to start up the first time it is run, so please be patient while it initializes.
 
-The MATLAB runtime engine can be downloaded from the following link: `mcr.html <https://www.mathworks.com/products/compiler/mcr.html>`_
+The MATLAB runtime engine can be downloaded from the following link: `products/compiler/mcr.html <https://www.mathworks.com/products/compiler/mcr.html>`_
 
 -  **MATLAB App**: the app runs as an application within MATLAB. Use of the app requires MATLAB to be running with valid licenses for the Control System Toolbox as well as MATLAB itself. The GUI and flexibility are identical to the executable, but running as an app in MATLAB allows the user to write additional code to post-process the data files created by the wizard.
 -  **MATLAB source code (function)**: These are MATLAB functions which users can launch from the MATLAB command window by properly defining the input parameters. Used this way, users have more control of the internal design process.
 
-The executable is available here: :ez:`ad9371-75-filter-wizard-setup-file-faq <rf/wide-band-rf-transceivers/design-support-ad9371/w/documents/18048/ad9371-75-filter-wizard-setup-file-faq>`
+The executable is available here: :ez:`rf/wide-band-rf-transceivers/design-support-ad9371/w/documents/18048/ad9371-75-filter-wizard-setup-file-faq`
 
-The source code is available here: :ez:`2924 <rf/wide-band-rf-transceivers/design-support-ad9371/m/file-uploads/2924>`
+The source code is available here: :ez:`rf/wide-band-rf-transceivers/design-support-ad9371/m/file-uploads/2924`
 
 This section elaborates on the first two options, the executable and the App, and addresses both identically since the input and output functionality is the same.
 

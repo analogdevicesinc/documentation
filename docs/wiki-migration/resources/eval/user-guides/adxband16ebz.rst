@@ -34,7 +34,7 @@ Video Demo
 Features
 --------
 
--  Multi-channel, wideband system development platform for the :adi:`AD9084` :adi:`ad9084.html <en/products/ad9084.html>`
+-  Multi-channel, wideband system development platform for the :adi:`AD9084` :adi:`en/products/ad9084.html`
 -  Mates with Xilinx `VCU118 <https://www.xilinx.com/VCU118>`_ Evaluation Board (Not Included)
 -  16x RF Receive (Rx) Channels (32x Digital Rx Channels)
 

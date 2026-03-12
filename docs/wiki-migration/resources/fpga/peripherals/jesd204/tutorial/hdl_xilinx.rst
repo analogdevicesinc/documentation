@@ -426,7 +426,7 @@ The script can be downloaded from here:
 
    $ source /opt/Xilinx/Vivado/201x.x/settings64.sh
 
-**NOTE: u-boot.elf** For those who don't want to build u-boot themselves. The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/zynq_images>`, **bootgen_sysfiles.tgz**
+**NOTE: u-boot.elf** For those who don't want to build u-boot themselves. The **u-boot.elf** can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, **bootgen_sysfiles.tgz**
 
 References
 ~~~~~~~~~~

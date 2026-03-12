@@ -151,7 +151,7 @@ Depending on the divide factor N of the particular divider you build you will ne
 
 [1] :doc:`Activity: CMOS Logic Circuits, Transmission Gate XOR </wiki-migration/university/courses/electronics/electronics-lab-30>`
 
-:adi:`MT-086.pdf <static/imported-files/tutorials/MT-086.pdf>` `Phase-locked_loop <https://en.wikipedia.org/wiki/Phase-locked_loop>`_
+:adi:`static/imported-files/tutorials/MT-086.pdf` `Phase-locked_loop <https://en.wikipedia.org/wiki/Phase-locked_loop>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 

@@ -11,7 +11,7 @@ There are a few `Interwiki link <https://wiki.analog.com/syntax>`_ shortcuts whi
 Link to the mainline linux kernel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  ```path <https://github.com/analogdevicesinc/linux/blob/branch/path>`_`` translates to ``http://github.com/analogdevicesinc/linux/blob/{branch}/{path}``
+-  ```branch/path <https://github.com/analogdevicesinc/linux/blob/branch/path>`_`` translates to ``http://github.com/analogdevicesinc/linux/blob/{branch}/{path}``
 
    -  Example: ``:git-linux:`device tree <arch/arm/boot/dts/zynq-adrv9361-z7035-fmc-rfcard-tdd.dts>``` makes :git-linux:`device tree <arch/arm/boot/dts/zynq-adrv9361-z7035-fmc-rfcard-tdd.dts>` in the wiki.
 
@@ -25,7 +25,7 @@ Link to a repo on github
 Link to a specific file on github
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  ```path <https://github.com/repository?branch/path>`_`` translates to ``http://github.com/analogdevicesinc/{repository}/blob/{branch/path}``
+-  ```repository?branch/path <https://github.com/repository?branch/path>`_`` translates to ``http://github.com/analogdevicesinc/{repository}/blob/{branch/path}``
 
    -  Example: ```Files <https://github.com/hdl?hdl_2016_r2/projects/pluto>`_`` creates this link : `Files <https://github.com/hdl?hdl_2016_r2/projects/pluto>`_
 
@@ -47,6 +47,6 @@ On the wiki – for things that are in sub directories of repositories, where yo
 
 which can be used in the wiki, like `here <https://analogdevicesinc.github.io/DownGit/#/home?url=:git-scopy:`js>`_` that way – end users still get the zip file, but the code is maintained in github.
 
-There is also a shortlink for this ``[[:git-repo:`path/|]]``` which means in the wiki, you can do ``:git-scopy:`zipfile <js>``` like :git-scopy:`zipfile <js>`, and it will zip up the file, and download it.
+There is also a shortlink for this ``:git-repo:`repo/path/ <path>``` which means in the wiki, you can do ``:git-scopy:`zipfile <js>``` like :git-scopy:`zipfile <js>`, and it will zip up the file, and download it.
 
 If it is just a single file (like the examples), we can just point to the top level directory, and people can download from github what they want.

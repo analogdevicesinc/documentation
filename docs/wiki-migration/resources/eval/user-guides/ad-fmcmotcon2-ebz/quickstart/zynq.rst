@@ -16,7 +16,7 @@ Requirements
 Creating the SD Card
 --------------------
 
-:doc:`Create SD Image for Zynq Boards </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+:doc:`Create SD Image for Zynq Boards </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
 Connecting the hardware together
 --------------------------------

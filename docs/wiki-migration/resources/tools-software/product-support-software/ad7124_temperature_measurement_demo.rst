@@ -135,7 +135,7 @@ User must ensure all sensors are connected to AD7124 evaluation board as per con
 Multiple RTD (2/3/4-wire Configurations)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reference: :adi:`CN0383.html <en/design-center/reference-designs/circuits-from-the-lab/CN0383.html>`
+Reference: :adi:`en/design-center/reference-designs/circuits-from-the-lab/CN0383.html`
 
 Multiple 2-wire RTD configurations:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -160,7 +160,7 @@ Multiple 4-wire RTD configurations:
 Multiple Thermocouple Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reference: :adi:`CN0384.html <en/design-center/reference-designs/circuits-from-the-lab/CN0384.html>`
+Reference: :adi:`en/design-center/reference-designs/circuits-from-the-lab/CN0384.html`
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7124_multiple_tc_configs.jpg
    :align: center
@@ -177,7 +177,7 @@ Cold Junction Compensation (CJC) configurations for TC measurement:
 Multiple NTC Thermistor Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reference: :adi:`cn0545.html <en/design-center/reference-designs/circuits-from-the-lab/cn0545.html>`
+Reference: :adi:`en/design-center/reference-designs/circuits-from-the-lab/cn0545.html`
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7124_multiple_ntc10k_configs.jpg
    :align: center

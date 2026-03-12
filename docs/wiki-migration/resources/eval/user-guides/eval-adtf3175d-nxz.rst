@@ -6,7 +6,7 @@ News
    Support or Query: tof@analog.com
 
 
-**2025-09-12**: Release 6.1.0 is available on GitHub; see `releases <https://github.com/analogdevicesinc/ToF/releases>`_
+**2025-09-12**: Release 6.1.0 is available on GitHub; see `ToF/releases <https://github.com/analogdevicesinc/ToF/releases>`_
 
 .. important::
 
@@ -161,7 +161,7 @@ Support Links
 ~~~~~~~~~~~~~
 
 -  Module and Eval kit questions : :ez:`EngineerZone <depth-perception-ranging-technologies/continuous-wave-cmos-time-of-flight-tof>`
--  Software/SDK questions : `issues <https://github.com/analogdevicesinc/ToF/issues>`_
+-  Software/SDK questions : `ToF/issues <https://github.com/analogdevicesinc/ToF/issues>`_
 -  Lumentum VSCEL Information :
 
    -  https://www.lumentum.com/en/products/10-w-940-nm-triple-junction-vcsel-array

@@ -56,23 +56,23 @@ Status
 Files
 -----
 
-+----------+----------------------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                                   |
-+==========+========================================================================================================================================+
-| driver   | `adis16400_core.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/iio/imu/adis16400_core.c>`_        |
-+----------+----------------------------------------------------------------------------------------------------------------------------------------+
-| driver   | `adis16400_ring.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/iio/imu/adis16400_ring.c>`_        |
-+----------+----------------------------------------------------------------------------------------------------------------------------------------+
-| driver   | `adis16400_trigger.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/iio/imu/adis16400_trigger.c>`_  |
-+----------+----------------------------------------------------------------------------------------------------------------------------------------+
-| include  | `adis16400.h <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/iio/imu/adis16400.h>`_                  |
-+----------+----------------------------------------------------------------------------------------------------------------------------------------+
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                                   |
++==========+========================================================================================================================================================+
+| driver   | `drivers/iio/imu/adis16400_core.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/iio/imu/adis16400_core.c>`_        |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| driver   | `drivers/iio/imu/adis16400_ring.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/iio/imu/adis16400_ring.c>`_        |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| driver   | `drivers/iio/imu/adis16400_trigger.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/iio/imu/adis16400_trigger.c>`_  |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| include  | `drivers/iio/imu/adis16400.h <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/iio/imu/adis16400.h>`_                  |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
 
 This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
 
-For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+For more information see: `Documentation/spi/spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
 
 
 Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
@@ -196,7 +196,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 ADIS16400 device attributes
 ---------------------------
 
-For a detailed description please see: `sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/Documentation/ABI/testing/sysfs-bus-iio>`_
+For a detailed description please see: `Documentation/ABI/testing/sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/Documentation/ABI/testing/sysfs-bus-iio>`_
 
 +-------------------------------------------+----------------------------------------------------------+
 | 3-Axis Accelerometer related device files | Description                                              |

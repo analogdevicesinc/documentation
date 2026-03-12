@@ -22,7 +22,7 @@ In each case a command line parameter can be specified to stream the desired num
 
 These scripts make use of the `v4l2-ctl <https://manpages.ubuntu.com/manpages/bionic/man1/v4l2-ctl.1.html>`_ command line tool in Linux. Note, this is pre-installed on the EVAL-ADTF3175D Linux.
 
-`adsd3500.c <https://github.com/ToF?master/drivers/adsd3500/nxp/src/adsd3500.c>`_
+`ToF?master/drivers/adsd3500/nxp/src/adsd3500.c <https://github.com/ToF?master/drivers/adsd3500/nxp/src/adsd3500.c>`_
 
 To see a list of command supported by v4l2-ctl:
 

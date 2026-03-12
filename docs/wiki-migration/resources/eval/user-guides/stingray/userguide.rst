@@ -611,7 +611,7 @@ Channel Map (Back of Board)
 Support
 -------
 
-For additional questions or support, please visit the Engineering Zone forum at :ez:`q-a <adef-system-platforms/f/q-a>`.
+For additional questions or support, please visit the Engineering Zone forum at :ez:`adef-system-platforms/f/q-a`.
 
 :doc:`ADAR1000EVAL1Z Homepage </wiki-migration/resources/eval/user-guides/stingray>`
 

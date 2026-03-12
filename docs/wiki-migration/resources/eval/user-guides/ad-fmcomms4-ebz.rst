@@ -32,8 +32,8 @@ Since much of the FMCOMMS2/3/4 share a common device/infrastructure, much of the
 
       -  :doc:`Linux on ZC702, ZC706, ZED </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zynq>`
       -  :doc:`Linux on KC705, VC707 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/microblaze>`
-      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/zynq_images>`
-      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
    -  Linux Applications
 
@@ -101,7 +101,5 @@ Warning
 -------
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

@@ -123,283 +123,211 @@ Prior to building a no-OS project, it is required to set up some environment var
 
 Use the following commands to prepare your environment for building no-OS projects: 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   .. important::
 
-.. important::
+      Make sure the GNU Make version you are using is >= 4.2.
 
-   Make sure the GNU Make version you are using is >= 4.2.
 
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Assuming the SDK is installed at this path:
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         /path/to/intel
+         └── intelFPGA
+             └── 18.1
 
-Assuming the SDK is installed at this path:
+      Run:
 
-::
+      ::
 
-   /path/to/intel
-   └── intelFPGA
-       └── 18.1
+         $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-Run:
 
-::
 
-   $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Assuming the Vitis 2022.2 is installed at this path:
 
+      ::
 
+         /path/to/xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
-.. raw:: html
+      Run:
 
-   <details><summary>Xilinx (Click to expand)
+      ::
 
-Assuming the Vitis 2022.2 is installed at this path:
+         $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
 
-::
 
-   /path/to/xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-Run:
 
-::
 
-   $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
+   .. collapsible:: STM32 (Click to expand)
 
-.. raw:: html
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
+      -  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-   </details>
 
 
 
 
-.. raw:: html
+   .. collapsible:: Maxim (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
+      -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
--  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: Mbed (Click to expand)
 
+      -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
--  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Pico (Click to expand)
 
+      -  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
+      -  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
+      -  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
+      -  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
 
--  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
--  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
-   </details>
+      .. important::
 
+         Please install all the necessary packs locally and then manually import them in CrossCore
 
 
+      Common Issues with environment setup:
 
-.. raw:: html
+      -  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
 
-   <details><summary>Pico (Click to expand)
 
--  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
--  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
--  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
--  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
 
+.. collapsible:: Windows (Click to expand)
 
+   .. important::
 
+      Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
-.. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)
+   .. important::
 
--  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
-.. important::
 
-   Please install all the necessary packs locally and then manually import them in CrossCore
+   .. important::
 
+      Use Git Bash (unelevated) for the rest of your development.
 
-Common Issues with environment setup:
 
--  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
+   
 
-.. raw:: html
+.. collapsible:: Xilinx (Click to expand)
 
-   </details>
+   Assuming the Vitis 2022.2 is installed at this path:
 
-.. raw:: html
+      ::
 
-   </details>
+         C:\Xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
+      From the no-OS root directory, run:
 
+      ::
 
+         $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
 
-.. raw:: html
+      Or alternatively, work only with the desired paths:
 
-   <details><summary>Windows (Click to expand)
+      ::
 
-.. important::
+         $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-   Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
 
-.. important::
 
-   Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
+      -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
+      -  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-   Use Git Bash (unelevated) for the rest of your development.
 
 
 
 
-.. raw:: html
+   .. collapsible:: Mbed (Click to expand)
 
-   <details><summary>Xilinx (Click to expand)
+      -  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
+      -  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
+      -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
+      -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
+      -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
+      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
+      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
-Assuming the Vitis 2022.2 is installed at this path:
 
-::
 
-   C:\Xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-From the no-OS root directory, run:
 
-::
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-   $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
+      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
-Or alternatively, work only with the desired paths:
 
-::
 
-   $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: STM32 (Click to expand)
 
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
+      -  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
 
-
-
-.. raw:: html
-
-   <details><summary>Maxim (Click to expand)
-
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
--  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
--  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>Mbed (Click to expand)
-
--  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
--  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
--  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
--  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
--  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
--  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
--  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
--  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
--  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
--  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
--  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
--  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
--  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
--  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 Building a project
@@ -409,303 +337,231 @@ Go in the project directory that should be built.
 
 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   ::
 
-::
+      $ cd no-OS/projects/project_name/
+      $ tree
+      .
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   $ cd no-OS/projects/project_name/
-   $ tree
-   .
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Copy the **.sof** and **.sopcinfo** to the project folder.
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         $ ls
+         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof 
+         $ make
 
-Copy the **.sof** and **.sopcinfo** to the project folder.
+         # Alternatively you may select a .sopcinfo file explicitly by:
+         $ make HARDWARE=path/to/system_bd.sopcinfo
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof 
-   $ make
 
-   # Alternatively you may select a .sopcinfo file explicitly by:
-   $ make HARDWARE=path/to/system_bd.sopcinfo
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Copy the **.xsa** in the project folder.
 
+      ::
 
+         $ ls
+         Makefile  profiles  src  src.mk system_top.xsa
+         $ make
 
-.. raw:: html
+         # Alternatively you may select an .xsa file explicitly by:
+         $ make HARDWARE=path/to/file.xsa
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** in the project folder.
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk system_top.xsa
-   $ make
 
-   # Alternatively you may select an .xsa file explicitly by:
-   $ make HARDWARE=path/to/file.xsa
+   .. collapsible:: Maxim (Click to expand)
 
-.. raw:: html
+      To build a project, type:
 
-   </details>
+      ::
 
+         make PLATFORM=maxim TARGET=...
 
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
-To build a project, type:
 
-::
+   .. collapsible:: Mbed (Click to expand)
 
-   make PLATFORM=maxim TARGET=...
+      To build a project, type:
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
+      ::
 
-.. raw:: html
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   </details>
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
+   .. collapsible:: Pico (Click to expand)
 
-To build a project, type:
+      To build a project, type:
 
-::
+      ::
 
-   make PLATFORM=mbed TARGET_BOARD=...
+         make PLATFORM=pico
 
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: STM32 (Click to expand)
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Pico (Click to expand)
+         $ make PLATFORM=stm32
 
-To build a project, type:
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-::
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-   make PLATFORM=pico
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
+      The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
 
-.. raw:: html
+      ::
 
-   <details><summary>STM32 (Click to expand)
+         # build an ADuCM3029-only project
+         $ make
 
-Make sure you have the .ioc file in the project directory, then type:
+         # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
+         $ make PLATFORM=aducm3029
 
-::
 
-   $ make PLATFORM=stm32
 
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-.. raw:: html
+.. collapsible:: Windows (Click to expand)
 
-   </details>
+   .. important::
 
+      Use Git Bash to run these commands.
 
 
+   ::
 
-.. raw:: html
+      $ cd no-OS/projects/project_name
 
-   <details><summary>ADuCM3029 (Click to expand)
+   It should contain make-related files and source files:
 
-The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
+   ::
 
-::
+      ./no-OS/projects/project_name
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   # build an ADuCM3029-only project
-   $ make
+   
 
-   # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
-   $ make PLATFORM=aducm3029
+.. collapsible:: Xilinx (Click to expand)
 
-.. raw:: html
+   Copy the **.xsa** to the project folder and run:
 
-   </details>
+      ::
 
-.. raw:: html
+         ./no-OS/projects/adrv9009
+         ├── Makefile
+         ├── profiles
+         ├── src
+         ├── src.mk
+         └── system_top.xsa
 
-   </details>
+         $ make
 
 
 
 
-.. raw:: html
 
-   <details><summary>Windows (Click to expand)
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      To build a project, type:
 
-   Use Git Bash to run these commands.
+      ::
 
+         $ make PLATFORM=maxim TARGET=...
 
-::
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-   $ cd no-OS/projects/project_name
 
-It should contain make-related files and source files:
 
-::
 
-   ./no-OS/projects/project_name
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
 
+   .. collapsible:: Mbed (Click to expand)
 
+      .. important::
 
-.. raw:: html
+         Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** to the project folder and run:
+      To build a project, type:
 
-::
+      ::
 
-   ./no-OS/projects/adrv9009
-   ├── Makefile
-   ├── profiles
-   ├── src
-   ├── src.mk
-   └── system_top.xsa
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   $ make
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      ::
 
-   <details><summary>Maxim (Click to expand)
+         $ export PLATFORM=aducm3029
+         $ make
 
-To build a project, type:
 
-::
 
-   $ make PLATFORM=maxim TARGET=...
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-.. raw:: html
+   .. collapsible:: STM32 (Click to expand)
 
-   </details>
+      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
 
+      ::
 
+         $ export STM32CUBEMX=/c/stm32cubemx
+         $ export STM32CUBEIDE=/c/stm32cubeide
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Mbed (Click to expand)
+         $ make PLATFORM=stm32
 
-.. important::
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-   Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-
-To build a project, type:
-
-::
-
-   make PLATFORM=mbed TARGET_BOARD=...
-
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
-::
-
-   $ export PLATFORM=aducm3029
-   $ make
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
-Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
-
-::
-
-   $ export STM32CUBEMX=/c/stm32cubemx
-   $ export STM32CUBEIDE=/c/stm32cubeide
-
-Make sure you have the .ioc file in the project directory, then type:
-
-::
-
-   $ make PLATFORM=stm32
-
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
-
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 The build process creates a **build** directory in the project folder:
@@ -738,48 +594,38 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
 
 
-.. raw:: html
+.. collapsible:: Maxim (Click to expand)
 
-   <details><summary>Maxim (Click to expand)
+   To debug a project, type:
 
-To debug a project, type:
+   ::
 
-::
+      make PLATFORM=maxim TARGET=... run
 
-   make PLATFORM=maxim TARGET=... run
-
-The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
-
-.. raw:: html
-
-   </details>
+   The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Xilinx (Click to expand)
+.. collapsible:: Xilinx (Click to expand)
 
-**Booting from SD Card**
+   **Booting from SD Card**
 
-You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
+   You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
 
-**Remote host**
+   **Remote host**
 
-For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
+   For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
 
-::
+   ::
 
-   $ export XSCT_REMOTE_HOST=<remote host ip>
-   $ export XSCT_REMOTE_PORT=<remote host hw_server port>
-   $ make run
+      $ export XSCT_REMOTE_HOST=<remote host ip>
+      $ export XSCT_REMOTE_PORT=<remote host hw_server port>
+      $ make run
 
-By default the \`hw_server\` port should be 3121.
+   By default the \`hw_server\` port should be 3121.
 
-.. raw:: html
-
-   </details>
 
 
 Use the following command to launch the SDK associated to the used platform in order to be able to debug graphically by clicking the debug button:
@@ -930,45 +776,40 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 
 
-.. raw:: html
+.. collapsible:: STM32 (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+   -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
+   -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
--  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
+   ::
 
-::
+        $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
+      $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
+        $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-     $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
-   $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
-     $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
+   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
 
--  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+      -  The **.openocd** will be the same regardless of the Makefile configuration.
 
-   -  The **.openocd** will be the same regardless of the Makefile configuration.
+   -  Navigate to the folder in PowerShell
 
--  Navigate to the folder in PowerShell
+   ::
 
-::
+        cd ~\path\to\my_project
 
-     cd ~\path\to\my_project
+   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
 
--  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   ::
 
-::
+        $openocd_cmd=".\some_project.elf.openocd"
+        $openocd_elf="./some_project.elf"
 
-     $openocd_cmd=".\some_project.elf.openocd"
-     $openocd_elf="./some_project.elf"
+   -  And run:
 
--  And run:
+   ::
 
-::
+        &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
 
-     &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
-
-.. raw:: html
-
-   </details>
 
 
 ++++
@@ -995,283 +836,211 @@ Prior to building a no-OS project, it is required to set up some environment var
 
 Use the following commands to prepare your environment for building no-OS projects: 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   .. important::
 
-.. important::
+      Make sure the GNU Make version you are using is >= 4.2.
 
-   Make sure the GNU Make version you are using is >= 4.2.
 
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Assuming the SDK is installed at this path:
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         /path/to/intel
+         └── intelFPGA
+             └── 18.1
 
-Assuming the SDK is installed at this path:
+      Run:
 
-::
+      ::
 
-   /path/to/intel
-   └── intelFPGA
-       └── 18.1
+         $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-Run:
 
-::
 
-   $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Assuming the Vitis 2022.2 is installed at this path:
 
+      ::
 
+         /path/to/xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
-.. raw:: html
+      Run:
 
-   <details><summary>Xilinx (Click to expand)
+      ::
 
-Assuming the Vitis 2022.2 is installed at this path:
+         $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
 
-::
 
-   /path/to/xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-Run:
 
-::
 
-   $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
+   .. collapsible:: STM32 (Click to expand)
 
-.. raw:: html
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
+      -  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-   </details>
 
 
 
 
-.. raw:: html
+   .. collapsible:: Maxim (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
+      -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
--  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: Mbed (Click to expand)
 
+      -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
--  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Pico (Click to expand)
 
+      -  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
+      -  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
+      -  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
+      -  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
 
--  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
--  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
-   </details>
+      .. important::
 
+         Please install all the necessary packs locally and then manually import them in CrossCore
 
 
+      Common Issues with environment setup:
 
-.. raw:: html
+      -  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
 
-   <details><summary>Pico (Click to expand)
 
--  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
--  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
--  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
--  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
 
+.. collapsible:: Windows (Click to expand)
 
+   .. important::
 
+      Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
-.. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)
+   .. important::
 
--  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
-.. important::
 
-   Please install all the necessary packs locally and then manually import them in CrossCore
+   .. important::
 
+      Use Git Bash (unelevated) for the rest of your development.
 
-Common Issues with environment setup:
 
--  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
+   
 
-.. raw:: html
+.. collapsible:: Xilinx (Click to expand)
 
-   </details>
+   Assuming the Vitis 2022.2 is installed at this path:
 
-.. raw:: html
+      ::
 
-   </details>
+         C:\Xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
+      From the no-OS root directory, run:
 
+      ::
 
+         $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
 
-.. raw:: html
+      Or alternatively, work only with the desired paths:
 
-   <details><summary>Windows (Click to expand)
+      ::
 
-.. important::
+         $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-   Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
 
-.. important::
 
-   Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
+      -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
+      -  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-   Use Git Bash (unelevated) for the rest of your development.
 
 
 
 
-.. raw:: html
+   .. collapsible:: Mbed (Click to expand)
 
-   <details><summary>Xilinx (Click to expand)
+      -  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
+      -  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
+      -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
+      -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
+      -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
+      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
+      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
-Assuming the Vitis 2022.2 is installed at this path:
 
-::
 
-   C:\Xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-From the no-OS root directory, run:
 
-::
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-   $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
+      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
-Or alternatively, work only with the desired paths:
 
-::
 
-   $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: STM32 (Click to expand)
 
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
+      -  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
 
-
-
-.. raw:: html
-
-   <details><summary>Maxim (Click to expand)
-
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
--  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
--  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>Mbed (Click to expand)
-
--  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
--  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
--  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
--  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
--  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
--  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
--  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
--  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
--  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
--  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
--  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
--  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
--  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
--  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 Building a project
@@ -1281,303 +1050,231 @@ Go in the project directory that should be built.
 
 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   ::
 
-::
+      $ cd no-OS/projects/project_name/
+      $ tree
+      .
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   $ cd no-OS/projects/project_name/
-   $ tree
-   .
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Copy the **.sof** and **.sopcinfo** to the project folder.
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         $ ls
+         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
+         $ make
 
-Copy the **.sof** and **.sopcinfo** to the project folder.
+         # Alternatively you may select a .sopcinfo file explicitly by:
+         $ make HARDWARE=path/to/system_bd.sopcinfo
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
-   $ make
 
-   # Alternatively you may select a .sopcinfo file explicitly by:
-   $ make HARDWARE=path/to/system_bd.sopcinfo
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Copy the **.xsa** in the project folder.
 
+      ::
 
+         $ ls
+         Makefile  profiles  src  src.mk system_top.xsa
+         $ make
 
-.. raw:: html
+         # Alternatively you may select an .xsa file explicitly by:
+         $ make HARDWARE=path/to/file.xsa
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** in the project folder.
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk system_top.xsa
-   $ make
 
-   # Alternatively you may select an .xsa file explicitly by:
-   $ make HARDWARE=path/to/file.xsa
+   .. collapsible:: Maxim (Click to expand)
 
-.. raw:: html
+      To build a project, type:
 
-   </details>
+      ::
 
+         make PLATFORM=maxim TARGET=...
 
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
-To build a project, type:
 
-::
+   .. collapsible:: Mbed (Click to expand)
 
-   make PLATFORM=maxim TARGET=...
+      To build a project, type:
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
+      ::
 
-.. raw:: html
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   </details>
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
+   .. collapsible:: Pico (Click to expand)
 
-To build a project, type:
+      To build a project, type:
 
-::
+      ::
 
-   make PLATFORM=mbed TARGET_BOARD=...
+         make PLATFORM=pico
 
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: STM32 (Click to expand)
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Pico (Click to expand)
+         $ make PLATFORM=stm32
 
-To build a project, type:
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-::
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-   make PLATFORM=pico
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
+      The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
 
-.. raw:: html
+      ::
 
-   <details><summary>STM32 (Click to expand)
+         # build an ADuCM3029-only project
+         $ make
 
-Make sure you have the .ioc file in the project directory, then type:
+         # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
+         $ make PLATFORM=aducm3029
 
-::
 
-   $ make PLATFORM=stm32
 
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-.. raw:: html
+.. collapsible:: Windows (Click to expand)
 
-   </details>
+   .. important::
 
+      Use Git Bash to run these commands.
 
 
+   ::
 
-.. raw:: html
+      $ cd no-OS/projects/project_name
 
-   <details><summary>ADuCM3029 (Click to expand)
+   It should contain make-related files and source files:
 
-The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
+   ::
 
-::
+      ./no-OS/projects/project_name
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   # build an ADuCM3029-only project
-   $ make
+   
 
-   # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
-   $ make PLATFORM=aducm3029
+.. collapsible:: Xilinx (Click to expand)
 
-.. raw:: html
+   Copy the **.xsa** to the project folder and run:
 
-   </details>
+      ::
 
-.. raw:: html
+         ./no-OS/projects/adrv9009
+         ├── Makefile
+         ├── profiles
+         ├── src
+         ├── src.mk
+         └── system_top.xsa
 
-   </details>
+         $ make
 
 
 
 
-.. raw:: html
 
-   <details><summary>Windows (Click to expand)
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      To build a project, type:
 
-   Use Git Bash to run these commands.
+      ::
 
+         $ make PLATFORM=maxim TARGET=...
 
-::
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-   $ cd no-OS/projects/project_name
 
-It should contain make-related files and source files:
 
-::
 
-   ./no-OS/projects/project_name
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
 
+   .. collapsible:: Mbed (Click to expand)
 
+      .. important::
 
-.. raw:: html
+         Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** to the project folder and run:
+      To build a project, type:
 
-::
+      ::
 
-   ./no-OS/projects/adrv9009
-   ├── Makefile
-   ├── profiles
-   ├── src
-   ├── src.mk
-   └── system_top.xsa
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   $ make
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      ::
 
-   <details><summary>Maxim (Click to expand)
+         $ export PLATFORM=aducm3029
+         $ make
 
-To build a project, type:
 
-::
 
-   $ make PLATFORM=maxim TARGET=...
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-.. raw:: html
+   .. collapsible:: STM32 (Click to expand)
 
-   </details>
+      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
 
+      ::
 
+         $ export STM32CUBEMX=/c/stm32cubemx
+         $ export STM32CUBEIDE=/c/stm32cubeide
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Mbed (Click to expand)
+         $ make PLATFORM=stm32
 
-.. important::
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-   Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-
-To build a project, type:
-
-::
-
-   make PLATFORM=mbed TARGET_BOARD=...
-
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
-::
-
-   $ export PLATFORM=aducm3029
-   $ make
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
-Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
-
-::
-
-   $ export STM32CUBEMX=/c/stm32cubemx
-   $ export STM32CUBEIDE=/c/stm32cubeide
-
-Make sure you have the .ioc file in the project directory, then type:
-
-::
-
-   $ make PLATFORM=stm32
-
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
-
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 The build process creates a **build** directory in the project folder:
@@ -1610,48 +1307,38 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
 
 
-.. raw:: html
+.. collapsible:: Maxim (Click to expand)
 
-   <details><summary>Maxim (Click to expand)
+   To debug a project, type:
 
-To debug a project, type:
+   ::
 
-::
+      make PLATFORM=maxim TARGET=... run
 
-   make PLATFORM=maxim TARGET=... run
-
-The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
-
-.. raw:: html
-
-   </details>
+   The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Xilinx (Click to expand)
+.. collapsible:: Xilinx (Click to expand)
 
-**Booting from SD Card**
+   **Booting from SD Card**
 
-You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
+   You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
 
-**Remote host**
+   **Remote host**
 
-For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
+   For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
 
-::
+   ::
 
-   $ export XSCT_REMOTE_HOST=<remote host ip>
-   $ export XSCT_REMOTE_PORT=<remote host hw_server port>
-   $ make run
+      $ export XSCT_REMOTE_HOST=<remote host ip>
+      $ export XSCT_REMOTE_PORT=<remote host hw_server port>
+      $ make run
 
-By default the \`hw_server\` port should be 3121.
+   By default the \`hw_server\` port should be 3121.
 
-.. raw:: html
-
-   </details>
 
 
 Use the following command to launch the SDK associated to the used platform in order to be able to debug graphically by clicking the debug button:
@@ -1802,45 +1489,40 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 
 
-.. raw:: html
+.. collapsible:: STM32 (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+   -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
+   -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
--  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
+   ::
 
-::
+        $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
+      $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
+        $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-     $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
-   $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
-     $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
+   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
 
--  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+      -  The **.openocd** will be the same regardless of the Makefile configuration.
 
-   -  The **.openocd** will be the same regardless of the Makefile configuration.
+   -  Navigate to the folder in PowerShell
 
--  Navigate to the folder in PowerShell
+   ::
 
-::
+        cd ~\path\to\my_project
 
-     cd ~\path\to\my_project
+   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
 
--  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   ::
 
-::
+        $openocd_cmd=".\some_project.elf.openocd"
+        $openocd_elf="./some_project.elf"
 
-     $openocd_cmd=".\some_project.elf.openocd"
-     $openocd_elf="./some_project.elf"
+   -  And run:
 
--  And run:
+   ::
 
-::
+        &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
 
-     &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
-
-.. raw:: html
-
-   </details>
 
 
 ++++
@@ -1867,283 +1549,211 @@ Prior to building a no-OS project, it is required to set up some environment var
 
 Use the following commands to prepare your environment for building no-OS projects: 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   .. important::
 
-.. important::
+      Make sure the GNU Make version you are using is >= 4.2.
 
-   Make sure the GNU Make version you are using is >= 4.2.
 
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Assuming the SDK is installed at this path:
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         /path/to/intel
+         └── intelFPGA
+             └── 18.1
 
-Assuming the SDK is installed at this path:
+      Run:
 
-::
+      ::
 
-   /path/to/intel
-   └── intelFPGA
-       └── 18.1
+         $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-Run:
 
-::
 
-   $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Assuming the Vitis 2022.2 is installed at this path:
 
+      ::
 
+         /path/to/xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
-.. raw:: html
+      Run:
 
-   <details><summary>Xilinx (Click to expand)
+      ::
 
-Assuming the Vitis 2022.2 is installed at this path:
+         $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
 
-::
 
-   /path/to/xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-Run:
 
-::
 
-   $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
+   .. collapsible:: STM32 (Click to expand)
 
-.. raw:: html
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
+      -  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-   </details>
 
 
 
 
-.. raw:: html
+   .. collapsible:: Maxim (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
+      -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
--  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: Mbed (Click to expand)
 
+      -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
--  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Pico (Click to expand)
 
+      -  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
+      -  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
+      -  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
+      -  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
 
--  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
--  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
-   </details>
+      .. important::
 
+         Please install all the necessary packs locally and then manually import them in CrossCore
 
 
+      Common Issues with environment setup:
 
-.. raw:: html
+      -  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
 
-   <details><summary>Pico (Click to expand)
 
--  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
--  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
--  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
--  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
 
+.. collapsible:: Windows (Click to expand)
 
+   .. important::
 
+      Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
-.. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)
+   .. important::
 
--  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
-.. important::
 
-   Please install all the necessary packs locally and then manually import them in CrossCore
+   .. important::
 
+      Use Git Bash (unelevated) for the rest of your development.
 
-Common Issues with environment setup:
 
--  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
+   
 
-.. raw:: html
+.. collapsible:: Xilinx (Click to expand)
 
-   </details>
+   Assuming the Vitis 2022.2 is installed at this path:
 
-.. raw:: html
+      ::
 
-   </details>
+         C:\Xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
+      From the no-OS root directory, run:
 
+      ::
 
+         $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
 
-.. raw:: html
+      Or alternatively, work only with the desired paths:
 
-   <details><summary>Windows (Click to expand)
+      ::
 
-.. important::
+         $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-   Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
 
-.. important::
 
-   Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
+      -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
+      -  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-   Use Git Bash (unelevated) for the rest of your development.
 
 
 
 
-.. raw:: html
+   .. collapsible:: Mbed (Click to expand)
 
-   <details><summary>Xilinx (Click to expand)
+      -  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
+      -  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
+      -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
+      -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
+      -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
+      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
+      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
-Assuming the Vitis 2022.2 is installed at this path:
 
-::
 
-   C:\Xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-From the no-OS root directory, run:
 
-::
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-   $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
+      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
-Or alternatively, work only with the desired paths:
 
-::
 
-   $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: STM32 (Click to expand)
 
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
+      -  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
 
-
-
-.. raw:: html
-
-   <details><summary>Maxim (Click to expand)
-
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
--  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
--  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>Mbed (Click to expand)
-
--  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
--  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
--  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
--  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
--  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
--  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
--  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
--  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
--  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
--  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
--  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
--  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
--  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
--  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 Building a project
@@ -2153,303 +1763,231 @@ Go in the project directory that should be built.
 
 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   ::
 
-::
+      $ cd no-OS/projects/project_name/
+      $ tree
+      .
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   $ cd no-OS/projects/project_name/
-   $ tree
-   .
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Copy the **.sof** and **.sopcinfo** to the project folder.
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         $ ls
+         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
+         $ make
 
-Copy the **.sof** and **.sopcinfo** to the project folder.
+         # Alternatively you may select a .sopcinfo file explicitly by:
+         $ make HARDWARE=path/to/system_bd.sopcinfo
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
-   $ make
 
-   # Alternatively you may select a .sopcinfo file explicitly by:
-   $ make HARDWARE=path/to/system_bd.sopcinfo
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Copy the **.xsa** in the project folder.
 
+      ::
 
+         $ ls
+         Makefile  profiles  src  src.mk system_top.xsa
+         $ make
 
-.. raw:: html
+         # Alternatively you may select an .xsa file explicitly by:
+         $ make HARDWARE=path/to/file.xsa
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** in the project folder.
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk system_top.xsa
-   $ make
 
-   # Alternatively you may select an .xsa file explicitly by:
-   $ make HARDWARE=path/to/file.xsa
+   .. collapsible:: Maxim (Click to expand)
 
-.. raw:: html
+      To build a project, type:
 
-   </details>
+      ::
 
+         make PLATFORM=maxim TARGET=...
 
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
-To build a project, type:
 
-::
+   .. collapsible:: Mbed (Click to expand)
 
-   make PLATFORM=maxim TARGET=...
+      To build a project, type:
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
+      ::
 
-.. raw:: html
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   </details>
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
+   .. collapsible:: Pico (Click to expand)
 
-To build a project, type:
+      To build a project, type:
 
-::
+      ::
 
-   make PLATFORM=mbed TARGET_BOARD=...
+         make PLATFORM=pico
 
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: STM32 (Click to expand)
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Pico (Click to expand)
+         $ make PLATFORM=stm32
 
-To build a project, type:
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-::
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-   make PLATFORM=pico
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
+      The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
 
-.. raw:: html
+      ::
 
-   <details><summary>STM32 (Click to expand)
+         # build an ADuCM3029-only project
+         $ make
 
-Make sure you have the .ioc file in the project directory, then type:
+         # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
+         $ make PLATFORM=aducm3029
 
-::
 
-   $ make PLATFORM=stm32
 
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-.. raw:: html
+.. collapsible:: Windows (Click to expand)
 
-   </details>
+   .. important::
 
+      Use Git Bash to run these commands.
 
 
+   ::
 
-.. raw:: html
+      $ cd no-OS/projects/project_name
 
-   <details><summary>ADuCM3029 (Click to expand)
+   It should contain make-related files and source files:
 
-The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
+   ::
 
-::
+      ./no-OS/projects/project_name
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   # build an ADuCM3029-only project
-   $ make
+   
 
-   # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
-   $ make PLATFORM=aducm3029
+.. collapsible:: Xilinx (Click to expand)
 
-.. raw:: html
+   Copy the **.xsa** to the project folder and run:
 
-   </details>
+      ::
 
-.. raw:: html
+         ./no-OS/projects/adrv9009
+         ├── Makefile
+         ├── profiles
+         ├── src
+         ├── src.mk
+         └── system_top.xsa
 
-   </details>
+         $ make
 
 
 
 
-.. raw:: html
 
-   <details><summary>Windows (Click to expand)
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      To build a project, type:
 
-   Use Git Bash to run these commands.
+      ::
 
+         $ make PLATFORM=maxim TARGET=...
 
-::
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-   $ cd no-OS/projects/project_name
 
-It should contain make-related files and source files:
 
-::
 
-   ./no-OS/projects/project_name
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
 
+   .. collapsible:: Mbed (Click to expand)
 
+      .. important::
 
-.. raw:: html
+         Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** to the project folder and run:
+      To build a project, type:
 
-::
+      ::
 
-   ./no-OS/projects/adrv9009
-   ├── Makefile
-   ├── profiles
-   ├── src
-   ├── src.mk
-   └── system_top.xsa
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   $ make
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      ::
 
-   <details><summary>Maxim (Click to expand)
+         $ export PLATFORM=aducm3029
+         $ make
 
-To build a project, type:
 
-::
 
-   $ make PLATFORM=maxim TARGET=...
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-.. raw:: html
+   .. collapsible:: STM32 (Click to expand)
 
-   </details>
+      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
 
+      ::
 
+         $ export STM32CUBEMX=/c/stm32cubemx
+         $ export STM32CUBEIDE=/c/stm32cubeide
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Mbed (Click to expand)
+         $ make PLATFORM=stm32
 
-.. important::
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-   Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-
-To build a project, type:
-
-::
-
-   make PLATFORM=mbed TARGET_BOARD=...
-
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
-::
-
-   $ export PLATFORM=aducm3029
-   $ make
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
-Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
-
-::
-
-   $ export STM32CUBEMX=/c/stm32cubemx
-   $ export STM32CUBEIDE=/c/stm32cubeide
-
-Make sure you have the .ioc file in the project directory, then type:
-
-::
-
-   $ make PLATFORM=stm32
-
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
-
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 The build process creates a **build** directory in the project folder:
@@ -2482,48 +2020,38 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
 
 
-.. raw:: html
+.. collapsible:: Maxim (Click to expand)
 
-   <details><summary>Maxim (Click to expand)
+   To debug a project, type:
 
-To debug a project, type:
+   ::
 
-::
+      make PLATFORM=maxim TARGET=... run
 
-   make PLATFORM=maxim TARGET=... run
-
-The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
-
-.. raw:: html
-
-   </details>
+   The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Xilinx (Click to expand)
+.. collapsible:: Xilinx (Click to expand)
 
-**Booting from SD Card**
+   **Booting from SD Card**
 
-You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
+   You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
 
-**Remote host**
+   **Remote host**
 
-For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
+   For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
 
-::
+   ::
 
-   $ export XSCT_REMOTE_HOST=<remote host ip>
-   $ export XSCT_REMOTE_PORT=<remote host hw_server port>
-   $ make run
+      $ export XSCT_REMOTE_HOST=<remote host ip>
+      $ export XSCT_REMOTE_PORT=<remote host hw_server port>
+      $ make run
 
-By default the \`hw_server\` port should be 3121.
+   By default the \`hw_server\` port should be 3121.
 
-.. raw:: html
-
-   </details>
 
 
 Use the following command to launch the SDK associated to the used platform in order to be able to debug graphically by clicking the debug button:
@@ -2674,45 +2202,40 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 
 
-.. raw:: html
+.. collapsible:: STM32 (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+   -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
+   -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
--  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
+   ::
 
-::
+        $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
+      $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
+        $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-     $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
-   $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
-     $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
+   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
 
--  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+      -  The **.openocd** will be the same regardless of the Makefile configuration.
 
-   -  The **.openocd** will be the same regardless of the Makefile configuration.
+   -  Navigate to the folder in PowerShell
 
--  Navigate to the folder in PowerShell
+   ::
 
-::
+        cd ~\path\to\my_project
 
-     cd ~\path\to\my_project
+   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
 
--  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   ::
 
-::
+        $openocd_cmd=".\some_project.elf.openocd"
+        $openocd_elf="./some_project.elf"
 
-     $openocd_cmd=".\some_project.elf.openocd"
-     $openocd_elf="./some_project.elf"
+   -  And run:
 
--  And run:
+   ::
 
-::
+        &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
 
-     &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
-
-.. raw:: html
-
-   </details>
 
 
 ++++
@@ -3299,283 +2822,211 @@ Prior to building a no-OS project, it is required to set up some environment var
 
 Use the following commands to prepare your environment for building no-OS projects: 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   .. important::
 
-.. important::
+      Make sure the GNU Make version you are using is >= 4.2.
 
-   Make sure the GNU Make version you are using is >= 4.2.
 
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Assuming the SDK is installed at this path:
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         /path/to/intel
+         └── intelFPGA
+             └── 18.1
 
-Assuming the SDK is installed at this path:
+      Run:
 
-::
+      ::
 
-   /path/to/intel
-   └── intelFPGA
-       └── 18.1
+         $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-Run:
 
-::
 
-   $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Assuming the Vitis 2022.2 is installed at this path:
 
+      ::
 
+         /path/to/xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
-.. raw:: html
+      Run:
 
-   <details><summary>Xilinx (Click to expand)
+      ::
 
-Assuming the Vitis 2022.2 is installed at this path:
+         $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
 
-::
 
-   /path/to/xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-Run:
 
-::
 
-   $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
+   .. collapsible:: STM32 (Click to expand)
 
-.. raw:: html
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
+      -  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-   </details>
 
 
 
 
-.. raw:: html
+   .. collapsible:: Maxim (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
+      -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
--  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: Mbed (Click to expand)
 
+      -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
--  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Pico (Click to expand)
 
+      -  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
+      -  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
+      -  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
+      -  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
 
--  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
--  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
-   </details>
+      .. important::
 
+         Please install all the necessary packs locally and then manually import them in CrossCore
 
 
+      Common Issues with environment setup:
 
-.. raw:: html
+      -  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
 
-   <details><summary>Pico (Click to expand)
 
--  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
--  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
--  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
--  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
 
+.. collapsible:: Windows (Click to expand)
 
+   .. important::
 
+      Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
-.. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)
+   .. important::
 
--  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
-.. important::
 
-   Please install all the necessary packs locally and then manually import them in CrossCore
+   .. important::
 
+      Use Git Bash (unelevated) for the rest of your development.
 
-Common Issues with environment setup:
 
--  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
+   
 
-.. raw:: html
+.. collapsible:: Xilinx (Click to expand)
 
-   </details>
+   Assuming the Vitis 2022.2 is installed at this path:
 
-.. raw:: html
+      ::
 
-   </details>
+         C:\Xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
+      From the no-OS root directory, run:
 
+      ::
 
+         $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
 
-.. raw:: html
+      Or alternatively, work only with the desired paths:
 
-   <details><summary>Windows (Click to expand)
+      ::
 
-.. important::
+         $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-   Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
 
-.. important::
 
-   Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
+      -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
+      -  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-   Use Git Bash (unelevated) for the rest of your development.
 
 
 
 
-.. raw:: html
+   .. collapsible:: Mbed (Click to expand)
 
-   <details><summary>Xilinx (Click to expand)
+      -  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
+      -  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
+      -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
+      -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
+      -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
+      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
+      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
-Assuming the Vitis 2022.2 is installed at this path:
 
-::
 
-   C:\Xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-From the no-OS root directory, run:
 
-::
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-   $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
+      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
-Or alternatively, work only with the desired paths:
 
-::
 
-   $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: STM32 (Click to expand)
 
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
+      -  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
 
-
-
-.. raw:: html
-
-   <details><summary>Maxim (Click to expand)
-
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
--  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
--  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>Mbed (Click to expand)
-
--  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
--  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
--  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
--  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
--  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
--  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
--  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
--  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
--  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
--  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
--  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
--  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
--  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
--  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 
@@ -3588,303 +3039,231 @@ Go in the project directory that should be built.
 
 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   ::
 
-::
+      $ cd no-OS/projects/project_name/
+      $ tree
+      .
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   $ cd no-OS/projects/project_name/
-   $ tree
-   .
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Copy the **.sof** and **.sopcinfo** to the project folder.
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         $ ls
+         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof 
+         $ make
 
-Copy the **.sof** and **.sopcinfo** to the project folder.
+         # Alternatively you may select a .sopcinfo file explicitly by:
+         $ make HARDWARE=path/to/system_bd.sopcinfo
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof 
-   $ make
 
-   # Alternatively you may select a .sopcinfo file explicitly by:
-   $ make HARDWARE=path/to/system_bd.sopcinfo
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Copy the **.xsa** in the project folder.
 
+      ::
 
+         $ ls
+         Makefile  profiles  src  src.mk system_top.xsa
+         $ make
 
-.. raw:: html
+         # Alternatively you may select an .xsa file explicitly by:
+         $ make HARDWARE=path/to/file.xsa
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** in the project folder.
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk system_top.xsa
-   $ make
 
-   # Alternatively you may select an .xsa file explicitly by:
-   $ make HARDWARE=path/to/file.xsa
+   .. collapsible:: Maxim (Click to expand)
 
-.. raw:: html
+      To build a project, type:
 
-   </details>
+      ::
 
+         make PLATFORM=maxim TARGET=...
 
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
-To build a project, type:
 
-::
+   .. collapsible:: Mbed (Click to expand)
 
-   make PLATFORM=maxim TARGET=...
+      To build a project, type:
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
+      ::
 
-.. raw:: html
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   </details>
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
+   .. collapsible:: Pico (Click to expand)
 
-To build a project, type:
+      To build a project, type:
 
-::
+      ::
 
-   make PLATFORM=mbed TARGET_BOARD=...
+         make PLATFORM=pico
 
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: STM32 (Click to expand)
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Pico (Click to expand)
+         $ make PLATFORM=stm32
 
-To build a project, type:
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-::
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-   make PLATFORM=pico
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
+      The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
 
-.. raw:: html
+      ::
 
-   <details><summary>STM32 (Click to expand)
+         # build an ADuCM3029-only project
+         $ make
 
-Make sure you have the .ioc file in the project directory, then type:
+         # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
+         $ make PLATFORM=aducm3029
 
-::
 
-   $ make PLATFORM=stm32
 
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-.. raw:: html
+.. collapsible:: Windows (Click to expand)
 
-   </details>
+   .. important::
 
+      Use Git Bash to run these commands.
 
 
+   ::
 
-.. raw:: html
+      $ cd no-OS/projects/project_name
 
-   <details><summary>ADuCM3029 (Click to expand)
+   It should contain make-related files and source files:
 
-The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
+   ::
 
-::
+      ./no-OS/projects/project_name
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   # build an ADuCM3029-only project
-   $ make
+   
 
-   # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
-   $ make PLATFORM=aducm3029
+.. collapsible:: Xilinx (Click to expand)
 
-.. raw:: html
+   Copy the **.xsa** to the project folder and run:
 
-   </details>
+      ::
 
-.. raw:: html
+         ./no-OS/projects/adrv9009
+         ├── Makefile
+         ├── profiles
+         ├── src
+         ├── src.mk
+         └── system_top.xsa
 
-   </details>
+         $ make
 
 
 
 
-.. raw:: html
 
-   <details><summary>Windows (Click to expand)
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      To build a project, type:
 
-   Use Git Bash to run these commands.
+      ::
 
+         $ make PLATFORM=maxim TARGET=...
 
-::
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-   $ cd no-OS/projects/project_name
 
-It should contain make-related files and source files:
 
-::
 
-   ./no-OS/projects/project_name
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
 
+   .. collapsible:: Mbed (Click to expand)
 
+      .. important::
 
-.. raw:: html
+         Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** to the project folder and run:
+      To build a project, type:
 
-::
+      ::
 
-   ./no-OS/projects/adrv9009
-   ├── Makefile
-   ├── profiles
-   ├── src
-   ├── src.mk
-   └── system_top.xsa
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   $ make
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      ::
 
-   <details><summary>Maxim (Click to expand)
+         $ export PLATFORM=aducm3029
+         $ make
 
-To build a project, type:
 
-::
 
-   $ make PLATFORM=maxim TARGET=...
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-.. raw:: html
+   .. collapsible:: STM32 (Click to expand)
 
-   </details>
+      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
 
+      ::
 
+         $ export STM32CUBEMX=/c/stm32cubemx
+         $ export STM32CUBEIDE=/c/stm32cubeide
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Mbed (Click to expand)
+         $ make PLATFORM=stm32
 
-.. important::
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-   Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-
-To build a project, type:
-
-::
-
-   make PLATFORM=mbed TARGET_BOARD=...
-
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
-::
-
-   $ export PLATFORM=aducm3029
-   $ make
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
-Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
-
-::
-
-   $ export STM32CUBEMX=/c/stm32cubemx
-   $ export STM32CUBEIDE=/c/stm32cubeide
-
-Make sure you have the .ioc file in the project directory, then type:
-
-::
-
-   $ make PLATFORM=stm32
-
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
-
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 The build process creates a **build** directory in the project folder:
@@ -3924,283 +3303,211 @@ Prior to building a no-OS project, it is required to set up some environment var
 
 Use the following commands to prepare your environment for building no-OS projects: 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   .. important::
 
-.. important::
+      Make sure the GNU Make version you are using is >= 4.2.
 
-   Make sure the GNU Make version you are using is >= 4.2.
 
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Assuming the SDK is installed at this path:
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         /path/to/intel
+         └── intelFPGA
+             └── 18.1
 
-Assuming the SDK is installed at this path:
+      Run:
 
-::
+      ::
 
-   /path/to/intel
-   └── intelFPGA
-       └── 18.1
+         $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-Run:
 
-::
 
-   $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Assuming the Vitis 2022.2 is installed at this path:
 
+      ::
 
+         /path/to/xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
-.. raw:: html
+      Run:
 
-   <details><summary>Xilinx (Click to expand)
+      ::
 
-Assuming the Vitis 2022.2 is installed at this path:
+         $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
 
-::
 
-   /path/to/xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-Run:
 
-::
 
-   $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
+   .. collapsible:: STM32 (Click to expand)
 
-.. raw:: html
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
+      -  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-   </details>
 
 
 
 
-.. raw:: html
+   .. collapsible:: Maxim (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
+      -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
--  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: Mbed (Click to expand)
 
+      -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
--  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Pico (Click to expand)
 
+      -  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
+      -  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
+      -  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
+      -  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
 
--  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
--  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
-   </details>
+      .. important::
 
+         Please install all the necessary packs locally and then manually import them in CrossCore
 
 
+      Common Issues with environment setup:
 
-.. raw:: html
+      -  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
 
-   <details><summary>Pico (Click to expand)
 
--  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
--  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
--  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
--  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
 
+.. collapsible:: Windows (Click to expand)
 
+   .. important::
 
+      Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
-.. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)
+   .. important::
 
--  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
-.. important::
 
-   Please install all the necessary packs locally and then manually import them in CrossCore
+   .. important::
 
+      Use Git Bash (unelevated) for the rest of your development.
 
-Common Issues with environment setup:
 
--  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
+   
 
-.. raw:: html
+.. collapsible:: Xilinx (Click to expand)
 
-   </details>
+   Assuming the Vitis 2022.2 is installed at this path:
 
-.. raw:: html
+      ::
 
-   </details>
+         C:\Xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
+      From the no-OS root directory, run:
 
+      ::
 
+         $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
 
-.. raw:: html
+      Or alternatively, work only with the desired paths:
 
-   <details><summary>Windows (Click to expand)
+      ::
 
-.. important::
+         $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-   Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
 
-.. important::
 
-   Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
+      -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
+      -  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-   Use Git Bash (unelevated) for the rest of your development.
 
 
 
 
-.. raw:: html
+   .. collapsible:: Mbed (Click to expand)
 
-   <details><summary>Xilinx (Click to expand)
+      -  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
+      -  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
+      -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
+      -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
+      -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
+      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
+      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
-Assuming the Vitis 2022.2 is installed at this path:
 
-::
 
-   C:\Xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-From the no-OS root directory, run:
 
-::
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-   $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
+      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
-Or alternatively, work only with the desired paths:
 
-::
 
-   $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: STM32 (Click to expand)
 
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
+      -  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
 
-
-
-.. raw:: html
-
-   <details><summary>Maxim (Click to expand)
-
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
--  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
--  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>Mbed (Click to expand)
-
--  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
--  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
--  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
--  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
--  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
--  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
--  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
--  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
--  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
--  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
--  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
--  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
--  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
--  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 Building a project
@@ -4210,303 +3517,231 @@ Go in the project directory that should be built.
 
 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   ::
 
-::
+      $ cd no-OS/projects/project_name/
+      $ tree
+      .
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   $ cd no-OS/projects/project_name/
-   $ tree
-   .
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Copy the **.sof** and **.sopcinfo** to the project folder.
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         $ ls
+         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof 
+         $ make
 
-Copy the **.sof** and **.sopcinfo** to the project folder.
+         # Alternatively you may select a .sopcinfo file explicitly by:
+         $ make HARDWARE=path/to/system_bd.sopcinfo
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof 
-   $ make
 
-   # Alternatively you may select a .sopcinfo file explicitly by:
-   $ make HARDWARE=path/to/system_bd.sopcinfo
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Copy the **.xsa** in the project folder.
 
+      ::
 
+         $ ls
+         Makefile  profiles  src  src.mk system_top.xsa
+         $ make
 
-.. raw:: html
+         # Alternatively you may select an .xsa file explicitly by:
+         $ make HARDWARE=path/to/file.xsa
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** in the project folder.
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk system_top.xsa
-   $ make
 
-   # Alternatively you may select an .xsa file explicitly by:
-   $ make HARDWARE=path/to/file.xsa
+   .. collapsible:: Maxim (Click to expand)
 
-.. raw:: html
+      To build a project, type:
 
-   </details>
+      ::
 
+         make PLATFORM=maxim TARGET=...
 
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
-To build a project, type:
 
-::
+   .. collapsible:: Mbed (Click to expand)
 
-   make PLATFORM=maxim TARGET=...
+      To build a project, type:
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
+      ::
 
-.. raw:: html
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   </details>
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
+   .. collapsible:: Pico (Click to expand)
 
-To build a project, type:
+      To build a project, type:
 
-::
+      ::
 
-   make PLATFORM=mbed TARGET_BOARD=...
+         make PLATFORM=pico
 
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: STM32 (Click to expand)
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Pico (Click to expand)
+         $ make PLATFORM=stm32
 
-To build a project, type:
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-::
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-   make PLATFORM=pico
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
+      The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
 
-.. raw:: html
+      ::
 
-   <details><summary>STM32 (Click to expand)
+         # build an ADuCM3029-only project
+         $ make
 
-Make sure you have the .ioc file in the project directory, then type:
+         # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
+         $ make PLATFORM=aducm3029
 
-::
 
-   $ make PLATFORM=stm32
 
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-.. raw:: html
+.. collapsible:: Windows (Click to expand)
 
-   </details>
+   .. important::
 
+      Use Git Bash to run these commands.
 
 
+   ::
 
-.. raw:: html
+      $ cd no-OS/projects/project_name
 
-   <details><summary>ADuCM3029 (Click to expand)
+   It should contain make-related files and source files:
 
-The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
+   ::
 
-::
+      ./no-OS/projects/project_name
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   # build an ADuCM3029-only project
-   $ make
+   
 
-   # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
-   $ make PLATFORM=aducm3029
+.. collapsible:: Xilinx (Click to expand)
 
-.. raw:: html
+   Copy the **.xsa** to the project folder and run:
 
-   </details>
+      ::
 
-.. raw:: html
+         ./no-OS/projects/adrv9009
+         ├── Makefile
+         ├── profiles
+         ├── src
+         ├── src.mk
+         └── system_top.xsa
 
-   </details>
+         $ make
 
 
 
 
-.. raw:: html
 
-   <details><summary>Windows (Click to expand)
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      To build a project, type:
 
-   Use Git Bash to run these commands.
+      ::
 
+         $ make PLATFORM=maxim TARGET=...
 
-::
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-   $ cd no-OS/projects/project_name
 
-It should contain make-related files and source files:
 
-::
 
-   ./no-OS/projects/project_name
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
 
+   .. collapsible:: Mbed (Click to expand)
 
+      .. important::
 
-.. raw:: html
+         Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** to the project folder and run:
+      To build a project, type:
 
-::
+      ::
 
-   ./no-OS/projects/adrv9009
-   ├── Makefile
-   ├── profiles
-   ├── src
-   ├── src.mk
-   └── system_top.xsa
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   $ make
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      ::
 
-   <details><summary>Maxim (Click to expand)
+         $ export PLATFORM=aducm3029
+         $ make
 
-To build a project, type:
 
-::
 
-   $ make PLATFORM=maxim TARGET=...
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-.. raw:: html
+   .. collapsible:: STM32 (Click to expand)
 
-   </details>
+      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
 
+      ::
 
+         $ export STM32CUBEMX=/c/stm32cubemx
+         $ export STM32CUBEIDE=/c/stm32cubeide
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Mbed (Click to expand)
+         $ make PLATFORM=stm32
 
-.. important::
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-   Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-
-To build a project, type:
-
-::
-
-   make PLATFORM=mbed TARGET_BOARD=...
-
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
-::
-
-   $ export PLATFORM=aducm3029
-   $ make
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
-Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
-
-::
-
-   $ export STM32CUBEMX=/c/stm32cubemx
-   $ export STM32CUBEIDE=/c/stm32cubeide
-
-Make sure you have the .ioc file in the project directory, then type:
-
-::
-
-   $ make PLATFORM=stm32
-
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
-
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 The build process creates a **build** directory in the project folder:
@@ -4539,48 +3774,38 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
 
 
-.. raw:: html
+.. collapsible:: Maxim (Click to expand)
 
-   <details><summary>Maxim (Click to expand)
+   To debug a project, type:
 
-To debug a project, type:
+   ::
 
-::
+      make PLATFORM=maxim TARGET=... run
 
-   make PLATFORM=maxim TARGET=... run
-
-The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
-
-.. raw:: html
-
-   </details>
+   The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Xilinx (Click to expand)
+.. collapsible:: Xilinx (Click to expand)
 
-**Booting from SD Card**
+   **Booting from SD Card**
 
-You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
+   You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
 
-**Remote host**
+   **Remote host**
 
-For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
+   For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
 
-::
+   ::
 
-   $ export XSCT_REMOTE_HOST=<remote host ip>
-   $ export XSCT_REMOTE_PORT=<remote host hw_server port>
-   $ make run
+      $ export XSCT_REMOTE_HOST=<remote host ip>
+      $ export XSCT_REMOTE_PORT=<remote host hw_server port>
+      $ make run
 
-By default the \`hw_server\` port should be 3121.
+   By default the \`hw_server\` port should be 3121.
 
-.. raw:: html
-
-   </details>
 
 
 Use the following command to launch the SDK associated to the used platform in order to be able to debug graphically by clicking the debug button:
@@ -4731,45 +3956,40 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 
 
-.. raw:: html
+.. collapsible:: STM32 (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+   -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
+   -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
--  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
+   ::
 
-::
+        $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
+      $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
+        $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-     $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
-   $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
-     $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
+   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
 
--  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+      -  The **.openocd** will be the same regardless of the Makefile configuration.
 
-   -  The **.openocd** will be the same regardless of the Makefile configuration.
+   -  Navigate to the folder in PowerShell
 
--  Navigate to the folder in PowerShell
+   ::
 
-::
+        cd ~\path\to\my_project
 
-     cd ~\path\to\my_project
+   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
 
--  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   ::
 
-::
+        $openocd_cmd=".\some_project.elf.openocd"
+        $openocd_elf="./some_project.elf"
 
-     $openocd_cmd=".\some_project.elf.openocd"
-     $openocd_elf="./some_project.elf"
+   -  And run:
 
--  And run:
+   ::
 
-::
+        &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
 
-     &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
-
-.. raw:: html
-
-   </details>
 
 
 ++++
@@ -4796,283 +4016,211 @@ Prior to building a no-OS project, it is required to set up some environment var
 
 Use the following commands to prepare your environment for building no-OS projects: 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   .. important::
 
-.. important::
+      Make sure the GNU Make version you are using is >= 4.2.
 
-   Make sure the GNU Make version you are using is >= 4.2.
 
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Assuming the SDK is installed at this path:
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         /path/to/intel
+         └── intelFPGA
+             └── 18.1
 
-Assuming the SDK is installed at this path:
+      Run:
 
-::
+      ::
 
-   /path/to/intel
-   └── intelFPGA
-       └── 18.1
+         $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-Run:
 
-::
 
-   $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Assuming the Vitis 2022.2 is installed at this path:
 
+      ::
 
+         /path/to/xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
-.. raw:: html
+      Run:
 
-   <details><summary>Xilinx (Click to expand)
+      ::
 
-Assuming the Vitis 2022.2 is installed at this path:
+         $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
 
-::
 
-   /path/to/xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-Run:
 
-::
 
-   $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
+   .. collapsible:: STM32 (Click to expand)
 
-.. raw:: html
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
+      -  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-   </details>
 
 
 
 
-.. raw:: html
+   .. collapsible:: Maxim (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
+      -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
--  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: Mbed (Click to expand)
 
+      -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
--  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Pico (Click to expand)
 
+      -  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
+      -  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
+      -  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
+      -  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
 
--  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
--  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
-   </details>
+      .. important::
 
+         Please install all the necessary packs locally and then manually import them in CrossCore
 
 
+      Common Issues with environment setup:
 
-.. raw:: html
+      -  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
 
-   <details><summary>Pico (Click to expand)
 
--  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
--  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
--  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
--  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
 
+.. collapsible:: Windows (Click to expand)
 
+   .. important::
 
+      Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
-.. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)
+   .. important::
 
--  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
-.. important::
 
-   Please install all the necessary packs locally and then manually import them in CrossCore
+   .. important::
 
+      Use Git Bash (unelevated) for the rest of your development.
 
-Common Issues with environment setup:
 
--  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
+   
 
-.. raw:: html
+.. collapsible:: Xilinx (Click to expand)
 
-   </details>
+   Assuming the Vitis 2022.2 is installed at this path:
 
-.. raw:: html
+      ::
 
-   </details>
+         C:\Xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
+      From the no-OS root directory, run:
 
+      ::
 
+         $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
 
-.. raw:: html
+      Or alternatively, work only with the desired paths:
 
-   <details><summary>Windows (Click to expand)
+      ::
 
-.. important::
+         $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-   Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
 
-.. important::
 
-   Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
+      -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
+      -  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-   Use Git Bash (unelevated) for the rest of your development.
 
 
 
 
-.. raw:: html
+   .. collapsible:: Mbed (Click to expand)
 
-   <details><summary>Xilinx (Click to expand)
+      -  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
+      -  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
+      -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
+      -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
+      -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
+      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
+      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
-Assuming the Vitis 2022.2 is installed at this path:
 
-::
 
-   C:\Xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-From the no-OS root directory, run:
 
-::
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-   $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
+      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
-Or alternatively, work only with the desired paths:
 
-::
 
-   $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: STM32 (Click to expand)
 
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
+      -  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
 
-
-
-.. raw:: html
-
-   <details><summary>Maxim (Click to expand)
-
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
--  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
--  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>Mbed (Click to expand)
-
--  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
--  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
--  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
--  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
--  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
--  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
--  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
--  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
--  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
--  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
--  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
--  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
--  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
--  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 Building a project
@@ -5082,303 +4230,231 @@ Go in the project directory that should be built.
 
 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   ::
 
-::
+      $ cd no-OS/projects/project_name/
+      $ tree
+      .
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   $ cd no-OS/projects/project_name/
-   $ tree
-   .
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Copy the **.sof** and **.sopcinfo** to the project folder.
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         $ ls
+         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
+         $ make
 
-Copy the **.sof** and **.sopcinfo** to the project folder.
+         # Alternatively you may select a .sopcinfo file explicitly by:
+         $ make HARDWARE=path/to/system_bd.sopcinfo
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
-   $ make
 
-   # Alternatively you may select a .sopcinfo file explicitly by:
-   $ make HARDWARE=path/to/system_bd.sopcinfo
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Copy the **.xsa** in the project folder.
 
+      ::
 
+         $ ls
+         Makefile  profiles  src  src.mk system_top.xsa
+         $ make
 
-.. raw:: html
+         # Alternatively you may select an .xsa file explicitly by:
+         $ make HARDWARE=path/to/file.xsa
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** in the project folder.
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk system_top.xsa
-   $ make
 
-   # Alternatively you may select an .xsa file explicitly by:
-   $ make HARDWARE=path/to/file.xsa
+   .. collapsible:: Maxim (Click to expand)
 
-.. raw:: html
+      To build a project, type:
 
-   </details>
+      ::
 
+         make PLATFORM=maxim TARGET=...
 
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
-To build a project, type:
 
-::
+   .. collapsible:: Mbed (Click to expand)
 
-   make PLATFORM=maxim TARGET=...
+      To build a project, type:
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
+      ::
 
-.. raw:: html
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   </details>
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
+   .. collapsible:: Pico (Click to expand)
 
-To build a project, type:
+      To build a project, type:
 
-::
+      ::
 
-   make PLATFORM=mbed TARGET_BOARD=...
+         make PLATFORM=pico
 
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: STM32 (Click to expand)
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Pico (Click to expand)
+         $ make PLATFORM=stm32
 
-To build a project, type:
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-::
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-   make PLATFORM=pico
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
+      The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
 
-.. raw:: html
+      ::
 
-   <details><summary>STM32 (Click to expand)
+         # build an ADuCM3029-only project
+         $ make
 
-Make sure you have the .ioc file in the project directory, then type:
+         # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
+         $ make PLATFORM=aducm3029
 
-::
 
-   $ make PLATFORM=stm32
 
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-.. raw:: html
+.. collapsible:: Windows (Click to expand)
 
-   </details>
+   .. important::
 
+      Use Git Bash to run these commands.
 
 
+   ::
 
-.. raw:: html
+      $ cd no-OS/projects/project_name
 
-   <details><summary>ADuCM3029 (Click to expand)
+   It should contain make-related files and source files:
 
-The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
+   ::
 
-::
+      ./no-OS/projects/project_name
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   # build an ADuCM3029-only project
-   $ make
+   
 
-   # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
-   $ make PLATFORM=aducm3029
+.. collapsible:: Xilinx (Click to expand)
 
-.. raw:: html
+   Copy the **.xsa** to the project folder and run:
 
-   </details>
+      ::
 
-.. raw:: html
+         ./no-OS/projects/adrv9009
+         ├── Makefile
+         ├── profiles
+         ├── src
+         ├── src.mk
+         └── system_top.xsa
 
-   </details>
+         $ make
 
 
 
 
-.. raw:: html
 
-   <details><summary>Windows (Click to expand)
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      To build a project, type:
 
-   Use Git Bash to run these commands.
+      ::
 
+         $ make PLATFORM=maxim TARGET=...
 
-::
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-   $ cd no-OS/projects/project_name
 
-It should contain make-related files and source files:
 
-::
 
-   ./no-OS/projects/project_name
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
 
+   .. collapsible:: Mbed (Click to expand)
 
+      .. important::
 
-.. raw:: html
+         Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** to the project folder and run:
+      To build a project, type:
 
-::
+      ::
 
-   ./no-OS/projects/adrv9009
-   ├── Makefile
-   ├── profiles
-   ├── src
-   ├── src.mk
-   └── system_top.xsa
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   $ make
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      ::
 
-   <details><summary>Maxim (Click to expand)
+         $ export PLATFORM=aducm3029
+         $ make
 
-To build a project, type:
 
-::
 
-   $ make PLATFORM=maxim TARGET=...
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-.. raw:: html
+   .. collapsible:: STM32 (Click to expand)
 
-   </details>
+      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
 
+      ::
 
+         $ export STM32CUBEMX=/c/stm32cubemx
+         $ export STM32CUBEIDE=/c/stm32cubeide
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Mbed (Click to expand)
+         $ make PLATFORM=stm32
 
-.. important::
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-   Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-
-To build a project, type:
-
-::
-
-   make PLATFORM=mbed TARGET_BOARD=...
-
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
-::
-
-   $ export PLATFORM=aducm3029
-   $ make
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
-Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
-
-::
-
-   $ export STM32CUBEMX=/c/stm32cubemx
-   $ export STM32CUBEIDE=/c/stm32cubeide
-
-Make sure you have the .ioc file in the project directory, then type:
-
-::
-
-   $ make PLATFORM=stm32
-
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
-
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 The build process creates a **build** directory in the project folder:
@@ -5411,48 +4487,38 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
 
 
-.. raw:: html
+.. collapsible:: Maxim (Click to expand)
 
-   <details><summary>Maxim (Click to expand)
+   To debug a project, type:
 
-To debug a project, type:
+   ::
 
-::
+      make PLATFORM=maxim TARGET=... run
 
-   make PLATFORM=maxim TARGET=... run
-
-The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
-
-.. raw:: html
-
-   </details>
+   The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Xilinx (Click to expand)
+.. collapsible:: Xilinx (Click to expand)
 
-**Booting from SD Card**
+   **Booting from SD Card**
 
-You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
+   You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
 
-**Remote host**
+   **Remote host**
 
-For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
+   For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
 
-::
+   ::
 
-   $ export XSCT_REMOTE_HOST=<remote host ip>
-   $ export XSCT_REMOTE_PORT=<remote host hw_server port>
-   $ make run
+      $ export XSCT_REMOTE_HOST=<remote host ip>
+      $ export XSCT_REMOTE_PORT=<remote host hw_server port>
+      $ make run
 
-By default the \`hw_server\` port should be 3121.
+   By default the \`hw_server\` port should be 3121.
 
-.. raw:: html
-
-   </details>
 
 
 Use the following command to launch the SDK associated to the used platform in order to be able to debug graphically by clicking the debug button:
@@ -5603,45 +4669,40 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 
 
-.. raw:: html
+.. collapsible:: STM32 (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+   -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
+   -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
--  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
+   ::
 
-::
+        $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
+      $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
+        $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-     $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
-   $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
-     $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
+   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
 
--  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+      -  The **.openocd** will be the same regardless of the Makefile configuration.
 
-   -  The **.openocd** will be the same regardless of the Makefile configuration.
+   -  Navigate to the folder in PowerShell
 
--  Navigate to the folder in PowerShell
+   ::
 
-::
+        cd ~\path\to\my_project
 
-     cd ~\path\to\my_project
+   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
 
--  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   ::
 
-::
+        $openocd_cmd=".\some_project.elf.openocd"
+        $openocd_elf="./some_project.elf"
 
-     $openocd_cmd=".\some_project.elf.openocd"
-     $openocd_elf="./some_project.elf"
+   -  And run:
 
--  And run:
+   ::
 
-::
+        &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
 
-     &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
-
-.. raw:: html
-
-   </details>
 
 
 ++++
@@ -5668,283 +4729,211 @@ Prior to building a no-OS project, it is required to set up some environment var
 
 Use the following commands to prepare your environment for building no-OS projects: 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   .. important::
 
-.. important::
+      Make sure the GNU Make version you are using is >= 4.2.
 
-   Make sure the GNU Make version you are using is >= 4.2.
 
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Assuming the SDK is installed at this path:
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         /path/to/intel
+         └── intelFPGA
+             └── 18.1
 
-Assuming the SDK is installed at this path:
+      Run:
 
-::
+      ::
 
-   /path/to/intel
-   └── intelFPGA
-       └── 18.1
+         $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-Run:
 
-::
 
-   $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Assuming the Vitis 2022.2 is installed at this path:
 
+      ::
 
+         /path/to/xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
-.. raw:: html
+      Run:
 
-   <details><summary>Xilinx (Click to expand)
+      ::
 
-Assuming the Vitis 2022.2 is installed at this path:
+         $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
 
-::
 
-   /path/to/xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-Run:
 
-::
 
-   $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
+   .. collapsible:: STM32 (Click to expand)
 
-.. raw:: html
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
+      -  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-   </details>
 
 
 
 
-.. raw:: html
+   .. collapsible:: Maxim (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
+      -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
--  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: Mbed (Click to expand)
 
+      -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0018720A>`_.
--  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Pico (Click to expand)
 
+      -  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
+      -  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
+      -  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
+      -  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
+      -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
 
--  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
--  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
-   </details>
+      .. important::
 
+         Please install all the necessary packs locally and then manually import them in CrossCore
 
 
+      Common Issues with environment setup:
 
-.. raw:: html
+      -  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
 
-   <details><summary>Pico (Click to expand)
 
--  Clone the `Raspberry Pico SDK <https://github.com/raspberrypi/pico-sdk>`_.
--  Set the PICO_SDK_PATH environment variable to the pico-sdk cloned repository path.
--  Install the `J-Link software <https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack>`_
--  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
--  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-.. raw:: html
 
-   </details>
 
+.. collapsible:: Windows (Click to expand)
 
+   .. important::
 
+      Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
-.. raw:: html
 
-   <details><summary>ADuCM3029 (Click to expand)
+   .. important::
 
--  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
-.. important::
 
-   Please install all the necessary packs locally and then manually import them in CrossCore
+   .. important::
 
+      Use Git Bash (unelevated) for the rest of your development.
 
-Common Issues with environment setup:
 
--  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
+   
 
-.. raw:: html
+.. collapsible:: Xilinx (Click to expand)
 
-   </details>
+   Assuming the Vitis 2022.2 is installed at this path:
 
-.. raw:: html
+      ::
 
-   </details>
+         C:\Xilinx
+         ├── DocNav
+         ├── Downloads
+         └── Vitis
+             └── 2022.2
 
+      From the no-OS root directory, run:
 
+      ::
 
+         $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
 
-.. raw:: html
+      Or alternatively, work only with the desired paths:
 
-   <details><summary>Windows (Click to expand)
+      ::
 
-.. important::
+         $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-   Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
 
-.. important::
 
-   Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
+      -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
+      -  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-   Use Git Bash (unelevated) for the rest of your development.
 
 
 
 
-.. raw:: html
+   .. collapsible:: Mbed (Click to expand)
 
-   <details><summary>Xilinx (Click to expand)
+      -  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
+      -  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
+      -  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
+      -  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
+      -  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
+      -  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
+      -  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
+      -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
+      -  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
+      -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
+      -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
 
-Assuming the Vitis 2022.2 is installed at this path:
 
-::
 
-   C:\Xilinx
-   ├── DocNav
-   ├── Downloads
-   └── Vitis
-       └── 2022.2
 
-From the no-OS root directory, run:
 
-::
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-   $ source tools/scripts/git-bash-paths.sh /c/Xilinx/Vitis/2022.2/settings64.sh
+      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
-Or alternatively, work only with the desired paths:
 
-::
 
-   $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: STM32 (Click to expand)
 
+      -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
+      -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
+      -  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
 
-
-
-.. raw:: html
-
-   <details><summary>Maxim (Click to expand)
-
--  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
--  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
--  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>Mbed (Click to expand)
-
--  Initialize the mbed submodule in no-OS by running <code> $ git submodule update init mbed-os </code> and <code> $ git submodule update mbed-os </code>
--  Install Python 3.11.2 (https://www.python.org/downloads/release/python-3112/)
--  Install the virtual environment package by running from the Git Terminal ``$ pip install venv`` or ``$ pip install virtualenv``
--  Create a virtual environment by running the command ``$ python -m venv <name_of_virtual_environment>`` This will create a virtual environment with the set name in the current directory of the Git Terminal.
--  Activate environment by running ``$ source <location_and_name_of_virtual_environment>/Scripts/activate``
--  Install GNU Arm Embedded Compiler (version: **9-2019-q4-major**) from https://developer.arm.com/downloads/-/gnu-rm.
--  Remove line 20 of **requirements.txt** inside the mbed-os folder ("*hidapi>=0.7.99,<0.8.0;platform_system!="Linux"* ")
--  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
--  Install the previously removed line from **requirements.txt** by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
--  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
--  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
--  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
--  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
--  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
--  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
--  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
--  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 Building a project
@@ -5954,303 +4943,231 @@ Go in the project directory that should be built.
 
 
 
-.. raw:: html
+.. collapsible:: Linux (Click to expand)
 
-   <details><summary>Linux (Click to expand)
+   ::
 
-::
+      $ cd no-OS/projects/project_name/
+      $ tree
+      .
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   $ cd no-OS/projects/project_name/
-   $ tree
-   .
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
+   
 
+.. collapsible:: Intel (Click to expand)
 
+   Copy the **.sof** and **.sopcinfo** to the project folder.
 
-.. raw:: html
+      ::
 
-   <details><summary>Intel (Click to expand)
+         $ ls
+         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
+         $ make
 
-Copy the **.sof** and **.sopcinfo** to the project folder.
+         # Alternatively you may select a .sopcinfo file explicitly by:
+         $ make HARDWARE=path/to/system_bd.sopcinfo
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
-   $ make
 
-   # Alternatively you may select a .sopcinfo file explicitly by:
-   $ make HARDWARE=path/to/system_bd.sopcinfo
 
-.. raw:: html
 
-   </details>
+   .. collapsible:: Xilinx (Click to expand)
 
+      Copy the **.xsa** in the project folder.
 
+      ::
 
+         $ ls
+         Makefile  profiles  src  src.mk system_top.xsa
+         $ make
 
-.. raw:: html
+         # Alternatively you may select an .xsa file explicitly by:
+         $ make HARDWARE=path/to/file.xsa
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** in the project folder.
 
-::
 
-   $ ls
-   Makefile  profiles  src  src.mk system_top.xsa
-   $ make
 
-   # Alternatively you may select an .xsa file explicitly by:
-   $ make HARDWARE=path/to/file.xsa
+   .. collapsible:: Maxim (Click to expand)
 
-.. raw:: html
+      To build a project, type:
 
-   </details>
+      ::
 
+         make PLATFORM=maxim TARGET=...
 
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
-.. raw:: html
 
-   <details><summary>Maxim (Click to expand)
 
-To build a project, type:
 
-::
+   .. collapsible:: Mbed (Click to expand)
 
-   make PLATFORM=maxim TARGET=...
+      To build a project, type:
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
+      ::
 
-.. raw:: html
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   </details>
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Mbed (Click to expand)
+   .. collapsible:: Pico (Click to expand)
 
-To build a project, type:
+      To build a project, type:
 
-::
+      ::
 
-   make PLATFORM=mbed TARGET_BOARD=...
+         make PLATFORM=pico
 
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: STM32 (Click to expand)
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Pico (Click to expand)
+         $ make PLATFORM=stm32
 
-To build a project, type:
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-::
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-   make PLATFORM=pico
 
-.. raw:: html
 
-   </details>
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
+      The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
 
-.. raw:: html
+      ::
 
-   <details><summary>STM32 (Click to expand)
+         # build an ADuCM3029-only project
+         $ make
 
-Make sure you have the .ioc file in the project directory, then type:
+         # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
+         $ make PLATFORM=aducm3029
 
-::
 
-   $ make PLATFORM=stm32
 
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-.. raw:: html
+.. collapsible:: Windows (Click to expand)
 
-   </details>
+   .. important::
 
+      Use Git Bash to run these commands.
 
 
+   ::
 
-.. raw:: html
+      $ cd no-OS/projects/project_name
 
-   <details><summary>ADuCM3029 (Click to expand)
+   It should contain make-related files and source files:
 
-The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
+   ::
 
-::
+      ./no-OS/projects/project_name
+      ├── builds.json
+      ├── Makefile
+      ├── src
+      └── src.mk
 
-   # build an ADuCM3029-only project
-   $ make
+   
 
-   # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
-   $ make PLATFORM=aducm3029
+.. collapsible:: Xilinx (Click to expand)
 
-.. raw:: html
+   Copy the **.xsa** to the project folder and run:
 
-   </details>
+      ::
 
-.. raw:: html
+         ./no-OS/projects/adrv9009
+         ├── Makefile
+         ├── profiles
+         ├── src
+         ├── src.mk
+         └── system_top.xsa
 
-   </details>
+         $ make
 
 
 
 
-.. raw:: html
 
-   <details><summary>Windows (Click to expand)
+   .. collapsible:: Maxim (Click to expand)
 
-.. important::
+      To build a project, type:
 
-   Use Git Bash to run these commands.
+      ::
 
+         $ make PLATFORM=maxim TARGET=...
 
-::
+      The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-   $ cd no-OS/projects/project_name
 
-It should contain make-related files and source files:
 
-::
 
-   ./no-OS/projects/project_name
-   ├── builds.json
-   ├── Makefile
-   ├── src
-   └── src.mk
 
+   .. collapsible:: Mbed (Click to expand)
 
+      .. important::
 
-.. raw:: html
+         Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
 
-   <details><summary>Xilinx (Click to expand)
 
-Copy the **.xsa** to the project folder and run:
+      To build a project, type:
 
-::
+      ::
 
-   ./no-OS/projects/adrv9009
-   ├── Makefile
-   ├── profiles
-   ├── src
-   ├── src.mk
-   └── system_top.xsa
+         make PLATFORM=mbed TARGET_BOARD=...
 
-   $ make
+      The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-.. raw:: html
 
-   </details>
 
 
 
+   .. collapsible:: ADuCM3029 (Click to expand)
 
-.. raw:: html
+      ::
 
-   <details><summary>Maxim (Click to expand)
+         $ export PLATFORM=aducm3029
+         $ make
 
-To build a project, type:
 
-::
 
-   $ make PLATFORM=maxim TARGET=...
 
-The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-.. raw:: html
+   .. collapsible:: STM32 (Click to expand)
 
-   </details>
+      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
 
+      ::
 
+         $ export STM32CUBEMX=/c/stm32cubemx
+         $ export STM32CUBEIDE=/c/stm32cubeide
 
+      Make sure you have the .ioc file in the project directory, then type:
 
-.. raw:: html
+      ::
 
-   <details><summary>Mbed (Click to expand)
+         $ make PLATFORM=stm32
 
-.. important::
+      If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
-   Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
+      If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-
-To build a project, type:
-
-::
-
-   make PLATFORM=mbed TARGET_BOARD=...
-
-The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>ADuCM3029 (Click to expand)
-
-::
-
-   $ export PLATFORM=aducm3029
-   $ make
-
-.. raw:: html
-
-   </details>
-
-
-
-
-.. raw:: html
-
-   <details><summary>STM32 (Click to expand)
-
-Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
-
-::
-
-   $ export STM32CUBEMX=/c/stm32cubemx
-   $ export STM32CUBEIDE=/c/stm32cubeide
-
-Make sure you have the .ioc file in the project directory, then type:
-
-::
-
-   $ make PLATFORM=stm32
-
-If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
-
-If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </details>
 
 
 The build process creates a **build** directory in the project folder:
@@ -6283,48 +5200,38 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
 
 
-.. raw:: html
+.. collapsible:: Maxim (Click to expand)
 
-   <details><summary>Maxim (Click to expand)
+   To debug a project, type:
 
-To debug a project, type:
+   ::
 
-::
+      make PLATFORM=maxim TARGET=... run
 
-   make PLATFORM=maxim TARGET=... run
-
-The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
-
-.. raw:: html
-
-   </details>
+   The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Xilinx (Click to expand)
+.. collapsible:: Xilinx (Click to expand)
 
-**Booting from SD Card**
+   **Booting from SD Card**
 
-You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
+   You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
 
-**Remote host**
+   **Remote host**
 
-For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
+   For Xilinx project you can flash the board connected to a remote host. On the remote host make sure to start \`hw_server\`. On your development environment run
 
-::
+   ::
 
-   $ export XSCT_REMOTE_HOST=<remote host ip>
-   $ export XSCT_REMOTE_PORT=<remote host hw_server port>
-   $ make run
+      $ export XSCT_REMOTE_HOST=<remote host ip>
+      $ export XSCT_REMOTE_PORT=<remote host hw_server port>
+      $ make run
 
-By default the \`hw_server\` port should be 3121.
+   By default the \`hw_server\` port should be 3121.
 
-.. raw:: html
-
-   </details>
 
 
 Use the following command to launch the SDK associated to the used platform in order to be able to debug graphically by clicking the debug button:
@@ -6475,45 +5382,40 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 
 
-.. raw:: html
+.. collapsible:: STM32 (Click to expand)
 
-   <details><summary>STM32 (Click to expand)
+   -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
+   -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
 
--  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
--  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
+   ::
 
-::
+        $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
+      $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
+        $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-     $stm32cubeide="C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE"
-   $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
-     $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
+   -  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
 
--  Extract the pair of deliverables (e.g., **some_project.elf.openocd**, **project.elf**) in a folder.
+      -  The **.openocd** will be the same regardless of the Makefile configuration.
 
-   -  The **.openocd** will be the same regardless of the Makefile configuration.
+   -  Navigate to the folder in PowerShell
 
--  Navigate to the folder in PowerShell
+   ::
 
-::
+        cd ~\path\to\my_project
 
-     cd ~\path\to\my_project
+   -  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
 
--  Set the **<project>.elf.openocd** **<project>.elf** (yes, the slashes are correct)
+   ::
 
-::
+        $openocd_cmd=".\some_project.elf.openocd"
+        $openocd_elf="./some_project.elf"
 
-     $openocd_cmd=".\some_project.elf.openocd"
-     $openocd_elf="./some_project.elf"
+   -  And run:
 
--  And run:
+   ::
 
-::
+        &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
 
-     &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
-
-.. raw:: html
-
-   </details>
 
 
 ++++

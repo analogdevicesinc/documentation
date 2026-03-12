@@ -96,7 +96,7 @@ HDL Downloads
    :class: download
 
    
-   -  :git-hdl:`projects/ad4630_fmc`
+   -  :git-hdl:`hdl/tree/main/projects/ad4630_fmc <projects/ad4630_fmc>`
    
 
 

@@ -81,7 +81,7 @@ No-OS Downloads
    :class: download
 
    
-   -  AD7768-EVB Main Driver - :git-no-OS:`projects/ad7768-evb`
+   -  AD7768-EVB Main Driver - :git-no-OS:`no-OS/tree/main/projects/ad7768-evb <projects/ad7768-evb>`
    -  Generic Platform Drivers - :git-no-OS:`https:github.com/analogdevicesinc/no-OS/tree/main/common_drivers/platform_drivers]] \* AD7768 Driver - https:\ github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/ad7768 \* ADC Core Driver - [[https:github.com/analogdevicesinc/no-OS/tree/main/legacy/common_drivers/adc_core|https:\ github.com/analogdevicesinc/no-OS/tree/main/common_drivers/adc_core <legacy/common_drivers/platform_drivers>`
    -  no-OS IIO - :doc:`iio </wiki-migration/resources/tools-software/no-os-software/iio>`
    

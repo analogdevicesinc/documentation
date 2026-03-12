@@ -12,15 +12,15 @@ In some cases, there are third-party forks that either add new projects with our
 
 As we cannot maintain and test these repositories, they still can be helpful, so we're listing them here.
 
-+-----------------------------------+--------------------------------------------------+------------------------------------------------------------+
-| Description                       | Repository link                                  | ADI HDL PR link                                            |
-+===================================+==================================================+============================================================+
-| AXI_AD6679 IP support             | https://github.com/edowson/adi-hdl               | `566 <https://github.com/analogdevicesinc/hdl/pull/566>`_  |
-+-----------------------------------+--------------------------------------------------+------------------------------------------------------------+
-| AD-FMCOMMS2 on A10SoC             | https://github.com/johnathan-convertino-afrl/hdl | `966 <https://github.com/analogdevicesinc/hdl/pull/966>`_  |
-+-----------------------------------+--------------------------------------------------+------------------------------------------------------------+
-| Fork from HDL of ArrowElectronics | https://github.com/ArrowElectronics/hdl          |                                                            |
-+-----------------------------------+--------------------------------------------------+------------------------------------------------------------+
++-----------------------------------+--------------------------------------------------+---------------------------------------------------------------------+
+| Description                       | Repository link                                  | ADI HDL PR link                                                     |
++===================================+==================================================+=====================================================================+
+| AXI_AD6679 IP support             | https://github.com/edowson/adi-hdl               | `hdl/pull/566 <https://github.com/analogdevicesinc/hdl/pull/566>`_  |
++-----------------------------------+--------------------------------------------------+---------------------------------------------------------------------+
+| AD-FMCOMMS2 on A10SoC             | https://github.com/johnathan-convertino-afrl/hdl | `hdl/pull/966 <https://github.com/analogdevicesinc/hdl/pull/966>`_  |
++-----------------------------------+--------------------------------------------------+---------------------------------------------------------------------+
+| Fork from HDL of ArrowElectronics | https://github.com/ArrowElectronics/hdl          |                                                                     |
++-----------------------------------+--------------------------------------------------+---------------------------------------------------------------------+
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide_#tips
    :alt: Using and modifying the HDL design #hdl|Main page #intro|Introduction

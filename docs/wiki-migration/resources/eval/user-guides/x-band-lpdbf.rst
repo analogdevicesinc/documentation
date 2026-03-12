@@ -484,5 +484,5 @@ The table below contains a bill of materials for the full Marlin system includin
 Questions
 ---------
 
-For additional questions or support, please contact Sid Das (sid.das@analog.com) or visit the Engineering Zone forum at ` <https://ez.analog.com/adef-system-platforms/>`__.
+For additional questions or support, please contact Sid Das (sid.das@analog.com) or visit the Engineering Zone forum at :ez:`adef-system-platforms/ <adef-system-platforms>`.
 

@@ -157,8 +157,8 @@ The easiest way of writing the constraints for FMC I/O pins is making use of a s
 
 Required setup:
 
--  Carrier common FMC connections file (:git-hdl:`projects/common`/<carrier>/<carrier>\_<fmc_port>.txt)
--  Project common FMC connections file (:git-hdl:`projects`/<project>/common/<project>_fmc.txt)
+-  Carrier common FMC connections file (:git-hdl:`hdl/tree/master/projects/common <projects/common>`/<carrier>/<carrier>\_<fmc_port>.txt)
+-  Project common FMC connections file (:git-hdl:`hdl/tree/master/projects <projects>`/<project>/common/<project>_fmc.txt)
 
 .. tip::
 
@@ -167,7 +167,7 @@ Required setup:
 
 Calling the script:
 
-To use this script you can source it in any tcl shell or simply call the adi_fmc_constr_generator.tcl with argument(s) <fmc_port>. But before sourcing or calling it, your current directory needs to be :git-hdl:`projects`/<project>/<carrier>
+To use this script you can source it in any tcl shell or simply call the adi_fmc_constr_generator.tcl with argument(s) <fmc_port>. But before sourcing or calling it, your current directory needs to be :git-hdl:`hdl/tree/master/projects <projects>`/<project>/<carrier>
 
 For example:
 
@@ -183,7 +183,7 @@ For example:
 
 .. note::
 
-   The fmc port name can be deduced from the common carrier file name (:git-hdl:`projects/common`/<carrier>/<carrier>\_<fmc_port>.txt).
+   The fmc port name can be deduced from the common carrier file name (:git-hdl:`hdl/tree/master/projects/common <projects/common>`/<carrier>/<carrier>\_<fmc_port>.txt).
 
 
 The generated file will appear in the current directory as **fmc_constr.xdc** (Xilinx board) or **fmc_constr.tcl** (Intel board). If ran from an open Vivado project, the generated file will be automatically added to the project.

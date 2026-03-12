@@ -35,10 +35,8 @@ ADALM2000 is a portable lab. It's more than the combinations of a few parts, but
 
    -  normally write custom software or HDL (for the FPGA) that run directly on the ADALM2000 device. This may put the ADALM2000 in different modes, and support different external USB devices (including LAN (via USB), or WiFi (vs USB)), extending the capabilities of the device. This includes all the information to compile HDL projects, compile kernels, change to custom USB PID/VID and/or run custom user space applications.
 
-It's expected that most people will work their way down through each section, reading and skimming most of the content. The content is in a constant state of improvement, so if you do have a question, please ask at :ez:`EngineerZone <community/university-program>`, or check the :doc:`help and support </wiki-migration/university/tools/adalm2000/help_support>` page.
+It's expected that most people will work their way down through each section, reading and skimming most of the content. The content is in a constant state of improvement, so if you do have a question, please ask at :ez:`EngineerZone <community/university-program>`, or check the :doc:`help and support </wiki-migration/university/tools/m2k/help_support>` page.
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

@@ -47,7 +47,7 @@ Running Demo (SDK) Program
 
    If you are not familiar with KC705 and/or Xilix tools, please visit
 
-   | `EK-K7-KC705-G.htm <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_ for details.
+   | `products/boards-and-kits/EK-K7-KC705-G.htm <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_ for details.
 
 
 Extract the project from the archive file to the location you desire.

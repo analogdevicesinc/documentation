@@ -26,17 +26,17 @@ Status
 Files
 -----
 
-+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                                       |
-+==========+============================================================================================================================================+
-| driver   | `adis16130_core.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/accel/adis16130_core.c>`_  |
-+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
++----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                                                 |
++==========+======================================================================================================================================================================+
+| driver   | `drivers/staging/iio/accel/adis16130_core.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/accel/adis16130_core.c>`_  |
++----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
 
 This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
 
-For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+For more information see: `Documentation/spi/spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
 
 
 Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
@@ -151,7 +151,7 @@ Show device name
 ADIS16130 device attributes
 ---------------------------
 
-For a detailed description please see: `sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/Documentation/sysfs-bus-iio>`_
+For a detailed description please see: `drivers/staging/iio/Documentation/sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/Documentation/sysfs-bus-iio>`_
 
 +---------------+
 

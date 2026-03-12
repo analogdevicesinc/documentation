@@ -163,7 +163,7 @@ AD5821A EVALUATION SOFTWARE
 SOFTWARE DOWNLOAD AND INSTALLATION
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The software required to run the AD5821A Evaluation Kit is available in the Analog Devices web. Go to :adi:`EVAL-AD5821A.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD5821A.html>` and click on the link to download a zip file with the installer, see Figure 4.
+The software required to run the AD5821A Evaluation Kit is available in the Analog Devices web. Go to :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD5821A.html` and click on the link to download a zip file with the installer, see Figure 4.
 
 .. container:: leftalign
 

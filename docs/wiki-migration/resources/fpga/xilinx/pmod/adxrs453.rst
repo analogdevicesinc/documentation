@@ -55,7 +55,7 @@ Running Demo (SDK) Program
 
    If you are not familiar with LX9 and/or Xilix tools, please visit
 
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details. If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | `products/boards-and-kits/AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details. If you are not familiar with Nexys™3 and/or Xilix tools, please visit
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
@@ -293,7 +293,7 @@ Running Demo (SDK) Program
 
    
    | If you are not familiar with LX9 and/or Xilix tools, please visit
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
+   | `products/boards-and-kits/AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
 
 
 To begin, connect the PmodGYRO2 to J5 connector of LX9 board, pins 7 to 12. You must use an extension cable or the `Pmod-TPH (Digilent) <http://digilentinc.com/Products/Detail.cfm?NavPath=2,401,549&Prod=PMOD-TPH>`_. Afterwards connect PmodACL to connector J4 of the LX9 Board (see image below).

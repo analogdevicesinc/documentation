@@ -87,9 +87,7 @@ You will need to:
 -  Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 Application Software (both locally and remotely on the FPGA)

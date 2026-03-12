@@ -60,7 +60,7 @@ Test Setup
 PACKRF SD card
 ~~~~~~~~~~~~~~
 
-The SD card image used for production testing has no differences compared to the one prepared for shipping of the PackRF. To create it please follow the instructions presented here: :doc:`Zynq & Altera SoC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/zynq_images>` and here: :doc:`SD card update </wiki-migration/resources/tools-software/linux-software/zynq_images>` sub-section "User Space Tools"
+The SD card image used for production testing has no differences compared to the one prepared for shipping of the PackRF. To create it please follow the instructions presented here: :doc:`Zynq & Altera SoC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` and here: :doc:`SD card update </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` sub-section "User Space Tools"
 
 Raspberry PI SD card
 ~~~~~~~~~~~~~~~~~~~~

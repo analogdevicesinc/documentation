@@ -76,7 +76,7 @@ Helpful Documents
 Software Download Links
 -----------------------
 
--  Analysis \| Control \| Evaluation (ACE) Software, :adi:`ace-software.html <en/design-center/evaluation-hardware-and-software/ace-software.html>`
+-  Analysis \| Control \| Evaluation (ACE) Software, :adi:`en/design-center/evaluation-hardware-and-software/ace-software.html`
 
 Design and Integration Files
 ----------------------------

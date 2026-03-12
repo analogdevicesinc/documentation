@@ -385,7 +385,7 @@ Further Reading
 
 Using .meas and .step commands to calculate efficiency in LTspice:
 
-:adi:`ltspice-using-meas-and-step-commands-to-calculate-efficiency.html <en/technical-articles/ltspice-using-meas-and-step-commands-to-calculate-efficiency.html>`
+:adi:`en/technical-articles/ltspice-using-meas-and-step-commands-to-calculate-efficiency.html`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 

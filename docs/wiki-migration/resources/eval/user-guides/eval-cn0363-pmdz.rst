@@ -25,8 +25,8 @@ People who follow the flow that is outlined, have a much better experience with 
    -  :doc:`Hardware setup </wiki-migration/resources/eval/user-guides/eval-cn0363-pmdz/prerequisites>`
    -  :doc:`Linux on ZED </wiki-migration/resources/eval/user-guides/eval-cn0363-pmdz/quickstart/zynq>`
 
-      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/zynq_images>`
-      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
 -  :doc:`Linux Software Support </wiki-migration/resources/eval/user-guides/eval-cn0363-pmdz/software/linux/applications>`
 
@@ -41,9 +41,7 @@ Warning
 -------
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 "=====Registration=====

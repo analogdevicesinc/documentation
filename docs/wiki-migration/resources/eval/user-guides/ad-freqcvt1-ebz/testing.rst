@@ -9,7 +9,7 @@ The production testing is quite simple, since each board has been completely cha
 Creating an SD test card
 ------------------------
 
-First, write the latest available SD card image found at :doc:`/wiki-migration/resources/tools-software/linux-software/zynq_images` to a spare card and prepare the card to boot into Linux as detailed on that page for the target FMCOMMS and carrier boards. In this case copy the BOOT.BIN and devicetree.dtb files from the zynq-zc706-adv7511-ad9361-fmcomms2-3 folder into the base directory of the SD card's boot partition).
+First, write the latest available SD card image found at :doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux` to a spare card and prepare the card to boot into Linux as detailed on that page for the target FMCOMMS and carrier boards. In this case copy the BOOT.BIN and devicetree.dtb files from the zynq-zc706-adv7511-ad9361-fmcomms2-3 folder into the base directory of the SD card's boot partition).
 
 Then the card needs to be modified to run the tests automatically on boot. Test scripts are provided in :git-linux_image_ADI-scripts:`linux_image_ADI-scripts` that automate initializing osc with the correct profile and environment.
 

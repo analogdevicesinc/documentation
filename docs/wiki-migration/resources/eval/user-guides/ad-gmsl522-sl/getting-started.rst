@@ -56,7 +56,7 @@ Required Software and Downloads
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  AD-GMSL522-SL image for flashing: https://swdownloads.analog.com/cse/aditof/Viper/gmsl522_1.tar.gz
--  GMSL GUI Server and other useful tools: `AD-GMSL522-SL <https://github.com/analogdevicesinc/gmsl/tree/tools/AD-GMSL522-SL>`_
+-  GMSL GUI Server and other useful tools: `gmsl/tree/tools/AD-GMSL522-SL <https://github.com/analogdevicesinc/gmsl/tree/tools/AD-GMSL522-SL>`_
 
 Recommended Tools and Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -11,7 +11,7 @@ Supported Devices
 Evaluation Boards
 -----------------
 
--  :adi:`max22531evkit.html#eb-overview <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max22531evkit.html#eb-overview>`
+-  :adi:`en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max22531evkit.html#eb-overview`
 
 Status
 ------

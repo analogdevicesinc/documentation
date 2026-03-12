@@ -238,38 +238,33 @@ Expected results
 
 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
-
-.. code:: shell
+   .. code:: shell
 
 
-   DEBUG:adi.adrv9002_multi:Creating primary device: ip:192.168.0.2
-   DEBUG:adi.adrv9002_multi:Creating secondary device: ip:192.168.0.3
-   DEBUG:adi.adrv9002_multi:Creating secondary device: ip:192.168.0.4
-   DEBUG:adi.adrv9002_multi:Creating secondary device: ip:192.168.0.5
-   Loading profiles
-   DEBUG:adi.adrv9002_multi:Setting profile_config on ip:192.168.0.2
-   DEBUG:adi.adrv9002_multi:Setting profile_config on ip:192.168.0.3
-   DEBUG:adi.adrv9002_multi:Setting profile_config on ip:192.168.0.4
-   DEBUG:adi.adrv9002_multi:Setting profile_config on ip:192.168.0.5
+      DEBUG:adi.adrv9002_multi:Creating primary device: ip:192.168.0.2
+      DEBUG:adi.adrv9002_multi:Creating secondary device: ip:192.168.0.3
+      DEBUG:adi.adrv9002_multi:Creating secondary device: ip:192.168.0.4
+      DEBUG:adi.adrv9002_multi:Creating secondary device: ip:192.168.0.5
+      Loading profiles
+      DEBUG:adi.adrv9002_multi:Setting profile_config on ip:192.168.0.2
+      DEBUG:adi.adrv9002_multi:Setting profile_config on ip:192.168.0.3
+      DEBUG:adi.adrv9002_multi:Setting profile_config on ip:192.168.0.4
+      DEBUG:adi.adrv9002_multi:Setting profile_config on ip:192.168.0.5
 
-   Waiting for 6 pulses
-   Requesting sysref
-   Waiting for MCS done on ip:192.168.0.2
-   ARM rx DMA and DDS cores
-   Mute DAC data sources
-   ARM RX/TX transfer paths
-   Configure DDSs
-   Set DDS as DAC data source
-   Enable Rx channels and define buffer size
-   Issue Sync pulse
-   Capture data
+      Waiting for 6 pulses
+      Requesting sysref
+      Waiting for MCS done on ip:192.168.0.2
+      ARM rx DMA and DDS cores
+      Mute DAC data sources
+      ARM RX/TX transfer paths
+      Configure DDSs
+      Set DDS as DAC data source
+      Enable Rx channels and define buffer size
+      Issue Sync pulse
+      Capture data
 
-.. raw:: html
-
-   </details>
 
 
 A window with a python plot will appear.
@@ -327,9 +322,9 @@ Resources
 
 -  Branches:
 
-   -  `adrv9002_mcs_sync <https://github.com/analogdevicesinc/pyadi-iio/tree/tfcollins/jupiter-sync/examples/adrv9002_mcs_sync>`_
-   -  `adrv9002-mcs-updates <https://github.com/analogdevicesinc/linux/tree/staging/adrv9002-mcs-updates>`_
-   -  :git-hdl:`tree/dev_jupiter_sdr_sync_update`
+   -  `pyadi-iio/tree/tfcollins/jupiter-sync/examples/adrv9002_mcs_sync <https://github.com/analogdevicesinc/pyadi-iio/tree/tfcollins/jupiter-sync/examples/adrv9002_mcs_sync>`_
+   -  `linux/tree/staging/adrv9002-mcs-updates <https://github.com/analogdevicesinc/linux/tree/staging/adrv9002-mcs-updates>`_
+   -  :git-hdl:`hdl/tree/dev_jupiter_sdr_sync_update <tree/dev_jupiter_sdr_sync_update>`
 
 -  Jupiter SDR boot partition files for MCS sync example:
 

@@ -80,9 +80,7 @@ The **Macro Toolbar**, as seen in Figure 3, can be used to open, record, save, c
 
 **Click** the subsections below to expand/collapse the details: 
 
-.. raw:: html
-
-   <details><summary>Record, Save Macro File and Generate Scripts XHIDDENSTARTSTOP Record device configuration and transactions by putting them into a macro file. Once a macro is generated using the Macro Tool, it can then be called again thereby repeating the steps performed in one go. The following steps explain how to generate a macro:
+.. collapsible:: Record, Save Macro File and Generate Scripts XHIDDENSTARTSTOP Record device configuration and transactions by putting them into a macro file. Once a macro is generated using the Macro Tool, it can then be called again thereby repeating the steps performed in one go. The following steps explain how to generate a macro:
 
 -  Click the **Record** button (Record macro commands) located in the left side icon on the image below, refer to Figure 4.
 
@@ -116,131 +114,118 @@ XHIDDENEND
 
 XHIDDENSTART See More Details...
 
-If there is a macro currently open and the **Record** button is selected, a window will pop up giving the options to either record a new macro or to append the recording onto the currently open macro. If a new macro will be created and added to the Macros List, select **Record new macro**. This macro will automatically become the current macro and the transactions will be recorded as components of this new macro. This will have no effect on any other open macros which will still be available in the Macros List. If the next transaction recorded will be added to the Commands List of the currently open macro, select the **Append** option.
+   If there is a macro currently open and the **Record** button is selected, a window will pop up giving the options to either record a new macro or to append the recording onto the currently open macro. If a new macro will be created and added to the Macros List, select **Record new macro**. This macro will automatically become the current macro and the transactions will be recorded as components of this new macro. This will have no effect on any other open macros which will still be available in the Macros List. If the next transaction recorded will be added to the Commands List of the currently open macro, select the **Append** option.
 
-When the **Stop** button is pressed, no further transactions will be recorded and the **Macros View** will open in the main application view area. From there, the macro commands can be played, modified, or deleted. Right-clicking on any command in the grid will open a **Context Menu**, wherein the order of execution of commands can be altered by promoting and demoting individual commands. The user can delete commands individually, or all the commands at once by selecting the **Clear all** button in the main application view area.
+   When the **Stop** button is pressed, no further transactions will be recorded and the **Macros View** will open in the main application view area. From there, the macro commands can be played, modified, or deleted. Right-clicking on any command in the grid will open a **Context Menu**, wherein the order of execution of commands can be altered by promoting and demoting individual commands. The user can delete commands individually, or all the commands at once by selecting the **Clear all** button in the main application view area.
 
-Commands can also be skipped by selecting the checkbox for that command in the **Skip** column. Similarly, you can insert a break after a particular command by selecting the checkbox in the **Break** column. When a break is added, the macro will run all commands up to and including the selected command before waiting for the user’s input to continue. Alternatively, a **delay** can be added to a command so that the macro pauses but does not stop after a command is executed. A delay can be added through the commands Context Menu for periods ranging from 10 milliseconds to 10 seconds.
+   Commands can also be skipped by selecting the checkbox for that command in the **Skip** column. Similarly, you can insert a break after a particular command by selecting the checkbox in the **Break** column. When a break is added, the macro will run all commands up to and including the selected command before waiting for the user’s input to continue. Alternatively, a **delay** can be added to a command so that the macro pauses but does not stop after a command is executed. A delay can be added through the commands Context Menu for periods ranging from 10 milliseconds to 10 seconds.
 
-The **Context** column allows the subsystem which the commands are being executed on to be set based on the list of compatible subsystems in the drop-down menu. This step may need to be carried out if the current session differs from the session when the Macro was recorded.
+   The **Context** column allows the subsystem which the commands are being executed on to be set based on the list of compatible subsystems in the drop-down menu. This step may need to be carried out if the current session differs from the session when the Macro was recorded.
 
-The **Comment** column allows the user to record non-executable comments about the operation performed.
-
-.. raw:: html
-
-   </details>
+   The **Comment** column allows the user to record non-executable comments about the operation performed.
 
 
 
 
-.. raw:: html
 
-   <details><summary>Macro Command Format and Supported Transactions
+.. collapsible:: Macro Command Format and Supported Transactions
 
-**MACRO COMMAND FORMAT**
+   **MACRO COMMAND FORMAT**
 
-``Format: <Context Path>: <TransactionName>; //Command line``
+   ``Format: <Context Path>: <TransactionName>; //Command line``
 
-+----------------+---------------------------------------+-------------------------------------------------------------------+
-| Component      | Symbol/Example                        | Description                                                       |
-+================+=======================================+===================================================================+
-| Context Path   | @Subsystem_1.AD9144 Eval Board.AD9144 | Path is made up of Subsystem number, Board Name and/or Chip Name. |
-+----------------+---------------------------------------+-------------------------------------------------------------------+
-| Path Separator | : (Colon)                             | To separate Path and Transaction                                  |
-+----------------+---------------------------------------+-------------------------------------------------------------------+
-| Transaction    | @TransactionName                      | To execute Transaction                                            |
-+----------------+---------------------------------------+-------------------------------------------------------------------+
-| Terminator     | ; (Semi-colon)                        | To separate one transaction line to other.                        |
-+----------------+---------------------------------------+-------------------------------------------------------------------+
-| Comment        | // or #                               | To create a comment line section                                  |
-+----------------+---------------------------------------+-------------------------------------------------------------------+
+   +----------------+---------------------------------------+-------------------------------------------------------------------+
+   | Component      | Symbol/Example                        | Description                                                       |
+   +================+=======================================+===================================================================+
+   | Context Path   | @Subsystem_1.AD9144 Eval Board.AD9144 | Path is made up of Subsystem number, Board Name and/or Chip Name. |
+   +----------------+---------------------------------------+-------------------------------------------------------------------+
+   | Path Separator | : (Colon)                             | To separate Path and Transaction                                  |
+   +----------------+---------------------------------------+-------------------------------------------------------------------+
+   | Transaction    | @TransactionName                      | To execute Transaction                                            |
+   +----------------+---------------------------------------+-------------------------------------------------------------------+
+   | Terminator     | ; (Semi-colon)                        | To separate one transaction line to other.                        |
+   +----------------+---------------------------------------+-------------------------------------------------------------------+
+   | Comment        | // or #                               | To create a comment line section                                  |
+   +----------------+---------------------------------------+-------------------------------------------------------------------+
 
-**COMMONLY USED TRANSACTIONS**
+   **COMMONLY USED TRANSACTIONS**
 
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-| Name               | Transaction                         | Arguments                                 | Description                                                              |
-+====================+=====================================+===========================================+==========================================================================+
-| Write Register     | Evaluation.Control.WriteRegister    | Address, Value                            | Writes the register value to hardware.                                   |
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-| Read Register      | Evaluation.Control.ReadRegister     | Address                                   | Reads the specified register.                                            |
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-| Write Register Map | Evaluation.Control.WriteRegisterMap | MapName                                   | Writes software values in the map to part, or all maps if not specified. |
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-| Read Register Map  | Evaluation.Control.ReadRegisterMap  | MapName                                   | Reads the registers in the memory map, or all maps if not specified.     |
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-| Select Page        | Evaluation.Control.SelectPage       | PageGroupName, pageIndex                  | Sets the current index for a page group.                                 |
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-| Write Bitfield     | Evaluation.Control.WriteBitfield    | BitfieldName, Value, (optional) pageIndex | Writes the bitfield value to hardware.                                   |
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-| Read Bitfield      | Evaluation.Control.ReadBitfield     | BitfieldName, (optional) pageIndex        | Reads the specified bitfield value.                                      |
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-| Reset              | @Reset()                            | -                                         | Resets the part.                                                         |
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-| Apply Settings     | @ApplySettings()                    | -                                         | Applies ACE values to the part.                                          |
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-| Read Settings      | @ReadSettings()                     | -                                         | Reads values from the part.                                              |
-+--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
-
-.. raw:: html
-
-   </details>
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+   | Name               | Transaction                         | Arguments                                 | Description                                                              |
+   +====================+=====================================+===========================================+==========================================================================+
+   | Write Register     | Evaluation.Control.WriteRegister    | Address, Value                            | Writes the register value to hardware.                                   |
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+   | Read Register      | Evaluation.Control.ReadRegister     | Address                                   | Reads the specified register.                                            |
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+   | Write Register Map | Evaluation.Control.WriteRegisterMap | MapName                                   | Writes software values in the map to part, or all maps if not specified. |
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+   | Read Register Map  | Evaluation.Control.ReadRegisterMap  | MapName                                   | Reads the registers in the memory map, or all maps if not specified.     |
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+   | Select Page        | Evaluation.Control.SelectPage       | PageGroupName, pageIndex                  | Sets the current index for a page group.                                 |
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+   | Write Bitfield     | Evaluation.Control.WriteBitfield    | BitfieldName, Value, (optional) pageIndex | Writes the bitfield value to hardware.                                   |
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+   | Read Bitfield      | Evaluation.Control.ReadBitfield     | BitfieldName, (optional) pageIndex        | Reads the specified bitfield value.                                      |
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+   | Reset              | @Reset()                            | -                                         | Resets the part.                                                         |
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+   | Apply Settings     | @ApplySettings()                    | -                                         | Applies ACE values to the part.                                          |
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
+   | Read Settings      | @ReadSettings()                     | -                                         | Reads values from the part.                                              |
+   +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
 
 
 
 
-.. raw:: html
 
-   <details><summary>Creating and Loading Macro File to ACE Macro Tool
+.. collapsible:: Creating and Loading Macro File to ACE Macro Tool
 
-**CREATE AND LOAD MACRO FILE**
+   **CREATE AND LOAD MACRO FILE**
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   \ |image7|\ *Figure 7. Open Macro File*\
+      \ |image7|\ *Figure 7. Open Macro File*\
 
 
--  Open any text editor, such as Notepad, to create a macro file.
--  Create a macro command sequence following the previous subsection (**Macro Command Format and Supported Transactions**)
--  After creating macro commands, you can save the text file using the acemacro format **(.acemacro)**.
--  In the **Macro Tool**, click the **Open Macro** button to import the created macro file, as seen in Figure 7.
--  The imported macro file will be listed under **Macros**.
--  Click the **Play Macro** button to play all or selected commands from the imported macro.
+   -  Open any text editor, such as Notepad, to create a macro file.
+   -  Create a macro command sequence following the previous subsection (**Macro Command Format and Supported Transactions**)
+   -  After creating macro commands, you can save the text file using the acemacro format **(.acemacro)**.
+   -  In the **Macro Tool**, click the **Open Macro** button to import the created macro file, as seen in Figure 7.
+   -  The imported macro file will be listed under **Macros**.
+   -  Click the **Play Macro** button to play all or selected commands from the imported macro.
 
-**SAMPLE MACRO CODE**
+   **SAMPLE MACRO CODE**
 
-``A sample macro to configure AD9122-M5375-EBZ by setting the NCO modulation frequency to 30MHz. The DAC frequency is set to 500MHz with an interpolation value of 4.``
+   ``A sample macro to configure AD9122-M5375-EBZ by setting the NCO modulation frequency to 30MHz. The DAC frequency is set to 500MHz with an interpolation value of 4.``
 
-::
+   ::
 
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: @Reset(); //Resetting the AD9122 Chip.
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x1C, 0x00);  //Enable Half Band Filter 1
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x1D, 0x00);  //Enable Half Band Filter 2
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x1E, 0x01);  //Disable Half Band Filter 3
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x30, 0xEC);  //Writing FTW_0 with data 0xCD
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x31, 0x51);  //Writing FTW_1 with data 0xCC
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x32, 0xB8);  //Writing FTW_2 with data 0xCC
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x33, 0x1E);  //Writing FTW_3 with data 0x4C
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteBitfield("Bypass_NCO", 0);  //Enabling NCO Mode
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteBitfield("Update_FTW_request", 1);  //Updating FTW
-   UI.pause(300);                                                                //Delays the macro for 300 ms before executing next command
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.ReadRegister(0x36);  //Reading data from NCO_FTW_update
-   @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.ReadRegisterMap();  //Reading all registers data
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: @Reset(); //Resetting the AD9122 Chip.
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x1C, 0x00);  //Enable Half Band Filter 1
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x1D, 0x00);  //Enable Half Band Filter 2
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x1E, 0x01);  //Disable Half Band Filter 3
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x30, 0xEC);  //Writing FTW_0 with data 0xCD
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x31, 0x51);  //Writing FTW_1 with data 0xCC
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x32, 0xB8);  //Writing FTW_2 with data 0xCC
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteRegister(0x33, 0x1E);  //Writing FTW_3 with data 0x4C
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteBitfield("Bypass_NCO", 0);  //Enabling NCO Mode
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.WriteBitfield("Update_FTW_request", 1);  //Updating FTW
+      UI.pause(300);                                                                //Delays the macro for 300 ms before executing next command
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.ReadRegister(0x36);  //Reading data from NCO_FTW_update
+      @Subsystem_1.AD9122-M5375-EBZ.AD9122: Evaluation.Control.ReadRegisterMap();  //Reading all registers data
 
-**SAMPLE MACRO CODE WITH PAGE SELECTOR**
+   **SAMPLE MACRO CODE WITH PAGE SELECTOR**
 
-``A sample macro to enable the digital gain and inverse sinc of AD9136-FMC-EBZ. DAC0 and DAC1 share the same register address (0x111). In order to write bits in the registers of each DAC, select the PageIndx (DIGITAL_DAC_PAGING) corresponding to each DAC channel.``
+   ``A sample macro to enable the digital gain and inverse sinc of AD9136-FMC-EBZ. DAC0 and DAC1 share the same register address (0x111). In order to write bits in the registers of each DAC, select the PageIndx (DIGITAL_DAC_PAGING) corresponding to each DAC channel.``
 
-.. code:: xml
+   .. code:: xml
 
-   @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.SelectPage("DIGITAL_DAC_PAGING", 0);  //Selecting Page 0 to configure DAC0
-   @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.WriteRegister(0x111, 0xA0);  //Enabling Digital Gain and Inverse Sinc
-   @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.SelectPage("DIGITAL_DAC_PAGING", 1);  //Selecting Page 0 to configure DAC1
-   @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.WriteRegister(0x111, 0xA0);  //Enabling Digital Gain and Inverse Sinc
-   @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.ReadRegisterMap();  //Reading all registers data
+      @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.SelectPage("DIGITAL_DAC_PAGING", 0);  //Selecting Page 0 to configure DAC0
+      @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.WriteRegister(0x111, 0xA0);  //Enabling Digital Gain and Inverse Sinc
+      @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.SelectPage("DIGITAL_DAC_PAGING", 1);  //Selecting Page 0 to configure DAC1
+      @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.WriteRegister(0x111, 0xA0);  //Enabling Digital Gain and Inverse Sinc
+      @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.ReadRegisterMap();  //Reading all registers data
 
-.. raw:: html
-
-   </details>
 
 
 System Explorer

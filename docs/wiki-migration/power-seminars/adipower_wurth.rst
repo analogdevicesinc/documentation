@@ -3,9 +3,9 @@
 Customer Seminar with partner Würth Elektronik
 ==============================================
 
-Thank you for attending the global ADI Power + Würth customer seminar in your region. If you would like to attend one of the events with Würth, please check out: :adi:`adi-power-and-wurth-seminars.html <en/lp/001/adi-power-and-wurth-seminars.html>`
+Thank you for attending the global ADI Power + Würth customer seminar in your region. If you would like to attend one of the events with Würth, please check out: :adi:`en/lp/001/adi-power-and-wurth-seminars.html`
 
-We also run ADI Power only seminars. Check them out: :adi:`adi-power-seminar-series.html?lid= <en/lp/001/adi-power-seminar-series.html?lid=>`
+We also run ADI Power only seminars. Check them out: :adi:`en/lp/001/adi-power-seminar-series.html?lid=`
 
 Below is the seminar agenda and presentations files for you :
 
@@ -16,7 +16,7 @@ Downloads
 
 Software for LTpowerPlanner, LTpowerCAD, LTspice and all other ADI design tools are publicly available at:
 
-:adi:`design-tools-and-calculators.html <en/resources/design-tools-and-calculators.html>`
+:adi:`en/resources/design-tools-and-calculators.html`
 
 Seminar Presentations
 =====================

@@ -80,7 +80,7 @@ Simplified Block Diagram
 SDK
 ~~~
 
-An open source SDK for this evaluation platform is provided on :git-ToF:`ToF`. The SDK also requires the depth compute libraries which are provided as binaries in the installer @ ` <https://github.com/analogdevicesinc/ToF/releases/>`__.
+An open source SDK for this evaluation platform is provided on :git-ToF:`ToF`. The SDK also requires the depth compute libraries which are provided as binaries in the installer @ `ToF/releases/ <https://github.com/analogdevicesinc/ToF/releases>`_.
 
 The SDK comes with a GUI and first frame examples. As well as bindings for Python, OpenCV, ROS and Open3D.
 

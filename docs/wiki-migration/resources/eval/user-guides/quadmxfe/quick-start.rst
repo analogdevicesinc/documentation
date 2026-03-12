@@ -81,18 +81,13 @@ Downloads
 
 
 
-.. raw:: html
+.. collapsible:: Older releases (Click to expand)
 
-   <details><summary>Older releases (Click to expand)
+   -   `Quad_MxFE_for_VCU118_2021-08-10.zip <http://swdownloads.analog.com/cse/mxfe/Quad_MxFE_for_VCU118_2021-08-10.zip>`_
+   -   `Quad_MxFE_for_VCU118_2021-04-28.zip <http://swdownloads.analog.com/cse/mxfe/Quad_MxFE_for_VCU118_2021-04-28.zip>`_
+   -   `Quad_MxFE_for_VCU118_2021-03-05.zip <http://swdownloads.analog.com/cse/mxfe/Quad_MxFE_for_VCU118_2021-03-05.zip>`_
+   -   `Quad MxFE for VCU118 2020-12-22.zip <http://swdownloads.analog.com/cse/mxfe/Quad MxFE for VCU118 2020-12-22.zip>`_
 
--   `Quad_MxFE_for_VCU118_2021-08-10.zip <http://swdownloads.analog.com/cse/mxfe/Quad_MxFE_for_VCU118_2021-08-10.zip>`_
--   `Quad_MxFE_for_VCU118_2021-04-28.zip <http://swdownloads.analog.com/cse/mxfe/Quad_MxFE_for_VCU118_2021-04-28.zip>`_
--   `Quad_MxFE_for_VCU118_2021-03-05.zip <http://swdownloads.analog.com/cse/mxfe/Quad_MxFE_for_VCU118_2021-03-05.zip>`_
--   `Quad MxFE for VCU118 2020-12-22.zip <http://swdownloads.analog.com/cse/mxfe/Quad MxFE for VCU118 2020-12-22.zip>`_
-
-.. raw:: html
-
-   </details>
 
 
 -  use: run.vcu118_quad_ad9081_204c_txmode_29_rxmode_24.tcl

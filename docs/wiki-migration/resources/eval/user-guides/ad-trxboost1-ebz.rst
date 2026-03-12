@@ -19,7 +19,5 @@ The purpose of the AD-TRXBOOST1-EBZ is to add an pre-amp to the TX output and an
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad-trxboost1-ebz/help_and_support>`
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

@@ -88,7 +88,7 @@ The ADC sampling rate can vary from 40MHz to 250MHz. However, there are limitati
 
 As of this writing, the GTX specification & switching characteristics may be found at:
 
-`ug476_7Series_Transceivers.pdf <https://www.xilinx.com/support/documentation/user_guides/ug476_7Series_Transceivers.pdf>`_ `ds182_Kintex_7_Data_Sheet.pdf <https://www.xilinx.com/support/documentation/data_sheets/ds182_Kintex_7_Data_Sheet.pdf>`_
+`support/documentation/user_guides/ug476_7Series_Transceivers.pdf <https://www.xilinx.com/support/documentation/user_guides/ug476_7Series_Transceivers.pdf>`_ `support/documentation/data_sheets/ds182_Kintex_7_Data_Sheet.pdf <https://www.xilinx.com/support/documentation/data_sheets/ds182_Kintex_7_Data_Sheet.pdf>`_
 
 The key switching characteristics are-
 

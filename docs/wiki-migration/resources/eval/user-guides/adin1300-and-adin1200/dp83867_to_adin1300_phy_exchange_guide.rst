@@ -268,7 +268,7 @@ PHY Exchange Guide, DP83867 to ADIN1300 Gb
          **Non Operating System Driver**
 
          
-         The ADIN1300 has a Non Operating System Driver available from the devices product page here: :adi:`adin1300.html#product-requirement <en/products/adin1300.html#product-requirement>`
+         The ADIN1300 has a Non Operating System Driver available from the devices product page here: :adi:`en/products/adin1300.html#product-requirement`
          
 
    

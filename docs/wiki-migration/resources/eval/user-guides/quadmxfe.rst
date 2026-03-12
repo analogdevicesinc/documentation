@@ -216,7 +216,7 @@ FPGA Evaluation Board Hardware
 Questions
 ---------
 
-For additional questions or support, please visit the Engineering Zone forum at ` <https://ez.analog.com/adef-system-platforms/>`__.
+For additional questions or support, please visit the Engineering Zone forum at :ez:`adef-system-platforms/ <adef-system-platforms>`.
 
 --------------
 

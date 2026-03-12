@@ -173,7 +173,7 @@ Schematics, Layout, Gerbers, BOM and Software
 -  `Mentor Graphics Pads Schematic & Layout <https://wiki.analog.com/_media/resources/eval/analog_devices_ad5560ebuz_rev_a_schematic_layout.zip>`_
 -  `Gerbers <https://wiki.analog.com/_media/resources/eval/ad5560ebu_a.zip>`_
 -  `BOM <https://wiki.analog.com/_media/resources/eval/ad5560ebu_a3.xls>`_
--  Software Download available from: :adi:`AD5560_Evaluation_Software.zip <static/imported-files/eval_boards/AD5560_Evaluation_Software.zip>`
+-  Software Download available from: :adi:`static/imported-files/eval_boards/AD5560_Evaluation_Software.zip`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/simple_block_evb.jpg
    :width: 600px

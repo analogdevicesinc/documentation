@@ -5,7 +5,7 @@ Zip file
 
 For releases up to ADI FreeRTOS version 1.5.x, source code for both upstream official FreeRTOS release, and the Analog Devices FreeRTOS add on product release are required.
 
-The version 1.5.1 overlay zip file containing FreeRTOS sources and Demos can be downloaded from :adi:`freertos-licensing-agreement-current.html <license/licensing-agreement/freertos-licensing-agreement-current.html>`
+The version 1.5.1 overlay zip file containing FreeRTOS sources and Demos can be downloaded from :adi:`license/licensing-agreement/freertos-licensing-agreement-current.html`
 
 This zip file needs to be overlayed on top of a standard FreeRTOS version 10 directory which can be downloaded from https://sourceforge.net/projects/freertos/files/FreeRTOS/
 
@@ -14,9 +14,9 @@ Github
 
 Previous versions of ADI FreeRTOS are available via Github.
 
-There is a branch containing the latest ADI version for each FreeRTOS version : :git-FreeRTOS:`branches`
+There is a branch containing the latest ADI version for each FreeRTOS version : :git-FreeRTOS:`FreeRTOS/branches <branches>`
 
-There is a tag for each ADI released version : `tags <https://github.com/analogdevicesinc/FreeRTOS/tags>`_
+There is a tag for each ADI released version : `FreeRTOS/tags <https://github.com/analogdevicesinc/FreeRTOS/tags>`_
 
 User Guides
 ===========

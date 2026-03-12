@@ -166,14 +166,14 @@ Dragging and Dropping the Hex File to the Daplink Drive
    
    The latest source code can be found here:
    
-   -  :git-EVAL-ADICUP3029:`projects/ADuCM3029_demo_adpd410x`.
+   -  :git-EVAL-ADICUP3029:`EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_adpd410x <projects/ADuCM3029_demo_adpd410x>`.
    
 
 
 Using CrossCore Embedded Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Acquire a copy of the project source files of the :adi:`EVAL-ADPD410x-ARDZ` by downloading the source files directly from the repository at :git-EVAL-ADICUP3029:`projects/ADuCM3029_demo_adpd410x` or you can clone the entire :git-EVAL-ADICUP3029:`EVAL-ADICUP3029 repository <EVAL-ADICUP3029>` and check the projects folder for ADuCM3029_demo_adpd410x.
+-  Acquire a copy of the project source files of the :adi:`EVAL-ADPD410x-ARDZ` by downloading the source files directly from the repository at :git-EVAL-ADICUP3029:`EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_adpd410x <projects/ADuCM3029_demo_adpd410x>` or you can clone the entire :git-EVAL-ADICUP3029:`EVAL-ADICUP3029 repository <EVAL-ADICUP3029>` and check the projects folder for ADuCM3029_demo_adpd410x.
 -  Open CrossCore Embedded Studio and import the project into your workspace, as detailed in the :doc:`cces_user_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`. This allows you to edit the software to fit your requirements.
 
 .. important::
@@ -271,7 +271,7 @@ Software Setup
 Installation
 ~~~~~~~~~~~~
 
-To communicate with the device from the PC or laptop using IIO commands, install the Libiio package by following the guide in the repository: `releases <https://github.com/analogdevicesinc/libiio/releases>`_. The method is different for Windows or Linux operating systems.
+To communicate with the device from the PC or laptop using IIO commands, install the Libiio package by following the guide in the repository: `libiio/releases <https://github.com/analogdevicesinc/libiio/releases>`_. The method is different for Windows or Linux operating systems.
 
 Connection
 ~~~~~~~~~~
@@ -405,7 +405,7 @@ There are two example scripts found in the examples folder in :doc:`PyADI-IIO </
 
 If you are using `pip <https://pip.pypa.io/en/stable>`_, you can install all of the PyADI-IIO, as well as the example script dependencies, by following these steps:
 
--  Clone or download the pyadi-iio repository ` <https://github.com/analogdevicesinc/pyadi-iio/>`__
+-  Clone or download the pyadi-iio repository `pyadi-iio/ <https://github.com/analogdevicesinc/pyadi-iio/>`_
 -  Open command prompt or terminal and navigate to the *pyadi-iio* directory.
 -  Enter the following commands: ``...\pyadi-iio\>pip install -r requirements.txt
    ...\pyadi-iio\>pip install -r examples/requirements_adiplot.txt
@@ -419,7 +419,7 @@ If you are using `pip <https://pip.pypa.io/en/stable>`_, you can install all of 
 Running the Examples
 ^^^^^^^^^^^^^^^^^^^^
 
-There are three example scripts for the ADPD410x found in ` <https://github.com/analogdevicesinc/pyadi-iio/>`__. The first simply reads from the photodiode channels, the second plots specified photodiode channels, and the third tests the board separately, with its onboard LED and photodiode and with a test setup built from the simple example circuit from :doc:`Prototyping Connectors </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x>`. For example 1, follow these steps:
+There are three example scripts for the ADPD410x found in `pyadi-iio/ <https://github.com/analogdevicesinc/pyadi-iio/>`_. The first simply reads from the photodiode channels, the second plots specified photodiode channels, and the third tests the board separately, with its onboard LED and photodiode and with a test setup built from the simple example circuit from :doc:`Prototyping Connectors </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x>`. For example 1, follow these steps:
 
 -  Connect the :adi:`EVAL-ADPD410x-ARDZ` to the :adi:`EVAL-ADICUP3029`.
 -  Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro-USB cable and note the serial port from the Device Manager as in :doc:`Connection </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x>`.

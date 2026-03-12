@@ -28,8 +28,8 @@ People who follow the flow that is outlined, have a much better experience with 
    -  :doc:`Quick Start Guides </wiki-migration/resources/eval/user-guides/adrv904x/quickstart>`
 
       -  :doc:`Linux on ZCU102 </wiki-migration/resources/eval/user-guides/adrv904x/quickstart/zynqmp>`
-      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/zynq_images>`
-      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
    -  Linux Applications
 
@@ -113,7 +113,5 @@ Warning
 -------
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

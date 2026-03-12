@@ -40,7 +40,7 @@ Linux
 -  :doc:`AD9250 Linux driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
 -  :doc:`JESD204B/C Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`: Linux driver for the JESD204B receive core.
 -  :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
--  :doc:`ZC706 Linux image </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+-  :doc:`ZC706 Linux image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 -  :doc:`Linux on the KC705, VC707 </wiki-migration/resources/eval/user-guides/ad-fmcjesdadc1-ebz/quickstart/microblaze>`
 
 Specifications

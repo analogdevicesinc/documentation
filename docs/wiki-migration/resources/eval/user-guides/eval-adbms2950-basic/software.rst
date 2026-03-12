@@ -165,26 +165,21 @@ Installing the Firmware
 
 
 
-.. raw:: html
+.. collapsible:: **Click here for instructions on how to flash the firmware image using the MAX32625PICO**
 
-   <details><summary>**Click here for instructions on how to flash the firmware image using the MAX32625PICO**
+   -  Access the :git-max32625pico-firmware-images:`MAX32625PICO Firmware Repository <max32625pico-firmware-images>` and download the image for the specific MCU (e.g., MAX32690).
+   -  Do not connect the MAX32625PICO from the PC and the MCU board that you are using (e.g., AD-APARDMAX32690-SL, MAX32670 MCU base board).
+   -  Plug the micro-USB cable only in the MAX32625PICO.
+   -  Press the button on the MAX32625PICO and then plug the other end of the micro-USB cable into the PC. (Do not release the button until the MAINTENANCE drive is mounted).
 
--  Access the :git-max32625pico-firmware-images:`MAX32625PICO Firmware Repository <max32625pico-firmware-images>` and download the image for the specific MCU (e.g., MAX32690).
--  Do not connect the MAX32625PICO from the PC and the MCU board that you are using (e.g., AD-APARDMAX32690-SL, MAX32670 MCU base board).
--  Plug the micro-USB cable only in the MAX32625PICO.
--  Press the button on the MAX32625PICO and then plug the other end of the micro-USB cable into the PC. (Do not release the button until the MAINTENANCE drive is mounted).
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/max32625pico_flasher.png
+      :align: center
+      :width: 400px
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/max32625pico_flasher.png
-   :align: center
-   :width: 400px
+   -  Release the button once the MAINTENANCE drive is mounted.
+   -  Drag and drop (to the MAINTENANCE drive) the firmware image.
+   -  After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware to the MAXIM MCU (e.g., AD-APARDMAX32690-SL, MAX32670 MCU base board) as indicated by step #3 in "Installing the Software".
 
--  Release the button once the MAINTENANCE drive is mounted.
--  Drag and drop (to the MAINTENANCE drive) the firmware image.
--  After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware to the MAXIM MCU (e.g., AD-APARDMAX32690-SL, MAX32670 MCU base board) as indicated by step #3 in "Installing the Software".
-
-.. raw:: html
-
-   </details>
 
 
 --------------

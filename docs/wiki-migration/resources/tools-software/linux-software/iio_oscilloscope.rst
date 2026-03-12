@@ -39,7 +39,7 @@ To build on a development host (e.g. x86 laptop or desktop) do the following:
 
 .. important::
 
-   Users building libiio from source, please use the following branch : :git-libiio:`tree/libiio-v0`\
+   Users building libiio from source, please use the following branch : :git-libiio:`libiio/tree/libiio-v0 <tree/libiio-v0>`\
 
 
 -  Optionally build and install the libad9166-iio and libad9361-iio libraries, by following :doc:`these instructions </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.

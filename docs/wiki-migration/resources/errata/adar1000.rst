@@ -61,4 +61,4 @@ PCB design techniques for reliable Land Grid Array assembly (Preliminary):
 
 `an-xxxx-lga_pcb_design_for_reliable_assembly_2021.03.18_preliminary.pdf <https://wiki.analog.com/_media/resources/errata/adar1000/an-xxxx-lga_pcb_design_for_reliable_assembly_2021.03.18_preliminary.pdf>`_
 
-Article version found here: :adi:`reliable-pcb-assembly-of-land-grid-array-pkgs.html <en/technical-articles/reliable-pcb-assembly-of-land-grid-array-pkgs.html>`
+Article version found here: :adi:`en/technical-articles/reliable-pcb-assembly-of-land-grid-array-pkgs.html`

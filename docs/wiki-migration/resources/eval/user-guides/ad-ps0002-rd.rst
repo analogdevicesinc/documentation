@@ -250,14 +250,14 @@ Resources
 
 \*\* ADI Parts \*\*
 
--  :adi:`max77958.html <en/products/max77958.html>`
--  :adi:`max77786.html <en/products/max77786.html>`
--  :adi:`max17300.html <en/products/max17300.html>`
--  :adi:`max77857.html <en/products/max77857.html>`
--  :adi:`max77542.html <en/products/max77542.html>`
--  :adi:`max14727.html <en/products/max14727.html>`
--  :adi:`max38889.html <en/products/max38889.html>`
--  :adi:`max14611.html <en/products/max14611.html>`
+-  :adi:`en/products/max77958.html`
+-  :adi:`en/products/max77786.html`
+-  :adi:`en/products/max17300.html`
+-  :adi:`en/products/max77857.html`
+-  :adi:`en/products/max77542.html`
+-  :adi:`en/products/max14727.html`
+-  :adi:`en/products/max38889.html`
+-  :adi:`en/products/max14611.html`
 
 Support
 -------

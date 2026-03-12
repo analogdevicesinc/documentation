@@ -53,9 +53,7 @@ You will need to:
 - Turn it on.
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 Programming the FPGA
@@ -119,134 +117,129 @@ Nios II Terminal
 
 To start the Nios II Terminal use the following **nios2-terminal.exe** command. Example of console: 
 
-.. raw:: html
+.. collapsible:: Complete kernel boot log (Click to expand)
 
-   <details><summary>Complete kernel boot log (Click to expand)
+   .. container:: box bggreen
 
-.. container:: box bggreen
 
-   
-   ::
-   
-      ceshu@LADACE-L02:/mnt/c/Users/ladace/Downloads/adrv9371x_a10gx$ nios2-terminal.exe
-      nios2-terminal: connected to hardware target using JTAG UART on cable
-      nios2-terminal: "USB-BlasterII [USB-1]", device 1, instance 0
-      nios2-terminal: (Use the IDE stop button or Ctrl-C to terminate)
-   
-      Linux version 4.9.0-04235-g4db1e6cb5208 (sandu@saturn) (gcc versiLinux version 4.19.0-g17f4223 (jenkins@romlxbuild1.adlk
-      .analog.com) (gcc version 8.3.1 20190416 (Altera 19.3 Build 222)) #1875 Tue Jul 27 14:46:07 IST 2021
-      On node 0 totalpages: 65536
-        Normal zone: 512 pages used for memmap
-        Normal zone: 0 pages reserved
-        Normal zone: 65536 pages, LIFO batch:15
-      pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
-      pcpu-alloc: [0] 0
-      Built 1 zonelists, mobility grouping on.  Total pages: 65024
-      Kernel command line: debug console=ttyJ0,115200
-      Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
-      Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
-      Sorting __ex_table...
-      Memory: 247920K/262144K available (3795K kernel code, 469K rwdata, 4372K rodata, 3160K init, 106K bss, 14224K reserved,
-      0K cma-reserved)
-      NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
-      clocksource: nios2-clksrc: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
-      Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=400000)
-      pid_max: default: 32768 minimum: 301
-      Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
-      Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
-      devtmpfs: initialized
-      random: get_random_u32 called from bucket_table_alloc.isra.6+0x98/0x1e8 with crng_init=0
-      clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
-      futex hash table entries: 256 (order: -1, 3072 bytes)
-      NET: Registered protocol family 16
-      jesd204: found 0 devices and 0 topologies
-      clocksource: Switched to clocksource nios2-clksrc
-      NET: Registered protocol family 2
-      tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes)
-      TCP established hash table entries: 2048 (order: 1, 8192 bytes)
-      TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
-      TCP: Hash tables configured (established 2048 bind 2048)
-      UDP hash table entries: 256 (order: 0, 4096 bytes)
-      UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
-      NET: Registered protocol family 1
-      RPC: Registered named UNIX socket transport module.
-      RPC: Registered udp transport module.
-      RPC: Registered tcp transport module.
-      RPC: Registered tcp NFSv4.1 backchannel transport module.
-      random: fast init done
-      workingset: timestamp_bits=30 max_order=16 bucket_order=0
-      jffs2: version 2.2. (NAND) ┬⌐ 2001-2006 Red Hat, Inc.
-      Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
-      io scheduler noop registered
-      io scheduler deadline registered
-      io scheduler cfq registered (default)
-      io scheduler mq-deadline registered
-      io scheduler kyber registered
-      101814f0.serial: ttyJ0 at MMIO 0x101814f0 (irq = 2, base_baud = 0) is a Altera JTAG UART
-      console [ttyJ0] enabled
-      loop: module loaded
-      spi_altera 10181400.spi: base (ptrval), irq 8
-      libphy: Fixed MDIO Bus: probed
-      libphy: altera_tse: probed
-      altera_tse 10181000.ethernet (unnamed net_device) (uninitialized): MDIO bus altera_tse-0: created
-      altera_tse 10181000.ethernet: Altera TSE MAC version 19.3 at 0x10181000 irq 1/3
-      ad9371 spi0.1: ad9371_probe : enter
-      altera-a10-fpll 10045000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
-      altera-a10-fpll 10035000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
-      altera-a10-fpll 10025000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
-      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: ATX PLL calibration OK (20 ms)
-      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 0 TX termination and VOD calibration OK (400 us)
-      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 1 TX termination and VOD calibration OK (400 us)
-      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 2 TX termination and VOD calibration OK (500 us)
-      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 3 TX termination and VOD calibration OK (500 us)
-      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Altera ADXCVR (17.01.a) probed
-      altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Lane 0 CDR/CMU PLL & RX offset calibration OK (400 us)
-      altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Lane 1 CDR/CMU PLL & RX offset calibration OK (500 us)
-      altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Altera ADXCVR (17.01.a) probed
-      altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Lane 0 CDR/CMU PLL & RX offset calibration OK (600 us)
-      altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Lane 1 CDR/CMU PLL & RX offset calibration OK (500 us)
-      altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Altera ADXCVR (17.01.a) probed
-      NET: Registered protocol family 17
-      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
-      altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
-      altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
-      ad9371 spi0.1: ad9371_probe : enter
-      ad9371 spi0.1: ad9371_probe : enter
-      random: crng init done
-      ad9371 spi0.1: framerStatus (0x20)
-      ad9371 spi0.1: AD9371 Rev 3, Firmware 5.2.2 API version: 1.5.2.3566 successfully initialized
-      cf_axi_dds 10054000.axi-ad9371-tx-hpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.01.b) at 0x10054000 mapped to 0x03281b71,
-       probed DDS AD9371
-      cf_axi_adc 10050000.axi-ad9371-rx-hpc: ADI AIM (10.01.b) at 0x10050000 mapped to 0x78806569, probed ADC AD9371 as MASTER
-      Freeing unused kernel memory: 3160K
-      This architecture does not have kernel memory protection.
-      Run /init as init process
-      Starting logging: OK
-      Initializing random number generator... done.
-      Starting network: OK
-      altera_tse 10181000.ethernet eth0: device MAC address b2:94:3d:6e:11:8f
-      altera_tse 10181000.ethernet eth0: TSE revision 1303
-      altera_tse 10181000.ethernet eth0: PCS PHY ID: 0x00000000
-      altera_tse 10181000.ethernet eth0: SGMII PCS block initialised OK
-      altera_tse 10181000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
-      Network cable is plugged
-      udhcpc: started, v1.25.0
-      udhcpc: sending discover
-      udhcpc: sending select for 10.48.65.123
-      udhcpc: lease of 10.48.65.123 obtained, lease time 21600
-      deleting routers
-      adding dns 10.32.51.110
-      adding dns 10.64.53.110
-                inet addr:10.48.65.123  Bcast:10.48.65.255  Mask:255.255.255.0
-      Starting dropbear sshd: OK
-      Starting IIO Server Daemon
-   
-      Welcome to Buildroot
-      buildroot login:
+      ::
 
-.. raw:: html
+         ceshu@LADACE-L02:/mnt/c/Users/ladace/Downloads/adrv9371x_a10gx$ nios2-terminal.exe
+         nios2-terminal: connected to hardware target using JTAG UART on cable
+         nios2-terminal: "USB-BlasterII [USB-1]", device 1, instance 0
+         nios2-terminal: (Use the IDE stop button or Ctrl-C to terminate)
 
-   </details>
+         Linux version 4.9.0-04235-g4db1e6cb5208 (sandu@saturn) (gcc versiLinux version 4.19.0-g17f4223 (jenkins@romlxbuild1.adlk
+         .analog.com) (gcc version 8.3.1 20190416 (Altera 19.3 Build 222)) #1875 Tue Jul 27 14:46:07 IST 2021
+         On node 0 totalpages: 65536
+           Normal zone: 512 pages used for memmap
+           Normal zone: 0 pages reserved
+           Normal zone: 65536 pages, LIFO batch:15
+         pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
+         pcpu-alloc: [0] 0
+         Built 1 zonelists, mobility grouping on.  Total pages: 65024
+         Kernel command line: debug console=ttyJ0,115200
+         Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+         Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+         Sorting __ex_table...
+         Memory: 247920K/262144K available (3795K kernel code, 469K rwdata, 4372K rodata, 3160K init, 106K bss, 14224K reserved,
+         0K cma-reserved)
+         NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+         clocksource: nios2-clksrc: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+         Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=400000)
+         pid_max: default: 32768 minimum: 301
+         Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+         Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+         devtmpfs: initialized
+         random: get_random_u32 called from bucket_table_alloc.isra.6+0x98/0x1e8 with crng_init=0
+         clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+         futex hash table entries: 256 (order: -1, 3072 bytes)
+         NET: Registered protocol family 16
+         jesd204: found 0 devices and 0 topologies
+         clocksource: Switched to clocksource nios2-clksrc
+         NET: Registered protocol family 2
+         tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes)
+         TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+         TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
+         TCP: Hash tables configured (established 2048 bind 2048)
+         UDP hash table entries: 256 (order: 0, 4096 bytes)
+         UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+         NET: Registered protocol family 1
+         RPC: Registered named UNIX socket transport module.
+         RPC: Registered udp transport module.
+         RPC: Registered tcp transport module.
+         RPC: Registered tcp NFSv4.1 backchannel transport module.
+         random: fast init done
+         workingset: timestamp_bits=30 max_order=16 bucket_order=0
+         jffs2: version 2.2. (NAND) ┬⌐ 2001-2006 Red Hat, Inc.
+         Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+         io scheduler noop registered
+         io scheduler deadline registered
+         io scheduler cfq registered (default)
+         io scheduler mq-deadline registered
+         io scheduler kyber registered
+         101814f0.serial: ttyJ0 at MMIO 0x101814f0 (irq = 2, base_baud = 0) is a Altera JTAG UART
+         console [ttyJ0] enabled
+         loop: module loaded
+         spi_altera 10181400.spi: base (ptrval), irq 8
+         libphy: Fixed MDIO Bus: probed
+         libphy: altera_tse: probed
+         altera_tse 10181000.ethernet (unnamed net_device) (uninitialized): MDIO bus altera_tse-0: created
+         altera_tse 10181000.ethernet: Altera TSE MAC version 19.3 at 0x10181000 irq 1/3
+         ad9371 spi0.1: ad9371_probe : enter
+         altera-a10-fpll 10045000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
+         altera-a10-fpll 10035000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
+         altera-a10-fpll 10025000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
+         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: ATX PLL calibration OK (20 ms)
+         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 0 TX termination and VOD calibration OK (400 us)
+         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 1 TX termination and VOD calibration OK (400 us)
+         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 2 TX termination and VOD calibration OK (500 us)
+         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 3 TX termination and VOD calibration OK (500 us)
+         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Altera ADXCVR (17.01.a) probed
+         altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Lane 0 CDR/CMU PLL & RX offset calibration OK (400 us)
+         altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Lane 1 CDR/CMU PLL & RX offset calibration OK (500 us)
+         altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Altera ADXCVR (17.01.a) probed
+         altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Lane 0 CDR/CMU PLL & RX offset calibration OK (600 us)
+         altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Lane 1 CDR/CMU PLL & RX offset calibration OK (500 us)
+         altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Altera ADXCVR (17.01.a) probed
+         NET: Registered protocol family 17
+         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
+         altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
+         altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
+         ad9371 spi0.1: ad9371_probe : enter
+         ad9371 spi0.1: ad9371_probe : enter
+         random: crng init done
+         ad9371 spi0.1: framerStatus (0x20)
+         ad9371 spi0.1: AD9371 Rev 3, Firmware 5.2.2 API version: 1.5.2.3566 successfully initialized
+         cf_axi_dds 10054000.axi-ad9371-tx-hpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.01.b) at 0x10054000 mapped to 0x03281b71,
+          probed DDS AD9371
+         cf_axi_adc 10050000.axi-ad9371-rx-hpc: ADI AIM (10.01.b) at 0x10050000 mapped to 0x78806569, probed ADC AD9371 as MASTER
+         Freeing unused kernel memory: 3160K
+         This architecture does not have kernel memory protection.
+         Run /init as init process
+         Starting logging: OK
+         Initializing random number generator... done.
+         Starting network: OK
+         altera_tse 10181000.ethernet eth0: device MAC address b2:94:3d:6e:11:8f
+         altera_tse 10181000.ethernet eth0: TSE revision 1303
+         altera_tse 10181000.ethernet eth0: PCS PHY ID: 0x00000000
+         altera_tse 10181000.ethernet eth0: SGMII PCS block initialised OK
+         altera_tse 10181000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+         Network cable is plugged
+         udhcpc: started, v1.25.0
+         udhcpc: sending discover
+         udhcpc: sending select for 10.48.65.123
+         udhcpc: lease of 10.48.65.123 obtained, lease time 21600
+         deleting routers
+         adding dns 10.32.51.110
+         adding dns 10.64.53.110
+                   inet addr:10.48.65.123  Bcast:10.48.65.255  Mask:255.255.255.0
+         Starting dropbear sshd: OK
+         Starting IIO Server Daemon
+
+         Welcome to Buildroot
+         buildroot login:
+
 
 
 IIO Oscilloscope

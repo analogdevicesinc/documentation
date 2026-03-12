@@ -9,7 +9,7 @@ Envelope Peak
 
 Hovering over the name says "Absolute Value Measurement Envelope Generator", so it (likely) uses an absolute value before finding the envelope.
 
-There is also an "accurate" version, which (likely) uses inter-sample interpolation to measure "true peaks" and isn't necessary for most applications: :ez:`143717 <dsp/sigmadsp/f/discussions/65141/envelope-peak/143717>`
+There is also an "accurate" version, which (likely) uses inter-sample interpolation to measure "true peaks" and isn't necessary for most applications: :ez:`dsp/sigmadsp/f/discussions/65141/envelope-peak/143717`
 
 **Controls:**
 

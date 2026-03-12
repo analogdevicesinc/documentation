@@ -24,7 +24,7 @@ Hardware, Software, and Documentation Questions
 
 If you have any questions regarding the ADuCM355 or issues following any of the **documentation** feel free to ask us a question.
 
--  :ez:`aducm355 <community/analog-microcontrollers/aducm355>` for questions about:
+-  :ez:`community/analog-microcontrollers/aducm355` for questions about:
 
 When asking a question please take the time to give a detailed description of your problem. If you are experiencing a problem please state the steps you have executed, the result you expected you would get and the result you actually got. By doing so you enable us to provide you precise and detailed answers in a timely manner.
 

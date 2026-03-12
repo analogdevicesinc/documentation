@@ -9,7 +9,5 @@
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad9213_dual_ebz/help_and_support>`
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

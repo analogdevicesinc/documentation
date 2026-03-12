@@ -122,7 +122,7 @@ Simulation Models of Hardware
 Supported Boards
 ----------------
 
-The following have device-specific implementations in MATLAB and Simulink. If a device has an :doc:`Accelerometer </wiki-migration/resources/tools-software/linux-drivers-all>`, :doc:`Gyroscope </wiki-migration/resources/tools-software/linux-drivers-all>` or :doc:`IMU </wiki-migration/resources/tools-software/linux-drivers-all>` IIO driver, MATLAB support is possible, but a device-specific MATLAB or Simulink interface may not exist yet. Just ask on ` <https://ez.analog.com/sw-interface-tools/>`__.
+The following have device-specific implementations in MATLAB and Simulink. If a device has an :doc:`Accelerometer </wiki-migration/resources/tools-software/linux-drivers-all>`, :doc:`Gyroscope </wiki-migration/resources/tools-software/linux-drivers-all>` or :doc:`IMU </wiki-migration/resources/tools-software/linux-drivers-all>` IIO driver, MATLAB support is possible, but a device-specific MATLAB or Simulink interface may not exist yet. Just ask on :ez:`sw-interface-tools/ <sw-interface-tools>`.
 
 +------------------------+-------------------+-----------+----------------------------------------+
 | Evaluation Card        | Streaming Support | Targeting | Variants and Minimum Supported Release |

@@ -109,18 +109,13 @@ The latest boot files for adrv9002 (for all supported carriers) can be found in 
 
 
 
-.. raw:: html
+.. collapsible:: Older releases (Click to expand)
 
-   <details><summary>Older releases (Click to expand)
+   -  `ADRV9002_ZCU102_SDCARD_BOOT_FILES_JULY17.zip <http://swdownloads.analog.com/cse/tmp/ADRV9002_ZCU102_SDCARD_BOOT_FILES_JULY17.zip>`_
+   -  `adrv9002_2019_r2_prerelease.zip <http://swdownloads.analog.com/cse/tmp/adrv9002_2019_r2_prerelease.zip>`_
+   -  `adrv9002_B0_2019_r2_prerelease.zip <http://swdownloads.analog.com/cse/tmp/B0_2019_r2_pre_release_zcu102.zip>`_
+   -  `adrv9002_B0_2019_r2_4_1_2021.zip <http://swdownloads.analog.com/cse/tmp/B0_2019_r2_4_1_2021_zcu102.zip>`_
 
--  `ADRV9002_ZCU102_SDCARD_BOOT_FILES_JULY17.zip <http://swdownloads.analog.com/cse/tmp/ADRV9002_ZCU102_SDCARD_BOOT_FILES_JULY17.zip>`_
--  `adrv9002_2019_r2_prerelease.zip <http://swdownloads.analog.com/cse/tmp/adrv9002_2019_r2_prerelease.zip>`_
--  `adrv9002_B0_2019_r2_prerelease.zip <http://swdownloads.analog.com/cse/tmp/B0_2019_r2_pre_release_zcu102.zip>`_
--  `adrv9002_B0_2019_r2_4_1_2021.zip <http://swdownloads.analog.com/cse/tmp/B0_2019_r2_4_1_2021_zcu102.zip>`_
-
-.. raw:: html
-
-   </details>
 
 
 Source code have been posted on following branches on github, or has been already merged into master:
@@ -160,7 +155,5 @@ Warning
 -------
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

@@ -236,7 +236,7 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
 ADIS16475 device attributes
 ---------------------------
 
-For a detailed description please see: `sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/testing/sysfs-bus-iio>`_
+For a detailed description please see: `Documentation/ABI/testing/sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/testing/sysfs-bus-iio>`_
 
 +-------------------------------------------+----------------------------------------------------------+
 | 3-Axis Accelerometer related device files | Description                                              |

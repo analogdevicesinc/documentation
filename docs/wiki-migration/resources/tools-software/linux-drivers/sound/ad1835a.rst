@@ -30,13 +30,13 @@ Status
 Files
 -----
 
-+----------+------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                             |
-+==========+==================================================================================================================+
-| driver   | `ad1836.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/ad1836.c>`_  |
-+----------+------------------------------------------------------------------------------------------------------------------+
-| include  | `ad1836.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/ad1836.h>`_  |
-+----------+------------------------------------------------------------------------------------------------------------------+
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                              |
++==========+===================================================================================================================================+
+| driver   | `sound/soc/codecs/ad1836.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/ad1836.c>`_  |
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+| include  | `sound/soc/codecs/ad1836.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/ad1836.h>`_  |
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 Example device initialization
 =============================
@@ -45,7 +45,7 @@ Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
 
 This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
 
-For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+For more information see: `Documentation/spi/spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
 
 
 You need to set the modalias of your SPI info according to your codec. Valid values are "ad1835", "ad1836", "ad1837", "ad1838" and "ad1839". You'll also have to adjust bus_num and chip_select according to your board setup.

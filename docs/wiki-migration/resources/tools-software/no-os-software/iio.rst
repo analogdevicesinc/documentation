@@ -22,32 +22,22 @@ For more information about building projects, go to: :doc:`https://github.com/an
 
 
 
-.. raw:: html
+.. collapsible:: Xilinx(Click to expand)
 
-   <details><summary>Xilinx(Click to expand)
-
-``make run``
-
-.. raw:: html
-
-   </details>
+   ``make run``
 
 
 
 
-.. raw:: html
 
-   <details><summary>Linux (Click to expand)
+.. collapsible:: Linux (Click to expand)
 
-``sudo ./build/project.out``
+   ``sudo ./build/project.out``
 
-.. important::
+   .. important::
 
-   Make sure IIOD is not already running! It can be stopped it with: ``sudo systemctl stop iiod``
+      Make sure IIOD is not already running! It can be stopped it with: ``sudo systemctl stop iiod``
 
-.. raw:: html
-
-   </details>
 
 
 The binaries are loaded to the board. Next, it is possible to connect with a libiio client.

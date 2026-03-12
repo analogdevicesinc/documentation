@@ -23,7 +23,7 @@ There are many things that can go wrong with an ecosystem this complex, but if y
    -  The first thing to try in this case, is to :doc:`drag and drop </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>` a known good .HEX or .BIN program into flash.(something with quick visible indicators works best)
    -  If drag and drop is not working, it may be necessary to erase the flash. To do so:
 
-      -  Download and install the CrossCore Serial Flash Programmer from here: :adi:`crosscore-serial-flash-programmer.html#dsp-overview <en/design-center/processors-and-dsp/evaluation-and-development-software/crosscore-serial-flash-programmer.html#dsp-overview>`.
+      -  Download and install the CrossCore Serial Flash Programmer from here: :adi:`en/design-center/processors-and-dsp/evaluation-and-development-software/crosscore-serial-flash-programmer.html#dsp-overview`.
       -  Make sure that the USB is selected on the three way UART switch (S2).
       -  Power cycle the ADICUP3029 board while holding down the boot switch (S3)
       -  Select the mbed serial COM port in the CrossCore Serial Flash Programmer, and erase the flash.

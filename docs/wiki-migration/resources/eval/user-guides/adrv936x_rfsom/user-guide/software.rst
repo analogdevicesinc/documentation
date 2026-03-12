@@ -8,7 +8,7 @@ Getting Started
 
 To quickly explore the reference design, here are some resources:
 
--  The :doc:`SD Card Image </wiki-migration/resources/tools-software/linux-software/zynq_images>` used to boot the reference design.
+-  The :doc:`SD Card Image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` used to boot the reference design.
 -  The Analog Devices :doc:`ADRV9361-Z7035 SDR Wiki </wiki-migration/resources/eval/user-guides/adrv936x_rfsom>` provides details about reference designs
 -  The :git-hdl:`HDL <hdl>`, :git-no-OS:`no-OS` and :git-linux:`Linux <linux>` sources are hosted on GitHub
 
@@ -125,7 +125,7 @@ Analog Devices provides complete drivers for the Zynq SoC ARM peripherals, inclu
 -  USB Linux driver
 -  SDIO Linux driver
 
-These are included in the Linux kernel images provided at the :doc:`Zynq Images </wiki-migration/resources/tools-software/linux-software/zynq_images>` wiki page.
+These are included in the Linux kernel images provided at the :doc:`Zynq Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` wiki page.
 
 MATLAB and Simulink Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

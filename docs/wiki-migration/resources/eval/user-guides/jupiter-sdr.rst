@@ -212,9 +212,7 @@ Warning
 -------
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 .. |jupitersdr_back1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter-sdr/jupitersdr_back1.png

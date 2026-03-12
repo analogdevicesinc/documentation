@@ -6,7 +6,7 @@ The AD3530R/AD3530 are low power, 8-channel, 16-bit, buffered voltage output, di
 Supported Devices
 -----------------
 
--  :adi:`AD3530 <AD3530R/AD3530>`
+-  :adi:`AD3530R/AD3530`
 
 Evaluation Boards
 -----------------

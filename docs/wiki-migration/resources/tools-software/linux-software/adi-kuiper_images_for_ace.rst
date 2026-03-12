@@ -80,90 +80,85 @@ Cora Z7
 
 
 
-.. raw:: html
+.. collapsible:: Older Releases, Zedboard(Click to expand)
 
-   <details><summary>Older Releases, Zedboard(Click to expand)
-
-.. admonition:: Download
-   :class: download
-
-   
-   -  **28 July 2021 ADI Kuiper Linux with support for ACE Evaluation - Release 6, 14 August 2024**
-   
-      -  Supports the following evaluation boards:
-   
-         -  EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ, EVAL-AD4630-16FMCZ
-         -  EVAL-ADAQ8092-FMCZ
-         -  EVAL-AD4858FMCZ, EVAL-AD4857FMCZ
-         -  EVAL-AD4080FMCZ
-   
-      -  After writing this image to an SD card, the boot configuration needs to be set to match the evaluation board that is going to be used with ACE.
-   
-         -  The default boot configuration is for an EVAL-ADA4858FMCZ board.
-   
-      -  To configure for a different evaluation board, boot the ZedBoard with the imaged SD card, and connect a USB cable to the ZedBoard USB UART or OtG port. Then using a terminal program, e.g. putty or Teraterm, open a serial port at 115200 baud to get a terminal shell.
-      -  Then run the script that corresponds to the board you want to use with the options required.
-   
-         -  ``eval-ad4630`` - same script for EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ, EVAL-AD4630-16FMCZ
-         -  ``eval-adaq8092``
-         -  ``eval-ad4858`` - same script for EVAL-AD4858FMCZ, EVAL-AD4857FMCZ
-         -  ``eval-ad4080``
-   
-      -  Add '' configure'' after the script name to get a list of the different configuration options required by a given script. Each script has specific configure options.
-   
-         -  For Example: ``eval-ad4858 configure`` to get the options, and then ``eval-ad4858 configure ad4857 cmos`` to do the configuration action
-         -  If an invalid set of options is selected, errors will be reported.
-   
-      -  After a successful configuration, the ``reboot`` or ``shutdown now`` commands can be issued as needed.
-      -  Note: If ``eval-ad4630`` is used to configure the SD card and a supported evaluation board in that family is not connected when the board is rebooted, the Linux kernel will panic and the system will fail to boot. In that event, either connect an AD4630 family evaluation board, or follow the instructions on this page :doc:`kuiper-linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` to restore a bootable configuration, such as the 'zynq-zed-adv7511'. Once that configuration has booted, connect to the serial console port on USB UART/J14 on the ZedBoard and issue the commands to reconfigure the board as required.
-   
-   
-   
-   - `Actual file <https://swdownloads.analog.com/cse/kuiper/2021-07-28-ADI-Kuiper-full-for-ace-r6-2024-08-14.zip>`_
-      * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r6-2024-08-14.zip    ''01BBDB4C174312A37E6566D8C0634019''
-      * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r6-2024-08-14.img    ''39C8444BD9ADF25CAE928E25F7F84F2A''
-   
+   .. admonition:: Download
+      :class: download
 
 
-.. admonition:: Download
-   :class: download
+      -  **28 July 2021 ADI Kuiper Linux with support for ACE Evaluation - Release 6, 14 August 2024**
 
-   
-   -  **28 July 2021 ADI Kuiper Linux with support for ACE Evaluation - Release 5, 2 April 2024**
-   
-      -  Supports the following evaluation boards:
-   
-         -  EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ, EVAL-AD4630-16FMCZ
-         -  EVAL-ADAQ8092-FMCZ
-         -  EVAL-AD4858FMCZ
-         -  EVAL-AD4080FMCZ
-   
-      -  After writing this image to an SD card, the boot configuration needs to be set to match the evaluation board that is going to be used with ACE.
-   
-         -  The default boot configuration is for an EVAL-ADAQ8092-FMCZ board.
-   
-      -  To configure for a different evaluation board, boot the ZedBoard with the imaged SD card, and connect a USB cable to the ZedBoard USB UART or OtG port. Then using a terminal program, e.g. putty or Teraterm, open a serial port at 115200 baud to get a terminal shell.
-      -  Then run the script that corresponds to the board you want to use with the options required.
-   
-         -  ``eval-ad4630`` - same script for EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ, EVAL-AD4630-16FMCZ
-         -  ``eval-adaq8092``
-         -  ``eval-ad4858``
-         -  ``eval-ad4080``
-   
-      -  Add '' configure'' after the script name to get a list of the different configuration options required by a given script. Each script has specific configure options.
-   
-         -  For Example: ``eval-ad4858 configure`` to get the options, and then ``eval-ad4858 configure cmos`` to do the configuration action
-         -  If an invalid set of options is selected, errors will be reported.
-   
-   
-   
-   - `Actual file <https://swdownloads.analog.com/cse/kuiper/2021-07-28-ADI-Kuiper-full-for-ace-r5-2024-04-02.zip>`_
-      * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r5-2024-04-02.zip    ''56901ab486d6d3f1b5e62b2661f53827''
-      * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r5-2024-04-02.img    ''33349d31cad19197ac706b80486e07f7''
+         -  Supports the following evaluation boards:
 
-.. raw:: html
+            -  EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ, EVAL-AD4630-16FMCZ
+            -  EVAL-ADAQ8092-FMCZ
+            -  EVAL-AD4858FMCZ, EVAL-AD4857FMCZ
+            -  EVAL-AD4080FMCZ
 
-   </details>
+         -  After writing this image to an SD card, the boot configuration needs to be set to match the evaluation board that is going to be used with ACE.
+
+            -  The default boot configuration is for an EVAL-ADA4858FMCZ board.
+
+         -  To configure for a different evaluation board, boot the ZedBoard with the imaged SD card, and connect a USB cable to the ZedBoard USB UART or OtG port. Then using a terminal program, e.g. putty or Teraterm, open a serial port at 115200 baud to get a terminal shell.
+         -  Then run the script that corresponds to the board you want to use with the options required.
+
+            -  ``eval-ad4630`` - same script for EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ, EVAL-AD4630-16FMCZ
+            -  ``eval-adaq8092``
+            -  ``eval-ad4858`` - same script for EVAL-AD4858FMCZ, EVAL-AD4857FMCZ
+            -  ``eval-ad4080``
+
+         -  Add '' configure'' after the script name to get a list of the different configuration options required by a given script. Each script has specific configure options.
+
+            -  For Example: ``eval-ad4858 configure`` to get the options, and then ``eval-ad4858 configure ad4857 cmos`` to do the configuration action
+            -  If an invalid set of options is selected, errors will be reported.
+
+         -  After a successful configuration, the ``reboot`` or ``shutdown now`` commands can be issued as needed.
+         -  Note: If ``eval-ad4630`` is used to configure the SD card and a supported evaluation board in that family is not connected when the board is rebooted, the Linux kernel will panic and the system will fail to boot. In that event, either connect an AD4630 family evaluation board, or follow the instructions on this page :doc:`kuiper-linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` to restore a bootable configuration, such as the 'zynq-zed-adv7511'. Once that configuration has booted, connect to the serial console port on USB UART/J14 on the ZedBoard and issue the commands to reconfigure the board as required.
+
+
+
+      - `Actual file <https://swdownloads.analog.com/cse/kuiper/2021-07-28-ADI-Kuiper-full-for-ace-r6-2024-08-14.zip>`_
+         * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r6-2024-08-14.zip    ''01BBDB4C174312A37E6566D8C0634019''
+         * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r6-2024-08-14.img    ''39C8444BD9ADF25CAE928E25F7F84F2A''
+
+
+
+   .. admonition:: Download
+      :class: download
+
+
+      -  **28 July 2021 ADI Kuiper Linux with support for ACE Evaluation - Release 5, 2 April 2024**
+
+         -  Supports the following evaluation boards:
+
+            -  EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ, EVAL-AD4630-16FMCZ
+            -  EVAL-ADAQ8092-FMCZ
+            -  EVAL-AD4858FMCZ
+            -  EVAL-AD4080FMCZ
+
+         -  After writing this image to an SD card, the boot configuration needs to be set to match the evaluation board that is going to be used with ACE.
+
+            -  The default boot configuration is for an EVAL-ADAQ8092-FMCZ board.
+
+         -  To configure for a different evaluation board, boot the ZedBoard with the imaged SD card, and connect a USB cable to the ZedBoard USB UART or OtG port. Then using a terminal program, e.g. putty or Teraterm, open a serial port at 115200 baud to get a terminal shell.
+         -  Then run the script that corresponds to the board you want to use with the options required.
+
+            -  ``eval-ad4630`` - same script for EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ, EVAL-AD4630-16FMCZ
+            -  ``eval-adaq8092``
+            -  ``eval-ad4858``
+            -  ``eval-ad4080``
+
+         -  Add '' configure'' after the script name to get a list of the different configuration options required by a given script. Each script has specific configure options.
+
+            -  For Example: ``eval-ad4858 configure`` to get the options, and then ``eval-ad4858 configure cmos`` to do the configuration action
+            -  If an invalid set of options is selected, errors will be reported.
+
+
+
+      - `Actual file <https://swdownloads.analog.com/cse/kuiper/2021-07-28-ADI-Kuiper-full-for-ace-r5-2024-04-02.zip>`_
+         * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r5-2024-04-02.zip    ''56901ab486d6d3f1b5e62b2661f53827''
+         * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r5-2024-04-02.img    ''33349d31cad19197ac706b80486e07f7''
+
 
 
 Now, depending on if you are using Linux or Windows, follow these instructions to write the file to your SD card.

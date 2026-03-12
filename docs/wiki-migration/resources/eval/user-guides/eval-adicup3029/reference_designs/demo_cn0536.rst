@@ -59,51 +59,46 @@ UART demo with precompiled program
 
 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
+   -  Set the :doc:`UART switch </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` to USB.
 
--  Set the :doc:`UART switch </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` to USB.
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
+      :alt: \|
+      :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
-   :alt: \|
-   :align: center
+   -  Place the **EVAL-CN0536-ARDZ** on top of the **EVAL-ADICUP3029**.
 
--  Place the **EVAL-CN0536-ARDZ** on top of the **EVAL-ADICUP3029**.
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/20200804_1724001.jpg
+      :alt: \|
+      :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/20200804_1724001.jpg
-   :alt: \|
-   :align: center
+   -  Connect a micro-USB cable to the :doc:`USB connector </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` and then to the PC.
+   -  Download the **UART** precompiled program
 
--  Connect a micro-USB cable to the :doc:`USB connector </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` and then to the PC.
--  Download the **UART** precompiled program
-
-.. admonition:: Download
-   :class: download
-
-   
-   Precompiled **ADuCM3029_demo_cn0536** project with **UART** communication:
-   
-   `ADuCM3029_demo_cn0536_uart.hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0536_uart.hex>`_
+   .. admonition:: Download
+      :class: download
 
 
--  :doc:`Upload </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>` the precompiled .hex file to the board. (Copy the .hex file to the DAPLINK drive)
--  Reset the board from the :doc:`RESET </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` push button.
+      Precompiled **ADuCM3029_demo_cn0536** project with **UART** communication:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/geiger_counter_reset.jpg
-   :align: center
+      `ADuCM3029_demo_cn0536_uart.hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0536_uart.hex>`_
 
--  Start the serial terminal program.
--  Connect it to the desired port. Eg. COM4, check :doc:`step by step guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/uart_serial_terminal>` if needed.
--  Set the **BAUDRATE** to **115200**
--  Watch the output. Data will be send every 10 seconds by default.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/uart_output.png
-   :align: center
+   -  :doc:`Upload </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>` the precompiled .hex file to the board. (Copy the .hex file to the DAPLINK drive)
+   -  Reset the board from the :doc:`RESET </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` push button.
 
-.. raw:: html
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/geiger_counter_reset.jpg
+      :align: center
 
-   </details>
+   -  Start the serial terminal program.
+   -  Connect it to the desired port. Eg. COM4, check :doc:`step by step guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/uart_serial_terminal>` if needed.
+   -  Set the **BAUDRATE** to **115200**
+   -  Watch the output. Data will be send every 10 seconds by default.
+
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/uart_output.png
+      :align: center
+
 
 
 MQTT (Wi-Fi) demo with precompiled program
@@ -111,134 +106,119 @@ MQTT (Wi-Fi) demo with precompiled program
 
 
 
-.. raw:: html
+.. collapsible:: initialState="visible"
 
-   <details><summary>initialState="visible"
+   -  Set the :doc:`UART switch </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` to ARDUINO.
 
--  Set the :doc:`UART switch </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` to ARDUINO.
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
+      :alt: \|
+      :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
-   :alt: \|
-   :align: center
+   -  Place the **EVAL-CN0536-ARDZ** on top of the **EVAL-ADICUP3029**.
 
--  Place the **EVAL-CN0536-ARDZ** on top of the **EVAL-ADICUP3029**.
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/20200804_1724001.jpg
+      :alt: \|
+      :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/20200804_1724001.jpg
-   :alt: \|
-   :align: center
+   -  Connect the ESP8266 EN pin to 3.3V or solder it like below.
 
--  Connect the ESP8266 EN pin to 3.3V or solder it like below.
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_front.png
+      :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_front.png
-   :align: center
+   -  Connect the ESP8266 module to the Arduino Header.
 
--  Connect the ESP8266 module to the Arduino Header.
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/cables.png
+      :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/cables.png
-   :align: center
+   -  Connect a micro-USB cable to the :doc:`USB connector </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` and then to the PC.
+   -  Download the **MQTT** precompiled program
 
--  Connect a micro-USB cable to the :doc:`USB connector </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` and then to the PC.
--  Download the **MQTT** precompiled program
-
-.. admonition:: Download
-   :class: download
-
-   
-   Precompiled **ADuCM3029_demo_cn0536** project with **MQTT** communication:
-   
-   `ADuCM3029_demo_cn0536_mqtt.hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0536_mqtt.hex>`_
+   .. admonition:: Download
+      :class: download
 
 
--  Create a hotspot or set a WiFi network with the following values (It must have **Internet** connection):
+      Precompiled **ADuCM3029_demo_cn0536** project with **MQTT** communication:
 
-   -  SSID: **analog_hotspot**
-   -  Password: **12345678**
+      `ADuCM3029_demo_cn0536_mqtt.hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0536_mqtt.hex>`_
 
--  Reset the board from the :doc:`RESET </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` push button.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/geiger_counter_reset.jpg
-   :align: center
+   -  Create a hotspot or set a WiFi network with the following values (It must have **Internet** connection):
 
--  During **setup** the **blue** led will be turned **on**:
+      -  SSID: **analog_hotspot**
+      -  Password: **12345678**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/blue_led.jpg
-   :align: center
-   :width: 400px
+   -  Reset the board from the :doc:`RESET </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` push button.
 
--  If the setup completed **succesfully**, the **green** led will be turned **on** (blue will be turned off). This means that the program is sending data to the server.
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/geiger_counter_reset.jpg
+      :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/green_led.jpg
-   :align: center
-   :width: 400px
+   -  During **setup** the **blue** led will be turned **on**:
 
--  In case of an **error** during setup or during program execution, both leds will **blink alternated** with a 1 second period.
--  Data will be sent to:
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/blue_led.jpg
+      :align: center
+      :width: 400px
 
-   -  MQTT Server: **broker.hivemq.com**
-   -  MQTT Topic: **analog_test_topic**
+   -  If the setup completed **succesfully**, the **green** led will be turned **on** (blue will be turned off). This means that the program is sending data to the server.
 
--  Use one of the below methods to view the data
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/green_led.jpg
+      :align: center
+      :width: 400px
 
-XHIDDENSTART Use MQTT Web Client to view data initialState="visible" XHIDDENSTARTSTOP
+   -  In case of an **error** during setup or during program execution, both leds will **blink alternated** with a 1 second period.
+   -  Data will be sent to:
 
--  Open the `MQTT Web Client <http://www.hivemq.com/demos/websocket-client>`_
--  Set the above server to connect to:
+      -  MQTT Server: **broker.hivemq.com**
+      -  MQTT Topic: **analog_test_topic**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/mqtt_connect.jpg
-   :align: center
+   -  Use one of the below methods to view the data
 
--  After succesfull connection, subscribe to the mentioned topic:
+   XHIDDENSTART Use MQTT Web Client to view data initialState="visible" XHIDDENSTARTSTOP
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/mqtt_subscribe.jpg
-   :align: center
+   -  Open the `MQTT Web Client <http://www.hivemq.com/demos/websocket-client>`_
+   -  Set the above server to connect to:
 
--  View the published data under messages:
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/mqtt_connect.jpg
+      :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/mqtt_mesages.jpg
-   :align: center
+   -  After succesfull connection, subscribe to the mentioned topic:
 
-.. raw:: html
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/mqtt_subscribe.jpg
+      :align: center
 
-   </details>
+   -  View the published data under messages:
+
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/mqtt_mesages.jpg
+      :align: center
 
 
 
 
-.. raw:: html
 
-   <details><summary>Use MQTT local html client to view data
+.. collapsible:: Use MQTT local html client to view data
 
--  Download the `HTML MQTT client <https://raw.githubusercontent.com/analogdevicesinc/EVAL-ADICUP3029/master/projects/ADuCM3029_demo_cn0536/demo.html>`_ (Rigth click on the link -> *Save link as...*)
--  Open the saved file into your browser.
--  In the upper of the page the server connection status is shown
--  A Graph with the data sent by the Geiger Counter is ploted:
+   -  Download the `HTML MQTT client <https://raw.githubusercontent.com/analogdevicesinc/EVAL-ADICUP3029/master/projects/ADuCM3029_demo_cn0536/demo.html>`_ (Rigth click on the link -> *Save link as...*)
+   -  Open the saved file into your browser.
+   -  In the upper of the page the server connection status is shown
+   -  A Graph with the data sent by the Geiger Counter is ploted:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/local_html.jpg
-   :align: center
-
-.. raw:: html
-
-   </details>
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/local_html.jpg
+      :align: center
 
 
 
 
-.. raw:: html
 
-   <details><summary>Use MQTT python client to view data
+.. collapsible:: Use MQTT python client to view data
 
--  Get the `python script <https://raw.githubusercontent.com/analogdevicesinc/EVAL-ADICUP3029/master/projects/ADuCM3029_demo_cn0536/scripts/main.py>`_ (Rigth click on the link -> *Save link as...*).
--  Run a terminal (cmd in windows) where the file was downloaded.
--  Install the needed python dependencies with: ``python -m pip install paho-mqtt matplotlib parse``
--  Run the python sample script: ``python main.py``
--  A new plot windows will be created and the recieved data will be printed also in to the terminal:
+   -  Get the `python script <https://raw.githubusercontent.com/analogdevicesinc/EVAL-ADICUP3029/master/projects/ADuCM3029_demo_cn0536/scripts/main.py>`_ (Rigth click on the link -> *Save link as...*).
+   -  Run a terminal (cmd in windows) where the file was downloaded.
+   -  Install the needed python dependencies with: ``python -m pip install paho-mqtt matplotlib parse``
+   -  Run the python sample script: ``python main.py``
+   -  A new plot windows will be created and the recieved data will be printed also in to the terminal:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/mqtt_plot.png
-   :align: center
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/mqtt_plot.png
+      :align: center
 
-.. raw:: html
-
-   </details>
 
 
 XHIDDENEND
@@ -248,107 +228,92 @@ Working with the software
 
 
 
-.. raw:: html
+.. collapsible:: Getting started with the software
 
-   <details><summary>Getting started with the software
+   -  `Make <https://www.gnu.org/software/make>`_ program should be installed and available in the path.
+   -  Open a **terminal** (linux) or a **cmd** (windows) and navigate to a directory where to start working.
+   -  Download the EVAL-ADICUP3029 :git-EVAL-ADICUP3029:`repository <EVAL-ADICUP3029>` with ``git clone --recursive :git-EVAL-ADICUP3029:`EVAL-ADICUP3029`.git``
+   -  Using the **--recursive** is **important** in order for the submodules to be initialized.
+   -  Go to :git-EVAL-ADICUP3029:`project directory <projects/ADuCM3029_demo_cn0536>`. ``cd projects\ADuCM3029_demo_cn0536``
+   -  Follow this :doc:`guide </wiki-migration/resources/no-os/build>` to create a CCES project. This command should be enough: ``make update_srcs``
+   -  A folder **build** will be created and inside it the CCES project.
+   -  Import the new generated project into your workspace. See :doc:`wiki </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`
+   -  Now the project structure should look like this:
 
--  `Make <https://www.gnu.org/software/make>`_ program should be installed and available in the path.
--  Open a **terminal** (linux) or a **cmd** (windows) and navigate to a directory where to start working.
--  Download the EVAL-ADICUP3029 :git-EVAL-ADICUP3029:`repository <EVAL-ADICUP3029>` with ``git clone --recursive :git-EVAL-ADICUP3029:`EVAL-ADICUP3029`.git``
--  Using the **--recursive** is **important** in order for the submodules to be initialized.
--  Go to :git-EVAL-ADICUP3029:`project directory <projects/ADuCM3029_demo_cn0536>`. ``cd projects\ADuCM3029_demo_cn0536``
--  Follow this :doc:`guide </wiki-migration/resources/no-os/build>` to create a CCES project. This command should be enough: ``make update_srcs``
--  A folder **build** will be created and inside it the CCES project.
--  Import the new generated project into your workspace. See :doc:`wiki </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`
--  Now the project structure should look like this:
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/proj_structure.png
-   :align: center
-
-.. raw:: html
-
-   </details>
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/proj_structure.png
+      :align: center
 
 
 
 
-.. raw:: html
 
-   <details><summary>Editing software parameters
+.. collapsible:: Editing software parameters
 
--  For Geiger Counter configuration see geiger_counter.h. The default configuration means:
+   -  For Geiger Counter configuration see geiger_counter.h. The default configuration means:
 
-   -  Output data will be calculated at each 10 seconds
-   -  A average filter is applied on the last 5 samples
-   -  us_per_min = c_per_min \* CONVERSION_FACTOR
-   -  Jumper 2 is solder on the back of the CN0536 ``/* Number of seconds between each measurement */
-      #define SAMPLING_PERIOD     10//seconds
-      /* Number of measurements used for average filtering */
-      #define NB_AVARGE_SAMPLES   5
-      /* Conversion factor from counts/minute -> microSieverts/minute */
-      #define CONVERSION_FACTOR   0.01
+      -  Output data will be calculated at each 10 seconds
+      -  A average filter is applied on the last 5 samples
+      -  us_per_min = c_per_min \* CONVERSION_FACTOR
+      -  Jumper 2 is solder on the back of the CN0536 ``/* Number of seconds between each measurement */
+         #define SAMPLING_PERIOD     10//seconds
+         /* Number of measurements used for average filtering */
+         #define NB_AVARGE_SAMPLES   5
+         /* Conversion factor from counts/minute -> microSieverts/minute */
+         #define CONVERSION_FACTOR   0.01
 
-      /*
-        * Depending of the jumper soldered on the board one of these 3 options is
-        * available for reading the Geiger pulses.
-        * Avaliable options are:
-        *     - 2 : JP2 soldered (default on board)
-        *     - 3 : JP3 soldered
-        *     - 4 : JP4 soldered
-       */
-      #define JUMPER_CONFIG   2``
+         /*
+           * Depending of the jumper soldered on the board one of these 3 options is
+           * available for reading the Geiger pulses.
+           * Avaliable options are:
+           *     - 2 : JP2 soldered (default on board)
+           *     - 3 : JP3 soldered
+           *     - 4 : JP4 soldered
+          */
+         #define JUMPER_CONFIG   2``
 
--  For communication configuration see communication.h: The default configuration means:
+   -  For communication configuration see communication.h: The default configuration means:
 
-   -  **MQTT** is used as **default** communication method. If something goes wrong with Wi-fi, communication will start over UART.
-      In order to use UART from the beginning, set the **COMUNICATION_METHOD** macro to UART
-   -  The program will try to connect to a wifi network with name **analog_hotspot** and password **12345678**
-   -  The program will try to publish the data to **test.mosquitto.org MQTT** broker at the topic **analog_test_topic** ``#ifndef COMUNICATION_METHOD
-      #define COMUNICATION_METHOD MQTT
-      //#define COMUNICATION_METHOD   UART
-      #endif
+      -  **MQTT** is used as **default** communication method. If something goes wrong with Wi-fi, communication will start over UART.
+         In order to use UART from the beginning, set the **COMUNICATION_METHOD** macro to UART
+      -  The program will try to connect to a wifi network with name **analog_hotspot** and password **12345678**
+      -  The program will try to publish the data to **test.mosquitto.org MQTT** broker at the topic **analog_test_topic** ``#ifndef COMUNICATION_METHOD
+         #define COMUNICATION_METHOD MQTT
+         //#define COMUNICATION_METHOD   UART
+         #endif
 
-      /* UART configuration parameters */
-      #define CONFIG_UART_PARITY  UART_NO_PARITY
-      #define CONFIG_UART_STOPBITS    UART_ONE_STOPBIT
-      #define CONFIG_UART_WORD_LEN    UART_WORDLEN_8BITS
-      #define CONFIG_UART_BAUDRATE    BD_115200
+         /* UART configuration parameters */
+         #define CONFIG_UART_PARITY  UART_NO_PARITY
+         #define CONFIG_UART_STOPBITS    UART_ONE_STOPBIT
+         #define CONFIG_UART_WORD_LEN    UART_WORDLEN_8BITS
+         #define CONFIG_UART_BAUDRATE    BD_115200
 
-      /* WIFI */
-      #define WIFI_SSID       "analog_hotspot"
-      #define WIFI_PASS       "12345678"
+         /* WIFI */
+         #define WIFI_SSID       "analog_hotspot"
+         #define WIFI_PASS       "12345678"
 
-      /* MQTT Server */
-      #define MQTT_SERVER_ADDRESS "test.mosquitto.org"
-      #ifndef DISABLE_SECURE_SOCKET
-      #define SERVER_PORT     8883
-      #else
-      #define SERVER_PORT     1883
-      #endif
+         /* MQTT Server */
+         #define MQTT_SERVER_ADDRESS "test.mosquitto.org"
+         #ifndef DISABLE_SECURE_SOCKET
+         #define SERVER_PORT     8883
+         #else
+         #define SERVER_PORT     1883
+         #endif
 
-      /* MQTT Client */
-      #define MQTT_BUFFER_SIZE    500
-      #define MQTT_TIMEOUT        20000 //ms
-      #define MQTT_KEEPALIVE      7200 //ms
-      #define MQTT_CLIENT_NAME    "analog_client"
-      #define MQTT_PUBLISH_TOPIC  "analog_test_topic"``
-
-.. raw:: html
-
-   </details>
+         /* MQTT Client */
+         #define MQTT_BUFFER_SIZE    500
+         #define MQTT_TIMEOUT        20000 //ms
+         #define MQTT_KEEPALIVE      7200 //ms
+         #define MQTT_CLIENT_NAME    "analog_client"
+         #define MQTT_PUBLISH_TOPIC  "analog_test_topic"``
 
 
 
 
-.. raw:: html
 
-   <details><summary>Build and debug the project
+.. collapsible:: Build and debug the project
 
-:doc:`How to build and a CCES project </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`
+   :doc:`How to build and a CCES project </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`
 
-.. raw:: html
-
-   </details>
 
 
 *End of Document*

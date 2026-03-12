@@ -40,7 +40,7 @@ Files
 +---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Documentation | :git-linux:`Documentation/ABI/testing/sysfs-bus-iio-frequency-adl5960`                                                                                                                        |
 +---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Documentation | `sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/testing/sysfs-bus-iio>`_                                                            |
+| Documentation | `Documentation/ABI/testing/sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/testing/sysfs-bus-iio>`_                                  |
 +---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | dt-bindings   | :git-linux:`Documentation/devicetree/bindings/iio/frequency/adi,adl5960.yaml`                                                                                                                 |
 +---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,7 +49,7 @@ Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
 
 This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
 
-For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+For more information see: `Documentation/spi/spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
 
 
 Devicetree properties

@@ -1477,25 +1477,20 @@ The digital potentiometer controls window has check boxes to select which of the
 
 
 
-.. raw:: html
+.. collapsible:: Click to expand
 
-   <details><summary>Click to expand
-
-Generic 3 wire SPI output:
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The digital input/output pins can output serial data to generic 3 wire SPI serial input devices. The provided interface allows the user to configure any of the 4 PI/O digital pins ( 0 – 3 ) as either the SCLK, SData, or Latch ( sometimes called CS or SYNC ) outputs. The user can set the number of bits to be sent in each digital write. The data word to be sent can be entered in either decimal ( integer ) form or Hex by using the 0x00 format. The “resting” sense, i.e. the level between writes, of the latch output can be set as well ( Latch Phase selector ). Some serial devices operate on the rising edge of the Latch (CS, SYNC) signal or on the falling edge. It is possible to select order in which the serial bits are sent, either LSB first or MSB first. The current data value is sent or written each time the Send button is clicked.
+   **Generic 3 wire SPI output:**
 
 
-|image72|
+   The digital input/output pins can output serial data to generic 3 wire SPI serial input devices. The provided interface allows the user to configure any of the 4 PI/O digital pins ( 0 – 3 ) as either the SCLK, SData, or Latch ( sometimes called CS or SYNC ) outputs. The user can set the number of bits to be sent in each digital write. The data word to be sent can be entered in either decimal ( integer ) form or Hex by using the 0x00 format. The “resting” sense, i.e. the level between writes, of the latch output can be set as well ( Latch Phase selector ). Some serial devices operate on the rising edge of the Latch (CS, SYNC) signal or on the falling edge. It is possible to select order in which the serial bits are sent, either LSB first or MSB first. The current data value is sent or written each time the Send button is clicked.
 
-.. container:: centeralign
 
-   Figure 41, Generic Serial Interface screen
+   |image72|
 
-.. raw:: html
+   .. container:: centeralign
 
-   </details>
+      Figure 41, Generic Serial Interface screen
+
 
 
 Applying Digital Filtering:

@@ -41,13 +41,13 @@ Status
 Files
 -----
 
-+----------+--------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                     |
-+==========+==========================================================================================================================+
-| driver   | `gpio-adp5588.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpio/gpio-adp5588.c>`_  |
-+----------+--------------------------------------------------------------------------------------------------------------------------+
-| include  | `adp5588.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/i2c/adp5588.h>`_       |
-+----------+--------------------------------------------------------------------------------------------------------------------------+
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                  |
++==========+=======================================================================================================================================+
+| driver   | `drivers/gpio/gpio-adp5588.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpio/gpio-adp5588.c>`_  |
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| include  | `include/linux/i2c/adp5588.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/i2c/adp5588.h>`_  |
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 Example platform device initialization
 ======================================
@@ -67,7 +67,7 @@ This method is appropriate when the I2C bus is a system bus, as in many embedded
 
 So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
 
-For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+For more information see: `Documentation/i2c/instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
 
 
 .. code:: C

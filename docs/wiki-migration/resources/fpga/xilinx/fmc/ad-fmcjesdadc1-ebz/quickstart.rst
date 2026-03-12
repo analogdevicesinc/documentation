@@ -26,7 +26,7 @@ Requirements
 Make the SD-Card
 ----------------
 
-Follow the instructions at the :doc:`Create SD Image for Zynq Boards </wiki-migration/resources/tools-software/linux-software/zynq_images>`. This is a generic image, which supports multiple platforms including the :adi:`AD-FMCJESDADC1-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-AD-FMCJESDADC1-EBZ.html>`.
+Follow the instructions at the :doc:`Create SD Image for Zynq Boards </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. This is a generic image, which supports multiple platforms including the :adi:`AD-FMCJESDADC1-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-AD-FMCJESDADC1-EBZ.html>`.
 
 Running the demo
 ----------------
@@ -35,9 +35,7 @@ Setting up the hardware.
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 You will need to:

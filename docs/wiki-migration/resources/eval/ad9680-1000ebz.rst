@@ -215,185 +215,175 @@ Software Setup
    
    
 
-.. raw:: html
+.. collapsible:: ACE Setup
 
-   <details><summary>ACE Setup
+   -  Download and install ACE if it is not already installed.
+      -  The AD9680 ACE plug-in can be found under the :adi:`AD9680 Evaluation Board Software Section <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9680.html#eb-relatedsoftware>`, or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).
 
--  Download and install ACE if it is not already installed.
-   -  The AD9680 ACE plug-in can be found under the :adi:`AD9680 Evaluation Board Software Section <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9680.html#eb-relatedsoftware>`, or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).
+      .. tip::
+
+         Tip: Some browsers (Such as Internet Explorer) may save the file as a .zip file instead of an .acezip file. If this happens, simply download and rename the file with an .acezip file extension.
+
+
+
+
+   -  Once the .acezip file has been downloaded from the Analog Devices website, right click on it and install the plug-in, or double click to install.
+   -  Click Start -> All Programs -> Analog Devices -> ACE -> ACE
+   -  The AD9680 plug-in should appear as in Figure 7 if installed correctly.
+
+   .. container:: centeralign
+
+      \ |image5|\ *Figure 7. ACE's AD9680 Plug-in*\
+
+
+   -  If the AD9680 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.
+
+   .. note::
+
+      Note: Differences may occur between ACE plug-in versions, including the version number seen in Figure 7 above or components in any of the other images below - however, these will not affect the performance of the part, nor the fundamental features described in this user guide.
+
+
    
-   .. tip::
 
-      Tip: Some browsers (Such as Internet Explorer) may save the file as a .zip file instead of an .acezip file. If this happens, simply download and rename the file with an .acezip file extension.
+   -  Double click on the plug-in to open it. This will open the AD9680 Board View.
+
+   .. container:: centeralign
+
+      \ |image6|\ *Figure 8. AD9680 Board View*\
+
 
    
 
+   .. note::
 
--  Once the .acezip file has been downloaded from the Analog Devices website, right click on it and install the plug-in, or double click to install.
--  Click Start -> All Programs -> Analog Devices -> ACE -> ACE
--  The AD9680 plug-in should appear as in Figure 7 if installed correctly.
+      Note: ACE will automatically program the FPGA (FPGA_DONE LED should be lit up) and load the default full bandwidth configuration.
 
-.. container:: centeralign
 
-   \ |image5|\ *Figure 7. ACE's AD9680 Plug-in*\
+   
 
+   -  Double click on the blue AD9680 chip (in the middle of the board) to open up the Chip View.
 
--  If the AD9680 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.
+   .. container:: centeralign
 
-.. note::
+      \ |image7|\ *Figure 9. AD9680 Chip View*\
 
-   Note: Differences may occur between ACE plug-in versions, including the version number seen in Figure 7 above or components in any of the other images below - however, these will not affect the performance of the part, nor the fundamental features described in this user guide.
 
 
 
 
--  Double click on the plug-in to open it. This will open the AD9680 Board View.
+.. collapsible:: Visual Analog & SPI Controller Setup
 
-.. container:: centeralign
+   **Visual Analog Setup**
 
-   \ |image6|\ *Figure 8. AD9680 Board View*\
+   -  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` VisualAnalog :math:`right` VisualAnalog
+   -  On the VisualAnalog “New Canvas” window, click **ADC** :math:`right` **Dual** :math:`right` **AD9680** or **ADC** :math:`right` **Dual** :math:`right` **AD9234**
 
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/selecting_canvas.jpg
+      :align: center
+      :width: 400px
 
+   .. container:: centeralign
 
+      *Figure 10. Selecting the :adi:`AD9680` canvas*
 
-.. note::
 
-   Note: ACE will automatically program the FPGA (FPGA_DONE LED should be lit up) and load the default full bandwidth configuration.
+   -  At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in figure 11. Programming the FPGA will provide power to the evaluation board.
 
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/programming_fpga.jpg
+      :align: center
+      :width: 400px
 
+   .. container:: centeralign
 
+      \ *Figure 11. Programming the* `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_\
 
--  Double click on the blue AD9680 chip (in the middle of the board) to open up the Chip View.
 
-.. container:: centeralign
+   -  If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 12)
 
-   \ |image7|\ *Figure 9. AD9680 Chip View*\
+   .. image:: https://wiki.analog.com/_media/resources/eval/fig4_expand_display.png
+      :align: center
 
-.. raw:: html
+   .. container:: centeralign
 
-   </details>
+      \ *Figure 12. Expanding Display in VisualAnalog*\
 
 
+   -  Click the **Settings** button in the **ADC Data Capture** block as shown in Figure 13
 
+   .. image:: https://wiki.analog.com/_media/resources/eval/fig5_change_adc_capture_settings.png
+      :align: center
+      :width: 200px
 
-.. raw:: html
+   .. container:: centeralign
 
-   <details><summary>Visual Analog & SPI Controller Setup
+      \ *Figure 13. Changing the ADC Capture Settings*\
 
-**Visual Analog Setup**
 
--  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` VisualAnalog :math:`right` VisualAnalog
--  On the VisualAnalog “New Canvas” window, click **ADC** :math:`right` **Dual** :math:`right` **AD9680** or **ADC** :math:`right` **Dual** :math:`right` **AD9234**
+   -  On the **General** tab make sure the clock frequency is set to the appropriate sample rate (eg. **1250 MHz or 1000 MHz**). The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The ADS7-V2 FPGA software supports up to 2M FFT capture (1M per channel)
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/selecting_canvas.jpg
-   :align: center
-   :width: 400px
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/adc_data_capture_settings.jpg
+      :align: center
+      :width: 400px
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   *Figure 10. Selecting the :adi:`AD9680` canvas*
+      \ *Figure 14. Setting the clock frequency and Capture length*\
 
 
--  At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in figure 11. Programming the FPGA will provide power to the evaluation board.
+   -  On the **Device** tab. Make sure that **Enable Alternate REFCLK** option is unchecked.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/programming_fpga.jpg
-   :align: center
-   :width: 400px
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/adc_data_capture_device_settings.jpg
+      :align: center
+      :width: 400px
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   \ *Figure 11. Programming the* `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_\
+      \ *Figure 15. Setting the clock frequency and capture length*\
 
 
--  If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 12)
+   -  Click **OK**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/fig4_expand_display.png
-   :align: center
+   **SPI Controller Setup**
 
-.. container:: centeralign
+   -  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController
+   -  Select the appropriate configuration file when prompted.
+   -  In the **Global** tab, under the **Generic Read/Write** section, write **0x81** to register **0x000**. This issues a **Soft Reset** for the DUT or just click **Reset** at **CHIP PORT CFG(0)**.
 
-   \ *Figure 12. Expanding Display in VisualAnalog*\
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/spi_soft_reset.jpg
+      :align: center
+      :width: 600px
 
+   .. container:: centeralign
 
--  Click the **Settings** button in the **ADC Data Capture** block as shown in Figure 13
+      \ *Figure 16. Sending a Soft Reset to the AD9680*\
 
-.. image:: https://wiki.analog.com/_media/resources/eval/fig5_change_adc_capture_settings.png
-   :align: center
-   :width: 200px
 
-.. container:: centeralign
+   -  Individual Channel control for **ADC A** and **ADC B** are done using the **Device Index Register (0x008)** in the Global tab.
 
-   \ *Figure 13. Changing the ADC Capture Settings*\
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/spi_device_index.jpg
+      :align: center
+      :width: 600px
 
+   .. container:: centeralign
 
--  On the **General** tab make sure the clock frequency is set to the appropriate sample rate (eg. **1250 MHz or 1000 MHz**). The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The ADS7-V2 FPGA software supports up to 2M FFT capture (1M per channel)
+      \ *Figure 17. Device Index for ADC Channel A and Channel B*\
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/adc_data_capture_settings.jpg
-   :align: center
-   :width: 400px
 
-.. container:: centeralign
+   -  Under **ADC A** and **ADC B** tabs the options for Channel A and B are listed. Default settings have been programmed to ensure optimal performance for the input bandwidth and sample rate. Only the following options need to be operated with:
 
-   \ *Figure 14. Setting the clock frequency and Capture length*\
+      -  **Chip Configuration Register (0x002)**: This option allows the channel to be powered on.
+      -  **Buffer Current Setting (0x018)**: This option allows the buffer current to change to enable better harmonic performance at different frequencies. At high analog input frequencies, the buffer current may need to be increased to optimize harmonic distortion performance (HD2, HD3). Keep in mind that at high frequencies, the performance is also jitter limited. So increasing the buffer currents may lead to diminishing returns with higher power consumption. Refer to the datasheet to understand the relationship between I\ :sub:`AVDD3` and Buffer Current Setting.
+      -  **Analog Input Differential Termination (0x016)**: This sets the input termination. Recommended settings are 500, 200, 100, 50 ohms. At lower termination settings, the harmonic distortion performance may show improvement, but the analog input signal amplitude will be reduced.
+      -  **Input Full Scale Range (0x025)**: At high input frequencies, in order to preserve the linearity of the input buffer, it may be beneficial to reduce the input full-scale range in order to get more harmonic distortion performance. This in turn may negatively affect the SNR of the ADC.
 
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/spi_adc_a.jpg
+      :align: center
+      :width: 600px
 
--  On the **Device** tab. Make sure that **Enable Alternate REFCLK** option is unchecked.
+   .. container:: centeralign
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/adc_data_capture_device_settings.jpg
-   :align: center
-   :width: 400px
+      \ *Figure 18. SPI Controller Channel A and B Options*\
 
-.. container:: centeralign
-
-   \ *Figure 15. Setting the clock frequency and capture length*\
-
-
--  Click **OK**
-
-**SPI Controller Setup**
-
--  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController
--  Select the appropriate configuration file when prompted.
--  In the **Global** tab, under the **Generic Read/Write** section, write **0x81** to register **0x000**. This issues a **Soft Reset** for the DUT or just click **Reset** at **CHIP PORT CFG(0)**.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/spi_soft_reset.jpg
-   :align: center
-   :width: 600px
-
-.. container:: centeralign
-
-   \ *Figure 16. Sending a Soft Reset to the AD9680*\
-
-
--  Individual Channel control for **ADC A** and **ADC B** are done using the **Device Index Register (0x008)** in the Global tab.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/spi_device_index.jpg
-   :align: center
-   :width: 600px
-
-.. container:: centeralign
-
-   \ *Figure 17. Device Index for ADC Channel A and Channel B*\
-
-
--  Under **ADC A** and **ADC B** tabs the options for Channel A and B are listed. Default settings have been programmed to ensure optimal performance for the input bandwidth and sample rate. Only the following options need to be operated with:
-
-   -  **Chip Configuration Register (0x002)**: This option allows the channel to be powered on.
-   -  **Buffer Current Setting (0x018)**: This option allows the buffer current to change to enable better harmonic performance at different frequencies. At high analog input frequencies, the buffer current may need to be increased to optimize harmonic distortion performance (HD2, HD3). Keep in mind that at high frequencies, the performance is also jitter limited. So increasing the buffer currents may lead to diminishing returns with higher power consumption. Refer to the datasheet to understand the relationship between I\ :sub:`AVDD3` and Buffer Current Setting.
-   -  **Analog Input Differential Termination (0x016)**: This sets the input termination. Recommended settings are 500, 200, 100, 50 ohms. At lower termination settings, the harmonic distortion performance may show improvement, but the analog input signal amplitude will be reduced.
-   -  **Input Full Scale Range (0x025)**: At high input frequencies, in order to preserve the linearity of the input buffer, it may be beneficial to reduce the input full-scale range in order to get more harmonic distortion performance. This in turn may negatively affect the SNR of the ADC.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/spi_adc_a.jpg
-   :align: center
-   :width: 600px
-
-.. container:: centeralign
-
-   \ *Figure 18. SPI Controller Channel A and B Options*\
-
-.. raw:: html
-
-   </details>
 
 
 
@@ -407,254 +397,244 @@ Sample Configuration 1: Full Bandwidth Mode
 
    ..
 
-.. raw:: html
+.. collapsible:: ACE Configuration
 
-   <details><summary>ACE Configuration
+   -  Under **Initial Configuration** at board view, set the clock input to 1250 MHz. Change the **Clock Divide Ratio** to divide by 1. Change the **Chip Operation Mode** to full bandwidth mode. Change the number of **Lane** to 4. Change the number of **Virtual Converter** to 2. Change the number of **Octets per Frame** to 1. Click **Apply** to apply the chip settings. Set the reference clock to 625 MHz to match these settings.
 
--  Under **Initial Configuration** at board view, set the clock input to 1250 MHz. Change the **Clock Divide Ratio** to divide by 1. Change the **Chip Operation Mode** to full bandwidth mode. Change the number of **Lane** to 4. Change the number of **Virtual Converter** to 2. Change the number of **Octets per Frame** to 1. Click **Apply** to apply the chip settings. Set the reference clock to 625 MHz to match these settings.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_chip_settings.jpg
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_chip_settings.jpg
+         :align: center
+         :width: 200px
+
+      .. container:: centeralign
+
+         \ *Figure 19. Chip Settings*\
+
+
+      
+
+      .. note::
+
+         Note: ACE will automatically load the default full bandwidth configuration and can skip to step 7 to proceed to **Analysis** tab to capture data.
+
+
+
+
+   -  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the **Read All button**.
+
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_read_all.jpg
       :align: center
-      :width: 200px
-   
+      :width: 600px
+
    .. container:: centeralign
 
-      \ *Figure 19. Chip Settings*\
+      \ *Figure 20. Read All Button*\
+
+
+   -  Set the **PLL Control** serial lane rate to 6.25 Gbps to 12.5 Gbps and click **Apply Changes**. The decision to use Maximum Lane Rate (6.25 Gbps to 12.5 Gbps) or Low Lane Rate (3.125 Gbps to 6.25 Gbps) should be based on the **Lane Line Rate** that was calculated in :doc:`Configuring the Board </wiki-migration/resources/eval/ad9680-1000ebz>` section.
+
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_pll_control.jpg
+      :align: center
+      :width: 600px
+
+   .. container:: centeralign
+
+      \ *Figure 21. PLL Control*\
+
+
+   -  Issue a **Data Path Reset** to the AD9680 by clicking its checkbox and clicking **Apply Changes**. The data path reset bit will automatically self clear.
+
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_data_path_reset.jpg
+      :align: center
+      :width: 600px
+
+   .. container:: centeralign
+
+      \ *Figure 22. Data Path Reset*\
+
+
+   -  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.
+
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_link_control.jpg
+      :align: center
+      :width: 600px
+
+   .. container:: centeralign
+
+      \ *Figure 23. PLL Lock, Link Power Down*\
+
+
+   -  Enable the **Link Control** again and **Apply Changes**.
+
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_link_enable.jpg
+      :align: center
+      :width: 600px
+
+   .. container:: centeralign
+
+      \ *Figure 24. PLL Lock, Link Enable*\
+
+
+   -  Click **Apply** at **AD9680 Configuration** and then **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.
+
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_proceed_to_analysis.jpg
+      :align: center
+      :width: 600px
+
+   .. container:: centeralign
+
+      \ *Figure 25. Analysis Tool*\
+
+
+      |image8|
+
+   .. container:: centeralign
+
+      \ *Figure 26. Display FFTs and Run once*\
+
 
    
+
+   .. tip::
+
+      Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE's data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.
+
+
    
-   
-   .. note::
 
-      Note: ACE will automatically load the default full bandwidth configuration and can skip to step 7 to proceed to **Analysis** tab to capture data.
+   -  **Channel A** and **Channel B** can be selected individually to display their **FFTs**.
 
-   
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_channel.jpg
+      :align: center
+      :width: 600px
 
+   .. container:: centeralign
 
--  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the **Read All button**.
+      \ *Figure 27. Channel Selection*\
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_read_all.jpg
-   :align: center
-   :width: 600px
 
-.. container:: centeralign
+   -  A successful capture is shown below, with a filtered 170 MHz signal inputted at on Channel A. Adjust the amplitude of the input signal so that the fundamental is at the -1.0 dBFS level.
 
-   \ *Figure 20. Read All Button*\
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ch_a.jpg
+      :align: center
+      :width: 600px
 
+   .. container:: centeralign
 
--  Set the **PLL Control** serial lane rate to 6.25 Gbps to 12.5 Gbps and click **Apply Changes**. The decision to use Maximum Lane Rate (6.25 Gbps to 12.5 Gbps) or Low Lane Rate (3.125 Gbps to 6.25 Gbps) should be based on the **Lane Line Rate** that was calculated in :doc:`Configuring the Board </wiki-migration/resources/eval/ad9680-1000ebz>` section.
+      \ *Figure 28. Example Input to Channel A*\
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_pll_control.jpg
-   :align: center
-   :width: 600px
 
-.. container:: centeralign
+   -  To save the FFT plot, click on **Export** button at **Analysis Results** tab and save it to a location of choice.
 
-   \ *Figure 21. PLL Control*\
 
 
--  Issue a **Data Path Reset** to the AD9680 by clicking its checkbox and clicking **Apply Changes**. The data path reset bit will automatically self clear.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_data_path_reset.jpg
-   :align: center
-   :width: 600px
 
-.. container:: centeralign
+.. collapsible:: Visual Analog & SPI Controller Configuration
 
-   \ *Figure 22. Data Path Reset*\
+   **SPI Controller Configuration**
 
+   -  Set the ADC Configuration Registers in **ADCBase0** tab. Write **Chip Mode Control Register** address 0x200 to **Full Bandwidth Mode** and **Chip Decimation Ratio Control Register** 0x201 to **Full Sample Rate**.
 
--  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_fbw_chip.png
+      :align: center
+      :width: 300px
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_link_control.jpg
-   :align: center
-   :width: 600px
+   .. container:: centeralign
 
-.. container:: centeralign
+      \ *Figure 29. Setting Chip Mode Control and Decimation Ratio Registers*\
 
-   \ *Figure 23. PLL Lock, Link Power Down*\
 
+   -  For JESD204B setting, proceed to **ADCBase3** tab. Check the **Serial Transmit Power Down** box in **JESD204B Link Control Register (0x571)**.
 
--  Enable the **Link Control** again and **Apply Changes**.
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_571.png
+      :align: center
+      :width: 400px
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_link_enable.jpg
-   :align: center
-   :width: 600px
+   .. container:: centeralign
 
-.. container:: centeralign
+      \ *Figure 30. JESD204B Serial Transmit Power Down*\
 
-   \ *Figure 24. PLL Lock, Link Enable*\
 
+   -  Set the Lane Rate setting register 0x56E to **Maximum Lane Rate**. The decision to use **Maximum Lane Rate** mode or **Low Lane Rate** mode should be based on the Lane Line Rate that was calculated in :doc:`Configuring the Board </wiki-migration/resources/eval/ad9680-1000ebz>` section.
 
--  Click **Apply** at **AD9680 Configuration** and then **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.
+   .. image:: https://wiki.analog.com/_media/resources/eval/fig8_lane_rate_ctrl.png
+      :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_proceed_to_analysis.jpg
-   :align: center
-   :width: 600px
+   .. container:: centeralign
 
-.. container:: centeralign
+      \ *Figure 31. Setting the JESD204B Lane Rate*\
 
-   \ *Figure 25. Analysis Tool*\
 
+   -  Set the **JESD204B Quick Configuration register (0x570)**. For 1000MSPS operation with **NO** DDCs (*Full Bandwidth Mode*), the values for **L.M.F** are **4.2.1**
 
-   |image8|
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_570.png
+      :align: center
+      :width: 300px
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   \ *Figure 26. Display FFTs and Run once*\
+      \ *Figure 32. Setting the JESD204B Quick Configuration Register*\
 
 
+   -  Proceed to **ADCBase4** tab and set/read the registers 0x58B, 0x58C, 0x58D, and 0x58E to check if the desired JESD204B configurations on ADCBase3 tab are reflected.
 
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_adcbase4.png
+      :align: center
+      :width: 600px
 
-.. tip::
+   .. container:: centeralign
 
-   Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE's data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.
+      \ *Figure 33. Reading the JESD204B Configuration Registers*\
 
 
+   -  On address **0x58F** (see figure 33), change the Converter Resolution to **14** for AD9680 (12 for AD9234).
+   -  Back to **ADCBase3** tab, uncheck the **Serial Transmit Power Down** box in JESD204B Link Control Register (0x571), see figure 30.
+   -  After the quick configuration setting is completed, the **PLL Lock Detect register 0x56F** will read **0x80** to denote a lock. The SPIController interface will show a "1" to denote a lock.
 
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_pll.png
+      :align: center
+      :width: 200px
 
--  **Channel A** and **Channel B** can be selected individually to display their **FFTs**.
+   .. container:: centeralign
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_channel.jpg
-   :align: center
-   :width: 600px
+      \ *Figure 34. Reading the PLL Status Register*\
 
-.. container:: centeralign
 
-   \ *Figure 27. Channel Selection*\
+   **Obtaining an FFT on Visual Analog**
 
+   -  Click the Run button in VisualAnalog , you should see the captured data similar to the plot shown in Figure 35.
 
--  A successful capture is shown below, with a filtered 170 MHz signal inputted at on Channel A. Adjust the amplitude of the input signal so that the fundamental is at the -1.0 dBFS level.
+   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/va_ch_a.jpg
+      :align: center
+      :width: 600px
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ch_a.jpg
-   :align: center
-   :width: 600px
+   .. container:: centeralign
 
-.. container:: centeralign
+      \ *Figure 35. AD9680-1250 FFT at 170MHz Analog Input*\
 
-   \ *Figure 28. Example Input to Channel A*\
 
+   -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.
+   -  To save the FFT plot do the following:
 
--  To save the FFT plot, click on **Export** button at **Analysis Results** tab and save it to a location of choice.
+      -  Click on the **Float Form button** in the FFT window.
 
-.. raw:: html
+   .. image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
+      :align: center
 
-   </details>
+   .. container:: centeralign
 
+      \ *Figure 36. Floating the FFT window*\
 
 
+   -  Click on **File :math:`right` Save Form As** button and save it to a location of choice.
 
-.. raw:: html
+   .. image:: https://wiki.analog.com/_media/resources/eval/fig14_savingfft.png
+      :align: center
 
-   <details><summary>Visual Analog & SPI Controller Configuration
+   .. container:: centeralign
 
-**SPI Controller Configuration**
+      \ *Figure 37. Saving the FFT*\
 
--  Set the ADC Configuration Registers in **ADCBase0** tab. Write **Chip Mode Control Register** address 0x200 to **Full Bandwidth Mode** and **Chip Decimation Ratio Control Register** 0x201 to **Full Sample Rate**.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680_fbw_chip.png
-   :align: center
-   :width: 300px
-
-.. container:: centeralign
-
-   \ *Figure 29. Setting Chip Mode Control and Decimation Ratio Registers*\
-
-
--  For JESD204B setting, proceed to **ADCBase3** tab. Check the **Serial Transmit Power Down** box in **JESD204B Link Control Register (0x571)**.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_571.png
-   :align: center
-   :width: 400px
-
-.. container:: centeralign
-
-   \ *Figure 30. JESD204B Serial Transmit Power Down*\
-
-
--  Set the Lane Rate setting register 0x56E to **Maximum Lane Rate**. The decision to use **Maximum Lane Rate** mode or **Low Lane Rate** mode should be based on the Lane Line Rate that was calculated in :doc:`Configuring the Board </wiki-migration/resources/eval/ad9680-1000ebz>` section.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/fig8_lane_rate_ctrl.png
-   :align: center
-
-.. container:: centeralign
-
-   \ *Figure 31. Setting the JESD204B Lane Rate*\
-
-
--  Set the **JESD204B Quick Configuration register (0x570)**. For 1000MSPS operation with **NO** DDCs (*Full Bandwidth Mode*), the values for **L.M.F** are **4.2.1**
-
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_570.png
-   :align: center
-   :width: 300px
-
-.. container:: centeralign
-
-   \ *Figure 32. Setting the JESD204B Quick Configuration Register*\
-
-
--  Proceed to **ADCBase4** tab and set/read the registers 0x58B, 0x58C, 0x58D, and 0x58E to check if the desired JESD204B configurations on ADCBase3 tab are reflected.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_adcbase4.png
-   :align: center
-   :width: 600px
-
-.. container:: centeralign
-
-   \ *Figure 33. Reading the JESD204B Configuration Registers*\
-
-
--  On address **0x58F** (see figure 33), change the Converter Resolution to **14** for AD9680 (12 for AD9234).
--  Back to **ADCBase3** tab, uncheck the **Serial Transmit Power Down** box in JESD204B Link Control Register (0x571), see figure 30.
--  After the quick configuration setting is completed, the **PLL Lock Detect register 0x56F** will read **0x80** to denote a lock. The SPIController interface will show a "1" to denote a lock.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_pll.png
-   :align: center
-   :width: 200px
-
-.. container:: centeralign
-
-   \ *Figure 34. Reading the PLL Status Register*\
-
-
-**Obtaining an FFT on Visual Analog**
-
--  Click the Run button in VisualAnalog , you should see the captured data similar to the plot shown in Figure 35.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9680/va_ch_a.jpg
-   :align: center
-   :width: 600px
-
-.. container:: centeralign
-
-   \ *Figure 35. AD9680-1250 FFT at 170MHz Analog Input*\
-
-
--  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.
--  To save the FFT plot do the following:
-
-   -  Click on the **Float Form button** in the FFT window.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
-   :align: center
-
-.. container:: centeralign
-
-   \ *Figure 36. Floating the FFT window*\
-
-
--  Click on **File :math:`right` Save Form As** button and save it to a location of choice.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/fig14_savingfft.png
-   :align: center
-
-.. container:: centeralign
-
-   \ *Figure 37. Saving the FFT*\
-
-.. raw:: html
-
-   </details>
 
 
 
@@ -668,249 +648,239 @@ Sample Configuration 2: Two ADCs Plus Two DDCs, Decimate by 4
 
    ..
 
-.. raw:: html
+.. collapsible:: ACE Configuration
 
-   <details><summary>ACE Configuration
+   -  Under **Initial Configuration** at board view, set the clock input to 1250 MHz. Change the **Clock Divide Ratio** to divide by 1. Change the **Chip Operating Mode** for two DDCs. The DDC settings will become available, set the **Decimation Ratio** select "HB1_HB2 Complex" - two half-band filters, and set the **Output Select** select complex. i.e. Decimate-by-4. Set the number of **Lanes** to 2, the number of **Virtual Converters** to 4, and the number of **Octets per Frame** to 4. Click **Apply** to apply the settings. Set the reference clock to 625 MHz to match these settings.
 
--  Under **Initial Configuration** at board view, set the clock input to 1250 MHz. Change the **Clock Divide Ratio** to divide by 1. Change the **Chip Operating Mode** for two DDCs. The DDC settings will become available, set the **Decimation Ratio** select "HB1_HB2 Complex" - two half-band filters, and set the **Output Select** select complex. i.e. Decimate-by-4. Set the number of **Lanes** to 2, the number of **Virtual Converters** to 4, and the number of **Octets per Frame** to 4. Click **Apply** to apply the settings. Set the reference clock to 625 MHz to match these settings.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_chip_setting.jpg
-      :align: center
-      :width: 200px
-   
-   .. container:: centeralign
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_chip_setting.jpg
+         :align: center
+         :width: 200px
 
-      \ *Figure 38. DDC Chip Settings*\
+      .. container:: centeralign
 
-   
-   -  The **Chip View** will update to reflect the changes. Click on the **NCO block** to change the Numerically Controlled Oscillator's frequency to 175 MHz.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_nco_freq.jpg
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
+         \ *Figure 38. DDC Chip Settings*\
 
-      \ *Figure 39. NCO Frequency Setting*\
 
-   
-   -  Enable the 6dB gain for the DDC at the amplifier block drop down menu.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_gain.jpg
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
+      -  The **Chip View** will update to reflect the changes. Click on the **NCO block** to change the Numerically Controlled Oscillator's frequency to 175 MHz.
 
-      \ *Figure 40. DDC Gain*\
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_nco_freq.jpg
+         :align: center
+         :width: 600px
 
-   
-   -  Set the **Mixer** to Real. Click **Apply Changes** to apply configuration at **DDC0**.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_real_mixer.jpg
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
+      .. container:: centeralign
 
-      \ *Figure 41. DDC Mixer*\
+         \ *Figure 39. NCO Frequency Setting*\
 
-   
-   -  Navigate to the second DDC (**DDC1**) and make the same changes.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_1.jpg
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
 
-      \ *Figure 42. DDC Selection*\
+      -  Enable the 6dB gain for the DDC at the amplifier block drop down menu.
 
-   
-   -  Set the **DDC Soft Reset** to **DDC Held in Reset** in dropdown menu to soft reset the DDC, and click **Apply Changes**.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_soft_reset.jpg
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_gain.jpg
+         :align: center
+         :width: 600px
 
-      \ *Figure 43. DDC Soft Reset*\
+      .. container:: centeralign
 
-   
-   .. container:: centeralign
+         \ *Figure 40. DDC Gain*\
 
-         
-         .. note::
 
-            Note: Whenever the NCO frequency is set or changed, the DDC soft reset must be issued. If the DDC soft reset is not issued, the output may potentially show amplitude variations.
+      -  Set the **Mixer** to Real. Click **Apply Changes** to apply configuration at **DDC0**.
 
-         
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_real_mixer.jpg
+         :align: center
+         :width: 600px
 
-   
-   -  Change the **DDC Soft Reset** to **Normal Operation** in dropdown menu, and click **Apply Changes**. And then click on **Proceed to Analysis**.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_soft_reset_enable.jpg
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
+      .. container:: centeralign
 
-      \ *Figure 44. DDC Soft Reset - Normal Operation*\
+         \ *Figure 41. DDC Mixer*\
 
-   
-   -  In **Analysis** tool, run a capture once. DDC0 can be selected from Channel A and DDC1 can be selected from Channel B (see figure 45).
-   -  A successful capture is shown below, with a filtered 170 MHz signal inputted on **Channel A / DDC0**. Adjust the amplitude of the input signal so that the fundamental is at the -1.0 dBFS level.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_a.jpg
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
 
-      \ *Figure 45. Example Input to DDC0*\
+      -  Navigate to the second DDC (**DDC1**) and make the same changes.
 
-.. raw:: html
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_1.jpg
+         :align: center
+         :width: 600px
 
-   </details>
+      .. container:: centeralign
+
+         \ *Figure 42. DDC Selection*\
+
+
+      -  Set the **DDC Soft Reset** to **DDC Held in Reset** in dropdown menu to soft reset the DDC, and click **Apply Changes**.
+
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_soft_reset.jpg
+         :align: center
+         :width: 600px
+
+      .. container:: centeralign
+
+         \ *Figure 43. DDC Soft Reset*\
+
+
+      .. container:: centeralign
+
+
+            .. note::
+
+               Note: Whenever the NCO frequency is set or changed, the DDC soft reset must be issued. If the DDC soft reset is not issued, the output may potentially show amplitude variations.
+
+
+
+
+      -  Change the **DDC Soft Reset** to **Normal Operation** in dropdown menu, and click **Apply Changes**. And then click on **Proceed to Analysis**.
+
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_soft_reset_enable.jpg
+         :align: center
+         :width: 600px
+
+      .. container:: centeralign
+
+         \ *Figure 44. DDC Soft Reset - Normal Operation*\
+
+
+      -  In **Analysis** tool, run a capture once. DDC0 can be selected from Channel A and DDC1 can be selected from Channel B (see figure 45).
+      -  A successful capture is shown below, with a filtered 170 MHz signal inputted on **Channel A / DDC0**. Adjust the amplitude of the input signal so that the fundamental is at the -1.0 dBFS level.
+
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680/ace_ddc_a.jpg
+         :align: center
+         :width: 600px
+
+      .. container:: centeralign
+
+         \ *Figure 45. Example Input to DDC0*\
+
 
    
    
 
-.. raw:: html
+.. collapsible:: Visual Analog & SPI Controller Configuration
 
-   <details><summary>Visual Analog & SPI Controller Configuration
+   **Visual Analog & SPI Controller Configuration**
 
-**Visual Analog & SPI Controller Configuration**
-   
-   -  In the :doc:`Visual Analog Software Setup </wiki-migration/resources/eval/ad9680-1000ebz>`, follow Steps 1-5 and after that, click the **ADC Data Capture Settings**, remove **Ch.A and Ch.B** output data, and add **Ch. DDC0 and Ch. DDC1** output data.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_va_2ddcs.png
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
+      -  In the :doc:`Visual Analog Software Setup </wiki-migration/resources/eval/ad9680-1000ebz>`, follow Steps 1-5 and after that, click the **ADC Data Capture Settings**, remove **Ch.A and Ch.B** output data, and add **Ch. DDC0 and Ch. DDC1** output data.
 
-      \ *Figure 46. VisualAnalog ADC Data Capture Settings for DDC*\
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_va_2ddcs.png
+         :align: center
+         :width: 600px
 
-   
-   -  In the :doc:`SPI Controller Software Setup </wiki-migration/resources/eval/ad9680-1000ebz>`, follow Steps 1-4. Set the **ADC Configuration Registers** in **ADCBase0** tab. Write **Chip Mode Control Register (0x200)** to **Two Digital Down Converters** and **Chip Decimation Ratio Control Register (0x201)** to **Decimate by 4**.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_chip_mode.png
-      :align: center
-      :width: 300px
-   
-   .. container:: centeralign
+      .. container:: centeralign
 
-      \ *Figure 47. Setting Chip Mode Control and Decimation Ratio Registers*\
+         \ *Figure 46. VisualAnalog ADC Data Capture Settings for DDC*\
 
-   
-   -  For **DDC Settings**, proceed to **ADCBase1** tab and configure DDC0 and DDC1 Control Registers with corresponding addresses of **0x310** and **0x330**, respectively, to **Real Mixer, Variable IF Mode, Complex (I/Q) Decimate by 4**. Channel Input Selection for address **0x311** is set to **Channel A** for I and Q while address **0x331** is set to **Channel B** for I and Q.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_setting.png
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
 
-      \ *Figure 48. DDC Control Registers*\
+      -  In the :doc:`SPI Controller Software Setup </wiki-migration/resources/eval/ad9680-1000ebz>`, follow Steps 1-4. Set the **ADC Configuration Registers** in **ADCBase0** tab. Write **Chip Mode Control Register (0x200)** to **Two Digital Down Converters** and **Chip Decimation Ratio Control Register (0x201)** to **Decimate by 4**.
 
-   
-   -  For frequency tuning word (FTW), addresses **0x314-315** are set as required by application for DDC0, and addresses **0x334-335** are set as required by application for DDC1. Figure 49 below shows the calculation for NCO Frequency Tuning Word.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_ftw_setting.png
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_chip_mode.png
+         :align: center
+         :width: 300px
 
-      \ *Figure 49. Frequency Tuning Word Formula*\
+      .. container:: centeralign
 
-   
-   -  After setting all DDC registers, go to **Generic Write/Read** in **Global** tab and write **0x10** to address **0x300 (DDC soft reset)**, and write back to **0x00 (DDC normal operation)**. Same process can be done by checking and unchecking the **DDC Soft Reset** box.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_soft_reset.png
-      :align: center
-      :width: 300px
-   
-   .. container:: centeralign
+         \ *Figure 47. Setting Chip Mode Control and Decimation Ratio Registers*\
 
-      \ *Figure 50. DDC Synchronization Control Register*\
 
-   
-   -  For JESD204B setting, proceed to **ADCBase3** tab. Check the **Serial Transmit Power Down** box in **JESD204B Link Control Register (0x571)**.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_571.png
-      :align: center
-      :width: 400px
-   
-   .. container:: centeralign
+      -  For **DDC Settings**, proceed to **ADCBase1** tab and configure DDC0 and DDC1 Control Registers with corresponding addresses of **0x310** and **0x330**, respectively, to **Real Mixer, Variable IF Mode, Complex (I/Q) Decimate by 4**. Channel Input Selection for address **0x311** is set to **Channel A** for I and Q while address **0x331** is set to **Channel B** for I and Q.
 
-      \ *Figure 51. JESD204B Serial Transmit Power Down*\
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_setting.png
+         :align: center
+         :width: 600px
 
-   
-   -  Set the Lane Rate setting register 0x56E to **Maximum Lane Rate**. The decision to use **Maximum Lane Rate** mode or **Low Lane Rate** mode should be based on the Lane Line Rate that was calculated in :doc:`Configuring the Board </wiki-migration/resources/eval/ad9680-1000ebz>` section.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/fig8_lane_rate_ctrl.png
-      :align: center
-   
-   .. container:: centeralign
+      .. container:: centeralign
 
-      \ *Figure 52. Setting the JESD204B Lane Rate*\
+         \ *Figure 48. DDC Control Registers*\
 
-   
-   -  Set the **JESD204B Quick Configuration register (0x570)**. For 1000 MSPS operation with **2** DDCs (*Two Digital Down Converters*), the values for **L.M.F** are **2.4.4**.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_jesd_570.png
-      :align: center
-      :width: 300px
-   
-   .. container:: centeralign
 
-      \ *Figure 53. Setting the JESD204B Quick Configuration Register*\
+      -  For frequency tuning word (FTW), addresses **0x314-315** are set as required by application for DDC0, and addresses **0x334-335** are set as required by application for DDC1. Figure 49 below shows the calculation for NCO Frequency Tuning Word.
 
-   
-   -  Proceed to **ADCBase4** tab and set/read the registers 0x58B, 0x58C, 0x58D, and 0x58E to check if the desired JESD204B configurations on **ADCBase3** tab are reflected.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_jesd_quick_config.png
-      :align: center
-      :width: 600px
-   
-   .. container:: centeralign
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_ftw_setting.png
+         :align: center
+         :width: 600px
 
-      \ *Figure 54. Reading the JESD204B Configuration Registers*\
+      .. container:: centeralign
 
-   
-   -  On address **0x58F** (see figure 54), change the Converter Resolution to **14** for AD9680 (12 for AD9234).
-   -  Back to **ADCBase3** tab (se figure 51), uncheck the **Serial Transmit Power Down** box in JESD204B Link Control Register (0x571).
-   -  After the quick configuration setting is completed, the **PLL Lock Detect register 0x56F** will read **0x80** to denote a lock. The SPIController interface will show a "1" to denote a lock.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_pll.png
-      :align: center
-      :width: 400px
-   
-   .. container:: centeralign
+         \ *Figure 49. Frequency Tuning Word Formula*\
 
-      \ *Figure 55. Reading the PLL Status Register*\
 
-   
-   **Obtaining an FFT on Visual Analog**
-   
-   -  Click the Run button in VisualAnalog , you should see the captured data similar to the plot shown in Figure 56.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_fft.png
-      :align: center
-   
-   .. container:: centeralign
+      -  After setting all DDC registers, go to **Generic Write/Read** in **Global** tab and write **0x10** to address **0x300 (DDC soft reset)**, and write back to **0x00 (DDC normal operation)**. Same process can be done by checking and unchecking the **DDC Soft Reset** box.
 
-      \ *Figure 56. AD9680-1000 FFT at 150.3MHz Analog Input, NCO_FTW = 155MHz*\
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_soft_reset.png
+         :align: center
+         :width: 300px
 
-   
-   -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.)
+      .. container:: centeralign
 
-.. raw:: html
+         \ *Figure 50. DDC Synchronization Control Register*\
 
-   </details>
+
+      -  For JESD204B setting, proceed to **ADCBase3** tab. Check the **Serial Transmit Power Down** box in **JESD204B Link Control Register (0x571)**.
+
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_571.png
+         :align: center
+         :width: 400px
+
+      .. container:: centeralign
+
+         \ *Figure 51. JESD204B Serial Transmit Power Down*\
+
+
+      -  Set the Lane Rate setting register 0x56E to **Maximum Lane Rate**. The decision to use **Maximum Lane Rate** mode or **Low Lane Rate** mode should be based on the Lane Line Rate that was calculated in :doc:`Configuring the Board </wiki-migration/resources/eval/ad9680-1000ebz>` section.
+
+      .. image:: https://wiki.analog.com/_media/resources/eval/fig8_lane_rate_ctrl.png
+         :align: center
+
+      .. container:: centeralign
+
+         \ *Figure 52. Setting the JESD204B Lane Rate*\
+
+
+      -  Set the **JESD204B Quick Configuration register (0x570)**. For 1000 MSPS operation with **2** DDCs (*Two Digital Down Converters*), the values for **L.M.F** are **2.4.4**.
+
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_jesd_570.png
+         :align: center
+         :width: 300px
+
+      .. container:: centeralign
+
+         \ *Figure 53. Setting the JESD204B Quick Configuration Register*\
+
+
+      -  Proceed to **ADCBase4** tab and set/read the registers 0x58B, 0x58C, 0x58D, and 0x58E to check if the desired JESD204B configurations on **ADCBase3** tab are reflected.
+
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_jesd_quick_config.png
+         :align: center
+         :width: 600px
+
+      .. container:: centeralign
+
+         \ *Figure 54. Reading the JESD204B Configuration Registers*\
+
+
+      -  On address **0x58F** (see figure 54), change the Converter Resolution to **14** for AD9680 (12 for AD9234).
+      -  Back to **ADCBase3** tab (se figure 51), uncheck the **Serial Transmit Power Down** box in JESD204B Link Control Register (0x571).
+      -  After the quick configuration setting is completed, the **PLL Lock Detect register 0x56F** will read **0x80** to denote a lock. The SPIController interface will show a "1" to denote a lock.
+
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_jesd_pll.png
+         :align: center
+         :width: 400px
+
+      .. container:: centeralign
+
+         \ *Figure 55. Reading the PLL Status Register*\
+
+
+      **Obtaining an FFT on Visual Analog**
+
+      -  Click the Run button in VisualAnalog , you should see the captured data similar to the plot shown in Figure 56.
+
+      .. image:: https://wiki.analog.com/_media/resources/eval/ad9680_ddc_fft.png
+         :align: center
+
+      .. container:: centeralign
+
+         \ *Figure 56. AD9680-1000 FFT at 150.3MHz Analog Input, NCO_FTW = 155MHz*\
+
+
+      -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.)
+
 
    
 

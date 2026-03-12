@@ -23,4 +23,4 @@ For example
 
 python depth-image-animation-pygame.py 10.42.0.1 tof-viewer_config.json
 
-See :git-ToF:`bindings/python/examples/streaming`
+See :git-ToF:`ToF/tree/master/bindings/python/examples/streaming <bindings/python/examples/streaming>`

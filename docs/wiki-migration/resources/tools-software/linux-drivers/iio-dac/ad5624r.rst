@@ -33,13 +33,13 @@ Status
 Files
 -----
 
-+----------+---------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                      |
-+==========+===========================================================================================================================+
-| driver   | `ad5624r_spi.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5624r_spi.c>`_  |
-+----------+---------------------------------------------------------------------------------------------------------------------------+
-| include  | `ad5624r.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5624r.h>`_          |
-+----------+---------------------------------------------------------------------------------------------------------------------------+
++----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                      |
++==========+===========================================================================================================================================+
+| driver   | `drivers/iio/dac/ad5624r_spi.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5624r_spi.c>`_  |
++----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| include  | `drivers/iio/dac/ad5624r.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5624r.h>`_          |
++----------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example platform device initialization
 ======================================
@@ -113,7 +113,7 @@ Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
 
 This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
 
-For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+For more information see: `Documentation/spi/spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
 
 
 Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.

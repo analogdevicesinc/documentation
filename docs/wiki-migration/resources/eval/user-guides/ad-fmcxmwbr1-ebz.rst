@@ -83,7 +83,5 @@ For questions and more information please contact us on the Analog Devices Engin
 
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

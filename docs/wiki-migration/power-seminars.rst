@@ -18,7 +18,7 @@ You may also access the LTpowerAnalyzer software from the main menu of LTpowerCA
 
 Software for LTpowerPlanner, LTpowerCAD, LTspice and all other ADI design tools are publicly available at:
 
-:adi:`design-tools-and-calculators.html <en/resources/design-tools-and-calculators.html>`
+:adi:`en/resources/design-tools-and-calculators.html`
 
 Seminar Presentations
 =====================

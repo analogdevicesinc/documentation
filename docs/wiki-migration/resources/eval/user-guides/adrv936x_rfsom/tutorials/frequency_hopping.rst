@@ -196,7 +196,7 @@ Requirements:
 
 To build and run the demo:
 
--  Create a :doc:`standard ADI SD card </wiki-migration/resources/tools-software/linux-software/zynq_images>` (Release 2018_R1+ depending on MATLAB version)
+-  Create a :doc:`standard ADI SD card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` (Release 2018_R1+ depending on MATLAB version)
 -  Build the BOOT.BIN for the design from MATLAB using the provided :git-TransceiverToolbox:`hdlworkflow <trx_examples/targeting/frequency-hopping/hdlworkflow.m>` script. This is provided with the Transceiver Toolbox install and can be accessed by running in the MATLAB command prompt: ``a=which('frequency-hopping/hdlworkflow.m');cd(a(1:end-13))``
 -  Build the kernel with the necessary driver patch. A :git-TransceiverToolbox:`script <trx_examples/targeting/frequency-hopping/build_kernel.sh>` is provided to accomplish this patched build. Note that this will require a Linux machine or VM since building kernels is not practical on Windows.
 -  Place the generate BOOT.BIN, uImage, and provided :git-TransceiverToolbox:`trx_examples/targeting/frequency-hopping/devicetree.dtb` onto the BOOT partition of the SD card.

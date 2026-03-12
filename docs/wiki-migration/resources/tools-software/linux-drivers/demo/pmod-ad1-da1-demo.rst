@@ -19,7 +19,7 @@ Required Hardware
 Prepare the SD Card
 ~~~~~~~~~~~~~~~~~~~
 
-Please use the image/description from :doc:`Create SD Image for Zynq Boards </wiki-migration/resources/tools-software/linux-software/zynq_images>`.
+Please use the image/description from :doc:`Create SD Image for Zynq Boards </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
 Hardware Setup
 ~~~~~~~~~~~~~~

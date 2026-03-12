@@ -47,7 +47,7 @@ The source code and include files of the **ADuCM3029_Blink** demo can be found h
 .. admonition:: Download
    :class: download
 
-   :git-no-OS:`projects/aducm_blinky_example`
+   :git-no-OS:`no-OS/tree/master/projects/aducm_blinky_example <projects/aducm_blinky_example>`
 
 
 How to use the Tools

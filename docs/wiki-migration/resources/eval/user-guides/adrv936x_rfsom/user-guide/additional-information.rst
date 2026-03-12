@@ -148,7 +148,7 @@ Restoring the Analog Devices SD Card Image
 
 During the course of development with the Analog Devices Linux reference design, should your 8 GB SD card become corrupted or otherwise need to be updated, the directions below will restore the system to the latest version. Instructions are provided for both Linux and Windows hosts.
 
--  If you wish to completely overwrite the SD card, you may download the latest image :doc:`/wiki-migration/resources/tools-software/linux-software/zynq_images`
+-  If you wish to completely overwrite the SD card, you may download the latest image :doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux`
 
 .. important::
 
@@ -161,7 +161,7 @@ These steps will overwrite the contents of the SD card, so be certain there is n
    :align: center
    :width: 400px
 
-Otherwise, you may simply run the update scripts at the command line: :doc:`/wiki-migration/resources/tools-software/linux-software/zynq_images`
+Otherwise, you may simply run the update scripts at the command line: :doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux`
 
 As a final step, make sure to copy the contents of the ‘zynq-picozed-sdr2’ folder to the BOOT partition of the SD card. PicoZed SDR is now fully updated and ready to re-boot.
 

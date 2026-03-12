@@ -23,7 +23,7 @@ Running Demo (SDK) Program
 
    
    | If you are not familiar with LX9 and/or Xilix tools, please visit
-   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
+   | `products/boards-and-kits/AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
 
 
 To begin, connect the PmodGYRO2 to J5 connector of LX9 board, pins 7 to 12. You must use an extension cable or the `Pmod-TPH (Digilent) <http://digilentinc.com/Products/Detail.cfm?NavPath=2,401,549&Prod=PMOD-TPH>`_. Afterwards connect PmodACL to connector J4 of the LX9 Board (see image below).

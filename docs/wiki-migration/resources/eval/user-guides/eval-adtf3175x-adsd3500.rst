@@ -1317,9 +1317,9 @@ Example Flow
 Examples that work on the ADTF3175D Eval Kit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the ctrl_app source code in GitHub: :git-ToF:`tools/debug_apps/ctrl_app/ctrl_app.cpp`
+See the ctrl_app source code in GitHub: :git-ToF:`ToF/blob/master/tools/debug_apps/ctrl_app/ctrl_app.cpp <tools/debug_apps/ctrl_app/ctrl_app.cpp>`
 
-See the NVM Tools in GitHub: :git-ToF:`tools/nvm_tools`
+See the NVM Tools in GitHub: :git-ToF:`ToF/tree/master/tools/nvm_tools <tools/nvm_tools>`
 
 `Connect to Camera via V4L2 <https://github.com/analogdevicesinc/ToF/blob/5c75db5a83c41291a17452bdb9e0710d50f20257/tools/nvm_tools/fw_upgrade/fw_upgrade.cpp#L75>`_
 

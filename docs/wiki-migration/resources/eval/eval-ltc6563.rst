@@ -1,7 +1,7 @@
 Evaluation Board for the LTC6563 Four-Channel Differential-Output Transimpedance Amplifier
 ==========================================================================================
 
-This is an addendum to the user guide available at :adi:`eval-ltc6563.pdf <media/en/technical-documentation/user-guides/eval-ltc6563.pdf>`. Please refer to that guide to get started.
+This is an addendum to the user guide available at :adi:`media/en/technical-documentation/user-guides/eval-ltc6563.pdf`. Please refer to that guide to get started.
 
 Programming the EVAL-LTC6563 SDP-K1 Evaluation Board
 ----------------------------------------------------

@@ -31,8 +31,8 @@ People who follow the flow that is outlined, have a much better experience with 
    -  :doc:`Quick Start Guides </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart>`
 
       -  :doc:`Linux on Altera SoCKit </wiki-migration/resources/eval/user-guides/arradio/quickstart/alterasockit>`
-      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/zynq_images>`
-      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
    -  Linux Applications
 

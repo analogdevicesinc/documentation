@@ -23,7 +23,7 @@ In this section, we provide the reference data files of several frequently used 
 Data transfer
 -------------
 
-Once files have been created by MATLAB/Simulink, they can be :doc:`transferred to the target </wiki-migration/resources/tools-software/linux-software/zynq_images>`.
+Once files have been created by MATLAB/Simulink, they can be :doc:`transferred to the target </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
 QPSK
 ----

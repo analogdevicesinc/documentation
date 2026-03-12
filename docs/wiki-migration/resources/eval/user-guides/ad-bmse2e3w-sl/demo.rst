@@ -109,26 +109,21 @@ Hardware Setup
    
    
 
-.. raw:: html
+.. collapsible:: **Click here to learn how to flash the firmware image in the MAX32625PICO**
 
-   <details><summary>**Click here to learn how to flash the firmware image in the MAX32625PICO**
+   -   Download the firmware image: `MAX32625PICO Firmware Image for MAX32690 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`_
+      -   Do not connect the MAX32625PICO to the AD-BMSE2E3W-SL Board yet.
+      -   Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
+      -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.
 
--   Download the firmware image: `MAX32625PICO Firmware Image for MAX32690 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`_
-   -   Do not connect the MAX32625PICO to the AD-BMSE2E3W-SL Board yet.
-   -   Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
-   -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
-      :align: center
-      :width: 400px
-   
-   -   Release the button once the MAINTENANCE drive is mounted.
-   -   Drag and drop (to the MAINTENANCE drive) the firmware image.
-   -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the AD-BMSE2E3W-SL Board.
+      .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+         :align: center
+         :width: 400px
 
-.. raw:: html
+      -   Release the button once the MAINTENANCE drive is mounted.
+      -   Drag and drop (to the MAINTENANCE drive) the firmware image.
+      -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the AD-BMSE2E3W-SL Board.
 
-   </details>
 
    
 

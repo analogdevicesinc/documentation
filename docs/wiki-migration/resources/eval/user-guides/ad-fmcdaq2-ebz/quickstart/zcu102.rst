@@ -28,7 +28,7 @@ Creating / Configuring the SD Card
 
 .. tip::
 
-   \ :doc:`Create SD Image for ZynqMP Boards. (it is a single image for all boards). </wiki-migration/resources/tools-software/linux-software/zynq_images>`\
+   \ :doc:`Create SD Image for ZynqMP Boards. (it is a single image for all boards). </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`\
 
 
 In this case the root of 'BOOT' should contain:
@@ -64,9 +64,7 @@ You will need to:
 - Wait ~30 seconds for the “DONE” LED to turn green. This is near the SD Card Interface Connector
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 Booting the SD Card

@@ -23,7 +23,5 @@ What are all these logos?
 -  `Federal Communications Commission <https://en.wikipedia.org/wiki/Federal_Communications_Commission>`_ : is an independent agency of the United States government, this logo means we pass `part 15, class B <http://transition.fcc.gov/Bureaus/Engineering_Technology/Documents/bulletins/oet62/oet62rev.pdf>`_.
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

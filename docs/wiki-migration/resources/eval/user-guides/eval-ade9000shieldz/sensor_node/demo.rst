@@ -84,26 +84,21 @@ Equipment Needed
    
    **Make sure that the MAX32625PICO programming adapter has been flashed with the correct image before connecting it to the MAX32670-SX-ARDZ Base Board. If you do not know how to load the image, click on the instructions below:** 
 
-.. raw:: html
+.. collapsible:: **How to flash the firmware image in the MAX32625PICO**
 
-   <details><summary>**How to flash the firmware image in the MAX32625PICO**
+   -   Download the firmware image: `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
+      -   Do not connect the MAX32625PICO to the :adi:`MAX32670-SX-ARDZ` Base Board yet.
+      -   Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
+      -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.
 
--   Download the firmware image: `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
-   -   Do not connect the MAX32625PICO to the :adi:`MAX32670-SX-ARDZ` Base Board yet.
-   -   Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
-   -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
-      :align: center
-      :width: 400px
-   
-   -   Release the button once the MAINTENANCE drive is mounted.
-   -   Drag and drop (to the MAINTENANCE drive) the firmware image.
-   -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the :adi:`MAX32670-SX-ARDZ` Base Board.
+      .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+         :align: center
+         :width: 400px
 
-.. raw:: html
+      -   Release the button once the MAINTENANCE drive is mounted.
+      -   Drag and drop (to the MAINTENANCE drive) the firmware image.
+      -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
-   </details>
 
    
 

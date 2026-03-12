@@ -40,7 +40,7 @@ Requirements
       -  A Xilinx Development system, such as `ZC706 <https://www.xilinx.com/ZC706>`_, `ZC702 <https://www.xilinx.com/ZC702>`_, or `Avnet's Zedboard <http://zedboard.org/product/zedboard>`_.
       -  A proper antenna on the Rx side, which is capable of covering the 1090 MHz band, such as an `ADS-B Double 1/2 Wave Mobile Antenna <http://www.dpdproductions.com/page_vhf_air.html#adsmobilehalf>`_
    
-   -  A recent :doc:`Zynq image </wiki-migration/resources/tools-software/linux-software/zynq_images>` for the AD-FMCOMMS3-EBZ board.
+   -  A recent :doc:`Zynq image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` for the AD-FMCOMMS3-EBZ board.
    -  A good understanding of how the :adi:`AD9361` works. At a minimum, you should read over a basic intro for the :doc:`AD9361 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`.
    
 

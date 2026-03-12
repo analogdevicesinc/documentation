@@ -236,7 +236,7 @@ The code for all the various pieces required to create testing SD cards can be f
    The remaining files used by the tests can be found in the parent directory: :git-board-tests:`picozed-sdr2-fmc`
 
 
-First, write the latest available SD card image found at :doc:`/wiki-migration/resources/tools-software/linux-software/zynq_images` to a spare card and prepare the card to boot into Linux as detailed on that page.
+First, write the latest available SD card image found at :doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux` to a spare card and prepare the card to boot into Linux as detailed on that page.
 
 When that is ready follow the instructions below the create the various files necessary to run the test suite.
 

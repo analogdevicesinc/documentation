@@ -414,7 +414,7 @@ Build the device-tree:
 Booting Linux on ZCU102
 -----------------------
 
-In order for linux to boot, you need to start from a clean ADI :doc:`Linux image </wiki-migration/resources/tools-software/linux-software/zynq_images>`. After that, you need to copy the newly generated files. Assuming the SD card BOOT partition was mounted in /media/BOOT:
+In order for linux to boot, you need to start from a clean ADI :doc:`Linux image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. After that, you need to copy the newly generated files. Assuming the SD card BOOT partition was mounted in /media/BOOT:
 
 ::
 

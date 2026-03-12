@@ -24,7 +24,7 @@ JESD204
 Vivado
 ------
 
-For the JESD204 IP, it is not as straightforward as for other modules. Here you have an example of an instantiation for this interface: `daq2_bd.tcl <https://github.com/hdl/blob/master/projects/daq2/common/daq2_bd.tcl>`_ First, you will have to source the jesd204.tcl script, inside your <project>_bd.tcl. <code> source $ad_hdl_dir/library/jesd204/scripts/jesd204.tcl </code>
+For the JESD204 IP, it is not as straightforward as for other modules. Here you have an example of an instantiation for this interface: `hdl/blob/master/projects/daq2/common/daq2_bd.tcl <https://github.com/hdl/blob/master/projects/daq2/common/daq2_bd.tcl>`_ First, you will have to source the jesd204.tcl script, inside your <project>_bd.tcl. <code> source $ad_hdl_dir/library/jesd204/scripts/jesd204.tcl </code>
 
 The following code is for the TX/DAC part. The RX/ADC is similar.
 
@@ -105,7 +105,7 @@ SPI Engine
 Vivado
 ------
 
-The SPI Engine is a special module too, since it consists of more than one IP. In order to use it into your own project, you will have to add all of its components. For this example, the code shown here is from the ad4630_fmc project: `ad463x_bd.tcl <https://github.com/hdl/blob/master/projects/ad4630_fmc/common/ad463x_bd.tcl>`_
+The SPI Engine is a special module too, since it consists of more than one IP. In order to use it into your own project, you will have to add all of its components. For this example, the code shown here is from the ad4630_fmc project: `hdl/blob/master/projects/ad4630_fmc/common/ad463x_bd.tcl <https://github.com/hdl/blob/master/projects/ad4630_fmc/common/ad463x_bd.tcl>`_
 
 Let's start with sourcing the spi_engine.tcl script inside your <project>_db.tcl. <code> source $ad_hdl_dir/library/spi_engine/scripts/spi_engine.tcl </code> The SPI engine has 4 modules: Execution, interconnect, regmap and offload.
 

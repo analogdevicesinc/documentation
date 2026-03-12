@@ -37,9 +37,7 @@ The purpose of the :adi:`AD-FMCDAQ3-EBZ <en/design-center/evaluation-hardware-an
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad-fmcdaq3-ebz/help_and_support>`
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fmcdaq3_top_new.png

@@ -44,7 +44,5 @@ PlutoSDR is a self-contained RF lab in your hand. It's more than the combination
 It's expected that most people will work their way down through each section, reading and skimming most of the content. The content is in a constant state of improvement, so if you do have a question, please ask at :ez:`EngineerZone <community/university-program>`, or check the :doc:`help and support </wiki-migration/university/tools/pluto/help_support>` page.
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 

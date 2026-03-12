@@ -18,12 +18,10 @@ Requirements
 Creating / Configuring the SD Card
 ----------------------------------
 
-:doc:`Create SD Image for Zynq boards. (it is a single image for all boards) </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+:doc:`Create SD Image for Zynq boards. (it is a single image for all boards) </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 Setting up the hardware (ZC706)

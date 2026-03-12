@@ -681,9 +681,7 @@ You will need to:
 -  Wait ~30 seconds for the “DONE” LED to turn blue.
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 IIO Oscilloscope

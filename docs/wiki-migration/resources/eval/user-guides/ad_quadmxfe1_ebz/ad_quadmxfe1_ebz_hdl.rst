@@ -56,7 +56,7 @@ A few examples of how to modify the IP are listed here: :doc:`tips </wiki-migrat
 Building The Corresponding Linux Image
 --------------------------------------
 
-To build the Linux image, the buildroot process is preferred. The instructions are primarily based around a Linux environment. To get started, follow the directions here: :doc:`buildroot </wiki-migration/resources/tools-software/linux-build/generic/buildroot>`. Once cloned there is a list of device trees (from here: :git-linux:`arch/microblaze/boot/dts`). A new device tree can be specified during the build process if needed.
+To build the Linux image, the buildroot process is preferred. The instructions are primarily based around a Linux environment. To get started, follow the directions here: :doc:`buildroot </wiki-migration/resources/tools-software/linux-build/generic/buildroot>`. Once cloned there is a list of device trees (from here: :git-linux:`linux/tree/master/arch/microblaze/boot/dts <arch/microblaze/boot/dts>`). A new device tree can be specified during the build process if needed.
 
 See the "Building for Microblaze - simpleImage.<board>" Instructions as a reference.
 

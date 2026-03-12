@@ -38,7 +38,7 @@ Helpful Documents
 Software Needed
 ~~~~~~~~~~~~~~~
 
--  Analysis Control Evaluation (ACE) software: available at :adi:`ace-software.html <en/design-center/evaluation-hardware-and-software/ace-software.html>`
+-  Analysis Control Evaluation (ACE) software: available at :adi:`en/design-center/evaluation-hardware-and-software/ace-software.html`
 -  :doc:`Documentation </wiki-migration/resources/tools-software/ace>`
 
 Board Design and Integration Files

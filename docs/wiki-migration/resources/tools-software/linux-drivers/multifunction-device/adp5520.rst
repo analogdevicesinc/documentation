@@ -81,21 +81,21 @@ Status
 Files
 -----
 
-+-----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| Function  | File                                                                                                                                      |
-+===========+===========================================================================================================================================+
-| MFD-CORE  | `adp5520.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/mfd/adp5520.c>`_                              |
-+-----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| include   | `adp5520.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/mfd/adp5520.h>`_                        |
-+-----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| BACKLIGHT | `adp5520_bl.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/video/backlight/adp5520_bl.c>`_            |
-+-----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| LED       | `leds-adp5520.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/led/leds-adp5520.c>`_                    |
-+-----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| GPIO      | `adp5520-gpio.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpio/adp5520-gpio.c>`_\  [3]_            |
-+-----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| KEYPAD    | `adp5520-keys.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/input/keyboard/adp5520-keys.c>`_\  [4]_  |
-+-----------+-------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function  | File                                                                                                                                                             |
++===========+==================================================================================================================================================================+
+| MFD-CORE  | `drivers/mfd/adp5520.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/mfd/adp5520.c>`_                                         |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| include   | `include/linux/mfd/adp5520.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/mfd/adp5520.h>`_                             |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| BACKLIGHT | `drivers/video/backlight/adp5520_bl.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/video/backlight/adp5520_bl.c>`_           |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| LED       | `drivers/led/leds-adp5520.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/led/leds-adp5520.c>`_                               |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| GPIO      | `drivers/gpio/adp5520-gpio.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpio/adp5520-gpio.c>`_\  [3]_                      |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| KEYPAD    | `drivers/input/keyboard/adp5520-keys.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/input/keyboard/adp5520-keys.c>`_\  [4]_  |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example platform device initialization
 ======================================
@@ -122,7 +122,7 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
 
 .. tip::
 
-   Please refer to `adp5520.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/mfd/adp5520.h>`_ for detailed configuration defines.
+   Please refer to `include/linux/mfd/adp5520.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/mfd/adp5520.h>`_ for detailed configuration defines.
 
 
 Backlight
@@ -156,7 +156,7 @@ This method is appropriate when the I2C bus is a system bus, as in many embedded
 
 So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
 
-For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+For more information see: `Documentation/i2c/instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
 
 
 <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_pdev_data{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:/CONFIG_PMIC_ADP5520/2-/#if/ c linux-kernel>
@@ -280,7 +280,7 @@ Backlight
 
    root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 127 > brightness**
    root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 50 > brightness**
-   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 0 > brightness** For more information on Backlight handling in Linux read:* `sysfs-class-backlight <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/stable/sysfs-class-backlight>`_
+   root:/sys/devices/platform/i2c-bfin-twi.0/i2c-adapter/i2c-0/0-0032/backlight/adp5520-backlight> **echo 0 > brightness** For more information on Backlight handling in Linux read:* `Documentation/ABI/stable/sysfs-class-backlight <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/stable/sysfs-class-backlight>`_
 
 LED
 ---
@@ -310,7 +310,7 @@ LED
    root:/> **modprobe -r leds-adp5520**
    root:/>
 
-*For more information on LEDs handling in Linux read:* `leds-class.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/leds-class.txt>`_
+*For more information on LEDs handling in Linux read:* `Documentation/leds-class.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/leds-class.txt>`_
 
 GPIO
 ----
@@ -336,7 +336,7 @@ Note that you will have to enable the event_test utility under "Blackfin test pr
    --- Blackfin test programs
                       [*] Input event device test
 
-*For more information on GPIO handling in Linux read:* `gpio.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/gpio.txt>`_
+*For more information on GPIO handling in Linux read:* `Documentation/gpio.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/gpio.txt>`_
 
 Keypad
 ------
@@ -387,7 +387,7 @@ Keypad
    root:/> **modprobe -r adp5520-keys**
    root:/>
 
-*For more information on Input handling in Linux read:* `input.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/input/input.txt>`_
+*For more information on Input handling in Linux read:* `Documentation/input/input.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/input/input.txt>`_
 
 More Information
 ================

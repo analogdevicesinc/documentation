@@ -279,9 +279,7 @@ You will need to:
 -  Connect the DAC output connectors to the negative ADC input connectors as shown in Figure 7 using coax cables (i.e. DAC0 to ADC0-neg, DAC1 to ADC1-neg, etc.). Terminate the positive ADC connectors with 50ohms SMA terminators |cn0584_loopback_connection.png| *Figure 7. EVAL-CN0584-EBZ Loopback Connection on AFE *\* Turn the ZedBoard on. \* Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.The hardware set up is now complete. setup_cn0585_diagram.png*\ Figure 8. Example System Setup*
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 Application Software (both locally and remotely on the FPGA)

@@ -15,7 +15,7 @@ The ADL5960 Evaluation Board ships as a kit with a ribbon cable and a pre-progra
 Software Installation and Usage
 -------------------------------
 
--  Download the GUI software from the product page at :adi:`adl5960.html <en/products/adl5960.html>`. Double-click to run the installer, then follow the simple on-screen instructions. It is recommended to use the default installation directory. The installer will also automatically install the necessary USB drivers for the Linduino board.
+-  Download the GUI software from the product page at :adi:`en/products/adl5960.html`. Double-click to run the installer, then follow the simple on-screen instructions. It is recommended to use the default installation directory. The installer will also automatically install the necessary USB drivers for the Linduino board.
 -  After software installation, it's now OK to connect the USB cable from PC to Linduino. This causes the PC OS to automatically load the required USB driver for the Linduino.
 -  Software installation places shortcuts on both the PC desktop and in the Start menu. Double-clicking either will bring up the Graphical User Interface program.
 -  The GUI software should automatically locate and show the ADL5960 connection as a COM port number. Click the Connect button. All ADL5960 user-configurable registers now appear and become editable.

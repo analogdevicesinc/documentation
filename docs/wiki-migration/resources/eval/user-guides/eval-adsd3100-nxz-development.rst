@@ -7,7 +7,7 @@ Doxygen documentation (via the GitHub ToF repo): https://analogdevicesinc.github
 
 The SDK API is used to control the setup the camera and SDK, control the camera and get frames.
 
-There are several examples provided with the SDK: :git-ToF:`examples`
+There are several examples provided with the SDK: :git-ToF:`ToF/tree/master/examples <examples>`
 
 The SDK uses the name space **aditof**.
 
@@ -61,7 +61,7 @@ Dissecting the first-frame C++ Example
 
 Note, it is expected the following example runs on the NXP directly - and not the host, being Windows or Desktop Linux.
 
-Source code: `main.cpp <https://github.com/ToF?master/examples/first-frame/main.cpp>`_
+Source code: `ToF?master/examples/first-frame/main.cpp <https://github.com/ToF?master/examples/first-frame/main.cpp>`_
 
 Let's start by looking at some of the basic classes that are needed.
 
@@ -313,7 +313,7 @@ Stage 1
 Stage 2
 
 -  Extract details on the frame
--  For the definition of **FrameDataDetails**, see `frame_definitions.h <https://github.com/ToF?master/sdk/include/aditof/frame_definitions.h>`_.
+-  For the definition of **FrameDataDetails**, see `ToF?master/sdk/include/aditof/frame_definitions.h <https://github.com/ToF?master/sdk/include/aditof/frame_definitions.h>`_.
 
 ::
 
@@ -332,7 +332,7 @@ first-frame.py
 
 The following section goes through important chunks of the python example.
 
-:git-ToF:`bindings/python/examples/first_frame_network`
+:git-ToF:`ToF/tree/master/bindings/python/examples/first_frame_network <bindings/python/examples/first_frame_network>`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/example1.png
    :align: center

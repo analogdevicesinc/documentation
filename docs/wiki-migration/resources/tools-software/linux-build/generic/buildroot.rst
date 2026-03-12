@@ -123,7 +123,7 @@ If building an entire zImage that can be ran on a board:
 
 .. tip::
 
-   \ **a10gx_daq2** is an example. Valid device-tree names can be found in :git-linux:`arch/nios2/boot/dts`\
+   \ **a10gx_daq2** is an example. Valid device-tree names can be found in :git-linux:`linux/tree/master/arch/nios2/boot/dts <arch/nios2/boot/dts>`\
 
 
 Build output & device images

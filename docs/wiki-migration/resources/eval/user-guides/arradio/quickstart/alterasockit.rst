@@ -141,9 +141,7 @@ SW6     MSEL0 MSEL1 MSEL2 MSEL3 MSEL4 CODEC_SEL
 ======= ===== ===== ===== ===== ===== =========
 
 
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+.. esd-warning::
 
 
 Booting the Micro-SD Card
