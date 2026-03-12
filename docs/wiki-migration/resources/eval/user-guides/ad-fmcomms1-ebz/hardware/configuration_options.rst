@@ -2,9 +2,23 @@ AD-FMCOMMS1-EBZ Configuration Options
 =====================================
 
 
-.. note::
 
-   See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
+.. important::
+
+   Analog Devices uses six designations to inform our customers where a
+   semiconductor product is in its
+   :adi:`life cycle <en/support/customer-service-resources/sales/product-life-cycle-information.html>`.
+   From emerging innovations to products which have been in production for
+   twenty years, we understand that insight into life cycle status is important.
+   Device life cycles are tracked on their individual product pages on
+   `analog.com <https://www.analog.com/>`_, and should always be consulted
+   before making any design decisions.
+
+   This particular article/document/design has been retired or deprecated,
+   which means it is no longer maintained or actively updated, even though the
+   devices themselves may be **Recommended for New Designs** or in
+   **Production**. This page is here for historical/reference purposes only.
+
 
 
 There is one main configuration which needs to be made during use of the `ad-fmcomms1-ebz <https://wiki.analog.com/../../ad-fmcomms1-ebz>`_ - to use or not to use the RF section. When not using the RF section of the board, the analog interface is directly to the ADC inputs and DAC outputs. (The RF section is not powered down, so it still consumes the same amount of power).

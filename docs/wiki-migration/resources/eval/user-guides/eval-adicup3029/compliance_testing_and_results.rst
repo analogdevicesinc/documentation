@@ -27,7 +27,17 @@ What are all these logos?
 
 
 
-.. note::
 
-   See `wiki/common <https://wiki.analog.com/wiki/common#rf_warning>`_
+.. caution::
+
+   Although this device has RF transmit capabilities, since the default
+   operation/firmware does not enable any RF emissions this product is **not**
+   certified as an intentional transmitter. While in the default mode, it has
+   been verified not to emit harmful emissions to other devices, and has the
+   ability to accept emissions from other devices. The RF transmit functionality
+   should only be enabled by people skilled in the art of RF electronics, in
+   appropriate area, such as an RF anechoic chamber. Failing to follow these
+   recommendations, end users could be subject to country government penalty or
+   fine.
+
 

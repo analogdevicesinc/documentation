@@ -2,9 +2,23 @@ Beacon Frame Receiver Example
 =============================
 
 
-.. note::
 
-   See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
+.. important::
+
+   Analog Devices uses six designations to inform our customers where a
+   semiconductor product is in its
+   :adi:`life cycle <en/support/customer-service-resources/sales/product-life-cycle-information.html>`.
+   From emerging innovations to products which have been in production for
+   twenty years, we understand that insight into life cycle status is important.
+   Device life cycles are tracked on their individual product pages on
+   `analog.com <https://www.analog.com/>`_, and should always be consulted
+   before making any design decisions.
+
+   This particular article/document/design has been retired or deprecated,
+   which means it is no longer maintained or actively updated, even though the
+   devices themselves may be **Recommended for New Designs** or in
+   **Production**. This page is here for historical/reference purposes only.
+
 
 
 In this section, we will show an IEEE 802.11b beacon frame receiver example. In this example, FMCOMMS2 is used as RF front-end, which captures the WiFi signals over the air. These signals are then streamed from target to Simulink via the iio_sys_obj block. The Simulink model is shown in the figure below, where the Receiver and PLCP Display are from an existing Simulink example `IEEE 802.11 WLAN - Beacon Frame Receiver with USRP® Hardware <https://www.mathworks.com/help/supportpkg/usrpradio/ug/ieee-802-11-tm-wlan-ofdm-beacon-receiver-with-usrp-r-hardware.html>`_. This Simulink model will decode the received WiFi signals, and display all the information from the beacon frame.
