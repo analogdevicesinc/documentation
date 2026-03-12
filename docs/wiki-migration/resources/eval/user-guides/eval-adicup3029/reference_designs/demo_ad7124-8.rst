@@ -186,4 +186,4 @@ The application contains the platform drivers with the sources in **platform_sou
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7124pmdz_file_structure.png
    :align: center
 
-// End of Document //
+*End of Document*

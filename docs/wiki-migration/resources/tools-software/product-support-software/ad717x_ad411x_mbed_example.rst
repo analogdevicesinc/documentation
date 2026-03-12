@@ -27,7 +27,7 @@ The :adi:`EVAL-AD411x <en/design-center/evaluation-hardware-and-software/evaluat
 Useful links
 ============
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#useful_link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :doc:`AD717x No-OS Driver </wiki-migration/resources/tools-software/uc-drivers/ad717x>`

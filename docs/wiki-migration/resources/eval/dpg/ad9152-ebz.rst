@@ -395,11 +395,11 @@ Note
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-ebz_photo.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/AD9152_EBZ_photo.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152_ebz_photo.png
    :width: 300px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-ebz_photo.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/AD9152_EBZ_photo.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152_ebz_photo.png
    :width: 300px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/dpg_downloader_pane1.png
    :width: 800px

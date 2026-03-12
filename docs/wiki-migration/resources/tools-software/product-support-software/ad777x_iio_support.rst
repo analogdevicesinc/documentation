@@ -12,7 +12,7 @@ This page gives an overview of using the ARM platforms supported (default is Mbe
 
 IIO oscilloscope is used as client application running on Windows-os, which is ADI developed GUI for ADC data visualization and device debug. The interface used for communicating client application with firmware application (IIO device) is UART (Note: SDP-K1 can also support high speed VirtualCOM port @1Mbps or higher speed for faster data transmission). The firmware application communicates with IIO device using ADI No-OS drivers and platform drivers low level software layers. SDP-K1 for MBED and Nucleo-L552ZEQ is used as controller board, on which IIO firmware application runs and using above software libraries, the IIO firmware communicates with IIO device.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/mbed_and_stm32_support_board_message#Introduction&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/mbed_and_stm32_support_board_message#introduction&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/mbed_and_stm32_support_board_message#Introduction&showfooter=nofooter
 
 --------------
@@ -20,7 +20,7 @@ IIO oscilloscope is used as client application running on Windows-os, which is A
 Useful links
 ------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#useful_link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :git-no-OS:`AD777x no-OS Drivers <drivers/adc/ad7779>`
@@ -52,7 +52,7 @@ Please refer to the respective board user guide on the product page of the chose
    :align: center
    :width: 800px
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/hardware_connections_uart#uart_connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
 
 --------------
@@ -83,16 +83,16 @@ This section briefs on the usage of MBED and STM32 firmware. This also explains 
    
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>/resources/tools-software/product-support-software/lib_iio_download#Getting Started&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>/resources/tools-software/product-support-software/lib_iio_download#getting_started&showfooter=nofooter
    :alt: section>/resources/tools-software/product-support-software/lib_iio_download#Getting Started&showfooter=nofooter
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>/resources/tools-software/product-support-software/iio_osc_download#Getting Started&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>/resources/tools-software/product-support-software/iio_osc_download#getting_started&showfooter=nofooter
    :alt: section>/resources/tools-software/product-support-software/iio_osc_download#Getting Started&showfooter=nofooter
 
 Evaluating AD777x Using IIO Ecosystem
 =====================================
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/note_hardware_connections#note_in_hardware_connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
 
 Running IIO Oscilloscope (Client)
@@ -171,7 +171,7 @@ Python Environment and Scripts
 
 Data capture can be achieved with clients other than the IIO Oscilloscope as well. A possible option using ADI's pyadi-iio library in python has been demonstrated in the forthcoming sections. The *ad777x_data_capture.py* is capable of achieving the same.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_python_application#Python Application&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_python_application#python_application&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_python_application#Python Application&showfooter=nofooter
 
 --------------

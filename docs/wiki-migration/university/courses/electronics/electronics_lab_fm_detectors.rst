@@ -16,7 +16,7 @@ For communication to work, both the sender and the receiver must agree on what c
 
 .. container:: centeralign
 
-   //Figure 1. FM Demodulation Detection //
+   *Figure 1. FM Demodulation Detection*
 
 
 FM detectors are circuits that instantaneously convert the frequency changes from the carrier signal to its output voltage counterpart. They are also known as frequency demodulators or discriminators. An FM detector’s transfer function is nonlinear, however, when operated in its linear range is:
@@ -53,7 +53,7 @@ Like AM, FM’s modulation index, m, is a measure of the peak frequency deviatio
 
 .. container:: centeralign
 
-   //Figure 2. Sample FM Signal //
+   *Figure 2. Sample FM Signal*
 
 
 The carrier signal frequency is 1kHz, the modulating frequency 100Hz, and the modulation index is 3. Taking note of the modulation index, this makes the peak frequency deviation 300Hz. The frequency will swing between 700 and 1300 Hz. On the other hand, the function of the modulating frequency is to know how fast the cycle is completed.
@@ -79,14 +79,14 @@ The slope-detector, otherwise known as a single-ended slope detector, is the sim
 
 .. container:: centeralign
 
-   //Figure 3. Slope Detector //
+   *Figure 3. Slope Detector*
 
 
    |Simplified Slope Detector|
 
 .. container:: centeralign
 
-   //Figure 4. Transformerless Slope Detector //
+   *Figure 4. Transformerless Slope Detector*
 
 
 Despite its simplicity, the slope-detector has the most nonlinear voltage-versus-frequency characteristics, thus, it is rarely used. Figure 4 illustrates its voltage versus frequency characteristic.
@@ -112,7 +112,7 @@ Open the simulation file. In the circuit, an FM signal with a 1kHz modulating fr
 
 .. container:: centeralign
 
-   //Figure 6. Slope Detector Simulation //
+   *Figure 6. Slope Detector Simulation*
 
 
 The waveforms observed should be similar to that of Figure 5b.
@@ -123,7 +123,7 @@ The waveforms observed should be similar to that of Figure 5b.
 
 .. container:: centeralign
 
-   //Figure 7. Slope Detector Waveforms //
+   *Figure 7. Slope Detector Waveforms*
 
 
 Other Circuits
@@ -139,14 +139,14 @@ The Foster-Seeley Discriminator and Ratio Detector were widely used FM demodulat
 
 .. container:: centeralign
 
-   //Figure 8. Foster-Seeley Discriminator //
+   *Figure 8. Foster-Seeley Discriminator*
 
 
    |Ratio Detector|
 
 .. container:: centeralign
 
-   //Figure 9. Ratio Detector //
+   *Figure 9. Ratio Detector*
 
 
 Both demodulators are simple to construct using discrete components and offer good levels of performance and linearity. However, the Foster-Seeley provides a higher output and has a lower distortion than the ratio detector, and the ratio detector provides a good level of immunity to amplitude noise and has a wider bandwidth compared to the Foster-Seeley. The downsides to these demodulators are the high cost of their transformers and they are difficult to incorporate with an integrated circuit; thus, they are not widely used these days.
@@ -161,7 +161,7 @@ A Pulse-Averaging discriminator uses a zero-crossing detector, a one shot multiv
 
 .. container:: centeralign
 
-   //Figure 10. \| Block Diagram of Pulse-Averaging Discriminator //
+   *Figure 10. \| Block Diagram of Pulse-Averaging Discriminator*
 
 
 This is a very high-quality frequency demodulator and was limited to expensive telemetry and industrial control applications. But due to the availability of low-cost ICs, the pulse-averaging discriminator is easily implemented and is now used in many electronic products.
@@ -172,7 +172,7 @@ This is a very high-quality frequency demodulator and was limited to expensive t
 
 .. container:: centeralign
 
-   //Figure 11. \| Pulse-Averaging Discriminator’s Waveforms: (a) FM input, (b) Output of zero-crossing detector, (c) Output of one shot, (d) Output of discriminator (original modulating signal). //
+   *Figure 11. \| Pulse-Averaging Discriminator’s Waveforms: (a) FM input, (b) Output of zero-crossing detector, (c) Output of one shot, (d) Output of discriminator (original modulating signal).*
 
 
 Quadrature Detectors
@@ -200,7 +200,7 @@ The phase-locked loop (PLL) is a frequency- or phase-sensitive feedback control 
 
 .. container:: centeralign
 
-   //Figure 13. Block Diagram of Phase-Locked Loop //
+   *Figure 13. Block Diagram of Phase-Locked Loop*
 
 
 The phase-locked loop used as an FM demodulator, though the operation of a PLL is involved, is probably the simplest and easiest to understand. The ability of a phase-locked loop to provide frequency selectivity and filtering gives it a signal-to noise ratio superior to that of any other type of FM detector. For a more in-depth study of its operation, check the :doc:`Phase-Locked Loop Laboratory Activity </wiki-migration/university/courses/electronics/electronics-lab-31>`.

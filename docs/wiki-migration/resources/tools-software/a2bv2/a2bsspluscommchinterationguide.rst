@@ -151,7 +151,7 @@ The steps to initialize a communication channel on Sub node is as follows. The :
    *       Next a communication channel context must be created with the I2C PAL function pointers for the platform using the //adi_a2b_CommChPalInit// API.
    *       Next the communication channel instance should be created specifying the required configuration using the //adi_a2b_CommChCreate// API. The configuration should specify the memory for the instance and application callback for handling the events. The A2B Sub node transceiver local I2C address is specified using the **ADI_A2B_COMMCH_SLVNODE_I2C_ADDR** macro. The context for the Communication channel and default Rx and Tx mailbox are also to be specified.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/initialization_of_communication_channel_at_Slave.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/initialization_of_communication_channel_at_slave.png
    :align: center
 
 .. container:: centeralign
@@ -416,11 +416,11 @@ Terminology
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/communication_channel_architecture.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/api_reference_document.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/application_information_structure_for_communication_channel.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/communication_channel_event_handling_at_Slave.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/periodic_ticking_at_Slave.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/transmission_over_communication_channel_at_Slave.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/communication_channel_event_handling_at_slave.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/periodic_ticking_at_slave.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/transmission_over_communication_channel_at_slave.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_set_framing.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_get_framing.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/Master_Slave_message_handshake_sequence.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_integration_with_a2b_stack_on_Master_node.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/adsp-sc594_as_Master_and_smart_Slave.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/master_slave_message_handshake_sequence.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_integration_with_a2b_stack_on_master_node.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/adsp-sc594_as_master_and_smart_slave.png

@@ -61,7 +61,7 @@ Once you downloaded the installer, run it and follow all the required steps. Aft
 Video
 ~~~~~
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>894HkVXf7-U
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>894hkvxf7-u
    :alt: youtube>894HkVXf7-U
 
 Scopy for Linux
@@ -87,7 +87,7 @@ After this, get the **Scopy.flatpak** file from the downloaded archive and run:
 Video
 ~~~~~
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>9qgxmmTrcSE
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>9qgxmmtrcse
    :alt: youtube>9qgxmmTrcSE
 
 Scopy for OSX
@@ -98,7 +98,7 @@ Double click the downloaded .dmg to make its content available. "Scopy" will sho
 Video
 ~~~~~
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>To0ACQ77tkg
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>to0acq77tkg
    :alt: youtube>To0ACQ77tkg
 
 Scopy for Android

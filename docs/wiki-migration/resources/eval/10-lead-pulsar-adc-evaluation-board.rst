@@ -154,7 +154,7 @@ The second part of the software installation is the drivers related to the SDP b
 
 |image8| *Figure 8. Installation for SDP Starting*
 
-|image9| //Figure 9. Click Next >> to Install the ADI SDP Drivers //
+|image9| *Figure 9. Click Next >> to Install the ADI SDP Drivers*
 
 |image10| *Figure 10. Choose Install Location, Default Folder Shown*
 

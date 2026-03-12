@@ -14,7 +14,7 @@ As in all the ALM labs we use the following terminology when referring to the co
 Background:
 -----------
 
-For background on transmission lines in general and artificial lumped LC transmission lines specifically please refer to this `earlier lab activity. <:doc:`/wiki-migration/university/courses/alm1k/alm-lc-atline`>`_
+For background on transmission lines in general and artificial lumped LC transmission lines specifically please refer to this :doc:`earlier lab activity. </wiki-migration/university/courses/alm1k/alm-lc-atline>`
 
 A stub or resonant stub is a length of transmission line that is connected to some part of a circuit or network at one end only. The unconnected or free end of the stub is either left open-circuit, or short-circuited. Neglecting transmission line resistive losses, the input impedance of the stub is purely reactive; either capacitive or inductive, depending on the electrical length of the stub, and on whether it is open or short circuit. Stubs may thus function as capacitors, inductors and resonant circuits. The resonant behavior of transmission line stubs is due to standing waves along their length.
 
@@ -156,7 +156,7 @@ Questions:
 Appendix:
 ---------
 
-`Build LC transmission line on a Solder-less breadboard <:doc:`/wiki-migration/university/courses/alm1k/alm-lc-atline`>`_
+:doc:`Build LC transmission line on a Solder-less breadboard </wiki-migration/university/courses/alm1k/alm-lc-atline>`
 
 **For Further Reading:**
 

@@ -28,7 +28,7 @@ Functional Block Diagram
 
 .. container:: centeralign
 
-   //Figure 1. //
+   *Figure 1.*
 
 
 Pin Configurations
@@ -115,10 +115,7 @@ Input Shift Register Contents
 
 .. container:: CENTERALIGN
 
-   //Figure 4. Input Shift Register Contents //
-
-
-**Table 2. Command Definitions**
+   *Figure 4. Input Shift Register Contents **Table 2. Command Definitions**
 
 +---------+----+----+----+----------------------------------------------------------------+
 | Command |    |    |    |                                                                |

@@ -120,7 +120,7 @@ Video
 
 Since a picture is worth 1000 words, ... :)
 
-.. image:: https://wiki.analog.com/_media/university/tools/pluto/engineers/youtube>xSO-cFeyDFs
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/engineers/youtube>xso-cfeydfs
    :alt: youtube>xSO-cFeyDFs
 
 .. |https---imgs.xkcd.com-comics-is_it_worth_the_time.png| image:: https://imgs.xkcd.com/comics/is_it_worth_the_time.png

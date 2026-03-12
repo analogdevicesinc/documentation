@@ -165,7 +165,7 @@ Depending on the divide factor N of the particular divider you build you will ne
    :width: 600px
 .. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a31_f4.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/PLL_Complete_PLL_Circuit_Hardware_Setup.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/pll_complete_pll_circuit_hardware_setup.png
 .. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/pll_complete_pll_circuit_scopeshot1.png
 .. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a31_f5.png
    :width: 600px

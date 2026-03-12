@@ -10,7 +10,7 @@ Overview
 
 Circuits from the Lab reference designs enable system and sub-system level prototyping and proof of concepts design work. Have a look at this short video to learn more.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>GCdYKaYgQe4
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>gcdykaygqe4
    :alt: youtube>GCdYKaYgQe4
 
 Hardware

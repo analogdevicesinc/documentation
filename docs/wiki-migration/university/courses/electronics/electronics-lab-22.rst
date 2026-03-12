@@ -271,13 +271,13 @@ FOD817 Series 4 pin photo transistor optocoupler from Fairchild Semi. Lite-On, O
    :width: 450px
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f2.gif
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_oc_bb.JPG
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_oc_wv.JPG
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_oc_bb.jpg
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_oc_wv.jpg
    :width: 600px
 .. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f3.gif
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_drv_bb.JPG
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_drv_wv.JPG
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_drv_bb.jpg
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_drv_wv.jpg
    :width: 600px
 .. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f4.gif
    :width: 600px

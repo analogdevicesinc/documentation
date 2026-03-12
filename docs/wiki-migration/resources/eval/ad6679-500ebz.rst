@@ -113,12 +113,12 @@ Visual Analog Setup
 -  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` VisualAnalog :math:`right` VisualAnalog
 -  On the VisualAnalog “New Canvas” window, click **ADC** :math:`right` **Dual** :math:`right` **AD6679**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_selecting_canvas.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_selecting_canvas.png
    :align: center
 
 .. container:: centeralign
 
-   //Figure 4. Selecting the :adi:`AD6679` canvas //
+   *Figure 4. Selecting the :adi:`AD6679` canvas*
 
 
 -  If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 5)
@@ -133,7 +133,7 @@ Visual Analog Setup
 
 -  Click the **Settings** button in the **ADC Data Capture** block as shown in Figure 6
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_capture_settings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_capture_settings.png
    :align: center
    :width: 600px
 
@@ -144,7 +144,7 @@ Visual Analog Setup
 
 -  On the **General** tab make sure the clock frequency is set to **500MHz** (or other clock frequency). The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The HSC-ADC-EVALEZ FPGA software supports up to 2M FFT capture (1M per channel)
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_capture_settings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_capture_settings.png
    :align: center
    :width: 600px
 
@@ -163,7 +163,7 @@ SPIController Setup
 -  Select the appropriate configuration file when prompted.
 -  In the **Global** tab, under the **Generic Read/Write** section, write 0x81 to register 0x000. This issues a Soft reset for the DUT.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_spi_global.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_spi_global.png
    :align: center
 
 .. container:: centeralign
@@ -193,7 +193,7 @@ Device Setup - NSR Mode
 
 -  The default Chip Application Mode for the AD6679-500 is set to NSR.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_spi_nsr_adcglobal.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_spi_nsr_adcglobal.png
    :align: center
    :width: 800px
 
@@ -204,7 +204,7 @@ Device Setup - NSR Mode
 
 -  The NSR mode settings are configured in the ADCA and ADCB tabs. The NSR defaults to 21% bandwidth mode with a tuning word of 0.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_spi_nsr_settings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_spi_nsr_settings.png
    :align: center
    :width: 300px
 
@@ -218,7 +218,7 @@ Obtaining an FFT - NSR Mode
 
 -  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 500MHz is the input clock frequency.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_capture_settings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_capture_settings.png
    :align: center
 
 .. container:: centeralign
@@ -228,7 +228,7 @@ Obtaining an FFT - NSR Mode
 
 -  In order to obtain an FFT with NSR enabled, Visual Analog must be configured correctly. Click on the settings button on the FFT Analysis block and configure the settings in Visual Analog to match the NSR settings that have been programmed into the AD6679. Under Advanced Calculation, click the Enable box, select :adi:`ad6679` NSR, and then select the appropriate bandwidth mode and tuning word. Make sure to set the Bandwidth to match the mode. When finished, click the Apply button and then the OK button to apply the settings.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_fftanalysis_nsr_settings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_fftanalysis_nsr_settings.png
    :align: center
 
 .. container:: centeralign
@@ -238,7 +238,7 @@ Obtaining an FFT - NSR Mode
 
 -  Click the Run button in Visual Analog and you should see the capture data similar to the plot below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_fft_nsr.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_fft_nsr.png
    :align: center
    :width: 800px
 
@@ -262,7 +262,7 @@ Obtaining an FFT - NSR Mode
 
 -  Click on File :math:`right` Save Form As button and save it to a location of choice
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_fft_graph_saveformas.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_fft_graph_saveformas.png
    :align: center
 
 .. container:: centeralign
@@ -275,7 +275,7 @@ Device Setup - VDR Mode
 
 -  The default Chip Application Mode for the AD6679 is set to NSR. The settings in the ADCBase0 tab must be changed to configure the AD6679 into VDR mode. To set up the AD6679 for VDR mode change the Chip Application Mode in register 0x200 to Variable Dynamic Range (VDR) Mode and set the Chip Decimation Ratio in register 0x201 to Full Sample Rate.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_vdr_adcglobal.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_adcglobal.png
    :align: center
    :width: 800px
 
@@ -286,7 +286,7 @@ Device Setup - VDR Mode
 
 -  The VDR mode tuning word can be configured in the ADC A and ADC B tabs. VDR defaults to **25% Bandwidth Complex Mode** with a **Tuning Word of 0**. The tuning word can be changed using the VDR Tuner Frequency selection (register 0x434). See the AD6679 data sheet for more details on the available bandwidth modes and tuning words.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_vdr_tuningword.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_tuningword.png
    :align: center
    :width: 300px
 
@@ -300,7 +300,7 @@ Obtaining an FFT - VDR Mode
 
 -  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 500MHz is the input clock frequency.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_capture_settings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_capture_settings.png
    :align: center
 
 .. container:: centeralign
@@ -310,7 +310,7 @@ Obtaining an FFT - VDR Mode
 
 -  Click the Run button in Visual Analog and you should see the capture data similar to the plot below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_fft_vdr.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_fft_vdr.png
    :align: center
    :width: 800px
 
@@ -334,7 +334,7 @@ Obtaining an FFT - VDR Mode
 
 -  Click on File :math:`right` Save Form As button and save it to a location of choice
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_fft_graph_saveformas.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_fft_graph_saveformas.png
    :align: center
 
 .. container:: centeralign
@@ -347,7 +347,7 @@ Setting up SPIController to Output the VDR High/Low Resolution Bit or the VDR Pu
 
 -  To enable the VDR High/Low Resolution bit go to the ADCBase2 tab in SPIController. In the OUTPUT CTRL MODE REG(559) drop down select "VDR High/Low Resolution Bit".
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_spi_vdr_highlowbit_adcbase2.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_spi_vdr_highlowbit_adcbase2.png
    :align: center
 
 .. container:: centeralign
@@ -357,7 +357,7 @@ Setting up SPIController to Output the VDR High/Low Resolution Bit or the VDR Pu
 
 -  Alternatively, the VDR Punish Bit can be enabled. To enable this bit go to ADCBase2 in SPIController and in the OUTPUT CTRL MODE REG(559) drop down select "Fast Detect (FD) or VDR Punish Bit
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_spi_vdr_punishbit_adcbase2.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_spi_vdr_punishbit_adcbase2.png
    :align: center
 
 .. container:: centeralign
@@ -370,7 +370,7 @@ Viewing the VDR Punish Bits and the VDR High/Low Resolution Bit - VDR Mode
 
 -  The first step is to open a new Logic canvas in VisualAnalog. In the Logic canvas configure the Input Formatter to set the Resolution to 16 bits and the Alignment to 18 bits. This will create the space such that the VDR status bit can be visible in the Logic canvas.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_va_inputformatter.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_inputformatter.png
    :align: center
 
 .. container:: centeralign
@@ -380,7 +380,7 @@ Viewing the VDR Punish Bits and the VDR High/Low Resolution Bit - VDR Mode
 
 -  Next configure the Logic Analysis block for the data alignement. Set the High Bit to 17 and the low bit to 0. This will align the canvas such that the VDR status bit can be visible in the Logic canvas.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_va_logicanalysis.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_va_logicanalysis.png
    :align: center
 
 .. container:: centeralign
@@ -390,7 +390,7 @@ Viewing the VDR Punish Bits and the VDR High/Low Resolution Bit - VDR Mode
 
 -  Once a signal is input that will trigger VDR to operate the VDR high/low resolution bit can be seen in the Logic Canvas display. The VDR high/low resolution bit indicates that the resolution is ≤13 bits.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_va_logiccanvas_vdrhighlowresbit.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_va_logiccanvas_vdrhighlowresbit.png
    :align: center
 
 .. container:: centeralign
@@ -400,7 +400,7 @@ Viewing the VDR Punish Bits and the VDR High/Low Resolution Bit - VDR Mode
 
 -  When a signal is input that will trigger VDR then the VDR punish bit may alternatively be enabled. The VDR punish bit can be seen in the Logic Canvas display. The VDR punish bit indicates that resolution is ≤12 bits.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_va_logiccanvas_vdrpunishbit.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_va_logiccanvas_vdrpunishbit.png
    :align: center
 
 .. container:: centeralign
@@ -413,7 +413,7 @@ Device Setup - 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 -  The default Chip Application Mode for the AD6679 is set to NSR. The settings in the ADCBase0 tab must be changed to configure the AD6679 to use the DDCs. In this example the AD6679 is set up to use two DDCs (one per ADC channel) with real outputs and a decimation ratio of two. Set the Chip Application Mode in register 0x200 to Two Digital Down Converters and select the Only Real (I) Selected checkbox. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2ddcrealdec2_adcglobal.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcglobal.png
    :align: center
    :width: 800px
 
@@ -440,7 +440,7 @@ Device Setup - 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
    -  After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2ddcrealdec2_adcbase1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcbase1.png
    :align: center
    :width: 650px
 
@@ -454,7 +454,7 @@ Obtaining an FFT - 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 -  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 500MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 and DDC1 are being used in the AD6679 so this must be selected under the ADC Data Capture Settings.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_2ddcrealdec2_datacapturesettings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_2ddcrealdec2_datacapturesettings.png
    :align: center
 
 .. container:: centeralign
@@ -464,7 +464,7 @@ Obtaining an FFT - 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 -  Click the Run button in Visual Analog and you should see the capture data similar to the plot below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_fft_2ddcrealdec2.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_fft_2ddcrealdec2.png
    :align: center
    :width: 800px
 
@@ -488,7 +488,7 @@ Obtaining an FFT - 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 -  Click on File :math:`right` Save Form As button and save it to a location of choice
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_fft_graph_saveformas.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_fft_graph_saveformas.png
    :align: center
 
 .. container:: centeralign
@@ -501,7 +501,7 @@ Device Setup - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  The default Chip Application Mode for the AD6679 is set to NSR. The settings in the ADCBase0 tab must be changed to configure the AD6679 to use the DDC. In this example the AD6679 will be set up to use one DDCs with a complex ZIF output (NCO bypassed) and a decimation ration of two. Set the Chip Application Mode in register 0x200 to One Digital Down Converter and make sure the Only Real (I) Selected checkbox is **NOT** checked. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2adc1ddccomplexdec2_adcglobal.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcglobal.png
    :align: center
    :width: 800px
 
@@ -514,7 +514,7 @@ Device Setup - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
    -  After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2adc1ddccomplexdec2_adcbase1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcbase1.png
    :align: center
    :width: 400px
 
@@ -528,7 +528,7 @@ Obtaining an FFT - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 500MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 is being used in the AD6679 so this must be selected under the ADC Data Capture Settings.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_1ddccomplexdec2_datacapturesettings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_1ddccomplexdec2_datacapturesettings.png
    :align: center
 
 .. container:: centeralign
@@ -538,7 +538,7 @@ Obtaining an FFT - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  In order to exclude the image frequency from the SFDR measurements, configure Visual Analog to remove the image from its calculations. This is done under the FFT Analysis settings. Under the User-Defined tab add a new row by clicking Add. Name it ‘Image’. Use a symbol such as the # and set the Freq to ‘-fund’. Set the Single-Side Band to 3 Bins and set it as ‘Spur, Exclude’. Once done, select the row, and then hit the Move Up button to place this new row just below the row with Fund.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_2adc1ddccomplexdec2_fftanalysissettings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_2adc1ddccomplexdec2_fftanalysissettings.png
    :align: center
    :width: 700px
 
@@ -549,7 +549,7 @@ Obtaining an FFT - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  Click the Run button in Visual Analog and you should see the capture data similar to the plot below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_fft_1ddccomplexdec2.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_fft_1ddccomplexdec2.png
    :align: center
    :width: 800px
 
@@ -573,7 +573,7 @@ Obtaining an FFT - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  Click on File :math:`right` Save Form As button and save it to a location of choice
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_fft_graph_saveformas.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_fft_graph_saveformas.png
    :align: center
 
 .. container:: centeralign
@@ -595,7 +595,10 @@ Troubleshooting Tips
 
 .. container:: centeralign
 
-   \ *Figure 46. Issuing a data path soft reset through SPIController*\** The FFT plot appears normal, but performance is poor.**
+   \ *Figure 46. Issuing a data path soft reset through SPIController*\
+
+
+\*\* The FFT plot appears normal, but performance is poor. \*\*
 
 -  Make sure you are using the appropriate band-pass filter on the analog input.
 -  Make sure the signal generators for the clock and the analog input are clean (low phase noise).
@@ -609,7 +612,7 @@ Troubleshooting Tips
 -  Make sure the correct FPGA *bin* file was used to program the FPGA.
 -  Be sure that the correct sample rate is programmed. Click on the **Settings** button in the **ADC Data Capture** block in VisualAnalog, and verify that the **Clock Frequency** is properly set.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_capture_settings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_capture_settings.png
    :align: center
 
 .. container:: centeralign
@@ -627,7 +630,7 @@ Troubleshooting Tips
 
 -  Ensure that the clock to the ADC is supplied. Using SPIController **ADCBase0** tab the status of the clock can be read out. See figure 48.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6679_clockdetect.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6679_clockdetect.png
    :align: center
 
 .. container:: centeralign

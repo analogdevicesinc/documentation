@@ -18,5 +18,5 @@ Quick Start Guides are available for
    :alt: FMCMOTCON1 on Zed board running linux
    :width: 500px
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#Introduction#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon1-ebz#introduction#./
    :alt: Overview#Hardware

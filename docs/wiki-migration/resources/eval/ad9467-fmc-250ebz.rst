@@ -94,7 +94,7 @@ Before using the software for testing, configure the evaluation board as follows
 
 .. container:: centeralign
 
-   //Figure 3. Device Manager Showing SDP-H1 //
+   *Figure 3. Device Manager Showing SDP-H1*
 
 
 -  If the Device Manager does not show the :adi:`SDP-H1` listed as shown in Figure 2, unplug all USB devices from the PC, uninstall and re-install SPIController and VisualAnalog and restart the hardware setup from step 1.
@@ -103,7 +103,7 @@ Before using the software for testing, configure the evaluation board as follows
 
 ::
 
-             //*When connecting the ADC clock and analog source, use clean signal generators with low phase noise, such as Rohde & Schwarz SMA or HP8644B signal generators or equivalent*//
+             **When connecting the ADC clock and analog source, use clean signal generators with low phase noise, such as Rohde & Schwarz SMA or HP8644B signal generators or equivalent**
 
 Visual Analog Setup
 ~~~~~~~~~~~~~~~~~~~
@@ -117,7 +117,7 @@ Visual Analog Setup
 
 .. container:: centeralign
 
-   //Figure 4. Selecting the AD9467 canvas //
+   *Figure 4. Selecting the AD9467 canvas*
 
 
 -  If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see Figure 5).
@@ -128,7 +128,7 @@ Visual Analog Setup
 
 .. container:: centeralign
 
-   //Figure 5. Expanding the Display //
+   *Figure 5. Expanding the Display*
 
 
 -  Click the **Settings** button in the **ADC Data Capture** block as shown in Figure 6
@@ -261,7 +261,7 @@ The AD9467-FMC-250EBZ is configured from the factory to use an external clock co
 -  Click Config>Controller Dialog
 -  Select "2" Under FIFO Chip Sel #
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/SPI_Controller_Cfg_Dialog2.PNG
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/spi_controller_cfg_dialog2.png
    :align: center
    :width: 262px
 
@@ -275,7 +275,7 @@ The AD9467-FMC-250EBZ is configured from the factory to use an external clock co
 -  Select the configure_ad9517_AD9467-FMC-250EBZ .mgp file
 -  Check the Enable Check Box
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/MacroEditor-Enable.PNG
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/macroeditor-enable.png
    :align: center
    :width: 375px
 
@@ -286,7 +286,7 @@ The AD9467-FMC-250EBZ is configured from the factory to use an external clock co
 
 -  Click Run Macros
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/run.PNG
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/run.png
    :align: center
    :width: 23px
 

@@ -18,7 +18,7 @@ Helpful Documents
 
 -  :adi:`AD9UM3190 <ADUM3190S>` military data sheet
 -  :adi:`ADUM3190` data sheet
--  :adi:`AN-1316 Application Note <media/en/technical-documentation/application-notes/AN-1316.pdf>`, //Generating Multiple Isolated Bias Rails for IGBT Motor Drives with Flyback, SEPIC, and Ćuk Combination (Rev. 0) //
+-  :adi:`AN-1316 Application Note <media/en/technical-documentation/application-notes/AN-1316.pdf>`, *Generating Multiple Isolated Bias Rails for IGBT Motor Drives with Flyback, SEPIC, and Ćuk Combination (Rev. 0)*
 -  :adi:`CN-0342 Application Note <cn0342>`, *Flyback Power Supply Using a High Stability Isolated Error Amplifier*
 -  :adi:`MS-2727 Technical Article <ms-2727>`, *Optimizing Multiple Output Power Converters*
 -  :adi:`MS-2501 Technical Article <en/technical-articles/isolated-error-amplifier.html>`, *Isolated Error Amplifier Replaces Optocoupler and Shunt Regulator for AC/DC and DC/DC Power*

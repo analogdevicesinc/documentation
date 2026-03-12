@@ -532,11 +532,11 @@ For more information about ACE and its features, visit https://wiki.analog.com/r
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/bench_setup_9129_evb.png
    :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure2_9129_EBZ.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure2_9129_ebz.png
    :width: 400px
 .. |ace_icon_small.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_icon_small.png
 .. |connection_icon.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/connection_icon.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/Download.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/download.png
    :width: 15px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/play_pattern.png
    :width: 15px
@@ -554,11 +554,11 @@ For more information about ACE and its features, visit https://wiki.analog.com/r
    :width: 500px
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure6.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure6_9129-EBZ.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure6_9129-ebz.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure7_9129-EBZ.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure7_9129-ebz.png
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/Download.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/download.png
    :width: 15px
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/play_pattern.png
    :width: 15px
@@ -576,9 +576,9 @@ For more information about ACE and its features, visit https://wiki.analog.com/r
    :width: 15px
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/repeat_play_vi.png
    :width: 15px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure9_9129-EBZ.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure9_9129-ebz.png
    :width: 500px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure10_9129-EBZ.png
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure10_9129-ebz.png
    :width: 500px
 .. |image25| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure14_common_tab.png
    :width: 500px
@@ -586,13 +586,13 @@ For more information about ACE and its features, visit https://wiki.analog.com/r
    :width: 400px
 .. |image27| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure16_dll.png
    :width: 400px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure17_FIFO_tab.png
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure17_fifo_tab.png
    :width: 400px
 .. |image29| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/play_vi.png
    :width: 15px
 .. |image30| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/repeat_play_vi.png
    :width: 15px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure18_Parity_tab.png
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure18_parity_tab.png
    :width: 400px
 .. |image32| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure19_power_control_tab.png
    :width: 200px

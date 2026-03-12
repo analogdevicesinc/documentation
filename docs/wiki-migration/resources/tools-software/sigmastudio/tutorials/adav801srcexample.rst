@@ -12,7 +12,7 @@ The routing inside the chip will be as follows:
 -  Route from SRC to Record Port at new sample rate (44.1 kHz)
 -  Use the I\ :sup:`2`\ S Record Port as output
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/SRCrouting.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/srcrouting.png
    :alt: SRCrouting.png
    :align: center
 
@@ -79,7 +79,7 @@ Verify Functionality
 
 To verify that the sample rate conversion is working correctly, a 1 Khz tone with a 11.5kHz sample rate was created using SigmaStudio and an ADAU1781 evaluation board which output to the I\ :sup:`2`\ S Playback Port of an ADAV801. The sample rate was verified with an oscilloscope by placing a probe on the LRCLK of the input.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/InputFreq.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/inputfreq.png
    :alt: InputFreq.png
    :align: center
    :width: 600px
@@ -88,7 +88,7 @@ To verify the correct output, a probe was placed on the LRCLK pin of the Record 
 
 |OutputFreq.png| |fft.png| |levels.png|
 
-.. |OutputFreq.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/OutputFreq.png
+.. |OutputFreq.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/outputfreq.png
    :width: 600px
 .. |fft.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/fft.png
    :width: 600px

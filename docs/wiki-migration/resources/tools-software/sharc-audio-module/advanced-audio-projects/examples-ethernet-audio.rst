@@ -316,15 +316,15 @@ Audio Connection Setup: CODEC->VBAN
    :width: 400px
 .. |image58| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/ethexample.jpg
    :width: 400px
-.. |image59| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/EthernetPing.JPG
+.. |image59| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/ethernetping.jpg
    :width: 600px
 .. |image60| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/voicemeter0.png
    :width: 600px
 .. |image61| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/voicemeter1.png
    :width: 600px
-.. |image62| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/VbanVoicemeter.JPG
+.. |image62| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vbanvoicemeter.jpg
    :width: 800px
-.. |image63| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/VbanNew.JPG
+.. |image63| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vbannew.jpg
    :width: 600px
 .. |image64| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/route0.png
    :width: 600px
@@ -332,15 +332,15 @@ Audio Connection Setup: CODEC->VBAN
    :width: 600px
 .. |image66| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/voicemeter4.png
    :width: 600px
-.. |image67| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/EthernetPing.JPG
+.. |image67| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/ethernetping.jpg
    :width: 600px
 .. |image68| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/voicemeter0.png
    :width: 600px
 .. |image69| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/voicemeter1.png
    :width: 600px
-.. |image70| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/VbanVoicemeter.JPG
+.. |image70| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vbanvoicemeter.jpg
    :width: 800px
-.. |image71| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/VbanNew.JPG
+.. |image71| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vbannew.jpg
    :width: 600px
 .. |image72| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/route0.png
    :width: 600px
@@ -348,9 +348,9 @@ Audio Connection Setup: CODEC->VBAN
    :width: 600px
 .. |image74| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/voicemeter4.png
    :width: 600px
-.. |image75| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/EthernetPing.JPG
+.. |image75| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/ethernetping.jpg
    :width: 600px
-.. |image76| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/VbanPC.JPG
+.. |image76| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vbanpc.jpg
    :width: 600px
 .. |image77| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/voicemeter1.png
    :width: 600px
@@ -364,9 +364,9 @@ Audio Connection Setup: CODEC->VBAN
    :width: 600px
 .. |image82| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vbantxroute.png
    :width: 600px
-.. |image83| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/EthernetPing.JPG
+.. |image83| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/ethernetping.jpg
    :width: 600px
-.. |image84| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/VbanPC.JPG
+.. |image84| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vbanpc.jpg
    :width: 600px
 .. |image85| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/voicemeter1.png
    :width: 600px

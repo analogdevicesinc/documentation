@@ -265,7 +265,7 @@ Standalone Demo Kit
 
 -  :doc:`Building a CN0549 Pelican Kit </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_kit>`
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_angled_lineup.jpg
    :width: 400px

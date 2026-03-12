@@ -676,327 +676,327 @@ Test Results will be recorded in the following document:`Oscilloscope Test Case 
 
 **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A1a.JPG
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a1a.jpg
    :width: 100px
-.. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A1b.JPG
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a1b.jpg
    :width: 100px
-.. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A2a.JPG
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a2a.jpg
    :width: 100px
-.. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A2b.JPG
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a2b.jpg
    :width: 100px
-.. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A5.JPG
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a5.jpg
    :width: 100px
-.. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A6.JPG
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a6.jpg
    :width: 100px
-.. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A7.JPG
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a7.jpg
    :width: 100px
-.. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A8.JPG
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a8.jpg
    :width: 100px
-.. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_sin_b.PNG
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_sin_b.png
    :width: 100px
-.. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_a.PNG
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_a.png
    :width: 100px
-.. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_b.PNG
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_b.png
    :width: 100px
-.. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_a.PNG
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_a.png
    :width: 100px
-.. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_b.PNG
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_b.png
    :width: 100px
-.. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A11.JPG
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a11.jpg
    :width: 100px
-.. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_fr_b.PNG
+.. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_fr_b.png
    :width: 100px
-.. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A13.JPG
+.. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a13.jpg
    :width: 100px
-.. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A14.JPG
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a14.jpg
    :width: 100px
-.. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A15.JPG
+.. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a15.jpg
    :width: 100px
-.. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B16.JPG
+.. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b16.jpg
    :width: 100px
-.. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A26.JPG
+.. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a26.jpg
    :width: 100px
-.. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A27.JPG
+.. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a27.jpg
    :width: 100px
-.. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A28.JPG
+.. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a28.jpg
    :width: 100px
-.. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A29.JPG
+.. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a29.jpg
    :width: 100px
-.. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A30.JPG
+.. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a30.jpg
    :width: 100px
-.. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A31.JPG
+.. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a31.jpg
    :width: 100px
-.. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A32.JPG
+.. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a32.jpg
    :width: 100px
-.. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A33.JPG
+.. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a33.jpg
    :width: 100px
-.. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A34.JPG
+.. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a34.jpg
    :width: 100px
-.. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A1a.JPG
+.. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a1a.jpg
    :width: 100px
-.. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A1b.JPG
+.. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a1b.jpg
    :width: 100px
-.. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A2a.JPG
+.. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a2a.jpg
    :width: 100px
-.. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A2b.JPG
+.. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a2b.jpg
    :width: 100px
-.. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A5.JPG
+.. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a5.jpg
    :width: 100px
-.. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A6.JPG
+.. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a6.jpg
    :width: 100px
-.. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A7.JPG
+.. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a7.jpg
    :width: 100px
-.. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A8.JPG
+.. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a8.jpg
    :width: 100px
-.. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_sin_b.PNG
+.. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_sin_b.png
    :width: 100px
-.. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_a.PNG
+.. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_a.png
    :width: 100px
-.. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_b.PNG
+.. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_b.png
    :width: 100px
-.. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_a.PNG
+.. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_a.png
    :width: 100px
-.. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_b.PNG
+.. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_b.png
    :width: 100px
-.. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A11.JPG
+.. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a11.jpg
    :width: 100px
-.. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_fr_b.PNG
+.. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_fr_b.png
    :width: 100px
-.. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A13.JPG
+.. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a13.jpg
    :width: 100px
-.. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A14.JPG
+.. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a14.jpg
    :width: 100px
-.. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A15.JPG
+.. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a15.jpg
    :width: 100px
-.. |image47| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B16.JPG
+.. |image47| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b16.jpg
    :width: 100px
-.. |image48| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A26.JPG
+.. |image48| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a26.jpg
    :width: 100px
-.. |image49| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A27.JPG
+.. |image49| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a27.jpg
    :width: 100px
-.. |image50| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A28.JPG
+.. |image50| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a28.jpg
    :width: 100px
-.. |image51| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A29.JPG
+.. |image51| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a29.jpg
    :width: 100px
-.. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A30.JPG
+.. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a30.jpg
    :width: 100px
-.. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A31.JPG
+.. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a31.jpg
    :width: 100px
-.. |image54| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A32.JPG
+.. |image54| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a32.jpg
    :width: 100px
-.. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A33.JPG
+.. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a33.jpg
    :width: 100px
-.. |image56| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A34.JPG
+.. |image56| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a34.jpg
    :width: 100px
-.. |image57| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A1a.JPG
+.. |image57| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a1a.jpg
    :width: 100px
-.. |image58| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A1b.JPG
+.. |image58| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a1b.jpg
    :width: 100px
-.. |image59| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A2a.JPG
+.. |image59| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a2a.jpg
    :width: 100px
-.. |image60| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A2b.JPG
+.. |image60| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a2b.jpg
    :width: 100px
-.. |image61| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B5.JPG
+.. |image61| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b5.jpg
    :width: 100px
-.. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B6.JPG
+.. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b6.jpg
    :width: 100px
-.. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B7.JPG
+.. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b7.jpg
    :width: 100px
-.. |image64| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B8.JPG
+.. |image64| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b8.jpg
    :width: 100px
-.. |image65| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_sin_b2.PNG
+.. |image65| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_sin_b2.png
    :width: 100px
-.. |image66| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_a2.PNG
+.. |image66| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_a2.png
    :width: 100px
-.. |image67| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_b2.PNG
+.. |image67| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_b2.png
    :width: 100px
-.. |image68| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_a2.PNG
+.. |image68| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_a2.png
    :width: 100px
-.. |image69| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_b2.PNG
+.. |image69| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_b2.png
    :width: 100px
-.. |image70| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B11.JPG
+.. |image70| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b11.jpg
    :width: 100px
-.. |image71| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_fr_b2.PNG
+.. |image71| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_fr_b2.png
    :width: 100px
-.. |image72| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B13.JPG
+.. |image72| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b13.jpg
    :width: 100px
-.. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B14.JPG
+.. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b14.jpg
    :width: 100px
-.. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B15.JPG
+.. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b15.jpg
    :width: 100px
-.. |image75| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B16.JPG
+.. |image75| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b16.jpg
    :width: 100px
-.. |image76| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B26.JPG
+.. |image76| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b26.jpg
    :width: 100px
-.. |image77| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B27.JPG
+.. |image77| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b27.jpg
    :width: 100px
-.. |image78| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A28.JPG
+.. |image78| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a28.jpg
    :width: 100px
-.. |image79| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A29.JPG
+.. |image79| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a29.jpg
    :width: 100px
-.. |image80| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B30.JPG
+.. |image80| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b30.jpg
    :width: 100px
-.. |image81| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B31.JPG
+.. |image81| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b31.jpg
    :width: 100px
-.. |image82| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B32.JPG
+.. |image82| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b32.jpg
    :width: 100px
-.. |image83| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B33.JPG
+.. |image83| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b33.jpg
    :width: 100px
-.. |image84| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B34.JPG
+.. |image84| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b34.jpg
    :width: 100px
-.. |image85| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A1a.JPG
+.. |image85| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a1a.jpg
    :width: 100px
-.. |image86| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A1b.JPG
+.. |image86| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a1b.jpg
    :width: 100px
-.. |image87| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A2a.JPG
+.. |image87| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a2a.jpg
    :width: 100px
-.. |image88| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A2b.JPG
+.. |image88| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a2b.jpg
    :width: 100px
-.. |image89| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B5.JPG
+.. |image89| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b5.jpg
    :width: 100px
-.. |image90| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B6.JPG
+.. |image90| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b6.jpg
    :width: 100px
-.. |image91| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B7.JPG
+.. |image91| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b7.jpg
    :width: 100px
-.. |image92| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B8.JPG
+.. |image92| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b8.jpg
    :width: 100px
-.. |image93| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_sin_b2.PNG
+.. |image93| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_sin_b2.png
    :width: 100px
-.. |image94| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_a2.PNG
+.. |image94| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_a2.png
    :width: 100px
-.. |image95| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_b2.PNG
+.. |image95| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_square_b2.png
    :width: 100px
-.. |image96| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_a2.PNG
+.. |image96| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_a2.png
    :width: 100px
-.. |image97| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_b2.PNG
+.. |image97| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_tri_b2.png
    :width: 100px
-.. |image98| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B11.JPG
+.. |image98| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b11.jpg
    :width: 100px
-.. |image99| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_fr_b2.PNG
+.. |image99| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_fr_b2.png
    :width: 100px
-.. |image100| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B13.JPG
+.. |image100| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b13.jpg
    :width: 100px
-.. |image101| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B14.JPG
+.. |image101| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b14.jpg
    :width: 100px
-.. |image102| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B15.JPG
+.. |image102| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b15.jpg
    :width: 100px
-.. |image103| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B16.JPG
+.. |image103| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b16.jpg
    :width: 100px
-.. |image104| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B26.JPG
+.. |image104| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b26.jpg
    :width: 100px
-.. |image105| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B27.JPG
+.. |image105| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b27.jpg
    :width: 100px
-.. |image106| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A28.JPG
+.. |image106| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a28.jpg
    :width: 100px
-.. |image107| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-A29.JPG
+.. |image107| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-a29.jpg
    :width: 100px
-.. |image108| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B30.JPG
+.. |image108| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b30.jpg
    :width: 100px
-.. |image109| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B31.JPG
+.. |image109| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b31.jpg
    :width: 100px
-.. |image110| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B32.JPG
+.. |image110| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b32.jpg
    :width: 100px
-.. |image111| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B33.JPG
+.. |image111| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b33.jpg
    :width: 100px
-.. |image112| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-B34.JPG
+.. |image112| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-b34.jpg
    :width: 100px
-.. |image113| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C1.JPG
+.. |image113| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c1.jpg
    :width: 100px
-.. |image114| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C2.JPG
+.. |image114| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c2.jpg
    :width: 100px
-.. |image115| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C3.JPG
+.. |image115| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c3.jpg
    :width: 100px
-.. |image116| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C4a.JPG
+.. |image116| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c4a.jpg
    :width: 100px
-.. |image117| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C4b.JPG
+.. |image117| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c4b.jpg
    :width: 100px
-.. |image118| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C5.JPG
+.. |image118| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c5.jpg
    :width: 100px
-.. |image119| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C6a.JPG
+.. |image119| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c6a.jpg
    :width: 100px
-.. |image120| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C6b.JPG
+.. |image120| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c6b.jpg
    :width: 100px
-.. |image121| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C7.JPG
+.. |image121| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c7.jpg
    :width: 100px
-.. |image122| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C8.JPG
+.. |image122| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c8.jpg
    :width: 100px
-.. |image123| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C1.JPG
+.. |image123| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c1.jpg
    :width: 100px
-.. |image124| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C2.JPG
+.. |image124| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c2.jpg
    :width: 100px
-.. |image125| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C3.JPG
+.. |image125| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c3.jpg
    :width: 100px
-.. |image126| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C4a.JPG
+.. |image126| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c4a.jpg
    :width: 100px
-.. |image127| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C4b.JPG
+.. |image127| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c4b.jpg
    :width: 100px
-.. |image128| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C5.JPG
+.. |image128| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c5.jpg
    :width: 100px
-.. |image129| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C6a.JPG
+.. |image129| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c6a.jpg
    :width: 100px
-.. |image130| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C6b.JPG
+.. |image130| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c6b.jpg
    :width: 100px
-.. |image131| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C7.JPG
+.. |image131| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c7.jpg
    :width: 100px
-.. |image132| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/OSC-C8.JPG
+.. |image132| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc-c8.jpg
    :width: 100px
-.. |image133| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d1.PNG
+.. |image133| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d1.png
    :width: 100px
-.. |image134| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d2.PNG
+.. |image134| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d2.png
    :width: 100px
-.. |image135| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d2b.PNG
+.. |image135| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d2b.png
    :width: 100px
-.. |image136| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d3.PNG
+.. |image136| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d3.png
    :width: 100px
-.. |image137| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d4.PNG
+.. |image137| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d4.png
    :width: 100px
-.. |image138| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d5.PNG
+.. |image138| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d5.png
    :width: 100px
-.. |image139| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d6.PNG
+.. |image139| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d6.png
    :width: 100px
-.. |image140| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d7.PNG
+.. |image140| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d7.png
    :width: 100px
-.. |image141| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d8.PNG
+.. |image141| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d8.png
    :width: 100px
-.. |image142| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d9.PNG
+.. |image142| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d9.png
    :width: 100px
-.. |image143| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref1a.PNG
+.. |image143| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref1a.png
    :width: 100px
-.. |image144| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref1b.PNG
+.. |image144| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref1b.png
    :width: 100px
-.. |image145| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref3a.PNG
+.. |image145| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref3a.png
    :width: 100px
-.. |image146| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref3b.PNG
+.. |image146| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref3b.png
    :width: 100px
-.. |image147| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_snapshot.PNG
+.. |image147| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_snapshot.png
    :width: 100px
-.. |image148| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d10.PNG
+.. |image148| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d10.png
    :width: 100px
-.. |image149| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d11.PNG
+.. |image149| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d11.png
    :width: 100px
-.. |image150| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d12.PNG
+.. |image150| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d12.png
    :width: 100px
-.. |image151| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d14.PNG
+.. |image151| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d14.png
    :width: 100px
-.. |image152| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d15.PNG
+.. |image152| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d15.png
    :width: 100px
-.. |image153| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d16.PNG
+.. |image153| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d16.png
    :width: 100px
-.. |image154| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d17.PNG
+.. |image154| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d17.png
    :width: 100px
-.. |image155| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as1.PNG
+.. |image155| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as1.png
    :width: 100px
-.. |image156| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as2.PNG
+.. |image156| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as2.png
    :width: 100px
-.. |image157| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as3.PNG
+.. |image157| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as3.png
    :width: 100px
-.. |image158| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_print.PNG
+.. |image158| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_print.png
    :width: 100px
-.. |image159| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_curve_style.PNG
+.. |image159| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_curve_style.png
    :width: 100px
-.. |image160| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_gating.PNG
+.. |image160| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_gating.png
    :width: 100px
-.. |image161| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_histogram.PNG
+.. |image161| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_histogram.png
    :width: 100px
 .. |image162| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/waveform_after_adjustment.png
    :width: 200px
@@ -1006,63 +1006,63 @@ Test Results will be recorded in the following document:`Oscilloscope Test Case 
    :width: 200px
 .. |image165| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/final_filtered_signal.png
    :width: 600px
-.. |image166| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d1.PNG
+.. |image166| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d1.png
    :width: 100px
-.. |image167| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d2.PNG
+.. |image167| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d2.png
    :width: 100px
-.. |image168| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d2b.PNG
+.. |image168| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d2b.png
    :width: 100px
-.. |image169| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d3.PNG
+.. |image169| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d3.png
    :width: 100px
-.. |image170| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d4.PNG
+.. |image170| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d4.png
    :width: 100px
-.. |image171| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d5.PNG
+.. |image171| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d5.png
    :width: 100px
-.. |image172| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d6.PNG
+.. |image172| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d6.png
    :width: 100px
-.. |image173| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d7.PNG
+.. |image173| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d7.png
    :width: 100px
-.. |image174| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d8.PNG
+.. |image174| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d8.png
    :width: 100px
-.. |image175| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d9.PNG
+.. |image175| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d9.png
    :width: 100px
-.. |image176| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref1a.PNG
+.. |image176| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref1a.png
    :width: 100px
-.. |image177| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref1b.PNG
+.. |image177| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref1b.png
    :width: 100px
-.. |image178| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref3a.PNG
+.. |image178| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref3a.png
    :width: 100px
-.. |image179| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref3b.PNG
+.. |image179| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_ref3b.png
    :width: 100px
-.. |image180| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_snapshot.PNG
+.. |image180| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_snapshot.png
    :width: 100px
-.. |image181| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d10.PNG
+.. |image181| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d10.png
    :width: 100px
-.. |image182| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d11.PNG
+.. |image182| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d11.png
    :width: 100px
-.. |image183| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d12.PNG
+.. |image183| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d12.png
    :width: 100px
-.. |image184| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d14.PNG
+.. |image184| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d14.png
    :width: 100px
-.. |image185| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d15.PNG
+.. |image185| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d15.png
    :width: 100px
-.. |image186| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d16.PNG
+.. |image186| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d16.png
    :width: 100px
-.. |image187| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d17.PNG
+.. |image187| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_d17.png
    :width: 100px
-.. |image188| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as1.PNG
+.. |image188| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as1.png
    :width: 100px
-.. |image189| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as2.PNG
+.. |image189| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as2.png
    :width: 100px
-.. |image190| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as3.PNG
+.. |image190| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_as3.png
    :width: 100px
-.. |image191| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_print.PNG
+.. |image191| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_print.png
    :width: 100px
-.. |image192| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_curve_style.PNG
+.. |image192| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_curve_style.png
    :width: 100px
-.. |image193| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_gating.PNG
+.. |image193| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_gating.png
    :width: 100px
-.. |image194| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_histogram.PNG
+.. |image194| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_histogram.png
    :width: 100px
 .. |image195| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/waveform_after_adjustment.png
    :width: 200px

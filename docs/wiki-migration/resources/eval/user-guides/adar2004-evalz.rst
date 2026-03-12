@@ -396,8 +396,8 @@ Temperature Sensor
 
 Once the ADC section has been enabled and configured, the on-chip temperature sensor can be used to determine the junction temperature of the :adi:`adar2004`. Clicking the "Measure ADC" button will request a reading from the :adi:`adar2004`. A temperature value will appear in the box below the button.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ADAR2004/2_adar2004_connections.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ADAR2004/3_adar2004_setup.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/2_adar2004_connections.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/3_adar2004_setup.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/4_adar2004_access_ace_plugin.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/5_adar2004_main_gui_overview.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/6_multiplier_sequencer_configuration.png
@@ -406,7 +406,7 @@ Once the ADC section has been enabled and configured, the on-chip temperature se
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/7_state_machine_loop.png
    :width: 400px
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/8_receiver_sequencer_configuration.png
-.. |num_Rx_states.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/num_Rx_states.png
+.. |num_Rx_states.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/num_rx_states.png
    :width: 600px
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/7_state_machine_loop.png
    :width: 400px

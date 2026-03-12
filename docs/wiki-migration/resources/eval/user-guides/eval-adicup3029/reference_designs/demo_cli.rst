@@ -146,7 +146,7 @@ Debugging
 
 For more detailed instructions on importing this application/demo example into the CrossCore Embedded Studios tools, please view our :doc:`How to configure the debug session </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` section.
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/terminal_cli_26_08_2015.png
    :width: 450px

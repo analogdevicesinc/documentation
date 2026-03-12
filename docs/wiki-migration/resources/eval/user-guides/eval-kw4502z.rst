@@ -54,7 +54,7 @@ All LTspice Circuits used are available at `0.1 Hz to 10 Hz Filter, 60dB LTSpice
 
 .. tip::
 
-   //Keep all files in the zip folder in the same folder on your local PC. //
+   *Keep all files in the zip folder in the same folder on your local PC.*
 
 
 --------------

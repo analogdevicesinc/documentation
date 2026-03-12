@@ -43,7 +43,7 @@ Equipment Needed
 Quick Start Guide
 -----------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/section>resources/tools-software/linux-software/adi-kuiper_for_eval_getting_started#Getting Started&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/section>resources/tools-software/linux-software/adi-kuiper_for_eval_getting_started#getting_started&showfooter=nofooter
    :alt: section>resources/tools-software/linux-software/adi-kuiper_for_eval_getting_started#Getting Started&showfooter=nofooter
 
 Board Hardware

@@ -470,7 +470,7 @@ Linux Kernel: :git-linux:`linux`
 
 Cross_compiler: `gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz <https://developer.arm.com/-/media/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz>`_
 
-SD Card Image: `release_notes <:doc:`/wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes`>`_
+SD Card Image: :doc:`release_notes </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
 
 Building the Linux Kernel image and the Devicetree
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -691,5 +691,5 @@ IIO Oscilloscope
 
 .. image:: https://wiki.analog.com/_media/playground/cn0540_de10nano_waveforms_.png
 
-.. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/AD777x-ARDZ/zedboard.png
+.. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad777x-ardz/zedboard.png
    :width: 600px

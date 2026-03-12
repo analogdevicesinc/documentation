@@ -102,7 +102,7 @@ Section C is used to represent graphically the speed of the motor.
 
 Section D is used to plot the currents and voltages described in section B.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/quickstart/navigation AD-FMCMOTCON1-EBZ#zynq
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/quickstart/navigation_ad-fmcmotcon1-ebz#zynq
    :alt: Linux on Zynq#..:\|Overview#none
 
 .. |chipscope.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/quickstart/chipscope.png

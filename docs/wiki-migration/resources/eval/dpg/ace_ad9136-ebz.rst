@@ -183,19 +183,19 @@ Configuring SPI
    :height: 260px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9136/figure_2.jpg
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/AD9136-EBZ_DPGStartup.png
+.. |image5| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136-ebz_dpgstartup.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/AD9136-EBZ_DPGSetup.png
+.. |image6| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136-ebz_dpgsetup.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/AD9136-EBZ_ACEStartup.png
+.. |image7| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136-ebz_acestartup.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/ad9136-ebz_ACESetup.png
+.. |image8| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136-ebz_acesetup.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/ad9136-ebz_ACEWizRan.png
+.. |image9| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136-ebz_acewizran.png
    :width: 600px
 .. |9154_down_arrow.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_down_arrow.png
 .. |9154_right_green_arrow.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_right_green_arrow.png
-.. |image10| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/ad9136-ebz_DPGDwnld.png
+.. |image10| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136-ebz_dpgdwnld.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/ad9136_1.6ghzdac_1x_4xwcdma_fout100m_plloff.png
+.. |image11| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136_1.6ghzdac_1x_4xwcdma_fout100m_plloff.png
    :width: 600px

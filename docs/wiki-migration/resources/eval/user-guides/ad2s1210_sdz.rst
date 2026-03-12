@@ -163,5 +163,5 @@ IIO Oscilloscope
    :align: center
    :width: 700px
 
-.. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/AD777x-ARDZ/zedboard.png
+.. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad777x-ardz/zedboard.png
    :width: 600px

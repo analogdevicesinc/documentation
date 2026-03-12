@@ -70,11 +70,11 @@ Install GIT For Windows
 Install CrossCore Embedded Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow the instructions :doc:`here </wiki-migration/resources/tools-software/sharc-audio-module/gettingstarted>` for installing CCES and for help getting started with CrossCore. //CrossCore is required for compilation and access to `make <https://www.gnu.org/software/make/>`_ as well as the compilers required for the ARM and SHARC Cores. //
+Follow the instructions :doc:`here </wiki-migration/resources/tools-software/sharc-audio-module/gettingstarted>` for installing CCES and for help getting started with CrossCore. *CrossCore is required for compilation and access to `make <https:*www.gnu.org/software/make/>`_ as well as the compilers required for the ARM and SHARC Cores. //
 
 *Note that CCES requires a license to run. The SAM board comes with an ICE-1000 evaluation license which can be found here:* :doc:`gettingstarted#installing_and_activating_crosscore_embedded_studio </wiki-migration/resources/tools-software/sharc-audio-module/gettingstarted>`\ *. For more details about licensing, refer to:* :ez:`how-can-i-obtain-and-install-a-licenses-for-crosscore-embedded-studio <dsp/software-and-development-tools/cces/w/documents/5311/how-can-i-obtain-and-install-a-licenses-for-crosscore-embedded-studio>`
 
-//You will also need a *myAnalog* account, so proceed to register or log-in, if prompted when installing CCES://
+*You will also need a *myAnalog* account, so proceed to register or log-in, if prompted when installing CCES:*
 
 
 |image13|

@@ -6,7 +6,7 @@ Video Tutorial
 
 View the quick video tutorial to learn how to review and approve edits that are made to the Wiki by registered members.
 
-.. image:: https://wiki.analog.com/_media/wiki/help/getting-started/analogTV>1051906413001
+.. image:: https://wiki.analog.com/_media/wiki/help/getting-started/analogtv>1051906413001
    :alt: analogTV>1051906413001
    :width: 640px
    :height: 530px

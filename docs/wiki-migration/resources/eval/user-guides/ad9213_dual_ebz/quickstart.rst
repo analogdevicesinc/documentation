@@ -162,7 +162,10 @@ ON           OFF               OFF              ON
 
 .. container:: centeralign
 
-   \ *Figure 3. Configuring the COM port settings**NOTE:**\ This procedure needs to be performed every time the Stratix 10 board’s USB to mini-USB COM connection cable is physically disconnected and re-connected to the PC.*
+   \ *Figure 3. Configuring the COM port settings*\
+
+
+**NOTE:** This procedure needs to be performed every time the Stratix 10 board’s USB to mini-USB COM connection cable is physically disconnected and re-connected to the PC.*
 
 ::
 
@@ -291,7 +294,10 @@ ON           OFF               OFF              ON
 
 .. container:: centeralign
 
-   \ *Figure 10. SSH connection after login ready to access the components on the board via SPI**NOTE:**\ An example script for when you are looking to use this scripting environment for SPI reads and writes can be provided.*
+   \ *Figure 10. SSH connection after login ready to access the components on the board via SPI*\
+
+
+**NOTE:** An example script for when you are looking to use this scripting environment for SPI reads and writes can be provided.*
 
 ::
 
@@ -320,10 +326,7 @@ ON           OFF               OFF              ON
 
 .. container:: centeralign
 
-   //Figure 12. All devices on evaluation board ready to connect to IIO Scope //
-
-
-**NOTE:** These two steps only need to be done when using IIO Scope with a setup for the first time. The next time you open IIO Scope and are using the same setup it will auto-detect the setup and open the configuration and plotting windows.*
+   *Figure 12. All devices on evaluation board ready to connect to IIO Scope **NOTE:** These two steps only need to be done when using IIO Scope with a setup for the first time. The next time you open IIO Scope and are using the same setup it will auto-detect the setup and open the configuration and plotting windows.*
 
 ::
 
@@ -340,7 +343,7 @@ ON           OFF               OFF              ON
 
 .. container:: centeralign
 
-   //Figure 13. Using the IIO Scope Controller View to Read and Write SPI //
+   *Figure 13. Using the IIO Scope Controller View to Read and Write SPI*
 
 
 ::
@@ -357,7 +360,10 @@ ON           OFF               OFF              ON
 
 .. container:: centeralign
 
-   \ *Figure 14. Using the IIO Scope Plotting View to plot separate time domain outputs from each AD9213 (Ain = 136 MHz @5dBm)**NOTE:**\ Frequency domain plotting with more detailed analysis can be performed using a Visual Analog Canvas, the following are the steps to use VA*
+   \ *Figure 14. Using the IIO Scope Plotting View to plot separate time domain outputs from each AD9213 (Ain = 136 MHz @5dBm)*\
+
+
+**NOTE:** Frequency domain plotting with more detailed analysis can be performed using a Visual Analog Canvas, the following are the steps to use VA*
 
 
 
@@ -427,36 +433,36 @@ For Interleaved 20G Mode
     *e.  The canvas is now ready to capture an FFT, hit play to capture
     *f.  In addition to the FFT plot and its analysis the canvas also displays sample data
 
-.. |ad9213dual_quickstart_fig2_COM_port_setup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig2_COM_port_setup.png
+.. |ad9213dual_quickstart_fig2_COM_port_setup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig2_com_port_setup.png
    :width: 600px
-.. |ad9213dual_quickstart_fig3_config_COM_port_settings.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig3_config_COM_port_settings.png
+.. |ad9213dual_quickstart_fig3_config_COM_port_settings.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig3_config_com_port_settings.png
    :width: 600px
-.. |ad9213dual_quickstart_fig4_Open_COM_using_PuTTY.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig4_Open_COM_using_PuTTY.png
+.. |ad9213dual_quickstart_fig4_Open_COM_using_PuTTY.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig4_open_com_using_putty.png
    :width: 600px
 .. |ad9213dual_quickstart_fig5_Quartus_setup.png
-| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig5_Quartus_setup.png
+| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig5_quartus_setup.png
    :width: 600px
-.. |ad9213dual_quickstart_fig6_Using_Quartus_Programmer.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig6_Using_Quartus_Programmer.png
+.. |ad9213dual_quickstart_fig6_Using_Quartus_Programmer.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig6_using_quartus_programmer.png
    :width: 600px
-.. |ad9213dual_quickstart_fig7_COM_console_process \_initialization.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig7_COM_console_process _initialization.png
+.. |ad9213dual_quickstart_fig7_COM_console_process \_initialization.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig7_com_console_process__initialization.png
    :width: 600px
-.. |ad9213dual_quickstart_fig8_Using_ifconfig_for_Stratix10_IP_address.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig8_Using_ifconfig_for_Stratix10_IP_address.png
+.. |ad9213dual_quickstart_fig8_Using_ifconfig_for_Stratix10_IP_address.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig8_using_ifconfig_for_stratix10_ip_address.png
    :width: 600px
-.. |ad9213dual_quickstart_fig9_Opening_SSH_connection.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig9_Opening_SSH_connection.png
+.. |ad9213dual_quickstart_fig9_Opening_SSH_connection.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig9_opening_ssh_connection.png
    :width: 600px
-.. |ad9213dual_quickstart_fig10_SSH_login_successful.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig10_SSH_login_successful.png
+.. |ad9213dual_quickstart_fig10_SSH_login_successful.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig10_ssh_login_successful.png
    :width: 600px
-.. |ad9213dual_quickstart_fig11_Setup_IIO_Scope.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig11_Setup_IIO_Scope.png
+.. |ad9213dual_quickstart_fig11_Setup_IIO_Scope.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig11_setup_iio_scope.png
    :width: 600px
-.. |ad9213dual_quickstart_fig12_IIO_Ready_to_Connect.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig12_IIO_Ready_to_Connect.png
+.. |ad9213dual_quickstart_fig12_IIO_Ready_to_Connect.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig12_iio_ready_to_connect.png
    :width: 600px
-.. |ad9213dual_quickstart_fig13_Read_Write_SPI_Registers.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig13_Read_Write_SPI_Registers.png
+.. |ad9213dual_quickstart_fig13_Read_Write_SPI_Registers.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig13_read_write_spi_registers.png
    :width: 600px
-.. |ad9213dual_quickstart_fig14_Plot_separate_domain_outputs.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig14_Plot_separate_domain_outputs.png
+.. |ad9213dual_quickstart_fig14_Plot_separate_domain_outputs.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig14_plot_separate_domain_outputs.png
    :width: 600px
-.. |ad9213dual_quickstart_fig15_Open_VisualAnalog_Canvas.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig15_Open_VisualAnalog_Canvas.png
+.. |ad9213dual_quickstart_fig15_Open_VisualAnalog_Canvas.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig15_open_visualanalog_canvas.png
    :width: 600px
-.. |ad9213dual_quickstart_fig16_Setup_VA_for_dualAD9213.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig16_Setup_VA_for_dualAD9213.png
+.. |ad9213dual_quickstart_fig16_Setup_VA_for_dualAD9213.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig16_setup_va_for_dualad9213.png
    :width: 600px
-.. |ad9213dual_quickstart_fig17_VA_FFT_capture_data_analysis.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig17_VA_FFT_capture_data_analysis.png
+.. |ad9213dual_quickstart_fig17_VA_FFT_capture_data_analysis.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig17_va_fft_capture_data_analysis.png
    :width: 600px

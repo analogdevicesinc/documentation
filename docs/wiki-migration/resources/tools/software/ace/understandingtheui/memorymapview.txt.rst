@@ -23,7 +23,7 @@ The data contained in the memory map of the component can be viewed in the follo
 
 -  **Bit Fields View –** Displays all bit fields in the component, Figure 13.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/BitFields.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/bitfields.png
    :alt: Memory Map View - Bit Fields Visible
 
 Component Styles
@@ -33,7 +33,7 @@ When the value of a register or bit field is changed so that the value in the so
 
 The colors of the bits indicate the access type of the bit:
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/WriteReadBit.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/writereadbit.png
    :alt: WriteReadBit.png
    :align: left
    :width: 30px
@@ -41,7 +41,7 @@ The colors of the bits indicate the access type of the bit:
 
 A bit with a “Write Read” access type which can be written to and read from where the software value matches the expected hardware value.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ReadOnlyBit.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/readonlybit.png
    :alt: ReadOnlyBit.png
    :align: left
    :width: 30px
@@ -49,7 +49,7 @@ A bit with a “Write Read” access type which can be written to and read from 
 
 A bit with a “Read Only” access type which can only be read from.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/NABit.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/nabit.png
    :alt: NABit.png
    :align: left
    :width: 30px
@@ -103,4 +103,4 @@ Duplicating Pages across a Page Group
 
 The copy button under each page group in the page selector group allows values to be copied from one page in a page group to others in the same group. To perform this select the page you want to copy the value from in the drop down menu and then check the boxes of the pages you want to copy the values to. Clicking the copy button will perform the change while clicking close or outside of the copy pop-up will close the pop-up without performing the copy.
 
-.. |Memory Map View – Registers Visible| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/MemoryMap.png
+.. |Memory Map View – Registers Visible| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/memorymap.png

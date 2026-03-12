@@ -238,4 +238,4 @@ Need Help?
 -  :ez:`Analog Devices Circuit from the Lab Help Forum <community/circuits_from_the_lab>`
 -  :ez:`Add a question! <circuits_from_the_lab/f/q-a/p/addpost>`
 
-// End of Document //
+*End of Document*

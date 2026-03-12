@@ -275,7 +275,7 @@ Appendix: Configuration Script Notes
 
 *End of Document*
 
-.. |youtube>a6MeTsatTUg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/youtube>a6MeTsatTUg
+.. |youtube>a6MeTsatTUg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/youtube>a6metsattug
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/calibration/find_hb100_step_1.png
    :width: 800px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phaser_gui_screenshot.png

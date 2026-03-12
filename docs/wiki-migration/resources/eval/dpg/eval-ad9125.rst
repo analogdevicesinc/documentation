@@ -26,5 +26,5 @@ Files included in the AD9125 Update:
 
 Download the `AD9125 Update <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/hsdac_update/hsdacupdate_ad9125_1.0.4773.29220.exe>`_
 
-.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#Data Pattern Generator&nofooter&noindent
+.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#data_pattern_generator&nofooter&noindent
    :alt: dpg#Data Pattern Generator&nofooter&noindent

@@ -600,75 +600,75 @@ Test Results will be recorded in the following document: `Signal Generator Test 
    :width: 200px
 .. |image157| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step6.png
    :width: 200px
-.. |image158| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Noise_step1.png
+.. |image158| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_noise_step1.png
    :width: 100px
 .. |image159| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png
    :width: 100px
-.. |image160| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Noise_step3.png
+.. |image160| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_noise_step3.png
    :width: 100px
-.. |image161| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Noise_step4.png
+.. |image161| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_noise_step4.png
    :width: 100px
-.. |image162| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Buffer_step1.png
+.. |image162| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_buffer_step1.png
    :width: 100px
 .. |image163| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png
    :width: 100px
-.. |image164| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Buffer_step3.png
+.. |image164| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_buffer_step3.png
    :width: 100px
-.. |image165| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Buffer_step4.png
+.. |image165| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_buffer_step4.png
    :width: 100px
-.. |image166| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Math_step1.png
+.. |image166| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_math_step1.png
    :width: 100px
 .. |image167| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png
    :width: 100px
-.. |image168| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Math_step3.png
+.. |image168| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_math_step3.png
    :width: 100px
-.. |image169| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Math_step4.png
+.. |image169| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_math_step4.png
    :width: 100px
-.. |image170| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Math_step5.png
+.. |image170| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_math_step5.png
    :width: 100px
-.. |image171| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Math_step6.png
+.. |image171| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_math_step6.png
    :width: 100px
-.. |image172| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_phase_step1.png
+.. |image172| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_phase_step1.png
    :width: 100px
-.. |image173| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_phase_step3.png
+.. |image173| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_phase_step3.png
    :width: 100px
-.. |image174| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_phase_step4.png
+.. |image174| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_phase_step4.png
    :width: 100px
-.. |image175| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_phase_step5.png
+.. |image175| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_phase_step5.png
    :width: 100px
-.. |image176| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Noise_step1.png
+.. |image176| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_noise_step1.png
    :width: 100px
 .. |image177| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png
    :width: 100px
-.. |image178| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Noise_step3.png
+.. |image178| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_noise_step3.png
    :width: 100px
-.. |image179| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Noise_step4.png
+.. |image179| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_noise_step4.png
    :width: 100px
-.. |image180| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Buffer_step1.png
+.. |image180| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_buffer_step1.png
    :width: 100px
 .. |image181| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png
    :width: 100px
-.. |image182| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Buffer_step3.png
+.. |image182| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_buffer_step3.png
    :width: 100px
-.. |image183| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Buffer_step4.png
+.. |image183| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_buffer_step4.png
    :width: 100px
-.. |image184| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Math_step1.png
+.. |image184| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_math_step1.png
    :width: 100px
 .. |image185| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png
    :width: 100px
-.. |image186| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Math_step3.png
+.. |image186| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_math_step3.png
    :width: 100px
-.. |image187| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Math_step4.png
+.. |image187| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_math_step4.png
    :width: 100px
-.. |image188| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Math_step5.png
+.. |image188| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_math_step5.png
    :width: 100px
-.. |image189| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_Math_step6.png
+.. |image189| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_math_step6.png
    :width: 100px
-.. |image190| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_phase_step1.png
+.. |image190| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_phase_step1.png
    :width: 100px
-.. |image191| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_phase_step3.png
+.. |image191| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_phase_step3.png
    :width: 100px
-.. |image192| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_phase_step4.png
+.. |image192| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_phase_step4.png
    :width: 100px
-.. |image193| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ signal_generator-additional_feature_phase_step5.png
+.. |image193| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_signal_generator-additional_feature_phase_step5.png
    :width: 100px

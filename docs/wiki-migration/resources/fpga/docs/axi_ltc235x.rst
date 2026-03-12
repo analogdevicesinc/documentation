@@ -8523,7 +8523,7 @@ References
 -  :doc:`ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
 -  :doc:`Generic AXI ADC IP core </wiki-migration/resources/fpga/docs/axi_adc_ip>`
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#resources/fpga/docs/ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#resources/fpga/docs/ip_cores
    :alt: IP cores#resources/fpga/docs/hdl|Main page#resources/fpga/docs/tips|Using and modifying the HDL design
 
 .. |AXI_LTC235x CMOS Block diagram| image:: https://wiki.analog.com/_media/resources/fpga/docs/axi_ltc235x_cmos.svg

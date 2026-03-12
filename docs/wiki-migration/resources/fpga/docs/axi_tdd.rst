@@ -2943,5 +2943,5 @@ An exception to this rule is ``CHANNEL_ENABLE``, which allows enabling / disabli
 
 By adapting the synthesis parameters to the application requirements, the module is highly flexible and can substantially reduce resource utilization.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

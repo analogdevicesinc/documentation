@@ -97,17 +97,17 @@ The cap-cable-cap approach is similar to the backplane application but the two n
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/single_cap_backplane.jpg
    :align: center
 
-// **Figure 4. ADIN1300 Configuration for Backplane Applications (Single Capacitor)** //
+**Figure 4. ADIN1300 Configuration for Backplane Applications (Single Capacitor)**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/cap_with_cable.jpg
    :align: center
 
-// **Figure 5. Capacitive Coupling Configuration (with Cable)** //
+**Figure 5. Capacitive Coupling Configuration (with Cable)**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/cap_and_magnetic.jpg
    :align: center
 
-// \*\* Figure 6. Capacitive and Magnetic Coupling Configuration (with Cable)*\* //
+*\*\* Figure 6. Capacitive and Magnetic Coupling Configuration (with Cable)*\**
 
 Cap - Cable - Transformer Configuration
 ---------------------------------------

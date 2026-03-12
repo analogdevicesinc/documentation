@@ -50,7 +50,7 @@ The :adi:`AD9574` evaluation board is a compact, easy-to-use platform for evalua
 
 |image1|
 
-   //Figure 1. AD9574/PCBZ //
+   *Figure 1. AD9574/PCBZ*
 
 
 Evaluation Board Hardware
@@ -162,7 +162,7 @@ There are three headers, each 3 pins wide, to select the 8 states listed in **Ta
 
 |image2|
 
-   //Figure 2. PPRx Jumper Configuration //
+   *Figure 2. PPRx Jumper Configuration*
 
 
 .. container:: centeralign
@@ -173,7 +173,7 @@ There are three headers, each 3 pins wide, to select the 8 states listed in **Ta
 
 |image3|
 
-   //Figure 3. Example Configuration for State 0 //
+   *Figure 3. Example Configuration for State 0*
 
 
 Note that only two jumpers are needed to correctly terminate each PPRx pin; one to set the resistance value and one to terminate the resistance to VCC or GND. Please refer to the :adi:`AD9574` datasheet or page 3 of the evaluation board schematic for more information about the available settings for each PPRx pin.

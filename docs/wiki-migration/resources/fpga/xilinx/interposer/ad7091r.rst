@@ -38,7 +38,7 @@ The SDP-B controller board is part of Analog Devices System Demonstration Platfo
 
 Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD7091RSDZ** Evaluation Board.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7091R_sdp1z.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7091r_sdp1z.jpg
    :alt: ad7091R_sdp1z.jpg
    :align: center
    :width: 400px

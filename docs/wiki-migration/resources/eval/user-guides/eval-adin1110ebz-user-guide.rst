@@ -80,7 +80,7 @@ Overview
 
 .. container:: centeralign
 
-   //Figure 3. EVAL-ADIN1110EBZ Functional Block Diagram //
+   *Figure 3. EVAL-ADIN1110EBZ Functional Block Diagram*
 
 
 Hardware
@@ -299,7 +299,7 @@ The EVAL-ADIN1110EBZ microcontroller communicates over a standard UART interface
 
 The protocol is based on ASCII text commands and messages. Each message sent from the firmware to the host is finished by both <CR> and <LF> characters. For the commands received from host the firmware expects <CR>, <LF> or <CR> + <LF>.
 
-(//For information: <CR> .. “carriage return”, ASCII code 0x0D, <LF> .. “line feed”, ASCII code 0x0A //)
+(*For information: <CR> .. “carriage return”, ASCII code 0x0D, <LF> .. “line feed”, ASCII code 0x0A*)
 
 Terminal Commands and Messages
 ------------------------------

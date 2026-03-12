@@ -15,25 +15,25 @@ The product pages for the ADIN1300 and ADIN1200 Ethernet PHYs can be found on th
 
 10/100Mbit PHYs
 
--  `DP83822 to ADIN1200 <:doc:`/wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/dp83822_to_adin1200_phy_exchange_guide`>`_
+-  :doc:`DP83822 to ADIN1200 </wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/dp83822_to_adin1200_phy_exchange_guide>`
 
--  `KSZ8081 to ADIN1200 <:doc:`/wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/ksz8081_to_adin1200_phy_exchange_guide`>`_
+-  :doc:`KSZ8081 to ADIN1200 </wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/ksz8081_to_adin1200_phy_exchange_guide>`
 
--  `DP83825 to ADIN1200 <:doc:`/wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/dp83825_to_adin1200_phy_exchange_guide`>`_
+-  :doc:`DP83825 to ADIN1200 </wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/dp83825_to_adin1200_phy_exchange_guide>`
 
 10/100/1000Mbit PHYs
 
--  `DP83867 to ADIN1300 <:doc:`/wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/dp83867_to_adin1300_phy_exchange_guide`>`_
+-  :doc:`DP83867 to ADIN1300 </wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/dp83867_to_adin1300_phy_exchange_guide>`
 
--   `DP83869 to ADIN1300 <:doc:`/wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/dp83869_to_adin1300_phy_exchange_guide`>`_
+-   :doc:`DP83869 to ADIN1300 </wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/dp83869_to_adin1300_phy_exchange_guide>`
 
--  `AR8035 to ADIN1300 <:doc:`/wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/ar8035_to_adin1300_phy_exchange_guide`>`_
+-  :doc:`AR8035 to ADIN1300 </wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/ar8035_to_adin1300_phy_exchange_guide>`
 
--  `AR8031/8033 to ADIN1300 <:doc:`/wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/ar8031_to_adin1300_phy_exchange_guide`>`_
+-  :doc:`AR8031/8033 to ADIN1300 </wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/ar8031_to_adin1300_phy_exchange_guide>`
 
--  `Marvell 88E1510_to_ADIN1300 <:doc:`/wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/marvell88e1510_to_adin1300_phy_exchange_guide`>`_
+-  :doc:`Marvell 88E1510_to_ADIN1300 </wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/marvell88e1510_to_adin1300_phy_exchange_guide>`
 
--  `Marvell 88E1512_to_ADIN1300 <:doc:`/wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/marvell88e1512_to_adin1300_phy_exchange_guide`>`_
+-  :doc:`Marvell 88E1512_to_ADIN1300 </wiki-migration/resources/eval/user-guides/adin1300-and-adin1200/marvell88e1512_to_adin1300_phy_exchange_guide>`
 
 5. **IEEE Compliance Test Mode Access**
 

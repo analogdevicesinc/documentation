@@ -56,7 +56,7 @@ More infos under www.hdsx.audio.
 
 A schematic, with the input block, the easy to use HDSX® plug in and the output block, is shown below.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/licensedalgorithms/HDSXpic1.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/licensedalgorithms/hdsxpic1.jpg
    :alt: HDSXpic1.jpg
    :align: center
 

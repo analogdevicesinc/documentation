@@ -30,6 +30,6 @@ In order to use EV-COG-AD3029WZ board with Keil, you will need to replicate the 
 -  Push Crtl+F5 or in the Keil toolbar select **Debug** → **Start/Stop Debug Session**
 -  That’s it – You are ready to go.
 
-// End of Document //
+*End of Document*
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz>`

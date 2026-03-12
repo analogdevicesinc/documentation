@@ -371,25 +371,25 @@ For more information about ACE and its features, visit https://wiki.analog.com/r
    :height: 260px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9136/figure_2.jpg
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9135_dpgd_new.png
+.. |image5| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9135_dpgd_new.png
 .. |ace_icon_small.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_icon_small.png
-.. |image6| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9135_detected.png
+.. |image6| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9135_detected.png
 .. |connection_icon.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/connection_icon.png
-.. |image7| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9135_system.png
-.. |image8| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9135_boardview_new.png
-.. |image9| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9135_applypage_new.png
-.. |image10| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9135_chipview_new.png
+.. |image7| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9135_system.png
+.. |image8| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9135_boardview_new.png
+.. |image9| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9135_applypage_new.png
+.. |image10| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9135_chipview_new.png
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/image009.png
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/image010.png
-.. |image13| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/ad9136_1.6ghzdac_1x_4xwcdma_fout100m_plloff.png
+.. |image13| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136_1.6ghzdac_1x_4xwcdma_fout100m_plloff.png
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/ad9136-ebz_spipro_initialview.png
+.. |image14| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136-ebz_spipro_initialview.png
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/ad9136-ebz_spipro_finalview.png
+.. |image15| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136-ebz_spipro_finalview.png
    :width: 600px
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/dpg/image009.png
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/dpg/image010.png
-.. |image18| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/ad9136/ad9136_1.6ghzdac_1x_4xwcdma_fout100m_plloff.png
+.. |image18| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136_1.6ghzdac_1x_4xwcdma_fout100m_plloff.png
    :width: 600px
 .. |ad9122_nco.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_nco.png
 .. |ad9739a_on.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9739a_on.png

@@ -110,32 +110,32 @@ USB Driver Installation
 
 After downloading the EVAL-ADIS USB Driver file, extract the SDPDrivers.exe file from the zip file, into a convenient location and then double click on it to start the process.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-000.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-000.png
    :width: 500px
 
 When the setup wizard opens, click on **Next** to start the installation process
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-001.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-001.png
    :width: 500px
 
 Click on **Next** to accept the default driver location.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-002.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-002.png
    :width: 500px
 
 The process will involve at least two progress bars that look like the following:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-003.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-003.png
    :width: 500px
 
 If you encounter this type of message during the process, click on **Install** to continue with the installation.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-003a.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-003a.png
    :width: 500px
 
 Once the installation has completed, click on **Finish** to complete the process.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-004.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-004.png
    :width: 500px
 
 VIBRATION SOFTWARE GUIDE

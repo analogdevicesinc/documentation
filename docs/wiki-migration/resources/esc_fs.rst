@@ -21,7 +21,7 @@ Web / App note Description            ADI Parts
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/adi_industry_0005_energy.jpg
    :width: 1200px
-.. |image2| image:: https://wiki.analog.com/_media/{{ /resources/eval-aducm355qspztop-web.png
+.. |image2| image:: https://wiki.analog.com/_media/{{_/resources/eval-aducm355qspztop-web.png
    :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/{{ /resources/eval-aducm355qspztop-web.png
+.. |image3| image:: https://wiki.analog.com/_media/{{_/resources/eval-aducm355qspztop-web.png
    :width: 200px

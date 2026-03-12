@@ -4,7 +4,7 @@ Scopy Network Analyzer
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>VZqPyR455UE
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>vzqpyr455ue
    :alt: youtube>VZqPyR455UE
 
 Introduction

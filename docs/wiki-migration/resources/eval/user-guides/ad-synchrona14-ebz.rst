@@ -497,5 +497,5 @@ Design and Integration Files
    :width: 900px
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/ad-synchrona-ebz.jpg
    :width: 300px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/AD-SYNCHRONA14-EBZ2_TOP-1000.jpg
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/ad-synchrona14-ebz2_top-1000.jpg
    :width: 500px

@@ -208,7 +208,7 @@ adxl362_app.cpp and adxl362_app.h are the main source and header files related t
 
 **pinmux.c** – contains GPIO pinmuxing for UART and SPI.
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
    :width: 200px

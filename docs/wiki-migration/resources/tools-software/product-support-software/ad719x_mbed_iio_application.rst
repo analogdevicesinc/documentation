@@ -6,7 +6,7 @@ Introduction
 
 This page gives an overview of using the ARM platforms supported (default is Mbed) firmware example with Analog Devices AD719x Evaluation board and SDP-K1 controller board. This example code leverages the ADI developed IIO (Industrial Input Output) ecosystem to evaluate the AD719x device by providing a device debug and data capture support.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_introduction#introduction&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
 
 --------------
@@ -14,7 +14,7 @@ This page gives an overview of using the ARM platforms supported (default is Mbe
 Useful links
 ------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#useful_link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :git-no-OS:`AD719x No-OS drivers <drivers/adc/ad719x>`
@@ -40,7 +40,7 @@ EVAL-AD719X:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad719x_hardware_connection.png
    :width: 800px
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/hardware_connections_uart#uart_connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
 
 --------------
@@ -48,7 +48,7 @@ EVAL-AD719X:
 Software Downloads
 ==================
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_software_downloads#software_downloads&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
 
 --------------
@@ -56,7 +56,7 @@ Software Downloads
 Evaluating AD719x Using IIO Ecosystem
 -------------------------------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/note_hardware_connections#note_in_hardware_connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
 
 Running IIO Oscilloscope (Client)
@@ -107,7 +107,7 @@ More info here: :doc:`Data Capture using IIO App </wiki-migration/resources/tool
 Time Domain Plot
 ----------------
 
-//\*Note: When enabling more than 4 channels, the number of samples should be decreased to 200 to avoid timeout in the IIO oscilloscope. //
+*\*Note: When enabling more than 4 channels, the number of samples should be decreased to 200 to avoid timeout in the IIO oscilloscope.*
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad719x_iio_osc_plot.png
 

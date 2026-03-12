@@ -28,6 +28,6 @@ In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the f
 -  Push Crtl+F5 or in the Keil toolbar select **Debug** → **Start/Stop Debug Session**
 -  That’s it – You are ready to go.
 
-// End of Document //
+*End of Document*
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`

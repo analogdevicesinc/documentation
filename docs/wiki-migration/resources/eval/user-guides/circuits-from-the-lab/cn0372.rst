@@ -33,7 +33,7 @@ Required Equipment
 General Setup
 -------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/2fromCN.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/2fromcn.png
 
 -  The **CN0372 Board** connects to the **Interposer Board** via **J2** and **J3**
 -  The **Interposer board** connects to SDP-B Board via the 120-Pin connector
@@ -62,7 +62,7 @@ VDRIVE Options
 Solder Link Settings
 ~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/5newRC.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/5newrc.png
 
 Test Points
 ~~~~~~~~~~~

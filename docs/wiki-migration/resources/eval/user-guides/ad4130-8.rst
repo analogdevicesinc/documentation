@@ -65,7 +65,7 @@ To begin using the evaluation board, do the following:
 Hardware Guide
 ==============
 
-Visit the hardware guide chapter `here <:doc:`/wiki-migration/resources/eval/user-guides/ad4130-8/hardwareguide`>`_ **Contents of the Hardware guide**:
+Visit the hardware guide chapter :doc:`here </wiki-migration/resources/eval/user-guides/ad4130-8/hardwareguide>` **Contents of the Hardware guide**:
 
 -  :doc:`Set-up Procedures </wiki-migration/resources/eval/user-guides/ad4130-8/hardwareguide>`
 -  :doc:`Block Diagram </wiki-migration/resources/eval/user-guides/ad4130-8/hardwareguide>`
@@ -80,7 +80,7 @@ Visit the hardware guide chapter `here <:doc:`/wiki-migration/resources/eval/use
 Software Guide
 ==============
 
-Visit the software guide chapter `here <:doc:`/wiki-migration/resources/eval/user-guides/ad4130-8/softwareguide`>`_ **Contents of the Software guide**:
+Visit the software guide chapter :doc:`here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareguide>` **Contents of the Software guide**:
 
 -  :doc:`Ace Plugin </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
 

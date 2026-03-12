@@ -45,7 +45,7 @@ The EVAL-AD7380-4FMCZ is a fully-featured evaluation board designed to evaluate 
 
 |image1|
 
-   //\**Figure 1. EVAL-AD7380-4FMCZ EVALUATION BOARD (LEFT) CONNECTED TO SDP-H1 BOARD (RIGHT)** //
+   *\**Figure 1. EVAL-AD7380-4FMCZ EVALUATION BOARD (LEFT) CONNECTED TO SDP-H1 BOARD (RIGHT)***
 
 
 Evaluation Board Quick Start Guide
@@ -57,9 +57,9 @@ The EVAL-AD7380-4FMCZ is powered by the *SDP-H1* board by default. External powe
 
       -  Download and install the ACE software, which is available on the AD7380-4 product page. Installation details are found on the internal label of the EVAL-AD7380-4FMCZ box. Ensure that the SDP-H1 board is disconnected from the USB port of the PC when installing the ACE software. The PC may need to be restarted after the installation.
       -  Ensure that the link options are configured as detailed in Table 2.
-      -  Connect the //SDP-H1// board to the EVAL-AD7380-4FMCZ via the 160-way connector, as shown in Table 2.
-      -  Connect the //SDP-H1// board to the PC via the USB cable.
-      -  If using Windows® XP, search for the //SDP-H1// drivers. Choose to automatically search for the drivers for the SDP-H1 board if prompted by the operating system.
+      -  Connect the *SDP-H1* board to the EVAL-AD7380-4FMCZ via the 160-way connector, as shown in Table 2.
+      -  Connect the *SDP-H1* board to the PC via the USB cable.
+      -  If using Windows® XP, search for the *SDP-H1* drivers. Choose to automatically search for the drivers for the SDP-H1 board if prompted by the operating system.
       -  Copy the ACE plugins file, **Board.AD738x**, and the **Chip.AD738x** file from the EVAL-AD7380-4FMCZ evaluation board page to the **C:\ProgramData\Analog Devices\ACE\Plugins** folder.
       -  Connect a −2.5V external power supply on the AMP− of the P6 connector terminal.
       -  Launch the ACE software from the //ACE// subfolder in the **Analog Devices** folder in the **All Programs** menu.
@@ -75,7 +75,7 @@ Evaluation Board Connection Diagram
 
 |image2|
 
-   //\**Figure 2. Typical Setup of the EVAL-AD7380-4FMCZ and the SDP-H1 Board** //
+   *\**Figure 2. Typical Setup of the EVAL-AD7380-4FMCZ and the SDP-H1 Board***
 
 
 Evaluation Board Hardware
@@ -115,7 +115,7 @@ Ensure that all link positions are set according to the required operating mode 
 
 |image3|
 
-   //**Figure 3. EVAL-AD7380-4FMCZ Functional Block Diagram** //
+   **Figure 3. EVAL-AD7380-4FMCZ Functional Block Diagram**
 
 
 Link Configuration Options

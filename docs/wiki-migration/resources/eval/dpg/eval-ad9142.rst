@@ -31,5 +31,5 @@ Files included in the AD9142 Update:
 
 Download the `AD9142(A) & AD9139 Update <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/hsdac_update/hsdacupdate_ad9142_1.3.9.12.exe>`_
 
-.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#Data Pattern Generator&nofooter&noindent
+.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#data_pattern_generator&nofooter&noindent
    :alt: dpg#Data Pattern Generator&nofooter&noindent

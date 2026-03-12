@@ -256,7 +256,7 @@ Example Workflows
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation SHARC Audio Module#hardware
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation_sharc_audio_module#hardware
    :alt: Hardware Reference#.|SHARC Audio Module#.micropython|MicroPython Overview
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png

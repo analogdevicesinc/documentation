@@ -4,7 +4,7 @@ Quick Start Guide for Testing the AD9213 Customer Evaluation Board AD9213-10GEBZ
 Typical Setup
 -------------
 
-.. image:: https://wiki.analog.com/_media/AD9213-B_quick_start_diagram.png
+.. image:: https://wiki.analog.com/_media/ad9213-b_quick_start_diagram.png
    :alt: AD9213-B_quick_start_diagram.png
 
 .. container:: centeralign
@@ -89,10 +89,13 @@ Testing
 
 .. container:: centeralign
 
-   \ *Figure 2. AD9213-10GEBZ-B standoff and jumper locations.*-  You can install standoffs at the locations (marked with an *) if needed. Alternatively, you can use foam sheets to support the board.
+   \ *Figure 2. AD9213-10GEBZ-B standoff and jumper locations.*\
+
+
+-  You can install standoffs at the locations (marked with an \*) if needed. Alternatively, you can use foam sheets to support the board.
 -  Connect the AD9213/9217 evaluation board to the ADS8-V1EBZ board together as shown in the following figure.
 
-.. image:: https://wiki.analog.com/_media/AD9213-10GEBZB TO ADS8-V1EBZ connection.png
+.. image:: https://wiki.analog.com/_media/ad9213-10gebzb_to_ads8-v1ebz_connection.png
    :alt: AD9213-10GEBZB TO ADS8-V1EBZ connection.png
    :align: center
    :width: 400px
@@ -128,14 +131,14 @@ Testing
 
 .. container:: centeralign
 
-   //AD9213/AD9217 on-board clocking board view //
+   *AD9213/AD9217 on-board clocking board view*
 
 
    |ad9213_ce_external_board_view.png|
 
 .. container:: centeralign
 
-   //AD9213/AD9217 external clocking board view //
+   *AD9213/AD9217 external clocking board view*
 
 
 -  After “State=Good” appears in the lower left, turn on the signal generators for the clock, reference clock, and signal.
@@ -188,12 +191,12 @@ Testing
 
 -  The analysis page appears. Click "Run Once" to get a time domain view at the converted data.
 
-.. image:: https://wiki.analog.com/_media/AD9213_ce_analysis_page_appears.png
+.. image:: https://wiki.analog.com/_media/ad9213_ce_analysis_page_appears.png
    :alt: AD9213_ce_analysis_page_appears.png
 
 -  Using the full bandwidth mode setup from step 17, the time domain analysis of converted data appears.
 
-.. image:: https://wiki.analog.com/_media/AD9213_ce_run_once_time_domain_fbw.png
+.. image:: https://wiki.analog.com/_media/ad9213_ce_run_once_time_domain_fbw.png
    :alt: AD9213_ce_run_once_time_domain_fbw.png
 
 .. container:: centeralign
@@ -223,7 +226,7 @@ Testing
 
 -   Using the DDC setup from step 19, the time domain domain analysis of converted data appears.
 
-.. image:: https://wiki.analog.com/_media/AD9213_ce_run_once_time_domain_ddc.png
+.. image:: https://wiki.analog.com/_media/ad9213_ce_run_once_time_domain_ddc.png
    :alt: AD9213_ce_run_once_time_domain_ddc.png
 
 .. container:: centeralign

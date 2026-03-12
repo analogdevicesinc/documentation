@@ -6,7 +6,7 @@ Wav Player
 
 This module can be used to read PCM/WAV files from external Flash connected to ADAU145x via SPI. This module also can perform pitch shifting while playing the file.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/wavPlayerToolbox.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/wavplayertoolbox.jpg
    :align: center
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/wavplayermodule.png
@@ -121,7 +121,7 @@ Support for Different Slave Select
 
 If the Slave Select is 0 and MP0 is used as chip select, no configuration is required in the register controls. Otherwise particular multipurpose pin should be configured to act as the slave select in the register window. (Hardware Configuration -> ICx - ADAU145x Register Controls -> MULTIPURPOSE/ AUXADC)
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/MP5Mode.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/mp5mode.jpg
    :align: center
 
 -  Slave Select Channel -> 'Slave Select Channel x'
@@ -188,6 +188,6 @@ Supported ICs
 
 -  ADAU145x
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/ControlPortProperties_2.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/wavPlayerSchematic.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavPlayerSchematic_PitchShiftEnable.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/controlportproperties_2.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/wavplayerschematic.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayerschematic_pitchshiftenable.jpg

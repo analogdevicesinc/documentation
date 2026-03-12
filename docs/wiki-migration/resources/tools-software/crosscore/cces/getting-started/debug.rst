@@ -85,5 +85,5 @@ Some other useful views that aid in debugging that can be found under **Window â
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#help
+.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#help
    :alt: Online Help & Example Browser#.|CCES Getting Started#bsp|Board Support Packages

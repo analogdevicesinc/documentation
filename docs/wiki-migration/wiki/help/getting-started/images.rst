@@ -6,7 +6,7 @@ Video Tutorial
 
 View this video tutorial to learn how to upload and display images on the Wiki. You will also learn how to upload and insert files such as PDFs or code examples.
 
-.. image:: https://wiki.analog.com/_media/wiki/help/getting-started/analogTV>1052316399001
+.. image:: https://wiki.analog.com/_media/wiki/help/getting-started/analogtv>1052316399001
    :alt: analogTV>1052316399001
    :width: 640px
    :height: 530px

@@ -13,7 +13,7 @@ This topology will provide image rejection and early implementation of the diffe
 Contains
 --------
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/Xilinx/fmc/fmcomms6/top_view_main_page.png
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmcomms6/top_view_main_page.png
    :align: right
    :width: 400px
 

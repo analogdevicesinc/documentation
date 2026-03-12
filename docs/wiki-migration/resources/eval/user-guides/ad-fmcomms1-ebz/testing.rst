@@ -122,7 +122,7 @@ Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should b
 -  Repeat steps 6..18 for additional boards.
 -  In the dactune source directory there should exist a results.SN####.tar file for every tested board.
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS1-EBZ#Software#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms1-ebz#software#./
    :alt: Overview#additional_docs|Additional Documentation about SDR Signal Chain
 
 .. |ML605 Diagram| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/ml605.png

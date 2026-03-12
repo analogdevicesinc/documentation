@@ -82,7 +82,7 @@ Possible applications of the ADSW-OFDMS2M reference modem include the following:
 
 ▶️Recorded demonstration of a wireless video transmission using the ADSW-OFDMS2M HDL reference modem
 
-.. image:: https://wiki.analog.com/_media/resources/youtube>QH53fXQbzeI
+.. image:: https://wiki.analog.com/_media/resources/youtube>qh53fxqbzei
    :alt: youtube>QH53fXQbzeI
 
 Use Cases

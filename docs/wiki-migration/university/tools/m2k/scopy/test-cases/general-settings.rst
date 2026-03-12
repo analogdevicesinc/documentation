@@ -361,37 +361,37 @@ Test Results will be recorded in the following document: `General Setting Test C
    :width: 300px
 .. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver_4.png
    :width: 300px
-.. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_initial_setup_1.png
+.. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_initial_setup_1.png
    :width: 300px
-.. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_initial_setup_step1-2.png
+.. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_initial_setup_step1-2.png
    :width: 300px
-.. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step1-4.png
+.. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step1-4.png
    :width: 300px
-.. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step3-1.png
+.. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step3-1.png
    :width: 300px
-.. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step3-3.png
+.. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step3-3.png
    :width: 300px
-.. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step4-1.png
+.. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step4-1.png
    :width: 300px
-.. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_initial_setup_1.png
+.. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_initial_setup_1.png
    :width: 300px
-.. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_initial_setup_step1-2.png
+.. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_initial_setup_step1-2.png
    :width: 300px
-.. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step1-4.png
+.. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step1-4.png
    :width: 300px
-.. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step3-1.png
+.. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step3-1.png
    :width: 300px
-.. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step3-3.png
+.. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step3-3.png
    :width: 300px
-.. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step4-1.png
+.. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step4-1.png
    :width: 300px
-.. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step6-1.png
+.. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step6-1.png
    :width: 300px
-.. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step6-1a.png
+.. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step6-1a.png
    :width: 300px
-.. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_saveandload_step2.png
+.. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_saveandload_step2.png
    :width: 300px
-.. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_saveandload_step3.png
+.. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_saveandload_step3.png
    :width: 300px
 .. |image47| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step1.png
    :width: 300px
@@ -403,13 +403,13 @@ Test Results will be recorded in the following document: `General Setting Test C
    :width: 300px
 .. |image51| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_saveandload_step11.png
    :width: 300px
-.. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step6-1.png
+.. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step6-1.png
    :width: 300px
-.. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step6-1a.png
+.. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step6-1a.png
    :width: 300px
-.. |image54| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_saveandload_step2.png
+.. |image54| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_saveandload_step2.png
    :width: 300px
-.. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_saveandload_step3.png
+.. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_saveandload_step3.png
    :width: 300px
 .. |image56| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step1.png
    :width: 300px
@@ -421,45 +421,45 @@ Test Results will be recorded in the following document: `General Setting Test C
    :width: 300px
 .. |image60| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_saveandload_step11.png
    :width: 300px
-.. |image61| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-8.png
+.. |image61| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-8.png
    :width: 300px
-.. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-2.png
+.. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-2.png
    :width: 300px
-.. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-3c.png
+.. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3c.png
    :width: 300px
-.. |image64| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-3b.png
+.. |image64| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3b.png
    :width: 300px
-.. |image65| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-3d.png
+.. |image65| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3d.png
    :width: 300px
-.. |image66| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting _step7-4a.png
+.. |image66| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting__step7-4a.png
    :width: 300px
-.. |image67| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-4b.png
+.. |image67| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-4b.png
    :width: 300px
-.. |image68| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-4c.png
+.. |image68| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-4c.png
    :width: 300px
-.. |image69| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-5a.png
+.. |image69| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-5a.png
    :width: 300px
 .. |image70| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.01.png
    :width: 300px
 .. |image71| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_step7-5b.png
    :width: 300px
-.. |image72| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-8.png
+.. |image72| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-8.png
    :width: 300px
-.. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-2.png
+.. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-2.png
    :width: 300px
-.. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-3c.png
+.. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3c.png
    :width: 300px
-.. |image75| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-3b.png
+.. |image75| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3b.png
    :width: 300px
-.. |image76| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-3d.png
+.. |image76| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3d.png
    :width: 300px
-.. |image77| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting _step7-4a.png
+.. |image77| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting__step7-4a.png
    :width: 300px
-.. |image78| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-4b.png
+.. |image78| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-4b.png
    :width: 300px
-.. |image79| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-4c.png
+.. |image79| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-4c.png
    :width: 300px
-.. |image80| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step7-5a.png
+.. |image80| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-5a.png
    :width: 300px
 .. |image81| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.01.png
    :width: 300px
@@ -467,7 +467,7 @@ Test Results will be recorded in the following document: `General Setting Test C
    :width: 300px
 .. |image83| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_indexfile_step1.png
 .. |image84| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_indexfile_step2.png
-.. |image85| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step8-3.png
+.. |image85| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step8-3.png
 .. |image86| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_indexfile_step1.png
 .. |image87| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_indexfile_step2.png
-.. |image88| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ scopy_general_setting_step8-3.png
+.. |image88| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step8-3.png

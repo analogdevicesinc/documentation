@@ -2914,5 +2914,5 @@ More Information
 
 -  `SPI Engine Framework <https://wiki.analog.com/.>`_
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/navigation HDL User Guide#../../docs/ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/navigation_hdl_user_guide#../../docs/ip_cores
    :alt: IP cores#../../docs/hdl|Main page#../../docs/tips|Using and modifying the HDL design

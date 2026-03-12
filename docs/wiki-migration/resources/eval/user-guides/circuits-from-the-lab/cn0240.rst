@@ -85,7 +85,7 @@ Test setup
 
 ::
 
-       *//If available, a +6 V "wall wart" can be connected to the barrel connector on the board and used in place of the +6 V power supply//
+       **If available, a +6 V "wall wart" can be connected to the barrel connector on the board and used in place of the +6 V power supply*
    * Connect the USB cable supplied with the SDP board to the USB port on the PC
    * Apply power to the +6 V supply (or “wall wart”) connected to :adi:`EVAL-CN0240-SDPZ Evaluation Board <EVAL-CN0240-SDPZ>`
    * Launch the evaluation software

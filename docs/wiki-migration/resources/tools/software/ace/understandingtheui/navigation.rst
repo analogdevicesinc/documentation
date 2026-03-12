@@ -9,7 +9,7 @@ You can return to the ACE Application User Guide Homepage here: :doc:`Applicatio
 Navigation
 ----------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Hierarchy.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/hierarchy.png
    :alt: Hierarchy.png
    :align: left
    :width: 396px
@@ -21,6 +21,6 @@ Clicking on the element you want to step into allows navigation down from the St
 
 Clicking on the arrow next to a step in the navigation breadcrumbs will show the list of available next steps from that view. From here it is possible to navigate to the next level down in the hierarchy or any previous levels of the hierarchy for any component.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/BreadCrumbs.PNG
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/breadcrumbs.png
    :alt: BreadCrumbs.PNG
    :align: right

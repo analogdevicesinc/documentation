@@ -333,7 +333,10 @@ Note: If using the FMC version of the evaluation board and data capture board ma
 
 .. container:: centeralign
 
-   \ *Figure 11. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 12). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. The Nyquist Clock is selected by default. If using the RF Clock, make sure to configure the device in this tab. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
+   \ *Figure 11. SPI Controller, New DUT Button*\
+
+
+-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 12). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. The Nyquist Clock is selected by default. If using the RF Clock, make sure to configure the device in this tab. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase0.png
    :align: center
@@ -341,7 +344,10 @@ Note: If using the FMC version of the evaluation board and data capture board ma
 
 .. container:: centeralign
 
-   \ *Figure 12. SPI Controller, ADCBase0*-  Note that other settings can be changed on the **ADCBase0** tab (see Figure 12) and the **ADCBase1**\ and **ADCBase2** tabs (see Figures 13 and 14) to set up the part in the desired mode. The **ADCBase0** tab settings affect ADC settings, whereas the settings on the **ADCBase1** and **ADCBase2** tabs affect the JESD204B link settings. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+   \ *Figure 12. SPI Controller, ADCBase0*\
+
+
+-  Note that other settings can be changed on the **ADCBase0** tab (see Figure 12) and the **ADCBase1**\ and **ADCBase2** tabs (see Figures 13 and 14) to set up the part in the desired mode. The **ADCBase0** tab settings affect ADC settings, whereas the settings on the **ADCBase1** and **ADCBase2** tabs affect the JESD204B link settings. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase1.png
    :align: center
@@ -394,7 +400,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   //Figure 17. Typical FFT, :adi:`AD9683` //
+   *Figure 17. Typical FFT, :adi:`AD9683`*
 
 
 Troubleshooting Tips

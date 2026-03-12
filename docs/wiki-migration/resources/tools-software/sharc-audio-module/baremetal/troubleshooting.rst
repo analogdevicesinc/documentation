@@ -140,5 +140,5 @@ Generally unexpected behavior
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#flashing
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#flashing
    :alt: Programming BM Framework to Flash#.|Bare Metal Framework#using-both-cores|Audio Processing Basics

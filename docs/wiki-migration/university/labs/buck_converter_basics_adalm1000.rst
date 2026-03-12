@@ -31,7 +31,7 @@ When the current flowing in an inductor is quickly interrupted a large voltage s
 
 This exercise will expand on these concepts, deriving a converter that “boosts” a low voltage to a high voltage. Subsequent activities will close the loop around these circuits and examine loop stability and time-domain response.
 
-.. image:: https://wiki.analog.com/_media/page>/university/labs/open_loop_boost_and_buck_adalm2000#Activity 1/ An Ideal* Open-Loop Boost Converter Simulation&footer
+.. image:: https://wiki.analog.com/_media/page>/university/labs/open_loop_boost_and_buck_adalm2000#activity_1/_an_ideal\*_open-loop_boost_converter_simulation&footer
    :alt:  An Ideal\* Open-Loop Boost Converter Simulation&footer
 
 Materials:

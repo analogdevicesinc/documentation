@@ -167,7 +167,7 @@ For more information on how to use the tool basics, please check out the `Arduin
    To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_101851.jpg
    :width: 500px

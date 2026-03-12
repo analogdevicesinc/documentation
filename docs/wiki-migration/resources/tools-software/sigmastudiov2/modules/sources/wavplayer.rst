@@ -166,7 +166,7 @@ The following changes must be made to the ADSP-SC5xx/ADSP-215xxSigmaStudio demo 
 
 1. Add the Pin multiplexing Add-in to Sharc Core 0 project. Upon successful addition the plugin must appear in the installed Add-in view
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/AddPinMuxing.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/addpinmuxing.jpg
    :alt: AddPinMuxing.jpg
 
 2. Enable SPI2 in the Pin multiplexing and select MISO, MOSI, CLK, SEL1, D2, D3 as shown below.
@@ -200,7 +200,7 @@ Include the file platform_flash_config.c in the Sharc Core0 application. This fi
 
 Within adi_ss_app_sh0.c file, add the call to functionSetFlashMode() in the main() function just after the call to ConfigSoftSwitches() function, as shown below
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/ConfigureSoftSwitch_2156x_1.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/configuresoftswitch_2156x_1.jpg
    :alt: ConfigureSoftSwitch_2156x_1.jpg
 
 Include the header “adi_wavplayer.h" in the adi_ss_app_sh0.c file and include this header file in the Sharc Core0 application project.
@@ -216,7 +216,7 @@ Enable cache 16KB andset\*pREG_SHL1C0_CFG = ENABLE_I_D_CACHE in adi_ss_config_I_
 
 Cache configuration and modification in adi_ss_cache_config.c
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/CacheConfiguration_1.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/cacheconfiguration_1.jpg
    :alt: CacheConfiguration_1.jpg
 
 After making the above changes, rebuild the projects to create the application dxes.
@@ -231,12 +231,12 @@ NOTE: CrossCore Embedded Studio (CCES) v3.0.3 shall be used for building the abo
 
 1. Add the Pin multiplexing Add-in to Sharc Core 0 project. Upon successful addition the plugin must appear in the installed Add-in view as below.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/AddPinMuxing2156x.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/addpinmuxing2156x.jpg
    :alt: AddPinMuxing2156x.jpg
 
 2. Enable SPI2 in the Pin multiplexing and select MISO, MOSI, CLK, SEL1, D2, D3 as shown below.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/SPI22156x.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/spi22156x.jpg
    :alt: SPI22156x.jpg
 
 **Software switch configuration**
@@ -261,7 +261,7 @@ Add the callback function wavplayerSetupFlash() to adi_ss_app_sh0.c file and set
 
 This call back function is called during initialization of the WAV player module. The flash configuration parameters for the ADSP-21569 EZ-KIT flash is as shown below.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/WavPlayersetupFlash_2156x.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/wavplayersetupflash_2156x.jpg
    :alt: WavPlayersetupFlash_2156x.jpg
 
 Include the file adi_initSPIMode.c in the Sharc Core0 application. This file has the function definition for InitializeSPIMode(), which sets up the SPI in memory mapped read mode. . Invoke this function within the wavplayerSetupFlash() function after configuring the flash properties.
@@ -270,39 +270,39 @@ Include the file platform_flash_config.c in the Sharc Core0 application. This fi
 
 Within adi_ss_app_sh0.c file, add the call to functionSetFlashMode() in the main() function just after the call to ConfigSoftSwitches() function, as shown below.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/ConfigureSoftSwitch_2156x_1.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/configuresoftswitch_2156x_1.jpg
    :alt: ConfigureSoftSwitch_2156x_1.jpg
 
 Include the header “adi_wavplayer.h" in the adi_ss_app_sh0.c file and add the link to the Sharc Core0 application project properties.
 
 In the Sharc Core 0app.ldf file add KEEP (wavplayerSetupFlash.) and KEEP(InitializeSPIMMode.) to retain the symbols.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/APP_2156x.ldf.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/app_2156x.ldf.jpg
    :alt: APP_2156x.ldf.jpg
 
 **Cache configuration and other changes to the project**
 
 Enable 16KB cache and set \*pREG_SHL1C0_CFG = ENABLE_I_D_CACHE in function adi_ss_config_I_D_cache() in file adi_ss_cache_config.c.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/CacheConfiguration_2156x.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/cacheconfiguration_2156x.jpg
    :alt: CacheConfiguration_2156x.jpg
 
 In the compiler preprocessor section of the project properties, add the following preprocessor definition: “ADI_SPORT_BLOCKING_MODE=1”
 
 Click on system.svc and from the overview tab, add OSPI driver add-in to the project as shown below
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/OSPIDriverAdd.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/ospidriveradd.jpg
    :alt: OSPIDriverAdd.jpg
 
 After making the above changes, rebuild the project to create the application dxe that can be used with the wav player SigmaStudio plugin.
 
-.. |WavPlayerToolbox.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/WavPlayerToolbox.jpg
-.. |WavPlayerforSharc.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/WavPlayerforSharc.jpg
-.. |FlashFileStatus.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/FlashFileStatus.jpg
-.. |ImportDemoApplication.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/ImportDemoApplication.jpg
-.. |SoftConfiguration.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/SoftConfiguration.jpg
-.. |WavPlayerSetupFlash.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/WavPlayerSetupFlash.jpg
-.. |ldfChanges.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/ldfChanges.jpg
-.. |CacheConfiguration.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/CacheConfiguration.jpg
-.. |SwitchConfiguration2156x.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/SwitchConfiguration2156x.jpg
-.. |SwitchConfig_2_2156x.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/SwitchConfig_2_2156x.jpg
+.. |WavPlayerToolbox.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/wavplayertoolbox.jpg
+.. |WavPlayerforSharc.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/wavplayerforsharc.jpg
+.. |FlashFileStatus.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/flashfilestatus.jpg
+.. |ImportDemoApplication.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/importdemoapplication.jpg
+.. |SoftConfiguration.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/softconfiguration.jpg
+.. |WavPlayerSetupFlash.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/wavplayersetupflash.jpg
+.. |ldfChanges.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/ldfchanges.jpg
+.. |CacheConfiguration.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/cacheconfiguration.jpg
+.. |SwitchConfiguration2156x.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/switchconfiguration2156x.jpg
+.. |SwitchConfig_2_2156x.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/switchconfig_2_2156x.jpg

@@ -253,7 +253,7 @@ Project structure includes:
 -  Power core initialization module with files: power.c, power.h;
 -  Timer and delay driver module with files: timer.c, timer.h.
 
-// End of Document //
+*End of Document*
 
 .. |Main flow chart| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0414_main_flowchart.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_can_bus_connect.png

@@ -51,7 +51,7 @@ The :adi:`AD9578` evaluation board is a compact, easy-to-use platform for evalua
 
 |image1|
 
-   //Figure 1. AD9578/PCBZ //
+   *Figure 1. AD9578/PCBZ*
 
 
 Evaluation Board Hardware
@@ -263,7 +263,7 @@ The reference input to each PLL is specified by using the various drop down menu
 
 |image8|
 
-   //Figure 8. PLL Input Reference Selection Drop Downs //
+   *Figure 8. PLL Input Reference Selection Drop Downs*
 
 
 Each PLL and REFOUT reference frequency can be supplied by Crystal 1, Crystal 2, or an external reference input Ref In. Crystal 2 and Ref In cannot be used simultaneously. The selection of Ref In or Crystal 2 is controlled by using the Ref In/Crystal 2 drop down.
@@ -275,7 +275,7 @@ The AD9578 evaluation software automatically configures the settings for each PL
 
 .. container:: centeralign
 
-   |image9| //Figure 9. PLL1 and PLL2 Default Controls //
+   |image9| *Figure 9. PLL1 and PLL2 Default Controls*
 
 
 The **OEx** and **override** check boxes allow the user to manipulate the various output enable bits from the register 0x02 of the AD9578. Default operation is for both boxes to be checked, allowing the software to have control over each output.
@@ -303,7 +303,7 @@ The Reference Output source is selected in the **Input Frequency Section**. The 
 
 .. container:: centeralign
 
-   |image11| //Figure 12. Reference Output Section //
+   |image11| *Figure 12. Reference Output Section*
 
 
 PLL Lock Indicators
@@ -313,7 +313,7 @@ When either PLL1 or PLL2 are in lock, the appropriate PLL lock indicator will tu
 
 .. container:: centeralign
 
-   |image12| //Figure 13. PLL Lock Indicators //
+   |image12| *Figure 13. PLL Lock Indicators*
 
 
 Comments Box
@@ -323,7 +323,7 @@ The Comments box displays notifications to the user upon successful read/write o
 
 .. container:: centeralign
 
-   |image13| //Figure 14. Comments Box //
+   |image13| *Figure 14. Comments Box*
 
 
 Frequency Wizard
@@ -333,7 +333,7 @@ The AD9578 **Frequency Wizard** is responsible for calculating the optimum PLL s
 
 .. container:: centeralign
 
-   |image14| //Figure 15. Frequency Wizard //
+   |image14| *Figure 15. Frequency Wizard*
 
 
 Pressing the various **Index** buttons on the left of the window will load those particular settings into the **Main Window** and override the original settings chosen by the **Frequency Wizard**.
@@ -344,7 +344,7 @@ Evaluation Software Menu Items
 
 .. container:: centeralign
 
-   |image15| //Figure 16. Menu Bar //
+   |image15| *Figure 16. Menu Bar*
 
 
 Menu Bar
@@ -392,7 +392,7 @@ Allows the user to read write hex values to specific registers. The register add
 
 .. container:: centeralign
 
-   |image16| //Figure 17. Debug Window //
+   |image16| *Figure 17. Debug Window*
 
 
 Crystal Settings
@@ -402,7 +402,7 @@ Allows the user to alter the various XO settings found in registers 4 and 10. Th
 
 .. container:: centeralign
 
-   |image17| //Figure 18. Crystal Settings Mode //
+   |image17| *Figure 18. Crystal Settings Mode*
 
 
 Help Menu

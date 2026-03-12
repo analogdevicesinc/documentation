@@ -188,5 +188,5 @@ See the tutorials that follow for examples of building and chaining various audi
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#delay-effect-tutorial
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#delay-effect-tutorial
    :alt: Delay Effect from Scratch#.|Bare Metal Framework#volume-control-tutorial|Programming a Volume Control

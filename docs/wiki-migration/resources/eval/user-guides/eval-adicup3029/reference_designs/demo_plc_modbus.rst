@@ -1020,7 +1020,7 @@ The HART protocol is proprietary, customers implementing a full HART stack shoul
 
    Enter Option:
 
-// End of Document //
+*End of Document*
 
 .. |Common registers| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_qmodmaster_general_reg.png
    :width: 1500px

@@ -89,7 +89,7 @@ Sessions
 -  `PlutoSDR Workshop Labs <https://github.com/sdrforengineers/LabGuides/tree/master/grcon2020>`_
 -  `PlutoSDR Workshop Slides <https://wiki.analog.com/_media/plutoworkshop.pdf>`_
 
-.. |youtube>Qx8uFhumgGM| image:: https://wiki.analog.com/_media/youtube>Qx8uFhumgGM
-.. |youtube>ef30VPIx-LM| image:: https://wiki.analog.com/_media/youtube>ef30VPIx-LM
-.. |youtube>2s940fttDco| image:: https://wiki.analog.com/_media/youtube>2s940fttDco
-.. |youtube>BaRgx5ehdOw| image:: https://wiki.analog.com/_media/youtube>BaRgx5ehdOw
+.. |youtube>Qx8uFhumgGM| image:: https://wiki.analog.com/_media/youtube>qx8ufhumggm
+.. |youtube>ef30VPIx-LM| image:: https://wiki.analog.com/_media/youtube>ef30vpix-lm
+.. |youtube>2s940fttDco| image:: https://wiki.analog.com/_media/youtube>2s940fttdco
+.. |youtube>BaRgx5ehdOw| image:: https://wiki.analog.com/_media/youtube>bargx5ehdow

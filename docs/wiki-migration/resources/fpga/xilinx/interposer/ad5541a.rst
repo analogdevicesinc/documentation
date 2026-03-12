@@ -16,7 +16,7 @@ Overview
 
 This document presents the steps to setup an environment for using the :adi:`EVAL-AD5541ASDZ <AD5541A>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD5541ASDZ Evaluation Board with the Xilinx KC705 board.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_ad5541A.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_ad5541a.jpg
    :alt: img_ad5541A.jpg
    :align: center
 
@@ -28,7 +28,7 @@ This document presents the steps to setup an environment for using the :adi:`EVA
 
 Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5541ASDZ** Evaluation Board.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5541A_sdp1z.png
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5541a_sdp1z.png
    :alt: ad5541A_sdp1z.png
    :align: center
    :width: 400px
@@ -146,4 +146,4 @@ More information
    See `ez_common <https://wiki.analog.com/ez_common>`_
 
 
-.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/terminal_kc705.jpg

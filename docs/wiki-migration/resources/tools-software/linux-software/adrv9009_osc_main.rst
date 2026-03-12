@@ -22,13 +22,13 @@ Screenshots
 Time Domain View
 ~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_TD_MAIN.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_td_main.png
    :align: center
    :width: 600px
 
 Frequency Domain View
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_FD_MAIN.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_fd_main.png
    :align: center
    :width: 600px

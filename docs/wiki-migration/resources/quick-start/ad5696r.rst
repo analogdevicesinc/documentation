@@ -60,7 +60,13 @@ Pin Configurations
    
    .. container:: centeralign
 
-      \ *Figure 3. 16-Lead TSSOP*\** Table 1. Function Descriptions for Quick Start**
+      \ *Figure 3. 16-Lead TSSOP*\
+
+   
+
+
+
+\*\* Table 1. Function Descriptions for Quick Start \*\*
 
 +------------------------+-------------------------------------------------------------------+
 | Mnemonic               | Description                                                       |
@@ -110,7 +116,10 @@ Shift Register Contents
 
 .. container:: centeralign
 
-   \ *Figure 4. Shift Register Contents*\** Table 2. Command Definitions**
+   \ *Figure 4. Shift Register Contents*\
+
+
+\*\* Table 2. Command Definitions \*\*
 
 ======= == == == =======================================================
 Command          

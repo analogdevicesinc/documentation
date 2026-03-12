@@ -247,5 +247,5 @@ Software Revision History
    </details>
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imues_mainwindow_04_Yaccel_pos_2_neg.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imues_mainwindow_04_yaccel_pos_2_neg.png
    :width: 800px

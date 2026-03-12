@@ -260,7 +260,7 @@ Download the Simulink model **ad9361_sim.slx** from GitHub and open the model fr
 
 In this Simulink model, you will find the Rx block on the top and the Tx block on the bottom, as shown below:
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/TxandRx.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/txandrx.png
    :alt: Block diagram
    :width: 600px
 

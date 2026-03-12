@@ -3061,5 +3061,5 @@ Reference
 -  `7 Series FPGAs GTX/GTH Transceivers User Guide - Xilinx <https://www.xilinx.com/support/documentation/user_guides/ug476_7Series_Transceivers.pdf>`_
 -  `Ultrascale Architecture GTH Transceivers User Guide - Xilinx <https://www.xilinx.com/support/documentation/user_guides/ug576-ultrascale-gth-transceivers.pdf>`_
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

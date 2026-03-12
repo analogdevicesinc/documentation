@@ -255,7 +255,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   //Figure 14. Graph Window of VisualAnalog //
+   *Figure 14. Graph Window of VisualAnalog*
 
 
 -  Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file.
@@ -266,7 +266,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   //Figure 15. VisualAnalog Disk Icon //
+   *Figure 15. VisualAnalog Disk Icon*
 
 
 Testing Additional AD9434 Boards
@@ -289,14 +289,14 @@ With reference to :adi:`an-501` and :adi:`an-756`, the SNR performance as shown 
 
 .. container:: centeralign
 
-   //Figure 16. AD9434 Clocking Set-up //
+   *Figure 16. AD9434 Clocking Set-up*
 
 
    |image2|
 
 .. container:: centeralign
 
-   //Figure 17. AD9434 SNR Performance using Different Clock Configurations //
+   *Figure 17. AD9434 SNR Performance using Different Clock Configurations*
 
 
 As a trade-off in getting the best SNR performance, the material cost and resources are higher for external signal generator clock configuration. However, the user can get a better performance (almost -1 dB less than the external signal generator) with optimized material cost in oscillator clock configuration using CCS575S. For the lowest material cost compared to oscillator, the :adi:`ad9517-4` can offer a good functionality in using either LVPECL or LVDS configurations. In design considerations, the user should get a good balance between ease of resources and ADC performance.

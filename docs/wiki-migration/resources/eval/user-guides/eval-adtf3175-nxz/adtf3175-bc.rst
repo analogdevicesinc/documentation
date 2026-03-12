@@ -30,7 +30,7 @@ NVM Contents
 -  ADTF3175 module calibration
 -  ADSD3500 FW (Only needed by ADSD3500)
 
-`Click here NVM structure details <:doc:`/wiki-migration/resources/eval/user-guides/eval-adtf3175-nxz/nvm`>`_
+:doc:`Click here NVM structure details </wiki-migration/resources/eval/user-guides/eval-adtf3175-nxz/nvm>`
 
 EVAL-ADTF3175-NXZ Usecase
 ~~~~~~~~~~~~~~~~~~~~~~~~~

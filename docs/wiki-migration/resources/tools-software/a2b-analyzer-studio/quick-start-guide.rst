@@ -8,7 +8,7 @@ Introduction
 
 The guidelines on these pages are intended to help A\ :sup:`2`\ B users configure and use the ADI A\ :sup:`2`\ B Analyzer Studio tool in Monitor or Emulator mode for A2B1.0 networks on A2B Bus Analyzer and A2B2.0 networks on A2B Analyzer HP respectively.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_1.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_1.png
    :width: 600px
 
 Installation and Upgrades
@@ -118,7 +118,7 @@ The current firmware version on the device is shown on the Home screen after co
 
 If a firmware update is available, click 'Update Firmware' and follow the on-screen instructions to flash the new version to the connected device (A\ :sup:`2`\ B Bus Analyzer or A\ :sup:`2`\ B Analyzer HP).
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_3.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_3.png
    :width: 600px
 
 A2B Analyzer HP Package Contents
@@ -373,12 +373,12 @@ Further documentation
 
 Most of the user documentation is located with this guide in the Analog Devices wiki under :doc:`/wiki-migration/resources/tools-software/a2b-analyzer-studio`
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_26.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_26.png
    :width: 600px
 
 A more in-depth user guide PDF which can be found in the A\ :sup:`2`\ B Analyzer Studio software installation. You can access it under the Help menu.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_27.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_27.png
    :width: 600px
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
@@ -393,49 +393,49 @@ A more in-depth user guide PDF which can be found in the A\ :sup:`2`\ B Analyzer
    :width: 20px
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
    :width: 20px
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_2.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_2.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_4.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_4.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_5.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_5.png
    :width: 250px
-.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_6.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_6.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_7.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_7.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_8.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_8.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_9.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_9.png
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_10.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_10.png
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_11.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_11.png
    :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_12.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_12.png
    :width: 600px
-.. |image17| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_13.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_13.png
    :width: 600px
-.. |image18| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_14.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_14.png
    :width: 600px
-.. |image19| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_15.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_15.png
    :width: 600px
-.. |image20| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_16.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_16.png
    :width: 250px
-.. |image21| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_17.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_17.png
    :width: 600px
-.. |image22| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_18.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_18.png
    :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_19.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_19.png
    :width: 600px
-.. |image24| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_20.png
+.. |image24| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_20.png
    :width: 600px
-.. |image25| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_21.png
+.. |image25| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_21.png
    :width: 600px
-.. |image26| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_22.png
+.. |image26| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_22.png
    :width: 600px
-.. |image27| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_23.png
+.. |image27| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_23.png
    :width: 600px
-.. |image28| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_24.png
+.. |image28| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_24.png
    :width: 600px
-.. |image29| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASQSG_25.png
+.. |image29| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2basqsg_25.png
    :width: 600px

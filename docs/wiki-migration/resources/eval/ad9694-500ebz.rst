@@ -156,12 +156,12 @@ Visual Analog Setup
 
 .. container:: centeralign
 
-   //Selecting the :adi:`AD9694` canvas //
+   *Selecting the :adi:`AD9694` canvas*
 
 
 -  Next, program the FPGA in VisualAnalog by clicking into the **ADC Data Capture Settings** block and selecting the **Capture Board** tab. Use the **Browse** button to navigate to the **ad9694_ads7v2.bin** file and then click **Program**. The **FPGA_DONE** LED should illuminate on the ADS7-V1 board indicating that the FPGA has been correctly programmed.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/9694_program_FPGA.png
+.. image:: https://wiki.analog.com/_media/resources/eval/9694_program_fpga.png
    :align: center
 
 .. container:: centeralign
@@ -203,7 +203,7 @@ ACE Setup
 
 .. container:: centeralign
 
-   //ACE Attached Hardware: AD9694 //
+   *ACE Attached Hardware: AD9694*
 
 
 -  Double click on the **AD9694 Eval Board** icon which will open up the Initial Configuration wizard. The default conditions for the AD9694 are Full BW mode with a sample clock of 500 MHz. From here both pairs of ADC channels (Pair AB and Pair CD) can be configured simultaneously. **NOTE:It is important to remember that the AD9694 functions as two dual ADCs.**
@@ -235,7 +235,7 @@ ACE Setup
 
 -  All these parameters can be seen below:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/9694_ace_initial_config_204B.png
+.. image:: https://wiki.analog.com/_media/resources/eval/9694_ace_initial_config_204b.png
    :align: center
 
 .. container:: centeralign

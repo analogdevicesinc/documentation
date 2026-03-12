@@ -308,7 +308,7 @@ Registration
    
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0385_3_install1.png
    :width: 700px

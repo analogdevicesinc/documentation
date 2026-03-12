@@ -65,5 +65,5 @@ This dialog allows the control of the two motors in manual mode by directly spec
 | PWM       | In Manual mode, the PWM can be set between 50% - 100%                          |
 +-----------+--------------------------------------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/software/navigation AD-FMCMOTCON2-EBZ#linux_drivers
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/software/navigation_ad-fmcmotcon2-ebz#linux_drivers
    :alt: Linux Drivers#..:\|Overview#none

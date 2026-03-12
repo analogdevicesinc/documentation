@@ -642,7 +642,7 @@ The refresh period defaults to 4 hours. Any value below 10 minutes will be treat
    .. image:: https://wiki.analog.com/_media/rss>http///slashdot.org/index.rss 5 author date 1h
 
 
-.. image:: https://wiki.analog.com/_media/rss>http///slashdot.org/index.rss 5 author date 1h
+.. image:: https://wiki.analog.com/_media/rss>http///slashdot.org/index.rss_5_author_date_1h
    :alt: //slashdot.org/index.rss 5 author date 1h
    :align: left
 

@@ -15,7 +15,7 @@ Case Study: Load Identification in a Temperate Control Process
 
 | An example scenario of a Temperature Control Process is used to demonstrate load confirmation capability. This is a common process in production lines where precise temperature control of water or other liquid is required. In the example, shown in Figure 1, a water mixing tank has a constant input flow of cold water, along with an adjustable input flow of hot water from a boiler, which is controlled with a ball valve to regulate water temperature. A temperature probe is placed in the tank to monitor the water temperature. An emergency stop button is also placed near the tank to shut off input flow in case of an emergency. All components are connected to the control module for the process, which uses a quad channel Software Configurable IO, AD7441xR.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x0/tools/Temp Control Process.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x0/tools/temp_control_process.png
    :alt: Temp Control Process.png
    :align: center
 

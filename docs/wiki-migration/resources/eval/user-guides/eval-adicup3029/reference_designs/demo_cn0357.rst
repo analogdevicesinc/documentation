@@ -267,7 +267,7 @@ The **cn0357_app.cpp** is the application file for the project. The **ADuCM3029*
 
 The **RTE** folder contains ADuCM3029 Device Family Pack,Board Support Package files and Sensor Config files related to cn0357_example_noos project.
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
    :width: 200px

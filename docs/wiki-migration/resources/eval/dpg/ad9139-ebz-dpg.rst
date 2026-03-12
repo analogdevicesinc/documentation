@@ -219,9 +219,9 @@ Note: The blue points on the figure10&11 are the jumpers.
    :width: 250px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9139_spi_software_entry_screen.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/AD9139_dpg_downloader_entry_screen_600.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9139_dpg_downloader_entry_screen_600.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/AD9139_dpg_downloader_sinewave_600.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9139_dpg_downloader_sinewave_600.png
    :width: 600px
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/image009.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/image010.png

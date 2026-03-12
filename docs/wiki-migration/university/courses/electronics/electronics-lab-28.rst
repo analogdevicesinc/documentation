@@ -348,7 +348,7 @@ For Further reading:
    :width: 550px
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f3.png
    :width: 450px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f3bb.JPG
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f3bb.jpg
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f4.png
    :width: 450px
 .. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f4a.png
@@ -357,28 +357,28 @@ For Further reading:
    :width: 450px
 .. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f6.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_nf9a.PNG
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f10a.JPG
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_nf9a.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f10a.jpg
    :width: 500px
 .. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f7.png
    :width: 600px
 .. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f12a.png
-.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f13a.JPG
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f13a.jpg
    :width: 350px
 .. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f8.png
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f141.JPG
-.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f142.JPG
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f141.jpg
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f142.jpg
 .. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f9.png
    :width: 600px
-.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f151.JPG
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f151.jpg
 .. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f10.png
    :width: 600px
-.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f161.JPG
-.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f162.JPG
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f161.jpg
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f162.jpg
 .. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f11.png
    :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f171.JPG
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f171.jpg
 .. |image24| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f13.png
    :width: 600px
 .. |image25| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f12.png

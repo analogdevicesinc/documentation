@@ -148,7 +148,7 @@ Audio Connection Setup: Upstream Audio
 Audio Connection Setup: Downstream Audio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//This setup will allow audio to pass from the *LINE IN* on the SAM to the configured A2B downstream audio slots (Codec). Ensure your hardware is set up according to the Downstream Audio configuration.//
+*This setup will allow audio to pass from the *LINE IN* on the SAM to the configured A2B downstream audio slots (Codec). Ensure your hardware is set up according to the Downstream Audio configuration.*
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | 1. In the shell terminal, type *help route*. The shell will display the usage for the *route* command.                                                                                                                                                                                        | |image66| |

@@ -2999,5 +2999,5 @@ References
 -  :doc:`FMC-IMAGEON Xilinx Reference Design </wiki-migration/resources/fpga/xilinx/fmc/fmc-imageon>`
 -  :doc:`ADV7511 Xilinx Evaluation Boards Reference Design </wiki-migration/resources/fpga/xilinx/kc705/adv7511>`
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

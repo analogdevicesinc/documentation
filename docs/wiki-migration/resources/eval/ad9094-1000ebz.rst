@@ -12,7 +12,7 @@ This user guide describes the :adi:`AD9094` evaluation board :adi:`AD9094-1000EB
 | AD9094-1000EBZ               | Evaluation board for AD9094-1000 | 9694CE04A      |
 +------------------------------+----------------------------------+----------------+
 
-The :adi:`AD9094 data sheet <media/en/technical-documentation/data-sheets/ad9094.pdf>` provides additional information and should be consulted when using the evaluation board. This guide assumes the usage of the accompanying `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ High Speed Evaluation Board. The user guide for the `ADS7-V2 <:doc:`/wiki-migration/resources/eval/ads7-v2`>`_ provides additional information available for consultation during usage. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`.
+The :adi:`AD9094 data sheet <media/en/technical-documentation/data-sheets/ad9094.pdf>` provides additional information and should be consulted when using the evaluation board. This guide assumes the usage of the accompanying `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ High Speed Evaluation Board. The user guide for the :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>` provides additional information available for consultation during usage. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`.
 
 For additional information or questions, post a question on :ez:`Engineer Zone <community/data_converters>`, or send an email to **highspeed.converters@analog.com**.
 
@@ -24,7 +24,7 @@ AD9094 Evaluation Board
 
 .. container:: centeralign
 
-   //:adi:`AD9094` Evaluation Board //
+   *:adi:`AD9094` Evaluation Board*
 
 
 Typical Measurement Setup
@@ -37,7 +37,7 @@ The :adi:`AD9094-1000EBZ <AD9094>` can be evaluated using the `ADS7-V2EBZ <https
 
 .. container:: centeralign
 
-   //:adi:`AD9094-1000EBZ <AD9094>` Jumpers Placement //
+   *:adi:`AD9094-1000EBZ <AD9094>` Jumpers Placement*
 
 
    |image2|
@@ -70,7 +70,7 @@ Helpful Documents
 -----------------
 
 -  :adi:`AD9094 Data Sheet <media/en/technical-documentation/data-sheets/ad9094.pdf>`
--  `ADS7-V2 <:doc:`/wiki-migration/resources/eval/ads7-v2`>`_ User Guide
+-  :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>` User Guide
 -  :adi:`AN-905 Application Note <media/en/technical-documentation/app-notes/an-905.pdf>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*
 -  :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*
 -  :adi:`AN-877 Application Note <an-877>`, *Interfacing to High-Speed ADCs using SPI*
@@ -177,7 +177,7 @@ ACE Setup
 
 .. container:: centeralign
 
-   //ACE Attached Hardware: AD9094 //
+   *ACE Attached Hardware: AD9094*
 
 
 -  If the AD9094 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed. 

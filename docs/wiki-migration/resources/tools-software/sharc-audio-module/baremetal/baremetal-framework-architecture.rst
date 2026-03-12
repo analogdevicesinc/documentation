@@ -1,7 +1,7 @@
 Baremetal Framework Project Structure
 =====================================
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>uAER53AcOco
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>uaer53acoco
    :alt: youtube>uAER53AcOco
 
 There are three distinct Project folders which each correspond to the code running on a distinct processor core of the ADSP-SC589. Furthermore, there are some folders which contain code that is shared between the three cores.
@@ -71,5 +71,5 @@ Each core also has one or more callbacks which is where your custom audio proces
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#configuring-cces
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#configuring-cces
    :alt: Configuring CCES#.|Bare Metal Framework#configuring-the-framework|Configuring the Framework

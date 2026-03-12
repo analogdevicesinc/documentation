@@ -1,13 +1,13 @@
 ADRV9009 & ADRV9008 Prototyping Platform User Guide
 ===================================================
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ADRV9009-BC-196-13-White.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-bc-196-13-white.jpg
    :align: left
    :width: 200px
 
 The :adi:`ADRV9009-W/PCBZ <EVAL-ADRV9008-9009>`, :adi:`ADRV9008-1W/PCBZ <EVAL-ADRV9008-9009>` and :adi:`ADRV9008-2W/PCBZ <EVAL-ADRV9008-9009>` are FMC radio cards for the :adi:`ADRV9009` respectively :adi:`ADRV9008`, a highly integrated RF Transceiver™. While the complete chip level design package can be found on :adi:`the ADI web site <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`, information on the card and how to use it, the design package that surrounds it, and the software which can make it work can be found here.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ADRV9009-W-PCBZANGLE_S.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-w-pcbzangle_s.jpg
    :align: center
    :width: 600px
 

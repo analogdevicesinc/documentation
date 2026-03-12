@@ -20,5 +20,5 @@ For more information also check:
 -  `VITA's FMC info <http://www.vita.com/fmc>`_
 -  :adi:`Buy the AD-FMComms1-EBZ <en/evaluation/eval-fmcomms/eb.html#buy-nav>`
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/navigation AD-FMCOMMS1-EBZ#additional_docs
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/navigation_ad-fmcomms1-ebz#additional_docs
    :alt: Additional Documentation about SDR Signal Chains#.:\|Overview#none

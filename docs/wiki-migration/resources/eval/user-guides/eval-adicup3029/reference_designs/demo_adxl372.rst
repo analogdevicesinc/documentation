@@ -176,4 +176,4 @@ The project is structured in 3 layers:
 
 The ADXL372 transmits data to ADuCM3029 controller through the Communication layer. The data is processed and sent over BLE to a mobile device.
 
-// End of Document //
+*End of Document*

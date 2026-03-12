@@ -31,7 +31,7 @@ Ethernet Status - eth
 +-------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/navigation Shell Commands
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/navigation_shell_commands
    :alt: Filesystem Commands#.filesystem-commands|Filesystem Commands#.|Shell Commands#.development-commands|Development and Debug Commands#.development-commands\|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/eth_help.png

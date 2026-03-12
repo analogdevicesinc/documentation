@@ -35,7 +35,7 @@ The accelerometer used in this reference design, ADXL1002, is an ultra-low noise
 -  Firmly mount EVAL-XLMOUNT1 to the vibration platform or shaker table using a M6 or similar diameter screw. Note that the sensitivity direction of the ADXL1002, as shown in the figure above, is aligned with the platform’s main vibration direction.
 -  Follow steps for proper sensor connection outlined above.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>sUwh0gXCF5I
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>suwh0gxcf5i
    :alt: youtube>sUwh0gXCF5I
 
 Schematic, PCB Layout, Bill of Materials
@@ -62,4 +62,4 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0532-EBZ?&v=RevC>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*

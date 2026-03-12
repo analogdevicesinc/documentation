@@ -98,7 +98,7 @@ Type the following into the field:
 | Hit the return key.
 | ===== Factory Reset ===== After a brief period of time the PC will recognize that the ezLINX board is connected. Now press SW2 and the ezLINX board will start its factory reset:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelrestoreguide/FactoryReset.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelrestoreguide/factoryreset.jpg
    :align: center
    :width: 600px
 

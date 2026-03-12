@@ -42,5 +42,5 @@ For the TX path: Because the TX gain is around 17dB at 2.45GHz, and the output 1
 
 For the RX path: Because the RX gain is around 13dB at 2.45GHz, and the output 1dB compression point of the ADL5521 is around 21dB at 2.45GHz, that means that the RX input should not exceed 8dB.
 
-.. image:: https://wiki.analog.com/_media/navigation AD-TRXBOOST1-EBZ#Introduction#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-trxboost1-ebz#introduction#./
    :alt: User Guide#Hardware

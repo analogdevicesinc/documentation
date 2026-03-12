@@ -295,4 +295,4 @@ Additional resources
    :width: 400px
 .. |TUN/TAP flow| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/tun_tap.png
    :width: 400px
-.. |Radio Deployment on SoC Platforms| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/youtube>kL_SyVODxgw
+.. |Radio Deployment on SoC Platforms| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/youtube>kl_syvodxgw

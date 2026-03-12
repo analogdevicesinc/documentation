@@ -16,7 +16,7 @@ Tutorial Overview
 
 A tremolo is a classic audio effect whereby we modulate the volume, or amplitude, of our audio signal using an oscillator. Here's a nice explanation of how the tremolo effect works and its various parameters.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>oOCNB1izw8A
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>oocnb1izw8a
    :alt: youtube>oOCNB1izw8A
 
 In this tutorial, we're going to start by building a basic tremolo effect. We'll then add a few additional bells and whistles.
@@ -221,5 +221,5 @@ We'll also need to make two small modifications to our callback. First, we're go
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#using-both-cores
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#using-both-cores
    :alt: Audio Processing Basics#.|Bare Metal Framework#ring-modulator-effect-tutorial|Implementing a Ring Modulator Effect

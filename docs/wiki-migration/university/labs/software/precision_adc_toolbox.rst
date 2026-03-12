@@ -536,19 +536,19 @@ It's important to keep in mind that this filter is only a model, not bit-accurat
 
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/ad7124_pmdz_connections.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/RPi_connections_discrete.JPG
+.. |image2| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/rpi_connections_discrete.jpg
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/RPi_connections_adapter.JPG
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/rpi_connections_adapter.jpg
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/Full_setup_overview.PNG
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/full_setup_overview.png
    :width: 800px
-.. |image5| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/Pi_only_setup_overview.PNG
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/pi_only_setup_overview.png
    :width: 800px
 .. |image6| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/thonny_example.png
    :width: 600px
 .. |image7| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/noise_and_waves_plot.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/AD7124_pyadi_iio.PNG
+.. |image8| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/ad7124_pyadi_iio.png
    :width: 800px
 .. |image9| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/ad7124_noise_circuit.png
    :width: 300px
@@ -562,23 +562,23 @@ It's important to keep in mind that this filter is only a model, not bit-accurat
    :width: 400px
 .. |image14| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/ad7124_m2k_circuit.png
    :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/AD7124_filter_resp_measured.png
+.. |image15| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/ad7124_filter_resp_measured.png
    :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/AD7124_filter_10.png
+.. |image16| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/ad7124_filter_10.png
    :width: 300px
-.. |image17| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/AD7124_filter_50.png
+.. |image17| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/ad7124_filter_50.png
    :width: 300px
 .. |image18| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/dual_slope_schematic.png
    :width: 400px
 .. |image19| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/dual_slope_operation.png
    :width: 400px
-.. |image20| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/SINC1_time_and_frequency.png
+.. |image20| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/sinc1_time_and_frequency.png
    :width: 600px
 .. |image21| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/12_month_running_average.png
    :width: 600px
-.. |image22| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/simult_50_60_reverse_eng.PNG
+.. |image22| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/simult_50_60_reverse_eng.png
    :width: 400px
 .. |image23| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/rev_eng_filters_all.png
    :width: 400px
-.. |image24| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/freqz_annotated.PNG
+.. |image24| image:: https://wiki.analog.com/_media/university/labs/software/precision_adc_toolbox/freqz_annotated.png
    :width: 800px

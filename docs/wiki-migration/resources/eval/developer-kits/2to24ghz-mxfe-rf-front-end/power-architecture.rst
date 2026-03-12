@@ -19,7 +19,7 @@ The power for the receive chain (shown below) follows a similar design philosoph
 
 The power for the LO chains (shown below) utilize two :adi:`MAXM17632` power modules and the :adi:`ADP5600`. These are accompanied by low noise linear regulators for the sensitive signal chain power domains.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/LO_Power_Tree.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/lo_power_tree.jpg
    :align: center
    :width: 800px
 

@@ -72,7 +72,7 @@ Opening and Enabling the Evaluation Software
 
 -  Launch the executable found at **C:\\Program Files\\Analog Devices\\CN0189** and press the **“Connect"** button.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/CN0189-Evaluation Software-Front Panel.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-evaluation_software-front_panel.jpg
    :align: center
 
 Step by Step Instruction to Using the Evaluation Software
@@ -161,7 +161,7 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0189-SDPZ?&v=Rev B>`_ to receive all these great benefits and more!
 
 
-// End of document //
+*End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189-setupdiagram.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-sdpdrivers-setup_wizard.jpg
@@ -169,7 +169,7 @@ Registration
    :width: 200px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-connected-sdps-cn0189.jpg
    :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/CN0189-Hardware-Connected-SDPS-Power-CN0189.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-connected-sdps-power-cn0189.jpg
    :width: 200px
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-connected-usb-sdps-cn0189.jpg
    :width: 200px

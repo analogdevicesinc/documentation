@@ -12,7 +12,7 @@ AD-GMSLCAMRPI-ADP# User Guide
 
 Seamlessly insert GMSL into the signal chain and create a full GMSL Camera System with off-the-shelf parts.
 
-.. image:: https://wiki.analog.com/_media/playground/ signal_chain.png
+.. image:: https://wiki.analog.com/_media/playground/_signal_chain.png
    :width: 600px
 
 Overview

@@ -396,7 +396,7 @@ This quick start section covers the loading of a session file as provided by ADI
 .. [3]
    **Figure 5:** The "Apply" button is disabled because "OUT0B Expression" is in error. The "Apply" button will remain disabled until all errors have been cleared.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9544/ad9544TOP.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9544/ad9544top.jpg
    :width: 700px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9545_ace_openingscreen.png
    :width: 700px

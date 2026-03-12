@@ -626,7 +626,7 @@ In version 1.3.2, many optimizations were added to reduce the measurement time.
    -  Sweeps do not benefit from this optimization, because the sweep attribute cannot be updated in trigger mode.
    -  If enabled, the DC offset is always on in trigger mode. The autorange must be off to enable the DC offset. Keeping the DC offset enabled constantly can be useful when testing with DUTs that need a long DC settling time, as that delay does not need to be repeated for every measurement.
 
--  The measurement is only reported over the active interface (UART commmand line interface or SPI). The active interface is set based on the most recently sent command. For instance, if the command ``initiate`` is sent over UART, and then the command TRIGGER (0x18) is sent over SPI, the result will be readable in the SPI FIFO and not accessible on UART. If INITIATE (0x17) is sent over SPI, and then ``trigger`` is sent over UART, the result will print immediately to UART and not be accessible in the SPI FIFO. See `ADMX2001B SPI Interface <:doc:`/wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz/spi-interface`>`_ for details on how to operate the SPI interface.
+-  The measurement is only reported over the active interface (UART commmand line interface or SPI). The active interface is set based on the most recently sent command. For instance, if the command ``initiate`` is sent over UART, and then the command TRIGGER (0x18) is sent over SPI, the result will be readable in the SPI FIFO and not accessible on UART. If INITIATE (0x17) is sent over SPI, and then ``trigger`` is sent over UART, the result will print immediately to UART and not be accessible in the SPI FIFO. See :doc:`ADMX2001B SPI Interface </wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz/spi-interface>` for details on how to operate the SPI interface.
 
    -  The SPI interface is the fastest and can save multiple milliseconds over using the UART (command line) interface.
 
@@ -914,7 +914,7 @@ EVAL-ADMX2001EBZ Terminal Description
 SPI Interface
 -------------
 
-The ADMX2001B supports a SPI interface in addition to the UART CLI interface. The SPI bus can be accessed on Header P6 and both PMOD headers of EVAL-ADMX2001EBZ, or pins B14-B17 of the ADMX2001B module. A full command reference for the SPI interface can be found at `ADMX2001B SPI Interface. <:doc:`/wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz/spi-interface`>`_
+The ADMX2001B supports a SPI interface in addition to the UART CLI interface. The SPI bus can be accessed on Header P6 and both PMOD headers of EVAL-ADMX2001EBZ, or pins B14-B17 of the ADMX2001B module. A full command reference for the SPI interface can be found at :doc:`ADMX2001B SPI Interface. </wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz/spi-interface>`
 
 Trigger Input / Output Ports
 ----------------------------
@@ -1202,7 +1202,7 @@ For support, general questions, or firmware update help, reach out to admx-suppo
    :width: 1000px
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/help_display_teraterm.png
    :width: 1000px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/Source_and_measurement_channels_v3_renumbered.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/source_and_measurement_channels_v3_renumbered.png
    :width: 600px
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_short_load_config.png
    :width: 800px

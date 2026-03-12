@@ -168,7 +168,7 @@ This project contains: system initialization part - setting Digital IO pins in t
 
 All files are in the same folder as the .ino file and include the source and header files related to CN0395 software application. The *Communication.cpp/h* files contain SPI, UART and I2C specific data, the *AD7988.cpp/h* files contain the ADC control, the *ADN8810.cpp/h* files contain the IDAC control, the *SHT30.c/h* files contain the temperature/humidity sensor control, and the *CN0395.cpp/h* files contain commands, configurations and computations specific to the VOC detector application.
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rh_mode.jpg
    :width: 850px

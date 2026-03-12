@@ -259,7 +259,7 @@ There are a few key commands in the Linux environment that can help identify if 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation ad-gmslcamrpi-adp#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-gmslcamrpi-adp#none#./
    :alt: Overview#none#
 
 .. [1]

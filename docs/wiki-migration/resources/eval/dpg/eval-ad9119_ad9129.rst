@@ -153,13 +153,13 @@ AD9129-CBLTX-EBZ (Obsolete)                                                     
 
 Download the `AD9119 / AD9129 Update <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/hsdac_update/hsdacupdate_ad9129_1.0.5031.26742.exe>`_
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_TypicalSetup.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_typicalsetup.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_RunExampleStartupRoutine_EVBView.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_runexamplestartuproutine_evbview.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_Config_ChipView.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_config_chipview.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_DPGLite.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_dpglite.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_SFDR.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_sfdr.png
    :width: 600px

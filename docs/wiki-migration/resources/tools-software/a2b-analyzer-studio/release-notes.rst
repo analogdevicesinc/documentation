@@ -274,7 +274,7 @@ For more information about the features available see the A\ :sup:`2`\ B Analyze
 Quick Start Guide
 -----------------
 
-For further A\ :sup:`2`\ B Analyzer Studio documentation, please see the documentation in Help. There you will find the link to the `Quick Start Guide <:doc:`/wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide`>`_ and the you can open the PDF *User Guide.*
+For further A\ :sup:`2`\ B Analyzer Studio documentation, please see the documentation in Help. There you will find the link to the :doc:`Quick Start Guide </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>` and the you can open the PDF *User Guide.*
 
 Support
 -------

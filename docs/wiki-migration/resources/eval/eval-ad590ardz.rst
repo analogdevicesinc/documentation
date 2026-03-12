@@ -66,7 +66,7 @@ Figure 3. EVAL-AD590-ARDZ BOARD AND SDP BOARD CONNECTED DIAGRAM
 Software Setup
 --------------
 
-The software is designed to be simple and straight forward to use. Select which sensor you would like to use, whether you want to use the internal sensor or a remote one and then simply enter a number corresponding to the required command and follow the on-screen prompts. Refer to software manual `EVAL-AD590-ARDZ Mbed Example [Analog Devices Wiki] <:doc:`/wiki-migration/resources/tools-software/product-support-software/eval-ad590ardz`>`_ for more detailed information.
+The software is designed to be simple and straight forward to use. Select which sensor you would like to use, whether you want to use the internal sensor or a remote one and then simply enter a number corresponding to the required command and follow the on-screen prompts. Refer to software manual :doc:`EVAL-AD590-ARDZ Mbed Example [Analog Devices Wiki] </wiki-migration/resources/tools-software/product-support-software/eval-ad590ardz>` for more detailed information.
 
 FIGURE 4. EVAL-AD590-ARDZ DEMONSTRATION PROGRAM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

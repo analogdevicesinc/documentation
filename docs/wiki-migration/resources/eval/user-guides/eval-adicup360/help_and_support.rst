@@ -93,4 +93,4 @@ ADuCM360-IDE questions (Deprecated)
 
 Questions about the Analog Devices Eclipse IDE should be asked at the :ez:`ADuCM Eclipse IDE support community <community/analog-microcontrollers/aducm-eclipse-ide>`.
 
-// End of Document //
+*End of Document*

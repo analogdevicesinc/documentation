@@ -99,7 +99,7 @@ Unfortunately OpenCV does not provide binaries for this module so a manual build
 
 -  If aditof-demo finds all the OpenCV required modules a button in the interface will allow you to display the point cloud. By toggling the button a separate window will appear.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/aditof_demo_pointCloud.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/aditof_demo_pointcloud.png
    :alt: aditof-demo
    :align: center
    :width: 800px
@@ -115,7 +115,7 @@ Troubleshooting
 
    -  Due to some limitations the application always hangs if it is closed using the regular X button from the window top bar (title bar). To avoid this unpleasant hang, we've made available a second X button in the top right corner right above the title bar that can be used to safely close the demo application. We hope this to be a temporary workaround.
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FXTOF1-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fxtof1-ebz#none#./
    :alt: Overview#none#
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/ad-fxtof1-ebz-jetson-connection.jpg

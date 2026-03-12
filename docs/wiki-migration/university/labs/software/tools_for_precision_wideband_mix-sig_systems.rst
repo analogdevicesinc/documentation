@@ -125,4 +125,4 @@ Wrapup
 Additional References
 ---------------------
 
-.. |youtube>dQw4w9WgXcQ| image:: https://wiki.analog.com/_media/university/labs/software/youtube>dQw4w9WgXcQ
+.. |youtube>dQw4w9WgXcQ| image:: https://wiki.analog.com/_media/university/labs/software/youtube>dqw4w9wgxcq

@@ -417,9 +417,9 @@ Software support
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
 
-.. |VCU118_daq3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/VCU118_daq3.jpg
+.. |VCU118_daq3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/vcu118_daq3.jpg
    :width: 550px
-.. |iio_scope_board_ip-VCU118.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/iio_scope_board_ip-VCU118.png
+.. |iio_scope_board_ip-VCU118.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/iio_scope_board_ip-vcu118.png
 
 .. |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-sw16_vcu118.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/sw16_vcu118.jpg
 .. |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-vcu118.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/vcu118.png

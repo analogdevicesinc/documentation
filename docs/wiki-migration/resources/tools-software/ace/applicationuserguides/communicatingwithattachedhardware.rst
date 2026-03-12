@@ -59,17 +59,17 @@ Register Debugger
 
 The Register Debugger is a Tool View which allows the performance of raw register reads and writes, see :doc:`Here </wiki-migration/resources/tools/software/ace/understandingtheui/toolviews>` for more information.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/poll.PNG
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/poll.png
    :width: 80px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/autoapply.PNG
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/autoapply.png
    :width: 80px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/applychanges.PNG
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/applychanges.png
    :width: 80px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/applySelected.PNG
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/applyselected.png
    :width: 80px
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/readall.PNG
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/readall.png
    :width: 80px
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/resetchip.PNG
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/resetchip.png
    :width: 80px
 
 .. |resources-tools-software-ace-applicationuserguides-Readselected.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/Readselected.PNG

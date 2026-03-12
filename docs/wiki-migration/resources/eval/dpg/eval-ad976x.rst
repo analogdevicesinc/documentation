@@ -75,7 +75,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   //Figure 2. DPG Lite Session for AD9709/63/65/67 Evaluation Board] //
+   *Figure 2. DPG Lite Session for AD9709/63/65/67 Evaluation Board]*
 
 
 -  Select the I/Q tone from the **I/Q Data Vector** pulldown menu.
@@ -87,7 +87,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   //Figure 3. Spectrum Output for AD9767; Fdac = 100MSPS, Fout = 5MHz //
+   *Figure 3. Spectrum Output for AD9767; Fdac = 100MSPS, Fout = 5MHz*
 
 
 =====Reconfiguring the Evaluation Board===== This section details how to configure the :adi:`AD9709/63/65/67 Evaluation Board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9767.html#eb-relatedhardware>` and allow user to evaluate AD9709, AD9763 and AD9765. Set up the board as shown in figure 4.

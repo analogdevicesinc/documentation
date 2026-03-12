@@ -10,5 +10,5 @@ In order to ship our EZ-KITs to customers we need to verify that they are workin
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#debug
+.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#debug
    :alt: Debugging Applications#.|CCES Getting Started#led-blink-app|LED Blink Application

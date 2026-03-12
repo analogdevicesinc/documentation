@@ -239,6 +239,6 @@ The flow chart below represents the way the channel registers are updated. Only 
    :alt: Update channel flow chart
    :align: center
 
-// End of Document //
+*End of Document*
 
 .. |Timer diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0414_timer_diagram.png

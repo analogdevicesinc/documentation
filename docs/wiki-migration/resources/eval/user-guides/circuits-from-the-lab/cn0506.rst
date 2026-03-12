@@ -8,7 +8,7 @@ The circuit consists of two indivudual, independent 10/100/1000Mb PHYs, each wit
 Unboxing Video
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>OL8T3RPe_Yk
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>ol8t3rpe_yk
    :alt: youtube>OL8T3RPe_Yk
 
 Connectors and Jumper Configurations
@@ -127,4 +127,4 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0506-FMCZ?&v=RevB>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*

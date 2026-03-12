@@ -10,7 +10,7 @@ It is further assumed that SDP-K1 board will be connected to the appropriate ADT
 Useful links
 ============
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#useful_link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :adi:`ADT7420 <en/products/adt7420.html>`

@@ -441,7 +441,7 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD5593R-PMDZ?&v=RevC>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/5593-2.png
    :width: 250px

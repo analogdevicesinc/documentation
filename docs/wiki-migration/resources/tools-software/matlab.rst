@@ -108,4 +108,4 @@ In the poorly named `Zynq SDR Support from Communications Toolbox <https://www.m
 
 For pure simulation, `Analog Devices RF Transceivers Support from MATLAB and Simulink <https://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html>`_ can be used to simulate and verify AD9361 and AD9371 RF transceivers designs with RF Blockset (formerly SimRF) models, and predict the impact of RF imperfections on your test signals.
 
-.. |youtube>dQDUPi9l8kc| image:: https://wiki.analog.com/_media/resources/tools-software/youtube>dQDUPi9l8kc
+.. |youtube>dQDUPi9l8kc| image:: https://wiki.analog.com/_media/resources/tools-software/youtube>dqdupi9l8kc

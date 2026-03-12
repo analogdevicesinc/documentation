@@ -6,7 +6,7 @@ Introduction
 
 This page gives an overview of using the ARM Mbed platform supported firmware example with Analog Devices AD4696 Evaluation board(s) and SDP-K1 controller board. This example code leverages the ADI developed IIO (Industrial Input Output) ecosystem to evaluate the AD4696 family devices by providing a device debug and data capture support.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_introduction#introduction&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
 
 --------------
@@ -14,7 +14,7 @@ This page gives an overview of using the ARM Mbed platform supported firmware ex
 Useful links
 ------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#useful_link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :git-no-OS:`ad4696 No-OS drivers <drivers/adc/ad469x>`
@@ -66,19 +66,19 @@ The firmware supports both unipolar and pseudo bipolar modes. By default, the fi
 
 The AD4696 device is configured in "Serial Software" mode in the firmware. AD4696 uses SPI communication for device register access and data capture.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/hardware_connections_uart#uart_connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
 
 Software Downloads
 ------------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_software_downloads#software_downloads&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
 
 Evaluating AD4696 Using IIO Ecosystem
 -------------------------------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/note_hardware_connections#note_in_hardware_connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
 
 Running IIO Oscilloscope (Client)
@@ -119,7 +119,7 @@ Using DMM Tab to Read DC Voltage on Input Channels
 
 DMM tab can be used read the instantaneous voltage applied on analog input channels. Simply select the device and channels to read and press start button.
 
-//\*Note: The voltage is just instantaneous, so it is not possible to get RMS AC voltage or averaged DC voltage. Also, when using DMM tab, it is not encouraged to use Data Capture or Debug tab as this could impact data capturing. //
+*\*Note: The voltage is just instantaneous, so it is not possible to get RMS AC voltage or averaged DC voltage. Also, when using DMM tab, it is not encouraged to use Data Capture or Debug tab as this could impact data capturing.*
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad4696_iio_dmm_tab.gif
    :align: center

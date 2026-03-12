@@ -104,7 +104,7 @@ Note: Do not use USB Type-C to USB Type-A adapters.
 ; Dimensions : 38mm x 72.5mm x 87mm
 ; Schematics : `eval-adsd3100-nxz_drawing_v1.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz_drawing_v1.pdf>`_
 ; Laser Safety : Class 1
-; Operating Environment : //TO BE COMPLETED//
+; Operating Environment : *TO BE COMPLETED*
 
 --------------
 

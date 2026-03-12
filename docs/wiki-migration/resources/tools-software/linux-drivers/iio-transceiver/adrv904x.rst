@@ -1271,8 +1271,8 @@ IIO pointers
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/youtube>p_vntewue24
 

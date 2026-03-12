@@ -87,4 +87,4 @@ To that end, the following list is provided:
 -   `Motor Control <https://en.wikipedia.org/wiki/Motor_controller>`_
 -   `Digital Control <https://en.wikipedia.org/wiki/Digital_control>`_
 
-// End of Document //
+*End of Document*

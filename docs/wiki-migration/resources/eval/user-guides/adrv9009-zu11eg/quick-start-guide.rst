@@ -72,7 +72,7 @@ Testing
 -  Insert SD card into socket ``P15``.
 -  Configure ADRV2CRR-FMC for SD BOOT using ``S13``, ``S14``, ``S15``, ``S16``. See picture below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/ADRV2CRR Rev A and B Sw_Jmp settings.JPG
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/adrv2crr_rev_a_and_b_sw_jmp_settings.jpg
    :align: center
    :width: 800px
 

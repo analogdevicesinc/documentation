@@ -147,4 +147,4 @@ The program is composed of two main parts:
 
 Board setup initializes UART and SPI communications and sets the DAC value register to 0. The DAC RBUF bit is also set to 0 to provide the widest voltage range for the application. The DAC output will be between -5V and 5V and coded in two's complement. The coding can be changed to offset binary and the 'do' CLI command will take that into consideration, as it will also take into consideration the RBUF bit. If the RBUF is changed to narrow the output field to 0V - 5V the coding will not change. As such the 0x00000 value of the DAC register will correspond to the middle range value of 2.5V. If not using the 'do' command to change the output, this will have to be taken into consideration.
 
-// End of Document //
+*End of Document*

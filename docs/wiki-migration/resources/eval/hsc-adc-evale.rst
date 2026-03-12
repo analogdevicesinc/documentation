@@ -26,7 +26,7 @@ Product Highlights
 Typical Data Capture Setup
 --------------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9656-125EBZ_top_level.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9656-125ebz_top_level.png
    :align: center
    :width: 600px
 

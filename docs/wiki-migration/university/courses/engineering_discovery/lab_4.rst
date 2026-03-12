@@ -1,7 +1,7 @@
 Audio Amplifier with Electret Microphone
 ========================================
 
-.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>4800540099001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogtv>4800540099001
    :alt: analogTV>4800540099001
    :align: right
 

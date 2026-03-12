@@ -352,8 +352,8 @@ DAC phy Lane FPGA Tx lane / Logical Lane
 
 |common##Useful links&nofooter&noeditbtn| |common##Support&nofooter&noeditbtn|
 
-.. |common##Useful links&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##Useful links&nofooter&noeditbtn
-.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##Support&nofooter&noeditbtn
+.. |common##Useful links&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##useful_links&nofooter&noeditbtn
+.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##support&nofooter&noeditbtn
 
 
 FMC Pin Connection Configuration Change

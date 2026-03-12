@@ -496,28 +496,28 @@ The raw macro file will be saved using ACE syntax, which is not easily readable.
 
 For more information about ACE and its features, visit https://wiki.analog.com/resources/tools-software/ace.
 
-.. |image1| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/9154ebz_figure_1_1.png
-.. |image2| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/9154ebz_figure_2.png
+.. |image1| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/9154ebz_figure_1_1.png
+.. |image2| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/9154ebz_figure_2.png
 .. |ace_icon_small.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_icon_small.png
-.. |image3| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9154_detected.png
+.. |image3| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9154_detected.png
 .. |connection_icon.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/connection_icon.png
-.. |image4| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9154_system.png
-.. |image5| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9154_boardview_enabled.png
-.. |image6| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9154_applypage.png
-.. |image7| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9154_chipview.png
-.. |image8| image:: https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad9154_dpgd.png
+.. |image4| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9154_system.png
+.. |image5| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9154_boardview_enabled.png
+.. |image6| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9154_applypage.png
+.. |image7| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9154_chipview.png
+.. |image8| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9154_dpgd.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/image009.png
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/image010.png
-.. |image11| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/9154ebz_figure_7.png
-.. |image12| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/9154ebz_figure_8.png
-.. |image13| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/9154ebz_figure_3.png
+.. |image11| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/9154ebz_figure_7.png
+.. |image12| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/9154ebz_figure_8.png
+.. |image13| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/9154ebz_figure_3.png
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/dpg/image009.png
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/dpg/image010.png
-.. |image16| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/9154ebz_figure_4.png
-.. |image17| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/9154ebz_figure_5.png
-.. |image18| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/9154ebz_figure_6.png
-.. |image19| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/9154ebz_figure_7.png
-.. |image20| image:: https://wiki.analog.com/_media/{{ /resources/eval/dpg/9154ebz_figure_8.png
+.. |image16| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/9154ebz_figure_4.png
+.. |image17| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/9154ebz_figure_5.png
+.. |image18| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/9154ebz_figure_6.png
+.. |image19| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/9154ebz_figure_7.png
+.. |image20| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/9154ebz_figure_8.png
 .. |ad9122_nco.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_nco.png
 .. |ad9739a_on.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9739a_on.png
 .. |ad9739a_off.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9739a_off.png

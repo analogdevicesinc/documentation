@@ -118,7 +118,7 @@ This block gives access to a wide variety of 2nd-order (biquad)filter algorithms
 Shelving
 ~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/ShelvingSettings2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/shelvingsettings2.png
    :align: center
 
 +------------------+---------------+----------------------+------------------------------------+
@@ -142,7 +142,7 @@ Shelving
 General
 ~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/GeneralFiltSettings2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/generalfiltsettings2.png
    :align: center
 
 +------------------+-----------------+--------------------------------------+------------------------------------+
@@ -161,7 +161,7 @@ General
 Butterworth/Bessel
 ~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/ButterwothSettings2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/butterwothsettings2.png
    :align: center
 
 +------------------+-----------------+-----------------------------------------------------------------------------+------------------------------------+
@@ -178,7 +178,7 @@ Butterworth/Bessel
 Tone Control
 ~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/ToneControlSettings2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/tonecontrolsettings2.png
    :align: center
 
 +------------------+---------------+---------------+-------------------------------------------+
@@ -197,7 +197,7 @@ Tone Control
 IIR Coefficient
 ~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/iirSettings2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/iirsettings2.png
    :align: center
 
 ================ ============= =========== =============================
@@ -215,7 +215,7 @@ a2               0             -100 to 100 A2 coefficient for the filter
 First Order Filters
 ~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/FirstOrderSettings2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/firstordersettings2.png
    :align: center
 
 +------------------+---------------------------------------------+-------------------+----------------------------------------+
@@ -236,7 +236,7 @@ First Order Filters
 All Pass,Peaking,Notch
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/AllPasssettings2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/allpasssettings2.png
    :align: center
 
 +------------------+---------------+---------------+------------------------------------+
@@ -253,7 +253,7 @@ All Pass,Peaking,Notch
 Chebyshev
 ~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/Chebysettings2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/chebysettings2.png
    :align: center
 
 +------------------+---------------+---------------+---------------------------------------+

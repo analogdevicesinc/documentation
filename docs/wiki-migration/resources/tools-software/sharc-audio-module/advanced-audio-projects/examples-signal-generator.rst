@@ -1,7 +1,7 @@
 Sharc Audio Module - Signal Generator Example (UNRELEASED)
 ==========================================================
 
-//This section will take you through a few examples to set up and run audio, including using the shell terminal program to interface with the signal generator source. //
+*This section will take you through a few examples to set up and run audio, including using the shell terminal program to interface with the signal generator source.*
 
 Hardware Setup
 --------------
@@ -61,7 +61,7 @@ Serial Terminal Setup
 Signal Generator
 ~~~~~~~~~~~~~~~~
 
-// The following steps illustrate how to generate different audio signals and how they can be routed and mixed together. //
+*The following steps illustrate how to generate different audio signals and how they can be routed and mixed together.*
 
 +----------------------------------------------------------------------------------------------------------+-----------+
 | 1. In the shell terminal, type *help signal*. The shell will display the usage for the *signal* command. | |image31| |

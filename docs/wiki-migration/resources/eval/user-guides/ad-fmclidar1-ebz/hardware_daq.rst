@@ -1,7 +1,7 @@
 DAQ Board Overview
 ==================
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD-FMCLIDAR1-EBZ/DAQ top pic.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/daq_top_pic.jpg
    :align: right
    :width: 350px
 
@@ -9,7 +9,7 @@ The Data Acquisition (DAQ) board connects to the FPGA carrier via an FMC HPC con
 
 The ADC on the DAQ board is the :adi:`AD9094 <en/products/ad9094.html>`, a quad, 8-bit, 1GSPS ADC. It supports JESD204B lane rate up to 15 Gbps, four integrated wideband decimation filters, numerically controlled oscillator blocks and it is programmable via an SPI interface.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD-FMCLIDAR1-EBZ/DAQ Board.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/daq_board.png
    :alt: DAQ Block Diagram
    :align: left
    :width: 350px
@@ -57,5 +57,5 @@ The DAQ board allows for an alternative use of the AD9528 where both its PLL sta
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCLIDAR1-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmclidar1-ebz#none#./
    :alt: Overview#none#

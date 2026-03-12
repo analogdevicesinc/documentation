@@ -87,5 +87,5 @@ References
 -  :git-hdl:`UTIL_VAR_FIFO IP source code <library/util_var_fifo>`
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

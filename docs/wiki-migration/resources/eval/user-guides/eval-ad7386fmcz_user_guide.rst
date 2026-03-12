@@ -51,7 +51,7 @@ General Description
 
    |image1|
 
-   //\**Figure 1. :adi:`EVAL-AD7386FMCZ` EVALUATION BOARD (LEFT) CONNECTED TO SDP-H1 BOARD (RIGHT)** //
+   *\**Figure 1. :adi:`EVAL-AD7386FMCZ` EVALUATION BOARD (LEFT) CONNECTED TO SDP-H1 BOARD (RIGHT)***
 
 
 Evaluation Board Quick Start Guide
@@ -86,7 +86,7 @@ Evaluation Board Connection Diagram
 
 |image2|
 
-   //\**Figure 2. Typical Setup of the :adi:`EVAL-AD7386FMCZ` and the SDP-H1 Board** //
+   *\**Figure 2. Typical Setup of the :adi:`EVAL-AD7386FMCZ` and the SDP-H1 Board***
 
 
 Evaluation Board Hardware
@@ -126,7 +126,7 @@ The **EVAL-AD7386FMCZ** perates from a 12 V power supply. Ensure that all link p
 
 |image3|
 
-   //**Figure 3. EVAL-AD7386FMCZ Functional Block Diagram** //
+   **Figure 3. EVAL-AD7386FMCZ Functional Block Diagram**
 
 
 Link Configuration Options

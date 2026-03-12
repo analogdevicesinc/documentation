@@ -125,7 +125,7 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON2-EBZ#none#../
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon2-ebz#none#../
    :alt: Overview#lv_board|Low Voltage Drive Board
 
 .. |AD-FMC-MOTCON1-EBZ Top| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/ad-fmcmotcon2-ebz_top_parts.jpg

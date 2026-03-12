@@ -22,4 +22,4 @@ Download the `AD9963 Update <https://wiki.analog.com/_media/resources/eval/dpg/h
 
 |dpg#Data Pattern Generator&nofooter&noindent|
 
-.. |dpg#Data Pattern Generator&nofooter&noindent| image:: https://wiki.analog.com/_media/section>resources/eval/dpg#Data Pattern Generator&nofooter&noindent
+.. |dpg#Data Pattern Generator&nofooter&noindent| image:: https://wiki.analog.com/_media/section>resources/eval/dpg#data_pattern_generator&nofooter&noindent

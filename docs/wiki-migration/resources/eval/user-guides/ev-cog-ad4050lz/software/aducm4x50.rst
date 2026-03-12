@@ -69,6 +69,6 @@ The software pack can be installed directly by the tool chain's CMSIS pack manag
    
 
 
-// End of Document //
+*End of Document*
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w>`

@@ -330,6 +330,6 @@ To use the SDP-K1 Recovery Tool, refer to Figure 11 and follow the steps below:
    :width: 900px
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/registerdebugger.png
    :width: 180px
-.. |Events.png| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/Events.png
+.. |Events.png| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/events.png
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/sdp-k1_recovery_tool.png
    :width: 900px

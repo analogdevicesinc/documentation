@@ -27,5 +27,5 @@ Where to Buy
    `ZYNQ Intelligent Drives Kit <http://www.em.avnet.com/en-us/design/drc/Pages/Zynq-Intelligent-Drives-Kit.aspx>`_
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/navigation AD-FMCMOTCON1-EBZ#qdesys_ip
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/navigation_ad-fmcmotcon1-ebz#qdesys_ip
    :alt: Qdesys Motor Control IP#.:\|Overview#none

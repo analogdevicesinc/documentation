@@ -406,289 +406,289 @@ Test Results will be recorded in the following document: `Network Analyzer Test 
 
 **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.01.png
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.01.png
    :width: 100px
-.. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.2.png
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.2.png
    :width: 100px
-.. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-Cur1.png
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-cur1.png
    :width: 100px
-.. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-Cur2.png
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-cur2.png
    :width: 100px
-.. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.3.png
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.3.png
    :width: 100px
-.. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.4a.png
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.4a.png
    :width: 100px
-.. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.4b.png
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.4b.png
    :width: 100px
-.. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.05.png
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.05.png
    :width: 100px
-.. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.5.png
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.5.png
    :width: 100px
-.. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.1.png
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.1.png
    :width: 100px
-.. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.2.png
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.2.png
    :width: 100px
-.. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.3.png
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.3.png
    :width: 100px
-.. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.4a.png
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.4a.png
    :width: 100px
-.. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.4b.png
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.4b.png
    :width: 100px
-.. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.05.png
+.. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.05.png
    :width: 100px
-.. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.5.png
+.. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.5.png
    :width: 100px
-.. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.1.png
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.1.png
    :width: 100px
-.. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.2.png
+.. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.2.png
    :width: 100px
-.. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.3.png
+.. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.3.png
    :width: 100px
-.. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.4a.png
+.. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.4a.png
    :width: 100px
-.. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.4b.png
+.. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.4b.png
    :width: 100px
-.. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.05.png
+.. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.05.png
    :width: 100px
-.. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.5.png
+.. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.5.png
    :width: 100px
-.. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.01.png
+.. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.01.png
    :width: 100px
-.. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.2.png
+.. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.2.png
    :width: 100px
-.. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-Cur1.png
+.. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-cur1.png
    :width: 100px
-.. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-Cur2.png
+.. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-cur2.png
    :width: 100px
-.. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.3.png
+.. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.3.png
    :width: 100px
-.. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.4a.png
+.. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.4a.png
    :width: 100px
-.. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.4b.png
+.. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.4b.png
    :width: 100px
-.. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.05.png
+.. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.05.png
    :width: 100px
-.. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.5.png
+.. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.5.png
    :width: 100px
-.. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.1.png
+.. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.1.png
    :width: 100px
-.. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.2.png
+.. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.2.png
    :width: 100px
-.. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.3.png
+.. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.3.png
    :width: 100px
-.. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.4a.png
+.. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.4a.png
    :width: 100px
-.. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.4b.png
+.. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.4b.png
    :width: 100px
-.. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.05.png
+.. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.05.png
    :width: 100px
-.. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.5.png
+.. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a2.5.png
    :width: 100px
-.. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.1.png
+.. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.1.png
    :width: 100px
-.. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.2.png
+.. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.2.png
    :width: 100px
-.. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.3.png
+.. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.3.png
    :width: 100px
-.. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.4a.png
+.. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.4a.png
    :width: 100px
-.. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.4b.png
+.. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.4b.png
    :width: 100px
-.. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.05.png
+.. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.05.png
    :width: 100px
-.. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.5.png
+.. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a3.5.png
    :width: 100px
-.. |image47| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.1.png
+.. |image47| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.1.png
    :width: 100px
-.. |image48| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.2.png
+.. |image48| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.2.png
    :width: 100px
-.. |image49| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.3.png
+.. |image49| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.3.png
    :width: 100px
-.. |image50| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.4a.png
+.. |image50| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.4a.png
    :width: 100px
-.. |image51| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.4b.png
+.. |image51| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.4b.png
    :width: 100px
-.. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.05.png
+.. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.05.png
    :width: 100px
-.. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.5.png
+.. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.5.png
    :width: 100px
-.. |image54| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.1.png
+.. |image54| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.1.png
    :width: 100px
-.. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.2.png
+.. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.2.png
    :width: 100px
-.. |image56| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.3.png
+.. |image56| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.3.png
    :width: 100px
-.. |image57| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.4a.png
+.. |image57| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.4a.png
    :width: 100px
-.. |image58| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.4b.png
+.. |image58| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.4b.png
    :width: 100px
-.. |image59| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.05.png
+.. |image59| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.05.png
    :width: 100px
-.. |image60| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.5.png
+.. |image60| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.5.png
    :width: 100px
-.. |image61| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.1.png
+.. |image61| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.1.png
    :width: 100px
-.. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.2.png
+.. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.2.png
    :width: 100px
-.. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.3.png
+.. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.3.png
    :width: 100px
-.. |image64| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.4a.png
+.. |image64| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.4a.png
    :width: 100px
-.. |image65| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.4b.png
+.. |image65| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.4b.png
    :width: 100px
-.. |image66| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.05.png
+.. |image66| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.05.png
    :width: 100px
-.. |image67| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.5.png
+.. |image67| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.5.png
    :width: 100px
-.. |image68| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.1.png
+.. |image68| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.1.png
    :width: 100px
-.. |image69| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.2.png
+.. |image69| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.2.png
    :width: 100px
-.. |image70| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.3.png
+.. |image70| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.3.png
    :width: 100px
-.. |image71| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.4a.png
+.. |image71| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.4a.png
    :width: 100px
-.. |image72| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.4b.png
+.. |image72| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.4b.png
    :width: 100px
-.. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.05.png
+.. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.05.png
    :width: 100px
-.. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.5.png
+.. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.5.png
    :width: 100px
-.. |image75| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.1.png
+.. |image75| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.1.png
    :width: 100px
-.. |image76| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.2.png
+.. |image76| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.2.png
    :width: 100px
-.. |image77| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.3.png
+.. |image77| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.3.png
    :width: 100px
-.. |image78| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.4a.png
+.. |image78| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.4a.png
    :width: 100px
-.. |image79| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.4b.png
+.. |image79| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.4b.png
    :width: 100px
-.. |image80| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.05.png
+.. |image80| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.05.png
    :width: 100px
-.. |image81| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.5.png
+.. |image81| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b2.5.png
    :width: 100px
-.. |image82| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.1.png
+.. |image82| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.1.png
    :width: 100px
-.. |image83| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.2.png
+.. |image83| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.2.png
    :width: 100px
-.. |image84| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.3.png
+.. |image84| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.3.png
    :width: 100px
-.. |image85| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.4a.png
+.. |image85| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.4a.png
    :width: 100px
-.. |image86| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.4b.png
+.. |image86| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.4b.png
    :width: 100px
-.. |image87| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.05.png
+.. |image87| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.05.png
    :width: 100px
-.. |image88| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.5.png
+.. |image88| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b3.5.png
    :width: 100px
-.. |image89| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.1.png
+.. |image89| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.1.png
    :width: 100px
-.. |image90| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.2.png
+.. |image90| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.2.png
    :width: 100px
-.. |image91| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.3.png
+.. |image91| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.3.png
    :width: 100px
-.. |image92| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.4a.png
+.. |image92| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.4a.png
    :width: 100px
-.. |image93| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.4b.png
+.. |image93| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.4b.png
    :width: 100px
-.. |image94| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.05.png
+.. |image94| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.05.png
    :width: 100px
-.. |image95| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.5.png
+.. |image95| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.5.png
    :width: 100px
-.. |image96| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.1.png
+.. |image96| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.1.png
    :width: 100px
-.. |image97| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.2.png
+.. |image97| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.2.png
    :width: 100px
-.. |image98| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.3.png
+.. |image98| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.3.png
    :width: 100px
-.. |image99| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.4a.png
+.. |image99| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.4a.png
    :width: 100px
-.. |image100| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.4b.png
+.. |image100| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.4b.png
    :width: 100px
-.. |image101| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.05.png
+.. |image101| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.05.png
    :width: 100px
-.. |image102| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.5.png
+.. |image102| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.5.png
    :width: 100px
-.. |image103| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.1.png
+.. |image103| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.1.png
    :width: 100px
-.. |image104| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.2.png
+.. |image104| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.2.png
    :width: 100px
-.. |image105| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.3.png
+.. |image105| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.3.png
    :width: 100px
-.. |image106| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.4a.png
+.. |image106| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.4a.png
    :width: 100px
-.. |image107| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.4b.png
+.. |image107| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.4b.png
    :width: 100px
-.. |image108| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.05.png
+.. |image108| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.05.png
    :width: 100px
-.. |image109| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.5.png
+.. |image109| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c1.5.png
    :width: 100px
-.. |image110| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.1.png
+.. |image110| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.1.png
    :width: 100px
-.. |image111| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.2.png
+.. |image111| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.2.png
    :width: 100px
-.. |image112| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.3.png
+.. |image112| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.3.png
    :width: 100px
-.. |image113| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.4a.png
+.. |image113| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.4a.png
    :width: 100px
-.. |image114| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.4b.png
+.. |image114| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.4b.png
    :width: 100px
-.. |image115| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.05.png
+.. |image115| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.05.png
    :width: 100px
-.. |image116| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.5.png
+.. |image116| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-c2.5.png
    :width: 100px
-.. |image117| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.1.png
+.. |image117| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.1.png
    :width: 100px
-.. |image118| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.2.png
+.. |image118| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.2.png
    :width: 100px
-.. |image119| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.3a.png
+.. |image119| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.3a.png
    :width: 100px
-.. |image120| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.3b.png
+.. |image120| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.3b.png
    :width: 100px
-.. |image121| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.4.png
+.. |image121| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.4.png
    :width: 100px
-.. |image122| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.5.png
+.. |image122| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.5.png
    :width: 100px
-.. |image123| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.1.png
+.. |image123| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.1.png
    :width: 100px
-.. |image124| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.2.png
+.. |image124| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.2.png
    :width: 100px
-.. |image125| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.3a.png
+.. |image125| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.3a.png
    :width: 100px
-.. |image126| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.3b.png
+.. |image126| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.3b.png
    :width: 100px
-.. |image127| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.4.png
+.. |image127| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.4.png
    :width: 100px
-.. |image128| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.5.png
+.. |image128| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.5.png
    :width: 100px
-.. |image129| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.1.png
+.. |image129| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.1.png
    :width: 100px
-.. |image130| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.2.png
+.. |image130| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.2.png
    :width: 100px
-.. |image131| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.3a.png
+.. |image131| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.3a.png
    :width: 100px
-.. |image132| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.3b.png
+.. |image132| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.3b.png
    :width: 100px
-.. |image133| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.4.png
+.. |image133| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.4.png
    :width: 100px
-.. |image134| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.5.png
+.. |image134| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d1.5.png
    :width: 100px
-.. |image135| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.1.png
+.. |image135| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.1.png
    :width: 100px
-.. |image136| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.2.png
+.. |image136| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.2.png
    :width: 100px
-.. |image137| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.3a.png
+.. |image137| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.3a.png
    :width: 100px
-.. |image138| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.3b.png
+.. |image138| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.3b.png
    :width: 100px
-.. |image139| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.4.png
+.. |image139| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.4.png
    :width: 100px
-.. |image140| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.5.png
+.. |image140| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-d2.5.png
    :width: 100px
 .. |image141| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.2.png
    :width: 100px
-.. |image142| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.01.png
+.. |image142| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.01.png
    :width: 100px
 .. |image143| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e2.2.png
    :width: 100px
@@ -696,15 +696,15 @@ Test Results will be recorded in the following document: `Network Analyzer Test 
    :width: 100px
 .. |image145| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e2.4.png
    :width: 100px
-.. |image146| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1a.PNG
+.. |image146| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1a.png
    :width: 100px
-.. |image147| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1b.PNG
+.. |image147| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1b.png
    :width: 100px
 .. |image148| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high_lpf.png
    :width: 100px
-.. |image149| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2a.PNG
+.. |image149| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2a.png
    :width: 100px
-.. |image150| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2b.PNG
+.. |image150| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2b.png
    :width: 100px
 .. |image151| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low_lpf.png
    :width: 100px
@@ -712,7 +712,7 @@ Test Results will be recorded in the following document: `Network Analyzer Test 
    :width: 100px
 .. |image153| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low_lpf.png
    :width: 100px
-.. |image154| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step3-4.PNG
+.. |image154| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step3-4.png
    :width: 100px
 .. |image155| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.1.png
    :width: 100px
@@ -722,29 +722,29 @@ Test Results will be recorded in the following document: `Network Analyzer Test 
    :width: 100px
 .. |image158| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.4.png
    :width: 100px
-.. |image159| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.1.png
+.. |image159| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.1.png
    :width: 100px
-.. |image160| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-1.PNG
+.. |image160| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-1.png
    :width: 100px
-.. |image161| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-2a.PNG
+.. |image161| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-2a.png
    :width: 100px
-.. |image162| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-2b.PNG
+.. |image162| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-2b.png
    :width: 100px
-.. |image163| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-3.PNG
+.. |image163| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-3.png
    :width: 100px
-.. |image164| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-4.PNG
+.. |image164| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-4.png
    :width: 100px
-.. |image165| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-5.PNG
+.. |image165| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-5.png
    :width: 100px
-.. |image166| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step6-1.PNG
+.. |image166| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step6-1.png
    :width: 100px
-.. |image167| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step6-2.PNG
+.. |image167| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step6-2.png
    :width: 100px
-.. |image168| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step6-3.PNG
+.. |image168| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step6-3.png
    :width: 100px
 .. |image169| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.2.png
    :width: 100px
-.. |image170| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.01.png
+.. |image170| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.01.png
    :width: 100px
 .. |image171| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e2.2.png
    :width: 100px
@@ -752,15 +752,15 @@ Test Results will be recorded in the following document: `Network Analyzer Test 
    :width: 100px
 .. |image173| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e2.4.png
    :width: 100px
-.. |image174| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1a.PNG
+.. |image174| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1a.png
    :width: 100px
-.. |image175| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1b.PNG
+.. |image175| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1b.png
    :width: 100px
 .. |image176| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high_lpf.png
    :width: 100px
-.. |image177| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2a.PNG
+.. |image177| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2a.png
    :width: 100px
-.. |image178| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2b.PNG
+.. |image178| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2b.png
    :width: 100px
 .. |image179| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low_lpf.png
    :width: 100px
@@ -768,7 +768,7 @@ Test Results will be recorded in the following document: `Network Analyzer Test 
    :width: 100px
 .. |image181| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low_lpf.png
    :width: 100px
-.. |image182| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step3-4.PNG
+.. |image182| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step3-4.png
    :width: 100px
 .. |image183| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.1.png
    :width: 100px
@@ -778,23 +778,23 @@ Test Results will be recorded in the following document: `Network Analyzer Test 
    :width: 100px
 .. |image186| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.4.png
    :width: 100px
-.. |image187| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.1.png
+.. |image187| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-b1.1.png
    :width: 100px
-.. |image188| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-1.PNG
+.. |image188| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-1.png
    :width: 100px
-.. |image189| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-2a.PNG
+.. |image189| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-2a.png
    :width: 100px
-.. |image190| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-2b.PNG
+.. |image190| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-2b.png
    :width: 100px
-.. |image191| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-3.PNG
+.. |image191| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-3.png
    :width: 100px
-.. |image192| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-4.PNG
+.. |image192| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-4.png
    :width: 100px
-.. |image193| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step5-5.PNG
+.. |image193| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step5-5.png
    :width: 100px
-.. |image194| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step6-1.PNG
+.. |image194| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step6-1.png
    :width: 100px
-.. |image195| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step6-2.PNG
+.. |image195| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step6-2.png
    :width: 100px
-.. |image196| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ na-other-step6-3.PNG
+.. |image196| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_na-other-step6-3.png
    :width: 100px

@@ -54,5 +54,5 @@ Support
    
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/navigation AD-FMCMOTCON2-EBZ#reference_hdl
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/navigation_ad-fmcmotcon2-ebz#reference_hdl
    :alt: HDL Reference Design#.:\|Overview#software|Software

@@ -26,6 +26,6 @@ Thank you for stopping by our booth! Below are a few links for the modules, labs
 .. |image4| image:: https://wiki.analog.com/_media/university/events/ecedha2023/rapid_proto_thumbnail.png
    :width: 400px
    :target: https://wiki.analog.com/_media/university/events/ecedha2023/solutions-for-rapid-prototyping.pdf
-.. |image5| image:: https://wiki.analog.com/_media/university/events/ecedha2023/Pluto_thumbnail.png
+.. |image5| image:: https://wiki.analog.com/_media/university/events/ecedha2023/pluto_thumbnail.png
    :width: 400px
    :target: https://wiki.analog.com/_media/university/events/ecedha2023/ADALM-PLUTO-Product-Highlight.pdf

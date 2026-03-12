@@ -16,4 +16,4 @@ After writing the image, on the boot partition root, the ADRV9009-ZU11EG specifi
 Video Configuration
 -------------------
 
-The default configuration for most of the projects is to use the HDMI output, but for this project the DisplayPort is used. In order for it to work, you should follow the steps described here: `DisplayPort - no picture? <:doc:`/wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp`>`_ After following the steps, the board should be rebooted.
+The default configuration for most of the projects is to use the HDMI output, but for this project the DisplayPort is used. In order for it to work, you should follow the steps described here: :doc:`DisplayPort - no picture? </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>` After following the steps, the board should be rebooted.

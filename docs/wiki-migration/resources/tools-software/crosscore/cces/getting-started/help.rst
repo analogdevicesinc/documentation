@@ -38,5 +38,5 @@ When the Example Browser is launched, you will see a wide range of filter criter
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#view
+.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#view
    :alt: Perspectives & Views#.|CCES Getting Started#debug|Debugging Applications

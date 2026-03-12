@@ -490,12 +490,12 @@ The process will involve at least two progress bars that look like the following
 
 If you encounter this type of message during the process, click on **Install** to continue with the installation.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-003a.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-003a.png
    :width: 500px
 
 Once the installation has been completed, click on **Finish** to complete the process.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-004.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-004.png
    :width: 500px
 
 Downloading the EVAL-ADIS2 Evaluation Software

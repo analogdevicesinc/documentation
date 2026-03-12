@@ -61,7 +61,7 @@ By default, the output of the evaluation board is biased at midsupply.
 Evaluation Board Schematic
 --------------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_evaluation_board_schematic.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad8418ar-eval_evaluation_board_schematic.png
    :align: center
    :width: 800px
 
@@ -73,7 +73,7 @@ Evaluation Board Schematic
 Evaluation Board Layout
 -----------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_component_side_layout.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad8418ar-eval_component_side_layout.png
    :align: center
    :width: 400px
 
@@ -109,9 +109,9 @@ Bill of Materials
 | 1        | U1                   | 8-lead MSOP or 8-lead SOIC | AD8418AWBRMZ or AD8418AWBRZ |
 +----------+----------------------+----------------------------+-----------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_component_side_of_evaluation_board.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad8418ar-eval_component_side_of_evaluation_board.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_circuit_side_of_evaluation_board.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad8418ar-eval_circuit_side_of_evaluation_board.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_circuit_side_layout.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad8418ar-eval_circuit_side_layout.png
    :width: 400px

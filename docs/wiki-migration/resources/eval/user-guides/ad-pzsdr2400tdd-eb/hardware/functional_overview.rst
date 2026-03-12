@@ -51,5 +51,5 @@ Key components:
 
 The board receives all the power from the carrier board through a 40 pin connector.
 
-.. image:: https://wiki.analog.com/_media/navigation AD-PZSDR2400TDD-EB#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-pzsdr2400tdd-eb#none#./
    :alt: Hardware#Configuration_Options|Configuration Options

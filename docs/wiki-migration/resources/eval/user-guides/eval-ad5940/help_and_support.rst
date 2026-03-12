@@ -73,4 +73,4 @@ When asking a question please take the time to give a detailed description of yo
    Before asking questions please take the time to check if somebody else already asked the same question. You might just find your question already answered.
 
 
-// End of Document //
+*End of Document*

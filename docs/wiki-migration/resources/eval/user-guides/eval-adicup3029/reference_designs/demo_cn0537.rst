@@ -160,7 +160,7 @@ Using both the EVAL-CN0537-ARDZ and the EVAL-CN0537-ALGO (now referred as ADSW-S
    `UL-217 8th Ed. testing and results document <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/intertek_test_report_on_eval-cn0537-algo.pdf>`_
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0537_initialization.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_uploading_hex_file.png

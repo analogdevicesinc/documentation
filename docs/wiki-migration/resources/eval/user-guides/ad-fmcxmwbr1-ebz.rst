@@ -62,7 +62,7 @@ Based on this example, the user can modify the software and adapt it for their s
 Videos
 ------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>3MH8Y6joSeE
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>3mh8y6josee
    :alt: youtube>3MH8Y6joSeE
 
 Production Testing Process

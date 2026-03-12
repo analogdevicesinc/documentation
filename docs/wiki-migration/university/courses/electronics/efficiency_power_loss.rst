@@ -422,7 +422,7 @@ Using .meas and .step commands to calculate efficiency in LTspice: :adi:`ltspice
    :width: 600px
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_2w5_temp_rise_sch.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_TO-220_thermals.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_to-220_thermals.png
    :width: 400px
 .. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_aavid_7021_thermals.png
    :width: 400px
@@ -430,25 +430,25 @@ Using .meas and .step commands to calculate efficiency in LTspice: :adi:`ltspice
    :width: 300px
 .. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_lt3080_2w5_temp_rise_w_sink_sch.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LT3080_schematic.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_schematic.png
    :width: 600px
 .. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_efficiency.png
    :width: 600px
 .. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_bb.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LT3080_breadboard.jpg
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_breadboard.jpg
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/AD592_circuit.png
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ad592_circuit.png
    :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/AD592_temperature_sensor.jpg
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ad592_temperature_sensor.jpg
    :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/AD592_mounting.jpg
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ad592_mounting.jpg
    :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LTM8067_bob.PNG
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ltm8067_bob.png
    :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LTM8067_block_diagram.png
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ltm8067_block_diagram.png
    :width: 400px
-.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LTM8067_iout_vs_vin.png
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ltm8067_iout_vs_vin.png
    :width: 400px
 .. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ltm8067_schematic.png
    :width: 800px
@@ -458,5 +458,5 @@ Using .meas and .step commands to calculate efficiency in LTspice: :adi:`ltspice
    :width: 600px
 .. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ltm8067_bb.png
    :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LTM8067_breadboard.jpg
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ltm8067_breadboard.jpg
    :width: 600px

@@ -127,9 +127,9 @@ Receive Path
    :width: 200px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/bottom_l17_18_22_23.png
    :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/ppp_tx_R40_42_C81_86_92.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/ppp_tx_r40_42_c81_86_92.png
    :width: 200px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/bottom_R40_42_C81_86_92.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/bottom_r40_42_c81_86_92.png
    :width: 200px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/phase_noise_2.19_ghz_tx_lo_40mhz_tone_1.png
    :width: 200px
@@ -137,17 +137,17 @@ Receive Path
    :width: 200px
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/bottom_l17_18_22_23.png
    :width: 200px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/ppp_rx_R48_108_C110_113_263.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/ppp_rx_r48_108_c110_113_263.png
    :width: 200px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/bottom_R48_C110_113.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/bottom_r48_c110_113.png
    :width: 200px
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/top_r108_c263.png
    :width: 200px
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/lo_instability_rx_lo_2.19ghz.png
    :width: 200px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/ppp_rx_R48_108_C110_113_263.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/ppp_rx_r48_108_c110_113_263.png
    :width: 200px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/bottom_R48_C110_113.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/bottom_r48_c110_113.png
    :width: 200px
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/top_r108_c263.png
    :width: 200px

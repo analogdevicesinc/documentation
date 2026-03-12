@@ -108,5 +108,5 @@ Register Map
 
 This core does not have a register map.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

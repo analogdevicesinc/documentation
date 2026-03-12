@@ -62,7 +62,7 @@ The figure below shows the waveforms of the diode ring modulator in a timing dia
 
 .. container:: centeralign
 
-   //Figure 4. Diode Ring Modulator Waveforms: (A) Modulating Signal, (B) Carrier Signal, (C) DSBSC signal at the primary of the output transformer, (D) DSBSC waveform after filtering //
+   *Figure 4. Diode Ring Modulator Waveforms: (A) Modulating Signal, (B) Carrier Signal, (C) DSBSC signal at the primary of the output transformer, (D) DSBSC waveform after filtering*
 
 
 The output waveform of the diode ring modulator has the carrier signal suppressed and is made up of the sum and difference of the input frequencies. They are RF pulses that takes the shape and amplitude of the modulating signal at the rate of the carrier signal. Ideally, the carrier signal is totally suppressed, however, this doesn’t really happen. A small carrier component always goes with the output signal and this is called a **carrier leak**. This happens for a few reasons: First, if the transformers are not exactly center tapped; and second, if the diodes are not perfectly matched.
@@ -88,7 +88,7 @@ Procedure
 
 .. container:: centeralign
 
-   //Figure 6. DSBSC Waveform //
+   *Figure 6. DSBSC Waveform*
 
 
 Observe the output waveform of the circuit. It should have a similar waveform shown in the simulated waveform above.
@@ -106,7 +106,7 @@ Simplified Diode Ring Modulator
 
 .. container:: centeralign
 
-   //Figure 7. Simplified Transformerless Diode Ring Modulator //
+   *Figure 7. Simplified Transformerless Diode Ring Modulator*
 
 
 By taking out the transformers, Figure 7 takes a more simplified approach on the traditional diode ring modulator. Both the sum and the difference of the carrier and the modulating signal is fed to opposite junctions of the diode ring by using the ADALM2000 through two low resistance input resistors, R1 and R2, thus taking out the input transformer. The output can be measured across the high resistance output resistors R3 and R4. These resistors then replace the output transformer.

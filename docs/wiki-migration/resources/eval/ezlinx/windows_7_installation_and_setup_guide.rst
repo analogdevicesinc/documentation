@@ -96,5 +96,5 @@ To verify the connection perform a simple GPIO test. Click on the GPIO button on
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/internetprotocolproperties.jpg
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/boardconfigurationwindow.jpg
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/GPIOInterface.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/gpiointerface.jpg
    :width: 600px

@@ -278,5 +278,5 @@ ADI_ADRV9025_DPD_UNKNOWN_RPC_ERROR
 
 -  Reset the Transceiver which means complete re-initialization of the system.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation ADRV9029 DPD USER GUIDE#evaluating_dpd_through_tes_gui
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation_adrv9029_dpd_user_guide#evaluating_dpd_through_tes_gui
    :alt: TES GUI#resources:eval:user-guides:adrv9029|main page#none

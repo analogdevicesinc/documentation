@@ -1,7 +1,7 @@
 Configuring the Framework
 =========================
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>W7md5m9Zq_o
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>w7md5m9zq_o
    :alt: youtube>W7md5m9Zq_o
 
 The framework options are configured via a single .h file that is shared between the three projects:
@@ -277,5 +277,5 @@ The ``audio_system_config.h`` file can also be used to configure the system cloc
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#baremetal-framework-architecture
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#baremetal-framework-architecture
    :alt: Framework Architecture#.|Bare Metal Framework#processing-audio|Processing Audio within the Framework

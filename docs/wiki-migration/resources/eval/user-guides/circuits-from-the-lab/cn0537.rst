@@ -140,7 +140,7 @@ Registration
    Receive software upgrade notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0537-ARDZ?&v=RevB>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_comms_interface_select_.png
    :width: 200px

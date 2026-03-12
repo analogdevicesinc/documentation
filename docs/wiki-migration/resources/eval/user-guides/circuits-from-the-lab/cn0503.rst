@@ -674,7 +674,7 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0503-ARDZ?&v=RevA>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/fullphoto.jpg
    :width: 600px
@@ -828,9 +828,9 @@ Registration
    :width: 400px
 .. |image76| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190755.jpg
    :width: 400px
-.. |youtube>FaHWg4H_XkU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>FaHWg4H_XkU
-.. |youtube>bH7nCD6H8c0| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>bH7nCD6H8c0
-.. |youtube>97YHC4MVhbU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>97YHC4MVhbU
+.. |youtube>FaHWg4H_XkU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>fahwg4h_xku
+.. |youtube>bH7nCD6H8c0| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>bh7ncd6h8c0
+.. |youtube>97YHC4MVhbU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>97yhc4mvhbu
 .. |image77| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190852.jpg
    :width: 400px
 .. |image78| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/jumperlocations.jpg

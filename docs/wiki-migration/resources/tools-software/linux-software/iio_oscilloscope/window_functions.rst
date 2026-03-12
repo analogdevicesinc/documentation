@@ -18,7 +18,7 @@ The `discrete Fourier transform <https://en.wikipedia.org/wiki/discrete Fourier 
 
 For those what want to understand what is really going on in a very intuative description, spend the 20 min and watch the video by `Grant Sanderson <https://www.3blue1brown.com/>`_ on his excellent `3Blue1Brown <https://www.youtube.com/3Blue1Brown>`_ Youtube channel, which describes this in a very initiative, math-light methodology (which some prefer).
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iio_oscilloscope/youtube>spUNpyF58BY
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iio_oscilloscope/youtube>spunpyf58by
    :alt: youtube>spUNpyF58BY
    :width: 500px
 

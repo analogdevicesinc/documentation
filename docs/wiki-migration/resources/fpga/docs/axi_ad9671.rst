@@ -8492,5 +8492,5 @@ References
 -  `Arria 5 Transceivers <https://www.altera.com/en_US/pdfs/literature/ug/xcvr_user_guide.pdf>`_
 -  `7 Series transceivers <https://www.xilinx.com/support/documentation/user_guides/ug476_7Series_Transceivers.pdf>`_
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

@@ -60,7 +60,7 @@ Software examples
 
 -  :doc:`CN0338 Demo </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cn0338>`
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/navigation EVAL-ADICUP360#base_board
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/navigation_eval-adicup360#base_board
    :alt: EVAL-ADICUP360 Base Board#.:\|Hardware#none
 
 Registration

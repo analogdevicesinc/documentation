@@ -535,7 +535,7 @@ For questions and more information about this product, connect with us through t
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-.. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/ad-cellpackbm-sl
+.. image:: https://wiki.analog.com/_media/navigation_#/resources/eval/user-guides/ad-cellpackbm-sl
    :alt: Overview #:resources:eval:user-guides:ad-cellpackbm-sl:hardware|AD-CELLPACKBM-SL Hardware User Guide#none
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/creating_myanalog_account.png

@@ -177,4 +177,4 @@ Wrapup
 Additional References
 ---------------------
 
-.. |youtube>tJtzUrt9_1U| image:: https://wiki.analog.com/_media/university/labs/software/youtube>tJtzUrt9_1U
+.. |youtube>tJtzUrt9_1U| image:: https://wiki.analog.com/_media/university/labs/software/youtube>tjtzurt9_1u

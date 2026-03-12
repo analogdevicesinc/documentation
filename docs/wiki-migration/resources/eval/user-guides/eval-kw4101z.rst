@@ -50,7 +50,7 @@ All LTspice Circuits used are available at TBD
 
 .. tip::
 
-   //Keep all files in the zip folder in the same folder on your local PC. //
+   *Keep all files in the zip folder in the same folder on your local PC.*
 
 
 --------------

@@ -91,7 +91,7 @@ Open ACE and open the AD9081 plugin. |ACE Start page| Double click on the AD9081
 
 Hit Apply
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/7_Apply.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/7_apply.png
 
 Allow a few seconds for ACE and the ADS9v2 hardware to setup the AD9081. When the chip is configured correctly, the chip view will show a status readout as shown below.
 
@@ -145,7 +145,7 @@ Only showing the Quick configuration section with the appropriate inputs to setu
 
 Hit Apply
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/7_Apply.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/7_apply.png
 
 Allow a few seconds for ACE and the ADS9v2 hardware to setup the AD9081.
 
@@ -235,7 +235,7 @@ This section of the user guide talks about how to run the MATLAB code for the BP
 
 Under the Compensation Filter Folder you should see the following:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure3.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure3.png
    :alt: Compensation Filter Folder view under HighSpeedConverterToolBox
    :align: center
 
@@ -245,7 +245,7 @@ Under the Compensation Filter Folder you should see the following:
 
 This document uses the MxFEADCCompensationFilterDesign_BPF.m MATLAB code.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure4.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure4.png
    :alt: BPF MATLAB code view under MATLAB
    :align: center
 
@@ -267,7 +267,7 @@ When you type on the command window, “xt”, you will get the coefficient valu
 
 It needs to be converted to 2’s complement and then to Hex Format prior to loading it to the PFILT on AD9082-FMC-EBZ hardware using ACE plug-in
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure7.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure7.png
    :alt: Coefficient values in Decimal format generated from the MATLAB code for the BPF
    :align: center
 
@@ -277,7 +277,7 @@ It needs to be converted to 2’s complement and then to Hex Format prior to loa
 
 The coefficient /taps are generated from MATLAB. These are in decimal format. Prior to loading into ACE, these need to be converted to 2’s complement first and then to Hex format. Example of how the coefficient file looks like after converting into Hex. It is a text file and below is an excerpt from a coefficient file for a bandpass, 192 tap filter.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure8.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure8.png
    :alt: Excerpt from a Coefficient file for PFILT loading
    :align: center
 
@@ -287,10 +287,10 @@ The coefficient /taps are generated from MATLAB. These are in decimal format. Pr
 
 In this document we are considering that you have a working set up of the AD9082-FMCB-EBZ with following instructions from UG-1829 as listed under the Documents needed section. Once you have a working set up of the AD9082-FMCB-EBZ, please use the last ADC Full Bandwidth condition shown under Table 2 of Page 11 of the UG-1829.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure9.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure9.png
    :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure9R.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure9r.png
    :alt: Board View of selected Full Bandwidth ADC Use Case
    :align: center
 
@@ -300,7 +300,7 @@ In this document we are considering that you have a working set up of the AD9082
 
 You can check the FFT response of the signal without PFILT:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure10.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure10.png
    :alt: FFT of the signal @0.5GHz to ADC input, without PFILT
    :align: center
 
@@ -310,7 +310,7 @@ You can check the FFT response of the signal without PFILT:
 
 **How to load the generated coefficients by MATLAB code in the ACE Tool?** 1.Design Band pass filter in MATLAB PFILT tool to equalize the ADC input: For a 192 tap single real mode PFILT: Use the following settings under Quick Configuration tool in Chip view for AD9082 board. You get to the chip view by click on the highlighted box in green in the figure below
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure11.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure11.png
    :alt: AD9082 Board view under ACE Plug-in
    :align: center
 
@@ -318,7 +318,7 @@ You can check the FFT response of the signal without PFILT:
 
    Figure 11: AD9082 Board view under ACE Plug-in
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure12.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure12.png
    :alt: AD9082 Chip view under ACE Plug-in
    :align: center
 
@@ -328,7 +328,7 @@ You can check the FFT response of the signal without PFILT:
 
 **Configuring the Programmable Filter in ACE: 1.Click the programmable filter block in chip as highlighted in the picture below.**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure13.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure13.png
    :alt: Programmable Filter Configuration Pop-up Window
    :align: center
 
@@ -346,7 +346,7 @@ You can check the FFT response of the signal without PFILT:
 
 6.Once the coefficient file is loaded, click the Configure Filter Block under the chip view. Please note that it takes several seconds to complete loading the coefficients into the PFILT block.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure14.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure14.png
    :alt: Configure PFilter
    :align: center
 
@@ -360,7 +360,7 @@ You can check the FFT response of the signal without PFILT:
 
 Showing Channel 0 which I Mode.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure15.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure15.png
    :alt: FFT plot at sampling frequency of 3Gsps
    :align: center
 
@@ -372,7 +372,7 @@ This FFT plot correlates to the MATLAB compensation filter response shown in Fig
 
 If you select the Channel 1 which is Q channel and as Q mode is disabled for the selected 192 tap single real PFilter configuration. So no signal seen on the FFT plot below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure16.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure16.png
    :alt: FFT plot Channel 1 which is Q channel with Q mode Disabled under PFILT Configuration Tool
    :align: center
 
@@ -382,7 +382,7 @@ If you select the Channel 1 which is Q channel and as Q mode is disabled for the
 
 9.Under the configuration window for PFILT, if you select the PFILT Q mode and disable the PFILT I mode. Then the FFT plot for Channel 1 will be showing the signal transmission as below:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure17.png
+.. image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure17.png
    :alt: FFT plot Channel 1 which is Q channel with Q mode Enabled under PFILT Configuration Tool.
    :align: center
 
@@ -476,5 +476,5 @@ Code: `ad9xxx_matlab_code.zip <https://wiki.analog.com/_media/resources/eval/use
 .. |2.7GHz -1dBFS tone with AD9082 configured in Rx only mode| image:: https://wiki.analog.com/_media/resources/eval/mxfe/ad9082_2p7ghz_trxmodefft.png
    :width: 600px
 .. |HighSpeedConverterToolBox under GitHub| image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure2.png
-.. |BPF Compensation Filter Response| image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure5.png
-.. |Target Responses for the BPF Compensation Filter design| image:: https://wiki.analog.com/_media/resources/eval/mxfe/Figure6.png
+.. |BPF Compensation Filter Response| image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure5.png
+.. |Target Responses for the BPF Compensation Filter design| image:: https://wiki.analog.com/_media/resources/eval/mxfe/figure6.png

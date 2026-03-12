@@ -417,7 +417,7 @@ The transconductance, g\ :sub:`m`, in siemens, is given by the following equatio
 
 where:
 
-//I\ :sub:`C` // is the quiescent collector current (also called the collector bias or DC collector current) |image17| is the thermal voltage, calculated from Boltzmann's constant *k*, the charge of an electron *q*, and the transistor temperature in kelvins, *T*. At 300 K (approximately room temperature) *V\ T* is about 26 mV.
+*I\ :sub:`C`* is the quiescent collector current (also called the collector bias or DC collector current) |image17| is the thermal voltage, calculated from Boltzmann's constant *k*, the charge of an electron *q*, and the transistor temperature in kelvins, *T*. At 300 K (approximately room temperature) *V\ T* is about 26 mV.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e16.png
    :align: center

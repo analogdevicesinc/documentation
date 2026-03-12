@@ -87,5 +87,5 @@ Query best match calibration set for a given Frequency
 
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS1-EBZ#fru_dump#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms1-ebz#fru_dump#./
    :alt: Applications#none

@@ -33,5 +33,5 @@ This procedure will use the application name of **my_app** for the purpose of ex
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#porting-to-new-hardware-tutorial
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#porting-to-new-hardware-tutorial
    :alt: Porting framework to different HW#.|Bare Metal Framework#troubleshooting|Trouble Shooting

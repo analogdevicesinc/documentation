@@ -62,7 +62,7 @@ Installing the Software
    \ **NOTE:** It is recommended that you install the `CN0216 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0216>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0216\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0216/CN0216-install1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-install1.png
 
 -  Click **Next** to view the installation review page
 
@@ -252,14 +252,14 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0216-SDPZ?&v=Rev A>`_ to receive all these great benefits and more!
 
 
-// End of document //
+*End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-test_setup.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0216/CN0216-install2.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0216/CN0216-install3.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-install2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-install3.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-install4.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-install5.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0216/CN0216-install6.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-install6.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-wiring_table.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-software.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-software2.png

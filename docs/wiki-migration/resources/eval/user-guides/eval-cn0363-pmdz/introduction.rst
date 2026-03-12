@@ -12,5 +12,5 @@ More Information
 
 -  :doc:`EVAL-CN0363-PMDZ User Guide </wiki-migration/resources/eval/user-guides/eval-cn0363-pmdz>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cn0363-pmdz/CN0363_sch.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cn0363-pmdz/cn0363_sch.jpg
    :width: 1000px

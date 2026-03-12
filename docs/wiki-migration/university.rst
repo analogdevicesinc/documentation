@@ -122,6 +122,6 @@ This short 6 min video was put together to describe the purpose of ADI's Univers
 -  `Kathleen Meehan <http://www.ece.vt.edu/faculty/meehan.php>`_, associate professor, Bradley Department of Electrical and Computer Engineering, Virginia Tech
 -  Emre Önder (Vice President, Marketing & Core Markets at Analog Devices),
 
-// End of Document //
+*End of Document*
 
-.. |youtube>I-Fy0Y0FPlk| image:: https://wiki.analog.com/_media/youtube>I-Fy0Y0FPlk
+.. |youtube>I-Fy0Y0FPlk| image:: https://wiki.analog.com/_media/youtube>i-fy0y0fplk

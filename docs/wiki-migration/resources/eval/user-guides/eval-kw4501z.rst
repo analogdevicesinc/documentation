@@ -46,7 +46,7 @@ LTspice Circuits used in the lecture material are available at `Integrated Noise
 
 .. tip::
 
-   //Keep all files in the zip folder in the same folder on your local PC. //
+   *Keep all files in the zip folder in the same folder on your local PC.*
 
 
 --------------

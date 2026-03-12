@@ -207,7 +207,7 @@ After configuring the board, set up the ADC data capture using the following ste
 
 -  Open VisualAnalog on the connected PC (install from http://www.analog.com/en/converters-tools/adc-tools/topic.html). The appropriate device type is listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 3, where the :adi:`AD9266` is shown as an example).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9266_VA_New_Canvas_window.PNG
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9266_va_new_canvas_window.png
    :align: center
    :width: 500px
 
@@ -230,7 +230,7 @@ After configuring the board, set up the ADC data capture using the following ste
 -  To change features to settings other than the default settings, click the **Expand Display** button, located on the right side of the window (see Figure 5), to display the window shown in Figure 6.
 -  Change the features and capture settings by consulting the detailed instructions in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the settings within any of the control icons/blocks in the VA canvas, click the **OK** button to invoke the changes and collapse the edit window.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9266_VA_toolbar_collapsed.PNG
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9266_va_toolbar_collapsed.png
    :align: center
    :width: 500px
 
@@ -256,7 +256,7 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
 -  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 7).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9266_SPIController_Global_tab_ChipID.PNG
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9266_spicontroller_global_tab_chipid.png
    :align: center
    :width: 600px
 
@@ -267,15 +267,18 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
 -  Click the **New DUT** button in the **SPIController** window (see Figure 8).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9266_spicontroller_global_tab_newdUT_button.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9266_spicontroller_global_tab_newdut_button.png
    :align: center
    :width: 600px
 
 .. container:: centeralign
 
-   \ *Figure 8. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 9), and the **MODES(8)** box (see Figure 9). If using the clock divider, use the drop-down menu to select the correct clock divide ratio, as desired. If there is any interruption of the ADC clock during power-up or during operation, a digital reset may be needed to reinitialize the ADC (Figure 10). For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
+   \ *Figure 8. SPI Controller, New DUT Button*\
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9266_SPIController_ADCBase0_tab_ClkDiv.png
+
+-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 9), and the **MODES(8)** box (see Figure 9). If using the clock divider, use the drop-down menu to select the correct clock divide ratio, as desired. If there is any interruption of the ADC clock during power-up or during operation, a digital reset may be needed to reinitialize the ADC (Figure 10). For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9266_spicontroller_adcbase0_tab_clkdiv.png
    :align: center
    :width: 600px
 
@@ -290,10 +293,13 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
 .. container:: centeralign
 
-   \ *Figure 10. SPI Controller, Chip Power Mode - Digital Reset Selection*-  Note that other settings can be changed on the **ADCBase 0 tab** (see Figure 9) to set up the part in the desired mode. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI* for additional information on the available settings.
+   \ *Figure 10. SPI Controller, Chip Power Mode - Digital Reset Selection*\
+
+
+-  Note that other settings can be changed on the **ADCBase 0 tab** (see Figure 9) to set up the part in the desired mode. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI* for additional information on the available settings.
 -  Click the **Run** or **Continuous Run** button in the **VisualAnalog** toolbar (see Figure 11).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9266_VA_toolbar_collapsed_run_button.PNG
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9266_va_toolbar_collapsed_run_button.png
    :align: center
    :width: 600px
 
@@ -309,13 +315,13 @@ The next step is to adjust the amplitude of the input signal as follows:
 
 -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9266 FFT** window (see Figure 12).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9266_FFT_example.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9266_fft_example.png
    :align: center
    :width: 600px
 
 .. container:: centeralign
 
-   //Figure 12. Graph Window of VisualAnalog //
+   *Figure 12. Graph Window of VisualAnalog*
 
 
 -  Click the floppy disk icon within the **VisualAnalog Graph - AD9266 FFT** window to save the performance data as a .csv formatted file for plotting or analysis.
@@ -350,11 +356,11 @@ If the FFT window remains blank after **Run** in VisualAnalog (see Figure 12) is
 -  Make sure that the FPGA has been programmed by verifying that the **DONE** LED is illuminated on the :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` board. If this LED is not illuminated, make sure that the U4 switch on the board is in the correct position for **USB CONFIG**.
 -  Make sure that the correct FPGA program was installed by clicking the **Settings** icon in the **ADC Data Capture** block in VisualAnalog. Then, select the **FPGA** tab and verify that the proper FPGA bin file is selected for the device.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/AD9266_9649_9629_9609_eval_default_jumpers.PNG
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9266_9649_9629_9609_eval_default_jumpers.png
    :width: 500px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/10235-005.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/AD9266_VA_avg_FFT_window_expanded.PNG
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9266_va_avg_fft_window_expanded.png
    :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/AD9266_SPIController_ADCBase0_tab_DigReset_1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9266_spicontroller_adcbase0_tab_digreset_1.png
    :width: 600px

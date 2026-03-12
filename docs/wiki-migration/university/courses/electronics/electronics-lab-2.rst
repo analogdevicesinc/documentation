@@ -653,8 +653,8 @@ What happens to the output voltage across R\ :sub:`L` if the direction of the fo
 .. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/clamp-waveform.png
 .. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f6.png
    :width: 600px
-.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/DC_rest-bb.png
-.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/DC_rest-waveform.png
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/dc_rest-bb.png
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/dc_rest-waveform.png
 .. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f7.png
    :width: 600px
 .. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/var_atten-bb.png

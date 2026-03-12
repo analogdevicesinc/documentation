@@ -69,7 +69,7 @@ When the EV-COG-AD4050LZ emulator is connected to the MK20DX128VFM5 (by holding 
 EV-COG-AD4050LZ Interface File Downloads
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-// End of Document //
+*End of Document*
 
 Cross Core Embedded Studio Quickstart User Guide
 ================================================

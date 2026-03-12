@@ -21,13 +21,13 @@ Screenshots
 Time Domain View
 ~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9001/adrv9001_osc_capture_time.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9001/adrv9001_osc_capture_time.png
    :align: center
    :width: 600px
 
 Frequency Domain View
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9001/adrv9001_osc_capture_freq.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9001/adrv9001_osc_capture_freq.png
    :align: center
    :width: 600px

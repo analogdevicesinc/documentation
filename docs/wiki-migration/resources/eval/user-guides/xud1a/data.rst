@@ -307,7 +307,7 @@ All Modes            Rising    146.4   159.2   178.4
 
 .. container:: leftalign
 
-   \ **//Table 9: Switching Speed //**\
+   \ **Table 9: Switching Speed**\
 
 
 .. note::

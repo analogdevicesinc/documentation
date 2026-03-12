@@ -3,7 +3,7 @@ Status Bar
 
 The status bar at the bottom of the application gives information about the hardware status, and the most recent operation performed by the application. Four pieces of information are available if a board is in context as shown in bellow.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Status.PNG
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/status.png
    :alt: Information available in status bar
    :align: right
 
@@ -32,8 +32,8 @@ Error Notification
 
 The status bar will indicate when communication with hardware fails. When this happens, a popup will open to describe the error.  The popup message can be dismissed by clicking the button, which indicates to ACE that the user is aware of the error.  After that, if the same error happens again, ACE won’t automatically pop up the message again.  When the popup is closed, it can be reopened by clicking the icon.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/ErrorNotification.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/errornotification.png
    :alt: ErrorNotification.png
    :align: right
 
-.. |Poll.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Poll.png
+.. |Poll.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/poll.png

@@ -431,7 +431,7 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/PMD-RPI-INTZ?&v=Rev D>`_ to receive all these great benefits and more!
 
 
-// End of document //
+*End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-spi-pmod-connectors.png
    :width: 250px

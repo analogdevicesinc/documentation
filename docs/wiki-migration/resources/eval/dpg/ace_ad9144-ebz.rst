@@ -186,17 +186,17 @@ Single Tone Demo Hardware and Software Start Up Procedure:
    :height: 260px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144_ebz_photo.jpg
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/AD9144-EBZ_DPGStartup.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_dpgstartup.png
    :width: 900px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/AD9144-EBZ_DPGSetup.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_dpgsetup.png
    :width: 900px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/AD9144-EBZ_ACEStartup.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_acestartup.png
    :width: 900px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/AD9144-EBZ_ACESetup.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_acesetup.png
    :width: 900px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/AD9144-EBZ_ACEWizRan.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_acewizran.png
    :width: 900px
 .. |9154_down_arrow.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_down_arrow.png
 .. |9154_right_green_arrow.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_right_green_arrow.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/AD9144-EBZ_DPGDwnld.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_dpgdwnld.png
    :width: 900px

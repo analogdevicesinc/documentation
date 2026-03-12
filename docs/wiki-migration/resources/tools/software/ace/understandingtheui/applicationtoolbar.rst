@@ -36,5 +36,5 @@ The file menu contains the options for creating, opening, closing and saving ses
 
 |Capture2.PNG|
 
-.. |Capture.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Capture.png
-.. |Capture2.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Capture2.PNG
+.. |Capture.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/capture.png
+.. |Capture2.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/capture2.png

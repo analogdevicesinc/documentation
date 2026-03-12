@@ -1,7 +1,7 @@
 A Simple Light Detector
 =======================
 
-.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>5040287147001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogtv>5040287147001
    :alt: analogTV>5040287147001
    :align: right
 

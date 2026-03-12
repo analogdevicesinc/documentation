@@ -193,4 +193,4 @@ More information
    See `ez_common <https://wiki.analog.com/ez_common>`_
 
 
-.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/terminal_kc705.jpg

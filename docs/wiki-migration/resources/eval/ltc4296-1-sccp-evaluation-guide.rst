@@ -37,7 +37,7 @@ On the PD side, the LTC9111 detects the SCCP logic states on the lines through S
 
 .. container:: centeralign
 
-   //Figure 1. SPoE System //
+   *Figure 1. SPoE System*
 
 
 SCCP Transactions Overview
@@ -74,7 +74,7 @@ Once the PSE releases the bus, the PD detects the rising edge cross the input lo
 
 .. container:: centeralign
 
-   //Figure 2. SCCP Initialization //
+   *Figure 2. SCCP Initialization*
 
 
 Write Time Slot
@@ -87,7 +87,7 @@ The duration of the write time slot for either a '0' or '1' should last for a ma
 
 .. container:: centeralign
 
-   //Figure 3. SCCP Write Time Slot //
+   *Figure 3. SCCP Write Time Slot*
 
 
 Read Time Slot
@@ -100,7 +100,7 @@ The PSE initiates the read time slot by pulling low on the bus. Subsequently, th
 
 .. container:: centeralign
 
-   //Figure 4. SCCP Read Time Slot //
+   *Figure 4. SCCP Read Time Slot*
 
 
 Additional Requirements
@@ -143,7 +143,7 @@ vi. Read PD CRC Byte
 
 .. container:: centeralign
 
-   //Figure 5. SCCP Transaction //
+   *Figure 5. SCCP Transaction*
 
 
 CLASS_TYPE_INFO Registers
@@ -156,7 +156,7 @@ Table 2 shows the bit information from the CLASS_TYPE_INFO register bytes. Refer
 
 .. container:: centeralign
 
-   //Table 2. CLASS_TYPE_INFO Register Bytes Table //
+   *Table 2. CLASS_TYPE_INFO Register Bytes Table*
 
 
 Example C Code Implementation of SCCP
@@ -883,14 +883,14 @@ Refer to :doc:`EVAL-SPoE-KIT-AZ Evaluation Kit User Guide </wiki-migration/resou
 
 .. container:: centeralign
 
-   //Figure 15. SCCP Enable Configurations through evaluation GUI //
+   *Figure 15. SCCP Enable Configurations through evaluation GUI*
 
 
    |image7|
 
 .. container:: centeralign
 
-   //Figure 16. Successful Port Turn On GUI Port Status //
+   *Figure 16. Successful Port Turn On GUI Port Status*
 
 
 SCCP Example Waveforms
@@ -903,7 +903,7 @@ Below are detailed descriptions of the SCCP transactions, parts i-vi. With wavef
 
 .. container:: centeralign
 
-   //Figure 17. Proceeding Waveform Probe Location //
+   *Figure 17. Proceeding Waveform Probe Location*
 
 
 (i) Initialization
@@ -915,7 +915,7 @@ Below are detailed descriptions of the SCCP transactions, parts i-vi. With wavef
 
 .. container:: centeralign
 
-   //Figure 18. Initialization Sequence //
+   *Figure 18. Initialization Sequence*
 
 
 Reset Pulse
@@ -927,7 +927,7 @@ Reset Pulse
 
 .. container:: centeralign
 
-   //Figure 19. Initialization Sequence Reset Pulse //
+   *Figure 19. Initialization Sequence Reset Pulse*
 
 
 Presence-Detect High Time
@@ -939,7 +939,7 @@ Presence-Detect High Time
 
 .. container:: centeralign
 
-   //Figure 20. Initialization Sequence Presence-Detect High Time //
+   *Figure 20. Initialization Sequence Presence-Detect High Time*
 
 
 Presence-Detect Low Time
@@ -951,7 +951,7 @@ Presence-Detect Low Time
 
 .. container:: centeralign
 
-   //Figure 21. Initialization Sequence Presence Detect Low Time //
+   *Figure 21. Initialization Sequence Presence Detect Low Time*
 
 
 Recovery Time
@@ -963,7 +963,7 @@ Recovery Time
 
 .. container:: centeralign
 
-   //Figure 22. Initialization Sequence Recovery Time //
+   *Figure 22. Initialization Sequence Recovery Time*
 
 
 PD Reservoir Capacitor Recharge Time
@@ -975,7 +975,7 @@ PD Reservoir Capacitor Recharge Time
 
 .. container:: centeralign
 
-   //Figure 23. Initialization Sequence PD Reservoir Capacitor Recharge Time //
+   *Figure 23. Initialization Sequence PD Reservoir Capacitor Recharge Time*
 
 
 Rise/Fall Time
@@ -987,14 +987,14 @@ Rise/Fall Time
 
 .. container:: centeralign
 
-   //Figure 24. Initialization Sequence Rise Time //
+   *Figure 24. Initialization Sequence Rise Time*
 
 
    |image9|
 
 .. container:: centeralign
 
-   //Figure 25. Initialization Sequence Fall Time //
+   *Figure 25. Initialization Sequence Fall Time*
 
 
 Write Time Slot
@@ -1006,14 +1006,14 @@ Write Time Slot
 
 .. container:: centeralign
 
-   //Figure 26. PSE Writes 0 Time Slot //
+   *Figure 26. PSE Writes 0 Time Slot*
 
 
    |image10|
 
 .. container:: centeralign
 
-   //Figure 27. PSE Writes 1 Time Slot //
+   *Figure 27. PSE Writes 1 Time Slot*
 
 
 (ii) Broadcast Address
@@ -1025,7 +1025,7 @@ Write Time Slot
 
 .. container:: centeralign
 
-   //Figure 28. PSE Broadcast (0xCC) //
+   *Figure 28. PSE Broadcast (0xCC)*
 
 
 (iii) Read_Scratchpad Command
@@ -1037,7 +1037,7 @@ Write Time Slot
 
 .. container:: centeralign
 
-   //Figure 29. PSE Read-Scratchpad Command (0xAA) //
+   *Figure 29. PSE Read-Scratchpad Command (0xAA)*
 
 
 Alternative Commands
@@ -1053,7 +1053,7 @@ Alternative Commands
 
 .. container:: centeralign
 
-   //Table 3. Read_VOLT_INFO Command (0xBB) //
+   *Table 3. Read_VOLT_INFO Command (0xBB)*
 
 
 +----------+-------------------------------------+---------------------------------------+---------------+
@@ -1066,7 +1066,7 @@ Alternative Commands
 
 .. container:: centeralign
 
-   //Table 4. Read_POWER_INFO Command (0x77) //
+   *Table 4. Read_POWER_INFO Command (0x77)*
 
 
 +----------+---------------------------------------+-----------------------------------+---------------+
@@ -1079,7 +1079,7 @@ Alternative Commands
 
 .. container:: centeralign
 
-   //Table 5. Write_POWER_ASSIGN Command (0x99) //
+   *Table 5. Write_POWER_ASSIGN Command (0x99)*
 
 
 +----------+---------------------------------------+-----------------------------------+---------------+
@@ -1092,7 +1092,7 @@ Alternative Commands
 
 .. container:: centeralign
 
-   //Table 6. Read_POWER_ASSIGN Command (0x81) //
+   *Table 6. Read_POWER_ASSIGN Command (0x81)*
 
 
 Read Time Slot
@@ -1104,14 +1104,14 @@ Read Time Slot
 
 .. container:: centeralign
 
-   //Figure 30. PSE Read 0 Time Slot //
+   *Figure 30. PSE Read 0 Time Slot*
 
 
    |image11|
 
 .. container:: centeralign
 
-   //Figure 31. PSE Read 1 Time Slot //
+   *Figure 31. PSE Read 1 Time Slot*
 
 
 (iv) Read CLASS_TYPE_INFO low byte
@@ -1123,7 +1123,7 @@ Read Time Slot
 
 .. container:: centeralign
 
-   //Figure 32. Read CLASS_TYPE_INFO low byte //
+   *Figure 32. Read CLASS_TYPE_INFO low byte*
 
 
 (v) Read CLASS_TYPE_INFO high byte
@@ -1135,7 +1135,7 @@ Read Time Slot
 
 .. container:: centeralign
 
-   //Figure 33. Read CLASS_TYPE_INFO high byte //
+   *Figure 33. Read CLASS_TYPE_INFO high byte*
 
 
 (vi) Read CRC byte
@@ -1147,7 +1147,7 @@ Read Time Slot
 
 .. container:: centeralign
 
-   //Figure 34. PD CRC //
+   *Figure 34. PD CRC*
 
 
 Appendix
@@ -1227,7 +1227,7 @@ b[15:12] Description
 
 .. container:: centeralign
 
-   //Table 9. CLASS_TYPE_INFO b[15:12] to Corresponding PD Type //
+   *Table 9. CLASS_TYPE_INFO b[15:12] to Corresponding PD Type*
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/spoe_system.png

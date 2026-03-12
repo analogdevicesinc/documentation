@@ -18,4 +18,4 @@ And here is a fairly complete video run through of the design philosophy, develo
    To Do: Complete, detailed instructions for each configuration
 
 
-.. |youtube>zzXmWyu_rVM| image:: https://wiki.analog.com/_media/university/tools/lab_hw/youtube>zzXmWyu_rVM
+.. |youtube>zzXmWyu_rVM| image:: https://wiki.analog.com/_media/university/tools/lab_hw/youtube>zzxmwyu_rvm

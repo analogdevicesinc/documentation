@@ -16,7 +16,7 @@ The AD8417RM-EVALZ accommodates the :adi:`AD8417` in the MSOP package, while the
 AD8417 Evaluation Board
 -----------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ component side of evaluation board.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad8417rm-evalz_component_side_of_evaluation_board.png
    :align: center
    :width: 400px
 
@@ -72,7 +72,7 @@ By default, the output of the evaluation board is biased at midsupply.
 Evaluation Board Schematic
 --------------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ evaluation board schematic.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad8417rm-evalz_evaluation_board_schematic.png
    :align: center
    :width: 400px
 
@@ -84,7 +84,7 @@ Evaluation Board Schematic
 Evaluation Board Layout
 -----------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ component side layout.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad8417rm-evalz_component_side_layout.png
    :align: center
    :width: 400px
 
@@ -120,7 +120,7 @@ Bill of Materials
 | 1        | U1                   | 8-lead MSOP or 8-lead SOIC | AD8417WBRMZ or AD8417WBRZ |
 +----------+----------------------+----------------------------+---------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ circuit side of evaluation board.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad8417rm-evalz_circuit_side_of_evaluation_board.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ circuit side layout.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad8417rm-evalz_circuit_side_layout.png
    :width: 400px

@@ -18,7 +18,7 @@ Evaluation Boards
 ADXRS450: ±300°/sec High Vibration Immunity Digital Gyro
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/scrape>adi>ADXRS450#additional-details__paragraph
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/scrape>adi>adxrs450#additional-details__paragraph
    :alt: scrape>adi>ADXRS450#additional-details\__paragraph
 
 -  :adi:`Product Page <ADXRS450>`
@@ -26,7 +26,7 @@ ADXRS450: ±300°/sec High Vibration Immunity Digital Gyro
 ADXRS453: ±300°/sec High Vibration Immunity Digital Gyro
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/scrape>adi>ADXRS453#additional-details__paragraph
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/scrape>adi>adxrs453#additional-details__paragraph
    :alt: scrape>adi>ADXRS453#additional-details\__paragraph
 
 -  :adi:`Product Page <ADXRS453>`
@@ -317,8 +317,8 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/youtube>p_vntewue24
 

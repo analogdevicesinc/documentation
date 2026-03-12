@@ -14,7 +14,7 @@ The device does not require any external power supply to operate as it is powere
 
 |image1| |image2| |image3|
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/USBi16-PinConnector.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/usbi16-pinconnector.png
    :width: 500px
 
 USBi 2.0 Configuration using SigmaStudio+
@@ -153,9 +153,9 @@ LED Color Transition Diagram
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/ledcolortransitiondiagram.png
    :alt: ledcolortransitiondiagram.png
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/EVAL-A2B-USBITOP.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/eval-a2b-usbitop.jpg
    :width: 150px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/EVAL-A2B-USBIANGLE.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/eval-a2b-usbiangle.jpg
    :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/EVAL-A2B-USBIBOTTOM.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/eval-a2b-usbibottom.jpg
    :width: 150px

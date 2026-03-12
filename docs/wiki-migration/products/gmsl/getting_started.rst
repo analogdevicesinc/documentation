@@ -75,5 +75,5 @@ Gigabit Multimedia Serial Link™ (GMSL™) and Gigabit Ethernet (GigE) are two 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation gmsl#none#./
+.. image:: https://wiki.analog.com/_media/navigation_gmsl#none#./
    :alt: GMSL Wiki Home#none#

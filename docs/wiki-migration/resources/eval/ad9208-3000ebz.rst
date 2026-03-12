@@ -531,7 +531,7 @@ EVALUATION BOARD FAILS TO CAPTURE DATA
    -  Check the reference clock and make sure it matches your JESD settings.
    -  Make sure P100 (Power Down / Standby Jumper, see Figure 6) is not jumped.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ADS8-V1EBZ-AD9208 Typ Setup.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ads8-v1ebz-ad9208_typ_setup.png
    :width: 620px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/topofboard.png
    :width: 500px

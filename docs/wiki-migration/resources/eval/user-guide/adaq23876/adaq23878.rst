@@ -163,7 +163,7 @@ Follow these steps to prepare the SD Card,
    Ensure that the SD card is loaded with the latest version of the :doc:`ADI Kuiper Image </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`.
 
 
--  `Download the ADI Kuiper Image <:doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux`>`_\
+-  :doc:`Download the ADI Kuiper Image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`\
 
 .. container:: center round box
 
@@ -418,7 +418,7 @@ Evaluating the EVAL-ADAQ23876 FMCZ / EVAL-ADAQ23878FMCZ using IIO Oscilloscope
 
 .. container:: centeralign
 
-   //Figure 15: Refreshing the IIO Oscilloscope Connection //
+   *Figure 15: Refreshing the IIO Oscilloscope Connection*
 
 
 -  Once ltc2387 appears, select Connect.
@@ -444,7 +444,7 @@ Waveform Plot
 
 .. container:: centeralign
 
-   //Figure 17: Time Domain Waveform Plot //
+   *Figure 17: Time Domain Waveform Plot*
 
 
 FFT Plot
@@ -456,7 +456,7 @@ FFT Plot
 
 .. container:: centeralign
 
-   //Figure 18: FFT Plot //
+   *Figure 18: FFT Plot*
 
 
 To Start

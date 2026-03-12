@@ -327,7 +327,7 @@ More information
 -  `Ask a Question <https://ez.analog.com/>`_
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS1-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms1-ebz#none#./
    :alt: Applications#fru_dump
 
 .. [1]

@@ -4258,7 +4258,7 @@ More Information
 
 -  `JESD204 High-Speed Serial Interface Support <https://wiki.analog.com/.>`_
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/navigation HDL User Guide#../../docs/ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/navigation_hdl_user_guide#../../docs/ip_cores
    :alt: IP cores#../../docs/hdl|Main page#../../docs/tips|Using and modifying the HDL design
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/quadmxfe_linkbringup_204b_adc.png

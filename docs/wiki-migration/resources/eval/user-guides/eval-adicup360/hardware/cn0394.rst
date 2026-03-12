@@ -87,7 +87,7 @@ Software
 
    -  :git-EVAL-ADICUP360:`CN0394 Demo <projects/ADuCM360_demo_cn0394>`
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/navigation EVAL-ADICUP360#base_board
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/navigation_eval-adicup360#base_board
    :alt: EVAL-ADICUP360 Base Board#.:\|Hardware#none
 
 Registration
@@ -98,4 +98,4 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0394-ARDZ?&v=RevA>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*

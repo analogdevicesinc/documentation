@@ -161,5 +161,5 @@ CCES can be configured to automatically call **cldp.exe** at the end of the buil
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#led-blink-app
+.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#led-blink-app
    :alt: LED Blink Application#.|CCES Getting Started#.|CCES Getting Started

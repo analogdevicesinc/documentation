@@ -114,11 +114,11 @@ The clock evaluation software incorporates **Tool Tips** to all interactive bloc
 
 |tool_tip.png|
 
-   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/Tool Tip_Wire.png
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/tool_tip_wire.png
       :alt: Tool Tip_Wire.png
       :width: 300px
    
-   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/Tool Tip_VCOcal.png
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/csg_evb_software/tool_tip_vcocal.png
       :alt: Tool Tip_VCOcal.png
       :width: 300px
    

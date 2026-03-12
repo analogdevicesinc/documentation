@@ -11,7 +11,7 @@ Board View
 
 The Board View, shown below, shows all the ADI components located on a particular evaluation board plus the board connectors at their approximate locations.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/BoardView.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/boardview.png
    :alt: BoardView.png
 
 Component Types
@@ -50,7 +50,7 @@ Initialization Wizard
 
 Some boards contain an initialization wizard, see bellow, to configure components. The wizard initialization setup process collects and applies the initial startup conditions for the board and all board components. No changes will be applied to the hardware until the operator clicks apply.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Wizard.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/wizard.png
    :alt: Initialization Wizard, will appear on Left of Board View
 
 Types of Initialization Wizards
@@ -79,8 +79,8 @@ The summary button opens a summary of your configuration. This summary can be vi
 
 Once the component has been configured, the summary is displayed where the wizard was previously displayed, see below, to allow you to easily review your settings. The modify button under the configuration allows you to reopen the wizard and change the settings.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/AfterConfig.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/afterconfig.png
    :alt: Board View with Initialization Wizard after Configuration
 
-.. |Primary.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Primary.png
-.. |Secondary.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Secondary.png
+.. |Primary.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/primary.png
+.. |Secondary.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/secondary.png

@@ -1,7 +1,7 @@
 Sharing Data Between Cores / System Telemetry
 =============================================
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>srVoSbo7zB4
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>srvosbo7zb4
    :alt: youtube>srVoSbo7zB4
 
 All three processors have access to a block of shared L2 memory. The default Linker Description File (LDF) allocates a number of section for MCAPI but as the Bare Metal Framework does not rely on this heavier form of intra-core message passing, we can reuse this shared memory. There is one segment that all three cores are, by default, able to read from and write to which is located at address 0x20080000.
@@ -106,5 +106,5 @@ If you want the ARM core to manage a user interface, this is a very easy way to 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#audio-frameworks
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#audio-frameworks
    :alt: Selecting Between HW Platforms#.|Bare Metal Framework#peripheral-and-system-drivers|Using Peripheral and System Drivers

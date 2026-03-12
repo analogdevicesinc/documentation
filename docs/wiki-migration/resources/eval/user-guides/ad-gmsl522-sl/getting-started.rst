@@ -77,7 +77,7 @@ GMSL Camera Inputs
 
 One way to send video data to the AD-GMSL522-SL board is through GMSL-2 compatible camera modules. They can be connected to the onboard FAKRA connectors, INA+, INB+, INC+, and IND+. These FAKRA connectors are connected directly to the onboard MAX96724. In addition to being connected to the deserializer these connectors are also shorted to +12V. This means that the camera modules can be powered from the AD-GMSL522-SL board and do not need to be powered internally. This is important to note because it means that another voltage source should not be connected to these FAKRA connectors, otherwise damage could be caused to either the AD-GMSL522-SL board, or the user’s module.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_fakra_Board_correct_output.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_fakra_board_correct_output.png
    :align: center
    :width: 800px
 
@@ -556,8 +556,7 @@ Appendix 1 (proper script for pattern generator viewing exercise)
    # ---------------------------------------------------------------------------------
    */
    //
-   // CSIConfigurationTool
-   //
+   *CSIConfigurationTool*
    // GMSL-A / Serializer: MAX96717 (Pixel Mode) / Mode: 1x4 / Device Address: 0x84 / Multiple-VC Case: Single VC / Pipe Sharing: Separate Pipes
    // PipeZ:
    // Input Stream: VC0 RGB888 PortB (D-PHY)
@@ -575,8 +574,7 @@ Appendix 1 (proper script for pattern generator viewing exercise)
    0x04,0x84,0x00,0x02,0x03, // DEV : REG2 | VID_TX_EN_Z (VID_TX_EN_Z): Disabled
    0x04,0x84,0x00,0x02,0x03, // DEV : REG2 | (Default) VID_TX_EN_Z (VID_TX_EN_Z): Disabled
    //
-   // INSTRUCTIONS FOR GMSL-A SERIALIZER MAX96717
-   //
+   *INSTRUCTIONS FOR GMSL-A SERIALIZER MAX96717*
    // MIPI D-PHY Configuration
    0x04,0x84,0x03,0x30,0x00, // MIPI_RX : MIPI_RX0 | (Default) RSVD (Port Configuration): 1x4
    0x04,0x84,0x03,0x83,0x00, // MIPI_RX_EXT : EXT11 | Tun_Mode (Tunnel Mode): Disabled
@@ -592,8 +590,7 @@ Appendix 1 (proper script for pattern generator viewing exercise)
    // Pipe Configuration
    0x04,0x84,0x00,0x5B,0x00, // CFGV__VIDEO_Z : TX3 | TX_STR_SEL (TX_STR_SEL Pipe Z): 0x0
    //
-   // INSTRUCTIONS FOR DESERIALIZER MAX96724
-   //
+   *INSTRUCTIONS FOR DESERIALIZER MAX96724*
    // Video Pipes And Routing Configuration
    0x04,0x4E,0x00,0xF0,0x60, // VIDEO_PIPE_SEL : VIDEO_PIPE_SEL_0 | (Default) VIDEO_PIPE_SEL_0 (Pipe 0 GMSL2 PHY): A | VIDEO_PIPE_SEL_0 (Pipe 0 Input Pipe): X
    0x04,0x4E,0x00,0xF4,0x01, // VIDEO_PIPE_SEL : VIDEO_PIPE_EN | (Default) VIDEO_PIPE_EN (Video Pipe 0): Enabled | VIDEO_PIPE_EN (Video Pipe 1): Disabled | VIDEO_PIPE_EN (Video Pipe 2): Disabled | VIDEO_PIPE_EN (Video Pipe 3): Disabled | STREAM_SEL_ALL (Stream Select All): Disabled

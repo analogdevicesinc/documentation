@@ -97,7 +97,7 @@ In the Chop Sweep mode any of the four Mux channels can be used as the trigger i
 Building the Mux
 ----------------
 
-The wiring connections to the CD4053 are relatively simple and can be often built on the Solder-less breadboard along with the rest of the experiment circuitry. However, this might not always be a workable solution so a small `PCB adapter <:doc:`/wiki-migration/university/tools/adalm1000/accessory-boards-index`>`_ has been designed. Figure 8 is a rendering of the top of the PCB.
+The wiring connections to the CD4053 are relatively simple and can be often built on the Solder-less breadboard along with the rest of the experiment circuitry. However, this might not always be a workable solution so a small :doc:`PCB adapter </wiki-migration/university/tools/adalm1000/accessory-boards-index>` has been designed. Figure 8 is a rendering of the top of the PCB.
 
 .. container:: centeralign
 

@@ -295,4 +295,4 @@ IIO pointers
 -  `Ask a Question <https://ez.analog.com/>`_
 
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_vntewue24

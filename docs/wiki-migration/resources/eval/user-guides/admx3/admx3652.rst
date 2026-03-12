@@ -38,7 +38,7 @@ DC Accuracy Specifications
 
 .. container:: centeralign
 
-   //Table 1. DC Voltage ± (% of reading + % of range)\ :sup:`1` //
+   *Table 1. DC Voltage ± (% of reading + % of range)\ :sup:`1`*
 
 
 +-----------------+------------+-------------------------------------+------------------------------+--------------------------------------+

@@ -59,4 +59,4 @@ In order to use ADICUP3029 board with IAR, you will need to replicate the follow
 -  Push the Green-Button – “Download and debug” – Another popup for C-SPY configuration opens up, just press “OK”
 -  That’s it – You are ready to go.
 
-// End of Document //
+*End of Document*

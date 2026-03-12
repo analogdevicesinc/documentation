@@ -49,7 +49,7 @@ The AD74115H was tested using 3 use cases to exercise all terminal blocks.
 
      *
 
-.. image:: https://wiki.analog.com/_media/resources/technical-guides/IMG_20211012_142910.jpg
+.. image:: https://wiki.analog.com/_media/resources/technical-guides/img_20211012_142910.jpg
    :align: center
    :width: 600px
 

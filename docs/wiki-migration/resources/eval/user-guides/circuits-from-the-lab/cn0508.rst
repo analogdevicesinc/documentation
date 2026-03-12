@@ -29,7 +29,7 @@ Features
 Videos
 ------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>FEnbV_-a7qc
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>fenbv_-a7qc
    :alt: youtube>FEnbV\_-a7qc
 
 Documents Needed

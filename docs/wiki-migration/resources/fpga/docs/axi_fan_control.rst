@@ -98,7 +98,7 @@ The temperature is obtained from the PL SYSMONE4 primitive as a 16 bit raw value
 
 //Internal SYSMONE4 primitive: Temperature [C] = (ADC × 501.3743 / 2^bits) – 273.6777// `ug580 <https://www.xilinx.com/support/documentation/user_guides/ug580-ultrascale-sysmon.pdf>`_
 
-//Reading from temp_in: Temperature [C] = (ADC \*20 - 11195) / 41//
+*Reading from temp_in: Temperature [C] = (ADC \*20 - 11195) / 41*
 
 There are five configurations described in the hardware, each with a corresponding tacho period +/- 25% tolerance.
 
@@ -2933,5 +2933,5 @@ PWM Generator (axi_pwm_gen)
 .. |regmap_adc_custom| image:: https://wiki.analog.com/_media/page>/resources/fpga/docs/hdl/regmap_adc_custom
 
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

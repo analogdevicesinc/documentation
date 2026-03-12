@@ -38,7 +38,7 @@ To start the wizard in the Vivado, a project should be loaded with a 7 Series FP
 
 You can define a custom name for your component and leave it on default. The tools should recognize your transceiver type automatically, if not, you may have to double check if you have the right FPGA device selected for your project. You also need to select **Include Shared Logic in core** at the Shared Logic section in order to have both COMMON and CHANNEL instances in the generated code.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/7s_wizard_init.JPG
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/7s_wizard_init.jpg
    :alt: 7 Series FPGAs Transceiver Wizard
    :align: center
 
@@ -47,7 +47,7 @@ Line Rate and RefClk Selection
 
 First, you need to select JESD204 as targeted protocol and specify your line rate and reference clock. A valid reference clock depends on your line rate. Make sure that you're using a valid reference clock form the drop-down list. Also you should set the used PLLs for TX and RX. If your line rate is equal for both directions, you can use the same PLL. Be aware that each PLL's VCO has a different frequency range where the circuit can function correctly. If your targeted line rate is too high or too low, you may be restricted to use just one of the two PLLs. All other settings can be left on their default value in this tab.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/7s_wizard_linerate.JPG
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/7s_wizard_linerate.jpg
    :alt: Line Rate and RefClk Selection
    :align: center
 
@@ -56,7 +56,7 @@ Encoding and Clocking
 
 If you selected **JESD204** to be the used protocol, you don't have to change anything here. The JESD204B interface is using 8B/10B encoding/decoding, and the internal data width will be 40 bits. In all the reference designs the DRP frequency is connected to the system clock (100 MHz). In the **Synchronization and Clocking** section, both TX and RX should have an enabled buffer. The PLLREFCLK is used as the source for TXOUTCLK and RXOUTCLK.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/7s_wizard_encoding_clocking.JPG
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/7s_wizard_encoding_clocking.jpg
    :alt: Encoding and clocking
    :align: center
 
@@ -82,13 +82,13 @@ Ultrascale and Ultrascale+ FPGAs Transceiver Wizard
 
 The overall workflow with the Ultrascale FPGAs Transceiver Wizard is similar to the 7 Series one, it just has a different GUI. To open up the wizard in the **Project Manager** select **IP Catalog** and search after the keyword **wizard**, then select the **Ultrascale FPGAs Transceivers Wizard**. You can define a custom name for your component and leave it on default. The tools should recognize your transceiver type automatically, if not, you may have to double check if you have the right FPGA device selected for your project. To apply the general JESD204B setting, select the GTH-JESD204 preset. In the first tab, called **Basic** you can find all the necessary settings. Select the targeted line rate, PLL and reference clock. The tool will tell you what PLL and reference clock can be used with a specific line rate. Note that the current version of the util_adxcvr core does not support **QPLL Fractional-N option**.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/ultras_initial.JPG
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/ultras_initial.jpg
    :alt: Ultrascale FPGAs Transcevier Wizard Basic Tab
    :align: center
 
 To have both COMMON and CHANNEL instances inside the generated core, in the **Structural Options** tab the **Include transceiver COMMON in the Core** option must be selected.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/ultras_structural.JPG
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/ultras_structural.jpg
    :alt: Ultrascale FPGAs Transcevier Wizard Structural Options Tab
    :align: center
 

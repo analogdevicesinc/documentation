@@ -23,7 +23,7 @@ A2B Evaluation boards shall be connected in the following order
 -  Connect audio source (e.g., output from an iPod) to ‘Audio Line- in’ ports, shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/adsp-21569_ez-kit_as_a2b_main>`, AD2428WB1BZ boards.
 -  Connect separate audio sinks (e.g., active speakers) to ‘Audio Line-out’ ports, shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/adsp-21569_ez-kit_as_a2b_main>`, on ADZS-21569 EZ-KIT and AD2428WB1BZ boards.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/ADSP21569Ezkit_A2B.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/adsp21569ezkit_a2b.jpg
    :align: center
 
 .. container:: centeralign

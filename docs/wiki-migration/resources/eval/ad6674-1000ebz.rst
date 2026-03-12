@@ -258,7 +258,7 @@ Software Setup
 
 .. container:: centeralign
 
-   //Figure 8. Selecting the :adi:`AD6674` canvas //
+   *Figure 8. Selecting the :adi:`AD6674` canvas*
 
 
 -  At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in Figure 9.
@@ -1264,7 +1264,10 @@ DRVDD    TP410      1.25 V
 
 .. container:: centeralign
 
-   \ *Figure 80. Setting the correct clock frequency in VisualAnalog*\** VisualAnalog indicates that the “FIFO capture timed out” or "FIFO not ready for read back"**
+   \ *Figure 80. Setting the correct clock frequency in VisualAnalog*\
+
+
+\*\* VisualAnalog indicates that the “FIFO capture timed out” or "FIFO not ready for read back" \*\*
 
 -  Make sure all power and USB connections are secure.
 -  Ensure that JESD204B Configuration is within PLL Range and is on PLL Locked.

@@ -801,11 +801,11 @@ To build the SDK follow the instructions here :doc:`Building the SDK </wiki-migr
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc598-som-ezkit_overview-4.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/EZLITE_SC598_overview_SOM.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/ezlite_sc598_overview_som.jpg
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/EZLITE_SC598_overview_top.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/ezlite_sc598_overview_top.jpg
    :width: 400px
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-switches.jpg
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/EZLITE_dipswitches_off.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/ezlite_dipswitches_off.jpg
    :width: 400px

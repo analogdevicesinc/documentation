@@ -114,7 +114,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   |resources-eval-dpg-ad9146_dpg-lite_sdp-h1.png|//Figure 3a. DPG Lite session for SDP-H1//
+   |resources-eval-dpg-ad9146_dpg-lite_sdp-h1.png|*Figure 3a. DPG Lite session for SDP-H1*
 
 
 .. container:: centeralign

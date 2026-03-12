@@ -56,5 +56,5 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/navigation AD-FMCOMMS1-EBZ#quickstart
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/navigation_ad-fmcomms1-ebz#quickstart
    :alt: Quick Start Guides#.:\|Overview#reference_hdl|Reference HDL Design

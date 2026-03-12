@@ -241,19 +241,19 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/AD9139-DUAL-EBZ?&v=RevB>`_ to receive all these great benefits and more!
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/AD9139_M5375_bench_setup.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/ad9139_m5375_bench_setup.png
    :width: 473px
    :height: 324px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/AD9139_M5375_ebz_eval_top.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/ad9139_m5375_ebz_eval_top.png
    :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/AD9139_M5375_bench_setup.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/ad9139_m5375_bench_setup.png
    :width: 473px
    :height: 324px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/AD9139_M5375_ebz_eval_top.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/ad9139_m5375_ebz_eval_top.png
    :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/screen_of_AD9139_DUAL_SPI_software.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/screen_of_ad9139_dual_spi_software.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/screen_of_AD9139_DUAL_SPI_AD9516_settings.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/screen_of_ad9139_dual_spi_ad9516_settings.png
    :width: 600px
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139/ad9139_dual_dpg_downloader_entry_screen.png
    :width: 650px

@@ -260,6 +260,6 @@ Reference Demos & Software
 -  `ADXRS290 No-OS Build Instruction Guide <https://github.com/analogdevicesinc/no-OS/wiki>`_
 -  :git-no-OS:`ADXRS290 No-OS Drivers <projects/adxrs290-pmdz>`
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxrs290_pmdz_project_struct.png

@@ -27,5 +27,5 @@ Descriptions of the individual Linux device drivers for the different parts on t
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/software/fmcomms1_linux_dd.png
    :align: center
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS1-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms1-ebz#none#./
    :alt: Software#baremetal|No-OS drivers

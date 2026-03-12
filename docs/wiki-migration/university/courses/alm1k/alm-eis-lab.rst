@@ -188,7 +188,7 @@ Copy the script into a text file and run the script by clicking on Run Script un
 
 **For further reading:**
 
-`Rechargeable Battery <http://en.wikipedia.org/wiki/Rechargeable_battery>`_ `Battery Specifications <http://web.mit.edu/evt/summary_battery_specifications.pdf>`_ `Considerations In Designing Single Supply, Low-Power Systems Part II: Battery Powered Systems <http://www.analog.com/en/analog-dialogue/articles/designing-single-supply-low-power-battery.html>`_ `CN0510 User Guide <:doc:`/wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0510`>`_ :adi:`CN0510 Reference Design <media/en/reference-design-documentation/reference-designs/CN0510.pdf>`
+`Rechargeable Battery <http://en.wikipedia.org/wiki/Rechargeable_battery>`_ `Battery Specifications <http://web.mit.edu/evt/summary_battery_specifications.pdf>`_ `Considerations In Designing Single Supply, Low-Power Systems Part II: Battery Powered Systems <http://www.analog.com/en/analog-dialogue/articles/designing-single-supply-low-power-battery.html>`_ :doc:`CN0510 User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0510>` :adi:`CN0510 Reference Design <media/en/reference-design-documentation/reference-designs/CN0510.pdf>`
 
 **Return to ALM Lab Activity Table of Contents**
 

@@ -18,5 +18,5 @@ The frameworks have a very light processing footprint, usually on the order of a
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#processing-audio
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#processing-audio
    :alt: Processing Audio within the Framework#.|Bare Metal Framework#using-shared-memory-structure|Sharing Data Between Cores

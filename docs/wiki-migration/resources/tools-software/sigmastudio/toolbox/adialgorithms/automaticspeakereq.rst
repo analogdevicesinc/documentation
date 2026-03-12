@@ -56,7 +56,7 @@ Algorithm Description
 
 The Automatic Speaker EQ is located in the ADI Algorithms section of the SigmaStudio Toolbox. Once included in the project, it is necessary to choose the proper algorithm for the current design. The Automatic Speaker EQ supports up to three-way speaker designs.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq2.png
    :alt: AutoEQ2.png
    :align: center
 
@@ -65,7 +65,7 @@ Source Tab
 
 When first opening the control, the source tab will be visible. This is where the response(s) of the desired speakers are loaded. Compatible formats include Impulse Responses with one measurement per line and Frequency responses in the :doc:`MLSSA file format </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/speakerresponsemlssa>`.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ3.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq3.png
    :alt: AutoEQ3.png
    :align: center
 
@@ -89,7 +89,7 @@ Target Response Tab
 
 The next tab provides tools to allow the user to design the desired target response for each transducer.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ4.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq4.png
    :alt: AutoEQ4.png
    :align: center
 
@@ -115,7 +115,7 @@ Design Settings Tab
 
 This tab provides controls to customize the operation of the Automatic Speaker EQ algorithm.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ5.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq5.png
    :alt: AutoEQ5.png
    :align: center
 
@@ -137,7 +137,7 @@ Filter Tabs
 
 After running the Automatic Speaker EQ algorithm, the Filters tab is automatically displayed. The Filters tab shows the results of the algorithm and allows the user to change the values of the filters as desired. The control is the same as the Parametric EQ included in Sigma Studio.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ6.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq6.png
    :alt: AutoEQ6.png
    :align: center
 
@@ -165,7 +165,7 @@ Crossover Tab
 
 The crossover tab is the same as the crossover control included in Sigma Studio. The initial crossover points are set at the cutoff frequencies defined on the Target Tab. The user is then free to edit them as needed.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ7.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq7.png
    :alt: AutoEQ7.png
    :align: center
 
@@ -185,7 +185,7 @@ Crossover Tab Alignment
 
 Because the Automatic Speaker EQ uses IIR filters, the phase of the signal is affected. This creates a need to align the crossover filters to prevent unwanted cancellation due to phase irregularities. The alignment tab will help fix any phase-related cancellation and allow the user to fine-tune the system.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ8.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq8.png
    :alt: AutoEQ8.png
    :align: center
 
@@ -203,7 +203,7 @@ Filter Initialization/ Target From Filters
 
 The dialogs for defining a target from filters and for initializing filters are the same.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ9.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq9.png
    :alt: AutoEQ9.png
    :align: center
 
@@ -223,7 +223,7 @@ Advanced Settings
 
 The advanced settings are located on the Design Settings tab. They are hidden by default, but pushing the “Show Advanced Settings” button will make them appear.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ10.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq10.png
    :alt: AutoEQ10.png
    :align: center
 
@@ -251,4 +251,4 @@ Menu Bar
 
 The menu on the Automatic Speaker EQ has some advanced functions associated with it. Under File, there are controls to load/save configurations. The Design menu has functions to import/export the target of the currently viewed tab, as well as to initiate the design process or reset the control.
 
-.. |AutoEQ1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ1.png
+.. |AutoEQ1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq1.png

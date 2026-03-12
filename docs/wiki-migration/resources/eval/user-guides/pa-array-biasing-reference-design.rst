@@ -11,7 +11,7 @@ The optimal performance of RF power amplifiers depends on precise biasing contro
    :align: center
    :width: 600px
 
-//Figure 1. System Architecture //
+*Figure 1. System Architecture*
 
 The conventional approach of powering up and powering down of GaN amplifiers involves using multiple bench power supplies and manually turning them on and off based on the specific amplifier requirements. However, this method carries a high risk of damaging the amplifier due to potential human errors and is neither time-efficient nor cost-effective.
 
@@ -63,7 +63,7 @@ Power Supply Connectors
 LED Indicators
 ^^^^^^^^^^^^^^
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/LED.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/led.jpg
    :alt: LED.jpg
    :align: right
    :width: 200px
@@ -252,7 +252,7 @@ Hardware Setup
    :align: left
    :width: 700px
 
-//Figure 5. Setting up the hardware //
+*Figure 5. Setting up the hardware*
 
 -  First, connect the 10-pin SWD debug cable to port P6 of the PA Array Board.
 -  Next is to connect the other end of the SWD debug cable to the MAX32625 Pico.
@@ -260,7 +260,7 @@ Hardware Setup
 -  Then, connect the other micro-USB to USB cable to port P5. This connection allows the USB-UART communication that enables the user to access the Graphical User Interface (GUI).
 -  From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
 
-|image1| //Figure 6. DAPLINK Drive //
+|image1| *Figure 6. DAPLINK Drive*
 
 -  Connect the positive terminal of the +48V Power Supply to port P2.1.
 -  Then, connect the negative terminal to port P2.2. Do not turn-on the power supply yet.
@@ -285,7 +285,7 @@ Software Setup
    :align: center
    :width: 600px
 
-//Figure 8. Monitor and Control Panel //
+*Figure 8. Monitor and Control Panel*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des1.png
    :alt: gui_des1.png
@@ -299,21 +299,21 @@ Software Setup
    :align: center
    :width: 600px
 
-//Figure 10. GUI Historical Graph //
+*Figure 10. GUI Historical Graph*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des3.png
    :alt: gui_des3.png
    :align: center
    :width: 600px
 
-//Figure 11. GUI Device Group //
+*Figure 11. GUI Device Group*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des4.png
    :alt: gui_des4.png
    :align: center
    :width: 600px
 
-//Figure 12. GUI Control Group //
+*Figure 12. GUI Control Group*
 
 Basic Operation
 ^^^^^^^^^^^^^^^
@@ -392,7 +392,7 @@ Basic Operation
 -  We are done capturing the voltage transition from power-up and power-down. Now, we will capture the time it takes from when the fault is detected until the DAC outputs the gate pinch-off voltage.
 -  We have already gathered data from the fault protection circuit, LTC7000. When it detects a fault event, it sends a signal from LTC7000 to the MCU in approximately 1 microsecond. This value will then be added to the system power-down measurement and the time it takes for the MCU to process the fault flag up to the DAC command.
 
-|image17| //Figure 19. LTC7000 -> MCU GPIO Fault Flag Time //
+|image17| *Figure 19. LTC7000 -> MCU GPIO Fault Flag Time*
 
 -  Follow the below steps:
 -  Place the positive terminal of the oscilloscope probe into the provided wire as shown in the image below. Then connect the negative terminal of the oscilloscope probe to the GND of the board.
@@ -415,7 +415,7 @@ Basic Operation
 
 -  Also, the GUI is capable of logging and displaying the fault event time and on which device it occurs.
 
-|image21| //Figure 21. Fault Logging //
+|image21| *Figure 21. Fault Logging*
 
 -  The overall time from LTC7000 fault detection up to the DAC pinch-off voltage is shown on the Fault Event Time Summary below.
 

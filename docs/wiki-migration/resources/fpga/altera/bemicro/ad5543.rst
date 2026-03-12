@@ -16,7 +16,7 @@ Overview
 
 This lab presents the steps to setup an environment for using the :adi:`EVAL-AD5543SDZ` evaluation board together with the `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_ USB stick, the Nios II Embedded Development Suite (EDS) and the `Micrium μC-Probe <http://micrium.com/tools/ucprobe/overview/>`_ run-time monitoring tool. Below is presented a picture of the EVAL-AD5543SDZ Evaluation Board with the BeMicro SDK Platform.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/AD5543_bemicro.png
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5543_bemicro.png
    :alt: AD5543_bemicro.png
    :align: center
    :width: 400px
@@ -29,7 +29,7 @@ This lab presents the steps to setup an environment for using the :adi:`EVAL-AD5
 
 Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5543SDZ** Evaluation Board.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/AD5543_blackfin.png
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5543_blackfin.png
    :alt: AD5543_blackfin.png
    :align: center
    :width: 400px

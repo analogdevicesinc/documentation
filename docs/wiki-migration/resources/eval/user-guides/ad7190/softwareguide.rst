@@ -28,43 +28,43 @@ Installing ACE
 -  A dialog box opens asking for permission to allow the program to make changes to the PC. Click Yes to begin the installation process.
 -  In the ACE Setup window, click Next > to continue the installation.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/softwareprocedures/4170_ace_plugin_page_1.png
    :align: center
    :width: 400px
 
 -  Read the software license agreement and click I Agree
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_2.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/softwareprocedures/4170_ace_plugin_page_2.png
    :align: center
    :width: 400px
 
 -  Click Browse … to choose the installation location and then click Next >
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_3.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/softwareprocedures/4170_ace_plugin_page_3.png
    :align: center
    :width: 400px
 
 -  The ACE software components to install are preselected. Click Install.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_4.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/softwareprocedures/4170_ace_plugin_page_4.png
    :align: center
    :width: 400px
 
 -  The Windows Security window opens . Click Install
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_5.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/softwareprocedures/4170_ace_plugin_page_5.png
    :align: center
    :width: 400px
 
 -  The installation in progress in the window below. No action is required.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_6.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/softwareprocedures/4170_ace_plugin_page_6.png
    :align: center
    :width: 400px
 
 -   When the installation is complete, click Next >, and then click Finish to complete the installation process
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_7.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/softwareprocedures/4170_ace_plugin_page_7.png
    :align: center
    :width: 400px
 
@@ -77,7 +77,7 @@ After the AD7190 Plugin is downloaded follow the steps to install the file: - Do
 -  Click on the Plug-in Manager Tab in the top left panel in Ace.
 -  Click on the Settings… button.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_install_page_1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/softwareprocedures/4170_ace_plugin_install_page_1.png
    :align: center
    :width: 400px
 

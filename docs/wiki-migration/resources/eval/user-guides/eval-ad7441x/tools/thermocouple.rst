@@ -85,5 +85,5 @@ To detect an open-wire on a connected thermocouple, the I/OP terminal can be con
 
 :doc:`Back to AD74412R/AD74413R Table of Contents </wiki-migration/resources/eval/user-guides/ad7441x>`
 
-.. |Thermocouple config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/Thermocouple config.png
-.. |thermocouple sch snapshot.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/thermocouple sch snapshot.png
+.. |Thermocouple config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/thermocouple_config.png
+.. |thermocouple sch snapshot.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/thermocouple_sch_snapshot.png

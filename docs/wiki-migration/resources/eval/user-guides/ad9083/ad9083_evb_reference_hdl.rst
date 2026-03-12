@@ -55,7 +55,7 @@ The data path and clock domains are depicted on the below diagram:
 Xilinx
 ^^^^^^
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/AD9083_evb_2.svg
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/ad9083_evb_2.svg
    :width: 800px
 
 The design has one JESD receive chain with 4 lanes at rate of 10Gbps. The JESD receive chain consists of a physical layer represented by an XCVR module, a link layer represented by an RX JESD LINK module and transport layer represented by a RX JESD TPL module. The links operate in Subclass 0 since it is not using the SYSREF signal.

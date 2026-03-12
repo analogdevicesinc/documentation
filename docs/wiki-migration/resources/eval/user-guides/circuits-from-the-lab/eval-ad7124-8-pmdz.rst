@@ -192,4 +192,4 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD7124-8-PMDZ?&v=RevB>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*

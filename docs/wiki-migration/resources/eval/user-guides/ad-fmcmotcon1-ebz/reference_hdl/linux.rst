@@ -65,5 +65,5 @@ Support
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#none#../
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon1-ebz#none#../
    :alt: Overview#ise|Xilinx ISE HDL Reference Design

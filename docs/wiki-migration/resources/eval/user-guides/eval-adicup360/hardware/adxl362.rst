@@ -19,7 +19,7 @@ The :adi:`EVAL-ADXL362-ARDZ` Shield is designed in Arduino Uno R3 format which m
 Getting Started Video
 ---------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/analogTV>4807248650001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/analogtv>4807248650001
    :alt: analogTV>4807248650001
 
 Connectors and Jumper configuration
@@ -101,7 +101,7 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-ADXL362-ARDZ?&v=RevD>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/horizontal_jumper_12.png
    :width: 125px

@@ -19,7 +19,8 @@ Please find the steps to export the schematic source files to use with micro con
 -  Open Windows Command Prompt and change the working directory to this folder.
 -  Run the utility as below:
 
-ExportCodeParam.exe <SWC/NWC> <ExportName> <SchematicName> <ProcessorFamily> example: //ExportCodeParam.exe "SWC" "Example" "DiffDXESchematic_1" “SC5xx” *or*ExportCodeParam.exe "SWC" "Example" "DiffDXESchematic_1" “215xx”*
+ExportCodeParam.exe <SWC/NWC> <ExportName> <SchematicName> <ProcessorFamily> example: *ExportCodeParam.exe "SWC" "Example" "DiffDXESchematic_1" “SC5xx” *or*\ ExportCodeParam.exe "SWC" "Example" "DiffDXESchematic_1" “215xx”*
+
 This generates C source file and header file in the same folder. This utility must be run multiple times corresponding to the number of schematics within the core. Use the generated schematic source files to micro controller mode application and rebuild the application.
 
 .. note::

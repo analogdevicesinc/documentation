@@ -63,7 +63,7 @@ When the EV-COG-AD3029LZ emulator is connected to the MK20DX128VFM5 (by holding 
 
 -  Unplug the micro USB cable from the USB port of the EV-COG-AD3029LZ, and then reconnect the USB cable to the USB port to “reboot” the board.
 
-// End of Document //
+*End of Document*
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 

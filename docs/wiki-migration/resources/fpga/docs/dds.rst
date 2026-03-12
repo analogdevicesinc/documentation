@@ -2989,10 +2989,10 @@ For scenarios where the synchronization signal comes from an external source and
 
 There is a minimum synchronization pulse width(delay) of n clock cycles, that is required to synchronize all phase accumulator stages, where n is equal to the CLK_RATIO.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/FW_sync_basics.svg
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/fw_sync_basics.svg
    :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/FW_sync_timing.png
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/fw_sync_timing.png
    :align: center
 
 In the above diagram example:
@@ -3012,5 +3012,5 @@ Performance analysis
 
 To be done.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

@@ -34,7 +34,7 @@ Video Guide
 Unboxing and Theory of Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>hDyE5g4w8x0
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>hdye5g4w8x0
    :alt: youtube>hDyE5g4w8x0
 
 Device Driver Support and Software Demo
@@ -243,7 +243,7 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0536-ARDZ?&v=Rev D>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/eval-cn0536-ardz_iso.png
    :width: 500px

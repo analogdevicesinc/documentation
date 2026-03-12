@@ -29,5 +29,5 @@ Files included in the AD9154 Update:
 | PCB Layout PDF    | `RevD <https://wiki.analog.com/_media/resources/eval/dpg/ad9154-ebz_revd_layout.pdf>`_                          | `RevA <https://wiki.analog.com/_media/resources/eval/dpg/ad9154-adrf6720-ebz_reva_layout.pdf>`_                          | `RevA <https://wiki.analog.com/_media/resources/eval/dpg/ad9154-fmc-ebz_reva_layout.pdf>`_                          |
 +-------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#Data Pattern Generator&nofooter&noindent
+.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#data_pattern_generator&nofooter&noindent
    :alt: dpg#Data Pattern Generator&nofooter&noindent

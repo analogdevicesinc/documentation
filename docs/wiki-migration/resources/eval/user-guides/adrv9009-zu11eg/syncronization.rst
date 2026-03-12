@@ -156,7 +156,7 @@ RefCLK and Sync connections to the carrier boards
    Only the following outputs work as SYNC in CMOS mode: CLKOUT0,3,5,6,9,10 and 13. The other outputs are 180deg out of phase in CMOS mode and should be used as differential REFCLOCK.
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009_zu11eg/HMC7044_2.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009_zu11eg/hmc7044_2.jpg
    :align: center
    :width: 800px
 
@@ -496,7 +496,7 @@ On the primary and secondary setup check the status of all clockchips in the top
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009_zu11eg/hmc7044_4.png
    :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009_zu11eg/HMC7044_1.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009_zu11eg/hmc7044_1.jpg
    :width: 800px
 .. |ADRV9009-ZU11EG Clock Tree| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/adrv9009_rfsom_clocking_tree.png
    :width: 400px

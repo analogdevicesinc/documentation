@@ -100,11 +100,11 @@ RX Performance Data
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/fr2_diagram_for_wiki.jpg
    :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/fr2_TX_Gain.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/fr2_tx_gain.jpg
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/fr2_TX_p1db.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/fr2_tx_p1db.jpg
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/fr2_RX_Gain.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/fr2_rx_gain.jpg
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/fr2_RX_NF.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/fr2_rx_nf.jpg
    :width: 500px

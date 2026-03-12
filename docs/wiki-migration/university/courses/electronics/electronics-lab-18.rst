@@ -42,7 +42,7 @@ In this first test only NMOS device M\ :sub:`1` is turned on and PMOS device M\ 
 Hardware Setup:
 ---------------
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18_nmos_bb.JPG
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18_nmos_bb.jpg
    :align: center
 
 .. container:: centeralign
@@ -88,7 +88,7 @@ Now modify your circuit to look like figure 2 by connecting the gates of both M\
 Hardware Setup:
 ---------------
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18_pmos_bb.JPG
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18_pmos_bb.jpg
    :align: center
 
 .. container:: centeralign
@@ -134,7 +134,7 @@ Now modify your circuit to look like figure 3 by connecting the gate of M\ :sub:
 Hardware Setup:
 ---------------
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18_cmos_bb.JPG
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18_cmos_bb.jpg
    :align: center
 
 .. container:: centeralign

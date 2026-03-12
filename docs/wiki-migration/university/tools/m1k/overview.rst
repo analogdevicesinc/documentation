@@ -1,7 +1,7 @@
 ADALM1000 and PixelPulse Application Software Overview
 ======================================================
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/analogTV>4865877204001
+.. image:: https://wiki.analog.com/_media/university/tools/m1k/analogtv>4865877204001
    :alt: analogTV>4865877204001
    :align: right
 

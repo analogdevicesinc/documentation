@@ -3316,5 +3316,5 @@ Glossary
 | partial transfer | Represents a transfer which is shorter than the programmed length that is based on the X_LENGTH and Y_LENGTH registers. This can occur on AXIS source interfaces when TLAST asserts earlier than the programmed length. |
 +------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

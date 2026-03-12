@@ -422,8 +422,8 @@ Registration
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_connecthw_4.png
    :width: 600px
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_establishing_connection_3a.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/CN0349_Cal_Procedure_steps 5.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/CN0349_Cal_Procedure_steps 5a.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_cal_procedure_steps_5.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_cal_procedure_steps_5a.png
 
 .. |resources-eval-user-guides-circuits-from-the-lab-cn0349-cn0349_using_sw_12busy.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_12busy.png
 .. |resources-eval-user-guides-circuits-from-the-lab-cn0349-cn0349_using_sw_12error.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_12error.png

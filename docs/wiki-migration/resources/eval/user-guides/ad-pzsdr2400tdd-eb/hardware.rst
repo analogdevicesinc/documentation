@@ -53,7 +53,7 @@ The AD-PZSDR2400TDD-EB is a 4 layer board.
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/layer_stackup_2.png
    :width: 600px
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-eb/navigation AD-PZSDR2400TDD-EB
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-eb/navigation_ad-pzsdr2400tdd-eb
    :alt: #none#|User Guide#reference_hdl|Reference HDL Design
 
 .. |top_copper_top_overlay.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/top_copper_top_overlay.png

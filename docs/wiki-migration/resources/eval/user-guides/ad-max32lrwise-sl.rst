@@ -280,9 +280,9 @@ Equipment Needed
 Resources
 =========
 
--  `MAX32670-LR-ARDZ Base Board User Guide <:doc:`/wiki-migration/resources/eval/user-guides/max32670-lr-ardz`>`_
+-  :doc:`MAX32670-LR-ARDZ Base Board User Guide </wiki-migration/resources/eval/user-guides/max32670-lr-ardz>`
 
--  `EV-CATTLETAG-ARDZ Sensor for Livestock Tracking and Health Monitoring User Guide <:doc:`/wiki-migration/resources/eval/user-guides/ev-cattletag-ardz`>`_
+-  :doc:`EV-CATTLETAG-ARDZ Sensor for Livestock Tracking and Health Monitoring User Guide </wiki-migration/resources/eval/user-guides/ev-cattletag-ardz>`
 
 FAQs
 ====

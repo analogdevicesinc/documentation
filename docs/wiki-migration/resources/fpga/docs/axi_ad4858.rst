@@ -8573,7 +8573,7 @@ References
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
 -  :git-linux:`ADI Linux repository <linux>`
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#resources/fpga/docs/ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#resources/fpga/docs/ip_cores
    :alt: IP cores#resources/fpga/docs/hdl|Main page#resources/fpga/docs/tips|Using and modifying the HDL design
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/ad4858/all_lanes_active.png

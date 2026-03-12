@@ -6,7 +6,7 @@ Video Tutorial
 
 View this quick video tutorial to learn how to create new pages on the Analog Devices Wiki.
 
-.. image:: https://wiki.analog.com/_media/wiki/help/getting-started/analogTV>1052210036001
+.. image:: https://wiki.analog.com/_media/wiki/help/getting-started/analogtv>1052210036001
    :alt: analogTV>1052210036001
    :width: 640px
    :height: 530px

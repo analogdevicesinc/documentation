@@ -48,7 +48,7 @@ Schematic:
 Evaluation Board
 ----------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ADUM141E1S_eval_board.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/adum141e1s_eval_board.jpg
    :align: center
    :width: 600px
 
@@ -60,7 +60,7 @@ Evaluation Board
 Evaluation Board Schematic
 --------------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ADUM141E1S_eval_board_schematic.png
+.. image:: https://wiki.analog.com/_media/resources/eval/adum141e1s_eval_board_schematic.png
    :align: center
    :width: 1600px
 
@@ -94,7 +94,7 @@ Example Test Procedure
 -  Install the 15 pF load capacitors (C8, C9, C10, and C11).
 -  Connect the evaluation board to the test equipment. See Figure 2 below. Note: Make sure the pulse generator and power supply outputs are disabled.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ADUM141E1S_eval_board_connections.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/adum141e1s_eval_board_connections.jpg
    :align: center
    :width: 1600px
 

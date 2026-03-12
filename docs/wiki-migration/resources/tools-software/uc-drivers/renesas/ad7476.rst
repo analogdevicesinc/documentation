@@ -271,7 +271,7 @@ A PmodAD1 has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62
      PmodAD1 Pin 5 (GND)  → YRDKRX62N J8 connector Pin 4
      PmodAD1 Pin 6 (VCC)  → YRDKRX62N J8 connector Pin 3
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/AD7476_RX62N.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7476_rx62n.jpg
    :align: center
 
 Reference Project Overview
@@ -279,7 +279,7 @@ Reference Project Overview
 
 The reference project samples the input voltage and displays the value on the LCD.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/AD7476_RX62N_screen.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7476_rx62n_screen.jpg
    :align: center
 
 Software Project Setup

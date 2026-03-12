@@ -731,6 +731,6 @@ By observing the **start** and **end** addresses of the Code and Data sections f
    :width: 1080px
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/sectionmapparam.png
    :width: 1080px
-.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/Systemsvc.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/SHARC Core1 app.ldf file.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/systemsvc.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/sharc_core1_app.ldf_file.png
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/5.png

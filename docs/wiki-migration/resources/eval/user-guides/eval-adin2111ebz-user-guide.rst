@@ -21,7 +21,7 @@ User Guide for EVAL-ADIN2111EBZ
 
    .. container:: centeralign
 
-      //Figure 1. //
+      *Figure 1.*
 
    
    **Features**
@@ -337,7 +337,7 @@ The EVAL-ADIN2111EBZ microcontroller communicates over a standard UART interface
 
 The protocol is based on ASCII text commands and messages. Each message sent from the firmware to the host is finished by both <CR> and <LF> characters. For the commands received from host the firmware expects <CR>, <LF> or <CR> + <LF>.
 
-(//For information: <CR> .. “carriage return”, ASCII code 0x0D, <LF> .. “line feed”, ASCII code 0x0A //)
+(*For information: <CR> .. “carriage return”, ASCII code 0x0D, <LF> .. “line feed”, ASCII code 0x0A*)
 
 Terminal Commands and Messages
 ------------------------------

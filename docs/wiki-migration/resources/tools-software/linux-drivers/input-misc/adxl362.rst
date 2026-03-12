@@ -24,7 +24,7 @@ ADXL362: Micropower 3-Axis MEMS Accelerometer: Digital Output, ±2/±4/±8 g Ran
 
 -  :adi:`Product Page <ADXL362>`
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-misc/scrape>adi>ADXL362#additional-details__paragraph
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-misc/scrape>adi>adxl362#additional-details__paragraph
    :alt: scrape>adi>ADXL362#additional-details\__paragraph
 
 Source Code

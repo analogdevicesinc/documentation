@@ -111,7 +111,7 @@ There are many other publishers/authors who have some excellent books on Linux a
 
 -  `Bruce Perens <http://perens.com/>`_ also has quite a `good series <http://www.informit.com/promotions/promotion.aspx?promo=135563&redir=1>`_ on Linux topics. The one I use is
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>013147751X
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>013147751x
    :alt: amazon>013147751X
 
 -  `Linkers and Loader <http://linker.iecc.com/>`_ is good for people interested in low level ELF/ldso details. It's available for free, or you can buy it via Amazon.

@@ -10,7 +10,7 @@ The reference design is a processor based embedded system. The sources are split
 AD-FMCDAQ2-EBZ block diagram
 ----------------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/AD-FMCDAQ2-EBZ_1.svg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/ad-fmcdaq2-ebz_1.svg
    :alt: Xilinx HDL Block Diagram
    :width: 600px
 

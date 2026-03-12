@@ -248,7 +248,10 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
 .. container:: centeralign
 
-   \ *Figure 7. SPI Controller, New DUT Button*-  Note that other settings can be changed on the **ADCBase 0 tab** (see Figure 8) and the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs (see Figure 9) to set up the part in the desired mode. The **ADCBase 0** tab settings affect the entire part, whereas the settings on the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs affect the selected channel only. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+   \ *Figure 7. SPI Controller, New DUT Button*\
+
+
+-  Note that other settings can be changed on the **ADCBase 0 tab** (see Figure 8) and the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs (see Figure 9) to set up the part in the desired mode. The **ADCBase 0** tab settings affect the entire part, whereas the settings on the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs affect the selected channel only. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9259_spicon_adcbase0_tab.jpg
    :align: center
@@ -290,7 +293,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   //Figure 11. Graph Window of VisualAnalog //
+   *Figure 11. Graph Window of VisualAnalog*
 
 
 -  Repeat this procedure for Channel B, Channel C, and Channel D.
@@ -302,7 +305,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   //Figure 12. Typical FFT, :adi:`AD9259` //
+   *Figure 12. Typical FFT, :adi:`AD9259`*
 
 
 Troubleshooting Tips

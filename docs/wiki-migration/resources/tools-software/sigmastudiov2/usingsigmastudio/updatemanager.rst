@@ -9,5 +9,5 @@ Update Manager displays all the updates available for the current version of Sig
 
 Click on the ‘\ **Install**’ button to install the selected update. When the Install button is clicked, a popup will appear asking the user permission to close SigmaStudio+ automatically. When ‘**Yes**’ is selected by the user, all open instances of SigmaStudio+ will be closed and the update operation will start. On the other hand, the update operation will not be performed if ‘**No**\ ’ is selected. The update Manager will relaunch SigmaStudio+ after completing the update process.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/UpdateManager.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/updatemanager.png
    :align: center

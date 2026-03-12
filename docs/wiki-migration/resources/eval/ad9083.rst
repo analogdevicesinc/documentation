@@ -4,10 +4,10 @@ Quick Start Guide for Evaluating the AD9083 ADC Evaluation Board Using the ADS8-
 Typical Setup
 -------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ad9083/AD9083EBZ-ADS8-V3EBZTOP-ethernet.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9083/ad9083ebz-ads8-v3ebztop-ethernet.jpg
    :width: 650px
 
-//Figure 1. AD9083EBZ Evaluation Board and ADS8-V3EBZ Data Capture Board //
+*Figure 1. AD9083EBZ Evaluation Board and ADS8-V3EBZ Data Capture Board*
 
 Equipment Needed
 ----------------
@@ -60,9 +60,7 @@ To ensure proper connection between the microSD card and the MicroZed™ board, 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/sd-card-location.jpg
    :width: 400px
 
-//Figure 2. MicroSD Card Slot in MicroZed Board //
-
-**Configure the Network Interface to the MicroZed™ Board**
+*Figure 2. MicroSD Card Slot in MicroZed Board **Configure the Network Interface to the MicroZed™ Board**
 
 To configure the network interface to the MicroZed™ board, follow these steps:
 
@@ -130,9 +128,7 @@ To start using the AD9083EBZ, first ensure the board is connected as shown in Fi
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/attached-hardware.png
    :width: 600px
 
-//Figure 4. AD9083EBZ Evaluation Board and ADS8-V3EBZ Data Capture Board //
-
-**Board View**
+*Figure 4. AD9083EBZ Evaluation Board and ADS8-V3EBZ Data Capture Board **Board View**
 
 Double clicking the board icon in the Attached Hardware section in ACE opens the AD9083EBZ board view.
 
@@ -185,9 +181,7 @@ You should see an FFT after setting up the board as shown and running the macro.
 
 |Figure 6. AD9083EBZ Wide Bandwidth Real Output Mode Typical FFT|
 
-//Figure 7. AD9083EBZ Wide Bandwidth Real Output Mode Typical FFT //
-
-**Narrow Bandwidth Complex Output Mode**
+*Figure 7. AD9083EBZ Wide Bandwidth Real Output Mode Typical FFT **Narrow Bandwidth Complex Output Mode**
 
 This configuration is suitable for applications such as phased-array radar. The output bandwidth is ± 12.7187 MHz. This example uses an Analog input frequency of 70.5MHz and the NCO frequency is 70.3125 MHz. Using the AD9083EBZ Startup Wizard, configure the AD9083 using the parameters below.
 
@@ -219,9 +213,7 @@ You should see an FFT after setting up the board as shown and running the macro.
 
 |Figure 6. AD9083EBZ Narrow Bandwidth Complex Output Mode Typical FFT|
 
-//Figure 8. AD9083EBZ Narrow Bandwidth Complex Output Mode Typical FFT //
-
-**Precision Time Domain Mode**
+*Figure 8. AD9083EBZ Narrow Bandwidth Complex Output Mode Typical FFT **Precision Time Domain Mode**
 
 Parameters:
 
@@ -259,7 +251,7 @@ You should see an FFT after setting up the board as shown and running the macro.
 
 |image1|
 
-//Figure 9. AD9083EBZ Precision Time Domain Mode Typical FFT //
+*Figure 9. AD9083EBZ Precision Time Domain Mode Typical FFT*
 
 External Trigger
 ----------------
@@ -329,11 +321,11 @@ V1P8V  TP14       1.8V
      *Restart the evaluation board setup (power cycle FPGA, start a new session in ACE) by following the instructions from the start
      *Make sure P3 (Power Down / Standby Jumper) is not jumped.
 
-.. |Figure 6. AD9083EBZ Wide Bandwidth Real Output Mode Typical FFT| image:: https://wiki.analog.com/_media/resources/eval/ad9083/wide_BW_mode.PNG
+.. |Figure 6. AD9083EBZ Wide Bandwidth Real Output Mode Typical FFT| image:: https://wiki.analog.com/_media/resources/eval/ad9083/wide_bw_mode.png
    :width: 600px
-.. |Figure 6. AD9083EBZ Narrow Bandwidth Complex Output Mode Typical FFT| image:: https://wiki.analog.com/_media/resources/eval/ad9083/narrow_BW_mode.PNG
+.. |Figure 6. AD9083EBZ Narrow Bandwidth Complex Output Mode Typical FFT| image:: https://wiki.analog.com/_media/resources/eval/ad9083/narrow_bw_mode.png
    :width: 600px
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9083/ad9083_PTD.PNG
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9083/ad9083_ptd.png
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9083/navigate_to_fpga_spi.png
    :width: 396px

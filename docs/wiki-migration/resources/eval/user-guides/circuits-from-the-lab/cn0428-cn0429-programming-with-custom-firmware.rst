@@ -124,7 +124,7 @@ Option 2: IAR programming/debugging (allows debugging)
    **Caution: CN0428 and CN0429 use a different linker file**
      * For CN0428 (water quality) choose 'ADuCM355.icf' (shown in the image)
      * For CN0429 (gas sensing), choose the custom linker file, which is distributed together with the M355 software. By default, it is located at: 'C:\Analog Devices\ADuCM355V2.1.0.54\examples\M355_CN0429\iar\ADuCM355_64kSRAM.icf'    (or current version number)
-       * //Note: This custom linker file enables use of 64k of SRAM for diagnostics (pulse test)//
+       * *Note: This custom linker file enables use of 64k of SRAM for diagnostics (pulse test)*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/iar_settings_mbed_m355_cup3029_linker.png
    :align: center

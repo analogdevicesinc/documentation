@@ -1,7 +1,7 @@
 Introduction to Diodes and LEDs
 ===============================
 
-.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>5094391273001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogtv>5094391273001
    :alt: analogTV>5094391273001
    :align: right
 

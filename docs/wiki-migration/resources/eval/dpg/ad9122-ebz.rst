@@ -136,7 +136,10 @@ To implement external supply configuration, remove the header shunt of six pin j
 
 .. container:: centeralign
 
-   \ *Figure 4. AD9122-M5375-EBZ Pin Jumpers**Table 2. Jumper Configurations for External Power Supply*\ 
+   \ *Figure 4. AD9122-M5375-EBZ Pin Jumpers*\
+
+
+\ *Table 2. Jumper Configurations for External Power Supply*\ 
 
 =========== ==================== =====================
 Supply Rail Remove Jx Pin Jumper Apply External Supply

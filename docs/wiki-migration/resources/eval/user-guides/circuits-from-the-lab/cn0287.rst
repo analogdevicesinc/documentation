@@ -10,7 +10,7 @@ The RTD excitation current are is programmable for optimum noise and linearity p
 
 Input transient and overvoltage protection are provided by low leakage transient voltage supressors (TVS) and Schottky diodes. The SPI-compatible digital inputs and outputs are isolated (2500 V rms), and the circuit is operated on a fully isolated power supply.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/cn0287_00_1024_81_.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/cn0287_00_1024_81_.png
    :alt: cn0287_00_1024_81\_.png
    :width: 600px
 
@@ -109,7 +109,7 @@ Connecting the Hardware
 - **Step 1**. Connect the :adi:`EVAL-CN0287-SDPZ <CN0287>`(CN0287 Board) to :adi:`EVAL-SDP-CB1Z <en/system-demonstration-platform/evaluation/index.html>`(SDP Board) through the 120-pin SMD connector.
 - **Step 2**. Do the jumper setting correctly based on the type of temperature sensor for evaluation.
 - **Step 3**. Plug the mini-USB side of the cable into the mini-USB connector J1 on :adi:`SDP Board <en/system-demonstration-platform/evaluation/index.html>` and leave the other side of the cable(USB Type A) floated.
-- **Step 4**. Connect the sensor correctly by the way shown in the figure "//Connector Configuration and Jumper Placements//".
+- **Step 4**. Connect the sensor correctly by the way shown in the figure "*Connector Configuration and Jumper Placements*".
 - **Step 5**. With DC power supply off, plug the :adi:`EVAL-CFTL-6V-PWRZ <CN0287>`(6V DC Power Supply)into J2 on :adi:`CN0287 Board <CN0287>`. (CN5 is also screw terminal for connecting to 6V power supply by ordinary wire.)
 - **Step 6**. Connect the USB-Type-A side of the USB cable to the PC.
 
@@ -404,21 +404,21 @@ Registration
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/hardware_connection_with_label.png
    :width: 700px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/software_installation_1.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/software_installation_2.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/software_installation_3.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_4.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/software_installation_4.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_5.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/software_installation_5.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_6.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/software_installation_6.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/hardware_connection_with_label.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/hardware_connection_with_label.png
    :width: 650px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/jumpersetting.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/jumpersetting.png
    :width: 650px
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/software_swversion_tab.png
    :width: 300px

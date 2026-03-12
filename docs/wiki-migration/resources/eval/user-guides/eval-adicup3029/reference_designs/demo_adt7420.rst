@@ -11,7 +11,7 @@ The **ADICUP3029_ADT7420** project uses :adi:`EVAL-ADT7420-PMDZ <en/design-cente
 Demo Video
 ----------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/analogTV>5554821977001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/analogtv>5554821977001
    :alt: analogTV>5554821977001
 
 Demo Requirements
@@ -218,7 +218,7 @@ More Information
    See `resources/eval/user-guides/eval-adicup3029/reference_designs/ble_packet <https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029/reference_designs/ble_packet>`_
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
    :width: 200px

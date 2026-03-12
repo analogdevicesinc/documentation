@@ -515,21 +515,21 @@ A slide deck is provided as a companion to this exercise, and can be used to hel
    :width: 600px
 .. |image15| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_100ohm_scopy.png
    :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_boost_peak_current_control_sch.PNG
+.. |image16| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_peak_current_control_sch.png
    :width: 800px
-.. |image17| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/LT1930_block_diagram.PNG
+.. |image17| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/lt1930_block_diagram.png
    :width: 800px
-.. |image18| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_boost_peak_current_control_sim.PNG
+.. |image18| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_peak_current_control_sim.png
    :width: 800px
-.. |image19| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/SR1_config_OL_peak_curr_boost.png
+.. |image19| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/sr1_config_ol_peak_curr_boost.png
    :width: 1000px
-.. |image20| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_peak_current_animated.gif
+.. |image20| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_peak_current_animated.gif
    :width: 800px
 .. |image21| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/adalm-sr1_current_probe.jpg
    :width: 600px
-.. |image22| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_gate_drivers.png
+.. |image22| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_gate_drivers.png
    :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_gate_drivers_sim.png
+.. |image23| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_gate_drivers_sim.png
    :width: 600px
 
 

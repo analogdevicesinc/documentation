@@ -199,7 +199,7 @@ Evaluation Board Layout
 
 .. container:: centeralign
 
-   //Figure 11. Circuit Side Layout //
+   *Figure 11. Circuit Side Layout*
 
 
 Ordering Information

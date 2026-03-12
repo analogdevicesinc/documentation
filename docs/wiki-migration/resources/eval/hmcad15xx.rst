@@ -13,7 +13,7 @@ Typical Setup
 
 .. container:: centeralign
 
-   \ |image1| //Figure 1. HMCAD15xx-EBZ (left) and EVAL-SDP-CH1Z (right) Setup //
+   \ |image1| *Figure 1. HMCAD15xx-EBZ (left) and EVAL-SDP-CH1Z (right) Setup*
 
 
 .. tip::

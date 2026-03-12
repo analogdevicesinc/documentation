@@ -18,7 +18,7 @@ To switch to this instrument click on the \**Oscilloscope** button from the left
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>zWX7VnKDYq4
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>zwx7vnkdyq4
    :alt: youtube>zWX7VnKDYq4
 
 General

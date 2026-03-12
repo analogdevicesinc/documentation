@@ -150,7 +150,7 @@ FOllowing script creates a schematic for ADAU1467 with NxM mixer and tests its f
    int inputs = 8;
    int outputs = 4;
 
-   //********Local Vars************//
+   *********Local Vars*************
    double GainInc = 0.001;
    double DCInc = 0.1;
    double[] InputDCValues = new double[inputs];

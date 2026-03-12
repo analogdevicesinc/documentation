@@ -5,7 +5,7 @@ Chime Generator
 
 The Chime Generator module produces programmable chime sounds with configurable parameters such as wave type, frequency, attack, decay, on/off timing, pulse repetitions, and dwell delay. It provides two input pins for control and two output pins for monitoring and signal output.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/ChimeGenerator_SSPlus.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/chimegenerator_ssplus.jpg
    :alt: ChimeGenerator_SSPlus.jpg
    :width: 600px
 

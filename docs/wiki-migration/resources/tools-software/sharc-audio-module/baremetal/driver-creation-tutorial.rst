@@ -35,7 +35,7 @@ Let's call our project ``SSM3582_basic.dspproj``. You will see other projects in
 
 Look for the component we’re interested in within the table on the left hand side and drag an instance of that component into our hardware configuration tab. Once we’ve dragged it in, click on the grey text within the box (IC initially), and give the component a more descriptive name. Our exported files will use this stub so it will make it easier to keep track of things.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/sigmastudio-1.PNG
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/sigmastudio-1.png
    :alt: Adding a component
 
 Click on the configuration tab for this component at the bottom of the **Hardware Configuration** pane. Click on the **Chip/SAI/DAC Control** tab. You will see a graphical interface with a number of options. Note that there are several tabs across the top, each with more options.
@@ -176,5 +176,5 @@ If the audio component has a SigmaDSP core, this same driver can also be used to
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#custom-a2b-topology
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#custom-a2b-topology
    :alt: Adding Custom A2B Configurations#.|Bare Metal Framework#porting-to-new-hardware-tutorial|Porting the Framework to Different HW

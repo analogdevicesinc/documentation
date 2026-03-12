@@ -16,7 +16,7 @@ This page describes the hardware peripheral connectors, jumpers and UART switch 
 Unboxing the EVAL-ADICUP3029
 ----------------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/analogTV>5554821998001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/analogtv>5554821998001
    :alt: analogTV>5554821998001
 
 Peripheral Connectors

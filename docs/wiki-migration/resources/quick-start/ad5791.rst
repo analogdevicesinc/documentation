@@ -28,7 +28,7 @@ Functional Block Diagram
 
 .. container:: CENTERALIGN
 
-   //Figure 1. //
+   *Figure 1.*
 
 
 
@@ -138,10 +138,7 @@ Input Shift Register Contents
 
 .. container:: CENTERALIGN
 
-   //Figure 3. Input Shift Register Contents //
-
-
-**Table 3. Register Address Definitions**
+   *Figure 3. Input Shift Register Contents **Table 3. Register Address Definitions**
 
 +------------------+------------------+----+----+----------------------------------------+
 |                  | Register Address |    |    |                                        |
@@ -176,10 +173,7 @@ Control Register
 
 .. container:: CENTERALIGN
 
-   //Figure 4. Control Register //
-
-
-**Table 4. Control Register Functions**
+   *Figure 4. Control Register **Table 4. Control Register Functions**
 
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | Bit Name             | Description                                                                                                                                                                                                                                                                                 |                                                                                                                        |
@@ -252,10 +246,7 @@ Control Register
 
 .. container:: CENTERALIGN
 
-   //Figure 5. Software Control Register //
-
-
-**Table 5. Software Control Register Functions**
+   *Figure 5. Software Control Register **Table 5. Software Control Register Functions**
 
 +----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | Bit Name       | Description                                                                                                                                    |

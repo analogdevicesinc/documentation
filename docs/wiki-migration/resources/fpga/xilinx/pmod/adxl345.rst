@@ -52,7 +52,7 @@ Extract the project from the archive file (ADXL345\_<board_name>.zip) to the loc
 
 To begin, connect the PmodACL to J5 connector of LX9 board (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodACL.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl.jpg
    :alt: PmodACL and LX-9
    :width: 200px
 
@@ -81,7 +81,7 @@ FPGA Configuration for Nexys3 and LX-9 MicroBoard
 
 Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../adxl345/sw/ADXL345.bit).
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodACLImpact.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodaclimpact.jpg
    :alt: Programming FPGA in IMPACT
    :width: 200px
 

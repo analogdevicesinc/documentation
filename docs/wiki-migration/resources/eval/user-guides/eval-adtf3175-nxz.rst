@@ -110,9 +110,9 @@ Note: Do not use USB Type-C to USB Type-A adapters.
 ::
 
    ; Dimensions : 66mm x 58.6mm x 67.9mm
-   ; Enclosure Drawing : //TO BE COMPLETED//
+   ; Enclosure Drawing : *TO BE COMPLETED*
    ; Laser Safety : Class 1
-   ; Operating Environment : //TO BE COMPLETED//
+   ; Operating Environment : *TO BE COMPLETED*
 
 --------------
 

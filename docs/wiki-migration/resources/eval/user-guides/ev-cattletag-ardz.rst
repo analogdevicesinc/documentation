@@ -189,7 +189,7 @@ Equipment Needed
 
 -  Connect the :adi:`MAX32625PICO` programming adapter to the Host PC using the micro USB to USB cable.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-LR-ardz_to_maxpico.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-lr-ardz_to_maxpico.png
    :align: center
    :width: 1500px
 

@@ -485,7 +485,7 @@ The default file that comes pre-loaded when you order hardware can be found on :
 
 This file is also updated on occasion to include new features, tweaks or other items which pop up as systems are developed.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/navigation PicoZed_SDR#none#resources/eval/user-guides/picozed_sdr
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/navigation_picozed_sdr#none#resources/eval/user-guides/picozed_sdr
    :alt: PicoZed_SDR#none#
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/ad9361_timing_diagram.jpg

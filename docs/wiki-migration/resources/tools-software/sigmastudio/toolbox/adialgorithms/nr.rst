@@ -50,7 +50,7 @@ As mentioned above, an implementation at 16 kHz sample rate (8 kHz bandwidth) is
 
 The basic AEC building block is optimized for an 8 kHz input and can be used directly to implement Narrowband AEC. To implement Wideband AEC, the 16 kHz signal is split into two 8 KHz streams using a quadrature mirror filter (QMF). One stream represents the lower frequencies and the other the higher frequencies. The same filter is applied to the microphone input as shown below. The FIR filter coefficient are linked here for the :doc:`low band </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/aec/qmf_fir_coeffs_low>` and :doc:`high band </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/aec/qmf_fir_coeffs_high>`.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/nr/flow2_QMF_split_decimate_by_2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/nr/flow2_qmf_split_decimate_by_2.png
    :align: center
 
 **Pass the signal to the block domain for frequency domain processing**
@@ -64,7 +64,7 @@ The three outputs for each of the two frequency bands are then fed into the bloc
 
 A synthesis cell applies a Hann window to each block of samples with a 50% overlap. The block is converted to the frequency domain using a real-in, complex-out FFT. These complex spectrum is passed to the RES block for residual nonlinear AEC processing, an inverse FFT is applied, and the signal is reconstructed with 50% overlap-and-add back to the time domain. The three inputs to the RES block are shown in the overview block diagram above. The window coefficients are linked here for the :doc:`analysis window </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/aec/fft_analysis_window_coeffs>` and :doc:`synthesis window </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/aec/fft_synthesis_window_coeffs>`.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/nr/flow4_NR_block_domain_processing.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/nr/flow4_nr_block_domain_processing.png
    :align: center
 
 **Reconstruct the 16 kHz signal with a QMF filter**

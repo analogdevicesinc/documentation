@@ -163,7 +163,7 @@ Remote IIO Oscilloscope
 
    -Plug your ethernet cable into the RJ45 ethernet connector (J21)
    -Observe kernel and serial console messages on your UART terminal
-   * You will see two COM ports in application. Choose the **COM port** that says "**//Welcome to Buildroot//**" and asks for a "//buildroot login//" (user) and then a password
+   * You will see two COM ports in application. Choose the **COM port** that says "**Welcome to Buildroot**" and asks for a "//buildroot login//" (user) and then a password
 
 ==== ========
 user password
@@ -335,7 +335,7 @@ More Information
 -  :doc:`AD-FMCDAQ3-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq3-ebz>`
 -  :doc:`AD-FMCDAQ3-EBZ HDL Reference Design </wiki-migration/resources/eval/user-guides/ad-fmcdaq3-ebz/reference_hdl>`
 
-.. |KCU105_console_ifconfig.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/KCU105_console_ifconfig.png
+.. |KCU105_console_ifconfig.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/kcu105_console_ifconfig.png
    :width: 600px
 .. |iio_scope_board_ip-kcu105.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/iio_scope_board_ip-kcu105.png
 

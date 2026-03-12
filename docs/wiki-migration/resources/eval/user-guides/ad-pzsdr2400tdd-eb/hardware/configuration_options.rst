@@ -19,5 +19,5 @@ Design Cross Section
 | AD9361_GPO3  | P2 - 15  | SPDT Switch (:adi:`HMC546`)                                 | 0/1   | RFC to TX/RFC to RX |
 +--------------+----------+-------------------------------------------------------------+-------+---------------------+
 
-.. image:: https://wiki.analog.com/_media/navigation AD-PZSDR2400TDD-EBZ#Functional Overview#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-pzsdr2400tdd-ebz#functional_overview#./
    :alt: Hardware#Characteristics & Performance

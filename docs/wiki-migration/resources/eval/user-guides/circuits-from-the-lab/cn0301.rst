@@ -310,7 +310,7 @@ Registration
    :width: 600px
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-hardware4.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0301/CN0301-software-wait.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-software-wait.png
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-software-save.png
 
 .. |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-busy.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software-busy.png

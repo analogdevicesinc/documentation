@@ -133,7 +133,7 @@ AD7091R PERIPHERAL            0x00000120 -
 
 The Nios II processor contains a peripheral that implements the communication protocol with the DUT. The peripheral is divided into three logical modules: a module which implements the interface with the Avalon bus and the communication with the onchip RAM, a module which implements an Avalon master interface which is used to write data directly in the onchip RAM and a module which is the actual driver of the DUT. The driver can also be used as standalone in FPGA designs which do not contain a softcore. Following is presented a block diagram of the HDL driver and a description of the driver's interface signals.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7091R_block_diagram.png
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7091r_block_diagram.png
    :alt: HDL driver block diagram
    :align: center
 

@@ -82,5 +82,5 @@ Refer to the Analog Devices High Speed ADC capture board product page at :adi:`H
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ads8-v1ebzbottom.jpg
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ADS8-V1EBZ-AD9208 Typ Setup.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ads8-v1ebz-ad9208_typ_setup.png
    :width: 600px

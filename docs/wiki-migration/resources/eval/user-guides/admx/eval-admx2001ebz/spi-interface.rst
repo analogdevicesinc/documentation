@@ -1,7 +1,7 @@
 ADMX2001B SPI Interface
 =======================
 
-The SPI interface can be used instead of the UART interface to send commands for configuration and measurement from the host. The SPI interface pins on the ADMX2001B module are SCK, SDI, SDO, and CS (B14-B17); see `ADMX2001B Pin Configuration and Function Descriptions <:doc:`/wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz`>`_ for the full pinout. On the evaluation board (EVAL-ADMX2001EBZ) the SPI interface is available on the Arduino style pin headers (P6 pins 5-8) and on both PMOD headers. See `EVAL-ADMX2001EBZ Terminal Description <:doc:`/wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz`>`_ for more details.
+The SPI interface can be used instead of the UART interface to send commands for configuration and measurement from the host. The SPI interface pins on the ADMX2001B module are SCK, SDI, SDO, and CS (B14-B17); see :doc:`ADMX2001B Pin Configuration and Function Descriptions </wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz>` for the full pinout. On the evaluation board (EVAL-ADMX2001EBZ) the SPI interface is available on the Arduino style pin headers (P6 pins 5-8) and on both PMOD headers. See :doc:`EVAL-ADMX2001EBZ Terminal Description </wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz>` for more details.
 
 There is an example program for the SDP-K1 microcontroller that implements some functions to communicate with the ADMX2001B over the SPI interface. That code is available here: `MBED SPI library <https://os.mbed.com/teams/AnalogDevices/code/EVAL-ADMX2001/>`_.
 

@@ -4,7 +4,7 @@ Scopy Spectrum Analyzer
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>lsfvpkSOoPA
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>lsfvpksoopa
    :alt: youtube>lsfvpkSOoPA
 
 General Description

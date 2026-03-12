@@ -107,7 +107,10 @@ After configuring the board, set up the ADC data capture using the following ste
 
 .. container:: centeralign
 
-   \ *Figure 3. VisualAnalog Default Configuration Message*-  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 5. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`,*VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 4).
+   \ *Figure 3. VisualAnalog Default Configuration Message*\
+
+
+-  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 5. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 4).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9250_va_collapse_display.png
    :align: center
@@ -152,7 +155,10 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
 .. container:: centeralign
 
-   \ *Figure 7. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 8). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+   \ *Figure 7. SPI Controller, New DUT Button*\
+
+
+-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 8). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9250_spi_cont_clock_divide.png
    :align: center
@@ -160,7 +166,10 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
 .. container:: centeralign
 
-   \ *Figure 8. SPI Controller, ADCBase0 Page*-  Note that other settings can be changed on the **ADCBase 0** page (see Figure 8) and the **ADC A** and **ADC B** pages (see Figure 9) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+   \ *Figure 8. SPI Controller, ADCBase0 Page*\
+
+
+-  Note that other settings can be changed on the **ADCBase 0** page (see Figure 8) and the **ADC A** and **ADC B** pages (see Figure 9) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9250_spi_cont_example_adca_page.png
    :align: center
@@ -195,7 +204,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   //Figure 11. Graph Window of VisualAnalog //
+   *Figure 11. Graph Window of VisualAnalog*
 
 
 -  Repeat this procedure for Channel B.
@@ -207,7 +216,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   // Figure 12. Typical FFT, AD9250//
+   *Figure 12. Typical FFT, AD9250*
 
 
 Optional Steps
@@ -223,7 +232,7 @@ The following steps below are optional steps for validation of SPI Control:
 
 .. container:: centeralign
 
-   // Figure 13. SPI Control for PN Long Sequence Validation//
+   *Figure 13. SPI Control for PN Long Sequence Validation*
 
 
 -  Results in the noise floor of the selected ADC's FFT to increase significantly as shown in Figure 14.
@@ -234,7 +243,7 @@ The following steps below are optional steps for validation of SPI Control:
 
 .. container:: centeralign
 
-   // Figure 14. Increased Noise Floor on FFT//
+   *Figure 14. Increased Noise Floor on FFT*
 
 
 -  To re-program the FPGA, select the ADC Data Capture Settings window and click on the ‘Capture Board’ tab (see the box in the figure below). In the FPGA box select the program “ad9250_evalez.mcs” to configure the FPGA. After selecting the file, click the “Program” button to download the file to the FPGA. The ‘CONFIG_DONE’ LED should illuminate on the HSC-ADC-EVALEZ board indicating that the FPGA is now programmed.

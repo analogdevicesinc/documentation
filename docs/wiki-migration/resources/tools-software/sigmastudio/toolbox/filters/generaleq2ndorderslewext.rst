@@ -70,5 +70,5 @@ The Q is shown with the value adjusted (from the classical EE definition) so tha
 
 *Note:* Some of the General 2nd order filters (those in the Type2 tree) are based on the Direct Form II implementation, which is used in the following HW ADSP-215xx & SC5xx. Please see the image below.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/Type2supportfor SHARCModules.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/type2supportfor_sharcmodules.png
    :alt: Type2supportfor SHARCModules.png

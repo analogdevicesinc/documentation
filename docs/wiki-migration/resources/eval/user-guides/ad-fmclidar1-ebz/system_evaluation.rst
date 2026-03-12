@@ -6,7 +6,7 @@ Setting up the system
    \ **NOTE:** Support for the ad_fmclidar_ebz is discontinued on all supported carriers: Arria10 SOC, ZC706 and ZCU102. ad_fmclidar_ebz will not be supported in future releases, last release image in which pre-build files can be found is 2021_r1. (check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all available Kuiper Linux releases).
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/Lidar_System_1.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/lidar_system_1.jpg
    :alt: Complete system assembled including additional optics and FPGA board
    :width: 400px
 
@@ -123,5 +123,5 @@ Each displayed distance measurement is a mean value of the last 10 measurements 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCLIDAR1-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmclidar1-ebz#none#./
    :alt: Overview#none#

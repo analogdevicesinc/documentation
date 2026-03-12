@@ -85,7 +85,7 @@ ADICUP3029 Interface File Downloads
    
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/device_drivers_install_notification.png
    :width: 400px

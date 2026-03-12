@@ -307,10 +307,10 @@ Saving Data to a Spreadsheet File
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_using_sw_3.png
    :width: 900px
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_establishing_connection_3.png
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/CN0350_Calibrating_Fig2.png
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/CN0350_Cal_Procedure_steps 6.png
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/CN0350_Cal_Procedure_steps 6a.png
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/CN0350_saving_data_3.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_calibrating_fig2.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_cal_procedure_steps_6.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_cal_procedure_steps_6a.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_saving_data_3.png
 
 .. |resources-eval-user-guides-circuits-from-the-lab-cn0350-cn0350_using_sw_12busy.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_using_sw_12busy.png
 .. |resources-eval-user-guides-circuits-from-the-lab-cn0350-cn0350_using_sw_12error.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_using_sw_12error.png

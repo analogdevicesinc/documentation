@@ -35,5 +35,5 @@ Files included in the AD9171, AD9172, AD9173, AD9174, AD9175, AD9176 Update:
 | PCB BRD File      | `AD917x-FMC-EBZ Board File <https://wiki.analog.com/_media/resources/eval/dpg/ad9172-fmc-ebz_revc.zip>`_                                   |
 +-------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#Data Pattern Generator&nofooter&noindent
+.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#data_pattern_generator&nofooter&noindent
    :alt: dpg#Data Pattern Generator&nofooter&noindent

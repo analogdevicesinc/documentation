@@ -34,5 +34,5 @@ OTHER REQUIREMENTS
 
       -  Third party vector signal generation tools such as `Keysight Signal Studio <https://www.keysight.com/us/en/lib/resources/miscellaneous/signal-studio-software-free-trial-1368357.html>`_, `Matlab Vector Generation <https://www.mathworks.com/help/5g/ug/downlink-carrier-waveform-generation.html>`_ can be used for generating wideband OFDM signals.
 
-.. image:: https://wiki.analog.com/_media/navigation ADRV904x DPD USER GUIDE#resources/eval/user-guides/adrv904x/dpd/high_level_development_flow
+.. image:: https://wiki.analog.com/_media/navigation_adrv904x_dpd_user_guide#resources/eval/user-guides/adrv904x/dpd/high_level_development_flow
    :alt: ADRV904x DEV FLOW#resources:eval:user-guides:adrv904x:dpd|ADRV904x DPD HOME page#resources:eval:user-guides:adrv904x:dpd:evaluation_user_guide|ADRV904x DPD GETTING STARTED

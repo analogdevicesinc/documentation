@@ -3,7 +3,7 @@ ADI AD-FMCJESDADC1-EBZ Boards & Xilinx Reference Design
 
 .. warning::
 
-   \ **NOTE:** Support for the ad-fmcjesdadc1-ebz was discontinued on all carriers starting with 2022_R2 Kuiper Linux release and it won't be supported anymore in future releases. Latest MicroBlaze images with pre-build files can be downloaded from `here <:doc:`/wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading`>`_. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The project source code can still be found on `hdl_2021_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2021_r2/projects/fmcjesdadc1>`_ release branch.
+   \ **NOTE:** Support for the ad-fmcjesdadc1-ebz was discontinued on all carriers starting with 2022_R2 Kuiper Linux release and it won't be supported anymore in future releases. Latest MicroBlaze images with pre-build files can be downloaded from :doc:`here </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The project source code can still be found on `hdl_2021_r2 <https://github.com/analogdevicesinc/hdl/tree/hdl_2021_r2/projects/fmcjesdadc1>`_ release branch.
 
 
 .. important::

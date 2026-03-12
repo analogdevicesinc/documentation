@@ -128,8 +128,8 @@ Libiio Installation
    
    **Libiio** is a library that has been developed by Analog Devices to ease the development of software interfacing Linux Industrial I/O (IIO) devices. To learn more about Libiio, you can visit the following links:
    
-   -  `Libiio User Guide <:doc:`/wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/libiio`>`_
-   -  `Libiio Internals <:doc:`/wiki-migration/resources/tools-software/linux-software/libiio_internals`>`_
+   -  :doc:`Libiio User Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/libiio>`
+   -  :doc:`Libiio Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
    
 
 

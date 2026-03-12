@@ -54,21 +54,21 @@ Right click on the ezLINX board labelled “linux USB Ethernet/RNDIS Gadget” a
 | =====Setting up the ezLINX Board IP Address===== Open the ezLINX application window and click on the board icon in the bottom left corner of the window. In the IP address settings enter the following: |image12| Now click the “use changes” button then the “connect” button and the status light will turn from red to green. The board and the PC application are now connected.
 | =====Verify Connection===== To verify the connection perform a simple GPIO test. Click on the GPIO button on the left hand side of the window: |image13| Tick the box next to GPIO 1 and set the direction to 1 and the value to 0 and click the “use changes” button. The orange LED, LED1 that was previously on on the board will now switch off. To switch it back on again set the value to 1 and click the “use changes” button.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/DotNETFRAMEWORKV4INSTALLATION.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/ezLINXOpenWindow.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/dotnetframeworkv4installation.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/ezlinxopenwindow.jpg
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/DeviceManagerLocation.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/devicemanagerlocation.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/usbethernetrndisgadget.jpg
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/browsefordriversoftware.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/BrowseTheDriverSoftware.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/browsethedriversoftware.jpg
    :width: 600px
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/installthedriveranyway.jpg
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/UpdateDriverSoftware.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/updatedriversoftware.jpg
    :width: 600px
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/networkconnectionswindow.jpg
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/localconnectionproperties.jpg
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/ipaddresssettings.jpg
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/BoardConfigurationWindow.jpg
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/boardconfigurationwindow.jpg
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/GPIOInterface.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/gpiointerface.jpg
    :width: 600px

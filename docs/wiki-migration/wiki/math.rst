@@ -199,5 +199,5 @@ Examples
 
 <m 16>delim{\|}\ |1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt|\ {\|} <= epsilon/3</m>
 
-.. |3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0| image:: https://wiki.analog.com/_media/wiki/3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0
-.. |1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt| image:: https://wiki.analog.com/_media/wiki/1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt
+.. |3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0| image:: https://wiki.analog.com/_media/wiki/3x-5y+z=0}_{sqrt{2}x-7y+8z=0}_{x-8y+9z=0
+.. |1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt| image:: https://wiki.analog.com/_media/wiki/1/n}_sum{n=1}{n}{gamma(u_n)}_-_1/{2_pi}_int{0}{2_pi}{gamma(t)_dt

@@ -20,7 +20,7 @@ The EVAL-AD5821A Evaluation Kit contains the following boards:
 
 |image1|
 
-   // \*\* Figure 1. AD5821A Evaluation Kit \*\* //
+   *\*\* Figure 1. AD5821A Evaluation Kit \*\**
 
 
 EVALUATION KIT HARDWARE
@@ -59,7 +59,7 @@ The main components included in the board are shown in the next figure.
 
 |image2|
 
-   // \*\* Figure 2. EVAL-AD5821A-DBZ Daughterboard \*\* //
+   *\*\* Figure 2. EVAL-AD5821A-DBZ Daughterboard \*\**
 
 
 To connect the on-board VCM load, links should connect positions of JP3 and JP4 as indicated in Table 1.
@@ -154,7 +154,7 @@ P23     1-2        I2C VREFB is 5 V
 
 |image3|
 
-   // \*\* Figure 3. EVAL-APOLLO -LD_MBZ Motherboard \*\* //
+   *\*\* Figure 3. EVAL-APOLLO -LD_MBZ Motherboard \*\**
 
 
 AD5821A EVALUATION SOFTWARE
@@ -172,7 +172,7 @@ The software required to run the AD5821A Evaluation Kit is available in the Anal
 
 |image4|
 
-   // \*\* Figure 4. Download AD5821A Evaluation Software \*\* //
+   *\*\* Figure 4. Download AD5821A Evaluation Software \*\**
 
 
 On clicking the link a zip file containing the installer is downloaded. After that, follow the steps below:
@@ -212,7 +212,7 @@ If the *No Apollo Boards Found* message is shown when the application is execute
 
 |image5|
 
-   // \*\* Figure 5. Firmware download pop-up screen \*\* //
+   *\*\* Figure 5. Firmware download pop-up screen \*\**
 
 
 Once the firmware is properly downloaded, a screen like the one below is shown.
@@ -224,7 +224,7 @@ Once the firmware is properly downloaded, a screen like the one below is shown.
 
 |image6|
 
-   // \*\* Figure 6. Application view upon opening \*\* //
+   *\*\* Figure 6. Application view upon opening \*\**
 
 
 The AD5821A Evaluation Software consists of a general framework to initialize the system, provide access to the AD5821A input register that controls the AF driver sink current, show the application status and handle the hardware setup to adjust power supply levels or configure different options in the board.
@@ -264,7 +264,7 @@ As shown in Figure 7, the AD5821A Evaluation Software is made up of four parts:
 
 |image7|
 
-   // \*\* Figure 7. AD5821A Evaluation Software Overview \*\* //
+   *\*\* Figure 7. AD5821A Evaluation Software Overview \*\**
 
 
 PLUGINS
@@ -284,7 +284,7 @@ Clicking on *RegMap1* in *Register Map Tree* the whole register map is inserted 
 
 |image8|
 
-   // \*\* Figure 8. Register view \*\* //
+   *\*\* Figure 8. Register view \*\**
 
 
 HARDWARE SETUP
@@ -301,7 +301,7 @@ An image of the EVAL-APOLLO -LD_MBZ silkscreen is shown in the panel to the righ
 
 |image9|
 
-   // \*\* Figure 9. Hardware Setup plugin \*\* //
+   *\*\* Figure 9. Hardware Setup plugin \*\**
 
 
 AVDD1 and AVDD2
@@ -363,7 +363,7 @@ Below the current control section is the Input Register. Its value automatically
 
 |image10|
 
-   // \*\* Figure 10: AF Driver plugin \*\* //
+   *\*\* Figure 10: AF Driver plugin \*\**
 
 
 AF DRIVER SWEEP
@@ -382,7 +382,7 @@ Click on *Start Sweep* button to start the sweep, Stop Sweep button to stop it a
 
 |image11|
 
-   // \*\* Figure 11: Auto Focus Driver Sweep \*\* //
+   *\*\* Figure 11: Auto Focus Driver Sweep \*\**
 
 
 DESIGN FILES

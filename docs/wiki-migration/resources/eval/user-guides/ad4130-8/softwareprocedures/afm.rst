@@ -142,7 +142,7 @@ Taking an example where all the channels in our system are configured with the s
    
    -  *Filter Type = Sync 3*
    -  *FS = 1*
-   -  //SETTLE_n = 1 //
+   -  *SETTLE_n = 1*
    -  // Number of Channels Enabled = 3 or 5//
    
 
@@ -175,7 +175,7 @@ The first conversion on each channel needs to take into account the filter laten
    
    where MCLK(sec) = 1/76.8kHz
    
-   // 1/76800 x (128) = 600 SPS //
+   *1/76800 x (128) = 600 SPS*
    
    If we were converting on only one channel our 1st conversion ODR would be:
    
@@ -237,21 +237,21 @@ In all of the examples we are excluding Repeat conversions but when we enable re
    -  Ain0 -Ain 1
    -  *Filter Type = Sync 3*
    -  *FS = 1*
-   -  //SETTLE_n = 1 //
+   -  *SETTLE_n = 1*
    -  // Number of Channels Enabled = 3 or 5//
    
    -  Channel 1 - We want to achieve 50 Hz rejection. (Set the cut off freq. of our filter to FS=48)
    -  Ain2- Ain3
    -  *Filter Type = Sync 3*
    -  *FS = 48*
-   -  //SETTLE_n = 1 //
+   -  *SETTLE_n = 1*
    -  // Number of Channels Enabled = 3 or 5//
    
    -  Channel 2 - We want to achieve 50 Hz rejection(Set the cut off freq. of our filter to FS=48) and Lower Noise (Sync 4)
    -  Ain 3 - Ain4
    -  *Filter Type = Sync 3*
    -  *FS = 1*
-   -  //SETTLE_n = 1 //
+   -  *SETTLE_n = 1*
    -  // Number of Channels Enabled = 3 or 5//
 
    |image7|

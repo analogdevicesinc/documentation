@@ -102,7 +102,7 @@ Data RAM                   1019
 Parameter RAM              4
 ========================== =================================
 
-.. |Pitch_Transpose_Cell.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/Pitch_Transpose_Cell.png
-.. |Before_Pitch_Shift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/Before_Pitch_Shift.png
-.. |After_Pitch_Shift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/After_Pitch_Shift.png
-.. |System_Picture.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/System_Picture.png
+.. |Pitch_Transpose_Cell.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/pitch_transpose_cell.png
+.. |Before_Pitch_Shift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/before_pitch_shift.png
+.. |After_Pitch_Shift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/after_pitch_shift.png
+.. |System_Picture.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/system_picture.png

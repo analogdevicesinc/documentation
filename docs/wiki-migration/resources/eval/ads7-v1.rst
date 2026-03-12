@@ -52,7 +52,7 @@ ADS7-V1EBZ Supported ADC Evaluation Boards
 
 Refer to the Analog Devices High Speed ADC capture board product page at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for a table of ADS7-V1EBZ compatible ADC evaluation boards.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ADS7V1 Photo.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ads7v1_photo.jpg
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9680_setup_new_smaller.jpg
    :width: 600px

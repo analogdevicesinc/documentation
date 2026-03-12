@@ -4,7 +4,7 @@ Scopy Power Supply
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>kohIqwrlmjI
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>kohiqwrlmji
    :alt: youtube>kohIqwrlmjI
 
 Introduction

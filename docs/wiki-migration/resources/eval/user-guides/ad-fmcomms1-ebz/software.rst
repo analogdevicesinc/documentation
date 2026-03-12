@@ -11,5 +11,5 @@ Software for the AD-FMCOMMS1-EBZ
 -  :doc:`No-OS drivers </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/baremetal>`
 -  :doc:`I2C-to-SPI-bridge </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/i2c_to_spi_bridge>`
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/navigation AD-FMCOMMS1-EBZ#reference_hdl
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/navigation_ad-fmcomms1-ebz#reference_hdl
    :alt: Reference HDL design#.:\|Overview#testing|Production Testing Process

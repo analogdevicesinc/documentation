@@ -308,7 +308,7 @@ Click on View menu on the top of the screen and the following entries are availa
 
 .. container:: centeralign
 
-   // Figure 4: Register Map Window//
+   *Figure 4: Register Map Window*
 
 
 Click on Register Details arrow on the bottom left of the window (Figure 5 below) and the bit content of the particular selected register is displayed. Move the cursor on top of a register and the bit description of that register is visualized.
@@ -319,7 +319,7 @@ Click on Register Details arrow on the bottom left of the window (Figure 5 below
 
 .. container:: centeralign
 
-   // Figure 5: Register Details section of Register Map Window//
+   *Figure 5: Register Details section of Register Map Window*
 
 
 -  Debug - Opens the debug window in Figure 6 below. Any register can be accessed by scrolling through the registers in the Register dropdown list or by starting to type the register address expressed in hexadecimal. The value of the register appears and it can be expressed in hex or decimal values. The accessed register can be written or read by clicking on the respective button. The Pin Groups section allows direct control of the AD9546 Reset, M0, M1, M2, M3, M4, M5, and M6/CS pins. The recommendation is to not manage these pins through this window and instead use the Front Panel tabs. For example, manage the M0 to M6 pins through the M_PINS tab in the Front Panel (Figure 2).
@@ -329,7 +329,7 @@ Click on Register Details arrow on the bottom left of the window (Figure 5 below
 
 .. container:: centeralign
 
-   // Figure 6: Debug Window with Register Selection Scroll Down Menu//
+   *Figure 6: Debug Window with Register Selection Scroll Down Menu*
 
 
 Click on Help menu on the top of the front panel (Figure 1) and the following entries are available:
@@ -344,7 +344,7 @@ The front panel has two tabs, (Figure 6b): Block Diagram and Pinout. The Block D
 
 .. container:: centeralign
 
-   // Figure 6b: Front Panel's Block Diagram and Pinout tabs//
+   *Figure 6b: Front Panel's Block Diagram and Pinout tabs*
 
 
 At the bottom of the front panel, the following buttons are available:
@@ -355,7 +355,7 @@ At the bottom of the front panel, the following buttons are available:
 
 .. container:: centeralign
 
-   // Figure 6c: Front Panel Buttons//
+   *Figure 6c: Front Panel Buttons*
 
 
 -  WIZARD - Allows the user to introduce the broad requirements that the AD9546 needs to fulfill (like the frequency of the reference clocks, of the outputs, the system clock source, etc). The recommendation is to use the Wizard to calculate the AD9546 register values whenever a new configuration is required.
@@ -368,7 +368,7 @@ At the bottom of the front panel, the following buttons are available:
 
 .. container:: centeralign
 
-   // Figure 7: Control Window//
+   *Figure 7: Control Window*
 
 
 -  STATUS - Opens the window in Figure 8 below. Various tabs give access to status flags of the AD9546 blocks.
@@ -378,7 +378,7 @@ At the bottom of the front panel, the following buttons are available:
 
 .. container:: centeralign
 
-   // Figure 8: Status Window//
+   *Figure 8: Status Window*
 
 
 -  REGMAP - Opens the register map window (Figure 4) that can be accessed from the front panel View, Register Map option.
@@ -396,7 +396,7 @@ By default, every time the AD9546 Evaluation Software is launched, the Frequency
 
 .. container:: centeralign
 
-   // Figure 9: Frequency Configuration Wizard Window//
+   *Figure 9: Frequency Configuration Wizard Window*
 
 
 The wizard contains several tabs: System Clock, Input Sources, Channel 0 and Channel 1. Short explanations of each tab:
@@ -412,14 +412,14 @@ Once all this data is introduced, click Load button on the bottom right of the w
 
 .. container:: centeralign
 
-   // Figure 10: Input Sources Tab of the Frequency Configuration Wizard//
+   *Figure 10: Input Sources Tab of the Frequency Configuration Wizard*
 
 
    |image9|
 
 .. container:: centeralign
 
-   // Figure 11: Channel 0 Tab of the Frequency Configuration Wizard//
+   *Figure 11: Channel 0 Tab of the Frequency Configuration Wizard*
 
 
 Input Source Settings
@@ -432,7 +432,7 @@ In the Front Panel (Figure 2), clicking on Input Settings tab launches the windo
 
 .. container:: centeralign
 
-   // Figure 12: Input Source Settings Window//
+   *Figure 12: Input Source Settings Window*
 
 
 In this window, virtually all the functionality related to the reference clocks can be configured. Click Load to download the register values that have been changed from the evaluation software into the AD9546 and if the Enable IO Update option is enabled in the Options entry in the File menu, an IO Update is executed automatically at the end of the registers download. Also, the window visualizes all the status flags related to the reference that is selected in the window. For example, in Figure 12, the REFA settings are selected. The status flags associated with REFA are also updated in the right side of the window.
@@ -447,7 +447,7 @@ In the Front Panel (Figure 2), clicking on Digitized Clocking tab launches the w
 
 .. container:: centeralign
 
-   // Figure 13: Digitized Clocking Settings Window//
+   *Figure 13: Digitized Clocking Settings Window*
 
 
 In this window, the Digitized Clocking settings regarding the common clock, the user time stampers and the inverse user time stampers can be introduced.
@@ -462,7 +462,7 @@ In the Front Panel (Figure 2), clicking on Stability Compensation tab launches t
 
 .. container:: centeralign
 
-   // Figure 14: System Clock Stability Compensation Settings Window//
+   *Figure 14: System Clock Stability Compensation Settings Window*
 
 
 In this window, the system clock stability compensation methods can be selected and configured.
@@ -477,7 +477,7 @@ In the Front Panel (Figure 2), clicking on M-Pins tab launches the window in Fig
 
 .. container:: centeralign
 
-   // Figure 15: Multi-Function Pins Settings Window//
+   *Figure 15: Multi-Function Pins Settings Window*
 
 
 In this window, the multi-function M0, M1,…, M6 pins are configured. The M-pins by Function tab provides a concise view of all M-pins control or status configuration (Figure 26).
@@ -488,7 +488,7 @@ In this window, the multi-function M0, M1,…, M6 pins are configured. The M-pin
 
 .. container:: centeralign
 
-   // Figure 16: M-pins by Function Tab Window//
+   *Figure 16: M-pins by Function Tab Window*
 
 
 Interrupt Requests (IRQ) Settings
@@ -501,14 +501,14 @@ In the Front Panel (Figure 2), clicking on IRQ tab launches the window in Figure
 
 .. container:: centeralign
 
-   // Figure 17: Interrupt Requests (IRQs) Settings Window//
+   *Figure 17: Interrupt Requests (IRQs) Settings Window*
 
 
    |image16|
 
 .. container:: centeralign
 
-   // Figure 18: Group Clear Window//
+   *Figure 18: Group Clear Window*
 
 
 Temperature Sensor Settings
@@ -521,7 +521,7 @@ In the Front Panel (Figure 2), clicking on Temp Sensor tab launches the window i
 
 .. container:: centeralign
 
-   // Figure 19: Temperature Settings Window//
+   *Figure 19: Temperature Settings Window*
 
 
 Move the cursor over the white locations for their description. The Compensation section has three entries:
@@ -539,7 +539,7 @@ In the Front Panel (Figure 2), clicking on EEPROM tab launches the window in Fig
 
 .. container:: centeralign
 
-   // Figure 20: EEPROM Controls Window//
+   *Figure 20: EEPROM Controls Window*
 
 
 This window cannot be used with the AD9546 evaluation board because the board does not contain a EEPROM usable to store the AD9546 configuration.
@@ -554,7 +554,7 @@ In the Front Panel (Figure 2), clicking on Channel 0 section launches the window
 
 .. container:: centeralign
 
-   // Figure 21: Channel 0 Settings Window//
+   *Figure 21: Channel 0 Settings Window*
 
 
 In this window, all DPLL0 settings can be managed. It is recommended to use the Wizard first to configure the DPLL0 and use this window for additional settings not already set by the Wizard. Click on the DPLL Settings, APLL Settings, DIST (Distribution) Settings tabs on the bottom of the window to access them. Click on Status tab to access the Channel 0 Status window (Figure 22) in which the status flags related to Channel 0 DPLL0+APLL0 are updated. DPLL Settings, APLL Settings and Distribution Settings windows are presented in Figure 23, Figure 24, Figure 25.
@@ -565,28 +565,28 @@ In this window, all DPLL0 settings can be managed. It is recommended to use the 
 
 .. container:: centeralign
 
-   // Figure 22: Channel 0 Status Window//
+   *Figure 22: Channel 0 Status Window*
 
 
    |image21|
 
 .. container:: centeralign
 
-   // Figure 23: DPLL0 Settings Window//
+   *Figure 23: DPLL0 Settings Window*
 
 
    |image22|
 
 .. container:: centeralign
 
-   // Figure 24: APLL0 Settings Window//
+   *Figure 24: APLL0 Settings Window*
 
 
    |image23|
 
 .. container:: centeralign
 
-   // Figure 25: Channel 0 Distribution Settings//
+   *Figure 25: Channel 0 Distribution Settings*
 
 
 Channel 1 Settings

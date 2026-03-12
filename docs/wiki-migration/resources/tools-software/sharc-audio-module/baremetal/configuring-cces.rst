@@ -3,7 +3,7 @@ Configuring CCES for Development and Debug of the Framework
 
 The video below provides a walk-through of getting CCES configured to begin developing code and debugging this code in CCES and on the SHARC Audio Module. The steps covered in this video are also briefly outlined below and are provided to help with a better debug experience.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>GprhlU-IrXQ
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>gprhlu-irxq
    :alt: youtube>GprhlU-IrXQ
 
 Steps to Configure CCES
@@ -17,5 +17,5 @@ Steps to Configure CCES
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#downloading-and-installing
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#downloading-and-installing
    :alt: Opening the Framework in CCES#.|Bare Metal Framework#baremetal-framework-architecture|Bare Metal Framework Architecture

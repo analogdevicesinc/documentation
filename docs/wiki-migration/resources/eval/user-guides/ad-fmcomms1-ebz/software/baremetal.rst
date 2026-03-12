@@ -159,5 +159,5 @@ After running the example program the system is configured to generate a sinewav
 
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS1-EBZ#Linux#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms1-ebz#linux#./
    :alt: Software#i2c_to_spi_bridge|I2C-to-SPI bridge

@@ -8554,5 +8554,5 @@ References
 -  `Zynq-7000 SoC Overview <https://www.xilinx.com/support/documentation/data_sheets/ds190-Zynq-7000-Overview.pdf>`_
 -  `Zynq-7000 SoC Packaging and Pinout <https://www.xilinx.com/support/documentation/user_guides/ug865-Zynq-7000-Pkg-Pinout.pdf>`_
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#resources/fpga/docs/ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#resources/fpga/docs/ip_cores
    :alt: IP cores#resources/fpga/docs/hdl|Main page#resources/fpga/docs/tips|Using and modifying the HDL design

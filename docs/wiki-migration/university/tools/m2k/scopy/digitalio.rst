@@ -4,7 +4,7 @@ Scopy Digital IO
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>9cYstnAoUpk
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>9cystnaoupk
    :alt: youtube>9cYstnAoUpk
 
 General description

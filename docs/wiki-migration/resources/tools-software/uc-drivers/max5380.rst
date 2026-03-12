@@ -39,7 +39,7 @@ Applications
 -  Automatic Gain Control
 -  Automatic Offset Adjustment
 
-|image1| //MAX9611PMB1 (with MAX5380 on-board chip) //
+|image1| *MAX9611PMB1 (with MAX5380 on-board chip)*
 
 ADI No-OS
 ~~~~~~~~~

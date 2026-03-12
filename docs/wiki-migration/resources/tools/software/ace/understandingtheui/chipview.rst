@@ -11,7 +11,7 @@ Chip View
 
 The Chip View, shown below, is an interactive block diagram for the component. It provides an insight into the functional operation of the component, and allows the user to configure high level features of the component in an intuitive manner.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ChipView.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/chipview.png
    :alt: Chip View
 
 Block Types
@@ -19,7 +19,7 @@ Block Types
 
 The diagram block classifications are:
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ChipConfigurable13.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/chipconfigurable13.png
    :alt: ChipConfigurable13.png
    :align: left
    :width: 40px
@@ -27,7 +27,7 @@ The diagram block classifications are:
 
 -  **Configurable –** A block which is configurable by clicking on it. Depending upon the block and the associated component, clicking can enable/disable the block, allow inline editing of a single value, or present a popup for configuring multiple values
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/CipNonConfigurable.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/cipnonconfigurable.png
    :alt: CipNonConfigurable.png
    :align: left
    :width: 50px
@@ -37,7 +37,7 @@ The diagram block classifications are:
 
 View.  They are included in the diagram to depict signal flow, or to help with understanding the component.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ChipDown.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/chipdown.png
    :alt: ChipDown.png
    :align: left
    :width: 50px
@@ -47,7 +47,7 @@ View.  They are included in the diagram to depict signal flow, or to help with 
 
 and/or powered up with a click, others can be enabled from the Memory Map View.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ChipError.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/chiperror.png
    :alt: ChipError.png
    :align: left
    :width: 49px

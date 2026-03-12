@@ -74,6 +74,6 @@ If you have questions regarding the tools and tool chain that is used with the E
 
    -  `processor.tools.support@analog.com <https://wiki.analog.com/mailto/processor.tools.support@analog.com>`_
 
-// End of Document //
+*End of Document*
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`

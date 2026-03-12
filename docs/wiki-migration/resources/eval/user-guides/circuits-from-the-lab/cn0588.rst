@@ -245,7 +245,7 @@ For questions and more information about this product, connect with us through t
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0588_q_front.png
    :width: 300px

@@ -141,8 +141,8 @@ Zed Board + ADRV9002NP
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w2.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002xbcz_c0_np_w1.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002xbcz_c0_np_w2.png
-.. |common##More information&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/adrv9002/common##More information&nofooter&noeditbtn
-.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/adrv9002/common##Support&nofooter&noeditbtn
+.. |common##More information&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/adrv9002/common##more_information&nofooter&noeditbtn
+.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/adrv9002/common##support&nofooter&noeditbtn
 
 
 Testing

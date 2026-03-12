@@ -6,7 +6,7 @@ Overview
 
 The purpose of the shell commands is to provide a command line interface for users to communicate with the system. On the Audio Starter Framework, these commands are broken up by features. These shell commands are categorized for documentation purpose based on their usage. This documentation details the superset list of all of the commands that exist for all of the Audio Starters. To find the specific commands for your particular hardware platform and specific branch, you can type *help* in the shell to view your specific sub-set.
 
-//Note that not all terminal programs are created equal as it relates to using the Audio Starters. While you are free to use your Terminal program of choice, it's possible that not all commands will work on all programs due to limitations with character sets, etc. Therefore, we recommend following the setup guide for the preferred :doc:`Terminal Program </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/prerequisites>` to get the best experience for shell interaction with the Audio Starter. //
+*Note that not all terminal programs are created equal as it relates to using the Audio Starters. While you are free to use your Terminal program of choice, it's possible that not all commands will work on all programs due to limitations with character sets, etc. Therefore, we recommend following the setup guide for the preferred :doc:`Terminal Program </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/prerequisites>` to get the best experience for shell interaction with the Audio Starter.*
 
 | Review the following knowledge base articles for various options for establishing a shell connection:
 | 1. :doc:`USB OTG Shell Session </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/usb-otg-session>` 2. :doc:`Telnet Session </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/telnet-session>`
@@ -56,7 +56,7 @@ Command List
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation_advanced_audio_projects
    :alt: Advanced Audio Projects#.examples-signal-generator|Application Examples - Signal Generator#.|Advanced Audio Projects#.debug-session|Setting up a Debug Session
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/help-cmd.png

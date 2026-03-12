@@ -73,7 +73,7 @@ When you run the project through the debugger, you will be able to control the *
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/navigation SHARC Audio Module#ex-work-volume
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/navigation_sharc_audio_module#ex-work-volume
    :alt: MIDI Controlled Volume#.|Faust and the SHARC Audio Module#ex-work-saw|MIDI Sawtooth Synth
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png

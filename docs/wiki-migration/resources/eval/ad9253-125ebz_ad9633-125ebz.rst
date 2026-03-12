@@ -281,7 +281,10 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
 .. container:: centeralign
 
-   \ *Figure 8. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 9). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
+   \ *Figure 8. SPI Controller, New DUT Button*\
+
+
+-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 9). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/10235-010.png
    :align: center
@@ -289,7 +292,10 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
 .. container:: centeralign
 
-   \ *Figure 9. SPI Controller, CLOCK DIVIDE(B) Box*-  Note that other settings can be changed on the **ADCBase 0 tab** (see Figure 9) and the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs (see Figure 10) to set up the part in the desired mode. The **ADCBase 0** tab settings affect the entire part, whereas the settings on the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs affect the selected channel only. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+   \ *Figure 9. SPI Controller, CLOCK DIVIDE(B) Box*\
+
+
+-  Note that other settings can be changed on the **ADCBase 0 tab** (see Figure 9) and the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs (see Figure 10) to set up the part in the desired mode. The **ADCBase 0** tab settings affect the entire part, whereas the settings on the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs affect the selected channel only. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/10235-011.png
    :align: center
@@ -324,7 +330,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   //Figure 12. Graph Window of VisualAnalog //
+   *Figure 12. Graph Window of VisualAnalog*
 
 
 -  Repeat this procedure for Channel B, Channel C, and Channel D.
@@ -336,7 +342,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   //Figure 13. Typical FFT, :adi:`AD9253` //
+   *Figure 13. Typical FFT, :adi:`AD9253`*
 
 
 Troubleshooting Tips

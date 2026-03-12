@@ -68,7 +68,7 @@ The isolator is hardwired for the desired speed setting, either full speed or lo
 
                                                         Low speed operation
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/FS_mode.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/fs_mode.png
    :align: center
    :width: 500px
 
@@ -136,5 +136,5 @@ Registration
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/figure_7.png
    :width: 650px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/LS_mode.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/ls_mode.png
    :width: 500px

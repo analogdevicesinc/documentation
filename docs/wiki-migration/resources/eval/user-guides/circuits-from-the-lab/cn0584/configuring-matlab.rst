@@ -95,9 +95,7 @@ e.g. <code> hdlsetuptoolpath(‘ToolName’, ‘Xilinx Vivado’, ’ToolPath’
 .. image:: https://wiki.analog.com/_media/playground/figure8.png
    :width: 600px
 
-//Figure 8. Set Target Device and Synthesis Tool //
-
-**2.7** Choose the RX, RX-TX or TX configuration, then run the task.
+*Figure 8. Set Target Device and Synthesis Tool **2.7** Choose the RX, RX-TX or TX configuration, then run the task.
 
 .. image:: https://wiki.analog.com/_media/playground/figure9.png
    :width: 600px

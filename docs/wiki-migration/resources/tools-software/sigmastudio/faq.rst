@@ -420,7 +420,7 @@ Once Code/Parameter/Data memory are mapped to L3, perform link compile to see th
 
 A: The SigmaStudio framework supports either Param (L1) or ParamB (L3) memory mapping, as all parameters must reside within a single memory block. Therefore, Param and ParamB cannot be used simultaneously. Additionally, these memory blocks cannot be assigned through custom memory section mapping, since SigmaStudio internally determines the memory sections during compile time. If MIPS consumption is not a concern, the entire parameter block can be mapped to ParamB memory using the “Load Memory” and “Update Memory” options available in the Memory section tab.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/MemorySections.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/memorysections.png
    :width: 400px
 
 The other options are:
@@ -429,19 +429,19 @@ The other options are:
 
       Define the global parameter buffer in target application.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ParamBufferDefination.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/parambufferdefination.png
    :width: 400px
 
 
 Preserve global parameter buffer symbol in ldf file
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/KeepSymbol.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/keepsymbol.png
    :width: 400px
 
 
 Define the global parameter buffer as extern and use it in custom module.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ExternDeclaration.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/externdeclaration.png
    :width: 400px
 
 2) The ParamB memory block, which is mapped to L3 by default, can be redirected to L2 memory if there are MIPS constraints. For L2 memory mapping please modify the “adi_ss_app.ldf” as shown below (Half of the memory will be reserved for StateC data buffer) .

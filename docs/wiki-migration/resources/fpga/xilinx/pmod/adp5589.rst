@@ -177,9 +177,9 @@ More information
    :width: 200px
 .. |Connect PmodIOXP to Nexys™3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodioxp_nexys3.jpg
    :width: 200px
-.. |Initialization| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodIOXP_menu1.jpg
+.. |Initialization| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodioxp_menu1.jpg
    :width: 400px
-.. |Key Decode Test| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodIOXP_menu2.jpg
+.. |Key Decode Test| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodioxp_menu2.jpg
    :width: 400px
-.. |Key Lock/Unlock| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodIOXP_menu3.jpg
+.. |Key Lock/Unlock| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodioxp_menu3.jpg
    :width: 400px

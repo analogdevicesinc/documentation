@@ -339,8 +339,8 @@ The following steps describe the procedure to run a sample demo in PC mode
 ::
 
      **Note:** The adi_a2b_main_ADAU1452.xml, adi_a2b_main_ADAU1761.xml, adi_a2b_sub_ADAU1961.xml files are available in <A2B plugin for SigmaStudio+ installation path>>\Schematics\PC\xml folder
-   * Make sure that USBi cable is connected to eval board as shown in `Figure <:doc:`/wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power`>`_ and the board is powered on.
-   * Click on “LinkCompileDownload” icon in SigmaStudio+ as shown in `Figure <:doc:`/wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo`>`_ This will start the discovery and configuration of A2B nodes and peripheral devices as per the schematic.
+   * Make sure that USBi cable is connected to eval board as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>` and the board is powered on.
+   * Click on “LinkCompileDownload” icon in SigmaStudio+ as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` This will start the discovery and configuration of A2B nodes and peripheral devices as per the schematic.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/link_compile_download.png
    :align: center

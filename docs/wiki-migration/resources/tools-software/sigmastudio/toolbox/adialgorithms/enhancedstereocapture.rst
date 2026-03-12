@@ -108,7 +108,7 @@ Algorithm Details
 | Parameter RAM              | 7                                                                  |
 +----------------------------+--------------------------------------------------------------------+
 
-.. |ESCpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/ESCpic1.png
-.. |ESCpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/ESCpic2.png
-.. |ESCpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/ESCpic3.png
-.. |ESCpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/ESCpic4.png
+.. |ESCpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/escpic1.png
+.. |ESCpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/escpic2.png
+.. |ESCpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/escpic3.png
+.. |ESCpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/escpic4.png

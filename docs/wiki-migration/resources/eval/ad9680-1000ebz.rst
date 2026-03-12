@@ -291,7 +291,7 @@ Software Setup
 
 .. container:: centeralign
 
-   //Figure 10. Selecting the :adi:`AD9680` canvas //
+   *Figure 10. Selecting the :adi:`AD9680` canvas*
 
 
 -  At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in figure 11. Programming the FPGA will provide power to the evaluation board.

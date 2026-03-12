@@ -51,7 +51,7 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
    \ **NOTE:** It is recommended that you install the `CN0296 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0296>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0296\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0296/destination_directory.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/destination_directory.png
 
 -  Click **Next** to view the installation review page
 
@@ -154,8 +154,8 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0296-SDPZ?&v=RevB>`_ to receive all these great benefits and more!
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0296/cn0296_evaluation_software_files.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0296/cn0296_evaluation_software_files_2.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/cn0296_evaluation_software_files.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/cn0296_evaluation_software_files_2.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/adi_sdp_drivers.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/adi_sdp_drivers_2.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0296/adi_sdp_drivers_4.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/adi_sdp_drivers_4.png

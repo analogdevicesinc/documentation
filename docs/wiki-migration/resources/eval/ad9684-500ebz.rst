@@ -107,7 +107,7 @@ Visual Analog Setup
 
 .. container:: centeralign
 
-   //Figure 3. Selecting the :adi:`AD9684` canvas //
+   *Figure 3. Selecting the :adi:`AD9684` canvas*
 
 
 -  Select the AD9684
@@ -118,18 +118,18 @@ Visual Analog Setup
 
 .. container:: centeralign
 
-   //Figure 4. Selecting the :adi:`AD9684` canvas //
+   *Figure 4. Selecting the :adi:`AD9684` canvas*
 
 
 -  View the AD9684 canvas
 
-.. image:: https://wiki.analog.com/_media/eval/VA_Canvas_AD9684.png
+.. image:: https://wiki.analog.com/_media/eval/va_canvas_ad9684.png
    :align: center
    :width: 1200px
 
 .. container:: centeralign
 
-   //Figure 5. The\ :adi:`AD9684` canvas //
+   *Figure 5. The\ :adi:`AD9684` canvas*
 
 
 -  If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 6)
@@ -161,7 +161,7 @@ Visual Analog Setup
 
 .. container:: centeralign
 
-   //Figure 8. Setting the clock frequency //
+   *Figure 8. Setting the clock frequency*
 
 
 -  Click on the **Capture Board** tab and browse to the **ad9684_evalez_05202014_0903am.mcs** file. Click the **Program** button. The **FPGA_DONE** LED should illuminate on the :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` board indicating that the FPGA has been correctly programmed. The bin file is available at the **Design and Integration Files** section
@@ -174,7 +174,7 @@ SPIController Setup
 -  Select the appropriate configuration file when prompted.
 -  In the **Global** tab, under the **Generic Read/Write** section, write 0x81 to register 0x000. This issues a Soft reset for the DUT.
 
-.. image:: https://wiki.analog.com/_media/eval/AD9684_spi_global.png
+.. image:: https://wiki.analog.com/_media/eval/ad9684_spi_global.png
    :align: center
    :width: 800px
 
@@ -257,7 +257,7 @@ Device Setup - 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 -  The settings in the ADCBase0 tab must be changed to configure the AD9684 to use the DDCs. In this example the AD9684 is set up to use two DDCs (one per ADC channel) with real outputs and a decimation ratio of two. Set the Chip Application Mode in register 0x200 to Two Digital Down Converters and select the Only Real (I) Selected checkbox. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2ddcrealdec2_adcglobal.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcglobal.png
    :align: center
    :width: 800px
 
@@ -284,7 +284,7 @@ Device Setup - 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
    -  After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2ddcrealdec2_adcbase1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcbase1.png
    :align: center
    :width: 650px
 
@@ -299,7 +299,7 @@ Obtaining an FFT - 2 ADCs, 2DDCs, Real Mode Decimate by 2
 -  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 500MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 and DDC1 are being used in the AD9684 so this must be selected under the ADC Data Capture Settings.
 -  Click the Run button in Visual Analog and you should see the capture data similar to the plot below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9684_fft_2ddcrealdec2.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9684_fft_2ddcrealdec2.png
    :align: center
    :width: 600px
 
@@ -336,7 +336,7 @@ Device Setup - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  The settings in the ADCBase0 tab must be changed to configure the AD9684 to use the DDC. In this example the AD9684 will be set up to use one DDCs with a complex ZIF output (NCO bypassed) and a decimation ration of two. Set the Chip Application Mode in register 0x200 to One Digital Down Converter and make sure the Only Real (I) Selected checkbox is **NOT** checked. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2adc1ddccomplexdec2_adcglobal.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcglobal.png
    :align: center
    :width: 800px
 
@@ -348,7 +348,7 @@ Device Setup - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 -  The DDC settings must be configured under DDC0 CTRL in the ADCBase1 tab configure the DDC to select Complex Mixer Selection, 0 Hz IF Mode, Decimate by 2 Filter Selection, Real (I) Input Sample Selection to Channel A for DDC0, and Complex (Q) Input Sample Selection to Channel B.
 -  After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2adc1ddccomplexdec2_adcbase1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcbase1.png
    :align: center
    :width: 400px
 
@@ -362,7 +362,7 @@ Obtaining an FFT - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 500MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 is being used in the AD9684 so this must be selected under the ADC Data Capture Settings.
 
-.. image:: https://wiki.analog.com/_media/eval/AD9684_2ddcrealdec2_datacapturesettings.png
+.. image:: https://wiki.analog.com/_media/eval/ad9684_2ddcrealdec2_datacapturesettings.png
    :align: center
    :width: 400px
 
@@ -373,7 +373,7 @@ Obtaining an FFT - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  In order to exclude the image frequency from the SFDR measurements, configure Visual Analog to remove the image from its calculations. This is done under the FFT Analysis settings. Under the User-Defined tab add a new row by clicking Add. Name it ‘Image’. Use a symbol such as the # and set the Freq to ‘-fund’. Set the Single-Side Band to 3 Bins and set it as ‘Spur, Exclude’. Once done, select the row, and then hit the Move Up button to place this new row just below the row with Fund.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD6674_2adc1ddccomplexdec2_fftanalysissettings.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_2adc1ddccomplexdec2_fftanalysissettings.png
    :align: center
    :width: 700px
 
@@ -384,7 +384,7 @@ Obtaining an FFT - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  Click the Run button in Visual Analog and you should see the capture data similar to the plot below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9684_fft_1ddccomplexdec2.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9684_fft_1ddccomplexdec2.png
    :align: center
    :width: 600px
 
@@ -408,7 +408,7 @@ Obtaining an FFT - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  Click on File :math:`right` Save Form As button and save it to a location of choice
 
-.. image:: https://wiki.analog.com/_media/resources/eval/AD9684_fft_graph_saveformas.png
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9684_fft_graph_saveformas.png
    :align: center
 
 .. container:: centeralign
@@ -425,12 +425,15 @@ Troubleshooting Tips
 -  In VisualAnalog, Click on the Settings button in the **Input Formatter** block. Check that **Number Format** is set to the correct encoding (twos compliment by default). Repeat for the other channel.
 -  Issue a **Data Path Soft Reset** through SPIController **Global** tab as shown in Figure 27
 
-.. image:: https://wiki.analog.com/_media/eval/AD9684_datapathsoftreset.png
+.. image:: https://wiki.analog.com/_media/eval/ad9684_datapathsoftreset.png
    :align: center
 
 .. container:: centeralign
 
-   \ *Figure 27. Issuing a data path soft reset through SPIController*\** The FFT plot appears normal, but performance is poor.**
+   \ *Figure 27. Issuing a data path soft reset through SPIController*\
+
+
+\*\* The FFT plot appears normal, but performance is poor. \*\*
 
 -  Make sure you are using the appropriate band-pass filter on the analog input.
 -  Make sure the signal generators for the clock and the analog input are clean (low phase noise).
@@ -453,7 +456,7 @@ Troubleshooting Tips
 
 -  Ensure that the clock to the ADC is supplied. Using SPIController **ADCBase0** tab the status of the clock can be read out. See figure 28.
 
-.. image:: https://wiki.analog.com/_media/eval/AD9684_clockdetect.png
+.. image:: https://wiki.analog.com/_media/eval/ad9684_clockdetect.png
    :align: center
    :width: 600px
 

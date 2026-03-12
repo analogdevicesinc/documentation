@@ -75,8 +75,7 @@ The following sample code shows how to read parameters from a file using Sigma s
    ss.PrintLine(methodInfo.Name);
    methodInfo.Invoke(obj, new object[]{});
 
-   //CHANGE the Table INDEX
-   //and set the values
+   *CHANGE the Table INDEX\*and set the values
    // chage the tabindex count based on need and will get the tabindex value.which is used here.
    //setTabIndex should be 0 to 3.
    for (int idx =0; idx <= 1; idx++)

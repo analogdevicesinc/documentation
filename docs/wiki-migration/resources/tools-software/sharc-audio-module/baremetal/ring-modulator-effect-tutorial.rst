@@ -16,7 +16,7 @@ Tutorial Overview
 
 A ring modulator is a wild audio effect that generates some very interesting sounds. In this effect, we multiply the incoming audio signal using an oscillator. Here's a nice explanation of how the ring modular effect works and its various parameters.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>vI0VKNkv0n0
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>vi0vknkv0n0
    :alt: youtube>vI0VKNkv0n0
 
 In this tutorial, we're going to start by building a basic ring modulator effect. We'll then add a few additional bells and whistles. Before you begin this tutorial, it's recommended to quickly go through :doc:`Tutorial: Tremolo Effect </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/tremelo-effect-tutorial>`.
@@ -194,5 +194,5 @@ When we press SW2, the LED next to the push button toggles. To disable this beha
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#tremelo-effect-tutorial
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#tremelo-effect-tutorial
    :alt: Implementing a Tremolo Effect#.|Bare Metal Framework#delay-effect-tutorial|Implementing a Delay Effect

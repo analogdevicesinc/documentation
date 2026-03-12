@@ -8,7 +8,7 @@ A2B Bus Analyzer application provides two ways of activating the Analyzer produc
 Activate online
 ---------------
 
-If you have Internet connection and want to activate using one-step 'Activate online' (recommended) process, please follow `Product Activation <:doc:`/wiki-migration/resources/tools-software/a2b-bus-analyzer/quick-start-guide`>`_ section in :doc:`Quick Start Guide </wiki-migration/resources/tools-software/a2b-bus-analyzer/quick-start-guide>`. Upon successful activation you will receive an email confirming the activation. You can simply save this email as a record of your license serial number and validation code. **No additional action on your part is required.**
+If you have Internet connection and want to activate using one-step 'Activate online' (recommended) process, please follow :doc:`Product Activation </wiki-migration/resources/tools-software/a2b-bus-analyzer/quick-start-guide>` section in :doc:`Quick Start Guide </wiki-migration/resources/tools-software/a2b-bus-analyzer/quick-start-guide>`. Upon successful activation you will receive an email confirming the activation. You can simply save this email as a record of your license serial number and validation code. **No additional action on your part is required.**
 
 Activate offline
 ----------------

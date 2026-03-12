@@ -96,7 +96,7 @@ In order interface the Dyno with the Analog Discovery™ USB Oscilloscope:
 -  Slide switch S2 to EXT_CTRL position
 -  Insert the Analog Discovery™ in P1 the connector(with the Analog Devices logo facing the user)
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/dyno_discovery_control.JPG
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/dyno_discovery_control.jpg
    :alt: Dynamometer Drive System
    :width: 400px
 
@@ -140,8 +140,8 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/navigation AD-FMCMOTCON1-EBZ#signal_chain
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/navigation_ad-fmcmotcon1-ebz#signal_chain
    :alt: Signal Measurement Chain#..:\|Overview#none
 
-.. |Dyno menu| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/Dyno_Menu.png
+.. |Dyno menu| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/dyno_menu.png
    :width: 500px

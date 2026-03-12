@@ -22,5 +22,5 @@ As we cannot maintain and test these repositories, they still can be helpful, so
 | Fork from HDL of ArrowElectronics | https://github.com/ArrowElectronics/hdl          |                                                            |
 +-----------------------------------+--------------------------------------------------+------------------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide #tips
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide_#tips
    :alt: Using and modifying the HDL design #hdl|Main page #intro|Introduction

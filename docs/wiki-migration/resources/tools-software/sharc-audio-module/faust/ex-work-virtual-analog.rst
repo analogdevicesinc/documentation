@@ -307,7 +307,7 @@ The Effects Chain Page:
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/navigation SHARC Audio Module#ex-work-saw
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/navigation_sharc_audio_module#ex-work-saw
    :alt: MIDI Sawtooth Synth#.|Faust and the SHARC Audio Module#..|Back to main SHARC Audio Module
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/virtualanalog1.gif

@@ -8,14 +8,12 @@ ADXL354 and ADXL355 Breakout Board documentation:
 
 // `Preliminary User Guide (July22, 2016) <https://wiki.analog.com/_media/resources/eval/user-guides/adxl354-adxl355_breakout_ug-xxx_july22.pdf>`_ for the ADXL354 and ADXL355 Breakout Boards // `ADXL354 Breakout Board Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/301-735_adxl354z_rev_2_-_schematic.pdf>`_ // `ADXL354 Breakout Board Layout <https://wiki.analog.com/_media/resources/eval/user-guides/301-735_adxl354z_rev_2_-_layout.pdf>`_ // `ADXL354 Gerbers Zip file <https://wiki.analog.com/_media/resources/quick-start/301-735_adxl354z_rev_2_-_gerbers.zip>`_
 
-// `ADXL355 Breakout Board Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/301-736_adxl355z_evaluation_board_rev_2_-_schematic.pdf>`_ // `ADXL355 Breakout Board Layout <https://wiki.analog.com/_media/resources/eval/user-guides/301-736_adxl355z_evaluation_board_rev_2_-_layout.pdf>`_ // `ADXL355 Gerbers Zip file <https://wiki.analog.com/_media/resources/quick-start/301-736_adxl355z_evaluation_board_rev_2_-_gerbers.zip>`_
-
-//
+*`ADXL355 Breakout Board Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/301-736_adxl355z_evaluation_board_rev_2_-_schematic.pdf>`_ // `ADXL355 Breakout Board Layout <https://wiki.analog.com/_media/resources/eval/user-guides/301-736_adxl355z_evaluation_board_rev_2_-_layout.pdf>`_ // `ADXL355 Gerbers Zip file <https://wiki.analog.com/_media/resources/quick-start/301-736_adxl355z_evaluation_board_rev_2_-_gerbers.zip>`_*
 
 ADXL356 and ADXL357 Breakout Board documentation:
 -------------------------------------------------
 
-// `Preliminary User Guide (Feb14, 2017) <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/eval-adxl356_eval-adxl357_ug-xxxx_revdraft_feb14_draftedit.pdf>`_ for the ADXL356 and ADXL357 Breakout Boards // `ADXL356 Breakout Board Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/301-735_adxl354z_rev_2_-_schematic.pdf>`_ // `ADXL356 Breakout Board Layout <https://wiki.analog.com/_media/resources/eval/user-guides/301-735_adxl354z_rev_2_-_layout.pdf>`_ // `ADXL357 Breakout Board Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/301-736_adxl355z_evaluation_board_rev_2_-_schematic.pdf>`_ // `ADXL357 Breakout Board Layout <https://wiki.analog.com/_media/resources/eval/user-guides/301-736_adxl355z_evaluation_board_rev_2_-_layout.pdf>`_ //
+*`Preliminary User Guide (Feb14, 2017) <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/eval-adxl356_eval-adxl357_ug-xxxx_revdraft_feb14_draftedit.pdf>`_ for the ADXL356 and ADXL357 Breakout Boards // `ADXL356 Breakout Board Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/301-735_adxl354z_rev_2_-_schematic.pdf>`_ // `ADXL356 Breakout Board Layout <https://wiki.analog.com/_media/resources/eval/user-guides/301-735_adxl354z_rev_2_-_layout.pdf>`_ // `ADXL357 Breakout Board Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/301-736_adxl355z_evaluation_board_rev_2_-_schematic.pdf>`_ // `ADXL357 Breakout Board Layout <https://wiki.analog.com/_media/resources/eval/user-guides/301-736_adxl355z_evaluation_board_rev_2_-_layout.pdf>`_*
 
 ADXL355 Microcontroller Driver:
 -------------------------------

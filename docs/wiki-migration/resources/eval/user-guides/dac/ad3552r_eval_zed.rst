@@ -264,5 +264,5 @@ Reference Demos & Software
 
 .. |eval-ad3552rfmcxztop-web.gif| image:: https://wiki.analog.com/_media/resources/eval/eval-ad3552rfmcxztop-web.gif
    :width: 400px
-.. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/AD777x-ARDZ/zedboard.png
+.. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad777x-ardz/zedboard.png
    :width: 600px

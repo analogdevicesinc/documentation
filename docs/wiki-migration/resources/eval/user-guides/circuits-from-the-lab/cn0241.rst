@@ -48,7 +48,7 @@ Block Assignments
 -  Connect the 5V/2.5 A dc supply to +VIN and GND on **J1**. Also connect the 2 Ω/12 W load resistor to LOAD and GND on **J1**.
 -  **J2** is for SPI breakout.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/CN0241-06-1024_setup.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-06-1024_setup.png
    :align: center
    :width: 550px
 
@@ -123,7 +123,7 @@ Using the Evaluation Software
 Main Window
 ~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-main.JPG
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-main.jpg
    :align: center
    :width: 700px
 
@@ -192,7 +192,7 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0241-SDPZ?&v=Rev A>`_ to receive all these great benefits and more!
 
 
-// End of document //
+*End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-1.png
    :width: 500px
@@ -210,9 +210,9 @@ Registration
    :width: 500px
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-8.png
    :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-SD.JPG
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-sd.jpg
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-H.JPG
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-h.jpg
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-C.JPG
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-c.jpg
    :width: 400px

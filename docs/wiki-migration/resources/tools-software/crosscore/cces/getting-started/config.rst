@@ -54,5 +54,5 @@ Within this Property Settings window, you can modify the Tool Settings, such as 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#create
+.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#create
    :alt: Creating & Importing Projects#.|CCES Getting Started#view|Perspectives & Views

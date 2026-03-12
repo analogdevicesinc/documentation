@@ -104,4 +104,4 @@ The CN0410_example is a C++ Arduino sketch.
 
 All files are in the same folder as the .ino file and include the source and header files related to CN0411 software application that implement the CLI interface and functionality.
 
-// End of Document //
+*End of Document*

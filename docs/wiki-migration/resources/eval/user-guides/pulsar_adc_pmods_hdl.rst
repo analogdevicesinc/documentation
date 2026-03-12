@@ -63,7 +63,7 @@ HDL Design Description
 
 In the :doc:`ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>` can be found an in-depth presentation and instructions about the HDL design in general.
 
-The reference design uses the standard `SPI Engine Framework <:doc:`/wiki-migration/resources/fpga/peripherals/spi_engine`>`_ with an integrated pwm generator, which will provide the required conversion rate for the ADC.
+The reference design uses the standard :doc:`SPI Engine Framework </wiki-migration/resources/fpga/peripherals/spi_engine>` with an integrated pwm generator, which will provide the required conversion rate for the ADC.
 
 HDL Block Diagram
 ~~~~~~~~~~~~~~~~~

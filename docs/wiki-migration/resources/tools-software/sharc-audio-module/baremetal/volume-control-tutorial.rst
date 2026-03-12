@@ -127,5 +127,5 @@ Other Fun Things to Try
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#audio-elements
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#audio-elements
    :alt: "Audio Elements" and "Audio Effects"#.|Bare Metal Framework#chaining-audio-elements|Chaining Elements and Effects

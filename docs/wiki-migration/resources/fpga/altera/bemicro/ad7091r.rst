@@ -16,7 +16,7 @@ Overview
 
 This lab presents the steps to setup an environment for using the :adi:`EVAL-AD7091RSDZ` evaluation board together with the `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_ USB stick and the Nios II Embedded Development Suite (EDS). Below is presented a picture of the EVAL-AD091RSDZ Evaluation Board with the BeMicro SDK Platform.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7091R_bemicro.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7091r_bemicro.jpg
    :alt: ad7091R_bemicro.jpg
    :align: center
    :width: 400px
@@ -29,7 +29,7 @@ This lab presents the steps to setup an environment for using the :adi:`EVAL-AD7
 
 Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD7091RSDZ** Evaluation Board.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7091R_sdp1z.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7091r_sdp1z.jpg
    :alt: ad7091R_sdp1z.jpg
    :align: center
    :width: 400px
@@ -133,7 +133,7 @@ AD7091R PERIPHERAL            0x00000120 -
 
 The Nios II processor contains a peripheral that implements the communication protocol with the DUT. The peripheral is divided into three logical modules: a module which implements the interface with the Avalon bus and the communication with the onchip RAM, a module which implements an Avalon master interface which is used to write data directly in the onchip RAM and a module which is the actual driver of the DUT. The driver can also be used as standalone in FPGA designs which do not contain a softcore. Following is presented a block diagram of the HDL driver and a description of the driver's interface signals.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7091R_block_diagram.png
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7091r_block_diagram.png
    :alt: HDL driver block diagram
    :align: center
 

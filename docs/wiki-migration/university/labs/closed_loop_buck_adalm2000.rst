@@ -329,21 +329,21 @@ Intro on differences in control dynamics...
    :width: 1000px
 .. |image3| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_12vin_5vout_12p5_load_scopy.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_sw.png
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_powers_stage_sw.png
    :width: 800px
-.. |image5| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_lin.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_powers_stage_lin.png
    :width: 800px
-.. |image6| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_lin_response_ac.png
+.. |image6| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_powers_stage_lin_response_ac.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_lin_response_step.png
+.. |image7| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_powers_stage_lin_response_step.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_sw_response.png
+.. |image8| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_powers_stage_sw_response.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/SR1_config_CL_Vmode_buck_pwr_stage_char.png
+.. |image9| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/sr1_config_cl_vmode_buck_pwr_stage_char.png
    :width: 1000px
-.. |image10| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_actual_filtered.png
+.. |image10| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_powers_stage_actual_filtered.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_actual_noisy.png
+.. |image11| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_powers_stage_actual_noisy.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_at_cutoff.png
+.. |image12| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_powers_stage_at_cutoff.png
    :width: 600px

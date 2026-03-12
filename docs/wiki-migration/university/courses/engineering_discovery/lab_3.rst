@@ -1,7 +1,7 @@
 AD654 LED Flasher Lab
 =====================
 
-.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>4800534505001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogtv>4800534505001
    :alt: analogTV>4800534505001
    :align: right
 

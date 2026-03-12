@@ -230,7 +230,10 @@ Software Setup
 
 .. container:: centeralign
 
-   \ |image11|\ *Figure 10. ACE - Hardware Detected*-  Click the **hardware detected** to be redirected to system tab pane. In the **System**, **uncheck**\ Operate without Hardware*, and click **Acquire**. See Figure 11.
+   \ |image11|\ *Figure 10. ACE - Hardware Detected*\
+
+
+-  Click the **hardware detected** to be redirected to system tab pane. In the **System**, **uncheck** Operate without Hardware*, and click **Acquire**. See Figure 11.
 
 .. container:: centeralign
 

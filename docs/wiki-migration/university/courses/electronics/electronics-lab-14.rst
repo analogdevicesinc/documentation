@@ -47,7 +47,7 @@ Connect the 8 digital outputs designated by the blue boxes, and the scope channe
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a14_f2_bb.JPG
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/a14_f2_bb.jpg
    :align: center
 
 .. container:: centeralign

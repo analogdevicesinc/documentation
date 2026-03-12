@@ -442,7 +442,7 @@ Test Results will be recorded in the following document: `Logic Analyzer Test Ca
    :width: 200px
 .. |image113| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_print.png
    :width: 200px
-.. |image114| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_plotScreenshot.png
+.. |image114| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_plotscreenshot.png
    :width: 200px
 .. |image115| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step1.png
    :width: 200px
@@ -476,7 +476,7 @@ Test Results will be recorded in the following document: `Logic Analyzer Test Ca
    :width: 200px
 .. |image130| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_print.png
    :width: 200px
-.. |image131| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_plotScreenshot.png
+.. |image131| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_plotscreenshot.png
    :width: 200px
 .. |image132| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step1.png
    :width: 200px

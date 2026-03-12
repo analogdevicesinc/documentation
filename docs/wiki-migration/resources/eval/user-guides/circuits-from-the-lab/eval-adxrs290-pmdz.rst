@@ -457,7 +457,7 @@ Video Guides
 Unboxing
 ^^^^^^^^
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>Z4bt3IdRFEQ
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>z4bt3idrfeq
    :alt: youtube>Z4bt3IdRFEQ
 
 EVAL-ADICUP3029 Demo
@@ -502,7 +502,7 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-ADXRS290-PMDZ?&v=Rev A>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/rpi_pmod_con.jpg
    :width: 800px
@@ -514,6 +514,6 @@ Registration
    :width: 400px
 .. |Enable plot| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_enable-plot.png
    :width: 500px
-.. |youtube>LwD-MHoSlWk| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>LwD-MHoSlWk
+.. |youtube>LwD-MHoSlWk| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>lwd-mhoslwk
 
 .. |resources-eval-user-guides-circuits-from-the-lab-eval-adxrs290-pmdz-system_con.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/system_con.jpg

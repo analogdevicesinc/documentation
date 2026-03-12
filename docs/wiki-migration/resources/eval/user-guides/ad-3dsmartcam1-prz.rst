@@ -104,7 +104,7 @@ A set of applications have been developed for the 3D Smart Camera to showcase th
 Box dimensioning
 ~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>G-9UfaZXUCk
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>g-9ufazxuck
    :alt: youtube>G-9UfaZXUCk
    :align: right
 
@@ -187,8 +187,8 @@ For questions and more information please contact us on the Analog Devices Engin
    :width: 400px
 .. |Bindings| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/logos.png
    :width: 500px
-.. |youtube>-CErH6ROli8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>-CErH6ROli8
-.. |youtube>XKTGsVNyvrg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>XKTGsVNyvrg
-.. |youtube>mL542eUw_dg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>mL542eUw_dg
+.. |youtube>-CErH6ROli8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>-cerh6roli8
+.. |youtube>XKTGsVNyvrg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>xktgsvnyvrg
+.. |youtube>mL542eUw_dg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>ml542euw_dg
 .. |Smart Camera Desktop| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/jetson_desktop.png
    :width: 300px

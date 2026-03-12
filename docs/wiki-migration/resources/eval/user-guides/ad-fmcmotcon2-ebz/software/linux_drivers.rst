@@ -166,7 +166,7 @@ Each IIO driver has in the device tree and entry related to the actual driver an
        };
    };
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON2-EBZ#none#../
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon2-ebz#none#../
    :alt: Overview#iio_scope|Linux IIO Oscilloscope
 
 .. |IIO| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/software/iio_logo.png

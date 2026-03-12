@@ -11,7 +11,7 @@ System View
 
 The System View, shown below, shows the subsystems that have been added by the user to the system. From here subsystems can be linked to real hardware through the acquire/release hardware menu or removed from the system by clicking the remove button.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/AttachRel.PNG
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/attachrel.png
    :alt: AttachRel.PNG
 
 Acquiring and Releasing Hardware
@@ -26,7 +26,7 @@ Subsystem Connection State
 
 The USB icon on the USB connectivity button indicates the connection state of the subsystem. The color of the USB icon will change based on the current state of the connection, with the following states being represented:
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/Green.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/green.png
    :alt: Green.png
    :align: left
 
@@ -34,7 +34,7 @@ The USB icon on the USB connectivity button indicates the connection state of th
 
    * Acquired - Subsystem is connected to a controller.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/Grey.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/grey.png
    :alt: Grey.png
    :align: left
 
@@ -42,7 +42,7 @@ The USB icon on the USB connectivity button indicates the connection state of th
 
    * Released - Subsystem is not connected to a controller.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/Red.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/red.png
    :alt: Red.png
    :align: left
 
@@ -50,7 +50,7 @@ The USB icon on the USB connectivity button indicates the connection state of th
 
    *Error - The Controller is not responding as expected, Hardware may need reset.
 
-.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/Yellow.png
+.. image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/yellow.png
    :alt: Yellow.png
    :align: left
 

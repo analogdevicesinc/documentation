@@ -98,97 +98,97 @@ Test Results will be recorded in the following document: `Power Supply - Test Ca
 
 **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep1.JPG
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep1.jpg
    :width: 100px
-.. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep2.JPG
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep2.jpg
    :width: 100px
-.. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep3.JPG
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep3.jpg
    :width: 100px
-.. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep4.JPG
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep4.jpg
    :width: 100px
-.. |Power Supply interface| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep5a.JPG
+.. |Power Supply interface| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep5a.jpg
    :width: 100px
-.. |Voltmeter reading| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep5b.JPG
+.. |Voltmeter reading| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep5b.jpg
    :width: 100px
-.. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep6a.JPG
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep6a.jpg
    :width: 100px
-.. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep6b.JPG
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep6b.jpg
    :width: 100px
-.. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep7a.JPG
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep7a.jpg
    :width: 100px
-.. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep7b.JPG
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep7b.jpg
    :width: 100px
-.. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Aknobstep8.JPG
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_aknobstep8.jpg
    :width: 100px
-.. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Aknobstep10.JPG
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_aknobstep10.jpg
    :width: 100px
-.. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep12.JPG
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep12.jpg
    :width: 100px
-.. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep1.JPG
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep1.jpg
    :width: 100px
-.. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep2.JPG
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep2.jpg
    :width: 100px
-.. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep3.JPG
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep3.jpg
    :width: 100px
-.. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep4.JPG
+.. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep4.jpg
    :width: 100px
-.. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep6a.JPG
+.. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep6a.jpg
    :width: 100px
-.. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep6b.JPG
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep6b.jpg
    :width: 100px
-.. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep7a.JPG
+.. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep7a.jpg
    :width: 100px
-.. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep7b.JPG
+.. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep7b.jpg
    :width: 100px
-.. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Aknobstep8.JPG
+.. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_aknobstep8.jpg
    :width: 100px
-.. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Aknobstep10.JPG
+.. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_aknobstep10.jpg
    :width: 100px
-.. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Astep12.JPG
+.. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_astep12.jpg
    :width: 100px
-.. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep1.JPG
+.. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep1.jpg
    :width: 100px
-.. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep2.JPG
+.. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep2.jpg
    :width: 100px
-.. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep3.JPG
+.. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep3.jpg
    :width: 100px
-.. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep4.JPG
+.. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep4.jpg
    :width: 100px
-.. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep5a.JPG
+.. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep5a.jpg
    :width: 100px
-.. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep5b.JPG
+.. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep5b.jpg
    :width: 100px
-.. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep6a.JPG
+.. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep6a.jpg
    :width: 100px
-.. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep6b.JPG
+.. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep6b.jpg
    :width: 100px
-.. |Power supply interface| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep7a.JPG
+.. |Power supply interface| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep7a.jpg
    :width: 100px
-.. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep7b.JPG
+.. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep7b.jpg
    :width: 100px
-.. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep8a.JPG
+.. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep8a.jpg
    :width: 100px
-.. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep8b.JPG
+.. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep8b.jpg
    :width: 100px
-.. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep1.JPG
+.. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep1.jpg
    :width: 100px
-.. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep2.JPG
+.. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep2.jpg
    :width: 100px
-.. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep3.JPG
+.. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep3.jpg
    :width: 100px
-.. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep4.JPG
+.. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep4.jpg
    :width: 100px
-.. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep5a.JPG
+.. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep5a.jpg
    :width: 100px
-.. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep5b.JPG
+.. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep5b.jpg
    :width: 100px
-.. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep6a.JPG
+.. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep6a.jpg
    :width: 100px
-.. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep6b.JPG
+.. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep6b.jpg
    :width: 100px
-.. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep7b.JPG
+.. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep7b.jpg
    :width: 100px
-.. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep8a.JPG
+.. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep8a.jpg
    :width: 100px
-.. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ ps_Bstep8b.JPG
+.. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_ps_bstep8b.jpg
    :width: 100px

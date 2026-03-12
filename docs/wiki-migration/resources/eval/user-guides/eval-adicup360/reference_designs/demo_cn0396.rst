@@ -187,7 +187,7 @@ The **RTE** folder contains device and system related files:
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_1.png
    :width: 650px

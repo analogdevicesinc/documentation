@@ -16,7 +16,7 @@ Videos
 
 Here is a brief introduction on why everyone needs to, and how to use this tool.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/analogTV>3845680080001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/analogtv>3845680080001
    :alt: analogTV>3845680080001
 
 .. important::
@@ -413,7 +413,7 @@ If you are interested in the filter response of HB1, you can proceed to apply th
 
 and you will get:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/HB1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/hb1.png
    :alt: Block diagram
    :width: 600px
 

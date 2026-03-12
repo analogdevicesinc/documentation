@@ -15,5 +15,5 @@ The component spacing for tuning capacitors C1 and C2 is detailed in the ][adi>A
 
 Placement of the AC coupling capacitors, power supply bypassing capacitors and DC bias inductor should follow the recommendation of the datasheet, but are slightly less critical than the tuning capacitors.
 
-.. image:: https://wiki.analog.com/_media/navigation AD-PZSDR2400TDD-EBZ#Characteristics and Performance#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-pzsdr2400tdd-ebz#characteristics_and_performance#./
    :alt: Hardware#FCC or CE Certification

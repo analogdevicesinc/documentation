@@ -42,5 +42,5 @@ Other than the above, we have reference designs covering a wide range of boards.
 
 You may need additional tools, that may be in separate repositories. The main documentation on how to build the software is part of the product's user guide.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#build
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#build
    :alt: Building & Generating programming files#hdl|Main page#arch|Architecture

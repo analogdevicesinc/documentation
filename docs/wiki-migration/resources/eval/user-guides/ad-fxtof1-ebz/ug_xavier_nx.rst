@@ -83,10 +83,10 @@ Unfortunately OpenCV does not provide binaries for this module so a manual build
 
 -  If aditof-demo finds all the OpenCV required modules a button in the interface will allow you to display the point cloud. By toggling the button a separate window will appear.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/aditof_demo_pointCloud.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/aditof_demo_pointcloud.png
    :alt: aditof-demo
    :align: center
    :width: 800px
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FXTOF1-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fxtof1-ebz#none#./
    :alt: Overview#none#

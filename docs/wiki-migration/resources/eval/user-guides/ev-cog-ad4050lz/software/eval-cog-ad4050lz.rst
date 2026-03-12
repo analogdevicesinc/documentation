@@ -71,6 +71,6 @@ The software pack can be downloaded in following ways.
    
 
 
-// End of Document //
+*End of Document*
 
 `Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_

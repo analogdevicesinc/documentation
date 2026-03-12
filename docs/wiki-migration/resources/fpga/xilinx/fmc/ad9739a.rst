@@ -259,7 +259,7 @@ Using the ADF4350 USB SPI Software
 
 After installing the graphical interface PC software that is included with the standard Analog Devices evaluation boards(DAC Software Suite), you can find the software controlling ADF4350 clock chip at Start > Programs > Analog Devices > AD9739A > ADF4350 SPI for AD9739A-FMC-EBZ. Once opened, select File…Open Setup File. Browse for the file 2_5GHz for AD9739A.ini, which is located in Analog Devices\\HSDAC\\AD9739A inside your Program Files directory (usually C:\\Program Files or C:\\Program Files(x86)). This will setup the clock chip to provide a 2.5GHz clock to the AD9739A.
 
-.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg/ad9739a-ebz#AD9739A USB SPI Software&nofooter
+.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg/ad9739a-ebz#ad9739a_usb_spi_software&nofooter
    :alt: ad9739a-ebz#AD9739A USB SPI Software&nofooter
 
 Downloads
@@ -415,7 +415,7 @@ More information
    
 
 
-.. |analogTV>1423927819001| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/analogTV>1423927819001
+.. |analogTV>1423927819001| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/analogtv>1423927819001
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/direct_clock_980_1c_aclr.png
    :width: 200px
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/direct_clock_980_1c_spectrum.png

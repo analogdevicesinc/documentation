@@ -3391,7 +3391,7 @@ Signal and Interface Pins
 Register Map
 ------------
 
-.. image:: https://wiki.analog.com/_media/page>/resources/fpga/docs/hdl/regmap##JESD204 RX (axi_jesd204_rx)&nofooter&noeditbtn
+.. image:: https://wiki.analog.com/_media/page>/resources/fpga/docs/hdl/regmap##jesd204_rx_(axi_jesd204_rx)&nofooter&noeditbtn
    :alt: regmap##JESD204 RX (axi_jesd204_rx)&nofooter&noeditbtn
 
 +-------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3875,7 +3875,7 @@ More Information
 
 -  `JESD204 High-Speed Serial Interface Support <>`__
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/navigation HDL User Guide#../../docs/ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/navigation_hdl_user_guide#../../docs/ip_cores
    :alt: IP cores#../../docs/hdl|Main page#../../docs/tips|Using and modifying the HDL design
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/quadmxfe_linkbringup_204b_adc.png

@@ -337,7 +337,7 @@ Voyager4 comes packaged with a second microcontroller, the MAX78000, which can m
 .. |GUI with accel data| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_24_gui_with_accel_data.svg
 .. |GUI Saving Data disabled| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_25_gui_saving_data_disabled.svg
 .. |GUI Saving Data Enabled| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_26_gui_saving_data_enabled.svg
-.. |GUI Data Saving| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_27_gui_Data_saving.svg
+.. |GUI Data Saving| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_27_gui_data_saving.svg
 .. |GUI Wake78000| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_32_gui_wake78000.svg
 .. |GUI Reconstruction Error| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_28_gui_reconstruction_error.svg
 .. |GUI Auto Detect Tab| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_29_gui_auto_detect_tab.svg

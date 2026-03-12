@@ -95,5 +95,5 @@ Parameter RAM              4
 
 .. |pitchtranposedata.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/pitchtranposedata.jpg
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/pitchtransposerexample.png
-.. |Before_Pitch_Shift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/Before_Pitch_Shift.png
-.. |After_Pitch_Shift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/After_Pitch_Shift.png
+.. |Before_Pitch_Shift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/before_pitch_shift.png
+.. |After_Pitch_Shift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/after_pitch_shift.png

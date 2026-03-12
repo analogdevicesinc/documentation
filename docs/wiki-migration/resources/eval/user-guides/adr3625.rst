@@ -37,7 +37,7 @@ Evaluation Board Photograph
 
 .. container:: centeralign
 
-   |image1| //Figure 1. EVAL-ADR3625EBZ //
+   |image1| *Figure 1. EVAL-ADR3625EBZ*
 
 
 Evaluation Board Hardware
@@ -76,7 +76,7 @@ Evaluation Board Schematic and Artwork
 .. container:: centeralign
 
    
-   |image2| //Figure 2. EVAL-ADR3625EBZ Evaluation Board Schematic //
+   |image2| *Figure 2. EVAL-ADR3625EBZ Evaluation Board Schematic*
    
    |image3| *Figure 3. EVAL-ADR3625EBZ Silkscreen*
    

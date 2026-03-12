@@ -17,7 +17,7 @@ Overview
 
 The :adi:`AD5629R` device is a low power, octal, 12-bit, buffered voltage-output DACs. It operates from a single 2.7 V to 5.5 V supply and is guaranteed monotonic by design. The AD5629R has an on-chip reference with an internal gain of 2. The user can select the AD5629R with a 1.25 V 5 ppm/°C reference (AD5629R-1), giving a full-scale output range of 2.5 V, or a 2.5 V 5 ppm/°C reference AD5629R-2 and AD5629R-3), giving a full-scale output range of 5 V. The on-chip reference is off at power-up, allowing the use of an external reference. The internal reference is enabled via a software write. The part incorporates a power-on reset circuit that ensures that the DAC output powers up to 0 V and remains powered up at this level until a valid write takes place. The part contains a power-down feature that reduces the current consumption of the device to 400 nA at 5 V and provides software-selectable output loads while in power-down mode for any or all DAC channels.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5629R_sdz.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5629r_sdz.jpg
    :align: center
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
@@ -102,7 +102,7 @@ An EVAL-AD5629RSDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
      EVAL-AD5629RSDZ J8 connector Pin \LDAC (LDAC)   → YRDKRL78G13 J11 connector Pin 9
      EVAL-AD5629RSDZ J9 connector Pin \CLR  (CLR)    → YRDKRL78G13 J11 connector Pin 10
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_rl78g13.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629r_rl78g13.jpg
    :align: center
 
 Software Setup
@@ -145,7 +145,7 @@ Reference Project Overview
 
 The reference project powers-up all DAC channels, displays the content of the power register and starts to generate a saw-tooth wave.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_rl78g13_screen.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629r_rl78g13_screen.jpg
    :align: center
 
 Software Project Setup
@@ -185,7 +185,7 @@ An EVAL-AD5629REBZ board has to be interfaced with the Renesas Demonstration Kit
      EVAL-AD5629RSDZ J8 connector Pin \LDAC (LDAC)   → YRDKRX62N J8 connector Pin 17
      EVAL-AD5629RSDZ J9 connector Pin \CLR  (CLR)    → YRDKRX62N J8 connector Pin 25
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_rx62n.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629r_rx62n.jpg
    :align: center
 
 Reference Project Overview
@@ -193,7 +193,7 @@ Reference Project Overview
 
 The reference project: The reference project powers-up all DAC channels, displays the content of the power register and starts to generate a saw-tooth wave.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_rx62n_screen.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629r_rx62n_screen.jpg
    :align: center
 
 Software Project Setup

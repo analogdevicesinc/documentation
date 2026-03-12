@@ -16,7 +16,7 @@ Overview
 
 This document presents the steps to setup an environment for using the :adi:`EVAL-AD2S1205SDZ <AD2S1205>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD2S1205CBZ Evaluation Board with the Xilinx KC705 board.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad2S1205.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad2s1205.jpg
    :alt: ad2S1205.jpg
    :align: center
    :width: 400px
@@ -133,4 +133,4 @@ More information
    See `ez_common <https://wiki.analog.com/ez_common>`_
 
 
-.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/terminal_kc705.jpg

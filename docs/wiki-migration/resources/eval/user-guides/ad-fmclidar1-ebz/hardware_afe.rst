@@ -5,7 +5,7 @@ AFE Board Hardware Overview
 
 The AFE board receives the optical reflected signal, converts it to an electrical signal and transfers it to the ADC on the DAQ board. The optical signal is converted using a 16 channel `APD array from First Sensor <https://www.first-sensor.com/en/products/optical-sensors/detectors/avalanche-photodiode-arrays-apd-arrays/>`_. The 16 current outputs are fed to four :adi:`LTC6561 <en/products/ltc6561.html>`, low-noise four-channel, transimpedance amplifiers (TIA)with 220MHz bandwidth. They feature 74kΩ transimpedance gain and 30µA linear input current range. The measurement range can be increased from 30µA to at least 3mA. However, in saturation the pulse width widens (in a predictable manner). An internal 4-to-1 MUX is used to select the output channel. The output voltage is single-ended and swings 2Vpp.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD-FMCLIDAR1-EBZ/AFE Board.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/afe_board.png
    :alt: AFE Block Diagram
    :align: left
    :width: 500px
@@ -35,10 +35,10 @@ The TIA output is fed to the ADA4950, a buffer which converts the signal from si
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCLIDAR1-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmclidar1-ebz#none#./
    :alt: Overview#none#
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD-FMCLIDAR1-EBZ/AFE top pic.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/afe_top_pic.jpg
    :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD-FMCLIDAR1-EBZ/AFE bot pic.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/afe_bot_pic.jpg
    :width: 300px

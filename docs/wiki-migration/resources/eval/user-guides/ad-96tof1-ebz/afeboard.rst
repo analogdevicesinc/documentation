@@ -1,7 +1,7 @@
 AD-96TOF1-EBZ AFE Board
 =======================
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tofebz/3dtof afe blk dig.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tofebz/3dtof_afe_blk_dig.png
    :align: right
    :width: 400px
 
@@ -24,5 +24,5 @@ The AD-96TOF1-EBZ AFE Board from factor is compliant with the 96Boards mezzanine
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-96TOF1-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-96tof1-ebz#none#./
    :alt: Overview#none#

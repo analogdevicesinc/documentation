@@ -2938,5 +2938,5 @@ The information written to the System ID ROM(s) is obtained from Vivado in the e
    set sys_cstring "sys rom custom string placeholder"
    sysid_gen_sys_init_file $sys_cstring
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

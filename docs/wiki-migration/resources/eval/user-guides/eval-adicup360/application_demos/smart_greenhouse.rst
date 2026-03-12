@@ -300,7 +300,7 @@ Serial Terminal/Output
 
 |image9| In puTTy cofiguration, select serial as the connection type with a baud rate of 115200. Select the correct COM port by checking it in your device manager. |image10|
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/application_demos/greenhouse.jpg
    :width: 600px

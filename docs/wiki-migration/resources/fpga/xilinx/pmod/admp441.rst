@@ -52,7 +52,7 @@ Extract the project from the archive file (ADMP441_lx9.zip) to the location you 
 
 To begin, connect the PmodMIC2 to J5 connector of LX9 board (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodMIC2_lx9.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_lx9.jpg
    :alt: PmodMIC2 and LX-9
    :width: 200px
 
@@ -63,7 +63,7 @@ Extract the project from the archive file (ADMP441_lx9.zip) to the location you 
 
 To begin, connect the PmodMIC2 to JA connector of Nexys™3 board (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodMIC2_nexys3.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_nexys3.jpg
    :alt: PmodMIC2 and Nexys™3
    :width: 200px
 
@@ -81,7 +81,7 @@ FPGA Configuration for Nexys3 and LX-9 MicroBoard
 
 Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../admp441/sw/ADMP441.bit). Launch "data_capture.bat" from the "../DataCapture" folder.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodMIC2Impact.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2impact.jpg
    :alt: Programming FPGA in IMPACT
    :width: 200px
 

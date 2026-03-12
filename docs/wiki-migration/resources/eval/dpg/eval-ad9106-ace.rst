@@ -57,7 +57,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   |image3|//Figure 2b. EVAL-AD9102 Default Board Configuration //
+   |image3|*Figure 2b. EVAL-AD9102 Default Board Configuration*
 
 
 -  Click the AD9106 / AD9102 Chip to proceed to chip view. Apply the chip settings enumerated below and shown in Figure 3.
@@ -114,7 +114,7 @@ There are six available sample waveform settings that can be loaded from the plu
 
 .. container:: centeralign
 
-   //Figure 6a. AD9106 Sample Waveform  | Figure 6b. AD9102 Sample Waveform //
+   *Figure 6a. AD9106 Sample Waveform  | Figure 6b. AD9102 Sample Waveform*
 
 
 .. note::

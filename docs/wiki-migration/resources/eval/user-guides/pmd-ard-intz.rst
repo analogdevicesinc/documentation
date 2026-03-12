@@ -172,4 +172,4 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/PMD-ARD-INTZ?&v=Rev D>`_ to receive all these great benefits and more!
 
 
-// End of document //
+*End of document*

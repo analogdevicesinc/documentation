@@ -509,7 +509,7 @@ Following commands visualize how to control the eyescan from the command line. `
       0000050 ffff 0544 ffff 08ce ffff 11ce ffff 27d6
       0000060 ffff 75b9 a10c ffff 23c3 ffff 05b4 ffff
    
-      //[-- snip --]//
+      *[-- snip --]*
    
 
 

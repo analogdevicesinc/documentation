@@ -55,7 +55,7 @@ The negative terminals of all power components, such as the low-side switch, byp
 
 The voltage drop within the GND plane could be significant enough to affect the output accuracy. Connecting the AGND plane to the negative terminal of the output capacitors through a wide trace (see Figure 4) significantly improves output accuracy and load regulation.
 
-|an1119-image004.png| //Figure 4. AGND Plane-to-PGND Plane Connection //
+|an1119-image004.png| *Figure 4. AGND Plane-to-PGND Plane Connection*
 
 The AGND plane extends all the way to the output capacitor, where the AGND and PGND planes connect to the vias at the negative terminal of the output capacitor.
 
@@ -70,7 +70,7 @@ The :adi:`ADP1850` dual channel step-down controller uses the R\ :sub:`DS(ON)` o
 
 In contrast, for dual channel voltage mode controllers, such as the :adi:`ADP1829`, the PGND1 and PGND2 pins directly tie to the PGND plane with vias.
 
-|an1119-image005.png| //Figure 5. Grounding Technique for Two Channels //
+|an1119-image005.png| *Figure 5. Grounding Technique for Two Channels*
 
 Feedback and Current-Limit Sense Paths
 --------------------------------------

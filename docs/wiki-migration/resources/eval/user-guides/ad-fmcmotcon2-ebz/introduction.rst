@@ -48,7 +48,7 @@ Where to Buy
    :adi:`FMCMOTCON2 Evaluation Kit <design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-FMCMOTCON2.html>`
 
 
-.. image:: https://wiki.analog.com/_media/navigation EVAL-FMCMOTCON2#none#./
+.. image:: https://wiki.analog.com/_media/navigation_eval-fmcmotcon2#none#./
    :alt: Overview#quickstart|Quick Start Guides
 
 .. |AD-FMCMOTCON2-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_ctrl_single.jpg

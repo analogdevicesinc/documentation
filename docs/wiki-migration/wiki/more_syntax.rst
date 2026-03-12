@@ -580,7 +580,7 @@ You can have columns easily by adding the class ``column`` and a width, e.g.
    
    ::
    
-      //**__Emulated Big Headline__**//
+      **__Emulated Big Headline__**
    
    **Emulated Small Headline**
    
@@ -588,13 +588,13 @@ You can have columns easily by adding the class ``column`` and a width, e.g.
    
    ::
    
-      //**Emulated Small Headline**//
+      **Emulated Small Headline**
    
    If you need text that is bold and italic, simply use it the other way around:
    
    ::
    
-      **//No Headline//**
+      **No Headline**
    
 
 
@@ -1010,7 +1010,7 @@ You can combine and nest all classes and types of boxes, e.g.
 
 .. container:: box bggreen fgblack 350px right :en
 
-      //**__Outer green box floats right__**//
+      **__Outer green box floats right__**
    
    .. container:: 165px left
 
@@ -1055,7 +1055,7 @@ If you goto the :adi:`videos section <en/education/education-library/videos.html
 
 Any video on ``www.analog.com`` will work this way.
 
-.. image:: https://wiki.analog.com/_media/wiki/analogTV>983688886001
+.. image:: https://wiki.analog.com/_media/wiki/analogtv>983688886001
    :alt: analogTV>983688886001
 
 YouTube
@@ -1067,13 +1067,13 @@ Works the same/similar way:
 
 find the video you want to watch, and then use it's "tag" in the url to encode it.
 
-.. image:: https://wiki.analog.com/_media/wiki/youtube>LCf-_iREESQ
+.. image:: https://wiki.analog.com/_media/wiki/youtube>lcf-_ireesq
    :alt: youtube>LCf-\_iREESQ
 
 .. [1]
    This means "This is Hebrew.", at least according to `Google Translate <http://translate.google.com/>`_.
 
-.. |3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0| image:: https://wiki.analog.com/_media/wiki/3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0
-.. |1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt| image:: https://wiki.analog.com/_media/wiki/1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt
-.. |analogTV>983688886001| image:: https://wiki.analog.com/_media/wiki/analogTV>983688886001
-.. |youtube>LCf-\_iREESQ| image:: https://wiki.analog.com/_media/wiki/youtube>LCf-_iREESQ
+.. |3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0| image:: https://wiki.analog.com/_media/wiki/3x-5y+z=0}_{sqrt{2}x-7y+8z=0}_{x-8y+9z=0
+.. |1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt| image:: https://wiki.analog.com/_media/wiki/1/n}_sum{n=1}{n}{gamma(u_n)}_-_1/{2_pi}_int{0}{2_pi}{gamma(t)_dt
+.. |analogTV>983688886001| image:: https://wiki.analog.com/_media/wiki/analogtv>983688886001
+.. |youtube>LCf-\_iREESQ| image:: https://wiki.analog.com/_media/wiki/youtube>lcf-_ireesq

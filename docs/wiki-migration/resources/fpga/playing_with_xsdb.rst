@@ -69,5 +69,5 @@ References
 -  https://wiki.analog.com/resources/fpga/docs/axi_ip
 -  https://www.xilinx.com/support/documentation/sw_manuals/xilinx2014_3/SDK_Doc/concepts/sdk_c_xsd_over.htm
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/navigation #resources/fpga/quick_validation
+.. image:: https://wiki.analog.com/_media/resources/fpga/navigation_#resources/fpga/quick_validation
    :alt: Quick system validation with no-Os#resources/fpga/docs/tips|Using and modifying the HDL design#resources/fpga/docs/hdl|Main page

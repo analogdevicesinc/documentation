@@ -29,5 +29,5 @@ Files
 | PCB Layout PDF    | `RevA <https://wiki.analog.com/_media/resources/eval/dpg/ad9144-ebz_reva_layout.pdf>`_                          | `RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9144-fmc-ebz_revb_layout.pdf>`_                                                                                                                                                  |
 +-------------------+-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#Data Pattern Generator&nofooter&noindent
+.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#data_pattern_generator&nofooter&noindent
    :alt: dpg#Data Pattern Generator&nofooter&noindent

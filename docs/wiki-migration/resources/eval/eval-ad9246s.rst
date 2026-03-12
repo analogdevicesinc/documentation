@@ -260,7 +260,10 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
 .. container:: centeralign
 
-   \ *Figure 7. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, various selections can be made to change the device settings for the :adi:`ad9246S`. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
+   \ *Figure 7. SPI Controller, New DUT Button*\
+
+
+-  In the **ADCBase 0** tab of the **SPIController** window, various selections can be made to change the device settings for the :adi:`ad9246S`. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_spicontroller_adcbase0.png
    :align: center

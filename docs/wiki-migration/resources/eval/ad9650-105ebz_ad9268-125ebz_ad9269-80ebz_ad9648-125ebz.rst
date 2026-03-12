@@ -289,7 +289,7 @@ The default input network, as configured on the AD9650 evaluation board, is show
 
    .. container:: centeralign
 
-      //Figure 3.1 Default Analog Input Configuration of the AD9650 Family //
+      *Figure 3.1 Default Analog Input Configuration of the AD9650 Family*
 
 .. raw:: html
 
@@ -309,7 +309,7 @@ For the AD9268 family, the default analog input configuration supports analog in
 
    .. container:: centeralign
 
-      //Figure 3.2. Default Analog Input Configuration of the AD9268 Family //
+      *Figure 3.2. Default Analog Input Configuration of the AD9268 Family*
 
 .. raw:: html
 
@@ -329,14 +329,14 @@ For the AD9269 and AD9648 family, the default analog input configuration support
 
    .. container:: centeralign
 
-      //Figure 3.3. Default Analog Input Configuration of the AD9269 Family //
+      *Figure 3.3. Default Analog Input Configuration of the AD9269 Family*
 
 
       |image5|
 
    .. container:: centeralign
 
-      //Figure 3.4. Default Analog Input Configuration of the AD9648 Family //
+      *Figure 3.4. Default Analog Input Configuration of the AD9648 Family*
 
 .. raw:: html
 
@@ -504,7 +504,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 5. VisualAnalog Default Configuration Message*-  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 7. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`,*VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 6).
+      \ *Figure 5. VisualAnalog Default Configuration Message*\
+
+   
+   -  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 7. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 6).
    
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9650_collapse.png
       :align: center
@@ -550,7 +553,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 9. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box. If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. Also, check if the **VREF(18)** box is set to **2.70Vp-p** (see Figure 10). See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+      \ *Figure 9. SPI Controller, New DUT Button*\
+
+   
+   -  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box. If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. Also, check if the **VREF(18)** box is set to **2.70Vp-p** (see Figure 10). See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9650_spi_base0.png
       :align: center
@@ -558,7 +564,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 10. SPI Controller, ADCBase0 Tab*-  Note that other settings can be changed on the **ADCBase 0** page (see Figure 10) and the **ADC A** and **ADC B** pages (see Figure 11) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+      \ *Figure 10. SPI Controller, ADCBase0 Tab*\
+
+   
+   -  Note that other settings can be changed on the **ADCBase 0** page (see Figure 10) and the **ADC A** and **ADC B** pages (see Figure 11) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9650_spi_adc_a.png
       :align: center
@@ -597,7 +606,7 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      //Figure 13. Graph Window of VisualAnalog //
+      *Figure 13. Graph Window of VisualAnalog*
 
    
    -  Repeat this procedure for Channel B.
@@ -609,7 +618,7 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      // Figure 14. Typical FFT, :adi:`AD9650`//
+      *Figure 14. Typical FFT, :adi:`AD9650`*
 
 .. raw:: html
 
@@ -648,7 +657,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 5. VisualAnalog Default Configuration Message*-  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 7. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`,*VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 6).
+      \ *Figure 5. VisualAnalog Default Configuration Message*\
+
+   
+   -  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 7. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 6).
    
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9268_collapse.png
       :align: center
@@ -694,7 +706,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 9. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box. If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. Also, check if the **VREF(18)** box is set to **2.00Vp-p** (see Figure 10). See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+      \ *Figure 9. SPI Controller, New DUT Button*\
+
+   
+   -  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box. If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. Also, check if the **VREF(18)** box is set to **2.00Vp-p** (see Figure 10). See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9268_spi_base0.png
       :align: center
@@ -702,7 +717,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 10. SPI Controller, ADCBase0 Tab*-  Note that other settings can be changed on the **ADCBase 0** page (see Figure 10) and the **ADC A** and **ADC B** pages (see Figure 11) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+      \ *Figure 10. SPI Controller, ADCBase0 Tab*\
+
+   
+   -  Note that other settings can be changed on the **ADCBase 0** page (see Figure 10) and the **ADC A** and **ADC B** pages (see Figure 11) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9268_spi_adc_a.png
       :align: center
@@ -741,7 +759,7 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      //Figure 13. Graph Window of VisualAnalog //
+      *Figure 13. Graph Window of VisualAnalog*
 
    
    -  Repeat this procedure for Channel B.
@@ -753,7 +771,7 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      // Figure 14. Typical FFT, :adi:`AD9268`//
+      *Figure 14. Typical FFT, :adi:`AD9268`*
 
 .. raw:: html
 
@@ -792,7 +810,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 5. VisualAnalog Default Configuration Message*-  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 7. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`,*VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 6).
+      \ *Figure 5. VisualAnalog Default Configuration Message*\
+
+   
+   -  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 7. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 6).
    
    .. image:: https://wiki.analog.com/_media/resources/eval/va_collapsed.png
       :align: center
@@ -807,7 +828,12 @@ Using The Software for Testing
 
    .. container:: centeralign
 
-      \ *Figure 7. VisualAnalog, Main Window Expanded Display*\** Setting up the SPI Controller Software**
+      \ *Figure 7. VisualAnalog, Main Window Expanded Display*\
+
+   
+
+
+\*\* Setting up the SPI Controller Software \*\*
 
 .. container:: indent
 
@@ -833,7 +859,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 9. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box. If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+      \ *Figure 9. SPI Controller, New DUT Button*\
+
+   
+   -  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box. If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9269_spi_base0.png
       :align: center
@@ -841,7 +870,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 10. SPI Controller, ADCBase 0 Tab*-  Note that other settings can be changed on the **ADCBase 1** page (see Figure 11) and the **ADC A** and **ADC B** pages (see Figure 12 and 13) to set up the part in the desired mode. The **ADCBase 0** and **ADCBase 1** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+      \ *Figure 10. SPI Controller, ADCBase 0 Tab*\
+
+   
+   -  Note that other settings can be changed on the **ADCBase 1** page (see Figure 11) and the **ADC A** and **ADC B** pages (see Figure 12 and 13) to set up the part in the desired mode. The **ADCBase 0** and **ADCBase 1** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9269_spi_base1.png
       :align: center
@@ -878,7 +910,12 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 14. Run Button (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display*\** Adjusting the Amplitude of the Input Signal**
+      \ *Figure 14. Run Button (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display*\
+
+   
+
+
+\*\* Adjusting the Amplitude of the Input Signal \*\*
 
 .. container:: indent
 
@@ -893,7 +930,7 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      //Figure 15. Graph Window of VisualAnalog //
+      *Figure 15. Graph Window of VisualAnalog*
 
    
    -  Repeat this procedure for Channel B.
@@ -905,7 +942,7 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      // Figure 16. Typical FFT, :adi:`AD9269`//
+      *Figure 16. Typical FFT, :adi:`AD9269`*
 
 .. raw:: html
 
@@ -944,7 +981,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 5. VisualAnalog Default Configuration Message*-  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 7. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`,*VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 6).
+      \ *Figure 5. VisualAnalog Default Configuration Message*\
+
+   
+   -  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 7. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 6).
    
    .. image:: https://wiki.analog.com/_media/resources/eval/va_collapsed.png
       :align: center
@@ -959,7 +999,12 @@ Using The Software for Testing
 
    .. container:: centeralign
 
-      \ *Figure 7. VisualAnalog, Main Window Expanded Display*\** Setting up the SPI Controller Software**
+      \ *Figure 7. VisualAnalog, Main Window Expanded Display*\
+
+   
+
+
+\*\* Setting up the SPI Controller Software \*\*
 
 .. container:: indent
 
@@ -985,7 +1030,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 9. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box. If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+      \ *Figure 9. SPI Controller, New DUT Button*\
+
+   
+   -  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box. If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9269_spi_base0.png
       :align: center
@@ -993,7 +1041,10 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 10. SPI Controller, ADCBase 0 Tab*-  Note that other settings can be changed on the **ADCBase 1** page (see Figure 11) and the **ADC A** and **ADC B** pages (see Figure 12 and 13) to set up the part in the desired mode. The **ADCBase 0** and **ADCBase 1** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+      \ *Figure 10. SPI Controller, ADCBase 0 Tab*\
+
+   
+   -  Note that other settings can be changed on the **ADCBase 1** page (see Figure 11) and the **ADC A** and **ADC B** pages (see Figure 12 and 13) to set up the part in the desired mode. The **ADCBase 0** and **ADCBase 1** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/ad9269_spi_base1.png
       :align: center
@@ -1030,7 +1081,12 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      \ *Figure 14. Run Button (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display*\** Adjusting the Amplitude of the Input Signal**
+      \ *Figure 14. Run Button (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display*\
+
+   
+
+
+\*\* Adjusting the Amplitude of the Input Signal \*\*
 
 .. container:: indent
 
@@ -1045,7 +1101,7 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      //Figure 15. Graph Window of VisualAnalog //
+      *Figure 15. Graph Window of VisualAnalog*
 
    
    -  Repeat this procedure for Channel B.
@@ -1057,7 +1113,7 @@ Using The Software for Testing
    
    .. container:: centeralign
 
-      // Figure 16. Typical FFT, :adi:`AD9269`//
+      *Figure 16. Typical FFT, :adi:`AD9269`*
 
 .. raw:: html
 

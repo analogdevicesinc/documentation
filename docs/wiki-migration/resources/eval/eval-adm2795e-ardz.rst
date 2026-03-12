@@ -17,7 +17,7 @@ Connectors and Jumper Configurations
 
 The EVAL-ADM2795EARDZ features an RS-485 bus cable connector, an Arduino connector block, and some jumper blocks. The jumper blocks can be used to connect to external devices such as ultrasonic sensors (e.g. Ultrasonic HC-SR04 Distance Measuring Transducer), or joysticks (Arduino Compatible Analogue Joystick Controller). For the demonstration code and setup described in this Wiki guide only the Arduino connector block and RS-485 connector are used. The Joystick and Ultrasonic sensor jumper blocks are not supported with example software in this Wiki guide, however their general function is outlined below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz board picture_1.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_board_picture_1.jpg
    :align: center
    :width: 600px
 
@@ -134,21 +134,21 @@ Software
 
 --------------
 
-.. |eval-adm2795e-ardz joystick 1.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz joystick 1.png
+.. |eval-adm2795e-ardz joystick 1.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_joystick_1.png
    :width: 150px
-.. |eval-adm2795e-ardz joystick 2.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz joystick 2.png
+.. |eval-adm2795e-ardz joystick 2.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_joystick_2.png
    :width: 150px
-.. |eval-adm2795e-ardz joystick 3.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz joystick 3.png
+.. |eval-adm2795e-ardz joystick 3.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_joystick_3.png
    :width: 150px
-.. |eval-adm2795e-ardz ultrasound 1.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz ultrasound 1.png
+.. |eval-adm2795e-ardz ultrasound 1.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_ultrasound_1.png
    :width: 150px
-.. |eval-adm2795e-ardz ultrasound 2.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz ultrasound 2.png
+.. |eval-adm2795e-ardz ultrasound 2.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_ultrasound_2.png
    :width: 150px
-.. |eval-adm2795e-ardz ultrasound 3.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz ultrasound 3.png
+.. |eval-adm2795e-ardz ultrasound 3.png| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_ultrasound_3.png
    :width: 150px
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz terminal block.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_terminal_block.png
    :width: 100px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz terminal block.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_terminal_block.png
    :width: 100px
 .. |image3| image:: https://wiki.analog.com/_media/eval-adm2795e-ardz_isolation_example.png
    :width: 600px

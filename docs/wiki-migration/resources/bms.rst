@@ -29,19 +29,19 @@ Battery Management System Solutions
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/adi_industry_0005_energy.jpg
    :width: 1200px
-.. |image2| image:: https://wiki.analog.com/_media/{{ {{ /resources/dc2350a-b.jpg
+.. |image2| image:: https://wiki.analog.com/_media/{{_{{_/resources/dc2350a-b.jpg
    :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/{{ {{ /resources/dc2350a-b.jpg
+.. |image3| image:: https://wiki.analog.com/_media/{{_{{_/resources/dc2350a-b.jpg
    :width: 200px
-.. |image4| image:: https://wiki.analog.com/_media/{{ {{ /resources/dc2350a-b.jpg
+.. |image4| image:: https://wiki.analog.com/_media/{{_{{_/resources/dc2350a-b.jpg
    :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/{{ {{ /resources/dc2350a-b.jpg
+.. |image5| image:: https://wiki.analog.com/_media/{{_{{_/resources/dc2350a-b.jpg
    :width: 200px
-.. |image6| image:: https://wiki.analog.com/_media/{{ {{ /resources/dc2259af.jpg
+.. |image6| image:: https://wiki.analog.com/_media/{{_{{_/resources/dc2259af.jpg
    :width: 300px
-.. |image7| image:: https://wiki.analog.com/_media/{{ {{ /resources/dc2259af.jpg
+.. |image7| image:: https://wiki.analog.com/_media/{{_{{_/resources/dc2259af.jpg
    :width: 300px
-.. |image8| image:: https://wiki.analog.com/_media/{{ {{ {{ {{ /resources/bms_system_demo.jpg
+.. |image8| image:: https://wiki.analog.com/_media/{{_{{_{{_{{_/resources/bms_system_demo.jpg
    :width: 200px
-.. |image9| image:: https://wiki.analog.com/_media/{{ {{ {{ {{ /resources/bms_system_demo.jpg
+.. |image9| image:: https://wiki.analog.com/_media/{{_{{_{{_{{_/resources/bms_system_demo.jpg
    :width: 200px

@@ -53,8 +53,8 @@ ADA4355 Evaluation System
 - **Pulsed Current** drop down menu is used to set the pulsed current through the laser diode. See Figure 11 and Figure 12.
 - Pulse Width is the width of the optical pulse launched into the fiber. This setting is in steps of 2nS and cannot exceed 20uS.
 
-|resources-eval-figure12_ada4355.png| //Figure 12. DC current and pulsed current definition//
-- **Samples** drop down menu specifies the number of samples to be collected for each pulse. The samples collected are referred to as a "Frame" |resources-eval-ada4355_frame.jpg|  //Figure 13.//
+|resources-eval-figure12_ada4355.png| *Figure 12. DC current and pulsed current definition*
+- **Samples** drop down menu specifies the number of samples to be collected for each pulse. The samples collected are referred to as a "Frame" |resources-eval-ada4355_frame.jpg|  *Figure 13.*
 - **Averages** drop down menu is used to set the number of data frames averaged for the measurement result.
 
 |image9|\ *Figure 14.*

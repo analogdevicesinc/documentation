@@ -27,7 +27,7 @@ A: "Target execution could not be verified" indicates that SigmaStudio+ could no
 
 When USBi is used as the communication device, the "FirmwareVersion" property of the USBi in SigmaStudio+ project should be set based on the version of the hardware. "FirmwareVersion" should be set as "v1.5" when the version of the USBi board is 1.5 or later and "Pre v1.5" should be used for 1.4 or earlier versions. This property can be updated using the SigmaStudio+ Property Window. Failure to set the proper version number can affect the readback operation and target verification.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/USBiFirmwareVersionSettings.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usbifirmwareversionsettings.jpg
    :width: 400px
 
 If we are using SOM-Carrier board, below settings should be configured properly.
@@ -36,17 +36,17 @@ If we are using SOM-Carrier board, below settings should be configured properly.
 
 color wire should be connected near the Starting letter of SigmaStudio “S”).
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/USBiConnection.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usbiconnection.png
    :width: 400px
 
 -  “SW1” switches should be in off condition on carrier board as shown in the below image.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/CarrierBoardSwitchSettings.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/carrierboardswitchsettings.jpg
    :width: 400px
 
 For custom applications, please uncheck the target verification option in the Settings window of SigmaStudioPlus (**Tools** menu => **Settings** button => **Processor** Group => uncheck **Target Verification** checkbox) as shown in the below image
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/Custom_App_Host_Settings.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/custom_app_host_settings.jpg
    :width: 400px
 
 **Note:** Even after confirming the above-mentioned configuration, If we are still facing an issue, please select the arm core and suspend all the cores in CrossCore Embededd Studio and check the status if any target exception is showing in the console window.

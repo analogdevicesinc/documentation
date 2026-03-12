@@ -31,5 +31,5 @@ As noted in the :doc:`Processing Audio </wiki-migration/resources/tools-software
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#troubleshooting
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#troubleshooting
    :alt: Troubleshooting#.|Bare Metal Framework#tremelo-effect-tutorial|Implementing a Tremolo Effect

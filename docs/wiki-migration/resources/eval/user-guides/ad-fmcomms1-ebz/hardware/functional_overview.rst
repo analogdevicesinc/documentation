@@ -118,5 +118,5 @@ To increase receive sensitivity, the receive path may be driven by an optional o
    :align: center
    :width: 600px
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS1-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms1-ebz#none#./
    :alt: AD-FMCOMMS1-EBZ#Card Specification

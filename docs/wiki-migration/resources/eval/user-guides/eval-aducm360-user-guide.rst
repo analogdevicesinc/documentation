@@ -237,7 +237,7 @@ Starting a project
 
 .. container:: centeralign
 
-   // Project Menu//
+   *Project Menu*
 
 
 -  Create a new folder (**ADIDemo**). To do so, go to **C:\\Analog Devices\\ADuCM36x\\ADIDemo** and enter **Demo** as the project name.
@@ -254,7 +254,7 @@ Starting a project
 
 .. container:: centeralign
 
-   // Select Device//
+   *Select Device*
 
 
 -  In the **Manage Run-Time Environment** select the desired drivers to import to the project. For our example, select **CMSIS -> CORE**, **Device -> Startup**, and all the drivers in **Device -> Drivers**, and click **OK**.
@@ -265,7 +265,7 @@ Starting a project
 
 .. container:: centeralign
 
-   // Manage Run-Time Environment//
+   *Manage Run-Time Environment*
 
 
 -  In the project window, right-click on **Target1** and select **Options for Target 'Target1...'**
@@ -280,7 +280,7 @@ Starting a project
 
 .. container:: centeralign
 
-   // Target Options//
+   *Target Options*
 
 
 -  Select the **Linker** tab and then select **Use Memory Layout from Target Dialog**
@@ -290,7 +290,7 @@ Starting a project
 
 .. container:: centeralign
 
-   // Linker Options//
+   *Linker Options*
 
 
 -  In the **Output** tab, serlect **Create HEX File**. The hex file can be used by the JLINK Commander. Then select **OK**.
@@ -300,7 +300,7 @@ Starting a project
 
 .. container:: centeralign
 
-   // Output Options//
+   *Output Options*
 
 
 -  Connect the emulator to the ADuCM360 mini-board and to your PC's USB port using a USB cable. Note that an LED on the J-Link OB emulator blinks several times before staying on, indicating that the emulator is communicating correctly with the PC.

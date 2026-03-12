@@ -52,7 +52,7 @@ A default calibration package can be loaded (in case is not wanted to perform ca
 
          PH_ISO - reference hydrogen ion concentration (7)
          V - pH channel measured voltage
-         a - zero point tolerance (see //ZERO_POINT_TOLERANCE// parameter)
+         a - zero point tolerance (see *ZERO_POINT_TOLERANCE* parameter)
          AVOGADRO - Avogadro's number (8.314)
          T - RTD temperature
 
@@ -228,8 +228,8 @@ The **RTE** folder contains device and system related files:
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/398andaicup.png
    :width: 650px
-.. |youtube>43GfiE8uAa4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/youtube>43GfiE8uAa4
+.. |youtube>43GfiE8uAa4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/youtube>43gfie8uaa4

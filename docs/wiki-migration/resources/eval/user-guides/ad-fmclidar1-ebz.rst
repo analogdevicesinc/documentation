@@ -19,7 +19,7 @@ The :adi:`AD-FMCLIDAR1-EBZ <en/design-center/evaluation-hardware-and-software/ev
 
 **Highlevel specification**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/Lidar_System_1.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/lidar_system_1.jpg
    :alt: Complete system assembled including additional optics and FPGA board
    :align: right
    :width: 400px
@@ -39,9 +39,9 @@ The :adi:`AD-FMCLIDAR1-EBZ <en/design-center/evaluation-hardware-and-software/ev
 
 ::
 
-     * //Laser optics are not provided with the system but ADI has a proven demo detecting an object upto 60m range at approx. 1m x 1m. Optional optics to achieve this are provided below in the **Example** section.//
+     * *Laser optics are not provided with the system but ADI has a proven demo detecting an object upto 60m range at approx. 1m x 1m. Optional optics to achieve this are provided below in the **Example** section.*
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/Highlevel Blk Dig.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/highlevel_blk_dig.png
    :align: right
    :width: 400px
 
@@ -172,6 +172,6 @@ For questions and more information please contact us on the Analog Devices Engin
    :ez:`EngineerZone Support Community <depth-perception-ranging-technologies/lidar-solutions>`
 
 
-.. |youtube>776jK4yPvjI| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>776jK4yPvjI
-.. |youtube>uOehjnhe7Zc| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>uOehjnhe7Zc
-.. |youtube>9-KRkB00VMQ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>9-KRkB00VMQ
+.. |youtube>776jK4yPvjI| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>776jk4ypvji
+.. |youtube>uOehjnhe7Zc| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>uoehjnhe7zc
+.. |youtube>9-KRkB00VMQ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>9-krkb00vmq

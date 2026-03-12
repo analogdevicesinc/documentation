@@ -103,5 +103,5 @@ As mentioned above, if we are using an A2B configuration that sends four channel
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#audioproj-tutorial
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#audioproj-tutorial
    :alt: Using the Audio Project Fin#.|Bare Metal Framework#custom-a2b-topology|Adding Custom A2B Configurations

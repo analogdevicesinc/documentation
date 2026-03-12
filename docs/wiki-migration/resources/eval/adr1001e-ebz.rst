@@ -64,7 +64,7 @@ ESD (electrostatic discharge) sensitive device. Charged devices and circuit boar
    :width: 400px
 .. |ADR1399H| image:: https://wiki.analog.com/_media/resources/eval/adr1001_analog_sch.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/adr1001 power sch.PNG
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/adr1001_power_sch.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/adr1001_bom.PNG
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/adr1001_bom.png
    :width: 400px

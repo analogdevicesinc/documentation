@@ -31,5 +31,5 @@ Schematic, PCB Layout, Bill of Materials
    
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/navigation AD-FMCDAQ3-EBZ#quickstart
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/navigation_ad-fmcdaq3-ebz#quickstart
    :alt: Quick Start Guides#.:\|Overview#reference_hdl|Reference HDL Design

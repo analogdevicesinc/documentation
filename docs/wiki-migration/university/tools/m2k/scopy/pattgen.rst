@@ -4,7 +4,7 @@ Scopy Pattern Generator
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>3uU97QMPhGQ
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>3uu97qmphgq
    :alt: youtube>3uU97QMPhGQ
 
 General Description

@@ -263,7 +263,7 @@ You will need to:
 
 -  Get the `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`_.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/AD777x-ARDZ/zedboard.png
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad777x-ardz/zedboard.png
    :alt: zedboard.png
    :align: center
    :width: 600px
@@ -276,7 +276,9 @@ You will need to:
 -  Plug the Power Supply into the 12V Power ZedBoard input connector (J20) (DO NOT turn the device on).
 -  Plug USB-C power supply to :adi:`EVAL-CN0585-FMCZ <CN0585>` (revB only)
 -  Set the jumpers as seen in Figure 6 |zed_jumpers.jpg|\ *Figure 6. ZedBoard Jumper Settings*
--  Connect the DAC output connectors to the negative ADC input connectors as shown in Figure 7 using coax cables (i.e. DAC0 to ADC0-neg, DAC1 to ADC1-neg, etc.). Terminate the positive ADC connectors with 50ohms SMA terminators |cn0584_loopback_connection.png| //Figure 7. EVAL-CN0584-EBZ Loopback Connection on AFE *\* Turn the ZedBoard on. \* Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.The hardware set up is now complete. setup_cn0585_diagram.png*Figure 8. Example System Setup*
+-  Connect the DAC output connectors to the negative ADC input connectors as shown in Figure 7 using coax cables (i.e. DAC0 to ADC0-neg, DAC1 to ADC1-neg, etc.). Terminate the positive ADC connectors with 50ohms SMA terminators |cn0584_loopback_connection.png| *Figure 7. EVAL-CN0584-EBZ Loopback Connection on AFE *\* Turn the ZedBoard on. \* Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.The hardware set up is now complete. setup_cn0585_diagram.png*\ Figure 8. Example System Setup*
+
+
 .. note::
 
    See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
@@ -647,7 +649,7 @@ Reference Demos & Software
    :width: 700px
 .. |output_range_cn0585.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/output_range_cn0585.png
    :width: 700px
-.. |DAC_DATA_MANAGEMENT_cn0585.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/DAC_DATA_MANAGEMENT_cn0585.jpg
+.. |DAC_DATA_MANAGEMENT_cn0585.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/dac_data_management_cn0585.jpg
    :width: 500px
 .. |stream_status_iio.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/stream_status_iio.jpg
 .. |captured_loopback_signal_cn0585.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/captured_loopback_signal_cn0585.jpg

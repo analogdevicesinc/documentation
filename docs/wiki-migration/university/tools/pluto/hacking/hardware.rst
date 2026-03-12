@@ -111,7 +111,7 @@ u.FL to SMA cables can be picked up for a few dollars at a variety of locations 
 
 The standard features - Rx1, Rx2, USB OTG work as previously. See how to add these to your units, check out how to :doc:`set config settings </wiki-migration/university/tools/pluto/users/customizing>`.
 
-.. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/youtube>ph0Kv4SgSuI
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/youtube>ph0kv4sgsui
    :alt: youtube>ph0Kv4SgSuI
 
 With a few more holes in the case, and a few dollars of cables, this should give you something like (this connects the additional Rx and Tx, and CLK input):

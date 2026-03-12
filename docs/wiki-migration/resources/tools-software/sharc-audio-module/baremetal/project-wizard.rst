@@ -3,7 +3,7 @@ Bare Metal Project Wizard
 
 The SHARC Audio Module Bare Metal Project wizard allows you to create a new project configuration for your SHARC Audio Module.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>GprhlU-IrXQ
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>gprhlu-irxq
    :alt: youtube>GprhlU-IrXQ
 
 To begin, open the wizard by selecting **File → New → SHARC Audio Module Bare Metal Project** from the pull-down menu. The **General Project Information** page will appear. This is where a name is given to the new project. Then click Next.

@@ -17,7 +17,7 @@ The following sections will describe the hardware in more detail, as well as exp
 -  **P4** for load connection
 -  **P14** for system side power
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0423/emc board.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0423/emc_board.jpg
    :align: center
 
 To evaluate the full function of CN0423, you need following equipment: EVAL-AD5758EMC evaluation board Power Supply A PC with Microsoft Windows 7 or later OS and USB 2.0 or faster USB port A USB mini B cable To reprogram or debug CN0423, you need following extra equipment J-link debug cable or equivalent JTAG/SWD debug cable

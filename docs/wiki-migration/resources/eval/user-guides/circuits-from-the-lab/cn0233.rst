@@ -165,7 +165,7 @@ Below are the list of available software controls grouped according to their loc
 
 -  SDP Board Firmware Revision – provides details on the firmware version of the Blackfin used by the SDP board.
 
-// End of document //
+*End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0233/cn0233-figure_2a.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0233/cn0233-figure_3a.jpg

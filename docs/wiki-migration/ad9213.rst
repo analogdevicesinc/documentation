@@ -4,7 +4,7 @@ Quick Start Guide for Testing the AD9213/9217 ADC Evaluation Board (AD9213-10GEB
 For AD9213-10GEBZ-B refer to
 ----------------------------
 
-`AD9213-10GEBZ-B QuickStart Guide <:doc:`/wiki-migration/ad9213_ce`>`_
+:doc:`AD9213-10GEBZ-B QuickStart Guide </wiki-migration/ad9213_ce>`
 
 Typical Setup
 ~~~~~~~~~~~~~
@@ -12,7 +12,7 @@ Typical Setup
 .. image:: https://wiki.analog.com/_media/ad9213_typical_setup.png
    :width: 1200px
 
-//Figure 1. AD9213/9217 Evaluation Board and ADS8-V1EBZ Data Capture Board //
+*Figure 1. AD9213/9217 Evaluation Board and ADS8-V1EBZ Data Capture Board*
 
 Equipment Needed
 ~~~~~~~~~~~~~~~~
@@ -101,7 +101,7 @@ Testing
 
 .. container:: centeralign
 
-   //AD9213/AD9217 board view //
+   *AD9213/AD9217 board view*
 
 
 -  After “State=Good” appears in the lower left, turn on the signal generators for the clock, reference clock, and signal.

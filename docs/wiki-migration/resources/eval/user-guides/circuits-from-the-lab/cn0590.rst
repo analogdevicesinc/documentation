@@ -113,7 +113,7 @@ Hardware Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0590-EBZ?&v=RevA>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*
 
 .. |Figure 1: High Speed Data Transfer Test Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0590/high_speed_data_transfer_test_setup.png
    :width: 1000px

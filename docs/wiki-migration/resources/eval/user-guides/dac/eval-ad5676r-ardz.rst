@@ -235,7 +235,7 @@ On-Board Connectors
    
 
 
-// End of Document //
+*End of Document*
 
 .. |Evaluation Board Photograph| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad5676r-ardz/eval-ad5676rardz_board_photograph.png
    :width: 400px

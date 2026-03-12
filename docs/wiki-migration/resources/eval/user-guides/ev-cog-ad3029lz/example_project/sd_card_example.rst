@@ -94,5 +94,5 @@ SD Card Example Application
 
 *End of Document*
 
-.. |image1| image:: https://wiki.analog.com/_media/ resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_expan_connector.png
+.. |image1| image:: https://wiki.analog.com/_media/_resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_expan_connector.png
    :width: 800px

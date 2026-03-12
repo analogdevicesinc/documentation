@@ -911,10 +911,10 @@ IIO pointers
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/youtube>p_vntewue24
 
 
 AD9122 Clocking concept
@@ -983,34 +983,34 @@ The available center shift frequencies for a given Interface Clock (*out_altvolt
    ::
    
    
-      //[ Set data clock to 122.88 MHz ]//
+      *[ Set data clock to 122.88 MHz ]*
    
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **echo 122880000 > out_altvoltage_1A_sampling_frequency**
    
-      //[ List available interpolation DAC frequencies ]//
+      *[ List available interpolation DAC frequencies ]*
    
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **cat out_altvoltage_interpolation_frequency_available**
       122880000 245760000 491520000 983040000
    
-      //[ Select 8x interpolation ]//
+      *[ Select 8x interpolation ]*
    
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **echo 983040000 > out_altvoltage_interpolation_frequency**
    
-      //[ List available center shift frequencies ]//
+      *[ List available center shift frequencies ]*
    
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **cat out_altvoltage_interpolation_center_shift_frequency_available**
       0 61440000 122880000 184320000 245760000 307200000 368640000 430080000 491520000 552960000 614400000 675840000 737280000 798720000 860160000 921600000
    
-      //[ Select 2x interpolation ]//
+      *[ Select 2x interpolation ]*
    
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **echo 245760000 > out_altvoltage_interpolation_frequency**
    
-      //[ List available center shift frequencies ]//
+      *[ List available center shift frequencies ]*
    
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **cat out_altvoltage_interpolation_center_shift_frequency_available**
       0 61440000 122880000 184320000
    
-      //[ Select center shift frequencies ]//
+      *[ Select center shift frequencies ]*
    
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device4# **echo 61440000 > out_altvoltage_interpolation_center_shift_frequency**
    
@@ -1032,8 +1032,8 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/youtube>p_vntewue24
 

@@ -79,7 +79,7 @@ CONFIGURING THE ADRV904x TRANSCEIVER
 
 |resources-eval-user-guides-adrv904x-dpd-dpdupdating.jpg|
 
-.. image:: https://wiki.analog.com/_media/navigation ADRV904x DPD USER GUIDE#resources/eval/user-guides/adrv904x/dpd/pre-requisites
+.. image:: https://wiki.analog.com/_media/navigation_adrv904x_dpd_user_guide#resources/eval/user-guides/adrv904x/dpd/pre-requisites
    :alt: ADRV904x DPD EVAL PRE-REQUISITES#resources:eval:user-guides:adrv904x:dpd|ADRV904x DPD HOME #resources:eval:user-guides:adrv904x:dpd:error_troubleshooting|ADRV904x DPD ERROR TROUBLESHOOTING
 
 .. |resources-eval-user-guides-adrv904x-dpd-dpdcaptureconfig.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/dpdcaptureconfig.jpg

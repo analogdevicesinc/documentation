@@ -42,7 +42,7 @@ Once VNC Viewer is connected the camera's Linux Desktop will be displayed and yo
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation AD-3DSMARTCAM1-PRZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-3dsmartcam1-prz#none#./
    :alt: Overview#none#
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/smart_camera_wifi.png

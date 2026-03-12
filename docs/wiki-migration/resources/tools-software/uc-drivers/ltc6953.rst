@@ -25,7 +25,7 @@ Applications
 -  Wireless Infrastructure
 -  Test and Measurement
 
-|image1| //DC2610A (with LTC6953 on-board chip) //
+|image1| *DC2610A (with LTC6953 on-board chip)*
 
 ADI No-OS
 ~~~~~~~~~

@@ -16,7 +16,7 @@ The first step is to verify a driver exists for the device under test.  For ADI
 Step 2a - Determine the Driver
 ------------------------------
 
-There are a couple different approaches to determining the compatible driver. The first step is looking at the Wiki driver listing page. Many devices have a sub wiki describing how to configure the device tree and use the device in Linux.  An example of this would be the `LTC2983 <:doc:`/wiki-migration/resources/tools-software/linux-drivers/iio-temperature/ltc2983`>`_.  Unfortunately the MAX31855 does not have a detailed page on the Wiki.
+There are a couple different approaches to determining the compatible driver. The first step is looking at the Wiki driver listing page. Many devices have a sub wiki describing how to configure the device tree and use the device in Linux.  An example of this would be the :doc:`LTC2983 </wiki-migration/resources/tools-software/linux-drivers/iio-temperature/ltc2983>`.  Unfortunately the MAX31855 does not have a detailed page on the Wiki.
 
 The next alternative is to look at the device tree bindings within the Linux kernel tree.  This can be found in Documentation/devicetree/bindings/<device class>.  The MAX31855 is a temperature device, and would be located in iio/temperature.  As luck would have it, a documentation entry exists for the MAX31855: :git-linux:`Documentation/devicetree/bindings/iio/temperature/maxim%2Cmax31855k.yaml`
 
@@ -59,7 +59,7 @@ The next step is to start the actual overlay file.  We will be performing the w
 Step 4 - Defining the Target
 ----------------------------
 
-Next we'll need to define the overlay target.  For this hardware setup, the PMOD will be plugged into P1 of a `PMD-RPI-INTZ <:doc:`/wiki-migration/resources/eval/user-guides/circuits-from-the-lab/pmd-rpi-intz`>`_ adapter board, which corresponds to SPI0.  To support SPI0, our target will be defined as follows.
+Next we'll need to define the overlay target.  For this hardware setup, the PMOD will be plugged into P1 of a :doc:`PMD-RPI-INTZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/pmd-rpi-intz>` adapter board, which corresponds to SPI0.  To support SPI0, our target will be defined as follows.
 
 ::
 

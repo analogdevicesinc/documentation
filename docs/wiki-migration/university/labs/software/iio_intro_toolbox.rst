@@ -527,7 +527,7 @@ You're now armed to start building interesting application circuits with the ADX
    :width: 400px
 .. |image11| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/iio_info_local_remote.png
    :width: 400px
-.. |youtube>rfscVS0vtbw| image:: https://wiki.analog.com/_media/university/labs/software/youtube>rfscVS0vtbw
+.. |youtube>rfscVS0vtbw| image:: https://wiki.analog.com/_media/university/labs/software/youtube>rfscvs0vtbw
 .. |image12| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/rpi_wifi_login.png
    :width: 400px
 .. |image13| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/rpi_vnc.png

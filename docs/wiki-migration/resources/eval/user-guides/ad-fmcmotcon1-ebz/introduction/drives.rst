@@ -13,5 +13,5 @@ A **Motor Drive** is a system that varies the motor electrical input power to co
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction/drive_segments.png
    :width: 400px
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#none#../
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon1-ebz#none#../
    :alt: Overview#dc_control|Brushed DC Motor Control

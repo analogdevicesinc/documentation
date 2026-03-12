@@ -95,7 +95,7 @@ The software for the **ADuCM360_demo_adxl355** demo can be found here:
 Configuring the Software Parameters
 -----------------------------------
 
--  **Temperature sensor calibration values**- *ADXL355_TEMP_BIAS* and *ADXL355_TEMP_SLOPE* paramaters - find your values based on the calculation formula (//ADXL355.h //):
+-  **Temperature sensor calibration values**- *ADXL355_TEMP_BIAS* and *ADXL355_TEMP_SLOPE* paramaters - find your values based on the calculation formula (*ADXL355.h*):
 
 ::
 

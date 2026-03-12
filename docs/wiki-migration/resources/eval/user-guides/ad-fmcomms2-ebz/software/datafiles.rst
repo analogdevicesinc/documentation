@@ -40,7 +40,7 @@ The figure below shows a QPSK transmission model without any pulse shaping filte
 Model
 ^^^^^
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/QPSKnofilt.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpsknofilt.png
    :alt: QPSKnofilt.png
 
 .. admonition:: Download
@@ -396,7 +396,7 @@ The figure below shows a LTE example according to the specifications developed b
 
 Since LTE is a sophisticated standard, you are encouraged to read the Help Document of this example and its related references to get more information  [4]_.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/LTE.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/lte.png
    :alt: Subsystem diagram
    :width: 900px
 
@@ -414,7 +414,7 @@ After you run the model, the transmitted data named "Tx" will be saved in worksp
 
 When the data is transmitted and received by real-world hardware, like AD9361 , it is difficult to observe the clear constellation without proper synchronization techniques. However, even with the basic settings, you are still expected to observe the transmit and receive spectrum, which is similar to the following:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/LTEspectrum.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/ltespectrum.png
    :alt: LTEspectrum.png
 
 Note that the bandwidth shown in the spectrum is approximately 10 MHz, which is consistent with the "Channel bandwidth" setting of the model parameters.
@@ -445,7 +445,7 @@ Data
 .. [4]
    `LTE PHY Downlink with Spatial Multiplexing <https://www.mathworks.com/help/comm/examples/lte-phy-downlink-with-spatial-multiplexing.html>`_
 
-.. |Subsystem diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/QPSKwithfilter.png
+.. |Subsystem diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpskwithfilter.png
    :width: 900px
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/resultwithfilt.png
    :width: 900px
@@ -453,7 +453,7 @@ Data
    :width: 500px
 .. |qpsk_waveform_verify_new.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpsk_waveform_verify_new.png
    :width: 450px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/16QAM.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/16qam.png
    :width: 900px
 .. |qam16_verified.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_verified.png
    :width: 700px

@@ -19,7 +19,7 @@ Files included in the AD9789 Update:
 
 Download the `AD9789 Update <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/hsdac_update/hsdacupdate_ad9789_1.0.4686.26799.exe>`_
 
-**Please NOTE:** //The DPG2 Data Pattern Generator platform is nearing its end-of-life and is not recommended for new designs. However, the DPG2 is required to properly power-up the AD9789 EVB - DPG2 units are available for purchase while supplies last - for inquiries, please contact your local sales representative or distributor. //
+**Please NOTE:** The DPG2 Data Pattern Generator platform is nearing its end-of-life and is not recommended for new designs. However, the DPG2 is required to properly power-up the AD9789 EVB - DPG2 units are available for purchase while supplies last - for inquiries, please contact your local sales representative or distributor.*
 
-.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#Data Pattern Generator&nofooter&noindent
+.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg#data_pattern_generator&nofooter&noindent
    :alt: dpg#Data Pattern Generator&nofooter&noindent

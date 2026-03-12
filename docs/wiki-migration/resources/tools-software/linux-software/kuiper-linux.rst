@@ -783,4 +783,4 @@ Advanced Information For Power Users
 
 :doc:`Updating Kuiper Linux tools and boot files, without re-imaging the SD card </wiki-migration/resources/tools-software/linux-software/kuiper-linux/update>`
 
-// End of Document //
+*End of Document*

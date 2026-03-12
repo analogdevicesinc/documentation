@@ -373,7 +373,7 @@ Corner Case Test Report
 
 *End of Document*
 
-.. |youtube>7j4Y0WVEtjU| image:: https://wiki.analog.com/_media/university/tools/lab_hw/youtube>7j4Y0WVEtjU
+.. |youtube>7j4Y0WVEtjU| image:: https://wiki.analog.com/_media/university/tools/lab_hw/youtube>7j4y0wvetju
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm_sr1/adalm_sr1_overview.jpg
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm_sr1/adalm_sr1_overview.png

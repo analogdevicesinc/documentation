@@ -85,5 +85,5 @@ Finally, we'll process audio in ``void processaudio_callback(void)``. First, we 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#volume-control-tutorial
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#volume-control-tutorial
    :alt: Programming a Volume Control#.|Bare Metal Framework#class-d-2-1-amp|Building a 2.1 Amplifier

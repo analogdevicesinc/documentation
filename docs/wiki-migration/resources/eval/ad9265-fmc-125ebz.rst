@@ -244,7 +244,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   //Figure 13. Graph Window of VisualAnalog //
+   *Figure 13. Graph Window of VisualAnalog*
 
 
 -  Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file.
@@ -255,7 +255,7 @@ The next step is to adjust the amplitude of the input signal for each channel as
 
 .. container:: centeralign
 
-   //Figure 14. VisualAnalog Disk Icon //
+   *Figure 14. VisualAnalog Disk Icon*
 
 
 Testing Additional AD9265 Boards

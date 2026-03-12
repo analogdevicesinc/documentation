@@ -10,5 +10,5 @@ Introduction
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/eval-adicup360/help_and_support>` - Provides info on where to get support on any questions you might have regarding the hardware or the software
 -  :doc:`Compliance Testing and Results </wiki-migration/resources/eval/user-guides/eval-adicup360/compliance_testing_and_results>` - Provides info on FCC and CE testing of the EVAL-ADICUP360.
 
-.. image:: https://wiki.analog.com/_media/navigation EVAL-ADICUP360#none#./
+.. image:: https://wiki.analog.com/_media/navigation_eval-adicup360#none#./
    :alt: Overview#Hardware

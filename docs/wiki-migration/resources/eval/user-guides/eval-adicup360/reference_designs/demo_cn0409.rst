@@ -199,7 +199,7 @@ This project contains: system initialization part, setting system clock, enablin
 
 In the **src** and **include** folders you will find the source and header files related to CN0409 software application. The *Communication.cpp/h* files contain UART and I2C specific data, meanwhile the *CN0409.cpp/h* files contain the calculation part and *Flash.cpp/h* provide memory management. .
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0409.jpg
    :width: 400px

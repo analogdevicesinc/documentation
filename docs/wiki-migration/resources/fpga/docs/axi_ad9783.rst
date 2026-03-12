@@ -8553,5 +8553,5 @@ References
 -  `Ultrascale SelectIO <https://www.xilinx.com/support/documentation/user_guides/ug571-ultrascale-selectio.pdf>`_
 -  `UltraScale Architecture Clocking Resources User Guide <https://www.xilinx.com/support/documentation/user_guides/ug572-ultrascale-clocking.pdf>`_
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

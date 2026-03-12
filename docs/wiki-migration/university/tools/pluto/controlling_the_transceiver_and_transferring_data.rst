@@ -5,7 +5,7 @@ PlutoSDR runs `Linux <https://en.wikipedia.org/wiki/Linux>`_. The :doc:`device d
 
 If you’re not familiar with IIO, please start reading here:
 
-.. image:: https://wiki.analog.com/_media/university/tools/pluto/youtube>CS9NuRBzN5Y
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/youtube>cs9nurbzn5y
    :alt: youtube>CS9NuRBzN5Y
    :align: right
 

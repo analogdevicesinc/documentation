@@ -257,7 +257,7 @@ Working with the software
 -  Download the EVAL-ADICUP3029 :git-EVAL-ADICUP3029:`repository <EVAL-ADICUP3029>` with ``git clone --recursive :git-EVAL-ADICUP3029:`EVAL-ADICUP3029`.git``
 -  Using the **--recursive** is **important** in order for the submodules to be initialized.
 -  Go to :git-EVAL-ADICUP3029:`project directory <projects/ADuCM3029_demo_cn0536>`. ``cd projects\ADuCM3029_demo_cn0536``
--  Follow this `guide <:doc:`/wiki-migration/resources/no-os/build`>`_ to create a CCES project. This command should be enough: ``make update_srcs``
+-  Follow this :doc:`guide </wiki-migration/resources/no-os/build>` to create a CCES project. This command should be enough: ``make update_srcs``
 -  A folder **build** will be created and inside it the CCES project.
 -  Import the new generated project into your workspace. See :doc:`wiki </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`
 -  Now the project structure should look like this:
@@ -351,6 +351,6 @@ Working with the software
    </details>
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/gc_overview.png

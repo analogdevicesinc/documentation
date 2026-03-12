@@ -8,7 +8,7 @@ Overview
 
 The performance of the circuit could be demonstrated with the use of Analog Devices SDP controller :adi:`EVAL-SDP-CB1Z` and SDP-to-PMOD Interposer Board :adi:`SDP-PMD-IB1Z`, both optional purchase items. This user guide will discuss how to use the evaluation software to collect data from the EVAL-CN0337-PMDZ Evaluation Board :adi:`CN0337`
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/Overview-fig1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/overview-fig1.png
    :width: 700px
 
 Figure 1. Resistance Deviation to Digital Conversion with Isolation Using Pt100 RTD Sensor (All Connections and Decoupling Not Shown)

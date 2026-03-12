@@ -73,7 +73,7 @@ Key Parts
 Connectors
 ----------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/LV_connectors.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_connectors.jpg
    :alt: AD-FMC-MOTCON1-EBZ Connectors
    :width: 400px
 
@@ -95,7 +95,7 @@ BLDC / Stepper motor connector
 Switches
 --------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/LV_buttons.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_buttons.jpg
    :alt: AD-FMC-MOTCON1-EBZ Buttons
    :width: 600px
 
@@ -170,7 +170,7 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/navigation AD-FMCMOTCON1-EBZ#controller_board
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/navigation_ad-fmcmotcon1-ebz#controller_board
    :alt: Controller Board#..:\|Overview#signal_chain|Signal Measurement Chain
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_block_diagram_simplified.png

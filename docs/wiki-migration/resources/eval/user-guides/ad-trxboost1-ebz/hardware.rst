@@ -27,5 +27,5 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/navigation AD-TRXBOOST1-EBZ#QuickStart
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/navigation_ad-trxboost1-ebz#quickstart
    :alt: Quick Start Guide#.:\|User Guide#.:Testing|Production Testing Process

@@ -4,7 +4,7 @@ Scopy Logic Analyzer
 Video
 -----
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>RLUOsnVP0Qo
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/youtube>rluosnvp0qo
    :alt: youtube>RLUOsnVP0Qo
 
 General

@@ -97,7 +97,7 @@ Unboxing and Hardware Setup
 
 The following video is a walkthrough for the unboxing experience and a guide for setting up the hardware to be ready for your own application development.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>vesoMeTnPW8
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>vesometnpw8
    :alt: youtube>vesoMeTnPW8
 
 | |youtube>G-k81W2yJRY|
@@ -331,7 +331,7 @@ Schematic, PCB Layout Files, Bill of Materials
 
 *End of Document*
 
-.. |youtube>G-k81W2yJRY| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>G-k81W2yJRY
+.. |youtube>G-k81W2yJRY| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>g-k81w2yjry
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting.png
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_b.jpg

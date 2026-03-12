@@ -328,7 +328,7 @@ Date and Time of Day (date)
 +-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/navigation Shell Commands
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/navigation_shell_commands
    :alt: A2B Commands#.a2b-commands|A2B Commands#.|Shell Commands#.network-commands|Networking Commands
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/drive.jpg

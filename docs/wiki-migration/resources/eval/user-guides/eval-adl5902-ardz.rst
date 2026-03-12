@@ -1,7 +1,7 @@
 EVAL-ADL5902-ARDZ
 =================
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ADL5902-top-clean.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adl5902-top-clean.jpg
    :alt: EVAL-ADL5902-ARDZ
    :align: center
    :width: 600px

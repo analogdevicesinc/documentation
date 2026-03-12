@@ -205,5 +205,5 @@ Replace the contents of ``midi_rx_callback_sharc1()`` with the code below. This 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#class-d-2-1-amp
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#class-d-2-1-amp
    :alt: Building a 2.1 Amp#.|Bare Metal Framework#..hardware|Hardware Reference

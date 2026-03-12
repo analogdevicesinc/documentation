@@ -108,7 +108,10 @@ The Configuration Window is divided into three boxes:
 
 .. container:: centeralign
 
-   \ *Figure 4: Network features box*\**Connect to IP Address: *\*
+   \ *Figure 4: Network features box*\
+
+
+**Connect to IP Address:**
 
 The IP address of the ezLINX hardware platform which the PC Application will connect to when the **Connect** button is pressed.
 
@@ -133,7 +136,10 @@ Specify a new IP Gateway for the connected ezLINX hardware platform.
 
 .. container:: centeralign
 
-   \ *Figure 5: Firmware Upgrade box*\**PC Version: *\*
+   \ *Figure 5: Firmware Upgrade box*\
+
+
+**PC Version:**
 
 The current PC Software Application version.
 
@@ -1116,97 +1122,97 @@ The configuration window has three buttons at the left bottom enabling the follo
 
 **Note:** When a configuration is loaded you must exit the Transceivers Configuration window via the Close button. Exiting the window via the X will not load the configuration.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig1MainWindow.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig1mainwindow.jpg
    :width: 850px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig2ConfigurationwindowfromConfigurebutton.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig2configurationwindowfromconfigurebutton.jpg
    :width: 850px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig3ConfigurationWindowfromtheezLINXimage.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig3configurationwindowfromtheezlinximage.jpg
    :width: 850px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig4Networkfeaturesbox.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig4networkfeaturesbox.jpg
    :width: 500px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/update_firmware.jpg
    :width: 200px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig6EnableDisablebox.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig6enabledisablebox.jpg
    :width: 300px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig7Notificationmessageforenabledtransceivers.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig7notificationmessageforenabledtransceivers.jpg
    :width: 850px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig8RS232ConfigurationWindow.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig8rs232configurationwindow.jpg
    :width: 850px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig9Interfacesettingsbox.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig9interfacesettingsbox.jpg
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig10RS-232settingsbox.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig10rs-232settingsbox.jpg
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig11RS-232Routingbox.jpg
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig11rs-232routingbox.jpg
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig12RS-232Send-ReceiveWindow.jpg
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig12rs-232send-receivewindow.jpg
    :width: 850px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig13RS-485ConfigurationWindow.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig13rs-485configurationwindow.jpg
    :width: 850px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig14InterfaceSettingsBox.jpg
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig14interfacesettingsbox.jpg
    :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig15RS-485SettingsBox.jpg
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig15rs-485settingsbox.jpg
    :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig16Routingbox.jpg
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig16routingbox.jpg
    :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig17RS-485-RS-422Send-ReceiveWindow.jpg
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig17rs-485-rs-422send-receivewindow.jpg
    :width: 850px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig18I2CConfigurationWindow.jpg
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig18i2cconfigurationwindow.jpg
    :width: 850px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig19InterfaceSettingsBox.jpg
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig19interfacesettingsbox.jpg
    :width: 400px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig20I2Csettingsbox.jpg
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig20i2csettingsbox.jpg
    :width: 400px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig21-I2CSend-ReceiveWindow.jpg
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig21-i2csend-receivewindow.jpg
    :width: 850px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig22-SPIConfigurationWindow.jpg
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig22-spiconfigurationwindow.jpg
    :width: 850px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig23-InterfaceSettingsBox.jpg
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig23-interfacesettingsbox.jpg
    :width: 400px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig24-SPISettingsBox.jpg
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig24-spisettingsbox.jpg
    :width: 400px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig25-Routingbox.jpg
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig25-routingbox.jpg
    :width: 400px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig26-SPISend-ReceiveWindow.jpg
+.. |image26| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig26-spisend-receivewindow.jpg
    :width: 850px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig27-CANConfigurationWindow.jpg
+.. |image27| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig27-canconfigurationwindow.jpg
    :width: 850px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig28-InterfaceSettingsBox.jpg
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig28-interfacesettingsbox.jpg
    :width: 400px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig29-CANSettingsBox.jpg
+.. |image29| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig29-cansettingsbox.jpg
    :width: 400px
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig30-RoutingBox.jpg
+.. |image30| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig30-routingbox.jpg
    :width: 400px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig31-CANSendReceiveWindow.jpg
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig31-cansendreceivewindow.jpg
    :width: 850px
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig32-ExamplesofCANMessages.jpg
+.. |image32| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig32-examplesofcanmessages.jpg
    :width: 400px
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig33-LVDSConfigurationWindow.jpg
+.. |image33| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig33-lvdsconfigurationwindow.jpg
    :width: 850px
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig34-InterfaceSettingsBox.jpg
+.. |image34| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig34-interfacesettingsbox.jpg
    :width: 400px
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig35-LVDSSettingsBox.jpg
+.. |image35| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig35-lvdssettingsbox.jpg
    :width: 400px
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig36-LVDSRoutingBox.jpg
+.. |image36| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig36-lvdsroutingbox.jpg
    :width: 400px
-.. |image37| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig37-LVDSSend-ReceiveWindow.jpg
+.. |image37| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig37-lvdssend-receivewindow.jpg
    :width: 850px
-.. |image38| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig38-GPIOConfigurationWindow.jpg
+.. |image38| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig38-gpioconfigurationwindow.jpg
    :width: 850px
-.. |image39| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig39-InterfaceSettingsBox.jpg
+.. |image39| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig39-interfacesettingsbox.jpg
    :width: 400px
-.. |image40| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig40-GPIOSettingsBox.jpg
+.. |image40| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig40-gpiosettingsbox.jpg
    :width: 400px
-.. |image41| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig41_WindowsFirewall.jpg
+.. |image41| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig41_windowsfirewall.jpg
    :width: 400px
-.. |image42| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig42_FTPServerWindow.jpg
+.. |image42| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig42_ftpserverwindow.jpg
    :width: 400px
-.. |image43| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig43_RestartApplicationWindow.jpg
+.. |image43| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/fig43_restartapplicationwindow.jpg
    :width: 400px
-.. |image44| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/TRANSCEIVERSTATUS.jpg
+.. |image44| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/transceiverstatus.jpg
    :width: 500px
-.. |image45| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/ConfigurationWindow.jpg
+.. |image45| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/configurationwindow.jpg
    :width: 800px
-.. |image46| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/LoadInterface.jpg
+.. |image46| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/loadinterface.jpg
    :width: 300px
-.. |image47| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Askforkeepingtheloadedconfiguration.jpg
+.. |image47| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/askforkeepingtheloadedconfiguration.jpg
    :width: 300px

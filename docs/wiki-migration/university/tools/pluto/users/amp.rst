@@ -24,7 +24,7 @@ You can also look at this from the opposite way - if you need to read a book on 
 
 If you still are not sure lets go way back to the middle school butter gun analogy, by watching the excellent video, put together by `Roger Linsell <https://www.youtube.com/user/fizzicsorg>`_ of http://www.fizzics.org/.
 
-.. image:: https://wiki.analog.com/_media/university/tools/pluto/users/youtube>JW3tT0L2gpc
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/users/youtube>jw3tt0l2gpc
    :alt: youtube>JW3tT0L2gpc
 
 Free Space Path Loss

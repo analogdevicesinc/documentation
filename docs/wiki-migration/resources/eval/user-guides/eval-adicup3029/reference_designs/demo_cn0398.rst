@@ -47,7 +47,7 @@ A default calibration package can be loaded (in case is not wanted to perform ca
 
          PH_ISO - reference hydrogen ion concentration (7)
          V - pH channel measured voltage
-         a - zero point tolerance (see //ZERO_POINT_TOLERANCE// parameter)
+         a - zero point tolerance (see *ZERO_POINT_TOLERANCE* parameter)
          AVOGADRO - Avogadro's number (8.314)
          T - RTD temperature
 
@@ -194,7 +194,7 @@ This example uses the `Eclipse Mosquitto <https://mosquitto.org>`_ which is an o
    :align: center
    :width: 600px
 
--  After looking around, I found a great website to download the DLL files from, as well as a great video that shows you have to fix the issue, and it did work for me. //Please note, that this solution is **NOT** affiliated with Analog Devices, and Analog Devices assumes no responsibility for any problems or damages occurred during this process. //
+-  After looking around, I found a great website to download the DLL files from, as well as a great video that shows you have to fix the issue, and it did work for me. *Please note, that this solution is **NOT** affiliated with Analog Devices, and Analog Devices assumes no responsibility for any problems or damages occurred during this process.*
 -  `How to fix VCRUNTIME140.DLL Missing Video <https://www.youtube.com/watch?v=-R3LuYNQf98>`_
 -  `VCRUNTIME140.DLL Download <http://www.sts-tutorial.com/sites/downloadCenter.php?vcruntime140>`_
 -  Re-Run the Mosquitto.exe file, inorder to complete the installation process.

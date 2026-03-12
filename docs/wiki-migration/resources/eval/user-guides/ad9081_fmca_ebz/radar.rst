@@ -7,7 +7,7 @@ This was based on a paper pressented at:
 
 -  
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/youtube>hXLwt3q2evs
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/youtube>hxlwt3q2evs
    :alt: youtube>hXLwt3q2evs
 
 -  `slides <https://events.gnuradio.org/event/8/contributions/130/attachments/54/103/GRCON%202021%20Winter.pdf>`_
@@ -578,7 +578,7 @@ The Doa blocks are less integrated, but also don't come with many parameters. Th
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_doa_esprit.png
 
-.. |youtube>gtTILs929aU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/youtube>gtTILs929aU
+.. |youtube>gtTILs929aU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/youtube>gttils929au
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ad9081_zcu102_bd_tdd_do.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_204b_m8l4.svg
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_general.png

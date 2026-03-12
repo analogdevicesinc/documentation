@@ -304,7 +304,7 @@ To begin, connect the PmodGYRO2 to J5 connector of LX9 board, pins 7 to 12. You 
 
 Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Program the FPGA using the **download.bit** file provided in the project \*.zip archive, located in the "*sw*" folder (../adxrs453_adxl345/sw/download.bit).
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodDA1Impact.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda1impact.jpg
    :alt: Programming FPGA in IMPACT
    :width: 300px
 

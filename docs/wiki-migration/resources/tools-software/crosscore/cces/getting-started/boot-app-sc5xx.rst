@@ -87,7 +87,7 @@ To build the application and create a bootable image:
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#boot-app-bf60x
+.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#boot-app-bf60x
    :alt: Creating a Boot Image (ADSP-BF60x)#.app|Creating Bootable Applications#.app|Creating Bootable Applications
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/01_build_configuration_1920.gif

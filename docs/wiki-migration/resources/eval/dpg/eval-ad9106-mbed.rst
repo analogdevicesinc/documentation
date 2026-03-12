@@ -336,7 +336,10 @@ SRAM data format or code follows two’s complement notation. Refer to Table 2 f
 
 .. container:: centeralign
 
-   \ *Figure 22. Function that writes to on-chip SRAM in ad910x.cpp**AD910x_print_sram()** function is declared in **ad910x.h** and implemented in **ad910x.cpp** but is by default not called in the main program **main.cpp**. The function can be used to print in the console*n* number of data words from SRAM. This can be done by calling the function in main.cpp after AD910x_update_sram().
+   \ *Figure 22. Function that writes to on-chip SRAM in ad910x.cpp*\
+
+
+**AD910x_print_sram()** function is declared in **ad910x.h** and implemented in **ad910x.cpp** but is by default not called in the main program **main.cpp**. The function can be used to print in the console *n* number of data words from SRAM. This can be done by calling the function in main.cpp after AD910x_update_sram().
 
 Changing SPI Register Values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -357,7 +360,10 @@ As shown in Figure 23, if external or off-board clock source is chosen, *en_cvdd
 
 .. container:: centeralign
 
-   \ *Figure 23. Power supply enable/shutdown pins in main.cpp*If the user confirms that the DAC outputs are connected to the on-board amplifiers, s*hdn_n_lt3472 = 1* and 5.2V and -5.2V are supplied to the amplifiers provided a wall wart is connected to SDP-K1 or the evaluation board. Otherwise, *shdn_n_lt3472 = 0* and the amplifiers are not powered up.
+   \ *Figure 23. Power supply enable/shutdown pins in main.cpp*\
+
+
+If the user confirms that the DAC outputs are connected to the on-board amplifiers, s\ *hdn_n_lt3472 = 1* and 5.2V and -5.2V are supplied to the amplifiers provided a wall wart is connected to SDP-K1 or the evaluation board. Otherwise, *shdn_n_lt3472 = 0* and the amplifiers are not powered up.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/sdp-k1_vio_config.jpg
    :width: 400px

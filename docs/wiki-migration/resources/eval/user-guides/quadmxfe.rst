@@ -19,7 +19,7 @@ The system can be used to enable quick time-to-market development programs for a
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adquadmxfe1ebztop-web.gif
    :alt: adquadmxfe1ebztop-web.gif
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/analogTV>6184061669001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/analogtv>6184061669001
    :alt: analogTV>6184061669001
    :align: center
 

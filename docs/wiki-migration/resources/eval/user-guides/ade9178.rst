@@ -510,9 +510,9 @@ More details can be found in the ADE9178 datasheet and register map.
    :width: 400px
 .. |relay.png| image:: https://wiki.analog.com/_media/resources/app-notes/relay.png
    :width: 300px
-.. |emissions_32.5pF.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/emissions_32.5pF.png
+.. |emissions_32.5pF.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/emissions_32.5pf.png
    :width: 800px
-.. |67pF.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/67pF.jpg
+.. |67pF.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/67pf.jpg
    :width: 600px
 .. |stackup.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/stackup.jpg
    :width: 700px

@@ -238,8 +238,8 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/youtube>p_vntewue24
 

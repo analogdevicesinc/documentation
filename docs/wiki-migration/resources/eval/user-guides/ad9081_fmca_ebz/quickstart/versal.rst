@@ -316,8 +316,8 @@ DAC phy Lane FPGA Tx lane / Logical Lane
 
 |common##Useful links&nofooter&noeditbtn| |common##Support&nofooter&noeditbtn|
 
-.. |common##Useful links&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##Useful links&nofooter&noeditbtn
-.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##Support&nofooter&noeditbtn
+.. |common##Useful links&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##useful_links&nofooter&noeditbtn
+.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##support&nofooter&noeditbtn
 
 
 Example Device Trees
@@ -2569,8 +2569,8 @@ Shut down
 .. |ad9081_plugin&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/tools-software/linux-software/ad9081_plugin&nofooter&noeditbtn
 .. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
    :width: 300px
-.. |common##Useful links&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##Useful links&nofooter&noeditbtn
-.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##Support&nofooter&noeditbtn
+.. |common##Useful links&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##useful_links&nofooter&noeditbtn
+.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##support&nofooter&noeditbtn
 
 
 AD9081/AD9082 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide
@@ -3707,8 +3707,8 @@ Shut down
 .. |ad9081_plugin&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/tools-software/linux-software/ad9081_plugin&nofooter&noeditbtn
 .. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
    :width: 300px
-.. |common##Useful links&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##Useful links&nofooter&noeditbtn
-.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##Support&nofooter&noeditbtn
+.. |common##Useful links&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##useful_links&nofooter&noeditbtn
+.. |common##Support&nofooter&noeditbtn| image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad9081_fmca_ebz/common##support&nofooter&noeditbtn
 
 
 Useful links
@@ -3827,9 +3827,9 @@ Software support
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/hwsetup_vck190_ad9081.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/BEAM-home.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/beam-home.jpg
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/BEAM-board-settings.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/beam-board-settings.jpg
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/BEAM-set-vadj.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/beam-set-vadj.jpg
    :width: 600px

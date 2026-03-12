@@ -27,7 +27,7 @@ All measurements were performed with the ADPA1106 evaluation board plugged direc
    :align: center
    :width: 600px
 
-//Figure 9. Gate Pulsed Mode. PA Output Power Envelope (observed on Spectrum Analyzer in Zero Span Mode) response to Gate Pulse Enable (not shown). Pulsed RF input. Horizontal axis is 2 us/div. //
+*Figure 9. Gate Pulsed Mode. PA Output Power Envelope (observed on Spectrum Analyzer in Zero Span Mode) response to Gate Pulse Enable (not shown). Pulsed RF input. Horizontal axis is 2 us/div.*
 
 |image8| //Figure 10. Gate Pulsed Mode. Gate Pulse Enable (tan) and RF Input Enable (green) signals used in Figure 9. Pulsed RF input. Horizontal axis is 2 us/div. //
 

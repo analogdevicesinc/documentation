@@ -169,15 +169,15 @@ Registration
    :width: 800px
 .. |cn0371-test_setup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-test_setup.png
    :width: 600px
-.. |CN0371-install1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0371/CN0371-install1.png
+.. |CN0371-install1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-install1.png
    :width: 600px
-.. |CN0371-install2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0371/CN0371-install2.png
+.. |CN0371-install2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-install2.png
    :width: 600px
-.. |CN0371-install3.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0371/CN0371-install3.png
+.. |CN0371-install3.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-install3.png
    :width: 600px
-.. |CN0371-install4.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0371/CN0371-install4.png
+.. |CN0371-install4.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-install4.png
    :width: 600px
-.. |CN0371-install5.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0371/CN0371-install5.png
+.. |CN0371-install5.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-install5.png
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-hardware1.jpg
    :width: 600px

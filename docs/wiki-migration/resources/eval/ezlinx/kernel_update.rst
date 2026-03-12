@@ -56,7 +56,7 @@ Connect the ezLINX® board to the host PC via the supplied USB cable and to the 
 
 Open the ezLINX PC application and navigate to the Board configuration window by clicking on the picture of the ezLINX board in the bottom left corner:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/PCApplicationInterface.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/pcapplicationinterface.jpg
    :align: center
    :width: 600px
 
@@ -69,7 +69,7 @@ FTP Server Software Data Log
 
 Return to the server log window on the FTP server software. After a brief period of time the server log will fill with data:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/UpdateComplete.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/updatecomplete.jpg
    :align: center
    :width: 600px
 
@@ -81,7 +81,7 @@ Reconnecting to the ezLINX® PC Application
 | Open the ezLINX PC application again and navigate to the board configuration screen by clicking on the picture of the ezLINX board in the bottom left-hand corner.
 | Reset the board using SW1 on the board and wait for the board to reconnect. With the same IP address that was used earlier, connect to the board. Click on the "check" button and the updated embedded version will show:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/ReconnectionofBoard.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/reconnectionofboard.jpg
    :align: center
    :width: 600px
 
@@ -100,7 +100,7 @@ To flash the ezLINX board through UART, follow the following steps:
 -  Step 2: Open HyperTerminal (Hyperterminal is delivered with windows XP and no longer exist with newer versions so we suggest to use TeraTerm instead) and set the Baud rate to 57600, Data bit :8, Parity: none, flow control :none,
 -  Step 3: Upon turning on the board, uBoot is loaded and you should Press [Enter] or any key in the HyperTerminal within 5 sec to avoid auto-boot for the first time. Then you should see in the HyperTerminal the ‘bfin>’ prompt.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/flashingthroughUARThyperterminal.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/flashingthroughuarthyperterminal.jpg
    :align: center
 
 -  Step 4: Run the following command in HyperTerminal window.
@@ -124,6 +124,6 @@ To flash the ezLINX board through UART, follow the following steps:
 | Once these commands are executed the board is ready to boot from flash.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/ftpserver.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/ez+PC.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/SendFiledialogwindow.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/Sendprogresswindow.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/ez+pc.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/sendfiledialogwindow.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/sendprogresswindow.jpg

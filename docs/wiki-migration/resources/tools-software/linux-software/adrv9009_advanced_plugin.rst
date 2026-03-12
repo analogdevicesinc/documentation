@@ -7,7 +7,7 @@ The ADRV9009 Advanced Plugin allows testing of different device driver initializ
 
 In the No-OS driver the values directly correspond to members of the (taliseInit_t) talInit init structure. For the ADRV9009 Linux Device Driver each control corresponds to a specific devicetree property. Since the ADRV9009 Linux driver uses the Analog Devices provided API driver. Ultimately also for the Linux driver maps any settings back to the taliseInit_t init structure. It's therefore recommended to consult the **ADRV9009 User Guide** for more information about the options provided here.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/taliseInit_t.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/taliseinit_t.png
    :alt: taliseInit_t structure
    :align: center
    :width: 500px
@@ -65,7 +65,7 @@ Screenshots / Descriptions
 Clock Settings
 ~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_1.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_1.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -73,7 +73,7 @@ Clock Settings
 Calibrations
 ~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_2.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -81,7 +81,7 @@ Calibrations
 TX Settings
 ~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_3.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_3.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -89,7 +89,7 @@ TX Settings
 RX Settings
 ~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_4.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_4.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -97,7 +97,7 @@ RX Settings
 Observation RX Settings
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_5.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_5.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -105,7 +105,7 @@ Observation RX Settings
 Frequency Hopping Mode Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_6.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_6.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -113,7 +113,7 @@ Frequency Hopping Mode Setup
 PA Protection Settings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_7.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_7.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -121,7 +121,7 @@ PA Protection Settings
 Gain Settings
 ~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_8.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_8.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -129,7 +129,7 @@ Gain Settings
 AGC Settings
 ~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_9.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_9.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -137,7 +137,7 @@ AGC Settings
 ARM GPIO Settings
 ~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_10.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_10.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -145,7 +145,7 @@ ARM GPIO Settings
 AUX DAC Settings
 ~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_11.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_11.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -153,7 +153,7 @@ AUX DAC Settings
 JESD204B Settings
 ~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_12.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_12.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -161,7 +161,7 @@ JESD204B Settings
 JESD204B Framer Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_13.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_13.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -169,7 +169,7 @@ JESD204B Framer Settings
 JESD204B Deframer Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_14.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_14.png
    :alt: BIST
    :align: center
    :width: 600px
@@ -177,7 +177,7 @@ JESD204B Deframer Settings
 BIST
 ~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ADRV9009_ADV_PLUGIN_15.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_15.png
    :alt: BIST
    :align: center
    :width: 600px

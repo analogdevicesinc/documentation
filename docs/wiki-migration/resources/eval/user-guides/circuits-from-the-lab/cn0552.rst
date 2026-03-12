@@ -476,11 +476,11 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0552-PMDZ?&v=Rev B>`_ to receive all these great benefits and more!
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/eval-cn0552-pmdztop-edited.png
    :width: 650px
-.. |youtube>6yjW-1EjQ0I| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>6yjW-1EjQ0I
+.. |youtube>6yjW-1EjQ0I| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>6yjw-1ejq0i
 .. |pmod-toadicup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/pmod-toadicup.png
    :width: 900px
 .. |switch_config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/switch_config.png

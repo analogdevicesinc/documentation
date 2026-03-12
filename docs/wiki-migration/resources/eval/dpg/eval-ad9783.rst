@@ -88,7 +88,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   //Figure 2. AD9783 Plugin //
+   *Figure 2. AD9783 Plugin*
 
 
 -  On the ACE Board View, double click the AD9783 block to access the Chip View.
@@ -99,7 +99,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   //Figure 3. AD9783 Chip View //
+   *Figure 3. AD9783 Chip View*
 
 
 -  The default values for the register is displayed and set. The values can be changed on the Chip View GUI, or on the **Memory Map** for registers not available in the GUI. For more info on the memory map, refer to :adi:`AD978x <static/imported-files/data_sheets/AD9780_9781_9783.pdf>` datasheet. Once the desired values are set, Click **Apply Changes** and then **Read All** on the upper right window.
@@ -110,7 +110,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   //Figure 4. Apply Changes and Read All button //
+   *Figure 4. Apply Changes and Read All button*
 
 
 -  Start DPG Downloader Lite. The controller board (SDP-H1/ADS7-V2), the device part number and clock frequency should be displayed. Refer to Figures 5a and 5b.
@@ -121,14 +121,14 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   //Figure 5a. DPG Lite Session for EVAL-AD9783 with SDP-H1 //
+   *Figure 5a. DPG Lite Session for EVAL-AD9783 with SDP-H1*
 
 
    |image3|
 
 .. container:: centeralign
 
-   //Figure 5b. DPG Lite Session for EVAL-AD9783 with ADS7-V2 //
+   *Figure 5b. DPG Lite Session for EVAL-AD9783 with ADS7-V2*
 
 
 -  In DPG Downloader Lite, from the "Add Generator Waveforms" pulldown menu select **Single Tone** and apply the settings as shown in Figures 5a and 5b. Set the **Data Rate** to 200MHz and **Desired Frequency** to 16MHz. Set **DAC Resolution** to 16 for AD9783, 14 for AD9781, and 12 for AD9780. Uncheck the "Unsigned Data" box and Check the **Generate Complex Data (I & Q)**.

@@ -353,7 +353,7 @@ Save/Load Tab
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/bench_setup_9119_evb.png
    :width: 350px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure2_9129_EBZ.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure2_9129_ebz.png
    :width: 400px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure3.png
    :width: 600px
@@ -367,11 +367,11 @@ Save/Load Tab
    :width: 500px
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure6.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure6_9129-EBZ.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure6_9129-ebz.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure7_9129-EBZ.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure7_9129-ebz.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/Download.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/download.png
    :width: 15px
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/play_pattern.png
    :width: 15px
@@ -389,9 +389,9 @@ Save/Load Tab
    :width: 15px
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/repeat_play_vi.png
    :width: 15px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure9_9129-EBZ.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure9_9129-ebz.png
    :width: 500px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure10_9129-EBZ.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure10_9129-ebz.png
    :width: 500px
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure14_common_tab.png
    :width: 500px
@@ -399,13 +399,13 @@ Save/Load Tab
    :width: 400px
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure16_dll.png
    :width: 400px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure17_FIFO_tab.png
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure17_fifo_tab.png
    :width: 400px
 .. |image26| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/play_vi.png
    :width: 15px
 .. |image27| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/repeat_play_vi.png
    :width: 15px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure18_Parity_tab.png
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure18_parity_tab.png
    :width: 400px
 .. |image29| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129/figure19_power_control_tab.png
    :width: 200px

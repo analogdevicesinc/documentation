@@ -24,7 +24,7 @@ AD7768, AD7768-1
 
 You will require: SD-Card, Digilent Zedboard with 12 V wall-adapter power supply, PC running Windows 10.
 
--  Use the latest release of the ADI Kuiper Linux image with support for evaluation `from here <:doc:`/wiki-migration/resources/tools-software/linux-software/adi-kuiper_images_for_ace`>`_, and configure your SD card to boot with correct project `using this guide <:doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux`>`_
+-  Use the latest release of the ADI Kuiper Linux image with support for evaluation :doc:`from here </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images_for_ace>`, and configure your SD card to boot with correct project :doc:`using this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 -  Insert the SD card into J12 on the ZedBoard
 -  Connect the Evaluation board to the FMC connector of the ZedBoard.
 -  Connect the provided power supplies to J20 on the ZedBoard.
@@ -39,7 +39,7 @@ AD7380
 
 You will require: SD-Card, Digilent Zedboard with 12 V wall-adapter power supply, PC running Windows 10.
 
--  Build the HDL, Zynq kernel and device tree for imaging the SD Card, targeting the AD7380, by following `this guide <:doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux`>`_.
+-  Build the HDL, Zynq kernel and device tree for imaging the SD Card, targeting the AD7380, by following :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 -  Insert the SD card into J12 on the ZedBoard
 -  Connect the Evaluation board to the FMC connector of the ZedBoard.
 -  Connect the provided power supplies to J20 on the ZedBoard.

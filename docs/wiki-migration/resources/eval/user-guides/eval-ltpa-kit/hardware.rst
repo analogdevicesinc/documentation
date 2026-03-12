@@ -292,7 +292,7 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-.. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/eval-ltpa-kit
+.. image:: https://wiki.analog.com/_media/navigation_#/resources/eval/user-guides/eval-ltpa-kit
    :alt: Overview #:resources:eval:user-guides:eval-ltpa-kit:software|EVAL-LTPA-KIT Software User #none
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/dut_board.png

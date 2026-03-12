@@ -1769,7 +1769,7 @@ Additional Resources
 
 >>>>
 
-.. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/eval-ltpa-kit/hardware
+.. image:: https://wiki.analog.com/_media/navigation_#/resources/eval/user-guides/eval-ltpa-kit/hardware
    :alt: EVAL-LTPA-KIT Hardware Guide #:resources:eval:user-guides:eval-ltpa-kit|EVAL-LTPA-KIT Overview #none
    :align: left
 

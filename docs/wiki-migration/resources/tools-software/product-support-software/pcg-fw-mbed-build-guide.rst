@@ -33,7 +33,7 @@ XHIDDENSTART STM32 (Click to expand) XHIDDENSTARTSTOP
 
 XHIDDENSTART Build using STM32 IDE (click to expand) XHIDDENSTARTSTOP
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/pcg-fw-stm32-build-pre-requisites#STM Build Pre-requisites&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/pcg-fw-stm32-build-pre-requisites#stm_build_pre-requisites&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/pcg-fw-stm32-build-pre-requisites#STM Build Pre-requisites&showfooter=nofooter
 
 .. raw:: html
@@ -100,7 +100,7 @@ XHIDDENSTART STM32 (Click to expand) XHIDDENSTARTSTOP
 
 XHIDDENSTART Build using STM32 IDE (click to expand) XHIDDENSTARTSTOP
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/pcg-fw-stm32-build-guide#STM Build&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/pcg-fw-stm32-build-guide#stm_build&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/pcg-fw-stm32-build-guide#STM Build&showfooter=nofooter
 
 .. raw:: html

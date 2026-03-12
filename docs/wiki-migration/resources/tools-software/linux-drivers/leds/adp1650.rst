@@ -14,7 +14,7 @@ Evaluation Boards
 Description
 -----------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/leds/scrape>adi>ADP1650#additional-details__paragraph
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/leds/scrape>adi>adp1650#additional-details__paragraph
    :alt: scrape>adi>ADP1650#additional-details\__paragraph
 
 -  :adi:`Product Page <ADP1650>`

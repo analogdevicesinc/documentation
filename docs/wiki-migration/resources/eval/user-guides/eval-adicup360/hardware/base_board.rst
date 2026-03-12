@@ -15,7 +15,7 @@ This page describes the hardware connectors, the jumpers and switches configurat
 Getting Started Video
 ---------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/analogTV>4784514204001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/analogtv>4784514204001
    :alt: analogTV>4784514204001
 
 Connectors
@@ -336,39 +336,39 @@ Software examples
 
 *End of Document*
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/P12_Close.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/p12_close.png
    :width: 32px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/P12_Close.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/p12_close.png
    :width: 32px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/REFnSel_1-2.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/refnsel_1-2.png
    :width: 39px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/REFnSel_2-3.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/refnsel_2-3.png
    :width: 39px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J1-2.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j1-2.png
    :width: 121px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J1-2_1.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j1-2_1.png
    :width: 121px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J3-4.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j3-4.png
    :width: 121px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J3-4_1.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j3-4_1.png
    :width: 121px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J5.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j5.png
    :width: 121px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J5_1.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j5_1.png
    :width: 121px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J1-2.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j1-2.png
    :width: 121px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J1-2_1.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j1-2_1.png
    :width: 121px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J3-4.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j3-4.png
    :width: 121px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J3-4_1.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j3-4_1.png
    :width: 121px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J5.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j5.png
    :width: 121px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/J5_1.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j5_1.png
    :width: 121px
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p1_2_user.png
    :width: 128px

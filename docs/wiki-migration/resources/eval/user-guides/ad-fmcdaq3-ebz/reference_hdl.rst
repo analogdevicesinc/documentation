@@ -2384,13 +2384,13 @@ Help & Support
 .. hint::
 
    
-   -  The `carriers (abbrevations can be found here) <:doc:`/wiki-migration/resources/fpga/docs/hdl`>`_ are commonly available FPGA evaluation boards.
-   -  The `HDL user guide <:doc:`/wiki-migration/resources/fpga/docs/hdl`>`_ contains all the documentation, build instructions and register map tables.
+   -  The :doc:`carriers (abbrevations can be found here) </wiki-migration/resources/fpga/docs/hdl>` are commonly available FPGA evaluation boards.
+   -  The :doc:`HDL user guide </wiki-migration/resources/fpga/docs/hdl>` contains all the documentation, build instructions and register map tables.
    -  The following quick links allows you to browse the github repository for a list of current `branches <http://github.com/analogdevicesinc/hdl/branches/active>`_, `library components <http://github.com/analogdevicesinc/hdl/tree/main/library>`_, and `projects <http://github.com/analogdevicesinc/hdl/tree/main/projects>`_.
    -  Questions? We can help with :ez:`FPGA questions <community/fpga>`, :ez:`Linux driver questions <community/linux-device-drivers/linux-software-drivers>`, :ez:`No-OS Drivers questions <community/linux-device-drivers/microcontroller-no-os-drivers>`.
    
 
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCDAQ3-EBZ#Hardware#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcdaq3-ebz#hardware#./
    :alt: User Guide#.:\|Software

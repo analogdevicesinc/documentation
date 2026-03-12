@@ -81,7 +81,7 @@ FPGA Configuration for Nexys3 and LX-9 MicroBoard
 
 Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set the appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad5160/sw/AD5160.bit).
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodDPOTImpact.jpg
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmoddpotimpact.jpg
    :alt: Programming FPGA in IMPACT
    :width: 200px
 

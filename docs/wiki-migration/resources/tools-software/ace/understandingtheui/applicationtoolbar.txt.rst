@@ -1,4 +1,4 @@
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/UnderstandingTheUI/Capture.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/capture.png
    :alt: Capture.png
    :align: right
 
@@ -35,4 +35,4 @@ The file menu contains the options for creating, opening, closing and saving ses
 
 |Capture2.PNG|
 
-.. |Capture2.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/UnderstandingTheUI/Capture2.PNG
+.. |Capture2.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/capture2.png

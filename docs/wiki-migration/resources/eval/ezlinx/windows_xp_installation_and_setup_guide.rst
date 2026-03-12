@@ -70,27 +70,27 @@ Setting up the ezLINX board IP address
 | Open the ezLINX application window and click on the board icon in the bottom left corner of the window (or click on Configure button). In the IP address settings enter the following: |image16| Now click the "use changes" button then the "connect" button and the status light will turn from red to green. The board and the PC application are now connected.
 | ===== Verify Connection ===== To verify the connection perform a simple GPIO test. Click on the GPIO button on the left hand side of the window: |image17| Tick the box next to GPIO 1 and set the direction to 1 and the value to 0 and click the "use changes" button. The orange LED, LED1 that was previously on on the board should now switch off. To switch it back on again set the value to 1 and click the "use changes" button.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/WINDOWSINSTALLER.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/DotNETFRAMEWORK.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/SW_SuccessInstallation.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/windowsinstaller.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/dotnetframework.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/sw_successinstallation.jpg
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/ControlPanel.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/SystemAccess.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/controlpanel.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/systemaccess.jpg
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/SystemProperties.jpg
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/DeviceManager.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/systemproperties.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/devicemanager.jpg
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/hardwareupdate.jpg
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/HardwareUpdateWinzar.jpg
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/SelectNetworkAdapter.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/hardwareupdatewinzar.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/selectnetworkadapter.jpg
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/HardwareInstallation.jpg
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/hardwareinstallation.jpg
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/NetworkConnection.jpg
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/LocalAreaConnection.jpg
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/ConnectionProperties.jpg
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/IPaddress.jpg
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/networkconnection.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/localareaconnection.jpg
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/connectionproperties.jpg
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/ipaddress.jpg
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/configinterface.jpg
    :width: 300px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/GPIOInterface.jpg
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/gpiointerface.jpg
    :width: 300px

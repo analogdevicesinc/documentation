@@ -30,7 +30,7 @@ LTspice Circuits used in the lecture material are available at `KWIK Stability L
 
 .. tip::
 
-   //Keep all files in the zip folder in the same folder on your local PC. //
+   *Keep all files in the zip folder in the same folder on your local PC.*
 
 
 --------------

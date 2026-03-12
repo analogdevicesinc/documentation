@@ -16,12 +16,12 @@ A2B Analyzer HP Setup
 
 1. Connect the A\ :sup:`2`\ B Analyzer HP to your PC using the supplied USB-C to USB-C cable. You may also use USB-C to USB-A cable with 24V power supply.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_1.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_1.png
    :width: 400px
 
 2. Connect 24V power supply to A\ :sup:`2`\ B Analyzer HP. A\ :sup:`2`\ B Analyzer HP supports both power and data over USB-C. USB-C power alone may not be sufficient to use the A\ :sup:`2`\ B Analyzer HP to its full capacity. When the power is not sufficient, an error message is displayed in the User Interface. To allow the connection a 24V power supply must be connected.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_2.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_2.png
    :width: 400px
 
 3. Ensure your A\ :sup:`2`\ B Analyzer Studio software is installed, and upgraded as explained in :doc:`A2B Analyzer Studio Quick Start Guide </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>` Section *"Installation and Upgrades"*.
@@ -48,7 +48,7 @@ Hardware setup for using A2B Analyzer HP as Bus Monitor
 
 **Note:** It is recommended to place the A\ :sup:`2`\ B Analyzer HP between the Main and first Sub node (Sub node0) to allow capturing all events on the bus.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_5.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_5.jpg
    :width: 400px
 
 4. If ADI evaluation boards are used for main and sub-node, please refer the following path for documentation on how to set up a network using ADAA245x-EV-A1CA + ADAA24xx-EV-B2BX eval boards.
@@ -96,7 +96,7 @@ Sub Node Emulator
 
 3. Insert the A\ :sup:`2`\ B Analyzer HP unit in an A\ :sup:`2`\ B network at a desired Sub node position to be emulated. Connect the unit to an upstream node, using TOWARDS MAIN, and to a downstream node, using TOWARDS SUB (if it is not the last node). **You must use personality module 1 for emulator functionality.**
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_9.jpg
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_9.jpg
    :width: 400px
 
 4. Follow the instructions in :doc:`A2B Analyzer Studio Quick Start Guide </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>` section *"Using A2B Analyzer HP as Node Emulator - Sub Node Emulator" * for using A\ :sup:`2`\ B Analyzer Studio software.
@@ -161,7 +161,7 @@ For customer cabling, please use the below pinout details:
 -  P6 (towards sub): 1 - BP, 2 – BN (left to right)
 -  P3 (towards main): 1- AN, 2- AP (left to right)
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_15.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_15.png
    :width: 400px
 
 Main Node Emulator
@@ -188,27 +188,27 @@ Sub Node Emulator
 
 3. Follow the instructions in :doc:`A2B Analyzer Studio Quick Start Guide. </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>` section *"Using A2B Bus Analyzer as Node Emulator - Sub Node Emulator"  * for using A\ :sup:`2`\ B Analyzer Studio software.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_3.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_3.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_4.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_4.jpg
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_6.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_6.jpg
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_7.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_7.jpg
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_8.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_8.jpg
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_10.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_10.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_11.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_11.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_12.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_12.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_13.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_13.png
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_14.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_14.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_16.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_16.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/A2BASHW_17.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_17.png
    :width: 600px

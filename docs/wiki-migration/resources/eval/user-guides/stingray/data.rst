@@ -20,7 +20,7 @@ Gain, Return Loss
 
 .. container:: centeralign
 
-   \ **//Figure 2: Gain vs. Frequency for Gain Settings from 0 to 127, Single Receive Channel //**\
+   \ **Figure 2: Gain vs. Frequency for Gain Settings from 0 to 127, Single Receive Channel**\
 
 
 Noise Figure

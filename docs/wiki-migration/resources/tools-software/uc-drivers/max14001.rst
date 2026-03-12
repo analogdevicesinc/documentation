@@ -26,7 +26,7 @@ Applications
 -  Substation automation
 -  Industrial control, multi-range, digital input modules with individually isolated inputs
 
-|image1| //MAX14001PMB1 (with MAX14001 on-board chip) //
+|image1| *MAX14001PMB1 (with MAX14001 on-board chip)*
 
 ADI No-OS
 ~~~~~~~~~
@@ -136,7 +136,7 @@ Driver Initial Configuration
 
 After initializing the device, **max14001_init_config** is called, this initializes the device configuration after power-on-reset. This function follows the checking process as described in the configuration flowchart below.
 
-|image2| //Register Programming for Configuration of MAX14001 After Power-On-Reset //
+|image2| *Register Programming for Configuration of MAX14001 After Power-On-Reset*
 
 Write Enable Register Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

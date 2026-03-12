@@ -133,5 +133,5 @@ Pressing the "Generate DPD Models" button will begin the model optimization, whi
 
 Documentation for the GUI and its features can be easily accessed through the help toolbar option.
 
-.. image:: https://wiki.analog.com/_media/navigation ADRV904x DPD USER GUIDE#resources/eval/user-guides/adrv904x/dpd/error_troubleshooting
+.. image:: https://wiki.analog.com/_media/navigation_adrv904x_dpd_user_guide#resources/eval/user-guides/adrv904x/dpd/error_troubleshooting
    :alt: ERROR TROUBLESHOOTING #resources:eval:user-guides:adrv904x:dpd|ADRV904x DPD HOME

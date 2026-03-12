@@ -72,7 +72,7 @@ PHY Exchange Guide, DP83825 to ADIN1200 10/100Mb
 
          .. container:: centeralign
 
-            //Figure 1 Isolation using Discrete Magnetics (Voltage Mode Driver) //
+            *Figure 1 Isolation using Discrete Magnetics (Voltage Mode Driver)*
 
          
 
@@ -161,7 +161,7 @@ PHY Exchange Guide, DP83825 to ADIN1200 10/100Mb
 
          .. container:: centeralign
 
-            //Table 6. RGMII MAC Interface Mode Pin //
+            *Table 6. RGMII MAC Interface Mode Pin*
 
          
          **Output Clocks**
@@ -388,7 +388,7 @@ The following example captures how to configure the ADIN1200 for an unmanaged co
    :width: 400px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_fig2.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_Table5.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_table5.png
    :width: 400px
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp38325_table_5_mii_mac_interface_mode_pin_comparison.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_table6.png

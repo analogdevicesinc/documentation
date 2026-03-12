@@ -159,4 +159,4 @@ To that end, the following list is provided:
    -   `Sallen–Key filter topology <https://en.wikipedia.org/wiki/Sallen-Key_filter>`_
    -   `Linear phase <https://en.wikipedia.org/wiki/Linear_phase>`_
 
-// End of Document //
+*End of Document*

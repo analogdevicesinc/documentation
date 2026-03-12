@@ -375,7 +375,7 @@ The :doc:`Artificial Transmission Lines - ADALM1000 </wiki-migration/university/
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |youtube>QzigJ1URWlI| image:: https://wiki.analog.com/_media/university/labs/youtube>QzigJ1URWlI
+.. |youtube>QzigJ1URWlI| image:: https://wiki.analog.com/_media/university/labs/youtube>qzigj1urwli
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/simple_lumped_tline.png
    :width: 1000px
 .. |image2| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/coax_figure.png
@@ -404,7 +404,7 @@ The :doc:`Artificial Transmission Lines - ADALM1000 </wiki-migration/university/
    :width: 400px
 .. |image14| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_speaker_mic_free_air_response.png
    :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/Pringles_closed_Scopy.png
+.. |image15| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/pringles_closed_scopy.png
    :width: 400px
 .. |image16| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/ltspice_closed_tube.png
    :width: 400px

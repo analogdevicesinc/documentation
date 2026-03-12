@@ -198,7 +198,7 @@ Demonstration Project User Interface
 
 The following figure presents the **uC-Probe** interface that can be used for monitoring and controlling the operation of the **EVAL-AD5684R** evaluation board.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5684R_interface.png
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5684r_interface.png
    :alt: ad5684R_interface.png
    :align: center
    :width: 700px

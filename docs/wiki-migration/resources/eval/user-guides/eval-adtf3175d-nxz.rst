@@ -124,7 +124,7 @@ Note: Do not use USB Type-C to USB Type-A adapters.
 ; Dimensions : 66mm x 58.6mm x 67.9mm
 ; Enclosure Drawing : `Link <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175d-nxz_drawing_v1.pdf>`_
 ; Laser Safety : Class 1
-; Operating Environment : //TO BE COMPLETED//
+; Operating Environment : *TO BE COMPLETED*
 
 --------------
 

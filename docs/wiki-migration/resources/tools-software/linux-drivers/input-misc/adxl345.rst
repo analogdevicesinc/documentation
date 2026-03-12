@@ -24,7 +24,7 @@ Evaluation Boards
 Description
 -----------
 
-.. image:: https://wiki.analog.com/_media/software/driver/linux/ADXL346_FUNCTIONAL_BLOCK_DIAGRAM.png
+.. image:: https://wiki.analog.com/_media/software/driver/linux/adxl346_functional_block_diagram.png
    :alt: ADXL346_FUNCTIONAL_BLOCK_DIAGRAM.png
    :width: 550px
 
@@ -38,7 +38,7 @@ Low power modes enable intelligent motion-based power management with threshold 
 
 :adi:`ADXL345 <en/mems-and-sensors/imems-accelerometers/adxl345/products/product.html>` - Small, Ultra Low Power, 3-Axis, ±2/4/8/16g Digital Accelerometer :adi:`ADXL346 <en/mems-and-sensors/imems-accelerometers/adxl346/products/product.html>` - Ultra Low Power, Three-Axis, +-2/4/8/16g Digital Accelerometer :adi:`ADXL375 <en/mems-and-sensors/imems-accelerometers/adxl375/products/product.html>` - Low Power, Three-Axis, +-200g Digital Accelerometer
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-misc/youtube>8o_b2DO3d3E
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-misc/youtube>8o_b2do3d3e
    :alt: iMEMS® Motion Sensors featuring the ADXL345
    :align: left
 

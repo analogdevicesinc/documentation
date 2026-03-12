@@ -137,7 +137,7 @@ For more information on how to use the tool basics, please check out the `Arduin
    To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
 
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn-0429_daughterboard.jpg
    :width: 200px

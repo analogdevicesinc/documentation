@@ -250,4 +250,4 @@ This project contains: system initialization part - setting Digital IO pins in t
 
 All files are in the same folder as the .ino file and include the source and header files related to CN0411 software application. The *Communication.c* files contain **SPI** and **UART** specific data, meanwhile the *CN0411.c* files contain the calculation part, the *AD7124.c* files contain ADC channels handling. The default parameters are set at the run time, after initialization in the terminal window will appear information messages about the initial setup.
 
-// End of Document //
+*End of Document*

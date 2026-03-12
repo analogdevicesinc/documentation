@@ -56,7 +56,7 @@ The :adi:`AD9508` evaluation board is a compact, easy-to-use platform for evalua
 
 |9508_evb_cropped.png|
 
-   //Figure 1. AD9508/PCBZ //
+   *Figure 1. AD9508/PCBZ*
 
 
 Evaluation Board Hardware

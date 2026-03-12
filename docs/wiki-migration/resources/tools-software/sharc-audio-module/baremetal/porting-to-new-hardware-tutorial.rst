@@ -518,5 +518,5 @@ Depending on your hardware configuration, the ports assignments of the periphera
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#driver-creation-tutorial
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#driver-creation-tutorial
    :alt: Creating Drivers for New Audio Components#.|Bare Metal Framework#flashing|Programming BM Framework to Flash

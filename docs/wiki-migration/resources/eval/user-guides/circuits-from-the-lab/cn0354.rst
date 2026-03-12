@@ -102,7 +102,7 @@ Using the Evaluation Software
 Software Control and Indicator Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0354/gui1.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/gui1.png
    :width: 900px
 
 
@@ -139,7 +139,7 @@ Software Control and Indicator Descriptions
 
 |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-error.png| Error
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0354/gui2.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/gui2.png
    :width: 900px
 
 
@@ -204,11 +204,11 @@ Saving Data to a Spreadsheet File
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/test_setup.png
    :width: 900px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0354/softwareinstall0.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0354/softwareinstall2.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0354/softwareinstall3.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0354/sdpdrviversinstall1.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0354/sdpdrviversinstall2.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/softwareinstall0.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/softwareinstall2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/softwareinstall3.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/sdpdrviversinstall1.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/sdpdrviversinstall2.png
 
 .. |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-busy.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software-busy.png
 .. |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-error.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software-error.png

@@ -93,4 +93,4 @@ Software
 
 --------------
 
-// End of Document //
+*End of Document*

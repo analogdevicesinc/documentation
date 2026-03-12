@@ -44,5 +44,5 @@ Design Cross Section
 |          | - Differential Clock Reference for ADC     | B and COM | HMC361 Clock Reference   |
 +----------+--------------------------------------------+-----------+--------------------------+
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS11-EBZ#Characteristics and Performance#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms11-ebz#characteristics_and_performance#./
    :alt: Hardware#FCC or CE certification

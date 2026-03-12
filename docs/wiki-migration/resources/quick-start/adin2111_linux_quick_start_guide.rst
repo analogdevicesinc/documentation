@@ -62,7 +62,7 @@ Software Setup
 Getting a Raspbian Image
 """"""""""""""""""""""""
 
-Download an SD Card Image: `ADI Kuiper <:doc:`/wiki-migration/resources/tools-software/linux-software/embedded_arm_images`>`_ or other Raspbian Linux Image.
+Download an SD Card Image: :doc:`ADI Kuiper </wiki-migration/resources/tools-software/linux-software/embedded_arm_images>` or other Raspbian Linux Image.
 
 Preparing the SD card
 """""""""""""""""""""
@@ -607,9 +607,9 @@ More Info
 
 Ask a question: :ez:`Engineer Zone Linux <linux-software-drivers/f/q-a>`.
 
-Details about the `ADIN1100 Linux Driver <:doc:`/wiki-migration/resources/tools-software/linux-drivers/net-phy/adin1100`>`_.
+Details about the :doc:`ADIN1100 Linux Driver </wiki-migration/resources/tools-software/linux-drivers/net-phy/adin1100>`.
 
-Details about the `ADIN2111 Linux Driver <:doc:`/wiki-migration/resources/tools-software/linux-drivers/net-mac-phy/adin2111`>`_.
+Details about the :doc:`ADIN2111 Linux Driver </wiki-migration/resources/tools-software/linux-drivers/net-mac-phy/adin2111>`.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/rpi3-adin2111.jpg
    :width: 400px

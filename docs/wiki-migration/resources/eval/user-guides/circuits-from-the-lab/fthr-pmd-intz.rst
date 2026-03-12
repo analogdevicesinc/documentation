@@ -141,7 +141,7 @@ Reference Demos & Software
 -  :doc:`EVAL-ADT7420-PMDZ Digital Temperature PMOD User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adt7420-pmdz>`
 -  :doc:`MAX31855PMB1 Thermocouple-to-Digital PMOD User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/max31855pmb1>`
 
-// End of Document //
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/fthr/fthr-pmd-intz_rev_0_angle.png
    :width: 450px

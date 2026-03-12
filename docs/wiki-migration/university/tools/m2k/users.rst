@@ -59,5 +59,5 @@ Videos
 
 To make the whole experience easier and more enjoyable, we created a series of videos, which provide a detailed description of the module and how to operate it. Check out the whole series using this `link <https://www.youtube.com/playlist?list=PLE6soOeVPOJ0Pj5sMui4KPDiTa7HY50y3>`_. Or take a look at the first video of the series right here.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>LCf-_iREESQ
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/youtube>lcf-_ireesq
    :alt: youtube>LCf-\_iREESQ

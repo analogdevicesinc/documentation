@@ -226,7 +226,7 @@ The second argument is a bit mask flag which sets the verbosity level and possib
    ::
    
    
-      //Current baseband rate only and be verbose//
+      *Current baseband rate only and be verbose*
    
       root@analog:/sys/kernel/debug/iio/iio:device1# dmesg -n7
       root@analog:/sys/kernel/debug/iio/iio:device1# echo **0** **3** > **digital_tune**

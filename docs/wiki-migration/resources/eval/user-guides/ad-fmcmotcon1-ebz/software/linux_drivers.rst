@@ -106,7 +106,7 @@ Each IIO driver has in the device tree and entry related to the actual driver an
        dma-names = "ad-mc-adc-dma";
    };
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#none#../
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon1-ebz#none#../
    :alt: Overview#none
 
 .. |IIO| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/iio_logo.png

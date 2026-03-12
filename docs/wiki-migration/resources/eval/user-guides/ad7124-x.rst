@@ -5,7 +5,7 @@ The EVAL-AD7124-xASDZ evaluation kit features the AD7124-4/AD7124-X 24-bit, low 
 
 The AD7124-X is a low power, low noise, complete analog front end for high precision measurement applications. It contains a low noise, 24-bit Σ-Δ ADC. It can be configured to have four differential inputs or seven single-ended or pseudo-differential inputs. The on-chip low noise instrumentation amplifier means that signals of small amplitude can be interfaced directly to the ADC. Other on-chip features include a low drift 2.5 V reference, excitation currents, reference buffers, multiple filter options and many diagnostic features. Complete specifications for the AD7124-X are provided in the product data sheet and should be consulted in conjunction with this user guide when using the evaluation board. Full details about the EVAL-SDP-CB1Z are available on the Analog Devices, Inc., website.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/AD7124-X_functional_block_diagram.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-x_functional_block_diagram.png
    :align: center
    :width: 600px
 

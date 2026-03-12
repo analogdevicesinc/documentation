@@ -273,7 +273,7 @@ What is the relationship between the gain control elements and distortion?
 
 **Return to** :doc:`Electronics I and II Lab Activity Material </wiki-migration/university/labs/electronics>` **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
 
-.. |youtube>-FxNJlDDGIs| image:: https://wiki.analog.com/_media/university/labs/youtube>-FxNJlDDGIs
+.. |youtube>-FxNJlDDGIs| image:: https://wiki.analog.com/_media/university/labs/youtube>-fxnjlddgis
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/wien_bridge_osc_adalm2000/williams_simple_wien_bridge_osc.png
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/university/labs/wien_bridge_osc_adalm2000/wheatstone_ltspice.png

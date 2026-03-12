@@ -471,7 +471,7 @@ For additional questions or support, please visit the Engineering Zone forum at 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/platformblockdiagram.jpg
    :width: 1000px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/XUD1A_fmc_v2.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/xud1a_fmc_v2.png
    :width: 600px
 .. |MxFE Connection| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/mxfe_connection.jpg
    :width: 1000px
@@ -480,8 +480,8 @@ For additional questions or support, please visit the Engineering Zone forum at 
    :width: 600px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_default_clk.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_direct_clk.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/XUD1A_lo_pll.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/XUD1A_rework_onboard_pll.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xud1a_lo_pll.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xud1a_rework_onboard_pll.png
    :width: 600px
 .. |SW6 Configuration for SD Card Boot| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_sw6_sdcard.jpg
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/adar1000eval1z_tr_probe.png

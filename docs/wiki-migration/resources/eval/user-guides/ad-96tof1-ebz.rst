@@ -137,22 +137,22 @@ Laser Safety
 Videos
 ------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>t6z9UImtO6g
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>t6z9uimto6g
    :alt: youtube>t6z9UImtO6g
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>5pfohkFjAuU
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>5pfohkfjauu
    :alt: youtube>5pfohkFjAuU
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>-CErH6ROli8
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>-cerh6roli8
    :alt: youtube>-CErH6ROli8
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>G-9UfaZXUCk
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>g-9ufazxuck
    :alt: youtube>G-9UfaZXUCk
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>_ew0QKQMUtI
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>_ew0qkqmuti
    :alt: youtube>_ew0QKQMUtI
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>uRY2UZ0E5_o
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>ury2uz0e5_o
    :alt: youtube>uRY2UZ0E5_o
 
 --------------

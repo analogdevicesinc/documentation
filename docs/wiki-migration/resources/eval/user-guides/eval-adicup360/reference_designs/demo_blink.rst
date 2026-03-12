@@ -39,7 +39,7 @@ Setting up the hardware
 ADICUP360 + Demo Blink Video
 ----------------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/analogTV>4784514204001
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/analogtv>4784514204001
    :alt: analogTV>4784514204001
 
 Obtaining the source code
@@ -105,7 +105,7 @@ The **system** folder contains system related files (try not to change these fil
 -  **CMSIS** – contains files related to ADuCM360 platform, such as: *ADuCM360.h* (registers definitions), *system_ADuCM360.c/h* (system clock), *vectors_ADuCM360.c* (interrupt vector table).
 -  **cortexm** – contains files for system management (start-up, reset, exception handler).
 
-.. image:: https://wiki.analog.com/_media/navigation EVAL-ADICUP#none#./
+.. image:: https://wiki.analog.com/_media/navigation_eval-adicup#none#./
    :alt: Reference Designs#demo_cli|CLI Demo
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png

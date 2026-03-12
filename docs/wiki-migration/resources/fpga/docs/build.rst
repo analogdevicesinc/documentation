@@ -610,7 +610,7 @@ More info on how to generate this files you will find in the :doc:`References </
      chmod +x build_boot_bin.sh
      usage: build_boot_bin.sh system_top.xsa u-boot.elf [output-archive]
 
-You can download the script by accessing the following link: `build_boot_bin.sh <:doc:`/wiki-migration/resources/tools-software/linux-software/build-the-zynq-boot-image`>`_.
+You can download the script by accessing the following link: :doc:`build_boot_bin.sh </wiki-migration/resources/tools-software/linux-software/build-the-zynq-boot-image>`.
 
 ++++
 
@@ -708,7 +708,7 @@ CRITICAL WARNING: [IP_Flow 19-459] IP file 'C:/Git/hdl/library/common/ad_pnmon.v
 
 These warnings appear because the libraries are using common modules which are located under the **./library/common/**. These warnings can be ignored, they won't affect the functionality of the IP or the project. However, you may not be able to 'archive' these projects. The irony is that it does copy these files to the project area, but ignores them.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#releases
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#releases
    :alt: Releases and supported tool versions#hdl|Main page#run|Running on hardware
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_4.png

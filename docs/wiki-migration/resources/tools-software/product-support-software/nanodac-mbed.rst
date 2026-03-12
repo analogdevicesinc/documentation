@@ -29,7 +29,7 @@ The :adi:`AD568xRSDZ(nanodac+)-EVAL <media/en/technical-documentation/user-guide
 Useful links
 ============
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#useful_link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :doc:`nanoDAC+ No-OS Driver </wiki-migration/resources/tools-software/uc-drivers/ad5676>`

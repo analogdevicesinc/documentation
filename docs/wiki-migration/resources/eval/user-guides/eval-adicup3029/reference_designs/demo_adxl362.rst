@@ -156,7 +156,7 @@ This example uses the `Eclipse Mosquitto <https://mosquitto.org>`_ which is an o
    :align: center
    :width: 600px
 
--  After looking around, I found a great website to download the DLL files from, as well as a great video that shows you have to fix the issue, and it did work for me. //Please note, that this solution is **NOT** affiliated with Analog Devices, and Analog Devices assumes no responsibility for any problems or damages occurred during this process. //
+-  After looking around, I found a great website to download the DLL files from, as well as a great video that shows you have to fix the issue, and it did work for me. *Please note, that this solution is **NOT** affiliated with Analog Devices, and Analog Devices assumes no responsibility for any problems or damages occurred during this process.*
 -  `How to fix VCRUNTIME140.DLL Missing Video <https://www.youtube.com/watch?v=-R3LuYNQf98>`_
 -  `VCRUNTIME140.DLL Download <http://www.sts-tutorial.com/sites/downloadCenter.php?vcruntime140>`_
 -  Re-Run the Mosquitto.exe file, inorder to complete the installation process.
@@ -176,9 +176,9 @@ Setting up Mosquitto to Receive MQTT Data
 
 
 -  The mosquitto broker is now running locally and has the same IP as your machine and by default runs on port 1883. Open a new Command Prompt and type **ipconfig** to get your local IP address
--  In the parameters.h header file you need to configure the following parameters: ``SSID = ""         //Service set identifier, name of the WiFi network to connect the ESP8266//
-   PASS = ""         //WiFi network password//
-   SERVER_ADDR = ""  //IP of the mosquitto broker from the previous step//
+-  In the parameters.h header file you need to configure the following parameters: ``SSID = ""         *Service set identifier, name of the WiFi network to connect the ESP8266*
+   PASS = ""         *WiFi network password*
+   SERVER_ADDR = ""  *IP of the mosquitto broker from the previous step*
    SERVER_PORT = "1883"     //by default is 1883//``
 -  Open a third Command Prompt and navigate to the folder where mosquitto is installed and type this command and hit the <ENTER> key:<code> cd C:\\Program Files (x86)\\mosquitto\\mosquitto_sub -t adxl </code> This command subscribes to the topic and will display the accelerometer data. It should look similar to the image below.
 
@@ -232,7 +232,7 @@ In the srcs/app_src folder you will find the source file for the main applicatio
 -  Mqtt client is linked as static library. Can be found in noos/libraries/mqtt
 -  To build mqtt library run the following command in the ADuCM3029_demo_esp8266 folder: ``make libs``
 
-// End of Document//
+*End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_back.png
    :width: 400px

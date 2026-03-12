@@ -10,7 +10,7 @@ Application Toolbar
 
 Application Toolbar The application toolbar, contains operations and settings which are independent of the views being displayed. The operations available are grouped in the following categories:
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Capture.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/capture.png
    :alt: Capture.png
    :align: left
    :width: 134px
@@ -44,4 +44,4 @@ The file menu contains the options for creating, opening, closing and saving ses
 
 |Capture2.PNG|
 
-.. |Capture2.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/Capture2.PNG
+.. |Capture2.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/capture2.png

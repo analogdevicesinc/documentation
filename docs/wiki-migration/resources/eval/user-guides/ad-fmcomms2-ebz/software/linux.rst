@@ -15,5 +15,5 @@ Descriptions of the individual Linux device drivers for the different parts on t
 -  :doc:`AD9361: RF Agile Transceiver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 -  :doc:`AD7291: 8-Channel, I2C, 12-Bit SAR ADC with Temperature Sensor </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad7291>`
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCOMMS2-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms2-ebz#none#./
    :alt: Software#baremetal|No-OS drivers

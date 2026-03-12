@@ -8,7 +8,7 @@ This page gives an overview of using the ARM Mbed platform supported firmware ex
 
 The AD7768-1 is a low power, high performance, Σ-Δ analog-to-digital converter (ADC), with a Σ-Δ modulator and digital filter for precision conversion of both ac and dc signals. The AD7768-1 is a single-channel version of the AD7768, an 8-channel, simultaneously sampling, Σ-Δ ADC.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_introduction#introduction&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_introduction#Introduction&showfooter=nofooter
 
 --------------
@@ -16,7 +16,7 @@ The AD7768-1 is a low power, high performance, Σ-Δ analog-to-digital converter
 Useful Links
 ------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#useful_link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
 -  :git-no-OS:`AD7768-1 No-OS Drivers <drivers/adc/ad7768-1>`
@@ -45,7 +45,7 @@ Connection Details:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7768-1_detailed_hw_connection.png
    :align: center
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/hardware_connections_uart#uart_connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/hardware_connections_uart#UART Connections&showfooter=nofooter
 
 --------------
@@ -53,7 +53,7 @@ Connection Details:
 Software Downloads
 ------------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/iio_support_software_downloads#software_downloads&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/iio_support_software_downloads#Software Downloads&showfooter=nofooter
 
 IIO Oscilloscope (Client)
@@ -76,7 +76,7 @@ This is a GUI (Graphical User Interface) based IIO client application for data v
 Evaluating AD7768-1 Using IIO Ecosystem
 ---------------------------------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
+.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/note_hardware_connections#note_in_hardware_connections&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/note_hardware_connections#Note in Hardware Connections&showfooter=nofooter
 
 Running IIO Oscilloscope ( Client )

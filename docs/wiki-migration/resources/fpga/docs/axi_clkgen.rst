@@ -5642,5 +5642,5 @@ References
 -  `7 Series FPGAs Clocking Resources User Guide <https://www.xilinx.com/support/documentation/user_guides/ug472_7Series_Clocking.pdf>`_
 -  `MMCM and PLL Dynamic Reconfiguration <https://www.xilinx.com/support/documentation/application_notes/xapp888_7Series_DynamicRecon.pdf>`_
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
    :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

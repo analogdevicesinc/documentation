@@ -1,7 +1,7 @@
 EVAL-AD8302-ARDZ
 ================
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD8302-top-clean.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad8302-top-clean.jpg
    :alt: EVAL-AD8302-ARDZ
    :width: 600px
 
@@ -416,7 +416,7 @@ For any queries regarding the hardware and evaluation software, contact as at :e
 .. |\|DAPLINK_screencap| image:: /resources/eval/user-guides/rfdet-daplink.png
 .. |APP_window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection-refresh.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-measurement.png
-.. |fig50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-ad8302_datasheet_TPC4.png
+.. |fig50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-ad8302_datasheet_tpc4.png
    :width: 600px
 .. |c-dev-window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-dev-window.png
 .. |rfdet-c-unzip| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-unzip.png

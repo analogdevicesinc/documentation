@@ -104,7 +104,7 @@ Configure the ADT7420 I2C address in the *ADT7420.h* file to match the hardware.
    /* ADT7420 I2C Address */
    #define ADT7420_ADDRESS    0x48      /* Default I2C Address of EVAL-ADT7420-PMDZ */
 
-Configure the ADT7420 in the operating mode you want using the //ADT7420.c // file
+Configure the ADT7420 in the operating mode you want using the *ADT7420.c* file
 
 ::
 
@@ -203,4 +203,4 @@ The **RTE** folder contains device and system related files:
 -  **Device Folder** – contains low levels drivers for ADuCM360 microcontroller.(try not to edit these files)
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
-// End of Document //
+*End of Document*

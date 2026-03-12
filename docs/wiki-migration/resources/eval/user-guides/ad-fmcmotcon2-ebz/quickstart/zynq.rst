@@ -50,7 +50,7 @@ Using IIO SCOPE for AD-FMCMOTCON2-EBZ
 
    |image2|
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON2-EBZ#none#../
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon2-ebz#none#../
    :alt: Overview#none
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/iio_scope.png

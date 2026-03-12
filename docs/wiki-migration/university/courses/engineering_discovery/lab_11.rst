@@ -1,7 +1,7 @@
 Class A NPN Emitter-Follower Amplifier
 ======================================
 
-.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogTV>5180379850001
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/analogtv>5180379850001
    :alt: analogTV>5180379850001
    :align: right
 

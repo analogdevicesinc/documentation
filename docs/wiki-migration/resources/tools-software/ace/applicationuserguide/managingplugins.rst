@@ -13,7 +13,7 @@ Removing ACE Plug-ins
 
 You can remove plug-ins from ACE using the plug-in manager.  Click Tools / Manage Plug-ins.  When viewing Installed Packages you can select the package(s) you want to uninstall and click the Uninstall Selected button.  Notice you can select multiple packages to uninstall using shift-click and ctrl-click.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguide/UninstallPlugIn.PNG
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguide/uninstallplugin.png
    :alt: UninstallPlugIn.PNG
    :align: right
 
@@ -22,7 +22,7 @@ Installing New Plug-ins
 
 You can also install new plug-ins using the plug-in manager.  When viewing Available Packages you can select the package(s) you want to install into ACE and click Install Selected.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguide/InstallPlugin.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguide/installplugin.png
    :alt: InstallPlugin.png
    :align: right
 
@@ -31,7 +31,7 @@ Updating Plug-ins
 
 You can install updates to your existing plug-ins using the plug-in manager.  View Available Updates to see which of your installed plug-ins have update packages available.  Select the packages you want to update and click Update Selected, or simply click Update All to update all of them at once.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguide/UpdatePlugin.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguide/updateplugin.png
    :alt: UpdatePlugin.png
    :align: right
 
@@ -44,5 +44,5 @@ You can add additional sources for plug-in packages that will allow you to share
 
 You can also choose whether let ACE check for updates automatically, or if you’d rather open the plug-in manager and check for updates manually.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguide/Settings.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguide/settings.png
    :alt: Settings.png

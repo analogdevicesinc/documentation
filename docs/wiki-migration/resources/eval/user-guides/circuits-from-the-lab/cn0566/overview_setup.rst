@@ -162,7 +162,7 @@ Additional Information
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-26-39_pm.png
    :width: 600px
-.. |youtube>0hnWfTvETcU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/youtube>0hnWfTvETcU
+.. |youtube>0hnWfTvETcU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/youtube>0hnwftvetcu
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex1.png
    :width: 750px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex2.png

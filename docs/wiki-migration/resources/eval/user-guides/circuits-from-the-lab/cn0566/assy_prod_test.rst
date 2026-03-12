@@ -3,7 +3,7 @@ CN0566 Assembly and Production Test
 
 Assembly and Production Test Procedure for ADALM-PHASER (CN0566).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/youtube>WR1DHfraLf8
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/youtube>wr1dhfralf8
    :alt: youtube>WR1DHfraLf8
 
 Assembly
@@ -106,7 +106,7 @@ Example test results (taken from a random board on May 24, 2025). Your results m
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/assy_prod_test/u_fl_cables.jpg
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/assy_prod_test/Rpi_riser.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/assy_prod_test/rpi_riser.jpg
    :width: 400px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/assy_prod_test/standoff_stackup.png
    :width: 400px

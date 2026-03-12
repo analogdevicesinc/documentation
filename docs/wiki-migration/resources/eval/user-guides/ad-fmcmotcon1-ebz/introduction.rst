@@ -49,7 +49,7 @@ Where to Buy
    `ZYNQ Intelligent Drives Kit <http://www.em.avnet.com/en-us/design/drc/Pages/Zynq-Intelligent-Drives-Kit.aspx>`_
 
 
-.. image:: https://wiki.analog.com/_media/navigation AD-FMCMOTCON1-EBZ#none#./
+.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon1-ebz#none#./
    :alt: Overview#quickstart|Quick Start Guides
 
 .. |AD-FMCMOTCON1-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-fmcmotcon1-ebz_top.jpg
