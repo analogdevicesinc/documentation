@@ -32,6 +32,7 @@ mermaid_d3_zoom = True
 # -- External docs configuration ----------------------------------------------
 
 interref_repos = [
+    'analog-attach',
     'doctools',
     'hdl',
     'pyadi-iio',

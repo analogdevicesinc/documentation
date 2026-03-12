@@ -1,46 +1,57 @@
+.. _analog-attach:
+
+Analog Attach
+=============
+
+.. note::
+
+   This section only gives an overview on Analog Attach, for all details, see
+   :external+analog-attach:doc:`the dedicated doc <index>`.
 
 Analog Attach is a VS Code extension for creating and editing Device Tree
 files (DTS) and Device Tree Overlay (DTSO) files with schema validation,
 binding support, and remote deployment capabilities.
 
-Get it from the `VS Code Marketplace <https://marketplace.visualstudio.com/items?itemName=AnalogDevices.analog-attach&ssr=false#review-details>`__,
+Get it from the `VS Code Marketplace <https://marketplace.visualstudio.com/items?itemName=AnalogDevices.analog-attach>`__,
 the extension source code is available at :git-analog-attach:`/`.
 
-Contents
--------------------------------------------------------------------------------
+Requirements
+------------
 
-.. toctree::
-   :caption: How to install
-   :maxdepth: 2
+Analog Attach requires:
 
-   install-steps/index
+#. A valid Linux kernel repository (for example, ``analogdevicesinc/linux``)
+   configured in settings
+#. C compiler (gcc) for precompiling dts/dtso files
+#. Device Tree Compiler (dtc)
+#. SSH for connecting to a device
+#. sshpass for password authentication during deployment
 
-.. toctree::
-   :caption: Getting Started
-   :maxdepth: 2
+Getting Started
+---------------
 
-   my-first-dts/index
+.. tip::
 
-.. toctree::
-   :caption: Plug and Play View
-   :maxdepth: 2
+   See :external+analog-attach:doc:`the installation guide <install-steps/index>` for
+   detailed setup instructions.
 
-   plug-and-play/index
+The extension provides two main views:
 
-.. toctree::
-   :caption: Tree Config View
-   :maxdepth: 2
+* **Plug and Play View** - A graphical editor for creating device tree overlays
+  by selecting devices from a catalog
+* **Tree Config View** - A tree-based editor for configuring device tree nodes
+  with full validation support
 
-   tree-config/index
+Support
+-------
 
-.. toctree::
-   :caption: Common
-   :maxdepth: 2
+Documentation
+~~~~~~~~~~~~~
 
-   common/index
+-  All Analog Attach documentation is available :external+analog-attach:doc:`here <index>`.
 
-.. toctree::
-   :caption: Debugging and Common Issues
-   :maxdepth: 2
+Other Useful Links
+~~~~~~~~~~~~~~~~~~
 
-   debugging/index
+-  :git-analog-attach:`Source </>`
+-  `VS Code Marketplace <https://marketplace.visualstudio.com/items?itemName=AnalogDevices.analog-attach>`__
