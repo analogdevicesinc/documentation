@@ -12,7 +12,7 @@ The device is calibrated by taking a set of measurements according to the proced
 
 .. important::
 
-   Calibration support is available only stating from `Pixelpulse v0.88 <https://github.com/analogdevicesinc/Pixelpulse2/releases/latest>`_ and :git-m1k-fw:`firmware version v2.06 <m1k-fw>` (You don't need to look at the firmware unless you want to - it's only added here for completeness).
+   Calibration support is available only stating from `Pixelpulse v0.88 <https://github.com/analogdevicesinc/Pixelpulse2/releases/latest>`_ and `firmware version v2.06 <https://github.com/analogdevicesinc/m1k-fw>`_ (You don't need to look at the firmware unless you want to - it's only added here for completeness).
 
    
    Make sure to `update the firmware <https://wiki.analog.com/firmware-upgrade>`_ on your device and Pixelpulse before starting the calibration procedure.

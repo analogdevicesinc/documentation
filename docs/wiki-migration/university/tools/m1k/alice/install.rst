@@ -69,7 +69,7 @@ The latest release of the ALICE tool set Python source files is available for do
 
 To manually install on Windows the libpysmu.pyd from `libpysmu.pyd (64 bit) <https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&job=Platform%3A%20x64>`_ `libpysmu.pyd (32 bit) <https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&job=Platform%3A%20x86>`_ must be placed in the C:\\Python27\\DLLs directory. Desk-top short cuts to the various programs will need to be added manually.
 
-OS X and Linux users will currently have to compile their own version of libpysmu.so from the libsmu source in :git-libsmu:`GitHub <libsmu>`. The command to make things, is just ``make python``. You will also need the development version of python installed (``apt-get install python2.7-dev``).
+OS X and Linux users will currently have to compile their own version of libpysmu.so from the libsmu source in `GitHub <https://github.com/analogdevicesinc/libsmu>`_. The command to make things, is just ``make python``. You will also need the development version of python installed (``apt-get install python2.7-dev``).
 
 Raspberry Pi users with Raspbian need to have the Jessie distribution installed which includes the most up to date versions of gcc ( 4.9.2 ) and libusb-1.0-0-dev (``apt-get install libusb-1.0-0-dev libudev-dev``). As with other Linux OS the command to make things, is just ``make python``. You will also need the development version of python installed (``apt-get install python2.7-dev``).
 

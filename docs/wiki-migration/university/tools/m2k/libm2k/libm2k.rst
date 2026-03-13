@@ -207,7 +207,7 @@ Build and install libm2k:
 
 ::
 
-   ~$ git clone :git-libm2k:`libm2k`.git
+   ~$ git clone `libm2k <https://github.com/analogdevicesinc/libm2k>`_.git
    ~$ cd libm2k
    ~/libm2k$ mkdir build
    ~/libm2k$ cd build
@@ -238,7 +238,7 @@ Build and install libm2k:
 
 ::
 
-   ~$ git clone :git-libm2k:`libm2k`.git
+   ~$ git clone `libm2k <https://github.com/analogdevicesinc/libm2k>`_.git
    ~$ cd libm2k
    ~/libm2k$ mkdir build
    ~/libm2k$ cd build

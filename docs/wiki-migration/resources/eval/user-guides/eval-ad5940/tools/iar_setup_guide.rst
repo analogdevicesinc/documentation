@@ -64,7 +64,7 @@ To edit and run example code in IAR Workbench follow these steps:
    :class: download
 
    
-   :git-ad5940-examples:`AD5940 SDK Source Code <ad5940-examples>`
+   `AD5940 SDK Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
    
 
 

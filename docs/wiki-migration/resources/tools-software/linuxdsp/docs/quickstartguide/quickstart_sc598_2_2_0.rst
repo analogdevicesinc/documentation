@@ -114,7 +114,7 @@ To install the sources: TODO: Make sure its the correct repo, branch, manifest f
    $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ./bin/repo
    $ chmod a+x ./bin/repo
    $ ./bin/repo init \
-      -u :git-lnxdsp-repo-manifest:`lnxdsp-repo-manifest` \
+      -u `lnxdsp-repo-manifest <https://github.com/analogdevicesinc/lnxdsp-repo-manifest>`_ \
       -b develop/yocto-2.2.0 \
       -m develop-yocto-2.2.0.xml
    $ ./bin/repo sync

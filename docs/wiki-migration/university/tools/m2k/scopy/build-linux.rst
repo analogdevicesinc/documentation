@@ -13,7 +13,7 @@ Before building Scopy on Linux system, you need to make sure all the requirement
 
 ::
 
-       git clone :git-scopy:`scopy`.git
+       git clone `scopy <https://github.com/analogdevicesinc/scopy>`_.git
 
 This will fetch the latest sources from GitHub to a "scopy" directory.
 

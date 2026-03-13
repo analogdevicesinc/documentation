@@ -97,7 +97,7 @@ Complete instructions for how to write it to the SD card and how to configure an
 
 .. note::
 
-   Switch to :git-adi-kuiper-imager:`ADI Kuiper Imager <adi-kuiper-imager>` once it's stable and documented on the wiki.
+   Switch to `ADI Kuiper Imager <https://github.com/analogdevicesinc/adi-kuiper-imager>`_ once it's stable and documented on the wiki.
 
 
 After writing the image, if a window pops up saying "this card needs to be formatted, would you like to format it now?", the answer is **NO.** Eject the card and insert it into the Raspberry Pi's SD card slot.

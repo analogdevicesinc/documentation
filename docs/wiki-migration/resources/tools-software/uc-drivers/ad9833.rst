@@ -132,14 +132,20 @@ The demo program sets up the AD9833 part to output sinusoidal, triangle and squa
 Software Project Setup
 ----------------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>rx62n_software_design
-   :alt: page>rx62n_software_design
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
 
 More information
 ================
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>more-information
-   :alt: page>more-information
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
 

@@ -10,7 +10,7 @@ Repository
 
 The FreeRTOS Add-In will automatically download the latest version of the sources into your project, when you add the FreeRTOS Add-In to your project, so you would normally have no need to look at the GitHub repository the files come from.
 
-The repository is available at :git-freertos-addin-rtos:`freertos-addin-rtos`.
+The repository is available at `freertos-addin-rtos <https://github.com/analogdevicesinc/freertos-addin-rtos>`_.
 
 Version
 -------

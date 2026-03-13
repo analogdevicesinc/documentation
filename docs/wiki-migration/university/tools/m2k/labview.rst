@@ -21,7 +21,7 @@ The LabVIEW wrapper is available only starting from official version v0.4.0.
 
 In the libm2k system installer, check the "Install wrapper for LabVIEW bindings" box. The base library and the wrapper will be installed in your system.
 
--  Download the latest ADALM2000 VI Package from the Release section on the following page: :git-libm2k-labview:`ADALM2000 LabVIEW repository <libm2k-labview>`.
+-  Download the latest ADALM2000 VI Package from the Release section on the following page: `ADALM2000 LabVIEW repository <https://github.com/analogdevicesinc/libm2k-labview>`_.
 
 Load the VIP package in the VI Package Manager, install the package. After that, there will be a new palette, named Analog Devices -> ADALM2000, in LabVIEW.
 

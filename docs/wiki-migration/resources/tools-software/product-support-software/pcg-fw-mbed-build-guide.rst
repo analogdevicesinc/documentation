@@ -10,7 +10,7 @@ Clone Precision Converters Firmware repository with the ``--recursive`` flag (no
 
 ::
 
-   git clone --recursive :git-precision-converters-firmware:`precision-converters-firmware`
+   git clone --recursive `precision-converters-firmware <https://github.com/analogdevicesinc/precision-converters-firmware>`_
 
 If however you've already cloned the repository without the ``--recursive`` flag, you may initialize all the submodules in an existing cloned repo with:
 
@@ -96,7 +96,7 @@ XHIDDENEND
 
    XHIDDENSTART Build Using Web/Online IDE (Click to expand) XHIDDENSTARTSTOP
 
-   -  Clone the Precision Converters Firmware repository into Keil Studio using "File->clone..." menu. The link to github repository is here: :git-precision-converters-firmware:`precision-converters-firmware`
+   -  Clone the Precision Converters Firmware repository into Keil Studio using "File->clone..." menu. The link to github repository is here: `precision-converters-firmware <https://github.com/analogdevicesinc/precision-converters-firmware>`_
 
    .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/mbed_keil_studio_project_clone.jpg
       :align: center

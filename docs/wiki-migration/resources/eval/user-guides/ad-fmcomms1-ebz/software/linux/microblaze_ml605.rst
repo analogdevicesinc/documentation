@@ -83,7 +83,7 @@ Get Linux kernel source
    
    ::
    
-      Dave@HAL9000:~/fmcomms1$ git clone :git-linux:`linux`
+      Dave@HAL9000:~/fmcomms1$ git clone `linux <https://github.com/analogdevicesinc/linux>`_
       Cloning into 'linux'...
       remote: Counting objects: 2757163, done.
       remote: Compressing objects: 100% (495484/495484), done.

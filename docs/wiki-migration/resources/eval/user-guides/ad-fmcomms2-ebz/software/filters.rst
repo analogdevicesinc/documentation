@@ -567,7 +567,7 @@ Generally speaking, dBstop_FIR plays a more important role in narrow bandwidth f
 C/C++ Source For Internal Designer
 ==================================
 
-For users wishing to deploy or embed this filter designer into their own C/C++ source two options are available. First a GPL licensed C version of the ``internal_filter_designer`` function is provided as part of the :git-libad9361-iio:`lib9361-iio <libad9361-iio>` library. This includes all the necessary source to generate filter coefficients. Alternatively, if you do not want to utilize a GPL license with your eventual code or product the MATLAB source, which has been enhanced for code generation, can be found in the codegen-support branch of :git-ad936x-filter-wizard:`ad936x-filter-wizard`. A secondary designer function called ``internal_filter_designer_cg`` which supports code generation is provided in this branch. This function will only provide filter coefficients and will numerically match outputs of the non-codegen designer except when the AD9361 FIR is turned off. However, this mode is still supported and will generate filters with flat magnitude responses.
+For users wishing to deploy or embed this filter designer into their own C/C++ source two options are available. First a GPL licensed C version of the ``internal_filter_designer`` function is provided as part of the `lib9361-iio <https://github.com/analogdevicesinc/libad9361-iio>`_ library. This includes all the necessary source to generate filter coefficients. Alternatively, if you do not want to utilize a GPL license with your eventual code or product the MATLAB source, which has been enhanced for code generation, can be found in the codegen-support branch of `ad936x-filter-wizard <https://github.com/analogdevicesinc/ad936x-filter-wizard>`_. A secondary designer function called ``internal_filter_designer_cg`` which supports code generation is provided in this branch. This function will only provide filter coefficients and will numerically match outputs of the non-codegen designer except when the AD9361 FIR is turned off. However, this mode is still supported and will generate filters with flat magnitude responses.
 
 Getting MATLAB Source and Testing
 ---------------------------------
@@ -579,7 +579,7 @@ Required MathWorks Toolboxes and Products:
 -  `Fixed-Point Designer <https://www.mathworks.com/products/fixed-point-designer/>`_
 -  `MATLAB Coder <https://www.mathworks.com/products/matlab-coder/>`_
 
-The MATLAB source with code generation support is provided in the codegen-support branch of :git-ad936x-filter-wizard:`ad936x-filter-wizard`, which can be found here:
+The MATLAB source with code generation support is provided in the codegen-support branch of `ad936x-filter-wizard <https://github.com/analogdevicesinc/ad936x-filter-wizard>`_, which can be found here:
 
 .. admonition:: Download
    :class: download

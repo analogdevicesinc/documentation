@@ -54,7 +54,7 @@ The software pack can be downloaded in following ways.
    
    Link to Github Repository for Cloning or Viewing.
    
-   :git-EV-COG-AD3029LZ:`EV-COG-AD3029LZ Github <EV-COG-AD3029LZ>`
+   `EV-COG-AD3029LZ Github <https://github.com/analogdevicesinc/EV-COG-AD3029LZ>`_
    
 
 

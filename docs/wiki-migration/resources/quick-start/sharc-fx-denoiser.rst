@@ -24,7 +24,7 @@ CrossCore Embedded Studio includes a 90-day full-featured trial license. Alterna
 TFLM Sources
 ------------
 
-Sources for the TFLM library with associated examples can be found on :git-tflite-micro:`GitHub/analogdevicesinc/tflite-micro <tflite-micro>`
+Sources for the TFLM library with associated examples can be found on `GitHub/analogdevicesinc/tflite-micro <https://github.com/analogdevicesinc/tflite-micro>`_
 
 Support
 -------

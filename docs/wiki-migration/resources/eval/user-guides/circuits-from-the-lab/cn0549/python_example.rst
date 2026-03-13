@@ -23,7 +23,7 @@ Hardware:
 Software:
 
 -  `Download Python 3.6 or higher <https://www.python.org/downloads/>`_
--  :git-libiio:`Download libiio <libiio>`
+-  `Download libiio <https://github.com/analogdevicesinc/libiio>`_
 -  pyADI-iio
 
 Preparing your PC/Laptop

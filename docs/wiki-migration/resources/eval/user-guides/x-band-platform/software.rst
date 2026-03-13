@@ -47,7 +47,7 @@ MATLAB is used to exercise the board through LibIIO objects and provide higher l
    :class: download
 
    
-   -  :git-HighSpeedConverterToolbox:`High Speed Converter Toolbox Download Page <HighSpeedConverterToolbox>`
+   -  `High Speed Converter Toolbox Download Page <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_
    
 
 
@@ -57,7 +57,7 @@ MATLAB is used to exercise the board through LibIIO objects and provide higher l
    :class: download
 
    
-   -  :git-RFMicrowaveToolbox:`RF Microwave Toolbox Download Page <RFMicrowaveToolbox>`
+   -  `RF Microwave Toolbox Download Page <https://github.com/analogdevicesinc/RFMicrowaveToolbox>`_
    
 
 
@@ -322,7 +322,7 @@ MATLAB support is provided through the :doc:`High Speed Converter Toolbox </wiki
 MATLAB Control Overview
 -----------------------
 
-The X-Band Platform can be controlled via MATLAB using example scripts which are available as part of the :git-RFMicrowaveToolbox:`Analog Devices, Inc. RF Microwave Toolbox <RFMicrowaveToolbox>` add-on. This add-on can either be manually downloaded from the Releases section of the GitHub page or downloaded and installed via MATLAB Add-On Explorer. Please ensure you have installed both the Analog Devices, Inc. High Speed Converter Toolbox as well as the RF Microwave Toolbox.
+The X-Band Platform can be controlled via MATLAB using example scripts which are available as part of the `Analog Devices, Inc. RF Microwave Toolbox <https://github.com/analogdevicesinc/RFMicrowaveToolbox>`_ add-on. This add-on can either be manually downloaded from the Releases section of the GitHub page or downloaded and installed via MATLAB Add-On Explorer. Please ensure you have installed both the Analog Devices, Inc. High Speed Converter Toolbox as well as the RF Microwave Toolbox.
 
 .. note::
 
@@ -336,11 +336,11 @@ The X-Band Platform can be controlled via MATLAB using example scripts which are
 +-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
 | `Support Package for ADALM-Pluto <https://www.mathworks.com/hardware-support/adalm-pluto-radio.html?s_tid=AO_HS_info>`_             | LibIIO Matlab Bindings           |       |
 +-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-| :git-HighSpeedConverterToolbox:`High Speed Converter <HighSpeedConverterToolbox>`                                                   | AD9081 Control                   |       |
+| `High Speed Converter <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_                                             | AD9081 Control                   |       |
 +-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-| :git-RFMicrowaveToolbox:`RF Microwave <RFMicrowaveToolbox>`                                                                         | ADAR1000EVAL1Z & ADXUD1A Control |       |
+| `RF Microwave <https://github.com/analogdevicesinc/RFMicrowaveToolbox>`_                                                            | ADAR1000EVAL1Z & ADXUD1A Control |       |
 +-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-| :git-genalyzer:`Genalyzer <genalyzer>`                                                                                              | DSP of RF Signals                |       |
+| `Genalyzer <https://github.com/analogdevicesinc/genalyzer>`_                                                                        | DSP of RF Signals                |       |
 +-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
 | `MinGW-w64 C/C++ Compiler <https://www.mathworks.com/matlabcentral/fileexchange/52848-matlab-support-for-mingw-w64-c-c-compiler>`_  | Genalyzer Compiler               |       |
 +-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+

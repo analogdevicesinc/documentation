@@ -107,13 +107,13 @@ Calibration data includes a zero-offset for each channel and gain setting, which
 Source code
 -----------
 
-The source code for the Colorimeter application can be found on the `Analog Devices GitHub account <https://github.com/orgs/analogdevicesinc>`_ in the :git-colorimeter:`colorimeter repository <colorimeter>`.
+The source code for the Colorimeter application can be found on the `Analog Devices GitHub account <https://github.com/orgs/analogdevicesinc>`_ in the `colorimeter repository <https://github.com/analogdevicesinc/colorimeter>`_.
 
 <div> **Install colorimeter application**
 
 ::
 
-   <nowiki>$ git clone :git-colorimeter:`colorimeter`
+   <nowiki>$ git clone `colorimeter <https://github.com/analogdevicesinc/colorimeter>`_
    Cloning into 'colorimeter'...
    remote: Counting objects: 65, done.
    remote: Compressing objects: 100% (33/33), done.

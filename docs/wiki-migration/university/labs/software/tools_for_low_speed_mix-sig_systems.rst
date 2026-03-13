@@ -46,7 +46,7 @@ Materials
 
 ::
 
-   git clone :git-pyadi-iio:`pyadi-iio`
+   git clone `pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`_
 
 -  AD5592R Device Tree Overlay for alternate configuration with GPIO pins
 

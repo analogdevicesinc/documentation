@@ -255,7 +255,7 @@ Reference Demos & Software
 -  `PyADI-IIO sources for the EVAL-AD3552R board. <https://github.com/analogdevicesinc/pyadi-iio/blob/cn0585_v1/examples/ad3552r_example.py>`_
 -  :doc:`Dual Channel, 16-Bit, 33 MUPS, Multispan, Multi-IO SPI DAC Linux device driver. </wiki-migration/resources/tools-software/linux-drivers/iio-dac/axi-ad3552r>`
 -  :doc:`AXI-AD3552R HDL IP. </wiki-migration/resources/fpga/docs/axi_ad3552r>`
--  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
+-  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`

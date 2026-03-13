@@ -5,8 +5,8 @@ In almost all cases, HDL build alone will NOT let you do anything useful. You wo
 
 We provide two software solutions:
 
--  :git-linux:`Linux <linux>`
--  :git-no-OS:`No-OS <no-OS>`
+-  `Linux <https://github.com/analogdevicesinc/linux>`_
+-  `No-OS <https://github.com/analogdevicesinc/no-OS>`_
 
 Example Projects
 ----------------

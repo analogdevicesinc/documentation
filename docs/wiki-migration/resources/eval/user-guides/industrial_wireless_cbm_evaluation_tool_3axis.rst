@@ -101,7 +101,7 @@ Python
    :class: download
 
    
-   -  :git-ev-cbm-voyager:`ev-cbm-voyager GitHub <ev-cbm-voyager>`.
+   -  `ev-cbm-voyager GitHub <https://github.com/analogdevicesinc/ev-cbm-voyager>`_.
    
 
 

@@ -42,7 +42,7 @@ There is no installer provided on Linux, you have to clone the repo, install the
 
 ::
 
-   $ git clone :git-wethlink:`wethlink` # TODO: does not exist yet
+   $ git clone `wethlink <https://github.com/analogdevicesinc/wethlink>`_ # TODO: does not exist yet
    $ cd wethlink
    $ pip install PyQt6 pyserial pylibiio
    $ python wethlink.py

@@ -139,7 +139,7 @@ The IIO System object source code and example models can be found here:
    :class: download
 
    
-   -  :git-libiio-matlab:`IIO System Object <libiio-matlab>`
+   -  `IIO System Object <https://github.com/analogdevicesinc/libiio-matlab>`_
    
       -  :git-libiio-matlab:`iio_sys_obj.m` is for Simulink
       -  :git-libiio-matlab:`iio_sys_obj_matab.m <iio_sys_obj_matlab.m>` is for MATLAB

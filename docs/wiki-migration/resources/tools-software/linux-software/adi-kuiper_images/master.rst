@@ -1,4 +1,4 @@
-HDL and Linux projects are build whenever there are new commits in :git-hdl:`HDL <tree/master>` or :git-linux:`Linux <linux>` repositories. Output boot files are structured in folders as they would be on SD card, and archived.
+HDL and Linux projects are build whenever there are new commits in :git-hdl:`HDL <tree/master>` or `Linux <https://github.com/analogdevicesinc/linux>`_ repositories. Output boot files are structured in folders as they would be on SD card, and archived.
 
 Master Boot partition files
 ===========================

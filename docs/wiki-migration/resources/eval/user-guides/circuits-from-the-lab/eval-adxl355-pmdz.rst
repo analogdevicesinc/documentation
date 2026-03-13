@@ -71,7 +71,7 @@ There are two device driver solutions that are provided for controlling the **EV
 
       -  The :doc:`ADXL355 no-OS Example Project </wiki-migration/resources/eval/user-guides/eval-adxl355-pmdz/no-os-setup>` uses the ADXL355 no-OS driver and has several configuration options.
 
-         -  The tinyiiod configuration emulates the Linux IIO framework through the :git-libtinyiiod:`tinyiiod daemon library <libtinyiiod>`. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development. This is the configuration that will be referenced in the no-OS platform setups below.
+         -  The tinyiiod configuration emulates the Linux IIO framework through the `tinyiiod daemon library <https://github.com/analogdevicesinc/libtinyiiod>`_. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development. This is the configuration that will be referenced in the no-OS platform setups below.
 
 -  **ADXL355 Linux Driver**
 
@@ -526,7 +526,7 @@ Schematic, PCB Layout, Bill of Materials
 Additional Information
 ----------------------
 
--  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
+-  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`

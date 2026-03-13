@@ -71,7 +71,7 @@ This section briefs on the usage of MBED and STM32 firmware. This also explains 
    Source code is hosted here:
 
    
-   -  :git-precision-converters-firmware:`precision-converters-firmware`
+   -  `precision-converters-firmware <https://github.com/analogdevicesinc/precision-converters-firmware>`_
    
    Build Guide for Precision Converters MBED firmware (Use below link):
    

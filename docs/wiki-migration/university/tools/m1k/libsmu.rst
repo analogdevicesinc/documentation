@@ -136,7 +136,7 @@ Configure, clone and build
 
 ::
 
-   analog@analog:~$ git clone :git-libsmu:`libsmu`.git
+   analog@analog:~$ git clone `libsmu <https://github.com/analogdevicesinc/libsmu>`_.git
    analog@analog:~$ cd libsmu
 
 Options:
@@ -211,7 +211,7 @@ To build them for other versions it's easiest to build them manually via the set
 
 ::
 
-   analog@analog:~$ git clone :git-libsmu:`libsmu`.git
+   analog@analog:~$ git clone `libsmu <https://github.com/analogdevicesinc/libsmu>`_.git
    analog@analog:~$ cd libsmu/bindings/python
    analog@analog:~$ python3 setup.py build
    analog@analog:~$ sudo python3 setup.py install

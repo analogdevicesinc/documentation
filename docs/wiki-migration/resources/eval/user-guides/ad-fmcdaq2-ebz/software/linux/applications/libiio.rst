@@ -33,8 +33,8 @@ If you just want to use libiio and iiod, which may be on a pre-compiled image - 
 Where to get libiio?
 ====================
 
-.. image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad-fmcomms2-ebz/downloads#download_libiio
-   :alt: downloads#download_libiio
+The libiio library can be obtained on the `Github <http://github.com/analogdevicesinc/libiio>`_ page of the project.
+
 
 How to build it?
 ================
@@ -252,7 +252,7 @@ Rebuild LibIIO
 --------------
 
 #. cd /usr/local/src
-#. git clone :git-libiio:`libiio`
+#. git clone `libiio <https://github.com/analogdevicesinc/libiio>`_
 #. cd /usr/local/src/libiio/
 #. git clean -d -f -x
 #. cmake .

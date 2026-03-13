@@ -8,9 +8,9 @@ Download the pre-build image for you device in question.
    Latest Build: 2024-03-26 - 2023_R2
 
    
-   Linux branch: 2023_R2 Linux repository: :git-linux:`linux`
+   Linux branch: 2023_R2 Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    
-   HDL branch: hdl_2023_r2 HDL repository: :git-hdl:`hdl`
+   HDL branch: hdl_2023_r2 HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 +--------------+------------+----------------------------------------------------------------------------------------------------------------+
@@ -86,9 +86,9 @@ Download the pre-build image for you device in question.
    Latest Build: 2023-12-08 - 2022_R2
 
    
-   Linux branch: 2022_R2 Linux repository: :git-linux:`linux`
+   Linux branch: 2022_R2 Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    
-   HDL branch: hdl_2022_r2 HDL repository: :git-hdl:`hdl`
+   HDL branch: hdl_2022_r2 HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 +--------------+------------+-----------------------------------------------------------------------------------------------------------------+
@@ -160,9 +160,9 @@ Download the pre-build image for you device in question.
    Latest Build: 2023-04-02 - 2021_R2
 
    
-   Linux branch: 2021_R2 Linux repository: :git-linux:`linux`
+   Linux branch: 2021_R2 Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    
-   HDL branch: hdl_2021_r2 HDL repository: :git-hdl:`hdl`
+   HDL branch: hdl_2021_r2 HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 +--------------+------------+-----------------------------------------------------------------------------------------------------------------+
@@ -222,9 +222,9 @@ Download the pre-build image for you device in question.
    Latest Build: 2022_08_05 - 2021_R1
 
    
-   Linux branch: 2021_R1 Linux repository: :git-linux:`linux`
+   Linux branch: 2021_R1 Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    
-   HDL branch: hdl_2021_r1 HDL repository: :git-hdl:`hdl`
+   HDL branch: hdl_2021_r1 HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 +--------------+------------+-----------------------------------------------------------------------------------------------------------------+
@@ -254,9 +254,9 @@ Download the pre-build image for you device in question.
    Latest Build: 2021_07_27 - 2019_R2
 
    
-   Linux branch: 2019_R2 Linux repository: :git-linux:`linux`
+   Linux branch: 2019_R2 Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    
-   HDL branch: hdl_2019_r2 HDL repository: :git-hdl:`hdl`
+   HDL branch: hdl_2019_r2 HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 +--------------+--------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -304,9 +304,9 @@ Download the pre-build image for you device in question.
    Latest Build: 2018_05_08 - 2018_R1
 
    
-   Linux branch:2018_R1 Linux repository::git-linux:`linux`
+   Linux branch:2018_R1 Linux repository:`linux <https://github.com/analogdevicesinc/linux>`_
    
-   Vivado branch:hdl_2018_r1 Vivado repository::git-hdl:`hdl`
+   Vivado branch:hdl_2018_r1 Vivado repository:`hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 +--------------+-------------+------------------------------------------------------------------------------------------------------------------------+

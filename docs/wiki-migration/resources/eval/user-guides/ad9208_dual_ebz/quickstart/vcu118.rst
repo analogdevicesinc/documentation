@@ -57,7 +57,7 @@ Before building the hdl project setup your computer based on the following guide
 
 ::
 
-   git clone :git-hdl:`hdl`
+   git clone `hdl <https://github.com/analogdevicesinc/hdl>`_
    git checkout hdl_2019_r2;  // or latest release
    cd hdl/projects/ad9208_dual_ebz/vcu118
    make

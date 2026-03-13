@@ -170,7 +170,7 @@ Raspberry Pi 4 Configuration
 
 -  Connect the USB-C power supply to the Raspberry Pi 4 connector.
 -  Connect the HDMI cable from the monitor to the Raspberry Pi micro HDMI connector.
--  Write the :git-gmsl:`Raspberry Pi latest SD card image <gmsl>` on a 8GB (or more) SD card.
+-  Write the `Raspberry Pi latest SD card image <https://github.com/analogdevicesinc/gmsl>`_ on a 8GB (or more) SD card.
 -  Plug the SD card into the Raspberry Pi 4 SD card slot.
 -  Connect a USB mouse and keyboard to the Raspberry Pi 4. It's possible to use either a mouse & keyboard combo or a separate mouse and keyboard.
 
@@ -207,7 +207,7 @@ Power off sequence
 Getting the software
 --------------------
 
-The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the :git-gmsl:`Analog Devices GMSL github repository <gmsl>`.
+The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the `Analog Devices GMSL github repository <https://github.com/analogdevicesinc/gmsl>`_.
 
 --------------
 

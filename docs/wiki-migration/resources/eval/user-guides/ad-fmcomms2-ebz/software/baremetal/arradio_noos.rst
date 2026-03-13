@@ -29,8 +29,8 @@ You may need to replace 'dev' with a known release below.
 ::
 
    <nowiki>
-   [some-dir]> git clone -b dev :git-hdl:`hdl`
-   [some-dir]> git clone -b dev :git-no-OS:`no-OS`
+   [some-dir]> git clone -b dev `hdl <https://github.com/analogdevicesinc/hdl>`_
+   [some-dir]> git clone -b dev `no-OS <https://github.com/analogdevicesinc/no-OS>`_
    </nowiki>
 
 You should now have the hdl and no-OS folders in the 'some-dir' folder.

@@ -67,7 +67,7 @@ ldac_n  T14            AE17             J18/FMC_LA05_P
 Building the HDL project
 ------------------------
 
-ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl:`here <hdl>`. To get the source you must `clone <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_ the HDL repository.
+ADI does not distribute the bit/elf files of these projects so they must be built from the sources available `here <https://github.com/analogdevicesinc/hdl>`_. To get the source you must `clone <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_ the HDL repository.
 
 Then go to the **\*PROJECT LOCATION WITHIN HDL (EX: projects/ad353xr/coraz7s or projects/ad353xr/de10nano)**\ \* location and run the make command by typing in your command prompt:
 
@@ -108,7 +108,7 @@ Connections
 Resources
 ---------
 
--  Link to the project source code (See projects/ad353xr: :git-hdl:`HDL Repository <hdl>`
+-  Link to the project source code (See projects/ad353xr: `HDL Repository <https://github.com/analogdevicesinc/hdl>`_
 -  Links to the Linux driver and devicetree source code and wiki documentation : TBD
 -  Links to the datasheets/schematics of the boards used in this wiki page : :adi:`Datasheet <media/en/technical-documentation/data-sheets/ad3530_ad530r.pdf>`
 

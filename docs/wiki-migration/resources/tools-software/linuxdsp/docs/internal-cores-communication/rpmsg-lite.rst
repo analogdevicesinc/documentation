@@ -8,7 +8,7 @@ RPMsg is used to transfer messages between cores on ADSP devices. An implementat
 
 This page describes how to use RPMsg-Lite for bare metal applications.
 
-Additional information can be found here: :git-rpmsg-lite:`rpmsg-lite`
+Additional information can be found here: `rpmsg-lite <https://github.com/analogdevicesinc/rpmsg-lite>`_
 
 Resources used
 ~~~~~~~~~~~~~~
@@ -330,14 +330,14 @@ In order to send a message the recipient endpoint address must be known.
 Additional information
 ----------------------
 
-:git-rpmsg-lite:`rpmsg-lite`
+`rpmsg-lite <https://github.com/analogdevicesinc/rpmsg-lite>`_
 
 Downloads
 ~~~~~~~~~
 
-RPMsg-Lite for ADSP devices is available for Bare-Metal applications running on SHARC+, ARM A5 and ARM A55 here: :git-rpmsg-lite:`rpmsg-lite`. To guarantee compatibility use the same version of RPMsg-Lite on all cores. If running Linux on the ARM use the RPMsg-Lite version matching the Yocto Linux release version running on the ARM.
+RPMsg-Lite for ADSP devices is available for Bare-Metal applications running on SHARC+, ARM A5 and ARM A55 here: `rpmsg-lite <https://github.com/analogdevicesinc/rpmsg-lite>`_. To guarantee compatibility use the same version of RPMsg-Lite on all cores. If running Linux on the ARM use the RPMsg-Lite version matching the Yocto Linux release version running on the ARM.
 
 Examples
 ~~~~~~~~
 
-:git-lnxdsp-examples:`lnxdsp-examples`
+`lnxdsp-examples <https://github.com/analogdevicesinc/lnxdsp-examples>`_

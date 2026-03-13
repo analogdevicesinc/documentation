@@ -59,9 +59,9 @@ Download the pre-build image for you device in question.
 
    
    | Linux branch: 2023_R2
-   | Linux repository: :git-linux:`linux`
+   | Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    | HDL branch: hdl_2023_r2
-   | HDL repository: :git-hdl:`hdl`
+   | HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 
@@ -115,9 +115,9 @@ Download the pre-build image for you device in question.
 
    
    | Linux branch: 2022_R2
-   | Linux repository: :git-linux:`linux`
+   | Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    | HDL branch: hdl_2022_r2
-   | HDL repository: :git-hdl:`hdl`
+   | HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 
@@ -167,9 +167,9 @@ Download the pre-build image for you device in question.
 
    
    | Linux branch: 2021_R2
-   | Linux repository: :git-linux:`linux`
+   | Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    | HDL branch: hdl_2021_r2
-   | HDL repository: :git-hdl:`hdl`
+   | HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 
@@ -211,9 +211,9 @@ Download the pre-build image for you device in question.
 
    
    | Linux branch: 2021_R1
-   | Linux repository: :git-linux:`linux`
+   | Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    | HDL branch: hdl_2021_r1
-   | HDL repository: :git-hdl:`hdl`
+   | HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 
@@ -245,9 +245,9 @@ Download the pre-build image for you device in question.
 
    
    | Linux branch: 2019_R2
-   | Linux repository: :git-linux:`linux`
+   | Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    | HDL branch: hdl_2019_r2
-   | HDL repository: :git-hdl:`hdl`
+   | HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 
@@ -297,9 +297,9 @@ Download the pre-build image for you device in question.
 
    
    | Linux branch:2018_R1
-   | Linux repository::git-linux:`linux`
+   | Linux repository:`linux <https://github.com/analogdevicesinc/linux>`_
    | Vivado branch:hdl_2018_r1
-   | Vivado repository::git-hdl:`hdl`
+   | Vivado repository:`hdl <https://github.com/analogdevicesinc/hdl>`_
 
 
 

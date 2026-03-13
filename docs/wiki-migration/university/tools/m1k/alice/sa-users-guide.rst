@@ -21,7 +21,7 @@ Windows: `libpysmu.pyd (64 bit) <https://ci.appveyor.com/api/projects/analogdevi
 
 Use of the :doc:`Windows installer </wiki-migration/university/tools/m1k/alice/install>` is highly recommended.
 
-Linux: :git-libsmu:`libpysmu.so <libsmu>`
+Linux: `libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
 
 Required Python version: Python version 2.7.8 or higher
 

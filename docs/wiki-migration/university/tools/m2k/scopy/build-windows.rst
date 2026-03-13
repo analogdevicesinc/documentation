@@ -47,7 +47,7 @@ Cloning the repository
 ::
 
    **cd ~
-   git clone :git-scopy:`scopy`.git**
+   git clone `scopy <https://github.com/analogdevicesinc/scopy>`_.git**
 
 This will fetch the latest sources from GitHub to a "scopy" directory.
 

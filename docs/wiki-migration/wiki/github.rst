@@ -18,9 +18,9 @@ Link to the mainline linux kernel
 Link to a repo on github
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
--  ``:git-repository:`repository``` translates to ``http://github.com/analogdevicesinc/{repository}``
+-  ```repository <https://github.com/analogdevicesinc/repository>`_`` translates to ``http://github.com/analogdevicesinc/{repository}``
 
-   -  Example: ``:git-HighSpeedConverterToolbox:`HighSpeedConverterToolbox``` makes :git-HighSpeedConverterToolbox:`HighSpeedConverterToolbox` in the wiki.
+   -  Example: ```HighSpeedConverterToolbox <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_`` makes `HighSpeedConverterToolbox <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_ in the wiki.
 
 Link to a specific file on github
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

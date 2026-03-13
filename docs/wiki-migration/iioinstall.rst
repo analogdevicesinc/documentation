@@ -16,7 +16,7 @@ Sometimes it can be difficult to navigate all of the documentation to install th
    -  Update Radioconda to the latest version of PYADI-IIO
 
       -  Delete Radioconda's "adi" folder in radioconda/lib/site-packages
-      -  Git clone :git-pyadi-iio:`pyadi-iio` (using a program like "Tortoise GIT")
+      -  Git clone `pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`_ (using a program like "Tortoise GIT")
       -  Copy the "adi" folder in that cloned PYADI-IIO repo to radioconda/lib/site-packages
 
    -  Test the GNU Radio Installation
@@ -41,7 +41,7 @@ Sometimes it can be difficult to navigate all of the documentation to install th
       -  :git-libiio:`README_BUILD.md`
       -  But change the git clone line to:
 
-         -  git clone :git-libiio:`libiio` --branch libiio-v0
+         -  git clone `libiio <https://github.com/analogdevicesinc/libiio>`_ --branch libiio-v0
          -  libiio-v0 is always the latest, stable, branch. This command as of (Sept 2024) will install libiio v0.25
          -  If you run into any errors with install, try repeating that command with sudo
 
@@ -49,11 +49,11 @@ Sometimes it can be difficult to navigate all of the documentation to install th
 
    -  https://analogdevicesinc.github.io/pyadi-iio/guides/quick.html
 
--  **libad9361-iio library** : You will need the :git-libad9361-iio:`libad9361-iio` library.
+-  **libad9361-iio library** : You will need the `libad9361-iio <https://github.com/analogdevicesinc/libad9361-iio>`_ library.
 
    -  Instructions for building it are :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
 
--  **IIO-Scope:** Linux users will need to build from :git-iio-oscilloscope:`source <iio-oscilloscope>`. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
+-  **IIO-Scope:** Linux users will need to build from `source <https://github.com/analogdevicesinc/iio-oscilloscope>`_. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
 -  **Install GNU Radio** (optional): https://wiki.gnuradio.org/index.php/UbuntuInstall
 
 --------------

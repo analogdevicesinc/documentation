@@ -85,7 +85,7 @@ Below are the Programmable Logic interrupts used in this project.
 Building the HDL projects
 -------------------------
 
-The design is built upon ADI's generic HDL reference design framework. ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl:`here <hdl>`. To get the source you must clone the HDL repository, and then build the project as follows.
+The design is built upon ADI's generic HDL reference design framework. ADI does not distribute the bit/elf files of these projects so they must be built from the sources available `here <https://github.com/analogdevicesinc/hdl>`_. To get the source you must clone the HDL repository, and then build the project as follows.
 
 On Linux/Cygwin/WSL:
 

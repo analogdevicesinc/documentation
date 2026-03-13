@@ -176,7 +176,7 @@ MATLAB is used to exercise the board through LibIIO objects and provide higher l
 -  Curve Fitting Toolbox
 -  Instrument Control Toolbox
 -  Communications Toolbox Support Package for Xilinx Zynq-Based Radio. Installed through MATLAB Add-On Explorer.
--  Analog Devices High Speed Converter Toolbox. Can be installed through MATLAB Add-On Explorer or latest version here: :git-HighSpeedConverterToolbox:`High Speed Converter Toolbox Download Page <HighSpeedConverterToolbox>`
+-  Analog Devices High Speed Converter Toolbox. Can be installed through MATLAB Add-On Explorer or latest version here: `High Speed Converter Toolbox Download Page <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_
 
 Customers can request a free trial via the `Communications Toolbox product page <https://urldefense.com/v3/__https://www.mathworks.com/products/communications.html__;!!A3Ni8CS0y2Y!u2iVBukmDblhk9-FINa9SNIcuL_Ap61oG1IvWi0qWnxrwju6qXrNws1jybUn_UlFhkQ$>`_, or they can request a `Software-Defined Radio Design trial “package” <https://urldefense.com/v3/__https://www.mathworks.com/campaigns/products/trials/targeted/sdr.html__;!!A3Ni8CS0y2Y!u2iVBukmDblhk9-FINa9SNIcuL_Ap61oG1IvWi0qWnxrwju6qXrNws1jybUnqe87Ows$>`_, which includes MATLAB, Simulink, DSP System Toolbox, Signal Processing Toolbox, and Communications Toolbox.
 
@@ -237,7 +237,7 @@ Once these are powered up, program the FPGA:
 MATLAB Control Overview
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The Quad-MxFE Platform can be controlled via MATLAB using example scripts which are available as part of the :git-HighSpeedConverterToolbox:`Analog Devices, Inc. High Speed Converter Toolbox <HighSpeedConverterToolbox>` add-on. This add-on can either be manually downloaded from the Releases section of the GitHub page or downloaded and installed via MATLAB Add-On Explorer. *NOTE: it's recommended to install via the download from GitHub as this is generally more up to date than the MATLAB Add-On Explorer page* Please ensure you have installed both the Analog Devices, Inc. High Speed Converter Toolbox as well as the Communications Toolbox Support Package for Xilinx Zynq-Based Radio as shown below (`Zynq-Based Radio Toolbox <https://www.mathworks.com/matlabcentral/fileexchange/48491-communications-toolbox-support-package-for-xilinx-zynq-based-radio>`_).
+The Quad-MxFE Platform can be controlled via MATLAB using example scripts which are available as part of the `Analog Devices, Inc. High Speed Converter Toolbox <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_ add-on. This add-on can either be manually downloaded from the Releases section of the GitHub page or downloaded and installed via MATLAB Add-On Explorer. *NOTE: it's recommended to install via the download from GitHub as this is generally more up to date than the MATLAB Add-On Explorer page* Please ensure you have installed both the Analog Devices, Inc. High Speed Converter Toolbox as well as the Communications Toolbox Support Package for Xilinx Zynq-Based Radio as shown below (`Zynq-Based Radio Toolbox <https://www.mathworks.com/matlabcentral/fileexchange/48491-communications-toolbox-support-package-for-xilinx-zynq-based-radio>`_).
 
 |image3| |image4|
 

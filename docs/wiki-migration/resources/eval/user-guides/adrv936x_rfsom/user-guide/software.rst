@@ -10,7 +10,7 @@ To quickly explore the reference design, here are some resources:
 
 -  The :doc:`SD Card Image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` used to boot the reference design.
 -  The Analog Devices :doc:`ADRV9361-Z7035 SDR Wiki </wiki-migration/resources/eval/user-guides/adrv936x_rfsom>` provides details about reference designs
--  The :git-hdl:`HDL <hdl>`, :git-no-OS:`no-OS` and :git-linux:`Linux <linux>` sources are hosted on GitHub
+-  The `HDL <https://github.com/analogdevicesinc/hdl>`_, `no-OS <https://github.com/analogdevicesinc/no-OS>`_ and `Linux <https://github.com/analogdevicesinc/linux>`_ sources are hosted on GitHub
 
    -  For HDL, we highly recommend cloning from the latest official tag (released twice per year), not the development branch. https://github.com/analogdevicesinc/hdl/releases
 

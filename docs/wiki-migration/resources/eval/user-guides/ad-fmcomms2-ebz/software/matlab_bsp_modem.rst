@@ -128,7 +128,7 @@ All Demos
 
 The codebase is designed to reuse code as much as possible. Therefore, the recommended process for getting started with the modem project is to perform the following:
 
-Clone the repository: <code> git clone :git-TransceiverToolbox:`TransceiverToolbox`.git\ </code>
+Clone the repository: <code> git clone `TransceiverToolbox <https://github.com/analogdevicesinc/TransceiverToolbox>`_.git\ </code>
 
 Launch MATLAB and navigate to the *TransceiverToolbox\\target_models\\modem-qpsk* folder. Now add the necessary files to your path by running the startup script: <code> startup_adi_qpsk </code>
 

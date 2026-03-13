@@ -91,7 +91,7 @@ An open-source SDK that accompanies the hardware platform enables you to configu
 .. admonition:: Download
    :class: download
 
-   :git-aditof_sdk:`Access the open source ADI 3D ToF SDK to get started <aditof_sdk>`
+   `Access the open source ADI 3D ToF SDK to get started <https://github.com/analogdevicesinc/aditof_sdk>`_
 
 
 --------------

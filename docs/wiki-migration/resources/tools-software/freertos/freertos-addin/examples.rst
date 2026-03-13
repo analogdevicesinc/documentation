@@ -32,7 +32,7 @@ A mainstream configuration of Windows PC is required. Verify that your PC has th
 Get the Source Code Ready
 -------------------------
 
-You can get examples for FreeRTOS (with and without the Add-In) from :git-freertos-examples:`freertos-examples`
+You can get examples for FreeRTOS (with and without the Add-In) from `freertos-examples <https://github.com/analogdevicesinc/freertos-examples>`_
 
 --------------
 

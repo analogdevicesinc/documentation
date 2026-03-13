@@ -90,7 +90,7 @@ There are two device driver solutions that are provided for controlling the **EV
 
 -  **ADT7420 no-OS Driver**
 
-   -  The MAX32655FTHR example application uses the :doc:`ADT7420 no-OS drivers </wiki-migration/resources/tools-software/uc-drivers/adt7420>` and emulates the Linux IIO framework through the :git-libtinyiiod:`tinyiiod daemon library <libtinyiiod>`. This driver is used in bare-metal applications, typically running on low-power, embedded microcontrollers. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
+   -  The MAX32655FTHR example application uses the :doc:`ADT7420 no-OS drivers </wiki-migration/resources/tools-software/uc-drivers/adt7420>` and emulates the Linux IIO framework through the `tinyiiod daemon library <https://github.com/analogdevicesinc/libtinyiiod>`_. This driver is used in bare-metal applications, typically running on low-power, embedded microcontrollers. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
 
 -  **ADT7420 Linux Driver**
 
@@ -509,7 +509,7 @@ Schematics, PCB Layout, Bill of Materials
 Additional Information
 ----------------------
 
--  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
+-  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`

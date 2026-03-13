@@ -15,13 +15,13 @@ Please install libIIO, libad9361, and IIO-Scope based on your operating system:
 
    -  **The** `libiio <https://github.com/analogdevicesinc/libiio/releases/latest>`_ **Library** : Pick your Linux distribution from the list `here <https://github.com/analogdevicesinc/libiio/releases/latest>`_.
 
-      -  Source available here: :git-libiio:`libiio`. If you want to build from source, feel free; master works fine.
+      -  Source available here: `libiio <https://github.com/analogdevicesinc/libiio>`_. If you want to build from source, feel free; master works fine.
 
-   -  **libad9361-iio library** : You will need the :git-libad9361-iio:`libad9361-iio` library.
+   -  **libad9361-iio library** : You will need the `libad9361-iio <https://github.com/analogdevicesinc/libad9361-iio>`_ library.
 
       -  Instructions for building it are :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
 
-   -  **IIO-Scope:** Linux users will need to build from :git-iio-oscilloscope:`source <iio-oscilloscope>`. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
+   -  **IIO-Scope:** Linux users will need to build from `source <https://github.com/analogdevicesinc/iio-oscilloscope>`_. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
 
 -  **MAC**
 

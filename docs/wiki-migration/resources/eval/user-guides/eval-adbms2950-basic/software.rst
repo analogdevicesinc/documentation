@@ -167,7 +167,7 @@ Installing the Firmware
 
 .. collapsible:: **Click here for instructions on how to flash the firmware image using the MAX32625PICO**
 
-   -  Access the :git-max32625pico-firmware-images:`MAX32625PICO Firmware Repository <max32625pico-firmware-images>` and download the image for the specific MCU (e.g., MAX32690).
+   -  Access the `MAX32625PICO Firmware Repository <https://github.com/analogdevicesinc/max32625pico-firmware-images>`_ and download the image for the specific MCU (e.g., MAX32690).
    -  Do not connect the MAX32625PICO from the PC and the MCU board that you are using (e.g., AD-APARDMAX32690-SL, MAX32670 MCU base board).
    -  Plug the micro-USB cable only in the MAX32625PICO.
    -  Press the button on the MAX32625PICO and then plug the other end of the micro-USB cable into the PC. (Do not release the button until the MAINTENANCE drive is mounted).

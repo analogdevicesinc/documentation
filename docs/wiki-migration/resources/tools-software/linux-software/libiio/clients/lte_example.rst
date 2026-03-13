@@ -166,7 +166,7 @@ In order to run this example, you need to get the libiio interface from here and
    :class: download
 
    
-   -  :git-libiio-matlab:`Libiio Interface <libiio-matlab>`
+   -  `Libiio Interface <https://github.com/analogdevicesinc/libiio-matlab>`_
    
 
 

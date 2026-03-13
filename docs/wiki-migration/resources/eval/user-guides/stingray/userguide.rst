@@ -165,7 +165,7 @@ Software
 
    -  :doc:`Driver Documentation </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adar1000>`
 
--  :git-pyadi-iio:`PyADI-IIO <pyadi-iio>` interface for LibIIO
+-  `PyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_ interface for LibIIO
 
    -  `ADAR1000 wrapper <https://github.com/pyadi-iio?master/adi/adar1000.py>`_
    -  `ADAR1000 Documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.adar1000.html>`_

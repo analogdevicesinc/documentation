@@ -563,7 +563,7 @@ For more on device modes, check :doc:`device modes. </wiki-migration/resources/t
 Pyadi-iio Example
 -----------------
 
-Pyadi-iio is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. For more check :git-pyadi-iio:`Pyadi-iio <pyadi-iio>`. An example of using adrv9002 can be checked :git-pyadi-iio:`here <examples/adrv9002_example.py>`
+Pyadi-iio is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. For more check `Pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`_. An example of using adrv9002 can be checked :git-pyadi-iio:`here <examples/adrv9002_example.py>`
 
 IIO Oscilloscope Remote
 -----------------------

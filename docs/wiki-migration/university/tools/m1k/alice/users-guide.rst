@@ -41,7 +41,7 @@ Use of the :doc:`Windows installer </wiki-migration/university/tools/m1k/alice/i
 Linux:
 ~~~~~~
 
-:git-libsmu:`libpysmu.so <libsmu>`
+`libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
 
 Directions:
 -----------

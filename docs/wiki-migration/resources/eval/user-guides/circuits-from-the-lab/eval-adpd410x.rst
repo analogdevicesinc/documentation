@@ -173,7 +173,7 @@ Dragging and Dropping the Hex File to the Daplink Drive
 Using CrossCore Embedded Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Acquire a copy of the project source files of the :adi:`EVAL-ADPD410x-ARDZ` by downloading the source files directly from the repository at :git-EVAL-ADICUP3029:`EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_adpd410x <projects/ADuCM3029_demo_adpd410x>` or you can clone the entire :git-EVAL-ADICUP3029:`EVAL-ADICUP3029 repository <EVAL-ADICUP3029>` and check the projects folder for ADuCM3029_demo_adpd410x.
+-  Acquire a copy of the project source files of the :adi:`EVAL-ADPD410x-ARDZ` by downloading the source files directly from the repository at :git-EVAL-ADICUP3029:`EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_adpd410x <projects/ADuCM3029_demo_adpd410x>` or you can clone the entire `EVAL-ADICUP3029 repository <https://github.com/analogdevicesinc/EVAL-ADICUP3029>`_ and check the projects folder for ADuCM3029_demo_adpd410x.
 -  Open CrossCore Embedded Studio and import the project into your workspace, as detailed in the :doc:`cces_user_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`. This allows you to edit the software to fit your requirements.
 
 .. important::

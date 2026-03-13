@@ -292,7 +292,7 @@ This block is a sink for messages, not streams. To specify this create the follo
      cd ../..
      sudo ldconfig
 
-The source code can be found on the gr-m2k :git-gr-m2k:`github page <gr-m2k>`. In order to build it, make sure to enable digital option (cmake -DDIGITAL=ON ..).
+The source code can be found on the gr-m2k `github page <https://github.com/analogdevicesinc/gr-m2k>`_. In order to build it, make sure to enable digital option (cmake -DDIGITAL=ON ..).
 
 GNURadio-Companion Flowgraph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

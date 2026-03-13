@@ -154,7 +154,7 @@ There are two device driver solutions that are provided for controlling the **EV
 
 1. **EVAL-ADICUP3029**
 
--  The ADICUP3029 example application uses the :doc:`AD7746 no-OS driver </wiki-migration/resources/tools-software/uc-drivers/ad7746>` and emulates the Linux IIO framework through the :git-libtinyiiod:`tinyiiod daemon library <libtinyiiod>`. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
+-  The ADICUP3029 example application uses the :doc:`AD7746 no-OS driver </wiki-migration/resources/tools-software/uc-drivers/ad7746>` and emulates the Linux IIO framework through the `tinyiiod daemon library <https://github.com/analogdevicesinc/libtinyiiod>`_. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
 
 2. **Raspberry Pi**
 

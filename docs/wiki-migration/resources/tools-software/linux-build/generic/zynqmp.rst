@@ -41,11 +41,11 @@ Please see here: :doc:`Building with Petalinux </wiki-migration/resources/tools-
 On the development host
 -----------------------
 
-Create a local copy of ADI's kernel tree. From now on, we will be working in this "linux" folder, the :git-linux:`ADI Linux repository <linux>`.
+Create a local copy of ADI's kernel tree. From now on, we will be working in this "linux" folder, the `ADI Linux repository <https://github.com/analogdevicesinc/linux>`_.
 
 ::
 
-   user@analog:~$ git clone :git-linux:`linux`
+   user@analog:~$ git clone `linux <https://github.com/analogdevicesinc/linux>`_
    user@analog:~$ cd linux/
 
 or do a git pull in an existing repository.

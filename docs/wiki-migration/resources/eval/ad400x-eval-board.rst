@@ -188,7 +188,7 @@ Copy the following files onto the BOOT partition to configure the SD card:
 Get BOOT.BIN from HDL project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To achieve high performance with ADAQ4003, the hardware platform must have an integrated FPGA. To configure the FPGA to properly support ADAQ4003, ADI engineers provide :git-hdl:`HDL reference projects <hdl>` from which we will use the :git-hdl:`pulsar project <projects/pulsar_adc_pmdz>`.
+To achieve high performance with ADAQ4003, the hardware platform must have an integrated FPGA. To configure the FPGA to properly support ADAQ4003, ADI engineers provide `HDL reference projects <https://github.com/analogdevicesinc/hdl>`_ from which we will use the :git-hdl:`pulsar project <projects/pulsar_adc_pmdz>`.
 
 If there is no directory with boot files for your platform of choice under the SD BOOT partition, follow the build instructions on the :doc:`Building HDL </wiki-migration/resources/fpga/docs/build>` page to build the pulsar project and generate a BOOT.BIN file from that.
 

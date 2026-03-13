@@ -34,7 +34,7 @@ Windows:
 Linux:
 ~~~~~~
 
-:git-libsmu:`libpysmu.so <libsmu>`
+`libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
 
 Directions:
 -----------

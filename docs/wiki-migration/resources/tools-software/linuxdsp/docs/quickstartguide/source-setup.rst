@@ -6,21 +6,21 @@ Repository URLs
 
 The following ADI managed repositories are used for the development of Linux for SC5xx:
 
-+----------------------------------------------------------+----------------------+---------------------------+-----------------------+
-| URL                                                      | Description          | Latest Development Branch | Latest Release Branch |
-+==========================================================+======================+===========================+=======================+
-| :git-lnxdsp-adi-meta:`lnxdsp-adi-meta`                   | ADI Yocto meta layer | develop/yocto-1.0.0       | release/yocto-1.0.0   |
-+----------------------------------------------------------+----------------------+---------------------------+-----------------------+
-| :git-lnxdsp-repo-manifest:`lnxdsp-repo-manifest`         | Google repo manifest | develop/yocto-1.0.0       | release/yocto-1.0.0   |
-+----------------------------------------------------------+----------------------+---------------------------+-----------------------+
-| :git-lnxdsp-scripts:`lnxdsp-scripts`                     | ADI scripts          | develop/yocto-1.0.0       | release/yocto-1.0.0   |
-+----------------------------------------------------------+----------------------+---------------------------+-----------------------+
-| :git-u-boot-sharc:`u-boot-sharc`                         | U-Boot Bootloader    | develop/yocto-1.0.0       | release/yocto-1.0.0   |
-+----------------------------------------------------------+----------------------+---------------------------+-----------------------+
-| :git-lnxdsp-linux:`lnxdsp-linux`                         | Linux kernel         | develop/yocto-1.0.0       | release/yocto-1.0.0   |
-+----------------------------------------------------------+----------------------+---------------------------+-----------------------+
-| :git-lnxdsp-examples:`lnxdsp-examples`                   | ADI SHARC examples   | develop/yocto-1.0.0       | release/yocto-1.0.0   |
-+----------------------------------------------------------+----------------------+---------------------------+-----------------------+
++------------------------------------------------------------------------------------+----------------------+---------------------------+-----------------------+
+| URL                                                                                | Description          | Latest Development Branch | Latest Release Branch |
++====================================================================================+======================+===========================+=======================+
+| `lnxdsp-adi-meta <https://github.com/analogdevicesinc/lnxdsp-adi-meta>`_           | ADI Yocto meta layer | develop/yocto-1.0.0       | release/yocto-1.0.0   |
++------------------------------------------------------------------------------------+----------------------+---------------------------+-----------------------+
+| `lnxdsp-repo-manifest <https://github.com/analogdevicesinc/lnxdsp-repo-manifest>`_ | Google repo manifest | develop/yocto-1.0.0       | release/yocto-1.0.0   |
++------------------------------------------------------------------------------------+----------------------+---------------------------+-----------------------+
+| `lnxdsp-scripts <https://github.com/analogdevicesinc/lnxdsp-scripts>`_             | ADI scripts          | develop/yocto-1.0.0       | release/yocto-1.0.0   |
++------------------------------------------------------------------------------------+----------------------+---------------------------+-----------------------+
+| `u-boot-sharc <https://github.com/analogdevicesinc/u-boot-sharc>`_                 | U-Boot Bootloader    | develop/yocto-1.0.0       | release/yocto-1.0.0   |
++------------------------------------------------------------------------------------+----------------------+---------------------------+-----------------------+
+| `lnxdsp-linux <https://github.com/analogdevicesinc/lnxdsp-linux>`_                 | Linux kernel         | develop/yocto-1.0.0       | release/yocto-1.0.0   |
++------------------------------------------------------------------------------------+----------------------+---------------------------+-----------------------+
+| `lnxdsp-examples <https://github.com/analogdevicesinc/lnxdsp-examples>`_           | ADI SHARC examples   | develop/yocto-1.0.0       | release/yocto-1.0.0   |
++------------------------------------------------------------------------------------+----------------------+---------------------------+-----------------------+
 
 | 
 | === Download Source code === In order to simplify the checkout process, ADI recommends using Google's `repo tool <https://gerrit.googlesource.com/git-repo/>`_. To use the repo tool create a workspace directory and clone the tool:
@@ -37,7 +37,7 @@ To set up the sources for development invoke repo with the path to the repo mani
 
 ::
 
-   ./bin/repo init -u :git-lnxdsp-repo-manifest:`lnxdsp-repo-manifest` -b release/yocto-1.0.0
+   ./bin/repo init -u `lnxdsp-repo-manifest <https://github.com/analogdevicesinc/lnxdsp-repo-manifest>`_ -b release/yocto-1.0.0
    ./bin/repo sync
 
 After the sync finished, you would get files just like the picture shows below.

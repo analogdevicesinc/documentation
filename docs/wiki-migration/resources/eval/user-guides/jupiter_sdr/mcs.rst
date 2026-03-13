@@ -171,7 +171,7 @@ We recommend that you have git installed on your machine. Because we need a spec
 
    sudo apt install git
 
-You also need to have :git-libiio:`libiio` and :git-pyadi-iio:`pyadi-iio` installes, as described below Install the required tools
+You also need to have `libiio <https://github.com/analogdevicesinc/libiio>`_ and `pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`_ installes, as described below Install the required tools
 
 ::
 
@@ -191,7 +191,7 @@ Clone libiio, use v0.25.
 
 ::
 
-   git clone :git-libiio:`libiio`
+   git clone `libiio <https://github.com/analogdevicesinc/libiio>`_
    git checkout  v0.25
    cd libiio
    mkdir build
@@ -205,7 +205,7 @@ Clone and install pyadi-iio, use tfcollins/jupiter-sync brnach. The below exampl
 
 ::
 
-   git clone :git-pyadi-iio:`pyadi-iio`
+   git clone `pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`_
    cd pyadi-iio
    git checkout tfcollins/jupiter-sync
    python3 -m venv venv

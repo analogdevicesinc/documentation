@@ -100,7 +100,7 @@ First clone the repo and move into it:
 
 ::
 
-   git clone --recurse-submodules :git-TransceiverToolbox:`TransceiverToolbox`
+   git clone --recurse-submodules `TransceiverToolbox <https://github.com/analogdevicesinc/TransceiverToolbox>`_
    cd TransceiverToolbox
 
 To build the toolbox run the following:

@@ -30,7 +30,7 @@ Getting the ADI kernel
 
 ::
 
-   git clone :git-linux:`linux`
+   git clone `linux <https://github.com/analogdevicesinc/linux>`_
    git checkout rpi-4.14.y
 
 Building the ADI kernel - manual cross-compiling

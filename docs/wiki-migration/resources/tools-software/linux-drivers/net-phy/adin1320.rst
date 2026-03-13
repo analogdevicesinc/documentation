@@ -186,7 +186,7 @@ Clone the ADI Linux repository:
 
 ::
 
-   git clone :git-linux:`linux`
+   git clone `linux <https://github.com/analogdevicesinc/linux>`_
    cd linux
    git checkout dev/adin1320
 

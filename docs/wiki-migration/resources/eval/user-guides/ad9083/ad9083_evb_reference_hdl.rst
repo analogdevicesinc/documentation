@@ -71,7 +71,7 @@ The design has one JESD receive chain with 4 lanes at rate of 10Gbps. The JESD r
 Building the HDL project
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl:`here <hdl>`. To get the source you must `clone <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_ the HDL repository. Then go to the /projects/ad9083_evb/zcu102 location and run the make command by typing in your command prompt:
+ADI does not distribute the bit/elf files of these projects so they must be built from the sources available `here <https://github.com/analogdevicesinc/hdl>`_. To get the source you must `clone <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_ the HDL repository. Then go to the /projects/ad9083_evb/zcu102 location and run the make command by typing in your command prompt:
 
 **Linux/Cygwin**
 
@@ -100,7 +100,7 @@ Software sources
    :class: download
 
    
-   -  :git-linux:`Linux Driver <linux>`
+   -  `Linux Driver <https://github.com/analogdevicesinc/linux>`_
    -  :git-no-OS:`No-OS project <projects/ad9083>`
    
 

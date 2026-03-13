@@ -17,7 +17,7 @@ Dependencies
 gr-iio requires a few main dependencies:
 
 -  :doc:`libiio </wiki-migration/resources/tools-software/linux-software/libiio>`
--  :git-libad9361-iio:`libad9361 <libad9361-iio>`
+-  `libad9361 <https://github.com/analogdevicesinc/libad9361-iio>`_
 -  GNU Radio and its development packages
 -  swig (Optional for python support)
 
@@ -66,7 +66,7 @@ Build and install libiio from source:
 
 ::
 
-   git clone :git-libiio:`libiio` -b v0.25
+   git clone `libiio <https://github.com/analogdevicesinc/libiio>`_ -b v0.25
    cd libiio
    mkdir build
    cd build
@@ -82,7 +82,7 @@ Build and install libiio from source:
 
 ::
 
-   git clone :git-libad9361-iio:`libad9361-iio`
+   git clone `libad9361-iio <https://github.com/analogdevicesinc/libad9361-iio>`_
    cd libad9361-iio
    mkdir build
    cd build
@@ -119,14 +119,14 @@ GNU Radio 3.7
 
 .. important::
 
-   We would highly recommend upgrading to gr-3.8+. gr-iio was accepted into :git-gr-iio mainline gnuradio:`gr-iio mainline gnuradio` and will be directly provided with it from 3.10+
+   We would highly recommend upgrading to gr-3.8+. gr-iio was accepted into `gr-iio mainline gnuradio <https://github.com/analogdevicesinc/gr-iio mainline gnuradio>`_ and will be directly provided with it from 3.10+
 
 
 On Ubuntu 16.04 or newer GNU Radio can be installed from the package management. The installed version should be compatible with the gr-iio package build from source. Libiio and gr-iio may also be available from the package management, but to get the latest and most feature complete work, it’s recommend to build it from the latest github sources.
 
 ::
 
-   git clone :git-gr-iio:`gr-iio`
+   git clone `gr-iio <https://github.com/analogdevicesinc/gr-iio>`_
    cd gr-iio
    cmake .
    make
@@ -149,7 +149,7 @@ Build and install gr-iio from source:
 
 ::
 
-   git clone -b upgrade-3.8 :git-gr-iio:`gr-iio`
+   git clone -b upgrade-3.8 `gr-iio <https://github.com/analogdevicesinc/gr-iio>`_
    cd gr-iio
    cmake .
    make

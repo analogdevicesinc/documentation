@@ -141,14 +141,20 @@ The reference project initializes the I2C communication peripheral, configures t
 Software Project Setup
 ----------------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>rl78g13_software_tutorial_without_applilet3
-   :alt: page>rl78g13_software_tutorial_without_applilet3
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
 
 More information
 ================
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>more-information
-   :alt: page>more-information
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/i2c_architecture.png
 

@@ -17,7 +17,7 @@ Useful links
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#useful_link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
--  :git-no-OS:`no-OS Drivers for AD717x-AD411x Family <no-OS>`
+-  `no-OS Drivers for AD717x-AD411x Family <https://github.com/analogdevicesinc/no-OS>`_
 -  :adi:`AD4111 <en/products/ad4111.html>` :adi:`AD4112 <en/products/ad4112.html>` :adi:`AD4114 <en/products/ad4114.html>` :adi:`AD4115 <en/products/ad4115.html>` :adi:`AD4116 <en/products/ad4116.html>`
 -  :adi:`AD7172-2 <en/products/ad7172-2.html>` :adi:`AD7172-4 <en/products/ad47172-4.html>`
 -  :adi:`AD7173-8 <en/products/ad7173-8.html>` :adi:`AD7175-2 <en/products/ad7175-2.html>` :adi:`AD7175-8 <en/products/ad7175-8.html>`

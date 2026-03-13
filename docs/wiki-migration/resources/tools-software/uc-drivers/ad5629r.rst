@@ -149,8 +149,11 @@ The reference project powers-up all DAC channels, displays the content of the po
 Software Project Setup
 ----------------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>rl78g13_software_tutorial
-   :alt: page>rl78g13_software_tutorial
+
+.. note::
+
+   See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
+
 
 Renesas RX62N Quick Start Guide
 ===============================
@@ -195,14 +198,20 @@ The reference project: The reference project powers-up all DAC channels, display
 Software Project Setup
 ----------------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>rx62n_software_design
-   :alt: page>rx62n_software_design
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
 
 More information
 ================
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/page>more-information
-   :alt: page>more-information
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/i2c_architecture.png
 

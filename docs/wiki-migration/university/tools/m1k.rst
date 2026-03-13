@@ -34,7 +34,7 @@ The following content is currently available:
 
    -  :doc:`Hardware Manual </wiki-migration/university/tools/m1k/hw>`
    -  :doc:`Design Document </wiki-migration/university/tools/m1k/design>`
-   -  :git-m1k-cad:`Electrical CAD Documents <m1k-cad>`
+   -  `Electrical CAD Documents <https://github.com/analogdevicesinc/m1k-cad>`_
    -  :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
    -  :doc:`ADALM1000 Accessory Boards </wiki-migration/university/tools/adalm1000/accessory-boards-index>`
    -  :doc:`ADALM1000 Analog Multiplexers </wiki-migration/university/tools/m1k/analog-mux>`
@@ -45,7 +45,7 @@ The following content is currently available:
 
 -  Device Software/Firmware
 
-   -  :git-m1k-fw:`M1K Microcontroller Firmware Source <m1k-fw>`
+   -  `M1K Microcontroller Firmware Source <https://github.com/analogdevicesinc/m1k-fw>`_
    -  :doc:`Firmware Upgrade Procedures for the ADALM1000 </wiki-migration/university/tools/m1k/firmware-upgrade>`
 
 -  Host Software

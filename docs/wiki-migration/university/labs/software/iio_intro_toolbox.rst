@@ -363,11 +363,11 @@ There are several choices of Python installations, and which one to use is large
 PyADI-IIO
 ---------
 
-PyADI-IIO (pronounced "Py-odi" [1]_ is like `peyote <https://en.wikipedia.org/wiki/peyote>`_, but with a Py) is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. Pyadi-iio can be installed through pip, and is pre-installed on ADI Kuiper Linux, but if you're reading this you'll probably want to be hacking around a bit so go to :git-pyadi-iio:`PyADI-IIO Github Repo <pyadi-iio>` and follow the "installing from source" instructions. And note that this can be done on your remote Windows / Mac / Linux host AND... on the Raspberry Pi itself! Git is already installed on ADI Kuiper Linux, but may need to be installed on a Windows host. (You can also download the repository as a zip, but cloning will make it easier to update.) Let's install pyadi-iio.
+PyADI-IIO (pronounced "Py-odi" [1]_ is like `peyote <https://en.wikipedia.org/wiki/peyote>`_, but with a Py) is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. Pyadi-iio can be installed through pip, and is pre-installed on ADI Kuiper Linux, but if you're reading this you'll probably want to be hacking around a bit so go to `PyADI-IIO Github Repo <https://github.com/analogdevicesinc/pyadi-iio>`_ and follow the "installing from source" instructions. And note that this can be done on your remote Windows / Mac / Linux host AND... on the Raspberry Pi itself! Git is already installed on ADI Kuiper Linux, but may need to be installed on a Windows host. (You can also download the repository as a zip, but cloning will make it easier to update.) Let's install pyadi-iio.
 
 ::
 
-   analog@analog:~ $ git clone :git-pyadi-iio:`pyadi-iio`
+   analog@analog:~ $ git clone `pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`_
    analog@analog:~ $ cd pyadi-iio
    analog@analog:~/pyadi-iio $ sudo pip install .
 

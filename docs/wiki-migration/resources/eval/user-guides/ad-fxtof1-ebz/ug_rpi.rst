@@ -17,7 +17,7 @@ Required hardware
 Power on sequence
 ~~~~~~~~~~~~~~~~~
 
--  Plug the SD card into the Raspberry Pi SD card slot. To benefit from the most recent software updates it is highly recommended to update the SD card with the :git-aditof_sdk:`latest SD card image <aditof_sdk>`
+-  Plug the SD card into the Raspberry Pi SD card slot. To benefit from the most recent software updates it is highly recommended to update the SD card with the `latest SD card image <https://github.com/analogdevicesinc/aditof_sdk>`_
 -  Connect the HDMI cable from the monitor to the Raspberry Pi HDMI connector
 -  Connect the 25 pins flex cable between the camera and the interposer
 -  Connect the 15 pins camera cable between the RPi and the P1 connector of the interposer. **Make sure to use the cable with contacts on opposite sides.**

@@ -508,8 +508,11 @@ More information
 -  `AD9122: Dual, 16-Bit, 1200 MSPS, TxDAC+® Digital-to-Analog Converter <..//iio-dds/axi-dac-dds-hdl>`_
 -  :doc:`AD9361 high performance, highly integrated RF Agile Transceiver™ Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
-   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/linux-zynq-export-xps.png
    :width: 600px

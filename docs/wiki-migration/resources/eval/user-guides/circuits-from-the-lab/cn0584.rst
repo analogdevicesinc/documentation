@@ -443,7 +443,7 @@ Running the example
    Github link for the Python sample script: `CN0585 Python Example <https://github.com/analogdevicesinc/pyadi-iio/blob/cn0585_v1/examples/cn0585_fmcz_example.py>`_
 
 
-1. Download or git clone :git-pyadi-iio:`pyadi-iio repository <pyadi-iio>` to your local drive.
+1. Download or git clone `pyadi-iio repository <https://github.com/analogdevicesinc/pyadi-iio>`_ to your local drive.
 
 -  If direct downloading ZIP folder, make sure to download from cn0585_v1 branch.
 -  If cloning the repository using `Git <https://git-scm.com/downloads>`_, type ``git checkout cn0585_v1`` to switch to the correct branch.
@@ -544,7 +544,7 @@ Remote data streaming to and from hardware is made available through system obje
 
 ::
 
-   git clone :git-HighSpeedConverterToolbox:`HighSpeedConverterToolbox`
+   git clone `HighSpeedConverterToolbox <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_
    cd HighSpeedConverterToolbox
    git submodule update --init --recursive
    git checkout cn0585_v1
@@ -625,7 +625,7 @@ Reference Demos & Software
 --------------------------
 
 -  :doc:`High Speed Converter Toolbox for MATLAB and Simulink </wiki-migration/resources/tools-software/hsx-toolbox>`
--  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
+-  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`

@@ -76,7 +76,7 @@ First clone the repo and move into it:
 
 ::
 
-   git clone :git-HighSpeedConverterToolbox:`HighSpeedConverterToolbox`
+   git clone `HighSpeedConverterToolbox <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_
    cd HighSpeedConverterToolbox
 
 To build the toolbox run the following:

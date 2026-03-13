@@ -602,7 +602,7 @@ And corruption of those sections can cause problems in the booting process. In o
 Release Notification
 --------------------
 
-When a new release is made, you can be automatically notified if you are watching the release section on github. To do this, you need to be logged into github with a valid account (and have a valid email where you want notifications to show up). Then just go to the :git-scopy:`GitHub Scopy site <scopy>`; :git-m2k-fw:`GitHub M2k Firmware site <m2k-fw>` or :git-plutosdr-fw:`GitHub PlutoSDR Firmware site <plutosdr-fw>`. Scopy has built in notification (it will tell you on startup if a new feature is available, but if you are a lab manager, and still want to be notified - the default github notifications are the best solution).
+When a new release is made, you can be automatically notified if you are watching the release section on github. To do this, you need to be logged into github with a valid account (and have a valid email where you want notifications to show up). Then just go to the `GitHub Scopy site <https://github.com/analogdevicesinc/scopy>`_; `GitHub M2k Firmware site <https://github.com/analogdevicesinc/m2k-fw>`_ or `GitHub PlutoSDR Firmware site <https://github.com/analogdevicesinc/plutosdr-fw>`_. Scopy has built in notification (it will tell you on startup if a new feature is available, but if you are a lab manager, and still want to be notified - the default github notifications are the best solution).
 
 Click on the "Watch" button in the right hand side, then decide if you want to watch everything, or just releases (under Custom). (Click on the picture if you need it bigger).
 

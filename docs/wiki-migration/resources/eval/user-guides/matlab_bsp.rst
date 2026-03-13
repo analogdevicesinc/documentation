@@ -61,7 +61,7 @@ First clone the repo and move into it:
 
 ::
 
-   git clone :git-TransceiverToolbox:`TransceiverToolbox`
+   git clone `TransceiverToolbox <https://github.com/analogdevicesinc/TransceiverToolbox>`_
    cd TransceiverToolbox
 
 To build the toolbox run the following:

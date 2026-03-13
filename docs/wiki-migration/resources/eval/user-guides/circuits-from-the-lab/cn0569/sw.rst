@@ -102,7 +102,7 @@ Compilation Using Platform-Specific Tools
 Running the example
 -------------------
 
-After the controller has been programmed and the firmware is running on the ADICUP3029 the IIO server is up and a connection to it can be established. This can be done either by using :git-iio-oscilloscope:`IIO-Oscilloscope <iio-oscilloscope>` or the :git-pyadi-iio:`pyadi-iio code <examples/cn0569>`.
+After the controller has been programmed and the firmware is running on the ADICUP3029 the IIO server is up and a connection to it can be established. This can be done either by using `IIO-Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope>`_ or the :git-pyadi-iio:`pyadi-iio code <examples/cn0569>`.
 
 To use the gesture sensor and theremin examples, the python library must be installed first using pip:
 

@@ -248,7 +248,7 @@ How to Import Existing Projects from the GIT Repository
 -  Open the GIT perspective by clicking "Open Perspective" icon on tool bar and selecting "Git" in the Open Perspective window (or choose the GIT perspective if already open).
 -  Clone the Git repository which contains all the latest code and projects associated with the ADuCM4050. Populate the URI field with the following address.
 
-   -   **URL:** - :git-EV-COG-AD4050LZ:`EV-COG-AD4050LZ`
+   -   **URL:** - `EV-COG-AD4050LZ <https://github.com/analogdevicesinc/EV-COG-AD4050LZ>`_
    -  Click *Next*, *Next* and then *Finish*. There may be a pause while the branches are fetched.
 
 -  In the Git Repositories window, *Right Click* on the *Projects* folder and select *Import Projects...*

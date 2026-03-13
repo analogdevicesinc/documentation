@@ -23,7 +23,7 @@ Hardware:
 Software:
 
 -  `MATLAB 2020a+ <https://www.mathworks.com/products/matlab.html>`_
--  :git-libiio:`Download libiio <libiio>`
+-  `Download libiio <https://github.com/analogdevicesinc/libiio>`_
 -  :doc:`ADI Sensor Toolbox </wiki-migration/resources/tools-software/sensor-toolbox>`
 
    -  *Note this toolbox has other dependent toolboxes from MathWorks*

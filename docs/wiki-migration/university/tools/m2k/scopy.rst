@@ -289,7 +289,7 @@ Complete Scopy build guides on:
 Source code
 ===========
 
-The source code for the entire application can be found on :git-scopy:`github <scopy>`.
+The source code for the entire application can be found on `github <https://github.com/analogdevicesinc/scopy>`_.
 
 .. |Scopy Android setup| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy-android-setup-example.png
 .. |Scopy Home View| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy_home_view.png

@@ -127,8 +127,11 @@ Pointers
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/software/linux/docs/iio/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
-   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_vntewue24
 

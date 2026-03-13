@@ -102,7 +102,7 @@ Either of these options should open the configuration tool. It contains further 
 LibIIO package installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The LibIIO package may be needed for MATLAB to communicate and work with the Phaser. If absence of LibIIO is causing problems with MATLAB/Phaser, it can be installed from :git-libiio:`here <libiio>`.
+The LibIIO package may be needed for MATLAB to communicate and work with the Phaser. If absence of LibIIO is causing problems with MATLAB/Phaser, it can be installed from `here <https://github.com/analogdevicesinc/libiio>`_.
 
 Running the labs
 ----------------

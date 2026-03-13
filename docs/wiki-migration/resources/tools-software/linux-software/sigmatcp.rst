@@ -10,7 +10,7 @@ The source code for the SigmaStudio Network Utility can be downloaded from the w
 
 `SigmaStudio Network Utility Download <https://wiki.analog.com/_media/resources/tools-software/linux-software/sigma_tcp.tar.bz2>`_
 
--  :git-sigma-tcp:`sigma-tcp`
+-  `sigma-tcp <https://github.com/analogdevicesinc/sigma-tcp>`_
 -  :git-sigma-tcp:`sigma-tcp (with support for extended mode) <tree/dev-extended-mode>`
 
 Build and install the SigmaStudio Network Utility

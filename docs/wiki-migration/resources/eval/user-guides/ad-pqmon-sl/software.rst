@@ -261,13 +261,13 @@ Firmware update using a prebuilt hex file
 
 `PQMON hex file download <https://swdownloads.analog.com/cse/scopy/ad-pqmon-sl/eval-pqmon.hex>`_
 
-Step 1 - :adi:`max32625pico` firmware update Download the :adi:`MAX32650FTHR` firmware image from :git-max32625pico-firmware-images:`here <max32625pico-firmware-images>`
+Step 1 - :adi:`max32625pico` firmware update Download the :adi:`MAX32650FTHR` firmware image from `here <https://github.com/analogdevicesinc/max32625pico-firmware-images>`_
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/scopy23.jpg
    :align: center
    :width: 300px
 
-Follow the procedure indicated :git-max32625pico-firmware-images?tab=readme-ov-file:`here <max32625pico-firmware-images?tab=readme-ov-file>` to load the new firmware.
+Follow the procedure indicated `here <https://github.com/analogdevicesinc/max32625pico-firmware-images?tab=readme-ov-file>`_ to load the new firmware.
 
 Step 2 – Connect the :adi:`max32625pico` to the :adi:`ad-pqmon-sl` board Connect the Cortex Debug Cable to the :adi:`max32625pico` with the connector key directed towards the outside of the board.
 

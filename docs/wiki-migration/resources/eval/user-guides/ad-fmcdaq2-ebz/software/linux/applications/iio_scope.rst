@@ -19,8 +19,16 @@ Installation
 Windows
 ~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/page>/resources/eval/user-guides/ad-fmcomms2-ebz/downloads#download_iio-oscilloscope
-   :alt: downloads#download_iio-oscilloscope
+.. admonition:: Download
+   :class: download
+
+   Latest releases (goto this page to download the file):
+
+   
+   -  https://github.com/analogdevicesinc/iio-oscilloscope/releases
+   
+
+
 
 Linux
 ~~~~~
@@ -38,7 +46,7 @@ To build on a development host (e.g. x86 laptop or desktop) do the following:
 
 
 #. Optionally build and install the libad9166-iio and libad9361-iio libraries, by following :doc:`these instructions </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
-#. Download the source using git: ``$ git clone :git-iio-oscilloscope:`iio-oscilloscope`
+#. Download the source using git: ``$ git clone `iio-oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope>`_
    $ cd iio-oscilloscope
    $ git checkout origin/main``
 #. Or, `download a zip <https://github.com/analogdevicesinc/iio-oscilloscope/archive/main.zip>`_, and uncompress it: ``$ wget https://github.com/analogdevicesinc/iio-oscilloscope/archive/main.zip
@@ -78,7 +86,7 @@ If you'd like to build the previous version of IIO-Oscilloscope, which is based 
 
 ::
 
-   git clone :git-iio-oscilloscope:`iio-oscilloscope` --branch 2021_R2 
+   git clone `iio-oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope>`_ --branch 2021_R2 
 
 The other prerequisites and build steps are identical.
 
@@ -350,7 +358,7 @@ Source code
 Files
 -----
 
-The source code for the entire application is at :git-iio-oscilloscope:`github <iio-oscilloscope>`. You can ask questions about it on the :ez:`EngineerZone <community/linux-device-drivers>`.
+The source code for the entire application is at `github <https://github.com/analogdevicesinc/iio-oscilloscope>`_. You can ask questions about it on the :ez:`EngineerZone <community/linux-device-drivers>`.
 
 Internals
 ~~~~~~~~~
@@ -363,8 +371,11 @@ More information
 -  `AD-FMCOMMS1-EBZ Reference Design <resources/fpga/xilinx/fmc/ad-fmcomms1-ebz>`_
 -  `Linux with HDMI video output on the ZED and ZC702 boards <resources/tools-software/linux-drivers/platforms/zynq>`_
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
-   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+
 
 .. [1]
    also referred to as multicast DNS/DNS-SD service discovery

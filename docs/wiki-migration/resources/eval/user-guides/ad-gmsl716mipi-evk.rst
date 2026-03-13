@@ -218,7 +218,7 @@ Software
    The AD-GMSL716MIPI-EVK software package offers driver support and configuration tools for integrating GMSL2 cameras with popular SoCs, including device tree and kernel drivers.
 
    
-   Access the resources via the :git-Analog Devices GMSL GitHub repository:`Analog Devices GMSL GitHub repository`.
+   Access the resources via the `Analog Devices GMSL GitHub repository <https://github.com/analogdevicesinc/Analog Devices GMSL GitHub repository>`_.
    
 
 

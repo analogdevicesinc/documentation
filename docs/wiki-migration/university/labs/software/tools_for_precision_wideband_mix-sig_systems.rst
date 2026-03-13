@@ -46,7 +46,7 @@ This probably isn't necessary as of Kuiper 2022r2, but just in case you want to 
 
 ::
 
-   git clone :git-pyadi-iio:`pyadi-iio`
+   git clone `pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`_
    cd pyadi-iio
    sudo pip install .
 

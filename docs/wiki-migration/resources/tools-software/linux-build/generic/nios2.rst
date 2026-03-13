@@ -35,7 +35,7 @@ Get Linux Kernel Source
    
    ::
    
-      user@pc:~/nios2$ git clone :git-linux:`linux`
+      user@pc:~/nios2$ git clone `linux <https://github.com/analogdevicesinc/linux>`_
       Cloning into 'linux'...
       remote: Counting objects: 4331580, done.
       remote: Compressing objects: 100% (23/23), done.

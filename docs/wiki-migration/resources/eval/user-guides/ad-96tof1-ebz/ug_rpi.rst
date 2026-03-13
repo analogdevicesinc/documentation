@@ -30,7 +30,7 @@ For the **AD-96TOF1-EBZ rev.C** to work with the RPi the following changes must 
 Power on sequence
 ~~~~~~~~~~~~~~~~~
 
--  Plug the SD card into the Raspberry Pi SD card slot. To benefit from the most recent software updates it is highly recommended to update the SD card with the :git-aditof_sdk:`latest SD card image <aditof_sdk>`
+-  Plug the SD card into the Raspberry Pi SD card slot. To benefit from the most recent software updates it is highly recommended to update the SD card with the `latest SD card image <https://github.com/analogdevicesinc/aditof_sdk>`_
 -  Connect the HDMI cable from the monitor to the Raspberry Pi HDMI connector
 -  Connect the RPi camera cable between the RPi and the P1 connector of the ToF board
 -  Connect a USB mouse and keyboard to the Raspberry Pi. It's possible to use either a mouse & keyboard combo or a separate mouse and keyboard

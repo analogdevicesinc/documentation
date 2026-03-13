@@ -16,7 +16,7 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
 -  Ensure that the system time is synchronized and that there is an active internet connection to access the necessary sources. Install Git and the build dependencies with the following commands: ``sudo apt update
    sudo apt install git
    sudo apt install bc bison flex libssl-dev make``
--  Clone the ADI Linux kernel repository with the rpi-5.15.y branch using the following command: ``git clone -b rpi-5.15.y :git-linux:`linux`.git``
+-  Clone the ADI Linux kernel repository with the rpi-5.15.y branch using the following command: ``git clone -b rpi-5.15.y `linux <https://github.com/analogdevicesinc/linux>`_.git``
 -  For the Raspberry Pi 4 with the default 64-bit build configuration, navigate to the linux directory and configure the build with the following commands: ``cd linux
    KERNEL=kernel8
    make bcm2711_defconfig``

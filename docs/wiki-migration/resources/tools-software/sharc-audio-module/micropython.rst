@@ -5,7 +5,7 @@ MicroPython Overview
 
 To be short, MicroPython is a Python environment running on the bare metal.
 
-Though the :adi:`SHARC Audio Module <sharcaudiomodule>` is powerful enough to run the full Python 3 on the Linux operating system, depending on the use case, it might be favorable to use the Python on bare metal. The MicroPython has been ported over to the SHARC Audio Module, and can be used in conjunction with the :doc:`Bare Metal Framework </wiki-migration/resources/tools-software/sharc-audio-module/baremetal>` to utilize the on-chip :adi:`sharc` DSP. You can get the latest version of source code at :git-micropython:`micropython`
+Though the :adi:`SHARC Audio Module <sharcaudiomodule>` is powerful enough to run the full Python 3 on the Linux operating system, depending on the use case, it might be favorable to use the Python on bare metal. The MicroPython has been ported over to the SHARC Audio Module, and can be used in conjunction with the :doc:`Bare Metal Framework </wiki-migration/resources/tools-software/sharc-audio-module/baremetal>` to utilize the on-chip :adi:`sharc` DSP. You can get the latest version of source code at `micropython <https://github.com/analogdevicesinc/micropython>`_
 
 The SHARC Audio Module port of MicroPython currently has drivers for ``GPIO``, ``TWI``, ``SPI``, ``RTC``, ``Timer``, and ``SD`` card, and is compatible with the drivers in the official pyboard by MicroPython.
 

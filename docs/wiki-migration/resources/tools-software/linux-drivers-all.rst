@@ -35,7 +35,7 @@ Analog Devices uses six designations to inform our customers where a semiconduct
 Maintenance and Support
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-These drivers are a combinations of written and maintained by Analog Devices developers, and by many other open source volunteers (most times end-users of various devices). All these drivers (and their corresponding device trees), independent of origin, are supported by ADI Linux kernel Engineers, on-line at :ez:`linux-software-drivers`. This is a combination of drivers that are maintained at Analog Devices :git-linux:`github <linux>` and the mainline `mainline kernel <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/>`_ at https://kernel.org/.
+These drivers are a combinations of written and maintained by Analog Devices developers, and by many other open source volunteers (most times end-users of various devices). All these drivers (and their corresponding device trees), independent of origin, are supported by ADI Linux kernel Engineers, on-line at :ez:`linux-software-drivers`. This is a combination of drivers that are maintained at Analog Devices `github <https://github.com/analogdevicesinc/linux>`_ and the mainline `mainline kernel <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/>`_ at https://kernel.org/.
 
 It is a common practice during driver development to support a subset of what the hardware/chip is capable of. If you find a driver does not expose a feature you require in your design, please make a request in our :ez:`support forums <linux-software-drivers>`.
 

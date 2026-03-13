@@ -6,13 +6,13 @@ The software for the ADRV-PACKRF is provided by Analog Devices as an open source
 -  FPGA HDL Code :git-hdl:`Standard Reference Design <projects/adrv9361z7035/ccpackrf_lvds>`, :git-TransceiverToolbox:`Modem Enhancements <CI/projects/adrv9361z7035/ccbox_lvds_modem>`)
 -  Linux Kernel/Device Drivers (:doc:`Transceiver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`, :git-rfsom-box-gui:`Modem Controller <tun_tap>`)
 -  `U-boot Bootloader <https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841973/Build+U-Boot>`_
--  :git-rfsom-box-gui:`Graphical User Interface (GUI) <rfsom-box-gui>`
+-  `Graphical User Interface (GUI) <https://github.com/analogdevicesinc/rfsom-box-gui>`_
 -  :doc:`Modem Design Workflow and Generation </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/matlab_bsp_modem>`
 -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`3rd Party Simulation and Development Tools </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/simrf>`
 -  :doc:`MATLAB/Simulink </wiki-migration/resources/eval/user-guides/matlab_bsp>`, :doc:`GNU Radio </wiki-migration/resources/tools-software/linux-software/gnuradio>`
 
-The default design used for FPGAs in the PackRF kit contains the standard reference design built from the :git-hdl:`ADI HDL repository <hdl>`. This design is provided by default since it allows a more general interaction with the transceiver, allowing an end-user to move data through the transceiver in a traditional way with standard tools. The modem design, which can be built from the :git-TransceiverToolbox:`Transceiver Toolbox <TransceiverToolbox>`, modifies the data pipelines which can be unintuitive for those starting out with the kit. The streaming interfaces in the modem design, which represent the transmit and receive chains in software still exist or will appear in development tools, but the data provided by them and their control mechanisms are different.
+The default design used for FPGAs in the PackRF kit contains the standard reference design built from the `ADI HDL repository <https://github.com/analogdevicesinc/hdl>`_. This design is provided by default since it allows a more general interaction with the transceiver, allowing an end-user to move data through the transceiver in a traditional way with standard tools. The modem design, which can be built from the `Transceiver Toolbox <https://github.com/analogdevicesinc/TransceiverToolbox>`_, modifies the data pipelines which can be unintuitive for those starting out with the kit. The streaming interfaces in the modem design, which represent the transmit and receive chains in software still exist or will appear in development tools, but the data provided by them and their control mechanisms are different.
 
 Getting Started
 ---------------

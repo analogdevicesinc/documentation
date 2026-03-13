@@ -38,7 +38,7 @@ Linux
 
 there is a small AD9361 helper library that helps manages the mcs issues, that is common between all IIO software (the iio-oscilloscope, and the various network backends)
 
-:git-libad9361-iio:`AD9361 helper Library for IIO applications <libad9361-iio>`.
+`AD9361 helper Library for IIO applications <https://github.com/analogdevicesinc/libad9361-iio>`_.
 
 Specifically, in :git-libad9361-iio:`ad9361_multichip_sync.c <ad9361_multichip_sync.c#L42>`
 
@@ -48,7 +48,7 @@ To install the library on your system, follow the instructions below:
 
 ::
 
-   > git clone :git-libad9361-iio:`libad9361-iio`.git
+   > git clone `libad9361-iio <https://github.com/analogdevicesinc/libad9361-iio>`_.git
    > cd libad9361-iio
    > mkdir build && cd build
    > cmake ../

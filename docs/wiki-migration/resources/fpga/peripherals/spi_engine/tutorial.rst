@@ -207,7 +207,7 @@ create_generated_clock -name spi_clk -source [get_pins -filter name=~*CLKIN1 -of
 Testbench
 ~~~~~~~~~
 
-To check the overall performance of the design and also to expose any major bugs, the system can be tested using a testbench. :git-testbenches:`testbenches`
+To check the overall performance of the design and also to expose any major bugs, the system can be tested using a testbench. `testbenches <https://github.com/analogdevicesinc/testbenches>`_
 
 The testbench framework is designed to use the same bd.tcl as the actual project
 

@@ -30,7 +30,7 @@ Download Links
 
 HDL Project: :git-hdl:`projects/adrv9371x/a10soc`
 
-Linux Kernel: :git-linux:`linux`
+Linux Kernel: `linux <https://github.com/analogdevicesinc/linux>`_
 
 Building the Linux Kernel image and the Devicetree
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +56,7 @@ If you skipped the instruction on "Building the Linux Kernel image and the Devic
 
 ::
 
-   $ git clone :git-hdl:`hdl` //
+   $ git clone `hdl <https://github.com/analogdevicesinc/hdl>`_ //
    $ cd ~/Workspace/hdl/projects/adrv9371x/a10soc
 
 -  Build the project
@@ -228,7 +228,7 @@ Download Links
 
 HDL Project: :git-hdl:`projects/arradio/c5soc`
 
-Linux Kernel: :git-linux:`linux`
+Linux Kernel: `linux <https://github.com/analogdevicesinc/linux>`_
 
 `ad9361.tar.gz <https://wiki.analog.com/_media/resources/tools-software/linux-software/altera_soc/ad9361.tar.gz>`_
 
@@ -256,7 +256,7 @@ If you skipped the instruction on "Building the Linux Kernel image and the Devic
 
 ::
 
-   $ git clone :git-hdl:`hdl` //
+   $ git clone `hdl <https://github.com/analogdevicesinc/hdl>`_ //
    $ cd ~/Workspace/hdl/projects/arradio/c5soc
 
 -  Build the project
@@ -466,7 +466,7 @@ Download Links
 
 HDL Project: :git-hdl:`projects/cn0540/de10nano`
 
-Linux Kernel: :git-linux:`linux`
+Linux Kernel: `linux <https://github.com/analogdevicesinc/linux>`_
 
 Cross_compiler: `gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz <https://developer.arm.com/-/media/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz>`_
 

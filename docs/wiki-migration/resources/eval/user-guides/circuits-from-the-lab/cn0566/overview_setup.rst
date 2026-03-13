@@ -153,7 +153,7 @@ Schematic, PCB Layout, Bill of Materials, Casing
 Additional Information
 ----------------------
 
--  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
+-  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`

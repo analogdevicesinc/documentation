@@ -232,7 +232,7 @@ Working with the software
 
    -  `Make <https://www.gnu.org/software/make>`_ program should be installed and available in the path.
    -  Open a **terminal** (linux) or a **cmd** (windows) and navigate to a directory where to start working.
-   -  Download the EVAL-ADICUP3029 :git-EVAL-ADICUP3029:`repository <EVAL-ADICUP3029>` with ``git clone --recursive :git-EVAL-ADICUP3029:`EVAL-ADICUP3029`.git``
+   -  Download the EVAL-ADICUP3029 `repository <https://github.com/analogdevicesinc/EVAL-ADICUP3029>`_ with ``git clone --recursive `EVAL-ADICUP3029 <https://github.com/analogdevicesinc/EVAL-ADICUP3029>`_.git``
    -  Using the **--recursive** is **important** in order for the submodules to be initialized.
    -  Go to :git-EVAL-ADICUP3029:`project directory <projects/ADuCM3029_demo_cn0536>`. ``cd projects\ADuCM3029_demo_cn0536``
    -  Follow this :doc:`guide </wiki-migration/resources/no-os/build>` to create a CCES project. This command should be enough: ``make update_srcs``

@@ -115,7 +115,7 @@ SDP Control
 Software
 ~~~~~~~~
 
--  :git-pyadi-iio:`PyADI-IIO <pyadi-iio>` interface for LibIIO
+-  `PyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_ interface for LibIIO
 
    -  `ADF4371 wrapper <https://github.com/pyadi-iio?master/adi/adf4371.py>`_
    -  `ADF4371 Documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.adf4371.html>`_

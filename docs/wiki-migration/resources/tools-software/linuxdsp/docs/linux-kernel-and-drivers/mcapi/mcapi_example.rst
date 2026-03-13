@@ -22,7 +22,7 @@ Here we take ADSP-SC589 EZ-kit as our example.
 Get the Source Code Ready
 -------------------------
 
-The MCAPI example for ARM core (Running Linux) is included in the YOCTO, and you can get the MCAPI example for SHARC+ Cores from the gitbub :git-lnxdsp-examples:`lnxdsp-examples`
+The MCAPI example for ARM core (Running Linux) is included in the YOCTO, and you can get the MCAPI example for SHARC+ Cores from the gitbub `lnxdsp-examples <https://github.com/analogdevicesinc/lnxdsp-examples>`_
 
 - MCAPI Examples for SHARC Cores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,7 +37,7 @@ The MCAPI example for ARM core (Running Linux) is included in the YOCTO, and you
 
 .. code:: bash
 
-   git clone :git-lnxdsp-examples:`lnxdsp-examples`
+   git clone `lnxdsp-examples <https://github.com/analogdevicesinc/lnxdsp-examples>`_
    cd lnxdsp-examples
    git branch -a
    git checkout -b release/yocto-1.0.0 origin/release/yocto-1.0.0

@@ -699,7 +699,7 @@ The last/first digital filter in the RX/TX signal path is a programmable poly-ph
 In general the filters are either created using the:
 
 -  :doc:`MATLAB Filter Design Wizard for AD9361 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/filters>`
--  :git-libad9361-iio:`libad9361-iio`
+-  `libad9361-iio <https://github.com/analogdevicesinc/libad9361-iio>`_
 
 Some per-generated examples can be found here: :git-iio-oscilloscope:`AD936x example filters <filters>`
 
@@ -2234,8 +2234,11 @@ IIO pointers
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
-   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/youtube>p_vntewue24
 
@@ -2256,8 +2259,11 @@ More Information
 
 |libiio introduction|
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/page>resources/tools-software/linux-drivers/need_help#need_help&noheader&firstseconly&noeditbtn
-   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+*Need Help?*
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
+-  `Ask a Question <https://ez.analog.com/>`_
+
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/youtube>p_vntewue24
 

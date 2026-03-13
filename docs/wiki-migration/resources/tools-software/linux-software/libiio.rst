@@ -243,7 +243,7 @@ Rebuild LibIIO
 --------------
 
 -  cd /usr/local/src
--  git clone :git-libiio:`libiio`
+-  git clone `libiio <https://github.com/analogdevicesinc/libiio>`_
 -  cd /usr/local/src/libiio/
 -  git clean -d -f -x
 -  cmake .

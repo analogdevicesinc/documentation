@@ -1,6 +1,6 @@
 The hardware platform for each reference projects with FMC-SDP interposer and KC705 evaluation board is common. The next steps should be followed to recreate the software project of the reference design:
 
--  First download the **KC705 Reference project** from Github on your computer. You can do this by clonning this repository: :git-fpgahdl_xilinx:`fpgahdl_xilinx`.
+-  First download the **KC705 Reference project** from Github on your computer. You can do this by clonning this repository: `fpgahdl_xilinx <https://github.com/analogdevicesinc/fpgahdl_xilinx>`_.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/github_repository_folder.jpg
    :alt: Github Repository

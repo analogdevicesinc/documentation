@@ -593,7 +593,7 @@ To create the bindings, The “ctypes” module has been used:
            self._device = _device
            self.id = _d_get_id(self._device)
 
-This code shows the \_init function, whose goal here is to load the library and create wrappers in Python for the C functions of libiio. Objects created from the Device class provide a couple of methods that will call those wrappers. Some of the known constant values of the IIO objects, like the ID of a device, are cached within the Python classes for faster access. Then, printing the ID of a device in a Python script is as easy as typing “print my_device.id”. To better understand the available calls consult the :git-libiio:`bindings source <bindings/python/iio.py>` and some available :git-plutosdr_scripts:`examples <plutosdr_scripts>`.
+This code shows the \_init function, whose goal here is to load the library and create wrappers in Python for the C functions of libiio. Objects created from the Device class provide a couple of methods that will call those wrappers. Some of the known constant values of the IIO objects, like the ID of a device, are cached within the Python classes for faster access. Then, printing the ID of a device in a Python script is as easy as typing “print my_device.id”. To better understand the available calls consult the :git-libiio:`bindings source <bindings/python/iio.py>` and some available `examples <https://github.com/analogdevicesinc/plutosdr_scripts>`_.
 
 Installation
 ^^^^^^^^^^^^

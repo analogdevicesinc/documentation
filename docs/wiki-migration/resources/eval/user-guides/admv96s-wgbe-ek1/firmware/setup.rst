@@ -83,14 +83,14 @@ If however, there is a FAIL.TXT file, if might be that the programmer isn't conn
 
       Git SHA: 649f2a1524190c5f0ea32c97bb8682ad6fd772a0
 
-   If what you see on your device is not the one indicated above, please follow the :git-max32625pico-firmware-images:`instructions on this page <max32625pico-firmware-images>` to update the MAXDAP firmware first.
+   If what you see on your device is not the one indicated above, please follow the `instructions on this page <https://github.com/analogdevicesinc/max32625pico-firmware-images>`_ to update the MAXDAP firmware first.
 
 
 
 mcufla.sh
 ~~~~~~~~~
 
-:git-no-OS:`no-OS` provides a standalone script that can be used to program .elf files to various targets, including the :adi:`MAX32650 <en/products/max32650.html>`. Typical usage and output is shown below:
+`no-OS <https://github.com/analogdevicesinc/no-OS>`_ provides a standalone script that can be used to program .elf files to various targets, including the :adi:`MAX32650 <en/products/max32650.html>`. Typical usage and output is shown below:
 
 ::
 
@@ -142,7 +142,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive :git-no-OS:`no-OS`
+   git clone --recursive `no-OS <https://github.com/analogdevicesinc/no-OS>`_
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -855,7 +855,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive :git-no-OS:`no-OS`
+   git clone --recursive `no-OS <https://github.com/analogdevicesinc/no-OS>`_
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -1568,7 +1568,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive :git-no-OS:`no-OS`
+   git clone --recursive `no-OS <https://github.com/analogdevicesinc/no-OS>`_
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -2864,7 +2864,7 @@ A detailed view of this feedback loop is represented below, showing exactly what
 The firmware can also interact with a PC application over the serial line (UART). Upon boot, it prints boot messages at 115200 baudrate, then launches an ``iiod`` application that can be accessed from a PC using ``libiio`` over a serial backend at 345600 baudrate. The following existing PC applications may be used to interact with the firmware:
 
 -  ``iio_info``, ``iio_attr`` (command-line tools from ```libiio`` <https://github.com/analogdevicesinc/libiio>`__)
--  :git-iio-oscilloscope:`iio-oscilloscope`
+-  `iio-oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope>`_
 -  :doc:`Wethlink GUI </wiki-migration/resources/eval/user-guides/admv96s-wgbe-ek1/software>`
 
 The fact that the firmware exposes the on-board devices as iio devices in a `standardized way <https://www.kernel.org/doc/html/v4.12/driver-api/iio/index.html>`_ means that it is easy to devise new applications that can interact with the firmware by simply using the ``libiio`` library.

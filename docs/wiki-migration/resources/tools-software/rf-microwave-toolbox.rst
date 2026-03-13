@@ -66,7 +66,7 @@ First clone the repo and move into it:
 
 ::
 
-   git clone :git-RFMicrowaveToolbox:`RFMicrowaveToolbox`
+   git clone `RFMicrowaveToolbox <https://github.com/analogdevicesinc/RFMicrowaveToolbox>`_
    cd RFMicrowaveToolbox
 
 To build the toolbox run the following:

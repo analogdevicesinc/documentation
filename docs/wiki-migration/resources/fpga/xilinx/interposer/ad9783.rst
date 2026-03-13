@@ -89,7 +89,7 @@ Setup
    * Set the clock input to 500MHz, +3dBm
    * Connect the evaluation board to a 5Vdc 1A power supply on P5 and P6
    * Power on the evaluation board, clock generator and ZCU102
-   * Write the EEPROM found on the AD-DAC-FMC-ADP to set the **Vadj** to **1.8V**, using the tutorial :doc:`FRU EEPROM Utility </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`. The file you will write on the EEPROM, can be found on the :git-fru_tools:`fru_tools` repository: download the **AD9783-DPG2-EBZ.bin** file from //masterfiles// folder onto your SD card.
+   * Write the EEPROM found on the AD-DAC-FMC-ADP to set the **Vadj** to **1.8V**, using the tutorial :doc:`FRU EEPROM Utility </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`. The file you will write on the EEPROM, can be found on the `fru_tools <https://github.com/analogdevicesinc/fru_tools>`_ repository: download the **AD9783-DPG2-EBZ.bin** file from //masterfiles// folder onto your SD card.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~

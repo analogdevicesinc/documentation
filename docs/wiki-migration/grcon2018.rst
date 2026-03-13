@@ -6,18 +6,18 @@ For those attending the PlutoSDR workshop at GRCon 2018, hosted by ADI, thanks. 
 -  **libIIO library:**
 
    -  Packages for Linux and Windows are available here: https://github.com/analogdevicesinc/libiio/releases/latest
-   -  Source available here: :git-libiio:`libiio`. If you want to build from source, feel free; master works fine.
+   -  Source available here: `libiio <https://github.com/analogdevicesinc/libiio>`_. If you want to build from source, feel free; master works fine.
    -  Documentation: :doc:`What is libiio? </wiki-migration/resources/tools-software/linux-software/libiio>`
 
 -  **libad9361-iio library**
 
-   -  for linux users only, you will need the :git-libad9361-iio:`libad9361-iio` library.
+   -  for linux users only, you will need the `libad9361-iio <https://github.com/analogdevicesinc/libad9361-iio>`_ library.
    -  Instructions for building it are :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
 
 -  **IIO-Scope:**
 
    -  Windows installers are available here: https://github.com/analogdevicesinc/iio-oscilloscope/releases
-   -  Linux users will need to build from source: :git-iio-oscilloscope:`iio-oscilloscope`. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
+   -  Linux users will need to build from source: `iio-oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope>`_. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
    -  Documentation: :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
 -  **GNU Radio with IIO support:**

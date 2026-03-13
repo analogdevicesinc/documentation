@@ -436,7 +436,7 @@ When building the project, you should always use the recommended version of the 
 
    mkdir adi
    cd adi
-   git clone :git-hdl:`hdl`
+   git clone `hdl <https://github.com/analogdevicesinc/hdl>`_
    cd hdl/
    git status ## check for everything, including branch name
    git checkout hdl_2019_r1 ## change to the hdl_2019_r1 branch

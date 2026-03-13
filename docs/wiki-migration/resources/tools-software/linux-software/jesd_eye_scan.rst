@@ -87,7 +87,7 @@ Also see here: :doc:`JESD204B Status Utility </wiki-migration/resources/tools-so
 Source
 ------
 
-:git-jesd-eye-scan-gtk:`jesd-eye-scan-gtk application <jesd-eye-scan-gtk>`
+`jesd-eye-scan-gtk application <https://github.com/analogdevicesinc/jesd-eye-scan-gtk>`_
 
 When building the source code, make sure that gnuplot & libgtk3-dev & required build dependencies are installed.
 

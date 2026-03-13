@@ -97,7 +97,7 @@ Documentation
 Other Useful Links
 ~~~~~~~~~~~~~~~~~~
 
--  :git-pyadi-iio:`Source <pyadi-iio>`
+-  `Source <https://github.com/analogdevicesinc/pyadi-iio>`_
 -  `PyPi <https://pypi.org/project/pyadi-iio/>`_
 
 Support Questions

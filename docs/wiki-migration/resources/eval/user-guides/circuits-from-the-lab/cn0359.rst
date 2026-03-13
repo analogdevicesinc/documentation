@@ -802,7 +802,7 @@ Downloading the Firmware to the CN0359
 
 .. collapsible:: initialState="visible"
 
-   Download the latest release of ADuCM360_demo_cn0359 from :git-EVAL-ADICUP360:`EVAL-ADICUP360`. Currently, Release 1.0 is available: `EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0359 <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0359>`_
+   Download the latest release of ADuCM360_demo_cn0359 from `EVAL-ADICUP360 <https://github.com/analogdevicesinc/EVAL-ADICUP360>`_. Currently, Release 1.0 is available: `EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0359 <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0359>`_
 
 
 

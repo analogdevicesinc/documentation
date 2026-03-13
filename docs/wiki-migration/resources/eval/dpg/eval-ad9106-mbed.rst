@@ -24,7 +24,7 @@ Software Needed
 ---------------
 
 -  `Keil Studio Cloud <https://studio.keil.arm.com/>`_
--  :git-eval-ad910x:`EVAL-AD910x Example Mbed Program <eval-ad910x>`
+-  `EVAL-AD910x Example Mbed Program <https://github.com/analogdevicesinc/eval-ad910x>`_
 
 Useful Links
 ------------
@@ -58,7 +58,7 @@ Single-Board Evaluation
 
 -  Connect SDP-K1 to PC over USB. DS1 and DS2 on SDP-K1 and DS1 on the evaluation board should **light up**. If DAC outputs are connected to the on-board amplifiers, connect a 7-V-to-12-V, 30-W wall wart to SDP-K1 DC jack or to P15 on the evaluation board.
 -  Connect the **outputs** of the evaluation board to an **oscilloscope** using SMA-to-BNC cables. Apply one of the oscilloscope settings shown in the waveform captures of the example patterns in Figures 9a to 9b and Figures 10a to 10c.
--  Go to the EVAL-AD910x example code in :git-eval-ad910x:`GitHub repository <eval-ad910x>` and copy its HTTPS URL through the **Code** dropdown button as shown in Figure 2. Log on to https://studio.keil.arm.com/ and import the codes by going to File > **Clone…** then pasting the repository link in the URL field of the **Clone** window as depicted in Figure 3. Make sure to input the desired **Project name** and tick the **Make this active project** checkbox before clicking the **Add project** button.
+-  Go to the EVAL-AD910x example code in `GitHub repository <https://github.com/analogdevicesinc/eval-ad910x>`_ and copy its HTTPS URL through the **Code** dropdown button as shown in Figure 2. Log on to https://studio.keil.arm.com/ and import the codes by going to File > **Clone…** then pasting the repository link in the URL field of the **Clone** window as depicted in Figure 3. Make sure to input the desired **Project name** and tick the **Make this active project** checkbox before clicking the **Add project** button.
 
 .. container:: centeralign
 
@@ -260,7 +260,7 @@ Multi-Board Evaluation / Multichip Synchronization Evaluation
 Using the Example Mbed Codes
 ----------------------------
 
-The EVAL-AD910x Example Mbed Codes can be used as a starting point for developing firmware for targeted applications. The eval-ad910x codes in the :git-eval-ad910x:`ADI GitHub repository <eval-ad910x>` demonstrate how to set up SPI communication between the ARM-based Mbed-enabled hardware, SDP-K1, and the waveform generator DAC, AD9106/AD9102.
+The EVAL-AD910x Example Mbed Codes can be used as a starting point for developing firmware for targeted applications. The eval-ad910x codes in the `ADI GitHub repository <https://github.com/analogdevicesinc/eval-ad910x>`_ demonstrate how to set up SPI communication between the ARM-based Mbed-enabled hardware, SDP-K1, and the waveform generator DAC, AD9106/AD9102.
 
 To import the codes to Keil Studio Cloud as discussed in the Quick Start Guide, the user should have an Arm or Mbed account and is logged on to https://studio.keil.arm.com/. After successful project import, the user is free to use and modify the codes as needed, in compliance with the terms and conditions outlined in the :git-eval-ad910x:`LICENSE` file.
 

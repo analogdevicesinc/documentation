@@ -13,7 +13,7 @@ Also, please download `Git for Windows <https://gitforwindows.org/>`_ since the 
 
 Linux user: you may install Python 3 from your distribution's software repository, and no extra configuration should be necessary after installation.
 
-Start by cloning the GitHub repository of MicroPython: :git-micropython:`micropython`, you can use `Git for Windows <https://git-scm.com/download/win>`_ or `GitHub Desktop <https://desktop.github.com/>`_ to do that. Note that MicroPython relies on external repositories so cloning should be done recursively.
+Start by cloning the GitHub repository of MicroPython: `micropython <https://github.com/analogdevicesinc/micropython>`_, you can use `Git for Windows <https://git-scm.com/download/win>`_ or `GitHub Desktop <https://desktop.github.com/>`_ to do that. Note that MicroPython relies on external repositories so cloning should be done recursively.
 
 After cloning that onto your local computer, open the project located inside ``ports/sc5xx`` using CCES:
 

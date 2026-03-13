@@ -6,7 +6,7 @@ Use ADI IPs into your own project
    We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest guide at https://analogdevicesinc.github.io/hdl/user_guide/ip_cores/use_adi_ips.html\
 
 
-Clone the github repository: <code> git clone :git-hdl:`hdl` </code>
+Clone the github repository: <code> git clone `hdl <https://github.com/analogdevicesinc/hdl>`_ </code>
 
 Vivado
 ------

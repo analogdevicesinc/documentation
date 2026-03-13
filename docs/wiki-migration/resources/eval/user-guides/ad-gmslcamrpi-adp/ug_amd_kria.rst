@@ -67,7 +67,7 @@ GMSL SerDes Evaluation Kits Validation and Switch Setup
 System setup
 ------------
 
--  Write the :git-gmsl:`AMD KV260-based latest SD card image <gmsl>` on a 8GB (or more) SD card
+-  Write the `AMD KV260-based latest SD card image <https://github.com/analogdevicesinc/gmsl>`_ on a 8GB (or more) SD card
 -  Plug the SD card into the KV260 SD card slot
 -  Connect the HDMI cable from the monitor to the HDMI connector of the KV260 evaluation kit
 -  Connect the 2 Tier 4 C1 cameras to INA and INB of the deserializer kit (if you have only one camera, connect it to the INA port of the deserializer)
@@ -132,7 +132,7 @@ Power off sequence
 Getting the software
 --------------------
 
-The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the :git-gmsl:`Analog Devices GMSL github repository <gmsl>`.
+The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the `Analog Devices GMSL github repository <https://github.com/analogdevicesinc/gmsl>`_.
 
 HDL Project
 -----------

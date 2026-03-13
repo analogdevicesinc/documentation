@@ -99,7 +99,7 @@ If you do not yet have a local copy of ADI's kernel tree, you can get it via git
 
 ::
 
-   git clone :git-linux:`linux`
+   git clone `linux <https://github.com/analogdevicesinc/linux>`_
 
 Configure the kernel
 ~~~~~~~~~~~~~~~~~~~~

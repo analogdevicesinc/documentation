@@ -39,7 +39,7 @@ FPGA Reference Designs on GitHub :
    
    -  https://github.com/analogdevicesinc/fpgahdl_xilinx/archive/ad_fmcomms1_ebz_edk_14_1_2012_12_14.zip
    -  https://github.com/analogdevicesinc/fpgahdl_xilinx/archive/ad_fmcomms1_ebz_edk_14_1_2012_12_14.tar.gz
-   -  :git-fpgahdl_xilinx:`fpgahdl_xilinx`
+   -  `fpgahdl_xilinx <https://github.com/analogdevicesinc/fpgahdl_xilinx>`_
    
 
 

@@ -77,7 +77,7 @@ First clone the repo and move into it:
 
 ::
 
-   git clone :git-PrecisionToolbox:`PrecisionToolbox`
+   git clone `PrecisionToolbox <https://github.com/analogdevicesinc/PrecisionToolbox>`_
    cd PrecisionToolbox
 
 To build the toolbox run the following:

@@ -43,7 +43,7 @@ Depending on the age of your release, you may need to build a more recent kernel
 ::
 
    # First clone the repository
-   git clone :git-linux:`linux`
+   git clone `linux <https://github.com/analogdevicesinc/linux>`_
    cd linux
 
    # First we need to make the Vitis arm64 gcc toolchain available and enable cross compilation
@@ -148,7 +148,7 @@ On account of being a GNU Radio module, the process to build gr-ofdmradar is qui
 ::
 
    # Checkout code
-   git clone :git-gr-ofdmradar:`gr-ofdmradar`
+   git clone `gr-ofdmradar <https://github.com/analogdevicesinc/gr-ofdmradar>`_
    cd gr-ofdmradar
 
    # Make sure this build command matches that of your GNU Radio installation!
@@ -214,7 +214,7 @@ For more details in general about the theoretical underpinnings of OFDM radar, p
 
 For more information about gr-ofdmradar system parameters check out the :git-gr-ofdmradar:`gr-ofdmradar/README.md <README.md>`
 
--  :git-gr-ofdmradar:`gr-ofdmradar`
+-  `gr-ofdmradar <https://github.com/analogdevicesinc/gr-ofdmradar>`_
 -  `GNU Radio branch with AD9081 blocks <https://github.com/Yamakaja/gnuradio/tree/feature/gr-iio-tdd>`_
 
 --------------
@@ -224,7 +224,7 @@ Using the OFDM Radar
 
 This section will describe how you can use the OFDM radar to get some actual returns, how you can tune the system and choose your parameters.
 
-Before going on, please make yourself familiar with the basic operating principles of an OFDM radar, and the meaning of the system parameters: :git-gr-ofdmradar#operating-principle:`gr-ofdmradar#operating-principle`
+Before going on, please make yourself familiar with the basic operating principles of an OFDM radar, and the meaning of the system parameters: `gr-ofdmradar#operating-principle <https://github.com/analogdevicesinc/gr-ofdmradar#operating-principle>`_
 
 To reinforce your understanding, lets take a look at this example set of parameters.
 
@@ -349,7 +349,7 @@ The HDL
 
 .. tip::
 
-   As of writing this document, not all HDL changes have made it into the :git-hdl:`upstream <hdl>` repository yet, thus you may either use my development branch, or make sure that the most recent commits from that branch have made it into master (Though at that point this paragraph should be updated): https://github.com/Yamakaja/hdl/tree/data_offload
+   As of writing this document, not all HDL changes have made it into the `upstream <https://github.com/analogdevicesinc/hdl>`_ repository yet, thus you may either use my development branch, or make sure that the most recent commits from that branch have made it into master (Though at that point this paragraph should be updated): https://github.com/Yamakaja/hdl/tree/data_offload
 
 
 On the HDL side we will be using a Timing Division Duplexing (TDD) core, which was originally developed to control the :adi:`en/products/ad9361.html` family of transceivers: See the :doc:`reference_hdl </wiki-migration/resources/eval/user-guides/ad-pzsdr2400tdd-eb/reference_hdl>` for more information about what the TDD core can do.
@@ -555,7 +555,7 @@ Finally the ``OFDM Radar GUI`` block takes ofdm radar params and a GUI hint:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_gui.png
 
-**For more information on the parameters and OFDM radar algorithm, take a look at the** :git-gr-ofdmradar:`gr-ofdmradar/README.md <gr-ofdmradar>`\ **.**
+**For more information on the parameters and OFDM radar algorithm, take a look at the** `gr-ofdmradar/README.md <https://github.com/analogdevicesinc/gr-ofdmradar>`_\ **.**
 
 DoA Blocks
 """"""""""

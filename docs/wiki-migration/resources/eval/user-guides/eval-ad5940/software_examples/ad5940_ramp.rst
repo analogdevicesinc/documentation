@@ -56,7 +56,7 @@ The source code and include files for the project can be found on Git
 .. admonition:: Download
    :class: download
 
-   :git-ad5940-examples:`AD5940 Source Code <ad5940-examples>`
+   `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
 
    
 

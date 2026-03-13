@@ -25,7 +25,7 @@ Installation of Latest Lib-IIO and Other Requirements Needed to Run the Example 
    
    ::
    
-      analog@analog:~$ git clone :git-libad9166-iio:`libad9166-iio`
+      analog@analog:~$ git clone `libad9166-iio <https://github.com/analogdevicesinc/libad9166-iio>`_
    
    Go to libad9166-iio directory
    
@@ -81,7 +81,7 @@ Installation of Latest Lib-IIO and Other Requirements Needed to Run the Example 
    
    ::
    
-      analog@analog:~$ git clone :git-pyadi-iio:`pyadi-iio`
+      analog@analog:~$ git clone `pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`_
    
    Lastly install the libatlas-base-dev
    

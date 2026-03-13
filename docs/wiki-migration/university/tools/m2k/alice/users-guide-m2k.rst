@@ -56,7 +56,7 @@ Windows users who do not wish to install Python and the other required software 
    First, download Windows USB drivers installer for M2K here:
 
    
-   -  Latest :git-plutosdr-m2k-drivers-win:`plutosdr-m2k-drivers-win`
+   -  Latest `plutosdr-m2k-drivers-win <https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win>`_
    
    You should download and install the Windows USB drivers from GitHub first if not already installed on your system.
 
@@ -64,7 +64,7 @@ Windows users who do not wish to install Python and the other required software 
 .. admonition:: Download
    :class: download
 
-   Second. download and install, libiio-setup.exe from the :git-libiio:`libiio page on GitHub <libiio>`. If you have done any LibIIO development in the past you may have this already installed but the ALICE M2K Windows executable was developed using the 32 bit (x86) library and this version will need to be installed. The libiio library depends on the Visual C++ Redistributable Packages for Visual Studio 2013, generally the installer should include the needed support files but if you should encounter any difficulties when running ALICE for M2K you may need to manually install the 32 (x86) package from the `Microsoft Web Site <https://www.microsoft.com/en-us/download/details.aspx>`_.
+   Second. download and install, libiio-setup.exe from the `libiio page on GitHub <https://github.com/analogdevicesinc/libiio>`_. If you have done any LibIIO development in the past you may have this already installed but the ALICE M2K Windows executable was developed using the 32 bit (x86) library and this version will need to be installed. The libiio library depends on the Visual C++ Redistributable Packages for Visual Studio 2013, generally the installer should include the needed support files but if you should encounter any difficulties when running ALICE for M2K you may need to manually install the 32 (x86) package from the `Microsoft Web Site <https://www.microsoft.com/en-us/download/details.aspx>`_.
 
 
 .. admonition:: Download
@@ -102,7 +102,7 @@ Manually installing libiio and ALICE Desktop Python source
    
 
 
-To manually install on Windows download, libiio-setup.exe from the :git-libiio:`libiio page on GitHub <libiio>`. The USB drivers will also need to be installed by downloading the :git-plutosdr-m2k-drivers-win:`plutosdr-m2k-drivers-win` from GitHub. For OS X and Linux users there are installer versions of libiio for popular distributions of the OS in :git-libiio:`GitHub <libiio>`. The command(s) to manually build things are shown on the GitHub page as well. You will also likely need the development version of python installed (``apt-get install python2.7-dev``).
+To manually install on Windows download, libiio-setup.exe from the `libiio page on GitHub <https://github.com/analogdevicesinc/libiio>`_. The USB drivers will also need to be installed by downloading the `plutosdr-m2k-drivers-win <https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win>`_ from GitHub. For OS X and Linux users there are installer versions of libiio for popular distributions of the OS in `GitHub <https://github.com/analogdevicesinc/libiio>`_. The command(s) to manually build things are shown on the GitHub page as well. You will also likely need the development version of python installed (``apt-get install python2.7-dev``).
 
 Raspberry Pi users with Raspbian need to have the Jessie distribution installed which includes the most up to date versions of gcc ( 4.9.2 ) and libusb-1.0-0-dev (``apt-get install libusb-1.0-0-dev libudev-dev``). As with other Linux OS the command(s) to make things are shown in the GitHub Readme. You will also need the development version of python installed (``apt-get install python2.7-dev``). Cmake may also need to be installed if it has not been done already (``apt-get install cmake``).
 

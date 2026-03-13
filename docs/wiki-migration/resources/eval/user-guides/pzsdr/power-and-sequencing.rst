@@ -481,7 +481,7 @@ Did you adjust a setting incorrectly? Now the sequencer won’t allow the system
 Is there a default file I can load?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The default file that comes pre-loaded when you order hardware can be found on :git-PicoZed-SDR:`Github <PicoZed-SDR>`.
+The default file that comes pre-loaded when you order hardware can be found on `Github <https://github.com/analogdevicesinc/PicoZed-SDR>`_.
 
 This file is also updated on occasion to include new features, tweaks or other items which pop up as systems are developed.
 

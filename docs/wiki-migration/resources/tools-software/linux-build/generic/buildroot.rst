@@ -1,7 +1,7 @@
 Building with buildroot
 =======================
 
-Aside from building the Linux kernel manually, there is also the possibility of building the ADI Linux kernel with :git-buildroot:`the ADI buildroot repository <buildroot>`.
+Aside from building the Linux kernel manually, there is also the possibility of building the ADI Linux kernel with `the ADI buildroot repository <https://github.com/analogdevicesinc/buildroot>`_.
 
 Ideally, you should already be familiar with `buildroot <https://www.buildroot.org/>`_, but even if not, the steps in this guide should be pretty straight forward.
 
@@ -9,7 +9,7 @@ The starting point is to clone the ADI buildroot repository
 
 ::
 
-   git clone :git-buildroot:`buildroot`
+   git clone `buildroot <https://github.com/analogdevicesinc/buildroot>`_
 
 Building for Microblaze
 -----------------------

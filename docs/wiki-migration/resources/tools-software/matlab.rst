@@ -24,7 +24,7 @@ Precision Toolbox
 
 `Analog Devices Precision Toolbox for MATLAB and Simulink <https://wiki.analog.com/pcx-toolbox>`_ includes a set of tools to interface with ADI precision converter devices within MATLAB and Simulink.
 
--  :git-PrecisionToolbox:`Code on Github <PrecisionToolbox>`
+-  `Code on Github <https://github.com/analogdevicesinc/PrecisionToolbox>`_
 -  `MATLAB Central <https://www.mathworks.com/matlabcentral/fileexchange/125890-analog-devices-inc-precision-toolbox>`_
 -  :ez:`Help and Support <data_converters/precision_adcs>`
 
@@ -33,7 +33,7 @@ High Speed Converter Toolbox
 
 `Analog Devices High Speed Converter Toolbox For MATLAB and Simulink <https://wiki.analog.com/hsx-toolbox>`_ includes a set of tools to model, interface, and target with ADI high-speed converter devices within MATLAB and Simulink.
 
--  :git-HighSpeedConverterToolbox:`Code on Github <HighSpeedConverterToolbox>`
+-  `Code on Github <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_
 -  `MATLAB Central <https://www.mathworks.com/matlabcentral/fileexchange/73080-analog-devices-inc-high-speed-converter-toolbox>`_
 -  :ez:`Help and Support <sw-interface-tools>`
 
@@ -42,7 +42,7 @@ Transceiver Toolbox
 
 `Analog Devices Transceiver Toolbox For MATLAB and Simulink <https://wiki.analog.com/transceiver-toolbox>`_ includes set of tools to model, interface, and target Analog Devices Transceiver devices.
 
--  :git-TransceiverToolbox:`Code on Github <TransceiverToolbox>`
+-  `Code on Github <https://github.com/analogdevicesinc/TransceiverToolbox>`_
 -  `MATLAB Central <https://www.mathworks.com/matlabcentral/fileexchange/72645-analog-devices-inc-transceiver-toolbox>`_
 -  :ez:`Help and Support <sw-interface-tools>`
 
@@ -51,7 +51,7 @@ RF and Microwave Toolbox
 
 :doc:`Analog Devices RF and Microwave Toolbox </wiki-migration/resources/tools-software/rf-microwave-toolbox>` includes a set of tools to model and interface with Analog Devices RF and Microwave devices.
 
--  :git-RFMicrowaveToolbox:`Code on Github <RFMicrowaveToolbox>`
+-  `Code on Github <https://github.com/analogdevicesinc/RFMicrowaveToolbox>`_
 -  :ez:`Help and Support <sw-interface-tools>`
 
 Sensor Toolbox
@@ -59,7 +59,7 @@ Sensor Toolbox
 
 `Analog Devices Sensor Toolbox For MATLAB and Simulink <https://wiki.analog.com/sensor-toolbox>`_ includes set of tools to model, interface, and target Analog Devices Sensors.
 
--  :git-SensorToolbox:`Code on Github <SensorToolbox>`
+-  `Code on Github <https://github.com/analogdevicesinc/SensorToolbox>`_
 -  `MATLAB Central <https://www.mathworks.com/matlabcentral/fileexchange/73121-analog-devices-inc-sensor-toolbox>`_
 -  :ez:`Help and Support <sw-interface-tools>`
 
@@ -68,7 +68,7 @@ Sensor Toolbox
 
 `Analog Devices Time of Flight Toolbox For MATLAB and Simulink <https://wiki.analog.com/tof-toolbox>`_ includes set of tools to model, interface, and target Analog Devices 3D Time of Flight components and cameras.
 
--  :git-TimeofFlightToolbox:`Code on Github <TimeofFlightToolbox>`
+-  `Code on Github <https://github.com/analogdevicesinc/TimeofFlightToolbox>`_
 -  `MATLAB Central <https://www.mathworks.com/matlabcentral/fileexchange/78964-analog-devices-inc-time-of-flight-toolbox>`_
 -  :ez:`Help and Support <sw-interface-tools>`
 
@@ -77,7 +77,7 @@ Library for ADALM2000
 
 :doc:`MATLAB and Simulink Library to interface to ADALM2000 </wiki-migration/university/tools/m2k/matlab>` includes methods so MATLAB and Simulink can programmatically control the ADALM2000. Controlling M2K and access the data streams is provided through a set of bindings for libm2k.
 
--  :git-libm2k-matlab:`Code on Github <libm2k-matlab>`
+-  `Code on Github <https://github.com/analogdevicesinc/libm2k-matlab>`_
 -  `MATLAB Central <https://www.mathworks.com/matlabcentral/fileexchange/74385-libm2k-matlab>`_
 -  `MathWorks Hardware Support Page <https://www.mathworks.com/hardware-support/adalm2000.html>`_
 -  :ez:`Help and Support <adieducation/university-program>`

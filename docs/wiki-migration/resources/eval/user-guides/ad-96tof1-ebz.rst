@@ -109,7 +109,7 @@ The Depth Perception Rapid Prototyping Platform supports a wide range of operati
 .. admonition:: Download
    :class: download
 
-   :git-aditof_sdk:`Access the full ADI 3D ToF software suite to get started <aditof_sdk>`
+   `Access the full ADI 3D ToF software suite to get started <https://github.com/analogdevicesinc/aditof_sdk>`_
 
 
 .. note::

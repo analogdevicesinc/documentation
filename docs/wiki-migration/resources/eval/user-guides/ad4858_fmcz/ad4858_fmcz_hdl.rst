@@ -144,7 +144,7 @@ Instance name  HDL Linux Zynq Actual Zynq Linux ZynqMP Actual ZynqMP
 Building the HDL project
 ------------------------
 
-ADI does not distribute the bit/elf files of these projects, so they must be built from the sources available :git-hdl:`here <hdl>`. To get the source you must `clone <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_ the HDL repository.
+ADI does not distribute the bit/elf files of these projects, so they must be built from the sources available `here <https://github.com/analogdevicesinc/hdl>`_. To get the source you must `clone <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_ the HDL repository.
 
 Then go to :git-hdl:`projects/ad485x_fmcz/zed` location and run the make command by typing in your command prompt one of the following commands, depending on which configuration you want to use:
 

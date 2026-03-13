@@ -23,14 +23,14 @@ To edit and run example code in Keil follow these steps:
    :class: download
 
    
-   :git-ad5940-examples:`AD5940 SDK Source Code <ad5940-examples>`
+   `AD5940 SDK Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
    
 
 
-*(**Hint:** Also download the included submodule in examples/ad5940lib. This can be done with the git bash in one step by executing: "git clone --recurse-submodules* :git-ad5940-examples:`ad5940-examples`.git*" (without the double quotes))*
+*(**Hint:** Also download the included submodule in examples/ad5940lib. This can be done with the git bash in one step by executing: "git clone --recurse-submodules* `ad5940-examples <https://github.com/analogdevicesinc/ad5940-examples>`_.git*" (without the double quotes))*
 
 -  Navigate to the **examples->AD5940_ADC->ADICUP3029**
--  Double click on ADICUP3029.uvprojx file to open the project in Keil [The package at :git-ad5940-examples:`ad5940-examples` doesn't contain ADICUP3029.uvprojx in **examples->AD5940_ADC->ADICUP3029** or other folders]
+-  Double click on ADICUP3029.uvprojx file to open the project in Keil [The package at `ad5940-examples <https://github.com/analogdevicesinc/ad5940-examples>`_ doesn't contain ADICUP3029.uvprojx in **examples->AD5940_ADC->ADICUP3029** or other folders]
 -  The project structure is shown in the left hand side of the screen. It is divided into 4 sub sections:
 
    -  **AD5940Lib** - This contains the AD5940.c source file which has all the AD5940 library functions. This file is common to all examples. The ADICUP3029Port.c file is located here also and contains port functions for the ADuCM3029 microcontroller.

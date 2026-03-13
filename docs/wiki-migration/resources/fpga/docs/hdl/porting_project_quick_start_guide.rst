@@ -203,4 +203,4 @@ References
 
 -  https://github.com/analogdevicesinc/hdl/releases
 -  :doc:`/wiki-migration/resources/fpga/docs/hdl`
--  :git-hdl:`hdl`
+-  `hdl <https://github.com/analogdevicesinc/hdl>`_

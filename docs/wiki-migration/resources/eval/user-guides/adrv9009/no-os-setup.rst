@@ -116,7 +116,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive :git-no-OS:`no-OS`
+   git clone --recursive `no-OS <https://github.com/analogdevicesinc/no-OS>`_
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -829,7 +829,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive :git-no-OS:`no-OS`
+   git clone --recursive `no-OS <https://github.com/analogdevicesinc/no-OS>`_
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -1542,7 +1542,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive :git-no-OS:`no-OS`
+   git clone --recursive `no-OS <https://github.com/analogdevicesinc/no-OS>`_
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -2924,5 +2924,5 @@ With a serial terminal correctly configured and listening to incoming messages, 
        Stop bits: 1
        Flow control: none
 
-This message implies a IIOD server is being run and you may connect to it using a serial-backend enabled :git-iio-oscilloscope:`iio-oscilloscope` and with the settings indicated at the serial terminal.
+This message implies a IIOD server is being run and you may connect to it using a serial-backend enabled `iio-oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope>`_ and with the settings indicated at the serial terminal.
 

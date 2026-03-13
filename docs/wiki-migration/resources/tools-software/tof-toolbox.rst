@@ -32,7 +32,7 @@ First clone the repo and move into it:
 
 ::
 
-   git clone :git-TimeofFlightToolbox:`TimeofFlightToolbox`
+   git clone `TimeofFlightToolbox <https://github.com/analogdevicesinc/TimeofFlightToolbox>`_
    cd TimeofFlightToolbox
 
 To create a installable tlbx file run:

@@ -105,7 +105,7 @@ Link: `iio-oscilloscope/actions/runs/5334364156 <https://github.com/analogdevice
 
 LibIIO Installer
 
-Install the latest libIIO package from github https://swdownloads.analog.com/cse/azure_builds/libiio-setup.exe :git-libiio:`libiio`
+Install the latest libIIO package from github https://swdownloads.analog.com/cse/azure_builds/libiio-setup.exe `libiio <https://github.com/analogdevicesinc/libiio>`_
 
 --------------
 

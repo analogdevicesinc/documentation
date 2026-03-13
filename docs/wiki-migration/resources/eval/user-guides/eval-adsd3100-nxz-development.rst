@@ -1,7 +1,7 @@
 EVAL-ADSD3175D Development
 ==========================
 
-GitHub repo for SDK source code: :git-ToF:`ToF`
+GitHub repo for SDK source code: `ToF <https://github.com/analogdevicesinc/ToF>`_
 
 Doxygen documentation (via the GitHub ToF repo): https://analogdevicesinc.github.io/ToF/
 

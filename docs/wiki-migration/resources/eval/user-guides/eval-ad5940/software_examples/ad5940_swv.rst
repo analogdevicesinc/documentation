@@ -63,7 +63,7 @@ The source code and include files of the **AD5940_SqrWveVoltammetry** can be fou
    :class: download
 
    
-   :git-ad5940-examples:`AD5940 SDK Source Code <ad5940-examples>`
+   `AD5940 SDK Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
    
 
 
